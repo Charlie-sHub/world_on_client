@@ -7,14 +7,11 @@ class UniqueId extends ValueObject<String> {
   @override
   final Either<ValueFailure<String>, String> value;
 
-  factory UniqueId() => UniqueId._(right(Uuid().v1()));
+  factory UniqueId() => UniqueId._(right(const Uuid().v1()));
 
-  factory UniqueId.fromUniqueString(String uniqueId) {
-    assert(uniqueId != null);
-    return UniqueId._(
-      right(uniqueId),
-    );
-  }
+  factory UniqueId.fromUniqueString(String uniqueId) => UniqueId._(
+        right(uniqueId),
+      );
 
   const UniqueId._(this.value);
 

@@ -134,21 +134,19 @@ class ProductionExperienceManagementRepository implements ExperienceManagementRe
     Set<Reward> _rewardSet,
     Set<Objective> _objectiveList,
   ) async {
-    final _imageAssets = experience.imageAssetsOption.getOrElse(() => null);
-    if (_imageAssets != null) {
-      for (final _imageAsset in _imageAssets) {
-        final _imageName = _imageAsset.name + experience.id.getOrCrash();
-        final _imageURL = await _cloudStorageService.uploadAssetImage(
-          imageToUpload: _imageAsset,
-          folder: StorageFolder.experiences,
-          name: _imageName,
-        );
-        experience.imageURLs.add(_imageURL);
-      }
+    final _imageAssets = experience.imageAssetsOption.getOrElse(() => []);
+    for (final _imageAsset in _imageAssets) {
+      final _imageName = _imageAsset.name! + experience.id.getOrCrash();
+      final _imageURL = await _cloudStorageService.uploadAssetImage(
+        imageToUpload: _imageAsset,
+        folder: StorageFolder.experiences,
+        name: _imageName,
+      );
+      experience.imageURLs.add(_imageURL);
     }
     for (final _reward in experience.rewards.getOrCrash().dart) {
       _reward.imageFile.fold(
-        () => null,
+        () {},
         (_imageFile) async {
           final _imageURL = await _cloudStorageService.uploadFileImage(
             imageToUpload: _imageFile,
@@ -162,7 +160,7 @@ class ProductionExperienceManagementRepository implements ExperienceManagementRe
     }
     for (final _objective in experience.objectives.getOrCrash().dart) {
       _objective.imageFile.fold(
-        () => null,
+        () {},
         (_imageFile) async {
           final _imageURL = await _cloudStorageService.uploadFileImage(
             imageToUpload: _imageFile,

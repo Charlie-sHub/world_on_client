@@ -1,5 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides
 
 part of 'experience.dart';
 
@@ -9,29 +9,31 @@ part of 'experience.dart';
 
 T _$identity<T>(T value) => value;
 
+final _privateConstructorUsedError = UnsupportedError(
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+
 /// @nodoc
 class _$ExperienceTearOff {
   const _$ExperienceTearOff();
 
-// ignore: unused_element
   _Experience call(
-      {@required UniqueId id,
-      @required Name title,
-      @required EntityDescription description,
-      @required Set<String> imageURLs,
-      @required Option<List<Asset>> imageAssetsOption,
-      @required Coordinates coordinates,
-      @required Location location,
-      @required User creator,
-      @required Difficulty difficulty,
-      @required PastDate creationDate,
-      @required PastDate modificationDate,
-      @required ObjectiveList objectives,
-      @required RewardSet rewards,
-      @required TagSet tags,
-      @required Set<Comment> comments,
-      @required Set<UniqueId> likedBy,
-      @required Set<UniqueId> doneBy}) {
+      {required UniqueId id,
+      required Name title,
+      required EntityDescription description,
+      required Set<String> imageURLs,
+      required Option<List<Asset>> imageAssetsOption,
+      required Coordinates coordinates,
+      required Location location,
+      required User creator,
+      required Difficulty difficulty,
+      required PastDate creationDate,
+      required PastDate modificationDate,
+      required ObjectiveList objectives,
+      required RewardSet rewards,
+      required TagSet tags,
+      required Set<Comment> comments,
+      required Set<UniqueId> likedBy,
+      required Set<UniqueId> doneBy}) {
     return _Experience(
       id: id,
       title: title,
@@ -55,32 +57,47 @@ class _$ExperienceTearOff {
 }
 
 /// @nodoc
-// ignore: unused_element
 const $Experience = _$ExperienceTearOff();
 
 /// @nodoc
 mixin _$Experience {
 // TODO: Add dislike counters
-  UniqueId get id;
-  Name get title;
-  EntityDescription get description;
-  Set<String> get imageURLs;
-  Option<List<Asset>> get imageAssetsOption;
-  Coordinates get coordinates;
-  Location get location;
-  User get creator;
-  Difficulty get difficulty;
-  PastDate get creationDate;
-  PastDate get modificationDate;
-  ObjectiveList get objectives;
-  RewardSet get rewards;
-  TagSet get tags;
-  Set<Comment> get comments;
-  Set<UniqueId> get likedBy;
-  Set<UniqueId> get doneBy;
+  UniqueId get id => throw _privateConstructorUsedError;
+
+  Name get title => throw _privateConstructorUsedError;
+
+  EntityDescription get description => throw _privateConstructorUsedError;
+
+  Set<String> get imageURLs => throw _privateConstructorUsedError;
+
+  Option<List<Asset>> get imageAssetsOption => throw _privateConstructorUsedError;
+
+  Coordinates get coordinates => throw _privateConstructorUsedError;
+
+  Location get location => throw _privateConstructorUsedError;
+
+  User get creator => throw _privateConstructorUsedError;
+
+  Difficulty get difficulty => throw _privateConstructorUsedError;
+
+  PastDate get creationDate => throw _privateConstructorUsedError;
+
+  PastDate get modificationDate => throw _privateConstructorUsedError;
+
+  ObjectiveList get objectives => throw _privateConstructorUsedError;
+
+  RewardSet get rewards => throw _privateConstructorUsedError;
+
+  TagSet get tags => throw _privateConstructorUsedError;
+
+  Set<Comment> get comments => throw _privateConstructorUsedError;
+
+  Set<UniqueId> get likedBy => throw _privateConstructorUsedError;
+
+  Set<UniqueId> get doneBy => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
-  $ExperienceCopyWith<Experience> get copyWith;
+  $ExperienceCopyWith<Experience> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -121,50 +138,98 @@ class _$ExperienceCopyWithImpl<$Res> implements $ExperienceCopyWith<$Res> {
 
   @override
   $Res call({
-    Object id = freezed,
-    Object title = freezed,
-    Object description = freezed,
-    Object imageURLs = freezed,
-    Object imageAssetsOption = freezed,
-    Object coordinates = freezed,
-    Object location = freezed,
-    Object creator = freezed,
-    Object difficulty = freezed,
-    Object creationDate = freezed,
-    Object modificationDate = freezed,
-    Object objectives = freezed,
-    Object rewards = freezed,
-    Object tags = freezed,
-    Object comments = freezed,
-    Object likedBy = freezed,
-    Object doneBy = freezed,
+    Object? id = freezed,
+    Object? title = freezed,
+    Object? description = freezed,
+    Object? imageURLs = freezed,
+    Object? imageAssetsOption = freezed,
+    Object? coordinates = freezed,
+    Object? location = freezed,
+    Object? creator = freezed,
+    Object? difficulty = freezed,
+    Object? creationDate = freezed,
+    Object? modificationDate = freezed,
+    Object? objectives = freezed,
+    Object? rewards = freezed,
+    Object? tags = freezed,
+    Object? comments = freezed,
+    Object? likedBy = freezed,
+    Object? doneBy = freezed,
   }) {
     return _then(_value.copyWith(
-      id: id == freezed ? _value.id : id as UniqueId,
-      title: title == freezed ? _value.title : title as Name,
-      description: description == freezed ? _value.description : description as EntityDescription,
-      imageURLs: imageURLs == freezed ? _value.imageURLs : imageURLs as Set<String>,
-      imageAssetsOption: imageAssetsOption == freezed ? _value.imageAssetsOption : imageAssetsOption as Option<List<Asset>>,
-      coordinates: coordinates == freezed ? _value.coordinates : coordinates as Coordinates,
-      location: location == freezed ? _value.location : location as Location,
-      creator: creator == freezed ? _value.creator : creator as User,
-      difficulty: difficulty == freezed ? _value.difficulty : difficulty as Difficulty,
-      creationDate: creationDate == freezed ? _value.creationDate : creationDate as PastDate,
-      modificationDate: modificationDate == freezed ? _value.modificationDate : modificationDate as PastDate,
-      objectives: objectives == freezed ? _value.objectives : objectives as ObjectiveList,
-      rewards: rewards == freezed ? _value.rewards : rewards as RewardSet,
-      tags: tags == freezed ? _value.tags : tags as TagSet,
-      comments: comments == freezed ? _value.comments : comments as Set<Comment>,
-      likedBy: likedBy == freezed ? _value.likedBy : likedBy as Set<UniqueId>,
-      doneBy: doneBy == freezed ? _value.doneBy : doneBy as Set<UniqueId>,
+      id: id == freezed
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as UniqueId,
+      title: title == freezed
+          ? _value.title
+          : title // ignore: cast_nullable_to_non_nullable
+              as Name,
+      description: description == freezed
+          ? _value.description
+          : description // ignore: cast_nullable_to_non_nullable
+              as EntityDescription,
+      imageURLs: imageURLs == freezed
+          ? _value.imageURLs
+          : imageURLs // ignore: cast_nullable_to_non_nullable
+              as Set<String>,
+      imageAssetsOption: imageAssetsOption == freezed
+          ? _value.imageAssetsOption
+          : imageAssetsOption // ignore: cast_nullable_to_non_nullable
+              as Option<List<Asset>>,
+      coordinates: coordinates == freezed
+          ? _value.coordinates
+          : coordinates // ignore: cast_nullable_to_non_nullable
+              as Coordinates,
+      location: location == freezed
+          ? _value.location
+          : location // ignore: cast_nullable_to_non_nullable
+              as Location,
+      creator: creator == freezed
+          ? _value.creator
+          : creator // ignore: cast_nullable_to_non_nullable
+              as User,
+      difficulty: difficulty == freezed
+          ? _value.difficulty
+          : difficulty // ignore: cast_nullable_to_non_nullable
+              as Difficulty,
+      creationDate: creationDate == freezed
+          ? _value.creationDate
+          : creationDate // ignore: cast_nullable_to_non_nullable
+              as PastDate,
+      modificationDate: modificationDate == freezed
+          ? _value.modificationDate
+          : modificationDate // ignore: cast_nullable_to_non_nullable
+              as PastDate,
+      objectives: objectives == freezed
+          ? _value.objectives
+          : objectives // ignore: cast_nullable_to_non_nullable
+              as ObjectiveList,
+      rewards: rewards == freezed
+          ? _value.rewards
+          : rewards // ignore: cast_nullable_to_non_nullable
+              as RewardSet,
+      tags: tags == freezed
+          ? _value.tags
+          : tags // ignore: cast_nullable_to_non_nullable
+              as TagSet,
+      comments: comments == freezed
+          ? _value.comments
+          : comments // ignore: cast_nullable_to_non_nullable
+              as Set<Comment>,
+      likedBy: likedBy == freezed
+          ? _value.likedBy
+          : likedBy // ignore: cast_nullable_to_non_nullable
+              as Set<UniqueId>,
+      doneBy: doneBy == freezed
+          ? _value.doneBy
+          : doneBy // ignore: cast_nullable_to_non_nullable
+              as Set<UniqueId>,
     ));
   }
 
   @override
   $CoordinatesCopyWith<$Res> get coordinates {
-    if (_value.coordinates == null) {
-      return null;
-    }
     return $CoordinatesCopyWith<$Res>(_value.coordinates, (value) {
       return _then(_value.copyWith(coordinates: value));
     });
@@ -172,9 +237,6 @@ class _$ExperienceCopyWithImpl<$Res> implements $ExperienceCopyWith<$Res> {
 
   @override
   $LocationCopyWith<$Res> get location {
-    if (_value.location == null) {
-      return null;
-    }
     return $LocationCopyWith<$Res>(_value.location, (value) {
       return _then(_value.copyWith(location: value));
     });
@@ -182,9 +244,6 @@ class _$ExperienceCopyWithImpl<$Res> implements $ExperienceCopyWith<$Res> {
 
   @override
   $UserCopyWith<$Res> get creator {
-    if (_value.creator == null) {
-      return null;
-    }
     return $UserCopyWith<$Res>(_value.creator, (value) {
       return _then(_value.copyWith(creator: value));
     });
@@ -232,42 +291,93 @@ class __$ExperienceCopyWithImpl<$Res> extends _$ExperienceCopyWithImpl<$Res> imp
 
   @override
   $Res call({
-    Object id = freezed,
-    Object title = freezed,
-    Object description = freezed,
-    Object imageURLs = freezed,
-    Object imageAssetsOption = freezed,
-    Object coordinates = freezed,
-    Object location = freezed,
-    Object creator = freezed,
-    Object difficulty = freezed,
-    Object creationDate = freezed,
-    Object modificationDate = freezed,
-    Object objectives = freezed,
-    Object rewards = freezed,
-    Object tags = freezed,
-    Object comments = freezed,
-    Object likedBy = freezed,
-    Object doneBy = freezed,
+    Object? id = freezed,
+    Object? title = freezed,
+    Object? description = freezed,
+    Object? imageURLs = freezed,
+    Object? imageAssetsOption = freezed,
+    Object? coordinates = freezed,
+    Object? location = freezed,
+    Object? creator = freezed,
+    Object? difficulty = freezed,
+    Object? creationDate = freezed,
+    Object? modificationDate = freezed,
+    Object? objectives = freezed,
+    Object? rewards = freezed,
+    Object? tags = freezed,
+    Object? comments = freezed,
+    Object? likedBy = freezed,
+    Object? doneBy = freezed,
   }) {
     return _then(_Experience(
-      id: id == freezed ? _value.id : id as UniqueId,
-      title: title == freezed ? _value.title : title as Name,
-      description: description == freezed ? _value.description : description as EntityDescription,
-      imageURLs: imageURLs == freezed ? _value.imageURLs : imageURLs as Set<String>,
-      imageAssetsOption: imageAssetsOption == freezed ? _value.imageAssetsOption : imageAssetsOption as Option<List<Asset>>,
-      coordinates: coordinates == freezed ? _value.coordinates : coordinates as Coordinates,
-      location: location == freezed ? _value.location : location as Location,
-      creator: creator == freezed ? _value.creator : creator as User,
-      difficulty: difficulty == freezed ? _value.difficulty : difficulty as Difficulty,
-      creationDate: creationDate == freezed ? _value.creationDate : creationDate as PastDate,
-      modificationDate: modificationDate == freezed ? _value.modificationDate : modificationDate as PastDate,
-      objectives: objectives == freezed ? _value.objectives : objectives as ObjectiveList,
-      rewards: rewards == freezed ? _value.rewards : rewards as RewardSet,
-      tags: tags == freezed ? _value.tags : tags as TagSet,
-      comments: comments == freezed ? _value.comments : comments as Set<Comment>,
-      likedBy: likedBy == freezed ? _value.likedBy : likedBy as Set<UniqueId>,
-      doneBy: doneBy == freezed ? _value.doneBy : doneBy as Set<UniqueId>,
+      id: id == freezed
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as UniqueId,
+      title: title == freezed
+          ? _value.title
+          : title // ignore: cast_nullable_to_non_nullable
+              as Name,
+      description: description == freezed
+          ? _value.description
+          : description // ignore: cast_nullable_to_non_nullable
+              as EntityDescription,
+      imageURLs: imageURLs == freezed
+          ? _value.imageURLs
+          : imageURLs // ignore: cast_nullable_to_non_nullable
+              as Set<String>,
+      imageAssetsOption: imageAssetsOption == freezed
+          ? _value.imageAssetsOption
+          : imageAssetsOption // ignore: cast_nullable_to_non_nullable
+              as Option<List<Asset>>,
+      coordinates: coordinates == freezed
+          ? _value.coordinates
+          : coordinates // ignore: cast_nullable_to_non_nullable
+              as Coordinates,
+      location: location == freezed
+          ? _value.location
+          : location // ignore: cast_nullable_to_non_nullable
+              as Location,
+      creator: creator == freezed
+          ? _value.creator
+          : creator // ignore: cast_nullable_to_non_nullable
+              as User,
+      difficulty: difficulty == freezed
+          ? _value.difficulty
+          : difficulty // ignore: cast_nullable_to_non_nullable
+              as Difficulty,
+      creationDate: creationDate == freezed
+          ? _value.creationDate
+          : creationDate // ignore: cast_nullable_to_non_nullable
+              as PastDate,
+      modificationDate: modificationDate == freezed
+          ? _value.modificationDate
+          : modificationDate // ignore: cast_nullable_to_non_nullable
+              as PastDate,
+      objectives: objectives == freezed
+          ? _value.objectives
+          : objectives // ignore: cast_nullable_to_non_nullable
+              as ObjectiveList,
+      rewards: rewards == freezed
+          ? _value.rewards
+          : rewards // ignore: cast_nullable_to_non_nullable
+              as RewardSet,
+      tags: tags == freezed
+          ? _value.tags
+          : tags // ignore: cast_nullable_to_non_nullable
+              as TagSet,
+      comments: comments == freezed
+          ? _value.comments
+          : comments // ignore: cast_nullable_to_non_nullable
+              as Set<Comment>,
+      likedBy: likedBy == freezed
+          ? _value.likedBy
+          : likedBy // ignore: cast_nullable_to_non_nullable
+              as Set<UniqueId>,
+      doneBy: doneBy == freezed
+          ? _value.doneBy
+          : doneBy // ignore: cast_nullable_to_non_nullable
+              as Set<UniqueId>,
     ));
   }
 }
@@ -275,41 +385,24 @@ class __$ExperienceCopyWithImpl<$Res> extends _$ExperienceCopyWithImpl<$Res> imp
 /// @nodoc
 class _$_Experience extends _Experience {
   const _$_Experience(
-      {@required this.id,
-      @required this.title,
-      @required this.description,
-      @required this.imageURLs,
-      @required this.imageAssetsOption,
-      @required this.coordinates,
-      @required this.location,
-      @required this.creator,
-      @required this.difficulty,
-      @required this.creationDate,
-      @required this.modificationDate,
-      @required this.objectives,
-      @required this.rewards,
-      @required this.tags,
-      @required this.comments,
-      @required this.likedBy,
-      @required this.doneBy})
-      : assert(id != null),
-        assert(title != null),
-        assert(description != null),
-        assert(imageURLs != null),
-        assert(imageAssetsOption != null),
-        assert(coordinates != null),
-        assert(location != null),
-        assert(creator != null),
-        assert(difficulty != null),
-        assert(creationDate != null),
-        assert(modificationDate != null),
-        assert(objectives != null),
-        assert(rewards != null),
-        assert(tags != null),
-        assert(comments != null),
-        assert(likedBy != null),
-        assert(doneBy != null),
-        super._();
+      {required this.id,
+      required this.title,
+      required this.description,
+      required this.imageURLs,
+      required this.imageAssetsOption,
+      required this.coordinates,
+      required this.location,
+      required this.creator,
+      required this.difficulty,
+      required this.creationDate,
+      required this.modificationDate,
+      required this.objectives,
+      required this.rewards,
+      required this.tags,
+      required this.comments,
+      required this.likedBy,
+      required this.doneBy})
+      : super._();
 
   @override // TODO: Add dislike counters
   final UniqueId id;
@@ -401,61 +494,79 @@ class _$_Experience extends _Experience {
 }
 
 abstract class _Experience extends Experience {
-  const _Experience._() : super._();
   const factory _Experience(
-      {@required UniqueId id,
-      @required Name title,
-      @required EntityDescription description,
-      @required Set<String> imageURLs,
-      @required Option<List<Asset>> imageAssetsOption,
-      @required Coordinates coordinates,
-      @required Location location,
-      @required User creator,
-      @required Difficulty difficulty,
-      @required PastDate creationDate,
-      @required PastDate modificationDate,
-      @required ObjectiveList objectives,
-      @required RewardSet rewards,
-      @required TagSet tags,
-      @required Set<Comment> comments,
-      @required Set<UniqueId> likedBy,
-      @required Set<UniqueId> doneBy}) = _$_Experience;
+      {required UniqueId id,
+      required Name title,
+      required EntityDescription description,
+      required Set<String> imageURLs,
+      required Option<List<Asset>> imageAssetsOption,
+      required Coordinates coordinates,
+      required Location location,
+      required User creator,
+      required Difficulty difficulty,
+      required PastDate creationDate,
+      required PastDate modificationDate,
+      required ObjectiveList objectives,
+      required RewardSet rewards,
+      required TagSet tags,
+      required Set<Comment> comments,
+      required Set<UniqueId> likedBy,
+      required Set<UniqueId> doneBy}) = _$_Experience;
+
+  const _Experience._() : super._();
 
   @override // TODO: Add dislike counters
-  UniqueId get id;
+  UniqueId get id => throw _privateConstructorUsedError;
+
   @override
-  Name get title;
+  Name get title => throw _privateConstructorUsedError;
+
   @override
-  EntityDescription get description;
+  EntityDescription get description => throw _privateConstructorUsedError;
+
   @override
-  Set<String> get imageURLs;
+  Set<String> get imageURLs => throw _privateConstructorUsedError;
+
   @override
-  Option<List<Asset>> get imageAssetsOption;
+  Option<List<Asset>> get imageAssetsOption => throw _privateConstructorUsedError;
+
   @override
-  Coordinates get coordinates;
+  Coordinates get coordinates => throw _privateConstructorUsedError;
+
   @override
-  Location get location;
+  Location get location => throw _privateConstructorUsedError;
+
   @override
-  User get creator;
+  User get creator => throw _privateConstructorUsedError;
+
   @override
-  Difficulty get difficulty;
+  Difficulty get difficulty => throw _privateConstructorUsedError;
+
   @override
-  PastDate get creationDate;
+  PastDate get creationDate => throw _privateConstructorUsedError;
+
   @override
-  PastDate get modificationDate;
+  PastDate get modificationDate => throw _privateConstructorUsedError;
+
   @override
-  ObjectiveList get objectives;
+  ObjectiveList get objectives => throw _privateConstructorUsedError;
+
   @override
-  RewardSet get rewards;
+  RewardSet get rewards => throw _privateConstructorUsedError;
+
   @override
-  TagSet get tags;
+  TagSet get tags => throw _privateConstructorUsedError;
+
   @override
-  Set<Comment> get comments;
+  Set<Comment> get comments => throw _privateConstructorUsedError;
+
   @override
-  Set<UniqueId> get likedBy;
+  Set<UniqueId> get likedBy => throw _privateConstructorUsedError;
+
   @override
-  Set<UniqueId> get doneBy;
+  Set<UniqueId> get doneBy => throw _privateConstructorUsedError;
+
   @override
   @JsonKey(ignore: true)
-  _$ExperienceCopyWith<_Experience> get copyWith;
+  _$ExperienceCopyWith<_Experience> get copyWith => throw _privateConstructorUsedError;
 }

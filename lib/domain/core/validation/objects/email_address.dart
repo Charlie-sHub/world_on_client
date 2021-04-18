@@ -7,10 +7,7 @@ class EmailAddress extends ValueObject<String> {
   @override
   final Either<ValueFailure<String>, String> value;
 
-  factory EmailAddress(String input) {
-    assert(input != null);
-    return EmailAddress._(validateEmail(input));
-  }
+  factory EmailAddress(String input) => EmailAddress._(validateEmail(input));
 
   const EmailAddress._(this.value);
 

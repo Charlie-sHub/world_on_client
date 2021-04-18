@@ -1,7 +1,7 @@
 part of 'tag_card_actor_bloc.dart';
 
 @freezed
-abstract class TagCardActorEvent with _$TagCardActorEvent {
+class TagCardActorEvent with _$TagCardActorEvent {
   const factory TagCardActorEvent.initialized(Tag tag) = _Initialized;
 
   const factory TagCardActorEvent.dismissedFromInterests(Tag tag) = _DismissedFromInterests;

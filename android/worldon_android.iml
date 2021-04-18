@@ -24,7 +24,6 @@
     <orderEntry type="library" name="Flutter for Android" level="project" />
     <orderEntry type="library" name="KotlinJavaRuntime" level="project" />
     <orderEntry type="library" name="Dart SDK" level="project" />
-    <orderEntry type="library" name="Dart Packages" level="project" />
     <orderEntry type="library" name="Gradle: javax.inject:javax.inject:1" level="project" />
     <orderEntry type="module" module-name="worldon" />
     <orderEntry type="library" name="Gradle: androidx.test.espresso:espresso-core:3.2.0@aar" level="project" />
@@ -177,5 +176,17 @@
     <orderEntry type="library" name="Gradle: io.flutter:x86_debug:1.0.0-2dce47073a378673f6ca095e91b8065544c3a881" level="project" />
     <orderEntry type="library" name="Gradle: io.flutter:arm64_v8a_debug:1.0.0-2dce47073a378673f6ca095e91b8065544c3a881" level="project" />
     <orderEntry type="library" name="Gradle: junit:junit:4.13.1" level="project" />
+    <orderEntry type="library" name="Gradle: io.flutter:x86_64_debug:1.0.0-b09f014e9658da6647361e7e416d1a159d34192d" level="project" />
+    <orderEntry type="library" name="Gradle: io.flutter:flutter_embedding_debug:1.0.0-b09f014e9658da6647361e7e416d1a159d34192d" level="project" />
+    <orderEntry type="library" name="Gradle: io.flutter:arm64_v8a_debug:1.0.0-b09f014e9658da6647361e7e416d1a159d34192d" level="project" />
+    <orderEntry type="library" name="Gradle: io.flutter:x86_debug:1.0.0-b09f014e9658da6647361e7e416d1a159d34192d" level="project" />
+    <orderEntry type="library" name="Gradle: io.flutter:armeabi_v7a_debug:1.0.0-b09f014e9658da6647361e7e416d1a159d34192d" level="project" />
+    <orderEntry type="library" name="Gradle: org.json:json:20180813" level="project" />
+    <orderEntry type="library" name="Gradle: com.android.billingclient:billing:3.0.2@aar" level="project" />
+    <orderEntry type="library" name="Gradle: org.mockito:mockito-core:3.6.0" level="project" />
+    <orderEntry type="library" name="Gradle: org.objenesis:objenesis:3.1" level="project" />
+    <orderEntry type="library" name="Gradle: net.bytebuddy:byte-buddy-agent:1.10.15" level="project" />
+    <orderEntry type="library" name="Gradle: net.bytebuddy:byte-buddy:1.10.15" level="project" />
+    <orderEntry type="library" name="Dart Packages" level="project" />
   </component>
 </module>

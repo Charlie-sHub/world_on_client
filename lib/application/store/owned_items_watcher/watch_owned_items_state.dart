@@ -1,7 +1,7 @@
 part of 'watch_owned_items_bloc.dart';
 
 @freezed
-abstract class WatchOwnedItemsState with _$WatchOwnedItemsState {
+class WatchOwnedItemsState with _$WatchOwnedItemsState {
   const factory WatchOwnedItemsState.initial() = _Initial;
 
   const factory WatchOwnedItemsState.loadInProgress() = _LoadInProgress;

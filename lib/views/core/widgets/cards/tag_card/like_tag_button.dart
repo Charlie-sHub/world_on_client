@@ -7,8 +7,8 @@ import 'package:worldon/views/core/misc/world_on_colors.dart';
 
 class LikeTagButton extends StatelessWidget {
   const LikeTagButton({
-    Key key,
-    @required this.tag,
+    Key? key,
+    required this.tag,
   }) : super(key: key);
 
   final Tag tag;

@@ -6,7 +6,7 @@ import 'package:worldon/views/core/misc/world_on_colors.dart';
 
 class FinishButton extends StatelessWidget {
   const FinishButton({
-    Key key,
+    Key? key,
   }) : super(key: key);
 
   @override
@@ -27,14 +27,19 @@ class FinishButton extends StatelessWidget {
               ),
             );
           } else {
-            return RaisedButton(
+            return ElevatedButton(
               onPressed: () => context.read<ExperienceManagementFormBloc>().add(
                     const ExperienceManagementFormEvent.submitted(),
                   ),
-              color: WorldOnColors.primary,
-              shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(3),
-                side: const BorderSide(color: WorldOnColors.primary),
+              style: ButtonStyle(
+                backgroundColor: MaterialStateProperty.all(
+                  WorldOnColors.primary,
+                ),
+                shape: MaterialStateProperty.all(
+                  const RoundedRectangleBorder(
+                    side: BorderSide(color: WorldOnColors.primary),
+                  ),
+                ),
               ),
               child: Padding(
                 padding: const EdgeInsets.symmetric(

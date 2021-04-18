@@ -9,15 +9,12 @@ class UserLevel extends ValueObject<int> {
   @override
   final Either<ValueFailure<int>, int> value;
 
-  factory UserLevel(int input) {
-    assert(input != null);
-    return UserLevel._(
-      validateBoundedInteger(
-        input: input,
-        limit: limit,
-      ),
-    );
-  }
+  factory UserLevel(int input) => UserLevel._(
+        validateBoundedInteger(
+          input: input,
+          limit: limit,
+        ),
+      );
 
   const UserLevel._(this.value);
 

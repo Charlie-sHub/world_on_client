@@ -1,7 +1,7 @@
 part of 'search_experiences_by_tags_bloc.dart';
 
 @freezed
-abstract class SearchExperiencesByTagsState with _$SearchExperiencesByTagsState {
+class SearchExperiencesByTagsState with _$SearchExperiencesByTagsState {
   const factory SearchExperiencesByTagsState.initial() = _Initial;
 
   const factory SearchExperiencesByTagsState.searchInProgress() = _SearchInProgress;

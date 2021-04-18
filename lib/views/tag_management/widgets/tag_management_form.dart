@@ -8,8 +8,8 @@ class TagManagementForm extends StatelessWidget {
   final TextEditingController textController;
 
   const TagManagementForm({
-    Key key,
-    @required this.textController,
+    Key? key,
+    required this.textController,
   }) : super(key: key);
 
   @override

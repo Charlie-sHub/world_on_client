@@ -11,7 +11,7 @@ import 'package:worldon/views/core/widgets/misc/world_on_progress_indicator.dart
 import '../../../../injection.dart';
 
 class RecommendedExperiencesBody extends StatelessWidget {
-  const RecommendedExperiencesBody({Key key}) : super(key: key);
+  const RecommendedExperiencesBody({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -38,7 +38,7 @@ class RecommendedExperiencesBody extends StatelessWidget {
                   return ExperienceCard(
                     experience: _experience,
                     key: Key(_experience.id.toString()),
-                    reloadFunction: (_) => context.read<RecommendedExperiencesWatcherBloc>().add(
+                    reloadFunction: () => context.read<RecommendedExperiencesWatcherBloc>().add(
                           const RecommendedExperiencesWatcherEvent.watchRecommendedExperiencesStarted(),
                         ),
                   );

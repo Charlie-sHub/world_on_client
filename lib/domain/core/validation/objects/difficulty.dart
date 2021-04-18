@@ -9,15 +9,12 @@ class Difficulty extends ValueObject<int> {
   @override
   final Either<ValueFailure<int>, int> value;
 
-  factory Difficulty(int input) {
-    assert(input != null);
-    return Difficulty._(
-      validateBoundedInteger(
-        input: input,
-        limit: limit,
-      ),
-    );
-  }
+  factory Difficulty(int input) => Difficulty._(
+        validateBoundedInteger(
+          input: input,
+          limit: limit,
+        ),
+      );
 
   const Difficulty._(this.value);
 

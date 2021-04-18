@@ -5,12 +5,12 @@ import 'package:worldon/generated/l10n.dart';
 
 class BirthdayButton extends StatelessWidget {
   const BirthdayButton({
-    Key key,
+    Key? key,
   }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return RaisedButton(
+    return ElevatedButton(
       onPressed: () async {
         final _birthDate = await showDatePicker(
           context: context,
@@ -19,7 +19,7 @@ class BirthdayButton extends StatelessWidget {
           lastDate: DateTime.now(),
         );
         context.read<RegistrationFormBloc>().add(
-              RegistrationFormEvent.birthdayChanged(_birthDate),
+              RegistrationFormEvent.birthdayChanged(_birthDate!),
             );
       },
       // TODO: Show the selected date after selection or the failure

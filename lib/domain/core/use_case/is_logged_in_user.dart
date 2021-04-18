@@ -1,5 +1,4 @@
 import 'package:dartz/dartz.dart';
-import 'package:flutter/foundation.dart';
 import 'package:injectable/injectable.dart';
 import 'package:worldon/domain/authentication/use_case/get_logged_in_user.dart';
 import 'package:worldon/domain/core/entities/user/user.dart';
@@ -26,6 +25,6 @@ class Params {
   final User userToCompareWith;
 
   Params({
-    @required this.userToCompareWith,
+    required this.userToCompareWith,
   });
 }

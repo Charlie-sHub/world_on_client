@@ -1,5 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides
 
 part of 'buy_item_bloc.dart';
 
@@ -9,18 +9,19 @@ part of 'buy_item_bloc.dart';
 
 T _$identity<T>(T value) => value;
 
+final _privateConstructorUsedError = UnsupportedError(
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+
 /// @nodoc
 class _$BuyItemEventTearOff {
   const _$BuyItemEventTearOff();
 
-// ignore: unused_element
   _Initialized initialized(Item item) {
     return _Initialized(
       item,
     );
   }
 
-// ignore: unused_element
   _BoughtItem boughtItem(Item item) {
     return _BoughtItem(
       item,
@@ -29,38 +30,44 @@ class _$BuyItemEventTearOff {
 }
 
 /// @nodoc
-// ignore: unused_element
 const $BuyItemEvent = _$BuyItemEventTearOff();
 
 /// @nodoc
 mixin _$BuyItemEvent {
-  Item get item;
+  Item get item => throw _privateConstructorUsedError;
 
   @optionalTypeArgs
-  TResult when<TResult extends Object>({
-    @required TResult initialized(Item item),
-    @required TResult boughtItem(Item item),
-  });
+  TResult when<TResult extends Object?>({
+    required TResult Function(Item item) initialized,
+    required TResult Function(Item item) boughtItem,
+  }) =>
+      throw _privateConstructorUsedError;
+
   @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object>({
-    TResult initialized(Item item),
-    TResult boughtItem(Item item),
-    @required TResult orElse(),
-  });
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(Item item)? initialized,
+    TResult Function(Item item)? boughtItem,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
+
   @optionalTypeArgs
-  TResult map<TResult extends Object>({
-    @required TResult initialized(_Initialized value),
-    @required TResult boughtItem(_BoughtItem value),
-  });
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initialized value) initialized,
+    required TResult Function(_BoughtItem value) boughtItem,
+  }) =>
+      throw _privateConstructorUsedError;
+
   @optionalTypeArgs
-  TResult maybeMap<TResult extends Object>({
-    TResult initialized(_Initialized value),
-    TResult boughtItem(_BoughtItem value),
-    @required TResult orElse(),
-  });
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initialized value)? initialized,
+    TResult Function(_BoughtItem value)? boughtItem,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
-  $BuyItemEventCopyWith<BuyItemEvent> get copyWith;
+  $BuyItemEventCopyWith<BuyItemEvent> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -82,18 +89,18 @@ class _$BuyItemEventCopyWithImpl<$Res> implements $BuyItemEventCopyWith<$Res> {
 
   @override
   $Res call({
-    Object item = freezed,
+    Object? item = freezed,
   }) {
     return _then(_value.copyWith(
-      item: item == freezed ? _value.item : item as Item,
+      item: item == freezed
+          ? _value.item
+          : item // ignore: cast_nullable_to_non_nullable
+              as Item,
     ));
   }
 
   @override
   $ItemCopyWith<$Res> get item {
-    if (_value.item == null) {
-      return null;
-    }
     return $ItemCopyWith<$Res>(_value.item, (value) {
       return _then(_value.copyWith(item: value));
     });
@@ -120,17 +127,20 @@ class __$InitializedCopyWithImpl<$Res> extends _$BuyItemEventCopyWithImpl<$Res> 
 
   @override
   $Res call({
-    Object item = freezed,
+    Object? item = freezed,
   }) {
     return _then(_Initialized(
-      item == freezed ? _value.item : item as Item,
+      item == freezed
+          ? _value.item
+          : item // ignore: cast_nullable_to_non_nullable
+              as Item,
     ));
   }
 }
 
 /// @nodoc
 class _$_Initialized implements _Initialized {
-  const _$_Initialized(this.item) : assert(item != null);
+  const _$_Initialized(this.item);
 
   @override
   final Item item;
@@ -154,23 +164,20 @@ class _$_Initialized implements _Initialized {
 
   @override
   @optionalTypeArgs
-  TResult when<TResult extends Object>({
-    @required TResult initialized(Item item),
-    @required TResult boughtItem(Item item),
+  TResult when<TResult extends Object?>({
+    required TResult Function(Item item) initialized,
+    required TResult Function(Item item) boughtItem,
   }) {
-    assert(initialized != null);
-    assert(boughtItem != null);
     return initialized(item);
   }
 
   @override
   @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object>({
-    TResult initialized(Item item),
-    TResult boughtItem(Item item),
-    @required TResult orElse(),
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(Item item)? initialized,
+    TResult Function(Item item)? boughtItem,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (initialized != null) {
       return initialized(item);
     }
@@ -179,23 +186,20 @@ class _$_Initialized implements _Initialized {
 
   @override
   @optionalTypeArgs
-  TResult map<TResult extends Object>({
-    @required TResult initialized(_Initialized value),
-    @required TResult boughtItem(_BoughtItem value),
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initialized value) initialized,
+    required TResult Function(_BoughtItem value) boughtItem,
   }) {
-    assert(initialized != null);
-    assert(boughtItem != null);
     return initialized(this);
   }
 
   @override
   @optionalTypeArgs
-  TResult maybeMap<TResult extends Object>({
-    TResult initialized(_Initialized value),
-    TResult boughtItem(_BoughtItem value),
-    @required TResult orElse(),
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initialized value)? initialized,
+    TResult Function(_BoughtItem value)? boughtItem,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (initialized != null) {
       return initialized(this);
     }
@@ -207,10 +211,11 @@ abstract class _Initialized implements BuyItemEvent {
   const factory _Initialized(Item item) = _$_Initialized;
 
   @override
-  Item get item;
+  Item get item => throw _privateConstructorUsedError;
+
   @override
   @JsonKey(ignore: true)
-  _$InitializedCopyWith<_Initialized> get copyWith;
+  _$InitializedCopyWith<_Initialized> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -233,17 +238,20 @@ class __$BoughtItemCopyWithImpl<$Res> extends _$BuyItemEventCopyWithImpl<$Res> i
 
   @override
   $Res call({
-    Object item = freezed,
+    Object? item = freezed,
   }) {
     return _then(_BoughtItem(
-      item == freezed ? _value.item : item as Item,
+      item == freezed
+          ? _value.item
+          : item // ignore: cast_nullable_to_non_nullable
+              as Item,
     ));
   }
 }
 
 /// @nodoc
 class _$_BoughtItem implements _BoughtItem {
-  const _$_BoughtItem(this.item) : assert(item != null);
+  const _$_BoughtItem(this.item);
 
   @override
   final Item item;
@@ -267,23 +275,20 @@ class _$_BoughtItem implements _BoughtItem {
 
   @override
   @optionalTypeArgs
-  TResult when<TResult extends Object>({
-    @required TResult initialized(Item item),
-    @required TResult boughtItem(Item item),
+  TResult when<TResult extends Object?>({
+    required TResult Function(Item item) initialized,
+    required TResult Function(Item item) boughtItem,
   }) {
-    assert(initialized != null);
-    assert(boughtItem != null);
     return boughtItem(item);
   }
 
   @override
   @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object>({
-    TResult initialized(Item item),
-    TResult boughtItem(Item item),
-    @required TResult orElse(),
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(Item item)? initialized,
+    TResult Function(Item item)? boughtItem,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (boughtItem != null) {
       return boughtItem(item);
     }
@@ -292,23 +297,20 @@ class _$_BoughtItem implements _BoughtItem {
 
   @override
   @optionalTypeArgs
-  TResult map<TResult extends Object>({
-    @required TResult initialized(_Initialized value),
-    @required TResult boughtItem(_BoughtItem value),
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initialized value) initialized,
+    required TResult Function(_BoughtItem value) boughtItem,
   }) {
-    assert(initialized != null);
-    assert(boughtItem != null);
     return boughtItem(this);
   }
 
   @override
   @optionalTypeArgs
-  TResult maybeMap<TResult extends Object>({
-    TResult initialized(_Initialized value),
-    TResult boughtItem(_BoughtItem value),
-    @required TResult orElse(),
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initialized value)? initialized,
+    TResult Function(_BoughtItem value)? boughtItem,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (boughtItem != null) {
       return boughtItem(this);
     }
@@ -320,42 +322,37 @@ abstract class _BoughtItem implements BuyItemEvent {
   const factory _BoughtItem(Item item) = _$_BoughtItem;
 
   @override
-  Item get item;
+  Item get item => throw _privateConstructorUsedError;
+
   @override
   @JsonKey(ignore: true)
-  _$BoughtItemCopyWith<_BoughtItem> get copyWith;
+  _$BoughtItemCopyWith<_BoughtItem> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 class _$BuyItemStateTearOff {
   const _$BuyItemStateTearOff();
 
-// ignore: unused_element
   _Initial initial() {
     return const _Initial();
   }
 
-// ignore: unused_element
   _ActionInProgress actionInProgress() {
     return const _ActionInProgress();
   }
 
-// ignore: unused_element
   _Owns owns() {
     return const _Owns();
   }
 
-// ignore: unused_element
   _DoesNotOwn doesNotOwn() {
     return const _DoesNotOwn();
   }
 
-// ignore: unused_element
   _PurchaseSuccess purchaseSuccess() {
     return const _PurchaseSuccess();
   }
 
-// ignore: unused_element
   _PurchaseFailure purchaseFailure(Failure<dynamic> failure) {
     return _PurchaseFailure(
       failure,
@@ -364,49 +361,55 @@ class _$BuyItemStateTearOff {
 }
 
 /// @nodoc
-// ignore: unused_element
 const $BuyItemState = _$BuyItemStateTearOff();
 
 /// @nodoc
 mixin _$BuyItemState {
   @optionalTypeArgs
-  TResult when<TResult extends Object>({
-    @required TResult initial(),
-    @required TResult actionInProgress(),
-    @required TResult owns(),
-    @required TResult doesNotOwn(),
-    @required TResult purchaseSuccess(),
-    @required TResult purchaseFailure(Failure<dynamic> failure),
-  });
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() actionInProgress,
+    required TResult Function() owns,
+    required TResult Function() doesNotOwn,
+    required TResult Function() purchaseSuccess,
+    required TResult Function(Failure<dynamic> failure) purchaseFailure,
+  }) =>
+      throw _privateConstructorUsedError;
+
   @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object>({
-    TResult initial(),
-    TResult actionInProgress(),
-    TResult owns(),
-    TResult doesNotOwn(),
-    TResult purchaseSuccess(),
-    TResult purchaseFailure(Failure<dynamic> failure),
-    @required TResult orElse(),
-  });
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? actionInProgress,
+    TResult Function()? owns,
+    TResult Function()? doesNotOwn,
+    TResult Function()? purchaseSuccess,
+    TResult Function(Failure<dynamic> failure)? purchaseFailure,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
+
   @optionalTypeArgs
-  TResult map<TResult extends Object>({
-    @required TResult initial(_Initial value),
-    @required TResult actionInProgress(_ActionInProgress value),
-    @required TResult owns(_Owns value),
-    @required TResult doesNotOwn(_DoesNotOwn value),
-    @required TResult purchaseSuccess(_PurchaseSuccess value),
-    @required TResult purchaseFailure(_PurchaseFailure value),
-  });
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial value) initial,
+    required TResult Function(_ActionInProgress value) actionInProgress,
+    required TResult Function(_Owns value) owns,
+    required TResult Function(_DoesNotOwn value) doesNotOwn,
+    required TResult Function(_PurchaseSuccess value) purchaseSuccess,
+    required TResult Function(_PurchaseFailure value) purchaseFailure,
+  }) =>
+      throw _privateConstructorUsedError;
+
   @optionalTypeArgs
-  TResult maybeMap<TResult extends Object>({
-    TResult initial(_Initial value),
-    TResult actionInProgress(_ActionInProgress value),
-    TResult owns(_Owns value),
-    TResult doesNotOwn(_DoesNotOwn value),
-    TResult purchaseSuccess(_PurchaseSuccess value),
-    TResult purchaseFailure(_PurchaseFailure value),
-    @required TResult orElse(),
-  });
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_ActionInProgress value)? actionInProgress,
+    TResult Function(_Owns value)? owns,
+    TResult Function(_DoesNotOwn value)? doesNotOwn,
+    TResult Function(_PurchaseSuccess value)? purchaseSuccess,
+    TResult Function(_PurchaseFailure value)? purchaseFailure,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -455,35 +458,28 @@ class _$_Initial implements _Initial {
 
   @override
   @optionalTypeArgs
-  TResult when<TResult extends Object>({
-    @required TResult initial(),
-    @required TResult actionInProgress(),
-    @required TResult owns(),
-    @required TResult doesNotOwn(),
-    @required TResult purchaseSuccess(),
-    @required TResult purchaseFailure(Failure<dynamic> failure),
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() actionInProgress,
+    required TResult Function() owns,
+    required TResult Function() doesNotOwn,
+    required TResult Function() purchaseSuccess,
+    required TResult Function(Failure<dynamic> failure) purchaseFailure,
   }) {
-    assert(initial != null);
-    assert(actionInProgress != null);
-    assert(owns != null);
-    assert(doesNotOwn != null);
-    assert(purchaseSuccess != null);
-    assert(purchaseFailure != null);
     return initial();
   }
 
   @override
   @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object>({
-    TResult initial(),
-    TResult actionInProgress(),
-    TResult owns(),
-    TResult doesNotOwn(),
-    TResult purchaseSuccess(),
-    TResult purchaseFailure(Failure<dynamic> failure),
-    @required TResult orElse(),
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? actionInProgress,
+    TResult Function()? owns,
+    TResult Function()? doesNotOwn,
+    TResult Function()? purchaseSuccess,
+    TResult Function(Failure<dynamic> failure)? purchaseFailure,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (initial != null) {
       return initial();
     }
@@ -492,35 +488,28 @@ class _$_Initial implements _Initial {
 
   @override
   @optionalTypeArgs
-  TResult map<TResult extends Object>({
-    @required TResult initial(_Initial value),
-    @required TResult actionInProgress(_ActionInProgress value),
-    @required TResult owns(_Owns value),
-    @required TResult doesNotOwn(_DoesNotOwn value),
-    @required TResult purchaseSuccess(_PurchaseSuccess value),
-    @required TResult purchaseFailure(_PurchaseFailure value),
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial value) initial,
+    required TResult Function(_ActionInProgress value) actionInProgress,
+    required TResult Function(_Owns value) owns,
+    required TResult Function(_DoesNotOwn value) doesNotOwn,
+    required TResult Function(_PurchaseSuccess value) purchaseSuccess,
+    required TResult Function(_PurchaseFailure value) purchaseFailure,
   }) {
-    assert(initial != null);
-    assert(actionInProgress != null);
-    assert(owns != null);
-    assert(doesNotOwn != null);
-    assert(purchaseSuccess != null);
-    assert(purchaseFailure != null);
     return initial(this);
   }
 
   @override
   @optionalTypeArgs
-  TResult maybeMap<TResult extends Object>({
-    TResult initial(_Initial value),
-    TResult actionInProgress(_ActionInProgress value),
-    TResult owns(_Owns value),
-    TResult doesNotOwn(_DoesNotOwn value),
-    TResult purchaseSuccess(_PurchaseSuccess value),
-    TResult purchaseFailure(_PurchaseFailure value),
-    @required TResult orElse(),
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_ActionInProgress value)? actionInProgress,
+    TResult Function(_Owns value)? owns,
+    TResult Function(_DoesNotOwn value)? doesNotOwn,
+    TResult Function(_PurchaseSuccess value)? purchaseSuccess,
+    TResult Function(_PurchaseFailure value)? purchaseFailure,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (initial != null) {
       return initial(this);
     }
@@ -564,35 +553,28 @@ class _$_ActionInProgress implements _ActionInProgress {
 
   @override
   @optionalTypeArgs
-  TResult when<TResult extends Object>({
-    @required TResult initial(),
-    @required TResult actionInProgress(),
-    @required TResult owns(),
-    @required TResult doesNotOwn(),
-    @required TResult purchaseSuccess(),
-    @required TResult purchaseFailure(Failure<dynamic> failure),
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() actionInProgress,
+    required TResult Function() owns,
+    required TResult Function() doesNotOwn,
+    required TResult Function() purchaseSuccess,
+    required TResult Function(Failure<dynamic> failure) purchaseFailure,
   }) {
-    assert(initial != null);
-    assert(actionInProgress != null);
-    assert(owns != null);
-    assert(doesNotOwn != null);
-    assert(purchaseSuccess != null);
-    assert(purchaseFailure != null);
     return actionInProgress();
   }
 
   @override
   @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object>({
-    TResult initial(),
-    TResult actionInProgress(),
-    TResult owns(),
-    TResult doesNotOwn(),
-    TResult purchaseSuccess(),
-    TResult purchaseFailure(Failure<dynamic> failure),
-    @required TResult orElse(),
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? actionInProgress,
+    TResult Function()? owns,
+    TResult Function()? doesNotOwn,
+    TResult Function()? purchaseSuccess,
+    TResult Function(Failure<dynamic> failure)? purchaseFailure,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (actionInProgress != null) {
       return actionInProgress();
     }
@@ -601,35 +583,28 @@ class _$_ActionInProgress implements _ActionInProgress {
 
   @override
   @optionalTypeArgs
-  TResult map<TResult extends Object>({
-    @required TResult initial(_Initial value),
-    @required TResult actionInProgress(_ActionInProgress value),
-    @required TResult owns(_Owns value),
-    @required TResult doesNotOwn(_DoesNotOwn value),
-    @required TResult purchaseSuccess(_PurchaseSuccess value),
-    @required TResult purchaseFailure(_PurchaseFailure value),
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial value) initial,
+    required TResult Function(_ActionInProgress value) actionInProgress,
+    required TResult Function(_Owns value) owns,
+    required TResult Function(_DoesNotOwn value) doesNotOwn,
+    required TResult Function(_PurchaseSuccess value) purchaseSuccess,
+    required TResult Function(_PurchaseFailure value) purchaseFailure,
   }) {
-    assert(initial != null);
-    assert(actionInProgress != null);
-    assert(owns != null);
-    assert(doesNotOwn != null);
-    assert(purchaseSuccess != null);
-    assert(purchaseFailure != null);
     return actionInProgress(this);
   }
 
   @override
   @optionalTypeArgs
-  TResult maybeMap<TResult extends Object>({
-    TResult initial(_Initial value),
-    TResult actionInProgress(_ActionInProgress value),
-    TResult owns(_Owns value),
-    TResult doesNotOwn(_DoesNotOwn value),
-    TResult purchaseSuccess(_PurchaseSuccess value),
-    TResult purchaseFailure(_PurchaseFailure value),
-    @required TResult orElse(),
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_ActionInProgress value)? actionInProgress,
+    TResult Function(_Owns value)? owns,
+    TResult Function(_DoesNotOwn value)? doesNotOwn,
+    TResult Function(_PurchaseSuccess value)? purchaseSuccess,
+    TResult Function(_PurchaseFailure value)? purchaseFailure,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (actionInProgress != null) {
       return actionInProgress(this);
     }
@@ -673,35 +648,28 @@ class _$_Owns implements _Owns {
 
   @override
   @optionalTypeArgs
-  TResult when<TResult extends Object>({
-    @required TResult initial(),
-    @required TResult actionInProgress(),
-    @required TResult owns(),
-    @required TResult doesNotOwn(),
-    @required TResult purchaseSuccess(),
-    @required TResult purchaseFailure(Failure<dynamic> failure),
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() actionInProgress,
+    required TResult Function() owns,
+    required TResult Function() doesNotOwn,
+    required TResult Function() purchaseSuccess,
+    required TResult Function(Failure<dynamic> failure) purchaseFailure,
   }) {
-    assert(initial != null);
-    assert(actionInProgress != null);
-    assert(owns != null);
-    assert(doesNotOwn != null);
-    assert(purchaseSuccess != null);
-    assert(purchaseFailure != null);
     return owns();
   }
 
   @override
   @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object>({
-    TResult initial(),
-    TResult actionInProgress(),
-    TResult owns(),
-    TResult doesNotOwn(),
-    TResult purchaseSuccess(),
-    TResult purchaseFailure(Failure<dynamic> failure),
-    @required TResult orElse(),
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? actionInProgress,
+    TResult Function()? owns,
+    TResult Function()? doesNotOwn,
+    TResult Function()? purchaseSuccess,
+    TResult Function(Failure<dynamic> failure)? purchaseFailure,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (owns != null) {
       return owns();
     }
@@ -710,35 +678,28 @@ class _$_Owns implements _Owns {
 
   @override
   @optionalTypeArgs
-  TResult map<TResult extends Object>({
-    @required TResult initial(_Initial value),
-    @required TResult actionInProgress(_ActionInProgress value),
-    @required TResult owns(_Owns value),
-    @required TResult doesNotOwn(_DoesNotOwn value),
-    @required TResult purchaseSuccess(_PurchaseSuccess value),
-    @required TResult purchaseFailure(_PurchaseFailure value),
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial value) initial,
+    required TResult Function(_ActionInProgress value) actionInProgress,
+    required TResult Function(_Owns value) owns,
+    required TResult Function(_DoesNotOwn value) doesNotOwn,
+    required TResult Function(_PurchaseSuccess value) purchaseSuccess,
+    required TResult Function(_PurchaseFailure value) purchaseFailure,
   }) {
-    assert(initial != null);
-    assert(actionInProgress != null);
-    assert(owns != null);
-    assert(doesNotOwn != null);
-    assert(purchaseSuccess != null);
-    assert(purchaseFailure != null);
     return owns(this);
   }
 
   @override
   @optionalTypeArgs
-  TResult maybeMap<TResult extends Object>({
-    TResult initial(_Initial value),
-    TResult actionInProgress(_ActionInProgress value),
-    TResult owns(_Owns value),
-    TResult doesNotOwn(_DoesNotOwn value),
-    TResult purchaseSuccess(_PurchaseSuccess value),
-    TResult purchaseFailure(_PurchaseFailure value),
-    @required TResult orElse(),
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_ActionInProgress value)? actionInProgress,
+    TResult Function(_Owns value)? owns,
+    TResult Function(_DoesNotOwn value)? doesNotOwn,
+    TResult Function(_PurchaseSuccess value)? purchaseSuccess,
+    TResult Function(_PurchaseFailure value)? purchaseFailure,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (owns != null) {
       return owns(this);
     }
@@ -782,35 +743,28 @@ class _$_DoesNotOwn implements _DoesNotOwn {
 
   @override
   @optionalTypeArgs
-  TResult when<TResult extends Object>({
-    @required TResult initial(),
-    @required TResult actionInProgress(),
-    @required TResult owns(),
-    @required TResult doesNotOwn(),
-    @required TResult purchaseSuccess(),
-    @required TResult purchaseFailure(Failure<dynamic> failure),
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() actionInProgress,
+    required TResult Function() owns,
+    required TResult Function() doesNotOwn,
+    required TResult Function() purchaseSuccess,
+    required TResult Function(Failure<dynamic> failure) purchaseFailure,
   }) {
-    assert(initial != null);
-    assert(actionInProgress != null);
-    assert(owns != null);
-    assert(doesNotOwn != null);
-    assert(purchaseSuccess != null);
-    assert(purchaseFailure != null);
     return doesNotOwn();
   }
 
   @override
   @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object>({
-    TResult initial(),
-    TResult actionInProgress(),
-    TResult owns(),
-    TResult doesNotOwn(),
-    TResult purchaseSuccess(),
-    TResult purchaseFailure(Failure<dynamic> failure),
-    @required TResult orElse(),
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? actionInProgress,
+    TResult Function()? owns,
+    TResult Function()? doesNotOwn,
+    TResult Function()? purchaseSuccess,
+    TResult Function(Failure<dynamic> failure)? purchaseFailure,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (doesNotOwn != null) {
       return doesNotOwn();
     }
@@ -819,35 +773,28 @@ class _$_DoesNotOwn implements _DoesNotOwn {
 
   @override
   @optionalTypeArgs
-  TResult map<TResult extends Object>({
-    @required TResult initial(_Initial value),
-    @required TResult actionInProgress(_ActionInProgress value),
-    @required TResult owns(_Owns value),
-    @required TResult doesNotOwn(_DoesNotOwn value),
-    @required TResult purchaseSuccess(_PurchaseSuccess value),
-    @required TResult purchaseFailure(_PurchaseFailure value),
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial value) initial,
+    required TResult Function(_ActionInProgress value) actionInProgress,
+    required TResult Function(_Owns value) owns,
+    required TResult Function(_DoesNotOwn value) doesNotOwn,
+    required TResult Function(_PurchaseSuccess value) purchaseSuccess,
+    required TResult Function(_PurchaseFailure value) purchaseFailure,
   }) {
-    assert(initial != null);
-    assert(actionInProgress != null);
-    assert(owns != null);
-    assert(doesNotOwn != null);
-    assert(purchaseSuccess != null);
-    assert(purchaseFailure != null);
     return doesNotOwn(this);
   }
 
   @override
   @optionalTypeArgs
-  TResult maybeMap<TResult extends Object>({
-    TResult initial(_Initial value),
-    TResult actionInProgress(_ActionInProgress value),
-    TResult owns(_Owns value),
-    TResult doesNotOwn(_DoesNotOwn value),
-    TResult purchaseSuccess(_PurchaseSuccess value),
-    TResult purchaseFailure(_PurchaseFailure value),
-    @required TResult orElse(),
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_ActionInProgress value)? actionInProgress,
+    TResult Function(_Owns value)? owns,
+    TResult Function(_DoesNotOwn value)? doesNotOwn,
+    TResult Function(_PurchaseSuccess value)? purchaseSuccess,
+    TResult Function(_PurchaseFailure value)? purchaseFailure,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (doesNotOwn != null) {
       return doesNotOwn(this);
     }
@@ -891,35 +838,28 @@ class _$_PurchaseSuccess implements _PurchaseSuccess {
 
   @override
   @optionalTypeArgs
-  TResult when<TResult extends Object>({
-    @required TResult initial(),
-    @required TResult actionInProgress(),
-    @required TResult owns(),
-    @required TResult doesNotOwn(),
-    @required TResult purchaseSuccess(),
-    @required TResult purchaseFailure(Failure<dynamic> failure),
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() actionInProgress,
+    required TResult Function() owns,
+    required TResult Function() doesNotOwn,
+    required TResult Function() purchaseSuccess,
+    required TResult Function(Failure<dynamic> failure) purchaseFailure,
   }) {
-    assert(initial != null);
-    assert(actionInProgress != null);
-    assert(owns != null);
-    assert(doesNotOwn != null);
-    assert(purchaseSuccess != null);
-    assert(purchaseFailure != null);
     return purchaseSuccess();
   }
 
   @override
   @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object>({
-    TResult initial(),
-    TResult actionInProgress(),
-    TResult owns(),
-    TResult doesNotOwn(),
-    TResult purchaseSuccess(),
-    TResult purchaseFailure(Failure<dynamic> failure),
-    @required TResult orElse(),
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? actionInProgress,
+    TResult Function()? owns,
+    TResult Function()? doesNotOwn,
+    TResult Function()? purchaseSuccess,
+    TResult Function(Failure<dynamic> failure)? purchaseFailure,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (purchaseSuccess != null) {
       return purchaseSuccess();
     }
@@ -928,35 +868,28 @@ class _$_PurchaseSuccess implements _PurchaseSuccess {
 
   @override
   @optionalTypeArgs
-  TResult map<TResult extends Object>({
-    @required TResult initial(_Initial value),
-    @required TResult actionInProgress(_ActionInProgress value),
-    @required TResult owns(_Owns value),
-    @required TResult doesNotOwn(_DoesNotOwn value),
-    @required TResult purchaseSuccess(_PurchaseSuccess value),
-    @required TResult purchaseFailure(_PurchaseFailure value),
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial value) initial,
+    required TResult Function(_ActionInProgress value) actionInProgress,
+    required TResult Function(_Owns value) owns,
+    required TResult Function(_DoesNotOwn value) doesNotOwn,
+    required TResult Function(_PurchaseSuccess value) purchaseSuccess,
+    required TResult Function(_PurchaseFailure value) purchaseFailure,
   }) {
-    assert(initial != null);
-    assert(actionInProgress != null);
-    assert(owns != null);
-    assert(doesNotOwn != null);
-    assert(purchaseSuccess != null);
-    assert(purchaseFailure != null);
     return purchaseSuccess(this);
   }
 
   @override
   @optionalTypeArgs
-  TResult maybeMap<TResult extends Object>({
-    TResult initial(_Initial value),
-    TResult actionInProgress(_ActionInProgress value),
-    TResult owns(_Owns value),
-    TResult doesNotOwn(_DoesNotOwn value),
-    TResult purchaseSuccess(_PurchaseSuccess value),
-    TResult purchaseFailure(_PurchaseFailure value),
-    @required TResult orElse(),
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_ActionInProgress value)? actionInProgress,
+    TResult Function(_Owns value)? owns,
+    TResult Function(_DoesNotOwn value)? doesNotOwn,
+    TResult Function(_PurchaseSuccess value)? purchaseSuccess,
+    TResult Function(_PurchaseFailure value)? purchaseFailure,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (purchaseSuccess != null) {
       return purchaseSuccess(this);
     }
@@ -986,18 +919,18 @@ class __$PurchaseFailureCopyWithImpl<$Res> extends _$BuyItemStateCopyWithImpl<$R
 
   @override
   $Res call({
-    Object failure = freezed,
+    Object? failure = freezed,
   }) {
     return _then(_PurchaseFailure(
-      failure == freezed ? _value.failure : failure as Failure<dynamic>,
+      failure == freezed
+          ? _value.failure
+          : failure // ignore: cast_nullable_to_non_nullable
+              as Failure<dynamic>,
     ));
   }
 
   @override
   $FailureCopyWith<dynamic, $Res> get failure {
-    if (_value.failure == null) {
-      return null;
-    }
     return $FailureCopyWith<dynamic, $Res>(_value.failure, (value) {
       return _then(_value.copyWith(failure: value));
     });
@@ -1006,7 +939,7 @@ class __$PurchaseFailureCopyWithImpl<$Res> extends _$BuyItemStateCopyWithImpl<$R
 
 /// @nodoc
 class _$_PurchaseFailure implements _PurchaseFailure {
-  const _$_PurchaseFailure(this.failure) : assert(failure != null);
+  const _$_PurchaseFailure(this.failure);
 
   @override
   final Failure<dynamic> failure;
@@ -1030,35 +963,28 @@ class _$_PurchaseFailure implements _PurchaseFailure {
 
   @override
   @optionalTypeArgs
-  TResult when<TResult extends Object>({
-    @required TResult initial(),
-    @required TResult actionInProgress(),
-    @required TResult owns(),
-    @required TResult doesNotOwn(),
-    @required TResult purchaseSuccess(),
-    @required TResult purchaseFailure(Failure<dynamic> failure),
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() actionInProgress,
+    required TResult Function() owns,
+    required TResult Function() doesNotOwn,
+    required TResult Function() purchaseSuccess,
+    required TResult Function(Failure<dynamic> failure) purchaseFailure,
   }) {
-    assert(initial != null);
-    assert(actionInProgress != null);
-    assert(owns != null);
-    assert(doesNotOwn != null);
-    assert(purchaseSuccess != null);
-    assert(purchaseFailure != null);
     return purchaseFailure(failure);
   }
 
   @override
   @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object>({
-    TResult initial(),
-    TResult actionInProgress(),
-    TResult owns(),
-    TResult doesNotOwn(),
-    TResult purchaseSuccess(),
-    TResult purchaseFailure(Failure<dynamic> failure),
-    @required TResult orElse(),
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? actionInProgress,
+    TResult Function()? owns,
+    TResult Function()? doesNotOwn,
+    TResult Function()? purchaseSuccess,
+    TResult Function(Failure<dynamic> failure)? purchaseFailure,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (purchaseFailure != null) {
       return purchaseFailure(failure);
     }
@@ -1067,35 +993,28 @@ class _$_PurchaseFailure implements _PurchaseFailure {
 
   @override
   @optionalTypeArgs
-  TResult map<TResult extends Object>({
-    @required TResult initial(_Initial value),
-    @required TResult actionInProgress(_ActionInProgress value),
-    @required TResult owns(_Owns value),
-    @required TResult doesNotOwn(_DoesNotOwn value),
-    @required TResult purchaseSuccess(_PurchaseSuccess value),
-    @required TResult purchaseFailure(_PurchaseFailure value),
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial value) initial,
+    required TResult Function(_ActionInProgress value) actionInProgress,
+    required TResult Function(_Owns value) owns,
+    required TResult Function(_DoesNotOwn value) doesNotOwn,
+    required TResult Function(_PurchaseSuccess value) purchaseSuccess,
+    required TResult Function(_PurchaseFailure value) purchaseFailure,
   }) {
-    assert(initial != null);
-    assert(actionInProgress != null);
-    assert(owns != null);
-    assert(doesNotOwn != null);
-    assert(purchaseSuccess != null);
-    assert(purchaseFailure != null);
     return purchaseFailure(this);
   }
 
   @override
   @optionalTypeArgs
-  TResult maybeMap<TResult extends Object>({
-    TResult initial(_Initial value),
-    TResult actionInProgress(_ActionInProgress value),
-    TResult owns(_Owns value),
-    TResult doesNotOwn(_DoesNotOwn value),
-    TResult purchaseSuccess(_PurchaseSuccess value),
-    TResult purchaseFailure(_PurchaseFailure value),
-    @required TResult orElse(),
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_ActionInProgress value)? actionInProgress,
+    TResult Function(_Owns value)? owns,
+    TResult Function(_DoesNotOwn value)? doesNotOwn,
+    TResult Function(_PurchaseSuccess value)? purchaseSuccess,
+    TResult Function(_PurchaseFailure value)? purchaseFailure,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (purchaseFailure != null) {
       return purchaseFailure(this);
     }
@@ -1106,7 +1025,8 @@ class _$_PurchaseFailure implements _PurchaseFailure {
 abstract class _PurchaseFailure implements BuyItemState {
   const factory _PurchaseFailure(Failure<dynamic> failure) = _$_PurchaseFailure;
 
-  Failure<dynamic> get failure;
+  Failure<dynamic> get failure => throw _privateConstructorUsedError;
+
   @JsonKey(ignore: true)
-  _$PurchaseFailureCopyWith<_PurchaseFailure> get copyWith;
+  _$PurchaseFailureCopyWith<_PurchaseFailure> get copyWith => throw _privateConstructorUsedError;
 }

@@ -1,5 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides
 
 part of 'user_dto.dart';
 
@@ -8,6 +8,10 @@ part of 'user_dto.dart';
 // **************************************************************************
 
 T _$identity<T>(T value) => value;
+
+final _privateConstructorUsedError = UnsupportedError(
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+
 UserDto _$UserDtoFromJson(Map<String, dynamic> json) {
   return _UserDto.fromJson(json);
 }
@@ -16,37 +20,36 @@ UserDto _$UserDtoFromJson(Map<String, dynamic> json) {
 class _$UserDtoTearOff {
   const _$UserDtoTearOff();
 
-// ignore: unused_element
   _UserDto call(
-      {@required String id,
-      @required String name,
-      @required String username,
-      @required String password,
-      @required String email,
-      @required @ServerTimestampConverter() DateTime birthday,
-      @required String description,
-      @required String imageURL,
-      @required int level,
-      @required int experiencePoints,
-      @required bool privacy,
-      @required bool adminPowers,
-      @required bool enabled,
-      @required @ServerTimestampConverter() DateTime lastLogin,
-      @required @ServerTimestampConverter() DateTime creationDate,
-      @required @ServerTimestampConverter() DateTime modificationDate,
-      @required OptionsDto options,
-      @required Set<String> blockedUsersIds,
-      @required Set<String> followedUsersIds,
-      @required Set<String> interestsIds,
-      @required Set<String> achievementsIds,
-      @required Set<String> experiencesDoneIds,
-      @required Set<String> experiencesLikedIds,
-      @required Set<String> experiencesToDoIds,
-      @required Set<DeviceDto> devices,
-      @required Set<SystemDto> systems,
-      @required Set<ItemDto> items,
-      @required int coins,
-      @required int followersAmount}) {
+      {required String id,
+      required String name,
+      required String username,
+      required String password,
+      required String email,
+      @ServerTimestampConverter() required DateTime birthday,
+      required String description,
+      required String imageURL,
+      required int level,
+      required int experiencePoints,
+      required bool privacy,
+      required bool adminPowers,
+      required bool enabled,
+      @ServerTimestampConverter() required DateTime lastLogin,
+      @ServerTimestampConverter() required DateTime creationDate,
+      @ServerTimestampConverter() required DateTime modificationDate,
+      required OptionsDto options,
+      required Set<String> blockedUsersIds,
+      required Set<String> followedUsersIds,
+      required Set<String> interestsIds,
+      required Set<String> achievementsIds,
+      required Set<String> experiencesDoneIds,
+      required Set<String> experiencesLikedIds,
+      required Set<String> experiencesToDoIds,
+      required Set<DeviceDto> devices,
+      required Set<SystemDto> systems,
+      required Set<ItemDto> items,
+      required int coins,
+      required int followersAmount}) {
     return _UserDto(
       id: id,
       name: name,
@@ -80,56 +83,82 @@ class _$UserDtoTearOff {
     );
   }
 
-// ignore: unused_element
   UserDto fromJson(Map<String, Object> json) {
     return UserDto.fromJson(json);
   }
 }
 
 /// @nodoc
-// ignore: unused_element
 const $UserDto = _$UserDtoTearOff();
 
 /// @nodoc
 mixin _$UserDto {
-  String get id;
-  String get name;
-  String get username; // Shouldn't this be encrypted in some way?
-// Maybe it shouldn't even be part of the dto at all, as Firebase handles it at login time
-  String get password;
-  String get email;
-  @ServerTimestampConverter()
-  DateTime get birthday;
-  String get description;
-  String get imageURL;
-  int get level;
-  int get experiencePoints;
-  bool get privacy;
-  bool get adminPowers;
-  bool get enabled;
-  @ServerTimestampConverter()
-  DateTime get lastLogin;
-  @ServerTimestampConverter()
-  DateTime get creationDate;
-  @ServerTimestampConverter()
-  DateTime get modificationDate;
-  OptionsDto get options;
-  Set<String> get blockedUsersIds;
-  Set<String> get followedUsersIds;
-  Set<String> get interestsIds;
-  Set<String> get achievementsIds;
-  Set<String> get experiencesDoneIds;
-  Set<String> get experiencesLikedIds;
-  Set<String> get experiencesToDoIds;
-  Set<DeviceDto> get devices;
-  Set<SystemDto> get systems;
-  Set<ItemDto> get items;
-  int get coins;
-  int get followersAmount;
+  String get id => throw _privateConstructorUsedError;
 
-  Map<String, dynamic> toJson();
+  String get name => throw _privateConstructorUsedError;
+
+  String get username => throw _privateConstructorUsedError; // Shouldn't this be encrypted in some way?
+// Maybe it shouldn't even be part of the dto at all, as Firebase handles it at login time
+  String get password => throw _privateConstructorUsedError;
+
+  String get email => throw _privateConstructorUsedError;
+
+  @ServerTimestampConverter()
+  DateTime get birthday => throw _privateConstructorUsedError;
+
+  String get description => throw _privateConstructorUsedError;
+
+  String get imageURL => throw _privateConstructorUsedError;
+
+  int get level => throw _privateConstructorUsedError;
+
+  int get experiencePoints => throw _privateConstructorUsedError;
+
+  bool get privacy => throw _privateConstructorUsedError;
+
+  bool get adminPowers => throw _privateConstructorUsedError;
+
+  bool get enabled => throw _privateConstructorUsedError;
+
+  @ServerTimestampConverter()
+  DateTime get lastLogin => throw _privateConstructorUsedError;
+
+  @ServerTimestampConverter()
+  DateTime get creationDate => throw _privateConstructorUsedError;
+
+  @ServerTimestampConverter()
+  DateTime get modificationDate => throw _privateConstructorUsedError;
+
+  OptionsDto get options => throw _privateConstructorUsedError;
+
+  Set<String> get blockedUsersIds => throw _privateConstructorUsedError;
+
+  Set<String> get followedUsersIds => throw _privateConstructorUsedError;
+
+  Set<String> get interestsIds => throw _privateConstructorUsedError;
+
+  Set<String> get achievementsIds => throw _privateConstructorUsedError;
+
+  Set<String> get experiencesDoneIds => throw _privateConstructorUsedError;
+
+  Set<String> get experiencesLikedIds => throw _privateConstructorUsedError;
+
+  Set<String> get experiencesToDoIds => throw _privateConstructorUsedError;
+
+  Set<DeviceDto> get devices => throw _privateConstructorUsedError;
+
+  Set<SystemDto> get systems => throw _privateConstructorUsedError;
+
+  Set<ItemDto> get items => throw _privateConstructorUsedError;
+
+  int get coins => throw _privateConstructorUsedError;
+
+  int get followersAmount => throw _privateConstructorUsedError;
+
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+
   @JsonKey(ignore: true)
-  $UserDtoCopyWith<UserDto> get copyWith;
+  $UserDtoCopyWith<UserDto> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -180,74 +209,158 @@ class _$UserDtoCopyWithImpl<$Res> implements $UserDtoCopyWith<$Res> {
 
   @override
   $Res call({
-    Object id = freezed,
-    Object name = freezed,
-    Object username = freezed,
-    Object password = freezed,
-    Object email = freezed,
-    Object birthday = freezed,
-    Object description = freezed,
-    Object imageURL = freezed,
-    Object level = freezed,
-    Object experiencePoints = freezed,
-    Object privacy = freezed,
-    Object adminPowers = freezed,
-    Object enabled = freezed,
-    Object lastLogin = freezed,
-    Object creationDate = freezed,
-    Object modificationDate = freezed,
-    Object options = freezed,
-    Object blockedUsersIds = freezed,
-    Object followedUsersIds = freezed,
-    Object interestsIds = freezed,
-    Object achievementsIds = freezed,
-    Object experiencesDoneIds = freezed,
-    Object experiencesLikedIds = freezed,
-    Object experiencesToDoIds = freezed,
-    Object devices = freezed,
-    Object systems = freezed,
-    Object items = freezed,
-    Object coins = freezed,
-    Object followersAmount = freezed,
+    Object? id = freezed,
+    Object? name = freezed,
+    Object? username = freezed,
+    Object? password = freezed,
+    Object? email = freezed,
+    Object? birthday = freezed,
+    Object? description = freezed,
+    Object? imageURL = freezed,
+    Object? level = freezed,
+    Object? experiencePoints = freezed,
+    Object? privacy = freezed,
+    Object? adminPowers = freezed,
+    Object? enabled = freezed,
+    Object? lastLogin = freezed,
+    Object? creationDate = freezed,
+    Object? modificationDate = freezed,
+    Object? options = freezed,
+    Object? blockedUsersIds = freezed,
+    Object? followedUsersIds = freezed,
+    Object? interestsIds = freezed,
+    Object? achievementsIds = freezed,
+    Object? experiencesDoneIds = freezed,
+    Object? experiencesLikedIds = freezed,
+    Object? experiencesToDoIds = freezed,
+    Object? devices = freezed,
+    Object? systems = freezed,
+    Object? items = freezed,
+    Object? coins = freezed,
+    Object? followersAmount = freezed,
   }) {
     return _then(_value.copyWith(
-      id: id == freezed ? _value.id : id as String,
-      name: name == freezed ? _value.name : name as String,
-      username: username == freezed ? _value.username : username as String,
-      password: password == freezed ? _value.password : password as String,
-      email: email == freezed ? _value.email : email as String,
-      birthday: birthday == freezed ? _value.birthday : birthday as DateTime,
-      description: description == freezed ? _value.description : description as String,
-      imageURL: imageURL == freezed ? _value.imageURL : imageURL as String,
-      level: level == freezed ? _value.level : level as int,
-      experiencePoints: experiencePoints == freezed ? _value.experiencePoints : experiencePoints as int,
-      privacy: privacy == freezed ? _value.privacy : privacy as bool,
-      adminPowers: adminPowers == freezed ? _value.adminPowers : adminPowers as bool,
-      enabled: enabled == freezed ? _value.enabled : enabled as bool,
-      lastLogin: lastLogin == freezed ? _value.lastLogin : lastLogin as DateTime,
-      creationDate: creationDate == freezed ? _value.creationDate : creationDate as DateTime,
-      modificationDate: modificationDate == freezed ? _value.modificationDate : modificationDate as DateTime,
-      options: options == freezed ? _value.options : options as OptionsDto,
-      blockedUsersIds: blockedUsersIds == freezed ? _value.blockedUsersIds : blockedUsersIds as Set<String>,
-      followedUsersIds: followedUsersIds == freezed ? _value.followedUsersIds : followedUsersIds as Set<String>,
-      interestsIds: interestsIds == freezed ? _value.interestsIds : interestsIds as Set<String>,
-      achievementsIds: achievementsIds == freezed ? _value.achievementsIds : achievementsIds as Set<String>,
-      experiencesDoneIds: experiencesDoneIds == freezed ? _value.experiencesDoneIds : experiencesDoneIds as Set<String>,
-      experiencesLikedIds: experiencesLikedIds == freezed ? _value.experiencesLikedIds : experiencesLikedIds as Set<String>,
-      experiencesToDoIds: experiencesToDoIds == freezed ? _value.experiencesToDoIds : experiencesToDoIds as Set<String>,
-      devices: devices == freezed ? _value.devices : devices as Set<DeviceDto>,
-      systems: systems == freezed ? _value.systems : systems as Set<SystemDto>,
-      items: items == freezed ? _value.items : items as Set<ItemDto>,
-      coins: coins == freezed ? _value.coins : coins as int,
-      followersAmount: followersAmount == freezed ? _value.followersAmount : followersAmount as int,
+      id: id == freezed
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String,
+      name: name == freezed
+          ? _value.name
+          : name // ignore: cast_nullable_to_non_nullable
+              as String,
+      username: username == freezed
+          ? _value.username
+          : username // ignore: cast_nullable_to_non_nullable
+              as String,
+      password: password == freezed
+          ? _value.password
+          : password // ignore: cast_nullable_to_non_nullable
+              as String,
+      email: email == freezed
+          ? _value.email
+          : email // ignore: cast_nullable_to_non_nullable
+              as String,
+      birthday: birthday == freezed
+          ? _value.birthday
+          : birthday // ignore: cast_nullable_to_non_nullable
+              as DateTime,
+      description: description == freezed
+          ? _value.description
+          : description // ignore: cast_nullable_to_non_nullable
+              as String,
+      imageURL: imageURL == freezed
+          ? _value.imageURL
+          : imageURL // ignore: cast_nullable_to_non_nullable
+              as String,
+      level: level == freezed
+          ? _value.level
+          : level // ignore: cast_nullable_to_non_nullable
+              as int,
+      experiencePoints: experiencePoints == freezed
+          ? _value.experiencePoints
+          : experiencePoints // ignore: cast_nullable_to_non_nullable
+              as int,
+      privacy: privacy == freezed
+          ? _value.privacy
+          : privacy // ignore: cast_nullable_to_non_nullable
+              as bool,
+      adminPowers: adminPowers == freezed
+          ? _value.adminPowers
+          : adminPowers // ignore: cast_nullable_to_non_nullable
+              as bool,
+      enabled: enabled == freezed
+          ? _value.enabled
+          : enabled // ignore: cast_nullable_to_non_nullable
+              as bool,
+      lastLogin: lastLogin == freezed
+          ? _value.lastLogin
+          : lastLogin // ignore: cast_nullable_to_non_nullable
+              as DateTime,
+      creationDate: creationDate == freezed
+          ? _value.creationDate
+          : creationDate // ignore: cast_nullable_to_non_nullable
+              as DateTime,
+      modificationDate: modificationDate == freezed
+          ? _value.modificationDate
+          : modificationDate // ignore: cast_nullable_to_non_nullable
+              as DateTime,
+      options: options == freezed
+          ? _value.options
+          : options // ignore: cast_nullable_to_non_nullable
+              as OptionsDto,
+      blockedUsersIds: blockedUsersIds == freezed
+          ? _value.blockedUsersIds
+          : blockedUsersIds // ignore: cast_nullable_to_non_nullable
+              as Set<String>,
+      followedUsersIds: followedUsersIds == freezed
+          ? _value.followedUsersIds
+          : followedUsersIds // ignore: cast_nullable_to_non_nullable
+              as Set<String>,
+      interestsIds: interestsIds == freezed
+          ? _value.interestsIds
+          : interestsIds // ignore: cast_nullable_to_non_nullable
+              as Set<String>,
+      achievementsIds: achievementsIds == freezed
+          ? _value.achievementsIds
+          : achievementsIds // ignore: cast_nullable_to_non_nullable
+              as Set<String>,
+      experiencesDoneIds: experiencesDoneIds == freezed
+          ? _value.experiencesDoneIds
+          : experiencesDoneIds // ignore: cast_nullable_to_non_nullable
+              as Set<String>,
+      experiencesLikedIds: experiencesLikedIds == freezed
+          ? _value.experiencesLikedIds
+          : experiencesLikedIds // ignore: cast_nullable_to_non_nullable
+              as Set<String>,
+      experiencesToDoIds: experiencesToDoIds == freezed
+          ? _value.experiencesToDoIds
+          : experiencesToDoIds // ignore: cast_nullable_to_non_nullable
+              as Set<String>,
+      devices: devices == freezed
+          ? _value.devices
+          : devices // ignore: cast_nullable_to_non_nullable
+              as Set<DeviceDto>,
+      systems: systems == freezed
+          ? _value.systems
+          : systems // ignore: cast_nullable_to_non_nullable
+              as Set<SystemDto>,
+      items: items == freezed
+          ? _value.items
+          : items // ignore: cast_nullable_to_non_nullable
+              as Set<ItemDto>,
+      coins: coins == freezed
+          ? _value.coins
+          : coins // ignore: cast_nullable_to_non_nullable
+              as int,
+      followersAmount: followersAmount == freezed
+          ? _value.followersAmount
+          : followersAmount // ignore: cast_nullable_to_non_nullable
+              as int,
     ));
   }
 
   @override
   $OptionsDtoCopyWith<$Res> get options {
-    if (_value.options == null) {
-      return null;
-    }
     return $OptionsDtoCopyWith<$Res>(_value.options, (value) {
       return _then(_value.copyWith(options: value));
     });
@@ -303,66 +416,153 @@ class __$UserDtoCopyWithImpl<$Res> extends _$UserDtoCopyWithImpl<$Res> implement
 
   @override
   $Res call({
-    Object id = freezed,
-    Object name = freezed,
-    Object username = freezed,
-    Object password = freezed,
-    Object email = freezed,
-    Object birthday = freezed,
-    Object description = freezed,
-    Object imageURL = freezed,
-    Object level = freezed,
-    Object experiencePoints = freezed,
-    Object privacy = freezed,
-    Object adminPowers = freezed,
-    Object enabled = freezed,
-    Object lastLogin = freezed,
-    Object creationDate = freezed,
-    Object modificationDate = freezed,
-    Object options = freezed,
-    Object blockedUsersIds = freezed,
-    Object followedUsersIds = freezed,
-    Object interestsIds = freezed,
-    Object achievementsIds = freezed,
-    Object experiencesDoneIds = freezed,
-    Object experiencesLikedIds = freezed,
-    Object experiencesToDoIds = freezed,
-    Object devices = freezed,
-    Object systems = freezed,
-    Object items = freezed,
-    Object coins = freezed,
-    Object followersAmount = freezed,
+    Object? id = freezed,
+    Object? name = freezed,
+    Object? username = freezed,
+    Object? password = freezed,
+    Object? email = freezed,
+    Object? birthday = freezed,
+    Object? description = freezed,
+    Object? imageURL = freezed,
+    Object? level = freezed,
+    Object? experiencePoints = freezed,
+    Object? privacy = freezed,
+    Object? adminPowers = freezed,
+    Object? enabled = freezed,
+    Object? lastLogin = freezed,
+    Object? creationDate = freezed,
+    Object? modificationDate = freezed,
+    Object? options = freezed,
+    Object? blockedUsersIds = freezed,
+    Object? followedUsersIds = freezed,
+    Object? interestsIds = freezed,
+    Object? achievementsIds = freezed,
+    Object? experiencesDoneIds = freezed,
+    Object? experiencesLikedIds = freezed,
+    Object? experiencesToDoIds = freezed,
+    Object? devices = freezed,
+    Object? systems = freezed,
+    Object? items = freezed,
+    Object? coins = freezed,
+    Object? followersAmount = freezed,
   }) {
     return _then(_UserDto(
-      id: id == freezed ? _value.id : id as String,
-      name: name == freezed ? _value.name : name as String,
-      username: username == freezed ? _value.username : username as String,
-      password: password == freezed ? _value.password : password as String,
-      email: email == freezed ? _value.email : email as String,
-      birthday: birthday == freezed ? _value.birthday : birthday as DateTime,
-      description: description == freezed ? _value.description : description as String,
-      imageURL: imageURL == freezed ? _value.imageURL : imageURL as String,
-      level: level == freezed ? _value.level : level as int,
-      experiencePoints: experiencePoints == freezed ? _value.experiencePoints : experiencePoints as int,
-      privacy: privacy == freezed ? _value.privacy : privacy as bool,
-      adminPowers: adminPowers == freezed ? _value.adminPowers : adminPowers as bool,
-      enabled: enabled == freezed ? _value.enabled : enabled as bool,
-      lastLogin: lastLogin == freezed ? _value.lastLogin : lastLogin as DateTime,
-      creationDate: creationDate == freezed ? _value.creationDate : creationDate as DateTime,
-      modificationDate: modificationDate == freezed ? _value.modificationDate : modificationDate as DateTime,
-      options: options == freezed ? _value.options : options as OptionsDto,
-      blockedUsersIds: blockedUsersIds == freezed ? _value.blockedUsersIds : blockedUsersIds as Set<String>,
-      followedUsersIds: followedUsersIds == freezed ? _value.followedUsersIds : followedUsersIds as Set<String>,
-      interestsIds: interestsIds == freezed ? _value.interestsIds : interestsIds as Set<String>,
-      achievementsIds: achievementsIds == freezed ? _value.achievementsIds : achievementsIds as Set<String>,
-      experiencesDoneIds: experiencesDoneIds == freezed ? _value.experiencesDoneIds : experiencesDoneIds as Set<String>,
-      experiencesLikedIds: experiencesLikedIds == freezed ? _value.experiencesLikedIds : experiencesLikedIds as Set<String>,
-      experiencesToDoIds: experiencesToDoIds == freezed ? _value.experiencesToDoIds : experiencesToDoIds as Set<String>,
-      devices: devices == freezed ? _value.devices : devices as Set<DeviceDto>,
-      systems: systems == freezed ? _value.systems : systems as Set<SystemDto>,
-      items: items == freezed ? _value.items : items as Set<ItemDto>,
-      coins: coins == freezed ? _value.coins : coins as int,
-      followersAmount: followersAmount == freezed ? _value.followersAmount : followersAmount as int,
+      id: id == freezed
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String,
+      name: name == freezed
+          ? _value.name
+          : name // ignore: cast_nullable_to_non_nullable
+              as String,
+      username: username == freezed
+          ? _value.username
+          : username // ignore: cast_nullable_to_non_nullable
+              as String,
+      password: password == freezed
+          ? _value.password
+          : password // ignore: cast_nullable_to_non_nullable
+              as String,
+      email: email == freezed
+          ? _value.email
+          : email // ignore: cast_nullable_to_non_nullable
+              as String,
+      birthday: birthday == freezed
+          ? _value.birthday
+          : birthday // ignore: cast_nullable_to_non_nullable
+              as DateTime,
+      description: description == freezed
+          ? _value.description
+          : description // ignore: cast_nullable_to_non_nullable
+              as String,
+      imageURL: imageURL == freezed
+          ? _value.imageURL
+          : imageURL // ignore: cast_nullable_to_non_nullable
+              as String,
+      level: level == freezed
+          ? _value.level
+          : level // ignore: cast_nullable_to_non_nullable
+              as int,
+      experiencePoints: experiencePoints == freezed
+          ? _value.experiencePoints
+          : experiencePoints // ignore: cast_nullable_to_non_nullable
+              as int,
+      privacy: privacy == freezed
+          ? _value.privacy
+          : privacy // ignore: cast_nullable_to_non_nullable
+              as bool,
+      adminPowers: adminPowers == freezed
+          ? _value.adminPowers
+          : adminPowers // ignore: cast_nullable_to_non_nullable
+              as bool,
+      enabled: enabled == freezed
+          ? _value.enabled
+          : enabled // ignore: cast_nullable_to_non_nullable
+              as bool,
+      lastLogin: lastLogin == freezed
+          ? _value.lastLogin
+          : lastLogin // ignore: cast_nullable_to_non_nullable
+              as DateTime,
+      creationDate: creationDate == freezed
+          ? _value.creationDate
+          : creationDate // ignore: cast_nullable_to_non_nullable
+              as DateTime,
+      modificationDate: modificationDate == freezed
+          ? _value.modificationDate
+          : modificationDate // ignore: cast_nullable_to_non_nullable
+              as DateTime,
+      options: options == freezed
+          ? _value.options
+          : options // ignore: cast_nullable_to_non_nullable
+              as OptionsDto,
+      blockedUsersIds: blockedUsersIds == freezed
+          ? _value.blockedUsersIds
+          : blockedUsersIds // ignore: cast_nullable_to_non_nullable
+              as Set<String>,
+      followedUsersIds: followedUsersIds == freezed
+          ? _value.followedUsersIds
+          : followedUsersIds // ignore: cast_nullable_to_non_nullable
+              as Set<String>,
+      interestsIds: interestsIds == freezed
+          ? _value.interestsIds
+          : interestsIds // ignore: cast_nullable_to_non_nullable
+              as Set<String>,
+      achievementsIds: achievementsIds == freezed
+          ? _value.achievementsIds
+          : achievementsIds // ignore: cast_nullable_to_non_nullable
+              as Set<String>,
+      experiencesDoneIds: experiencesDoneIds == freezed
+          ? _value.experiencesDoneIds
+          : experiencesDoneIds // ignore: cast_nullable_to_non_nullable
+              as Set<String>,
+      experiencesLikedIds: experiencesLikedIds == freezed
+          ? _value.experiencesLikedIds
+          : experiencesLikedIds // ignore: cast_nullable_to_non_nullable
+              as Set<String>,
+      experiencesToDoIds: experiencesToDoIds == freezed
+          ? _value.experiencesToDoIds
+          : experiencesToDoIds // ignore: cast_nullable_to_non_nullable
+              as Set<String>,
+      devices: devices == freezed
+          ? _value.devices
+          : devices // ignore: cast_nullable_to_non_nullable
+              as Set<DeviceDto>,
+      systems: systems == freezed
+          ? _value.systems
+          : systems // ignore: cast_nullable_to_non_nullable
+              as Set<SystemDto>,
+      items: items == freezed
+          ? _value.items
+          : items // ignore: cast_nullable_to_non_nullable
+              as Set<ItemDto>,
+      coins: coins == freezed
+          ? _value.coins
+          : coins // ignore: cast_nullable_to_non_nullable
+              as int,
+      followersAmount: followersAmount == freezed
+          ? _value.followersAmount
+          : followersAmount // ignore: cast_nullable_to_non_nullable
+              as int,
     ));
   }
 }
@@ -372,65 +572,36 @@ class __$UserDtoCopyWithImpl<$Res> extends _$UserDtoCopyWithImpl<$Res> implement
 /// @nodoc
 class _$_UserDto extends _UserDto {
   const _$_UserDto(
-      {@required this.id,
-      @required this.name,
-      @required this.username,
-      @required this.password,
-      @required this.email,
-      @required @ServerTimestampConverter() this.birthday,
-      @required this.description,
-      @required this.imageURL,
-      @required this.level,
-      @required this.experiencePoints,
-      @required this.privacy,
-      @required this.adminPowers,
-      @required this.enabled,
-      @required @ServerTimestampConverter() this.lastLogin,
-      @required @ServerTimestampConverter() this.creationDate,
-      @required @ServerTimestampConverter() this.modificationDate,
-      @required this.options,
-      @required this.blockedUsersIds,
-      @required this.followedUsersIds,
-      @required this.interestsIds,
-      @required this.achievementsIds,
-      @required this.experiencesDoneIds,
-      @required this.experiencesLikedIds,
-      @required this.experiencesToDoIds,
-      @required this.devices,
-      @required this.systems,
-      @required this.items,
-      @required this.coins,
-      @required this.followersAmount})
-      : assert(id != null),
-        assert(name != null),
-        assert(username != null),
-        assert(password != null),
-        assert(email != null),
-        assert(birthday != null),
-        assert(description != null),
-        assert(imageURL != null),
-        assert(level != null),
-        assert(experiencePoints != null),
-        assert(privacy != null),
-        assert(adminPowers != null),
-        assert(enabled != null),
-        assert(lastLogin != null),
-        assert(creationDate != null),
-        assert(modificationDate != null),
-        assert(options != null),
-        assert(blockedUsersIds != null),
-        assert(followedUsersIds != null),
-        assert(interestsIds != null),
-        assert(achievementsIds != null),
-        assert(experiencesDoneIds != null),
-        assert(experiencesLikedIds != null),
-        assert(experiencesToDoIds != null),
-        assert(devices != null),
-        assert(systems != null),
-        assert(items != null),
-        assert(coins != null),
-        assert(followersAmount != null),
-        super._();
+      {required this.id,
+      required this.name,
+      required this.username,
+      required this.password,
+      required this.email,
+      @ServerTimestampConverter() required this.birthday,
+      required this.description,
+      required this.imageURL,
+      required this.level,
+      required this.experiencePoints,
+      required this.privacy,
+      required this.adminPowers,
+      required this.enabled,
+      @ServerTimestampConverter() required this.lastLogin,
+      @ServerTimestampConverter() required this.creationDate,
+      @ServerTimestampConverter() required this.modificationDate,
+      required this.options,
+      required this.blockedUsersIds,
+      required this.followedUsersIds,
+      required this.interestsIds,
+      required this.achievementsIds,
+      required this.experiencesDoneIds,
+      required this.experiencesLikedIds,
+      required this.experiencesToDoIds,
+      required this.devices,
+      required this.systems,
+      required this.items,
+      required this.coins,
+      required this.followersAmount})
+      : super._();
 
   factory _$_UserDto.fromJson(Map<String, dynamic> json) => _$_$_UserDtoFromJson(json);
 
@@ -570,7 +741,7 @@ class _$_UserDto extends _UserDto {
       const DeepCollectionEquality().hash(items) ^
       const DeepCollectionEquality().hash(coins) ^
       const DeepCollectionEquality().hash(followersAmount);
-
+  
   @JsonKey(ignore: true)
   @override
   _$UserDtoCopyWith<_UserDto> get copyWith => __$UserDtoCopyWithImpl<_UserDto>(this, _$identity);
@@ -582,104 +753,134 @@ class _$_UserDto extends _UserDto {
 }
 
 abstract class _UserDto extends UserDto {
-  const _UserDto._() : super._();
   const factory _UserDto(
-      {@required String id,
-      @required String name,
-      @required String username,
-      @required String password,
-      @required String email,
-      @required @ServerTimestampConverter() DateTime birthday,
-      @required String description,
-      @required String imageURL,
-      @required int level,
-      @required int experiencePoints,
-      @required bool privacy,
-      @required bool adminPowers,
-      @required bool enabled,
-      @required @ServerTimestampConverter() DateTime lastLogin,
-      @required @ServerTimestampConverter() DateTime creationDate,
-      @required @ServerTimestampConverter() DateTime modificationDate,
-      @required OptionsDto options,
-      @required Set<String> blockedUsersIds,
-      @required Set<String> followedUsersIds,
-      @required Set<String> interestsIds,
-      @required Set<String> achievementsIds,
-      @required Set<String> experiencesDoneIds,
-      @required Set<String> experiencesLikedIds,
-      @required Set<String> experiencesToDoIds,
-      @required Set<DeviceDto> devices,
-      @required Set<SystemDto> systems,
-      @required Set<ItemDto> items,
-      @required int coins,
-      @required int followersAmount}) = _$_UserDto;
+      {required String id,
+      required String name,
+      required String username,
+      required String password,
+      required String email,
+      @ServerTimestampConverter() required DateTime birthday,
+      required String description,
+      required String imageURL,
+      required int level,
+      required int experiencePoints,
+      required bool privacy,
+      required bool adminPowers,
+      required bool enabled,
+      @ServerTimestampConverter() required DateTime lastLogin,
+      @ServerTimestampConverter() required DateTime creationDate,
+      @ServerTimestampConverter() required DateTime modificationDate,
+      required OptionsDto options,
+      required Set<String> blockedUsersIds,
+      required Set<String> followedUsersIds,
+      required Set<String> interestsIds,
+      required Set<String> achievementsIds,
+      required Set<String> experiencesDoneIds,
+      required Set<String> experiencesLikedIds,
+      required Set<String> experiencesToDoIds,
+      required Set<DeviceDto> devices,
+      required Set<SystemDto> systems,
+      required Set<ItemDto> items,
+      required int coins,
+      required int followersAmount}) = _$_UserDto;
+
+  const _UserDto._() : super._();
 
   factory _UserDto.fromJson(Map<String, dynamic> json) = _$_UserDto.fromJson;
 
   @override
-  String get id;
+  String get id => throw _privateConstructorUsedError;
+
   @override
-  String get name;
+  String get name => throw _privateConstructorUsedError;
+
   @override
-  String get username;
+  String get username => throw _privateConstructorUsedError;
+
   @override // Shouldn't this be encrypted in some way?
 // Maybe it shouldn't even be part of the dto at all, as Firebase handles it at login time
-  String get password;
+  String get password => throw _privateConstructorUsedError;
+
   @override
-  String get email;
-  @override
-  @ServerTimestampConverter()
-  DateTime get birthday;
-  @override
-  String get description;
-  @override
-  String get imageURL;
-  @override
-  int get level;
-  @override
-  int get experiencePoints;
-  @override
-  bool get privacy;
-  @override
-  bool get adminPowers;
-  @override
-  bool get enabled;
+  String get email => throw _privateConstructorUsedError;
+
   @override
   @ServerTimestampConverter()
-  DateTime get lastLogin;
+  DateTime get birthday => throw _privateConstructorUsedError;
+
+  @override
+  String get description => throw _privateConstructorUsedError;
+
+  @override
+  String get imageURL => throw _privateConstructorUsedError;
+
+  @override
+  int get level => throw _privateConstructorUsedError;
+
+  @override
+  int get experiencePoints => throw _privateConstructorUsedError;
+
+  @override
+  bool get privacy => throw _privateConstructorUsedError;
+
+  @override
+  bool get adminPowers => throw _privateConstructorUsedError;
+
+  @override
+  bool get enabled => throw _privateConstructorUsedError;
+
   @override
   @ServerTimestampConverter()
-  DateTime get creationDate;
+  DateTime get lastLogin => throw _privateConstructorUsedError;
+
   @override
   @ServerTimestampConverter()
-  DateTime get modificationDate;
+  DateTime get creationDate => throw _privateConstructorUsedError;
+
   @override
-  OptionsDto get options;
+  @ServerTimestampConverter()
+  DateTime get modificationDate => throw _privateConstructorUsedError;
+
   @override
-  Set<String> get blockedUsersIds;
+  OptionsDto get options => throw _privateConstructorUsedError;
+
   @override
-  Set<String> get followedUsersIds;
+  Set<String> get blockedUsersIds => throw _privateConstructorUsedError;
+
   @override
-  Set<String> get interestsIds;
+  Set<String> get followedUsersIds => throw _privateConstructorUsedError;
+
   @override
-  Set<String> get achievementsIds;
+  Set<String> get interestsIds => throw _privateConstructorUsedError;
+
   @override
-  Set<String> get experiencesDoneIds;
+  Set<String> get achievementsIds => throw _privateConstructorUsedError;
+
   @override
-  Set<String> get experiencesLikedIds;
+  Set<String> get experiencesDoneIds => throw _privateConstructorUsedError;
+
   @override
-  Set<String> get experiencesToDoIds;
+  Set<String> get experiencesLikedIds => throw _privateConstructorUsedError;
+
   @override
-  Set<DeviceDto> get devices;
+  Set<String> get experiencesToDoIds => throw _privateConstructorUsedError;
+
   @override
-  Set<SystemDto> get systems;
+  Set<DeviceDto> get devices => throw _privateConstructorUsedError;
+
   @override
-  Set<ItemDto> get items;
+  Set<SystemDto> get systems => throw _privateConstructorUsedError;
+
   @override
-  int get coins;
+  Set<ItemDto> get items => throw _privateConstructorUsedError;
+
   @override
-  int get followersAmount;
+  int get coins => throw _privateConstructorUsedError;
+
+  @override
+  int get followersAmount => throw _privateConstructorUsedError;
+
   @override
   @JsonKey(ignore: true)
-  _$UserDtoCopyWith<_UserDto> get copyWith;
+  _$UserDtoCopyWith<_UserDto> get copyWith => throw _privateConstructorUsedError;
 }

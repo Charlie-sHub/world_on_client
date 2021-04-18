@@ -8,8 +8,8 @@ import 'package:worldon/views/core/misc/world_on_colors.dart';
 
 class DeleteButton extends StatelessWidget {
   const DeleteButton({
-    Key key,
-    @required this.experience,
+    Key? key,
+    required this.experience,
   }) : super(key: key);
 
   final Experience experience;
@@ -19,8 +19,12 @@ class DeleteButton extends StatelessWidget {
     return BlocProvider(
       create: (context) => getIt<ExperienceManagementActorBloc>(),
       child: BlocBuilder<ExperienceManagementActorBloc, ExperienceManagementActorState>(
-        builder: (context, state) => FlatButton(
-          padding: const EdgeInsets.all(2),
+        builder: (context, state) => TextButton(
+          style: ButtonStyle(
+            padding: MaterialStateProperty.all(
+              const EdgeInsets.all(2),
+            ),
+          ),
           onPressed: () {
             context.read<ExperienceManagementActorBloc>().add(
                   ExperienceManagementActorEvent.deleted(experience),

@@ -13,9 +13,9 @@ import 'package:worldon/views/search/widget/search_something.dart';
 
 class TagsFoundView extends StatelessWidget {
   const TagsFoundView({
-    Key key,
+    Key? key,
   }) : super(key: key);
-  
+
   @override
   Widget build(BuildContext context) {
     return BlocBuilder<SearchTagsByNameWatcherBloc, SearchTagsByNameWatcherState>(

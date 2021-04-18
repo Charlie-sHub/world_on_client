@@ -10,8 +10,8 @@ class RewardCard extends StatelessWidget {
   final Reward reward;
 
   const RewardCard({
-    Key key,
-    @required this.reward,
+    Key? key,
+    required this.reward,
   }) : super(key: key);
 
   @override

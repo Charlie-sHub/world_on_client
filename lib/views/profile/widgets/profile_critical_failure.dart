@@ -7,7 +7,7 @@ import 'package:worldon/views/core/misc/world_on_colors.dart';
 /// Something to rework in the future for sure
 class ProfileCriticalFailure extends StatelessWidget {
   const ProfileCriticalFailure({
-    Key key,
+    Key? key,
   }) : super(key: key);
 
   @override

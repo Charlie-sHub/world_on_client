@@ -7,8 +7,8 @@ import 'package:worldon/views/core/widgets/cards/reward_card.dart';
 
 class RewardsListView extends StatelessWidget {
   const RewardsListView({
-    Key key,
-    @required this.experience,
+    Key? key,
+    required this.experience,
   }) : super(key: key);
 
   final Experience experience;

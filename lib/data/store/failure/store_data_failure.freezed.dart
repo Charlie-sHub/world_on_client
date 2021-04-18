@@ -1,5 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides
 
 part of 'store_data_failure.dart';
 
@@ -9,49 +9,56 @@ part of 'store_data_failure.dart';
 
 T _$identity<T>(T value) => value;
 
+final _privateConstructorUsedError = UnsupportedError(
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+
 /// @nodoc
 class _$StoreDataFailureTearOff {
   const _$StoreDataFailureTearOff();
 
-// ignore: unused_element
   NotEnoughCoins<T> notEnoughCoins<T>() {
     return NotEnoughCoins<T>();
   }
 
-// ignore: unused_element
   Cancelled<T> cancelled<T>() {
     return Cancelled<T>();
   }
 }
 
 /// @nodoc
-// ignore: unused_element
 const $StoreDataFailure = _$StoreDataFailureTearOff();
 
 /// @nodoc
 mixin _$StoreDataFailure<T> {
   @optionalTypeArgs
-  TResult when<TResult extends Object>({
-    @required TResult notEnoughCoins(),
-    @required TResult cancelled(),
-  });
+  TResult when<TResult extends Object?>({
+    required TResult Function() notEnoughCoins,
+    required TResult Function() cancelled,
+  }) =>
+      throw _privateConstructorUsedError;
+
   @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object>({
-    TResult notEnoughCoins(),
-    TResult cancelled(),
-    @required TResult orElse(),
-  });
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? notEnoughCoins,
+    TResult Function()? cancelled,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
+
   @optionalTypeArgs
-  TResult map<TResult extends Object>({
-    @required TResult notEnoughCoins(NotEnoughCoins<T> value),
-    @required TResult cancelled(Cancelled<T> value),
-  });
+  TResult map<TResult extends Object?>({
+    required TResult Function(NotEnoughCoins<T> value) notEnoughCoins,
+    required TResult Function(Cancelled<T> value) cancelled,
+  }) =>
+      throw _privateConstructorUsedError;
+
   @optionalTypeArgs
-  TResult maybeMap<TResult extends Object>({
-    TResult notEnoughCoins(NotEnoughCoins<T> value),
-    TResult cancelled(Cancelled<T> value),
-    @required TResult orElse(),
-  });
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(NotEnoughCoins<T> value)? notEnoughCoins,
+    TResult Function(Cancelled<T> value)? cancelled,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -101,23 +108,20 @@ class _$NotEnoughCoins<T> implements NotEnoughCoins<T> {
 
   @override
   @optionalTypeArgs
-  TResult when<TResult extends Object>({
-    @required TResult notEnoughCoins(),
-    @required TResult cancelled(),
+  TResult when<TResult extends Object?>({
+    required TResult Function() notEnoughCoins,
+    required TResult Function() cancelled,
   }) {
-    assert(notEnoughCoins != null);
-    assert(cancelled != null);
     return notEnoughCoins();
   }
 
   @override
   @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object>({
-    TResult notEnoughCoins(),
-    TResult cancelled(),
-    @required TResult orElse(),
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? notEnoughCoins,
+    TResult Function()? cancelled,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (notEnoughCoins != null) {
       return notEnoughCoins();
     }
@@ -126,23 +130,20 @@ class _$NotEnoughCoins<T> implements NotEnoughCoins<T> {
 
   @override
   @optionalTypeArgs
-  TResult map<TResult extends Object>({
-    @required TResult notEnoughCoins(NotEnoughCoins<T> value),
-    @required TResult cancelled(Cancelled<T> value),
+  TResult map<TResult extends Object?>({
+    required TResult Function(NotEnoughCoins<T> value) notEnoughCoins,
+    required TResult Function(Cancelled<T> value) cancelled,
   }) {
-    assert(notEnoughCoins != null);
-    assert(cancelled != null);
     return notEnoughCoins(this);
   }
 
   @override
   @optionalTypeArgs
-  TResult maybeMap<TResult extends Object>({
-    TResult notEnoughCoins(NotEnoughCoins<T> value),
-    TResult cancelled(Cancelled<T> value),
-    @required TResult orElse(),
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(NotEnoughCoins<T> value)? notEnoughCoins,
+    TResult Function(Cancelled<T> value)? cancelled,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (notEnoughCoins != null) {
       return notEnoughCoins(this);
     }
@@ -186,23 +187,20 @@ class _$Cancelled<T> implements Cancelled<T> {
 
   @override
   @optionalTypeArgs
-  TResult when<TResult extends Object>({
-    @required TResult notEnoughCoins(),
-    @required TResult cancelled(),
+  TResult when<TResult extends Object?>({
+    required TResult Function() notEnoughCoins,
+    required TResult Function() cancelled,
   }) {
-    assert(notEnoughCoins != null);
-    assert(cancelled != null);
     return cancelled();
   }
 
   @override
   @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object>({
-    TResult notEnoughCoins(),
-    TResult cancelled(),
-    @required TResult orElse(),
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? notEnoughCoins,
+    TResult Function()? cancelled,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (cancelled != null) {
       return cancelled();
     }
@@ -211,23 +209,20 @@ class _$Cancelled<T> implements Cancelled<T> {
 
   @override
   @optionalTypeArgs
-  TResult map<TResult extends Object>({
-    @required TResult notEnoughCoins(NotEnoughCoins<T> value),
-    @required TResult cancelled(Cancelled<T> value),
+  TResult map<TResult extends Object?>({
+    required TResult Function(NotEnoughCoins<T> value) notEnoughCoins,
+    required TResult Function(Cancelled<T> value) cancelled,
   }) {
-    assert(notEnoughCoins != null);
-    assert(cancelled != null);
     return cancelled(this);
   }
 
   @override
   @optionalTypeArgs
-  TResult maybeMap<TResult extends Object>({
-    TResult notEnoughCoins(NotEnoughCoins<T> value),
-    TResult cancelled(Cancelled<T> value),
-    @required TResult orElse(),
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(NotEnoughCoins<T> value)? notEnoughCoins,
+    TResult Function(Cancelled<T> value)? cancelled,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (cancelled != null) {
       return cancelled(this);
     }

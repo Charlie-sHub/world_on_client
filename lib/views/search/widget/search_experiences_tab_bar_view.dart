@@ -14,8 +14,8 @@ class SearchExperiencesTabView extends StatelessWidget {
   final SearchTerm searchTerm;
 
   const SearchExperiencesTabView({
-    Key key,
-    @required this.searchTerm,
+    Key? key,
+    required this.searchTerm,
   }) : super(key: key);
 
   @override
@@ -34,7 +34,7 @@ class SearchExperiencesTabView extends StatelessWidget {
               return ExperienceCard(
                 experience: _experience,
                 key: Key(_experience.id.toString()),
-                reloadFunction: (_) => context.read<SearchExperiencesByNameWatcherBloc>().add(
+                reloadFunction: () => context.read<SearchExperiencesByNameWatcherBloc>().add(
                       SearchExperiencesByNameWatcherEvent.watchExperiencesFoundByNameStarted(searchTerm),
                     ),
               );

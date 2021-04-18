@@ -13,15 +13,12 @@ class Password extends ValueObject<String> {
   // Just chose a number that seemed sensible in the moment, nothing especial
   static const maxLength = 40;
 
-  factory Password(String input) {
-    assert(input != null);
-    return Password._(
-      validateStringLength(
-        input: input,
-        length: maxLength,
-      ).flatMap(validateStringNotEmpty).flatMap(validateSingleLineString).flatMap(validatePassword),
-    );
-  }
+  factory Password(String input) => Password._(
+        validateStringLength(
+          input: input,
+          length: maxLength,
+        ).flatMap(validateStringNotEmpty).flatMap(validateSingleLineString).flatMap(validatePassword),
+      );
 
   const Password._(this.value);
 

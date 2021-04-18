@@ -1,5 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides
 
 part of 'achievement_dto.dart';
 
@@ -8,6 +8,10 @@ part of 'achievement_dto.dart';
 // **************************************************************************
 
 T _$identity<T>(T value) => value;
+
+final _privateConstructorUsedError = UnsupportedError(
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+
 AchievementDto _$AchievementDtoFromJson(Map<String, dynamic> json) {
   return _AchievementDto.fromJson(json);
 }
@@ -16,19 +20,18 @@ AchievementDto _$AchievementDtoFromJson(Map<String, dynamic> json) {
 class _$AchievementDtoTearOff {
   const _$AchievementDtoTearOff();
 
-// ignore: unused_element
   _AchievementDto call(
-      {@required String id,
-      @required String name,
-      @required String description,
-      @required String imageURL,
-      @required String type,
-      @required int requisite,
-      @required int experiencePoints,
-      @required String creatorId,
-      @required @ServerTimestampConverter() DateTime creationDate,
-      @required @ServerTimestampConverter() DateTime modificationDate,
-      @required Set<String> tagNames}) {
+      {required String id,
+      required String name,
+      required String description,
+      required String imageURL,
+      required String type,
+      required int requisite,
+      required int experiencePoints,
+      required String creatorId,
+      @ServerTimestampConverter() required DateTime creationDate,
+      @ServerTimestampConverter() required DateTime modificationDate,
+      required Set<String> tagNames}) {
     return _AchievementDto(
       id: id,
       name: name,
@@ -44,42 +47,49 @@ class _$AchievementDtoTearOff {
     );
   }
 
-// ignore: unused_element
   AchievementDto fromJson(Map<String, Object> json) {
     return AchievementDto.fromJson(json);
   }
 }
 
 /// @nodoc
-// ignore: unused_element
 const $AchievementDto = _$AchievementDtoTearOff();
 
 /// @nodoc
 mixin _$AchievementDto {
-  String get id;
-  String get name;
-  String get description;
-  String get imageURL;
-  String get type;
-  int get requisite;
-  int get experiencePoints;
-  String get creatorId;
-  @ServerTimestampConverter()
-  DateTime get creationDate;
-  @ServerTimestampConverter()
-  DateTime get modificationDate;
-  Set<String> get tagNames;
+  String get id => throw _privateConstructorUsedError;
 
-  Map<String, dynamic> toJson();
+  String get name => throw _privateConstructorUsedError;
+
+  String get description => throw _privateConstructorUsedError;
+
+  String get imageURL => throw _privateConstructorUsedError;
+
+  String get type => throw _privateConstructorUsedError;
+
+  int get requisite => throw _privateConstructorUsedError;
+
+  int get experiencePoints => throw _privateConstructorUsedError;
+
+  String get creatorId => throw _privateConstructorUsedError;
+
+  @ServerTimestampConverter()
+  DateTime get creationDate => throw _privateConstructorUsedError;
+
+  @ServerTimestampConverter()
+  DateTime get modificationDate => throw _privateConstructorUsedError;
+
+  Set<String> get tagNames => throw _privateConstructorUsedError;
+
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+
   @JsonKey(ignore: true)
-  $AchievementDtoCopyWith<AchievementDto> get copyWith;
+  $AchievementDtoCopyWith<AchievementDto> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $AchievementDtoCopyWith<$Res> {
-  factory $AchievementDtoCopyWith(
-          AchievementDto value, $Res Function(AchievementDto) then) =
-      _$AchievementDtoCopyWithImpl<$Res>;
+  factory $AchievementDtoCopyWith(AchievementDto value, $Res Function(AchievementDto) then) = _$AchievementDtoCopyWithImpl<$Res>;
   $Res call(
       {String id,
       String name,
@@ -95,8 +105,7 @@ abstract class $AchievementDtoCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$AchievementDtoCopyWithImpl<$Res>
-    implements $AchievementDtoCopyWith<$Res> {
+class _$AchievementDtoCopyWithImpl<$Res> implements $AchievementDtoCopyWith<$Res> {
   _$AchievementDtoCopyWithImpl(this._value, this._then);
 
   final AchievementDto _value;
@@ -105,47 +114,70 @@ class _$AchievementDtoCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object id = freezed,
-    Object name = freezed,
-    Object description = freezed,
-    Object imageURL = freezed,
-    Object type = freezed,
-    Object requisite = freezed,
-    Object experiencePoints = freezed,
-    Object creatorId = freezed,
-    Object creationDate = freezed,
-    Object modificationDate = freezed,
-    Object tagNames = freezed,
+    Object? id = freezed,
+    Object? name = freezed,
+    Object? description = freezed,
+    Object? imageURL = freezed,
+    Object? type = freezed,
+    Object? requisite = freezed,
+    Object? experiencePoints = freezed,
+    Object? creatorId = freezed,
+    Object? creationDate = freezed,
+    Object? modificationDate = freezed,
+    Object? tagNames = freezed,
   }) {
     return _then(_value.copyWith(
-      id: id == freezed ? _value.id : id as String,
-      name: name == freezed ? _value.name : name as String,
-      description:
-          description == freezed ? _value.description : description as String,
-      imageURL: imageURL == freezed ? _value.imageURL : imageURL as String,
-      type: type == freezed ? _value.type : type as String,
-      requisite: requisite == freezed ? _value.requisite : requisite as int,
+      id: id == freezed
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String,
+      name: name == freezed
+          ? _value.name
+          : name // ignore: cast_nullable_to_non_nullable
+              as String,
+      description: description == freezed
+          ? _value.description
+          : description // ignore: cast_nullable_to_non_nullable
+              as String,
+      imageURL: imageURL == freezed
+          ? _value.imageURL
+          : imageURL // ignore: cast_nullable_to_non_nullable
+              as String,
+      type: type == freezed
+          ? _value.type
+          : type // ignore: cast_nullable_to_non_nullable
+              as String,
+      requisite: requisite == freezed
+          ? _value.requisite
+          : requisite // ignore: cast_nullable_to_non_nullable
+              as int,
       experiencePoints: experiencePoints == freezed
           ? _value.experiencePoints
-          : experiencePoints as int,
-      creatorId: creatorId == freezed ? _value.creatorId : creatorId as String,
+          : experiencePoints // ignore: cast_nullable_to_non_nullable
+              as int,
+      creatorId: creatorId == freezed
+          ? _value.creatorId
+          : creatorId // ignore: cast_nullable_to_non_nullable
+              as String,
       creationDate: creationDate == freezed
           ? _value.creationDate
-          : creationDate as DateTime,
+          : creationDate // ignore: cast_nullable_to_non_nullable
+              as DateTime,
       modificationDate: modificationDate == freezed
           ? _value.modificationDate
-          : modificationDate as DateTime,
-      tagNames: tagNames == freezed ? _value.tagNames : tagNames as Set<String>,
+          : modificationDate // ignore: cast_nullable_to_non_nullable
+              as DateTime,
+      tagNames: tagNames == freezed
+          ? _value.tagNames
+          : tagNames // ignore: cast_nullable_to_non_nullable
+              as Set<String>,
     ));
   }
 }
 
 /// @nodoc
-abstract class _$AchievementDtoCopyWith<$Res>
-    implements $AchievementDtoCopyWith<$Res> {
-  factory _$AchievementDtoCopyWith(
-          _AchievementDto value, $Res Function(_AchievementDto) then) =
-      __$AchievementDtoCopyWithImpl<$Res>;
+abstract class _$AchievementDtoCopyWith<$Res> implements $AchievementDtoCopyWith<$Res> {
+  factory _$AchievementDtoCopyWith(_AchievementDto value, $Res Function(_AchievementDto) then) = __$AchievementDtoCopyWithImpl<$Res>;
   @override
   $Res call(
       {String id,
@@ -162,49 +194,71 @@ abstract class _$AchievementDtoCopyWith<$Res>
 }
 
 /// @nodoc
-class __$AchievementDtoCopyWithImpl<$Res>
-    extends _$AchievementDtoCopyWithImpl<$Res>
-    implements _$AchievementDtoCopyWith<$Res> {
-  __$AchievementDtoCopyWithImpl(
-      _AchievementDto _value, $Res Function(_AchievementDto) _then)
-      : super(_value, (v) => _then(v as _AchievementDto));
+class __$AchievementDtoCopyWithImpl<$Res> extends _$AchievementDtoCopyWithImpl<$Res> implements _$AchievementDtoCopyWith<$Res> {
+  __$AchievementDtoCopyWithImpl(_AchievementDto _value, $Res Function(_AchievementDto) _then) : super(_value, (v) => _then(v as _AchievementDto));
 
   @override
   _AchievementDto get _value => super._value as _AchievementDto;
 
   @override
   $Res call({
-    Object id = freezed,
-    Object name = freezed,
-    Object description = freezed,
-    Object imageURL = freezed,
-    Object type = freezed,
-    Object requisite = freezed,
-    Object experiencePoints = freezed,
-    Object creatorId = freezed,
-    Object creationDate = freezed,
-    Object modificationDate = freezed,
-    Object tagNames = freezed,
+    Object? id = freezed,
+    Object? name = freezed,
+    Object? description = freezed,
+    Object? imageURL = freezed,
+    Object? type = freezed,
+    Object? requisite = freezed,
+    Object? experiencePoints = freezed,
+    Object? creatorId = freezed,
+    Object? creationDate = freezed,
+    Object? modificationDate = freezed,
+    Object? tagNames = freezed,
   }) {
     return _then(_AchievementDto(
-      id: id == freezed ? _value.id : id as String,
-      name: name == freezed ? _value.name : name as String,
-      description:
-          description == freezed ? _value.description : description as String,
-      imageURL: imageURL == freezed ? _value.imageURL : imageURL as String,
-      type: type == freezed ? _value.type : type as String,
-      requisite: requisite == freezed ? _value.requisite : requisite as int,
+      id: id == freezed
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String,
+      name: name == freezed
+          ? _value.name
+          : name // ignore: cast_nullable_to_non_nullable
+              as String,
+      description: description == freezed
+          ? _value.description
+          : description // ignore: cast_nullable_to_non_nullable
+              as String,
+      imageURL: imageURL == freezed
+          ? _value.imageURL
+          : imageURL // ignore: cast_nullable_to_non_nullable
+              as String,
+      type: type == freezed
+          ? _value.type
+          : type // ignore: cast_nullable_to_non_nullable
+              as String,
+      requisite: requisite == freezed
+          ? _value.requisite
+          : requisite // ignore: cast_nullable_to_non_nullable
+              as int,
       experiencePoints: experiencePoints == freezed
           ? _value.experiencePoints
-          : experiencePoints as int,
-      creatorId: creatorId == freezed ? _value.creatorId : creatorId as String,
+          : experiencePoints // ignore: cast_nullable_to_non_nullable
+              as int,
+      creatorId: creatorId == freezed
+          ? _value.creatorId
+          : creatorId // ignore: cast_nullable_to_non_nullable
+              as String,
       creationDate: creationDate == freezed
           ? _value.creationDate
-          : creationDate as DateTime,
+          : creationDate // ignore: cast_nullable_to_non_nullable
+              as DateTime,
       modificationDate: modificationDate == freezed
           ? _value.modificationDate
-          : modificationDate as DateTime,
-      tagNames: tagNames == freezed ? _value.tagNames : tagNames as Set<String>,
+          : modificationDate // ignore: cast_nullable_to_non_nullable
+              as DateTime,
+      tagNames: tagNames == freezed
+          ? _value.tagNames
+          : tagNames // ignore: cast_nullable_to_non_nullable
+              as Set<String>,
     ));
   }
 }
@@ -214,32 +268,20 @@ class __$AchievementDtoCopyWithImpl<$Res>
 /// @nodoc
 class _$_AchievementDto extends _AchievementDto {
   const _$_AchievementDto(
-      {@required this.id,
-      @required this.name,
-      @required this.description,
-      @required this.imageURL,
-      @required this.type,
-      @required this.requisite,
-      @required this.experiencePoints,
-      @required this.creatorId,
-      @required @ServerTimestampConverter() this.creationDate,
-      @required @ServerTimestampConverter() this.modificationDate,
-      @required this.tagNames})
-      : assert(id != null),
-        assert(name != null),
-        assert(description != null),
-        assert(imageURL != null),
-        assert(type != null),
-        assert(requisite != null),
-        assert(experiencePoints != null),
-        assert(creatorId != null),
-        assert(creationDate != null),
-        assert(modificationDate != null),
-        assert(tagNames != null),
-        super._();
+      {required this.id,
+      required this.name,
+      required this.description,
+      required this.imageURL,
+      required this.type,
+      required this.requisite,
+      required this.experiencePoints,
+      required this.creatorId,
+      @ServerTimestampConverter() required this.creationDate,
+      @ServerTimestampConverter() required this.modificationDate,
+      required this.tagNames})
+      : super._();
 
-  factory _$_AchievementDto.fromJson(Map<String, dynamic> json) =>
-      _$_$_AchievementDtoFromJson(json);
+  factory _$_AchievementDto.fromJson(Map<String, dynamic> json) => _$_$_AchievementDtoFromJson(json);
 
   @override
   final String id;
@@ -275,36 +317,17 @@ class _$_AchievementDto extends _AchievementDto {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other is _AchievementDto &&
-            (identical(other.id, id) ||
-                const DeepCollectionEquality().equals(other.id, id)) &&
-            (identical(other.name, name) ||
-                const DeepCollectionEquality().equals(other.name, name)) &&
-            (identical(other.description, description) ||
-                const DeepCollectionEquality()
-                    .equals(other.description, description)) &&
-            (identical(other.imageURL, imageURL) ||
-                const DeepCollectionEquality()
-                    .equals(other.imageURL, imageURL)) &&
-            (identical(other.type, type) ||
-                const DeepCollectionEquality().equals(other.type, type)) &&
-            (identical(other.requisite, requisite) ||
-                const DeepCollectionEquality()
-                    .equals(other.requisite, requisite)) &&
-            (identical(other.experiencePoints, experiencePoints) ||
-                const DeepCollectionEquality()
-                    .equals(other.experiencePoints, experiencePoints)) &&
-            (identical(other.creatorId, creatorId) ||
-                const DeepCollectionEquality()
-                    .equals(other.creatorId, creatorId)) &&
-            (identical(other.creationDate, creationDate) ||
-                const DeepCollectionEquality()
-                    .equals(other.creationDate, creationDate)) &&
-            (identical(other.modificationDate, modificationDate) ||
-                const DeepCollectionEquality()
-                    .equals(other.modificationDate, modificationDate)) &&
-            (identical(other.tagNames, tagNames) ||
-                const DeepCollectionEquality()
-                    .equals(other.tagNames, tagNames)));
+            (identical(other.id, id) || const DeepCollectionEquality().equals(other.id, id)) &&
+            (identical(other.name, name) || const DeepCollectionEquality().equals(other.name, name)) &&
+            (identical(other.description, description) || const DeepCollectionEquality().equals(other.description, description)) &&
+            (identical(other.imageURL, imageURL) || const DeepCollectionEquality().equals(other.imageURL, imageURL)) &&
+            (identical(other.type, type) || const DeepCollectionEquality().equals(other.type, type)) &&
+            (identical(other.requisite, requisite) || const DeepCollectionEquality().equals(other.requisite, requisite)) &&
+            (identical(other.experiencePoints, experiencePoints) || const DeepCollectionEquality().equals(other.experiencePoints, experiencePoints)) &&
+            (identical(other.creatorId, creatorId) || const DeepCollectionEquality().equals(other.creatorId, creatorId)) &&
+            (identical(other.creationDate, creationDate) || const DeepCollectionEquality().equals(other.creationDate, creationDate)) &&
+            (identical(other.modificationDate, modificationDate) || const DeepCollectionEquality().equals(other.modificationDate, modificationDate)) &&
+            (identical(other.tagNames, tagNames) || const DeepCollectionEquality().equals(other.tagNames, tagNames)));
   }
 
   @override
@@ -324,8 +347,7 @@ class _$_AchievementDto extends _AchievementDto {
 
   @JsonKey(ignore: true)
   @override
-  _$AchievementDtoCopyWith<_AchievementDto> get copyWith =>
-      __$AchievementDtoCopyWithImpl<_AchievementDto>(this, _$identity);
+  _$AchievementDtoCopyWith<_AchievementDto> get copyWith => __$AchievementDtoCopyWithImpl<_AchievementDto>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
@@ -334,48 +356,59 @@ class _$_AchievementDto extends _AchievementDto {
 }
 
 abstract class _AchievementDto extends AchievementDto {
-  const _AchievementDto._() : super._();
   const factory _AchievementDto(
-      {@required String id,
-      @required String name,
-      @required String description,
-      @required String imageURL,
-      @required String type,
-      @required int requisite,
-      @required int experiencePoints,
-      @required String creatorId,
-      @required @ServerTimestampConverter() DateTime creationDate,
-      @required @ServerTimestampConverter() DateTime modificationDate,
-      @required Set<String> tagNames}) = _$_AchievementDto;
+      {required String id,
+      required String name,
+      required String description,
+      required String imageURL,
+      required String type,
+      required int requisite,
+      required int experiencePoints,
+      required String creatorId,
+      @ServerTimestampConverter() required DateTime creationDate,
+      @ServerTimestampConverter() required DateTime modificationDate,
+      required Set<String> tagNames}) = _$_AchievementDto;
 
-  factory _AchievementDto.fromJson(Map<String, dynamic> json) =
-      _$_AchievementDto.fromJson;
+  const _AchievementDto._() : super._();
+
+  factory _AchievementDto.fromJson(Map<String, dynamic> json) = _$_AchievementDto.fromJson;
 
   @override
-  String get id;
+  String get id => throw _privateConstructorUsedError;
+
   @override
-  String get name;
+  String get name => throw _privateConstructorUsedError;
+
   @override
-  String get description;
+  String get description => throw _privateConstructorUsedError;
+
   @override
-  String get imageURL;
+  String get imageURL => throw _privateConstructorUsedError;
+
   @override
-  String get type;
+  String get type => throw _privateConstructorUsedError;
+
   @override
-  int get requisite;
+  int get requisite => throw _privateConstructorUsedError;
+
   @override
-  int get experiencePoints;
+  int get experiencePoints => throw _privateConstructorUsedError;
+
   @override
-  String get creatorId;
+  String get creatorId => throw _privateConstructorUsedError;
+
   @override
   @ServerTimestampConverter()
-  DateTime get creationDate;
+  DateTime get creationDate => throw _privateConstructorUsedError;
+
   @override
   @ServerTimestampConverter()
-  DateTime get modificationDate;
+  DateTime get modificationDate => throw _privateConstructorUsedError;
+
   @override
-  Set<String> get tagNames;
+  Set<String> get tagNames => throw _privateConstructorUsedError;
+
   @override
   @JsonKey(ignore: true)
-  _$AchievementDtoCopyWith<_AchievementDto> get copyWith;
+  _$AchievementDtoCopyWith<_AchievementDto> get copyWith => throw _privateConstructorUsedError;
 }

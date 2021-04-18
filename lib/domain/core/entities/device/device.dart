@@ -8,14 +8,14 @@ part 'device.freezed.dart';
 ///
 /// [Device]s gives the administration a way to consult how the [User]s are getting to the application, to better focus out efforts in the future.
 @freezed
-abstract class Device implements _$Device {
+class Device with _$Device {
   const Device._();
 
   const factory Device({
-    @required UniqueId id,
-    @required String name,
-    @required String type,
-    @required String company,
+    required UniqueId id,
+    required String name,
+    required String type,
+    required String company,
   }) = _Device;
 
   factory Device.empty() => Device(

@@ -1,5 +1,4 @@
 import 'package:dartz/dartz.dart';
-import 'package:flutter/foundation.dart';
 import 'package:injectable/injectable.dart';
 import 'package:worldon/core/error/failure.dart';
 import 'package:worldon/domain/authentication/use_case/get_logged_in_user.dart';
@@ -37,6 +36,6 @@ class Params {
   final Comment comment;
 
   Params({
-    @required this.comment,
+    required this.comment,
   });
 }

@@ -4,8 +4,8 @@ import 'package:worldon/views/core/misc/world_on_colors.dart';
 
 class ForeignProfileTabBar extends SliverPersistentHeaderDelegate {
   const ForeignProfileTabBar({
-    @required this.maxExtent,
-    @required this.minExtent,
+    required this.maxExtent,
+    required this.minExtent,
   });
 
   @override

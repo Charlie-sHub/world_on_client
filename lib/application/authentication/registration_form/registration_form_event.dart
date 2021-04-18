@@ -1,7 +1,7 @@
 part of 'registration_form_bloc.dart';
 
 @freezed
-abstract class RegistrationFormEvent with _$RegistrationFormEvent {
+class RegistrationFormEvent with _$RegistrationFormEvent {
   const factory RegistrationFormEvent.initialized() = _Initialized;
 
   const factory RegistrationFormEvent.imageChanged(File imageFile) = _ImageChanged;

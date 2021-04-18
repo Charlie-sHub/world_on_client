@@ -8,12 +8,9 @@ class PastDate extends ValueObject<DateTime> {
   @override
   final Either<ValueFailure<DateTime>, DateTime> value;
 
-  factory PastDate(DateTime input) {
-    assert(input != null);
-    return PastDate._(
-      validatePastDate(input).flatMap(dateOnlyDateTime),
-    );
-  }
+  factory PastDate(DateTime input) => PastDate._(
+        validatePastDate(input).flatMap(dateOnlyDateTime),
+      );
 
   const PastDate._(this.value);
 

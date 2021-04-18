@@ -11,7 +11,7 @@ import 'package:worldon/views/core/widgets/misc/world_on_progress_indicator.dart
 class ObjectiveCard extends StatelessWidget {
   final Objective objective;
 
-  const ObjectiveCard({Key key, @required this.objective}) : super(key: key);
+  const ObjectiveCard({Key? key, required this.objective}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

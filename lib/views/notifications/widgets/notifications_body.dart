@@ -13,7 +13,7 @@ import 'package:worldon/views/core/widgets/misc/world_on_progress_indicator.dart
 import 'package:worldon/views/notifications/widgets/notification_card.dart';
 
 class NotificationsBody extends StatelessWidget {
-  const NotificationsBody({Key key}) : super(key: key);
+  const NotificationsBody({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -36,7 +36,7 @@ class NotificationsBody extends StatelessWidget {
             duration: const Duration(seconds: 2),
             message: state.failure.toString(),
           ).show(context),
-          orElse: () => null,
+          orElse: () {},
         ),
         child: BlocBuilder<NotificationsWatcherBloc, NotificationsWatcherState>(
           builder: (context, state) => state.map(

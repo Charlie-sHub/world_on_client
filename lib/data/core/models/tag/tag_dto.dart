@@ -10,15 +10,15 @@ part 'tag_dto.freezed.dart';
 part 'tag_dto.g.dart';
 
 @freezed
-abstract class TagDto implements _$TagDto {
+class TagDto with _$TagDto {
   const TagDto._();
 
   const factory TagDto({
-    @required String id,
-    @required String name,
-    @required String creatorId,
-    @ServerTimestampConverter() @required DateTime creationDate,
-    @ServerTimestampConverter() @required DateTime modificationDate,
+    required String id,
+    required String name,
+    required String creatorId,
+    @ServerTimestampConverter() required DateTime creationDate,
+    @ServerTimestampConverter() required DateTime modificationDate,
   }) = _TagDto;
 
   factory TagDto.fromDomain(Tag tag) => TagDto(
@@ -40,7 +40,7 @@ abstract class TagDto implements _$TagDto {
   factory TagDto.fromJson(Map<String, dynamic> json) => _$TagDtoFromJson(json);
 
   factory TagDto.fromFirestore(DocumentSnapshot document) => TagDto.fromJson(
-        document.data(),
+    document.data()!,
       ).copyWith(
         id: document.id,
       );

@@ -21,9 +21,9 @@ class TagAdditionCreationCard extends HookWidget {
   final Option<TagSet> tagSetOption;
 
   const TagAdditionCreationCard({
-    Key key,
-    @required this.tagSetOption,
-    @required this.tagChangeFunction,
+    Key? key,
+    required this.tagSetOption,
+    required this.tagChangeFunction,
   }) : super(key: key);
 
   @override
@@ -113,7 +113,7 @@ class TagAdditionCreationCard extends HookWidget {
     TextEditingController _textEditingController,
   ) =>
       state.failureOrSuccessOption.fold(
-        () => null,
+          () {},
         (either) => either.fold(
           (failure) => failure.maybeMap(
             coreData: (_coreDataFailure) => _coreDataFailure.coreDataFailure.maybeMap(

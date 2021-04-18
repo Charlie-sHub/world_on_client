@@ -11,15 +11,12 @@ class Name extends ValueObject<String> {
   @override
   final Either<ValueFailure<String>, String> value;
 
-  factory Name(String input) {
-    assert(input != null);
-    return Name._(
-      validateStringLength(
-        input: input,
-        length: maxLength,
-      ).flatMap(validateStringNotEmpty).flatMap(validateSingleLineString),
-    );
-  }
+  factory Name(String input) => Name._(
+        validateStringLength(
+          input: input,
+          length: maxLength,
+        ).flatMap(validateStringNotEmpty).flatMap(validateSingleLineString),
+      );
 
   const Name._(this.value);
 

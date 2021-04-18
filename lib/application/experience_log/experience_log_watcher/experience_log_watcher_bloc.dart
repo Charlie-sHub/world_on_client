@@ -18,7 +18,8 @@ part 'experience_log_watcher_state.dart';
 @injectable
 class ExperienceLogWatcherBloc extends Bloc<ExperienceLogWatcherEvent, ExperienceLogWatcherState> {
   ExperienceLogWatcherBloc() : super(const ExperienceLogWatcherState.initial());
-  StreamSubscription<Either<Failure, KtList<Experience>>> _experienceLogStreamSubscription;
+
+  StreamSubscription<Either<Failure, KtList<Experience>>>? _experienceLogStreamSubscription;
 
   @override
   Stream<ExperienceLogWatcherState> mapEventToState(ExperienceLogWatcherEvent event) async* {

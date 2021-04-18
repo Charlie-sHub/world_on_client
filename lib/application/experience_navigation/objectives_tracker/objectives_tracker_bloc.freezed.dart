@@ -1,5 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides
 
 part of 'objectives_tracker_bloc.dart';
 
@@ -9,25 +9,25 @@ part of 'objectives_tracker_bloc.dart';
 
 T _$identity<T>(T value) => value;
 
+final _privateConstructorUsedError = UnsupportedError(
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+
 /// @nodoc
 class _$ObjectivesTrackerEventTearOff {
   const _$ObjectivesTrackerEventTearOff();
 
-// ignore: unused_element
   _Initialized initialized(ObjectiveList objectiveSet) {
     return _Initialized(
       objectiveSet,
     );
   }
 
-// ignore: unused_element
   _ObjectiveAccomplished objectiveAccomplished(Objective objective) {
     return _ObjectiveAccomplished(
       objective,
     );
   }
 
-// ignore: unused_element
   _ObjectiveUnaccomplished objectiveUnaccomplished(Objective objective) {
     return _ObjectiveUnaccomplished(
       objective,
@@ -36,37 +36,43 @@ class _$ObjectivesTrackerEventTearOff {
 }
 
 /// @nodoc
-// ignore: unused_element
 const $ObjectivesTrackerEvent = _$ObjectivesTrackerEventTearOff();
 
 /// @nodoc
 mixin _$ObjectivesTrackerEvent {
   @optionalTypeArgs
-  TResult when<TResult extends Object>({
-    @required TResult initialized(ObjectiveList objectiveSet),
-    @required TResult objectiveAccomplished(Objective objective),
-    @required TResult objectiveUnaccomplished(Objective objective),
-  });
+  TResult when<TResult extends Object?>({
+    required TResult Function(ObjectiveList objectiveSet) initialized,
+    required TResult Function(Objective objective) objectiveAccomplished,
+    required TResult Function(Objective objective) objectiveUnaccomplished,
+  }) =>
+      throw _privateConstructorUsedError;
+
   @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object>({
-    TResult initialized(ObjectiveList objectiveSet),
-    TResult objectiveAccomplished(Objective objective),
-    TResult objectiveUnaccomplished(Objective objective),
-    @required TResult orElse(),
-  });
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(ObjectiveList objectiveSet)? initialized,
+    TResult Function(Objective objective)? objectiveAccomplished,
+    TResult Function(Objective objective)? objectiveUnaccomplished,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
+
   @optionalTypeArgs
-  TResult map<TResult extends Object>({
-    @required TResult initialized(_Initialized value),
-    @required TResult objectiveAccomplished(_ObjectiveAccomplished value),
-    @required TResult objectiveUnaccomplished(_ObjectiveUnaccomplished value),
-  });
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initialized value) initialized,
+    required TResult Function(_ObjectiveAccomplished value) objectiveAccomplished,
+    required TResult Function(_ObjectiveUnaccomplished value) objectiveUnaccomplished,
+  }) =>
+      throw _privateConstructorUsedError;
+
   @optionalTypeArgs
-  TResult maybeMap<TResult extends Object>({
-    TResult initialized(_Initialized value),
-    TResult objectiveAccomplished(_ObjectiveAccomplished value),
-    TResult objectiveUnaccomplished(_ObjectiveUnaccomplished value),
-    @required TResult orElse(),
-  });
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initialized value)? initialized,
+    TResult Function(_ObjectiveAccomplished value)? objectiveAccomplished,
+    TResult Function(_ObjectiveUnaccomplished value)? objectiveUnaccomplished,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -100,17 +106,20 @@ class __$InitializedCopyWithImpl<$Res> extends _$ObjectivesTrackerEventCopyWithI
 
   @override
   $Res call({
-    Object objectiveSet = freezed,
+    Object? objectiveSet = freezed,
   }) {
     return _then(_Initialized(
-      objectiveSet == freezed ? _value.objectiveSet : objectiveSet as ObjectiveList,
+      objectiveSet == freezed
+          ? _value.objectiveSet
+          : objectiveSet // ignore: cast_nullable_to_non_nullable
+              as ObjectiveList,
     ));
   }
 }
 
 /// @nodoc
 class _$_Initialized implements _Initialized {
-  const _$_Initialized(this.objectiveSet) : assert(objectiveSet != null);
+  const _$_Initialized(this.objectiveSet);
 
   @override
   final ObjectiveList objectiveSet;
@@ -134,26 +143,22 @@ class _$_Initialized implements _Initialized {
 
   @override
   @optionalTypeArgs
-  TResult when<TResult extends Object>({
-    @required TResult initialized(ObjectiveList objectiveSet),
-    @required TResult objectiveAccomplished(Objective objective),
-    @required TResult objectiveUnaccomplished(Objective objective),
+  TResult when<TResult extends Object?>({
+    required TResult Function(ObjectiveList objectiveSet) initialized,
+    required TResult Function(Objective objective) objectiveAccomplished,
+    required TResult Function(Objective objective) objectiveUnaccomplished,
   }) {
-    assert(initialized != null);
-    assert(objectiveAccomplished != null);
-    assert(objectiveUnaccomplished != null);
     return initialized(objectiveSet);
   }
 
   @override
   @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object>({
-    TResult initialized(ObjectiveList objectiveSet),
-    TResult objectiveAccomplished(Objective objective),
-    TResult objectiveUnaccomplished(Objective objective),
-    @required TResult orElse(),
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(ObjectiveList objectiveSet)? initialized,
+    TResult Function(Objective objective)? objectiveAccomplished,
+    TResult Function(Objective objective)? objectiveUnaccomplished,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (initialized != null) {
       return initialized(objectiveSet);
     }
@@ -162,26 +167,22 @@ class _$_Initialized implements _Initialized {
 
   @override
   @optionalTypeArgs
-  TResult map<TResult extends Object>({
-    @required TResult initialized(_Initialized value),
-    @required TResult objectiveAccomplished(_ObjectiveAccomplished value),
-    @required TResult objectiveUnaccomplished(_ObjectiveUnaccomplished value),
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initialized value) initialized,
+    required TResult Function(_ObjectiveAccomplished value) objectiveAccomplished,
+    required TResult Function(_ObjectiveUnaccomplished value) objectiveUnaccomplished,
   }) {
-    assert(initialized != null);
-    assert(objectiveAccomplished != null);
-    assert(objectiveUnaccomplished != null);
     return initialized(this);
   }
 
   @override
   @optionalTypeArgs
-  TResult maybeMap<TResult extends Object>({
-    TResult initialized(_Initialized value),
-    TResult objectiveAccomplished(_ObjectiveAccomplished value),
-    TResult objectiveUnaccomplished(_ObjectiveUnaccomplished value),
-    @required TResult orElse(),
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initialized value)? initialized,
+    TResult Function(_ObjectiveAccomplished value)? objectiveAccomplished,
+    TResult Function(_ObjectiveUnaccomplished value)? objectiveUnaccomplished,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (initialized != null) {
       return initialized(this);
     }
@@ -192,9 +193,10 @@ class _$_Initialized implements _Initialized {
 abstract class _Initialized implements ObjectivesTrackerEvent {
   const factory _Initialized(ObjectiveList objectiveSet) = _$_Initialized;
 
-  ObjectiveList get objectiveSet;
+  ObjectiveList get objectiveSet => throw _privateConstructorUsedError;
+
   @JsonKey(ignore: true)
-  _$InitializedCopyWith<_Initialized> get copyWith;
+  _$InitializedCopyWith<_Initialized> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -215,18 +217,18 @@ class __$ObjectiveAccomplishedCopyWithImpl<$Res> extends _$ObjectivesTrackerEven
 
   @override
   $Res call({
-    Object objective = freezed,
+    Object? objective = freezed,
   }) {
     return _then(_ObjectiveAccomplished(
-      objective == freezed ? _value.objective : objective as Objective,
+      objective == freezed
+          ? _value.objective
+          : objective // ignore: cast_nullable_to_non_nullable
+              as Objective,
     ));
   }
 
   @override
   $ObjectiveCopyWith<$Res> get objective {
-    if (_value.objective == null) {
-      return null;
-    }
     return $ObjectiveCopyWith<$Res>(_value.objective, (value) {
       return _then(_value.copyWith(objective: value));
     });
@@ -235,7 +237,7 @@ class __$ObjectiveAccomplishedCopyWithImpl<$Res> extends _$ObjectivesTrackerEven
 
 /// @nodoc
 class _$_ObjectiveAccomplished implements _ObjectiveAccomplished {
-  const _$_ObjectiveAccomplished(this.objective) : assert(objective != null);
+  const _$_ObjectiveAccomplished(this.objective);
 
   @override
   final Objective objective;
@@ -259,26 +261,22 @@ class _$_ObjectiveAccomplished implements _ObjectiveAccomplished {
 
   @override
   @optionalTypeArgs
-  TResult when<TResult extends Object>({
-    @required TResult initialized(ObjectiveList objectiveSet),
-    @required TResult objectiveAccomplished(Objective objective),
-    @required TResult objectiveUnaccomplished(Objective objective),
+  TResult when<TResult extends Object?>({
+    required TResult Function(ObjectiveList objectiveSet) initialized,
+    required TResult Function(Objective objective) objectiveAccomplished,
+    required TResult Function(Objective objective) objectiveUnaccomplished,
   }) {
-    assert(initialized != null);
-    assert(objectiveAccomplished != null);
-    assert(objectiveUnaccomplished != null);
     return objectiveAccomplished(objective);
   }
 
   @override
   @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object>({
-    TResult initialized(ObjectiveList objectiveSet),
-    TResult objectiveAccomplished(Objective objective),
-    TResult objectiveUnaccomplished(Objective objective),
-    @required TResult orElse(),
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(ObjectiveList objectiveSet)? initialized,
+    TResult Function(Objective objective)? objectiveAccomplished,
+    TResult Function(Objective objective)? objectiveUnaccomplished,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (objectiveAccomplished != null) {
       return objectiveAccomplished(objective);
     }
@@ -287,26 +285,22 @@ class _$_ObjectiveAccomplished implements _ObjectiveAccomplished {
 
   @override
   @optionalTypeArgs
-  TResult map<TResult extends Object>({
-    @required TResult initialized(_Initialized value),
-    @required TResult objectiveAccomplished(_ObjectiveAccomplished value),
-    @required TResult objectiveUnaccomplished(_ObjectiveUnaccomplished value),
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initialized value) initialized,
+    required TResult Function(_ObjectiveAccomplished value) objectiveAccomplished,
+    required TResult Function(_ObjectiveUnaccomplished value) objectiveUnaccomplished,
   }) {
-    assert(initialized != null);
-    assert(objectiveAccomplished != null);
-    assert(objectiveUnaccomplished != null);
     return objectiveAccomplished(this);
   }
 
   @override
   @optionalTypeArgs
-  TResult maybeMap<TResult extends Object>({
-    TResult initialized(_Initialized value),
-    TResult objectiveAccomplished(_ObjectiveAccomplished value),
-    TResult objectiveUnaccomplished(_ObjectiveUnaccomplished value),
-    @required TResult orElse(),
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initialized value)? initialized,
+    TResult Function(_ObjectiveAccomplished value)? objectiveAccomplished,
+    TResult Function(_ObjectiveUnaccomplished value)? objectiveUnaccomplished,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (objectiveAccomplished != null) {
       return objectiveAccomplished(this);
     }
@@ -317,10 +311,10 @@ class _$_ObjectiveAccomplished implements _ObjectiveAccomplished {
 abstract class _ObjectiveAccomplished implements ObjectivesTrackerEvent {
   const factory _ObjectiveAccomplished(Objective objective) = _$_ObjectiveAccomplished;
 
-  Objective get objective;
+  Objective get objective => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
-  _$ObjectiveAccomplishedCopyWith<_ObjectiveAccomplished> get copyWith;
+  _$ObjectiveAccomplishedCopyWith<_ObjectiveAccomplished> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -341,18 +335,18 @@ class __$ObjectiveUnaccomplishedCopyWithImpl<$Res> extends _$ObjectivesTrackerEv
 
   @override
   $Res call({
-    Object objective = freezed,
+    Object? objective = freezed,
   }) {
     return _then(_ObjectiveUnaccomplished(
-      objective == freezed ? _value.objective : objective as Objective,
+      objective == freezed
+          ? _value.objective
+          : objective // ignore: cast_nullable_to_non_nullable
+              as Objective,
     ));
   }
 
   @override
   $ObjectiveCopyWith<$Res> get objective {
-    if (_value.objective == null) {
-      return null;
-    }
     return $ObjectiveCopyWith<$Res>(_value.objective, (value) {
       return _then(_value.copyWith(objective: value));
     });
@@ -361,7 +355,7 @@ class __$ObjectiveUnaccomplishedCopyWithImpl<$Res> extends _$ObjectivesTrackerEv
 
 /// @nodoc
 class _$_ObjectiveUnaccomplished implements _ObjectiveUnaccomplished {
-  const _$_ObjectiveUnaccomplished(this.objective) : assert(objective != null);
+  const _$_ObjectiveUnaccomplished(this.objective);
 
   @override
   final Objective objective;
@@ -385,26 +379,22 @@ class _$_ObjectiveUnaccomplished implements _ObjectiveUnaccomplished {
 
   @override
   @optionalTypeArgs
-  TResult when<TResult extends Object>({
-    @required TResult initialized(ObjectiveList objectiveSet),
-    @required TResult objectiveAccomplished(Objective objective),
-    @required TResult objectiveUnaccomplished(Objective objective),
+  TResult when<TResult extends Object?>({
+    required TResult Function(ObjectiveList objectiveSet) initialized,
+    required TResult Function(Objective objective) objectiveAccomplished,
+    required TResult Function(Objective objective) objectiveUnaccomplished,
   }) {
-    assert(initialized != null);
-    assert(objectiveAccomplished != null);
-    assert(objectiveUnaccomplished != null);
     return objectiveUnaccomplished(objective);
   }
 
   @override
   @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object>({
-    TResult initialized(ObjectiveList objectiveSet),
-    TResult objectiveAccomplished(Objective objective),
-    TResult objectiveUnaccomplished(Objective objective),
-    @required TResult orElse(),
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(ObjectiveList objectiveSet)? initialized,
+    TResult Function(Objective objective)? objectiveAccomplished,
+    TResult Function(Objective objective)? objectiveUnaccomplished,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (objectiveUnaccomplished != null) {
       return objectiveUnaccomplished(objective);
     }
@@ -413,26 +403,22 @@ class _$_ObjectiveUnaccomplished implements _ObjectiveUnaccomplished {
 
   @override
   @optionalTypeArgs
-  TResult map<TResult extends Object>({
-    @required TResult initialized(_Initialized value),
-    @required TResult objectiveAccomplished(_ObjectiveAccomplished value),
-    @required TResult objectiveUnaccomplished(_ObjectiveUnaccomplished value),
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initialized value) initialized,
+    required TResult Function(_ObjectiveAccomplished value) objectiveAccomplished,
+    required TResult Function(_ObjectiveUnaccomplished value) objectiveUnaccomplished,
   }) {
-    assert(initialized != null);
-    assert(objectiveAccomplished != null);
-    assert(objectiveUnaccomplished != null);
     return objectiveUnaccomplished(this);
   }
 
   @override
   @optionalTypeArgs
-  TResult maybeMap<TResult extends Object>({
-    TResult initialized(_Initialized value),
-    TResult objectiveAccomplished(_ObjectiveAccomplished value),
-    TResult objectiveUnaccomplished(_ObjectiveUnaccomplished value),
-    @required TResult orElse(),
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initialized value)? initialized,
+    TResult Function(_ObjectiveAccomplished value)? objectiveAccomplished,
+    TResult Function(_ObjectiveUnaccomplished value)? objectiveUnaccomplished,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (objectiveUnaccomplished != null) {
       return objectiveUnaccomplished(this);
     }
@@ -443,18 +429,17 @@ class _$_ObjectiveUnaccomplished implements _ObjectiveUnaccomplished {
 abstract class _ObjectiveUnaccomplished implements ObjectivesTrackerEvent {
   const factory _ObjectiveUnaccomplished(Objective objective) = _$_ObjectiveUnaccomplished;
 
-  Objective get objective;
+  Objective get objective => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
-  _$ObjectiveUnaccomplishedCopyWith<_ObjectiveUnaccomplished> get copyWith;
+  _$ObjectiveUnaccomplishedCopyWith<_ObjectiveUnaccomplished> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 class _$ObjectivesTrackerStateTearOff {
   const _$ObjectivesTrackerStateTearOff();
 
-// ignore: unused_element
-  _ObjectivesTrackerState call({@required KtList<Objective> objectivesToDo, @required bool isFinished}) {
+  _ObjectivesTrackerState call({required KtList<Objective> objectivesToDo, required bool isFinished}) {
     return _ObjectivesTrackerState(
       objectivesToDo: objectivesToDo,
       isFinished: isFinished,
@@ -463,16 +448,16 @@ class _$ObjectivesTrackerStateTearOff {
 }
 
 /// @nodoc
-// ignore: unused_element
 const $ObjectivesTrackerState = _$ObjectivesTrackerStateTearOff();
 
 /// @nodoc
 mixin _$ObjectivesTrackerState {
-  KtList<Objective> get objectivesToDo;
-  bool get isFinished;
+  KtList<Objective> get objectivesToDo => throw _privateConstructorUsedError;
+
+  bool get isFinished => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
-  $ObjectivesTrackerStateCopyWith<ObjectivesTrackerState> get copyWith;
+  $ObjectivesTrackerStateCopyWith<ObjectivesTrackerState> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -493,12 +478,18 @@ class _$ObjectivesTrackerStateCopyWithImpl<$Res> implements $ObjectivesTrackerSt
 
   @override
   $Res call({
-    Object objectivesToDo = freezed,
-    Object isFinished = freezed,
+    Object? objectivesToDo = freezed,
+    Object? isFinished = freezed,
   }) {
     return _then(_value.copyWith(
-      objectivesToDo: objectivesToDo == freezed ? _value.objectivesToDo : objectivesToDo as KtList<Objective>,
-      isFinished: isFinished == freezed ? _value.isFinished : isFinished as bool,
+      objectivesToDo: objectivesToDo == freezed
+          ? _value.objectivesToDo
+          : objectivesToDo // ignore: cast_nullable_to_non_nullable
+              as KtList<Objective>,
+      isFinished: isFinished == freezed
+          ? _value.isFinished
+          : isFinished // ignore: cast_nullable_to_non_nullable
+              as bool,
     ));
   }
 }
@@ -520,21 +511,25 @@ class __$ObjectivesTrackerStateCopyWithImpl<$Res> extends _$ObjectivesTrackerSta
 
   @override
   $Res call({
-    Object objectivesToDo = freezed,
-    Object isFinished = freezed,
+    Object? objectivesToDo = freezed,
+    Object? isFinished = freezed,
   }) {
     return _then(_ObjectivesTrackerState(
-      objectivesToDo: objectivesToDo == freezed ? _value.objectivesToDo : objectivesToDo as KtList<Objective>,
-      isFinished: isFinished == freezed ? _value.isFinished : isFinished as bool,
+      objectivesToDo: objectivesToDo == freezed
+          ? _value.objectivesToDo
+          : objectivesToDo // ignore: cast_nullable_to_non_nullable
+              as KtList<Objective>,
+      isFinished: isFinished == freezed
+          ? _value.isFinished
+          : isFinished // ignore: cast_nullable_to_non_nullable
+              as bool,
     ));
   }
 }
 
 /// @nodoc
 class _$_ObjectivesTrackerState implements _ObjectivesTrackerState {
-  const _$_ObjectivesTrackerState({@required this.objectivesToDo, @required this.isFinished})
-      : assert(objectivesToDo != null),
-        assert(isFinished != null);
+  const _$_ObjectivesTrackerState({required this.objectivesToDo, required this.isFinished});
 
   @override
   final KtList<Objective> objectivesToDo;
@@ -553,7 +548,7 @@ class _$_ObjectivesTrackerState implements _ObjectivesTrackerState {
             (identical(other.objectivesToDo, objectivesToDo) || const DeepCollectionEquality().equals(other.objectivesToDo, objectivesToDo)) &&
             (identical(other.isFinished, isFinished) || const DeepCollectionEquality().equals(other.isFinished, isFinished)));
   }
-  
+
   @override
   int get hashCode => runtimeType.hashCode ^ const DeepCollectionEquality().hash(objectivesToDo) ^ const DeepCollectionEquality().hash(isFinished);
 
@@ -563,15 +558,15 @@ class _$_ObjectivesTrackerState implements _ObjectivesTrackerState {
 }
 
 abstract class _ObjectivesTrackerState implements ObjectivesTrackerState {
-  const factory _ObjectivesTrackerState({@required KtList<Objective> objectivesToDo, @required bool isFinished}) = _$_ObjectivesTrackerState;
+  const factory _ObjectivesTrackerState({required KtList<Objective> objectivesToDo, required bool isFinished}) = _$_ObjectivesTrackerState;
 
   @override
-  KtList<Objective> get objectivesToDo;
+  KtList<Objective> get objectivesToDo => throw _privateConstructorUsedError;
 
   @override
-  bool get isFinished;
+  bool get isFinished => throw _privateConstructorUsedError;
 
   @override
   @JsonKey(ignore: true)
-  _$ObjectivesTrackerStateCopyWith<_ObjectivesTrackerState> get copyWith;
+  _$ObjectivesTrackerStateCopyWith<_ObjectivesTrackerState> get copyWith => throw _privateConstructorUsedError;
 }

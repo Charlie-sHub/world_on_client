@@ -1,5 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides
 
 part of 'experience_management_application_failure.dart';
 
@@ -9,12 +9,14 @@ part of 'experience_management_application_failure.dart';
 
 T _$identity<T>(T value) => value;
 
+final _privateConstructorUsedError = UnsupportedError(
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+
 /// @nodoc
 class _$ExperienceManagementApplicationFailureTearOff {
   const _$ExperienceManagementApplicationFailureTearOff();
 
-// ignore: unused_element
-  SurpassedImageLimit<T> surpassedImageLimit<T>({@required int limit}) {
+  SurpassedImageLimit<T> surpassedImageLimit<T>({required int limit}) {
     return SurpassedImageLimit<T>(
       limit: limit,
     );
@@ -22,35 +24,40 @@ class _$ExperienceManagementApplicationFailureTearOff {
 }
 
 /// @nodoc
-// ignore: unused_element
 const $ExperienceManagementApplicationFailure = _$ExperienceManagementApplicationFailureTearOff();
 
 /// @nodoc
 mixin _$ExperienceManagementApplicationFailure<T> {
-  int get limit;
+  int get limit => throw _privateConstructorUsedError;
 
   @optionalTypeArgs
-  TResult when<TResult extends Object>({
-    @required TResult surpassedImageLimit(int limit),
-  });
+  TResult when<TResult extends Object?>({
+    required TResult Function(int limit) surpassedImageLimit,
+  }) =>
+      throw _privateConstructorUsedError;
 
   @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object>({
-    TResult surpassedImageLimit(int limit),
-    @required TResult orElse(),
-  });
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(int limit)? surpassedImageLimit,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
+
   @optionalTypeArgs
-  TResult map<TResult extends Object>({
-    @required TResult surpassedImageLimit(SurpassedImageLimit<T> value),
-  });
+  TResult map<TResult extends Object?>({
+    required TResult Function(SurpassedImageLimit<T> value) surpassedImageLimit,
+  }) =>
+      throw _privateConstructorUsedError;
+
   @optionalTypeArgs
-  TResult maybeMap<TResult extends Object>({
-    TResult surpassedImageLimit(SurpassedImageLimit<T> value),
-    @required TResult orElse(),
-  });
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(SurpassedImageLimit<T> value)? surpassedImageLimit,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
-  $ExperienceManagementApplicationFailureCopyWith<T, ExperienceManagementApplicationFailure<T>> get copyWith;
+  $ExperienceManagementApplicationFailureCopyWith<T, ExperienceManagementApplicationFailure<T>> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -72,10 +79,13 @@ class _$ExperienceManagementApplicationFailureCopyWithImpl<T, $Res> implements $
 
   @override
   $Res call({
-    Object limit = freezed,
+    Object? limit = freezed,
   }) {
     return _then(_value.copyWith(
-      limit: limit == freezed ? _value.limit : limit as int,
+      limit: limit == freezed
+          ? _value.limit
+          : limit // ignore: cast_nullable_to_non_nullable
+              as int,
     ));
   }
 }
@@ -97,17 +107,20 @@ class _$SurpassedImageLimitCopyWithImpl<T, $Res> extends _$ExperienceManagementA
 
   @override
   $Res call({
-    Object limit = freezed,
+    Object? limit = freezed,
   }) {
     return _then(SurpassedImageLimit<T>(
-      limit: limit == freezed ? _value.limit : limit as int,
+      limit: limit == freezed
+          ? _value.limit
+          : limit // ignore: cast_nullable_to_non_nullable
+              as int,
     ));
   }
 }
 
 /// @nodoc
 class _$SurpassedImageLimit<T> implements SurpassedImageLimit<T> {
-  const _$SurpassedImageLimit({@required this.limit}) : assert(limit != null);
+  const _$SurpassedImageLimit({required this.limit});
 
   @override
   final int limit;
@@ -131,20 +144,18 @@ class _$SurpassedImageLimit<T> implements SurpassedImageLimit<T> {
 
   @override
   @optionalTypeArgs
-  TResult when<TResult extends Object>({
-    @required TResult surpassedImageLimit(int limit),
+  TResult when<TResult extends Object?>({
+    required TResult Function(int limit) surpassedImageLimit,
   }) {
-    assert(surpassedImageLimit != null);
     return surpassedImageLimit(limit);
   }
 
   @override
   @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object>({
-    TResult surpassedImageLimit(int limit),
-    @required TResult orElse(),
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(int limit)? surpassedImageLimit,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (surpassedImageLimit != null) {
       return surpassedImageLimit(limit);
     }
@@ -153,20 +164,18 @@ class _$SurpassedImageLimit<T> implements SurpassedImageLimit<T> {
 
   @override
   @optionalTypeArgs
-  TResult map<TResult extends Object>({
-    @required TResult surpassedImageLimit(SurpassedImageLimit<T> value),
+  TResult map<TResult extends Object?>({
+    required TResult Function(SurpassedImageLimit<T> value) surpassedImageLimit,
   }) {
-    assert(surpassedImageLimit != null);
     return surpassedImageLimit(this);
   }
 
   @override
   @optionalTypeArgs
-  TResult maybeMap<TResult extends Object>({
-    TResult surpassedImageLimit(SurpassedImageLimit<T> value),
-    @required TResult orElse(),
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(SurpassedImageLimit<T> value)? surpassedImageLimit,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (surpassedImageLimit != null) {
       return surpassedImageLimit(this);
     }
@@ -175,12 +184,12 @@ class _$SurpassedImageLimit<T> implements SurpassedImageLimit<T> {
 }
 
 abstract class SurpassedImageLimit<T> implements ExperienceManagementApplicationFailure<T> {
-  const factory SurpassedImageLimit({@required int limit}) = _$SurpassedImageLimit<T>;
+  const factory SurpassedImageLimit({required int limit}) = _$SurpassedImageLimit<T>;
 
   @override
-  int get limit;
+  int get limit => throw _privateConstructorUsedError;
 
   @override
   @JsonKey(ignore: true)
-  $SurpassedImageLimitCopyWith<T, SurpassedImageLimit<T>> get copyWith;
+  $SurpassedImageLimitCopyWith<T, SurpassedImageLimit<T>> get copyWith => throw _privateConstructorUsedError;
 }

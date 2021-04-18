@@ -1,7 +1,7 @@
 part of 'main_feed_watcher_bloc.dart';
 
 @freezed
-abstract class MainFeedWatcherState with _$MainFeedWatcherState {
+class MainFeedWatcherState with _$MainFeedWatcherState {
   const factory MainFeedWatcherState.initial() = _Initial;
 
   const factory MainFeedWatcherState.loadInProgress() = _LoadInProgress;

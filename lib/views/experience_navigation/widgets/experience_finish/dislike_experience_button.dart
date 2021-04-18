@@ -6,8 +6,8 @@ import 'package:worldon/domain/core/entities/experience/experience.dart';
 
 class DislikeExperienceButton extends StatelessWidget {
   const DislikeExperienceButton({
-    Key key,
-    @required this.experience,
+    Key? key,
+    required this.experience,
   }) : super(key: key);
 
   final Experience experience;

@@ -7,13 +7,17 @@ import 'package:worldon/views/core/misc/world_on_colors.dart';
 
 class FinishButton extends StatelessWidget {
   const FinishButton({
-    Key key,
+    Key? key,
   }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return RaisedButton(
-      color: WorldOnColors.primary,
+    return ElevatedButton(
+      style: ButtonStyle(
+        backgroundColor: MaterialStateProperty.all(
+          WorldOnColors.primary,
+        ),
+      ),
       onPressed: () => context.read<ExperienceNavigationWatcherBloc>().add(
             ExperienceNavigationWatcherEvent.initialized(none()),
           ),

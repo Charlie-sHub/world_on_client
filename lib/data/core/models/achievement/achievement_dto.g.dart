@@ -16,16 +16,13 @@ _$_AchievementDto _$_$_AchievementDtoFromJson(Map<String, dynamic> json) {
     requisite: json['requisite'] as int,
     experiencePoints: json['experiencePoints'] as int,
     creatorId: json['creatorId'] as String,
-    creationDate: const ServerTimestampConverter()
-        .fromJson(json['creationDate'] as Timestamp),
-    modificationDate: const ServerTimestampConverter()
-        .fromJson(json['modificationDate'] as Timestamp),
-    tagNames: (json['tagNames'] as List)?.map((e) => e as String)?.toSet(),
+    creationDate: const ServerTimestampConverter().fromJson(json['creationDate'] as Timestamp),
+    modificationDate: const ServerTimestampConverter().fromJson(json['modificationDate'] as Timestamp),
+    tagNames: (json['tagNames'] as List<dynamic>).map((e) => e as String).toSet(),
   );
 }
 
-Map<String, dynamic> _$_$_AchievementDtoToJson(_$_AchievementDto instance) =>
-    <String, dynamic>{
+Map<String, dynamic> _$_$_AchievementDtoToJson(_$_AchievementDto instance) => <String, dynamic>{
       'id': instance.id,
       'name': instance.name,
       'description': instance.description,
@@ -34,9 +31,7 @@ Map<String, dynamic> _$_$_AchievementDtoToJson(_$_AchievementDto instance) =>
       'requisite': instance.requisite,
       'experiencePoints': instance.experiencePoints,
       'creatorId': instance.creatorId,
-      'creationDate':
-          const ServerTimestampConverter().toJson(instance.creationDate),
-      'modificationDate':
-          const ServerTimestampConverter().toJson(instance.modificationDate),
-      'tagNames': instance.tagNames?.toList(),
+      'creationDate': const ServerTimestampConverter().toJson(instance.creationDate),
+      'modificationDate': const ServerTimestampConverter().toJson(instance.modificationDate),
+      'tagNames': instance.tagNames.toList(),
     };

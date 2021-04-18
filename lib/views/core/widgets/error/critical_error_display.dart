@@ -7,8 +7,8 @@ class CriticalErrorDisplay extends StatelessWidget {
   final Failure failure;
 
   const CriticalErrorDisplay({
-    Key key,
-    @required this.failure,
+    Key? key,
+    required this.failure,
   }) : super(key: key);
 
   @override

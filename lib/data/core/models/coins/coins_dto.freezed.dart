@@ -1,5 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides
 
 part of 'coins_dto.dart';
 
@@ -8,6 +8,10 @@ part of 'coins_dto.dart';
 // **************************************************************************
 
 T _$identity<T>(T value) => value;
+
+final _privateConstructorUsedError = UnsupportedError(
+  'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+
 CoinsDto _$CoinsDtoFromJson(Map<String, dynamic> json) {
   return _CoinsDto.fromJson(json);
 }
@@ -15,31 +19,30 @@ CoinsDto _$CoinsDtoFromJson(Map<String, dynamic> json) {
 /// @nodoc
 class _$CoinsDtoTearOff {
   const _$CoinsDtoTearOff();
-
-// ignore: unused_element
-  _CoinsDto call({@required String tenCoinsProductId}) {
+  
+  _CoinsDto call({required String tenCoinsProductId}) {
     return _CoinsDto(
       tenCoinsProductId: tenCoinsProductId,
     );
   }
 
-// ignore: unused_element
   CoinsDto fromJson(Map<String, Object> json) {
     return CoinsDto.fromJson(json);
   }
 }
 
 /// @nodoc
-// ignore: unused_element
 const $CoinsDto = _$CoinsDtoTearOff();
 
 /// @nodoc
 mixin _$CoinsDto {
-  String get tenCoinsProductId;
-
-  Map<String, dynamic> toJson();
+  String get tenCoinsProductId => throw _privateConstructorUsedError;
+  
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  
   @JsonKey(ignore: true)
-  $CoinsDtoCopyWith<CoinsDto> get copyWith;
+  $CoinsDtoCopyWith<CoinsDto> get copyWith =>
+    throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -59,12 +62,13 @@ class _$CoinsDtoCopyWithImpl<$Res> implements $CoinsDtoCopyWith<$Res> {
 
   @override
   $Res call({
-    Object tenCoinsProductId = freezed,
+    Object? tenCoinsProductId = freezed,
   }) {
     return _then(_value.copyWith(
       tenCoinsProductId: tenCoinsProductId == freezed
         ? _value.tenCoinsProductId
-        : tenCoinsProductId as String,
+        : tenCoinsProductId // ignore: cast_nullable_to_non_nullable
+      as String,
     ));
   }
 }
@@ -88,12 +92,13 @@ class __$CoinsDtoCopyWithImpl<$Res> extends _$CoinsDtoCopyWithImpl<$Res>
   
   @override
   $Res call({
-    Object tenCoinsProductId = freezed,
+    Object? tenCoinsProductId = freezed,
   }) {
     return _then(_CoinsDto(
       tenCoinsProductId: tenCoinsProductId == freezed
         ? _value.tenCoinsProductId
-        : tenCoinsProductId as String,
+        : tenCoinsProductId // ignore: cast_nullable_to_non_nullable
+      as String,
     ));
   }
 }
@@ -101,9 +106,7 @@ class __$CoinsDtoCopyWithImpl<$Res> extends _$CoinsDtoCopyWithImpl<$Res>
 @JsonSerializable()
 
 /// @nodoc class _$_CoinsDto extends _CoinsDto {
-  const _$_CoinsDto({@required this.tenCoinsProductId})
-    : assert(tenCoinsProductId != null),
-      super._();
+  const _$_CoinsDto({required this.tenCoinsProductId}) : super._();
   
   factory _$_CoinsDto.fromJson(Map<String, dynamic> json) =>
     _$_$_CoinsDtoFromJson(json);
@@ -142,14 +145,17 @@ class __$CoinsDtoCopyWithImpl<$Res> extends _$CoinsDtoCopyWithImpl<$Res>
 }
 
 abstract class _CoinsDto extends CoinsDto {
+  const factory _CoinsDto({required String tenCoinsProductId}) = _$_CoinsDto;
+  
   const _CoinsDto._() : super._();
-  const factory _CoinsDto({@required String tenCoinsProductId}) = _$_CoinsDto;
-
+  
   factory _CoinsDto.fromJson(Map<String, dynamic> json) = _$_CoinsDto.fromJson;
-
+  
   @override
-  String get tenCoinsProductId;
+  String get tenCoinsProductId => throw _privateConstructorUsedError;
+  
   @override
   @JsonKey(ignore: true)
-  _$CoinsDtoCopyWith<_CoinsDto> get copyWith;
+  _$CoinsDtoCopyWith<_CoinsDto> get copyWith =>
+    throw _privateConstructorUsedError;
 }

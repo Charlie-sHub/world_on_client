@@ -1,7 +1,7 @@
 part of 'recommended_experiences_watcher_bloc.dart';
 
 @freezed
-abstract class RecommendedExperiencesWatcherState with _$RecommendedExperiencesWatcherState {
+class RecommendedExperiencesWatcherState with _$RecommendedExperiencesWatcherState {
   const factory RecommendedExperiencesWatcherState.initial() = _Initial;
 
   const factory RecommendedExperiencesWatcherState.loadInProgress() = _LoadInProgress;

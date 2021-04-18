@@ -1,5 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides
 
 part of 'device.dart';
 
@@ -9,16 +9,14 @@ part of 'device.dart';
 
 T _$identity<T>(T value) => value;
 
+final _privateConstructorUsedError = UnsupportedError(
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+
 /// @nodoc
 class _$DeviceTearOff {
   const _$DeviceTearOff();
 
-// ignore: unused_element
-  _Device call(
-      {@required UniqueId id,
-      @required String name,
-      @required String type,
-      @required String company}) {
+  _Device call({required UniqueId id, required String name, required String type, required String company}) {
     return _Device(
       id: id,
       name: name,
@@ -29,24 +27,25 @@ class _$DeviceTearOff {
 }
 
 /// @nodoc
-// ignore: unused_element
 const $Device = _$DeviceTearOff();
 
 /// @nodoc
 mixin _$Device {
-  UniqueId get id;
-  String get name;
-  String get type;
-  String get company;
+  UniqueId get id => throw _privateConstructorUsedError;
+
+  String get name => throw _privateConstructorUsedError;
+
+  String get type => throw _privateConstructorUsedError;
+
+  String get company => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
-  $DeviceCopyWith<Device> get copyWith;
+  $DeviceCopyWith<Device> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $DeviceCopyWith<$Res> {
-  factory $DeviceCopyWith(Device value, $Res Function(Device) then) =
-      _$DeviceCopyWithImpl<$Res>;
+  factory $DeviceCopyWith(Device value, $Res Function(Device) then) = _$DeviceCopyWithImpl<$Res>;
   $Res call({UniqueId id, String name, String type, String company});
 }
 
@@ -60,65 +59,77 @@ class _$DeviceCopyWithImpl<$Res> implements $DeviceCopyWith<$Res> {
 
   @override
   $Res call({
-    Object id = freezed,
-    Object name = freezed,
-    Object type = freezed,
-    Object company = freezed,
+    Object? id = freezed,
+    Object? name = freezed,
+    Object? type = freezed,
+    Object? company = freezed,
   }) {
     return _then(_value.copyWith(
-      id: id == freezed ? _value.id : id as UniqueId,
-      name: name == freezed ? _value.name : name as String,
-      type: type == freezed ? _value.type : type as String,
-      company: company == freezed ? _value.company : company as String,
+      id: id == freezed
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as UniqueId,
+      name: name == freezed
+          ? _value.name
+          : name // ignore: cast_nullable_to_non_nullable
+              as String,
+      type: type == freezed
+          ? _value.type
+          : type // ignore: cast_nullable_to_non_nullable
+              as String,
+      company: company == freezed
+          ? _value.company
+          : company // ignore: cast_nullable_to_non_nullable
+              as String,
     ));
   }
 }
 
 /// @nodoc
 abstract class _$DeviceCopyWith<$Res> implements $DeviceCopyWith<$Res> {
-  factory _$DeviceCopyWith(_Device value, $Res Function(_Device) then) =
-      __$DeviceCopyWithImpl<$Res>;
+  factory _$DeviceCopyWith(_Device value, $Res Function(_Device) then) = __$DeviceCopyWithImpl<$Res>;
   @override
   $Res call({UniqueId id, String name, String type, String company});
 }
 
 /// @nodoc
-class __$DeviceCopyWithImpl<$Res> extends _$DeviceCopyWithImpl<$Res>
-    implements _$DeviceCopyWith<$Res> {
-  __$DeviceCopyWithImpl(_Device _value, $Res Function(_Device) _then)
-      : super(_value, (v) => _then(v as _Device));
+class __$DeviceCopyWithImpl<$Res> extends _$DeviceCopyWithImpl<$Res> implements _$DeviceCopyWith<$Res> {
+  __$DeviceCopyWithImpl(_Device _value, $Res Function(_Device) _then) : super(_value, (v) => _then(v as _Device));
 
   @override
   _Device get _value => super._value as _Device;
 
   @override
   $Res call({
-    Object id = freezed,
-    Object name = freezed,
-    Object type = freezed,
-    Object company = freezed,
+    Object? id = freezed,
+    Object? name = freezed,
+    Object? type = freezed,
+    Object? company = freezed,
   }) {
     return _then(_Device(
-      id: id == freezed ? _value.id : id as UniqueId,
-      name: name == freezed ? _value.name : name as String,
-      type: type == freezed ? _value.type : type as String,
-      company: company == freezed ? _value.company : company as String,
+      id: id == freezed
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as UniqueId,
+      name: name == freezed
+          ? _value.name
+          : name // ignore: cast_nullable_to_non_nullable
+              as String,
+      type: type == freezed
+          ? _value.type
+          : type // ignore: cast_nullable_to_non_nullable
+              as String,
+      company: company == freezed
+          ? _value.company
+          : company // ignore: cast_nullable_to_non_nullable
+              as String,
     ));
   }
 }
 
 /// @nodoc
 class _$_Device extends _Device {
-  const _$_Device(
-      {@required this.id,
-      @required this.name,
-      @required this.type,
-      @required this.company})
-      : assert(id != null),
-        assert(name != null),
-        assert(type != null),
-        assert(company != null),
-        super._();
+  const _$_Device({required this.id, required this.name, required this.type, required this.company}) : super._();
 
   @override
   final UniqueId id;
@@ -138,14 +149,10 @@ class _$_Device extends _Device {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other is _Device &&
-            (identical(other.id, id) ||
-                const DeepCollectionEquality().equals(other.id, id)) &&
-            (identical(other.name, name) ||
-                const DeepCollectionEquality().equals(other.name, name)) &&
-            (identical(other.type, type) ||
-                const DeepCollectionEquality().equals(other.type, type)) &&
-            (identical(other.company, company) ||
-                const DeepCollectionEquality().equals(other.company, company)));
+            (identical(other.id, id) || const DeepCollectionEquality().equals(other.id, id)) &&
+            (identical(other.name, name) || const DeepCollectionEquality().equals(other.name, name)) &&
+            (identical(other.type, type) || const DeepCollectionEquality().equals(other.type, type)) &&
+            (identical(other.company, company) || const DeepCollectionEquality().equals(other.company, company)));
   }
 
   @override
@@ -158,27 +165,27 @@ class _$_Device extends _Device {
 
   @JsonKey(ignore: true)
   @override
-  _$DeviceCopyWith<_Device> get copyWith =>
-      __$DeviceCopyWithImpl<_Device>(this, _$identity);
+  _$DeviceCopyWith<_Device> get copyWith => __$DeviceCopyWithImpl<_Device>(this, _$identity);
 }
 
 abstract class _Device extends Device {
+  const factory _Device({required UniqueId id, required String name, required String type, required String company}) = _$_Device;
+
   const _Device._() : super._();
-  const factory _Device(
-      {@required UniqueId id,
-      @required String name,
-      @required String type,
-      @required String company}) = _$_Device;
 
   @override
-  UniqueId get id;
+  UniqueId get id => throw _privateConstructorUsedError;
+
   @override
-  String get name;
+  String get name => throw _privateConstructorUsedError;
+
   @override
-  String get type;
+  String get type => throw _privateConstructorUsedError;
+
   @override
-  String get company;
+  String get company => throw _privateConstructorUsedError;
+
   @override
   @JsonKey(ignore: true)
-  _$DeviceCopyWith<_Device> get copyWith;
+  _$DeviceCopyWith<_Device> get copyWith => throw _privateConstructorUsedError;
 }

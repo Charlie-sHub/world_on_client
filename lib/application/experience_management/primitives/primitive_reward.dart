@@ -11,14 +11,14 @@ part 'primitive_reward.freezed.dart';
 
 @Deprecated("This class is not necessary for the current way to create rewards")
 @freezed
-abstract class PrimitiveReward implements _$PrimitiveReward {
+class PrimitiveReward with _$PrimitiveReward {
   const PrimitiveReward._();
 
   const factory PrimitiveReward({
-    @required UniqueId id,
-    @required String name,
-    @required String description,
-    @required File imageFile,
+    required UniqueId id,
+    required String name,
+    required String description,
+    required File? imageFile,
   }) = _PrimitiveReward;
 
   factory PrimitiveReward.empty() => PrimitiveReward(
@@ -33,7 +33,7 @@ abstract class PrimitiveReward implements _$PrimitiveReward {
         name: reward.name.getOrCrash(),
         description: reward.description.getOrCrash(),
         imageFile: reward.imageFile.fold(
-          () => null,
+          () {},
           dartz.id,
         ),
       );
@@ -43,6 +43,6 @@ abstract class PrimitiveReward implements _$PrimitiveReward {
         name: Name(name),
         description: EntityDescription(description),
         imageURL: "",
-        imageFile: dartz.some(imageFile),
+        imageFile: dartz.some(imageFile!),
       );
 }

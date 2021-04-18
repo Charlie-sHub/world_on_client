@@ -1,12 +1,12 @@
 part of 'options_form_bloc.dart';
 
 @freezed
-abstract class OptionsFormState with _$OptionsFormState {
+class OptionsFormState with _$OptionsFormState {
   const factory OptionsFormState({
-    @required Options options,
-    @required bool showErrorMessages,
-    @required bool isSubmitting,
-    @required Option<Either<Failure, Unit>> failureOrSuccessOption,
+    required Options options,
+    required bool showErrorMessages,
+    required bool isSubmitting,
+    required Option<Either<Failure, Unit>> failureOrSuccessOption,
   }) = _OptionsFormState;
 
   factory OptionsFormState.initial() => OptionsFormState(

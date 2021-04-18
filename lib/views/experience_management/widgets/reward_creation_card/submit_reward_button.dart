@@ -5,12 +5,12 @@ import 'package:worldon/generated/l10n.dart';
 
 class SubmitRewardButton extends StatelessWidget {
   const SubmitRewardButton({
-    Key key,
+    Key? key,
   }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return RaisedButton(
+    return ElevatedButton(
       onPressed: () => context.read<RewardFormBloc>().add(
             const RewardFormEvent.submitted(),
           ),

@@ -10,7 +10,6 @@ import 'package:worldon/domain/experience_navigation/repository/experience_navig
 
 @LazySingleton(as: ExperienceNavigationRepositoryInterface, env: [Environment.dev])
 class DevelopmentExperienceNavigationRepository implements ExperienceNavigationRepositoryInterface {
-
   @override
   Future<Either<Failure, Unit>> finishExperience(UniqueId experienceId) async {
     throw UnimplementedError();
@@ -28,8 +27,8 @@ class DevelopmentExperienceNavigationRepository implements ExperienceNavigationR
 
   @override
   Future<Either<Failure, Unit>> rateDifficulty({
-    Difficulty difficulty,
-    UniqueId experienceId,
+    required Difficulty difficulty,
+    required UniqueId experienceId,
   }) async {
     throw UnimplementedError();
   }

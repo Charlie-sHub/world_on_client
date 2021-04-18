@@ -10,17 +10,14 @@ _$_ObjectiveDto _$_$_ObjectiveDtoFromJson(Map<String, dynamic> json) {
   return _$_ObjectiveDto(
     id: json['id'] as String,
     description: json['description'] as String,
-    coordinates: json['coordinates'] == null
-        ? null
-        : CoordinatesDto.fromJson(json['coordinates'] as Map<String, dynamic>),
+    coordinates: CoordinatesDto.fromJson(json['coordinates'] as Map<String, dynamic>),
     imageURL: json['imageURL'] as String,
   );
 }
 
-Map<String, dynamic> _$_$_ObjectiveDtoToJson(_$_ObjectiveDto instance) =>
-    <String, dynamic>{
+Map<String, dynamic> _$_$_ObjectiveDtoToJson(_$_ObjectiveDto instance) => <String, dynamic>{
       'id': instance.id,
       'description': instance.description,
-      'coordinates': instance.coordinates?.toJson(),
+      'coordinates': instance.coordinates.toJson(),
       'imageURL': instance.imageURL,
     };

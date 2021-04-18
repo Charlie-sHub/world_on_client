@@ -11,7 +11,7 @@ class ImagePickerDialog extends StatelessWidget {
     return AlertDialog(
       backgroundColor: WorldOnColors.background,
       actions: [
-        RaisedButton(
+        ElevatedButton(
           onPressed: () async {
             final _imageFile = await _pickImage(
               ImageSource.camera,
@@ -32,7 +32,7 @@ class ImagePickerDialog extends StatelessWidget {
             ],
           ),
         ),
-        RaisedButton(
+        ElevatedButton(
           onPressed: () async {
             final _imageFile = await _pickImage(
               ImageSource.gallery,
@@ -57,7 +57,7 @@ class ImagePickerDialog extends StatelessWidget {
     );
   }
 
-  Future _pickImage(ImageSource source, BuildContext context) async {
+  Future<File?> _pickImage(ImageSource source, BuildContext context) async {
     final _imagePicked = await ImagePicker().getImage(
       source: source,
       imageQuality: 50,

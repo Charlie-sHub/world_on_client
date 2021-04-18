@@ -1,5 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides
 
 part of 'item_dto.dart';
 
@@ -8,6 +8,10 @@ part of 'item_dto.dart';
 // **************************************************************************
 
 T _$identity<T>(T value) => value;
+
+final _privateConstructorUsedError = UnsupportedError(
+  'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+
 ItemDto _$ItemDtoFromJson(Map<String, dynamic> json) {
   return _Item.fromJson(json);
 }
@@ -15,16 +19,15 @@ ItemDto _$ItemDtoFromJson(Map<String, dynamic> json) {
 /// @nodoc
 class _$ItemDtoTearOff {
   const _$ItemDtoTearOff();
-
-// ignore: unused_element
-  _Item call({@required String id,
-    @required String name,
-    @required String description,
-    @required ItemCode code,
-    @required int value,
-    @required int timeLimitInDays,
-    @required String imageURL,
-    @required @ServerTimestampConverter() DateTime boughtDate}) {
+  
+  _Item call({required String id,
+    required String name,
+    required String description,
+    required ItemCode code,
+    required int value,
+    required int timeLimitInDays,
+    required String imageURL,
+    @ServerTimestampConverter() required DateTime boughtDate}) {
     return _Item(
       id: id,
       name: name,
@@ -37,31 +40,37 @@ class _$ItemDtoTearOff {
     );
   }
 
-// ignore: unused_element
   ItemDto fromJson(Map<String, Object> json) {
     return ItemDto.fromJson(json);
   }
 }
 
 /// @nodoc
-// ignore: unused_element
 const $ItemDto = _$ItemDtoTearOff();
 
 /// @nodoc
 mixin _$ItemDto {
-  String get id;
-  String get name;
-  String get description;
-  ItemCode get code;
-  int get value;
-  int get timeLimitInDays;
-  String get imageURL;
+  String get id => throw _privateConstructorUsedError;
+  
+  String get name => throw _privateConstructorUsedError;
+  
+  String get description => throw _privateConstructorUsedError;
+  
+  ItemCode get code => throw _privateConstructorUsedError;
+  
+  int get value => throw _privateConstructorUsedError;
+  
+  int get timeLimitInDays => throw _privateConstructorUsedError;
+  
+  String get imageURL => throw _privateConstructorUsedError;
+  
   @ServerTimestampConverter()
-  DateTime get boughtDate;
-
-  Map<String, dynamic> toJson();
+  DateTime get boughtDate => throw _privateConstructorUsedError;
+  
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  
   @JsonKey(ignore: true)
-  $ItemDtoCopyWith<ItemDto> get copyWith;
+  $ItemDtoCopyWith<ItemDto> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -89,28 +98,48 @@ class _$ItemDtoCopyWithImpl<$Res> implements $ItemDtoCopyWith<$Res> {
 
   @override
   $Res call({
-    Object id = freezed,
-    Object name = freezed,
-    Object description = freezed,
-    Object code = freezed,
-    Object value = freezed,
-    Object timeLimitInDays = freezed,
-    Object imageURL = freezed,
-    Object boughtDate = freezed,
+    Object? id = freezed,
+    Object? name = freezed,
+    Object? description = freezed,
+    Object? code = freezed,
+    Object? value = freezed,
+    Object? timeLimitInDays = freezed,
+    Object? imageURL = freezed,
+    Object? boughtDate = freezed,
   }) {
     return _then(_value.copyWith(
-      id: id == freezed ? _value.id : id as String,
-      name: name == freezed ? _value.name : name as String,
-      description:
-      description == freezed ? _value.description : description as String,
-      code: code == freezed ? _value.code : code as ItemCode,
-      value: value == freezed ? _value.value : value as int,
+      id: id == freezed
+        ? _value.id
+        : id // ignore: cast_nullable_to_non_nullable
+      as String,
+      name: name == freezed
+        ? _value.name
+        : name // ignore: cast_nullable_to_non_nullable
+      as String,
+      description: description == freezed
+        ? _value.description
+        : description // ignore: cast_nullable_to_non_nullable
+      as String,
+      code: code == freezed
+        ? _value.code
+        : code // ignore: cast_nullable_to_non_nullable
+      as ItemCode,
+      value: value == freezed
+        ? _value.value
+        : value // ignore: cast_nullable_to_non_nullable
+      as int,
       timeLimitInDays: timeLimitInDays == freezed
         ? _value.timeLimitInDays
-        : timeLimitInDays as int,
-      imageURL: imageURL == freezed ? _value.imageURL : imageURL as String,
-      boughtDate:
-      boughtDate == freezed ? _value.boughtDate : boughtDate as DateTime,
+        : timeLimitInDays // ignore: cast_nullable_to_non_nullable
+      as int,
+      imageURL: imageURL == freezed
+        ? _value.imageURL
+        : imageURL // ignore: cast_nullable_to_non_nullable
+      as String,
+      boughtDate: boughtDate == freezed
+        ? _value.boughtDate
+        : boughtDate // ignore: cast_nullable_to_non_nullable
+      as DateTime,
     ));
   }
 }
@@ -142,28 +171,48 @@ class __$ItemCopyWithImpl<$Res> extends _$ItemDtoCopyWithImpl<$Res>
   
   @override
   $Res call({
-    Object id = freezed,
-    Object name = freezed,
-    Object description = freezed,
-    Object code = freezed,
-    Object value = freezed,
-    Object timeLimitInDays = freezed,
-    Object imageURL = freezed,
-    Object boughtDate = freezed,
+    Object? id = freezed,
+    Object? name = freezed,
+    Object? description = freezed,
+    Object? code = freezed,
+    Object? value = freezed,
+    Object? timeLimitInDays = freezed,
+    Object? imageURL = freezed,
+    Object? boughtDate = freezed,
   }) {
     return _then(_Item(
-      id: id == freezed ? _value.id : id as String,
-      name: name == freezed ? _value.name : name as String,
-      description:
-      description == freezed ? _value.description : description as String,
-      code: code == freezed ? _value.code : code as ItemCode,
-      value: value == freezed ? _value.value : value as int,
+      id: id == freezed
+        ? _value.id
+        : id // ignore: cast_nullable_to_non_nullable
+      as String,
+      name: name == freezed
+        ? _value.name
+        : name // ignore: cast_nullable_to_non_nullable
+      as String,
+      description: description == freezed
+        ? _value.description
+        : description // ignore: cast_nullable_to_non_nullable
+      as String,
+      code: code == freezed
+        ? _value.code
+        : code // ignore: cast_nullable_to_non_nullable
+      as ItemCode,
+      value: value == freezed
+        ? _value.value
+        : value // ignore: cast_nullable_to_non_nullable
+      as int,
       timeLimitInDays: timeLimitInDays == freezed
         ? _value.timeLimitInDays
-        : timeLimitInDays as int,
-      imageURL: imageURL == freezed ? _value.imageURL : imageURL as String,
-      boughtDate:
-      boughtDate == freezed ? _value.boughtDate : boughtDate as DateTime,
+        : timeLimitInDays // ignore: cast_nullable_to_non_nullable
+      as int,
+      imageURL: imageURL == freezed
+        ? _value.imageURL
+        : imageURL // ignore: cast_nullable_to_non_nullable
+      as String,
+      boughtDate: boughtDate == freezed
+        ? _value.boughtDate
+        : boughtDate // ignore: cast_nullable_to_non_nullable
+      as DateTime,
     ));
   }
 }
@@ -171,23 +220,15 @@ class __$ItemCopyWithImpl<$Res> extends _$ItemDtoCopyWithImpl<$Res>
 @JsonSerializable()
 
 /// @nodoc class _$_Item extends _Item {
-  const _$_Item({@required this.id,
-    @required this.name,
-    @required this.description,
-    @required this.code,
-    @required this.value,
-    @required this.timeLimitInDays,
-    @required this.imageURL,
-    @required @ServerTimestampConverter() this.boughtDate})
-    : assert(id != null),
-      assert(name != null),
-      assert(description != null),
-      assert(code != null),
-      assert(value != null),
-      assert(timeLimitInDays != null),
-      assert(imageURL != null),
-      assert(boughtDate != null),
-      super._();
+  const _$_Item({required this.id,
+    required this.name,
+    required this.description,
+    required this.code,
+    required this.value,
+    required this.timeLimitInDays,
+    required this.imageURL,
+    @ServerTimestampConverter() required this.boughtDate})
+    : super._();
   
   factory _$_Item.fromJson(Map<String, dynamic> json) =>
     _$_$_ItemFromJson(json);
@@ -265,40 +306,45 @@ class __$ItemCopyWithImpl<$Res> extends _$ItemDtoCopyWithImpl<$Res>
 }
 
 abstract class _Item extends ItemDto {
-  const _Item._() : super._();
+  const factory _Item({required String id,
+    required String name,
+    required String description,
+    required ItemCode code,
+    required int value,
+    required int timeLimitInDays,
+    required String imageURL,
+    @ServerTimestampConverter() required DateTime boughtDate}) = _$_Item;
   
-  const factory _Item({@required String id,
-    @required String name,
-    @required String description,
-    @required ItemCode code,
-    @required int value,
-    @required int timeLimitInDays,
-    @required String imageURL,
-    @required @ServerTimestampConverter() DateTime boughtDate}) = _$_Item;
+  const _Item._() : super._();
   
   factory _Item.fromJson(Map<String, dynamic> json) = _$_Item.fromJson;
   
   @override
-  String get id;
+  String get id => throw _privateConstructorUsedError;
   
   @override
-  String get name;
+  String get name => throw _privateConstructorUsedError;
   
   @override
-  String get description;
+  String get description => throw _privateConstructorUsedError;
   
   @override
-  ItemCode get code;
+  ItemCode get code => throw _privateConstructorUsedError;
+  
   @override
-  int get value;
+  int get value => throw _privateConstructorUsedError;
+  
   @override
-  int get timeLimitInDays;
+  int get timeLimitInDays => throw _privateConstructorUsedError;
+  
   @override
-  String get imageURL;
+  String get imageURL => throw _privateConstructorUsedError;
+  
   @override
   @ServerTimestampConverter()
-  DateTime get boughtDate;
+  DateTime get boughtDate => throw _privateConstructorUsedError;
+  
   @override
   @JsonKey(ignore: true)
-  _$ItemCopyWith<_Item> get copyWith;
+  _$ItemCopyWith<_Item> get copyWith => throw _privateConstructorUsedError;
 }

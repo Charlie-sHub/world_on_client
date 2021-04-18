@@ -13,17 +13,14 @@ class ObjectiveList extends ValueObject<KtList<Objective>> {
   // Just a value that made sense at the time
   static const maxLength = 20;
 
-  factory ObjectiveList(KtList<Objective> input) {
-    assert(input != null);
-    return ObjectiveList._(
-      validateNotEmptyList(input).flatMap(
-        (input) => validateMaxListLength(
-          input: input,
-          maxLength: maxLength,
+  factory ObjectiveList(KtList<Objective> input) => ObjectiveList._(
+        validateNotEmptyList(input).flatMap(
+          (input) => validateMaxListLength(
+            input: input,
+            maxLength: maxLength,
+          ),
         ),
-      ),
-    );
-  }
+      );
 
   const ObjectiveList._(this.value);
 

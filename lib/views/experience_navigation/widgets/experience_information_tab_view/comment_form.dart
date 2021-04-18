@@ -15,8 +15,8 @@ class CommentForm extends HookWidget {
   final UniqueId experienceId;
 
   const CommentForm({
-    Key key,
-    @required this.experienceId,
+    Key? key,
+    required this.experienceId,
   }) : super(key: key);
 
   @override
@@ -88,7 +88,7 @@ class CommentForm extends HookWidget {
   }
 
   void _commentFormListener(CommentFormState state, BuildContext context, TextEditingController _textEditingController) => state.failureOrSuccessOption.fold(
-        () => null,
+        () {},
         (either) => either.fold(
           (failure) => FlushbarHelper.createError(
             message: failure.maybeMap(

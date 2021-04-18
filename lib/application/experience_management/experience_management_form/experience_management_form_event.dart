@@ -1,7 +1,7 @@
 part of 'experience_management_form_bloc.dart';
 
 @freezed
-abstract class ExperienceManagementFormEvent with _$ExperienceManagementFormEvent {
+class ExperienceManagementFormEvent with _$ExperienceManagementFormEvent {
   const factory ExperienceManagementFormEvent.initialized(Option<Experience> experienceOption) = _Initialized;
 
   const factory ExperienceManagementFormEvent.titleChanged(String title) = _TitleChanged;
@@ -13,8 +13,8 @@ abstract class ExperienceManagementFormEvent with _$ExperienceManagementFormEven
   const factory ExperienceManagementFormEvent.imagesChanged(List<Asset> imageAssets) = _ImagesChanged;
 
   const factory ExperienceManagementFormEvent.coordinatesChanged({
-    @required double latitude,
-    @required double longitude,
+    required double latitude,
+    required double longitude,
   }) = _CoordinatesChanged;
 
   const factory ExperienceManagementFormEvent.difficultyChanged(int difficulty) = _DifficultyChanged;

@@ -16,9 +16,9 @@ class ProfileBody extends StatelessWidget {
   final bool currentUserProfile;
 
   const ProfileBody({
-    Key key,
-    @required this.userOption,
-    @required this.currentUserProfile,
+    Key? key,
+    required this.userOption,
+    required this.currentUserProfile,
   }) : super(key: key);
 
   @override
@@ -44,13 +44,13 @@ class ProfileBody extends StatelessWidget {
                       ),
                     )
                 : null,
-              (user) => context.read<ProfileWatcherBloc>().add(
+            (user) => context.read<ProfileWatcherBloc>().add(
                   ProfileWatcherEvent.initializedForeignOrOwn(
                     some(user),
                   ),
                 ),
           ),
-          orElse: () => null,
+          orElse: () {},
         ),
         child: BlocBuilder<ProfileWatcherBloc, ProfileWatcherState>(
           builder: (context, state) => state.map(

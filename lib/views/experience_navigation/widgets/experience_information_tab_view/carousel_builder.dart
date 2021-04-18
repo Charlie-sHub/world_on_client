@@ -6,9 +6,9 @@ class CarouselBuilder extends StatelessWidget {
   final int itemCount;
 
   const CarouselBuilder({
-    Key key,
-    @required this.function,
-    @required this.itemCount,
+    Key? key,
+    required this.function,
+    required this.itemCount,
   }) : super(key: key);
 
   @override

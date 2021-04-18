@@ -4,7 +4,7 @@ import 'package:worldon/application/tag_management/tag_management_form/tag_manag
 
 class SubmitTagButton extends StatelessWidget {
   const SubmitTagButton({
-    Key key,
+    Key? key,
   }) : super(key: key);
 
   @override

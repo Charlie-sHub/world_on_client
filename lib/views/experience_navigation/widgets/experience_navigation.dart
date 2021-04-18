@@ -15,8 +15,8 @@ class ExperienceNavigation extends StatelessWidget {
   final Experience experience;
 
   const ExperienceNavigation({
-    Key key,
-    @required this.experience,
+    Key? key,
+    required this.experience,
   }) : super(key: key);
 
   @override
@@ -43,7 +43,7 @@ class ExperienceNavigation extends StatelessWidget {
               context.read<MapControllerBloc>().add(MapControllerEvent.initialized(value.experience));
               context.read<ObjectivesTrackerBloc>().add(ObjectivesTrackerEvent.initialized(value.experience.objectives));
             },
-            orElse: () => null,
+            orElse: () {},
           );
         },
         child: DefaultTabController(

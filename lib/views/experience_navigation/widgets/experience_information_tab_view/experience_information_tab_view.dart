@@ -19,8 +19,8 @@ import 'experience_comments_list_view.dart';
 
 class ExperienceInformationTabView extends StatelessWidget {
   const ExperienceInformationTabView({
-    Key key,
-    @required this.experience,
+    Key? key,
+    required this.experience,
   }) : super(key: key);
 
   final Experience experience;

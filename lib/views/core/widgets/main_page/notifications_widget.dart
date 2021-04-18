@@ -9,7 +9,7 @@ import 'no_new_notifications_button.dart';
 
 class NotificationsButton extends StatelessWidget {
   const NotificationsButton({
-    Key key,
+    Key? key,
   }) : super(key: key);
 
   @override

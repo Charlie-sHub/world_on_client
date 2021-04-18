@@ -1,5 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides
 
 part of 'search_tags_by_name_watcher_bloc.dart';
 
@@ -9,19 +9,19 @@ part of 'search_tags_by_name_watcher_bloc.dart';
 
 T _$identity<T>(T value) => value;
 
+final _privateConstructorUsedError = UnsupportedError(
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+
 /// @nodoc
 class _$SearchTagsByNameWatcherEventTearOff {
   const _$SearchTagsByNameWatcherEventTearOff();
 
-// ignore: unused_element
-  _WatchTagsFoundByNameStarted watchTagsFoundByNameStarted(
-      SearchTerm searchTerm) {
+  _WatchTagsFoundByNameStarted watchTagsFoundByNameStarted(SearchTerm searchTerm) {
     return _WatchTagsFoundByNameStarted(
       searchTerm,
     );
   }
 
-// ignore: unused_element
   _ResultsReceived resultsReceived(Either<Failure, KtList<Tag>> failureOrTags) {
     return _ResultsReceived(
       failureOrTags,
@@ -30,48 +30,48 @@ class _$SearchTagsByNameWatcherEventTearOff {
 }
 
 /// @nodoc
-// ignore: unused_element
 const $SearchTagsByNameWatcherEvent = _$SearchTagsByNameWatcherEventTearOff();
 
 /// @nodoc
 mixin _$SearchTagsByNameWatcherEvent {
   @optionalTypeArgs
-  TResult when<TResult extends Object>({
-    @required TResult watchTagsFoundByNameStarted(SearchTerm searchTerm),
-    @required
-        TResult resultsReceived(Either<Failure, KtList<Tag>> failureOrTags),
-  });
+  TResult when<TResult extends Object?>({
+    required TResult Function(SearchTerm searchTerm) watchTagsFoundByNameStarted,
+    required TResult Function(Either<Failure, KtList<Tag>> failureOrTags) resultsReceived,
+  }) =>
+      throw _privateConstructorUsedError;
+
   @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object>({
-    TResult watchTagsFoundByNameStarted(SearchTerm searchTerm),
-    TResult resultsReceived(Either<Failure, KtList<Tag>> failureOrTags),
-    @required TResult orElse(),
-  });
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(SearchTerm searchTerm)? watchTagsFoundByNameStarted,
+    TResult Function(Either<Failure, KtList<Tag>> failureOrTags)? resultsReceived,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
+
   @optionalTypeArgs
-  TResult map<TResult extends Object>({
-    @required
-        TResult watchTagsFoundByNameStarted(_WatchTagsFoundByNameStarted value),
-    @required TResult resultsReceived(_ResultsReceived value),
-  });
+  TResult map<TResult extends Object?>({
+    required TResult Function(_WatchTagsFoundByNameStarted value) watchTagsFoundByNameStarted,
+    required TResult Function(_ResultsReceived value) resultsReceived,
+  }) =>
+      throw _privateConstructorUsedError;
+
   @optionalTypeArgs
-  TResult maybeMap<TResult extends Object>({
-    TResult watchTagsFoundByNameStarted(_WatchTagsFoundByNameStarted value),
-    TResult resultsReceived(_ResultsReceived value),
-    @required TResult orElse(),
-  });
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_WatchTagsFoundByNameStarted value)? watchTagsFoundByNameStarted,
+    TResult Function(_ResultsReceived value)? resultsReceived,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $SearchTagsByNameWatcherEventCopyWith<$Res> {
-  factory $SearchTagsByNameWatcherEventCopyWith(
-          SearchTagsByNameWatcherEvent value,
-          $Res Function(SearchTagsByNameWatcherEvent) then) =
-      _$SearchTagsByNameWatcherEventCopyWithImpl<$Res>;
+  factory $SearchTagsByNameWatcherEventCopyWith(SearchTagsByNameWatcherEvent value, $Res Function(SearchTagsByNameWatcherEvent) then) = _$SearchTagsByNameWatcherEventCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class _$SearchTagsByNameWatcherEventCopyWithImpl<$Res>
-    implements $SearchTagsByNameWatcherEventCopyWith<$Res> {
+class _$SearchTagsByNameWatcherEventCopyWithImpl<$Res> implements $SearchTagsByNameWatcherEventCopyWith<$Res> {
   _$SearchTagsByNameWatcherEventCopyWithImpl(this._value, this._then);
 
   final SearchTagsByNameWatcherEvent _value;
@@ -81,40 +81,33 @@ class _$SearchTagsByNameWatcherEventCopyWithImpl<$Res>
 
 /// @nodoc
 abstract class _$WatchTagsFoundByNameStartedCopyWith<$Res> {
-  factory _$WatchTagsFoundByNameStartedCopyWith(
-          _WatchTagsFoundByNameStarted value,
-          $Res Function(_WatchTagsFoundByNameStarted) then) =
-      __$WatchTagsFoundByNameStartedCopyWithImpl<$Res>;
+  factory _$WatchTagsFoundByNameStartedCopyWith(_WatchTagsFoundByNameStarted value, $Res Function(_WatchTagsFoundByNameStarted) then) = __$WatchTagsFoundByNameStartedCopyWithImpl<$Res>;
   $Res call({SearchTerm searchTerm});
 }
 
 /// @nodoc
-class __$WatchTagsFoundByNameStartedCopyWithImpl<$Res>
-    extends _$SearchTagsByNameWatcherEventCopyWithImpl<$Res>
-    implements _$WatchTagsFoundByNameStartedCopyWith<$Res> {
-  __$WatchTagsFoundByNameStartedCopyWithImpl(
-      _WatchTagsFoundByNameStarted _value,
-      $Res Function(_WatchTagsFoundByNameStarted) _then)
-      : super(_value, (v) => _then(v as _WatchTagsFoundByNameStarted));
+class __$WatchTagsFoundByNameStartedCopyWithImpl<$Res> extends _$SearchTagsByNameWatcherEventCopyWithImpl<$Res> implements _$WatchTagsFoundByNameStartedCopyWith<$Res> {
+  __$WatchTagsFoundByNameStartedCopyWithImpl(_WatchTagsFoundByNameStarted _value, $Res Function(_WatchTagsFoundByNameStarted) _then) : super(_value, (v) => _then(v as _WatchTagsFoundByNameStarted));
 
   @override
-  _WatchTagsFoundByNameStarted get _value =>
-      super._value as _WatchTagsFoundByNameStarted;
+  _WatchTagsFoundByNameStarted get _value => super._value as _WatchTagsFoundByNameStarted;
 
   @override
   $Res call({
-    Object searchTerm = freezed,
+    Object? searchTerm = freezed,
   }) {
     return _then(_WatchTagsFoundByNameStarted(
-      searchTerm == freezed ? _value.searchTerm : searchTerm as SearchTerm,
+      searchTerm == freezed
+          ? _value.searchTerm
+          : searchTerm // ignore: cast_nullable_to_non_nullable
+              as SearchTerm,
     ));
   }
 }
 
 /// @nodoc
 class _$_WatchTagsFoundByNameStarted implements _WatchTagsFoundByNameStarted {
-  const _$_WatchTagsFoundByNameStarted(this.searchTerm)
-      : assert(searchTerm != null);
+  const _$_WatchTagsFoundByNameStarted(this.searchTerm);
 
   @override
   final SearchTerm searchTerm;
@@ -126,43 +119,32 @@ class _$_WatchTagsFoundByNameStarted implements _WatchTagsFoundByNameStarted {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) ||
-        (other is _WatchTagsFoundByNameStarted &&
-            (identical(other.searchTerm, searchTerm) ||
-                const DeepCollectionEquality()
-                    .equals(other.searchTerm, searchTerm)));
+    return identical(this, other) || (other is _WatchTagsFoundByNameStarted && (identical(other.searchTerm, searchTerm) || const DeepCollectionEquality().equals(other.searchTerm, searchTerm)));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(searchTerm);
+  int get hashCode => runtimeType.hashCode ^ const DeepCollectionEquality().hash(searchTerm);
 
   @JsonKey(ignore: true)
   @override
-  _$WatchTagsFoundByNameStartedCopyWith<_WatchTagsFoundByNameStarted>
-      get copyWith => __$WatchTagsFoundByNameStartedCopyWithImpl<
-          _WatchTagsFoundByNameStarted>(this, _$identity);
+  _$WatchTagsFoundByNameStartedCopyWith<_WatchTagsFoundByNameStarted> get copyWith => __$WatchTagsFoundByNameStartedCopyWithImpl<_WatchTagsFoundByNameStarted>(this, _$identity);
 
   @override
   @optionalTypeArgs
-  TResult when<TResult extends Object>({
-    @required TResult watchTagsFoundByNameStarted(SearchTerm searchTerm),
-    @required
-        TResult resultsReceived(Either<Failure, KtList<Tag>> failureOrTags),
+  TResult when<TResult extends Object?>({
+    required TResult Function(SearchTerm searchTerm) watchTagsFoundByNameStarted,
+    required TResult Function(Either<Failure, KtList<Tag>> failureOrTags) resultsReceived,
   }) {
-    assert(watchTagsFoundByNameStarted != null);
-    assert(resultsReceived != null);
     return watchTagsFoundByNameStarted(searchTerm);
   }
 
   @override
   @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object>({
-    TResult watchTagsFoundByNameStarted(SearchTerm searchTerm),
-    TResult resultsReceived(Either<Failure, KtList<Tag>> failureOrTags),
-    @required TResult orElse(),
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(SearchTerm searchTerm)? watchTagsFoundByNameStarted,
+    TResult Function(Either<Failure, KtList<Tag>> failureOrTags)? resultsReceived,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (watchTagsFoundByNameStarted != null) {
       return watchTagsFoundByNameStarted(searchTerm);
     }
@@ -171,24 +153,20 @@ class _$_WatchTagsFoundByNameStarted implements _WatchTagsFoundByNameStarted {
 
   @override
   @optionalTypeArgs
-  TResult map<TResult extends Object>({
-    @required
-        TResult watchTagsFoundByNameStarted(_WatchTagsFoundByNameStarted value),
-    @required TResult resultsReceived(_ResultsReceived value),
+  TResult map<TResult extends Object?>({
+    required TResult Function(_WatchTagsFoundByNameStarted value) watchTagsFoundByNameStarted,
+    required TResult Function(_ResultsReceived value) resultsReceived,
   }) {
-    assert(watchTagsFoundByNameStarted != null);
-    assert(resultsReceived != null);
     return watchTagsFoundByNameStarted(this);
   }
 
   @override
   @optionalTypeArgs
-  TResult maybeMap<TResult extends Object>({
-    TResult watchTagsFoundByNameStarted(_WatchTagsFoundByNameStarted value),
-    TResult resultsReceived(_ResultsReceived value),
-    @required TResult orElse(),
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_WatchTagsFoundByNameStarted value)? watchTagsFoundByNameStarted,
+    TResult Function(_ResultsReceived value)? resultsReceived,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (watchTagsFoundByNameStarted != null) {
       return watchTagsFoundByNameStarted(this);
     }
@@ -196,51 +174,44 @@ class _$_WatchTagsFoundByNameStarted implements _WatchTagsFoundByNameStarted {
   }
 }
 
-abstract class _WatchTagsFoundByNameStarted
-    implements SearchTagsByNameWatcherEvent {
-  const factory _WatchTagsFoundByNameStarted(SearchTerm searchTerm) =
-      _$_WatchTagsFoundByNameStarted;
+abstract class _WatchTagsFoundByNameStarted implements SearchTagsByNameWatcherEvent {
+  const factory _WatchTagsFoundByNameStarted(SearchTerm searchTerm) = _$_WatchTagsFoundByNameStarted;
 
-  SearchTerm get searchTerm;
+  SearchTerm get searchTerm => throw _privateConstructorUsedError;
+
   @JsonKey(ignore: true)
-  _$WatchTagsFoundByNameStartedCopyWith<_WatchTagsFoundByNameStarted>
-      get copyWith;
+  _$WatchTagsFoundByNameStartedCopyWith<_WatchTagsFoundByNameStarted> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class _$ResultsReceivedCopyWith<$Res> {
-  factory _$ResultsReceivedCopyWith(
-          _ResultsReceived value, $Res Function(_ResultsReceived) then) =
-      __$ResultsReceivedCopyWithImpl<$Res>;
+  factory _$ResultsReceivedCopyWith(_ResultsReceived value, $Res Function(_ResultsReceived) then) = __$ResultsReceivedCopyWithImpl<$Res>;
   $Res call({Either<Failure, KtList<Tag>> failureOrTags});
 }
 
 /// @nodoc
-class __$ResultsReceivedCopyWithImpl<$Res>
-    extends _$SearchTagsByNameWatcherEventCopyWithImpl<$Res>
-    implements _$ResultsReceivedCopyWith<$Res> {
-  __$ResultsReceivedCopyWithImpl(
-      _ResultsReceived _value, $Res Function(_ResultsReceived) _then)
-      : super(_value, (v) => _then(v as _ResultsReceived));
+class __$ResultsReceivedCopyWithImpl<$Res> extends _$SearchTagsByNameWatcherEventCopyWithImpl<$Res> implements _$ResultsReceivedCopyWith<$Res> {
+  __$ResultsReceivedCopyWithImpl(_ResultsReceived _value, $Res Function(_ResultsReceived) _then) : super(_value, (v) => _then(v as _ResultsReceived));
 
   @override
   _ResultsReceived get _value => super._value as _ResultsReceived;
 
   @override
   $Res call({
-    Object failureOrTags = freezed,
+    Object? failureOrTags = freezed,
   }) {
     return _then(_ResultsReceived(
       failureOrTags == freezed
           ? _value.failureOrTags
-          : failureOrTags as Either<Failure, KtList<Tag>>,
+          : failureOrTags // ignore: cast_nullable_to_non_nullable
+              as Either<Failure, KtList<Tag>>,
     ));
   }
 }
 
 /// @nodoc
 class _$_ResultsReceived implements _ResultsReceived {
-  const _$_ResultsReceived(this.failureOrTags) : assert(failureOrTags != null);
+  const _$_ResultsReceived(this.failureOrTags);
 
   @override
   final Either<Failure, KtList<Tag>> failureOrTags;
@@ -252,42 +223,32 @@ class _$_ResultsReceived implements _ResultsReceived {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) ||
-        (other is _ResultsReceived &&
-            (identical(other.failureOrTags, failureOrTags) ||
-                const DeepCollectionEquality()
-                    .equals(other.failureOrTags, failureOrTags)));
+    return identical(this, other) || (other is _ResultsReceived && (identical(other.failureOrTags, failureOrTags) || const DeepCollectionEquality().equals(other.failureOrTags, failureOrTags)));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(failureOrTags);
+  int get hashCode => runtimeType.hashCode ^ const DeepCollectionEquality().hash(failureOrTags);
 
   @JsonKey(ignore: true)
   @override
-  _$ResultsReceivedCopyWith<_ResultsReceived> get copyWith =>
-      __$ResultsReceivedCopyWithImpl<_ResultsReceived>(this, _$identity);
+  _$ResultsReceivedCopyWith<_ResultsReceived> get copyWith => __$ResultsReceivedCopyWithImpl<_ResultsReceived>(this, _$identity);
 
   @override
   @optionalTypeArgs
-  TResult when<TResult extends Object>({
-    @required TResult watchTagsFoundByNameStarted(SearchTerm searchTerm),
-    @required
-        TResult resultsReceived(Either<Failure, KtList<Tag>> failureOrTags),
+  TResult when<TResult extends Object?>({
+    required TResult Function(SearchTerm searchTerm) watchTagsFoundByNameStarted,
+    required TResult Function(Either<Failure, KtList<Tag>> failureOrTags) resultsReceived,
   }) {
-    assert(watchTagsFoundByNameStarted != null);
-    assert(resultsReceived != null);
     return resultsReceived(failureOrTags);
   }
 
   @override
   @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object>({
-    TResult watchTagsFoundByNameStarted(SearchTerm searchTerm),
-    TResult resultsReceived(Either<Failure, KtList<Tag>> failureOrTags),
-    @required TResult orElse(),
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(SearchTerm searchTerm)? watchTagsFoundByNameStarted,
+    TResult Function(Either<Failure, KtList<Tag>> failureOrTags)? resultsReceived,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (resultsReceived != null) {
       return resultsReceived(failureOrTags);
     }
@@ -296,24 +257,20 @@ class _$_ResultsReceived implements _ResultsReceived {
 
   @override
   @optionalTypeArgs
-  TResult map<TResult extends Object>({
-    @required
-        TResult watchTagsFoundByNameStarted(_WatchTagsFoundByNameStarted value),
-    @required TResult resultsReceived(_ResultsReceived value),
+  TResult map<TResult extends Object?>({
+    required TResult Function(_WatchTagsFoundByNameStarted value) watchTagsFoundByNameStarted,
+    required TResult Function(_ResultsReceived value) resultsReceived,
   }) {
-    assert(watchTagsFoundByNameStarted != null);
-    assert(resultsReceived != null);
     return resultsReceived(this);
   }
 
   @override
   @optionalTypeArgs
-  TResult maybeMap<TResult extends Object>({
-    TResult watchTagsFoundByNameStarted(_WatchTagsFoundByNameStarted value),
-    TResult resultsReceived(_ResultsReceived value),
-    @required TResult orElse(),
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_WatchTagsFoundByNameStarted value)? watchTagsFoundByNameStarted,
+    TResult Function(_ResultsReceived value)? resultsReceived,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (resultsReceived != null) {
       return resultsReceived(this);
     }
@@ -322,36 +279,32 @@ class _$_ResultsReceived implements _ResultsReceived {
 }
 
 abstract class _ResultsReceived implements SearchTagsByNameWatcherEvent {
-  const factory _ResultsReceived(Either<Failure, KtList<Tag>> failureOrTags) =
-      _$_ResultsReceived;
+  const factory _ResultsReceived(Either<Failure, KtList<Tag>> failureOrTags) = _$_ResultsReceived;
 
-  Either<Failure, KtList<Tag>> get failureOrTags;
+  Either<Failure, KtList<Tag>> get failureOrTags => throw _privateConstructorUsedError;
+
   @JsonKey(ignore: true)
-  _$ResultsReceivedCopyWith<_ResultsReceived> get copyWith;
+  _$ResultsReceivedCopyWith<_ResultsReceived> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 class _$SearchTagsByNameWatcherStateTearOff {
   const _$SearchTagsByNameWatcherStateTearOff();
 
-// ignore: unused_element
   _Initial initial() {
     return const _Initial();
   }
 
-// ignore: unused_element
   _SearchInProgress searchInProgress() {
     return const _SearchInProgress();
   }
 
-// ignore: unused_element
   _SearchSuccess searchSuccess(KtList<Tag> tagsFound) {
     return _SearchSuccess(
       tagsFound,
     );
   }
 
-// ignore: unused_element
   _SearchFailure searchFailure(Failure<dynamic> failure) {
     return _SearchFailure(
       failure,
@@ -360,54 +313,56 @@ class _$SearchTagsByNameWatcherStateTearOff {
 }
 
 /// @nodoc
-// ignore: unused_element
 const $SearchTagsByNameWatcherState = _$SearchTagsByNameWatcherStateTearOff();
 
 /// @nodoc
 mixin _$SearchTagsByNameWatcherState {
   @optionalTypeArgs
-  TResult when<TResult extends Object>({
-    @required TResult initial(),
-    @required TResult searchInProgress(),
-    @required TResult searchSuccess(KtList<Tag> tagsFound),
-    @required TResult searchFailure(Failure<dynamic> failure),
-  });
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() searchInProgress,
+    required TResult Function(KtList<Tag> tagsFound) searchSuccess,
+    required TResult Function(Failure<dynamic> failure) searchFailure,
+  }) =>
+      throw _privateConstructorUsedError;
+
   @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object>({
-    TResult initial(),
-    TResult searchInProgress(),
-    TResult searchSuccess(KtList<Tag> tagsFound),
-    TResult searchFailure(Failure<dynamic> failure),
-    @required TResult orElse(),
-  });
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? searchInProgress,
+    TResult Function(KtList<Tag> tagsFound)? searchSuccess,
+    TResult Function(Failure<dynamic> failure)? searchFailure,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
+
   @optionalTypeArgs
-  TResult map<TResult extends Object>({
-    @required TResult initial(_Initial value),
-    @required TResult searchInProgress(_SearchInProgress value),
-    @required TResult searchSuccess(_SearchSuccess value),
-    @required TResult searchFailure(_SearchFailure value),
-  });
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial value) initial,
+    required TResult Function(_SearchInProgress value) searchInProgress,
+    required TResult Function(_SearchSuccess value) searchSuccess,
+    required TResult Function(_SearchFailure value) searchFailure,
+  }) =>
+      throw _privateConstructorUsedError;
+
   @optionalTypeArgs
-  TResult maybeMap<TResult extends Object>({
-    TResult initial(_Initial value),
-    TResult searchInProgress(_SearchInProgress value),
-    TResult searchSuccess(_SearchSuccess value),
-    TResult searchFailure(_SearchFailure value),
-    @required TResult orElse(),
-  });
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_SearchInProgress value)? searchInProgress,
+    TResult Function(_SearchSuccess value)? searchSuccess,
+    TResult Function(_SearchFailure value)? searchFailure,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $SearchTagsByNameWatcherStateCopyWith<$Res> {
-  factory $SearchTagsByNameWatcherStateCopyWith(
-          SearchTagsByNameWatcherState value,
-          $Res Function(SearchTagsByNameWatcherState) then) =
-      _$SearchTagsByNameWatcherStateCopyWithImpl<$Res>;
+  factory $SearchTagsByNameWatcherStateCopyWith(SearchTagsByNameWatcherState value, $Res Function(SearchTagsByNameWatcherState) then) = _$SearchTagsByNameWatcherStateCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class _$SearchTagsByNameWatcherStateCopyWithImpl<$Res>
-    implements $SearchTagsByNameWatcherStateCopyWith<$Res> {
+class _$SearchTagsByNameWatcherStateCopyWithImpl<$Res> implements $SearchTagsByNameWatcherStateCopyWith<$Res> {
   _$SearchTagsByNameWatcherStateCopyWithImpl(this._value, this._then);
 
   final SearchTagsByNameWatcherState _value;
@@ -417,16 +372,12 @@ class _$SearchTagsByNameWatcherStateCopyWithImpl<$Res>
 
 /// @nodoc
 abstract class _$InitialCopyWith<$Res> {
-  factory _$InitialCopyWith(_Initial value, $Res Function(_Initial) then) =
-      __$InitialCopyWithImpl<$Res>;
+  factory _$InitialCopyWith(_Initial value, $Res Function(_Initial) then) = __$InitialCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$InitialCopyWithImpl<$Res>
-    extends _$SearchTagsByNameWatcherStateCopyWithImpl<$Res>
-    implements _$InitialCopyWith<$Res> {
-  __$InitialCopyWithImpl(_Initial _value, $Res Function(_Initial) _then)
-      : super(_value, (v) => _then(v as _Initial));
+class __$InitialCopyWithImpl<$Res> extends _$SearchTagsByNameWatcherStateCopyWithImpl<$Res> implements _$InitialCopyWith<$Res> {
+  __$InitialCopyWithImpl(_Initial _value, $Res Function(_Initial) _then) : super(_value, (v) => _then(v as _Initial));
 
   @override
   _Initial get _value => super._value as _Initial;
@@ -451,29 +402,24 @@ class _$_Initial implements _Initial {
 
   @override
   @optionalTypeArgs
-  TResult when<TResult extends Object>({
-    @required TResult initial(),
-    @required TResult searchInProgress(),
-    @required TResult searchSuccess(KtList<Tag> tagsFound),
-    @required TResult searchFailure(Failure<dynamic> failure),
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() searchInProgress,
+    required TResult Function(KtList<Tag> tagsFound) searchSuccess,
+    required TResult Function(Failure<dynamic> failure) searchFailure,
   }) {
-    assert(initial != null);
-    assert(searchInProgress != null);
-    assert(searchSuccess != null);
-    assert(searchFailure != null);
     return initial();
   }
 
   @override
   @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object>({
-    TResult initial(),
-    TResult searchInProgress(),
-    TResult searchSuccess(KtList<Tag> tagsFound),
-    TResult searchFailure(Failure<dynamic> failure),
-    @required TResult orElse(),
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? searchInProgress,
+    TResult Function(KtList<Tag> tagsFound)? searchSuccess,
+    TResult Function(Failure<dynamic> failure)? searchFailure,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (initial != null) {
       return initial();
     }
@@ -482,29 +428,24 @@ class _$_Initial implements _Initial {
 
   @override
   @optionalTypeArgs
-  TResult map<TResult extends Object>({
-    @required TResult initial(_Initial value),
-    @required TResult searchInProgress(_SearchInProgress value),
-    @required TResult searchSuccess(_SearchSuccess value),
-    @required TResult searchFailure(_SearchFailure value),
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial value) initial,
+    required TResult Function(_SearchInProgress value) searchInProgress,
+    required TResult Function(_SearchSuccess value) searchSuccess,
+    required TResult Function(_SearchFailure value) searchFailure,
   }) {
-    assert(initial != null);
-    assert(searchInProgress != null);
-    assert(searchSuccess != null);
-    assert(searchFailure != null);
     return initial(this);
   }
 
   @override
   @optionalTypeArgs
-  TResult maybeMap<TResult extends Object>({
-    TResult initial(_Initial value),
-    TResult searchInProgress(_SearchInProgress value),
-    TResult searchSuccess(_SearchSuccess value),
-    TResult searchFailure(_SearchFailure value),
-    @required TResult orElse(),
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_SearchInProgress value)? searchInProgress,
+    TResult Function(_SearchSuccess value)? searchSuccess,
+    TResult Function(_SearchFailure value)? searchFailure,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (initial != null) {
       return initial(this);
     }
@@ -518,18 +459,12 @@ abstract class _Initial implements SearchTagsByNameWatcherState {
 
 /// @nodoc
 abstract class _$SearchInProgressCopyWith<$Res> {
-  factory _$SearchInProgressCopyWith(
-          _SearchInProgress value, $Res Function(_SearchInProgress) then) =
-      __$SearchInProgressCopyWithImpl<$Res>;
+  factory _$SearchInProgressCopyWith(_SearchInProgress value, $Res Function(_SearchInProgress) then) = __$SearchInProgressCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$SearchInProgressCopyWithImpl<$Res>
-    extends _$SearchTagsByNameWatcherStateCopyWithImpl<$Res>
-    implements _$SearchInProgressCopyWith<$Res> {
-  __$SearchInProgressCopyWithImpl(
-      _SearchInProgress _value, $Res Function(_SearchInProgress) _then)
-      : super(_value, (v) => _then(v as _SearchInProgress));
+class __$SearchInProgressCopyWithImpl<$Res> extends _$SearchTagsByNameWatcherStateCopyWithImpl<$Res> implements _$SearchInProgressCopyWith<$Res> {
+  __$SearchInProgressCopyWithImpl(_SearchInProgress _value, $Res Function(_SearchInProgress) _then) : super(_value, (v) => _then(v as _SearchInProgress));
 
   @override
   _SearchInProgress get _value => super._value as _SearchInProgress;
@@ -554,29 +489,24 @@ class _$_SearchInProgress implements _SearchInProgress {
 
   @override
   @optionalTypeArgs
-  TResult when<TResult extends Object>({
-    @required TResult initial(),
-    @required TResult searchInProgress(),
-    @required TResult searchSuccess(KtList<Tag> tagsFound),
-    @required TResult searchFailure(Failure<dynamic> failure),
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() searchInProgress,
+    required TResult Function(KtList<Tag> tagsFound) searchSuccess,
+    required TResult Function(Failure<dynamic> failure) searchFailure,
   }) {
-    assert(initial != null);
-    assert(searchInProgress != null);
-    assert(searchSuccess != null);
-    assert(searchFailure != null);
     return searchInProgress();
   }
 
   @override
   @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object>({
-    TResult initial(),
-    TResult searchInProgress(),
-    TResult searchSuccess(KtList<Tag> tagsFound),
-    TResult searchFailure(Failure<dynamic> failure),
-    @required TResult orElse(),
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? searchInProgress,
+    TResult Function(KtList<Tag> tagsFound)? searchSuccess,
+    TResult Function(Failure<dynamic> failure)? searchFailure,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (searchInProgress != null) {
       return searchInProgress();
     }
@@ -585,29 +515,24 @@ class _$_SearchInProgress implements _SearchInProgress {
 
   @override
   @optionalTypeArgs
-  TResult map<TResult extends Object>({
-    @required TResult initial(_Initial value),
-    @required TResult searchInProgress(_SearchInProgress value),
-    @required TResult searchSuccess(_SearchSuccess value),
-    @required TResult searchFailure(_SearchFailure value),
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial value) initial,
+    required TResult Function(_SearchInProgress value) searchInProgress,
+    required TResult Function(_SearchSuccess value) searchSuccess,
+    required TResult Function(_SearchFailure value) searchFailure,
   }) {
-    assert(initial != null);
-    assert(searchInProgress != null);
-    assert(searchSuccess != null);
-    assert(searchFailure != null);
     return searchInProgress(this);
   }
 
   @override
   @optionalTypeArgs
-  TResult maybeMap<TResult extends Object>({
-    TResult initial(_Initial value),
-    TResult searchInProgress(_SearchInProgress value),
-    TResult searchSuccess(_SearchSuccess value),
-    TResult searchFailure(_SearchFailure value),
-    @required TResult orElse(),
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_SearchInProgress value)? searchInProgress,
+    TResult Function(_SearchSuccess value)? searchSuccess,
+    TResult Function(_SearchFailure value)? searchFailure,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (searchInProgress != null) {
       return searchInProgress(this);
     }
@@ -621,36 +546,33 @@ abstract class _SearchInProgress implements SearchTagsByNameWatcherState {
 
 /// @nodoc
 abstract class _$SearchSuccessCopyWith<$Res> {
-  factory _$SearchSuccessCopyWith(
-          _SearchSuccess value, $Res Function(_SearchSuccess) then) =
-      __$SearchSuccessCopyWithImpl<$Res>;
+  factory _$SearchSuccessCopyWith(_SearchSuccess value, $Res Function(_SearchSuccess) then) = __$SearchSuccessCopyWithImpl<$Res>;
   $Res call({KtList<Tag> tagsFound});
 }
 
 /// @nodoc
-class __$SearchSuccessCopyWithImpl<$Res>
-    extends _$SearchTagsByNameWatcherStateCopyWithImpl<$Res>
-    implements _$SearchSuccessCopyWith<$Res> {
-  __$SearchSuccessCopyWithImpl(
-      _SearchSuccess _value, $Res Function(_SearchSuccess) _then)
-      : super(_value, (v) => _then(v as _SearchSuccess));
+class __$SearchSuccessCopyWithImpl<$Res> extends _$SearchTagsByNameWatcherStateCopyWithImpl<$Res> implements _$SearchSuccessCopyWith<$Res> {
+  __$SearchSuccessCopyWithImpl(_SearchSuccess _value, $Res Function(_SearchSuccess) _then) : super(_value, (v) => _then(v as _SearchSuccess));
 
   @override
   _SearchSuccess get _value => super._value as _SearchSuccess;
 
   @override
   $Res call({
-    Object tagsFound = freezed,
+    Object? tagsFound = freezed,
   }) {
     return _then(_SearchSuccess(
-      tagsFound == freezed ? _value.tagsFound : tagsFound as KtList<Tag>,
+      tagsFound == freezed
+          ? _value.tagsFound
+          : tagsFound // ignore: cast_nullable_to_non_nullable
+              as KtList<Tag>,
     ));
   }
 }
 
 /// @nodoc
 class _$_SearchSuccess implements _SearchSuccess {
-  const _$_SearchSuccess(this.tagsFound) : assert(tagsFound != null);
+  const _$_SearchSuccess(this.tagsFound);
 
   @override
   final KtList<Tag> tagsFound;
@@ -662,47 +584,36 @@ class _$_SearchSuccess implements _SearchSuccess {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) ||
-        (other is _SearchSuccess &&
-            (identical(other.tagsFound, tagsFound) ||
-                const DeepCollectionEquality()
-                    .equals(other.tagsFound, tagsFound)));
+    return identical(this, other) || (other is _SearchSuccess && (identical(other.tagsFound, tagsFound) || const DeepCollectionEquality().equals(other.tagsFound, tagsFound)));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(tagsFound);
+  int get hashCode => runtimeType.hashCode ^ const DeepCollectionEquality().hash(tagsFound);
 
   @JsonKey(ignore: true)
   @override
-  _$SearchSuccessCopyWith<_SearchSuccess> get copyWith =>
-      __$SearchSuccessCopyWithImpl<_SearchSuccess>(this, _$identity);
+  _$SearchSuccessCopyWith<_SearchSuccess> get copyWith => __$SearchSuccessCopyWithImpl<_SearchSuccess>(this, _$identity);
 
   @override
   @optionalTypeArgs
-  TResult when<TResult extends Object>({
-    @required TResult initial(),
-    @required TResult searchInProgress(),
-    @required TResult searchSuccess(KtList<Tag> tagsFound),
-    @required TResult searchFailure(Failure<dynamic> failure),
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() searchInProgress,
+    required TResult Function(KtList<Tag> tagsFound) searchSuccess,
+    required TResult Function(Failure<dynamic> failure) searchFailure,
   }) {
-    assert(initial != null);
-    assert(searchInProgress != null);
-    assert(searchSuccess != null);
-    assert(searchFailure != null);
     return searchSuccess(tagsFound);
   }
 
   @override
   @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object>({
-    TResult initial(),
-    TResult searchInProgress(),
-    TResult searchSuccess(KtList<Tag> tagsFound),
-    TResult searchFailure(Failure<dynamic> failure),
-    @required TResult orElse(),
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? searchInProgress,
+    TResult Function(KtList<Tag> tagsFound)? searchSuccess,
+    TResult Function(Failure<dynamic> failure)? searchFailure,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (searchSuccess != null) {
       return searchSuccess(tagsFound);
     }
@@ -711,29 +622,24 @@ class _$_SearchSuccess implements _SearchSuccess {
 
   @override
   @optionalTypeArgs
-  TResult map<TResult extends Object>({
-    @required TResult initial(_Initial value),
-    @required TResult searchInProgress(_SearchInProgress value),
-    @required TResult searchSuccess(_SearchSuccess value),
-    @required TResult searchFailure(_SearchFailure value),
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial value) initial,
+    required TResult Function(_SearchInProgress value) searchInProgress,
+    required TResult Function(_SearchSuccess value) searchSuccess,
+    required TResult Function(_SearchFailure value) searchFailure,
   }) {
-    assert(initial != null);
-    assert(searchInProgress != null);
-    assert(searchSuccess != null);
-    assert(searchFailure != null);
     return searchSuccess(this);
   }
 
   @override
   @optionalTypeArgs
-  TResult maybeMap<TResult extends Object>({
-    TResult initial(_Initial value),
-    TResult searchInProgress(_SearchInProgress value),
-    TResult searchSuccess(_SearchSuccess value),
-    TResult searchFailure(_SearchFailure value),
-    @required TResult orElse(),
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_SearchInProgress value)? searchInProgress,
+    TResult Function(_SearchSuccess value)? searchSuccess,
+    TResult Function(_SearchFailure value)? searchFailure,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (searchSuccess != null) {
       return searchSuccess(this);
     }
@@ -744,46 +650,41 @@ class _$_SearchSuccess implements _SearchSuccess {
 abstract class _SearchSuccess implements SearchTagsByNameWatcherState {
   const factory _SearchSuccess(KtList<Tag> tagsFound) = _$_SearchSuccess;
 
-  KtList<Tag> get tagsFound;
+  KtList<Tag> get tagsFound => throw _privateConstructorUsedError;
+
   @JsonKey(ignore: true)
-  _$SearchSuccessCopyWith<_SearchSuccess> get copyWith;
+  _$SearchSuccessCopyWith<_SearchSuccess> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class _$SearchFailureCopyWith<$Res> {
-  factory _$SearchFailureCopyWith(
-          _SearchFailure value, $Res Function(_SearchFailure) then) =
-      __$SearchFailureCopyWithImpl<$Res>;
+  factory _$SearchFailureCopyWith(_SearchFailure value, $Res Function(_SearchFailure) then) = __$SearchFailureCopyWithImpl<$Res>;
   $Res call({Failure<dynamic> failure});
 
   $FailureCopyWith<dynamic, $Res> get failure;
 }
 
 /// @nodoc
-class __$SearchFailureCopyWithImpl<$Res>
-    extends _$SearchTagsByNameWatcherStateCopyWithImpl<$Res>
-    implements _$SearchFailureCopyWith<$Res> {
-  __$SearchFailureCopyWithImpl(
-      _SearchFailure _value, $Res Function(_SearchFailure) _then)
-      : super(_value, (v) => _then(v as _SearchFailure));
+class __$SearchFailureCopyWithImpl<$Res> extends _$SearchTagsByNameWatcherStateCopyWithImpl<$Res> implements _$SearchFailureCopyWith<$Res> {
+  __$SearchFailureCopyWithImpl(_SearchFailure _value, $Res Function(_SearchFailure) _then) : super(_value, (v) => _then(v as _SearchFailure));
 
   @override
   _SearchFailure get _value => super._value as _SearchFailure;
 
   @override
   $Res call({
-    Object failure = freezed,
+    Object? failure = freezed,
   }) {
     return _then(_SearchFailure(
-      failure == freezed ? _value.failure : failure as Failure<dynamic>,
+      failure == freezed
+          ? _value.failure
+          : failure // ignore: cast_nullable_to_non_nullable
+              as Failure<dynamic>,
     ));
   }
 
   @override
   $FailureCopyWith<dynamic, $Res> get failure {
-    if (_value.failure == null) {
-      return null;
-    }
     return $FailureCopyWith<dynamic, $Res>(_value.failure, (value) {
       return _then(_value.copyWith(failure: value));
     });
@@ -792,7 +693,7 @@ class __$SearchFailureCopyWithImpl<$Res>
 
 /// @nodoc
 class _$_SearchFailure implements _SearchFailure {
-  const _$_SearchFailure(this.failure) : assert(failure != null);
+  const _$_SearchFailure(this.failure);
 
   @override
   final Failure<dynamic> failure;
@@ -804,46 +705,36 @@ class _$_SearchFailure implements _SearchFailure {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) ||
-        (other is _SearchFailure &&
-            (identical(other.failure, failure) ||
-                const DeepCollectionEquality().equals(other.failure, failure)));
+    return identical(this, other) || (other is _SearchFailure && (identical(other.failure, failure) || const DeepCollectionEquality().equals(other.failure, failure)));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(failure);
+  int get hashCode => runtimeType.hashCode ^ const DeepCollectionEquality().hash(failure);
 
   @JsonKey(ignore: true)
   @override
-  _$SearchFailureCopyWith<_SearchFailure> get copyWith =>
-      __$SearchFailureCopyWithImpl<_SearchFailure>(this, _$identity);
+  _$SearchFailureCopyWith<_SearchFailure> get copyWith => __$SearchFailureCopyWithImpl<_SearchFailure>(this, _$identity);
 
   @override
   @optionalTypeArgs
-  TResult when<TResult extends Object>({
-    @required TResult initial(),
-    @required TResult searchInProgress(),
-    @required TResult searchSuccess(KtList<Tag> tagsFound),
-    @required TResult searchFailure(Failure<dynamic> failure),
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() searchInProgress,
+    required TResult Function(KtList<Tag> tagsFound) searchSuccess,
+    required TResult Function(Failure<dynamic> failure) searchFailure,
   }) {
-    assert(initial != null);
-    assert(searchInProgress != null);
-    assert(searchSuccess != null);
-    assert(searchFailure != null);
     return searchFailure(failure);
   }
 
   @override
   @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object>({
-    TResult initial(),
-    TResult searchInProgress(),
-    TResult searchSuccess(KtList<Tag> tagsFound),
-    TResult searchFailure(Failure<dynamic> failure),
-    @required TResult orElse(),
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? searchInProgress,
+    TResult Function(KtList<Tag> tagsFound)? searchSuccess,
+    TResult Function(Failure<dynamic> failure)? searchFailure,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (searchFailure != null) {
       return searchFailure(failure);
     }
@@ -852,29 +743,24 @@ class _$_SearchFailure implements _SearchFailure {
 
   @override
   @optionalTypeArgs
-  TResult map<TResult extends Object>({
-    @required TResult initial(_Initial value),
-    @required TResult searchInProgress(_SearchInProgress value),
-    @required TResult searchSuccess(_SearchSuccess value),
-    @required TResult searchFailure(_SearchFailure value),
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial value) initial,
+    required TResult Function(_SearchInProgress value) searchInProgress,
+    required TResult Function(_SearchSuccess value) searchSuccess,
+    required TResult Function(_SearchFailure value) searchFailure,
   }) {
-    assert(initial != null);
-    assert(searchInProgress != null);
-    assert(searchSuccess != null);
-    assert(searchFailure != null);
     return searchFailure(this);
   }
 
   @override
   @optionalTypeArgs
-  TResult maybeMap<TResult extends Object>({
-    TResult initial(_Initial value),
-    TResult searchInProgress(_SearchInProgress value),
-    TResult searchSuccess(_SearchSuccess value),
-    TResult searchFailure(_SearchFailure value),
-    @required TResult orElse(),
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_SearchInProgress value)? searchInProgress,
+    TResult Function(_SearchSuccess value)? searchSuccess,
+    TResult Function(_SearchFailure value)? searchFailure,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (searchFailure != null) {
       return searchFailure(this);
     }
@@ -885,7 +771,8 @@ class _$_SearchFailure implements _SearchFailure {
 abstract class _SearchFailure implements SearchTagsByNameWatcherState {
   const factory _SearchFailure(Failure<dynamic> failure) = _$_SearchFailure;
 
-  Failure<dynamic> get failure;
+  Failure<dynamic> get failure => throw _privateConstructorUsedError;
+
   @JsonKey(ignore: true)
-  _$SearchFailureCopyWith<_SearchFailure> get copyWith;
+  _$SearchFailureCopyWith<_SearchFailure> get copyWith => throw _privateConstructorUsedError;
 }

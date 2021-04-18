@@ -13,7 +13,7 @@ import 'package:worldon/views/experience_navigation/widgets/experience_finish/fi
 class ExperienceFinish extends StatelessWidget {
   final Experience experience;
 
-  const ExperienceFinish({Key key, @required this.experience}) : super(key: key);
+  const ExperienceFinish({Key? key, required this.experience}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -32,7 +32,7 @@ class ExperienceFinish extends StatelessWidget {
             duration: const Duration(seconds: 4),
             message: S.of(context).levelUp,
           ).show(context),
-          orElse: () => null,
+          orElse: () {},
         ),
         builder: (context, state) => state.map(
           initial: (_) => Container(),

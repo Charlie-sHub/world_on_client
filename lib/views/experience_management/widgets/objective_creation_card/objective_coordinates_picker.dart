@@ -8,7 +8,7 @@ import 'package:worldon/views/core/widgets/misc/world_on_progress_indicator.dart
 
 class ObjectiveCoordinatePicker extends StatelessWidget {
   const ObjectiveCoordinatePicker({
-    Key key,
+    Key? key,
   }) : super(key: key);
 
   @override

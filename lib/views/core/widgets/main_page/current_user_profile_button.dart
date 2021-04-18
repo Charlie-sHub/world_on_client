@@ -1,3 +1,4 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:dartz/dartz.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -8,7 +9,7 @@ import 'package:worldon/views/core/widgets/misc/world_on_progress_indicator.dart
 
 class CurrentUserProfileButton extends StatelessWidget {
   const CurrentUserProfileButton({
-    Key key,
+    Key? key,
   }) : super(key: key);
 
   @override
@@ -35,7 +36,7 @@ class CurrentUserProfileButton extends StatelessWidget {
             padding: const EdgeInsets.all(3),
             child: CircleAvatar(
               radius: 15,
-              backgroundImage: NetworkImage(state.imageUrl),
+              backgroundImage: CachedNetworkImageProvider(state.imageUrl),
             ),
           ),
         ),

@@ -44,7 +44,7 @@ class LogInFormBloc extends Bloc<LogInFormEvent, LogInFormState> {
   }
 
   Stream<LogInFormState> _onLoggedIn(_) async* {
-    Either<Failure, Unit> _failureOrSuccess;
+    Either<Failure, Unit>? _failureOrSuccess;
     if (state.email.isValid() && state.password.isValid()) {
       yield state.copyWith(
         isSubmitting: true,

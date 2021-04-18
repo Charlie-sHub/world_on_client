@@ -16,8 +16,8 @@ class SearchUsersTabView extends StatelessWidget {
   final SearchTerm searchTerm;
 
   const SearchUsersTabView({
-    Key key,
-    @required this.searchTerm,
+    Key? key,
+    required this.searchTerm,
   }) : super(key: key);
 
   @override

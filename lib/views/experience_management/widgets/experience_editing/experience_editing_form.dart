@@ -24,17 +24,20 @@ import 'original_pictures_grid_view.dart';
 class ExperienceEditingForm extends StatelessWidget {
   final Experience experience;
 
-  const ExperienceEditingForm({Key key, this.experience}) : super(key: key);
+  const ExperienceEditingForm({
+    Key? key,
+    required this.experience,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return BlocConsumer<ExperienceManagementFormBloc, ExperienceManagementFormState>(
       listenWhen: (previous, current) => previous.failureOrSuccessOption != current.failureOrSuccessOption,
       listener: (context, state) => state.failureOrSuccessOption.fold(
-        () => null,
+        () {},
         (either) => either.fold(
           (failure) => onExperienceManagementFailure(failure, context),
-          (_) => context.navigator.pop(),
+          (_) => context.router.pop(),
         ),
       ),
       buildWhen: _buildWhen,

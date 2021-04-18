@@ -15,8 +15,8 @@ import 'package:worldon/views/experience_management/widgets/reward_creation_card
 
 class RewardCreationCard extends HookWidget {
   const RewardCreationCard({
-    Key key,
-    @required this.rewardSetOption,
+    Key? key,
+    required this.rewardSetOption,
   }) : super(key: key);
 
   final Option<RewardSet> rewardSetOption;

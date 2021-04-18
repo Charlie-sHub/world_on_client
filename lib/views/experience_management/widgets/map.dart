@@ -10,7 +10,7 @@ import 'package:worldon/views/core/widgets/misc/world_on_progress_indicator.dart
 
 class Map extends StatelessWidget {
   const Map({
-    Key key,
+    Key? key,
   }) : super(key: key);
 
   @override

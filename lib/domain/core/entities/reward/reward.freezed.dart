@@ -1,5 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides
 
 part of 'reward.dart';
 
@@ -9,17 +9,14 @@ part of 'reward.dart';
 
 T _$identity<T>(T value) => value;
 
+final _privateConstructorUsedError = UnsupportedError(
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+
 /// @nodoc
 class _$RewardTearOff {
   const _$RewardTearOff();
 
-// ignore: unused_element
-  _Reward call(
-      {@required UniqueId id,
-      @required Name name,
-      @required EntityDescription description,
-      @required String imageURL,
-      @required Option<File> imageFile}) {
+  _Reward call({required UniqueId id, required Name name, required EntityDescription description, required String imageURL, required Option<File> imageFile}) {
     return _Reward(
       id: id,
       name: name,
@@ -31,31 +28,28 @@ class _$RewardTearOff {
 }
 
 /// @nodoc
-// ignore: unused_element
 const $Reward = _$RewardTearOff();
 
 /// @nodoc
 mixin _$Reward {
-  UniqueId get id;
-  Name get name;
-  EntityDescription get description;
-  String get imageURL;
-  Option<File> get imageFile;
+  UniqueId get id => throw _privateConstructorUsedError;
+
+  Name get name => throw _privateConstructorUsedError;
+
+  EntityDescription get description => throw _privateConstructorUsedError;
+
+  String get imageURL => throw _privateConstructorUsedError;
+
+  Option<File> get imageFile => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
-  $RewardCopyWith<Reward> get copyWith;
+  $RewardCopyWith<Reward> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $RewardCopyWith<$Res> {
-  factory $RewardCopyWith(Reward value, $Res Function(Reward) then) =
-      _$RewardCopyWithImpl<$Res>;
-  $Res call(
-      {UniqueId id,
-      Name name,
-      EntityDescription description,
-      String imageURL,
-      Option<File> imageFile});
+  factory $RewardCopyWith(Reward value, $Res Function(Reward) then) = _$RewardCopyWithImpl<$Res>;
+  $Res call({UniqueId id, Name name, EntityDescription description, String imageURL, Option<File> imageFile});
 }
 
 /// @nodoc
@@ -68,82 +62,87 @@ class _$RewardCopyWithImpl<$Res> implements $RewardCopyWith<$Res> {
 
   @override
   $Res call({
-    Object id = freezed,
-    Object name = freezed,
-    Object description = freezed,
-    Object imageURL = freezed,
-    Object imageFile = freezed,
+    Object? id = freezed,
+    Object? name = freezed,
+    Object? description = freezed,
+    Object? imageURL = freezed,
+    Object? imageFile = freezed,
   }) {
     return _then(_value.copyWith(
-      id: id == freezed ? _value.id : id as UniqueId,
-      name: name == freezed ? _value.name : name as Name,
+      id: id == freezed
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as UniqueId,
+      name: name == freezed
+          ? _value.name
+          : name // ignore: cast_nullable_to_non_nullable
+              as Name,
       description: description == freezed
           ? _value.description
-          : description as EntityDescription,
-      imageURL: imageURL == freezed ? _value.imageURL : imageURL as String,
-      imageFile:
-          imageFile == freezed ? _value.imageFile : imageFile as Option<File>,
+          : description // ignore: cast_nullable_to_non_nullable
+              as EntityDescription,
+      imageURL: imageURL == freezed
+          ? _value.imageURL
+          : imageURL // ignore: cast_nullable_to_non_nullable
+              as String,
+      imageFile: imageFile == freezed
+          ? _value.imageFile
+          : imageFile // ignore: cast_nullable_to_non_nullable
+              as Option<File>,
     ));
   }
 }
 
 /// @nodoc
 abstract class _$RewardCopyWith<$Res> implements $RewardCopyWith<$Res> {
-  factory _$RewardCopyWith(_Reward value, $Res Function(_Reward) then) =
-      __$RewardCopyWithImpl<$Res>;
+  factory _$RewardCopyWith(_Reward value, $Res Function(_Reward) then) = __$RewardCopyWithImpl<$Res>;
   @override
-  $Res call(
-      {UniqueId id,
-      Name name,
-      EntityDescription description,
-      String imageURL,
-      Option<File> imageFile});
+  $Res call({UniqueId id, Name name, EntityDescription description, String imageURL, Option<File> imageFile});
 }
 
 /// @nodoc
-class __$RewardCopyWithImpl<$Res> extends _$RewardCopyWithImpl<$Res>
-    implements _$RewardCopyWith<$Res> {
-  __$RewardCopyWithImpl(_Reward _value, $Res Function(_Reward) _then)
-      : super(_value, (v) => _then(v as _Reward));
+class __$RewardCopyWithImpl<$Res> extends _$RewardCopyWithImpl<$Res> implements _$RewardCopyWith<$Res> {
+  __$RewardCopyWithImpl(_Reward _value, $Res Function(_Reward) _then) : super(_value, (v) => _then(v as _Reward));
 
   @override
   _Reward get _value => super._value as _Reward;
 
   @override
   $Res call({
-    Object id = freezed,
-    Object name = freezed,
-    Object description = freezed,
-    Object imageURL = freezed,
-    Object imageFile = freezed,
+    Object? id = freezed,
+    Object? name = freezed,
+    Object? description = freezed,
+    Object? imageURL = freezed,
+    Object? imageFile = freezed,
   }) {
     return _then(_Reward(
-      id: id == freezed ? _value.id : id as UniqueId,
-      name: name == freezed ? _value.name : name as Name,
+      id: id == freezed
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as UniqueId,
+      name: name == freezed
+          ? _value.name
+          : name // ignore: cast_nullable_to_non_nullable
+              as Name,
       description: description == freezed
           ? _value.description
-          : description as EntityDescription,
-      imageURL: imageURL == freezed ? _value.imageURL : imageURL as String,
-      imageFile:
-          imageFile == freezed ? _value.imageFile : imageFile as Option<File>,
+          : description // ignore: cast_nullable_to_non_nullable
+              as EntityDescription,
+      imageURL: imageURL == freezed
+          ? _value.imageURL
+          : imageURL // ignore: cast_nullable_to_non_nullable
+              as String,
+      imageFile: imageFile == freezed
+          ? _value.imageFile
+          : imageFile // ignore: cast_nullable_to_non_nullable
+              as Option<File>,
     ));
   }
 }
 
 /// @nodoc
 class _$_Reward extends _Reward {
-  const _$_Reward(
-      {@required this.id,
-      @required this.name,
-      @required this.description,
-      @required this.imageURL,
-      @required this.imageFile})
-      : assert(id != null),
-        assert(name != null),
-        assert(description != null),
-        assert(imageURL != null),
-        assert(imageFile != null),
-        super._();
+  const _$_Reward({required this.id, required this.name, required this.description, required this.imageURL, required this.imageFile}) : super._();
 
   @override
   final UniqueId id;
@@ -165,19 +164,11 @@ class _$_Reward extends _Reward {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other is _Reward &&
-            (identical(other.id, id) ||
-                const DeepCollectionEquality().equals(other.id, id)) &&
-            (identical(other.name, name) ||
-                const DeepCollectionEquality().equals(other.name, name)) &&
-            (identical(other.description, description) ||
-                const DeepCollectionEquality()
-                    .equals(other.description, description)) &&
-            (identical(other.imageURL, imageURL) ||
-                const DeepCollectionEquality()
-                    .equals(other.imageURL, imageURL)) &&
-            (identical(other.imageFile, imageFile) ||
-                const DeepCollectionEquality()
-                    .equals(other.imageFile, imageFile)));
+            (identical(other.id, id) || const DeepCollectionEquality().equals(other.id, id)) &&
+            (identical(other.name, name) || const DeepCollectionEquality().equals(other.name, name)) &&
+            (identical(other.description, description) || const DeepCollectionEquality().equals(other.description, description)) &&
+            (identical(other.imageURL, imageURL) || const DeepCollectionEquality().equals(other.imageURL, imageURL)) &&
+            (identical(other.imageFile, imageFile) || const DeepCollectionEquality().equals(other.imageFile, imageFile)));
   }
 
   @override
@@ -191,30 +182,30 @@ class _$_Reward extends _Reward {
 
   @JsonKey(ignore: true)
   @override
-  _$RewardCopyWith<_Reward> get copyWith =>
-      __$RewardCopyWithImpl<_Reward>(this, _$identity);
+  _$RewardCopyWith<_Reward> get copyWith => __$RewardCopyWithImpl<_Reward>(this, _$identity);
 }
 
 abstract class _Reward extends Reward {
+  const factory _Reward({required UniqueId id, required Name name, required EntityDescription description, required String imageURL, required Option<File> imageFile}) = _$_Reward;
+
   const _Reward._() : super._();
-  const factory _Reward(
-      {@required UniqueId id,
-      @required Name name,
-      @required EntityDescription description,
-      @required String imageURL,
-      @required Option<File> imageFile}) = _$_Reward;
 
   @override
-  UniqueId get id;
+  UniqueId get id => throw _privateConstructorUsedError;
+
   @override
-  Name get name;
+  Name get name => throw _privateConstructorUsedError;
+
   @override
-  EntityDescription get description;
+  EntityDescription get description => throw _privateConstructorUsedError;
+
   @override
-  String get imageURL;
+  String get imageURL => throw _privateConstructorUsedError;
+
   @override
-  Option<File> get imageFile;
+  Option<File> get imageFile => throw _privateConstructorUsedError;
+
   @override
   @JsonKey(ignore: true)
-  _$RewardCopyWith<_Reward> get copyWith;
+  _$RewardCopyWith<_Reward> get copyWith => throw _privateConstructorUsedError;
 }

@@ -8,15 +8,15 @@ import 'package:worldon/views/core/misc/world_on_colors.dart';
 
 class UserImage extends StatelessWidget {
   const UserImage({
-    Key key,
-    @required this.user,
+    Key? key,
+    required this.user,
   }) : super(key: key);
 
   final User user;
 
   @override
   Widget build(BuildContext context) {
-    return FlatButton(
+    return TextButton(
       onPressed: () => context.read<NavigationActorBloc>().add(
             NavigationActorEvent.profileTapped(
               userOption: some(user),

@@ -5,7 +5,7 @@ import 'package:worldon/views/experience_navigation/widgets/no_experience_select
 
 class NoExperienceView extends StatelessWidget {
   const NoExperienceView({
-    Key key,
+    Key? key,
   }) : super(key: key);
 
   @override

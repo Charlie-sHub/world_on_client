@@ -1,7 +1,7 @@
 part of 'buy_coins_bloc.dart';
 
 @freezed
-abstract class BuyCoinsState with _$BuyCoinsState {
+class BuyCoinsState with _$BuyCoinsState {
   const factory BuyCoinsState.initial() = _Initial;
 
   const factory BuyCoinsState.actionInProgress() = _ActionInProgress;

@@ -1,7 +1,7 @@
 part of 'comment_actor_bloc.dart';
 
 @freezed
-abstract class CommentActorState with _$CommentActorState {
+class CommentActorState with _$CommentActorState {
   const factory CommentActorState.initial() = _Initial;
 
   const factory CommentActorState.actionInProgress() = _ActionInProgress;

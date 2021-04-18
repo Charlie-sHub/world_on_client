@@ -5,7 +5,7 @@ import 'package:worldon/generated/l10n.dart';
 
 class SearchHeader extends StatelessWidget {
   const SearchHeader({
-    Key key,
+    Key? key,
   }) : super(key: key);
 
   @override

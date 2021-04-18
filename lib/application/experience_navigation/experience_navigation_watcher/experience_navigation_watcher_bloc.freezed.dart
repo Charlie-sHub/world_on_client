@@ -1,5 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides
 
 part of 'experience_navigation_watcher_bloc.dart';
 
@@ -9,18 +9,19 @@ part of 'experience_navigation_watcher_bloc.dart';
 
 T _$identity<T>(T value) => value;
 
+final _privateConstructorUsedError = UnsupportedError(
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+
 /// @nodoc
 class _$ExperienceNavigationWatcherEventTearOff {
   const _$ExperienceNavigationWatcherEventTearOff();
 
-// ignore: unused_element
   _Initialized initialized(Option<Experience> experienceOption) {
     return _Initialized(
       experienceOption,
     );
   }
 
-// ignore: unused_element
   _AllObjectivesAccomplished allObjectivesAccomplished(Experience experience) {
     return _AllObjectivesAccomplished(
       experience,
@@ -29,48 +30,49 @@ class _$ExperienceNavigationWatcherEventTearOff {
 }
 
 /// @nodoc
-// ignore: unused_element
-const $ExperienceNavigationWatcherEvent =
-    _$ExperienceNavigationWatcherEventTearOff();
+const $ExperienceNavigationWatcherEvent = _$ExperienceNavigationWatcherEventTearOff();
 
 /// @nodoc
 mixin _$ExperienceNavigationWatcherEvent {
   @optionalTypeArgs
-  TResult when<TResult extends Object>({
-    @required TResult initialized(Option<Experience> experienceOption),
-    @required TResult allObjectivesAccomplished(Experience experience),
-  });
+  TResult when<TResult extends Object?>({
+    required TResult Function(Option<Experience> experienceOption) initialized,
+    required TResult Function(Experience experience) allObjectivesAccomplished,
+  }) =>
+      throw _privateConstructorUsedError;
+
   @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object>({
-    TResult initialized(Option<Experience> experienceOption),
-    TResult allObjectivesAccomplished(Experience experience),
-    @required TResult orElse(),
-  });
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(Option<Experience> experienceOption)? initialized,
+    TResult Function(Experience experience)? allObjectivesAccomplished,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
+
   @optionalTypeArgs
-  TResult map<TResult extends Object>({
-    @required TResult initialized(_Initialized value),
-    @required
-        TResult allObjectivesAccomplished(_AllObjectivesAccomplished value),
-  });
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initialized value) initialized,
+    required TResult Function(_AllObjectivesAccomplished value) allObjectivesAccomplished,
+  }) =>
+      throw _privateConstructorUsedError;
+
   @optionalTypeArgs
-  TResult maybeMap<TResult extends Object>({
-    TResult initialized(_Initialized value),
-    TResult allObjectivesAccomplished(_AllObjectivesAccomplished value),
-    @required TResult orElse(),
-  });
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initialized value)? initialized,
+    TResult Function(_AllObjectivesAccomplished value)? allObjectivesAccomplished,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $ExperienceNavigationWatcherEventCopyWith<$Res> {
-  factory $ExperienceNavigationWatcherEventCopyWith(
-          ExperienceNavigationWatcherEvent value,
-          $Res Function(ExperienceNavigationWatcherEvent) then) =
+  factory $ExperienceNavigationWatcherEventCopyWith(ExperienceNavigationWatcherEvent value, $Res Function(ExperienceNavigationWatcherEvent) then) =
       _$ExperienceNavigationWatcherEventCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class _$ExperienceNavigationWatcherEventCopyWithImpl<$Res>
-    implements $ExperienceNavigationWatcherEventCopyWith<$Res> {
+class _$ExperienceNavigationWatcherEventCopyWithImpl<$Res> implements $ExperienceNavigationWatcherEventCopyWith<$Res> {
   _$ExperienceNavigationWatcherEventCopyWithImpl(this._value, this._then);
 
   final ExperienceNavigationWatcherEvent _value;
@@ -80,39 +82,33 @@ class _$ExperienceNavigationWatcherEventCopyWithImpl<$Res>
 
 /// @nodoc
 abstract class _$InitializedCopyWith<$Res> {
-  factory _$InitializedCopyWith(
-          _Initialized value, $Res Function(_Initialized) then) =
-      __$InitializedCopyWithImpl<$Res>;
+  factory _$InitializedCopyWith(_Initialized value, $Res Function(_Initialized) then) = __$InitializedCopyWithImpl<$Res>;
   $Res call({Option<Experience> experienceOption});
 }
 
 /// @nodoc
-class __$InitializedCopyWithImpl<$Res>
-    extends _$ExperienceNavigationWatcherEventCopyWithImpl<$Res>
-    implements _$InitializedCopyWith<$Res> {
-  __$InitializedCopyWithImpl(
-      _Initialized _value, $Res Function(_Initialized) _then)
-      : super(_value, (v) => _then(v as _Initialized));
+class __$InitializedCopyWithImpl<$Res> extends _$ExperienceNavigationWatcherEventCopyWithImpl<$Res> implements _$InitializedCopyWith<$Res> {
+  __$InitializedCopyWithImpl(_Initialized _value, $Res Function(_Initialized) _then) : super(_value, (v) => _then(v as _Initialized));
 
   @override
   _Initialized get _value => super._value as _Initialized;
 
   @override
   $Res call({
-    Object experienceOption = freezed,
+    Object? experienceOption = freezed,
   }) {
     return _then(_Initialized(
       experienceOption == freezed
           ? _value.experienceOption
-          : experienceOption as Option<Experience>,
+          : experienceOption // ignore: cast_nullable_to_non_nullable
+              as Option<Experience>,
     ));
   }
 }
 
 /// @nodoc
 class _$_Initialized implements _Initialized {
-  const _$_Initialized(this.experienceOption)
-      : assert(experienceOption != null);
+  const _$_Initialized(this.experienceOption);
 
   @override
   final Option<Experience> experienceOption;
@@ -125,41 +121,32 @@ class _$_Initialized implements _Initialized {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _Initialized &&
-            (identical(other.experienceOption, experienceOption) ||
-                const DeepCollectionEquality()
-                    .equals(other.experienceOption, experienceOption)));
+        (other is _Initialized && (identical(other.experienceOption, experienceOption) || const DeepCollectionEquality().equals(other.experienceOption, experienceOption)));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(experienceOption);
+  int get hashCode => runtimeType.hashCode ^ const DeepCollectionEquality().hash(experienceOption);
 
   @JsonKey(ignore: true)
   @override
-  _$InitializedCopyWith<_Initialized> get copyWith =>
-      __$InitializedCopyWithImpl<_Initialized>(this, _$identity);
+  _$InitializedCopyWith<_Initialized> get copyWith => __$InitializedCopyWithImpl<_Initialized>(this, _$identity);
 
   @override
   @optionalTypeArgs
-  TResult when<TResult extends Object>({
-    @required TResult initialized(Option<Experience> experienceOption),
-    @required TResult allObjectivesAccomplished(Experience experience),
+  TResult when<TResult extends Object?>({
+    required TResult Function(Option<Experience> experienceOption) initialized,
+    required TResult Function(Experience experience) allObjectivesAccomplished,
   }) {
-    assert(initialized != null);
-    assert(allObjectivesAccomplished != null);
     return initialized(experienceOption);
   }
 
   @override
   @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object>({
-    TResult initialized(Option<Experience> experienceOption),
-    TResult allObjectivesAccomplished(Experience experience),
-    @required TResult orElse(),
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(Option<Experience> experienceOption)? initialized,
+    TResult Function(Experience experience)? allObjectivesAccomplished,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (initialized != null) {
       return initialized(experienceOption);
     }
@@ -168,24 +155,20 @@ class _$_Initialized implements _Initialized {
 
   @override
   @optionalTypeArgs
-  TResult map<TResult extends Object>({
-    @required TResult initialized(_Initialized value),
-    @required
-        TResult allObjectivesAccomplished(_AllObjectivesAccomplished value),
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initialized value) initialized,
+    required TResult Function(_AllObjectivesAccomplished value) allObjectivesAccomplished,
   }) {
-    assert(initialized != null);
-    assert(allObjectivesAccomplished != null);
     return initialized(this);
   }
 
   @override
   @optionalTypeArgs
-  TResult maybeMap<TResult extends Object>({
-    TResult initialized(_Initialized value),
-    TResult allObjectivesAccomplished(_AllObjectivesAccomplished value),
-    @required TResult orElse(),
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initialized value)? initialized,
+    TResult Function(_AllObjectivesAccomplished value)? allObjectivesAccomplished,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (initialized != null) {
       return initialized(this);
     }
@@ -194,50 +177,43 @@ class _$_Initialized implements _Initialized {
 }
 
 abstract class _Initialized implements ExperienceNavigationWatcherEvent {
-  const factory _Initialized(Option<Experience> experienceOption) =
-      _$_Initialized;
+  const factory _Initialized(Option<Experience> experienceOption) = _$_Initialized;
 
-  Option<Experience> get experienceOption;
+  Option<Experience> get experienceOption => throw _privateConstructorUsedError;
+
   @JsonKey(ignore: true)
-  _$InitializedCopyWith<_Initialized> get copyWith;
+  _$InitializedCopyWith<_Initialized> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class _$AllObjectivesAccomplishedCopyWith<$Res> {
-  factory _$AllObjectivesAccomplishedCopyWith(_AllObjectivesAccomplished value,
-          $Res Function(_AllObjectivesAccomplished) then) =
-      __$AllObjectivesAccomplishedCopyWithImpl<$Res>;
+  factory _$AllObjectivesAccomplishedCopyWith(_AllObjectivesAccomplished value, $Res Function(_AllObjectivesAccomplished) then) = __$AllObjectivesAccomplishedCopyWithImpl<$Res>;
   $Res call({Experience experience});
 
   $ExperienceCopyWith<$Res> get experience;
 }
 
 /// @nodoc
-class __$AllObjectivesAccomplishedCopyWithImpl<$Res>
-    extends _$ExperienceNavigationWatcherEventCopyWithImpl<$Res>
-    implements _$AllObjectivesAccomplishedCopyWith<$Res> {
-  __$AllObjectivesAccomplishedCopyWithImpl(_AllObjectivesAccomplished _value,
-      $Res Function(_AllObjectivesAccomplished) _then)
-      : super(_value, (v) => _then(v as _AllObjectivesAccomplished));
+class __$AllObjectivesAccomplishedCopyWithImpl<$Res> extends _$ExperienceNavigationWatcherEventCopyWithImpl<$Res> implements _$AllObjectivesAccomplishedCopyWith<$Res> {
+  __$AllObjectivesAccomplishedCopyWithImpl(_AllObjectivesAccomplished _value, $Res Function(_AllObjectivesAccomplished) _then) : super(_value, (v) => _then(v as _AllObjectivesAccomplished));
 
   @override
-  _AllObjectivesAccomplished get _value =>
-      super._value as _AllObjectivesAccomplished;
+  _AllObjectivesAccomplished get _value => super._value as _AllObjectivesAccomplished;
 
   @override
   $Res call({
-    Object experience = freezed,
+    Object? experience = freezed,
   }) {
     return _then(_AllObjectivesAccomplished(
-      experience == freezed ? _value.experience : experience as Experience,
+      experience == freezed
+          ? _value.experience
+          : experience // ignore: cast_nullable_to_non_nullable
+              as Experience,
     ));
   }
 
   @override
   $ExperienceCopyWith<$Res> get experience {
-    if (_value.experience == null) {
-      return null;
-    }
     return $ExperienceCopyWith<$Res>(_value.experience, (value) {
       return _then(_value.copyWith(experience: value));
     });
@@ -246,8 +222,7 @@ class __$AllObjectivesAccomplishedCopyWithImpl<$Res>
 
 /// @nodoc
 class _$_AllObjectivesAccomplished implements _AllObjectivesAccomplished {
-  const _$_AllObjectivesAccomplished(this.experience)
-      : assert(experience != null);
+  const _$_AllObjectivesAccomplished(this.experience);
 
   @override
   final Experience experience;
@@ -259,43 +234,32 @@ class _$_AllObjectivesAccomplished implements _AllObjectivesAccomplished {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) ||
-        (other is _AllObjectivesAccomplished &&
-            (identical(other.experience, experience) ||
-                const DeepCollectionEquality()
-                    .equals(other.experience, experience)));
+    return identical(this, other) || (other is _AllObjectivesAccomplished && (identical(other.experience, experience) || const DeepCollectionEquality().equals(other.experience, experience)));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(experience);
+  int get hashCode => runtimeType.hashCode ^ const DeepCollectionEquality().hash(experience);
 
   @JsonKey(ignore: true)
   @override
-  _$AllObjectivesAccomplishedCopyWith<_AllObjectivesAccomplished>
-      get copyWith =>
-          __$AllObjectivesAccomplishedCopyWithImpl<_AllObjectivesAccomplished>(
-              this, _$identity);
+  _$AllObjectivesAccomplishedCopyWith<_AllObjectivesAccomplished> get copyWith => __$AllObjectivesAccomplishedCopyWithImpl<_AllObjectivesAccomplished>(this, _$identity);
 
   @override
   @optionalTypeArgs
-  TResult when<TResult extends Object>({
-    @required TResult initialized(Option<Experience> experienceOption),
-    @required TResult allObjectivesAccomplished(Experience experience),
+  TResult when<TResult extends Object?>({
+    required TResult Function(Option<Experience> experienceOption) initialized,
+    required TResult Function(Experience experience) allObjectivesAccomplished,
   }) {
-    assert(initialized != null);
-    assert(allObjectivesAccomplished != null);
     return allObjectivesAccomplished(experience);
   }
 
   @override
   @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object>({
-    TResult initialized(Option<Experience> experienceOption),
-    TResult allObjectivesAccomplished(Experience experience),
-    @required TResult orElse(),
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(Option<Experience> experienceOption)? initialized,
+    TResult Function(Experience experience)? allObjectivesAccomplished,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (allObjectivesAccomplished != null) {
       return allObjectivesAccomplished(experience);
     }
@@ -304,24 +268,20 @@ class _$_AllObjectivesAccomplished implements _AllObjectivesAccomplished {
 
   @override
   @optionalTypeArgs
-  TResult map<TResult extends Object>({
-    @required TResult initialized(_Initialized value),
-    @required
-        TResult allObjectivesAccomplished(_AllObjectivesAccomplished value),
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initialized value) initialized,
+    required TResult Function(_AllObjectivesAccomplished value) allObjectivesAccomplished,
   }) {
-    assert(initialized != null);
-    assert(allObjectivesAccomplished != null);
     return allObjectivesAccomplished(this);
   }
 
   @override
   @optionalTypeArgs
-  TResult maybeMap<TResult extends Object>({
-    TResult initialized(_Initialized value),
-    TResult allObjectivesAccomplished(_AllObjectivesAccomplished value),
-    @required TResult orElse(),
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initialized value)? initialized,
+    TResult Function(_AllObjectivesAccomplished value)? allObjectivesAccomplished,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (allObjectivesAccomplished != null) {
       return allObjectivesAccomplished(this);
     }
@@ -329,38 +289,33 @@ class _$_AllObjectivesAccomplished implements _AllObjectivesAccomplished {
   }
 }
 
-abstract class _AllObjectivesAccomplished
-    implements ExperienceNavigationWatcherEvent {
-  const factory _AllObjectivesAccomplished(Experience experience) =
-      _$_AllObjectivesAccomplished;
+abstract class _AllObjectivesAccomplished implements ExperienceNavigationWatcherEvent {
+  const factory _AllObjectivesAccomplished(Experience experience) = _$_AllObjectivesAccomplished;
 
-  Experience get experience;
+  Experience get experience => throw _privateConstructorUsedError;
+
   @JsonKey(ignore: true)
-  _$AllObjectivesAccomplishedCopyWith<_AllObjectivesAccomplished> get copyWith;
+  _$AllObjectivesAccomplishedCopyWith<_AllObjectivesAccomplished> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 class _$ExperienceNavigationWatcherStateTearOff {
   const _$ExperienceNavigationWatcherStateTearOff();
 
-// ignore: unused_element
   _Initial initial() {
     return const _Initial();
   }
 
-// ignore: unused_element
   _NoExperience noExperience() {
     return const _NoExperience();
   }
 
-// ignore: unused_element
   _NavigatingExperience navigatingExperience(Experience experience) {
     return _NavigatingExperience(
       experience,
     );
   }
 
-// ignore: unused_element
   _FinishExperience finishExperience(Experience experience) {
     return _FinishExperience(
       experience,
@@ -369,55 +324,57 @@ class _$ExperienceNavigationWatcherStateTearOff {
 }
 
 /// @nodoc
-// ignore: unused_element
-const $ExperienceNavigationWatcherState =
-    _$ExperienceNavigationWatcherStateTearOff();
+const $ExperienceNavigationWatcherState = _$ExperienceNavigationWatcherStateTearOff();
 
 /// @nodoc
 mixin _$ExperienceNavigationWatcherState {
   @optionalTypeArgs
-  TResult when<TResult extends Object>({
-    @required TResult initial(),
-    @required TResult noExperience(),
-    @required TResult navigatingExperience(Experience experience),
-    @required TResult finishExperience(Experience experience),
-  });
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() noExperience,
+    required TResult Function(Experience experience) navigatingExperience,
+    required TResult Function(Experience experience) finishExperience,
+  }) =>
+      throw _privateConstructorUsedError;
+
   @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object>({
-    TResult initial(),
-    TResult noExperience(),
-    TResult navigatingExperience(Experience experience),
-    TResult finishExperience(Experience experience),
-    @required TResult orElse(),
-  });
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? noExperience,
+    TResult Function(Experience experience)? navigatingExperience,
+    TResult Function(Experience experience)? finishExperience,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
+
   @optionalTypeArgs
-  TResult map<TResult extends Object>({
-    @required TResult initial(_Initial value),
-    @required TResult noExperience(_NoExperience value),
-    @required TResult navigatingExperience(_NavigatingExperience value),
-    @required TResult finishExperience(_FinishExperience value),
-  });
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial value) initial,
+    required TResult Function(_NoExperience value) noExperience,
+    required TResult Function(_NavigatingExperience value) navigatingExperience,
+    required TResult Function(_FinishExperience value) finishExperience,
+  }) =>
+      throw _privateConstructorUsedError;
+
   @optionalTypeArgs
-  TResult maybeMap<TResult extends Object>({
-    TResult initial(_Initial value),
-    TResult noExperience(_NoExperience value),
-    TResult navigatingExperience(_NavigatingExperience value),
-    TResult finishExperience(_FinishExperience value),
-    @required TResult orElse(),
-  });
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_NoExperience value)? noExperience,
+    TResult Function(_NavigatingExperience value)? navigatingExperience,
+    TResult Function(_FinishExperience value)? finishExperience,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $ExperienceNavigationWatcherStateCopyWith<$Res> {
-  factory $ExperienceNavigationWatcherStateCopyWith(
-          ExperienceNavigationWatcherState value,
-          $Res Function(ExperienceNavigationWatcherState) then) =
+  factory $ExperienceNavigationWatcherStateCopyWith(ExperienceNavigationWatcherState value, $Res Function(ExperienceNavigationWatcherState) then) =
       _$ExperienceNavigationWatcherStateCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class _$ExperienceNavigationWatcherStateCopyWithImpl<$Res>
-    implements $ExperienceNavigationWatcherStateCopyWith<$Res> {
+class _$ExperienceNavigationWatcherStateCopyWithImpl<$Res> implements $ExperienceNavigationWatcherStateCopyWith<$Res> {
   _$ExperienceNavigationWatcherStateCopyWithImpl(this._value, this._then);
 
   final ExperienceNavigationWatcherState _value;
@@ -427,16 +384,12 @@ class _$ExperienceNavigationWatcherStateCopyWithImpl<$Res>
 
 /// @nodoc
 abstract class _$InitialCopyWith<$Res> {
-  factory _$InitialCopyWith(_Initial value, $Res Function(_Initial) then) =
-      __$InitialCopyWithImpl<$Res>;
+  factory _$InitialCopyWith(_Initial value, $Res Function(_Initial) then) = __$InitialCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$InitialCopyWithImpl<$Res>
-    extends _$ExperienceNavigationWatcherStateCopyWithImpl<$Res>
-    implements _$InitialCopyWith<$Res> {
-  __$InitialCopyWithImpl(_Initial _value, $Res Function(_Initial) _then)
-      : super(_value, (v) => _then(v as _Initial));
+class __$InitialCopyWithImpl<$Res> extends _$ExperienceNavigationWatcherStateCopyWithImpl<$Res> implements _$InitialCopyWith<$Res> {
+  __$InitialCopyWithImpl(_Initial _value, $Res Function(_Initial) _then) : super(_value, (v) => _then(v as _Initial));
 
   @override
   _Initial get _value => super._value as _Initial;
@@ -461,29 +414,24 @@ class _$_Initial implements _Initial {
 
   @override
   @optionalTypeArgs
-  TResult when<TResult extends Object>({
-    @required TResult initial(),
-    @required TResult noExperience(),
-    @required TResult navigatingExperience(Experience experience),
-    @required TResult finishExperience(Experience experience),
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() noExperience,
+    required TResult Function(Experience experience) navigatingExperience,
+    required TResult Function(Experience experience) finishExperience,
   }) {
-    assert(initial != null);
-    assert(noExperience != null);
-    assert(navigatingExperience != null);
-    assert(finishExperience != null);
     return initial();
   }
 
   @override
   @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object>({
-    TResult initial(),
-    TResult noExperience(),
-    TResult navigatingExperience(Experience experience),
-    TResult finishExperience(Experience experience),
-    @required TResult orElse(),
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? noExperience,
+    TResult Function(Experience experience)? navigatingExperience,
+    TResult Function(Experience experience)? finishExperience,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (initial != null) {
       return initial();
     }
@@ -492,29 +440,24 @@ class _$_Initial implements _Initial {
 
   @override
   @optionalTypeArgs
-  TResult map<TResult extends Object>({
-    @required TResult initial(_Initial value),
-    @required TResult noExperience(_NoExperience value),
-    @required TResult navigatingExperience(_NavigatingExperience value),
-    @required TResult finishExperience(_FinishExperience value),
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial value) initial,
+    required TResult Function(_NoExperience value) noExperience,
+    required TResult Function(_NavigatingExperience value) navigatingExperience,
+    required TResult Function(_FinishExperience value) finishExperience,
   }) {
-    assert(initial != null);
-    assert(noExperience != null);
-    assert(navigatingExperience != null);
-    assert(finishExperience != null);
     return initial(this);
   }
 
   @override
   @optionalTypeArgs
-  TResult maybeMap<TResult extends Object>({
-    TResult initial(_Initial value),
-    TResult noExperience(_NoExperience value),
-    TResult navigatingExperience(_NavigatingExperience value),
-    TResult finishExperience(_FinishExperience value),
-    @required TResult orElse(),
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_NoExperience value)? noExperience,
+    TResult Function(_NavigatingExperience value)? navigatingExperience,
+    TResult Function(_FinishExperience value)? finishExperience,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (initial != null) {
       return initial(this);
     }
@@ -528,18 +471,12 @@ abstract class _Initial implements ExperienceNavigationWatcherState {
 
 /// @nodoc
 abstract class _$NoExperienceCopyWith<$Res> {
-  factory _$NoExperienceCopyWith(
-          _NoExperience value, $Res Function(_NoExperience) then) =
-      __$NoExperienceCopyWithImpl<$Res>;
+  factory _$NoExperienceCopyWith(_NoExperience value, $Res Function(_NoExperience) then) = __$NoExperienceCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$NoExperienceCopyWithImpl<$Res>
-    extends _$ExperienceNavigationWatcherStateCopyWithImpl<$Res>
-    implements _$NoExperienceCopyWith<$Res> {
-  __$NoExperienceCopyWithImpl(
-      _NoExperience _value, $Res Function(_NoExperience) _then)
-      : super(_value, (v) => _then(v as _NoExperience));
+class __$NoExperienceCopyWithImpl<$Res> extends _$ExperienceNavigationWatcherStateCopyWithImpl<$Res> implements _$NoExperienceCopyWith<$Res> {
+  __$NoExperienceCopyWithImpl(_NoExperience _value, $Res Function(_NoExperience) _then) : super(_value, (v) => _then(v as _NoExperience));
 
   @override
   _NoExperience get _value => super._value as _NoExperience;
@@ -564,29 +501,24 @@ class _$_NoExperience implements _NoExperience {
 
   @override
   @optionalTypeArgs
-  TResult when<TResult extends Object>({
-    @required TResult initial(),
-    @required TResult noExperience(),
-    @required TResult navigatingExperience(Experience experience),
-    @required TResult finishExperience(Experience experience),
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() noExperience,
+    required TResult Function(Experience experience) navigatingExperience,
+    required TResult Function(Experience experience) finishExperience,
   }) {
-    assert(initial != null);
-    assert(noExperience != null);
-    assert(navigatingExperience != null);
-    assert(finishExperience != null);
     return noExperience();
   }
 
   @override
   @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object>({
-    TResult initial(),
-    TResult noExperience(),
-    TResult navigatingExperience(Experience experience),
-    TResult finishExperience(Experience experience),
-    @required TResult orElse(),
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? noExperience,
+    TResult Function(Experience experience)? navigatingExperience,
+    TResult Function(Experience experience)? finishExperience,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (noExperience != null) {
       return noExperience();
     }
@@ -595,29 +527,24 @@ class _$_NoExperience implements _NoExperience {
 
   @override
   @optionalTypeArgs
-  TResult map<TResult extends Object>({
-    @required TResult initial(_Initial value),
-    @required TResult noExperience(_NoExperience value),
-    @required TResult navigatingExperience(_NavigatingExperience value),
-    @required TResult finishExperience(_FinishExperience value),
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial value) initial,
+    required TResult Function(_NoExperience value) noExperience,
+    required TResult Function(_NavigatingExperience value) navigatingExperience,
+    required TResult Function(_FinishExperience value) finishExperience,
   }) {
-    assert(initial != null);
-    assert(noExperience != null);
-    assert(navigatingExperience != null);
-    assert(finishExperience != null);
     return noExperience(this);
   }
 
   @override
   @optionalTypeArgs
-  TResult maybeMap<TResult extends Object>({
-    TResult initial(_Initial value),
-    TResult noExperience(_NoExperience value),
-    TResult navigatingExperience(_NavigatingExperience value),
-    TResult finishExperience(_FinishExperience value),
-    @required TResult orElse(),
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_NoExperience value)? noExperience,
+    TResult Function(_NavigatingExperience value)? navigatingExperience,
+    TResult Function(_FinishExperience value)? finishExperience,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (noExperience != null) {
       return noExperience(this);
     }
@@ -631,39 +558,33 @@ abstract class _NoExperience implements ExperienceNavigationWatcherState {
 
 /// @nodoc
 abstract class _$NavigatingExperienceCopyWith<$Res> {
-  factory _$NavigatingExperienceCopyWith(_NavigatingExperience value,
-          $Res Function(_NavigatingExperience) then) =
-      __$NavigatingExperienceCopyWithImpl<$Res>;
+  factory _$NavigatingExperienceCopyWith(_NavigatingExperience value, $Res Function(_NavigatingExperience) then) = __$NavigatingExperienceCopyWithImpl<$Res>;
   $Res call({Experience experience});
 
   $ExperienceCopyWith<$Res> get experience;
 }
 
 /// @nodoc
-class __$NavigatingExperienceCopyWithImpl<$Res>
-    extends _$ExperienceNavigationWatcherStateCopyWithImpl<$Res>
-    implements _$NavigatingExperienceCopyWith<$Res> {
-  __$NavigatingExperienceCopyWithImpl(
-      _NavigatingExperience _value, $Res Function(_NavigatingExperience) _then)
-      : super(_value, (v) => _then(v as _NavigatingExperience));
+class __$NavigatingExperienceCopyWithImpl<$Res> extends _$ExperienceNavigationWatcherStateCopyWithImpl<$Res> implements _$NavigatingExperienceCopyWith<$Res> {
+  __$NavigatingExperienceCopyWithImpl(_NavigatingExperience _value, $Res Function(_NavigatingExperience) _then) : super(_value, (v) => _then(v as _NavigatingExperience));
 
   @override
   _NavigatingExperience get _value => super._value as _NavigatingExperience;
 
   @override
   $Res call({
-    Object experience = freezed,
+    Object? experience = freezed,
   }) {
     return _then(_NavigatingExperience(
-      experience == freezed ? _value.experience : experience as Experience,
+      experience == freezed
+          ? _value.experience
+          : experience // ignore: cast_nullable_to_non_nullable
+              as Experience,
     ));
   }
 
   @override
   $ExperienceCopyWith<$Res> get experience {
-    if (_value.experience == null) {
-      return null;
-    }
     return $ExperienceCopyWith<$Res>(_value.experience, (value) {
       return _then(_value.copyWith(experience: value));
     });
@@ -672,7 +593,7 @@ class __$NavigatingExperienceCopyWithImpl<$Res>
 
 /// @nodoc
 class _$_NavigatingExperience implements _NavigatingExperience {
-  const _$_NavigatingExperience(this.experience) : assert(experience != null);
+  const _$_NavigatingExperience(this.experience);
 
   @override
   final Experience experience;
@@ -684,48 +605,36 @@ class _$_NavigatingExperience implements _NavigatingExperience {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) ||
-        (other is _NavigatingExperience &&
-            (identical(other.experience, experience) ||
-                const DeepCollectionEquality()
-                    .equals(other.experience, experience)));
+    return identical(this, other) || (other is _NavigatingExperience && (identical(other.experience, experience) || const DeepCollectionEquality().equals(other.experience, experience)));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(experience);
+  int get hashCode => runtimeType.hashCode ^ const DeepCollectionEquality().hash(experience);
 
   @JsonKey(ignore: true)
   @override
-  _$NavigatingExperienceCopyWith<_NavigatingExperience> get copyWith =>
-      __$NavigatingExperienceCopyWithImpl<_NavigatingExperience>(
-          this, _$identity);
+  _$NavigatingExperienceCopyWith<_NavigatingExperience> get copyWith => __$NavigatingExperienceCopyWithImpl<_NavigatingExperience>(this, _$identity);
 
   @override
   @optionalTypeArgs
-  TResult when<TResult extends Object>({
-    @required TResult initial(),
-    @required TResult noExperience(),
-    @required TResult navigatingExperience(Experience experience),
-    @required TResult finishExperience(Experience experience),
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() noExperience,
+    required TResult Function(Experience experience) navigatingExperience,
+    required TResult Function(Experience experience) finishExperience,
   }) {
-    assert(initial != null);
-    assert(noExperience != null);
-    assert(navigatingExperience != null);
-    assert(finishExperience != null);
     return navigatingExperience(experience);
   }
 
   @override
   @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object>({
-    TResult initial(),
-    TResult noExperience(),
-    TResult navigatingExperience(Experience experience),
-    TResult finishExperience(Experience experience),
-    @required TResult orElse(),
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? noExperience,
+    TResult Function(Experience experience)? navigatingExperience,
+    TResult Function(Experience experience)? finishExperience,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (navigatingExperience != null) {
       return navigatingExperience(experience);
     }
@@ -734,29 +643,24 @@ class _$_NavigatingExperience implements _NavigatingExperience {
 
   @override
   @optionalTypeArgs
-  TResult map<TResult extends Object>({
-    @required TResult initial(_Initial value),
-    @required TResult noExperience(_NoExperience value),
-    @required TResult navigatingExperience(_NavigatingExperience value),
-    @required TResult finishExperience(_FinishExperience value),
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial value) initial,
+    required TResult Function(_NoExperience value) noExperience,
+    required TResult Function(_NavigatingExperience value) navigatingExperience,
+    required TResult Function(_FinishExperience value) finishExperience,
   }) {
-    assert(initial != null);
-    assert(noExperience != null);
-    assert(navigatingExperience != null);
-    assert(finishExperience != null);
     return navigatingExperience(this);
   }
 
   @override
   @optionalTypeArgs
-  TResult maybeMap<TResult extends Object>({
-    TResult initial(_Initial value),
-    TResult noExperience(_NoExperience value),
-    TResult navigatingExperience(_NavigatingExperience value),
-    TResult finishExperience(_FinishExperience value),
-    @required TResult orElse(),
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_NoExperience value)? noExperience,
+    TResult Function(_NavigatingExperience value)? navigatingExperience,
+    TResult Function(_FinishExperience value)? finishExperience,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (navigatingExperience != null) {
       return navigatingExperience(this);
     }
@@ -764,51 +668,44 @@ class _$_NavigatingExperience implements _NavigatingExperience {
   }
 }
 
-abstract class _NavigatingExperience
-    implements ExperienceNavigationWatcherState {
-  const factory _NavigatingExperience(Experience experience) =
-      _$_NavigatingExperience;
+abstract class _NavigatingExperience implements ExperienceNavigationWatcherState {
+  const factory _NavigatingExperience(Experience experience) = _$_NavigatingExperience;
 
-  Experience get experience;
+  Experience get experience => throw _privateConstructorUsedError;
+
   @JsonKey(ignore: true)
-  _$NavigatingExperienceCopyWith<_NavigatingExperience> get copyWith;
+  _$NavigatingExperienceCopyWith<_NavigatingExperience> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class _$FinishExperienceCopyWith<$Res> {
-  factory _$FinishExperienceCopyWith(
-          _FinishExperience value, $Res Function(_FinishExperience) then) =
-      __$FinishExperienceCopyWithImpl<$Res>;
+  factory _$FinishExperienceCopyWith(_FinishExperience value, $Res Function(_FinishExperience) then) = __$FinishExperienceCopyWithImpl<$Res>;
   $Res call({Experience experience});
 
   $ExperienceCopyWith<$Res> get experience;
 }
 
 /// @nodoc
-class __$FinishExperienceCopyWithImpl<$Res>
-    extends _$ExperienceNavigationWatcherStateCopyWithImpl<$Res>
-    implements _$FinishExperienceCopyWith<$Res> {
-  __$FinishExperienceCopyWithImpl(
-      _FinishExperience _value, $Res Function(_FinishExperience) _then)
-      : super(_value, (v) => _then(v as _FinishExperience));
+class __$FinishExperienceCopyWithImpl<$Res> extends _$ExperienceNavigationWatcherStateCopyWithImpl<$Res> implements _$FinishExperienceCopyWith<$Res> {
+  __$FinishExperienceCopyWithImpl(_FinishExperience _value, $Res Function(_FinishExperience) _then) : super(_value, (v) => _then(v as _FinishExperience));
 
   @override
   _FinishExperience get _value => super._value as _FinishExperience;
 
   @override
   $Res call({
-    Object experience = freezed,
+    Object? experience = freezed,
   }) {
     return _then(_FinishExperience(
-      experience == freezed ? _value.experience : experience as Experience,
+      experience == freezed
+          ? _value.experience
+          : experience // ignore: cast_nullable_to_non_nullable
+              as Experience,
     ));
   }
 
   @override
   $ExperienceCopyWith<$Res> get experience {
-    if (_value.experience == null) {
-      return null;
-    }
     return $ExperienceCopyWith<$Res>(_value.experience, (value) {
       return _then(_value.copyWith(experience: value));
     });
@@ -817,7 +714,7 @@ class __$FinishExperienceCopyWithImpl<$Res>
 
 /// @nodoc
 class _$_FinishExperience implements _FinishExperience {
-  const _$_FinishExperience(this.experience) : assert(experience != null);
+  const _$_FinishExperience(this.experience);
 
   @override
   final Experience experience;
@@ -829,47 +726,36 @@ class _$_FinishExperience implements _FinishExperience {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) ||
-        (other is _FinishExperience &&
-            (identical(other.experience, experience) ||
-                const DeepCollectionEquality()
-                    .equals(other.experience, experience)));
+    return identical(this, other) || (other is _FinishExperience && (identical(other.experience, experience) || const DeepCollectionEquality().equals(other.experience, experience)));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(experience);
+  int get hashCode => runtimeType.hashCode ^ const DeepCollectionEquality().hash(experience);
 
   @JsonKey(ignore: true)
   @override
-  _$FinishExperienceCopyWith<_FinishExperience> get copyWith =>
-      __$FinishExperienceCopyWithImpl<_FinishExperience>(this, _$identity);
+  _$FinishExperienceCopyWith<_FinishExperience> get copyWith => __$FinishExperienceCopyWithImpl<_FinishExperience>(this, _$identity);
 
   @override
   @optionalTypeArgs
-  TResult when<TResult extends Object>({
-    @required TResult initial(),
-    @required TResult noExperience(),
-    @required TResult navigatingExperience(Experience experience),
-    @required TResult finishExperience(Experience experience),
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() noExperience,
+    required TResult Function(Experience experience) navigatingExperience,
+    required TResult Function(Experience experience) finishExperience,
   }) {
-    assert(initial != null);
-    assert(noExperience != null);
-    assert(navigatingExperience != null);
-    assert(finishExperience != null);
     return finishExperience(experience);
   }
 
   @override
   @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object>({
-    TResult initial(),
-    TResult noExperience(),
-    TResult navigatingExperience(Experience experience),
-    TResult finishExperience(Experience experience),
-    @required TResult orElse(),
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? noExperience,
+    TResult Function(Experience experience)? navigatingExperience,
+    TResult Function(Experience experience)? finishExperience,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (finishExperience != null) {
       return finishExperience(experience);
     }
@@ -878,29 +764,24 @@ class _$_FinishExperience implements _FinishExperience {
 
   @override
   @optionalTypeArgs
-  TResult map<TResult extends Object>({
-    @required TResult initial(_Initial value),
-    @required TResult noExperience(_NoExperience value),
-    @required TResult navigatingExperience(_NavigatingExperience value),
-    @required TResult finishExperience(_FinishExperience value),
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial value) initial,
+    required TResult Function(_NoExperience value) noExperience,
+    required TResult Function(_NavigatingExperience value) navigatingExperience,
+    required TResult Function(_FinishExperience value) finishExperience,
   }) {
-    assert(initial != null);
-    assert(noExperience != null);
-    assert(navigatingExperience != null);
-    assert(finishExperience != null);
     return finishExperience(this);
   }
 
   @override
   @optionalTypeArgs
-  TResult maybeMap<TResult extends Object>({
-    TResult initial(_Initial value),
-    TResult noExperience(_NoExperience value),
-    TResult navigatingExperience(_NavigatingExperience value),
-    TResult finishExperience(_FinishExperience value),
-    @required TResult orElse(),
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_NoExperience value)? noExperience,
+    TResult Function(_NavigatingExperience value)? navigatingExperience,
+    TResult Function(_FinishExperience value)? finishExperience,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (finishExperience != null) {
       return finishExperience(this);
     }
@@ -911,7 +792,8 @@ class _$_FinishExperience implements _FinishExperience {
 abstract class _FinishExperience implements ExperienceNavigationWatcherState {
   const factory _FinishExperience(Experience experience) = _$_FinishExperience;
 
-  Experience get experience;
+  Experience get experience => throw _privateConstructorUsedError;
+
   @JsonKey(ignore: true)
-  _$FinishExperienceCopyWith<_FinishExperience> get copyWith;
+  _$FinishExperienceCopyWith<_FinishExperience> get copyWith => throw _privateConstructorUsedError;
 }

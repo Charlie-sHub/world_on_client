@@ -119,7 +119,7 @@ class ProductionProfileRepository implements ProfileRepositoryInterface {
         },
         (_file) async {
           final _imageUrl = await getIt<CloudStorageService>().uploadFileImage(
-            imageToUpload: _file,
+            imageToUpload: _file!,
             folder: StorageFolder.users,
             name: _userId,
           );
@@ -138,7 +138,7 @@ class ProductionProfileRepository implements ProfileRepositoryInterface {
       // If we are to use Firestore or some of the NoSQL db in the future then we need to come up with a better data model
       final _experiencesToUpdateQuerySnapshot = await _firestore.experienceCollection
           .where(
-        ExperienceFields.creatorId,
+            ExperienceFields.creatorId,
             isEqualTo: _userId,
           )
           .get();
@@ -155,7 +155,7 @@ class ProductionProfileRepository implements ProfileRepositoryInterface {
       }
       final _notificationsToUpdateQuerySnapshotBySender = await _firestore.notificationCollection
           .where(
-        "${NotificationFields.sender}.id",
+            "${NotificationFields.sender}.id",
             isEqualTo: _userId,
           )
           .get();
@@ -172,7 +172,7 @@ class ProductionProfileRepository implements ProfileRepositoryInterface {
       }
       final _notificationsToUpdateQuerySnapshotByReceiver = await _firestore.notificationCollection
           .where(
-        "${NotificationFields.receiver}.id",
+            "${NotificationFields.receiver}.id",
             isEqualTo: _userId,
           )
           .get();
@@ -320,11 +320,11 @@ class ProductionProfileRepository implements ProfileRepositoryInterface {
   Stream<Either<Failure, KtList<User>>> watchFollowingUsers(UniqueId id) async* {
     yield* _firestore.userCollection
         .where(
-      UserFields.followedUsersIds,
+          UserFields.followedUsersIds,
           arrayContains: id.getOrCrash(),
         ) // TODO: Should order by follow date
         .orderBy(
-      UserFields.creationDate,
+          UserFields.creationDate,
           descending: true,
         )
         .snapshots()
@@ -363,7 +363,7 @@ class ProductionProfileRepository implements ProfileRepositoryInterface {
     try {
       final _followersSnapshot = await _firestore.userCollection
           .where(
-        UserFields.followedUsersIds,
+            UserFields.followedUsersIds,
             arrayContains: id.getOrCrash(),
           )
           .get();
@@ -378,11 +378,11 @@ class ProductionProfileRepository implements ProfileRepositoryInterface {
   Stream<Either<Failure, KtList<Experience>>> watchExperiencesCreated(UniqueId id) async* {
     yield* _firestore.experienceCollection
         .where(
-      ExperienceFields.creatorId,
+          ExperienceFields.creatorId,
           isEqualTo: id.getOrCrash(),
         )
         .orderBy(
-      ExperienceFields.creationDate,
+          ExperienceFields.creationDate,
           descending: true,
         )
         .snapshots()
@@ -462,7 +462,7 @@ class ProductionProfileRepository implements ProfileRepositoryInterface {
           }
         },
       ).onErrorReturnWith(
-          (error) => left(_onError(error)),
+        (error) => left(_onError(error)),
       );
     } else {
       yield* Stream.value(
@@ -525,7 +525,7 @@ class ProductionProfileRepository implements ProfileRepositoryInterface {
           }
         },
       ).onErrorReturnWith(
-          (error) => left(_onError(error)),
+        (error) => left(_onError(error)),
       );
     } else {
       yield* Stream.value(
@@ -588,7 +588,7 @@ class ProductionProfileRepository implements ProfileRepositoryInterface {
           }
         },
       ).onErrorReturnWith(
-          (error) => left(_onError(error)),
+        (error) => left(_onError(error)),
       );
     } else {
       yield* Stream.value(
@@ -651,7 +651,7 @@ class ProductionProfileRepository implements ProfileRepositoryInterface {
           }
         },
       ).onErrorReturnWith(
-          (error) => left(_onError(error)),
+        (error) => left(_onError(error)),
       );
     } else {
       yield* Stream.value(
@@ -687,7 +687,7 @@ class ProductionProfileRepository implements ProfileRepositoryInterface {
     } else {
       return left(
         Failure.coreData(
-          CoreDataFailure.serverError(errorString: exception.message),
+          CoreDataFailure.serverError(errorString: exception.message!),
         ),
       );
     }

@@ -10,7 +10,7 @@ import 'package:worldon/views/core/widgets/misc/user_image.dart';
 class NotificationCard extends StatelessWidget {
   final Notification notification;
 
-  const NotificationCard({Key key, @required this.notification}) : super(key: key);
+  const NotificationCard({Key? key, required this.notification}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -61,19 +61,14 @@ class NotificationCard extends StatelessWidget {
     switch (type) {
       case NotificationType.follow:
         return Colors.green;
-        break;
       case NotificationType.unfollow:
         return Colors.yellow;
-        break;
       case NotificationType.block:
         return Colors.red;
-        break;
       case NotificationType.unblock:
         return Colors.orange;
-        break;
       default:
         return Colors.white;
-        break;
     }
   }
 }

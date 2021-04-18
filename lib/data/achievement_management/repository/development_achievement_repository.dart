@@ -1,4 +1,3 @@
-
 import 'package:dartz/dartz.dart';
 import 'package:injectable/injectable.dart';
 import 'package:kt_dart/kt.dart';
@@ -9,11 +8,10 @@ import 'package:worldon/domain/core/validation/objects/unique_id.dart';
 
 @LazySingleton(as: AchievementRepositoryInterface, env: [Environment.dev])
 class DevelopmentAchievementRepository implements AchievementRepositoryInterface {
-
   @override
   Future<Either<Failure, Unit>> awardAchievement({
-    UniqueId achievementId,
-    UniqueId userId,
+    required UniqueId achievementId,
+    required UniqueId userId,
   }) {
     throw UnimplementedError();
   }

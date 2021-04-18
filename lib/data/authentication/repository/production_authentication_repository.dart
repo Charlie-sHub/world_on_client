@@ -42,27 +42,35 @@ class ProductionAuthenticationRepository implements AuthenticationRepositoryInte
         password: user.password.getOrCrash(),
       );
       final _firebaseUser = _firebaseAuth.currentUser;
-      final _imageUrl = await getIt<CloudStorageService>().uploadFileImage(
-        imageToUpload: user.imageFileOption.getOrElse(() => null),
-        folder: StorageFolder.users,
-        name: _firebaseUser.uid,
-      );
-      final _jsonUser = UserDto.fromDomain(
-        user.copyWith(
-          id: UniqueId.fromUniqueString(
-            _firebaseUser.uid,
+      if (_firebaseUser != null) {
+        final _imageUrl = await getIt<CloudStorageService>().uploadFileImage(
+          imageToUpload: user.imageFileOption.getOrElse(() => null)!,
+          folder: StorageFolder.users,
+          name: _firebaseUser.uid,
+        );
+        final _jsonUser = UserDto.fromDomain(
+          user.copyWith(
+            id: UniqueId.fromUniqueString(
+              _firebaseUser.uid,
+            ),
+            imageURL: _imageUrl,
           ),
-          imageURL: _imageUrl,
-        ),
-      ).toJson();
-      await _firestore.userCollection.doc(_firebaseUser.uid).set(_jsonUser);
-      return right(unit);
+        ).toJson();
+        await _firestore.userCollection.doc(_firebaseUser.uid).set(_jsonUser);
+        return right(unit);
+      } else {
+        return left(
+          const Failure.coreData(
+            CoreDataFailure.serverError(errorString: "Null Firebase user"),
+          ),
+        );
+      }
     } on FirebaseAuthException catch (exception) {
       if (exception.code == "ERROR_EMAIL_ALREADY_IN_USE") {
         return left(
           Failure.coreData(
             CoreDataFailure.emailAlreadyInUse(
-              email: EmailAddress(exception.email),
+              email: EmailAddress(exception.email!),
             ),
           ),
         );
@@ -70,7 +78,7 @@ class ProductionAuthenticationRepository implements AuthenticationRepositoryInte
         _logger.e(exception.message);
         return left(
           Failure.coreData(
-            CoreDataFailure.serverError(errorString: exception.message),
+            CoreDataFailure.serverError(errorString: exception.message!),
           ),
         );
       }
@@ -96,7 +104,7 @@ class ProductionAuthenticationRepository implements AuthenticationRepositoryInte
         _logger.e(exception.message);
         return left(
           Failure.coreData(
-            CoreDataFailure.serverError(errorString: exception.message),
+            CoreDataFailure.serverError(errorString: exception.message!),
           ),
         );
       }
@@ -116,7 +124,7 @@ class ProductionAuthenticationRepository implements AuthenticationRepositoryInte
       }
       final _userByEmailQuery = await _firestore.userCollection
           .where(
-        UserFields.email,
+            UserFields.email,
             isEqualTo: _googleUser.email,
           )
           .get();
@@ -145,7 +153,7 @@ class ProductionAuthenticationRepository implements AuthenticationRepositoryInte
       _logger.e(exception.message);
       return left(
         Failure.coreData(
-          CoreDataFailure.serverError(errorString: exception.message),
+          CoreDataFailure.serverError(errorString: exception.message!),
         ),
       );
     }

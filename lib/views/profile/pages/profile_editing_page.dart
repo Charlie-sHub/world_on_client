@@ -15,8 +15,8 @@ class ProfileEditingPage extends StatelessWidget {
   final User user;
 
   const ProfileEditingPage({
-    Key key,
-    @required this.user,
+    Key? key,
+    required this.user,
   }) : super(key: key);
 
   @override
@@ -42,7 +42,7 @@ class ProfileEditingPage extends StatelessWidget {
           () => BlocConsumer<ProfileEditingFormBloc, ProfileEditingFormState>(
             listenWhen: (previous, current) => previous.failureOrSuccessOption != current.failureOrSuccessOption,
             listener: (context, state) => state.failureOrSuccessOption.fold(
-              () => null,
+              () {},
               (either) => either.fold(
                 (failure) => _onFailure(failure, context),
                 (_) => _onSuccess(context),
@@ -58,8 +58,8 @@ class ProfileEditingPage extends StatelessWidget {
             // It shouldn't be a problem for now, but still.
             builder: (context, state) => ProfileEditingForm(user: user),
           ),
-            (valueFailure) => InkWell(
-            onTap: () async => context.navigator.pop(),
+          (valueFailure) => InkWell(
+            onTap: () async => context.router.pop(),
             child: CriticalErrorDisplay(
               failure: Failure.value(valueFailure),
             ),
@@ -89,7 +89,7 @@ class ProfileEditingPage extends StatelessWidget {
   }
 
   void _onSuccess(BuildContext context) {
-    context.navigator.pop();
+    context.router.pop();
     context.read<AuthenticationBloc>().add(
           const AuthenticationEvent.authenticationCheckRequested(),
         );

@@ -6,17 +6,24 @@ import 'package:worldon/views/core/routes/router.gr.dart';
 
 class RegisterButton extends StatelessWidget {
   const RegisterButton({
-    Key key,
+    Key? key,
   }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return RaisedButton(
-      onPressed: () => context.navigator.push(Routes.registrationPage),
-      color: WorldOnColors.background,
-      shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.circular(0.0),
-        side: const BorderSide(color: WorldOnColors.primary),
+    return ElevatedButton(
+      onPressed: () => context.router.push(
+        const RegistrationPageRoute(),
+      ),
+      style: ButtonStyle(
+        backgroundColor: MaterialStateProperty.all(
+          WorldOnColors.background,
+        ),
+        shape: MaterialStateProperty.all(
+          const RoundedRectangleBorder(
+            side: BorderSide(color: WorldOnColors.primary),
+          ),
+        ),
       ),
       child: Text(
         S.of(context).register,

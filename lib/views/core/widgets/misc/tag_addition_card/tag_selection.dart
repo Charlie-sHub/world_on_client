@@ -8,7 +8,7 @@ import 'package:worldon/views/core/widgets/cards/simple_tag_display.dart';
 import 'package:worldon/views/core/widgets/cards/simple_tag_error_display.dart';
 
 class TagSelection extends StatelessWidget {
-  const TagSelection({Key key}) : super(key: key);
+  const TagSelection({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

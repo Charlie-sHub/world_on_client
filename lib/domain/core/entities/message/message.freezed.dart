@@ -1,5 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides
 
 part of 'message.dart';
 
@@ -9,17 +9,14 @@ part of 'message.dart';
 
 T _$identity<T>(T value) => value;
 
+final _privateConstructorUsedError = UnsupportedError(
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+
 /// @nodoc
 class _$MessageTearOff {
   const _$MessageTearOff();
 
-// ignore: unused_element
-  _Message call(
-      {@required UniqueId id,
-      @required User sender,
-      @required User receiver,
-      @required MessageContent content,
-      @required PastDate creationDate}) {
+  _Message call({required UniqueId id, required User sender, required User receiver, required MessageContent content, required PastDate creationDate}) {
     return _Message(
       id: id,
       sender: sender,
@@ -31,31 +28,28 @@ class _$MessageTearOff {
 }
 
 /// @nodoc
-// ignore: unused_element
 const $Message = _$MessageTearOff();
 
 /// @nodoc
 mixin _$Message {
-  UniqueId get id;
-  User get sender;
-  User get receiver;
-  MessageContent get content;
-  PastDate get creationDate;
+  UniqueId get id => throw _privateConstructorUsedError;
+
+  User get sender => throw _privateConstructorUsedError;
+
+  User get receiver => throw _privateConstructorUsedError;
+
+  MessageContent get content => throw _privateConstructorUsedError;
+
+  PastDate get creationDate => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
-  $MessageCopyWith<Message> get copyWith;
+  $MessageCopyWith<Message> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $MessageCopyWith<$Res> {
-  factory $MessageCopyWith(Message value, $Res Function(Message) then) =
-      _$MessageCopyWithImpl<$Res>;
-  $Res call(
-      {UniqueId id,
-      User sender,
-      User receiver,
-      MessageContent content,
-      PastDate creationDate});
+  factory $MessageCopyWith(Message value, $Res Function(Message) then) = _$MessageCopyWithImpl<$Res>;
+  $Res call({UniqueId id, User sender, User receiver, MessageContent content, PastDate creationDate});
 
   $UserCopyWith<$Res> get sender;
   $UserCopyWith<$Res> get receiver;
@@ -71,28 +65,38 @@ class _$MessageCopyWithImpl<$Res> implements $MessageCopyWith<$Res> {
 
   @override
   $Res call({
-    Object id = freezed,
-    Object sender = freezed,
-    Object receiver = freezed,
-    Object content = freezed,
-    Object creationDate = freezed,
+    Object? id = freezed,
+    Object? sender = freezed,
+    Object? receiver = freezed,
+    Object? content = freezed,
+    Object? creationDate = freezed,
   }) {
     return _then(_value.copyWith(
-      id: id == freezed ? _value.id : id as UniqueId,
-      sender: sender == freezed ? _value.sender : sender as User,
-      receiver: receiver == freezed ? _value.receiver : receiver as User,
-      content: content == freezed ? _value.content : content as MessageContent,
+      id: id == freezed
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as UniqueId,
+      sender: sender == freezed
+          ? _value.sender
+          : sender // ignore: cast_nullable_to_non_nullable
+              as User,
+      receiver: receiver == freezed
+          ? _value.receiver
+          : receiver // ignore: cast_nullable_to_non_nullable
+              as User,
+      content: content == freezed
+          ? _value.content
+          : content // ignore: cast_nullable_to_non_nullable
+              as MessageContent,
       creationDate: creationDate == freezed
           ? _value.creationDate
-          : creationDate as PastDate,
+          : creationDate // ignore: cast_nullable_to_non_nullable
+              as PastDate,
     ));
   }
 
   @override
   $UserCopyWith<$Res> get sender {
-    if (_value.sender == null) {
-      return null;
-    }
     return $UserCopyWith<$Res>(_value.sender, (value) {
       return _then(_value.copyWith(sender: value));
     });
@@ -100,9 +104,6 @@ class _$MessageCopyWithImpl<$Res> implements $MessageCopyWith<$Res> {
 
   @override
   $UserCopyWith<$Res> get receiver {
-    if (_value.receiver == null) {
-      return null;
-    }
     return $UserCopyWith<$Res>(_value.receiver, (value) {
       return _then(_value.copyWith(receiver: value));
     });
@@ -111,15 +112,9 @@ class _$MessageCopyWithImpl<$Res> implements $MessageCopyWith<$Res> {
 
 /// @nodoc
 abstract class _$MessageCopyWith<$Res> implements $MessageCopyWith<$Res> {
-  factory _$MessageCopyWith(_Message value, $Res Function(_Message) then) =
-      __$MessageCopyWithImpl<$Res>;
+  factory _$MessageCopyWith(_Message value, $Res Function(_Message) then) = __$MessageCopyWithImpl<$Res>;
   @override
-  $Res call(
-      {UniqueId id,
-      User sender,
-      User receiver,
-      MessageContent content,
-      PastDate creationDate});
+  $Res call({UniqueId id, User sender, User receiver, MessageContent content, PastDate creationDate});
 
   @override
   $UserCopyWith<$Res> get sender;
@@ -128,48 +123,48 @@ abstract class _$MessageCopyWith<$Res> implements $MessageCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$MessageCopyWithImpl<$Res> extends _$MessageCopyWithImpl<$Res>
-    implements _$MessageCopyWith<$Res> {
-  __$MessageCopyWithImpl(_Message _value, $Res Function(_Message) _then)
-      : super(_value, (v) => _then(v as _Message));
+class __$MessageCopyWithImpl<$Res> extends _$MessageCopyWithImpl<$Res> implements _$MessageCopyWith<$Res> {
+  __$MessageCopyWithImpl(_Message _value, $Res Function(_Message) _then) : super(_value, (v) => _then(v as _Message));
 
   @override
   _Message get _value => super._value as _Message;
 
   @override
   $Res call({
-    Object id = freezed,
-    Object sender = freezed,
-    Object receiver = freezed,
-    Object content = freezed,
-    Object creationDate = freezed,
+    Object? id = freezed,
+    Object? sender = freezed,
+    Object? receiver = freezed,
+    Object? content = freezed,
+    Object? creationDate = freezed,
   }) {
     return _then(_Message(
-      id: id == freezed ? _value.id : id as UniqueId,
-      sender: sender == freezed ? _value.sender : sender as User,
-      receiver: receiver == freezed ? _value.receiver : receiver as User,
-      content: content == freezed ? _value.content : content as MessageContent,
+      id: id == freezed
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as UniqueId,
+      sender: sender == freezed
+          ? _value.sender
+          : sender // ignore: cast_nullable_to_non_nullable
+              as User,
+      receiver: receiver == freezed
+          ? _value.receiver
+          : receiver // ignore: cast_nullable_to_non_nullable
+              as User,
+      content: content == freezed
+          ? _value.content
+          : content // ignore: cast_nullable_to_non_nullable
+              as MessageContent,
       creationDate: creationDate == freezed
           ? _value.creationDate
-          : creationDate as PastDate,
+          : creationDate // ignore: cast_nullable_to_non_nullable
+              as PastDate,
     ));
   }
 }
 
 /// @nodoc
 class _$_Message extends _Message {
-  const _$_Message(
-      {@required this.id,
-      @required this.sender,
-      @required this.receiver,
-      @required this.content,
-      @required this.creationDate})
-      : assert(id != null),
-        assert(sender != null),
-        assert(receiver != null),
-        assert(content != null),
-        assert(creationDate != null),
-        super._();
+  const _$_Message({required this.id, required this.sender, required this.receiver, required this.content, required this.creationDate}) : super._();
 
   @override
   final UniqueId id;
@@ -191,19 +186,11 @@ class _$_Message extends _Message {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other is _Message &&
-            (identical(other.id, id) ||
-                const DeepCollectionEquality().equals(other.id, id)) &&
-            (identical(other.sender, sender) ||
-                const DeepCollectionEquality().equals(other.sender, sender)) &&
-            (identical(other.receiver, receiver) ||
-                const DeepCollectionEquality()
-                    .equals(other.receiver, receiver)) &&
-            (identical(other.content, content) ||
-                const DeepCollectionEquality()
-                    .equals(other.content, content)) &&
-            (identical(other.creationDate, creationDate) ||
-                const DeepCollectionEquality()
-                    .equals(other.creationDate, creationDate)));
+            (identical(other.id, id) || const DeepCollectionEquality().equals(other.id, id)) &&
+            (identical(other.sender, sender) || const DeepCollectionEquality().equals(other.sender, sender)) &&
+            (identical(other.receiver, receiver) || const DeepCollectionEquality().equals(other.receiver, receiver)) &&
+            (identical(other.content, content) || const DeepCollectionEquality().equals(other.content, content)) &&
+            (identical(other.creationDate, creationDate) || const DeepCollectionEquality().equals(other.creationDate, creationDate)));
   }
 
   @override
@@ -217,30 +204,30 @@ class _$_Message extends _Message {
 
   @JsonKey(ignore: true)
   @override
-  _$MessageCopyWith<_Message> get copyWith =>
-      __$MessageCopyWithImpl<_Message>(this, _$identity);
+  _$MessageCopyWith<_Message> get copyWith => __$MessageCopyWithImpl<_Message>(this, _$identity);
 }
 
 abstract class _Message extends Message {
+  const factory _Message({required UniqueId id, required User sender, required User receiver, required MessageContent content, required PastDate creationDate}) = _$_Message;
+
   const _Message._() : super._();
-  const factory _Message(
-      {@required UniqueId id,
-      @required User sender,
-      @required User receiver,
-      @required MessageContent content,
-      @required PastDate creationDate}) = _$_Message;
 
   @override
-  UniqueId get id;
+  UniqueId get id => throw _privateConstructorUsedError;
+
   @override
-  User get sender;
+  User get sender => throw _privateConstructorUsedError;
+
   @override
-  User get receiver;
+  User get receiver => throw _privateConstructorUsedError;
+
   @override
-  MessageContent get content;
+  MessageContent get content => throw _privateConstructorUsedError;
+
   @override
-  PastDate get creationDate;
+  PastDate get creationDate => throw _privateConstructorUsedError;
+
   @override
   @JsonKey(ignore: true)
-  _$MessageCopyWith<_Message> get copyWith;
+  _$MessageCopyWith<_Message> get copyWith => throw _privateConstructorUsedError;
 }

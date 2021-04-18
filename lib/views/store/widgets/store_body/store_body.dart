@@ -155,7 +155,7 @@ class StoreBody extends StatelessWidget {
             orElse: () => S.of(context).unknownError,
           ),
         ).show(context),
-        orElse: () => null,
+        orElse: () {},
       );
 }
 // TODO: reload LoadUser when buying things

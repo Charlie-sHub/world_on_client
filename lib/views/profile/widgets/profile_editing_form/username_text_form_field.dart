@@ -8,8 +8,8 @@ class UsernameTextFormField extends StatelessWidget {
   final String initialValue;
 
   const UsernameTextFormField({
-    Key key,
-    @required this.initialValue,
+    Key? key,
+    required this.initialValue,
   }) : super(key: key);
 
   @override

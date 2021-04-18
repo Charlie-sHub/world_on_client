@@ -1,5 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides
 
 part of 'profile_users_watcher_bloc.dart';
 
@@ -9,25 +9,25 @@ part of 'profile_users_watcher_bloc.dart';
 
 T _$identity<T>(T value) => value;
 
+final _privateConstructorUsedError = UnsupportedError(
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+
 /// @nodoc
 class _$ProfileUsersWatcherEventTearOff {
   const _$ProfileUsersWatcherEventTearOff();
 
-// ignore: unused_element
   _WatchFollowedUsersStarted watchFollowedUsersStarted(User user) {
     return _WatchFollowedUsersStarted(
       user,
     );
   }
 
-// ignore: unused_element
   _WatchFollowingUsersStarted watchFollowingUsersStarted(User user) {
     return _WatchFollowingUsersStarted(
       user,
     );
   }
 
-// ignore: unused_element
   _UsersReceived usersReceived(Either<Failure, KtList<User>> failureOrUsers) {
     return _UsersReceived(
       failureOrUsers,
@@ -36,52 +36,52 @@ class _$ProfileUsersWatcherEventTearOff {
 }
 
 /// @nodoc
-// ignore: unused_element
 const $ProfileUsersWatcherEvent = _$ProfileUsersWatcherEventTearOff();
 
 /// @nodoc
 mixin _$ProfileUsersWatcherEvent {
   @optionalTypeArgs
-  TResult when<TResult extends Object>({
-    @required TResult watchFollowedUsersStarted(User user),
-    @required TResult watchFollowingUsersStarted(User user),
-    @required
-        TResult usersReceived(Either<Failure, KtList<User>> failureOrUsers),
-  });
+  TResult when<TResult extends Object?>({
+    required TResult Function(User user) watchFollowedUsersStarted,
+    required TResult Function(User user) watchFollowingUsersStarted,
+    required TResult Function(Either<Failure, KtList<User>> failureOrUsers) usersReceived,
+  }) =>
+      throw _privateConstructorUsedError;
+
   @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object>({
-    TResult watchFollowedUsersStarted(User user),
-    TResult watchFollowingUsersStarted(User user),
-    TResult usersReceived(Either<Failure, KtList<User>> failureOrUsers),
-    @required TResult orElse(),
-  });
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(User user)? watchFollowedUsersStarted,
+    TResult Function(User user)? watchFollowingUsersStarted,
+    TResult Function(Either<Failure, KtList<User>> failureOrUsers)? usersReceived,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
+
   @optionalTypeArgs
-  TResult map<TResult extends Object>({
-    @required
-        TResult watchFollowedUsersStarted(_WatchFollowedUsersStarted value),
-    @required
-        TResult watchFollowingUsersStarted(_WatchFollowingUsersStarted value),
-    @required TResult usersReceived(_UsersReceived value),
-  });
+  TResult map<TResult extends Object?>({
+    required TResult Function(_WatchFollowedUsersStarted value) watchFollowedUsersStarted,
+    required TResult Function(_WatchFollowingUsersStarted value) watchFollowingUsersStarted,
+    required TResult Function(_UsersReceived value) usersReceived,
+  }) =>
+      throw _privateConstructorUsedError;
+
   @optionalTypeArgs
-  TResult maybeMap<TResult extends Object>({
-    TResult watchFollowedUsersStarted(_WatchFollowedUsersStarted value),
-    TResult watchFollowingUsersStarted(_WatchFollowingUsersStarted value),
-    TResult usersReceived(_UsersReceived value),
-    @required TResult orElse(),
-  });
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_WatchFollowedUsersStarted value)? watchFollowedUsersStarted,
+    TResult Function(_WatchFollowingUsersStarted value)? watchFollowingUsersStarted,
+    TResult Function(_UsersReceived value)? usersReceived,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $ProfileUsersWatcherEventCopyWith<$Res> {
-  factory $ProfileUsersWatcherEventCopyWith(ProfileUsersWatcherEvent value,
-          $Res Function(ProfileUsersWatcherEvent) then) =
-      _$ProfileUsersWatcherEventCopyWithImpl<$Res>;
+  factory $ProfileUsersWatcherEventCopyWith(ProfileUsersWatcherEvent value, $Res Function(ProfileUsersWatcherEvent) then) = _$ProfileUsersWatcherEventCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class _$ProfileUsersWatcherEventCopyWithImpl<$Res>
-    implements $ProfileUsersWatcherEventCopyWith<$Res> {
+class _$ProfileUsersWatcherEventCopyWithImpl<$Res> implements $ProfileUsersWatcherEventCopyWith<$Res> {
   _$ProfileUsersWatcherEventCopyWithImpl(this._value, this._then);
 
   final ProfileUsersWatcherEvent _value;
@@ -91,40 +91,33 @@ class _$ProfileUsersWatcherEventCopyWithImpl<$Res>
 
 /// @nodoc
 abstract class _$WatchFollowedUsersStartedCopyWith<$Res> {
-  factory _$WatchFollowedUsersStartedCopyWith(_WatchFollowedUsersStarted value,
-          $Res Function(_WatchFollowedUsersStarted) then) =
-      __$WatchFollowedUsersStartedCopyWithImpl<$Res>;
+  factory _$WatchFollowedUsersStartedCopyWith(_WatchFollowedUsersStarted value, $Res Function(_WatchFollowedUsersStarted) then) = __$WatchFollowedUsersStartedCopyWithImpl<$Res>;
   $Res call({User user});
 
   $UserCopyWith<$Res> get user;
 }
 
 /// @nodoc
-class __$WatchFollowedUsersStartedCopyWithImpl<$Res>
-    extends _$ProfileUsersWatcherEventCopyWithImpl<$Res>
-    implements _$WatchFollowedUsersStartedCopyWith<$Res> {
-  __$WatchFollowedUsersStartedCopyWithImpl(_WatchFollowedUsersStarted _value,
-      $Res Function(_WatchFollowedUsersStarted) _then)
-      : super(_value, (v) => _then(v as _WatchFollowedUsersStarted));
+class __$WatchFollowedUsersStartedCopyWithImpl<$Res> extends _$ProfileUsersWatcherEventCopyWithImpl<$Res> implements _$WatchFollowedUsersStartedCopyWith<$Res> {
+  __$WatchFollowedUsersStartedCopyWithImpl(_WatchFollowedUsersStarted _value, $Res Function(_WatchFollowedUsersStarted) _then) : super(_value, (v) => _then(v as _WatchFollowedUsersStarted));
 
   @override
-  _WatchFollowedUsersStarted get _value =>
-      super._value as _WatchFollowedUsersStarted;
+  _WatchFollowedUsersStarted get _value => super._value as _WatchFollowedUsersStarted;
 
   @override
   $Res call({
-    Object user = freezed,
+    Object? user = freezed,
   }) {
     return _then(_WatchFollowedUsersStarted(
-      user == freezed ? _value.user : user as User,
+      user == freezed
+          ? _value.user
+          : user // ignore: cast_nullable_to_non_nullable
+              as User,
     ));
   }
 
   @override
   $UserCopyWith<$Res> get user {
-    if (_value.user == null) {
-      return null;
-    }
     return $UserCopyWith<$Res>(_value.user, (value) {
       return _then(_value.copyWith(user: value));
     });
@@ -133,7 +126,7 @@ class __$WatchFollowedUsersStartedCopyWithImpl<$Res>
 
 /// @nodoc
 class _$_WatchFollowedUsersStarted implements _WatchFollowedUsersStarted {
-  const _$_WatchFollowedUsersStarted(this.user) : assert(user != null);
+  const _$_WatchFollowedUsersStarted(this.user);
 
   @override
   final User user;
@@ -145,46 +138,34 @@ class _$_WatchFollowedUsersStarted implements _WatchFollowedUsersStarted {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) ||
-        (other is _WatchFollowedUsersStarted &&
-            (identical(other.user, user) ||
-                const DeepCollectionEquality().equals(other.user, user)));
+    return identical(this, other) || (other is _WatchFollowedUsersStarted && (identical(other.user, user) || const DeepCollectionEquality().equals(other.user, user)));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(user);
+  int get hashCode => runtimeType.hashCode ^ const DeepCollectionEquality().hash(user);
 
   @JsonKey(ignore: true)
   @override
-  _$WatchFollowedUsersStartedCopyWith<_WatchFollowedUsersStarted>
-      get copyWith =>
-          __$WatchFollowedUsersStartedCopyWithImpl<_WatchFollowedUsersStarted>(
-              this, _$identity);
+  _$WatchFollowedUsersStartedCopyWith<_WatchFollowedUsersStarted> get copyWith => __$WatchFollowedUsersStartedCopyWithImpl<_WatchFollowedUsersStarted>(this, _$identity);
 
   @override
   @optionalTypeArgs
-  TResult when<TResult extends Object>({
-    @required TResult watchFollowedUsersStarted(User user),
-    @required TResult watchFollowingUsersStarted(User user),
-    @required
-        TResult usersReceived(Either<Failure, KtList<User>> failureOrUsers),
+  TResult when<TResult extends Object?>({
+    required TResult Function(User user) watchFollowedUsersStarted,
+    required TResult Function(User user) watchFollowingUsersStarted,
+    required TResult Function(Either<Failure, KtList<User>> failureOrUsers) usersReceived,
   }) {
-    assert(watchFollowedUsersStarted != null);
-    assert(watchFollowingUsersStarted != null);
-    assert(usersReceived != null);
     return watchFollowedUsersStarted(user);
   }
 
   @override
   @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object>({
-    TResult watchFollowedUsersStarted(User user),
-    TResult watchFollowingUsersStarted(User user),
-    TResult usersReceived(Either<Failure, KtList<User>> failureOrUsers),
-    @required TResult orElse(),
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(User user)? watchFollowedUsersStarted,
+    TResult Function(User user)? watchFollowingUsersStarted,
+    TResult Function(Either<Failure, KtList<User>> failureOrUsers)? usersReceived,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (watchFollowedUsersStarted != null) {
       return watchFollowedUsersStarted(user);
     }
@@ -193,28 +174,22 @@ class _$_WatchFollowedUsersStarted implements _WatchFollowedUsersStarted {
 
   @override
   @optionalTypeArgs
-  TResult map<TResult extends Object>({
-    @required
-        TResult watchFollowedUsersStarted(_WatchFollowedUsersStarted value),
-    @required
-        TResult watchFollowingUsersStarted(_WatchFollowingUsersStarted value),
-    @required TResult usersReceived(_UsersReceived value),
+  TResult map<TResult extends Object?>({
+    required TResult Function(_WatchFollowedUsersStarted value) watchFollowedUsersStarted,
+    required TResult Function(_WatchFollowingUsersStarted value) watchFollowingUsersStarted,
+    required TResult Function(_UsersReceived value) usersReceived,
   }) {
-    assert(watchFollowedUsersStarted != null);
-    assert(watchFollowingUsersStarted != null);
-    assert(usersReceived != null);
     return watchFollowedUsersStarted(this);
   }
 
   @override
   @optionalTypeArgs
-  TResult maybeMap<TResult extends Object>({
-    TResult watchFollowedUsersStarted(_WatchFollowedUsersStarted value),
-    TResult watchFollowingUsersStarted(_WatchFollowingUsersStarted value),
-    TResult usersReceived(_UsersReceived value),
-    @required TResult orElse(),
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_WatchFollowedUsersStarted value)? watchFollowedUsersStarted,
+    TResult Function(_WatchFollowingUsersStarted value)? watchFollowingUsersStarted,
+    TResult Function(_UsersReceived value)? usersReceived,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (watchFollowedUsersStarted != null) {
       return watchFollowedUsersStarted(this);
     }
@@ -223,51 +198,43 @@ class _$_WatchFollowedUsersStarted implements _WatchFollowedUsersStarted {
 }
 
 abstract class _WatchFollowedUsersStarted implements ProfileUsersWatcherEvent {
-  const factory _WatchFollowedUsersStarted(User user) =
-      _$_WatchFollowedUsersStarted;
+  const factory _WatchFollowedUsersStarted(User user) = _$_WatchFollowedUsersStarted;
 
-  User get user;
+  User get user => throw _privateConstructorUsedError;
+
   @JsonKey(ignore: true)
-  _$WatchFollowedUsersStartedCopyWith<_WatchFollowedUsersStarted> get copyWith;
+  _$WatchFollowedUsersStartedCopyWith<_WatchFollowedUsersStarted> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class _$WatchFollowingUsersStartedCopyWith<$Res> {
-  factory _$WatchFollowingUsersStartedCopyWith(
-          _WatchFollowingUsersStarted value,
-          $Res Function(_WatchFollowingUsersStarted) then) =
-      __$WatchFollowingUsersStartedCopyWithImpl<$Res>;
+  factory _$WatchFollowingUsersStartedCopyWith(_WatchFollowingUsersStarted value, $Res Function(_WatchFollowingUsersStarted) then) = __$WatchFollowingUsersStartedCopyWithImpl<$Res>;
   $Res call({User user});
 
   $UserCopyWith<$Res> get user;
 }
 
 /// @nodoc
-class __$WatchFollowingUsersStartedCopyWithImpl<$Res>
-    extends _$ProfileUsersWatcherEventCopyWithImpl<$Res>
-    implements _$WatchFollowingUsersStartedCopyWith<$Res> {
-  __$WatchFollowingUsersStartedCopyWithImpl(_WatchFollowingUsersStarted _value,
-      $Res Function(_WatchFollowingUsersStarted) _then)
-      : super(_value, (v) => _then(v as _WatchFollowingUsersStarted));
+class __$WatchFollowingUsersStartedCopyWithImpl<$Res> extends _$ProfileUsersWatcherEventCopyWithImpl<$Res> implements _$WatchFollowingUsersStartedCopyWith<$Res> {
+  __$WatchFollowingUsersStartedCopyWithImpl(_WatchFollowingUsersStarted _value, $Res Function(_WatchFollowingUsersStarted) _then) : super(_value, (v) => _then(v as _WatchFollowingUsersStarted));
 
   @override
-  _WatchFollowingUsersStarted get _value =>
-      super._value as _WatchFollowingUsersStarted;
+  _WatchFollowingUsersStarted get _value => super._value as _WatchFollowingUsersStarted;
 
   @override
   $Res call({
-    Object user = freezed,
+    Object? user = freezed,
   }) {
     return _then(_WatchFollowingUsersStarted(
-      user == freezed ? _value.user : user as User,
+      user == freezed
+          ? _value.user
+          : user // ignore: cast_nullable_to_non_nullable
+              as User,
     ));
   }
 
   @override
   $UserCopyWith<$Res> get user {
-    if (_value.user == null) {
-      return null;
-    }
     return $UserCopyWith<$Res>(_value.user, (value) {
       return _then(_value.copyWith(user: value));
     });
@@ -276,7 +243,7 @@ class __$WatchFollowingUsersStartedCopyWithImpl<$Res>
 
 /// @nodoc
 class _$_WatchFollowingUsersStarted implements _WatchFollowingUsersStarted {
-  const _$_WatchFollowingUsersStarted(this.user) : assert(user != null);
+  const _$_WatchFollowingUsersStarted(this.user);
 
   @override
   final User user;
@@ -288,45 +255,34 @@ class _$_WatchFollowingUsersStarted implements _WatchFollowingUsersStarted {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) ||
-        (other is _WatchFollowingUsersStarted &&
-            (identical(other.user, user) ||
-                const DeepCollectionEquality().equals(other.user, user)));
+    return identical(this, other) || (other is _WatchFollowingUsersStarted && (identical(other.user, user) || const DeepCollectionEquality().equals(other.user, user)));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(user);
+  int get hashCode => runtimeType.hashCode ^ const DeepCollectionEquality().hash(user);
 
   @JsonKey(ignore: true)
   @override
-  _$WatchFollowingUsersStartedCopyWith<_WatchFollowingUsersStarted>
-      get copyWith => __$WatchFollowingUsersStartedCopyWithImpl<
-          _WatchFollowingUsersStarted>(this, _$identity);
+  _$WatchFollowingUsersStartedCopyWith<_WatchFollowingUsersStarted> get copyWith => __$WatchFollowingUsersStartedCopyWithImpl<_WatchFollowingUsersStarted>(this, _$identity);
 
   @override
   @optionalTypeArgs
-  TResult when<TResult extends Object>({
-    @required TResult watchFollowedUsersStarted(User user),
-    @required TResult watchFollowingUsersStarted(User user),
-    @required
-        TResult usersReceived(Either<Failure, KtList<User>> failureOrUsers),
+  TResult when<TResult extends Object?>({
+    required TResult Function(User user) watchFollowedUsersStarted,
+    required TResult Function(User user) watchFollowingUsersStarted,
+    required TResult Function(Either<Failure, KtList<User>> failureOrUsers) usersReceived,
   }) {
-    assert(watchFollowedUsersStarted != null);
-    assert(watchFollowingUsersStarted != null);
-    assert(usersReceived != null);
     return watchFollowingUsersStarted(user);
   }
 
   @override
   @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object>({
-    TResult watchFollowedUsersStarted(User user),
-    TResult watchFollowingUsersStarted(User user),
-    TResult usersReceived(Either<Failure, KtList<User>> failureOrUsers),
-    @required TResult orElse(),
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(User user)? watchFollowedUsersStarted,
+    TResult Function(User user)? watchFollowingUsersStarted,
+    TResult Function(Either<Failure, KtList<User>> failureOrUsers)? usersReceived,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (watchFollowingUsersStarted != null) {
       return watchFollowingUsersStarted(user);
     }
@@ -335,28 +291,22 @@ class _$_WatchFollowingUsersStarted implements _WatchFollowingUsersStarted {
 
   @override
   @optionalTypeArgs
-  TResult map<TResult extends Object>({
-    @required
-        TResult watchFollowedUsersStarted(_WatchFollowedUsersStarted value),
-    @required
-        TResult watchFollowingUsersStarted(_WatchFollowingUsersStarted value),
-    @required TResult usersReceived(_UsersReceived value),
+  TResult map<TResult extends Object?>({
+    required TResult Function(_WatchFollowedUsersStarted value) watchFollowedUsersStarted,
+    required TResult Function(_WatchFollowingUsersStarted value) watchFollowingUsersStarted,
+    required TResult Function(_UsersReceived value) usersReceived,
   }) {
-    assert(watchFollowedUsersStarted != null);
-    assert(watchFollowingUsersStarted != null);
-    assert(usersReceived != null);
     return watchFollowingUsersStarted(this);
   }
 
   @override
   @optionalTypeArgs
-  TResult maybeMap<TResult extends Object>({
-    TResult watchFollowedUsersStarted(_WatchFollowedUsersStarted value),
-    TResult watchFollowingUsersStarted(_WatchFollowingUsersStarted value),
-    TResult usersReceived(_UsersReceived value),
-    @required TResult orElse(),
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_WatchFollowedUsersStarted value)? watchFollowedUsersStarted,
+    TResult Function(_WatchFollowingUsersStarted value)? watchFollowingUsersStarted,
+    TResult Function(_UsersReceived value)? usersReceived,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (watchFollowingUsersStarted != null) {
       return watchFollowingUsersStarted(this);
     }
@@ -365,49 +315,43 @@ class _$_WatchFollowingUsersStarted implements _WatchFollowingUsersStarted {
 }
 
 abstract class _WatchFollowingUsersStarted implements ProfileUsersWatcherEvent {
-  const factory _WatchFollowingUsersStarted(User user) =
-      _$_WatchFollowingUsersStarted;
+  const factory _WatchFollowingUsersStarted(User user) = _$_WatchFollowingUsersStarted;
 
-  User get user;
+  User get user => throw _privateConstructorUsedError;
+
   @JsonKey(ignore: true)
-  _$WatchFollowingUsersStartedCopyWith<_WatchFollowingUsersStarted>
-      get copyWith;
+  _$WatchFollowingUsersStartedCopyWith<_WatchFollowingUsersStarted> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class _$UsersReceivedCopyWith<$Res> {
-  factory _$UsersReceivedCopyWith(
-          _UsersReceived value, $Res Function(_UsersReceived) then) =
-      __$UsersReceivedCopyWithImpl<$Res>;
+  factory _$UsersReceivedCopyWith(_UsersReceived value, $Res Function(_UsersReceived) then) = __$UsersReceivedCopyWithImpl<$Res>;
   $Res call({Either<Failure, KtList<User>> failureOrUsers});
 }
 
 /// @nodoc
-class __$UsersReceivedCopyWithImpl<$Res>
-    extends _$ProfileUsersWatcherEventCopyWithImpl<$Res>
-    implements _$UsersReceivedCopyWith<$Res> {
-  __$UsersReceivedCopyWithImpl(
-      _UsersReceived _value, $Res Function(_UsersReceived) _then)
-      : super(_value, (v) => _then(v as _UsersReceived));
+class __$UsersReceivedCopyWithImpl<$Res> extends _$ProfileUsersWatcherEventCopyWithImpl<$Res> implements _$UsersReceivedCopyWith<$Res> {
+  __$UsersReceivedCopyWithImpl(_UsersReceived _value, $Res Function(_UsersReceived) _then) : super(_value, (v) => _then(v as _UsersReceived));
 
   @override
   _UsersReceived get _value => super._value as _UsersReceived;
 
   @override
   $Res call({
-    Object failureOrUsers = freezed,
+    Object? failureOrUsers = freezed,
   }) {
     return _then(_UsersReceived(
       failureOrUsers == freezed
           ? _value.failureOrUsers
-          : failureOrUsers as Either<Failure, KtList<User>>,
+          : failureOrUsers // ignore: cast_nullable_to_non_nullable
+              as Either<Failure, KtList<User>>,
     ));
   }
 }
 
 /// @nodoc
 class _$_UsersReceived implements _UsersReceived {
-  const _$_UsersReceived(this.failureOrUsers) : assert(failureOrUsers != null);
+  const _$_UsersReceived(this.failureOrUsers);
 
   @override
   final Either<Failure, KtList<User>> failureOrUsers;
@@ -419,46 +363,34 @@ class _$_UsersReceived implements _UsersReceived {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) ||
-        (other is _UsersReceived &&
-            (identical(other.failureOrUsers, failureOrUsers) ||
-                const DeepCollectionEquality()
-                    .equals(other.failureOrUsers, failureOrUsers)));
+    return identical(this, other) || (other is _UsersReceived && (identical(other.failureOrUsers, failureOrUsers) || const DeepCollectionEquality().equals(other.failureOrUsers, failureOrUsers)));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(failureOrUsers);
+  int get hashCode => runtimeType.hashCode ^ const DeepCollectionEquality().hash(failureOrUsers);
 
   @JsonKey(ignore: true)
   @override
-  _$UsersReceivedCopyWith<_UsersReceived> get copyWith =>
-      __$UsersReceivedCopyWithImpl<_UsersReceived>(this, _$identity);
+  _$UsersReceivedCopyWith<_UsersReceived> get copyWith => __$UsersReceivedCopyWithImpl<_UsersReceived>(this, _$identity);
 
   @override
   @optionalTypeArgs
-  TResult when<TResult extends Object>({
-    @required TResult watchFollowedUsersStarted(User user),
-    @required TResult watchFollowingUsersStarted(User user),
-    @required
-        TResult usersReceived(Either<Failure, KtList<User>> failureOrUsers),
+  TResult when<TResult extends Object?>({
+    required TResult Function(User user) watchFollowedUsersStarted,
+    required TResult Function(User user) watchFollowingUsersStarted,
+    required TResult Function(Either<Failure, KtList<User>> failureOrUsers) usersReceived,
   }) {
-    assert(watchFollowedUsersStarted != null);
-    assert(watchFollowingUsersStarted != null);
-    assert(usersReceived != null);
     return usersReceived(failureOrUsers);
   }
 
   @override
   @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object>({
-    TResult watchFollowedUsersStarted(User user),
-    TResult watchFollowingUsersStarted(User user),
-    TResult usersReceived(Either<Failure, KtList<User>> failureOrUsers),
-    @required TResult orElse(),
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(User user)? watchFollowedUsersStarted,
+    TResult Function(User user)? watchFollowingUsersStarted,
+    TResult Function(Either<Failure, KtList<User>> failureOrUsers)? usersReceived,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (usersReceived != null) {
       return usersReceived(failureOrUsers);
     }
@@ -467,28 +399,22 @@ class _$_UsersReceived implements _UsersReceived {
 
   @override
   @optionalTypeArgs
-  TResult map<TResult extends Object>({
-    @required
-        TResult watchFollowedUsersStarted(_WatchFollowedUsersStarted value),
-    @required
-        TResult watchFollowingUsersStarted(_WatchFollowingUsersStarted value),
-    @required TResult usersReceived(_UsersReceived value),
+  TResult map<TResult extends Object?>({
+    required TResult Function(_WatchFollowedUsersStarted value) watchFollowedUsersStarted,
+    required TResult Function(_WatchFollowingUsersStarted value) watchFollowingUsersStarted,
+    required TResult Function(_UsersReceived value) usersReceived,
   }) {
-    assert(watchFollowedUsersStarted != null);
-    assert(watchFollowingUsersStarted != null);
-    assert(usersReceived != null);
     return usersReceived(this);
   }
 
   @override
   @optionalTypeArgs
-  TResult maybeMap<TResult extends Object>({
-    TResult watchFollowedUsersStarted(_WatchFollowedUsersStarted value),
-    TResult watchFollowingUsersStarted(_WatchFollowingUsersStarted value),
-    TResult usersReceived(_UsersReceived value),
-    @required TResult orElse(),
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_WatchFollowedUsersStarted value)? watchFollowedUsersStarted,
+    TResult Function(_WatchFollowingUsersStarted value)? watchFollowingUsersStarted,
+    TResult Function(_UsersReceived value)? usersReceived,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (usersReceived != null) {
       return usersReceived(this);
     }
@@ -497,36 +423,32 @@ class _$_UsersReceived implements _UsersReceived {
 }
 
 abstract class _UsersReceived implements ProfileUsersWatcherEvent {
-  const factory _UsersReceived(Either<Failure, KtList<User>> failureOrUsers) =
-      _$_UsersReceived;
+  const factory _UsersReceived(Either<Failure, KtList<User>> failureOrUsers) = _$_UsersReceived;
 
-  Either<Failure, KtList<User>> get failureOrUsers;
+  Either<Failure, KtList<User>> get failureOrUsers => throw _privateConstructorUsedError;
+
   @JsonKey(ignore: true)
-  _$UsersReceivedCopyWith<_UsersReceived> get copyWith;
+  _$UsersReceivedCopyWith<_UsersReceived> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 class _$ProfileUsersWatcherStateTearOff {
   const _$ProfileUsersWatcherStateTearOff();
 
-// ignore: unused_element
   _Initial initial() {
     return const _Initial();
   }
 
-// ignore: unused_element
   _LoadInProgress loadInProgress() {
     return const _LoadInProgress();
   }
 
-// ignore: unused_element
   _LoadSuccess loadSuccess(KtList<User> users) {
     return _LoadSuccess(
       users,
     );
   }
 
-// ignore: unused_element
   _LoadFailure loadFailure(Failure<dynamic> failure) {
     return _LoadFailure(
       failure,
@@ -535,53 +457,56 @@ class _$ProfileUsersWatcherStateTearOff {
 }
 
 /// @nodoc
-// ignore: unused_element
 const $ProfileUsersWatcherState = _$ProfileUsersWatcherStateTearOff();
 
 /// @nodoc
 mixin _$ProfileUsersWatcherState {
   @optionalTypeArgs
-  TResult when<TResult extends Object>({
-    @required TResult initial(),
-    @required TResult loadInProgress(),
-    @required TResult loadSuccess(KtList<User> users),
-    @required TResult loadFailure(Failure<dynamic> failure),
-  });
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() loadInProgress,
+    required TResult Function(KtList<User> users) loadSuccess,
+    required TResult Function(Failure<dynamic> failure) loadFailure,
+  }) =>
+      throw _privateConstructorUsedError;
+
   @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object>({
-    TResult initial(),
-    TResult loadInProgress(),
-    TResult loadSuccess(KtList<User> users),
-    TResult loadFailure(Failure<dynamic> failure),
-    @required TResult orElse(),
-  });
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? loadInProgress,
+    TResult Function(KtList<User> users)? loadSuccess,
+    TResult Function(Failure<dynamic> failure)? loadFailure,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
+
   @optionalTypeArgs
-  TResult map<TResult extends Object>({
-    @required TResult initial(_Initial value),
-    @required TResult loadInProgress(_LoadInProgress value),
-    @required TResult loadSuccess(_LoadSuccess value),
-    @required TResult loadFailure(_LoadFailure value),
-  });
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial value) initial,
+    required TResult Function(_LoadInProgress value) loadInProgress,
+    required TResult Function(_LoadSuccess value) loadSuccess,
+    required TResult Function(_LoadFailure value) loadFailure,
+  }) =>
+      throw _privateConstructorUsedError;
+
   @optionalTypeArgs
-  TResult maybeMap<TResult extends Object>({
-    TResult initial(_Initial value),
-    TResult loadInProgress(_LoadInProgress value),
-    TResult loadSuccess(_LoadSuccess value),
-    TResult loadFailure(_LoadFailure value),
-    @required TResult orElse(),
-  });
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_LoadInProgress value)? loadInProgress,
+    TResult Function(_LoadSuccess value)? loadSuccess,
+    TResult Function(_LoadFailure value)? loadFailure,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $ProfileUsersWatcherStateCopyWith<$Res> {
-  factory $ProfileUsersWatcherStateCopyWith(ProfileUsersWatcherState value,
-          $Res Function(ProfileUsersWatcherState) then) =
-      _$ProfileUsersWatcherStateCopyWithImpl<$Res>;
+  factory $ProfileUsersWatcherStateCopyWith(ProfileUsersWatcherState value, $Res Function(ProfileUsersWatcherState) then) = _$ProfileUsersWatcherStateCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class _$ProfileUsersWatcherStateCopyWithImpl<$Res>
-    implements $ProfileUsersWatcherStateCopyWith<$Res> {
+class _$ProfileUsersWatcherStateCopyWithImpl<$Res> implements $ProfileUsersWatcherStateCopyWith<$Res> {
   _$ProfileUsersWatcherStateCopyWithImpl(this._value, this._then);
 
   final ProfileUsersWatcherState _value;
@@ -591,16 +516,12 @@ class _$ProfileUsersWatcherStateCopyWithImpl<$Res>
 
 /// @nodoc
 abstract class _$InitialCopyWith<$Res> {
-  factory _$InitialCopyWith(_Initial value, $Res Function(_Initial) then) =
-      __$InitialCopyWithImpl<$Res>;
+  factory _$InitialCopyWith(_Initial value, $Res Function(_Initial) then) = __$InitialCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$InitialCopyWithImpl<$Res>
-    extends _$ProfileUsersWatcherStateCopyWithImpl<$Res>
-    implements _$InitialCopyWith<$Res> {
-  __$InitialCopyWithImpl(_Initial _value, $Res Function(_Initial) _then)
-      : super(_value, (v) => _then(v as _Initial));
+class __$InitialCopyWithImpl<$Res> extends _$ProfileUsersWatcherStateCopyWithImpl<$Res> implements _$InitialCopyWith<$Res> {
+  __$InitialCopyWithImpl(_Initial _value, $Res Function(_Initial) _then) : super(_value, (v) => _then(v as _Initial));
 
   @override
   _Initial get _value => super._value as _Initial;
@@ -625,29 +546,24 @@ class _$_Initial implements _Initial {
 
   @override
   @optionalTypeArgs
-  TResult when<TResult extends Object>({
-    @required TResult initial(),
-    @required TResult loadInProgress(),
-    @required TResult loadSuccess(KtList<User> users),
-    @required TResult loadFailure(Failure<dynamic> failure),
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() loadInProgress,
+    required TResult Function(KtList<User> users) loadSuccess,
+    required TResult Function(Failure<dynamic> failure) loadFailure,
   }) {
-    assert(initial != null);
-    assert(loadInProgress != null);
-    assert(loadSuccess != null);
-    assert(loadFailure != null);
     return initial();
   }
 
   @override
   @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object>({
-    TResult initial(),
-    TResult loadInProgress(),
-    TResult loadSuccess(KtList<User> users),
-    TResult loadFailure(Failure<dynamic> failure),
-    @required TResult orElse(),
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? loadInProgress,
+    TResult Function(KtList<User> users)? loadSuccess,
+    TResult Function(Failure<dynamic> failure)? loadFailure,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (initial != null) {
       return initial();
     }
@@ -656,29 +572,24 @@ class _$_Initial implements _Initial {
 
   @override
   @optionalTypeArgs
-  TResult map<TResult extends Object>({
-    @required TResult initial(_Initial value),
-    @required TResult loadInProgress(_LoadInProgress value),
-    @required TResult loadSuccess(_LoadSuccess value),
-    @required TResult loadFailure(_LoadFailure value),
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial value) initial,
+    required TResult Function(_LoadInProgress value) loadInProgress,
+    required TResult Function(_LoadSuccess value) loadSuccess,
+    required TResult Function(_LoadFailure value) loadFailure,
   }) {
-    assert(initial != null);
-    assert(loadInProgress != null);
-    assert(loadSuccess != null);
-    assert(loadFailure != null);
     return initial(this);
   }
 
   @override
   @optionalTypeArgs
-  TResult maybeMap<TResult extends Object>({
-    TResult initial(_Initial value),
-    TResult loadInProgress(_LoadInProgress value),
-    TResult loadSuccess(_LoadSuccess value),
-    TResult loadFailure(_LoadFailure value),
-    @required TResult orElse(),
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_LoadInProgress value)? loadInProgress,
+    TResult Function(_LoadSuccess value)? loadSuccess,
+    TResult Function(_LoadFailure value)? loadFailure,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (initial != null) {
       return initial(this);
     }
@@ -692,18 +603,12 @@ abstract class _Initial implements ProfileUsersWatcherState {
 
 /// @nodoc
 abstract class _$LoadInProgressCopyWith<$Res> {
-  factory _$LoadInProgressCopyWith(
-          _LoadInProgress value, $Res Function(_LoadInProgress) then) =
-      __$LoadInProgressCopyWithImpl<$Res>;
+  factory _$LoadInProgressCopyWith(_LoadInProgress value, $Res Function(_LoadInProgress) then) = __$LoadInProgressCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$LoadInProgressCopyWithImpl<$Res>
-    extends _$ProfileUsersWatcherStateCopyWithImpl<$Res>
-    implements _$LoadInProgressCopyWith<$Res> {
-  __$LoadInProgressCopyWithImpl(
-      _LoadInProgress _value, $Res Function(_LoadInProgress) _then)
-      : super(_value, (v) => _then(v as _LoadInProgress));
+class __$LoadInProgressCopyWithImpl<$Res> extends _$ProfileUsersWatcherStateCopyWithImpl<$Res> implements _$LoadInProgressCopyWith<$Res> {
+  __$LoadInProgressCopyWithImpl(_LoadInProgress _value, $Res Function(_LoadInProgress) _then) : super(_value, (v) => _then(v as _LoadInProgress));
 
   @override
   _LoadInProgress get _value => super._value as _LoadInProgress;
@@ -728,29 +633,24 @@ class _$_LoadInProgress implements _LoadInProgress {
 
   @override
   @optionalTypeArgs
-  TResult when<TResult extends Object>({
-    @required TResult initial(),
-    @required TResult loadInProgress(),
-    @required TResult loadSuccess(KtList<User> users),
-    @required TResult loadFailure(Failure<dynamic> failure),
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() loadInProgress,
+    required TResult Function(KtList<User> users) loadSuccess,
+    required TResult Function(Failure<dynamic> failure) loadFailure,
   }) {
-    assert(initial != null);
-    assert(loadInProgress != null);
-    assert(loadSuccess != null);
-    assert(loadFailure != null);
     return loadInProgress();
   }
 
   @override
   @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object>({
-    TResult initial(),
-    TResult loadInProgress(),
-    TResult loadSuccess(KtList<User> users),
-    TResult loadFailure(Failure<dynamic> failure),
-    @required TResult orElse(),
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? loadInProgress,
+    TResult Function(KtList<User> users)? loadSuccess,
+    TResult Function(Failure<dynamic> failure)? loadFailure,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (loadInProgress != null) {
       return loadInProgress();
     }
@@ -759,29 +659,24 @@ class _$_LoadInProgress implements _LoadInProgress {
 
   @override
   @optionalTypeArgs
-  TResult map<TResult extends Object>({
-    @required TResult initial(_Initial value),
-    @required TResult loadInProgress(_LoadInProgress value),
-    @required TResult loadSuccess(_LoadSuccess value),
-    @required TResult loadFailure(_LoadFailure value),
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial value) initial,
+    required TResult Function(_LoadInProgress value) loadInProgress,
+    required TResult Function(_LoadSuccess value) loadSuccess,
+    required TResult Function(_LoadFailure value) loadFailure,
   }) {
-    assert(initial != null);
-    assert(loadInProgress != null);
-    assert(loadSuccess != null);
-    assert(loadFailure != null);
     return loadInProgress(this);
   }
 
   @override
   @optionalTypeArgs
-  TResult maybeMap<TResult extends Object>({
-    TResult initial(_Initial value),
-    TResult loadInProgress(_LoadInProgress value),
-    TResult loadSuccess(_LoadSuccess value),
-    TResult loadFailure(_LoadFailure value),
-    @required TResult orElse(),
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_LoadInProgress value)? loadInProgress,
+    TResult Function(_LoadSuccess value)? loadSuccess,
+    TResult Function(_LoadFailure value)? loadFailure,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (loadInProgress != null) {
       return loadInProgress(this);
     }
@@ -795,36 +690,33 @@ abstract class _LoadInProgress implements ProfileUsersWatcherState {
 
 /// @nodoc
 abstract class _$LoadSuccessCopyWith<$Res> {
-  factory _$LoadSuccessCopyWith(
-          _LoadSuccess value, $Res Function(_LoadSuccess) then) =
-      __$LoadSuccessCopyWithImpl<$Res>;
+  factory _$LoadSuccessCopyWith(_LoadSuccess value, $Res Function(_LoadSuccess) then) = __$LoadSuccessCopyWithImpl<$Res>;
   $Res call({KtList<User> users});
 }
 
 /// @nodoc
-class __$LoadSuccessCopyWithImpl<$Res>
-    extends _$ProfileUsersWatcherStateCopyWithImpl<$Res>
-    implements _$LoadSuccessCopyWith<$Res> {
-  __$LoadSuccessCopyWithImpl(
-      _LoadSuccess _value, $Res Function(_LoadSuccess) _then)
-      : super(_value, (v) => _then(v as _LoadSuccess));
+class __$LoadSuccessCopyWithImpl<$Res> extends _$ProfileUsersWatcherStateCopyWithImpl<$Res> implements _$LoadSuccessCopyWith<$Res> {
+  __$LoadSuccessCopyWithImpl(_LoadSuccess _value, $Res Function(_LoadSuccess) _then) : super(_value, (v) => _then(v as _LoadSuccess));
 
   @override
   _LoadSuccess get _value => super._value as _LoadSuccess;
 
   @override
   $Res call({
-    Object users = freezed,
+    Object? users = freezed,
   }) {
     return _then(_LoadSuccess(
-      users == freezed ? _value.users : users as KtList<User>,
+      users == freezed
+          ? _value.users
+          : users // ignore: cast_nullable_to_non_nullable
+              as KtList<User>,
     ));
   }
 }
 
 /// @nodoc
 class _$_LoadSuccess implements _LoadSuccess {
-  const _$_LoadSuccess(this.users) : assert(users != null);
+  const _$_LoadSuccess(this.users);
 
   @override
   final KtList<User> users;
@@ -836,46 +728,36 @@ class _$_LoadSuccess implements _LoadSuccess {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) ||
-        (other is _LoadSuccess &&
-            (identical(other.users, users) ||
-                const DeepCollectionEquality().equals(other.users, users)));
+    return identical(this, other) || (other is _LoadSuccess && (identical(other.users, users) || const DeepCollectionEquality().equals(other.users, users)));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(users);
+  int get hashCode => runtimeType.hashCode ^ const DeepCollectionEquality().hash(users);
 
   @JsonKey(ignore: true)
   @override
-  _$LoadSuccessCopyWith<_LoadSuccess> get copyWith =>
-      __$LoadSuccessCopyWithImpl<_LoadSuccess>(this, _$identity);
+  _$LoadSuccessCopyWith<_LoadSuccess> get copyWith => __$LoadSuccessCopyWithImpl<_LoadSuccess>(this, _$identity);
 
   @override
   @optionalTypeArgs
-  TResult when<TResult extends Object>({
-    @required TResult initial(),
-    @required TResult loadInProgress(),
-    @required TResult loadSuccess(KtList<User> users),
-    @required TResult loadFailure(Failure<dynamic> failure),
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() loadInProgress,
+    required TResult Function(KtList<User> users) loadSuccess,
+    required TResult Function(Failure<dynamic> failure) loadFailure,
   }) {
-    assert(initial != null);
-    assert(loadInProgress != null);
-    assert(loadSuccess != null);
-    assert(loadFailure != null);
     return loadSuccess(users);
   }
 
   @override
   @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object>({
-    TResult initial(),
-    TResult loadInProgress(),
-    TResult loadSuccess(KtList<User> users),
-    TResult loadFailure(Failure<dynamic> failure),
-    @required TResult orElse(),
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? loadInProgress,
+    TResult Function(KtList<User> users)? loadSuccess,
+    TResult Function(Failure<dynamic> failure)? loadFailure,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (loadSuccess != null) {
       return loadSuccess(users);
     }
@@ -884,29 +766,24 @@ class _$_LoadSuccess implements _LoadSuccess {
 
   @override
   @optionalTypeArgs
-  TResult map<TResult extends Object>({
-    @required TResult initial(_Initial value),
-    @required TResult loadInProgress(_LoadInProgress value),
-    @required TResult loadSuccess(_LoadSuccess value),
-    @required TResult loadFailure(_LoadFailure value),
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial value) initial,
+    required TResult Function(_LoadInProgress value) loadInProgress,
+    required TResult Function(_LoadSuccess value) loadSuccess,
+    required TResult Function(_LoadFailure value) loadFailure,
   }) {
-    assert(initial != null);
-    assert(loadInProgress != null);
-    assert(loadSuccess != null);
-    assert(loadFailure != null);
     return loadSuccess(this);
   }
 
   @override
   @optionalTypeArgs
-  TResult maybeMap<TResult extends Object>({
-    TResult initial(_Initial value),
-    TResult loadInProgress(_LoadInProgress value),
-    TResult loadSuccess(_LoadSuccess value),
-    TResult loadFailure(_LoadFailure value),
-    @required TResult orElse(),
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_LoadInProgress value)? loadInProgress,
+    TResult Function(_LoadSuccess value)? loadSuccess,
+    TResult Function(_LoadFailure value)? loadFailure,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (loadSuccess != null) {
       return loadSuccess(this);
     }
@@ -917,46 +794,41 @@ class _$_LoadSuccess implements _LoadSuccess {
 abstract class _LoadSuccess implements ProfileUsersWatcherState {
   const factory _LoadSuccess(KtList<User> users) = _$_LoadSuccess;
 
-  KtList<User> get users;
+  KtList<User> get users => throw _privateConstructorUsedError;
+
   @JsonKey(ignore: true)
-  _$LoadSuccessCopyWith<_LoadSuccess> get copyWith;
+  _$LoadSuccessCopyWith<_LoadSuccess> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class _$LoadFailureCopyWith<$Res> {
-  factory _$LoadFailureCopyWith(
-          _LoadFailure value, $Res Function(_LoadFailure) then) =
-      __$LoadFailureCopyWithImpl<$Res>;
+  factory _$LoadFailureCopyWith(_LoadFailure value, $Res Function(_LoadFailure) then) = __$LoadFailureCopyWithImpl<$Res>;
   $Res call({Failure<dynamic> failure});
 
   $FailureCopyWith<dynamic, $Res> get failure;
 }
 
 /// @nodoc
-class __$LoadFailureCopyWithImpl<$Res>
-    extends _$ProfileUsersWatcherStateCopyWithImpl<$Res>
-    implements _$LoadFailureCopyWith<$Res> {
-  __$LoadFailureCopyWithImpl(
-      _LoadFailure _value, $Res Function(_LoadFailure) _then)
-      : super(_value, (v) => _then(v as _LoadFailure));
+class __$LoadFailureCopyWithImpl<$Res> extends _$ProfileUsersWatcherStateCopyWithImpl<$Res> implements _$LoadFailureCopyWith<$Res> {
+  __$LoadFailureCopyWithImpl(_LoadFailure _value, $Res Function(_LoadFailure) _then) : super(_value, (v) => _then(v as _LoadFailure));
 
   @override
   _LoadFailure get _value => super._value as _LoadFailure;
 
   @override
   $Res call({
-    Object failure = freezed,
+    Object? failure = freezed,
   }) {
     return _then(_LoadFailure(
-      failure == freezed ? _value.failure : failure as Failure<dynamic>,
+      failure == freezed
+          ? _value.failure
+          : failure // ignore: cast_nullable_to_non_nullable
+              as Failure<dynamic>,
     ));
   }
 
   @override
   $FailureCopyWith<dynamic, $Res> get failure {
-    if (_value.failure == null) {
-      return null;
-    }
     return $FailureCopyWith<dynamic, $Res>(_value.failure, (value) {
       return _then(_value.copyWith(failure: value));
     });
@@ -965,7 +837,7 @@ class __$LoadFailureCopyWithImpl<$Res>
 
 /// @nodoc
 class _$_LoadFailure implements _LoadFailure {
-  const _$_LoadFailure(this.failure) : assert(failure != null);
+  const _$_LoadFailure(this.failure);
 
   @override
   final Failure<dynamic> failure;
@@ -977,46 +849,36 @@ class _$_LoadFailure implements _LoadFailure {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) ||
-        (other is _LoadFailure &&
-            (identical(other.failure, failure) ||
-                const DeepCollectionEquality().equals(other.failure, failure)));
+    return identical(this, other) || (other is _LoadFailure && (identical(other.failure, failure) || const DeepCollectionEquality().equals(other.failure, failure)));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(failure);
+  int get hashCode => runtimeType.hashCode ^ const DeepCollectionEquality().hash(failure);
 
   @JsonKey(ignore: true)
   @override
-  _$LoadFailureCopyWith<_LoadFailure> get copyWith =>
-      __$LoadFailureCopyWithImpl<_LoadFailure>(this, _$identity);
+  _$LoadFailureCopyWith<_LoadFailure> get copyWith => __$LoadFailureCopyWithImpl<_LoadFailure>(this, _$identity);
 
   @override
   @optionalTypeArgs
-  TResult when<TResult extends Object>({
-    @required TResult initial(),
-    @required TResult loadInProgress(),
-    @required TResult loadSuccess(KtList<User> users),
-    @required TResult loadFailure(Failure<dynamic> failure),
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() loadInProgress,
+    required TResult Function(KtList<User> users) loadSuccess,
+    required TResult Function(Failure<dynamic> failure) loadFailure,
   }) {
-    assert(initial != null);
-    assert(loadInProgress != null);
-    assert(loadSuccess != null);
-    assert(loadFailure != null);
     return loadFailure(failure);
   }
 
   @override
   @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object>({
-    TResult initial(),
-    TResult loadInProgress(),
-    TResult loadSuccess(KtList<User> users),
-    TResult loadFailure(Failure<dynamic> failure),
-    @required TResult orElse(),
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? loadInProgress,
+    TResult Function(KtList<User> users)? loadSuccess,
+    TResult Function(Failure<dynamic> failure)? loadFailure,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (loadFailure != null) {
       return loadFailure(failure);
     }
@@ -1025,29 +887,24 @@ class _$_LoadFailure implements _LoadFailure {
 
   @override
   @optionalTypeArgs
-  TResult map<TResult extends Object>({
-    @required TResult initial(_Initial value),
-    @required TResult loadInProgress(_LoadInProgress value),
-    @required TResult loadSuccess(_LoadSuccess value),
-    @required TResult loadFailure(_LoadFailure value),
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial value) initial,
+    required TResult Function(_LoadInProgress value) loadInProgress,
+    required TResult Function(_LoadSuccess value) loadSuccess,
+    required TResult Function(_LoadFailure value) loadFailure,
   }) {
-    assert(initial != null);
-    assert(loadInProgress != null);
-    assert(loadSuccess != null);
-    assert(loadFailure != null);
     return loadFailure(this);
   }
 
   @override
   @optionalTypeArgs
-  TResult maybeMap<TResult extends Object>({
-    TResult initial(_Initial value),
-    TResult loadInProgress(_LoadInProgress value),
-    TResult loadSuccess(_LoadSuccess value),
-    TResult loadFailure(_LoadFailure value),
-    @required TResult orElse(),
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_LoadInProgress value)? loadInProgress,
+    TResult Function(_LoadSuccess value)? loadSuccess,
+    TResult Function(_LoadFailure value)? loadFailure,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (loadFailure != null) {
       return loadFailure(this);
     }
@@ -1058,7 +915,8 @@ class _$_LoadFailure implements _LoadFailure {
 abstract class _LoadFailure implements ProfileUsersWatcherState {
   const factory _LoadFailure(Failure<dynamic> failure) = _$_LoadFailure;
 
-  Failure<dynamic> get failure;
+  Failure<dynamic> get failure => throw _privateConstructorUsedError;
+
   @JsonKey(ignore: true)
-  _$LoadFailureCopyWith<_LoadFailure> get copyWith;
+  _$LoadFailureCopyWith<_LoadFailure> get copyWith => throw _privateConstructorUsedError;
 }

@@ -14,12 +14,12 @@ import 'package:worldon/views/experience_navigation/widgets/experience_informati
 
 class ExperienceCommentsListView extends StatelessWidget {
   const ExperienceCommentsListView({
-    Key key,
-    @required this.experience,
+    Key? key,
+    required this.experience,
   }) : super(key: key);
-  
+
   final Experience experience;
-  
+
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -63,8 +63,8 @@ class ExperienceCommentsListView extends StatelessWidget {
                         return ErrorCard(
                           entityType: S.of(context).comment,
                           valueFailureString: _comment.failureOption.fold(
-                              () => S.of(context).noError,
-                              (failure) => failure.toString(),
+                            () => S.of(context).noError,
+                            (failure) => failure.toString(),
                           ),
                         );
                       }

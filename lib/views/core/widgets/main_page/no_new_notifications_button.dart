@@ -4,7 +4,7 @@ import 'package:worldon/application/navigation/navigation_actor/navigation_actor
 
 class NoNewNotificationsButton extends StatelessWidget {
   const NoNewNotificationsButton({
-    Key key,
+    Key? key,
   }) : super(key: key);
 
   @override

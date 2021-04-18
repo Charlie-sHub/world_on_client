@@ -18,7 +18,8 @@ part 'comment_watcher_state.dart';
 @injectable
 class CommentWatcherBloc extends Bloc<CommentWatcherEvent, CommentWatcherState> {
   CommentWatcherBloc() : super(const CommentWatcherState.initial());
-  StreamSubscription<Either<Failure, KtList<Comment>>> _experienceCommentsStreamSubscription;
+
+  StreamSubscription<Either<Failure, KtList<Comment>>>? _experienceCommentsStreamSubscription;
 
   @override
   Stream<CommentWatcherState> mapEventToState(CommentWatcherEvent event) async* {

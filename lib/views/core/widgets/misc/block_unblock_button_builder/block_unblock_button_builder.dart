@@ -11,8 +11,8 @@ import '../../../../../injection.dart';
 
 class BlockUnblockButtonBuilder extends StatelessWidget {
   const BlockUnblockButtonBuilder({
-    Key key,
-    @required this.user,
+    Key? key,
+    required this.user,
   }) : super(key: key);
 
   final User user;
@@ -74,6 +74,6 @@ class BlockUnblockButtonBuilder extends StatelessWidget {
             orElse: () => S.of(context).unknownError,
           ),
         ).show(context),
-        orElse: () => null,
+        orElse: () {},
       );
 }

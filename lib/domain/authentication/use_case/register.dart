@@ -1,5 +1,4 @@
 import 'package:dartz/dartz.dart';
-import 'package:flutter/foundation.dart';
 import 'package:injectable/injectable.dart';
 import 'package:worldon/core/error/failure.dart';
 import 'package:worldon/domain/authentication/repository/authentication_repository_interface.dart';
@@ -23,6 +22,6 @@ class Params {
   final User user;
 
   Params({
-    @required this.user,
+    required this.user,
   });
 }

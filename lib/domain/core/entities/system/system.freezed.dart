@@ -1,5 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides
 
 part of 'system.dart';
 
@@ -9,16 +9,14 @@ part of 'system.dart';
 
 T _$identity<T>(T value) => value;
 
+final _privateConstructorUsedError = UnsupportedError(
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+
 /// @nodoc
 class _$SystemTearOff {
   const _$SystemTearOff();
 
-// ignore: unused_element
-  _System call(
-      {@required UniqueId id,
-      @required String name,
-      @required String type,
-      @required String company}) {
+  _System call({required UniqueId id, required String name, required String type, required String company}) {
     return _System(
       id: id,
       name: name,
@@ -29,18 +27,20 @@ class _$SystemTearOff {
 }
 
 /// @nodoc
-// ignore: unused_element
 const $System = _$SystemTearOff();
 
 /// @nodoc
 mixin _$System {
-  UniqueId get id;
-  String get name;
-  String get type;
-  String get company;
+  UniqueId get id => throw _privateConstructorUsedError;
+
+  String get name => throw _privateConstructorUsedError;
+
+  String get type => throw _privateConstructorUsedError;
+
+  String get company => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
-  $SystemCopyWith<System> get copyWith;
+  $SystemCopyWith<System> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -60,16 +60,28 @@ class _$SystemCopyWithImpl<$Res> implements $SystemCopyWith<$Res> {
 
   @override
   $Res call({
-    Object id = freezed,
-    Object name = freezed,
-    Object type = freezed,
-    Object company = freezed,
+    Object? id = freezed,
+    Object? name = freezed,
+    Object? type = freezed,
+    Object? company = freezed,
   }) {
     return _then(_value.copyWith(
-      id: id == freezed ? _value.id : id as UniqueId,
-      name: name == freezed ? _value.name : name as String,
-      type: type == freezed ? _value.type : type as String,
-      company: company == freezed ? _value.company : company as String,
+      id: id == freezed
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as UniqueId,
+      name: name == freezed
+          ? _value.name
+          : name // ignore: cast_nullable_to_non_nullable
+              as String,
+      type: type == freezed
+          ? _value.type
+          : type // ignore: cast_nullable_to_non_nullable
+              as String,
+      company: company == freezed
+          ? _value.company
+          : company // ignore: cast_nullable_to_non_nullable
+              as String,
     ));
   }
 }
@@ -93,32 +105,35 @@ class __$SystemCopyWithImpl<$Res> extends _$SystemCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object id = freezed,
-    Object name = freezed,
-    Object type = freezed,
-    Object company = freezed,
+    Object? id = freezed,
+    Object? name = freezed,
+    Object? type = freezed,
+    Object? company = freezed,
   }) {
     return _then(_System(
-      id: id == freezed ? _value.id : id as UniqueId,
-      name: name == freezed ? _value.name : name as String,
-      type: type == freezed ? _value.type : type as String,
-      company: company == freezed ? _value.company : company as String,
+      id: id == freezed
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as UniqueId,
+      name: name == freezed
+          ? _value.name
+          : name // ignore: cast_nullable_to_non_nullable
+              as String,
+      type: type == freezed
+          ? _value.type
+          : type // ignore: cast_nullable_to_non_nullable
+              as String,
+      company: company == freezed
+          ? _value.company
+          : company // ignore: cast_nullable_to_non_nullable
+              as String,
     ));
   }
 }
 
 /// @nodoc
 class _$_System extends _System {
-  const _$_System(
-      {@required this.id,
-      @required this.name,
-      @required this.type,
-      @required this.company})
-      : assert(id != null),
-        assert(name != null),
-        assert(type != null),
-        assert(company != null),
-        super._();
+  const _$_System({required this.id, required this.name, required this.type, required this.company}) : super._();
 
   @override
   final UniqueId id;
@@ -163,22 +178,23 @@ class _$_System extends _System {
 }
 
 abstract class _System extends System {
+  const factory _System({required UniqueId id, required String name, required String type, required String company}) = _$_System;
+
   const _System._() : super._();
-  const factory _System(
-      {@required UniqueId id,
-      @required String name,
-      @required String type,
-      @required String company}) = _$_System;
 
   @override
-  UniqueId get id;
+  UniqueId get id => throw _privateConstructorUsedError;
+
   @override
-  String get name;
+  String get name => throw _privateConstructorUsedError;
+
   @override
-  String get type;
+  String get type => throw _privateConstructorUsedError;
+
   @override
-  String get company;
+  String get company => throw _privateConstructorUsedError;
+
   @override
   @JsonKey(ignore: true)
-  _$SystemCopyWith<_System> get copyWith;
+  _$SystemCopyWith<_System> get copyWith => throw _privateConstructorUsedError;
 }

@@ -37,7 +37,7 @@ class UserImagePicker extends StatelessWidget {
                   Container(),
               ],
             ),
-            (imageFile) => FlatButton(
+            (imageFile) => TextButton(
               onPressed: () async {
                 final _imageFile = await _openDialog(context);
                 if (_imageFile != null) {
@@ -48,14 +48,14 @@ class UserImagePicker extends StatelessWidget {
               },
               child: CircleAvatar(
                 radius: 80,
-                backgroundImage: FileImage(imageFile),
+                backgroundImage: FileImage(imageFile!),
               ),
             ),
           ),
     );
   }
 
-  Future<File> _openDialog(BuildContext context) async {
+  Future<File?> _openDialog(BuildContext context) async {
     return showDialog<File>(
       context: context,
       useSafeArea: true,

@@ -7,8 +7,8 @@ import 'package:worldon/views/core/misc/world_on_colors.dart';
 
 class TitleFormField extends StatelessWidget {
   const TitleFormField({
-    Key key,
-    @required this.title,
+    Key? key,
+    required this.title,
   }) : super(key: key);
 
   final String title;

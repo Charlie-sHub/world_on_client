@@ -11,18 +11,18 @@ part 'item_dto.freezed.dart';
 part 'item_dto.g.dart';
 
 @freezed
-abstract class ItemDto implements _$ItemDto {
+class ItemDto with _$ItemDto {
   const ItemDto._();
 
   const factory ItemDto({
-    @required String id,
-    @required String name,
-    @required String description,
-    @required ItemCode code,
-    @required int value,
-    @required int timeLimitInDays,
-    @required String imageURL,
-    @ServerTimestampConverter() @required DateTime boughtDate,
+    required String id,
+    required String name,
+    required String description,
+    required ItemCode code,
+    required int value,
+    required int timeLimitInDays,
+    required String imageURL,
+    @ServerTimestampConverter() required DateTime boughtDate,
   }) = _Item;
 
   factory ItemDto.fromDomain(Item item) => ItemDto(
@@ -50,7 +50,7 @@ abstract class ItemDto implements _$ItemDto {
   factory ItemDto.fromJson(Map<String, dynamic> json) => _$ItemDtoFromJson(json);
 
   factory ItemDto.fromFirestore(DocumentSnapshot document) => ItemDto.fromJson(
-        document.data(),
+        document.data()!,
       ).copyWith(
         id: document.id,
       );

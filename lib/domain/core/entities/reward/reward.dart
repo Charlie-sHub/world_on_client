@@ -15,15 +15,15 @@ part 'reward.freezed.dart';
 ///
 /// [Reward]s are given to [User]s for doing [Experience]s, rewards will be set by the [User]s creating the Experience.
 @freezed
-abstract class Reward implements _$Reward {
+class Reward with _$Reward {
   const Reward._();
 
   const factory Reward({
-    @required UniqueId id,
-    @required Name name,
-    @required EntityDescription description,
-    @required String imageURL,
-    @required Option<File> imageFile,
+    required UniqueId id,
+    required Name name,
+    required EntityDescription description,
+    required String imageURL,
+    required Option<File> imageFile,
   }) = _Reward;
 
   factory Reward.empty() => Reward(

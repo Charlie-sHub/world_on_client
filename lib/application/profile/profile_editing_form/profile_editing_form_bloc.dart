@@ -44,7 +44,7 @@ class ProfileEditingFormBloc extends Bloc<ProfileEditingFormEvent, ProfileEditin
   }
 
   Stream<ProfileEditingFormState> _onSubmitted(_) async* {
-    Either<Failure, Unit> _failureOrUnit;
+    late Either<Failure, Unit> _failureOrUnit;
     yield state.copyWith(
       isSubmitting: true,
       failureOrSuccessOption: none(),

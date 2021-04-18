@@ -1,7 +1,7 @@
 part of 'load_user_bloc.dart';
 
 @freezed
-abstract class LoadUserState with _$LoadUserState {
+class LoadUserState with _$LoadUserState {
   const factory LoadUserState.initial() = _Initial;
 
   const factory LoadUserState.actionInProgress() = _ActionInProgress;

@@ -1,5 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides
 
 part of 'user.dart';
 
@@ -9,42 +9,44 @@ part of 'user.dart';
 
 T _$identity<T>(T value) => value;
 
+final _privateConstructorUsedError = UnsupportedError(
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+
 /// @nodoc
 class _$UserTearOff {
   const _$UserTearOff();
 
-// ignore: unused_element
   _User call(
-      {@required UniqueId id,
-      @required Name name,
-      @required Name username,
-      @required Password password,
-      @required EmailAddress email,
-      @required PastDate birthday,
-      @required EntityDescription description,
-      @required String imageURL,
-      @required Option<File> imageFileOption,
-      @required UserLevel level,
-      @required ExperiencePoints experiencePoints,
-      @required bool privacy,
-      @required bool adminPowers,
-      @required bool enabled,
-      @required PastDate lastLogin,
-      @required PastDate creationDate,
-      @required PastDate modificationDate,
-      @required Options options,
-      @required Set<UniqueId> blockedUsersIds,
-      @required Set<UniqueId> followedUsersIds,
-      @required Set<UniqueId> interestsIds,
-      @required Set<UniqueId> achievementsIds,
-      @required Set<UniqueId> experiencesDoneIds,
-      @required Set<UniqueId> experiencesLikedIds,
-      @required Set<UniqueId> experiencesToDoIds,
-      @required Set<Device> devices,
-      @required Set<System> systems,
-      @required Set<Item> items,
-      @required int coins,
-      @required int followersAmount}) {
+      {required UniqueId id,
+      required Name name,
+      required Name username,
+      required Password password,
+      required EmailAddress email,
+      required PastDate birthday,
+      required EntityDescription description,
+      required String imageURL,
+      required Option<File?> imageFileOption,
+      required UserLevel level,
+      required ExperiencePoints experiencePoints,
+      required bool privacy,
+      required bool adminPowers,
+      required bool enabled,
+      required PastDate lastLogin,
+      required PastDate creationDate,
+      required PastDate modificationDate,
+      required Options options,
+      required Set<UniqueId> blockedUsersIds,
+      required Set<UniqueId> followedUsersIds,
+      required Set<UniqueId> interestsIds,
+      required Set<UniqueId> achievementsIds,
+      required Set<UniqueId> experiencesDoneIds,
+      required Set<UniqueId> experiencesLikedIds,
+      required Set<UniqueId> experiencesToDoIds,
+      required Set<Device> devices,
+      required Set<System> systems,
+      required Set<Item> items,
+      required int coins,
+      required int followersAmount}) {
     return _User(
       id: id,
       name: name,
@@ -81,44 +83,72 @@ class _$UserTearOff {
 }
 
 /// @nodoc
-// ignore: unused_element
 const $User = _$UserTearOff();
 
 /// @nodoc
 mixin _$User {
-  UniqueId get id;
-  Name get name;
-  Name get username;
-  Password get password;
-  EmailAddress get email;
-  PastDate get birthday;
-  EntityDescription get description;
-  String get imageURL;
-  Option<File> get imageFileOption;
-  UserLevel get level;
-  ExperiencePoints get experiencePoints;
-  bool get privacy;
-  bool get adminPowers;
-  bool get enabled;
-  PastDate get lastLogin;
-  PastDate get creationDate;
-  PastDate get modificationDate;
-  Options get options;
-  Set<UniqueId> get blockedUsersIds;
-  Set<UniqueId> get followedUsersIds;
-  Set<UniqueId> get interestsIds;
-  Set<UniqueId> get achievementsIds;
-  Set<UniqueId> get experiencesDoneIds;
-  Set<UniqueId> get experiencesLikedIds;
-  Set<UniqueId> get experiencesToDoIds;
-  Set<Device> get devices;
-  Set<System> get systems;
-  Set<Item> get items;
-  int get coins;
-  int get followersAmount;
+  UniqueId get id => throw _privateConstructorUsedError;
+
+  Name get name => throw _privateConstructorUsedError;
+
+  Name get username => throw _privateConstructorUsedError;
+
+  Password get password => throw _privateConstructorUsedError;
+
+  EmailAddress get email => throw _privateConstructorUsedError;
+
+  PastDate get birthday => throw _privateConstructorUsedError;
+
+  EntityDescription get description => throw _privateConstructorUsedError;
+
+  String get imageURL => throw _privateConstructorUsedError;
+
+  Option<File?> get imageFileOption => throw _privateConstructorUsedError;
+
+  UserLevel get level => throw _privateConstructorUsedError;
+
+  ExperiencePoints get experiencePoints => throw _privateConstructorUsedError;
+
+  bool get privacy => throw _privateConstructorUsedError;
+
+  bool get adminPowers => throw _privateConstructorUsedError;
+
+  bool get enabled => throw _privateConstructorUsedError;
+
+  PastDate get lastLogin => throw _privateConstructorUsedError;
+
+  PastDate get creationDate => throw _privateConstructorUsedError;
+
+  PastDate get modificationDate => throw _privateConstructorUsedError;
+
+  Options get options => throw _privateConstructorUsedError;
+
+  Set<UniqueId> get blockedUsersIds => throw _privateConstructorUsedError;
+
+  Set<UniqueId> get followedUsersIds => throw _privateConstructorUsedError;
+
+  Set<UniqueId> get interestsIds => throw _privateConstructorUsedError;
+
+  Set<UniqueId> get achievementsIds => throw _privateConstructorUsedError;
+
+  Set<UniqueId> get experiencesDoneIds => throw _privateConstructorUsedError;
+
+  Set<UniqueId> get experiencesLikedIds => throw _privateConstructorUsedError;
+
+  Set<UniqueId> get experiencesToDoIds => throw _privateConstructorUsedError;
+
+  Set<Device> get devices => throw _privateConstructorUsedError;
+
+  Set<System> get systems => throw _privateConstructorUsedError;
+
+  Set<Item> get items => throw _privateConstructorUsedError;
+
+  int get coins => throw _privateConstructorUsedError;
+
+  int get followersAmount => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
-  $UserCopyWith<User> get copyWith;
+  $UserCopyWith<User> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -134,7 +164,7 @@ abstract class $UserCopyWith<$Res> {
       PastDate birthday,
       EntityDescription description,
       String imageURL,
-      Option<File> imageFileOption,
+      Option<File?> imageFileOption,
       UserLevel level,
       ExperiencePoints experiencePoints,
       bool privacy,
@@ -170,76 +200,163 @@ class _$UserCopyWithImpl<$Res> implements $UserCopyWith<$Res> {
 
   @override
   $Res call({
-    Object id = freezed,
-    Object name = freezed,
-    Object username = freezed,
-    Object password = freezed,
-    Object email = freezed,
-    Object birthday = freezed,
-    Object description = freezed,
-    Object imageURL = freezed,
-    Object imageFileOption = freezed,
-    Object level = freezed,
-    Object experiencePoints = freezed,
-    Object privacy = freezed,
-    Object adminPowers = freezed,
-    Object enabled = freezed,
-    Object lastLogin = freezed,
-    Object creationDate = freezed,
-    Object modificationDate = freezed,
-    Object options = freezed,
-    Object blockedUsersIds = freezed,
-    Object followedUsersIds = freezed,
-    Object interestsIds = freezed,
-    Object achievementsIds = freezed,
-    Object experiencesDoneIds = freezed,
-    Object experiencesLikedIds = freezed,
-    Object experiencesToDoIds = freezed,
-    Object devices = freezed,
-    Object systems = freezed,
-    Object items = freezed,
-    Object coins = freezed,
-    Object followersAmount = freezed,
+    Object? id = freezed,
+    Object? name = freezed,
+    Object? username = freezed,
+    Object? password = freezed,
+    Object? email = freezed,
+    Object? birthday = freezed,
+    Object? description = freezed,
+    Object? imageURL = freezed,
+    Object? imageFileOption = freezed,
+    Object? level = freezed,
+    Object? experiencePoints = freezed,
+    Object? privacy = freezed,
+    Object? adminPowers = freezed,
+    Object? enabled = freezed,
+    Object? lastLogin = freezed,
+    Object? creationDate = freezed,
+    Object? modificationDate = freezed,
+    Object? options = freezed,
+    Object? blockedUsersIds = freezed,
+    Object? followedUsersIds = freezed,
+    Object? interestsIds = freezed,
+    Object? achievementsIds = freezed,
+    Object? experiencesDoneIds = freezed,
+    Object? experiencesLikedIds = freezed,
+    Object? experiencesToDoIds = freezed,
+    Object? devices = freezed,
+    Object? systems = freezed,
+    Object? items = freezed,
+    Object? coins = freezed,
+    Object? followersAmount = freezed,
   }) {
     return _then(_value.copyWith(
-      id: id == freezed ? _value.id : id as UniqueId,
-      name: name == freezed ? _value.name : name as Name,
-      username: username == freezed ? _value.username : username as Name,
-      password: password == freezed ? _value.password : password as Password,
-      email: email == freezed ? _value.email : email as EmailAddress,
-      birthday: birthday == freezed ? _value.birthday : birthday as PastDate,
-      description: description == freezed ? _value.description : description as EntityDescription,
-      imageURL: imageURL == freezed ? _value.imageURL : imageURL as String,
-      imageFileOption: imageFileOption == freezed ? _value.imageFileOption : imageFileOption as Option<File>,
-      level: level == freezed ? _value.level : level as UserLevel,
-      experiencePoints: experiencePoints == freezed ? _value.experiencePoints : experiencePoints as ExperiencePoints,
-      privacy: privacy == freezed ? _value.privacy : privacy as bool,
-      adminPowers: adminPowers == freezed ? _value.adminPowers : adminPowers as bool,
-      enabled: enabled == freezed ? _value.enabled : enabled as bool,
-      lastLogin: lastLogin == freezed ? _value.lastLogin : lastLogin as PastDate,
-      creationDate: creationDate == freezed ? _value.creationDate : creationDate as PastDate,
-      modificationDate: modificationDate == freezed ? _value.modificationDate : modificationDate as PastDate,
-      options: options == freezed ? _value.options : options as Options,
-      blockedUsersIds: blockedUsersIds == freezed ? _value.blockedUsersIds : blockedUsersIds as Set<UniqueId>,
-      followedUsersIds: followedUsersIds == freezed ? _value.followedUsersIds : followedUsersIds as Set<UniqueId>,
-      interestsIds: interestsIds == freezed ? _value.interestsIds : interestsIds as Set<UniqueId>,
-      achievementsIds: achievementsIds == freezed ? _value.achievementsIds : achievementsIds as Set<UniqueId>,
-      experiencesDoneIds: experiencesDoneIds == freezed ? _value.experiencesDoneIds : experiencesDoneIds as Set<UniqueId>,
-      experiencesLikedIds: experiencesLikedIds == freezed ? _value.experiencesLikedIds : experiencesLikedIds as Set<UniqueId>,
-      experiencesToDoIds: experiencesToDoIds == freezed ? _value.experiencesToDoIds : experiencesToDoIds as Set<UniqueId>,
-      devices: devices == freezed ? _value.devices : devices as Set<Device>,
-      systems: systems == freezed ? _value.systems : systems as Set<System>,
-      items: items == freezed ? _value.items : items as Set<Item>,
-      coins: coins == freezed ? _value.coins : coins as int,
-      followersAmount: followersAmount == freezed ? _value.followersAmount : followersAmount as int,
+      id: id == freezed
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as UniqueId,
+      name: name == freezed
+          ? _value.name
+          : name // ignore: cast_nullable_to_non_nullable
+              as Name,
+      username: username == freezed
+          ? _value.username
+          : username // ignore: cast_nullable_to_non_nullable
+              as Name,
+      password: password == freezed
+          ? _value.password
+          : password // ignore: cast_nullable_to_non_nullable
+              as Password,
+      email: email == freezed
+          ? _value.email
+          : email // ignore: cast_nullable_to_non_nullable
+              as EmailAddress,
+      birthday: birthday == freezed
+          ? _value.birthday
+          : birthday // ignore: cast_nullable_to_non_nullable
+              as PastDate,
+      description: description == freezed
+          ? _value.description
+          : description // ignore: cast_nullable_to_non_nullable
+              as EntityDescription,
+      imageURL: imageURL == freezed
+          ? _value.imageURL
+          : imageURL // ignore: cast_nullable_to_non_nullable
+              as String,
+      imageFileOption: imageFileOption == freezed
+          ? _value.imageFileOption
+          : imageFileOption // ignore: cast_nullable_to_non_nullable
+              as Option<File?>,
+      level: level == freezed
+          ? _value.level
+          : level // ignore: cast_nullable_to_non_nullable
+              as UserLevel,
+      experiencePoints: experiencePoints == freezed
+          ? _value.experiencePoints
+          : experiencePoints // ignore: cast_nullable_to_non_nullable
+              as ExperiencePoints,
+      privacy: privacy == freezed
+          ? _value.privacy
+          : privacy // ignore: cast_nullable_to_non_nullable
+              as bool,
+      adminPowers: adminPowers == freezed
+          ? _value.adminPowers
+          : adminPowers // ignore: cast_nullable_to_non_nullable
+              as bool,
+      enabled: enabled == freezed
+          ? _value.enabled
+          : enabled // ignore: cast_nullable_to_non_nullable
+              as bool,
+      lastLogin: lastLogin == freezed
+          ? _value.lastLogin
+          : lastLogin // ignore: cast_nullable_to_non_nullable
+              as PastDate,
+      creationDate: creationDate == freezed
+          ? _value.creationDate
+          : creationDate // ignore: cast_nullable_to_non_nullable
+              as PastDate,
+      modificationDate: modificationDate == freezed
+          ? _value.modificationDate
+          : modificationDate // ignore: cast_nullable_to_non_nullable
+              as PastDate,
+      options: options == freezed
+          ? _value.options
+          : options // ignore: cast_nullable_to_non_nullable
+              as Options,
+      blockedUsersIds: blockedUsersIds == freezed
+          ? _value.blockedUsersIds
+          : blockedUsersIds // ignore: cast_nullable_to_non_nullable
+              as Set<UniqueId>,
+      followedUsersIds: followedUsersIds == freezed
+          ? _value.followedUsersIds
+          : followedUsersIds // ignore: cast_nullable_to_non_nullable
+              as Set<UniqueId>,
+      interestsIds: interestsIds == freezed
+          ? _value.interestsIds
+          : interestsIds // ignore: cast_nullable_to_non_nullable
+              as Set<UniqueId>,
+      achievementsIds: achievementsIds == freezed
+          ? _value.achievementsIds
+          : achievementsIds // ignore: cast_nullable_to_non_nullable
+              as Set<UniqueId>,
+      experiencesDoneIds: experiencesDoneIds == freezed
+          ? _value.experiencesDoneIds
+          : experiencesDoneIds // ignore: cast_nullable_to_non_nullable
+              as Set<UniqueId>,
+      experiencesLikedIds: experiencesLikedIds == freezed
+          ? _value.experiencesLikedIds
+          : experiencesLikedIds // ignore: cast_nullable_to_non_nullable
+              as Set<UniqueId>,
+      experiencesToDoIds: experiencesToDoIds == freezed
+          ? _value.experiencesToDoIds
+          : experiencesToDoIds // ignore: cast_nullable_to_non_nullable
+              as Set<UniqueId>,
+      devices: devices == freezed
+          ? _value.devices
+          : devices // ignore: cast_nullable_to_non_nullable
+              as Set<Device>,
+      systems: systems == freezed
+          ? _value.systems
+          : systems // ignore: cast_nullable_to_non_nullable
+              as Set<System>,
+      items: items == freezed
+          ? _value.items
+          : items // ignore: cast_nullable_to_non_nullable
+              as Set<Item>,
+      coins: coins == freezed
+          ? _value.coins
+          : coins // ignore: cast_nullable_to_non_nullable
+              as int,
+      followersAmount: followersAmount == freezed
+          ? _value.followersAmount
+          : followersAmount // ignore: cast_nullable_to_non_nullable
+              as int,
     ));
   }
 
   @override
   $OptionsCopyWith<$Res> get options {
-    if (_value.options == null) {
-      return null;
-    }
     return $OptionsCopyWith<$Res>(_value.options, (value) {
       return _then(_value.copyWith(options: value));
     });
@@ -260,7 +377,7 @@ abstract class _$UserCopyWith<$Res> implements $UserCopyWith<$Res> {
       PastDate birthday,
       EntityDescription description,
       String imageURL,
-      Option<File> imageFileOption,
+      Option<File?> imageFileOption,
       UserLevel level,
       ExperiencePoints experiencePoints,
       bool privacy,
@@ -296,68 +413,158 @@ class __$UserCopyWithImpl<$Res> extends _$UserCopyWithImpl<$Res> implements _$Us
 
   @override
   $Res call({
-    Object id = freezed,
-    Object name = freezed,
-    Object username = freezed,
-    Object password = freezed,
-    Object email = freezed,
-    Object birthday = freezed,
-    Object description = freezed,
-    Object imageURL = freezed,
-    Object imageFileOption = freezed,
-    Object level = freezed,
-    Object experiencePoints = freezed,
-    Object privacy = freezed,
-    Object adminPowers = freezed,
-    Object enabled = freezed,
-    Object lastLogin = freezed,
-    Object creationDate = freezed,
-    Object modificationDate = freezed,
-    Object options = freezed,
-    Object blockedUsersIds = freezed,
-    Object followedUsersIds = freezed,
-    Object interestsIds = freezed,
-    Object achievementsIds = freezed,
-    Object experiencesDoneIds = freezed,
-    Object experiencesLikedIds = freezed,
-    Object experiencesToDoIds = freezed,
-    Object devices = freezed,
-    Object systems = freezed,
-    Object items = freezed,
-    Object coins = freezed,
-    Object followersAmount = freezed,
+    Object? id = freezed,
+    Object? name = freezed,
+    Object? username = freezed,
+    Object? password = freezed,
+    Object? email = freezed,
+    Object? birthday = freezed,
+    Object? description = freezed,
+    Object? imageURL = freezed,
+    Object? imageFileOption = freezed,
+    Object? level = freezed,
+    Object? experiencePoints = freezed,
+    Object? privacy = freezed,
+    Object? adminPowers = freezed,
+    Object? enabled = freezed,
+    Object? lastLogin = freezed,
+    Object? creationDate = freezed,
+    Object? modificationDate = freezed,
+    Object? options = freezed,
+    Object? blockedUsersIds = freezed,
+    Object? followedUsersIds = freezed,
+    Object? interestsIds = freezed,
+    Object? achievementsIds = freezed,
+    Object? experiencesDoneIds = freezed,
+    Object? experiencesLikedIds = freezed,
+    Object? experiencesToDoIds = freezed,
+    Object? devices = freezed,
+    Object? systems = freezed,
+    Object? items = freezed,
+    Object? coins = freezed,
+    Object? followersAmount = freezed,
   }) {
     return _then(_User(
-      id: id == freezed ? _value.id : id as UniqueId,
-      name: name == freezed ? _value.name : name as Name,
-      username: username == freezed ? _value.username : username as Name,
-      password: password == freezed ? _value.password : password as Password,
-      email: email == freezed ? _value.email : email as EmailAddress,
-      birthday: birthday == freezed ? _value.birthday : birthday as PastDate,
-      description: description == freezed ? _value.description : description as EntityDescription,
-      imageURL: imageURL == freezed ? _value.imageURL : imageURL as String,
-      imageFileOption: imageFileOption == freezed ? _value.imageFileOption : imageFileOption as Option<File>,
-      level: level == freezed ? _value.level : level as UserLevel,
-      experiencePoints: experiencePoints == freezed ? _value.experiencePoints : experiencePoints as ExperiencePoints,
-      privacy: privacy == freezed ? _value.privacy : privacy as bool,
-      adminPowers: adminPowers == freezed ? _value.adminPowers : adminPowers as bool,
-      enabled: enabled == freezed ? _value.enabled : enabled as bool,
-      lastLogin: lastLogin == freezed ? _value.lastLogin : lastLogin as PastDate,
-      creationDate: creationDate == freezed ? _value.creationDate : creationDate as PastDate,
-      modificationDate: modificationDate == freezed ? _value.modificationDate : modificationDate as PastDate,
-      options: options == freezed ? _value.options : options as Options,
-      blockedUsersIds: blockedUsersIds == freezed ? _value.blockedUsersIds : blockedUsersIds as Set<UniqueId>,
-      followedUsersIds: followedUsersIds == freezed ? _value.followedUsersIds : followedUsersIds as Set<UniqueId>,
-      interestsIds: interestsIds == freezed ? _value.interestsIds : interestsIds as Set<UniqueId>,
-      achievementsIds: achievementsIds == freezed ? _value.achievementsIds : achievementsIds as Set<UniqueId>,
-      experiencesDoneIds: experiencesDoneIds == freezed ? _value.experiencesDoneIds : experiencesDoneIds as Set<UniqueId>,
-      experiencesLikedIds: experiencesLikedIds == freezed ? _value.experiencesLikedIds : experiencesLikedIds as Set<UniqueId>,
-      experiencesToDoIds: experiencesToDoIds == freezed ? _value.experiencesToDoIds : experiencesToDoIds as Set<UniqueId>,
-      devices: devices == freezed ? _value.devices : devices as Set<Device>,
-      systems: systems == freezed ? _value.systems : systems as Set<System>,
-      items: items == freezed ? _value.items : items as Set<Item>,
-      coins: coins == freezed ? _value.coins : coins as int,
-      followersAmount: followersAmount == freezed ? _value.followersAmount : followersAmount as int,
+      id: id == freezed
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as UniqueId,
+      name: name == freezed
+          ? _value.name
+          : name // ignore: cast_nullable_to_non_nullable
+              as Name,
+      username: username == freezed
+          ? _value.username
+          : username // ignore: cast_nullable_to_non_nullable
+              as Name,
+      password: password == freezed
+          ? _value.password
+          : password // ignore: cast_nullable_to_non_nullable
+              as Password,
+      email: email == freezed
+          ? _value.email
+          : email // ignore: cast_nullable_to_non_nullable
+              as EmailAddress,
+      birthday: birthday == freezed
+          ? _value.birthday
+          : birthday // ignore: cast_nullable_to_non_nullable
+              as PastDate,
+      description: description == freezed
+          ? _value.description
+          : description // ignore: cast_nullable_to_non_nullable
+              as EntityDescription,
+      imageURL: imageURL == freezed
+          ? _value.imageURL
+          : imageURL // ignore: cast_nullable_to_non_nullable
+              as String,
+      imageFileOption: imageFileOption == freezed
+          ? _value.imageFileOption
+          : imageFileOption // ignore: cast_nullable_to_non_nullable
+              as Option<File?>,
+      level: level == freezed
+          ? _value.level
+          : level // ignore: cast_nullable_to_non_nullable
+              as UserLevel,
+      experiencePoints: experiencePoints == freezed
+          ? _value.experiencePoints
+          : experiencePoints // ignore: cast_nullable_to_non_nullable
+              as ExperiencePoints,
+      privacy: privacy == freezed
+          ? _value.privacy
+          : privacy // ignore: cast_nullable_to_non_nullable
+              as bool,
+      adminPowers: adminPowers == freezed
+          ? _value.adminPowers
+          : adminPowers // ignore: cast_nullable_to_non_nullable
+              as bool,
+      enabled: enabled == freezed
+          ? _value.enabled
+          : enabled // ignore: cast_nullable_to_non_nullable
+              as bool,
+      lastLogin: lastLogin == freezed
+          ? _value.lastLogin
+          : lastLogin // ignore: cast_nullable_to_non_nullable
+              as PastDate,
+      creationDate: creationDate == freezed
+          ? _value.creationDate
+          : creationDate // ignore: cast_nullable_to_non_nullable
+              as PastDate,
+      modificationDate: modificationDate == freezed
+          ? _value.modificationDate
+          : modificationDate // ignore: cast_nullable_to_non_nullable
+              as PastDate,
+      options: options == freezed
+          ? _value.options
+          : options // ignore: cast_nullable_to_non_nullable
+              as Options,
+      blockedUsersIds: blockedUsersIds == freezed
+          ? _value.blockedUsersIds
+          : blockedUsersIds // ignore: cast_nullable_to_non_nullable
+              as Set<UniqueId>,
+      followedUsersIds: followedUsersIds == freezed
+          ? _value.followedUsersIds
+          : followedUsersIds // ignore: cast_nullable_to_non_nullable
+              as Set<UniqueId>,
+      interestsIds: interestsIds == freezed
+          ? _value.interestsIds
+          : interestsIds // ignore: cast_nullable_to_non_nullable
+              as Set<UniqueId>,
+      achievementsIds: achievementsIds == freezed
+          ? _value.achievementsIds
+          : achievementsIds // ignore: cast_nullable_to_non_nullable
+              as Set<UniqueId>,
+      experiencesDoneIds: experiencesDoneIds == freezed
+          ? _value.experiencesDoneIds
+          : experiencesDoneIds // ignore: cast_nullable_to_non_nullable
+              as Set<UniqueId>,
+      experiencesLikedIds: experiencesLikedIds == freezed
+          ? _value.experiencesLikedIds
+          : experiencesLikedIds // ignore: cast_nullable_to_non_nullable
+              as Set<UniqueId>,
+      experiencesToDoIds: experiencesToDoIds == freezed
+          ? _value.experiencesToDoIds
+          : experiencesToDoIds // ignore: cast_nullable_to_non_nullable
+              as Set<UniqueId>,
+      devices: devices == freezed
+          ? _value.devices
+          : devices // ignore: cast_nullable_to_non_nullable
+              as Set<Device>,
+      systems: systems == freezed
+          ? _value.systems
+          : systems // ignore: cast_nullable_to_non_nullable
+              as Set<System>,
+      items: items == freezed
+          ? _value.items
+          : items // ignore: cast_nullable_to_non_nullable
+              as Set<Item>,
+      coins: coins == freezed
+          ? _value.coins
+          : coins // ignore: cast_nullable_to_non_nullable
+              as int,
+      followersAmount: followersAmount == freezed
+          ? _value.followersAmount
+          : followersAmount // ignore: cast_nullable_to_non_nullable
+              as int,
     ));
   }
 }
@@ -365,67 +572,37 @@ class __$UserCopyWithImpl<$Res> extends _$UserCopyWithImpl<$Res> implements _$Us
 /// @nodoc
 class _$_User extends _User {
   const _$_User(
-      {@required this.id,
-      @required this.name,
-      @required this.username,
-      @required this.password,
-      @required this.email,
-      @required this.birthday,
-      @required this.description,
-      @required this.imageURL,
-      @required this.imageFileOption,
-      @required this.level,
-      @required this.experiencePoints,
-      @required this.privacy,
-      @required this.adminPowers,
-      @required this.enabled,
-      @required this.lastLogin,
-      @required this.creationDate,
-      @required this.modificationDate,
-      @required this.options,
-      @required this.blockedUsersIds,
-      @required this.followedUsersIds,
-      @required this.interestsIds,
-      @required this.achievementsIds,
-      @required this.experiencesDoneIds,
-      @required this.experiencesLikedIds,
-      @required this.experiencesToDoIds,
-      @required this.devices,
-      @required this.systems,
-      @required this.items,
-      @required this.coins,
-      @required this.followersAmount})
-      : assert(id != null),
-        assert(name != null),
-        assert(username != null),
-        assert(password != null),
-        assert(email != null),
-        assert(birthday != null),
-        assert(description != null),
-        assert(imageURL != null),
-        assert(imageFileOption != null),
-        assert(level != null),
-        assert(experiencePoints != null),
-        assert(privacy != null),
-        assert(adminPowers != null),
-        assert(enabled != null),
-        assert(lastLogin != null),
-        assert(creationDate != null),
-        assert(modificationDate != null),
-        assert(options != null),
-        assert(blockedUsersIds != null),
-        assert(followedUsersIds != null),
-        assert(interestsIds != null),
-        assert(achievementsIds != null),
-        assert(experiencesDoneIds != null),
-        assert(experiencesLikedIds != null),
-        assert(experiencesToDoIds != null),
-        assert(devices != null),
-        assert(systems != null),
-        assert(items != null),
-        assert(coins != null),
-        assert(followersAmount != null),
-        super._();
+      {required this.id,
+      required this.name,
+      required this.username,
+      required this.password,
+      required this.email,
+      required this.birthday,
+      required this.description,
+      required this.imageURL,
+      required this.imageFileOption,
+      required this.level,
+      required this.experiencePoints,
+      required this.privacy,
+      required this.adminPowers,
+      required this.enabled,
+      required this.lastLogin,
+      required this.creationDate,
+      required this.modificationDate,
+      required this.options,
+      required this.blockedUsersIds,
+      required this.followedUsersIds,
+      required this.interestsIds,
+      required this.achievementsIds,
+      required this.experiencesDoneIds,
+      required this.experiencesLikedIds,
+      required this.experiencesToDoIds,
+      required this.devices,
+      required this.systems,
+      required this.items,
+      required this.coins,
+      required this.followersAmount})
+      : super._();
 
   @override
   final UniqueId id;
@@ -444,7 +621,7 @@ class _$_User extends _User {
   @override
   final String imageURL;
   @override
-  final Option<File> imageFileOption;
+  final Option<File?> imageFileOption;
   @override
   final UserLevel level;
   @override
@@ -562,107 +739,138 @@ class _$_User extends _User {
       const DeepCollectionEquality().hash(items) ^
       const DeepCollectionEquality().hash(coins) ^
       const DeepCollectionEquality().hash(followersAmount);
-
+  
   @JsonKey(ignore: true)
   @override
   _$UserCopyWith<_User> get copyWith => __$UserCopyWithImpl<_User>(this, _$identity);
 }
 
 abstract class _User extends User {
-  const _User._() : super._();
   const factory _User(
-      {@required UniqueId id,
-      @required Name name,
-      @required Name username,
-      @required Password password,
-      @required EmailAddress email,
-      @required PastDate birthday,
-      @required EntityDescription description,
-      @required String imageURL,
-      @required Option<File> imageFileOption,
-      @required UserLevel level,
-      @required ExperiencePoints experiencePoints,
-      @required bool privacy,
-      @required bool adminPowers,
-      @required bool enabled,
-      @required PastDate lastLogin,
-      @required PastDate creationDate,
-      @required PastDate modificationDate,
-      @required Options options,
-      @required Set<UniqueId> blockedUsersIds,
-      @required Set<UniqueId> followedUsersIds,
-      @required Set<UniqueId> interestsIds,
-      @required Set<UniqueId> achievementsIds,
-      @required Set<UniqueId> experiencesDoneIds,
-      @required Set<UniqueId> experiencesLikedIds,
-      @required Set<UniqueId> experiencesToDoIds,
-      @required Set<Device> devices,
-      @required Set<System> systems,
-      @required Set<Item> items,
-      @required int coins,
-      @required int followersAmount}) = _$_User;
+      {required UniqueId id,
+      required Name name,
+      required Name username,
+      required Password password,
+      required EmailAddress email,
+      required PastDate birthday,
+      required EntityDescription description,
+      required String imageURL,
+      required Option<File?> imageFileOption,
+      required UserLevel level,
+      required ExperiencePoints experiencePoints,
+      required bool privacy,
+      required bool adminPowers,
+      required bool enabled,
+      required PastDate lastLogin,
+      required PastDate creationDate,
+      required PastDate modificationDate,
+      required Options options,
+      required Set<UniqueId> blockedUsersIds,
+      required Set<UniqueId> followedUsersIds,
+      required Set<UniqueId> interestsIds,
+      required Set<UniqueId> achievementsIds,
+      required Set<UniqueId> experiencesDoneIds,
+      required Set<UniqueId> experiencesLikedIds,
+      required Set<UniqueId> experiencesToDoIds,
+      required Set<Device> devices,
+      required Set<System> systems,
+      required Set<Item> items,
+      required int coins,
+      required int followersAmount}) = _$_User;
+
+  const _User._() : super._();
 
   @override
-  UniqueId get id;
+  UniqueId get id => throw _privateConstructorUsedError;
+
   @override
-  Name get name;
+  Name get name => throw _privateConstructorUsedError;
+
   @override
-  Name get username;
+  Name get username => throw _privateConstructorUsedError;
+
   @override
-  Password get password;
+  Password get password => throw _privateConstructorUsedError;
+
   @override
-  EmailAddress get email;
+  EmailAddress get email => throw _privateConstructorUsedError;
+
   @override
-  PastDate get birthday;
+  PastDate get birthday => throw _privateConstructorUsedError;
+
   @override
-  EntityDescription get description;
+  EntityDescription get description => throw _privateConstructorUsedError;
+
   @override
-  String get imageURL;
+  String get imageURL => throw _privateConstructorUsedError;
+
   @override
-  Option<File> get imageFileOption;
+  Option<File?> get imageFileOption => throw _privateConstructorUsedError;
+
   @override
-  UserLevel get level;
+  UserLevel get level => throw _privateConstructorUsedError;
+
   @override
-  ExperiencePoints get experiencePoints;
+  ExperiencePoints get experiencePoints => throw _privateConstructorUsedError;
+
   @override
-  bool get privacy;
+  bool get privacy => throw _privateConstructorUsedError;
+
   @override
-  bool get adminPowers;
+  bool get adminPowers => throw _privateConstructorUsedError;
+
   @override
-  bool get enabled;
+  bool get enabled => throw _privateConstructorUsedError;
+
   @override
-  PastDate get lastLogin;
+  PastDate get lastLogin => throw _privateConstructorUsedError;
+
   @override
-  PastDate get creationDate;
+  PastDate get creationDate => throw _privateConstructorUsedError;
+
   @override
-  PastDate get modificationDate;
+  PastDate get modificationDate => throw _privateConstructorUsedError;
+
   @override
-  Options get options;
+  Options get options => throw _privateConstructorUsedError;
+
   @override
-  Set<UniqueId> get blockedUsersIds;
+  Set<UniqueId> get blockedUsersIds => throw _privateConstructorUsedError;
+
   @override
-  Set<UniqueId> get followedUsersIds;
+  Set<UniqueId> get followedUsersIds => throw _privateConstructorUsedError;
+
   @override
-  Set<UniqueId> get interestsIds;
+  Set<UniqueId> get interestsIds => throw _privateConstructorUsedError;
+
   @override
-  Set<UniqueId> get achievementsIds;
+  Set<UniqueId> get achievementsIds => throw _privateConstructorUsedError;
+
   @override
-  Set<UniqueId> get experiencesDoneIds;
+  Set<UniqueId> get experiencesDoneIds => throw _privateConstructorUsedError;
+
   @override
-  Set<UniqueId> get experiencesLikedIds;
+  Set<UniqueId> get experiencesLikedIds => throw _privateConstructorUsedError;
+
   @override
-  Set<UniqueId> get experiencesToDoIds;
+  Set<UniqueId> get experiencesToDoIds => throw _privateConstructorUsedError;
+
   @override
-  Set<Device> get devices;
+  Set<Device> get devices => throw _privateConstructorUsedError;
+
   @override
-  Set<System> get systems;
+  Set<System> get systems => throw _privateConstructorUsedError;
+
   @override
-  Set<Item> get items;
+  Set<Item> get items => throw _privateConstructorUsedError;
+
   @override
-  int get coins;
+  int get coins => throw _privateConstructorUsedError;
+
   @override
-  int get followersAmount;
+  int get followersAmount => throw _privateConstructorUsedError;
+
   @override
   @JsonKey(ignore: true)
-  _$UserCopyWith<_User> get copyWith;
+  _$UserCopyWith<_User> get copyWith => throw _privateConstructorUsedError;
 }

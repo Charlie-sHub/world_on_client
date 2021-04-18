@@ -12,7 +12,7 @@ import 'package:worldon/domain/profile/failures/profile_domain_failure.dart';
 part 'failure.freezed.dart';
 
 @freezed
-abstract class Failure<T> with _$Failure<T> {
+class Failure<T> with _$Failure<T> {
   const factory Failure.authenticationDomain(AuthenticationDomainFailure<T> authenticationDomainFailure) = _AuthenticationDomain<T>;
 
   const factory Failure.authenticationData(AuthenticationDataFailure<T> authenticationDataFailure) = _AuthenticationData<T>;

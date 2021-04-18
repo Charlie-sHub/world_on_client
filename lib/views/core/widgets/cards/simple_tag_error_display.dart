@@ -7,8 +7,8 @@ class SimpleTagErrorDisplay extends StatelessWidget {
   final Tag tag;
 
   const SimpleTagErrorDisplay({
-    Key key,
-    @required this.tag,
+    Key? key,
+    required this.tag,
   }) : super(key: key);
 
   @override

@@ -32,7 +32,7 @@ class ProfileLogTabView extends StatelessWidget {
                 return ExperienceCard(
                   experience: _experience,
                   key: Key(_experience.id.toString()),
-                  reloadFunction: (_) => context.read<ExperienceLogWatcherBloc>().add(
+                  reloadFunction: () => context.read<ExperienceLogWatcherBloc>().add(
                         const ExperienceLogWatcherEvent.watchExperiencesLogStarted(),
                       ),
                 );

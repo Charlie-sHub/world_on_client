@@ -9,8 +9,8 @@ class ItemToBuyCard extends StatelessWidget {
   final Item item;
 
   const ItemToBuyCard({
-    Key key,
-    @required this.item,
+    Key? key,
+    required this.item,
   }) : super(key: key);
 
   @override
@@ -18,8 +18,9 @@ class ItemToBuyCard extends StatelessWidget {
     return Card(
       elevation: 5,
       color: Colors.white,
-      shape: const RoundedRectangleBorder(
-        side: BorderSide(
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(3),
+        side: const BorderSide(
           color: WorldOnColors.primary,
         ),
       ),

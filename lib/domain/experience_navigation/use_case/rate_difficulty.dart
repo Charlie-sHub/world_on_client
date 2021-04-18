@@ -1,5 +1,4 @@
 import 'package:dartz/dartz.dart';
-import 'package:flutter/foundation.dart';
 import 'package:injectable/injectable.dart';
 import 'package:worldon/core/error/failure.dart';
 import 'package:worldon/domain/core/use_case/use_case.dart';
@@ -27,7 +26,7 @@ class Params {
   final UniqueId experienceId;
 
   Params({
-    @required this.difficulty,
-    @required this.experienceId,
+    required this.difficulty,
+    required this.experienceId,
   });
 }

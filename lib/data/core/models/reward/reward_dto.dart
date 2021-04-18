@@ -10,14 +10,14 @@ part 'reward_dto.freezed.dart';
 part 'reward_dto.g.dart';
 
 @freezed
-abstract class RewardDto implements _$RewardDto {
+class RewardDto with _$RewardDto {
   const RewardDto._();
 
   const factory RewardDto({
-    @required String id,
-    @required String name,
-    @required String description,
-    @required String imageURL,
+    required String id,
+    required String name,
+    required String description,
+    required String imageURL,
   }) = _RewardDto;
 
   factory RewardDto.fromDomain(Reward reward) => RewardDto(
@@ -38,7 +38,7 @@ abstract class RewardDto implements _$RewardDto {
   factory RewardDto.fromJson(Map<String, dynamic> json) => _$RewardDtoFromJson(json);
 
   factory RewardDto.fromFirestore(DocumentSnapshot document) => RewardDto.fromJson(
-        document.data(),
+        document.data()!,
       ).copyWith(
         id: document.id,
       );

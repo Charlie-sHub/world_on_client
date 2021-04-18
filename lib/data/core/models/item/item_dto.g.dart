@@ -11,7 +11,7 @@ _$_Item _$_$_ItemFromJson(Map<String, dynamic> json) {
     id: json['id'] as String,
     name: json['name'] as String,
     description: json['description'] as String,
-    code: _$enumDecodeNullable(_$ItemCodeEnumMap, json['code']),
+    code: _$enumDecode(_$ItemCodeEnumMap, json['code']),
     value: json['value'] as int,
     timeLimitInDays: json['timeLimitInDays'] as int,
     imageURL: json['imageURL'] as String,
@@ -19,8 +19,7 @@ _$_Item _$_$_ItemFromJson(Map<String, dynamic> json) {
   );
 }
 
-Map<String, dynamic> _$_$_ItemToJson(_$_Item instance) =>
-  <String, dynamic>{
+Map<String, dynamic> _$_$_ItemToJson(_$_Item instance) => <String, dynamic>{
       'id': instance.id,
       'name': instance.name,
       'description': instance.description,
@@ -31,34 +30,30 @@ Map<String, dynamic> _$_$_ItemToJson(_$_Item instance) =>
       'boughtDate': const ServerTimestampConverter().toJson(instance.boughtDate),
     };
 
-T _$enumDecode<T>(
-  Map<T, dynamic> enumValues,
-  dynamic source, {
-  T unknownValue,
+K _$enumDecode<K, V>(
+  Map<K, V> enumValues,
+  Object? source, {
+  K? unknownValue,
 }) {
   if (source == null) {
-    throw ArgumentError('A value must be provided. Supported values: '
-        '${enumValues.values.join(', ')}');
+    throw ArgumentError(
+      'A value must be provided. Supported values: '
+      '${enumValues.values.join(', ')}',
+    );
   }
 
-  final value = enumValues.entries.singleWhere((e) => e.value == source, orElse: () => null)?.key;
-
-  if (value == null && unknownValue == null) {
-    throw ArgumentError('`$source` is not one of the supported values: '
-        '${enumValues.values.join(', ')}');
-  }
-  return value ?? unknownValue;
-}
-
-T _$enumDecodeNullable<T>(
-  Map<T, dynamic> enumValues,
-  dynamic source, {
-  T unknownValue,
-}) {
-  if (source == null) {
-    return null;
-  }
-  return _$enumDecode<T>(enumValues, source, unknownValue: unknownValue);
+  return enumValues.entries.singleWhere(
+    (e) => e.value == source,
+    orElse: () {
+      if (unknownValue == null) {
+        throw ArgumentError(
+          '`$source` is not one of the supported values: '
+          '${enumValues.values.join(', ')}',
+        );
+      }
+      return MapEntry(unknownValue, enumValues.values.first);
+    },
+  ).key;
 }
 
 const _$ItemCodeEnumMap = {

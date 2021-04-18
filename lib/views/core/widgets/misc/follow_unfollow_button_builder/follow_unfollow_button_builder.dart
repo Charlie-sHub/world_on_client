@@ -11,8 +11,8 @@ import '../../../../../injection.dart';
 
 class FollowUnfollowButtonBuilder extends StatelessWidget {
   const FollowUnfollowButtonBuilder({
-    Key key,
-    @required this.user,
+    Key? key,
+    required this.user,
   }) : super(key: key);
 
   final User user;
@@ -75,6 +75,6 @@ class FollowUnfollowButtonBuilder extends StatelessWidget {
             orElse: () => S.of(context).unknownError,
           ),
         ).show(context),
-        orElse: () => null,
+        orElse: () {},
       );
 }

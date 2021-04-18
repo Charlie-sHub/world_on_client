@@ -1,7 +1,7 @@
 part of 'experience_management_actor_bloc.dart';
 
 @freezed
-abstract class ExperienceManagementActorState with _$ExperienceManagementActorState {
+class ExperienceManagementActorState with _$ExperienceManagementActorState {
   const factory ExperienceManagementActorState.initial() = _Initial;
 
   const factory ExperienceManagementActorState.isCreator() = _IsCreator;

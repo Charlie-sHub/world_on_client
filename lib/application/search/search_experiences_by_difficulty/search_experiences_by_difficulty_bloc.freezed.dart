@@ -1,5 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides
 
 part of 'search_experiences_by_difficulty_bloc.dart';
 
@@ -9,20 +9,20 @@ part of 'search_experiences_by_difficulty_bloc.dart';
 
 T _$identity<T>(T value) => value;
 
+final _privateConstructorUsedError = UnsupportedError(
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+
 /// @nodoc
 class _$SearchExperiencesByDifficultyEventTearOff {
   const _$SearchExperiencesByDifficultyEventTearOff();
 
-// ignore: unused_element
   _Submitted submitted(int difficulty) {
     return _Submitted(
       difficulty,
     );
   }
 
-// ignore: unused_element
-  _ResultsReceived resultsReceived(
-      Either<Failure, KtList<Experience>> failureOrExperiences) {
+  _ResultsReceived resultsReceived(Either<Failure, KtList<Experience>> failureOrExperiences) {
     return _ResultsReceived(
       failureOrExperiences,
     );
@@ -30,50 +30,49 @@ class _$SearchExperiencesByDifficultyEventTearOff {
 }
 
 /// @nodoc
-// ignore: unused_element
-const $SearchExperiencesByDifficultyEvent =
-    _$SearchExperiencesByDifficultyEventTearOff();
+const $SearchExperiencesByDifficultyEvent = _$SearchExperiencesByDifficultyEventTearOff();
 
 /// @nodoc
 mixin _$SearchExperiencesByDifficultyEvent {
   @optionalTypeArgs
-  TResult when<TResult extends Object>({
-    @required TResult submitted(int difficulty),
-    @required
-        TResult resultsReceived(
-            Either<Failure, KtList<Experience>> failureOrExperiences),
-  });
+  TResult when<TResult extends Object?>({
+    required TResult Function(int difficulty) submitted,
+    required TResult Function(Either<Failure, KtList<Experience>> failureOrExperiences) resultsReceived,
+  }) =>
+      throw _privateConstructorUsedError;
+
   @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object>({
-    TResult submitted(int difficulty),
-    TResult resultsReceived(
-        Either<Failure, KtList<Experience>> failureOrExperiences),
-    @required TResult orElse(),
-  });
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(int difficulty)? submitted,
+    TResult Function(Either<Failure, KtList<Experience>> failureOrExperiences)? resultsReceived,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
+
   @optionalTypeArgs
-  TResult map<TResult extends Object>({
-    @required TResult submitted(_Submitted value),
-    @required TResult resultsReceived(_ResultsReceived value),
-  });
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Submitted value) submitted,
+    required TResult Function(_ResultsReceived value) resultsReceived,
+  }) =>
+      throw _privateConstructorUsedError;
+
   @optionalTypeArgs
-  TResult maybeMap<TResult extends Object>({
-    TResult submitted(_Submitted value),
-    TResult resultsReceived(_ResultsReceived value),
-    @required TResult orElse(),
-  });
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Submitted value)? submitted,
+    TResult Function(_ResultsReceived value)? resultsReceived,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $SearchExperiencesByDifficultyEventCopyWith<$Res> {
-  factory $SearchExperiencesByDifficultyEventCopyWith(
-          SearchExperiencesByDifficultyEvent value,
-          $Res Function(SearchExperiencesByDifficultyEvent) then) =
+  factory $SearchExperiencesByDifficultyEventCopyWith(SearchExperiencesByDifficultyEvent value, $Res Function(SearchExperiencesByDifficultyEvent) then) =
       _$SearchExperiencesByDifficultyEventCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class _$SearchExperiencesByDifficultyEventCopyWithImpl<$Res>
-    implements $SearchExperiencesByDifficultyEventCopyWith<$Res> {
+class _$SearchExperiencesByDifficultyEventCopyWithImpl<$Res> implements $SearchExperiencesByDifficultyEventCopyWith<$Res> {
   _$SearchExperiencesByDifficultyEventCopyWithImpl(this._value, this._then);
 
   final SearchExperiencesByDifficultyEvent _value;
@@ -83,35 +82,33 @@ class _$SearchExperiencesByDifficultyEventCopyWithImpl<$Res>
 
 /// @nodoc
 abstract class _$SubmittedCopyWith<$Res> {
-  factory _$SubmittedCopyWith(
-          _Submitted value, $Res Function(_Submitted) then) =
-      __$SubmittedCopyWithImpl<$Res>;
+  factory _$SubmittedCopyWith(_Submitted value, $Res Function(_Submitted) then) = __$SubmittedCopyWithImpl<$Res>;
   $Res call({int difficulty});
 }
 
 /// @nodoc
-class __$SubmittedCopyWithImpl<$Res>
-    extends _$SearchExperiencesByDifficultyEventCopyWithImpl<$Res>
-    implements _$SubmittedCopyWith<$Res> {
-  __$SubmittedCopyWithImpl(_Submitted _value, $Res Function(_Submitted) _then)
-      : super(_value, (v) => _then(v as _Submitted));
+class __$SubmittedCopyWithImpl<$Res> extends _$SearchExperiencesByDifficultyEventCopyWithImpl<$Res> implements _$SubmittedCopyWith<$Res> {
+  __$SubmittedCopyWithImpl(_Submitted _value, $Res Function(_Submitted) _then) : super(_value, (v) => _then(v as _Submitted));
 
   @override
   _Submitted get _value => super._value as _Submitted;
 
   @override
   $Res call({
-    Object difficulty = freezed,
+    Object? difficulty = freezed,
   }) {
     return _then(_Submitted(
-      difficulty == freezed ? _value.difficulty : difficulty as int,
+      difficulty == freezed
+          ? _value.difficulty
+          : difficulty // ignore: cast_nullable_to_non_nullable
+              as int,
     ));
   }
 }
 
 /// @nodoc
 class _$_Submitted implements _Submitted {
-  const _$_Submitted(this.difficulty) : assert(difficulty != null);
+  const _$_Submitted(this.difficulty);
 
   @override
   final int difficulty;
@@ -123,44 +120,32 @@ class _$_Submitted implements _Submitted {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) ||
-        (other is _Submitted &&
-            (identical(other.difficulty, difficulty) ||
-                const DeepCollectionEquality()
-                    .equals(other.difficulty, difficulty)));
+    return identical(this, other) || (other is _Submitted && (identical(other.difficulty, difficulty) || const DeepCollectionEquality().equals(other.difficulty, difficulty)));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(difficulty);
+  int get hashCode => runtimeType.hashCode ^ const DeepCollectionEquality().hash(difficulty);
 
   @JsonKey(ignore: true)
   @override
-  _$SubmittedCopyWith<_Submitted> get copyWith =>
-      __$SubmittedCopyWithImpl<_Submitted>(this, _$identity);
+  _$SubmittedCopyWith<_Submitted> get copyWith => __$SubmittedCopyWithImpl<_Submitted>(this, _$identity);
 
   @override
   @optionalTypeArgs
-  TResult when<TResult extends Object>({
-    @required TResult submitted(int difficulty),
-    @required
-        TResult resultsReceived(
-            Either<Failure, KtList<Experience>> failureOrExperiences),
+  TResult when<TResult extends Object?>({
+    required TResult Function(int difficulty) submitted,
+    required TResult Function(Either<Failure, KtList<Experience>> failureOrExperiences) resultsReceived,
   }) {
-    assert(submitted != null);
-    assert(resultsReceived != null);
     return submitted(difficulty);
   }
 
   @override
   @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object>({
-    TResult submitted(int difficulty),
-    TResult resultsReceived(
-        Either<Failure, KtList<Experience>> failureOrExperiences),
-    @required TResult orElse(),
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(int difficulty)? submitted,
+    TResult Function(Either<Failure, KtList<Experience>> failureOrExperiences)? resultsReceived,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (submitted != null) {
       return submitted(difficulty);
     }
@@ -169,23 +154,20 @@ class _$_Submitted implements _Submitted {
 
   @override
   @optionalTypeArgs
-  TResult map<TResult extends Object>({
-    @required TResult submitted(_Submitted value),
-    @required TResult resultsReceived(_ResultsReceived value),
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Submitted value) submitted,
+    required TResult Function(_ResultsReceived value) resultsReceived,
   }) {
-    assert(submitted != null);
-    assert(resultsReceived != null);
     return submitted(this);
   }
 
   @override
   @optionalTypeArgs
-  TResult maybeMap<TResult extends Object>({
-    TResult submitted(_Submitted value),
-    TResult resultsReceived(_ResultsReceived value),
-    @required TResult orElse(),
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Submitted value)? submitted,
+    TResult Function(_ResultsReceived value)? resultsReceived,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (submitted != null) {
       return submitted(this);
     }
@@ -196,46 +178,41 @@ class _$_Submitted implements _Submitted {
 abstract class _Submitted implements SearchExperiencesByDifficultyEvent {
   const factory _Submitted(int difficulty) = _$_Submitted;
 
-  int get difficulty;
+  int get difficulty => throw _privateConstructorUsedError;
+
   @JsonKey(ignore: true)
-  _$SubmittedCopyWith<_Submitted> get copyWith;
+  _$SubmittedCopyWith<_Submitted> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class _$ResultsReceivedCopyWith<$Res> {
-  factory _$ResultsReceivedCopyWith(
-          _ResultsReceived value, $Res Function(_ResultsReceived) then) =
-      __$ResultsReceivedCopyWithImpl<$Res>;
+  factory _$ResultsReceivedCopyWith(_ResultsReceived value, $Res Function(_ResultsReceived) then) = __$ResultsReceivedCopyWithImpl<$Res>;
   $Res call({Either<Failure, KtList<Experience>> failureOrExperiences});
 }
 
 /// @nodoc
-class __$ResultsReceivedCopyWithImpl<$Res>
-    extends _$SearchExperiencesByDifficultyEventCopyWithImpl<$Res>
-    implements _$ResultsReceivedCopyWith<$Res> {
-  __$ResultsReceivedCopyWithImpl(
-      _ResultsReceived _value, $Res Function(_ResultsReceived) _then)
-      : super(_value, (v) => _then(v as _ResultsReceived));
+class __$ResultsReceivedCopyWithImpl<$Res> extends _$SearchExperiencesByDifficultyEventCopyWithImpl<$Res> implements _$ResultsReceivedCopyWith<$Res> {
+  __$ResultsReceivedCopyWithImpl(_ResultsReceived _value, $Res Function(_ResultsReceived) _then) : super(_value, (v) => _then(v as _ResultsReceived));
 
   @override
   _ResultsReceived get _value => super._value as _ResultsReceived;
 
   @override
   $Res call({
-    Object failureOrExperiences = freezed,
+    Object? failureOrExperiences = freezed,
   }) {
     return _then(_ResultsReceived(
       failureOrExperiences == freezed
           ? _value.failureOrExperiences
-          : failureOrExperiences as Either<Failure, KtList<Experience>>,
+          : failureOrExperiences // ignore: cast_nullable_to_non_nullable
+              as Either<Failure, KtList<Experience>>,
     ));
   }
 }
 
 /// @nodoc
 class _$_ResultsReceived implements _ResultsReceived {
-  const _$_ResultsReceived(this.failureOrExperiences)
-      : assert(failureOrExperiences != null);
+  const _$_ResultsReceived(this.failureOrExperiences);
 
   @override
   final Either<Failure, KtList<Experience>> failureOrExperiences;
@@ -248,44 +225,32 @@ class _$_ResultsReceived implements _ResultsReceived {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _ResultsReceived &&
-            (identical(other.failureOrExperiences, failureOrExperiences) ||
-                const DeepCollectionEquality()
-                    .equals(other.failureOrExperiences, failureOrExperiences)));
+        (other is _ResultsReceived && (identical(other.failureOrExperiences, failureOrExperiences) || const DeepCollectionEquality().equals(other.failureOrExperiences, failureOrExperiences)));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(failureOrExperiences);
+  int get hashCode => runtimeType.hashCode ^ const DeepCollectionEquality().hash(failureOrExperiences);
 
   @JsonKey(ignore: true)
   @override
-  _$ResultsReceivedCopyWith<_ResultsReceived> get copyWith =>
-      __$ResultsReceivedCopyWithImpl<_ResultsReceived>(this, _$identity);
+  _$ResultsReceivedCopyWith<_ResultsReceived> get copyWith => __$ResultsReceivedCopyWithImpl<_ResultsReceived>(this, _$identity);
 
   @override
   @optionalTypeArgs
-  TResult when<TResult extends Object>({
-    @required TResult submitted(int difficulty),
-    @required
-        TResult resultsReceived(
-            Either<Failure, KtList<Experience>> failureOrExperiences),
+  TResult when<TResult extends Object?>({
+    required TResult Function(int difficulty) submitted,
+    required TResult Function(Either<Failure, KtList<Experience>> failureOrExperiences) resultsReceived,
   }) {
-    assert(submitted != null);
-    assert(resultsReceived != null);
     return resultsReceived(failureOrExperiences);
   }
 
   @override
   @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object>({
-    TResult submitted(int difficulty),
-    TResult resultsReceived(
-        Either<Failure, KtList<Experience>> failureOrExperiences),
-    @required TResult orElse(),
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(int difficulty)? submitted,
+    TResult Function(Either<Failure, KtList<Experience>> failureOrExperiences)? resultsReceived,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (resultsReceived != null) {
       return resultsReceived(failureOrExperiences);
     }
@@ -294,23 +259,20 @@ class _$_ResultsReceived implements _ResultsReceived {
 
   @override
   @optionalTypeArgs
-  TResult map<TResult extends Object>({
-    @required TResult submitted(_Submitted value),
-    @required TResult resultsReceived(_ResultsReceived value),
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Submitted value) submitted,
+    required TResult Function(_ResultsReceived value) resultsReceived,
   }) {
-    assert(submitted != null);
-    assert(resultsReceived != null);
     return resultsReceived(this);
   }
 
   @override
   @optionalTypeArgs
-  TResult maybeMap<TResult extends Object>({
-    TResult submitted(_Submitted value),
-    TResult resultsReceived(_ResultsReceived value),
-    @required TResult orElse(),
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Submitted value)? submitted,
+    TResult Function(_ResultsReceived value)? resultsReceived,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (resultsReceived != null) {
       return resultsReceived(this);
     }
@@ -319,44 +281,38 @@ class _$_ResultsReceived implements _ResultsReceived {
 }
 
 abstract class _ResultsReceived implements SearchExperiencesByDifficultyEvent {
-  const factory _ResultsReceived(
-          Either<Failure, KtList<Experience>> failureOrExperiences) =
-      _$_ResultsReceived;
+  const factory _ResultsReceived(Either<Failure, KtList<Experience>> failureOrExperiences) = _$_ResultsReceived;
 
-  Either<Failure, KtList<Experience>> get failureOrExperiences;
+  Either<Failure, KtList<Experience>> get failureOrExperiences => throw _privateConstructorUsedError;
+
   @JsonKey(ignore: true)
-  _$ResultsReceivedCopyWith<_ResultsReceived> get copyWith;
+  _$ResultsReceivedCopyWith<_ResultsReceived> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 class _$SearchExperiencesByDifficultyStateTearOff {
   const _$SearchExperiencesByDifficultyStateTearOff();
 
-// ignore: unused_element
   _Initial initial() {
     return const _Initial();
   }
 
-// ignore: unused_element
   _SearchInProgress searchInProgress() {
     return const _SearchInProgress();
   }
 
-// ignore: unused_element
   _SearchSuccess searchSuccess(KtList<Experience> experiencesFound) {
     return _SearchSuccess(
       experiencesFound,
     );
   }
 
-// ignore: unused_element
   _SearchFailure searchFailure(Failure<dynamic> failure) {
     return _SearchFailure(
       failure,
     );
   }
 
-// ignore: unused_element
   _ValueFailure valueFailure(ValueFailure<int> failure) {
     return _ValueFailure(
       failure,
@@ -365,59 +321,61 @@ class _$SearchExperiencesByDifficultyStateTearOff {
 }
 
 /// @nodoc
-// ignore: unused_element
-const $SearchExperiencesByDifficultyState =
-    _$SearchExperiencesByDifficultyStateTearOff();
+const $SearchExperiencesByDifficultyState = _$SearchExperiencesByDifficultyStateTearOff();
 
 /// @nodoc
 mixin _$SearchExperiencesByDifficultyState {
   @optionalTypeArgs
-  TResult when<TResult extends Object>({
-    @required TResult initial(),
-    @required TResult searchInProgress(),
-    @required TResult searchSuccess(KtList<Experience> experiencesFound),
-    @required TResult searchFailure(Failure<dynamic> failure),
-    @required TResult valueFailure(ValueFailure<int> failure),
-  });
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() searchInProgress,
+    required TResult Function(KtList<Experience> experiencesFound) searchSuccess,
+    required TResult Function(Failure<dynamic> failure) searchFailure,
+    required TResult Function(ValueFailure<int> failure) valueFailure,
+  }) =>
+      throw _privateConstructorUsedError;
+
   @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object>({
-    TResult initial(),
-    TResult searchInProgress(),
-    TResult searchSuccess(KtList<Experience> experiencesFound),
-    TResult searchFailure(Failure<dynamic> failure),
-    TResult valueFailure(ValueFailure<int> failure),
-    @required TResult orElse(),
-  });
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? searchInProgress,
+    TResult Function(KtList<Experience> experiencesFound)? searchSuccess,
+    TResult Function(Failure<dynamic> failure)? searchFailure,
+    TResult Function(ValueFailure<int> failure)? valueFailure,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
+
   @optionalTypeArgs
-  TResult map<TResult extends Object>({
-    @required TResult initial(_Initial value),
-    @required TResult searchInProgress(_SearchInProgress value),
-    @required TResult searchSuccess(_SearchSuccess value),
-    @required TResult searchFailure(_SearchFailure value),
-    @required TResult valueFailure(_ValueFailure value),
-  });
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial value) initial,
+    required TResult Function(_SearchInProgress value) searchInProgress,
+    required TResult Function(_SearchSuccess value) searchSuccess,
+    required TResult Function(_SearchFailure value) searchFailure,
+    required TResult Function(_ValueFailure value) valueFailure,
+  }) =>
+      throw _privateConstructorUsedError;
+
   @optionalTypeArgs
-  TResult maybeMap<TResult extends Object>({
-    TResult initial(_Initial value),
-    TResult searchInProgress(_SearchInProgress value),
-    TResult searchSuccess(_SearchSuccess value),
-    TResult searchFailure(_SearchFailure value),
-    TResult valueFailure(_ValueFailure value),
-    @required TResult orElse(),
-  });
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_SearchInProgress value)? searchInProgress,
+    TResult Function(_SearchSuccess value)? searchSuccess,
+    TResult Function(_SearchFailure value)? searchFailure,
+    TResult Function(_ValueFailure value)? valueFailure,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $SearchExperiencesByDifficultyStateCopyWith<$Res> {
-  factory $SearchExperiencesByDifficultyStateCopyWith(
-          SearchExperiencesByDifficultyState value,
-          $Res Function(SearchExperiencesByDifficultyState) then) =
+  factory $SearchExperiencesByDifficultyStateCopyWith(SearchExperiencesByDifficultyState value, $Res Function(SearchExperiencesByDifficultyState) then) =
       _$SearchExperiencesByDifficultyStateCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class _$SearchExperiencesByDifficultyStateCopyWithImpl<$Res>
-    implements $SearchExperiencesByDifficultyStateCopyWith<$Res> {
+class _$SearchExperiencesByDifficultyStateCopyWithImpl<$Res> implements $SearchExperiencesByDifficultyStateCopyWith<$Res> {
   _$SearchExperiencesByDifficultyStateCopyWithImpl(this._value, this._then);
 
   final SearchExperiencesByDifficultyState _value;
@@ -427,16 +385,12 @@ class _$SearchExperiencesByDifficultyStateCopyWithImpl<$Res>
 
 /// @nodoc
 abstract class _$InitialCopyWith<$Res> {
-  factory _$InitialCopyWith(_Initial value, $Res Function(_Initial) then) =
-      __$InitialCopyWithImpl<$Res>;
+  factory _$InitialCopyWith(_Initial value, $Res Function(_Initial) then) = __$InitialCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$InitialCopyWithImpl<$Res>
-    extends _$SearchExperiencesByDifficultyStateCopyWithImpl<$Res>
-    implements _$InitialCopyWith<$Res> {
-  __$InitialCopyWithImpl(_Initial _value, $Res Function(_Initial) _then)
-      : super(_value, (v) => _then(v as _Initial));
+class __$InitialCopyWithImpl<$Res> extends _$SearchExperiencesByDifficultyStateCopyWithImpl<$Res> implements _$InitialCopyWith<$Res> {
+  __$InitialCopyWithImpl(_Initial _value, $Res Function(_Initial) _then) : super(_value, (v) => _then(v as _Initial));
 
   @override
   _Initial get _value => super._value as _Initial;
@@ -461,32 +415,26 @@ class _$_Initial implements _Initial {
 
   @override
   @optionalTypeArgs
-  TResult when<TResult extends Object>({
-    @required TResult initial(),
-    @required TResult searchInProgress(),
-    @required TResult searchSuccess(KtList<Experience> experiencesFound),
-    @required TResult searchFailure(Failure<dynamic> failure),
-    @required TResult valueFailure(ValueFailure<int> failure),
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() searchInProgress,
+    required TResult Function(KtList<Experience> experiencesFound) searchSuccess,
+    required TResult Function(Failure<dynamic> failure) searchFailure,
+    required TResult Function(ValueFailure<int> failure) valueFailure,
   }) {
-    assert(initial != null);
-    assert(searchInProgress != null);
-    assert(searchSuccess != null);
-    assert(searchFailure != null);
-    assert(valueFailure != null);
     return initial();
   }
 
   @override
   @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object>({
-    TResult initial(),
-    TResult searchInProgress(),
-    TResult searchSuccess(KtList<Experience> experiencesFound),
-    TResult searchFailure(Failure<dynamic> failure),
-    TResult valueFailure(ValueFailure<int> failure),
-    @required TResult orElse(),
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? searchInProgress,
+    TResult Function(KtList<Experience> experiencesFound)? searchSuccess,
+    TResult Function(Failure<dynamic> failure)? searchFailure,
+    TResult Function(ValueFailure<int> failure)? valueFailure,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (initial != null) {
       return initial();
     }
@@ -495,32 +443,26 @@ class _$_Initial implements _Initial {
 
   @override
   @optionalTypeArgs
-  TResult map<TResult extends Object>({
-    @required TResult initial(_Initial value),
-    @required TResult searchInProgress(_SearchInProgress value),
-    @required TResult searchSuccess(_SearchSuccess value),
-    @required TResult searchFailure(_SearchFailure value),
-    @required TResult valueFailure(_ValueFailure value),
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial value) initial,
+    required TResult Function(_SearchInProgress value) searchInProgress,
+    required TResult Function(_SearchSuccess value) searchSuccess,
+    required TResult Function(_SearchFailure value) searchFailure,
+    required TResult Function(_ValueFailure value) valueFailure,
   }) {
-    assert(initial != null);
-    assert(searchInProgress != null);
-    assert(searchSuccess != null);
-    assert(searchFailure != null);
-    assert(valueFailure != null);
     return initial(this);
   }
 
   @override
   @optionalTypeArgs
-  TResult maybeMap<TResult extends Object>({
-    TResult initial(_Initial value),
-    TResult searchInProgress(_SearchInProgress value),
-    TResult searchSuccess(_SearchSuccess value),
-    TResult searchFailure(_SearchFailure value),
-    TResult valueFailure(_ValueFailure value),
-    @required TResult orElse(),
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_SearchInProgress value)? searchInProgress,
+    TResult Function(_SearchSuccess value)? searchSuccess,
+    TResult Function(_SearchFailure value)? searchFailure,
+    TResult Function(_ValueFailure value)? valueFailure,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (initial != null) {
       return initial(this);
     }
@@ -534,18 +476,12 @@ abstract class _Initial implements SearchExperiencesByDifficultyState {
 
 /// @nodoc
 abstract class _$SearchInProgressCopyWith<$Res> {
-  factory _$SearchInProgressCopyWith(
-          _SearchInProgress value, $Res Function(_SearchInProgress) then) =
-      __$SearchInProgressCopyWithImpl<$Res>;
+  factory _$SearchInProgressCopyWith(_SearchInProgress value, $Res Function(_SearchInProgress) then) = __$SearchInProgressCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$SearchInProgressCopyWithImpl<$Res>
-    extends _$SearchExperiencesByDifficultyStateCopyWithImpl<$Res>
-    implements _$SearchInProgressCopyWith<$Res> {
-  __$SearchInProgressCopyWithImpl(
-      _SearchInProgress _value, $Res Function(_SearchInProgress) _then)
-      : super(_value, (v) => _then(v as _SearchInProgress));
+class __$SearchInProgressCopyWithImpl<$Res> extends _$SearchExperiencesByDifficultyStateCopyWithImpl<$Res> implements _$SearchInProgressCopyWith<$Res> {
+  __$SearchInProgressCopyWithImpl(_SearchInProgress _value, $Res Function(_SearchInProgress) _then) : super(_value, (v) => _then(v as _SearchInProgress));
 
   @override
   _SearchInProgress get _value => super._value as _SearchInProgress;
@@ -570,32 +506,26 @@ class _$_SearchInProgress implements _SearchInProgress {
 
   @override
   @optionalTypeArgs
-  TResult when<TResult extends Object>({
-    @required TResult initial(),
-    @required TResult searchInProgress(),
-    @required TResult searchSuccess(KtList<Experience> experiencesFound),
-    @required TResult searchFailure(Failure<dynamic> failure),
-    @required TResult valueFailure(ValueFailure<int> failure),
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() searchInProgress,
+    required TResult Function(KtList<Experience> experiencesFound) searchSuccess,
+    required TResult Function(Failure<dynamic> failure) searchFailure,
+    required TResult Function(ValueFailure<int> failure) valueFailure,
   }) {
-    assert(initial != null);
-    assert(searchInProgress != null);
-    assert(searchSuccess != null);
-    assert(searchFailure != null);
-    assert(valueFailure != null);
     return searchInProgress();
   }
 
   @override
   @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object>({
-    TResult initial(),
-    TResult searchInProgress(),
-    TResult searchSuccess(KtList<Experience> experiencesFound),
-    TResult searchFailure(Failure<dynamic> failure),
-    TResult valueFailure(ValueFailure<int> failure),
-    @required TResult orElse(),
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? searchInProgress,
+    TResult Function(KtList<Experience> experiencesFound)? searchSuccess,
+    TResult Function(Failure<dynamic> failure)? searchFailure,
+    TResult Function(ValueFailure<int> failure)? valueFailure,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (searchInProgress != null) {
       return searchInProgress();
     }
@@ -604,32 +534,26 @@ class _$_SearchInProgress implements _SearchInProgress {
 
   @override
   @optionalTypeArgs
-  TResult map<TResult extends Object>({
-    @required TResult initial(_Initial value),
-    @required TResult searchInProgress(_SearchInProgress value),
-    @required TResult searchSuccess(_SearchSuccess value),
-    @required TResult searchFailure(_SearchFailure value),
-    @required TResult valueFailure(_ValueFailure value),
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial value) initial,
+    required TResult Function(_SearchInProgress value) searchInProgress,
+    required TResult Function(_SearchSuccess value) searchSuccess,
+    required TResult Function(_SearchFailure value) searchFailure,
+    required TResult Function(_ValueFailure value) valueFailure,
   }) {
-    assert(initial != null);
-    assert(searchInProgress != null);
-    assert(searchSuccess != null);
-    assert(searchFailure != null);
-    assert(valueFailure != null);
     return searchInProgress(this);
   }
 
   @override
   @optionalTypeArgs
-  TResult maybeMap<TResult extends Object>({
-    TResult initial(_Initial value),
-    TResult searchInProgress(_SearchInProgress value),
-    TResult searchSuccess(_SearchSuccess value),
-    TResult searchFailure(_SearchFailure value),
-    TResult valueFailure(_ValueFailure value),
-    @required TResult orElse(),
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_SearchInProgress value)? searchInProgress,
+    TResult Function(_SearchSuccess value)? searchSuccess,
+    TResult Function(_SearchFailure value)? searchFailure,
+    TResult Function(_ValueFailure value)? valueFailure,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (searchInProgress != null) {
       return searchInProgress(this);
     }
@@ -643,39 +567,33 @@ abstract class _SearchInProgress implements SearchExperiencesByDifficultyState {
 
 /// @nodoc
 abstract class _$SearchSuccessCopyWith<$Res> {
-  factory _$SearchSuccessCopyWith(
-          _SearchSuccess value, $Res Function(_SearchSuccess) then) =
-      __$SearchSuccessCopyWithImpl<$Res>;
+  factory _$SearchSuccessCopyWith(_SearchSuccess value, $Res Function(_SearchSuccess) then) = __$SearchSuccessCopyWithImpl<$Res>;
   $Res call({KtList<Experience> experiencesFound});
 }
 
 /// @nodoc
-class __$SearchSuccessCopyWithImpl<$Res>
-    extends _$SearchExperiencesByDifficultyStateCopyWithImpl<$Res>
-    implements _$SearchSuccessCopyWith<$Res> {
-  __$SearchSuccessCopyWithImpl(
-      _SearchSuccess _value, $Res Function(_SearchSuccess) _then)
-      : super(_value, (v) => _then(v as _SearchSuccess));
+class __$SearchSuccessCopyWithImpl<$Res> extends _$SearchExperiencesByDifficultyStateCopyWithImpl<$Res> implements _$SearchSuccessCopyWith<$Res> {
+  __$SearchSuccessCopyWithImpl(_SearchSuccess _value, $Res Function(_SearchSuccess) _then) : super(_value, (v) => _then(v as _SearchSuccess));
 
   @override
   _SearchSuccess get _value => super._value as _SearchSuccess;
 
   @override
   $Res call({
-    Object experiencesFound = freezed,
+    Object? experiencesFound = freezed,
   }) {
     return _then(_SearchSuccess(
       experiencesFound == freezed
           ? _value.experiencesFound
-          : experiencesFound as KtList<Experience>,
+          : experiencesFound // ignore: cast_nullable_to_non_nullable
+              as KtList<Experience>,
     ));
   }
 }
 
 /// @nodoc
 class _$_SearchSuccess implements _SearchSuccess {
-  const _$_SearchSuccess(this.experiencesFound)
-      : assert(experiencesFound != null);
+  const _$_SearchSuccess(this.experiencesFound);
 
   @override
   final KtList<Experience> experiencesFound;
@@ -688,50 +606,38 @@ class _$_SearchSuccess implements _SearchSuccess {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _SearchSuccess &&
-            (identical(other.experiencesFound, experiencesFound) ||
-                const DeepCollectionEquality()
-                    .equals(other.experiencesFound, experiencesFound)));
+        (other is _SearchSuccess && (identical(other.experiencesFound, experiencesFound) || const DeepCollectionEquality().equals(other.experiencesFound, experiencesFound)));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(experiencesFound);
+  int get hashCode => runtimeType.hashCode ^ const DeepCollectionEquality().hash(experiencesFound);
 
   @JsonKey(ignore: true)
   @override
-  _$SearchSuccessCopyWith<_SearchSuccess> get copyWith =>
-      __$SearchSuccessCopyWithImpl<_SearchSuccess>(this, _$identity);
+  _$SearchSuccessCopyWith<_SearchSuccess> get copyWith => __$SearchSuccessCopyWithImpl<_SearchSuccess>(this, _$identity);
 
   @override
   @optionalTypeArgs
-  TResult when<TResult extends Object>({
-    @required TResult initial(),
-    @required TResult searchInProgress(),
-    @required TResult searchSuccess(KtList<Experience> experiencesFound),
-    @required TResult searchFailure(Failure<dynamic> failure),
-    @required TResult valueFailure(ValueFailure<int> failure),
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() searchInProgress,
+    required TResult Function(KtList<Experience> experiencesFound) searchSuccess,
+    required TResult Function(Failure<dynamic> failure) searchFailure,
+    required TResult Function(ValueFailure<int> failure) valueFailure,
   }) {
-    assert(initial != null);
-    assert(searchInProgress != null);
-    assert(searchSuccess != null);
-    assert(searchFailure != null);
-    assert(valueFailure != null);
     return searchSuccess(experiencesFound);
   }
 
   @override
   @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object>({
-    TResult initial(),
-    TResult searchInProgress(),
-    TResult searchSuccess(KtList<Experience> experiencesFound),
-    TResult searchFailure(Failure<dynamic> failure),
-    TResult valueFailure(ValueFailure<int> failure),
-    @required TResult orElse(),
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? searchInProgress,
+    TResult Function(KtList<Experience> experiencesFound)? searchSuccess,
+    TResult Function(Failure<dynamic> failure)? searchFailure,
+    TResult Function(ValueFailure<int> failure)? valueFailure,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (searchSuccess != null) {
       return searchSuccess(experiencesFound);
     }
@@ -740,32 +646,26 @@ class _$_SearchSuccess implements _SearchSuccess {
 
   @override
   @optionalTypeArgs
-  TResult map<TResult extends Object>({
-    @required TResult initial(_Initial value),
-    @required TResult searchInProgress(_SearchInProgress value),
-    @required TResult searchSuccess(_SearchSuccess value),
-    @required TResult searchFailure(_SearchFailure value),
-    @required TResult valueFailure(_ValueFailure value),
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial value) initial,
+    required TResult Function(_SearchInProgress value) searchInProgress,
+    required TResult Function(_SearchSuccess value) searchSuccess,
+    required TResult Function(_SearchFailure value) searchFailure,
+    required TResult Function(_ValueFailure value) valueFailure,
   }) {
-    assert(initial != null);
-    assert(searchInProgress != null);
-    assert(searchSuccess != null);
-    assert(searchFailure != null);
-    assert(valueFailure != null);
     return searchSuccess(this);
   }
 
   @override
   @optionalTypeArgs
-  TResult maybeMap<TResult extends Object>({
-    TResult initial(_Initial value),
-    TResult searchInProgress(_SearchInProgress value),
-    TResult searchSuccess(_SearchSuccess value),
-    TResult searchFailure(_SearchFailure value),
-    TResult valueFailure(_ValueFailure value),
-    @required TResult orElse(),
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_SearchInProgress value)? searchInProgress,
+    TResult Function(_SearchSuccess value)? searchSuccess,
+    TResult Function(_SearchFailure value)? searchFailure,
+    TResult Function(_ValueFailure value)? valueFailure,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (searchSuccess != null) {
       return searchSuccess(this);
     }
@@ -774,49 +674,43 @@ class _$_SearchSuccess implements _SearchSuccess {
 }
 
 abstract class _SearchSuccess implements SearchExperiencesByDifficultyState {
-  const factory _SearchSuccess(KtList<Experience> experiencesFound) =
-      _$_SearchSuccess;
+  const factory _SearchSuccess(KtList<Experience> experiencesFound) = _$_SearchSuccess;
 
-  KtList<Experience> get experiencesFound;
+  KtList<Experience> get experiencesFound => throw _privateConstructorUsedError;
+
   @JsonKey(ignore: true)
-  _$SearchSuccessCopyWith<_SearchSuccess> get copyWith;
+  _$SearchSuccessCopyWith<_SearchSuccess> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class _$SearchFailureCopyWith<$Res> {
-  factory _$SearchFailureCopyWith(
-          _SearchFailure value, $Res Function(_SearchFailure) then) =
-      __$SearchFailureCopyWithImpl<$Res>;
+  factory _$SearchFailureCopyWith(_SearchFailure value, $Res Function(_SearchFailure) then) = __$SearchFailureCopyWithImpl<$Res>;
   $Res call({Failure<dynamic> failure});
 
   $FailureCopyWith<dynamic, $Res> get failure;
 }
 
 /// @nodoc
-class __$SearchFailureCopyWithImpl<$Res>
-    extends _$SearchExperiencesByDifficultyStateCopyWithImpl<$Res>
-    implements _$SearchFailureCopyWith<$Res> {
-  __$SearchFailureCopyWithImpl(
-      _SearchFailure _value, $Res Function(_SearchFailure) _then)
-      : super(_value, (v) => _then(v as _SearchFailure));
+class __$SearchFailureCopyWithImpl<$Res> extends _$SearchExperiencesByDifficultyStateCopyWithImpl<$Res> implements _$SearchFailureCopyWith<$Res> {
+  __$SearchFailureCopyWithImpl(_SearchFailure _value, $Res Function(_SearchFailure) _then) : super(_value, (v) => _then(v as _SearchFailure));
 
   @override
   _SearchFailure get _value => super._value as _SearchFailure;
 
   @override
   $Res call({
-    Object failure = freezed,
+    Object? failure = freezed,
   }) {
     return _then(_SearchFailure(
-      failure == freezed ? _value.failure : failure as Failure<dynamic>,
+      failure == freezed
+          ? _value.failure
+          : failure // ignore: cast_nullable_to_non_nullable
+              as Failure<dynamic>,
     ));
   }
 
   @override
   $FailureCopyWith<dynamic, $Res> get failure {
-    if (_value.failure == null) {
-      return null;
-    }
     return $FailureCopyWith<dynamic, $Res>(_value.failure, (value) {
       return _then(_value.copyWith(failure: value));
     });
@@ -825,7 +719,7 @@ class __$SearchFailureCopyWithImpl<$Res>
 
 /// @nodoc
 class _$_SearchFailure implements _SearchFailure {
-  const _$_SearchFailure(this.failure) : assert(failure != null);
+  const _$_SearchFailure(this.failure);
 
   @override
   final Failure<dynamic> failure;
@@ -837,49 +731,38 @@ class _$_SearchFailure implements _SearchFailure {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) ||
-        (other is _SearchFailure &&
-            (identical(other.failure, failure) ||
-                const DeepCollectionEquality().equals(other.failure, failure)));
+    return identical(this, other) || (other is _SearchFailure && (identical(other.failure, failure) || const DeepCollectionEquality().equals(other.failure, failure)));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(failure);
+  int get hashCode => runtimeType.hashCode ^ const DeepCollectionEquality().hash(failure);
 
   @JsonKey(ignore: true)
   @override
-  _$SearchFailureCopyWith<_SearchFailure> get copyWith =>
-      __$SearchFailureCopyWithImpl<_SearchFailure>(this, _$identity);
+  _$SearchFailureCopyWith<_SearchFailure> get copyWith => __$SearchFailureCopyWithImpl<_SearchFailure>(this, _$identity);
 
   @override
   @optionalTypeArgs
-  TResult when<TResult extends Object>({
-    @required TResult initial(),
-    @required TResult searchInProgress(),
-    @required TResult searchSuccess(KtList<Experience> experiencesFound),
-    @required TResult searchFailure(Failure<dynamic> failure),
-    @required TResult valueFailure(ValueFailure<int> failure),
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() searchInProgress,
+    required TResult Function(KtList<Experience> experiencesFound) searchSuccess,
+    required TResult Function(Failure<dynamic> failure) searchFailure,
+    required TResult Function(ValueFailure<int> failure) valueFailure,
   }) {
-    assert(initial != null);
-    assert(searchInProgress != null);
-    assert(searchSuccess != null);
-    assert(searchFailure != null);
-    assert(valueFailure != null);
     return searchFailure(failure);
   }
 
   @override
   @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object>({
-    TResult initial(),
-    TResult searchInProgress(),
-    TResult searchSuccess(KtList<Experience> experiencesFound),
-    TResult searchFailure(Failure<dynamic> failure),
-    TResult valueFailure(ValueFailure<int> failure),
-    @required TResult orElse(),
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? searchInProgress,
+    TResult Function(KtList<Experience> experiencesFound)? searchSuccess,
+    TResult Function(Failure<dynamic> failure)? searchFailure,
+    TResult Function(ValueFailure<int> failure)? valueFailure,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (searchFailure != null) {
       return searchFailure(failure);
     }
@@ -888,32 +771,26 @@ class _$_SearchFailure implements _SearchFailure {
 
   @override
   @optionalTypeArgs
-  TResult map<TResult extends Object>({
-    @required TResult initial(_Initial value),
-    @required TResult searchInProgress(_SearchInProgress value),
-    @required TResult searchSuccess(_SearchSuccess value),
-    @required TResult searchFailure(_SearchFailure value),
-    @required TResult valueFailure(_ValueFailure value),
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial value) initial,
+    required TResult Function(_SearchInProgress value) searchInProgress,
+    required TResult Function(_SearchSuccess value) searchSuccess,
+    required TResult Function(_SearchFailure value) searchFailure,
+    required TResult Function(_ValueFailure value) valueFailure,
   }) {
-    assert(initial != null);
-    assert(searchInProgress != null);
-    assert(searchSuccess != null);
-    assert(searchFailure != null);
-    assert(valueFailure != null);
     return searchFailure(this);
   }
 
   @override
   @optionalTypeArgs
-  TResult maybeMap<TResult extends Object>({
-    TResult initial(_Initial value),
-    TResult searchInProgress(_SearchInProgress value),
-    TResult searchSuccess(_SearchSuccess value),
-    TResult searchFailure(_SearchFailure value),
-    TResult valueFailure(_ValueFailure value),
-    @required TResult orElse(),
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_SearchInProgress value)? searchInProgress,
+    TResult Function(_SearchSuccess value)? searchSuccess,
+    TResult Function(_SearchFailure value)? searchFailure,
+    TResult Function(_ValueFailure value)? valueFailure,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (searchFailure != null) {
       return searchFailure(this);
     }
@@ -924,46 +801,41 @@ class _$_SearchFailure implements _SearchFailure {
 abstract class _SearchFailure implements SearchExperiencesByDifficultyState {
   const factory _SearchFailure(Failure<dynamic> failure) = _$_SearchFailure;
 
-  Failure<dynamic> get failure;
+  Failure<dynamic> get failure => throw _privateConstructorUsedError;
+
   @JsonKey(ignore: true)
-  _$SearchFailureCopyWith<_SearchFailure> get copyWith;
+  _$SearchFailureCopyWith<_SearchFailure> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class _$ValueFailureCopyWith<$Res> {
-  factory _$ValueFailureCopyWith(
-          _ValueFailure value, $Res Function(_ValueFailure) then) =
-      __$ValueFailureCopyWithImpl<$Res>;
+  factory _$ValueFailureCopyWith(_ValueFailure value, $Res Function(_ValueFailure) then) = __$ValueFailureCopyWithImpl<$Res>;
   $Res call({ValueFailure<int> failure});
 
   $ValueFailureCopyWith<int, $Res> get failure;
 }
 
 /// @nodoc
-class __$ValueFailureCopyWithImpl<$Res>
-    extends _$SearchExperiencesByDifficultyStateCopyWithImpl<$Res>
-    implements _$ValueFailureCopyWith<$Res> {
-  __$ValueFailureCopyWithImpl(
-      _ValueFailure _value, $Res Function(_ValueFailure) _then)
-      : super(_value, (v) => _then(v as _ValueFailure));
+class __$ValueFailureCopyWithImpl<$Res> extends _$SearchExperiencesByDifficultyStateCopyWithImpl<$Res> implements _$ValueFailureCopyWith<$Res> {
+  __$ValueFailureCopyWithImpl(_ValueFailure _value, $Res Function(_ValueFailure) _then) : super(_value, (v) => _then(v as _ValueFailure));
 
   @override
   _ValueFailure get _value => super._value as _ValueFailure;
 
   @override
   $Res call({
-    Object failure = freezed,
+    Object? failure = freezed,
   }) {
     return _then(_ValueFailure(
-      failure == freezed ? _value.failure : failure as ValueFailure<int>,
+      failure == freezed
+          ? _value.failure
+          : failure // ignore: cast_nullable_to_non_nullable
+              as ValueFailure<int>,
     ));
   }
 
   @override
   $ValueFailureCopyWith<int, $Res> get failure {
-    if (_value.failure == null) {
-      return null;
-    }
     return $ValueFailureCopyWith<int, $Res>(_value.failure, (value) {
       return _then(_value.copyWith(failure: value));
     });
@@ -972,7 +844,7 @@ class __$ValueFailureCopyWithImpl<$Res>
 
 /// @nodoc
 class _$_ValueFailure implements _ValueFailure {
-  const _$_ValueFailure(this.failure) : assert(failure != null);
+  const _$_ValueFailure(this.failure);
 
   @override
   final ValueFailure<int> failure;
@@ -984,49 +856,38 @@ class _$_ValueFailure implements _ValueFailure {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) ||
-        (other is _ValueFailure &&
-            (identical(other.failure, failure) ||
-                const DeepCollectionEquality().equals(other.failure, failure)));
+    return identical(this, other) || (other is _ValueFailure && (identical(other.failure, failure) || const DeepCollectionEquality().equals(other.failure, failure)));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(failure);
+  int get hashCode => runtimeType.hashCode ^ const DeepCollectionEquality().hash(failure);
 
   @JsonKey(ignore: true)
   @override
-  _$ValueFailureCopyWith<_ValueFailure> get copyWith =>
-      __$ValueFailureCopyWithImpl<_ValueFailure>(this, _$identity);
+  _$ValueFailureCopyWith<_ValueFailure> get copyWith => __$ValueFailureCopyWithImpl<_ValueFailure>(this, _$identity);
 
   @override
   @optionalTypeArgs
-  TResult when<TResult extends Object>({
-    @required TResult initial(),
-    @required TResult searchInProgress(),
-    @required TResult searchSuccess(KtList<Experience> experiencesFound),
-    @required TResult searchFailure(Failure<dynamic> failure),
-    @required TResult valueFailure(ValueFailure<int> failure),
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() searchInProgress,
+    required TResult Function(KtList<Experience> experiencesFound) searchSuccess,
+    required TResult Function(Failure<dynamic> failure) searchFailure,
+    required TResult Function(ValueFailure<int> failure) valueFailure,
   }) {
-    assert(initial != null);
-    assert(searchInProgress != null);
-    assert(searchSuccess != null);
-    assert(searchFailure != null);
-    assert(valueFailure != null);
     return valueFailure(failure);
   }
 
   @override
   @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object>({
-    TResult initial(),
-    TResult searchInProgress(),
-    TResult searchSuccess(KtList<Experience> experiencesFound),
-    TResult searchFailure(Failure<dynamic> failure),
-    TResult valueFailure(ValueFailure<int> failure),
-    @required TResult orElse(),
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? searchInProgress,
+    TResult Function(KtList<Experience> experiencesFound)? searchSuccess,
+    TResult Function(Failure<dynamic> failure)? searchFailure,
+    TResult Function(ValueFailure<int> failure)? valueFailure,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (valueFailure != null) {
       return valueFailure(failure);
     }
@@ -1035,32 +896,26 @@ class _$_ValueFailure implements _ValueFailure {
 
   @override
   @optionalTypeArgs
-  TResult map<TResult extends Object>({
-    @required TResult initial(_Initial value),
-    @required TResult searchInProgress(_SearchInProgress value),
-    @required TResult searchSuccess(_SearchSuccess value),
-    @required TResult searchFailure(_SearchFailure value),
-    @required TResult valueFailure(_ValueFailure value),
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial value) initial,
+    required TResult Function(_SearchInProgress value) searchInProgress,
+    required TResult Function(_SearchSuccess value) searchSuccess,
+    required TResult Function(_SearchFailure value) searchFailure,
+    required TResult Function(_ValueFailure value) valueFailure,
   }) {
-    assert(initial != null);
-    assert(searchInProgress != null);
-    assert(searchSuccess != null);
-    assert(searchFailure != null);
-    assert(valueFailure != null);
     return valueFailure(this);
   }
 
   @override
   @optionalTypeArgs
-  TResult maybeMap<TResult extends Object>({
-    TResult initial(_Initial value),
-    TResult searchInProgress(_SearchInProgress value),
-    TResult searchSuccess(_SearchSuccess value),
-    TResult searchFailure(_SearchFailure value),
-    TResult valueFailure(_ValueFailure value),
-    @required TResult orElse(),
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_SearchInProgress value)? searchInProgress,
+    TResult Function(_SearchSuccess value)? searchSuccess,
+    TResult Function(_SearchFailure value)? searchFailure,
+    TResult Function(_ValueFailure value)? valueFailure,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (valueFailure != null) {
       return valueFailure(this);
     }
@@ -1071,7 +926,8 @@ class _$_ValueFailure implements _ValueFailure {
 abstract class _ValueFailure implements SearchExperiencesByDifficultyState {
   const factory _ValueFailure(ValueFailure<int> failure) = _$_ValueFailure;
 
-  ValueFailure<int> get failure;
+  ValueFailure<int> get failure => throw _privateConstructorUsedError;
+
   @JsonKey(ignore: true)
-  _$ValueFailureCopyWith<_ValueFailure> get copyWith;
+  _$ValueFailureCopyWith<_ValueFailure> get copyWith => throw _privateConstructorUsedError;
 }

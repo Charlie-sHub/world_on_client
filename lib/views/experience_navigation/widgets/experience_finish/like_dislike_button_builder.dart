@@ -8,8 +8,8 @@ import 'package:worldon/views/experience_navigation/widgets/experience_finish/li
 
 class LikeDislikeButtonBuilder extends StatelessWidget {
   const LikeDislikeButtonBuilder({
-    Key key,
-    @required this.experience,
+    Key? key,
+    required this.experience,
   }) : super(key: key);
 
   final Experience experience;

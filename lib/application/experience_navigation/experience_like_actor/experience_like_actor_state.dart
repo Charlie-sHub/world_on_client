@@ -1,7 +1,7 @@
 part of 'experience_like_actor_bloc.dart';
 
 @freezed
-abstract class ExperienceLikeActorState with _$ExperienceLikeActorState {
+class ExperienceLikeActorState with _$ExperienceLikeActorState {
   const factory ExperienceLikeActorState.initial() = _Initial;
 
   const factory ExperienceLikeActorState.actionInProgress() = _ActionInProgress;

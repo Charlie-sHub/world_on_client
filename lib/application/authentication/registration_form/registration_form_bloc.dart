@@ -56,7 +56,7 @@ class RegistrationFormBloc extends Bloc<RegistrationFormEvent, RegistrationFormS
   }
 
   Stream<RegistrationFormState> _onSubmitted(_) async* {
-    Either<Failure, Unit> _failureOrUnit;
+    Either<Failure, Unit>? _failureOrUnit;
     yield state.copyWith(
       isSubmitting: true,
       failureOrSuccessOption: none(),

@@ -5,14 +5,14 @@ part 'coins_dto.freezed.dart';
 part 'coins_dto.g.dart';
 
 @freezed
-abstract class CoinsDto implements _$CoinsDto {
+class CoinsDto with _$CoinsDto {
   const CoinsDto._();
 
   const factory CoinsDto({
-    @required String tenCoinsProductId,
+    required String tenCoinsProductId,
   }) = _CoinsDto;
 
   factory CoinsDto.fromJson(Map<String, dynamic> json) => _$CoinsDtoFromJson(json);
 
-  factory CoinsDto.fromFirestore(DocumentSnapshot document) => CoinsDto.fromJson(document.data());
+  factory CoinsDto.fromFirestore(DocumentSnapshot document) => CoinsDto.fromJson(document.data()!);
 }

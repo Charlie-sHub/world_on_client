@@ -69,7 +69,7 @@ class LogInForm extends StatelessWidget {
             invalidPassword: (_) => S.of(context).invalidPassword,
             orElse: () => S.of(context).unknownError,
           ),
-          (_) => null,
+          (_) => "",
         );
   }
 
@@ -79,7 +79,7 @@ class LogInForm extends StatelessWidget {
             invalidEmail: (_) => S.of(context).invalidEmail,
             orElse: () => S.of(context).unknownError,
           ),
-          (_) => null,
+          (_) => "",
         );
   }
 }

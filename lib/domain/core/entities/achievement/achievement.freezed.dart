@@ -1,5 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides
 
 part of 'achievement.dart';
 
@@ -9,24 +9,26 @@ part of 'achievement.dart';
 
 T _$identity<T>(T value) => value;
 
+final _privateConstructorUsedError = UnsupportedError(
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+
 /// @nodoc
 class _$AchievementTearOff {
   const _$AchievementTearOff();
 
-// ignore: unused_element
   _Achievement call(
-      {@required UniqueId id,
-      @required Name name,
-      @required EntityDescription description,
-      @required String imageURL,
-      @required Option<File> imageFile,
-      @required String type,
-      @required int requisite,
-      @required ExperiencePoints experiencePoints,
-      @required UniqueId creatorId,
-      @required PastDate creationDate,
-      @required PastDate modificationDate,
-      @required TagSet tags}) {
+      {required UniqueId id,
+      required Name name,
+      required EntityDescription description,
+      required String imageURL,
+      required Option<File> imageFile,
+      required String type,
+      required int requisite,
+      required ExperiencePoints experiencePoints,
+      required UniqueId creatorId,
+      required PastDate creationDate,
+      required PastDate modificationDate,
+      required TagSet tags}) {
     return _Achievement(
       id: id,
       name: name,
@@ -45,35 +47,40 @@ class _$AchievementTearOff {
 }
 
 /// @nodoc
-// ignore: unused_element
 const $Achievement = _$AchievementTearOff();
 
 /// @nodoc
 mixin _$Achievement {
-  UniqueId get id;
-  Name get name;
-  EntityDescription
-      get description; // TODO: Make a value object and validator for image URLs from World On's back-end
+  UniqueId get id => throw _privateConstructorUsedError;
+
+  Name get name => throw _privateConstructorUsedError;
+
+  EntityDescription get description => throw _privateConstructorUsedError; // TODO: Make a value object and validator for image URLs from World On's back-end
 // Maybe Firestore will make that unnecessary
-  String get imageURL;
-  Option<File> get imageFile;
-  String get type;
-  int get requisite; // This will probably be reworked in the future to accommodate different kinds of achievements
-  ExperiencePoints get experiencePoints;
-  UniqueId get creatorId;
-  PastDate get creationDate;
-  PastDate get modificationDate;
-  TagSet get tags;
+  String get imageURL => throw _privateConstructorUsedError;
+
+  Option<File> get imageFile => throw _privateConstructorUsedError;
+
+  String get type => throw _privateConstructorUsedError;
+
+  int get requisite => throw _privateConstructorUsedError; // This will probably be reworked in the future to accommodate different kinds of achievements
+  ExperiencePoints get experiencePoints => throw _privateConstructorUsedError;
+
+  UniqueId get creatorId => throw _privateConstructorUsedError;
+
+  PastDate get creationDate => throw _privateConstructorUsedError;
+
+  PastDate get modificationDate => throw _privateConstructorUsedError;
+
+  TagSet get tags => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
-  $AchievementCopyWith<Achievement> get copyWith;
+  $AchievementCopyWith<Achievement> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $AchievementCopyWith<$Res> {
-  factory $AchievementCopyWith(
-          Achievement value, $Res Function(Achievement) then) =
-      _$AchievementCopyWithImpl<$Res>;
+  factory $AchievementCopyWith(Achievement value, $Res Function(Achievement) then) = _$AchievementCopyWithImpl<$Res>;
   $Res call(
       {UniqueId id,
       Name name,
@@ -99,52 +106,75 @@ class _$AchievementCopyWithImpl<$Res> implements $AchievementCopyWith<$Res> {
 
   @override
   $Res call({
-    Object id = freezed,
-    Object name = freezed,
-    Object description = freezed,
-    Object imageURL = freezed,
-    Object imageFile = freezed,
-    Object type = freezed,
-    Object requisite = freezed,
-    Object experiencePoints = freezed,
-    Object creatorId = freezed,
-    Object creationDate = freezed,
-    Object modificationDate = freezed,
-    Object tags = freezed,
+    Object? id = freezed,
+    Object? name = freezed,
+    Object? description = freezed,
+    Object? imageURL = freezed,
+    Object? imageFile = freezed,
+    Object? type = freezed,
+    Object? requisite = freezed,
+    Object? experiencePoints = freezed,
+    Object? creatorId = freezed,
+    Object? creationDate = freezed,
+    Object? modificationDate = freezed,
+    Object? tags = freezed,
   }) {
     return _then(_value.copyWith(
-      id: id == freezed ? _value.id : id as UniqueId,
-      name: name == freezed ? _value.name : name as Name,
+      id: id == freezed
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as UniqueId,
+      name: name == freezed
+          ? _value.name
+          : name // ignore: cast_nullable_to_non_nullable
+              as Name,
       description: description == freezed
           ? _value.description
-          : description as EntityDescription,
-      imageURL: imageURL == freezed ? _value.imageURL : imageURL as String,
-      imageFile:
-          imageFile == freezed ? _value.imageFile : imageFile as Option<File>,
-      type: type == freezed ? _value.type : type as String,
-      requisite: requisite == freezed ? _value.requisite : requisite as int,
+          : description // ignore: cast_nullable_to_non_nullable
+              as EntityDescription,
+      imageURL: imageURL == freezed
+          ? _value.imageURL
+          : imageURL // ignore: cast_nullable_to_non_nullable
+              as String,
+      imageFile: imageFile == freezed
+          ? _value.imageFile
+          : imageFile // ignore: cast_nullable_to_non_nullable
+              as Option<File>,
+      type: type == freezed
+          ? _value.type
+          : type // ignore: cast_nullable_to_non_nullable
+              as String,
+      requisite: requisite == freezed
+          ? _value.requisite
+          : requisite // ignore: cast_nullable_to_non_nullable
+              as int,
       experiencePoints: experiencePoints == freezed
           ? _value.experiencePoints
-          : experiencePoints as ExperiencePoints,
-      creatorId:
-          creatorId == freezed ? _value.creatorId : creatorId as UniqueId,
+          : experiencePoints // ignore: cast_nullable_to_non_nullable
+              as ExperiencePoints,
+      creatorId: creatorId == freezed
+          ? _value.creatorId
+          : creatorId // ignore: cast_nullable_to_non_nullable
+              as UniqueId,
       creationDate: creationDate == freezed
           ? _value.creationDate
-          : creationDate as PastDate,
+          : creationDate // ignore: cast_nullable_to_non_nullable
+              as PastDate,
       modificationDate: modificationDate == freezed
           ? _value.modificationDate
-          : modificationDate as PastDate,
-      tags: tags == freezed ? _value.tags : tags as TagSet,
+          : modificationDate // ignore: cast_nullable_to_non_nullable
+              as PastDate,
+      tags: tags == freezed
+          ? _value.tags
+          : tags // ignore: cast_nullable_to_non_nullable
+              as TagSet,
     ));
   }
 }
 
 /// @nodoc
-abstract class _$AchievementCopyWith<$Res>
-    implements $AchievementCopyWith<$Res> {
-  factory _$AchievementCopyWith(
-          _Achievement value, $Res Function(_Achievement) then) =
-      __$AchievementCopyWithImpl<$Res>;
+abstract class _$AchievementCopyWith<$Res> implements $AchievementCopyWith<$Res> {
+  factory _$AchievementCopyWith(_Achievement value, $Res Function(_Achievement) then) = __$AchievementCopyWithImpl<$Res>;
   @override
   $Res call(
       {UniqueId id,
@@ -162,53 +192,76 @@ abstract class _$AchievementCopyWith<$Res>
 }
 
 /// @nodoc
-class __$AchievementCopyWithImpl<$Res> extends _$AchievementCopyWithImpl<$Res>
-    implements _$AchievementCopyWith<$Res> {
-  __$AchievementCopyWithImpl(
-      _Achievement _value, $Res Function(_Achievement) _then)
-      : super(_value, (v) => _then(v as _Achievement));
+class __$AchievementCopyWithImpl<$Res> extends _$AchievementCopyWithImpl<$Res> implements _$AchievementCopyWith<$Res> {
+  __$AchievementCopyWithImpl(_Achievement _value, $Res Function(_Achievement) _then) : super(_value, (v) => _then(v as _Achievement));
 
   @override
   _Achievement get _value => super._value as _Achievement;
 
   @override
   $Res call({
-    Object id = freezed,
-    Object name = freezed,
-    Object description = freezed,
-    Object imageURL = freezed,
-    Object imageFile = freezed,
-    Object type = freezed,
-    Object requisite = freezed,
-    Object experiencePoints = freezed,
-    Object creatorId = freezed,
-    Object creationDate = freezed,
-    Object modificationDate = freezed,
-    Object tags = freezed,
+    Object? id = freezed,
+    Object? name = freezed,
+    Object? description = freezed,
+    Object? imageURL = freezed,
+    Object? imageFile = freezed,
+    Object? type = freezed,
+    Object? requisite = freezed,
+    Object? experiencePoints = freezed,
+    Object? creatorId = freezed,
+    Object? creationDate = freezed,
+    Object? modificationDate = freezed,
+    Object? tags = freezed,
   }) {
     return _then(_Achievement(
-      id: id == freezed ? _value.id : id as UniqueId,
-      name: name == freezed ? _value.name : name as Name,
+      id: id == freezed
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as UniqueId,
+      name: name == freezed
+          ? _value.name
+          : name // ignore: cast_nullable_to_non_nullable
+              as Name,
       description: description == freezed
           ? _value.description
-          : description as EntityDescription,
-      imageURL: imageURL == freezed ? _value.imageURL : imageURL as String,
-      imageFile:
-          imageFile == freezed ? _value.imageFile : imageFile as Option<File>,
-      type: type == freezed ? _value.type : type as String,
-      requisite: requisite == freezed ? _value.requisite : requisite as int,
+          : description // ignore: cast_nullable_to_non_nullable
+              as EntityDescription,
+      imageURL: imageURL == freezed
+          ? _value.imageURL
+          : imageURL // ignore: cast_nullable_to_non_nullable
+              as String,
+      imageFile: imageFile == freezed
+          ? _value.imageFile
+          : imageFile // ignore: cast_nullable_to_non_nullable
+              as Option<File>,
+      type: type == freezed
+          ? _value.type
+          : type // ignore: cast_nullable_to_non_nullable
+              as String,
+      requisite: requisite == freezed
+          ? _value.requisite
+          : requisite // ignore: cast_nullable_to_non_nullable
+              as int,
       experiencePoints: experiencePoints == freezed
           ? _value.experiencePoints
-          : experiencePoints as ExperiencePoints,
-      creatorId:
-          creatorId == freezed ? _value.creatorId : creatorId as UniqueId,
+          : experiencePoints // ignore: cast_nullable_to_non_nullable
+              as ExperiencePoints,
+      creatorId: creatorId == freezed
+          ? _value.creatorId
+          : creatorId // ignore: cast_nullable_to_non_nullable
+              as UniqueId,
       creationDate: creationDate == freezed
           ? _value.creationDate
-          : creationDate as PastDate,
+          : creationDate // ignore: cast_nullable_to_non_nullable
+              as PastDate,
       modificationDate: modificationDate == freezed
           ? _value.modificationDate
-          : modificationDate as PastDate,
-      tags: tags == freezed ? _value.tags : tags as TagSet,
+          : modificationDate // ignore: cast_nullable_to_non_nullable
+              as PastDate,
+      tags: tags == freezed
+          ? _value.tags
+          : tags // ignore: cast_nullable_to_non_nullable
+              as TagSet,
     ));
   }
 }
@@ -216,31 +269,19 @@ class __$AchievementCopyWithImpl<$Res> extends _$AchievementCopyWithImpl<$Res>
 /// @nodoc
 class _$_Achievement extends _Achievement {
   const _$_Achievement(
-      {@required this.id,
-      @required this.name,
-      @required this.description,
-      @required this.imageURL,
-      @required this.imageFile,
-      @required this.type,
-      @required this.requisite,
-      @required this.experiencePoints,
-      @required this.creatorId,
-      @required this.creationDate,
-      @required this.modificationDate,
-      @required this.tags})
-      : assert(id != null),
-        assert(name != null),
-        assert(description != null),
-        assert(imageURL != null),
-        assert(imageFile != null),
-        assert(type != null),
-        assert(requisite != null),
-        assert(experiencePoints != null),
-        assert(creatorId != null),
-        assert(creationDate != null),
-        assert(modificationDate != null),
-        assert(tags != null),
-        super._();
+      {required this.id,
+      required this.name,
+      required this.description,
+      required this.imageURL,
+      required this.imageFile,
+      required this.type,
+      required this.requisite,
+      required this.experiencePoints,
+      required this.creatorId,
+      required this.creationDate,
+      required this.modificationDate,
+      required this.tags})
+      : super._();
 
   @override
   final UniqueId id;
@@ -277,38 +318,18 @@ class _$_Achievement extends _Achievement {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other is _Achievement &&
-            (identical(other.id, id) ||
-                const DeepCollectionEquality().equals(other.id, id)) &&
-            (identical(other.name, name) ||
-                const DeepCollectionEquality().equals(other.name, name)) &&
-            (identical(other.description, description) ||
-                const DeepCollectionEquality()
-                    .equals(other.description, description)) &&
-            (identical(other.imageURL, imageURL) ||
-                const DeepCollectionEquality()
-                    .equals(other.imageURL, imageURL)) &&
-            (identical(other.imageFile, imageFile) ||
-                const DeepCollectionEquality()
-                    .equals(other.imageFile, imageFile)) &&
-            (identical(other.type, type) ||
-                const DeepCollectionEquality().equals(other.type, type)) &&
-            (identical(other.requisite, requisite) ||
-                const DeepCollectionEquality()
-                    .equals(other.requisite, requisite)) &&
-            (identical(other.experiencePoints, experiencePoints) ||
-                const DeepCollectionEquality()
-                    .equals(other.experiencePoints, experiencePoints)) &&
-            (identical(other.creatorId, creatorId) ||
-                const DeepCollectionEquality()
-                    .equals(other.creatorId, creatorId)) &&
-            (identical(other.creationDate, creationDate) ||
-                const DeepCollectionEquality()
-                    .equals(other.creationDate, creationDate)) &&
-            (identical(other.modificationDate, modificationDate) ||
-                const DeepCollectionEquality()
-                    .equals(other.modificationDate, modificationDate)) &&
-            (identical(other.tags, tags) ||
-                const DeepCollectionEquality().equals(other.tags, tags)));
+            (identical(other.id, id) || const DeepCollectionEquality().equals(other.id, id)) &&
+            (identical(other.name, name) || const DeepCollectionEquality().equals(other.name, name)) &&
+            (identical(other.description, description) || const DeepCollectionEquality().equals(other.description, description)) &&
+            (identical(other.imageURL, imageURL) || const DeepCollectionEquality().equals(other.imageURL, imageURL)) &&
+            (identical(other.imageFile, imageFile) || const DeepCollectionEquality().equals(other.imageFile, imageFile)) &&
+            (identical(other.type, type) || const DeepCollectionEquality().equals(other.type, type)) &&
+            (identical(other.requisite, requisite) || const DeepCollectionEquality().equals(other.requisite, requisite)) &&
+            (identical(other.experiencePoints, experiencePoints) || const DeepCollectionEquality().equals(other.experiencePoints, experiencePoints)) &&
+            (identical(other.creatorId, creatorId) || const DeepCollectionEquality().equals(other.creatorId, creatorId)) &&
+            (identical(other.creationDate, creationDate) || const DeepCollectionEquality().equals(other.creationDate, creationDate)) &&
+            (identical(other.modificationDate, modificationDate) || const DeepCollectionEquality().equals(other.modificationDate, modificationDate)) &&
+            (identical(other.tags, tags) || const DeepCollectionEquality().equals(other.tags, tags)));
   }
 
   @override
@@ -329,52 +350,64 @@ class _$_Achievement extends _Achievement {
 
   @JsonKey(ignore: true)
   @override
-  _$AchievementCopyWith<_Achievement> get copyWith =>
-      __$AchievementCopyWithImpl<_Achievement>(this, _$identity);
+  _$AchievementCopyWith<_Achievement> get copyWith => __$AchievementCopyWithImpl<_Achievement>(this, _$identity);
 }
 
 abstract class _Achievement extends Achievement {
-  const _Achievement._() : super._();
   const factory _Achievement(
-      {@required UniqueId id,
-      @required Name name,
-      @required EntityDescription description,
-      @required String imageURL,
-      @required Option<File> imageFile,
-      @required String type,
-      @required int requisite,
-      @required ExperiencePoints experiencePoints,
-      @required UniqueId creatorId,
-      @required PastDate creationDate,
-      @required PastDate modificationDate,
-      @required TagSet tags}) = _$_Achievement;
+      {required UniqueId id,
+      required Name name,
+      required EntityDescription description,
+      required String imageURL,
+      required Option<File> imageFile,
+      required String type,
+      required int requisite,
+      required ExperiencePoints experiencePoints,
+      required UniqueId creatorId,
+      required PastDate creationDate,
+      required PastDate modificationDate,
+      required TagSet tags}) = _$_Achievement;
+
+  const _Achievement._() : super._();
 
   @override
-  UniqueId get id;
+  UniqueId get id => throw _privateConstructorUsedError;
+
   @override
-  Name get name;
+  Name get name => throw _privateConstructorUsedError;
+
   @override
-  EntityDescription get description;
+  EntityDescription get description => throw _privateConstructorUsedError;
+
   @override // TODO: Make a value object and validator for image URLs from World On's back-end
 // Maybe Firestore will make that unnecessary
-  String get imageURL;
+  String get imageURL => throw _privateConstructorUsedError;
+
   @override
-  Option<File> get imageFile;
+  Option<File> get imageFile => throw _privateConstructorUsedError;
+
   @override
-  String get type;
+  String get type => throw _privateConstructorUsedError;
+
   @override
-  int get requisite;
+  int get requisite => throw _privateConstructorUsedError;
+
   @override // This will probably be reworked in the future to accommodate different kinds of achievements
-  ExperiencePoints get experiencePoints;
+  ExperiencePoints get experiencePoints => throw _privateConstructorUsedError;
+
   @override
-  UniqueId get creatorId;
+  UniqueId get creatorId => throw _privateConstructorUsedError;
+
   @override
-  PastDate get creationDate;
+  PastDate get creationDate => throw _privateConstructorUsedError;
+
   @override
-  PastDate get modificationDate;
+  PastDate get modificationDate => throw _privateConstructorUsedError;
+
   @override
-  TagSet get tags;
+  TagSet get tags => throw _privateConstructorUsedError;
+
   @override
   @JsonKey(ignore: true)
-  _$AchievementCopyWith<_Achievement> get copyWith;
+  _$AchievementCopyWith<_Achievement> get copyWith => throw _privateConstructorUsedError;
 }

@@ -9,15 +9,12 @@ class ExperiencePoints extends ValueObject<int> {
   @override
   final Either<ValueFailure<int>, int> value;
 
-  factory ExperiencePoints(int input) {
-    assert(input != null);
-    return ExperiencePoints._(
-      validateBoundedInteger(
-        input: input,
-        limit: limit,
-      ),
-    );
-  }
+  factory ExperiencePoints(int input) => ExperiencePoints._(
+        validateBoundedInteger(
+          input: input,
+          limit: limit,
+        ),
+      );
 
   const ExperiencePoints._(this.value);
 

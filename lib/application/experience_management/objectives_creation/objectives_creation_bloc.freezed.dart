@@ -1,5 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides
 
 part of 'objectives_creation_bloc.dart';
 
@@ -9,32 +9,31 @@ part of 'objectives_creation_bloc.dart';
 
 T _$identity<T>(T value) => value;
 
+final _privateConstructorUsedError = UnsupportedError(
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+
 /// @nodoc
 class _$ObjectivesCreationEventTearOff {
   const _$ObjectivesCreationEventTearOff();
 
-// ignore: unused_element
   _Initialized initialized(Option<ObjectiveList> objectiveListOption) {
     return _Initialized(
       objectiveListOption,
     );
   }
 
-// ignore: unused_element
   _AddedObjective addedObjective(Objective objective) {
     return _AddedObjective(
       objective,
     );
   }
 
-// ignore: unused_element
   _RemovedObjective removedObjective(Objective objective) {
     return _RemovedObjective(
       objective,
     );
   }
 
-// ignore: unused_element
   _ReorderedList reorderedList(List<Objective> reorderedList) {
     return _ReorderedList(
       reorderedList,
@@ -43,41 +42,47 @@ class _$ObjectivesCreationEventTearOff {
 }
 
 /// @nodoc
-// ignore: unused_element
 const $ObjectivesCreationEvent = _$ObjectivesCreationEventTearOff();
 
 /// @nodoc
 mixin _$ObjectivesCreationEvent {
   @optionalTypeArgs
-  TResult when<TResult extends Object>({
-    @required TResult initialized(Option<ObjectiveList> objectiveListOption),
-    @required TResult addedObjective(Objective objective),
-    @required TResult removedObjective(Objective objective),
-    @required TResult reorderedList(List<Objective> reorderedList),
-  });
+  TResult when<TResult extends Object?>({
+    required TResult Function(Option<ObjectiveList> objectiveListOption) initialized,
+    required TResult Function(Objective objective) addedObjective,
+    required TResult Function(Objective objective) removedObjective,
+    required TResult Function(List<Objective> reorderedList) reorderedList,
+  }) =>
+      throw _privateConstructorUsedError;
+
   @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object>({
-    TResult initialized(Option<ObjectiveList> objectiveListOption),
-    TResult addedObjective(Objective objective),
-    TResult removedObjective(Objective objective),
-    TResult reorderedList(List<Objective> reorderedList),
-    @required TResult orElse(),
-  });
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(Option<ObjectiveList> objectiveListOption)? initialized,
+    TResult Function(Objective objective)? addedObjective,
+    TResult Function(Objective objective)? removedObjective,
+    TResult Function(List<Objective> reorderedList)? reorderedList,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
+
   @optionalTypeArgs
-  TResult map<TResult extends Object>({
-    @required TResult initialized(_Initialized value),
-    @required TResult addedObjective(_AddedObjective value),
-    @required TResult removedObjective(_RemovedObjective value),
-    @required TResult reorderedList(_ReorderedList value),
-  });
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initialized value) initialized,
+    required TResult Function(_AddedObjective value) addedObjective,
+    required TResult Function(_RemovedObjective value) removedObjective,
+    required TResult Function(_ReorderedList value) reorderedList,
+  }) =>
+      throw _privateConstructorUsedError;
+
   @optionalTypeArgs
-  TResult maybeMap<TResult extends Object>({
-    TResult initialized(_Initialized value),
-    TResult addedObjective(_AddedObjective value),
-    TResult removedObjective(_RemovedObjective value),
-    TResult reorderedList(_ReorderedList value),
-    @required TResult orElse(),
-  });
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initialized value)? initialized,
+    TResult Function(_AddedObjective value)? addedObjective,
+    TResult Function(_RemovedObjective value)? removedObjective,
+    TResult Function(_ReorderedList value)? reorderedList,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -111,17 +116,20 @@ class __$InitializedCopyWithImpl<$Res> extends _$ObjectivesCreationEventCopyWith
 
   @override
   $Res call({
-    Object objectiveListOption = freezed,
+    Object? objectiveListOption = freezed,
   }) {
     return _then(_Initialized(
-      objectiveListOption == freezed ? _value.objectiveListOption : objectiveListOption as Option<ObjectiveList>,
+      objectiveListOption == freezed
+          ? _value.objectiveListOption
+          : objectiveListOption // ignore: cast_nullable_to_non_nullable
+              as Option<ObjectiveList>,
     ));
   }
 }
 
 /// @nodoc
 class _$_Initialized implements _Initialized {
-  const _$_Initialized(this.objectiveListOption) : assert(objectiveListOption != null);
+  const _$_Initialized(this.objectiveListOption);
 
   @override
   final Option<ObjectiveList> objectiveListOption;
@@ -146,29 +154,24 @@ class _$_Initialized implements _Initialized {
 
   @override
   @optionalTypeArgs
-  TResult when<TResult extends Object>({
-    @required TResult initialized(Option<ObjectiveList> objectiveListOption),
-    @required TResult addedObjective(Objective objective),
-    @required TResult removedObjective(Objective objective),
-    @required TResult reorderedList(List<Objective> reorderedList),
+  TResult when<TResult extends Object?>({
+    required TResult Function(Option<ObjectiveList> objectiveListOption) initialized,
+    required TResult Function(Objective objective) addedObjective,
+    required TResult Function(Objective objective) removedObjective,
+    required TResult Function(List<Objective> reorderedList) reorderedList,
   }) {
-    assert(initialized != null);
-    assert(addedObjective != null);
-    assert(removedObjective != null);
-    assert(reorderedList != null);
     return initialized(objectiveListOption);
   }
 
   @override
   @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object>({
-    TResult initialized(Option<ObjectiveList> objectiveListOption),
-    TResult addedObjective(Objective objective),
-    TResult removedObjective(Objective objective),
-    TResult reorderedList(List<Objective> reorderedList),
-    @required TResult orElse(),
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(Option<ObjectiveList> objectiveListOption)? initialized,
+    TResult Function(Objective objective)? addedObjective,
+    TResult Function(Objective objective)? removedObjective,
+    TResult Function(List<Objective> reorderedList)? reorderedList,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (initialized != null) {
       return initialized(objectiveListOption);
     }
@@ -177,29 +180,24 @@ class _$_Initialized implements _Initialized {
 
   @override
   @optionalTypeArgs
-  TResult map<TResult extends Object>({
-    @required TResult initialized(_Initialized value),
-    @required TResult addedObjective(_AddedObjective value),
-    @required TResult removedObjective(_RemovedObjective value),
-    @required TResult reorderedList(_ReorderedList value),
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initialized value) initialized,
+    required TResult Function(_AddedObjective value) addedObjective,
+    required TResult Function(_RemovedObjective value) removedObjective,
+    required TResult Function(_ReorderedList value) reorderedList,
   }) {
-    assert(initialized != null);
-    assert(addedObjective != null);
-    assert(removedObjective != null);
-    assert(reorderedList != null);
     return initialized(this);
   }
 
   @override
   @optionalTypeArgs
-  TResult maybeMap<TResult extends Object>({
-    TResult initialized(_Initialized value),
-    TResult addedObjective(_AddedObjective value),
-    TResult removedObjective(_RemovedObjective value),
-    TResult reorderedList(_ReorderedList value),
-    @required TResult orElse(),
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initialized value)? initialized,
+    TResult Function(_AddedObjective value)? addedObjective,
+    TResult Function(_RemovedObjective value)? removedObjective,
+    TResult Function(_ReorderedList value)? reorderedList,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (initialized != null) {
       return initialized(this);
     }
@@ -210,10 +208,10 @@ class _$_Initialized implements _Initialized {
 abstract class _Initialized implements ObjectivesCreationEvent {
   const factory _Initialized(Option<ObjectiveList> objectiveListOption) = _$_Initialized;
 
-  Option<ObjectiveList> get objectiveListOption;
+  Option<ObjectiveList> get objectiveListOption => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
-  _$InitializedCopyWith<_Initialized> get copyWith;
+  _$InitializedCopyWith<_Initialized> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -234,18 +232,18 @@ class __$AddedObjectiveCopyWithImpl<$Res> extends _$ObjectivesCreationEventCopyW
 
   @override
   $Res call({
-    Object objective = freezed,
+    Object? objective = freezed,
   }) {
     return _then(_AddedObjective(
-      objective == freezed ? _value.objective : objective as Objective,
+      objective == freezed
+          ? _value.objective
+          : objective // ignore: cast_nullable_to_non_nullable
+              as Objective,
     ));
   }
 
   @override
   $ObjectiveCopyWith<$Res> get objective {
-    if (_value.objective == null) {
-      return null;
-    }
     return $ObjectiveCopyWith<$Res>(_value.objective, (value) {
       return _then(_value.copyWith(objective: value));
     });
@@ -254,7 +252,7 @@ class __$AddedObjectiveCopyWithImpl<$Res> extends _$ObjectivesCreationEventCopyW
 
 /// @nodoc
 class _$_AddedObjective implements _AddedObjective {
-  const _$_AddedObjective(this.objective) : assert(objective != null);
+  const _$_AddedObjective(this.objective);
 
   @override
   final Objective objective;
@@ -278,29 +276,24 @@ class _$_AddedObjective implements _AddedObjective {
 
   @override
   @optionalTypeArgs
-  TResult when<TResult extends Object>({
-    @required TResult initialized(Option<ObjectiveList> objectiveListOption),
-    @required TResult addedObjective(Objective objective),
-    @required TResult removedObjective(Objective objective),
-    @required TResult reorderedList(List<Objective> reorderedList),
+  TResult when<TResult extends Object?>({
+    required TResult Function(Option<ObjectiveList> objectiveListOption) initialized,
+    required TResult Function(Objective objective) addedObjective,
+    required TResult Function(Objective objective) removedObjective,
+    required TResult Function(List<Objective> reorderedList) reorderedList,
   }) {
-    assert(initialized != null);
-    assert(addedObjective != null);
-    assert(removedObjective != null);
-    assert(reorderedList != null);
     return addedObjective(objective);
   }
 
   @override
   @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object>({
-    TResult initialized(Option<ObjectiveList> objectiveListOption),
-    TResult addedObjective(Objective objective),
-    TResult removedObjective(Objective objective),
-    TResult reorderedList(List<Objective> reorderedList),
-    @required TResult orElse(),
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(Option<ObjectiveList> objectiveListOption)? initialized,
+    TResult Function(Objective objective)? addedObjective,
+    TResult Function(Objective objective)? removedObjective,
+    TResult Function(List<Objective> reorderedList)? reorderedList,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (addedObjective != null) {
       return addedObjective(objective);
     }
@@ -309,29 +302,24 @@ class _$_AddedObjective implements _AddedObjective {
 
   @override
   @optionalTypeArgs
-  TResult map<TResult extends Object>({
-    @required TResult initialized(_Initialized value),
-    @required TResult addedObjective(_AddedObjective value),
-    @required TResult removedObjective(_RemovedObjective value),
-    @required TResult reorderedList(_ReorderedList value),
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initialized value) initialized,
+    required TResult Function(_AddedObjective value) addedObjective,
+    required TResult Function(_RemovedObjective value) removedObjective,
+    required TResult Function(_ReorderedList value) reorderedList,
   }) {
-    assert(initialized != null);
-    assert(addedObjective != null);
-    assert(removedObjective != null);
-    assert(reorderedList != null);
     return addedObjective(this);
   }
 
   @override
   @optionalTypeArgs
-  TResult maybeMap<TResult extends Object>({
-    TResult initialized(_Initialized value),
-    TResult addedObjective(_AddedObjective value),
-    TResult removedObjective(_RemovedObjective value),
-    TResult reorderedList(_ReorderedList value),
-    @required TResult orElse(),
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initialized value)? initialized,
+    TResult Function(_AddedObjective value)? addedObjective,
+    TResult Function(_RemovedObjective value)? removedObjective,
+    TResult Function(_ReorderedList value)? reorderedList,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (addedObjective != null) {
       return addedObjective(this);
     }
@@ -342,9 +330,10 @@ class _$_AddedObjective implements _AddedObjective {
 abstract class _AddedObjective implements ObjectivesCreationEvent {
   const factory _AddedObjective(Objective objective) = _$_AddedObjective;
 
-  Objective get objective;
+  Objective get objective => throw _privateConstructorUsedError;
+
   @JsonKey(ignore: true)
-  _$AddedObjectiveCopyWith<_AddedObjective> get copyWith;
+  _$AddedObjectiveCopyWith<_AddedObjective> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -365,18 +354,18 @@ class __$RemovedObjectiveCopyWithImpl<$Res> extends _$ObjectivesCreationEventCop
 
   @override
   $Res call({
-    Object objective = freezed,
+    Object? objective = freezed,
   }) {
     return _then(_RemovedObjective(
-      objective == freezed ? _value.objective : objective as Objective,
+      objective == freezed
+          ? _value.objective
+          : objective // ignore: cast_nullable_to_non_nullable
+              as Objective,
     ));
   }
 
   @override
   $ObjectiveCopyWith<$Res> get objective {
-    if (_value.objective == null) {
-      return null;
-    }
     return $ObjectiveCopyWith<$Res>(_value.objective, (value) {
       return _then(_value.copyWith(objective: value));
     });
@@ -385,7 +374,7 @@ class __$RemovedObjectiveCopyWithImpl<$Res> extends _$ObjectivesCreationEventCop
 
 /// @nodoc
 class _$_RemovedObjective implements _RemovedObjective {
-  const _$_RemovedObjective(this.objective) : assert(objective != null);
+  const _$_RemovedObjective(this.objective);
 
   @override
   final Objective objective;
@@ -409,29 +398,24 @@ class _$_RemovedObjective implements _RemovedObjective {
 
   @override
   @optionalTypeArgs
-  TResult when<TResult extends Object>({
-    @required TResult initialized(Option<ObjectiveList> objectiveListOption),
-    @required TResult addedObjective(Objective objective),
-    @required TResult removedObjective(Objective objective),
-    @required TResult reorderedList(List<Objective> reorderedList),
+  TResult when<TResult extends Object?>({
+    required TResult Function(Option<ObjectiveList> objectiveListOption) initialized,
+    required TResult Function(Objective objective) addedObjective,
+    required TResult Function(Objective objective) removedObjective,
+    required TResult Function(List<Objective> reorderedList) reorderedList,
   }) {
-    assert(initialized != null);
-    assert(addedObjective != null);
-    assert(removedObjective != null);
-    assert(reorderedList != null);
     return removedObjective(objective);
   }
 
   @override
   @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object>({
-    TResult initialized(Option<ObjectiveList> objectiveListOption),
-    TResult addedObjective(Objective objective),
-    TResult removedObjective(Objective objective),
-    TResult reorderedList(List<Objective> reorderedList),
-    @required TResult orElse(),
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(Option<ObjectiveList> objectiveListOption)? initialized,
+    TResult Function(Objective objective)? addedObjective,
+    TResult Function(Objective objective)? removedObjective,
+    TResult Function(List<Objective> reorderedList)? reorderedList,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (removedObjective != null) {
       return removedObjective(objective);
     }
@@ -440,29 +424,24 @@ class _$_RemovedObjective implements _RemovedObjective {
 
   @override
   @optionalTypeArgs
-  TResult map<TResult extends Object>({
-    @required TResult initialized(_Initialized value),
-    @required TResult addedObjective(_AddedObjective value),
-    @required TResult removedObjective(_RemovedObjective value),
-    @required TResult reorderedList(_ReorderedList value),
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initialized value) initialized,
+    required TResult Function(_AddedObjective value) addedObjective,
+    required TResult Function(_RemovedObjective value) removedObjective,
+    required TResult Function(_ReorderedList value) reorderedList,
   }) {
-    assert(initialized != null);
-    assert(addedObjective != null);
-    assert(removedObjective != null);
-    assert(reorderedList != null);
     return removedObjective(this);
   }
 
   @override
   @optionalTypeArgs
-  TResult maybeMap<TResult extends Object>({
-    TResult initialized(_Initialized value),
-    TResult addedObjective(_AddedObjective value),
-    TResult removedObjective(_RemovedObjective value),
-    TResult reorderedList(_ReorderedList value),
-    @required TResult orElse(),
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initialized value)? initialized,
+    TResult Function(_AddedObjective value)? addedObjective,
+    TResult Function(_RemovedObjective value)? removedObjective,
+    TResult Function(_ReorderedList value)? reorderedList,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (removedObjective != null) {
       return removedObjective(this);
     }
@@ -473,9 +452,10 @@ class _$_RemovedObjective implements _RemovedObjective {
 abstract class _RemovedObjective implements ObjectivesCreationEvent {
   const factory _RemovedObjective(Objective objective) = _$_RemovedObjective;
 
-  Objective get objective;
+  Objective get objective => throw _privateConstructorUsedError;
+
   @JsonKey(ignore: true)
-  _$RemovedObjectiveCopyWith<_RemovedObjective> get copyWith;
+  _$RemovedObjectiveCopyWith<_RemovedObjective> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -494,17 +474,20 @@ class __$ReorderedListCopyWithImpl<$Res> extends _$ObjectivesCreationEventCopyWi
 
   @override
   $Res call({
-    Object reorderedList = freezed,
+    Object? reorderedList = freezed,
   }) {
     return _then(_ReorderedList(
-      reorderedList == freezed ? _value.reorderedList : reorderedList as List<Objective>,
+      reorderedList == freezed
+          ? _value.reorderedList
+          : reorderedList // ignore: cast_nullable_to_non_nullable
+              as List<Objective>,
     ));
   }
 }
 
 /// @nodoc
 class _$_ReorderedList implements _ReorderedList {
-  const _$_ReorderedList(this.reorderedList) : assert(reorderedList != null);
+  const _$_ReorderedList(this.reorderedList);
 
   @override
   final List<Objective> reorderedList;
@@ -528,29 +511,24 @@ class _$_ReorderedList implements _ReorderedList {
 
   @override
   @optionalTypeArgs
-  TResult when<TResult extends Object>({
-    @required TResult initialized(Option<ObjectiveList> objectiveListOption),
-    @required TResult addedObjective(Objective objective),
-    @required TResult removedObjective(Objective objective),
-    @required TResult reorderedList(List<Objective> reorderedList),
+  TResult when<TResult extends Object?>({
+    required TResult Function(Option<ObjectiveList> objectiveListOption) initialized,
+    required TResult Function(Objective objective) addedObjective,
+    required TResult Function(Objective objective) removedObjective,
+    required TResult Function(List<Objective> reorderedList) reorderedList,
   }) {
-    assert(initialized != null);
-    assert(addedObjective != null);
-    assert(removedObjective != null);
-    assert(reorderedList != null);
     return reorderedList(this.reorderedList);
   }
 
   @override
   @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object>({
-    TResult initialized(Option<ObjectiveList> objectiveListOption),
-    TResult addedObjective(Objective objective),
-    TResult removedObjective(Objective objective),
-    TResult reorderedList(List<Objective> reorderedList),
-    @required TResult orElse(),
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(Option<ObjectiveList> objectiveListOption)? initialized,
+    TResult Function(Objective objective)? addedObjective,
+    TResult Function(Objective objective)? removedObjective,
+    TResult Function(List<Objective> reorderedList)? reorderedList,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (reorderedList != null) {
       return reorderedList(this.reorderedList);
     }
@@ -559,29 +537,24 @@ class _$_ReorderedList implements _ReorderedList {
 
   @override
   @optionalTypeArgs
-  TResult map<TResult extends Object>({
-    @required TResult initialized(_Initialized value),
-    @required TResult addedObjective(_AddedObjective value),
-    @required TResult removedObjective(_RemovedObjective value),
-    @required TResult reorderedList(_ReorderedList value),
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initialized value) initialized,
+    required TResult Function(_AddedObjective value) addedObjective,
+    required TResult Function(_RemovedObjective value) removedObjective,
+    required TResult Function(_ReorderedList value) reorderedList,
   }) {
-    assert(initialized != null);
-    assert(addedObjective != null);
-    assert(removedObjective != null);
-    assert(reorderedList != null);
     return reorderedList(this);
   }
 
   @override
   @optionalTypeArgs
-  TResult maybeMap<TResult extends Object>({
-    TResult initialized(_Initialized value),
-    TResult addedObjective(_AddedObjective value),
-    TResult removedObjective(_RemovedObjective value),
-    TResult reorderedList(_ReorderedList value),
-    @required TResult orElse(),
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initialized value)? initialized,
+    TResult Function(_AddedObjective value)? addedObjective,
+    TResult Function(_RemovedObjective value)? removedObjective,
+    TResult Function(_ReorderedList value)? reorderedList,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (reorderedList != null) {
       return reorderedList(this);
     }
@@ -592,18 +565,17 @@ class _$_ReorderedList implements _ReorderedList {
 abstract class _ReorderedList implements ObjectivesCreationEvent {
   const factory _ReorderedList(List<Objective> reorderedList) = _$_ReorderedList;
 
-  List<Objective> get reorderedList;
+  List<Objective> get reorderedList => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
-  _$ReorderedListCopyWith<_ReorderedList> get copyWith;
+  _$ReorderedListCopyWith<_ReorderedList> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 class _$ObjectivesCreationStateTearOff {
   const _$ObjectivesCreationStateTearOff();
 
-// ignore: unused_element
-  _ObjectivesCreationState call({@required KtList<Objective> objectivesCreated}) {
+  _ObjectivesCreationState call({required KtList<Objective> objectivesCreated}) {
     return _ObjectivesCreationState(
       objectivesCreated: objectivesCreated,
     );
@@ -611,15 +583,14 @@ class _$ObjectivesCreationStateTearOff {
 }
 
 /// @nodoc
-// ignore: unused_element
 const $ObjectivesCreationState = _$ObjectivesCreationStateTearOff();
 
 /// @nodoc
 mixin _$ObjectivesCreationState {
-  KtList<Objective> get objectivesCreated;
+  KtList<Objective> get objectivesCreated => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
-  $ObjectivesCreationStateCopyWith<ObjectivesCreationState> get copyWith;
+  $ObjectivesCreationStateCopyWith<ObjectivesCreationState> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -640,10 +611,13 @@ class _$ObjectivesCreationStateCopyWithImpl<$Res> implements $ObjectivesCreation
 
   @override
   $Res call({
-    Object objectivesCreated = freezed,
+    Object? objectivesCreated = freezed,
   }) {
     return _then(_value.copyWith(
-      objectivesCreated: objectivesCreated == freezed ? _value.objectivesCreated : objectivesCreated as KtList<Objective>,
+      objectivesCreated: objectivesCreated == freezed
+          ? _value.objectivesCreated
+          : objectivesCreated // ignore: cast_nullable_to_non_nullable
+              as KtList<Objective>,
     ));
   }
 }
@@ -665,17 +639,20 @@ class __$ObjectivesCreationStateCopyWithImpl<$Res> extends _$ObjectivesCreationS
 
   @override
   $Res call({
-    Object objectivesCreated = freezed,
+    Object? objectivesCreated = freezed,
   }) {
     return _then(_ObjectivesCreationState(
-      objectivesCreated: objectivesCreated == freezed ? _value.objectivesCreated : objectivesCreated as KtList<Objective>,
+      objectivesCreated: objectivesCreated == freezed
+          ? _value.objectivesCreated
+          : objectivesCreated // ignore: cast_nullable_to_non_nullable
+              as KtList<Objective>,
     ));
   }
 }
 
 /// @nodoc
 class _$_ObjectivesCreationState implements _ObjectivesCreationState {
-  const _$_ObjectivesCreationState({@required this.objectivesCreated}) : assert(objectivesCreated != null);
+  const _$_ObjectivesCreationState({required this.objectivesCreated});
 
   @override
   final KtList<Objective> objectivesCreated;
@@ -700,12 +677,12 @@ class _$_ObjectivesCreationState implements _ObjectivesCreationState {
 }
 
 abstract class _ObjectivesCreationState implements ObjectivesCreationState {
-  const factory _ObjectivesCreationState({@required KtList<Objective> objectivesCreated}) = _$_ObjectivesCreationState;
+  const factory _ObjectivesCreationState({required KtList<Objective> objectivesCreated}) = _$_ObjectivesCreationState;
 
   @override
-  KtList<Objective> get objectivesCreated;
+  KtList<Objective> get objectivesCreated => throw _privateConstructorUsedError;
 
   @override
   @JsonKey(ignore: true)
-  _$ObjectivesCreationStateCopyWith<_ObjectivesCreationState> get copyWith;
+  _$ObjectivesCreationStateCopyWith<_ObjectivesCreationState> get copyWith => throw _privateConstructorUsedError;
 }

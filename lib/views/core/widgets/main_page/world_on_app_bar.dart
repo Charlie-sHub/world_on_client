@@ -6,7 +6,7 @@ import 'package:worldon/views/core/widgets/main_page/store_page_button.dart';
 
 class WorldOnAppBar extends StatelessWidget implements PreferredSizeWidget {
   const WorldOnAppBar({
-    Key key,
+    Key? key,
   }) : super(key: key);
 
   @override

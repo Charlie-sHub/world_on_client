@@ -19,9 +19,9 @@ part 'profile_users_watcher_state.dart';
 /// Loads the [User]s followed by the given [User]
 @injectable
 class ProfileUsersWatcherBloc extends Bloc<ProfileUsersWatcherEvent, ProfileUsersWatcherState> {
-  StreamSubscription<Either<Failure, KtList<User>>> _userStreamSubscription;
-
   ProfileUsersWatcherBloc() : super(const ProfileUsersWatcherState.initial());
+
+  StreamSubscription<Either<Failure, KtList<User>>>? _userStreamSubscription;
 
   @override
   Stream<ProfileUsersWatcherState> mapEventToState(ProfileUsersWatcherEvent event) async* {

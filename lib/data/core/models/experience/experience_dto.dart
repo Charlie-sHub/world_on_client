@@ -24,28 +24,28 @@ part 'experience_dto.freezed.dart';
 part 'experience_dto.g.dart';
 
 @freezed
-abstract class ExperienceDto implements _$ExperienceDto {
+class ExperienceDto with _$ExperienceDto {
   const ExperienceDto._();
 
   const factory ExperienceDto({
-    @required String id,
-    @required String title,
-    @required String description,
-    @required Set<String> imageURLs,
-    @required CoordinatesDto coordinates,
-    @required LocationDto location,
-    @required String creatorId,
-    @required UserDto creator,
-    @required int difficulty,
-    @ServerTimestampConverter() @required DateTime creationDate,
-    @ServerTimestampConverter() @required DateTime modificationDate,
-    @required List<ObjectiveDto> objectives,
-    @required Set<RewardDto> rewards,
-    @required Set<TagDto> tags,
+    required String id,
+    required String title,
+    required String description,
+    required Set<String> imageURLs,
+    required CoordinatesDto coordinates,
+    required LocationDto location,
+    required String creatorId,
+    required UserDto creator,
+    required int difficulty,
+    @ServerTimestampConverter() required DateTime creationDate,
+    @ServerTimestampConverter() required DateTime modificationDate,
+    required List<ObjectiveDto> objectives,
+    required Set<RewardDto> rewards,
+    required Set<TagDto> tags,
     // Probably shouldn't be part of the DTO, as in Firestore it's a sub document of the experience document
-    @required Set<CommentDto> comments,
-    @required Set<String> likedBy,
-    @required Set<String> doneBy,
+    required Set<CommentDto> comments,
+    required Set<String> likedBy,
+    required Set<String> doneBy,
   }) = _ExperienceDto;
 
   factory ExperienceDto.fromDomain(Experience experience) => ExperienceDto(
@@ -91,7 +91,7 @@ abstract class ExperienceDto implements _$ExperienceDto {
   factory ExperienceDto.fromJson(Map<String, dynamic> json) => _$ExperienceDtoFromJson(json);
 
   factory ExperienceDto.fromFirestore(DocumentSnapshot document) => ExperienceDto.fromJson(
-        document.data(),
+        document.data()!,
       ).copyWith(
         id: document.id,
       );

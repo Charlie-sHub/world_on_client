@@ -8,14 +8,14 @@ part 'device_dto.g.dart';
 
 // This, System and Location see pretty pointless
 @freezed
-abstract class DeviceDto implements _$DeviceDto {
+class DeviceDto with _$DeviceDto {
   const DeviceDto._();
 
   const factory DeviceDto({
-    @JsonKey(ignore: true) String id,
-    @required String name,
-    @required String type,
-    @required String company,
+    required String id,
+    required String name,
+    required String type,
+    required String company,
   }) = _DeviceDto;
 
   factory DeviceDto.fromDomain(Device device) => DeviceDto(
@@ -35,7 +35,7 @@ abstract class DeviceDto implements _$DeviceDto {
   factory DeviceDto.fromJson(Map<String, dynamic> json) => _$DeviceDtoFromJson(json);
 
   factory DeviceDto.fromFirestore(DocumentSnapshot document) => DeviceDto.fromJson(
-        document.data(),
+        document.data()!,
       ).copyWith(
         id: document.id,
       );

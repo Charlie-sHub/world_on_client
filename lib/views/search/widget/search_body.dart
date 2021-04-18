@@ -15,7 +15,7 @@ import 'package:worldon/views/search/widget/search_users_tab_view/search_users_t
 
 // TODO: Implement search experiences by difficulty and by tags
 class SearchBody extends StatelessWidget {
-  const SearchBody({Key key}) : super(key: key);
+  const SearchBody({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

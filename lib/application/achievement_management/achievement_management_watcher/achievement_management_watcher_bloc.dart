@@ -20,7 +20,7 @@ part 'achievement_management_watcher_state.dart';
 class AchievementManagementWatcherBloc extends Bloc<AchievementManagementWatcherEvent, AchievementManagementWatcherState> {
   AchievementManagementWatcherBloc() : super(const AchievementManagementWatcherState.initial());
 
-  StreamSubscription<Either<Failure, KtList<Achievement>>> _achievementsStreamSubscription;
+  StreamSubscription<Either<Failure, KtList<Achievement>>>? _achievementsStreamSubscription;
 
   @override
   Stream<AchievementManagementWatcherState> mapEventToState(AchievementManagementWatcherEvent event) async* {

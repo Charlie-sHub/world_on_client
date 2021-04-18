@@ -22,28 +22,28 @@ part 'experience.freezed.dart';
 ///
 /// [Experience]s are the core of World On, little [User] created adventures for other [User]s to enjoy.
 @freezed
-abstract class Experience implements _$Experience {
+class Experience with _$Experience {
   const Experience._();
 
   const factory Experience({
     // TODO: Add dislike counters
-    @required UniqueId id,
-    @required Name title,
-    @required EntityDescription description,
-    @required Set<String> imageURLs,
-    @required Option<List<Asset>> imageAssetsOption,
-    @required Coordinates coordinates,
-    @required Location location,
-    @required User creator,
-    @required Difficulty difficulty,
-    @required PastDate creationDate,
-    @required PastDate modificationDate,
-    @required ObjectiveList objectives,
-    @required RewardSet rewards,
-    @required TagSet tags,
-    @required Set<Comment> comments,
-    @required Set<UniqueId> likedBy,
-    @required Set<UniqueId> doneBy,
+    required UniqueId id,
+    required Name title,
+    required EntityDescription description,
+    required Set<String> imageURLs,
+    required Option<List<Asset>> imageAssetsOption,
+    required Coordinates coordinates,
+    required Location location,
+    required User creator,
+    required Difficulty difficulty,
+    required PastDate creationDate,
+    required PastDate modificationDate,
+    required ObjectiveList objectives,
+    required RewardSet rewards,
+    required TagSet tags,
+    required Set<Comment> comments,
+    required Set<UniqueId> likedBy,
+    required Set<UniqueId> doneBy,
   }) = _Experience;
 
   factory Experience.empty() => Experience(

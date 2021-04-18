@@ -3,14 +3,14 @@ import 'package:worldon/generated/l10n.dart';
 
 class LogInTroubleButton extends StatelessWidget {
   const LogInTroubleButton({
-    Key key,
+    Key? key,
   }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return FlatButton(
+    return TextButton(
       // TODO: Add functionality for recovering account
-      onPressed: () => null,
+      onPressed: () {},
       child: Text(
         S.of(context).logInTrouble,
         textAlign: TextAlign.center,

@@ -18,24 +18,24 @@ part 'achievement.freezed.dart';
 ///
 /// [Achievement]s can be earned by [User]s for doing certain things in the application, getting rewarded for doing so.
 @freezed
-abstract class Achievement implements _$Achievement {
+class Achievement with _$Achievement {
   const Achievement._();
 
   const factory Achievement({
-    @required UniqueId id,
-    @required Name name,
-    @required EntityDescription description,
+    required UniqueId id,
+    required Name name,
+    required EntityDescription description,
     // TODO: Make a value object and validator for image URLs from World On's back-end
     // Maybe Firestore will make that unnecessary
-    @required String imageURL,
-    @required Option<File> imageFile,
-    @required String type,
-    @required int requisite, // This will probably be reworked in the future to accommodate different kinds of achievements
-    @required ExperiencePoints experiencePoints,
-    @required UniqueId creatorId,
-    @required PastDate creationDate,
-    @required PastDate modificationDate,
-    @required TagSet tags,
+    required String imageURL,
+    required Option<File> imageFile,
+    required String type,
+    required int requisite, // This will probably be reworked in the future to accommodate different kinds of achievements
+    required ExperiencePoints experiencePoints,
+    required UniqueId creatorId,
+    required PastDate creationDate,
+    required PastDate modificationDate,
+    required TagSet tags,
   }) = _Achievement;
 
   factory Achievement.empty() => Achievement(

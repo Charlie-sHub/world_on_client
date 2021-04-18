@@ -1,7 +1,7 @@
 part of 'buy_item_bloc.dart';
 
 @freezed
-abstract class BuyItemState with _$BuyItemState {
+class BuyItemState with _$BuyItemState {
   const factory BuyItemState.initial() = _Initial;
 
   const factory BuyItemState.actionInProgress() = _ActionInProgress;

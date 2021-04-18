@@ -14,8 +14,8 @@ class MapTabView extends StatelessWidget {
   final Experience experience;
 
   const MapTabView({
-    Key key,
-    @required this.experience,
+    Key? key,
+    required this.experience,
   }) : super(key: key);
 
   @override

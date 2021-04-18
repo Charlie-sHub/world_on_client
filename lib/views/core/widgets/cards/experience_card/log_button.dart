@@ -7,8 +7,8 @@ import 'package:worldon/views/core/widgets/cards/experience_card/dismiss_from_lo
 
 class LogButton extends StatelessWidget {
   const LogButton({
-    Key key,
-    @required this.experience,
+    Key? key,
+    required this.experience,
   }) : super(key: key);
 
   final Experience experience;

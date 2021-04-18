@@ -20,7 +20,8 @@ part 'search_experiences_by_difficulty_state.dart';
 @injectable
 class SearchExperiencesByDifficultyBloc extends Bloc<SearchExperiencesByDifficultyEvent, SearchExperiencesByDifficultyState> {
   SearchExperiencesByDifficultyBloc() : super(const SearchExperiencesByDifficultyState.initial());
-  StreamSubscription<Either<Failure, KtList<Experience>>> _experiencesStreamSubscription;
+
+  StreamSubscription<Either<Failure, KtList<Experience>>>? _experiencesStreamSubscription;
 
   @override
   Stream<SearchExperiencesByDifficultyState> mapEventToState(SearchExperiencesByDifficultyEvent event) async* {

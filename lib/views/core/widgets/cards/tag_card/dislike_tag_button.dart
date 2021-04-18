@@ -6,8 +6,8 @@ import 'package:worldon/domain/core/entities/tag/tag.dart';
 
 class DislikeTagButton extends StatelessWidget {
   const DislikeTagButton({
-    Key key,
-    @required this.tag,
+    Key? key,
+    required this.tag,
   }) : super(key: key);
 
   final Tag tag;

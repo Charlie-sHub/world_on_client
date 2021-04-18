@@ -8,9 +8,9 @@ class ErrorCard extends StatelessWidget {
   final String entityType;
 
   const ErrorCard({
-    Key key,
-    @required this.valueFailureString,
-    @required this.entityType,
+    Key? key,
+    required this.valueFailureString,
+    required this.entityType,
   }) : super(key: key);
 
   @override

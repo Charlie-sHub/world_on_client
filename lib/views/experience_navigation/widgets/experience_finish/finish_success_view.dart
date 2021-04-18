@@ -13,8 +13,8 @@ class FinishSuccessView extends StatelessWidget {
   final Experience experience;
 
   const FinishSuccessView({
-    Key key,
-    @required this.experience,
+    Key? key,
+    required this.experience,
   }) : super(key: key);
 
   @override

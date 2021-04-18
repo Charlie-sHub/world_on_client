@@ -5,8 +5,8 @@ import 'package:worldon/views/core/misc/world_on_colors.dart';
 
 class ExperienceHeader extends StatelessWidget {
   const ExperienceHeader({
-    Key key,
-    @required this.experience,
+    Key? key,
+    required this.experience,
   }) : super(key: key);
 
   final Experience experience;

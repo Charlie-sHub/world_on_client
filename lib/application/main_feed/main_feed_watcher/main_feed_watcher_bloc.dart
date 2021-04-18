@@ -20,7 +20,8 @@ part 'main_feed_watcher_state.dart';
 @injectable
 class MainFeedWatcherBloc extends Bloc<MainFeedWatcherEvent, MainFeedWatcherState> {
   MainFeedWatcherBloc() : super(const MainFeedWatcherState.initial());
-  StreamSubscription<Either<Failure, KtList<Experience>>> _mainFeedStreamSubscription;
+
+  StreamSubscription<Either<Failure, KtList<Experience>>>? _mainFeedStreamSubscription;
 
   @override
   Stream<MainFeedWatcherState> mapEventToState(MainFeedWatcherEvent event) async* {

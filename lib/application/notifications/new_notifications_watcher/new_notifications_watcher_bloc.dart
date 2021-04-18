@@ -17,7 +17,8 @@ part 'new_notifications_watcher_state.dart';
 @injectable
 class NewNotificationsWatcherBloc extends Bloc<NewNotificationsWatcherEvent, NewNotificationsWatcherState> {
   NewNotificationsWatcherBloc() : super(const NewNotificationsWatcherState.initial());
-  StreamSubscription<Either<Failure, bool>> _newNotificationsStreamSubscription;
+
+  StreamSubscription<Either<Failure, bool>>? _newNotificationsStreamSubscription;
 
   @override
   Stream<NewNotificationsWatcherState> mapEventToState(NewNotificationsWatcherEvent event) async* {

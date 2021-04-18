@@ -7,5 +7,5 @@ import 'package:worldon/views/core/widgets/app_widget.dart';
 void main() {
   const environment = Environment.dev;
   configureDependencies(environment);
-  runApp(const AppWidget());
+  runApp(AppWidget());
 }

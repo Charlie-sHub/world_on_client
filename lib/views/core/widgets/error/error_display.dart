@@ -11,11 +11,11 @@ class ErrorDisplay extends StatelessWidget {
   final Option<String> specificMessage;
 
   const ErrorDisplay({
-    Key key,
-    @required this.failure,
-    @required this.retryFunction,
+    Key? key,
+    required this.failure,
+    required this.retryFunction,
     // It probably shouldn't be required, but i like it better as a required option as ironic as it may sound
-    @required this.specificMessage,
+    required this.specificMessage,
   }) : super(key: key);
 
   @override
@@ -34,7 +34,7 @@ class ErrorDisplay extends StatelessWidget {
                     (_message) => _message,
                   ),
                 ),
-                orElse: () => null,
+                orElse: () {},
               ),
               orElse: () => CriticalErrorDisplay(failure: failure),
             ),

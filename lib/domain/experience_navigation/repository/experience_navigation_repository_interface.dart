@@ -1,5 +1,4 @@
 import 'package:dartz/dartz.dart';
-import 'package:flutter/foundation.dart';
 import 'package:kt_dart/kt.dart';
 import 'package:worldon/core/error/failure.dart';
 import 'package:worldon/domain/core/entities/coordinates/coordinates.dart';
@@ -15,8 +14,8 @@ import 'package:worldon/domain/core/validation/objects/unique_id.dart';
 abstract class ExperienceNavigationRepositoryInterface {
   /// Sends the difficulty as rated by an [User] to the server to it updates the [Experience]'s difficulty value
   Future<Either<Failure, Unit>> rateDifficulty({
-    @required Difficulty difficulty,
-    @required UniqueId experienceId,
+    required Difficulty difficulty,
+    required UniqueId experienceId,
   });
 
   /// Sends and amount of experience point so the server rewards the logged in [User]

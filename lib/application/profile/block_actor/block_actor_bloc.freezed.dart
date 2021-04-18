@@ -1,5 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides
 
 part of 'block_actor_bloc.dart';
 
@@ -9,25 +9,25 @@ part of 'block_actor_bloc.dart';
 
 T _$identity<T>(T value) => value;
 
+final _privateConstructorUsedError = UnsupportedError(
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+
 /// @nodoc
 class _$BlockActorEventTearOff {
   const _$BlockActorEventTearOff();
 
-// ignore: unused_element
   _Initialized initialized(User user) {
     return _Initialized(
       user,
     );
   }
 
-// ignore: unused_element
   _Blocked blocked(User user) {
     return _Blocked(
       user,
     );
   }
 
-// ignore: unused_element
   _UnBlocked unBlocked(User user) {
     return _UnBlocked(
       user,
@@ -36,57 +36,60 @@ class _$BlockActorEventTearOff {
 }
 
 /// @nodoc
-// ignore: unused_element
 const $BlockActorEvent = _$BlockActorEventTearOff();
 
 /// @nodoc
 mixin _$BlockActorEvent {
-  User get user;
+  User get user => throw _privateConstructorUsedError;
 
   @optionalTypeArgs
-  TResult when<TResult extends Object>({
-    @required TResult initialized(User user),
-    @required TResult blocked(User user),
-    @required TResult unBlocked(User user),
-  });
+  TResult when<TResult extends Object?>({
+    required TResult Function(User user) initialized,
+    required TResult Function(User user) blocked,
+    required TResult Function(User user) unBlocked,
+  }) =>
+      throw _privateConstructorUsedError;
+
   @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object>({
-    TResult initialized(User user),
-    TResult blocked(User user),
-    TResult unBlocked(User user),
-    @required TResult orElse(),
-  });
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(User user)? initialized,
+    TResult Function(User user)? blocked,
+    TResult Function(User user)? unBlocked,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
+
   @optionalTypeArgs
-  TResult map<TResult extends Object>({
-    @required TResult initialized(_Initialized value),
-    @required TResult blocked(_Blocked value),
-    @required TResult unBlocked(_UnBlocked value),
-  });
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initialized value) initialized,
+    required TResult Function(_Blocked value) blocked,
+    required TResult Function(_UnBlocked value) unBlocked,
+  }) =>
+      throw _privateConstructorUsedError;
+
   @optionalTypeArgs
-  TResult maybeMap<TResult extends Object>({
-    TResult initialized(_Initialized value),
-    TResult blocked(_Blocked value),
-    TResult unBlocked(_UnBlocked value),
-    @required TResult orElse(),
-  });
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initialized value)? initialized,
+    TResult Function(_Blocked value)? blocked,
+    TResult Function(_UnBlocked value)? unBlocked,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
-  $BlockActorEventCopyWith<BlockActorEvent> get copyWith;
+  $BlockActorEventCopyWith<BlockActorEvent> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $BlockActorEventCopyWith<$Res> {
-  factory $BlockActorEventCopyWith(
-          BlockActorEvent value, $Res Function(BlockActorEvent) then) =
-      _$BlockActorEventCopyWithImpl<$Res>;
+  factory $BlockActorEventCopyWith(BlockActorEvent value, $Res Function(BlockActorEvent) then) = _$BlockActorEventCopyWithImpl<$Res>;
   $Res call({User user});
 
   $UserCopyWith<$Res> get user;
 }
 
 /// @nodoc
-class _$BlockActorEventCopyWithImpl<$Res>
-    implements $BlockActorEventCopyWith<$Res> {
+class _$BlockActorEventCopyWithImpl<$Res> implements $BlockActorEventCopyWith<$Res> {
   _$BlockActorEventCopyWithImpl(this._value, this._then);
 
   final BlockActorEvent _value;
@@ -95,18 +98,18 @@ class _$BlockActorEventCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object user = freezed,
+    Object? user = freezed,
   }) {
     return _then(_value.copyWith(
-      user: user == freezed ? _value.user : user as User,
+      user: user == freezed
+          ? _value.user
+          : user // ignore: cast_nullable_to_non_nullable
+              as User,
     ));
   }
 
   @override
   $UserCopyWith<$Res> get user {
-    if (_value.user == null) {
-      return null;
-    }
     return $UserCopyWith<$Res>(_value.user, (value) {
       return _then(_value.copyWith(user: value));
     });
@@ -114,11 +117,8 @@ class _$BlockActorEventCopyWithImpl<$Res>
 }
 
 /// @nodoc
-abstract class _$InitializedCopyWith<$Res>
-    implements $BlockActorEventCopyWith<$Res> {
-  factory _$InitializedCopyWith(
-          _Initialized value, $Res Function(_Initialized) then) =
-      __$InitializedCopyWithImpl<$Res>;
+abstract class _$InitializedCopyWith<$Res> implements $BlockActorEventCopyWith<$Res> {
+  factory _$InitializedCopyWith(_Initialized value, $Res Function(_Initialized) then) = __$InitializedCopyWithImpl<$Res>;
   @override
   $Res call({User user});
 
@@ -127,29 +127,28 @@ abstract class _$InitializedCopyWith<$Res>
 }
 
 /// @nodoc
-class __$InitializedCopyWithImpl<$Res>
-    extends _$BlockActorEventCopyWithImpl<$Res>
-    implements _$InitializedCopyWith<$Res> {
-  __$InitializedCopyWithImpl(
-      _Initialized _value, $Res Function(_Initialized) _then)
-      : super(_value, (v) => _then(v as _Initialized));
+class __$InitializedCopyWithImpl<$Res> extends _$BlockActorEventCopyWithImpl<$Res> implements _$InitializedCopyWith<$Res> {
+  __$InitializedCopyWithImpl(_Initialized _value, $Res Function(_Initialized) _then) : super(_value, (v) => _then(v as _Initialized));
 
   @override
   _Initialized get _value => super._value as _Initialized;
 
   @override
   $Res call({
-    Object user = freezed,
+    Object? user = freezed,
   }) {
     return _then(_Initialized(
-      user == freezed ? _value.user : user as User,
+      user == freezed
+          ? _value.user
+          : user // ignore: cast_nullable_to_non_nullable
+              as User,
     ));
   }
 }
 
 /// @nodoc
 class _$_Initialized implements _Initialized {
-  const _$_Initialized(this.user) : assert(user != null);
+  const _$_Initialized(this.user);
 
   @override
   final User user;
@@ -161,43 +160,34 @@ class _$_Initialized implements _Initialized {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) ||
-        (other is _Initialized &&
-            (identical(other.user, user) ||
-                const DeepCollectionEquality().equals(other.user, user)));
+    return identical(this, other) || (other is _Initialized && (identical(other.user, user) || const DeepCollectionEquality().equals(other.user, user)));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(user);
+  int get hashCode => runtimeType.hashCode ^ const DeepCollectionEquality().hash(user);
 
   @JsonKey(ignore: true)
   @override
-  _$InitializedCopyWith<_Initialized> get copyWith =>
-      __$InitializedCopyWithImpl<_Initialized>(this, _$identity);
+  _$InitializedCopyWith<_Initialized> get copyWith => __$InitializedCopyWithImpl<_Initialized>(this, _$identity);
 
   @override
   @optionalTypeArgs
-  TResult when<TResult extends Object>({
-    @required TResult initialized(User user),
-    @required TResult blocked(User user),
-    @required TResult unBlocked(User user),
+  TResult when<TResult extends Object?>({
+    required TResult Function(User user) initialized,
+    required TResult Function(User user) blocked,
+    required TResult Function(User user) unBlocked,
   }) {
-    assert(initialized != null);
-    assert(blocked != null);
-    assert(unBlocked != null);
     return initialized(user);
   }
 
   @override
   @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object>({
-    TResult initialized(User user),
-    TResult blocked(User user),
-    TResult unBlocked(User user),
-    @required TResult orElse(),
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(User user)? initialized,
+    TResult Function(User user)? blocked,
+    TResult Function(User user)? unBlocked,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (initialized != null) {
       return initialized(user);
     }
@@ -206,26 +196,22 @@ class _$_Initialized implements _Initialized {
 
   @override
   @optionalTypeArgs
-  TResult map<TResult extends Object>({
-    @required TResult initialized(_Initialized value),
-    @required TResult blocked(_Blocked value),
-    @required TResult unBlocked(_UnBlocked value),
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initialized value) initialized,
+    required TResult Function(_Blocked value) blocked,
+    required TResult Function(_UnBlocked value) unBlocked,
   }) {
-    assert(initialized != null);
-    assert(blocked != null);
-    assert(unBlocked != null);
     return initialized(this);
   }
 
   @override
   @optionalTypeArgs
-  TResult maybeMap<TResult extends Object>({
-    TResult initialized(_Initialized value),
-    TResult blocked(_Blocked value),
-    TResult unBlocked(_UnBlocked value),
-    @required TResult orElse(),
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initialized value)? initialized,
+    TResult Function(_Blocked value)? blocked,
+    TResult Function(_UnBlocked value)? unBlocked,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (initialized != null) {
       return initialized(this);
     }
@@ -237,17 +223,16 @@ abstract class _Initialized implements BlockActorEvent {
   const factory _Initialized(User user) = _$_Initialized;
 
   @override
-  User get user;
+  User get user => throw _privateConstructorUsedError;
+
   @override
   @JsonKey(ignore: true)
-  _$InitializedCopyWith<_Initialized> get copyWith;
+  _$InitializedCopyWith<_Initialized> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$BlockedCopyWith<$Res>
-    implements $BlockActorEventCopyWith<$Res> {
-  factory _$BlockedCopyWith(_Blocked value, $Res Function(_Blocked) then) =
-      __$BlockedCopyWithImpl<$Res>;
+abstract class _$BlockedCopyWith<$Res> implements $BlockActorEventCopyWith<$Res> {
+  factory _$BlockedCopyWith(_Blocked value, $Res Function(_Blocked) then) = __$BlockedCopyWithImpl<$Res>;
   @override
   $Res call({User user});
 
@@ -256,27 +241,28 @@ abstract class _$BlockedCopyWith<$Res>
 }
 
 /// @nodoc
-class __$BlockedCopyWithImpl<$Res> extends _$BlockActorEventCopyWithImpl<$Res>
-    implements _$BlockedCopyWith<$Res> {
-  __$BlockedCopyWithImpl(_Blocked _value, $Res Function(_Blocked) _then)
-      : super(_value, (v) => _then(v as _Blocked));
+class __$BlockedCopyWithImpl<$Res> extends _$BlockActorEventCopyWithImpl<$Res> implements _$BlockedCopyWith<$Res> {
+  __$BlockedCopyWithImpl(_Blocked _value, $Res Function(_Blocked) _then) : super(_value, (v) => _then(v as _Blocked));
 
   @override
   _Blocked get _value => super._value as _Blocked;
 
   @override
   $Res call({
-    Object user = freezed,
+    Object? user = freezed,
   }) {
     return _then(_Blocked(
-      user == freezed ? _value.user : user as User,
+      user == freezed
+          ? _value.user
+          : user // ignore: cast_nullable_to_non_nullable
+              as User,
     ));
   }
 }
 
 /// @nodoc
 class _$_Blocked implements _Blocked {
-  const _$_Blocked(this.user) : assert(user != null);
+  const _$_Blocked(this.user);
 
   @override
   final User user;
@@ -288,43 +274,34 @@ class _$_Blocked implements _Blocked {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) ||
-        (other is _Blocked &&
-            (identical(other.user, user) ||
-                const DeepCollectionEquality().equals(other.user, user)));
+    return identical(this, other) || (other is _Blocked && (identical(other.user, user) || const DeepCollectionEquality().equals(other.user, user)));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(user);
+  int get hashCode => runtimeType.hashCode ^ const DeepCollectionEquality().hash(user);
 
   @JsonKey(ignore: true)
   @override
-  _$BlockedCopyWith<_Blocked> get copyWith =>
-      __$BlockedCopyWithImpl<_Blocked>(this, _$identity);
+  _$BlockedCopyWith<_Blocked> get copyWith => __$BlockedCopyWithImpl<_Blocked>(this, _$identity);
 
   @override
   @optionalTypeArgs
-  TResult when<TResult extends Object>({
-    @required TResult initialized(User user),
-    @required TResult blocked(User user),
-    @required TResult unBlocked(User user),
+  TResult when<TResult extends Object?>({
+    required TResult Function(User user) initialized,
+    required TResult Function(User user) blocked,
+    required TResult Function(User user) unBlocked,
   }) {
-    assert(initialized != null);
-    assert(blocked != null);
-    assert(unBlocked != null);
     return blocked(user);
   }
 
   @override
   @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object>({
-    TResult initialized(User user),
-    TResult blocked(User user),
-    TResult unBlocked(User user),
-    @required TResult orElse(),
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(User user)? initialized,
+    TResult Function(User user)? blocked,
+    TResult Function(User user)? unBlocked,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (blocked != null) {
       return blocked(user);
     }
@@ -333,26 +310,22 @@ class _$_Blocked implements _Blocked {
 
   @override
   @optionalTypeArgs
-  TResult map<TResult extends Object>({
-    @required TResult initialized(_Initialized value),
-    @required TResult blocked(_Blocked value),
-    @required TResult unBlocked(_UnBlocked value),
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initialized value) initialized,
+    required TResult Function(_Blocked value) blocked,
+    required TResult Function(_UnBlocked value) unBlocked,
   }) {
-    assert(initialized != null);
-    assert(blocked != null);
-    assert(unBlocked != null);
     return blocked(this);
   }
 
   @override
   @optionalTypeArgs
-  TResult maybeMap<TResult extends Object>({
-    TResult initialized(_Initialized value),
-    TResult blocked(_Blocked value),
-    TResult unBlocked(_UnBlocked value),
-    @required TResult orElse(),
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initialized value)? initialized,
+    TResult Function(_Blocked value)? blocked,
+    TResult Function(_UnBlocked value)? unBlocked,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (blocked != null) {
       return blocked(this);
     }
@@ -364,18 +337,16 @@ abstract class _Blocked implements BlockActorEvent {
   const factory _Blocked(User user) = _$_Blocked;
 
   @override
-  User get user;
+  User get user => throw _privateConstructorUsedError;
+
   @override
   @JsonKey(ignore: true)
-  _$BlockedCopyWith<_Blocked> get copyWith;
+  _$BlockedCopyWith<_Blocked> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$UnBlockedCopyWith<$Res>
-    implements $BlockActorEventCopyWith<$Res> {
-  factory _$UnBlockedCopyWith(
-          _UnBlocked value, $Res Function(_UnBlocked) then) =
-      __$UnBlockedCopyWithImpl<$Res>;
+abstract class _$UnBlockedCopyWith<$Res> implements $BlockActorEventCopyWith<$Res> {
+  factory _$UnBlockedCopyWith(_UnBlocked value, $Res Function(_UnBlocked) then) = __$UnBlockedCopyWithImpl<$Res>;
   @override
   $Res call({User user});
 
@@ -384,27 +355,28 @@ abstract class _$UnBlockedCopyWith<$Res>
 }
 
 /// @nodoc
-class __$UnBlockedCopyWithImpl<$Res> extends _$BlockActorEventCopyWithImpl<$Res>
-    implements _$UnBlockedCopyWith<$Res> {
-  __$UnBlockedCopyWithImpl(_UnBlocked _value, $Res Function(_UnBlocked) _then)
-      : super(_value, (v) => _then(v as _UnBlocked));
+class __$UnBlockedCopyWithImpl<$Res> extends _$BlockActorEventCopyWithImpl<$Res> implements _$UnBlockedCopyWith<$Res> {
+  __$UnBlockedCopyWithImpl(_UnBlocked _value, $Res Function(_UnBlocked) _then) : super(_value, (v) => _then(v as _UnBlocked));
 
   @override
   _UnBlocked get _value => super._value as _UnBlocked;
 
   @override
   $Res call({
-    Object user = freezed,
+    Object? user = freezed,
   }) {
     return _then(_UnBlocked(
-      user == freezed ? _value.user : user as User,
+      user == freezed
+          ? _value.user
+          : user // ignore: cast_nullable_to_non_nullable
+              as User,
     ));
   }
 }
 
 /// @nodoc
 class _$_UnBlocked implements _UnBlocked {
-  const _$_UnBlocked(this.user) : assert(user != null);
+  const _$_UnBlocked(this.user);
 
   @override
   final User user;
@@ -416,43 +388,34 @@ class _$_UnBlocked implements _UnBlocked {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) ||
-        (other is _UnBlocked &&
-            (identical(other.user, user) ||
-                const DeepCollectionEquality().equals(other.user, user)));
+    return identical(this, other) || (other is _UnBlocked && (identical(other.user, user) || const DeepCollectionEquality().equals(other.user, user)));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(user);
+  int get hashCode => runtimeType.hashCode ^ const DeepCollectionEquality().hash(user);
 
   @JsonKey(ignore: true)
   @override
-  _$UnBlockedCopyWith<_UnBlocked> get copyWith =>
-      __$UnBlockedCopyWithImpl<_UnBlocked>(this, _$identity);
+  _$UnBlockedCopyWith<_UnBlocked> get copyWith => __$UnBlockedCopyWithImpl<_UnBlocked>(this, _$identity);
 
   @override
   @optionalTypeArgs
-  TResult when<TResult extends Object>({
-    @required TResult initialized(User user),
-    @required TResult blocked(User user),
-    @required TResult unBlocked(User user),
+  TResult when<TResult extends Object?>({
+    required TResult Function(User user) initialized,
+    required TResult Function(User user) blocked,
+    required TResult Function(User user) unBlocked,
   }) {
-    assert(initialized != null);
-    assert(blocked != null);
-    assert(unBlocked != null);
     return unBlocked(user);
   }
 
   @override
   @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object>({
-    TResult initialized(User user),
-    TResult blocked(User user),
-    TResult unBlocked(User user),
-    @required TResult orElse(),
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(User user)? initialized,
+    TResult Function(User user)? blocked,
+    TResult Function(User user)? unBlocked,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (unBlocked != null) {
       return unBlocked(user);
     }
@@ -461,26 +424,22 @@ class _$_UnBlocked implements _UnBlocked {
 
   @override
   @optionalTypeArgs
-  TResult map<TResult extends Object>({
-    @required TResult initialized(_Initialized value),
-    @required TResult blocked(_Blocked value),
-    @required TResult unBlocked(_UnBlocked value),
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initialized value) initialized,
+    required TResult Function(_Blocked value) blocked,
+    required TResult Function(_UnBlocked value) unBlocked,
   }) {
-    assert(initialized != null);
-    assert(blocked != null);
-    assert(unBlocked != null);
     return unBlocked(this);
   }
 
   @override
   @optionalTypeArgs
-  TResult maybeMap<TResult extends Object>({
-    TResult initialized(_Initialized value),
-    TResult blocked(_Blocked value),
-    TResult unBlocked(_UnBlocked value),
-    @required TResult orElse(),
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initialized value)? initialized,
+    TResult Function(_Blocked value)? blocked,
+    TResult Function(_UnBlocked value)? unBlocked,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (unBlocked != null) {
       return unBlocked(this);
     }
@@ -492,54 +451,47 @@ abstract class _UnBlocked implements BlockActorEvent {
   const factory _UnBlocked(User user) = _$_UnBlocked;
 
   @override
-  User get user;
+  User get user => throw _privateConstructorUsedError;
+
   @override
   @JsonKey(ignore: true)
-  _$UnBlockedCopyWith<_UnBlocked> get copyWith;
+  _$UnBlockedCopyWith<_UnBlocked> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 class _$BlockActorStateTearOff {
   const _$BlockActorStateTearOff();
 
-// ignore: unused_element
   _Initial initial() {
     return const _Initial();
   }
 
-// ignore: unused_element
   _ActionInProgress actionInProgress() {
     return const _ActionInProgress();
   }
 
-// ignore: unused_element
   _Blocks blocks() {
     return const _Blocks();
   }
 
-// ignore: unused_element
   _BlocksNot blocksNot() {
     return const _BlocksNot();
   }
 
-// ignore: unused_element
   _BlockSuccess blockSuccess() {
     return const _BlockSuccess();
   }
 
-// ignore: unused_element
   _BlockFailure blockFailure(Failure<dynamic> failure) {
     return _BlockFailure(
       failure,
     );
   }
 
-// ignore: unused_element
   _UnBlockSuccess unBlockSuccess() {
     return const _UnBlockSuccess();
   }
 
-// ignore: unused_element
   _UnBlockFailure unBlockFailure(Failure<dynamic> failure) {
     return _UnBlockFailure(
       failure,
@@ -548,69 +500,72 @@ class _$BlockActorStateTearOff {
 }
 
 /// @nodoc
-// ignore: unused_element
 const $BlockActorState = _$BlockActorStateTearOff();
 
 /// @nodoc
 mixin _$BlockActorState {
   @optionalTypeArgs
-  TResult when<TResult extends Object>({
-    @required TResult initial(),
-    @required TResult actionInProgress(),
-    @required TResult blocks(),
-    @required TResult blocksNot(),
-    @required TResult blockSuccess(),
-    @required TResult blockFailure(Failure<dynamic> failure),
-    @required TResult unBlockSuccess(),
-    @required TResult unBlockFailure(Failure<dynamic> failure),
-  });
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() actionInProgress,
+    required TResult Function() blocks,
+    required TResult Function() blocksNot,
+    required TResult Function() blockSuccess,
+    required TResult Function(Failure<dynamic> failure) blockFailure,
+    required TResult Function() unBlockSuccess,
+    required TResult Function(Failure<dynamic> failure) unBlockFailure,
+  }) =>
+      throw _privateConstructorUsedError;
+
   @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object>({
-    TResult initial(),
-    TResult actionInProgress(),
-    TResult blocks(),
-    TResult blocksNot(),
-    TResult blockSuccess(),
-    TResult blockFailure(Failure<dynamic> failure),
-    TResult unBlockSuccess(),
-    TResult unBlockFailure(Failure<dynamic> failure),
-    @required TResult orElse(),
-  });
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? actionInProgress,
+    TResult Function()? blocks,
+    TResult Function()? blocksNot,
+    TResult Function()? blockSuccess,
+    TResult Function(Failure<dynamic> failure)? blockFailure,
+    TResult Function()? unBlockSuccess,
+    TResult Function(Failure<dynamic> failure)? unBlockFailure,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
+
   @optionalTypeArgs
-  TResult map<TResult extends Object>({
-    @required TResult initial(_Initial value),
-    @required TResult actionInProgress(_ActionInProgress value),
-    @required TResult blocks(_Blocks value),
-    @required TResult blocksNot(_BlocksNot value),
-    @required TResult blockSuccess(_BlockSuccess value),
-    @required TResult blockFailure(_BlockFailure value),
-    @required TResult unBlockSuccess(_UnBlockSuccess value),
-    @required TResult unBlockFailure(_UnBlockFailure value),
-  });
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial value) initial,
+    required TResult Function(_ActionInProgress value) actionInProgress,
+    required TResult Function(_Blocks value) blocks,
+    required TResult Function(_BlocksNot value) blocksNot,
+    required TResult Function(_BlockSuccess value) blockSuccess,
+    required TResult Function(_BlockFailure value) blockFailure,
+    required TResult Function(_UnBlockSuccess value) unBlockSuccess,
+    required TResult Function(_UnBlockFailure value) unBlockFailure,
+  }) =>
+      throw _privateConstructorUsedError;
+
   @optionalTypeArgs
-  TResult maybeMap<TResult extends Object>({
-    TResult initial(_Initial value),
-    TResult actionInProgress(_ActionInProgress value),
-    TResult blocks(_Blocks value),
-    TResult blocksNot(_BlocksNot value),
-    TResult blockSuccess(_BlockSuccess value),
-    TResult blockFailure(_BlockFailure value),
-    TResult unBlockSuccess(_UnBlockSuccess value),
-    TResult unBlockFailure(_UnBlockFailure value),
-    @required TResult orElse(),
-  });
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_ActionInProgress value)? actionInProgress,
+    TResult Function(_Blocks value)? blocks,
+    TResult Function(_BlocksNot value)? blocksNot,
+    TResult Function(_BlockSuccess value)? blockSuccess,
+    TResult Function(_BlockFailure value)? blockFailure,
+    TResult Function(_UnBlockSuccess value)? unBlockSuccess,
+    TResult Function(_UnBlockFailure value)? unBlockFailure,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $BlockActorStateCopyWith<$Res> {
-  factory $BlockActorStateCopyWith(
-          BlockActorState value, $Res Function(BlockActorState) then) =
-      _$BlockActorStateCopyWithImpl<$Res>;
+  factory $BlockActorStateCopyWith(BlockActorState value, $Res Function(BlockActorState) then) = _$BlockActorStateCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class _$BlockActorStateCopyWithImpl<$Res>
-    implements $BlockActorStateCopyWith<$Res> {
+class _$BlockActorStateCopyWithImpl<$Res> implements $BlockActorStateCopyWith<$Res> {
   _$BlockActorStateCopyWithImpl(this._value, this._then);
 
   final BlockActorState _value;
@@ -620,15 +575,12 @@ class _$BlockActorStateCopyWithImpl<$Res>
 
 /// @nodoc
 abstract class _$InitialCopyWith<$Res> {
-  factory _$InitialCopyWith(_Initial value, $Res Function(_Initial) then) =
-      __$InitialCopyWithImpl<$Res>;
+  factory _$InitialCopyWith(_Initial value, $Res Function(_Initial) then) = __$InitialCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$InitialCopyWithImpl<$Res> extends _$BlockActorStateCopyWithImpl<$Res>
-    implements _$InitialCopyWith<$Res> {
-  __$InitialCopyWithImpl(_Initial _value, $Res Function(_Initial) _then)
-      : super(_value, (v) => _then(v as _Initial));
+class __$InitialCopyWithImpl<$Res> extends _$BlockActorStateCopyWithImpl<$Res> implements _$InitialCopyWith<$Res> {
+  __$InitialCopyWithImpl(_Initial _value, $Res Function(_Initial) _then) : super(_value, (v) => _then(v as _Initial));
 
   @override
   _Initial get _value => super._value as _Initial;
@@ -653,41 +605,32 @@ class _$_Initial implements _Initial {
 
   @override
   @optionalTypeArgs
-  TResult when<TResult extends Object>({
-    @required TResult initial(),
-    @required TResult actionInProgress(),
-    @required TResult blocks(),
-    @required TResult blocksNot(),
-    @required TResult blockSuccess(),
-    @required TResult blockFailure(Failure<dynamic> failure),
-    @required TResult unBlockSuccess(),
-    @required TResult unBlockFailure(Failure<dynamic> failure),
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() actionInProgress,
+    required TResult Function() blocks,
+    required TResult Function() blocksNot,
+    required TResult Function() blockSuccess,
+    required TResult Function(Failure<dynamic> failure) blockFailure,
+    required TResult Function() unBlockSuccess,
+    required TResult Function(Failure<dynamic> failure) unBlockFailure,
   }) {
-    assert(initial != null);
-    assert(actionInProgress != null);
-    assert(blocks != null);
-    assert(blocksNot != null);
-    assert(blockSuccess != null);
-    assert(blockFailure != null);
-    assert(unBlockSuccess != null);
-    assert(unBlockFailure != null);
     return initial();
   }
 
   @override
   @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object>({
-    TResult initial(),
-    TResult actionInProgress(),
-    TResult blocks(),
-    TResult blocksNot(),
-    TResult blockSuccess(),
-    TResult blockFailure(Failure<dynamic> failure),
-    TResult unBlockSuccess(),
-    TResult unBlockFailure(Failure<dynamic> failure),
-    @required TResult orElse(),
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? actionInProgress,
+    TResult Function()? blocks,
+    TResult Function()? blocksNot,
+    TResult Function()? blockSuccess,
+    TResult Function(Failure<dynamic> failure)? blockFailure,
+    TResult Function()? unBlockSuccess,
+    TResult Function(Failure<dynamic> failure)? unBlockFailure,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (initial != null) {
       return initial();
     }
@@ -696,41 +639,32 @@ class _$_Initial implements _Initial {
 
   @override
   @optionalTypeArgs
-  TResult map<TResult extends Object>({
-    @required TResult initial(_Initial value),
-    @required TResult actionInProgress(_ActionInProgress value),
-    @required TResult blocks(_Blocks value),
-    @required TResult blocksNot(_BlocksNot value),
-    @required TResult blockSuccess(_BlockSuccess value),
-    @required TResult blockFailure(_BlockFailure value),
-    @required TResult unBlockSuccess(_UnBlockSuccess value),
-    @required TResult unBlockFailure(_UnBlockFailure value),
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial value) initial,
+    required TResult Function(_ActionInProgress value) actionInProgress,
+    required TResult Function(_Blocks value) blocks,
+    required TResult Function(_BlocksNot value) blocksNot,
+    required TResult Function(_BlockSuccess value) blockSuccess,
+    required TResult Function(_BlockFailure value) blockFailure,
+    required TResult Function(_UnBlockSuccess value) unBlockSuccess,
+    required TResult Function(_UnBlockFailure value) unBlockFailure,
   }) {
-    assert(initial != null);
-    assert(actionInProgress != null);
-    assert(blocks != null);
-    assert(blocksNot != null);
-    assert(blockSuccess != null);
-    assert(blockFailure != null);
-    assert(unBlockSuccess != null);
-    assert(unBlockFailure != null);
     return initial(this);
   }
 
   @override
   @optionalTypeArgs
-  TResult maybeMap<TResult extends Object>({
-    TResult initial(_Initial value),
-    TResult actionInProgress(_ActionInProgress value),
-    TResult blocks(_Blocks value),
-    TResult blocksNot(_BlocksNot value),
-    TResult blockSuccess(_BlockSuccess value),
-    TResult blockFailure(_BlockFailure value),
-    TResult unBlockSuccess(_UnBlockSuccess value),
-    TResult unBlockFailure(_UnBlockFailure value),
-    @required TResult orElse(),
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_ActionInProgress value)? actionInProgress,
+    TResult Function(_Blocks value)? blocks,
+    TResult Function(_BlocksNot value)? blocksNot,
+    TResult Function(_BlockSuccess value)? blockSuccess,
+    TResult Function(_BlockFailure value)? blockFailure,
+    TResult Function(_UnBlockSuccess value)? unBlockSuccess,
+    TResult Function(_UnBlockFailure value)? unBlockFailure,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (initial != null) {
       return initial(this);
     }
@@ -744,18 +678,12 @@ abstract class _Initial implements BlockActorState {
 
 /// @nodoc
 abstract class _$ActionInProgressCopyWith<$Res> {
-  factory _$ActionInProgressCopyWith(
-          _ActionInProgress value, $Res Function(_ActionInProgress) then) =
-      __$ActionInProgressCopyWithImpl<$Res>;
+  factory _$ActionInProgressCopyWith(_ActionInProgress value, $Res Function(_ActionInProgress) then) = __$ActionInProgressCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$ActionInProgressCopyWithImpl<$Res>
-    extends _$BlockActorStateCopyWithImpl<$Res>
-    implements _$ActionInProgressCopyWith<$Res> {
-  __$ActionInProgressCopyWithImpl(
-      _ActionInProgress _value, $Res Function(_ActionInProgress) _then)
-      : super(_value, (v) => _then(v as _ActionInProgress));
+class __$ActionInProgressCopyWithImpl<$Res> extends _$BlockActorStateCopyWithImpl<$Res> implements _$ActionInProgressCopyWith<$Res> {
+  __$ActionInProgressCopyWithImpl(_ActionInProgress _value, $Res Function(_ActionInProgress) _then) : super(_value, (v) => _then(v as _ActionInProgress));
 
   @override
   _ActionInProgress get _value => super._value as _ActionInProgress;
@@ -780,41 +708,32 @@ class _$_ActionInProgress implements _ActionInProgress {
 
   @override
   @optionalTypeArgs
-  TResult when<TResult extends Object>({
-    @required TResult initial(),
-    @required TResult actionInProgress(),
-    @required TResult blocks(),
-    @required TResult blocksNot(),
-    @required TResult blockSuccess(),
-    @required TResult blockFailure(Failure<dynamic> failure),
-    @required TResult unBlockSuccess(),
-    @required TResult unBlockFailure(Failure<dynamic> failure),
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() actionInProgress,
+    required TResult Function() blocks,
+    required TResult Function() blocksNot,
+    required TResult Function() blockSuccess,
+    required TResult Function(Failure<dynamic> failure) blockFailure,
+    required TResult Function() unBlockSuccess,
+    required TResult Function(Failure<dynamic> failure) unBlockFailure,
   }) {
-    assert(initial != null);
-    assert(actionInProgress != null);
-    assert(blocks != null);
-    assert(blocksNot != null);
-    assert(blockSuccess != null);
-    assert(blockFailure != null);
-    assert(unBlockSuccess != null);
-    assert(unBlockFailure != null);
     return actionInProgress();
   }
 
   @override
   @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object>({
-    TResult initial(),
-    TResult actionInProgress(),
-    TResult blocks(),
-    TResult blocksNot(),
-    TResult blockSuccess(),
-    TResult blockFailure(Failure<dynamic> failure),
-    TResult unBlockSuccess(),
-    TResult unBlockFailure(Failure<dynamic> failure),
-    @required TResult orElse(),
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? actionInProgress,
+    TResult Function()? blocks,
+    TResult Function()? blocksNot,
+    TResult Function()? blockSuccess,
+    TResult Function(Failure<dynamic> failure)? blockFailure,
+    TResult Function()? unBlockSuccess,
+    TResult Function(Failure<dynamic> failure)? unBlockFailure,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (actionInProgress != null) {
       return actionInProgress();
     }
@@ -823,41 +742,32 @@ class _$_ActionInProgress implements _ActionInProgress {
 
   @override
   @optionalTypeArgs
-  TResult map<TResult extends Object>({
-    @required TResult initial(_Initial value),
-    @required TResult actionInProgress(_ActionInProgress value),
-    @required TResult blocks(_Blocks value),
-    @required TResult blocksNot(_BlocksNot value),
-    @required TResult blockSuccess(_BlockSuccess value),
-    @required TResult blockFailure(_BlockFailure value),
-    @required TResult unBlockSuccess(_UnBlockSuccess value),
-    @required TResult unBlockFailure(_UnBlockFailure value),
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial value) initial,
+    required TResult Function(_ActionInProgress value) actionInProgress,
+    required TResult Function(_Blocks value) blocks,
+    required TResult Function(_BlocksNot value) blocksNot,
+    required TResult Function(_BlockSuccess value) blockSuccess,
+    required TResult Function(_BlockFailure value) blockFailure,
+    required TResult Function(_UnBlockSuccess value) unBlockSuccess,
+    required TResult Function(_UnBlockFailure value) unBlockFailure,
   }) {
-    assert(initial != null);
-    assert(actionInProgress != null);
-    assert(blocks != null);
-    assert(blocksNot != null);
-    assert(blockSuccess != null);
-    assert(blockFailure != null);
-    assert(unBlockSuccess != null);
-    assert(unBlockFailure != null);
     return actionInProgress(this);
   }
 
   @override
   @optionalTypeArgs
-  TResult maybeMap<TResult extends Object>({
-    TResult initial(_Initial value),
-    TResult actionInProgress(_ActionInProgress value),
-    TResult blocks(_Blocks value),
-    TResult blocksNot(_BlocksNot value),
-    TResult blockSuccess(_BlockSuccess value),
-    TResult blockFailure(_BlockFailure value),
-    TResult unBlockSuccess(_UnBlockSuccess value),
-    TResult unBlockFailure(_UnBlockFailure value),
-    @required TResult orElse(),
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_ActionInProgress value)? actionInProgress,
+    TResult Function(_Blocks value)? blocks,
+    TResult Function(_BlocksNot value)? blocksNot,
+    TResult Function(_BlockSuccess value)? blockSuccess,
+    TResult Function(_BlockFailure value)? blockFailure,
+    TResult Function(_UnBlockSuccess value)? unBlockSuccess,
+    TResult Function(_UnBlockFailure value)? unBlockFailure,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (actionInProgress != null) {
       return actionInProgress(this);
     }
@@ -871,15 +781,12 @@ abstract class _ActionInProgress implements BlockActorState {
 
 /// @nodoc
 abstract class _$BlocksCopyWith<$Res> {
-  factory _$BlocksCopyWith(_Blocks value, $Res Function(_Blocks) then) =
-      __$BlocksCopyWithImpl<$Res>;
+  factory _$BlocksCopyWith(_Blocks value, $Res Function(_Blocks) then) = __$BlocksCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$BlocksCopyWithImpl<$Res> extends _$BlockActorStateCopyWithImpl<$Res>
-    implements _$BlocksCopyWith<$Res> {
-  __$BlocksCopyWithImpl(_Blocks _value, $Res Function(_Blocks) _then)
-      : super(_value, (v) => _then(v as _Blocks));
+class __$BlocksCopyWithImpl<$Res> extends _$BlockActorStateCopyWithImpl<$Res> implements _$BlocksCopyWith<$Res> {
+  __$BlocksCopyWithImpl(_Blocks _value, $Res Function(_Blocks) _then) : super(_value, (v) => _then(v as _Blocks));
 
   @override
   _Blocks get _value => super._value as _Blocks;
@@ -904,41 +811,32 @@ class _$_Blocks implements _Blocks {
 
   @override
   @optionalTypeArgs
-  TResult when<TResult extends Object>({
-    @required TResult initial(),
-    @required TResult actionInProgress(),
-    @required TResult blocks(),
-    @required TResult blocksNot(),
-    @required TResult blockSuccess(),
-    @required TResult blockFailure(Failure<dynamic> failure),
-    @required TResult unBlockSuccess(),
-    @required TResult unBlockFailure(Failure<dynamic> failure),
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() actionInProgress,
+    required TResult Function() blocks,
+    required TResult Function() blocksNot,
+    required TResult Function() blockSuccess,
+    required TResult Function(Failure<dynamic> failure) blockFailure,
+    required TResult Function() unBlockSuccess,
+    required TResult Function(Failure<dynamic> failure) unBlockFailure,
   }) {
-    assert(initial != null);
-    assert(actionInProgress != null);
-    assert(blocks != null);
-    assert(blocksNot != null);
-    assert(blockSuccess != null);
-    assert(blockFailure != null);
-    assert(unBlockSuccess != null);
-    assert(unBlockFailure != null);
     return blocks();
   }
 
   @override
   @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object>({
-    TResult initial(),
-    TResult actionInProgress(),
-    TResult blocks(),
-    TResult blocksNot(),
-    TResult blockSuccess(),
-    TResult blockFailure(Failure<dynamic> failure),
-    TResult unBlockSuccess(),
-    TResult unBlockFailure(Failure<dynamic> failure),
-    @required TResult orElse(),
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? actionInProgress,
+    TResult Function()? blocks,
+    TResult Function()? blocksNot,
+    TResult Function()? blockSuccess,
+    TResult Function(Failure<dynamic> failure)? blockFailure,
+    TResult Function()? unBlockSuccess,
+    TResult Function(Failure<dynamic> failure)? unBlockFailure,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (blocks != null) {
       return blocks();
     }
@@ -947,41 +845,32 @@ class _$_Blocks implements _Blocks {
 
   @override
   @optionalTypeArgs
-  TResult map<TResult extends Object>({
-    @required TResult initial(_Initial value),
-    @required TResult actionInProgress(_ActionInProgress value),
-    @required TResult blocks(_Blocks value),
-    @required TResult blocksNot(_BlocksNot value),
-    @required TResult blockSuccess(_BlockSuccess value),
-    @required TResult blockFailure(_BlockFailure value),
-    @required TResult unBlockSuccess(_UnBlockSuccess value),
-    @required TResult unBlockFailure(_UnBlockFailure value),
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial value) initial,
+    required TResult Function(_ActionInProgress value) actionInProgress,
+    required TResult Function(_Blocks value) blocks,
+    required TResult Function(_BlocksNot value) blocksNot,
+    required TResult Function(_BlockSuccess value) blockSuccess,
+    required TResult Function(_BlockFailure value) blockFailure,
+    required TResult Function(_UnBlockSuccess value) unBlockSuccess,
+    required TResult Function(_UnBlockFailure value) unBlockFailure,
   }) {
-    assert(initial != null);
-    assert(actionInProgress != null);
-    assert(blocks != null);
-    assert(blocksNot != null);
-    assert(blockSuccess != null);
-    assert(blockFailure != null);
-    assert(unBlockSuccess != null);
-    assert(unBlockFailure != null);
     return blocks(this);
   }
 
   @override
   @optionalTypeArgs
-  TResult maybeMap<TResult extends Object>({
-    TResult initial(_Initial value),
-    TResult actionInProgress(_ActionInProgress value),
-    TResult blocks(_Blocks value),
-    TResult blocksNot(_BlocksNot value),
-    TResult blockSuccess(_BlockSuccess value),
-    TResult blockFailure(_BlockFailure value),
-    TResult unBlockSuccess(_UnBlockSuccess value),
-    TResult unBlockFailure(_UnBlockFailure value),
-    @required TResult orElse(),
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_ActionInProgress value)? actionInProgress,
+    TResult Function(_Blocks value)? blocks,
+    TResult Function(_BlocksNot value)? blocksNot,
+    TResult Function(_BlockSuccess value)? blockSuccess,
+    TResult Function(_BlockFailure value)? blockFailure,
+    TResult Function(_UnBlockSuccess value)? unBlockSuccess,
+    TResult Function(_UnBlockFailure value)? unBlockFailure,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (blocks != null) {
       return blocks(this);
     }
@@ -995,16 +884,12 @@ abstract class _Blocks implements BlockActorState {
 
 /// @nodoc
 abstract class _$BlocksNotCopyWith<$Res> {
-  factory _$BlocksNotCopyWith(
-          _BlocksNot value, $Res Function(_BlocksNot) then) =
-      __$BlocksNotCopyWithImpl<$Res>;
+  factory _$BlocksNotCopyWith(_BlocksNot value, $Res Function(_BlocksNot) then) = __$BlocksNotCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$BlocksNotCopyWithImpl<$Res> extends _$BlockActorStateCopyWithImpl<$Res>
-    implements _$BlocksNotCopyWith<$Res> {
-  __$BlocksNotCopyWithImpl(_BlocksNot _value, $Res Function(_BlocksNot) _then)
-      : super(_value, (v) => _then(v as _BlocksNot));
+class __$BlocksNotCopyWithImpl<$Res> extends _$BlockActorStateCopyWithImpl<$Res> implements _$BlocksNotCopyWith<$Res> {
+  __$BlocksNotCopyWithImpl(_BlocksNot _value, $Res Function(_BlocksNot) _then) : super(_value, (v) => _then(v as _BlocksNot));
 
   @override
   _BlocksNot get _value => super._value as _BlocksNot;
@@ -1029,41 +914,32 @@ class _$_BlocksNot implements _BlocksNot {
 
   @override
   @optionalTypeArgs
-  TResult when<TResult extends Object>({
-    @required TResult initial(),
-    @required TResult actionInProgress(),
-    @required TResult blocks(),
-    @required TResult blocksNot(),
-    @required TResult blockSuccess(),
-    @required TResult blockFailure(Failure<dynamic> failure),
-    @required TResult unBlockSuccess(),
-    @required TResult unBlockFailure(Failure<dynamic> failure),
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() actionInProgress,
+    required TResult Function() blocks,
+    required TResult Function() blocksNot,
+    required TResult Function() blockSuccess,
+    required TResult Function(Failure<dynamic> failure) blockFailure,
+    required TResult Function() unBlockSuccess,
+    required TResult Function(Failure<dynamic> failure) unBlockFailure,
   }) {
-    assert(initial != null);
-    assert(actionInProgress != null);
-    assert(blocks != null);
-    assert(blocksNot != null);
-    assert(blockSuccess != null);
-    assert(blockFailure != null);
-    assert(unBlockSuccess != null);
-    assert(unBlockFailure != null);
     return blocksNot();
   }
 
   @override
   @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object>({
-    TResult initial(),
-    TResult actionInProgress(),
-    TResult blocks(),
-    TResult blocksNot(),
-    TResult blockSuccess(),
-    TResult blockFailure(Failure<dynamic> failure),
-    TResult unBlockSuccess(),
-    TResult unBlockFailure(Failure<dynamic> failure),
-    @required TResult orElse(),
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? actionInProgress,
+    TResult Function()? blocks,
+    TResult Function()? blocksNot,
+    TResult Function()? blockSuccess,
+    TResult Function(Failure<dynamic> failure)? blockFailure,
+    TResult Function()? unBlockSuccess,
+    TResult Function(Failure<dynamic> failure)? unBlockFailure,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (blocksNot != null) {
       return blocksNot();
     }
@@ -1072,41 +948,32 @@ class _$_BlocksNot implements _BlocksNot {
 
   @override
   @optionalTypeArgs
-  TResult map<TResult extends Object>({
-    @required TResult initial(_Initial value),
-    @required TResult actionInProgress(_ActionInProgress value),
-    @required TResult blocks(_Blocks value),
-    @required TResult blocksNot(_BlocksNot value),
-    @required TResult blockSuccess(_BlockSuccess value),
-    @required TResult blockFailure(_BlockFailure value),
-    @required TResult unBlockSuccess(_UnBlockSuccess value),
-    @required TResult unBlockFailure(_UnBlockFailure value),
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial value) initial,
+    required TResult Function(_ActionInProgress value) actionInProgress,
+    required TResult Function(_Blocks value) blocks,
+    required TResult Function(_BlocksNot value) blocksNot,
+    required TResult Function(_BlockSuccess value) blockSuccess,
+    required TResult Function(_BlockFailure value) blockFailure,
+    required TResult Function(_UnBlockSuccess value) unBlockSuccess,
+    required TResult Function(_UnBlockFailure value) unBlockFailure,
   }) {
-    assert(initial != null);
-    assert(actionInProgress != null);
-    assert(blocks != null);
-    assert(blocksNot != null);
-    assert(blockSuccess != null);
-    assert(blockFailure != null);
-    assert(unBlockSuccess != null);
-    assert(unBlockFailure != null);
     return blocksNot(this);
   }
 
   @override
   @optionalTypeArgs
-  TResult maybeMap<TResult extends Object>({
-    TResult initial(_Initial value),
-    TResult actionInProgress(_ActionInProgress value),
-    TResult blocks(_Blocks value),
-    TResult blocksNot(_BlocksNot value),
-    TResult blockSuccess(_BlockSuccess value),
-    TResult blockFailure(_BlockFailure value),
-    TResult unBlockSuccess(_UnBlockSuccess value),
-    TResult unBlockFailure(_UnBlockFailure value),
-    @required TResult orElse(),
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_ActionInProgress value)? actionInProgress,
+    TResult Function(_Blocks value)? blocks,
+    TResult Function(_BlocksNot value)? blocksNot,
+    TResult Function(_BlockSuccess value)? blockSuccess,
+    TResult Function(_BlockFailure value)? blockFailure,
+    TResult Function(_UnBlockSuccess value)? unBlockSuccess,
+    TResult Function(_UnBlockFailure value)? unBlockFailure,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (blocksNot != null) {
       return blocksNot(this);
     }
@@ -1120,18 +987,12 @@ abstract class _BlocksNot implements BlockActorState {
 
 /// @nodoc
 abstract class _$BlockSuccessCopyWith<$Res> {
-  factory _$BlockSuccessCopyWith(
-          _BlockSuccess value, $Res Function(_BlockSuccess) then) =
-      __$BlockSuccessCopyWithImpl<$Res>;
+  factory _$BlockSuccessCopyWith(_BlockSuccess value, $Res Function(_BlockSuccess) then) = __$BlockSuccessCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$BlockSuccessCopyWithImpl<$Res>
-    extends _$BlockActorStateCopyWithImpl<$Res>
-    implements _$BlockSuccessCopyWith<$Res> {
-  __$BlockSuccessCopyWithImpl(
-      _BlockSuccess _value, $Res Function(_BlockSuccess) _then)
-      : super(_value, (v) => _then(v as _BlockSuccess));
+class __$BlockSuccessCopyWithImpl<$Res> extends _$BlockActorStateCopyWithImpl<$Res> implements _$BlockSuccessCopyWith<$Res> {
+  __$BlockSuccessCopyWithImpl(_BlockSuccess _value, $Res Function(_BlockSuccess) _then) : super(_value, (v) => _then(v as _BlockSuccess));
 
   @override
   _BlockSuccess get _value => super._value as _BlockSuccess;
@@ -1156,41 +1017,32 @@ class _$_BlockSuccess implements _BlockSuccess {
 
   @override
   @optionalTypeArgs
-  TResult when<TResult extends Object>({
-    @required TResult initial(),
-    @required TResult actionInProgress(),
-    @required TResult blocks(),
-    @required TResult blocksNot(),
-    @required TResult blockSuccess(),
-    @required TResult blockFailure(Failure<dynamic> failure),
-    @required TResult unBlockSuccess(),
-    @required TResult unBlockFailure(Failure<dynamic> failure),
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() actionInProgress,
+    required TResult Function() blocks,
+    required TResult Function() blocksNot,
+    required TResult Function() blockSuccess,
+    required TResult Function(Failure<dynamic> failure) blockFailure,
+    required TResult Function() unBlockSuccess,
+    required TResult Function(Failure<dynamic> failure) unBlockFailure,
   }) {
-    assert(initial != null);
-    assert(actionInProgress != null);
-    assert(blocks != null);
-    assert(blocksNot != null);
-    assert(blockSuccess != null);
-    assert(blockFailure != null);
-    assert(unBlockSuccess != null);
-    assert(unBlockFailure != null);
     return blockSuccess();
   }
 
   @override
   @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object>({
-    TResult initial(),
-    TResult actionInProgress(),
-    TResult blocks(),
-    TResult blocksNot(),
-    TResult blockSuccess(),
-    TResult blockFailure(Failure<dynamic> failure),
-    TResult unBlockSuccess(),
-    TResult unBlockFailure(Failure<dynamic> failure),
-    @required TResult orElse(),
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? actionInProgress,
+    TResult Function()? blocks,
+    TResult Function()? blocksNot,
+    TResult Function()? blockSuccess,
+    TResult Function(Failure<dynamic> failure)? blockFailure,
+    TResult Function()? unBlockSuccess,
+    TResult Function(Failure<dynamic> failure)? unBlockFailure,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (blockSuccess != null) {
       return blockSuccess();
     }
@@ -1199,41 +1051,32 @@ class _$_BlockSuccess implements _BlockSuccess {
 
   @override
   @optionalTypeArgs
-  TResult map<TResult extends Object>({
-    @required TResult initial(_Initial value),
-    @required TResult actionInProgress(_ActionInProgress value),
-    @required TResult blocks(_Blocks value),
-    @required TResult blocksNot(_BlocksNot value),
-    @required TResult blockSuccess(_BlockSuccess value),
-    @required TResult blockFailure(_BlockFailure value),
-    @required TResult unBlockSuccess(_UnBlockSuccess value),
-    @required TResult unBlockFailure(_UnBlockFailure value),
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial value) initial,
+    required TResult Function(_ActionInProgress value) actionInProgress,
+    required TResult Function(_Blocks value) blocks,
+    required TResult Function(_BlocksNot value) blocksNot,
+    required TResult Function(_BlockSuccess value) blockSuccess,
+    required TResult Function(_BlockFailure value) blockFailure,
+    required TResult Function(_UnBlockSuccess value) unBlockSuccess,
+    required TResult Function(_UnBlockFailure value) unBlockFailure,
   }) {
-    assert(initial != null);
-    assert(actionInProgress != null);
-    assert(blocks != null);
-    assert(blocksNot != null);
-    assert(blockSuccess != null);
-    assert(blockFailure != null);
-    assert(unBlockSuccess != null);
-    assert(unBlockFailure != null);
     return blockSuccess(this);
   }
 
   @override
   @optionalTypeArgs
-  TResult maybeMap<TResult extends Object>({
-    TResult initial(_Initial value),
-    TResult actionInProgress(_ActionInProgress value),
-    TResult blocks(_Blocks value),
-    TResult blocksNot(_BlocksNot value),
-    TResult blockSuccess(_BlockSuccess value),
-    TResult blockFailure(_BlockFailure value),
-    TResult unBlockSuccess(_UnBlockSuccess value),
-    TResult unBlockFailure(_UnBlockFailure value),
-    @required TResult orElse(),
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_ActionInProgress value)? actionInProgress,
+    TResult Function(_Blocks value)? blocks,
+    TResult Function(_BlocksNot value)? blocksNot,
+    TResult Function(_BlockSuccess value)? blockSuccess,
+    TResult Function(_BlockFailure value)? blockFailure,
+    TResult Function(_UnBlockSuccess value)? unBlockSuccess,
+    TResult Function(_UnBlockFailure value)? unBlockFailure,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (blockSuccess != null) {
       return blockSuccess(this);
     }
@@ -1247,39 +1090,33 @@ abstract class _BlockSuccess implements BlockActorState {
 
 /// @nodoc
 abstract class _$BlockFailureCopyWith<$Res> {
-  factory _$BlockFailureCopyWith(
-          _BlockFailure value, $Res Function(_BlockFailure) then) =
-      __$BlockFailureCopyWithImpl<$Res>;
+  factory _$BlockFailureCopyWith(_BlockFailure value, $Res Function(_BlockFailure) then) = __$BlockFailureCopyWithImpl<$Res>;
   $Res call({Failure<dynamic> failure});
 
   $FailureCopyWith<dynamic, $Res> get failure;
 }
 
 /// @nodoc
-class __$BlockFailureCopyWithImpl<$Res>
-    extends _$BlockActorStateCopyWithImpl<$Res>
-    implements _$BlockFailureCopyWith<$Res> {
-  __$BlockFailureCopyWithImpl(
-      _BlockFailure _value, $Res Function(_BlockFailure) _then)
-      : super(_value, (v) => _then(v as _BlockFailure));
+class __$BlockFailureCopyWithImpl<$Res> extends _$BlockActorStateCopyWithImpl<$Res> implements _$BlockFailureCopyWith<$Res> {
+  __$BlockFailureCopyWithImpl(_BlockFailure _value, $Res Function(_BlockFailure) _then) : super(_value, (v) => _then(v as _BlockFailure));
 
   @override
   _BlockFailure get _value => super._value as _BlockFailure;
 
   @override
   $Res call({
-    Object failure = freezed,
+    Object? failure = freezed,
   }) {
     return _then(_BlockFailure(
-      failure == freezed ? _value.failure : failure as Failure<dynamic>,
+      failure == freezed
+          ? _value.failure
+          : failure // ignore: cast_nullable_to_non_nullable
+              as Failure<dynamic>,
     ));
   }
 
   @override
   $FailureCopyWith<dynamic, $Res> get failure {
-    if (_value.failure == null) {
-      return null;
-    }
     return $FailureCopyWith<dynamic, $Res>(_value.failure, (value) {
       return _then(_value.copyWith(failure: value));
     });
@@ -1288,7 +1125,7 @@ class __$BlockFailureCopyWithImpl<$Res>
 
 /// @nodoc
 class _$_BlockFailure implements _BlockFailure {
-  const _$_BlockFailure(this.failure) : assert(failure != null);
+  const _$_BlockFailure(this.failure);
 
   @override
   final Failure<dynamic> failure;
@@ -1300,58 +1137,44 @@ class _$_BlockFailure implements _BlockFailure {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) ||
-        (other is _BlockFailure &&
-            (identical(other.failure, failure) ||
-                const DeepCollectionEquality().equals(other.failure, failure)));
+    return identical(this, other) || (other is _BlockFailure && (identical(other.failure, failure) || const DeepCollectionEquality().equals(other.failure, failure)));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(failure);
+  int get hashCode => runtimeType.hashCode ^ const DeepCollectionEquality().hash(failure);
 
   @JsonKey(ignore: true)
   @override
-  _$BlockFailureCopyWith<_BlockFailure> get copyWith =>
-      __$BlockFailureCopyWithImpl<_BlockFailure>(this, _$identity);
+  _$BlockFailureCopyWith<_BlockFailure> get copyWith => __$BlockFailureCopyWithImpl<_BlockFailure>(this, _$identity);
 
   @override
   @optionalTypeArgs
-  TResult when<TResult extends Object>({
-    @required TResult initial(),
-    @required TResult actionInProgress(),
-    @required TResult blocks(),
-    @required TResult blocksNot(),
-    @required TResult blockSuccess(),
-    @required TResult blockFailure(Failure<dynamic> failure),
-    @required TResult unBlockSuccess(),
-    @required TResult unBlockFailure(Failure<dynamic> failure),
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() actionInProgress,
+    required TResult Function() blocks,
+    required TResult Function() blocksNot,
+    required TResult Function() blockSuccess,
+    required TResult Function(Failure<dynamic> failure) blockFailure,
+    required TResult Function() unBlockSuccess,
+    required TResult Function(Failure<dynamic> failure) unBlockFailure,
   }) {
-    assert(initial != null);
-    assert(actionInProgress != null);
-    assert(blocks != null);
-    assert(blocksNot != null);
-    assert(blockSuccess != null);
-    assert(blockFailure != null);
-    assert(unBlockSuccess != null);
-    assert(unBlockFailure != null);
     return blockFailure(failure);
   }
 
   @override
   @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object>({
-    TResult initial(),
-    TResult actionInProgress(),
-    TResult blocks(),
-    TResult blocksNot(),
-    TResult blockSuccess(),
-    TResult blockFailure(Failure<dynamic> failure),
-    TResult unBlockSuccess(),
-    TResult unBlockFailure(Failure<dynamic> failure),
-    @required TResult orElse(),
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? actionInProgress,
+    TResult Function()? blocks,
+    TResult Function()? blocksNot,
+    TResult Function()? blockSuccess,
+    TResult Function(Failure<dynamic> failure)? blockFailure,
+    TResult Function()? unBlockSuccess,
+    TResult Function(Failure<dynamic> failure)? unBlockFailure,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (blockFailure != null) {
       return blockFailure(failure);
     }
@@ -1360,41 +1183,32 @@ class _$_BlockFailure implements _BlockFailure {
 
   @override
   @optionalTypeArgs
-  TResult map<TResult extends Object>({
-    @required TResult initial(_Initial value),
-    @required TResult actionInProgress(_ActionInProgress value),
-    @required TResult blocks(_Blocks value),
-    @required TResult blocksNot(_BlocksNot value),
-    @required TResult blockSuccess(_BlockSuccess value),
-    @required TResult blockFailure(_BlockFailure value),
-    @required TResult unBlockSuccess(_UnBlockSuccess value),
-    @required TResult unBlockFailure(_UnBlockFailure value),
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial value) initial,
+    required TResult Function(_ActionInProgress value) actionInProgress,
+    required TResult Function(_Blocks value) blocks,
+    required TResult Function(_BlocksNot value) blocksNot,
+    required TResult Function(_BlockSuccess value) blockSuccess,
+    required TResult Function(_BlockFailure value) blockFailure,
+    required TResult Function(_UnBlockSuccess value) unBlockSuccess,
+    required TResult Function(_UnBlockFailure value) unBlockFailure,
   }) {
-    assert(initial != null);
-    assert(actionInProgress != null);
-    assert(blocks != null);
-    assert(blocksNot != null);
-    assert(blockSuccess != null);
-    assert(blockFailure != null);
-    assert(unBlockSuccess != null);
-    assert(unBlockFailure != null);
     return blockFailure(this);
   }
 
   @override
   @optionalTypeArgs
-  TResult maybeMap<TResult extends Object>({
-    TResult initial(_Initial value),
-    TResult actionInProgress(_ActionInProgress value),
-    TResult blocks(_Blocks value),
-    TResult blocksNot(_BlocksNot value),
-    TResult blockSuccess(_BlockSuccess value),
-    TResult blockFailure(_BlockFailure value),
-    TResult unBlockSuccess(_UnBlockSuccess value),
-    TResult unBlockFailure(_UnBlockFailure value),
-    @required TResult orElse(),
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_ActionInProgress value)? actionInProgress,
+    TResult Function(_Blocks value)? blocks,
+    TResult Function(_BlocksNot value)? blocksNot,
+    TResult Function(_BlockSuccess value)? blockSuccess,
+    TResult Function(_BlockFailure value)? blockFailure,
+    TResult Function(_UnBlockSuccess value)? unBlockSuccess,
+    TResult Function(_UnBlockFailure value)? unBlockFailure,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (blockFailure != null) {
       return blockFailure(this);
     }
@@ -1405,25 +1219,20 @@ class _$_BlockFailure implements _BlockFailure {
 abstract class _BlockFailure implements BlockActorState {
   const factory _BlockFailure(Failure<dynamic> failure) = _$_BlockFailure;
 
-  Failure<dynamic> get failure;
+  Failure<dynamic> get failure => throw _privateConstructorUsedError;
+
   @JsonKey(ignore: true)
-  _$BlockFailureCopyWith<_BlockFailure> get copyWith;
+  _$BlockFailureCopyWith<_BlockFailure> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class _$UnBlockSuccessCopyWith<$Res> {
-  factory _$UnBlockSuccessCopyWith(
-          _UnBlockSuccess value, $Res Function(_UnBlockSuccess) then) =
-      __$UnBlockSuccessCopyWithImpl<$Res>;
+  factory _$UnBlockSuccessCopyWith(_UnBlockSuccess value, $Res Function(_UnBlockSuccess) then) = __$UnBlockSuccessCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$UnBlockSuccessCopyWithImpl<$Res>
-    extends _$BlockActorStateCopyWithImpl<$Res>
-    implements _$UnBlockSuccessCopyWith<$Res> {
-  __$UnBlockSuccessCopyWithImpl(
-      _UnBlockSuccess _value, $Res Function(_UnBlockSuccess) _then)
-      : super(_value, (v) => _then(v as _UnBlockSuccess));
+class __$UnBlockSuccessCopyWithImpl<$Res> extends _$BlockActorStateCopyWithImpl<$Res> implements _$UnBlockSuccessCopyWith<$Res> {
+  __$UnBlockSuccessCopyWithImpl(_UnBlockSuccess _value, $Res Function(_UnBlockSuccess) _then) : super(_value, (v) => _then(v as _UnBlockSuccess));
 
   @override
   _UnBlockSuccess get _value => super._value as _UnBlockSuccess;
@@ -1448,41 +1257,32 @@ class _$_UnBlockSuccess implements _UnBlockSuccess {
 
   @override
   @optionalTypeArgs
-  TResult when<TResult extends Object>({
-    @required TResult initial(),
-    @required TResult actionInProgress(),
-    @required TResult blocks(),
-    @required TResult blocksNot(),
-    @required TResult blockSuccess(),
-    @required TResult blockFailure(Failure<dynamic> failure),
-    @required TResult unBlockSuccess(),
-    @required TResult unBlockFailure(Failure<dynamic> failure),
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() actionInProgress,
+    required TResult Function() blocks,
+    required TResult Function() blocksNot,
+    required TResult Function() blockSuccess,
+    required TResult Function(Failure<dynamic> failure) blockFailure,
+    required TResult Function() unBlockSuccess,
+    required TResult Function(Failure<dynamic> failure) unBlockFailure,
   }) {
-    assert(initial != null);
-    assert(actionInProgress != null);
-    assert(blocks != null);
-    assert(blocksNot != null);
-    assert(blockSuccess != null);
-    assert(blockFailure != null);
-    assert(unBlockSuccess != null);
-    assert(unBlockFailure != null);
     return unBlockSuccess();
   }
 
   @override
   @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object>({
-    TResult initial(),
-    TResult actionInProgress(),
-    TResult blocks(),
-    TResult blocksNot(),
-    TResult blockSuccess(),
-    TResult blockFailure(Failure<dynamic> failure),
-    TResult unBlockSuccess(),
-    TResult unBlockFailure(Failure<dynamic> failure),
-    @required TResult orElse(),
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? actionInProgress,
+    TResult Function()? blocks,
+    TResult Function()? blocksNot,
+    TResult Function()? blockSuccess,
+    TResult Function(Failure<dynamic> failure)? blockFailure,
+    TResult Function()? unBlockSuccess,
+    TResult Function(Failure<dynamic> failure)? unBlockFailure,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (unBlockSuccess != null) {
       return unBlockSuccess();
     }
@@ -1491,41 +1291,32 @@ class _$_UnBlockSuccess implements _UnBlockSuccess {
 
   @override
   @optionalTypeArgs
-  TResult map<TResult extends Object>({
-    @required TResult initial(_Initial value),
-    @required TResult actionInProgress(_ActionInProgress value),
-    @required TResult blocks(_Blocks value),
-    @required TResult blocksNot(_BlocksNot value),
-    @required TResult blockSuccess(_BlockSuccess value),
-    @required TResult blockFailure(_BlockFailure value),
-    @required TResult unBlockSuccess(_UnBlockSuccess value),
-    @required TResult unBlockFailure(_UnBlockFailure value),
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial value) initial,
+    required TResult Function(_ActionInProgress value) actionInProgress,
+    required TResult Function(_Blocks value) blocks,
+    required TResult Function(_BlocksNot value) blocksNot,
+    required TResult Function(_BlockSuccess value) blockSuccess,
+    required TResult Function(_BlockFailure value) blockFailure,
+    required TResult Function(_UnBlockSuccess value) unBlockSuccess,
+    required TResult Function(_UnBlockFailure value) unBlockFailure,
   }) {
-    assert(initial != null);
-    assert(actionInProgress != null);
-    assert(blocks != null);
-    assert(blocksNot != null);
-    assert(blockSuccess != null);
-    assert(blockFailure != null);
-    assert(unBlockSuccess != null);
-    assert(unBlockFailure != null);
     return unBlockSuccess(this);
   }
 
   @override
   @optionalTypeArgs
-  TResult maybeMap<TResult extends Object>({
-    TResult initial(_Initial value),
-    TResult actionInProgress(_ActionInProgress value),
-    TResult blocks(_Blocks value),
-    TResult blocksNot(_BlocksNot value),
-    TResult blockSuccess(_BlockSuccess value),
-    TResult blockFailure(_BlockFailure value),
-    TResult unBlockSuccess(_UnBlockSuccess value),
-    TResult unBlockFailure(_UnBlockFailure value),
-    @required TResult orElse(),
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_ActionInProgress value)? actionInProgress,
+    TResult Function(_Blocks value)? blocks,
+    TResult Function(_BlocksNot value)? blocksNot,
+    TResult Function(_BlockSuccess value)? blockSuccess,
+    TResult Function(_BlockFailure value)? blockFailure,
+    TResult Function(_UnBlockSuccess value)? unBlockSuccess,
+    TResult Function(_UnBlockFailure value)? unBlockFailure,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (unBlockSuccess != null) {
       return unBlockSuccess(this);
     }
@@ -1539,39 +1330,33 @@ abstract class _UnBlockSuccess implements BlockActorState {
 
 /// @nodoc
 abstract class _$UnBlockFailureCopyWith<$Res> {
-  factory _$UnBlockFailureCopyWith(
-          _UnBlockFailure value, $Res Function(_UnBlockFailure) then) =
-      __$UnBlockFailureCopyWithImpl<$Res>;
+  factory _$UnBlockFailureCopyWith(_UnBlockFailure value, $Res Function(_UnBlockFailure) then) = __$UnBlockFailureCopyWithImpl<$Res>;
   $Res call({Failure<dynamic> failure});
 
   $FailureCopyWith<dynamic, $Res> get failure;
 }
 
 /// @nodoc
-class __$UnBlockFailureCopyWithImpl<$Res>
-    extends _$BlockActorStateCopyWithImpl<$Res>
-    implements _$UnBlockFailureCopyWith<$Res> {
-  __$UnBlockFailureCopyWithImpl(
-      _UnBlockFailure _value, $Res Function(_UnBlockFailure) _then)
-      : super(_value, (v) => _then(v as _UnBlockFailure));
+class __$UnBlockFailureCopyWithImpl<$Res> extends _$BlockActorStateCopyWithImpl<$Res> implements _$UnBlockFailureCopyWith<$Res> {
+  __$UnBlockFailureCopyWithImpl(_UnBlockFailure _value, $Res Function(_UnBlockFailure) _then) : super(_value, (v) => _then(v as _UnBlockFailure));
 
   @override
   _UnBlockFailure get _value => super._value as _UnBlockFailure;
 
   @override
   $Res call({
-    Object failure = freezed,
+    Object? failure = freezed,
   }) {
     return _then(_UnBlockFailure(
-      failure == freezed ? _value.failure : failure as Failure<dynamic>,
+      failure == freezed
+          ? _value.failure
+          : failure // ignore: cast_nullable_to_non_nullable
+              as Failure<dynamic>,
     ));
   }
 
   @override
   $FailureCopyWith<dynamic, $Res> get failure {
-    if (_value.failure == null) {
-      return null;
-    }
     return $FailureCopyWith<dynamic, $Res>(_value.failure, (value) {
       return _then(_value.copyWith(failure: value));
     });
@@ -1580,7 +1365,7 @@ class __$UnBlockFailureCopyWithImpl<$Res>
 
 /// @nodoc
 class _$_UnBlockFailure implements _UnBlockFailure {
-  const _$_UnBlockFailure(this.failure) : assert(failure != null);
+  const _$_UnBlockFailure(this.failure);
 
   @override
   final Failure<dynamic> failure;
@@ -1592,58 +1377,44 @@ class _$_UnBlockFailure implements _UnBlockFailure {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) ||
-        (other is _UnBlockFailure &&
-            (identical(other.failure, failure) ||
-                const DeepCollectionEquality().equals(other.failure, failure)));
+    return identical(this, other) || (other is _UnBlockFailure && (identical(other.failure, failure) || const DeepCollectionEquality().equals(other.failure, failure)));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(failure);
+  int get hashCode => runtimeType.hashCode ^ const DeepCollectionEquality().hash(failure);
 
   @JsonKey(ignore: true)
   @override
-  _$UnBlockFailureCopyWith<_UnBlockFailure> get copyWith =>
-      __$UnBlockFailureCopyWithImpl<_UnBlockFailure>(this, _$identity);
+  _$UnBlockFailureCopyWith<_UnBlockFailure> get copyWith => __$UnBlockFailureCopyWithImpl<_UnBlockFailure>(this, _$identity);
 
   @override
   @optionalTypeArgs
-  TResult when<TResult extends Object>({
-    @required TResult initial(),
-    @required TResult actionInProgress(),
-    @required TResult blocks(),
-    @required TResult blocksNot(),
-    @required TResult blockSuccess(),
-    @required TResult blockFailure(Failure<dynamic> failure),
-    @required TResult unBlockSuccess(),
-    @required TResult unBlockFailure(Failure<dynamic> failure),
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() actionInProgress,
+    required TResult Function() blocks,
+    required TResult Function() blocksNot,
+    required TResult Function() blockSuccess,
+    required TResult Function(Failure<dynamic> failure) blockFailure,
+    required TResult Function() unBlockSuccess,
+    required TResult Function(Failure<dynamic> failure) unBlockFailure,
   }) {
-    assert(initial != null);
-    assert(actionInProgress != null);
-    assert(blocks != null);
-    assert(blocksNot != null);
-    assert(blockSuccess != null);
-    assert(blockFailure != null);
-    assert(unBlockSuccess != null);
-    assert(unBlockFailure != null);
     return unBlockFailure(failure);
   }
 
   @override
   @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object>({
-    TResult initial(),
-    TResult actionInProgress(),
-    TResult blocks(),
-    TResult blocksNot(),
-    TResult blockSuccess(),
-    TResult blockFailure(Failure<dynamic> failure),
-    TResult unBlockSuccess(),
-    TResult unBlockFailure(Failure<dynamic> failure),
-    @required TResult orElse(),
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? actionInProgress,
+    TResult Function()? blocks,
+    TResult Function()? blocksNot,
+    TResult Function()? blockSuccess,
+    TResult Function(Failure<dynamic> failure)? blockFailure,
+    TResult Function()? unBlockSuccess,
+    TResult Function(Failure<dynamic> failure)? unBlockFailure,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (unBlockFailure != null) {
       return unBlockFailure(failure);
     }
@@ -1652,41 +1423,32 @@ class _$_UnBlockFailure implements _UnBlockFailure {
 
   @override
   @optionalTypeArgs
-  TResult map<TResult extends Object>({
-    @required TResult initial(_Initial value),
-    @required TResult actionInProgress(_ActionInProgress value),
-    @required TResult blocks(_Blocks value),
-    @required TResult blocksNot(_BlocksNot value),
-    @required TResult blockSuccess(_BlockSuccess value),
-    @required TResult blockFailure(_BlockFailure value),
-    @required TResult unBlockSuccess(_UnBlockSuccess value),
-    @required TResult unBlockFailure(_UnBlockFailure value),
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial value) initial,
+    required TResult Function(_ActionInProgress value) actionInProgress,
+    required TResult Function(_Blocks value) blocks,
+    required TResult Function(_BlocksNot value) blocksNot,
+    required TResult Function(_BlockSuccess value) blockSuccess,
+    required TResult Function(_BlockFailure value) blockFailure,
+    required TResult Function(_UnBlockSuccess value) unBlockSuccess,
+    required TResult Function(_UnBlockFailure value) unBlockFailure,
   }) {
-    assert(initial != null);
-    assert(actionInProgress != null);
-    assert(blocks != null);
-    assert(blocksNot != null);
-    assert(blockSuccess != null);
-    assert(blockFailure != null);
-    assert(unBlockSuccess != null);
-    assert(unBlockFailure != null);
     return unBlockFailure(this);
   }
 
   @override
   @optionalTypeArgs
-  TResult maybeMap<TResult extends Object>({
-    TResult initial(_Initial value),
-    TResult actionInProgress(_ActionInProgress value),
-    TResult blocks(_Blocks value),
-    TResult blocksNot(_BlocksNot value),
-    TResult blockSuccess(_BlockSuccess value),
-    TResult blockFailure(_BlockFailure value),
-    TResult unBlockSuccess(_UnBlockSuccess value),
-    TResult unBlockFailure(_UnBlockFailure value),
-    @required TResult orElse(),
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_ActionInProgress value)? actionInProgress,
+    TResult Function(_Blocks value)? blocks,
+    TResult Function(_BlocksNot value)? blocksNot,
+    TResult Function(_BlockSuccess value)? blockSuccess,
+    TResult Function(_BlockFailure value)? blockFailure,
+    TResult Function(_UnBlockSuccess value)? unBlockSuccess,
+    TResult Function(_UnBlockFailure value)? unBlockFailure,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (unBlockFailure != null) {
       return unBlockFailure(this);
     }
@@ -1697,7 +1459,8 @@ class _$_UnBlockFailure implements _UnBlockFailure {
 abstract class _UnBlockFailure implements BlockActorState {
   const factory _UnBlockFailure(Failure<dynamic> failure) = _$_UnBlockFailure;
 
-  Failure<dynamic> get failure;
+  Failure<dynamic> get failure => throw _privateConstructorUsedError;
+
   @JsonKey(ignore: true)
-  _$UnBlockFailureCopyWith<_UnBlockFailure> get copyWith;
+  _$UnBlockFailureCopyWith<_UnBlockFailure> get copyWith => throw _privateConstructorUsedError;
 }

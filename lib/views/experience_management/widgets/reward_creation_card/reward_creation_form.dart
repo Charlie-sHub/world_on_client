@@ -14,9 +14,9 @@ class RewardCreationForm extends StatelessWidget {
   final TextEditingController descriptionTextEditingController;
 
   const RewardCreationForm({
-    Key key,
-    @required this.nameTextEditingController,
-    @required this.descriptionTextEditingController,
+    Key? key,
+    required this.nameTextEditingController,
+    required this.descriptionTextEditingController,
   }) : super(key: key);
 
   @override
@@ -60,7 +60,7 @@ class RewardCreationForm extends StatelessWidget {
                 ),
                 (imageFile) => Padding(
                   padding: const EdgeInsets.all(10),
-                  child: FlatButton(
+                  child: TextButton(
                     onPressed: () async {
                       final _imageFile = await _openDialog(context);
                       if (_imageFile != null) {
@@ -84,7 +84,7 @@ class RewardCreationForm extends StatelessWidget {
     );
   }
 
-  Future<File> _openDialog(BuildContext context) async {
+  Future<File?> _openDialog(BuildContext context) async {
     return showDialog<File>(
       context: context,
       useSafeArea: true,

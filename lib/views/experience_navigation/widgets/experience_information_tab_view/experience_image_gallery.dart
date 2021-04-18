@@ -1,3 +1,4 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:worldon/domain/core/entities/experience/experience.dart';
 
@@ -5,8 +6,8 @@ import 'carousel_builder.dart';
 
 class ExperienceImageGallery extends StatelessWidget {
   const ExperienceImageGallery({
-    Key key,
-    @required this.experience,
+    Key? key,
+    required this.experience,
   }) : super(key: key);
 
   final Experience experience;
@@ -17,7 +18,7 @@ class ExperienceImageGallery extends StatelessWidget {
       width: MediaQuery.of(context).size.width,
       child: CarouselBuilder(
         function: (_, index, realIdx) => Image(
-          image: NetworkImage(experience.imageURLs.elementAt(index)),
+          image: CachedNetworkImageProvider(experience.imageURLs.elementAt(index)),
           fit: BoxFit.fill,
         ),
         itemCount: experience.imageURLs.length,

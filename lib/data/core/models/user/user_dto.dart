@@ -20,41 +20,41 @@ part 'user_dto.freezed.dart';
 part 'user_dto.g.dart';
 
 @freezed
-abstract class UserDto implements _$UserDto {
+class UserDto with _$UserDto {
   const UserDto._();
 
   const factory UserDto({
-    @required String id,
-    @required String name,
-    @required String username,
+    required String id,
+    required String name,
+    required String username,
     // Shouldn't this be encrypted in some way?
     // Maybe it shouldn't even be part of the dto at all, as Firebase handles it at login time
-    @required String password,
-    @required String email,
-    @ServerTimestampConverter() @required DateTime birthday,
-    @required String description,
-    @required String imageURL,
-    @required int level,
-    @required int experiencePoints,
-    @required bool privacy,
-    @required bool adminPowers,
-    @required bool enabled,
-    @ServerTimestampConverter() @required DateTime lastLogin,
-    @ServerTimestampConverter() @required DateTime creationDate,
-    @ServerTimestampConverter() @required DateTime modificationDate,
-    @required OptionsDto options,
-    @required Set<String> blockedUsersIds,
-    @required Set<String> followedUsersIds,
-    @required Set<String> interestsIds,
-    @required Set<String> achievementsIds,
-    @required Set<String> experiencesDoneIds,
-    @required Set<String> experiencesLikedIds,
-    @required Set<String> experiencesToDoIds,
-    @required Set<DeviceDto> devices,
-    @required Set<SystemDto> systems,
-    @required Set<ItemDto> items,
-    @required int coins,
-    @required int followersAmount,
+    required String password,
+    required String email,
+    @ServerTimestampConverter() required DateTime birthday,
+    required String description,
+    required String imageURL,
+    required int level,
+    required int experiencePoints,
+    required bool privacy,
+    required bool adminPowers,
+    required bool enabled,
+    @ServerTimestampConverter() required DateTime lastLogin,
+    @ServerTimestampConverter() required DateTime creationDate,
+    @ServerTimestampConverter() required DateTime modificationDate,
+    required OptionsDto options,
+    required Set<String> blockedUsersIds,
+    required Set<String> followedUsersIds,
+    required Set<String> interestsIds,
+    required Set<String> achievementsIds,
+    required Set<String> experiencesDoneIds,
+    required Set<String> experiencesLikedIds,
+    required Set<String> experiencesToDoIds,
+    required Set<DeviceDto> devices,
+    required Set<SystemDto> systems,
+    required Set<ItemDto> items,
+    required int coins,
+    required int followersAmount,
   }) = _UserDto;
 
   factory UserDto.fromDomain(User user) => UserDto(
@@ -125,7 +125,7 @@ abstract class UserDto implements _$UserDto {
   factory UserDto.fromJson(Map<String, dynamic> json) => _$UserDtoFromJson(json);
 
   factory UserDto.fromFirestore(DocumentSnapshot document) => UserDto.fromJson(
-        document.data(),
+    document.data()!,
       ).copyWith(
         id: document.id,
       );

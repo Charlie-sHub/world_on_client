@@ -8,15 +8,15 @@ part 'location_dto.freezed.dart';
 part 'location_dto.g.dart';
 
 @freezed
-abstract class LocationDto implements _$LocationDto {
+class LocationDto with _$LocationDto {
   const LocationDto._();
 
   const factory LocationDto({
-    @required String id,
-    @required String city,
-    @required String country,
-    @required String postalCode,
-    @required Set<ExperienceDto> experiences,
+    required String id,
+    required String city,
+    required String country,
+    required String postalCode,
+    required Set<ExperienceDto> experiences,
   }) = _LocationDto;
 
   factory LocationDto.fromDomain(Location location) => LocationDto(
@@ -38,7 +38,7 @@ abstract class LocationDto implements _$LocationDto {
   factory LocationDto.fromJson(Map<String, dynamic> json) => _$LocationDtoFromJson(json);
 
   factory LocationDto.fromFirestore(DocumentSnapshot document) => LocationDto.fromJson(
-        document.data(),
+        document.data()!,
       ).copyWith(
         id: document.id,
       );

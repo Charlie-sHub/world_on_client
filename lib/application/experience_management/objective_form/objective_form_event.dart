@@ -1,14 +1,14 @@
 part of 'objective_form_bloc.dart';
 
 @freezed
-abstract class ObjectiveFormEvent with _$ObjectiveFormEvent {
+class ObjectiveFormEvent with _$ObjectiveFormEvent {
   const factory ObjectiveFormEvent.initialized() = _Initialized;
 
   const factory ObjectiveFormEvent.descriptionChanged(String description) = _DescriptionChanged;
 
   const factory ObjectiveFormEvent.coordinatesChanged({
-    @required double latitude,
-    @required double longitude,
+    required double latitude,
+    required double longitude,
   }) = _CoordinatesChanged;
 
   const factory ObjectiveFormEvent.imageChanged(File imageFile) = _ImageChanged;

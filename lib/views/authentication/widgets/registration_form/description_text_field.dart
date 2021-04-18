@@ -6,7 +6,7 @@ import 'package:worldon/generated/l10n.dart';
 
 class DescriptionTextField extends StatelessWidget {
   const DescriptionTextField({
-    Key key,
+    Key? key,
   }) : super(key: key);
 
   @override

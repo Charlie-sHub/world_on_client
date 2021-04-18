@@ -1,7 +1,7 @@
 part of 'experience_editing_form_bloc.dart';
 
 @freezed
-abstract class ExperienceEditingFormEvent with _$ExperienceEditingFormEvent {
+class ExperienceEditingFormEvent with _$ExperienceEditingFormEvent {
   const factory ExperienceEditingFormEvent.initialized(Experience experience) = _Initialized;
 
   const factory ExperienceEditingFormEvent.titleChanged(String title) = _TitleChanged;
@@ -13,8 +13,8 @@ abstract class ExperienceEditingFormEvent with _$ExperienceEditingFormEvent {
   const factory ExperienceEditingFormEvent.imageDeleted(String imageURL) = _ImageDeleted;
 
   const factory ExperienceEditingFormEvent.coordinatesChanged({
-    @required double latitude,
-    @required double longitude,
+    required double latitude,
+    required double longitude,
   }) = _CoordinatesChanged;
 
   const factory ExperienceEditingFormEvent.difficultyChanged(int difficulty) = _DifficultyChanged;

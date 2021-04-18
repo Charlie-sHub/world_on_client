@@ -1,5 +1,4 @@
 import 'package:dartz/dartz.dart';
-import 'package:flutter/foundation.dart';
 import 'package:injectable/injectable.dart';
 import 'package:kt_dart/kt.dart';
 import 'package:worldon/core/error/failure.dart';
@@ -23,5 +22,5 @@ class WatchFollowingUsers implements StreamUseCase<KtList<User>, Params> {
 class Params {
   final UniqueId id;
 
-  Params({@required this.id});
+  Params({required this.id});
 }

@@ -7,7 +7,7 @@ import 'package:worldon/views/core/widgets/cards/simple_tag_display.dart';
 class AchievementCard extends StatelessWidget {
   final Achievement achievement;
 
-  const AchievementCard({Key key, @required this.achievement}) : super(key: key);
+  const AchievementCard({Key? key, required this.achievement}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

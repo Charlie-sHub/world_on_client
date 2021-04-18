@@ -7,14 +7,14 @@ part 'system_dto.freezed.dart';
 part 'system_dto.g.dart';
 
 @freezed
-abstract class SystemDto implements _$SystemDto {
+class SystemDto with _$SystemDto {
   const SystemDto._();
 
   const factory SystemDto({
-    @JsonKey(ignore: true) String id,
-    @required String name,
-    @required String type,
-    @required String company,
+    required String id,
+    required String name,
+    required String type,
+    required String company,
   }) = _SystemDto;
 
   factory SystemDto.fromDomain(System system) => SystemDto(
@@ -34,7 +34,7 @@ abstract class SystemDto implements _$SystemDto {
   factory SystemDto.fromJson(Map<String, dynamic> json) => _$SystemDtoFromJson(json);
 
   factory SystemDto.fromFirestore(DocumentSnapshot document) => SystemDto.fromJson(
-        document.data(),
+    document.data()!,
       ).copyWith(
         id: document.id,
       );

@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 class WorldOnTitle extends StatelessWidget {
   const WorldOnTitle({
-    Key key,
+    Key? key,
   }) : super(key: key);
 
   @override

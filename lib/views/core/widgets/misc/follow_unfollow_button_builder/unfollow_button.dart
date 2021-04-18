@@ -7,8 +7,8 @@ import 'package:worldon/views/core/misc/world_on_colors.dart';
 
 class UnFollowButton extends StatelessWidget {
   const UnFollowButton({
-    Key key,
-    @required this.user,
+    Key? key,
+    required this.user,
   }) : super(key: key);
 
   final User user;

@@ -7,16 +7,20 @@ import 'package:worldon/views/core/misc/world_on_colors.dart';
 
 class DismissFromLogButton extends StatelessWidget {
   const DismissFromLogButton({
-    Key key,
-    @required this.experience,
+    Key? key,
+    required this.experience,
   }) : super(key: key);
 
   final Experience experience;
 
   @override
   Widget build(BuildContext context) {
-    return RaisedButton(
-      color: WorldOnColors.red,
+    return ElevatedButton(
+      style: ButtonStyle(
+        backgroundColor: MaterialStateProperty.all(
+          WorldOnColors.red,
+        ),
+      ),
       onPressed: () => context.read<ExperienceCardActorBloc>().add(
             ExperienceCardActorEvent.dismissedExperienceFromLog(experience),
           ),

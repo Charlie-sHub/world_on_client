@@ -3,7 +3,7 @@ import 'package:worldon/views/core/misc/world_on_colors.dart';
 
 class WorldOnProgressIndicator extends StatelessWidget {
   const WorldOnProgressIndicator({
-    Key key,
+    Key? key,
   }) : super(key: key);
 
   @override

@@ -10,8 +10,8 @@ import 'package:worldon/domain/core/validation/objects/unique_id.dart';
 class ProductionAchievementRepository implements AchievementRepositoryInterface {
   @override
   Future<Either<Failure, Unit>> awardAchievement({
-    UniqueId achievementId,
-    UniqueId userId,
+    required UniqueId achievementId,
+    required UniqueId userId,
   }) {
     // TODO: implement awardAchievement
     throw UnimplementedError();

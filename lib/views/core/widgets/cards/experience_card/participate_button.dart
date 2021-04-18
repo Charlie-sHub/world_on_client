@@ -8,16 +8,20 @@ import 'package:worldon/views/core/misc/world_on_colors.dart';
 
 class ParticipateButton extends StatelessWidget {
   const ParticipateButton({
-    Key key,
-    @required this.experience,
+    Key? key,
+    required this.experience,
   }) : super(key: key);
 
   final Experience experience;
 
   @override
   Widget build(BuildContext context) {
-    return RaisedButton(
-      color: WorldOnColors.primary,
+    return ElevatedButton(
+      style: ButtonStyle(
+        backgroundColor: MaterialStateProperty.all(
+          WorldOnColors.primary,
+        ),
+      ),
       onPressed: () => context.read<NavigationActorBloc>().add(
             NavigationActorEvent.experienceNavigationTapped(some(experience)),
           ),

@@ -14,8 +14,8 @@ class ExperienceNavigationBody extends StatelessWidget {
   final Option<Experience> experienceOption;
 
   const ExperienceNavigationBody({
-    Key key,
-    @required this.experienceOption,
+    Key? key,
+    required this.experienceOption,
   }) : super(key: key);
 
   @override
@@ -28,12 +28,12 @@ class ExperienceNavigationBody extends StatelessWidget {
       child: BlocListener<NavigationActorBloc, NavigationActorState>(
         listener: (context, state) => state.maybeMap(
           navigateExperienceView: (navigateExperienceState) => navigateExperienceState.experienceOption.fold(
-            () => null,
+            () {},
             (experience) => context.read<ExperienceNavigationWatcherBloc>().add(
                   ExperienceNavigationWatcherEvent.initialized(some(experience)),
                 ),
           ),
-          orElse: () => null,
+          orElse: () {},
         ),
         child: BlocBuilder<ExperienceNavigationWatcherBloc, ExperienceNavigationWatcherState>(
           builder: (context, state) => state.map(

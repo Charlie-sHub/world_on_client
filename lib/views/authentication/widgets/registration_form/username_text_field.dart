@@ -7,7 +7,7 @@ import 'package:worldon/views/core/misc/world_on_colors.dart';
 
 class UsernameTextField extends StatelessWidget {
   const UsernameTextField({
-    Key key,
+    Key? key,
   }) : super(key: key);
 
   @override

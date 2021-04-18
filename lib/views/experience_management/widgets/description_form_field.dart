@@ -7,8 +7,8 @@ import 'package:worldon/views/core/misc/world_on_colors.dart';
 
 class DescriptionFormField extends StatelessWidget {
   const DescriptionFormField({
-    Key key,
-    @required this.description,
+    Key? key,
+    required this.description,
   }) : super(key: key);
 
   final String description;

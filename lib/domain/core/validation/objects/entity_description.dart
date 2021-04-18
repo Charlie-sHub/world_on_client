@@ -9,15 +9,12 @@ class EntityDescription extends ValueObject<String> {
   @override
   final Either<ValueFailure<String>, String> value;
 
-  factory EntityDescription(String input) {
-    assert(input != null);
-    return EntityDescription._(
-      validateStringLength(
-        input: input,
-        length: maxLength,
-      ), //.flatMap(validateStringNotEmpty),
-    );
-  }
+  factory EntityDescription(String input) => EntityDescription._(
+        validateStringLength(
+          input: input,
+          length: maxLength,
+        ), //.flatMap(validateStringNotEmpty),
+      );
 
   const EntityDescription._(this.value);
 

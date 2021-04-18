@@ -1,7 +1,7 @@
 part of 'tag_management_watcher_bloc.dart';
 
 @freezed
-abstract class TagManagementWatcherState with _$TagManagementWatcherState {
+class TagManagementWatcherState with _$TagManagementWatcherState {
   const factory TagManagementWatcherState.initial() = _Initial;
 
   const factory TagManagementWatcherState.loadInProgress() = _LoadInProgress;

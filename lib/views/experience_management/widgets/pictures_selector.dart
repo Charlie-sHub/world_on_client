@@ -20,7 +20,10 @@ class PicturesSelector extends StatelessWidget {
             icon: const Icon(
               Icons.photo_camera,
             ),
-            onPressed: () async => _pickImages(context),
+            onPressed: () async => _pickImages(
+              context,
+              _state,
+            ),
           ),
           if (_state.showErrorMessages && _state.experience.imageURLs.isEmpty)
             Text(
@@ -60,7 +63,10 @@ class PicturesSelector extends StatelessWidget {
               icon: const Icon(
                 Icons.photo_camera,
               ),
-              onPressed: () async => _pickImages(context),
+              onPressed: () async => _pickImages(
+                context,
+                _state,
+              ),
             ),
           ],
         ),
@@ -68,22 +74,27 @@ class PicturesSelector extends StatelessWidget {
     );
   }
 
-  Future _pickImages(BuildContext context) async {
+  Future _pickImages(
+    BuildContext context,
+    ExperienceManagementFormState state,
+  ) async {
     try {
       final imagesPicked = await MultiImagePicker.pickImages(
         maxImages: 15,
         enableCamera: true,
-        selectedAssets: context.read<ExperienceManagementFormBloc>().state.experience.imageAssetsOption.fold(
-              () => [],
-              id,
-            ),
+        selectedAssets: state.experience.imageAssetsOption.fold(
+          () => [],
+          id,
+        ),
         materialOptions: MaterialOptions(
           actionBarTitle: "World On",
           allViewTitle: S.of(context).multiImagePickerAllViewTitle,
           useDetailsView: false,
         ),
       );
-      context.read<ExperienceManagementFormBloc>().add(ExperienceManagementFormEvent.imagesChanged(imagesPicked));
+      context.read<ExperienceManagementFormBloc>().add(
+            ExperienceManagementFormEvent.imagesChanged(imagesPicked),
+          );
     } on Exception catch (e) {
       // This try-catch only exists to control for when the user cancels the selection
       _logger.e(e.toString());

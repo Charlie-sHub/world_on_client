@@ -1,4 +1,5 @@
 import 'package:auto_size_text/auto_size_text.dart';
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:worldon/application/experience_management/rewards_creation/rewards_creation_bloc.dart';
@@ -7,8 +8,8 @@ import 'package:worldon/views/core/misc/world_on_colors.dart';
 
 class CreatedRewardCard extends StatelessWidget {
   const CreatedRewardCard({
-    Key key,
-    @required this.reward,
+    Key? key,
+    required this.reward,
   }) : super(key: key);
 
   final Reward reward;
@@ -23,7 +24,7 @@ class CreatedRewardCard extends StatelessWidget {
           children: <Widget>[
             Image(
               image: reward.imageFile.fold(
-                () => NetworkImage(reward.imageURL),
+                () => CachedNetworkImageProvider(reward.imageURL),
                 (_imageFile) => FileImage(_imageFile),
               ),
               height: 100,

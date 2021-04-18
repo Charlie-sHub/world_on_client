@@ -20,7 +20,8 @@ part 'profile_achievements_watcher_state.dart';
 @injectable
 class ProfileAchievementsWatcherBloc extends Bloc<ProfileAchievementsWatcherEvent, ProfileAchievementsWatcherState> {
   ProfileAchievementsWatcherBloc() : super(const ProfileAchievementsWatcherState.initial());
-  StreamSubscription<Either<Failure, KtList<Achievement>>> _userAchievementsStreamSubscription;
+
+  StreamSubscription<Either<Failure, KtList<Achievement>>>? _userAchievementsStreamSubscription;
 
   @override
   Stream<ProfileAchievementsWatcherState> mapEventToState(ProfileAchievementsWatcherEvent event) async* {

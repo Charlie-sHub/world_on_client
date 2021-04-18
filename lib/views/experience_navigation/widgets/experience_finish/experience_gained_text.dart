@@ -8,8 +8,8 @@ import 'package:worldon/views/core/misc/world_on_colors.dart';
 
 class ExperiencedGainedText extends StatelessWidget {
   const ExperiencedGainedText({
-    Key key,
-    @required this.experience,
+    Key? key,
+    required this.experience,
   }) : super(key: key);
 
   final Experience experience;

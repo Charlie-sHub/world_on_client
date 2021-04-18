@@ -3,7 +3,7 @@ import 'package:worldon/core/assets.dart';
 
 class WorldOnLogoMedium extends StatelessWidget {
   const WorldOnLogoMedium({
-    Key key,
+    Key? key,
   }) : super(key: key);
 
   @override

@@ -1,7 +1,7 @@
 part of 'experience_log_watcher_bloc.dart';
 
 @freezed
-abstract class ExperienceLogWatcherState with _$ExperienceLogWatcherState {
+class ExperienceLogWatcherState with _$ExperienceLogWatcherState {
   const factory ExperienceLogWatcherState.initial() = _Initial;
 
   const factory ExperienceLogWatcherState.loadInProgress() = _LoadInProgress;

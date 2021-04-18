@@ -13,8 +13,8 @@ class BuyButtonBuilder extends StatelessWidget {
   final Item item;
 
   const BuyButtonBuilder({
-    Key key,
-    @required this.item,
+    Key? key,
+    required this.item,
   }) : super(key: key);
 
   @override
@@ -56,6 +56,6 @@ class BuyButtonBuilder extends StatelessWidget {
             orElse: () => S.of(context).unknownError,
           ),
         ).show(context),
-        orElse: () => null,
+        orElse: () {},
       );
 }

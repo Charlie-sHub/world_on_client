@@ -1,4 +1,5 @@
 import 'package:auto_size_text/auto_size_text.dart';
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:implicitly_animated_reorderable_list/implicitly_animated_reorderable_list.dart';
@@ -8,9 +9,9 @@ import 'package:worldon/views/core/misc/world_on_colors.dart';
 
 class CreatedObjectiveCard extends StatelessWidget {
   const CreatedObjectiveCard({
-    Key key,
-    @required this.objective,
-    @required this.animation,
+    Key? key,
+    required this.objective,
+    required this.animation,
   }) : super(key: key);
 
   final Objective objective;
@@ -43,7 +44,7 @@ class CreatedObjectiveCard extends StatelessWidget {
               ),
               Image(
                 image: objective.imageFile.fold(
-                  () => NetworkImage(objective.imageURL),
+                  () => CachedNetworkImageProvider(objective.imageURL),
                   (_imageFile) => FileImage(_imageFile),
                 ),
                 height: 100,

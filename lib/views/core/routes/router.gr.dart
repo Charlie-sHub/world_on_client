@@ -4,202 +4,150 @@
 // AutoRouteGenerator
 // **************************************************************************
 
-// ignore_for_file: public_member_api_docs
+import 'package:auto_route/auto_route.dart' as _i1;
+import 'package:dartz/dartz.dart' as _i13;
+import 'package:flutter/material.dart' as _i11;
 
-import 'package:auto_route/auto_route.dart';
-import 'package:dartz/dartz.dart';
-import 'package:flutter/material.dart';
+import '../../../domain/core/entities/experience/experience.dart' as _i14;
+import '../../../domain/core/entities/tag/tag.dart' as _i15;
+import '../../../domain/core/entities/user/user.dart' as _i12;
+import '../../authentication/pages/log_in_page.dart' as _i3;
+import '../../authentication/pages/registration_page.dart' as _i4;
+import '../../experience_management/pages/experience_management_page.dart' as _i8;
+import '../../profile/pages/profile_editing_page.dart' as _i7;
+import '../../splash/pages/splash_page.dart' as _i2;
+import '../../store/pages/store_page.dart' as _i10;
+import '../../tag_management/pages/tag_management_page.dart' as _i9;
+import '../pages/main_page.dart' as _i6;
+import '../pages/welcome_page.dart' as _i5;
 
-import '../../../domain/core/entities/experience/experience.dart';
-import '../../../domain/core/entities/tag/tag.dart';
-import '../../../domain/core/entities/user/user.dart';
-import '../../authentication/pages/log_in_page.dart';
-import '../../authentication/pages/registration_page.dart';
-import '../../experience_management/pages/experience_management_page.dart';
-import '../../profile/pages/profile_editing_page.dart';
-import '../../splash/pages/splash_page.dart';
-import '../../store/pages/store_page.dart';
-import '../../tag_management/pages/tag_management_page.dart';
-import '../pages/main_page.dart';
-import '../pages/welcome_page.dart';
+class AppRouter extends _i1.RootStackRouter {
+  AppRouter();
 
-class Routes {
-  static const String splashPage = '/';
-  static const String logInPage = '/log-in-page';
-  static const String registrationPage = '/registration-page';
-  static const String welcomePage = '/welcome-page';
-  static const String mainPage = '/main-page';
-  static const String profileEditingPage = '/profile-editing-page';
-  static const String experienceManagementPage = '/experience-management-page';
-  static const String tagManagementPage = '/tag-management-page';
-  static const String storePage = '/store-page';
-  static const all = <String>{
-    splashPage,
-    logInPage,
-    registrationPage,
-    welcomePage,
-    mainPage,
-    profileEditingPage,
-    experienceManagementPage,
-    tagManagementPage,
-    storePage,
-  };
-}
-
-class Router extends RouterBase {
   @override
-  List<RouteDef> get routes => _routes;
-  final _routes = <RouteDef>[
-    RouteDef(Routes.splashPage, page: SplashPage),
-    RouteDef(Routes.logInPage, page: LogInPage),
-    RouteDef(Routes.registrationPage, page: RegistrationPage),
-    RouteDef(Routes.welcomePage, page: WelcomePage),
-    RouteDef(Routes.mainPage, page: MainPage),
-    RouteDef(Routes.profileEditingPage, page: ProfileEditingPage),
-    RouteDef(Routes.experienceManagementPage, page: ExperienceManagementPage),
-    RouteDef(Routes.tagManagementPage, page: TagManagementPage),
-    RouteDef(Routes.storePage, page: StorePage),
-  ];
-  @override
-  Map<Type, AutoRouteFactory> get pagesMap => _pagesMap;
-  final _pagesMap = <Type, AutoRouteFactory>{
-    SplashPage: (data) {
-      return MaterialPageRoute<dynamic>(
-        builder: (context) => SplashPage(),
-        settings: data,
-      );
+  final Map<String, _i1.PageFactory> pagesMap = {
+    SplashPageRoute.name: (entry) {
+      return _i1.MaterialPageX(entry: entry, child: _i2.SplashPage());
     },
-    LogInPage: (data) {
-      return MaterialPageRoute<dynamic>(
-        builder: (context) => LogInPage(),
-        settings: data,
-      );
+    LogInPageRoute.name: (entry) {
+      return _i1.MaterialPageX(entry: entry, child: _i3.LogInPage());
     },
-    RegistrationPage: (data) {
-      return MaterialPageRoute<dynamic>(
-        builder: (context) => RegistrationPage(),
-        settings: data,
-      );
+    RegistrationPageRoute.name: (entry) {
+      return _i1.MaterialPageX(entry: entry, child: _i4.RegistrationPage());
     },
-    WelcomePage: (data) {
-      return MaterialPageRoute<dynamic>(
-        builder: (context) => WelcomePage(),
-        settings: data,
-      );
+    WelcomePageRoute.name: (entry) {
+      return _i1.MaterialPageX(entry: entry, child: _i5.WelcomePage());
     },
-    MainPage: (data) {
-      return MaterialPageRoute<dynamic>(
-        builder: (context) => MainPage(),
-        settings: data,
-      );
+    MainPageRoute.name: (entry) {
+      return _i1.MaterialPageX(entry: entry, child: _i6.MainPage());
     },
-    ProfileEditingPage: (data) {
-      final args = data.getArgs<ProfileEditingPageArguments>(nullOk: false);
-      return PageRouteBuilder<bool>(
-        pageBuilder: (context, animation, secondaryAnimation) => ProfileEditingPage(
-          key: args.key,
-          user: args.user,
-        ),
-        settings: data,
-        transitionsBuilder: TransitionsBuilders.slideLeft,
-      );
+    ProfileEditingPageRoute.name: (entry) {
+      var args = entry.routeData.argsAs<ProfileEditingPageRouteArgs>();
+      return _i1.CustomPage(
+          entry: entry, child: _i7.ProfileEditingPage(key: args.key, user: args.user), transitionsBuilder: _i1.TransitionsBuilders.slideLeft, opaque: true, barrierDismissible: false);
     },
-    ExperienceManagementPage: (data) {
-      final args = data.getArgs<ExperienceManagementPageArguments>(nullOk: false);
-      return MaterialPageRoute<dynamic>(
-        builder: (context) => ExperienceManagementPage(
-          key: args.key,
-          experienceOption: args.experienceOption,
-        ),
-        settings: data,
-      );
+    ExperienceManagementPageRoute.name: (entry) {
+      var args = entry.routeData.argsAs<ExperienceManagementPageRouteArgs>();
+      return _i1.MaterialPageX(entry: entry, child: _i8.ExperienceManagementPage(key: args.key, experienceOption: args.experienceOption));
     },
-    TagManagementPage: (data) {
-      final args = data.getArgs<TagManagementPageArguments>(nullOk: false);
-      return MaterialPageRoute<dynamic>(
-        builder: (context) => TagManagementPage(
-          key: args.key,
-          tagOption: args.tagOption,
-        ),
-        settings: data,
-      );
+    TagManagementPageRoute.name: (entry) {
+      var args = entry.routeData.argsAs<TagManagementPageRouteArgs>();
+      return _i1.MaterialPageX(entry: entry, child: _i9.TagManagementPage(key: args.key, tagOption: args.tagOption));
     },
-    StorePage: (data) {
-      return MaterialPageRoute<dynamic>(
-        builder: (context) => StorePage(),
-        settings: data,
-      );
-    },
+    StorePageRoute.name: (entry) {
+      return _i1.MaterialPageX(entry: entry, child: _i10.StorePage());
+    }
   };
+
+  @override
+  List<_i1.RouteConfig> get routes => [
+        _i1.RouteConfig(SplashPageRoute.name, path: '/'),
+        _i1.RouteConfig(LogInPageRoute.name, path: '/log-in-page'),
+        _i1.RouteConfig(RegistrationPageRoute.name, path: '/registration-page'),
+        _i1.RouteConfig(WelcomePageRoute.name, path: '/welcome-page'),
+        _i1.RouteConfig(MainPageRoute.name, path: '/main-page'),
+        _i1.RouteConfig(ProfileEditingPageRoute.name, path: '/profile-editing-page'),
+        _i1.RouteConfig(ExperienceManagementPageRoute.name, path: '/experience-management-page'),
+        _i1.RouteConfig(TagManagementPageRoute.name, path: '/tag-management-page'),
+        _i1.RouteConfig(StorePageRoute.name, path: '/store-page')
+      ];
 }
 
-/// ************************************************************************
-/// Navigation helper methods extension
-/// *************************************************************************
+class SplashPageRoute extends _i1.PageRouteInfo {
+  const SplashPageRoute() : super(name, path: '/');
 
-extension RouterExtendedNavigatorStateX on ExtendedNavigatorState {
-  Future<dynamic> pushSplashPage() => push<dynamic>(Routes.splashPage);
-
-  Future<dynamic> pushLogInPage() => push<dynamic>(Routes.logInPage);
-
-  Future<dynamic> pushRegistrationPage() => push<dynamic>(Routes.registrationPage);
-
-  Future<dynamic> pushWelcomePage() => push<dynamic>(Routes.welcomePage);
-
-  Future<dynamic> pushMainPage() => push<dynamic>(Routes.mainPage);
-
-  Future<bool> pushProfileEditingPage({
-    Key key,
-    @required User user,
-  }) =>
-      push<bool>(
-        Routes.profileEditingPage,
-        arguments: ProfileEditingPageArguments(key: key, user: user),
-      );
-
-  Future<dynamic> pushExperienceManagementPage({
-    Key key,
-    @required Option<Experience> experienceOption,
-  }) =>
-      push<dynamic>(
-        Routes.experienceManagementPage,
-        arguments: ExperienceManagementPageArguments(key: key, experienceOption: experienceOption),
-      );
-
-  Future<dynamic> pushTagManagementPage({
-    Key key,
-    @required Option<Tag> tagOption,
-  }) =>
-      push<dynamic>(
-        Routes.tagManagementPage,
-        arguments: TagManagementPageArguments(key: key, tagOption: tagOption),
-      );
-
-  Future<dynamic> pushStorePage() => push<dynamic>(Routes.storePage);
+  static const String name = 'SplashPageRoute';
 }
 
-/// ************************************************************************
-/// Arguments holder classes
-/// *************************************************************************
+class LogInPageRoute extends _i1.PageRouteInfo {
+  const LogInPageRoute() : super(name, path: '/log-in-page');
 
-/// ProfileEditingPage arguments holder class
-class ProfileEditingPageArguments {
-  final Key key;
-  final User user;
-  ProfileEditingPageArguments({this.key, @required this.user});
+  static const String name = 'LogInPageRoute';
 }
 
-/// ExperienceManagementPage arguments holder class
-class ExperienceManagementPageArguments {
-  final Key key;
-  final Option<Experience> experienceOption;
+class RegistrationPageRoute extends _i1.PageRouteInfo {
+  const RegistrationPageRoute() : super(name, path: '/registration-page');
 
-  ExperienceManagementPageArguments({this.key, @required this.experienceOption});
+  static const String name = 'RegistrationPageRoute';
 }
 
-/// TagManagementPage arguments holder class
-class TagManagementPageArguments {
-  final Key key;
-  final Option<Tag> tagOption;
-  TagManagementPageArguments({this.key, @required this.tagOption});
+class WelcomePageRoute extends _i1.PageRouteInfo {
+  const WelcomePageRoute() : super(name, path: '/welcome-page');
+
+  static const String name = 'WelcomePageRoute';
+}
+
+class MainPageRoute extends _i1.PageRouteInfo {
+  const MainPageRoute() : super(name, path: '/main-page');
+
+  static const String name = 'MainPageRoute';
+}
+
+class ProfileEditingPageRoute extends _i1.PageRouteInfo<ProfileEditingPageRouteArgs> {
+  ProfileEditingPageRoute({_i11.Key? key, required _i12.User user}) : super(name, path: '/profile-editing-page', args: ProfileEditingPageRouteArgs(key: key, user: user));
+
+  static const String name = 'ProfileEditingPageRoute';
+}
+
+class ProfileEditingPageRouteArgs {
+  const ProfileEditingPageRouteArgs({this.key, required this.user});
+
+  final _i11.Key? key;
+
+  final _i12.User user;
+}
+
+class ExperienceManagementPageRoute extends _i1.PageRouteInfo<ExperienceManagementPageRouteArgs> {
+  ExperienceManagementPageRoute({_i11.Key? key, required _i13.Option<_i14.Experience> experienceOption})
+      : super(name, path: '/experience-management-page', args: ExperienceManagementPageRouteArgs(key: key, experienceOption: experienceOption));
+
+  static const String name = 'ExperienceManagementPageRoute';
+}
+
+class ExperienceManagementPageRouteArgs {
+  const ExperienceManagementPageRouteArgs({this.key, required this.experienceOption});
+
+  final _i11.Key? key;
+
+  final _i13.Option<_i14.Experience> experienceOption;
+}
+
+class TagManagementPageRoute extends _i1.PageRouteInfo<TagManagementPageRouteArgs> {
+  TagManagementPageRoute({_i11.Key? key, required _i13.Option<_i15.Tag> tagOption}) : super(name, path: '/tag-management-page', args: TagManagementPageRouteArgs(key: key, tagOption: tagOption));
+
+  static const String name = 'TagManagementPageRoute';
+}
+
+class TagManagementPageRouteArgs {
+  const TagManagementPageRouteArgs({this.key, required this.tagOption});
+
+  final _i11.Key? key;
+
+  final _i13.Option<_i15.Tag> tagOption;
+}
+
+class StorePageRoute extends _i1.PageRouteInfo {
+  const StorePageRoute() : super(name, path: '/store-page');
+
+  static const String name = 'StorePageRoute';
 }

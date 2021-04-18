@@ -22,8 +22,8 @@ class MainPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return BlocListener<AuthenticationBloc, AuthenticationState>(
       listener: (context, state) => state.maybeMap(
-        unAuthenticated: (_) => context.navigator.replace(Routes.logInPage),
-        orElse: () => null,
+        unAuthenticated: (_) => context.router.replace(const LogInPageRoute()),
+        orElse: () {},
       ),
       child: MultiBlocProvider(
         providers: [
@@ -70,7 +70,7 @@ class MainPage extends StatelessWidget {
                         ),
                     currentUserProfile: context.read<NavigationActorBloc>().state.maybeMap(
                           profileView: (state) => state.currentUserProfile,
-                          orElse: () => null,
+                          orElse: () => true,
                         ),
                   ),
                   Center(

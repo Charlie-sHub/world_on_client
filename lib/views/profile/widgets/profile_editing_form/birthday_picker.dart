@@ -5,12 +5,12 @@ import 'package:worldon/generated/l10n.dart';
 
 class BirthdayPicker extends StatelessWidget {
   const BirthdayPicker({
-    Key key,
+    Key? key,
   }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return RaisedButton(
+    return ElevatedButton(
       onPressed: () async {
         final _birthDate = await showDatePicker(
           context: context,
@@ -19,7 +19,7 @@ class BirthdayPicker extends StatelessWidget {
           lastDate: DateTime.now(),
         );
         context.read<ProfileEditingFormBloc>().add(
-              ProfileEditingFormEvent.birthdayChanged(_birthDate),
+              ProfileEditingFormEvent.birthdayChanged(_birthDate!),
             );
       },
       // TODO: Make it so the text changes to the selected date after selection or the failure

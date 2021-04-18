@@ -5,8 +5,8 @@ import 'package:worldon/views/core/misc/world_on_colors.dart';
 
 class ExperienceDoneCounter extends StatelessWidget {
   const ExperienceDoneCounter({
-    Key key,
-    @required this.experience,
+    Key? key,
+    required this.experience,
   }) : super(key: key);
 
   final Experience experience;

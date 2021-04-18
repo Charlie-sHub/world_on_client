@@ -1,5 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides
 
 part of 'store_navigation_actor_bloc.dart';
 
@@ -9,49 +9,56 @@ part of 'store_navigation_actor_bloc.dart';
 
 T _$identity<T>(T value) => value;
 
+final _privateConstructorUsedError = UnsupportedError(
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+
 /// @nodoc
 class _$StoreNavigationActorEventTearOff {
   const _$StoreNavigationActorEventTearOff();
 
-// ignore: unused_element
   _StoreTapped storeTapped() {
     return const _StoreTapped();
   }
 
-// ignore: unused_element
   _MyItemsTapped myItemsTapped() {
     return const _MyItemsTapped();
   }
 }
 
 /// @nodoc
-// ignore: unused_element
 const $StoreNavigationActorEvent = _$StoreNavigationActorEventTearOff();
 
 /// @nodoc
 mixin _$StoreNavigationActorEvent {
   @optionalTypeArgs
-  TResult when<TResult extends Object>({
-    @required TResult storeTapped(),
-    @required TResult myItemsTapped(),
-  });
+  TResult when<TResult extends Object?>({
+    required TResult Function() storeTapped,
+    required TResult Function() myItemsTapped,
+  }) =>
+      throw _privateConstructorUsedError;
+
   @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object>({
-    TResult storeTapped(),
-    TResult myItemsTapped(),
-    @required TResult orElse(),
-  });
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? storeTapped,
+    TResult Function()? myItemsTapped,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
+
   @optionalTypeArgs
-  TResult map<TResult extends Object>({
-    @required TResult storeTapped(_StoreTapped value),
-    @required TResult myItemsTapped(_MyItemsTapped value),
-  });
+  TResult map<TResult extends Object?>({
+    required TResult Function(_StoreTapped value) storeTapped,
+    required TResult Function(_MyItemsTapped value) myItemsTapped,
+  }) =>
+      throw _privateConstructorUsedError;
+
   @optionalTypeArgs
-  TResult maybeMap<TResult extends Object>({
-    TResult storeTapped(_StoreTapped value),
-    TResult myItemsTapped(_MyItemsTapped value),
-    @required TResult orElse(),
-  });
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_StoreTapped value)? storeTapped,
+    TResult Function(_MyItemsTapped value)? myItemsTapped,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -101,23 +108,20 @@ class _$_StoreTapped implements _StoreTapped {
 
   @override
   @optionalTypeArgs
-  TResult when<TResult extends Object>({
-    @required TResult storeTapped(),
-    @required TResult myItemsTapped(),
+  TResult when<TResult extends Object?>({
+    required TResult Function() storeTapped,
+    required TResult Function() myItemsTapped,
   }) {
-    assert(storeTapped != null);
-    assert(myItemsTapped != null);
     return storeTapped();
   }
 
   @override
   @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object>({
-    TResult storeTapped(),
-    TResult myItemsTapped(),
-    @required TResult orElse(),
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? storeTapped,
+    TResult Function()? myItemsTapped,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (storeTapped != null) {
       return storeTapped();
     }
@@ -126,23 +130,20 @@ class _$_StoreTapped implements _StoreTapped {
 
   @override
   @optionalTypeArgs
-  TResult map<TResult extends Object>({
-    @required TResult storeTapped(_StoreTapped value),
-    @required TResult myItemsTapped(_MyItemsTapped value),
+  TResult map<TResult extends Object?>({
+    required TResult Function(_StoreTapped value) storeTapped,
+    required TResult Function(_MyItemsTapped value) myItemsTapped,
   }) {
-    assert(storeTapped != null);
-    assert(myItemsTapped != null);
     return storeTapped(this);
   }
 
   @override
   @optionalTypeArgs
-  TResult maybeMap<TResult extends Object>({
-    TResult storeTapped(_StoreTapped value),
-    TResult myItemsTapped(_MyItemsTapped value),
-    @required TResult orElse(),
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_StoreTapped value)? storeTapped,
+    TResult Function(_MyItemsTapped value)? myItemsTapped,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (storeTapped != null) {
       return storeTapped(this);
     }
@@ -186,23 +187,20 @@ class _$_MyItemsTapped implements _MyItemsTapped {
 
   @override
   @optionalTypeArgs
-  TResult when<TResult extends Object>({
-    @required TResult storeTapped(),
-    @required TResult myItemsTapped(),
+  TResult when<TResult extends Object?>({
+    required TResult Function() storeTapped,
+    required TResult Function() myItemsTapped,
   }) {
-    assert(storeTapped != null);
-    assert(myItemsTapped != null);
     return myItemsTapped();
   }
 
   @override
   @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object>({
-    TResult storeTapped(),
-    TResult myItemsTapped(),
-    @required TResult orElse(),
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? storeTapped,
+    TResult Function()? myItemsTapped,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (myItemsTapped != null) {
       return myItemsTapped();
     }
@@ -211,23 +209,20 @@ class _$_MyItemsTapped implements _MyItemsTapped {
 
   @override
   @optionalTypeArgs
-  TResult map<TResult extends Object>({
-    @required TResult storeTapped(_StoreTapped value),
-    @required TResult myItemsTapped(_MyItemsTapped value),
+  TResult map<TResult extends Object?>({
+    required TResult Function(_StoreTapped value) storeTapped,
+    required TResult Function(_MyItemsTapped value) myItemsTapped,
   }) {
-    assert(storeTapped != null);
-    assert(myItemsTapped != null);
     return myItemsTapped(this);
   }
 
   @override
   @optionalTypeArgs
-  TResult maybeMap<TResult extends Object>({
-    TResult storeTapped(_StoreTapped value),
-    TResult myItemsTapped(_MyItemsTapped value),
-    @required TResult orElse(),
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_StoreTapped value)? storeTapped,
+    TResult Function(_MyItemsTapped value)? myItemsTapped,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (myItemsTapped != null) {
       return myItemsTapped(this);
     }
@@ -243,45 +238,49 @@ abstract class _MyItemsTapped implements StoreNavigationActorEvent {
 class _$StoreNavigationActorStateTearOff {
   const _$StoreNavigationActorStateTearOff();
 
-// ignore: unused_element
   _StoreView storeView() {
     return const _StoreView();
   }
 
-// ignore: unused_element
   _MyItemsView myItemsView() {
     return const _MyItemsView();
   }
 }
 
 /// @nodoc
-// ignore: unused_element
 const $StoreNavigationActorState = _$StoreNavigationActorStateTearOff();
 
 /// @nodoc
 mixin _$StoreNavigationActorState {
   @optionalTypeArgs
-  TResult when<TResult extends Object>({
-    @required TResult storeView(),
-    @required TResult myItemsView(),
-  });
+  TResult when<TResult extends Object?>({
+    required TResult Function() storeView,
+    required TResult Function() myItemsView,
+  }) =>
+      throw _privateConstructorUsedError;
+
   @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object>({
-    TResult storeView(),
-    TResult myItemsView(),
-    @required TResult orElse(),
-  });
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? storeView,
+    TResult Function()? myItemsView,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
+
   @optionalTypeArgs
-  TResult map<TResult extends Object>({
-    @required TResult storeView(_StoreView value),
-    @required TResult myItemsView(_MyItemsView value),
-  });
+  TResult map<TResult extends Object?>({
+    required TResult Function(_StoreView value) storeView,
+    required TResult Function(_MyItemsView value) myItemsView,
+  }) =>
+      throw _privateConstructorUsedError;
+
   @optionalTypeArgs
-  TResult maybeMap<TResult extends Object>({
-    TResult storeView(_StoreView value),
-    TResult myItemsView(_MyItemsView value),
-    @required TResult orElse(),
-  });
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_StoreView value)? storeView,
+    TResult Function(_MyItemsView value)? myItemsView,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -331,23 +330,20 @@ class _$_StoreView implements _StoreView {
 
   @override
   @optionalTypeArgs
-  TResult when<TResult extends Object>({
-    @required TResult storeView(),
-    @required TResult myItemsView(),
+  TResult when<TResult extends Object?>({
+    required TResult Function() storeView,
+    required TResult Function() myItemsView,
   }) {
-    assert(storeView != null);
-    assert(myItemsView != null);
     return storeView();
   }
 
   @override
   @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object>({
-    TResult storeView(),
-    TResult myItemsView(),
-    @required TResult orElse(),
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? storeView,
+    TResult Function()? myItemsView,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (storeView != null) {
       return storeView();
     }
@@ -356,23 +352,20 @@ class _$_StoreView implements _StoreView {
 
   @override
   @optionalTypeArgs
-  TResult map<TResult extends Object>({
-    @required TResult storeView(_StoreView value),
-    @required TResult myItemsView(_MyItemsView value),
+  TResult map<TResult extends Object?>({
+    required TResult Function(_StoreView value) storeView,
+    required TResult Function(_MyItemsView value) myItemsView,
   }) {
-    assert(storeView != null);
-    assert(myItemsView != null);
     return storeView(this);
   }
 
   @override
   @optionalTypeArgs
-  TResult maybeMap<TResult extends Object>({
-    TResult storeView(_StoreView value),
-    TResult myItemsView(_MyItemsView value),
-    @required TResult orElse(),
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_StoreView value)? storeView,
+    TResult Function(_MyItemsView value)? myItemsView,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (storeView != null) {
       return storeView(this);
     }
@@ -416,23 +409,20 @@ class _$_MyItemsView implements _MyItemsView {
 
   @override
   @optionalTypeArgs
-  TResult when<TResult extends Object>({
-    @required TResult storeView(),
-    @required TResult myItemsView(),
+  TResult when<TResult extends Object?>({
+    required TResult Function() storeView,
+    required TResult Function() myItemsView,
   }) {
-    assert(storeView != null);
-    assert(myItemsView != null);
     return myItemsView();
   }
 
   @override
   @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object>({
-    TResult storeView(),
-    TResult myItemsView(),
-    @required TResult orElse(),
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? storeView,
+    TResult Function()? myItemsView,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (myItemsView != null) {
       return myItemsView();
     }
@@ -441,23 +431,20 @@ class _$_MyItemsView implements _MyItemsView {
 
   @override
   @optionalTypeArgs
-  TResult map<TResult extends Object>({
-    @required TResult storeView(_StoreView value),
-    @required TResult myItemsView(_MyItemsView value),
+  TResult map<TResult extends Object?>({
+    required TResult Function(_StoreView value) storeView,
+    required TResult Function(_MyItemsView value) myItemsView,
   }) {
-    assert(storeView != null);
-    assert(myItemsView != null);
     return myItemsView(this);
   }
 
   @override
   @optionalTypeArgs
-  TResult maybeMap<TResult extends Object>({
-    TResult storeView(_StoreView value),
-    TResult myItemsView(_MyItemsView value),
-    @required TResult orElse(),
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_StoreView value)? storeView,
+    TResult Function(_MyItemsView value)? myItemsView,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (myItemsView != null) {
       return myItemsView(this);
     }

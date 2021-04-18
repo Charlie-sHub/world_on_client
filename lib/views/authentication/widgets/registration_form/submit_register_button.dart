@@ -6,19 +6,24 @@ import 'package:worldon/views/core/misc/world_on_colors.dart';
 
 class SubmitRegisterButton extends StatelessWidget {
   const SubmitRegisterButton({
-    Key key,
+    Key? key,
   }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return RaisedButton(
+    return ElevatedButton(
       onPressed: () => context.read<RegistrationFormBloc>().add(
             const RegistrationFormEvent.submitted(),
           ),
-      color: WorldOnColors.primary,
-      shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.circular(0),
-        side: const BorderSide(color: WorldOnColors.primary),
+      style: ButtonStyle(
+        backgroundColor: MaterialStateProperty.all(
+          WorldOnColors.primary,
+        ),
+        shape: MaterialStateProperty.all(
+          const RoundedRectangleBorder(
+            side: BorderSide(color: WorldOnColors.primary),
+          ),
+        ),
       ),
       child: Text(
         S.of(context).submitRegister,

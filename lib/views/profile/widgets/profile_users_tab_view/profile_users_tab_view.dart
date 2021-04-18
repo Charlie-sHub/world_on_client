@@ -14,8 +14,8 @@ import '../../../../injection.dart';
 
 class ProfileUsersTabView extends StatelessWidget {
   const ProfileUsersTabView({
-    Key key,
-    @required this.user,
+    Key? key,
+    required this.user,
   }) : super(key: key);
 
   final User user;

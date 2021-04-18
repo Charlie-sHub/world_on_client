@@ -11,16 +11,16 @@ part 'comment_dto.freezed.dart';
 part 'comment_dto.g.dart';
 
 @freezed
-abstract class CommentDto implements _$CommentDto {
+class CommentDto with _$CommentDto {
   const CommentDto._();
 
   const factory CommentDto({
-    @required String id,
-    @required UserDto poster,
-    @required String experienceId,
-    @required String content,
-    @ServerTimestampConverter() @required DateTime creationDate,
-    @ServerTimestampConverter() @required DateTime modificationDate,
+    required String id,
+    required UserDto poster,
+    required String experienceId,
+    required String content,
+    @ServerTimestampConverter() required DateTime creationDate,
+    @ServerTimestampConverter() required DateTime modificationDate,
   }) = _CommentDto;
 
   factory CommentDto.fromDomain(Comment comment) => CommentDto(
@@ -44,7 +44,7 @@ abstract class CommentDto implements _$CommentDto {
   factory CommentDto.fromJson(Map<String, dynamic> json) => _$CommentDtoFromJson(json);
 
   factory CommentDto.fromFirestore(DocumentSnapshot document) => CommentDto.fromJson(
-        document.data(),
+        document.data()!,
       ).copyWith(
         id: document.id,
       );

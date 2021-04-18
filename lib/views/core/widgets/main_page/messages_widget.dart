@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 class MessagesButton extends StatelessWidget {
   const MessagesButton({
-    Key key,
+    Key? key,
   }) : super(key: key);
 
   @override

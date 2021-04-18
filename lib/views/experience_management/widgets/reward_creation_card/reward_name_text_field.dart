@@ -8,8 +8,8 @@ class RewardNameTextField extends StatelessWidget {
   final TextEditingController textController;
 
   const RewardNameTextField({
-    Key key,
-    @required this.textController,
+    Key? key,
+    required this.textController,
   }) : super(key: key);
 
   @override

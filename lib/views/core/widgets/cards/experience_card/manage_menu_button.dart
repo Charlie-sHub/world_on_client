@@ -9,13 +9,13 @@ import 'delete_button.dart';
 
 class ManageMenuButton extends StatelessWidget {
   const ManageMenuButton({
-    Key key,
-    @required this.experience,
-    @required this.reloadFunction,
+    Key? key,
+    required this.experience,
+    required this.reloadFunction,
   }) : super(key: key);
 
   final Experience experience;
-  final Function(Object param) reloadFunction;
+  final Function() reloadFunction;
 
   @override
   Widget build(BuildContext context) {

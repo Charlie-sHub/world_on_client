@@ -1,5 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides
 
 part of 'experience_finish_actor_bloc.dart';
 
@@ -9,11 +9,13 @@ part of 'experience_finish_actor_bloc.dart';
 
 T _$identity<T>(T value) => value;
 
+final _privateConstructorUsedError = UnsupportedError(
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+
 /// @nodoc
 class _$ExperienceFinishActorEventTearOff {
   const _$ExperienceFinishActorEventTearOff();
 
-// ignore: unused_element
   _FinishedExperience finishedExperience(Experience experience) {
     return _FinishedExperience(
       experience,
@@ -22,34 +24,40 @@ class _$ExperienceFinishActorEventTearOff {
 }
 
 /// @nodoc
-// ignore: unused_element
 const $ExperienceFinishActorEvent = _$ExperienceFinishActorEventTearOff();
 
 /// @nodoc
 mixin _$ExperienceFinishActorEvent {
-  Experience get experience;
+  Experience get experience => throw _privateConstructorUsedError;
 
   @optionalTypeArgs
-  TResult when<TResult extends Object>({
-    @required TResult finishedExperience(Experience experience),
-  });
+  TResult when<TResult extends Object?>({
+    required TResult Function(Experience experience) finishedExperience,
+  }) =>
+      throw _privateConstructorUsedError;
+
   @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object>({
-    TResult finishedExperience(Experience experience),
-    @required TResult orElse(),
-  });
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(Experience experience)? finishedExperience,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
+
   @optionalTypeArgs
-  TResult map<TResult extends Object>({
-    @required TResult finishedExperience(_FinishedExperience value),
-  });
+  TResult map<TResult extends Object?>({
+    required TResult Function(_FinishedExperience value) finishedExperience,
+  }) =>
+      throw _privateConstructorUsedError;
+
   @optionalTypeArgs
-  TResult maybeMap<TResult extends Object>({
-    TResult finishedExperience(_FinishedExperience value),
-    @required TResult orElse(),
-  });
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_FinishedExperience value)? finishedExperience,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
-  $ExperienceFinishActorEventCopyWith<ExperienceFinishActorEvent> get copyWith;
+  $ExperienceFinishActorEventCopyWith<ExperienceFinishActorEvent> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -72,18 +80,18 @@ class _$ExperienceFinishActorEventCopyWithImpl<$Res> implements $ExperienceFinis
 
   @override
   $Res call({
-    Object experience = freezed,
+    Object? experience = freezed,
   }) {
     return _then(_value.copyWith(
-      experience: experience == freezed ? _value.experience : experience as Experience,
+      experience: experience == freezed
+          ? _value.experience
+          : experience // ignore: cast_nullable_to_non_nullable
+              as Experience,
     ));
   }
 
   @override
   $ExperienceCopyWith<$Res> get experience {
-    if (_value.experience == null) {
-      return null;
-    }
     return $ExperienceCopyWith<$Res>(_value.experience, (value) {
       return _then(_value.copyWith(experience: value));
     });
@@ -110,17 +118,20 @@ class __$FinishedExperienceCopyWithImpl<$Res> extends _$ExperienceFinishActorEve
 
   @override
   $Res call({
-    Object experience = freezed,
+    Object? experience = freezed,
   }) {
     return _then(_FinishedExperience(
-      experience == freezed ? _value.experience : experience as Experience,
+      experience == freezed
+          ? _value.experience
+          : experience // ignore: cast_nullable_to_non_nullable
+              as Experience,
     ));
   }
 }
 
 /// @nodoc
 class _$_FinishedExperience implements _FinishedExperience {
-  const _$_FinishedExperience(this.experience) : assert(experience != null);
+  const _$_FinishedExperience(this.experience);
 
   @override
   final Experience experience;
@@ -144,20 +155,18 @@ class _$_FinishedExperience implements _FinishedExperience {
 
   @override
   @optionalTypeArgs
-  TResult when<TResult extends Object>({
-    @required TResult finishedExperience(Experience experience),
+  TResult when<TResult extends Object?>({
+    required TResult Function(Experience experience) finishedExperience,
   }) {
-    assert(finishedExperience != null);
     return finishedExperience(experience);
   }
 
   @override
   @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object>({
-    TResult finishedExperience(Experience experience),
-    @required TResult orElse(),
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(Experience experience)? finishedExperience,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (finishedExperience != null) {
       return finishedExperience(experience);
     }
@@ -166,20 +175,18 @@ class _$_FinishedExperience implements _FinishedExperience {
 
   @override
   @optionalTypeArgs
-  TResult map<TResult extends Object>({
-    @required TResult finishedExperience(_FinishedExperience value),
+  TResult map<TResult extends Object?>({
+    required TResult Function(_FinishedExperience value) finishedExperience,
   }) {
-    assert(finishedExperience != null);
     return finishedExperience(this);
   }
 
   @override
   @optionalTypeArgs
-  TResult maybeMap<TResult extends Object>({
-    TResult finishedExperience(_FinishedExperience value),
-    @required TResult orElse(),
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_FinishedExperience value)? finishedExperience,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (finishedExperience != null) {
       return finishedExperience(this);
     }
@@ -191,36 +198,32 @@ abstract class _FinishedExperience implements ExperienceFinishActorEvent {
   const factory _FinishedExperience(Experience experience) = _$_FinishedExperience;
 
   @override
-  Experience get experience;
+  Experience get experience => throw _privateConstructorUsedError;
 
   @override
   @JsonKey(ignore: true)
-  _$FinishedExperienceCopyWith<_FinishedExperience> get copyWith;
+  _$FinishedExperienceCopyWith<_FinishedExperience> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 class _$ExperienceFinishActorStateTearOff {
   const _$ExperienceFinishActorStateTearOff();
 
-// ignore: unused_element
   _Initial initial() {
     return const _Initial();
   }
 
-// ignore: unused_element
   _ActionInProgress actionInProgress() {
     return const _ActionInProgress();
   }
 
-// ignore: unused_element
-  _FinishSuccess finishSuccess(int amountXP, {bool leveledUp}) {
+  _FinishSuccess finishSuccess(int amountXP, {required bool leveledUp}) {
     return _FinishSuccess(
       amountXP,
       leveledUp: leveledUp,
     );
   }
 
-// ignore: unused_element
   _FinishFailure finishFailure(Failure<dynamic> failure) {
     return _FinishFailure(
       failure,
@@ -229,41 +232,47 @@ class _$ExperienceFinishActorStateTearOff {
 }
 
 /// @nodoc
-// ignore: unused_element
 const $ExperienceFinishActorState = _$ExperienceFinishActorStateTearOff();
 
 /// @nodoc
 mixin _$ExperienceFinishActorState {
   @optionalTypeArgs
-  TResult when<TResult extends Object>({
-    @required TResult initial(),
-    @required TResult actionInProgress(),
-    @required TResult finishSuccess(int amountXP, bool leveledUp),
-    @required TResult finishFailure(Failure<dynamic> failure),
-  });
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() actionInProgress,
+    required TResult Function(int amountXP, bool leveledUp) finishSuccess,
+    required TResult Function(Failure<dynamic> failure) finishFailure,
+  }) =>
+      throw _privateConstructorUsedError;
+
   @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object>({
-    TResult initial(),
-    TResult actionInProgress(),
-    TResult finishSuccess(int amountXP, bool leveledUp),
-    TResult finishFailure(Failure<dynamic> failure),
-    @required TResult orElse(),
-  });
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? actionInProgress,
+    TResult Function(int amountXP, bool leveledUp)? finishSuccess,
+    TResult Function(Failure<dynamic> failure)? finishFailure,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
+
   @optionalTypeArgs
-  TResult map<TResult extends Object>({
-    @required TResult initial(_Initial value),
-    @required TResult actionInProgress(_ActionInProgress value),
-    @required TResult finishSuccess(_FinishSuccess value),
-    @required TResult finishFailure(_FinishFailure value),
-  });
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial value) initial,
+    required TResult Function(_ActionInProgress value) actionInProgress,
+    required TResult Function(_FinishSuccess value) finishSuccess,
+    required TResult Function(_FinishFailure value) finishFailure,
+  }) =>
+      throw _privateConstructorUsedError;
+
   @optionalTypeArgs
-  TResult maybeMap<TResult extends Object>({
-    TResult initial(_Initial value),
-    TResult actionInProgress(_ActionInProgress value),
-    TResult finishSuccess(_FinishSuccess value),
-    TResult finishFailure(_FinishFailure value),
-    @required TResult orElse(),
-  });
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_ActionInProgress value)? actionInProgress,
+    TResult Function(_FinishSuccess value)? finishSuccess,
+    TResult Function(_FinishFailure value)? finishFailure,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -313,29 +322,24 @@ class _$_Initial implements _Initial {
 
   @override
   @optionalTypeArgs
-  TResult when<TResult extends Object>({
-    @required TResult initial(),
-    @required TResult actionInProgress(),
-    @required TResult finishSuccess(int amountXP, bool leveledUp),
-    @required TResult finishFailure(Failure<dynamic> failure),
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() actionInProgress,
+    required TResult Function(int amountXP, bool leveledUp) finishSuccess,
+    required TResult Function(Failure<dynamic> failure) finishFailure,
   }) {
-    assert(initial != null);
-    assert(actionInProgress != null);
-    assert(finishSuccess != null);
-    assert(finishFailure != null);
     return initial();
   }
 
   @override
   @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object>({
-    TResult initial(),
-    TResult actionInProgress(),
-    TResult finishSuccess(int amountXP, bool leveledUp),
-    TResult finishFailure(Failure<dynamic> failure),
-    @required TResult orElse(),
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? actionInProgress,
+    TResult Function(int amountXP, bool leveledUp)? finishSuccess,
+    TResult Function(Failure<dynamic> failure)? finishFailure,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (initial != null) {
       return initial();
     }
@@ -344,29 +348,24 @@ class _$_Initial implements _Initial {
 
   @override
   @optionalTypeArgs
-  TResult map<TResult extends Object>({
-    @required TResult initial(_Initial value),
-    @required TResult actionInProgress(_ActionInProgress value),
-    @required TResult finishSuccess(_FinishSuccess value),
-    @required TResult finishFailure(_FinishFailure value),
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial value) initial,
+    required TResult Function(_ActionInProgress value) actionInProgress,
+    required TResult Function(_FinishSuccess value) finishSuccess,
+    required TResult Function(_FinishFailure value) finishFailure,
   }) {
-    assert(initial != null);
-    assert(actionInProgress != null);
-    assert(finishSuccess != null);
-    assert(finishFailure != null);
     return initial(this);
   }
 
   @override
   @optionalTypeArgs
-  TResult maybeMap<TResult extends Object>({
-    TResult initial(_Initial value),
-    TResult actionInProgress(_ActionInProgress value),
-    TResult finishSuccess(_FinishSuccess value),
-    TResult finishFailure(_FinishFailure value),
-    @required TResult orElse(),
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_ActionInProgress value)? actionInProgress,
+    TResult Function(_FinishSuccess value)? finishSuccess,
+    TResult Function(_FinishFailure value)? finishFailure,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (initial != null) {
       return initial(this);
     }
@@ -410,29 +409,24 @@ class _$_ActionInProgress implements _ActionInProgress {
 
   @override
   @optionalTypeArgs
-  TResult when<TResult extends Object>({
-    @required TResult initial(),
-    @required TResult actionInProgress(),
-    @required TResult finishSuccess(int amountXP, bool leveledUp),
-    @required TResult finishFailure(Failure<dynamic> failure),
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() actionInProgress,
+    required TResult Function(int amountXP, bool leveledUp) finishSuccess,
+    required TResult Function(Failure<dynamic> failure) finishFailure,
   }) {
-    assert(initial != null);
-    assert(actionInProgress != null);
-    assert(finishSuccess != null);
-    assert(finishFailure != null);
     return actionInProgress();
   }
 
   @override
   @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object>({
-    TResult initial(),
-    TResult actionInProgress(),
-    TResult finishSuccess(int amountXP, bool leveledUp),
-    TResult finishFailure(Failure<dynamic> failure),
-    @required TResult orElse(),
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? actionInProgress,
+    TResult Function(int amountXP, bool leveledUp)? finishSuccess,
+    TResult Function(Failure<dynamic> failure)? finishFailure,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (actionInProgress != null) {
       return actionInProgress();
     }
@@ -441,29 +435,24 @@ class _$_ActionInProgress implements _ActionInProgress {
 
   @override
   @optionalTypeArgs
-  TResult map<TResult extends Object>({
-    @required TResult initial(_Initial value),
-    @required TResult actionInProgress(_ActionInProgress value),
-    @required TResult finishSuccess(_FinishSuccess value),
-    @required TResult finishFailure(_FinishFailure value),
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial value) initial,
+    required TResult Function(_ActionInProgress value) actionInProgress,
+    required TResult Function(_FinishSuccess value) finishSuccess,
+    required TResult Function(_FinishFailure value) finishFailure,
   }) {
-    assert(initial != null);
-    assert(actionInProgress != null);
-    assert(finishSuccess != null);
-    assert(finishFailure != null);
     return actionInProgress(this);
   }
 
   @override
   @optionalTypeArgs
-  TResult maybeMap<TResult extends Object>({
-    TResult initial(_Initial value),
-    TResult actionInProgress(_ActionInProgress value),
-    TResult finishSuccess(_FinishSuccess value),
-    TResult finishFailure(_FinishFailure value),
-    @required TResult orElse(),
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_ActionInProgress value)? actionInProgress,
+    TResult Function(_FinishSuccess value)? finishSuccess,
+    TResult Function(_FinishFailure value)? finishFailure,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (actionInProgress != null) {
       return actionInProgress(this);
     }
@@ -491,19 +480,25 @@ class __$FinishSuccessCopyWithImpl<$Res> extends _$ExperienceFinishActorStateCop
 
   @override
   $Res call({
-    Object amountXP = freezed,
-    Object leveledUp = freezed,
+    Object? amountXP = freezed,
+    Object? leveledUp = freezed,
   }) {
     return _then(_FinishSuccess(
-      amountXP == freezed ? _value.amountXP : amountXP as int,
-      leveledUp: leveledUp == freezed ? _value.leveledUp : leveledUp as bool,
+      amountXP == freezed
+          ? _value.amountXP
+          : amountXP // ignore: cast_nullable_to_non_nullable
+              as int,
+      leveledUp: leveledUp == freezed
+          ? _value.leveledUp
+          : leveledUp // ignore: cast_nullable_to_non_nullable
+              as bool,
     ));
   }
 }
 
 /// @nodoc
 class _$_FinishSuccess implements _FinishSuccess {
-  const _$_FinishSuccess(this.amountXP, {this.leveledUp}) : assert(amountXP != null);
+  const _$_FinishSuccess(this.amountXP, {required this.leveledUp});
 
   @override
   final int amountXP;
@@ -522,7 +517,7 @@ class _$_FinishSuccess implements _FinishSuccess {
             (identical(other.amountXP, amountXP) || const DeepCollectionEquality().equals(other.amountXP, amountXP)) &&
             (identical(other.leveledUp, leveledUp) || const DeepCollectionEquality().equals(other.leveledUp, leveledUp)));
   }
-  
+
   @override
   int get hashCode => runtimeType.hashCode ^ const DeepCollectionEquality().hash(amountXP) ^ const DeepCollectionEquality().hash(leveledUp);
 
@@ -532,29 +527,24 @@ class _$_FinishSuccess implements _FinishSuccess {
 
   @override
   @optionalTypeArgs
-  TResult when<TResult extends Object>({
-    @required TResult initial(),
-    @required TResult actionInProgress(),
-    @required TResult finishSuccess(int amountXP, bool leveledUp),
-    @required TResult finishFailure(Failure<dynamic> failure),
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() actionInProgress,
+    required TResult Function(int amountXP, bool leveledUp) finishSuccess,
+    required TResult Function(Failure<dynamic> failure) finishFailure,
   }) {
-    assert(initial != null);
-    assert(actionInProgress != null);
-    assert(finishSuccess != null);
-    assert(finishFailure != null);
     return finishSuccess(amountXP, leveledUp);
   }
 
   @override
   @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object>({
-    TResult initial(),
-    TResult actionInProgress(),
-    TResult finishSuccess(int amountXP, bool leveledUp),
-    TResult finishFailure(Failure<dynamic> failure),
-    @required TResult orElse(),
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? actionInProgress,
+    TResult Function(int amountXP, bool leveledUp)? finishSuccess,
+    TResult Function(Failure<dynamic> failure)? finishFailure,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (finishSuccess != null) {
       return finishSuccess(amountXP, leveledUp);
     }
@@ -563,29 +553,24 @@ class _$_FinishSuccess implements _FinishSuccess {
 
   @override
   @optionalTypeArgs
-  TResult map<TResult extends Object>({
-    @required TResult initial(_Initial value),
-    @required TResult actionInProgress(_ActionInProgress value),
-    @required TResult finishSuccess(_FinishSuccess value),
-    @required TResult finishFailure(_FinishFailure value),
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial value) initial,
+    required TResult Function(_ActionInProgress value) actionInProgress,
+    required TResult Function(_FinishSuccess value) finishSuccess,
+    required TResult Function(_FinishFailure value) finishFailure,
   }) {
-    assert(initial != null);
-    assert(actionInProgress != null);
-    assert(finishSuccess != null);
-    assert(finishFailure != null);
     return finishSuccess(this);
   }
 
   @override
   @optionalTypeArgs
-  TResult maybeMap<TResult extends Object>({
-    TResult initial(_Initial value),
-    TResult actionInProgress(_ActionInProgress value),
-    TResult finishSuccess(_FinishSuccess value),
-    TResult finishFailure(_FinishFailure value),
-    @required TResult orElse(),
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_ActionInProgress value)? actionInProgress,
+    TResult Function(_FinishSuccess value)? finishSuccess,
+    TResult Function(_FinishFailure value)? finishFailure,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (finishSuccess != null) {
       return finishSuccess(this);
     }
@@ -594,14 +579,14 @@ class _$_FinishSuccess implements _FinishSuccess {
 }
 
 abstract class _FinishSuccess implements ExperienceFinishActorState {
-  const factory _FinishSuccess(int amountXP, {bool leveledUp}) = _$_FinishSuccess;
+  const factory _FinishSuccess(int amountXP, {required bool leveledUp}) = _$_FinishSuccess;
 
-  int get amountXP;
+  int get amountXP => throw _privateConstructorUsedError;
 
-  bool get leveledUp;
+  bool get leveledUp => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
-  _$FinishSuccessCopyWith<_FinishSuccess> get copyWith;
+  _$FinishSuccessCopyWith<_FinishSuccess> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -622,18 +607,18 @@ class __$FinishFailureCopyWithImpl<$Res> extends _$ExperienceFinishActorStateCop
 
   @override
   $Res call({
-    Object failure = freezed,
+    Object? failure = freezed,
   }) {
     return _then(_FinishFailure(
-      failure == freezed ? _value.failure : failure as Failure<dynamic>,
+      failure == freezed
+          ? _value.failure
+          : failure // ignore: cast_nullable_to_non_nullable
+              as Failure<dynamic>,
     ));
   }
 
   @override
   $FailureCopyWith<dynamic, $Res> get failure {
-    if (_value.failure == null) {
-      return null;
-    }
     return $FailureCopyWith<dynamic, $Res>(_value.failure, (value) {
       return _then(_value.copyWith(failure: value));
     });
@@ -642,7 +627,7 @@ class __$FinishFailureCopyWithImpl<$Res> extends _$ExperienceFinishActorStateCop
 
 /// @nodoc
 class _$_FinishFailure implements _FinishFailure {
-  const _$_FinishFailure(this.failure) : assert(failure != null);
+  const _$_FinishFailure(this.failure);
 
   @override
   final Failure<dynamic> failure;
@@ -666,29 +651,24 @@ class _$_FinishFailure implements _FinishFailure {
 
   @override
   @optionalTypeArgs
-  TResult when<TResult extends Object>({
-    @required TResult initial(),
-    @required TResult actionInProgress(),
-    @required TResult finishSuccess(int amountXP, bool leveledUp),
-    @required TResult finishFailure(Failure<dynamic> failure),
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() actionInProgress,
+    required TResult Function(int amountXP, bool leveledUp) finishSuccess,
+    required TResult Function(Failure<dynamic> failure) finishFailure,
   }) {
-    assert(initial != null);
-    assert(actionInProgress != null);
-    assert(finishSuccess != null);
-    assert(finishFailure != null);
     return finishFailure(failure);
   }
 
   @override
   @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object>({
-    TResult initial(),
-    TResult actionInProgress(),
-    TResult finishSuccess(int amountXP, bool leveledUp),
-    TResult finishFailure(Failure<dynamic> failure),
-    @required TResult orElse(),
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? actionInProgress,
+    TResult Function(int amountXP, bool leveledUp)? finishSuccess,
+    TResult Function(Failure<dynamic> failure)? finishFailure,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (finishFailure != null) {
       return finishFailure(failure);
     }
@@ -697,29 +677,24 @@ class _$_FinishFailure implements _FinishFailure {
 
   @override
   @optionalTypeArgs
-  TResult map<TResult extends Object>({
-    @required TResult initial(_Initial value),
-    @required TResult actionInProgress(_ActionInProgress value),
-    @required TResult finishSuccess(_FinishSuccess value),
-    @required TResult finishFailure(_FinishFailure value),
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial value) initial,
+    required TResult Function(_ActionInProgress value) actionInProgress,
+    required TResult Function(_FinishSuccess value) finishSuccess,
+    required TResult Function(_FinishFailure value) finishFailure,
   }) {
-    assert(initial != null);
-    assert(actionInProgress != null);
-    assert(finishSuccess != null);
-    assert(finishFailure != null);
     return finishFailure(this);
   }
 
   @override
   @optionalTypeArgs
-  TResult maybeMap<TResult extends Object>({
-    TResult initial(_Initial value),
-    TResult actionInProgress(_ActionInProgress value),
-    TResult finishSuccess(_FinishSuccess value),
-    TResult finishFailure(_FinishFailure value),
-    @required TResult orElse(),
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_ActionInProgress value)? actionInProgress,
+    TResult Function(_FinishSuccess value)? finishSuccess,
+    TResult Function(_FinishFailure value)? finishFailure,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (finishFailure != null) {
       return finishFailure(this);
     }
@@ -730,7 +705,8 @@ class _$_FinishFailure implements _FinishFailure {
 abstract class _FinishFailure implements ExperienceFinishActorState {
   const factory _FinishFailure(Failure<dynamic> failure) = _$_FinishFailure;
 
-  Failure<dynamic> get failure;
+  Failure<dynamic> get failure => throw _privateConstructorUsedError;
+
   @JsonKey(ignore: true)
-  _$FinishFailureCopyWith<_FinishFailure> get copyWith;
+  _$FinishFailureCopyWith<_FinishFailure> get copyWith => throw _privateConstructorUsedError;
 }

@@ -1,5 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides
 
 part of 'experience_management_form_bloc.dart';
 
@@ -9,151 +9,149 @@ part of 'experience_management_form_bloc.dart';
 
 T _$identity<T>(T value) => value;
 
+final _privateConstructorUsedError = UnsupportedError(
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+
 /// @nodoc
 class _$ExperienceManagementFormEventTearOff {
   const _$ExperienceManagementFormEventTearOff();
 
-// ignore: unused_element
   _Initialized initialized(Option<Experience> experienceOption) {
     return _Initialized(
       experienceOption,
     );
   }
 
-// ignore: unused_element
   _TitleChanged titleChanged(String title) {
     return _TitleChanged(
       title,
     );
   }
 
-// ignore: unused_element
   _DescriptionChanged descriptionChanged(String description) {
     return _DescriptionChanged(
       description,
     );
   }
 
-// ignore: unused_element
   _ImageDeleted imageDeleted(String imageURL) {
     return _ImageDeleted(
       imageURL,
     );
   }
 
-// ignore: unused_element
   _ImagesChanged imagesChanged(List<Asset> imageAssets) {
     return _ImagesChanged(
       imageAssets,
     );
   }
 
-// ignore: unused_element
-  _CoordinatesChanged coordinatesChanged({@required double latitude, @required double longitude}) {
+  _CoordinatesChanged coordinatesChanged({required double latitude, required double longitude}) {
     return _CoordinatesChanged(
       latitude: latitude,
       longitude: longitude,
     );
   }
 
-// ignore: unused_element
   _DifficultyChanged difficultyChanged(int difficulty) {
     return _DifficultyChanged(
       difficulty,
     );
   }
 
-// ignore: unused_element
   _ObjectivesChanged objectivesChanged(KtList<Objective> objectives) {
     return _ObjectivesChanged(
       objectives,
     );
   }
 
-// ignore: unused_element
   _RewardsChanged rewardsChanged(KtSet<Reward> rewards) {
     return _RewardsChanged(
       rewards,
     );
   }
 
-// ignore: unused_element
   _TagsChanged tagsChanged(KtSet<Tag> tags) {
     return _TagsChanged(
       tags,
     );
   }
 
-// ignore: unused_element
   _Submitted submitted() {
     return const _Submitted();
   }
 }
 
 /// @nodoc
-// ignore: unused_element
 const $ExperienceManagementFormEvent = _$ExperienceManagementFormEventTearOff();
 
 /// @nodoc
 mixin _$ExperienceManagementFormEvent {
   @optionalTypeArgs
-  TResult when<TResult extends Object>({
-    @required TResult initialized(Option<Experience> experienceOption),
-    @required TResult titleChanged(String title),
-    @required TResult descriptionChanged(String description),
-    @required TResult imageDeleted(String imageURL),
-    @required TResult imagesChanged(List<Asset> imageAssets),
-    @required TResult coordinatesChanged(double latitude, double longitude),
-    @required TResult difficultyChanged(int difficulty),
-    @required TResult objectivesChanged(KtList<Objective> objectives),
-    @required TResult rewardsChanged(KtSet<Reward> rewards),
-    @required TResult tagsChanged(KtSet<Tag> tags),
-    @required TResult submitted(),
-  });
+  TResult when<TResult extends Object?>({
+    required TResult Function(Option<Experience> experienceOption) initialized,
+    required TResult Function(String title) titleChanged,
+    required TResult Function(String description) descriptionChanged,
+    required TResult Function(String imageURL) imageDeleted,
+    required TResult Function(List<Asset> imageAssets) imagesChanged,
+    required TResult Function(double latitude, double longitude) coordinatesChanged,
+    required TResult Function(int difficulty) difficultyChanged,
+    required TResult Function(KtList<Objective> objectives) objectivesChanged,
+    required TResult Function(KtSet<Reward> rewards) rewardsChanged,
+    required TResult Function(KtSet<Tag> tags) tagsChanged,
+    required TResult Function() submitted,
+  }) =>
+      throw _privateConstructorUsedError;
+
   @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object>({
-    TResult initialized(Option<Experience> experienceOption),
-    TResult titleChanged(String title),
-    TResult descriptionChanged(String description),
-    TResult imageDeleted(String imageURL),
-    TResult imagesChanged(List<Asset> imageAssets),
-    TResult coordinatesChanged(double latitude, double longitude),
-    TResult difficultyChanged(int difficulty),
-    TResult objectivesChanged(KtList<Objective> objectives),
-    TResult rewardsChanged(KtSet<Reward> rewards),
-    TResult tagsChanged(KtSet<Tag> tags),
-    TResult submitted(),
-    @required TResult orElse(),
-  });
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(Option<Experience> experienceOption)? initialized,
+    TResult Function(String title)? titleChanged,
+    TResult Function(String description)? descriptionChanged,
+    TResult Function(String imageURL)? imageDeleted,
+    TResult Function(List<Asset> imageAssets)? imagesChanged,
+    TResult Function(double latitude, double longitude)? coordinatesChanged,
+    TResult Function(int difficulty)? difficultyChanged,
+    TResult Function(KtList<Objective> objectives)? objectivesChanged,
+    TResult Function(KtSet<Reward> rewards)? rewardsChanged,
+    TResult Function(KtSet<Tag> tags)? tagsChanged,
+    TResult Function()? submitted,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
+
   @optionalTypeArgs
-  TResult map<TResult extends Object>({
-    @required TResult initialized(_Initialized value),
-    @required TResult titleChanged(_TitleChanged value),
-    @required TResult descriptionChanged(_DescriptionChanged value),
-    @required TResult imageDeleted(_ImageDeleted value),
-    @required TResult imagesChanged(_ImagesChanged value),
-    @required TResult coordinatesChanged(_CoordinatesChanged value),
-    @required TResult difficultyChanged(_DifficultyChanged value),
-    @required TResult objectivesChanged(_ObjectivesChanged value),
-    @required TResult rewardsChanged(_RewardsChanged value),
-    @required TResult tagsChanged(_TagsChanged value),
-    @required TResult submitted(_Submitted value),
-  });
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initialized value) initialized,
+    required TResult Function(_TitleChanged value) titleChanged,
+    required TResult Function(_DescriptionChanged value) descriptionChanged,
+    required TResult Function(_ImageDeleted value) imageDeleted,
+    required TResult Function(_ImagesChanged value) imagesChanged,
+    required TResult Function(_CoordinatesChanged value) coordinatesChanged,
+    required TResult Function(_DifficultyChanged value) difficultyChanged,
+    required TResult Function(_ObjectivesChanged value) objectivesChanged,
+    required TResult Function(_RewardsChanged value) rewardsChanged,
+    required TResult Function(_TagsChanged value) tagsChanged,
+    required TResult Function(_Submitted value) submitted,
+  }) =>
+      throw _privateConstructorUsedError;
+
   @optionalTypeArgs
-  TResult maybeMap<TResult extends Object>({
-    TResult initialized(_Initialized value),
-    TResult titleChanged(_TitleChanged value),
-    TResult descriptionChanged(_DescriptionChanged value),
-    TResult imageDeleted(_ImageDeleted value),
-    TResult imagesChanged(_ImagesChanged value),
-    TResult coordinatesChanged(_CoordinatesChanged value),
-    TResult difficultyChanged(_DifficultyChanged value),
-    TResult objectivesChanged(_ObjectivesChanged value),
-    TResult rewardsChanged(_RewardsChanged value),
-    TResult tagsChanged(_TagsChanged value),
-    TResult submitted(_Submitted value),
-    @required TResult orElse(),
-  });
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initialized value)? initialized,
+    TResult Function(_TitleChanged value)? titleChanged,
+    TResult Function(_DescriptionChanged value)? descriptionChanged,
+    TResult Function(_ImageDeleted value)? imageDeleted,
+    TResult Function(_ImagesChanged value)? imagesChanged,
+    TResult Function(_CoordinatesChanged value)? coordinatesChanged,
+    TResult Function(_DifficultyChanged value)? difficultyChanged,
+    TResult Function(_ObjectivesChanged value)? objectivesChanged,
+    TResult Function(_RewardsChanged value)? rewardsChanged,
+    TResult Function(_TagsChanged value)? tagsChanged,
+    TResult Function(_Submitted value)? submitted,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -187,17 +185,20 @@ class __$InitializedCopyWithImpl<$Res> extends _$ExperienceManagementFormEventCo
 
   @override
   $Res call({
-    Object experienceOption = freezed,
+    Object? experienceOption = freezed,
   }) {
     return _then(_Initialized(
-      experienceOption == freezed ? _value.experienceOption : experienceOption as Option<Experience>,
+      experienceOption == freezed
+          ? _value.experienceOption
+          : experienceOption // ignore: cast_nullable_to_non_nullable
+              as Option<Experience>,
     ));
   }
 }
 
 /// @nodoc
 class _$_Initialized implements _Initialized {
-  const _$_Initialized(this.experienceOption) : assert(experienceOption != null);
+  const _$_Initialized(this.experienceOption);
 
   @override
   final Option<Experience> experienceOption;
@@ -212,7 +213,7 @@ class _$_Initialized implements _Initialized {
     return identical(this, other) ||
         (other is _Initialized && (identical(other.experienceOption, experienceOption) || const DeepCollectionEquality().equals(other.experienceOption, experienceOption)));
   }
-  
+
   @override
   int get hashCode => runtimeType.hashCode ^ const DeepCollectionEquality().hash(experienceOption);
 
@@ -222,50 +223,38 @@ class _$_Initialized implements _Initialized {
 
   @override
   @optionalTypeArgs
-  TResult when<TResult extends Object>({
-    @required TResult initialized(Option<Experience> experienceOption),
-    @required TResult titleChanged(String title),
-    @required TResult descriptionChanged(String description),
-    @required TResult imageDeleted(String imageURL),
-    @required TResult imagesChanged(List<Asset> imageAssets),
-    @required TResult coordinatesChanged(double latitude, double longitude),
-    @required TResult difficultyChanged(int difficulty),
-    @required TResult objectivesChanged(KtList<Objective> objectives),
-    @required TResult rewardsChanged(KtSet<Reward> rewards),
-    @required TResult tagsChanged(KtSet<Tag> tags),
-    @required TResult submitted(),
+  TResult when<TResult extends Object?>({
+    required TResult Function(Option<Experience> experienceOption) initialized,
+    required TResult Function(String title) titleChanged,
+    required TResult Function(String description) descriptionChanged,
+    required TResult Function(String imageURL) imageDeleted,
+    required TResult Function(List<Asset> imageAssets) imagesChanged,
+    required TResult Function(double latitude, double longitude) coordinatesChanged,
+    required TResult Function(int difficulty) difficultyChanged,
+    required TResult Function(KtList<Objective> objectives) objectivesChanged,
+    required TResult Function(KtSet<Reward> rewards) rewardsChanged,
+    required TResult Function(KtSet<Tag> tags) tagsChanged,
+    required TResult Function() submitted,
   }) {
-    assert(initialized != null);
-    assert(titleChanged != null);
-    assert(descriptionChanged != null);
-    assert(imageDeleted != null);
-    assert(imagesChanged != null);
-    assert(coordinatesChanged != null);
-    assert(difficultyChanged != null);
-    assert(objectivesChanged != null);
-    assert(rewardsChanged != null);
-    assert(tagsChanged != null);
-    assert(submitted != null);
     return initialized(experienceOption);
   }
 
   @override
   @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object>({
-    TResult initialized(Option<Experience> experienceOption),
-    TResult titleChanged(String title),
-    TResult descriptionChanged(String description),
-    TResult imageDeleted(String imageURL),
-    TResult imagesChanged(List<Asset> imageAssets),
-    TResult coordinatesChanged(double latitude, double longitude),
-    TResult difficultyChanged(int difficulty),
-    TResult objectivesChanged(KtList<Objective> objectives),
-    TResult rewardsChanged(KtSet<Reward> rewards),
-    TResult tagsChanged(KtSet<Tag> tags),
-    TResult submitted(),
-    @required TResult orElse(),
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(Option<Experience> experienceOption)? initialized,
+    TResult Function(String title)? titleChanged,
+    TResult Function(String description)? descriptionChanged,
+    TResult Function(String imageURL)? imageDeleted,
+    TResult Function(List<Asset> imageAssets)? imagesChanged,
+    TResult Function(double latitude, double longitude)? coordinatesChanged,
+    TResult Function(int difficulty)? difficultyChanged,
+    TResult Function(KtList<Objective> objectives)? objectivesChanged,
+    TResult Function(KtSet<Reward> rewards)? rewardsChanged,
+    TResult Function(KtSet<Tag> tags)? tagsChanged,
+    TResult Function()? submitted,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (initialized != null) {
       return initialized(experienceOption);
     }
@@ -274,50 +263,38 @@ class _$_Initialized implements _Initialized {
 
   @override
   @optionalTypeArgs
-  TResult map<TResult extends Object>({
-    @required TResult initialized(_Initialized value),
-    @required TResult titleChanged(_TitleChanged value),
-    @required TResult descriptionChanged(_DescriptionChanged value),
-    @required TResult imageDeleted(_ImageDeleted value),
-    @required TResult imagesChanged(_ImagesChanged value),
-    @required TResult coordinatesChanged(_CoordinatesChanged value),
-    @required TResult difficultyChanged(_DifficultyChanged value),
-    @required TResult objectivesChanged(_ObjectivesChanged value),
-    @required TResult rewardsChanged(_RewardsChanged value),
-    @required TResult tagsChanged(_TagsChanged value),
-    @required TResult submitted(_Submitted value),
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initialized value) initialized,
+    required TResult Function(_TitleChanged value) titleChanged,
+    required TResult Function(_DescriptionChanged value) descriptionChanged,
+    required TResult Function(_ImageDeleted value) imageDeleted,
+    required TResult Function(_ImagesChanged value) imagesChanged,
+    required TResult Function(_CoordinatesChanged value) coordinatesChanged,
+    required TResult Function(_DifficultyChanged value) difficultyChanged,
+    required TResult Function(_ObjectivesChanged value) objectivesChanged,
+    required TResult Function(_RewardsChanged value) rewardsChanged,
+    required TResult Function(_TagsChanged value) tagsChanged,
+    required TResult Function(_Submitted value) submitted,
   }) {
-    assert(initialized != null);
-    assert(titleChanged != null);
-    assert(descriptionChanged != null);
-    assert(imageDeleted != null);
-    assert(imagesChanged != null);
-    assert(coordinatesChanged != null);
-    assert(difficultyChanged != null);
-    assert(objectivesChanged != null);
-    assert(rewardsChanged != null);
-    assert(tagsChanged != null);
-    assert(submitted != null);
     return initialized(this);
   }
 
   @override
   @optionalTypeArgs
-  TResult maybeMap<TResult extends Object>({
-    TResult initialized(_Initialized value),
-    TResult titleChanged(_TitleChanged value),
-    TResult descriptionChanged(_DescriptionChanged value),
-    TResult imageDeleted(_ImageDeleted value),
-    TResult imagesChanged(_ImagesChanged value),
-    TResult coordinatesChanged(_CoordinatesChanged value),
-    TResult difficultyChanged(_DifficultyChanged value),
-    TResult objectivesChanged(_ObjectivesChanged value),
-    TResult rewardsChanged(_RewardsChanged value),
-    TResult tagsChanged(_TagsChanged value),
-    TResult submitted(_Submitted value),
-    @required TResult orElse(),
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initialized value)? initialized,
+    TResult Function(_TitleChanged value)? titleChanged,
+    TResult Function(_DescriptionChanged value)? descriptionChanged,
+    TResult Function(_ImageDeleted value)? imageDeleted,
+    TResult Function(_ImagesChanged value)? imagesChanged,
+    TResult Function(_CoordinatesChanged value)? coordinatesChanged,
+    TResult Function(_DifficultyChanged value)? difficultyChanged,
+    TResult Function(_ObjectivesChanged value)? objectivesChanged,
+    TResult Function(_RewardsChanged value)? rewardsChanged,
+    TResult Function(_TagsChanged value)? tagsChanged,
+    TResult Function(_Submitted value)? submitted,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (initialized != null) {
       return initialized(this);
     }
@@ -328,10 +305,10 @@ class _$_Initialized implements _Initialized {
 abstract class _Initialized implements ExperienceManagementFormEvent {
   const factory _Initialized(Option<Experience> experienceOption) = _$_Initialized;
 
-  Option<Experience> get experienceOption;
+  Option<Experience> get experienceOption => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
-  _$InitializedCopyWith<_Initialized> get copyWith;
+  _$InitializedCopyWith<_Initialized> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -350,17 +327,20 @@ class __$TitleChangedCopyWithImpl<$Res> extends _$ExperienceManagementFormEventC
 
   @override
   $Res call({
-    Object title = freezed,
+    Object? title = freezed,
   }) {
     return _then(_TitleChanged(
-      title == freezed ? _value.title : title as String,
+      title == freezed
+          ? _value.title
+          : title // ignore: cast_nullable_to_non_nullable
+              as String,
     ));
   }
 }
 
 /// @nodoc
 class _$_TitleChanged implements _TitleChanged {
-  const _$_TitleChanged(this.title) : assert(title != null);
+  const _$_TitleChanged(this.title);
 
   @override
   final String title;
@@ -384,50 +364,38 @@ class _$_TitleChanged implements _TitleChanged {
 
   @override
   @optionalTypeArgs
-  TResult when<TResult extends Object>({
-    @required TResult initialized(Option<Experience> experienceOption),
-    @required TResult titleChanged(String title),
-    @required TResult descriptionChanged(String description),
-    @required TResult imageDeleted(String imageURL),
-    @required TResult imagesChanged(List<Asset> imageAssets),
-    @required TResult coordinatesChanged(double latitude, double longitude),
-    @required TResult difficultyChanged(int difficulty),
-    @required TResult objectivesChanged(KtList<Objective> objectives),
-    @required TResult rewardsChanged(KtSet<Reward> rewards),
-    @required TResult tagsChanged(KtSet<Tag> tags),
-    @required TResult submitted(),
+  TResult when<TResult extends Object?>({
+    required TResult Function(Option<Experience> experienceOption) initialized,
+    required TResult Function(String title) titleChanged,
+    required TResult Function(String description) descriptionChanged,
+    required TResult Function(String imageURL) imageDeleted,
+    required TResult Function(List<Asset> imageAssets) imagesChanged,
+    required TResult Function(double latitude, double longitude) coordinatesChanged,
+    required TResult Function(int difficulty) difficultyChanged,
+    required TResult Function(KtList<Objective> objectives) objectivesChanged,
+    required TResult Function(KtSet<Reward> rewards) rewardsChanged,
+    required TResult Function(KtSet<Tag> tags) tagsChanged,
+    required TResult Function() submitted,
   }) {
-    assert(initialized != null);
-    assert(titleChanged != null);
-    assert(descriptionChanged != null);
-    assert(imageDeleted != null);
-    assert(imagesChanged != null);
-    assert(coordinatesChanged != null);
-    assert(difficultyChanged != null);
-    assert(objectivesChanged != null);
-    assert(rewardsChanged != null);
-    assert(tagsChanged != null);
-    assert(submitted != null);
     return titleChanged(title);
   }
 
   @override
   @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object>({
-    TResult initialized(Option<Experience> experienceOption),
-    TResult titleChanged(String title),
-    TResult descriptionChanged(String description),
-    TResult imageDeleted(String imageURL),
-    TResult imagesChanged(List<Asset> imageAssets),
-    TResult coordinatesChanged(double latitude, double longitude),
-    TResult difficultyChanged(int difficulty),
-    TResult objectivesChanged(KtList<Objective> objectives),
-    TResult rewardsChanged(KtSet<Reward> rewards),
-    TResult tagsChanged(KtSet<Tag> tags),
-    TResult submitted(),
-    @required TResult orElse(),
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(Option<Experience> experienceOption)? initialized,
+    TResult Function(String title)? titleChanged,
+    TResult Function(String description)? descriptionChanged,
+    TResult Function(String imageURL)? imageDeleted,
+    TResult Function(List<Asset> imageAssets)? imagesChanged,
+    TResult Function(double latitude, double longitude)? coordinatesChanged,
+    TResult Function(int difficulty)? difficultyChanged,
+    TResult Function(KtList<Objective> objectives)? objectivesChanged,
+    TResult Function(KtSet<Reward> rewards)? rewardsChanged,
+    TResult Function(KtSet<Tag> tags)? tagsChanged,
+    TResult Function()? submitted,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (titleChanged != null) {
       return titleChanged(title);
     }
@@ -436,50 +404,38 @@ class _$_TitleChanged implements _TitleChanged {
 
   @override
   @optionalTypeArgs
-  TResult map<TResult extends Object>({
-    @required TResult initialized(_Initialized value),
-    @required TResult titleChanged(_TitleChanged value),
-    @required TResult descriptionChanged(_DescriptionChanged value),
-    @required TResult imageDeleted(_ImageDeleted value),
-    @required TResult imagesChanged(_ImagesChanged value),
-    @required TResult coordinatesChanged(_CoordinatesChanged value),
-    @required TResult difficultyChanged(_DifficultyChanged value),
-    @required TResult objectivesChanged(_ObjectivesChanged value),
-    @required TResult rewardsChanged(_RewardsChanged value),
-    @required TResult tagsChanged(_TagsChanged value),
-    @required TResult submitted(_Submitted value),
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initialized value) initialized,
+    required TResult Function(_TitleChanged value) titleChanged,
+    required TResult Function(_DescriptionChanged value) descriptionChanged,
+    required TResult Function(_ImageDeleted value) imageDeleted,
+    required TResult Function(_ImagesChanged value) imagesChanged,
+    required TResult Function(_CoordinatesChanged value) coordinatesChanged,
+    required TResult Function(_DifficultyChanged value) difficultyChanged,
+    required TResult Function(_ObjectivesChanged value) objectivesChanged,
+    required TResult Function(_RewardsChanged value) rewardsChanged,
+    required TResult Function(_TagsChanged value) tagsChanged,
+    required TResult Function(_Submitted value) submitted,
   }) {
-    assert(initialized != null);
-    assert(titleChanged != null);
-    assert(descriptionChanged != null);
-    assert(imageDeleted != null);
-    assert(imagesChanged != null);
-    assert(coordinatesChanged != null);
-    assert(difficultyChanged != null);
-    assert(objectivesChanged != null);
-    assert(rewardsChanged != null);
-    assert(tagsChanged != null);
-    assert(submitted != null);
     return titleChanged(this);
   }
 
   @override
   @optionalTypeArgs
-  TResult maybeMap<TResult extends Object>({
-    TResult initialized(_Initialized value),
-    TResult titleChanged(_TitleChanged value),
-    TResult descriptionChanged(_DescriptionChanged value),
-    TResult imageDeleted(_ImageDeleted value),
-    TResult imagesChanged(_ImagesChanged value),
-    TResult coordinatesChanged(_CoordinatesChanged value),
-    TResult difficultyChanged(_DifficultyChanged value),
-    TResult objectivesChanged(_ObjectivesChanged value),
-    TResult rewardsChanged(_RewardsChanged value),
-    TResult tagsChanged(_TagsChanged value),
-    TResult submitted(_Submitted value),
-    @required TResult orElse(),
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initialized value)? initialized,
+    TResult Function(_TitleChanged value)? titleChanged,
+    TResult Function(_DescriptionChanged value)? descriptionChanged,
+    TResult Function(_ImageDeleted value)? imageDeleted,
+    TResult Function(_ImagesChanged value)? imagesChanged,
+    TResult Function(_CoordinatesChanged value)? coordinatesChanged,
+    TResult Function(_DifficultyChanged value)? difficultyChanged,
+    TResult Function(_ObjectivesChanged value)? objectivesChanged,
+    TResult Function(_RewardsChanged value)? rewardsChanged,
+    TResult Function(_TagsChanged value)? tagsChanged,
+    TResult Function(_Submitted value)? submitted,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (titleChanged != null) {
       return titleChanged(this);
     }
@@ -490,9 +446,10 @@ class _$_TitleChanged implements _TitleChanged {
 abstract class _TitleChanged implements ExperienceManagementFormEvent {
   const factory _TitleChanged(String title) = _$_TitleChanged;
 
-  String get title;
+  String get title => throw _privateConstructorUsedError;
+
   @JsonKey(ignore: true)
-  _$TitleChangedCopyWith<_TitleChanged> get copyWith;
+  _$TitleChangedCopyWith<_TitleChanged> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -511,17 +468,20 @@ class __$DescriptionChangedCopyWithImpl<$Res> extends _$ExperienceManagementForm
 
   @override
   $Res call({
-    Object description = freezed,
+    Object? description = freezed,
   }) {
     return _then(_DescriptionChanged(
-      description == freezed ? _value.description : description as String,
+      description == freezed
+          ? _value.description
+          : description // ignore: cast_nullable_to_non_nullable
+              as String,
     ));
   }
 }
 
 /// @nodoc
 class _$_DescriptionChanged implements _DescriptionChanged {
-  const _$_DescriptionChanged(this.description) : assert(description != null);
+  const _$_DescriptionChanged(this.description);
 
   @override
   final String description;
@@ -545,50 +505,38 @@ class _$_DescriptionChanged implements _DescriptionChanged {
 
   @override
   @optionalTypeArgs
-  TResult when<TResult extends Object>({
-    @required TResult initialized(Option<Experience> experienceOption),
-    @required TResult titleChanged(String title),
-    @required TResult descriptionChanged(String description),
-    @required TResult imageDeleted(String imageURL),
-    @required TResult imagesChanged(List<Asset> imageAssets),
-    @required TResult coordinatesChanged(double latitude, double longitude),
-    @required TResult difficultyChanged(int difficulty),
-    @required TResult objectivesChanged(KtList<Objective> objectives),
-    @required TResult rewardsChanged(KtSet<Reward> rewards),
-    @required TResult tagsChanged(KtSet<Tag> tags),
-    @required TResult submitted(),
+  TResult when<TResult extends Object?>({
+    required TResult Function(Option<Experience> experienceOption) initialized,
+    required TResult Function(String title) titleChanged,
+    required TResult Function(String description) descriptionChanged,
+    required TResult Function(String imageURL) imageDeleted,
+    required TResult Function(List<Asset> imageAssets) imagesChanged,
+    required TResult Function(double latitude, double longitude) coordinatesChanged,
+    required TResult Function(int difficulty) difficultyChanged,
+    required TResult Function(KtList<Objective> objectives) objectivesChanged,
+    required TResult Function(KtSet<Reward> rewards) rewardsChanged,
+    required TResult Function(KtSet<Tag> tags) tagsChanged,
+    required TResult Function() submitted,
   }) {
-    assert(initialized != null);
-    assert(titleChanged != null);
-    assert(descriptionChanged != null);
-    assert(imageDeleted != null);
-    assert(imagesChanged != null);
-    assert(coordinatesChanged != null);
-    assert(difficultyChanged != null);
-    assert(objectivesChanged != null);
-    assert(rewardsChanged != null);
-    assert(tagsChanged != null);
-    assert(submitted != null);
     return descriptionChanged(description);
   }
 
   @override
   @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object>({
-    TResult initialized(Option<Experience> experienceOption),
-    TResult titleChanged(String title),
-    TResult descriptionChanged(String description),
-    TResult imageDeleted(String imageURL),
-    TResult imagesChanged(List<Asset> imageAssets),
-    TResult coordinatesChanged(double latitude, double longitude),
-    TResult difficultyChanged(int difficulty),
-    TResult objectivesChanged(KtList<Objective> objectives),
-    TResult rewardsChanged(KtSet<Reward> rewards),
-    TResult tagsChanged(KtSet<Tag> tags),
-    TResult submitted(),
-    @required TResult orElse(),
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(Option<Experience> experienceOption)? initialized,
+    TResult Function(String title)? titleChanged,
+    TResult Function(String description)? descriptionChanged,
+    TResult Function(String imageURL)? imageDeleted,
+    TResult Function(List<Asset> imageAssets)? imagesChanged,
+    TResult Function(double latitude, double longitude)? coordinatesChanged,
+    TResult Function(int difficulty)? difficultyChanged,
+    TResult Function(KtList<Objective> objectives)? objectivesChanged,
+    TResult Function(KtSet<Reward> rewards)? rewardsChanged,
+    TResult Function(KtSet<Tag> tags)? tagsChanged,
+    TResult Function()? submitted,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (descriptionChanged != null) {
       return descriptionChanged(description);
     }
@@ -597,50 +545,38 @@ class _$_DescriptionChanged implements _DescriptionChanged {
 
   @override
   @optionalTypeArgs
-  TResult map<TResult extends Object>({
-    @required TResult initialized(_Initialized value),
-    @required TResult titleChanged(_TitleChanged value),
-    @required TResult descriptionChanged(_DescriptionChanged value),
-    @required TResult imageDeleted(_ImageDeleted value),
-    @required TResult imagesChanged(_ImagesChanged value),
-    @required TResult coordinatesChanged(_CoordinatesChanged value),
-    @required TResult difficultyChanged(_DifficultyChanged value),
-    @required TResult objectivesChanged(_ObjectivesChanged value),
-    @required TResult rewardsChanged(_RewardsChanged value),
-    @required TResult tagsChanged(_TagsChanged value),
-    @required TResult submitted(_Submitted value),
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initialized value) initialized,
+    required TResult Function(_TitleChanged value) titleChanged,
+    required TResult Function(_DescriptionChanged value) descriptionChanged,
+    required TResult Function(_ImageDeleted value) imageDeleted,
+    required TResult Function(_ImagesChanged value) imagesChanged,
+    required TResult Function(_CoordinatesChanged value) coordinatesChanged,
+    required TResult Function(_DifficultyChanged value) difficultyChanged,
+    required TResult Function(_ObjectivesChanged value) objectivesChanged,
+    required TResult Function(_RewardsChanged value) rewardsChanged,
+    required TResult Function(_TagsChanged value) tagsChanged,
+    required TResult Function(_Submitted value) submitted,
   }) {
-    assert(initialized != null);
-    assert(titleChanged != null);
-    assert(descriptionChanged != null);
-    assert(imageDeleted != null);
-    assert(imagesChanged != null);
-    assert(coordinatesChanged != null);
-    assert(difficultyChanged != null);
-    assert(objectivesChanged != null);
-    assert(rewardsChanged != null);
-    assert(tagsChanged != null);
-    assert(submitted != null);
     return descriptionChanged(this);
   }
 
   @override
   @optionalTypeArgs
-  TResult maybeMap<TResult extends Object>({
-    TResult initialized(_Initialized value),
-    TResult titleChanged(_TitleChanged value),
-    TResult descriptionChanged(_DescriptionChanged value),
-    TResult imageDeleted(_ImageDeleted value),
-    TResult imagesChanged(_ImagesChanged value),
-    TResult coordinatesChanged(_CoordinatesChanged value),
-    TResult difficultyChanged(_DifficultyChanged value),
-    TResult objectivesChanged(_ObjectivesChanged value),
-    TResult rewardsChanged(_RewardsChanged value),
-    TResult tagsChanged(_TagsChanged value),
-    TResult submitted(_Submitted value),
-    @required TResult orElse(),
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initialized value)? initialized,
+    TResult Function(_TitleChanged value)? titleChanged,
+    TResult Function(_DescriptionChanged value)? descriptionChanged,
+    TResult Function(_ImageDeleted value)? imageDeleted,
+    TResult Function(_ImagesChanged value)? imagesChanged,
+    TResult Function(_CoordinatesChanged value)? coordinatesChanged,
+    TResult Function(_DifficultyChanged value)? difficultyChanged,
+    TResult Function(_ObjectivesChanged value)? objectivesChanged,
+    TResult Function(_RewardsChanged value)? rewardsChanged,
+    TResult Function(_TagsChanged value)? tagsChanged,
+    TResult Function(_Submitted value)? submitted,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (descriptionChanged != null) {
       return descriptionChanged(this);
     }
@@ -651,9 +587,10 @@ class _$_DescriptionChanged implements _DescriptionChanged {
 abstract class _DescriptionChanged implements ExperienceManagementFormEvent {
   const factory _DescriptionChanged(String description) = _$_DescriptionChanged;
 
-  String get description;
+  String get description => throw _privateConstructorUsedError;
+
   @JsonKey(ignore: true)
-  _$DescriptionChangedCopyWith<_DescriptionChanged> get copyWith;
+  _$DescriptionChangedCopyWith<_DescriptionChanged> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -672,17 +609,20 @@ class __$ImageDeletedCopyWithImpl<$Res> extends _$ExperienceManagementFormEventC
 
   @override
   $Res call({
-    Object imageURL = freezed,
+    Object? imageURL = freezed,
   }) {
     return _then(_ImageDeleted(
-      imageURL == freezed ? _value.imageURL : imageURL as String,
+      imageURL == freezed
+          ? _value.imageURL
+          : imageURL // ignore: cast_nullable_to_non_nullable
+              as String,
     ));
   }
 }
 
 /// @nodoc
 class _$_ImageDeleted implements _ImageDeleted {
-  const _$_ImageDeleted(this.imageURL) : assert(imageURL != null);
+  const _$_ImageDeleted(this.imageURL);
 
   @override
   final String imageURL;
@@ -706,50 +646,38 @@ class _$_ImageDeleted implements _ImageDeleted {
 
   @override
   @optionalTypeArgs
-  TResult when<TResult extends Object>({
-    @required TResult initialized(Option<Experience> experienceOption),
-    @required TResult titleChanged(String title),
-    @required TResult descriptionChanged(String description),
-    @required TResult imageDeleted(String imageURL),
-    @required TResult imagesChanged(List<Asset> imageAssets),
-    @required TResult coordinatesChanged(double latitude, double longitude),
-    @required TResult difficultyChanged(int difficulty),
-    @required TResult objectivesChanged(KtList<Objective> objectives),
-    @required TResult rewardsChanged(KtSet<Reward> rewards),
-    @required TResult tagsChanged(KtSet<Tag> tags),
-    @required TResult submitted(),
+  TResult when<TResult extends Object?>({
+    required TResult Function(Option<Experience> experienceOption) initialized,
+    required TResult Function(String title) titleChanged,
+    required TResult Function(String description) descriptionChanged,
+    required TResult Function(String imageURL) imageDeleted,
+    required TResult Function(List<Asset> imageAssets) imagesChanged,
+    required TResult Function(double latitude, double longitude) coordinatesChanged,
+    required TResult Function(int difficulty) difficultyChanged,
+    required TResult Function(KtList<Objective> objectives) objectivesChanged,
+    required TResult Function(KtSet<Reward> rewards) rewardsChanged,
+    required TResult Function(KtSet<Tag> tags) tagsChanged,
+    required TResult Function() submitted,
   }) {
-    assert(initialized != null);
-    assert(titleChanged != null);
-    assert(descriptionChanged != null);
-    assert(imageDeleted != null);
-    assert(imagesChanged != null);
-    assert(coordinatesChanged != null);
-    assert(difficultyChanged != null);
-    assert(objectivesChanged != null);
-    assert(rewardsChanged != null);
-    assert(tagsChanged != null);
-    assert(submitted != null);
     return imageDeleted(imageURL);
   }
 
   @override
   @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object>({
-    TResult initialized(Option<Experience> experienceOption),
-    TResult titleChanged(String title),
-    TResult descriptionChanged(String description),
-    TResult imageDeleted(String imageURL),
-    TResult imagesChanged(List<Asset> imageAssets),
-    TResult coordinatesChanged(double latitude, double longitude),
-    TResult difficultyChanged(int difficulty),
-    TResult objectivesChanged(KtList<Objective> objectives),
-    TResult rewardsChanged(KtSet<Reward> rewards),
-    TResult tagsChanged(KtSet<Tag> tags),
-    TResult submitted(),
-    @required TResult orElse(),
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(Option<Experience> experienceOption)? initialized,
+    TResult Function(String title)? titleChanged,
+    TResult Function(String description)? descriptionChanged,
+    TResult Function(String imageURL)? imageDeleted,
+    TResult Function(List<Asset> imageAssets)? imagesChanged,
+    TResult Function(double latitude, double longitude)? coordinatesChanged,
+    TResult Function(int difficulty)? difficultyChanged,
+    TResult Function(KtList<Objective> objectives)? objectivesChanged,
+    TResult Function(KtSet<Reward> rewards)? rewardsChanged,
+    TResult Function(KtSet<Tag> tags)? tagsChanged,
+    TResult Function()? submitted,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (imageDeleted != null) {
       return imageDeleted(imageURL);
     }
@@ -758,50 +686,38 @@ class _$_ImageDeleted implements _ImageDeleted {
 
   @override
   @optionalTypeArgs
-  TResult map<TResult extends Object>({
-    @required TResult initialized(_Initialized value),
-    @required TResult titleChanged(_TitleChanged value),
-    @required TResult descriptionChanged(_DescriptionChanged value),
-    @required TResult imageDeleted(_ImageDeleted value),
-    @required TResult imagesChanged(_ImagesChanged value),
-    @required TResult coordinatesChanged(_CoordinatesChanged value),
-    @required TResult difficultyChanged(_DifficultyChanged value),
-    @required TResult objectivesChanged(_ObjectivesChanged value),
-    @required TResult rewardsChanged(_RewardsChanged value),
-    @required TResult tagsChanged(_TagsChanged value),
-    @required TResult submitted(_Submitted value),
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initialized value) initialized,
+    required TResult Function(_TitleChanged value) titleChanged,
+    required TResult Function(_DescriptionChanged value) descriptionChanged,
+    required TResult Function(_ImageDeleted value) imageDeleted,
+    required TResult Function(_ImagesChanged value) imagesChanged,
+    required TResult Function(_CoordinatesChanged value) coordinatesChanged,
+    required TResult Function(_DifficultyChanged value) difficultyChanged,
+    required TResult Function(_ObjectivesChanged value) objectivesChanged,
+    required TResult Function(_RewardsChanged value) rewardsChanged,
+    required TResult Function(_TagsChanged value) tagsChanged,
+    required TResult Function(_Submitted value) submitted,
   }) {
-    assert(initialized != null);
-    assert(titleChanged != null);
-    assert(descriptionChanged != null);
-    assert(imageDeleted != null);
-    assert(imagesChanged != null);
-    assert(coordinatesChanged != null);
-    assert(difficultyChanged != null);
-    assert(objectivesChanged != null);
-    assert(rewardsChanged != null);
-    assert(tagsChanged != null);
-    assert(submitted != null);
     return imageDeleted(this);
   }
 
   @override
   @optionalTypeArgs
-  TResult maybeMap<TResult extends Object>({
-    TResult initialized(_Initialized value),
-    TResult titleChanged(_TitleChanged value),
-    TResult descriptionChanged(_DescriptionChanged value),
-    TResult imageDeleted(_ImageDeleted value),
-    TResult imagesChanged(_ImagesChanged value),
-    TResult coordinatesChanged(_CoordinatesChanged value),
-    TResult difficultyChanged(_DifficultyChanged value),
-    TResult objectivesChanged(_ObjectivesChanged value),
-    TResult rewardsChanged(_RewardsChanged value),
-    TResult tagsChanged(_TagsChanged value),
-    TResult submitted(_Submitted value),
-    @required TResult orElse(),
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initialized value)? initialized,
+    TResult Function(_TitleChanged value)? titleChanged,
+    TResult Function(_DescriptionChanged value)? descriptionChanged,
+    TResult Function(_ImageDeleted value)? imageDeleted,
+    TResult Function(_ImagesChanged value)? imagesChanged,
+    TResult Function(_CoordinatesChanged value)? coordinatesChanged,
+    TResult Function(_DifficultyChanged value)? difficultyChanged,
+    TResult Function(_ObjectivesChanged value)? objectivesChanged,
+    TResult Function(_RewardsChanged value)? rewardsChanged,
+    TResult Function(_TagsChanged value)? tagsChanged,
+    TResult Function(_Submitted value)? submitted,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (imageDeleted != null) {
       return imageDeleted(this);
     }
@@ -812,9 +728,10 @@ class _$_ImageDeleted implements _ImageDeleted {
 abstract class _ImageDeleted implements ExperienceManagementFormEvent {
   const factory _ImageDeleted(String imageURL) = _$_ImageDeleted;
 
-  String get imageURL;
+  String get imageURL => throw _privateConstructorUsedError;
+
   @JsonKey(ignore: true)
-  _$ImageDeletedCopyWith<_ImageDeleted> get copyWith;
+  _$ImageDeletedCopyWith<_ImageDeleted> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -833,17 +750,20 @@ class __$ImagesChangedCopyWithImpl<$Res> extends _$ExperienceManagementFormEvent
 
   @override
   $Res call({
-    Object imageAssets = freezed,
+    Object? imageAssets = freezed,
   }) {
     return _then(_ImagesChanged(
-      imageAssets == freezed ? _value.imageAssets : imageAssets as List<Asset>,
+      imageAssets == freezed
+          ? _value.imageAssets
+          : imageAssets // ignore: cast_nullable_to_non_nullable
+              as List<Asset>,
     ));
   }
 }
 
 /// @nodoc
 class _$_ImagesChanged implements _ImagesChanged {
-  const _$_ImagesChanged(this.imageAssets) : assert(imageAssets != null);
+  const _$_ImagesChanged(this.imageAssets);
 
   @override
   final List<Asset> imageAssets;
@@ -867,50 +787,38 @@ class _$_ImagesChanged implements _ImagesChanged {
 
   @override
   @optionalTypeArgs
-  TResult when<TResult extends Object>({
-    @required TResult initialized(Option<Experience> experienceOption),
-    @required TResult titleChanged(String title),
-    @required TResult descriptionChanged(String description),
-    @required TResult imageDeleted(String imageURL),
-    @required TResult imagesChanged(List<Asset> imageAssets),
-    @required TResult coordinatesChanged(double latitude, double longitude),
-    @required TResult difficultyChanged(int difficulty),
-    @required TResult objectivesChanged(KtList<Objective> objectives),
-    @required TResult rewardsChanged(KtSet<Reward> rewards),
-    @required TResult tagsChanged(KtSet<Tag> tags),
-    @required TResult submitted(),
+  TResult when<TResult extends Object?>({
+    required TResult Function(Option<Experience> experienceOption) initialized,
+    required TResult Function(String title) titleChanged,
+    required TResult Function(String description) descriptionChanged,
+    required TResult Function(String imageURL) imageDeleted,
+    required TResult Function(List<Asset> imageAssets) imagesChanged,
+    required TResult Function(double latitude, double longitude) coordinatesChanged,
+    required TResult Function(int difficulty) difficultyChanged,
+    required TResult Function(KtList<Objective> objectives) objectivesChanged,
+    required TResult Function(KtSet<Reward> rewards) rewardsChanged,
+    required TResult Function(KtSet<Tag> tags) tagsChanged,
+    required TResult Function() submitted,
   }) {
-    assert(initialized != null);
-    assert(titleChanged != null);
-    assert(descriptionChanged != null);
-    assert(imageDeleted != null);
-    assert(imagesChanged != null);
-    assert(coordinatesChanged != null);
-    assert(difficultyChanged != null);
-    assert(objectivesChanged != null);
-    assert(rewardsChanged != null);
-    assert(tagsChanged != null);
-    assert(submitted != null);
     return imagesChanged(imageAssets);
   }
 
   @override
   @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object>({
-    TResult initialized(Option<Experience> experienceOption),
-    TResult titleChanged(String title),
-    TResult descriptionChanged(String description),
-    TResult imageDeleted(String imageURL),
-    TResult imagesChanged(List<Asset> imageAssets),
-    TResult coordinatesChanged(double latitude, double longitude),
-    TResult difficultyChanged(int difficulty),
-    TResult objectivesChanged(KtList<Objective> objectives),
-    TResult rewardsChanged(KtSet<Reward> rewards),
-    TResult tagsChanged(KtSet<Tag> tags),
-    TResult submitted(),
-    @required TResult orElse(),
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(Option<Experience> experienceOption)? initialized,
+    TResult Function(String title)? titleChanged,
+    TResult Function(String description)? descriptionChanged,
+    TResult Function(String imageURL)? imageDeleted,
+    TResult Function(List<Asset> imageAssets)? imagesChanged,
+    TResult Function(double latitude, double longitude)? coordinatesChanged,
+    TResult Function(int difficulty)? difficultyChanged,
+    TResult Function(KtList<Objective> objectives)? objectivesChanged,
+    TResult Function(KtSet<Reward> rewards)? rewardsChanged,
+    TResult Function(KtSet<Tag> tags)? tagsChanged,
+    TResult Function()? submitted,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (imagesChanged != null) {
       return imagesChanged(imageAssets);
     }
@@ -919,50 +827,38 @@ class _$_ImagesChanged implements _ImagesChanged {
 
   @override
   @optionalTypeArgs
-  TResult map<TResult extends Object>({
-    @required TResult initialized(_Initialized value),
-    @required TResult titleChanged(_TitleChanged value),
-    @required TResult descriptionChanged(_DescriptionChanged value),
-    @required TResult imageDeleted(_ImageDeleted value),
-    @required TResult imagesChanged(_ImagesChanged value),
-    @required TResult coordinatesChanged(_CoordinatesChanged value),
-    @required TResult difficultyChanged(_DifficultyChanged value),
-    @required TResult objectivesChanged(_ObjectivesChanged value),
-    @required TResult rewardsChanged(_RewardsChanged value),
-    @required TResult tagsChanged(_TagsChanged value),
-    @required TResult submitted(_Submitted value),
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initialized value) initialized,
+    required TResult Function(_TitleChanged value) titleChanged,
+    required TResult Function(_DescriptionChanged value) descriptionChanged,
+    required TResult Function(_ImageDeleted value) imageDeleted,
+    required TResult Function(_ImagesChanged value) imagesChanged,
+    required TResult Function(_CoordinatesChanged value) coordinatesChanged,
+    required TResult Function(_DifficultyChanged value) difficultyChanged,
+    required TResult Function(_ObjectivesChanged value) objectivesChanged,
+    required TResult Function(_RewardsChanged value) rewardsChanged,
+    required TResult Function(_TagsChanged value) tagsChanged,
+    required TResult Function(_Submitted value) submitted,
   }) {
-    assert(initialized != null);
-    assert(titleChanged != null);
-    assert(descriptionChanged != null);
-    assert(imageDeleted != null);
-    assert(imagesChanged != null);
-    assert(coordinatesChanged != null);
-    assert(difficultyChanged != null);
-    assert(objectivesChanged != null);
-    assert(rewardsChanged != null);
-    assert(tagsChanged != null);
-    assert(submitted != null);
     return imagesChanged(this);
   }
 
   @override
   @optionalTypeArgs
-  TResult maybeMap<TResult extends Object>({
-    TResult initialized(_Initialized value),
-    TResult titleChanged(_TitleChanged value),
-    TResult descriptionChanged(_DescriptionChanged value),
-    TResult imageDeleted(_ImageDeleted value),
-    TResult imagesChanged(_ImagesChanged value),
-    TResult coordinatesChanged(_CoordinatesChanged value),
-    TResult difficultyChanged(_DifficultyChanged value),
-    TResult objectivesChanged(_ObjectivesChanged value),
-    TResult rewardsChanged(_RewardsChanged value),
-    TResult tagsChanged(_TagsChanged value),
-    TResult submitted(_Submitted value),
-    @required TResult orElse(),
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initialized value)? initialized,
+    TResult Function(_TitleChanged value)? titleChanged,
+    TResult Function(_DescriptionChanged value)? descriptionChanged,
+    TResult Function(_ImageDeleted value)? imageDeleted,
+    TResult Function(_ImagesChanged value)? imagesChanged,
+    TResult Function(_CoordinatesChanged value)? coordinatesChanged,
+    TResult Function(_DifficultyChanged value)? difficultyChanged,
+    TResult Function(_ObjectivesChanged value)? objectivesChanged,
+    TResult Function(_RewardsChanged value)? rewardsChanged,
+    TResult Function(_TagsChanged value)? tagsChanged,
+    TResult Function(_Submitted value)? submitted,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (imagesChanged != null) {
       return imagesChanged(this);
     }
@@ -973,9 +869,10 @@ class _$_ImagesChanged implements _ImagesChanged {
 abstract class _ImagesChanged implements ExperienceManagementFormEvent {
   const factory _ImagesChanged(List<Asset> imageAssets) = _$_ImagesChanged;
 
-  List<Asset> get imageAssets;
+  List<Asset> get imageAssets => throw _privateConstructorUsedError;
+
   @JsonKey(ignore: true)
-  _$ImagesChangedCopyWith<_ImagesChanged> get copyWith;
+  _$ImagesChangedCopyWith<_ImagesChanged> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -994,21 +891,25 @@ class __$CoordinatesChangedCopyWithImpl<$Res> extends _$ExperienceManagementForm
 
   @override
   $Res call({
-    Object latitude = freezed,
-    Object longitude = freezed,
+    Object? latitude = freezed,
+    Object? longitude = freezed,
   }) {
     return _then(_CoordinatesChanged(
-      latitude: latitude == freezed ? _value.latitude : latitude as double,
-      longitude: longitude == freezed ? _value.longitude : longitude as double,
+      latitude: latitude == freezed
+          ? _value.latitude
+          : latitude // ignore: cast_nullable_to_non_nullable
+              as double,
+      longitude: longitude == freezed
+          ? _value.longitude
+          : longitude // ignore: cast_nullable_to_non_nullable
+              as double,
     ));
   }
 }
 
 /// @nodoc
 class _$_CoordinatesChanged implements _CoordinatesChanged {
-  const _$_CoordinatesChanged({@required this.latitude, @required this.longitude})
-      : assert(latitude != null),
-        assert(longitude != null);
+  const _$_CoordinatesChanged({required this.latitude, required this.longitude});
 
   @override
   final double latitude;
@@ -1027,7 +928,7 @@ class _$_CoordinatesChanged implements _CoordinatesChanged {
             (identical(other.latitude, latitude) || const DeepCollectionEquality().equals(other.latitude, latitude)) &&
             (identical(other.longitude, longitude) || const DeepCollectionEquality().equals(other.longitude, longitude)));
   }
-  
+
   @override
   int get hashCode => runtimeType.hashCode ^ const DeepCollectionEquality().hash(latitude) ^ const DeepCollectionEquality().hash(longitude);
 
@@ -1037,50 +938,38 @@ class _$_CoordinatesChanged implements _CoordinatesChanged {
 
   @override
   @optionalTypeArgs
-  TResult when<TResult extends Object>({
-    @required TResult initialized(Option<Experience> experienceOption),
-    @required TResult titleChanged(String title),
-    @required TResult descriptionChanged(String description),
-    @required TResult imageDeleted(String imageURL),
-    @required TResult imagesChanged(List<Asset> imageAssets),
-    @required TResult coordinatesChanged(double latitude, double longitude),
-    @required TResult difficultyChanged(int difficulty),
-    @required TResult objectivesChanged(KtList<Objective> objectives),
-    @required TResult rewardsChanged(KtSet<Reward> rewards),
-    @required TResult tagsChanged(KtSet<Tag> tags),
-    @required TResult submitted(),
+  TResult when<TResult extends Object?>({
+    required TResult Function(Option<Experience> experienceOption) initialized,
+    required TResult Function(String title) titleChanged,
+    required TResult Function(String description) descriptionChanged,
+    required TResult Function(String imageURL) imageDeleted,
+    required TResult Function(List<Asset> imageAssets) imagesChanged,
+    required TResult Function(double latitude, double longitude) coordinatesChanged,
+    required TResult Function(int difficulty) difficultyChanged,
+    required TResult Function(KtList<Objective> objectives) objectivesChanged,
+    required TResult Function(KtSet<Reward> rewards) rewardsChanged,
+    required TResult Function(KtSet<Tag> tags) tagsChanged,
+    required TResult Function() submitted,
   }) {
-    assert(initialized != null);
-    assert(titleChanged != null);
-    assert(descriptionChanged != null);
-    assert(imageDeleted != null);
-    assert(imagesChanged != null);
-    assert(coordinatesChanged != null);
-    assert(difficultyChanged != null);
-    assert(objectivesChanged != null);
-    assert(rewardsChanged != null);
-    assert(tagsChanged != null);
-    assert(submitted != null);
     return coordinatesChanged(latitude, longitude);
   }
 
   @override
   @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object>({
-    TResult initialized(Option<Experience> experienceOption),
-    TResult titleChanged(String title),
-    TResult descriptionChanged(String description),
-    TResult imageDeleted(String imageURL),
-    TResult imagesChanged(List<Asset> imageAssets),
-    TResult coordinatesChanged(double latitude, double longitude),
-    TResult difficultyChanged(int difficulty),
-    TResult objectivesChanged(KtList<Objective> objectives),
-    TResult rewardsChanged(KtSet<Reward> rewards),
-    TResult tagsChanged(KtSet<Tag> tags),
-    TResult submitted(),
-    @required TResult orElse(),
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(Option<Experience> experienceOption)? initialized,
+    TResult Function(String title)? titleChanged,
+    TResult Function(String description)? descriptionChanged,
+    TResult Function(String imageURL)? imageDeleted,
+    TResult Function(List<Asset> imageAssets)? imagesChanged,
+    TResult Function(double latitude, double longitude)? coordinatesChanged,
+    TResult Function(int difficulty)? difficultyChanged,
+    TResult Function(KtList<Objective> objectives)? objectivesChanged,
+    TResult Function(KtSet<Reward> rewards)? rewardsChanged,
+    TResult Function(KtSet<Tag> tags)? tagsChanged,
+    TResult Function()? submitted,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (coordinatesChanged != null) {
       return coordinatesChanged(latitude, longitude);
     }
@@ -1089,50 +978,38 @@ class _$_CoordinatesChanged implements _CoordinatesChanged {
 
   @override
   @optionalTypeArgs
-  TResult map<TResult extends Object>({
-    @required TResult initialized(_Initialized value),
-    @required TResult titleChanged(_TitleChanged value),
-    @required TResult descriptionChanged(_DescriptionChanged value),
-    @required TResult imageDeleted(_ImageDeleted value),
-    @required TResult imagesChanged(_ImagesChanged value),
-    @required TResult coordinatesChanged(_CoordinatesChanged value),
-    @required TResult difficultyChanged(_DifficultyChanged value),
-    @required TResult objectivesChanged(_ObjectivesChanged value),
-    @required TResult rewardsChanged(_RewardsChanged value),
-    @required TResult tagsChanged(_TagsChanged value),
-    @required TResult submitted(_Submitted value),
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initialized value) initialized,
+    required TResult Function(_TitleChanged value) titleChanged,
+    required TResult Function(_DescriptionChanged value) descriptionChanged,
+    required TResult Function(_ImageDeleted value) imageDeleted,
+    required TResult Function(_ImagesChanged value) imagesChanged,
+    required TResult Function(_CoordinatesChanged value) coordinatesChanged,
+    required TResult Function(_DifficultyChanged value) difficultyChanged,
+    required TResult Function(_ObjectivesChanged value) objectivesChanged,
+    required TResult Function(_RewardsChanged value) rewardsChanged,
+    required TResult Function(_TagsChanged value) tagsChanged,
+    required TResult Function(_Submitted value) submitted,
   }) {
-    assert(initialized != null);
-    assert(titleChanged != null);
-    assert(descriptionChanged != null);
-    assert(imageDeleted != null);
-    assert(imagesChanged != null);
-    assert(coordinatesChanged != null);
-    assert(difficultyChanged != null);
-    assert(objectivesChanged != null);
-    assert(rewardsChanged != null);
-    assert(tagsChanged != null);
-    assert(submitted != null);
     return coordinatesChanged(this);
   }
 
   @override
   @optionalTypeArgs
-  TResult maybeMap<TResult extends Object>({
-    TResult initialized(_Initialized value),
-    TResult titleChanged(_TitleChanged value),
-    TResult descriptionChanged(_DescriptionChanged value),
-    TResult imageDeleted(_ImageDeleted value),
-    TResult imagesChanged(_ImagesChanged value),
-    TResult coordinatesChanged(_CoordinatesChanged value),
-    TResult difficultyChanged(_DifficultyChanged value),
-    TResult objectivesChanged(_ObjectivesChanged value),
-    TResult rewardsChanged(_RewardsChanged value),
-    TResult tagsChanged(_TagsChanged value),
-    TResult submitted(_Submitted value),
-    @required TResult orElse(),
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initialized value)? initialized,
+    TResult Function(_TitleChanged value)? titleChanged,
+    TResult Function(_DescriptionChanged value)? descriptionChanged,
+    TResult Function(_ImageDeleted value)? imageDeleted,
+    TResult Function(_ImagesChanged value)? imagesChanged,
+    TResult Function(_CoordinatesChanged value)? coordinatesChanged,
+    TResult Function(_DifficultyChanged value)? difficultyChanged,
+    TResult Function(_ObjectivesChanged value)? objectivesChanged,
+    TResult Function(_RewardsChanged value)? rewardsChanged,
+    TResult Function(_TagsChanged value)? tagsChanged,
+    TResult Function(_Submitted value)? submitted,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (coordinatesChanged != null) {
       return coordinatesChanged(this);
     }
@@ -1141,14 +1018,14 @@ class _$_CoordinatesChanged implements _CoordinatesChanged {
 }
 
 abstract class _CoordinatesChanged implements ExperienceManagementFormEvent {
-  const factory _CoordinatesChanged({@required double latitude, @required double longitude}) = _$_CoordinatesChanged;
+  const factory _CoordinatesChanged({required double latitude, required double longitude}) = _$_CoordinatesChanged;
 
-  double get latitude;
+  double get latitude => throw _privateConstructorUsedError;
 
-  double get longitude;
+  double get longitude => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
-  _$CoordinatesChangedCopyWith<_CoordinatesChanged> get copyWith;
+  _$CoordinatesChangedCopyWith<_CoordinatesChanged> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -1167,17 +1044,20 @@ class __$DifficultyChangedCopyWithImpl<$Res> extends _$ExperienceManagementFormE
 
   @override
   $Res call({
-    Object difficulty = freezed,
+    Object? difficulty = freezed,
   }) {
     return _then(_DifficultyChanged(
-      difficulty == freezed ? _value.difficulty : difficulty as int,
+      difficulty == freezed
+          ? _value.difficulty
+          : difficulty // ignore: cast_nullable_to_non_nullable
+              as int,
     ));
   }
 }
 
 /// @nodoc
 class _$_DifficultyChanged implements _DifficultyChanged {
-  const _$_DifficultyChanged(this.difficulty) : assert(difficulty != null);
+  const _$_DifficultyChanged(this.difficulty);
 
   @override
   final int difficulty;
@@ -1201,50 +1081,38 @@ class _$_DifficultyChanged implements _DifficultyChanged {
 
   @override
   @optionalTypeArgs
-  TResult when<TResult extends Object>({
-    @required TResult initialized(Option<Experience> experienceOption),
-    @required TResult titleChanged(String title),
-    @required TResult descriptionChanged(String description),
-    @required TResult imageDeleted(String imageURL),
-    @required TResult imagesChanged(List<Asset> imageAssets),
-    @required TResult coordinatesChanged(double latitude, double longitude),
-    @required TResult difficultyChanged(int difficulty),
-    @required TResult objectivesChanged(KtList<Objective> objectives),
-    @required TResult rewardsChanged(KtSet<Reward> rewards),
-    @required TResult tagsChanged(KtSet<Tag> tags),
-    @required TResult submitted(),
+  TResult when<TResult extends Object?>({
+    required TResult Function(Option<Experience> experienceOption) initialized,
+    required TResult Function(String title) titleChanged,
+    required TResult Function(String description) descriptionChanged,
+    required TResult Function(String imageURL) imageDeleted,
+    required TResult Function(List<Asset> imageAssets) imagesChanged,
+    required TResult Function(double latitude, double longitude) coordinatesChanged,
+    required TResult Function(int difficulty) difficultyChanged,
+    required TResult Function(KtList<Objective> objectives) objectivesChanged,
+    required TResult Function(KtSet<Reward> rewards) rewardsChanged,
+    required TResult Function(KtSet<Tag> tags) tagsChanged,
+    required TResult Function() submitted,
   }) {
-    assert(initialized != null);
-    assert(titleChanged != null);
-    assert(descriptionChanged != null);
-    assert(imageDeleted != null);
-    assert(imagesChanged != null);
-    assert(coordinatesChanged != null);
-    assert(difficultyChanged != null);
-    assert(objectivesChanged != null);
-    assert(rewardsChanged != null);
-    assert(tagsChanged != null);
-    assert(submitted != null);
     return difficultyChanged(difficulty);
   }
 
   @override
   @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object>({
-    TResult initialized(Option<Experience> experienceOption),
-    TResult titleChanged(String title),
-    TResult descriptionChanged(String description),
-    TResult imageDeleted(String imageURL),
-    TResult imagesChanged(List<Asset> imageAssets),
-    TResult coordinatesChanged(double latitude, double longitude),
-    TResult difficultyChanged(int difficulty),
-    TResult objectivesChanged(KtList<Objective> objectives),
-    TResult rewardsChanged(KtSet<Reward> rewards),
-    TResult tagsChanged(KtSet<Tag> tags),
-    TResult submitted(),
-    @required TResult orElse(),
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(Option<Experience> experienceOption)? initialized,
+    TResult Function(String title)? titleChanged,
+    TResult Function(String description)? descriptionChanged,
+    TResult Function(String imageURL)? imageDeleted,
+    TResult Function(List<Asset> imageAssets)? imagesChanged,
+    TResult Function(double latitude, double longitude)? coordinatesChanged,
+    TResult Function(int difficulty)? difficultyChanged,
+    TResult Function(KtList<Objective> objectives)? objectivesChanged,
+    TResult Function(KtSet<Reward> rewards)? rewardsChanged,
+    TResult Function(KtSet<Tag> tags)? tagsChanged,
+    TResult Function()? submitted,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (difficultyChanged != null) {
       return difficultyChanged(difficulty);
     }
@@ -1253,50 +1121,38 @@ class _$_DifficultyChanged implements _DifficultyChanged {
 
   @override
   @optionalTypeArgs
-  TResult map<TResult extends Object>({
-    @required TResult initialized(_Initialized value),
-    @required TResult titleChanged(_TitleChanged value),
-    @required TResult descriptionChanged(_DescriptionChanged value),
-    @required TResult imageDeleted(_ImageDeleted value),
-    @required TResult imagesChanged(_ImagesChanged value),
-    @required TResult coordinatesChanged(_CoordinatesChanged value),
-    @required TResult difficultyChanged(_DifficultyChanged value),
-    @required TResult objectivesChanged(_ObjectivesChanged value),
-    @required TResult rewardsChanged(_RewardsChanged value),
-    @required TResult tagsChanged(_TagsChanged value),
-    @required TResult submitted(_Submitted value),
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initialized value) initialized,
+    required TResult Function(_TitleChanged value) titleChanged,
+    required TResult Function(_DescriptionChanged value) descriptionChanged,
+    required TResult Function(_ImageDeleted value) imageDeleted,
+    required TResult Function(_ImagesChanged value) imagesChanged,
+    required TResult Function(_CoordinatesChanged value) coordinatesChanged,
+    required TResult Function(_DifficultyChanged value) difficultyChanged,
+    required TResult Function(_ObjectivesChanged value) objectivesChanged,
+    required TResult Function(_RewardsChanged value) rewardsChanged,
+    required TResult Function(_TagsChanged value) tagsChanged,
+    required TResult Function(_Submitted value) submitted,
   }) {
-    assert(initialized != null);
-    assert(titleChanged != null);
-    assert(descriptionChanged != null);
-    assert(imageDeleted != null);
-    assert(imagesChanged != null);
-    assert(coordinatesChanged != null);
-    assert(difficultyChanged != null);
-    assert(objectivesChanged != null);
-    assert(rewardsChanged != null);
-    assert(tagsChanged != null);
-    assert(submitted != null);
     return difficultyChanged(this);
   }
 
   @override
   @optionalTypeArgs
-  TResult maybeMap<TResult extends Object>({
-    TResult initialized(_Initialized value),
-    TResult titleChanged(_TitleChanged value),
-    TResult descriptionChanged(_DescriptionChanged value),
-    TResult imageDeleted(_ImageDeleted value),
-    TResult imagesChanged(_ImagesChanged value),
-    TResult coordinatesChanged(_CoordinatesChanged value),
-    TResult difficultyChanged(_DifficultyChanged value),
-    TResult objectivesChanged(_ObjectivesChanged value),
-    TResult rewardsChanged(_RewardsChanged value),
-    TResult tagsChanged(_TagsChanged value),
-    TResult submitted(_Submitted value),
-    @required TResult orElse(),
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initialized value)? initialized,
+    TResult Function(_TitleChanged value)? titleChanged,
+    TResult Function(_DescriptionChanged value)? descriptionChanged,
+    TResult Function(_ImageDeleted value)? imageDeleted,
+    TResult Function(_ImagesChanged value)? imagesChanged,
+    TResult Function(_CoordinatesChanged value)? coordinatesChanged,
+    TResult Function(_DifficultyChanged value)? difficultyChanged,
+    TResult Function(_ObjectivesChanged value)? objectivesChanged,
+    TResult Function(_RewardsChanged value)? rewardsChanged,
+    TResult Function(_TagsChanged value)? tagsChanged,
+    TResult Function(_Submitted value)? submitted,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (difficultyChanged != null) {
       return difficultyChanged(this);
     }
@@ -1307,9 +1163,10 @@ class _$_DifficultyChanged implements _DifficultyChanged {
 abstract class _DifficultyChanged implements ExperienceManagementFormEvent {
   const factory _DifficultyChanged(int difficulty) = _$_DifficultyChanged;
 
-  int get difficulty;
+  int get difficulty => throw _privateConstructorUsedError;
+
   @JsonKey(ignore: true)
-  _$DifficultyChangedCopyWith<_DifficultyChanged> get copyWith;
+  _$DifficultyChangedCopyWith<_DifficultyChanged> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -1328,17 +1185,20 @@ class __$ObjectivesChangedCopyWithImpl<$Res> extends _$ExperienceManagementFormE
 
   @override
   $Res call({
-    Object objectives = freezed,
+    Object? objectives = freezed,
   }) {
     return _then(_ObjectivesChanged(
-      objectives == freezed ? _value.objectives : objectives as KtList<Objective>,
+      objectives == freezed
+          ? _value.objectives
+          : objectives // ignore: cast_nullable_to_non_nullable
+              as KtList<Objective>,
     ));
   }
 }
 
 /// @nodoc
 class _$_ObjectivesChanged implements _ObjectivesChanged {
-  const _$_ObjectivesChanged(this.objectives) : assert(objectives != null);
+  const _$_ObjectivesChanged(this.objectives);
 
   @override
   final KtList<Objective> objectives;
@@ -1362,50 +1222,38 @@ class _$_ObjectivesChanged implements _ObjectivesChanged {
 
   @override
   @optionalTypeArgs
-  TResult when<TResult extends Object>({
-    @required TResult initialized(Option<Experience> experienceOption),
-    @required TResult titleChanged(String title),
-    @required TResult descriptionChanged(String description),
-    @required TResult imageDeleted(String imageURL),
-    @required TResult imagesChanged(List<Asset> imageAssets),
-    @required TResult coordinatesChanged(double latitude, double longitude),
-    @required TResult difficultyChanged(int difficulty),
-    @required TResult objectivesChanged(KtList<Objective> objectives),
-    @required TResult rewardsChanged(KtSet<Reward> rewards),
-    @required TResult tagsChanged(KtSet<Tag> tags),
-    @required TResult submitted(),
+  TResult when<TResult extends Object?>({
+    required TResult Function(Option<Experience> experienceOption) initialized,
+    required TResult Function(String title) titleChanged,
+    required TResult Function(String description) descriptionChanged,
+    required TResult Function(String imageURL) imageDeleted,
+    required TResult Function(List<Asset> imageAssets) imagesChanged,
+    required TResult Function(double latitude, double longitude) coordinatesChanged,
+    required TResult Function(int difficulty) difficultyChanged,
+    required TResult Function(KtList<Objective> objectives) objectivesChanged,
+    required TResult Function(KtSet<Reward> rewards) rewardsChanged,
+    required TResult Function(KtSet<Tag> tags) tagsChanged,
+    required TResult Function() submitted,
   }) {
-    assert(initialized != null);
-    assert(titleChanged != null);
-    assert(descriptionChanged != null);
-    assert(imageDeleted != null);
-    assert(imagesChanged != null);
-    assert(coordinatesChanged != null);
-    assert(difficultyChanged != null);
-    assert(objectivesChanged != null);
-    assert(rewardsChanged != null);
-    assert(tagsChanged != null);
-    assert(submitted != null);
     return objectivesChanged(objectives);
   }
 
   @override
   @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object>({
-    TResult initialized(Option<Experience> experienceOption),
-    TResult titleChanged(String title),
-    TResult descriptionChanged(String description),
-    TResult imageDeleted(String imageURL),
-    TResult imagesChanged(List<Asset> imageAssets),
-    TResult coordinatesChanged(double latitude, double longitude),
-    TResult difficultyChanged(int difficulty),
-    TResult objectivesChanged(KtList<Objective> objectives),
-    TResult rewardsChanged(KtSet<Reward> rewards),
-    TResult tagsChanged(KtSet<Tag> tags),
-    TResult submitted(),
-    @required TResult orElse(),
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(Option<Experience> experienceOption)? initialized,
+    TResult Function(String title)? titleChanged,
+    TResult Function(String description)? descriptionChanged,
+    TResult Function(String imageURL)? imageDeleted,
+    TResult Function(List<Asset> imageAssets)? imagesChanged,
+    TResult Function(double latitude, double longitude)? coordinatesChanged,
+    TResult Function(int difficulty)? difficultyChanged,
+    TResult Function(KtList<Objective> objectives)? objectivesChanged,
+    TResult Function(KtSet<Reward> rewards)? rewardsChanged,
+    TResult Function(KtSet<Tag> tags)? tagsChanged,
+    TResult Function()? submitted,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (objectivesChanged != null) {
       return objectivesChanged(objectives);
     }
@@ -1414,50 +1262,38 @@ class _$_ObjectivesChanged implements _ObjectivesChanged {
 
   @override
   @optionalTypeArgs
-  TResult map<TResult extends Object>({
-    @required TResult initialized(_Initialized value),
-    @required TResult titleChanged(_TitleChanged value),
-    @required TResult descriptionChanged(_DescriptionChanged value),
-    @required TResult imageDeleted(_ImageDeleted value),
-    @required TResult imagesChanged(_ImagesChanged value),
-    @required TResult coordinatesChanged(_CoordinatesChanged value),
-    @required TResult difficultyChanged(_DifficultyChanged value),
-    @required TResult objectivesChanged(_ObjectivesChanged value),
-    @required TResult rewardsChanged(_RewardsChanged value),
-    @required TResult tagsChanged(_TagsChanged value),
-    @required TResult submitted(_Submitted value),
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initialized value) initialized,
+    required TResult Function(_TitleChanged value) titleChanged,
+    required TResult Function(_DescriptionChanged value) descriptionChanged,
+    required TResult Function(_ImageDeleted value) imageDeleted,
+    required TResult Function(_ImagesChanged value) imagesChanged,
+    required TResult Function(_CoordinatesChanged value) coordinatesChanged,
+    required TResult Function(_DifficultyChanged value) difficultyChanged,
+    required TResult Function(_ObjectivesChanged value) objectivesChanged,
+    required TResult Function(_RewardsChanged value) rewardsChanged,
+    required TResult Function(_TagsChanged value) tagsChanged,
+    required TResult Function(_Submitted value) submitted,
   }) {
-    assert(initialized != null);
-    assert(titleChanged != null);
-    assert(descriptionChanged != null);
-    assert(imageDeleted != null);
-    assert(imagesChanged != null);
-    assert(coordinatesChanged != null);
-    assert(difficultyChanged != null);
-    assert(objectivesChanged != null);
-    assert(rewardsChanged != null);
-    assert(tagsChanged != null);
-    assert(submitted != null);
     return objectivesChanged(this);
   }
 
   @override
   @optionalTypeArgs
-  TResult maybeMap<TResult extends Object>({
-    TResult initialized(_Initialized value),
-    TResult titleChanged(_TitleChanged value),
-    TResult descriptionChanged(_DescriptionChanged value),
-    TResult imageDeleted(_ImageDeleted value),
-    TResult imagesChanged(_ImagesChanged value),
-    TResult coordinatesChanged(_CoordinatesChanged value),
-    TResult difficultyChanged(_DifficultyChanged value),
-    TResult objectivesChanged(_ObjectivesChanged value),
-    TResult rewardsChanged(_RewardsChanged value),
-    TResult tagsChanged(_TagsChanged value),
-    TResult submitted(_Submitted value),
-    @required TResult orElse(),
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initialized value)? initialized,
+    TResult Function(_TitleChanged value)? titleChanged,
+    TResult Function(_DescriptionChanged value)? descriptionChanged,
+    TResult Function(_ImageDeleted value)? imageDeleted,
+    TResult Function(_ImagesChanged value)? imagesChanged,
+    TResult Function(_CoordinatesChanged value)? coordinatesChanged,
+    TResult Function(_DifficultyChanged value)? difficultyChanged,
+    TResult Function(_ObjectivesChanged value)? objectivesChanged,
+    TResult Function(_RewardsChanged value)? rewardsChanged,
+    TResult Function(_TagsChanged value)? tagsChanged,
+    TResult Function(_Submitted value)? submitted,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (objectivesChanged != null) {
       return objectivesChanged(this);
     }
@@ -1468,10 +1304,10 @@ class _$_ObjectivesChanged implements _ObjectivesChanged {
 abstract class _ObjectivesChanged implements ExperienceManagementFormEvent {
   const factory _ObjectivesChanged(KtList<Objective> objectives) = _$_ObjectivesChanged;
 
-  KtList<Objective> get objectives;
+  KtList<Objective> get objectives => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
-  _$ObjectivesChangedCopyWith<_ObjectivesChanged> get copyWith;
+  _$ObjectivesChangedCopyWith<_ObjectivesChanged> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -1490,17 +1326,20 @@ class __$RewardsChangedCopyWithImpl<$Res> extends _$ExperienceManagementFormEven
 
   @override
   $Res call({
-    Object rewards = freezed,
+    Object? rewards = freezed,
   }) {
     return _then(_RewardsChanged(
-      rewards == freezed ? _value.rewards : rewards as KtSet<Reward>,
+      rewards == freezed
+          ? _value.rewards
+          : rewards // ignore: cast_nullable_to_non_nullable
+              as KtSet<Reward>,
     ));
   }
 }
 
 /// @nodoc
 class _$_RewardsChanged implements _RewardsChanged {
-  const _$_RewardsChanged(this.rewards) : assert(rewards != null);
+  const _$_RewardsChanged(this.rewards);
 
   @override
   final KtSet<Reward> rewards;
@@ -1524,50 +1363,38 @@ class _$_RewardsChanged implements _RewardsChanged {
 
   @override
   @optionalTypeArgs
-  TResult when<TResult extends Object>({
-    @required TResult initialized(Option<Experience> experienceOption),
-    @required TResult titleChanged(String title),
-    @required TResult descriptionChanged(String description),
-    @required TResult imageDeleted(String imageURL),
-    @required TResult imagesChanged(List<Asset> imageAssets),
-    @required TResult coordinatesChanged(double latitude, double longitude),
-    @required TResult difficultyChanged(int difficulty),
-    @required TResult objectivesChanged(KtList<Objective> objectives),
-    @required TResult rewardsChanged(KtSet<Reward> rewards),
-    @required TResult tagsChanged(KtSet<Tag> tags),
-    @required TResult submitted(),
+  TResult when<TResult extends Object?>({
+    required TResult Function(Option<Experience> experienceOption) initialized,
+    required TResult Function(String title) titleChanged,
+    required TResult Function(String description) descriptionChanged,
+    required TResult Function(String imageURL) imageDeleted,
+    required TResult Function(List<Asset> imageAssets) imagesChanged,
+    required TResult Function(double latitude, double longitude) coordinatesChanged,
+    required TResult Function(int difficulty) difficultyChanged,
+    required TResult Function(KtList<Objective> objectives) objectivesChanged,
+    required TResult Function(KtSet<Reward> rewards) rewardsChanged,
+    required TResult Function(KtSet<Tag> tags) tagsChanged,
+    required TResult Function() submitted,
   }) {
-    assert(initialized != null);
-    assert(titleChanged != null);
-    assert(descriptionChanged != null);
-    assert(imageDeleted != null);
-    assert(imagesChanged != null);
-    assert(coordinatesChanged != null);
-    assert(difficultyChanged != null);
-    assert(objectivesChanged != null);
-    assert(rewardsChanged != null);
-    assert(tagsChanged != null);
-    assert(submitted != null);
     return rewardsChanged(rewards);
   }
 
   @override
   @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object>({
-    TResult initialized(Option<Experience> experienceOption),
-    TResult titleChanged(String title),
-    TResult descriptionChanged(String description),
-    TResult imageDeleted(String imageURL),
-    TResult imagesChanged(List<Asset> imageAssets),
-    TResult coordinatesChanged(double latitude, double longitude),
-    TResult difficultyChanged(int difficulty),
-    TResult objectivesChanged(KtList<Objective> objectives),
-    TResult rewardsChanged(KtSet<Reward> rewards),
-    TResult tagsChanged(KtSet<Tag> tags),
-    TResult submitted(),
-    @required TResult orElse(),
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(Option<Experience> experienceOption)? initialized,
+    TResult Function(String title)? titleChanged,
+    TResult Function(String description)? descriptionChanged,
+    TResult Function(String imageURL)? imageDeleted,
+    TResult Function(List<Asset> imageAssets)? imagesChanged,
+    TResult Function(double latitude, double longitude)? coordinatesChanged,
+    TResult Function(int difficulty)? difficultyChanged,
+    TResult Function(KtList<Objective> objectives)? objectivesChanged,
+    TResult Function(KtSet<Reward> rewards)? rewardsChanged,
+    TResult Function(KtSet<Tag> tags)? tagsChanged,
+    TResult Function()? submitted,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (rewardsChanged != null) {
       return rewardsChanged(rewards);
     }
@@ -1576,50 +1403,38 @@ class _$_RewardsChanged implements _RewardsChanged {
 
   @override
   @optionalTypeArgs
-  TResult map<TResult extends Object>({
-    @required TResult initialized(_Initialized value),
-    @required TResult titleChanged(_TitleChanged value),
-    @required TResult descriptionChanged(_DescriptionChanged value),
-    @required TResult imageDeleted(_ImageDeleted value),
-    @required TResult imagesChanged(_ImagesChanged value),
-    @required TResult coordinatesChanged(_CoordinatesChanged value),
-    @required TResult difficultyChanged(_DifficultyChanged value),
-    @required TResult objectivesChanged(_ObjectivesChanged value),
-    @required TResult rewardsChanged(_RewardsChanged value),
-    @required TResult tagsChanged(_TagsChanged value),
-    @required TResult submitted(_Submitted value),
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initialized value) initialized,
+    required TResult Function(_TitleChanged value) titleChanged,
+    required TResult Function(_DescriptionChanged value) descriptionChanged,
+    required TResult Function(_ImageDeleted value) imageDeleted,
+    required TResult Function(_ImagesChanged value) imagesChanged,
+    required TResult Function(_CoordinatesChanged value) coordinatesChanged,
+    required TResult Function(_DifficultyChanged value) difficultyChanged,
+    required TResult Function(_ObjectivesChanged value) objectivesChanged,
+    required TResult Function(_RewardsChanged value) rewardsChanged,
+    required TResult Function(_TagsChanged value) tagsChanged,
+    required TResult Function(_Submitted value) submitted,
   }) {
-    assert(initialized != null);
-    assert(titleChanged != null);
-    assert(descriptionChanged != null);
-    assert(imageDeleted != null);
-    assert(imagesChanged != null);
-    assert(coordinatesChanged != null);
-    assert(difficultyChanged != null);
-    assert(objectivesChanged != null);
-    assert(rewardsChanged != null);
-    assert(tagsChanged != null);
-    assert(submitted != null);
     return rewardsChanged(this);
   }
 
   @override
   @optionalTypeArgs
-  TResult maybeMap<TResult extends Object>({
-    TResult initialized(_Initialized value),
-    TResult titleChanged(_TitleChanged value),
-    TResult descriptionChanged(_DescriptionChanged value),
-    TResult imageDeleted(_ImageDeleted value),
-    TResult imagesChanged(_ImagesChanged value),
-    TResult coordinatesChanged(_CoordinatesChanged value),
-    TResult difficultyChanged(_DifficultyChanged value),
-    TResult objectivesChanged(_ObjectivesChanged value),
-    TResult rewardsChanged(_RewardsChanged value),
-    TResult tagsChanged(_TagsChanged value),
-    TResult submitted(_Submitted value),
-    @required TResult orElse(),
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initialized value)? initialized,
+    TResult Function(_TitleChanged value)? titleChanged,
+    TResult Function(_DescriptionChanged value)? descriptionChanged,
+    TResult Function(_ImageDeleted value)? imageDeleted,
+    TResult Function(_ImagesChanged value)? imagesChanged,
+    TResult Function(_CoordinatesChanged value)? coordinatesChanged,
+    TResult Function(_DifficultyChanged value)? difficultyChanged,
+    TResult Function(_ObjectivesChanged value)? objectivesChanged,
+    TResult Function(_RewardsChanged value)? rewardsChanged,
+    TResult Function(_TagsChanged value)? tagsChanged,
+    TResult Function(_Submitted value)? submitted,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (rewardsChanged != null) {
       return rewardsChanged(this);
     }
@@ -1630,9 +1445,10 @@ class _$_RewardsChanged implements _RewardsChanged {
 abstract class _RewardsChanged implements ExperienceManagementFormEvent {
   const factory _RewardsChanged(KtSet<Reward> rewards) = _$_RewardsChanged;
 
-  KtSet<Reward> get rewards;
+  KtSet<Reward> get rewards => throw _privateConstructorUsedError;
+
   @JsonKey(ignore: true)
-  _$RewardsChangedCopyWith<_RewardsChanged> get copyWith;
+  _$RewardsChangedCopyWith<_RewardsChanged> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -1651,17 +1467,20 @@ class __$TagsChangedCopyWithImpl<$Res> extends _$ExperienceManagementFormEventCo
 
   @override
   $Res call({
-    Object tags = freezed,
+    Object? tags = freezed,
   }) {
     return _then(_TagsChanged(
-      tags == freezed ? _value.tags : tags as KtSet<Tag>,
+      tags == freezed
+          ? _value.tags
+          : tags // ignore: cast_nullable_to_non_nullable
+              as KtSet<Tag>,
     ));
   }
 }
 
 /// @nodoc
 class _$_TagsChanged implements _TagsChanged {
-  const _$_TagsChanged(this.tags) : assert(tags != null);
+  const _$_TagsChanged(this.tags);
 
   @override
   final KtSet<Tag> tags;
@@ -1685,50 +1504,38 @@ class _$_TagsChanged implements _TagsChanged {
 
   @override
   @optionalTypeArgs
-  TResult when<TResult extends Object>({
-    @required TResult initialized(Option<Experience> experienceOption),
-    @required TResult titleChanged(String title),
-    @required TResult descriptionChanged(String description),
-    @required TResult imageDeleted(String imageURL),
-    @required TResult imagesChanged(List<Asset> imageAssets),
-    @required TResult coordinatesChanged(double latitude, double longitude),
-    @required TResult difficultyChanged(int difficulty),
-    @required TResult objectivesChanged(KtList<Objective> objectives),
-    @required TResult rewardsChanged(KtSet<Reward> rewards),
-    @required TResult tagsChanged(KtSet<Tag> tags),
-    @required TResult submitted(),
+  TResult when<TResult extends Object?>({
+    required TResult Function(Option<Experience> experienceOption) initialized,
+    required TResult Function(String title) titleChanged,
+    required TResult Function(String description) descriptionChanged,
+    required TResult Function(String imageURL) imageDeleted,
+    required TResult Function(List<Asset> imageAssets) imagesChanged,
+    required TResult Function(double latitude, double longitude) coordinatesChanged,
+    required TResult Function(int difficulty) difficultyChanged,
+    required TResult Function(KtList<Objective> objectives) objectivesChanged,
+    required TResult Function(KtSet<Reward> rewards) rewardsChanged,
+    required TResult Function(KtSet<Tag> tags) tagsChanged,
+    required TResult Function() submitted,
   }) {
-    assert(initialized != null);
-    assert(titleChanged != null);
-    assert(descriptionChanged != null);
-    assert(imageDeleted != null);
-    assert(imagesChanged != null);
-    assert(coordinatesChanged != null);
-    assert(difficultyChanged != null);
-    assert(objectivesChanged != null);
-    assert(rewardsChanged != null);
-    assert(tagsChanged != null);
-    assert(submitted != null);
     return tagsChanged(tags);
   }
 
   @override
   @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object>({
-    TResult initialized(Option<Experience> experienceOption),
-    TResult titleChanged(String title),
-    TResult descriptionChanged(String description),
-    TResult imageDeleted(String imageURL),
-    TResult imagesChanged(List<Asset> imageAssets),
-    TResult coordinatesChanged(double latitude, double longitude),
-    TResult difficultyChanged(int difficulty),
-    TResult objectivesChanged(KtList<Objective> objectives),
-    TResult rewardsChanged(KtSet<Reward> rewards),
-    TResult tagsChanged(KtSet<Tag> tags),
-    TResult submitted(),
-    @required TResult orElse(),
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(Option<Experience> experienceOption)? initialized,
+    TResult Function(String title)? titleChanged,
+    TResult Function(String description)? descriptionChanged,
+    TResult Function(String imageURL)? imageDeleted,
+    TResult Function(List<Asset> imageAssets)? imagesChanged,
+    TResult Function(double latitude, double longitude)? coordinatesChanged,
+    TResult Function(int difficulty)? difficultyChanged,
+    TResult Function(KtList<Objective> objectives)? objectivesChanged,
+    TResult Function(KtSet<Reward> rewards)? rewardsChanged,
+    TResult Function(KtSet<Tag> tags)? tagsChanged,
+    TResult Function()? submitted,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (tagsChanged != null) {
       return tagsChanged(tags);
     }
@@ -1737,50 +1544,38 @@ class _$_TagsChanged implements _TagsChanged {
 
   @override
   @optionalTypeArgs
-  TResult map<TResult extends Object>({
-    @required TResult initialized(_Initialized value),
-    @required TResult titleChanged(_TitleChanged value),
-    @required TResult descriptionChanged(_DescriptionChanged value),
-    @required TResult imageDeleted(_ImageDeleted value),
-    @required TResult imagesChanged(_ImagesChanged value),
-    @required TResult coordinatesChanged(_CoordinatesChanged value),
-    @required TResult difficultyChanged(_DifficultyChanged value),
-    @required TResult objectivesChanged(_ObjectivesChanged value),
-    @required TResult rewardsChanged(_RewardsChanged value),
-    @required TResult tagsChanged(_TagsChanged value),
-    @required TResult submitted(_Submitted value),
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initialized value) initialized,
+    required TResult Function(_TitleChanged value) titleChanged,
+    required TResult Function(_DescriptionChanged value) descriptionChanged,
+    required TResult Function(_ImageDeleted value) imageDeleted,
+    required TResult Function(_ImagesChanged value) imagesChanged,
+    required TResult Function(_CoordinatesChanged value) coordinatesChanged,
+    required TResult Function(_DifficultyChanged value) difficultyChanged,
+    required TResult Function(_ObjectivesChanged value) objectivesChanged,
+    required TResult Function(_RewardsChanged value) rewardsChanged,
+    required TResult Function(_TagsChanged value) tagsChanged,
+    required TResult Function(_Submitted value) submitted,
   }) {
-    assert(initialized != null);
-    assert(titleChanged != null);
-    assert(descriptionChanged != null);
-    assert(imageDeleted != null);
-    assert(imagesChanged != null);
-    assert(coordinatesChanged != null);
-    assert(difficultyChanged != null);
-    assert(objectivesChanged != null);
-    assert(rewardsChanged != null);
-    assert(tagsChanged != null);
-    assert(submitted != null);
     return tagsChanged(this);
   }
 
   @override
   @optionalTypeArgs
-  TResult maybeMap<TResult extends Object>({
-    TResult initialized(_Initialized value),
-    TResult titleChanged(_TitleChanged value),
-    TResult descriptionChanged(_DescriptionChanged value),
-    TResult imageDeleted(_ImageDeleted value),
-    TResult imagesChanged(_ImagesChanged value),
-    TResult coordinatesChanged(_CoordinatesChanged value),
-    TResult difficultyChanged(_DifficultyChanged value),
-    TResult objectivesChanged(_ObjectivesChanged value),
-    TResult rewardsChanged(_RewardsChanged value),
-    TResult tagsChanged(_TagsChanged value),
-    TResult submitted(_Submitted value),
-    @required TResult orElse(),
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initialized value)? initialized,
+    TResult Function(_TitleChanged value)? titleChanged,
+    TResult Function(_DescriptionChanged value)? descriptionChanged,
+    TResult Function(_ImageDeleted value)? imageDeleted,
+    TResult Function(_ImagesChanged value)? imagesChanged,
+    TResult Function(_CoordinatesChanged value)? coordinatesChanged,
+    TResult Function(_DifficultyChanged value)? difficultyChanged,
+    TResult Function(_ObjectivesChanged value)? objectivesChanged,
+    TResult Function(_RewardsChanged value)? rewardsChanged,
+    TResult Function(_TagsChanged value)? tagsChanged,
+    TResult Function(_Submitted value)? submitted,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (tagsChanged != null) {
       return tagsChanged(this);
     }
@@ -1791,9 +1586,10 @@ class _$_TagsChanged implements _TagsChanged {
 abstract class _TagsChanged implements ExperienceManagementFormEvent {
   const factory _TagsChanged(KtSet<Tag> tags) = _$_TagsChanged;
 
-  KtSet<Tag> get tags;
+  KtSet<Tag> get tags => throw _privateConstructorUsedError;
+
   @JsonKey(ignore: true)
-  _$TagsChangedCopyWith<_TagsChanged> get copyWith;
+  _$TagsChangedCopyWith<_TagsChanged> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -1828,50 +1624,38 @@ class _$_Submitted implements _Submitted {
 
   @override
   @optionalTypeArgs
-  TResult when<TResult extends Object>({
-    @required TResult initialized(Option<Experience> experienceOption),
-    @required TResult titleChanged(String title),
-    @required TResult descriptionChanged(String description),
-    @required TResult imageDeleted(String imageURL),
-    @required TResult imagesChanged(List<Asset> imageAssets),
-    @required TResult coordinatesChanged(double latitude, double longitude),
-    @required TResult difficultyChanged(int difficulty),
-    @required TResult objectivesChanged(KtList<Objective> objectives),
-    @required TResult rewardsChanged(KtSet<Reward> rewards),
-    @required TResult tagsChanged(KtSet<Tag> tags),
-    @required TResult submitted(),
+  TResult when<TResult extends Object?>({
+    required TResult Function(Option<Experience> experienceOption) initialized,
+    required TResult Function(String title) titleChanged,
+    required TResult Function(String description) descriptionChanged,
+    required TResult Function(String imageURL) imageDeleted,
+    required TResult Function(List<Asset> imageAssets) imagesChanged,
+    required TResult Function(double latitude, double longitude) coordinatesChanged,
+    required TResult Function(int difficulty) difficultyChanged,
+    required TResult Function(KtList<Objective> objectives) objectivesChanged,
+    required TResult Function(KtSet<Reward> rewards) rewardsChanged,
+    required TResult Function(KtSet<Tag> tags) tagsChanged,
+    required TResult Function() submitted,
   }) {
-    assert(initialized != null);
-    assert(titleChanged != null);
-    assert(descriptionChanged != null);
-    assert(imageDeleted != null);
-    assert(imagesChanged != null);
-    assert(coordinatesChanged != null);
-    assert(difficultyChanged != null);
-    assert(objectivesChanged != null);
-    assert(rewardsChanged != null);
-    assert(tagsChanged != null);
-    assert(submitted != null);
     return submitted();
   }
 
   @override
   @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object>({
-    TResult initialized(Option<Experience> experienceOption),
-    TResult titleChanged(String title),
-    TResult descriptionChanged(String description),
-    TResult imageDeleted(String imageURL),
-    TResult imagesChanged(List<Asset> imageAssets),
-    TResult coordinatesChanged(double latitude, double longitude),
-    TResult difficultyChanged(int difficulty),
-    TResult objectivesChanged(KtList<Objective> objectives),
-    TResult rewardsChanged(KtSet<Reward> rewards),
-    TResult tagsChanged(KtSet<Tag> tags),
-    TResult submitted(),
-    @required TResult orElse(),
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(Option<Experience> experienceOption)? initialized,
+    TResult Function(String title)? titleChanged,
+    TResult Function(String description)? descriptionChanged,
+    TResult Function(String imageURL)? imageDeleted,
+    TResult Function(List<Asset> imageAssets)? imagesChanged,
+    TResult Function(double latitude, double longitude)? coordinatesChanged,
+    TResult Function(int difficulty)? difficultyChanged,
+    TResult Function(KtList<Objective> objectives)? objectivesChanged,
+    TResult Function(KtSet<Reward> rewards)? rewardsChanged,
+    TResult Function(KtSet<Tag> tags)? tagsChanged,
+    TResult Function()? submitted,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (submitted != null) {
       return submitted();
     }
@@ -1880,50 +1664,38 @@ class _$_Submitted implements _Submitted {
 
   @override
   @optionalTypeArgs
-  TResult map<TResult extends Object>({
-    @required TResult initialized(_Initialized value),
-    @required TResult titleChanged(_TitleChanged value),
-    @required TResult descriptionChanged(_DescriptionChanged value),
-    @required TResult imageDeleted(_ImageDeleted value),
-    @required TResult imagesChanged(_ImagesChanged value),
-    @required TResult coordinatesChanged(_CoordinatesChanged value),
-    @required TResult difficultyChanged(_DifficultyChanged value),
-    @required TResult objectivesChanged(_ObjectivesChanged value),
-    @required TResult rewardsChanged(_RewardsChanged value),
-    @required TResult tagsChanged(_TagsChanged value),
-    @required TResult submitted(_Submitted value),
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initialized value) initialized,
+    required TResult Function(_TitleChanged value) titleChanged,
+    required TResult Function(_DescriptionChanged value) descriptionChanged,
+    required TResult Function(_ImageDeleted value) imageDeleted,
+    required TResult Function(_ImagesChanged value) imagesChanged,
+    required TResult Function(_CoordinatesChanged value) coordinatesChanged,
+    required TResult Function(_DifficultyChanged value) difficultyChanged,
+    required TResult Function(_ObjectivesChanged value) objectivesChanged,
+    required TResult Function(_RewardsChanged value) rewardsChanged,
+    required TResult Function(_TagsChanged value) tagsChanged,
+    required TResult Function(_Submitted value) submitted,
   }) {
-    assert(initialized != null);
-    assert(titleChanged != null);
-    assert(descriptionChanged != null);
-    assert(imageDeleted != null);
-    assert(imagesChanged != null);
-    assert(coordinatesChanged != null);
-    assert(difficultyChanged != null);
-    assert(objectivesChanged != null);
-    assert(rewardsChanged != null);
-    assert(tagsChanged != null);
-    assert(submitted != null);
     return submitted(this);
   }
 
   @override
   @optionalTypeArgs
-  TResult maybeMap<TResult extends Object>({
-    TResult initialized(_Initialized value),
-    TResult titleChanged(_TitleChanged value),
-    TResult descriptionChanged(_DescriptionChanged value),
-    TResult imageDeleted(_ImageDeleted value),
-    TResult imagesChanged(_ImagesChanged value),
-    TResult coordinatesChanged(_CoordinatesChanged value),
-    TResult difficultyChanged(_DifficultyChanged value),
-    TResult objectivesChanged(_ObjectivesChanged value),
-    TResult rewardsChanged(_RewardsChanged value),
-    TResult tagsChanged(_TagsChanged value),
-    TResult submitted(_Submitted value),
-    @required TResult orElse(),
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initialized value)? initialized,
+    TResult Function(_TitleChanged value)? titleChanged,
+    TResult Function(_DescriptionChanged value)? descriptionChanged,
+    TResult Function(_ImageDeleted value)? imageDeleted,
+    TResult Function(_ImagesChanged value)? imagesChanged,
+    TResult Function(_CoordinatesChanged value)? coordinatesChanged,
+    TResult Function(_DifficultyChanged value)? difficultyChanged,
+    TResult Function(_ObjectivesChanged value)? objectivesChanged,
+    TResult Function(_RewardsChanged value)? rewardsChanged,
+    TResult Function(_TagsChanged value)? tagsChanged,
+    TResult Function(_Submitted value)? submitted,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (submitted != null) {
       return submitted(this);
     }
@@ -1939,14 +1711,13 @@ abstract class _Submitted implements ExperienceManagementFormEvent {
 class _$ExperienceManagementFormStateTearOff {
   const _$ExperienceManagementFormStateTearOff();
 
-// ignore: unused_element
   _ExperienceManagementFormState call(
-      {@required Experience experience,
-      @required bool showErrorMessages,
-      @required bool isEditing,
-      @required bool isSubmitting,
-      @required bool loadedCoordinates,
-      @required Option<Either<Failure, Unit>> failureOrSuccessOption}) {
+      {required Experience experience,
+      required bool showErrorMessages,
+      required bool isEditing,
+      required bool isSubmitting,
+      required bool loadedCoordinates,
+      required Option<Either<Failure, Unit>> failureOrSuccessOption}) {
     return _ExperienceManagementFormState(
       experience: experience,
       showErrorMessages: showErrorMessages,
@@ -1959,20 +1730,24 @@ class _$ExperienceManagementFormStateTearOff {
 }
 
 /// @nodoc
-// ignore: unused_element
 const $ExperienceManagementFormState = _$ExperienceManagementFormStateTearOff();
 
 /// @nodoc
 mixin _$ExperienceManagementFormState {
-  Experience get experience;
-  bool get showErrorMessages;
-  bool get isEditing;
-  bool get isSubmitting;
-  bool get loadedCoordinates;
-  Option<Either<Failure, Unit>> get failureOrSuccessOption;
+  Experience get experience => throw _privateConstructorUsedError;
+
+  bool get showErrorMessages => throw _privateConstructorUsedError;
+
+  bool get isEditing => throw _privateConstructorUsedError;
+
+  bool get isSubmitting => throw _privateConstructorUsedError;
+
+  bool get loadedCoordinates => throw _privateConstructorUsedError;
+
+  Option<Either<Failure, Unit>> get failureOrSuccessOption => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
-  $ExperienceManagementFormStateCopyWith<ExperienceManagementFormState> get copyWith;
+  $ExperienceManagementFormStateCopyWith<ExperienceManagementFormState> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -1995,28 +1770,43 @@ class _$ExperienceManagementFormStateCopyWithImpl<$Res> implements $ExperienceMa
 
   @override
   $Res call({
-    Object experience = freezed,
-    Object showErrorMessages = freezed,
-    Object isEditing = freezed,
-    Object isSubmitting = freezed,
-    Object loadedCoordinates = freezed,
-    Object failureOrSuccessOption = freezed,
+    Object? experience = freezed,
+    Object? showErrorMessages = freezed,
+    Object? isEditing = freezed,
+    Object? isSubmitting = freezed,
+    Object? loadedCoordinates = freezed,
+    Object? failureOrSuccessOption = freezed,
   }) {
     return _then(_value.copyWith(
-      experience: experience == freezed ? _value.experience : experience as Experience,
-      showErrorMessages: showErrorMessages == freezed ? _value.showErrorMessages : showErrorMessages as bool,
-      isEditing: isEditing == freezed ? _value.isEditing : isEditing as bool,
-      isSubmitting: isSubmitting == freezed ? _value.isSubmitting : isSubmitting as bool,
-      loadedCoordinates: loadedCoordinates == freezed ? _value.loadedCoordinates : loadedCoordinates as bool,
-      failureOrSuccessOption: failureOrSuccessOption == freezed ? _value.failureOrSuccessOption : failureOrSuccessOption as Option<Either<Failure, Unit>>,
+      experience: experience == freezed
+          ? _value.experience
+          : experience // ignore: cast_nullable_to_non_nullable
+              as Experience,
+      showErrorMessages: showErrorMessages == freezed
+          ? _value.showErrorMessages
+          : showErrorMessages // ignore: cast_nullable_to_non_nullable
+              as bool,
+      isEditing: isEditing == freezed
+          ? _value.isEditing
+          : isEditing // ignore: cast_nullable_to_non_nullable
+              as bool,
+      isSubmitting: isSubmitting == freezed
+          ? _value.isSubmitting
+          : isSubmitting // ignore: cast_nullable_to_non_nullable
+              as bool,
+      loadedCoordinates: loadedCoordinates == freezed
+          ? _value.loadedCoordinates
+          : loadedCoordinates // ignore: cast_nullable_to_non_nullable
+              as bool,
+      failureOrSuccessOption: failureOrSuccessOption == freezed
+          ? _value.failureOrSuccessOption
+          : failureOrSuccessOption // ignore: cast_nullable_to_non_nullable
+              as Option<Either<Failure, Unit>>,
     ));
   }
 
   @override
   $ExperienceCopyWith<$Res> get experience {
-    if (_value.experience == null) {
-      return null;
-    }
     return $ExperienceCopyWith<$Res>(_value.experience, (value) {
       return _then(_value.copyWith(experience: value));
     });
@@ -2044,20 +1834,38 @@ class __$ExperienceManagementFormStateCopyWithImpl<$Res> extends _$ExperienceMan
 
   @override
   $Res call({
-    Object experience = freezed,
-    Object showErrorMessages = freezed,
-    Object isEditing = freezed,
-    Object isSubmitting = freezed,
-    Object loadedCoordinates = freezed,
-    Object failureOrSuccessOption = freezed,
+    Object? experience = freezed,
+    Object? showErrorMessages = freezed,
+    Object? isEditing = freezed,
+    Object? isSubmitting = freezed,
+    Object? loadedCoordinates = freezed,
+    Object? failureOrSuccessOption = freezed,
   }) {
     return _then(_ExperienceManagementFormState(
-      experience: experience == freezed ? _value.experience : experience as Experience,
-      showErrorMessages: showErrorMessages == freezed ? _value.showErrorMessages : showErrorMessages as bool,
-      isEditing: isEditing == freezed ? _value.isEditing : isEditing as bool,
-      isSubmitting: isSubmitting == freezed ? _value.isSubmitting : isSubmitting as bool,
-      loadedCoordinates: loadedCoordinates == freezed ? _value.loadedCoordinates : loadedCoordinates as bool,
-      failureOrSuccessOption: failureOrSuccessOption == freezed ? _value.failureOrSuccessOption : failureOrSuccessOption as Option<Either<Failure, Unit>>,
+      experience: experience == freezed
+          ? _value.experience
+          : experience // ignore: cast_nullable_to_non_nullable
+              as Experience,
+      showErrorMessages: showErrorMessages == freezed
+          ? _value.showErrorMessages
+          : showErrorMessages // ignore: cast_nullable_to_non_nullable
+              as bool,
+      isEditing: isEditing == freezed
+          ? _value.isEditing
+          : isEditing // ignore: cast_nullable_to_non_nullable
+              as bool,
+      isSubmitting: isSubmitting == freezed
+          ? _value.isSubmitting
+          : isSubmitting // ignore: cast_nullable_to_non_nullable
+              as bool,
+      loadedCoordinates: loadedCoordinates == freezed
+          ? _value.loadedCoordinates
+          : loadedCoordinates // ignore: cast_nullable_to_non_nullable
+              as bool,
+      failureOrSuccessOption: failureOrSuccessOption == freezed
+          ? _value.failureOrSuccessOption
+          : failureOrSuccessOption // ignore: cast_nullable_to_non_nullable
+              as Option<Either<Failure, Unit>>,
     ));
   }
 }
@@ -2065,13 +1873,7 @@ class __$ExperienceManagementFormStateCopyWithImpl<$Res> extends _$ExperienceMan
 /// @nodoc
 class _$_ExperienceManagementFormState implements _ExperienceManagementFormState {
   const _$_ExperienceManagementFormState(
-      {@required this.experience, @required this.showErrorMessages, @required this.isEditing, @required this.isSubmitting, @required this.loadedCoordinates, @required this.failureOrSuccessOption})
-      : assert(experience != null),
-        assert(showErrorMessages != null),
-        assert(isEditing != null),
-        assert(isSubmitting != null),
-        assert(loadedCoordinates != null),
-        assert(failureOrSuccessOption != null);
+      {required this.experience, required this.showErrorMessages, required this.isEditing, required this.isSubmitting, required this.loadedCoordinates, required this.failureOrSuccessOption});
 
   @override
   final Experience experience;
@@ -2112,7 +1914,7 @@ class _$_ExperienceManagementFormState implements _ExperienceManagementFormState
       const DeepCollectionEquality().hash(isSubmitting) ^
       const DeepCollectionEquality().hash(loadedCoordinates) ^
       const DeepCollectionEquality().hash(failureOrSuccessOption);
-  
+
   @JsonKey(ignore: true)
   @override
   _$ExperienceManagementFormStateCopyWith<_ExperienceManagementFormState> get copyWith => __$ExperienceManagementFormStateCopyWithImpl<_ExperienceManagementFormState>(this, _$identity);
@@ -2120,28 +1922,32 @@ class _$_ExperienceManagementFormState implements _ExperienceManagementFormState
 
 abstract class _ExperienceManagementFormState implements ExperienceManagementFormState {
   const factory _ExperienceManagementFormState(
-      {@required Experience experience,
-      @required bool showErrorMessages,
-      @required bool isEditing,
-      @required bool isSubmitting,
-      @required bool loadedCoordinates,
-      @required Option<Either<Failure, Unit>> failureOrSuccessOption}) = _$_ExperienceManagementFormState;
+      {required Experience experience,
+      required bool showErrorMessages,
+      required bool isEditing,
+      required bool isSubmitting,
+      required bool loadedCoordinates,
+      required Option<Either<Failure, Unit>> failureOrSuccessOption}) = _$_ExperienceManagementFormState;
 
   @override
-  Experience get experience;
+  Experience get experience => throw _privateConstructorUsedError;
+
   @override
-  bool get showErrorMessages;
+  bool get showErrorMessages => throw _privateConstructorUsedError;
+
   @override
-  bool get isEditing;
+  bool get isEditing => throw _privateConstructorUsedError;
+
   @override
-  bool get isSubmitting;
+  bool get isSubmitting => throw _privateConstructorUsedError;
+
   @override
-  bool get loadedCoordinates;
-  
+  bool get loadedCoordinates => throw _privateConstructorUsedError;
+
   @override
-  Option<Either<Failure, Unit>> get failureOrSuccessOption;
+  Option<Either<Failure, Unit>> get failureOrSuccessOption => throw _privateConstructorUsedError;
 
   @override
   @JsonKey(ignore: true)
-  _$ExperienceManagementFormStateCopyWith<_ExperienceManagementFormState> get copyWith;
+  _$ExperienceManagementFormStateCopyWith<_ExperienceManagementFormState> get copyWith => throw _privateConstructorUsedError;
 }

@@ -1,5 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides
 
 part of 'experience_dto.dart';
 
@@ -8,6 +8,10 @@ part of 'experience_dto.dart';
 // **************************************************************************
 
 T _$identity<T>(T value) => value;
+
+final _privateConstructorUsedError = UnsupportedError(
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+
 ExperienceDto _$ExperienceDtoFromJson(Map<String, dynamic> json) {
   return _ExperienceDto.fromJson(json);
 }
@@ -16,25 +20,24 @@ ExperienceDto _$ExperienceDtoFromJson(Map<String, dynamic> json) {
 class _$ExperienceDtoTearOff {
   const _$ExperienceDtoTearOff();
 
-// ignore: unused_element
   _ExperienceDto call(
-      {@required String id,
-      @required String title,
-      @required String description,
-      @required Set<String> imageURLs,
-      @required CoordinatesDto coordinates,
-      @required LocationDto location,
-      @required String creatorId,
-      @required UserDto creator,
-      @required int difficulty,
-      @required @ServerTimestampConverter() DateTime creationDate,
-      @required @ServerTimestampConverter() DateTime modificationDate,
-      @required List<ObjectiveDto> objectives,
-      @required Set<RewardDto> rewards,
-      @required Set<TagDto> tags,
-      @required Set<CommentDto> comments,
-      @required Set<String> likedBy,
-      @required Set<String> doneBy}) {
+      {required String id,
+      required String title,
+      required String description,
+      required Set<String> imageURLs,
+      required CoordinatesDto coordinates,
+      required LocationDto location,
+      required String creatorId,
+      required UserDto creator,
+      required int difficulty,
+      @ServerTimestampConverter() required DateTime creationDate,
+      @ServerTimestampConverter() required DateTime modificationDate,
+      required List<ObjectiveDto> objectives,
+      required Set<RewardDto> rewards,
+      required Set<TagDto> tags,
+      required Set<CommentDto> comments,
+      required Set<String> likedBy,
+      required Set<String> doneBy}) {
     return _ExperienceDto(
       id: id,
       title: title,
@@ -56,53 +59,55 @@ class _$ExperienceDtoTearOff {
     );
   }
 
-// ignore: unused_element
   ExperienceDto fromJson(Map<String, Object> json) {
     return ExperienceDto.fromJson(json);
   }
 }
 
 /// @nodoc
-// ignore: unused_element
 const $ExperienceDto = _$ExperienceDtoTearOff();
 
 /// @nodoc
 mixin _$ExperienceDto {
-  String get id;
-  String get title;
-  String get description;
-  Set<String> get imageURLs;
-  CoordinatesDto get coordinates;
+  String get id => throw _privateConstructorUsedError;
 
-  LocationDto get location;
+  String get title => throw _privateConstructorUsedError;
 
-  String get creatorId;
+  String get description => throw _privateConstructorUsedError;
 
-  UserDto get creator;
+  Set<String> get imageURLs => throw _privateConstructorUsedError;
 
-  int get difficulty;
+  CoordinatesDto get coordinates => throw _privateConstructorUsedError;
+
+  LocationDto get location => throw _privateConstructorUsedError;
+
+  String get creatorId => throw _privateConstructorUsedError;
+
+  UserDto get creator => throw _privateConstructorUsedError;
+
+  int get difficulty => throw _privateConstructorUsedError;
 
   @ServerTimestampConverter()
-  DateTime get creationDate;
+  DateTime get creationDate => throw _privateConstructorUsedError;
 
   @ServerTimestampConverter()
-  DateTime get modificationDate;
+  DateTime get modificationDate => throw _privateConstructorUsedError;
 
-  List<ObjectiveDto> get objectives;
+  List<ObjectiveDto> get objectives => throw _privateConstructorUsedError;
 
-  Set<RewardDto> get rewards;
+  Set<RewardDto> get rewards => throw _privateConstructorUsedError;
 
-  Set<TagDto> get tags; // Probably shouldn't be part of the DTO, as in Firestore it's a sub document of the experience document
-  Set<CommentDto> get comments;
+  Set<TagDto> get tags => throw _privateConstructorUsedError; // Probably shouldn't be part of the DTO, as in Firestore it's a sub document of the experience document
+  Set<CommentDto> get comments => throw _privateConstructorUsedError;
 
-  Set<String> get likedBy;
+  Set<String> get likedBy => throw _privateConstructorUsedError;
 
-  Set<String> get doneBy;
+  Set<String> get doneBy => throw _privateConstructorUsedError;
 
-  Map<String, dynamic> toJson();
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
-  $ExperienceDtoCopyWith<ExperienceDto> get copyWith;
+  $ExperienceDtoCopyWith<ExperienceDto> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -144,50 +149,98 @@ class _$ExperienceDtoCopyWithImpl<$Res> implements $ExperienceDtoCopyWith<$Res> 
 
   @override
   $Res call({
-    Object id = freezed,
-    Object title = freezed,
-    Object description = freezed,
-    Object imageURLs = freezed,
-    Object coordinates = freezed,
-    Object location = freezed,
-    Object creatorId = freezed,
-    Object creator = freezed,
-    Object difficulty = freezed,
-    Object creationDate = freezed,
-    Object modificationDate = freezed,
-    Object objectives = freezed,
-    Object rewards = freezed,
-    Object tags = freezed,
-    Object comments = freezed,
-    Object likedBy = freezed,
-    Object doneBy = freezed,
+    Object? id = freezed,
+    Object? title = freezed,
+    Object? description = freezed,
+    Object? imageURLs = freezed,
+    Object? coordinates = freezed,
+    Object? location = freezed,
+    Object? creatorId = freezed,
+    Object? creator = freezed,
+    Object? difficulty = freezed,
+    Object? creationDate = freezed,
+    Object? modificationDate = freezed,
+    Object? objectives = freezed,
+    Object? rewards = freezed,
+    Object? tags = freezed,
+    Object? comments = freezed,
+    Object? likedBy = freezed,
+    Object? doneBy = freezed,
   }) {
     return _then(_value.copyWith(
-      id: id == freezed ? _value.id : id as String,
-      title: title == freezed ? _value.title : title as String,
-      description: description == freezed ? _value.description : description as String,
-      imageURLs: imageURLs == freezed ? _value.imageURLs : imageURLs as Set<String>,
-      coordinates: coordinates == freezed ? _value.coordinates : coordinates as CoordinatesDto,
-      location: location == freezed ? _value.location : location as LocationDto,
-      creatorId: creatorId == freezed ? _value.creatorId : creatorId as String,
-      creator: creator == freezed ? _value.creator : creator as UserDto,
-      difficulty: difficulty == freezed ? _value.difficulty : difficulty as int,
-      creationDate: creationDate == freezed ? _value.creationDate : creationDate as DateTime,
-      modificationDate: modificationDate == freezed ? _value.modificationDate : modificationDate as DateTime,
-      objectives: objectives == freezed ? _value.objectives : objectives as List<ObjectiveDto>,
-      rewards: rewards == freezed ? _value.rewards : rewards as Set<RewardDto>,
-      tags: tags == freezed ? _value.tags : tags as Set<TagDto>,
-      comments: comments == freezed ? _value.comments : comments as Set<CommentDto>,
-      likedBy: likedBy == freezed ? _value.likedBy : likedBy as Set<String>,
-      doneBy: doneBy == freezed ? _value.doneBy : doneBy as Set<String>,
+      id: id == freezed
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String,
+      title: title == freezed
+          ? _value.title
+          : title // ignore: cast_nullable_to_non_nullable
+              as String,
+      description: description == freezed
+          ? _value.description
+          : description // ignore: cast_nullable_to_non_nullable
+              as String,
+      imageURLs: imageURLs == freezed
+          ? _value.imageURLs
+          : imageURLs // ignore: cast_nullable_to_non_nullable
+              as Set<String>,
+      coordinates: coordinates == freezed
+          ? _value.coordinates
+          : coordinates // ignore: cast_nullable_to_non_nullable
+              as CoordinatesDto,
+      location: location == freezed
+          ? _value.location
+          : location // ignore: cast_nullable_to_non_nullable
+              as LocationDto,
+      creatorId: creatorId == freezed
+          ? _value.creatorId
+          : creatorId // ignore: cast_nullable_to_non_nullable
+              as String,
+      creator: creator == freezed
+          ? _value.creator
+          : creator // ignore: cast_nullable_to_non_nullable
+              as UserDto,
+      difficulty: difficulty == freezed
+          ? _value.difficulty
+          : difficulty // ignore: cast_nullable_to_non_nullable
+              as int,
+      creationDate: creationDate == freezed
+          ? _value.creationDate
+          : creationDate // ignore: cast_nullable_to_non_nullable
+              as DateTime,
+      modificationDate: modificationDate == freezed
+          ? _value.modificationDate
+          : modificationDate // ignore: cast_nullable_to_non_nullable
+              as DateTime,
+      objectives: objectives == freezed
+          ? _value.objectives
+          : objectives // ignore: cast_nullable_to_non_nullable
+              as List<ObjectiveDto>,
+      rewards: rewards == freezed
+          ? _value.rewards
+          : rewards // ignore: cast_nullable_to_non_nullable
+              as Set<RewardDto>,
+      tags: tags == freezed
+          ? _value.tags
+          : tags // ignore: cast_nullable_to_non_nullable
+              as Set<TagDto>,
+      comments: comments == freezed
+          ? _value.comments
+          : comments // ignore: cast_nullable_to_non_nullable
+              as Set<CommentDto>,
+      likedBy: likedBy == freezed
+          ? _value.likedBy
+          : likedBy // ignore: cast_nullable_to_non_nullable
+              as Set<String>,
+      doneBy: doneBy == freezed
+          ? _value.doneBy
+          : doneBy // ignore: cast_nullable_to_non_nullable
+              as Set<String>,
     ));
   }
 
   @override
   $CoordinatesDtoCopyWith<$Res> get coordinates {
-    if (_value.coordinates == null) {
-      return null;
-    }
     return $CoordinatesDtoCopyWith<$Res>(_value.coordinates, (value) {
       return _then(_value.copyWith(coordinates: value));
     });
@@ -195,9 +248,6 @@ class _$ExperienceDtoCopyWithImpl<$Res> implements $ExperienceDtoCopyWith<$Res> 
 
   @override
   $LocationDtoCopyWith<$Res> get location {
-    if (_value.location == null) {
-      return null;
-    }
     return $LocationDtoCopyWith<$Res>(_value.location, (value) {
       return _then(_value.copyWith(location: value));
     });
@@ -205,9 +255,6 @@ class _$ExperienceDtoCopyWithImpl<$Res> implements $ExperienceDtoCopyWith<$Res> 
 
   @override
   $UserDtoCopyWith<$Res> get creator {
-    if (_value.creator == null) {
-      return null;
-    }
     return $UserDtoCopyWith<$Res>(_value.creator, (value) {
       return _then(_value.copyWith(creator: value));
     });
@@ -255,42 +302,93 @@ class __$ExperienceDtoCopyWithImpl<$Res> extends _$ExperienceDtoCopyWithImpl<$Re
 
   @override
   $Res call({
-    Object id = freezed,
-    Object title = freezed,
-    Object description = freezed,
-    Object imageURLs = freezed,
-    Object coordinates = freezed,
-    Object location = freezed,
-    Object creatorId = freezed,
-    Object creator = freezed,
-    Object difficulty = freezed,
-    Object creationDate = freezed,
-    Object modificationDate = freezed,
-    Object objectives = freezed,
-    Object rewards = freezed,
-    Object tags = freezed,
-    Object comments = freezed,
-    Object likedBy = freezed,
-    Object doneBy = freezed,
+    Object? id = freezed,
+    Object? title = freezed,
+    Object? description = freezed,
+    Object? imageURLs = freezed,
+    Object? coordinates = freezed,
+    Object? location = freezed,
+    Object? creatorId = freezed,
+    Object? creator = freezed,
+    Object? difficulty = freezed,
+    Object? creationDate = freezed,
+    Object? modificationDate = freezed,
+    Object? objectives = freezed,
+    Object? rewards = freezed,
+    Object? tags = freezed,
+    Object? comments = freezed,
+    Object? likedBy = freezed,
+    Object? doneBy = freezed,
   }) {
     return _then(_ExperienceDto(
-      id: id == freezed ? _value.id : id as String,
-      title: title == freezed ? _value.title : title as String,
-      description: description == freezed ? _value.description : description as String,
-      imageURLs: imageURLs == freezed ? _value.imageURLs : imageURLs as Set<String>,
-      coordinates: coordinates == freezed ? _value.coordinates : coordinates as CoordinatesDto,
-      location: location == freezed ? _value.location : location as LocationDto,
-      creatorId: creatorId == freezed ? _value.creatorId : creatorId as String,
-      creator: creator == freezed ? _value.creator : creator as UserDto,
-      difficulty: difficulty == freezed ? _value.difficulty : difficulty as int,
-      creationDate: creationDate == freezed ? _value.creationDate : creationDate as DateTime,
-      modificationDate: modificationDate == freezed ? _value.modificationDate : modificationDate as DateTime,
-      objectives: objectives == freezed ? _value.objectives : objectives as List<ObjectiveDto>,
-      rewards: rewards == freezed ? _value.rewards : rewards as Set<RewardDto>,
-      tags: tags == freezed ? _value.tags : tags as Set<TagDto>,
-      comments: comments == freezed ? _value.comments : comments as Set<CommentDto>,
-      likedBy: likedBy == freezed ? _value.likedBy : likedBy as Set<String>,
-      doneBy: doneBy == freezed ? _value.doneBy : doneBy as Set<String>,
+      id: id == freezed
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String,
+      title: title == freezed
+          ? _value.title
+          : title // ignore: cast_nullable_to_non_nullable
+              as String,
+      description: description == freezed
+          ? _value.description
+          : description // ignore: cast_nullable_to_non_nullable
+              as String,
+      imageURLs: imageURLs == freezed
+          ? _value.imageURLs
+          : imageURLs // ignore: cast_nullable_to_non_nullable
+              as Set<String>,
+      coordinates: coordinates == freezed
+          ? _value.coordinates
+          : coordinates // ignore: cast_nullable_to_non_nullable
+              as CoordinatesDto,
+      location: location == freezed
+          ? _value.location
+          : location // ignore: cast_nullable_to_non_nullable
+              as LocationDto,
+      creatorId: creatorId == freezed
+          ? _value.creatorId
+          : creatorId // ignore: cast_nullable_to_non_nullable
+              as String,
+      creator: creator == freezed
+          ? _value.creator
+          : creator // ignore: cast_nullable_to_non_nullable
+              as UserDto,
+      difficulty: difficulty == freezed
+          ? _value.difficulty
+          : difficulty // ignore: cast_nullable_to_non_nullable
+              as int,
+      creationDate: creationDate == freezed
+          ? _value.creationDate
+          : creationDate // ignore: cast_nullable_to_non_nullable
+              as DateTime,
+      modificationDate: modificationDate == freezed
+          ? _value.modificationDate
+          : modificationDate // ignore: cast_nullable_to_non_nullable
+              as DateTime,
+      objectives: objectives == freezed
+          ? _value.objectives
+          : objectives // ignore: cast_nullable_to_non_nullable
+              as List<ObjectiveDto>,
+      rewards: rewards == freezed
+          ? _value.rewards
+          : rewards // ignore: cast_nullable_to_non_nullable
+              as Set<RewardDto>,
+      tags: tags == freezed
+          ? _value.tags
+          : tags // ignore: cast_nullable_to_non_nullable
+              as Set<TagDto>,
+      comments: comments == freezed
+          ? _value.comments
+          : comments // ignore: cast_nullable_to_non_nullable
+              as Set<CommentDto>,
+      likedBy: likedBy == freezed
+          ? _value.likedBy
+          : likedBy // ignore: cast_nullable_to_non_nullable
+              as Set<String>,
+      doneBy: doneBy == freezed
+          ? _value.doneBy
+          : doneBy // ignore: cast_nullable_to_non_nullable
+              as Set<String>,
     ));
   }
 }
@@ -300,41 +398,24 @@ class __$ExperienceDtoCopyWithImpl<$Res> extends _$ExperienceDtoCopyWithImpl<$Re
 /// @nodoc
 class _$_ExperienceDto extends _ExperienceDto {
   const _$_ExperienceDto(
-      {@required this.id,
-      @required this.title,
-      @required this.description,
-      @required this.imageURLs,
-      @required this.coordinates,
-      @required this.location,
-      @required this.creatorId,
-      @required this.creator,
-      @required this.difficulty,
-      @required @ServerTimestampConverter() this.creationDate,
-      @required @ServerTimestampConverter() this.modificationDate,
-      @required this.objectives,
-      @required this.rewards,
-      @required this.tags,
-      @required this.comments,
-      @required this.likedBy,
-      @required this.doneBy})
-      : assert(id != null),
-        assert(title != null),
-        assert(description != null),
-        assert(imageURLs != null),
-        assert(coordinates != null),
-        assert(location != null),
-        assert(creatorId != null),
-        assert(creator != null),
-        assert(difficulty != null),
-        assert(creationDate != null),
-        assert(modificationDate != null),
-        assert(objectives != null),
-        assert(rewards != null),
-        assert(tags != null),
-        assert(comments != null),
-        assert(likedBy != null),
-        assert(doneBy != null),
-        super._();
+      {required this.id,
+      required this.title,
+      required this.description,
+      required this.imageURLs,
+      required this.coordinates,
+      required this.location,
+      required this.creatorId,
+      required this.creator,
+      required this.difficulty,
+      @ServerTimestampConverter() required this.creationDate,
+      @ServerTimestampConverter() required this.modificationDate,
+      required this.objectives,
+      required this.rewards,
+      required this.tags,
+      required this.comments,
+      required this.likedBy,
+      required this.doneBy})
+      : super._();
 
   factory _$_ExperienceDto.fromJson(Map<String, dynamic> json) => _$_$_ExperienceDtoFromJson(json);
 
@@ -435,69 +516,83 @@ class _$_ExperienceDto extends _ExperienceDto {
 }
 
 abstract class _ExperienceDto extends ExperienceDto {
-  const _ExperienceDto._() : super._();
   const factory _ExperienceDto(
-      {@required String id,
-      @required String title,
-      @required String description,
-      @required Set<String> imageURLs,
-      @required CoordinatesDto coordinates,
-      @required LocationDto location,
-      @required String creatorId,
-      @required UserDto creator,
-      @required int difficulty,
-      @required @ServerTimestampConverter() DateTime creationDate,
-      @required @ServerTimestampConverter() DateTime modificationDate,
-      @required List<ObjectiveDto> objectives,
-      @required Set<RewardDto> rewards,
-      @required Set<TagDto> tags,
-      @required Set<CommentDto> comments,
-      @required Set<String> likedBy,
-      @required Set<String> doneBy}) = _$_ExperienceDto;
+      {required String id,
+      required String title,
+      required String description,
+      required Set<String> imageURLs,
+      required CoordinatesDto coordinates,
+      required LocationDto location,
+      required String creatorId,
+      required UserDto creator,
+      required int difficulty,
+      @ServerTimestampConverter() required DateTime creationDate,
+      @ServerTimestampConverter() required DateTime modificationDate,
+      required List<ObjectiveDto> objectives,
+      required Set<RewardDto> rewards,
+      required Set<TagDto> tags,
+      required Set<CommentDto> comments,
+      required Set<String> likedBy,
+      required Set<String> doneBy}) = _$_ExperienceDto;
+
+  const _ExperienceDto._() : super._();
 
   factory _ExperienceDto.fromJson(Map<String, dynamic> json) = _$_ExperienceDto.fromJson;
 
   @override
-  String get id;
+  String get id => throw _privateConstructorUsedError;
 
   @override
-  String get title;
+  String get title => throw _privateConstructorUsedError;
 
   @override
-  String get description;
+  String get description => throw _privateConstructorUsedError;
 
   @override
-  Set<String> get imageURLs;
+  Set<String> get imageURLs => throw _privateConstructorUsedError;
 
   @override
-  CoordinatesDto get coordinates;
+  CoordinatesDto get coordinates => throw _privateConstructorUsedError;
+
   @override
-  LocationDto get location;
+  LocationDto get location => throw _privateConstructorUsedError;
+
   @override
-  String get creatorId;
+  String get creatorId => throw _privateConstructorUsedError;
+
   @override
-  UserDto get creator;
+  UserDto get creator => throw _privateConstructorUsedError;
+
   @override
-  int get difficulty;
+  int get difficulty => throw _privateConstructorUsedError;
+
   @override
   @ServerTimestampConverter()
-  DateTime get creationDate;
+  DateTime get creationDate => throw _privateConstructorUsedError;
+
   @override
   @ServerTimestampConverter()
-  DateTime get modificationDate;
+  DateTime get modificationDate => throw _privateConstructorUsedError;
+
   @override
-  List<ObjectiveDto> get objectives;
+  List<ObjectiveDto> get objectives => throw _privateConstructorUsedError;
+
   @override
-  Set<RewardDto> get rewards;
+  Set<RewardDto> get rewards => throw _privateConstructorUsedError;
+
   @override
-  Set<TagDto> get tags;
+  Set<TagDto> get tags => throw _privateConstructorUsedError;
+
   @override // Probably shouldn't be part of the DTO, as in Firestore it's a sub document of the experience document
-  Set<CommentDto> get comments;
+  Set<CommentDto> get comments => throw _privateConstructorUsedError;
+
   @override
-  Set<String> get likedBy;
+  Set<String> get likedBy => throw _privateConstructorUsedError;
+
   @override
-  Set<String> get doneBy;
+  Set<String> get doneBy => throw _privateConstructorUsedError;
+
   @override
   @JsonKey(ignore: true)
-  _$ExperienceDtoCopyWith<_ExperienceDto> get copyWith;
+  _$ExperienceDtoCopyWith<_ExperienceDto> get copyWith => throw _privateConstructorUsedError;
 }

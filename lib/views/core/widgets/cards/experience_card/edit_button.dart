@@ -8,28 +8,30 @@ import 'package:worldon/views/core/routes/router.gr.dart';
 
 class EditButton extends StatelessWidget {
   const EditButton({
-    Key key,
-    @required this.experience,
-    @required this.reloadFunction,
+    Key? key,
+    required this.experience,
+    required this.reloadFunction,
   }) : super(key: key);
 
   final Experience experience;
-  final Function(Object param) reloadFunction;
+  final Function() reloadFunction;
 
   @override
   Widget build(BuildContext context) {
-    return FlatButton(
-      padding: const EdgeInsets.all(2),
+    return TextButton(
+      style: ButtonStyle(
+        padding: MaterialStateProperty.all(
+          const EdgeInsets.all(2),
+        ),
+      ),
       onPressed: () async {
         Navigator.of(context).pop();
-        await context.navigator
-            .push(
-              Routes.experienceManagementPage,
-              arguments: ExperienceManagementPageArguments(
-                experienceOption: some(experience),
-              ),
-            )
-            .then(reloadFunction);
+        await context.router.push(
+          ExperienceManagementPageRoute(
+            experienceOption: some(experience),
+          ),
+        );
+        reloadFunction.call();
       },
       child: Row(
         children: [

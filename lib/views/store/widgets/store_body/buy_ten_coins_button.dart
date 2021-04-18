@@ -7,8 +7,12 @@ import 'package:worldon/views/core/misc/world_on_colors.dart';
 class BuyTenCoinsButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return RaisedButton(
-      color: WorldOnColors.primary,
+    return ElevatedButton(
+      style: ButtonStyle(
+        backgroundColor: MaterialStateProperty.all(
+          WorldOnColors.primary,
+        ),
+      ),
       onPressed: () => context.read<BuyCoinsBloc>().add(
             const BuyCoinsEvent.boughtCoins(10),
           ),

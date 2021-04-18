@@ -7,8 +7,8 @@ class ExperienceDescription extends StatelessWidget {
   final Experience experience;
 
   const ExperienceDescription({
-    Key key,
-    @required this.experience,
+    Key? key,
+    required this.experience,
   }) : super(key: key);
 
   @override

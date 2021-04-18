@@ -10,14 +10,14 @@ part 'objective_dto.freezed.dart';
 part 'objective_dto.g.dart';
 
 @freezed
-abstract class ObjectiveDto implements _$ObjectiveDto {
+class ObjectiveDto with _$ObjectiveDto {
   const ObjectiveDto._();
 
   const factory ObjectiveDto({
-    @required String id,
-    @required String description,
-    @required CoordinatesDto coordinates,
-    @required String imageURL,
+    required String id,
+    required String description,
+    required CoordinatesDto coordinates,
+    required String imageURL,
   }) = _ObjectiveDto;
 
   factory ObjectiveDto.fromDomain(Objective objective) => ObjectiveDto(
@@ -38,7 +38,7 @@ abstract class ObjectiveDto implements _$ObjectiveDto {
   factory ObjectiveDto.fromJson(Map<String, dynamic> json) => _$ObjectiveDtoFromJson(json);
 
   factory ObjectiveDto.fromFirestore(DocumentSnapshot document) => ObjectiveDto.fromJson(
-        document.data(),
+        document.data()!,
       ).copyWith(
         id: document.id,
       );

@@ -14,17 +14,15 @@ import 'package:worldon/domain/store/use_case/watch_purchasable_items.dart';
 import '../../../injection.dart';
 
 part 'watch_purchasable_items_bloc.freezed.dart';
-
 part 'watch_purchasable_items_event.dart';
-
 part 'watch_purchasable_items_state.dart';
 
 @injectable
 class WatchPurchasableItemsBloc extends Bloc<WatchPurchasableItemsEvent, WatchPurchasableItemsState> {
   WatchPurchasableItemsBloc() : super(const WatchPurchasableItemsState.initial());
-  
-  StreamSubscription<Either<Failure, KtList<Item>>> _purchasableItemsStreamSubscription;
-  
+
+  StreamSubscription<Either<Failure, KtList<Item>>>? _purchasableItemsStreamSubscription;
+
   @override
   Stream<WatchPurchasableItemsState> mapEventToState(WatchPurchasableItemsEvent event) async* {
     yield* event.map(
@@ -32,14 +30,14 @@ class WatchPurchasableItemsBloc extends Bloc<WatchPurchasableItemsEvent, WatchPu
       resultsReceived: _onResultsReceived,
     );
   }
-  
+
   Stream<WatchPurchasableItemsState> _onResultsReceived(_ResultsReceived event) async* {
     yield event.failureOrItems.fold(
-        (failure) => WatchPurchasableItemsState.loadFailure(failure),
-        (items) => WatchPurchasableItemsState.loadSuccess(items),
+      (failure) => WatchPurchasableItemsState.loadFailure(failure),
+      (items) => WatchPurchasableItemsState.loadSuccess(items),
     );
   }
-  
+
   Stream<WatchPurchasableItemsState> _onWatchPurchasableItemsStarted(_) async* {
     yield const WatchPurchasableItemsState.loadInProgress();
     await _purchasableItemsStreamSubscription?.cancel();
@@ -47,7 +45,7 @@ class WatchPurchasableItemsBloc extends Bloc<WatchPurchasableItemsEvent, WatchPu
         (_failureOrItems) => add(WatchPurchasableItemsEvent.resultsReceived(_failureOrItems)),
     );
   }
-  
+
   @override
   Future<void> close() async {
     await _purchasableItemsStreamSubscription?.cancel();

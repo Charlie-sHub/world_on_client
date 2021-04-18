@@ -9,8 +9,8 @@ import 'package:worldon/views/core/misc/world_on_colors.dart';
 
 class ProfileExperiencesDialer extends StatelessWidget {
   const ProfileExperiencesDialer({
-    Key key,
-    @required this.user,
+    Key? key,
+    required this.user,
   }) : super(key: key);
 
   final User user;

@@ -6,8 +6,8 @@ class SimpleTagDisplay extends StatelessWidget {
   final Tag tag;
 
   const SimpleTagDisplay({
-    Key key,
-    @required this.tag,
+    Key? key,
+    required this.tag,
   }) : super(key: key);
 
   @override

@@ -6,12 +6,12 @@ import 'package:worldon/generated/l10n.dart';
 
 class LogInGoogleButton extends StatelessWidget {
   const LogInGoogleButton({
-    Key key,
+    Key? key,
   }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return FlatButton(
+    return TextButton(
       onPressed: () => context.read<LogInFormBloc>().add(
             const LogInFormEvent.loggedInGoogle(),
           ),

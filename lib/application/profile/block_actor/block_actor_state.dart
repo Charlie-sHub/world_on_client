@@ -1,7 +1,7 @@
 part of 'block_actor_bloc.dart';
 
 @freezed
-abstract class BlockActorState with _$BlockActorState {
+class BlockActorState with _$BlockActorState {
   const factory BlockActorState.initial() = _Initial;
 
   const factory BlockActorState.actionInProgress() = _ActionInProgress;

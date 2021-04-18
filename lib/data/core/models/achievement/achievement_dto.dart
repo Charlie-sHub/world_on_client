@@ -19,21 +19,21 @@ part 'achievement_dto.g.dart';
 // For example in the Experience it makes sense to have the names of the tags of the experience
 // but not the rest of the tag data, that way the documents in Firebase can be smaller neater and the transformation to and from domain easier
 @freezed
-abstract class AchievementDto implements _$AchievementDto {
+class AchievementDto with _$AchievementDto {
   const AchievementDto._();
 
   const factory AchievementDto({
-    @required String id,
-    @required String name,
-    @required String description,
-    @required String imageURL,
-    @required String type,
-    @required int requisite,
-    @required int experiencePoints,
-    @required String creatorId,
-    @ServerTimestampConverter() @required DateTime creationDate,
-    @ServerTimestampConverter() @required DateTime modificationDate,
-    @required Set<String> tagNames,
+    required String id,
+    required String name,
+    required String description,
+    required String imageURL,
+    required String type,
+    required int requisite,
+    required int experiencePoints,
+    required String creatorId,
+    @ServerTimestampConverter() required DateTime creationDate,
+    @ServerTimestampConverter() required DateTime modificationDate,
+    required Set<String> tagNames,
   }) = _AchievementDto;
 
   factory AchievementDto.fromDomain(Achievement achievement) => AchievementDto(
@@ -68,7 +68,7 @@ abstract class AchievementDto implements _$AchievementDto {
   factory AchievementDto.fromJson(Map<String, dynamic> json) => _$AchievementDtoFromJson(json);
 
   factory AchievementDto.fromFirestore(DocumentSnapshot document) => AchievementDto.fromJson(
-        document.data(),
+        document.data()!,
       ).copyWith(
         id: document.id,
       );

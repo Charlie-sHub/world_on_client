@@ -5,12 +5,12 @@ import 'package:worldon/generated/l10n.dart';
 
 class SubmitObjectiveButton extends StatelessWidget {
   const SubmitObjectiveButton({
-    Key key,
+    Key? key,
   }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return RaisedButton(
+    return ElevatedButton(
       onPressed: () => context.read<ObjectiveFormBloc>().add(
             const ObjectiveFormEvent.submitted(),
           ),

@@ -6,8 +6,8 @@ import 'package:worldon/domain/core/entities/user/user.dart';
 
 class UnBlockButton extends StatelessWidget {
   const UnBlockButton({
-    Key key,
-    @required this.user,
+    Key? key,
+    required this.user,
   }) : super(key: key);
 
   final User user;

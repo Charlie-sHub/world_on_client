@@ -5,8 +5,8 @@ import 'package:worldon/views/core/widgets/misc/world_on_cached_image.dart';
 
 class ImageStack extends StatelessWidget {
   const ImageStack({
-    Key key,
-    @required this.experience,
+    Key? key,
+    required this.experience,
   }) : super(key: key);
 
   final Experience experience;

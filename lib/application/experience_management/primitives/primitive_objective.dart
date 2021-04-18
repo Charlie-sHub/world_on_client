@@ -13,15 +13,15 @@ part 'primitive_objective.freezed.dart';
 
 @Deprecated("This class is not necessary for the current way to create objectives")
 @freezed
-abstract class PrimitiveObjective implements _$PrimitiveObjective {
+class PrimitiveObjective with _$PrimitiveObjective {
   const PrimitiveObjective._();
 
   const factory PrimitiveObjective({
-    @required UniqueId id,
-    @required String description,
-    @required double latitude,
-    @required double longitude,
-    @required File imageFile,
+    required UniqueId id,
+    required String description,
+    required double latitude,
+    required double longitude,
+    required File? imageFile,
   }) = _PrimitiveObjective;
 
   factory PrimitiveObjective.empty() => PrimitiveObjective(
@@ -38,7 +38,7 @@ abstract class PrimitiveObjective implements _$PrimitiveObjective {
         latitude: objective.coordinates.latitude.getOrCrash(),
         longitude: objective.coordinates.longitude.getOrCrash(),
         imageFile: objective.imageFile.fold(
-          () => null,
+          () {},
           dartz.id,
         ),
       );
@@ -51,6 +51,6 @@ abstract class PrimitiveObjective implements _$PrimitiveObjective {
           longitude: Longitude(longitude),
         ),
         imageURL: "",
-        imageFile: dartz.some(imageFile),
+        imageFile: dartz.some(imageFile!),
       );
 }

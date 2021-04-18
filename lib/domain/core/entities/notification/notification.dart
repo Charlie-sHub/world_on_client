@@ -13,21 +13,21 @@ part 'notification.freezed.dart';
 ///
 /// [User]s receive these in a variety of situations to notify them of things they might be interested in or what other [User]s want them to be notified of.
 @freezed
-abstract class Notification implements _$Notification {
+class Notification with _$Notification {
   const Notification._();
 
   const factory Notification({
-    @required UniqueId id,
-    @required User sender,
+    required UniqueId id,
+    required User sender,
     // TODO: Is the receiver necessary for the domain entity?
     // The receiver will always be the logged in user
     // Relation is needed in the database of course, but not really beyond that
     // Could be left to just the id
-    @required User receiver,
-    @required EntityDescription description,
-    @required bool seen,
-    @required PastDate creationDate,
-    @required NotificationType type,
+    required User receiver,
+    required EntityDescription description,
+    required bool seen,
+    required PastDate creationDate,
+    required NotificationType type,
   }) = _Notification;
 
   factory Notification.empty() => Notification(

@@ -8,8 +8,8 @@ import 'package:worldon/views/core/misc/world_on_colors.dart';
 
 class SearchUsersDialer extends StatelessWidget {
   const SearchUsersDialer({
-    Key key,
-    @required this.searchTerm,
+    Key? key,
+    required this.searchTerm,
   }) : super(key: key);
 
   final SearchTerm searchTerm;

@@ -8,14 +8,14 @@ part 'system.freezed.dart';
 ///
 /// [System]s gives the administration a way to consult how the [User]s are getting to the application, to better focus out efforts in the future.
 @freezed
-abstract class System implements _$System {
+class System with _$System {
   const System._();
 
   const factory System({
-    @required UniqueId id,
-    @required String name,
-    @required String type,
-    @required String company,
+    required UniqueId id,
+    required String name,
+    required String type,
+    required String company,
   }) = _System;
 
   factory System.empty() => System(

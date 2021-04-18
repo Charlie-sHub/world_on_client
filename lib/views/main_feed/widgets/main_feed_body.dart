@@ -11,7 +11,7 @@ import 'package:worldon/views/core/widgets/misc/world_on_progress_indicator.dart
 import '../../../injection.dart';
 
 class MainFeedBody extends StatelessWidget {
-  const MainFeedBody({Key key}) : super(key: key);
+  const MainFeedBody({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -38,7 +38,7 @@ class MainFeedBody extends StatelessWidget {
                   return ExperienceCard(
                     experience: _experience,
                     key: Key(_experience.id.toString()),
-                    reloadFunction: (_) => context.read<MainFeedWatcherBloc>().add(
+                    reloadFunction: () => context.read<MainFeedWatcherBloc>().add(
                           const MainFeedWatcherEvent.watchMainFeedStarted(),
                         ),
                   );

@@ -19,7 +19,7 @@ class LogInPage extends StatelessWidget {
         child: BlocConsumer<LogInFormBloc, LogInFormState>(
           listenWhen: (previous, current) => previous.failureOrSuccessOption != current.failureOrSuccessOption,
           listener: (context, state) => state.failureOrSuccessOption.fold(
-            () => null,
+            () {},
             (either) => either.fold(
               (failure) => _onFailure(failure, context),
               (_) => _onSuccess(context),
@@ -51,19 +51,23 @@ class LogInPage extends StatelessWidget {
           serverError: (failure) => failure.errorString,
           orElse: () => S.of(context).unknownError,
         ),
+        coreApplication: (failure) => failure.coreApplicationFailure.maybeMap(
+          emptyFields: (_) => S.of(context).emptyFields,
+          orElse: () => S.of(context).unknownError,
+        ),
         orElse: () => S.of(context).unknownError,
       ),
     ).show(context).then(
-        (value) {
+      (value) {
         if (unregistered) {
-          context.navigator.push(Routes.registrationPage);
+          context.router.push(const RegistrationPageRoute());
         }
       },
     );
   }
 
   void _onSuccess(BuildContext context) {
-    context.navigator.replace(Routes.mainPage);
+    context.router.replace(const MainPageRoute());
     context.read<AuthenticationBloc>().add(const AuthenticationEvent.authenticationCheckRequested());
   }
 }

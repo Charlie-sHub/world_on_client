@@ -5,8 +5,12 @@ import 'package:worldon/generated/l10n.dart';
 class OwnedButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return RaisedButton(
-      color: Colors.grey,
+    return ElevatedButton(
+      style: ButtonStyle(
+        backgroundColor: MaterialStateProperty.all(
+          Colors.grey,
+        ),
+      ),
       onPressed: () => FlushbarHelper.createInformation(
         message: S.of(context).alreadyOwned,
       ).show(context),

@@ -1,5 +1,4 @@
 import 'package:auto_route/auto_route.dart';
-import 'package:auto_route/auto_route_annotations.dart';
 import 'package:worldon/views/authentication/pages/log_in_page.dart';
 import 'package:worldon/views/authentication/pages/registration_page.dart';
 import 'package:worldon/views/core/pages/main_page.dart';
@@ -30,4 +29,4 @@ import 'package:worldon/views/tag_management/pages/tag_management_page.dart';
     MaterialRoute(page: StorePage),
   ],
 )
-class $Router {}
+class $AppRouter {}

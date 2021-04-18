@@ -1,5 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides
 
 part of 'rewards_creation_bloc.dart';
 
@@ -9,25 +9,25 @@ part of 'rewards_creation_bloc.dart';
 
 T _$identity<T>(T value) => value;
 
+final _privateConstructorUsedError = UnsupportedError(
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+
 /// @nodoc
 class _$RewardsCreationEventTearOff {
   const _$RewardsCreationEventTearOff();
 
-// ignore: unused_element
   _Initialized initialized(Option<RewardSet> rewardSetOption) {
     return _Initialized(
       rewardSetOption,
     );
   }
 
-// ignore: unused_element
   _AddedReward addedReward(Reward reward) {
     return _AddedReward(
       reward,
     );
   }
 
-// ignore: unused_element
   _RemovedReward removedReward(Reward reward) {
     return _RemovedReward(
       reward,
@@ -36,37 +36,43 @@ class _$RewardsCreationEventTearOff {
 }
 
 /// @nodoc
-// ignore: unused_element
 const $RewardsCreationEvent = _$RewardsCreationEventTearOff();
 
 /// @nodoc
 mixin _$RewardsCreationEvent {
   @optionalTypeArgs
-  TResult when<TResult extends Object>({
-    @required TResult initialized(Option<RewardSet> rewardSetOption),
-    @required TResult addedReward(Reward reward),
-    @required TResult removedReward(Reward reward),
-  });
+  TResult when<TResult extends Object?>({
+    required TResult Function(Option<RewardSet> rewardSetOption) initialized,
+    required TResult Function(Reward reward) addedReward,
+    required TResult Function(Reward reward) removedReward,
+  }) =>
+      throw _privateConstructorUsedError;
+
   @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object>({
-    TResult initialized(Option<RewardSet> rewardSetOption),
-    TResult addedReward(Reward reward),
-    TResult removedReward(Reward reward),
-    @required TResult orElse(),
-  });
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(Option<RewardSet> rewardSetOption)? initialized,
+    TResult Function(Reward reward)? addedReward,
+    TResult Function(Reward reward)? removedReward,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
+
   @optionalTypeArgs
-  TResult map<TResult extends Object>({
-    @required TResult initialized(_Initialized value),
-    @required TResult addedReward(_AddedReward value),
-    @required TResult removedReward(_RemovedReward value),
-  });
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initialized value) initialized,
+    required TResult Function(_AddedReward value) addedReward,
+    required TResult Function(_RemovedReward value) removedReward,
+  }) =>
+      throw _privateConstructorUsedError;
+
   @optionalTypeArgs
-  TResult maybeMap<TResult extends Object>({
-    TResult initialized(_Initialized value),
-    TResult addedReward(_AddedReward value),
-    TResult removedReward(_RemovedReward value),
-    @required TResult orElse(),
-  });
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initialized value)? initialized,
+    TResult Function(_AddedReward value)? addedReward,
+    TResult Function(_RemovedReward value)? removedReward,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -100,17 +106,20 @@ class __$InitializedCopyWithImpl<$Res> extends _$RewardsCreationEventCopyWithImp
 
   @override
   $Res call({
-    Object rewardSetOption = freezed,
+    Object? rewardSetOption = freezed,
   }) {
     return _then(_Initialized(
-      rewardSetOption == freezed ? _value.rewardSetOption : rewardSetOption as Option<RewardSet>,
+      rewardSetOption == freezed
+          ? _value.rewardSetOption
+          : rewardSetOption // ignore: cast_nullable_to_non_nullable
+              as Option<RewardSet>,
     ));
   }
 }
 
 /// @nodoc
 class _$_Initialized implements _Initialized {
-  const _$_Initialized(this.rewardSetOption) : assert(rewardSetOption != null);
+  const _$_Initialized(this.rewardSetOption);
 
   @override
   final Option<RewardSet> rewardSetOption;
@@ -134,26 +143,22 @@ class _$_Initialized implements _Initialized {
 
   @override
   @optionalTypeArgs
-  TResult when<TResult extends Object>({
-    @required TResult initialized(Option<RewardSet> rewardSetOption),
-    @required TResult addedReward(Reward reward),
-    @required TResult removedReward(Reward reward),
+  TResult when<TResult extends Object?>({
+    required TResult Function(Option<RewardSet> rewardSetOption) initialized,
+    required TResult Function(Reward reward) addedReward,
+    required TResult Function(Reward reward) removedReward,
   }) {
-    assert(initialized != null);
-    assert(addedReward != null);
-    assert(removedReward != null);
     return initialized(rewardSetOption);
   }
 
   @override
   @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object>({
-    TResult initialized(Option<RewardSet> rewardSetOption),
-    TResult addedReward(Reward reward),
-    TResult removedReward(Reward reward),
-    @required TResult orElse(),
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(Option<RewardSet> rewardSetOption)? initialized,
+    TResult Function(Reward reward)? addedReward,
+    TResult Function(Reward reward)? removedReward,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (initialized != null) {
       return initialized(rewardSetOption);
     }
@@ -162,26 +167,22 @@ class _$_Initialized implements _Initialized {
 
   @override
   @optionalTypeArgs
-  TResult map<TResult extends Object>({
-    @required TResult initialized(_Initialized value),
-    @required TResult addedReward(_AddedReward value),
-    @required TResult removedReward(_RemovedReward value),
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initialized value) initialized,
+    required TResult Function(_AddedReward value) addedReward,
+    required TResult Function(_RemovedReward value) removedReward,
   }) {
-    assert(initialized != null);
-    assert(addedReward != null);
-    assert(removedReward != null);
     return initialized(this);
   }
 
   @override
   @optionalTypeArgs
-  TResult maybeMap<TResult extends Object>({
-    TResult initialized(_Initialized value),
-    TResult addedReward(_AddedReward value),
-    TResult removedReward(_RemovedReward value),
-    @required TResult orElse(),
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initialized value)? initialized,
+    TResult Function(_AddedReward value)? addedReward,
+    TResult Function(_RemovedReward value)? removedReward,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (initialized != null) {
       return initialized(this);
     }
@@ -192,10 +193,10 @@ class _$_Initialized implements _Initialized {
 abstract class _Initialized implements RewardsCreationEvent {
   const factory _Initialized(Option<RewardSet> rewardSetOption) = _$_Initialized;
 
-  Option<RewardSet> get rewardSetOption;
+  Option<RewardSet> get rewardSetOption => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
-  _$InitializedCopyWith<_Initialized> get copyWith;
+  _$InitializedCopyWith<_Initialized> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -216,18 +217,18 @@ class __$AddedRewardCopyWithImpl<$Res> extends _$RewardsCreationEventCopyWithImp
 
   @override
   $Res call({
-    Object reward = freezed,
+    Object? reward = freezed,
   }) {
     return _then(_AddedReward(
-      reward == freezed ? _value.reward : reward as Reward,
+      reward == freezed
+          ? _value.reward
+          : reward // ignore: cast_nullable_to_non_nullable
+              as Reward,
     ));
   }
 
   @override
   $RewardCopyWith<$Res> get reward {
-    if (_value.reward == null) {
-      return null;
-    }
     return $RewardCopyWith<$Res>(_value.reward, (value) {
       return _then(_value.copyWith(reward: value));
     });
@@ -236,7 +237,7 @@ class __$AddedRewardCopyWithImpl<$Res> extends _$RewardsCreationEventCopyWithImp
 
 /// @nodoc
 class _$_AddedReward implements _AddedReward {
-  const _$_AddedReward(this.reward) : assert(reward != null);
+  const _$_AddedReward(this.reward);
 
   @override
   final Reward reward;
@@ -260,26 +261,22 @@ class _$_AddedReward implements _AddedReward {
 
   @override
   @optionalTypeArgs
-  TResult when<TResult extends Object>({
-    @required TResult initialized(Option<RewardSet> rewardSetOption),
-    @required TResult addedReward(Reward reward),
-    @required TResult removedReward(Reward reward),
+  TResult when<TResult extends Object?>({
+    required TResult Function(Option<RewardSet> rewardSetOption) initialized,
+    required TResult Function(Reward reward) addedReward,
+    required TResult Function(Reward reward) removedReward,
   }) {
-    assert(initialized != null);
-    assert(addedReward != null);
-    assert(removedReward != null);
     return addedReward(reward);
   }
 
   @override
   @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object>({
-    TResult initialized(Option<RewardSet> rewardSetOption),
-    TResult addedReward(Reward reward),
-    TResult removedReward(Reward reward),
-    @required TResult orElse(),
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(Option<RewardSet> rewardSetOption)? initialized,
+    TResult Function(Reward reward)? addedReward,
+    TResult Function(Reward reward)? removedReward,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (addedReward != null) {
       return addedReward(reward);
     }
@@ -288,26 +285,22 @@ class _$_AddedReward implements _AddedReward {
 
   @override
   @optionalTypeArgs
-  TResult map<TResult extends Object>({
-    @required TResult initialized(_Initialized value),
-    @required TResult addedReward(_AddedReward value),
-    @required TResult removedReward(_RemovedReward value),
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initialized value) initialized,
+    required TResult Function(_AddedReward value) addedReward,
+    required TResult Function(_RemovedReward value) removedReward,
   }) {
-    assert(initialized != null);
-    assert(addedReward != null);
-    assert(removedReward != null);
     return addedReward(this);
   }
 
   @override
   @optionalTypeArgs
-  TResult maybeMap<TResult extends Object>({
-    TResult initialized(_Initialized value),
-    TResult addedReward(_AddedReward value),
-    TResult removedReward(_RemovedReward value),
-    @required TResult orElse(),
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initialized value)? initialized,
+    TResult Function(_AddedReward value)? addedReward,
+    TResult Function(_RemovedReward value)? removedReward,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (addedReward != null) {
       return addedReward(this);
     }
@@ -318,9 +311,10 @@ class _$_AddedReward implements _AddedReward {
 abstract class _AddedReward implements RewardsCreationEvent {
   const factory _AddedReward(Reward reward) = _$_AddedReward;
 
-  Reward get reward;
+  Reward get reward => throw _privateConstructorUsedError;
+
   @JsonKey(ignore: true)
-  _$AddedRewardCopyWith<_AddedReward> get copyWith;
+  _$AddedRewardCopyWith<_AddedReward> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -341,18 +335,18 @@ class __$RemovedRewardCopyWithImpl<$Res> extends _$RewardsCreationEventCopyWithI
 
   @override
   $Res call({
-    Object reward = freezed,
+    Object? reward = freezed,
   }) {
     return _then(_RemovedReward(
-      reward == freezed ? _value.reward : reward as Reward,
+      reward == freezed
+          ? _value.reward
+          : reward // ignore: cast_nullable_to_non_nullable
+              as Reward,
     ));
   }
 
   @override
   $RewardCopyWith<$Res> get reward {
-    if (_value.reward == null) {
-      return null;
-    }
     return $RewardCopyWith<$Res>(_value.reward, (value) {
       return _then(_value.copyWith(reward: value));
     });
@@ -361,7 +355,7 @@ class __$RemovedRewardCopyWithImpl<$Res> extends _$RewardsCreationEventCopyWithI
 
 /// @nodoc
 class _$_RemovedReward implements _RemovedReward {
-  const _$_RemovedReward(this.reward) : assert(reward != null);
+  const _$_RemovedReward(this.reward);
 
   @override
   final Reward reward;
@@ -385,26 +379,22 @@ class _$_RemovedReward implements _RemovedReward {
 
   @override
   @optionalTypeArgs
-  TResult when<TResult extends Object>({
-    @required TResult initialized(Option<RewardSet> rewardSetOption),
-    @required TResult addedReward(Reward reward),
-    @required TResult removedReward(Reward reward),
+  TResult when<TResult extends Object?>({
+    required TResult Function(Option<RewardSet> rewardSetOption) initialized,
+    required TResult Function(Reward reward) addedReward,
+    required TResult Function(Reward reward) removedReward,
   }) {
-    assert(initialized != null);
-    assert(addedReward != null);
-    assert(removedReward != null);
     return removedReward(reward);
   }
 
   @override
   @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object>({
-    TResult initialized(Option<RewardSet> rewardSetOption),
-    TResult addedReward(Reward reward),
-    TResult removedReward(Reward reward),
-    @required TResult orElse(),
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(Option<RewardSet> rewardSetOption)? initialized,
+    TResult Function(Reward reward)? addedReward,
+    TResult Function(Reward reward)? removedReward,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (removedReward != null) {
       return removedReward(reward);
     }
@@ -413,26 +403,22 @@ class _$_RemovedReward implements _RemovedReward {
 
   @override
   @optionalTypeArgs
-  TResult map<TResult extends Object>({
-    @required TResult initialized(_Initialized value),
-    @required TResult addedReward(_AddedReward value),
-    @required TResult removedReward(_RemovedReward value),
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initialized value) initialized,
+    required TResult Function(_AddedReward value) addedReward,
+    required TResult Function(_RemovedReward value) removedReward,
   }) {
-    assert(initialized != null);
-    assert(addedReward != null);
-    assert(removedReward != null);
     return removedReward(this);
   }
 
   @override
   @optionalTypeArgs
-  TResult maybeMap<TResult extends Object>({
-    TResult initialized(_Initialized value),
-    TResult addedReward(_AddedReward value),
-    TResult removedReward(_RemovedReward value),
-    @required TResult orElse(),
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initialized value)? initialized,
+    TResult Function(_AddedReward value)? addedReward,
+    TResult Function(_RemovedReward value)? removedReward,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (removedReward != null) {
       return removedReward(this);
     }
@@ -443,17 +429,17 @@ class _$_RemovedReward implements _RemovedReward {
 abstract class _RemovedReward implements RewardsCreationEvent {
   const factory _RemovedReward(Reward reward) = _$_RemovedReward;
 
-  Reward get reward;
+  Reward get reward => throw _privateConstructorUsedError;
+
   @JsonKey(ignore: true)
-  _$RemovedRewardCopyWith<_RemovedReward> get copyWith;
+  _$RemovedRewardCopyWith<_RemovedReward> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 class _$RewardsCreationStateTearOff {
   const _$RewardsCreationStateTearOff();
 
-// ignore: unused_element
-  _RewardsCreationState call({@required KtSet<Reward> rewardsCreated}) {
+  _RewardsCreationState call({required KtSet<Reward> rewardsCreated}) {
     return _RewardsCreationState(
       rewardsCreated: rewardsCreated,
     );
@@ -461,15 +447,14 @@ class _$RewardsCreationStateTearOff {
 }
 
 /// @nodoc
-// ignore: unused_element
 const $RewardsCreationState = _$RewardsCreationStateTearOff();
 
 /// @nodoc
 mixin _$RewardsCreationState {
-  KtSet<Reward> get rewardsCreated;
+  KtSet<Reward> get rewardsCreated => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
-  $RewardsCreationStateCopyWith<RewardsCreationState> get copyWith;
+  $RewardsCreationStateCopyWith<RewardsCreationState> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -490,10 +475,13 @@ class _$RewardsCreationStateCopyWithImpl<$Res> implements $RewardsCreationStateC
 
   @override
   $Res call({
-    Object rewardsCreated = freezed,
+    Object? rewardsCreated = freezed,
   }) {
     return _then(_value.copyWith(
-      rewardsCreated: rewardsCreated == freezed ? _value.rewardsCreated : rewardsCreated as KtSet<Reward>,
+      rewardsCreated: rewardsCreated == freezed
+          ? _value.rewardsCreated
+          : rewardsCreated // ignore: cast_nullable_to_non_nullable
+              as KtSet<Reward>,
     ));
   }
 }
@@ -515,17 +503,20 @@ class __$RewardsCreationStateCopyWithImpl<$Res> extends _$RewardsCreationStateCo
 
   @override
   $Res call({
-    Object rewardsCreated = freezed,
+    Object? rewardsCreated = freezed,
   }) {
     return _then(_RewardsCreationState(
-      rewardsCreated: rewardsCreated == freezed ? _value.rewardsCreated : rewardsCreated as KtSet<Reward>,
+      rewardsCreated: rewardsCreated == freezed
+          ? _value.rewardsCreated
+          : rewardsCreated // ignore: cast_nullable_to_non_nullable
+              as KtSet<Reward>,
     ));
   }
 }
 
 /// @nodoc
 class _$_RewardsCreationState implements _RewardsCreationState {
-  const _$_RewardsCreationState({@required this.rewardsCreated}) : assert(rewardsCreated != null);
+  const _$_RewardsCreationState({required this.rewardsCreated});
 
   @override
   final KtSet<Reward> rewardsCreated;
@@ -540,7 +531,7 @@ class _$_RewardsCreationState implements _RewardsCreationState {
     return identical(this, other) ||
         (other is _RewardsCreationState && (identical(other.rewardsCreated, rewardsCreated) || const DeepCollectionEquality().equals(other.rewardsCreated, rewardsCreated)));
   }
-  
+
   @override
   int get hashCode => runtimeType.hashCode ^ const DeepCollectionEquality().hash(rewardsCreated);
 
@@ -550,12 +541,12 @@ class _$_RewardsCreationState implements _RewardsCreationState {
 }
 
 abstract class _RewardsCreationState implements RewardsCreationState {
-  const factory _RewardsCreationState({@required KtSet<Reward> rewardsCreated}) = _$_RewardsCreationState;
+  const factory _RewardsCreationState({required KtSet<Reward> rewardsCreated}) = _$_RewardsCreationState;
 
   @override
-  KtSet<Reward> get rewardsCreated;
+  KtSet<Reward> get rewardsCreated => throw _privateConstructorUsedError;
 
   @override
   @JsonKey(ignore: true)
-  _$RewardsCreationStateCopyWith<_RewardsCreationState> get copyWith;
+  _$RewardsCreationStateCopyWith<_RewardsCreationState> get copyWith => throw _privateConstructorUsedError;
 }

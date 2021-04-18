@@ -7,8 +7,8 @@ class EmailTextField extends StatelessWidget {
   final String initialValue;
 
   const EmailTextField({
-    Key key,
-    @required this.initialValue,
+    Key? key,
+    required this.initialValue,
   }) : super(key: key);
 
   @override

@@ -1,5 +1,4 @@
 import 'package:dartz/dartz.dart';
-import 'package:flutter/foundation.dart';
 import 'package:kt_dart/kt.dart';
 import 'package:worldon/core/error/failure.dart';
 import 'package:worldon/domain/core/entities/achievement/achievement.dart';
@@ -23,8 +22,8 @@ abstract class AchievementRepositoryInterface {
   /// Awards the [Achievement] associated with the given id to the [User] associated with the given user id.
   // Is this really necessary? probably
   Future<Either<Failure, Unit>> awardAchievement({
-    @required UniqueId achievementId,
-    @required UniqueId userId,
+    required UniqueId achievementId,
+    required UniqueId userId,
   });
 
   /// Gets all the [Achievement]s in the database.

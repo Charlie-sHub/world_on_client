@@ -7,12 +7,12 @@ part 'options_dto.freezed.dart';
 part 'options_dto.g.dart';
 
 @freezed
-abstract class OptionsDto implements _$OptionsDto {
+class OptionsDto with _$OptionsDto {
   const OptionsDto._();
 
   const factory OptionsDto({
-    @required String id,
-    @required String languageCode,
+    required String id,
+    required String languageCode,
   }) = _OptionsDto;
 
   factory OptionsDto.fromDomain(Options options) => OptionsDto(
@@ -28,7 +28,7 @@ abstract class OptionsDto implements _$OptionsDto {
   factory OptionsDto.fromJson(Map<String, dynamic> json) => _$OptionsDtoFromJson(json);
 
   factory OptionsDto.fromFirestore(DocumentSnapshot document) => OptionsDto.fromJson(
-        document.data(),
+        document.data()!,
       ).copyWith(
         id: document.id,
       );

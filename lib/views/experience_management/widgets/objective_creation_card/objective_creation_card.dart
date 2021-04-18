@@ -20,8 +20,8 @@ import 'created_objective_card.dart';
 
 class ObjectiveCreationCard extends HookWidget {
   const ObjectiveCreationCard({
-    Key key,
-    @required this.objectiveListOption,
+    Key? key,
+    required this.objectiveListOption,
   }) : super(key: key);
 
   final Option<ObjectiveList> objectiveListOption;

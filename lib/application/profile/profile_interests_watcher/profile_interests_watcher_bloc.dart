@@ -20,7 +20,8 @@ part 'profile_interests_watcher_state.dart';
 @injectable
 class ProfileInterestsWatcherBloc extends Bloc<ProfileInterestsWatcherEvent, ProfileInterestsWatcherState> {
   ProfileInterestsWatcherBloc() : super(const ProfileInterestsWatcherState.initial());
-  StreamSubscription<Either<Failure, KtList<Tag>>> _userInterestsStreamSubscription;
+
+  StreamSubscription<Either<Failure, KtList<Tag>>>? _userInterestsStreamSubscription;
 
   @override
   Stream<ProfileInterestsWatcherState> mapEventToState(ProfileInterestsWatcherEvent event) async* {

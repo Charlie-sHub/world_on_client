@@ -1,5 +1,4 @@
 import 'package:dartz/dartz.dart';
-import 'package:flutter/foundation.dart';
 import 'package:injectable/injectable.dart';
 import 'package:worldon/core/error/failure.dart';
 import 'package:worldon/domain/authentication/repository/authentication_repository_interface.dart';
@@ -31,7 +30,7 @@ class Params {
   final Password password;
 
   Params({
-    @required this.email,
-    @required this.password,
+    required this.email,
+    required this.password,
   });
 }

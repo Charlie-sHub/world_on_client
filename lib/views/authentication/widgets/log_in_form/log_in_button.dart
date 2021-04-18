@@ -6,19 +6,24 @@ import 'package:worldon/views/core/misc/world_on_colors.dart';
 
 class LogInButton extends StatelessWidget {
   const LogInButton({
-    Key key,
+    Key? key,
   }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return RaisedButton(
+    return ElevatedButton(
       onPressed: () => context.read<LogInFormBloc>().add(
             const LogInFormEvent.loggedIn(),
           ),
-      color: WorldOnColors.background,
-      shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.circular(0.0),
-        side: const BorderSide(color: WorldOnColors.primary),
+      style: ButtonStyle(
+        backgroundColor: MaterialStateProperty.all(
+          WorldOnColors.background,
+        ),
+        shape: MaterialStateProperty.all(
+          const RoundedRectangleBorder(
+            side: BorderSide(color: WorldOnColors.primary),
+          ),
+        ),
       ),
       child: Text(
         S.of(context).logIn,

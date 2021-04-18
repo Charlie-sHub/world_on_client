@@ -1,7 +1,7 @@
 part of 'profile_users_watcher_bloc.dart';
 
 @freezed
-abstract class ProfileUsersWatcherState with _$ProfileUsersWatcherState {
+class ProfileUsersWatcherState with _$ProfileUsersWatcherState {
   const factory ProfileUsersWatcherState.initial() = _Initial;
 
   const factory ProfileUsersWatcherState.loadInProgress() = _LoadInProgress;

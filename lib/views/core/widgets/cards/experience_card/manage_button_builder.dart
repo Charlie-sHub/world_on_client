@@ -10,13 +10,13 @@ import 'manage_menu_button.dart';
 
 class ManageButtonBuilder extends StatelessWidget {
   const ManageButtonBuilder({
-    Key key,
-    @required this.experience,
-    @required this.reloadFunction,
+    Key? key,
+    required this.experience,
+    required this.reloadFunction,
   }) : super(key: key);
 
   final Experience experience;
-  final Function(Object parameter) reloadFunction;
+  final Function() reloadFunction;
 
   @override
   Widget build(BuildContext context) {

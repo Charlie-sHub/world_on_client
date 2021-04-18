@@ -21,12 +21,12 @@ import 'package:worldon/views/core/widgets/misc/experience_likes_counter.dart';
 // And show it on the image or somewhere on the card
 class ExperienceCard extends StatelessWidget {
   final Experience experience;
-  final Function(Object param) reloadFunction;
+  final Function() reloadFunction;
 
   const ExperienceCard({
-    Key key,
-    @required this.experience,
-    @required this.reloadFunction,
+    Key? key,
+    required this.experience,
+    required this.reloadFunction,
   }) : super(key: key);
 
   @override
@@ -135,6 +135,6 @@ class ExperienceCard extends StatelessWidget {
                   ),
               orElse: () => S.of(context).unknownError),
         ).show(context),
-        orElse: () => null,
+        orElse: () {},
       );
 }

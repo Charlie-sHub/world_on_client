@@ -1,5 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides
 
 part of 'watch_purchasable_items_bloc.dart';
 
@@ -9,16 +9,17 @@ part of 'watch_purchasable_items_bloc.dart';
 
 T _$identity<T>(T value) => value;
 
+final _privateConstructorUsedError = UnsupportedError(
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+
 /// @nodoc
 class _$WatchPurchasableItemsEventTearOff {
   const _$WatchPurchasableItemsEventTearOff();
 
-// ignore: unused_element
   _WatchPurchasableItemsStarted watchPurchasableItemsStarted() {
     return const _WatchPurchasableItemsStarted();
   }
 
-// ignore: unused_element
   _ResultsReceived resultsReceived(Either<Failure, KtList<Item>> failureOrItems) {
     return _ResultsReceived(
       failureOrItems,
@@ -27,33 +28,39 @@ class _$WatchPurchasableItemsEventTearOff {
 }
 
 /// @nodoc
-// ignore: unused_element
 const $WatchPurchasableItemsEvent = _$WatchPurchasableItemsEventTearOff();
 
 /// @nodoc
 mixin _$WatchPurchasableItemsEvent {
   @optionalTypeArgs
-  TResult when<TResult extends Object>({
-    @required TResult watchPurchasableItemsStarted(),
-    @required TResult resultsReceived(Either<Failure, KtList<Item>> failureOrItems),
-  });
+  TResult when<TResult extends Object?>({
+    required TResult Function() watchPurchasableItemsStarted,
+    required TResult Function(Either<Failure, KtList<Item>> failureOrItems) resultsReceived,
+  }) =>
+      throw _privateConstructorUsedError;
+
   @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object>({
-    TResult watchPurchasableItemsStarted(),
-    TResult resultsReceived(Either<Failure, KtList<Item>> failureOrItems),
-    @required TResult orElse(),
-  });
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? watchPurchasableItemsStarted,
+    TResult Function(Either<Failure, KtList<Item>> failureOrItems)? resultsReceived,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
+
   @optionalTypeArgs
-  TResult map<TResult extends Object>({
-    @required TResult watchPurchasableItemsStarted(_WatchPurchasableItemsStarted value),
-    @required TResult resultsReceived(_ResultsReceived value),
-  });
+  TResult map<TResult extends Object?>({
+    required TResult Function(_WatchPurchasableItemsStarted value) watchPurchasableItemsStarted,
+    required TResult Function(_ResultsReceived value) resultsReceived,
+  }) =>
+      throw _privateConstructorUsedError;
+
   @optionalTypeArgs
-  TResult maybeMap<TResult extends Object>({
-    TResult watchPurchasableItemsStarted(_WatchPurchasableItemsStarted value),
-    TResult resultsReceived(_ResultsReceived value),
-    @required TResult orElse(),
-  });
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_WatchPurchasableItemsStarted value)? watchPurchasableItemsStarted,
+    TResult Function(_ResultsReceived value)? resultsReceived,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -104,23 +111,20 @@ class _$_WatchPurchasableItemsStarted implements _WatchPurchasableItemsStarted {
 
   @override
   @optionalTypeArgs
-  TResult when<TResult extends Object>({
-    @required TResult watchPurchasableItemsStarted(),
-    @required TResult resultsReceived(Either<Failure, KtList<Item>> failureOrItems),
+  TResult when<TResult extends Object?>({
+    required TResult Function() watchPurchasableItemsStarted,
+    required TResult Function(Either<Failure, KtList<Item>> failureOrItems) resultsReceived,
   }) {
-    assert(watchPurchasableItemsStarted != null);
-    assert(resultsReceived != null);
     return watchPurchasableItemsStarted();
   }
 
   @override
   @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object>({
-    TResult watchPurchasableItemsStarted(),
-    TResult resultsReceived(Either<Failure, KtList<Item>> failureOrItems),
-    @required TResult orElse(),
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? watchPurchasableItemsStarted,
+    TResult Function(Either<Failure, KtList<Item>> failureOrItems)? resultsReceived,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (watchPurchasableItemsStarted != null) {
       return watchPurchasableItemsStarted();
     }
@@ -129,23 +133,20 @@ class _$_WatchPurchasableItemsStarted implements _WatchPurchasableItemsStarted {
 
   @override
   @optionalTypeArgs
-  TResult map<TResult extends Object>({
-    @required TResult watchPurchasableItemsStarted(_WatchPurchasableItemsStarted value),
-    @required TResult resultsReceived(_ResultsReceived value),
+  TResult map<TResult extends Object?>({
+    required TResult Function(_WatchPurchasableItemsStarted value) watchPurchasableItemsStarted,
+    required TResult Function(_ResultsReceived value) resultsReceived,
   }) {
-    assert(watchPurchasableItemsStarted != null);
-    assert(resultsReceived != null);
     return watchPurchasableItemsStarted(this);
   }
 
   @override
   @optionalTypeArgs
-  TResult maybeMap<TResult extends Object>({
-    TResult watchPurchasableItemsStarted(_WatchPurchasableItemsStarted value),
-    TResult resultsReceived(_ResultsReceived value),
-    @required TResult orElse(),
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_WatchPurchasableItemsStarted value)? watchPurchasableItemsStarted,
+    TResult Function(_ResultsReceived value)? resultsReceived,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (watchPurchasableItemsStarted != null) {
       return watchPurchasableItemsStarted(this);
     }
@@ -173,17 +174,20 @@ class __$ResultsReceivedCopyWithImpl<$Res> extends _$WatchPurchasableItemsEventC
 
   @override
   $Res call({
-    Object failureOrItems = freezed,
+    Object? failureOrItems = freezed,
   }) {
     return _then(_ResultsReceived(
-      failureOrItems == freezed ? _value.failureOrItems : failureOrItems as Either<Failure, KtList<Item>>,
+      failureOrItems == freezed
+          ? _value.failureOrItems
+          : failureOrItems // ignore: cast_nullable_to_non_nullable
+              as Either<Failure, KtList<Item>>,
     ));
   }
 }
 
 /// @nodoc
 class _$_ResultsReceived implements _ResultsReceived {
-  const _$_ResultsReceived(this.failureOrItems) : assert(failureOrItems != null);
+  const _$_ResultsReceived(this.failureOrItems);
 
   @override
   final Either<Failure, KtList<Item>> failureOrItems;
@@ -207,23 +211,20 @@ class _$_ResultsReceived implements _ResultsReceived {
 
   @override
   @optionalTypeArgs
-  TResult when<TResult extends Object>({
-    @required TResult watchPurchasableItemsStarted(),
-    @required TResult resultsReceived(Either<Failure, KtList<Item>> failureOrItems),
+  TResult when<TResult extends Object?>({
+    required TResult Function() watchPurchasableItemsStarted,
+    required TResult Function(Either<Failure, KtList<Item>> failureOrItems) resultsReceived,
   }) {
-    assert(watchPurchasableItemsStarted != null);
-    assert(resultsReceived != null);
     return resultsReceived(failureOrItems);
   }
 
   @override
   @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object>({
-    TResult watchPurchasableItemsStarted(),
-    TResult resultsReceived(Either<Failure, KtList<Item>> failureOrItems),
-    @required TResult orElse(),
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? watchPurchasableItemsStarted,
+    TResult Function(Either<Failure, KtList<Item>> failureOrItems)? resultsReceived,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (resultsReceived != null) {
       return resultsReceived(failureOrItems);
     }
@@ -232,23 +233,20 @@ class _$_ResultsReceived implements _ResultsReceived {
 
   @override
   @optionalTypeArgs
-  TResult map<TResult extends Object>({
-    @required TResult watchPurchasableItemsStarted(_WatchPurchasableItemsStarted value),
-    @required TResult resultsReceived(_ResultsReceived value),
+  TResult map<TResult extends Object?>({
+    required TResult Function(_WatchPurchasableItemsStarted value) watchPurchasableItemsStarted,
+    required TResult Function(_ResultsReceived value) resultsReceived,
   }) {
-    assert(watchPurchasableItemsStarted != null);
-    assert(resultsReceived != null);
     return resultsReceived(this);
   }
 
   @override
   @optionalTypeArgs
-  TResult maybeMap<TResult extends Object>({
-    TResult watchPurchasableItemsStarted(_WatchPurchasableItemsStarted value),
-    TResult resultsReceived(_ResultsReceived value),
-    @required TResult orElse(),
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_WatchPurchasableItemsStarted value)? watchPurchasableItemsStarted,
+    TResult Function(_ResultsReceived value)? resultsReceived,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (resultsReceived != null) {
       return resultsReceived(this);
     }
@@ -259,34 +257,30 @@ class _$_ResultsReceived implements _ResultsReceived {
 abstract class _ResultsReceived implements WatchPurchasableItemsEvent {
   const factory _ResultsReceived(Either<Failure, KtList<Item>> failureOrItems) = _$_ResultsReceived;
 
-  Either<Failure, KtList<Item>> get failureOrItems;
+  Either<Failure, KtList<Item>> get failureOrItems => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
-  _$ResultsReceivedCopyWith<_ResultsReceived> get copyWith;
+  _$ResultsReceivedCopyWith<_ResultsReceived> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 class _$WatchPurchasableItemsStateTearOff {
   const _$WatchPurchasableItemsStateTearOff();
 
-// ignore: unused_element
   _Initial initial() {
     return const _Initial();
   }
 
-// ignore: unused_element
   _LoadInProgress loadInProgress() {
     return const _LoadInProgress();
   }
 
-// ignore: unused_element
   _LoadSuccess loadSuccess(KtList<Item> items) {
     return _LoadSuccess(
       items,
     );
   }
 
-// ignore: unused_element
   _LoadFailure loadFailure(Failure<dynamic> failure) {
     return _LoadFailure(
       failure,
@@ -295,41 +289,47 @@ class _$WatchPurchasableItemsStateTearOff {
 }
 
 /// @nodoc
-// ignore: unused_element
 const $WatchPurchasableItemsState = _$WatchPurchasableItemsStateTearOff();
 
 /// @nodoc
 mixin _$WatchPurchasableItemsState {
   @optionalTypeArgs
-  TResult when<TResult extends Object>({
-    @required TResult initial(),
-    @required TResult loadInProgress(),
-    @required TResult loadSuccess(KtList<Item> items),
-    @required TResult loadFailure(Failure<dynamic> failure),
-  });
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() loadInProgress,
+    required TResult Function(KtList<Item> items) loadSuccess,
+    required TResult Function(Failure<dynamic> failure) loadFailure,
+  }) =>
+      throw _privateConstructorUsedError;
+
   @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object>({
-    TResult initial(),
-    TResult loadInProgress(),
-    TResult loadSuccess(KtList<Item> items),
-    TResult loadFailure(Failure<dynamic> failure),
-    @required TResult orElse(),
-  });
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? loadInProgress,
+    TResult Function(KtList<Item> items)? loadSuccess,
+    TResult Function(Failure<dynamic> failure)? loadFailure,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
+
   @optionalTypeArgs
-  TResult map<TResult extends Object>({
-    @required TResult initial(_Initial value),
-    @required TResult loadInProgress(_LoadInProgress value),
-    @required TResult loadSuccess(_LoadSuccess value),
-    @required TResult loadFailure(_LoadFailure value),
-  });
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial value) initial,
+    required TResult Function(_LoadInProgress value) loadInProgress,
+    required TResult Function(_LoadSuccess value) loadSuccess,
+    required TResult Function(_LoadFailure value) loadFailure,
+  }) =>
+      throw _privateConstructorUsedError;
+
   @optionalTypeArgs
-  TResult maybeMap<TResult extends Object>({
-    TResult initial(_Initial value),
-    TResult loadInProgress(_LoadInProgress value),
-    TResult loadSuccess(_LoadSuccess value),
-    TResult loadFailure(_LoadFailure value),
-    @required TResult orElse(),
-  });
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_LoadInProgress value)? loadInProgress,
+    TResult Function(_LoadSuccess value)? loadSuccess,
+    TResult Function(_LoadFailure value)? loadFailure,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -379,29 +379,24 @@ class _$_Initial implements _Initial {
 
   @override
   @optionalTypeArgs
-  TResult when<TResult extends Object>({
-    @required TResult initial(),
-    @required TResult loadInProgress(),
-    @required TResult loadSuccess(KtList<Item> items),
-    @required TResult loadFailure(Failure<dynamic> failure),
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() loadInProgress,
+    required TResult Function(KtList<Item> items) loadSuccess,
+    required TResult Function(Failure<dynamic> failure) loadFailure,
   }) {
-    assert(initial != null);
-    assert(loadInProgress != null);
-    assert(loadSuccess != null);
-    assert(loadFailure != null);
     return initial();
   }
 
   @override
   @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object>({
-    TResult initial(),
-    TResult loadInProgress(),
-    TResult loadSuccess(KtList<Item> items),
-    TResult loadFailure(Failure<dynamic> failure),
-    @required TResult orElse(),
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? loadInProgress,
+    TResult Function(KtList<Item> items)? loadSuccess,
+    TResult Function(Failure<dynamic> failure)? loadFailure,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (initial != null) {
       return initial();
     }
@@ -410,29 +405,24 @@ class _$_Initial implements _Initial {
 
   @override
   @optionalTypeArgs
-  TResult map<TResult extends Object>({
-    @required TResult initial(_Initial value),
-    @required TResult loadInProgress(_LoadInProgress value),
-    @required TResult loadSuccess(_LoadSuccess value),
-    @required TResult loadFailure(_LoadFailure value),
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial value) initial,
+    required TResult Function(_LoadInProgress value) loadInProgress,
+    required TResult Function(_LoadSuccess value) loadSuccess,
+    required TResult Function(_LoadFailure value) loadFailure,
   }) {
-    assert(initial != null);
-    assert(loadInProgress != null);
-    assert(loadSuccess != null);
-    assert(loadFailure != null);
     return initial(this);
   }
 
   @override
   @optionalTypeArgs
-  TResult maybeMap<TResult extends Object>({
-    TResult initial(_Initial value),
-    TResult loadInProgress(_LoadInProgress value),
-    TResult loadSuccess(_LoadSuccess value),
-    TResult loadFailure(_LoadFailure value),
-    @required TResult orElse(),
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_LoadInProgress value)? loadInProgress,
+    TResult Function(_LoadSuccess value)? loadSuccess,
+    TResult Function(_LoadFailure value)? loadFailure,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (initial != null) {
       return initial(this);
     }
@@ -476,29 +466,24 @@ class _$_LoadInProgress implements _LoadInProgress {
 
   @override
   @optionalTypeArgs
-  TResult when<TResult extends Object>({
-    @required TResult initial(),
-    @required TResult loadInProgress(),
-    @required TResult loadSuccess(KtList<Item> items),
-    @required TResult loadFailure(Failure<dynamic> failure),
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() loadInProgress,
+    required TResult Function(KtList<Item> items) loadSuccess,
+    required TResult Function(Failure<dynamic> failure) loadFailure,
   }) {
-    assert(initial != null);
-    assert(loadInProgress != null);
-    assert(loadSuccess != null);
-    assert(loadFailure != null);
     return loadInProgress();
   }
 
   @override
   @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object>({
-    TResult initial(),
-    TResult loadInProgress(),
-    TResult loadSuccess(KtList<Item> items),
-    TResult loadFailure(Failure<dynamic> failure),
-    @required TResult orElse(),
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? loadInProgress,
+    TResult Function(KtList<Item> items)? loadSuccess,
+    TResult Function(Failure<dynamic> failure)? loadFailure,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (loadInProgress != null) {
       return loadInProgress();
     }
@@ -507,29 +492,24 @@ class _$_LoadInProgress implements _LoadInProgress {
 
   @override
   @optionalTypeArgs
-  TResult map<TResult extends Object>({
-    @required TResult initial(_Initial value),
-    @required TResult loadInProgress(_LoadInProgress value),
-    @required TResult loadSuccess(_LoadSuccess value),
-    @required TResult loadFailure(_LoadFailure value),
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial value) initial,
+    required TResult Function(_LoadInProgress value) loadInProgress,
+    required TResult Function(_LoadSuccess value) loadSuccess,
+    required TResult Function(_LoadFailure value) loadFailure,
   }) {
-    assert(initial != null);
-    assert(loadInProgress != null);
-    assert(loadSuccess != null);
-    assert(loadFailure != null);
     return loadInProgress(this);
   }
 
   @override
   @optionalTypeArgs
-  TResult maybeMap<TResult extends Object>({
-    TResult initial(_Initial value),
-    TResult loadInProgress(_LoadInProgress value),
-    TResult loadSuccess(_LoadSuccess value),
-    TResult loadFailure(_LoadFailure value),
-    @required TResult orElse(),
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_LoadInProgress value)? loadInProgress,
+    TResult Function(_LoadSuccess value)? loadSuccess,
+    TResult Function(_LoadFailure value)? loadFailure,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (loadInProgress != null) {
       return loadInProgress(this);
     }
@@ -557,17 +537,20 @@ class __$LoadSuccessCopyWithImpl<$Res> extends _$WatchPurchasableItemsStateCopyW
 
   @override
   $Res call({
-    Object items = freezed,
+    Object? items = freezed,
   }) {
     return _then(_LoadSuccess(
-      items == freezed ? _value.items : items as KtList<Item>,
+      items == freezed
+          ? _value.items
+          : items // ignore: cast_nullable_to_non_nullable
+              as KtList<Item>,
     ));
   }
 }
 
 /// @nodoc
 class _$_LoadSuccess implements _LoadSuccess {
-  const _$_LoadSuccess(this.items) : assert(items != null);
+  const _$_LoadSuccess(this.items);
 
   @override
   final KtList<Item> items;
@@ -591,29 +574,24 @@ class _$_LoadSuccess implements _LoadSuccess {
 
   @override
   @optionalTypeArgs
-  TResult when<TResult extends Object>({
-    @required TResult initial(),
-    @required TResult loadInProgress(),
-    @required TResult loadSuccess(KtList<Item> items),
-    @required TResult loadFailure(Failure<dynamic> failure),
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() loadInProgress,
+    required TResult Function(KtList<Item> items) loadSuccess,
+    required TResult Function(Failure<dynamic> failure) loadFailure,
   }) {
-    assert(initial != null);
-    assert(loadInProgress != null);
-    assert(loadSuccess != null);
-    assert(loadFailure != null);
     return loadSuccess(items);
   }
 
   @override
   @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object>({
-    TResult initial(),
-    TResult loadInProgress(),
-    TResult loadSuccess(KtList<Item> items),
-    TResult loadFailure(Failure<dynamic> failure),
-    @required TResult orElse(),
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? loadInProgress,
+    TResult Function(KtList<Item> items)? loadSuccess,
+    TResult Function(Failure<dynamic> failure)? loadFailure,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (loadSuccess != null) {
       return loadSuccess(items);
     }
@@ -622,29 +600,24 @@ class _$_LoadSuccess implements _LoadSuccess {
 
   @override
   @optionalTypeArgs
-  TResult map<TResult extends Object>({
-    @required TResult initial(_Initial value),
-    @required TResult loadInProgress(_LoadInProgress value),
-    @required TResult loadSuccess(_LoadSuccess value),
-    @required TResult loadFailure(_LoadFailure value),
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial value) initial,
+    required TResult Function(_LoadInProgress value) loadInProgress,
+    required TResult Function(_LoadSuccess value) loadSuccess,
+    required TResult Function(_LoadFailure value) loadFailure,
   }) {
-    assert(initial != null);
-    assert(loadInProgress != null);
-    assert(loadSuccess != null);
-    assert(loadFailure != null);
     return loadSuccess(this);
   }
 
   @override
   @optionalTypeArgs
-  TResult maybeMap<TResult extends Object>({
-    TResult initial(_Initial value),
-    TResult loadInProgress(_LoadInProgress value),
-    TResult loadSuccess(_LoadSuccess value),
-    TResult loadFailure(_LoadFailure value),
-    @required TResult orElse(),
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_LoadInProgress value)? loadInProgress,
+    TResult Function(_LoadSuccess value)? loadSuccess,
+    TResult Function(_LoadFailure value)? loadFailure,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (loadSuccess != null) {
       return loadSuccess(this);
     }
@@ -655,9 +628,10 @@ class _$_LoadSuccess implements _LoadSuccess {
 abstract class _LoadSuccess implements WatchPurchasableItemsState {
   const factory _LoadSuccess(KtList<Item> items) = _$_LoadSuccess;
 
-  KtList<Item> get items;
+  KtList<Item> get items => throw _privateConstructorUsedError;
+
   @JsonKey(ignore: true)
-  _$LoadSuccessCopyWith<_LoadSuccess> get copyWith;
+  _$LoadSuccessCopyWith<_LoadSuccess> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -678,18 +652,18 @@ class __$LoadFailureCopyWithImpl<$Res> extends _$WatchPurchasableItemsStateCopyW
 
   @override
   $Res call({
-    Object failure = freezed,
+    Object? failure = freezed,
   }) {
     return _then(_LoadFailure(
-      failure == freezed ? _value.failure : failure as Failure<dynamic>,
+      failure == freezed
+          ? _value.failure
+          : failure // ignore: cast_nullable_to_non_nullable
+              as Failure<dynamic>,
     ));
   }
 
   @override
   $FailureCopyWith<dynamic, $Res> get failure {
-    if (_value.failure == null) {
-      return null;
-    }
     return $FailureCopyWith<dynamic, $Res>(_value.failure, (value) {
       return _then(_value.copyWith(failure: value));
     });
@@ -698,7 +672,7 @@ class __$LoadFailureCopyWithImpl<$Res> extends _$WatchPurchasableItemsStateCopyW
 
 /// @nodoc
 class _$_LoadFailure implements _LoadFailure {
-  const _$_LoadFailure(this.failure) : assert(failure != null);
+  const _$_LoadFailure(this.failure);
 
   @override
   final Failure<dynamic> failure;
@@ -722,29 +696,24 @@ class _$_LoadFailure implements _LoadFailure {
 
   @override
   @optionalTypeArgs
-  TResult when<TResult extends Object>({
-    @required TResult initial(),
-    @required TResult loadInProgress(),
-    @required TResult loadSuccess(KtList<Item> items),
-    @required TResult loadFailure(Failure<dynamic> failure),
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() loadInProgress,
+    required TResult Function(KtList<Item> items) loadSuccess,
+    required TResult Function(Failure<dynamic> failure) loadFailure,
   }) {
-    assert(initial != null);
-    assert(loadInProgress != null);
-    assert(loadSuccess != null);
-    assert(loadFailure != null);
     return loadFailure(failure);
   }
 
   @override
   @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object>({
-    TResult initial(),
-    TResult loadInProgress(),
-    TResult loadSuccess(KtList<Item> items),
-    TResult loadFailure(Failure<dynamic> failure),
-    @required TResult orElse(),
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? loadInProgress,
+    TResult Function(KtList<Item> items)? loadSuccess,
+    TResult Function(Failure<dynamic> failure)? loadFailure,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (loadFailure != null) {
       return loadFailure(failure);
     }
@@ -753,29 +722,24 @@ class _$_LoadFailure implements _LoadFailure {
 
   @override
   @optionalTypeArgs
-  TResult map<TResult extends Object>({
-    @required TResult initial(_Initial value),
-    @required TResult loadInProgress(_LoadInProgress value),
-    @required TResult loadSuccess(_LoadSuccess value),
-    @required TResult loadFailure(_LoadFailure value),
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial value) initial,
+    required TResult Function(_LoadInProgress value) loadInProgress,
+    required TResult Function(_LoadSuccess value) loadSuccess,
+    required TResult Function(_LoadFailure value) loadFailure,
   }) {
-    assert(initial != null);
-    assert(loadInProgress != null);
-    assert(loadSuccess != null);
-    assert(loadFailure != null);
     return loadFailure(this);
   }
 
   @override
   @optionalTypeArgs
-  TResult maybeMap<TResult extends Object>({
-    TResult initial(_Initial value),
-    TResult loadInProgress(_LoadInProgress value),
-    TResult loadSuccess(_LoadSuccess value),
-    TResult loadFailure(_LoadFailure value),
-    @required TResult orElse(),
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_LoadInProgress value)? loadInProgress,
+    TResult Function(_LoadSuccess value)? loadSuccess,
+    TResult Function(_LoadFailure value)? loadFailure,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (loadFailure != null) {
       return loadFailure(this);
     }
@@ -786,7 +750,8 @@ class _$_LoadFailure implements _LoadFailure {
 abstract class _LoadFailure implements WatchPurchasableItemsState {
   const factory _LoadFailure(Failure<dynamic> failure) = _$_LoadFailure;
 
-  Failure<dynamic> get failure;
+  Failure<dynamic> get failure => throw _privateConstructorUsedError;
+
   @JsonKey(ignore: true)
-  _$LoadFailureCopyWith<_LoadFailure> get copyWith;
+  _$LoadFailureCopyWith<_LoadFailure> get copyWith => throw _privateConstructorUsedError;
 }

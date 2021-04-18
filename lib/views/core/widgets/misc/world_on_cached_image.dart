@@ -4,9 +4,9 @@ import 'package:worldon/views/core/widgets/misc/world_on_progress_indicator.dart
 
 class WorldOnCachedImage extends StatelessWidget {
   const WorldOnCachedImage({
-    Key key,
-    @required String imageURL,
-  })  : _imageURL = imageURL,
+    Key? key,
+    required String imageURL,
+  })   : _imageURL = imageURL,
         super(key: key);
 
   final String _imageURL;

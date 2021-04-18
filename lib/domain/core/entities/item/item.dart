@@ -10,22 +10,22 @@ import 'item_code.dart';
 part 'item.freezed.dart';
 
 @freezed
-abstract class Item implements _$Item {
+class Item with _$Item {
   const Item._();
 
   const factory Item({
-    @required UniqueId id,
-    @required Name name,
-    @required EntityDescription description,
-    @required ItemCode code,
-    @required int value,
-    @required String imageURL,
-    @required int timeLimitInDays,
-    @required DateTime boughtDate,
+    required UniqueId id,
+    required Name name,
+    required EntityDescription description,
+    required ItemCode code,
+    required int value,
+    required String imageURL,
+    required int timeLimitInDays,
+    required DateTime boughtDate,
   }) = _Item;
 
   factory Item.empty() => Item(
-    id: UniqueId(),
+        id: UniqueId(),
         name: Name(""),
         description: EntityDescription(""),
         code: ItemCode.none,

@@ -9,8 +9,8 @@ import '../../../../injection.dart';
 
 class ExperienceLikesCounter extends StatelessWidget {
   const ExperienceLikesCounter({
-    Key key,
-    @required this.experience,
+    Key? key,
+    required this.experience,
   }) : super(key: key);
 
   final Experience experience;

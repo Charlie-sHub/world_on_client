@@ -5,8 +5,8 @@ class NotFoundErrorDisplay extends StatelessWidget {
   final String specificMessage;
 
   const NotFoundErrorDisplay({
-    Key key,
-    @required this.specificMessage,
+    Key? key,
+    required this.specificMessage,
   }) : super(key: key);
 
   @override

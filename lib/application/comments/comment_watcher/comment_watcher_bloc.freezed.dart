@@ -1,5 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides
 
 part of 'comment_watcher_bloc.dart';
 
@@ -9,21 +9,20 @@ part of 'comment_watcher_bloc.dart';
 
 T _$identity<T>(T value) => value;
 
+final _privateConstructorUsedError = UnsupportedError(
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+
 /// @nodoc
 class _$CommentWatcherEventTearOff {
   const _$CommentWatcherEventTearOff();
 
-// ignore: unused_element
-  _WatchExperienceCommentsStarted watchExperienceCommentsStarted(
-      UniqueId experienceId) {
+  _WatchExperienceCommentsStarted watchExperienceCommentsStarted(UniqueId experienceId) {
     return _WatchExperienceCommentsStarted(
       experienceId,
     );
   }
 
-// ignore: unused_element
-  _ResultsReceived resultsReceived(
-      Either<Failure, KtList<Comment>> failureOrComments) {
+  _ResultsReceived resultsReceived(Either<Failure, KtList<Comment>> failureOrComments) {
     return _ResultsReceived(
       failureOrComments,
     );
@@ -31,50 +30,48 @@ class _$CommentWatcherEventTearOff {
 }
 
 /// @nodoc
-// ignore: unused_element
 const $CommentWatcherEvent = _$CommentWatcherEventTearOff();
 
 /// @nodoc
 mixin _$CommentWatcherEvent {
   @optionalTypeArgs
-  TResult when<TResult extends Object>({
-    @required TResult watchExperienceCommentsStarted(UniqueId experienceId),
-    @required
-        TResult resultsReceived(
-            Either<Failure, KtList<Comment>> failureOrComments),
-  });
+  TResult when<TResult extends Object?>({
+    required TResult Function(UniqueId experienceId) watchExperienceCommentsStarted,
+    required TResult Function(Either<Failure, KtList<Comment>> failureOrComments) resultsReceived,
+  }) =>
+      throw _privateConstructorUsedError;
+
   @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object>({
-    TResult watchExperienceCommentsStarted(UniqueId experienceId),
-    TResult resultsReceived(Either<Failure, KtList<Comment>> failureOrComments),
-    @required TResult orElse(),
-  });
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(UniqueId experienceId)? watchExperienceCommentsStarted,
+    TResult Function(Either<Failure, KtList<Comment>> failureOrComments)? resultsReceived,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
+
   @optionalTypeArgs
-  TResult map<TResult extends Object>({
-    @required
-        TResult watchExperienceCommentsStarted(
-            _WatchExperienceCommentsStarted value),
-    @required TResult resultsReceived(_ResultsReceived value),
-  });
+  TResult map<TResult extends Object?>({
+    required TResult Function(_WatchExperienceCommentsStarted value) watchExperienceCommentsStarted,
+    required TResult Function(_ResultsReceived value) resultsReceived,
+  }) =>
+      throw _privateConstructorUsedError;
+
   @optionalTypeArgs
-  TResult maybeMap<TResult extends Object>({
-    TResult watchExperienceCommentsStarted(
-        _WatchExperienceCommentsStarted value),
-    TResult resultsReceived(_ResultsReceived value),
-    @required TResult orElse(),
-  });
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_WatchExperienceCommentsStarted value)? watchExperienceCommentsStarted,
+    TResult Function(_ResultsReceived value)? resultsReceived,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $CommentWatcherEventCopyWith<$Res> {
-  factory $CommentWatcherEventCopyWith(
-          CommentWatcherEvent value, $Res Function(CommentWatcherEvent) then) =
-      _$CommentWatcherEventCopyWithImpl<$Res>;
+  factory $CommentWatcherEventCopyWith(CommentWatcherEvent value, $Res Function(CommentWatcherEvent) then) = _$CommentWatcherEventCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class _$CommentWatcherEventCopyWithImpl<$Res>
-    implements $CommentWatcherEventCopyWith<$Res> {
+class _$CommentWatcherEventCopyWithImpl<$Res> implements $CommentWatcherEventCopyWith<$Res> {
   _$CommentWatcherEventCopyWithImpl(this._value, this._then);
 
   final CommentWatcherEvent _value;
@@ -84,41 +81,34 @@ class _$CommentWatcherEventCopyWithImpl<$Res>
 
 /// @nodoc
 abstract class _$WatchExperienceCommentsStartedCopyWith<$Res> {
-  factory _$WatchExperienceCommentsStartedCopyWith(
-          _WatchExperienceCommentsStarted value,
-          $Res Function(_WatchExperienceCommentsStarted) then) =
-      __$WatchExperienceCommentsStartedCopyWithImpl<$Res>;
+  factory _$WatchExperienceCommentsStartedCopyWith(_WatchExperienceCommentsStarted value, $Res Function(_WatchExperienceCommentsStarted) then) = __$WatchExperienceCommentsStartedCopyWithImpl<$Res>;
   $Res call({UniqueId experienceId});
 }
 
 /// @nodoc
-class __$WatchExperienceCommentsStartedCopyWithImpl<$Res>
-    extends _$CommentWatcherEventCopyWithImpl<$Res>
-    implements _$WatchExperienceCommentsStartedCopyWith<$Res> {
-  __$WatchExperienceCommentsStartedCopyWithImpl(
-      _WatchExperienceCommentsStarted _value,
-      $Res Function(_WatchExperienceCommentsStarted) _then)
+class __$WatchExperienceCommentsStartedCopyWithImpl<$Res> extends _$CommentWatcherEventCopyWithImpl<$Res> implements _$WatchExperienceCommentsStartedCopyWith<$Res> {
+  __$WatchExperienceCommentsStartedCopyWithImpl(_WatchExperienceCommentsStarted _value, $Res Function(_WatchExperienceCommentsStarted) _then)
       : super(_value, (v) => _then(v as _WatchExperienceCommentsStarted));
 
   @override
-  _WatchExperienceCommentsStarted get _value =>
-      super._value as _WatchExperienceCommentsStarted;
+  _WatchExperienceCommentsStarted get _value => super._value as _WatchExperienceCommentsStarted;
 
   @override
   $Res call({
-    Object experienceId = freezed,
+    Object? experienceId = freezed,
   }) {
     return _then(_WatchExperienceCommentsStarted(
-      experienceId == freezed ? _value.experienceId : experienceId as UniqueId,
+      experienceId == freezed
+          ? _value.experienceId
+          : experienceId // ignore: cast_nullable_to_non_nullable
+              as UniqueId,
     ));
   }
 }
 
 /// @nodoc
-class _$_WatchExperienceCommentsStarted
-    implements _WatchExperienceCommentsStarted {
-  const _$_WatchExperienceCommentsStarted(this.experienceId)
-      : assert(experienceId != null);
+class _$_WatchExperienceCommentsStarted implements _WatchExperienceCommentsStarted {
+  const _$_WatchExperienceCommentsStarted(this.experienceId);
 
   @override
   final UniqueId experienceId;
@@ -131,43 +121,32 @@ class _$_WatchExperienceCommentsStarted
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _WatchExperienceCommentsStarted &&
-            (identical(other.experienceId, experienceId) ||
-                const DeepCollectionEquality()
-                    .equals(other.experienceId, experienceId)));
+        (other is _WatchExperienceCommentsStarted && (identical(other.experienceId, experienceId) || const DeepCollectionEquality().equals(other.experienceId, experienceId)));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(experienceId);
+  int get hashCode => runtimeType.hashCode ^ const DeepCollectionEquality().hash(experienceId);
 
   @JsonKey(ignore: true)
   @override
-  _$WatchExperienceCommentsStartedCopyWith<_WatchExperienceCommentsStarted>
-      get copyWith => __$WatchExperienceCommentsStartedCopyWithImpl<
-          _WatchExperienceCommentsStarted>(this, _$identity);
+  _$WatchExperienceCommentsStartedCopyWith<_WatchExperienceCommentsStarted> get copyWith => __$WatchExperienceCommentsStartedCopyWithImpl<_WatchExperienceCommentsStarted>(this, _$identity);
 
   @override
   @optionalTypeArgs
-  TResult when<TResult extends Object>({
-    @required TResult watchExperienceCommentsStarted(UniqueId experienceId),
-    @required
-        TResult resultsReceived(
-            Either<Failure, KtList<Comment>> failureOrComments),
+  TResult when<TResult extends Object?>({
+    required TResult Function(UniqueId experienceId) watchExperienceCommentsStarted,
+    required TResult Function(Either<Failure, KtList<Comment>> failureOrComments) resultsReceived,
   }) {
-    assert(watchExperienceCommentsStarted != null);
-    assert(resultsReceived != null);
     return watchExperienceCommentsStarted(experienceId);
   }
 
   @override
   @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object>({
-    TResult watchExperienceCommentsStarted(UniqueId experienceId),
-    TResult resultsReceived(Either<Failure, KtList<Comment>> failureOrComments),
-    @required TResult orElse(),
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(UniqueId experienceId)? watchExperienceCommentsStarted,
+    TResult Function(Either<Failure, KtList<Comment>> failureOrComments)? resultsReceived,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (watchExperienceCommentsStarted != null) {
       return watchExperienceCommentsStarted(experienceId);
     }
@@ -176,26 +155,20 @@ class _$_WatchExperienceCommentsStarted
 
   @override
   @optionalTypeArgs
-  TResult map<TResult extends Object>({
-    @required
-        TResult watchExperienceCommentsStarted(
-            _WatchExperienceCommentsStarted value),
-    @required TResult resultsReceived(_ResultsReceived value),
+  TResult map<TResult extends Object?>({
+    required TResult Function(_WatchExperienceCommentsStarted value) watchExperienceCommentsStarted,
+    required TResult Function(_ResultsReceived value) resultsReceived,
   }) {
-    assert(watchExperienceCommentsStarted != null);
-    assert(resultsReceived != null);
     return watchExperienceCommentsStarted(this);
   }
 
   @override
   @optionalTypeArgs
-  TResult maybeMap<TResult extends Object>({
-    TResult watchExperienceCommentsStarted(
-        _WatchExperienceCommentsStarted value),
-    TResult resultsReceived(_ResultsReceived value),
-    @required TResult orElse(),
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_WatchExperienceCommentsStarted value)? watchExperienceCommentsStarted,
+    TResult Function(_ResultsReceived value)? resultsReceived,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (watchExperienceCommentsStarted != null) {
       return watchExperienceCommentsStarted(this);
     }
@@ -204,50 +177,43 @@ class _$_WatchExperienceCommentsStarted
 }
 
 abstract class _WatchExperienceCommentsStarted implements CommentWatcherEvent {
-  const factory _WatchExperienceCommentsStarted(UniqueId experienceId) =
-      _$_WatchExperienceCommentsStarted;
+  const factory _WatchExperienceCommentsStarted(UniqueId experienceId) = _$_WatchExperienceCommentsStarted;
 
-  UniqueId get experienceId;
+  UniqueId get experienceId => throw _privateConstructorUsedError;
+
   @JsonKey(ignore: true)
-  _$WatchExperienceCommentsStartedCopyWith<_WatchExperienceCommentsStarted>
-      get copyWith;
+  _$WatchExperienceCommentsStartedCopyWith<_WatchExperienceCommentsStarted> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class _$ResultsReceivedCopyWith<$Res> {
-  factory _$ResultsReceivedCopyWith(
-          _ResultsReceived value, $Res Function(_ResultsReceived) then) =
-      __$ResultsReceivedCopyWithImpl<$Res>;
+  factory _$ResultsReceivedCopyWith(_ResultsReceived value, $Res Function(_ResultsReceived) then) = __$ResultsReceivedCopyWithImpl<$Res>;
   $Res call({Either<Failure, KtList<Comment>> failureOrComments});
 }
 
 /// @nodoc
-class __$ResultsReceivedCopyWithImpl<$Res>
-    extends _$CommentWatcherEventCopyWithImpl<$Res>
-    implements _$ResultsReceivedCopyWith<$Res> {
-  __$ResultsReceivedCopyWithImpl(
-      _ResultsReceived _value, $Res Function(_ResultsReceived) _then)
-      : super(_value, (v) => _then(v as _ResultsReceived));
+class __$ResultsReceivedCopyWithImpl<$Res> extends _$CommentWatcherEventCopyWithImpl<$Res> implements _$ResultsReceivedCopyWith<$Res> {
+  __$ResultsReceivedCopyWithImpl(_ResultsReceived _value, $Res Function(_ResultsReceived) _then) : super(_value, (v) => _then(v as _ResultsReceived));
 
   @override
   _ResultsReceived get _value => super._value as _ResultsReceived;
 
   @override
   $Res call({
-    Object failureOrComments = freezed,
+    Object? failureOrComments = freezed,
   }) {
     return _then(_ResultsReceived(
       failureOrComments == freezed
           ? _value.failureOrComments
-          : failureOrComments as Either<Failure, KtList<Comment>>,
+          : failureOrComments // ignore: cast_nullable_to_non_nullable
+              as Either<Failure, KtList<Comment>>,
     ));
   }
 }
 
 /// @nodoc
 class _$_ResultsReceived implements _ResultsReceived {
-  const _$_ResultsReceived(this.failureOrComments)
-      : assert(failureOrComments != null);
+  const _$_ResultsReceived(this.failureOrComments);
 
   @override
   final Either<Failure, KtList<Comment>> failureOrComments;
@@ -260,43 +226,32 @@ class _$_ResultsReceived implements _ResultsReceived {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _ResultsReceived &&
-            (identical(other.failureOrComments, failureOrComments) ||
-                const DeepCollectionEquality()
-                    .equals(other.failureOrComments, failureOrComments)));
+        (other is _ResultsReceived && (identical(other.failureOrComments, failureOrComments) || const DeepCollectionEquality().equals(other.failureOrComments, failureOrComments)));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(failureOrComments);
+  int get hashCode => runtimeType.hashCode ^ const DeepCollectionEquality().hash(failureOrComments);
 
   @JsonKey(ignore: true)
   @override
-  _$ResultsReceivedCopyWith<_ResultsReceived> get copyWith =>
-      __$ResultsReceivedCopyWithImpl<_ResultsReceived>(this, _$identity);
+  _$ResultsReceivedCopyWith<_ResultsReceived> get copyWith => __$ResultsReceivedCopyWithImpl<_ResultsReceived>(this, _$identity);
 
   @override
   @optionalTypeArgs
-  TResult when<TResult extends Object>({
-    @required TResult watchExperienceCommentsStarted(UniqueId experienceId),
-    @required
-        TResult resultsReceived(
-            Either<Failure, KtList<Comment>> failureOrComments),
+  TResult when<TResult extends Object?>({
+    required TResult Function(UniqueId experienceId) watchExperienceCommentsStarted,
+    required TResult Function(Either<Failure, KtList<Comment>> failureOrComments) resultsReceived,
   }) {
-    assert(watchExperienceCommentsStarted != null);
-    assert(resultsReceived != null);
     return resultsReceived(failureOrComments);
   }
 
   @override
   @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object>({
-    TResult watchExperienceCommentsStarted(UniqueId experienceId),
-    TResult resultsReceived(Either<Failure, KtList<Comment>> failureOrComments),
-    @required TResult orElse(),
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(UniqueId experienceId)? watchExperienceCommentsStarted,
+    TResult Function(Either<Failure, KtList<Comment>> failureOrComments)? resultsReceived,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (resultsReceived != null) {
       return resultsReceived(failureOrComments);
     }
@@ -305,26 +260,20 @@ class _$_ResultsReceived implements _ResultsReceived {
 
   @override
   @optionalTypeArgs
-  TResult map<TResult extends Object>({
-    @required
-        TResult watchExperienceCommentsStarted(
-            _WatchExperienceCommentsStarted value),
-    @required TResult resultsReceived(_ResultsReceived value),
+  TResult map<TResult extends Object?>({
+    required TResult Function(_WatchExperienceCommentsStarted value) watchExperienceCommentsStarted,
+    required TResult Function(_ResultsReceived value) resultsReceived,
   }) {
-    assert(watchExperienceCommentsStarted != null);
-    assert(resultsReceived != null);
     return resultsReceived(this);
   }
 
   @override
   @optionalTypeArgs
-  TResult maybeMap<TResult extends Object>({
-    TResult watchExperienceCommentsStarted(
-        _WatchExperienceCommentsStarted value),
-    TResult resultsReceived(_ResultsReceived value),
-    @required TResult orElse(),
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_WatchExperienceCommentsStarted value)? watchExperienceCommentsStarted,
+    TResult Function(_ResultsReceived value)? resultsReceived,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (resultsReceived != null) {
       return resultsReceived(this);
     }
@@ -333,36 +282,32 @@ class _$_ResultsReceived implements _ResultsReceived {
 }
 
 abstract class _ResultsReceived implements CommentWatcherEvent {
-  const factory _ResultsReceived(
-      Either<Failure, KtList<Comment>> failureOrComments) = _$_ResultsReceived;
+  const factory _ResultsReceived(Either<Failure, KtList<Comment>> failureOrComments) = _$_ResultsReceived;
 
-  Either<Failure, KtList<Comment>> get failureOrComments;
+  Either<Failure, KtList<Comment>> get failureOrComments => throw _privateConstructorUsedError;
+
   @JsonKey(ignore: true)
-  _$ResultsReceivedCopyWith<_ResultsReceived> get copyWith;
+  _$ResultsReceivedCopyWith<_ResultsReceived> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 class _$CommentWatcherStateTearOff {
   const _$CommentWatcherStateTearOff();
 
-// ignore: unused_element
   _Initial initial() {
     return const _Initial();
   }
 
-// ignore: unused_element
   _LoadInProgress loadInProgress() {
     return const _LoadInProgress();
   }
 
-// ignore: unused_element
   _LoadSuccess loadSuccess(KtList<Comment> comments) {
     return _LoadSuccess(
       comments,
     );
   }
 
-// ignore: unused_element
   _LoadFailure loadFailure(Failure<dynamic> failure) {
     return _LoadFailure(
       failure,
@@ -371,53 +316,56 @@ class _$CommentWatcherStateTearOff {
 }
 
 /// @nodoc
-// ignore: unused_element
 const $CommentWatcherState = _$CommentWatcherStateTearOff();
 
 /// @nodoc
 mixin _$CommentWatcherState {
   @optionalTypeArgs
-  TResult when<TResult extends Object>({
-    @required TResult initial(),
-    @required TResult loadInProgress(),
-    @required TResult loadSuccess(KtList<Comment> comments),
-    @required TResult loadFailure(Failure<dynamic> failure),
-  });
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() loadInProgress,
+    required TResult Function(KtList<Comment> comments) loadSuccess,
+    required TResult Function(Failure<dynamic> failure) loadFailure,
+  }) =>
+      throw _privateConstructorUsedError;
+
   @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object>({
-    TResult initial(),
-    TResult loadInProgress(),
-    TResult loadSuccess(KtList<Comment> comments),
-    TResult loadFailure(Failure<dynamic> failure),
-    @required TResult orElse(),
-  });
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? loadInProgress,
+    TResult Function(KtList<Comment> comments)? loadSuccess,
+    TResult Function(Failure<dynamic> failure)? loadFailure,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
+
   @optionalTypeArgs
-  TResult map<TResult extends Object>({
-    @required TResult initial(_Initial value),
-    @required TResult loadInProgress(_LoadInProgress value),
-    @required TResult loadSuccess(_LoadSuccess value),
-    @required TResult loadFailure(_LoadFailure value),
-  });
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial value) initial,
+    required TResult Function(_LoadInProgress value) loadInProgress,
+    required TResult Function(_LoadSuccess value) loadSuccess,
+    required TResult Function(_LoadFailure value) loadFailure,
+  }) =>
+      throw _privateConstructorUsedError;
+
   @optionalTypeArgs
-  TResult maybeMap<TResult extends Object>({
-    TResult initial(_Initial value),
-    TResult loadInProgress(_LoadInProgress value),
-    TResult loadSuccess(_LoadSuccess value),
-    TResult loadFailure(_LoadFailure value),
-    @required TResult orElse(),
-  });
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_LoadInProgress value)? loadInProgress,
+    TResult Function(_LoadSuccess value)? loadSuccess,
+    TResult Function(_LoadFailure value)? loadFailure,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $CommentWatcherStateCopyWith<$Res> {
-  factory $CommentWatcherStateCopyWith(
-          CommentWatcherState value, $Res Function(CommentWatcherState) then) =
-      _$CommentWatcherStateCopyWithImpl<$Res>;
+  factory $CommentWatcherStateCopyWith(CommentWatcherState value, $Res Function(CommentWatcherState) then) = _$CommentWatcherStateCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class _$CommentWatcherStateCopyWithImpl<$Res>
-    implements $CommentWatcherStateCopyWith<$Res> {
+class _$CommentWatcherStateCopyWithImpl<$Res> implements $CommentWatcherStateCopyWith<$Res> {
   _$CommentWatcherStateCopyWithImpl(this._value, this._then);
 
   final CommentWatcherState _value;
@@ -427,16 +375,12 @@ class _$CommentWatcherStateCopyWithImpl<$Res>
 
 /// @nodoc
 abstract class _$InitialCopyWith<$Res> {
-  factory _$InitialCopyWith(_Initial value, $Res Function(_Initial) then) =
-      __$InitialCopyWithImpl<$Res>;
+  factory _$InitialCopyWith(_Initial value, $Res Function(_Initial) then) = __$InitialCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$InitialCopyWithImpl<$Res>
-    extends _$CommentWatcherStateCopyWithImpl<$Res>
-    implements _$InitialCopyWith<$Res> {
-  __$InitialCopyWithImpl(_Initial _value, $Res Function(_Initial) _then)
-      : super(_value, (v) => _then(v as _Initial));
+class __$InitialCopyWithImpl<$Res> extends _$CommentWatcherStateCopyWithImpl<$Res> implements _$InitialCopyWith<$Res> {
+  __$InitialCopyWithImpl(_Initial _value, $Res Function(_Initial) _then) : super(_value, (v) => _then(v as _Initial));
 
   @override
   _Initial get _value => super._value as _Initial;
@@ -461,29 +405,24 @@ class _$_Initial implements _Initial {
 
   @override
   @optionalTypeArgs
-  TResult when<TResult extends Object>({
-    @required TResult initial(),
-    @required TResult loadInProgress(),
-    @required TResult loadSuccess(KtList<Comment> comments),
-    @required TResult loadFailure(Failure<dynamic> failure),
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() loadInProgress,
+    required TResult Function(KtList<Comment> comments) loadSuccess,
+    required TResult Function(Failure<dynamic> failure) loadFailure,
   }) {
-    assert(initial != null);
-    assert(loadInProgress != null);
-    assert(loadSuccess != null);
-    assert(loadFailure != null);
     return initial();
   }
 
   @override
   @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object>({
-    TResult initial(),
-    TResult loadInProgress(),
-    TResult loadSuccess(KtList<Comment> comments),
-    TResult loadFailure(Failure<dynamic> failure),
-    @required TResult orElse(),
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? loadInProgress,
+    TResult Function(KtList<Comment> comments)? loadSuccess,
+    TResult Function(Failure<dynamic> failure)? loadFailure,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (initial != null) {
       return initial();
     }
@@ -492,29 +431,24 @@ class _$_Initial implements _Initial {
 
   @override
   @optionalTypeArgs
-  TResult map<TResult extends Object>({
-    @required TResult initial(_Initial value),
-    @required TResult loadInProgress(_LoadInProgress value),
-    @required TResult loadSuccess(_LoadSuccess value),
-    @required TResult loadFailure(_LoadFailure value),
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial value) initial,
+    required TResult Function(_LoadInProgress value) loadInProgress,
+    required TResult Function(_LoadSuccess value) loadSuccess,
+    required TResult Function(_LoadFailure value) loadFailure,
   }) {
-    assert(initial != null);
-    assert(loadInProgress != null);
-    assert(loadSuccess != null);
-    assert(loadFailure != null);
     return initial(this);
   }
 
   @override
   @optionalTypeArgs
-  TResult maybeMap<TResult extends Object>({
-    TResult initial(_Initial value),
-    TResult loadInProgress(_LoadInProgress value),
-    TResult loadSuccess(_LoadSuccess value),
-    TResult loadFailure(_LoadFailure value),
-    @required TResult orElse(),
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_LoadInProgress value)? loadInProgress,
+    TResult Function(_LoadSuccess value)? loadSuccess,
+    TResult Function(_LoadFailure value)? loadFailure,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (initial != null) {
       return initial(this);
     }
@@ -528,18 +462,12 @@ abstract class _Initial implements CommentWatcherState {
 
 /// @nodoc
 abstract class _$LoadInProgressCopyWith<$Res> {
-  factory _$LoadInProgressCopyWith(
-          _LoadInProgress value, $Res Function(_LoadInProgress) then) =
-      __$LoadInProgressCopyWithImpl<$Res>;
+  factory _$LoadInProgressCopyWith(_LoadInProgress value, $Res Function(_LoadInProgress) then) = __$LoadInProgressCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$LoadInProgressCopyWithImpl<$Res>
-    extends _$CommentWatcherStateCopyWithImpl<$Res>
-    implements _$LoadInProgressCopyWith<$Res> {
-  __$LoadInProgressCopyWithImpl(
-      _LoadInProgress _value, $Res Function(_LoadInProgress) _then)
-      : super(_value, (v) => _then(v as _LoadInProgress));
+class __$LoadInProgressCopyWithImpl<$Res> extends _$CommentWatcherStateCopyWithImpl<$Res> implements _$LoadInProgressCopyWith<$Res> {
+  __$LoadInProgressCopyWithImpl(_LoadInProgress _value, $Res Function(_LoadInProgress) _then) : super(_value, (v) => _then(v as _LoadInProgress));
 
   @override
   _LoadInProgress get _value => super._value as _LoadInProgress;
@@ -564,29 +492,24 @@ class _$_LoadInProgress implements _LoadInProgress {
 
   @override
   @optionalTypeArgs
-  TResult when<TResult extends Object>({
-    @required TResult initial(),
-    @required TResult loadInProgress(),
-    @required TResult loadSuccess(KtList<Comment> comments),
-    @required TResult loadFailure(Failure<dynamic> failure),
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() loadInProgress,
+    required TResult Function(KtList<Comment> comments) loadSuccess,
+    required TResult Function(Failure<dynamic> failure) loadFailure,
   }) {
-    assert(initial != null);
-    assert(loadInProgress != null);
-    assert(loadSuccess != null);
-    assert(loadFailure != null);
     return loadInProgress();
   }
 
   @override
   @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object>({
-    TResult initial(),
-    TResult loadInProgress(),
-    TResult loadSuccess(KtList<Comment> comments),
-    TResult loadFailure(Failure<dynamic> failure),
-    @required TResult orElse(),
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? loadInProgress,
+    TResult Function(KtList<Comment> comments)? loadSuccess,
+    TResult Function(Failure<dynamic> failure)? loadFailure,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (loadInProgress != null) {
       return loadInProgress();
     }
@@ -595,29 +518,24 @@ class _$_LoadInProgress implements _LoadInProgress {
 
   @override
   @optionalTypeArgs
-  TResult map<TResult extends Object>({
-    @required TResult initial(_Initial value),
-    @required TResult loadInProgress(_LoadInProgress value),
-    @required TResult loadSuccess(_LoadSuccess value),
-    @required TResult loadFailure(_LoadFailure value),
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial value) initial,
+    required TResult Function(_LoadInProgress value) loadInProgress,
+    required TResult Function(_LoadSuccess value) loadSuccess,
+    required TResult Function(_LoadFailure value) loadFailure,
   }) {
-    assert(initial != null);
-    assert(loadInProgress != null);
-    assert(loadSuccess != null);
-    assert(loadFailure != null);
     return loadInProgress(this);
   }
 
   @override
   @optionalTypeArgs
-  TResult maybeMap<TResult extends Object>({
-    TResult initial(_Initial value),
-    TResult loadInProgress(_LoadInProgress value),
-    TResult loadSuccess(_LoadSuccess value),
-    TResult loadFailure(_LoadFailure value),
-    @required TResult orElse(),
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_LoadInProgress value)? loadInProgress,
+    TResult Function(_LoadSuccess value)? loadSuccess,
+    TResult Function(_LoadFailure value)? loadFailure,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (loadInProgress != null) {
       return loadInProgress(this);
     }
@@ -631,36 +549,33 @@ abstract class _LoadInProgress implements CommentWatcherState {
 
 /// @nodoc
 abstract class _$LoadSuccessCopyWith<$Res> {
-  factory _$LoadSuccessCopyWith(
-          _LoadSuccess value, $Res Function(_LoadSuccess) then) =
-      __$LoadSuccessCopyWithImpl<$Res>;
+  factory _$LoadSuccessCopyWith(_LoadSuccess value, $Res Function(_LoadSuccess) then) = __$LoadSuccessCopyWithImpl<$Res>;
   $Res call({KtList<Comment> comments});
 }
 
 /// @nodoc
-class __$LoadSuccessCopyWithImpl<$Res>
-    extends _$CommentWatcherStateCopyWithImpl<$Res>
-    implements _$LoadSuccessCopyWith<$Res> {
-  __$LoadSuccessCopyWithImpl(
-      _LoadSuccess _value, $Res Function(_LoadSuccess) _then)
-      : super(_value, (v) => _then(v as _LoadSuccess));
+class __$LoadSuccessCopyWithImpl<$Res> extends _$CommentWatcherStateCopyWithImpl<$Res> implements _$LoadSuccessCopyWith<$Res> {
+  __$LoadSuccessCopyWithImpl(_LoadSuccess _value, $Res Function(_LoadSuccess) _then) : super(_value, (v) => _then(v as _LoadSuccess));
 
   @override
   _LoadSuccess get _value => super._value as _LoadSuccess;
 
   @override
   $Res call({
-    Object comments = freezed,
+    Object? comments = freezed,
   }) {
     return _then(_LoadSuccess(
-      comments == freezed ? _value.comments : comments as KtList<Comment>,
+      comments == freezed
+          ? _value.comments
+          : comments // ignore: cast_nullable_to_non_nullable
+              as KtList<Comment>,
     ));
   }
 }
 
 /// @nodoc
 class _$_LoadSuccess implements _LoadSuccess {
-  const _$_LoadSuccess(this.comments) : assert(comments != null);
+  const _$_LoadSuccess(this.comments);
 
   @override
   final KtList<Comment> comments;
@@ -672,47 +587,36 @@ class _$_LoadSuccess implements _LoadSuccess {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) ||
-        (other is _LoadSuccess &&
-            (identical(other.comments, comments) ||
-                const DeepCollectionEquality()
-                    .equals(other.comments, comments)));
+    return identical(this, other) || (other is _LoadSuccess && (identical(other.comments, comments) || const DeepCollectionEquality().equals(other.comments, comments)));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(comments);
+  int get hashCode => runtimeType.hashCode ^ const DeepCollectionEquality().hash(comments);
 
   @JsonKey(ignore: true)
   @override
-  _$LoadSuccessCopyWith<_LoadSuccess> get copyWith =>
-      __$LoadSuccessCopyWithImpl<_LoadSuccess>(this, _$identity);
+  _$LoadSuccessCopyWith<_LoadSuccess> get copyWith => __$LoadSuccessCopyWithImpl<_LoadSuccess>(this, _$identity);
 
   @override
   @optionalTypeArgs
-  TResult when<TResult extends Object>({
-    @required TResult initial(),
-    @required TResult loadInProgress(),
-    @required TResult loadSuccess(KtList<Comment> comments),
-    @required TResult loadFailure(Failure<dynamic> failure),
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() loadInProgress,
+    required TResult Function(KtList<Comment> comments) loadSuccess,
+    required TResult Function(Failure<dynamic> failure) loadFailure,
   }) {
-    assert(initial != null);
-    assert(loadInProgress != null);
-    assert(loadSuccess != null);
-    assert(loadFailure != null);
     return loadSuccess(comments);
   }
 
   @override
   @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object>({
-    TResult initial(),
-    TResult loadInProgress(),
-    TResult loadSuccess(KtList<Comment> comments),
-    TResult loadFailure(Failure<dynamic> failure),
-    @required TResult orElse(),
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? loadInProgress,
+    TResult Function(KtList<Comment> comments)? loadSuccess,
+    TResult Function(Failure<dynamic> failure)? loadFailure,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (loadSuccess != null) {
       return loadSuccess(comments);
     }
@@ -721,29 +625,24 @@ class _$_LoadSuccess implements _LoadSuccess {
 
   @override
   @optionalTypeArgs
-  TResult map<TResult extends Object>({
-    @required TResult initial(_Initial value),
-    @required TResult loadInProgress(_LoadInProgress value),
-    @required TResult loadSuccess(_LoadSuccess value),
-    @required TResult loadFailure(_LoadFailure value),
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial value) initial,
+    required TResult Function(_LoadInProgress value) loadInProgress,
+    required TResult Function(_LoadSuccess value) loadSuccess,
+    required TResult Function(_LoadFailure value) loadFailure,
   }) {
-    assert(initial != null);
-    assert(loadInProgress != null);
-    assert(loadSuccess != null);
-    assert(loadFailure != null);
     return loadSuccess(this);
   }
 
   @override
   @optionalTypeArgs
-  TResult maybeMap<TResult extends Object>({
-    TResult initial(_Initial value),
-    TResult loadInProgress(_LoadInProgress value),
-    TResult loadSuccess(_LoadSuccess value),
-    TResult loadFailure(_LoadFailure value),
-    @required TResult orElse(),
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_LoadInProgress value)? loadInProgress,
+    TResult Function(_LoadSuccess value)? loadSuccess,
+    TResult Function(_LoadFailure value)? loadFailure,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (loadSuccess != null) {
       return loadSuccess(this);
     }
@@ -754,46 +653,41 @@ class _$_LoadSuccess implements _LoadSuccess {
 abstract class _LoadSuccess implements CommentWatcherState {
   const factory _LoadSuccess(KtList<Comment> comments) = _$_LoadSuccess;
 
-  KtList<Comment> get comments;
+  KtList<Comment> get comments => throw _privateConstructorUsedError;
+
   @JsonKey(ignore: true)
-  _$LoadSuccessCopyWith<_LoadSuccess> get copyWith;
+  _$LoadSuccessCopyWith<_LoadSuccess> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class _$LoadFailureCopyWith<$Res> {
-  factory _$LoadFailureCopyWith(
-          _LoadFailure value, $Res Function(_LoadFailure) then) =
-      __$LoadFailureCopyWithImpl<$Res>;
+  factory _$LoadFailureCopyWith(_LoadFailure value, $Res Function(_LoadFailure) then) = __$LoadFailureCopyWithImpl<$Res>;
   $Res call({Failure<dynamic> failure});
 
   $FailureCopyWith<dynamic, $Res> get failure;
 }
 
 /// @nodoc
-class __$LoadFailureCopyWithImpl<$Res>
-    extends _$CommentWatcherStateCopyWithImpl<$Res>
-    implements _$LoadFailureCopyWith<$Res> {
-  __$LoadFailureCopyWithImpl(
-      _LoadFailure _value, $Res Function(_LoadFailure) _then)
-      : super(_value, (v) => _then(v as _LoadFailure));
+class __$LoadFailureCopyWithImpl<$Res> extends _$CommentWatcherStateCopyWithImpl<$Res> implements _$LoadFailureCopyWith<$Res> {
+  __$LoadFailureCopyWithImpl(_LoadFailure _value, $Res Function(_LoadFailure) _then) : super(_value, (v) => _then(v as _LoadFailure));
 
   @override
   _LoadFailure get _value => super._value as _LoadFailure;
 
   @override
   $Res call({
-    Object failure = freezed,
+    Object? failure = freezed,
   }) {
     return _then(_LoadFailure(
-      failure == freezed ? _value.failure : failure as Failure<dynamic>,
+      failure == freezed
+          ? _value.failure
+          : failure // ignore: cast_nullable_to_non_nullable
+              as Failure<dynamic>,
     ));
   }
 
   @override
   $FailureCopyWith<dynamic, $Res> get failure {
-    if (_value.failure == null) {
-      return null;
-    }
     return $FailureCopyWith<dynamic, $Res>(_value.failure, (value) {
       return _then(_value.copyWith(failure: value));
     });
@@ -802,7 +696,7 @@ class __$LoadFailureCopyWithImpl<$Res>
 
 /// @nodoc
 class _$_LoadFailure implements _LoadFailure {
-  const _$_LoadFailure(this.failure) : assert(failure != null);
+  const _$_LoadFailure(this.failure);
 
   @override
   final Failure<dynamic> failure;
@@ -814,46 +708,36 @@ class _$_LoadFailure implements _LoadFailure {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) ||
-        (other is _LoadFailure &&
-            (identical(other.failure, failure) ||
-                const DeepCollectionEquality().equals(other.failure, failure)));
+    return identical(this, other) || (other is _LoadFailure && (identical(other.failure, failure) || const DeepCollectionEquality().equals(other.failure, failure)));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(failure);
+  int get hashCode => runtimeType.hashCode ^ const DeepCollectionEquality().hash(failure);
 
   @JsonKey(ignore: true)
   @override
-  _$LoadFailureCopyWith<_LoadFailure> get copyWith =>
-      __$LoadFailureCopyWithImpl<_LoadFailure>(this, _$identity);
+  _$LoadFailureCopyWith<_LoadFailure> get copyWith => __$LoadFailureCopyWithImpl<_LoadFailure>(this, _$identity);
 
   @override
   @optionalTypeArgs
-  TResult when<TResult extends Object>({
-    @required TResult initial(),
-    @required TResult loadInProgress(),
-    @required TResult loadSuccess(KtList<Comment> comments),
-    @required TResult loadFailure(Failure<dynamic> failure),
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() loadInProgress,
+    required TResult Function(KtList<Comment> comments) loadSuccess,
+    required TResult Function(Failure<dynamic> failure) loadFailure,
   }) {
-    assert(initial != null);
-    assert(loadInProgress != null);
-    assert(loadSuccess != null);
-    assert(loadFailure != null);
     return loadFailure(failure);
   }
 
   @override
   @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object>({
-    TResult initial(),
-    TResult loadInProgress(),
-    TResult loadSuccess(KtList<Comment> comments),
-    TResult loadFailure(Failure<dynamic> failure),
-    @required TResult orElse(),
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? loadInProgress,
+    TResult Function(KtList<Comment> comments)? loadSuccess,
+    TResult Function(Failure<dynamic> failure)? loadFailure,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (loadFailure != null) {
       return loadFailure(failure);
     }
@@ -862,29 +746,24 @@ class _$_LoadFailure implements _LoadFailure {
 
   @override
   @optionalTypeArgs
-  TResult map<TResult extends Object>({
-    @required TResult initial(_Initial value),
-    @required TResult loadInProgress(_LoadInProgress value),
-    @required TResult loadSuccess(_LoadSuccess value),
-    @required TResult loadFailure(_LoadFailure value),
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial value) initial,
+    required TResult Function(_LoadInProgress value) loadInProgress,
+    required TResult Function(_LoadSuccess value) loadSuccess,
+    required TResult Function(_LoadFailure value) loadFailure,
   }) {
-    assert(initial != null);
-    assert(loadInProgress != null);
-    assert(loadSuccess != null);
-    assert(loadFailure != null);
     return loadFailure(this);
   }
 
   @override
   @optionalTypeArgs
-  TResult maybeMap<TResult extends Object>({
-    TResult initial(_Initial value),
-    TResult loadInProgress(_LoadInProgress value),
-    TResult loadSuccess(_LoadSuccess value),
-    TResult loadFailure(_LoadFailure value),
-    @required TResult orElse(),
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_LoadInProgress value)? loadInProgress,
+    TResult Function(_LoadSuccess value)? loadSuccess,
+    TResult Function(_LoadFailure value)? loadFailure,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (loadFailure != null) {
       return loadFailure(this);
     }
@@ -895,7 +774,8 @@ class _$_LoadFailure implements _LoadFailure {
 abstract class _LoadFailure implements CommentWatcherState {
   const factory _LoadFailure(Failure<dynamic> failure) = _$_LoadFailure;
 
-  Failure<dynamic> get failure;
+  Failure<dynamic> get failure => throw _privateConstructorUsedError;
+
   @JsonKey(ignore: true)
-  _$LoadFailureCopyWith<_LoadFailure> get copyWith;
+  _$LoadFailureCopyWith<_LoadFailure> get copyWith => throw _privateConstructorUsedError;
 }

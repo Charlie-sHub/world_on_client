@@ -9,9 +9,9 @@ class PasswordTextField extends StatelessWidget {
   final Validator<String> validator;
 
   const PasswordTextField({
-    Key key,
-    @required this.eventToAdd,
-    @required this.validator,
+    Key? key,
+    required this.eventToAdd,
+    required this.validator,
   }) : super(key: key);
 
   @override
@@ -29,7 +29,7 @@ class PasswordTextField extends StatelessWidget {
       autocorrect: false,
       obscureText: true,
       onChanged: (value) => eventToAdd(value.trim()),
-      validator: (_) => validator(_),
+      validator: (_) => validator(_!),
     );
   }
 }

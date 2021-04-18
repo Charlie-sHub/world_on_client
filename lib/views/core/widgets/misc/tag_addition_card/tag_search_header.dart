@@ -6,7 +6,7 @@ import 'package:worldon/views/search/widget/search_header.dart';
 
 class TagSearchHeader extends StatelessWidget {
   const TagSearchHeader({
-    Key key,
+    Key? key,
   }) : super(key: key);
 
   @override

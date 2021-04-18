@@ -13,8 +13,8 @@ class TagManagementPage extends HookWidget {
   final Option<Tag> tagOption;
 
   const TagManagementPage({
-    Key key,
-    @required this.tagOption,
+    Key? key,
+    required this.tagOption,
   }) : super(key: key);
 
   @override
@@ -58,7 +58,7 @@ class TagManagementPage extends HookWidget {
     TextEditingController _textEditingController,
   ) =>
       state.failureOrSuccessOption.fold(
-        () => null,
+          () {},
         (either) => either.fold(
           (failure) => FlushbarHelper.createError(
             message: failure.maybeMap(

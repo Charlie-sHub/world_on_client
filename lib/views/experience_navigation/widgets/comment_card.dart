@@ -9,8 +9,8 @@ import 'package:worldon/views/core/widgets/misc/user_image.dart';
 
 class CommentCard extends StatelessWidget {
   const CommentCard({
-    Key key,
-    @required this.comment,
+    Key? key,
+    required this.comment,
   }) : super(key: key);
 
   final Comment comment;
@@ -52,10 +52,11 @@ class CommentCard extends StatelessWidget {
               textAlign: TextAlign.justify,
             ),
           ),
+          /*
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: <Widget>[
-              RaisedButton(
+              ElevatedButton(
                 onPressed: () => FlushbarHelper.createInformation(
                   duration: const Duration(seconds: 2),
                   message: S.of(context).placeholder,
@@ -76,6 +77,7 @@ class CommentCard extends StatelessWidget {
               ),
             ],
           ),
+          */
         ],
       ),
     );

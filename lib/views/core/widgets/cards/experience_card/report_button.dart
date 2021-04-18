@@ -5,7 +5,7 @@ import 'package:worldon/views/core/misc/world_on_colors.dart';
 
 class ReportButton extends StatelessWidget {
   const ReportButton({
-    Key key,
+    Key? key,
   }) : super(key: key);
 
   @override

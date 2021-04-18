@@ -15,8 +15,8 @@ class TagAdditionCard extends StatelessWidget {
   final Function tagChangeFunction;
 
   const TagAdditionCard({
-    Key key,
-    @required this.tagChangeFunction,
+    Key? key,
+    required this.tagChangeFunction,
   }) : super(key: key);
 
   @override

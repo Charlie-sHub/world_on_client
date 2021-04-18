@@ -14,8 +14,8 @@ import '../../../../injection.dart';
 
 class ProfileExperiencesTabView extends StatelessWidget {
   const ProfileExperiencesTabView({
-    Key key,
-    @required this.user,
+    Key? key,
+    required this.user,
   }) : super(key: key);
 
   final User user;
@@ -43,7 +43,7 @@ class ProfileExperiencesTabView extends StatelessWidget {
                     return ExperienceCard(
                       experience: _experience,
                       key: Key(_experience.id.toString()),
-                      reloadFunction: (_) => context.read<ProfileExperiencesWatcherBloc>().add(
+                      reloadFunction: () => context.read<ProfileExperiencesWatcherBloc>().add(
                             ProfileExperiencesWatcherEvent.watchExperiencesCreatedStarted(user),
                           ),
                     );

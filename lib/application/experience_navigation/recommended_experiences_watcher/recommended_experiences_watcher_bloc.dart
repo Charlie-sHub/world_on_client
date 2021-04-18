@@ -14,15 +14,14 @@ import 'package:worldon/domain/experience_navigation/use_case/watch_recommended_
 import '../../../injection.dart';
 
 part 'recommended_experiences_watcher_bloc.freezed.dart';
-
 part 'recommended_experiences_watcher_event.dart';
-
 part 'recommended_experiences_watcher_state.dart';
 
 @injectable
 class RecommendedExperiencesWatcherBloc extends Bloc<RecommendedExperiencesWatcherEvent, RecommendedExperiencesWatcherState> {
   RecommendedExperiencesWatcherBloc() : super(const RecommendedExperiencesWatcherState.initial());
-  StreamSubscription<Either<Failure, KtList<Experience>>> _recommendedExperiencesStreamSubscription;
+
+  StreamSubscription<Either<Failure, KtList<Experience>>>? _recommendedExperiencesStreamSubscription;
 
   @override
   Stream<RecommendedExperiencesWatcherState> mapEventToState(RecommendedExperiencesWatcherEvent event) async* {

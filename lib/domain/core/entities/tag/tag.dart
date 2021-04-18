@@ -15,15 +15,15 @@ part 'tag.freezed.dart';
 ///
 /// Maybe [Tag]s should be simplified to just the name
 @freezed
-abstract class Tag implements _$Tag {
+class Tag with _$Tag {
   const Tag._();
 
   const factory Tag({
-    @required UniqueId id,
-    @required Name name,
-    @required UniqueId creatorId,
-    @required PastDate creationDate,
-    @required PastDate modificationDate,
+    required UniqueId id,
+    required Name name,
+    required UniqueId creatorId,
+    required PastDate creationDate,
+    required PastDate modificationDate,
   }) = _Tag;
 
   factory Tag.empty() => Tag(

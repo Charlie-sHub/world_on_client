@@ -13,12 +13,12 @@ import '../../../injection.dart';
 
 class ProfileAchievementsTabView extends StatelessWidget {
   const ProfileAchievementsTabView({
-    Key key,
-    @required this.user,
+    Key? key,
+    required this.user,
   }) : super(key: key);
-  
+
   final User user;
-  
+
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
@@ -46,8 +46,8 @@ class ProfileAchievementsTabView extends StatelessWidget {
                 return ErrorCard(
                   entityType: S.of(context).achievement,
                   valueFailureString: _achievement.failureOption.fold(
-                      () => S.of(context).noError,
-                      (failure) => failure.toString(),
+                    () => S.of(context).noError,
+                    (failure) => failure.toString(),
                   ),
                 );
               }

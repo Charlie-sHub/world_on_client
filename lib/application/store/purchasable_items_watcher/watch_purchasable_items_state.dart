@@ -1,7 +1,7 @@
 part of 'watch_purchasable_items_bloc.dart';
 
 @freezed
-abstract class WatchPurchasableItemsState with _$WatchPurchasableItemsState {
+class WatchPurchasableItemsState with _$WatchPurchasableItemsState {
   const factory WatchPurchasableItemsState.initial() = _Initial;
 
   const factory WatchPurchasableItemsState.loadInProgress() = _LoadInProgress;

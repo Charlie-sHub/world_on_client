@@ -8,15 +8,15 @@ part 'location.freezed.dart';
 ///
 /// [Location]s are real life places set by City, Country and Postal Code.
 @freezed
-abstract class Location implements _$Location {
+class Location with _$Location {
   const Location._();
 
   const factory Location({
-    @required UniqueId id,
-    @required String city,
-    @required String country, // TODO: Maybe make a value object and validator for countries
-    @required String postalCode,
-    @required Set<Experience> experiences,
+    required UniqueId id,
+    required String city,
+    required String country, // TODO: Maybe make a value object and validator for countries
+    required String postalCode,
+    required Set<Experience> experiences,
   }) = _Location;
 
   factory Location.empty() => Location(

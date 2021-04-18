@@ -15,9 +15,9 @@ import 'package:worldon/views/core/widgets/misc/user_experience_info.dart';
 
 class OwnProfileHeader extends SliverPersistentHeaderDelegate {
   const OwnProfileHeader({
-    @required this.user,
-    @required this.maxExtent,
-    @required this.minExtent,
+    required this.user,
+    required this.maxExtent,
+    required this.minExtent,
   });
 
   final User user;
@@ -112,11 +112,10 @@ class OwnProfileHeader extends SliverPersistentHeaderDelegate {
                */
               Padding(
                 padding: const EdgeInsets.all(5),
-                child: RaisedButton(
-                  onPressed: () => context.navigator
+                child: ElevatedButton(
+                  onPressed: () => context.router
                       .push(
-                    Routes.profileEditingPage,
-                    arguments: ProfileEditingPageArguments(user: user),
+                    ProfileEditingPageRoute(user: user),
                   )
                       .then(
                     (_) {

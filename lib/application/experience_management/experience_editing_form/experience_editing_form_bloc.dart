@@ -54,7 +54,7 @@ class ExperienceEditingFormBloc extends Bloc<ExperienceEditingFormEvent, Experie
   }
 
   Stream<ExperienceEditingFormState> _onSubmitted(_) async* {
-    Either<Failure, Unit> _failureOrUnit;
+    late Either<Failure, Unit> _failureOrUnit;
     yield state.copyWith(
       isSubmitting: true,
       failureOrSuccessOption: none(),

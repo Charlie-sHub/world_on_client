@@ -20,7 +20,8 @@ part 'search_users_by_name_watcher_state.dart';
 @injectable
 class SearchUsersByNameWatcherBloc extends Bloc<SearchUsersByNameWatcherEvent, SearchUsersByNameWatcherState> {
   SearchUsersByNameWatcherBloc() : super(const SearchUsersByNameWatcherState.initial());
-  StreamSubscription<Either<Failure, KtList<User>>> _usersSearchStreamSubscription;
+
+  StreamSubscription<Either<Failure, KtList<User>>>? _usersSearchStreamSubscription;
 
   @override
   Stream<SearchUsersByNameWatcherState> mapEventToState(SearchUsersByNameWatcherEvent event) async* {

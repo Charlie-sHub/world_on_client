@@ -1,7 +1,7 @@
 part of 'profile_editing_form_bloc.dart';
 
 @freezed
-abstract class ProfileEditingFormEvent with _$ProfileEditingFormEvent {
+class ProfileEditingFormEvent with _$ProfileEditingFormEvent {
   const factory ProfileEditingFormEvent.initialized(User userToEdit) = _Initialized;
 
   const factory ProfileEditingFormEvent.nameChanged(String name) = _NameChanged;

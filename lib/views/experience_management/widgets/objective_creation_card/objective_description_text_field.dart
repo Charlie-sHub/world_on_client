@@ -9,8 +9,8 @@ class ObjectiveDescriptionTextField extends StatelessWidget {
   final TextEditingController textController;
 
   const ObjectiveDescriptionTextField({
-    Key key,
-    @required this.textController,
+    Key? key,
+    required this.textController,
   }) : super(key: key);
 
   @override

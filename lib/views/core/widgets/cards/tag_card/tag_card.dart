@@ -13,7 +13,10 @@ import 'package:worldon/views/core/widgets/cards/tag_card/like_tag_button.dart';
 class TagCard extends StatelessWidget {
   final Tag tag;
 
-  const TagCard({Key key, this.tag}) : super(key: key);
+  const TagCard({
+    Key? key,
+    required this.tag,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -88,6 +91,6 @@ class TagCard extends StatelessWidget {
             orElse: () => S.of(context).unknownError,
           ),
         ).show(context),
-        orElse: () => null,
+        orElse: () {},
       );
 }

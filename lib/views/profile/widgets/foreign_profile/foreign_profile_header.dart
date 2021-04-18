@@ -10,9 +10,9 @@ import 'package:worldon/views/core/widgets/misc/user_experience_info.dart';
 
 class ForeignProfileHeader extends SliverPersistentHeaderDelegate {
   const ForeignProfileHeader({
-    @required this.user,
-    @required this.maxExtent,
-    @required this.minExtent,
+    required this.user,
+    required this.maxExtent,
+    required this.minExtent,
   });
 
   final User user;

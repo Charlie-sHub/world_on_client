@@ -1,5 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides
 
 part of 'new_notifications_watcher_bloc.dart';
 
@@ -9,16 +9,17 @@ part of 'new_notifications_watcher_bloc.dart';
 
 T _$identity<T>(T value) => value;
 
+final _privateConstructorUsedError = UnsupportedError(
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+
 /// @nodoc
 class _$NewNotificationsWatcherEventTearOff {
   const _$NewNotificationsWatcherEventTearOff();
 
-// ignore: unused_element
   _WatchNewNotificationsStarted watchNewNotificationsStarted() {
     return const _WatchNewNotificationsStarted();
   }
 
-// ignore: unused_element
   _ResultsReceived resultsReceived(Either<Failure, bool> failureOrBool) {
     return _ResultsReceived(
       failureOrBool,
@@ -27,33 +28,39 @@ class _$NewNotificationsWatcherEventTearOff {
 }
 
 /// @nodoc
-// ignore: unused_element
 const $NewNotificationsWatcherEvent = _$NewNotificationsWatcherEventTearOff();
 
 /// @nodoc
 mixin _$NewNotificationsWatcherEvent {
   @optionalTypeArgs
-  TResult when<TResult extends Object>({
-    @required TResult watchNewNotificationsStarted(),
-    @required TResult resultsReceived(Either<Failure, bool> failureOrBool),
-  });
+  TResult when<TResult extends Object?>({
+    required TResult Function() watchNewNotificationsStarted,
+    required TResult Function(Either<Failure, bool> failureOrBool) resultsReceived,
+  }) =>
+      throw _privateConstructorUsedError;
+
   @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object>({
-    TResult watchNewNotificationsStarted(),
-    TResult resultsReceived(Either<Failure, bool> failureOrBool),
-    @required TResult orElse(),
-  });
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? watchNewNotificationsStarted,
+    TResult Function(Either<Failure, bool> failureOrBool)? resultsReceived,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
+
   @optionalTypeArgs
-  TResult map<TResult extends Object>({
-    @required TResult watchNewNotificationsStarted(_WatchNewNotificationsStarted value),
-    @required TResult resultsReceived(_ResultsReceived value),
-  });
+  TResult map<TResult extends Object?>({
+    required TResult Function(_WatchNewNotificationsStarted value) watchNewNotificationsStarted,
+    required TResult Function(_ResultsReceived value) resultsReceived,
+  }) =>
+      throw _privateConstructorUsedError;
+
   @optionalTypeArgs
-  TResult maybeMap<TResult extends Object>({
-    TResult watchNewNotificationsStarted(_WatchNewNotificationsStarted value),
-    TResult resultsReceived(_ResultsReceived value),
-    @required TResult orElse(),
-  });
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_WatchNewNotificationsStarted value)? watchNewNotificationsStarted,
+    TResult Function(_ResultsReceived value)? resultsReceived,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -104,23 +111,20 @@ class _$_WatchNewNotificationsStarted implements _WatchNewNotificationsStarted {
 
   @override
   @optionalTypeArgs
-  TResult when<TResult extends Object>({
-    @required TResult watchNewNotificationsStarted(),
-    @required TResult resultsReceived(Either<Failure, bool> failureOrBool),
+  TResult when<TResult extends Object?>({
+    required TResult Function() watchNewNotificationsStarted,
+    required TResult Function(Either<Failure, bool> failureOrBool) resultsReceived,
   }) {
-    assert(watchNewNotificationsStarted != null);
-    assert(resultsReceived != null);
     return watchNewNotificationsStarted();
   }
 
   @override
   @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object>({
-    TResult watchNewNotificationsStarted(),
-    TResult resultsReceived(Either<Failure, bool> failureOrBool),
-    @required TResult orElse(),
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? watchNewNotificationsStarted,
+    TResult Function(Either<Failure, bool> failureOrBool)? resultsReceived,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (watchNewNotificationsStarted != null) {
       return watchNewNotificationsStarted();
     }
@@ -129,23 +133,20 @@ class _$_WatchNewNotificationsStarted implements _WatchNewNotificationsStarted {
 
   @override
   @optionalTypeArgs
-  TResult map<TResult extends Object>({
-    @required TResult watchNewNotificationsStarted(_WatchNewNotificationsStarted value),
-    @required TResult resultsReceived(_ResultsReceived value),
+  TResult map<TResult extends Object?>({
+    required TResult Function(_WatchNewNotificationsStarted value) watchNewNotificationsStarted,
+    required TResult Function(_ResultsReceived value) resultsReceived,
   }) {
-    assert(watchNewNotificationsStarted != null);
-    assert(resultsReceived != null);
     return watchNewNotificationsStarted(this);
   }
 
   @override
   @optionalTypeArgs
-  TResult maybeMap<TResult extends Object>({
-    TResult watchNewNotificationsStarted(_WatchNewNotificationsStarted value),
-    TResult resultsReceived(_ResultsReceived value),
-    @required TResult orElse(),
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_WatchNewNotificationsStarted value)? watchNewNotificationsStarted,
+    TResult Function(_ResultsReceived value)? resultsReceived,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (watchNewNotificationsStarted != null) {
       return watchNewNotificationsStarted(this);
     }
@@ -173,17 +174,20 @@ class __$ResultsReceivedCopyWithImpl<$Res> extends _$NewNotificationsWatcherEven
 
   @override
   $Res call({
-    Object failureOrBool = freezed,
+    Object? failureOrBool = freezed,
   }) {
     return _then(_ResultsReceived(
-      failureOrBool == freezed ? _value.failureOrBool : failureOrBool as Either<Failure, bool>,
+      failureOrBool == freezed
+          ? _value.failureOrBool
+          : failureOrBool // ignore: cast_nullable_to_non_nullable
+              as Either<Failure, bool>,
     ));
   }
 }
 
 /// @nodoc
 class _$_ResultsReceived implements _ResultsReceived {
-  const _$_ResultsReceived(this.failureOrBool) : assert(failureOrBool != null);
+  const _$_ResultsReceived(this.failureOrBool);
 
   @override
   final Either<Failure, bool> failureOrBool;
@@ -207,23 +211,20 @@ class _$_ResultsReceived implements _ResultsReceived {
 
   @override
   @optionalTypeArgs
-  TResult when<TResult extends Object>({
-    @required TResult watchNewNotificationsStarted(),
-    @required TResult resultsReceived(Either<Failure, bool> failureOrBool),
+  TResult when<TResult extends Object?>({
+    required TResult Function() watchNewNotificationsStarted,
+    required TResult Function(Either<Failure, bool> failureOrBool) resultsReceived,
   }) {
-    assert(watchNewNotificationsStarted != null);
-    assert(resultsReceived != null);
     return resultsReceived(failureOrBool);
   }
 
   @override
   @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object>({
-    TResult watchNewNotificationsStarted(),
-    TResult resultsReceived(Either<Failure, bool> failureOrBool),
-    @required TResult orElse(),
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? watchNewNotificationsStarted,
+    TResult Function(Either<Failure, bool> failureOrBool)? resultsReceived,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (resultsReceived != null) {
       return resultsReceived(failureOrBool);
     }
@@ -232,23 +233,20 @@ class _$_ResultsReceived implements _ResultsReceived {
 
   @override
   @optionalTypeArgs
-  TResult map<TResult extends Object>({
-    @required TResult watchNewNotificationsStarted(_WatchNewNotificationsStarted value),
-    @required TResult resultsReceived(_ResultsReceived value),
+  TResult map<TResult extends Object?>({
+    required TResult Function(_WatchNewNotificationsStarted value) watchNewNotificationsStarted,
+    required TResult Function(_ResultsReceived value) resultsReceived,
   }) {
-    assert(watchNewNotificationsStarted != null);
-    assert(resultsReceived != null);
     return resultsReceived(this);
   }
 
   @override
   @optionalTypeArgs
-  TResult maybeMap<TResult extends Object>({
-    TResult watchNewNotificationsStarted(_WatchNewNotificationsStarted value),
-    TResult resultsReceived(_ResultsReceived value),
-    @required TResult orElse(),
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_WatchNewNotificationsStarted value)? watchNewNotificationsStarted,
+    TResult Function(_ResultsReceived value)? resultsReceived,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (resultsReceived != null) {
       return resultsReceived(this);
     }
@@ -259,73 +257,75 @@ class _$_ResultsReceived implements _ResultsReceived {
 abstract class _ResultsReceived implements NewNotificationsWatcherEvent {
   const factory _ResultsReceived(Either<Failure, bool> failureOrBool) = _$_ResultsReceived;
 
-  Either<Failure, bool> get failureOrBool;
+  Either<Failure, bool> get failureOrBool => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
-  _$ResultsReceivedCopyWith<_ResultsReceived> get copyWith;
+  _$ResultsReceivedCopyWith<_ResultsReceived> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 class _$NewNotificationsWatcherStateTearOff {
   const _$NewNotificationsWatcherStateTearOff();
 
-// ignore: unused_element
   _Initial initial() {
     return const _Initial();
   }
 
-// ignore: unused_element
   _NewNotifications newNotifications() {
     return const _NewNotifications();
   }
 
-// ignore: unused_element
   _NoNewNotifications noNewNotifications() {
     return const _NoNewNotifications();
   }
 
-// ignore: unused_element
   _Failure failure() {
     return const _Failure();
   }
 }
 
 /// @nodoc
-// ignore: unused_element
 const $NewNotificationsWatcherState = _$NewNotificationsWatcherStateTearOff();
 
 /// @nodoc
 mixin _$NewNotificationsWatcherState {
   @optionalTypeArgs
-  TResult when<TResult extends Object>({
-    @required TResult initial(),
-    @required TResult newNotifications(),
-    @required TResult noNewNotifications(),
-    @required TResult failure(),
-  });
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() newNotifications,
+    required TResult Function() noNewNotifications,
+    required TResult Function() failure,
+  }) =>
+      throw _privateConstructorUsedError;
+
   @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object>({
-    TResult initial(),
-    TResult newNotifications(),
-    TResult noNewNotifications(),
-    TResult failure(),
-    @required TResult orElse(),
-  });
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? newNotifications,
+    TResult Function()? noNewNotifications,
+    TResult Function()? failure,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
+
   @optionalTypeArgs
-  TResult map<TResult extends Object>({
-    @required TResult initial(_Initial value),
-    @required TResult newNotifications(_NewNotifications value),
-    @required TResult noNewNotifications(_NoNewNotifications value),
-    @required TResult failure(_Failure value),
-  });
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial value) initial,
+    required TResult Function(_NewNotifications value) newNotifications,
+    required TResult Function(_NoNewNotifications value) noNewNotifications,
+    required TResult Function(_Failure value) failure,
+  }) =>
+      throw _privateConstructorUsedError;
+
   @optionalTypeArgs
-  TResult maybeMap<TResult extends Object>({
-    TResult initial(_Initial value),
-    TResult newNotifications(_NewNotifications value),
-    TResult noNewNotifications(_NoNewNotifications value),
-    TResult failure(_Failure value),
-    @required TResult orElse(),
-  });
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_NewNotifications value)? newNotifications,
+    TResult Function(_NoNewNotifications value)? noNewNotifications,
+    TResult Function(_Failure value)? failure,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -375,29 +375,24 @@ class _$_Initial implements _Initial {
 
   @override
   @optionalTypeArgs
-  TResult when<TResult extends Object>({
-    @required TResult initial(),
-    @required TResult newNotifications(),
-    @required TResult noNewNotifications(),
-    @required TResult failure(),
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() newNotifications,
+    required TResult Function() noNewNotifications,
+    required TResult Function() failure,
   }) {
-    assert(initial != null);
-    assert(newNotifications != null);
-    assert(noNewNotifications != null);
-    assert(failure != null);
     return initial();
   }
 
   @override
   @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object>({
-    TResult initial(),
-    TResult newNotifications(),
-    TResult noNewNotifications(),
-    TResult failure(),
-    @required TResult orElse(),
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? newNotifications,
+    TResult Function()? noNewNotifications,
+    TResult Function()? failure,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (initial != null) {
       return initial();
     }
@@ -406,29 +401,24 @@ class _$_Initial implements _Initial {
 
   @override
   @optionalTypeArgs
-  TResult map<TResult extends Object>({
-    @required TResult initial(_Initial value),
-    @required TResult newNotifications(_NewNotifications value),
-    @required TResult noNewNotifications(_NoNewNotifications value),
-    @required TResult failure(_Failure value),
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial value) initial,
+    required TResult Function(_NewNotifications value) newNotifications,
+    required TResult Function(_NoNewNotifications value) noNewNotifications,
+    required TResult Function(_Failure value) failure,
   }) {
-    assert(initial != null);
-    assert(newNotifications != null);
-    assert(noNewNotifications != null);
-    assert(failure != null);
     return initial(this);
   }
 
   @override
   @optionalTypeArgs
-  TResult maybeMap<TResult extends Object>({
-    TResult initial(_Initial value),
-    TResult newNotifications(_NewNotifications value),
-    TResult noNewNotifications(_NoNewNotifications value),
-    TResult failure(_Failure value),
-    @required TResult orElse(),
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_NewNotifications value)? newNotifications,
+    TResult Function(_NoNewNotifications value)? noNewNotifications,
+    TResult Function(_Failure value)? failure,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (initial != null) {
       return initial(this);
     }
@@ -472,29 +462,24 @@ class _$_NewNotifications implements _NewNotifications {
 
   @override
   @optionalTypeArgs
-  TResult when<TResult extends Object>({
-    @required TResult initial(),
-    @required TResult newNotifications(),
-    @required TResult noNewNotifications(),
-    @required TResult failure(),
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() newNotifications,
+    required TResult Function() noNewNotifications,
+    required TResult Function() failure,
   }) {
-    assert(initial != null);
-    assert(newNotifications != null);
-    assert(noNewNotifications != null);
-    assert(failure != null);
     return newNotifications();
   }
 
   @override
   @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object>({
-    TResult initial(),
-    TResult newNotifications(),
-    TResult noNewNotifications(),
-    TResult failure(),
-    @required TResult orElse(),
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? newNotifications,
+    TResult Function()? noNewNotifications,
+    TResult Function()? failure,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (newNotifications != null) {
       return newNotifications();
     }
@@ -503,29 +488,24 @@ class _$_NewNotifications implements _NewNotifications {
 
   @override
   @optionalTypeArgs
-  TResult map<TResult extends Object>({
-    @required TResult initial(_Initial value),
-    @required TResult newNotifications(_NewNotifications value),
-    @required TResult noNewNotifications(_NoNewNotifications value),
-    @required TResult failure(_Failure value),
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial value) initial,
+    required TResult Function(_NewNotifications value) newNotifications,
+    required TResult Function(_NoNewNotifications value) noNewNotifications,
+    required TResult Function(_Failure value) failure,
   }) {
-    assert(initial != null);
-    assert(newNotifications != null);
-    assert(noNewNotifications != null);
-    assert(failure != null);
     return newNotifications(this);
   }
 
   @override
   @optionalTypeArgs
-  TResult maybeMap<TResult extends Object>({
-    TResult initial(_Initial value),
-    TResult newNotifications(_NewNotifications value),
-    TResult noNewNotifications(_NoNewNotifications value),
-    TResult failure(_Failure value),
-    @required TResult orElse(),
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_NewNotifications value)? newNotifications,
+    TResult Function(_NoNewNotifications value)? noNewNotifications,
+    TResult Function(_Failure value)? failure,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (newNotifications != null) {
       return newNotifications(this);
     }
@@ -569,29 +549,24 @@ class _$_NoNewNotifications implements _NoNewNotifications {
 
   @override
   @optionalTypeArgs
-  TResult when<TResult extends Object>({
-    @required TResult initial(),
-    @required TResult newNotifications(),
-    @required TResult noNewNotifications(),
-    @required TResult failure(),
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() newNotifications,
+    required TResult Function() noNewNotifications,
+    required TResult Function() failure,
   }) {
-    assert(initial != null);
-    assert(newNotifications != null);
-    assert(noNewNotifications != null);
-    assert(failure != null);
     return noNewNotifications();
   }
 
   @override
   @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object>({
-    TResult initial(),
-    TResult newNotifications(),
-    TResult noNewNotifications(),
-    TResult failure(),
-    @required TResult orElse(),
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? newNotifications,
+    TResult Function()? noNewNotifications,
+    TResult Function()? failure,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (noNewNotifications != null) {
       return noNewNotifications();
     }
@@ -600,29 +575,24 @@ class _$_NoNewNotifications implements _NoNewNotifications {
 
   @override
   @optionalTypeArgs
-  TResult map<TResult extends Object>({
-    @required TResult initial(_Initial value),
-    @required TResult newNotifications(_NewNotifications value),
-    @required TResult noNewNotifications(_NoNewNotifications value),
-    @required TResult failure(_Failure value),
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial value) initial,
+    required TResult Function(_NewNotifications value) newNotifications,
+    required TResult Function(_NoNewNotifications value) noNewNotifications,
+    required TResult Function(_Failure value) failure,
   }) {
-    assert(initial != null);
-    assert(newNotifications != null);
-    assert(noNewNotifications != null);
-    assert(failure != null);
     return noNewNotifications(this);
   }
 
   @override
   @optionalTypeArgs
-  TResult maybeMap<TResult extends Object>({
-    TResult initial(_Initial value),
-    TResult newNotifications(_NewNotifications value),
-    TResult noNewNotifications(_NoNewNotifications value),
-    TResult failure(_Failure value),
-    @required TResult orElse(),
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_NewNotifications value)? newNotifications,
+    TResult Function(_NoNewNotifications value)? noNewNotifications,
+    TResult Function(_Failure value)? failure,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (noNewNotifications != null) {
       return noNewNotifications(this);
     }
@@ -666,29 +636,24 @@ class _$_Failure implements _Failure {
 
   @override
   @optionalTypeArgs
-  TResult when<TResult extends Object>({
-    @required TResult initial(),
-    @required TResult newNotifications(),
-    @required TResult noNewNotifications(),
-    @required TResult failure(),
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() newNotifications,
+    required TResult Function() noNewNotifications,
+    required TResult Function() failure,
   }) {
-    assert(initial != null);
-    assert(newNotifications != null);
-    assert(noNewNotifications != null);
-    assert(failure != null);
     return failure();
   }
 
   @override
   @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object>({
-    TResult initial(),
-    TResult newNotifications(),
-    TResult noNewNotifications(),
-    TResult failure(),
-    @required TResult orElse(),
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? newNotifications,
+    TResult Function()? noNewNotifications,
+    TResult Function()? failure,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (failure != null) {
       return failure();
     }
@@ -697,29 +662,24 @@ class _$_Failure implements _Failure {
 
   @override
   @optionalTypeArgs
-  TResult map<TResult extends Object>({
-    @required TResult initial(_Initial value),
-    @required TResult newNotifications(_NewNotifications value),
-    @required TResult noNewNotifications(_NoNewNotifications value),
-    @required TResult failure(_Failure value),
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial value) initial,
+    required TResult Function(_NewNotifications value) newNotifications,
+    required TResult Function(_NoNewNotifications value) noNewNotifications,
+    required TResult Function(_Failure value) failure,
   }) {
-    assert(initial != null);
-    assert(newNotifications != null);
-    assert(noNewNotifications != null);
-    assert(failure != null);
     return failure(this);
   }
 
   @override
   @optionalTypeArgs
-  TResult maybeMap<TResult extends Object>({
-    TResult initial(_Initial value),
-    TResult newNotifications(_NewNotifications value),
-    TResult noNewNotifications(_NoNewNotifications value),
-    TResult failure(_Failure value),
-    @required TResult orElse(),
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_NewNotifications value)? newNotifications,
+    TResult Function(_NoNewNotifications value)? noNewNotifications,
+    TResult Function(_Failure value)? failure,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (failure != null) {
       return failure(this);
     }

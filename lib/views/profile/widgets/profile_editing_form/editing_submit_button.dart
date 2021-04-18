@@ -6,7 +6,7 @@ import 'package:worldon/views/core/misc/world_on_colors.dart';
 
 class EditingSubmitButton extends StatelessWidget {
   const EditingSubmitButton({
-    Key key,
+    Key? key,
   }) : super(key: key);
 
   @override
@@ -27,14 +27,14 @@ class EditingSubmitButton extends StatelessWidget {
               ),
             );
           } else {
-            return RaisedButton(
+            return ElevatedButton(
               onPressed: () => context.read<ProfileEditingFormBloc>().add(
                     const ProfileEditingFormEvent.submitted(),
                   ),
-              color: WorldOnColors.primary,
-              shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(0),
-                side: const BorderSide(color: WorldOnColors.primary),
+              style: ButtonStyle(
+                backgroundColor: MaterialStateProperty.all(
+                  WorldOnColors.primary,
+                ),
               ),
               child: Text(
                 S.of(context).submitButton,

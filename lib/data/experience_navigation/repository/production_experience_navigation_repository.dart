@@ -95,8 +95,8 @@ class ProductionExperienceNavigationRepository implements ExperienceNavigationRe
 
   @override
   Future<Either<Failure, Unit>> rateDifficulty({
-    Difficulty difficulty,
-    UniqueId experienceId,
+    required Difficulty difficulty,
+    required UniqueId experienceId,
   }) async {
     // TODO: Properly implement this
     // The difficulty should be the average of all user's rating, not just the rating of the last user

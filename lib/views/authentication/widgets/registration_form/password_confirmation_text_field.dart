@@ -7,7 +7,7 @@ import 'package:worldon/views/core/misc/world_on_colors.dart';
 
 class PasswordConfirmationTextField extends StatelessWidget {
   const PasswordConfirmationTextField({
-    Key key,
+    Key? key,
   }) : super(key: key);
 
   @override

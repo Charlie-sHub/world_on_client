@@ -10,8 +10,8 @@ import 'package:worldon/views/core/misc/world_on_colors.dart';
 
 class RateDifficultyWidget extends StatelessWidget {
   const RateDifficultyWidget({
-    Key key,
-    @required this.experience,
+    Key? key,
+    required this.experience,
   }) : super(key: key);
 
   final Experience experience;
@@ -50,8 +50,12 @@ class RateDifficultyWidget extends StatelessWidget {
                         ),
                     value: state.difficulty.ceilToDouble(),
                   ),
-                  RaisedButton(
-                    color: WorldOnColors.background,
+                  ElevatedButton(
+                    style: ButtonStyle(
+                      backgroundColor: MaterialStateProperty.all(
+                        WorldOnColors.background,
+                      ),
+                    ),
                     onPressed: () => context.read<RateExperienceDifficultyActorBloc>().add(
                           RateExperienceDifficultyActorEvent.difficultyRated(experience),
                         ),
@@ -82,7 +86,7 @@ class RateDifficultyWidget extends StatelessWidget {
       ).show(context);
     }
     state.failureOrSuccessOption.fold(
-      () => null,
+      () {},
       (either) => either.fold(
         (failure) => FlushbarHelper.createError(
           duration: const Duration(seconds: 2),

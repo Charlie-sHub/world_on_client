@@ -7,16 +7,20 @@ import 'package:worldon/views/core/misc/world_on_colors.dart';
 
 class AddToLogButton extends StatelessWidget {
   const AddToLogButton({
-    Key key,
-    @required this.experience,
+    Key? key,
+    required this.experience,
   }) : super(key: key);
 
   final Experience experience;
 
   @override
   Widget build(BuildContext context) {
-    return RaisedButton(
-      color: WorldOnColors.background,
+    return ElevatedButton(
+      style: ButtonStyle(
+        backgroundColor: MaterialStateProperty.all(
+          WorldOnColors.background,
+        ),
+      ),
       onPressed: () => context.read<ExperienceCardActorBloc>().add(
             ExperienceCardActorEvent.addedExperienceToLog(experience),
           ),

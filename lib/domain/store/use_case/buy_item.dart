@@ -1,5 +1,4 @@
 import 'package:dartz/dartz.dart';
-import 'package:flutter/foundation.dart';
 import 'package:injectable/injectable.dart';
 import 'package:worldon/core/error/failure.dart';
 import 'package:worldon/domain/core/entities/item/item.dart';
@@ -21,5 +20,5 @@ class BuyItem implements AsyncUseCase<Unit, Params> {
 class Params {
   final Item item;
 
-  Params({@required this.item});
+  Params({required this.item});
 }

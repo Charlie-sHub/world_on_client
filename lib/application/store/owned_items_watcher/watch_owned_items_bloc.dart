@@ -11,15 +11,13 @@ import 'package:worldon/domain/store/use_case/watch_owned_items.dart';
 import 'package:worldon/injection.dart';
 
 part 'watch_owned_items_bloc.freezed.dart';
-
 part 'watch_owned_items_event.dart';
-
 part 'watch_owned_items_state.dart';
 
 class WatchOwnedItemsBloc extends Bloc<WatchOwnedItemsEvent, WatchOwnedItemsState> {
   WatchOwnedItemsBloc() : super(const WatchOwnedItemsState.initial());
 
-  StreamSubscription<Either<Failure, KtList<Item>>> _ownedItemsStreamSubscription;
+  StreamSubscription<Either<Failure, KtList<Item>>>? _ownedItemsStreamSubscription;
 
   @override
   Stream<WatchOwnedItemsState> mapEventToState(WatchOwnedItemsEvent event) async* {

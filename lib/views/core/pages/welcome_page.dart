@@ -40,8 +40,8 @@ class WelcomePage extends StatelessWidget {
                   style: const TextStyle(fontSize: 25),
                 ),
               ),
-              FlatButton(
-                onPressed: () => context.navigator.replace(Routes.mainPage),
+              TextButton(
+                onPressed: () => context.router.replace(const MainPageRoute()),
                 child: const FaIcon(
                   FontAwesomeIcons.check,
                   size: 90,

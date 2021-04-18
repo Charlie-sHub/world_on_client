@@ -5,7 +5,7 @@ class ServerTimestampConverter implements JsonConverter<DateTime, Timestamp> {
   const ServerTimestampConverter();
 
   @override
-  DateTime fromJson(Timestamp timestamp) => timestamp == null ? DateTime.now() : timestamp.toDate();
+  DateTime fromJson(Timestamp timestamp) => timestamp.toDate();
 
   @override
   Timestamp toJson(DateTime dateTime) => Timestamp.fromDate(dateTime);

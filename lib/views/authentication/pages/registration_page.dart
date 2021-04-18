@@ -19,7 +19,7 @@ class RegistrationPage extends StatelessWidget {
         child: BlocConsumer<RegistrationFormBloc, RegistrationFormState>(
           listenWhen: (previous, current) => previous.failureOrSuccessOption != current.failureOrSuccessOption,
           listener: (context, state) => state.failureOrSuccessOption.fold(
-            () => null,
+            () {},
             (either) => either.fold(
               (failure) => _onFailure(failure, context),
               (_) => _onSuccess(context),
@@ -56,7 +56,7 @@ class RegistrationPage extends StatelessWidget {
       ).show(context);
 
   void _onSuccess(BuildContext context) {
-    context.navigator.replace(Routes.welcomePage);
+    context.router.replace(const WelcomePageRoute());
     context.read<AuthenticationBloc>().add(const AuthenticationEvent.authenticationCheckRequested());
   }
 }

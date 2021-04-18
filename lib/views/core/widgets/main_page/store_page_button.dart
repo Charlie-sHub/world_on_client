@@ -4,7 +4,7 @@ import 'package:worldon/views/core/routes/router.gr.dart';
 
 class StorePageButton extends StatelessWidget {
   const StorePageButton({
-    Key key,
+    Key? key,
   }) : super(key: key);
 
   @override
@@ -15,8 +15,8 @@ class StorePageButton extends StatelessWidget {
         Icons.account_balance_wallet_outlined,
         size: 35,
       ),
-      onPressed: () => context.navigator.push(
-        Routes.storePage,
+      onPressed: () => context.router.push(
+        const StorePageRoute(),
       ),
     );
   }

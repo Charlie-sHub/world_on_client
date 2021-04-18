@@ -5,8 +5,8 @@ import 'package:worldon/views/core/misc/world_on_colors.dart';
 
 class FollowersFollowingCounters extends StatelessWidget {
   const FollowersFollowingCounters({
-    Key key,
-    @required this.user,
+    Key? key,
+    required this.user,
   }) : super(key: key);
 
   final User user;

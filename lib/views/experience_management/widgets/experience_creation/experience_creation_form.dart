@@ -25,10 +25,10 @@ class ExperienceCreationForm extends StatelessWidget {
     return BlocConsumer<ExperienceManagementFormBloc, ExperienceManagementFormState>(
       listenWhen: (previous, current) => previous.failureOrSuccessOption != current.failureOrSuccessOption,
       listener: (context, state) => state.failureOrSuccessOption.fold(
-        () => null,
+        () {},
         (either) => either.fold(
           (failure) => onExperienceManagementFailure(failure, context),
-          (_) => context.navigator.pop(),
+          (_) => context.router.pop(),
         ),
       ),
       buildWhen: _buildWhen,

@@ -1,7 +1,7 @@
 part of 'new_notifications_watcher_bloc.dart';
 
 @freezed
-abstract class NewNotificationsWatcherState with _$NewNotificationsWatcherState {
+class NewNotificationsWatcherState with _$NewNotificationsWatcherState {
   const factory NewNotificationsWatcherState.initial() = _Initial;
 
   const factory NewNotificationsWatcherState.newNotifications() = _NewNotifications;

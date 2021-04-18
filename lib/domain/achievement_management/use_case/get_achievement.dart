@@ -1,5 +1,4 @@
 import 'package:dartz/dartz.dart';
-import 'package:flutter/foundation.dart';
 import 'package:injectable/injectable.dart';
 import 'package:worldon/core/error/failure.dart';
 import 'package:worldon/domain/achievement_management/repository/achievement_repository_interface.dart';
@@ -22,5 +21,5 @@ class GetAchievement implements AsyncUseCase<Achievement, Params> {
 class Params {
   final UniqueId id;
 
-  Params({@required this.id});
+  Params({required this.id});
 }

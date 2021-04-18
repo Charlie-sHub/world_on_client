@@ -8,8 +8,8 @@ class RewardDescriptionTextField extends StatelessWidget {
   final TextEditingController textController;
 
   const RewardDescriptionTextField({
-    Key key,
-    @required this.textController,
+    Key? key,
+    required this.textController,
   }) : super(key: key);
 
   @override

@@ -1,4 +1,3 @@
-import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
@@ -7,14 +6,16 @@ import 'package:provider/provider.dart';
 import 'package:worldon/application/authentication/authentication/authentication_bloc.dart';
 import 'package:worldon/generated/l10n.dart';
 import 'package:worldon/views/core/misc/world_on_colors.dart';
-import 'package:worldon/views/core/routes/router.gr.dart' as router;
+import 'package:worldon/views/core/routes/router.gr.dart';
 
 import '../../../injection.dart';
 
 class AppWidget extends StatelessWidget {
-  const AppWidget({
-    Key key,
+  AppWidget({
+    Key? key,
   }) : super(key: key);
+
+  final _router = AppRouter();
 
   @override
   Widget build(BuildContext context) {
@@ -27,10 +28,19 @@ class AppWidget extends StatelessWidget {
             ),
         ),
       ],
-      child: MaterialApp(
+      child: MaterialApp.router(
         title: "World On",
         debugShowCheckedModeBanner: Provider.of<String>(context) != Environment.prod,
         theme: ThemeData.dark().copyWith(
+          elevatedButtonTheme: ElevatedButtonThemeData(
+            style: ButtonStyle(
+              shape: MaterialStateProperty.all(
+                RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(3),
+                ),
+              ),
+            ),
+          ),
           buttonBarTheme: const ButtonBarThemeData(
             alignment: MainAxisAlignment.spaceAround,
           ),
@@ -75,9 +85,6 @@ class AppWidget extends StatelessWidget {
             ),
           ),
         ),
-        builder: ExtendedNavigator.builder<router.Router>(
-          router: router.Router(),
-        ),
         localizationsDelegates: const [
           S.delegate,
           GlobalMaterialLocalizations.delegate,
@@ -85,6 +92,8 @@ class AppWidget extends StatelessWidget {
           GlobalCupertinoLocalizations.delegate,
         ],
         supportedLocales: S.delegate.supportedLocales,
+        routerDelegate: _router.delegate(),
+        routeInformationParser: _router.defaultRouteParser(),
       ),
     );
   }

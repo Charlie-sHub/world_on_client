@@ -1,5 +1,4 @@
 import 'package:dartz/dartz.dart';
-import 'package:flutter/foundation.dart';
 import 'package:injectable/injectable.dart';
 import 'package:worldon/core/error/failure.dart';
 import 'package:worldon/domain/core/entities/tag/tag.dart';
@@ -22,6 +21,6 @@ class Params {
   final Tag tag;
 
   Params({
-    @required this.tag,
+    required this.tag,
   });
 }

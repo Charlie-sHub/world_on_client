@@ -1,15 +1,15 @@
 part of 'registration_form_bloc.dart';
 
 @freezed
-abstract class RegistrationFormState with _$RegistrationFormState {
+class RegistrationFormState with _$RegistrationFormState {
   const factory RegistrationFormState({
-    @required User user,
-    @required PasswordConfirmator passwordConfirmator,
-    @required String passwordToCompare,
-    @required bool showErrorMessages,
-    @required bool isSubmitting,
-    @required bool acceptedEULA,
-    @required Option<Either<Failure, Unit>> failureOrSuccessOption,
+    required User user,
+    required PasswordConfirmator passwordConfirmator,
+    required String passwordToCompare,
+    required bool showErrorMessages,
+    required bool isSubmitting,
+    required bool acceptedEULA,
+    required Option<Either<Failure, Unit>> failureOrSuccessOption,
   }) = _RegistrationFormState;
 
   factory RegistrationFormState.initial() => RegistrationFormState(

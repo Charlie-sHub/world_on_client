@@ -1,4 +1,3 @@
-import 'package:auto_route/auto_route.dart';
 import 'package:dartz/dartz.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -11,8 +10,8 @@ import 'package:worldon/views/experience_management/widgets/experience_editing/e
 
 class ExperienceManagementPage extends StatelessWidget {
   const ExperienceManagementPage({
-    Key key,
-    @required this.experienceOption,
+    Key? key,
+    required this.experienceOption,
   }) : super(key: key);
 
   final Option<Experience> experienceOption;

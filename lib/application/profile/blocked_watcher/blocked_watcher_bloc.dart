@@ -19,7 +19,8 @@ part 'blocked_watcher_state.dart';
 @injectable
 class BlockedWatcherBloc extends Bloc<BlockedWatcherEvent, BlockedWatcherState> {
   BlockedWatcherBloc() : super(const BlockedWatcherState.initial());
-  StreamSubscription<Either<Failure, KtList<User>>> _blockedUsersStreamSubscription;
+
+  StreamSubscription<Either<Failure, KtList<User>>>? _blockedUsersStreamSubscription;
 
   @override
   Stream<BlockedWatcherState> mapEventToState(BlockedWatcherEvent event) async* {

@@ -13,8 +13,8 @@ class ObjectiveCreationForm extends StatelessWidget {
   final TextEditingController textEditingController;
 
   const ObjectiveCreationForm({
-    Key key,
-    @required this.textEditingController,
+    Key? key,
+    required this.textEditingController,
   }) : super(key: key);
 
   @override
@@ -57,7 +57,7 @@ class ObjectiveCreationForm extends StatelessWidget {
                 ),
                 (imageFile) => Padding(
                   padding: const EdgeInsets.all(10),
-                  child: FlatButton(
+                  child: TextButton(
                     onPressed: () async {
                       final _imageFile = await _openDialog(context);
                       if (_imageFile != null) {
@@ -86,7 +86,7 @@ class ObjectiveCreationForm extends StatelessWidget {
     );
   }
 
-  Future<File> _openDialog(BuildContext context) async {
+  Future<File?> _openDialog(BuildContext context) async {
     return showDialog<File>(
       context: context,
       useSafeArea: true,
