@@ -105,7 +105,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "lasts": MessageLookupByLibrary.simpleMessage(" days of duration"),
         "level": MessageLookupByLibrary.simpleMessage("Level: "),
         "levelUp": MessageLookupByLibrary.simpleMessage("You have leveled up!"),
-        "likeQuestion": MessageLookupByLibrary.simpleMessage("Did you like it?"),
+        "likeQuestion": MessageLookupByLibrary.simpleMessage("Did you like the experience?"),
         "liked": MessageLookupByLibrary.simpleMessage("Liked"),
         "logIn": MessageLookupByLibrary.simpleMessage("LOG IN"),
         "logInGoogle": MessageLookupByLibrary.simpleMessage("Log In with Google"),

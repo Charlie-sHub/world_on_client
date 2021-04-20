@@ -1,4 +1,5 @@
 import 'package:dartz/dartz.dart';
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:worldon/application/experience_management/experience_management_form/experience_management_form_bloc.dart';
@@ -18,30 +19,43 @@ class ExperienceManagementPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        centerTitle: true,
-        title: Text(
-          experienceOption.fold(
-            () => S.of(context).experienceCreationTitle,
-            (a) => S.of(context).experienceEditingTitle,
-          ),
-          textAlign: TextAlign.center,
-          style: const TextStyle(
-            fontWeight: FontWeight.bold,
-            fontSize: 25,
-          ),
-        ),
-      ),
-      body: BlocProvider(
-        create: (context) => getIt<ExperienceManagementFormBloc>()
-          ..add(
-            ExperienceManagementFormEvent.initialized(experienceOption),
-          ),
-        child: experienceOption.fold(
-          () => ExperienceCreationForm(),
-          (_experience) => ExperienceEditingForm(
-            experience: _experience,
+    return SafeArea(
+      child: Scaffold(
+        body: NestedScrollView(
+          dragStartBehavior: DragStartBehavior.down,
+          clipBehavior: Clip.antiAlias,
+          floatHeaderSlivers: true,
+          headerSliverBuilder: (context, innerBoxIsScrolled) => [
+            SliverAppBar(
+              expandedHeight: 50,
+              elevation: 10,
+              centerTitle: true,
+              flexibleSpace: FlexibleSpaceBar(
+                title: Text(
+                  experienceOption.fold(
+                    () => S.of(context).experienceCreationTitle,
+                    (a) => S.of(context).experienceEditingTitle,
+                  ),
+                  textAlign: TextAlign.center,
+                  style: const TextStyle(
+                    fontWeight: FontWeight.bold,
+                    fontSize: 18,
+                  ),
+                ),
+              ),
+            ),
+          ],
+          body: BlocProvider(
+            create: (context) => getIt<ExperienceManagementFormBloc>()
+              ..add(
+                ExperienceManagementFormEvent.initialized(experienceOption),
+              ),
+            child: experienceOption.fold(
+              () => ExperienceCreationForm(),
+              (_experience) => ExperienceEditingForm(
+                experience: _experience,
+              ),
+            ),
           ),
         ),
       ),

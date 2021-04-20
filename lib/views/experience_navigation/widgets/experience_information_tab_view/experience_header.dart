@@ -21,6 +21,15 @@ class ExperienceHeader extends StatelessWidget {
           experience.title.getOrCrash(),
           textAlign: TextAlign.center,
           style: const TextStyle(
+            shadows: <Shadow>[
+              Shadow(
+                offset: Offset(
+                  2,
+                  2,
+                ),
+                blurRadius: 5,
+              ),
+            ],
             color: WorldOnColors.white,
             fontWeight: FontWeight.bold,
             fontSize: 25,

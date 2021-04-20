@@ -88,7 +88,7 @@
   "experienceFinishButton": "Finish",
   "experienceFinishSuccessTitle": "Experience Finished!",
   "rewardsGained": "Rewards",
-  "likeQuestion": "Did you like it?",
+  "likeQuestion": "Did you like the experience?",
   "difficultyQuestion": "How difficult was the experience?",
   "submitDifficultyRating": "Submit rating",
   "difficultyOutOfBounds": "Invalid difficulty value",

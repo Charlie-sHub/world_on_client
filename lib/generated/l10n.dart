@@ -927,10 +927,10 @@ class S {
     );
   }
 
-  /// `Did you like it?`
+  /// `Did you like the experience?`
   String get likeQuestion {
     return Intl.message(
-      'Did you like it?',
+      'Did you like the experience?',
       name: 'likeQuestion',
       desc: '',
       args: [],

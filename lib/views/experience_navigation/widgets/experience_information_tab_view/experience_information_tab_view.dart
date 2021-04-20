@@ -13,7 +13,6 @@ import 'package:worldon/views/core/widgets/misc/user_image.dart';
 import 'package:worldon/views/experience_navigation/widgets/experience_information_tab_view/experience_description.dart';
 import 'package:worldon/views/experience_navigation/widgets/experience_information_tab_view/experience_header.dart';
 import 'package:worldon/views/experience_navigation/widgets/experience_information_tab_view/experience_image_gallery.dart';
-import 'package:worldon/views/experience_navigation/widgets/rewards_list_view.dart';
 
 import 'experience_comments_list_view.dart';
 
@@ -32,11 +31,17 @@ class ExperienceInformationTabView extends StatelessWidget {
       child: ListView(
         children: [
           ExperienceHeader(experience: experience),
+          const SizedBox(height: 5),
           Padding(
-            padding: const EdgeInsets.all(15),
+            padding: const EdgeInsets.symmetric(
+              horizontal: 10,
+            ),
             child: ExperienceDescription(experience: experience),
           ),
-          ExperienceImageGallery(experience: experience),
+          const SizedBox(height: 5),
+          ExperienceImageGallery(
+            imageURLs: experience.imageURLs,
+          ),
           Padding(
             padding: const EdgeInsets.all(5),
             child: Row(
@@ -88,6 +93,7 @@ class ExperienceInformationTabView extends StatelessWidget {
               ],
             ),
           ),
+          /*
           if (experience.rewards.isNotEmpty)
             Column(
               children: [
@@ -109,6 +115,7 @@ class ExperienceInformationTabView extends StatelessWidget {
                 ),
               ],
             ),
+            */
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: <Widget>[

@@ -21,7 +21,7 @@ class _$CommentDtoTearOff {
   const _$CommentDtoTearOff();
 
   _CommentDto call(
-      {required String id,
+      {@JsonKey(ignore: true) String? id,
       required UserDto poster,
       required String experienceId,
       required String content,
@@ -47,16 +47,23 @@ const $CommentDto = _$CommentDtoTearOff();
 
 /// @nodoc
 mixin _$CommentDto {
-  String get id => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  String? get id => throw _privateConstructorUsedError;
+
   UserDto get poster => throw _privateConstructorUsedError;
+
   String get experienceId => throw _privateConstructorUsedError;
+
   String get content => throw _privateConstructorUsedError;
+
   @ServerTimestampConverter()
   DateTime get creationDate => throw _privateConstructorUsedError;
+
   @ServerTimestampConverter()
   DateTime get modificationDate => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+
   @JsonKey(ignore: true)
   $CommentDtoCopyWith<CommentDto> get copyWith => throw _privateConstructorUsedError;
 }
@@ -65,7 +72,13 @@ mixin _$CommentDto {
 abstract class $CommentDtoCopyWith<$Res> {
   factory $CommentDtoCopyWith(CommentDto value, $Res Function(CommentDto) then) = _$CommentDtoCopyWithImpl<$Res>;
 
-  $Res call({String id, UserDto poster, String experienceId, String content, @ServerTimestampConverter() DateTime creationDate, @ServerTimestampConverter() DateTime modificationDate});
+  $Res call(
+      {@JsonKey(ignore: true) String? id,
+      UserDto poster,
+      String experienceId,
+      String content,
+      @ServerTimestampConverter() DateTime creationDate,
+      @ServerTimestampConverter() DateTime modificationDate});
 
   $UserDtoCopyWith<$Res> get poster;
 }
@@ -91,7 +104,7 @@ class _$CommentDtoCopyWithImpl<$Res> implements $CommentDtoCopyWith<$Res> {
       id: id == freezed
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
       poster: poster == freezed
           ? _value.poster
           : poster // ignore: cast_nullable_to_non_nullable
@@ -128,7 +141,13 @@ abstract class _$CommentDtoCopyWith<$Res> implements $CommentDtoCopyWith<$Res> {
   factory _$CommentDtoCopyWith(_CommentDto value, $Res Function(_CommentDto) then) = __$CommentDtoCopyWithImpl<$Res>;
 
   @override
-  $Res call({String id, UserDto poster, String experienceId, String content, @ServerTimestampConverter() DateTime creationDate, @ServerTimestampConverter() DateTime modificationDate});
+  $Res call(
+      {@JsonKey(ignore: true) String? id,
+      UserDto poster,
+      String experienceId,
+      String content,
+      @ServerTimestampConverter() DateTime creationDate,
+      @ServerTimestampConverter() DateTime modificationDate});
 
   @override
   $UserDtoCopyWith<$Res> get poster;
@@ -154,7 +173,7 @@ class __$CommentDtoCopyWithImpl<$Res> extends _$CommentDtoCopyWithImpl<$Res> imp
       id: id == freezed
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
       poster: poster == freezed
           ? _value.poster
           : poster // ignore: cast_nullable_to_non_nullable
@@ -184,7 +203,7 @@ class __$CommentDtoCopyWithImpl<$Res> extends _$CommentDtoCopyWithImpl<$Res> imp
 /// @nodoc
 class _$_CommentDto extends _CommentDto {
   const _$_CommentDto(
-      {required this.id,
+      {@JsonKey(ignore: true) this.id,
       required this.poster,
       required this.experienceId,
       required this.content,
@@ -195,7 +214,8 @@ class _$_CommentDto extends _CommentDto {
   factory _$_CommentDto.fromJson(Map<String, dynamic> json) => _$_$_CommentDtoFromJson(json);
 
   @override
-  final String id;
+  @JsonKey(ignore: true)
+  final String? id;
   @override
   final UserDto poster;
   @override
@@ -248,7 +268,7 @@ class _$_CommentDto extends _CommentDto {
 
 abstract class _CommentDto extends CommentDto {
   const factory _CommentDto(
-      {required String id,
+      {@JsonKey(ignore: true) String? id,
       required UserDto poster,
       required String experienceId,
       required String content,
@@ -260,7 +280,8 @@ abstract class _CommentDto extends CommentDto {
   factory _CommentDto.fromJson(Map<String, dynamic> json) = _$_CommentDto.fromJson;
 
   @override
-  String get id => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  String? get id => throw _privateConstructorUsedError;
 
   @override
   UserDto get poster => throw _privateConstructorUsedError;
@@ -270,7 +291,6 @@ abstract class _CommentDto extends CommentDto {
 
   @override
   String get content => throw _privateConstructorUsedError;
-
   @override
   @ServerTimestampConverter()
   DateTime get creationDate => throw _privateConstructorUsedError;

@@ -42,8 +42,7 @@ mixin _$System {
 
 /// @nodoc
 abstract class $SystemCopyWith<$Res> {
-  factory $SystemCopyWith(System value, $Res Function(System) then) =
-      _$SystemCopyWithImpl<$Res>;
+  factory $SystemCopyWith(System value, $Res Function(System) then) = _$SystemCopyWithImpl<$Res>;
   $Res call({UniqueId id, String name, String type, String company});
 }
 
@@ -85,17 +84,14 @@ class _$SystemCopyWithImpl<$Res> implements $SystemCopyWith<$Res> {
 
 /// @nodoc
 abstract class _$SystemCopyWith<$Res> implements $SystemCopyWith<$Res> {
-  factory _$SystemCopyWith(_System value, $Res Function(_System) then) =
-      __$SystemCopyWithImpl<$Res>;
+  factory _$SystemCopyWith(_System value, $Res Function(_System) then) = __$SystemCopyWithImpl<$Res>;
   @override
   $Res call({UniqueId id, String name, String type, String company});
 }
 
 /// @nodoc
-class __$SystemCopyWithImpl<$Res> extends _$SystemCopyWithImpl<$Res>
-    implements _$SystemCopyWith<$Res> {
-  __$SystemCopyWithImpl(_System _value, $Res Function(_System) _then)
-      : super(_value, (v) => _then(v as _System));
+class __$SystemCopyWithImpl<$Res> extends _$SystemCopyWithImpl<$Res> implements _$SystemCopyWith<$Res> {
+  __$SystemCopyWithImpl(_System _value, $Res Function(_System) _then) : super(_value, (v) => _then(v as _System));
 
   @override
   _System get _value => super._value as _System;
@@ -150,14 +146,10 @@ class _$_System extends _System {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other is _System &&
-            (identical(other.id, id) ||
-                const DeepCollectionEquality().equals(other.id, id)) &&
-            (identical(other.name, name) ||
-                const DeepCollectionEquality().equals(other.name, name)) &&
-            (identical(other.type, type) ||
-                const DeepCollectionEquality().equals(other.type, type)) &&
-            (identical(other.company, company) ||
-                const DeepCollectionEquality().equals(other.company, company)));
+            (identical(other.id, id) || const DeepCollectionEquality().equals(other.id, id)) &&
+            (identical(other.name, name) || const DeepCollectionEquality().equals(other.name, name)) &&
+            (identical(other.type, type) || const DeepCollectionEquality().equals(other.type, type)) &&
+            (identical(other.company, company) || const DeepCollectionEquality().equals(other.company, company)));
   }
 
   @override
@@ -170,8 +162,7 @@ class _$_System extends _System {
 
   @JsonKey(ignore: true)
   @override
-  _$SystemCopyWith<_System> get copyWith =>
-      __$SystemCopyWithImpl<_System>(this, _$identity);
+  _$SystemCopyWith<_System> get copyWith => __$SystemCopyWithImpl<_System>(this, _$identity);
 }
 
 abstract class _System extends System {

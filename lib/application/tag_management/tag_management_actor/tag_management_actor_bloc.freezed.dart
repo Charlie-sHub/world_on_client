@@ -59,20 +59,18 @@ mixin _$TagManagementActorEvent {
 
 /// @nodoc
 abstract class $TagManagementActorEventCopyWith<$Res> {
-  factory $TagManagementActorEventCopyWith(TagManagementActorEvent value,
-          $Res Function(TagManagementActorEvent) then) =
-      _$TagManagementActorEventCopyWithImpl<$Res>;
+  factory $TagManagementActorEventCopyWith(TagManagementActorEvent value, $Res Function(TagManagementActorEvent) then) = _$TagManagementActorEventCopyWithImpl<$Res>;
   $Res call({Tag tag});
 
   $TagCopyWith<$Res> get tag;
 }
 
 /// @nodoc
-class _$TagManagementActorEventCopyWithImpl<$Res>
-    implements $TagManagementActorEventCopyWith<$Res> {
+class _$TagManagementActorEventCopyWithImpl<$Res> implements $TagManagementActorEventCopyWith<$Res> {
   _$TagManagementActorEventCopyWithImpl(this._value, this._then);
 
   final TagManagementActorEvent _value;
+
   // ignore: unused_field
   final $Res Function(TagManagementActorEvent) _then;
 
@@ -97,10 +95,9 @@ class _$TagManagementActorEventCopyWithImpl<$Res>
 }
 
 /// @nodoc
-abstract class _$DeletedCopyWith<$Res>
-    implements $TagManagementActorEventCopyWith<$Res> {
-  factory _$DeletedCopyWith(_Deleted value, $Res Function(_Deleted) then) =
-      __$DeletedCopyWithImpl<$Res>;
+abstract class _$DeletedCopyWith<$Res> implements $TagManagementActorEventCopyWith<$Res> {
+  factory _$DeletedCopyWith(_Deleted value, $Res Function(_Deleted) then) = __$DeletedCopyWithImpl<$Res>;
+
   @override
   $Res call({Tag tag});
 
@@ -109,11 +106,8 @@ abstract class _$DeletedCopyWith<$Res>
 }
 
 /// @nodoc
-class __$DeletedCopyWithImpl<$Res>
-    extends _$TagManagementActorEventCopyWithImpl<$Res>
-    implements _$DeletedCopyWith<$Res> {
-  __$DeletedCopyWithImpl(_Deleted _value, $Res Function(_Deleted) _then)
-      : super(_value, (v) => _then(v as _Deleted));
+class __$DeletedCopyWithImpl<$Res> extends _$TagManagementActorEventCopyWithImpl<$Res> implements _$DeletedCopyWith<$Res> {
+  __$DeletedCopyWithImpl(_Deleted _value, $Res Function(_Deleted) _then) : super(_value, (v) => _then(v as _Deleted));
 
   @override
   _Deleted get _value => super._value as _Deleted;
@@ -145,20 +139,15 @@ class _$_Deleted implements _Deleted {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) ||
-        (other is _Deleted &&
-            (identical(other.tag, tag) ||
-                const DeepCollectionEquality().equals(other.tag, tag)));
+    return identical(this, other) || (other is _Deleted && (identical(other.tag, tag) || const DeepCollectionEquality().equals(other.tag, tag)));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(tag);
+  int get hashCode => runtimeType.hashCode ^ const DeepCollectionEquality().hash(tag);
 
   @JsonKey(ignore: true)
   @override
-  _$DeletedCopyWith<_Deleted> get copyWith =>
-      __$DeletedCopyWithImpl<_Deleted>(this, _$identity);
+  _$DeletedCopyWith<_Deleted> get copyWith => __$DeletedCopyWithImpl<_Deleted>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -278,33 +267,27 @@ mixin _$TagManagementActorState {
 
 /// @nodoc
 abstract class $TagManagementActorStateCopyWith<$Res> {
-  factory $TagManagementActorStateCopyWith(TagManagementActorState value,
-          $Res Function(TagManagementActorState) then) =
-      _$TagManagementActorStateCopyWithImpl<$Res>;
+  factory $TagManagementActorStateCopyWith(TagManagementActorState value, $Res Function(TagManagementActorState) then) = _$TagManagementActorStateCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class _$TagManagementActorStateCopyWithImpl<$Res>
-    implements $TagManagementActorStateCopyWith<$Res> {
+class _$TagManagementActorStateCopyWithImpl<$Res> implements $TagManagementActorStateCopyWith<$Res> {
   _$TagManagementActorStateCopyWithImpl(this._value, this._then);
 
   final TagManagementActorState _value;
+
   // ignore: unused_field
   final $Res Function(TagManagementActorState) _then;
 }
 
 /// @nodoc
 abstract class _$InitialCopyWith<$Res> {
-  factory _$InitialCopyWith(_Initial value, $Res Function(_Initial) then) =
-      __$InitialCopyWithImpl<$Res>;
+  factory _$InitialCopyWith(_Initial value, $Res Function(_Initial) then) = __$InitialCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$InitialCopyWithImpl<$Res>
-    extends _$TagManagementActorStateCopyWithImpl<$Res>
-    implements _$InitialCopyWith<$Res> {
-  __$InitialCopyWithImpl(_Initial _value, $Res Function(_Initial) _then)
-      : super(_value, (v) => _then(v as _Initial));
+class __$InitialCopyWithImpl<$Res> extends _$TagManagementActorStateCopyWithImpl<$Res> implements _$InitialCopyWith<$Res> {
+  __$InitialCopyWithImpl(_Initial _value, $Res Function(_Initial) _then) : super(_value, (v) => _then(v as _Initial));
 
   @override
   _Initial get _value => super._value as _Initial;
@@ -386,18 +369,12 @@ abstract class _Initial implements TagManagementActorState {
 
 /// @nodoc
 abstract class _$ActionInProgressCopyWith<$Res> {
-  factory _$ActionInProgressCopyWith(
-          _ActionInProgress value, $Res Function(_ActionInProgress) then) =
-      __$ActionInProgressCopyWithImpl<$Res>;
+  factory _$ActionInProgressCopyWith(_ActionInProgress value, $Res Function(_ActionInProgress) then) = __$ActionInProgressCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$ActionInProgressCopyWithImpl<$Res>
-    extends _$TagManagementActorStateCopyWithImpl<$Res>
-    implements _$ActionInProgressCopyWith<$Res> {
-  __$ActionInProgressCopyWithImpl(
-      _ActionInProgress _value, $Res Function(_ActionInProgress) _then)
-      : super(_value, (v) => _then(v as _ActionInProgress));
+class __$ActionInProgressCopyWithImpl<$Res> extends _$TagManagementActorStateCopyWithImpl<$Res> implements _$ActionInProgressCopyWith<$Res> {
+  __$ActionInProgressCopyWithImpl(_ActionInProgress _value, $Res Function(_ActionInProgress) _then) : super(_value, (v) => _then(v as _ActionInProgress));
 
   @override
   _ActionInProgress get _value => super._value as _ActionInProgress;
@@ -479,21 +456,15 @@ abstract class _ActionInProgress implements TagManagementActorState {
 
 /// @nodoc
 abstract class _$DeletionFailureCopyWith<$Res> {
-  factory _$DeletionFailureCopyWith(
-          _DeletionFailure value, $Res Function(_DeletionFailure) then) =
-      __$DeletionFailureCopyWithImpl<$Res>;
+  factory _$DeletionFailureCopyWith(_DeletionFailure value, $Res Function(_DeletionFailure) then) = __$DeletionFailureCopyWithImpl<$Res>;
   $Res call({Failure<dynamic> failure});
 
   $FailureCopyWith<dynamic, $Res> get failure;
 }
 
 /// @nodoc
-class __$DeletionFailureCopyWithImpl<$Res>
-    extends _$TagManagementActorStateCopyWithImpl<$Res>
-    implements _$DeletionFailureCopyWith<$Res> {
-  __$DeletionFailureCopyWithImpl(
-      _DeletionFailure _value, $Res Function(_DeletionFailure) _then)
-      : super(_value, (v) => _then(v as _DeletionFailure));
+class __$DeletionFailureCopyWithImpl<$Res> extends _$TagManagementActorStateCopyWithImpl<$Res> implements _$DeletionFailureCopyWith<$Res> {
+  __$DeletionFailureCopyWithImpl(_DeletionFailure _value, $Res Function(_DeletionFailure) _then) : super(_value, (v) => _then(v as _DeletionFailure));
 
   @override
   _DeletionFailure get _value => super._value as _DeletionFailure;
@@ -532,20 +503,15 @@ class _$_DeletionFailure implements _DeletionFailure {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) ||
-        (other is _DeletionFailure &&
-            (identical(other.failure, failure) ||
-                const DeepCollectionEquality().equals(other.failure, failure)));
+    return identical(this, other) || (other is _DeletionFailure && (identical(other.failure, failure) || const DeepCollectionEquality().equals(other.failure, failure)));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(failure);
+  int get hashCode => runtimeType.hashCode ^ const DeepCollectionEquality().hash(failure);
 
   @JsonKey(ignore: true)
   @override
-  _$DeletionFailureCopyWith<_DeletionFailure> get copyWith =>
-      __$DeletionFailureCopyWithImpl<_DeletionFailure>(this, _$identity);
+  _$DeletionFailureCopyWith<_DeletionFailure> get copyWith => __$DeletionFailureCopyWithImpl<_DeletionFailure>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -611,18 +577,12 @@ abstract class _DeletionFailure implements TagManagementActorState {
 
 /// @nodoc
 abstract class _$DeletionSuccessCopyWith<$Res> {
-  factory _$DeletionSuccessCopyWith(
-          _DeletionSuccess value, $Res Function(_DeletionSuccess) then) =
-      __$DeletionSuccessCopyWithImpl<$Res>;
+  factory _$DeletionSuccessCopyWith(_DeletionSuccess value, $Res Function(_DeletionSuccess) then) = __$DeletionSuccessCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$DeletionSuccessCopyWithImpl<$Res>
-    extends _$TagManagementActorStateCopyWithImpl<$Res>
-    implements _$DeletionSuccessCopyWith<$Res> {
-  __$DeletionSuccessCopyWithImpl(
-      _DeletionSuccess _value, $Res Function(_DeletionSuccess) _then)
-      : super(_value, (v) => _then(v as _DeletionSuccess));
+class __$DeletionSuccessCopyWithImpl<$Res> extends _$TagManagementActorStateCopyWithImpl<$Res> implements _$DeletionSuccessCopyWith<$Res> {
+  __$DeletionSuccessCopyWithImpl(_DeletionSuccess _value, $Res Function(_DeletionSuccess) _then) : super(_value, (v) => _then(v as _DeletionSuccess));
 
   @override
   _DeletionSuccess get _value => super._value as _DeletionSuccess;

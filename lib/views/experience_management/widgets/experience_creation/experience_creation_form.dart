@@ -10,7 +10,6 @@ import 'package:worldon/generated/l10n.dart';
 import 'package:worldon/views/experience_management/widgets/helper_methods.dart';
 import 'package:worldon/views/experience_management/widgets/map.dart';
 import 'package:worldon/views/experience_management/widgets/objective_creation_card/objective_creation_card.dart';
-import 'package:worldon/views/experience_management/widgets/reward_creation_card/reward_creation_card.dart';
 
 import '../description_form_field.dart';
 import '../difficulty_slider.dart';
@@ -66,9 +65,11 @@ class ExperienceCreationForm extends StatelessWidget {
                 ObjectiveCreationCard(
                   objectiveListOption: none(),
                 ),
+                /*
                 RewardCreationCard(
                   rewardSetOption: none(),
                 ),
+                 */
                 //Change back to TagAdditionCard if necessary
                 TagAdditionCreationCard(
                   tagChangeFunction: (KtSet<Tag> tags) => context.read<ExperienceManagementFormBloc>().add(

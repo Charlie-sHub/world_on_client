@@ -35,7 +35,7 @@ class UserImagePicker extends StatelessWidget {
               ),
             ),
           ),
-        (imageFile) => TextButton(
+          (imageFile) => TextButton(
             onPressed: () async {
               final _imageFile = await _openDialog(context);
               if (_imageFile != null) {

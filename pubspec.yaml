@@ -8,7 +8,7 @@ publish_to: 'none' # Remove this line if you wish to publish to pub.dev
 # Then it goes back to 0 and it's neighbour to the left increases by 1
 # The number after the + always increases by 1
 # Usually both numbers should increase by 1 at the same time
-version: 1.1.5+15
+version: 1.1.6+16
 
 environment:
   sdk: ">=2.12.0 <3.0.0"
@@ -72,13 +72,13 @@ dependencies:
   # For Signing in and registering with Google
   google_sign_in: ^5.0.2
   # For use with Firebase as backend
-  firebase_core: ^1.0.3
+  firebase_core: ^1.0.4
   # For authentication with Firebase
-  firebase_auth: ^1.1.0
+  firebase_auth: ^1.1.1
   # For simple data storage
-  cloud_firestore: ^1.0.5
+  cloud_firestore: ^1.0.6
   # For complex data storage (images)
-  firebase_storage: ^8.0.3
+  firebase_storage: ^8.0.4
   # For mapping
   google_maps_flutter:
   # For localization

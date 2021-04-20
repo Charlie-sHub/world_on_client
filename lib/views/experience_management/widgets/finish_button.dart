@@ -36,8 +36,9 @@ class FinishButton extends StatelessWidget {
                   WorldOnColors.primary,
                 ),
                 shape: MaterialStateProperty.all(
-                  const RoundedRectangleBorder(
-                    side: BorderSide(color: WorldOnColors.primary),
+                  RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(3),
+                    side: const BorderSide(color: WorldOnColors.primary),
                   ),
                 ),
               ),
