@@ -60,6 +60,7 @@ mixin _$UserActorEvent {
 /// @nodoc
 abstract class $UserActorEventCopyWith<$Res> {
   factory $UserActorEventCopyWith(UserActorEvent value, $Res Function(UserActorEvent) then) = _$UserActorEventCopyWithImpl<$Res>;
+
   $Res call({User user});
 
   $UserCopyWith<$Res> get user;
@@ -457,6 +458,7 @@ abstract class _ActionInProgress implements UserActorState {
 /// @nodoc
 abstract class _$DeletionFailureCopyWith<$Res> {
   factory _$DeletionFailureCopyWith(_DeletionFailure value, $Res Function(_DeletionFailure) then) = __$DeletionFailureCopyWithImpl<$Res>;
+
   $Res call({Failure<dynamic> failure});
 
   $FailureCopyWith<dynamic, $Res> get failure;

@@ -3,6 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:worldon/application/tag_management/tag_card_actor/tag_card_actor_bloc.dart';
 import 'package:worldon/domain/core/entities/tag/tag.dart';
+import 'package:worldon/views/core/misc/world_on_colors.dart';
 
 class DislikeTagButton extends StatelessWidget {
   const DislikeTagButton({
@@ -16,8 +17,8 @@ class DislikeTagButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return IconButton(
       icon: const FaIcon(
-        FontAwesomeIcons.heart,
-        color: Colors.grey,
+        FontAwesomeIcons.solidHeart,
+        color: WorldOnColors.red,
       ),
       onPressed: () => context.read<TagCardActorBloc>().add(
             TagCardActorEvent.dismissedFromInterests(tag),

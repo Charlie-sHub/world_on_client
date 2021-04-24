@@ -70,7 +70,7 @@ class _$ProfileEditingFormEventTearOff {
     );
   }
 
-  _InterestsChanged interestsChanged(Set<Tag> interests) {
+  _InterestsChanged interestsChanged(KtSet<Tag> interests) {
     return _InterestsChanged(
       interests,
     );
@@ -97,7 +97,7 @@ mixin _$ProfileEditingFormEvent {
     required TResult Function(String emailAddress) emailAddressChanged,
     required TResult Function(DateTime birthday) birthdayChanged,
     required TResult Function(String description) descriptionChanged,
-    required TResult Function(Set<Tag> interests) interestsChanged,
+    required TResult Function(KtSet<Tag> interests) interestsChanged,
     required TResult Function() submitted,
   }) =>
       throw _privateConstructorUsedError;
@@ -112,7 +112,7 @@ mixin _$ProfileEditingFormEvent {
     TResult Function(String emailAddress)? emailAddressChanged,
     TResult Function(DateTime birthday)? birthdayChanged,
     TResult Function(String description)? descriptionChanged,
-    TResult Function(Set<Tag> interests)? interestsChanged,
+    TResult Function(KtSet<Tag> interests)? interestsChanged,
     TResult Function()? submitted,
     required TResult orElse(),
   }) =>
@@ -237,7 +237,7 @@ class _$_Initialized implements _Initialized {
     required TResult Function(String emailAddress) emailAddressChanged,
     required TResult Function(DateTime birthday) birthdayChanged,
     required TResult Function(String description) descriptionChanged,
-    required TResult Function(Set<Tag> interests) interestsChanged,
+    required TResult Function(KtSet<Tag> interests) interestsChanged,
     required TResult Function() submitted,
   }) {
     return initialized(userToEdit);
@@ -255,7 +255,7 @@ class _$_Initialized implements _Initialized {
     TResult Function(String emailAddress)? emailAddressChanged,
     TResult Function(DateTime birthday)? birthdayChanged,
     TResult Function(String description)? descriptionChanged,
-    TResult Function(Set<Tag> interests)? interestsChanged,
+    TResult Function(KtSet<Tag> interests)? interestsChanged,
     TResult Function()? submitted,
     required TResult orElse(),
   }) {
@@ -378,7 +378,7 @@ class _$_NameChanged implements _NameChanged {
     required TResult Function(String emailAddress) emailAddressChanged,
     required TResult Function(DateTime birthday) birthdayChanged,
     required TResult Function(String description) descriptionChanged,
-    required TResult Function(Set<Tag> interests) interestsChanged,
+    required TResult Function(KtSet<Tag> interests) interestsChanged,
     required TResult Function() submitted,
   }) {
     return nameChanged(name);
@@ -396,7 +396,7 @@ class _$_NameChanged implements _NameChanged {
     TResult Function(String emailAddress)? emailAddressChanged,
     TResult Function(DateTime birthday)? birthdayChanged,
     TResult Function(String description)? descriptionChanged,
-    TResult Function(Set<Tag> interests)? interestsChanged,
+    TResult Function(KtSet<Tag> interests)? interestsChanged,
     TResult Function()? submitted,
     required TResult orElse(),
   }) {
@@ -519,7 +519,7 @@ class _$_ImageChanged implements _ImageChanged {
     required TResult Function(String emailAddress) emailAddressChanged,
     required TResult Function(DateTime birthday) birthdayChanged,
     required TResult Function(String description) descriptionChanged,
-    required TResult Function(Set<Tag> interests) interestsChanged,
+    required TResult Function(KtSet<Tag> interests) interestsChanged,
     required TResult Function() submitted,
   }) {
     return imageChanged(imageFile);
@@ -537,7 +537,7 @@ class _$_ImageChanged implements _ImageChanged {
     TResult Function(String emailAddress)? emailAddressChanged,
     TResult Function(DateTime birthday)? birthdayChanged,
     TResult Function(String description)? descriptionChanged,
-    TResult Function(Set<Tag> interests)? interestsChanged,
+    TResult Function(KtSet<Tag> interests)? interestsChanged,
     TResult Function()? submitted,
     required TResult orElse(),
   }) {
@@ -660,7 +660,7 @@ class _$_UsernameChanged implements _UsernameChanged {
     required TResult Function(String emailAddress) emailAddressChanged,
     required TResult Function(DateTime birthday) birthdayChanged,
     required TResult Function(String description) descriptionChanged,
-    required TResult Function(Set<Tag> interests) interestsChanged,
+    required TResult Function(KtSet<Tag> interests) interestsChanged,
     required TResult Function() submitted,
   }) {
     return usernameChanged(username);
@@ -678,7 +678,7 @@ class _$_UsernameChanged implements _UsernameChanged {
     TResult Function(String emailAddress)? emailAddressChanged,
     TResult Function(DateTime birthday)? birthdayChanged,
     TResult Function(String description)? descriptionChanged,
-    TResult Function(Set<Tag> interests)? interestsChanged,
+    TResult Function(KtSet<Tag> interests)? interestsChanged,
     TResult Function()? submitted,
     required TResult orElse(),
   }) {
@@ -801,7 +801,7 @@ class _$_PasswordChanged implements _PasswordChanged {
     required TResult Function(String emailAddress) emailAddressChanged,
     required TResult Function(DateTime birthday) birthdayChanged,
     required TResult Function(String description) descriptionChanged,
-    required TResult Function(Set<Tag> interests) interestsChanged,
+    required TResult Function(KtSet<Tag> interests) interestsChanged,
     required TResult Function() submitted,
   }) {
     return passwordChanged(password);
@@ -819,7 +819,7 @@ class _$_PasswordChanged implements _PasswordChanged {
     TResult Function(String emailAddress)? emailAddressChanged,
     TResult Function(DateTime birthday)? birthdayChanged,
     TResult Function(String description)? descriptionChanged,
-    TResult Function(Set<Tag> interests)? interestsChanged,
+    TResult Function(KtSet<Tag> interests)? interestsChanged,
     TResult Function()? submitted,
     required TResult orElse(),
   }) {
@@ -944,7 +944,7 @@ class _$_PasswordConfirmationChanged implements _PasswordConfirmationChanged {
     required TResult Function(String emailAddress) emailAddressChanged,
     required TResult Function(DateTime birthday) birthdayChanged,
     required TResult Function(String description) descriptionChanged,
-    required TResult Function(Set<Tag> interests) interestsChanged,
+    required TResult Function(KtSet<Tag> interests) interestsChanged,
     required TResult Function() submitted,
   }) {
     return passwordConfirmationChanged(passwordConfirmation);
@@ -962,7 +962,7 @@ class _$_PasswordConfirmationChanged implements _PasswordConfirmationChanged {
     TResult Function(String emailAddress)? emailAddressChanged,
     TResult Function(DateTime birthday)? birthdayChanged,
     TResult Function(String description)? descriptionChanged,
-    TResult Function(Set<Tag> interests)? interestsChanged,
+    TResult Function(KtSet<Tag> interests)? interestsChanged,
     TResult Function()? submitted,
     required TResult orElse(),
   }) {
@@ -1085,7 +1085,7 @@ class _$_EmailAddressChanged implements _EmailAddressChanged {
     required TResult Function(String emailAddress) emailAddressChanged,
     required TResult Function(DateTime birthday) birthdayChanged,
     required TResult Function(String description) descriptionChanged,
-    required TResult Function(Set<Tag> interests) interestsChanged,
+    required TResult Function(KtSet<Tag> interests) interestsChanged,
     required TResult Function() submitted,
   }) {
     return emailAddressChanged(emailAddress);
@@ -1103,7 +1103,7 @@ class _$_EmailAddressChanged implements _EmailAddressChanged {
     TResult Function(String emailAddress)? emailAddressChanged,
     TResult Function(DateTime birthday)? birthdayChanged,
     TResult Function(String description)? descriptionChanged,
-    TResult Function(Set<Tag> interests)? interestsChanged,
+    TResult Function(KtSet<Tag> interests)? interestsChanged,
     TResult Function()? submitted,
     required TResult orElse(),
   }) {
@@ -1226,7 +1226,7 @@ class _$_BirthdayChanged implements _BirthdayChanged {
     required TResult Function(String emailAddress) emailAddressChanged,
     required TResult Function(DateTime birthday) birthdayChanged,
     required TResult Function(String description) descriptionChanged,
-    required TResult Function(Set<Tag> interests) interestsChanged,
+    required TResult Function(KtSet<Tag> interests) interestsChanged,
     required TResult Function() submitted,
   }) {
     return birthdayChanged(birthday);
@@ -1244,7 +1244,7 @@ class _$_BirthdayChanged implements _BirthdayChanged {
     TResult Function(String emailAddress)? emailAddressChanged,
     TResult Function(DateTime birthday)? birthdayChanged,
     TResult Function(String description)? descriptionChanged,
-    TResult Function(Set<Tag> interests)? interestsChanged,
+    TResult Function(KtSet<Tag> interests)? interestsChanged,
     TResult Function()? submitted,
     required TResult orElse(),
   }) {
@@ -1367,7 +1367,7 @@ class _$_DescriptionChanged implements _DescriptionChanged {
     required TResult Function(String emailAddress) emailAddressChanged,
     required TResult Function(DateTime birthday) birthdayChanged,
     required TResult Function(String description) descriptionChanged,
-    required TResult Function(Set<Tag> interests) interestsChanged,
+    required TResult Function(KtSet<Tag> interests) interestsChanged,
     required TResult Function() submitted,
   }) {
     return descriptionChanged(description);
@@ -1385,7 +1385,7 @@ class _$_DescriptionChanged implements _DescriptionChanged {
     TResult Function(String emailAddress)? emailAddressChanged,
     TResult Function(DateTime birthday)? birthdayChanged,
     TResult Function(String description)? descriptionChanged,
-    TResult Function(Set<Tag> interests)? interestsChanged,
+    TResult Function(KtSet<Tag> interests)? interestsChanged,
     TResult Function()? submitted,
     required TResult orElse(),
   }) {
@@ -1449,7 +1449,7 @@ abstract class _DescriptionChanged implements ProfileEditingFormEvent {
 abstract class _$InterestsChangedCopyWith<$Res> {
   factory _$InterestsChangedCopyWith(_InterestsChanged value, $Res Function(_InterestsChanged) then) = __$InterestsChangedCopyWithImpl<$Res>;
 
-  $Res call({Set<Tag> interests});
+  $Res call({KtSet<Tag> interests});
 }
 
 /// @nodoc
@@ -1467,7 +1467,7 @@ class __$InterestsChangedCopyWithImpl<$Res> extends _$ProfileEditingFormEventCop
       interests == freezed
           ? _value.interests
           : interests // ignore: cast_nullable_to_non_nullable
-              as Set<Tag>,
+              as KtSet<Tag>,
     ));
   }
 }
@@ -1477,7 +1477,7 @@ class _$_InterestsChanged implements _InterestsChanged {
   const _$_InterestsChanged(this.interests);
 
   @override
-  final Set<Tag> interests;
+  final KtSet<Tag> interests;
 
   @override
   String toString() {
@@ -1508,7 +1508,7 @@ class _$_InterestsChanged implements _InterestsChanged {
     required TResult Function(String emailAddress) emailAddressChanged,
     required TResult Function(DateTime birthday) birthdayChanged,
     required TResult Function(String description) descriptionChanged,
-    required TResult Function(Set<Tag> interests) interestsChanged,
+    required TResult Function(KtSet<Tag> interests) interestsChanged,
     required TResult Function() submitted,
   }) {
     return interestsChanged(interests);
@@ -1526,7 +1526,7 @@ class _$_InterestsChanged implements _InterestsChanged {
     TResult Function(String emailAddress)? emailAddressChanged,
     TResult Function(DateTime birthday)? birthdayChanged,
     TResult Function(String description)? descriptionChanged,
-    TResult Function(Set<Tag> interests)? interestsChanged,
+    TResult Function(KtSet<Tag> interests)? interestsChanged,
     TResult Function()? submitted,
     required TResult orElse(),
   }) {
@@ -1578,9 +1578,9 @@ class _$_InterestsChanged implements _InterestsChanged {
 }
 
 abstract class _InterestsChanged implements ProfileEditingFormEvent {
-  const factory _InterestsChanged(Set<Tag> interests) = _$_InterestsChanged;
+  const factory _InterestsChanged(KtSet<Tag> interests) = _$_InterestsChanged;
 
-  Set<Tag> get interests => throw _privateConstructorUsedError;
+  KtSet<Tag> get interests => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
   _$InterestsChangedCopyWith<_InterestsChanged> get copyWith => throw _privateConstructorUsedError;
@@ -1628,7 +1628,7 @@ class _$_Submitted implements _Submitted {
     required TResult Function(String emailAddress) emailAddressChanged,
     required TResult Function(DateTime birthday) birthdayChanged,
     required TResult Function(String description) descriptionChanged,
-    required TResult Function(Set<Tag> interests) interestsChanged,
+    required TResult Function(KtSet<Tag> interests) interestsChanged,
     required TResult Function() submitted,
   }) {
     return submitted();
@@ -1646,7 +1646,7 @@ class _$_Submitted implements _Submitted {
     TResult Function(String emailAddress)? emailAddressChanged,
     TResult Function(DateTime birthday)? birthdayChanged,
     TResult Function(String description)? descriptionChanged,
-    TResult Function(Set<Tag> interests)? interestsChanged,
+    TResult Function(KtSet<Tag> interests)? interestsChanged,
     TResult Function()? submitted,
     required TResult orElse(),
   }) {

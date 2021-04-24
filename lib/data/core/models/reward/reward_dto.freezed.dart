@@ -175,7 +175,7 @@ class _$_RewardDto extends _RewardDto {
       const DeepCollectionEquality().hash(name) ^
       const DeepCollectionEquality().hash(description) ^
       const DeepCollectionEquality().hash(imageURL);
-
+  
   @JsonKey(ignore: true)
   @override
   _$RewardDtoCopyWith<_RewardDto> get copyWith => __$RewardDtoCopyWithImpl<_RewardDto>(this, _$identity);

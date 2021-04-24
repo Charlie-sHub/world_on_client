@@ -3,7 +3,6 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:worldon/application/tag_management/tag_card_actor/tag_card_actor_bloc.dart';
 import 'package:worldon/domain/core/entities/tag/tag.dart';
-import 'package:worldon/views/core/misc/world_on_colors.dart';
 
 class LikeTagButton extends StatelessWidget {
   const LikeTagButton({
@@ -17,8 +16,8 @@ class LikeTagButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return IconButton(
       icon: const FaIcon(
-        FontAwesomeIcons.solidHeart,
-        color: WorldOnColors.red,
+        FontAwesomeIcons.heart,
+        color: Colors.grey,
       ),
       onPressed: () => context.read<TagCardActorBloc>().add(
             TagCardActorEvent.addedToInterests(tag),

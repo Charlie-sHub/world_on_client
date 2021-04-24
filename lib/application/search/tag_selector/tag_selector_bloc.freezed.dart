@@ -16,9 +16,9 @@ final _privateConstructorUsedError = UnsupportedError(
 class _$TagSelectorEventTearOff {
   const _$TagSelectorEventTearOff();
 
-  _Initialized initialized(Option<TagSet> tagSetOption) {
+  _Initialized initialized(Option<Either<TagSet, Set<UniqueId>>> tagsEitherOption) {
     return _Initialized(
-      tagSetOption,
+      tagsEitherOption,
     );
   }
 
@@ -42,14 +42,14 @@ const $TagSelectorEvent = _$TagSelectorEventTearOff();
 mixin _$TagSelectorEvent {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(Option<TagSet> tagSetOption) initialized,
+    required TResult Function(Option<Either<TagSet, Set<UniqueId>>> tagsEitherOption) initialized,
     required TResult Function(Tag tag) addedTag,
     required TResult Function(Tag tag) removedTag,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(Option<TagSet> tagSetOption)? initialized,
+    TResult Function(Option<Either<TagSet, Set<UniqueId>>> tagsEitherOption)? initialized,
     TResult Function(Tag tag)? addedTag,
     TResult Function(Tag tag)? removedTag,
     required TResult orElse(),
@@ -91,7 +91,7 @@ class _$TagSelectorEventCopyWithImpl<$Res> implements $TagSelectorEventCopyWith<
 abstract class _$InitializedCopyWith<$Res> {
   factory _$InitializedCopyWith(_Initialized value, $Res Function(_Initialized) then) = __$InitializedCopyWithImpl<$Res>;
 
-  $Res call({Option<TagSet> tagSetOption});
+  $Res call({Option<Either<TagSet, Set<UniqueId>>> tagsEitherOption});
 }
 
 /// @nodoc
@@ -103,36 +103,37 @@ class __$InitializedCopyWithImpl<$Res> extends _$TagSelectorEventCopyWithImpl<$R
 
   @override
   $Res call({
-    Object? tagSetOption = freezed,
+    Object? tagsEitherOption = freezed,
   }) {
     return _then(_Initialized(
-      tagSetOption == freezed
-          ? _value.tagSetOption
-          : tagSetOption // ignore: cast_nullable_to_non_nullable
-              as Option<TagSet>,
+      tagsEitherOption == freezed
+          ? _value.tagsEitherOption
+          : tagsEitherOption // ignore: cast_nullable_to_non_nullable
+              as Option<Either<TagSet, Set<UniqueId>>>,
     ));
   }
 }
 
 /// @nodoc
 class _$_Initialized implements _Initialized {
-  const _$_Initialized(this.tagSetOption);
+  const _$_Initialized(this.tagsEitherOption);
 
   @override
-  final Option<TagSet> tagSetOption;
+  final Option<Either<TagSet, Set<UniqueId>>> tagsEitherOption;
 
   @override
   String toString() {
-    return 'TagSelectorEvent.initialized(tagSetOption: $tagSetOption)';
+    return 'TagSelectorEvent.initialized(tagsEitherOption: $tagsEitherOption)';
   }
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _Initialized && (identical(other.tagSetOption, tagSetOption) || const DeepCollectionEquality().equals(other.tagSetOption, tagSetOption)));
+    return identical(this, other) ||
+        (other is _Initialized && (identical(other.tagsEitherOption, tagsEitherOption) || const DeepCollectionEquality().equals(other.tagsEitherOption, tagsEitherOption)));
   }
 
   @override
-  int get hashCode => runtimeType.hashCode ^ const DeepCollectionEquality().hash(tagSetOption);
+  int get hashCode => runtimeType.hashCode ^ const DeepCollectionEquality().hash(tagsEitherOption);
 
   @JsonKey(ignore: true)
   @override
@@ -141,23 +142,23 @@ class _$_Initialized implements _Initialized {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(Option<TagSet> tagSetOption) initialized,
+    required TResult Function(Option<Either<TagSet, Set<UniqueId>>> tagsEitherOption) initialized,
     required TResult Function(Tag tag) addedTag,
     required TResult Function(Tag tag) removedTag,
   }) {
-    return initialized(tagSetOption);
+    return initialized(tagsEitherOption);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(Option<TagSet> tagSetOption)? initialized,
+    TResult Function(Option<Either<TagSet, Set<UniqueId>>> tagsEitherOption)? initialized,
     TResult Function(Tag tag)? addedTag,
     TResult Function(Tag tag)? removedTag,
     required TResult orElse(),
   }) {
     if (initialized != null) {
-      return initialized(tagSetOption);
+      return initialized(tagsEitherOption);
     }
     return orElse();
   }
@@ -188,9 +189,9 @@ class _$_Initialized implements _Initialized {
 }
 
 abstract class _Initialized implements TagSelectorEvent {
-  const factory _Initialized(Option<TagSet> tagSetOption) = _$_Initialized;
+  const factory _Initialized(Option<Either<TagSet, Set<UniqueId>>> tagsEitherOption) = _$_Initialized;
 
-  Option<TagSet> get tagSetOption => throw _privateConstructorUsedError;
+  Option<Either<TagSet, Set<UniqueId>>> get tagsEitherOption => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
   _$InitializedCopyWith<_Initialized> get copyWith => throw _privateConstructorUsedError;
@@ -259,7 +260,7 @@ class _$_AddedTag implements _AddedTag {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(Option<TagSet> tagSetOption) initialized,
+    required TResult Function(Option<Either<TagSet, Set<UniqueId>>> tagsEitherOption) initialized,
     required TResult Function(Tag tag) addedTag,
     required TResult Function(Tag tag) removedTag,
   }) {
@@ -269,7 +270,7 @@ class _$_AddedTag implements _AddedTag {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(Option<TagSet> tagSetOption)? initialized,
+    TResult Function(Option<Either<TagSet, Set<UniqueId>>> tagsEitherOption)? initialized,
     TResult Function(Tag tag)? addedTag,
     TResult Function(Tag tag)? removedTag,
     required TResult orElse(),
@@ -377,7 +378,7 @@ class _$_RemovedTag implements _RemovedTag {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(Option<TagSet> tagSetOption) initialized,
+    required TResult Function(Option<Either<TagSet, Set<UniqueId>>> tagsEitherOption) initialized,
     required TResult Function(Tag tag) addedTag,
     required TResult Function(Tag tag) removedTag,
   }) {
@@ -387,7 +388,7 @@ class _$_RemovedTag implements _RemovedTag {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(Option<TagSet> tagSetOption)? initialized,
+    TResult Function(Option<Either<TagSet, Set<UniqueId>>> tagsEitherOption)? initialized,
     TResult Function(Tag tag)? addedTag,
     TResult Function(Tag tag)? removedTag,
     required TResult orElse(),

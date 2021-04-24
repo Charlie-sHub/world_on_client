@@ -1,9 +1,11 @@
+import 'package:dartz/dartz.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:kt_dart/collection.dart';
 import 'package:worldon/application/profile/profile_editing_form/profile_editing_form_bloc.dart';
 import 'package:worldon/domain/core/entities/tag/tag.dart';
 import 'package:worldon/domain/core/entities/user/user.dart';
-import 'package:worldon/views/core/widgets/misc/tag_addition_card/tag_addition_card.dart';
+import 'package:worldon/views/experience_management/widgets/tag_addition_creation_card.dart';
 import 'package:worldon/views/profile/widgets/profile_editing_form/birthday_picker.dart';
 import 'package:worldon/views/profile/widgets/profile_editing_form/description_text_form_field.dart';
 import 'package:worldon/views/profile/widgets/profile_editing_form/editing_submit_button.dart';
@@ -45,9 +47,13 @@ class ProfileEditingForm extends StatelessWidget {
                         children: <Widget>[
                           // TODO: Refactor the text fields so they can be used in the register page too
                           // Passing the event adding function as a parameter, like with the tag addition
-                          NameTextFormField(initialValue: user.name.getOrCrash()),
+                          NameTextFormField(
+                            initialValue: user.name.getOrCrash(),
+                          ),
                           const SizedBox(height: 10),
-                          UsernameTextFormField(initialValue: user.username.getOrCrash()),
+                          UsernameTextFormField(
+                            initialValue: user.username.getOrCrash(),
+                          ),
                         ],
                       ),
                     ),
@@ -55,21 +61,33 @@ class ProfileEditingForm extends StatelessWidget {
                 ],
               ),
               const SizedBox(height: 8),
-              DescriptionTextFormField(initialValue: user.description.getOrCrash()),
+              DescriptionTextFormField(
+                initialValue: user.description.getOrCrash(),
+              ),
               const SizedBox(height: 8),
-              EmailTextField(initialValue: user.email.getOrCrash()),
+              EmailTextField(
+                initialValue: user.email.getOrCrash(),
+              ),
               const SizedBox(height: 8),
               const BirthdayPicker(),
               const SizedBox(height: 8),
               // Maybe the password should be changed in Option or in some more special way
-              PasswordTextField(initialValue: user.password.getOrCrash()),
-              PasswordConfirmationTextField(initialValue: user.password.getOrCrash()),
+              PasswordTextField(
+                initialValue: user.password.getOrCrash(),
+              ),
+              PasswordConfirmationTextField(
+                initialValue: user.password.getOrCrash(),
+              ),
               const SizedBox(height: 8),
               // TODO: rework it so it loads with the tags already liked
-              TagAdditionCard(
-                tagChangeFunction: (Set<Tag> tags) => context.read<ProfileEditingFormBloc>().add(
+              TagAdditionCreationCard(
+                tagChangeFunction: (KtSet<Tag> tags) => context.read<ProfileEditingFormBloc>().add(
                       ProfileEditingFormEvent.interestsChanged(tags),
                     ),
+                tagsEitherOption: some(
+                  right(user.interestsIds),
+                ),
+                showErrorMessage: false,
               ),
               const EditingSubmitButton(),
             ],

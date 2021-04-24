@@ -46,6 +46,7 @@ class ExperienceDto with _$ExperienceDto {
     required Set<CommentDto> comments,
     required Set<String> likedBy,
     required Set<String> doneBy,
+    required bool isPromoted,
   }) = _ExperienceDto;
 
   factory ExperienceDto.fromDomain(Experience experience) => ExperienceDto(
@@ -66,6 +67,7 @@ class ExperienceDto with _$ExperienceDto {
         comments: {},
         likedBy: experience.likedBy.map((_uniqueId) => _uniqueId.getOrCrash()).toSet(),
         doneBy: experience.doneBy.map((_uniqueId) => _uniqueId.getOrCrash()).toSet(),
+        isPromoted: experience.isPromoted,
       );
 
   Experience toDomain() => Experience(
@@ -86,6 +88,7 @@ class ExperienceDto with _$ExperienceDto {
         comments: {},
         likedBy: likedBy.map((_id) => UniqueId.fromUniqueString(_id)).toSet(),
         doneBy: doneBy.map((_id) => UniqueId.fromUniqueString(_id)).toSet(),
+        isPromoted: isPromoted,
       );
 
   factory ExperienceDto.fromJson(Map<String, dynamic> json) => _$ExperienceDtoFromJson(json);

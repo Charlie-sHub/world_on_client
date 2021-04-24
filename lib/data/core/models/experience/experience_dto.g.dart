@@ -25,6 +25,7 @@ _$_ExperienceDto _$_$_ExperienceDtoFromJson(Map<String, dynamic> json) {
     comments: (json['comments'] as List<dynamic>).map((e) => CommentDto.fromJson(e as Map<String, dynamic>)).toSet(),
     likedBy: (json['likedBy'] as List<dynamic>).map((e) => e as String).toSet(),
     doneBy: (json['doneBy'] as List<dynamic>).map((e) => e as String).toSet(),
+    isPromoted: json['isPromoted'] as bool,
   );
 }
 
@@ -46,4 +47,5 @@ Map<String, dynamic> _$_$_ExperienceDtoToJson(_$_ExperienceDto instance) => <Str
       'comments': instance.comments.map((e) => e.toJson()).toList(),
       'likedBy': instance.likedBy.toList(),
       'doneBy': instance.doneBy.toList(),
+      'isPromoted': instance.isPromoted,
     };

@@ -44,6 +44,7 @@ class Experience with _$Experience {
     required Set<Comment> comments,
     required Set<UniqueId> likedBy,
     required Set<UniqueId> doneBy,
+    required bool isPromoted,
   }) = _Experience;
 
   factory Experience.empty() => Experience(
@@ -64,6 +65,7 @@ class Experience with _$Experience {
         comments: <Comment>{},
         likedBy: <UniqueId>{},
         doneBy: <UniqueId>{},
+        isPromoted: false,
       );
 
   Option<ValueFailure<dynamic>> get failureOption {

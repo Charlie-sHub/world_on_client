@@ -60,6 +60,7 @@ mixin _$TagManagementActorEvent {
 /// @nodoc
 abstract class $TagManagementActorEventCopyWith<$Res> {
   factory $TagManagementActorEventCopyWith(TagManagementActorEvent value, $Res Function(TagManagementActorEvent) then) = _$TagManagementActorEventCopyWithImpl<$Res>;
+
   $Res call({Tag tag});
 
   $TagCopyWith<$Res> get tag;
@@ -457,6 +458,7 @@ abstract class _ActionInProgress implements TagManagementActorState {
 /// @nodoc
 abstract class _$DeletionFailureCopyWith<$Res> {
   factory _$DeletionFailureCopyWith(_DeletionFailure value, $Res Function(_DeletionFailure) then) = __$DeletionFailureCopyWithImpl<$Res>;
+
   $Res call({Failure<dynamic> failure});
 
   $FailureCopyWith<dynamic, $Res> get failure;

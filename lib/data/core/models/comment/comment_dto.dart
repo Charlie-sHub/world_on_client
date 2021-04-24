@@ -33,7 +33,7 @@ class CommentDto with _$CommentDto {
       );
 
   Comment toDomain() => Comment(
-    id: UniqueId.fromUniqueString(id!),
+        id: UniqueId.fromUniqueString(id!),
         poster: poster.toDomain(),
         experienceId: UniqueId.fromUniqueString(experienceId),
         content: CommentContent(content),

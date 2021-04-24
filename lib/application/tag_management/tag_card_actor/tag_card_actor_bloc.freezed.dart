@@ -80,6 +80,7 @@ mixin _$TagCardActorEvent {
 /// @nodoc
 abstract class $TagCardActorEventCopyWith<$Res> {
   factory $TagCardActorEventCopyWith(TagCardActorEvent value, $Res Function(TagCardActorEvent) then) = _$TagCardActorEventCopyWithImpl<$Res>;
+
   $Res call({Tag tag});
 
   $TagCopyWith<$Res> get tag;
@@ -1090,6 +1091,7 @@ abstract class _AdditionSuccess implements TagCardActorState {
 /// @nodoc
 abstract class _$AdditionFailureCopyWith<$Res> {
   factory _$AdditionFailureCopyWith(_AdditionFailure value, $Res Function(_AdditionFailure) then) = __$AdditionFailureCopyWithImpl<$Res>;
+
   $Res call({Failure<dynamic> failure});
 
   $FailureCopyWith<dynamic, $Res> get failure;
@@ -1330,6 +1332,7 @@ abstract class _DismissalSuccess implements TagCardActorState {
 /// @nodoc
 abstract class _$DismissalFailureCopyWith<$Res> {
   factory _$DismissalFailureCopyWith(_DismissalFailure value, $Res Function(_DismissalFailure) then) = __$DismissalFailureCopyWithImpl<$Res>;
+
   $Res call({Failure<dynamic> failure});
 
   $FailureCopyWith<dynamic, $Res> get failure;

@@ -21,6 +21,11 @@ class ParticipateButton extends StatelessWidget {
         backgroundColor: MaterialStateProperty.all(
           WorldOnColors.primary,
         ),
+        padding: MaterialStateProperty.all(
+          const EdgeInsets.symmetric(
+            horizontal: 10,
+          ),
+        ),
       ),
       onPressed: () => context.read<NavigationActorBloc>().add(
             NavigationActorEvent.experienceNavigationTapped(some(experience)),

@@ -36,7 +36,10 @@ class ExperienceEditingForm extends StatelessWidget {
       listener: (context, state) => state.failureOrSuccessOption.fold(
         () {},
         (either) => either.fold(
-          (failure) => onExperienceManagementFailure(failure, context),
+          (failure) => onExperienceManagementFailure(
+            failure,
+            context,
+          ),
           (_) => context.router.pop(),
         ),
       ),
@@ -81,15 +84,19 @@ class ExperienceEditingForm extends StatelessWidget {
                 ObjectiveCreationCard(
                   objectiveListOption: some(experience.objectives),
                 ),
-                RewardCreationCard(
-                  rewardSetOption: some(experience.rewards),
-                ),
+                if (experience.rewards.isNotEmpty)
+                  RewardCreationCard(
+                    rewardSetOption: some(experience.rewards),
+                  ),
                 //Change back to TagAdditionCard if necessary
                 TagAdditionCreationCard(
                   tagChangeFunction: (KtSet<Tag> tags) => context.read<ExperienceManagementFormBloc>().add(
                         ExperienceManagementFormEvent.tagsChanged(tags),
                       ),
-                  tagSetOption: some(experience.tags),
+                  tagsEitherOption: some(
+                    left(experience.tags),
+                  ),
+                  showErrorMessage: true,
                 ),
                 const FinishButton(),
               ],

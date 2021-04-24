@@ -23,7 +23,7 @@ class EditExperience implements AsyncUseCase<Unit, Params> {
       () => throw UnAuthenticatedError(),
       id,
     );
-    final _isAuthorized = _userRequesting == params.experience.creator || _userRequesting.adminPowers;
+    final _isAuthorized = _userRequesting.id == params.experience.creator.id || _userRequesting.adminPowers;
     if (_isAuthorized) {
       return _repository.editExperience(params.experience);
     } else {

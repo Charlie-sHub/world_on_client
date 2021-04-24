@@ -1,7 +1,9 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:dartz/dartz.dart';
 import 'package:injectable/injectable.dart';
+import 'package:kt_dart/collection.dart';
 import 'package:logger/logger.dart';
+import 'package:quiver/iterables.dart';
 import 'package:worldon/core/error/failure.dart';
 import 'package:worldon/data/core/failures/core_data_failure.dart';
 import 'package:worldon/data/core/misc/firebase_helpers.dart';
@@ -25,7 +27,7 @@ class ProductionTagManagementRepository implements TagManagementRepositoryInterf
       // Is this the best way to check if the tag already exists?
       final _aux = await _firestore.tagCollection
           .where(
-        TagFields.name,
+            TagFields.name,
             isEqualTo: tag.name.getOrCrash(),
           )
           .get();
@@ -72,6 +74,48 @@ class ProductionTagManagementRepository implements TagManagementRepositoryInterf
       return right(_tag);
     } on FirebaseException catch (e) {
       return onFirebaseException(e);
+    }
+  }
+
+  @override
+  Future<Either<Failure, KtSet<Tag>>> getTags(Set<UniqueId> tagsUniqueIds) async {
+    final _tagSet = <Tag>{};
+    final _tagIds = tagsUniqueIds
+        .map(
+          (id) => id.getOrCrash(),
+        )
+        .toSet();
+    if (_tagIds.isNotEmpty) {
+      try {
+        final _iterableOfIdLists = partition(
+          _tagIds,
+          10,
+        );
+        for (final _idList in _iterableOfIdLists) {
+          final _querySnapshot = await _firestore.tagCollection
+              .where(
+                TagFields.id,
+                whereIn: _idList,
+              )
+              .orderBy(
+                TagFields.name,
+              )
+              .get();
+          final _tagsFromQuery = _querySnapshot.docs.map(
+            (_documentSnapshot) => TagDto.fromFirestore(_documentSnapshot).toDomain(),
+          );
+          _tagSet.addAll(_tagsFromQuery);
+        }
+        return right(
+          _tagSet.toImmutableSet(),
+        );
+      } on FirebaseException catch (e) {
+        return onFirebaseException(e);
+      }
+    } else {
+      return right(
+        const KtSet<Tag>.empty(),
+      );
     }
   }
 

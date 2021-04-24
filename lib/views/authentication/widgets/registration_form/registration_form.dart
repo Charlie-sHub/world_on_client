@@ -73,7 +73,8 @@ class RegistrationForm extends StatelessWidget {
                 tagChangeFunction: (KtSet<Tag> tags) => context.read<RegistrationFormBloc>().add(
                       RegistrationFormEvent.interestsChanged(tags),
                     ),
-                tagSetOption: none(),
+                tagsEitherOption: none(),
+                showErrorMessage: false,
               ),
               const SizedBox(height: 8),
               const SubmitRegisterButton(),

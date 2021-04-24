@@ -37,7 +37,8 @@ class _$ExperienceDtoTearOff {
       required Set<TagDto> tags,
       required Set<CommentDto> comments,
       required Set<String> likedBy,
-      required Set<String> doneBy}) {
+      required Set<String> doneBy,
+      required bool isPromoted}) {
     return _ExperienceDto(
       id: id,
       title: title,
@@ -56,6 +57,7 @@ class _$ExperienceDtoTearOff {
       comments: comments,
       likedBy: likedBy,
       doneBy: doneBy,
+      isPromoted: isPromoted,
     );
   }
 
@@ -100,6 +102,8 @@ mixin _$ExperienceDto {
 
   Set<String> get doneBy => throw _privateConstructorUsedError;
 
+  bool get isPromoted => throw _privateConstructorUsedError;
+
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
@@ -127,7 +131,8 @@ abstract class $ExperienceDtoCopyWith<$Res> {
       Set<TagDto> tags,
       Set<CommentDto> comments,
       Set<String> likedBy,
-      Set<String> doneBy});
+      Set<String> doneBy,
+      bool isPromoted});
 
   $CoordinatesDtoCopyWith<$Res> get coordinates;
   $LocationDtoCopyWith<$Res> get location;
@@ -162,6 +167,7 @@ class _$ExperienceDtoCopyWithImpl<$Res> implements $ExperienceDtoCopyWith<$Res> 
     Object? comments = freezed,
     Object? likedBy = freezed,
     Object? doneBy = freezed,
+    Object? isPromoted = freezed,
   }) {
     return _then(_value.copyWith(
       id: id == freezed
@@ -232,6 +238,10 @@ class _$ExperienceDtoCopyWithImpl<$Res> implements $ExperienceDtoCopyWith<$Res> 
           ? _value.doneBy
           : doneBy // ignore: cast_nullable_to_non_nullable
               as Set<String>,
+      isPromoted: isPromoted == freezed
+          ? _value.isPromoted
+          : isPromoted // ignore: cast_nullable_to_non_nullable
+              as bool,
     ));
   }
 
@@ -279,7 +289,8 @@ abstract class _$ExperienceDtoCopyWith<$Res> implements $ExperienceDtoCopyWith<$
       Set<TagDto> tags,
       Set<CommentDto> comments,
       Set<String> likedBy,
-      Set<String> doneBy});
+      Set<String> doneBy,
+      bool isPromoted});
 
   @override
   $CoordinatesDtoCopyWith<$Res> get coordinates;
@@ -315,6 +326,7 @@ class __$ExperienceDtoCopyWithImpl<$Res> extends _$ExperienceDtoCopyWithImpl<$Re
     Object? comments = freezed,
     Object? likedBy = freezed,
     Object? doneBy = freezed,
+    Object? isPromoted = freezed,
   }) {
     return _then(_ExperienceDto(
       id: id == freezed
@@ -385,6 +397,10 @@ class __$ExperienceDtoCopyWithImpl<$Res> extends _$ExperienceDtoCopyWithImpl<$Re
           ? _value.doneBy
           : doneBy // ignore: cast_nullable_to_non_nullable
               as Set<String>,
+      isPromoted: isPromoted == freezed
+          ? _value.isPromoted
+          : isPromoted // ignore: cast_nullable_to_non_nullable
+              as bool,
     ));
   }
 }
@@ -410,7 +426,8 @@ class _$_ExperienceDto extends _ExperienceDto {
       required this.tags,
       required this.comments,
       required this.likedBy,
-      required this.doneBy})
+      required this.doneBy,
+      required this.isPromoted})
       : super._();
 
   factory _$_ExperienceDto.fromJson(Map<String, dynamic> json) => _$_$_ExperienceDtoFromJson(json);
@@ -451,10 +468,12 @@ class _$_ExperienceDto extends _ExperienceDto {
   final Set<String> likedBy;
   @override
   final Set<String> doneBy;
+  @override
+  final bool isPromoted;
 
   @override
   String toString() {
-    return 'ExperienceDto(id: $id, title: $title, description: $description, imageURLs: $imageURLs, coordinates: $coordinates, location: $location, creatorId: $creatorId, creator: $creator, difficulty: $difficulty, creationDate: $creationDate, modificationDate: $modificationDate, objectives: $objectives, rewards: $rewards, tags: $tags, comments: $comments, likedBy: $likedBy, doneBy: $doneBy)';
+    return 'ExperienceDto(id: $id, title: $title, description: $description, imageURLs: $imageURLs, coordinates: $coordinates, location: $location, creatorId: $creatorId, creator: $creator, difficulty: $difficulty, creationDate: $creationDate, modificationDate: $modificationDate, objectives: $objectives, rewards: $rewards, tags: $tags, comments: $comments, likedBy: $likedBy, doneBy: $doneBy, isPromoted: $isPromoted)';
   }
 
   @override
@@ -477,7 +496,8 @@ class _$_ExperienceDto extends _ExperienceDto {
             (identical(other.tags, tags) || const DeepCollectionEquality().equals(other.tags, tags)) &&
             (identical(other.comments, comments) || const DeepCollectionEquality().equals(other.comments, comments)) &&
             (identical(other.likedBy, likedBy) || const DeepCollectionEquality().equals(other.likedBy, likedBy)) &&
-            (identical(other.doneBy, doneBy) || const DeepCollectionEquality().equals(other.doneBy, doneBy)));
+            (identical(other.doneBy, doneBy) || const DeepCollectionEquality().equals(other.doneBy, doneBy)) &&
+            (identical(other.isPromoted, isPromoted) || const DeepCollectionEquality().equals(other.isPromoted, isPromoted)));
   }
 
   @override
@@ -499,7 +519,8 @@ class _$_ExperienceDto extends _ExperienceDto {
       const DeepCollectionEquality().hash(tags) ^
       const DeepCollectionEquality().hash(comments) ^
       const DeepCollectionEquality().hash(likedBy) ^
-      const DeepCollectionEquality().hash(doneBy);
+      const DeepCollectionEquality().hash(doneBy) ^
+      const DeepCollectionEquality().hash(isPromoted);
 
   @JsonKey(ignore: true)
   @override
@@ -529,7 +550,8 @@ abstract class _ExperienceDto extends ExperienceDto {
       required Set<TagDto> tags,
       required Set<CommentDto> comments,
       required Set<String> likedBy,
-      required Set<String> doneBy}) = _$_ExperienceDto;
+      required Set<String> doneBy,
+      required bool isPromoted}) = _$_ExperienceDto;
 
   const _ExperienceDto._() : super._();
 
@@ -565,17 +587,24 @@ abstract class _ExperienceDto extends ExperienceDto {
   DateTime get modificationDate => throw _privateConstructorUsedError;
   @override
   List<ObjectiveDto> get objectives => throw _privateConstructorUsedError;
+
   @override
   Set<RewardDto> get rewards => throw _privateConstructorUsedError;
+
   @override
   Set<TagDto> get tags => throw _privateConstructorUsedError;
+
   @override // Probably shouldn't be part of the DTO, as in Firestore it's a sub document of the experience document
   Set<CommentDto> get comments => throw _privateConstructorUsedError;
+
   @override
   Set<String> get likedBy => throw _privateConstructorUsedError;
 
   @override
   Set<String> get doneBy => throw _privateConstructorUsedError;
+
+  @override
+  bool get isPromoted => throw _privateConstructorUsedError;
 
   @override
   @JsonKey(ignore: true)

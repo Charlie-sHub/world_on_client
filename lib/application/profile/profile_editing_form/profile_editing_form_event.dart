@@ -20,7 +20,7 @@ class ProfileEditingFormEvent with _$ProfileEditingFormEvent {
 
   const factory ProfileEditingFormEvent.descriptionChanged(String description) = _DescriptionChanged;
 
-  const factory ProfileEditingFormEvent.interestsChanged(Set<Tag> interests) = _InterestsChanged;
+  const factory ProfileEditingFormEvent.interestsChanged(KtSet<Tag> interests) = _InterestsChanged;
 
   const factory ProfileEditingFormEvent.submitted() = _Submitted;
 }

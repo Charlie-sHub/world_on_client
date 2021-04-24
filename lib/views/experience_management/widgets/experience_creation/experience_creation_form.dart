@@ -75,7 +75,8 @@ class ExperienceCreationForm extends StatelessWidget {
                   tagChangeFunction: (KtSet<Tag> tags) => context.read<ExperienceManagementFormBloc>().add(
                         ExperienceManagementFormEvent.tagsChanged(tags),
                       ),
-                  tagSetOption: none(),
+                  tagsEitherOption: none(),
+                  showErrorMessage: true,
                 ),
                 const FinishButton(),
               ],

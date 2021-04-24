@@ -8,9 +8,14 @@ import 'package:kt_dart/kt.dart';
 import 'package:meta/meta.dart';
 import 'package:worldon/domain/core/entities/tag/tag.dart';
 import 'package:worldon/domain/core/validation/objects/tag_set.dart';
+import 'package:worldon/domain/core/validation/objects/unique_id.dart';
+import 'package:worldon/domain/tag_management/use_case/get_tags.dart';
+import 'package:worldon/injection.dart';
 
 part 'tag_selector_bloc.freezed.dart';
+
 part 'tag_selector_event.dart';
+
 part 'tag_selector_state.dart';
 
 @injectable
@@ -27,11 +32,25 @@ class TagSelectorBloc extends Bloc<TagSelectorEvent, TagSelectorState> {
   }
 
   Stream<TagSelectorState> _onInitialized(_Initialized event) async* {
-    yield event.tagSetOption.fold(
-        () => state,
+    yield await event.tagsEitherOption.fold(
+      () => state,
+      (_eitherTags) => _eitherTags.fold(
         (_tagSet) => state.copyWith(
-              tagsSelected: _tagSet.getOrCrash(),
-            ));
+          tagsSelected: _tagSet.getOrCrash(),
+        ),
+        (_idSet) async {
+          final _failureOrTags = await getIt<GetTags>()(
+            Params(tagIds: _idSet),
+          );
+          return _failureOrTags.fold(
+            (_) => state,
+            (_tagSet) => state.copyWith(
+              tagsSelected: _tagSet,
+            ),
+          );
+        },
+      ),
+    );
   }
 
   Stream<TagSelectorState> _onSubtractedTag(_RemovedTag event) async* {

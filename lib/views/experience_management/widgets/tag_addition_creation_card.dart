@@ -7,7 +7,11 @@ import 'package:worldon/application/search/search_by_name_form/search_by_name_fo
 import 'package:worldon/application/search/search_tags_by_name_watcher/search_tags_by_name_watcher_bloc.dart';
 import 'package:worldon/application/search/tag_selector/tag_selector_bloc.dart';
 import 'package:worldon/application/tag_management/tag_management_form/tag_management_form_bloc.dart';
+import 'package:worldon/domain/core/entities/experience/experience.dart';
+import 'package:worldon/domain/core/entities/tag/tag.dart';
+import 'package:worldon/domain/core/entities/user/user.dart';
 import 'package:worldon/domain/core/validation/objects/tag_set.dart';
+import 'package:worldon/domain/core/validation/objects/unique_id.dart';
 import 'package:worldon/generated/l10n.dart';
 import 'package:worldon/injection.dart';
 import 'package:worldon/views/core/misc/world_on_colors.dart';
@@ -17,14 +21,23 @@ import 'package:worldon/views/core/widgets/misc/tag_addition_card/tags_found_vie
 import 'package:worldon/views/tag_management/widgets/tag_management_form.dart';
 
 class TagAdditionCreationCard extends HookWidget {
-  final Function tagChangeFunction;
-  final Option<TagSet> tagSetOption;
-
   const TagAdditionCreationCard({
     Key? key,
-    required this.tagSetOption,
+    required this.tagsEitherOption,
     required this.tagChangeFunction,
+    required this.showErrorMessage,
   }) : super(key: key);
+
+  /// Option because when creating an [Experience]/[User] no [Tag] set will be sent
+  /// Either because there are two ways to initialize the set of [Tag]s
+  /// Left for the [Experience]'s [TagSet] and right for the [User]'s set of [UniqueId]s
+  ///
+  /// Yes another solution should be found
+  // TODO: Rework this
+  // Maybe give the User a TagSet or something
+  final Option<Either<TagSet, Set<UniqueId>>> tagsEitherOption;
+  final Function tagChangeFunction;
+  final bool showErrorMessage;
 
   @override
   Widget build(BuildContext context) {
@@ -34,11 +47,18 @@ class TagAdditionCreationCard extends HookWidget {
         //This is a bit of a frankenstein monster of a widget, should probably be reviewed, there must be a better way to do this
         BlocProvider(create: (context) => getIt<SearchByNameFormBloc>()),
         BlocProvider(create: (context) => getIt<SearchTagsByNameWatcherBloc>()),
-        BlocProvider(create: (context) => getIt<TagSelectorBloc>()..add(TagSelectorEvent.initialized(tagSetOption))),
+        BlocProvider(
+          create: (context) => getIt<TagSelectorBloc>()
+            ..add(
+              TagSelectorEvent.initialized(tagsEitherOption),
+            ),
+        ),
         BlocProvider(create: (context) => getIt<TagManagementFormBloc>()),
       ],
       child: BlocListener<TagSelectorBloc, TagSelectorState>(
-        listener: (context, state) => tagChangeFunction(context.read<TagSelectorBloc>().state.tagsSelected),
+        listener: (context, state) => tagChangeFunction(
+          context.read<TagSelectorBloc>().state.tagsSelected,
+        ),
         child: Card(
           shape: RoundedRectangleBorder(
             side: const BorderSide(
@@ -98,7 +118,9 @@ class TagAdditionCreationCard extends HookWidget {
                   ),
                 ),
                 const SizedBox(height: 5),
-                const TagSelection(),
+                TagSelection(
+                  showErrorMessage: showErrorMessage,
+                ),
               ],
             ),
           ),

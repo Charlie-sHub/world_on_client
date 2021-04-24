@@ -20,6 +20,11 @@ class DismissFromLogButton extends StatelessWidget {
         backgroundColor: MaterialStateProperty.all(
           WorldOnColors.red,
         ),
+        padding: MaterialStateProperty.all(
+          const EdgeInsets.symmetric(
+            horizontal: 10,
+          ),
+        ),
       ),
       onPressed: () => context.read<ExperienceCardActorBloc>().add(
             ExperienceCardActorEvent.dismissedExperienceFromLog(experience),

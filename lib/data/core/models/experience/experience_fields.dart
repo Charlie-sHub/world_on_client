@@ -15,4 +15,5 @@ abstract class ExperienceFields {
   static const likedBy = "likedBy";
   static const doneBy = "doneBy";
   static const tagsIds = "tagsIds";
+  static const isPromoted = "isPromoted";
 }

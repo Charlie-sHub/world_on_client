@@ -3,7 +3,11 @@ import 'package:flutter/material.dart';
 import 'package:worldon/core/error/failure.dart';
 import 'package:worldon/generated/l10n.dart';
 
-void onExperienceManagementFailure(Failure failure, BuildContext context) => FlushbarHelper.createError(
+void onExperienceManagementFailure(
+  Failure failure,
+  BuildContext context,
+) =>
+    FlushbarHelper.createError(
       duration: const Duration(seconds: 2),
       message: failure.maybeMap(
         coreData: (_coreDataFailure) => _coreDataFailure.coreDataFailure.maybeMap(
@@ -17,6 +21,10 @@ void onExperienceManagementFailure(Failure failure, BuildContext context) => Flu
         ),
         experienceManagementApplication: (_experienceManagementApplication) => _experienceManagementApplication.experienceManagementApplicationFailure.map(
           surpassedImageLimit: (_failure) => S.of(context).surpassedImageLimit + _failure.limit.toString(),
+        ),
+        coreDomain: (_coreDomainFailure) => _coreDomainFailure.coreDomainFailure.maybeMap(
+          unAuthorizedError: (_) => S.of(context).unauthorizedError,
+          orElse: () => S.of(context).unknownError,
         ),
         orElse: () => S.of(context).unknownError,
       ),

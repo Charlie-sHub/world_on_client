@@ -69,8 +69,8 @@ class ProductionExperienceManagementRepository implements ExperienceManagementRe
         SetOptions(merge: true),
       );
       return right(unit);
-    } on FirebaseException catch (e) {
-      return onFirebaseException(e);
+    } catch (e) {
+      return _onException(e);
     }
   }
 
@@ -103,8 +103,8 @@ class ProductionExperienceManagementRepository implements ExperienceManagementRe
             _experienceDto.toJson(),
           );
       return right(unit);
-    } on FirebaseException catch (e) {
-      return onFirebaseException(e);
+    } catch (e) {
+      return _onException(e);
     }
   }
 
@@ -114,8 +114,8 @@ class ProductionExperienceManagementRepository implements ExperienceManagementRe
       final _experienceSnapshot = await _firestore.experienceCollection.doc(id.getOrCrash()).get();
       final _experience = ExperienceDto.fromFirestore(_experienceSnapshot).toDomain();
       return right(_experience);
-    } on FirebaseException catch (e) {
-      return onFirebaseException(e);
+    } catch (e) {
+      return _onException(e);
     }
   }
 
@@ -124,8 +124,8 @@ class ProductionExperienceManagementRepository implements ExperienceManagementRe
     try {
       await _firestore.experienceCollection.doc(id.getOrCrash()).delete();
       return right(unit);
-    } on FirebaseException catch (e) {
-      return onFirebaseException(e);
+    } catch (e) {
+      return _onException(e);
     }
   }
 
@@ -175,12 +175,21 @@ class ProductionExperienceManagementRepository implements ExperienceManagementRe
     }
   }
 
-  Either<Failure, T> onFirebaseException<T>(FirebaseException e) {
-    _logger.e("FirebaseException: ${e.message}");
-    return left(
-      Failure.coreData(
-        CoreDataFailure.serverError(errorString: "Firebase error: ${e.message}"),
-      ),
-    );
+  Either<Failure, T> _onException<T>(dynamic error) {
+    if (error is FirebaseException) {
+      _logger.e("FirebaseException: ${error.message}");
+      return left(
+        Failure.coreData(
+          CoreDataFailure.serverError(errorString: "Firebase error: ${error.message}"),
+        ),
+      );
+    } else {
+      _logger.e("Unknown Exception: ${error.runtimeType}");
+      return left(
+        const Failure.coreData(
+          CoreDataFailure.serverError(errorString: "Unknown  server error"),
+        ),
+      );
+    }
   }
 }

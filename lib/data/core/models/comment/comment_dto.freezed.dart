@@ -49,21 +49,15 @@ const $CommentDto = _$CommentDtoTearOff();
 mixin _$CommentDto {
   @JsonKey(ignore: true)
   String? get id => throw _privateConstructorUsedError;
-
   UserDto get poster => throw _privateConstructorUsedError;
-
   String get experienceId => throw _privateConstructorUsedError;
-
   String get content => throw _privateConstructorUsedError;
-
   @ServerTimestampConverter()
   DateTime get creationDate => throw _privateConstructorUsedError;
-
   @ServerTimestampConverter()
   DateTime get modificationDate => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-
   @JsonKey(ignore: true)
   $CommentDtoCopyWith<CommentDto> get copyWith => throw _privateConstructorUsedError;
 }

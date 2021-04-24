@@ -6,11 +6,13 @@ import 'package:worldon/application/search/tag_selector/tag_selector_bloc.dart';
 import 'package:worldon/generated/l10n.dart';
 import 'package:worldon/views/core/misc/world_on_colors.dart';
 import 'package:worldon/views/core/widgets/misc/tag_addition_card/tag_search_header.dart';
-import 'package:worldon/views/core/widgets/misc/tag_addition_card/tag_selection.dart';
 import 'package:worldon/views/core/widgets/misc/tag_addition_card/tags_found_view.dart';
 
 import '../../../../../injection.dart';
 
+// I guess this widget could be use when search by tags is implemented
+// It doesn't make sense to create tags to then search by them
+@Deprecated("Use the TagCreationAdditionCard instead")
 class TagAdditionCard extends StatelessWidget {
   final Function tagChangeFunction;
 
@@ -74,7 +76,7 @@ class TagAdditionCard extends StatelessWidget {
                   ),
                 ),
                 const SizedBox(height: 5),
-                const TagSelection(),
+                // const TagSelection(),
               ],
             ),
           ),
