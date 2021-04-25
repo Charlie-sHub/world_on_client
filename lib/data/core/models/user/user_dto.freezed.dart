@@ -49,7 +49,8 @@ class _$UserDtoTearOff {
       required Set<SystemDto> systems,
       required Set<ItemDto> items,
       required int coins,
-      required int followersAmount}) {
+      required int followersAmount,
+      required PromotionPlanDto promotionPlan}) {
     return _UserDto(
       id: id,
       name: name,
@@ -80,6 +81,7 @@ class _$UserDtoTearOff {
       items: items,
       coins: coins,
       followersAmount: followersAmount,
+      promotionPlan: promotionPlan,
     );
   }
 
@@ -135,7 +137,10 @@ mixin _$UserDto {
   Set<SystemDto> get systems => throw _privateConstructorUsedError;
   Set<ItemDto> get items => throw _privateConstructorUsedError;
   int get coins => throw _privateConstructorUsedError;
+  
   int get followersAmount => throw _privateConstructorUsedError;
+
+  PromotionPlanDto get promotionPlan => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -175,9 +180,12 @@ abstract class $UserDtoCopyWith<$Res> {
       Set<SystemDto> systems,
       Set<ItemDto> items,
       int coins,
-      int followersAmount});
+      int followersAmount,
+      PromotionPlanDto promotionPlan});
 
   $OptionsDtoCopyWith<$Res> get options;
+
+  $PromotionPlanDtoCopyWith<$Res> get promotionPlan;
 }
 
 /// @nodoc
@@ -219,6 +227,7 @@ class _$UserDtoCopyWithImpl<$Res> implements $UserDtoCopyWith<$Res> {
     Object? items = freezed,
     Object? coins = freezed,
     Object? followersAmount = freezed,
+    Object? promotionPlan = freezed,
   }) {
     return _then(_value.copyWith(
       id: id == freezed
@@ -337,6 +346,10 @@ class _$UserDtoCopyWithImpl<$Res> implements $UserDtoCopyWith<$Res> {
           ? _value.followersAmount
           : followersAmount // ignore: cast_nullable_to_non_nullable
               as int,
+      promotionPlan: promotionPlan == freezed
+          ? _value.promotionPlan
+          : promotionPlan // ignore: cast_nullable_to_non_nullable
+              as PromotionPlanDto,
     ));
   }
 
@@ -344,6 +357,13 @@ class _$UserDtoCopyWithImpl<$Res> implements $UserDtoCopyWith<$Res> {
   $OptionsDtoCopyWith<$Res> get options {
     return $OptionsDtoCopyWith<$Res>(_value.options, (value) {
       return _then(_value.copyWith(options: value));
+    });
+  }
+
+  @override
+  $PromotionPlanDtoCopyWith<$Res> get promotionPlan {
+    return $PromotionPlanDtoCopyWith<$Res>(_value.promotionPlan, (value) {
+      return _then(_value.copyWith(promotionPlan: value));
     });
   }
 }
@@ -382,10 +402,14 @@ abstract class _$UserDtoCopyWith<$Res> implements $UserDtoCopyWith<$Res> {
       Set<SystemDto> systems,
       Set<ItemDto> items,
       int coins,
-      int followersAmount});
+      int followersAmount,
+      PromotionPlanDto promotionPlan});
 
   @override
   $OptionsDtoCopyWith<$Res> get options;
+
+  @override
+  $PromotionPlanDtoCopyWith<$Res> get promotionPlan;
 }
 
 /// @nodoc
@@ -426,6 +450,7 @@ class __$UserDtoCopyWithImpl<$Res> extends _$UserDtoCopyWithImpl<$Res> implement
     Object? items = freezed,
     Object? coins = freezed,
     Object? followersAmount = freezed,
+    Object? promotionPlan = freezed,
   }) {
     return _then(_UserDto(
       id: id == freezed
@@ -544,6 +569,10 @@ class __$UserDtoCopyWithImpl<$Res> extends _$UserDtoCopyWithImpl<$Res> implement
           ? _value.followersAmount
           : followersAmount // ignore: cast_nullable_to_non_nullable
               as int,
+      promotionPlan: promotionPlan == freezed
+          ? _value.promotionPlan
+          : promotionPlan // ignore: cast_nullable_to_non_nullable
+              as PromotionPlanDto,
     ));
   }
 }
@@ -581,7 +610,8 @@ class _$_UserDto extends _UserDto {
       required this.systems,
       required this.items,
       required this.coins,
-      required this.followersAmount})
+      required this.followersAmount,
+      required this.promotionPlan})
       : super._();
 
   factory _$_UserDto.fromJson(Map<String, dynamic> json) => _$_$_UserDtoFromJson(json);
@@ -649,10 +679,12 @@ class _$_UserDto extends _UserDto {
   final int coins;
   @override
   final int followersAmount;
+  @override
+  final PromotionPlanDto promotionPlan;
 
   @override
   String toString() {
-    return 'UserDto(id: $id, name: $name, username: $username, password: $password, email: $email, birthday: $birthday, description: $description, imageURL: $imageURL, level: $level, experiencePoints: $experiencePoints, privacy: $privacy, adminPowers: $adminPowers, enabled: $enabled, lastLogin: $lastLogin, creationDate: $creationDate, modificationDate: $modificationDate, options: $options, blockedUsersIds: $blockedUsersIds, followedUsersIds: $followedUsersIds, interestsIds: $interestsIds, achievementsIds: $achievementsIds, experiencesDoneIds: $experiencesDoneIds, experiencesLikedIds: $experiencesLikedIds, experiencesToDoIds: $experiencesToDoIds, devices: $devices, systems: $systems, items: $items, coins: $coins, followersAmount: $followersAmount)';
+    return 'UserDto(id: $id, name: $name, username: $username, password: $password, email: $email, birthday: $birthday, description: $description, imageURL: $imageURL, level: $level, experiencePoints: $experiencePoints, privacy: $privacy, adminPowers: $adminPowers, enabled: $enabled, lastLogin: $lastLogin, creationDate: $creationDate, modificationDate: $modificationDate, options: $options, blockedUsersIds: $blockedUsersIds, followedUsersIds: $followedUsersIds, interestsIds: $interestsIds, achievementsIds: $achievementsIds, experiencesDoneIds: $experiencesDoneIds, experiencesLikedIds: $experiencesLikedIds, experiencesToDoIds: $experiencesToDoIds, devices: $devices, systems: $systems, items: $items, coins: $coins, followersAmount: $followersAmount, promotionPlan: $promotionPlan)';
   }
 
   @override
@@ -687,7 +719,8 @@ class _$_UserDto extends _UserDto {
             (identical(other.systems, systems) || const DeepCollectionEquality().equals(other.systems, systems)) &&
             (identical(other.items, items) || const DeepCollectionEquality().equals(other.items, items)) &&
             (identical(other.coins, coins) || const DeepCollectionEquality().equals(other.coins, coins)) &&
-            (identical(other.followersAmount, followersAmount) || const DeepCollectionEquality().equals(other.followersAmount, followersAmount)));
+            (identical(other.followersAmount, followersAmount) || const DeepCollectionEquality().equals(other.followersAmount, followersAmount)) &&
+            (identical(other.promotionPlan, promotionPlan) || const DeepCollectionEquality().equals(other.promotionPlan, promotionPlan)));
   }
 
   @override
@@ -721,7 +754,8 @@ class _$_UserDto extends _UserDto {
       const DeepCollectionEquality().hash(systems) ^
       const DeepCollectionEquality().hash(items) ^
       const DeepCollectionEquality().hash(coins) ^
-      const DeepCollectionEquality().hash(followersAmount);
+      const DeepCollectionEquality().hash(followersAmount) ^
+      const DeepCollectionEquality().hash(promotionPlan);
 
   @JsonKey(ignore: true)
   @override
@@ -763,7 +797,8 @@ abstract class _UserDto extends UserDto {
       required Set<SystemDto> systems,
       required Set<ItemDto> items,
       required int coins,
-      required int followersAmount}) = _$_UserDto;
+      required int followersAmount,
+      required PromotionPlanDto promotionPlan}) = _$_UserDto;
   const _UserDto._() : super._();
 
   factory _UserDto.fromJson(Map<String, dynamic> json) = _$_UserDto.fromJson;
@@ -821,17 +856,24 @@ abstract class _UserDto extends UserDto {
   Set<String> get experiencesLikedIds => throw _privateConstructorUsedError;
   @override
   Set<String> get experiencesToDoIds => throw _privateConstructorUsedError;
+
   @override
   Set<DeviceDto> get devices => throw _privateConstructorUsedError;
+
   @override
   Set<SystemDto> get systems => throw _privateConstructorUsedError;
+
   @override
   Set<ItemDto> get items => throw _privateConstructorUsedError;
+
   @override
   int get coins => throw _privateConstructorUsedError;
 
   @override
   int get followersAmount => throw _privateConstructorUsedError;
+
+  @override
+  PromotionPlanDto get promotionPlan => throw _privateConstructorUsedError;
 
   @override
   @JsonKey(ignore: true)

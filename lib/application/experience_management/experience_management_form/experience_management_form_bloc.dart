@@ -214,10 +214,15 @@ class ExperienceManagementFormBloc extends Bloc<ExperienceManagementFormEvent, E
           (_) => Coordinates.empty(),
           id,
         );
+        // I don't want my experiences to be promoted as most if not all of them will be tests
+        // Maybe other developers will need to be excluded too in the future
+        final _isNotCarlos = _currentUser.id.getOrCrash() != "RmdTGeylpDVVcyTVNbe6Ngj3DRV2";
+        final _isPromoted = _currentUser.adminPowers && _isNotCarlos || _currentUser.promotionPlan.isUsable;
         return state.copyWith(
           experience: Experience.empty().copyWith(
             creator: _currentUser,
             coordinates: _coordinates,
+            isPromoted: _isPromoted,
           ),
           loadedCoordinates: true,
         );

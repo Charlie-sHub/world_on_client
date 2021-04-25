@@ -37,6 +37,7 @@ _$_UserDto _$_$_UserDtoFromJson(Map<String, dynamic> json) {
     items: (json['items'] as List<dynamic>).map((e) => ItemDto.fromJson(e as Map<String, dynamic>)).toSet(),
     coins: json['coins'] as int,
     followersAmount: json['followersAmount'] as int,
+    promotionPlan: PromotionPlanDto.fromJson(json['promotionPlan'] as Map<String, dynamic>),
   );
 }
 
@@ -70,4 +71,5 @@ Map<String, dynamic> _$_$_UserDtoToJson(_$_UserDto instance) => <String, dynamic
       'items': instance.items.map((e) => e.toJson()).toList(),
       'coins': instance.coins,
       'followersAmount': instance.followersAmount,
+      'promotionPlan': instance.promotionPlan.toJson(),
     };

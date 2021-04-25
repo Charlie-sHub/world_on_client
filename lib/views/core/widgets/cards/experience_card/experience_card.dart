@@ -41,6 +41,15 @@ class ExperienceCard extends StatelessWidget {
         child: Padding(
           padding: const EdgeInsets.all(5),
           child: Card(
+            shape: experience.isPromoted
+                ? RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(3),
+                    side: const BorderSide(
+                      color: WorldOnColors.primary,
+                      width: 3,
+                    ),
+                  )
+                : null,
             child: Padding(
               padding: const EdgeInsets.all(5),
               child: Column(

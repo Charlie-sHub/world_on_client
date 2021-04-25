@@ -94,9 +94,7 @@ mixin _$Experience {
 
   Set<Comment> get comments => throw _privateConstructorUsedError;
   Set<UniqueId> get likedBy => throw _privateConstructorUsedError;
-
   Set<UniqueId> get doneBy => throw _privateConstructorUsedError;
-
   bool get isPromoted => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
@@ -562,19 +560,14 @@ abstract class _Experience extends Experience {
   PastDate get modificationDate => throw _privateConstructorUsedError;
   @override
   ObjectiveList get objectives => throw _privateConstructorUsedError;
-
   @override
   RewardSet get rewards => throw _privateConstructorUsedError;
-
   @override
   TagSet get tags => throw _privateConstructorUsedError;
-
   @override
   Set<Comment> get comments => throw _privateConstructorUsedError;
-
   @override
   Set<UniqueId> get likedBy => throw _privateConstructorUsedError;
-
   @override
   Set<UniqueId> get doneBy => throw _privateConstructorUsedError;
 

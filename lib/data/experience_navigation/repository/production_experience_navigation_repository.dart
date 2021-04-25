@@ -132,7 +132,9 @@ class ProductionExperienceNavigationRepository implements ExperienceNavigationRe
       int _experiencePointsAwarded;
       // I don't like that string hard coded
       // But it will work for now
-      final _itemList = _currentUser.items.where((item) => item.id.getOrCrash() == "81539390-6807-11eb-a79a-01068a2daab7");
+      final _itemList = _currentUser.items.where(
+        (item) => item.id.getOrCrash() == "81539390-6807-11eb-a79a-01068a2daab7",
+      );
       final _item = _itemList.isNotEmpty ? _itemList.first : null;
       if (_item != null) {
         if (DateTime.now().isAfter(_item.boughtDate.add(Duration(days: _item.timeLimitInDays)))) {
@@ -189,9 +191,17 @@ class ProductionExperienceNavigationRepository implements ExperienceNavigationRe
     }
   }
 
-  int _getUserXp(int _experiencePointsAwarded, User _currentUser) => _experiencePointsAwarded + _currentUser.experiencePoints.getOrCrash();
+  int _getUserXp(
+    int _experiencePointsAwarded,
+    User _currentUser,
+  ) =>
+      _experiencePointsAwarded + _currentUser.experiencePoints.getOrCrash();
 
-  Future _updateLevelExperiencePoints(DocumentReference _userDocument, int experiencePoints, int _userLevel) async {
+  Future _updateLevelExperiencePoints(
+    DocumentReference _userDocument,
+    int experiencePoints,
+    int _userLevel,
+  ) async {
     await _userDocument.update(
       {
         UserFields.experiencePoints: FieldValue.increment(experiencePoints),
@@ -202,7 +212,9 @@ class ProductionExperienceNavigationRepository implements ExperienceNavigationRe
   }
 
   @override
-  Future<Either<Failure, KtSet<Experience>>> loadSurroundingExperiences(world_on_coordinates.Coordinates coordinates) {
+  Future<Either<Failure, KtSet<Experience>>> loadSurroundingExperiences(
+    world_on_coordinates.Coordinates coordinates,
+  ) {
     // TODO: implement loadSurroundingExperiences
     throw UnimplementedError();
   }
@@ -258,9 +270,14 @@ class ProductionExperienceNavigationRepository implements ExperienceNavigationRe
                 final _containsId = _interestIds.any(
                   (_id) => _experienceTagIds.contains(_id),
                 );
-                final _isCreator = _experience.creator.id == _currentUser.id;
-                return _containsId && !_isCreator;
+                final _isNotCreator = _experience.creator.id != _currentUser.id;
+                return _containsId && _isNotCreator || _experience.isPromoted;
               },
+            ).toList();
+            _filteredExperienceList.sort(
+              (_a, _b) => _b.creationDate.getOrCrash().compareTo(
+                    _a.creationDate.getOrCrash(),
+                  ),
             );
             if (_filteredExperienceList.isNotEmpty) {
               return right<Failure, KtList<Experience>>(

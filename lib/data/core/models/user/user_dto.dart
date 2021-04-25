@@ -5,6 +5,7 @@ import 'package:worldon/data/core/misc/server_timestamp_converter.dart';
 import 'package:worldon/data/core/models/device/device_dto.dart';
 import 'package:worldon/data/core/models/item/item_dto.dart';
 import 'package:worldon/data/core/models/options/options_dto.dart';
+import 'package:worldon/data/core/models/promotion_plan/promotion_plan_dto.dart';
 import 'package:worldon/data/core/models/system/system_dto.dart';
 import 'package:worldon/domain/core/entities/user/user.dart';
 import 'package:worldon/domain/core/validation/objects/email_address.dart';
@@ -55,6 +56,7 @@ class UserDto with _$UserDto {
     required Set<ItemDto> items,
     required int coins,
     required int followersAmount,
+    required PromotionPlanDto promotionPlan,
   }) = _UserDto;
 
   factory UserDto.fromDomain(User user) => UserDto(
@@ -87,6 +89,7 @@ class UserDto with _$UserDto {
         items: user.items.map((item) => ItemDto.fromDomain(item)).toSet(),
         coins: user.coins,
         followersAmount: user.followersAmount,
+        promotionPlan: PromotionPlanDto.fromDomain(user.promotionPlan),
       );
 
   User toDomain() => User(
@@ -120,6 +123,7 @@ class UserDto with _$UserDto {
         items: items.map((itemDto) => itemDto.toDomain()).toSet(),
         coins: coins,
         followersAmount: followersAmount,
+        promotionPlan: promotionPlan.toDomain(),
       );
 
   factory UserDto.fromJson(Map<String, dynamic> json) => _$UserDtoFromJson(json);

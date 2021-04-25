@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:worldon/views/core/misc/world_on_colors.dart';
 
 class WorldOnTitle extends StatelessWidget {
   const WorldOnTitle({
@@ -8,10 +9,11 @@ class WorldOnTitle extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const Text(
-      "WORLD ON",
+      "World On",
       style: TextStyle(
-        fontSize: 35,
-        fontWeight: FontWeight.bold,
+        fontSize: 100,
+        color: WorldOnColors.white,
+        fontFamily: "MovingSkate",
       ),
       textAlign: TextAlign.center,
     );

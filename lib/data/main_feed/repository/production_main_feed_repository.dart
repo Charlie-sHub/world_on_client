@@ -37,13 +37,18 @@ class ProductionMainFeedRepository implements MainFeedRepositoryInterface {
                   ExperienceFields.creatorId,
                   whereIn: _idList,
                 )
-                .orderBy(
-                  ExperienceFields.creationDate,
-                  descending: true,
-                )
                 .snapshots(),
           )
           .toList();
+      // The limit is just the number that made sense at the time
+      final _promotedStream = _firestore.experienceCollection
+          .where(
+            ExperienceFields.isPromoted,
+            isEqualTo: true,
+          )
+          .limit(5)
+          .snapshots();
+      _combinedStreamList.add(_promotedStream);
       // TODO: Rework these streams so they are updated properly
       // Right now everything works except that the streams can't be properly updated by firestore
       // Probably due to all the streams having to be updated for CombineLatestStream to combine them
@@ -62,10 +67,15 @@ class ProductionMainFeedRepository implements MainFeedRepositoryInterface {
           return _experienceList;
         },
       ).map(
-        (experiences) {
-          if (experiences.isNotEmpty) {
+        (_experiences) {
+          if (_experiences.isNotEmpty) {
+            _experiences.sort(
+              (_a, _b) => _b.creationDate.getOrCrash().compareTo(
+                    _a.creationDate.getOrCrash(),
+                  ),
+            );
             return right<Failure, KtList<Experience>>(
-              experiences.toImmutableList(),
+              _experiences.toImmutableList(),
             );
           } else {
             return left<Failure, KtList<Experience>>(

@@ -569,7 +569,7 @@ class _$_TagManagementFormState implements _TagManagementFormState {
       const DeepCollectionEquality().hash(isEditing) ^
       const DeepCollectionEquality().hash(isSubmitting) ^
       const DeepCollectionEquality().hash(failureOrSuccessOption);
-  
+
   @JsonKey(ignore: true)
   @override
   _$TagManagementFormStateCopyWith<_TagManagementFormState> get copyWith => __$TagManagementFormStateCopyWithImpl<_TagManagementFormState>(this, _$identity);

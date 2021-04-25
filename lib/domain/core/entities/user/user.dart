@@ -5,6 +5,7 @@ import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:worldon/domain/core/entities/device/device.dart';
 import 'package:worldon/domain/core/entities/item/item.dart';
 import 'package:worldon/domain/core/entities/options/options.dart';
+import 'package:worldon/domain/core/entities/promotion_plan/promotion_plan.dart';
 import 'package:worldon/domain/core/entities/system/system.dart';
 import 'package:worldon/domain/core/failures/value_failure.dart';
 import 'package:worldon/domain/core/validation/objects/email_address.dart';
@@ -56,6 +57,7 @@ class User with _$User {
     required Set<Item> items,
     required int coins,
     required int followersAmount,
+    required PromotionPlan promotionPlan,
   }) = _User;
 
   factory User.empty() => User(
@@ -92,6 +94,7 @@ class User with _$User {
         items: <Item>{},
         coins: 0,
         followersAmount: 0,
+        promotionPlan: PromotionPlan.empty(),
       );
 
   Option<ValueFailure<dynamic>> get failureOption {

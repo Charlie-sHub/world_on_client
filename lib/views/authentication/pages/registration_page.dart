@@ -13,26 +13,28 @@ import 'package:worldon/views/core/routes/router.gr.dart';
 class RegistrationPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: BlocProvider(
-        create: (context) => getIt<RegistrationFormBloc>(),
-        child: BlocConsumer<RegistrationFormBloc, RegistrationFormState>(
-          listenWhen: (previous, current) => previous.failureOrSuccessOption != current.failureOrSuccessOption,
-          listener: (context, state) => state.failureOrSuccessOption.fold(
-            () {},
-            (either) => either.fold(
-              (failure) => _onFailure(failure, context),
-              (_) => _onSuccess(context),
-            ),
-          ),
-          buildWhen: (previous, current) =>
-              previous.showErrorMessages != current.showErrorMessages ||
-              previous.acceptedEULA != current.acceptedEULA ||
-              current.user.imageFileOption.fold(
-                () => false,
-                (_) => true,
+    return SafeArea(
+      child: Scaffold(
+        body: BlocProvider(
+          create: (context) => getIt<RegistrationFormBloc>(),
+          child: BlocConsumer<RegistrationFormBloc, RegistrationFormState>(
+            listenWhen: (previous, current) => previous.failureOrSuccessOption != current.failureOrSuccessOption,
+            listener: (context, state) => state.failureOrSuccessOption.fold(
+              () {},
+              (either) => either.fold(
+                (failure) => _onFailure(failure, context),
+                (_) => _onSuccess(context),
               ),
-          builder: (context, state) => RegistrationForm(),
+            ),
+            buildWhen: (previous, current) =>
+                previous.showErrorMessages != current.showErrorMessages ||
+                previous.acceptedEULA != current.acceptedEULA ||
+                current.user.imageFileOption.fold(
+                  () => false,
+                  (_) => true,
+                ),
+            builder: (context, state) => RegistrationForm(),
+          ),
         ),
       ),
     );

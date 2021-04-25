@@ -587,19 +587,14 @@ abstract class _ExperienceDto extends ExperienceDto {
   DateTime get modificationDate => throw _privateConstructorUsedError;
   @override
   List<ObjectiveDto> get objectives => throw _privateConstructorUsedError;
-
   @override
   Set<RewardDto> get rewards => throw _privateConstructorUsedError;
-
   @override
   Set<TagDto> get tags => throw _privateConstructorUsedError;
-
   @override // Probably shouldn't be part of the DTO, as in Firestore it's a sub document of the experience document
   Set<CommentDto> get comments => throw _privateConstructorUsedError;
-
   @override
   Set<String> get likedBy => throw _privateConstructorUsedError;
-
   @override
   Set<String> get doneBy => throw _privateConstructorUsedError;
 

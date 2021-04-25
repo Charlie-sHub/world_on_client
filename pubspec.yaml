@@ -9,7 +9,7 @@ publish_to: 'none' # Remove this line if you wish to publish to pub.dev
 # The number after the + always increases by 1
 # Usually both numbers should increase by 1 at the same time
 # For example 1.1.7+17 => 1.1.8+18
-version: 1.1.8+18
+version: 1.1.9+19
 
 environment:
   sdk: ">=2.12.0 <3.0.0"
@@ -45,7 +45,7 @@ dependencies:
   # For ease of routing
   auto_route: ^1.0.2
   # For ease of showing status bars
-  another_flushbar: ^1.10.19
+  another_flushbar: ^1.10.20
   # For dynamically resizing text
   auto_size_text: ^3.0.0-nullsafety.0
   # For showing the user's experience progression
@@ -133,6 +133,10 @@ flutter:
   uses-material-design: true
   assets:
     - assets/
+  fonts:
+    - family: MovingSkate
+      fonts:
+        - asset: fonts/Moving-Skate.ttf
 
 flutter_intl:
   main_locale: en_US

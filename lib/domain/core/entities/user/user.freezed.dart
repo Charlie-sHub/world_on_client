@@ -46,7 +46,8 @@ class _$UserTearOff {
       required Set<System> systems,
       required Set<Item> items,
       required int coins,
-      required int followersAmount}) {
+      required int followersAmount,
+      required PromotionPlan promotionPlan}) {
     return _User(
       id: id,
       name: name,
@@ -78,6 +79,7 @@ class _$UserTearOff {
       items: items,
       coins: coins,
       followersAmount: followersAmount,
+      promotionPlan: promotionPlan,
     );
   }
 }
@@ -116,7 +118,10 @@ mixin _$User {
   Set<System> get systems => throw _privateConstructorUsedError;
   Set<Item> get items => throw _privateConstructorUsedError;
   int get coins => throw _privateConstructorUsedError;
+
   int get followersAmount => throw _privateConstructorUsedError;
+
+  PromotionPlan get promotionPlan => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
   $UserCopyWith<User> get copyWith => throw _privateConstructorUsedError;
@@ -156,9 +161,12 @@ abstract class $UserCopyWith<$Res> {
       Set<System> systems,
       Set<Item> items,
       int coins,
-      int followersAmount});
+      int followersAmount,
+      PromotionPlan promotionPlan});
 
   $OptionsCopyWith<$Res> get options;
+
+  $PromotionPlanCopyWith<$Res> get promotionPlan;
 }
 
 /// @nodoc
@@ -201,6 +209,7 @@ class _$UserCopyWithImpl<$Res> implements $UserCopyWith<$Res> {
     Object? items = freezed,
     Object? coins = freezed,
     Object? followersAmount = freezed,
+    Object? promotionPlan = freezed,
   }) {
     return _then(_value.copyWith(
       id: id == freezed
@@ -323,6 +332,10 @@ class _$UserCopyWithImpl<$Res> implements $UserCopyWith<$Res> {
           ? _value.followersAmount
           : followersAmount // ignore: cast_nullable_to_non_nullable
               as int,
+      promotionPlan: promotionPlan == freezed
+          ? _value.promotionPlan
+          : promotionPlan // ignore: cast_nullable_to_non_nullable
+              as PromotionPlan,
     ));
   }
 
@@ -330,6 +343,13 @@ class _$UserCopyWithImpl<$Res> implements $UserCopyWith<$Res> {
   $OptionsCopyWith<$Res> get options {
     return $OptionsCopyWith<$Res>(_value.options, (value) {
       return _then(_value.copyWith(options: value));
+    });
+  }
+
+  @override
+  $PromotionPlanCopyWith<$Res> get promotionPlan {
+    return $PromotionPlanCopyWith<$Res>(_value.promotionPlan, (value) {
+      return _then(_value.copyWith(promotionPlan: value));
     });
   }
 }
@@ -369,10 +389,14 @@ abstract class _$UserCopyWith<$Res> implements $UserCopyWith<$Res> {
       Set<System> systems,
       Set<Item> items,
       int coins,
-      int followersAmount});
+      int followersAmount,
+      PromotionPlan promotionPlan});
 
   @override
   $OptionsCopyWith<$Res> get options;
+
+  @override
+  $PromotionPlanCopyWith<$Res> get promotionPlan;
 }
 
 /// @nodoc
@@ -414,6 +438,7 @@ class __$UserCopyWithImpl<$Res> extends _$UserCopyWithImpl<$Res> implements _$Us
     Object? items = freezed,
     Object? coins = freezed,
     Object? followersAmount = freezed,
+    Object? promotionPlan = freezed,
   }) {
     return _then(_User(
       id: id == freezed
@@ -536,6 +561,10 @@ class __$UserCopyWithImpl<$Res> extends _$UserCopyWithImpl<$Res> implements _$Us
           ? _value.followersAmount
           : followersAmount // ignore: cast_nullable_to_non_nullable
               as int,
+      promotionPlan: promotionPlan == freezed
+          ? _value.promotionPlan
+          : promotionPlan // ignore: cast_nullable_to_non_nullable
+              as PromotionPlan,
     ));
   }
 }
@@ -572,7 +601,8 @@ class _$_User extends _User {
       required this.systems,
       required this.items,
       required this.coins,
-      required this.followersAmount})
+      required this.followersAmount,
+      required this.promotionPlan})
       : super._();
 
   @override
@@ -635,10 +665,12 @@ class _$_User extends _User {
   final int coins;
   @override
   final int followersAmount;
+  @override
+  final PromotionPlan promotionPlan;
 
   @override
   String toString() {
-    return 'User(id: $id, name: $name, username: $username, password: $password, email: $email, birthday: $birthday, description: $description, imageURL: $imageURL, imageFileOption: $imageFileOption, level: $level, experiencePoints: $experiencePoints, privacy: $privacy, adminPowers: $adminPowers, enabled: $enabled, lastLogin: $lastLogin, creationDate: $creationDate, modificationDate: $modificationDate, options: $options, blockedUsersIds: $blockedUsersIds, followedUsersIds: $followedUsersIds, interestsIds: $interestsIds, achievementsIds: $achievementsIds, experiencesDoneIds: $experiencesDoneIds, experiencesLikedIds: $experiencesLikedIds, experiencesToDoIds: $experiencesToDoIds, devices: $devices, systems: $systems, items: $items, coins: $coins, followersAmount: $followersAmount)';
+    return 'User(id: $id, name: $name, username: $username, password: $password, email: $email, birthday: $birthday, description: $description, imageURL: $imageURL, imageFileOption: $imageFileOption, level: $level, experiencePoints: $experiencePoints, privacy: $privacy, adminPowers: $adminPowers, enabled: $enabled, lastLogin: $lastLogin, creationDate: $creationDate, modificationDate: $modificationDate, options: $options, blockedUsersIds: $blockedUsersIds, followedUsersIds: $followedUsersIds, interestsIds: $interestsIds, achievementsIds: $achievementsIds, experiencesDoneIds: $experiencesDoneIds, experiencesLikedIds: $experiencesLikedIds, experiencesToDoIds: $experiencesToDoIds, devices: $devices, systems: $systems, items: $items, coins: $coins, followersAmount: $followersAmount, promotionPlan: $promotionPlan)';
   }
 
   @override
@@ -674,7 +706,8 @@ class _$_User extends _User {
             (identical(other.systems, systems) || const DeepCollectionEquality().equals(other.systems, systems)) &&
             (identical(other.items, items) || const DeepCollectionEquality().equals(other.items, items)) &&
             (identical(other.coins, coins) || const DeepCollectionEquality().equals(other.coins, coins)) &&
-            (identical(other.followersAmount, followersAmount) || const DeepCollectionEquality().equals(other.followersAmount, followersAmount)));
+            (identical(other.followersAmount, followersAmount) || const DeepCollectionEquality().equals(other.followersAmount, followersAmount)) &&
+            (identical(other.promotionPlan, promotionPlan) || const DeepCollectionEquality().equals(other.promotionPlan, promotionPlan)));
   }
 
   @override
@@ -709,7 +742,8 @@ class _$_User extends _User {
       const DeepCollectionEquality().hash(systems) ^
       const DeepCollectionEquality().hash(items) ^
       const DeepCollectionEquality().hash(coins) ^
-      const DeepCollectionEquality().hash(followersAmount);
+      const DeepCollectionEquality().hash(followersAmount) ^
+      const DeepCollectionEquality().hash(promotionPlan);
 
   @JsonKey(ignore: true)
   @override
@@ -747,7 +781,8 @@ abstract class _User extends User {
       required Set<System> systems,
       required Set<Item> items,
       required int coins,
-      required int followersAmount}) = _$_User;
+      required int followersAmount,
+      required PromotionPlan promotionPlan}) = _$_User;
   const _User._() : super._();
 
   @override
@@ -800,16 +835,25 @@ abstract class _User extends User {
   Set<UniqueId> get experiencesLikedIds => throw _privateConstructorUsedError;
   @override
   Set<UniqueId> get experiencesToDoIds => throw _privateConstructorUsedError;
+
   @override
   Set<Device> get devices => throw _privateConstructorUsedError;
+
   @override
   Set<System> get systems => throw _privateConstructorUsedError;
+
   @override
   Set<Item> get items => throw _privateConstructorUsedError;
+
   @override
   int get coins => throw _privateConstructorUsedError;
+
   @override
   int get followersAmount => throw _privateConstructorUsedError;
+
+  @override
+  PromotionPlan get promotionPlan => throw _privateConstructorUsedError;
+
   @override
   @JsonKey(ignore: true)
   _$UserCopyWith<_User> get copyWith => throw _privateConstructorUsedError;

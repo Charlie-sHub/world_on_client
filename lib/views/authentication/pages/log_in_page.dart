@@ -13,20 +13,22 @@ import 'package:worldon/views/core/routes/router.gr.dart';
 class LogInPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: BlocProvider(
-        create: (context) => getIt<LogInFormBloc>(),
-        child: BlocConsumer<LogInFormBloc, LogInFormState>(
-          listenWhen: (previous, current) => previous.failureOrSuccessOption != current.failureOrSuccessOption,
-          listener: (context, state) => state.failureOrSuccessOption.fold(
-            () {},
-            (either) => either.fold(
-              (failure) => _onFailure(failure, context),
-              (_) => _onSuccess(context),
+    return SafeArea(
+      child: Scaffold(
+        body: BlocProvider(
+          create: (context) => getIt<LogInFormBloc>(),
+          child: BlocConsumer<LogInFormBloc, LogInFormState>(
+            listenWhen: (previous, current) => previous.failureOrSuccessOption != current.failureOrSuccessOption,
+            listener: (context, state) => state.failureOrSuccessOption.fold(
+              () {},
+              (either) => either.fold(
+                (failure) => _onFailure(failure, context),
+                (_) => _onSuccess(context),
+              ),
             ),
+            buildWhen: (previous, current) => previous.showErrorMessages != current.showErrorMessages,
+            builder: (context, state) => LogInForm(),
           ),
-          buildWhen: (previous, current) => previous.showErrorMessages != current.showErrorMessages,
-          builder: (context, state) => LogInForm(),
         ),
       ),
     );

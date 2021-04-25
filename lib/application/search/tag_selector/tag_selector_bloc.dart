@@ -13,9 +13,7 @@ import 'package:worldon/domain/tag_management/use_case/get_tags.dart';
 import 'package:worldon/injection.dart';
 
 part 'tag_selector_bloc.freezed.dart';
-
 part 'tag_selector_event.dart';
-
 part 'tag_selector_state.dart';
 
 @injectable
