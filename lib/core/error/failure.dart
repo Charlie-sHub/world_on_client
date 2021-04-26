@@ -13,21 +13,39 @@ part 'failure.freezed.dart';
 
 @freezed
 class Failure<T> with _$Failure<T> {
-  const factory Failure.authenticationDomain(AuthenticationDomainFailure<T> authenticationDomainFailure) = _AuthenticationDomain<T>;
+  const factory Failure.authenticationDomain(
+    AuthenticationDomainFailure<T> authenticationDomainFailure,
+  ) = _AuthenticationDomain<T>;
 
-  const factory Failure.authenticationData(AuthenticationDataFailure<T> authenticationDataFailure) = _AuthenticationData<T>;
+  const factory Failure.authenticationData(
+    AuthenticationDataFailure<T> authenticationDataFailure,
+  ) = _AuthenticationData<T>;
 
-  const factory Failure.coreDomain(CoreDomainFailure<T> coreDomainFailure) = _CoreDomain<T>;
+  const factory Failure.coreDomain(
+    CoreDomainFailure<T> coreDomainFailure,
+  ) = _CoreDomain<T>;
 
-  const factory Failure.coreApplication(CoreApplicationFailure<T> coreApplicationFailure) = _CoreAppllication<T>;
+  const factory Failure.coreApplication(
+    CoreApplicationFailure<T> coreApplicationFailure,
+  ) = _CoreAppllication<T>;
 
-  const factory Failure.experienceManagementApplication(ExperienceManagementApplicationFailure<T> experienceManagementApplicationFailure) = _ExperienceManagementApplicationFailure<T>;
+  const factory Failure.experienceManagementApplication(
+    ExperienceManagementApplicationFailure<T> experienceManagementApplicationFailure,
+  ) = _ExperienceManagementApplicationFailure<T>;
 
-  const factory Failure.coreData(CoreDataFailure<T> coreDataFailure) = _CoreData<T>;
+  const factory Failure.coreData(
+    CoreDataFailure<T> coreDataFailure,
+  ) = _CoreData<T>;
 
-  const factory Failure.storeData(StoreDataFailure<T> storeDataFailure) = _StoreData<T>;
+  const factory Failure.storeData(
+    StoreDataFailure<T> storeDataFailure,
+  ) = _StoreData<T>;
 
-  const factory Failure.value(ValueFailure<T> valueFailure) = _Value<T>;
+  const factory Failure.value(
+    ValueFailure<T> valueFailure,
+  ) = _Value<T>;
 
-  const factory Failure.profileDomain(ProfileDomainFailure<T> profileDomainFailure) = _ProfileDomain<T>;
+  const factory Failure.profileDomain(
+    ProfileDomainFailure<T> profileDomainFailure,
+  ) = _ProfileDomain<T>;
 }

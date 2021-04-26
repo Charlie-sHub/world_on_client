@@ -200,7 +200,7 @@ class _$_TagDto extends _TagDto {
       const DeepCollectionEquality().hash(creatorId) ^
       const DeepCollectionEquality().hash(creationDate) ^
       const DeepCollectionEquality().hash(modificationDate);
-
+  
   @JsonKey(ignore: true)
   @override
   _$TagDtoCopyWith<_TagDto> get copyWith => __$TagDtoCopyWithImpl<_TagDto>(this, _$identity);

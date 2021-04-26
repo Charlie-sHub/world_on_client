@@ -1437,6 +1437,16 @@ class S {
     );
   }
 
+  /// `Promos`
+  String get storeNavigationBarPromotionPlans {
+    return Intl.message(
+      'Promos',
+      name: 'storeNavigationBarPromotionPlans',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `My items`
   String get storeNavigationBarMyItems {
     return Intl.message(

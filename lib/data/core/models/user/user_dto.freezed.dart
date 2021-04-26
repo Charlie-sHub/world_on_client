@@ -137,9 +137,7 @@ mixin _$UserDto {
   Set<SystemDto> get systems => throw _privateConstructorUsedError;
   Set<ItemDto> get items => throw _privateConstructorUsedError;
   int get coins => throw _privateConstructorUsedError;
-  
   int get followersAmount => throw _privateConstructorUsedError;
-
   PromotionPlanDto get promotionPlan => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -184,7 +182,6 @@ abstract class $UserDtoCopyWith<$Res> {
       PromotionPlanDto promotionPlan});
 
   $OptionsDtoCopyWith<$Res> get options;
-
   $PromotionPlanDtoCopyWith<$Res> get promotionPlan;
 }
 
@@ -407,7 +404,6 @@ abstract class _$UserDtoCopyWith<$Res> implements $UserDtoCopyWith<$Res> {
 
   @override
   $OptionsDtoCopyWith<$Res> get options;
-
   @override
   $PromotionPlanDtoCopyWith<$Res> get promotionPlan;
 }
@@ -856,19 +852,14 @@ abstract class _UserDto extends UserDto {
   Set<String> get experiencesLikedIds => throw _privateConstructorUsedError;
   @override
   Set<String> get experiencesToDoIds => throw _privateConstructorUsedError;
-
   @override
   Set<DeviceDto> get devices => throw _privateConstructorUsedError;
-
   @override
   Set<SystemDto> get systems => throw _privateConstructorUsedError;
-
   @override
   Set<ItemDto> get items => throw _privateConstructorUsedError;
-
   @override
   int get coins => throw _privateConstructorUsedError;
-
   @override
   int get followersAmount => throw _privateConstructorUsedError;
 

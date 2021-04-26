@@ -14,10 +14,12 @@ import 'package:worldon/data/core/misc/firebase_helpers.dart';
 import 'package:worldon/data/core/models/coins/coins_dto.dart';
 import 'package:worldon/data/core/models/item/item_dto.dart';
 import 'package:worldon/data/core/models/item/item_fields.dart';
+import 'package:worldon/data/core/models/promotion_plan/promotion_plan_dto.dart';
 import 'package:worldon/data/core/models/user/user_dto.dart';
 import 'package:worldon/data/core/models/user/user_fields.dart';
 import 'package:worldon/data/store/failure/store_data_failure.dart';
 import 'package:worldon/domain/core/entities/item/item.dart';
+import 'package:worldon/domain/core/entities/promotion_plan/promotion_plan.dart';
 import 'package:worldon/domain/store/repository/store_repository_interface.dart';
 
 // TODO: Make IOS friendly version of this repository
@@ -79,6 +81,32 @@ class ProductionStoreRepository implements StoreRepositoryInterface {
           ),
         );
       }
+    } catch (error) {
+      return left(_onError(error));
+    }
+  }
+
+  @override
+  Future<Either<Failure, Unit>> buyPromotionPlan(PromotionPlan plan) async {
+    try {
+      final _productDetailsResponse = await _inAppPurchaseInstance.queryProductDetails(
+        {
+          // The case of buying a "none" should be impossible
+          // Even if it happens it should just throw an exception anyway
+          plan.productId,
+        },
+      );
+      final _purchaseParam = PurchaseParam(
+        productDetails: _productDetailsResponse.productDetails.first,
+      );
+      await _inAppPurchaseInstance.buyConsumable(purchaseParam: _purchaseParam);
+      final _currentUser = await _firestore.currentUser();
+      final _updatedUser = _currentUser.copyWith(
+        promotionPlan: plan,
+      );
+      final _jsonUser = UserDto.fromDomain(_updatedUser).toJson();
+      await _firestore.userCollection.doc(_updatedUser.id.getOrCrash()).update(_jsonUser);
+      return right(unit);
     } catch (error) {
       return left(_onError(error));
     }
@@ -172,6 +200,21 @@ class ProductionStoreRepository implements StoreRepositoryInterface {
     ).onErrorReturnWith(
       (error) => left(_onError(error)),
     );
+  }
+
+  @override
+  Future<Either<Failure, KtList<PromotionPlan>>> loadPromotionPlans() async {
+    try {
+      final _querySnapshot = await _firestore.promotionPlanCollection.get();
+      final _promotionPlans = _querySnapshot.docs
+          .map(
+            (_document) => PromotionPlanDto.fromFirestore(_document).toDomain(),
+          )
+          .toImmutableList();
+      return right(_promotionPlans);
+    } catch (error) {
+      return left(_onError(error));
+    }
   }
 
   Failure _onError(dynamic error) {

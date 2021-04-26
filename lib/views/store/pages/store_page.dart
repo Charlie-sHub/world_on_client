@@ -4,6 +4,7 @@ import 'package:worldon/application/store/load_user/load_user_bloc.dart';
 import 'package:worldon/application/store/store_navigation_actor/store_navigation_actor_bloc.dart';
 import 'package:worldon/generated/l10n.dart';
 import 'package:worldon/views/store/widgets/my_items_body/my_items_body.dart';
+import 'package:worldon/views/store/widgets/promotion_plans_body/promotion_plans_body.dart';
 import 'package:worldon/views/store/widgets/store_body/store_body.dart';
 import 'package:worldon/views/store/widgets/store_bottom_navigation_bar.dart';
 
@@ -39,11 +40,13 @@ class StorePage extends StatelessWidget {
             ),
             body: IndexedStack(
               index: context.read<StoreNavigationActorBloc>().state.map(
-                    storeView: (_) => 0,
-                    myItemsView: (_) => 1,
+                storeView: (_) => 0,
+                    promotionPlansView: (_) => 1,
+                    myItemsView: (_) => 2,
                   ),
               children: [
                 StoreBody(),
+                PromotionPlansBody(),
                 MyItemsBody(),
               ],
             ),

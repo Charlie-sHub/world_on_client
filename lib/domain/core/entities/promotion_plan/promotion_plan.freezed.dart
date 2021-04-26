@@ -34,15 +34,10 @@ const $PromotionPlan = _$PromotionPlanTearOff();
 /// @nodoc
 mixin _$PromotionPlan {
   UniqueId get id => throw _privateConstructorUsedError;
-
   Name get name => throw _privateConstructorUsedError;
-
   EntityDescription get description => throw _privateConstructorUsedError;
-
   PromotionPlanCode get code => throw _privateConstructorUsedError;
-
   int get valueInEuros => throw _privateConstructorUsedError;
-
   DateTime get boughtDate => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
@@ -208,21 +203,16 @@ class _$_PromotionPlan extends _PromotionPlan {
 abstract class _PromotionPlan extends PromotionPlan {
   const factory _PromotionPlan(
       {required UniqueId id, required Name name, required EntityDescription description, required PromotionPlanCode code, required int valueInEuros, required DateTime boughtDate}) = _$_PromotionPlan;
-
   const _PromotionPlan._() : super._();
 
   @override
   UniqueId get id => throw _privateConstructorUsedError;
-
   @override
   Name get name => throw _privateConstructorUsedError;
-
   @override
   EntityDescription get description => throw _privateConstructorUsedError;
-
   @override
   PromotionPlanCode get code => throw _privateConstructorUsedError;
-
   @override
   int get valueInEuros => throw _privateConstructorUsedError;
 

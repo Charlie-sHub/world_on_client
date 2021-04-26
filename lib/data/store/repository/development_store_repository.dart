@@ -3,6 +3,7 @@ import 'package:injectable/injectable.dart';
 import 'package:kt_dart/collection.dart';
 import 'package:worldon/core/error/failure.dart';
 import 'package:worldon/domain/core/entities/item/item.dart';
+import 'package:worldon/domain/core/entities/promotion_plan/promotion_plan.dart';
 import 'package:worldon/domain/store/repository/store_repository_interface.dart';
 
 @LazySingleton(as: StoreRepositoryInterface, env: [Environment.dev])
@@ -28,6 +29,18 @@ class DevelopmentStoreRepository implements StoreRepositoryInterface {
   @override
   Stream<Either<Failure, KtList<Item>>> streamPurchasableItems() {
     // TODO: implement streamPurchasableItems
+    throw UnimplementedError();
+  }
+
+  @override
+  Future<Either<Failure, Unit>> buyPromotionPlan(PromotionPlan plan) {
+    // TODO: implement buyPromotionPlan
+    throw UnimplementedError();
+  }
+
+  @override
+  Future<Either<Failure, KtList<PromotionPlan>>> loadPromotionPlans() {
+    // TODO: implement loadPromotionPlans
     throw UnimplementedError();
   }
 }

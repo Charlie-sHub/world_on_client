@@ -68,4 +68,19 @@ class PromotionPlan with _$PromotionPlan {
             .isBefore(_currentDate);
     }
   }
+
+  String get productId {
+    switch (code) {
+      case PromotionPlanCode.none:
+        return "none";
+      case PromotionPlanCode.weekLongPromotion:
+        return "week_long_promotion";
+      case PromotionPlanCode.monthLongPromotion:
+        return "month_long_promotion";
+      case PromotionPlanCode.seasonLongPromotion:
+        return "season_long_promotion";
+      case PromotionPlanCode.yearLongPromotion:
+        return "year_long_promotion";
+    }
+  }
 }

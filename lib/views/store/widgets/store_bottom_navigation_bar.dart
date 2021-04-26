@@ -6,21 +6,28 @@ import 'package:worldon/generated/l10n.dart';
 
 class StoreBottomNavigationBar extends StatelessWidget {
   static const _storeIndex = 0;
-  static const _myItemsIndex = 1;
+  static const _promotionPlansIndex = 1;
+  static const _myItemsIndex = 2;
 
   @override
   Widget build(BuildContext context) {
     return BottomNavigationBar(
       onTap: (index) => _onTap(index, context),
       currentIndex: context.read<StoreNavigationActorBloc>().state.map(
-            storeView: (context) => _storeIndex,
-            myItemsView: (context) => _myItemsIndex,
+            storeView: (_) => _storeIndex,
+            promotionPlansView: (_) => _promotionPlansIndex,
+            myItemsView: (_) => _myItemsIndex,
           ),
       items: [
         BottomNavigationBarItem(
           icon: const FaIcon(FontAwesomeIcons.store),
           label: S.of(context).storeNavigationBarStore,
           backgroundColor: Colors.blue,
+        ),
+        BottomNavigationBarItem(
+          icon: const FaIcon(FontAwesomeIcons.calendar),
+          label: S.of(context).storeNavigationBarPromotionPlans,
+          backgroundColor: Colors.orange,
         ),
         BottomNavigationBarItem(
           icon: const FaIcon(FontAwesomeIcons.list),
@@ -36,6 +43,11 @@ class StoreBottomNavigationBar extends StatelessWidget {
       case _storeIndex:
         context.read<StoreNavigationActorBloc>().add(
               const StoreNavigationActorEvent.storeTapped(),
+            );
+        break;
+      case _promotionPlansIndex:
+        context.read<StoreNavigationActorBloc>().add(
+              const StoreNavigationActorEvent.promotionPlansTapped(),
             );
         break;
       case _myItemsIndex:

@@ -118,9 +118,7 @@ mixin _$User {
   Set<System> get systems => throw _privateConstructorUsedError;
   Set<Item> get items => throw _privateConstructorUsedError;
   int get coins => throw _privateConstructorUsedError;
-
   int get followersAmount => throw _privateConstructorUsedError;
-
   PromotionPlan get promotionPlan => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
@@ -165,7 +163,6 @@ abstract class $UserCopyWith<$Res> {
       PromotionPlan promotionPlan});
 
   $OptionsCopyWith<$Res> get options;
-
   $PromotionPlanCopyWith<$Res> get promotionPlan;
 }
 
@@ -394,7 +391,6 @@ abstract class _$UserCopyWith<$Res> implements $UserCopyWith<$Res> {
 
   @override
   $OptionsCopyWith<$Res> get options;
-
   @override
   $PromotionPlanCopyWith<$Res> get promotionPlan;
 }
@@ -835,25 +831,18 @@ abstract class _User extends User {
   Set<UniqueId> get experiencesLikedIds => throw _privateConstructorUsedError;
   @override
   Set<UniqueId> get experiencesToDoIds => throw _privateConstructorUsedError;
-
   @override
   Set<Device> get devices => throw _privateConstructorUsedError;
-
   @override
   Set<System> get systems => throw _privateConstructorUsedError;
-
   @override
   Set<Item> get items => throw _privateConstructorUsedError;
-
   @override
   int get coins => throw _privateConstructorUsedError;
-
   @override
   int get followersAmount => throw _privateConstructorUsedError;
-
   @override
   PromotionPlan get promotionPlan => throw _privateConstructorUsedError;
-
   @override
   @JsonKey(ignore: true)
   _$UserCopyWith<_User> get copyWith => throw _privateConstructorUsedError;

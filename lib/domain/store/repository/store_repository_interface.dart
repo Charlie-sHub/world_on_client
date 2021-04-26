@@ -2,6 +2,7 @@ import 'package:dartz/dartz.dart';
 import 'package:kt_dart/collection.dart';
 import 'package:worldon/core/error/failure.dart';
 import 'package:worldon/domain/core/entities/item/item.dart';
+import 'package:worldon/domain/core/entities/promotion_plan/promotion_plan.dart';
 import 'package:worldon/domain/core/entities/user/user.dart';
 
 abstract class StoreRepositoryInterface {
@@ -16,4 +17,10 @@ abstract class StoreRepositoryInterface {
 
   /// Processes the purchase of a given amount of coins
   Future<Either<Failure, Unit>> buyCoins(int amount);
+
+  /// Processes the purchase of a given [PromotionPlan]
+  Future<Either<Failure, Unit>> buyPromotionPlan(PromotionPlan plan);
+
+  /// Returns a list of all the [PromotionPlan]s
+  Future<Either<Failure, KtList<PromotionPlan>>> loadPromotionPlans();
 }

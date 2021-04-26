@@ -107,9 +107,9 @@ class ProductionMainFeedRepository implements MainFeedRepositoryInterface {
         CoreDataFailure.serverError(errorString: "Firebase error: ${error.message}"),
       );
     } else {
-      _logger.e("Unknown server error: ${error.runtimeType}");
+      _logger.e("Unknown error: ${error.runtimeType}");
       return const Failure.coreData(
-        CoreDataFailure.serverError(errorString: "Unknown server error"),
+        CoreDataFailure.serverError(errorString: "Unknown error"),
       );
     }
   }

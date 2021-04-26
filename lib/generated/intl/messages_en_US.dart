@@ -171,6 +171,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "setExperienceDifficulty": MessageLookupByLibrary.simpleMessage("Set the initial difficulty"),
         "shareMessage": MessageLookupByLibrary.simpleMessage("with WORLD ON now in the Play Store"),
         "storeNavigationBarMyItems": MessageLookupByLibrary.simpleMessage("My items"),
+        "storeNavigationBarPromotionPlans": MessageLookupByLibrary.simpleMessage("Promos"),
         "storeNavigationBarStore": MessageLookupByLibrary.simpleMessage("Store"),
         "storePageTitle": MessageLookupByLibrary.simpleMessage("STORE"),
         "submitButton": MessageLookupByLibrary.simpleMessage("Submit"),
