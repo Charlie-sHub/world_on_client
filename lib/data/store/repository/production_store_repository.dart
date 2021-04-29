@@ -34,28 +34,34 @@ class ProductionStoreRepository implements StoreRepositoryInterface {
 
   @override
   Future<Either<Failure, Unit>> buyCoins(int amount) async {
-    try {
-      final _coins = CoinsDto.fromFirestore(
-        await _firestore.getCoinProductIds(),
-      );
-      if (amount == 10) {
-        final _productDetailsResponse = await _inAppPurchaseInstance.queryProductDetails(
-          {_coins.tenCoinsProductId},
+    final _ableToBuy = await _inAppPurchaseInstance.isAvailable();
+    if (_ableToBuy) {
+      try {
+        final _coins = CoinsDto.fromFirestore(
+          await _firestore.getCoinProductIds(),
         );
-        final _purchaseParam = PurchaseParam(
-          productDetails: _productDetailsResponse.productDetails.first,
-        );
-        await _inAppPurchaseInstance.buyConsumable(purchaseParam: _purchaseParam);
-        final _userDocument = await _firestore.userDocument();
-        await _userDocument.update(
-          {
-            UserFields.coins: FieldValue.increment(1),
-          },
-        );
+        if (amount == 10) {
+          final _productDetailsResponse = await _inAppPurchaseInstance.queryProductDetails(
+            {_coins.tenCoinsProductId},
+          );
+          final _purchaseParam = PurchaseParam(
+            productDetails: _productDetailsResponse.productDetails.first,
+          );
+          await _inAppPurchaseInstance.buyConsumable(purchaseParam: _purchaseParam);
+          final _userDocument = await _firestore.userDocument();
+          await _userDocument.update(
+            {
+              UserFields.coins: FieldValue.increment(1),
+            },
+          );
+        }
+        return right(unit);
+      } catch (error) {
+        return left(_onError(error));
       }
-      return right(unit);
-    } catch (error) {
-      return left(_onError(error));
+    } else {
+      _logger.e("In App Purchase is not available");
+      return left(const Failure.storeData(StoreDataFailure.unAvailableStore()));
     }
   }
 
@@ -88,27 +94,33 @@ class ProductionStoreRepository implements StoreRepositoryInterface {
 
   @override
   Future<Either<Failure, Unit>> buyPromotionPlan(PromotionPlan plan) async {
-    try {
-      final _productDetailsResponse = await _inAppPurchaseInstance.queryProductDetails(
-        {
-          // The case of buying a "none" should be impossible
-          // Even if it happens it should just throw an exception anyway
-          plan.productId,
-        },
-      );
-      final _purchaseParam = PurchaseParam(
-        productDetails: _productDetailsResponse.productDetails.first,
-      );
-      await _inAppPurchaseInstance.buyConsumable(purchaseParam: _purchaseParam);
-      final _currentUser = await _firestore.currentUser();
-      final _updatedUser = _currentUser.copyWith(
-        promotionPlan: plan,
-      );
-      final _jsonUser = UserDto.fromDomain(_updatedUser).toJson();
-      await _firestore.userCollection.doc(_updatedUser.id.getOrCrash()).update(_jsonUser);
-      return right(unit);
-    } catch (error) {
-      return left(_onError(error));
+    final _ableToBuy = await _inAppPurchaseInstance.isAvailable();
+    if (_ableToBuy) {
+      try {
+        final _productDetailsResponse = await _inAppPurchaseInstance.queryProductDetails(
+          {
+            // The case of buying a "none" should be impossible
+            // Even if it happens it should just throw an exception anyway
+            plan.productId,
+          },
+        );
+        final _purchaseParam = PurchaseParam(
+          productDetails: _productDetailsResponse.productDetails.first,
+        );
+        await _inAppPurchaseInstance.buyConsumable(purchaseParam: _purchaseParam);
+        final _currentUser = await _firestore.currentUser();
+        final _updatedUser = _currentUser.copyWith(
+          promotionPlan: plan,
+        );
+        final _jsonUser = UserDto.fromDomain(_updatedUser).toJson();
+        await _firestore.userCollection.doc(_updatedUser.id.getOrCrash()).update(_jsonUser);
+        return right(unit);
+      } catch (error) {
+        return left(_onError(error));
+      }
+    } else {
+      _logger.e("In App Purchase is not available");
+      return left(const Failure.storeData(StoreDataFailure.unAvailableStore()));
     }
   }
 
@@ -222,6 +234,11 @@ class ProductionStoreRepository implements StoreRepositoryInterface {
       _logger.e("FirebaseException: ${error.message}");
       return Failure.coreData(
         CoreDataFailure.serverError(errorString: "Firebase error: ${error.message}"),
+      );
+    } else if (error is StateError) {
+      _logger.e("StateError: ${error.message}");
+      return Failure.coreData(
+        CoreDataFailure.serverError(errorString: "State error: ${error.message}"),
       );
     } else {
       _logger.e("Unknown server error:  ${error.runtimeType}");

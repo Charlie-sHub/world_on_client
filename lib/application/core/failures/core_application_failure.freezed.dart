@@ -104,6 +104,7 @@ class _$UnknownApplicationLayerErrorCopyWithImpl<T, $Res> extends _$CoreApplicat
 }
 
 /// @nodoc
+
 class _$UnknownApplicationLayerError<T> implements UnknownApplicationLayerError<T> {
   const _$UnknownApplicationLayerError({required this.errorString});
 
@@ -195,6 +196,7 @@ class _$EmptyFieldsCopyWithImpl<T, $Res> extends _$CoreApplicationFailureCopyWit
 }
 
 /// @nodoc
+
 class _$EmptyFields<T> implements EmptyFields<T> {
   const _$EmptyFields();
 

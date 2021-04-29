@@ -269,6 +269,7 @@ class __$AchievementCopyWithImpl<$Res> extends _$AchievementCopyWithImpl<$Res> i
 }
 
 /// @nodoc
+
 class _$_Achievement extends _Achievement {
   const _$_Achievement(
       {required this.id,

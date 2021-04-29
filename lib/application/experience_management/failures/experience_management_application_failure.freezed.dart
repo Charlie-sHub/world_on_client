@@ -116,6 +116,7 @@ class _$SurpassedImageLimitCopyWithImpl<T, $Res> extends _$ExperienceManagementA
 }
 
 /// @nodoc
+
 class _$SurpassedImageLimit<T> implements SurpassedImageLimit<T> {
   const _$SurpassedImageLimit({required this.limit});
 

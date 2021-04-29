@@ -128,6 +128,7 @@ class __$PrimitiveRewardCopyWithImpl<$Res> extends _$PrimitiveRewardCopyWithImpl
 }
 
 /// @nodoc
+
 class _$_PrimitiveReward extends _PrimitiveReward {
   const _$_PrimitiveReward({required this.id, required this.name, required this.description, required this.imageFile}) : super._();
 

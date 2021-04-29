@@ -90,6 +90,7 @@ class __$WatchNewNotificationsStartedCopyWithImpl<$Res> extends _$NewNotificatio
 }
 
 /// @nodoc
+
 class _$_WatchNewNotificationsStarted implements _WatchNewNotificationsStarted {
   const _$_WatchNewNotificationsStarted();
 
@@ -183,6 +184,7 @@ class __$ResultsReceivedCopyWithImpl<$Res> extends _$NewNotificationsWatcherEven
 }
 
 /// @nodoc
+
 class _$_ResultsReceived implements _ResultsReceived {
   const _$_ResultsReceived(this.failureOrBool);
 
@@ -351,6 +353,7 @@ class __$InitialCopyWithImpl<$Res> extends _$NewNotificationsWatcherStateCopyWit
 }
 
 /// @nodoc
+
 class _$_Initial implements _Initial {
   const _$_Initial();
 
@@ -438,6 +441,7 @@ class __$NewNotificationsCopyWithImpl<$Res> extends _$NewNotificationsWatcherSta
 }
 
 /// @nodoc
+
 class _$_NewNotifications implements _NewNotifications {
   const _$_NewNotifications();
 
@@ -525,6 +529,7 @@ class __$NoNewNotificationsCopyWithImpl<$Res> extends _$NewNotificationsWatcherS
 }
 
 /// @nodoc
+
 class _$_NoNewNotifications implements _NoNewNotifications {
   const _$_NoNewNotifications();
 
@@ -612,6 +617,7 @@ class __$FailureCopyWithImpl<$Res> extends _$NewNotificationsWatcherStateCopyWit
 }
 
 /// @nodoc
+
 class _$_Failure implements _Failure {
   const _$_Failure();
 

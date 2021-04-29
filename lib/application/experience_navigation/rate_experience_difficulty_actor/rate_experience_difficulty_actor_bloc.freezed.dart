@@ -107,6 +107,7 @@ class __$DifficultyChangedCopyWithImpl<$Res> extends _$RateExperienceDifficultyA
 }
 
 /// @nodoc
+
 class _$_DifficultyChanged implements _DifficultyChanged {
   const _$_DifficultyChanged(this.difficultyRating);
 
@@ -222,6 +223,7 @@ class __$DifficultyRatedCopyWithImpl<$Res> extends _$RateExperienceDifficultyAct
 }
 
 /// @nodoc
+
 class _$_DifficultyRated implements _DifficultyRated {
   const _$_DifficultyRated(this.experience);
 
@@ -408,6 +410,7 @@ class __$RateExperienceDifficultyActorStateCopyWithImpl<$Res> extends _$RateExpe
 }
 
 /// @nodoc
+
 class _$_RateExperienceDifficultyActorState implements _RateExperienceDifficultyActorState {
   const _$_RateExperienceDifficultyActorState({required this.difficulty, required this.isSubmitting, required this.failureOrSuccessOption});
 

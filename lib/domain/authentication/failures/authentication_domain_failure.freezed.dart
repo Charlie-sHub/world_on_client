@@ -79,6 +79,7 @@ class _$CancelledByUserCopyWithImpl<T, $Res> extends _$AuthenticationDomainFailu
 }
 
 /// @nodoc
+
 class _$CancelledByUser<T> with DiagnosticableTreeMixin implements CancelledByUser<T> {
   const _$CancelledByUser();
 

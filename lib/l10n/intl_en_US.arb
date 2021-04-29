@@ -184,5 +184,16 @@
   "created": "Created",
   "done": "Done",
   "liked": "Liked",
-  "objectiveLocalization": "Objective's localization"
+  "objectiveLocalization": "Objective's localization",
+  "promotionPlans": "Promotional Plans",
+  "notFoundErrorPromotionPlans": "No promotional plans could be found",
+  "currentPlan": "Current Plan",
+  "purchaseDate": "Purchase date",
+  "validUntil": "Valid until",
+  "duration": "Duration in days",
+  "validUntilIfBoughtToday": "Valid until (if obtained today)",
+  "yourPromotionsHaveBeenSeen": "Your promotions have been seen:",
+  "times": "times",
+  "noActivePlan": "You don't have an active promotion plan",
+  "unAvailableStore": "The store is unavailable to you"
 }

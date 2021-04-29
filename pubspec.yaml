@@ -1,7 +1,7 @@
 name: worldon
 description: Front end of the World On project.
 
-publish_to: 'none' # Remove this line if you wish to publish to pub.dev
+publish_to: 'none'
 
 # Basic base ten increases
 # Last number increases by 1 until it reaches 9
@@ -20,7 +20,7 @@ dependencies:
   # Service locator
   get_it: ^6.1.1
   # For dependency injection
-  injectable: ^1.2.2
+  injectable: ^1.3.0
   # For unions generation
   freezed: ^0.14.1+2
   # Bloc for state management
@@ -43,7 +43,7 @@ dependencies:
   # For ease of serialization
   json_annotation: ^4.0.1
   # For ease of routing
-  auto_route: ^1.0.2
+  auto_route: ^2.0.1
   # For ease of showing status bars
   another_flushbar: ^1.10.20
   # For dynamically resizing text
@@ -73,13 +73,13 @@ dependencies:
   # For Signing in and registering with Google
   google_sign_in: ^5.0.2
   # For use with Firebase as backend
-  firebase_core: ^1.0.4
+  firebase_core: ^1.1.0
   # For authentication with Firebase
-  firebase_auth: ^1.1.1
+  firebase_auth: ^1.1.2
   # For simple data storage
-  cloud_firestore: ^1.0.6
+  cloud_firestore: ^1.0.7
   # For complex data storage (images)
-  firebase_storage: ^8.0.4
+  firebase_storage: ^8.0.5
   # For mapping
   google_maps_flutter:
   # For localization
@@ -109,15 +109,15 @@ dev_dependencies:
   flutter_test:
     sdk: flutter
   # For mocking dependencies during unit testing
-  mockito: ^5.0.5
+  mockito: ^5.0.6
   # Collection of lint rules
   lint: ^1.5.3
   # For dependency injection code generation
-  injectable_generator: ^1.2.2
+  injectable_generator: ^1.3.0
   # For Serializing entities to JSON
   json_serializable: ^4.1.1
   # For auto generating the routes
-  auto_route_generator: ^1.0.2
+  auto_route_generator: ^2.0.1
   # For ease of setting the app icon
   flutter_launcher_icons: ^0.9.0
   # For extra icons

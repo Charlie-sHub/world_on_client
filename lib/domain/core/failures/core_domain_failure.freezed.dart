@@ -113,6 +113,7 @@ class _$UnknownDomainLayerErrorCopyWithImpl<T, $Res> extends _$CoreDomainFailure
 }
 
 /// @nodoc
+
 class _$UnknownDomainLayerError<T> implements UnknownDomainLayerError<T> {
   const _$UnknownDomainLayerError({required this.errorString});
 
@@ -222,6 +223,7 @@ class _$DomainLayerErrorCopyWithImpl<T, $Res> extends _$CoreDomainFailureCopyWit
 }
 
 /// @nodoc
+
 class _$DomainLayerError<T> implements DomainLayerError<T> {
   const _$DomainLayerError({required this.errorString});
 
@@ -317,6 +319,7 @@ class _$UnAuthorizedErrorCopyWithImpl<T, $Res> extends _$CoreDomainFailureCopyWi
 }
 
 /// @nodoc
+
 class _$UnAuthorizedError<T> implements UnAuthorizedError<T> {
   const _$UnAuthorizedError();
 

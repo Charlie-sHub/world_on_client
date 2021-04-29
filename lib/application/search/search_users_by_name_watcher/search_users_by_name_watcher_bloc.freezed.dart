@@ -116,6 +116,7 @@ class __$WatchUsersFoundByNameStartedCopyWithImpl<$Res> extends _$SearchUsersByN
 }
 
 /// @nodoc
+
 class _$_WatchUsersFoundByNameStarted implements _WatchUsersFoundByNameStarted {
   const _$_WatchUsersFoundByNameStarted(this.name);
 
@@ -227,6 +228,7 @@ class __$WatchUsersFoundByUsernameStartedCopyWithImpl<$Res> extends _$SearchUser
 }
 
 /// @nodoc
+
 class _$_WatchUsersFoundByUsernameStarted implements _WatchUsersFoundByUsernameStarted {
   const _$_WatchUsersFoundByUsernameStarted(this.username);
 
@@ -336,6 +338,7 @@ class __$SearchResultsReceivedCopyWithImpl<$Res> extends _$SearchUsersByNameWatc
 }
 
 /// @nodoc
+
 class _$_SearchResultsReceived implements _SearchResultsReceived {
   const _$_SearchResultsReceived(this.failureOrUsers);
 
@@ -513,6 +516,7 @@ class __$InitialCopyWithImpl<$Res> extends _$SearchUsersByNameWatcherStateCopyWi
 }
 
 /// @nodoc
+
 class _$_Initial implements _Initial {
   const _$_Initial();
 
@@ -600,6 +604,7 @@ class __$SearchInPorgressCopyWithImpl<$Res> extends _$SearchUsersByNameWatcherSt
 }
 
 /// @nodoc
+
 class _$_SearchInPorgress implements _SearchInPorgress {
   const _$_SearchInPorgress();
 
@@ -701,6 +706,7 @@ class __$SearchSuccessCopyWithImpl<$Res> extends _$SearchUsersByNameWatcherState
 }
 
 /// @nodoc
+
 class _$_SearchSuccess implements _SearchSuccess {
   const _$_SearchSuccess(this.usersFound);
 
@@ -823,6 +829,7 @@ class __$SearchFailureCopyWithImpl<$Res> extends _$SearchUsersByNameWatcherState
 }
 
 /// @nodoc
+
 class _$_SearchFailure implements _SearchFailure {
   const _$_SearchFailure(this.failure);
 

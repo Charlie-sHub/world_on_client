@@ -136,9 +136,8 @@ class __$DeviceDtoCopyWithImpl<$Res> extends _$DeviceDtoCopyWithImpl<$Res> imple
   }
 }
 
-@JsonSerializable()
-
 /// @nodoc
+@JsonSerializable()
 class _$_DeviceDto extends _DeviceDto {
   const _$_DeviceDto({required this.id, required this.name, required this.type, required this.company}) : super._();
 

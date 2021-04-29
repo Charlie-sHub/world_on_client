@@ -4,7 +4,7 @@ part of 'promotion_plans_loader_bloc.dart';
 class PromotionPlansLoaderState with _$PromotionPlansLoaderState {
   const factory PromotionPlansLoaderState.initial() = _Initial;
 
-  const factory PromotionPlansLoaderState.actionInProgress() = _ActionInProgress;
+  const factory PromotionPlansLoaderState.loadInProgress() = _LoadInProgress;
 
   const factory PromotionPlansLoaderState.loadedPromotionPlans(KtList<PromotionPlan> plans) = _LoadedPromotionPlans;
 

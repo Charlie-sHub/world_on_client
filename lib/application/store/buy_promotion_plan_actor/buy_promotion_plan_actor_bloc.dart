@@ -39,7 +39,11 @@ class BuyPromotionPlanActorBloc extends Bloc<BuyPromotionPlanActorEvent, BuyProm
       () => throw UnAuthenticatedError(),
       id,
     );
-    yield BuyPromotionPlanActorState.currentPlan(_user.promotionPlan);
+    if (_user.promotionPlan.isUsable) {
+      yield BuyPromotionPlanActorState.currentPlan(_user.promotionPlan);
+    } else {
+      yield const BuyPromotionPlanActorState.noPromotionPlan();
+    }
   }
 
   Stream<BuyPromotionPlanActorState> _onBoughtPromotionPlan(_BoughtPromotionPlan event) async* {
@@ -53,7 +57,7 @@ class BuyPromotionPlanActorBloc extends Bloc<BuyPromotionPlanActorEvent, BuyProm
         return BuyPromotionPlanActorState.purchaseFailure(failure);
       },
       (_) {
-        // Just to actually show the promotion plan in the server
+        // Just to actually show the promotion plan stored in the server
         add(const BuyPromotionPlanActorEvent.initialized());
         return const BuyPromotionPlanActorState.purchaseSuccess();
       },

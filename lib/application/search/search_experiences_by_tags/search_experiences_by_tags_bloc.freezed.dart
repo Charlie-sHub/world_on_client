@@ -105,6 +105,7 @@ class __$SubmittedCopyWithImpl<$Res> extends _$SearchExperiencesByTagsEventCopyW
 }
 
 /// @nodoc
+
 class _$_Submitted implements _Submitted {
   const _$_Submitted(this.tags);
 
@@ -210,6 +211,7 @@ class __$ResultsReceivedCopyWithImpl<$Res> extends _$SearchExperiencesByTagsEven
 }
 
 /// @nodoc
+
 class _$_ResultsReceived implements _ResultsReceived {
   const _$_ResultsReceived(this.failureOrExperiences);
 
@@ -393,6 +395,7 @@ class __$InitialCopyWithImpl<$Res> extends _$SearchExperiencesByTagsStateCopyWit
 }
 
 /// @nodoc
+
 class _$_Initial implements _Initial {
   const _$_Initial();
 
@@ -484,6 +487,7 @@ class __$SearchInProgressCopyWithImpl<$Res> extends _$SearchExperiencesByTagsSta
 }
 
 /// @nodoc
+
 class _$_SearchInProgress implements _SearchInProgress {
   const _$_SearchInProgress();
 
@@ -589,6 +593,7 @@ class __$SearchSuccessCopyWithImpl<$Res> extends _$SearchExperiencesByTagsStateC
 }
 
 /// @nodoc
+
 class _$_SearchSuccess implements _SearchSuccess {
   const _$_SearchSuccess(this.experiencesFound);
 
@@ -716,6 +721,7 @@ class __$SearchFailureCopyWithImpl<$Res> extends _$SearchExperiencesByTagsStateC
 }
 
 /// @nodoc
+
 class _$_SearchFailure implements _SearchFailure {
   const _$_SearchFailure(this.failure);
 
@@ -842,6 +848,7 @@ class __$ValueFailureCopyWithImpl<$Res> extends _$SearchExperiencesByTagsStateCo
 }
 
 /// @nodoc
+
 class _$_ValueFailure implements _ValueFailure {
   const _$_ValueFailure(this.failure);
 

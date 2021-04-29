@@ -19,6 +19,7 @@ class PromotionPlan with _$PromotionPlan {
     required PromotionPlanCode code,
     required int valueInEuros,
     required DateTime boughtDate,
+    required int timesSeen,
   }) = _PromotionPlan;
 
   factory PromotionPlan.empty() => PromotionPlan(
@@ -28,6 +29,7 @@ class PromotionPlan with _$PromotionPlan {
         code: PromotionPlanCode.none,
         valueInEuros: 0,
         boughtDate: DateTime.now(),
+        timesSeen: 0,
       );
 
   Option<ValueFailure<dynamic>> get failureOption => name.failureOrUnit.andThen(description.failureOrUnit).fold(
@@ -39,34 +41,32 @@ class PromotionPlan with _$PromotionPlan {
 
   bool get isUsable {
     final _currentDate = DateTime.now();
+    DateTime _lastValidDate;
     switch (code) {
       case PromotionPlanCode.none:
         return false;
       case PromotionPlanCode.weekLongPromotion:
-        return boughtDate
-            .add(
-              const Duration(days: 7),
-            )
-            .isBefore(_currentDate);
+        _lastValidDate = boughtDate.add(
+          const Duration(days: 7),
+        );
+        break;
       case PromotionPlanCode.monthLongPromotion:
-        return boughtDate
-            .add(
-              const Duration(days: 30),
-            )
-            .isBefore(_currentDate);
+        _lastValidDate = boughtDate.add(
+          const Duration(days: 30),
+        );
+        break;
       case PromotionPlanCode.seasonLongPromotion:
-        return boughtDate
-            .add(
-              const Duration(days: 90),
-            )
-            .isBefore(_currentDate);
+        _lastValidDate = boughtDate.add(
+          const Duration(days: 90),
+        );
+        break;
       case PromotionPlanCode.yearLongPromotion:
-        return boughtDate
-            .add(
-              const Duration(days: 365),
-            )
-            .isBefore(_currentDate);
+        _lastValidDate = boughtDate.add(
+          const Duration(days: 365),
+        );
+        break;
     }
+    return _lastValidDate.isAfter(_currentDate);
   }
 
   String get productId {
@@ -81,6 +81,21 @@ class PromotionPlan with _$PromotionPlan {
         return "season_long_promotion";
       case PromotionPlanCode.yearLongPromotion:
         return "year_long_promotion";
+    }
+  }
+
+  int get amountOfDays {
+    switch (code) {
+      case PromotionPlanCode.none:
+        return 0;
+      case PromotionPlanCode.weekLongPromotion:
+        return 7;
+      case PromotionPlanCode.monthLongPromotion:
+        return 30;
+      case PromotionPlanCode.seasonLongPromotion:
+        return 90;
+      case PromotionPlanCode.yearLongPromotion:
+        return 365;
     }
   }
 }

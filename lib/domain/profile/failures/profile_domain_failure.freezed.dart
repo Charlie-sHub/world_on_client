@@ -87,6 +87,7 @@ class _$FollowItselfCopyWithImpl<T, $Res> extends _$ProfileDomainFailureCopyWith
 }
 
 /// @nodoc
+
 class _$FollowItself<T> implements FollowItself<T> {
   const _$FollowItself();
 
@@ -166,6 +167,7 @@ class _$BlockItselfCopyWithImpl<T, $Res> extends _$ProfileDomainFailureCopyWithI
 }
 
 /// @nodoc
+
 class _$BlockItself<T> implements BlockItself<T> {
   const _$BlockItself();
 

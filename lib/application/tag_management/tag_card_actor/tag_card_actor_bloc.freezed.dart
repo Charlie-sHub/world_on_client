@@ -147,6 +147,7 @@ class __$InitializedCopyWithImpl<$Res> extends _$TagCardActorEventCopyWithImpl<$
 }
 
 /// @nodoc
+
 class _$_Initialized implements _Initialized {
   const _$_Initialized(this.tag);
 
@@ -262,6 +263,7 @@ class __$DismissedFromInterestsCopyWithImpl<$Res> extends _$TagCardActorEventCop
 }
 
 /// @nodoc
+
 class _$_DismissedFromInterests implements _DismissedFromInterests {
   const _$_DismissedFromInterests(this.tag);
 
@@ -377,6 +379,7 @@ class __$AddedToInterestsCopyWithImpl<$Res> extends _$TagCardActorEventCopyWithI
 }
 
 /// @nodoc
+
 class _$_AddedToInterests implements _AddedToInterests {
   const _$_AddedToInterests(this.tag);
 
@@ -587,6 +590,7 @@ class __$InitialCopyWithImpl<$Res> extends _$TagCardActorStateCopyWithImpl<$Res>
 }
 
 /// @nodoc
+
 class _$_Initial implements _Initial {
   const _$_Initial();
 
@@ -690,6 +694,7 @@ class __$InInterestsCopyWithImpl<$Res> extends _$TagCardActorStateCopyWithImpl<$
 }
 
 /// @nodoc
+
 class _$_InInterests implements _InInterests {
   const _$_InInterests();
 
@@ -793,6 +798,7 @@ class __$NotInInterestsCopyWithImpl<$Res> extends _$TagCardActorStateCopyWithImp
 }
 
 /// @nodoc
+
 class _$_NotInInterests implements _NotInInterests {
   const _$_NotInInterests();
 
@@ -896,6 +902,7 @@ class __$ActionInProgressCopyWithImpl<$Res> extends _$TagCardActorStateCopyWithI
 }
 
 /// @nodoc
+
 class _$_ActionInProgress implements _ActionInProgress {
   const _$_ActionInProgress();
 
@@ -999,6 +1006,7 @@ class __$AdditionSuccessCopyWithImpl<$Res> extends _$TagCardActorStateCopyWithIm
 }
 
 /// @nodoc
+
 class _$_AdditionSuccess implements _AdditionSuccess {
   const _$_AdditionSuccess();
 
@@ -1125,6 +1133,7 @@ class __$AdditionFailureCopyWithImpl<$Res> extends _$TagCardActorStateCopyWithIm
 }
 
 /// @nodoc
+
 class _$_AdditionFailure implements _AdditionFailure {
   const _$_AdditionFailure(this.failure);
 
@@ -1240,6 +1249,7 @@ class __$DismissalSuccessCopyWithImpl<$Res> extends _$TagCardActorStateCopyWithI
 }
 
 /// @nodoc
+
 class _$_DismissalSuccess implements _DismissalSuccess {
   const _$_DismissalSuccess();
 
@@ -1366,6 +1376,7 @@ class __$DismissalFailureCopyWithImpl<$Res> extends _$TagCardActorStateCopyWithI
 }
 
 /// @nodoc
+
 class _$_DismissalFailure implements _DismissalFailure {
   const _$_DismissalFailure(this.failure);
 

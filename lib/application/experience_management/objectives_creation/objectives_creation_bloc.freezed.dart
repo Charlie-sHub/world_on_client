@@ -125,6 +125,7 @@ class __$InitializedCopyWithImpl<$Res> extends _$ObjectivesCreationEventCopyWith
 }
 
 /// @nodoc
+
 class _$_Initialized implements _Initialized {
   const _$_Initialized(this.objectiveListOption);
 
@@ -248,6 +249,7 @@ class __$AddedObjectiveCopyWithImpl<$Res> extends _$ObjectivesCreationEventCopyW
 }
 
 /// @nodoc
+
 class _$_AddedObjective implements _AddedObjective {
   const _$_AddedObjective(this.objective);
 
@@ -370,6 +372,7 @@ class __$RemovedObjectiveCopyWithImpl<$Res> extends _$ObjectivesCreationEventCop
 }
 
 /// @nodoc
+
 class _$_RemovedObjective implements _RemovedObjective {
   const _$_RemovedObjective(this.objective);
 
@@ -483,6 +486,7 @@ class __$ReorderedListCopyWithImpl<$Res> extends _$ObjectivesCreationEventCopyWi
 }
 
 /// @nodoc
+
 class _$_ReorderedList implements _ReorderedList {
   const _$_ReorderedList(this.reorderedList);
 
@@ -648,6 +652,7 @@ class __$ObjectivesCreationStateCopyWithImpl<$Res> extends _$ObjectivesCreationS
 }
 
 /// @nodoc
+
 class _$_ObjectivesCreationState implements _ObjectivesCreationState {
   const _$_ObjectivesCreationState({required this.objectivesCreated});
 

@@ -11,6 +11,7 @@ import 'package:worldon/data/core/misc/firebase_helpers.dart';
 import 'package:worldon/data/core/models/experience/experience_dto.dart';
 import 'package:worldon/data/core/models/experience/experience_fields.dart';
 import 'package:worldon/data/core/models/user/user_dto.dart';
+import 'package:worldon/data/core/models/user/user_fields.dart';
 import 'package:worldon/domain/core/entities/experience/experience.dart';
 import 'package:worldon/domain/main_feed/repository/main_feed_repository_interface.dart';
 
@@ -48,6 +49,16 @@ class ProductionMainFeedRepository implements MainFeedRepositoryInterface {
           )
           .limit(5)
           .snapshots();
+      final _promotedStreamQuery = await _promotedStream.first;
+      for (final _experienceDoc in _promotedStreamQuery.docs) {
+        final _experience = ExperienceDto.fromFirestore(_experienceDoc).toDomain();
+        final _creator = _experience.creator;
+        _firestore.userCollection.doc(_creator.id.getOrCrash()).update(
+          {
+            "${UserFields.promotionPlan}.timesSeen": FieldValue.increment(1),
+          },
+        );
+      }
       _combinedStreamList.add(_promotedStream);
       // TODO: Rework these streams so they are updated properly
       // Right now everything works except that the streams can't be properly updated by firestore

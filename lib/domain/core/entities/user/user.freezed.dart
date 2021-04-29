@@ -566,6 +566,7 @@ class __$UserCopyWithImpl<$Res> extends _$UserCopyWithImpl<$Res> implements _$Us
 }
 
 /// @nodoc
+
 class _$_User extends _User {
   const _$_User(
       {required this.id,

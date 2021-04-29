@@ -124,6 +124,7 @@ class __$WatchFollowedUsersStartedCopyWithImpl<$Res> extends _$ProfileUsersWatch
 }
 
 /// @nodoc
+
 class _$_WatchFollowedUsersStarted implements _WatchFollowedUsersStarted {
   const _$_WatchFollowedUsersStarted(this.user);
 
@@ -242,6 +243,7 @@ class __$WatchFollowingUsersStartedCopyWithImpl<$Res> extends _$ProfileUsersWatc
 }
 
 /// @nodoc
+
 class _$_WatchFollowingUsersStarted implements _WatchFollowingUsersStarted {
   const _$_WatchFollowingUsersStarted(this.user);
 
@@ -351,6 +353,7 @@ class __$UsersReceivedCopyWithImpl<$Res> extends _$ProfileUsersWatcherEventCopyW
 }
 
 /// @nodoc
+
 class _$_UsersReceived implements _UsersReceived {
   const _$_UsersReceived(this.failureOrUsers);
 
@@ -527,6 +530,7 @@ class __$InitialCopyWithImpl<$Res> extends _$ProfileUsersWatcherStateCopyWithImp
 }
 
 /// @nodoc
+
 class _$_Initial implements _Initial {
   const _$_Initial();
 
@@ -614,6 +618,7 @@ class __$LoadInProgressCopyWithImpl<$Res> extends _$ProfileUsersWatcherStateCopy
 }
 
 /// @nodoc
+
 class _$_LoadInProgress implements _LoadInProgress {
   const _$_LoadInProgress();
 
@@ -715,6 +720,7 @@ class __$LoadSuccessCopyWithImpl<$Res> extends _$ProfileUsersWatcherStateCopyWit
 }
 
 /// @nodoc
+
 class _$_LoadSuccess implements _LoadSuccess {
   const _$_LoadSuccess(this.users);
 
@@ -837,6 +843,7 @@ class __$LoadFailureCopyWithImpl<$Res> extends _$ProfileUsersWatcherStateCopyWit
 }
 
 /// @nodoc
+
 class _$_LoadFailure implements _LoadFailure {
   const _$_LoadFailure(this.failure);
 

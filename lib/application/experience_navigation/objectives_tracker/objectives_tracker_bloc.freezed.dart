@@ -115,6 +115,7 @@ class __$InitializedCopyWithImpl<$Res> extends _$ObjectivesTrackerEventCopyWithI
 }
 
 /// @nodoc
+
 class _$_Initialized implements _Initialized {
   const _$_Initialized(this.objectiveSet);
 
@@ -233,6 +234,7 @@ class __$ObjectiveAccomplishedCopyWithImpl<$Res> extends _$ObjectivesTrackerEven
 }
 
 /// @nodoc
+
 class _$_ObjectiveAccomplished implements _ObjectiveAccomplished {
   const _$_ObjectiveAccomplished(this.objective);
 
@@ -351,6 +353,7 @@ class __$ObjectiveUnaccomplishedCopyWithImpl<$Res> extends _$ObjectivesTrackerEv
 }
 
 /// @nodoc
+
 class _$_ObjectiveUnaccomplished implements _ObjectiveUnaccomplished {
   const _$_ObjectiveUnaccomplished(this.objective);
 
@@ -524,6 +527,7 @@ class __$ObjectivesTrackerStateCopyWithImpl<$Res> extends _$ObjectivesTrackerSta
 }
 
 /// @nodoc
+
 class _$_ObjectivesTrackerState implements _ObjectivesTrackerState {
   const _$_ObjectivesTrackerState({required this.objectivesToDo, required this.isFinished});
 

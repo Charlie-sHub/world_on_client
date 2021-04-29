@@ -22,15 +22,17 @@ class PromotionPlanDto with _$PromotionPlanDto {
     required PromotionPlanCode code,
     required int valueInEuros,
     @ServerTimestampConverter() required DateTime boughtDate,
+    required int timesSeen,
   }) = _PromotionPlan;
 
-  factory PromotionPlanDto.fromDomain(PromotionPlan promotionPlan) => PromotionPlanDto(
-        id: promotionPlan.id.getOrCrash(),
-        name: promotionPlan.name.getOrCrash(),
-        description: promotionPlan.description.getOrCrash(),
-        code: promotionPlan.code,
-        valueInEuros: promotionPlan.valueInEuros,
-        boughtDate: promotionPlan.boughtDate,
+  factory PromotionPlanDto.fromDomain(PromotionPlan plan) => PromotionPlanDto(
+        id: plan.id.getOrCrash(),
+        name: plan.name.getOrCrash(),
+        description: plan.description.getOrCrash(),
+        code: plan.code,
+        valueInEuros: plan.valueInEuros,
+        boughtDate: plan.boughtDate,
+        timesSeen: plan.timesSeen,
       );
 
   PromotionPlan toDomain() => PromotionPlan(
@@ -40,6 +42,7 @@ class PromotionPlanDto with _$PromotionPlanDto {
         code: code,
         valueInEuros: valueInEuros,
         boughtDate: boughtDate,
+        timesSeen: timesSeen,
       );
 
   factory PromotionPlanDto.fromJson(Map<String, dynamic> json) => _$PromotionPlanDtoFromJson(json);

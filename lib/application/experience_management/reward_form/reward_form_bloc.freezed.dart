@@ -123,6 +123,7 @@ class __$NameChangedCopyWithImpl<$Res> extends _$RewardFormEventCopyWithImpl<$Re
 }
 
 /// @nodoc
+
 class _$_NameChanged implements _NameChanged {
   const _$_NameChanged(this.name);
 
@@ -236,6 +237,7 @@ class __$DescriptionChangedCopyWithImpl<$Res> extends _$RewardFormEventCopyWithI
 }
 
 /// @nodoc
+
 class _$_DescriptionChanged implements _DescriptionChanged {
   const _$_DescriptionChanged(this.description);
 
@@ -349,6 +351,7 @@ class __$ImageChangedCopyWithImpl<$Res> extends _$RewardFormEventCopyWithImpl<$R
 }
 
 /// @nodoc
+
 class _$_ImageChanged implements _ImageChanged {
   const _$_ImageChanged(this.imageFile);
 
@@ -448,6 +451,7 @@ class __$SubmittedCopyWithImpl<$Res> extends _$RewardFormEventCopyWithImpl<$Res>
 }
 
 /// @nodoc
+
 class _$_Submitted implements _Submitted {
   const _$_Submitted();
 
@@ -637,6 +641,7 @@ class __$RewardFormStateCopyWithImpl<$Res> extends _$RewardFormStateCopyWithImpl
 }
 
 /// @nodoc
+
 class _$_RewardFormState implements _RewardFormState {
   const _$_RewardFormState({required this.reward, required this.showErrorMessages, required this.isSubmitting});
 
@@ -660,7 +665,7 @@ class _$_RewardFormState implements _RewardFormState {
             (identical(other.showErrorMessages, showErrorMessages) || const DeepCollectionEquality().equals(other.showErrorMessages, showErrorMessages)) &&
             (identical(other.isSubmitting, isSubmitting) || const DeepCollectionEquality().equals(other.isSubmitting, isSubmitting)));
   }
-  
+
   @override
   int get hashCode => runtimeType.hashCode ^ const DeepCollectionEquality().hash(reward) ^ const DeepCollectionEquality().hash(showErrorMessages) ^ const DeepCollectionEquality().hash(isSubmitting);
 

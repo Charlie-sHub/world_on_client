@@ -147,6 +147,7 @@ class __$InitializedCopyWithImpl<$Res> extends _$BlockActorEventCopyWithImpl<$Re
 }
 
 /// @nodoc
+
 class _$_Initialized implements _Initialized {
   const _$_Initialized(this.user);
 
@@ -262,6 +263,7 @@ class __$BlockedCopyWithImpl<$Res> extends _$BlockActorEventCopyWithImpl<$Res> i
 }
 
 /// @nodoc
+
 class _$_Blocked implements _Blocked {
   const _$_Blocked(this.user);
 
@@ -377,6 +379,7 @@ class __$UnBlockedCopyWithImpl<$Res> extends _$BlockActorEventCopyWithImpl<$Res>
 }
 
 /// @nodoc
+
 class _$_UnBlocked implements _UnBlocked {
   const _$_UnBlocked(this.user);
 
@@ -587,6 +590,7 @@ class __$InitialCopyWithImpl<$Res> extends _$BlockActorStateCopyWithImpl<$Res> i
 }
 
 /// @nodoc
+
 class _$_Initial implements _Initial {
   const _$_Initial();
 
@@ -690,6 +694,7 @@ class __$ActionInProgressCopyWithImpl<$Res> extends _$BlockActorStateCopyWithImp
 }
 
 /// @nodoc
+
 class _$_ActionInProgress implements _ActionInProgress {
   const _$_ActionInProgress();
 
@@ -793,6 +798,7 @@ class __$BlocksCopyWithImpl<$Res> extends _$BlockActorStateCopyWithImpl<$Res> im
 }
 
 /// @nodoc
+
 class _$_Blocks implements _Blocks {
   const _$_Blocks();
 
@@ -896,6 +902,7 @@ class __$BlocksNotCopyWithImpl<$Res> extends _$BlockActorStateCopyWithImpl<$Res>
 }
 
 /// @nodoc
+
 class _$_BlocksNot implements _BlocksNot {
   const _$_BlocksNot();
 
@@ -999,6 +1006,7 @@ class __$BlockSuccessCopyWithImpl<$Res> extends _$BlockActorStateCopyWithImpl<$R
 }
 
 /// @nodoc
+
 class _$_BlockSuccess implements _BlockSuccess {
   const _$_BlockSuccess();
 
@@ -1125,6 +1133,7 @@ class __$BlockFailureCopyWithImpl<$Res> extends _$BlockActorStateCopyWithImpl<$R
 }
 
 /// @nodoc
+
 class _$_BlockFailure implements _BlockFailure {
   const _$_BlockFailure(this.failure);
 
@@ -1240,6 +1249,7 @@ class __$UnBlockSuccessCopyWithImpl<$Res> extends _$BlockActorStateCopyWithImpl<
 }
 
 /// @nodoc
+
 class _$_UnBlockSuccess implements _UnBlockSuccess {
   const _$_UnBlockSuccess();
 
@@ -1366,6 +1376,7 @@ class __$UnBlockFailureCopyWithImpl<$Res> extends _$BlockActorStateCopyWithImpl<
 }
 
 /// @nodoc
+
 class _$_UnBlockFailure implements _UnBlockFailure {
   const _$_UnBlockFailure(this.failure);
 

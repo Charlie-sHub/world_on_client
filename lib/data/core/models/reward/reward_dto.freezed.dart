@@ -136,9 +136,8 @@ class __$RewardDtoCopyWithImpl<$Res> extends _$RewardDtoCopyWithImpl<$Res> imple
   }
 }
 
-@JsonSerializable()
-
 /// @nodoc
+@JsonSerializable()
 class _$_RewardDto extends _RewardDto {
   const _$_RewardDto({required this.id, required this.name, required this.description, required this.imageURL}) : super._();
 
@@ -157,7 +156,7 @@ class _$_RewardDto extends _RewardDto {
   String toString() {
     return 'RewardDto(id: $id, name: $name, description: $description, imageURL: $imageURL)';
   }
-
+  
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
@@ -167,15 +166,15 @@ class _$_RewardDto extends _RewardDto {
             (identical(other.description, description) || const DeepCollectionEquality().equals(other.description, description)) &&
             (identical(other.imageURL, imageURL) || const DeepCollectionEquality().equals(other.imageURL, imageURL)));
   }
-
+  
   @override
   int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(id) ^
-      const DeepCollectionEquality().hash(name) ^
-      const DeepCollectionEquality().hash(description) ^
-      const DeepCollectionEquality().hash(imageURL);
-  
+    runtimeType.hashCode ^
+    const DeepCollectionEquality().hash(id) ^
+    const DeepCollectionEquality().hash(name) ^
+    const DeepCollectionEquality().hash(description) ^
+    const DeepCollectionEquality().hash(imageURL);
+
   @JsonKey(ignore: true)
   @override
   _$RewardDtoCopyWith<_RewardDto> get copyWith => __$RewardDtoCopyWithImpl<_RewardDto>(this, _$identity);

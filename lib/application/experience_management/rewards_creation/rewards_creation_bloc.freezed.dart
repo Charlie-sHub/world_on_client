@@ -115,6 +115,7 @@ class __$InitializedCopyWithImpl<$Res> extends _$RewardsCreationEventCopyWithImp
 }
 
 /// @nodoc
+
 class _$_Initialized implements _Initialized {
   const _$_Initialized(this.rewardSetOption);
 
@@ -233,6 +234,7 @@ class __$AddedRewardCopyWithImpl<$Res> extends _$RewardsCreationEventCopyWithImp
 }
 
 /// @nodoc
+
 class _$_AddedReward implements _AddedReward {
   const _$_AddedReward(this.reward);
 
@@ -351,6 +353,7 @@ class __$RemovedRewardCopyWithImpl<$Res> extends _$RewardsCreationEventCopyWithI
 }
 
 /// @nodoc
+
 class _$_RemovedReward implements _RemovedReward {
   const _$_RemovedReward(this.reward);
 
@@ -512,6 +515,7 @@ class __$RewardsCreationStateCopyWithImpl<$Res> extends _$RewardsCreationStateCo
 }
 
 /// @nodoc
+
 class _$_RewardsCreationState implements _RewardsCreationState {
   const _$_RewardsCreationState({required this.rewardsCreated});
 

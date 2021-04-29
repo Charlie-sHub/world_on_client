@@ -163,6 +163,7 @@ class __$CommentCopyWithImpl<$Res> extends _$CommentCopyWithImpl<$Res> implement
 }
 
 /// @nodoc
+
 class _$_Comment extends _Comment {
   const _$_Comment({required this.id, required this.poster, required this.experienceId, required this.content, required this.creationDate, required this.modificationDate}) : super._();
 

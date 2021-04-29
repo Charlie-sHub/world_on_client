@@ -127,6 +127,7 @@ class __$DeviceCopyWithImpl<$Res> extends _$DeviceCopyWithImpl<$Res> implements 
 }
 
 /// @nodoc
+
 class _$_Device extends _Device {
   const _$_Device({required this.id, required this.name, required this.type, required this.company}) : super._();
 

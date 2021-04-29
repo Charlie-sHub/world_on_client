@@ -87,6 +87,7 @@ class _$InvalidCredentialsCopyWithImpl<T, $Res> extends _$AuthenticationDataFail
 }
 
 /// @nodoc
+
 class _$InvalidCredentials<T> implements InvalidCredentials<T> {
   const _$InvalidCredentials();
 
@@ -166,6 +167,7 @@ class _$UnregisteredUserCopyWithImpl<T, $Res> extends _$AuthenticationDataFailur
 }
 
 /// @nodoc
+
 class _$UnregisteredUser<T> implements UnregisteredUser<T> {
   const _$UnregisteredUser();
 

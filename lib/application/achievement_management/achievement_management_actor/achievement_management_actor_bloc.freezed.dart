@@ -127,6 +127,7 @@ class __$DeletedCopyWithImpl<$Res> extends _$AchievementManagementActorEventCopy
 }
 
 /// @nodoc
+
 class _$_Deleted implements _Deleted {
   const _$_Deleted(this.achievement);
 
@@ -295,6 +296,7 @@ class __$InitialCopyWithImpl<$Res> extends _$AchievementManagementActorStateCopy
 }
 
 /// @nodoc
+
 class _$_Initial implements _Initial {
   const _$_Initial();
 
@@ -382,6 +384,7 @@ class __$ActionInProgressCopyWithImpl<$Res> extends _$AchievementManagementActor
 }
 
 /// @nodoc
+
 class _$_ActionInProgress implements _ActionInProgress {
   const _$_ActionInProgress();
 
@@ -492,6 +495,7 @@ class __$DeletionFailureCopyWithImpl<$Res> extends _$AchievementManagementActorS
 }
 
 /// @nodoc
+
 class _$_DeletionFailure implements _DeletionFailure {
   const _$_DeletionFailure(this.failure);
 
@@ -591,6 +595,7 @@ class __$DeletionSuccessCopyWithImpl<$Res> extends _$AchievementManagementActorS
 }
 
 /// @nodoc
+
 class _$_DeletionSuccess implements _DeletionSuccess {
   const _$_DeletionSuccess();
 

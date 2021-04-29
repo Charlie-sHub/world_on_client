@@ -38,84 +38,82 @@ class ExperienceCard extends StatelessWidget {
         ),
       child: BlocListener<ExperienceCardActorBloc, ExperienceCardActorState>(
         listener: _experienceCardListener,
-        child: Padding(
-          padding: const EdgeInsets.all(5),
-          child: Card(
-            shape: experience.isPromoted
-                ? RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(3),
-                    side: const BorderSide(
-                      color: WorldOnColors.primary,
-                      width: 3,
-                    ),
-                  )
-                : null,
-            child: Padding(
-              padding: const EdgeInsets.all(5),
-              child: Column(
-                children: <Widget>[
-                  ImageStack(experience: experience),
-                  Column(
-                    children: <Widget>[
-                      const SizedBox(height: 10),
-                      AutoSizeText(
-                        experience.title.getOrCrash(),
-                        textAlign: TextAlign.center,
-                        style: const TextStyle(
-                          fontSize: 30,
-                          fontWeight: FontWeight.bold,
-                          color: WorldOnColors.background,
-                        ),
-                      ),
-                      const SizedBox(height: 10),
-                      AutoSizeText(
-                        experience.description.getOrCrash(),
-                        textAlign: TextAlign.justify,
-                        style: const TextStyle(
-                          fontSize: 10,
-                          color: WorldOnColors.background,
-                        ),
-                      ),
-                      const SizedBox(height: 10),
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                        children: <Widget>[
-                          ExperienceLikesCounter(experience: experience),
-                          ExperienceDoneCounter(experience: experience),
-                          DifficultyDisplay(experience: experience),
-                        ],
-                      ),
-                      const SizedBox(height: 5),
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: <Widget>[
-                          Padding(
-                            padding: const EdgeInsets.symmetric(horizontal: 10),
-                            child: ParticipateButton(experience: experience),
-                          ),
-                          LogButton(experience: experience),
-                          ShareButton(experience: experience),
-                          ManageButtonBuilder(
-                            experience: experience,
-                            reloadFunction: reloadFunction,
-                          ),
-                        ],
-                      ),
-                      const SizedBox(height: 5),
-                      Wrap(
-                        alignment: WrapAlignment.center,
-                        spacing: 5,
-                        runSpacing: 2,
-                        children: <Widget>[
-                          ...experience.tags.getOrCrash().asSet().map(
-                                (tag) => SimpleTagDisplay(tag: tag),
-                              ),
-                        ],
-                      ),
-                    ],
+        child: Card(
+          margin: const EdgeInsets.all(5),
+          shape: experience.isPromoted
+              ? RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(3),
+                  side: const BorderSide(
+                    color: WorldOnColors.primary,
+                    width: 3,
                   ),
-                ],
-              ),
+                )
+              : null,
+          child: Padding(
+            padding: const EdgeInsets.all(5),
+            child: Column(
+              children: <Widget>[
+                ImageStack(experience: experience),
+                Column(
+                  children: <Widget>[
+                    const SizedBox(height: 10),
+                    AutoSizeText(
+                      experience.title.getOrCrash(),
+                      textAlign: TextAlign.center,
+                      style: const TextStyle(
+                        fontSize: 30,
+                        fontWeight: FontWeight.bold,
+                        color: WorldOnColors.background,
+                      ),
+                    ),
+                    const SizedBox(height: 10),
+                    AutoSizeText(
+                      experience.description.getOrCrash(),
+                      textAlign: TextAlign.justify,
+                      style: const TextStyle(
+                        fontSize: 10,
+                        color: WorldOnColors.background,
+                      ),
+                    ),
+                    const SizedBox(height: 10),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                      children: <Widget>[
+                        ExperienceLikesCounter(experience: experience),
+                        ExperienceDoneCounter(experience: experience),
+                        DifficultyDisplay(experience: experience),
+                      ],
+                    ),
+                    const SizedBox(height: 5),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: <Widget>[
+                        Padding(
+                          padding: const EdgeInsets.symmetric(horizontal: 10),
+                          child: ParticipateButton(experience: experience),
+                        ),
+                        LogButton(experience: experience),
+                        ShareButton(experience: experience),
+                        ManageButtonBuilder(
+                          experience: experience,
+                          reloadFunction: reloadFunction,
+                        ),
+                      ],
+                    ),
+                    const SizedBox(height: 5),
+                    Wrap(
+                      alignment: WrapAlignment.center,
+                      spacing: 5,
+                      runSpacing: 2,
+                      children: <Widget>[
+                        ...experience.tags.getOrCrash().asSet().map(
+                              (tag) => SimpleTagDisplay(tag: tag),
+                            ),
+                      ],
+                    ),
+                  ],
+                ),
+              ],
             ),
           ),
         ),

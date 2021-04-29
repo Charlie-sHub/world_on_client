@@ -147,6 +147,7 @@ class __$InitializedCopyWithImpl<$Res> extends _$ExperienceCardActorEventCopyWit
 }
 
 /// @nodoc
+
 class _$_Initialized implements _Initialized {
   const _$_Initialized(this.experience);
 
@@ -262,6 +263,7 @@ class __$AddedExperienceToLogCopyWithImpl<$Res> extends _$ExperienceCardActorEve
 }
 
 /// @nodoc
+
 class _$_AddedExperienceToLog implements _AddedExperienceToLog {
   const _$_AddedExperienceToLog(this.experience);
 
@@ -377,6 +379,7 @@ class __$DismissedExperienceFromLogCopyWithImpl<$Res> extends _$ExperienceCardAc
 }
 
 /// @nodoc
+
 class _$_DismissedExperienceFromLog implements _DismissedExperienceFromLog {
   const _$_DismissedExperienceFromLog(this.experience);
 
@@ -587,6 +590,7 @@ class __$InitialCopyWithImpl<$Res> extends _$ExperienceCardActorStateCopyWithImp
 }
 
 /// @nodoc
+
 class _$_Initial implements _Initial {
   const _$_Initial();
 
@@ -690,6 +694,7 @@ class __$ActionInProgressCopyWithImpl<$Res> extends _$ExperienceCardActorStateCo
 }
 
 /// @nodoc
+
 class _$_ActionInProgress implements _ActionInProgress {
   const _$_ActionInProgress();
 
@@ -793,6 +798,7 @@ class __$InLogCopyWithImpl<$Res> extends _$ExperienceCardActorStateCopyWithImpl<
 }
 
 /// @nodoc
+
 class _$_InLog implements _InLog {
   const _$_InLog();
 
@@ -896,6 +902,7 @@ class __$NotInLogCopyWithImpl<$Res> extends _$ExperienceCardActorStateCopyWithIm
 }
 
 /// @nodoc
+
 class _$_NotInLog implements _NotInLog {
   const _$_NotInLog();
 
@@ -999,6 +1006,7 @@ class __$AdditionSuccessCopyWithImpl<$Res> extends _$ExperienceCardActorStateCop
 }
 
 /// @nodoc
+
 class _$_AdditionSuccess implements _AdditionSuccess {
   const _$_AdditionSuccess();
 
@@ -1125,6 +1133,7 @@ class __$AdditionFailureCopyWithImpl<$Res> extends _$ExperienceCardActorStateCop
 }
 
 /// @nodoc
+
 class _$_AdditionFailure implements _AdditionFailure {
   const _$_AdditionFailure(this.failure);
 
@@ -1240,6 +1249,7 @@ class __$DismissalSuccessCopyWithImpl<$Res> extends _$ExperienceCardActorStateCo
 }
 
 /// @nodoc
+
 class _$_DismissalSuccess implements _DismissalSuccess {
   const _$_DismissalSuccess();
 
@@ -1366,6 +1376,7 @@ class __$DismissalFailureCopyWithImpl<$Res> extends _$ExperienceCardActorStateCo
 }
 
 /// @nodoc
+
 class _$_DismissalFailure implements _DismissalFailure {
   const _$_DismissalFailure(this.failure);
 

@@ -121,6 +121,7 @@ class __$EmailChangedCopyWithImpl<$Res> extends _$LogInFormEventCopyWithImpl<$Re
 }
 
 /// @nodoc
+
 class _$_EmailChanged implements _EmailChanged {
   const _$_EmailChanged(this.email);
 
@@ -234,6 +235,7 @@ class __$PasswordChangedCopyWithImpl<$Res> extends _$LogInFormEventCopyWithImpl<
 }
 
 /// @nodoc
+
 class _$_PasswordChanged implements _PasswordChanged {
   const _$_PasswordChanged(this.password);
 
@@ -333,6 +335,7 @@ class __$LoggedInCopyWithImpl<$Res> extends _$LogInFormEventCopyWithImpl<$Res> i
 }
 
 /// @nodoc
+
 class _$_LoggedIn implements _LoggedIn {
   const _$_LoggedIn();
 
@@ -420,6 +423,7 @@ class __$LoggedInGoogleCopyWithImpl<$Res> extends _$LogInFormEventCopyWithImpl<$
 }
 
 /// @nodoc
+
 class _$_LoggedInGoogle implements _LoggedInGoogle {
   const _$_LoggedInGoogle();
 
@@ -626,6 +630,7 @@ class __$LogInFormStateCopyWithImpl<$Res> extends _$LogInFormStateCopyWithImpl<$
 }
 
 /// @nodoc
+
 class _$_LogInFormState implements _LogInFormState {
   const _$_LogInFormState({required this.email, required this.password, required this.showErrorMessages, required this.isSubmitting, required this.failureOrSuccessOption});
 

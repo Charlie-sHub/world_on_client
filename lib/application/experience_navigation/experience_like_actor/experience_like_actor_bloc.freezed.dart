@@ -147,6 +147,7 @@ class __$InitializedCopyWithImpl<$Res> extends _$ExperienceLikeActorEventCopyWit
 }
 
 /// @nodoc
+
 class _$_Initialized implements _Initialized {
   const _$_Initialized(this.experience);
 
@@ -262,6 +263,7 @@ class __$LikedCopyWithImpl<$Res> extends _$ExperienceLikeActorEventCopyWithImpl<
 }
 
 /// @nodoc
+
 class _$_Liked implements _Liked {
   const _$_Liked(this.experience);
 
@@ -376,6 +378,7 @@ class __$DislikedCopyWithImpl<$Res> extends _$ExperienceLikeActorEventCopyWithIm
 }
 
 /// @nodoc
+
 class _$_Disliked implements _Disliked {
   const _$_Disliked(this.experience);
 
@@ -586,6 +589,7 @@ class __$InitialCopyWithImpl<$Res> extends _$ExperienceLikeActorStateCopyWithImp
 }
 
 /// @nodoc
+
 class _$_Initial implements _Initial {
   const _$_Initial();
 
@@ -689,6 +693,7 @@ class __$ActionInProgressCopyWithImpl<$Res> extends _$ExperienceLikeActorStateCo
 }
 
 /// @nodoc
+
 class _$_ActionInProgress implements _ActionInProgress {
   const _$_ActionInProgress();
 
@@ -792,6 +797,7 @@ class __$LikesCopyWithImpl<$Res> extends _$ExperienceLikeActorStateCopyWithImpl<
 }
 
 /// @nodoc
+
 class _$_Likes implements _Likes {
   const _$_Likes();
 
@@ -895,6 +901,7 @@ class __$NeutralCopyWithImpl<$Res> extends _$ExperienceLikeActorStateCopyWithImp
 }
 
 /// @nodoc
+
 class _$_Neutral implements _Neutral {
   const _$_Neutral();
 
@@ -998,6 +1005,7 @@ class __$LikeSuccessCopyWithImpl<$Res> extends _$ExperienceLikeActorStateCopyWit
 }
 
 /// @nodoc
+
 class _$_LikeSuccess implements _LikeSuccess {
   const _$_LikeSuccess();
 
@@ -1124,6 +1132,7 @@ class __$LikeFailureCopyWithImpl<$Res> extends _$ExperienceLikeActorStateCopyWit
 }
 
 /// @nodoc
+
 class _$_LikeFailure implements _LikeFailure {
   const _$_LikeFailure(this.failure);
 
@@ -1239,6 +1248,7 @@ class __$DislikeSuccessCopyWithImpl<$Res> extends _$ExperienceLikeActorStateCopy
 }
 
 /// @nodoc
+
 class _$_DislikeSuccess implements _DislikeSuccess {
   const _$_DislikeSuccess();
 
@@ -1365,6 +1375,7 @@ class __$DislikeFailureCopyWithImpl<$Res> extends _$ExperienceLikeActorStateCopy
 }
 
 /// @nodoc
+
 class _$_DislikeFailure implements _DislikeFailure {
   const _$_DislikeFailure(this.failure);
 

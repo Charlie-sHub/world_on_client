@@ -111,9 +111,8 @@ class __$OptionsDtoCopyWithImpl<$Res> extends _$OptionsDtoCopyWithImpl<$Res> imp
   }
 }
 
-@JsonSerializable()
-
 /// @nodoc
+@JsonSerializable()
 class _$_OptionsDto extends _OptionsDto {
   const _$_OptionsDto({required this.id, required this.languageCode}) : super._();
 

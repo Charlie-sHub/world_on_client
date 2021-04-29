@@ -103,6 +103,7 @@ class __$CoordinatesCopyWithImpl<$Res> extends _$CoordinatesCopyWithImpl<$Res> i
 }
 
 /// @nodoc
+
 class _$_Coordinates extends _Coordinates {
   const _$_Coordinates({required this.latitude, required this.longitude}) : super._();
 

@@ -90,6 +90,7 @@ class __$WatchPurchasableItemsStartedCopyWithImpl<$Res> extends _$WatchPurchasab
 }
 
 /// @nodoc
+
 class _$_WatchPurchasableItemsStarted implements _WatchPurchasableItemsStarted {
   const _$_WatchPurchasableItemsStarted();
 
@@ -183,6 +184,7 @@ class __$ResultsReceivedCopyWithImpl<$Res> extends _$WatchPurchasableItemsEventC
 }
 
 /// @nodoc
+
 class _$_ResultsReceived implements _ResultsReceived {
   const _$_ResultsReceived(this.failureOrItems);
 
@@ -355,6 +357,7 @@ class __$InitialCopyWithImpl<$Res> extends _$WatchPurchasableItemsStateCopyWithI
 }
 
 /// @nodoc
+
 class _$_Initial implements _Initial {
   const _$_Initial();
 
@@ -442,6 +445,7 @@ class __$LoadInProgressCopyWithImpl<$Res> extends _$WatchPurchasableItemsStateCo
 }
 
 /// @nodoc
+
 class _$_LoadInProgress implements _LoadInProgress {
   const _$_LoadInProgress();
 
@@ -543,6 +547,7 @@ class __$LoadSuccessCopyWithImpl<$Res> extends _$WatchPurchasableItemsStateCopyW
 }
 
 /// @nodoc
+
 class _$_LoadSuccess implements _LoadSuccess {
   const _$_LoadSuccess(this.items);
 
@@ -665,6 +670,7 @@ class __$LoadFailureCopyWithImpl<$Res> extends _$WatchPurchasableItemsStateCopyW
 }
 
 /// @nodoc
+
 class _$_LoadFailure implements _LoadFailure {
   const _$_LoadFailure(this.failure);
 

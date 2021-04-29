@@ -126,6 +126,7 @@ class __$MainFeedTappedCopyWithImpl<$Res> extends _$NavigationActorEventCopyWith
 }
 
 /// @nodoc
+
 class _$_MainFeedTapped implements _MainFeedTapped {
   const _$_MainFeedTapped();
 
@@ -221,6 +222,7 @@ class __$SearchTappedCopyWithImpl<$Res> extends _$NavigationActorEventCopyWithIm
 }
 
 /// @nodoc
+
 class _$_SearchTapped implements _SearchTapped {
   const _$_SearchTapped();
 
@@ -330,6 +332,7 @@ class __$ExperienceFormTappedCopyWithImpl<$Res> extends _$NavigationActorEventCo
 }
 
 /// @nodoc
+
 class _$_ExperienceFormTapped implements _ExperienceFormTapped {
   const _$_ExperienceFormTapped(this.experienceOption);
 
@@ -452,6 +455,7 @@ class __$ExperienceNavigationTappedCopyWithImpl<$Res> extends _$NavigationActorE
 }
 
 /// @nodoc
+
 class _$_ExperienceNavigationTapped implements _ExperienceNavigationTapped {
   const _$_ExperienceNavigationTapped(this.experienceOption);
 
@@ -579,6 +583,7 @@ class __$ProfileTappedCopyWithImpl<$Res> extends _$NavigationActorEventCopyWithI
 }
 
 /// @nodoc
+
 class _$_ProfileTapped implements _ProfileTapped {
   const _$_ProfileTapped({required this.userOption, required this.currentUserProfile});
 
@@ -693,6 +698,7 @@ class __$NotificationsTappedCopyWithImpl<$Res> extends _$NavigationActorEventCop
 }
 
 /// @nodoc
+
 class _$_NotificationsTapped implements _NotificationsTapped {
   const _$_NotificationsTapped();
 
@@ -896,6 +902,7 @@ class __$MainFeedViewCopyWithImpl<$Res> extends _$NavigationActorStateCopyWithIm
 }
 
 /// @nodoc
+
 class _$_MainFeedView implements _MainFeedView {
   const _$_MainFeedView();
 
@@ -995,6 +1002,7 @@ class __$SearchViewCopyWithImpl<$Res> extends _$NavigationActorStateCopyWithImpl
 }
 
 /// @nodoc
+
 class _$_SearchView implements _SearchView {
   const _$_SearchView();
 
@@ -1108,6 +1116,7 @@ class __$ExperienceFormViewCopyWithImpl<$Res> extends _$NavigationActorStateCopy
 }
 
 /// @nodoc
+
 class _$_ExperienceFormView implements _ExperienceFormView {
   const _$_ExperienceFormView(this.experienceOption);
 
@@ -1234,6 +1243,7 @@ class __$NavigateExperienceViewCopyWithImpl<$Res> extends _$NavigationActorState
 }
 
 /// @nodoc
+
 class _$_NavigateExperienceView implements _NavigateExperienceView {
   const _$_NavigateExperienceView(this.experienceOption);
 
@@ -1365,6 +1375,7 @@ class __$ProfileViewCopyWithImpl<$Res> extends _$NavigationActorStateCopyWithImp
 }
 
 /// @nodoc
+
 class _$_ProfileView implements _ProfileView {
   const _$_ProfileView({required this.userOption, required this.currentUserProfile});
 
@@ -1483,6 +1494,7 @@ class __$ErrorViewCopyWithImpl<$Res> extends _$NavigationActorStateCopyWithImpl<
 }
 
 /// @nodoc
+
 class _$_ErrorView implements _ErrorView {
   const _$_ErrorView();
 
@@ -1582,6 +1594,7 @@ class __$NotificationsViewCopyWithImpl<$Res> extends _$NavigationActorStateCopyW
 }
 
 /// @nodoc
+
 class _$_NotificationsView implements _NotificationsView {
   const _$_NotificationsView();
 

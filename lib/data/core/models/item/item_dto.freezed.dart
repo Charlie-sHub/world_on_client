@@ -10,7 +10,7 @@ part of 'item_dto.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-  'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 ItemDto _$ItemDtoFromJson(Map<String, dynamic> json) {
   return _Item.fromJson(json);
@@ -19,15 +19,16 @@ ItemDto _$ItemDtoFromJson(Map<String, dynamic> json) {
 /// @nodoc
 class _$ItemDtoTearOff {
   const _$ItemDtoTearOff();
-  
-  _Item call({required String id,
-    required String name,
-    required String description,
-    required ItemCode code,
-    required int value,
-    required int timeLimitInDays,
-    required String imageURL,
-    @ServerTimestampConverter() required DateTime boughtDate}) {
+
+  _Item call(
+      {required String id,
+      required String name,
+      required String description,
+      required ItemCode code,
+      required int value,
+      required int timeLimitInDays,
+      required String imageURL,
+      @ServerTimestampConverter() required DateTime boughtDate}) {
     return _Item(
       id: id,
       name: name,
@@ -67,17 +68,9 @@ mixin _$ItemDto {
 
 /// @nodoc
 abstract class $ItemDtoCopyWith<$Res> {
-  factory $ItemDtoCopyWith(ItemDto value, $Res Function(ItemDto) then) =
-  _$ItemDtoCopyWithImpl<$Res>;
-  
-  $Res call({String id,
-    String name,
-    String description,
-    ItemCode code,
-    int value,
-    int timeLimitInDays,
-    String imageURL,
-    @ServerTimestampConverter() DateTime boughtDate});
+  factory $ItemDtoCopyWith(ItemDto value, $Res Function(ItemDto) then) = _$ItemDtoCopyWithImpl<$Res>;
+
+  $Res call({String id, String name, String description, ItemCode code, int value, int timeLimitInDays, String imageURL, @ServerTimestampConverter() DateTime boughtDate});
 }
 
 /// @nodoc
@@ -101,66 +94,56 @@ class _$ItemDtoCopyWithImpl<$Res> implements $ItemDtoCopyWith<$Res> {
   }) {
     return _then(_value.copyWith(
       id: id == freezed
-        ? _value.id
-        : id // ignore: cast_nullable_to_non_nullable
-      as String,
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String,
       name: name == freezed
-        ? _value.name
-        : name // ignore: cast_nullable_to_non_nullable
-      as String,
+          ? _value.name
+          : name // ignore: cast_nullable_to_non_nullable
+              as String,
       description: description == freezed
-        ? _value.description
-        : description // ignore: cast_nullable_to_non_nullable
-      as String,
+          ? _value.description
+          : description // ignore: cast_nullable_to_non_nullable
+              as String,
       code: code == freezed
-        ? _value.code
-        : code // ignore: cast_nullable_to_non_nullable
-      as ItemCode,
+          ? _value.code
+          : code // ignore: cast_nullable_to_non_nullable
+              as ItemCode,
       value: value == freezed
-        ? _value.value
-        : value // ignore: cast_nullable_to_non_nullable
-      as int,
+          ? _value.value
+          : value // ignore: cast_nullable_to_non_nullable
+              as int,
       timeLimitInDays: timeLimitInDays == freezed
-        ? _value.timeLimitInDays
-        : timeLimitInDays // ignore: cast_nullable_to_non_nullable
-      as int,
+          ? _value.timeLimitInDays
+          : timeLimitInDays // ignore: cast_nullable_to_non_nullable
+              as int,
       imageURL: imageURL == freezed
-        ? _value.imageURL
-        : imageURL // ignore: cast_nullable_to_non_nullable
-      as String,
+          ? _value.imageURL
+          : imageURL // ignore: cast_nullable_to_non_nullable
+              as String,
       boughtDate: boughtDate == freezed
-        ? _value.boughtDate
-        : boughtDate // ignore: cast_nullable_to_non_nullable
-      as DateTime,
+          ? _value.boughtDate
+          : boughtDate // ignore: cast_nullable_to_non_nullable
+              as DateTime,
     ));
   }
 }
 
 /// @nodoc
 abstract class _$ItemCopyWith<$Res> implements $ItemDtoCopyWith<$Res> {
-  factory _$ItemCopyWith(_Item value, $Res Function(_Item) then) =
-  __$ItemCopyWithImpl<$Res>;
-  
+  factory _$ItemCopyWith(_Item value, $Res Function(_Item) then) = __$ItemCopyWithImpl<$Res>;
+
   @override
-  $Res call({String id,
-    String name,
-    String description,
-    ItemCode code,
-    int value,
-    int timeLimitInDays,
-    String imageURL,
-    @ServerTimestampConverter() DateTime boughtDate});
+  $Res call({String id, String name, String description, ItemCode code, int value, int timeLimitInDays, String imageURL, @ServerTimestampConverter() DateTime boughtDate});
 }
 
 /// @nodoc
-class __$ItemCopyWithImpl<$Res> extends _$ItemDtoCopyWithImpl<$Res>
-  implements _$ItemCopyWith<$Res> {
-  __$ItemCopyWithImpl(_Item _value, $Res Function(_Item) _then)
-    : super(_value, (v) => _then(v as _Item));
-  
+class __$ItemCopyWithImpl<$Res> extends _$ItemDtoCopyWithImpl<$Res> implements _$ItemCopyWith<$Res> {
+  __$ItemCopyWithImpl(_Item _value, $Res Function(_Item) _then) : super(_value, (v) => _then(v as _Item));
+
   @override
   _Item get _value => super._value as _Item;
-  
+
   @override
   $Res call({
     Object? id = freezed,
@@ -174,57 +157,57 @@ class __$ItemCopyWithImpl<$Res> extends _$ItemDtoCopyWithImpl<$Res>
   }) {
     return _then(_Item(
       id: id == freezed
-        ? _value.id
-        : id // ignore: cast_nullable_to_non_nullable
-      as String,
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String,
       name: name == freezed
-        ? _value.name
-        : name // ignore: cast_nullable_to_non_nullable
-      as String,
+          ? _value.name
+          : name // ignore: cast_nullable_to_non_nullable
+              as String,
       description: description == freezed
-        ? _value.description
-        : description // ignore: cast_nullable_to_non_nullable
-      as String,
+          ? _value.description
+          : description // ignore: cast_nullable_to_non_nullable
+              as String,
       code: code == freezed
-        ? _value.code
-        : code // ignore: cast_nullable_to_non_nullable
-      as ItemCode,
+          ? _value.code
+          : code // ignore: cast_nullable_to_non_nullable
+              as ItemCode,
       value: value == freezed
-        ? _value.value
-        : value // ignore: cast_nullable_to_non_nullable
-      as int,
+          ? _value.value
+          : value // ignore: cast_nullable_to_non_nullable
+              as int,
       timeLimitInDays: timeLimitInDays == freezed
-        ? _value.timeLimitInDays
-        : timeLimitInDays // ignore: cast_nullable_to_non_nullable
-      as int,
+          ? _value.timeLimitInDays
+          : timeLimitInDays // ignore: cast_nullable_to_non_nullable
+              as int,
       imageURL: imageURL == freezed
-        ? _value.imageURL
-        : imageURL // ignore: cast_nullable_to_non_nullable
-      as String,
+          ? _value.imageURL
+          : imageURL // ignore: cast_nullable_to_non_nullable
+              as String,
       boughtDate: boughtDate == freezed
-        ? _value.boughtDate
-        : boughtDate // ignore: cast_nullable_to_non_nullable
-      as DateTime,
+          ? _value.boughtDate
+          : boughtDate // ignore: cast_nullable_to_non_nullable
+              as DateTime,
     ));
   }
 }
 
+/// @nodoc
 @JsonSerializable()
+class _$_Item extends _Item {
+  const _$_Item(
+      {required this.id,
+      required this.name,
+      required this.description,
+      required this.code,
+      required this.value,
+      required this.timeLimitInDays,
+      required this.imageURL,
+      @ServerTimestampConverter() required this.boughtDate})
+      : super._();
 
-/// @nodoc class _$_Item extends _Item {
-  const _$_Item({required this.id,
-    required this.name,
-    required this.description,
-    required this.code,
-    required this.value,
-    required this.timeLimitInDays,
-    required this.imageURL,
-    @ServerTimestampConverter() required this.boughtDate})
-    : super._();
-  
-  factory _$_Item.fromJson(Map<String, dynamic> json) =>
-    _$_$_ItemFromJson(json);
-  
+  factory _$_Item.fromJson(Map<String, dynamic> json) => _$_$_ItemFromJson(json);
+
   @override
   final String id;
   @override
@@ -251,46 +234,33 @@ class __$ItemCopyWithImpl<$Res> extends _$ItemDtoCopyWithImpl<$Res>
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-      (other is _Item &&
-        (identical(other.id, id) ||
-          const DeepCollectionEquality().equals(other.id, id)) &&
-        (identical(other.name, name) ||
-          const DeepCollectionEquality().equals(other.name, name)) &&
-        (identical(other.description, description) ||
-          const DeepCollectionEquality()
-            .equals(other.description, description)) &&
-        (identical(other.code, code) ||
-          const DeepCollectionEquality().equals(other.code, code)) &&
-        (identical(other.value, value) ||
-          const DeepCollectionEquality().equals(other.value, value)) &&
-        (identical(other.timeLimitInDays, timeLimitInDays) ||
-          const DeepCollectionEquality()
-            .equals(other.timeLimitInDays, timeLimitInDays)) &&
-        (identical(other.imageURL, imageURL) ||
-          const DeepCollectionEquality()
-            .equals(other.imageURL, imageURL)) &&
-        (identical(other.boughtDate, boughtDate) ||
-          const DeepCollectionEquality()
-            .equals(other.boughtDate, boughtDate)));
+        (other is _Item &&
+            (identical(other.id, id) || const DeepCollectionEquality().equals(other.id, id)) &&
+            (identical(other.name, name) || const DeepCollectionEquality().equals(other.name, name)) &&
+            (identical(other.description, description) || const DeepCollectionEquality().equals(other.description, description)) &&
+            (identical(other.code, code) || const DeepCollectionEquality().equals(other.code, code)) &&
+            (identical(other.value, value) || const DeepCollectionEquality().equals(other.value, value)) &&
+            (identical(other.timeLimitInDays, timeLimitInDays) || const DeepCollectionEquality().equals(other.timeLimitInDays, timeLimitInDays)) &&
+            (identical(other.imageURL, imageURL) || const DeepCollectionEquality().equals(other.imageURL, imageURL)) &&
+            (identical(other.boughtDate, boughtDate) || const DeepCollectionEquality().equals(other.boughtDate, boughtDate)));
   }
-  
+
   @override
   int get hashCode =>
-    runtimeType.hashCode ^
-    const DeepCollectionEquality().hash(id) ^
-    const DeepCollectionEquality().hash(name) ^
-    const DeepCollectionEquality().hash(description) ^
-    const DeepCollectionEquality().hash(code) ^
-    const DeepCollectionEquality().hash(value) ^
-    const DeepCollectionEquality().hash(timeLimitInDays) ^
-    const DeepCollectionEquality().hash(imageURL) ^
-    const DeepCollectionEquality().hash(boughtDate);
-  
+      runtimeType.hashCode ^
+      const DeepCollectionEquality().hash(id) ^
+      const DeepCollectionEquality().hash(name) ^
+      const DeepCollectionEquality().hash(description) ^
+      const DeepCollectionEquality().hash(code) ^
+      const DeepCollectionEquality().hash(value) ^
+      const DeepCollectionEquality().hash(timeLimitInDays) ^
+      const DeepCollectionEquality().hash(imageURL) ^
+      const DeepCollectionEquality().hash(boughtDate);
+
   @JsonKey(ignore: true)
   @override
-  _$ItemCopyWith<_Item> get copyWith =>
-    __$ItemCopyWithImpl<_Item>(this, _$identity);
-  
+  _$ItemCopyWith<_Item> get copyWith => __$ItemCopyWithImpl<_Item>(this, _$identity);
+
   @override
   Map<String, dynamic> toJson() {
     return _$_$_ItemToJson(this);
@@ -298,25 +268,26 @@ class __$ItemCopyWithImpl<$Res> extends _$ItemDtoCopyWithImpl<$Res>
 }
 
 abstract class _Item extends ItemDto {
-  const factory _Item({required String id,
-    required String name,
-    required String description,
-    required ItemCode code,
-    required int value,
-    required int timeLimitInDays,
-    required String imageURL,
-    @ServerTimestampConverter() required DateTime boughtDate}) = _$_Item;
-  
+  const factory _Item(
+      {required String id,
+      required String name,
+      required String description,
+      required ItemCode code,
+      required int value,
+      required int timeLimitInDays,
+      required String imageURL,
+      @ServerTimestampConverter() required DateTime boughtDate}) = _$_Item;
+
   const _Item._() : super._();
-  
+
   factory _Item.fromJson(Map<String, dynamic> json) = _$_Item.fromJson;
-  
+
   @override
   String get id => throw _privateConstructorUsedError;
-  
+
   @override
   String get name => throw _privateConstructorUsedError;
-  
+
   @override
   String get description => throw _privateConstructorUsedError;
   @override

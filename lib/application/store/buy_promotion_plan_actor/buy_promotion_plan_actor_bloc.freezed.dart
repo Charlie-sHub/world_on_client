@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides
 
-part of 'buy_item_bloc.dart';
+part of 'buy_promotion_plan_actor_bloc.dart';
 
 // **************************************************************************
 // FreezedGenerator
@@ -13,171 +13,120 @@ final _privateConstructorUsedError = UnsupportedError(
     'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 /// @nodoc
-class _$BuyItemEventTearOff {
-  const _$BuyItemEventTearOff();
+class _$BuyPromotionPlanActorEventTearOff {
+  const _$BuyPromotionPlanActorEventTearOff();
 
-  _Initialized initialized(Item item) {
-    return _Initialized(
-      item,
-    );
+  _Initialized initialized() {
+    return const _Initialized();
   }
 
-  _BoughtItem boughtItem(Item item) {
-    return _BoughtItem(
-      item,
+  _BoughtPromotionPlan boughtPromotionPlan(PromotionPlan promotionPlan) {
+    return _BoughtPromotionPlan(
+      promotionPlan,
     );
   }
 }
 
 /// @nodoc
-const $BuyItemEvent = _$BuyItemEventTearOff();
+const $BuyPromotionPlanActorEvent = _$BuyPromotionPlanActorEventTearOff();
 
 /// @nodoc
-mixin _$BuyItemEvent {
-  Item get item => throw _privateConstructorUsedError;
-
+mixin _$BuyPromotionPlanActorEvent {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(Item item) initialized,
-    required TResult Function(Item item) boughtItem,
+    required TResult Function() initialized,
+    required TResult Function(PromotionPlan promotionPlan) boughtPromotionPlan,
   }) =>
       throw _privateConstructorUsedError;
+
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(Item item)? initialized,
-    TResult Function(Item item)? boughtItem,
+    TResult Function()? initialized,
+    TResult Function(PromotionPlan promotionPlan)? boughtPromotionPlan,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
+
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Initialized value) initialized,
-    required TResult Function(_BoughtItem value) boughtItem,
+    required TResult Function(_BoughtPromotionPlan value) boughtPromotionPlan,
   }) =>
       throw _privateConstructorUsedError;
+
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initialized value)? initialized,
-    TResult Function(_BoughtItem value)? boughtItem,
+    TResult Function(_BoughtPromotionPlan value)? boughtPromotionPlan,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
-
-  @JsonKey(ignore: true)
-  $BuyItemEventCopyWith<BuyItemEvent> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $BuyItemEventCopyWith<$Res> {
-  factory $BuyItemEventCopyWith(BuyItemEvent value, $Res Function(BuyItemEvent) then) = _$BuyItemEventCopyWithImpl<$Res>;
-
-  $Res call({Item item});
-
-  $ItemCopyWith<$Res> get item;
+abstract class $BuyPromotionPlanActorEventCopyWith<$Res> {
+  factory $BuyPromotionPlanActorEventCopyWith(BuyPromotionPlanActorEvent value, $Res Function(BuyPromotionPlanActorEvent) then) = _$BuyPromotionPlanActorEventCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class _$BuyItemEventCopyWithImpl<$Res> implements $BuyItemEventCopyWith<$Res> {
-  _$BuyItemEventCopyWithImpl(this._value, this._then);
+class _$BuyPromotionPlanActorEventCopyWithImpl<$Res> implements $BuyPromotionPlanActorEventCopyWith<$Res> {
+  _$BuyPromotionPlanActorEventCopyWithImpl(this._value, this._then);
 
-  final BuyItemEvent _value;
+  final BuyPromotionPlanActorEvent _value;
+
   // ignore: unused_field
-  final $Res Function(BuyItemEvent) _then;
-
-  @override
-  $Res call({
-    Object? item = freezed,
-  }) {
-    return _then(_value.copyWith(
-      item: item == freezed
-          ? _value.item
-          : item // ignore: cast_nullable_to_non_nullable
-              as Item,
-    ));
-  }
-
-  @override
-  $ItemCopyWith<$Res> get item {
-    return $ItemCopyWith<$Res>(_value.item, (value) {
-      return _then(_value.copyWith(item: value));
-    });
-  }
+  final $Res Function(BuyPromotionPlanActorEvent) _then;
 }
 
 /// @nodoc
-abstract class _$InitializedCopyWith<$Res> implements $BuyItemEventCopyWith<$Res> {
+abstract class _$InitializedCopyWith<$Res> {
   factory _$InitializedCopyWith(_Initialized value, $Res Function(_Initialized) then) = __$InitializedCopyWithImpl<$Res>;
-
-  @override
-  $Res call({Item item});
-
-  @override
-  $ItemCopyWith<$Res> get item;
 }
 
 /// @nodoc
-class __$InitializedCopyWithImpl<$Res> extends _$BuyItemEventCopyWithImpl<$Res> implements _$InitializedCopyWith<$Res> {
+class __$InitializedCopyWithImpl<$Res> extends _$BuyPromotionPlanActorEventCopyWithImpl<$Res> implements _$InitializedCopyWith<$Res> {
   __$InitializedCopyWithImpl(_Initialized _value, $Res Function(_Initialized) _then) : super(_value, (v) => _then(v as _Initialized));
 
   @override
   _Initialized get _value => super._value as _Initialized;
-
-  @override
-  $Res call({
-    Object? item = freezed,
-  }) {
-    return _then(_Initialized(
-      item == freezed
-          ? _value.item
-          : item // ignore: cast_nullable_to_non_nullable
-              as Item,
-    ));
-  }
 }
 
 /// @nodoc
 
 class _$_Initialized implements _Initialized {
-  const _$_Initialized(this.item);
-
-  @override
-  final Item item;
+  const _$_Initialized();
 
   @override
   String toString() {
-    return 'BuyItemEvent.initialized(item: $item)';
+    return 'BuyPromotionPlanActorEvent.initialized()';
   }
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _Initialized && (identical(other.item, item) || const DeepCollectionEquality().equals(other.item, item)));
+    return identical(this, other) || (other is _Initialized);
   }
 
   @override
-  int get hashCode => runtimeType.hashCode ^ const DeepCollectionEquality().hash(item);
-
-  @JsonKey(ignore: true)
-  @override
-  _$InitializedCopyWith<_Initialized> get copyWith => __$InitializedCopyWithImpl<_Initialized>(this, _$identity);
+  int get hashCode => runtimeType.hashCode;
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(Item item) initialized,
-    required TResult Function(Item item) boughtItem,
+    required TResult Function() initialized,
+    required TResult Function(PromotionPlan promotionPlan) boughtPromotionPlan,
   }) {
-    return initialized(item);
+    return initialized();
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(Item item)? initialized,
-    TResult Function(Item item)? boughtItem,
+    TResult Function()? initialized,
+    TResult Function(PromotionPlan promotionPlan)? boughtPromotionPlan,
     required TResult orElse(),
   }) {
     if (initialized != null) {
-      return initialized(item);
+      return initialized();
     }
     return orElse();
   }
@@ -186,7 +135,7 @@ class _$_Initialized implements _Initialized {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Initialized value) initialized,
-    required TResult Function(_BoughtItem value) boughtItem,
+    required TResult Function(_BoughtPromotionPlan value) boughtPromotionPlan,
   }) {
     return initialized(this);
   }
@@ -195,7 +144,7 @@ class _$_Initialized implements _Initialized {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initialized value)? initialized,
-    TResult Function(_BoughtItem value)? boughtItem,
+    TResult Function(_BoughtPromotionPlan value)? boughtPromotionPlan,
     required TResult orElse(),
   }) {
     if (initialized != null) {
@@ -205,91 +154,89 @@ class _$_Initialized implements _Initialized {
   }
 }
 
-abstract class _Initialized implements BuyItemEvent {
-  const factory _Initialized(Item item) = _$_Initialized;
-
-  @override
-  Item get item => throw _privateConstructorUsedError;
-
-  @override
-  @JsonKey(ignore: true)
-  _$InitializedCopyWith<_Initialized> get copyWith => throw _privateConstructorUsedError;
+abstract class _Initialized implements BuyPromotionPlanActorEvent {
+  const factory _Initialized() = _$_Initialized;
 }
 
 /// @nodoc
-abstract class _$BoughtItemCopyWith<$Res> implements $BuyItemEventCopyWith<$Res> {
-  factory _$BoughtItemCopyWith(_BoughtItem value, $Res Function(_BoughtItem) then) = __$BoughtItemCopyWithImpl<$Res>;
+abstract class _$BoughtPromotionPlanCopyWith<$Res> {
+  factory _$BoughtPromotionPlanCopyWith(_BoughtPromotionPlan value, $Res Function(_BoughtPromotionPlan) then) = __$BoughtPromotionPlanCopyWithImpl<$Res>;
 
-  @override
-  $Res call({Item item});
+  $Res call({PromotionPlan promotionPlan});
 
-  @override
-  $ItemCopyWith<$Res> get item;
+  $PromotionPlanCopyWith<$Res> get promotionPlan;
 }
 
 /// @nodoc
-class __$BoughtItemCopyWithImpl<$Res> extends _$BuyItemEventCopyWithImpl<$Res> implements _$BoughtItemCopyWith<$Res> {
-  __$BoughtItemCopyWithImpl(_BoughtItem _value, $Res Function(_BoughtItem) _then) : super(_value, (v) => _then(v as _BoughtItem));
+class __$BoughtPromotionPlanCopyWithImpl<$Res> extends _$BuyPromotionPlanActorEventCopyWithImpl<$Res> implements _$BoughtPromotionPlanCopyWith<$Res> {
+  __$BoughtPromotionPlanCopyWithImpl(_BoughtPromotionPlan _value, $Res Function(_BoughtPromotionPlan) _then) : super(_value, (v) => _then(v as _BoughtPromotionPlan));
 
   @override
-  _BoughtItem get _value => super._value as _BoughtItem;
+  _BoughtPromotionPlan get _value => super._value as _BoughtPromotionPlan;
 
   @override
   $Res call({
-    Object? item = freezed,
+    Object? promotionPlan = freezed,
   }) {
-    return _then(_BoughtItem(
-      item == freezed
-          ? _value.item
-          : item // ignore: cast_nullable_to_non_nullable
-              as Item,
+    return _then(_BoughtPromotionPlan(
+      promotionPlan == freezed
+          ? _value.promotionPlan
+          : promotionPlan // ignore: cast_nullable_to_non_nullable
+              as PromotionPlan,
     ));
+  }
+
+  @override
+  $PromotionPlanCopyWith<$Res> get promotionPlan {
+    return $PromotionPlanCopyWith<$Res>(_value.promotionPlan, (value) {
+      return _then(_value.copyWith(promotionPlan: value));
+    });
   }
 }
 
 /// @nodoc
 
-class _$_BoughtItem implements _BoughtItem {
-  const _$_BoughtItem(this.item);
+class _$_BoughtPromotionPlan implements _BoughtPromotionPlan {
+  const _$_BoughtPromotionPlan(this.promotionPlan);
 
   @override
-  final Item item;
+  final PromotionPlan promotionPlan;
 
   @override
   String toString() {
-    return 'BuyItemEvent.boughtItem(item: $item)';
+    return 'BuyPromotionPlanActorEvent.boughtPromotionPlan(promotionPlan: $promotionPlan)';
   }
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _BoughtItem && (identical(other.item, item) || const DeepCollectionEquality().equals(other.item, item)));
+    return identical(this, other) || (other is _BoughtPromotionPlan && (identical(other.promotionPlan, promotionPlan) || const DeepCollectionEquality().equals(other.promotionPlan, promotionPlan)));
   }
 
   @override
-  int get hashCode => runtimeType.hashCode ^ const DeepCollectionEquality().hash(item);
+  int get hashCode => runtimeType.hashCode ^ const DeepCollectionEquality().hash(promotionPlan);
 
   @JsonKey(ignore: true)
   @override
-  _$BoughtItemCopyWith<_BoughtItem> get copyWith => __$BoughtItemCopyWithImpl<_BoughtItem>(this, _$identity);
+  _$BoughtPromotionPlanCopyWith<_BoughtPromotionPlan> get copyWith => __$BoughtPromotionPlanCopyWithImpl<_BoughtPromotionPlan>(this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(Item item) initialized,
-    required TResult Function(Item item) boughtItem,
+    required TResult Function() initialized,
+    required TResult Function(PromotionPlan promotionPlan) boughtPromotionPlan,
   }) {
-    return boughtItem(item);
+    return boughtPromotionPlan(promotionPlan);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(Item item)? initialized,
-    TResult Function(Item item)? boughtItem,
+    TResult Function()? initialized,
+    TResult Function(PromotionPlan promotionPlan)? boughtPromotionPlan,
     required TResult orElse(),
   }) {
-    if (boughtItem != null) {
-      return boughtItem(item);
+    if (boughtPromotionPlan != null) {
+      return boughtPromotionPlan(promotionPlan);
     }
     return orElse();
   }
@@ -298,39 +245,37 @@ class _$_BoughtItem implements _BoughtItem {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Initialized value) initialized,
-    required TResult Function(_BoughtItem value) boughtItem,
+    required TResult Function(_BoughtPromotionPlan value) boughtPromotionPlan,
   }) {
-    return boughtItem(this);
+    return boughtPromotionPlan(this);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initialized value)? initialized,
-    TResult Function(_BoughtItem value)? boughtItem,
+    TResult Function(_BoughtPromotionPlan value)? boughtPromotionPlan,
     required TResult orElse(),
   }) {
-    if (boughtItem != null) {
-      return boughtItem(this);
+    if (boughtPromotionPlan != null) {
+      return boughtPromotionPlan(this);
     }
     return orElse();
   }
 }
 
-abstract class _BoughtItem implements BuyItemEvent {
-  const factory _BoughtItem(Item item) = _$_BoughtItem;
+abstract class _BoughtPromotionPlan implements BuyPromotionPlanActorEvent {
+  const factory _BoughtPromotionPlan(PromotionPlan promotionPlan) = _$_BoughtPromotionPlan;
 
-  @override
-  Item get item => throw _privateConstructorUsedError;
+  PromotionPlan get promotionPlan => throw _privateConstructorUsedError;
 
-  @override
   @JsonKey(ignore: true)
-  _$BoughtItemCopyWith<_BoughtItem> get copyWith => throw _privateConstructorUsedError;
+  _$BoughtPromotionPlanCopyWith<_BoughtPromotionPlan> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-class _$BuyItemStateTearOff {
-  const _$BuyItemStateTearOff();
+class _$BuyPromotionPlanActorStateTearOff {
+  const _$BuyPromotionPlanActorStateTearOff();
 
   _Initial initial() {
     return const _Initial();
@@ -340,16 +285,18 @@ class _$BuyItemStateTearOff {
     return const _ActionInProgress();
   }
 
-  _Owns owns() {
-    return const _Owns();
-  }
-
-  _DoesNotOwn doesNotOwn() {
-    return const _DoesNotOwn();
-  }
-
   _PurchaseSuccess purchaseSuccess() {
     return const _PurchaseSuccess();
+  }
+
+  _NoPromotionPlan noPromotionPlan() {
+    return const _NoPromotionPlan();
+  }
+
+  _CurrentPlan currentPlan(PromotionPlan promotionPlan) {
+    return _CurrentPlan(
+      promotionPlan,
+    );
   }
 
   _PurchaseFailure purchaseFailure(Failure<dynamic> failure) {
@@ -360,48 +307,51 @@ class _$BuyItemStateTearOff {
 }
 
 /// @nodoc
-const $BuyItemState = _$BuyItemStateTearOff();
+const $BuyPromotionPlanActorState = _$BuyPromotionPlanActorStateTearOff();
 
 /// @nodoc
-mixin _$BuyItemState {
+mixin _$BuyPromotionPlanActorState {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() actionInProgress,
-    required TResult Function() owns,
-    required TResult Function() doesNotOwn,
     required TResult Function() purchaseSuccess,
+    required TResult Function() noPromotionPlan,
+    required TResult Function(PromotionPlan promotionPlan) currentPlan,
     required TResult Function(Failure<dynamic> failure) purchaseFailure,
   }) =>
       throw _privateConstructorUsedError;
+
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? actionInProgress,
-    TResult Function()? owns,
-    TResult Function()? doesNotOwn,
     TResult Function()? purchaseSuccess,
+    TResult Function()? noPromotionPlan,
+    TResult Function(PromotionPlan promotionPlan)? currentPlan,
     TResult Function(Failure<dynamic> failure)? purchaseFailure,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
+
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Initial value) initial,
     required TResult Function(_ActionInProgress value) actionInProgress,
-    required TResult Function(_Owns value) owns,
-    required TResult Function(_DoesNotOwn value) doesNotOwn,
     required TResult Function(_PurchaseSuccess value) purchaseSuccess,
+    required TResult Function(_NoPromotionPlan value) noPromotionPlan,
+    required TResult Function(_CurrentPlan value) currentPlan,
     required TResult Function(_PurchaseFailure value) purchaseFailure,
   }) =>
       throw _privateConstructorUsedError;
+
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
     TResult Function(_ActionInProgress value)? actionInProgress,
-    TResult Function(_Owns value)? owns,
-    TResult Function(_DoesNotOwn value)? doesNotOwn,
     TResult Function(_PurchaseSuccess value)? purchaseSuccess,
+    TResult Function(_NoPromotionPlan value)? noPromotionPlan,
+    TResult Function(_CurrentPlan value)? currentPlan,
     TResult Function(_PurchaseFailure value)? purchaseFailure,
     required TResult orElse(),
   }) =>
@@ -409,17 +359,18 @@ mixin _$BuyItemState {
 }
 
 /// @nodoc
-abstract class $BuyItemStateCopyWith<$Res> {
-  factory $BuyItemStateCopyWith(BuyItemState value, $Res Function(BuyItemState) then) = _$BuyItemStateCopyWithImpl<$Res>;
+abstract class $BuyPromotionPlanActorStateCopyWith<$Res> {
+  factory $BuyPromotionPlanActorStateCopyWith(BuyPromotionPlanActorState value, $Res Function(BuyPromotionPlanActorState) then) = _$BuyPromotionPlanActorStateCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class _$BuyItemStateCopyWithImpl<$Res> implements $BuyItemStateCopyWith<$Res> {
-  _$BuyItemStateCopyWithImpl(this._value, this._then);
+class _$BuyPromotionPlanActorStateCopyWithImpl<$Res> implements $BuyPromotionPlanActorStateCopyWith<$Res> {
+  _$BuyPromotionPlanActorStateCopyWithImpl(this._value, this._then);
 
-  final BuyItemState _value;
+  final BuyPromotionPlanActorState _value;
+
   // ignore: unused_field
-  final $Res Function(BuyItemState) _then;
+  final $Res Function(BuyPromotionPlanActorState) _then;
 }
 
 /// @nodoc
@@ -428,7 +379,7 @@ abstract class _$InitialCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$InitialCopyWithImpl<$Res> extends _$BuyItemStateCopyWithImpl<$Res> implements _$InitialCopyWith<$Res> {
+class __$InitialCopyWithImpl<$Res> extends _$BuyPromotionPlanActorStateCopyWithImpl<$Res> implements _$InitialCopyWith<$Res> {
   __$InitialCopyWithImpl(_Initial _value, $Res Function(_Initial) _then) : super(_value, (v) => _then(v as _Initial));
 
   @override
@@ -442,7 +393,7 @@ class _$_Initial implements _Initial {
 
   @override
   String toString() {
-    return 'BuyItemState.initial()';
+    return 'BuyPromotionPlanActorState.initial()';
   }
 
   @override
@@ -458,9 +409,9 @@ class _$_Initial implements _Initial {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() actionInProgress,
-    required TResult Function() owns,
-    required TResult Function() doesNotOwn,
     required TResult Function() purchaseSuccess,
+    required TResult Function() noPromotionPlan,
+    required TResult Function(PromotionPlan promotionPlan) currentPlan,
     required TResult Function(Failure<dynamic> failure) purchaseFailure,
   }) {
     return initial();
@@ -471,9 +422,9 @@ class _$_Initial implements _Initial {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? actionInProgress,
-    TResult Function()? owns,
-    TResult Function()? doesNotOwn,
     TResult Function()? purchaseSuccess,
+    TResult Function()? noPromotionPlan,
+    TResult Function(PromotionPlan promotionPlan)? currentPlan,
     TResult Function(Failure<dynamic> failure)? purchaseFailure,
     required TResult orElse(),
   }) {
@@ -488,9 +439,9 @@ class _$_Initial implements _Initial {
   TResult map<TResult extends Object?>({
     required TResult Function(_Initial value) initial,
     required TResult Function(_ActionInProgress value) actionInProgress,
-    required TResult Function(_Owns value) owns,
-    required TResult Function(_DoesNotOwn value) doesNotOwn,
     required TResult Function(_PurchaseSuccess value) purchaseSuccess,
+    required TResult Function(_NoPromotionPlan value) noPromotionPlan,
+    required TResult Function(_CurrentPlan value) currentPlan,
     required TResult Function(_PurchaseFailure value) purchaseFailure,
   }) {
     return initial(this);
@@ -501,9 +452,9 @@ class _$_Initial implements _Initial {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
     TResult Function(_ActionInProgress value)? actionInProgress,
-    TResult Function(_Owns value)? owns,
-    TResult Function(_DoesNotOwn value)? doesNotOwn,
     TResult Function(_PurchaseSuccess value)? purchaseSuccess,
+    TResult Function(_NoPromotionPlan value)? noPromotionPlan,
+    TResult Function(_CurrentPlan value)? currentPlan,
     TResult Function(_PurchaseFailure value)? purchaseFailure,
     required TResult orElse(),
   }) {
@@ -514,7 +465,7 @@ class _$_Initial implements _Initial {
   }
 }
 
-abstract class _Initial implements BuyItemState {
+abstract class _Initial implements BuyPromotionPlanActorState {
   const factory _Initial() = _$_Initial;
 }
 
@@ -524,7 +475,7 @@ abstract class _$ActionInProgressCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$ActionInProgressCopyWithImpl<$Res> extends _$BuyItemStateCopyWithImpl<$Res> implements _$ActionInProgressCopyWith<$Res> {
+class __$ActionInProgressCopyWithImpl<$Res> extends _$BuyPromotionPlanActorStateCopyWithImpl<$Res> implements _$ActionInProgressCopyWith<$Res> {
   __$ActionInProgressCopyWithImpl(_ActionInProgress _value, $Res Function(_ActionInProgress) _then) : super(_value, (v) => _then(v as _ActionInProgress));
 
   @override
@@ -538,7 +489,7 @@ class _$_ActionInProgress implements _ActionInProgress {
 
   @override
   String toString() {
-    return 'BuyItemState.actionInProgress()';
+    return 'BuyPromotionPlanActorState.actionInProgress()';
   }
 
   @override
@@ -554,9 +505,9 @@ class _$_ActionInProgress implements _ActionInProgress {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() actionInProgress,
-    required TResult Function() owns,
-    required TResult Function() doesNotOwn,
     required TResult Function() purchaseSuccess,
+    required TResult Function() noPromotionPlan,
+    required TResult Function(PromotionPlan promotionPlan) currentPlan,
     required TResult Function(Failure<dynamic> failure) purchaseFailure,
   }) {
     return actionInProgress();
@@ -567,9 +518,9 @@ class _$_ActionInProgress implements _ActionInProgress {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? actionInProgress,
-    TResult Function()? owns,
-    TResult Function()? doesNotOwn,
     TResult Function()? purchaseSuccess,
+    TResult Function()? noPromotionPlan,
+    TResult Function(PromotionPlan promotionPlan)? currentPlan,
     TResult Function(Failure<dynamic> failure)? purchaseFailure,
     required TResult orElse(),
   }) {
@@ -584,9 +535,9 @@ class _$_ActionInProgress implements _ActionInProgress {
   TResult map<TResult extends Object?>({
     required TResult Function(_Initial value) initial,
     required TResult Function(_ActionInProgress value) actionInProgress,
-    required TResult Function(_Owns value) owns,
-    required TResult Function(_DoesNotOwn value) doesNotOwn,
     required TResult Function(_PurchaseSuccess value) purchaseSuccess,
+    required TResult Function(_NoPromotionPlan value) noPromotionPlan,
+    required TResult Function(_CurrentPlan value) currentPlan,
     required TResult Function(_PurchaseFailure value) purchaseFailure,
   }) {
     return actionInProgress(this);
@@ -597,9 +548,9 @@ class _$_ActionInProgress implements _ActionInProgress {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
     TResult Function(_ActionInProgress value)? actionInProgress,
-    TResult Function(_Owns value)? owns,
-    TResult Function(_DoesNotOwn value)? doesNotOwn,
     TResult Function(_PurchaseSuccess value)? purchaseSuccess,
+    TResult Function(_NoPromotionPlan value)? noPromotionPlan,
+    TResult Function(_CurrentPlan value)? currentPlan,
     TResult Function(_PurchaseFailure value)? purchaseFailure,
     required TResult orElse(),
   }) {
@@ -610,200 +561,8 @@ class _$_ActionInProgress implements _ActionInProgress {
   }
 }
 
-abstract class _ActionInProgress implements BuyItemState {
+abstract class _ActionInProgress implements BuyPromotionPlanActorState {
   const factory _ActionInProgress() = _$_ActionInProgress;
-}
-
-/// @nodoc
-abstract class _$OwnsCopyWith<$Res> {
-  factory _$OwnsCopyWith(_Owns value, $Res Function(_Owns) then) = __$OwnsCopyWithImpl<$Res>;
-}
-
-/// @nodoc
-class __$OwnsCopyWithImpl<$Res> extends _$BuyItemStateCopyWithImpl<$Res> implements _$OwnsCopyWith<$Res> {
-  __$OwnsCopyWithImpl(_Owns _value, $Res Function(_Owns) _then) : super(_value, (v) => _then(v as _Owns));
-
-  @override
-  _Owns get _value => super._value as _Owns;
-}
-
-/// @nodoc
-
-class _$_Owns implements _Owns {
-  const _$_Owns();
-
-  @override
-  String toString() {
-    return 'BuyItemState.owns()';
-  }
-
-  @override
-  bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _Owns);
-  }
-
-  @override
-  int get hashCode => runtimeType.hashCode;
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() initial,
-    required TResult Function() actionInProgress,
-    required TResult Function() owns,
-    required TResult Function() doesNotOwn,
-    required TResult Function() purchaseSuccess,
-    required TResult Function(Failure<dynamic> failure) purchaseFailure,
-  }) {
-    return owns();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? initial,
-    TResult Function()? actionInProgress,
-    TResult Function()? owns,
-    TResult Function()? doesNotOwn,
-    TResult Function()? purchaseSuccess,
-    TResult Function(Failure<dynamic> failure)? purchaseFailure,
-    required TResult orElse(),
-  }) {
-    if (owns != null) {
-      return owns();
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_Initial value) initial,
-    required TResult Function(_ActionInProgress value) actionInProgress,
-    required TResult Function(_Owns value) owns,
-    required TResult Function(_DoesNotOwn value) doesNotOwn,
-    required TResult Function(_PurchaseSuccess value) purchaseSuccess,
-    required TResult Function(_PurchaseFailure value) purchaseFailure,
-  }) {
-    return owns(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
-    TResult Function(_ActionInProgress value)? actionInProgress,
-    TResult Function(_Owns value)? owns,
-    TResult Function(_DoesNotOwn value)? doesNotOwn,
-    TResult Function(_PurchaseSuccess value)? purchaseSuccess,
-    TResult Function(_PurchaseFailure value)? purchaseFailure,
-    required TResult orElse(),
-  }) {
-    if (owns != null) {
-      return owns(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class _Owns implements BuyItemState {
-  const factory _Owns() = _$_Owns;
-}
-
-/// @nodoc
-abstract class _$DoesNotOwnCopyWith<$Res> {
-  factory _$DoesNotOwnCopyWith(_DoesNotOwn value, $Res Function(_DoesNotOwn) then) = __$DoesNotOwnCopyWithImpl<$Res>;
-}
-
-/// @nodoc
-class __$DoesNotOwnCopyWithImpl<$Res> extends _$BuyItemStateCopyWithImpl<$Res> implements _$DoesNotOwnCopyWith<$Res> {
-  __$DoesNotOwnCopyWithImpl(_DoesNotOwn _value, $Res Function(_DoesNotOwn) _then) : super(_value, (v) => _then(v as _DoesNotOwn));
-
-  @override
-  _DoesNotOwn get _value => super._value as _DoesNotOwn;
-}
-
-/// @nodoc
-
-class _$_DoesNotOwn implements _DoesNotOwn {
-  const _$_DoesNotOwn();
-
-  @override
-  String toString() {
-    return 'BuyItemState.doesNotOwn()';
-  }
-
-  @override
-  bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _DoesNotOwn);
-  }
-
-  @override
-  int get hashCode => runtimeType.hashCode;
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() initial,
-    required TResult Function() actionInProgress,
-    required TResult Function() owns,
-    required TResult Function() doesNotOwn,
-    required TResult Function() purchaseSuccess,
-    required TResult Function(Failure<dynamic> failure) purchaseFailure,
-  }) {
-    return doesNotOwn();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? initial,
-    TResult Function()? actionInProgress,
-    TResult Function()? owns,
-    TResult Function()? doesNotOwn,
-    TResult Function()? purchaseSuccess,
-    TResult Function(Failure<dynamic> failure)? purchaseFailure,
-    required TResult orElse(),
-  }) {
-    if (doesNotOwn != null) {
-      return doesNotOwn();
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_Initial value) initial,
-    required TResult Function(_ActionInProgress value) actionInProgress,
-    required TResult Function(_Owns value) owns,
-    required TResult Function(_DoesNotOwn value) doesNotOwn,
-    required TResult Function(_PurchaseSuccess value) purchaseSuccess,
-    required TResult Function(_PurchaseFailure value) purchaseFailure,
-  }) {
-    return doesNotOwn(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
-    TResult Function(_ActionInProgress value)? actionInProgress,
-    TResult Function(_Owns value)? owns,
-    TResult Function(_DoesNotOwn value)? doesNotOwn,
-    TResult Function(_PurchaseSuccess value)? purchaseSuccess,
-    TResult Function(_PurchaseFailure value)? purchaseFailure,
-    required TResult orElse(),
-  }) {
-    if (doesNotOwn != null) {
-      return doesNotOwn(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class _DoesNotOwn implements BuyItemState {
-  const factory _DoesNotOwn() = _$_DoesNotOwn;
 }
 
 /// @nodoc
@@ -812,7 +571,7 @@ abstract class _$PurchaseSuccessCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$PurchaseSuccessCopyWithImpl<$Res> extends _$BuyItemStateCopyWithImpl<$Res> implements _$PurchaseSuccessCopyWith<$Res> {
+class __$PurchaseSuccessCopyWithImpl<$Res> extends _$BuyPromotionPlanActorStateCopyWithImpl<$Res> implements _$PurchaseSuccessCopyWith<$Res> {
   __$PurchaseSuccessCopyWithImpl(_PurchaseSuccess _value, $Res Function(_PurchaseSuccess) _then) : super(_value, (v) => _then(v as _PurchaseSuccess));
 
   @override
@@ -826,7 +585,7 @@ class _$_PurchaseSuccess implements _PurchaseSuccess {
 
   @override
   String toString() {
-    return 'BuyItemState.purchaseSuccess()';
+    return 'BuyPromotionPlanActorState.purchaseSuccess()';
   }
 
   @override
@@ -842,9 +601,9 @@ class _$_PurchaseSuccess implements _PurchaseSuccess {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() actionInProgress,
-    required TResult Function() owns,
-    required TResult Function() doesNotOwn,
     required TResult Function() purchaseSuccess,
+    required TResult Function() noPromotionPlan,
+    required TResult Function(PromotionPlan promotionPlan) currentPlan,
     required TResult Function(Failure<dynamic> failure) purchaseFailure,
   }) {
     return purchaseSuccess();
@@ -855,9 +614,9 @@ class _$_PurchaseSuccess implements _PurchaseSuccess {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? actionInProgress,
-    TResult Function()? owns,
-    TResult Function()? doesNotOwn,
     TResult Function()? purchaseSuccess,
+    TResult Function()? noPromotionPlan,
+    TResult Function(PromotionPlan promotionPlan)? currentPlan,
     TResult Function(Failure<dynamic> failure)? purchaseFailure,
     required TResult orElse(),
   }) {
@@ -872,9 +631,9 @@ class _$_PurchaseSuccess implements _PurchaseSuccess {
   TResult map<TResult extends Object?>({
     required TResult Function(_Initial value) initial,
     required TResult Function(_ActionInProgress value) actionInProgress,
-    required TResult Function(_Owns value) owns,
-    required TResult Function(_DoesNotOwn value) doesNotOwn,
     required TResult Function(_PurchaseSuccess value) purchaseSuccess,
+    required TResult Function(_NoPromotionPlan value) noPromotionPlan,
+    required TResult Function(_CurrentPlan value) currentPlan,
     required TResult Function(_PurchaseFailure value) purchaseFailure,
   }) {
     return purchaseSuccess(this);
@@ -885,9 +644,9 @@ class _$_PurchaseSuccess implements _PurchaseSuccess {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
     TResult Function(_ActionInProgress value)? actionInProgress,
-    TResult Function(_Owns value)? owns,
-    TResult Function(_DoesNotOwn value)? doesNotOwn,
     TResult Function(_PurchaseSuccess value)? purchaseSuccess,
+    TResult Function(_NoPromotionPlan value)? noPromotionPlan,
+    TResult Function(_CurrentPlan value)? currentPlan,
     TResult Function(_PurchaseFailure value)? purchaseFailure,
     required TResult orElse(),
   }) {
@@ -898,8 +657,235 @@ class _$_PurchaseSuccess implements _PurchaseSuccess {
   }
 }
 
-abstract class _PurchaseSuccess implements BuyItemState {
+abstract class _PurchaseSuccess implements BuyPromotionPlanActorState {
   const factory _PurchaseSuccess() = _$_PurchaseSuccess;
+}
+
+/// @nodoc
+abstract class _$NoPromotionPlanCopyWith<$Res> {
+  factory _$NoPromotionPlanCopyWith(_NoPromotionPlan value, $Res Function(_NoPromotionPlan) then) = __$NoPromotionPlanCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$NoPromotionPlanCopyWithImpl<$Res> extends _$BuyPromotionPlanActorStateCopyWithImpl<$Res> implements _$NoPromotionPlanCopyWith<$Res> {
+  __$NoPromotionPlanCopyWithImpl(_NoPromotionPlan _value, $Res Function(_NoPromotionPlan) _then) : super(_value, (v) => _then(v as _NoPromotionPlan));
+
+  @override
+  _NoPromotionPlan get _value => super._value as _NoPromotionPlan;
+}
+
+/// @nodoc
+
+class _$_NoPromotionPlan implements _NoPromotionPlan {
+  const _$_NoPromotionPlan();
+
+  @override
+  String toString() {
+    return 'BuyPromotionPlanActorState.noPromotionPlan()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) || (other is _NoPromotionPlan);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() actionInProgress,
+    required TResult Function() purchaseSuccess,
+    required TResult Function() noPromotionPlan,
+    required TResult Function(PromotionPlan promotionPlan) currentPlan,
+    required TResult Function(Failure<dynamic> failure) purchaseFailure,
+  }) {
+    return noPromotionPlan();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? actionInProgress,
+    TResult Function()? purchaseSuccess,
+    TResult Function()? noPromotionPlan,
+    TResult Function(PromotionPlan promotionPlan)? currentPlan,
+    TResult Function(Failure<dynamic> failure)? purchaseFailure,
+    required TResult orElse(),
+  }) {
+    if (noPromotionPlan != null) {
+      return noPromotionPlan();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial value) initial,
+    required TResult Function(_ActionInProgress value) actionInProgress,
+    required TResult Function(_PurchaseSuccess value) purchaseSuccess,
+    required TResult Function(_NoPromotionPlan value) noPromotionPlan,
+    required TResult Function(_CurrentPlan value) currentPlan,
+    required TResult Function(_PurchaseFailure value) purchaseFailure,
+  }) {
+    return noPromotionPlan(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_ActionInProgress value)? actionInProgress,
+    TResult Function(_PurchaseSuccess value)? purchaseSuccess,
+    TResult Function(_NoPromotionPlan value)? noPromotionPlan,
+    TResult Function(_CurrentPlan value)? currentPlan,
+    TResult Function(_PurchaseFailure value)? purchaseFailure,
+    required TResult orElse(),
+  }) {
+    if (noPromotionPlan != null) {
+      return noPromotionPlan(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _NoPromotionPlan implements BuyPromotionPlanActorState {
+  const factory _NoPromotionPlan() = _$_NoPromotionPlan;
+}
+
+/// @nodoc
+abstract class _$CurrentPlanCopyWith<$Res> {
+  factory _$CurrentPlanCopyWith(_CurrentPlan value, $Res Function(_CurrentPlan) then) = __$CurrentPlanCopyWithImpl<$Res>;
+
+  $Res call({PromotionPlan promotionPlan});
+
+  $PromotionPlanCopyWith<$Res> get promotionPlan;
+}
+
+/// @nodoc
+class __$CurrentPlanCopyWithImpl<$Res> extends _$BuyPromotionPlanActorStateCopyWithImpl<$Res> implements _$CurrentPlanCopyWith<$Res> {
+  __$CurrentPlanCopyWithImpl(_CurrentPlan _value, $Res Function(_CurrentPlan) _then) : super(_value, (v) => _then(v as _CurrentPlan));
+
+  @override
+  _CurrentPlan get _value => super._value as _CurrentPlan;
+
+  @override
+  $Res call({
+    Object? promotionPlan = freezed,
+  }) {
+    return _then(_CurrentPlan(
+      promotionPlan == freezed
+          ? _value.promotionPlan
+          : promotionPlan // ignore: cast_nullable_to_non_nullable
+              as PromotionPlan,
+    ));
+  }
+
+  @override
+  $PromotionPlanCopyWith<$Res> get promotionPlan {
+    return $PromotionPlanCopyWith<$Res>(_value.promotionPlan, (value) {
+      return _then(_value.copyWith(promotionPlan: value));
+    });
+  }
+}
+
+/// @nodoc
+
+class _$_CurrentPlan implements _CurrentPlan {
+  const _$_CurrentPlan(this.promotionPlan);
+
+  @override
+  final PromotionPlan promotionPlan;
+
+  @override
+  String toString() {
+    return 'BuyPromotionPlanActorState.currentPlan(promotionPlan: $promotionPlan)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) || (other is _CurrentPlan && (identical(other.promotionPlan, promotionPlan) || const DeepCollectionEquality().equals(other.promotionPlan, promotionPlan)));
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode ^ const DeepCollectionEquality().hash(promotionPlan);
+
+  @JsonKey(ignore: true)
+  @override
+  _$CurrentPlanCopyWith<_CurrentPlan> get copyWith => __$CurrentPlanCopyWithImpl<_CurrentPlan>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() actionInProgress,
+    required TResult Function() purchaseSuccess,
+    required TResult Function() noPromotionPlan,
+    required TResult Function(PromotionPlan promotionPlan) currentPlan,
+    required TResult Function(Failure<dynamic> failure) purchaseFailure,
+  }) {
+    return currentPlan(promotionPlan);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? actionInProgress,
+    TResult Function()? purchaseSuccess,
+    TResult Function()? noPromotionPlan,
+    TResult Function(PromotionPlan promotionPlan)? currentPlan,
+    TResult Function(Failure<dynamic> failure)? purchaseFailure,
+    required TResult orElse(),
+  }) {
+    if (currentPlan != null) {
+      return currentPlan(promotionPlan);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial value) initial,
+    required TResult Function(_ActionInProgress value) actionInProgress,
+    required TResult Function(_PurchaseSuccess value) purchaseSuccess,
+    required TResult Function(_NoPromotionPlan value) noPromotionPlan,
+    required TResult Function(_CurrentPlan value) currentPlan,
+    required TResult Function(_PurchaseFailure value) purchaseFailure,
+  }) {
+    return currentPlan(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_ActionInProgress value)? actionInProgress,
+    TResult Function(_PurchaseSuccess value)? purchaseSuccess,
+    TResult Function(_NoPromotionPlan value)? noPromotionPlan,
+    TResult Function(_CurrentPlan value)? currentPlan,
+    TResult Function(_PurchaseFailure value)? purchaseFailure,
+    required TResult orElse(),
+  }) {
+    if (currentPlan != null) {
+      return currentPlan(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _CurrentPlan implements BuyPromotionPlanActorState {
+  const factory _CurrentPlan(PromotionPlan promotionPlan) = _$_CurrentPlan;
+
+  PromotionPlan get promotionPlan => throw _privateConstructorUsedError;
+
+  @JsonKey(ignore: true)
+  _$CurrentPlanCopyWith<_CurrentPlan> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -912,7 +898,7 @@ abstract class _$PurchaseFailureCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$PurchaseFailureCopyWithImpl<$Res> extends _$BuyItemStateCopyWithImpl<$Res> implements _$PurchaseFailureCopyWith<$Res> {
+class __$PurchaseFailureCopyWithImpl<$Res> extends _$BuyPromotionPlanActorStateCopyWithImpl<$Res> implements _$PurchaseFailureCopyWith<$Res> {
   __$PurchaseFailureCopyWithImpl(_PurchaseFailure _value, $Res Function(_PurchaseFailure) _then) : super(_value, (v) => _then(v as _PurchaseFailure));
 
   @override
@@ -948,7 +934,7 @@ class _$_PurchaseFailure implements _PurchaseFailure {
 
   @override
   String toString() {
-    return 'BuyItemState.purchaseFailure(failure: $failure)';
+    return 'BuyPromotionPlanActorState.purchaseFailure(failure: $failure)';
   }
 
   @override
@@ -968,9 +954,9 @@ class _$_PurchaseFailure implements _PurchaseFailure {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() actionInProgress,
-    required TResult Function() owns,
-    required TResult Function() doesNotOwn,
     required TResult Function() purchaseSuccess,
+    required TResult Function() noPromotionPlan,
+    required TResult Function(PromotionPlan promotionPlan) currentPlan,
     required TResult Function(Failure<dynamic> failure) purchaseFailure,
   }) {
     return purchaseFailure(failure);
@@ -981,9 +967,9 @@ class _$_PurchaseFailure implements _PurchaseFailure {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? actionInProgress,
-    TResult Function()? owns,
-    TResult Function()? doesNotOwn,
     TResult Function()? purchaseSuccess,
+    TResult Function()? noPromotionPlan,
+    TResult Function(PromotionPlan promotionPlan)? currentPlan,
     TResult Function(Failure<dynamic> failure)? purchaseFailure,
     required TResult orElse(),
   }) {
@@ -998,9 +984,9 @@ class _$_PurchaseFailure implements _PurchaseFailure {
   TResult map<TResult extends Object?>({
     required TResult Function(_Initial value) initial,
     required TResult Function(_ActionInProgress value) actionInProgress,
-    required TResult Function(_Owns value) owns,
-    required TResult Function(_DoesNotOwn value) doesNotOwn,
     required TResult Function(_PurchaseSuccess value) purchaseSuccess,
+    required TResult Function(_NoPromotionPlan value) noPromotionPlan,
+    required TResult Function(_CurrentPlan value) currentPlan,
     required TResult Function(_PurchaseFailure value) purchaseFailure,
   }) {
     return purchaseFailure(this);
@@ -1011,9 +997,9 @@ class _$_PurchaseFailure implements _PurchaseFailure {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
     TResult Function(_ActionInProgress value)? actionInProgress,
-    TResult Function(_Owns value)? owns,
-    TResult Function(_DoesNotOwn value)? doesNotOwn,
     TResult Function(_PurchaseSuccess value)? purchaseSuccess,
+    TResult Function(_NoPromotionPlan value)? noPromotionPlan,
+    TResult Function(_CurrentPlan value)? currentPlan,
     TResult Function(_PurchaseFailure value)? purchaseFailure,
     required TResult orElse(),
   }) {
@@ -1024,7 +1010,7 @@ class _$_PurchaseFailure implements _PurchaseFailure {
   }
 }
 
-abstract class _PurchaseFailure implements BuyItemState {
+abstract class _PurchaseFailure implements BuyPromotionPlanActorState {
   const factory _PurchaseFailure(Failure<dynamic> failure) = _$_PurchaseFailure;
 
   Failure<dynamic> get failure => throw _privateConstructorUsedError;

@@ -114,6 +114,7 @@ class __$WatchInterestsStartedCopyWithImpl<$Res> extends _$ProfileInterestsWatch
 }
 
 /// @nodoc
+
 class _$_WatchInterestsStarted implements _WatchInterestsStarted {
   const _$_WatchInterestsStarted(this.user);
 
@@ -219,6 +220,7 @@ class __$ResultsReceivedCopyWithImpl<$Res> extends _$ProfileInterestsWatcherEven
 }
 
 /// @nodoc
+
 class _$_ResultsReceived implements _ResultsReceived {
   const _$_ResultsReceived(this.failureOrTags);
 
@@ -391,6 +393,7 @@ class __$InitialCopyWithImpl<$Res> extends _$ProfileInterestsWatcherStateCopyWit
 }
 
 /// @nodoc
+
 class _$_Initial implements _Initial {
   const _$_Initial();
 
@@ -478,6 +481,7 @@ class __$LoadInProgressCopyWithImpl<$Res> extends _$ProfileInterestsWatcherState
 }
 
 /// @nodoc
+
 class _$_LoadInProgress implements _LoadInProgress {
   const _$_LoadInProgress();
 
@@ -579,6 +583,7 @@ class __$LoadSuccessCopyWithImpl<$Res> extends _$ProfileInterestsWatcherStateCop
 }
 
 /// @nodoc
+
 class _$_LoadSuccess implements _LoadSuccess {
   const _$_LoadSuccess(this.interests);
 
@@ -701,6 +706,7 @@ class __$LoadFailureCopyWithImpl<$Res> extends _$ProfileInterestsWatcherStateCop
 }
 
 /// @nodoc
+
 class _$_LoadFailure implements _LoadFailure {
   const _$_LoadFailure(this.failure);
 

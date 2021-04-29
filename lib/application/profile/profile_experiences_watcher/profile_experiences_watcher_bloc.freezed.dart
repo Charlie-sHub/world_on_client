@@ -134,6 +134,7 @@ class __$WatchExperiencesDoneStartedCopyWithImpl<$Res> extends _$ProfileExperien
 }
 
 /// @nodoc
+
 class _$_WatchExperiencesDoneStarted implements _WatchExperiencesDoneStarted {
   const _$_WatchExperiencesDoneStarted(this.user);
 
@@ -257,6 +258,7 @@ class __$WatchExperiencesLikedStartedCopyWithImpl<$Res> extends _$ProfileExperie
 }
 
 /// @nodoc
+
 class _$_WatchExperiencesLikedStarted implements _WatchExperiencesLikedStarted {
   const _$_WatchExperiencesLikedStarted(this.user);
 
@@ -380,6 +382,7 @@ class __$WatchExperiencesCreatedStartedCopyWithImpl<$Res> extends _$ProfileExper
 }
 
 /// @nodoc
+
 class _$_WatchExperiencesCreatedStarted implements _WatchExperiencesCreatedStarted {
   const _$_WatchExperiencesCreatedStarted(this.user);
 
@@ -493,6 +496,7 @@ class __$ExperiencesReceivedCopyWithImpl<$Res> extends _$ProfileExperiencesWatch
 }
 
 /// @nodoc
+
 class _$_ExperiencesReceived implements _ExperiencesReceived {
   const _$_ExperiencesReceived(this.failureOrExperiences);
 
@@ -674,6 +678,7 @@ class __$InitialCopyWithImpl<$Res> extends _$ProfileExperiencesWatcherStateCopyW
 }
 
 /// @nodoc
+
 class _$_Initial implements _Initial {
   const _$_Initial();
 
@@ -761,6 +766,7 @@ class __$LoadInProgressCopyWithImpl<$Res> extends _$ProfileExperiencesWatcherSta
 }
 
 /// @nodoc
+
 class _$_LoadInProgress implements _LoadInProgress {
   const _$_LoadInProgress();
 
@@ -862,6 +868,7 @@ class __$LoadSuccessCopyWithImpl<$Res> extends _$ProfileExperiencesWatcherStateC
 }
 
 /// @nodoc
+
 class _$_LoadSuccess implements _LoadSuccess {
   const _$_LoadSuccess(this.experiences);
 
@@ -984,6 +991,7 @@ class __$LoadFailureCopyWithImpl<$Res> extends _$ProfileExperiencesWatcherStateC
 }
 
 /// @nodoc
+
 class _$_LoadFailure implements _LoadFailure {
   const _$_LoadFailure(this.failure);
 

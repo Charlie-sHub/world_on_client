@@ -202,6 +202,7 @@ class __$InitializedCopyWithImpl<$Res> extends _$ProfileEditingFormEventCopyWith
 }
 
 /// @nodoc
+
 class _$_Initialized implements _Initialized {
   const _$_Initialized(this.userToEdit);
 
@@ -343,6 +344,7 @@ class __$NameChangedCopyWithImpl<$Res> extends _$ProfileEditingFormEventCopyWith
 }
 
 /// @nodoc
+
 class _$_NameChanged implements _NameChanged {
   const _$_NameChanged(this.name);
 
@@ -484,6 +486,7 @@ class __$ImageChangedCopyWithImpl<$Res> extends _$ProfileEditingFormEventCopyWit
 }
 
 /// @nodoc
+
 class _$_ImageChanged implements _ImageChanged {
   const _$_ImageChanged(this.imageFile);
 
@@ -625,6 +628,7 @@ class __$UsernameChangedCopyWithImpl<$Res> extends _$ProfileEditingFormEventCopy
 }
 
 /// @nodoc
+
 class _$_UsernameChanged implements _UsernameChanged {
   const _$_UsernameChanged(this.username);
 
@@ -766,6 +770,7 @@ class __$PasswordChangedCopyWithImpl<$Res> extends _$ProfileEditingFormEventCopy
 }
 
 /// @nodoc
+
 class _$_PasswordChanged implements _PasswordChanged {
   const _$_PasswordChanged(this.password);
 
@@ -907,6 +912,7 @@ class __$PasswordConfirmationChangedCopyWithImpl<$Res> extends _$ProfileEditingF
 }
 
 /// @nodoc
+
 class _$_PasswordConfirmationChanged implements _PasswordConfirmationChanged {
   const _$_PasswordConfirmationChanged(this.passwordConfirmation);
 
@@ -1050,6 +1056,7 @@ class __$EmailAddressChangedCopyWithImpl<$Res> extends _$ProfileEditingFormEvent
 }
 
 /// @nodoc
+
 class _$_EmailAddressChanged implements _EmailAddressChanged {
   const _$_EmailAddressChanged(this.emailAddress);
 
@@ -1191,6 +1198,7 @@ class __$BirthdayChangedCopyWithImpl<$Res> extends _$ProfileEditingFormEventCopy
 }
 
 /// @nodoc
+
 class _$_BirthdayChanged implements _BirthdayChanged {
   const _$_BirthdayChanged(this.birthday);
 
@@ -1332,6 +1340,7 @@ class __$DescriptionChangedCopyWithImpl<$Res> extends _$ProfileEditingFormEventC
 }
 
 /// @nodoc
+
 class _$_DescriptionChanged implements _DescriptionChanged {
   const _$_DescriptionChanged(this.description);
 
@@ -1473,6 +1482,7 @@ class __$InterestsChangedCopyWithImpl<$Res> extends _$ProfileEditingFormEventCop
 }
 
 /// @nodoc
+
 class _$_InterestsChanged implements _InterestsChanged {
   const _$_InterestsChanged(this.interests);
 
@@ -1600,6 +1610,7 @@ class __$SubmittedCopyWithImpl<$Res> extends _$ProfileEditingFormEventCopyWithIm
 }
 
 /// @nodoc
+
 class _$_Submitted implements _Submitted {
   const _$_Submitted();
 
@@ -1864,6 +1875,7 @@ class __$ProfileEditingFormStateCopyWithImpl<$Res> extends _$ProfileEditingFormS
 }
 
 /// @nodoc
+
 class _$_ProfileEditingFormState implements _ProfileEditingFormState {
   const _$_ProfileEditingFormState(
       {required this.user, required this.passwordConfirmator, required this.passwordToCompare, required this.showErrorMessages, required this.isSubmitting, required this.failureOrSuccessOption});

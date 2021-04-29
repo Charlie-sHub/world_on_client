@@ -115,6 +115,7 @@ class __$InitializedCopyWithImpl<$Res> extends _$TagSelectorEventCopyWithImpl<$R
 }
 
 /// @nodoc
+
 class _$_Initialized implements _Initialized {
   const _$_Initialized(this.tagsEitherOption);
 
@@ -234,6 +235,7 @@ class __$AddedTagCopyWithImpl<$Res> extends _$TagSelectorEventCopyWithImpl<$Res>
 }
 
 /// @nodoc
+
 class _$_AddedTag implements _AddedTag {
   const _$_AddedTag(this.tag);
 
@@ -352,6 +354,7 @@ class __$RemovedTagCopyWithImpl<$Res> extends _$TagSelectorEventCopyWithImpl<$Re
 }
 
 /// @nodoc
+
 class _$_RemovedTag implements _RemovedTag {
   const _$_RemovedTag(this.tag);
 
@@ -513,6 +516,7 @@ class __$TagSearchFormStateCopyWithImpl<$Res> extends _$TagSelectorStateCopyWith
 }
 
 /// @nodoc
+
 class _$_TagSearchFormState implements _TagSearchFormState {
   const _$_TagSearchFormState({required this.tagsSelected});
 

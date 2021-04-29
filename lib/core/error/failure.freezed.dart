@@ -183,6 +183,7 @@ class __$AuthenticationDomainCopyWithImpl<T, $Res> extends _$FailureCopyWithImpl
 }
 
 /// @nodoc
+
 class _$_AuthenticationDomain<T> implements _AuthenticationDomain<T> {
   const _$_AuthenticationDomain(this.authenticationDomainFailure);
 
@@ -327,6 +328,7 @@ class __$AuthenticationDataCopyWithImpl<T, $Res> extends _$FailureCopyWithImpl<T
 }
 
 /// @nodoc
+
 class _$_AuthenticationData<T> implements _AuthenticationData<T> {
   const _$_AuthenticationData(this.authenticationDataFailure);
 
@@ -471,6 +473,7 @@ class __$CoreDomainCopyWithImpl<T, $Res> extends _$FailureCopyWithImpl<T, $Res> 
 }
 
 /// @nodoc
+
 class _$_CoreDomain<T> implements _CoreDomain<T> {
   const _$_CoreDomain(this.coreDomainFailure);
 
@@ -614,6 +617,7 @@ class __$CoreAppllicationCopyWithImpl<T, $Res> extends _$FailureCopyWithImpl<T, 
 }
 
 /// @nodoc
+
 class _$_CoreAppllication<T> implements _CoreAppllication<T> {
   const _$_CoreAppllication(this.coreApplicationFailure);
 
@@ -760,6 +764,7 @@ class __$ExperienceManagementApplicationFailureCopyWithImpl<T, $Res> extends _$F
 }
 
 /// @nodoc
+
 class _$_ExperienceManagementApplicationFailure<T> implements _ExperienceManagementApplicationFailure<T> {
   const _$_ExperienceManagementApplicationFailure(this.experienceManagementApplicationFailure);
 
@@ -906,6 +911,7 @@ class __$CoreDataCopyWithImpl<T, $Res> extends _$FailureCopyWithImpl<T, $Res> im
 }
 
 /// @nodoc
+
 class _$_CoreData<T> implements _CoreData<T> {
   const _$_CoreData(this.coreDataFailure);
 
@@ -1048,6 +1054,7 @@ class __$StoreDataCopyWithImpl<T, $Res> extends _$FailureCopyWithImpl<T, $Res> i
 }
 
 /// @nodoc
+
 class _$_StoreData<T> implements _StoreData<T> {
   const _$_StoreData(this.storeDataFailure);
 
@@ -1191,6 +1198,7 @@ class __$ValueCopyWithImpl<T, $Res> extends _$FailureCopyWithImpl<T, $Res> imple
 }
 
 /// @nodoc
+
 class _$_Value<T> implements _Value<T> {
   const _$_Value(this.valueFailure);
 
@@ -1333,6 +1341,7 @@ class __$ProfileDomainCopyWithImpl<T, $Res> extends _$FailureCopyWithImpl<T, $Re
 }
 
 /// @nodoc
+
 class _$_ProfileDomain<T> implements _ProfileDomain<T> {
   const _$_ProfileDomain(this.profileDomainFailure);
 

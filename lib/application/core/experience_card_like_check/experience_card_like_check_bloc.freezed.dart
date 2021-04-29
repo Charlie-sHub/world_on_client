@@ -127,6 +127,7 @@ class __$InitializedCopyWithImpl<$Res> extends _$ExperienceCardLikeCheckEventCop
 }
 
 /// @nodoc
+
 class _$_Initialized implements _Initialized {
   const _$_Initialized(this.experience);
 
@@ -285,6 +286,7 @@ class __$InitialCopyWithImpl<$Res> extends _$ExperienceCardLikeCheckStateCopyWit
 }
 
 /// @nodoc
+
 class _$_Initial implements _Initial {
   const _$_Initial();
 
@@ -368,6 +370,7 @@ class __$LikesCopyWithImpl<$Res> extends _$ExperienceCardLikeCheckStateCopyWithI
 }
 
 /// @nodoc
+
 class _$_Likes implements _Likes {
   const _$_Likes();
 
@@ -451,6 +454,7 @@ class __$NeutralCopyWithImpl<$Res> extends _$ExperienceCardLikeCheckStateCopyWit
 }
 
 /// @nodoc
+
 class _$_Neutral implements _Neutral {
   const _$_Neutral();
 

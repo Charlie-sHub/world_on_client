@@ -183,6 +183,7 @@ class __$ItemCopyWithImpl<$Res> extends _$ItemCopyWithImpl<$Res> implements _$It
 }
 
 /// @nodoc
+
 class _$_Item extends _Item {
   const _$_Item(
       {required this.id, required this.name, required this.description, required this.code, required this.value, required this.imageURL, required this.timeLimitInDays, required this.boughtDate})

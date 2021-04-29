@@ -89,6 +89,7 @@ class __$WatchExperiencesLogStartedCopyWithImpl<$Res> extends _$ExperienceLogWat
 }
 
 /// @nodoc
+
 class _$_WatchExperiencesLogStarted implements _WatchExperiencesLogStarted {
   const _$_WatchExperiencesLogStarted();
 
@@ -182,6 +183,7 @@ class __$ResultsReceivedCopyWithImpl<$Res> extends _$ExperienceLogWatcherEventCo
 }
 
 /// @nodoc
+
 class _$_ResultsReceived implements _ResultsReceived {
   const _$_ResultsReceived(this.failureOrExperiences);
 
@@ -355,6 +357,7 @@ class __$InitialCopyWithImpl<$Res> extends _$ExperienceLogWatcherStateCopyWithIm
 }
 
 /// @nodoc
+
 class _$_Initial implements _Initial {
   const _$_Initial();
 
@@ -442,6 +445,7 @@ class __$LoadInProgressCopyWithImpl<$Res> extends _$ExperienceLogWatcherStateCop
 }
 
 /// @nodoc
+
 class _$_LoadInProgress implements _LoadInProgress {
   const _$_LoadInProgress();
 
@@ -543,6 +547,7 @@ class __$LoadSuccessCopyWithImpl<$Res> extends _$ExperienceLogWatcherStateCopyWi
 }
 
 /// @nodoc
+
 class _$_LoadSuccess implements _LoadSuccess {
   const _$_LoadSuccess(this.experiences);
 
@@ -665,6 +670,7 @@ class __$LoadFailureCopyWithImpl<$Res> extends _$ExperienceLogWatcherStateCopyWi
 }
 
 /// @nodoc
+
 class _$_LoadFailure implements _LoadFailure {
   const _$_LoadFailure(this.failure);
 

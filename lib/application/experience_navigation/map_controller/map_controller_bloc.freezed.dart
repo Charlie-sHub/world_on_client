@@ -125,6 +125,7 @@ class __$InitializedCopyWithImpl<$Res> extends _$MapControllerEventCopyWithImpl<
 }
 
 /// @nodoc
+
 class _$_Initialized implements _Initialized {
   const _$_Initialized(this.experience);
 
@@ -248,6 +249,7 @@ class __$CameraPositionChangedCopyWithImpl<$Res> extends _$MapControllerEventCop
 }
 
 /// @nodoc
+
 class _$_CameraPositionChanged implements _CameraPositionChanged {
   const _$_CameraPositionChanged({required this.coordinates, required this.zoom});
 
@@ -364,6 +366,7 @@ class __$ObjectivesChangedCopyWithImpl<$Res> extends _$MapControllerEventCopyWit
 }
 
 /// @nodoc
+
 class _$_ObjectivesChanged implements _ObjectivesChanged {
   const _$_ObjectivesChanged(this.objectives);
 
@@ -573,6 +576,7 @@ class __$MapControllerStateCopyWithImpl<$Res> extends _$MapControllerStateCopyWi
 }
 
 /// @nodoc
+
 class _$_MapControllerState implements _MapControllerState {
   const _$_MapControllerState({required this.coordinates, required this.objectives, required this.zoom, required this.loadedCoordinates});
 

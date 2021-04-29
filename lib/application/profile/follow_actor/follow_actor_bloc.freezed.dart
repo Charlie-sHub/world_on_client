@@ -147,6 +147,7 @@ class __$InitializedCopyWithImpl<$Res> extends _$FollowActorEventCopyWithImpl<$R
 }
 
 /// @nodoc
+
 class _$_Initialized implements _Initialized {
   const _$_Initialized(this.user);
 
@@ -262,6 +263,7 @@ class __$FollowedCopyWithImpl<$Res> extends _$FollowActorEventCopyWithImpl<$Res>
 }
 
 /// @nodoc
+
 class _$_Followed implements _Followed {
   const _$_Followed(this.user);
 
@@ -377,6 +379,7 @@ class __$UnFollowedCopyWithImpl<$Res> extends _$FollowActorEventCopyWithImpl<$Re
 }
 
 /// @nodoc
+
 class _$_UnFollowed implements _UnFollowed {
   const _$_UnFollowed(this.user);
 
@@ -587,6 +590,7 @@ class __$InitialCopyWithImpl<$Res> extends _$FollowActorStateCopyWithImpl<$Res> 
 }
 
 /// @nodoc
+
 class _$_Initial implements _Initial {
   const _$_Initial();
 
@@ -690,6 +694,7 @@ class __$ActionInProgressCopyWithImpl<$Res> extends _$FollowActorStateCopyWithIm
 }
 
 /// @nodoc
+
 class _$_ActionInProgress implements _ActionInProgress {
   const _$_ActionInProgress();
 
@@ -793,6 +798,7 @@ class __$FollowsCopyWithImpl<$Res> extends _$FollowActorStateCopyWithImpl<$Res> 
 }
 
 /// @nodoc
+
 class _$_Follows implements _Follows {
   const _$_Follows();
 
@@ -896,6 +902,7 @@ class __$FollowsNotCopyWithImpl<$Res> extends _$FollowActorStateCopyWithImpl<$Re
 }
 
 /// @nodoc
+
 class _$_FollowsNot implements _FollowsNot {
   const _$_FollowsNot();
 
@@ -999,6 +1006,7 @@ class __$FollowSuccessCopyWithImpl<$Res> extends _$FollowActorStateCopyWithImpl<
 }
 
 /// @nodoc
+
 class _$_FollowSuccess implements _FollowSuccess {
   const _$_FollowSuccess();
 
@@ -1125,6 +1133,7 @@ class __$FollowFailureCopyWithImpl<$Res> extends _$FollowActorStateCopyWithImpl<
 }
 
 /// @nodoc
+
 class _$_FollowFailure implements _FollowFailure {
   const _$_FollowFailure(this.failure);
 
@@ -1240,6 +1249,7 @@ class __$UnFollowSuccessCopyWithImpl<$Res> extends _$FollowActorStateCopyWithImp
 }
 
 /// @nodoc
+
 class _$_UnFollowSuccess implements _UnFollowSuccess {
   const _$_UnFollowSuccess();
 
@@ -1366,6 +1376,7 @@ class __$UnFollowFailureCopyWithImpl<$Res> extends _$FollowActorStateCopyWithImp
 }
 
 /// @nodoc
+
 class _$_UnFollowFailure implements _UnFollowFailure {
   const _$_UnFollowFailure(this.failure);
 

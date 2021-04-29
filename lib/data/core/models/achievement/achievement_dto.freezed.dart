@@ -255,9 +255,8 @@ class __$AchievementDtoCopyWithImpl<$Res> extends _$AchievementDtoCopyWithImpl<$
   }
 }
 
-@JsonSerializable()
-
 /// @nodoc
+@JsonSerializable()
 class _$_AchievementDto extends _AchievementDto {
   const _$_AchievementDto(
       {required this.id,

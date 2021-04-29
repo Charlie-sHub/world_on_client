@@ -27,42 +27,40 @@ class TagCard extends StatelessWidget {
         ),
       child: BlocConsumer<TagCardActorBloc, TagCardActorState>(
         listener: _tagCardListener,
-        builder: (context, state) => Padding(
-          padding: const EdgeInsets.all(5),
-          child: Card(
-            child: Padding(
-              padding: const EdgeInsets.all(2),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: <Widget>[
-                  const SizedBox(width: 1),
-                  AutoSizeText(
-                    tag.name.getOrCrash(),
-                    style: const TextStyle(
-                      fontSize: 17,
-                      fontWeight: FontWeight.bold,
-                      color: WorldOnColors.background,
-                    ),
+        builder: (context, state) => Card(
+          margin: const EdgeInsets.all(5),
+          child: Padding(
+            padding: const EdgeInsets.all(2),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: <Widget>[
+                const SizedBox(width: 1),
+                AutoSizeText(
+                  tag.name.getOrCrash(),
+                  style: const TextStyle(
+                    fontSize: 17,
+                    fontWeight: FontWeight.bold,
+                    color: WorldOnColors.background,
                   ),
-                  AnimatedSwitcher(
-                    duration: const Duration(milliseconds: 200),
-                    transitionBuilder: (child, animation) => ScaleTransition(
-                      scale: animation,
-                      child: child,
-                    ), // Mapping every state seems a tad too much for me but it's the best solution from the UI point of view, maybe not from the performance one though
-                    child: state.map(
-                      initial: (_) => Container(),
-                      actionInProgress: (_) => const CircularProgressIndicator(),
-                      notInInterests: (_) => LikeTagButton(tag: tag),
-                      additionSuccess: (_) => DislikeTagButton(tag: tag),
-                      additionFailure: (_) => LikeTagButton(tag: tag),
-                      inInterests: (_) => DislikeTagButton(tag: tag),
-                      dismissalSuccess: (_) => LikeTagButton(tag: tag),
-                      dismissalFailure: (_) => DislikeTagButton(tag: tag),
-                    ),
+                ),
+                AnimatedSwitcher(
+                  duration: const Duration(milliseconds: 200),
+                  transitionBuilder: (child, animation) => ScaleTransition(
+                    scale: animation,
+                    child: child,
+                  ), // Mapping every state seems a tad too much for me but it's the best solution from the UI point of view, maybe not from the performance one though
+                  child: state.map(
+                    initial: (_) => Container(),
+                    actionInProgress: (_) => const CircularProgressIndicator(),
+                    notInInterests: (_) => LikeTagButton(tag: tag),
+                    additionSuccess: (_) => DislikeTagButton(tag: tag),
+                    additionFailure: (_) => LikeTagButton(tag: tag),
+                    inInterests: (_) => DislikeTagButton(tag: tag),
+                    dismissalSuccess: (_) => LikeTagButton(tag: tag),
+                    dismissalFailure: (_) => DislikeTagButton(tag: tag),
                   ),
-                ],
-              ),
+                ),
+              ],
             ),
           ),
         ),

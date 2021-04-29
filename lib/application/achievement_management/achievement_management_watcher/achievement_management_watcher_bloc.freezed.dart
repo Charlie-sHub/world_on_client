@@ -90,6 +90,7 @@ class __$WatchAllAchievementsStartedCopyWithImpl<$Res> extends _$AchievementMana
 }
 
 /// @nodoc
+
 class _$_WatchAllAchievementsStarted implements _WatchAllAchievementsStarted {
   const _$_WatchAllAchievementsStarted();
 
@@ -183,6 +184,7 @@ class __$ResultsReceivedCopyWithImpl<$Res> extends _$AchievementManagementWatche
 }
 
 /// @nodoc
+
 class _$_ResultsReceived implements _ResultsReceived {
   const _$_ResultsReceived(this.failureOrAchievements);
 
@@ -357,6 +359,7 @@ class __$InitialCopyWithImpl<$Res> extends _$AchievementManagementWatcherStateCo
 }
 
 /// @nodoc
+
 class _$_Initial implements _Initial {
   const _$_Initial();
 
@@ -444,6 +447,7 @@ class __$LoadInProgressCopyWithImpl<$Res> extends _$AchievementManagementWatcher
 }
 
 /// @nodoc
+
 class _$_LoadInProgress implements _LoadInProgress {
   const _$_LoadInProgress();
 
@@ -545,6 +549,7 @@ class __$LoadSuccessCopyWithImpl<$Res> extends _$AchievementManagementWatcherSta
 }
 
 /// @nodoc
+
 class _$_LoadSuccess implements _LoadSuccess {
   const _$_LoadSuccess(this.achievements);
 
@@ -667,6 +672,7 @@ class __$LoadFailureCopyWithImpl<$Res> extends _$AchievementManagementWatcherSta
 }
 
 /// @nodoc
+
 class _$_LoadFailure implements _LoadFailure {
   const _$_LoadFailure(this.failure);
 

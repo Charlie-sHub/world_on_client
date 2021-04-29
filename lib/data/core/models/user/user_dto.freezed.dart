@@ -573,33 +573,31 @@ class __$UserDtoCopyWithImpl<$Res> extends _$UserDtoCopyWithImpl<$Res> implement
   }
 }
 
-@JsonSerializable()
-
 /// @nodoc
+@JsonSerializable()
 class _$_UserDto extends _UserDto {
-  const _$_UserDto(
-      {required this.id,
-      required this.name,
-      required this.username,
-      required this.password,
-      required this.email,
-      @ServerTimestampConverter() required this.birthday,
-      required this.description,
-      required this.imageURL,
-      required this.level,
-      required this.experiencePoints,
-      required this.privacy,
-      required this.adminPowers,
-      required this.enabled,
-      @ServerTimestampConverter() required this.lastLogin,
-      @ServerTimestampConverter() required this.creationDate,
-      @ServerTimestampConverter() required this.modificationDate,
-      required this.options,
-      required this.blockedUsersIds,
-      required this.followedUsersIds,
-      required this.interestsIds,
-      required this.achievementsIds,
-      required this.experiencesDoneIds,
+  const _$_UserDto({required this.id,
+    required this.name,
+    required this.username,
+    required this.password,
+    required this.email,
+    @ServerTimestampConverter() required this.birthday,
+    required this.description,
+    required this.imageURL,
+    required this.level,
+    required this.experiencePoints,
+    required this.privacy,
+    required this.adminPowers,
+    required this.enabled,
+    @ServerTimestampConverter() required this.lastLogin,
+    @ServerTimestampConverter() required this.creationDate,
+    @ServerTimestampConverter() required this.modificationDate,
+    required this.options,
+    required this.blockedUsersIds,
+    required this.followedUsersIds,
+    required this.interestsIds,
+    required this.achievementsIds,
+    required this.experiencesDoneIds,
       required this.experiencesLikedIds,
       required this.experiencesToDoIds,
       required this.devices,
@@ -677,16 +675,16 @@ class _$_UserDto extends _UserDto {
   final int followersAmount;
   @override
   final PromotionPlanDto promotionPlan;
-
+  
   @override
   String toString() {
     return 'UserDto(id: $id, name: $name, username: $username, password: $password, email: $email, birthday: $birthday, description: $description, imageURL: $imageURL, level: $level, experiencePoints: $experiencePoints, privacy: $privacy, adminPowers: $adminPowers, enabled: $enabled, lastLogin: $lastLogin, creationDate: $creationDate, modificationDate: $modificationDate, options: $options, blockedUsersIds: $blockedUsersIds, followedUsersIds: $followedUsersIds, interestsIds: $interestsIds, achievementsIds: $achievementsIds, experiencesDoneIds: $experiencesDoneIds, experiencesLikedIds: $experiencesLikedIds, experiencesToDoIds: $experiencesToDoIds, devices: $devices, systems: $systems, items: $items, coins: $coins, followersAmount: $followersAmount, promotionPlan: $promotionPlan)';
   }
-
+  
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _UserDto &&
+      (other is _UserDto &&
             (identical(other.id, id) || const DeepCollectionEquality().equals(other.id, id)) &&
             (identical(other.name, name) || const DeepCollectionEquality().equals(other.name, name)) &&
             (identical(other.username, username) || const DeepCollectionEquality().equals(other.username, username)) &&
@@ -712,47 +710,47 @@ class _$_UserDto extends _UserDto {
             (identical(other.experiencesLikedIds, experiencesLikedIds) || const DeepCollectionEquality().equals(other.experiencesLikedIds, experiencesLikedIds)) &&
             (identical(other.experiencesToDoIds, experiencesToDoIds) || const DeepCollectionEquality().equals(other.experiencesToDoIds, experiencesToDoIds)) &&
             (identical(other.devices, devices) || const DeepCollectionEquality().equals(other.devices, devices)) &&
-            (identical(other.systems, systems) || const DeepCollectionEquality().equals(other.systems, systems)) &&
-            (identical(other.items, items) || const DeepCollectionEquality().equals(other.items, items)) &&
-            (identical(other.coins, coins) || const DeepCollectionEquality().equals(other.coins, coins)) &&
-            (identical(other.followersAmount, followersAmount) || const DeepCollectionEquality().equals(other.followersAmount, followersAmount)) &&
-            (identical(other.promotionPlan, promotionPlan) || const DeepCollectionEquality().equals(other.promotionPlan, promotionPlan)));
+        (identical(other.systems, systems) || const DeepCollectionEquality().equals(other.systems, systems)) &&
+        (identical(other.items, items) || const DeepCollectionEquality().equals(other.items, items)) &&
+        (identical(other.coins, coins) || const DeepCollectionEquality().equals(other.coins, coins)) &&
+        (identical(other.followersAmount, followersAmount) || const DeepCollectionEquality().equals(other.followersAmount, followersAmount)) &&
+        (identical(other.promotionPlan, promotionPlan) || const DeepCollectionEquality().equals(other.promotionPlan, promotionPlan)));
   }
-
+  
   @override
   int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(id) ^
-      const DeepCollectionEquality().hash(name) ^
-      const DeepCollectionEquality().hash(username) ^
-      const DeepCollectionEquality().hash(password) ^
-      const DeepCollectionEquality().hash(email) ^
-      const DeepCollectionEquality().hash(birthday) ^
-      const DeepCollectionEquality().hash(description) ^
-      const DeepCollectionEquality().hash(imageURL) ^
-      const DeepCollectionEquality().hash(level) ^
-      const DeepCollectionEquality().hash(experiencePoints) ^
-      const DeepCollectionEquality().hash(privacy) ^
-      const DeepCollectionEquality().hash(adminPowers) ^
-      const DeepCollectionEquality().hash(enabled) ^
-      const DeepCollectionEquality().hash(lastLogin) ^
-      const DeepCollectionEquality().hash(creationDate) ^
-      const DeepCollectionEquality().hash(modificationDate) ^
-      const DeepCollectionEquality().hash(options) ^
-      const DeepCollectionEquality().hash(blockedUsersIds) ^
-      const DeepCollectionEquality().hash(followedUsersIds) ^
-      const DeepCollectionEquality().hash(interestsIds) ^
-      const DeepCollectionEquality().hash(achievementsIds) ^
-      const DeepCollectionEquality().hash(experiencesDoneIds) ^
-      const DeepCollectionEquality().hash(experiencesLikedIds) ^
-      const DeepCollectionEquality().hash(experiencesToDoIds) ^
-      const DeepCollectionEquality().hash(devices) ^
-      const DeepCollectionEquality().hash(systems) ^
-      const DeepCollectionEquality().hash(items) ^
-      const DeepCollectionEquality().hash(coins) ^
-      const DeepCollectionEquality().hash(followersAmount) ^
-      const DeepCollectionEquality().hash(promotionPlan);
-
+    runtimeType.hashCode ^
+    const DeepCollectionEquality().hash(id) ^
+    const DeepCollectionEquality().hash(name) ^
+    const DeepCollectionEquality().hash(username) ^
+    const DeepCollectionEquality().hash(password) ^
+    const DeepCollectionEquality().hash(email) ^
+    const DeepCollectionEquality().hash(birthday) ^
+    const DeepCollectionEquality().hash(description) ^
+    const DeepCollectionEquality().hash(imageURL) ^
+    const DeepCollectionEquality().hash(level) ^
+    const DeepCollectionEquality().hash(experiencePoints) ^
+    const DeepCollectionEquality().hash(privacy) ^
+    const DeepCollectionEquality().hash(adminPowers) ^
+    const DeepCollectionEquality().hash(enabled) ^
+    const DeepCollectionEquality().hash(lastLogin) ^
+    const DeepCollectionEquality().hash(creationDate) ^
+    const DeepCollectionEquality().hash(modificationDate) ^
+    const DeepCollectionEquality().hash(options) ^
+    const DeepCollectionEquality().hash(blockedUsersIds) ^
+    const DeepCollectionEquality().hash(followedUsersIds) ^
+    const DeepCollectionEquality().hash(interestsIds) ^
+    const DeepCollectionEquality().hash(achievementsIds) ^
+    const DeepCollectionEquality().hash(experiencesDoneIds) ^
+    const DeepCollectionEquality().hash(experiencesLikedIds) ^
+    const DeepCollectionEquality().hash(experiencesToDoIds) ^
+    const DeepCollectionEquality().hash(devices) ^
+    const DeepCollectionEquality().hash(systems) ^
+    const DeepCollectionEquality().hash(items) ^
+    const DeepCollectionEquality().hash(coins) ^
+    const DeepCollectionEquality().hash(followersAmount) ^
+    const DeepCollectionEquality().hash(promotionPlan);
+  
   @JsonKey(ignore: true)
   @override
   _$UserDtoCopyWith<_UserDto> get copyWith => __$UserDtoCopyWithImpl<_UserDto>(this, _$identity);

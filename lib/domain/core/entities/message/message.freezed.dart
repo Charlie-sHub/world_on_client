@@ -162,6 +162,7 @@ class __$MessageCopyWithImpl<$Res> extends _$MessageCopyWithImpl<$Res> implement
 }
 
 /// @nodoc
+
 class _$_Message extends _Message {
   const _$_Message({required this.id, required this.sender, required this.receiver, required this.content, required this.creationDate}) : super._();
 

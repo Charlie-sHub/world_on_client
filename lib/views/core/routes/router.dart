@@ -10,7 +10,6 @@ import 'package:worldon/views/store/pages/store_page.dart';
 import 'package:worldon/views/tag_management/pages/tag_management_page.dart';
 
 @MaterialAutoRouter(
-  generateNavigationHelperExtension: true,
   routes: <AutoRoute>[
     MaterialRoute(
       page: SplashPage,

@@ -203,6 +203,7 @@ class __$InitializedCopyWithImpl<$Res> extends _$ExperienceEditingFormEventCopyW
 }
 
 /// @nodoc
+
 class _$_Initialized implements _Initialized {
   const _$_Initialized(this.experience);
 
@@ -344,6 +345,7 @@ class __$TitleChangedCopyWithImpl<$Res> extends _$ExperienceEditingFormEventCopy
 }
 
 /// @nodoc
+
 class _$_TitleChanged implements _TitleChanged {
   const _$_TitleChanged(this.title);
 
@@ -485,6 +487,7 @@ class __$DescriptionChangedCopyWithImpl<$Res> extends _$ExperienceEditingFormEve
 }
 
 /// @nodoc
+
 class _$_DescriptionChanged implements _DescriptionChanged {
   const _$_DescriptionChanged(this.description);
 
@@ -626,6 +629,7 @@ class __$ImagesChangedCopyWithImpl<$Res> extends _$ExperienceEditingFormEventCop
 }
 
 /// @nodoc
+
 class _$_ImagesChanged implements _ImagesChanged {
   const _$_ImagesChanged(this.imageAssets);
 
@@ -767,6 +771,7 @@ class __$ImageDeletedCopyWithImpl<$Res> extends _$ExperienceEditingFormEventCopy
 }
 
 /// @nodoc
+
 class _$_ImageDeleted implements _ImageDeleted {
   const _$_ImageDeleted(this.imageURL);
 
@@ -913,6 +918,7 @@ class __$CoordinatesChangedCopyWithImpl<$Res> extends _$ExperienceEditingFormEve
 }
 
 /// @nodoc
+
 class _$_CoordinatesChanged implements _CoordinatesChanged {
   const _$_CoordinatesChanged({required this.latitude, required this.longitude});
 
@@ -1061,6 +1067,7 @@ class __$DifficultyChangedCopyWithImpl<$Res> extends _$ExperienceEditingFormEven
 }
 
 /// @nodoc
+
 class _$_DifficultyChanged implements _DifficultyChanged {
   const _$_DifficultyChanged(this.difficulty);
 
@@ -1202,6 +1209,7 @@ class __$ObjectivesChangedCopyWithImpl<$Res> extends _$ExperienceEditingFormEven
 }
 
 /// @nodoc
+
 class _$_ObjectivesChanged implements _ObjectivesChanged {
   const _$_ObjectivesChanged(this.objectives);
 
@@ -1343,6 +1351,7 @@ class __$RewardsChangedCopyWithImpl<$Res> extends _$ExperienceEditingFormEventCo
 }
 
 /// @nodoc
+
 class _$_RewardsChanged implements _RewardsChanged {
   const _$_RewardsChanged(this.rewards);
 
@@ -1484,6 +1493,7 @@ class __$TagsChangedCopyWithImpl<$Res> extends _$ExperienceEditingFormEventCopyW
 }
 
 /// @nodoc
+
 class _$_TagsChanged implements _TagsChanged {
   const _$_TagsChanged(this.tags);
 
@@ -1611,6 +1621,7 @@ class __$SubmittedCopyWithImpl<$Res> extends _$ExperienceEditingFormEventCopyWit
 }
 
 /// @nodoc
+
 class _$_Submitted implements _Submitted {
   const _$_Submitted();
 
@@ -1857,6 +1868,7 @@ class __$ExperienceEditingFormStateCopyWithImpl<$Res> extends _$ExperienceEditin
 }
 
 /// @nodoc
+
 class _$_ExperienceEditingFormState implements _ExperienceEditingFormState {
   const _$_ExperienceEditingFormState({required this.experience, required this.showErrorMessages, required this.isSubmitting, required this.loadedCoordinates, required this.failureOrSuccessOption});
 

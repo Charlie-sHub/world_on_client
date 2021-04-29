@@ -106,6 +106,7 @@ class __$SubmittedCopyWithImpl<$Res> extends _$SearchExperiencesByDifficultyEven
 }
 
 /// @nodoc
+
 class _$_Submitted implements _Submitted {
   const _$_Submitted(this.difficulty);
 
@@ -211,6 +212,7 @@ class __$ResultsReceivedCopyWithImpl<$Res> extends _$SearchExperiencesByDifficul
 }
 
 /// @nodoc
+
 class _$_ResultsReceived implements _ResultsReceived {
   const _$_ResultsReceived(this.failureOrExperiences);
 
@@ -395,6 +397,7 @@ class __$InitialCopyWithImpl<$Res> extends _$SearchExperiencesByDifficultyStateC
 }
 
 /// @nodoc
+
 class _$_Initial implements _Initial {
   const _$_Initial();
 
@@ -486,6 +489,7 @@ class __$SearchInProgressCopyWithImpl<$Res> extends _$SearchExperiencesByDifficu
 }
 
 /// @nodoc
+
 class _$_SearchInProgress implements _SearchInProgress {
   const _$_SearchInProgress();
 
@@ -591,6 +595,7 @@ class __$SearchSuccessCopyWithImpl<$Res> extends _$SearchExperiencesByDifficulty
 }
 
 /// @nodoc
+
 class _$_SearchSuccess implements _SearchSuccess {
   const _$_SearchSuccess(this.experiencesFound);
 
@@ -718,6 +723,7 @@ class __$SearchFailureCopyWithImpl<$Res> extends _$SearchExperiencesByDifficulty
 }
 
 /// @nodoc
+
 class _$_SearchFailure implements _SearchFailure {
   const _$_SearchFailure(this.failure);
 
@@ -844,6 +850,7 @@ class __$ValueFailureCopyWithImpl<$Res> extends _$SearchExperiencesByDifficultyS
 }
 
 /// @nodoc
+
 class _$_ValueFailure implements _ValueFailure {
   const _$_ValueFailure(this.failure);
 

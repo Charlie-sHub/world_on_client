@@ -279,6 +279,14 @@ class ProductionExperienceNavigationRepository implements ExperienceNavigationRe
                     _a.creationDate.getOrCrash(),
                   ),
             );
+            for (final _experience in _filteredExperienceList) {
+              final _creator = _experience.creator;
+              _firestore.userCollection.doc(_creator.id.getOrCrash()).update(
+                {
+                  "${UserFields.promotionPlan}.timesSeen": FieldValue.increment(1),
+                },
+              );
+            }
             if (_filteredExperienceList.isNotEmpty) {
               return right<Failure, KtList<Experience>>(
                 _filteredExperienceList.toImmutableList(),

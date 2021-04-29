@@ -148,9 +148,8 @@ class __$ObjectiveDtoCopyWithImpl<$Res> extends _$ObjectiveDtoCopyWithImpl<$Res>
   }
 }
 
-@JsonSerializable()
-
 /// @nodoc
+@JsonSerializable()
 class _$_ObjectiveDto extends _ObjectiveDto {
   const _$_ObjectiveDto({required this.id, required this.description, required this.coordinates, required this.imageURL}) : super._();
 

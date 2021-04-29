@@ -79,6 +79,7 @@ class __$InitializedCopyWithImpl<$Res> extends _$UserProfileButtonWatcherEventCo
 }
 
 /// @nodoc
+
 class _$_Initialized implements _Initialized {
   const _$_Initialized();
 
@@ -233,6 +234,7 @@ class __$InitialCopyWithImpl<$Res> extends _$UserProfileButtonWatcherStateCopyWi
 }
 
 /// @nodoc
+
 class _$_Initial implements _Initial {
   const _$_Initial();
 
@@ -320,6 +322,7 @@ class __$ActionInProgressCopyWithImpl<$Res> extends _$UserProfileButtonWatcherSt
 }
 
 /// @nodoc
+
 class _$_ActionInProgress implements _ActionInProgress {
   const _$_ActionInProgress();
 
@@ -421,6 +424,7 @@ class __$LoadSuccessCopyWithImpl<$Res> extends _$UserProfileButtonWatcherStateCo
 }
 
 /// @nodoc
+
 class _$_LoadSuccess implements _LoadSuccess {
   const _$_LoadSuccess(this.imageUrl);
 
@@ -520,6 +524,7 @@ class __$FailureCopyWithImpl<$Res> extends _$UserProfileButtonWatcherStateCopyWi
 }
 
 /// @nodoc
+
 class _$_Failure implements _Failure {
   const _$_Failure();
 

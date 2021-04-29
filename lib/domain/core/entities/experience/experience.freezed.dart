@@ -396,6 +396,7 @@ class __$ExperienceCopyWithImpl<$Res> extends _$ExperienceCopyWithImpl<$Res> imp
 }
 
 /// @nodoc
+
 class _$_Experience extends _Experience {
   const _$_Experience(
       {required this.id,

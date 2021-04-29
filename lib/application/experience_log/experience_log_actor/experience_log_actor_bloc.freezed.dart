@@ -115,6 +115,7 @@ class __$ExperienceDismissedCopyWithImpl<$Res> extends _$ExperienceLogActorEvent
 }
 
 /// @nodoc
+
 class _$_ExperienceDismissed implements _ExperienceDismissed {
   const _$_ExperienceDismissed(this.experienceId);
 
@@ -283,6 +284,7 @@ class __$InitialCopyWithImpl<$Res> extends _$ExperienceLogActorStateCopyWithImpl
 }
 
 /// @nodoc
+
 class _$_Initial implements _Initial {
   const _$_Initial();
 
@@ -370,6 +372,7 @@ class __$ActionInProgressCopyWithImpl<$Res> extends _$ExperienceLogActorStateCop
 }
 
 /// @nodoc
+
 class _$_ActionInProgress implements _ActionInProgress {
   const _$_ActionInProgress();
 
@@ -457,6 +460,7 @@ class __$DismissalSuccessCopyWithImpl<$Res> extends _$ExperienceLogActorStateCop
 }
 
 /// @nodoc
+
 class _$_DismissalSuccess implements _DismissalSuccess {
   const _$_DismissalSuccess();
 
@@ -567,6 +571,7 @@ class __$DismissalFailureCopyWithImpl<$Res> extends _$ExperienceLogActorStateCop
 }
 
 /// @nodoc
+
 class _$_DismissalFailure implements _DismissalFailure {
   const _$_DismissalFailure(this.failure);
 

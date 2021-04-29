@@ -114,6 +114,7 @@ class __$WatchAchievementsStartedCopyWithImpl<$Res> extends _$ProfileAchievement
 }
 
 /// @nodoc
+
 class _$_WatchAchievementsStarted implements _WatchAchievementsStarted {
   const _$_WatchAchievementsStarted(this.user);
 
@@ -219,6 +220,7 @@ class __$ResultsReceivedCopyWithImpl<$Res> extends _$ProfileAchievementsWatcherE
 }
 
 /// @nodoc
+
 class _$_ResultsReceived implements _ResultsReceived {
   const _$_ResultsReceived(this.failureOrAchievements);
 
@@ -392,6 +394,7 @@ class __$InitialCopyWithImpl<$Res> extends _$ProfileAchievementsWatcherStateCopy
 }
 
 /// @nodoc
+
 class _$_Initial implements _Initial {
   const _$_Initial();
 
@@ -479,6 +482,7 @@ class __$LoadInProgressCopyWithImpl<$Res> extends _$ProfileAchievementsWatcherSt
 }
 
 /// @nodoc
+
 class _$_LoadInProgress implements _LoadInProgress {
   const _$_LoadInProgress();
 
@@ -580,6 +584,7 @@ class __$LoadSuccessCopyWithImpl<$Res> extends _$ProfileAchievementsWatcherState
 }
 
 /// @nodoc
+
 class _$_LoadSuccess implements _LoadSuccess {
   const _$_LoadSuccess(this.achievements);
 
@@ -702,6 +707,7 @@ class __$LoadFailureCopyWithImpl<$Res> extends _$ProfileAchievementsWatcherState
 }
 
 /// @nodoc
+
 class _$_LoadFailure implements _LoadFailure {
   const _$_LoadFailure(this.failure);
 

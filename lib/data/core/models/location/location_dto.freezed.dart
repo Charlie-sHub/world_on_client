@@ -148,9 +148,8 @@ class __$LocationDtoCopyWithImpl<$Res> extends _$LocationDtoCopyWithImpl<$Res> i
   }
 }
 
-@JsonSerializable()
-
 /// @nodoc
+@JsonSerializable()
 class _$_LocationDto extends _LocationDto {
   const _$_LocationDto({required this.id, required this.city, required this.country, required this.postalCode, required this.experiences}) : super._();
 

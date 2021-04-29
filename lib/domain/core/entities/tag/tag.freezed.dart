@@ -139,6 +139,7 @@ class __$TagCopyWithImpl<$Res> extends _$TagCopyWithImpl<$Res> implements _$TagC
 }
 
 /// @nodoc
+
 class _$_Tag extends _Tag {
   const _$_Tag({required this.id, required this.name, required this.creatorId, required this.creationDate, required this.modificationDate}) : super._();
 
@@ -177,7 +178,7 @@ class _$_Tag extends _Tag {
       const DeepCollectionEquality().hash(creatorId) ^
       const DeepCollectionEquality().hash(creationDate) ^
       const DeepCollectionEquality().hash(modificationDate);
-  
+
   @JsonKey(ignore: true)
   @override
   _$TagCopyWith<_Tag> get copyWith => __$TagCopyWithImpl<_Tag>(this, _$identity);

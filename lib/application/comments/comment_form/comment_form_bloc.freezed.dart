@@ -119,6 +119,7 @@ class __$InitializedCopyWithImpl<$Res> extends _$CommentFormEventCopyWithImpl<$R
 }
 
 /// @nodoc
+
 class _$_Initialized implements _Initialized {
   const _$_Initialized({required this.commentOption, required this.experienceId});
 
@@ -235,6 +236,7 @@ class __$ContentChangedCopyWithImpl<$Res> extends _$CommentFormEventCopyWithImpl
 }
 
 /// @nodoc
+
 class _$_ContentChanged implements _ContentChanged {
   const _$_ContentChanged(this.content);
 
@@ -330,6 +332,7 @@ class __$SubmittedCopyWithImpl<$Res> extends _$CommentFormEventCopyWithImpl<$Res
 }
 
 /// @nodoc
+
 class _$_Submitted implements _Submitted {
   const _$_Submitted();
 
@@ -544,6 +547,7 @@ class __$CommentFormStateCopyWithImpl<$Res> extends _$CommentFormStateCopyWithIm
 }
 
 /// @nodoc
+
 class _$_CommentFormState implements _CommentFormState {
   const _$_CommentFormState({required this.comment, required this.showErrorMessages, required this.isEditing, required this.isSubmitting, required this.failureOrSuccessOption});
 

@@ -184,5 +184,16 @@
   "created": "Creadas",
   "done": "Hechas",
   "liked": "Gustadas",
-  "objectiveLocalization": "Localizacion del objetivo"
+  "objectiveLocalization": "Localizacion del objetivo",
+  "promotionPlans": "Planes promocionales",
+  "notFoundErrorPromotionPlans": "No se encontraron planes promocionales",
+  "currentPlan": "Plan Actual",
+  "purchaseDate": "Fecha de compra",
+  "validUntil": "Valido hasta",
+  "duration": "Duracion en dias",
+  "validUntilIfBoughtToday": "Valido hasta (si se obtiene hoy)",
+  "yourPromotionsHaveBeenSeen": "Tus promociones se han visto:",
+  "times": "veces",
+  "noActivePlan": "No tienes un plan promocional activo",
+  "unAvailableStore": "La compra no es posible para ti"
 }

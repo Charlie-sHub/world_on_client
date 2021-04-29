@@ -17,35 +17,33 @@ class UserCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.all(5),
-      child: Card(
-        child: Column(
-          children: <Widget>[
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: <Widget>[
-                UserImage(user: user),
-                NameUsernameDisplay(user: user),
-                FollowUnfollowButtonBuilder(user: user),
-                // BlockUnblockButtonBuilder(user: user),
-                const SizedBox(width: 7),
-              ],
-            ),
-            Padding(
-              padding: const EdgeInsets.all(5),
-              child: UserBio(user: user),
-            ),
-            Padding(
-              padding: const EdgeInsets.all(5),
-              child: FollowersFollowingCounters(user: user),
-            ),
-            Padding(
-              padding: const EdgeInsets.all(5),
-              child: UserExperienceInfo(user: user),
-            ),
-          ],
-        ),
+    return Card(
+      margin: const EdgeInsets.all(5),
+      child: Column(
+        children: <Widget>[
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: <Widget>[
+              UserImage(user: user),
+              NameUsernameDisplay(user: user),
+              FollowUnfollowButtonBuilder(user: user),
+              // BlockUnblockButtonBuilder(user: user),
+              const SizedBox(width: 7),
+            ],
+          ),
+          Padding(
+            padding: const EdgeInsets.all(5),
+            child: UserBio(user: user),
+          ),
+          Padding(
+            padding: const EdgeInsets.all(5),
+            child: FollowersFollowingCounters(user: user),
+          ),
+          Padding(
+            padding: const EdgeInsets.all(5),
+            child: UserExperienceInfo(user: user),
+          ),
+        ],
       ),
     );
   }

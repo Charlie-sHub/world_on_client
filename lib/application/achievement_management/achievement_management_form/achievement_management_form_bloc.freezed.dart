@@ -153,6 +153,7 @@ class __$InitializedCopyWithImpl<$Res> extends _$AchievementManagementFormEventC
 }
 
 /// @nodoc
+
 class _$_Initialized implements _Initialized {
   const _$_Initialized(this.achievementOption);
 
@@ -279,6 +280,7 @@ class __$NameChangedCopyWithImpl<$Res> extends _$AchievementManagementFormEventC
 }
 
 /// @nodoc
+
 class _$_NameChanged implements _NameChanged {
   const _$_NameChanged(this.name);
 
@@ -404,6 +406,7 @@ class __$DescriptionChangedCopyWithImpl<$Res> extends _$AchievementManagementFor
 }
 
 /// @nodoc
+
 class _$_DescriptionChanged implements _DescriptionChanged {
   const _$_DescriptionChanged(this.description);
 
@@ -529,6 +532,7 @@ class __$ExperiencePointsChangedCopyWithImpl<$Res> extends _$AchievementManageme
 }
 
 /// @nodoc
+
 class _$_ExperiencePointsChanged implements _ExperiencePointsChanged {
   const _$_ExperiencePointsChanged(this.experiencePoints);
 
@@ -655,6 +659,7 @@ class __$TagsChangedCopyWithImpl<$Res> extends _$AchievementManagementFormEventC
 }
 
 /// @nodoc
+
 class _$_TagsChanged implements _TagsChanged {
   const _$_TagsChanged(this.tags);
 
@@ -780,6 +785,7 @@ class __$ImageChangedCopyWithImpl<$Res> extends _$AchievementManagementFormEvent
 }
 
 /// @nodoc
+
 class _$_ImageChanged implements _ImageChanged {
   const _$_ImageChanged(this.image);
 
@@ -891,6 +897,7 @@ class __$SubmittedCopyWithImpl<$Res> extends _$AchievementManagementFormEventCop
 }
 
 /// @nodoc
+
 class _$_Submitted implements _Submitted {
   const _$_Submitted();
 
@@ -1122,6 +1129,7 @@ class __$AchievementManagementFormStateCopyWithImpl<$Res> extends _$AchievementM
 }
 
 /// @nodoc
+
 class _$_AchievementManagementFormState implements _AchievementManagementFormState {
   const _$_AchievementManagementFormState({required this.achievement, required this.showErrorMessages, required this.isEditing, required this.isSubmitting, required this.failureOrSuccessOption});
 

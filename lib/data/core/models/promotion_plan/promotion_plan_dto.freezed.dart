@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides
 
-part of 'promotion_plan.dart';
+part of 'promotion_plan_dto.dart';
 
 // **************************************************************************
 // FreezedGenerator
@@ -12,17 +12,21 @@ T _$identity<T>(T value) => value;
 final _privateConstructorUsedError = UnsupportedError(
     'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
+PromotionPlanDto _$PromotionPlanDtoFromJson(Map<String, dynamic> json) {
+  return _PromotionPlan.fromJson(json);
+}
+
 /// @nodoc
-class _$PromotionPlanTearOff {
-  const _$PromotionPlanTearOff();
+class _$PromotionPlanDtoTearOff {
+  const _$PromotionPlanDtoTearOff();
 
   _PromotionPlan call(
-      {required UniqueId id,
-      required Name name,
-      required EntityDescription description,
+      {required String id,
+      required String name,
+      required String description,
       required PromotionPlanCode code,
       required int valueInEuros,
-      required DateTime boughtDate,
+      @ServerTimestampConverter() required DateTime boughtDate,
       required int timesSeen}) {
     return _PromotionPlan(
       id: id,
@@ -34,42 +38,53 @@ class _$PromotionPlanTearOff {
       timesSeen: timesSeen,
     );
   }
+
+  PromotionPlanDto fromJson(Map<String, Object> json) {
+    return PromotionPlanDto.fromJson(json);
+  }
 }
 
 /// @nodoc
-const $PromotionPlan = _$PromotionPlanTearOff();
+const $PromotionPlanDto = _$PromotionPlanDtoTearOff();
 
 /// @nodoc
-mixin _$PromotionPlan {
-  UniqueId get id => throw _privateConstructorUsedError;
-  Name get name => throw _privateConstructorUsedError;
-  EntityDescription get description => throw _privateConstructorUsedError;
+mixin _$PromotionPlanDto {
+  String get id => throw _privateConstructorUsedError;
+
+  String get name => throw _privateConstructorUsedError;
+
+  String get description => throw _privateConstructorUsedError;
+
   PromotionPlanCode get code => throw _privateConstructorUsedError;
+
   int get valueInEuros => throw _privateConstructorUsedError;
 
+  @ServerTimestampConverter()
   DateTime get boughtDate => throw _privateConstructorUsedError;
 
   int get timesSeen => throw _privateConstructorUsedError;
 
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+
   @JsonKey(ignore: true)
-  $PromotionPlanCopyWith<PromotionPlan> get copyWith => throw _privateConstructorUsedError;
+  $PromotionPlanDtoCopyWith<PromotionPlanDto> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $PromotionPlanCopyWith<$Res> {
-  factory $PromotionPlanCopyWith(PromotionPlan value, $Res Function(PromotionPlan) then) = _$PromotionPlanCopyWithImpl<$Res>;
+abstract class $PromotionPlanDtoCopyWith<$Res> {
+  factory $PromotionPlanDtoCopyWith(PromotionPlanDto value, $Res Function(PromotionPlanDto) then) = _$PromotionPlanDtoCopyWithImpl<$Res>;
 
-  $Res call({UniqueId id, Name name, EntityDescription description, PromotionPlanCode code, int valueInEuros, DateTime boughtDate, int timesSeen});
+  $Res call({String id, String name, String description, PromotionPlanCode code, int valueInEuros, @ServerTimestampConverter() DateTime boughtDate, int timesSeen});
 }
 
 /// @nodoc
-class _$PromotionPlanCopyWithImpl<$Res> implements $PromotionPlanCopyWith<$Res> {
-  _$PromotionPlanCopyWithImpl(this._value, this._then);
+class _$PromotionPlanDtoCopyWithImpl<$Res> implements $PromotionPlanDtoCopyWith<$Res> {
+  _$PromotionPlanDtoCopyWithImpl(this._value, this._then);
 
-  final PromotionPlan _value;
+  final PromotionPlanDto _value;
 
   // ignore: unused_field
-  final $Res Function(PromotionPlan) _then;
+  final $Res Function(PromotionPlanDto) _then;
 
   @override
   $Res call({
@@ -85,15 +100,15 @@ class _$PromotionPlanCopyWithImpl<$Res> implements $PromotionPlanCopyWith<$Res> 
       id: id == freezed
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
-              as UniqueId,
+              as String,
       name: name == freezed
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
-              as Name,
+              as String,
       description: description == freezed
           ? _value.description
           : description // ignore: cast_nullable_to_non_nullable
-              as EntityDescription,
+              as String,
       code: code == freezed
           ? _value.code
           : code // ignore: cast_nullable_to_non_nullable
@@ -115,15 +130,15 @@ class _$PromotionPlanCopyWithImpl<$Res> implements $PromotionPlanCopyWith<$Res> 
 }
 
 /// @nodoc
-abstract class _$PromotionPlanCopyWith<$Res> implements $PromotionPlanCopyWith<$Res> {
+abstract class _$PromotionPlanCopyWith<$Res> implements $PromotionPlanDtoCopyWith<$Res> {
   factory _$PromotionPlanCopyWith(_PromotionPlan value, $Res Function(_PromotionPlan) then) = __$PromotionPlanCopyWithImpl<$Res>;
 
   @override
-  $Res call({UniqueId id, Name name, EntityDescription description, PromotionPlanCode code, int valueInEuros, DateTime boughtDate, int timesSeen});
+  $Res call({String id, String name, String description, PromotionPlanCode code, int valueInEuros, @ServerTimestampConverter() DateTime boughtDate, int timesSeen});
 }
 
 /// @nodoc
-class __$PromotionPlanCopyWithImpl<$Res> extends _$PromotionPlanCopyWithImpl<$Res> implements _$PromotionPlanCopyWith<$Res> {
+class __$PromotionPlanCopyWithImpl<$Res> extends _$PromotionPlanDtoCopyWithImpl<$Res> implements _$PromotionPlanCopyWith<$Res> {
   __$PromotionPlanCopyWithImpl(_PromotionPlan _value, $Res Function(_PromotionPlan) _then) : super(_value, (v) => _then(v as _PromotionPlan));
 
   @override
@@ -143,15 +158,15 @@ class __$PromotionPlanCopyWithImpl<$Res> extends _$PromotionPlanCopyWithImpl<$Re
       id: id == freezed
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
-              as UniqueId,
+              as String,
       name: name == freezed
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
-              as Name,
+              as String,
       description: description == freezed
           ? _value.description
           : description // ignore: cast_nullable_to_non_nullable
-              as EntityDescription,
+              as String,
       code: code == freezed
           ? _value.code
           : code // ignore: cast_nullable_to_non_nullable
@@ -173,29 +188,33 @@ class __$PromotionPlanCopyWithImpl<$Res> extends _$PromotionPlanCopyWithImpl<$Re
 }
 
 /// @nodoc
-
+@JsonSerializable()
 class _$_PromotionPlan extends _PromotionPlan {
-  const _$_PromotionPlan({required this.id, required this.name, required this.description, required this.code, required this.valueInEuros, required this.boughtDate, required this.timesSeen})
+  const _$_PromotionPlan(
+      {required this.id, required this.name, required this.description, required this.code, required this.valueInEuros, @ServerTimestampConverter() required this.boughtDate, required this.timesSeen})
       : super._();
 
+  factory _$_PromotionPlan.fromJson(Map<String, dynamic> json) => _$_$_PromotionPlanFromJson(json);
+
   @override
-  final UniqueId id;
+  final String id;
   @override
-  final Name name;
+  final String name;
   @override
-  final EntityDescription description;
+  final String description;
   @override
   final PromotionPlanCode code;
   @override
   final int valueInEuros;
   @override
+  @ServerTimestampConverter()
   final DateTime boughtDate;
   @override
   final int timesSeen;
 
   @override
   String toString() {
-    return 'PromotionPlan(id: $id, name: $name, description: $description, code: $code, valueInEuros: $valueInEuros, boughtDate: $boughtDate, timesSeen: $timesSeen)';
+    return 'PromotionPlanDto(id: $id, name: $name, description: $description, code: $code, valueInEuros: $valueInEuros, boughtDate: $boughtDate, timesSeen: $timesSeen)';
   }
 
   @override
@@ -225,27 +244,35 @@ class _$_PromotionPlan extends _PromotionPlan {
   @JsonKey(ignore: true)
   @override
   _$PromotionPlanCopyWith<_PromotionPlan> get copyWith => __$PromotionPlanCopyWithImpl<_PromotionPlan>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$_$_PromotionPlanToJson(this);
+  }
 }
 
-abstract class _PromotionPlan extends PromotionPlan {
+abstract class _PromotionPlan extends PromotionPlanDto {
   const factory _PromotionPlan(
-      {required UniqueId id,
-      required Name name,
-      required EntityDescription description,
+      {required String id,
+      required String name,
+      required String description,
       required PromotionPlanCode code,
       required int valueInEuros,
-      required DateTime boughtDate,
+      @ServerTimestampConverter() required DateTime boughtDate,
       required int timesSeen}) = _$_PromotionPlan;
+
   const _PromotionPlan._() : super._();
 
-  @override
-  UniqueId get id => throw _privateConstructorUsedError;
+  factory _PromotionPlan.fromJson(Map<String, dynamic> json) = _$_PromotionPlan.fromJson;
 
   @override
-  Name get name => throw _privateConstructorUsedError;
+  String get id => throw _privateConstructorUsedError;
 
   @override
-  EntityDescription get description => throw _privateConstructorUsedError;
+  String get name => throw _privateConstructorUsedError;
+
+  @override
+  String get description => throw _privateConstructorUsedError;
 
   @override
   PromotionPlanCode get code => throw _privateConstructorUsedError;
@@ -254,6 +281,7 @@ abstract class _PromotionPlan extends PromotionPlan {
   int get valueInEuros => throw _privateConstructorUsedError;
 
   @override
+  @ServerTimestampConverter()
   DateTime get boughtDate => throw _privateConstructorUsedError;
 
   @override

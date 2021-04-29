@@ -103,6 +103,7 @@ class __$SearchTermChangedCopyWithImpl<$Res> extends _$SearchByNameFormEventCopy
 }
 
 /// @nodoc
+
 class _$_SearchTermChanged implements _SearchTermChanged {
   const _$_SearchTermChanged(this.searchTermString);
 
@@ -195,6 +196,7 @@ class __$SubmittedCopyWithImpl<$Res> extends _$SearchByNameFormEventCopyWithImpl
 }
 
 /// @nodoc
+
 class _$_Submitted implements _Submitted {
   const _$_Submitted();
 
@@ -379,6 +381,7 @@ class __$SearchByNameFormStateCopyWithImpl<$Res> extends _$SearchByNameFormState
 }
 
 /// @nodoc
+
 class _$_SearchByNameFormState implements _SearchByNameFormState {
   const _$_SearchByNameFormState({required this.searchTerm, required this.showErrorMessages, required this.isSubmitting, required this.failureOrSuccessOption});
 
@@ -413,7 +416,7 @@ class _$_SearchByNameFormState implements _SearchByNameFormState {
       const DeepCollectionEquality().hash(showErrorMessages) ^
       const DeepCollectionEquality().hash(isSubmitting) ^
       const DeepCollectionEquality().hash(failureOrSuccessOption);
-  
+
   @JsonKey(ignore: true)
   @override
   _$SearchByNameFormStateCopyWith<_SearchByNameFormState> get copyWith => __$SearchByNameFormStateCopyWithImpl<_SearchByNameFormState>(this, _$identity);

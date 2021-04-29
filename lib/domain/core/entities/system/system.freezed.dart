@@ -127,6 +127,7 @@ class __$SystemCopyWithImpl<$Res> extends _$SystemCopyWithImpl<$Res> implements 
 }
 
 /// @nodoc
+
 class _$_System extends _System {
   const _$_System({required this.id, required this.name, required this.type, required this.company}) : super._();
 
@@ -161,7 +162,7 @@ class _$_System extends _System {
       const DeepCollectionEquality().hash(name) ^
       const DeepCollectionEquality().hash(type) ^
       const DeepCollectionEquality().hash(company);
-  
+
   @JsonKey(ignore: true)
   @override
   _$SystemCopyWith<_System> get copyWith => __$SystemCopyWithImpl<_System>(this, _$identity);

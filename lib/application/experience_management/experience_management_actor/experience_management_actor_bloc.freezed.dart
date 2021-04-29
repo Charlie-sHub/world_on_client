@@ -137,6 +137,7 @@ class __$CheckCreatorCopyWithImpl<$Res> extends _$ExperienceManagementActorEvent
 }
 
 /// @nodoc
+
 class _$_CheckCreator implements _CheckCreator {
   const _$_CheckCreator(this.experience);
 
@@ -248,6 +249,7 @@ class __$DeletedCopyWithImpl<$Res> extends _$ExperienceManagementActorEventCopyW
 }
 
 /// @nodoc
+
 class _$_Deleted implements _Deleted {
   const _$_Deleted(this.experience);
 
@@ -436,6 +438,7 @@ class __$InitialCopyWithImpl<$Res> extends _$ExperienceManagementActorStateCopyW
 }
 
 /// @nodoc
+
 class _$_Initial implements _Initial {
   const _$_Initial();
 
@@ -531,6 +534,7 @@ class __$IsCreatorCopyWithImpl<$Res> extends _$ExperienceManagementActorStateCop
 }
 
 /// @nodoc
+
 class _$_IsCreator implements _IsCreator {
   const _$_IsCreator();
 
@@ -626,6 +630,7 @@ class __$IsNotCreatorCopyWithImpl<$Res> extends _$ExperienceManagementActorState
 }
 
 /// @nodoc
+
 class _$_IsNotCreator implements _IsNotCreator {
   const _$_IsNotCreator();
 
@@ -721,6 +726,7 @@ class __$ActionInProgressCopyWithImpl<$Res> extends _$ExperienceManagementActorS
 }
 
 /// @nodoc
+
 class _$_ActionInProgress implements _ActionInProgress {
   const _$_ActionInProgress();
 
@@ -816,6 +822,7 @@ class __$DeletionSuccessCopyWithImpl<$Res> extends _$ExperienceManagementActorSt
 }
 
 /// @nodoc
+
 class _$_DeletionSuccess implements _DeletionSuccess {
   const _$_DeletionSuccess();
 
@@ -934,6 +941,7 @@ class __$DeletionFailureCopyWithImpl<$Res> extends _$ExperienceManagementActorSt
 }
 
 /// @nodoc
+
 class _$_DeletionFailure implements _DeletionFailure {
   const _$_DeletionFailure(this.failure);
 

@@ -79,6 +79,7 @@ class __$LoadedUserCopyWithImpl<$Res> extends _$LoadUserEventCopyWithImpl<$Res> 
 }
 
 /// @nodoc
+
 class _$_LoadedUser implements _LoadedUser {
   const _$_LoadedUser();
 
@@ -235,6 +236,7 @@ class __$InitialCopyWithImpl<$Res> extends _$LoadUserStateCopyWithImpl<$Res> imp
 }
 
 /// @nodoc
+
 class _$_Initial implements _Initial {
   const _$_Initial();
 
@@ -322,6 +324,7 @@ class __$ActionInProgressCopyWithImpl<$Res> extends _$LoadUserStateCopyWithImpl<
 }
 
 /// @nodoc
+
 class _$_ActionInProgress implements _ActionInProgress {
   const _$_ActionInProgress();
 
@@ -432,6 +435,7 @@ class __$LoadSuccessCopyWithImpl<$Res> extends _$LoadUserStateCopyWithImpl<$Res>
 }
 
 /// @nodoc
+
 class _$_LoadSuccess implements _LoadSuccess {
   const _$_LoadSuccess(this.user);
 
@@ -554,6 +558,7 @@ class __$LoadFailureCopyWithImpl<$Res> extends _$LoadUserStateCopyWithImpl<$Res>
 }
 
 /// @nodoc
+
 class _$_LoadFailure implements _LoadFailure {
   const _$_LoadFailure(this.failure);
 

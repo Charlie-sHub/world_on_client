@@ -221,6 +221,7 @@ class _$NullInputCopyWithImpl<T, $Res> extends _$ValueFailureCopyWithImpl<T, $Re
 }
 
 /// @nodoc
+
 class _$NullInput<T> implements NullInput<T> {
   const _$NullInput();
 
@@ -366,6 +367,7 @@ class _$InvalidDateCopyWithImpl<T, $Res> extends _$ValueFailureCopyWithImpl<T, $
 }
 
 /// @nodoc
+
 class _$InvalidDate<T> implements InvalidDate<T> {
   const _$InvalidDate({required this.failedValue});
 
@@ -523,6 +525,7 @@ class _$InvalidEmailCopyWithImpl<T, $Res> extends _$ValueFailureCopyWithImpl<T, 
 }
 
 /// @nodoc
+
 class _$InvalidEmail<T> implements InvalidEmail<T> {
   const _$InvalidEmail({required this.failedValue});
 
@@ -680,6 +683,7 @@ class _$InvalidPasswordCopyWithImpl<T, $Res> extends _$ValueFailureCopyWithImpl<
 }
 
 /// @nodoc
+
 class _$InvalidPassword<T> implements InvalidPassword<T> {
   const _$InvalidPassword({required this.failedValue});
 
@@ -837,6 +841,7 @@ class _$StringMismatchCopyWithImpl<T, $Res> extends _$ValueFailureCopyWithImpl<T
 }
 
 /// @nodoc
+
 class _$StringMismatch<T> implements StringMismatch<T> {
   const _$StringMismatch({required this.failedValue});
 
@@ -994,6 +999,7 @@ class _$InvalidNameCopyWithImpl<T, $Res> extends _$ValueFailureCopyWithImpl<T, $
 }
 
 /// @nodoc
+
 class _$InvalidName<T> implements InvalidName<T> {
   const _$InvalidName({required this.failedValue});
 
@@ -1151,6 +1157,7 @@ class _$EmptyStringCopyWithImpl<T, $Res> extends _$ValueFailureCopyWithImpl<T, $
 }
 
 /// @nodoc
+
 class _$EmptyString<T> implements EmptyString<T> {
   const _$EmptyString({required this.failedValue});
 
@@ -1308,6 +1315,7 @@ class _$MultiLineStringCopyWithImpl<T, $Res> extends _$ValueFailureCopyWithImpl<
 }
 
 /// @nodoc
+
 class _$MultiLineString<T> implements MultiLineString<T> {
   const _$MultiLineString({required this.failedValue});
 
@@ -1470,6 +1478,7 @@ class _$StringExceedsLengthCopyWithImpl<T, $Res> extends _$ValueFailureCopyWithI
 }
 
 /// @nodoc
+
 class _$StringExceedsLength<T> implements StringExceedsLength<T> {
   const _$StringExceedsLength({required this.failedValue, required this.maxLength});
 
@@ -1490,7 +1499,7 @@ class _$StringExceedsLength<T> implements StringExceedsLength<T> {
             (identical(other.failedValue, failedValue) || const DeepCollectionEquality().equals(other.failedValue, failedValue)) &&
             (identical(other.maxLength, maxLength) || const DeepCollectionEquality().equals(other.maxLength, maxLength)));
   }
-  
+
   @override
   int get hashCode => runtimeType.hashCode ^ const DeepCollectionEquality().hash(failedValue) ^ const DeepCollectionEquality().hash(maxLength);
 
@@ -1634,6 +1643,7 @@ class _$IntegerOutOfBoundsCopyWithImpl<T, $Res> extends _$ValueFailureCopyWithIm
 }
 
 /// @nodoc
+
 class _$IntegerOutOfBounds<T> implements IntegerOutOfBounds<T> {
   const _$IntegerOutOfBounds({required this.failedValue});
 
@@ -1792,6 +1802,7 @@ class _$StringWithInvalidCharactersCopyWithImpl<T, $Res> extends _$ValueFailureC
 }
 
 /// @nodoc
+
 class _$StringWithInvalidCharacters<T> implements StringWithInvalidCharacters<T> {
   const _$StringWithInvalidCharacters({required this.failedValue});
 
@@ -1949,6 +1960,7 @@ class _$InvalidCoordinatesCopyWithImpl<T, $Res> extends _$ValueFailureCopyWithIm
 }
 
 /// @nodoc
+
 class _$InvalidCoordinates<T> implements InvalidCoordinates<T> {
   const _$InvalidCoordinates({required this.failedValue});
 
@@ -2106,6 +2118,7 @@ class _$EmptySetCopyWithImpl<T, $Res> extends _$ValueFailureCopyWithImpl<T, $Res
 }
 
 /// @nodoc
+
 class _$EmptySet<T> implements EmptySet<T> {
   const _$EmptySet({required this.failedValue});
 
@@ -2263,6 +2276,7 @@ class _$EmptyListCopyWithImpl<T, $Res> extends _$ValueFailureCopyWithImpl<T, $Re
 }
 
 /// @nodoc
+
 class _$EmptyList<T> implements EmptyList<T> {
   const _$EmptyList({required this.failedValue});
 
@@ -2425,6 +2439,7 @@ class _$CollectionExceedsLengthCopyWithImpl<T, $Res> extends _$ValueFailureCopyW
 }
 
 /// @nodoc
+
 class _$CollectionExceedsLength<T> implements CollectionExceedsLength<T> {
   const _$CollectionExceedsLength({required this.failedValue, required this.maxLength});
 
@@ -2445,7 +2460,7 @@ class _$CollectionExceedsLength<T> implements CollectionExceedsLength<T> {
             (identical(other.failedValue, failedValue) || const DeepCollectionEquality().equals(other.failedValue, failedValue)) &&
             (identical(other.maxLength, maxLength) || const DeepCollectionEquality().equals(other.maxLength, maxLength)));
   }
-  
+
   @override
   int get hashCode => runtimeType.hashCode ^ const DeepCollectionEquality().hash(failedValue) ^ const DeepCollectionEquality().hash(maxLength);
 

@@ -107,6 +107,7 @@ class __$InitializedCopyWithImpl<$Res> extends _$ExperienceNavigationWatcherEven
 }
 
 /// @nodoc
+
 class _$_Initialized implements _Initialized {
   const _$_Initialized(this.experienceOption);
 
@@ -222,6 +223,7 @@ class __$AllObjectivesAccomplishedCopyWithImpl<$Res> extends _$ExperienceNavigat
 }
 
 /// @nodoc
+
 class _$_AllObjectivesAccomplished implements _AllObjectivesAccomplished {
   const _$_AllObjectivesAccomplished(this.experience);
 
@@ -395,6 +397,7 @@ class __$InitialCopyWithImpl<$Res> extends _$ExperienceNavigationWatcherStateCop
 }
 
 /// @nodoc
+
 class _$_Initial implements _Initial {
   const _$_Initial();
 
@@ -482,6 +485,7 @@ class __$NoExperienceCopyWithImpl<$Res> extends _$ExperienceNavigationWatcherSta
 }
 
 /// @nodoc
+
 class _$_NoExperience implements _NoExperience {
   const _$_NoExperience();
 
@@ -592,6 +596,7 @@ class __$NavigatingExperienceCopyWithImpl<$Res> extends _$ExperienceNavigationWa
 }
 
 /// @nodoc
+
 class _$_NavigatingExperience implements _NavigatingExperience {
   const _$_NavigatingExperience(this.experience);
 
@@ -714,6 +719,7 @@ class __$FinishExperienceCopyWithImpl<$Res> extends _$ExperienceNavigationWatche
 }
 
 /// @nodoc
+
 class _$_FinishExperience implements _FinishExperience {
   const _$_FinishExperience(this.experience);
 

@@ -137,6 +137,7 @@ class __$DeletedCopyWithImpl<$Res> extends _$NotificationActorEventCopyWithImpl<
 }
 
 /// @nodoc
+
 class _$_Deleted implements _Deleted {
   const _$_Deleted(this.notification);
 
@@ -248,6 +249,7 @@ class __$CheckedCopyWithImpl<$Res> extends _$NotificationActorEventCopyWithImpl<
 }
 
 /// @nodoc
+
 class _$_Checked implements _Checked {
   const _$_Checked(this.notification);
 
@@ -428,6 +430,7 @@ class __$InitialCopyWithImpl<$Res> extends _$NotificationActorStateCopyWithImpl<
 }
 
 /// @nodoc
+
 class _$_Initial implements _Initial {
   const _$_Initial();
 
@@ -519,6 +522,7 @@ class __$ActionInProgressCopyWithImpl<$Res> extends _$NotificationActorStateCopy
 }
 
 /// @nodoc
+
 class _$_ActionInProgress implements _ActionInProgress {
   const _$_ActionInProgress();
 
@@ -610,6 +614,7 @@ class __$DeletionSuccessCopyWithImpl<$Res> extends _$NotificationActorStateCopyW
 }
 
 /// @nodoc
+
 class _$_DeletionSuccess implements _DeletionSuccess {
   const _$_DeletionSuccess();
 
@@ -724,6 +729,7 @@ class __$DeletionFailureCopyWithImpl<$Res> extends _$NotificationActorStateCopyW
 }
 
 /// @nodoc
+
 class _$_DeletionFailure implements _DeletionFailure {
   const _$_DeletionFailure(this.failure);
 
@@ -827,6 +833,7 @@ class __$CheckSuccessCopyWithImpl<$Res> extends _$NotificationActorStateCopyWith
 }
 
 /// @nodoc
+
 class _$_CheckSuccess implements _CheckSuccess {
   const _$_CheckSuccess();
 

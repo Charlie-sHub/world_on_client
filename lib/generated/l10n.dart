@@ -1896,6 +1896,116 @@ class S {
       args: [],
     );
   }
+
+  /// `Promotional Plans`
+  String get promotionPlans {
+    return Intl.message(
+      'Promotional Plans',
+      name: 'promotionPlans',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `No promotional plans could be found`
+  String get notFoundErrorPromotionPlans {
+    return Intl.message(
+      'No promotional plans could be found',
+      name: 'notFoundErrorPromotionPlans',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Current Plan`
+  String get currentPlan {
+    return Intl.message(
+      'Current Plan',
+      name: 'currentPlan',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Purchase date`
+  String get purchaseDate {
+    return Intl.message(
+      'Purchase date',
+      name: 'purchaseDate',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Valid until`
+  String get validUntil {
+    return Intl.message(
+      'Valid until',
+      name: 'validUntil',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Duration in days`
+  String get duration {
+    return Intl.message(
+      'Duration in days',
+      name: 'duration',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Valid until (if obtained today)`
+  String get validUntilIfBoughtToday {
+    return Intl.message(
+      'Valid until (if obtained today)',
+      name: 'validUntilIfBoughtToday',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Your promotions have been seen:`
+  String get yourPromotionsHaveBeenSeen {
+    return Intl.message(
+      'Your promotions have been seen:',
+      name: 'yourPromotionsHaveBeenSeen',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `times`
+  String get times {
+    return Intl.message(
+      'times',
+      name: 'times',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `You don't have an active promotion plan`
+  String get noActivePlan {
+    return Intl.message(
+      'You don\'t have an active promotion plan',
+      name: 'noActivePlan',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `The store is unavailable to you`
+  String get unAvailableStore {
+    return Intl.message(
+      'The store is unavailable to you',
+      name: 'unAvailableStore',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

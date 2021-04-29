@@ -185,6 +185,7 @@ class __$InitializedCopyWithImpl<$Res> extends _$RegistrationFormEventCopyWithIm
 }
 
 /// @nodoc
+
 class _$_Initialized implements _Initialized {
   const _$_Initialized();
 
@@ -318,6 +319,7 @@ class __$ImageChangedCopyWithImpl<$Res> extends _$RegistrationFormEventCopyWithI
 }
 
 /// @nodoc
+
 class _$_ImageChanged implements _ImageChanged {
   const _$_ImageChanged(this.imageFile);
 
@@ -463,6 +465,7 @@ class __$NameChangedCopyWithImpl<$Res> extends _$RegistrationFormEventCopyWithIm
 }
 
 /// @nodoc
+
 class _$_NameChanged implements _NameChanged {
   const _$_NameChanged(this.name);
 
@@ -608,6 +611,7 @@ class __$UsernameChangedCopyWithImpl<$Res> extends _$RegistrationFormEventCopyWi
 }
 
 /// @nodoc
+
 class _$_UsernameChanged implements _UsernameChanged {
   const _$_UsernameChanged(this.username);
 
@@ -753,6 +757,7 @@ class __$PasswordChangedCopyWithImpl<$Res> extends _$RegistrationFormEventCopyWi
 }
 
 /// @nodoc
+
 class _$_PasswordChanged implements _PasswordChanged {
   const _$_PasswordChanged(this.password);
 
@@ -898,6 +903,7 @@ class __$PasswordConfirmationChangedCopyWithImpl<$Res> extends _$RegistrationFor
 }
 
 /// @nodoc
+
 class _$_PasswordConfirmationChanged implements _PasswordConfirmationChanged {
   const _$_PasswordConfirmationChanged(this.passwordConfirmation);
 
@@ -1045,6 +1051,7 @@ class __$EmailAddressChangedCopyWithImpl<$Res> extends _$RegistrationFormEventCo
 }
 
 /// @nodoc
+
 class _$_EmailAddressChanged implements _EmailAddressChanged {
   const _$_EmailAddressChanged(this.emailAddress);
 
@@ -1190,6 +1197,7 @@ class __$BirthdayChangedCopyWithImpl<$Res> extends _$RegistrationFormEventCopyWi
 }
 
 /// @nodoc
+
 class _$_BirthdayChanged implements _BirthdayChanged {
   const _$_BirthdayChanged(this.birthday);
 
@@ -1335,6 +1343,7 @@ class __$DescriptionChangedCopyWithImpl<$Res> extends _$RegistrationFormEventCop
 }
 
 /// @nodoc
+
 class _$_DescriptionChanged implements _DescriptionChanged {
   const _$_DescriptionChanged(this.description);
 
@@ -1480,6 +1489,7 @@ class __$InterestsChangedCopyWithImpl<$Res> extends _$RegistrationFormEventCopyW
 }
 
 /// @nodoc
+
 class _$_InterestsChanged implements _InterestsChanged {
   const _$_InterestsChanged(this.interests);
 
@@ -1611,6 +1621,7 @@ class __$TappedEULACopyWithImpl<$Res> extends _$RegistrationFormEventCopyWithImp
 }
 
 /// @nodoc
+
 class _$_TappedEULA implements _TappedEULA {
   const _$_TappedEULA();
 
@@ -1730,6 +1741,7 @@ class __$SubmittedCopyWithImpl<$Res> extends _$RegistrationFormEventCopyWithImpl
 }
 
 /// @nodoc
+
 class _$_Submitted implements _Submitted {
   const _$_Submitted();
 
@@ -2026,6 +2038,7 @@ class __$RegistrationFormStateCopyWithImpl<$Res> extends _$RegistrationFormState
 }
 
 /// @nodoc
+
 class _$_RegistrationFormState implements _RegistrationFormState {
   const _$_RegistrationFormState(
       {required this.user,

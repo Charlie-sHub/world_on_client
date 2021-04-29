@@ -150,6 +150,7 @@ class StoreBody extends StatelessWidget {
             ),
             storeData: (failure) => failure.storeDataFailure.maybeMap(
               cancelled: (_) => S.of(context).cancelledByUser,
+              unAvailableStore: (_) => S.of(context).unAvailableStore,
               orElse: () => S.of(context).unknownError,
             ),
             orElse: () => S.of(context).unknownError,

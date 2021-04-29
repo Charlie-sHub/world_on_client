@@ -115,6 +115,7 @@ class __$InitializedForeignOrOwnCopyWithImpl<$Res> extends _$ProfileWatcherEvent
 }
 
 /// @nodoc
+
 class _$_InitializedForeignOrOwn implements _InitializedForeignOrOwn {
   const _$_InitializedForeignOrOwn(this.userOption);
 
@@ -293,6 +294,7 @@ class __$InitialCopyWithImpl<$Res> extends _$ProfileWatcherStateCopyWithImpl<$Re
 }
 
 /// @nodoc
+
 class _$_Initial implements _Initial {
   const _$_Initial();
 
@@ -384,6 +386,7 @@ class __$LoadInProgressCopyWithImpl<$Res> extends _$ProfileWatcherStateCopyWithI
 }
 
 /// @nodoc
+
 class _$_LoadInProgress implements _LoadInProgress {
   const _$_LoadInProgress();
 
@@ -498,6 +501,7 @@ class __$OwnCopyWithImpl<$Res> extends _$ProfileWatcherStateCopyWithImpl<$Res> i
 }
 
 /// @nodoc
+
 class _$_Own implements _Own {
   const _$_Own(this.user);
 
@@ -623,6 +627,7 @@ class __$ForeignCopyWithImpl<$Res> extends _$ProfileWatcherStateCopyWithImpl<$Re
 }
 
 /// @nodoc
+
 class _$_Foreign implements _Foreign {
   const _$_Foreign(this.user);
 
@@ -726,6 +731,7 @@ class __$LoadFailureCopyWithImpl<$Res> extends _$ProfileWatcherStateCopyWithImpl
 }
 
 /// @nodoc
+
 class _$_LoadFailure implements _LoadFailure {
   const _$_LoadFailure();
 

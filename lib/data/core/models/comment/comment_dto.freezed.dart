@@ -192,9 +192,8 @@ class __$CommentDtoCopyWithImpl<$Res> extends _$CommentDtoCopyWithImpl<$Res> imp
   }
 }
 
-@JsonSerializable()
-
 /// @nodoc
+@JsonSerializable()
 class _$_CommentDto extends _CommentDto {
   const _$_CommentDto(
       {@JsonKey(ignore: true) this.id,

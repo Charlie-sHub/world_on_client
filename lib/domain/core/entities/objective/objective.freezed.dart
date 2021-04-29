@@ -151,6 +151,7 @@ class __$ObjectiveCopyWithImpl<$Res> extends _$ObjectiveCopyWithImpl<$Res> imple
 }
 
 /// @nodoc
+
 class _$_Objective extends _Objective {
   const _$_Objective({required this.id, required this.description, required this.coordinates, required this.imageURL, required this.imageFile}) : super._();
 

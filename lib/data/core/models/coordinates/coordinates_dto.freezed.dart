@@ -112,9 +112,8 @@ class __$CoordinatesDtoCopyWithImpl<$Res> extends _$CoordinatesDtoCopyWithImpl<$
   }
 }
 
-@JsonSerializable()
-
 /// @nodoc
+@JsonSerializable()
 class _$_CoordinatesDto extends _CoordinatesDto {
   const _$_CoordinatesDto({required this.latitude, required this.longitude}) : super._();
 

@@ -113,6 +113,7 @@ class __$InitializedCopyWithImpl<$Res> extends _$OptionsFormEventCopyWithImpl<$R
 }
 
 /// @nodoc
+
 class _$_Initialized implements _Initialized {
   const _$_Initialized(this.optionsOption);
 
@@ -222,6 +223,7 @@ class __$LanguageCodeChangedCopyWithImpl<$Res> extends _$OptionsFormEventCopyWit
 }
 
 /// @nodoc
+
 class _$_LanguageCodeChanged implements _LanguageCodeChanged {
   const _$_LanguageCodeChanged(this.languageCode);
 
@@ -317,6 +319,7 @@ class __$SubmittedCopyWithImpl<$Res> extends _$OptionsFormEventCopyWithImpl<$Res
 }
 
 /// @nodoc
+
 class _$_Submitted implements _Submitted {
   const _$_Submitted();
 
@@ -517,6 +520,7 @@ class __$OptionsFormStateCopyWithImpl<$Res> extends _$OptionsFormStateCopyWithIm
 }
 
 /// @nodoc
+
 class _$_OptionsFormState implements _OptionsFormState {
   const _$_OptionsFormState({required this.options, required this.showErrorMessages, required this.isSubmitting, required this.failureOrSuccessOption});
 

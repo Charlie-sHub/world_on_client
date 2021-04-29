@@ -105,6 +105,7 @@ class __$WatchTagsFoundByNameStartedCopyWithImpl<$Res> extends _$SearchTagsByNam
 }
 
 /// @nodoc
+
 class _$_WatchTagsFoundByNameStarted implements _WatchTagsFoundByNameStarted {
   const _$_WatchTagsFoundByNameStarted(this.searchTerm);
 
@@ -210,6 +211,7 @@ class __$ResultsReceivedCopyWithImpl<$Res> extends _$SearchTagsByNameWatcherEven
 }
 
 /// @nodoc
+
 class _$_ResultsReceived implements _ResultsReceived {
   const _$_ResultsReceived(this.failureOrTags);
 
@@ -382,6 +384,7 @@ class __$InitialCopyWithImpl<$Res> extends _$SearchTagsByNameWatcherStateCopyWit
 }
 
 /// @nodoc
+
 class _$_Initial implements _Initial {
   const _$_Initial();
 
@@ -469,6 +472,7 @@ class __$SearchInProgressCopyWithImpl<$Res> extends _$SearchTagsByNameWatcherSta
 }
 
 /// @nodoc
+
 class _$_SearchInProgress implements _SearchInProgress {
   const _$_SearchInProgress();
 
@@ -570,6 +574,7 @@ class __$SearchSuccessCopyWithImpl<$Res> extends _$SearchTagsByNameWatcherStateC
 }
 
 /// @nodoc
+
 class _$_SearchSuccess implements _SearchSuccess {
   const _$_SearchSuccess(this.tagsFound);
 
@@ -692,6 +697,7 @@ class __$SearchFailureCopyWithImpl<$Res> extends _$SearchTagsByNameWatcherStateC
 }
 
 /// @nodoc
+
 class _$_SearchFailure implements _SearchFailure {
   const _$_SearchFailure(this.failure);
 

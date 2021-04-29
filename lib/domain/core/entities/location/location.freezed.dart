@@ -142,6 +142,7 @@ class __$LocationCopyWithImpl<$Res> extends _$LocationCopyWithImpl<$Res> impleme
 }
 
 /// @nodoc
+
 class _$_Location extends _Location {
   const _$_Location({required this.id, required this.city, required this.country, required this.postalCode, required this.experiences}) : super._();
 

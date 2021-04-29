@@ -108,6 +108,7 @@ class __$WatchExperiencesFoundByNameStartedCopyWithImpl<$Res> extends _$SearchEx
 }
 
 /// @nodoc
+
 class _$_WatchExperiencesFoundByNameStarted implements _WatchExperiencesFoundByNameStarted {
   const _$_WatchExperiencesFoundByNameStarted(this.searchTerm);
 
@@ -214,6 +215,7 @@ class __$SearchResultsReceivedCopyWithImpl<$Res> extends _$SearchExperiencesByNa
 }
 
 /// @nodoc
+
 class _$_SearchResultsReceived implements _SearchResultsReceived {
   const _$_SearchResultsReceived(this.failureOrExperiences);
 
@@ -388,6 +390,7 @@ class __$InitialCopyWithImpl<$Res> extends _$SearchExperiencesByNameWatcherState
 }
 
 /// @nodoc
+
 class _$_Initial implements _Initial {
   const _$_Initial();
 
@@ -475,6 +478,7 @@ class __$SearchInProgressCopyWithImpl<$Res> extends _$SearchExperiencesByNameWat
 }
 
 /// @nodoc
+
 class _$_SearchInProgress implements _SearchInProgress {
   const _$_SearchInProgress();
 
@@ -576,6 +580,7 @@ class __$SearchSuccessCopyWithImpl<$Res> extends _$SearchExperiencesByNameWatche
 }
 
 /// @nodoc
+
 class _$_SearchSuccess implements _SearchSuccess {
   const _$_SearchSuccess(this.experiencesFound);
 
@@ -699,6 +704,7 @@ class __$SearchFailureCopyWithImpl<$Res> extends _$SearchExperiencesByNameWatche
 }
 
 /// @nodoc
+
 class _$_SearchFailure implements _SearchFailure {
   const _$_SearchFailure(this.failure);
 

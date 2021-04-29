@@ -405,9 +405,8 @@ class __$ExperienceDtoCopyWithImpl<$Res> extends _$ExperienceDtoCopyWithImpl<$Re
   }
 }
 
-@JsonSerializable()
-
 /// @nodoc
+@JsonSerializable()
 class _$_ExperienceDto extends _ExperienceDto {
   const _$_ExperienceDto(
       {required this.id,

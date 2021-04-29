@@ -153,6 +153,7 @@ class _$ServerErrorCopyWithImpl<T, $Res> extends _$CoreDataFailureCopyWithImpl<T
 }
 
 /// @nodoc
+
 class _$ServerError<T> implements ServerError<T> {
   const _$ServerError({required this.errorString});
 
@@ -264,6 +265,7 @@ class _$NotFoundErrorCopyWithImpl<T, $Res> extends _$CoreDataFailureCopyWithImpl
 }
 
 /// @nodoc
+
 class _$NotFoundError<T> implements NotFoundError<T> {
   const _$NotFoundError();
 
@@ -377,6 +379,7 @@ class _$CacheErrorCopyWithImpl<T, $Res> extends _$CoreDataFailureCopyWithImpl<T,
 }
 
 /// @nodoc
+
 class _$CacheError<T> implements CacheError<T> {
   const _$CacheError({required this.errorString});
 
@@ -502,6 +505,7 @@ class _$GeoLocationErrorCopyWithImpl<T, $Res> extends _$CoreDataFailureCopyWithI
 }
 
 /// @nodoc
+
 class _$GeoLocationError<T> implements GeoLocationError<T> {
   const _$GeoLocationError({required this.errorString});
 
@@ -627,6 +631,7 @@ class _$UsernameAlreadyInUseCopyWithImpl<T, $Res> extends _$CoreDataFailureCopyW
 }
 
 /// @nodoc
+
 class _$UsernameAlreadyInUse<T> implements UsernameAlreadyInUse<T> {
   const _$UsernameAlreadyInUse({required this.username});
 
@@ -752,6 +757,7 @@ class _$EmailAlreadyInUseCopyWithImpl<T, $Res> extends _$CoreDataFailureCopyWith
 }
 
 /// @nodoc
+
 class _$EmailAlreadyInUse<T> implements EmailAlreadyInUse<T> {
   const _$EmailAlreadyInUse({required this.email});
 
@@ -877,6 +883,7 @@ class _$NameAlreadyInUseCopyWithImpl<T, $Res> extends _$CoreDataFailureCopyWithI
 }
 
 /// @nodoc
+
 class _$NameAlreadyInUse<T> implements NameAlreadyInUse<T> {
   const _$NameAlreadyInUse({required this.name});
 

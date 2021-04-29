@@ -139,6 +139,7 @@ class __$RewardCopyWithImpl<$Res> extends _$RewardCopyWithImpl<$Res> implements 
 }
 
 /// @nodoc
+
 class _$_Reward extends _Reward {
   const _$_Reward({required this.id, required this.name, required this.description, required this.imageURL, required this.imageFile}) : super._();
 
@@ -177,7 +178,7 @@ class _$_Reward extends _Reward {
       const DeepCollectionEquality().hash(description) ^
       const DeepCollectionEquality().hash(imageURL) ^
       const DeepCollectionEquality().hash(imageFile);
-  
+
   @JsonKey(ignore: true)
   @override
   _$RewardCopyWith<_Reward> get copyWith => __$RewardCopyWithImpl<_Reward>(this, _$identity);

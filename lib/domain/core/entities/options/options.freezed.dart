@@ -103,6 +103,7 @@ class __$OptionsCopyWithImpl<$Res> extends _$OptionsCopyWithImpl<$Res> implement
 }
 
 /// @nodoc
+
 class _$_Options extends _Options {
   const _$_Options({required this.id, required this.languageCode}) : super._();
 

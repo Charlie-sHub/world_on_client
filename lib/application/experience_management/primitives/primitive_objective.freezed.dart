@@ -140,6 +140,7 @@ class __$PrimitiveObjectiveCopyWithImpl<$Res> extends _$PrimitiveObjectiveCopyWi
 }
 
 /// @nodoc
+
 class _$_PrimitiveObjective extends _PrimitiveObjective {
   const _$_PrimitiveObjective({required this.id, required this.description, required this.latitude, required this.longitude, required this.imageFile}) : super._();
 

@@ -113,6 +113,7 @@ class __$InitializedCopyWithImpl<$Res> extends _$TagManagementFormEventCopyWithI
 }
 
 /// @nodoc
+
 class _$_Initialized implements _Initialized {
   const _$_Initialized(this.tagOption);
 
@@ -222,6 +223,7 @@ class __$NameChangedCopyWithImpl<$Res> extends _$TagManagementFormEventCopyWithI
 }
 
 /// @nodoc
+
 class _$_NameChanged implements _NameChanged {
   const _$_NameChanged(this.name);
 
@@ -317,6 +319,7 @@ class __$SubmittedCopyWithImpl<$Res> extends _$TagManagementFormEventCopyWithImp
 }
 
 /// @nodoc
+
 class _$_Submitted implements _Submitted {
   const _$_Submitted();
 
@@ -531,6 +534,7 @@ class __$TagManagementFormStateCopyWithImpl<$Res> extends _$TagManagementFormSta
 }
 
 /// @nodoc
+
 class _$_TagManagementFormState implements _TagManagementFormState {
   const _$_TagManagementFormState({required this.tag, required this.showErrorMessages, required this.isEditing, required this.isSubmitting, required this.failureOrSuccessOption});
 
@@ -569,7 +573,7 @@ class _$_TagManagementFormState implements _TagManagementFormState {
       const DeepCollectionEquality().hash(isEditing) ^
       const DeepCollectionEquality().hash(isSubmitting) ^
       const DeepCollectionEquality().hash(failureOrSuccessOption);
-  
+
   @JsonKey(ignore: true)
   @override
   _$TagManagementFormStateCopyWith<_TagManagementFormState> get copyWith => __$TagManagementFormStateCopyWithImpl<_TagManagementFormState>(this, _$identity);

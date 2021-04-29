@@ -14,6 +14,7 @@ _$_PromotionPlan _$_$_PromotionPlanFromJson(Map<String, dynamic> json) {
     code: _$enumDecode(_$PromotionPlanCodeEnumMap, json['code']),
     valueInEuros: json['valueInEuros'] as int,
     boughtDate: const ServerTimestampConverter().fromJson(json['boughtDate'] as Timestamp),
+    timesSeen: json['timesSeen'] as int,
   );
 }
 
@@ -24,6 +25,7 @@ Map<String, dynamic> _$_$_PromotionPlanToJson(_$_PromotionPlan instance) => <Str
       'code': _$PromotionPlanCodeEnumMap[instance.code],
       'valueInEuros': instance.valueInEuros,
       'boughtDate': const ServerTimestampConverter().toJson(instance.boughtDate),
+      'timesSeen': instance.timesSeen,
     };
 
 K _$enumDecode<K, V>(

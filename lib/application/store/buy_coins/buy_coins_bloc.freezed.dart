@@ -115,6 +115,7 @@ class __$BoughtCoinsCopyWithImpl<$Res> extends _$BuyCoinsEventCopyWithImpl<$Res>
 }
 
 /// @nodoc
+
 class _$_BoughtCoins implements _BoughtCoins {
   const _$_BoughtCoins(this.amount);
 
@@ -283,6 +284,7 @@ class __$InitialCopyWithImpl<$Res> extends _$BuyCoinsStateCopyWithImpl<$Res> imp
 }
 
 /// @nodoc
+
 class _$_Initial implements _Initial {
   const _$_Initial();
 
@@ -370,6 +372,7 @@ class __$ActionInProgressCopyWithImpl<$Res> extends _$BuyCoinsStateCopyWithImpl<
 }
 
 /// @nodoc
+
 class _$_ActionInProgress implements _ActionInProgress {
   const _$_ActionInProgress();
 
@@ -457,6 +460,7 @@ class __$PurchaseSuccessCopyWithImpl<$Res> extends _$BuyCoinsStateCopyWithImpl<$
 }
 
 /// @nodoc
+
 class _$_PurchaseSuccess implements _PurchaseSuccess {
   const _$_PurchaseSuccess();
 
@@ -567,6 +571,7 @@ class __$PurchaseFailureCopyWithImpl<$Res> extends _$BuyCoinsStateCopyWithImpl<$
 }
 
 /// @nodoc
+
 class _$_PurchaseFailure implements _PurchaseFailure {
   const _$_PurchaseFailure(this.failure);
 

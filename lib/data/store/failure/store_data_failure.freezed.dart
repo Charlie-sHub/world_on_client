@@ -23,6 +23,10 @@ class _$StoreDataFailureTearOff {
   Cancelled<T> cancelled<T>() {
     return Cancelled<T>();
   }
+
+  UnAvailableStore<T> unAvailableStore<T>() {
+    return UnAvailableStore<T>();
+  }
 }
 
 /// @nodoc
@@ -34,12 +38,14 @@ mixin _$StoreDataFailure<T> {
   TResult when<TResult extends Object?>({
     required TResult Function() notEnoughCoins,
     required TResult Function() cancelled,
+    required TResult Function() unAvailableStore,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? notEnoughCoins,
     TResult Function()? cancelled,
+    TResult Function()? unAvailableStore,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -47,12 +53,14 @@ mixin _$StoreDataFailure<T> {
   TResult map<TResult extends Object?>({
     required TResult Function(NotEnoughCoins<T> value) notEnoughCoins,
     required TResult Function(Cancelled<T> value) cancelled,
+    required TResult Function(UnAvailableStore<T> value) unAvailableStore,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(NotEnoughCoins<T> value)? notEnoughCoins,
     TResult Function(Cancelled<T> value)? cancelled,
+    TResult Function(UnAvailableStore<T> value)? unAvailableStore,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -87,6 +95,7 @@ class _$NotEnoughCoinsCopyWithImpl<T, $Res> extends _$StoreDataFailureCopyWithIm
 }
 
 /// @nodoc
+
 class _$NotEnoughCoins<T> implements NotEnoughCoins<T> {
   const _$NotEnoughCoins();
 
@@ -108,6 +117,7 @@ class _$NotEnoughCoins<T> implements NotEnoughCoins<T> {
   TResult when<TResult extends Object?>({
     required TResult Function() notEnoughCoins,
     required TResult Function() cancelled,
+    required TResult Function() unAvailableStore,
   }) {
     return notEnoughCoins();
   }
@@ -117,6 +127,7 @@ class _$NotEnoughCoins<T> implements NotEnoughCoins<T> {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? notEnoughCoins,
     TResult Function()? cancelled,
+    TResult Function()? unAvailableStore,
     required TResult orElse(),
   }) {
     if (notEnoughCoins != null) {
@@ -130,6 +141,7 @@ class _$NotEnoughCoins<T> implements NotEnoughCoins<T> {
   TResult map<TResult extends Object?>({
     required TResult Function(NotEnoughCoins<T> value) notEnoughCoins,
     required TResult Function(Cancelled<T> value) cancelled,
+    required TResult Function(UnAvailableStore<T> value) unAvailableStore,
   }) {
     return notEnoughCoins(this);
   }
@@ -139,6 +151,7 @@ class _$NotEnoughCoins<T> implements NotEnoughCoins<T> {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(NotEnoughCoins<T> value)? notEnoughCoins,
     TResult Function(Cancelled<T> value)? cancelled,
+    TResult Function(UnAvailableStore<T> value)? unAvailableStore,
     required TResult orElse(),
   }) {
     if (notEnoughCoins != null) {
@@ -166,6 +179,7 @@ class _$CancelledCopyWithImpl<T, $Res> extends _$StoreDataFailureCopyWithImpl<T,
 }
 
 /// @nodoc
+
 class _$Cancelled<T> implements Cancelled<T> {
   const _$Cancelled();
 
@@ -187,6 +201,7 @@ class _$Cancelled<T> implements Cancelled<T> {
   TResult when<TResult extends Object?>({
     required TResult Function() notEnoughCoins,
     required TResult Function() cancelled,
+    required TResult Function() unAvailableStore,
   }) {
     return cancelled();
   }
@@ -196,6 +211,7 @@ class _$Cancelled<T> implements Cancelled<T> {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? notEnoughCoins,
     TResult Function()? cancelled,
+    TResult Function()? unAvailableStore,
     required TResult orElse(),
   }) {
     if (cancelled != null) {
@@ -209,6 +225,7 @@ class _$Cancelled<T> implements Cancelled<T> {
   TResult map<TResult extends Object?>({
     required TResult Function(NotEnoughCoins<T> value) notEnoughCoins,
     required TResult Function(Cancelled<T> value) cancelled,
+    required TResult Function(UnAvailableStore<T> value) unAvailableStore,
   }) {
     return cancelled(this);
   }
@@ -218,6 +235,7 @@ class _$Cancelled<T> implements Cancelled<T> {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(NotEnoughCoins<T> value)? notEnoughCoins,
     TResult Function(Cancelled<T> value)? cancelled,
+    TResult Function(UnAvailableStore<T> value)? unAvailableStore,
     required TResult orElse(),
   }) {
     if (cancelled != null) {
@@ -229,4 +247,88 @@ class _$Cancelled<T> implements Cancelled<T> {
 
 abstract class Cancelled<T> implements StoreDataFailure<T> {
   const factory Cancelled() = _$Cancelled<T>;
+}
+
+/// @nodoc
+abstract class $UnAvailableStoreCopyWith<T, $Res> {
+  factory $UnAvailableStoreCopyWith(UnAvailableStore<T> value, $Res Function(UnAvailableStore<T>) then) = _$UnAvailableStoreCopyWithImpl<T, $Res>;
+}
+
+/// @nodoc
+class _$UnAvailableStoreCopyWithImpl<T, $Res> extends _$StoreDataFailureCopyWithImpl<T, $Res> implements $UnAvailableStoreCopyWith<T, $Res> {
+  _$UnAvailableStoreCopyWithImpl(UnAvailableStore<T> _value, $Res Function(UnAvailableStore<T>) _then) : super(_value, (v) => _then(v as UnAvailableStore<T>));
+
+  @override
+  UnAvailableStore<T> get _value => super._value as UnAvailableStore<T>;
+}
+
+/// @nodoc
+
+class _$UnAvailableStore<T> implements UnAvailableStore<T> {
+  const _$UnAvailableStore();
+
+  @override
+  String toString() {
+    return 'StoreDataFailure<$T>.unAvailableStore()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) || (other is UnAvailableStore<T>);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() notEnoughCoins,
+    required TResult Function() cancelled,
+    required TResult Function() unAvailableStore,
+  }) {
+    return unAvailableStore();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? notEnoughCoins,
+    TResult Function()? cancelled,
+    TResult Function()? unAvailableStore,
+    required TResult orElse(),
+  }) {
+    if (unAvailableStore != null) {
+      return unAvailableStore();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(NotEnoughCoins<T> value) notEnoughCoins,
+    required TResult Function(Cancelled<T> value) cancelled,
+    required TResult Function(UnAvailableStore<T> value) unAvailableStore,
+  }) {
+    return unAvailableStore(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(NotEnoughCoins<T> value)? notEnoughCoins,
+    TResult Function(Cancelled<T> value)? cancelled,
+    TResult Function(UnAvailableStore<T> value)? unAvailableStore,
+    required TResult orElse(),
+  }) {
+    if (unAvailableStore != null) {
+      return unAvailableStore(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class UnAvailableStore<T> implements StoreDataFailure<T> {
+  const factory UnAvailableStore() = _$UnAvailableStore<T>;
 }

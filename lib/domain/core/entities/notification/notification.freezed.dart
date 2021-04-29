@@ -201,6 +201,7 @@ class __$NotificationCopyWithImpl<$Res> extends _$NotificationCopyWithImpl<$Res>
 }
 
 /// @nodoc
+
 class _$_Notification extends _Notification {
   const _$_Notification({required this.id, required this.sender, required this.receiver, required this.description, required this.seen, required this.creationDate, required this.type}) : super._();
 

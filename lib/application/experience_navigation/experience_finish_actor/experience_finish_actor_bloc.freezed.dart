@@ -127,6 +127,7 @@ class __$FinishedExperienceCopyWithImpl<$Res> extends _$ExperienceFinishActorEve
 }
 
 /// @nodoc
+
 class _$_FinishedExperience implements _FinishedExperience {
   const _$_FinishedExperience(this.experience);
 
@@ -298,6 +299,7 @@ class __$InitialCopyWithImpl<$Res> extends _$ExperienceFinishActorStateCopyWithI
 }
 
 /// @nodoc
+
 class _$_Initial implements _Initial {
   const _$_Initial();
 
@@ -385,6 +387,7 @@ class __$ActionInProgressCopyWithImpl<$Res> extends _$ExperienceFinishActorState
 }
 
 /// @nodoc
+
 class _$_ActionInProgress implements _ActionInProgress {
   const _$_ActionInProgress();
 
@@ -491,6 +494,7 @@ class __$FinishSuccessCopyWithImpl<$Res> extends _$ExperienceFinishActorStateCop
 }
 
 /// @nodoc
+
 class _$_FinishSuccess implements _FinishSuccess {
   const _$_FinishSuccess(this.amountXP, {required this.leveledUp});
 
@@ -620,6 +624,7 @@ class __$FinishFailureCopyWithImpl<$Res> extends _$ExperienceFinishActorStateCop
 }
 
 /// @nodoc
+
 class _$_FinishFailure implements _FinishFailure {
   const _$_FinishFailure(this.failure);
 

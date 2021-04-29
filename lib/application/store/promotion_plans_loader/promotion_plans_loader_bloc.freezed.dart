@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides
 
-part of 'tag_management_watcher_bloc.dart';
+part of 'promotion_plans_loader_bloc.dart';
 
 // **************************************************************************
 // FreezedGenerator
@@ -13,94 +13,87 @@ final _privateConstructorUsedError = UnsupportedError(
     'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 /// @nodoc
-class _$TagManagementWatcherEventTearOff {
-  const _$TagManagementWatcherEventTearOff();
+class _$PromotionPlansLoaderEventTearOff {
+  const _$PromotionPlansLoaderEventTearOff();
 
-  _WatchAllTagsStarted watchAllTagsStarted() {
-    return const _WatchAllTagsStarted();
-  }
-
-  _ResultsReceived resultsReceived(Either<Failure, KtList<Tag>> failureOrTags) {
-    return _ResultsReceived(
-      failureOrTags,
-    );
+  _LoadPromotionPlans loadPromotionPlans() {
+    return const _LoadPromotionPlans();
   }
 }
 
 /// @nodoc
-const $TagManagementWatcherEvent = _$TagManagementWatcherEventTearOff();
+const $PromotionPlansLoaderEvent = _$PromotionPlansLoaderEventTearOff();
 
 /// @nodoc
-mixin _$TagManagementWatcherEvent {
+mixin _$PromotionPlansLoaderEvent {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function() watchAllTagsStarted,
-    required TResult Function(Either<Failure, KtList<Tag>> failureOrTags) resultsReceived,
+    required TResult Function() loadPromotionPlans,
   }) =>
       throw _privateConstructorUsedError;
+
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? watchAllTagsStarted,
-    TResult Function(Either<Failure, KtList<Tag>> failureOrTags)? resultsReceived,
+    TResult Function()? loadPromotionPlans,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
+
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_WatchAllTagsStarted value) watchAllTagsStarted,
-    required TResult Function(_ResultsReceived value) resultsReceived,
+    required TResult Function(_LoadPromotionPlans value) loadPromotionPlans,
   }) =>
       throw _privateConstructorUsedError;
+
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_WatchAllTagsStarted value)? watchAllTagsStarted,
-    TResult Function(_ResultsReceived value)? resultsReceived,
+    TResult Function(_LoadPromotionPlans value)? loadPromotionPlans,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $TagManagementWatcherEventCopyWith<$Res> {
-  factory $TagManagementWatcherEventCopyWith(TagManagementWatcherEvent value, $Res Function(TagManagementWatcherEvent) then) = _$TagManagementWatcherEventCopyWithImpl<$Res>;
+abstract class $PromotionPlansLoaderEventCopyWith<$Res> {
+  factory $PromotionPlansLoaderEventCopyWith(PromotionPlansLoaderEvent value, $Res Function(PromotionPlansLoaderEvent) then) = _$PromotionPlansLoaderEventCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class _$TagManagementWatcherEventCopyWithImpl<$Res> implements $TagManagementWatcherEventCopyWith<$Res> {
-  _$TagManagementWatcherEventCopyWithImpl(this._value, this._then);
+class _$PromotionPlansLoaderEventCopyWithImpl<$Res> implements $PromotionPlansLoaderEventCopyWith<$Res> {
+  _$PromotionPlansLoaderEventCopyWithImpl(this._value, this._then);
 
-  final TagManagementWatcherEvent _value;
+  final PromotionPlansLoaderEvent _value;
 
   // ignore: unused_field
-  final $Res Function(TagManagementWatcherEvent) _then;
+  final $Res Function(PromotionPlansLoaderEvent) _then;
 }
 
 /// @nodoc
-abstract class _$WatchAllTagsStartedCopyWith<$Res> {
-  factory _$WatchAllTagsStartedCopyWith(_WatchAllTagsStarted value, $Res Function(_WatchAllTagsStarted) then) = __$WatchAllTagsStartedCopyWithImpl<$Res>;
+abstract class _$LoadPromotionPlansCopyWith<$Res> {
+  factory _$LoadPromotionPlansCopyWith(_LoadPromotionPlans value, $Res Function(_LoadPromotionPlans) then) = __$LoadPromotionPlansCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$WatchAllTagsStartedCopyWithImpl<$Res> extends _$TagManagementWatcherEventCopyWithImpl<$Res> implements _$WatchAllTagsStartedCopyWith<$Res> {
-  __$WatchAllTagsStartedCopyWithImpl(_WatchAllTagsStarted _value, $Res Function(_WatchAllTagsStarted) _then) : super(_value, (v) => _then(v as _WatchAllTagsStarted));
+class __$LoadPromotionPlansCopyWithImpl<$Res> extends _$PromotionPlansLoaderEventCopyWithImpl<$Res> implements _$LoadPromotionPlansCopyWith<$Res> {
+  __$LoadPromotionPlansCopyWithImpl(_LoadPromotionPlans _value, $Res Function(_LoadPromotionPlans) _then) : super(_value, (v) => _then(v as _LoadPromotionPlans));
 
   @override
-  _WatchAllTagsStarted get _value => super._value as _WatchAllTagsStarted;
+  _LoadPromotionPlans get _value => super._value as _LoadPromotionPlans;
 }
 
 /// @nodoc
 
-class _$_WatchAllTagsStarted implements _WatchAllTagsStarted {
-  const _$_WatchAllTagsStarted();
+class _$_LoadPromotionPlans implements _LoadPromotionPlans {
+  const _$_LoadPromotionPlans();
 
   @override
   String toString() {
-    return 'TagManagementWatcherEvent.watchAllTagsStarted()';
+    return 'PromotionPlansLoaderEvent.loadPromotionPlans()';
   }
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _WatchAllTagsStarted);
+    return identical(this, other) || (other is _LoadPromotionPlans);
   }
 
   @override
@@ -109,21 +102,19 @@ class _$_WatchAllTagsStarted implements _WatchAllTagsStarted {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function() watchAllTagsStarted,
-    required TResult Function(Either<Failure, KtList<Tag>> failureOrTags) resultsReceived,
+    required TResult Function() loadPromotionPlans,
   }) {
-    return watchAllTagsStarted();
+    return loadPromotionPlans();
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? watchAllTagsStarted,
-    TResult Function(Either<Failure, KtList<Tag>> failureOrTags)? resultsReceived,
+    TResult Function()? loadPromotionPlans,
     required TResult orElse(),
   }) {
-    if (watchAllTagsStarted != null) {
-      return watchAllTagsStarted();
+    if (loadPromotionPlans != null) {
+      return loadPromotionPlans();
     }
     return orElse();
   }
@@ -131,139 +122,31 @@ class _$_WatchAllTagsStarted implements _WatchAllTagsStarted {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_WatchAllTagsStarted value) watchAllTagsStarted,
-    required TResult Function(_ResultsReceived value) resultsReceived,
+    required TResult Function(_LoadPromotionPlans value) loadPromotionPlans,
   }) {
-    return watchAllTagsStarted(this);
+    return loadPromotionPlans(this);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_WatchAllTagsStarted value)? watchAllTagsStarted,
-    TResult Function(_ResultsReceived value)? resultsReceived,
+    TResult Function(_LoadPromotionPlans value)? loadPromotionPlans,
     required TResult orElse(),
   }) {
-    if (watchAllTagsStarted != null) {
-      return watchAllTagsStarted(this);
+    if (loadPromotionPlans != null) {
+      return loadPromotionPlans(this);
     }
     return orElse();
   }
 }
 
-abstract class _WatchAllTagsStarted implements TagManagementWatcherEvent {
-  const factory _WatchAllTagsStarted() = _$_WatchAllTagsStarted;
+abstract class _LoadPromotionPlans implements PromotionPlansLoaderEvent {
+  const factory _LoadPromotionPlans() = _$_LoadPromotionPlans;
 }
 
 /// @nodoc
-abstract class _$ResultsReceivedCopyWith<$Res> {
-  factory _$ResultsReceivedCopyWith(_ResultsReceived value, $Res Function(_ResultsReceived) then) = __$ResultsReceivedCopyWithImpl<$Res>;
-
-  $Res call({Either<Failure, KtList<Tag>> failureOrTags});
-}
-
-/// @nodoc
-class __$ResultsReceivedCopyWithImpl<$Res> extends _$TagManagementWatcherEventCopyWithImpl<$Res> implements _$ResultsReceivedCopyWith<$Res> {
-  __$ResultsReceivedCopyWithImpl(_ResultsReceived _value, $Res Function(_ResultsReceived) _then) : super(_value, (v) => _then(v as _ResultsReceived));
-
-  @override
-  _ResultsReceived get _value => super._value as _ResultsReceived;
-
-  @override
-  $Res call({
-    Object? failureOrTags = freezed,
-  }) {
-    return _then(_ResultsReceived(
-      failureOrTags == freezed
-          ? _value.failureOrTags
-          : failureOrTags // ignore: cast_nullable_to_non_nullable
-              as Either<Failure, KtList<Tag>>,
-    ));
-  }
-}
-
-/// @nodoc
-
-class _$_ResultsReceived implements _ResultsReceived {
-  const _$_ResultsReceived(this.failureOrTags);
-
-  @override
-  final Either<Failure, KtList<Tag>> failureOrTags;
-
-  @override
-  String toString() {
-    return 'TagManagementWatcherEvent.resultsReceived(failureOrTags: $failureOrTags)';
-  }
-
-  @override
-  bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _ResultsReceived && (identical(other.failureOrTags, failureOrTags) || const DeepCollectionEquality().equals(other.failureOrTags, failureOrTags)));
-  }
-
-  @override
-  int get hashCode => runtimeType.hashCode ^ const DeepCollectionEquality().hash(failureOrTags);
-
-  @JsonKey(ignore: true)
-  @override
-  _$ResultsReceivedCopyWith<_ResultsReceived> get copyWith => __$ResultsReceivedCopyWithImpl<_ResultsReceived>(this, _$identity);
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() watchAllTagsStarted,
-    required TResult Function(Either<Failure, KtList<Tag>> failureOrTags) resultsReceived,
-  }) {
-    return resultsReceived(failureOrTags);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? watchAllTagsStarted,
-    TResult Function(Either<Failure, KtList<Tag>> failureOrTags)? resultsReceived,
-    required TResult orElse(),
-  }) {
-    if (resultsReceived != null) {
-      return resultsReceived(failureOrTags);
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_WatchAllTagsStarted value) watchAllTagsStarted,
-    required TResult Function(_ResultsReceived value) resultsReceived,
-  }) {
-    return resultsReceived(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_WatchAllTagsStarted value)? watchAllTagsStarted,
-    TResult Function(_ResultsReceived value)? resultsReceived,
-    required TResult orElse(),
-  }) {
-    if (resultsReceived != null) {
-      return resultsReceived(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class _ResultsReceived implements TagManagementWatcherEvent {
-  const factory _ResultsReceived(Either<Failure, KtList<Tag>> failureOrTags) = _$_ResultsReceived;
-
-  Either<Failure, KtList<Tag>> get failureOrTags => throw _privateConstructorUsedError;
-
-  @JsonKey(ignore: true)
-  _$ResultsReceivedCopyWith<_ResultsReceived> get copyWith => throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-class _$TagManagementWatcherStateTearOff {
-  const _$TagManagementWatcherStateTearOff();
+class _$PromotionPlansLoaderStateTearOff {
+  const _$PromotionPlansLoaderStateTearOff();
 
   _Initial initial() {
     return const _Initial();
@@ -273,9 +156,9 @@ class _$TagManagementWatcherStateTearOff {
     return const _LoadInProgress();
   }
 
-  _LoadSuccess loadSuccess(KtList<Tag> tags) {
-    return _LoadSuccess(
-      tags,
+  _LoadedPromotionPlans loadedPromotionPlans(KtList<PromotionPlan> plans) {
+    return _LoadedPromotionPlans(
+      plans,
     );
   }
 
@@ -287,40 +170,43 @@ class _$TagManagementWatcherStateTearOff {
 }
 
 /// @nodoc
-const $TagManagementWatcherState = _$TagManagementWatcherStateTearOff();
+const $PromotionPlansLoaderState = _$PromotionPlansLoaderStateTearOff();
 
 /// @nodoc
-mixin _$TagManagementWatcherState {
+mixin _$PromotionPlansLoaderState {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loadInProgress,
-    required TResult Function(KtList<Tag> tags) loadSuccess,
+    required TResult Function(KtList<PromotionPlan> plans) loadedPromotionPlans,
     required TResult Function(Failure<dynamic> failure) loadFailure,
   }) =>
       throw _privateConstructorUsedError;
+
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loadInProgress,
-    TResult Function(KtList<Tag> tags)? loadSuccess,
+    TResult Function(KtList<PromotionPlan> plans)? loadedPromotionPlans,
     TResult Function(Failure<dynamic> failure)? loadFailure,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
+
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Initial value) initial,
     required TResult Function(_LoadInProgress value) loadInProgress,
-    required TResult Function(_LoadSuccess value) loadSuccess,
+    required TResult Function(_LoadedPromotionPlans value) loadedPromotionPlans,
     required TResult Function(_LoadFailure value) loadFailure,
   }) =>
       throw _privateConstructorUsedError;
+
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
     TResult Function(_LoadInProgress value)? loadInProgress,
-    TResult Function(_LoadSuccess value)? loadSuccess,
+    TResult Function(_LoadedPromotionPlans value)? loadedPromotionPlans,
     TResult Function(_LoadFailure value)? loadFailure,
     required TResult orElse(),
   }) =>
@@ -328,18 +214,18 @@ mixin _$TagManagementWatcherState {
 }
 
 /// @nodoc
-abstract class $TagManagementWatcherStateCopyWith<$Res> {
-  factory $TagManagementWatcherStateCopyWith(TagManagementWatcherState value, $Res Function(TagManagementWatcherState) then) = _$TagManagementWatcherStateCopyWithImpl<$Res>;
+abstract class $PromotionPlansLoaderStateCopyWith<$Res> {
+  factory $PromotionPlansLoaderStateCopyWith(PromotionPlansLoaderState value, $Res Function(PromotionPlansLoaderState) then) = _$PromotionPlansLoaderStateCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class _$TagManagementWatcherStateCopyWithImpl<$Res> implements $TagManagementWatcherStateCopyWith<$Res> {
-  _$TagManagementWatcherStateCopyWithImpl(this._value, this._then);
+class _$PromotionPlansLoaderStateCopyWithImpl<$Res> implements $PromotionPlansLoaderStateCopyWith<$Res> {
+  _$PromotionPlansLoaderStateCopyWithImpl(this._value, this._then);
 
-  final TagManagementWatcherState _value;
+  final PromotionPlansLoaderState _value;
 
   // ignore: unused_field
-  final $Res Function(TagManagementWatcherState) _then;
+  final $Res Function(PromotionPlansLoaderState) _then;
 }
 
 /// @nodoc
@@ -348,7 +234,7 @@ abstract class _$InitialCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$InitialCopyWithImpl<$Res> extends _$TagManagementWatcherStateCopyWithImpl<$Res> implements _$InitialCopyWith<$Res> {
+class __$InitialCopyWithImpl<$Res> extends _$PromotionPlansLoaderStateCopyWithImpl<$Res> implements _$InitialCopyWith<$Res> {
   __$InitialCopyWithImpl(_Initial _value, $Res Function(_Initial) _then) : super(_value, (v) => _then(v as _Initial));
 
   @override
@@ -362,7 +248,7 @@ class _$_Initial implements _Initial {
 
   @override
   String toString() {
-    return 'TagManagementWatcherState.initial()';
+    return 'PromotionPlansLoaderState.initial()';
   }
 
   @override
@@ -378,7 +264,7 @@ class _$_Initial implements _Initial {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loadInProgress,
-    required TResult Function(KtList<Tag> tags) loadSuccess,
+    required TResult Function(KtList<PromotionPlan> plans) loadedPromotionPlans,
     required TResult Function(Failure<dynamic> failure) loadFailure,
   }) {
     return initial();
@@ -389,7 +275,7 @@ class _$_Initial implements _Initial {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loadInProgress,
-    TResult Function(KtList<Tag> tags)? loadSuccess,
+    TResult Function(KtList<PromotionPlan> plans)? loadedPromotionPlans,
     TResult Function(Failure<dynamic> failure)? loadFailure,
     required TResult orElse(),
   }) {
@@ -404,7 +290,7 @@ class _$_Initial implements _Initial {
   TResult map<TResult extends Object?>({
     required TResult Function(_Initial value) initial,
     required TResult Function(_LoadInProgress value) loadInProgress,
-    required TResult Function(_LoadSuccess value) loadSuccess,
+    required TResult Function(_LoadedPromotionPlans value) loadedPromotionPlans,
     required TResult Function(_LoadFailure value) loadFailure,
   }) {
     return initial(this);
@@ -415,7 +301,7 @@ class _$_Initial implements _Initial {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
     TResult Function(_LoadInProgress value)? loadInProgress,
-    TResult Function(_LoadSuccess value)? loadSuccess,
+    TResult Function(_LoadedPromotionPlans value)? loadedPromotionPlans,
     TResult Function(_LoadFailure value)? loadFailure,
     required TResult orElse(),
   }) {
@@ -426,7 +312,7 @@ class _$_Initial implements _Initial {
   }
 }
 
-abstract class _Initial implements TagManagementWatcherState {
+abstract class _Initial implements PromotionPlansLoaderState {
   const factory _Initial() = _$_Initial;
 }
 
@@ -436,7 +322,7 @@ abstract class _$LoadInProgressCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$LoadInProgressCopyWithImpl<$Res> extends _$TagManagementWatcherStateCopyWithImpl<$Res> implements _$LoadInProgressCopyWith<$Res> {
+class __$LoadInProgressCopyWithImpl<$Res> extends _$PromotionPlansLoaderStateCopyWithImpl<$Res> implements _$LoadInProgressCopyWith<$Res> {
   __$LoadInProgressCopyWithImpl(_LoadInProgress _value, $Res Function(_LoadInProgress) _then) : super(_value, (v) => _then(v as _LoadInProgress));
 
   @override
@@ -450,7 +336,7 @@ class _$_LoadInProgress implements _LoadInProgress {
 
   @override
   String toString() {
-    return 'TagManagementWatcherState.loadInProgress()';
+    return 'PromotionPlansLoaderState.loadInProgress()';
   }
 
   @override
@@ -466,7 +352,7 @@ class _$_LoadInProgress implements _LoadInProgress {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loadInProgress,
-    required TResult Function(KtList<Tag> tags) loadSuccess,
+    required TResult Function(KtList<PromotionPlan> plans) loadedPromotionPlans,
     required TResult Function(Failure<dynamic> failure) loadFailure,
   }) {
     return loadInProgress();
@@ -477,7 +363,7 @@ class _$_LoadInProgress implements _LoadInProgress {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loadInProgress,
-    TResult Function(KtList<Tag> tags)? loadSuccess,
+    TResult Function(KtList<PromotionPlan> plans)? loadedPromotionPlans,
     TResult Function(Failure<dynamic> failure)? loadFailure,
     required TResult orElse(),
   }) {
@@ -492,7 +378,7 @@ class _$_LoadInProgress implements _LoadInProgress {
   TResult map<TResult extends Object?>({
     required TResult Function(_Initial value) initial,
     required TResult Function(_LoadInProgress value) loadInProgress,
-    required TResult Function(_LoadSuccess value) loadSuccess,
+    required TResult Function(_LoadedPromotionPlans value) loadedPromotionPlans,
     required TResult Function(_LoadFailure value) loadFailure,
   }) {
     return loadInProgress(this);
@@ -503,7 +389,7 @@ class _$_LoadInProgress implements _LoadInProgress {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
     TResult Function(_LoadInProgress value)? loadInProgress,
-    TResult Function(_LoadSuccess value)? loadSuccess,
+    TResult Function(_LoadedPromotionPlans value)? loadedPromotionPlans,
     TResult Function(_LoadFailure value)? loadFailure,
     required TResult orElse(),
   }) {
@@ -514,71 +400,71 @@ class _$_LoadInProgress implements _LoadInProgress {
   }
 }
 
-abstract class _LoadInProgress implements TagManagementWatcherState {
+abstract class _LoadInProgress implements PromotionPlansLoaderState {
   const factory _LoadInProgress() = _$_LoadInProgress;
 }
 
 /// @nodoc
-abstract class _$LoadSuccessCopyWith<$Res> {
-  factory _$LoadSuccessCopyWith(_LoadSuccess value, $Res Function(_LoadSuccess) then) = __$LoadSuccessCopyWithImpl<$Res>;
+abstract class _$LoadedPromotionPlansCopyWith<$Res> {
+  factory _$LoadedPromotionPlansCopyWith(_LoadedPromotionPlans value, $Res Function(_LoadedPromotionPlans) then) = __$LoadedPromotionPlansCopyWithImpl<$Res>;
 
-  $Res call({KtList<Tag> tags});
+  $Res call({KtList<PromotionPlan> plans});
 }
 
 /// @nodoc
-class __$LoadSuccessCopyWithImpl<$Res> extends _$TagManagementWatcherStateCopyWithImpl<$Res> implements _$LoadSuccessCopyWith<$Res> {
-  __$LoadSuccessCopyWithImpl(_LoadSuccess _value, $Res Function(_LoadSuccess) _then) : super(_value, (v) => _then(v as _LoadSuccess));
+class __$LoadedPromotionPlansCopyWithImpl<$Res> extends _$PromotionPlansLoaderStateCopyWithImpl<$Res> implements _$LoadedPromotionPlansCopyWith<$Res> {
+  __$LoadedPromotionPlansCopyWithImpl(_LoadedPromotionPlans _value, $Res Function(_LoadedPromotionPlans) _then) : super(_value, (v) => _then(v as _LoadedPromotionPlans));
 
   @override
-  _LoadSuccess get _value => super._value as _LoadSuccess;
+  _LoadedPromotionPlans get _value => super._value as _LoadedPromotionPlans;
 
   @override
   $Res call({
-    Object? tags = freezed,
+    Object? plans = freezed,
   }) {
-    return _then(_LoadSuccess(
-      tags == freezed
-          ? _value.tags
-          : tags // ignore: cast_nullable_to_non_nullable
-              as KtList<Tag>,
+    return _then(_LoadedPromotionPlans(
+      plans == freezed
+          ? _value.plans
+          : plans // ignore: cast_nullable_to_non_nullable
+              as KtList<PromotionPlan>,
     ));
   }
 }
 
 /// @nodoc
 
-class _$_LoadSuccess implements _LoadSuccess {
-  const _$_LoadSuccess(this.tags);
+class _$_LoadedPromotionPlans implements _LoadedPromotionPlans {
+  const _$_LoadedPromotionPlans(this.plans);
 
   @override
-  final KtList<Tag> tags;
+  final KtList<PromotionPlan> plans;
 
   @override
   String toString() {
-    return 'TagManagementWatcherState.loadSuccess(tags: $tags)';
+    return 'PromotionPlansLoaderState.loadedPromotionPlans(plans: $plans)';
   }
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _LoadSuccess && (identical(other.tags, tags) || const DeepCollectionEquality().equals(other.tags, tags)));
+    return identical(this, other) || (other is _LoadedPromotionPlans && (identical(other.plans, plans) || const DeepCollectionEquality().equals(other.plans, plans)));
   }
 
   @override
-  int get hashCode => runtimeType.hashCode ^ const DeepCollectionEquality().hash(tags);
+  int get hashCode => runtimeType.hashCode ^ const DeepCollectionEquality().hash(plans);
 
   @JsonKey(ignore: true)
   @override
-  _$LoadSuccessCopyWith<_LoadSuccess> get copyWith => __$LoadSuccessCopyWithImpl<_LoadSuccess>(this, _$identity);
+  _$LoadedPromotionPlansCopyWith<_LoadedPromotionPlans> get copyWith => __$LoadedPromotionPlansCopyWithImpl<_LoadedPromotionPlans>(this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loadInProgress,
-    required TResult Function(KtList<Tag> tags) loadSuccess,
+    required TResult Function(KtList<PromotionPlan> plans) loadedPromotionPlans,
     required TResult Function(Failure<dynamic> failure) loadFailure,
   }) {
-    return loadSuccess(tags);
+    return loadedPromotionPlans(plans);
   }
 
   @override
@@ -586,12 +472,12 @@ class _$_LoadSuccess implements _LoadSuccess {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loadInProgress,
-    TResult Function(KtList<Tag> tags)? loadSuccess,
+    TResult Function(KtList<PromotionPlan> plans)? loadedPromotionPlans,
     TResult Function(Failure<dynamic> failure)? loadFailure,
     required TResult orElse(),
   }) {
-    if (loadSuccess != null) {
-      return loadSuccess(tags);
+    if (loadedPromotionPlans != null) {
+      return loadedPromotionPlans(plans);
     }
     return orElse();
   }
@@ -601,10 +487,10 @@ class _$_LoadSuccess implements _LoadSuccess {
   TResult map<TResult extends Object?>({
     required TResult Function(_Initial value) initial,
     required TResult Function(_LoadInProgress value) loadInProgress,
-    required TResult Function(_LoadSuccess value) loadSuccess,
+    required TResult Function(_LoadedPromotionPlans value) loadedPromotionPlans,
     required TResult Function(_LoadFailure value) loadFailure,
   }) {
-    return loadSuccess(this);
+    return loadedPromotionPlans(this);
   }
 
   @override
@@ -612,24 +498,24 @@ class _$_LoadSuccess implements _LoadSuccess {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
     TResult Function(_LoadInProgress value)? loadInProgress,
-    TResult Function(_LoadSuccess value)? loadSuccess,
+    TResult Function(_LoadedPromotionPlans value)? loadedPromotionPlans,
     TResult Function(_LoadFailure value)? loadFailure,
     required TResult orElse(),
   }) {
-    if (loadSuccess != null) {
-      return loadSuccess(this);
+    if (loadedPromotionPlans != null) {
+      return loadedPromotionPlans(this);
     }
     return orElse();
   }
 }
 
-abstract class _LoadSuccess implements TagManagementWatcherState {
-  const factory _LoadSuccess(KtList<Tag> tags) = _$_LoadSuccess;
+abstract class _LoadedPromotionPlans implements PromotionPlansLoaderState {
+  const factory _LoadedPromotionPlans(KtList<PromotionPlan> plans) = _$_LoadedPromotionPlans;
 
-  KtList<Tag> get tags => throw _privateConstructorUsedError;
+  KtList<PromotionPlan> get plans => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
-  _$LoadSuccessCopyWith<_LoadSuccess> get copyWith => throw _privateConstructorUsedError;
+  _$LoadedPromotionPlansCopyWith<_LoadedPromotionPlans> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -642,7 +528,7 @@ abstract class _$LoadFailureCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$LoadFailureCopyWithImpl<$Res> extends _$TagManagementWatcherStateCopyWithImpl<$Res> implements _$LoadFailureCopyWith<$Res> {
+class __$LoadFailureCopyWithImpl<$Res> extends _$PromotionPlansLoaderStateCopyWithImpl<$Res> implements _$LoadFailureCopyWith<$Res> {
   __$LoadFailureCopyWithImpl(_LoadFailure _value, $Res Function(_LoadFailure) _then) : super(_value, (v) => _then(v as _LoadFailure));
 
   @override
@@ -678,7 +564,7 @@ class _$_LoadFailure implements _LoadFailure {
 
   @override
   String toString() {
-    return 'TagManagementWatcherState.loadFailure(failure: $failure)';
+    return 'PromotionPlansLoaderState.loadFailure(failure: $failure)';
   }
 
   @override
@@ -698,7 +584,7 @@ class _$_LoadFailure implements _LoadFailure {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loadInProgress,
-    required TResult Function(KtList<Tag> tags) loadSuccess,
+    required TResult Function(KtList<PromotionPlan> plans) loadedPromotionPlans,
     required TResult Function(Failure<dynamic> failure) loadFailure,
   }) {
     return loadFailure(failure);
@@ -709,7 +595,7 @@ class _$_LoadFailure implements _LoadFailure {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loadInProgress,
-    TResult Function(KtList<Tag> tags)? loadSuccess,
+    TResult Function(KtList<PromotionPlan> plans)? loadedPromotionPlans,
     TResult Function(Failure<dynamic> failure)? loadFailure,
     required TResult orElse(),
   }) {
@@ -724,7 +610,7 @@ class _$_LoadFailure implements _LoadFailure {
   TResult map<TResult extends Object?>({
     required TResult Function(_Initial value) initial,
     required TResult Function(_LoadInProgress value) loadInProgress,
-    required TResult Function(_LoadSuccess value) loadSuccess,
+    required TResult Function(_LoadedPromotionPlans value) loadedPromotionPlans,
     required TResult Function(_LoadFailure value) loadFailure,
   }) {
     return loadFailure(this);
@@ -735,7 +621,7 @@ class _$_LoadFailure implements _LoadFailure {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
     TResult Function(_LoadInProgress value)? loadInProgress,
-    TResult Function(_LoadSuccess value)? loadSuccess,
+    TResult Function(_LoadedPromotionPlans value)? loadedPromotionPlans,
     TResult Function(_LoadFailure value)? loadFailure,
     required TResult orElse(),
   }) {
@@ -746,7 +632,7 @@ class _$_LoadFailure implements _LoadFailure {
   }
 }
 
-abstract class _LoadFailure implements TagManagementWatcherState {
+abstract class _LoadFailure implements PromotionPlansLoaderState {
   const factory _LoadFailure(Failure<dynamic> failure) = _$_LoadFailure;
 
   Failure<dynamic> get failure => throw _privateConstructorUsedError;

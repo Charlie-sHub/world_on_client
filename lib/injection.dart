@@ -10,4 +10,3 @@ void configureDependencies(String environment) => $initGetIt(
       getIt,
       environment: environment,
     );
-// TODO: Configure injection for third party classes such as Firebase classes

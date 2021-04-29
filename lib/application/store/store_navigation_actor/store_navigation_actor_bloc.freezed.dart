@@ -95,6 +95,7 @@ class __$StoreTappedCopyWithImpl<$Res> extends _$StoreNavigationActorEventCopyWi
 }
 
 /// @nodoc
+
 class _$_StoreTapped implements _StoreTapped {
   const _$_StoreTapped();
 
@@ -178,6 +179,7 @@ class __$PromotionPlansTappedCopyWithImpl<$Res> extends _$StoreNavigationActorEv
 }
 
 /// @nodoc
+
 class _$_PromotionPlansTapped implements _PromotionPlansTapped {
   const _$_PromotionPlansTapped();
 
@@ -261,6 +263,7 @@ class __$MyItemsTappedCopyWithImpl<$Res> extends _$StoreNavigationActorEventCopy
 }
 
 /// @nodoc
+
 class _$_MyItemsTapped implements _MyItemsTapped {
   const _$_MyItemsTapped();
 
@@ -413,6 +416,7 @@ class __$StoreViewCopyWithImpl<$Res> extends _$StoreNavigationActorStateCopyWith
 }
 
 /// @nodoc
+
 class _$_StoreView implements _StoreView {
   const _$_StoreView();
 
@@ -496,6 +500,7 @@ class __$PromotionPlansViewCopyWithImpl<$Res> extends _$StoreNavigationActorStat
 }
 
 /// @nodoc
+
 class _$_PromotionPlansView implements _PromotionPlansView {
   const _$_PromotionPlansView();
 
@@ -579,6 +584,7 @@ class __$MyItemsViewCopyWithImpl<$Res> extends _$StoreNavigationActorStateCopyWi
 }
 
 /// @nodoc
+
 class _$_MyItemsView implements _MyItemsView {
   const _$_MyItemsView();
 

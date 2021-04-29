@@ -204,9 +204,8 @@ class __$NotificationDtoCopyWithImpl<$Res> extends _$NotificationDtoCopyWithImpl
   }
 }
 
-@JsonSerializable()
-
 /// @nodoc
+@JsonSerializable()
 class _$_NotificationDto extends _NotificationDto {
   const _$_NotificationDto(
       {@JsonKey(ignore: true) this.id,

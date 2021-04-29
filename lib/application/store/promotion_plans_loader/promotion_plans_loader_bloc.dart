@@ -27,10 +27,11 @@ class PromotionPlansLoaderBloc extends Bloc<PromotionPlansLoaderEvent, Promotion
   }
 
   Stream<PromotionPlansLoaderState> _onLoadPromotionPlans(_LoadPromotionPlans event) async* {
+    yield const PromotionPlansLoaderState.loadInProgress();
     final _failureOrPromotionPlans = await getIt<LoadPromotionPlans>()(
       getIt<NoParams>(),
     );
-    _failureOrPromotionPlans.fold(
+    yield _failureOrPromotionPlans.fold(
       (_failure) => PromotionPlansLoaderState.loadFailure(_failure),
       (_promotionPlans) => PromotionPlansLoaderState.loadedPromotionPlans(_promotionPlans),
     );

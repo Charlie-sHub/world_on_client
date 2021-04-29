@@ -118,6 +118,7 @@ class __$InitializedCopyWithImpl<$Res> extends _$ObjectiveFormEventCopyWithImpl<
 }
 
 /// @nodoc
+
 class _$_Initialized implements _Initialized {
   const _$_Initialized();
 
@@ -223,6 +224,7 @@ class __$DescriptionChangedCopyWithImpl<$Res> extends _$ObjectiveFormEventCopyWi
 }
 
 /// @nodoc
+
 class _$_DescriptionChanged implements _DescriptionChanged {
   const _$_DescriptionChanged(this.description);
 
@@ -345,6 +347,7 @@ class __$CoordinatesChangedCopyWithImpl<$Res> extends _$ObjectiveFormEventCopyWi
 }
 
 /// @nodoc
+
 class _$_CoordinatesChanged implements _CoordinatesChanged {
   const _$_CoordinatesChanged({required this.latitude, required this.longitude});
 
@@ -469,6 +472,7 @@ class __$ImageChangedCopyWithImpl<$Res> extends _$ObjectiveFormEventCopyWithImpl
 }
 
 /// @nodoc
+
 class _$_ImageChanged implements _ImageChanged {
   const _$_ImageChanged(this.imageFile);
 
@@ -572,6 +576,7 @@ class __$SubmittedCopyWithImpl<$Res> extends _$ObjectiveFormEventCopyWithImpl<$R
 }
 
 /// @nodoc
+
 class _$_Submitted implements _Submitted {
   const _$_Submitted();
 
@@ -777,6 +782,7 @@ class __$ObjectiveFormStateCopyWithImpl<$Res> extends _$ObjectiveFormStateCopyWi
 }
 
 /// @nodoc
+
 class _$_ObjectiveFormState implements _ObjectiveFormState {
   const _$_ObjectiveFormState({required this.objective, required this.showErrorMessages, required this.isSubmitting, required this.loadedCoordinates});
 
