@@ -24,12 +24,6 @@ class _$NavigationActorEventTearOff {
     return const _SearchTapped();
   }
 
-  _ExperienceFormTapped experienceFormTapped(Option<Experience> experienceOption) {
-    return _ExperienceFormTapped(
-      experienceOption,
-    );
-  }
-
   _ExperienceNavigationTapped experienceNavigationTapped(Option<Experience> experienceOption) {
     return _ExperienceNavigationTapped(
       experienceOption,
@@ -57,7 +51,6 @@ mixin _$NavigationActorEvent {
   TResult when<TResult extends Object?>({
     required TResult Function() mainFeedTapped,
     required TResult Function() searchTapped,
-    required TResult Function(Option<Experience> experienceOption) experienceFormTapped,
     required TResult Function(Option<Experience> experienceOption) experienceNavigationTapped,
     required TResult Function(Option<User> userOption, bool currentUserProfile) profileTapped,
     required TResult Function() notificationsTapped,
@@ -67,7 +60,6 @@ mixin _$NavigationActorEvent {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? mainFeedTapped,
     TResult Function()? searchTapped,
-    TResult Function(Option<Experience> experienceOption)? experienceFormTapped,
     TResult Function(Option<Experience> experienceOption)? experienceNavigationTapped,
     TResult Function(Option<User> userOption, bool currentUserProfile)? profileTapped,
     TResult Function()? notificationsTapped,
@@ -78,7 +70,6 @@ mixin _$NavigationActorEvent {
   TResult map<TResult extends Object?>({
     required TResult Function(_MainFeedTapped value) mainFeedTapped,
     required TResult Function(_SearchTapped value) searchTapped,
-    required TResult Function(_ExperienceFormTapped value) experienceFormTapped,
     required TResult Function(_ExperienceNavigationTapped value) experienceNavigationTapped,
     required TResult Function(_ProfileTapped value) profileTapped,
     required TResult Function(_NotificationsTapped value) notificationsTapped,
@@ -88,7 +79,6 @@ mixin _$NavigationActorEvent {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_MainFeedTapped value)? mainFeedTapped,
     TResult Function(_SearchTapped value)? searchTapped,
-    TResult Function(_ExperienceFormTapped value)? experienceFormTapped,
     TResult Function(_ExperienceNavigationTapped value)? experienceNavigationTapped,
     TResult Function(_ProfileTapped value)? profileTapped,
     TResult Function(_NotificationsTapped value)? notificationsTapped,
@@ -148,7 +138,6 @@ class _$_MainFeedTapped implements _MainFeedTapped {
   TResult when<TResult extends Object?>({
     required TResult Function() mainFeedTapped,
     required TResult Function() searchTapped,
-    required TResult Function(Option<Experience> experienceOption) experienceFormTapped,
     required TResult Function(Option<Experience> experienceOption) experienceNavigationTapped,
     required TResult Function(Option<User> userOption, bool currentUserProfile) profileTapped,
     required TResult Function() notificationsTapped,
@@ -161,7 +150,6 @@ class _$_MainFeedTapped implements _MainFeedTapped {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? mainFeedTapped,
     TResult Function()? searchTapped,
-    TResult Function(Option<Experience> experienceOption)? experienceFormTapped,
     TResult Function(Option<Experience> experienceOption)? experienceNavigationTapped,
     TResult Function(Option<User> userOption, bool currentUserProfile)? profileTapped,
     TResult Function()? notificationsTapped,
@@ -178,7 +166,6 @@ class _$_MainFeedTapped implements _MainFeedTapped {
   TResult map<TResult extends Object?>({
     required TResult Function(_MainFeedTapped value) mainFeedTapped,
     required TResult Function(_SearchTapped value) searchTapped,
-    required TResult Function(_ExperienceFormTapped value) experienceFormTapped,
     required TResult Function(_ExperienceNavigationTapped value) experienceNavigationTapped,
     required TResult Function(_ProfileTapped value) profileTapped,
     required TResult Function(_NotificationsTapped value) notificationsTapped,
@@ -191,7 +178,6 @@ class _$_MainFeedTapped implements _MainFeedTapped {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_MainFeedTapped value)? mainFeedTapped,
     TResult Function(_SearchTapped value)? searchTapped,
-    TResult Function(_ExperienceFormTapped value)? experienceFormTapped,
     TResult Function(_ExperienceNavigationTapped value)? experienceNavigationTapped,
     TResult Function(_ProfileTapped value)? profileTapped,
     TResult Function(_NotificationsTapped value)? notificationsTapped,
@@ -244,7 +230,6 @@ class _$_SearchTapped implements _SearchTapped {
   TResult when<TResult extends Object?>({
     required TResult Function() mainFeedTapped,
     required TResult Function() searchTapped,
-    required TResult Function(Option<Experience> experienceOption) experienceFormTapped,
     required TResult Function(Option<Experience> experienceOption) experienceNavigationTapped,
     required TResult Function(Option<User> userOption, bool currentUserProfile) profileTapped,
     required TResult Function() notificationsTapped,
@@ -257,7 +242,6 @@ class _$_SearchTapped implements _SearchTapped {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? mainFeedTapped,
     TResult Function()? searchTapped,
-    TResult Function(Option<Experience> experienceOption)? experienceFormTapped,
     TResult Function(Option<Experience> experienceOption)? experienceNavigationTapped,
     TResult Function(Option<User> userOption, bool currentUserProfile)? profileTapped,
     TResult Function()? notificationsTapped,
@@ -274,7 +258,6 @@ class _$_SearchTapped implements _SearchTapped {
   TResult map<TResult extends Object?>({
     required TResult Function(_MainFeedTapped value) mainFeedTapped,
     required TResult Function(_SearchTapped value) searchTapped,
-    required TResult Function(_ExperienceFormTapped value) experienceFormTapped,
     required TResult Function(_ExperienceNavigationTapped value) experienceNavigationTapped,
     required TResult Function(_ProfileTapped value) profileTapped,
     required TResult Function(_NotificationsTapped value) notificationsTapped,
@@ -287,7 +270,6 @@ class _$_SearchTapped implements _SearchTapped {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_MainFeedTapped value)? mainFeedTapped,
     TResult Function(_SearchTapped value)? searchTapped,
-    TResult Function(_ExperienceFormTapped value)? experienceFormTapped,
     TResult Function(_ExperienceNavigationTapped value)? experienceNavigationTapped,
     TResult Function(_ProfileTapped value)? profileTapped,
     TResult Function(_NotificationsTapped value)? notificationsTapped,
@@ -302,129 +284,6 @@ class _$_SearchTapped implements _SearchTapped {
 
 abstract class _SearchTapped implements NavigationActorEvent {
   const factory _SearchTapped() = _$_SearchTapped;
-}
-
-/// @nodoc
-abstract class _$ExperienceFormTappedCopyWith<$Res> {
-  factory _$ExperienceFormTappedCopyWith(_ExperienceFormTapped value, $Res Function(_ExperienceFormTapped) then) = __$ExperienceFormTappedCopyWithImpl<$Res>;
-
-  $Res call({Option<Experience> experienceOption});
-}
-
-/// @nodoc
-class __$ExperienceFormTappedCopyWithImpl<$Res> extends _$NavigationActorEventCopyWithImpl<$Res> implements _$ExperienceFormTappedCopyWith<$Res> {
-  __$ExperienceFormTappedCopyWithImpl(_ExperienceFormTapped _value, $Res Function(_ExperienceFormTapped) _then) : super(_value, (v) => _then(v as _ExperienceFormTapped));
-
-  @override
-  _ExperienceFormTapped get _value => super._value as _ExperienceFormTapped;
-
-  @override
-  $Res call({
-    Object? experienceOption = freezed,
-  }) {
-    return _then(_ExperienceFormTapped(
-      experienceOption == freezed
-          ? _value.experienceOption
-          : experienceOption // ignore: cast_nullable_to_non_nullable
-              as Option<Experience>,
-    ));
-  }
-}
-
-/// @nodoc
-
-class _$_ExperienceFormTapped implements _ExperienceFormTapped {
-  const _$_ExperienceFormTapped(this.experienceOption);
-
-  @override
-  final Option<Experience> experienceOption;
-
-  @override
-  String toString() {
-    return 'NavigationActorEvent.experienceFormTapped(experienceOption: $experienceOption)';
-  }
-
-  @override
-  bool operator ==(dynamic other) {
-    return identical(this, other) ||
-        (other is _ExperienceFormTapped && (identical(other.experienceOption, experienceOption) || const DeepCollectionEquality().equals(other.experienceOption, experienceOption)));
-  }
-
-  @override
-  int get hashCode => runtimeType.hashCode ^ const DeepCollectionEquality().hash(experienceOption);
-
-  @JsonKey(ignore: true)
-  @override
-  _$ExperienceFormTappedCopyWith<_ExperienceFormTapped> get copyWith => __$ExperienceFormTappedCopyWithImpl<_ExperienceFormTapped>(this, _$identity);
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() mainFeedTapped,
-    required TResult Function() searchTapped,
-    required TResult Function(Option<Experience> experienceOption) experienceFormTapped,
-    required TResult Function(Option<Experience> experienceOption) experienceNavigationTapped,
-    required TResult Function(Option<User> userOption, bool currentUserProfile) profileTapped,
-    required TResult Function() notificationsTapped,
-  }) {
-    return experienceFormTapped(experienceOption);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? mainFeedTapped,
-    TResult Function()? searchTapped,
-    TResult Function(Option<Experience> experienceOption)? experienceFormTapped,
-    TResult Function(Option<Experience> experienceOption)? experienceNavigationTapped,
-    TResult Function(Option<User> userOption, bool currentUserProfile)? profileTapped,
-    TResult Function()? notificationsTapped,
-    required TResult orElse(),
-  }) {
-    if (experienceFormTapped != null) {
-      return experienceFormTapped(experienceOption);
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_MainFeedTapped value) mainFeedTapped,
-    required TResult Function(_SearchTapped value) searchTapped,
-    required TResult Function(_ExperienceFormTapped value) experienceFormTapped,
-    required TResult Function(_ExperienceNavigationTapped value) experienceNavigationTapped,
-    required TResult Function(_ProfileTapped value) profileTapped,
-    required TResult Function(_NotificationsTapped value) notificationsTapped,
-  }) {
-    return experienceFormTapped(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_MainFeedTapped value)? mainFeedTapped,
-    TResult Function(_SearchTapped value)? searchTapped,
-    TResult Function(_ExperienceFormTapped value)? experienceFormTapped,
-    TResult Function(_ExperienceNavigationTapped value)? experienceNavigationTapped,
-    TResult Function(_ProfileTapped value)? profileTapped,
-    TResult Function(_NotificationsTapped value)? notificationsTapped,
-    required TResult orElse(),
-  }) {
-    if (experienceFormTapped != null) {
-      return experienceFormTapped(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class _ExperienceFormTapped implements NavigationActorEvent {
-  const factory _ExperienceFormTapped(Option<Experience> experienceOption) = _$_ExperienceFormTapped;
-
-  Option<Experience> get experienceOption => throw _privateConstructorUsedError;
-
-  @JsonKey(ignore: true)
-  _$ExperienceFormTappedCopyWith<_ExperienceFormTapped> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -485,7 +344,6 @@ class _$_ExperienceNavigationTapped implements _ExperienceNavigationTapped {
   TResult when<TResult extends Object?>({
     required TResult Function() mainFeedTapped,
     required TResult Function() searchTapped,
-    required TResult Function(Option<Experience> experienceOption) experienceFormTapped,
     required TResult Function(Option<Experience> experienceOption) experienceNavigationTapped,
     required TResult Function(Option<User> userOption, bool currentUserProfile) profileTapped,
     required TResult Function() notificationsTapped,
@@ -498,7 +356,6 @@ class _$_ExperienceNavigationTapped implements _ExperienceNavigationTapped {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? mainFeedTapped,
     TResult Function()? searchTapped,
-    TResult Function(Option<Experience> experienceOption)? experienceFormTapped,
     TResult Function(Option<Experience> experienceOption)? experienceNavigationTapped,
     TResult Function(Option<User> userOption, bool currentUserProfile)? profileTapped,
     TResult Function()? notificationsTapped,
@@ -515,7 +372,6 @@ class _$_ExperienceNavigationTapped implements _ExperienceNavigationTapped {
   TResult map<TResult extends Object?>({
     required TResult Function(_MainFeedTapped value) mainFeedTapped,
     required TResult Function(_SearchTapped value) searchTapped,
-    required TResult Function(_ExperienceFormTapped value) experienceFormTapped,
     required TResult Function(_ExperienceNavigationTapped value) experienceNavigationTapped,
     required TResult Function(_ProfileTapped value) profileTapped,
     required TResult Function(_NotificationsTapped value) notificationsTapped,
@@ -528,7 +384,6 @@ class _$_ExperienceNavigationTapped implements _ExperienceNavigationTapped {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_MainFeedTapped value)? mainFeedTapped,
     TResult Function(_SearchTapped value)? searchTapped,
-    TResult Function(_ExperienceFormTapped value)? experienceFormTapped,
     TResult Function(_ExperienceNavigationTapped value)? experienceNavigationTapped,
     TResult Function(_ProfileTapped value)? profileTapped,
     TResult Function(_NotificationsTapped value)? notificationsTapped,
@@ -617,7 +472,6 @@ class _$_ProfileTapped implements _ProfileTapped {
   TResult when<TResult extends Object?>({
     required TResult Function() mainFeedTapped,
     required TResult Function() searchTapped,
-    required TResult Function(Option<Experience> experienceOption) experienceFormTapped,
     required TResult Function(Option<Experience> experienceOption) experienceNavigationTapped,
     required TResult Function(Option<User> userOption, bool currentUserProfile) profileTapped,
     required TResult Function() notificationsTapped,
@@ -630,7 +484,6 @@ class _$_ProfileTapped implements _ProfileTapped {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? mainFeedTapped,
     TResult Function()? searchTapped,
-    TResult Function(Option<Experience> experienceOption)? experienceFormTapped,
     TResult Function(Option<Experience> experienceOption)? experienceNavigationTapped,
     TResult Function(Option<User> userOption, bool currentUserProfile)? profileTapped,
     TResult Function()? notificationsTapped,
@@ -647,7 +500,6 @@ class _$_ProfileTapped implements _ProfileTapped {
   TResult map<TResult extends Object?>({
     required TResult Function(_MainFeedTapped value) mainFeedTapped,
     required TResult Function(_SearchTapped value) searchTapped,
-    required TResult Function(_ExperienceFormTapped value) experienceFormTapped,
     required TResult Function(_ExperienceNavigationTapped value) experienceNavigationTapped,
     required TResult Function(_ProfileTapped value) profileTapped,
     required TResult Function(_NotificationsTapped value) notificationsTapped,
@@ -660,7 +512,6 @@ class _$_ProfileTapped implements _ProfileTapped {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_MainFeedTapped value)? mainFeedTapped,
     TResult Function(_SearchTapped value)? searchTapped,
-    TResult Function(_ExperienceFormTapped value)? experienceFormTapped,
     TResult Function(_ExperienceNavigationTapped value)? experienceNavigationTapped,
     TResult Function(_ProfileTapped value)? profileTapped,
     TResult Function(_NotificationsTapped value)? notificationsTapped,
@@ -720,7 +571,6 @@ class _$_NotificationsTapped implements _NotificationsTapped {
   TResult when<TResult extends Object?>({
     required TResult Function() mainFeedTapped,
     required TResult Function() searchTapped,
-    required TResult Function(Option<Experience> experienceOption) experienceFormTapped,
     required TResult Function(Option<Experience> experienceOption) experienceNavigationTapped,
     required TResult Function(Option<User> userOption, bool currentUserProfile) profileTapped,
     required TResult Function() notificationsTapped,
@@ -733,7 +583,6 @@ class _$_NotificationsTapped implements _NotificationsTapped {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? mainFeedTapped,
     TResult Function()? searchTapped,
-    TResult Function(Option<Experience> experienceOption)? experienceFormTapped,
     TResult Function(Option<Experience> experienceOption)? experienceNavigationTapped,
     TResult Function(Option<User> userOption, bool currentUserProfile)? profileTapped,
     TResult Function()? notificationsTapped,
@@ -750,7 +599,6 @@ class _$_NotificationsTapped implements _NotificationsTapped {
   TResult map<TResult extends Object?>({
     required TResult Function(_MainFeedTapped value) mainFeedTapped,
     required TResult Function(_SearchTapped value) searchTapped,
-    required TResult Function(_ExperienceFormTapped value) experienceFormTapped,
     required TResult Function(_ExperienceNavigationTapped value) experienceNavigationTapped,
     required TResult Function(_ProfileTapped value) profileTapped,
     required TResult Function(_NotificationsTapped value) notificationsTapped,
@@ -763,7 +611,6 @@ class _$_NotificationsTapped implements _NotificationsTapped {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_MainFeedTapped value)? mainFeedTapped,
     TResult Function(_SearchTapped value)? searchTapped,
-    TResult Function(_ExperienceFormTapped value)? experienceFormTapped,
     TResult Function(_ExperienceNavigationTapped value)? experienceNavigationTapped,
     TResult Function(_ProfileTapped value)? profileTapped,
     TResult Function(_NotificationsTapped value)? notificationsTapped,
@@ -790,12 +637,6 @@ class _$NavigationActorStateTearOff {
 
   _SearchView searchView() {
     return const _SearchView();
-  }
-
-  _ExperienceFormView experienceFormView(Option<Experience> experienceOption) {
-    return _ExperienceFormView(
-      experienceOption,
-    );
   }
 
   _NavigateExperienceView navigateExperienceView(Option<Experience> experienceOption) {
@@ -829,7 +670,6 @@ mixin _$NavigationActorState {
   TResult when<TResult extends Object?>({
     required TResult Function() mainFeedView,
     required TResult Function() searchView,
-    required TResult Function(Option<Experience> experienceOption) experienceFormView,
     required TResult Function(Option<Experience> experienceOption) navigateExperienceView,
     required TResult Function(Option<User> userOption, bool currentUserProfile) profileView,
     required TResult Function() errorView,
@@ -840,7 +680,6 @@ mixin _$NavigationActorState {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? mainFeedView,
     TResult Function()? searchView,
-    TResult Function(Option<Experience> experienceOption)? experienceFormView,
     TResult Function(Option<Experience> experienceOption)? navigateExperienceView,
     TResult Function(Option<User> userOption, bool currentUserProfile)? profileView,
     TResult Function()? errorView,
@@ -852,7 +691,6 @@ mixin _$NavigationActorState {
   TResult map<TResult extends Object?>({
     required TResult Function(_MainFeedView value) mainFeedView,
     required TResult Function(_SearchView value) searchView,
-    required TResult Function(_ExperienceFormView value) experienceFormView,
     required TResult Function(_NavigateExperienceView value) navigateExperienceView,
     required TResult Function(_ProfileView value) profileView,
     required TResult Function(_ErrorView value) errorView,
@@ -863,7 +701,6 @@ mixin _$NavigationActorState {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_MainFeedView value)? mainFeedView,
     TResult Function(_SearchView value)? searchView,
-    TResult Function(_ExperienceFormView value)? experienceFormView,
     TResult Function(_NavigateExperienceView value)? navigateExperienceView,
     TResult Function(_ProfileView value)? profileView,
     TResult Function(_ErrorView value)? errorView,
@@ -924,7 +761,6 @@ class _$_MainFeedView implements _MainFeedView {
   TResult when<TResult extends Object?>({
     required TResult Function() mainFeedView,
     required TResult Function() searchView,
-    required TResult Function(Option<Experience> experienceOption) experienceFormView,
     required TResult Function(Option<Experience> experienceOption) navigateExperienceView,
     required TResult Function(Option<User> userOption, bool currentUserProfile) profileView,
     required TResult Function() errorView,
@@ -938,7 +774,6 @@ class _$_MainFeedView implements _MainFeedView {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? mainFeedView,
     TResult Function()? searchView,
-    TResult Function(Option<Experience> experienceOption)? experienceFormView,
     TResult Function(Option<Experience> experienceOption)? navigateExperienceView,
     TResult Function(Option<User> userOption, bool currentUserProfile)? profileView,
     TResult Function()? errorView,
@@ -956,7 +791,6 @@ class _$_MainFeedView implements _MainFeedView {
   TResult map<TResult extends Object?>({
     required TResult Function(_MainFeedView value) mainFeedView,
     required TResult Function(_SearchView value) searchView,
-    required TResult Function(_ExperienceFormView value) experienceFormView,
     required TResult Function(_NavigateExperienceView value) navigateExperienceView,
     required TResult Function(_ProfileView value) profileView,
     required TResult Function(_ErrorView value) errorView,
@@ -970,7 +804,6 @@ class _$_MainFeedView implements _MainFeedView {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_MainFeedView value)? mainFeedView,
     TResult Function(_SearchView value)? searchView,
-    TResult Function(_ExperienceFormView value)? experienceFormView,
     TResult Function(_NavigateExperienceView value)? navigateExperienceView,
     TResult Function(_ProfileView value)? profileView,
     TResult Function(_ErrorView value)? errorView,
@@ -1024,7 +857,6 @@ class _$_SearchView implements _SearchView {
   TResult when<TResult extends Object?>({
     required TResult Function() mainFeedView,
     required TResult Function() searchView,
-    required TResult Function(Option<Experience> experienceOption) experienceFormView,
     required TResult Function(Option<Experience> experienceOption) navigateExperienceView,
     required TResult Function(Option<User> userOption, bool currentUserProfile) profileView,
     required TResult Function() errorView,
@@ -1038,7 +870,6 @@ class _$_SearchView implements _SearchView {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? mainFeedView,
     TResult Function()? searchView,
-    TResult Function(Option<Experience> experienceOption)? experienceFormView,
     TResult Function(Option<Experience> experienceOption)? navigateExperienceView,
     TResult Function(Option<User> userOption, bool currentUserProfile)? profileView,
     TResult Function()? errorView,
@@ -1056,7 +887,6 @@ class _$_SearchView implements _SearchView {
   TResult map<TResult extends Object?>({
     required TResult Function(_MainFeedView value) mainFeedView,
     required TResult Function(_SearchView value) searchView,
-    required TResult Function(_ExperienceFormView value) experienceFormView,
     required TResult Function(_NavigateExperienceView value) navigateExperienceView,
     required TResult Function(_ProfileView value) profileView,
     required TResult Function(_ErrorView value) errorView,
@@ -1070,7 +900,6 @@ class _$_SearchView implements _SearchView {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_MainFeedView value)? mainFeedView,
     TResult Function(_SearchView value)? searchView,
-    TResult Function(_ExperienceFormView value)? experienceFormView,
     TResult Function(_NavigateExperienceView value)? navigateExperienceView,
     TResult Function(_ProfileView value)? profileView,
     TResult Function(_ErrorView value)? errorView,
@@ -1086,133 +915,6 @@ class _$_SearchView implements _SearchView {
 
 abstract class _SearchView implements NavigationActorState {
   const factory _SearchView() = _$_SearchView;
-}
-
-/// @nodoc
-abstract class _$ExperienceFormViewCopyWith<$Res> {
-  factory _$ExperienceFormViewCopyWith(_ExperienceFormView value, $Res Function(_ExperienceFormView) then) = __$ExperienceFormViewCopyWithImpl<$Res>;
-
-  $Res call({Option<Experience> experienceOption});
-}
-
-/// @nodoc
-class __$ExperienceFormViewCopyWithImpl<$Res> extends _$NavigationActorStateCopyWithImpl<$Res> implements _$ExperienceFormViewCopyWith<$Res> {
-  __$ExperienceFormViewCopyWithImpl(_ExperienceFormView _value, $Res Function(_ExperienceFormView) _then) : super(_value, (v) => _then(v as _ExperienceFormView));
-
-  @override
-  _ExperienceFormView get _value => super._value as _ExperienceFormView;
-
-  @override
-  $Res call({
-    Object? experienceOption = freezed,
-  }) {
-    return _then(_ExperienceFormView(
-      experienceOption == freezed
-          ? _value.experienceOption
-          : experienceOption // ignore: cast_nullable_to_non_nullable
-              as Option<Experience>,
-    ));
-  }
-}
-
-/// @nodoc
-
-class _$_ExperienceFormView implements _ExperienceFormView {
-  const _$_ExperienceFormView(this.experienceOption);
-
-  @override
-  final Option<Experience> experienceOption;
-
-  @override
-  String toString() {
-    return 'NavigationActorState.experienceFormView(experienceOption: $experienceOption)';
-  }
-
-  @override
-  bool operator ==(dynamic other) {
-    return identical(this, other) ||
-        (other is _ExperienceFormView && (identical(other.experienceOption, experienceOption) || const DeepCollectionEquality().equals(other.experienceOption, experienceOption)));
-  }
-
-  @override
-  int get hashCode => runtimeType.hashCode ^ const DeepCollectionEquality().hash(experienceOption);
-
-  @JsonKey(ignore: true)
-  @override
-  _$ExperienceFormViewCopyWith<_ExperienceFormView> get copyWith => __$ExperienceFormViewCopyWithImpl<_ExperienceFormView>(this, _$identity);
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() mainFeedView,
-    required TResult Function() searchView,
-    required TResult Function(Option<Experience> experienceOption) experienceFormView,
-    required TResult Function(Option<Experience> experienceOption) navigateExperienceView,
-    required TResult Function(Option<User> userOption, bool currentUserProfile) profileView,
-    required TResult Function() errorView,
-    required TResult Function() notificationsView,
-  }) {
-    return experienceFormView(experienceOption);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? mainFeedView,
-    TResult Function()? searchView,
-    TResult Function(Option<Experience> experienceOption)? experienceFormView,
-    TResult Function(Option<Experience> experienceOption)? navigateExperienceView,
-    TResult Function(Option<User> userOption, bool currentUserProfile)? profileView,
-    TResult Function()? errorView,
-    TResult Function()? notificationsView,
-    required TResult orElse(),
-  }) {
-    if (experienceFormView != null) {
-      return experienceFormView(experienceOption);
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_MainFeedView value) mainFeedView,
-    required TResult Function(_SearchView value) searchView,
-    required TResult Function(_ExperienceFormView value) experienceFormView,
-    required TResult Function(_NavigateExperienceView value) navigateExperienceView,
-    required TResult Function(_ProfileView value) profileView,
-    required TResult Function(_ErrorView value) errorView,
-    required TResult Function(_NotificationsView value) notificationsView,
-  }) {
-    return experienceFormView(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_MainFeedView value)? mainFeedView,
-    TResult Function(_SearchView value)? searchView,
-    TResult Function(_ExperienceFormView value)? experienceFormView,
-    TResult Function(_NavigateExperienceView value)? navigateExperienceView,
-    TResult Function(_ProfileView value)? profileView,
-    TResult Function(_ErrorView value)? errorView,
-    TResult Function(_NotificationsView value)? notificationsView,
-    required TResult orElse(),
-  }) {
-    if (experienceFormView != null) {
-      return experienceFormView(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class _ExperienceFormView implements NavigationActorState {
-  const factory _ExperienceFormView(Option<Experience> experienceOption) = _$_ExperienceFormView;
-
-  Option<Experience> get experienceOption => throw _privateConstructorUsedError;
-
-  @JsonKey(ignore: true)
-  _$ExperienceFormViewCopyWith<_ExperienceFormView> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -1273,7 +975,6 @@ class _$_NavigateExperienceView implements _NavigateExperienceView {
   TResult when<TResult extends Object?>({
     required TResult Function() mainFeedView,
     required TResult Function() searchView,
-    required TResult Function(Option<Experience> experienceOption) experienceFormView,
     required TResult Function(Option<Experience> experienceOption) navigateExperienceView,
     required TResult Function(Option<User> userOption, bool currentUserProfile) profileView,
     required TResult Function() errorView,
@@ -1287,7 +988,6 @@ class _$_NavigateExperienceView implements _NavigateExperienceView {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? mainFeedView,
     TResult Function()? searchView,
-    TResult Function(Option<Experience> experienceOption)? experienceFormView,
     TResult Function(Option<Experience> experienceOption)? navigateExperienceView,
     TResult Function(Option<User> userOption, bool currentUserProfile)? profileView,
     TResult Function()? errorView,
@@ -1305,7 +1005,6 @@ class _$_NavigateExperienceView implements _NavigateExperienceView {
   TResult map<TResult extends Object?>({
     required TResult Function(_MainFeedView value) mainFeedView,
     required TResult Function(_SearchView value) searchView,
-    required TResult Function(_ExperienceFormView value) experienceFormView,
     required TResult Function(_NavigateExperienceView value) navigateExperienceView,
     required TResult Function(_ProfileView value) profileView,
     required TResult Function(_ErrorView value) errorView,
@@ -1319,7 +1018,6 @@ class _$_NavigateExperienceView implements _NavigateExperienceView {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_MainFeedView value)? mainFeedView,
     TResult Function(_SearchView value)? searchView,
-    TResult Function(_ExperienceFormView value)? experienceFormView,
     TResult Function(_NavigateExperienceView value)? navigateExperienceView,
     TResult Function(_ProfileView value)? profileView,
     TResult Function(_ErrorView value)? errorView,
@@ -1409,7 +1107,6 @@ class _$_ProfileView implements _ProfileView {
   TResult when<TResult extends Object?>({
     required TResult Function() mainFeedView,
     required TResult Function() searchView,
-    required TResult Function(Option<Experience> experienceOption) experienceFormView,
     required TResult Function(Option<Experience> experienceOption) navigateExperienceView,
     required TResult Function(Option<User> userOption, bool currentUserProfile) profileView,
     required TResult Function() errorView,
@@ -1423,7 +1120,6 @@ class _$_ProfileView implements _ProfileView {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? mainFeedView,
     TResult Function()? searchView,
-    TResult Function(Option<Experience> experienceOption)? experienceFormView,
     TResult Function(Option<Experience> experienceOption)? navigateExperienceView,
     TResult Function(Option<User> userOption, bool currentUserProfile)? profileView,
     TResult Function()? errorView,
@@ -1441,7 +1137,6 @@ class _$_ProfileView implements _ProfileView {
   TResult map<TResult extends Object?>({
     required TResult Function(_MainFeedView value) mainFeedView,
     required TResult Function(_SearchView value) searchView,
-    required TResult Function(_ExperienceFormView value) experienceFormView,
     required TResult Function(_NavigateExperienceView value) navigateExperienceView,
     required TResult Function(_ProfileView value) profileView,
     required TResult Function(_ErrorView value) errorView,
@@ -1455,7 +1150,6 @@ class _$_ProfileView implements _ProfileView {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_MainFeedView value)? mainFeedView,
     TResult Function(_SearchView value)? searchView,
-    TResult Function(_ExperienceFormView value)? experienceFormView,
     TResult Function(_NavigateExperienceView value)? navigateExperienceView,
     TResult Function(_ProfileView value)? profileView,
     TResult Function(_ErrorView value)? errorView,
@@ -1516,7 +1210,6 @@ class _$_ErrorView implements _ErrorView {
   TResult when<TResult extends Object?>({
     required TResult Function() mainFeedView,
     required TResult Function() searchView,
-    required TResult Function(Option<Experience> experienceOption) experienceFormView,
     required TResult Function(Option<Experience> experienceOption) navigateExperienceView,
     required TResult Function(Option<User> userOption, bool currentUserProfile) profileView,
     required TResult Function() errorView,
@@ -1530,7 +1223,6 @@ class _$_ErrorView implements _ErrorView {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? mainFeedView,
     TResult Function()? searchView,
-    TResult Function(Option<Experience> experienceOption)? experienceFormView,
     TResult Function(Option<Experience> experienceOption)? navigateExperienceView,
     TResult Function(Option<User> userOption, bool currentUserProfile)? profileView,
     TResult Function()? errorView,
@@ -1548,7 +1240,6 @@ class _$_ErrorView implements _ErrorView {
   TResult map<TResult extends Object?>({
     required TResult Function(_MainFeedView value) mainFeedView,
     required TResult Function(_SearchView value) searchView,
-    required TResult Function(_ExperienceFormView value) experienceFormView,
     required TResult Function(_NavigateExperienceView value) navigateExperienceView,
     required TResult Function(_ProfileView value) profileView,
     required TResult Function(_ErrorView value) errorView,
@@ -1562,7 +1253,6 @@ class _$_ErrorView implements _ErrorView {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_MainFeedView value)? mainFeedView,
     TResult Function(_SearchView value)? searchView,
-    TResult Function(_ExperienceFormView value)? experienceFormView,
     TResult Function(_NavigateExperienceView value)? navigateExperienceView,
     TResult Function(_ProfileView value)? profileView,
     TResult Function(_ErrorView value)? errorView,
@@ -1616,7 +1306,6 @@ class _$_NotificationsView implements _NotificationsView {
   TResult when<TResult extends Object?>({
     required TResult Function() mainFeedView,
     required TResult Function() searchView,
-    required TResult Function(Option<Experience> experienceOption) experienceFormView,
     required TResult Function(Option<Experience> experienceOption) navigateExperienceView,
     required TResult Function(Option<User> userOption, bool currentUserProfile) profileView,
     required TResult Function() errorView,
@@ -1630,7 +1319,6 @@ class _$_NotificationsView implements _NotificationsView {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? mainFeedView,
     TResult Function()? searchView,
-    TResult Function(Option<Experience> experienceOption)? experienceFormView,
     TResult Function(Option<Experience> experienceOption)? navigateExperienceView,
     TResult Function(Option<User> userOption, bool currentUserProfile)? profileView,
     TResult Function()? errorView,
@@ -1648,7 +1336,6 @@ class _$_NotificationsView implements _NotificationsView {
   TResult map<TResult extends Object?>({
     required TResult Function(_MainFeedView value) mainFeedView,
     required TResult Function(_SearchView value) searchView,
-    required TResult Function(_ExperienceFormView value) experienceFormView,
     required TResult Function(_NavigateExperienceView value) navigateExperienceView,
     required TResult Function(_ProfileView value) profileView,
     required TResult Function(_ErrorView value) errorView,
@@ -1662,7 +1349,6 @@ class _$_NotificationsView implements _NotificationsView {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_MainFeedView value)? mainFeedView,
     TResult Function(_SearchView value)? searchView,
-    TResult Function(_ExperienceFormView value)? experienceFormView,
     TResult Function(_NavigateExperienceView value)? navigateExperienceView,
     TResult Function(_ProfileView value)? profileView,
     TResult Function(_ErrorView value)? errorView,

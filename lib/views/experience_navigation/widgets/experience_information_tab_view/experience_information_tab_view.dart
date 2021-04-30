@@ -121,7 +121,10 @@ class ExperienceInformationTabView extends StatelessWidget {
             children: <Widget>[
               Padding(
                 padding: const EdgeInsets.all(5),
-                child: UserImage(user: experience.creator),
+                child: UserImage(
+                  user: experience.creator,
+                  avatarRadius: 30,
+                ),
               ),
               NameUsernameDisplay(user: experience.creator),
               FollowUnfollowButtonBuilder(user: experience.creator),

@@ -26,7 +26,12 @@ class SearchTagsTabView extends StatelessWidget {
         searchInProgress: (_) => const WorldOnProgressIndicator(),
         searchSuccess: (state) => ListView.builder(
           physics: const BouncingScrollPhysics(),
-          padding: const EdgeInsets.all(10),
+          padding: const EdgeInsets.only(
+            bottom: kFloatingActionButtonMargin + 50,
+            left: 10,
+            right: 10,
+            top: 10,
+          ),
           itemCount: state.tagsFound.size,
           itemBuilder: (context, index) {
             final _tag = state.tagsFound[index];

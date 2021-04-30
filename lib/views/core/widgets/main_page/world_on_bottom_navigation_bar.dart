@@ -1,58 +1,50 @@
+import 'package:animated_bottom_navigation_bar/animated_bottom_navigation_bar.dart';
 import 'package:dartz/dartz.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:worldon/application/navigation/navigation_actor/navigation_actor_bloc.dart';
-import 'package:worldon/generated/l10n.dart';
+import 'package:worldon/views/core/misc/world_on_colors.dart';
 
 class WorldOnBottomNavigationBar extends StatelessWidget {
   static const _mainFeedIndex = 0;
   static const _searchIndex = 1;
-  static const _experienceFormIndex = 2;
-  static const _navigationIndex = 3;
-  static const _profileIndex = 4;
+  static const _navigationIndex = 2;
+  static const _profileIndex = 3;
 
   @override
   Widget build(BuildContext context) {
-    return BottomNavigationBar(
+    return AnimatedBottomNavigationBar(
+      rightCornerRadius: 10,
+      leftCornerRadius: 10,
+      notchSmoothness: NotchSmoothness.defaultEdge,
+      notchMargin: 3,
+      height: 50,
+      iconSize: 28,
+      backgroundColor: WorldOnColors.white,
       onTap: (index) => _onTap(index, context),
-      currentIndex: context.read<NavigationActorBloc>().state.map(
-            mainFeedView: (context) => _mainFeedIndex,
-            searchView: (context) => _searchIndex,
-            experienceFormView: (context) => _experienceFormIndex,
-            navigateExperienceView: (context) => _navigationIndex,
-            profileView: (context) => _profileIndex,
-            errorView: (context) => _mainFeedIndex,
-            notificationsView: (context) => _profileIndex,
-          ),
-      items: [
-        BottomNavigationBarItem(
-          icon: const FaIcon(FontAwesomeIcons.home),
-          label: S.of(context).bottomNavigationBarFeed,
-          backgroundColor: Colors.blue,
-        ),
-        BottomNavigationBarItem(
-          icon: const FaIcon(FontAwesomeIcons.search),
-          label: S.of(context).bottomNavigationBarSearch,
-          backgroundColor: Colors.green,
-        ),
-        BottomNavigationBarItem(
-          icon: const FaIcon(FontAwesomeIcons.plusCircle),
-          label: S.of(context).bottomNavigationBarCreate,
-          backgroundColor: Colors.orange,
-        ),
-        BottomNavigationBarItem(
-          icon: const FaIcon(FontAwesomeIcons.solidCompass),
-          label: S.of(context).bottomNavigationBarExplore,
-          backgroundColor: Colors.red,
-        ),
-        BottomNavigationBarItem(
-          icon: const FaIcon(FontAwesomeIcons.userAlt),
-          label: S.of(context).bottomNavigationBarProfile,
-          backgroundColor: Colors.purple,
-        ),
+      gapLocation: GapLocation.center,
+      activeIndex: _getCurrentIndex(context),
+      activeColor: WorldOnColors.primary,
+      inactiveColor: WorldOnColors.background,
+      icons: const [
+        FontAwesomeIcons.home,
+        FontAwesomeIcons.search,
+        FontAwesomeIcons.solidCompass,
+        FontAwesomeIcons.userAlt,
       ],
     );
+  }
+
+  int _getCurrentIndex(BuildContext context) {
+    return context.read<NavigationActorBloc>().state.map(
+          mainFeedView: (context) => _mainFeedIndex,
+          searchView: (context) => _searchIndex,
+          navigateExperienceView: (context) => _navigationIndex,
+          profileView: (context) => _profileIndex,
+          errorView: (context) => _mainFeedIndex,
+          notificationsView: (context) => _profileIndex,
+        );
   }
 
   void _onTap(int index, BuildContext context) {
@@ -64,35 +56,28 @@ class WorldOnBottomNavigationBar extends StatelessWidget {
         break;
       case _searchIndex:
         context.read<NavigationActorBloc>().add(
-              const NavigationActorEvent.searchTapped(),
-            );
-        break;
-      case _experienceFormIndex:
-        context.read<NavigationActorBloc>().add(
-              NavigationActorEvent.experienceFormTapped(
-                none(),
-              ),
-            );
+          const NavigationActorEvent.searchTapped(),
+        );
         break;
       case _navigationIndex:
         context.read<NavigationActorBloc>().add(
-              NavigationActorEvent.experienceNavigationTapped(
-                none(),
-              ),
-            );
+          NavigationActorEvent.experienceNavigationTapped(
+            none(),
+          ),
+        );
         break;
       case _profileIndex:
         context.read<NavigationActorBloc>().add(
-              NavigationActorEvent.profileTapped(
-                currentUserProfile: false,
-                userOption: none(),
-              ),
-            );
+          NavigationActorEvent.profileTapped(
+            currentUserProfile: false,
+            userOption: none(),
+          ),
+        );
         break;
       default:
         context.read<NavigationActorBloc>().add(
-              const NavigationActorEvent.mainFeedTapped(),
-            );
+          const NavigationActorEvent.mainFeedTapped(),
+        );
         break;
     }
   }

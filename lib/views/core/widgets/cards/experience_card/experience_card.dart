@@ -39,7 +39,7 @@ class ExperienceCard extends StatelessWidget {
       child: BlocListener<ExperienceCardActorBloc, ExperienceCardActorState>(
         listener: _experienceCardListener,
         child: Card(
-          margin: const EdgeInsets.all(5),
+          clipBehavior: Clip.antiAlias,
           shape: experience.isPromoted
               ? RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(3),
@@ -49,14 +49,13 @@ class ExperienceCard extends StatelessWidget {
                   ),
                 )
               : null,
-          child: Padding(
-            padding: const EdgeInsets.all(5),
-            child: Column(
-              children: <Widget>[
-                ImageStack(experience: experience),
-                Column(
+          child: Column(
+            children: <Widget>[
+              ImageStack(experience: experience),
+              Padding(
+                padding: const EdgeInsets.all(5),
+                child: Column(
                   children: <Widget>[
-                    const SizedBox(height: 10),
                     AutoSizeText(
                       experience.title.getOrCrash(),
                       textAlign: TextAlign.center,
@@ -113,8 +112,8 @@ class ExperienceCard extends StatelessWidget {
                     ),
                   ],
                 ),
-              ],
-            ),
+              ),
+            ],
           ),
         ),
       ),

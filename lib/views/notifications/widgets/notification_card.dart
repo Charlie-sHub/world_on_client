@@ -25,7 +25,10 @@ class NotificationCard extends StatelessWidget {
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: <Widget>[
-          UserImage(user: notification.sender),
+          UserImage(
+            user: notification.sender,
+            avatarRadius: 20,
+          ),
           Expanded(
             child: Center(
               child: AutoSizeText(

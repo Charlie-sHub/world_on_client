@@ -6,8 +6,6 @@ class NavigationActorEvent with _$NavigationActorEvent {
 
   const factory NavigationActorEvent.searchTapped() = _SearchTapped;
 
-  const factory NavigationActorEvent.experienceFormTapped(Option<Experience> experienceOption) = _ExperienceFormTapped;
-
   const factory NavigationActorEvent.experienceNavigationTapped(Option<Experience> experienceOption) = _ExperienceNavigationTapped;
 
   const factory NavigationActorEvent.profileTapped({

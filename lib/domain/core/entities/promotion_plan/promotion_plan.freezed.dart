@@ -46,9 +46,7 @@ mixin _$PromotionPlan {
   EntityDescription get description => throw _privateConstructorUsedError;
   PromotionPlanCode get code => throw _privateConstructorUsedError;
   int get valueInEuros => throw _privateConstructorUsedError;
-
   DateTime get boughtDate => throw _privateConstructorUsedError;
-
   int get timesSeen => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
@@ -240,19 +238,14 @@ abstract class _PromotionPlan extends PromotionPlan {
 
   @override
   UniqueId get id => throw _privateConstructorUsedError;
-
   @override
   Name get name => throw _privateConstructorUsedError;
-
   @override
   EntityDescription get description => throw _privateConstructorUsedError;
-
   @override
   PromotionPlanCode get code => throw _privateConstructorUsedError;
-
   @override
   int get valueInEuros => throw _privateConstructorUsedError;
-
   @override
   DateTime get boughtDate => throw _privateConstructorUsedError;
 

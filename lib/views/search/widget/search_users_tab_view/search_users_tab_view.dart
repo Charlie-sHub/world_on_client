@@ -27,13 +27,21 @@ class SearchUsersTabView extends StatelessWidget {
         initial: (_) => SearchSomething(),
         searchInProgress: (_) => const WorldOnProgressIndicator(),
         searchSuccess: (state) => Scaffold(
-          floatingActionButtonLocation: FloatingActionButtonLocation.miniEndDocked,
-          floatingActionButton: SearchUsersDialer(
-            searchTerm: context.read<SearchByNameFormBloc>().state.searchTerm,
+          floatingActionButtonLocation: FloatingActionButtonLocation.miniEndFloat,
+          floatingActionButton: Padding(
+            padding: const EdgeInsets.only(bottom: 40),
+            child: SearchUsersDialer(
+              searchTerm: context.read<SearchByNameFormBloc>().state.searchTerm,
+            ),
           ),
           body: ListView.builder(
             physics: const BouncingScrollPhysics(),
-            padding: const EdgeInsets.all(10),
+            padding: const EdgeInsets.only(
+              bottom: kFloatingActionButtonMargin + 50,
+              left: 10,
+              right: 10,
+              top: 10,
+            ),
             itemCount: state.usersFound.size,
             itemBuilder: (context, index) {
               final _user = state.usersFound[index];

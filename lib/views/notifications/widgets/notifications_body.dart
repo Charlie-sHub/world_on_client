@@ -44,7 +44,12 @@ class NotificationsBody extends StatelessWidget {
             loadInProgress: (_) => const WorldOnProgressIndicator(),
             loadSuccess: (state) => ListView.builder(
               physics: const BouncingScrollPhysics(),
-              padding: const EdgeInsets.all(10),
+              padding: const EdgeInsets.only(
+                bottom: kFloatingActionButtonMargin + 50,
+                left: 10,
+                right: 10,
+                top: 10,
+              ),
               itemCount: state.notifications.size,
               itemBuilder: (context, index) {
                 final _notification = state.notifications[index];

@@ -50,22 +50,15 @@ const $PromotionPlanDto = _$PromotionPlanDtoTearOff();
 /// @nodoc
 mixin _$PromotionPlanDto {
   String get id => throw _privateConstructorUsedError;
-
   String get name => throw _privateConstructorUsedError;
-
   String get description => throw _privateConstructorUsedError;
-
   PromotionPlanCode get code => throw _privateConstructorUsedError;
-
   int get valueInEuros => throw _privateConstructorUsedError;
-
   @ServerTimestampConverter()
   DateTime get boughtDate => throw _privateConstructorUsedError;
-
   int get timesSeen => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-
   @JsonKey(ignore: true)
   $PromotionPlanDtoCopyWith<PromotionPlanDto> get copyWith => throw _privateConstructorUsedError;
 }
@@ -279,7 +272,6 @@ abstract class _PromotionPlan extends PromotionPlanDto {
 
   @override
   int get valueInEuros => throw _privateConstructorUsedError;
-
   @override
   @ServerTimestampConverter()
   DateTime get boughtDate => throw _privateConstructorUsedError;

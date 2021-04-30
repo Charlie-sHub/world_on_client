@@ -26,7 +26,10 @@ class CommentCard extends StatelessWidget {
             children: <Widget>[
               Padding(
                 padding: const EdgeInsets.all(5),
-                child: UserImage(user: comment.poster),
+                child: UserImage(
+                  user: comment.poster,
+                  avatarRadius: 20,
+                ),
               ),
               NameUsernameDisplay(user: comment.poster),
               // TODO: Implement report functionality

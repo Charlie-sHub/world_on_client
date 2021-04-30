@@ -36,7 +36,7 @@ class AppWidget extends StatelessWidget {
             style: ButtonStyle(
               shape: MaterialStateProperty.all(
                 RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(3),
+                  borderRadius: BorderRadius.circular(5),
                 ),
               ),
             ),
@@ -55,6 +55,7 @@ class AppWidget extends StatelessWidget {
             showValueIndicator: ShowValueIndicator.always,
           ),
           bottomNavigationBarTheme: BottomNavigationBarTheme.of(context).copyWith(
+            backgroundColor: Colors.transparent,
             selectedItemColor: Colors.white,
             unselectedItemColor: Colors.white,
             type: BottomNavigationBarType.shifting,
@@ -67,8 +68,9 @@ class AppWidget extends StatelessWidget {
           ),
           cardTheme: CardTheme(
             shape: RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(3),
+              borderRadius: BorderRadius.circular(8),
             ),
+            elevation: 10,
             color: WorldOnColors.white,
           ),
           primaryColor: WorldOnColors.primary,

@@ -277,17 +277,14 @@ abstract class _Item extends ItemDto {
       required int timeLimitInDays,
       required String imageURL,
       @ServerTimestampConverter() required DateTime boughtDate}) = _$_Item;
-
   const _Item._() : super._();
 
   factory _Item.fromJson(Map<String, dynamic> json) = _$_Item.fromJson;
 
   @override
   String get id => throw _privateConstructorUsedError;
-
   @override
   String get name => throw _privateConstructorUsedError;
-
   @override
   String get description => throw _privateConstructorUsedError;
   @override

@@ -24,7 +24,10 @@ class UserCard extends StatelessWidget {
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: <Widget>[
-              UserImage(user: user),
+              UserImage(
+                user: user,
+                avatarRadius: 30,
+              ),
               NameUsernameDisplay(user: user),
               FollowUnfollowButtonBuilder(user: user),
               // BlockUnblockButtonBuilder(user: user),

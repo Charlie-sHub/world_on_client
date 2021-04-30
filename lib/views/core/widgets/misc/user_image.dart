@@ -10,9 +10,11 @@ class UserImage extends StatelessWidget {
   const UserImage({
     Key? key,
     required this.user,
+    required this.avatarRadius,
   }) : super(key: key);
 
   final User user;
+  final double avatarRadius;
 
   @override
   Widget build(BuildContext context) {
@@ -34,7 +36,7 @@ class UserImage extends StatelessWidget {
                 child: Padding(
                   padding: const EdgeInsets.all(2),
                   child: CircleAvatar(
-                    radius: 30,
+                    radius: avatarRadius,
                     backgroundImage: CachedNetworkImageProvider(user.imageURL),
                   ),
                 ),

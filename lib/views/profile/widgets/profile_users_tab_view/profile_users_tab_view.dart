@@ -35,7 +35,12 @@ class ProfileUsersTabView extends StatelessWidget {
               loadInProgress: (_) => const WorldOnProgressIndicator(),
               loadSuccess: (state) => ListView.builder(
                 physics: const BouncingScrollPhysics(),
-                padding: const EdgeInsets.all(10),
+                padding: const EdgeInsets.only(
+                  bottom: kFloatingActionButtonMargin + 50,
+                  left: 10,
+                  right: 10,
+                  top: 10,
+                ),
                 itemCount: state.users.size,
                 itemBuilder: (context, index) {
                   final _user = state.users[index];
@@ -68,7 +73,10 @@ class ProfileUsersTabView extends StatelessWidget {
             ),
             Align(
               alignment: Alignment.bottomRight,
-              child: ProfileUsersDialer(user: user),
+              child: Padding(
+                padding: const EdgeInsets.only(bottom: 50),
+                child: ProfileUsersDialer(user: user),
+              ),
             )
           ],
         ),

@@ -156,7 +156,7 @@ class _$_SystemDto extends _SystemDto {
   String toString() {
     return 'SystemDto(id: $id, name: $name, type: $type, company: $company)';
   }
-  
+
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
@@ -166,14 +166,14 @@ class _$_SystemDto extends _SystemDto {
             (identical(other.type, type) || const DeepCollectionEquality().equals(other.type, type)) &&
             (identical(other.company, company) || const DeepCollectionEquality().equals(other.company, company)));
   }
-  
+
   @override
   int get hashCode =>
-    runtimeType.hashCode ^
-    const DeepCollectionEquality().hash(id) ^
-    const DeepCollectionEquality().hash(name) ^
-    const DeepCollectionEquality().hash(type) ^
-    const DeepCollectionEquality().hash(company);
+      runtimeType.hashCode ^
+      const DeepCollectionEquality().hash(id) ^
+      const DeepCollectionEquality().hash(name) ^
+      const DeepCollectionEquality().hash(type) ^
+      const DeepCollectionEquality().hash(company);
 
   @JsonKey(ignore: true)
   @override

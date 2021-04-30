@@ -15,16 +15,15 @@ class ImageStack extends StatelessWidget {
   Widget build(BuildContext context) {
     return Stack(
       children: [
-        Center(
-          child: WorldOnCachedImage(
-            imageURL: experience.imageURLs.first,
-          ),
+        WorldOnCachedImage(
+          imageURL: experience.imageURLs.first,
         ),
-        Align(
-          alignment: Alignment.topLeft,
-          child: Padding(
-            padding: const EdgeInsets.symmetric(vertical: 10),
-            child: UserImage(user: experience.creator),
+        Positioned(
+          left: 1,
+          top: 1,
+          child: UserImage(
+            user: experience.creator,
+            avatarRadius: 30,
           ),
         ),
       ],

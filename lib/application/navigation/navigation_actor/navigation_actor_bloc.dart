@@ -21,7 +21,6 @@ class NavigationActorBloc extends Bloc<NavigationActorEvent, NavigationActorStat
     yield* event.map(
       mainFeedTapped: _onMainFeedTapped,
       searchTapped: _onSearchTapped,
-      experienceFormTapped: _onExperienceFormTapped,
       experienceNavigationTapped: _onExperienceNavigationTapped,
       profileTapped: _onProfileTapped,
       notificationsTapped: _onNotificationsTapped,
@@ -38,10 +37,6 @@ class NavigationActorBloc extends Bloc<NavigationActorEvent, NavigationActorStat
 
   Stream<NavigationActorState> _onSearchTapped(_) async* {
     yield const NavigationActorState.searchView();
-  }
-
-  Stream<NavigationActorState> _onExperienceFormTapped(_ExperienceFormTapped event) async* {
-    yield NavigationActorState.experienceFormView(event.experienceOption);
   }
 
   Stream<NavigationActorState> _onExperienceNavigationTapped(_ExperienceNavigationTapped event) async* {

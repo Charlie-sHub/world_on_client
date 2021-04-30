@@ -174,12 +174,12 @@ class _$_TagDto extends _TagDto {
   @override
   @ServerTimestampConverter()
   final DateTime modificationDate;
-  
+
   @override
   String toString() {
     return 'TagDto(id: $id, name: $name, creatorId: $creatorId, creationDate: $creationDate, modificationDate: $modificationDate)';
   }
-  
+
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
@@ -190,15 +190,15 @@ class _$_TagDto extends _TagDto {
             (identical(other.creationDate, creationDate) || const DeepCollectionEquality().equals(other.creationDate, creationDate)) &&
             (identical(other.modificationDate, modificationDate) || const DeepCollectionEquality().equals(other.modificationDate, modificationDate)));
   }
-  
+
   @override
   int get hashCode =>
-    runtimeType.hashCode ^
-    const DeepCollectionEquality().hash(id) ^
-    const DeepCollectionEquality().hash(name) ^
-    const DeepCollectionEquality().hash(creatorId) ^
-    const DeepCollectionEquality().hash(creationDate) ^
-    const DeepCollectionEquality().hash(modificationDate);
+      runtimeType.hashCode ^
+      const DeepCollectionEquality().hash(id) ^
+      const DeepCollectionEquality().hash(name) ^
+      const DeepCollectionEquality().hash(creatorId) ^
+      const DeepCollectionEquality().hash(creationDate) ^
+      const DeepCollectionEquality().hash(modificationDate);
 
   @JsonKey(ignore: true)
   @override

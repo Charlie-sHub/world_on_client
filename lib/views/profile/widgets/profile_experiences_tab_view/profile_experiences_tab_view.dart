@@ -34,8 +34,13 @@ class ProfileExperiencesTabView extends StatelessWidget {
               initial: (_) => Container(),
               loadInProgress: (_) => const WorldOnProgressIndicator(),
               loadSuccess: (state) => ListView.builder(
+                padding: const EdgeInsets.only(
+                  bottom: kFloatingActionButtonMargin + 50,
+                  left: 10,
+                  right: 10,
+                  top: 10,
+                ),
                 physics: const BouncingScrollPhysics(),
-                padding: const EdgeInsets.all(10),
                 itemCount: state.experiences.size,
                 itemBuilder: (context, index) {
                   final _experience = state.experiences[index];
@@ -75,7 +80,10 @@ class ProfileExperiencesTabView extends StatelessWidget {
             ),
             Align(
               alignment: Alignment.bottomRight,
-              child: ProfileExperiencesDialer(user: user),
+              child: Padding(
+                padding: const EdgeInsets.only(bottom: 50),
+                child: ProfileExperiencesDialer(user: user),
+              ),
             ),
           ],
         ),

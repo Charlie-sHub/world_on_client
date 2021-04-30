@@ -8,9 +8,9 @@ import 'package:worldon/application/navigation/navigation_actor/navigation_actor
 import 'package:worldon/generated/l10n.dart';
 import 'package:worldon/injection.dart';
 import 'package:worldon/views/core/routes/router.gr.dart';
+import 'package:worldon/views/core/widgets/main_page/create_experience_floating_button.dart';
 import 'package:worldon/views/core/widgets/main_page/world_on_app_bar.dart';
 import 'package:worldon/views/core/widgets/main_page/world_on_bottom_navigation_bar.dart';
-import 'package:worldon/views/core/widgets/misc/select_creation_view/select_creation_view.dart';
 import 'package:worldon/views/experience_navigation/widgets/experience_navigation_body.dart';
 import 'package:worldon/views/main_feed/widgets/main_feed_body.dart';
 import 'package:worldon/views/notifications/widgets/notifications_body.dart';
@@ -41,22 +41,21 @@ class MainPage extends StatelessWidget {
           builder: (context, state) => SafeArea(
             child: Scaffold(
               appBar: const WorldOnAppBar(),
+              extendBody: true,
               body: IndexedStack(
                 // Feels rather duct tape-ish to return the index this way
                 // but changing the state would mess with the rest of the navigation, such as when "participating" in a experience
                 index: context.read<NavigationActorBloc>().state.map(
                       mainFeedView: (_) => 0,
                       searchView: (_) => 1,
-                      experienceFormView: (_) => 2,
-                      navigateExperienceView: (_) => 3,
-                      profileView: (_) => 4,
-                      errorView: (_) => 5,
-                      notificationsView: (_) => 6,
+                      navigateExperienceView: (_) => 2,
+                      profileView: (_) => 3,
+                      errorView: (_) => 4,
+                      notificationsView: (_) => 5,
                     ),
                 children: <Widget>[
                   const MainFeedBody(),
                   const SearchBody(),
-                  SelectCreationView(),
                   ExperienceNavigationBody(
                     experienceOption: context.read<NavigationActorBloc>().state.maybeMap(
                           navigateExperienceView: (state) => state.experienceOption,
@@ -79,6 +78,8 @@ class MainPage extends StatelessWidget {
                   const NotificationsBody(),
                 ],
               ),
+              floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
+              floatingActionButton: const CreateExperienceFloatingButton(),
               bottomNavigationBar: WorldOnBottomNavigationBar(),
             ),
           ),

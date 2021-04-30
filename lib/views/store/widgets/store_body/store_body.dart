@@ -43,7 +43,12 @@ class StoreBody extends StatelessWidget {
                         ),
                     child: ListView.builder(
                       physics: const BouncingScrollPhysics(),
-                      padding: const EdgeInsets.all(5),
+                      padding: const EdgeInsets.only(
+                        bottom: kFloatingActionButtonMargin + 50,
+                        left: 10,
+                        right: 10,
+                        top: 10,
+                      ),
                       itemCount: state.items.size,
                       itemBuilder: (context, index) {
                         final _item = state.items[index];

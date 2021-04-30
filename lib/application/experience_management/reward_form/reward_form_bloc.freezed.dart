@@ -665,7 +665,7 @@ class _$_RewardFormState implements _RewardFormState {
             (identical(other.showErrorMessages, showErrorMessages) || const DeepCollectionEquality().equals(other.showErrorMessages, showErrorMessages)) &&
             (identical(other.isSubmitting, isSubmitting) || const DeepCollectionEquality().equals(other.isSubmitting, isSubmitting)));
   }
-
+  
   @override
   int get hashCode => runtimeType.hashCode ^ const DeepCollectionEquality().hash(reward) ^ const DeepCollectionEquality().hash(showErrorMessages) ^ const DeepCollectionEquality().hash(isSubmitting);
 

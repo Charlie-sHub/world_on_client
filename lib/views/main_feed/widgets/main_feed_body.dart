@@ -30,7 +30,12 @@ class MainFeedBody extends StatelessWidget {
                 ),
             child: ListView.builder(
               physics: const BouncingScrollPhysics(),
-              padding: const EdgeInsets.all(10),
+              padding: const EdgeInsets.only(
+                bottom: kFloatingActionButtonMargin + 50,
+                left: 10,
+                right: 10,
+                top: 10,
+              ),
               itemCount: state.experiences.size,
               itemBuilder: (context, index) {
                 final _experience = state.experiences[index];

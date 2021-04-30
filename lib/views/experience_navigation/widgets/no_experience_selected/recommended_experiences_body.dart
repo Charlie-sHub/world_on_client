@@ -30,7 +30,12 @@ class RecommendedExperiencesBody extends StatelessWidget {
                 ),
             child: ListView.builder(
               physics: const BouncingScrollPhysics(),
-              padding: const EdgeInsets.all(5),
+              padding: const EdgeInsets.only(
+                bottom: kFloatingActionButtonMargin + 50,
+                left: 5,
+                right: 5,
+                top: 5,
+              ),
               itemCount: state.experiences.size,
               itemBuilder: (context, index) {
                 final _experience = state.experiences[index];

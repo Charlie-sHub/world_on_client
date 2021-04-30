@@ -38,7 +38,6 @@ mixin _$BuyPromotionPlanActorEvent {
     required TResult Function(PromotionPlan promotionPlan) boughtPromotionPlan,
   }) =>
       throw _privateConstructorUsedError;
-
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initialized,
@@ -46,14 +45,12 @@ mixin _$BuyPromotionPlanActorEvent {
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
-
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Initialized value) initialized,
     required TResult Function(_BoughtPromotionPlan value) boughtPromotionPlan,
   }) =>
       throw _privateConstructorUsedError;
-
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initialized value)? initialized,
@@ -321,7 +318,6 @@ mixin _$BuyPromotionPlanActorState {
     required TResult Function(Failure<dynamic> failure) purchaseFailure,
   }) =>
       throw _privateConstructorUsedError;
-
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
@@ -333,7 +329,6 @@ mixin _$BuyPromotionPlanActorState {
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
-
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Initial value) initial,
@@ -344,7 +339,6 @@ mixin _$BuyPromotionPlanActorState {
     required TResult Function(_PurchaseFailure value) purchaseFailure,
   }) =>
       throw _privateConstructorUsedError;
-
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
