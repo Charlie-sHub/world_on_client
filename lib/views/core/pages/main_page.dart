@@ -78,6 +78,7 @@ class MainPage extends StatelessWidget {
                   const NotificationsBody(),
                 ],
               ),
+              resizeToAvoidBottomInset: false,
               floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
               floatingActionButton: const CreateExperienceFloatingButton(),
               bottomNavigationBar: WorldOnBottomNavigationBar(),

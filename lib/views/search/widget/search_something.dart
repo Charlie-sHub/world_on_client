@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:worldon/generated/l10n.dart';
-import 'package:worldon/views/core/misc/world_on_colors.dart';
 
 class SearchSomething extends StatelessWidget {
   @override
@@ -10,7 +9,6 @@ class SearchSomething extends StatelessWidget {
         S.of(context).noSearchesMessage,
         style: const TextStyle(
           fontSize: 25,
-          color: WorldOnColors.white,
         ),
       ),
     );

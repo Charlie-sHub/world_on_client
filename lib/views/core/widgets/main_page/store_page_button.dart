@@ -14,6 +14,7 @@ class StorePageButton extends StatelessWidget {
       icon: const Icon(
         Icons.account_balance_wallet_outlined,
         size: 35,
+        // color: WorldOnColors.accent,
       ),
       onPressed: () => context.router.push(
         const StorePageRoute(),

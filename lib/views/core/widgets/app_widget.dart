@@ -31,7 +31,11 @@ class AppWidget extends StatelessWidget {
       child: MaterialApp.router(
         title: "World On",
         debugShowCheckedModeBanner: Provider.of<String>(context) != Environment.prod,
-        theme: ThemeData.dark().copyWith(
+        theme: ThemeData.light().copyWith(
+          indicatorColor: WorldOnColors.primary,
+          iconTheme: IconTheme.of(context).copyWith(
+            color: WorldOnColors.accent,
+          ),
           elevatedButtonTheme: ElevatedButtonThemeData(
             style: ButtonStyle(
               shape: MaterialStateProperty.all(
@@ -39,6 +43,7 @@ class AppWidget extends StatelessWidget {
                   borderRadius: BorderRadius.circular(5),
                 ),
               ),
+              backgroundColor: MaterialStateProperty.all(WorldOnColors.accent),
             ),
           ),
           buttonBarTheme: const ButtonBarThemeData(
@@ -55,16 +60,16 @@ class AppWidget extends StatelessWidget {
             showValueIndicator: ShowValueIndicator.always,
           ),
           bottomNavigationBarTheme: BottomNavigationBarTheme.of(context).copyWith(
-            backgroundColor: Colors.transparent,
-            selectedItemColor: Colors.white,
-            unselectedItemColor: Colors.white,
-            type: BottomNavigationBarType.shifting,
-            showUnselectedLabels: false,
+            backgroundColor: Colors.white,
+            selectedItemColor: WorldOnColors.primary,
+            unselectedItemColor: WorldOnColors.accent,
+            // type: BottomNavigationBarType.shifting,
+            // showUnselectedLabels: false,
           ),
           floatingActionButtonTheme: const FloatingActionButtonThemeData(
             elevation: 10,
             backgroundColor: WorldOnColors.white,
-            foregroundColor: WorldOnColors.background,
+            foregroundColor: WorldOnColors.accent,
           ),
           cardTheme: CardTheme(
             shape: RoundedRectangleBorder(
@@ -78,6 +83,9 @@ class AppWidget extends StatelessWidget {
           scaffoldBackgroundColor: WorldOnColors.background,
           appBarTheme: AppBarTheme.of(context).copyWith(
             color: WorldOnColors.background,
+            actionsIconTheme: IconTheme.of(context).copyWith(
+              color: WorldOnColors.accent,
+            ),
           ),
           inputDecorationTheme: const InputDecorationTheme(
             border: OutlineInputBorder(

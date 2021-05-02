@@ -1,16 +1,17 @@
 import 'package:dartz/dartz.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/rendering.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:worldon/application/search/search_by_name_form/search_by_name_form_bloc.dart';
 import 'package:worldon/application/search/search_users_by_name_watcher/search_users_by_name_watcher_bloc.dart';
 import 'package:worldon/domain/core/validation/objects/search_term.dart';
 import 'package:worldon/generated/l10n.dart';
 import 'package:worldon/views/core/widgets/cards/error_card.dart';
-import 'package:worldon/views/core/widgets/cards/user_card/user_card.dart';
-import 'package:worldon/views/core/widgets/error/error_display.dart';
+import 'package:worldon/views/core/widgets/cards/user_card/simple_square_user_card.dart';
 import 'package:worldon/views/core/widgets/misc/world_on_progress_indicator.dart';
 import 'package:worldon/views/search/widget/search_something.dart';
-import 'package:worldon/views/search/widget/search_users_tab_view/search_users_dialer.dart';
+
+import '../search_error_display.dart';
 
 class SearchUsersTabView extends StatelessWidget {
   final SearchTerm searchTerm;
@@ -27,26 +28,20 @@ class SearchUsersTabView extends StatelessWidget {
         initial: (_) => SearchSomething(),
         searchInProgress: (_) => const WorldOnProgressIndicator(),
         searchSuccess: (state) => Scaffold(
-          floatingActionButtonLocation: FloatingActionButtonLocation.miniEndFloat,
-          floatingActionButton: Padding(
-            padding: const EdgeInsets.only(bottom: 40),
-            child: SearchUsersDialer(
-              searchTerm: context.read<SearchByNameFormBloc>().state.searchTerm,
-            ),
+          /*
+          floatingActionButtonLocation: FloatingActionButtonLocation.miniEndDocked,
+          floatingActionButton: SearchUsersDialer(
+            searchTerm: context.read<SearchByNameFormBloc>().state.searchTerm,
           ),
+          */
           body: ListView.builder(
-            physics: const BouncingScrollPhysics(),
-            padding: const EdgeInsets.only(
-              bottom: kFloatingActionButtonMargin + 50,
-              left: 10,
-              right: 10,
-              top: 10,
-            ),
+            scrollDirection: Axis.horizontal,
+            clipBehavior: Clip.none,
             itemCount: state.usersFound.size,
             itemBuilder: (context, index) {
               final _user = state.usersFound[index];
               if (_user.isValid) {
-                return UserCard(
+                return SimpleSquareUserCard(
                   user: _user,
                   key: Key(_user.id.toString()),
                 );
@@ -62,7 +57,7 @@ class SearchUsersTabView extends StatelessWidget {
             },
           ),
         ),
-        searchFailure: (state) => ErrorDisplay(
+        searchFailure: (state) => SearchErrorDisplay(
           retryFunction: () => context.read<SearchUsersByNameWatcherBloc>().add(
                 SearchUsersByNameWatcherEvent.watchUsersFoundByNameStarted(
                   context.read<SearchByNameFormBloc>().state.searchTerm,

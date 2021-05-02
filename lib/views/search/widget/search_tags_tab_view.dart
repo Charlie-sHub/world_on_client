@@ -1,21 +1,18 @@
 import 'package:dartz/dartz.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:worldon/application/search/search_by_name_form/search_by_name_form_bloc.dart';
 import 'package:worldon/application/search/search_tags_by_name_watcher/search_tags_by_name_watcher_bloc.dart';
-import 'package:worldon/domain/core/validation/objects/search_term.dart';
 import 'package:worldon/generated/l10n.dart';
-import 'package:worldon/views/core/widgets/cards/error_card.dart';
-import 'package:worldon/views/core/widgets/cards/tag_card/tag_card.dart';
-import 'package:worldon/views/core/widgets/error/error_display.dart';
+import 'package:worldon/views/core/widgets/cards/simple_tag_error_display.dart';
+import 'package:worldon/views/core/widgets/cards/tag_card/simple_tag_card_builder.dart';
 import 'package:worldon/views/core/widgets/misc/world_on_progress_indicator.dart';
+import 'package:worldon/views/search/widget/search_error_display.dart';
 import 'package:worldon/views/search/widget/search_something.dart';
 
 class SearchTagsTabView extends StatelessWidget {
-  final SearchTerm searchTerm;
-
   const SearchTagsTabView({
     Key? key,
-    required this.searchTerm,
   }) : super(key: key);
 
   @override
@@ -24,36 +21,32 @@ class SearchTagsTabView extends StatelessWidget {
       builder: (context, state) => state.map(
         initial: (_) => SearchSomething(),
         searchInProgress: (_) => const WorldOnProgressIndicator(),
-        searchSuccess: (state) => ListView.builder(
-          physics: const BouncingScrollPhysics(),
-          padding: const EdgeInsets.only(
-            bottom: kFloatingActionButtonMargin + 50,
-            left: 10,
-            right: 10,
-            top: 10,
+        searchSuccess: (state) => SingleChildScrollView(
+          scrollDirection: Axis.horizontal,
+          clipBehavior: Clip.none,
+          child: Wrap(
+            direction: Axis.vertical,
+            crossAxisAlignment: WrapCrossAlignment.center,
+            spacing: 3,
+            runSpacing: 3,
+            children: <Widget>[
+              ...state.tagsFound.asList().map(
+                (tag) {
+                  if (tag.isValid) {
+                    return SimpleTagCardBuilder(tag: tag);
+                  } else {
+                    return SimpleTagErrorDisplay(tag: tag);
+                  }
+                },
+              ),
+            ],
           ),
-          itemCount: state.tagsFound.size,
-          itemBuilder: (context, index) {
-            final _tag = state.tagsFound[index];
-            if (_tag.isValid) {
-              return TagCard(
-                tag: _tag,
-                key: Key(_tag.id.toString()),
-              );
-            } else {
-              return ErrorCard(
-                entityType: S.of(context).tag,
-                valueFailureString: _tag.failureOption.fold(
-                  () => S.of(context).noError,
-                  (failure) => failure.toString(),
-                ),
-              );
-            }
-          },
         ),
-        searchFailure: (state) => ErrorDisplay(
+        searchFailure: (state) => SearchErrorDisplay(
           retryFunction: () => context.read<SearchTagsByNameWatcherBloc>().add(
-                SearchTagsByNameWatcherEvent.watchTagsFoundByNameStarted(searchTerm),
+                SearchTagsByNameWatcherEvent.watchTagsFoundByNameStarted(
+                  context.read<SearchByNameFormBloc>().state.searchTerm,
+                ),
               ),
           failure: state.failure,
           specificMessage: some(S.of(context).notFoundErrorSearch),

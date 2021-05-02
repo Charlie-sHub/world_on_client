@@ -9,10 +9,6 @@ import 'package:worldon/views/core/misc/world_on_colors.dart';
 import 'package:worldon/views/core/widgets/misc/world_on_progress_indicator.dart';
 
 class Map extends StatelessWidget {
-  const Map({
-    Key? key,
-  }) : super(key: key);
-
   @override
   Widget build(BuildContext context) {
     final _editingFormState = context.read<ExperienceManagementFormBloc>().state;
@@ -52,7 +48,7 @@ class Map extends StatelessWidget {
                       mapType: MapType.hybrid,
                       markers: {
                         Marker(
-                          markerId: MarkerId("new_experience"),
+                          markerId: const MarkerId("new_experience"),
                           position: _position,
                         ),
                       },

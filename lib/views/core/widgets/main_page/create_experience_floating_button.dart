@@ -12,7 +12,7 @@ class CreateExperienceFloatingButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return FloatingActionButton(
-      backgroundColor: WorldOnColors.background,
+      backgroundColor: WorldOnColors.accent,
       onPressed: () => context.router.push(
         ExperienceManagementPageRoute(
           experienceOption: none(),

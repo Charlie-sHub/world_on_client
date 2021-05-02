@@ -4,7 +4,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:worldon/application/navigation/navigation_actor/navigation_actor_bloc.dart';
 import 'package:worldon/domain/core/entities/user/user.dart';
-import 'package:worldon/views/core/misc/world_on_colors.dart';
 
 class UserImage extends StatelessWidget {
   const UserImage({
@@ -49,7 +48,6 @@ class UserImage extends StatelessWidget {
                 color: Colors.white,
                 child: const Icon(
                   Icons.check_circle_rounded,
-                  color: WorldOnColors.accent,
                   size: 20,
                 ),
               ),

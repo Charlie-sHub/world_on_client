@@ -4,7 +4,6 @@ import 'package:worldon/application/experience_management/experience_management_
 import 'package:worldon/domain/core/entities/experience/experience.dart';
 import 'package:worldon/generated/l10n.dart';
 import 'package:worldon/injection.dart';
-import 'package:worldon/views/core/misc/world_on_colors.dart';
 
 class DeleteButton extends StatelessWidget {
   const DeleteButton({
@@ -41,7 +40,6 @@ class DeleteButton extends StatelessWidget {
               Text(
                 S.of(context).delete,
                 style: const TextStyle(
-                  color: WorldOnColors.background,
                   fontWeight: FontWeight.bold,
                 ),
               ),

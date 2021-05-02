@@ -7,7 +7,7 @@
 // ignore_for_file:unnecessary_brace_in_string_interps, unnecessary_new
 // ignore_for_file:prefer_single_quotes,comment_references, directives_ordering
 // ignore_for_file:annotate_overrides,prefer_generic_function_type_aliases
-// ignore_for_file:unused_import, file_names
+// ignore_for_file:unused_import, file_names, avoid_escaping_inner_quotes
 
 import 'package:intl/intl.dart';
 import 'package:intl/message_lookup_by_library.dart';
@@ -21,7 +21,7 @@ class MessageLookup extends MessageLookupByLibrary {
 
   final messages = _notInlinedMessages(_notInlinedMessages);
 
-  static _notInlinedMessages(_) => <String, Function>{
+  static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
         "achievement": MessageLookupByLibrary.simpleMessage("Achievement"),
         "actionInProgress": MessageLookupByLibrary.simpleMessage("Action in progress"),
         "addPictures": MessageLookupByLibrary.simpleMessage("Add pictures"),
@@ -125,7 +125,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "noObjectivesErrorMessage": MessageLookupByLibrary.simpleMessage("You have to create at least one objective"),
         "noSearchesMessage": MessageLookupByLibrary.simpleMessage("Search for something!"),
         "notEnoughCoins": MessageLookupByLibrary.simpleMessage("You don\'t have enough coins"),
-        "notFoundError": MessageLookupByLibrary.simpleMessage("There\'s nothing to show\nTap to reload"),
+        "notFoundError": MessageLookupByLibrary.simpleMessage("There\'s nothing to show"),
         "notFoundErrorAchievements": MessageLookupByLibrary.simpleMessage("You have no Achievements"),
         "notFoundErrorBoughtItems": MessageLookupByLibrary.simpleMessage("You have no purchased items"),
         "notFoundErrorComments": MessageLookupByLibrary.simpleMessage("This experience has no comments"),
@@ -197,6 +197,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "tagCreationTitle": MessageLookupByLibrary.simpleMessage("Create a new Tag!"),
         "tagSelectionLimit": MessageLookupByLibrary.simpleMessage("You can\'t add more than"),
         "tagSelectionNone": MessageLookupByLibrary.simpleMessage("No tags selected"),
+        "tapToReload": MessageLookupByLibrary.simpleMessage("Tap to reload"),
         "times": MessageLookupByLibrary.simpleMessage("times"),
         "title": MessageLookupByLibrary.simpleMessage("Title"),
         "unAvailableStore": MessageLookupByLibrary.simpleMessage("The store is unavailable to you"),

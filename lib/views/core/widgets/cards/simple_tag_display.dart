@@ -15,7 +15,7 @@ class SimpleTagDisplay extends StatelessWidget {
     return Container(
       decoration: BoxDecoration(
         border: Border.all(
-          color: WorldOnColors.accent,
+          color: WorldOnColors.blue,
           width: 2,
         ),
         borderRadius: BorderRadius.circular(12),
@@ -25,7 +25,7 @@ class SimpleTagDisplay extends StatelessWidget {
         child: Text(
           tag.name.getOrCrash(),
           style: const TextStyle(
-            color: WorldOnColors.accent,
+            color: WorldOnColors.blue,
           ),
         ),
       ),

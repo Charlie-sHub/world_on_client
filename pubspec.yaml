@@ -15,116 +15,64 @@ environment:
   sdk: ">=2.12.0 <3.0.0"
 
 dependencies:
+  animated_bottom_navigation_bar: ^0.3.2
+  another_flushbar: ^1.10.20
+  auto_route: ^2.0.2
+  auto_size_text: ^3.0.0-nullsafety.0
+  bloc_test: ^8.0.0
+  cached_network_image: ^3.0.0
+  carousel_slider: ^4.0.0-nullsafety.0
+  cloud_firestore: ^1.0.7
+  dartz: ^0.10.0-nullsafety.1
+  email_validator: ^2.0.1
+  equatable: ^2.0.0
+  firebase_auth: ^1.1.2
+  firebase_core: ^1.1.0
+  firebase_storage: ^8.0.5
   flutter:
     sdk: flutter
-  # Service locator
-  get_it: ^6.1.1
-  # For dependency injection
-  injectable: ^1.3.0
-  # For unions generation
-  freezed: ^0.14.1+2
-  # Bloc for state management
   flutter_bloc: ^7.0.0
-  # Value equality
-  # Probably useless now
-  equatable: ^2.0.0
-  # Functional programming thingies
-  dartz: ^0.10.0-nullsafety.1
-  # For unions generation
-  freezed_annotation: ^0.14.1
-  # For email validation
-  email_validator: ^2.0.1
-  # For getting the geolocation of the user
-  geolocator: ^7.0.3
-  # For Kotlin like collections
-  kt_dart: ^0.9.0
-  # For easier bloc testing
-  bloc_test: ^8.0.0
-  # For ease of serialization
-  json_annotation: ^4.0.1
-  # For ease of routing
-  auto_route: ^2.0.2
-  # For ease of showing status bars
-  another_flushbar: ^1.10.20
-  # For dynamically resizing text
-  auto_size_text: ^3.0.0-nullsafety.0
-  # For showing the user's experience progression
-  percent_indicator: ^3.0.1
-  # Takes out some boilerplate
   flutter_hooks: ^0.16.0
-  # For FloatingActionButton menus
-  flutter_speed_dial: ^3.0.5
-  # For getting images from the device
-  image_picker: ^0.7.4
-  # For getting multiple images from the device
-  multi_image_picker: ^4.8.0
-  # For providing objects down the widget tree
-  provider: ^5.0.0
-  # For environment control
-  # flutter_dotenv: ^3.1.0
-  # For ease of logging
-  logger: ^1.0.0
-  # For better stream control
-  rxdart: ^0.26.0
-  # For the experience image gallery
-  carousel_slider: ^4.0.0-nullsafety.0
-  # Unique IDs for entities
-  uuid: ^3.0.4
-  # For Signing in and registering with Google
-  google_sign_in: ^5.0.2
-  # For use with Firebase as backend
-  firebase_core: ^1.1.0
-  # For authentication with Firebase
-  firebase_auth: ^1.1.2
-  # For simple data storage
-  cloud_firestore: ^1.0.7
-  # For complex data storage (images)
-  firebase_storage: ^8.0.5
-  # For mapping
-  google_maps_flutter:
-  # For localization
-  intl: ^0.17.0
   flutter_localizations:
     sdk: flutter
-  # For sharing things from the app to other apps
-  social_share: ^2.1.1
-  # For providing platform agnostic paths
-  path_provider: ^2.0.1
-  # For the in app store
-  in_app_purchase: ^0.5.2
-  # For splitting lists
-  quiver: ^3.0.1
-  # For geolocation based queries
-  geoflutterfire: ^3.0.0-nullsafety.2
-  # For checking the visibility of widgets
-  visibility_detector: ^0.2.0
-  # For displaying a loading widget on the images
-  cached_network_image: ^3.0.0
-  # For reordering lists
-  implicitly_animated_reorderable_list: ^0.4.0-dev+2
-  # To better see the icons in the editor
+  flutter_speed_dial: ^3.0.5
   flutter_vector_icons: ^1.0.0
-  # For a better bottom navigation bar
-  animated_bottom_navigation_bar: ^0.3.2
+  freezed: ^0.14.1+2
+  freezed_annotation: ^0.14.1
+  geoflutterfire: ^3.0.0-nullsafety.2
+  geolocator: ^7.0.3
+  get_it: ^6.1.1
+  google_maps_flutter:
+  google_sign_in: ^5.0.2
+  image_picker: ^0.7.4
+  implicitly_animated_reorderable_list: ^0.4.0-dev+2
+  in_app_purchase: ^0.5.2
+  injectable: ^1.3.0
+  intl: ^0.17.0
+  json_annotation: ^4.0.1
+  kt_dart: ^0.9.0
+  logger: ^1.0.0
+  multi_image_picker: ^4.8.0
+  path_provider: ^2.0.1
+  percent_indicator: ^3.0.1
+  provider: ^5.0.0
+  quiver: ^3.0.1
+  rxdart: ^0.26.0
+  social_share: ^2.1.1
+  uuid: ^3.0.4
+  visibility_detector: ^0.2.0
 
 dev_dependencies:
+  auto_route_generator: ^2.0.1
+  build_runner:
+  flutter_launcher_icons: ^0.9.0
   flutter_test:
     sdk: flutter
-  # For mocking dependencies during unit testing
-  mockito: ^5.0.7
-  # Collection of lint rules
-  lint: ^1.5.3
-  # For dependency injection code generation
-  injectable_generator: ^1.3.0
-  # For Serializing entities to JSON
-  json_serializable: ^4.1.1
-  # For auto generating the routes
-  auto_route_generator: ^2.0.1
-  # For ease of setting the app icon
-  flutter_launcher_icons: ^0.9.0
-  # For extra icons
   font_awesome_flutter: ^9.0.0
-  build_runner:
+  injectable_generator: ^1.3.0
+  json_serializable: ^4.1.1
+  lint: ^1.5.3
+  mockito: ^5.0.7
 
 flutter_icons:
   image_path: "assets/world_on_logo.jpg"

@@ -45,7 +45,8 @@ class ProductionSearchRepository implements SearchRepositoryInterface {
                 );
           },
         );
-        return _resultList.map(
+        final _limitedResults = _resultList.take(50);
+        return _limitedResults.map(
           (document) => ExperienceDto.fromFirestore(document).toDomain(),
         );
       },
@@ -80,7 +81,8 @@ class ProductionSearchRepository implements SearchRepositoryInterface {
                 );
           },
         );
-        return _resultList.map(
+        final _limitedResults = _resultList.take(100);
+        return _limitedResults.map(
           (document) => TagDto.fromFirestore(document).toDomain(),
         );
       },
@@ -115,7 +117,8 @@ class ProductionSearchRepository implements SearchRepositoryInterface {
                 );
           },
         );
-        return _resultList.map(
+        final _limitedResults = _resultList.take(100);
+        return _limitedResults.map(
           (document) => UserDto.fromFirestore(document).toDomain(),
         );
       },
@@ -150,7 +153,8 @@ class ProductionSearchRepository implements SearchRepositoryInterface {
                 );
           },
         );
-        return _resultList.map(
+        final _limitedResults = _resultList.take(100);
+        return _limitedResults.map(
           (document) => UserDto.fromFirestore(document).toDomain(),
         );
       },
@@ -205,7 +209,7 @@ class ProductionSearchRepository implements SearchRepositoryInterface {
               _experienceList.add(_experience);
             }
           }
-          return _experienceList;
+          return _experienceList.take(50);
         },
       ).map(
         (experiences) {
@@ -242,6 +246,7 @@ class ProductionSearchRepository implements SearchRepositoryInterface {
           ExperienceFields.difficulty,
           isEqualTo: difficulty.getOrCrash(),
         )
+        .limit(50)
         .orderBy("difficulty")
         .snapshots()
         .map(

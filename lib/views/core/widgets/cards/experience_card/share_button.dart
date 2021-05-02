@@ -7,7 +7,6 @@ import 'package:path_provider/path_provider.dart';
 import 'package:social_share/social_share.dart';
 import 'package:worldon/domain/core/entities/experience/experience.dart';
 import 'package:worldon/generated/l10n.dart';
-import 'package:worldon/views/core/misc/world_on_colors.dart';
 
 class ShareButton extends StatelessWidget {
   final Experience experience;
@@ -23,7 +22,6 @@ class ShareButton extends StatelessWidget {
       icon: const Icon(
         Icons.share_rounded,
         size: 30,
-        color: WorldOnColors.background,
       ),
       onPressed: () => _share(
         context,

@@ -10,38 +10,67 @@ class SearchHeader extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    const double _cornerRadius = 30;
     return Form(
       autovalidateMode: context.read<SearchByNameFormBloc>().state.showErrorMessages ? AutovalidateMode.always : AutovalidateMode.disabled,
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: <Widget>[
-          Expanded(
-            child: TextFormField(
-              onChanged: (value) => context.read<SearchByNameFormBloc>().add(
-                    SearchByNameFormEvent.searchTermChanged(value.trim()),
+      child: Padding(
+        padding: const EdgeInsets.symmetric(
+          horizontal: 10,
+          vertical: 5,
+        ),
+        child: SizedBox(
+          height: 45,
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: <Widget>[
+              Expanded(
+                child: Material(
+                  elevation: 15,
+                  borderRadius: const BorderRadius.all(
+                    Radius.circular(_cornerRadius),
                   ),
-              decoration: InputDecoration(
-                prefixIcon: const Icon(Icons.search),
-                labelText: S.of(context).search,
-              ),
-              validator: (_) => context.read<SearchByNameFormBloc>().state.searchTerm.value.fold(
-                    (failure) => failure.maybeMap(
-                      emptyString: (_) => S.of(context).searchTermEmptyString,
-                      orElse: () => S.of(context).unknownError,
+                  child: TextFormField(
+                    onChanged: (value) => context.read<SearchByNameFormBloc>().add(
+                          SearchByNameFormEvent.searchTermChanged(value.trim()),
+                        ),
+                    decoration: InputDecoration(
+                      prefixIcon: const Icon(Icons.search),
+                      labelText: S.of(context).search,
+                      border: const OutlineInputBorder(
+                        borderRadius: BorderRadius.all(
+                          Radius.circular(_cornerRadius),
+                        ),
+                      ),
+                      enabledBorder: const OutlineInputBorder(
+                        borderRadius: BorderRadius.all(
+                          Radius.circular(_cornerRadius),
+                        ),
+                        borderSide: BorderSide(
+                          color: Colors.transparent,
+                        ),
+                      ),
                     ),
-                    (_) => null,
+                    validator: (_) => context.read<SearchByNameFormBloc>().state.searchTerm.value.fold(
+                          (failure) => failure.maybeMap(
+                            emptyString: (_) => S.of(context).searchTermEmptyString,
+                            orElse: () => S.of(context).unknownError,
+                          ),
+                          (_) => null,
+                        ),
+                    onFieldSubmitted: (_) => _submit(context),
                   ),
-              onFieldSubmitted: (_) => _submit(context),
-            ),
+                ),
+              ),
+              IconButton(
+                icon: const Icon(
+                  Icons.search,
+                  size: 35,
+                ),
+                onPressed: () => _submit(context),
+              ),
+            ],
           ),
-          IconButton(
-            icon: const Icon(
-              Icons.search,
-              size: 35,
-            ),
-            onPressed: () => _submit(context),
-          ),
-        ],
+        ),
       ),
     );
   }

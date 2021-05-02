@@ -5,6 +5,7 @@ import 'package:worldon/application/tag_management/tag_card_actor/tag_card_actor
 import 'package:worldon/domain/core/entities/tag/tag.dart';
 import 'package:worldon/views/core/misc/world_on_colors.dart';
 
+@Deprecated("Use the DislikeableSimpleTagCard instead")
 class DislikeTagButton extends StatelessWidget {
   const DislikeTagButton({
     Key? key,
@@ -19,6 +20,7 @@ class DislikeTagButton extends StatelessWidget {
       icon: const FaIcon(
         FontAwesomeIcons.solidHeart,
         color: WorldOnColors.red,
+        size: 35,
       ),
       onPressed: () => context.read<TagCardActorBloc>().add(
             TagCardActorEvent.dismissedFromInterests(tag),

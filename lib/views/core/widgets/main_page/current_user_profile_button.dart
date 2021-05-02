@@ -23,7 +23,8 @@ class CurrentUserProfileButton extends StatelessWidget {
         actionInProgress: (_) => const WorldOnProgressIndicator(),
         loadSuccess: (state) => MaterialButton(
           minWidth: 0,
-          color: Colors.white,
+          elevation: 0,
+          // color: Colors.transparent,
           padding: const EdgeInsets.all(0),
           shape: const CircleBorder(),
           onPressed: () => context.read<NavigationActorBloc>().add(
@@ -35,7 +36,7 @@ class CurrentUserProfileButton extends StatelessWidget {
           child: Padding(
             padding: const EdgeInsets.all(3),
             child: CircleAvatar(
-              radius: 15,
+              radius: 17,
               backgroundImage: CachedNetworkImageProvider(state.imageUrl),
             ),
           ),

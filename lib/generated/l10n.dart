@@ -11,7 +11,7 @@ import 'intl/messages_all.dart';
 
 // ignore_for_file: non_constant_identifier_names, lines_longer_than_80_chars
 // ignore_for_file: join_return_with_assignment, prefer_final_in_for_each
-// ignore_for_file: avoid_redundant_argument_values
+// ignore_for_file: avoid_redundant_argument_values, avoid_escaping_inner_quotes
 
 class S {
   S();
@@ -1597,11 +1597,21 @@ class S {
     );
   }
 
-  /// `There's nothing to show\nTap to reload`
+  /// `There's nothing to show`
   String get notFoundError {
     return Intl.message(
-      'There\'s nothing to show\nTap to reload',
+      'There\'s nothing to show',
       name: 'notFoundError',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Tap to reload`
+  String get tapToReload {
+    return Intl.message(
+      'Tap to reload',
+      name: 'tapToReload',
       desc: '',
       args: [],
     );

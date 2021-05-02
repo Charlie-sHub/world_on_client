@@ -1,9 +1,11 @@
 import 'package:another_flushbar/flushbar_helper.dart';
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:cached_network_image/cached_network_image.dart';
+import 'package:dartz/dartz.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:worldon/application/core/experience_card_actor/experience_card_actor_bloc.dart';
+import 'package:worldon/application/navigation/navigation_actor/navigation_actor_bloc.dart';
 import 'package:worldon/domain/core/entities/experience/experience.dart';
 import 'package:worldon/generated/l10n.dart';
 import 'package:worldon/injection.dart';
@@ -12,14 +14,15 @@ import 'package:worldon/views/core/widgets/misc/user_image.dart';
 import 'package:worldon/views/core/widgets/misc/world_on_progress_indicator.dart';
 
 class SimpleExperienceCard extends StatelessWidget {
-  final Experience experience;
-  final Function() reloadFunction;
-
   const SimpleExperienceCard({
     Key? key,
     required this.experience,
     required this.reloadFunction,
   }) : super(key: key);
+
+  final Experience experience;
+  final Function() reloadFunction;
+  static const double _cardHeight = 180;
 
   @override
   Widget build(BuildContext context) {
@@ -30,59 +33,64 @@ class SimpleExperienceCard extends StatelessWidget {
         ),
       child: BlocListener<ExperienceCardActorBloc, ExperienceCardActorState>(
         listener: _experienceCardListener,
-        child: Card(
-          clipBehavior: Clip.antiAlias,
-          child: SizedBox(
-            // height: 180,
-            child: Column(
+        child: InkWell(
+          onTap: () => context.read<NavigationActorBloc>().add(
+                NavigationActorEvent.experienceNavigationTapped(some(experience)),
+              ),
+          child: Card(
+            clipBehavior: Clip.antiAlias,
+            child: Stack(
+              alignment: AlignmentDirectional.center,
               children: [
-                Stack(
-                  alignment: AlignmentDirectional.center,
-                  children: [
-                    CachedNetworkImage(
-                      imageUrl: experience.imageURLs.first,
-                      fit: BoxFit.fill,
-                      progressIndicatorBuilder: (context, url, progress) => const Padding(
-                        padding: EdgeInsets.all(15),
-                        child: WorldOnProgressIndicator(),
-                      ),
+                ShaderMask(
+                  blendMode: BlendMode.darken,
+                  shaderCallback: (bounds) => LinearGradient(
+                    begin: Alignment.center,
+                    end: Alignment.bottomCenter,
+                    colors: [
+                      Colors.transparent,
+                      Colors.black.withOpacity(0.75),
+                    ],
+                    stops: const [
+                      0,
+                      1,
+                    ],
+                  ).createShader(bounds),
+                  child: CachedNetworkImage(
+                    imageUrl: experience.imageURLs.first,
+                    height: _cardHeight,
+                    width: 320,
+                    fit: BoxFit.cover,
+                    progressIndicatorBuilder: (context, url, progress) => const Padding(
+                      padding: EdgeInsets.all(15),
+                      child: WorldOnProgressIndicator(),
                     ),
-                    Positioned(
-                      left: 1,
-                      top: 1,
-                      child: UserImage(
-                        user: experience.creator,
-                        avatarRadius: 20,
-                      ),
-                    ),
-                    /*
-                    Positioned(
-                      left: 5,
-                      bottom: 10,
-                      child: AutoSizeText(
+                  ),
+                ),
+                Positioned(
+                  left: -5,
+                  top: -5,
+                  child: UserImage(
+                    user: experience.creator,
+                    avatarRadius: 20,
+                  ),
+                ),
+                Positioned(
+                  left: 5,
+                  bottom: 10,
+                  child: Column(
+                    children: [
+                      AutoSizeText(
                         experience.title.getOrCrash(),
                         textAlign: TextAlign.center,
                         style: const TextStyle(
-                          fontSize: 13,
+                          fontSize: 15,
                           fontWeight: FontWeight.bold,
                           color: WorldOnColors.white,
                           // backgroundColor: Colors.grey.withOpacity(0.5),
                         ),
                       ),
-                    ),
-                     */
-                  ],
-                ),
-                Padding(
-                  padding: const EdgeInsets.all(5),
-                  child: AutoSizeText(
-                    experience.title.getOrCrash(),
-                    textAlign: TextAlign.center,
-                    style: const TextStyle(
-                      fontSize: 15,
-                      fontWeight: FontWeight.bold,
-                      color: WorldOnColors.background,
-                    ),
+                    ],
                   ),
                 ),
               ],

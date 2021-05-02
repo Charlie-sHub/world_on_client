@@ -42,7 +42,6 @@ class ExperienceLikesCounter extends StatelessWidget {
           const SizedBox(width: 5),
           Text(
             experience.likedBy.length.toString(),
-            style: const TextStyle(color: WorldOnColors.background),
           ),
         ],
       ),

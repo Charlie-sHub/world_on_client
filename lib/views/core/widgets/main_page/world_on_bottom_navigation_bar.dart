@@ -15,8 +15,8 @@ class WorldOnBottomNavigationBar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return AnimatedBottomNavigationBar(
-      rightCornerRadius: 10,
-      leftCornerRadius: 10,
+      // rightCornerRadius: 10,
+      // leftCornerRadius: 10,
       notchSmoothness: NotchSmoothness.defaultEdge,
       notchMargin: 3,
       height: 50,
@@ -26,7 +26,7 @@ class WorldOnBottomNavigationBar extends StatelessWidget {
       gapLocation: GapLocation.center,
       activeIndex: _getCurrentIndex(context),
       activeColor: WorldOnColors.primary,
-      inactiveColor: WorldOnColors.background,
+      inactiveColor: WorldOnColors.accent,
       icons: const [
         FontAwesomeIcons.home,
         FontAwesomeIcons.search,
@@ -56,28 +56,28 @@ class WorldOnBottomNavigationBar extends StatelessWidget {
         break;
       case _searchIndex:
         context.read<NavigationActorBloc>().add(
-          const NavigationActorEvent.searchTapped(),
-        );
+              const NavigationActorEvent.searchTapped(),
+            );
         break;
       case _navigationIndex:
         context.read<NavigationActorBloc>().add(
-          NavigationActorEvent.experienceNavigationTapped(
-            none(),
-          ),
-        );
+              NavigationActorEvent.experienceNavigationTapped(
+                none(),
+              ),
+            );
         break;
       case _profileIndex:
         context.read<NavigationActorBloc>().add(
-          NavigationActorEvent.profileTapped(
-            currentUserProfile: false,
-            userOption: none(),
-          ),
-        );
+              NavigationActorEvent.profileTapped(
+                currentUserProfile: false,
+                userOption: none(),
+              ),
+            );
         break;
       default:
         context.read<NavigationActorBloc>().add(
-          const NavigationActorEvent.mainFeedTapped(),
-        );
+              const NavigationActorEvent.mainFeedTapped(),
+            );
         break;
     }
   }

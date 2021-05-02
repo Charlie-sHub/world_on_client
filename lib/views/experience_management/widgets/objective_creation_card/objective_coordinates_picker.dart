@@ -7,10 +7,6 @@ import 'package:worldon/application/experience_management/objective_form/objecti
 import 'package:worldon/views/core/widgets/misc/world_on_progress_indicator.dart';
 
 class ObjectiveCoordinatePicker extends StatelessWidget {
-  const ObjectiveCoordinatePicker({
-    Key? key,
-  }) : super(key: key);
-
   @override
   Widget build(BuildContext context) {
     final _position = LatLng(
@@ -24,7 +20,7 @@ class ObjectiveCoordinatePicker extends StatelessWidget {
               mapType: MapType.hybrid,
               markers: {
                 Marker(
-                  markerId: MarkerId("new_objective"),
+                  markerId: const MarkerId("new_objective"),
                   position: _position,
                 ),
               },

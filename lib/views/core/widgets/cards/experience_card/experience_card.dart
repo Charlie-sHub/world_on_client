@@ -13,7 +13,7 @@ import 'package:worldon/views/core/widgets/cards/experience_card/log_button.dart
 import 'package:worldon/views/core/widgets/cards/experience_card/manage_button_builder.dart';
 import 'package:worldon/views/core/widgets/cards/experience_card/participate_button.dart';
 import 'package:worldon/views/core/widgets/cards/experience_card/share_button.dart';
-import 'package:worldon/views/core/widgets/cards/simple_tag_display.dart';
+import 'package:worldon/views/core/widgets/cards/tag_card/simple_tag_card_builder.dart';
 import 'package:worldon/views/core/widgets/misc/experience_done_counter.dart';
 import 'package:worldon/views/core/widgets/misc/experience_likes_counter.dart';
 
@@ -62,7 +62,6 @@ class ExperienceCard extends StatelessWidget {
                       style: const TextStyle(
                         fontSize: 30,
                         fontWeight: FontWeight.bold,
-                        color: WorldOnColors.background,
                       ),
                     ),
                     const SizedBox(height: 10),
@@ -71,7 +70,6 @@ class ExperienceCard extends StatelessWidget {
                       textAlign: TextAlign.justify,
                       style: const TextStyle(
                         fontSize: 10,
-                        color: WorldOnColors.background,
                       ),
                     ),
                     const SizedBox(height: 10),
@@ -102,11 +100,11 @@ class ExperienceCard extends StatelessWidget {
                     const SizedBox(height: 5),
                     Wrap(
                       alignment: WrapAlignment.center,
-                      spacing: 5,
-                      runSpacing: 2,
+                      spacing: 3,
+                      runSpacing: 3,
                       children: <Widget>[
                         ...experience.tags.getOrCrash().asSet().map(
-                              (tag) => SimpleTagDisplay(tag: tag),
+                              (tag) => SimpleTagCardBuilder(tag: tag),
                             ),
                       ],
                     ),

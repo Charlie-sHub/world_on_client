@@ -1,5 +1,4 @@
 import 'package:another_flushbar/flushbar_helper.dart';
-import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:worldon/application/tag_management/tag_card_actor/tag_card_actor_bloc.dart';
@@ -7,17 +6,16 @@ import 'package:worldon/domain/core/entities/tag/tag.dart';
 import 'package:worldon/generated/l10n.dart';
 import 'package:worldon/injection.dart';
 import 'package:worldon/views/core/misc/world_on_colors.dart';
-import 'package:worldon/views/core/widgets/cards/tag_card/dislike_tag_button.dart';
-import 'package:worldon/views/core/widgets/cards/tag_card/like_tag_button.dart';
 
+@Deprecated("Use the SimpleTagCardBuilder instead")
 class TagCard extends StatelessWidget {
   final Tag tag;
-
+  
   const TagCard({
     Key? key,
     required this.tag,
   }) : super(key: key);
-
+  
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
@@ -27,68 +25,49 @@ class TagCard extends StatelessWidget {
         ),
       child: BlocConsumer<TagCardActorBloc, TagCardActorState>(
         listener: _tagCardListener,
-        builder: (context, state) => Card(
-          margin: const EdgeInsets.all(5),
+        builder: (context, state) => Container(
+          decoration: BoxDecoration(
+            border: Border.all(
+              color: WorldOnColors.blue,
+              width: 2,
+            ),
+            borderRadius: BorderRadius.circular(12),
+          ),
           child: Padding(
-            padding: const EdgeInsets.all(2),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: <Widget>[
-                const SizedBox(width: 1),
-                AutoSizeText(
-                  tag.name.getOrCrash(),
-                  style: const TextStyle(
-                    fontSize: 17,
-                    fontWeight: FontWeight.bold,
-                    color: WorldOnColors.background,
-                  ),
-                ),
-                AnimatedSwitcher(
-                  duration: const Duration(milliseconds: 200),
-                  transitionBuilder: (child, animation) => ScaleTransition(
-                    scale: animation,
-                    child: child,
-                  ), // Mapping every state seems a tad too much for me but it's the best solution from the UI point of view, maybe not from the performance one though
-                  child: state.map(
-                    initial: (_) => Container(),
-                    actionInProgress: (_) => const CircularProgressIndicator(),
-                    notInInterests: (_) => LikeTagButton(tag: tag),
-                    additionSuccess: (_) => DislikeTagButton(tag: tag),
-                    additionFailure: (_) => LikeTagButton(tag: tag),
-                    inInterests: (_) => DislikeTagButton(tag: tag),
-                    dismissalSuccess: (_) => LikeTagButton(tag: tag),
-                    dismissalFailure: (_) => DislikeTagButton(tag: tag),
-                  ),
-                ),
-              ],
+            padding: const EdgeInsets.all(3),
+            child: Text(
+              tag.name.getOrCrash(),
+              style: const TextStyle(
+                color: WorldOnColors.blue,
+              ),
             ),
           ),
         ),
       ),
     );
   }
-
+  
   void _tagCardListener(BuildContext context, TagCardActorState state) => state.maybeMap(
-        additionFailure: (state) => FlushbarHelper.createError(
-          duration: const Duration(seconds: 2),
-          message: state.failure.maybeMap(
-            coreData: (failure) => failure.coreDataFailure.maybeMap(
-              serverError: (failure) => failure.errorString,
-              orElse: () => S.of(context).unknownError,
-            ),
-            orElse: () => S.of(context).unknownError,
-          ),
-        ).show(context),
-        dismissalFailure: (state) => FlushbarHelper.createError(
-          duration: const Duration(seconds: 2),
-          message: state.failure.maybeMap(
-            coreData: (failure) => failure.coreDataFailure.maybeMap(
-              serverError: (failure) => failure.errorString,
-              orElse: () => S.of(context).unknownError,
-            ),
-            orElse: () => S.of(context).unknownError,
-          ),
-        ).show(context),
-        orElse: () {},
-      );
+    additionFailure: (state) => FlushbarHelper.createError(
+      duration: const Duration(seconds: 2),
+      message: state.failure.maybeMap(
+        coreData: (failure) => failure.coreDataFailure.maybeMap(
+          serverError: (failure) => failure.errorString,
+          orElse: () => S.of(context).unknownError,
+        ),
+        orElse: () => S.of(context).unknownError,
+      ),
+    ).show(context),
+    dismissalFailure: (state) => FlushbarHelper.createError(
+      duration: const Duration(seconds: 2),
+      message: state.failure.maybeMap(
+        coreData: (failure) => failure.coreDataFailure.maybeMap(
+          serverError: (failure) => failure.errorString,
+          orElse: () => S.of(context).unknownError,
+        ),
+        orElse: () => S.of(context).unknownError,
+      ),
+    ).show(context),
+    orElse: () {},
+  );
 }

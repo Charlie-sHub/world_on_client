@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:worldon/domain/core/entities/experience/experience.dart';
 import 'package:worldon/generated/l10n.dart';
-import 'package:worldon/views/core/misc/world_on_colors.dart';
 
 class ExperienceDoneCounter extends StatelessWidget {
   const ExperienceDoneCounter({
@@ -22,12 +21,10 @@ class ExperienceDoneCounter extends StatelessWidget {
         // The seems like overkill, is it worth it?
         Text(
           S.of(context).doneBy,
-          style: const TextStyle(color: WorldOnColors.background),
         ),
         const SizedBox(width: 5),
         Text(
           experience.doneBy.length.toString(),
-          style: const TextStyle(color: WorldOnColors.background),
         ),
       ],
     );
