@@ -2,7 +2,6 @@ import 'package:animated_bottom_navigation_bar/animated_bottom_navigation_bar.da
 import 'package:dartz/dartz.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:worldon/application/navigation/navigation_actor/navigation_actor_bloc.dart';
 import 'package:worldon/views/core/misc/world_on_colors.dart';
 
@@ -20,7 +19,7 @@ class WorldOnBottomNavigationBar extends StatelessWidget {
       notchSmoothness: NotchSmoothness.defaultEdge,
       notchMargin: 3,
       height: 50,
-      iconSize: 28,
+      iconSize: 38,
       backgroundColor: WorldOnColors.white,
       onTap: (index) => _onTap(index, context),
       gapLocation: GapLocation.center,
@@ -28,10 +27,10 @@ class WorldOnBottomNavigationBar extends StatelessWidget {
       activeColor: WorldOnColors.primary,
       inactiveColor: WorldOnColors.accent,
       icons: const [
-        FontAwesomeIcons.home,
-        FontAwesomeIcons.search,
-        FontAwesomeIcons.solidCompass,
-        FontAwesomeIcons.userAlt,
+        Icons.home_rounded,
+        Icons.search_rounded,
+        Icons.explore_rounded,
+        Icons.person_rounded,
       ],
     );
   }

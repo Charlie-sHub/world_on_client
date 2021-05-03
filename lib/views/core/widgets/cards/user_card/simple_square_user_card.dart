@@ -31,6 +31,7 @@ class SimpleSquareUserCard extends StatelessWidget {
         child: Card(
           clipBehavior: Clip.antiAlias,
           child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
             children: <Widget>[
               CachedNetworkImage(
                 imageUrl: user.imageURL,

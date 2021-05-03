@@ -16,7 +16,8 @@ import 'package:worldon/views/search/widget/search_users_tab_view/search_users_t
 
 class SearchBody extends StatelessWidget {
   const SearchBody({Key? key}) : super(key: key);
-  
+  static const double _separation = 5;
+
   @override
   Widget build(BuildContext context) {
     return MultiBlocProvider(
@@ -32,71 +33,72 @@ class SearchBody extends StatelessWidget {
         listenWhen: (previous, current) => previous.isSubmitting != current.isSubmitting,
         listener: _searchFormListener,
         buildWhen: (previous, current) => previous.showErrorMessages != current.showErrorMessages,
-        builder: (context, state) => Column(
-          children: [
-            const SearchHeader(),
-            const SizedBox(height: 5),
-            Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 10),
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  AutoSizeText(
-                    S.of(context).searchTags,
-                    style: const TextStyle(fontWeight: FontWeight.bold),
-                  ),
-                  const SizedBox(height: 5),
-                  SizedBox(
-                    height: MediaQuery.of(context).size.height * 0.10,
-                    child: const SearchTagsTabView(),
-                  ),
-                  const SizedBox(height: 5),
-                  AutoSizeText(
-                    S.of(context).experiences,
-                    style: const TextStyle(fontWeight: FontWeight.bold),
-                  ),
-                  const SizedBox(height: 5),
-                  SizedBox(
-                    height: MediaQuery.of(context).size.height * 0.26,
-                    child: SearchExperiencesTabView(searchTerm: state.searchTerm),
-                  ),
-                  const SizedBox(height: 5),
-                  AutoSizeText(
-                    S.of(context).searchUsers,
-                    style: const TextStyle(fontWeight: FontWeight.bold),
-                  ),
-                  const SizedBox(height: 5),
-                  SizedBox(
-                    height: MediaQuery.of(context).size.height * 0.25,
-                    child: SearchUsersTabView(searchTerm: state.searchTerm),
-                  ),
-                ],
+        builder: (context, state) {
+          return Column(
+            children: [
+              const SearchHeader(),
+              const SizedBox(height: _separation),
+              Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 10),
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    AutoSizeText(
+                      S.of(context).searchTags,
+                      style: const TextStyle(fontWeight: FontWeight.bold),
+                    ),
+                    const SizedBox(height: _separation),
+                    SizedBox(
+                      height: MediaQuery.of(context).size.height * 0.07,
+                      child: const SearchTagsTabView(),
+                    ),
+                    AutoSizeText(
+                      S.of(context).experiences,
+                      style: const TextStyle(fontWeight: FontWeight.bold),
+                    ),
+                    const SizedBox(height: _separation),
+                    SizedBox(
+                      height: MediaQuery.of(context).size.height * 0.3,
+                      child: SearchExperiencesTabView(searchTerm: state.searchTerm),
+                    ),
+                    const SizedBox(height: _separation),
+                    AutoSizeText(
+                      S.of(context).searchUsers,
+                      style: const TextStyle(fontWeight: FontWeight.bold),
+                    ),
+                    const SizedBox(height: _separation),
+                    SizedBox(
+                      height: MediaQuery.of(context).size.height * 0.24,
+                      child: SearchUsersTabView(searchTerm: state.searchTerm),
+                    ),
+                  ],
+                ),
               ),
-            ),
-          ],
-        ),
+            ],
+          );
+        },
       ),
     );
   }
-  
+
   void _searchFormListener(BuildContext context, SearchByNameFormState state) {
     if (state.searchTerm.value.isRight()) {
       context.read<SearchUsersByNameWatcherBloc>().add(
-        SearchUsersByNameWatcherEvent.watchUsersFoundByNameStarted(
-          state.searchTerm,
-        ),
-      );
+            SearchUsersByNameWatcherEvent.watchUsersFoundByNameStarted(
+              state.searchTerm,
+            ),
+          );
       context.read<SearchExperiencesByNameWatcherBloc>().add(
-        SearchExperiencesByNameWatcherEvent.watchExperiencesFoundByNameStarted(
-          state.searchTerm,
-        ),
-      );
+            SearchExperiencesByNameWatcherEvent.watchExperiencesFoundByNameStarted(
+              state.searchTerm,
+            ),
+          );
       context.read<SearchTagsByNameWatcherBloc>().add(
-        SearchTagsByNameWatcherEvent.watchTagsFoundByNameStarted(
-          state.searchTerm,
-        ),
-      );
+            SearchTagsByNameWatcherEvent.watchTagsFoundByNameStarted(
+              state.searchTerm,
+            ),
+          );
     }
   }
 }

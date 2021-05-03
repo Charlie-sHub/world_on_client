@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:worldon/application/core/experience_card_like_check/experience_card_like_check_bloc.dart';
 import 'package:worldon/domain/core/entities/experience/experience.dart';
 import 'package:worldon/views/core/misc/world_on_colors.dart';
@@ -29,12 +28,12 @@ class ExperienceLikesCounter extends StatelessWidget {
           BlocBuilder<ExperienceCardLikeCheckBloc, ExperienceCardLikeCheckState>(
             builder: (context, state) => state.map(
               initial: (_) => const CircularProgressIndicator(),
-              likes: (_) => const FaIcon(
-                FontAwesomeIcons.solidHeart,
+              likes: (_) => const Icon(
+                Icons.favorite_rounded,
                 color: WorldOnColors.red,
               ),
-              neutral: (_) => const FaIcon(
-                FontAwesomeIcons.heart,
+              neutral: (_) => const Icon(
+                Icons.favorite_border_rounded,
                 color: WorldOnColors.red,
               ),
             ),

@@ -5,6 +5,7 @@ import 'package:worldon/domain/core/validation/validators/validate_bounded_integ
 
 class ExperiencePoints extends ValueObject<int> {
   static const limit = 10000;
+  static const multiplier = 10;
 
   @override
   final Either<ValueFailure<int>, int> value;

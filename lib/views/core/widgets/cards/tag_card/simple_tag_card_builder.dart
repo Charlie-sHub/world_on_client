@@ -16,22 +16,25 @@ class SimpleTagCardBuilder extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return BlocProvider(
-      create: (context) => getIt<TagCardActorBloc>()
-        ..add(
-          TagCardActorEvent.initialized(tag),
-        ),
-      child: BlocConsumer<TagCardActorBloc, TagCardActorState>(
-        listener: (context, state) {},
-        builder: (context, state) => state.map(
-          initial: (_) => Container(),
-          actionInProgress: (_) => const CircularProgressIndicator(),
-          notInInterests: (_) => LikeableSimpleTagCard(tag: tag),
-          additionSuccess: (_) => DisLikeableSimpleTagCard(tag: tag),
-          additionFailure: (_) => LikeableSimpleTagCard(tag: tag),
-          inInterests: (_) => DisLikeableSimpleTagCard(tag: tag),
-          dismissalSuccess: (_) => LikeableSimpleTagCard(tag: tag),
-          dismissalFailure: (_) => DisLikeableSimpleTagCard(tag: tag),
+    return Padding(
+      padding: const EdgeInsets.only(right: 5),
+      child: BlocProvider(
+        create: (context) => getIt<TagCardActorBloc>()
+          ..add(
+            TagCardActorEvent.initialized(tag),
+          ),
+        child: BlocConsumer<TagCardActorBloc, TagCardActorState>(
+          listener: (context, state) {},
+          builder: (context, state) => state.map(
+            initial: (_) => Container(),
+            actionInProgress: (_) => const CircularProgressIndicator(),
+            notInInterests: (_) => LikeableSimpleTagCard(tag: tag),
+            additionSuccess: (_) => DisLikeableSimpleTagCard(tag: tag),
+            additionFailure: (_) => LikeableSimpleTagCard(tag: tag),
+            inInterests: (_) => DisLikeableSimpleTagCard(tag: tag),
+            dismissalSuccess: (_) => LikeableSimpleTagCard(tag: tag),
+            dismissalFailure: (_) => DisLikeableSimpleTagCard(tag: tag),
+          ),
         ),
       ),
     );

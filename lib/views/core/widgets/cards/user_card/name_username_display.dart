@@ -21,12 +21,15 @@ class NameUsernameDisplay extends StatelessWidget {
           softWrap: true,
           style: const TextStyle(
             fontWeight: FontWeight.bold,
+            fontSize: 15,
           ),
         ),
         AutoSizeText(
           "@${user.username.getOrCrash()}",
           overflow: TextOverflow.fade,
-          style: const TextStyle(),
+          style: const TextStyle(
+            fontSize: 12,
+          ),
         ),
       ],
     );

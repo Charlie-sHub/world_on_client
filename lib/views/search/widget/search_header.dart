@@ -34,13 +34,15 @@ class SearchHeader extends StatelessWidget {
                           SearchByNameFormEvent.searchTermChanged(value.trim()),
                         ),
                     decoration: InputDecoration(
-                      prefixIcon: const Icon(Icons.search),
-                      labelText: S.of(context).search,
+                      // labelText: S.of(context).search,
+                      prefixIcon: const SizedBox(width: 0),
+                      prefixIconConstraints: BoxConstraints.tight(const Size.fromWidth(15)),
                       border: const OutlineInputBorder(
                         borderRadius: BorderRadius.all(
                           Radius.circular(_cornerRadius),
                         ),
                       ),
+                      focusedBorder: InputBorder.none,
                       enabledBorder: const OutlineInputBorder(
                         borderRadius: BorderRadius.all(
                           Radius.circular(_cornerRadius),

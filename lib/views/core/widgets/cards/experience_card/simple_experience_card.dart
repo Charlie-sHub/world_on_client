@@ -22,7 +22,7 @@ class SimpleExperienceCard extends StatelessWidget {
 
   final Experience experience;
   final Function() reloadFunction;
-  static const double _cardHeight = 180;
+  static const double _heightMultiplier = 0.3;
 
   @override
   Widget build(BuildContext context) {
@@ -58,7 +58,7 @@ class SimpleExperienceCard extends StatelessWidget {
                   ).createShader(bounds),
                   child: CachedNetworkImage(
                     imageUrl: experience.imageURLs.first,
-                    height: _cardHeight,
+                    height: MediaQuery.of(context).size.height * _heightMultiplier,
                     width: 320,
                     fit: BoxFit.cover,
                     progressIndicatorBuilder: (context, url, progress) => const Padding(

@@ -36,6 +36,7 @@ class WorldOnAppBar extends StatelessWidget implements PreferredSizeWidget {
         CurrentUserProfileButton(),
         SizedBox(width: 5),
       ],
+      elevation: 0,
     );
   }
 

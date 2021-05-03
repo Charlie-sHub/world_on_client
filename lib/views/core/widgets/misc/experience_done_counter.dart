@@ -1,30 +1,38 @@
+import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
-import 'package:worldon/domain/core/entities/experience/experience.dart';
 import 'package:worldon/generated/l10n.dart';
+import 'package:worldon/views/core/misc/world_on_colors.dart';
 
 class ExperienceDoneCounter extends StatelessWidget {
   const ExperienceDoneCounter({
     Key? key,
-    required this.experience,
+    required this.amount,
   }) : super(key: key);
 
-  final Experience experience;
+  final int amount;
 
   @override
   Widget build(BuildContext context) {
     return Row(
-      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-      mainAxisSize: MainAxisSize.min,
-      children: <Widget>[
-        // TODO: Implement the user pictures
-        // The avatars of the last 3 users to have done the experience should appear here
-        // The seems like overkill, is it worth it?
-        Text(
-          S.of(context).doneBy,
+      children: [
+        const Icon(
+          Icons.people_alt_rounded,
+          color: WorldOnColors.blue,
         ),
         const SizedBox(width: 5),
-        Text(
-          experience.doneBy.length.toString(),
+        AutoSizeText(
+          S.of(context).doneBy,
+          style: const TextStyle(
+            fontSize: 12,
+          ),
+        ),
+        const SizedBox(width: 5),
+        AutoSizeText(
+          amount.toString(),
+          style: const TextStyle(
+            fontSize: 15,
+            fontWeight: FontWeight.bold,
+          ),
         ),
       ],
     );

@@ -11,9 +11,7 @@ import 'package:worldon/domain/store/use_case/load_promotion_plans.dart';
 import 'package:worldon/injection.dart';
 
 part 'promotion_plans_loader_bloc.freezed.dart';
-
 part 'promotion_plans_loader_event.dart';
-
 part 'promotion_plans_loader_state.dart';
 
 @injectable

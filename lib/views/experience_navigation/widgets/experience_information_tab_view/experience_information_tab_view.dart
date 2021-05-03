@@ -141,7 +141,7 @@ class ExperienceInformationTabView extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: <Widget>[
                 ExperienceLikesCounter(experience: experience),
-                ExperienceDoneCounter(experience: experience),
+                ExperienceDoneCounter(amount: experience.doneBy.length),
               ],
             ),
           ),

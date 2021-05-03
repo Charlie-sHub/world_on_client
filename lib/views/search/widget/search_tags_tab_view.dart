@@ -21,26 +21,18 @@ class SearchTagsTabView extends StatelessWidget {
       builder: (context, state) => state.map(
         initial: (_) => SearchSomething(),
         searchInProgress: (_) => const WorldOnProgressIndicator(),
-        searchSuccess: (state) => SingleChildScrollView(
+        searchSuccess: (state) => ListView.builder(
           scrollDirection: Axis.horizontal,
           clipBehavior: Clip.none,
-          child: Wrap(
-            direction: Axis.vertical,
-            crossAxisAlignment: WrapCrossAlignment.center,
-            spacing: 3,
-            runSpacing: 3,
-            children: <Widget>[
-              ...state.tagsFound.asList().map(
-                (tag) {
-                  if (tag.isValid) {
-                    return SimpleTagCardBuilder(tag: tag);
-                  } else {
-                    return SimpleTagErrorDisplay(tag: tag);
-                  }
-                },
-              ),
-            ],
-          ),
+          itemCount: state.tagsFound.size,
+          itemBuilder: (context, index) {
+            final _tag = state.tagsFound.get(index);
+            if (_tag.isValid) {
+              return SimpleTagCardBuilder(tag: _tag);
+            } else {
+              return SimpleTagErrorDisplay(tag: _tag);
+            }
+          },
         ),
         searchFailure: (state) => SearchErrorDisplay(
           retryFunction: () => context.read<SearchTagsByNameWatcherBloc>().add(

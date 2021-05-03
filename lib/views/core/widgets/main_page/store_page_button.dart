@@ -12,7 +12,7 @@ class StorePageButton extends StatelessWidget {
     return IconButton(
       padding: const EdgeInsets.all(0),
       icon: const Icon(
-        Icons.account_balance_wallet_outlined,
+        Icons.local_grocery_store_outlined,
         size: 35,
         // color: WorldOnColors.accent,
       ),

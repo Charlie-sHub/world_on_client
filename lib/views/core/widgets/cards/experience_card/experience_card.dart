@@ -77,8 +77,8 @@ class ExperienceCard extends StatelessWidget {
                       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                       children: <Widget>[
                         ExperienceLikesCounter(experience: experience),
-                        ExperienceDoneCounter(experience: experience),
-                        DifficultyDisplay(experience: experience),
+                        ExperienceDoneCounter(amount: experience.doneBy.length),
+                        DifficultyDisplay(difficulty: experience.difficulty.getOrCrash()),
                       ],
                     ),
                     const SizedBox(height: 5),

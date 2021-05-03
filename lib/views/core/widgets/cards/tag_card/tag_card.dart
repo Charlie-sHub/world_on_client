@@ -10,12 +10,12 @@ import 'package:worldon/views/core/misc/world_on_colors.dart';
 @Deprecated("Use the SimpleTagCardBuilder instead")
 class TagCard extends StatelessWidget {
   final Tag tag;
-  
+
   const TagCard({
     Key? key,
     required this.tag,
   }) : super(key: key);
-  
+
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
@@ -46,28 +46,28 @@ class TagCard extends StatelessWidget {
       ),
     );
   }
-  
+
   void _tagCardListener(BuildContext context, TagCardActorState state) => state.maybeMap(
-    additionFailure: (state) => FlushbarHelper.createError(
-      duration: const Duration(seconds: 2),
-      message: state.failure.maybeMap(
-        coreData: (failure) => failure.coreDataFailure.maybeMap(
-          serverError: (failure) => failure.errorString,
-          orElse: () => S.of(context).unknownError,
-        ),
-        orElse: () => S.of(context).unknownError,
-      ),
-    ).show(context),
-    dismissalFailure: (state) => FlushbarHelper.createError(
-      duration: const Duration(seconds: 2),
-      message: state.failure.maybeMap(
-        coreData: (failure) => failure.coreDataFailure.maybeMap(
-          serverError: (failure) => failure.errorString,
-          orElse: () => S.of(context).unknownError,
-        ),
-        orElse: () => S.of(context).unknownError,
-      ),
-    ).show(context),
-    orElse: () {},
-  );
+        additionFailure: (state) => FlushbarHelper.createError(
+          duration: const Duration(seconds: 2),
+          message: state.failure.maybeMap(
+            coreData: (failure) => failure.coreDataFailure.maybeMap(
+              serverError: (failure) => failure.errorString,
+              orElse: () => S.of(context).unknownError,
+            ),
+            orElse: () => S.of(context).unknownError,
+          ),
+        ).show(context),
+        dismissalFailure: (state) => FlushbarHelper.createError(
+          duration: const Duration(seconds: 2),
+          message: state.failure.maybeMap(
+            coreData: (failure) => failure.coreDataFailure.maybeMap(
+              serverError: (failure) => failure.errorString,
+              orElse: () => S.of(context).unknownError,
+            ),
+            orElse: () => S.of(context).unknownError,
+          ),
+        ).show(context),
+        orElse: () {},
+      );
 }

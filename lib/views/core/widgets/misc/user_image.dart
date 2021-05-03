@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:worldon/application/navigation/navigation_actor/navigation_actor_bloc.dart';
 import 'package:worldon/domain/core/entities/user/user.dart';
+import 'package:worldon/views/core/misc/world_on_colors.dart';
 
 class UserImage extends StatelessWidget {
   const UserImage({
@@ -17,8 +18,8 @@ class UserImage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return TextButton(
-      onPressed: () => context.read<NavigationActorBloc>().add(
+    return InkWell(
+      onTap: () => context.read<NavigationActorBloc>().add(
             NavigationActorEvent.profileTapped(
               userOption: some(user),
               currentUserProfile: false,
@@ -49,6 +50,7 @@ class UserImage extends StatelessWidget {
                 child: const Icon(
                   Icons.check_circle_rounded,
                   size: 20,
+                  color: WorldOnColors.blue,
                 ),
               ),
             ),
