@@ -15,22 +15,26 @@ class LogButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return BlocBuilder<ExperienceCardActorBloc, ExperienceCardActorState>(
-      builder: (context, state) => AnimatedSwitcher(
-        duration: const Duration(milliseconds: 200),
-        transitionBuilder: (child, animation) => FadeTransition(
-          opacity: animation,
-          child: child,
-        ),
-        child: state.map(
-          initial: (_) => Container(),
-          actionInProgress: (_) => const CircularProgressIndicator(),
-          inLog: (_) => DismissFromLogButton(experience: experience),
-          notInLog: (_) => AddToLogButton(experience: experience),
-          additionSuccess: (_) => DismissFromLogButton(experience: experience),
-          additionFailure: (_) => AddToLogButton(experience: experience),
-          dismissalSuccess: (_) => AddToLogButton(experience: experience),
-          dismissalFailure: (_) => DismissFromLogButton(experience: experience),
+    return SizedBox(
+      height: 50,
+      width: 50,
+      child: BlocBuilder<ExperienceCardActorBloc, ExperienceCardActorState>(
+        builder: (context, state) => AnimatedSwitcher(
+          duration: const Duration(milliseconds: 200),
+          transitionBuilder: (child, animation) => FadeTransition(
+            opacity: animation,
+            child: child,
+          ),
+          child: state.map(
+            initial: (_) => Container(),
+            actionInProgress: (_) => const CircularProgressIndicator(),
+            inLog: (_) => DismissFromLogButton(experience: experience),
+            notInLog: (_) => AddToLogButton(experience: experience),
+            additionSuccess: (_) => DismissFromLogButton(experience: experience),
+            additionFailure: (_) => AddToLogButton(experience: experience),
+            dismissalSuccess: (_) => AddToLogButton(experience: experience),
+            dismissalFailure: (_) => DismissFromLogButton(experience: experience),
+          ),
         ),
       ),
     );

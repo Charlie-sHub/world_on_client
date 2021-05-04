@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
 import 'package:worldon/application/profile/block_actor/block_actor_bloc.dart';
 import 'package:worldon/domain/core/entities/user/user.dart';
 import 'package:worldon/views/core/misc/world_on_colors.dart';
@@ -16,10 +16,12 @@ class BlockButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return IconButton(
-      icon: const FaIcon(
-        FontAwesomeIcons.userSlash,
+      icon: const Icon(
+        MdiIcons.accountOff,
+        size: 40,
         color: WorldOnColors.red,
       ),
+      padding: const EdgeInsets.all(0),
       onPressed: () => context.read<BlockActorBloc>().add(
             BlockActorEvent.blocked(user),
           ),

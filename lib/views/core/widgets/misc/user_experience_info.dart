@@ -4,7 +4,7 @@ import 'package:percent_indicator/linear_percent_indicator.dart';
 import 'package:worldon/domain/core/entities/user/user.dart';
 import 'package:worldon/generated/l10n.dart';
 import 'package:worldon/views/core/misc/world_on_colors.dart';
-
+@Deprecated("Unnecessary now that the progress is shown with the circle around the avatar")
 class UserExperienceInfo extends StatelessWidget {
   const UserExperienceInfo({
     Key? key,
@@ -29,7 +29,6 @@ class UserExperienceInfo extends StatelessWidget {
           child: LinearPercentIndicator(
             lineHeight: 10,
             percent: user.percentageToNextLevel,
-            backgroundColor: WorldOnColors.background,
             progressColor: WorldOnColors.primary,
           ),
         ),

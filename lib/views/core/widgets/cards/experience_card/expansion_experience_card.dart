@@ -8,10 +8,16 @@ import 'package:worldon/generated/l10n.dart';
 import 'package:worldon/injection.dart';
 import 'package:worldon/views/core/widgets/cards/experience_card/difficulty_display.dart';
 import 'package:worldon/views/core/widgets/cards/experience_card/experience_points_view.dart';
+import 'package:worldon/views/core/widgets/cards/experience_card/log_button.dart';
+import 'package:worldon/views/core/widgets/cards/experience_card/participate_button.dart';
+import 'package:worldon/views/core/widgets/cards/experience_card/share_button.dart';
+import 'package:worldon/views/core/widgets/cards/tag_card/simple_tag_card_builder.dart';
 import 'package:worldon/views/core/widgets/misc/experience_done_counter.dart';
 import 'package:worldon/views/core/widgets/misc/experience_likes_counter.dart';
 import 'package:worldon/views/core/widgets/misc/user_image.dart';
 import 'package:worldon/views/core/widgets/misc/world_on_cached_image.dart';
+
+import 'manage_button_builder.dart';
 
 // TODO: Implement bloc that checks the distance from the experience
 // And show it on the image or somewhere on the card
@@ -89,6 +95,7 @@ class ExpansionExperienceCard extends StatelessWidget {
                         ),
                         const SizedBox(height: 10),
                         Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
                             Column(
                               crossAxisAlignment: CrossAxisAlignment.start,
@@ -98,8 +105,30 @@ class ExpansionExperienceCard extends StatelessWidget {
                                 ExperiencePointsView(difficulty: experience.difficulty.getOrCrash()),
                               ],
                             ),
+                            Row(
+                              children: [
+                                ParticipateButton(experience: experience),
+                                LogButton(experience: experience),
+                                ShareButton(experience: experience),
+                                ManageButtonBuilder(
+                                  experience: experience,
+                                  reloadFunction: reloadFunction,
+                                ),
+                              ],
+                            ),
                           ],
-                        )
+                        ),
+                        const SizedBox(height: 5),
+                        Wrap(
+                          alignment: WrapAlignment.center,
+                          spacing: 2,
+                          runSpacing: 3,
+                          children: <Widget>[
+                            ...experience.tags.getOrCrash().asSet().map(
+                                  (tag) => SimpleTagCardBuilder(tag: tag),
+                                ),
+                          ],
+                        ),
                       ],
                     ),
                   ),

@@ -3,7 +3,6 @@ import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:worldon/domain/core/entities/comment/comment.dart';
 import 'package:worldon/generated/l10n.dart';
-import 'package:worldon/views/core/misc/world_on_colors.dart';
 import 'package:worldon/views/core/widgets/cards/user_card/name_username_display.dart';
 import 'package:worldon/views/core/widgets/misc/user_image.dart';
 
@@ -24,15 +23,16 @@ class CommentCard extends StatelessWidget {
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: <Widget>[
-              Padding(
-                padding: const EdgeInsets.all(5),
-                child: UserImage(
-                  user: comment.poster,
-                  avatarRadius: 20,
-                ),
+              Row(
+                children: [
+                  UserImage(
+                    user: comment.poster,
+                    avatarRadius: 16,
+                  ),
+                  NameUsernameDisplay(user: comment.poster),
+                ],
               ),
-              NameUsernameDisplay(user: comment.poster),
-              // TODO: Implement report functionality
+              // TODO: Implement report functionality, edit and delete
               IconButton(
                 icon: const Icon(
                   Icons.more_vert,
@@ -49,9 +49,6 @@ class CommentCard extends StatelessWidget {
             padding: const EdgeInsets.all(5),
             child: AutoSizeText(
               comment.content.getOrCrash(),
-              style: const TextStyle(
-                color: WorldOnColors.background,
-              ),
               textAlign: TextAlign.justify,
             ),
           ),

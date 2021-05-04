@@ -32,7 +32,7 @@ class DifficultyDisplay extends StatelessWidget {
           difficulty.toString(),
           style: TextStyle(
             color: getColorByDifficulty(difficulty),
-            fontSize: 12,
+            fontSize: 15,
             fontWeight: FontWeight.bold,
           ),
         ),

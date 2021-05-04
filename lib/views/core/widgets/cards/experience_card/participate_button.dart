@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:worldon/application/navigation/navigation_actor/navigation_actor_bloc.dart';
 import 'package:worldon/domain/core/entities/experience/experience.dart';
-import 'package:worldon/generated/l10n.dart';
 import 'package:worldon/views/core/misc/world_on_colors.dart';
 
 class ParticipateButton extends StatelessWidget {
@@ -16,24 +15,18 @@ class ParticipateButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ElevatedButton(
-      style: ButtonStyle(
-        backgroundColor: MaterialStateProperty.all(
-          WorldOnColors.primary,
-        ),
-        padding: MaterialStateProperty.all(
-          const EdgeInsets.symmetric(
-            horizontal: 10,
-          ),
-        ),
-      ),
-      onPressed: () => context.read<NavigationActorBloc>().add(
-            NavigationActorEvent.experienceNavigationTapped(some(experience)),
-          ),
-      child: Text(
-        S.of(context).participate,
-        style: const TextStyle(
-          color: WorldOnColors.white,
+    return SizedBox(
+      height: 60,
+      width: 60,
+      child: IconButton(
+        onPressed: () => context.read<NavigationActorBloc>().add(
+              NavigationActorEvent.experienceNavigationTapped(some(experience)),
+            ),
+        padding: const EdgeInsets.all(0),
+        icon: const Icon(
+          Icons.play_arrow_rounded,
+          color: WorldOnColors.primary,
+          size: 60,
         ),
       ),
     );

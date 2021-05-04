@@ -1,7 +1,6 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:worldon/core/assets.dart';
 import 'package:worldon/generated/l10n.dart';
 import 'package:worldon/views/core/misc/world_on_colors.dart';
@@ -42,8 +41,8 @@ class WelcomePage extends StatelessWidget {
               ),
               TextButton(
                 onPressed: () => context.router.replace(const MainPageRoute()),
-                child: const FaIcon(
-                  FontAwesomeIcons.check,
+                child: const Icon(
+                  Icons.check,
                   size: 90,
                   color: WorldOnColors.primary,
                 ),

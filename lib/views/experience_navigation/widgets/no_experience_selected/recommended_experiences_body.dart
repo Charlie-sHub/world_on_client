@@ -4,7 +4,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:worldon/application/experience_navigation/recommended_experiences_watcher/recommended_experiences_watcher_bloc.dart';
 import 'package:worldon/generated/l10n.dart';
 import 'package:worldon/views/core/widgets/cards/error_card.dart';
-import 'package:worldon/views/core/widgets/cards/experience_card/experience_card.dart';
+import 'package:worldon/views/core/widgets/cards/experience_card/expansion_experience_card.dart';
 import 'package:worldon/views/core/widgets/error/error_display.dart';
 import 'package:worldon/views/core/widgets/misc/world_on_progress_indicator.dart';
 
@@ -40,7 +40,7 @@ class RecommendedExperiencesBody extends StatelessWidget {
               itemBuilder: (context, index) {
                 final _experience = state.experiences[index];
                 if (_experience.isValid) {
-                  return ExperienceCard(
+                  return ExpansionExperienceCard(
                     experience: _experience,
                     key: Key(_experience.id.toString()),
                     reloadFunction: () => context.read<RecommendedExperiencesWatcherBloc>().add(

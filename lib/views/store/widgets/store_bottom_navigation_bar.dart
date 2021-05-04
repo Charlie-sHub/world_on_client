@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:worldon/application/store/store_navigation_actor/store_navigation_actor_bloc.dart';
 import 'package:worldon/generated/l10n.dart';
 
@@ -20,17 +19,17 @@ class StoreBottomNavigationBar extends StatelessWidget {
           ),
       items: [
         BottomNavigationBarItem(
-          icon: const FaIcon(FontAwesomeIcons.store),
+          icon: const Icon(Icons.store),
           label: S.of(context).storeNavigationBarStore,
           backgroundColor: Colors.blue,
         ),
         BottomNavigationBarItem(
-          icon: const FaIcon(FontAwesomeIcons.calendar),
+          icon: const Icon(Icons.date_range_rounded),
           label: S.of(context).storeNavigationBarPromotionPlans,
           backgroundColor: Colors.orange,
         ),
         BottomNavigationBarItem(
-          icon: const FaIcon(FontAwesomeIcons.list),
+          icon: const Icon(Icons.list_rounded),
           label: S.of(context).storeNavigationBarMyItems,
           backgroundColor: Colors.green,
         ),

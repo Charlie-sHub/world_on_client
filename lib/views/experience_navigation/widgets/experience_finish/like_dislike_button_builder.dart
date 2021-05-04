@@ -16,27 +16,31 @@ class LikeDislikeButtonBuilder extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return BlocProvider(
-      create: (context) => getIt<ExperienceLikeActorBloc>()
-        ..add(
-          ExperienceLikeActorEvent.initialized(experience),
-        ),
-      child: BlocBuilder<ExperienceLikeActorBloc, ExperienceLikeActorState>(
-        builder: (context, state) => AnimatedSwitcher(
-          duration: const Duration(milliseconds: 200),
-          transitionBuilder: (child, animation) => ScaleTransition(
-            scale: animation,
-            child: child,
+    return SizedBox(
+      height: 30,
+      width: 30,
+      child: BlocProvider(
+        create: (context) => getIt<ExperienceLikeActorBloc>()
+          ..add(
+            ExperienceLikeActorEvent.initialized(experience),
           ),
-          child: state.map(
-            initial: (_) => Container(),
-            actionInProgress: (_) => const CircularProgressIndicator(),
-            likes: (_) => DislikeExperienceButton(experience: experience),
-            neutral: (_) => LikeExperienceButton(experience: experience),
-            likeSuccess: (_) => DislikeExperienceButton(experience: experience),
-            likeFailure: (_) => LikeExperienceButton(experience: experience),
-            dislikeFailure: (_) => DislikeExperienceButton(experience: experience),
-            dislikeSuccess: (_) => LikeExperienceButton(experience: experience),
+        child: BlocBuilder<ExperienceLikeActorBloc, ExperienceLikeActorState>(
+          builder: (context, state) => AnimatedSwitcher(
+            duration: const Duration(milliseconds: 200),
+            transitionBuilder: (child, animation) => ScaleTransition(
+              scale: animation,
+              child: child,
+            ),
+            child: state.map(
+              initial: (_) => Container(),
+              actionInProgress: (_) => const CircularProgressIndicator(),
+              likes: (_) => DislikeExperienceButton(experience: experience),
+              neutral: (_) => LikeExperienceButton(experience: experience),
+              likeSuccess: (_) => DislikeExperienceButton(experience: experience),
+              likeFailure: (_) => LikeExperienceButton(experience: experience),
+              dislikeFailure: (_) => DislikeExperienceButton(experience: experience),
+              dislikeSuccess: (_) => LikeExperienceButton(experience: experience),
+            ),
           ),
         ),
       ),

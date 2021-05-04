@@ -75,7 +75,11 @@ class ProductionMainFeedRepository implements MainFeedRepositoryInterface {
               _experienceList.add(_experience);
             }
           }
-          return _experienceList;
+          // .toSet().toList() is used to remove duplicates
+          // For example when an user follows someone that is promoting their experiences
+          // A given experience would be added to the user's feed
+          // both by following the person and the experience being promoted
+          return _experienceList.toSet().toList();
         },
       ).map(
         (_experiences) {

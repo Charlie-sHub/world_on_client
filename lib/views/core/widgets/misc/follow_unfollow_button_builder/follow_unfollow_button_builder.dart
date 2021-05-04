@@ -19,16 +19,17 @@ class FollowUnfollowButtonBuilder extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return BlocProvider(
-      create: (context) => getIt<FollowActorBloc>()
-        ..add(
-          FollowActorEvent.initialized(user),
-        ),
-      child: BlocConsumer<FollowActorBloc, FollowActorState>(
-        listener: _userFollowListener,
-        builder: (context, state) => Padding(
-          padding: const EdgeInsets.all(5),
-          child: AnimatedSwitcher(
+    return SizedBox(
+      width: 40,
+      height: 40,
+      child: BlocProvider(
+        create: (context) => getIt<FollowActorBloc>()
+          ..add(
+            FollowActorEvent.initialized(user),
+          ),
+        child: BlocConsumer<FollowActorBloc, FollowActorState>(
+          listener: _userFollowListener,
+          builder: (context, state) => AnimatedSwitcher(
             duration: const Duration(milliseconds: 250),
             transitionBuilder: (child, animation) => FadeTransition(
               opacity: animation,

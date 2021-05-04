@@ -32,7 +32,7 @@ class SearchErrorDisplay extends StatelessWidget {
                 const Icon(
                   Icons.sentiment_dissatisfied,
                   color: WorldOnColors.red,
-                  size: 70,
+                  size: 50,
                 ),
                 Column(
                   mainAxisAlignment: MainAxisAlignment.center,

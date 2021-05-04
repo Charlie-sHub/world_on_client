@@ -19,29 +19,33 @@ class BlockUnblockButtonBuilder extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return BlocProvider(
-      create: (context) => getIt<BlockActorBloc>()
-        ..add(
-          BlockActorEvent.initialized(user),
-        ),
-      child: BlocListener<BlockActorBloc, BlockActorState>(
-        listener: _userBlockListener,
-        child: BlocBuilder<BlockActorBloc, BlockActorState>(
-          builder: (context, state) => AnimatedSwitcher(
-            duration: const Duration(milliseconds: 250),
-            transitionBuilder: (child, animation) => FadeTransition(
-              opacity: animation,
-              child: child,
-            ),
-            child: state.map(
-              initial: (_) => Container(),
-              actionInProgress: (_) => const CircularProgressIndicator(),
-              blocks: (_) => UnBlockButton(user: user),
-              blocksNot: (_) => BlockButton(user: user),
-              blockSuccess: (_) => UnBlockButton(user: user),
-              blockFailure: (_) => BlockButton(user: user),
-              unBlockSuccess: (_) => BlockButton(user: user),
-              unBlockFailure: (_) => UnBlockButton(user: user),
+    return SizedBox(
+      width: 40,
+      height: 40,
+      child: BlocProvider(
+        create: (context) => getIt<BlockActorBloc>()
+          ..add(
+            BlockActorEvent.initialized(user),
+          ),
+        child: BlocListener<BlockActorBloc, BlockActorState>(
+          listener: _userBlockListener,
+          child: BlocBuilder<BlockActorBloc, BlockActorState>(
+            builder: (context, state) => AnimatedSwitcher(
+              duration: const Duration(milliseconds: 250),
+              transitionBuilder: (child, animation) => FadeTransition(
+                opacity: animation,
+                child: child,
+              ),
+              child: state.map(
+                initial: (_) => Container(),
+                actionInProgress: (_) => const CircularProgressIndicator(),
+                blocks: (_) => UnBlockButton(user: user),
+                blocksNot: (_) => BlockButton(user: user),
+                blockSuccess: (_) => UnBlockButton(user: user),
+                blockFailure: (_) => BlockButton(user: user),
+                unBlockSuccess: (_) => BlockButton(user: user),
+                unBlockFailure: (_) => UnBlockButton(user: user),
+              ),
             ),
           ),
         ),

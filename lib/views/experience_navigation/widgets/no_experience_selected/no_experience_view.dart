@@ -30,7 +30,6 @@ class NoExperienceView extends StatelessWidget {
                 Text(
                   S.of(context).experienceNavigationNoneChosenDescription,
                   style: const TextStyle(
-                    color: WorldOnColors.white,
                     fontWeight: FontWeight.bold,
                     fontSize: 15,
                   ),

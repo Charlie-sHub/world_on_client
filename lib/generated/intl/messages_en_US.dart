@@ -20,7 +20,6 @@ class MessageLookup extends MessageLookupByLibrary {
   String get localeName => 'en_US';
 
   final messages = _notInlinedMessages(_notInlinedMessages);
-
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
         "achievement": MessageLookupByLibrary.simpleMessage("Achievement"),
         "actionInProgress": MessageLookupByLibrary.simpleMessage("Action in progress"),
@@ -80,7 +79,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "experienceFinishSuccessTitle": MessageLookupByLibrary.simpleMessage("Experience Finished!"),
         "experienceInformationCommentsNumber": MessageLookupByLibrary.simpleMessage("comments"),
         "experienceInformationRewards": MessageLookupByLibrary.simpleMessage("Rewards"),
-        "experienceInformationTab": MessageLookupByLibrary.simpleMessage("Experience Info"),
+        "experienceInformationTab": MessageLookupByLibrary.simpleMessage("Information"),
         "experienceNavigationNoneChosenDescription": MessageLookupByLibrary.simpleMessage("Please select an Experience to start the adventure of your life!"),
         "experienceNavigationNoneChosenTitle": MessageLookupByLibrary.simpleMessage("No Experience chosen"),
         "experiencePictureSelection": MessageLookupByLibrary.simpleMessage("Please select at least one picture"),

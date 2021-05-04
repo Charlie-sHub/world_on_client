@@ -2,11 +2,14 @@ import 'package:flutter/material.dart';
 import 'package:worldon/generated/l10n.dart';
 import 'package:worldon/views/core/misc/world_on_colors.dart';
 
-class ForeignProfileTabBar extends SliverPersistentHeaderDelegate {
-  const ForeignProfileTabBar({
+class ProfileTabBar extends SliverPersistentHeaderDelegate {
+  const ProfileTabBar({
     required this.maxExtent,
     required this.minExtent,
+    required this.isOwn,
   });
+
+  final bool isOwn;
 
   @override
   final double maxExtent;
@@ -20,13 +23,18 @@ class ForeignProfileTabBar extends SliverPersistentHeaderDelegate {
     bool overlapsContent,
   ) {
     return Container(
-      color: WorldOnColors.white,
-      // Don't like the idea of having this hardcoded, but i can't find any other way to thing out the tabBar
-      height: 52,
+      color: WorldOnColors.background,
       child: TabBar(
-        labelColor: WorldOnColors.background,
+        labelColor: WorldOnColors.accent,
         labelPadding: const EdgeInsets.all(2),
-        indicatorColor: WorldOnColors.primary,
+        indicator: const BoxDecoration(
+          border: Border(
+            bottom: BorderSide(
+              color: WorldOnColors.accent,
+              width: 2,
+            ),
+          ),
+        ),
         tabs: [
           Tab(
             iconMargin: const EdgeInsets.all(2),
@@ -35,7 +43,7 @@ class ForeignProfileTabBar extends SliverPersistentHeaderDelegate {
           ),
           Tab(
             iconMargin: const EdgeInsets.all(2),
-            icon: const Icon(Icons.account_circle),
+            icon: const Icon(Icons.people),
             text: S.of(context).profileRelationTab,
           ),
           /*
@@ -45,6 +53,12 @@ class ForeignProfileTabBar extends SliverPersistentHeaderDelegate {
             text: S.of(context).profileAchievementsTab,
           ),
           */
+          if (isOwn)
+            Tab(
+              iconMargin: const EdgeInsets.all(2),
+              icon: const Icon(Icons.bookmarks_rounded),
+              text: S.of(context).profileLogTab,
+            ),
         ],
       ),
     );

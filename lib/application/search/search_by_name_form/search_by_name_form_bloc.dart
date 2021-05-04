@@ -46,5 +46,6 @@ class SearchByNameFormBloc extends Bloc<SearchByNameFormEvent, SearchByNameFormS
       isSubmitting: false,
       failureOrSuccessOption: none(),
     );
+    add(const SearchByNameFormEvent.submitted());
   }
 }

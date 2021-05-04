@@ -26,7 +26,7 @@ class ExperienceCommentsListView extends StatelessWidget {
       constraints: BoxConstraints.loose(
         Size(
           MediaQuery.of(context).size.width,
-          MediaQuery.of(context).size.height * 0.4,
+          MediaQuery.of(context).size.height * 0.6,
         ),
       ),
       color: WorldOnColors.background,

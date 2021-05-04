@@ -43,7 +43,6 @@ class ExperiencedGainedText extends StatelessWidget {
             ],
           ),
           style: const TextStyle(
-            color: WorldOnColors.background,
             fontSize: 18,
           ),
         ),

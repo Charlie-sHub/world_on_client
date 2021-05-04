@@ -174,7 +174,7 @@ class _$_SystemDto extends _SystemDto {
       const DeepCollectionEquality().hash(name) ^
       const DeepCollectionEquality().hash(type) ^
       const DeepCollectionEquality().hash(company);
-
+  
   @JsonKey(ignore: true)
   @override
   _$SystemDtoCopyWith<_SystemDto> get copyWith => __$SystemDtoCopyWithImpl<_SystemDto>(this, _$identity);

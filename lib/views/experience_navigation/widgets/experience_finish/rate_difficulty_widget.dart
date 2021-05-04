@@ -6,7 +6,6 @@ import 'package:worldon/domain/core/entities/experience/experience.dart';
 import 'package:worldon/generated/l10n.dart';
 import 'package:worldon/injection.dart';
 import 'package:worldon/views/core/misc/common_functions/get_color_by_difficulty.dart';
-import 'package:worldon/views/core/misc/world_on_colors.dart';
 
 class RateDifficultyWidget extends StatelessWidget {
   const RateDifficultyWidget({
@@ -27,18 +26,16 @@ class RateDifficultyWidget extends StatelessWidget {
         listener: _submittingRatingListener,
         child: BlocBuilder<RateExperienceDifficultyActorBloc, RateExperienceDifficultyActorState>(
           builder: (context, state) => Card(
-            shape: const RoundedRectangleBorder(
-              side: BorderSide(
-                color: WorldOnColors.primary,
-              ),
-            ),
+            elevation: 0,
             child: Padding(
               padding: const EdgeInsets.all(5),
               child: Column(
                 children: <Widget>[
                   Text(
                     S.of(context).difficultyQuestion,
-                    style: const TextStyle(color: WorldOnColors.background),
+                    style: const TextStyle(
+                      fontWeight: FontWeight.bold,
+                    ),
                   ),
                   Slider(
                     min: 1,
@@ -51,11 +48,6 @@ class RateDifficultyWidget extends StatelessWidget {
                     value: state.difficulty.ceilToDouble(),
                   ),
                   ElevatedButton(
-                    style: ButtonStyle(
-                      backgroundColor: MaterialStateProperty.all(
-                        WorldOnColors.background,
-                      ),
-                    ),
                     onPressed: () => context.read<RateExperienceDifficultyActorBloc>().add(
                           RateExperienceDifficultyActorEvent.difficultyRated(experience),
                         ),
@@ -64,7 +56,6 @@ class RateDifficultyWidget extends StatelessWidget {
                       style: const TextStyle(
                         fontSize: 15,
                         fontWeight: FontWeight.bold,
-                        color: WorldOnColors.white,
                       ),
                     ),
                   ),

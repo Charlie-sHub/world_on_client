@@ -33,17 +33,27 @@ class SearchHeader extends StatelessWidget {
                     onChanged: (value) => context.read<SearchByNameFormBloc>().add(
                           SearchByNameFormEvent.searchTermChanged(value.trim()),
                         ),
-                    decoration: InputDecoration(
-                      // labelText: S.of(context).search,
-                      prefixIcon: const SizedBox(width: 0),
-                      prefixIconConstraints: BoxConstraints.tight(const Size.fromWidth(15)),
-                      border: const OutlineInputBorder(
+                    decoration: const InputDecoration(
+                      /*
+                      suffixIcon: IconButton(
+                        icon: const Icon(
+                          Icons.search,
+                          size: 30,
+                        ),
+                        onPressed: () => _submit(context),
+                      ),
+                       */
+                      prefixIcon: Icon(
+                        Icons.search,
+                        size: 30,
+                      ),
+                      border: OutlineInputBorder(
                         borderRadius: BorderRadius.all(
                           Radius.circular(_cornerRadius),
                         ),
                       ),
                       focusedBorder: InputBorder.none,
-                      enabledBorder: const OutlineInputBorder(
+                      enabledBorder: OutlineInputBorder(
                         borderRadius: BorderRadius.all(
                           Radius.circular(_cornerRadius),
                         ),
@@ -62,13 +72,6 @@ class SearchHeader extends StatelessWidget {
                     onFieldSubmitted: (_) => _submit(context),
                   ),
                 ),
-              ),
-              IconButton(
-                icon: const Icon(
-                  Icons.search,
-                  size: 35,
-                ),
-                onPressed: () => _submit(context),
               ),
             ],
           ),

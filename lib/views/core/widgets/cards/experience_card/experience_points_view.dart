@@ -24,7 +24,7 @@ class ExperiencePointsView extends StatelessWidget {
         AutoSizeText(
           _experienceToGain.toString(),
           style: const TextStyle(
-            fontSize: 12,
+            fontSize: 15,
             fontWeight: FontWeight.bold,
           ),
         ),

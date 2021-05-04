@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:worldon/application/experience_navigation/experience_like_actor/experience_like_actor_bloc.dart';
 import 'package:worldon/domain/core/entities/experience/experience.dart';
+import 'package:worldon/views/core/misc/world_on_colors.dart';
 
 class DislikeExperienceButton extends StatelessWidget {
   const DislikeExperienceButton({
@@ -15,10 +15,12 @@ class DislikeExperienceButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return IconButton(
-      icon: const FaIcon(
-        FontAwesomeIcons.heart,
-        color: Colors.grey,
+      icon: const Icon(
+        Icons.favorite_rounded,
+        color: WorldOnColors.red,
+        size: 30,
       ),
+      padding: const EdgeInsets.all(0),
       onPressed: () => context.read<ExperienceLikeActorBloc>().add(
             ExperienceLikeActorEvent.disliked(experience),
           ),

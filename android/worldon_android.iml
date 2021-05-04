@@ -192,5 +192,10 @@
     <orderEntry type="library" name="Gradle: androidx.core:core:1.2.0@aar" level="project" />
     <orderEntry type="library" name="Gradle: com.google.android.gms:play-services-basement:17.2.1@aar" level="project" />
     <orderEntry type="library" name="Dart Packages" level="project" />
+    <orderEntry type="library" name="Gradle: io.flutter:x86_64_debug:1.0.0-05e680e202af9a92461070cb2d9982acad46c83c" level="project" />
+    <orderEntry type="library" name="Gradle: io.flutter:flutter_embedding_debug:1.0.0-05e680e202af9a92461070cb2d9982acad46c83c" level="project" />
+    <orderEntry type="library" name="Gradle: io.flutter:armeabi_v7a_debug:1.0.0-05e680e202af9a92461070cb2d9982acad46c83c" level="project" />
+    <orderEntry type="library" name="Gradle: io.flutter:arm64_v8a_debug:1.0.0-05e680e202af9a92461070cb2d9982acad46c83c" level="project" />
+    <orderEntry type="library" name="Gradle: io.flutter:x86_debug:1.0.0-05e680e202af9a92461070cb2d9982acad46c83c" level="project" />
   </component>
 </module>

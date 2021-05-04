@@ -5,8 +5,7 @@ import 'package:worldon/application/navigation/navigation_actor/navigation_actor
 import 'package:worldon/application/profile/profile_watcher/profile_watcher_bloc.dart';
 import 'package:worldon/domain/core/entities/user/user.dart';
 import 'package:worldon/views/core/widgets/misc/world_on_progress_indicator.dart';
-import 'package:worldon/views/profile/widgets/foreign_profile/foreign_profile.dart';
-import 'package:worldon/views/profile/widgets/own_profile/own_profile.dart';
+import 'package:worldon/views/profile/widgets/profile/profile.dart';
 import 'package:worldon/views/profile/widgets/profile_critical_failure.dart';
 
 import '../../../injection.dart';
@@ -56,8 +55,14 @@ class ProfileBody extends StatelessWidget {
           builder: (context, state) => state.map(
             initial: (_) => Container(),
             loadInProgress: (_) => const WorldOnProgressIndicator(),
-            own: (state) => OwnProfile(user: state.user),
-            foreign: (state) => ForeignProfile(user: state.user),
+            own: (state) => Profile(
+              user: state.user,
+              isOwn: true,
+            ),
+            foreign: (state) => Profile(
+              user: state.user,
+              isOwn: false,
+            ),
             loadFailure: (state) => InkWell(
               onTap: () async => context.read<ProfileWatcherBloc>().add(
                     ProfileWatcherEvent.initializedForeignOrOwn(userOption),

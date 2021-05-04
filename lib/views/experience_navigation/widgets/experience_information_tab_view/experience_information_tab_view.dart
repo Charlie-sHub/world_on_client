@@ -3,7 +3,7 @@ import 'package:worldon/domain/core/entities/experience/experience.dart';
 import 'package:worldon/generated/l10n.dart';
 import 'package:worldon/views/core/misc/common_functions/get_color_by_difficulty.dart';
 import 'package:worldon/views/core/misc/world_on_colors.dart';
-import 'package:worldon/views/core/widgets/cards/simple_tag_display.dart';
+import 'package:worldon/views/core/widgets/cards/tag_card/simple_tag_card_builder.dart';
 import 'package:worldon/views/core/widgets/cards/user_card/name_username_display.dart';
 import 'package:worldon/views/core/widgets/misc/block_unblock_button_builder/block_unblock_button_builder.dart';
 import 'package:worldon/views/core/widgets/misc/experience_done_counter.dart';
@@ -26,139 +26,141 @@ class ExperienceInformationTabView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      color: WorldOnColors.white,
-      child: ListView(
-        children: [
-          ExperienceHeader(experience: experience),
-          const SizedBox(height: 5),
-          Padding(
-            padding: const EdgeInsets.symmetric(
-              horizontal: 10,
-            ),
-            child: ExperienceDescription(experience: experience),
+    return ListView(
+      children: [
+        ExperienceHeader(experience: experience),
+        const SizedBox(height: 5),
+        Padding(
+          padding: const EdgeInsets.symmetric(
+            horizontal: 10,
           ),
-          const SizedBox(height: 5),
-          ExperienceImageGallery(
-            imageURLs: experience.imageURLs,
-          ),
-          Padding(
-            padding: const EdgeInsets.all(5),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: <Widget>[
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: <Widget>[
-                    Text(
-                      "${S.of(context).difficulty}: ",
-                      style: const TextStyle(
-                        fontSize: 20,
-                        fontWeight: FontWeight.bold,
-                        color: WorldOnColors.background,
-                      ),
+          child: ExperienceDescription(experience: experience),
+        ),
+        const SizedBox(height: 5),
+        ExperienceImageGallery(
+          imageURLs: experience.imageURLs,
+        ),
+        Padding(
+          padding: const EdgeInsets.all(5),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: <Widget>[
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: <Widget>[
+                  Text(
+                    "${S.of(context).difficulty}: ",
+                    style: const TextStyle(
+                      fontSize: 20,
+                      fontWeight: FontWeight.bold,
                     ),
-                    const SizedBox(width: 3),
-                    Text(
-                      experience.difficulty.getOrCrash().toString(),
-                      style: TextStyle(
-                        fontSize: 20,
-                        fontWeight: FontWeight.bold,
-                        color: getColorByDifficulty(experience.difficulty.getOrCrash()),
-                      ),
+                  ),
+                  const SizedBox(width: 3),
+                  Text(
+                    experience.difficulty.getOrCrash().toString(),
+                    style: TextStyle(
+                      fontSize: 20,
+                      fontWeight: FontWeight.bold,
+                      color: getColorByDifficulty(experience.difficulty.getOrCrash()),
                     ),
-                  ],
+                  ),
+                ],
+              ),
+              Text(
+                // TODO: Figure out a better way to show the date
+                "${experience.creationDate.getOrCrash().day.toString()}/${experience.creationDate.getOrCrash().month.toString()}/${experience.creationDate.getOrCrash().year.toString()}",
+                style: const TextStyle(
+                  fontSize: 20,
+                  fontWeight: FontWeight.bold,
                 ),
-                Text(
-                  // TODO: Figure out a better way to show the date
-                  "${experience.creationDate.getOrCrash().day.toString()}/${experience.creationDate.getOrCrash().month.toString()}/${experience.creationDate.getOrCrash().year.toString()}",
+              ),
+            ],
+          ),
+        ),
+        Padding(
+          padding: const EdgeInsets.all(5),
+          child: Wrap(
+            alignment: WrapAlignment.center,
+            spacing: 2,
+            runSpacing: 3,
+            children: <Widget>[
+              ...experience.tags.getOrCrash().asSet().map(
+                    (tag) => SimpleTagCardBuilder(tag: tag),
+                  ),
+            ],
+          ),
+        ),
+        /*
+        if (experience.rewards.isNotEmpty)
+          Column(
+            children: [
+              Padding(
+                padding: const EdgeInsets.all(5),
+                child: Text(
+                  S.of(context).experienceInformationRewards,
+                  textAlign: TextAlign.center,
                   style: const TextStyle(
                     fontSize: 20,
                     fontWeight: FontWeight.bold,
                     color: WorldOnColors.background,
                   ),
                 ),
-              ],
-            ),
-          ),
-          Padding(
-            padding: const EdgeInsets.all(5),
-            child: Wrap(
-              alignment: WrapAlignment.center,
-              spacing: 5,
-              children: <Widget>[
-                ...experience.tags.getOrCrash().asSet().map(
-                      (tag) => SimpleTagDisplay(tag: tag),
-                    ),
-              ],
-            ),
-          ),
-          /*
-          if (experience.rewards.isNotEmpty)
-            Column(
-              children: [
-                Padding(
-                  padding: const EdgeInsets.all(5),
-                  child: Text(
-                    S.of(context).experienceInformationRewards,
-                    textAlign: TextAlign.center,
-                    style: const TextStyle(
-                      fontSize: 20,
-                      fontWeight: FontWeight.bold,
-                      color: WorldOnColors.background,
-                    ),
-                  ),
-                ),
-                Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 5),
-                  child: RewardsListView(experience: experience),
-                ),
-              ],
-            ),
-            */
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: <Widget>[
+              ),
               Padding(
-                padding: const EdgeInsets.all(5),
-                child: UserImage(
+                padding: const EdgeInsets.symmetric(horizontal: 5),
+                child: RewardsListView(experience: experience),
+              ),
+            ],
+          ),
+          */
+        Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: <Widget>[
+            Row(
+              children: [
+                UserImage(
                   user: experience.creator,
                   avatarRadius: 30,
                 ),
-              ),
-              NameUsernameDisplay(user: experience.creator),
-              FollowUnfollowButtonBuilder(user: experience.creator),
-              BlockUnblockButtonBuilder(user: experience.creator),
-            ],
-          ),
-          const Divider(
-            height: 1,
-            color: WorldOnColors.background,
-          ),
-          Padding(
-            padding: const EdgeInsets.all(5),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              children: <Widget>[
-                ExperienceLikesCounter(experience: experience),
-                ExperienceDoneCounter(amount: experience.doneBy.length),
+                NameUsernameDisplay(user: experience.creator),
               ],
             ),
+            Row(
+              children: [
+                FollowUnfollowButtonBuilder(user: experience.creator),
+                const SizedBox(width: 10),
+                BlockUnblockButtonBuilder(user: experience.creator),
+                const SizedBox(width: 10),
+              ],
+            ),
+          ],
+        ),
+        const Divider(
+          height: 1,
+          color: WorldOnColors.accent,
+        ),
+        Padding(
+          padding: const EdgeInsets.all(5),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            children: <Widget>[
+              ExperienceLikesCounter(experience: experience),
+              ExperienceDoneCounter(amount: experience.doneBy.length),
+            ],
           ),
-          Padding(
-            padding: const EdgeInsets.all(5),
-            child: Text(
-              "${experience.comments.length} ${S.of(context).experienceInformationCommentsNumber}",
-              style: const TextStyle(
-                fontSize: 15,
-                fontWeight: FontWeight.bold,
-                color: WorldOnColors.background,
-              ),
+        ),
+        Padding(
+          padding: const EdgeInsets.all(5),
+          child: Text(
+            "${experience.comments.length} ${S.of(context).experienceInformationCommentsNumber}",
+            style: const TextStyle(
+              fontSize: 15,
+              fontWeight: FontWeight.bold,
             ),
           ),
-          ExperienceCommentsListView(experience: experience),
-        ],
-      ),
+        ),
+        ExperienceCommentsListView(experience: experience),
+      ],
     );
   }
 }

@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:worldon/application/tag_management/tag_card_actor/tag_card_actor_bloc.dart';
 import 'package:worldon/domain/core/entities/tag/tag.dart';
 
@@ -16,8 +15,8 @@ class LikeTagButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return IconButton(
-      icon: const FaIcon(
-        FontAwesomeIcons.heart,
+      icon: const Icon(
+        Icons.favorite_border_rounded,
         color: Colors.grey,
         size: 35,
       ),

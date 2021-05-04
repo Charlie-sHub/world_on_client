@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
 import 'package:worldon/application/authentication/log_in_form/log_in_form_bloc.dart';
 import 'package:worldon/generated/l10n.dart';
 
@@ -18,7 +18,7 @@ class LogInGoogleButton extends StatelessWidget {
       child: Row(
         mainAxisAlignment: MainAxisAlignment.center,
         children: <Widget>[
-          const FaIcon(FontAwesomeIcons.google),
+          const Icon(MdiIcons.google),
           const SizedBox(width: 5),
           Text(S.of(context).logInGoogle),
         ],

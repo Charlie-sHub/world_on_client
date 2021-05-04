@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
 import 'package:worldon/application/profile/block_actor/block_actor_bloc.dart';
 import 'package:worldon/domain/core/entities/user/user.dart';
 
@@ -15,10 +15,11 @@ class UnBlockButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return IconButton(
-      icon: const FaIcon(
-        FontAwesomeIcons.user,
-        color: Colors.green,
+      icon: const Icon(
+        MdiIcons.account,
+        size: 40,
       ),
+      padding: const EdgeInsets.all(0),
       onPressed: () => context.read<BlockActorBloc>().add(
             BlockActorEvent.unBlocked(user),
           ),

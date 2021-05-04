@@ -1047,10 +1047,10 @@ class S {
     );
   }
 
-  /// `Experience Info`
+  /// `Information`
   String get experienceInformationTab {
     return Intl.message(
-      'Experience Info',
+      'Information',
       name: 'experienceInformationTab',
       desc: '',
       args: [],

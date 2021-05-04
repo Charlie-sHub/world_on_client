@@ -126,7 +126,7 @@ packages:
       name: build_runner
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "2.0.1"
+    version: "2.0.2"
   build_runner_core:
     dependency: transitive
     description:
@@ -469,6 +469,13 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "0.14.1"
+  frontend_server_client:
+    dependency: transitive
+    description:
+      name: frontend_server_client
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "2.1.0"
   geoflutterfire:
     dependency: "direct main"
     description:
@@ -559,7 +566,7 @@ packages:
       name: http
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "0.13.2"
+    version: "0.13.3"
   http_multi_server:
     dependency: transitive
     description:
@@ -700,6 +707,13 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "0.12.10"
+  material_design_icons_flutter:
+    dependency: "direct main"
+    description:
+      name: material_design_icons_flutter
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "5.0.5955-rc.1"
   meta:
     dependency: transitive
     description:
@@ -1089,7 +1103,7 @@ packages:
       name: web_socket_channel
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "2.0.0"
+    version: "2.1.0"
   webkit_inspection_protocol:
     dependency: transitive
     description:

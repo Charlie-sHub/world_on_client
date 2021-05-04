@@ -68,8 +68,8 @@ class SimpleExperienceCard extends StatelessWidget {
                   ),
                 ),
                 Positioned(
-                  left: -5,
-                  top: -5,
+                  left: 3,
+                  top: 3,
                   child: UserImage(
                     user: experience.creator,
                     avatarRadius: 20,

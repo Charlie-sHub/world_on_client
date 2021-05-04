@@ -26,6 +26,7 @@ class MapTabView extends StatelessWidget {
               mapType: MapType.hybrid,
               myLocationEnabled: true,
               mapToolbarEnabled: false,
+              zoomControlsEnabled: false,
               markers: state.objectives
                   .asList()
                   .map(

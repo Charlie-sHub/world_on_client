@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_speed_dial/flutter_speed_dial.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:worldon/application/profile/profile_experiences_watcher/profile_experiences_watcher_bloc.dart';
 import 'package:worldon/domain/core/entities/user/user.dart';
 import 'package:worldon/generated/l10n.dart';
@@ -64,8 +63,8 @@ class ProfileExperiencesDialer extends StatelessWidget {
               fontWeight: FontWeight.bold,
             ),
             child: const Center(
-              child: FaIcon(
-                FontAwesomeIcons.solidHeart,
+              child: Icon(
+                Icons.favorite_rounded,
                 color: WorldOnColors.red,
               ),
             ),

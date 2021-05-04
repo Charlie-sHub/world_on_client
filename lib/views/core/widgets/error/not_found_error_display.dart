@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:worldon/generated/l10n.dart';
+import 'package:worldon/views/core/misc/world_on_colors.dart';
 
 class NotFoundErrorDisplay extends StatelessWidget {
   final String specificMessage;
@@ -16,7 +17,7 @@ class NotFoundErrorDisplay extends StatelessWidget {
       children: <Widget>[
         const Icon(
           Icons.sentiment_dissatisfied,
-          color: Colors.grey,
+          color: WorldOnColors.red,
           size: 70,
         ),
         const SizedBox(height: 15),
