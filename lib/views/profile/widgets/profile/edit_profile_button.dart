@@ -38,7 +38,7 @@ class EditProfileButton extends StatelessWidget {
       padding: const EdgeInsets.all(0),
       icon: const Icon(
         MdiIcons.accountEdit,
-        size: 50,
+        size: 40,
       ),
     );
   }

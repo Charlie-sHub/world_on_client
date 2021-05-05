@@ -12,7 +12,7 @@ class WorldOnTitle extends StatelessWidget {
       "World On",
       style: TextStyle(
         fontSize: 100,
-        color: WorldOnColors.white,
+        color: WorldOnColors.primary,
         fontFamily: "MovingSkate",
       ),
       textAlign: TextAlign.center,

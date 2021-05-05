@@ -78,19 +78,19 @@ class SimpleExperienceCard extends StatelessWidget {
                 Positioned(
                   left: 5,
                   bottom: 10,
-                  child: Column(
-                    children: [
-                      AutoSizeText(
-                        experience.title.getOrCrash(),
-                        textAlign: TextAlign.center,
-                        style: const TextStyle(
-                          fontSize: 15,
-                          fontWeight: FontWeight.bold,
-                          color: WorldOnColors.white,
-                          // backgroundColor: Colors.grey.withOpacity(0.5),
-                        ),
+                  child: SizedBox(
+                    width: 300,
+                    child: AutoSizeText(
+                      experience.title.getOrCrash(),
+                      maxLines: 2,
+                      minFontSize: 10,
+                      maxFontSize: 15,
+                      style: const TextStyle(
+                        fontSize: 15,
+                        fontWeight: FontWeight.bold,
+                        color: WorldOnColors.white,
                       ),
-                    ],
+                    ),
                   ),
                 ),
               ],

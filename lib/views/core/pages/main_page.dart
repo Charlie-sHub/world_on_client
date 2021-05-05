@@ -40,7 +40,7 @@ class MainPage extends StatelessWidget {
         child: BlocBuilder<NavigationActorBloc, NavigationActorState>(
           builder: (context, state) => SafeArea(
             child: Scaffold(
-              appBar: const WorldOnAppBar(),
+              appBar: WorldOnAppBar(),
               extendBody: true,
               body: IndexedStack(
                 // Feels rather duct tape-ish to return the index this way

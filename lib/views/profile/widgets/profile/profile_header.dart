@@ -2,6 +2,7 @@ import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:worldon/domain/core/entities/user/user.dart';
 import 'package:worldon/views/core/misc/world_on_colors.dart';
+import 'package:worldon/views/core/widgets/misc/follow_unfollow_button_builder/follow_unfollow_button_builder.dart';
 import 'package:worldon/views/core/widgets/misc/followers_following_counters.dart';
 import 'package:worldon/views/profile/widgets/profile/profile_avatar_stack.dart';
 
@@ -31,93 +32,74 @@ class ProfileHeader extends SliverPersistentHeaderDelegate {
     return Column(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: <Widget>[
-        Row(
+        Column(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: <Widget>[
-            Row(
+          children: [
+            Column(
               children: [
-                Padding(
-                  padding: const EdgeInsets.only(
-                    right: 20,
-                    bottom: 10,
-                    left: 5,
-                  ),
-                  child: ProfileAvatarStack(user: user),
-                ),
-                Column(
-                  children: <Widget>[
-                    Row(
-                      children: [
-                        if (user.adminPowers)
-                          const Icon(
-                            Icons.verified_rounded,
-                            color: WorldOnColors.blue,
-                          ),
-                        AutoSizeText(
-                          user.name.getOrCrash(),
-                          style: const TextStyle(
-                            fontSize: 20,
-                            fontWeight: FontWeight.bold,
-                          ),
-                        ),
-                      ],
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  children: [
+                    Expanded(
+                      child: FollowersFollowingCounters(user: user),
                     ),
-                    AutoSizeText(
-                      "@${user.username.getOrCrash()}",
-                      style: const TextStyle(
-                        fontSize: 15,
+                    Expanded(
+                      child: Column(
+                        children: [
+                          ProfileAvatarStack(user: user),
+                          const SizedBox(height: 10),
+                          FittedBox(
+                            child: Row(
+                              children: [
+                                if (user.adminPowers)
+                                  const Icon(
+                                    Icons.verified_rounded,
+                                    color: WorldOnColors.blue,
+                                  ),
+                                AutoSizeText(
+                                  user.name.getOrCrash(),
+                                  style: const TextStyle(
+                                    fontSize: 20,
+                                    fontWeight: FontWeight.bold,
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ),
+                          AutoSizeText(
+                            "@${user.username.getOrCrash()}",
+                            style: const TextStyle(
+                              fontSize: 15,
+                            ),
+                          ),
+                        ],
                       ),
+                    ),
+                    Expanded(
+                      child: isOwn ? EditProfileButton(user: user) : FollowUnfollowButtonBuilder(user: user),
                     ),
                   ],
                 ),
               ],
             ),
-            // Showing coins would be annoying to update
-            // So they will be hidden for now
-            /*
-            if (isOwn)
-              Expanded(
-                child: Row(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: <Widget>[
-                    const Icon(
-                      Icons.attach_money,
-                      color: WorldOnColors.red,
-                    ),
-                    AutoSizeText(
-                      user.coins.toString(),
-                      style: const TextStyle(
-                        fontSize: 18,
-                        color: WorldOnColors.red,
-                      ),
-                    ),
-                  ],
-                ),
-              ),
-             */
-            if (isOwn)
-              Padding(
-                padding: const EdgeInsets.only(right: 15),
-                child: EditProfileButton(user: user),
-              )
           ],
         ),
         Flexible(
-          child: Padding(
-            padding: const EdgeInsets.all(5),
-            child: AutoSizeText(
-              user.description.getOrCrash() +
-                  "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
-              textAlign: TextAlign.center,
-              style: const TextStyle(fontSize: 15),
-              minFontSize: 8,
-              maxFontSize: 15,
-              maxLines: 10,
-              overflow: TextOverflow.ellipsis,
+          child: Center(
+            child: Padding(
+              padding: const EdgeInsets.all(10),
+              child: AutoSizeText(
+                user.description.getOrCrash(),
+                textAlign: TextAlign.center,
+                style: const TextStyle(fontSize: 14),
+                minFontSize: 8,
+                maxFontSize: 14,
+                maxLines: 10,
+                overflow: TextOverflow.ellipsis,
+              ),
             ),
           ),
         ),
-        FollowersFollowingCounters(user: user),
       ],
     );
   }

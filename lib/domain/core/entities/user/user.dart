@@ -133,6 +133,10 @@ class User with _$User {
     }
     final _hadToNextLevel = experiencePoints.getOrCrash() - _totalToCurrentLevelRequirements;
     final _result = _hadToNextLevel / _nextLevelRequirements;
-    return _result;
+    if (_result < 1 && _result >= 0) {
+      return _result;
+    } else {
+      return 0;
+    }
   }
 }

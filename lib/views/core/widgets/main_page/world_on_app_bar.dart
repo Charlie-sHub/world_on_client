@@ -3,14 +3,10 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:worldon/application/authentication/authentication/authentication_bloc.dart';
 import 'package:worldon/views/core/misc/world_on_colors.dart';
 import 'package:worldon/views/core/widgets/main_page/current_user_profile_button.dart';
-import 'package:worldon/views/core/widgets/main_page/notifications_widget.dart';
+import 'package:worldon/views/core/widgets/main_page/notifications_button.dart';
 import 'package:worldon/views/core/widgets/main_page/store_page_button.dart';
 
 class WorldOnAppBar extends StatelessWidget implements PreferredSizeWidget {
-  const WorldOnAppBar({
-    Key? key,
-  }) : super(key: key);
-
   @override
   Widget build(BuildContext context) {
     return AppBar(

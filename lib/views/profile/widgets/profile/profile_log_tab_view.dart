@@ -23,7 +23,7 @@ class ProfileLogTabView extends StatelessWidget {
           initial: (_) => Container(),
           loadInProgress: (_) => const WorldOnProgressIndicator(),
           loadSuccess: (state) => ListView.builder(
-            physics: const BouncingScrollPhysics(),
+            physics: const ClampingScrollPhysics(),
             padding: const EdgeInsets.only(
               bottom: kFloatingActionButtonMargin + 50,
               left: 10,

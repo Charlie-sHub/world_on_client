@@ -22,29 +22,47 @@ class ProfileTabBar extends SliverPersistentHeaderDelegate {
     double shrinkOffset,
     bool overlapsContent,
   ) {
-    return Container(
+    final _grey75 = Colors.grey.withOpacity(0.75);
+    return Material(
       color: WorldOnColors.background,
+      elevation: 5,
       child: TabBar(
         labelColor: WorldOnColors.accent,
+        unselectedLabelColor: _grey75,
         labelPadding: const EdgeInsets.all(2),
-        indicator: const BoxDecoration(
-          border: Border(
-            bottom: BorderSide(
-              color: WorldOnColors.accent,
-              width: 2,
+        indicatorColor: Colors.transparent,
+        tabs: [
+          Container(
+            height: 40,
+            width: double.infinity,
+            decoration: BoxDecoration(
+              border: Border(
+                right: BorderSide(
+                  color: _grey75,
+                ),
+              ),
+            ),
+            child: Tab(
+              iconMargin: const EdgeInsets.all(0),
+              icon: const Icon(Icons.explore),
+              text: S.of(context).experiences,
             ),
           ),
-        ),
-        tabs: [
-          Tab(
-            iconMargin: const EdgeInsets.all(2),
-            icon: const Icon(Icons.explore),
-            text: S.of(context).experiences,
-          ),
-          Tab(
-            iconMargin: const EdgeInsets.all(2),
-            icon: const Icon(Icons.people),
-            text: S.of(context).profileRelationTab,
+          Container(
+            height: 40,
+            width: double.infinity,
+            decoration: BoxDecoration(
+              border: Border(
+                right: BorderSide(
+                  color: _grey75,
+                ),
+              ),
+            ),
+            child: Tab(
+              iconMargin: const EdgeInsets.all(0),
+              icon: const Icon(Icons.people),
+              text: S.of(context).profileRelationTab,
+            ),
           ),
           /*
           Tab(
@@ -55,7 +73,7 @@ class ProfileTabBar extends SliverPersistentHeaderDelegate {
           */
           if (isOwn)
             Tab(
-              iconMargin: const EdgeInsets.all(2),
+              iconMargin: const EdgeInsets.all(0),
               icon: const Icon(Icons.bookmarks_rounded),
               text: S.of(context).profileLogTab,
             ),

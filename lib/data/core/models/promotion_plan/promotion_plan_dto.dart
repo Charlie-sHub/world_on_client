@@ -8,7 +8,6 @@ import 'package:worldon/domain/core/validation/objects/name.dart';
 import 'package:worldon/domain/core/validation/objects/unique_id.dart';
 
 part 'promotion_plan_dto.freezed.dart';
-
 part 'promotion_plan_dto.g.dart';
 
 @freezed
