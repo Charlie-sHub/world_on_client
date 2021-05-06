@@ -196,5 +196,6 @@
   "yourPromotionsHaveBeenSeen": "Tus promociones se han visto:",
   "times": "veces",
   "noActivePlan": "No tienes un plan promocional activo",
-  "unAvailableStore": "La compra no es posible para ti"
+  "unAvailableStore": "La compra no es posible para ti",
+  "cancel": "Cancelar"
 }

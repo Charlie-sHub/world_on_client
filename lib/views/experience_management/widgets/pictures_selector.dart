@@ -79,7 +79,7 @@ class PicturesSelector extends StatelessWidget {
     ExperienceManagementFormState state,
   ) async {
     try {
-      final imagesPicked = await MultiImagePicker.pickImages(
+      final _imagesPicked = await MultiImagePicker.pickImages(
         maxImages: 15,
         enableCamera: true,
         selectedAssets: state.experience.imageAssetsOption.fold(
@@ -93,7 +93,7 @@ class PicturesSelector extends StatelessWidget {
         ),
       );
       context.read<ExperienceManagementFormBloc>().add(
-            ExperienceManagementFormEvent.imagesChanged(imagesPicked),
+            ExperienceManagementFormEvent.imagesChanged(_imagesPicked),
           );
     } on Exception catch (e) {
       // This try-catch only exists to control for when the user cancels the selection

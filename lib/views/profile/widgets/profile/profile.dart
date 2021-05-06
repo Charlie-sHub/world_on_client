@@ -20,25 +20,27 @@ class Profile extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final _tabList = [
+      ProfileExperiencesTabView(user: user),
+      ProfileUsersTabView(user: user),
+      // ProfileAchievementsTabView(user: user),
+      if (isOwn) ProfileLogTabView(),
+    ];
     return DefaultTabController(
-      length: isOwn ? 3 : 2,
+      length: _tabList.length,
       child: NestedScrollView(
         dragStartBehavior: DragStartBehavior.down,
         floatHeaderSlivers: true,
         headerSliverBuilder: (context, innerBoxIsScrolled) => [
-          SliverOverlapAbsorber(
-            handle: NestedScrollView.sliverOverlapAbsorberHandleFor(context),
-            sliver: SliverPersistentHeader(
-              delegate: ProfileHeader(
-                user: user,
-                minExtent: MediaQuery.of(context).size.height * 0.3,
-                maxExtent: MediaQuery.of(context).size.height * 0.3,
-                isOwn: isOwn,
-              ),
+          SliverPersistentHeader(
+            delegate: ProfileHeader(
+              user: user,
+              minExtent: MediaQuery.of(context).size.height * 0.3,
+              maxExtent: MediaQuery.of(context).size.height * 0.3,
+              isOwn: isOwn,
             ),
           ),
           SliverPersistentHeader(
-            pinned: true,
             delegate: ProfileTabBar(
               minExtent: 46,
               maxExtent: 46,
@@ -46,26 +48,8 @@ class Profile extends StatelessWidget {
             ),
           ),
         ],
-        // TODO: Fix the issue with the body scrolling too much
-        // Even if there's nothing to scroll down to (like a list with only one experience)
-        // The NestedScrollView allows scrolling down into the void to hide the Headers
-        // It just looks off
-        body: CustomScrollView(
-          slivers: [
-            SliverOverlapInjector(
-              handle: NestedScrollView.sliverOverlapAbsorberHandleFor(context),
-            ),
-            SliverToBoxAdapter(
-              child: TabBarView(
-                children: [
-                  ProfileExperiencesTabView(user: user),
-                  ProfileUsersTabView(user: user),
-                  // ProfileAchievementsTabView(user: user),
-                  if (isOwn) ProfileLogTabView(),
-                ],
-              ),
-            )
-          ],
+        body: TabBarView(
+          children: _tabList,
         ),
       ),
     );

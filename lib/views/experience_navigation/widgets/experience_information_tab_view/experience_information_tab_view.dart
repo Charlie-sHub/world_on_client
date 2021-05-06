@@ -67,8 +67,7 @@ class ExperienceInformationTabView extends StatelessWidget {
                 ],
               ),
               Text(
-                // TODO: Figure out a better way to show the date
-                "${experience.creationDate.getOrCrash().day.toString()}/${experience.creationDate.getOrCrash().month.toString()}/${experience.creationDate.getOrCrash().year.toString()}",
+                experience.getFormattedCreationDateString,
                 style: const TextStyle(
                   fontSize: 20,
                   fontWeight: FontWeight.bold,

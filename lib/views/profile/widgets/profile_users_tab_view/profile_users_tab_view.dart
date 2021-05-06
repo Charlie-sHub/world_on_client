@@ -5,7 +5,7 @@ import 'package:worldon/application/profile/profile_users_watcher/profile_users_
 import 'package:worldon/domain/core/entities/user/user.dart';
 import 'package:worldon/generated/l10n.dart';
 import 'package:worldon/views/core/widgets/cards/error_card.dart';
-import 'package:worldon/views/core/widgets/cards/user_card/user_card.dart';
+import 'package:worldon/views/core/widgets/cards/user_card/circular_avatar_user_card.dart';
 import 'package:worldon/views/core/widgets/error/error_display.dart';
 import 'package:worldon/views/core/widgets/misc/world_on_progress_indicator.dart';
 import 'package:worldon/views/profile/widgets/profile_users_tab_view/profile_users_dialer.dart';
@@ -33,7 +33,7 @@ class ProfileUsersTabView extends StatelessWidget {
             state.map(
               initial: (_) => Container(),
               loadInProgress: (_) => const WorldOnProgressIndicator(),
-              loadSuccess: (state) => ListView.builder(
+              loadSuccess: (state) => GridView.builder(
                 physics: const ClampingScrollPhysics(),
                 padding: const EdgeInsets.only(
                   bottom: kFloatingActionButtonMargin + 50,
@@ -41,11 +41,19 @@ class ProfileUsersTabView extends StatelessWidget {
                   right: 10,
                   top: 10,
                 ),
+                shrinkWrap: true,
+                gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+                  crossAxisCount: 4,
+                  childAspectRatio: 3 / 2,
+                  crossAxisSpacing: 5,
+                  mainAxisSpacing: 5,
+                  mainAxisExtent: 120,
+                ),
                 itemCount: state.users.size,
                 itemBuilder: (context, index) {
                   final _user = state.users[index];
                   if (_user.isValid) {
-                    return UserCard(
+                    return CircularAvatarUserCard(
                       user: _user,
                       key: Key(_user.id.toString()),
                     );

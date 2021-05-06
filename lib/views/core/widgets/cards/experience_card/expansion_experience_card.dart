@@ -100,6 +100,20 @@ class ExpansionExperienceCard extends StatelessWidget {
                             Column(
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
+                                Row(
+                                  children: <Widget>[
+                                    const Icon(
+                                      Icons.calendar_today_rounded,
+                                    ),
+                                    const SizedBox(width: 5),
+                                    AutoSizeText(
+                                      experience.getFormattedCreationDateString,
+                                      style: const TextStyle(
+                                        fontSize: 12,
+                                      ),
+                                    ),
+                                  ],
+                                ),
                                 ExperienceDoneCounter(amount: experience.doneBy.length),
                                 DifficultyDisplay(difficulty: experience.difficulty.getOrCrash()),
                                 ExperiencePointsView(difficulty: experience.difficulty.getOrCrash()),
@@ -114,6 +128,7 @@ class ExpansionExperienceCard extends StatelessWidget {
                                   experience: experience,
                                   reloadFunction: reloadFunction,
                                 ),
+                                const SizedBox(width: 10),
                               ],
                             ),
                           ],

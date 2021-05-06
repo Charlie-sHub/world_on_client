@@ -23,7 +23,7 @@ class NotificationsButton extends StatelessWidget {
           icon: Icon(
             state.maybeMap(
               newNotifications: (_) => Icons.notifications_on_rounded,
-              orElse: () => Icons.notifications_none,
+              orElse: () => Icons.notifications,
             ),
             size: 35,
             color: state.maybeMap(

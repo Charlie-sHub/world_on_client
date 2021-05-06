@@ -9,7 +9,6 @@ import 'package:worldon/generated/l10n.dart';
 import 'package:worldon/views/core/widgets/cards/error_card.dart';
 import 'package:worldon/views/core/widgets/cards/user_card/simple_square_user_card.dart';
 import 'package:worldon/views/core/widgets/misc/world_on_progress_indicator.dart';
-import 'package:worldon/views/search/widget/search_something.dart';
 
 import '../search_error_display.dart';
 
@@ -25,7 +24,7 @@ class SearchUsersTabView extends StatelessWidget {
   Widget build(BuildContext context) {
     return BlocBuilder<SearchUsersByNameWatcherBloc, SearchUsersByNameWatcherState>(
       builder: (context, state) => state.map(
-        initial: (_) => SearchSomething(),
+        initial: (_) => Container(),
         searchInProgress: (_) => const WorldOnProgressIndicator(),
         searchSuccess: (state) => Scaffold(
           /*

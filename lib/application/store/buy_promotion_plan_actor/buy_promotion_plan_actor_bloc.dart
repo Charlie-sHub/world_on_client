@@ -14,8 +14,7 @@ import 'package:worldon/domain/store/use_case/buy_promotion_plan.dart';
 import '../../../injection.dart';
 
 part 'buy_promotion_plan_actor_bloc.freezed.dart';
-part 'buy_promotion_plan_actor_event.dart';tor_event.dart';
-
+part 'buy_promotion_plan_actor_event.dart';
 part 'buy_promotion_plan_actor_state.dart';
 
 @injectable

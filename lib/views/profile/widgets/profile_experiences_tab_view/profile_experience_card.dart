@@ -6,6 +6,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:worldon/application/navigation/navigation_actor/navigation_actor_bloc.dart';
 import 'package:worldon/domain/core/entities/experience/experience.dart';
 import 'package:worldon/views/core/misc/world_on_colors.dart';
+import 'package:worldon/views/core/widgets/cards/experience_card/manage_button_builder.dart';
 import 'package:worldon/views/core/widgets/misc/world_on_progress_indicator.dart';
 
 class ProfileExperienceCard extends StatelessWidget {
@@ -58,19 +59,40 @@ class ProfileExperienceCard extends StatelessWidget {
             ),
             Positioned(
               left: 5,
-              bottom: 10,
+              bottom: 5,
               child: SizedBox(
                 width: 160,
-                child: AutoSizeText(
-                  experience.title.getOrCrash(),
-                  maxLines: 2,
-                  minFontSize: 7,
-                  maxFontSize: 10,
-                  style: const TextStyle(
-                    fontSize: 10,
-                    color: WorldOnColors.white,
-                  ),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    AutoSizeText(
+                      experience.title.getOrCrash(),
+                      maxLines: 2,
+                      minFontSize: 7,
+                      maxFontSize: 10,
+                      style: const TextStyle(
+                        fontSize: 10,
+                        fontWeight: FontWeight.bold,
+                        color: WorldOnColors.white,
+                      ),
+                    ),
+                    AutoSizeText(
+                      experience.getFormattedCreationDateString,
+                      style: const TextStyle(
+                        fontSize: 10,
+                        color: WorldOnColors.white,
+                      ),
+                    ),
+                  ],
                 ),
+              ),
+            ),
+            Positioned(
+              right: 5,
+              top: 5,
+              child: ManageButtonBuilder(
+                experience: experience,
+                reloadFunction: reloadFunction,
               ),
             ),
           ],

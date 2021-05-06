@@ -29,6 +29,7 @@ class NameUsernameDisplay extends StatelessWidget {
           overflow: TextOverflow.fade,
           style: const TextStyle(
             fontSize: 12,
+            color: Colors.grey,
           ),
         ),
       ],

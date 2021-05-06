@@ -80,16 +80,30 @@ class SimpleExperienceCard extends StatelessWidget {
                   bottom: 10,
                   child: SizedBox(
                     width: 300,
-                    child: AutoSizeText(
-                      experience.title.getOrCrash(),
-                      maxLines: 2,
-                      minFontSize: 10,
-                      maxFontSize: 15,
-                      style: const TextStyle(
-                        fontSize: 15,
-                        fontWeight: FontWeight.bold,
-                        color: WorldOnColors.white,
-                      ),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        AutoSizeText(
+                          experience.title.getOrCrash(),
+                          maxLines: 2,
+                          minFontSize: 10,
+                          maxFontSize: 15,
+                          style: const TextStyle(
+                            fontSize: 15,
+                            fontWeight: FontWeight.bold,
+                            color: WorldOnColors.white,
+                          ),
+                        ),
+                        AutoSizeText(
+                          experience.getFormattedCreationDateString,
+                          minFontSize: 8,
+                          maxFontSize: 12,
+                          style: const TextStyle(
+                            fontSize: 12,
+                            color: WorldOnColors.white,
+                          ),
+                        ),
+                      ],
                     ),
                   ),
                 ),

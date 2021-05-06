@@ -86,4 +86,6 @@ class Experience with _$Experience {
   }
 
   bool get isValid => failureOption.isNone();
+
+  String get getFormattedCreationDateString => "${creationDate.getOrCrash().day.toString()}/${creationDate.getOrCrash().month.toString()}/${creationDate.getOrCrash().year.toString()}";
 }

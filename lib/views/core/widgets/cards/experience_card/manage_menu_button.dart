@@ -1,6 +1,5 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:worldon/domain/core/entities/experience/experience.dart';
 import 'package:worldon/views/core/widgets/cards/experience_card/edit_button.dart';
 
@@ -18,29 +17,27 @@ class ManageMenuButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Row(
-      children: [
-        PopupMenuButton(
-          padding: const EdgeInsets.all(0),
-          itemBuilder: (context) => [
-            PopupMenuItem(
-              child: EditButton(
-                experience: experience,
-                reloadFunction: reloadFunction,
-              ),
-            ),
-            PopupMenuItem(
-              child: DeleteButton(
-                experience: experience,
-              ),
-            ),
-          ],
-          child: const Icon(
-            FontAwesomeIcons.ellipsisV,
+    return PopupMenuButton(
+      padding: const EdgeInsets.all(0),
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(5),
+      ),
+      itemBuilder: (context) => [
+        PopupMenuItem(
+          child: EditButton(
+            experience: experience,
+            reloadFunction: reloadFunction,
           ),
         ),
-        const SizedBox(width: 10),
+        PopupMenuItem(
+          child: DeleteButton(
+            experience: experience,
+          ),
+        ),
       ],
+      child: const Icon(
+        Icons.more_vert_rounded,
+      ),
     );
   }
 }

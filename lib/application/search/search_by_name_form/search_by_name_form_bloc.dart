@@ -41,11 +41,14 @@ class SearchByNameFormBloc extends Bloc<SearchByNameFormEvent, SearchByNameFormS
   }
 
   Stream<SearchByNameFormState> _onSearchTermChanged(_SearchTermChanged event) async* {
-    yield state.copyWith(
-      searchTerm: SearchTerm(event.searchTermString),
-      isSubmitting: false,
-      failureOrSuccessOption: none(),
-    );
-    add(const SearchByNameFormEvent.submitted());
+    final _oldSearchTerm = state.searchTerm.toString();
+    if (event.searchTermString != _oldSearchTerm) {
+      yield state.copyWith(
+        searchTerm: SearchTerm(event.searchTermString),
+        isSubmitting: false,
+        failureOrSuccessOption: none(),
+      );
+      add(const SearchByNameFormEvent.submitted());
+    }
   }
 }

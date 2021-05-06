@@ -196,5 +196,6 @@
   "yourPromotionsHaveBeenSeen": "Your promotions have been seen:",
   "times": "times",
   "noActivePlan": "You don't have an active promotion plan",
-  "unAvailableStore": "The store is unavailable to you"
+  "unAvailableStore": "The store is unavailable to you",
+  "cancel": "Cancel"
 }

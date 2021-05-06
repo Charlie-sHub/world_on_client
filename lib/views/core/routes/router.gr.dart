@@ -26,42 +26,61 @@ class AppRouter extends _i1.RootStackRouter {
 
   @override
   final Map<String, _i1.PageFactory> pagesMap = {
-    SplashPageRoute.name: (routeData) {
-      return _i1.MaterialPageX<dynamic>(routeData: routeData, child: _i3.SplashPage());
-    },
-    LogInPageRoute.name: (routeData) {
-      return _i1.MaterialPageX<dynamic>(routeData: routeData, child: _i4.LogInPage());
-    },
-    RegistrationPageRoute.name: (routeData) {
-      return _i1.MaterialPageX<dynamic>(routeData: routeData, child: _i5.RegistrationPage());
-    },
-    WelcomePageRoute.name: (routeData) {
-      return _i1.MaterialPageX<dynamic>(routeData: routeData, child: _i6.WelcomePage());
-    },
-    MainPageRoute.name: (routeData) {
-      return _i1.MaterialPageX<dynamic>(routeData: routeData, child: _i7.MainPage());
-    },
-    ProfileEditingPageRoute.name: (routeData) {
-      final args = routeData.argsAs<ProfileEditingPageRouteArgs>();
-      return _i1.CustomPage<bool>(
-          routeData: routeData, child: _i8.ProfileEditingPage(key: args.key, user: args.user), transitionsBuilder: _i1.TransitionsBuilders.slideLeft, opaque: true, barrierDismissible: false);
-    },
-    ExperienceManagementPageRoute.name: (routeData) {
-      final args = routeData.argsAs<ExperienceManagementPageRouteArgs>();
-      return _i1.MaterialPageX<dynamic>(routeData: routeData, child: _i9.ExperienceManagementPage(key: args.key, experienceOption: args.experienceOption));
-    },
-    TagManagementPageRoute.name: (routeData) {
-      final args = routeData.argsAs<TagManagementPageRouteArgs>();
-      return _i1.MaterialPageX<dynamic>(routeData: routeData, child: _i10.TagManagementPage(key: args.key, tagOption: args.tagOption));
-    },
-    StorePageRoute.name: (routeData) {
-      return _i1.MaterialPageX<dynamic>(routeData: routeData, child: _i11.StorePage());
-    }
+    SplashPageRoute.name: (routeData) => _i1.MaterialPageX<dynamic>(
+        routeData: routeData,
+        builder: (_) {
+          return _i3.SplashPage();
+        }),
+    LogInPageRoute.name: (routeData) => _i1.MaterialPageX<dynamic>(
+        routeData: routeData,
+        builder: (_) {
+          return _i4.LogInPage();
+        }),
+    RegistrationPageRoute.name: (routeData) => _i1.MaterialPageX<dynamic>(
+        routeData: routeData,
+        builder: (_) {
+          return _i5.RegistrationPage();
+        }),
+    WelcomePageRoute.name: (routeData) => _i1.MaterialPageX<dynamic>(
+        routeData: routeData,
+        builder: (_) {
+          return _i6.WelcomePage();
+        }),
+    MainPageRoute.name: (routeData) => _i1.MaterialPageX<dynamic>(
+        routeData: routeData,
+        builder: (_) {
+          return _i7.MainPage();
+        }),
+    ProfileEditingPageRoute.name: (routeData) => _i1.CustomPage<bool>(
+        routeData: routeData,
+        builder: (data) {
+          final args = data.argsAs<ProfileEditingPageRouteArgs>();
+          return _i8.ProfileEditingPage(key: args.key, user: args.user);
+        },
+        transitionsBuilder: _i1.TransitionsBuilders.slideLeft,
+        opaque: true,
+        barrierDismissible: false),
+    ExperienceManagementPageRoute.name: (routeData) => _i1.MaterialPageX<dynamic>(
+        routeData: routeData,
+        builder: (data) {
+          final args = data.argsAs<ExperienceManagementPageRouteArgs>();
+          return _i9.ExperienceManagementPage(key: args.key, experienceOption: args.experienceOption);
+        }),
+    TagManagementPageRoute.name: (routeData) => _i1.MaterialPageX<dynamic>(
+        routeData: routeData,
+        builder: (data) {
+          final args = data.argsAs<TagManagementPageRouteArgs>();
+          return _i10.TagManagementPage(key: args.key, tagOption: args.tagOption);
+        }),
+    StorePageRoute.name: (routeData) => _i1.MaterialPageX<dynamic>(
+        routeData: routeData,
+        builder: (_) {
+          return _i11.StorePage();
+        })
   };
-
+  
   @override
-  List<_i1.RouteConfig> get routes =>
-    [
+  List<_i1.RouteConfig> get routes => [
         _i1.RouteConfig(SplashPageRoute.name, path: '/'),
         _i1.RouteConfig(LogInPageRoute.name, path: '/log-in-page'),
         _i1.RouteConfig(RegistrationPageRoute.name, path: '/registration-page'),

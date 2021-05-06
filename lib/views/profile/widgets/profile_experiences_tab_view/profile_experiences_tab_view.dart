@@ -41,8 +41,9 @@ class ProfileExperiencesTabView extends StatelessWidget {
                   right: 5,
                   top: 5,
                 ),
-                gridDelegate: SliverGridDelegateWithMaxCrossAxisExtent(
-                  maxCrossAxisExtent: MediaQuery.of(context).size.width * 0.7,
+                shrinkWrap: true,
+                gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+                  crossAxisCount: 2,
                   childAspectRatio: 3 / 2,
                   crossAxisSpacing: 5,
                   mainAxisSpacing: 5,

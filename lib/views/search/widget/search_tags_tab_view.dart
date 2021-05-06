@@ -8,7 +8,6 @@ import 'package:worldon/views/core/widgets/cards/simple_tag_error_display.dart';
 import 'package:worldon/views/core/widgets/cards/tag_card/simple_tag_card_builder.dart';
 import 'package:worldon/views/core/widgets/misc/world_on_progress_indicator.dart';
 import 'package:worldon/views/search/widget/search_error_display.dart';
-import 'package:worldon/views/search/widget/search_something.dart';
 
 class SearchTagsTabView extends StatelessWidget {
   const SearchTagsTabView({
@@ -19,7 +18,7 @@ class SearchTagsTabView extends StatelessWidget {
   Widget build(BuildContext context) {
     return BlocBuilder<SearchTagsByNameWatcherBloc, SearchTagsByNameWatcherState>(
       builder: (context, state) => state.map(
-        initial: (_) => SearchSomething(),
+        initial: (_) => Container(),
         searchInProgress: (_) => const WorldOnProgressIndicator(),
         searchSuccess: (state) => ListView.builder(
           scrollDirection: Axis.horizontal,

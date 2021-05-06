@@ -3,6 +3,7 @@ import 'package:dartz/dartz.dart';
 import 'package:flutter/material.dart';
 import 'package:worldon/domain/core/entities/experience/experience.dart';
 import 'package:worldon/generated/l10n.dart';
+import 'package:worldon/views/core/misc/world_on_colors.dart';
 import 'package:worldon/views/core/routes/router.gr.dart';
 
 class EditButton extends StatelessWidget {
@@ -22,6 +23,9 @@ class EditButton extends StatelessWidget {
         padding: MaterialStateProperty.all(
           const EdgeInsets.all(2),
         ),
+        foregroundColor: MaterialStateProperty.all(
+          WorldOnColors.accent,
+        ),
       ),
       onPressed: () async {
         Navigator.of(context).pop();
@@ -36,7 +40,6 @@ class EditButton extends StatelessWidget {
         children: [
           const Icon(
             Icons.edit,
-            color: Colors.green,
           ),
           const SizedBox(width: 5),
           Text(

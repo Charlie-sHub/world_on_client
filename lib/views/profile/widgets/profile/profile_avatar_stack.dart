@@ -25,12 +25,12 @@ class ProfileAvatarStack extends StatelessWidget {
           backgroundColor: Colors.transparent,
           circularStrokeCap: CircularStrokeCap.round,
           startAngle: 135,
-        ),
-        Hero(
-          tag: "userImage",
-          child: CircleAvatar(
-            radius: 40,
-            backgroundImage: CachedNetworkImageProvider(user.imageURL),
+          center: Hero(
+            tag: "userImage",
+            child: CircleAvatar(
+              radius: 40,
+              backgroundImage: CachedNetworkImageProvider(user.imageURL),
+            ),
           ),
         ),
         Positioned(

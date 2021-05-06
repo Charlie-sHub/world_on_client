@@ -34,7 +34,9 @@ class ShareButton extends StatelessWidget {
     // I don't really like having to download the image only to be able to share it
     // I'd like to rethink this
     final _response = await get(
-      Uri.file(experience.imageURLs.first),
+      Uri.parse(
+        experience.imageURLs.first,
+      ),
     );
     final _documentDirectory = await getApplicationDocumentsDirectory();
     final file = File(

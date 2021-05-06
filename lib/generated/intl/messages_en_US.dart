@@ -35,6 +35,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "buy10Coins": MessageLookupByLibrary.simpleMessage("Buy 10 coins"),
         "buyItem": MessageLookupByLibrary.simpleMessage("Buy"),
         "camera": MessageLookupByLibrary.simpleMessage("Camera"),
+        "cancel": MessageLookupByLibrary.simpleMessage("Cancel"),
         "cancelledByUser": MessageLookupByLibrary.simpleMessage("Cancelled"),
         "comment": MessageLookupByLibrary.simpleMessage("Comment"),
         "commentEmptyString": MessageLookupByLibrary.simpleMessage("The comment can\'t be empty"),

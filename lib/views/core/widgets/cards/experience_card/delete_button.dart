@@ -4,6 +4,8 @@ import 'package:worldon/application/experience_management/experience_management_
 import 'package:worldon/domain/core/entities/experience/experience.dart';
 import 'package:worldon/generated/l10n.dart';
 import 'package:worldon/injection.dart';
+import 'package:worldon/views/core/misc/world_on_colors.dart';
+import 'package:worldon/views/core/widgets/misc/deletion_confirmation_dialog.dart';
 
 class DeleteButton extends StatelessWidget {
   const DeleteButton({
@@ -23,18 +25,16 @@ class DeleteButton extends StatelessWidget {
             padding: MaterialStateProperty.all(
               const EdgeInsets.all(2),
             ),
+            foregroundColor: MaterialStateProperty.all(
+              WorldOnColors.accent,
+            ),
           ),
-          onPressed: () {
-            context.read<ExperienceManagementActorBloc>().add(
-                  ExperienceManagementActorEvent.deleted(experience),
-                );
-            Navigator.of(context).pop();
-          },
+          onPressed: () => _onPressed(context),
           child: Row(
             children: [
               const Icon(
                 Icons.delete_forever,
-                color: Colors.red,
+                color: WorldOnColors.red,
               ),
               const SizedBox(width: 5),
               Text(
@@ -48,5 +48,20 @@ class DeleteButton extends StatelessWidget {
         ),
       ),
     );
+  }
+
+  Future _onPressed(BuildContext context) async {
+    final _confirmed = await showDialog<bool>(
+      context: context,
+      builder: (context) => DeletionConfirmationDialog(),
+    );
+    if (_confirmed != null) {
+      if (_confirmed) {
+        context.read<ExperienceManagementActorBloc>().add(
+              ExperienceManagementActorEvent.deleted(experience),
+            );
+      }
+    }
+    Navigator.of(context).pop();
   }
 }

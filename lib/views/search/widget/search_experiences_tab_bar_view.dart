@@ -9,7 +9,6 @@ import 'package:worldon/views/core/widgets/cards/error_card.dart';
 import 'package:worldon/views/core/widgets/cards/experience_card/simple_experience_card.dart';
 import 'package:worldon/views/core/widgets/misc/world_on_progress_indicator.dart';
 import 'package:worldon/views/search/widget/search_error_display.dart';
-import 'package:worldon/views/search/widget/search_something.dart';
 
 class SearchExperiencesTabView extends StatelessWidget {
   final SearchTerm searchTerm;
@@ -23,7 +22,7 @@ class SearchExperiencesTabView extends StatelessWidget {
   Widget build(BuildContext context) {
     return BlocBuilder<SearchExperiencesByNameWatcherBloc, SearchExperiencesByNameWatcherState>(
       builder: (context, state) => state.map(
-        initial: (_) => SearchSomething(),
+        initial: (_) => Container(),
         searchInProgress: (_) => const WorldOnProgressIndicator(),
         searchSuccess: (state) => ListView.builder(
           scrollDirection: Axis.horizontal,
