@@ -55,11 +55,17 @@ class ObjectiveCard extends StatelessWidget {
                 ),
               ),
             ),
-            Expanded(
-              child: Padding(
-                padding: const EdgeInsets.all(5),
+            Padding(
+              padding: const EdgeInsets.all(5),
+              child: SizedBox(
+                height: _imageSize,
+                width: 110,
                 child: AutoSizeText(
                   objective.description.getOrCrash(),
+                  overflow: TextOverflow.fade,
+                  minFontSize: 8,
+                  maxFontSize: 15,
+                  maxLines: 20,
                   style: const TextStyle(
                     fontSize: 12,
                   ),

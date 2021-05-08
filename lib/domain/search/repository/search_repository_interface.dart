@@ -13,9 +13,6 @@ abstract class SearchRepositoryInterface {
   /// Sends a given [SearchTerm] to the server and it returns the [User]s with said [SearchTerm] in their names
   Stream<Either<Failure, KtList<User>>> watchSearchUsersByName(SearchTerm name);
 
-  /// Sends a given [SearchTerm] to the server and it returns the [User]s with said [SearchTerm] in their usernames
-  Stream<Either<Failure, KtList<User>>> watchSearchUsersByUserName(SearchTerm username);
-
   /// Sends a given [SearchTerm] to the server and it returns the [Tag]s with said [SearchTerm] in their names
   Stream<Either<Failure, KtList<Tag>>> watchSearchTagsByName(SearchTerm name);
 

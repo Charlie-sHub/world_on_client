@@ -22,7 +22,7 @@ class SimpleExperienceCard extends StatelessWidget {
 
   final Experience experience;
   final Function() reloadFunction;
-  static const double _heightMultiplier = 0.3;
+  static const double _heightMultiplier = 0.32;
 
   @override
   Widget build(BuildContext context) {
@@ -49,7 +49,7 @@ class SimpleExperienceCard extends StatelessWidget {
                     end: Alignment.bottomCenter,
                     colors: [
                       Colors.transparent,
-                      Colors.black.withOpacity(0.75),
+                      Colors.black.withOpacity(0.6),
                     ],
                     stops: const [
                       0,

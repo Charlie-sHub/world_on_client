@@ -16,12 +16,22 @@ class WorldOnAppBar extends StatelessWidget implements PreferredSizeWidget {
                 const AuthenticationEvent.loggedOut(),
               );
         },
-        child: const Text(
+        child: Text(
           "World On",
           style: TextStyle(
-            fontSize: 50,
+            fontSize: 40,
             color: WorldOnColors.primary,
             fontFamily: "MovingSkate",
+            shadows: [
+              Shadow(
+                offset: const Offset(
+                  2,
+                  2,
+                ),
+                blurRadius: 5,
+                color: WorldOnColors.accent.withOpacity(0.75),
+              ),
+            ],
           ),
           textAlign: TextAlign.center,
         ),
@@ -37,5 +47,5 @@ class WorldOnAppBar extends StatelessWidget implements PreferredSizeWidget {
   }
 
   @override
-  Size get preferredSize => const Size.fromHeight(kToolbarHeight);
+  Size get preferredSize => const Size.fromHeight(kToolbarHeight - 15);
 }

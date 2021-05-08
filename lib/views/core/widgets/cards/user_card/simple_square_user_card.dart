@@ -18,7 +18,7 @@ class SimpleSquareUserCard extends StatelessWidget {
   }) : super(key: key);
 
   final User user;
-  static const double _cardSize = 120;
+  static const double _multiplier = 0.18;
 
   @override
   Widget build(BuildContext context) {
@@ -30,10 +30,11 @@ class SimpleSquareUserCard extends StatelessWidget {
             ),
           ),
       child: SizedBox(
-        width: _cardSize,
+        width: MediaQuery.of(context).size.height * _multiplier,
         child: Card(
           clipBehavior: Clip.antiAlias,
           child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
             children: <Widget>[
               BlocProvider(
                 create: (context) => getIt<FollowActorBloc>()
@@ -45,25 +46,25 @@ class SimpleSquareUserCard extends StatelessWidget {
                     initial: (_) => Container(),
                     actionInProgress: (_) => const CircularProgressIndicator(),
                     follows: (_) {
-                      return Stack(
-                        alignment: Alignment.center,
-                        children: [
-                          CachedNetworkImage(
-                            imageUrl: user.imageURL,
-                            height: _cardSize,
-                            width: _cardSize,
+                        return Stack(
+                          alignment: Alignment.center,
+                          children: [
+                            CachedNetworkImage(
+                              imageUrl: user.imageURL,
+                            height: MediaQuery.of(context).size.height * _multiplier,
+                            width: MediaQuery.of(context).size.height * _multiplier,
                             fit: BoxFit.cover,
                             progressIndicatorBuilder: (context, url, progress) => const Padding(
                               padding: EdgeInsets.all(15),
                               child: WorldOnProgressIndicator(),
                             ),
                           ),
-                          Container(
-                            decoration: BoxDecoration(
+                            Container(
+                              decoration: BoxDecoration(
                               color: WorldOnColors.primary.withOpacity(0.25),
                             ),
-                            height: _cardSize,
-                            width: _cardSize,
+                            height: MediaQuery.of(context).size.height * _multiplier,
+                            width: MediaQuery.of(context).size.height * _multiplier,
                             child: const Center(
                               child: Icon(
                                 Icons.check_rounded,
@@ -72,32 +73,35 @@ class SimpleSquareUserCard extends StatelessWidget {
                               ),
                             ),
                           ),
-                        ],
-                      );
-                    },
-                    orElse: () => CachedNetworkImage(
-                      imageUrl: user.imageURL,
-                      height: _cardSize,
-                      width: _cardSize,
+                          ],
+                        );
+                      },
+                      orElse: () => CachedNetworkImage(
+                        imageUrl: user.imageURL,
+                      height: MediaQuery.of(context).size.height * _multiplier,
+                      width: MediaQuery.of(context).size.height * _multiplier,
                       fit: BoxFit.cover,
                       progressIndicatorBuilder: (context, url, progress) => const Padding(
                         padding: EdgeInsets.all(15),
                         child: WorldOnProgressIndicator(),
                       ),
                     ),
-                  ),
+                    ),
                 ),
               ),
               Flexible(
                 child: Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 2),
+                  padding: const EdgeInsets.symmetric(
+                    horizontal: 5,
+                    vertical: 5,
+                  ),
                   child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
                     children: <Widget>[
                       FittedBox(
                         child: AutoSizeText(
                           user.name.getOrCrash(),
                           overflow: TextOverflow.visible,
-                          textAlign: TextAlign.center,
                           style: const TextStyle(
                             fontWeight: FontWeight.bold,
                             fontSize: 10,
@@ -108,7 +112,6 @@ class SimpleSquareUserCard extends StatelessWidget {
                         child: AutoSizeText(
                           "@${user.username.getOrCrash()}",
                           overflow: TextOverflow.visible,
-                          textAlign: TextAlign.center,
                           style: const TextStyle(
                             fontSize: 7,
                             color: Colors.grey,

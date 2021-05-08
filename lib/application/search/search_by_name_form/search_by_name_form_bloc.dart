@@ -48,7 +48,9 @@ class SearchByNameFormBloc extends Bloc<SearchByNameFormEvent, SearchByNameFormS
         isSubmitting: false,
         failureOrSuccessOption: none(),
       );
-      add(const SearchByNameFormEvent.submitted());
+      // Searching for every change of the term is simply too costly with Algolia
+      // Maybe it can be reimplemented in the future
+      // add(const SearchByNameFormEvent.submitted());
     }
   }
 }

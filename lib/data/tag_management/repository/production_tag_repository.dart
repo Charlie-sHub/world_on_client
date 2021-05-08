@@ -5,7 +5,7 @@ import 'package:kt_dart/kt.dart';
 import 'package:logger/logger.dart';
 import 'package:worldon/core/error/failure.dart';
 import 'package:worldon/data/core/failures/core_data_failure.dart';
-import 'package:worldon/data/core/misc/firebase_helpers.dart';
+import 'package:worldon/data/core/misc/firebase/firebase_helpers.dart';
 import 'package:worldon/data/core/models/user/user_fields.dart';
 import 'package:worldon/domain/core/entities/tag/tag.dart';
 import 'package:worldon/domain/core/entities/user/user.dart';

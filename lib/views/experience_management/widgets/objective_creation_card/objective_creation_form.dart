@@ -81,11 +81,8 @@ class ObjectiveCreationForm extends StatelessWidget {
                   fontSize: 15,
                 ),
               ),
-              // This widget isn't constant for the same reason the map for the experience can't be constant either
-              Padding(
-                padding: const EdgeInsets.all(5),
-                child: ObjectiveCoordinatePicker(),
-              ),
+              const SizedBox(height: 5),
+              ObjectiveCoordinatePicker(),
             ],
           ),
           const SubmitObjectiveButton(),

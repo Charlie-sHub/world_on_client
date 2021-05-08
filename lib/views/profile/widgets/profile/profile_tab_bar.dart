@@ -10,6 +10,7 @@ class ProfileTabBar extends SliverPersistentHeaderDelegate {
   });
 
   final bool isOwn;
+  static final _grey75 = Colors.grey.withOpacity(0.75);
 
   @override
   final double maxExtent;
@@ -22,7 +23,6 @@ class ProfileTabBar extends SliverPersistentHeaderDelegate {
     double shrinkOffset,
     bool overlapsContent,
   ) {
-    final _grey75 = Colors.grey.withOpacity(0.75);
     return Material(
       color: WorldOnColors.background,
       elevation: 5,

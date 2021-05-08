@@ -25,20 +25,6 @@ class SearchUsersDialer extends StatelessWidget {
       children: [
         SpeedDialChild(
           onTap: () => context.read<SearchUsersByNameWatcherBloc>().add(
-                SearchUsersByNameWatcherEvent.watchUsersFoundByUsernameStarted(searchTerm),
-              ),
-          label: S.of(context).username,
-          labelStyle: const TextStyle(
-            color: Colors.black,
-            fontWeight: FontWeight.bold,
-          ),
-          child: const Icon(
-            Icons.account_box,
-            color: WorldOnColors.accent,
-          ),
-        ),
-        SpeedDialChild(
-          onTap: () => context.read<SearchUsersByNameWatcherBloc>().add(
                 SearchUsersByNameWatcherEvent.watchUsersFoundByNameStarted(searchTerm),
               ),
           label: S.of(context).name,

@@ -13,12 +13,14 @@
       <w>firestore</w>
       <w>flushbar</w>
       <w>freezed</w>
+      <w>geoflutterfire</w>
       <w>geolocator</w>
       <w>geoposition</w>
       <w>iconfig</w>
       <w>intl</w>
       <w>koji</w>
       <w>likeable</w>
+      <w>lnqin</w>
       <w>microdosing</w>
       <w>orderable</w>
       <w>reorderable</w>
@@ -27,6 +29,7 @@
       <w>snackbars</w>
       <w>sqlite</w>
       <w>synth</w>
+      <w>thisisnotapassword</w>
       <w>unfollow</w>
       <w>unfollowed</w>
       <w>unfollowing</w>

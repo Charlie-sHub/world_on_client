@@ -6,7 +6,6 @@ import 'package:worldon/application/profile/profile_editing_form/profile_editing
 import 'package:worldon/domain/core/entities/tag/tag.dart';
 import 'package:worldon/domain/core/entities/user/user.dart';
 import 'package:worldon/views/experience_management/widgets/tag_addition_creation_card.dart';
-import 'package:worldon/views/profile/widgets/profile_editing_form/birthday_picker.dart';
 import 'package:worldon/views/profile/widgets/profile_editing_form/description_text_form_field.dart';
 import 'package:worldon/views/profile/widgets/profile_editing_form/editing_submit_button.dart';
 import 'package:worldon/views/profile/widgets/profile_editing_form/email_text_field.dart';
@@ -60,17 +59,17 @@ class ProfileEditingForm extends StatelessWidget {
                   ),
                 ],
               ),
-              const SizedBox(height: 8),
+              const SizedBox(height: 10),
               DescriptionTextFormField(
                 initialValue: user.description.getOrCrash(),
               ),
-              const SizedBox(height: 8),
+              const SizedBox(height: 10),
               EmailTextField(
                 initialValue: user.email.getOrCrash(),
               ),
-              const SizedBox(height: 8),
-              const BirthdayPicker(),
-              const SizedBox(height: 8),
+              // const SizedBox(height: 10),
+              // const BirthdayPicker(),
+              const SizedBox(height: 10),
               // Maybe the password should be changed in Option or in some more special way
               PasswordTextField(
                 initialValue: user.password.getOrCrash(),
@@ -78,8 +77,7 @@ class ProfileEditingForm extends StatelessWidget {
               PasswordConfirmationTextField(
                 initialValue: user.password.getOrCrash(),
               ),
-              const SizedBox(height: 8),
-              // TODO: rework it so it loads with the tags already liked
+              const SizedBox(height: 10),
               TagAdditionCreationCard(
                 tagChangeFunction: (KtSet<Tag> tags) => context.read<ProfileEditingFormBloc>().add(
                       ProfileEditingFormEvent.interestsChanged(tags),

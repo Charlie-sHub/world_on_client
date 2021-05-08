@@ -6,6 +6,7 @@ import 'package:worldon/application/experience_management/experience_management_
 import 'package:worldon/domain/core/entities/experience/experience.dart';
 import 'package:worldon/generated/l10n.dart';
 import 'package:worldon/injection.dart';
+import 'package:worldon/views/core/misc/world_on_colors.dart';
 import 'package:worldon/views/experience_management/widgets/experience_creation/experience_creation_form.dart';
 import 'package:worldon/views/experience_management/widgets/experience_editing/experience_editing_form.dart';
 
@@ -27,9 +28,10 @@ class ExperienceManagementPage extends StatelessWidget {
           floatHeaderSlivers: true,
           headerSliverBuilder: (context, innerBoxIsScrolled) => [
             SliverAppBar(
-              expandedHeight: 50,
+              expandedHeight: kToolbarHeight - 15,
               elevation: 10,
               centerTitle: true,
+              backwardsCompatibility: false,
               flexibleSpace: FlexibleSpaceBar(
                 title: Text(
                   experienceOption.fold(
@@ -39,6 +41,7 @@ class ExperienceManagementPage extends StatelessWidget {
                   textAlign: TextAlign.center,
                   style: const TextStyle(
                     fontWeight: FontWeight.bold,
+                    color: WorldOnColors.accent,
                     fontSize: 18,
                   ),
                 ),

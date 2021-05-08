@@ -16,30 +16,33 @@ class ObjectiveCoordinatePicker extends StatelessWidget {
     return SizedBox(
       height: MediaQuery.of(context).size.height * 0.4,
       child: context.read<ObjectiveFormBloc>().state.loadedCoordinates
-          ? GoogleMap(
-              mapType: MapType.hybrid,
-              markers: {
-                Marker(
-                  markerId: const MarkerId("new_objective"),
-                  position: _position,
-                ),
-              },
-              onLongPress: (argument) => context.read<ObjectiveFormBloc>().add(
-                    ObjectiveFormEvent.coordinatesChanged(
-                      latitude: argument.latitude,
-                      longitude: argument.longitude,
-                    ),
+          ? Card(
+              clipBehavior: Clip.antiAlias,
+              child: GoogleMap(
+                mapType: MapType.hybrid,
+                markers: {
+                  Marker(
+                    markerId: const MarkerId("new_objective"),
+                    position: _position,
                   ),
-              gestureRecognizers: {
-                Factory<OneSequenceGestureRecognizer>(
-                  () => EagerGestureRecognizer(),
+                },
+                onLongPress: (argument) => context.read<ObjectiveFormBloc>().add(
+                      ObjectiveFormEvent.coordinatesChanged(
+                        latitude: argument.latitude,
+                        longitude: argument.longitude,
+                      ),
+                    ),
+                gestureRecognizers: {
+                  Factory<OneSequenceGestureRecognizer>(
+                    () => EagerGestureRecognizer(),
+                  ),
+                },
+                myLocationEnabled: true,
+                initialCameraPosition: CameraPosition(
+                  zoom: 15,
+                  tilt: 45,
+                  target: _position,
                 ),
-              },
-              myLocationEnabled: true,
-              initialCameraPosition: CameraPosition(
-                zoom: 15,
-                tilt: 45,
-                target: _position,
               ),
             )
           : const WorldOnProgressIndicator(),

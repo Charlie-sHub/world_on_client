@@ -18,7 +18,7 @@ class CurrentUserProfileButton extends StatelessWidget {
       builder: (context, state) => state.map(
         initial: (_) => const Icon(
           Icons.person_outline,
-          size: 30,
+          size: 25,
         ),
         actionInProgress: (_) => const WorldOnProgressIndicator(),
         loadSuccess: (state) => MaterialButton(
@@ -36,14 +36,14 @@ class CurrentUserProfileButton extends StatelessWidget {
           child: Padding(
             padding: const EdgeInsets.all(3),
             child: CircleAvatar(
-              radius: 17,
+              radius: 15,
               backgroundImage: CachedNetworkImageProvider(state.imageUrl),
             ),
           ),
         ),
         loadFailure: (_) => const Icon(
           Icons.person_outline,
-          size: 30,
+          size: 25,
           color: WorldOnColors.red,
         ),
       ),

@@ -86,6 +86,7 @@ class AppWidget extends StatelessWidget {
             actionsIconTheme: IconTheme.of(context).copyWith(
               color: WorldOnColors.accent,
             ),
+            foregroundColor: WorldOnColors.accent,
           ),
           inputDecorationTheme: const InputDecorationTheme(
             border: OutlineInputBorder(

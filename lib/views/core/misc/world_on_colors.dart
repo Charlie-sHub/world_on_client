@@ -3,11 +3,8 @@ import 'dart:ui';
 import 'package:flutter/material.dart';
 
 abstract class WorldOnColors {
-  // static const background = Color(0xFF151724);
   static const background = Color(0xFFF8F9FA);
-  static const primary = Color(0xFFFFb902);
-
-  // static const accent = Color(0xFF0098FF);
+  static const primary = Color(0xFFffb300);
   static const accent = Color(0xFF302B27);
 
   // Gotta give these better names

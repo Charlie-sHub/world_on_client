@@ -1,3 +1,4 @@
+import 'package:algolia/algolia.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:dartz/dartz.dart';
 import 'package:injectable/injectable.dart';
@@ -7,13 +8,12 @@ import 'package:quiver/iterables.dart';
 import 'package:rxdart/rxdart.dart';
 import 'package:worldon/core/error/failure.dart';
 import 'package:worldon/data/core/failures/core_data_failure.dart';
-import 'package:worldon/data/core/misc/firebase_helpers.dart';
+import 'package:worldon/data/core/misc/algolia/algolia_helpers.dart';
+import 'package:worldon/data/core/misc/firebase/firebase_helpers.dart';
 import 'package:worldon/data/core/models/experience/experience_dto.dart';
 import 'package:worldon/data/core/models/experience/experience_fields.dart';
 import 'package:worldon/data/core/models/tag/tag_dto.dart';
-import 'package:worldon/data/core/models/tag/tag_fields.dart';
 import 'package:worldon/data/core/models/user/user_dto.dart';
-import 'package:worldon/data/core/models/user/user_fields.dart';
 import 'package:worldon/domain/core/entities/experience/experience.dart';
 import 'package:worldon/domain/core/entities/tag/tag.dart';
 import 'package:worldon/domain/core/entities/user/user.dart';
@@ -27,154 +27,102 @@ class ProductionSearchRepository implements SearchRepositoryInterface {
   final _logger = Logger();
   final FirebaseFirestore _firestore;
 
+  // TODO: Use environment variables instead of hard coding the apikey and applicationId
+  Algolia algolia = const Algolia.init(
+    applicationId: "F2D62LNQIN",
+    apiKey: "8e7f2dd6d6d42450a4b3d12388b96207",
+  );
+
   ProductionSearchRepository(this._firestore);
 
-  // TODO: Find a better way to filter the results
-  // Quite annoying that Firestore doesn't support filtering by substring
-  // The current way of doing it is completely un-scalable
-  // hopefully it will work for the tests
   @override
   Stream<Either<Failure, KtList<Experience>>> watchSearchExperiencesByTitle(SearchTerm title) async* {
-    yield* _firestore.experienceCollection.orderBy("title").snapshots().map(
-      (snapshot) {
-        final _resultList = snapshot.docs.where(
-          (_querySnapshot) {
-            final String _title = _querySnapshot.get(ExperienceFields.title).toString();
-            return _title.toLowerCase().contains(
-                  title.getOrCrash().toLowerCase(),
-                );
-          },
+    final List<Experience> _results = [];
+    try {
+      final _algoliaQuery = algolia.queryExperienceIndex().query(title.getOrCrash()).setLength(50);
+      final _querySnapshot = await _algoliaQuery.getObjects();
+      for (final _queryResult in _querySnapshot.hits) {
+        final _id = _queryResult.objectID;
+        final _experienceDocument = await _firestore.experienceCollection.doc(_id).get();
+        final _experience = ExperienceDto.fromFirestore(_experienceDocument).toDomain();
+        _results.add(_experience);
+      }
+      if (_results.isNotEmpty) {
+        yield right<Failure, KtList<Experience>>(
+          _results.toImmutableList(),
         );
-        final _limitedResults = _resultList.take(50);
-        return _limitedResults.map(
-          (document) => ExperienceDto.fromFirestore(document).toDomain(),
+      } else {
+        yield left<Failure, KtList<Experience>>(
+          const Failure.coreData(
+            CoreDataFailure.notFoundError(),
+          ),
         );
-      },
-    ).map(
-      (experiences) {
-        if (experiences.isNotEmpty) {
-          return right<Failure, KtList<Experience>>(
-            experiences.toImmutableList(),
-          );
-        } else {
-          return left<Failure, KtList<Experience>>(
-            const Failure.coreData(
-              CoreDataFailure.notFoundError(),
-            ),
-          );
-        }
-      },
-    ).onErrorReturnWith(
-      (error) => left(onError(error)),
-    );
+      }
+    } catch (error) {
+      yield left<Failure, KtList<Experience>>(
+        onError(error),
+      );
+    }
   }
 
   @override
   Stream<Either<Failure, KtList<Tag>>> watchSearchTagsByName(SearchTerm name) async* {
-    yield* _firestore.tagCollection.orderBy("name").snapshots().map(
-      (snapshot) {
-        final _resultList = snapshot.docs.where(
-          (element) {
-            final String _name = element.get(TagFields.name).toString();
-            return _name.toLowerCase().contains(
-                  name.getOrCrash().toLowerCase(),
-                );
-          },
+    final List<Tag> _results = [];
+    try {
+      final _algoliaQuery = algolia.queryTagIndex().query(name.getOrCrash()).setLength(50);
+      final _querySnapshot = await _algoliaQuery.getObjects();
+      for (final _queryResult in _querySnapshot.hits) {
+        final _id = _queryResult.objectID;
+        final _tagDocument = await _firestore.tagCollection.doc(_id).get();
+        final _tag = TagDto.fromFirestore(_tagDocument).toDomain();
+        _results.add(_tag);
+      }
+      if (_results.isNotEmpty) {
+        yield right<Failure, KtList<Tag>>(
+          _results.toImmutableList(),
         );
-        final _limitedResults = _resultList.take(100);
-        return _limitedResults.map(
-          (document) => TagDto.fromFirestore(document).toDomain(),
+      } else {
+        yield left<Failure, KtList<Tag>>(
+          const Failure.coreData(
+            CoreDataFailure.notFoundError(),
+          ),
         );
-      },
-    ).map(
-      (tags) {
-        if (tags.isNotEmpty) {
-          return right<Failure, KtList<Tag>>(
-            tags.toImmutableList(),
-          );
-        } else {
-          return left<Failure, KtList<Tag>>(
-            const Failure.coreData(
-              CoreDataFailure.notFoundError(),
-            ),
-          );
-        }
-      },
-    ).onErrorReturnWith(
-      (error) => left(onError(error)),
-    );
+      }
+    } catch (error) {
+      yield left<Failure, KtList<Tag>>(
+        onError(error),
+      );
+    }
   }
 
   @override
   Stream<Either<Failure, KtList<User>>> watchSearchUsersByName(SearchTerm name) async* {
-    yield* _firestore.userCollection.orderBy("name").snapshots().map(
-      (snapshot) {
-        final _resultList = snapshot.docs.where(
-          (element) {
-            final String _name = element.get(UserFields.name).toString();
-            return _name.toLowerCase().contains(
-                  name.getOrCrash().toLowerCase(),
-                );
-          },
+    final List<User> _results = [];
+    try {
+      final _algoliaQuery = algolia.queryUserIndex().query(name.getOrCrash()).setLength(50);
+      final _querySnapshot = await _algoliaQuery.getObjects();
+      for (final _queryResult in _querySnapshot.hits) {
+        final _id = _queryResult.objectID;
+        final _userDocument = await _firestore.userCollection.doc(_id).get();
+        final _user = UserDto.fromFirestore(_userDocument).toDomain();
+        _results.add(_user);
+      }
+      if (_results.isNotEmpty) {
+        yield right<Failure, KtList<User>>(
+          _results.toImmutableList(),
         );
-        final _limitedResults = _resultList.take(100);
-        return _limitedResults.map(
-          (document) => UserDto.fromFirestore(document).toDomain(),
+      } else {
+        yield left<Failure, KtList<User>>(
+          const Failure.coreData(
+            CoreDataFailure.notFoundError(),
+          ),
         );
-      },
-    ).map(
-      (users) {
-        if (users.isNotEmpty) {
-          return right<Failure, KtList<User>>(
-            users.toImmutableList(),
-          );
-        } else {
-          return left<Failure, KtList<User>>(
-            const Failure.coreData(
-              CoreDataFailure.notFoundError(),
-            ),
-          );
-        }
-      },
-    ).onErrorReturnWith(
-      (error) => left(onError(error)),
-    );
-  }
-
-  @override
-  Stream<Either<Failure, KtList<User>>> watchSearchUsersByUserName(SearchTerm username) async* {
-    yield* _firestore.userCollection.orderBy("username").snapshots().map(
-      (snapshot) {
-        final _resultList = snapshot.docs.where(
-          (element) {
-            final String _username = element.get(UserFields.username).toString();
-            return _username.toLowerCase().contains(
-                  username.getOrCrash().toLowerCase(),
-                );
-          },
-        );
-        final _limitedResults = _resultList.take(100);
-        return _limitedResults.map(
-          (document) => UserDto.fromFirestore(document).toDomain(),
-        );
-      },
-    ).map(
-      (users) {
-        if (users.isNotEmpty) {
-          return right<Failure, KtList<User>>(
-            users.toImmutableList(),
-          );
-        } else {
-          return left<Failure, KtList<User>>(
-            const Failure.coreData(
-              CoreDataFailure.notFoundError(),
-            ),
-          );
-        }
-      },
-    ).onErrorReturnWith(
-      (error) => left(onError(error)),
-    );
+      }
+    } catch (error) {
+      yield left<Failure, KtList<User>>(
+        onError(error),
+      );
+    }
   }
 
   @override
@@ -278,6 +226,11 @@ class ProductionSearchRepository implements SearchRepositoryInterface {
       _logger.e("FirebaseException: ${error.message}");
       return Failure.coreData(
         CoreDataFailure.serverError(errorString: "Firebase error: ${error.message}"),
+      );
+    } else if (error is AlgoliaError) {
+      _logger.e("Algolia error: ${error.error}");
+      return const Failure.coreData(
+        CoreDataFailure.serverError(errorString: "Algolia error"),
       );
     } else if (error is AssertionError) {
       _logger.e("Failed assertion error");

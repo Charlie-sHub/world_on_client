@@ -23,6 +23,7 @@ class TagSelection extends StatelessWidget {
           maxHeight: MediaQuery.of(context).size.height * 0.3,
         ),
         child: SingleChildScrollView(
+          physics: const BouncingScrollPhysics(),
           child: Column(
             children: [
               Wrap(
@@ -34,8 +35,8 @@ class TagSelection extends StatelessWidget {
                       if (tag.isValid) {
                         return InkWell(
                           onTap: () => context.read<TagSelectorBloc>().add(
-                                TagSelectorEvent.removedTag(tag),
-                              ),
+                            TagSelectorEvent.removedTag(tag),
+                          ),
                           child: SimpleTagDisplay(tag: tag),
                         );
                       } else {

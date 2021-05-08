@@ -22,6 +22,8 @@ part 'user_dto.g.dart';
 
 @freezed
 class UserDto with _$UserDto {
+  static const _fakePassword = "THISISNOTAPASSWORD";
+
   const UserDto._();
 
   const factory UserDto({
@@ -59,44 +61,46 @@ class UserDto with _$UserDto {
     required PromotionPlanDto promotionPlan,
   }) = _UserDto;
 
-  factory UserDto.fromDomain(User user) => UserDto(
-        id: user.id.getOrCrash(),
-        name: user.name.getOrCrash(),
-        username: user.username.getOrCrash(),
-        password: user.password.getOrCrash(),
-        email: user.email.getOrCrash(),
-        birthday: user.birthday.getOrCrash(),
-        description: user.description.getOrCrash(),
-        imageURL: user.imageURL,
-        level: user.level.getOrCrash(),
-        experiencePoints: user.experiencePoints.getOrCrash(),
-        privacy: user.privacy,
-        adminPowers: user.adminPowers,
-        enabled: user.enabled,
-        lastLogin: user.lastLogin.getOrCrash(),
-        creationDate: user.creationDate.getOrCrash(),
-        modificationDate: user.modificationDate.getOrCrash(),
-        options: OptionsDto.fromDomain(user.options),
-        blockedUsersIds: user.blockedUsersIds.map((uniqueId) => uniqueId.getOrCrash()).toSet(),
-        followedUsersIds: user.followedUsersIds.map((uniqueId) => uniqueId.getOrCrash()).toSet(),
-        interestsIds: user.interestsIds.map((uniqueId) => uniqueId.getOrCrash()).toSet(),
-        achievementsIds: user.achievementsIds.map((uniqueId) => uniqueId.getOrCrash()).toSet(),
-        experiencesDoneIds: user.experiencesDoneIds.map((uniqueId) => uniqueId.getOrCrash()).toSet(),
-        experiencesLikedIds: user.experiencesLikedIds.map((uniqueId) => uniqueId.getOrCrash()).toSet(),
-        experiencesToDoIds: user.experiencesToDoIds.map((uniqueId) => uniqueId.getOrCrash()).toSet(),
-        devices: user.devices.map((device) => DeviceDto.fromDomain(device)).toSet(),
-        systems: user.systems.map((system) => SystemDto.fromDomain(system)).toSet(),
-        items: user.items.map((item) => ItemDto.fromDomain(item)).toSet(),
-        coins: user.coins,
-        followersAmount: user.followersAmount,
-        promotionPlan: PromotionPlanDto.fromDomain(user.promotionPlan),
-      );
+  factory UserDto.fromDomain(User user) {
+    return UserDto(
+      id: user.id.getOrCrash(),
+      name: user.name.getOrCrash(),
+      username: user.username.getOrCrash(),
+      password: _fakePassword,
+      email: user.email.getOrCrash(),
+      birthday: user.birthday.getOrCrash(),
+      description: user.description.getOrCrash(),
+      imageURL: user.imageURL,
+      level: user.level.getOrCrash(),
+      experiencePoints: user.experiencePoints.getOrCrash(),
+      privacy: user.privacy,
+      adminPowers: user.adminPowers,
+      enabled: user.enabled,
+      lastLogin: user.lastLogin.getOrCrash(),
+      creationDate: user.creationDate.getOrCrash(),
+      modificationDate: user.modificationDate.getOrCrash(),
+      options: OptionsDto.fromDomain(user.options),
+      blockedUsersIds: user.blockedUsersIds.map((uniqueId) => uniqueId.getOrCrash()).toSet(),
+      followedUsersIds: user.followedUsersIds.map((uniqueId) => uniqueId.getOrCrash()).toSet(),
+      interestsIds: user.interestsIds.map((uniqueId) => uniqueId.getOrCrash()).toSet(),
+      achievementsIds: user.achievementsIds.map((uniqueId) => uniqueId.getOrCrash()).toSet(),
+      experiencesDoneIds: user.experiencesDoneIds.map((uniqueId) => uniqueId.getOrCrash()).toSet(),
+      experiencesLikedIds: user.experiencesLikedIds.map((uniqueId) => uniqueId.getOrCrash()).toSet(),
+      experiencesToDoIds: user.experiencesToDoIds.map((uniqueId) => uniqueId.getOrCrash()).toSet(),
+      devices: user.devices.map((device) => DeviceDto.fromDomain(device)).toSet(),
+      systems: user.systems.map((system) => SystemDto.fromDomain(system)).toSet(),
+      items: user.items.map((item) => ItemDto.fromDomain(item)).toSet(),
+      coins: user.coins,
+      followersAmount: user.followersAmount,
+      promotionPlan: PromotionPlanDto.fromDomain(user.promotionPlan),
+    );
+  }
 
   User toDomain() => User(
         id: UniqueId.fromUniqueString(id),
         name: Name(name),
         username: Name(username),
-        password: Password(password),
+        password: Password(_fakePassword),
         email: EmailAddress(email),
         birthday: PastDate(birthday),
         description: EntityDescription(description),
@@ -108,29 +112,29 @@ class UserDto with _$UserDto {
         adminPowers: adminPowers,
         enabled: enabled,
         lastLogin: PastDate(lastLogin),
-        creationDate: PastDate(creationDate),
-        modificationDate: PastDate(modificationDate),
-        options: options.toDomain(),
-        blockedUsersIds: blockedUsersIds.map((idString) => UniqueId.fromUniqueString(idString)).toSet(),
-        followedUsersIds: followedUsersIds.map((idString) => UniqueId.fromUniqueString(idString)).toSet(),
-        interestsIds: interestsIds.map((idString) => UniqueId.fromUniqueString(idString)).toSet(),
-        achievementsIds: achievementsIds.map((idString) => UniqueId.fromUniqueString(idString)).toSet(),
-        experiencesDoneIds: experiencesDoneIds.map((idString) => UniqueId.fromUniqueString(idString)).toSet(),
-        experiencesLikedIds: experiencesLikedIds.map((idString) => UniqueId.fromUniqueString(idString)).toSet(),
-        experiencesToDoIds: experiencesToDoIds.map((idString) => UniqueId.fromUniqueString(idString)).toSet(),
-        devices: devices.map((deviceDto) => deviceDto.toDomain()).toSet(),
-        systems: systems.map((systemDto) => systemDto.toDomain()).toSet(),
-        items: items.map((itemDto) => itemDto.toDomain()).toSet(),
-        coins: coins,
-        followersAmount: followersAmount,
-        promotionPlan: promotionPlan.toDomain(),
-      );
-
+      creationDate: PastDate(creationDate),
+      modificationDate: PastDate(modificationDate),
+      options: options.toDomain(),
+      blockedUsersIds: blockedUsersIds.map((idString) => UniqueId.fromUniqueString(idString)).toSet(),
+      followedUsersIds: followedUsersIds.map((idString) => UniqueId.fromUniqueString(idString)).toSet(),
+      interestsIds: interestsIds.map((idString) => UniqueId.fromUniqueString(idString)).toSet(),
+      achievementsIds: achievementsIds.map((idString) => UniqueId.fromUniqueString(idString)).toSet(),
+      experiencesDoneIds: experiencesDoneIds.map((idString) => UniqueId.fromUniqueString(idString)).toSet(),
+      experiencesLikedIds: experiencesLikedIds.map((idString) => UniqueId.fromUniqueString(idString)).toSet(),
+      experiencesToDoIds: experiencesToDoIds.map((idString) => UniqueId.fromUniqueString(idString)).toSet(),
+      devices: devices.map((deviceDto) => deviceDto.toDomain()).toSet(),
+      systems: systems.map((systemDto) => systemDto.toDomain()).toSet(),
+      items: items.map((itemDto) => itemDto.toDomain()).toSet(),
+      coins: coins,
+      followersAmount: followersAmount,
+      promotionPlan: promotionPlan.toDomain(),
+    );
+  
   factory UserDto.fromJson(Map<String, dynamic> json) => _$UserDtoFromJson(json);
-
+  
   factory UserDto.fromFirestore(DocumentSnapshot document) => UserDto.fromJson(
-        document.data()!,
-      ).copyWith(
-        id: document.id,
-      );
+    document.data()!,
+  ).copyWith(
+    id: document.id,
+  );
 }

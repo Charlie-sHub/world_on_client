@@ -36,9 +36,4 @@ class DevelopmentSearchRepository implements SearchRepositoryInterface {
   Stream<Either<Failure, KtList<User>>> watchSearchUsersByName(SearchTerm name) async* {
     throw UnimplementedError();
   }
-
-  @override
-  Stream<Either<Failure, KtList<User>>> watchSearchUsersByUserName(SearchTerm username) async* {
-    throw UnimplementedError();
-  }
 }

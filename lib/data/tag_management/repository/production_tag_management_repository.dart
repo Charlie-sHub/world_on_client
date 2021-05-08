@@ -6,7 +6,7 @@ import 'package:logger/logger.dart';
 import 'package:quiver/iterables.dart';
 import 'package:worldon/core/error/failure.dart';
 import 'package:worldon/data/core/failures/core_data_failure.dart';
-import 'package:worldon/data/core/misc/firebase_helpers.dart';
+import 'package:worldon/data/core/misc/firebase/firebase_helpers.dart';
 import 'package:worldon/data/core/models/tag/tag_dto.dart';
 import 'package:worldon/data/core/models/tag/tag_fields.dart';
 import 'package:worldon/domain/core/entities/tag/tag.dart';

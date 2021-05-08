@@ -30,7 +30,7 @@ class SearchBody extends StatelessWidget {
         BlocProvider(create: (context) => getIt<SearchExperiencesByTagsBloc>()),
       ],
       child: BlocConsumer<SearchByNameFormBloc, SearchByNameFormState>(
-        listenWhen: (previous, current) => previous.isSubmitting != current.isSubmitting,
+        listenWhen: (previous, current) => current.isSubmitting,
         listener: _searchFormListener,
         buildWhen: (previous, current) => previous.showErrorMessages != current.showErrorMessages,
         builder: (context, state) {
@@ -50,7 +50,7 @@ class SearchBody extends StatelessWidget {
                     ),
                     const SizedBox(height: _separation),
                     SizedBox(
-                      height: MediaQuery.of(context).size.height * 0.07,
+                      height: MediaQuery.of(context).size.height * 0.08,
                       child: const SearchTagsTabView(),
                     ),
                     AutoSizeText(
@@ -59,7 +59,7 @@ class SearchBody extends StatelessWidget {
                     ),
                     const SizedBox(height: _separation),
                     SizedBox(
-                      height: MediaQuery.of(context).size.height * 0.3,
+                      height: MediaQuery.of(context).size.height * 0.32,
                       child: SearchExperiencesTabView(searchTerm: state.searchTerm),
                     ),
                     const SizedBox(height: _separation),
@@ -69,7 +69,7 @@ class SearchBody extends StatelessWidget {
                     ),
                     const SizedBox(height: _separation),
                     SizedBox(
-                      height: MediaQuery.of(context).size.height * 0.24,
+                      height: MediaQuery.of(context).size.height * 0.25,
                       child: SearchUsersTabView(searchTerm: state.searchTerm),
                     ),
                   ],

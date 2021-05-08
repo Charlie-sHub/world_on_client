@@ -7,21 +7,22 @@ class ExperienceNavigationTabBar extends StatelessWidget {
     Key? key,
   }) : super(key: key);
 
+  static final _grey75 = Colors.grey.withOpacity(0.75);
+
   @override
   Widget build(BuildContext context) {
     return SizedBox(
       height: 52,
       child: TabBar(
+        labelColor: WorldOnColors.accent,
+        unselectedLabelColor: _grey75,
         labelPadding: const EdgeInsets.all(2),
         indicatorColor: Colors.transparent,
-        unselectedLabelColor: WorldOnColors.accent,
-        labelColor: WorldOnColors.primary,
         tabs: [
           Tab(
             iconMargin: const EdgeInsets.all(2),
             icon: const Icon(
               Icons.toc_rounded,
-              color: WorldOnColors.accent,
             ),
             text: S.of(context).experienceInformationTab,
           ),
@@ -29,7 +30,6 @@ class ExperienceNavigationTabBar extends StatelessWidget {
             iconMargin: const EdgeInsets.all(2),
             icon: const Icon(
               Icons.follow_the_signs_outlined,
-              color: WorldOnColors.accent,
             ),
             text: S.of(context).objectivesTab,
           ),
@@ -37,7 +37,6 @@ class ExperienceNavigationTabBar extends StatelessWidget {
             iconMargin: const EdgeInsets.all(2),
             icon: const Icon(
               Icons.map_rounded,
-              color: WorldOnColors.accent,
             ),
             text: S.of(context).mapTab,
           ),

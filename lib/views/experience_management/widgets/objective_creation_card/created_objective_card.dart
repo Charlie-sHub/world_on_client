@@ -25,51 +25,54 @@ class CreatedObjectiveCard extends StatelessWidget {
         end: 0.95,
       ).animate(animation),
       child: Card(
+        clipBehavior: Clip.antiAlias,
         elevation: animation.value * 10,
-        child: Padding(
-          padding: const EdgeInsets.all(5),
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: <Widget>[
-              IconButton(
-                iconSize: 35,
-                padding: const EdgeInsets.all(0),
-                icon: const Icon(
-                  Icons.delete_forever,
-                  color: WorldOnColors.red,
-                ),
-                onPressed: () => context.read<ObjectivesCreationBloc>().add(
-                      ObjectivesCreationEvent.removedObjective(objective),
-                    ),
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: <Widget>[
+            Image(
+              image: objective.imageFile.fold(
+                () => CachedNetworkImageProvider(objective.imageURL),
+                (_imageFile) => FileImage(_imageFile),
               ),
-              Image(
-                image: objective.imageFile.fold(
-                  () => CachedNetworkImageProvider(objective.imageURL),
-                  (_imageFile) => FileImage(_imageFile),
-                ),
-                height: 100,
-                width: 100,
-              ),
-              const SizedBox(width: 5),
-              Expanded(
+              height: 100,
+            ),
+            Padding(
+              padding: const EdgeInsets.all(5),
+              child: SizedBox(
+                height: 90,
+                width: 140,
                 child: AutoSizeText(
                   objective.description.getOrCrash(),
+                  overflow: TextOverflow.fade,
+                  minFontSize: 8,
+                  maxFontSize: 15,
+                  maxLines: 20,
                   style: const TextStyle(
                     fontSize: 15,
-                    color: WorldOnColors.background,
                   ),
                 ),
               ),
-              // Had a Handle
-              const Handle(
-                child: Icon(
-                  Icons.drag_indicator_rounded,
-                  size: 40,
-                  color: Colors.grey,
-                ),
+            ),
+            IconButton(
+              iconSize: 35,
+              padding: const EdgeInsets.all(0),
+              icon: const Icon(
+                Icons.delete_forever,
+                color: WorldOnColors.red,
               ),
-            ],
-          ),
+              onPressed: () => context.read<ObjectivesCreationBloc>().add(
+                    ObjectivesCreationEvent.removedObjective(objective),
+                  ),
+            ),
+            const Handle(
+              child: Icon(
+                Icons.drag_indicator_rounded,
+                size: 35,
+                color: Colors.grey,
+              ),
+            ),
+          ],
         ),
       ),
     );

@@ -22,12 +22,6 @@ class _$SearchUsersByNameWatcherEventTearOff {
     );
   }
 
-  _WatchUsersFoundByUsernameStarted watchUsersFoundByUsernameStarted(SearchTerm username) {
-    return _WatchUsersFoundByUsernameStarted(
-      username,
-    );
-  }
-
   _SearchResultsReceived searchResultsReceived(Either<Failure, KtList<User>> failureOrUsers) {
     return _SearchResultsReceived(
       failureOrUsers,
@@ -43,14 +37,12 @@ mixin _$SearchUsersByNameWatcherEvent {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(SearchTerm name) watchUsersFoundByNameStarted,
-    required TResult Function(SearchTerm username) watchUsersFoundByUsernameStarted,
     required TResult Function(Either<Failure, KtList<User>> failureOrUsers) searchResultsReceived,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(SearchTerm name)? watchUsersFoundByNameStarted,
-    TResult Function(SearchTerm username)? watchUsersFoundByUsernameStarted,
     TResult Function(Either<Failure, KtList<User>> failureOrUsers)? searchResultsReceived,
     required TResult orElse(),
   }) =>
@@ -58,14 +50,12 @@ mixin _$SearchUsersByNameWatcherEvent {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_WatchUsersFoundByNameStarted value) watchUsersFoundByNameStarted,
-    required TResult Function(_WatchUsersFoundByUsernameStarted value) watchUsersFoundByUsernameStarted,
     required TResult Function(_SearchResultsReceived value) searchResultsReceived,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_WatchUsersFoundByNameStarted value)? watchUsersFoundByNameStarted,
-    TResult Function(_WatchUsersFoundByUsernameStarted value)? watchUsersFoundByUsernameStarted,
     TResult Function(_SearchResultsReceived value)? searchResultsReceived,
     required TResult orElse(),
   }) =>
@@ -144,7 +134,6 @@ class _$_WatchUsersFoundByNameStarted implements _WatchUsersFoundByNameStarted {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(SearchTerm name) watchUsersFoundByNameStarted,
-    required TResult Function(SearchTerm username) watchUsersFoundByUsernameStarted,
     required TResult Function(Either<Failure, KtList<User>> failureOrUsers) searchResultsReceived,
   }) {
     return watchUsersFoundByNameStarted(name);
@@ -154,7 +143,6 @@ class _$_WatchUsersFoundByNameStarted implements _WatchUsersFoundByNameStarted {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(SearchTerm name)? watchUsersFoundByNameStarted,
-    TResult Function(SearchTerm username)? watchUsersFoundByUsernameStarted,
     TResult Function(Either<Failure, KtList<User>> failureOrUsers)? searchResultsReceived,
     required TResult orElse(),
   }) {
@@ -168,7 +156,6 @@ class _$_WatchUsersFoundByNameStarted implements _WatchUsersFoundByNameStarted {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_WatchUsersFoundByNameStarted value) watchUsersFoundByNameStarted,
-    required TResult Function(_WatchUsersFoundByUsernameStarted value) watchUsersFoundByUsernameStarted,
     required TResult Function(_SearchResultsReceived value) searchResultsReceived,
   }) {
     return watchUsersFoundByNameStarted(this);
@@ -178,7 +165,6 @@ class _$_WatchUsersFoundByNameStarted implements _WatchUsersFoundByNameStarted {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_WatchUsersFoundByNameStarted value)? watchUsersFoundByNameStarted,
-    TResult Function(_WatchUsersFoundByUsernameStarted value)? watchUsersFoundByUsernameStarted,
     TResult Function(_SearchResultsReceived value)? searchResultsReceived,
     required TResult orElse(),
   }) {
@@ -196,118 +182,6 @@ abstract class _WatchUsersFoundByNameStarted implements SearchUsersByNameWatcher
 
   @JsonKey(ignore: true)
   _$WatchUsersFoundByNameStartedCopyWith<_WatchUsersFoundByNameStarted> get copyWith => throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class _$WatchUsersFoundByUsernameStartedCopyWith<$Res> {
-  factory _$WatchUsersFoundByUsernameStartedCopyWith(_WatchUsersFoundByUsernameStarted value, $Res Function(_WatchUsersFoundByUsernameStarted) then) =
-      __$WatchUsersFoundByUsernameStartedCopyWithImpl<$Res>;
-
-  $Res call({SearchTerm username});
-}
-
-/// @nodoc
-class __$WatchUsersFoundByUsernameStartedCopyWithImpl<$Res> extends _$SearchUsersByNameWatcherEventCopyWithImpl<$Res> implements _$WatchUsersFoundByUsernameStartedCopyWith<$Res> {
-  __$WatchUsersFoundByUsernameStartedCopyWithImpl(_WatchUsersFoundByUsernameStarted _value, $Res Function(_WatchUsersFoundByUsernameStarted) _then)
-      : super(_value, (v) => _then(v as _WatchUsersFoundByUsernameStarted));
-
-  @override
-  _WatchUsersFoundByUsernameStarted get _value => super._value as _WatchUsersFoundByUsernameStarted;
-
-  @override
-  $Res call({
-    Object? username = freezed,
-  }) {
-    return _then(_WatchUsersFoundByUsernameStarted(
-      username == freezed
-          ? _value.username
-          : username // ignore: cast_nullable_to_non_nullable
-              as SearchTerm,
-    ));
-  }
-}
-
-/// @nodoc
-
-class _$_WatchUsersFoundByUsernameStarted implements _WatchUsersFoundByUsernameStarted {
-  const _$_WatchUsersFoundByUsernameStarted(this.username);
-
-  @override
-  final SearchTerm username;
-
-  @override
-  String toString() {
-    return 'SearchUsersByNameWatcherEvent.watchUsersFoundByUsernameStarted(username: $username)';
-  }
-
-  @override
-  bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _WatchUsersFoundByUsernameStarted && (identical(other.username, username) || const DeepCollectionEquality().equals(other.username, username)));
-  }
-
-  @override
-  int get hashCode => runtimeType.hashCode ^ const DeepCollectionEquality().hash(username);
-
-  @JsonKey(ignore: true)
-  @override
-  _$WatchUsersFoundByUsernameStartedCopyWith<_WatchUsersFoundByUsernameStarted> get copyWith => __$WatchUsersFoundByUsernameStartedCopyWithImpl<_WatchUsersFoundByUsernameStarted>(this, _$identity);
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function(SearchTerm name) watchUsersFoundByNameStarted,
-    required TResult Function(SearchTerm username) watchUsersFoundByUsernameStarted,
-    required TResult Function(Either<Failure, KtList<User>> failureOrUsers) searchResultsReceived,
-  }) {
-    return watchUsersFoundByUsernameStarted(username);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function(SearchTerm name)? watchUsersFoundByNameStarted,
-    TResult Function(SearchTerm username)? watchUsersFoundByUsernameStarted,
-    TResult Function(Either<Failure, KtList<User>> failureOrUsers)? searchResultsReceived,
-    required TResult orElse(),
-  }) {
-    if (watchUsersFoundByUsernameStarted != null) {
-      return watchUsersFoundByUsernameStarted(username);
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_WatchUsersFoundByNameStarted value) watchUsersFoundByNameStarted,
-    required TResult Function(_WatchUsersFoundByUsernameStarted value) watchUsersFoundByUsernameStarted,
-    required TResult Function(_SearchResultsReceived value) searchResultsReceived,
-  }) {
-    return watchUsersFoundByUsernameStarted(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_WatchUsersFoundByNameStarted value)? watchUsersFoundByNameStarted,
-    TResult Function(_WatchUsersFoundByUsernameStarted value)? watchUsersFoundByUsernameStarted,
-    TResult Function(_SearchResultsReceived value)? searchResultsReceived,
-    required TResult orElse(),
-  }) {
-    if (watchUsersFoundByUsernameStarted != null) {
-      return watchUsersFoundByUsernameStarted(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class _WatchUsersFoundByUsernameStarted implements SearchUsersByNameWatcherEvent {
-  const factory _WatchUsersFoundByUsernameStarted(SearchTerm username) = _$_WatchUsersFoundByUsernameStarted;
-
-  SearchTerm get username => throw _privateConstructorUsedError;
-
-  @JsonKey(ignore: true)
-  _$WatchUsersFoundByUsernameStartedCopyWith<_WatchUsersFoundByUsernameStarted> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -367,7 +241,6 @@ class _$_SearchResultsReceived implements _SearchResultsReceived {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(SearchTerm name) watchUsersFoundByNameStarted,
-    required TResult Function(SearchTerm username) watchUsersFoundByUsernameStarted,
     required TResult Function(Either<Failure, KtList<User>> failureOrUsers) searchResultsReceived,
   }) {
     return searchResultsReceived(failureOrUsers);
@@ -377,7 +250,6 @@ class _$_SearchResultsReceived implements _SearchResultsReceived {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(SearchTerm name)? watchUsersFoundByNameStarted,
-    TResult Function(SearchTerm username)? watchUsersFoundByUsernameStarted,
     TResult Function(Either<Failure, KtList<User>> failureOrUsers)? searchResultsReceived,
     required TResult orElse(),
   }) {
@@ -391,7 +263,6 @@ class _$_SearchResultsReceived implements _SearchResultsReceived {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_WatchUsersFoundByNameStarted value) watchUsersFoundByNameStarted,
-    required TResult Function(_WatchUsersFoundByUsernameStarted value) watchUsersFoundByUsernameStarted,
     required TResult Function(_SearchResultsReceived value) searchResultsReceived,
   }) {
     return searchResultsReceived(this);
@@ -401,7 +272,6 @@ class _$_SearchResultsReceived implements _SearchResultsReceived {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_WatchUsersFoundByNameStarted value)? watchUsersFoundByNameStarted,
-    TResult Function(_WatchUsersFoundByUsernameStarted value)? watchUsersFoundByUsernameStarted,
     TResult Function(_SearchResultsReceived value)? searchResultsReceived,
     required TResult orElse(),
   }) {

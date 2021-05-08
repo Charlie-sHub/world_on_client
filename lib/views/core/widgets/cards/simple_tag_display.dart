@@ -12,21 +12,15 @@ class SimpleTagDisplay extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      decoration: BoxDecoration(
-        border: Border.all(
-          color: WorldOnColors.blue,
-          width: 2,
-        ),
-        borderRadius: BorderRadius.circular(12),
-      ),
-      child: Padding(
-        padding: const EdgeInsets.all(3),
-        child: Text(
-          tag.name.getOrCrash(),
-          style: const TextStyle(
-            color: WorldOnColors.blue,
-          ),
+    return Chip(
+      elevation: 5,
+      materialTapTargetSize: MaterialTapTargetSize.shrinkWrap,
+      backgroundColor: Colors.blueGrey,
+      label: Text(
+        tag.name.getOrCrash(),
+        style: const TextStyle(
+          color: WorldOnColors.white,
+          fontWeight: FontWeight.bold,
         ),
       ),
     );

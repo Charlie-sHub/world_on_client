@@ -6,7 +6,7 @@ import 'package:logger/logger.dart';
 import 'package:rxdart/rxdart.dart' hide Notification;
 import 'package:worldon/core/error/failure.dart';
 import 'package:worldon/data/core/failures/core_data_failure.dart';
-import 'package:worldon/data/core/misc/firebase_helpers.dart';
+import 'package:worldon/data/core/misc/firebase/firebase_helpers.dart';
 import 'package:worldon/data/core/models/notification/notification_dto.dart';
 import 'package:worldon/data/core/models/notification/notification_fields.dart';
 import 'package:worldon/data/core/models/user/user_dto.dart';

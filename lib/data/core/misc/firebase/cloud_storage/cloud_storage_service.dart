@@ -3,7 +3,7 @@ import 'dart:io';
 import 'package:firebase_storage/firebase_storage.dart';
 import 'package:injectable/injectable.dart';
 import 'package:multi_image_picker/multi_image_picker.dart';
-import 'package:worldon/data/core/misc/cloud_storage/storage_folder_enum.dart';
+import 'package:worldon/data/core/misc/firebase/cloud_storage/storage_folder_enum.dart';
 
 @injectable
 class CloudStorageService {

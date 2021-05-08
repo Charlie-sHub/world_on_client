@@ -26,35 +26,27 @@ class SearchUsersTabView extends StatelessWidget {
       builder: (context, state) => state.map(
         initial: (_) => Container(),
         searchInProgress: (_) => const WorldOnProgressIndicator(),
-        searchSuccess: (state) => Scaffold(
-          /*
-          floatingActionButtonLocation: FloatingActionButtonLocation.miniEndDocked,
-          floatingActionButton: SearchUsersDialer(
-            searchTerm: context.read<SearchByNameFormBloc>().state.searchTerm,
-          ),
-          */
-          body: ListView.builder(
-            scrollDirection: Axis.horizontal,
-            clipBehavior: Clip.none,
-            itemCount: state.usersFound.size,
-            itemBuilder: (context, index) {
-              final _user = state.usersFound[index];
-              if (_user.isValid) {
-                return SimpleSquareUserCard(
-                  user: _user,
-                  key: Key(_user.id.toString()),
-                );
-              } else {
-                return ErrorCard(
-                  entityType: S.of(context).user,
-                  valueFailureString: _user.failureOption.fold(
-                    () => S.of(context).noError,
-                    (failure) => failure.toString(),
-                  ),
-                );
-              }
-            },
-          ),
+        searchSuccess: (state) => ListView.builder(
+          scrollDirection: Axis.horizontal,
+          clipBehavior: Clip.none,
+          itemCount: state.usersFound.size,
+          itemBuilder: (context, index) {
+            final _user = state.usersFound[index];
+            if (_user.isValid) {
+              return SimpleSquareUserCard(
+                user: _user,
+                key: Key(_user.id.toString()),
+              );
+            } else {
+              return ErrorCard(
+                entityType: S.of(context).user,
+                valueFailureString: _user.failureOption.fold(
+                  () => S.of(context).noError,
+                  (failure) => failure.toString(),
+                ),
+              );
+            }
+          },
         ),
         searchFailure: (state) => SearchErrorDisplay(
           retryFunction: () => context.read<SearchUsersByNameWatcherBloc>().add(

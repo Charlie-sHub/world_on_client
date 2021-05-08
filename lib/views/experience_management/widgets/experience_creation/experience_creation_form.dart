@@ -45,9 +45,13 @@ class ExperienceCreationForm extends StatelessWidget {
                 const DescriptionFormField(
                   description: "",
                 ),
-                const SizedBox(height: 10),
+                const SizedBox(height: 5),
+                const Divider(thickness: 2),
+                const SizedBox(height: 5),
                 PicturesSelector(),
-                const SizedBox(height: 20),
+                const SizedBox(height: 10),
+                const Divider(thickness: 2),
+                const SizedBox(height: 5),
                 Text(
                   S.of(context).setExperienceDifficulty,
                   textAlign: TextAlign.center,
@@ -57,11 +61,15 @@ class ExperienceCreationForm extends StatelessWidget {
                   ),
                 ),
                 DifficultySlider(),
-                const SizedBox(height: 10),
+                const SizedBox(height: 5),
+                const Divider(thickness: 2),
+                const SizedBox(height: 5),
                 // TODO: Figure out why the map can't be constant
                 // adding const freezes the map, meaning the marker can't change position
                 Map(),
-                const SizedBox(height: 10),
+                const SizedBox(height: 5),
+                const Divider(thickness: 2),
+                const SizedBox(height: 5),
                 ObjectiveCreationCard(
                   objectiveListOption: none(),
                 ),
@@ -70,7 +78,9 @@ class ExperienceCreationForm extends StatelessWidget {
                   rewardSetOption: none(),
                 ),
                  */
-                //Change back to TagAdditionCard if necessary
+                const SizedBox(height: 5),
+                const Divider(thickness: 2),
+                const SizedBox(height: 5),
                 TagAdditionCreationCard(
                   tagChangeFunction: (KtSet<Tag> tags) => context.read<ExperienceManagementFormBloc>().add(
                         ExperienceManagementFormEvent.tagsChanged(tags),
@@ -78,6 +88,9 @@ class ExperienceCreationForm extends StatelessWidget {
                   tagsEitherOption: none(),
                   showErrorMessage: true,
                 ),
+                const SizedBox(height: 5),
+                const Divider(thickness: 2),
+                const SizedBox(height: 5),
                 const FinishButton(),
               ],
             ),

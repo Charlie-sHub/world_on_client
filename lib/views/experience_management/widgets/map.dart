@@ -5,7 +5,6 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:worldon/application/experience_management/experience_management_form/experience_management_form_bloc.dart';
 import 'package:worldon/generated/l10n.dart';
-import 'package:worldon/views/core/misc/world_on_colors.dart';
 import 'package:worldon/views/core/widgets/misc/world_on_progress_indicator.dart';
 
 class Map extends StatelessWidget {
@@ -16,35 +15,26 @@ class Map extends StatelessWidget {
       _editingFormState.experience.coordinates.latitude.getOrCrash(),
       _editingFormState.experience.coordinates.longitude.getOrCrash(),
     );
-    return Card(
-      color: WorldOnColors.background,
-      shape: RoundedRectangleBorder(
-        side: const BorderSide(
-          color: WorldOnColors.primary,
-        ),
-        borderRadius: BorderRadius.circular(3),
-      ),
-      child: Column(
-        children: [
-          Padding(
-            padding: const EdgeInsets.all(5),
-            child: Text(
-              S.of(context).experienceSetInitialLocation,
-              textAlign: TextAlign.center,
-              style: const TextStyle(
-                fontWeight: FontWeight.bold,
-                fontSize: 15,
-              ),
-            ),
+    return Column(
+      children: [
+        Text(
+          S.of(context).experienceSetInitialLocation,
+          textAlign: TextAlign.center,
+          style: const TextStyle(
+            fontWeight: FontWeight.bold,
+            fontSize: 15,
           ),
-          Padding(
-            padding: const EdgeInsets.all(15),
-            child: SizedBox(
-              height: MediaQuery.of(context).size.height * 0.4,
-              // Not happy about this at all, there has to be a better way to build the map once coordinates have been gotten
-              // Works for now though and that's what matters.
-              child: _editingFormState.loadedCoordinates
-                  ? GoogleMap(
+        ),
+        Padding(
+          padding: const EdgeInsets.all(10),
+          child: SizedBox(
+            height: MediaQuery.of(context).size.height * 0.4,
+            // Not happy about this at all, there has to be a better way to build the map once coordinates have been gotten
+            // Works for now though and that's what matters.
+            child: _editingFormState.loadedCoordinates
+                ? Card(
+                    clipBehavior: Clip.antiAlias,
+                    child: GoogleMap(
                       mapType: MapType.hybrid,
                       markers: {
                         Marker(
@@ -69,12 +59,12 @@ class Map extends StatelessWidget {
                         tilt: 45,
                         target: _position,
                       ),
-                    )
-                  : const WorldOnProgressIndicator(),
-            ),
+                    ),
+                  )
+                : const WorldOnProgressIndicator(),
           ),
-        ],
-      ),
+        ),
+      ],
     );
   }
 }

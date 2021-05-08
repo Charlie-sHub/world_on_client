@@ -10,7 +10,7 @@ import 'package:quiver/iterables.dart';
 import 'package:rxdart/rxdart.dart';
 import 'package:worldon/core/error/failure.dart';
 import 'package:worldon/data/core/failures/core_data_failure.dart';
-import 'package:worldon/data/core/misc/firebase_helpers.dart';
+import 'package:worldon/data/core/misc/firebase/firebase_helpers.dart';
 import 'package:worldon/data/core/models/coins/coins_dto.dart';
 import 'package:worldon/data/core/models/item/item_dto.dart';
 import 'package:worldon/data/core/models/item/item_fields.dart';

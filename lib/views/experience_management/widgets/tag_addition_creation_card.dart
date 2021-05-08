@@ -14,7 +14,6 @@ import 'package:worldon/domain/core/validation/objects/tag_set.dart';
 import 'package:worldon/domain/core/validation/objects/unique_id.dart';
 import 'package:worldon/generated/l10n.dart';
 import 'package:worldon/injection.dart';
-import 'package:worldon/views/core/misc/world_on_colors.dart';
 import 'package:worldon/views/core/widgets/misc/tag_addition_card/tag_search_header.dart';
 import 'package:worldon/views/core/widgets/misc/tag_addition_card/tag_selection.dart';
 import 'package:worldon/views/core/widgets/misc/tag_addition_card/tags_found_view.dart';
@@ -59,70 +58,53 @@ class TagAdditionCreationCard extends HookWidget {
         listener: (context, state) => tagChangeFunction(
           context.read<TagSelectorBloc>().state.tagsSelected,
         ),
-        child: Card(
-          shape: RoundedRectangleBorder(
-            side: const BorderSide(
-              color: WorldOnColors.primary,
-            ),
-            borderRadius: BorderRadius.circular(3),
-          ),
-          color: WorldOnColors.background,
-          child: Padding(
-            padding: const EdgeInsets.all(5),
-            child: Column(
-              children: <Widget>[
-                Text(
-                  S.of(context).searchTags,
-                  textAlign: TextAlign.center,
-                  style: const TextStyle(
-                    fontWeight: FontWeight.bold,
-                    fontSize: 15,
-                  ),
+        child: Padding(
+          padding: const EdgeInsets.all(5),
+          child: Column(
+            children: <Widget>[
+              Text(
+                S.of(context).searchTags,
+                textAlign: TextAlign.center,
+                style: const TextStyle(
+                  fontWeight: FontWeight.bold,
+                  fontSize: 15,
                 ),
-                const SizedBox(height: 5),
-                Padding(
-                  padding: const EdgeInsets.all(5),
-                  child: BlocListener<TagManagementFormBloc, TagManagementFormState>(
-                    listenWhen: (previous, current) => previous.failureOrSuccessOption != current.failureOrSuccessOption,
-                    listener: (context, state) => _tagCreationListener(
-                      context,
-                      state,
-                      _textEditingController,
-                    ),
-                    child: TagManagementForm(textController: _textEditingController),
-                  ),
+              ),
+              BlocListener<TagManagementFormBloc, TagManagementFormState>(
+                listenWhen: (previous, current) => previous.failureOrSuccessOption != current.failureOrSuccessOption,
+                listener: (context, state) => _tagCreationListener(
+                  context,
+                  state,
+                  _textEditingController,
                 ),
-                const SizedBox(height: 5),
-                const Padding(
-                  padding: EdgeInsets.all(5),
-                  child: TagSearchHeader(),
+                child: TagManagementForm(textController: _textEditingController),
+              ),
+              const TagSearchHeader(),
+              const SizedBox(height: 5),
+              Text(
+                S.of(context).tagAdditionFound,
+                textAlign: TextAlign.center,
+                style: const TextStyle(
+                  fontWeight: FontWeight.bold,
+                  fontSize: 12,
                 ),
-                const SizedBox(height: 5),
-                Text(
-                  S.of(context).tagAdditionFound,
-                  textAlign: TextAlign.center,
-                  style: const TextStyle(
-                    fontWeight: FontWeight.bold,
-                    fontSize: 12,
-                  ),
+              ),
+              const SizedBox(height: 5),
+              const TagsFoundView(),
+              const SizedBox(height: 10),
+              Text(
+                S.of(context).tagAdditionSelected,
+                textAlign: TextAlign.center,
+                style: const TextStyle(
+                  fontWeight: FontWeight.bold,
+                  fontSize: 12,
                 ),
-                const SizedBox(height: 5),
-                const TagsFoundView(),
-                const SizedBox(height: 10),
-                Text(
-                  S.of(context).tagAdditionSelected,
-                  textAlign: TextAlign.center,
-                  style: const TextStyle(
-                    fontWeight: FontWeight.bold,
-                    fontSize: 12,
-                  ),
-                ),
-                const SizedBox(height: 5),
-                TagSelection(
-                  showErrorMessage: showErrorMessage,
-                ),
-              ],
-            ),
+              ),
+              const SizedBox(height: 5),
+              TagSelection(
+                showErrorMessage: showErrorMessage,
+              ),
+            ],
           ),
         ),
       ),

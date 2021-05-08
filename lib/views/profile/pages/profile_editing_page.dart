@@ -8,6 +8,7 @@ import 'package:worldon/core/error/failure.dart';
 import 'package:worldon/domain/core/entities/user/user.dart';
 import 'package:worldon/generated/l10n.dart';
 import 'package:worldon/injection.dart';
+import 'package:worldon/views/core/misc/world_on_colors.dart';
 import 'package:worldon/views/core/widgets/error/critical_error_display.dart';
 import 'package:worldon/views/profile/widgets/profile_editing_form/profile_editing_form.dart';
 
@@ -22,15 +23,21 @@ class ProfileEditingPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        centerTitle: true,
-        title: Text(
-          S.of(context).editingProfileTitle,
-          style: const TextStyle(
-            fontWeight: FontWeight.bold,
-            fontSize: 25,
+      appBar: PreferredSize(
+        preferredSize: const Size.fromHeight(kToolbarHeight - 15),
+        child: AppBar(
+          elevation: 0,
+          backwardsCompatibility: false,
+          centerTitle: true,
+          title: Text(
+            S.of(context).editingProfileTitle,
+            style: const TextStyle(
+              fontWeight: FontWeight.bold,
+              fontSize: 25,
+              color: WorldOnColors.accent,
+            ),
+            textAlign: TextAlign.center,
           ),
-          textAlign: TextAlign.center,
         ),
       ),
       body: BlocProvider(

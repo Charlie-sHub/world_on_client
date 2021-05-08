@@ -4,7 +4,7 @@ import 'package:worldon/domain/authentication/repository/authentication_reposito
 import 'package:worldon/domain/core/entities/user/user.dart';
 import 'package:worldon/domain/core/failures/error.dart';
 
-import '../../../injection.dart';
+import '../../../../injection.dart';
 
 extension FirestoreX on FirebaseFirestore {
   Future<DocumentReference> experienceDocument(String experienceId) async => FirebaseFirestore.instance.experienceCollection.doc(experienceId);

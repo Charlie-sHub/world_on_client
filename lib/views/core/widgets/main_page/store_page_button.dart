@@ -13,7 +13,7 @@ class StorePageButton extends StatelessWidget {
       padding: const EdgeInsets.all(0),
       icon: const Icon(
         Icons.local_grocery_store,
-        size: 35,
+        size: 25,
         // color: WorldOnColors.accent,
       ),
       onPressed: () => context.router.push(

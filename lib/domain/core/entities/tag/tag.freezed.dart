@@ -178,7 +178,7 @@ class _$_Tag extends _Tag {
       const DeepCollectionEquality().hash(creatorId) ^
       const DeepCollectionEquality().hash(creationDate) ^
       const DeepCollectionEquality().hash(modificationDate);
-
+  
   @JsonKey(ignore: true)
   @override
   _$TagCopyWith<_Tag> get copyWith => __$TagCopyWithImpl<_Tag>(this, _$identity);
