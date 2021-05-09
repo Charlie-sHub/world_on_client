@@ -23,7 +23,6 @@ class ProfileAvatarStack extends StatelessWidget {
           percent: user.percentageToNextLevel,
           progressColor: WorldOnColors.primary,
           backgroundColor: Colors.transparent,
-          circularStrokeCap: CircularStrokeCap.round,
           startAngle: 135,
           center: Hero(
             tag: "userImage",

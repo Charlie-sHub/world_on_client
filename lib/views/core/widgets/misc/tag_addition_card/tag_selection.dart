@@ -35,8 +35,8 @@ class TagSelection extends StatelessWidget {
                       if (tag.isValid) {
                         return InkWell(
                           onTap: () => context.read<TagSelectorBloc>().add(
-                            TagSelectorEvent.removedTag(tag),
-                          ),
+                                TagSelectorEvent.removedTag(tag),
+                              ),
                           child: SimpleTagDisplay(tag: tag),
                         );
                       } else {

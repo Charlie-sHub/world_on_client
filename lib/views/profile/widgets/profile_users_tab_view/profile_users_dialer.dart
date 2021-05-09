@@ -20,10 +20,11 @@ class ProfileUsersDialer extends StatelessWidget {
       padding: const EdgeInsets.all(5),
       child: SpeedDial(
         curve: Curves.easeInCirc,
-        overlayColor: WorldOnColors.background,
+        overlayColor: Colors.white,
         overlayOpacity: 0.1,
         animatedIcon: AnimatedIcons.ellipsis_search,
         animatedIconTheme: const IconThemeData(size: 40),
+        buttonSize: 48,
         children: [
           SpeedDialChild(
             onTap: () => context.read<ProfileUsersWatcherBloc>().add(

@@ -46,11 +46,11 @@ class SimpleSquareUserCard extends StatelessWidget {
                     initial: (_) => Container(),
                     actionInProgress: (_) => const CircularProgressIndicator(),
                     follows: (_) {
-                        return Stack(
-                          alignment: Alignment.center,
-                          children: [
-                            CachedNetworkImage(
-                              imageUrl: user.imageURL,
+                      return Stack(
+                        alignment: Alignment.center,
+                        children: [
+                          CachedNetworkImage(
+                            imageUrl: user.imageURL,
                             height: MediaQuery.of(context).size.height * _multiplier,
                             width: MediaQuery.of(context).size.height * _multiplier,
                             fit: BoxFit.cover,
@@ -59,8 +59,8 @@ class SimpleSquareUserCard extends StatelessWidget {
                               child: WorldOnProgressIndicator(),
                             ),
                           ),
-                            Container(
-                              decoration: BoxDecoration(
+                          Container(
+                            decoration: BoxDecoration(
                               color: WorldOnColors.primary.withOpacity(0.25),
                             ),
                             height: MediaQuery.of(context).size.height * _multiplier,
@@ -73,11 +73,11 @@ class SimpleSquareUserCard extends StatelessWidget {
                               ),
                             ),
                           ),
-                          ],
-                        );
-                      },
-                      orElse: () => CachedNetworkImage(
-                        imageUrl: user.imageURL,
+                        ],
+                      );
+                    },
+                    orElse: () => CachedNetworkImage(
+                      imageUrl: user.imageURL,
                       height: MediaQuery.of(context).size.height * _multiplier,
                       width: MediaQuery.of(context).size.height * _multiplier,
                       fit: BoxFit.cover,
@@ -86,7 +86,7 @@ class SimpleSquareUserCard extends StatelessWidget {
                         child: WorldOnProgressIndicator(),
                       ),
                     ),
-                    ),
+                  ),
                 ),
               ),
               Flexible(

@@ -14,8 +14,6 @@ class WorldOnBottomNavigationBar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return AnimatedBottomNavigationBar(
-      // rightCornerRadius: 10,
-      // leftCornerRadius: 10,
       notchSmoothness: NotchSmoothness.defaultEdge,
       notchMargin: 4,
       height: kBottomNavigationBarHeight - 15,

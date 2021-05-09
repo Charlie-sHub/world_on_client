@@ -7,6 +7,7 @@ import 'package:worldon/application/notifications/notification_actor/notificatio
 import 'package:worldon/application/notifications/notifications_watcher/notifications_watcher_bloc.dart';
 import 'package:worldon/generated/l10n.dart';
 import 'package:worldon/injection.dart';
+import 'package:worldon/views/core/misc/world_on_colors.dart';
 import 'package:worldon/views/core/widgets/cards/error_card.dart';
 import 'package:worldon/views/core/widgets/error/error_display.dart';
 import 'package:worldon/views/core/widgets/misc/world_on_progress_indicator.dart';
@@ -42,7 +43,7 @@ class NotificationsBody extends StatelessWidget {
           builder: (context, state) => state.map(
             initial: (_) => Container(),
             loadInProgress: (_) => const WorldOnProgressIndicator(),
-            loadSuccess: (state) => ListView.builder(
+            loadSuccess: (state) => ListView.separated(
               physics: const BouncingScrollPhysics(),
               padding: const EdgeInsets.only(
                 bottom: kFloatingActionButtonMargin + 50,
@@ -51,6 +52,9 @@ class NotificationsBody extends StatelessWidget {
                 top: 10,
               ),
               itemCount: state.notifications.size,
+              separatorBuilder: (context, index) => const Divider(
+                color: WorldOnColors.accent,
+              ),
               itemBuilder: (context, index) {
                 final _notification = state.notifications[index];
                 if (_notification.isValid) {

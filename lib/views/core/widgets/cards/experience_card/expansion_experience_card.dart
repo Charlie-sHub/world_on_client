@@ -60,17 +60,28 @@ class ExpansionExperienceCard extends StatelessWidget {
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          AutoSizeText(
-                            experience.title.getOrCrash(),
-                            style: const TextStyle(
-                              fontSize: 15,
-                              fontWeight: FontWeight.bold,
+                          SizedBox(
+                            height: 40,
+                            child: AutoSizeText(
+                              experience.title.getOrCrash(),
+                              minFontSize: 10,
+                              maxFontSize: 15,
+                              maxLines: 5,
+                              style: const TextStyle(
+                                fontSize: 15,
+                                fontWeight: FontWeight.bold,
+                              ),
                             ),
                           ),
-                          AutoSizeText(
-                            "@${experience.creator.username.getOrCrash()}",
-                            style: const TextStyle(
-                              fontSize: 10,
+                          SizedBox(
+                            height: 15,
+                            child: AutoSizeText(
+                              "@${experience.creator.username.getOrCrash()}",
+                              minFontSize: 7,
+                              maxFontSize: 11,
+                              style: const TextStyle(
+                                fontSize: 10,
+                              ),
                             ),
                           ),
                         ],
