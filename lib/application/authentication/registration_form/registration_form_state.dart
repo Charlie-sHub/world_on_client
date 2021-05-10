@@ -9,11 +9,12 @@ class RegistrationFormState with _$RegistrationFormState {
     required bool showErrorMessages,
     required bool isSubmitting,
     required bool acceptedEULA,
+    required bool initialized,
     required Option<Either<Failure, Unit>> failureOrSuccessOption,
   }) = _RegistrationFormState;
 
   factory RegistrationFormState.initial() => RegistrationFormState(
-        user: User.empty(),
+    user: User.empty(),
         passwordConfirmator: PasswordConfirmator(
           password: "",
           confirmation: "",
@@ -21,7 +22,8 @@ class RegistrationFormState with _$RegistrationFormState {
         passwordToCompare: "",
         showErrorMessages: false,
         isSubmitting: false,
-        // TODO: change this back to false when the actual terms and conditions have ben created
+        initialized: false,
+        // TODO: change this back to false when the actual terms and conditions have been created
         acceptedEULA: true,
         failureOrSuccessOption: none(),
       );

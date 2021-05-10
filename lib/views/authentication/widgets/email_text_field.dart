@@ -6,17 +6,20 @@ import 'package:worldon/views/core/misc/world_on_colors.dart';
 class EmailTextField extends StatelessWidget {
   final Function eventToAdd;
   final Validator<String> validator;
+  final String? initialValue;
 
   const EmailTextField({
     Key? key,
     required this.eventToAdd,
     required this.validator,
+    this.initialValue,
   }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return TextFormField(
       onChanged: (value) => eventToAdd(value.trim()),
+      initialValue: initialValue,
       validator: (_) => validator(_!),
       autocorrect: false,
       decoration: InputDecoration(

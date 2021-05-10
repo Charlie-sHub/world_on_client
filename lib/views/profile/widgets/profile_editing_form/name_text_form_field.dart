@@ -5,12 +5,12 @@ import 'package:worldon/domain/core/validation/objects/name.dart';
 import 'package:worldon/generated/l10n.dart';
 
 class NameTextFormField extends StatelessWidget {
-  final String initialValue;
-
   const NameTextFormField({
     Key? key,
     required this.initialValue,
   }) : super(key: key);
+
+  final String initialValue;
 
   @override
   Widget build(BuildContext context) {

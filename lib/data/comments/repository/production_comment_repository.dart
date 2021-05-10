@@ -70,7 +70,15 @@ class ProductionCommentRepository implements CommentRepositoryInterface {
   Future<Either<Failure, Unit>> postComment(Comment comment) async {
     try {
       final _commentDto = CommentDto.fromDomain(comment);
-      await _firestore.experienceCollection.doc(_commentDto.experienceId).commentCollection.doc(comment.id.getOrCrash()).set(
+      await _firestore.experienceCollection
+          .doc(
+            _commentDto.experienceId,
+          )
+          .commentCollection
+          .doc(
+            comment.id.getOrCrash(),
+          )
+          .set(
             _commentDto.toJson(),
           );
       return right(unit);
@@ -83,7 +91,15 @@ class ProductionCommentRepository implements CommentRepositoryInterface {
   Future<Either<Failure, Unit>> editComment(Comment comment) async {
     try {
       final _commentDto = CommentDto.fromDomain(comment);
-      await _firestore.experienceCollection.doc(_commentDto.experienceId).commentCollection.doc(comment.id.getOrCrash()).update(
+      await _firestore.experienceCollection
+          .doc(
+            _commentDto.experienceId,
+          )
+          .commentCollection
+          .doc(
+            comment.id.getOrCrash(),
+          )
+          .update(
             _commentDto.toJson(),
           );
       return right(unit);
@@ -93,15 +109,25 @@ class ProductionCommentRepository implements CommentRepositoryInterface {
   }
 
   @override
-  Future<Either<Failure, Unit>> removeComment(UniqueId id) {
-    // TODO: implement removeComment
-    // Seems it needs the experience id too, to get the experience doc and from there the comments collection
-    throw UnimplementedError();
+  Future<Either<Failure, Unit>> removeComment(UniqueId experienceId, UniqueId commentId) async {
+    try {
+      await _firestore.experienceCollection
+          .doc(
+            experienceId.getOrCrash(),
+          )
+          .commentCollection
+          .doc(
+            commentId.getOrCrash(),
+          )
+          .delete();
+      return right(unit);
+    } on FirebaseException catch (e) {
+      return onFirebaseException(e);
+    }
   }
 
   @override
   Stream<Either<Failure, KtSet<Comment>>> watchUserComments(UniqueId userId) {
-    // TODO: implement getUserComments
     throw UnimplementedError();
   }
 

@@ -11,8 +11,9 @@ abstract class CommentRepositoryInterface {
   /// Sends a [Comment] to the server to be saved
   Future<Either<Failure, Unit>> postComment(Comment comment);
 
-  /// Sends an id to the server to it removes the [Comment] associated with it
-  Future<Either<Failure, Unit>> removeComment(UniqueId id);
+  /// Sends the [UniqueId]s of the comment and the experience its part of to the server
+  /// to remove [Comment] associated with it
+  Future<Either<Failure, Unit>> removeComment(UniqueId experienceId, UniqueId commentId);
 
   /// Sends a modified [Comment] to the server so the changes are saved
   Future<Either<Failure, Unit>> editComment(Comment comment);

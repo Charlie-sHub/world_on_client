@@ -502,12 +502,18 @@ class _$LogInFormStateTearOff {
   const _$LogInFormStateTearOff();
 
   _LogInFormState call(
-      {required EmailAddress email, required Password password, required bool showErrorMessages, required bool isSubmitting, required Option<Either<Failure, Unit>> failureOrSuccessOption}) {
+      {required EmailAddress email,
+      required Password password,
+      required bool showErrorMessages,
+      required bool isSubmitting,
+      required Option<User> thirdPartyUserOption,
+      required Option<Either<Failure, Unit>> failureOrSuccessOption}) {
     return _LogInFormState(
       email: email,
       password: password,
       showErrorMessages: showErrorMessages,
       isSubmitting: isSubmitting,
+      thirdPartyUserOption: thirdPartyUserOption,
       failureOrSuccessOption: failureOrSuccessOption,
     );
   }
@@ -526,6 +532,8 @@ mixin _$LogInFormState {
 
   bool get isSubmitting => throw _privateConstructorUsedError;
 
+  Option<User> get thirdPartyUserOption => throw _privateConstructorUsedError;
+
   Option<Either<Failure, Unit>> get failureOrSuccessOption => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
@@ -536,7 +544,7 @@ mixin _$LogInFormState {
 abstract class $LogInFormStateCopyWith<$Res> {
   factory $LogInFormStateCopyWith(LogInFormState value, $Res Function(LogInFormState) then) = _$LogInFormStateCopyWithImpl<$Res>;
 
-  $Res call({EmailAddress email, Password password, bool showErrorMessages, bool isSubmitting, Option<Either<Failure, Unit>> failureOrSuccessOption});
+  $Res call({EmailAddress email, Password password, bool showErrorMessages, bool isSubmitting, Option<User> thirdPartyUserOption, Option<Either<Failure, Unit>> failureOrSuccessOption});
 }
 
 /// @nodoc
@@ -554,6 +562,7 @@ class _$LogInFormStateCopyWithImpl<$Res> implements $LogInFormStateCopyWith<$Res
     Object? password = freezed,
     Object? showErrorMessages = freezed,
     Object? isSubmitting = freezed,
+    Object? thirdPartyUserOption = freezed,
     Object? failureOrSuccessOption = freezed,
   }) {
     return _then(_value.copyWith(
@@ -573,6 +582,10 @@ class _$LogInFormStateCopyWithImpl<$Res> implements $LogInFormStateCopyWith<$Res
           ? _value.isSubmitting
           : isSubmitting // ignore: cast_nullable_to_non_nullable
               as bool,
+      thirdPartyUserOption: thirdPartyUserOption == freezed
+          ? _value.thirdPartyUserOption
+          : thirdPartyUserOption // ignore: cast_nullable_to_non_nullable
+              as Option<User>,
       failureOrSuccessOption: failureOrSuccessOption == freezed
           ? _value.failureOrSuccessOption
           : failureOrSuccessOption // ignore: cast_nullable_to_non_nullable
@@ -586,7 +599,7 @@ abstract class _$LogInFormStateCopyWith<$Res> implements $LogInFormStateCopyWith
   factory _$LogInFormStateCopyWith(_LogInFormState value, $Res Function(_LogInFormState) then) = __$LogInFormStateCopyWithImpl<$Res>;
 
   @override
-  $Res call({EmailAddress email, Password password, bool showErrorMessages, bool isSubmitting, Option<Either<Failure, Unit>> failureOrSuccessOption});
+  $Res call({EmailAddress email, Password password, bool showErrorMessages, bool isSubmitting, Option<User> thirdPartyUserOption, Option<Either<Failure, Unit>> failureOrSuccessOption});
 }
 
 /// @nodoc
@@ -602,6 +615,7 @@ class __$LogInFormStateCopyWithImpl<$Res> extends _$LogInFormStateCopyWithImpl<$
     Object? password = freezed,
     Object? showErrorMessages = freezed,
     Object? isSubmitting = freezed,
+    Object? thirdPartyUserOption = freezed,
     Object? failureOrSuccessOption = freezed,
   }) {
     return _then(_LogInFormState(
@@ -621,6 +635,10 @@ class __$LogInFormStateCopyWithImpl<$Res> extends _$LogInFormStateCopyWithImpl<$
           ? _value.isSubmitting
           : isSubmitting // ignore: cast_nullable_to_non_nullable
               as bool,
+      thirdPartyUserOption: thirdPartyUserOption == freezed
+          ? _value.thirdPartyUserOption
+          : thirdPartyUserOption // ignore: cast_nullable_to_non_nullable
+              as Option<User>,
       failureOrSuccessOption: failureOrSuccessOption == freezed
           ? _value.failureOrSuccessOption
           : failureOrSuccessOption // ignore: cast_nullable_to_non_nullable
@@ -632,7 +650,8 @@ class __$LogInFormStateCopyWithImpl<$Res> extends _$LogInFormStateCopyWithImpl<$
 /// @nodoc
 
 class _$_LogInFormState implements _LogInFormState {
-  const _$_LogInFormState({required this.email, required this.password, required this.showErrorMessages, required this.isSubmitting, required this.failureOrSuccessOption});
+  const _$_LogInFormState(
+      {required this.email, required this.password, required this.showErrorMessages, required this.isSubmitting, required this.thirdPartyUserOption, required this.failureOrSuccessOption});
 
   @override
   final EmailAddress email;
@@ -643,11 +662,13 @@ class _$_LogInFormState implements _LogInFormState {
   @override
   final bool isSubmitting;
   @override
+  final Option<User> thirdPartyUserOption;
+  @override
   final Option<Either<Failure, Unit>> failureOrSuccessOption;
 
   @override
   String toString() {
-    return 'LogInFormState(email: $email, password: $password, showErrorMessages: $showErrorMessages, isSubmitting: $isSubmitting, failureOrSuccessOption: $failureOrSuccessOption)';
+    return 'LogInFormState(email: $email, password: $password, showErrorMessages: $showErrorMessages, isSubmitting: $isSubmitting, thirdPartyUserOption: $thirdPartyUserOption, failureOrSuccessOption: $failureOrSuccessOption)';
   }
 
   @override
@@ -658,6 +679,7 @@ class _$_LogInFormState implements _LogInFormState {
             (identical(other.password, password) || const DeepCollectionEquality().equals(other.password, password)) &&
             (identical(other.showErrorMessages, showErrorMessages) || const DeepCollectionEquality().equals(other.showErrorMessages, showErrorMessages)) &&
             (identical(other.isSubmitting, isSubmitting) || const DeepCollectionEquality().equals(other.isSubmitting, isSubmitting)) &&
+            (identical(other.thirdPartyUserOption, thirdPartyUserOption) || const DeepCollectionEquality().equals(other.thirdPartyUserOption, thirdPartyUserOption)) &&
             (identical(other.failureOrSuccessOption, failureOrSuccessOption) || const DeepCollectionEquality().equals(other.failureOrSuccessOption, failureOrSuccessOption)));
   }
 
@@ -668,6 +690,7 @@ class _$_LogInFormState implements _LogInFormState {
       const DeepCollectionEquality().hash(password) ^
       const DeepCollectionEquality().hash(showErrorMessages) ^
       const DeepCollectionEquality().hash(isSubmitting) ^
+      const DeepCollectionEquality().hash(thirdPartyUserOption) ^
       const DeepCollectionEquality().hash(failureOrSuccessOption);
 
   @JsonKey(ignore: true)
@@ -681,17 +704,23 @@ abstract class _LogInFormState implements LogInFormState {
       required Password password,
       required bool showErrorMessages,
       required bool isSubmitting,
+      required Option<User> thirdPartyUserOption,
       required Option<Either<Failure, Unit>> failureOrSuccessOption}) = _$_LogInFormState;
 
   @override
   EmailAddress get email => throw _privateConstructorUsedError;
+
   @override
   Password get password => throw _privateConstructorUsedError;
+
   @override
   bool get showErrorMessages => throw _privateConstructorUsedError;
 
   @override
   bool get isSubmitting => throw _privateConstructorUsedError;
+
+  @override
+  Option<User> get thirdPartyUserOption => throw _privateConstructorUsedError;
 
   @override
   Option<Either<Failure, Unit>> get failureOrSuccessOption => throw _privateConstructorUsedError;

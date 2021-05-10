@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 
 abstract class WorldOnColors {
   static const background = Color(0xFFF8F9FA);
-  static const primary = Color(0xFFffb300);
+  static const primary = Color(0xFFFFB900);
   static const accent = Color(0xFF302B27);
 
   // Gotta give these better names

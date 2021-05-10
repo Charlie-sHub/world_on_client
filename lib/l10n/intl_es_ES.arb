@@ -197,5 +197,10 @@
   "times": "veces",
   "noActivePlan": "No tienes un plan promocional activo",
   "unAvailableStore": "La compra no es posible para ti",
-  "cancel": "Cancelar"
+  "cancel": "Cancelar",
+  "optional": "Opcional",
+  "followedYou": "te sigue",
+  "unfollowedYou": "te dejo de seguir",
+  "blockedYou": "te bloqueo",
+  "unblockedYou": "te desbloqueo"
 }

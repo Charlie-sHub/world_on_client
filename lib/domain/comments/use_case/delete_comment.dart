@@ -25,9 +25,16 @@ class DeleteComment implements AsyncUseCase<Unit, Params> {
     );
     final _isAuthorized = _userRequesting == params.comment.poster || _userRequesting.adminPowers;
     if (_isAuthorized) {
-      return _repository.removeComment(params.comment.id);
+      return _repository.removeComment(
+        params.comment.experienceId,
+        params.comment.id,
+      );
     } else {
-      return left(const Failure.coreDomain(CoreDomainFailure.unAuthorizedError()));
+      return left(
+        const Failure.coreDomain(
+          CoreDomainFailure.unAuthorizedError(),
+        ),
+      );
     }
   }
 }

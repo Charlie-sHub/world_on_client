@@ -1,5 +1,6 @@
 import 'package:another_flushbar/flushbar_helper.dart';
 import 'package:auto_route/auto_route.dart';
+import 'package:dartz/dartz.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:worldon/application/authentication/authentication/authentication_bloc.dart';
@@ -18,12 +19,17 @@ class LogInPage extends StatelessWidget {
         body: BlocProvider(
           create: (context) => getIt<LogInFormBloc>(),
           child: BlocConsumer<LogInFormBloc, LogInFormState>(
-            listenWhen: (previous, current) => previous.failureOrSuccessOption != current.failureOrSuccessOption,
-            listener: (context, state) => state.failureOrSuccessOption.fold(
-              () {},
-              (either) => either.fold(
-                (failure) => _onFailure(failure, context),
-                (_) => _onSuccess(context),
+            listenWhen: (previous, current) => previous.failureOrSuccessOption != current.failureOrSuccessOption || current.thirdPartyUserOption.isSome(),
+            listener: (context, state) => state.thirdPartyUserOption.fold(
+              () => state.failureOrSuccessOption.fold(
+                () {},
+                (either) => either.fold(
+                  (failure) => _onFailure(failure, context),
+                  (_) => _onSuccess(context),
+                ),
+              ),
+              (_thirdPartyUser) => context.router.push(
+                RegistrationPageRoute(userOption: some(_thirdPartyUser)),
               ),
             ),
             buildWhen: (previous, current) => previous.showErrorMessages != current.showErrorMessages,
@@ -35,7 +41,6 @@ class LogInPage extends StatelessWidget {
   }
 
   Future _onFailure(Failure failure, BuildContext context) {
-    bool unregistered = false;
     return FlushbarHelper.createError(
       duration: const Duration(seconds: 2),
       message: failure.maybeMap(
@@ -44,10 +49,7 @@ class LogInPage extends StatelessWidget {
         ),
         authenticationData: (failure) => failure.authenticationDataFailure.map(
           invalidCredentials: (_) => S.of(context).invalidCredentials,
-          unregisteredUser: (_) {
-            unregistered = true;
-            return S.of(context).unregisteredUser;
-          },
+          unregisteredUser: (_) => S.of(context).unregisteredUser,
         ),
         coreData: (failure) => failure.coreDataFailure.maybeMap(
           serverError: (failure) => failure.errorString,
@@ -59,13 +61,7 @@ class LogInPage extends StatelessWidget {
         ),
         orElse: () => S.of(context).unknownError,
       ),
-    ).show(context).then(
-      (value) {
-        if (unregistered) {
-          context.router.push(const RegistrationPageRoute());
-        }
-      },
-    );
+    ).show(context);
   }
 
   void _onSuccess(BuildContext context) {

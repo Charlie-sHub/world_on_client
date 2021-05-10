@@ -17,18 +17,12 @@ class LogInButton extends StatelessWidget {
           ),
       style: ButtonStyle(
         backgroundColor: MaterialStateProperty.all(
-          WorldOnColors.background,
-        ),
-        shape: MaterialStateProperty.all(
-          const RoundedRectangleBorder(
-            side: BorderSide(color: WorldOnColors.primary),
-          ),
+          WorldOnColors.primary,
         ),
       ),
       child: Text(
         S.of(context).logIn,
         style: const TextStyle(
-          color: WorldOnColors.primary,
           fontSize: 20,
         ),
       ),

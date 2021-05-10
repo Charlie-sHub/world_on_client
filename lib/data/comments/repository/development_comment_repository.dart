@@ -29,7 +29,7 @@ class DevelopmentCommentRepository implements CommentRepositoryInterface {
   }
 
   @override
-  Future<Either<Failure, Unit>> removeComment(UniqueId id) {
+  Future<Either<Failure, Unit>> removeComment(UniqueId experienceId, UniqueId commentId) {
     throw UnimplementedError();
   }
 }

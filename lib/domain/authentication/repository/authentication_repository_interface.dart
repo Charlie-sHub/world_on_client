@@ -10,13 +10,11 @@ abstract class AuthenticationRepositoryInterface {
   /// Sends a [User] object with only username and password to login in the server.
   Future<Either<Failure, Unit>> logIn(User user);
 
-  /// Calls the Google sign in API to register a new [User].
-  // TODO: Check if this is necessary
-  // Not sure if this is necessary though, maybe it'd be better to use logInGoogle to get some of the credentials and then normal register
-  Future<Either<Failure, Unit>> registerGoogle();
-
   /// Calls the Google sign in API to login into the app.
-  Future<Either<Failure, Unit>> logInGoogle();
+  /// If the user logs in with google but doesn't have a World On Account
+  /// an [User] will be returned with the data from google
+  /// with the intention of using it to register normally first
+  Future<Either<Failure, Option<User>>> logInGoogle();
 
   /// Gets the [User] currently logged in
   Future<Option<User>> getLoggedInUser();

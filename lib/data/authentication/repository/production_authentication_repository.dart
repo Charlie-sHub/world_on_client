@@ -18,6 +18,7 @@ import 'package:worldon/domain/authentication/failures/authentication_domain_fai
 import 'package:worldon/domain/authentication/repository/authentication_repository_interface.dart';
 import 'package:worldon/domain/core/entities/user/user.dart' as entity;
 import 'package:worldon/domain/core/validation/objects/email_address.dart';
+import 'package:worldon/domain/core/validation/objects/name.dart';
 import 'package:worldon/domain/core/validation/objects/unique_id.dart';
 import 'package:worldon/injection.dart';
 
@@ -112,7 +113,7 @@ class ProductionAuthenticationRepository implements AuthenticationRepositoryInte
   }
 
   @override
-  Future<Either<Failure, Unit>> logInGoogle() async {
+  Future<Either<Failure, Option<entity.User>>> logInGoogle() async {
     try {
       final _googleUser = await _googleSignIn.signIn();
       if (_googleUser == null) {
@@ -135,13 +136,15 @@ class ProductionAuthenticationRepository implements AuthenticationRepositoryInte
           accessToken: _googleAuthentication.accessToken,
         );
         await _firebaseAuth.signInWithCredential(_authenticationCredential);
-        return right(unit);
+        return right(none());
       } else {
-        return left(
-          const Failure.authenticationData(
-            AuthenticationDataFailure.unregisteredUser(),
-          ),
+        final _user = entity.User.empty().copyWith(
+          name: Name(_googleUser.displayName ?? ""),
+          username: Name(_googleUser.displayName ?? ""),
+          email: EmailAddress(_googleUser.email),
+          imageURL: _googleUser.photoUrl ?? "",
         );
+        return right(some(_user));
       }
     } on FirebaseAuthException catch (_) {
       return left(
@@ -159,8 +162,6 @@ class ProductionAuthenticationRepository implements AuthenticationRepositoryInte
     }
   }
 
-  // TODO: Make it so no internet connections prohibits logging in
-  // Currently the cache can still hold a deleted user, that can give problems if the user logs back in
   @override
   Future<Option<entity.User>> getLoggedInUser() async {
     final _firebaseCurrentUser = _firebaseAuth.currentUser;
@@ -177,10 +178,4 @@ class ProductionAuthenticationRepository implements AuthenticationRepositoryInte
         _googleSignIn.signOut(),
         _firebaseAuth.signOut(),
       ]);
-
-  @override
-  Future<Either<Failure, Unit>> registerGoogle() {
-    // TODO: implement registerGoogle
-    throw UnimplementedError();
-  }
 }

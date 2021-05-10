@@ -27,12 +27,7 @@ class DevelopmentAuthenticationRepository implements AuthenticationRepositoryInt
   }
 
   @override
-  Future<Either<Failure, Unit>> logInGoogle() {
-    throw UnimplementedError();
-  }
-
-  @override
-  Future<Either<Failure, Unit>> registerGoogle() {
+  Future<Either<Failure, Option<User>>> logInGoogle() {
     throw UnimplementedError();
   }
 }

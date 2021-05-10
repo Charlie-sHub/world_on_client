@@ -8,6 +8,7 @@ import 'package:meta/meta.dart';
 import 'package:worldon/core/error/failure.dart';
 import 'package:worldon/domain/authentication/use_case/log_in.dart';
 import 'package:worldon/domain/authentication/use_case/log_in_google.dart';
+import 'package:worldon/domain/core/entities/user/user.dart';
 import 'package:worldon/domain/core/use_case/use_case.dart';
 import 'package:worldon/domain/core/validation/objects/email_address.dart';
 import 'package:worldon/domain/core/validation/objects/password.dart';
@@ -37,9 +38,16 @@ class LogInFormBloc extends Bloc<LogInFormEvent, LogInFormState> {
       failureOrSuccessOption: none(),
     );
     final _failureOrSuccess = await getIt<LogInGoogle>()(getIt<NoParams>());
-    yield state.copyWith(
-      isSubmitting: false,
-      failureOrSuccessOption: some(_failureOrSuccess),
+    yield _failureOrSuccess.fold(
+      (_failure) => state.copyWith(
+        isSubmitting: false,
+        failureOrSuccessOption: some(left(_failure)),
+      ),
+      (_userOption) => state.copyWith(
+        isSubmitting: false,
+        thirdPartyUserOption: _userOption,
+        failureOrSuccessOption: none(),
+      ),
     );
   }
 

@@ -197,5 +197,10 @@
   "times": "times",
   "noActivePlan": "You don't have an active promotion plan",
   "unAvailableStore": "The store is unavailable to you",
-  "cancel": "Cancel"
+  "cancel": "Cancel",
+  "optional": "Optional",
+  "followedYou": "followed you",
+  "unfollowedYou": "unfollowed you",
+  "blockedYou": "blocked you",
+  "unblockedYou": "unblocked you"
 }

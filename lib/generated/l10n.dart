@@ -2026,6 +2026,56 @@ class S {
       args: [],
     );
   }
+
+  /// `Optional`
+  String get optional {
+    return Intl.message(
+      'Optional',
+      name: 'optional',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `followed you`
+  String get followedYou {
+    return Intl.message(
+      'followed you',
+      name: 'followedYou',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `unfollowed you`
+  String get unfollowedYou {
+    return Intl.message(
+      'unfollowed you',
+      name: 'unfollowedYou',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `blocked you`
+  String get blockedYou {
+    return Intl.message(
+      'blocked you',
+      name: 'blockedYou',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `unblocked you`
+  String get unblockedYou {
+    return Intl.message(
+      'unblocked you',
+      name: 'unblockedYou',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

@@ -7,6 +7,7 @@ class LogInFormState with _$LogInFormState {
     required Password password,
     required bool showErrorMessages,
     required bool isSubmitting,
+    required Option<User> thirdPartyUserOption,
     required Option<Either<Failure, Unit>> failureOrSuccessOption,
   }) = _LogInFormState;
 
@@ -15,6 +16,7 @@ class LogInFormState with _$LogInFormState {
         password: Password(""),
         showErrorMessages: false,
         isSubmitting: false,
+        thirdPartyUserOption: none(),
         failureOrSuccessOption: none(),
       );
 }

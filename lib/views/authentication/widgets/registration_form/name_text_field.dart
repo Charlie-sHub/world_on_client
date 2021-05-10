@@ -1,4 +1,3 @@
-import 'package:dartz/dartz.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:worldon/application/authentication/registration_form/registration_form_bloc.dart';
@@ -9,12 +8,16 @@ import 'package:worldon/views/core/misc/world_on_colors.dart';
 class NameTextField extends StatelessWidget {
   const NameTextField({
     Key? key,
+    required this.initialValue,
   }) : super(key: key);
+
+  final String? initialValue;
 
   @override
   Widget build(BuildContext context) {
     return TextFormField(
       maxLength: Name.maxLength,
+      initialValue: initialValue,
       onChanged: (value) => context.read<RegistrationFormBloc>().add(
             RegistrationFormEvent.nameChanged(value.trim()),
           ),
@@ -27,10 +30,6 @@ class NameTextField extends StatelessWidget {
               orElse: () => S.of(context).unknownError,
             ),
             (_) => null,
-          ),
-      initialValue: context.read<RegistrationFormBloc>().state.user.name.value.fold(
-            (_) => "",
-            id,
           ),
       autocorrect: false,
       decoration: InputDecoration(

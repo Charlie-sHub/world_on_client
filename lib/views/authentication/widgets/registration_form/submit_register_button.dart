@@ -19,16 +19,10 @@ class SubmitRegisterButton extends StatelessWidget {
         backgroundColor: MaterialStateProperty.all(
           WorldOnColors.primary,
         ),
-        shape: MaterialStateProperty.all(
-          const RoundedRectangleBorder(
-            side: BorderSide(color: WorldOnColors.primary),
-          ),
-        ),
       ),
       child: Text(
         S.of(context).submitRegister,
         style: const TextStyle(
-          color: WorldOnColors.background,
           fontSize: 20,
         ),
       ),

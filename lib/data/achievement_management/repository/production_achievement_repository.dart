@@ -13,37 +13,31 @@ class ProductionAchievementRepository implements AchievementRepositoryInterface 
     required UniqueId achievementId,
     required UniqueId userId,
   }) {
-    // TODO: implement awardAchievement
     throw UnimplementedError();
   }
 
   @override
   Future<Either<Failure, Unit>> createAchievement(Achievement achievement) {
-    // TODO: implement createAchievement
     throw UnimplementedError();
   }
 
   @override
   Future<Either<Failure, Unit>> editAchievement(Achievement achievement) {
-    // TODO: implement editAchievement
     throw UnimplementedError();
   }
 
   @override
   Future<Either<Failure, Achievement>> getAchievement(UniqueId ac) {
-    // TODO: implement getAchievement
     throw UnimplementedError();
   }
 
   @override
   Stream<Either<Failure, KtList<Achievement>>> watchAllAchievements() {
-    // TODO: implement getAllAchievement
     throw UnimplementedError();
   }
 
   @override
   Future<Either<Failure, Unit>> removeAchievement(UniqueId ac) {
-    // TODO: implement removeAchievement
     throw UnimplementedError();
   }
 }

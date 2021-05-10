@@ -5,12 +5,12 @@
 // **************************************************************************
 
 import 'package:auto_route/auto_route.dart' as _i1;
-import 'package:dartz/dartz.dart' as _i13;
+import 'package:dartz/dartz.dart' as _i12;
 import 'package:flutter/material.dart' as _i2;
 
 import '../../../domain/core/entities/experience/experience.dart' as _i14;
 import '../../../domain/core/entities/tag/tag.dart' as _i15;
-import '../../../domain/core/entities/user/user.dart' as _i12;
+import '../../../domain/core/entities/user/user.dart' as _i13;
 import '../../authentication/pages/log_in_page.dart' as _i4;
 import '../../authentication/pages/registration_page.dart' as _i5;
 import '../../experience_management/pages/experience_management_page.dart' as _i9;
@@ -37,9 +37,10 @@ class AppRouter extends _i1.RootStackRouter {
           return _i4.LogInPage();
         }),
     RegistrationPageRoute.name: (routeData) => _i1.MaterialPageX<dynamic>(
-        routeData: routeData,
-        builder: (_) {
-          return _i5.RegistrationPage();
+      routeData: routeData,
+        builder: (data) {
+          final args = data.argsAs<RegistrationPageRouteArgs>();
+          return _i5.RegistrationPage(key: args.key, userOption: args.userOption);
         }),
     WelcomePageRoute.name: (routeData) => _i1.MaterialPageX<dynamic>(
         routeData: routeData,
@@ -80,7 +81,8 @@ class AppRouter extends _i1.RootStackRouter {
   };
 
   @override
-  List<_i1.RouteConfig> get routes => [
+  List<_i1.RouteConfig> get routes =>
+    [
         _i1.RouteConfig(SplashPageRoute.name, path: '/'),
         _i1.RouteConfig(LogInPageRoute.name, path: '/log-in-page'),
         _i1.RouteConfig(RegistrationPageRoute.name, path: '/registration-page'),
@@ -105,10 +107,18 @@ class LogInPageRoute extends _i1.PageRouteInfo {
   static const String name = 'LogInPageRoute';
 }
 
-class RegistrationPageRoute extends _i1.PageRouteInfo {
-  const RegistrationPageRoute() : super(name, path: '/registration-page');
+class RegistrationPageRoute extends _i1.PageRouteInfo<RegistrationPageRouteArgs> {
+  RegistrationPageRoute({_i2.Key? key, required _i12.Option<_i13.User> userOption}) : super(name, path: '/registration-page', args: RegistrationPageRouteArgs(key: key, userOption: userOption));
 
   static const String name = 'RegistrationPageRoute';
+}
+
+class RegistrationPageRouteArgs {
+  const RegistrationPageRouteArgs({this.key, required this.userOption});
+
+  final _i2.Key? key;
+
+  final _i12.Option<_i13.User> userOption;
 }
 
 class WelcomePageRoute extends _i1.PageRouteInfo {
@@ -124,7 +134,7 @@ class MainPageRoute extends _i1.PageRouteInfo {
 }
 
 class ProfileEditingPageRoute extends _i1.PageRouteInfo<ProfileEditingPageRouteArgs> {
-  ProfileEditingPageRoute({_i2.Key? key, required _i12.User user}) : super(name, path: '/profile-editing-page', args: ProfileEditingPageRouteArgs(key: key, user: user));
+  ProfileEditingPageRoute({_i2.Key? key, required _i13.User user}) : super(name, path: '/profile-editing-page', args: ProfileEditingPageRouteArgs(key: key, user: user));
 
   static const String name = 'ProfileEditingPageRoute';
 }
@@ -134,11 +144,11 @@ class ProfileEditingPageRouteArgs {
 
   final _i2.Key? key;
 
-  final _i12.User user;
+  final _i13.User user;
 }
 
 class ExperienceManagementPageRoute extends _i1.PageRouteInfo<ExperienceManagementPageRouteArgs> {
-  ExperienceManagementPageRoute({_i2.Key? key, required _i13.Option<_i14.Experience> experienceOption})
+  ExperienceManagementPageRoute({_i2.Key? key, required _i12.Option<_i14.Experience> experienceOption})
       : super(name, path: '/experience-management-page', args: ExperienceManagementPageRouteArgs(key: key, experienceOption: experienceOption));
 
   static const String name = 'ExperienceManagementPageRoute';
@@ -149,11 +159,11 @@ class ExperienceManagementPageRouteArgs {
 
   final _i2.Key? key;
 
-  final _i13.Option<_i14.Experience> experienceOption;
+  final _i12.Option<_i14.Experience> experienceOption;
 }
 
 class TagManagementPageRoute extends _i1.PageRouteInfo<TagManagementPageRouteArgs> {
-  TagManagementPageRoute({_i2.Key? key, required _i13.Option<_i15.Tag> tagOption}) : super(name, path: '/tag-management-page', args: TagManagementPageRouteArgs(key: key, tagOption: tagOption));
+  TagManagementPageRoute({_i2.Key? key, required _i12.Option<_i15.Tag> tagOption}) : super(name, path: '/tag-management-page', args: TagManagementPageRouteArgs(key: key, tagOption: tagOption));
 
   static const String name = 'TagManagementPageRoute';
 }
@@ -163,7 +173,7 @@ class TagManagementPageRouteArgs {
 
   final _i2.Key? key;
 
-  final _i13.Option<_i15.Tag> tagOption;
+  final _i12.Option<_i15.Tag> tagOption;
 }
 
 class StorePageRoute extends _i1.PageRouteInfo {

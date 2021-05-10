@@ -16,8 +16,10 @@ final _privateConstructorUsedError = UnsupportedError(
 class _$RegistrationFormEventTearOff {
   const _$RegistrationFormEventTearOff();
 
-  _Initialized initialized() {
-    return const _Initialized();
+  _Initialized initialized(Option<User> userOption) {
+    return _Initialized(
+      userOption,
+    );
   }
 
   _ImageChanged imageChanged(File imageFile) {
@@ -90,7 +92,7 @@ const $RegistrationFormEvent = _$RegistrationFormEventTearOff();
 mixin _$RegistrationFormEvent {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function() initialized,
+    required TResult Function(Option<User> userOption) initialized,
     required TResult Function(File imageFile) imageChanged,
     required TResult Function(String name) nameChanged,
     required TResult Function(String username) usernameChanged,
@@ -106,7 +108,7 @@ mixin _$RegistrationFormEvent {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? initialized,
+    TResult Function(Option<User> userOption)? initialized,
     TResult Function(File imageFile)? imageChanged,
     TResult Function(String name)? nameChanged,
     TResult Function(String username)? usernameChanged,
@@ -174,6 +176,8 @@ class _$RegistrationFormEventCopyWithImpl<$Res> implements $RegistrationFormEven
 /// @nodoc
 abstract class _$InitializedCopyWith<$Res> {
   factory _$InitializedCopyWith(_Initialized value, $Res Function(_Initialized) then) = __$InitializedCopyWithImpl<$Res>;
+
+  $Res call({Option<User> userOption});
 }
 
 /// @nodoc
@@ -182,30 +186,49 @@ class __$InitializedCopyWithImpl<$Res> extends _$RegistrationFormEventCopyWithIm
 
   @override
   _Initialized get _value => super._value as _Initialized;
+
+  @override
+  $Res call({
+    Object? userOption = freezed,
+  }) {
+    return _then(_Initialized(
+      userOption == freezed
+          ? _value.userOption
+          : userOption // ignore: cast_nullable_to_non_nullable
+              as Option<User>,
+    ));
+  }
 }
 
 /// @nodoc
 
 class _$_Initialized implements _Initialized {
-  const _$_Initialized();
+  const _$_Initialized(this.userOption);
+
+  @override
+  final Option<User> userOption;
 
   @override
   String toString() {
-    return 'RegistrationFormEvent.initialized()';
+    return 'RegistrationFormEvent.initialized(userOption: $userOption)';
   }
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _Initialized);
+    return identical(this, other) || (other is _Initialized && (identical(other.userOption, userOption) || const DeepCollectionEquality().equals(other.userOption, userOption)));
   }
 
   @override
-  int get hashCode => runtimeType.hashCode;
+  int get hashCode => runtimeType.hashCode ^ const DeepCollectionEquality().hash(userOption);
+
+  @JsonKey(ignore: true)
+  @override
+  _$InitializedCopyWith<_Initialized> get copyWith => __$InitializedCopyWithImpl<_Initialized>(this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function() initialized,
+    required TResult Function(Option<User> userOption) initialized,
     required TResult Function(File imageFile) imageChanged,
     required TResult Function(String name) nameChanged,
     required TResult Function(String username) usernameChanged,
@@ -218,13 +241,13 @@ class _$_Initialized implements _Initialized {
     required TResult Function() tappedEULA,
     required TResult Function() submitted,
   }) {
-    return initialized();
+    return initialized(userOption);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? initialized,
+    TResult Function(Option<User> userOption)? initialized,
     TResult Function(File imageFile)? imageChanged,
     TResult Function(String name)? nameChanged,
     TResult Function(String username)? usernameChanged,
@@ -239,7 +262,7 @@ class _$_Initialized implements _Initialized {
     required TResult orElse(),
   }) {
     if (initialized != null) {
-      return initialized();
+      return initialized(userOption);
     }
     return orElse();
   }
@@ -288,7 +311,12 @@ class _$_Initialized implements _Initialized {
 }
 
 abstract class _Initialized implements RegistrationFormEvent {
-  const factory _Initialized() = _$_Initialized;
+  const factory _Initialized(Option<User> userOption) = _$_Initialized;
+
+  Option<User> get userOption => throw _privateConstructorUsedError;
+
+  @JsonKey(ignore: true)
+  _$InitializedCopyWith<_Initialized> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -346,7 +374,7 @@ class _$_ImageChanged implements _ImageChanged {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function() initialized,
+    required TResult Function(Option<User> userOption) initialized,
     required TResult Function(File imageFile) imageChanged,
     required TResult Function(String name) nameChanged,
     required TResult Function(String username) usernameChanged,
@@ -365,7 +393,7 @@ class _$_ImageChanged implements _ImageChanged {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? initialized,
+    TResult Function(Option<User> userOption)? initialized,
     TResult Function(File imageFile)? imageChanged,
     TResult Function(String name)? nameChanged,
     TResult Function(String username)? usernameChanged,
@@ -492,7 +520,7 @@ class _$_NameChanged implements _NameChanged {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function() initialized,
+    required TResult Function(Option<User> userOption) initialized,
     required TResult Function(File imageFile) imageChanged,
     required TResult Function(String name) nameChanged,
     required TResult Function(String username) usernameChanged,
@@ -511,7 +539,7 @@ class _$_NameChanged implements _NameChanged {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? initialized,
+    TResult Function(Option<User> userOption)? initialized,
     TResult Function(File imageFile)? imageChanged,
     TResult Function(String name)? nameChanged,
     TResult Function(String username)? usernameChanged,
@@ -638,7 +666,7 @@ class _$_UsernameChanged implements _UsernameChanged {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function() initialized,
+    required TResult Function(Option<User> userOption) initialized,
     required TResult Function(File imageFile) imageChanged,
     required TResult Function(String name) nameChanged,
     required TResult Function(String username) usernameChanged,
@@ -657,7 +685,7 @@ class _$_UsernameChanged implements _UsernameChanged {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? initialized,
+    TResult Function(Option<User> userOption)? initialized,
     TResult Function(File imageFile)? imageChanged,
     TResult Function(String name)? nameChanged,
     TResult Function(String username)? usernameChanged,
@@ -784,7 +812,7 @@ class _$_PasswordChanged implements _PasswordChanged {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function() initialized,
+    required TResult Function(Option<User> userOption) initialized,
     required TResult Function(File imageFile) imageChanged,
     required TResult Function(String name) nameChanged,
     required TResult Function(String username) usernameChanged,
@@ -803,7 +831,7 @@ class _$_PasswordChanged implements _PasswordChanged {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? initialized,
+    TResult Function(Option<User> userOption)? initialized,
     TResult Function(File imageFile)? imageChanged,
     TResult Function(String name)? nameChanged,
     TResult Function(String username)? usernameChanged,
@@ -932,7 +960,7 @@ class _$_PasswordConfirmationChanged implements _PasswordConfirmationChanged {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function() initialized,
+    required TResult Function(Option<User> userOption) initialized,
     required TResult Function(File imageFile) imageChanged,
     required TResult Function(String name) nameChanged,
     required TResult Function(String username) usernameChanged,
@@ -951,7 +979,7 @@ class _$_PasswordConfirmationChanged implements _PasswordConfirmationChanged {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? initialized,
+    TResult Function(Option<User> userOption)? initialized,
     TResult Function(File imageFile)? imageChanged,
     TResult Function(String name)? nameChanged,
     TResult Function(String username)? usernameChanged,
@@ -1078,7 +1106,7 @@ class _$_EmailAddressChanged implements _EmailAddressChanged {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function() initialized,
+    required TResult Function(Option<User> userOption) initialized,
     required TResult Function(File imageFile) imageChanged,
     required TResult Function(String name) nameChanged,
     required TResult Function(String username) usernameChanged,
@@ -1097,7 +1125,7 @@ class _$_EmailAddressChanged implements _EmailAddressChanged {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? initialized,
+    TResult Function(Option<User> userOption)? initialized,
     TResult Function(File imageFile)? imageChanged,
     TResult Function(String name)? nameChanged,
     TResult Function(String username)? usernameChanged,
@@ -1224,7 +1252,7 @@ class _$_BirthdayChanged implements _BirthdayChanged {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function() initialized,
+    required TResult Function(Option<User> userOption) initialized,
     required TResult Function(File imageFile) imageChanged,
     required TResult Function(String name) nameChanged,
     required TResult Function(String username) usernameChanged,
@@ -1243,7 +1271,7 @@ class _$_BirthdayChanged implements _BirthdayChanged {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? initialized,
+    TResult Function(Option<User> userOption)? initialized,
     TResult Function(File imageFile)? imageChanged,
     TResult Function(String name)? nameChanged,
     TResult Function(String username)? usernameChanged,
@@ -1370,7 +1398,7 @@ class _$_DescriptionChanged implements _DescriptionChanged {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function() initialized,
+    required TResult Function(Option<User> userOption) initialized,
     required TResult Function(File imageFile) imageChanged,
     required TResult Function(String name) nameChanged,
     required TResult Function(String username) usernameChanged,
@@ -1389,7 +1417,7 @@ class _$_DescriptionChanged implements _DescriptionChanged {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? initialized,
+    TResult Function(Option<User> userOption)? initialized,
     TResult Function(File imageFile)? imageChanged,
     TResult Function(String name)? nameChanged,
     TResult Function(String username)? usernameChanged,
@@ -1516,7 +1544,7 @@ class _$_InterestsChanged implements _InterestsChanged {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function() initialized,
+    required TResult Function(Option<User> userOption) initialized,
     required TResult Function(File imageFile) imageChanged,
     required TResult Function(String name) nameChanged,
     required TResult Function(String username) usernameChanged,
@@ -1535,7 +1563,7 @@ class _$_InterestsChanged implements _InterestsChanged {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? initialized,
+    TResult Function(Option<User> userOption)? initialized,
     TResult Function(File imageFile)? imageChanged,
     TResult Function(String name)? nameChanged,
     TResult Function(String username)? usernameChanged,
@@ -1641,7 +1669,7 @@ class _$_TappedEULA implements _TappedEULA {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function() initialized,
+    required TResult Function(Option<User> userOption) initialized,
     required TResult Function(File imageFile) imageChanged,
     required TResult Function(String name) nameChanged,
     required TResult Function(String username) usernameChanged,
@@ -1660,7 +1688,7 @@ class _$_TappedEULA implements _TappedEULA {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? initialized,
+    TResult Function(Option<User> userOption)? initialized,
     TResult Function(File imageFile)? imageChanged,
     TResult Function(String name)? nameChanged,
     TResult Function(String username)? usernameChanged,
@@ -1761,7 +1789,7 @@ class _$_Submitted implements _Submitted {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function() initialized,
+    required TResult Function(Option<User> userOption) initialized,
     required TResult Function(File imageFile) imageChanged,
     required TResult Function(String name) nameChanged,
     required TResult Function(String username) usernameChanged,
@@ -1780,7 +1808,7 @@ class _$_Submitted implements _Submitted {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? initialized,
+    TResult Function(Option<User> userOption)? initialized,
     TResult Function(File imageFile)? imageChanged,
     TResult Function(String name)? nameChanged,
     TResult Function(String username)? usernameChanged,
@@ -1858,6 +1886,7 @@ class _$RegistrationFormStateTearOff {
       required bool showErrorMessages,
       required bool isSubmitting,
       required bool acceptedEULA,
+      required bool initialized,
       required Option<Either<Failure, Unit>> failureOrSuccessOption}) {
     return _RegistrationFormState(
       user: user,
@@ -1866,6 +1895,7 @@ class _$RegistrationFormStateTearOff {
       showErrorMessages: showErrorMessages,
       isSubmitting: isSubmitting,
       acceptedEULA: acceptedEULA,
+      initialized: initialized,
       failureOrSuccessOption: failureOrSuccessOption,
     );
   }
@@ -1888,6 +1918,8 @@ mixin _$RegistrationFormState {
 
   bool get acceptedEULA => throw _privateConstructorUsedError;
 
+  bool get initialized => throw _privateConstructorUsedError;
+
   Option<Either<Failure, Unit>> get failureOrSuccessOption => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
@@ -1905,6 +1937,7 @@ abstract class $RegistrationFormStateCopyWith<$Res> {
       bool showErrorMessages,
       bool isSubmitting,
       bool acceptedEULA,
+      bool initialized,
       Option<Either<Failure, Unit>> failureOrSuccessOption});
 
   $UserCopyWith<$Res> get user;
@@ -1927,6 +1960,7 @@ class _$RegistrationFormStateCopyWithImpl<$Res> implements $RegistrationFormStat
     Object? showErrorMessages = freezed,
     Object? isSubmitting = freezed,
     Object? acceptedEULA = freezed,
+    Object? initialized = freezed,
     Object? failureOrSuccessOption = freezed,
   }) {
     return _then(_value.copyWith(
@@ -1953,6 +1987,10 @@ class _$RegistrationFormStateCopyWithImpl<$Res> implements $RegistrationFormStat
       acceptedEULA: acceptedEULA == freezed
           ? _value.acceptedEULA
           : acceptedEULA // ignore: cast_nullable_to_non_nullable
+              as bool,
+      initialized: initialized == freezed
+          ? _value.initialized
+          : initialized // ignore: cast_nullable_to_non_nullable
               as bool,
       failureOrSuccessOption: failureOrSuccessOption == freezed
           ? _value.failureOrSuccessOption
@@ -1981,6 +2019,7 @@ abstract class _$RegistrationFormStateCopyWith<$Res> implements $RegistrationFor
       bool showErrorMessages,
       bool isSubmitting,
       bool acceptedEULA,
+      bool initialized,
       Option<Either<Failure, Unit>> failureOrSuccessOption});
 
   @override
@@ -2002,6 +2041,7 @@ class __$RegistrationFormStateCopyWithImpl<$Res> extends _$RegistrationFormState
     Object? showErrorMessages = freezed,
     Object? isSubmitting = freezed,
     Object? acceptedEULA = freezed,
+    Object? initialized = freezed,
     Object? failureOrSuccessOption = freezed,
   }) {
     return _then(_RegistrationFormState(
@@ -2029,6 +2069,10 @@ class __$RegistrationFormStateCopyWithImpl<$Res> extends _$RegistrationFormState
           ? _value.acceptedEULA
           : acceptedEULA // ignore: cast_nullable_to_non_nullable
               as bool,
+      initialized: initialized == freezed
+          ? _value.initialized
+          : initialized // ignore: cast_nullable_to_non_nullable
+              as bool,
       failureOrSuccessOption: failureOrSuccessOption == freezed
           ? _value.failureOrSuccessOption
           : failureOrSuccessOption // ignore: cast_nullable_to_non_nullable
@@ -2047,6 +2091,7 @@ class _$_RegistrationFormState implements _RegistrationFormState {
       required this.showErrorMessages,
       required this.isSubmitting,
       required this.acceptedEULA,
+      required this.initialized,
       required this.failureOrSuccessOption});
 
   @override
@@ -2062,11 +2107,13 @@ class _$_RegistrationFormState implements _RegistrationFormState {
   @override
   final bool acceptedEULA;
   @override
+  final bool initialized;
+  @override
   final Option<Either<Failure, Unit>> failureOrSuccessOption;
 
   @override
   String toString() {
-    return 'RegistrationFormState(user: $user, passwordConfirmator: $passwordConfirmator, passwordToCompare: $passwordToCompare, showErrorMessages: $showErrorMessages, isSubmitting: $isSubmitting, acceptedEULA: $acceptedEULA, failureOrSuccessOption: $failureOrSuccessOption)';
+    return 'RegistrationFormState(user: $user, passwordConfirmator: $passwordConfirmator, passwordToCompare: $passwordToCompare, showErrorMessages: $showErrorMessages, isSubmitting: $isSubmitting, acceptedEULA: $acceptedEULA, initialized: $initialized, failureOrSuccessOption: $failureOrSuccessOption)';
   }
 
   @override
@@ -2079,18 +2126,20 @@ class _$_RegistrationFormState implements _RegistrationFormState {
             (identical(other.showErrorMessages, showErrorMessages) || const DeepCollectionEquality().equals(other.showErrorMessages, showErrorMessages)) &&
             (identical(other.isSubmitting, isSubmitting) || const DeepCollectionEquality().equals(other.isSubmitting, isSubmitting)) &&
             (identical(other.acceptedEULA, acceptedEULA) || const DeepCollectionEquality().equals(other.acceptedEULA, acceptedEULA)) &&
+            (identical(other.initialized, initialized) || const DeepCollectionEquality().equals(other.initialized, initialized)) &&
             (identical(other.failureOrSuccessOption, failureOrSuccessOption) || const DeepCollectionEquality().equals(other.failureOrSuccessOption, failureOrSuccessOption)));
   }
 
   @override
   int get hashCode =>
-      runtimeType.hashCode ^
+    runtimeType.hashCode ^
       const DeepCollectionEquality().hash(user) ^
       const DeepCollectionEquality().hash(passwordConfirmator) ^
       const DeepCollectionEquality().hash(passwordToCompare) ^
       const DeepCollectionEquality().hash(showErrorMessages) ^
       const DeepCollectionEquality().hash(isSubmitting) ^
       const DeepCollectionEquality().hash(acceptedEULA) ^
+      const DeepCollectionEquality().hash(initialized) ^
       const DeepCollectionEquality().hash(failureOrSuccessOption);
 
   @JsonKey(ignore: true)
@@ -2106,6 +2155,7 @@ abstract class _RegistrationFormState implements RegistrationFormState {
       required bool showErrorMessages,
       required bool isSubmitting,
       required bool acceptedEULA,
+      required bool initialized,
       required Option<Either<Failure, Unit>> failureOrSuccessOption}) = _$_RegistrationFormState;
 
   @override
@@ -2116,13 +2166,18 @@ abstract class _RegistrationFormState implements RegistrationFormState {
 
   @override
   String get passwordToCompare => throw _privateConstructorUsedError;
+
   @override
   bool get showErrorMessages => throw _privateConstructorUsedError;
+
   @override
   bool get isSubmitting => throw _privateConstructorUsedError;
 
   @override
   bool get acceptedEULA => throw _privateConstructorUsedError;
+
+  @override
+  bool get initialized => throw _privateConstructorUsedError;
 
   @override
   Option<Either<Failure, Unit>> get failureOrSuccessOption => throw _privateConstructorUsedError;

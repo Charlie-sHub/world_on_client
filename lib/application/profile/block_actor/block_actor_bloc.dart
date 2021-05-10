@@ -22,7 +22,6 @@ part 'block_actor_bloc.freezed.dart';
 part 'block_actor_event.dart';
 part 'block_actor_state.dart';
 
-// TODO: Move to core
 @injectable
 class BlockActorBloc extends Bloc<BlockActorEvent, BlockActorState> {
   BlockActorBloc() : super(const BlockActorState.initial());
@@ -98,8 +97,6 @@ class BlockActorBloc extends Bloc<BlockActorEvent, BlockActorState> {
     );
   }
 
-  // TODO: check if the user in the card is the logged in user and have a state to show that
-  // So the user can't even attempt to block itself
   Stream<BlockActorState> _onInitialized(_Initialized event) async* {
     final _loggedInUserOption = await getIt<GetLoggedInUser>()(getIt<NoParams>());
     final _loggedInUser = _loggedInUserOption.fold(

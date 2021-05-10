@@ -8,12 +8,16 @@ import 'package:worldon/views/core/misc/world_on_colors.dart';
 class UsernameTextField extends StatelessWidget {
   const UsernameTextField({
     Key? key,
+    required this.initialValue,
   }) : super(key: key);
+
+  final String? initialValue;
 
   @override
   Widget build(BuildContext context) {
     return TextFormField(
       maxLength: Name.maxLength,
+      initialValue: initialValue,
       decoration: InputDecoration(
         labelText: S.of(context).username,
         prefixIcon: const Icon(

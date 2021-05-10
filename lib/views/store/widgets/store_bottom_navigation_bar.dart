@@ -8,7 +8,7 @@ class StoreBottomNavigationBar extends StatelessWidget {
   static const _storeIndex = 0;
   static const _promotionPlansIndex = 1;
   static const _myItemsIndex = 2;
-  
+
   @override
   Widget build(BuildContext context) {
     return AnimatedBottomNavigationBar(
@@ -31,28 +31,28 @@ class StoreBottomNavigationBar extends StatelessWidget {
       ],
     );
   }
-  
+
   void _onTap(int index, BuildContext context) {
     switch (index) {
       case _storeIndex:
         context.read<StoreNavigationActorBloc>().add(
-          const StoreNavigationActorEvent.storeTapped(),
-        );
+              const StoreNavigationActorEvent.storeTapped(),
+            );
         break;
       case _promotionPlansIndex:
         context.read<StoreNavigationActorBloc>().add(
-          const StoreNavigationActorEvent.promotionPlansTapped(),
-        );
+              const StoreNavigationActorEvent.promotionPlansTapped(),
+            );
         break;
       case _myItemsIndex:
         context.read<StoreNavigationActorBloc>().add(
-          const StoreNavigationActorEvent.myItemsTapped(),
-        );
+              const StoreNavigationActorEvent.myItemsTapped(),
+            );
         break;
       default:
         context.read<StoreNavigationActorBloc>().add(
-          const StoreNavigationActorEvent.storeTapped(),
-        );
+              const StoreNavigationActorEvent.storeTapped(),
+            );
         break;
     }
   }
