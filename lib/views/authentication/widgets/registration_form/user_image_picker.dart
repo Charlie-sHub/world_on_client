@@ -53,11 +53,11 @@ class UserImagePicker extends StatelessWidget {
                 }
               },
               child: CircleAvatar(
-              radius: _avatarRadius,
+                radius: _avatarRadius,
                 backgroundImage: FileImage(imageFile!),
               ),
+            ),
           ),
-      ),
     );
   }
 }

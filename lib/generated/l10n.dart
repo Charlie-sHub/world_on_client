@@ -2076,6 +2076,26 @@ class S {
       args: [],
     );
   }
+
+  /// `Unfollow`
+  String get unfollow {
+    return Intl.message(
+      'Unfollow',
+      name: 'unfollow',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Follow`
+  String get follow {
+    return Intl.message(
+      'Follow',
+      name: 'follow',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

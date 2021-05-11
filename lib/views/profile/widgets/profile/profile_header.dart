@@ -4,9 +4,8 @@ import 'package:worldon/domain/core/entities/user/user.dart';
 import 'package:worldon/views/core/misc/world_on_colors.dart';
 import 'package:worldon/views/core/widgets/misc/follow_unfollow_button_builder/follow_unfollow_button_builder.dart';
 import 'package:worldon/views/core/widgets/misc/followers_following_counters.dart';
+import 'package:worldon/views/profile/widgets/profile/edit_profile_button.dart';
 import 'package:worldon/views/profile/widgets/profile/profile_avatar_stack.dart';
-
-import 'edit_profile_button.dart';
 
 class ProfileHeader extends SliverPersistentHeaderDelegate {
   const ProfileHeader({
@@ -33,55 +32,42 @@ class ProfileHeader extends SliverPersistentHeaderDelegate {
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: <Widget>[
         Column(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            Column(
-              children: [
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                  children: [
-                    Expanded(
-                      child: FollowersFollowingCounters(user: user),
-                    ),
-                    Expanded(
-                      child: Column(
-                        children: [
-                          ProfileAvatarStack(user: user),
-                          const SizedBox(height: 10),
-                          FittedBox(
-                            child: Row(
-                              children: [
-                                if (user.adminPowers)
-                                  const Icon(
-                                    Icons.verified_rounded,
-                                    color: WorldOnColors.blue,
-                                  ),
-                                AutoSizeText(
-                                  user.name.getOrCrash(),
-                                  style: const TextStyle(
-                                    fontSize: 20,
-                                    fontWeight: FontWeight.bold,
-                                  ),
-                                ),
-                              ],
-                            ),
+            ProfileAvatarStack(user: user),
+            FittedBox(
+              child: Column(
+                children: [
+                  Row(
+                    children: [
+                      if (user.adminPowers)
+                        const Padding(
+                          padding: EdgeInsets.only(right: 5),
+                          child: Icon(
+                            Icons.verified_rounded,
+                            color: WorldOnColors.blue,
+                            size: 17,
                           ),
-                          AutoSizeText(
-                            "@${user.username.getOrCrash()}",
-                            style: const TextStyle(
-                              fontSize: 15,
-                            ),
-                          ),
-                        ],
+                        ),
+                      AutoSizeText(
+                        user.name.getOrCrash(),
+                        style: const TextStyle(
+                          fontSize: 15,
+                          fontWeight: FontWeight.bold,
+                        ),
                       ),
+                    ],
+                  ),
+                  AutoSizeText(
+                    "@${user.username.getOrCrash()}",
+                    style: const TextStyle(
+                      fontSize: 13,
                     ),
-                    Expanded(
-                      child: isOwn ? EditProfileButton(user: user) : FollowUnfollowButtonBuilder(user: user),
-                    ),
-                  ],
-                ),
-              ],
+                  ),
+                ],
+              ),
             ),
+            const SizedBox(height: 5),
+            FollowersFollowingCounters(user: user),
           ],
         ),
         Flexible(
@@ -91,15 +77,24 @@ class ProfileHeader extends SliverPersistentHeaderDelegate {
               child: AutoSizeText(
                 user.description.getOrCrash(),
                 textAlign: TextAlign.center,
-                style: const TextStyle(fontSize: 14),
+                style: const TextStyle(fontSize: 12),
                 minFontSize: 8,
-                maxFontSize: 14,
+                maxFontSize: 12,
                 maxLines: 10,
                 overflow: TextOverflow.ellipsis,
               ),
             ),
           ),
         ),
+        if (isOwn)
+          EditProfileButton(
+            user: user,
+          )
+        else
+          FollowUnfollowButtonBuilder(
+            user: user,
+          ),
+        const SizedBox(height: 5),
       ],
     );
   }

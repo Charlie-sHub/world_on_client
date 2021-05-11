@@ -5,8 +5,9 @@ import 'package:worldon/generated/l10n.dart';
 import 'package:worldon/views/core/misc/world_on_colors.dart';
 import 'package:worldon/views/experience_navigation/widgets/experience_finish/experience_gained_text.dart';
 import 'package:worldon/views/experience_navigation/widgets/experience_finish/finish_button.dart';
-import 'package:worldon/views/experience_navigation/widgets/experience_finish/like_dislike_button_builder.dart';
 import 'package:worldon/views/experience_navigation/widgets/experience_finish/rate_difficulty_widget.dart';
+
+import '../like_dislike_button_builder.dart';
 
 class FinishSuccessView extends StatelessWidget {
   final Experience experience;

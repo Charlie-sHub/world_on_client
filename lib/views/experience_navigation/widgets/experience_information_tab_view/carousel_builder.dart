@@ -1,8 +1,10 @@
-import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_carousel_slider/carousel_slider.dart';
+import 'package:flutter_carousel_slider/carousel_slider_indicators.dart';
+import 'package:worldon/views/core/misc/world_on_colors.dart';
 
 class CarouselBuilder extends StatelessWidget {
-  final Widget Function(BuildContext, int, int) function;
+  final Widget Function(int) function;
   final int itemCount;
 
   const CarouselBuilder({
@@ -14,13 +16,16 @@ class CarouselBuilder extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return CarouselSlider.builder(
-      options: CarouselOptions(
-        height: MediaQuery.of(context).size.height * 0.5,
-        disableCenter: true,
-        enlargeCenterPage: true,
-      ),
       itemCount: itemCount,
-      itemBuilder: function,
+      unlimitedMode: true,
+      slideIndicator: CircularSlideIndicator(
+        padding: const EdgeInsets.only(bottom: 15),
+        currentIndicatorColor: WorldOnColors.white,
+        indicatorBackgroundColor: WorldOnColors.white.withOpacity(0.5),
+        indicatorRadius: 3,
+        itemSpacing: 15,
+      ),
+      slideBuilder: function,
     );
   }
 }

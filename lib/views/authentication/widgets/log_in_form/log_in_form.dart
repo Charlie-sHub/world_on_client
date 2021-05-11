@@ -5,7 +5,6 @@ import 'package:worldon/generated/l10n.dart';
 import 'package:worldon/views/authentication/widgets/log_in_form/log_in_button.dart';
 import 'package:worldon/views/authentication/widgets/log_in_form/log_in_google_button.dart';
 import 'package:worldon/views/authentication/widgets/log_in_form/register_button.dart';
-import 'package:worldon/views/authentication/widgets/log_in_form/world_on_logo_medium.dart';
 import 'package:worldon/views/authentication/widgets/password_text_field.dart';
 import 'package:worldon/views/authentication/widgets/world_on_title.dart';
 
@@ -16,43 +15,43 @@ class LogInForm extends StatelessWidget {
   Widget build(BuildContext context) {
     // TODO: Forms should only have the relevant children
     // It doesn't make sense for the logo and register buttons to be part of the form for example
-    return Form(
-      autovalidateMode: context.read<LogInFormBloc>().state.showErrorMessages ? AutovalidateMode.always : AutovalidateMode.disabled,
-      child: Padding(
-        padding: const EdgeInsets.symmetric(
-          horizontal: 40,
-          vertical: 30,
-        ),
-        child: SingleChildScrollView(
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.stretch,
-            children: <Widget>[
-              const WorldOnLogoMedium(),
-              const SizedBox(height: 5),
-              const WorldOnTitle(),
-              const SizedBox(height: 10),
-              EmailTextField(
-                validator: (_) => _emailValidator(context),
-                eventToAdd: (String value) => context.read<LogInFormBloc>().add(
-                      LogInFormEvent.emailChanged(value),
-                    ),
-              ),
-              const SizedBox(height: 5),
-              PasswordTextField(
-                eventToAdd: (String value) => context.read<LogInFormBloc>().add(
-                      LogInFormEvent.passwordChanged(value),
-                    ),
-                validator: (_) => _passwordValidator(context),
-              ),
-              const SizedBox(height: 10),
-              const LogInButton(),
-              // const SizedBox(height: 5),
-              // const LogInTroubleButton(),
-              const SizedBox(height: 15),
-              const RegisterButton(),
-              const SizedBox(height: 20),
-              const LogInGoogleButton(),
-            ],
+    return Center(
+      child: Form(
+        autovalidateMode: context.read<LogInFormBloc>().state.showErrorMessages ? AutovalidateMode.always : AutovalidateMode.disabled,
+        child: Padding(
+          padding: const EdgeInsets.symmetric(
+            horizontal: 40,
+            vertical: 30,
+          ),
+          child: SingleChildScrollView(
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.stretch,
+              children: <Widget>[
+                const WorldOnTitle(),
+                const SizedBox(height: 30),
+                EmailTextField(
+                  validator: (_) => _emailValidator(context),
+                  eventToAdd: (String value) => context.read<LogInFormBloc>().add(
+                        LogInFormEvent.emailChanged(value),
+                      ),
+                ),
+                const SizedBox(height: 5),
+                PasswordTextField(
+                  eventToAdd: (String value) => context.read<LogInFormBloc>().add(
+                        LogInFormEvent.passwordChanged(value),
+                      ),
+                  validator: (_) => _passwordValidator(context),
+                ),
+                const SizedBox(height: 10),
+                const LogInButton(),
+                // const SizedBox(height: 5),
+                // const LogInTroubleButton(),
+                const SizedBox(height: 15),
+                const RegisterButton(),
+                const SizedBox(height: 20),
+                const LogInGoogleButton(),
+              ],
+            ),
           ),
         ),
       ),

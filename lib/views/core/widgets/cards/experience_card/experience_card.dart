@@ -7,13 +7,13 @@ import 'package:worldon/domain/core/entities/experience/experience.dart';
 import 'package:worldon/generated/l10n.dart';
 import 'package:worldon/injection.dart';
 import 'package:worldon/views/core/misc/world_on_colors.dart';
-import 'package:worldon/views/core/widgets/cards/experience_card/difficulty_display.dart';
 import 'package:worldon/views/core/widgets/cards/experience_card/image_stack.dart';
 import 'package:worldon/views/core/widgets/cards/experience_card/log_button.dart';
 import 'package:worldon/views/core/widgets/cards/experience_card/manage_button_builder.dart';
 import 'package:worldon/views/core/widgets/cards/experience_card/participate_button.dart';
 import 'package:worldon/views/core/widgets/cards/experience_card/share_button.dart';
 import 'package:worldon/views/core/widgets/cards/tag_card/simple_tag_card_builder.dart';
+import 'package:worldon/views/core/widgets/misc/difficulty_display.dart';
 import 'package:worldon/views/core/widgets/misc/experience_done_counter.dart';
 import 'package:worldon/views/core/widgets/misc/experience_likes_counter.dart';
 
@@ -87,7 +87,10 @@ class ExperienceCard extends StatelessWidget {
                       children: <Widget>[
                         Padding(
                           padding: const EdgeInsets.symmetric(horizontal: 10),
-                          child: ParticipateButton(experience: experience),
+                          child: ParticipateButton(
+                            experience: experience,
+                            size: 60,
+                          ),
                         ),
                         LogButton(experience: experience),
                         ShareButton(experience: experience),

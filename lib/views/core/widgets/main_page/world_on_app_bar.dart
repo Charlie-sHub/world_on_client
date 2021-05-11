@@ -16,22 +16,12 @@ class WorldOnAppBar extends StatelessWidget implements PreferredSizeWidget {
                 const AuthenticationEvent.loggedOut(),
               );
         },
-        child: Text(
+        child: const Text(
           "World On",
           style: TextStyle(
-            fontSize: 40,
+            fontSize: 25,
             color: WorldOnColors.primary,
-            fontFamily: "MovingSkate",
-            shadows: [
-              Shadow(
-                offset: const Offset(
-                  2,
-                  2,
-                ),
-                blurRadius: 5,
-                color: WorldOnColors.accent.withOpacity(0.75),
-              ),
-            ],
+            fontWeight: FontWeight.bold,
           ),
           textAlign: TextAlign.center,
         ),

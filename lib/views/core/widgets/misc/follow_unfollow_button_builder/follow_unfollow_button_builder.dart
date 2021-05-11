@@ -20,8 +20,7 @@ class FollowUnfollowButtonBuilder extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      width: 40,
-      height: 40,
+      height: 28,
       child: BlocProvider(
         create: (context) => getIt<FollowActorBloc>()
           ..add(

@@ -62,6 +62,24 @@ class CircularAvatarUserCard extends StatelessWidget {
                           ),
                         ),
                       ),
+                      // Having this check on top of the other is pretty dumb to be honest
+                      // But it works for now
+                      // Else i'd have to separate a few widgets
+                      if (user.adminPowers)
+                        Positioned(
+                          top: 0,
+                          left: 0,
+                          child: ClipOval(
+                            child: Container(
+                              color: Colors.white,
+                              child: const Icon(
+                                Icons.check_circle_rounded,
+                                size: 20,
+                                color: WorldOnColors.blue,
+                              ),
+                            ),
+                          ),
+                        ),
                     ],
                   );
                 },

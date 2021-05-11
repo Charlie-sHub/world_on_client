@@ -15,7 +15,7 @@ class WorldOnCachedImage extends StatelessWidget {
   Widget build(BuildContext context) {
     return CachedNetworkImage(
       imageUrl: _imageURL,
-      fit: BoxFit.fill,
+      fit: BoxFit.cover,
       progressIndicatorBuilder: (context, url, progress) => const Padding(
         padding: EdgeInsets.all(15),
         child: WorldOnProgressIndicator(),

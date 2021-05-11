@@ -35,8 +35,8 @@ class Profile extends StatelessWidget {
           SliverPersistentHeader(
             delegate: ProfileHeader(
               user: user,
-              minExtent: MediaQuery.of(context).size.height * 0.3,
-              maxExtent: MediaQuery.of(context).size.height * 0.3,
+              minExtent: MediaQuery.of(context).size.height * 0.32,
+              maxExtent: MediaQuery.of(context).size.height * 0.32,
               isOwn: isOwn,
             ),
           ),

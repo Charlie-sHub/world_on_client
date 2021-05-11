@@ -202,5 +202,7 @@
   "followedYou": "followed you",
   "unfollowedYou": "unfollowed you",
   "blockedYou": "blocked you",
-  "unblockedYou": "unblocked you"
+  "unblockedYou": "unblocked you",
+  "unfollow": "Unfollow",
+  "follow": "Follow"
 }

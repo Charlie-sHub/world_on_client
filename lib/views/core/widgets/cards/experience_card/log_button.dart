@@ -16,8 +16,8 @@ class LogButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: 50,
-      width: 50,
+      height: 30,
+      width: 30,
       child: BlocBuilder<ExperienceCardActorBloc, ExperienceCardActorState>(
         builder: (context, state) => AnimatedSwitcher(
           duration: const Duration(milliseconds: 200),

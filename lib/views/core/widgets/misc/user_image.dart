@@ -26,19 +26,15 @@ class UserImage extends StatelessWidget {
             ),
           ),
       child: Stack(
-        alignment: Alignment.topLeft,
         children: [
-          Padding(
-            padding: const EdgeInsets.all(5),
-            child: ClipOval(
-              child: Container(
-                color: Colors.white,
-                child: Padding(
-                  padding: const EdgeInsets.all(2),
-                  child: CircleAvatar(
-                    radius: avatarRadius,
-                    backgroundImage: CachedNetworkImageProvider(user.imageURL),
-                  ),
+          ClipOval(
+            child: Container(
+              color: Colors.white,
+              child: Padding(
+                padding: const EdgeInsets.all(2),
+                child: CircleAvatar(
+                  radius: avatarRadius,
+                  backgroundImage: CachedNetworkImageProvider(user.imageURL),
                 ),
               ),
             ),

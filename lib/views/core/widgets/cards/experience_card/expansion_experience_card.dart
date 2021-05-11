@@ -6,16 +6,17 @@ import 'package:worldon/application/core/experience_card_actor/experience_card_a
 import 'package:worldon/domain/core/entities/experience/experience.dart';
 import 'package:worldon/generated/l10n.dart';
 import 'package:worldon/injection.dart';
-import 'package:worldon/views/core/widgets/cards/experience_card/difficulty_display.dart';
-import 'package:worldon/views/core/widgets/cards/experience_card/experience_points_view.dart';
 import 'package:worldon/views/core/widgets/cards/experience_card/log_button.dart';
 import 'package:worldon/views/core/widgets/cards/experience_card/participate_button.dart';
 import 'package:worldon/views/core/widgets/cards/experience_card/share_button.dart';
 import 'package:worldon/views/core/widgets/cards/tag_card/simple_tag_card_builder.dart';
+import 'package:worldon/views/core/widgets/misc/difficulty_display.dart';
 import 'package:worldon/views/core/widgets/misc/experience_done_counter.dart';
 import 'package:worldon/views/core/widgets/misc/experience_likes_counter.dart';
+import 'package:worldon/views/core/widgets/misc/experience_points_view.dart';
 import 'package:worldon/views/core/widgets/misc/user_image.dart';
 import 'package:worldon/views/core/widgets/misc/world_on_cached_image.dart';
+import 'package:worldon/views/experience_navigation/widgets/experience_information_tab_view/carousel_builder.dart';
 
 import 'manage_button_builder.dart';
 
@@ -44,16 +45,62 @@ class ExpansionExperienceCard extends StatelessWidget {
           clipBehavior: Clip.antiAlias,
           child: Column(
             children: <Widget>[
-              WorldOnCachedImage(
-                imageURL: experience.imageURLs.first,
+              Stack(
+                children: [
+                  ShaderMask(
+                    blendMode: BlendMode.darken,
+                    shaderCallback: (bounds) => LinearGradient(
+                      begin: Alignment.center,
+                      end: Alignment.topCenter,
+                      colors: [
+                        Colors.transparent,
+                        Colors.black.withOpacity(0.4),
+                      ],
+                      stops: const [
+                        0,
+                        1,
+                      ],
+                    ).createShader(bounds),
+                    child: SizedBox(
+                      height: MediaQuery.of(context).size.height * 0.3,
+                      child: CarouselBuilder(
+                        itemCount: experience.imageURLs.length,
+                        function: (index) => WorldOnCachedImage(
+                          imageURL: experience.imageURLs.elementAt(index),
+                        ),
+                      ),
+                    ),
+                  ),
+                  Positioned(
+                    right: 0,
+                    top: 0,
+                    child: Row(
+                      children: [
+                        LogButton(experience: experience),
+                        ShareButton(experience: experience),
+                        ManageButtonBuilder(
+                          experience: experience,
+                          reloadFunction: reloadFunction,
+                        ),
+                      ],
+                    ),
+                  ),
+                ],
               ),
               ExpansionTile(
                 title: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    UserImage(
-                      user: experience.creator,
-                      avatarRadius: 25,
+                    Padding(
+                      padding: const EdgeInsets.only(
+                        right: 5,
+                        bottom: 5,
+                        top: 5,
+                      ),
+                      child: UserImage(
+                        user: experience.creator,
+                        avatarRadius: 25,
+                      ),
                     ),
                     Flexible(
                       flex: 10,
@@ -73,14 +120,13 @@ class ExpansionExperienceCard extends StatelessWidget {
                               ),
                             ),
                           ),
-                          SizedBox(
-                            height: 15,
+                          FittedBox(
                             child: AutoSizeText(
                               "@${experience.creator.username.getOrCrash()}",
-                              minFontSize: 7,
-                              maxFontSize: 11,
+                              minFontSize: 9,
+                              maxFontSize: 14,
                               style: const TextStyle(
-                                fontSize: 10,
+                                fontSize: 13,
                               ),
                             ),
                           ),
@@ -111,49 +157,32 @@ class ExpansionExperienceCard extends StatelessWidget {
                             Column(
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
-                                Row(
-                                  children: <Widget>[
-                                    const Icon(
-                                      Icons.calendar_today_rounded,
-                                    ),
-                                    const SizedBox(width: 5),
-                                    AutoSizeText(
-                                      experience.getFormattedCreationDateString,
-                                      style: const TextStyle(
-                                        fontSize: 12,
-                                      ),
-                                    ),
-                                  ],
-                                ),
                                 ExperienceDoneCounter(amount: experience.doneBy.length),
                                 DifficultyDisplay(difficulty: experience.difficulty.getOrCrash()),
                                 ExperiencePointsView(difficulty: experience.difficulty.getOrCrash()),
                               ],
                             ),
-                            Row(
-                              children: [
-                                ParticipateButton(experience: experience),
-                                LogButton(experience: experience),
-                                ShareButton(experience: experience),
-                                ManageButtonBuilder(
-                                  experience: experience,
-                                  reloadFunction: reloadFunction,
-                                ),
-                                const SizedBox(width: 10),
-                              ],
+                            Padding(
+                              padding: const EdgeInsets.only(right: 10),
+                              child: ParticipateButton(
+                                experience: experience,
+                                size: 60,
+                              ),
                             ),
                           ],
                         ),
                         const SizedBox(height: 5),
-                        Wrap(
-                          alignment: WrapAlignment.center,
-                          spacing: 2,
-                          runSpacing: 3,
-                          children: <Widget>[
-                            ...experience.tags.getOrCrash().asSet().map(
-                                  (tag) => SimpleTagCardBuilder(tag: tag),
-                                ),
-                          ],
+                        SizedBox(
+                          height: MediaQuery.of(context).size.height * 0.08,
+                          child: ListView(
+                            scrollDirection: Axis.horizontal,
+                            clipBehavior: Clip.none,
+                            children: <Widget>[
+                              ...experience.tags.getOrCrash().asSet().map(
+                                    (tag) => SimpleTagCardBuilder(tag: tag),
+                                  ),
+                            ],
+                          ),
                         ),
                       ],
                     ),

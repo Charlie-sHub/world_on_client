@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 import 'package:number_display/number_display.dart';
 import 'package:worldon/domain/core/entities/user/user.dart';
 import 'package:worldon/generated/l10n.dart';
-import 'package:worldon/views/core/misc/world_on_colors.dart';
 
 class FollowersFollowingCounters extends StatelessWidget {
   const FollowersFollowingCounters({
@@ -15,42 +14,59 @@ class FollowersFollowingCounters extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final _display = createDisplay(length: 4);
-    return Column(
+    final _display = createDisplay(
+      length: 4,
+      units: [
+        "K",
+        "M",
+        "B",
+      ],
+    );
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
       children: [
-        Padding(
-          padding: const EdgeInsets.only(left: 10),
-          child: Row(
-            children: [
-              AutoSizeText(
-                _display(user.followersAmount),
-                style: const TextStyle(
-                  color: WorldOnColors.primary,
-                  fontWeight: FontWeight.bold,
-                ),
-              ),
-              AutoSizeText(
-                " ${S.of(context).followersCaps}",
-              ),
-            ],
-          ),
+        Expanded(
+          child: Container(),
         ),
-        Padding(
-          padding: const EdgeInsets.only(left: 10),
-          child: Row(
-            children: [
-              AutoSizeText(
-                _display(user.followedUsersIds.length),
-                style: const TextStyle(
-                  color: WorldOnColors.primary,
-                  fontWeight: FontWeight.bold,
-                ),
+        Row(
+          children: [
+            AutoSizeText(
+              "${S.of(context).followersCaps} ",
+              style: const TextStyle(
+                fontSize: 8,
+                color: Colors.grey,
               ),
-              AutoSizeText(
-                " ${S.of(context).following}",
+            ),
+            AutoSizeText(
+              _display(user.followersAmount),
+              style: const TextStyle(
+                fontWeight: FontWeight.bold,
+                fontSize: 10,
               ),
-            ],
-          ),
+            ),
+          ],
+        ),
+        const SizedBox(width: 40),
+        Row(
+          children: [
+            AutoSizeText(
+              "${S.of(context).following} ",
+              style: const TextStyle(
+                fontSize: 8,
+                color: Colors.grey,
+              ),
+            ),
+            AutoSizeText(
+              _display(user.followedUsersIds.length),
+              style: const TextStyle(
+                fontWeight: FontWeight.bold,
+                fontSize: 10,
+              ),
+            ),
+          ],
+        ),
+        Expanded(
+          child: Container(),
         ),
       ],
     );

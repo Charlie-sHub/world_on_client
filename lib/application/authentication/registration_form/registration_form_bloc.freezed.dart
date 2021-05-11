@@ -2166,16 +2166,13 @@ abstract class _RegistrationFormState implements RegistrationFormState {
 
   @override
   String get passwordToCompare => throw _privateConstructorUsedError;
-
   @override
   bool get showErrorMessages => throw _privateConstructorUsedError;
-
   @override
   bool get isSubmitting => throw _privateConstructorUsedError;
-
   @override
   bool get acceptedEULA => throw _privateConstructorUsedError;
-
+  
   @override
   bool get initialized => throw _privateConstructorUsedError;
 

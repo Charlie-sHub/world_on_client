@@ -9,24 +9,26 @@ class ParticipateButton extends StatelessWidget {
   const ParticipateButton({
     Key? key,
     required this.experience,
+    required this.size,
   }) : super(key: key);
 
   final Experience experience;
+  final double size;
 
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: 60,
-      width: 60,
+      height: size,
+      width: size,
       child: IconButton(
         onPressed: () => context.read<NavigationActorBloc>().add(
               NavigationActorEvent.experienceNavigationTapped(some(experience)),
             ),
         padding: const EdgeInsets.all(0),
-        icon: const Icon(
-          Icons.play_arrow_rounded,
+        icon: Icon(
+          Icons.play_circle_fill_rounded,
           color: WorldOnColors.primary,
-          size: 60,
+          size: size,
         ),
       ),
     );

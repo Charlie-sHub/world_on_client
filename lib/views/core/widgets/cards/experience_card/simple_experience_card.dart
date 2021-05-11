@@ -10,8 +10,12 @@ import 'package:worldon/domain/core/entities/experience/experience.dart';
 import 'package:worldon/generated/l10n.dart';
 import 'package:worldon/injection.dart';
 import 'package:worldon/views/core/misc/world_on_colors.dart';
+import 'package:worldon/views/core/widgets/cards/experience_card/share_button.dart';
 import 'package:worldon/views/core/widgets/misc/user_image.dart';
 import 'package:worldon/views/core/widgets/misc/world_on_progress_indicator.dart';
+
+import 'log_button.dart';
+import 'manage_button_builder.dart';
 
 class SimpleExperienceCard extends StatelessWidget {
   const SimpleExperienceCard({
@@ -76,10 +80,24 @@ class SimpleExperienceCard extends StatelessWidget {
                   ),
                 ),
                 Positioned(
+                  right: 0,
+                  bottom: 5,
+                  child: Row(
+                    children: [
+                      LogButton(experience: experience),
+                      ShareButton(experience: experience),
+                      ManageButtonBuilder(
+                        experience: experience,
+                        reloadFunction: reloadFunction,
+                      ),
+                    ],
+                  ),
+                ),
+                Positioned(
                   left: 5,
-                  bottom: 10,
+                  bottom: 5,
                   child: SizedBox(
-                    width: 300,
+                    width: 230,
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [

@@ -23,61 +23,61 @@ class ProfileTabBar extends SliverPersistentHeaderDelegate {
     double shrinkOffset,
     bool overlapsContent,
   ) {
-    return Material(
-      color: WorldOnColors.background,
-      elevation: 5,
-      child: TabBar(
-        labelColor: WorldOnColors.accent,
-        unselectedLabelColor: _grey75,
-        labelPadding: const EdgeInsets.all(2),
-        indicatorColor: Colors.transparent,
-        tabs: [
-          Container(
-            height: 40,
-            width: double.infinity,
-            decoration: BoxDecoration(
-              border: Border(
-                right: BorderSide(
-                  color: _grey75,
+    return SizedBox(
+      height: kBottomNavigationBarHeight - 15,
+      child: Material(
+        color: WorldOnColors.background,
+        elevation: 5,
+        child: TabBar(
+          labelColor: WorldOnColors.accent,
+          unselectedLabelColor: _grey75,
+          labelPadding: const EdgeInsets.all(2),
+          indicatorColor: Colors.transparent,
+          tabs: [
+            Container(
+              height: 40,
+              width: double.infinity,
+              decoration: BoxDecoration(
+                border: Border(
+                  right: BorderSide(
+                    color: _grey75,
+                  ),
                 ),
               ),
-            ),
-            child: Tab(
-              iconMargin: const EdgeInsets.all(0),
-              icon: const Icon(Icons.explore),
-              text: S.of(context).experiences,
-            ),
-          ),
-          Container(
-            height: 40,
-            width: double.infinity,
-            decoration: BoxDecoration(
-              border: Border(
-                right: BorderSide(
-                  color: _grey75,
-                ),
+              child: Tab(
+                iconMargin: const EdgeInsets.all(0),
+                text: S.of(context).experiences,
               ),
             ),
-            child: Tab(
-              iconMargin: const EdgeInsets.all(0),
-              icon: const Icon(Icons.people),
-              text: S.of(context).profileRelationTab,
+            Container(
+              height: 40,
+              width: double.infinity,
+              decoration: BoxDecoration(
+                border: Border(
+                  right: BorderSide(
+                    color: _grey75,
+                  ),
+                ),
+              ),
+              child: Tab(
+                iconMargin: const EdgeInsets.all(0),
+                text: S.of(context).profileRelationTab,
+              ),
             ),
-          ),
-          /*
-          Tab(
-            iconMargin: const EdgeInsets.all(2),
-            icon: const Icon(Icons.stars),
-            text: S.of(context).profileAchievementsTab,
-          ),
-          */
-          if (isOwn)
+            /*
             Tab(
-              iconMargin: const EdgeInsets.all(0),
-              icon: const Icon(Icons.bookmarks_rounded),
-              text: S.of(context).profileLogTab,
+              iconMargin: const EdgeInsets.all(2),
+              icon: const Icon(Icons.stars),
+              text: S.of(context).profileAchievementsTab,
             ),
-        ],
+            */
+            if (isOwn)
+              Tab(
+                iconMargin: const EdgeInsets.all(0),
+                text: S.of(context).profileLogTab,
+              ),
+          ],
+        ),
       ),
     );
   }

@@ -709,13 +709,10 @@ abstract class _LogInFormState implements LogInFormState {
 
   @override
   EmailAddress get email => throw _privateConstructorUsedError;
-
   @override
   Password get password => throw _privateConstructorUsedError;
-
   @override
   bool get showErrorMessages => throw _privateConstructorUsedError;
-
   @override
   bool get isSubmitting => throw _privateConstructorUsedError;
 

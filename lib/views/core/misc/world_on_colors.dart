@@ -11,4 +11,7 @@ abstract class WorldOnColors {
   static const white = Color(0xFFEFEFEF);
   static const red = Color(0xFFFC4111);
   static const blue = Color(0xFF115FFC);
+
+  // legacy
+  static const oldBackground = Color(0xFF161824);
 }

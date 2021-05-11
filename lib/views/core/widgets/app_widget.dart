@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:injectable/injectable.dart';
 import 'package:provider/provider.dart';
 import 'package:worldon/application/authentication/authentication/authentication_bloc.dart';
@@ -31,8 +32,9 @@ class AppWidget extends StatelessWidget {
       child: MaterialApp.router(
         title: "World On",
         debugShowCheckedModeBanner: Provider.of<String>(context) != Environment.prod,
-        theme: ThemeData.light().copyWith(
+        theme: ThemeData(
           indicatorColor: WorldOnColors.primary,
+          fontFamily: GoogleFonts.barlow().fontFamily,
           iconTheme: IconTheme.of(context).copyWith(
             color: WorldOnColors.accent,
           ),
@@ -63,8 +65,6 @@ class AppWidget extends StatelessWidget {
             backgroundColor: Colors.white,
             selectedItemColor: WorldOnColors.primary,
             unselectedItemColor: WorldOnColors.accent,
-            // type: BottomNavigationBarType.shifting,
-            // showUnselectedLabels: false,
           ),
           floatingActionButtonTheme: const FloatingActionButtonThemeData(
             elevation: 10,

@@ -202,5 +202,7 @@
   "followedYou": "te sigue",
   "unfollowedYou": "te dejo de seguir",
   "blockedYou": "te bloqueo",
-  "unblockedYou": "te desbloqueo"
+  "unblockedYou": "te desbloqueo",
+  "unFollow": "Dejar",
+  "follow": "Seguir"
 }

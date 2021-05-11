@@ -14,7 +14,7 @@ class RegistrationFormState with _$RegistrationFormState {
   }) = _RegistrationFormState;
 
   factory RegistrationFormState.initial() => RegistrationFormState(
-    user: User.empty(),
+        user: User.empty(),
         passwordConfirmator: PasswordConfirmator(
           password: "",
           confirmation: "",
