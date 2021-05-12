@@ -36,7 +36,9 @@ class StoreBody extends StatelessWidget {
               child: BlocBuilder<WatchPurchasableItemsBloc, WatchPurchasableItemsState>(
                 builder: (context, state) => state.map(
                   initial: (_) => Container(),
-                  loadInProgress: (_) => const WorldOnProgressIndicator(),
+                  loadInProgress: (_) => const WorldOnProgressIndicator(
+                    size: 60,
+                  ),
                   loadSuccess: (state) => RefreshIndicator(
                     onRefresh: () async => context.read<WatchPurchasableItemsBloc>().add(
                           const WatchPurchasableItemsEvent.watchPurchasableItemsStarted(),

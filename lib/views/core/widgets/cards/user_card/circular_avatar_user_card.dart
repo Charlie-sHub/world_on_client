@@ -46,6 +46,7 @@ class CircularAvatarUserCard extends StatelessWidget {
                       UserImage(
                         user: user,
                         avatarRadius: _avatarRadius,
+                        checkIconSize: 20,
                       ),
                       Container(
                         decoration: BoxDecoration(
@@ -86,6 +87,7 @@ class CircularAvatarUserCard extends StatelessWidget {
                 orElse: () => UserImage(
                   user: user,
                   avatarRadius: _avatarRadius,
+                  checkIconSize: _avatarRadius * 0.2,
                 ),
               ),
             ),

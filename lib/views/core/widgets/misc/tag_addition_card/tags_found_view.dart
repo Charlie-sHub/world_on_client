@@ -21,7 +21,9 @@ class TagsFoundView extends StatelessWidget {
     return BlocBuilder<SearchTagsByNameWatcherBloc, SearchTagsByNameWatcherState>(
       builder: (context, state) => state.map(
         initial: (_) => SearchSomething(),
-        searchInProgress: (_) => const WorldOnProgressIndicator(),
+        searchInProgress: (_) => const WorldOnProgressIndicator(
+          size: 40,
+        ),
         searchSuccess: (state) => Container(
           constraints: BoxConstraints(
             minHeight: MediaQuery.of(context).size.height * 0.1,

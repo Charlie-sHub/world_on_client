@@ -45,7 +45,9 @@ class ObjectiveCoordinatePicker extends StatelessWidget {
                 ),
               ),
             )
-          : const WorldOnProgressIndicator(),
+          : const WorldOnProgressIndicator(
+              size: 50,
+            ),
     );
   }
 }

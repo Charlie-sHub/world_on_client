@@ -30,14 +30,11 @@ class ObjectiveCard extends StatelessWidget {
               onTap: () => showDialog(
                 context: context,
                 builder: (context) => Dialog(
-                  backgroundColor: WorldOnColors.primary,
+                  clipBehavior: Clip.antiAlias,
                   child: InkWell(
                     onTap: () => Navigator.of(context).pop(),
-                    child: Padding(
-                      padding: const EdgeInsets.all(5),
-                      child: WorldOnCachedImage(
-                        imageURL: objective.imageURL,
-                      ),
+                    child: WorldOnCachedImage(
+                      imageURL: objective.imageURL,
                     ),
                   ),
                 ),
@@ -48,9 +45,8 @@ class ObjectiveCard extends StatelessWidget {
                 child: CachedNetworkImage(
                   imageUrl: objective.imageURL,
                   fit: BoxFit.fill,
-                  progressIndicatorBuilder: (context, url, progress) => const Padding(
-                    padding: EdgeInsets.all(25),
-                    child: WorldOnProgressIndicator(),
+                  progressIndicatorBuilder: (context, url, progress) => const WorldOnProgressIndicator(
+                    size: 30,
                   ),
                 ),
               ),

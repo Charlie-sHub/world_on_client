@@ -24,6 +24,7 @@ class ImageStack extends StatelessWidget {
           child: UserImage(
             user: experience.creator,
             avatarRadius: 30,
+            checkIconSize: 20,
           ),
         ),
       ],

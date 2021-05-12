@@ -29,12 +29,6 @@ Experience getValidExperience() {
     description: EntityDescription("Donec bibendum congue libero nec viverra. Cras eget placerat libero. Maecenas cursus turpis vitae ultricies tempus. In suscipit orci id dapibus molestie."),
     imageURLs: {
       Assets.experiencePlaceholder,
-      "assets/experience_placeholder_image_2.jpeg",
-      "assets/experience_placeholder_image_3.jpeg",
-      "assets/experience_placeholder_image_4.jpeg",
-      "assets/experience_placeholder_image_5.jpeg",
-      "assets/experience_placeholder_image_6.jpeg",
-      "assets/experience_placeholder_image_7.jpeg",
     },
     coordinates: getValidCoordinates(),
     location: getValidLocation(),

@@ -33,7 +33,9 @@ class ProfileExperiencesTabView extends StatelessWidget {
           children: [
             state.map(
               initial: (_) => Container(),
-              loadInProgress: (_) => const WorldOnProgressIndicator(),
+              loadInProgress: (_) => const WorldOnProgressIndicator(
+                size: 50,
+              ),
               loadSuccess: (state) => GridView.builder(
                 padding: const EdgeInsets.only(
                   bottom: kFloatingActionButtonMargin + 50,

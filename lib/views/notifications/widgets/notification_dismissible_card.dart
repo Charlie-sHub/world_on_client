@@ -8,10 +8,10 @@ import 'package:worldon/generated/l10n.dart';
 import 'package:worldon/views/core/misc/world_on_colors.dart';
 import 'package:worldon/views/core/widgets/misc/user_image.dart';
 
-class NotificationCard extends StatelessWidget {
+class NotificationDismissibleTile extends StatelessWidget {
   final Notification notification;
 
-  const NotificationCard({Key? key, required this.notification}) : super(key: key);
+  const NotificationDismissibleTile({Key? key, required this.notification}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -38,6 +38,7 @@ class NotificationCard extends StatelessWidget {
         leading: UserImage(
           user: notification.sender,
           avatarRadius: 25,
+          checkIconSize: 17,
         ),
         title: SizedBox(
           height: 50,

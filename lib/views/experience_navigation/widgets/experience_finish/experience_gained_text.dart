@@ -4,7 +4,6 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:worldon/application/experience_navigation/experience_finish_actor/experience_finish_actor_bloc.dart';
 import 'package:worldon/domain/core/entities/experience/experience.dart';
 import 'package:worldon/generated/l10n.dart';
-import 'package:worldon/views/core/misc/world_on_colors.dart';
 
 class ExperiencedGainedText extends StatelessWidget {
   const ExperiencedGainedText({
@@ -24,24 +23,30 @@ class ExperiencedGainedText extends StatelessWidget {
             text: "${S.of(context).experiencePointsGainedPre}: ",
             children: <TextSpan>[
               TextSpan(
-                text: "${context.read<ExperienceFinishActorBloc>().state.maybeMap(
+                text: context
+                    .read<ExperienceFinishActorBloc>()
+                    .state
+                    .maybeMap(
                       finishSuccess: (value) => value.amountXP,
                       orElse: () => 0,
-                    )}",
+                    )
+                    .toString(),
                 style: const TextStyle(
                   fontWeight: FontWeight.bold,
-                  color: WorldOnColors.primary,
-                  shadows: [
-                    Shadow(
-                      offset: Offset(1, 1),
-                      blurRadius: 3,
-                    )
-                  ],
                 ),
               ),
-              TextSpan(text: " ${S.of(context).experiencePointsGainedPost}"),
+              TextSpan(text: " ${S.of(context).experiencePointsGainedMid}"),
+              TextSpan(
+                text: " ${S.of(context).experiencePointsGainedPost}",
+                style: const TextStyle(
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
             ],
           ),
+          minFontSize: 15,
+          maxFontSize: 18,
+          textAlign: TextAlign.center,
           style: const TextStyle(
             fontSize: 18,
           ),

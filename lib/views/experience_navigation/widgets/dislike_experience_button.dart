@@ -16,8 +16,8 @@ class DislikeExperienceButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return IconButton(
       icon: const Icon(
-        Icons.favorite_rounded,
-        color: WorldOnColors.red,
+        Icons.thumb_up,
+        color: WorldOnColors.primary,
         size: 30,
       ),
       padding: const EdgeInsets.all(0),

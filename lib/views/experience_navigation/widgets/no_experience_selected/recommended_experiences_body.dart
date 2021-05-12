@@ -23,7 +23,9 @@ class RecommendedExperiencesBody extends StatelessWidget {
       child: BlocBuilder<RecommendedExperiencesWatcherBloc, RecommendedExperiencesWatcherState>(
         builder: (context, state) => state.map(
           initial: (_) => Container(),
-          loadInProgress: (_) => const WorldOnProgressIndicator(),
+          loadInProgress: (_) => const WorldOnProgressIndicator(
+            size: 60,
+          ),
           loadSuccess: (state) => RefreshIndicator(
             onRefresh: () async => context.read<RecommendedExperiencesWatcherBloc>().add(
                   const RecommendedExperiencesWatcherEvent.watchRecommendedExperiencesStarted(),

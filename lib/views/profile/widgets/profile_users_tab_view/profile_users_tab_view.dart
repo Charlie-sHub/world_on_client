@@ -32,7 +32,9 @@ class ProfileUsersTabView extends StatelessWidget {
           children: [
             state.map(
               initial: (_) => Container(),
-              loadInProgress: (_) => const WorldOnProgressIndicator(),
+              loadInProgress: (_) => const WorldOnProgressIndicator(
+                size: 50,
+              ),
               loadSuccess: (state) => GridView.builder(
                 physics: const ClampingScrollPhysics(),
                 padding: const EdgeInsets.only(

@@ -15,7 +15,9 @@ class MyItemsBody extends StatelessWidget {
     return BlocBuilder<LoadUserBloc, LoadUserState>(
       builder: (context, state) => context.read<LoadUserBloc>().state.map(
             initial: (_) => Container(),
-            actionInProgress: (_) => const WorldOnProgressIndicator(),
+            actionInProgress: (_) => const WorldOnProgressIndicator(
+              size: 60,
+            ),
             loadSuccess: (state) {
               final _itemList = state.user.items.toImmutableList();
               return RefreshIndicator(

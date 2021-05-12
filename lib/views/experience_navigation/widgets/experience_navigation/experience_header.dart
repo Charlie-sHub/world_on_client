@@ -36,6 +36,7 @@ class ExperienceHeader extends StatelessWidget {
             ),
           ),
         ),
+        const SizedBox(width: 10),
         LikeDislikeButtonBuilder(
           experience: experience,
         ),

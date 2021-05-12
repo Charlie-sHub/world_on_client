@@ -24,7 +24,9 @@ class SearchExperiencesTabView extends StatelessWidget {
     return BlocBuilder<SearchExperiencesByNameWatcherBloc, SearchExperiencesByNameWatcherState>(
       builder: (context, state) => state.map(
         initial: (_) => SearchSomething(),
-        searchInProgress: (_) => const WorldOnProgressIndicator(),
+        searchInProgress: (_) => const WorldOnProgressIndicator(
+          size: 40,
+        ),
         searchSuccess: (state) => ListView.builder(
           scrollDirection: Axis.horizontal,
           clipBehavior: Clip.none,

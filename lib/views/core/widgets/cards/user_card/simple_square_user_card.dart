@@ -54,9 +54,8 @@ class SimpleSquareUserCard extends StatelessWidget {
                             height: MediaQuery.of(context).size.height * _multiplier,
                             width: MediaQuery.of(context).size.height * _multiplier,
                             fit: BoxFit.cover,
-                            progressIndicatorBuilder: (context, url, progress) => const Padding(
-                              padding: EdgeInsets.all(15),
-                              child: WorldOnProgressIndicator(),
+                            progressIndicatorBuilder: (context, url, progress) => const WorldOnProgressIndicator(
+                              size: 30,
                             ),
                           ),
                           Container(
@@ -81,9 +80,8 @@ class SimpleSquareUserCard extends StatelessWidget {
                       height: MediaQuery.of(context).size.height * _multiplier,
                       width: MediaQuery.of(context).size.height * _multiplier,
                       fit: BoxFit.cover,
-                      progressIndicatorBuilder: (context, url, progress) => const Padding(
-                        padding: EdgeInsets.all(15),
-                        child: WorldOnProgressIndicator(),
+                      progressIndicatorBuilder: (context, url, progress) => const WorldOnProgressIndicator(
+                        size: 30,
                       ),
                     ),
                   ),

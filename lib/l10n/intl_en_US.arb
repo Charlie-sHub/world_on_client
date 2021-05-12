@@ -84,7 +84,8 @@
   "experienceTitleStringWithInvalidCharacters": "The title has invalid characters",
   "experienceTitleLabelText": "Title",
   "experiencePointsGainedPre": "You've gained",
-  "experiencePointsGainedPost": "experience points! and 1 World On Coin",
+  "experiencePointsGainedMid": "experience points and ",
+  "experiencePointsGainedPost": "1 World On Coin!",
   "experienceFinishButton": "Finish",
   "experienceFinishSuccessTitle": "Experience Finished!",
   "rewardsGained": "Rewards",
@@ -95,7 +96,7 @@
   "commentEmptyString": "The comment can't be empty",
   "commentStringExceedsLength": "The comment is too long",
   "commentStringWithInvalidCharacters": "The comment has invalid characters",
-  "comment": "Comment",
+  "comment": "Leave a comment",
   "commentPostSuccess": "The Comment was posted",
   "experienceInformationRewards": "Rewards",
   "experienceInformationCommentsNumber": "comments",
@@ -152,7 +153,7 @@
   "levelUp": "You have leveled up!",
   "camera": "Camera",
   "gallery": "Gallery",
-  "recommendations": "Recommendations:",
+  "recommendations": "Recommendations",
   "recommendationsBasedOn": "You will receive recommendations based on them",
   "registrationTagCard": "Select tags you'd be interested in, it's optional but it'll help us recommend experiences to you",
   "notFoundError": "There's nothing to show",
@@ -204,5 +205,9 @@
   "blockedYou": "blocked you",
   "unblockedYou": "unblocked you",
   "unfollow": "Unfollow",
-  "follow": "Follow"
+  "follow": "Follow",
+  "mainFeed": "Main Feed",
+  "experienceNavigation": "Adventure",
+  "profile": "Profile",
+  "notifications": "Notifications"
 }

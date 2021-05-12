@@ -41,38 +41,31 @@ class CommentForm extends HookWidget {
           autovalidateMode: context.read<CommentFormBloc>().state.showErrorMessages ? AutovalidateMode.always : AutovalidateMode.disabled,
           child: Padding(
             padding: const EdgeInsets.all(5),
-            child: Row(
-              children: [
-                SizedBox(
-                  width: 280,
-                  child: TextFormField(
-                    minLines: 2,
-                    maxLines: 5,
-                    controller: _textEditingController,
-                    maxLength: CommentContent.maxLength,
-                    onChanged: (value) => context.read<CommentFormBloc>().add(
-                          CommentFormEvent.contentChanged(value.trim()),
-                        ),
-                    validator: (_) => context.read<CommentFormBloc>().state.comment.content.value.fold(
-                          (failure) => failure.maybeMap(
-                            emptyString: (_) => S.of(context).commentEmptyString,
-                            stringExceedsLength: (_) => S.of(context).commentStringExceedsLength,
-                            stringWithInvalidCharacters: (_) => S.of(context).commentStringWithInvalidCharacters,
-                            orElse: () => S.of(context).unknownError,
-                          ),
-                          (_) => null,
-                        ),
-                    decoration: InputDecoration(
-                      labelText: S.of(context).comment,
-                      prefixIcon: const Icon(Icons.comment),
-                    ),
+            child: TextFormField(
+              minLines: 2,
+              maxLines: 6,
+              controller: _textEditingController,
+              maxLength: CommentContent.maxLength,
+              onChanged: (value) => context.read<CommentFormBloc>().add(
+                    CommentFormEvent.contentChanged(value.trim()),
                   ),
-                ),
-                const SizedBox(width: 10),
-                IconButton(
+              validator: (_) => context.read<CommentFormBloc>().state.comment.content.value.fold(
+                    (failure) => failure.maybeMap(
+                      emptyString: (_) => S.of(context).commentEmptyString,
+                      stringExceedsLength: (_) => S.of(context).commentStringExceedsLength,
+                      stringWithInvalidCharacters: (_) => S.of(context).commentStringWithInvalidCharacters,
+                      orElse: () => S.of(context).unknownError,
+                    ),
+                    (_) => null,
+                  ),
+              decoration: InputDecoration(
+                labelText: S.of(context).comment,
+                border: InputBorder.none,
+                suffixIcon: IconButton(
+                  padding: const EdgeInsets.all(0),
                   icon: const Icon(
                     Icons.send_rounded,
-                    size: 45,
+                    size: 30,
                   ),
                   onPressed: () {
                     context.read<CommentFormBloc>().add(
@@ -80,10 +73,9 @@ class CommentForm extends HookWidget {
                         );
                     _textEditingController.clear();
                   },
-                  padding: const EdgeInsets.all(0),
                   color: WorldOnColors.primary,
-                )
-              ],
+                ),
+              ),
             ),
           ),
         ),
@@ -111,10 +103,6 @@ class CommentForm extends HookWidget {
                     experienceId: experienceId,
                   ),
                 );
-            FlushbarHelper.createSuccess(
-              duration: const Duration(seconds: 2),
-              message: S.of(context).commentPostSuccess,
-            ).show(context);
             context.read<CommentWatcherBloc>().add(
                   CommentWatcherEvent.watchExperienceCommentsStarted(experienceId),
                 );

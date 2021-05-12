@@ -10,13 +10,13 @@ import 'package:worldon/views/core/widgets/cards/experience_card/log_button.dart
 import 'package:worldon/views/core/widgets/cards/experience_card/participate_button.dart';
 import 'package:worldon/views/core/widgets/cards/experience_card/share_button.dart';
 import 'package:worldon/views/core/widgets/cards/tag_card/simple_tag_card_builder.dart';
+import 'package:worldon/views/core/widgets/misc/carousel_builder.dart';
 import 'package:worldon/views/core/widgets/misc/difficulty_display.dart';
 import 'package:worldon/views/core/widgets/misc/experience_done_counter.dart';
 import 'package:worldon/views/core/widgets/misc/experience_likes_counter.dart';
 import 'package:worldon/views/core/widgets/misc/experience_points_view.dart';
 import 'package:worldon/views/core/widgets/misc/user_image.dart';
 import 'package:worldon/views/core/widgets/misc/world_on_cached_image.dart';
-import 'package:worldon/views/experience_navigation/widgets/experience_information_tab_view/carousel_builder.dart';
 
 import 'manage_button_builder.dart';
 
@@ -45,24 +45,24 @@ class ExpansionExperienceCard extends StatelessWidget {
           clipBehavior: Clip.antiAlias,
           child: Column(
             children: <Widget>[
-              Stack(
-                children: [
-                  ShaderMask(
-                    blendMode: BlendMode.darken,
-                    shaderCallback: (bounds) => LinearGradient(
-                      begin: Alignment.center,
-                      end: Alignment.topCenter,
-                      colors: [
-                        Colors.transparent,
-                        Colors.black.withOpacity(0.4),
-                      ],
-                      stops: const [
-                        0,
-                        1,
-                      ],
-                    ).createShader(bounds),
-                    child: SizedBox(
-                      height: MediaQuery.of(context).size.height * 0.3,
+              SizedBox(
+                height: MediaQuery.of(context).size.height * 0.3,
+                child: Stack(
+                  children: [
+                    ShaderMask(
+                      blendMode: BlendMode.darken,
+                      shaderCallback: (bounds) => LinearGradient(
+                        begin: Alignment.center,
+                        end: Alignment.topCenter,
+                        colors: [
+                          Colors.transparent,
+                          Colors.black.withOpacity(0.4),
+                        ],
+                        stops: const [
+                          0,
+                          1,
+                        ],
+                      ).createShader(bounds),
                       child: CarouselBuilder(
                         itemCount: experience.imageURLs.length,
                         function: (index) => WorldOnCachedImage(
@@ -70,22 +70,22 @@ class ExpansionExperienceCard extends StatelessWidget {
                         ),
                       ),
                     ),
-                  ),
-                  Positioned(
-                    right: 0,
-                    top: 0,
-                    child: Row(
-                      children: [
-                        LogButton(experience: experience),
-                        ShareButton(experience: experience),
-                        ManageButtonBuilder(
-                          experience: experience,
-                          reloadFunction: reloadFunction,
-                        ),
-                      ],
+                    Positioned(
+                      right: 0,
+                      top: 0,
+                      child: Row(
+                        children: [
+                          LogButton(experience: experience),
+                          ShareButton(experience: experience),
+                          ManageButtonBuilder(
+                            experience: experience,
+                            reloadFunction: reloadFunction,
+                          ),
+                        ],
+                      ),
                     ),
-                  ),
-                ],
+                  ],
+                ),
               ),
               ExpansionTile(
                 title: Row(
@@ -100,6 +100,7 @@ class ExpansionExperienceCard extends StatelessWidget {
                       child: UserImage(
                         user: experience.creator,
                         avatarRadius: 25,
+                        checkIconSize: 17,
                       ),
                     ),
                     Flexible(

@@ -11,10 +11,12 @@ class UserImage extends StatelessWidget {
     Key? key,
     required this.user,
     required this.avatarRadius,
+    required this.checkIconSize,
   }) : super(key: key);
 
   final User user;
   final double avatarRadius;
+  final double checkIconSize;
 
   @override
   Widget build(BuildContext context) {
@@ -43,9 +45,9 @@ class UserImage extends StatelessWidget {
             ClipOval(
               child: Container(
                 color: Colors.white,
-                child: const Icon(
+                child: Icon(
                   Icons.check_circle_rounded,
-                  size: 20,
+                  size: checkIconSize,
                   color: WorldOnColors.blue,
                 ),
               ),

@@ -19,7 +19,9 @@ class SearchTagsTabView extends StatelessWidget {
     return BlocBuilder<SearchTagsByNameWatcherBloc, SearchTagsByNameWatcherState>(
       builder: (context, state) => state.map(
         initial: (_) => Container(),
-        searchInProgress: (_) => const WorldOnProgressIndicator(),
+        searchInProgress: (_) => const WorldOnProgressIndicator(
+          size: 20,
+        ),
         searchSuccess: (state) => ListView.builder(
           scrollDirection: Axis.horizontal,
           clipBehavior: Clip.none,

@@ -20,21 +20,17 @@ class AppWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MultiBlocProvider(
-      providers: [
-        BlocProvider(
-          create: (context) => getIt<AuthenticationBloc>()
-            ..add(
-              const AuthenticationEvent.authenticationCheckRequested(),
-            ),
+    return BlocProvider(
+      create: (context) => getIt<AuthenticationBloc>()
+        ..add(
+          const AuthenticationEvent.authenticationCheckRequested(),
         ),
-      ],
       child: MaterialApp.router(
         title: "World On",
         debugShowCheckedModeBanner: Provider.of<String>(context) != Environment.prod,
         theme: ThemeData(
           indicatorColor: WorldOnColors.primary,
-          fontFamily: GoogleFonts.barlow().fontFamily,
+          fontFamily: GoogleFonts.rubik().fontFamily,
           iconTheme: IconTheme.of(context).copyWith(
             color: WorldOnColors.accent,
           ),

@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:worldon/application/experience_navigation/experience_navigation_watcher/experience_navigation_watcher_bloc.dart';
 import 'package:worldon/generated/l10n.dart';
-import 'package:worldon/views/core/misc/world_on_colors.dart';
 
 class FinishButton extends StatelessWidget {
   const FinishButton({
@@ -13,22 +12,16 @@ class FinishButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ElevatedButton(
-      style: ButtonStyle(
-        backgroundColor: MaterialStateProperty.all(
-          WorldOnColors.primary,
-        ),
-      ),
       onPressed: () => context.read<ExperienceNavigationWatcherBloc>().add(
             ExperienceNavigationWatcherEvent.initialized(none()),
           ),
       child: Padding(
-        padding: const EdgeInsets.all(5),
+        padding: const EdgeInsets.symmetric(horizontal: 15),
         child: Text(
           S.of(context).experienceFinishButton,
           style: const TextStyle(
-            fontSize: 30,
+            fontSize: 15,
             fontWeight: FontWeight.bold,
-            color: WorldOnColors.white,
           ),
         ),
       ),

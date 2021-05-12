@@ -22,6 +22,7 @@ class UserInformation extends StatelessWidget {
             UserImage(
               user: creator,
               avatarRadius: 30,
+              checkIconSize: 20,
             ),
             const SizedBox(width: 5),
             NameUsernameDisplay(user: creator),

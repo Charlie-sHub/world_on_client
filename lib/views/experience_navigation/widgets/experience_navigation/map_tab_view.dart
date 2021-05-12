@@ -49,7 +49,9 @@ class MapTabView extends StatelessWidget {
                 tilt: 45,
               ),
             )
-          : const WorldOnProgressIndicator(),
+          : const WorldOnProgressIndicator(
+              size: 60,
+            ),
     );
   }
 

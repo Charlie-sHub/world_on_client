@@ -11,7 +11,7 @@ import 'package:worldon/views/core/misc/world_on_colors.dart';
 import 'package:worldon/views/core/widgets/cards/error_card.dart';
 import 'package:worldon/views/core/widgets/error/error_display.dart';
 import 'package:worldon/views/core/widgets/misc/world_on_progress_indicator.dart';
-import 'package:worldon/views/notifications/widgets/notification_card.dart';
+import 'package:worldon/views/notifications/widgets/notification_dismissible_card.dart';
 
 class NotificationsBody extends StatelessWidget {
   const NotificationsBody({Key? key}) : super(key: key);
@@ -42,7 +42,9 @@ class NotificationsBody extends StatelessWidget {
         child: BlocBuilder<NotificationsWatcherBloc, NotificationsWatcherState>(
           builder: (context, state) => state.map(
             initial: (_) => Container(),
-            loadInProgress: (_) => const WorldOnProgressIndicator(),
+            loadInProgress: (_) => const WorldOnProgressIndicator(
+              size: 60,
+            ),
             loadSuccess: (state) => ListView.separated(
               physics: const BouncingScrollPhysics(),
               padding: const EdgeInsets.only(
@@ -70,7 +72,7 @@ class NotificationsBody extends StatelessWidget {
                         );
                       }
                     },
-                    child: NotificationCard(
+                    child: NotificationDismissibleTile(
                       notification: _notification,
                       key: Key(_notification.id.toString()),
                     ),

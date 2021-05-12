@@ -21,7 +21,9 @@ class ProfileLogTabView extends StatelessWidget {
       child: BlocBuilder<ExperienceLogWatcherBloc, ExperienceLogWatcherState>(
         builder: (context, state) => state.map(
           initial: (_) => Container(),
-          loadInProgress: (_) => const WorldOnProgressIndicator(),
+          loadInProgress: (_) => const WorldOnProgressIndicator(
+            size: 50,
+          ),
           loadSuccess: (state) => GridView.builder(
             physics: const ClampingScrollPhysics(),
             padding: const EdgeInsets.only(

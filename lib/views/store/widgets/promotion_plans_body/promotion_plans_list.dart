@@ -21,7 +21,9 @@ class PromotionPlansList extends StatelessWidget {
       child: BlocBuilder<PromotionPlansLoaderBloc, PromotionPlansLoaderState>(
         builder: (context, _loaderState) => _loaderState.map(
           initial: (_) => Container(),
-          loadInProgress: (_) => const WorldOnProgressIndicator(),
+          loadInProgress: (_) => const WorldOnProgressIndicator(
+            size: 60,
+          ),
           loadedPromotionPlans: (state) => ListView.builder(
             physics: const BouncingScrollPhysics(),
             padding: const EdgeInsets.all(5),

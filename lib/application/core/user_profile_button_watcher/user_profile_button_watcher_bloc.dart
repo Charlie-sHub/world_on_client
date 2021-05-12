@@ -7,12 +7,10 @@ import 'package:meta/meta.dart';
 import 'package:worldon/domain/authentication/use_case/get_logged_in_user.dart';
 import 'package:worldon/domain/core/use_case/use_case.dart';
 
-import '../../injection.dart';
+import '../../../injection.dart';
 
 part 'user_profile_button_watcher_bloc.freezed.dart';
-
 part 'user_profile_button_watcher_event.dart';
-
 part 'user_profile_button_watcher_state.dart';
 
 @injectable

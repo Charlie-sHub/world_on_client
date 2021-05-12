@@ -14,9 +14,9 @@ class LikeExperienceButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return IconButton(
-      icon: const Icon(
-        Icons.favorite_border_rounded,
-        color: Colors.grey,
+      icon: Icon(
+        Icons.thumb_up,
+        color: Colors.grey.shade600,
         size: 30,
       ),
       padding: const EdgeInsets.all(0),

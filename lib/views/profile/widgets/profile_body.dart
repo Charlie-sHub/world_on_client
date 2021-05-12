@@ -54,7 +54,9 @@ class ProfileBody extends StatelessWidget {
         child: BlocBuilder<ProfileWatcherBloc, ProfileWatcherState>(
           builder: (context, state) => state.map(
             initial: (_) => Container(),
-            loadInProgress: (_) => const WorldOnProgressIndicator(),
+            loadInProgress: (_) => const WorldOnProgressIndicator(
+              size: 60,
+            ),
             own: (state) => Profile(
               user: state.user,
               isOwn: true,

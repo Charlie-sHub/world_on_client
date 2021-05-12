@@ -27,6 +27,7 @@ class UserCard extends StatelessWidget {
               UserImage(
                 user: user,
                 avatarRadius: 30,
+                checkIconSize: 20,
               ),
               NameUsernameDisplay(user: user),
               FollowUnfollowButtonBuilder(user: user),

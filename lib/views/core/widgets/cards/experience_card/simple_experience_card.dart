@@ -67,7 +67,7 @@ class SimpleExperienceCard extends StatelessWidget {
                     fit: BoxFit.cover,
                     progressIndicatorBuilder: (context, url, progress) => const Padding(
                       padding: EdgeInsets.all(15),
-                      child: WorldOnProgressIndicator(),
+                      child: WorldOnProgressIndicator(size: 50),
                     ),
                   ),
                 ),
@@ -77,6 +77,7 @@ class SimpleExperienceCard extends StatelessWidget {
                   child: UserImage(
                     user: experience.creator,
                     avatarRadius: 20,
+                    checkIconSize: 15,
                   ),
                 ),
                 Positioned(

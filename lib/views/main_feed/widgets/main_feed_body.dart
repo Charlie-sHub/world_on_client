@@ -23,7 +23,9 @@ class MainFeedBody extends StatelessWidget {
       child: BlocBuilder<MainFeedWatcherBloc, MainFeedWatcherState>(
         builder: (context, state) => state.map(
           initial: (_) => Container(),
-          loadInProgress: (_) => const WorldOnProgressIndicator(),
+          loadInProgress: (_) => const WorldOnProgressIndicator(
+            size: 60,
+          ),
           loadSuccess: (state) => RefreshIndicator(
             onRefresh: () async => context.read<MainFeedWatcherBloc>().add(
                   const MainFeedWatcherEvent.watchMainFeedStarted(),

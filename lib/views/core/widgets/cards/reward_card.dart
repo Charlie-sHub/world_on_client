@@ -63,10 +63,7 @@ class RewardCard extends StatelessWidget {
               ),
               child: CachedNetworkImage(
                 imageUrl: reward.imageURL,
-                progressIndicatorBuilder: (context, url, progress) => const Padding(
-                  padding: EdgeInsets.all(25),
-                  child: WorldOnProgressIndicator(),
-                ),
+                progressIndicatorBuilder: (context, url, progress) => const WorldOnProgressIndicator(size: 40),
                 height: 100,
                 width: 100,
               ),

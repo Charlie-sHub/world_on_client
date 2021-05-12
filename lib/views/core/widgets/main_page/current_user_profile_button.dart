@@ -2,7 +2,7 @@ import 'package:cached_network_image/cached_network_image.dart';
 import 'package:dartz/dartz.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:worldon/application/core/user_profile_button_watcher_bloc.dart';
+import 'package:worldon/application/core/user_profile_button_watcher/user_profile_button_watcher_bloc.dart';
 import 'package:worldon/application/navigation/navigation_actor/navigation_actor_bloc.dart';
 import 'package:worldon/views/core/misc/world_on_colors.dart';
 import 'package:worldon/views/core/widgets/misc/world_on_progress_indicator.dart';
@@ -20,7 +20,9 @@ class CurrentUserProfileButton extends StatelessWidget {
           Icons.person_outline,
           size: 25,
         ),
-        actionInProgress: (_) => const WorldOnProgressIndicator(),
+        actionInProgress: (_) => const WorldOnProgressIndicator(
+          size: 15,
+        ),
         loadSuccess: (state) => MaterialButton(
           minWidth: 0,
           elevation: 0,
@@ -33,12 +35,9 @@ class CurrentUserProfileButton extends StatelessWidget {
                   currentUserProfile: true,
                 ),
               ),
-          child: Padding(
-            padding: const EdgeInsets.all(3),
-            child: CircleAvatar(
-              radius: 15,
-              backgroundImage: CachedNetworkImageProvider(state.imageUrl),
-            ),
+          child: CircleAvatar(
+            radius: 15,
+            backgroundImage: CachedNetworkImageProvider(state.imageUrl),
           ),
         ),
         loadFailure: (_) => const Icon(

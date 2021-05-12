@@ -887,10 +887,20 @@ class S {
     );
   }
 
-  /// `experience points! and 1 World On Coin`
+  /// `experience points and `
+  String get experiencePointsGainedMid {
+    return Intl.message(
+      'experience points and ',
+      name: 'experiencePointsGainedMid',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `1 World On Coin!`
   String get experiencePointsGainedPost {
     return Intl.message(
-      'experience points! and 1 World On Coin',
+      '1 World On Coin!',
       name: 'experiencePointsGainedPost',
       desc: '',
       args: [],
@@ -997,10 +1007,10 @@ class S {
     );
   }
 
-  /// `Comment`
+  /// `Leave a comment`
   String get comment {
     return Intl.message(
-      'Comment',
+      'Leave a comment',
       name: 'comment',
       desc: '',
       args: [],
@@ -1567,10 +1577,10 @@ class S {
     );
   }
 
-  /// `Recommendations:`
+  /// `Recommendations`
   String get recommendations {
     return Intl.message(
-      'Recommendations:',
+      'Recommendations',
       name: 'recommendations',
       desc: '',
       args: [],
@@ -2092,6 +2102,46 @@ class S {
     return Intl.message(
       'Follow',
       name: 'follow',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Main Feed`
+  String get mainFeed {
+    return Intl.message(
+      'Main Feed',
+      name: 'mainFeed',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Adventure`
+  String get experienceNavigation {
+    return Intl.message(
+      'Adventure',
+      name: 'experienceNavigation',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Profile`
+  String get profile {
+    return Intl.message(
+      'Profile',
+      name: 'profile',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Notifications`
+  String get notifications {
+    return Intl.message(
+      'Notifications',
+      name: 'notifications',
       desc: '',
       args: [],
     );

@@ -3,7 +3,8 @@ import 'package:dartz/dartz.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:worldon/application/authentication/authentication/authentication_bloc.dart';
-import 'package:worldon/application/core/user_profile_button_watcher_bloc.dart';
+import 'package:worldon/application/core/app_bar_title/app_bar_title_bloc.dart';
+import 'package:worldon/application/core/user_profile_button_watcher/user_profile_button_watcher_bloc.dart';
 import 'package:worldon/application/navigation/navigation_actor/navigation_actor_bloc.dart';
 import 'package:worldon/generated/l10n.dart';
 import 'package:worldon/injection.dart';
@@ -31,13 +32,39 @@ class MainPage extends StatelessWidget {
             create: (context) => getIt<NavigationActorBloc>(),
           ),
           BlocProvider(
+            create: (context) => getIt<AppBarTitleBloc>()
+              ..add(
+                const AppBarTitleEvent.initialized(),
+              ),
+          ),
+          BlocProvider(
             create: (context) => getIt<UserProfileButtonWatcherBloc>()
               ..add(
                 const UserProfileButtonWatcherEvent.initialized(),
               ),
           ),
         ],
-        child: BlocBuilder<NavigationActorBloc, NavigationActorState>(
+        child: BlocConsumer<NavigationActorBloc, NavigationActorState>(
+          listener: (context, state) => state.map(
+            mainFeedView: (_) => context.read<AppBarTitleBloc>().add(
+                  const AppBarTitleEvent.showedMainFeed(),
+                ),
+            searchView: (_) => context.read<AppBarTitleBloc>().add(
+                  const AppBarTitleEvent.showedSearch(),
+                ),
+            navigateExperienceView: (_) => context.read<AppBarTitleBloc>().add(
+                  const AppBarTitleEvent.showedExperienceNavigation(),
+                ),
+            profileView: (_) => context.read<AppBarTitleBloc>().add(
+                  const AppBarTitleEvent.showedProfile(),
+                ),
+            errorView: (_) => context.read<AppBarTitleBloc>().add(
+                  const AppBarTitleEvent.initialized(),
+                ),
+            notificationsView: (_) => context.read<AppBarTitleBloc>().add(
+                  const AppBarTitleEvent.showedNotifications(),
+                ),
+          ),
           builder: (context, state) => SafeArea(
             child: Scaffold(
               appBar: WorldOnAppBar(),
