@@ -1,7 +1,7 @@
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
-import 'package:number_display/number_display.dart';
 import 'package:worldon/generated/l10n.dart';
+import 'package:worldon/views/core/misc/common_functions/world_on_number_display.dart';
 import 'package:worldon/views/core/misc/world_on_colors.dart';
 
 class ExperienceDoneCounter extends StatelessWidget {
@@ -14,14 +14,6 @@ class ExperienceDoneCounter extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final _display = createDisplay(
-      length: 4,
-      units: [
-        "K",
-        "M",
-        "B",
-      ],
-    );
     return Row(
       children: [
         const Icon(
@@ -37,7 +29,7 @@ class ExperienceDoneCounter extends StatelessWidget {
         ),
         const SizedBox(width: 5),
         AutoSizeText(
-          _display(amount),
+          createWorldOnDisplay(amount),
           style: const TextStyle(
             fontSize: 15,
             fontWeight: FontWeight.bold,

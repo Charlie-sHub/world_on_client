@@ -117,7 +117,7 @@ class ExpansionExperienceCard extends StatelessWidget {
                               maxLines: 5,
                               style: const TextStyle(
                                 fontSize: 15,
-                                fontWeight: FontWeight.bold,
+                                fontWeight: FontWeight.w800,
                               ),
                             ),
                           ),
@@ -128,6 +128,7 @@ class ExpansionExperienceCard extends StatelessWidget {
                               maxFontSize: 14,
                               style: const TextStyle(
                                 fontSize: 13,
+                                color: Colors.grey,
                               ),
                             ),
                           ),
@@ -147,8 +148,9 @@ class ExpansionExperienceCard extends StatelessWidget {
                       children: [
                         AutoSizeText(
                           experience.description.getOrCrash(),
-                          style: const TextStyle(
+                          style: TextStyle(
                             fontSize: 14,
+                            color: Colors.grey.shade600,
                           ),
                         ),
                         const SizedBox(height: 10),

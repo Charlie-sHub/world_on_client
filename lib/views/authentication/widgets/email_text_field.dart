@@ -5,7 +5,7 @@ import 'package:worldon/views/core/misc/world_on_colors.dart';
 
 class EmailTextField extends StatelessWidget {
   final Function eventToAdd;
-  final Validator<String> validator;
+  final Validator<String?> validator;
   final String? initialValue;
 
   const EmailTextField({
@@ -20,7 +20,7 @@ class EmailTextField extends StatelessWidget {
     return TextFormField(
       onChanged: (value) => eventToAdd(value.trim()),
       initialValue: initialValue,
-      validator: (_) => validator(_!),
+      validator: (_) => validator(_),
       autocorrect: false,
       decoration: InputDecoration(
         labelText: S.of(context).emailAddress,
@@ -28,6 +28,8 @@ class EmailTextField extends StatelessWidget {
           Icons.email,
           color: WorldOnColors.primary,
         ),
+        filled: true,
+        fillColor: WorldOnColors.background,
       ),
     );
   }

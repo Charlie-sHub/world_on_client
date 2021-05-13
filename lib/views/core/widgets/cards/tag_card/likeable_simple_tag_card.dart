@@ -25,7 +25,7 @@ class LikeableSimpleTagCard extends StatelessWidget {
           tag.name.getOrCrash(),
           style: const TextStyle(
             color: WorldOnColors.accent,
-            fontWeight: FontWeight.bold,
+            fontWeight: FontWeight.w500,
           ),
         ),
       ),

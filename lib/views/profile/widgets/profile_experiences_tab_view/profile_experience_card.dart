@@ -7,7 +7,7 @@ import 'package:worldon/application/navigation/navigation_actor/navigation_actor
 import 'package:worldon/domain/core/entities/experience/experience.dart';
 import 'package:worldon/views/core/misc/world_on_colors.dart';
 import 'package:worldon/views/core/widgets/cards/experience_card/manage_button_builder.dart';
-import 'package:worldon/views/core/widgets/misc/world_on_progress_indicator.dart';
+import 'package:worldon/views/core/widgets/misc/world_on_plasma.dart';
 
 class ProfileExperienceCard extends StatelessWidget {
   const ProfileExperienceCard({
@@ -51,9 +51,7 @@ class ProfileExperienceCard extends StatelessWidget {
                 height: MediaQuery.of(context).size.height * _heightMultiplier,
                 width: 200,
                 fit: BoxFit.cover,
-                progressIndicatorBuilder: (context, url, progress) => const WorldOnProgressIndicator(
-                  size: 30,
-                ),
+                progressIndicatorBuilder: (context, url, progress) => WorldOnPlasma(),
               ),
             ),
             Positioned(
@@ -67,18 +65,20 @@ class ProfileExperienceCard extends StatelessWidget {
                     AutoSizeText(
                       experience.title.getOrCrash(),
                       maxLines: 2,
-                      minFontSize: 7,
-                      maxFontSize: 10,
+                      minFontSize: 6,
+                      maxFontSize: 9,
                       style: const TextStyle(
-                        fontSize: 10,
-                        fontWeight: FontWeight.bold,
+                        fontSize: 9,
+                        fontWeight: FontWeight.w800,
                         color: WorldOnColors.white,
                       ),
                     ),
                     AutoSizeText(
                       experience.getFormattedCreationDateString,
+                      minFontSize: 8,
+                      maxFontSize: 8,
                       style: const TextStyle(
-                        fontSize: 10,
+                        fontSize: 8,
                         color: WorldOnColors.white,
                       ),
                     ),

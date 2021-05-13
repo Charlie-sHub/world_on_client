@@ -167,11 +167,11 @@ class S {
     );
   }
 
-  /// `Having trouble logging in? tap here`
-  String get logInTrouble {
+  /// `Forgotten password?`
+  String get forgottenPassword {
     return Intl.message(
-      'Having trouble logging in? tap here',
-      name: 'logInTrouble',
+      'Forgotten password?',
+      name: 'forgottenPassword',
       desc: '',
       args: [],
     );
@@ -1287,10 +1287,10 @@ class S {
     );
   }
 
-  /// `Users`
+  /// `People`
   String get searchUsers {
     return Intl.message(
-      'Users',
+      'People',
       name: 'searchUsers',
       desc: '',
       args: [],
@@ -2142,6 +2142,36 @@ class S {
     return Intl.message(
       'Notifications',
       name: 'notifications',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Log Out`
+  String get logOut {
+    return Intl.message(
+      'Log Out',
+      name: 'logOut',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Reset`
+  String get resetPassword {
+    return Intl.message(
+      'Reset',
+      name: 'resetPassword',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Email Sent`
+  String get emailRequestSent {
+    return Intl.message(
+      'Email Sent',
+      name: 'emailRequestSent',
       desc: '',
       args: [],
     );

@@ -1,5 +1,8 @@
+import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:worldon/generated/l10n.dart';
+import 'package:worldon/views/core/misc/world_on_colors.dart';
+import 'package:worldon/views/core/routes/router.gr.dart';
 
 class LogInTroubleButton extends StatelessWidget {
   const LogInTroubleButton({
@@ -9,11 +12,17 @@ class LogInTroubleButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return TextButton(
-      // TODO: Add functionality for recovering account
-      onPressed: () {},
+      onPressed: () => context.router.push(
+        const ForgottenPasswordPageRoute(),
+      ),
       child: Text(
-        S.of(context).logInTrouble,
+        S.of(context).forgottenPassword,
         textAlign: TextAlign.center,
+        style: const TextStyle(
+          color: WorldOnColors.white,
+          fontWeight: FontWeight.bold,
+          fontSize: 15,
+        ),
       ),
     );
   }

@@ -33,7 +33,7 @@ class ExperiencePointsCoinStack extends StatelessWidget {
                   .toString(),
               style: const TextStyle(
                 fontSize: 45,
-                fontWeight: FontWeight.bold,
+                fontWeight: FontWeight.w900,
                 color: Colors.white,
               ),
             ),
@@ -65,7 +65,7 @@ class ExperiencePointsCoinStack extends StatelessWidget {
                     "1",
                     style: TextStyle(
                       fontSize: 20,
-                      fontWeight: FontWeight.bold,
+                      fontWeight: FontWeight.w900,
                       color: Colors.white,
                     ),
                   ),

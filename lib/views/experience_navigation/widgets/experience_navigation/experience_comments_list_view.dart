@@ -1,10 +1,10 @@
 import 'package:dartz/dartz.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:number_display/number_display.dart';
 import 'package:worldon/application/comments/comment_watcher/comment_watcher_bloc.dart';
 import 'package:worldon/domain/core/validation/objects/unique_id.dart';
 import 'package:worldon/generated/l10n.dart';
+import 'package:worldon/views/core/misc/common_functions/world_on_number_display.dart';
 import 'package:worldon/views/core/misc/world_on_colors.dart';
 import 'package:worldon/views/core/widgets/cards/error_card.dart';
 import 'package:worldon/views/core/widgets/error/error_display.dart';
@@ -23,14 +23,6 @@ class ExperienceCommentsListView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final _display = createDisplay(
-      length: 4,
-      units: [
-        "K",
-        "M",
-        "B",
-      ],
-    );
     return Column(
       children: [
         CommentForm(experienceId: experienceId),
@@ -47,7 +39,7 @@ class ExperienceCommentsListView extends StatelessWidget {
               child: Column(
                 children: [
                   Text(
-                    "${_display(state.comments.size)} ${S.of(context).experienceInformationCommentsNumber}",
+                    "${createWorldOnDisplay(state.comments.size)} ${S.of(context).experienceInformationCommentsNumber}",
                     style: const TextStyle(
                       fontSize: 13,
                       color: Colors.grey,

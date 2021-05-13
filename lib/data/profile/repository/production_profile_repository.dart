@@ -42,7 +42,7 @@ class ProductionProfileRepository implements ProfileRepositoryInterface {
   Future<Either<Failure, Unit>> blockUser(UniqueId blockedId) async {
     try {
       final _userDocument = await _firestore.userDocument();
-      await _userDocument.update(
+      _userDocument.update(
         {
           UserFields.blockedUsersIds: FieldValue.arrayUnion([blockedId.getOrCrash()]),
         },
@@ -57,7 +57,7 @@ class ProductionProfileRepository implements ProfileRepositoryInterface {
   Future<Either<Failure, Unit>> unBlockUser(UniqueId blockedId) async {
     try {
       final _userDocument = await _firestore.userDocument();
-      await _userDocument.update(
+      _userDocument.update(
         {
           UserFields.blockedUsersIds: FieldValue.arrayRemove([blockedId.getOrCrash()]),
         },
@@ -72,7 +72,7 @@ class ProductionProfileRepository implements ProfileRepositoryInterface {
   Future<Either<Failure, Unit>> followUser(UniqueId userToFollowId) async {
     try {
       final _userDocument = await _firestore.userDocument();
-      await _userDocument.update(
+      _userDocument.update(
         {
           UserFields.followedUsersIds: FieldValue.arrayUnion([userToFollowId.getOrCrash()]),
           UserFields.followersAmount: FieldValue.increment(1),
@@ -88,7 +88,7 @@ class ProductionProfileRepository implements ProfileRepositoryInterface {
   Future<Either<Failure, Unit>> unFollowUser(UniqueId userToUnFollowId) async {
     try {
       final _userDocument = await _firestore.userDocument();
-      await _userDocument.update(
+      _userDocument.update(
         {
           UserFields.followedUsersIds: FieldValue.arrayRemove([userToUnFollowId.getOrCrash()]),
           UserFields.followersAmount: FieldValue.increment(-1),
@@ -149,7 +149,7 @@ class ProductionProfileRepository implements ProfileRepositoryInterface {
         final _oldExperience = ExperienceDto.fromFirestore(await _experienceDoc).toDomain();
         final _updatedExperience = _oldExperience.copyWith(creator: _updatedUser);
         final _updatedExperienceDto = ExperienceDto.fromDomain(_updatedExperience);
-        await _firestore.experienceCollection.doc(_updatedExperienceDto.id).update(
+        _firestore.experienceCollection.doc(_updatedExperienceDto.id).update(
               _updatedExperienceDto.toJson(),
             );
       }
@@ -166,7 +166,7 @@ class ProductionProfileRepository implements ProfileRepositoryInterface {
         final _oldNotification = NotificationDto.fromFirestore(await _notificationDoc).toDomain();
         final _updatedNotification = _oldNotification.copyWith(sender: _updatedUser);
         final _updatedNotificationDto = NotificationDto.fromDomain(_updatedNotification);
-        await _firestore.notificationCollection.doc(_updatedNotificationDto.id).update(
+        _firestore.notificationCollection.doc(_updatedNotificationDto.id).update(
               _updatedNotificationDto.toJson(),
             );
       }
@@ -183,7 +183,7 @@ class ProductionProfileRepository implements ProfileRepositoryInterface {
         final _oldNotification = NotificationDto.fromFirestore(await _notificationDoc).toDomain();
         final _updatedNotification = _oldNotification.copyWith(receiver: _updatedUser);
         final _updatedNotificationDto = NotificationDto.fromDomain(_updatedNotification);
-        await _firestore.notificationCollection.doc(_updatedNotificationDto.id).update(
+        _firestore.notificationCollection.doc(_updatedNotificationDto.id).update(
               _updatedNotificationDto.toJson(),
             );
       }
@@ -211,7 +211,7 @@ class ProductionProfileRepository implements ProfileRepositoryInterface {
   Future<Either<Failure, Unit>> removeExperienceLiked(UniqueId experienceId) async {
     try {
       final _userDocument = await _firestore.userDocument();
-      await _userDocument.update(
+      _userDocument.update(
         {
           UserFields.experiencesLikedIds: FieldValue.arrayRemove([experienceId.getOrCrash()]),
         },

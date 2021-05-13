@@ -163,7 +163,7 @@ class _$_PrimitiveReward extends _PrimitiveReward {
       const DeepCollectionEquality().hash(name) ^
       const DeepCollectionEquality().hash(description) ^
       const DeepCollectionEquality().hash(imageFile);
-  
+
   @JsonKey(ignore: true)
   @override
   _$PrimitiveRewardCopyWith<_PrimitiveReward> get copyWith => __$PrimitiveRewardCopyWithImpl<_PrimitiveReward>(this, _$identity);

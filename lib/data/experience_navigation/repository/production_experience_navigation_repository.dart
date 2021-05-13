@@ -34,7 +34,7 @@ class ProductionExperienceNavigationRepository implements ExperienceNavigationRe
   Future<Either<Failure, Unit>> finishExperience(UniqueId experienceId) async {
     try {
       final _userDocument = await _firestore.userDocument();
-      await _userDocument.update(
+      _userDocument.update(
         {
           UserFields.experiencesDoneIds: FieldValue.arrayUnion([experienceId.getOrCrash()]),
         },
@@ -55,7 +55,7 @@ class ProductionExperienceNavigationRepository implements ExperienceNavigationRe
   Future<Either<Failure, Unit>> likeExperience(UniqueId experienceId) async {
     try {
       final _userDocument = await _firestore.userDocument();
-      await _userDocument.update(
+      _userDocument.update(
         {
           UserFields.experiencesLikedIds: FieldValue.arrayUnion([experienceId.getOrCrash()]),
         },
@@ -76,7 +76,7 @@ class ProductionExperienceNavigationRepository implements ExperienceNavigationRe
   Future<Either<Failure, Unit>> dislikeExperience(UniqueId experienceId) async {
     try {
       final _userDocument = await _firestore.userDocument();
-      await _userDocument.update(
+      _userDocument.update(
         {
           UserFields.experiencesLikedIds: FieldValue.arrayRemove([experienceId.getOrCrash()]),
         },
@@ -152,7 +152,7 @@ class ProductionExperienceNavigationRepository implements ExperienceNavigationRe
             items: _currentUser.items.toImmutableSet().minusElement(_item).dart,
           );
           final _jsonUser = UserDto.fromDomain(_updatedUser).toJson();
-          await _firestore.userCollection.doc(_currentUser.id.getOrCrash()).update(_jsonUser);
+          _firestore.userCollection.doc(_currentUser.id.getOrCrash()).update(_jsonUser);
         } else {
           _experiencePointsAwarded = experiencePoints * 2;
           final _userXp = _getUserXp(
@@ -161,7 +161,7 @@ class ProductionExperienceNavigationRepository implements ExperienceNavigationRe
           );
           final _postUserLevel = Levels.levelAt(_userXp);
           _leveledUp = _postUserLevel > _preUserLevel;
-          await _updateLevelExperiencePoints(
+          _updateLevelExperiencePoints(
             _userDocument,
             _experiencePointsAwarded,
             _postUserLevel,
@@ -175,7 +175,7 @@ class ProductionExperienceNavigationRepository implements ExperienceNavigationRe
         );
         final _postUserLevel = Levels.levelAt(_userXp);
         _leveledUp = _postUserLevel > _preUserLevel;
-        await _updateLevelExperiencePoints(
+        _updateLevelExperiencePoints(
           _userDocument,
           _experiencePointsAwarded,
           _postUserLevel,
@@ -202,7 +202,7 @@ class ProductionExperienceNavigationRepository implements ExperienceNavigationRe
     int experiencePoints,
     int _userLevel,
   ) async {
-    await _userDocument.update(
+    _userDocument.update(
       {
         UserFields.experiencePoints: FieldValue.increment(experiencePoints),
         UserFields.level: _userLevel,

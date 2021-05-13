@@ -56,7 +56,7 @@ class FinishSuccessView extends StatelessWidget {
               ),
             ],
           ),
-          const SizedBox(height: 20),
+          const SizedBox(height: 15),
           Padding(
             padding: const EdgeInsets.symmetric(
               horizontal: 40,
@@ -69,7 +69,7 @@ class FinishSuccessView extends StatelessWidget {
                     experience.title.getOrCrash(),
                     textAlign: TextAlign.center,
                     style: const TextStyle(
-                      fontWeight: FontWeight.bold,
+                      fontWeight: FontWeight.w800,
                       fontSize: 20,
                     ),
                   ),

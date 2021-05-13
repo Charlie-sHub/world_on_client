@@ -3,6 +3,7 @@ import 'package:injectable/injectable.dart';
 import 'package:worldon/core/error/failure.dart';
 import 'package:worldon/domain/authentication/repository/authentication_repository_interface.dart';
 import 'package:worldon/domain/core/entities/user/user.dart';
+import 'package:worldon/domain/core/validation/objects/email_address.dart';
 
 @LazySingleton(as: AuthenticationRepositoryInterface, env: [Environment.dev])
 class DevelopmentAuthenticationRepository implements AuthenticationRepositoryInterface {
@@ -28,6 +29,11 @@ class DevelopmentAuthenticationRepository implements AuthenticationRepositoryInt
 
   @override
   Future<Either<Failure, Option<User>>> logInGoogle() {
+    throw UnimplementedError();
+  }
+
+  @override
+  Future<Either<Failure, Unit>> resetPassword(EmailAddress emailAddress) {
     throw UnimplementedError();
   }
 }

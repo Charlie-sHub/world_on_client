@@ -48,7 +48,7 @@ dependencies:
   google_fonts: ^2.0.0
   google_maps_flutter:
   google_sign_in: ^5.0.2
-  image_picker: ^0.7.4
+  image_picker: ^0.7.5
   implicitly_animated_reorderable_list: ^0.4.0-dev+2
   in_app_purchase: ^0.5.2
   injectable: ^1.4.0
@@ -66,6 +66,7 @@ dependencies:
   provider: ^5.0.0
   quiver: ^3.0.1
   rxdart: ^0.26.0
+  simple_animations: ^3.1.1
   social_share: ^2.1.1
   uuid: ^3.0.4
   visibility_detector: ^0.2.0
@@ -95,6 +96,48 @@ flutter:
     - family: MovingSkate
       fonts:
         - asset: fonts/Moving-Skate.ttf
+    - family: Geometria
+      fonts:
+        - asset: fonts/Geometria.ttf
+        - asset: fonts/Geometria-Bold.ttf
+          weight: 700
+        - asset: fonts/Geometria-BoldItalic.ttf
+          weight: 700
+          style: italic
+        - asset: fonts/Geometria-ExtraBold.ttf
+          weight: 800
+        - asset: fonts/Geometria-ExtraBoldItalic.ttf
+          weight: 800
+          style: italic
+        - asset: fonts/Geometria-ExtraLight.ttf
+          weight: 200
+        - asset: fonts/Geometria-ExtraLightItalic.ttf
+          weight: 200
+          style: italic
+        - asset: fonts/Geometria-Heavy.ttf
+          weight: 900
+        - asset: fonts/Geometria-HeavyItalic.ttf
+          weight: 900
+          style: italic
+        - asset: fonts/Geometria-Italic.ttf
+          weight: 400
+          style: italic
+        - asset: fonts/Geometria-Light.ttf
+          weight: 300
+        - asset: fonts/Geometria-LightItalic.ttf
+          weight: 300
+          style: italic
+        - asset: fonts/Geometria-Medium.ttf
+          weight: 500
+        - asset: fonts/Geometria-MediumItalic.ttf
+          weight: 500
+          style: italic
+        - asset: fonts/Geometria-Thin.ttf
+          weight: 100
+        - asset: fonts/Geometria-ThinItalic.ttf
+          weight: 100
+          style: italic
+
 
 flutter_intl:
   main_locale: en_US

@@ -48,7 +48,9 @@ class SearchErrorDisplay extends StatelessWidget {
                     AutoSizeText(
                       S.of(context).tapToReload,
                       style: const TextStyle(
-                        fontSize: 12,
+                        fontSize: 14,
+                        color: Colors.grey,
+                        fontWeight: FontWeight.w300,
                       ),
                       textAlign: TextAlign.center,
                     ),

@@ -33,7 +33,7 @@ class ProductionTagManagementRepository implements TagManagementRepositoryInterf
           .get();
       if (_aux.docs.isEmpty) {
         final _tagDto = TagDto.fromDomain(tag);
-        await _firestore.tagCollection.doc(tag.id.getOrCrash()).set(_tagDto.toJson());
+        _firestore.tagCollection.doc(tag.id.getOrCrash()).set(_tagDto.toJson());
         return right(unit);
       } else {
         return left(
@@ -53,7 +53,7 @@ class ProductionTagManagementRepository implements TagManagementRepositoryInterf
   Future<Either<Failure, Unit>> editTag(Tag tag) async {
     try {
       final _tagDto = TagDto.fromDomain(tag);
-      await _firestore.tagCollection
+      _firestore.tagCollection
           .doc(
             tag.id.getOrCrash(),
           )
@@ -122,7 +122,7 @@ class ProductionTagManagementRepository implements TagManagementRepositoryInterf
   @override
   Future<Either<Failure, Unit>> removeTag(UniqueId id) async {
     try {
-      await _firestore.tagCollection.doc(id.getOrCrash()).delete();
+      _firestore.tagCollection.doc(id.getOrCrash()).delete();
       return right(unit);
     } on FirebaseException catch (e) {
       return onFirebaseException(e);

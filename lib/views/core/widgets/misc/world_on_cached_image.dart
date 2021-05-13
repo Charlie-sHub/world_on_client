@@ -1,6 +1,6 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
-import 'package:worldon/views/core/widgets/misc/world_on_progress_indicator.dart';
+import 'package:worldon/views/core/widgets/misc/world_on_plasma.dart';
 
 class WorldOnCachedImage extends StatelessWidget {
   const WorldOnCachedImage({
@@ -16,9 +16,7 @@ class WorldOnCachedImage extends StatelessWidget {
     return CachedNetworkImage(
       imageUrl: _imageURL,
       fit: BoxFit.cover,
-      progressIndicatorBuilder: (context, url, progress) => const WorldOnProgressIndicator(
-        size: 45,
-      ),
+      progressIndicatorBuilder: (context, url, progress) => WorldOnPlasma(),
     );
   }
 }

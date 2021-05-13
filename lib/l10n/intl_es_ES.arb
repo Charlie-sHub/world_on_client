@@ -12,7 +12,7 @@
   "invalidPassword": "La contraseña no es válida",
   "invalidEmail": "El correo electrónico no es válido",
   "logInGoogle": "Iniciar sesión con Google",
-  "logInTrouble": "¿Tiene problemas para iniciar sesión? toque aquí",
+  "forgottenPassword": "¿Contraseña olvidada?",
   "register": "REGISTRARSE",
   "selectBirthday": "Selecciona tu cumpleaños",
   "descriptionEmptyString": "La descripción no puede estar vacía",
@@ -105,7 +105,7 @@
   "objectivesTab": "Objetivos",
   "mapTab": "Mapa",
   "mapMarkerSnippet": "Toca para completar",
-  "experienceNavigationNoneChosenTitle": "No haz elegido ninguna experiencia",
+  "experienceNavigationNoneChosenTitle": "No tienes elegida ninguna experiencia",
   "experienceNavigationNoneChosenDescription": "¡Seleccione una experiencia para comenzar la aventura de tu vida!",
   "actionInProgress": "Acción en curso",
   "notification": "Notificación",
@@ -124,7 +124,7 @@
   "profileLogTab": "Para hacer",
   "searchTermEmptyString": "El término de búsqueda no puede estar vacío",
   "noSearchesMessage": "¡Busca algo!",
-  "searchUsers": "Usuarios",
+  "searchUsers": "Personas",
   "search": "Buscar",
   "searchTags": "Etiquetas",
   "tagCreationTitle": "¡Crea una nueva etiqueta!",
@@ -209,5 +209,8 @@
   "mainFeed": "Feed Principal",
   "experienceNavigation": "Aventura",
   "profile": "Perfil",
-  "notifications": "Notificaciones"
+  "notifications": "Notificaciones",
+  "logOut": "Cerrar sesion",
+  "resetPassword": "Resetear",
+  "emailRequestSent": "Correo enviado"
 }

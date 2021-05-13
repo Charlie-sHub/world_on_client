@@ -548,7 +548,7 @@ class _$_ObjectivesTrackerState implements _ObjectivesTrackerState {
             (identical(other.objectivesToDo, objectivesToDo) || const DeepCollectionEquality().equals(other.objectivesToDo, objectivesToDo)) &&
             (identical(other.isFinished, isFinished) || const DeepCollectionEquality().equals(other.isFinished, isFinished)));
   }
-  
+
   @override
   int get hashCode => runtimeType.hashCode ^ const DeepCollectionEquality().hash(objectivesToDo) ^ const DeepCollectionEquality().hash(isFinished);
 

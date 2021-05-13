@@ -46,7 +46,7 @@ class ProductionExperienceManagementRepository implements ExperienceManagementRe
           objectives: ObjectiveList(_objectiveList.toImmutableList()),
         ),
       );
-      await _firestore.experienceCollection
+      _firestore.experienceCollection
           .doc(
             experience.id.getOrCrash(),
           )
@@ -58,7 +58,7 @@ class ProductionExperienceManagementRepository implements ExperienceManagementRe
         latitude: _experienceDto.coordinates.latitude,
         longitude: _experienceDto.coordinates.longitude,
       );
-      await _firestore.experienceCollection
+      _firestore.experienceCollection
           .doc(
         experience.id.getOrCrash(),
       )
@@ -95,7 +95,7 @@ class ProductionExperienceManagementRepository implements ExperienceManagementRe
           objectives: ObjectiveList(_objectiveList.toImmutableList()),
         ),
       );
-      await _firestore.experienceCollection
+      _firestore.experienceCollection
           .doc(
             experience.id.getOrCrash(),
           )
@@ -122,7 +122,7 @@ class ProductionExperienceManagementRepository implements ExperienceManagementRe
   @override
   Future<Either<Failure, Unit>> removeExperience(UniqueId id) async {
     try {
-      await _firestore.experienceCollection.doc(id.getOrCrash()).delete();
+      _firestore.experienceCollection.doc(id.getOrCrash()).delete();
       return right(unit);
     } catch (e) {
       return _onException(e);

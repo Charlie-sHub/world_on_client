@@ -1,8 +1,8 @@
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
-import 'package:number_display/number_display.dart';
 import 'package:worldon/domain/core/entities/user/user.dart';
 import 'package:worldon/generated/l10n.dart';
+import 'package:worldon/views/core/misc/common_functions/world_on_number_display.dart';
 
 class FollowersFollowingCounters extends StatelessWidget {
   const FollowersFollowingCounters({
@@ -14,14 +14,6 @@ class FollowersFollowingCounters extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final _display = createDisplay(
-      length: 4,
-      units: [
-        "K",
-        "M",
-        "B",
-      ],
-    );
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
       children: [
@@ -38,9 +30,9 @@ class FollowersFollowingCounters extends StatelessWidget {
               ),
             ),
             AutoSizeText(
-              _display(user.followersAmount),
+              createWorldOnDisplay(user.followersAmount),
               style: const TextStyle(
-                fontWeight: FontWeight.bold,
+                fontWeight: FontWeight.w800,
                 fontSize: 10,
               ),
             ),
@@ -57,9 +49,9 @@ class FollowersFollowingCounters extends StatelessWidget {
               ),
             ),
             AutoSizeText(
-              _display(user.followedUsersIds.length),
+              createWorldOnDisplay(user.followedUsersIds.length),
               style: const TextStyle(
-                fontWeight: FontWeight.bold,
+                fontWeight: FontWeight.w800,
                 fontSize: 10,
               ),
             ),

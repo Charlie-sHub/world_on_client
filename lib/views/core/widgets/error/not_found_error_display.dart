@@ -18,14 +18,14 @@ class NotFoundErrorDisplay extends StatelessWidget {
         const Icon(
           Icons.sentiment_dissatisfied,
           color: WorldOnColors.red,
-          size: 70,
+          size: 60,
         ),
         const SizedBox(height: 15),
         Text(
           S.of(context).notFoundError,
           style: const TextStyle(
-            fontSize: 40,
-            fontWeight: FontWeight.bold,
+            fontSize: 30,
+            fontWeight: FontWeight.w800,
           ),
           textAlign: TextAlign.center,
         ),
@@ -33,7 +33,9 @@ class NotFoundErrorDisplay extends StatelessWidget {
         Text(
           specificMessage,
           style: const TextStyle(
-            fontSize: 25,
+            fontSize: 20,
+            fontWeight: FontWeight.w300,
+            color: Colors.grey,
           ),
           textAlign: TextAlign.center,
         ),

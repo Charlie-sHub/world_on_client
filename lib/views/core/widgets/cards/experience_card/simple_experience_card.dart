@@ -12,7 +12,7 @@ import 'package:worldon/injection.dart';
 import 'package:worldon/views/core/misc/world_on_colors.dart';
 import 'package:worldon/views/core/widgets/cards/experience_card/share_button.dart';
 import 'package:worldon/views/core/widgets/misc/user_image.dart';
-import 'package:worldon/views/core/widgets/misc/world_on_progress_indicator.dart';
+import 'package:worldon/views/core/widgets/misc/world_on_plasma.dart';
 
 import 'log_button.dart';
 import 'manage_button_builder.dart';
@@ -65,10 +65,7 @@ class SimpleExperienceCard extends StatelessWidget {
                     height: MediaQuery.of(context).size.height * _heightMultiplier,
                     width: 320,
                     fit: BoxFit.cover,
-                    progressIndicatorBuilder: (context, url, progress) => const Padding(
-                      padding: EdgeInsets.all(15),
-                      child: WorldOnProgressIndicator(size: 50),
-                    ),
+                    progressIndicatorBuilder: (context, url, progress) => WorldOnPlasma(),
                   ),
                 ),
                 Positioned(
@@ -108,7 +105,7 @@ class SimpleExperienceCard extends StatelessWidget {
                           minFontSize: 10,
                           maxFontSize: 15,
                           style: const TextStyle(
-                            fontSize: 15,
+                            fontSize: 13,
                             fontWeight: FontWeight.bold,
                             color: WorldOnColors.white,
                           ),

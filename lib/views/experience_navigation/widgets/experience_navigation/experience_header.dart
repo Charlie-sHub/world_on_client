@@ -1,7 +1,7 @@
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
-import 'package:number_display/number_display.dart';
 import 'package:worldon/domain/core/entities/experience/experience.dart';
+import 'package:worldon/views/core/misc/common_functions/world_on_number_display.dart';
 import 'package:worldon/views/core/misc/world_on_colors.dart';
 import 'package:worldon/views/experience_navigation/widgets/like_dislike_button_builder.dart';
 
@@ -15,18 +15,10 @@ class ExperienceHeader extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final _display = createDisplay(
-      length: 4,
-      units: [
-        "K",
-        "M",
-        "B",
-      ],
-    );
     return Row(
-      mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
         Flexible(
+          flex: 5,
           child: AutoSizeText(
             experience.title.getOrCrash(),
             style: const TextStyle(
@@ -36,13 +28,17 @@ class ExperienceHeader extends StatelessWidget {
             ),
           ),
         ),
-        const SizedBox(width: 10),
+        const Expanded(
+          child: SizedBox(
+            width: 1,
+          ),
+        ),
         LikeDislikeButtonBuilder(
           experience: experience,
         ),
         const SizedBox(width: 5),
         Text(
-          _display(experience.likedBy.length),
+          createWorldOnDisplay(experience.likedBy.length),
         ),
       ],
     );

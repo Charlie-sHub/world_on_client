@@ -45,7 +45,7 @@ class SearchBody extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     AutoSizeText(
-                      S.of(context).searchTags,
+                      S.of(context).searchTags.toUpperCase(),
                       style: const TextStyle(fontWeight: FontWeight.bold),
                     ),
                     const SizedBox(height: _separation),
@@ -54,7 +54,7 @@ class SearchBody extends StatelessWidget {
                       child: const SearchTagsTabView(),
                     ),
                     AutoSizeText(
-                      S.of(context).experiences,
+                      S.of(context).experiences.toUpperCase(),
                       style: const TextStyle(fontWeight: FontWeight.bold),
                     ),
                     const SizedBox(height: _separation),
@@ -64,7 +64,7 @@ class SearchBody extends StatelessWidget {
                     ),
                     const SizedBox(height: _separation),
                     AutoSizeText(
-                      S.of(context).searchUsers,
+                      S.of(context).searchUsers.toUpperCase(),
                       style: const TextStyle(fontWeight: FontWeight.bold),
                     ),
                     const SizedBox(height: _separation),

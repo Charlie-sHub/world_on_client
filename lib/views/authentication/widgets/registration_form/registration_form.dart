@@ -124,7 +124,7 @@ class RegistrationForm extends StatelessWidget {
     );
   }
 
-  String _passwordValidator(BuildContext context) {
+  String? _passwordValidator(BuildContext context) {
     return context.read<RegistrationFormBloc>().state.user.password.value.fold(
           (failure) => failure.maybeMap(
             emptyString: (_) => S.of(context).passwordEmptyString,
@@ -134,17 +134,17 @@ class RegistrationForm extends StatelessWidget {
             invalidPassword: (_) => S.of(context).invalidPassword,
             orElse: () => S.of(context).unknownError,
           ),
-          (_) => "",
+          (_) => null,
         );
   }
 
-  String _emailValidator(BuildContext context) {
+  String? _emailValidator(BuildContext context) {
     return context.read<RegistrationFormBloc>().state.user.email.value.fold(
           (failure) => failure.maybeMap(
             invalidEmail: (_) => S.of(context).invalidEmail,
             orElse: () => S.of(context).unknownError,
           ),
-          (_) => "",
+          (_) => null,
         );
   }
 }

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:worldon/application/tag_management/tag_card_actor/tag_card_actor_bloc.dart';
 import 'package:worldon/domain/core/entities/tag/tag.dart';
+import 'package:worldon/views/core/widgets/misc/world_on_progress_indicator.dart';
 
 import '../../../../../injection.dart';
 import 'dislikeable_simple_tag_card.dart';
@@ -23,11 +24,10 @@ class SimpleTagCardBuilder extends StatelessWidget {
           ..add(
             TagCardActorEvent.initialized(tag),
           ),
-        child: BlocConsumer<TagCardActorBloc, TagCardActorState>(
-          listener: (context, state) {},
+        child: BlocBuilder<TagCardActorBloc, TagCardActorState>(
           builder: (context, state) => state.map(
             initial: (_) => Container(),
-            actionInProgress: (_) => const CircularProgressIndicator(),
+            actionInProgress: (_) => const WorldOnProgressIndicator(size: 15),
             notInInterests: (_) => LikeableSimpleTagCard(tag: tag),
             additionSuccess: (_) => DisLikeableSimpleTagCard(tag: tag),
             additionFailure: (_) => LikeableSimpleTagCard(tag: tag),

@@ -6,7 +6,7 @@ import 'package:worldon/application/experience_navigation/objectives_tracker/obj
 import 'package:worldon/domain/core/entities/objective/objective.dart';
 import 'package:worldon/views/core/misc/world_on_colors.dart';
 import 'package:worldon/views/core/widgets/misc/world_on_cached_image.dart';
-import 'package:worldon/views/core/widgets/misc/world_on_progress_indicator.dart';
+import 'package:worldon/views/core/widgets/misc/world_on_plasma.dart';
 
 class ObjectiveCard extends StatelessWidget {
   const ObjectiveCard({
@@ -45,9 +45,7 @@ class ObjectiveCard extends StatelessWidget {
                 child: CachedNetworkImage(
                   imageUrl: objective.imageURL,
                   fit: BoxFit.fill,
-                  progressIndicatorBuilder: (context, url, progress) => const WorldOnProgressIndicator(
-                    size: 30,
-                  ),
+                  progressIndicatorBuilder: (context, url, progress) => WorldOnPlasma(),
                 ),
               ),
             ),

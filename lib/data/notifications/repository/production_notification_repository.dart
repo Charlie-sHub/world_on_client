@@ -24,7 +24,7 @@ class ProductionNotificationRepository implements NotificationRepositoryInterfac
   @override
   Future<Either<Failure, Unit>> checkNotification(UniqueId id) async {
     try {
-      await _firestore.notificationCollection
+      _firestore.notificationCollection
           .doc(
         id.getOrCrash(),
       )
@@ -110,7 +110,7 @@ class ProductionNotificationRepository implements NotificationRepositoryInterfac
   Future<Either<Failure, Unit>> sendNotification(Notification notification) async {
     try {
       final _notificationDto = NotificationDto.fromDomain(notification);
-      await _firestore.notificationCollection
+      _firestore.notificationCollection
           .doc(
             notification.id.getOrCrash(),
           )
@@ -126,7 +126,7 @@ class ProductionNotificationRepository implements NotificationRepositoryInterfac
   @override
   Future<Either<Failure, Unit>> deleteNotification(UniqueId id) async {
     try {
-      await _firestore.notificationCollection.doc(id.getOrCrash()).delete();
+      _firestore.notificationCollection.doc(id.getOrCrash()).delete();
       return right(unit);
     } on FirebaseException catch (e) {
       return onFirebaseException(e);

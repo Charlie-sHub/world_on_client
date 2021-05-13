@@ -555,7 +555,7 @@ class _$_OptionsFormState implements _OptionsFormState {
       const DeepCollectionEquality().hash(showErrorMessages) ^
       const DeepCollectionEquality().hash(isSubmitting) ^
       const DeepCollectionEquality().hash(failureOrSuccessOption);
-  
+
   @JsonKey(ignore: true)
   @override
   _$OptionsFormStateCopyWith<_OptionsFormState> get copyWith => __$OptionsFormStateCopyWithImpl<_OptionsFormState>(this, _$identity);

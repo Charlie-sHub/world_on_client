@@ -32,14 +32,14 @@ class ExperiencedGainedText extends StatelessWidget {
                     )
                     .toString(),
                 style: const TextStyle(
-                  fontWeight: FontWeight.bold,
+                  fontWeight: FontWeight.w800,
                 ),
               ),
               TextSpan(text: " ${S.of(context).experiencePointsGainedMid}"),
               TextSpan(
                 text: " ${S.of(context).experiencePointsGainedPost}",
                 style: const TextStyle(
-                  fontWeight: FontWeight.bold,
+                  fontWeight: FontWeight.w800,
                 ),
               ),
             ],
@@ -49,6 +49,7 @@ class ExperiencedGainedText extends StatelessWidget {
           textAlign: TextAlign.center,
           style: const TextStyle(
             fontSize: 18,
+            fontWeight: FontWeight.w300,
           ),
         ),
       ),

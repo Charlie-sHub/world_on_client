@@ -15,8 +15,9 @@ class ExperienceDescription extends StatelessWidget {
     return AutoSizeText(
       experience.description.getOrCrash(),
       textAlign: TextAlign.justify,
-      style: const TextStyle(
+      style: TextStyle(
         fontSize: 15,
+        color: Colors.grey.shade600,
       ),
     );
   }

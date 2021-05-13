@@ -12,7 +12,7 @@
   "invalidPassword": "The password is invalid",
   "invalidEmail": "The email is not valid",
   "logInGoogle": "Log In with Google",
-  "logInTrouble": "Having trouble logging in? tap here",
+  "forgottenPassword": "Forgotten password?",
   "register": "REGISTER",
   "selectBirthday": "Select your birthday",
   "descriptionEmptyString": "The description can't be empty",
@@ -124,7 +124,7 @@
   "profileLogTab": "To Do",
   "searchTermEmptyString": "The search term can't be empty",
   "noSearchesMessage": "Search for something!",
-  "searchUsers": "Users",
+  "searchUsers": "People",
   "search": "Search",
   "searchTags": "Tags",
   "tagCreationTitle": "Create a new Tag!",
@@ -209,5 +209,8 @@
   "mainFeed": "Main Feed",
   "experienceNavigation": "Adventure",
   "profile": "Profile",
-  "notifications": "Notifications"
+  "notifications": "Notifications",
+  "logOut": "Log Out",
+  "resetPassword": "Reset",
+  "emailRequestSent": "Email Sent"
 }

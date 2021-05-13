@@ -47,8 +47,8 @@ class ProfileAvatarStack extends StatelessWidget {
                 user.level.getOrCrash().toString(),
                 style: const TextStyle(
                   color: WorldOnColors.white,
-                  fontWeight: FontWeight.bold,
-                  fontSize: 16,
+                  fontWeight: FontWeight.w900,
+                  fontSize: 15,
                 ),
               ),
             ),

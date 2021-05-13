@@ -81,7 +81,6 @@ mixin _$AppBarTitleEvent {
     required TResult Function() showedUsername,
   }) =>
       throw _privateConstructorUsedError;
-
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initialized,
@@ -98,7 +97,6 @@ mixin _$AppBarTitleEvent {
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
-
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Initialized value) initialized,
@@ -114,7 +112,6 @@ mixin _$AppBarTitleEvent {
     required TResult Function(_ShowedUsername value) showedUsername,
   }) =>
       throw _privateConstructorUsedError;
-
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initialized value)? initialized,
@@ -1500,7 +1497,6 @@ mixin _$AppBarTitleState {
     required TResult Function() error,
   }) =>
       throw _privateConstructorUsedError;
-
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
@@ -1518,7 +1514,6 @@ mixin _$AppBarTitleState {
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
-
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Initial value) initial,
@@ -1535,7 +1530,6 @@ mixin _$AppBarTitleState {
     required TResult Function(_Error value) error,
   }) =>
       throw _privateConstructorUsedError;
-
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial value)? initial,

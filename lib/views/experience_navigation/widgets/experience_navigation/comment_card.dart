@@ -25,12 +25,14 @@ class CommentCard extends StatelessWidget {
           text: "@${comment.poster.username.getOrCrash()}",
           style: const TextStyle(
             fontSize: 14,
+            fontWeight: FontWeight.w800,
           ),
           children: [
             TextSpan(
               text: " ${comment.content.getOrCrash()}",
               style: TextStyle(
                 color: Colors.grey.shade600,
+                fontWeight: FontWeight.normal,
               ),
             ),
           ],
@@ -39,18 +41,6 @@ class CommentCard extends StatelessWidget {
         maxFontSize: 14,
         textAlign: TextAlign.justify,
       ),
-      /*
-      trailing: IconButton(
-        icon: const Icon(
-          Icons.more_vert,
-          color: Colors.grey,
-        ),
-        onPressed: () => FlushbarHelper.createInformation(
-          duration: const Duration(seconds: 2),
-          message: S.of(context).placeholder,
-        ).show(context),
-      ),
-       */
     );
   }
 }

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:worldon/application/core/experience_card_like_check/experience_card_like_check_bloc.dart';
 import 'package:worldon/domain/core/entities/experience/experience.dart';
+import 'package:worldon/views/core/misc/common_functions/world_on_number_display.dart';
 import 'package:worldon/views/core/misc/world_on_colors.dart';
 
 import '../../../../injection.dart';
@@ -40,7 +41,7 @@ class ExperienceLikesCounter extends StatelessWidget {
           ),
           const SizedBox(width: 5),
           Text(
-            experience.likedBy.length.toString(),
+            createWorldOnDisplay(experience.likedBy.length),
           ),
         ],
       ),

@@ -28,7 +28,7 @@ class AppBarTitleBuilder extends StatelessWidget {
           error: (_) => "Error",
         ),
         style: const TextStyle(
-          fontWeight: FontWeight.bold,
+          fontWeight: FontWeight.w900,
           color: WorldOnColors.primary,
         ),
       ),

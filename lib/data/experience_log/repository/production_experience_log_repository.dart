@@ -28,7 +28,7 @@ class ProductionExperienceLogRepository implements ExperienceLogRepositoryInterf
   Future<Either<Failure, Unit>> addExperienceToLog(UniqueId experienceId) async {
     try {
       final _userDocument = await _firestore.userDocument();
-      await _userDocument.update(
+      _userDocument.update(
         {
           UserFields.experiencesToDoIds: FieldValue.arrayUnion([experienceId.getOrCrash()]),
         },
@@ -43,7 +43,7 @@ class ProductionExperienceLogRepository implements ExperienceLogRepositoryInterf
   Future<Either<Failure, Unit>> dismissExperienceFromLog(UniqueId experienceId) async {
     try {
       final _userDocument = await _firestore.userDocument();
-      await _userDocument.update(
+      _userDocument.update(
         {
           UserFields.experiencesToDoIds: FieldValue.arrayRemove([experienceId.getOrCrash()]),
         },

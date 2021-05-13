@@ -27,6 +27,7 @@ class CriticalErrorDisplay extends StatelessWidget {
             S.of(context).criticalErrorDisplayTitle,
             style: const TextStyle(
               fontSize: 25,
+              color: WorldOnColors.red,
               fontWeight: FontWeight.bold,
             ),
             textAlign: TextAlign.center,
@@ -34,13 +35,19 @@ class CriticalErrorDisplay extends StatelessWidget {
           const SizedBox(height: 10),
           Text(
             "${S.of(context).details}: ",
-            style: const TextStyle(fontSize: 20),
+            style: const TextStyle(
+              fontSize: 20,
+              color: WorldOnColors.red,
+            ),
             textAlign: TextAlign.center,
           ),
           const SizedBox(height: 5),
           Text(
             failure.toString(),
-            style: const TextStyle(fontSize: 15),
+            style: const TextStyle(
+              fontSize: 15,
+              color: WorldOnColors.red,
+            ),
             textAlign: TextAlign.justify,
           ),
           const SizedBox(height: 50),

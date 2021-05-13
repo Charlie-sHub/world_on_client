@@ -178,4 +178,27 @@ class ProductionAuthenticationRepository implements AuthenticationRepositoryInte
         _googleSignIn.signOut(),
         _firebaseAuth.signOut(),
       ]);
+
+  @override
+  Future<Either<Failure, Unit>> resetPassword(EmailAddress emailAddress) async {
+    try {
+      await _firebaseAuth.sendPasswordResetEmail(
+        email: emailAddress.getOrCrash(),
+      );
+      return right(unit);
+    } on FirebaseAuthException catch (exception) {
+      return left(
+        Failure.coreData(
+          CoreDataFailure.serverError(errorString: exception.message!),
+        ),
+      );
+    } on PlatformException catch (exception) {
+      _logger.e(exception.message);
+      return left(
+        Failure.coreData(
+          CoreDataFailure.serverError(errorString: exception.message!),
+        ),
+      );
+    }
+  }
 }

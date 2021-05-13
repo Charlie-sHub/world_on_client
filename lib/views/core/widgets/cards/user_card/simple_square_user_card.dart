@@ -7,7 +7,7 @@ import 'package:worldon/application/navigation/navigation_actor/navigation_actor
 import 'package:worldon/application/profile/follow_actor/follow_actor_bloc.dart';
 import 'package:worldon/domain/core/entities/user/user.dart';
 import 'package:worldon/views/core/misc/world_on_colors.dart';
-import 'package:worldon/views/core/widgets/misc/world_on_progress_indicator.dart';
+import 'package:worldon/views/core/widgets/misc/world_on_plasma.dart';
 
 import '../../../../../injection.dart';
 
@@ -54,9 +54,7 @@ class SimpleSquareUserCard extends StatelessWidget {
                             height: MediaQuery.of(context).size.height * _multiplier,
                             width: MediaQuery.of(context).size.height * _multiplier,
                             fit: BoxFit.cover,
-                            progressIndicatorBuilder: (context, url, progress) => const WorldOnProgressIndicator(
-                              size: 30,
-                            ),
+                            progressIndicatorBuilder: (context, url, progress) => WorldOnPlasma(),
                           ),
                           Container(
                             decoration: BoxDecoration(
@@ -80,9 +78,7 @@ class SimpleSquareUserCard extends StatelessWidget {
                       height: MediaQuery.of(context).size.height * _multiplier,
                       width: MediaQuery.of(context).size.height * _multiplier,
                       fit: BoxFit.cover,
-                      progressIndicatorBuilder: (context, url, progress) => const WorldOnProgressIndicator(
-                        size: 30,
-                      ),
+                      progressIndicatorBuilder: (context, url, progress) => WorldOnPlasma(),
                     ),
                   ),
                 ),

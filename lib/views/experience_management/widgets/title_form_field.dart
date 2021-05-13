@@ -3,6 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:worldon/application/experience_management/experience_management_form/experience_management_form_bloc.dart';
 import 'package:worldon/domain/core/validation/objects/name.dart';
 import 'package:worldon/generated/l10n.dart';
+import 'package:worldon/views/core/misc/world_on_colors.dart';
 
 class TitleFormField extends StatelessWidget {
   const TitleFormField({
@@ -34,6 +35,7 @@ class TitleFormField extends StatelessWidget {
         labelText: S.of(context).title,
         prefixIcon: const Icon(
           Icons.title,
+          color: WorldOnColors.primary,
         ),
       ),
     );

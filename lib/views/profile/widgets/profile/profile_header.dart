@@ -52,15 +52,16 @@ class ProfileHeader extends SliverPersistentHeaderDelegate {
                         user.name.getOrCrash(),
                         style: const TextStyle(
                           fontSize: 15,
-                          fontWeight: FontWeight.bold,
+                          fontWeight: FontWeight.w800,
                         ),
                       ),
                     ],
                   ),
                   AutoSizeText(
                     "@${user.username.getOrCrash()}",
-                    style: const TextStyle(
+                    style: TextStyle(
                       fontSize: 13,
+                      color: Colors.grey.shade700,
                     ),
                   ),
                 ],
@@ -77,7 +78,10 @@ class ProfileHeader extends SliverPersistentHeaderDelegate {
               child: AutoSizeText(
                 user.description.getOrCrash(),
                 textAlign: TextAlign.center,
-                style: const TextStyle(fontSize: 12),
+                style: TextStyle(
+                  fontSize: 12,
+                  color: Colors.grey.shade600,
+                ),
                 minFontSize: 8,
                 maxFontSize: 12,
                 maxLines: 10,
