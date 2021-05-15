@@ -11,42 +11,39 @@ class EditingSubmitButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.all(10),
-      child: BlocBuilder<ProfileEditingFormBloc, ProfileEditingFormState>(
-        buildWhen: (previous, current) => previous.isSubmitting != current.isSubmitting,
-        builder: (context, state) {
-          if (state.isSubmitting) {
-            return const Center(
-              child: SizedBox(
-                width: 40,
-                height: 40,
-                child: CircularProgressIndicator(
-                  valueColor: AlwaysStoppedAnimation<Color>(WorldOnColors.primary),
-                ),
+    return BlocBuilder<ProfileEditingFormBloc, ProfileEditingFormState>(
+      buildWhen: (previous, current) => previous.isSubmitting != current.isSubmitting,
+      builder: (context, state) {
+        if (state.isSubmitting) {
+          return const Center(
+            child: SizedBox(
+              width: 40,
+              height: 40,
+              child: CircularProgressIndicator(
+                valueColor: AlwaysStoppedAnimation<Color>(WorldOnColors.primary),
               ),
-            );
-          } else {
-            return ElevatedButton(
-              onPressed: () => context.read<ProfileEditingFormBloc>().add(
-                    const ProfileEditingFormEvent.submitted(),
-                  ),
-              style: ButtonStyle(
-                backgroundColor: MaterialStateProperty.all(
-                  WorldOnColors.primary,
+            ),
+          );
+        } else {
+          return ElevatedButton(
+            onPressed: () => context.read<ProfileEditingFormBloc>().add(
+                  const ProfileEditingFormEvent.submitted(),
                 ),
+            style: ButtonStyle(
+              backgroundColor: MaterialStateProperty.all(
+                WorldOnColors.primary,
               ),
-              child: Text(
-                S.of(context).submitButton,
-                style: const TextStyle(
-                  color: WorldOnColors.background,
-                  fontSize: 20,
-                ),
+            ),
+            child: Text(
+              S.of(context).submitButton,
+              style: const TextStyle(
+                color: WorldOnColors.background,
+                fontSize: 20,
               ),
-            );
-          }
-        },
-      ),
+            ),
+          );
+        }
+      },
     );
   }
 }

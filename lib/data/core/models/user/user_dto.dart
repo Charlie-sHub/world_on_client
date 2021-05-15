@@ -22,8 +22,6 @@ part 'user_dto.g.dart';
 
 @freezed
 class UserDto with _$UserDto {
-  static const _fakePassword = "THISISNOTAPASSWORD";
-
   const UserDto._();
 
   const factory UserDto({
@@ -66,7 +64,7 @@ class UserDto with _$UserDto {
       id: user.id.getOrCrash(),
       name: user.name.getOrCrash(),
       username: user.username.getOrCrash(),
-      password: _fakePassword,
+      password: "",
       email: user.email.getOrCrash(),
       birthday: user.birthday.getOrCrash(),
       description: user.description.getOrCrash(),
@@ -97,10 +95,10 @@ class UserDto with _$UserDto {
   }
 
   User toDomain() => User(
-        id: UniqueId.fromUniqueString(id),
+    id: UniqueId.fromUniqueString(id),
         name: Name(name),
         username: Name(username),
-        password: Password(_fakePassword),
+        password: Password("THISISNOTAPASSWORD"),
         email: EmailAddress(email),
         birthday: PastDate(birthday),
         description: EntityDescription(description),

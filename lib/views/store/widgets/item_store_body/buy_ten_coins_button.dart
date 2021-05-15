@@ -16,11 +16,14 @@ class BuyTenCoinsButton extends StatelessWidget {
       onPressed: () => context.read<BuyCoinsBloc>().add(
             const BuyCoinsEvent.boughtCoins(10),
           ),
-      child: Text(
-        S.of(context).buy10Coins,
-        style: const TextStyle(
-          fontWeight: FontWeight.bold,
-          fontSize: 25,
+      child: Padding(
+        padding: const EdgeInsets.symmetric(horizontal: 30),
+        child: Text(
+          S.of(context).buy10Coins,
+          style: const TextStyle(
+            fontWeight: FontWeight.w900,
+            fontSize: 18,
+          ),
         ),
       ),
     );

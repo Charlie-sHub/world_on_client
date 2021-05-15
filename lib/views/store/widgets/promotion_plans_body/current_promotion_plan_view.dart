@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:worldon/domain/core/entities/promotion_plan/promotion_plan.dart';
 import 'package:worldon/domain/core/entities/promotion_plan/promotion_plan_code.dart';
 import 'package:worldon/generated/l10n.dart';
+import 'package:worldon/views/core/misc/common_functions/world_on_number_display.dart';
 import 'package:worldon/views/core/misc/world_on_colors.dart';
 
 class CurrentPromotionPlanView extends StatelessWidget {
@@ -20,54 +21,86 @@ class CurrentPromotionPlanView extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 10),
       child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          AutoSizeText(
-            plan.name.getOrCrash(),
-            style: const TextStyle(
-              fontSize: 17,
+          Center(
+            child: AutoSizeText(
+              plan.name.getOrCrash(),
+              style: const TextStyle(
+                fontSize: 20,
+                fontWeight: FontWeight.w900,
+              ),
             ),
           ),
-          const SizedBox(height: 5),
-          AutoSizeText(
-            plan.description.getOrCrash(),
-            style: const TextStyle(
-              fontSize: 12,
-            ),
-            textAlign: TextAlign.center,
-          ),
-          const SizedBox(height: 5),
+          const SizedBox(height: 10),
           if (plan.code != PromotionPlanCode.none)
-            Row(
+            Column(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Text(
-                  "${S.of(context).purchaseDate}: ${plan.boughtDate.year}-${plan.boughtDate.month}-${plan.boughtDate.day}",
-                  style: const TextStyle(
-                    fontSize: 10,
-                    color: WorldOnColors.accent,
+                AutoSizeText.rich(
+                  TextSpan(
+                    text: "${S.of(context).purchaseDate}: ",
+                    style: const TextStyle(
+                      fontSize: 14,
+                      color: Colors.grey,
+                    ),
+                    children: [
+                      TextSpan(
+                        text: "${plan.boughtDate.year}-${plan.boughtDate.month}-${plan.boughtDate.day}",
+                        style: const TextStyle(
+                          fontSize: 14,
+                          color: WorldOnColors.accent,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                    ],
                   ),
                 ),
-                Text(
-                  "${S.of(context).validUntil}: ${_expirationDate.year}-${_expirationDate.month}-${_expirationDate.day}",
-                  style: const TextStyle(
-                    fontSize: 10,
-                    color: WorldOnColors.red,
+                const SizedBox(height: 5),
+                AutoSizeText.rich(
+                  TextSpan(
+                    text: "${S.of(context).validUntil}: ",
+                    style: const TextStyle(
+                      fontSize: 14,
+                      color: Colors.grey,
+                    ),
+                    children: [
+                      TextSpan(
+                        text: "${_expirationDate.year}-${_expirationDate.month}-${_expirationDate.day}",
+                        style: const TextStyle(
+                          fontSize: 14,
+                          color: WorldOnColors.red,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                    ],
                   ),
                 ),
               ],
             ),
-          const SizedBox(height: 5),
-          // TODO: Show metrics, such as time it's been seen
+          const SizedBox(height: 10),
           if (plan.code != PromotionPlanCode.none)
-            Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 20),
-              child: AutoSizeText(
-                "${S.of(context).yourPromotionsHaveBeenSeen} ${plan.timesSeen} ${S.of(context).times}",
+            AutoSizeText.rich(
+              TextSpan(
+                text: "${S.of(context).yourPromotionsHaveBeenSeen} ",
                 style: const TextStyle(
-                  fontSize: 12,
-                  color: WorldOnColors.primary,
+                  fontSize: 14,
+                  color: Colors.grey,
                 ),
-                textAlign: TextAlign.center,
+                children: [
+                  TextSpan(
+                    text: createWorldOnDisplay(plan.timesSeen),
+                    style: const TextStyle(
+                      fontSize: 15,
+                      color: WorldOnColors.primary,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                  TextSpan(
+                    text: " ${S.of(context).times}",
+                  ),
+                ],
               ),
             ),
         ],

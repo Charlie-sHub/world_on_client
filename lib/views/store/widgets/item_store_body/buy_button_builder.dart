@@ -6,8 +6,9 @@ import 'package:worldon/application/store/load_user/load_user_bloc.dart';
 import 'package:worldon/domain/core/entities/item/item.dart';
 import 'package:worldon/generated/l10n.dart';
 import 'package:worldon/injection.dart';
-import 'package:worldon/views/store/widgets/store_body/buy_item_button.dart';
-import 'package:worldon/views/store/widgets/store_body/owned_button.dart';
+
+import 'buy_item_button.dart';
+import 'owned_button.dart';
 
 class BuyButtonBuilder extends StatelessWidget {
   final Item item;

@@ -52,21 +52,11 @@ class ExperiencePointsCoinStack extends StatelessWidget {
                 ),
                 height: 50,
                 width: 50,
-              ),
-              Container(
-                decoration: const BoxDecoration(
-                  color: WorldOnColors.blue,
-                  shape: BoxShape.circle,
-                ),
-                height: 45,
-                width: 45,
                 child: const Center(
-                  child: Text(
-                    "1",
-                    style: TextStyle(
-                      fontSize: 20,
-                      fontWeight: FontWeight.w900,
-                      color: Colors.white,
+                  child: Padding(
+                    padding: EdgeInsets.all(2),
+                    child: Image(
+                      image: AssetImage("assets/world_on_coin.png"),
                     ),
                   ),
                 ),

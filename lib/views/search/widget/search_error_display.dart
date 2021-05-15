@@ -3,7 +3,6 @@ import 'package:dartz/dartz.dart';
 import 'package:flutter/material.dart';
 import 'package:worldon/core/error/failure.dart';
 import 'package:worldon/generated/l10n.dart';
-import 'package:worldon/views/core/misc/world_on_colors.dart';
 import 'package:worldon/views/core/widgets/error/critical_error_display.dart';
 
 class SearchErrorDisplay extends StatelessWidget {
@@ -26,35 +25,25 @@ class SearchErrorDisplay extends StatelessWidget {
       child: Center(
         child: failure.maybeMap(
           coreData: (failure) => failure.coreDataFailure.maybeMap(
-            notFoundError: (_) => Row(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              children: <Widget>[
-                const Icon(
-                  Icons.sentiment_dissatisfied,
-                  color: WorldOnColors.red,
-                  size: 50,
+            notFoundError: (_) => Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                AutoSizeText(
+                  S.of(context).notFoundError,
+                  style: const TextStyle(
+                    fontSize: 20,
+                    fontWeight: FontWeight.bold,
+                  ),
+                  textAlign: TextAlign.center,
                 ),
-                Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    AutoSizeText(
-                      S.of(context).notFoundError,
-                      style: const TextStyle(
-                        fontSize: 20,
-                        fontWeight: FontWeight.bold,
-                      ),
-                      textAlign: TextAlign.center,
-                    ),
-                    AutoSizeText(
-                      S.of(context).tapToReload,
-                      style: const TextStyle(
-                        fontSize: 14,
-                        color: Colors.grey,
-                        fontWeight: FontWeight.w300,
-                      ),
-                      textAlign: TextAlign.center,
-                    ),
-                  ],
+                AutoSizeText(
+                  S.of(context).tapToReload,
+                  style: const TextStyle(
+                    fontSize: 14,
+                    color: Colors.grey,
+                    fontWeight: FontWeight.w300,
+                  ),
+                  textAlign: TextAlign.center,
                 ),
               ],
             ),

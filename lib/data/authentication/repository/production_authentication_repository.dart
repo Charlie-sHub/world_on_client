@@ -179,6 +179,7 @@ class ProductionAuthenticationRepository implements AuthenticationRepositoryInte
         _firebaseAuth.signOut(),
       ]);
 
+  // TODO: Maybe move this to core
   @override
   Future<Either<Failure, Unit>> resetPassword(EmailAddress emailAddress) async {
     try {

@@ -29,6 +29,7 @@ class Profile extends StatelessWidget {
     return DefaultTabController(
       length: _tabList.length,
       child: NestedScrollView(
+        key: UniqueKey(),
         dragStartBehavior: DragStartBehavior.down,
         floatHeaderSlivers: true,
         headerSliverBuilder: (context, innerBoxIsScrolled) => [

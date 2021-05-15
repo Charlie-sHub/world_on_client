@@ -1977,10 +1977,10 @@ class S {
     );
   }
 
-  /// `Valid until (if obtained today)`
+  /// `Valid until`
   String get validUntilIfBoughtToday {
     return Intl.message(
-      'Valid until (if obtained today)',
+      'Valid until',
       name: 'validUntilIfBoughtToday',
       desc: '',
       args: [],
@@ -2107,31 +2107,41 @@ class S {
     );
   }
 
-  /// `Main Feed`
-  String get mainFeed {
+  /// `Discover`
+  String get mainFeedTitle {
     return Intl.message(
-      'Main Feed',
-      name: 'mainFeed',
+      'Discover',
+      name: 'mainFeedTitle',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Explore`
+  String get searchTitle {
+    return Intl.message(
+      'Explore',
+      name: 'searchTitle',
       desc: '',
       args: [],
     );
   }
 
   /// `Adventure`
-  String get experienceNavigation {
+  String get experienceNavigationTitle {
     return Intl.message(
       'Adventure',
-      name: 'experienceNavigation',
+      name: 'experienceNavigationTitle',
       desc: '',
       args: [],
     );
   }
 
-  /// `Profile`
-  String get profile {
+  /// `Player`
+  String get profileTitle {
     return Intl.message(
-      'Profile',
-      name: 'profile',
+      'Player',
+      name: 'profileTitle',
       desc: '',
       args: [],
     );
@@ -2157,10 +2167,10 @@ class S {
     );
   }
 
-  /// `Reset`
+  /// `Reset Password`
   String get resetPassword {
     return Intl.message(
-      'Reset',
+      'Reset Password',
       name: 'resetPassword',
       desc: '',
       args: [],
@@ -2172,6 +2182,56 @@ class S {
     return Intl.message(
       'Email Sent',
       name: 'emailRequestSent',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `For security reasons if you want to change your password we will send you an email with a link to do so`
+  String get resetPasswordMessage {
+    return Intl.message(
+      'For security reasons if you want to change your password we will send you an email with a link to do so',
+      name: 'resetPasswordMessage',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `We have excellent offers for you!`
+  String get itemStoreHeaderTitle {
+    return Intl.message(
+      'We have excellent offers for you!',
+      name: 'itemStoreHeaderTitle',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Come check them out`
+  String get itemStoreHeaderSubTitle {
+    return Intl.message(
+      'Come check them out',
+      name: 'itemStoreHeaderSubTitle',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `days`
+  String get days {
+    return Intl.message(
+      'days',
+      name: 'days',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Promote your experiences to reach everyone!`
+  String get promotionsHeaderTitle {
+    return Intl.message(
+      'Promote your experiences to reach everyone!',
+      name: 'promotionsHeaderTitle',
       desc: '',
       args: [],
     );

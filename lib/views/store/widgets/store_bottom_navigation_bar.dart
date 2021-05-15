@@ -5,7 +5,9 @@ import 'package:worldon/application/store/store_navigation_actor/store_navigatio
 import 'package:worldon/views/core/misc/world_on_colors.dart';
 
 class StoreBottomNavigationBar extends StatelessWidget {
-  static const _storeIndex = 0;
+  static const _itemStoreIndex = 0;
+
+  // static const _coinStoreIndex = 1;
   static const _promotionPlansIndex = 1;
   static const _myItemsIndex = 2;
 
@@ -18,7 +20,8 @@ class StoreBottomNavigationBar extends StatelessWidget {
       backgroundColor: WorldOnColors.background,
       onTap: (index) => _onTap(index, context),
       activeIndex: context.read<StoreNavigationActorBloc>().state.map(
-            storeView: (_) => _storeIndex,
+            itemStoreView: (_) => _itemStoreIndex,
+            coinStoreView: (_) => _itemStoreIndex,
             promotionPlansView: (_) => _promotionPlansIndex,
             myItemsView: (_) => _myItemsIndex,
           ),
@@ -26,6 +29,7 @@ class StoreBottomNavigationBar extends StatelessWidget {
       inactiveColor: WorldOnColors.accent,
       icons: const [
         Icons.store,
+        // Icons.account_balance_wallet_rounded,
         Icons.date_range_rounded,
         Icons.list_rounded,
       ],
@@ -34,11 +38,18 @@ class StoreBottomNavigationBar extends StatelessWidget {
 
   void _onTap(int index, BuildContext context) {
     switch (index) {
-      case _storeIndex:
+      case _itemStoreIndex:
         context.read<StoreNavigationActorBloc>().add(
-              const StoreNavigationActorEvent.storeTapped(),
+              const StoreNavigationActorEvent.itemStoreTapped(),
             );
         break;
+      /*
+      case _coinStoreIndex:
+        context.read<StoreNavigationActorBloc>().add(
+              const StoreNavigationActorEvent.coinStoreTapped(),
+            );
+        break;
+         */
       case _promotionPlansIndex:
         context.read<StoreNavigationActorBloc>().add(
               const StoreNavigationActorEvent.promotionPlansTapped(),
@@ -51,7 +62,7 @@ class StoreBottomNavigationBar extends StatelessWidget {
         break;
       default:
         context.read<StoreNavigationActorBloc>().add(
-              const StoreNavigationActorEvent.storeTapped(),
+          const StoreNavigationActorEvent.itemStoreTapped(),
             );
         break;
     }

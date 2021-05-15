@@ -5,11 +5,8 @@ import 'package:worldon/domain/core/validation/objects/password.dart';
 import 'package:worldon/generated/l10n.dart';
 
 class PasswordTextField extends StatelessWidget {
-  final String initialValue;
-
   const PasswordTextField({
     Key? key,
-    required this.initialValue,
   }) : super(key: key);
 
   @override
@@ -19,7 +16,6 @@ class PasswordTextField extends StatelessWidget {
       onChanged: (value) => context.read<ProfileEditingFormBloc>().add(
             ProfileEditingFormEvent.passwordChanged(value.trim()),
           ),
-      initialValue: initialValue,
       validator: (_) => context.read<ProfileEditingFormBloc>().state.user.password.value.fold(
             (failure) => failure.maybeMap(
               emptyString: (_) => S.of(context).passwordEmptyString,

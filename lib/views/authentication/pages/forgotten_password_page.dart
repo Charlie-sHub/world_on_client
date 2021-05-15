@@ -1,4 +1,5 @@
 import 'package:another_flushbar/flushbar_helper.dart';
+import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:worldon/application/authentication/forgotten_password_form/forgotten_password_form_bloc.dart';
@@ -95,7 +96,9 @@ class ForgottenPasswordPage extends StatelessWidget {
     FlushbarHelper.createSuccess(
       duration: const Duration(seconds: 5),
       message: S.of(context).emailRequestSent,
-    ).show(context);
+    ).show(context).then(
+          (_) => context.router.pop(),
+        );
   }
 
   String _emailValidator(BuildContext context) {

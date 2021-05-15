@@ -7,13 +7,12 @@ class StoreAppBar extends StatelessWidget implements PreferredSizeWidget {
   Widget build(BuildContext context) {
     return AppBar(
       backwardsCompatibility: false,
-      elevation: 0,
       title: Text(
         S.of(context).storePageTitle,
         style: const TextStyle(
-          fontWeight: FontWeight.bold,
+          fontWeight: FontWeight.w900,
           fontSize: 20,
-          color: WorldOnColors.accent,
+          color: WorldOnColors.primary,
         ),
       ),
       centerTitle: true,

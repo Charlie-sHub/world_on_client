@@ -13,6 +13,7 @@ import 'package:worldon/data/core/models/experience/experience_fields.dart';
 import 'package:worldon/data/core/models/user/user_dto.dart';
 import 'package:worldon/data/core/models/user/user_fields.dart';
 import 'package:worldon/domain/core/entities/experience/experience.dart';
+import 'package:worldon/domain/core/failures/core_domain_failure.dart';
 import 'package:worldon/domain/main_feed/repository/main_feed_repository_interface.dart';
 
 @LazySingleton(as: MainFeedRepositoryInterface, env: [Environment.prod])
@@ -120,6 +121,11 @@ class ProductionMainFeedRepository implements MainFeedRepositoryInterface {
       _logger.e("FirebaseException: ${error.message}");
       return Failure.coreData(
         CoreDataFailure.serverError(errorString: "Firebase error: ${error.message}"),
+      );
+    } else if (error is FormatException) {
+      _logger.e("FormatException: ${error.message}");
+      return Failure.coreDomain(
+        CoreDomainFailure.unknownDomainLayerError(errorString: "Format exception: ${error.message}"),
       );
     } else {
       _logger.e("Unknown error: ${error.runtimeType}");

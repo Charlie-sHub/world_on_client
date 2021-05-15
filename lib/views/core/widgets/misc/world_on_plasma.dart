@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:simple_animations/simple_animations.dart';
+import 'package:worldon/views/core/widgets/misc/world_on_progress_indicator.dart';
 
 class WorldOnPlasma extends StatelessWidget {
   @override
@@ -11,8 +12,8 @@ class WorldOnPlasma extends StatelessWidget {
           begin: Alignment.topLeft,
           end: Alignment.bottomRight,
           colors: [
-            Color(0xfff44336),
-            Color(0xff2196f3),
+            Color(0xfff40bbf),
+            Color(0xff21f3ec),
           ],
           stops: [
             0,
@@ -23,18 +24,13 @@ class WorldOnPlasma extends StatelessWidget {
       ),
       child: PlasmaRenderer(
         type: PlasmaType.bubbles,
-        particles: 24,
-        color: const Color(0x26474747),
-        blur: 0.54,
-        size: 1.2,
-        speed: 3.22,
-        offset: 0.58,
+        particles: 36,
+        color: const Color(0x44ffffff),
+        size: 0.51,
+        speed: 5.39,
         blendMode: BlendMode.plus,
         particleType: ParticleType.atlas,
-        variation1: 0.53,
-        variation2: 0.22,
-        variation3: 0.8,
-        rotation: -0.45,
+        child: const WorldOnProgressIndicator(size: 40),
       ),
     );
   }

@@ -233,7 +233,7 @@ class _$_PromotionPlan extends _PromotionPlan {
       const DeepCollectionEquality().hash(valueInEuros) ^
       const DeepCollectionEquality().hash(boughtDate) ^
       const DeepCollectionEquality().hash(timesSeen);
-  
+
   @JsonKey(ignore: true)
   @override
   _$PromotionPlanCopyWith<_PromotionPlan> get copyWith => __$PromotionPlanCopyWithImpl<_PromotionPlan>(this, _$identity);

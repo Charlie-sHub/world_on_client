@@ -28,7 +28,7 @@ import 'package:worldon/domain/store/repository/store_repository_interface.dart'
 class ProductionStoreRepository implements StoreRepositoryInterface {
   final _logger = Logger();
   final FirebaseFirestore _firestore;
-  final _inAppPurchaseInstance = InAppPurchaseConnection.instance;
+  final _inAppPurchaseInstance = InAppPurchase.instance;
 
   ProductionStoreRepository(this._firestore);
 
@@ -47,7 +47,9 @@ class ProductionStoreRepository implements StoreRepositoryInterface {
           final _purchaseParam = PurchaseParam(
             productDetails: _productDetailsResponse.productDetails.first,
           );
-          await _inAppPurchaseInstance.buyConsumable(purchaseParam: _purchaseParam);
+          await _inAppPurchaseInstance.buyConsumable(
+            purchaseParam: _purchaseParam,
+          );
           final _userDocument = await _firestore.userDocument();
           await _userDocument.update(
             {
@@ -61,7 +63,11 @@ class ProductionStoreRepository implements StoreRepositoryInterface {
       }
     } else {
       _logger.e("In App Purchase is not available");
-      return left(const Failure.storeData(StoreDataFailure.unAvailableStore()));
+      return left(
+        const Failure.storeData(
+          StoreDataFailure.unAvailableStore(),
+        ),
+      );
     }
   }
 

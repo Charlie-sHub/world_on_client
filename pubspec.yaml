@@ -17,7 +17,7 @@ environment:
 dependencies:
   algolia: ^1.0.1
   animated_bottom_navigation_bar: ^0.3.2
-  another_flushbar: ^1.10.20
+  another_flushbar: ^1.10.22
   auto_route: ^2.2.0
   auto_size_text: ^3.0.0-nullsafety.0
   bloc_test: ^8.0.0
@@ -34,23 +34,23 @@ dependencies:
     sdk: flutter
   flutter_bloc: ^7.0.0
   flutter_carousel_slider: ^1.0.8
-  flutter_hooks: ^0.16.0
+  flutter_hooks: ^0.17.0
   flutter_localizations:
     sdk: flutter
   flutter_slidable: ^0.6.0
   flutter_speed_dial: ^3.0.5
   flutter_vector_icons: ^1.0.0
-  freezed: ^0.14.1+3
-  freezed_annotation: ^0.14.1
+  freezed: ^0.14.2
+  freezed_annotation: ^0.14.2
   geoflutterfire: ^3.0.0-nullsafety.2
   geolocator: ^7.0.3
   get_it: ^7.1.3
   google_fonts: ^2.0.0
   google_maps_flutter:
-  google_sign_in: ^5.0.2
+  google_sign_in: ^5.0.3
   image_picker: ^0.7.5
   implicitly_animated_reorderable_list: ^0.4.0-dev+2
-  in_app_purchase: ^0.5.2
+  in_app_purchase: ^0.6.0
   injectable: ^1.4.0
   intl: ^0.17.0
   jiffy: ^4.1.0

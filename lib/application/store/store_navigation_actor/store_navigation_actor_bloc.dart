@@ -11,12 +11,13 @@ part 'store_navigation_actor_state.dart';
 
 @injectable
 class StoreNavigationActorBloc extends Bloc<StoreNavigationActorEvent, StoreNavigationActorState> {
-  StoreNavigationActorBloc() : super(const StoreNavigationActorState.storeView());
+  StoreNavigationActorBloc() : super(const StoreNavigationActorState.itemStoreView());
 
   @override
   Stream<StoreNavigationActorState> mapEventToState(StoreNavigationActorEvent event) async* {
     yield* event.map(
-      storeTapped: _onStoreTapped,
+      itemStoreTapped: _onItemStoreTapped,
+      coinStoreTapped: _onCoinStoreTapped,
       promotionPlansTapped: _onPromotionPlansTapped,
       myItemsTapped: _onMyItemsTapped,
     );
@@ -26,8 +27,12 @@ class StoreNavigationActorBloc extends Bloc<StoreNavigationActorEvent, StoreNavi
     yield const StoreNavigationActorState.promotionPlansView();
   }
 
-  Stream<StoreNavigationActorState> _onStoreTapped(_) async* {
-    yield const StoreNavigationActorState.storeView();
+  Stream<StoreNavigationActorState> _onCoinStoreTapped(_) async* {
+    yield const StoreNavigationActorState.coinStoreView();
+  }
+
+  Stream<StoreNavigationActorState> _onItemStoreTapped(_) async* {
+    yield const StoreNavigationActorState.itemStoreView();
   }
 
   Stream<StoreNavigationActorState> _onMyItemsTapped(_) async* {

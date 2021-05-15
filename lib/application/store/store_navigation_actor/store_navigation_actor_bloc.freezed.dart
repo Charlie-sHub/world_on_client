@@ -16,8 +16,12 @@ final _privateConstructorUsedError = UnsupportedError(
 class _$StoreNavigationActorEventTearOff {
   const _$StoreNavigationActorEventTearOff();
 
-  _StoreTapped storeTapped() {
-    return const _StoreTapped();
+  _ItemStoreTapped itemStoreTapped() {
+    return const _ItemStoreTapped();
+  }
+
+  _CoinStoreTapped coinStoreTapped() {
+    return const _CoinStoreTapped();
   }
 
   _PromotionPlansTapped promotionPlansTapped() {
@@ -36,14 +40,16 @@ const $StoreNavigationActorEvent = _$StoreNavigationActorEventTearOff();
 mixin _$StoreNavigationActorEvent {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function() storeTapped,
+    required TResult Function() itemStoreTapped,
+    required TResult Function() coinStoreTapped,
     required TResult Function() promotionPlansTapped,
     required TResult Function() myItemsTapped,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? storeTapped,
+    TResult Function()? itemStoreTapped,
+    TResult Function()? coinStoreTapped,
     TResult Function()? promotionPlansTapped,
     TResult Function()? myItemsTapped,
     required TResult orElse(),
@@ -51,14 +57,16 @@ mixin _$StoreNavigationActorEvent {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_StoreTapped value) storeTapped,
+    required TResult Function(_ItemStoreTapped value) itemStoreTapped,
+    required TResult Function(_CoinStoreTapped value) coinStoreTapped,
     required TResult Function(_PromotionPlansTapped value) promotionPlansTapped,
     required TResult Function(_MyItemsTapped value) myItemsTapped,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_StoreTapped value)? storeTapped,
+    TResult Function(_ItemStoreTapped value)? itemStoreTapped,
+    TResult Function(_CoinStoreTapped value)? coinStoreTapped,
     TResult Function(_PromotionPlansTapped value)? promotionPlansTapped,
     TResult Function(_MyItemsTapped value)? myItemsTapped,
     required TResult orElse(),
@@ -82,31 +90,31 @@ class _$StoreNavigationActorEventCopyWithImpl<$Res> implements $StoreNavigationA
 }
 
 /// @nodoc
-abstract class _$StoreTappedCopyWith<$Res> {
-  factory _$StoreTappedCopyWith(_StoreTapped value, $Res Function(_StoreTapped) then) = __$StoreTappedCopyWithImpl<$Res>;
+abstract class _$ItemStoreTappedCopyWith<$Res> {
+  factory _$ItemStoreTappedCopyWith(_ItemStoreTapped value, $Res Function(_ItemStoreTapped) then) = __$ItemStoreTappedCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$StoreTappedCopyWithImpl<$Res> extends _$StoreNavigationActorEventCopyWithImpl<$Res> implements _$StoreTappedCopyWith<$Res> {
-  __$StoreTappedCopyWithImpl(_StoreTapped _value, $Res Function(_StoreTapped) _then) : super(_value, (v) => _then(v as _StoreTapped));
+class __$ItemStoreTappedCopyWithImpl<$Res> extends _$StoreNavigationActorEventCopyWithImpl<$Res> implements _$ItemStoreTappedCopyWith<$Res> {
+  __$ItemStoreTappedCopyWithImpl(_ItemStoreTapped _value, $Res Function(_ItemStoreTapped) _then) : super(_value, (v) => _then(v as _ItemStoreTapped));
 
   @override
-  _StoreTapped get _value => super._value as _StoreTapped;
+  _ItemStoreTapped get _value => super._value as _ItemStoreTapped;
 }
 
 /// @nodoc
 
-class _$_StoreTapped implements _StoreTapped {
-  const _$_StoreTapped();
+class _$_ItemStoreTapped implements _ItemStoreTapped {
+  const _$_ItemStoreTapped();
 
   @override
   String toString() {
-    return 'StoreNavigationActorEvent.storeTapped()';
+    return 'StoreNavigationActorEvent.itemStoreTapped()';
   }
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _StoreTapped);
+    return identical(this, other) || (other is _ItemStoreTapped);
   }
 
   @override
@@ -115,23 +123,25 @@ class _$_StoreTapped implements _StoreTapped {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function() storeTapped,
+    required TResult Function() itemStoreTapped,
+    required TResult Function() coinStoreTapped,
     required TResult Function() promotionPlansTapped,
     required TResult Function() myItemsTapped,
   }) {
-    return storeTapped();
+    return itemStoreTapped();
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? storeTapped,
+    TResult Function()? itemStoreTapped,
+    TResult Function()? coinStoreTapped,
     TResult Function()? promotionPlansTapped,
     TResult Function()? myItemsTapped,
     required TResult orElse(),
   }) {
-    if (storeTapped != null) {
-      return storeTapped();
+    if (itemStoreTapped != null) {
+      return itemStoreTapped();
     }
     return orElse();
   }
@@ -139,30 +149,120 @@ class _$_StoreTapped implements _StoreTapped {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_StoreTapped value) storeTapped,
+    required TResult Function(_ItemStoreTapped value) itemStoreTapped,
+    required TResult Function(_CoinStoreTapped value) coinStoreTapped,
     required TResult Function(_PromotionPlansTapped value) promotionPlansTapped,
     required TResult Function(_MyItemsTapped value) myItemsTapped,
   }) {
-    return storeTapped(this);
+    return itemStoreTapped(this);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_StoreTapped value)? storeTapped,
+    TResult Function(_ItemStoreTapped value)? itemStoreTapped,
+    TResult Function(_CoinStoreTapped value)? coinStoreTapped,
     TResult Function(_PromotionPlansTapped value)? promotionPlansTapped,
     TResult Function(_MyItemsTapped value)? myItemsTapped,
     required TResult orElse(),
   }) {
-    if (storeTapped != null) {
-      return storeTapped(this);
+    if (itemStoreTapped != null) {
+      return itemStoreTapped(this);
     }
     return orElse();
   }
 }
 
-abstract class _StoreTapped implements StoreNavigationActorEvent {
-  const factory _StoreTapped() = _$_StoreTapped;
+abstract class _ItemStoreTapped implements StoreNavigationActorEvent {
+  const factory _ItemStoreTapped() = _$_ItemStoreTapped;
+}
+
+/// @nodoc
+abstract class _$CoinStoreTappedCopyWith<$Res> {
+  factory _$CoinStoreTappedCopyWith(_CoinStoreTapped value, $Res Function(_CoinStoreTapped) then) = __$CoinStoreTappedCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$CoinStoreTappedCopyWithImpl<$Res> extends _$StoreNavigationActorEventCopyWithImpl<$Res> implements _$CoinStoreTappedCopyWith<$Res> {
+  __$CoinStoreTappedCopyWithImpl(_CoinStoreTapped _value, $Res Function(_CoinStoreTapped) _then) : super(_value, (v) => _then(v as _CoinStoreTapped));
+
+  @override
+  _CoinStoreTapped get _value => super._value as _CoinStoreTapped;
+}
+
+/// @nodoc
+
+class _$_CoinStoreTapped implements _CoinStoreTapped {
+  const _$_CoinStoreTapped();
+
+  @override
+  String toString() {
+    return 'StoreNavigationActorEvent.coinStoreTapped()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) || (other is _CoinStoreTapped);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() itemStoreTapped,
+    required TResult Function() coinStoreTapped,
+    required TResult Function() promotionPlansTapped,
+    required TResult Function() myItemsTapped,
+  }) {
+    return coinStoreTapped();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? itemStoreTapped,
+    TResult Function()? coinStoreTapped,
+    TResult Function()? promotionPlansTapped,
+    TResult Function()? myItemsTapped,
+    required TResult orElse(),
+  }) {
+    if (coinStoreTapped != null) {
+      return coinStoreTapped();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_ItemStoreTapped value) itemStoreTapped,
+    required TResult Function(_CoinStoreTapped value) coinStoreTapped,
+    required TResult Function(_PromotionPlansTapped value) promotionPlansTapped,
+    required TResult Function(_MyItemsTapped value) myItemsTapped,
+  }) {
+    return coinStoreTapped(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_ItemStoreTapped value)? itemStoreTapped,
+    TResult Function(_CoinStoreTapped value)? coinStoreTapped,
+    TResult Function(_PromotionPlansTapped value)? promotionPlansTapped,
+    TResult Function(_MyItemsTapped value)? myItemsTapped,
+    required TResult orElse(),
+  }) {
+    if (coinStoreTapped != null) {
+      return coinStoreTapped(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _CoinStoreTapped implements StoreNavigationActorEvent {
+  const factory _CoinStoreTapped() = _$_CoinStoreTapped;
 }
 
 /// @nodoc
@@ -199,7 +299,8 @@ class _$_PromotionPlansTapped implements _PromotionPlansTapped {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function() storeTapped,
+    required TResult Function() itemStoreTapped,
+    required TResult Function() coinStoreTapped,
     required TResult Function() promotionPlansTapped,
     required TResult Function() myItemsTapped,
   }) {
@@ -209,7 +310,8 @@ class _$_PromotionPlansTapped implements _PromotionPlansTapped {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? storeTapped,
+    TResult Function()? itemStoreTapped,
+    TResult Function()? coinStoreTapped,
     TResult Function()? promotionPlansTapped,
     TResult Function()? myItemsTapped,
     required TResult orElse(),
@@ -223,7 +325,8 @@ class _$_PromotionPlansTapped implements _PromotionPlansTapped {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_StoreTapped value) storeTapped,
+    required TResult Function(_ItemStoreTapped value) itemStoreTapped,
+    required TResult Function(_CoinStoreTapped value) coinStoreTapped,
     required TResult Function(_PromotionPlansTapped value) promotionPlansTapped,
     required TResult Function(_MyItemsTapped value) myItemsTapped,
   }) {
@@ -233,7 +336,8 @@ class _$_PromotionPlansTapped implements _PromotionPlansTapped {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_StoreTapped value)? storeTapped,
+    TResult Function(_ItemStoreTapped value)? itemStoreTapped,
+    TResult Function(_CoinStoreTapped value)? coinStoreTapped,
     TResult Function(_PromotionPlansTapped value)? promotionPlansTapped,
     TResult Function(_MyItemsTapped value)? myItemsTapped,
     required TResult orElse(),
@@ -283,7 +387,8 @@ class _$_MyItemsTapped implements _MyItemsTapped {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function() storeTapped,
+    required TResult Function() itemStoreTapped,
+    required TResult Function() coinStoreTapped,
     required TResult Function() promotionPlansTapped,
     required TResult Function() myItemsTapped,
   }) {
@@ -293,7 +398,8 @@ class _$_MyItemsTapped implements _MyItemsTapped {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? storeTapped,
+    TResult Function()? itemStoreTapped,
+    TResult Function()? coinStoreTapped,
     TResult Function()? promotionPlansTapped,
     TResult Function()? myItemsTapped,
     required TResult orElse(),
@@ -307,7 +413,8 @@ class _$_MyItemsTapped implements _MyItemsTapped {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_StoreTapped value) storeTapped,
+    required TResult Function(_ItemStoreTapped value) itemStoreTapped,
+    required TResult Function(_CoinStoreTapped value) coinStoreTapped,
     required TResult Function(_PromotionPlansTapped value) promotionPlansTapped,
     required TResult Function(_MyItemsTapped value) myItemsTapped,
   }) {
@@ -317,7 +424,8 @@ class _$_MyItemsTapped implements _MyItemsTapped {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_StoreTapped value)? storeTapped,
+    TResult Function(_ItemStoreTapped value)? itemStoreTapped,
+    TResult Function(_CoinStoreTapped value)? coinStoreTapped,
     TResult Function(_PromotionPlansTapped value)? promotionPlansTapped,
     TResult Function(_MyItemsTapped value)? myItemsTapped,
     required TResult orElse(),
@@ -337,8 +445,12 @@ abstract class _MyItemsTapped implements StoreNavigationActorEvent {
 class _$StoreNavigationActorStateTearOff {
   const _$StoreNavigationActorStateTearOff();
 
-  _StoreView storeView() {
-    return const _StoreView();
+  _ItemStoreView itemStoreView() {
+    return const _ItemStoreView();
+  }
+
+  _CoinStoreView coinStoreView() {
+    return const _CoinStoreView();
   }
 
   _PromotionPlansView promotionPlansView() {
@@ -357,14 +469,16 @@ const $StoreNavigationActorState = _$StoreNavigationActorStateTearOff();
 mixin _$StoreNavigationActorState {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function() storeView,
+    required TResult Function() itemStoreView,
+    required TResult Function() coinStoreView,
     required TResult Function() promotionPlansView,
     required TResult Function() myItemsView,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? storeView,
+    TResult Function()? itemStoreView,
+    TResult Function()? coinStoreView,
     TResult Function()? promotionPlansView,
     TResult Function()? myItemsView,
     required TResult orElse(),
@@ -372,14 +486,16 @@ mixin _$StoreNavigationActorState {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_StoreView value) storeView,
+    required TResult Function(_ItemStoreView value) itemStoreView,
+    required TResult Function(_CoinStoreView value) coinStoreView,
     required TResult Function(_PromotionPlansView value) promotionPlansView,
     required TResult Function(_MyItemsView value) myItemsView,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_StoreView value)? storeView,
+    TResult Function(_ItemStoreView value)? itemStoreView,
+    TResult Function(_CoinStoreView value)? coinStoreView,
     TResult Function(_PromotionPlansView value)? promotionPlansView,
     TResult Function(_MyItemsView value)? myItemsView,
     required TResult orElse(),
@@ -403,31 +519,31 @@ class _$StoreNavigationActorStateCopyWithImpl<$Res> implements $StoreNavigationA
 }
 
 /// @nodoc
-abstract class _$StoreViewCopyWith<$Res> {
-  factory _$StoreViewCopyWith(_StoreView value, $Res Function(_StoreView) then) = __$StoreViewCopyWithImpl<$Res>;
+abstract class _$ItemStoreViewCopyWith<$Res> {
+  factory _$ItemStoreViewCopyWith(_ItemStoreView value, $Res Function(_ItemStoreView) then) = __$ItemStoreViewCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$StoreViewCopyWithImpl<$Res> extends _$StoreNavigationActorStateCopyWithImpl<$Res> implements _$StoreViewCopyWith<$Res> {
-  __$StoreViewCopyWithImpl(_StoreView _value, $Res Function(_StoreView) _then) : super(_value, (v) => _then(v as _StoreView));
+class __$ItemStoreViewCopyWithImpl<$Res> extends _$StoreNavigationActorStateCopyWithImpl<$Res> implements _$ItemStoreViewCopyWith<$Res> {
+  __$ItemStoreViewCopyWithImpl(_ItemStoreView _value, $Res Function(_ItemStoreView) _then) : super(_value, (v) => _then(v as _ItemStoreView));
 
   @override
-  _StoreView get _value => super._value as _StoreView;
+  _ItemStoreView get _value => super._value as _ItemStoreView;
 }
 
 /// @nodoc
 
-class _$_StoreView implements _StoreView {
-  const _$_StoreView();
+class _$_ItemStoreView implements _ItemStoreView {
+  const _$_ItemStoreView();
 
   @override
   String toString() {
-    return 'StoreNavigationActorState.storeView()';
+    return 'StoreNavigationActorState.itemStoreView()';
   }
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _StoreView);
+    return identical(this, other) || (other is _ItemStoreView);
   }
 
   @override
@@ -436,23 +552,25 @@ class _$_StoreView implements _StoreView {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function() storeView,
+    required TResult Function() itemStoreView,
+    required TResult Function() coinStoreView,
     required TResult Function() promotionPlansView,
     required TResult Function() myItemsView,
   }) {
-    return storeView();
+    return itemStoreView();
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? storeView,
+    TResult Function()? itemStoreView,
+    TResult Function()? coinStoreView,
     TResult Function()? promotionPlansView,
     TResult Function()? myItemsView,
     required TResult orElse(),
   }) {
-    if (storeView != null) {
-      return storeView();
+    if (itemStoreView != null) {
+      return itemStoreView();
     }
     return orElse();
   }
@@ -460,30 +578,120 @@ class _$_StoreView implements _StoreView {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_StoreView value) storeView,
+    required TResult Function(_ItemStoreView value) itemStoreView,
+    required TResult Function(_CoinStoreView value) coinStoreView,
     required TResult Function(_PromotionPlansView value) promotionPlansView,
     required TResult Function(_MyItemsView value) myItemsView,
   }) {
-    return storeView(this);
+    return itemStoreView(this);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_StoreView value)? storeView,
+    TResult Function(_ItemStoreView value)? itemStoreView,
+    TResult Function(_CoinStoreView value)? coinStoreView,
     TResult Function(_PromotionPlansView value)? promotionPlansView,
     TResult Function(_MyItemsView value)? myItemsView,
     required TResult orElse(),
   }) {
-    if (storeView != null) {
-      return storeView(this);
+    if (itemStoreView != null) {
+      return itemStoreView(this);
     }
     return orElse();
   }
 }
 
-abstract class _StoreView implements StoreNavigationActorState {
-  const factory _StoreView() = _$_StoreView;
+abstract class _ItemStoreView implements StoreNavigationActorState {
+  const factory _ItemStoreView() = _$_ItemStoreView;
+}
+
+/// @nodoc
+abstract class _$CoinStoreViewCopyWith<$Res> {
+  factory _$CoinStoreViewCopyWith(_CoinStoreView value, $Res Function(_CoinStoreView) then) = __$CoinStoreViewCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$CoinStoreViewCopyWithImpl<$Res> extends _$StoreNavigationActorStateCopyWithImpl<$Res> implements _$CoinStoreViewCopyWith<$Res> {
+  __$CoinStoreViewCopyWithImpl(_CoinStoreView _value, $Res Function(_CoinStoreView) _then) : super(_value, (v) => _then(v as _CoinStoreView));
+
+  @override
+  _CoinStoreView get _value => super._value as _CoinStoreView;
+}
+
+/// @nodoc
+
+class _$_CoinStoreView implements _CoinStoreView {
+  const _$_CoinStoreView();
+
+  @override
+  String toString() {
+    return 'StoreNavigationActorState.coinStoreView()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) || (other is _CoinStoreView);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() itemStoreView,
+    required TResult Function() coinStoreView,
+    required TResult Function() promotionPlansView,
+    required TResult Function() myItemsView,
+  }) {
+    return coinStoreView();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? itemStoreView,
+    TResult Function()? coinStoreView,
+    TResult Function()? promotionPlansView,
+    TResult Function()? myItemsView,
+    required TResult orElse(),
+  }) {
+    if (coinStoreView != null) {
+      return coinStoreView();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_ItemStoreView value) itemStoreView,
+    required TResult Function(_CoinStoreView value) coinStoreView,
+    required TResult Function(_PromotionPlansView value) promotionPlansView,
+    required TResult Function(_MyItemsView value) myItemsView,
+  }) {
+    return coinStoreView(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_ItemStoreView value)? itemStoreView,
+    TResult Function(_CoinStoreView value)? coinStoreView,
+    TResult Function(_PromotionPlansView value)? promotionPlansView,
+    TResult Function(_MyItemsView value)? myItemsView,
+    required TResult orElse(),
+  }) {
+    if (coinStoreView != null) {
+      return coinStoreView(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _CoinStoreView implements StoreNavigationActorState {
+  const factory _CoinStoreView() = _$_CoinStoreView;
 }
 
 /// @nodoc
@@ -520,7 +728,8 @@ class _$_PromotionPlansView implements _PromotionPlansView {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function() storeView,
+    required TResult Function() itemStoreView,
+    required TResult Function() coinStoreView,
     required TResult Function() promotionPlansView,
     required TResult Function() myItemsView,
   }) {
@@ -530,7 +739,8 @@ class _$_PromotionPlansView implements _PromotionPlansView {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? storeView,
+    TResult Function()? itemStoreView,
+    TResult Function()? coinStoreView,
     TResult Function()? promotionPlansView,
     TResult Function()? myItemsView,
     required TResult orElse(),
@@ -544,7 +754,8 @@ class _$_PromotionPlansView implements _PromotionPlansView {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_StoreView value) storeView,
+    required TResult Function(_ItemStoreView value) itemStoreView,
+    required TResult Function(_CoinStoreView value) coinStoreView,
     required TResult Function(_PromotionPlansView value) promotionPlansView,
     required TResult Function(_MyItemsView value) myItemsView,
   }) {
@@ -554,7 +765,8 @@ class _$_PromotionPlansView implements _PromotionPlansView {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_StoreView value)? storeView,
+    TResult Function(_ItemStoreView value)? itemStoreView,
+    TResult Function(_CoinStoreView value)? coinStoreView,
     TResult Function(_PromotionPlansView value)? promotionPlansView,
     TResult Function(_MyItemsView value)? myItemsView,
     required TResult orElse(),
@@ -604,7 +816,8 @@ class _$_MyItemsView implements _MyItemsView {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function() storeView,
+    required TResult Function() itemStoreView,
+    required TResult Function() coinStoreView,
     required TResult Function() promotionPlansView,
     required TResult Function() myItemsView,
   }) {
@@ -614,7 +827,8 @@ class _$_MyItemsView implements _MyItemsView {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? storeView,
+    TResult Function()? itemStoreView,
+    TResult Function()? coinStoreView,
     TResult Function()? promotionPlansView,
     TResult Function()? myItemsView,
     required TResult orElse(),
@@ -628,7 +842,8 @@ class _$_MyItemsView implements _MyItemsView {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_StoreView value) storeView,
+    required TResult Function(_ItemStoreView value) itemStoreView,
+    required TResult Function(_CoinStoreView value) coinStoreView,
     required TResult Function(_PromotionPlansView value) promotionPlansView,
     required TResult Function(_MyItemsView value) myItemsView,
   }) {
@@ -638,7 +853,8 @@ class _$_MyItemsView implements _MyItemsView {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_StoreView value)? storeView,
+    TResult Function(_ItemStoreView value)? itemStoreView,
+    TResult Function(_CoinStoreView value)? coinStoreView,
     TResult Function(_PromotionPlansView value)? promotionPlansView,
     TResult Function(_MyItemsView value)? myItemsView,
     required TResult orElse(),

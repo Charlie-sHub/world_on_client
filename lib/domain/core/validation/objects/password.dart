@@ -17,7 +17,16 @@ class Password extends ValueObject<String> {
         validateStringLength(
           input: input,
           length: maxLength,
-        ).flatMap(validateStringNotEmpty).flatMap(validateSingleLineString).flatMap(validatePassword),
+        )
+            .flatMap(
+              validateStringNotEmpty,
+            )
+            .flatMap(
+              validateSingleLineString,
+            )
+            .flatMap(
+              validatePassword,
+            ),
       );
 
   const Password._(this.value);

@@ -17,35 +17,17 @@ class LogInForm extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       decoration: const BoxDecoration(
-        gradient: LinearGradient(
-          tileMode: TileMode.mirror,
-          begin: Alignment.topLeft,
-          end: Alignment.bottomRight,
-          colors: [
-            Color(0xfff44336),
-            Color(0xff2196f3),
-          ],
-          stops: [
-            0,
-            1,
-          ],
-        ),
+        color: Color(0xff673ab7),
         backgroundBlendMode: BlendMode.srcOver,
       ),
       child: PlasmaRenderer(
-        type: PlasmaType.bubbles,
-        particles: 24,
-        color: const Color(0x26474747),
-        blur: 0.54,
-        size: 1.2,
-        speed: 3.22,
-        offset: 0.58,
+        particles: 15,
+        color: const Color(0x44f9188b),
+        blur: 0.65,
+        size: 0.67,
+        speed: 3.33,
         blendMode: BlendMode.plus,
         particleType: ParticleType.atlas,
-        variation1: 0.53,
-        variation2: 0.22,
-        variation3: 0.8,
-        rotation: -0.45,
         child: Center(
           child: SingleChildScrollView(
             child: Padding(

@@ -5,10 +5,11 @@ import 'package:worldon/application/store/promotion_plans_loader/promotion_plans
 import 'package:worldon/domain/core/entities/promotion_plan/promotion_plan_code.dart';
 import 'package:worldon/generated/l10n.dart';
 import 'package:worldon/injection.dart';
+import 'package:worldon/views/core/misc/world_on_colors.dart';
 import 'package:worldon/views/core/widgets/cards/error_card.dart';
 import 'package:worldon/views/core/widgets/error/error_display.dart';
 import 'package:worldon/views/core/widgets/misc/world_on_progress_indicator.dart';
-import 'package:worldon/views/store/widgets/promotion_plans_body/promotion_plan_card.dart';
+import 'package:worldon/views/store/widgets/promotion_plans_body/promotion_plan_tile.dart';
 
 class PromotionPlansList extends StatelessWidget {
   @override
@@ -24,15 +25,19 @@ class PromotionPlansList extends StatelessWidget {
           loadInProgress: (_) => const WorldOnProgressIndicator(
             size: 60,
           ),
-          loadedPromotionPlans: (state) => ListView.builder(
+          loadedPromotionPlans: (state) => ListView.separated(
             physics: const BouncingScrollPhysics(),
             padding: const EdgeInsets.all(5),
             itemCount: state.plans.size,
+            separatorBuilder: (context, index) => const Divider(
+              color: WorldOnColors.accent,
+              height: 5,
+            ),
             itemBuilder: (context, index) {
               final _promo = state.plans.get(index);
               if (_promo.code != PromotionPlanCode.none) {
                 if (_promo.isValid) {
-                  return PromotionPlanCard(plan: _promo);
+                  return PromotionPlanTile(plan: _promo);
                 } else {
                   return ErrorCard(
                     entityType: S.of(context).promotionPlans,

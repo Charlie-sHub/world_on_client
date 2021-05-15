@@ -102,6 +102,10 @@ class ProductionProfileRepository implements ProfileRepositoryInterface {
 
   @override
   Future<Either<Failure, Unit>> editUser(User user) async {
+    // TODO: Update password
+    //  await _firebaseAuth.currentUser!.updatePassword(
+    //             user.password.getOrCrash(),
+    //           );
     try {
       final _userId = user.id.getOrCrash();
       // Should request the user doc instead of using the client's user?
@@ -699,6 +703,11 @@ class ProductionProfileRepository implements ProfileRepositoryInterface {
       _logger.e("FirebaseException: ${error.message}");
       return Failure.coreData(
         CoreDataFailure.serverError(errorString: "Firebase error: ${error.message}"),
+      );
+    } else if (error is FormatException) {
+      _logger.e("FormatException: ${error.message}");
+      return Failure.coreDomain(
+        CoreDomainFailure.unknownDomainLayerError(errorString: "Format exception: ${error.message}"),
       );
     } else {
       _logger.e("Unknown server error:  ${error.runtimeType}");
