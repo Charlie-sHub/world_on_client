@@ -7,30 +7,32 @@ class WorldOnPlasma extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       decoration: const BoxDecoration(
-        gradient: LinearGradient(
-          tileMode: TileMode.mirror,
-          begin: Alignment.topLeft,
-          end: Alignment.bottomRight,
-          colors: [
-            Color(0xfff40bbf),
-            Color(0xff21f3ec),
-          ],
-          stops: [
-            0,
-            1,
-          ],
-        ),
-        backgroundBlendMode: BlendMode.srcOver,
+        color: Color(0xe6000000),
+        backgroundBlendMode: BlendMode.darken,
       ),
       child: PlasmaRenderer(
         type: PlasmaType.bubbles,
-        particles: 36,
-        color: const Color(0x44ffffff),
-        size: 0.51,
-        speed: 5.39,
+        particles: 28,
+        color: const Color(0xc400ffe2),
+        blur: 0.79,
+        size: 0.67,
+        speed: 2.5,
         blendMode: BlendMode.plus,
         particleType: ParticleType.atlas,
-        child: const WorldOnProgressIndicator(size: 40),
+        variation1: 0.22,
+        variation2: 0.1,
+        variation3: 0.1,
+        child: PlasmaRenderer(
+          color: const Color(0x44ff002c),
+          blur: 0.31,
+          speed: 2.24,
+          blendMode: BlendMode.plus,
+          particleType: ParticleType.atlas,
+          variation1: 0.34,
+          variation2: 0.37,
+          variation3: 0.22,
+          child: const WorldOnProgressIndicator(size: 40),
+        ),
       ),
     );
   }

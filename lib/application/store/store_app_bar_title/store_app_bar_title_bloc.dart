@@ -5,9 +5,7 @@ import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:injectable/injectable.dart';
 
 part 'store_app_bar_title_bloc.freezed.dart';
-
 part 'store_app_bar_title_event.dart';
-
 part 'store_app_bar_title_state.dart';
 
 @injectable

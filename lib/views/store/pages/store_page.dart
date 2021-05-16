@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:worldon/application/store/load_user/load_user_bloc.dart';
+import 'package:worldon/application/store/store_app_bar_title/store_app_bar_title_bloc.dart';
 import 'package:worldon/application/store/store_navigation_actor/store_navigation_actor_bloc.dart';
 import 'package:worldon/views/store/widgets/item_store_body/item_store_body.dart';
 import 'package:worldon/views/store/widgets/my_items_body/my_items_body.dart';
@@ -23,6 +24,9 @@ class StorePage extends StatelessWidget {
             ..add(
               const LoadUserEvent.loadedUser(),
             ),
+        ),
+        BlocProvider(
+          create: (context) => getIt<StoreAppBarTitleBloc>(),
         ),
       ],
       child: BlocBuilder<StoreNavigationActorBloc, StoreNavigationActorState>(

@@ -84,25 +84,27 @@ class PromotionPlansBody extends StatelessWidget {
     );
   }
 
-  void _promotionPlanStoreListener(BuildContext context,
-    BuyPromotionPlanActorState state,) =>
-    state.maybeMap(
-      purchaseFailure: (state) => FlushbarHelper.createError(
-        duration: const Duration(seconds: 2),
-        message: state.failure.maybeMap(
-          coreData: (failure) => failure.coreDataFailure.maybeMap(
-            serverError: (failure) => failure.errorString,
+  void _promotionPlanStoreListener(
+    BuildContext context,
+    BuyPromotionPlanActorState state,
+  ) =>
+      state.maybeMap(
+        purchaseFailure: (state) => FlushbarHelper.createError(
+          duration: const Duration(seconds: 2),
+          message: state.failure.maybeMap(
+            coreData: (failure) => failure.coreDataFailure.maybeMap(
+              serverError: (failure) => failure.errorString,
+              orElse: () => S.of(context).unknownError,
+            ),
+            storeData: (failure) => failure.storeDataFailure.maybeMap(
+              cancelled: (_) => S.of(context).cancelledByUser,
+              unAvailableStore: (_) => S.of(context).unAvailableStore,
+              orElse: () => S.of(context).unknownError,
+            ),
             orElse: () => S.of(context).unknownError,
           ),
-          storeData: (failure) => failure.storeDataFailure.maybeMap(
-            cancelled: (_) => S.of(context).cancelledByUser,
-            unAvailableStore: (_) => S.of(context).unAvailableStore,
-            orElse: () => S.of(context).unknownError,
-          ),
-          orElse: () => S.of(context).unknownError,
-        ),
-      ).show(context),
-      // TODO: Maybe some feedback would be required for actionInProgress and purchaseSuccess
-      orElse: () {},
-    );
+        ).show(context),
+        // TODO: Maybe some feedback would be required for actionInProgress and purchaseSuccess
+        orElse: () {},
+      );
 }

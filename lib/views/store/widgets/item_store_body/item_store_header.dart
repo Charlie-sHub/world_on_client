@@ -28,8 +28,8 @@ class ItemStoreHeader extends StatelessWidget {
           loadSuccess: (_loadSuccess) => Stack(
             alignment: Alignment.center,
             children: [
-              Image(
-                image: const AssetImage("assets/experience_placeholder_image.jpg"),
+              Image.asset(
+                "assets/experience_placeholder_image.jpg",
                 height: MediaQuery.of(context).size.height * 0.3,
                 width: MediaQuery.of(context).size.width,
                 fit: BoxFit.cover,

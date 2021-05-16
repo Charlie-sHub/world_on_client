@@ -16,9 +16,15 @@ final _privateConstructorUsedError = UnsupportedError(
 class _$ProfileWatcherEventTearOff {
   const _$ProfileWatcherEventTearOff();
 
-  _InitializedForeignOrOwn initializedForeignOrOwn(Option<User> userOption) {
-    return _InitializedForeignOrOwn(
-      userOption,
+  _WatchProfileStarted watchProfileStarted(UniqueId userId) {
+    return _WatchProfileStarted(
+      userId,
+    );
+  }
+
+  _ResultsReceived resultsReceived(Either<Failure, User> failureOrUser) {
+    return _ResultsReceived(
+      failureOrUser,
     );
   }
 }
@@ -28,40 +34,37 @@ const $ProfileWatcherEvent = _$ProfileWatcherEventTearOff();
 
 /// @nodoc
 mixin _$ProfileWatcherEvent {
-  Option<User> get userOption => throw _privateConstructorUsedError;
-
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(Option<User> userOption) initializedForeignOrOwn,
+    required TResult Function(UniqueId userId) watchProfileStarted,
+    required TResult Function(Either<Failure, User> failureOrUser) resultsReceived,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(Option<User> userOption)? initializedForeignOrOwn,
+    TResult Function(UniqueId userId)? watchProfileStarted,
+    TResult Function(Either<Failure, User> failureOrUser)? resultsReceived,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_InitializedForeignOrOwn value) initializedForeignOrOwn,
+    required TResult Function(_WatchProfileStarted value) watchProfileStarted,
+    required TResult Function(_ResultsReceived value) resultsReceived,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_InitializedForeignOrOwn value)? initializedForeignOrOwn,
+    TResult Function(_WatchProfileStarted value)? watchProfileStarted,
+    TResult Function(_ResultsReceived value)? resultsReceived,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
-
-  @JsonKey(ignore: true)
-  $ProfileWatcherEventCopyWith<ProfileWatcherEvent> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $ProfileWatcherEventCopyWith<$Res> {
   factory $ProfileWatcherEventCopyWith(ProfileWatcherEvent value, $Res Function(ProfileWatcherEvent) then) = _$ProfileWatcherEventCopyWithImpl<$Res>;
-
-  $Res call({Option<User> userOption});
 }
 
 /// @nodoc
@@ -72,89 +75,78 @@ class _$ProfileWatcherEventCopyWithImpl<$Res> implements $ProfileWatcherEventCop
 
   // ignore: unused_field
   final $Res Function(ProfileWatcherEvent) _then;
-
-  @override
-  $Res call({
-    Object? userOption = freezed,
-  }) {
-    return _then(_value.copyWith(
-      userOption: userOption == freezed
-          ? _value.userOption
-          : userOption // ignore: cast_nullable_to_non_nullable
-              as Option<User>,
-    ));
-  }
 }
 
 /// @nodoc
-abstract class _$InitializedForeignOrOwnCopyWith<$Res> implements $ProfileWatcherEventCopyWith<$Res> {
-  factory _$InitializedForeignOrOwnCopyWith(_InitializedForeignOrOwn value, $Res Function(_InitializedForeignOrOwn) then) = __$InitializedForeignOrOwnCopyWithImpl<$Res>;
+abstract class _$WatchProfileStartedCopyWith<$Res> {
+  factory _$WatchProfileStartedCopyWith(_WatchProfileStarted value, $Res Function(_WatchProfileStarted) then) = __$WatchProfileStartedCopyWithImpl<$Res>;
 
-  @override
-  $Res call({Option<User> userOption});
+  $Res call({UniqueId userId});
 }
 
 /// @nodoc
-class __$InitializedForeignOrOwnCopyWithImpl<$Res> extends _$ProfileWatcherEventCopyWithImpl<$Res> implements _$InitializedForeignOrOwnCopyWith<$Res> {
-  __$InitializedForeignOrOwnCopyWithImpl(_InitializedForeignOrOwn _value, $Res Function(_InitializedForeignOrOwn) _then) : super(_value, (v) => _then(v as _InitializedForeignOrOwn));
+class __$WatchProfileStartedCopyWithImpl<$Res> extends _$ProfileWatcherEventCopyWithImpl<$Res> implements _$WatchProfileStartedCopyWith<$Res> {
+  __$WatchProfileStartedCopyWithImpl(_WatchProfileStarted _value, $Res Function(_WatchProfileStarted) _then) : super(_value, (v) => _then(v as _WatchProfileStarted));
 
   @override
-  _InitializedForeignOrOwn get _value => super._value as _InitializedForeignOrOwn;
+  _WatchProfileStarted get _value => super._value as _WatchProfileStarted;
 
   @override
   $Res call({
-    Object? userOption = freezed,
+    Object? userId = freezed,
   }) {
-    return _then(_InitializedForeignOrOwn(
-      userOption == freezed
-          ? _value.userOption
-          : userOption // ignore: cast_nullable_to_non_nullable
-              as Option<User>,
+    return _then(_WatchProfileStarted(
+      userId == freezed
+          ? _value.userId
+          : userId // ignore: cast_nullable_to_non_nullable
+              as UniqueId,
     ));
   }
 }
 
 /// @nodoc
 
-class _$_InitializedForeignOrOwn implements _InitializedForeignOrOwn {
-  const _$_InitializedForeignOrOwn(this.userOption);
+class _$_WatchProfileStarted implements _WatchProfileStarted {
+  const _$_WatchProfileStarted(this.userId);
 
   @override
-  final Option<User> userOption;
+  final UniqueId userId;
 
   @override
   String toString() {
-    return 'ProfileWatcherEvent.initializedForeignOrOwn(userOption: $userOption)';
+    return 'ProfileWatcherEvent.watchProfileStarted(userId: $userId)';
   }
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _InitializedForeignOrOwn && (identical(other.userOption, userOption) || const DeepCollectionEquality().equals(other.userOption, userOption)));
+    return identical(this, other) || (other is _WatchProfileStarted && (identical(other.userId, userId) || const DeepCollectionEquality().equals(other.userId, userId)));
   }
 
   @override
-  int get hashCode => runtimeType.hashCode ^ const DeepCollectionEquality().hash(userOption);
+  int get hashCode => runtimeType.hashCode ^ const DeepCollectionEquality().hash(userId);
 
   @JsonKey(ignore: true)
   @override
-  _$InitializedForeignOrOwnCopyWith<_InitializedForeignOrOwn> get copyWith => __$InitializedForeignOrOwnCopyWithImpl<_InitializedForeignOrOwn>(this, _$identity);
+  _$WatchProfileStartedCopyWith<_WatchProfileStarted> get copyWith => __$WatchProfileStartedCopyWithImpl<_WatchProfileStarted>(this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(Option<User> userOption) initializedForeignOrOwn,
+    required TResult Function(UniqueId userId) watchProfileStarted,
+    required TResult Function(Either<Failure, User> failureOrUser) resultsReceived,
   }) {
-    return initializedForeignOrOwn(userOption);
+    return watchProfileStarted(userId);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(Option<User> userOption)? initializedForeignOrOwn,
+    TResult Function(UniqueId userId)? watchProfileStarted,
+    TResult Function(Either<Failure, User> failureOrUser)? resultsReceived,
     required TResult orElse(),
   }) {
-    if (initializedForeignOrOwn != null) {
-      return initializedForeignOrOwn(userOption);
+    if (watchProfileStarted != null) {
+      return watchProfileStarted(userId);
     }
     return orElse();
   }
@@ -162,33 +154,139 @@ class _$_InitializedForeignOrOwn implements _InitializedForeignOrOwn {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_InitializedForeignOrOwn value) initializedForeignOrOwn,
+    required TResult Function(_WatchProfileStarted value) watchProfileStarted,
+    required TResult Function(_ResultsReceived value) resultsReceived,
   }) {
-    return initializedForeignOrOwn(this);
+    return watchProfileStarted(this);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_InitializedForeignOrOwn value)? initializedForeignOrOwn,
+    TResult Function(_WatchProfileStarted value)? watchProfileStarted,
+    TResult Function(_ResultsReceived value)? resultsReceived,
     required TResult orElse(),
   }) {
-    if (initializedForeignOrOwn != null) {
-      return initializedForeignOrOwn(this);
+    if (watchProfileStarted != null) {
+      return watchProfileStarted(this);
     }
     return orElse();
   }
 }
 
-abstract class _InitializedForeignOrOwn implements ProfileWatcherEvent {
-  const factory _InitializedForeignOrOwn(Option<User> userOption) = _$_InitializedForeignOrOwn;
+abstract class _WatchProfileStarted implements ProfileWatcherEvent {
+  const factory _WatchProfileStarted(UniqueId userId) = _$_WatchProfileStarted;
 
-  @override
-  Option<User> get userOption => throw _privateConstructorUsedError;
+  UniqueId get userId => throw _privateConstructorUsedError;
 
-  @override
   @JsonKey(ignore: true)
-  _$InitializedForeignOrOwnCopyWith<_InitializedForeignOrOwn> get copyWith => throw _privateConstructorUsedError;
+  _$WatchProfileStartedCopyWith<_WatchProfileStarted> get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$ResultsReceivedCopyWith<$Res> {
+  factory _$ResultsReceivedCopyWith(_ResultsReceived value, $Res Function(_ResultsReceived) then) = __$ResultsReceivedCopyWithImpl<$Res>;
+
+  $Res call({Either<Failure, User> failureOrUser});
+}
+
+/// @nodoc
+class __$ResultsReceivedCopyWithImpl<$Res> extends _$ProfileWatcherEventCopyWithImpl<$Res> implements _$ResultsReceivedCopyWith<$Res> {
+  __$ResultsReceivedCopyWithImpl(_ResultsReceived _value, $Res Function(_ResultsReceived) _then) : super(_value, (v) => _then(v as _ResultsReceived));
+
+  @override
+  _ResultsReceived get _value => super._value as _ResultsReceived;
+
+  @override
+  $Res call({
+    Object? failureOrUser = freezed,
+  }) {
+    return _then(_ResultsReceived(
+      failureOrUser == freezed
+          ? _value.failureOrUser
+          : failureOrUser // ignore: cast_nullable_to_non_nullable
+              as Either<Failure, User>,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$_ResultsReceived implements _ResultsReceived {
+  const _$_ResultsReceived(this.failureOrUser);
+
+  @override
+  final Either<Failure, User> failureOrUser;
+
+  @override
+  String toString() {
+    return 'ProfileWatcherEvent.resultsReceived(failureOrUser: $failureOrUser)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) || (other is _ResultsReceived && (identical(other.failureOrUser, failureOrUser) || const DeepCollectionEquality().equals(other.failureOrUser, failureOrUser)));
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode ^ const DeepCollectionEquality().hash(failureOrUser);
+
+  @JsonKey(ignore: true)
+  @override
+  _$ResultsReceivedCopyWith<_ResultsReceived> get copyWith => __$ResultsReceivedCopyWithImpl<_ResultsReceived>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(UniqueId userId) watchProfileStarted,
+    required TResult Function(Either<Failure, User> failureOrUser) resultsReceived,
+  }) {
+    return resultsReceived(failureOrUser);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(UniqueId userId)? watchProfileStarted,
+    TResult Function(Either<Failure, User> failureOrUser)? resultsReceived,
+    required TResult orElse(),
+  }) {
+    if (resultsReceived != null) {
+      return resultsReceived(failureOrUser);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_WatchProfileStarted value) watchProfileStarted,
+    required TResult Function(_ResultsReceived value) resultsReceived,
+  }) {
+    return resultsReceived(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_WatchProfileStarted value)? watchProfileStarted,
+    TResult Function(_ResultsReceived value)? resultsReceived,
+    required TResult orElse(),
+  }) {
+    if (resultsReceived != null) {
+      return resultsReceived(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _ResultsReceived implements ProfileWatcherEvent {
+  const factory _ResultsReceived(Either<Failure, User> failureOrUser) = _$_ResultsReceived;
+
+  Either<Failure, User> get failureOrUser => throw _privateConstructorUsedError;
+
+  @JsonKey(ignore: true)
+  _$ResultsReceivedCopyWith<_ResultsReceived> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -199,24 +297,14 @@ class _$ProfileWatcherStateTearOff {
     return const _Initial();
   }
 
-  _LoadInProgress loadInProgress() {
-    return const _LoadInProgress();
-  }
-
-  _Own own(User user) {
-    return _Own(
+  _NewProfileUpdate newProfileUpdate(User user) {
+    return _NewProfileUpdate(
       user,
     );
   }
 
-  _Foreign foreign(User user) {
-    return _Foreign(
-      user,
-    );
-  }
-
-  _LoadFailure loadFailure() {
-    return const _LoadFailure();
+  _Failure failure() {
+    return const _Failure();
   }
 }
 
@@ -228,38 +316,30 @@ mixin _$ProfileWatcherState {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
-    required TResult Function() loadInProgress,
-    required TResult Function(User user) own,
-    required TResult Function(User user) foreign,
-    required TResult Function() loadFailure,
+    required TResult Function(User user) newProfileUpdate,
+    required TResult Function() failure,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
-    TResult Function()? loadInProgress,
-    TResult Function(User user)? own,
-    TResult Function(User user)? foreign,
-    TResult Function()? loadFailure,
+    TResult Function(User user)? newProfileUpdate,
+    TResult Function()? failure,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Initial value) initial,
-    required TResult Function(_LoadInProgress value) loadInProgress,
-    required TResult Function(_Own value) own,
-    required TResult Function(_Foreign value) foreign,
-    required TResult Function(_LoadFailure value) loadFailure,
+    required TResult Function(_NewProfileUpdate value) newProfileUpdate,
+    required TResult Function(_Failure value) failure,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
-    TResult Function(_LoadInProgress value)? loadInProgress,
-    TResult Function(_Own value)? own,
-    TResult Function(_Foreign value)? foreign,
-    TResult Function(_LoadFailure value)? loadFailure,
+    TResult Function(_NewProfileUpdate value)? newProfileUpdate,
+    TResult Function(_Failure value)? failure,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -315,10 +395,8 @@ class _$_Initial implements _Initial {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
-    required TResult Function() loadInProgress,
-    required TResult Function(User user) own,
-    required TResult Function(User user) foreign,
-    required TResult Function() loadFailure,
+    required TResult Function(User user) newProfileUpdate,
+    required TResult Function() failure,
   }) {
     return initial();
   }
@@ -327,10 +405,8 @@ class _$_Initial implements _Initial {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
-    TResult Function()? loadInProgress,
-    TResult Function(User user)? own,
-    TResult Function(User user)? foreign,
-    TResult Function()? loadFailure,
+    TResult Function(User user)? newProfileUpdate,
+    TResult Function()? failure,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -343,10 +419,8 @@ class _$_Initial implements _Initial {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Initial value) initial,
-    required TResult Function(_LoadInProgress value) loadInProgress,
-    required TResult Function(_Own value) own,
-    required TResult Function(_Foreign value) foreign,
-    required TResult Function(_LoadFailure value) loadFailure,
+    required TResult Function(_NewProfileUpdate value) newProfileUpdate,
+    required TResult Function(_Failure value) failure,
   }) {
     return initial(this);
   }
@@ -355,10 +429,8 @@ class _$_Initial implements _Initial {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
-    TResult Function(_LoadInProgress value)? loadInProgress,
-    TResult Function(_Own value)? own,
-    TResult Function(_Foreign value)? foreign,
-    TResult Function(_LoadFailure value)? loadFailure,
+    TResult Function(_NewProfileUpdate value)? newProfileUpdate,
+    TResult Function(_Failure value)? failure,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -373,100 +445,8 @@ abstract class _Initial implements ProfileWatcherState {
 }
 
 /// @nodoc
-abstract class _$LoadInProgressCopyWith<$Res> {
-  factory _$LoadInProgressCopyWith(_LoadInProgress value, $Res Function(_LoadInProgress) then) = __$LoadInProgressCopyWithImpl<$Res>;
-}
-
-/// @nodoc
-class __$LoadInProgressCopyWithImpl<$Res> extends _$ProfileWatcherStateCopyWithImpl<$Res> implements _$LoadInProgressCopyWith<$Res> {
-  __$LoadInProgressCopyWithImpl(_LoadInProgress _value, $Res Function(_LoadInProgress) _then) : super(_value, (v) => _then(v as _LoadInProgress));
-
-  @override
-  _LoadInProgress get _value => super._value as _LoadInProgress;
-}
-
-/// @nodoc
-
-class _$_LoadInProgress implements _LoadInProgress {
-  const _$_LoadInProgress();
-
-  @override
-  String toString() {
-    return 'ProfileWatcherState.loadInProgress()';
-  }
-
-  @override
-  bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _LoadInProgress);
-  }
-
-  @override
-  int get hashCode => runtimeType.hashCode;
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() initial,
-    required TResult Function() loadInProgress,
-    required TResult Function(User user) own,
-    required TResult Function(User user) foreign,
-    required TResult Function() loadFailure,
-  }) {
-    return loadInProgress();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? initial,
-    TResult Function()? loadInProgress,
-    TResult Function(User user)? own,
-    TResult Function(User user)? foreign,
-    TResult Function()? loadFailure,
-    required TResult orElse(),
-  }) {
-    if (loadInProgress != null) {
-      return loadInProgress();
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_Initial value) initial,
-    required TResult Function(_LoadInProgress value) loadInProgress,
-    required TResult Function(_Own value) own,
-    required TResult Function(_Foreign value) foreign,
-    required TResult Function(_LoadFailure value) loadFailure,
-  }) {
-    return loadInProgress(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
-    TResult Function(_LoadInProgress value)? loadInProgress,
-    TResult Function(_Own value)? own,
-    TResult Function(_Foreign value)? foreign,
-    TResult Function(_LoadFailure value)? loadFailure,
-    required TResult orElse(),
-  }) {
-    if (loadInProgress != null) {
-      return loadInProgress(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class _LoadInProgress implements ProfileWatcherState {
-  const factory _LoadInProgress() = _$_LoadInProgress;
-}
-
-/// @nodoc
-abstract class _$OwnCopyWith<$Res> {
-  factory _$OwnCopyWith(_Own value, $Res Function(_Own) then) = __$OwnCopyWithImpl<$Res>;
+abstract class _$NewProfileUpdateCopyWith<$Res> {
+  factory _$NewProfileUpdateCopyWith(_NewProfileUpdate value, $Res Function(_NewProfileUpdate) then) = __$NewProfileUpdateCopyWithImpl<$Res>;
 
   $Res call({User user});
 
@@ -474,17 +454,17 @@ abstract class _$OwnCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$OwnCopyWithImpl<$Res> extends _$ProfileWatcherStateCopyWithImpl<$Res> implements _$OwnCopyWith<$Res> {
-  __$OwnCopyWithImpl(_Own _value, $Res Function(_Own) _then) : super(_value, (v) => _then(v as _Own));
+class __$NewProfileUpdateCopyWithImpl<$Res> extends _$ProfileWatcherStateCopyWithImpl<$Res> implements _$NewProfileUpdateCopyWith<$Res> {
+  __$NewProfileUpdateCopyWithImpl(_NewProfileUpdate _value, $Res Function(_NewProfileUpdate) _then) : super(_value, (v) => _then(v as _NewProfileUpdate));
 
   @override
-  _Own get _value => super._value as _Own;
+  _NewProfileUpdate get _value => super._value as _NewProfileUpdate;
 
   @override
   $Res call({
     Object? user = freezed,
   }) {
-    return _then(_Own(
+    return _then(_NewProfileUpdate(
       user == freezed
           ? _value.user
           : user // ignore: cast_nullable_to_non_nullable
@@ -502,20 +482,20 @@ class __$OwnCopyWithImpl<$Res> extends _$ProfileWatcherStateCopyWithImpl<$Res> i
 
 /// @nodoc
 
-class _$_Own implements _Own {
-  const _$_Own(this.user);
+class _$_NewProfileUpdate implements _NewProfileUpdate {
+  const _$_NewProfileUpdate(this.user);
 
   @override
   final User user;
 
   @override
   String toString() {
-    return 'ProfileWatcherState.own(user: $user)';
+    return 'ProfileWatcherState.newProfileUpdate(user: $user)';
   }
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _Own && (identical(other.user, user) || const DeepCollectionEquality().equals(other.user, user)));
+    return identical(this, other) || (other is _NewProfileUpdate && (identical(other.user, user) || const DeepCollectionEquality().equals(other.user, user)));
   }
 
   @override
@@ -523,32 +503,28 @@ class _$_Own implements _Own {
 
   @JsonKey(ignore: true)
   @override
-  _$OwnCopyWith<_Own> get copyWith => __$OwnCopyWithImpl<_Own>(this, _$identity);
+  _$NewProfileUpdateCopyWith<_NewProfileUpdate> get copyWith => __$NewProfileUpdateCopyWithImpl<_NewProfileUpdate>(this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
-    required TResult Function() loadInProgress,
-    required TResult Function(User user) own,
-    required TResult Function(User user) foreign,
-    required TResult Function() loadFailure,
+    required TResult Function(User user) newProfileUpdate,
+    required TResult Function() failure,
   }) {
-    return own(user);
+    return newProfileUpdate(user);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
-    TResult Function()? loadInProgress,
-    TResult Function(User user)? own,
-    TResult Function(User user)? foreign,
-    TResult Function()? loadFailure,
+    TResult Function(User user)? newProfileUpdate,
+    TResult Function()? failure,
     required TResult orElse(),
   }) {
-    if (own != null) {
-      return own(user);
+    if (newProfileUpdate != null) {
+      return newProfileUpdate(user);
     }
     return orElse();
   }
@@ -557,192 +533,62 @@ class _$_Own implements _Own {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Initial value) initial,
-    required TResult Function(_LoadInProgress value) loadInProgress,
-    required TResult Function(_Own value) own,
-    required TResult Function(_Foreign value) foreign,
-    required TResult Function(_LoadFailure value) loadFailure,
+    required TResult Function(_NewProfileUpdate value) newProfileUpdate,
+    required TResult Function(_Failure value) failure,
   }) {
-    return own(this);
+    return newProfileUpdate(this);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
-    TResult Function(_LoadInProgress value)? loadInProgress,
-    TResult Function(_Own value)? own,
-    TResult Function(_Foreign value)? foreign,
-    TResult Function(_LoadFailure value)? loadFailure,
+    TResult Function(_NewProfileUpdate value)? newProfileUpdate,
+    TResult Function(_Failure value)? failure,
     required TResult orElse(),
   }) {
-    if (own != null) {
-      return own(this);
+    if (newProfileUpdate != null) {
+      return newProfileUpdate(this);
     }
     return orElse();
   }
 }
 
-abstract class _Own implements ProfileWatcherState {
-  const factory _Own(User user) = _$_Own;
-
-  User get user => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
-  _$OwnCopyWith<_Own> get copyWith => throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class _$ForeignCopyWith<$Res> {
-  factory _$ForeignCopyWith(_Foreign value, $Res Function(_Foreign) then) = __$ForeignCopyWithImpl<$Res>;
-
-  $Res call({User user});
-
-  $UserCopyWith<$Res> get user;
-}
-
-/// @nodoc
-class __$ForeignCopyWithImpl<$Res> extends _$ProfileWatcherStateCopyWithImpl<$Res> implements _$ForeignCopyWith<$Res> {
-  __$ForeignCopyWithImpl(_Foreign _value, $Res Function(_Foreign) _then) : super(_value, (v) => _then(v as _Foreign));
-
-  @override
-  _Foreign get _value => super._value as _Foreign;
-
-  @override
-  $Res call({
-    Object? user = freezed,
-  }) {
-    return _then(_Foreign(
-      user == freezed
-          ? _value.user
-          : user // ignore: cast_nullable_to_non_nullable
-              as User,
-    ));
-  }
-
-  @override
-  $UserCopyWith<$Res> get user {
-    return $UserCopyWith<$Res>(_value.user, (value) {
-      return _then(_value.copyWith(user: value));
-    });
-  }
-}
-
-/// @nodoc
-
-class _$_Foreign implements _Foreign {
-  const _$_Foreign(this.user);
-
-  @override
-  final User user;
-
-  @override
-  String toString() {
-    return 'ProfileWatcherState.foreign(user: $user)';
-  }
-
-  @override
-  bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _Foreign && (identical(other.user, user) || const DeepCollectionEquality().equals(other.user, user)));
-  }
-
-  @override
-  int get hashCode => runtimeType.hashCode ^ const DeepCollectionEquality().hash(user);
-
-  @JsonKey(ignore: true)
-  @override
-  _$ForeignCopyWith<_Foreign> get copyWith => __$ForeignCopyWithImpl<_Foreign>(this, _$identity);
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() initial,
-    required TResult Function() loadInProgress,
-    required TResult Function(User user) own,
-    required TResult Function(User user) foreign,
-    required TResult Function() loadFailure,
-  }) {
-    return foreign(user);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? initial,
-    TResult Function()? loadInProgress,
-    TResult Function(User user)? own,
-    TResult Function(User user)? foreign,
-    TResult Function()? loadFailure,
-    required TResult orElse(),
-  }) {
-    if (foreign != null) {
-      return foreign(user);
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_Initial value) initial,
-    required TResult Function(_LoadInProgress value) loadInProgress,
-    required TResult Function(_Own value) own,
-    required TResult Function(_Foreign value) foreign,
-    required TResult Function(_LoadFailure value) loadFailure,
-  }) {
-    return foreign(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
-    TResult Function(_LoadInProgress value)? loadInProgress,
-    TResult Function(_Own value)? own,
-    TResult Function(_Foreign value)? foreign,
-    TResult Function(_LoadFailure value)? loadFailure,
-    required TResult orElse(),
-  }) {
-    if (foreign != null) {
-      return foreign(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class _Foreign implements ProfileWatcherState {
-  const factory _Foreign(User user) = _$_Foreign;
+abstract class _NewProfileUpdate implements ProfileWatcherState {
+  const factory _NewProfileUpdate(User user) = _$_NewProfileUpdate;
 
   User get user => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
-  _$ForeignCopyWith<_Foreign> get copyWith => throw _privateConstructorUsedError;
+  _$NewProfileUpdateCopyWith<_NewProfileUpdate> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$LoadFailureCopyWith<$Res> {
-  factory _$LoadFailureCopyWith(_LoadFailure value, $Res Function(_LoadFailure) then) = __$LoadFailureCopyWithImpl<$Res>;
+abstract class _$FailureCopyWith<$Res> {
+  factory _$FailureCopyWith(_Failure value, $Res Function(_Failure) then) = __$FailureCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$LoadFailureCopyWithImpl<$Res> extends _$ProfileWatcherStateCopyWithImpl<$Res> implements _$LoadFailureCopyWith<$Res> {
-  __$LoadFailureCopyWithImpl(_LoadFailure _value, $Res Function(_LoadFailure) _then) : super(_value, (v) => _then(v as _LoadFailure));
+class __$FailureCopyWithImpl<$Res> extends _$ProfileWatcherStateCopyWithImpl<$Res> implements _$FailureCopyWith<$Res> {
+  __$FailureCopyWithImpl(_Failure _value, $Res Function(_Failure) _then) : super(_value, (v) => _then(v as _Failure));
 
   @override
-  _LoadFailure get _value => super._value as _LoadFailure;
+  _Failure get _value => super._value as _Failure;
 }
 
 /// @nodoc
 
-class _$_LoadFailure implements _LoadFailure {
-  const _$_LoadFailure();
+class _$_Failure implements _Failure {
+  const _$_Failure();
 
   @override
   String toString() {
-    return 'ProfileWatcherState.loadFailure()';
+    return 'ProfileWatcherState.failure()';
   }
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _LoadFailure);
+    return identical(this, other) || (other is _Failure);
   }
 
   @override
@@ -752,26 +598,22 @@ class _$_LoadFailure implements _LoadFailure {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
-    required TResult Function() loadInProgress,
-    required TResult Function(User user) own,
-    required TResult Function(User user) foreign,
-    required TResult Function() loadFailure,
+    required TResult Function(User user) newProfileUpdate,
+    required TResult Function() failure,
   }) {
-    return loadFailure();
+    return failure();
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
-    TResult Function()? loadInProgress,
-    TResult Function(User user)? own,
-    TResult Function(User user)? foreign,
-    TResult Function()? loadFailure,
+    TResult Function(User user)? newProfileUpdate,
+    TResult Function()? failure,
     required TResult orElse(),
   }) {
-    if (loadFailure != null) {
-      return loadFailure();
+    if (failure != null) {
+      return failure();
     }
     return orElse();
   }
@@ -780,31 +622,27 @@ class _$_LoadFailure implements _LoadFailure {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Initial value) initial,
-    required TResult Function(_LoadInProgress value) loadInProgress,
-    required TResult Function(_Own value) own,
-    required TResult Function(_Foreign value) foreign,
-    required TResult Function(_LoadFailure value) loadFailure,
+    required TResult Function(_NewProfileUpdate value) newProfileUpdate,
+    required TResult Function(_Failure value) failure,
   }) {
-    return loadFailure(this);
+    return failure(this);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
-    TResult Function(_LoadInProgress value)? loadInProgress,
-    TResult Function(_Own value)? own,
-    TResult Function(_Foreign value)? foreign,
-    TResult Function(_LoadFailure value)? loadFailure,
+    TResult Function(_NewProfileUpdate value)? newProfileUpdate,
+    TResult Function(_Failure value)? failure,
     required TResult orElse(),
   }) {
-    if (loadFailure != null) {
-      return loadFailure(this);
+    if (failure != null) {
+      return failure(this);
     }
     return orElse();
   }
 }
 
-abstract class _LoadFailure implements ProfileWatcherState {
-  const factory _LoadFailure() = _$_LoadFailure;
+abstract class _Failure implements ProfileWatcherState {
+  const factory _Failure() = _$_Failure;
 }

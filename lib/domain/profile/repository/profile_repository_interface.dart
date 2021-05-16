@@ -60,5 +60,6 @@ abstract class ProfileRepositoryInterface {
   /// Returns a [KtList] of the [Achievement]s accomplished by a [User]
   Stream<Either<Failure, KtList<Achievement>>> watchUserAchievements(UniqueId userId);
 
-// TODO: implement Message user
+  /// Watches updates to the [User]'s document with the given [UniqueId]
+  Stream<Either<Failure, User>> watchProfile(UniqueId userId);
 }

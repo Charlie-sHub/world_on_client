@@ -95,7 +95,7 @@ class UserDto with _$UserDto {
   }
 
   User toDomain() => User(
-    id: UniqueId.fromUniqueString(id),
+        id: UniqueId.fromUniqueString(id),
         name: Name(name),
         username: Name(username),
         password: Password("THISISNOTAPASSWORD"),

@@ -7,10 +7,10 @@ import 'package:worldon/application/search/search_experiences_by_tags/search_exp
 import 'package:worldon/application/search/search_tags_by_name_watcher/search_tags_by_name_watcher_bloc.dart';
 import 'package:worldon/application/search/search_users_by_name_watcher/search_users_by_name_watcher_bloc.dart';
 import 'package:worldon/injection.dart';
-import 'package:worldon/views/search/widget/search_experiences_tab_bar_view.dart';
+import 'package:worldon/views/search/widget/experience_results_view.dart';
 import 'package:worldon/views/search/widget/search_header.dart';
 import 'package:worldon/views/search/widget/search_tab_bar.dart';
-import 'package:worldon/views/search/widget/search_users_tab_view/search_users_tab_view.dart';
+import 'package:worldon/views/search/widget/user_results_view/user_results_view.dart';
 
 // TODO: Implement search experiences by difficulty and by tags
 class TabbedSearchBody extends StatelessWidget {
@@ -43,8 +43,8 @@ class TabbedSearchBody extends StatelessWidget {
                 Expanded(
                   child: TabBarView(
                     children: [
-                      SearchExperiencesTabView(searchTerm: state.searchTerm),
-                      SearchUsersTabView(searchTerm: state.searchTerm),
+                      ExperienceResultsView(searchTerm: state.searchTerm),
+                      UserResultsView(searchTerm: state.searchTerm),
                       // SearchTagsTabView(searchTerm: state.searchTerm),
                     ],
                   ),

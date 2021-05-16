@@ -9,10 +9,10 @@ import 'package:worldon/application/search/search_tags_by_name_watcher/search_ta
 import 'package:worldon/application/search/search_users_by_name_watcher/search_users_by_name_watcher_bloc.dart';
 import 'package:worldon/generated/l10n.dart';
 import 'package:worldon/injection.dart';
-import 'package:worldon/views/search/widget/search_experiences_tab_bar_view.dart';
+import 'package:worldon/views/search/widget/experience_results_view.dart';
 import 'package:worldon/views/search/widget/search_header.dart';
-import 'package:worldon/views/search/widget/search_tags_tab_view.dart';
-import 'package:worldon/views/search/widget/search_users_tab_view/search_users_tab_view.dart';
+import 'package:worldon/views/search/widget/tag_results_view.dart';
+import 'package:worldon/views/search/widget/user_results_view/user_results_view.dart';
 
 class SearchBody extends StatelessWidget {
   const SearchBody({Key? key}) : super(key: key);
@@ -38,11 +38,10 @@ class SearchBody extends StatelessWidget {
             children: [
               const SearchHeader(),
               const SizedBox(height: _separation),
-              Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 10),
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  crossAxisAlignment: CrossAxisAlignment.start,
+              SizedBox(
+                height: MediaQuery.of(context).size.height * 0.8,
+                child: ListView(
+                  padding: const EdgeInsets.only(left: 10),
                   children: [
                     AutoSizeText(
                       S.of(context).searchTags.toUpperCase(),
@@ -50,8 +49,8 @@ class SearchBody extends StatelessWidget {
                     ),
                     const SizedBox(height: _separation),
                     SizedBox(
-                      height: MediaQuery.of(context).size.height * 0.08,
-                      child: const SearchTagsTabView(),
+                      height: MediaQuery.of(context).size.height * 0.07,
+                      child: const TagResultsView(),
                     ),
                     AutoSizeText(
                       S.of(context).experiences.toUpperCase(),
@@ -60,7 +59,7 @@ class SearchBody extends StatelessWidget {
                     const SizedBox(height: _separation),
                     SizedBox(
                       height: MediaQuery.of(context).size.height * 0.32,
-                      child: SearchExperiencesTabView(searchTerm: state.searchTerm),
+                      child: ExperienceResultsView(searchTerm: state.searchTerm),
                     ),
                     const SizedBox(height: _separation),
                     AutoSizeText(
@@ -70,7 +69,7 @@ class SearchBody extends StatelessWidget {
                     const SizedBox(height: _separation),
                     SizedBox(
                       height: MediaQuery.of(context).size.height * 0.25,
-                      child: SearchUsersTabView(searchTerm: state.searchTerm),
+                      child: UserResultsView(searchTerm: state.searchTerm),
                     ),
                   ],
                 ),

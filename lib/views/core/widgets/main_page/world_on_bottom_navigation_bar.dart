@@ -15,7 +15,7 @@ class WorldOnBottomNavigationBar extends StatelessWidget {
   Widget build(BuildContext context) {
     return AnimatedBottomNavigationBar(
       notchSmoothness: NotchSmoothness.defaultEdge,
-      notchMargin: 4,
+      notchMargin: 3,
       height: kBottomNavigationBarHeight - 15,
       iconSize: 32,
       backgroundColor: WorldOnColors.background,

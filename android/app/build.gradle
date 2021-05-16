@@ -45,7 +45,7 @@ android {
 
     defaultConfig {
         applicationId "com.worldon_app.worldon"
-        minSdkVersion 21
+        minSdkVersion 23
         targetSdkVersion 30
         versionCode flutterVersionCode.toInteger()
         versionName flutterVersionName

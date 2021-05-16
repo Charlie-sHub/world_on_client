@@ -1,6 +1,7 @@
 import 'package:animated_bottom_navigation_bar/animated_bottom_navigation_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:worldon/application/store/store_app_bar_title/store_app_bar_title_bloc.dart';
 import 'package:worldon/application/store/store_navigation_actor/store_navigation_actor_bloc.dart';
 import 'package:worldon/views/core/misc/world_on_colors.dart';
 
@@ -42,6 +43,9 @@ class StoreBottomNavigationBar extends StatelessWidget {
         context.read<StoreNavigationActorBloc>().add(
               const StoreNavigationActorEvent.itemStoreTapped(),
             );
+        context.read<StoreAppBarTitleBloc>().add(
+              const StoreAppBarTitleEvent.showedStore(),
+            );
         break;
       /*
       case _coinStoreIndex:
@@ -54,10 +58,16 @@ class StoreBottomNavigationBar extends StatelessWidget {
         context.read<StoreNavigationActorBloc>().add(
               const StoreNavigationActorEvent.promotionPlansTapped(),
             );
+        context.read<StoreAppBarTitleBloc>().add(
+              const StoreAppBarTitleEvent.showedPromotions(),
+            );
         break;
       case _myItemsIndex:
         context.read<StoreNavigationActorBloc>().add(
               const StoreNavigationActorEvent.myItemsTapped(),
+            );
+        context.read<StoreAppBarTitleBloc>().add(
+              const StoreAppBarTitleEvent.showedMyItems(),
             );
         break;
       default:

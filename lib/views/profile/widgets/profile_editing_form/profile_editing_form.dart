@@ -14,7 +14,6 @@ import 'package:worldon/views/core/misc/world_on_colors.dart';
 import 'package:worldon/views/experience_management/widgets/tag_addition_creation_card.dart';
 import 'package:worldon/views/profile/widgets/profile_editing_form/description_text_form_field.dart';
 import 'package:worldon/views/profile/widgets/profile_editing_form/editing_submit_button.dart';
-import 'package:worldon/views/profile/widgets/profile_editing_form/email_text_field.dart';
 import 'package:worldon/views/profile/widgets/profile_editing_form/name_text_form_field.dart';
 import 'package:worldon/views/profile/widgets/profile_editing_form/user_image_picker.dart';
 import 'package:worldon/views/profile/widgets/profile_editing_form/username_text_form_field.dart';
@@ -73,10 +72,15 @@ class ProfileEditingForm extends StatelessWidget {
                   DescriptionTextFormField(
                     initialValue: user.description.getOrCrash(),
                   ),
+                  // TODO: Re add editing email
+                  // At the time of writing changing the email here only changed it in the document
+                  // It might also be a security risk so it should be handled carefully
+                  /*
                   const SizedBox(height: 10),
                   EmailTextField(
                     initialValue: user.email.getOrCrash(),
                   ),
+                   */
                   const SizedBox(height: 10),
                   TagAdditionCreationCard(
                     tagChangeFunction: (KtSet<Tag> tags) => context.read<ProfileEditingFormBloc>().add(

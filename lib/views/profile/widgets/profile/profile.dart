@@ -11,23 +11,22 @@ import 'profile_tab_bar.dart';
 class Profile extends StatelessWidget {
   const Profile({
     Key? key,
-    required this.user,
     required this.isOwn,
+    required this.user,
   }) : super(key: key);
 
-  final User user;
   final bool isOwn;
+  final User user;
 
   @override
   Widget build(BuildContext context) {
-    final _tabList = [
+    final _tabs = [
       ProfileExperiencesTabView(user: user),
       ProfileUsersTabView(user: user),
-      // ProfileAchievementsTabView(user: user),
       if (isOwn) ProfileLogTabView(),
     ];
     return DefaultTabController(
-      length: _tabList.length,
+      length: _tabs.length,
       child: NestedScrollView(
         key: UniqueKey(),
         dragStartBehavior: DragStartBehavior.down,
@@ -50,7 +49,7 @@ class Profile extends StatelessWidget {
           ),
         ],
         body: TabBarView(
-          children: _tabList,
+          children: _tabs,
         ),
       ),
     );

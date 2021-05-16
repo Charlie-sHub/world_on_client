@@ -9,8 +9,8 @@ import 'package:worldon/views/core/widgets/cards/tag_card/simple_tag_card_builde
 import 'package:worldon/views/core/widgets/misc/world_on_progress_indicator.dart';
 import 'package:worldon/views/search/widget/search_error_display.dart';
 
-class SearchTagsTabView extends StatelessWidget {
-  const SearchTagsTabView({
+class TagResultsView extends StatelessWidget {
+  const TagResultsView({
     Key? key,
   }) : super(key: key);
 

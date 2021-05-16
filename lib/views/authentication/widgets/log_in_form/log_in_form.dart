@@ -17,60 +17,76 @@ class LogInForm extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       decoration: const BoxDecoration(
-        color: Color(0xff673ab7),
-        backgroundBlendMode: BlendMode.srcOver,
+        color: Colors.black,
+        backgroundBlendMode: BlendMode.darken,
       ),
       child: PlasmaRenderer(
-        particles: 15,
-        color: const Color(0x44f9188b),
-        blur: 0.65,
+        type: PlasmaType.bubbles,
+        particles: 28,
+        color: const Color(0xc400ffe2),
+        blur: 0.79,
         size: 0.67,
-        speed: 3.33,
         blendMode: BlendMode.plus,
         particleType: ParticleType.atlas,
-        child: Center(
-          child: SingleChildScrollView(
-            child: Padding(
-              padding: const EdgeInsets.symmetric(
-                horizontal: 40,
-                vertical: 30,
-              ),
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                crossAxisAlignment: CrossAxisAlignment.stretch,
-                children: [
-                  const WorldOnTitle(),
-                  const SizedBox(height: 30),
-                  Form(
-                    autovalidateMode: context.read<LogInFormBloc>().state.showErrorMessages ? AutovalidateMode.always : AutovalidateMode.disabled,
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.stretch,
-                      children: <Widget>[
-                        EmailTextField(
-                          validator: (_) => _emailValidator(context),
-                          eventToAdd: (String value) => context.read<LogInFormBloc>().add(
-                                LogInFormEvent.emailChanged(value),
-                              ),
-                        ),
-                        const SizedBox(height: 5),
-                        PasswordTextField(
-                          eventToAdd: (String value) => context.read<LogInFormBloc>().add(
-                                LogInFormEvent.passwordChanged(value),
-                              ),
-                          validator: (_) => _passwordValidator(context),
-                        ),
-                        const SizedBox(height: 10),
-                        const LogInButton(),
+        variation1: 0.22,
+        variation2: 0.1,
+        variation3: 0.1,
+        child: PlasmaRenderer(
+          color: const Color(0x44ff002c),
+          speed: 0.7,
+          blendMode: BlendMode.plus,
+          particleType: ParticleType.atlas,
+          variation1: 0.34,
+          variation2: 0.37,
+          variation3: 0.22,
+          child: Center(
+            child: SingleChildScrollView(
+              child: Padding(
+                padding: const EdgeInsets.symmetric(
+                  horizontal: 40,
+                  vertical: 30,
+                ),
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  crossAxisAlignment: CrossAxisAlignment.stretch,
+                  children: [
+                    const WorldOnTitle(),
+                    const SizedBox(height: 30),
+                    Form(
+                      autovalidateMode: context.read<LogInFormBloc>().state.showErrorMessages ? AutovalidateMode.always : AutovalidateMode.disabled,
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.stretch,
+                        children: <Widget>[
+                          EmailTextField(
+                            validator: (_) => _emailValidator(context),
+                            eventToAdd: (String value) => context.read<LogInFormBloc>().add(
+                                  LogInFormEvent.emailChanged(value),
+                                ),
+                          ),
+                          const SizedBox(height: 5),
+                          PasswordTextField(
+                            eventToAdd: (String value) => context.read<LogInFormBloc>().add(
+                                  LogInFormEvent.passwordChanged(value),
+                                ),
+                            validator: (_) => _passwordValidator(context),
+                          ),
+                          const SizedBox(height: 10),
+                          const LogInButton(),
+                        ],
+                      ),
+                    ),
+                    const SizedBox(height: 15),
+                    const RegisterButton(),
+                    Column(
+                      children: const [
+                        SizedBox(height: 40),
+                        LogInGoogleButton(),
+                        SizedBox(height: 60),
+                        LogInTroubleButton(),
                       ],
                     ),
-                  ),
-                  const SizedBox(height: 15),
-                  const RegisterButton(),
-                  const SizedBox(height: 20),
-                  const LogInGoogleButton(),
-                  const SizedBox(height: 80),
-                  const LogInTroubleButton(),
-                ],
+                  ],
+                ),
               ),
             ),
           ),

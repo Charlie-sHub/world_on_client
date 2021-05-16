@@ -14,8 +14,6 @@ import 'package:worldon/data/core/models/achievement/achievement_dto.dart';
 import 'package:worldon/data/core/models/achievement/achievement_fields.dart';
 import 'package:worldon/data/core/models/experience/experience_dto.dart';
 import 'package:worldon/data/core/models/experience/experience_fields.dart';
-import 'package:worldon/data/core/models/notification/notification_dto.dart';
-import 'package:worldon/data/core/models/notification/notification_fields.dart';
 import 'package:worldon/data/core/models/tag/tag_dto.dart';
 import 'package:worldon/data/core/models/tag/tag_fields.dart';
 import 'package:worldon/data/core/models/user/user_dto.dart';
@@ -102,16 +100,9 @@ class ProductionProfileRepository implements ProfileRepositoryInterface {
 
   @override
   Future<Either<Failure, Unit>> editUser(User user) async {
-    // TODO: Update password
-    //  await _firebaseAuth.currentUser!.updatePassword(
-    //             user.password.getOrCrash(),
-    //           );
     try {
       final _userId = user.id.getOrCrash();
-      // Should request the user doc instead of using the client's user?
-      // Just as a way to ensure that the update took place.
-      // Using await _firestore.userDocument();
-      final _updatedUser = await user.imageFileOption.fold(
+      await user.imageFileOption.fold(
         () async {
           final _jsonUser = UserDto.fromDomain(user).toJson();
           await _firestore.userCollection
@@ -119,7 +110,6 @@ class ProductionProfileRepository implements ProfileRepositoryInterface {
                 _userId,
               )
               .update(_jsonUser);
-          return user;
         },
         (_file) async {
           final _imageUrl = await getIt<CloudStorageService>().uploadFileImage(
@@ -133,67 +123,8 @@ class ProductionProfileRepository implements ProfileRepositoryInterface {
             ),
           ).toJson();
           await _firestore.userCollection.doc(_userId).update(_jsonUser);
-          return UserDto.fromJson(_jsonUser).toDomain();
         },
       );
-      // TODO: Move this to the backend
-      // Having the client propagate the update is not a very scalable solution
-      // It also highlights the problem of the current simplistic denormalization
-      // If we are to use Firestore or some of the NoSQL db in the future then we need to come up with a better data model
-      final _experiencesToUpdateQuerySnapshot = await _firestore.experienceCollection
-          .where(
-            ExperienceFields.creatorId,
-            isEqualTo: _userId,
-          )
-          .get();
-      final _experiencesToUpdateDocuments = _experiencesToUpdateQuerySnapshot.docs.map(
-        (_queryDocumentSnapshot) async => _queryDocumentSnapshot.reference.get(),
-      );
-      for (final _experienceDoc in _experiencesToUpdateDocuments) {
-        final _oldExperience = ExperienceDto.fromFirestore(await _experienceDoc).toDomain();
-        final _updatedExperience = _oldExperience.copyWith(creator: _updatedUser);
-        final _updatedExperienceDto = ExperienceDto.fromDomain(_updatedExperience);
-        _firestore.experienceCollection.doc(_updatedExperienceDto.id).update(
-              _updatedExperienceDto.toJson(),
-            );
-      }
-      final _notificationsToUpdateQuerySnapshotBySender = await _firestore.notificationCollection
-          .where(
-            "${NotificationFields.sender}.id",
-            isEqualTo: _userId,
-          )
-          .get();
-      final _notificationsToUpdateDocumentsBySender = _notificationsToUpdateQuerySnapshotBySender.docs.map(
-        (_queryDocumentSnapshot) async => _queryDocumentSnapshot.reference.get(),
-      );
-      for (final _notificationDoc in _notificationsToUpdateDocumentsBySender) {
-        final _oldNotification = NotificationDto.fromFirestore(await _notificationDoc).toDomain();
-        final _updatedNotification = _oldNotification.copyWith(sender: _updatedUser);
-        final _updatedNotificationDto = NotificationDto.fromDomain(_updatedNotification);
-        _firestore.notificationCollection.doc(_updatedNotificationDto.id).update(
-              _updatedNotificationDto.toJson(),
-            );
-      }
-      final _notificationsToUpdateQuerySnapshotByReceiver = await _firestore.notificationCollection
-          .where(
-            "${NotificationFields.receiver}.id",
-            isEqualTo: _userId,
-          )
-          .get();
-      final _notificationsToUpdateDocumentsByReceiver = _notificationsToUpdateQuerySnapshotByReceiver.docs.map(
-        (_queryDocumentSnapshot) async => _queryDocumentSnapshot.reference.get(),
-      );
-      for (final _notificationDoc in _notificationsToUpdateDocumentsByReceiver) {
-        final _oldNotification = NotificationDto.fromFirestore(await _notificationDoc).toDomain();
-        final _updatedNotification = _oldNotification.copyWith(receiver: _updatedUser);
-        final _updatedNotificationDto = NotificationDto.fromDomain(_updatedNotification);
-        _firestore.notificationCollection.doc(_updatedNotificationDto.id).update(
-              _updatedNotificationDto.toJson(),
-            );
-      }
-      // TODO: Update Comments
-      // Leaving that for now
-      // Having the client look through each Experience for each comment is a bit too much
       return right(unit);
     } on FirebaseException catch (e) {
       return onFirebaseException(e);
@@ -678,6 +609,29 @@ class ProductionProfileRepository implements ProfileRepositoryInterface {
     } on FirebaseException catch (exception) {
       return onFirebaseException(exception);
     }
+  }
+
+  @override
+  Stream<Either<Failure, User>> watchProfile(UniqueId userId) async* {
+    yield* _firestore.userCollection
+        .doc(
+          userId.getOrCrash(),
+        )
+        .snapshots()
+        .map(
+          (snapshot) => UserDto.fromFirestore(snapshot).toDomain(),
+        )
+        .map(
+      (_user) {
+        return right<Failure, User>(
+          _user,
+        );
+      },
+    ).onErrorReturnWith(
+      (error) => left(
+        _onError(error),
+      ),
+    );
   }
 
   Either<Failure, T> onFirebaseException<T>(FirebaseException exception) {
