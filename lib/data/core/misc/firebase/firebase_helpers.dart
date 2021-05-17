@@ -42,4 +42,6 @@ extension FirestoreX on FirebaseFirestore {
 
 extension DocumentReferenceX on DocumentReference {
   CollectionReference get commentCollection => collection("comments");
+
+  CollectionReference get saveCollection => collection("saves");
 }

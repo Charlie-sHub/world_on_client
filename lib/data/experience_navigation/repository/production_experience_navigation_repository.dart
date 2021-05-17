@@ -11,13 +11,17 @@ import 'package:worldon/data/core/failures/core_data_failure.dart';
 import 'package:worldon/data/core/misc/firebase/firebase_helpers.dart';
 import 'package:worldon/data/core/models/experience/experience_dto.dart';
 import 'package:worldon/data/core/models/experience/experience_fields.dart';
+import 'package:worldon/data/core/models/experience/objective_list/objective_id_list_dto.dart';
+import 'package:worldon/data/core/models/experience/objective_list/objective_id_list_fields.dart';
 import 'package:worldon/data/core/models/user/user_dto.dart';
 import 'package:worldon/data/core/models/user/user_fields.dart';
 import 'package:worldon/domain/core/entities/coordinates/coordinates.dart' as world_on_coordinates;
 import 'package:worldon/domain/core/entities/experience/experience.dart';
+import 'package:worldon/domain/core/entities/objective/objective.dart';
 import 'package:worldon/domain/core/entities/user/user.dart';
 import 'package:worldon/domain/core/validation/objects/difficulty.dart';
 import 'package:worldon/domain/core/validation/objects/experience_points.dart';
+import 'package:worldon/domain/core/validation/objects/objective_list.dart';
 import 'package:worldon/domain/core/validation/objects/unique_id.dart';
 import 'package:worldon/domain/core/validation/objects/user_level.dart';
 import 'package:worldon/domain/experience_navigation/repository/experience_navigation_repository_interface.dart';
@@ -36,15 +40,33 @@ class ProductionExperienceNavigationRepository implements ExperienceNavigationRe
       final _userDocument = await _firestore.userDocument();
       _userDocument.update(
         {
-          UserFields.experiencesDoneIds: FieldValue.arrayUnion([experienceId.getOrCrash()]),
+          UserFields.experiencesDoneIds: FieldValue.arrayUnion(
+            [
+              experienceId.getOrCrash(),
+            ],
+          ),
         },
       );
-      final _experienceDocument = await _firestore.experienceDocument(experienceId.getOrCrash());
+      final _experienceDocument = await _firestore.experienceDocument(
+        experienceId.getOrCrash(),
+      );
       _experienceDocument.update(
         {
-          ExperienceFields.doneBy: FieldValue.arrayUnion([_userDocument.id]),
+          ExperienceFields.doneBy: FieldValue.arrayUnion(
+            [_userDocument.id],
+          ),
         },
       );
+      final _saveDocument = await _firestore.userCollection
+          .doc(
+            _userDocument.id,
+          )
+          .saveCollection
+          .doc(
+            experienceId.getOrCrash(),
+          )
+          .get();
+      _saveDocument.reference.delete();
       return right(unit);
     } on FirebaseException catch (exception) {
       return _onError(exception);
@@ -78,13 +100,19 @@ class ProductionExperienceNavigationRepository implements ExperienceNavigationRe
       final _userDocument = await _firestore.userDocument();
       _userDocument.update(
         {
-          UserFields.experiencesLikedIds: FieldValue.arrayRemove([experienceId.getOrCrash()]),
+          UserFields.experiencesLikedIds: FieldValue.arrayRemove(
+            [
+              experienceId.getOrCrash(),
+            ],
+          ),
         },
       );
       final _experienceDocument = await _firestore.experienceDocument(experienceId.getOrCrash());
       _experienceDocument.update(
         {
-          ExperienceFields.likedBy: FieldValue.arrayRemove([_userDocument.id]),
+          ExperienceFields.likedBy: FieldValue.arrayRemove(
+            [_userDocument.id],
+          ),
         },
       );
       return right(unit);
@@ -317,6 +345,104 @@ class ProductionExperienceNavigationRepository implements ExperienceNavigationRe
           ),
         ),
       );
+    }
+  }
+
+  @override
+  Future<Either<Failure, ObjectiveList>> saveUserProgress(
+    ObjectiveList objectiveList,
+    UniqueId experienceId,
+  ) async {
+    try {
+      final _objectiveList = objectiveList.getOrCrash().dart;
+      final _currentUserDoc = await _firestore.userDocument();
+      final _saveDocument = await _firestore.userCollection
+          .doc(
+            _currentUserDoc.id,
+          )
+          .saveCollection
+          .doc(
+            experienceId.getOrCrash(),
+          )
+          .get();
+      if (_saveDocument.exists) {
+        final _objectiveIdList = ObjectiveIdListDto.fromFirestore(
+          _saveDocument,
+        );
+        final _filteredObjectives = _objectiveList
+            .where(
+              (objective) => _objectiveIdList.objectivesIds.contains(
+                objective.id.getOrCrash(),
+              ),
+            )
+            .toList();
+        final _objectiveListFiltered = ObjectiveList(
+          _filteredObjectives.toImmutableList(),
+        );
+        return right(_objectiveListFiltered);
+      } else {
+        final _objectivesToSave = ObjectiveIdListDto.fromDomain(objectiveList);
+        await _saveDocument.reference.set(_objectivesToSave.toJson());
+        return right(objectiveList);
+      }
+    } on FirebaseException catch (exception) {
+      return _onError(exception);
+    }
+  }
+
+  @override
+  Future<Either<Failure, Unit>> accomplishObjective(Objective objective, UniqueId experienceId) async {
+    try {
+      final _currentUserDoc = await _firestore.userDocument();
+      final _saveDocument = await _firestore.userCollection
+          .doc(
+            _currentUserDoc.id,
+          )
+          .saveCollection
+          .doc(
+            experienceId.getOrCrash(),
+          )
+          .get();
+      await _saveDocument.reference.update(
+        {
+          ObjectiveIdListFields.objectivesIds: FieldValue.arrayRemove(
+            [
+              objective.id.getOrCrash(),
+            ],
+          ),
+        },
+      );
+      return right(unit);
+    } on FirebaseException catch (exception) {
+      return _onError(exception);
+    }
+  }
+
+  @override
+  Future<Either<Failure, Unit>> unAccomplishObjective(Objective objective, UniqueId experienceId) async {
+    try {
+      final _currentUserDoc = await _firestore.userDocument();
+      final _saveDocument = await _firestore.userCollection
+          .doc(
+            _currentUserDoc.id,
+          )
+          .saveCollection
+          .doc(
+            experienceId.getOrCrash(),
+          )
+          .get();
+      await _saveDocument.reference.update(
+        {
+          ObjectiveIdListFields.objectivesIds: FieldValue.arrayUnion(
+            [
+              objective.id.getOrCrash(),
+            ],
+          ),
+        },
+      );
+      return right(unit);
+    } on FirebaseException catch (exception) {
+      return _onError(exception);
     }
   }
 

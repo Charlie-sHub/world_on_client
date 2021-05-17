@@ -12,9 +12,7 @@ import 'package:worldon/domain/profile/use_case/watch_profile.dart';
 import '../../../injection.dart';
 
 part 'profile_watcher_bloc.freezed.dart';
-
 part 'profile_watcher_event.dart';
-
 part 'profile_watcher_state.dart';
 
 @injectable

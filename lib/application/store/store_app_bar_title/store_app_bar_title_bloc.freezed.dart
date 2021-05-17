@@ -46,7 +46,6 @@ mixin _$StoreAppBarTitleEvent {
     required TResult Function() showedMyItems,
   }) =>
       throw _privateConstructorUsedError;
-
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initialized,
@@ -56,7 +55,6 @@ mixin _$StoreAppBarTitleEvent {
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
-
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Initialized value) initialized,
@@ -65,7 +63,6 @@ mixin _$StoreAppBarTitleEvent {
     required TResult Function(_ShowedMyItems value) showedMyItems,
   }) =>
       throw _privateConstructorUsedError;
-
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initialized value)? initialized,
@@ -478,7 +475,6 @@ mixin _$StoreAppBarTitleState {
     required TResult Function() myItems,
   }) =>
       throw _privateConstructorUsedError;
-
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
@@ -488,7 +484,6 @@ mixin _$StoreAppBarTitleState {
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
-
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Initial value) initial,
@@ -497,7 +492,6 @@ mixin _$StoreAppBarTitleState {
     required TResult Function(_MyItems value) myItems,
   }) =>
       throw _privateConstructorUsedError;
-
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial value)? initial,

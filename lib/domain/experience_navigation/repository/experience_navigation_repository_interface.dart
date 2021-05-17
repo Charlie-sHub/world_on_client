@@ -3,9 +3,11 @@ import 'package:kt_dart/kt.dart';
 import 'package:worldon/core/error/failure.dart';
 import 'package:worldon/domain/core/entities/coordinates/coordinates.dart';
 import 'package:worldon/domain/core/entities/experience/experience.dart';
+import 'package:worldon/domain/core/entities/objective/objective.dart';
 import 'package:worldon/domain/core/entities/user/user.dart';
 import 'package:worldon/domain/core/use_case/use_case.dart';
 import 'package:worldon/domain/core/validation/objects/difficulty.dart';
+import 'package:worldon/domain/core/validation/objects/objective_list.dart';
 import 'package:worldon/domain/core/validation/objects/unique_id.dart';
 
 /// Repository for the  experience navigation feature
@@ -30,6 +32,18 @@ abstract class ExperienceNavigationRepositoryInterface {
 
   /// Sends the IDs of an [Experience] so the server adds the [Experience] to the logged in [User]'s done list
   Future<Either<Failure, Unit>> finishExperience(UniqueId experienceId);
+
+  /// Updates the [Experience] document that saves the progress of the [User]
+  /// removing an accomplished [Objective] from it
+  Future<Either<Failure, Unit>> accomplishObjective(Objective objective, UniqueId experienceId);
+
+  /// Updates the [Experience] document that saves the progress of the [User]
+  /// adding an un-accomplished [Objective] from it
+  Future<Either<Failure, Unit>> unAccomplishObjective(Objective objective, UniqueId experienceId);
+
+  /// Sends the ID of an [Experience] and its [ObjectiveList] so the server creates a sub-document to the [User] saving the progress
+  /// In the case the document already exists then it reads from it to determine the [User]'s progress
+  Future<Either<Failure, ObjectiveList>> saveUserProgress(ObjectiveList objectiveList, UniqueId experienceId);
 
   /// Sends a pair of latitude and longitude values and returns a [KtSet] of [Experience]s located within a certain radius
   Future<Either<Failure, KtSet<Experience>>> loadSurroundingExperiences(Coordinates coordinates);

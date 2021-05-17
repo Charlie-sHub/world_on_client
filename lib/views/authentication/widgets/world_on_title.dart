@@ -8,22 +8,12 @@ class WorldOnTitle extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Text(
+    return const Text(
       "World On",
       style: TextStyle(
         fontSize: 100,
         color: WorldOnColors.primary,
         fontFamily: "MovingSkate",
-        shadows: [
-          Shadow(
-            offset: const Offset(
-              2,
-              2,
-            ),
-            blurRadius: 5,
-            color: WorldOnColors.accent.withOpacity(0.75),
-          ),
-        ],
       ),
       textAlign: TextAlign.center,
     );

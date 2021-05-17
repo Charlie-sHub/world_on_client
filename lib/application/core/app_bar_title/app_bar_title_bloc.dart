@@ -8,8 +8,7 @@ import 'package:worldon/domain/core/use_case/use_case.dart';
 import 'package:worldon/injection.dart';
 
 part 'app_bar_title_bloc.freezed.dart';
-part 'app_bar_title_event.dart';ent.dart';
-
+part 'app_bar_title_event.dart';
 part 'app_bar_title_state.dart';
 
 @injectable

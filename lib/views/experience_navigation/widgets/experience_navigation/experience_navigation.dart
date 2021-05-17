@@ -26,7 +26,10 @@ class ExperienceNavigation extends StatelessWidget {
         BlocProvider(
           create: (context) => getIt<ObjectivesTrackerBloc>()
             ..add(
-              ObjectivesTrackerEvent.initialized(experience.objectives),
+              ObjectivesTrackerEvent.initialized(
+                experience.objectives,
+                experience.id,
+              ),
             ),
         ),
         BlocProvider(
@@ -40,8 +43,13 @@ class ExperienceNavigation extends StatelessWidget {
         listener: (context, state) {
           state.maybeMap(
             navigatingExperience: (value) {
-              context.read<MapControllerBloc>().add(MapControllerEvent.initialized(value.experience));
-              context.read<ObjectivesTrackerBloc>().add(ObjectivesTrackerEvent.initialized(value.experience.objectives));
+              context.read<MapControllerBloc>().add(
+                    MapControllerEvent.initialized(value.experience),
+                  );
+              context.read<ObjectivesTrackerBloc>().add(ObjectivesTrackerEvent.initialized(
+                    value.experience.objectives,
+                    value.experience.id,
+                  ));
             },
             orElse: () {},
           );

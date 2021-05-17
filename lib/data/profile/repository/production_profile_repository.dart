@@ -1,4 +1,5 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:cloud_functions/cloud_functions.dart';
 import 'package:dartz/dartz.dart';
 import 'package:injectable/injectable.dart';
 import 'package:kt_dart/kt.dart';
@@ -31,8 +32,8 @@ import '../../../injection.dart';
 @LazySingleton(as: ProfileRepositoryInterface, env: [Environment.prod])
 class ProductionProfileRepository implements ProfileRepositoryInterface {
   final _logger = Logger();
-
   final FirebaseFirestore _firestore;
+  final _functions = FirebaseFunctions.instanceFor(region: "europe-west1");
 
   ProductionProfileRepository(this._firestore);
 
@@ -124,6 +125,14 @@ class ProductionProfileRepository implements ProfileRepositoryInterface {
           ).toJson();
           await _firestore.userCollection.doc(_userId).update(_jsonUser);
         },
+      );
+      final _propagateUserUpdateCallable = _functions.httpsCallable("propagateUserUpdate");
+      _propagateUserUpdateCallable.call(
+        <String, dynamic>{"userId": _userId},
+      );
+      final _updateUserIndex = _functions.httpsCallable("updateUserIndex");
+      await _updateUserIndex.call(
+        <String, dynamic>{"userId": _userId},
       );
       return right(unit);
     } on FirebaseException catch (e) {

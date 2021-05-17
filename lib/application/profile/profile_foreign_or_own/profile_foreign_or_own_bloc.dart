@@ -12,8 +12,7 @@ import 'package:worldon/domain/profile/use_case/load_user.dart' as load_user;
 import 'package:worldon/injection.dart';
 
 part 'profile_foreign_or_own_bloc.freezed.dart';
-part 'profile_foreign_or_own_event.dart';n_event.dart';
-
+part 'profile_foreign_or_own_event.dart';
 part 'profile_foreign_or_own_state.dart';
 
 @injectable

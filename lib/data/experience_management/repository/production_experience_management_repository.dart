@@ -1,4 +1,5 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:cloud_functions/cloud_functions.dart';
 import 'package:dartz/dartz.dart';
 import 'package:geoflutterfire/geoflutterfire.dart';
 import 'package:injectable/injectable.dart';
@@ -25,6 +26,7 @@ class ProductionExperienceManagementRepository implements ExperienceManagementRe
   final _logger = Logger();
   final _geo = Geoflutterfire();
   final FirebaseFirestore _firestore;
+  final _functions = FirebaseFunctions.instanceFor(region: "europe-west1");
 
   ProductionExperienceManagementRepository(this._firestore);
 
@@ -102,6 +104,10 @@ class ProductionExperienceManagementRepository implements ExperienceManagementRe
           .update(
             _experienceDto.toJson(),
           );
+      final _updateExperienceIndex = _functions.httpsCallable("updateExperienceIndex");
+      await _updateExperienceIndex.call(
+        <String, dynamic>{"experienceId": experience.id.getOrCrash()},
+      );
       return right(unit);
     } catch (e) {
       return _onException(e);

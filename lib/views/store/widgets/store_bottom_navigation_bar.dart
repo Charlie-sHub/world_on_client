@@ -72,7 +72,7 @@ class StoreBottomNavigationBar extends StatelessWidget {
         break;
       default:
         context.read<StoreNavigationActorBloc>().add(
-          const StoreNavigationActorEvent.itemStoreTapped(),
+              const StoreNavigationActorEvent.itemStoreTapped(),
             );
         break;
     }

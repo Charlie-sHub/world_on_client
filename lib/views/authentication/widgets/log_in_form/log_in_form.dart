@@ -23,7 +23,8 @@ class LogInForm extends StatelessWidget {
       child: PlasmaRenderer(
         type: PlasmaType.bubbles,
         particles: 28,
-        color: const Color(0xc400ffe2),
+        color: const Color(0x81172F77),
+        speed: 1.5,
         blur: 0.79,
         size: 0.67,
         blendMode: BlendMode.plus,
@@ -32,7 +33,7 @@ class LogInForm extends StatelessWidget {
         variation2: 0.1,
         variation3: 0.1,
         child: PlasmaRenderer(
-          color: const Color(0x44ff002c),
+          color: const Color(0x2fff002c),
           speed: 0.7,
           blendMode: BlendMode.plus,
           particleType: ParticleType.atlas,

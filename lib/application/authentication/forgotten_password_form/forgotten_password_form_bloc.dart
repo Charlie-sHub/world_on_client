@@ -11,8 +11,7 @@ import 'package:worldon/domain/core/validation/objects/email_address.dart';
 import '../../../injection.dart';
 
 part 'forgotten_password_form_bloc.freezed.dart';
-part 'forgotten_password_form_event.dart';_event.dart';
-
+part 'forgotten_password_form_event.dart';
 part 'forgotten_password_form_state.dart';
 
 @injectable

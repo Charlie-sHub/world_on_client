@@ -16,9 +16,10 @@ final _privateConstructorUsedError = UnsupportedError(
 class _$ObjectivesTrackerEventTearOff {
   const _$ObjectivesTrackerEventTearOff();
 
-  _Initialized initialized(ObjectiveList objectiveSet) {
+  _Initialized initialized(ObjectiveList objectiveList, UniqueId experienceId) {
     return _Initialized(
-      objectiveSet,
+      objectiveList,
+      experienceId,
     );
   }
 
@@ -42,14 +43,14 @@ const $ObjectivesTrackerEvent = _$ObjectivesTrackerEventTearOff();
 mixin _$ObjectivesTrackerEvent {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(ObjectiveList objectiveSet) initialized,
+    required TResult Function(ObjectiveList objectiveList, UniqueId experienceId) initialized,
     required TResult Function(Objective objective) objectiveAccomplished,
     required TResult Function(Objective objective) objectiveUnaccomplished,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(ObjectiveList objectiveSet)? initialized,
+    TResult Function(ObjectiveList objectiveList, UniqueId experienceId)? initialized,
     TResult Function(Objective objective)? objectiveAccomplished,
     TResult Function(Objective objective)? objectiveUnaccomplished,
     required TResult orElse(),
@@ -91,7 +92,7 @@ class _$ObjectivesTrackerEventCopyWithImpl<$Res> implements $ObjectivesTrackerEv
 abstract class _$InitializedCopyWith<$Res> {
   factory _$InitializedCopyWith(_Initialized value, $Res Function(_Initialized) then) = __$InitializedCopyWithImpl<$Res>;
 
-  $Res call({ObjectiveList objectiveSet});
+  $Res call({ObjectiveList objectiveList, UniqueId experienceId});
 }
 
 /// @nodoc
@@ -103,13 +104,18 @@ class __$InitializedCopyWithImpl<$Res> extends _$ObjectivesTrackerEventCopyWithI
 
   @override
   $Res call({
-    Object? objectiveSet = freezed,
+    Object? objectiveList = freezed,
+    Object? experienceId = freezed,
   }) {
     return _then(_Initialized(
-      objectiveSet == freezed
-          ? _value.objectiveSet
-          : objectiveSet // ignore: cast_nullable_to_non_nullable
+      objectiveList == freezed
+          ? _value.objectiveList
+          : objectiveList // ignore: cast_nullable_to_non_nullable
               as ObjectiveList,
+      experienceId == freezed
+          ? _value.experienceId
+          : experienceId // ignore: cast_nullable_to_non_nullable
+              as UniqueId,
     ));
   }
 }
@@ -117,23 +123,28 @@ class __$InitializedCopyWithImpl<$Res> extends _$ObjectivesTrackerEventCopyWithI
 /// @nodoc
 
 class _$_Initialized implements _Initialized {
-  const _$_Initialized(this.objectiveSet);
+  const _$_Initialized(this.objectiveList, this.experienceId);
 
   @override
-  final ObjectiveList objectiveSet;
+  final ObjectiveList objectiveList;
+  @override
+  final UniqueId experienceId;
 
   @override
   String toString() {
-    return 'ObjectivesTrackerEvent.initialized(objectiveSet: $objectiveSet)';
+    return 'ObjectivesTrackerEvent.initialized(objectiveList: $objectiveList, experienceId: $experienceId)';
   }
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _Initialized && (identical(other.objectiveSet, objectiveSet) || const DeepCollectionEquality().equals(other.objectiveSet, objectiveSet)));
+    return identical(this, other) ||
+        (other is _Initialized &&
+            (identical(other.objectiveList, objectiveList) || const DeepCollectionEquality().equals(other.objectiveList, objectiveList)) &&
+            (identical(other.experienceId, experienceId) || const DeepCollectionEquality().equals(other.experienceId, experienceId)));
   }
 
   @override
-  int get hashCode => runtimeType.hashCode ^ const DeepCollectionEquality().hash(objectiveSet);
+  int get hashCode => runtimeType.hashCode ^ const DeepCollectionEquality().hash(objectiveList) ^ const DeepCollectionEquality().hash(experienceId);
 
   @JsonKey(ignore: true)
   @override
@@ -142,23 +153,23 @@ class _$_Initialized implements _Initialized {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(ObjectiveList objectiveSet) initialized,
+    required TResult Function(ObjectiveList objectiveList, UniqueId experienceId) initialized,
     required TResult Function(Objective objective) objectiveAccomplished,
     required TResult Function(Objective objective) objectiveUnaccomplished,
   }) {
-    return initialized(objectiveSet);
+    return initialized(objectiveList, experienceId);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(ObjectiveList objectiveSet)? initialized,
+    TResult Function(ObjectiveList objectiveList, UniqueId experienceId)? initialized,
     TResult Function(Objective objective)? objectiveAccomplished,
     TResult Function(Objective objective)? objectiveUnaccomplished,
     required TResult orElse(),
   }) {
     if (initialized != null) {
-      return initialized(objectiveSet);
+      return initialized(objectiveList, experienceId);
     }
     return orElse();
   }
@@ -189,9 +200,11 @@ class _$_Initialized implements _Initialized {
 }
 
 abstract class _Initialized implements ObjectivesTrackerEvent {
-  const factory _Initialized(ObjectiveList objectiveSet) = _$_Initialized;
+  const factory _Initialized(ObjectiveList objectiveList, UniqueId experienceId) = _$_Initialized;
 
-  ObjectiveList get objectiveSet => throw _privateConstructorUsedError;
+  ObjectiveList get objectiveList => throw _privateConstructorUsedError;
+
+  UniqueId get experienceId => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
   _$InitializedCopyWith<_Initialized> get copyWith => throw _privateConstructorUsedError;
@@ -261,7 +274,7 @@ class _$_ObjectiveAccomplished implements _ObjectiveAccomplished {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(ObjectiveList objectiveSet) initialized,
+    required TResult Function(ObjectiveList objectiveList, UniqueId experienceId) initialized,
     required TResult Function(Objective objective) objectiveAccomplished,
     required TResult Function(Objective objective) objectiveUnaccomplished,
   }) {
@@ -271,7 +284,7 @@ class _$_ObjectiveAccomplished implements _ObjectiveAccomplished {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(ObjectiveList objectiveSet)? initialized,
+    TResult Function(ObjectiveList objectiveList, UniqueId experienceId)? initialized,
     TResult Function(Objective objective)? objectiveAccomplished,
     TResult Function(Objective objective)? objectiveUnaccomplished,
     required TResult orElse(),
@@ -380,7 +393,7 @@ class _$_ObjectiveUnaccomplished implements _ObjectiveUnaccomplished {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(ObjectiveList objectiveSet) initialized,
+    required TResult Function(ObjectiveList objectiveList, UniqueId experienceId) initialized,
     required TResult Function(Objective objective) objectiveAccomplished,
     required TResult Function(Objective objective) objectiveUnaccomplished,
   }) {
@@ -390,7 +403,7 @@ class _$_ObjectiveUnaccomplished implements _ObjectiveUnaccomplished {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(ObjectiveList objectiveSet)? initialized,
+    TResult Function(ObjectiveList objectiveList, UniqueId experienceId)? initialized,
     TResult Function(Objective objective)? objectiveAccomplished,
     TResult Function(Objective objective)? objectiveUnaccomplished,
     required TResult orElse(),
@@ -439,9 +452,10 @@ abstract class _ObjectiveUnaccomplished implements ObjectivesTrackerEvent {
 class _$ObjectivesTrackerStateTearOff {
   const _$ObjectivesTrackerStateTearOff();
 
-  _ObjectivesTrackerState call({required KtList<Objective> objectivesToDo, required bool isFinished}) {
+  _ObjectivesTrackerState call({required KtList<Objective> objectivesToDo, required UniqueId experienceId, required bool isFinished}) {
     return _ObjectivesTrackerState(
       objectivesToDo: objectivesToDo,
+      experienceId: experienceId,
       isFinished: isFinished,
     );
   }
@@ -453,6 +467,9 @@ const $ObjectivesTrackerState = _$ObjectivesTrackerStateTearOff();
 /// @nodoc
 mixin _$ObjectivesTrackerState {
   KtList<Objective> get objectivesToDo => throw _privateConstructorUsedError;
+
+  UniqueId get experienceId => throw _privateConstructorUsedError;
+
   bool get isFinished => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
@@ -463,7 +480,7 @@ mixin _$ObjectivesTrackerState {
 abstract class $ObjectivesTrackerStateCopyWith<$Res> {
   factory $ObjectivesTrackerStateCopyWith(ObjectivesTrackerState value, $Res Function(ObjectivesTrackerState) then) = _$ObjectivesTrackerStateCopyWithImpl<$Res>;
 
-  $Res call({KtList<Objective> objectivesToDo, bool isFinished});
+  $Res call({KtList<Objective> objectivesToDo, UniqueId experienceId, bool isFinished});
 }
 
 /// @nodoc
@@ -478,6 +495,7 @@ class _$ObjectivesTrackerStateCopyWithImpl<$Res> implements $ObjectivesTrackerSt
   @override
   $Res call({
     Object? objectivesToDo = freezed,
+    Object? experienceId = freezed,
     Object? isFinished = freezed,
   }) {
     return _then(_value.copyWith(
@@ -485,6 +503,10 @@ class _$ObjectivesTrackerStateCopyWithImpl<$Res> implements $ObjectivesTrackerSt
           ? _value.objectivesToDo
           : objectivesToDo // ignore: cast_nullable_to_non_nullable
               as KtList<Objective>,
+      experienceId: experienceId == freezed
+          ? _value.experienceId
+          : experienceId // ignore: cast_nullable_to_non_nullable
+              as UniqueId,
       isFinished: isFinished == freezed
           ? _value.isFinished
           : isFinished // ignore: cast_nullable_to_non_nullable
@@ -498,7 +520,7 @@ abstract class _$ObjectivesTrackerStateCopyWith<$Res> implements $ObjectivesTrac
   factory _$ObjectivesTrackerStateCopyWith(_ObjectivesTrackerState value, $Res Function(_ObjectivesTrackerState) then) = __$ObjectivesTrackerStateCopyWithImpl<$Res>;
 
   @override
-  $Res call({KtList<Objective> objectivesToDo, bool isFinished});
+  $Res call({KtList<Objective> objectivesToDo, UniqueId experienceId, bool isFinished});
 }
 
 /// @nodoc
@@ -511,6 +533,7 @@ class __$ObjectivesTrackerStateCopyWithImpl<$Res> extends _$ObjectivesTrackerSta
   @override
   $Res call({
     Object? objectivesToDo = freezed,
+    Object? experienceId = freezed,
     Object? isFinished = freezed,
   }) {
     return _then(_ObjectivesTrackerState(
@@ -518,6 +541,10 @@ class __$ObjectivesTrackerStateCopyWithImpl<$Res> extends _$ObjectivesTrackerSta
           ? _value.objectivesToDo
           : objectivesToDo // ignore: cast_nullable_to_non_nullable
               as KtList<Objective>,
+      experienceId: experienceId == freezed
+          ? _value.experienceId
+          : experienceId // ignore: cast_nullable_to_non_nullable
+              as UniqueId,
       isFinished: isFinished == freezed
           ? _value.isFinished
           : isFinished // ignore: cast_nullable_to_non_nullable
@@ -529,16 +556,18 @@ class __$ObjectivesTrackerStateCopyWithImpl<$Res> extends _$ObjectivesTrackerSta
 /// @nodoc
 
 class _$_ObjectivesTrackerState implements _ObjectivesTrackerState {
-  const _$_ObjectivesTrackerState({required this.objectivesToDo, required this.isFinished});
+  const _$_ObjectivesTrackerState({required this.objectivesToDo, required this.experienceId, required this.isFinished});
 
   @override
   final KtList<Objective> objectivesToDo;
+  @override
+  final UniqueId experienceId;
   @override
   final bool isFinished;
 
   @override
   String toString() {
-    return 'ObjectivesTrackerState(objectivesToDo: $objectivesToDo, isFinished: $isFinished)';
+    return 'ObjectivesTrackerState(objectivesToDo: $objectivesToDo, experienceId: $experienceId, isFinished: $isFinished)';
   }
 
   @override
@@ -546,11 +575,12 @@ class _$_ObjectivesTrackerState implements _ObjectivesTrackerState {
     return identical(this, other) ||
         (other is _ObjectivesTrackerState &&
             (identical(other.objectivesToDo, objectivesToDo) || const DeepCollectionEquality().equals(other.objectivesToDo, objectivesToDo)) &&
+            (identical(other.experienceId, experienceId) || const DeepCollectionEquality().equals(other.experienceId, experienceId)) &&
             (identical(other.isFinished, isFinished) || const DeepCollectionEquality().equals(other.isFinished, isFinished)));
   }
 
   @override
-  int get hashCode => runtimeType.hashCode ^ const DeepCollectionEquality().hash(objectivesToDo) ^ const DeepCollectionEquality().hash(isFinished);
+  int get hashCode => runtimeType.hashCode ^ const DeepCollectionEquality().hash(objectivesToDo) ^ const DeepCollectionEquality().hash(experienceId) ^ const DeepCollectionEquality().hash(isFinished);
 
   @JsonKey(ignore: true)
   @override
@@ -558,10 +588,13 @@ class _$_ObjectivesTrackerState implements _ObjectivesTrackerState {
 }
 
 abstract class _ObjectivesTrackerState implements ObjectivesTrackerState {
-  const factory _ObjectivesTrackerState({required KtList<Objective> objectivesToDo, required bool isFinished}) = _$_ObjectivesTrackerState;
+  const factory _ObjectivesTrackerState({required KtList<Objective> objectivesToDo, required UniqueId experienceId, required bool isFinished}) = _$_ObjectivesTrackerState;
 
   @override
   KtList<Objective> get objectivesToDo => throw _privateConstructorUsedError;
+
+  @override
+  UniqueId get experienceId => throw _privateConstructorUsedError;
 
   @override
   bool get isFinished => throw _privateConstructorUsedError;

@@ -9,7 +9,7 @@ publish_to: 'none'
 # The number after the + always increases by 1
 # Usually both numbers should increase by 1 at the same time
 # For example 1.1.7+17 => 1.1.8+18
-version: 1.2.0+20
+version: 1.2.2+22
 
 environment:
   sdk: ">=2.12.0 <3.0.0"
@@ -25,6 +25,7 @@ dependencies:
   cached_network_image: ^3.0.0
   carousel_slider: ^4.0.0-nullsafety.0
   cloud_firestore: ^1.0.7
+  cloud_functions: ^1.0.7
   dartz: ^0.10.0-nullsafety.1
   email_validator: ^2.0.1
   equatable: ^2.0.0

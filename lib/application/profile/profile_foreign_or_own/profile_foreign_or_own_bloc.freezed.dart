@@ -35,20 +35,17 @@ mixin _$ProfileForeignOrOwnEvent {
     required TResult Function(Option<User> userOption) initializedForeignOrOwn,
   }) =>
       throw _privateConstructorUsedError;
-
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(Option<User> userOption)? initializedForeignOrOwn,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
-
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_InitializedForeignOrOwn value) initializedForeignOrOwn,
   }) =>
       throw _privateConstructorUsedError;
-
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_InitializedForeignOrOwn value)? initializedForeignOrOwn,
@@ -237,7 +234,6 @@ mixin _$ProfileForeignOrOwnState {
     required TResult Function() loadFailure,
   }) =>
       throw _privateConstructorUsedError;
-
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
@@ -248,7 +244,6 @@ mixin _$ProfileForeignOrOwnState {
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
-
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Initial value) initial,
@@ -258,7 +253,6 @@ mixin _$ProfileForeignOrOwnState {
     required TResult Function(_LoadFailure value) loadFailure,
   }) =>
       throw _privateConstructorUsedError;
-
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
@@ -592,7 +586,6 @@ abstract class _Own implements ProfileForeignOrOwnState {
   const factory _Own(User user) = _$_Own;
 
   User get user => throw _privateConstructorUsedError;
-
   @JsonKey(ignore: true)
   _$OwnCopyWith<_Own> get copyWith => throw _privateConstructorUsedError;
 }
