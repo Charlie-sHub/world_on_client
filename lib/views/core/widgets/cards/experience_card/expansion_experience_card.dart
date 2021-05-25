@@ -1,14 +1,17 @@
 import 'package:another_flushbar/flushbar_helper.dart';
 import 'package:auto_size_text/auto_size_text.dart';
+import 'package:dartz/dartz.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:worldon/application/core/experience_card_actor/experience_card_actor_bloc.dart';
+import 'package:worldon/application/navigation/navigation_actor/navigation_actor_bloc.dart';
 import 'package:worldon/domain/core/entities/experience/experience.dart';
 import 'package:worldon/generated/l10n.dart';
 import 'package:worldon/injection.dart';
 import 'package:worldon/views/core/widgets/cards/experience_card/log_button.dart';
 import 'package:worldon/views/core/widgets/cards/experience_card/participate_button.dart';
-import 'package:worldon/views/core/widgets/cards/experience_card/share_button.dart';
+import 'package:worldon/views/core/widgets/cards/experience_card/share_externally_button.dart';
+import 'package:worldon/views/core/widgets/cards/experience_card/share_internally_button.dart';
 import 'package:worldon/views/core/widgets/cards/tag_card/simple_tag_card_builder.dart';
 import 'package:worldon/views/core/widgets/misc/carousel_builder.dart';
 import 'package:worldon/views/core/widgets/misc/difficulty_display.dart';
@@ -65,8 +68,15 @@ class ExpansionExperienceCard extends StatelessWidget {
                       ).createShader(bounds),
                       child: CarouselBuilder(
                         itemCount: experience.imageURLs.length,
-                        function: (index) => WorldOnCachedImage(
-                          imageURL: experience.imageURLs.elementAt(index),
+                        function: (index) => InkWell(
+                          onTap: () => context.read<NavigationActorBloc>().add(
+                                NavigationActorEvent.experienceNavigationTapped(
+                                  some(experience),
+                                ),
+                              ),
+                          child: WorldOnCachedImage(
+                            imageURL: experience.imageURLs.elementAt(index),
+                          ),
                         ),
                       ),
                     ),
@@ -75,8 +85,9 @@ class ExpansionExperienceCard extends StatelessWidget {
                       top: 0,
                       child: Row(
                         children: [
+                          ShareExternallyButton(experience: experience),
+                          ShareInternallyButton(experience: experience),
                           LogButton(experience: experience),
-                          ShareButton(experience: experience),
                           ManageButtonBuilder(
                             experience: experience,
                             reloadFunction: reloadFunction,

@@ -29,7 +29,7 @@ class CurrentUserProfileButton extends StatelessWidget {
           minWidth: 0,
           elevation: 0,
           // color: Colors.transparent,
-          padding: const EdgeInsets.all(0),
+          padding: EdgeInsets.zero,
           shape: const CircleBorder(),
           onPressed: () => context.read<NavigationActorBloc>().add(
                 NavigationActorEvent.profileTapped(

@@ -200,6 +200,7 @@
   "unAvailableStore": "The store is unavailable to you",
   "cancel": "Cancel",
   "optional": "Optional",
+  "shared": "shared",
   "followedYou": "followed you",
   "unfollowedYou": "unfollowed you",
   "blockedYou": "blocked you",

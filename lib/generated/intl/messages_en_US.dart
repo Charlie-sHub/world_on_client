@@ -194,6 +194,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "selectBirthday": MessageLookupByLibrary.simpleMessage("Select your birthday"),
         "setExperienceDifficulty": MessageLookupByLibrary.simpleMessage("Set the initial difficulty"),
         "shareMessage": MessageLookupByLibrary.simpleMessage("with WORLD ON now in the Play Store"),
+        "shared": MessageLookupByLibrary.simpleMessage("shared"),
         "storeNavigationBarMyItems": MessageLookupByLibrary.simpleMessage("My items"),
         "storeNavigationBarPromotionPlans": MessageLookupByLibrary.simpleMessage("Promos"),
         "storeNavigationBarStore": MessageLookupByLibrary.simpleMessage("Store"),

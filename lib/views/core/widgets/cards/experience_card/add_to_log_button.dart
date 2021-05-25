@@ -19,11 +19,12 @@ class AddToLogButton extends StatelessWidget {
       onPressed: () => context.read<ExperienceCardActorBloc>().add(
             ExperienceCardActorEvent.addedExperienceToLog(experience),
           ),
-      padding: const EdgeInsets.all(0),
+      padding: const EdgeInsets.all(5),
+      constraints: const BoxConstraints(),
       icon: const Icon(
         MdiIcons.bookmarkPlus,
         color: WorldOnColors.white,
-        size: 30,
+        size: 25,
       ),
     );
   }

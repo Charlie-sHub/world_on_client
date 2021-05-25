@@ -45,7 +45,7 @@ class ProfileTabBar extends SliverPersistentHeaderDelegate {
                 ),
               ),
               child: Tab(
-                iconMargin: const EdgeInsets.all(0),
+                iconMargin: EdgeInsets.zero,
                 text: S.of(context).experiences,
               ),
             ),
@@ -60,7 +60,7 @@ class ProfileTabBar extends SliverPersistentHeaderDelegate {
                 ),
               ),
               child: Tab(
-                iconMargin: const EdgeInsets.all(0),
+                iconMargin: EdgeInsets.zero,
                 text: S.of(context).profileRelationTab,
               ),
             ),
@@ -73,7 +73,7 @@ class ProfileTabBar extends SliverPersistentHeaderDelegate {
             */
             if (isOwn)
               Tab(
-                iconMargin: const EdgeInsets.all(0),
+                iconMargin: EdgeInsets.zero,
                 text: S.of(context).profileLogTab,
               ),
           ],

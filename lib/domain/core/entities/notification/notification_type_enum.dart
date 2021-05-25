@@ -3,4 +3,5 @@ enum NotificationType {
   unfollow,
   block,
   unblock,
+  share,
 }

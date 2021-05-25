@@ -2,7 +2,7 @@ import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:worldon/domain/core/entities/experience/experience.dart';
 import 'package:worldon/generated/l10n.dart';
-import 'package:worldon/views/core/widgets/cards/experience_card/share_button.dart';
+import 'package:worldon/views/core/widgets/cards/experience_card/share_externally_button.dart';
 import 'package:worldon/views/core/widgets/misc/world_on_cached_image.dart';
 import 'package:worldon/views/experience_navigation/widgets/experience_finish/experience_gained_text.dart';
 import 'package:worldon/views/experience_navigation/widgets/experience_finish/finish_button.dart';
@@ -50,7 +50,7 @@ class FinishSuccessView extends StatelessWidget {
                 top: 0,
                 child: Row(
                   children: [
-                    ShareButton(experience: experience),
+                    ShareExternallyButton(experience: experience),
                   ],
                 ),
               ),

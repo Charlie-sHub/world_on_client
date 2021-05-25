@@ -19,11 +19,12 @@ class DismissFromLogButton extends StatelessWidget {
       onPressed: () => context.read<ExperienceCardActorBloc>().add(
             ExperienceCardActorEvent.dismissedExperienceFromLog(experience),
           ),
-      padding: const EdgeInsets.all(0),
+      padding: const EdgeInsets.all(5),
+      constraints: const BoxConstraints(),
       icon: const Icon(
         MdiIcons.bookmarkMinus,
         color: WorldOnColors.white,
-        size: 30,
+        size: 25,
       ),
     );
   }

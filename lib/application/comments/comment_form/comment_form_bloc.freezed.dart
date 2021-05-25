@@ -140,7 +140,7 @@ class _$_Initialized implements _Initialized {
             (identical(other.commentOption, commentOption) || const DeepCollectionEquality().equals(other.commentOption, commentOption)) &&
             (identical(other.experienceId, experienceId) || const DeepCollectionEquality().equals(other.experienceId, experienceId)));
   }
-  
+
   @override
   int get hashCode => runtimeType.hashCode ^ const DeepCollectionEquality().hash(commentOption) ^ const DeepCollectionEquality().hash(experienceId);
 
@@ -586,7 +586,7 @@ class _$_CommentFormState implements _CommentFormState {
       const DeepCollectionEquality().hash(isEditing) ^
       const DeepCollectionEquality().hash(isSubmitting) ^
       const DeepCollectionEquality().hash(failureOrSuccessOption);
-  
+
   @JsonKey(ignore: true)
   @override
   _$CommentFormStateCopyWith<_CommentFormState> get copyWith => __$CommentFormStateCopyWithImpl<_CommentFormState>(this, _$identity);
@@ -606,7 +606,7 @@ abstract class _CommentFormState implements CommentFormState {
   bool get showErrorMessages => throw _privateConstructorUsedError;
   @override
   bool get isEditing => throw _privateConstructorUsedError;
-  
+
   @override
   bool get isSubmitting => throw _privateConstructorUsedError;
 

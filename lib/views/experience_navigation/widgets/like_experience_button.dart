@@ -19,7 +19,7 @@ class LikeExperienceButton extends StatelessWidget {
         color: Colors.grey.shade600,
         size: 30,
       ),
-      padding: const EdgeInsets.all(0),
+      padding: EdgeInsets.zero,
       onPressed: () => context.read<ExperienceLikeActorBloc>().add(
             ExperienceLikeActorEvent.liked(experience),
           ),

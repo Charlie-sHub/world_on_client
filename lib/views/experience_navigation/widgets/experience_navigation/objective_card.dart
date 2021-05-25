@@ -69,7 +69,7 @@ class ObjectiveCard extends StatelessWidget {
             BlocBuilder<ObjectivesTrackerBloc, ObjectivesTrackerState>(
               builder: (context, state) => state.objectivesToDo.contains(objective)
                   ? IconButton(
-                      padding: const EdgeInsets.all(0),
+                      padding: EdgeInsets.zero,
                       icon: const Icon(
                         Icons.done,
                         color: Colors.grey,
@@ -80,7 +80,7 @@ class ObjectiveCard extends StatelessWidget {
                           ),
                     )
                   : IconButton(
-                      padding: const EdgeInsets.all(0),
+                      padding: EdgeInsets.zero,
                       icon: const Icon(
                         Icons.done_all,
                         color: WorldOnColors.primary,

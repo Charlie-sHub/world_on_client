@@ -11,7 +11,7 @@ import 'package:worldon/views/core/widgets/cards/experience_card/image_stack.dar
 import 'package:worldon/views/core/widgets/cards/experience_card/log_button.dart';
 import 'package:worldon/views/core/widgets/cards/experience_card/manage_button_builder.dart';
 import 'package:worldon/views/core/widgets/cards/experience_card/participate_button.dart';
-import 'package:worldon/views/core/widgets/cards/experience_card/share_button.dart';
+import 'package:worldon/views/core/widgets/cards/experience_card/share_externally_button.dart';
 import 'package:worldon/views/core/widgets/cards/tag_card/simple_tag_card_builder.dart';
 import 'package:worldon/views/core/widgets/misc/difficulty_display.dart';
 import 'package:worldon/views/core/widgets/misc/experience_done_counter.dart';
@@ -93,7 +93,7 @@ class ExperienceCard extends StatelessWidget {
                           ),
                         ),
                         LogButton(experience: experience),
-                        ShareButton(experience: experience),
+                        ShareExternallyButton(experience: experience),
                         ManageButtonBuilder(
                           experience: experience,
                           reloadFunction: reloadFunction,

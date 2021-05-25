@@ -27,7 +27,8 @@ class _$NotificationDtoTearOff {
       required String description,
       required bool seen,
       @ServerTimestampConverter() required DateTime creationDate,
-      required NotificationType type}) {
+      required NotificationType type,
+      ExperienceDto? experience}) {
     return _NotificationDto(
       id: id,
       sender: sender,
@@ -36,6 +37,7 @@ class _$NotificationDtoTearOff {
       seen: seen,
       creationDate: creationDate,
       type: type,
+      experience: experience,
     );
   }
 
@@ -57,9 +59,13 @@ mixin _$NotificationDto {
   bool get seen => throw _privateConstructorUsedError;
   @ServerTimestampConverter()
   DateTime get creationDate => throw _privateConstructorUsedError;
+
   NotificationType get type => throw _privateConstructorUsedError;
 
+  ExperienceDto? get experience => throw _privateConstructorUsedError;
+
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+
   @JsonKey(ignore: true)
   $NotificationDtoCopyWith<NotificationDto> get copyWith => throw _privateConstructorUsedError;
 }
@@ -68,11 +74,21 @@ mixin _$NotificationDto {
 abstract class $NotificationDtoCopyWith<$Res> {
   factory $NotificationDtoCopyWith(NotificationDto value, $Res Function(NotificationDto) then) = _$NotificationDtoCopyWithImpl<$Res>;
 
-  $Res call({@JsonKey(ignore: true) String? id, UserDto sender, UserDto receiver, String description, bool seen, @ServerTimestampConverter() DateTime creationDate, NotificationType type});
+  $Res call(
+      {@JsonKey(ignore: true) String? id,
+      UserDto sender,
+      UserDto receiver,
+      String description,
+      bool seen,
+      @ServerTimestampConverter() DateTime creationDate,
+      NotificationType type,
+      ExperienceDto? experience});
 
   $UserDtoCopyWith<$Res> get sender;
 
   $UserDtoCopyWith<$Res> get receiver;
+
+  $ExperienceDtoCopyWith<$Res>? get experience;
 }
 
 /// @nodoc
@@ -93,6 +109,7 @@ class _$NotificationDtoCopyWithImpl<$Res> implements $NotificationDtoCopyWith<$R
     Object? seen = freezed,
     Object? creationDate = freezed,
     Object? type = freezed,
+    Object? experience = freezed,
   }) {
     return _then(_value.copyWith(
       id: id == freezed
@@ -123,6 +140,10 @@ class _$NotificationDtoCopyWithImpl<$Res> implements $NotificationDtoCopyWith<$R
           ? _value.type
           : type // ignore: cast_nullable_to_non_nullable
               as NotificationType,
+      experience: experience == freezed
+          ? _value.experience
+          : experience // ignore: cast_nullable_to_non_nullable
+              as ExperienceDto?,
     ));
   }
 
@@ -139,6 +160,17 @@ class _$NotificationDtoCopyWithImpl<$Res> implements $NotificationDtoCopyWith<$R
       return _then(_value.copyWith(receiver: value));
     });
   }
+
+  @override
+  $ExperienceDtoCopyWith<$Res>? get experience {
+    if (_value.experience == null) {
+      return null;
+    }
+
+    return $ExperienceDtoCopyWith<$Res>(_value.experience!, (value) {
+      return _then(_value.copyWith(experience: value));
+    });
+  }
 }
 
 /// @nodoc
@@ -146,12 +178,24 @@ abstract class _$NotificationDtoCopyWith<$Res> implements $NotificationDtoCopyWi
   factory _$NotificationDtoCopyWith(_NotificationDto value, $Res Function(_NotificationDto) then) = __$NotificationDtoCopyWithImpl<$Res>;
 
   @override
-  $Res call({@JsonKey(ignore: true) String? id, UserDto sender, UserDto receiver, String description, bool seen, @ServerTimestampConverter() DateTime creationDate, NotificationType type});
+  $Res call(
+      {@JsonKey(ignore: true) String? id,
+      UserDto sender,
+      UserDto receiver,
+      String description,
+      bool seen,
+      @ServerTimestampConverter() DateTime creationDate,
+      NotificationType type,
+      ExperienceDto? experience});
 
   @override
   $UserDtoCopyWith<$Res> get sender;
+
   @override
   $UserDtoCopyWith<$Res> get receiver;
+
+  @override
+  $ExperienceDtoCopyWith<$Res>? get experience;
 }
 
 /// @nodoc
@@ -170,6 +214,7 @@ class __$NotificationDtoCopyWithImpl<$Res> extends _$NotificationDtoCopyWithImpl
     Object? seen = freezed,
     Object? creationDate = freezed,
     Object? type = freezed,
+    Object? experience = freezed,
   }) {
     return _then(_NotificationDto(
       id: id == freezed
@@ -200,6 +245,10 @@ class __$NotificationDtoCopyWithImpl<$Res> extends _$NotificationDtoCopyWithImpl
           ? _value.type
           : type // ignore: cast_nullable_to_non_nullable
               as NotificationType,
+      experience: experience == freezed
+          ? _value.experience
+          : experience // ignore: cast_nullable_to_non_nullable
+              as ExperienceDto?,
     ));
   }
 }
@@ -214,7 +263,8 @@ class _$_NotificationDto extends _NotificationDto {
       required this.description,
       required this.seen,
       @ServerTimestampConverter() required this.creationDate,
-      required this.type})
+      required this.type,
+      this.experience})
       : super._();
 
   factory _$_NotificationDto.fromJson(Map<String, dynamic> json) => _$_$_NotificationDtoFromJson(json);
@@ -235,10 +285,12 @@ class _$_NotificationDto extends _NotificationDto {
   final DateTime creationDate;
   @override
   final NotificationType type;
+  @override
+  final ExperienceDto? experience;
 
   @override
   String toString() {
-    return 'NotificationDto(id: $id, sender: $sender, receiver: $receiver, description: $description, seen: $seen, creationDate: $creationDate, type: $type)';
+    return 'NotificationDto(id: $id, sender: $sender, receiver: $receiver, description: $description, seen: $seen, creationDate: $creationDate, type: $type, experience: $experience)';
   }
 
   @override
@@ -251,7 +303,8 @@ class _$_NotificationDto extends _NotificationDto {
             (identical(other.description, description) || const DeepCollectionEquality().equals(other.description, description)) &&
             (identical(other.seen, seen) || const DeepCollectionEquality().equals(other.seen, seen)) &&
             (identical(other.creationDate, creationDate) || const DeepCollectionEquality().equals(other.creationDate, creationDate)) &&
-            (identical(other.type, type) || const DeepCollectionEquality().equals(other.type, type)));
+            (identical(other.type, type) || const DeepCollectionEquality().equals(other.type, type)) &&
+            (identical(other.experience, experience) || const DeepCollectionEquality().equals(other.experience, experience)));
   }
 
   @override
@@ -263,7 +316,8 @@ class _$_NotificationDto extends _NotificationDto {
       const DeepCollectionEquality().hash(description) ^
       const DeepCollectionEquality().hash(seen) ^
       const DeepCollectionEquality().hash(creationDate) ^
-      const DeepCollectionEquality().hash(type);
+      const DeepCollectionEquality().hash(type) ^
+      const DeepCollectionEquality().hash(experience);
 
   @JsonKey(ignore: true)
   @override
@@ -283,7 +337,8 @@ abstract class _NotificationDto extends NotificationDto {
       required String description,
       required bool seen,
       @ServerTimestampConverter() required DateTime creationDate,
-      required NotificationType type}) = _$_NotificationDto;
+      required NotificationType type,
+      ExperienceDto? experience}) = _$_NotificationDto;
 
   const _NotificationDto._() : super._();
 
@@ -301,14 +356,19 @@ abstract class _NotificationDto extends NotificationDto {
 
   @override
   String get description => throw _privateConstructorUsedError;
+
   @override
   bool get seen => throw _privateConstructorUsedError;
+
   @override
   @ServerTimestampConverter()
   DateTime get creationDate => throw _privateConstructorUsedError;
 
   @override
   NotificationType get type => throw _privateConstructorUsedError;
+
+  @override
+  ExperienceDto? get experience => throw _privateConstructorUsedError;
 
   @override
   @JsonKey(ignore: true)

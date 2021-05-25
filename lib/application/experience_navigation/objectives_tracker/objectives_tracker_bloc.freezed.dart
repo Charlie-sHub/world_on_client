@@ -467,9 +467,7 @@ const $ObjectivesTrackerState = _$ObjectivesTrackerStateTearOff();
 /// @nodoc
 mixin _$ObjectivesTrackerState {
   KtList<Objective> get objectivesToDo => throw _privateConstructorUsedError;
-
   UniqueId get experienceId => throw _privateConstructorUsedError;
-
   bool get isFinished => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)

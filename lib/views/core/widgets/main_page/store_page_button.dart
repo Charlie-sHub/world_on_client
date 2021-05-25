@@ -10,7 +10,7 @@ class StorePageButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return IconButton(
-      padding: const EdgeInsets.all(0),
+      padding: EdgeInsets.zero,
       icon: const Icon(
         Icons.local_grocery_store,
         size: 25,

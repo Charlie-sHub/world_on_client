@@ -73,6 +73,9 @@ class NotificationDismissibleTile extends StatelessWidget {
       case NotificationType.follow:
         _notificationDescription = S.of(context).followedYou;
         break;
+      case NotificationType.share:
+        _notificationDescription = S.of(context).shared;
+        break;
     }
     return "${notification.sender.username.getOrCrash()} $_notificationDescription";
   }

@@ -44,7 +44,7 @@ class ProductionAuthenticationRepository implements AuthenticationRepositoryInte
       );
       final _firebaseUser = _firebaseAuth.currentUser;
       if (_firebaseUser != null) {
-        final _imageUrl = await getIt<CloudStorageService>().uploadFileImage(
+        final _imageURL = await getIt<CloudStorageService>().uploadFileImage(
           imageToUpload: user.imageFileOption.getOrElse(() => null)!,
           folder: StorageFolder.users,
           name: _firebaseUser.uid,
@@ -54,7 +54,7 @@ class ProductionAuthenticationRepository implements AuthenticationRepositoryInte
             id: UniqueId.fromUniqueString(
               _firebaseUser.uid,
             ),
-            imageURL: _imageUrl,
+            imageURL: _imageURL,
           ),
         ).toJson();
         await _firestore.userCollection.doc(_firebaseUser.uid).set(_jsonUser);

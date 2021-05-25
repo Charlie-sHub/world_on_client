@@ -62,7 +62,7 @@ class CommentForm extends HookWidget {
                 labelText: S.of(context).comment,
                 border: InputBorder.none,
                 suffixIcon: IconButton(
-                  padding: const EdgeInsets.all(0),
+                  padding: EdgeInsets.zero,
                   icon: const Icon(
                     Icons.send_rounded,
                     size: 30,

@@ -14,6 +14,7 @@ _$_NotificationDto _$_$_NotificationDtoFromJson(Map<String, dynamic> json) {
     seen: json['seen'] as bool,
     creationDate: const ServerTimestampConverter().fromJson(json['creationDate'] as Timestamp),
     type: _$enumDecode(_$NotificationTypeEnumMap, json['type']),
+    experience: json['experience'] == null ? null : ExperienceDto.fromJson(json['experience'] as Map<String, dynamic>),
   );
 }
 
@@ -24,6 +25,7 @@ Map<String, dynamic> _$_$_NotificationDtoToJson(_$_NotificationDto instance) => 
       'seen': instance.seen,
       'creationDate': const ServerTimestampConverter().toJson(instance.creationDate),
       'type': _$NotificationTypeEnumMap[instance.type],
+      'experience': instance.experience?.toJson(),
     };
 
 K _$enumDecode<K, V>(
@@ -57,4 +59,5 @@ const _$NotificationTypeEnumMap = {
   NotificationType.unfollow: 'unfollow',
   NotificationType.block: 'block',
   NotificationType.unblock: 'unblock',
+  NotificationType.share: 'share',
 };

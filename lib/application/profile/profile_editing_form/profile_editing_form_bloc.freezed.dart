@@ -1919,7 +1919,7 @@ class _$_ProfileEditingFormState implements _ProfileEditingFormState {
       const DeepCollectionEquality().hash(showErrorMessages) ^
       const DeepCollectionEquality().hash(isSubmitting) ^
       const DeepCollectionEquality().hash(failureOrSuccessOption);
-
+  
   @JsonKey(ignore: true)
   @override
   _$ProfileEditingFormStateCopyWith<_ProfileEditingFormState> get copyWith => __$ProfileEditingFormStateCopyWithImpl<_ProfileEditingFormState>(this, _$identity);
@@ -1944,7 +1944,7 @@ abstract class _ProfileEditingFormState implements ProfileEditingFormState {
   String get passwordToCompare => throw _privateConstructorUsedError;
   @override
   bool get showErrorMessages => throw _privateConstructorUsedError;
-
+  
   @override
   bool get isSubmitting => throw _privateConstructorUsedError;
 

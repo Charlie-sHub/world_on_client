@@ -1,6 +1,8 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:dartz/dartz.dart' as dartz;
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:worldon/data/core/misc/server_timestamp_converter.dart';
+import 'package:worldon/data/core/models/experience/experience_dto.dart';
 import 'package:worldon/data/core/models/user/user_dto.dart';
 import 'package:worldon/domain/core/entities/notification/notification.dart';
 import 'package:worldon/domain/core/entities/notification/notification_type_enum.dart';
@@ -23,6 +25,7 @@ class NotificationDto with _$NotificationDto {
     required bool seen,
     @ServerTimestampConverter() required DateTime creationDate,
     required NotificationType type,
+    ExperienceDto? experience,
   }) = _NotificationDto;
 
   factory NotificationDto.fromDomain(Notification notification) => NotificationDto(
@@ -33,6 +36,10 @@ class NotificationDto with _$NotificationDto {
         seen: notification.seen,
         creationDate: notification.creationDate.getOrCrash(),
         type: notification.type,
+        experience: notification.experienceOption.fold(
+          () => null,
+          (_experience) => ExperienceDto.fromDomain(_experience),
+        ),
       );
 
   Notification toDomain() => Notification(
@@ -43,6 +50,7 @@ class NotificationDto with _$NotificationDto {
         seen: seen,
         creationDate: PastDate(creationDate),
         type: type,
+        experienceOption: experience != null ? dartz.some(experience!.toDomain()) : dartz.none(),
       );
 
   factory NotificationDto.fromJson(Map<String, dynamic> json) => _$NotificationDtoFromJson(json);

@@ -34,47 +34,46 @@ class SearchBody extends StatelessWidget {
         listener: _searchFormListener,
         buildWhen: (previous, current) => previous.showErrorMessages != current.showErrorMessages,
         builder: (context, state) {
-          return Column(
-            children: [
-              const SearchHeader(),
-              const SizedBox(height: _separation),
-              SizedBox(
-                height: MediaQuery.of(context).size.height * 0.8,
-                child: ListView(
-                  padding: const EdgeInsets.only(left: 10),
-                  children: [
-                    AutoSizeText(
-                      S.of(context).searchTags.toUpperCase(),
-                      style: const TextStyle(fontWeight: FontWeight.bold),
-                    ),
-                    const SizedBox(height: _separation),
-                    SizedBox(
-                      height: MediaQuery.of(context).size.height * 0.07,
-                      child: const TagResultsView(),
-                    ),
-                    AutoSizeText(
-                      S.of(context).experiences.toUpperCase(),
-                      style: const TextStyle(fontWeight: FontWeight.bold),
-                    ),
-                    const SizedBox(height: _separation),
-                    SizedBox(
-                      height: MediaQuery.of(context).size.height * 0.32,
-                      child: ExperienceResultsView(searchTerm: state.searchTerm),
-                    ),
-                    const SizedBox(height: _separation),
-                    AutoSizeText(
-                      S.of(context).searchUsers.toUpperCase(),
-                      style: const TextStyle(fontWeight: FontWeight.bold),
-                    ),
-                    const SizedBox(height: _separation),
-                    SizedBox(
-                      height: MediaQuery.of(context).size.height * 0.25,
-                      child: UserResultsView(searchTerm: state.searchTerm),
-                    ),
-                  ],
-                ),
+          return SingleChildScrollView(
+            child: Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 10),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  const SearchHeader(),
+                  const SizedBox(height: _separation),
+                  AutoSizeText(
+                    S.of(context).searchTags.toUpperCase(),
+                    style: const TextStyle(fontWeight: FontWeight.bold),
+                  ),
+                  const SizedBox(height: _separation),
+                  SizedBox(
+                    height: MediaQuery.of(context).size.height * 0.07,
+                    child: const TagResultsView(),
+                  ),
+                  AutoSizeText(
+                    S.of(context).experiences.toUpperCase(),
+                    style: const TextStyle(fontWeight: FontWeight.bold),
+                  ),
+                  const SizedBox(height: _separation),
+                  SizedBox(
+                    height: MediaQuery.of(context).size.height * 0.32,
+                    child: ExperienceResultsView(searchTerm: state.searchTerm),
+                  ),
+                  const SizedBox(height: _separation),
+                  AutoSizeText(
+                    S.of(context).searchUsers.toUpperCase(),
+                    style: const TextStyle(fontWeight: FontWeight.bold),
+                  ),
+                  const SizedBox(height: _separation),
+                  SizedBox(
+                    height: MediaQuery.of(context).size.height * 0.25,
+                    child: UserResultsView(searchTerm: state.searchTerm),
+                  ),
+                  const SizedBox(height: kBottomNavigationBarHeight),
+                ],
               ),
-            ],
+            ),
           );
         },
       ),

@@ -123,7 +123,7 @@ class _$_WatchExperienceCommentsStarted implements _WatchExperienceCommentsStart
     return identical(this, other) ||
         (other is _WatchExperienceCommentsStarted && (identical(other.experienceId, experienceId) || const DeepCollectionEquality().equals(other.experienceId, experienceId)));
   }
-  
+
   @override
   int get hashCode => runtimeType.hashCode ^ const DeepCollectionEquality().hash(experienceId);
 

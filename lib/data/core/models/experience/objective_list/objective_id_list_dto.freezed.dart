@@ -39,7 +39,6 @@ mixin _$ObjectiveIdListDto {
   List<String> get objectivesIds => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-
   @JsonKey(ignore: true)
   $ObjectiveIdListDtoCopyWith<ObjectiveIdListDto> get copyWith => throw _privateConstructorUsedError;
 }

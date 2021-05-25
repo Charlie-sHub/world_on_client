@@ -23,7 +23,8 @@ class _$NotificationTearOff {
       required EntityDescription description,
       required bool seen,
       required PastDate creationDate,
-      required NotificationType type}) {
+      required NotificationType type,
+      required Option<Experience> experienceOption}) {
     return _Notification(
       id: id,
       sender: sender,
@@ -32,6 +33,7 @@ class _$NotificationTearOff {
       seen: seen,
       creationDate: creationDate,
       type: type,
+      experienceOption: experienceOption,
     );
   }
 }
@@ -57,6 +59,8 @@ mixin _$Notification {
 
   NotificationType get type => throw _privateConstructorUsedError;
 
+  Option<Experience> get experienceOption => throw _privateConstructorUsedError;
+
   @JsonKey(ignore: true)
   $NotificationCopyWith<Notification> get copyWith => throw _privateConstructorUsedError;
 }
@@ -65,7 +69,7 @@ mixin _$Notification {
 abstract class $NotificationCopyWith<$Res> {
   factory $NotificationCopyWith(Notification value, $Res Function(Notification) then) = _$NotificationCopyWithImpl<$Res>;
 
-  $Res call({UniqueId id, User sender, User receiver, EntityDescription description, bool seen, PastDate creationDate, NotificationType type});
+  $Res call({UniqueId id, User sender, User receiver, EntityDescription description, bool seen, PastDate creationDate, NotificationType type, Option<Experience> experienceOption});
 
   $UserCopyWith<$Res> get sender;
 
@@ -89,6 +93,7 @@ class _$NotificationCopyWithImpl<$Res> implements $NotificationCopyWith<$Res> {
     Object? seen = freezed,
     Object? creationDate = freezed,
     Object? type = freezed,
+    Object? experienceOption = freezed,
   }) {
     return _then(_value.copyWith(
       id: id == freezed
@@ -119,6 +124,10 @@ class _$NotificationCopyWithImpl<$Res> implements $NotificationCopyWith<$Res> {
           ? _value.type
           : type // ignore: cast_nullable_to_non_nullable
               as NotificationType,
+      experienceOption: experienceOption == freezed
+          ? _value.experienceOption
+          : experienceOption // ignore: cast_nullable_to_non_nullable
+              as Option<Experience>,
     ));
   }
 
@@ -142,7 +151,7 @@ abstract class _$NotificationCopyWith<$Res> implements $NotificationCopyWith<$Re
   factory _$NotificationCopyWith(_Notification value, $Res Function(_Notification) then) = __$NotificationCopyWithImpl<$Res>;
 
   @override
-  $Res call({UniqueId id, User sender, User receiver, EntityDescription description, bool seen, PastDate creationDate, NotificationType type});
+  $Res call({UniqueId id, User sender, User receiver, EntityDescription description, bool seen, PastDate creationDate, NotificationType type, Option<Experience> experienceOption});
 
   @override
   $UserCopyWith<$Res> get sender;
@@ -166,6 +175,7 @@ class __$NotificationCopyWithImpl<$Res> extends _$NotificationCopyWithImpl<$Res>
     Object? seen = freezed,
     Object? creationDate = freezed,
     Object? type = freezed,
+    Object? experienceOption = freezed,
   }) {
     return _then(_Notification(
       id: id == freezed
@@ -196,6 +206,10 @@ class __$NotificationCopyWithImpl<$Res> extends _$NotificationCopyWithImpl<$Res>
           ? _value.type
           : type // ignore: cast_nullable_to_non_nullable
               as NotificationType,
+      experienceOption: experienceOption == freezed
+          ? _value.experienceOption
+          : experienceOption // ignore: cast_nullable_to_non_nullable
+              as Option<Experience>,
     ));
   }
 }
@@ -203,7 +217,9 @@ class __$NotificationCopyWithImpl<$Res> extends _$NotificationCopyWithImpl<$Res>
 /// @nodoc
 
 class _$_Notification extends _Notification {
-  const _$_Notification({required this.id, required this.sender, required this.receiver, required this.description, required this.seen, required this.creationDate, required this.type}) : super._();
+  const _$_Notification(
+      {required this.id, required this.sender, required this.receiver, required this.description, required this.seen, required this.creationDate, required this.type, required this.experienceOption})
+      : super._();
 
   @override
   final UniqueId id;
@@ -222,10 +238,12 @@ class _$_Notification extends _Notification {
   final PastDate creationDate;
   @override
   final NotificationType type;
+  @override
+  final Option<Experience> experienceOption;
 
   @override
   String toString() {
-    return 'Notification(id: $id, sender: $sender, receiver: $receiver, description: $description, seen: $seen, creationDate: $creationDate, type: $type)';
+    return 'Notification(id: $id, sender: $sender, receiver: $receiver, description: $description, seen: $seen, creationDate: $creationDate, type: $type, experienceOption: $experienceOption)';
   }
 
   @override
@@ -238,7 +256,8 @@ class _$_Notification extends _Notification {
             (identical(other.description, description) || const DeepCollectionEquality().equals(other.description, description)) &&
             (identical(other.seen, seen) || const DeepCollectionEquality().equals(other.seen, seen)) &&
             (identical(other.creationDate, creationDate) || const DeepCollectionEquality().equals(other.creationDate, creationDate)) &&
-            (identical(other.type, type) || const DeepCollectionEquality().equals(other.type, type)));
+            (identical(other.type, type) || const DeepCollectionEquality().equals(other.type, type)) &&
+            (identical(other.experienceOption, experienceOption) || const DeepCollectionEquality().equals(other.experienceOption, experienceOption)));
   }
 
   @override
@@ -250,7 +269,8 @@ class _$_Notification extends _Notification {
       const DeepCollectionEquality().hash(description) ^
       const DeepCollectionEquality().hash(seen) ^
       const DeepCollectionEquality().hash(creationDate) ^
-      const DeepCollectionEquality().hash(type);
+      const DeepCollectionEquality().hash(type) ^
+      const DeepCollectionEquality().hash(experienceOption);
 
   @JsonKey(ignore: true)
   @override
@@ -265,7 +285,8 @@ abstract class _Notification extends Notification {
       required EntityDescription description,
       required bool seen,
       required PastDate creationDate,
-      required NotificationType type}) = _$_Notification;
+      required NotificationType type,
+      required Option<Experience> experienceOption}) = _$_Notification;
   const _Notification._() : super._();
 
   @override
@@ -277,15 +298,21 @@ abstract class _Notification extends Notification {
 // Relation is needed in the database of course, but not really beyond that
 // Could be left to just the id
   User get receiver => throw _privateConstructorUsedError;
+
   @override
   EntityDescription get description => throw _privateConstructorUsedError;
+
   @override
   bool get seen => throw _privateConstructorUsedError;
+
   @override
   PastDate get creationDate => throw _privateConstructorUsedError;
 
   @override
   NotificationType get type => throw _privateConstructorUsedError;
+
+  @override
+  Option<Experience> get experienceOption => throw _privateConstructorUsedError;
 
   @override
   @JsonKey(ignore: true)

@@ -9,10 +9,10 @@ import 'package:worldon/domain/core/entities/experience/experience.dart';
 import 'package:worldon/generated/l10n.dart';
 import 'package:worldon/views/core/misc/world_on_colors.dart';
 
-class ShareButton extends StatelessWidget {
+class ShareExternallyButton extends StatelessWidget {
   final Experience experience;
 
-  const ShareButton({
+  const ShareExternallyButton({
     Key? key,
     required this.experience,
   }) : super(key: key);
@@ -25,6 +25,8 @@ class ShareButton extends StatelessWidget {
         color: WorldOnColors.white,
         size: 25,
       ),
+      padding: const EdgeInsets.all(5),
+      constraints: const BoxConstraints(),
       onPressed: () => _share(
         context,
         experience,

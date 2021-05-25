@@ -19,7 +19,7 @@ class NotificationsButton extends StatelessWidget {
         ),
       child: BlocBuilder<NewNotificationsWatcherBloc, NewNotificationsWatcherState>(
         builder: (context, state) => IconButton(
-          padding: const EdgeInsets.all(0),
+          padding: EdgeInsets.zero,
           icon: Icon(
             state.maybeMap(
               newNotifications: (_) => Icons.notifications_on_rounded,

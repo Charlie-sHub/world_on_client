@@ -2047,6 +2047,16 @@ class S {
     );
   }
 
+  /// `shared`
+  String get shared {
+    return Intl.message(
+      'shared',
+      name: 'shared',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `followed you`
   String get followedYou {
     return Intl.message(

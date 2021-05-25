@@ -22,9 +22,11 @@ class ParticipateButton extends StatelessWidget {
       width: size,
       child: IconButton(
         onPressed: () => context.read<NavigationActorBloc>().add(
-              NavigationActorEvent.experienceNavigationTapped(some(experience)),
+              NavigationActorEvent.experienceNavigationTapped(
+                some(experience),
+              ),
             ),
-        padding: const EdgeInsets.all(0),
+        padding: EdgeInsets.zero,
         icon: Icon(
           Icons.play_circle_fill_rounded,
           color: WorldOnColors.primary,

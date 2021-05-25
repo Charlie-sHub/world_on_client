@@ -18,7 +18,7 @@ class ManageMenuButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return PopupMenuButton(
-      padding: const EdgeInsets.all(0),
+      padding: EdgeInsets.zero,
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.circular(5),
       ),
@@ -37,7 +37,7 @@ class ManageMenuButton extends StatelessWidget {
       ],
       child: const Icon(
         Icons.more_vert_rounded,
-        color: Colors.white,
+        color: Colors.grey,
       ),
     );
   }

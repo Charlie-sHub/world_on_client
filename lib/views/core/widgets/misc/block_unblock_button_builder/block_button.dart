@@ -21,7 +21,7 @@ class BlockButton extends StatelessWidget {
         size: 40,
         color: WorldOnColors.red,
       ),
-      padding: const EdgeInsets.all(0),
+      padding: EdgeInsets.zero,
       onPressed: () => context.read<BlockActorBloc>().add(
             BlockActorEvent.blocked(user),
           ),

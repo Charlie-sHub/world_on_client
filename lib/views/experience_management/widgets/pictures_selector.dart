@@ -95,9 +95,9 @@ class PicturesSelector extends StatelessWidget {
       context.read<ExperienceManagementFormBloc>().add(
             ExperienceManagementFormEvent.imagesChanged(_imagesPicked),
           );
-    } on Exception catch (e) {
+    } on Exception catch (error) {
       // This try-catch only exists to control for when the user cancels the selection
-      _logger.e(e.toString());
+      _logger.e("Exception: $error");
     }
   }
 }

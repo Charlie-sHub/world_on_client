@@ -105,9 +105,11 @@ class SimpleSquareUserCard extends StatelessWidget {
                       FittedBox(
                         child: AutoSizeText(
                           "@${user.username.getOrCrash()}",
-                          overflow: TextOverflow.visible,
+                          overflow: TextOverflow.fade,
+                          minFontSize: 6,
+                          maxFontSize: 11,
                           style: const TextStyle(
-                            fontSize: 7,
+                            fontSize: 10,
                             color: Colors.grey,
                           ),
                         ),

@@ -1,5 +1,6 @@
 import 'package:dartz/dartz.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:worldon/domain/core/entities/experience/experience.dart';
 import 'package:worldon/domain/core/entities/notification/notification_type_enum.dart';
 import 'package:worldon/domain/core/entities/user/user.dart';
 import 'package:worldon/domain/core/failures/value_failure.dart';
@@ -28,6 +29,7 @@ class Notification with _$Notification {
     required bool seen,
     required PastDate creationDate,
     required NotificationType type,
+    required Option<Experience> experienceOption,
   }) = _Notification;
 
   factory Notification.empty() => Notification(
@@ -38,6 +40,7 @@ class Notification with _$Notification {
         seen: false,
         creationDate: PastDate(DateTime.now()),
         type: NotificationType.follow,
+        experienceOption: none(),
       );
 
   Option<ValueFailure<dynamic>> get failureOption {

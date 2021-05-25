@@ -14,7 +14,6 @@ class SearchHeader extends StatelessWidget {
       autovalidateMode: context.read<SearchByNameFormBloc>().state.showErrorMessages ? AutovalidateMode.always : AutovalidateMode.disabled,
       child: Padding(
         padding: const EdgeInsets.symmetric(
-          horizontal: 10,
           vertical: 5,
         ),
         child: Material(

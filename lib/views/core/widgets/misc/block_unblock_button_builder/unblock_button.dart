@@ -19,7 +19,7 @@ class UnBlockButton extends StatelessWidget {
         MdiIcons.account,
         size: 40,
       ),
-      padding: const EdgeInsets.all(0),
+      padding: EdgeInsets.zero,
       onPressed: () => context.read<BlockActorBloc>().add(
             BlockActorEvent.unBlocked(user),
           ),
