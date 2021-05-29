@@ -29,11 +29,11 @@ class ShareInternallyButton extends StatelessWidget {
         ),
         padding: const EdgeInsets.all(5),
         constraints: const BoxConstraints(),
-        // Open lower drawer with all the following
-        // Select users, put in a list
-        // Will probably need to create another bloc just for that
-        // Or modify the existing one
-        // Add the shared event to the bloc
+        // Open lower drawer with all the followers (courtesy of the search to share bloc)
+        // Share followers by name/username
+        // Select users by tapping (adding the user added/removed event)
+        // Show what users has been selected on the UI
+        // Add the shared event to the bloc one the shared button is pressed
         onPressed: () => null,
       ),
     );

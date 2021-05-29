@@ -2132,7 +2132,7 @@ class _$_RegistrationFormState implements _RegistrationFormState {
 
   @override
   int get hashCode =>
-    runtimeType.hashCode ^
+      runtimeType.hashCode ^
       const DeepCollectionEquality().hash(user) ^
       const DeepCollectionEquality().hash(passwordConfirmator) ^
       const DeepCollectionEquality().hash(passwordToCompare) ^
@@ -2172,7 +2172,7 @@ abstract class _RegistrationFormState implements RegistrationFormState {
   bool get isSubmitting => throw _privateConstructorUsedError;
   @override
   bool get acceptedEULA => throw _privateConstructorUsedError;
-  
+
   @override
   bool get initialized => throw _privateConstructorUsedError;
 

@@ -14,6 +14,7 @@ import 'package:worldon/data/core/models/experience/experience_dto.dart';
 import 'package:worldon/data/core/models/experience/experience_fields.dart';
 import 'package:worldon/data/core/models/tag/tag_dto.dart';
 import 'package:worldon/data/core/models/user/user_dto.dart';
+import 'package:worldon/data/core/models/user/user_fields.dart';
 import 'package:worldon/domain/core/entities/experience/experience.dart';
 import 'package:worldon/domain/core/entities/tag/tag.dart';
 import 'package:worldon/domain/core/entities/user/user.dart';
@@ -219,6 +220,59 @@ class ProductionSearchRepository implements SearchRepositoryInterface {
     ).onErrorReturnWith(
       (error) => left(onError(error)),
     );
+  }
+
+  @override
+  Future<Either<Failure, KtList<User>>> getShareableUsers() async {
+    try {
+      final _userDocument = await _firestore.userDocument();
+      final _userDto = UserDto.fromFirestore(await _userDocument.get());
+      final _querySnapshot = await _firestore.userCollection
+          .where(
+            UserFields.followedUsersIds,
+            arrayContains: _userDto.id,
+          )
+          .get();
+      final _userList = _querySnapshot.docs.map(
+        (_queryDocumentSnapshot) => UserDto.fromFirestore(_queryDocumentSnapshot).toDomain(),
+      );
+      return right(_userList.toImmutableList());
+    } catch (error) {
+      return left(
+        onError(error),
+      );
+    }
+  }
+
+  @override
+  Future<Either<Failure, KtList<User>>> searchShareableUsers(SearchTerm name) async {
+    try {
+      final _searchString = name.getOrCrash().toLowerCase();
+      final _userDocument = await _firestore.userDocument();
+      final _currentUserDto = UserDto.fromFirestore(await _userDocument.get());
+      final _querySnapshot = await _firestore.userCollection
+          .where(
+            UserFields.followedUsersIds,
+            arrayContains: _currentUserDto.id,
+          )
+          .get();
+      final _userDtoList = _querySnapshot.docs.map(
+        (_queryDocumentSnapshot) => UserDto.fromFirestore(_queryDocumentSnapshot),
+      );
+      final _filteredList = _userDtoList.where(
+        (_userDto) => _userDto.name.toLowerCase().contains(_searchString) || _userDto.username.toLowerCase().contains(_searchString),
+      );
+      final _userList = _filteredList
+          .map(
+            (_userDto) => _userDto.toDomain(),
+          )
+          .toList();
+      return right(_userList.toImmutableList());
+    } catch (error) {
+      return left(
+        onError(error),
+      );
+    }
   }
 
   Failure onError(dynamic error) {

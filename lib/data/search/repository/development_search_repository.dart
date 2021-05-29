@@ -36,4 +36,14 @@ class DevelopmentSearchRepository implements SearchRepositoryInterface {
   Stream<Either<Failure, KtList<User>>> watchSearchUsersByName(SearchTerm name) async* {
     throw UnimplementedError();
   }
+
+  @override
+  Future<Either<Failure, KtList<User>>> getShareableUsers() {
+    throw UnimplementedError();
+  }
+
+  @override
+  Future<Either<Failure, KtList<User>>> searchShareableUsers(SearchTerm name) {
+    throw UnimplementedError();
+  }
 }

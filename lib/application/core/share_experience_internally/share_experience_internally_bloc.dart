@@ -18,9 +18,7 @@ import 'package:worldon/domain/notifications/use_case/send_notification.dart';
 import 'package:worldon/injection.dart';
 
 part 'share_experience_internally_bloc.freezed.dart';
-
 part 'share_experience_internally_event.dart';
-
 part 'share_experience_internally_state.dart';
 
 @injectable

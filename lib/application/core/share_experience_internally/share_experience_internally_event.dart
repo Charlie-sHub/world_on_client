@@ -1,7 +1,7 @@
 part of 'share_experience_internally_bloc.dart';
 
 @freezed
-abstract class ShareExperienceInternallyEvent with _$ShareExperienceInternallyEvent {
+class ShareExperienceInternallyEvent with _$ShareExperienceInternallyEvent {
   const factory ShareExperienceInternallyEvent.initialized(Experience experience) = _Initialized;
 
   const factory ShareExperienceInternallyEvent.removedUser(User user) = _RemovedUser;

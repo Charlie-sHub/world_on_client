@@ -1,7 +1,7 @@
 part of 'share_experience_internally_bloc.dart';
 
 @freezed
-abstract class ShareExperienceInternallyState with _$ShareExperienceInternallyState {
+class ShareExperienceInternallyState with _$ShareExperienceInternallyState {
   const factory ShareExperienceInternallyState({
     required Experience experience,
     required KtSet<User> users,

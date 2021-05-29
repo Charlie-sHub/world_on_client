@@ -298,16 +298,12 @@ abstract class _Notification extends Notification {
 // Relation is needed in the database of course, but not really beyond that
 // Could be left to just the id
   User get receiver => throw _privateConstructorUsedError;
-
   @override
   EntityDescription get description => throw _privateConstructorUsedError;
-
   @override
   bool get seen => throw _privateConstructorUsedError;
-
   @override
   PastDate get creationDate => throw _privateConstructorUsedError;
-
   @override
   NotificationType get type => throw _privateConstructorUsedError;
 

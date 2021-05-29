@@ -59,13 +59,10 @@ mixin _$NotificationDto {
   bool get seen => throw _privateConstructorUsedError;
   @ServerTimestampConverter()
   DateTime get creationDate => throw _privateConstructorUsedError;
-
   NotificationType get type => throw _privateConstructorUsedError;
-
   ExperienceDto? get experience => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-
   @JsonKey(ignore: true)
   $NotificationDtoCopyWith<NotificationDto> get copyWith => throw _privateConstructorUsedError;
 }
@@ -85,9 +82,7 @@ abstract class $NotificationDtoCopyWith<$Res> {
       ExperienceDto? experience});
 
   $UserDtoCopyWith<$Res> get sender;
-
   $UserDtoCopyWith<$Res> get receiver;
-
   $ExperienceDtoCopyWith<$Res>? get experience;
 }
 
@@ -190,10 +185,8 @@ abstract class _$NotificationDtoCopyWith<$Res> implements $NotificationDtoCopyWi
 
   @override
   $UserDtoCopyWith<$Res> get sender;
-
   @override
   $UserDtoCopyWith<$Res> get receiver;
-
   @override
   $ExperienceDtoCopyWith<$Res>? get experience;
 }
@@ -356,14 +349,11 @@ abstract class _NotificationDto extends NotificationDto {
 
   @override
   String get description => throw _privateConstructorUsedError;
-
   @override
   bool get seen => throw _privateConstructorUsedError;
-
   @override
   @ServerTimestampConverter()
   DateTime get creationDate => throw _privateConstructorUsedError;
-
   @override
   NotificationType get type => throw _privateConstructorUsedError;
 
