@@ -12,6 +12,7 @@ import 'package:worldon/views/core/widgets/cards/error_card.dart';
 import 'package:worldon/views/core/widgets/error/error_display.dart';
 import 'package:worldon/views/core/widgets/misc/world_on_progress_indicator.dart';
 import 'package:worldon/views/notifications/widgets/notification_dismissible_card.dart';
+import 'package:worldon/views/notifications/widgets/shared_experience_dismissible_card.dart';
 
 class NotificationsBody extends StatelessWidget {
   const NotificationsBody({Key? key}) : super(key: key);
@@ -72,9 +73,16 @@ class NotificationsBody extends StatelessWidget {
                         );
                       }
                     },
-                    child: NotificationDismissibleTile(
-                      notification: _notification,
-                      key: Key(_notification.id.toString()),
+                    child: _notification.experienceOption.fold(
+                      () => NotificationDismissibleTile(
+                        notification: _notification,
+                        key: Key(_notification.id.toString()),
+                      ),
+                      (_experience) => SharedExperienceDismissibleCard(
+                        notification: _notification,
+                        experience: _experience,
+                        key: Key(_notification.id.toString()),
+                      ),
                     ),
                   );
                 } else {

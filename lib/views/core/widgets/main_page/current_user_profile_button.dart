@@ -57,26 +57,29 @@ class CurrentUserProfileButton extends StatelessWidget {
       context: context,
       builder: (context) => AlertDialog(
         backgroundColor: WorldOnColors.background,
-        actions: [
-          ElevatedButton(
-            onPressed: () => Navigator.of(context).pop(true),
-            child: Text(
-              S.of(context).logOut,
-              style: const TextStyle(
-                fontSize: 18,
+        title: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          children: [
+            ElevatedButton(
+              onPressed: () => Navigator.of(context).pop(true),
+              child: Text(
+                S.of(context).logOut,
+                style: const TextStyle(
+                  fontSize: 18,
+                ),
               ),
             ),
-          ),
-          ElevatedButton(
-            onPressed: () => Navigator.of(context).pop(false),
-            child: Text(
-              S.of(context).cancel,
-              style: const TextStyle(
-                fontSize: 18,
+            ElevatedButton(
+              onPressed: () => Navigator.of(context).pop(false),
+              child: Text(
+                S.of(context).cancel,
+                style: const TextStyle(
+                  fontSize: 18,
+                ),
               ),
             ),
-          ),
-        ],
+          ],
+        ),
       ),
     );
     if (_confirmed != null) {

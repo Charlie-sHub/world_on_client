@@ -14,6 +14,7 @@
   "logInGoogle": "Log In with Google",
   "forgottenPassword": "Forgotten password?",
   "register": "REGISTER",
+  "share": "Share",
   "selectBirthday": "Select your birthday",
   "descriptionEmptyString": "The description can't be empty",
   "descriptionStringExceedsLength": "The description is too long",

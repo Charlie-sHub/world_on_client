@@ -12,9 +12,7 @@ import 'package:worldon/domain/search/use_case/search_to_share.dart';
 import 'package:worldon/injection.dart';
 
 part 'search_to_share_bloc.freezed.dart';
-
 part 'search_to_share_event.dart';
-
 part 'search_to_share_state.dart';
 
 @injectable

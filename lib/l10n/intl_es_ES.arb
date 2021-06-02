@@ -14,6 +14,7 @@
   "logInGoogle": "Iniciar sesión con Google",
   "forgottenPassword": "¿Contraseña olvidada?",
   "register": "REGISTRARSE",
+  "share": "Compartir",
   "selectBirthday": "Selecciona tu cumpleaños",
   "descriptionEmptyString": "La descripción no puede estar vacía",
   "descriptionStringExceedsLength": "La descripción es demasiado larga",

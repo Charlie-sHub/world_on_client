@@ -187,6 +187,16 @@ class S {
     );
   }
 
+  /// `Share`
+  String get share {
+    return Intl.message(
+      'Share',
+      name: 'share',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `Select your birthday`
   String get selectBirthday {
     return Intl.message(

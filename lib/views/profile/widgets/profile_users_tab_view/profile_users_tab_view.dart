@@ -46,9 +46,6 @@ class ProfileUsersTabView extends StatelessWidget {
                 shrinkWrap: true,
                 gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
                   crossAxisCount: 4,
-                  childAspectRatio: 3 / 2,
-                  crossAxisSpacing: 5,
-                  mainAxisSpacing: 5,
                   mainAxisExtent: 120,
                 ),
                 itemCount: state.users.size,
