@@ -1,6 +1,7 @@
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart' hide Notification;
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_slidable/flutter_slidable.dart';
 import 'package:worldon/application/notifications/notification_actor/notification_actor_bloc.dart';
 import 'package:worldon/domain/core/entities/notification/notification.dart';
 import 'package:worldon/domain/core/entities/notification/notification_type_enum.dart';
@@ -15,25 +16,19 @@ class NotificationDismissibleTile extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Dismissible(
-      onDismissed: (_) => context.read<NotificationActorBloc>().add(
-            NotificationActorEvent.deleted(notification),
-          ),
-      direction: DismissDirection.endToStart,
-      background: const ListTile(
-        tileColor: WorldOnColors.red,
-        title: Align(
-          alignment: AlignmentDirectional.centerEnd,
-          child: Padding(
-            padding: EdgeInsets.all(10),
-            child: Icon(
-              Icons.delete,
-              color: Colors.white,
-            ),
+    return Slidable(
+      secondaryActions: [
+        IconButton(
+          onPressed: () => context.read<NotificationActorBloc>().add(
+                NotificationActorEvent.deleted(notification),
+              ),
+          icon: const Icon(
+            Icons.delete,
+            color: WorldOnColors.red,
           ),
         ),
-      ),
-      key: Key(notification.id.getOrCrash()),
+      ],
+      actionPane: const SlidableScrollActionPane(),
       child: ListTile(
         leading: UserImage(
           user: notification.sender,

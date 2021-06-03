@@ -1,4 +1,5 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:cloud_functions/cloud_functions.dart';
 import 'package:dartz/dartz.dart';
 import 'package:geoflutterfire/geoflutterfire.dart';
 import 'package:geolocator/geolocator.dart';
@@ -31,6 +32,7 @@ class ProductionExperienceNavigationRepository implements ExperienceNavigationRe
   final _logger = Logger();
   final _geo = Geoflutterfire();
   final FirebaseFirestore _firestore;
+  final _functions = FirebaseFunctions.instanceFor(region: "europe-west1");
 
   ProductionExperienceNavigationRepository(this._firestore);
 
@@ -67,6 +69,7 @@ class ProductionExperienceNavigationRepository implements ExperienceNavigationRe
           )
           .get();
       _saveDocument.reference.delete();
+      _propagate(experienceId);
       return right(unit);
     } on FirebaseException catch (exception) {
       return _onError(exception);
@@ -88,6 +91,7 @@ class ProductionExperienceNavigationRepository implements ExperienceNavigationRe
           ExperienceFields.likedBy: FieldValue.arrayUnion([_userDocument.id]),
         },
       );
+      _propagate(experienceId);
       return right(unit);
     } on FirebaseException catch (exception) {
       return _onError(exception);
@@ -115,10 +119,18 @@ class ProductionExperienceNavigationRepository implements ExperienceNavigationRe
           ),
         },
       );
+      _propagate(experienceId);
       return right(unit);
     } on FirebaseException catch (exception) {
       return _onError(exception);
     }
+  }
+
+  void _propagate(UniqueId experienceId) {
+    final _propagateExperienceUpdateCallable = _functions.httpsCallable("propagateExperienceUpdate");
+    _propagateExperienceUpdateCallable.call(
+      <String, dynamic>{"experienceId": experienceId.getOrCrash()},
+    );
   }
 
   @override

@@ -82,6 +82,7 @@ class ProductionExperienceManagementRepository implements ExperienceManagementRe
       final _cloudStorageService = getIt<CloudStorageService>();
       final _rewardSet = <Reward>{};
       final _objectiveList = <Objective>[];
+      final _experienceId = experience.id.getOrCrash();
       await uploadImages(
         experience,
         _cloudStorageService,
@@ -99,14 +100,18 @@ class ProductionExperienceManagementRepository implements ExperienceManagementRe
       );
       _firestore.experienceCollection
           .doc(
-            experience.id.getOrCrash(),
+            _experienceId,
           )
           .update(
             _experienceDto.toJson(),
           );
+      final _propagateExperienceUpdateCallable = _functions.httpsCallable("propagateExperienceUpdate");
+      _propagateExperienceUpdateCallable.call(
+        <String, dynamic>{"experienceId": _experienceId},
+      );
       final _updateExperienceIndex = _functions.httpsCallable("updateExperienceIndex");
       await _updateExperienceIndex.call(
-        <String, dynamic>{"experienceId": experience.id.getOrCrash()},
+        <String, dynamic>{"experienceId": _experienceId},
       );
       return right(unit);
     } catch (e) {

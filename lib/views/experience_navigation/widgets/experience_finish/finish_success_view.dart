@@ -56,7 +56,7 @@ class FinishSuccessView extends StatelessWidget {
               ),
             ],
           ),
-          const SizedBox(height: 15),
+          const SizedBox(height: 12),
           Padding(
             padding: const EdgeInsets.symmetric(
               horizontal: 40,
@@ -83,18 +83,16 @@ class FinishSuccessView extends StatelessWidget {
                     color: Colors.grey,
                   ),
                 ),
-                const SizedBox(height: 15),
+                const SizedBox(height: 12),
                 const ExperiencePointsCoinStack(),
-                const SizedBox(height: 10),
+                const SizedBox(height: 7),
                 ExperiencedGainedText(experience: experience),
                 // Does nothing anyway
                 // RateDifficultyWidget(experience: experience),
-                const SizedBox(height: 10),
+                const SizedBox(height: 7),
                 Column(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: <Widget>[
-                    LikeDislikeButtonBuilder(experience: experience),
-                    const SizedBox(width: 5),
                     Text(
                       S.of(context).likeQuestion,
                       style: const TextStyle(
@@ -102,9 +100,11 @@ class FinishSuccessView extends StatelessWidget {
                         color: Colors.grey,
                       ),
                     ),
+                    const SizedBox(width: 5),
+                    LikeDislikeButtonBuilder(experience: experience),
                   ],
                 ),
-                const SizedBox(height: 20),
+                const SizedBox(height: 15),
                 const FinishButton(),
               ],
             ),

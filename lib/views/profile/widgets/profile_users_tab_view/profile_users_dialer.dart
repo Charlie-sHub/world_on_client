@@ -34,7 +34,7 @@ class ProfileUsersDialer extends StatelessWidget {
             onTap: () => context.read<ProfileUsersWatcherBloc>().add(
                   ProfileUsersWatcherEvent.watchFollowedUsersStarted(user),
                 ),
-            label: S.of(context).followers,
+            label: S.of(context).followersCaps,
             labelStyle: const TextStyle(
               color: Colors.black,
               fontWeight: FontWeight.bold,

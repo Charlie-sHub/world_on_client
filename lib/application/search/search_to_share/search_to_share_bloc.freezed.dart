@@ -392,7 +392,7 @@ class _$_SearchToShareState implements _SearchToShareState {
             (identical(other.users, users) || const DeepCollectionEquality().equals(other.users, users)) &&
             (identical(other.failureOrSuccessOption, failureOrSuccessOption) || const DeepCollectionEquality().equals(other.failureOrSuccessOption, failureOrSuccessOption)));
   }
-  
+
   @override
   int get hashCode => runtimeType.hashCode ^ const DeepCollectionEquality().hash(searchTerm) ^ const DeepCollectionEquality().hash(users) ^ const DeepCollectionEquality().hash(failureOrSuccessOption);
 

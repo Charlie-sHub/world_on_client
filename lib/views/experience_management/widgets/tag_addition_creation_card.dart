@@ -68,6 +68,7 @@ class TagAdditionCreationCard extends HookWidget {
                 fontSize: 15,
               ),
             ),
+            const SizedBox(height: 5),
             BlocListener<TagManagementFormBloc, TagManagementFormState>(
               listenWhen: (previous, current) => previous.failureOrSuccessOption != current.failureOrSuccessOption,
               listener: (context, state) => _tagCreationListener(
