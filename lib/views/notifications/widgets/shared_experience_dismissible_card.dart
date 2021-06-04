@@ -50,7 +50,8 @@ class SharedExperienceDismissibleCard extends StatelessWidget {
           avatarRadius: 25,
           checkIconSize: 17,
         ),
-        title: Column(
+        title: Stack(
+          alignment: Alignment.center,
           children: [
             SizedBox(
               height: 75,
@@ -58,28 +59,52 @@ class SharedExperienceDismissibleCard extends StatelessWidget {
               child: Card(
                 clipBehavior: Clip.antiAlias,
                 elevation: 0,
-                child: CachedNetworkImage(
-                  imageUrl: experience.imageURLs.first,
-                  fit: BoxFit.cover,
-                  progressIndicatorBuilder: (context, url, progress) => WorldOnPlasma(),
+                child: ShaderMask(
+                  blendMode: BlendMode.darken,
+                  shaderCallback: (bounds) => LinearGradient(
+                    begin: Alignment.center,
+                    end: Alignment.bottomCenter,
+                    colors: [
+                      Colors.transparent,
+                      Colors.black.withOpacity(0.6),
+                    ],
+                    stops: const [
+                      0,
+                      1,
+                    ],
+                  ).createShader(bounds),
+                  child: CachedNetworkImage(
+                    imageUrl: experience.imageURLs.first,
+                    fit: BoxFit.cover,
+                    progressIndicatorBuilder: (context, url, progress) => WorldOnPlasma(),
+                  ),
                 ),
               ),
             ),
-            AutoSizeText(
-              _getNotificationMessage(context),
-              minFontSize: 8,
-              maxFontSize: 15,
-              style: const TextStyle(
-                fontSize: 12,
-              ),
-            ),
-            AutoSizeText(
-              experience.title.getOrCrash(),
-              minFontSize: 8,
-              maxFontSize: 15,
-              style: const TextStyle(
-                fontSize: 12,
-                fontWeight: FontWeight.bold,
+            Positioned(
+              bottom: 5,
+              child: Column(
+                children: [
+                  AutoSizeText(
+                    _getNotificationMessage(context),
+                    minFontSize: 8,
+                    maxFontSize: 15,
+                    style: const TextStyle(
+                      fontSize: 12,
+                      color: Colors.white,
+                    ),
+                  ),
+                  AutoSizeText(
+                    experience.title.getOrCrash(),
+                    minFontSize: 8,
+                    maxFontSize: 15,
+                    style: const TextStyle(
+                      fontSize: 12,
+                      fontWeight: FontWeight.bold,
+                      color: Colors.white,
+                    ),
+                  ),
+                ],
               ),
             ),
           ],

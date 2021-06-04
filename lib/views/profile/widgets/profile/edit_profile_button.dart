@@ -17,11 +17,9 @@ class EditProfileButton extends StatelessWidget {
     return SizedBox(
       height: 28,
       child: ElevatedButton(
-        onPressed: () async {
-          context.router.push(
-            ProfileEditingPageRoute(user: user),
-          );
-        },
+        onPressed: () async => context.router.push(
+          ProfileEditingPageRoute(user: user),
+        ),
         child: Text(
           S.of(context).editButton,
           style: const TextStyle(

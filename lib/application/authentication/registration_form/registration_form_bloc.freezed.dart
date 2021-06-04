@@ -2172,7 +2172,7 @@ abstract class _RegistrationFormState implements RegistrationFormState {
   bool get isSubmitting => throw _privateConstructorUsedError;
   @override
   bool get acceptedEULA => throw _privateConstructorUsedError;
-  
+
   @override
   bool get initialized => throw _privateConstructorUsedError;
 
