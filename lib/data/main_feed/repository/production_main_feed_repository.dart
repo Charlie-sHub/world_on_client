@@ -25,6 +25,13 @@ class ProductionMainFeedRepository implements MainFeedRepositoryInterface {
 
   @override
   Stream<Either<Failure, KtList<Experience>>> watchFeed() async* {
+    // Get all experiences
+    // get the list of Ids of users to do them
+    // Update each experience with said list
+    // Show said info when navigating an experience
+
+    // The limit is just a number that made sense at the time
+    const _promotedExperiencesLimit = 5;
     final _userDocument = await _firestore.userDocument();
     final _userDto = UserDto.fromFirestore(await _userDocument.get());
     if (_userDto.followedUsersIds.isNotEmpty) {
@@ -42,13 +49,13 @@ class ProductionMainFeedRepository implements MainFeedRepositoryInterface {
                 .snapshots(),
           )
           .toList();
-      // The limit is just the number that made sense at the time
+
       final _promotedStream = _firestore.experienceCollection
           .where(
             ExperienceFields.isPromoted,
             isEqualTo: true,
           )
-          .limit(5)
+          .limit(_promotedExperiencesLimit)
           .snapshots();
       final _promotedStreamQuery = await _promotedStream.first;
       for (final _experienceDoc in _promotedStreamQuery.docs) {

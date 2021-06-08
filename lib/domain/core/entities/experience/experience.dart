@@ -44,6 +44,7 @@ class Experience with _$Experience {
     required Set<Comment> comments,
     required Set<UniqueId> likedBy,
     required Set<UniqueId> doneBy,
+    required Set<UniqueId> toDoBy,
     required bool isPromoted,
   }) = _Experience;
 
@@ -65,6 +66,7 @@ class Experience with _$Experience {
         comments: <Comment>{},
         likedBy: <UniqueId>{},
         doneBy: <UniqueId>{},
+        toDoBy: <UniqueId>{},
         isPromoted: false,
       );
 

@@ -34,6 +34,7 @@ class _$ExperienceTearOff {
       required Set<Comment> comments,
       required Set<UniqueId> likedBy,
       required Set<UniqueId> doneBy,
+      required Set<UniqueId> toDoBy,
       required bool isPromoted}) {
     return _Experience(
       id: id,
@@ -53,6 +54,7 @@ class _$ExperienceTearOff {
       comments: comments,
       likedBy: likedBy,
       doneBy: doneBy,
+      toDoBy: toDoBy,
       isPromoted: isPromoted,
     );
   }
@@ -94,7 +96,11 @@ mixin _$Experience {
 
   Set<Comment> get comments => throw _privateConstructorUsedError;
   Set<UniqueId> get likedBy => throw _privateConstructorUsedError;
+
   Set<UniqueId> get doneBy => throw _privateConstructorUsedError;
+
+  Set<UniqueId> get toDoBy => throw _privateConstructorUsedError;
+
   bool get isPromoted => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
@@ -123,6 +129,7 @@ abstract class $ExperienceCopyWith<$Res> {
       Set<Comment> comments,
       Set<UniqueId> likedBy,
       Set<UniqueId> doneBy,
+      Set<UniqueId> toDoBy,
       bool isPromoted});
 
   $CoordinatesCopyWith<$Res> get coordinates;
@@ -157,6 +164,7 @@ class _$ExperienceCopyWithImpl<$Res> implements $ExperienceCopyWith<$Res> {
     Object? comments = freezed,
     Object? likedBy = freezed,
     Object? doneBy = freezed,
+    Object? toDoBy = freezed,
     Object? isPromoted = freezed,
   }) {
     return _then(_value.copyWith(
@@ -228,6 +236,10 @@ class _$ExperienceCopyWithImpl<$Res> implements $ExperienceCopyWith<$Res> {
           ? _value.doneBy
           : doneBy // ignore: cast_nullable_to_non_nullable
               as Set<UniqueId>,
+      toDoBy: toDoBy == freezed
+          ? _value.toDoBy
+          : toDoBy // ignore: cast_nullable_to_non_nullable
+              as Set<UniqueId>,
       isPromoted: isPromoted == freezed
           ? _value.isPromoted
           : isPromoted // ignore: cast_nullable_to_non_nullable
@@ -280,6 +292,7 @@ abstract class _$ExperienceCopyWith<$Res> implements $ExperienceCopyWith<$Res> {
       Set<Comment> comments,
       Set<UniqueId> likedBy,
       Set<UniqueId> doneBy,
+      Set<UniqueId> toDoBy,
       bool isPromoted});
 
   @override
@@ -316,6 +329,7 @@ class __$ExperienceCopyWithImpl<$Res> extends _$ExperienceCopyWithImpl<$Res> imp
     Object? comments = freezed,
     Object? likedBy = freezed,
     Object? doneBy = freezed,
+    Object? toDoBy = freezed,
     Object? isPromoted = freezed,
   }) {
     return _then(_Experience(
@@ -387,6 +401,10 @@ class __$ExperienceCopyWithImpl<$Res> extends _$ExperienceCopyWithImpl<$Res> imp
           ? _value.doneBy
           : doneBy // ignore: cast_nullable_to_non_nullable
               as Set<UniqueId>,
+      toDoBy: toDoBy == freezed
+          ? _value.toDoBy
+          : toDoBy // ignore: cast_nullable_to_non_nullable
+              as Set<UniqueId>,
       isPromoted: isPromoted == freezed
           ? _value.isPromoted
           : isPromoted // ignore: cast_nullable_to_non_nullable
@@ -416,6 +434,7 @@ class _$_Experience extends _Experience {
       required this.comments,
       required this.likedBy,
       required this.doneBy,
+      required this.toDoBy,
       required this.isPromoted})
       : super._();
 
@@ -454,11 +473,13 @@ class _$_Experience extends _Experience {
   @override
   final Set<UniqueId> doneBy;
   @override
+  final Set<UniqueId> toDoBy;
+  @override
   final bool isPromoted;
 
   @override
   String toString() {
-    return 'Experience(id: $id, title: $title, description: $description, imageURLs: $imageURLs, imageAssetsOption: $imageAssetsOption, coordinates: $coordinates, location: $location, creator: $creator, difficulty: $difficulty, creationDate: $creationDate, modificationDate: $modificationDate, objectives: $objectives, rewards: $rewards, tags: $tags, comments: $comments, likedBy: $likedBy, doneBy: $doneBy, isPromoted: $isPromoted)';
+    return 'Experience(id: $id, title: $title, description: $description, imageURLs: $imageURLs, imageAssetsOption: $imageAssetsOption, coordinates: $coordinates, location: $location, creator: $creator, difficulty: $difficulty, creationDate: $creationDate, modificationDate: $modificationDate, objectives: $objectives, rewards: $rewards, tags: $tags, comments: $comments, likedBy: $likedBy, doneBy: $doneBy, toDoBy: $toDoBy, isPromoted: $isPromoted)';
   }
 
   @override
@@ -482,6 +503,7 @@ class _$_Experience extends _Experience {
             (identical(other.comments, comments) || const DeepCollectionEquality().equals(other.comments, comments)) &&
             (identical(other.likedBy, likedBy) || const DeepCollectionEquality().equals(other.likedBy, likedBy)) &&
             (identical(other.doneBy, doneBy) || const DeepCollectionEquality().equals(other.doneBy, doneBy)) &&
+            (identical(other.toDoBy, toDoBy) || const DeepCollectionEquality().equals(other.toDoBy, toDoBy)) &&
             (identical(other.isPromoted, isPromoted) || const DeepCollectionEquality().equals(other.isPromoted, isPromoted)));
   }
 
@@ -505,6 +527,7 @@ class _$_Experience extends _Experience {
       const DeepCollectionEquality().hash(comments) ^
       const DeepCollectionEquality().hash(likedBy) ^
       const DeepCollectionEquality().hash(doneBy) ^
+      const DeepCollectionEquality().hash(toDoBy) ^
       const DeepCollectionEquality().hash(isPromoted);
 
   @JsonKey(ignore: true)
@@ -531,6 +554,7 @@ abstract class _Experience extends Experience {
       required Set<Comment> comments,
       required Set<UniqueId> likedBy,
       required Set<UniqueId> doneBy,
+      required Set<UniqueId> toDoBy,
       required bool isPromoted}) = _$_Experience;
   const _Experience._() : super._();
 
@@ -561,16 +585,24 @@ abstract class _Experience extends Experience {
   PastDate get modificationDate => throw _privateConstructorUsedError;
   @override
   ObjectiveList get objectives => throw _privateConstructorUsedError;
+
   @override
   RewardSet get rewards => throw _privateConstructorUsedError;
+
   @override
   TagSet get tags => throw _privateConstructorUsedError;
+
   @override
   Set<Comment> get comments => throw _privateConstructorUsedError;
+
   @override
   Set<UniqueId> get likedBy => throw _privateConstructorUsedError;
+
   @override
   Set<UniqueId> get doneBy => throw _privateConstructorUsedError;
+
+  @override
+  Set<UniqueId> get toDoBy => throw _privateConstructorUsedError;
 
   @override
   bool get isPromoted => throw _privateConstructorUsedError;

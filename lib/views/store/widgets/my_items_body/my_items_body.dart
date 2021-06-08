@@ -32,28 +32,39 @@ class MyItemsBody extends StatelessWidget {
                       onRefresh: () async => context.read<LoadUserBloc>().add(
                             const LoadUserEvent.loadedUser(),
                           ),
-                      child: ListView.builder(
-                        physics: const BouncingScrollPhysics(),
-                        padding: const EdgeInsets.all(5),
-                        itemCount: _itemList.size,
-                        itemBuilder: (context, index) {
-                          final _item = _itemList[index];
-                          if (_item.isValid) {
-                            return ItemTile(
-                              item: _item,
-                              key: Key(_item.id.toString()),
-                            );
-                          } else {
-                            return ErrorCard(
-                              entityType: S.of(context).item,
-                              valueFailureString: _item.failureOption.fold(
-                                () => S.of(context).noError,
-                                (failure) => failure.toString(),
+                      child: _itemList.isNotEmpty()
+                          ? ListView.builder(
+                              physics: const BouncingScrollPhysics(),
+                              padding: const EdgeInsets.all(5),
+                              itemCount: _itemList.size,
+                              itemBuilder: (context, index) {
+                                final _item = _itemList[index];
+                                if (_item.isValid) {
+                                  return ItemTile(
+                                    item: _item,
+                                    key: Key(_item.id.toString()),
+                                  );
+                                } else {
+                                  return ErrorCard(
+                                    entityType: S.of(context).item,
+                                    valueFailureString: _item.failureOption.fold(
+                                      () => S.of(context).noError,
+                                      (failure) => failure.toString(),
+                                    ),
+                                  );
+                                }
+                              },
+                            )
+                          : Center(
+                              child: Text(
+                                S.of(context).noItemsOwned,
+                                textAlign: TextAlign.center,
+                                style: const TextStyle(
+                                  fontWeight: FontWeight.w900,
+                                  fontSize: 20,
+                                ),
                               ),
-                            );
-                          }
-                        },
-                      ),
+                            ),
                     ),
                   );
                 },

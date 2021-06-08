@@ -83,9 +83,9 @@ class SimpleExperienceCard extends StatelessWidget {
                   bottom: 5,
                   child: Row(
                     children: [
-                      LogButton(experience: experience),
                       ShareExternallyButton(experience: experience),
                       ShareInternallyButton(experience: experience),
+                      LogButton(experience: experience),
                       ManageButtonBuilder(
                         experience: experience,
                         reloadFunction: reloadFunction,

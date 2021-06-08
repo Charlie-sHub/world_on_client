@@ -42,10 +42,10 @@ class ExperienceDto with _$ExperienceDto {
     required List<ObjectiveDto> objectives,
     required Set<RewardDto> rewards,
     required Set<TagDto> tags,
-    // Probably shouldn't be part of the DTO, as in Firestore it's a sub document of the experience document
     required Set<CommentDto> comments,
     required Set<String> likedBy,
     required Set<String> doneBy,
+    Set<String?>? toDoBy,
     required bool isPromoted,
   }) = _ExperienceDto;
 
@@ -67,6 +67,7 @@ class ExperienceDto with _$ExperienceDto {
         comments: {},
         likedBy: experience.likedBy.map((_uniqueId) => _uniqueId.getOrCrash()).toSet(),
         doneBy: experience.doneBy.map((_uniqueId) => _uniqueId.getOrCrash()).toSet(),
+        toDoBy: experience.toDoBy.map((_uniqueId) => _uniqueId.getOrCrash()).toSet(),
         isPromoted: experience.isPromoted,
       );
 
@@ -88,6 +89,7 @@ class ExperienceDto with _$ExperienceDto {
         comments: {},
         likedBy: likedBy.map((_id) => UniqueId.fromUniqueString(_id)).toSet(),
         doneBy: doneBy.map((_id) => UniqueId.fromUniqueString(_id)).toSet(),
+        toDoBy: toDoBy != null ? toDoBy!.map((_id) => UniqueId.fromUniqueString(_id!)).toSet() : <UniqueId>{},
         isPromoted: isPromoted,
       );
 

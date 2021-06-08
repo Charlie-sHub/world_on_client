@@ -37,7 +37,7 @@ class ExperienceInformationTabView extends StatelessWidget {
               UserInformation(creator: experience.creator),
               const SizedBox(height: 10),
               ExperienceDescription(experience: experience),
-              const SizedBox(height: 10),
+              const SizedBox(height: 5),
               Text(
                 experience.getFormattedCreationDateString,
                 style: const TextStyle(

@@ -10,9 +10,11 @@ class ProfileExperiencesDialer extends StatelessWidget {
   const ProfileExperiencesDialer({
     Key? key,
     required this.user,
+    required this.isOwnProfile,
   }) : super(key: key);
 
   final User user;
+  final bool isOwnProfile;
 
   @override
   Widget build(BuildContext context) {
@@ -62,7 +64,7 @@ class ProfileExperiencesDialer extends StatelessWidget {
             onTap: () => context.read<ProfileExperiencesWatcherBloc>().add(
                   ProfileExperiencesWatcherEvent.watchExperiencesLikedStarted(user),
                 ),
-            label: S.of(context).liked,
+            label: isOwnProfile ? S.of(context).iLike : S.of(context).liked,
             labelStyle: const TextStyle(
               color: Colors.black,
               fontWeight: FontWeight.bold,

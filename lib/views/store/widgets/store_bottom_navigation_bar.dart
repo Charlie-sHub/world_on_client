@@ -9,8 +9,8 @@ class StoreBottomNavigationBar extends StatelessWidget {
   static const _itemStoreIndex = 0;
 
   // static const _coinStoreIndex = 1;
-  static const _promotionPlansIndex = 1;
-  static const _myItemsIndex = 2;
+  // static const _promotionPlansIndex = 1;
+  static const _myItemsIndex = 1;
 
   @override
   Widget build(BuildContext context) {
@@ -23,7 +23,7 @@ class StoreBottomNavigationBar extends StatelessWidget {
       activeIndex: context.read<StoreNavigationActorBloc>().state.map(
             itemStoreView: (_) => _itemStoreIndex,
             coinStoreView: (_) => _itemStoreIndex,
-            promotionPlansView: (_) => _promotionPlansIndex,
+            promotionPlansView: (_) => _itemStoreIndex,
             myItemsView: (_) => _myItemsIndex,
           ),
       activeColor: WorldOnColors.primary,
@@ -31,7 +31,7 @@ class StoreBottomNavigationBar extends StatelessWidget {
       icons: const [
         Icons.store,
         // Icons.account_balance_wallet_rounded,
-        Icons.date_range_rounded,
+        // Icons.date_range_rounded,
         Icons.list_rounded,
       ],
     );
@@ -47,13 +47,14 @@ class StoreBottomNavigationBar extends StatelessWidget {
               const StoreAppBarTitleEvent.showedStore(),
             );
         break;
-      /*
+    /*
       case _coinStoreIndex:
         context.read<StoreNavigationActorBloc>().add(
               const StoreNavigationActorEvent.coinStoreTapped(),
             );
         break;
          */
+      /*
       case _promotionPlansIndex:
         context.read<StoreNavigationActorBloc>().add(
               const StoreNavigationActorEvent.promotionPlansTapped(),
@@ -62,6 +63,7 @@ class StoreBottomNavigationBar extends StatelessWidget {
               const StoreAppBarTitleEvent.showedPromotions(),
             );
         break;
+       */
       case _myItemsIndex:
         context.read<StoreNavigationActorBloc>().add(
               const StoreNavigationActorEvent.myItemsTapped(),

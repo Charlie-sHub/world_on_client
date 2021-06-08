@@ -21,7 +21,10 @@ class Profile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final _tabs = [
-      ProfileExperiencesTabView(user: user),
+      ProfileExperiencesTabView(
+        user: user,
+        isOwnProfile: isOwn,
+      ),
       ProfileUsersTabView(user: user),
       if (isOwn) ProfileLogTabView(),
     ];

@@ -9,7 +9,7 @@ publish_to: 'none'
 # The number after the + always increases by 1
 # Usually both numbers should increase by 1 at the same time
 # For example 1.1.7+17 => 1.1.8+18
-version: 1.2.5+25
+version: 1.2.7+27
 
 environment:
   sdk: ">=2.12.0 <3.0.0"
@@ -17,16 +17,16 @@ environment:
 dependencies:
   algolia: ^1.0.1
   animated_bottom_navigation_bar: ^0.3.2
-  another_flushbar: ^1.10.22
+  another_flushbar: ^1.10.23
   auth_buttons: ^1.0.1+3
   auto_route: ^2.2.0
   auto_size_text: ^3.0.0-nullsafety.0
-  bloc_test: ^8.0.1
+  bloc_test: ^8.0.2
   cached_network_image: ^3.0.0
   carousel_slider: ^4.0.0-nullsafety.0
   cloud_firestore: ^1.0.7
   cloud_functions: ^1.1.1
-  dartz: ^0.10.0-nullsafety.1
+  dartz: ^0.10.0-nullsafety.2
   email_validator: ^2.0.1
   equatable: ^2.0.2
   firebase_auth: ^1.3.0
@@ -49,9 +49,9 @@ dependencies:
   get_it: ^7.1.3
   google_maps_flutter:
   google_sign_in: ^5.0.4
-  image_picker: ^0.8.0+1
+  image_picker: ^0.8.0+3
   implicitly_animated_reorderable_list: ^0.4.0-dev+2
-  in_app_purchase: ^1.0.4
+  in_app_purchase: ^1.0.5
   injectable: ^1.4.1
   intl: ^0.17.0
   jiffy: ^4.1.0
@@ -82,7 +82,7 @@ dev_dependencies:
   injectable_generator: ^1.4.1
   json_serializable: ^4.1.3
   lint: ^1.5.3
-  mockito: ^5.0.9
+  mockito: ^5.0.10
 
 flutter_icons:
   image_path: "assets/world_on_logo.jpg"

@@ -17,9 +17,11 @@ class ProfileExperiencesTabView extends StatelessWidget {
   const ProfileExperiencesTabView({
     Key? key,
     required this.user,
+    required this.isOwnProfile,
   }) : super(key: key);
 
   final User user;
+  final bool isOwnProfile;
 
   @override
   Widget build(BuildContext context) {
@@ -92,7 +94,10 @@ class ProfileExperiencesTabView extends StatelessWidget {
               alignment: Alignment.bottomRight,
               child: Padding(
                 padding: const EdgeInsets.only(bottom: 50),
-                child: ProfileExperiencesDialer(user: user),
+                child: ProfileExperiencesDialer(
+                  user: user,
+                  isOwnProfile: isOwnProfile,
+                ),
               ),
             ),
           ],

@@ -1917,6 +1917,16 @@ class S {
     );
   }
 
+  /// `I like`
+  String get iLike {
+    return Intl.message(
+      'I like',
+      name: 'iLike',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `Objective's localization`
   String get objectiveLocalization {
     return Intl.message(
@@ -2252,6 +2262,16 @@ class S {
     return Intl.message(
       'Promote your experiences to reach everyone!',
       name: 'promotionsHeaderTitle',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Currently you don't own any items`
+  String get noItemsOwned {
+    return Intl.message(
+      'Currently you don\'t own any items',
+      name: 'noItemsOwned',
       desc: '',
       args: [],
     );

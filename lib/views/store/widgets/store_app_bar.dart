@@ -26,6 +26,7 @@ class StoreAppBar extends StatelessWidget implements PreferredSizeWidget {
         ),
       ),
       centerTitle: true,
+      elevation: 0,
     );
   }
 

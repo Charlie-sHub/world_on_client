@@ -38,6 +38,7 @@ class _$ExperienceDtoTearOff {
       required Set<CommentDto> comments,
       required Set<String> likedBy,
       required Set<String> doneBy,
+      Set<String?>? toDoBy,
       required bool isPromoted}) {
     return _ExperienceDto(
       id: id,
@@ -57,6 +58,7 @@ class _$ExperienceDtoTearOff {
       comments: comments,
       likedBy: likedBy,
       doneBy: doneBy,
+      toDoBy: toDoBy,
       isPromoted: isPromoted,
     );
   }
@@ -76,31 +78,26 @@ mixin _$ExperienceDto {
   String get description => throw _privateConstructorUsedError;
   Set<String> get imageURLs => throw _privateConstructorUsedError;
   CoordinatesDto get coordinates => throw _privateConstructorUsedError;
-
   LocationDto get location => throw _privateConstructorUsedError;
-
   String get creatorId => throw _privateConstructorUsedError;
-
   UserDto get creator => throw _privateConstructorUsedError;
-
   int get difficulty => throw _privateConstructorUsedError;
-
   @ServerTimestampConverter()
   DateTime get creationDate => throw _privateConstructorUsedError;
-
   @ServerTimestampConverter()
   DateTime get modificationDate => throw _privateConstructorUsedError;
-
   List<ObjectiveDto> get objectives => throw _privateConstructorUsedError;
 
   Set<RewardDto> get rewards => throw _privateConstructorUsedError;
 
-  Set<TagDto> get tags => throw _privateConstructorUsedError; // Probably shouldn't be part of the DTO, as in Firestore it's a sub document of the experience document
-  Set<CommentDto> get comments => throw _privateConstructorUsedError;
+  Set<TagDto> get tags => throw _privateConstructorUsedError;
 
+  Set<CommentDto> get comments => throw _privateConstructorUsedError;
   Set<String> get likedBy => throw _privateConstructorUsedError;
 
   Set<String> get doneBy => throw _privateConstructorUsedError;
+
+  Set<String?>? get toDoBy => throw _privateConstructorUsedError;
 
   bool get isPromoted => throw _privateConstructorUsedError;
 
@@ -132,6 +129,7 @@ abstract class $ExperienceDtoCopyWith<$Res> {
       Set<CommentDto> comments,
       Set<String> likedBy,
       Set<String> doneBy,
+      Set<String?>? toDoBy,
       bool isPromoted});
 
   $CoordinatesDtoCopyWith<$Res> get coordinates;
@@ -167,6 +165,7 @@ class _$ExperienceDtoCopyWithImpl<$Res> implements $ExperienceDtoCopyWith<$Res> 
     Object? comments = freezed,
     Object? likedBy = freezed,
     Object? doneBy = freezed,
+    Object? toDoBy = freezed,
     Object? isPromoted = freezed,
   }) {
     return _then(_value.copyWith(
@@ -238,6 +237,10 @@ class _$ExperienceDtoCopyWithImpl<$Res> implements $ExperienceDtoCopyWith<$Res> 
           ? _value.doneBy
           : doneBy // ignore: cast_nullable_to_non_nullable
               as Set<String>,
+      toDoBy: toDoBy == freezed
+          ? _value.toDoBy
+          : toDoBy // ignore: cast_nullable_to_non_nullable
+              as Set<String?>?,
       isPromoted: isPromoted == freezed
           ? _value.isPromoted
           : isPromoted // ignore: cast_nullable_to_non_nullable
@@ -290,6 +293,7 @@ abstract class _$ExperienceDtoCopyWith<$Res> implements $ExperienceDtoCopyWith<$
       Set<CommentDto> comments,
       Set<String> likedBy,
       Set<String> doneBy,
+      Set<String?>? toDoBy,
       bool isPromoted});
 
   @override
@@ -326,6 +330,7 @@ class __$ExperienceDtoCopyWithImpl<$Res> extends _$ExperienceDtoCopyWithImpl<$Re
     Object? comments = freezed,
     Object? likedBy = freezed,
     Object? doneBy = freezed,
+    Object? toDoBy = freezed,
     Object? isPromoted = freezed,
   }) {
     return _then(_ExperienceDto(
@@ -397,6 +402,10 @@ class __$ExperienceDtoCopyWithImpl<$Res> extends _$ExperienceDtoCopyWithImpl<$Re
           ? _value.doneBy
           : doneBy // ignore: cast_nullable_to_non_nullable
               as Set<String>,
+      toDoBy: toDoBy == freezed
+          ? _value.toDoBy
+          : toDoBy // ignore: cast_nullable_to_non_nullable
+              as Set<String?>?,
       isPromoted: isPromoted == freezed
           ? _value.isPromoted
           : isPromoted // ignore: cast_nullable_to_non_nullable
@@ -426,6 +435,7 @@ class _$_ExperienceDto extends _ExperienceDto {
       required this.comments,
       required this.likedBy,
       required this.doneBy,
+      this.toDoBy,
       required this.isPromoted})
       : super._();
 
@@ -461,18 +471,20 @@ class _$_ExperienceDto extends _ExperienceDto {
   final Set<RewardDto> rewards;
   @override
   final Set<TagDto> tags;
-  @override // Probably shouldn't be part of the DTO, as in Firestore it's a sub document of the experience document
+  @override
   final Set<CommentDto> comments;
   @override
   final Set<String> likedBy;
   @override
   final Set<String> doneBy;
   @override
+  final Set<String?>? toDoBy;
+  @override
   final bool isPromoted;
 
   @override
   String toString() {
-    return 'ExperienceDto(id: $id, title: $title, description: $description, imageURLs: $imageURLs, coordinates: $coordinates, location: $location, creatorId: $creatorId, creator: $creator, difficulty: $difficulty, creationDate: $creationDate, modificationDate: $modificationDate, objectives: $objectives, rewards: $rewards, tags: $tags, comments: $comments, likedBy: $likedBy, doneBy: $doneBy, isPromoted: $isPromoted)';
+    return 'ExperienceDto(id: $id, title: $title, description: $description, imageURLs: $imageURLs, coordinates: $coordinates, location: $location, creatorId: $creatorId, creator: $creator, difficulty: $difficulty, creationDate: $creationDate, modificationDate: $modificationDate, objectives: $objectives, rewards: $rewards, tags: $tags, comments: $comments, likedBy: $likedBy, doneBy: $doneBy, toDoBy: $toDoBy, isPromoted: $isPromoted)';
   }
 
   @override
@@ -496,6 +508,7 @@ class _$_ExperienceDto extends _ExperienceDto {
             (identical(other.comments, comments) || const DeepCollectionEquality().equals(other.comments, comments)) &&
             (identical(other.likedBy, likedBy) || const DeepCollectionEquality().equals(other.likedBy, likedBy)) &&
             (identical(other.doneBy, doneBy) || const DeepCollectionEquality().equals(other.doneBy, doneBy)) &&
+            (identical(other.toDoBy, toDoBy) || const DeepCollectionEquality().equals(other.toDoBy, toDoBy)) &&
             (identical(other.isPromoted, isPromoted) || const DeepCollectionEquality().equals(other.isPromoted, isPromoted)));
   }
 
@@ -519,6 +532,7 @@ class _$_ExperienceDto extends _ExperienceDto {
       const DeepCollectionEquality().hash(comments) ^
       const DeepCollectionEquality().hash(likedBy) ^
       const DeepCollectionEquality().hash(doneBy) ^
+      const DeepCollectionEquality().hash(toDoBy) ^
       const DeepCollectionEquality().hash(isPromoted);
 
   @JsonKey(ignore: true)
@@ -550,6 +564,7 @@ abstract class _ExperienceDto extends ExperienceDto {
       required Set<CommentDto> comments,
       required Set<String> likedBy,
       required Set<String> doneBy,
+      Set<String?>? toDoBy,
       required bool isPromoted}) = _$_ExperienceDto;
 
   const _ExperienceDto._() : super._();
@@ -586,16 +601,24 @@ abstract class _ExperienceDto extends ExperienceDto {
   DateTime get modificationDate => throw _privateConstructorUsedError;
   @override
   List<ObjectiveDto> get objectives => throw _privateConstructorUsedError;
+
   @override
   Set<RewardDto> get rewards => throw _privateConstructorUsedError;
+
   @override
   Set<TagDto> get tags => throw _privateConstructorUsedError;
-  @override // Probably shouldn't be part of the DTO, as in Firestore it's a sub document of the experience document
+
+  @override
   Set<CommentDto> get comments => throw _privateConstructorUsedError;
+
   @override
   Set<String> get likedBy => throw _privateConstructorUsedError;
+
   @override
   Set<String> get doneBy => throw _privateConstructorUsedError;
+
+  @override
+  Set<String?>? get toDoBy => throw _privateConstructorUsedError;
 
   @override
   bool get isPromoted => throw _privateConstructorUsedError;

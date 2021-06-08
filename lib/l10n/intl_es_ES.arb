@@ -187,6 +187,7 @@
   "created": "Creadas",
   "done": "Hechas",
   "liked": "Gustadas",
+  "iLike": "Me gusta",
   "objectiveLocalization": "Localizacion del objetivo",
   "promotionPlans": "Planes promocionales",
   "notFoundErrorPromotionPlans": "No se encontraron planes promocionales",
@@ -220,5 +221,6 @@
   "itemStoreHeaderTitle": "¡Tenemos excelentes ofertas para ti!",
   "itemStoreHeaderSubTitle": "Ven a verlas",
   "days": "dias",
-  "promotionsHeaderTitle": "¡Promociona tus experiencias para que alcancen a todos!"
+  "promotionsHeaderTitle": "¡Promociona tus experiencias para que alcancen a todos!",
+  "noItemsOwned": "Actualmente no posees ningun item"
 }

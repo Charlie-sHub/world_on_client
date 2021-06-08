@@ -187,6 +187,7 @@
   "created": "Created",
   "done": "Done",
   "liked": "Liked",
+  "iLike": "I like",
   "objectiveLocalization": "Objective's localization",
   "promotionPlans": "Promotional Plans",
   "notFoundErrorPromotionPlans": "No promotional plans could be found",
@@ -220,5 +221,6 @@
   "itemStoreHeaderTitle": "We have excellent offers for you!",
   "itemStoreHeaderSubTitle": "Come check them out",
   "days": "days",
-  "promotionsHeaderTitle": "Promote your experiences to reach everyone!"
+  "promotionsHeaderTitle": "Promote your experiences to reach everyone!",
+  "noItemsOwned": "Currently you don't own any items"
 }
