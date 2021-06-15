@@ -11,9 +11,6 @@ part 'message.freezed.dart';
 /// [Message] entity class.
 ///
 /// These are [Message]s sent between [User]s.
-// TODO: Implement messaging
-// A chat is not a priority right now so it'll be left on the back burner for the time being
-// I'm also unsure about how to implement it
 @freezed
 class Message with _$Message {
   const Message._();

@@ -25,8 +25,6 @@ class Achievement with _$Achievement {
     required UniqueId id,
     required Name name,
     required EntityDescription description,
-    // TODO: Make a value object and validator for image URLs from World On's back-end
-    // Maybe Firestore will make that unnecessary
     required String imageURL,
     required Option<File> imageFile,
     required String type,

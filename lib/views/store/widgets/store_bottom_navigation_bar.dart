@@ -47,7 +47,7 @@ class StoreBottomNavigationBar extends StatelessWidget {
               const StoreAppBarTitleEvent.showedStore(),
             );
         break;
-    /*
+      /*
       case _coinStoreIndex:
         context.read<StoreNavigationActorBloc>().add(
               const StoreNavigationActorEvent.coinStoreTapped(),

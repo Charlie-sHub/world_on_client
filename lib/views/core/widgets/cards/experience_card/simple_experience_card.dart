@@ -133,8 +133,6 @@ class SimpleExperienceCard extends StatelessWidget {
     );
   }
 
-  // TODO: Customize snackbars
-  // And ensure they show above the navigation bar
   void _experienceCardListener(BuildContext context, ExperienceCardActorState state) => state.maybeMap(
         additionFailure: (state) => FlushbarHelper.createError(
           duration: const Duration(seconds: 2),

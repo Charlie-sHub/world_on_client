@@ -55,7 +55,6 @@ class ProfileEditingPage extends StatelessWidget {
                 (_) => _onSuccess(context),
               ),
             ),
-            // TODO: Find a way to make the form initialize with the state's user
             // For some reason the form doesn't properly initialize when going to the form directly
             // instead of folding the failure option of the state's user
             // So the initial values of the form are all value failures due to the empty user of the first state

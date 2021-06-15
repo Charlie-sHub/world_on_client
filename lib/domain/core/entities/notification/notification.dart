@@ -20,10 +20,6 @@ class Notification with _$Notification {
   const factory Notification({
     required UniqueId id,
     required User sender,
-    // TODO: Is the receiver necessary for the domain entity?
-    // The receiver will always be the logged in user
-    // Relation is needed in the database of course, but not really beyond that
-    // Could be left to just the id
     required User receiver,
     required EntityDescription description,
     required bool seen,

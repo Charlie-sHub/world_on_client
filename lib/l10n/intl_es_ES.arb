@@ -222,5 +222,6 @@
   "itemStoreHeaderSubTitle": "Ven a verlas",
   "days": "dias",
   "promotionsHeaderTitle": "¡Promociona tus experiencias para que alcancen a todos!",
-  "noItemsOwned": "Actualmente no posees ningun item"
+  "noItemsOwned": "Actualmente no posees ningun item",
+  "toDoBy": "Para hacer por:"
 }

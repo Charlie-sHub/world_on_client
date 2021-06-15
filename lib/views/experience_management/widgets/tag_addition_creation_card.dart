@@ -32,8 +32,6 @@ class TagAdditionCreationCard extends HookWidget {
   /// Left for the [Experience]'s [TagSet] and right for the [User]'s set of [UniqueId]s
   ///
   /// Yes another solution should be found
-  // TODO: Rework this
-  // Maybe give the User a TagSet or something
   final Option<Either<TagSet, Set<UniqueId>>> tagsEitherOption;
   final Function tagChangeFunction;
   final bool showErrorMessage;

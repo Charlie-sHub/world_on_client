@@ -14,7 +14,7 @@ class Location with _$Location {
   const factory Location({
     required UniqueId id,
     required String city,
-    required String country, // TODO: Maybe make a value object and validator for countries
+    required String country,
     required String postalCode,
     required Set<Experience> experiences,
   }) = _Location;

@@ -28,7 +28,6 @@ class NotificationsBody extends StatelessWidget {
             ),
         ),
         BlocProvider(
-          // TODO: Check all notifications when the notifications body opens
           create: (context) => getIt<NotificationActorBloc>(),
         ),
       ],

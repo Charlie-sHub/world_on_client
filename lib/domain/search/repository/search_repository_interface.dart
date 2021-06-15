@@ -16,10 +16,6 @@ abstract class SearchRepositoryInterface {
   /// Sends a given [SearchTerm] to the server and it returns the [Tag]s with said [SearchTerm] in their names
   Stream<Either<Failure, KtList<Tag>>> watchSearchTagsByName(SearchTerm name);
 
-  // TODO: make it so only Experiences within a certain distance are returned
-  // It'd be useless to give Users Experiences from far away places even if they're as difficult as they want them
-  // Same with basically all other experience searches
-  // That's for the back-end though
   /// Sends a given [SearchTerm] to the server and it returns the [Experience]s with said [SearchTerm] in their names
   Stream<Either<Failure, KtList<Experience>>> watchSearchExperiencesByTitle(SearchTerm title);
 
@@ -29,8 +25,6 @@ abstract class SearchRepositoryInterface {
   /// Sends a given [int] to the server and it returns the [Experience]s with a difficulty around the given [Difficulty]
   Stream<Either<Failure, KtList<Experience>>> watchSearchExperiencesByDifficulty(Difficulty difficulty);
 
-  // TODO: Should these methods be here?
-  // They are a search of sorts but they're not part of the search feature
   /// Sends a given [SearchTerm] to the server and it returns the [User]s with said [SearchTerm] in their names
   /// That the current [User] can share to
   Future<Either<Failure, KtList<User>>> searchShareableUsers(SearchTerm name);

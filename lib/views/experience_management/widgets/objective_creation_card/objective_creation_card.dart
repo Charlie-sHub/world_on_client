@@ -39,7 +39,6 @@ class ObjectiveCreationCard extends HookWidget {
                 state.objectivesCreated,
               ),
             ),
-        // TODO: Create buildWhen method
         builder: (context, state) {
           final _experienceFormState = context.read<ExperienceManagementFormBloc>().state;
           return Column(

@@ -138,7 +138,6 @@ class ProductionExperienceNavigationRepository implements ExperienceNavigationRe
     required Difficulty difficulty,
     required UniqueId experienceId,
   }) async {
-    // TODO: Properly implement this
     // The difficulty should be the average of all user's rating, not just the rating of the last user
     // But how to implement that? perhaps with a backend function
     // Right now it doesn't change anything, better to simply leave the creator's original difficulty
@@ -157,12 +156,11 @@ class ProductionExperienceNavigationRepository implements ExperienceNavigationRe
   }
 
   // Don't like returning this map to be honest
-  // Don't like this whole function to be honest
+  // Don't like this whole function neither to be honest
   @override
   Future<Either<Failure, Map>> rewardUser(int experiencePoints) async {
     try {
       final _userDocument = await _firestore.userDocument();
-      // TODO: Change the way items are handled
       // Items should just be a string of ids on the user document
       // Those ids would be retrieved when needed
       // Instead of having the entire objects inside the users.
@@ -255,7 +253,6 @@ class ProductionExperienceNavigationRepository implements ExperienceNavigationRe
   Future<Either<Failure, KtSet<Experience>>> loadSurroundingExperiences(
     world_on_coordinates.Coordinates coordinates,
   ) {
-    // TODO: implement loadSurroundingExperiences
     throw UnimplementedError();
   }
 

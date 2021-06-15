@@ -2276,6 +2276,16 @@ class S {
       args: [],
     );
   }
+
+  /// `To do by:`
+  String get toDoBy {
+    return Intl.message(
+      'To do by:',
+      name: 'toDoBy',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

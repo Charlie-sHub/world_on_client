@@ -22,7 +22,6 @@ class BirthdayButton extends StatelessWidget {
               RegistrationFormEvent.birthdayChanged(_birthDate!),
             );
       },
-      // TODO: Show the selected date after selection or the failure
       child: Text(S.of(context).selectBirthday),
     );
   }

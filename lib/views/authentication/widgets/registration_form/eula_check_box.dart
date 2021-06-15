@@ -8,7 +8,6 @@ class EULACheckBox extends StatelessWidget {
   Widget build(BuildContext context) {
     return CheckboxListTile(
       title: Text(S.of(context).eulaCheckBoxTitle),
-      // TODO: Create and show the aforementioned terms and services
       value: context.read<RegistrationFormBloc>().state.acceptedEULA,
       subtitle: !context.read<RegistrationFormBloc>().state.acceptedEULA && context.read<RegistrationFormBloc>().state.showErrorMessages
           ? Text(

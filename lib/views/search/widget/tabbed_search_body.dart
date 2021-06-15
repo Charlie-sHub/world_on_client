@@ -12,7 +12,6 @@ import 'package:worldon/views/search/widget/search_header.dart';
 import 'package:worldon/views/search/widget/search_tab_bar.dart';
 import 'package:worldon/views/search/widget/user_results_view/user_results_view.dart';
 
-// TODO: Implement search experiences by difficulty and by tags
 class TabbedSearchBody extends StatelessWidget {
   const TabbedSearchBody({Key? key}) : super(key: key);
 

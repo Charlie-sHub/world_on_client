@@ -45,20 +45,13 @@ const $Notification = _$NotificationTearOff();
 mixin _$Notification {
   UniqueId get id => throw _privateConstructorUsedError;
 
-  User get sender => throw _privateConstructorUsedError; // TODO: Is the receiver necessary for the domain entity?
-// The receiver will always be the logged in user
-// Relation is needed in the database of course, but not really beyond that
-// Could be left to just the id
+  User get sender => throw _privateConstructorUsedError;
+
   User get receiver => throw _privateConstructorUsedError;
-
   EntityDescription get description => throw _privateConstructorUsedError;
-
   bool get seen => throw _privateConstructorUsedError;
-
   PastDate get creationDate => throw _privateConstructorUsedError;
-
   NotificationType get type => throw _privateConstructorUsedError;
-
   Option<Experience> get experienceOption => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
@@ -225,10 +218,7 @@ class _$_Notification extends _Notification {
   final UniqueId id;
   @override
   final User sender;
-  @override // TODO: Is the receiver necessary for the domain entity?
-// The receiver will always be the logged in user
-// Relation is needed in the database of course, but not really beyond that
-// Could be left to just the id
+  @override
   final User receiver;
   @override
   final EntityDescription description;
@@ -293,10 +283,8 @@ abstract class _Notification extends Notification {
   UniqueId get id => throw _privateConstructorUsedError;
   @override
   User get sender => throw _privateConstructorUsedError;
-  @override // TODO: Is the receiver necessary for the domain entity?
-// The receiver will always be the logged in user
-// Relation is needed in the database of course, but not really beyond that
-// Could be left to just the id
+
+  @override
   User get receiver => throw _privateConstructorUsedError;
   @override
   EntityDescription get description => throw _privateConstructorUsedError;

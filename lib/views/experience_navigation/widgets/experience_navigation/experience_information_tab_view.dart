@@ -5,9 +5,10 @@ import 'package:worldon/views/core/widgets/cards/tag_card/simple_tag_card_builde
 import 'package:worldon/views/core/widgets/misc/difficulty_display.dart';
 import 'package:worldon/views/core/widgets/misc/experience_done_counter.dart';
 import 'package:worldon/views/core/widgets/misc/experience_points_view.dart';
+import 'package:worldon/views/experience_navigation/widgets/experience_navigation/experience_to_do_counter.dart';
 import 'package:worldon/views/experience_navigation/widgets/experience_navigation/user_information.dart';
 
-import 'experience_comments_list_view.dart';
+import 'comments/experience_comments_list_view.dart';
 import 'experience_description.dart';
 import 'experience_header.dart';
 import 'experience_image_gallery.dart';
@@ -46,11 +47,22 @@ class ExperienceInformationTabView extends StatelessWidget {
               ),
               const SizedBox(height: 5),
               Row(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                mainAxisAlignment: MainAxisAlignment.spaceAround,
                 children: [
-                  ExperienceDoneCounter(amount: experience.doneBy.length),
-                  DifficultyDisplay(difficulty: experience.difficulty.getOrCrash()),
-                  ExperiencePointsView(difficulty: experience.difficulty.getOrCrash()),
+                  Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      ExperienceDoneCounter(amount: experience.doneBy.length),
+                      ExperienceToDoCounter(amount: experience.toDoBy.length),
+                    ],
+                  ),
+                  Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      DifficultyDisplay(difficulty: experience.difficulty.getOrCrash()),
+                      ExperiencePointsView(difficulty: experience.difficulty.getOrCrash()),
+                    ],
+                  ),
                 ],
               ),
               SizedBox(

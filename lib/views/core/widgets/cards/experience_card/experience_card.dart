@@ -17,8 +17,6 @@ import 'package:worldon/views/core/widgets/misc/difficulty_display.dart';
 import 'package:worldon/views/core/widgets/misc/experience_done_counter.dart';
 import 'package:worldon/views/core/widgets/misc/experience_likes_counter.dart';
 
-// TODO: Implement bloc that checks the distance from the experience
-// And show it on the image or somewhere on the card
 class ExperienceCard extends StatelessWidget {
   final Experience experience;
   final Function() reloadFunction;
@@ -121,8 +119,6 @@ class ExperienceCard extends StatelessWidget {
     );
   }
 
-  // TODO: Customize snackbars
-  // And ensure they show above the navigation bar
   void _experienceCardListener(BuildContext context, ExperienceCardActorState state) => state.maybeMap(
         additionFailure: (state) => FlushbarHelper.createError(
           duration: const Duration(seconds: 2),

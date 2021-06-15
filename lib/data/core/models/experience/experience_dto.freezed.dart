@@ -38,7 +38,7 @@ class _$ExperienceDtoTearOff {
       required Set<CommentDto> comments,
       required Set<String> likedBy,
       required Set<String> doneBy,
-      Set<String?>? toDoBy,
+      required Set<String> toDoBy,
       required bool isPromoted}) {
     return _ExperienceDto(
       id: id,
@@ -87,17 +87,14 @@ mixin _$ExperienceDto {
   @ServerTimestampConverter()
   DateTime get modificationDate => throw _privateConstructorUsedError;
   List<ObjectiveDto> get objectives => throw _privateConstructorUsedError;
-
   Set<RewardDto> get rewards => throw _privateConstructorUsedError;
-
   Set<TagDto> get tags => throw _privateConstructorUsedError;
-
   Set<CommentDto> get comments => throw _privateConstructorUsedError;
   Set<String> get likedBy => throw _privateConstructorUsedError;
 
   Set<String> get doneBy => throw _privateConstructorUsedError;
 
-  Set<String?>? get toDoBy => throw _privateConstructorUsedError;
+  Set<String> get toDoBy => throw _privateConstructorUsedError;
 
   bool get isPromoted => throw _privateConstructorUsedError;
 
@@ -129,7 +126,7 @@ abstract class $ExperienceDtoCopyWith<$Res> {
       Set<CommentDto> comments,
       Set<String> likedBy,
       Set<String> doneBy,
-      Set<String?>? toDoBy,
+      Set<String> toDoBy,
       bool isPromoted});
 
   $CoordinatesDtoCopyWith<$Res> get coordinates;
@@ -240,7 +237,7 @@ class _$ExperienceDtoCopyWithImpl<$Res> implements $ExperienceDtoCopyWith<$Res> 
       toDoBy: toDoBy == freezed
           ? _value.toDoBy
           : toDoBy // ignore: cast_nullable_to_non_nullable
-              as Set<String?>?,
+              as Set<String>,
       isPromoted: isPromoted == freezed
           ? _value.isPromoted
           : isPromoted // ignore: cast_nullable_to_non_nullable
@@ -293,7 +290,7 @@ abstract class _$ExperienceDtoCopyWith<$Res> implements $ExperienceDtoCopyWith<$
       Set<CommentDto> comments,
       Set<String> likedBy,
       Set<String> doneBy,
-      Set<String?>? toDoBy,
+      Set<String> toDoBy,
       bool isPromoted});
 
   @override
@@ -405,7 +402,7 @@ class __$ExperienceDtoCopyWithImpl<$Res> extends _$ExperienceDtoCopyWithImpl<$Re
       toDoBy: toDoBy == freezed
           ? _value.toDoBy
           : toDoBy // ignore: cast_nullable_to_non_nullable
-              as Set<String?>?,
+              as Set<String>,
       isPromoted: isPromoted == freezed
           ? _value.isPromoted
           : isPromoted // ignore: cast_nullable_to_non_nullable
@@ -435,7 +432,7 @@ class _$_ExperienceDto extends _ExperienceDto {
       required this.comments,
       required this.likedBy,
       required this.doneBy,
-      this.toDoBy,
+      required this.toDoBy,
       required this.isPromoted})
       : super._();
 
@@ -478,7 +475,7 @@ class _$_ExperienceDto extends _ExperienceDto {
   @override
   final Set<String> doneBy;
   @override
-  final Set<String?>? toDoBy;
+  final Set<String> toDoBy;
   @override
   final bool isPromoted;
 
@@ -564,7 +561,7 @@ abstract class _ExperienceDto extends ExperienceDto {
       required Set<CommentDto> comments,
       required Set<String> likedBy,
       required Set<String> doneBy,
-      Set<String?>? toDoBy,
+      required Set<String> toDoBy,
       required bool isPromoted}) = _$_ExperienceDto;
 
   const _ExperienceDto._() : super._();
@@ -601,16 +598,12 @@ abstract class _ExperienceDto extends ExperienceDto {
   DateTime get modificationDate => throw _privateConstructorUsedError;
   @override
   List<ObjectiveDto> get objectives => throw _privateConstructorUsedError;
-
   @override
   Set<RewardDto> get rewards => throw _privateConstructorUsedError;
-
   @override
   Set<TagDto> get tags => throw _privateConstructorUsedError;
-
   @override
   Set<CommentDto> get comments => throw _privateConstructorUsedError;
-
   @override
   Set<String> get likedBy => throw _privateConstructorUsedError;
 
@@ -618,7 +611,7 @@ abstract class _ExperienceDto extends ExperienceDto {
   Set<String> get doneBy => throw _privateConstructorUsedError;
 
   @override
-  Set<String?>? get toDoBy => throw _privateConstructorUsedError;
+  Set<String> get toDoBy => throw _privateConstructorUsedError;
 
   @override
   bool get isPromoted => throw _privateConstructorUsedError;

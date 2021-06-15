@@ -25,11 +25,6 @@ class ProductionMainFeedRepository implements MainFeedRepositoryInterface {
 
   @override
   Stream<Either<Failure, KtList<Experience>>> watchFeed() async* {
-    // Get all experiences
-    // get the list of Ids of users to do them
-    // Update each experience with said list
-    // Show said info when navigating an experience
-
     // The limit is just a number that made sense at the time
     const _promotedExperiencesLimit = 5;
     final _userDocument = await _firestore.userDocument();

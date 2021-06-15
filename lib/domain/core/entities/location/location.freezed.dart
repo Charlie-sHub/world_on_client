@@ -36,9 +36,9 @@ mixin _$Location {
 
   String get city => throw _privateConstructorUsedError;
 
-  String get country => throw _privateConstructorUsedError; // TODO: Maybe make a value object and validator for countries
-  String get postalCode => throw _privateConstructorUsedError;
+  String get country => throw _privateConstructorUsedError;
 
+  String get postalCode => throw _privateConstructorUsedError;
   Set<Experience> get experiences => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
@@ -152,7 +152,7 @@ class _$_Location extends _Location {
   final String city;
   @override
   final String country;
-  @override // TODO: Maybe make a value object and validator for countries
+  @override
   final String postalCode;
   @override
   final Set<Experience> experiences;
@@ -201,7 +201,7 @@ abstract class _Location extends Location {
   @override
   String get country => throw _privateConstructorUsedError;
 
-  @override // TODO: Maybe make a value object and validator for countries
+  @override
   String get postalCode => throw _privateConstructorUsedError;
 
   @override

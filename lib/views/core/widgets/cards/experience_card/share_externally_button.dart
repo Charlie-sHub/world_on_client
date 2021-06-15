@@ -50,7 +50,6 @@ class ShareExternallyButton extends StatelessWidget {
       ),
     );
     file.writeAsBytesSync(_response.bodyBytes);
-    // TODO: use environment variables instead of hardcoding the link
     SocialShare.shareOptions(
       "${experience.title.getOrCrash()} ${S.of(context).shareMessage} https://play.google.com/store/apps/details?id=com.worldon_app.worldon",
       imagePath: file.path,

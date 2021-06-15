@@ -126,8 +126,6 @@ class ExperienceEditingForm extends StatelessWidget {
       () => List<Asset>.empty(),
       id,
     );
-    // TODO: Perhaps this should be separated into several bloc builders
-    // Rebuilding the map more or less constantly is not ideal at all
     final _shouldRebuild = previous.showErrorMessages != current.showErrorMessages ||
         previous.experience.difficulty != current.experience.difficulty ||
         previous.experience.coordinates != current.experience.coordinates ||

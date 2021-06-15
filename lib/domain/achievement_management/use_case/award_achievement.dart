@@ -13,9 +13,6 @@ class AwardAchievement implements AsyncUseCase<Unit, Params> {
 
   @override
   Future<Either<Failure, Unit>> call(Params params) {
-    // TODO: how to keep track and award the Achievements?
-    // Right now this use case can't determine when an Achievement should be awarded
-    // Will have to come up with something in the future
     return _repository.awardAchievement(
       achievementId: params.achievementId,
       userId: params.userId,

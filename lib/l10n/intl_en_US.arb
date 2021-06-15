@@ -222,5 +222,6 @@
   "itemStoreHeaderSubTitle": "Come check them out",
   "days": "days",
   "promotionsHeaderTitle": "Promote your experiences to reach everyone!",
-  "noItemsOwned": "Currently you don't own any items"
+  "noItemsOwned": "Currently you don't own any items",
+  "toDoBy": "To do by:"
 }

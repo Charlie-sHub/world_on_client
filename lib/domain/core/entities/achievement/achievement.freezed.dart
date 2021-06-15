@@ -55,8 +55,8 @@ mixin _$Achievement {
 
   Name get name => throw _privateConstructorUsedError;
 
-  EntityDescription get description => throw _privateConstructorUsedError; // TODO: Make a value object and validator for image URLs from World On's back-end
-// Maybe Firestore will make that unnecessary
+  EntityDescription get description => throw _privateConstructorUsedError;
+
   String get imageURL => throw _privateConstructorUsedError;
 
   Option<File> get imageFile => throw _privateConstructorUsedError;
@@ -292,8 +292,7 @@ class _$_Achievement extends _Achievement {
   final Name name;
   @override
   final EntityDescription description;
-  @override // TODO: Make a value object and validator for image URLs from World On's back-end
-// Maybe Firestore will make that unnecessary
+  @override
   final String imageURL;
   @override
   final Option<File> imageFile;
@@ -378,8 +377,8 @@ abstract class _Achievement extends Achievement {
   Name get name => throw _privateConstructorUsedError;
   @override
   EntityDescription get description => throw _privateConstructorUsedError;
-  @override // TODO: Make a value object and validator for image URLs from World On's back-end
-// Maybe Firestore will make that unnecessary
+
+  @override
   String get imageURL => throw _privateConstructorUsedError;
   @override
   Option<File> get imageFile => throw _privateConstructorUsedError;

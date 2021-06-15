@@ -23,8 +23,6 @@ import 'package:worldon/views/core/widgets/misc/world_on_cached_image.dart';
 
 import 'manage_button_builder.dart';
 
-// TODO: Implement bloc that checks the distance from the experience
-// And show it on the image or somewhere on the card
 class ExpansionExperienceCard extends StatelessWidget {
   final Experience experience;
   final Function() reloadFunction;
@@ -210,8 +208,6 @@ class ExpansionExperienceCard extends StatelessWidget {
     );
   }
 
-  // TODO: Customize snackbars
-  // And ensure they show above the navigation bar
   void _experienceCardListener(BuildContext context, ExperienceCardActorState state) => state.maybeMap(
         additionFailure: (state) => FlushbarHelper.createError(
           duration: const Duration(seconds: 2),

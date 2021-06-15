@@ -266,7 +266,7 @@ class ProductionProfileRepository implements ProfileRepositoryInterface {
         .where(
           UserFields.followedUsersIds,
           arrayContains: id.getOrCrash(),
-        ) // TODO: Should order by follow date
+        )
         .orderBy(
           UserFields.creationDate,
           descending: true,
@@ -296,12 +296,6 @@ class ProductionProfileRepository implements ProfileRepositoryInterface {
     );
   }
 
-  // TODO: Move to a cloud function
-  // This shouldn't be client side code
-  // Why doesn't firestore have a simple count method?
-  // Alternatively i could get rid of this function and instead give the users another attribute
-  // A list of the users that follow said user
-  // And do like the experience with the doneBy and likedBy
   @override
   Future<Either<Failure, int>> getAmountOfFollowers(UniqueId id) async {
     try {
@@ -608,8 +602,6 @@ class ProductionProfileRepository implements ProfileRepositoryInterface {
     }
   }
 
-  // TODO: Move this to experience management
-  // The code needs some restructuring
   @override
   Future<Either<Failure, Unit>> deleteExperience(UniqueId experienceId) async {
     try {
@@ -662,7 +654,6 @@ class ProductionProfileRepository implements ProfileRepositoryInterface {
 
   Failure _onError(dynamic error) {
     if (error is FirebaseException) {
-      // TODO: Refactor and "unify" with onFirebaseException method
       _logger.e("FirebaseException: ${error.message}");
       return Failure.coreData(
         CoreDataFailure.serverError(errorString: "Firebase error: ${error.message}"),

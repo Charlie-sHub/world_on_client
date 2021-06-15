@@ -38,8 +38,7 @@ abstract class ValueObject<T> extends Equatable {
   ValueFailure<T> failureOrCrash() {
     return value.fold(
       id,
-      // TODO: Create an specific Error
-        (value) => throw Error(),
+      (value) => throw Error(),
     );
   }
 }

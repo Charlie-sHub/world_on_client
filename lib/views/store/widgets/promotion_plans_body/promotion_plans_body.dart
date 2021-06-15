@@ -18,9 +18,6 @@ class PromotionPlansBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    // TODO: buildWhen currentPlan is the state
-    // The idea is to show the currently owned plan on the bottom of the view
-    // Purchase success and failure will be handled by the listener
     return SingleChildScrollView(
       child: Column(
         children: [
@@ -104,7 +101,6 @@ class PromotionPlansBody extends StatelessWidget {
             orElse: () => S.of(context).unknownError,
           ),
         ).show(context),
-        // TODO: Maybe some feedback would be required for actionInProgress and purchaseSuccess
         orElse: () {},
       );
 }

@@ -34,7 +34,6 @@ class RewardCreationCard extends HookWidget {
         listener: (context, state) => context.read<ExperienceManagementFormBloc>().add(
               ExperienceManagementFormEvent.rewardsChanged(state.rewardsCreated),
             ),
-        // TODO: Create buildWhen method
         builder: (context, state) => Card(
           color: WorldOnColors.background,
           shape: RoundedRectangleBorder(

@@ -8,7 +8,6 @@ class WorldOnStar extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    // TODO: Find way to add shadow to this
     return const Icon(
       Icons.star,
       size: 50,

@@ -4,7 +4,7 @@ import 'package:worldon/domain/core/validation/objects/value_object.dart';
 import 'package:worldon/domain/core/validation/validators/validate_bounded_integer.dart';
 
 class UserLevel extends ValueObject<int> {
-  static const limit = 100;
+  static const _limit = 100;
 
   @override
   final Either<ValueFailure<int>, int> value;
@@ -12,7 +12,7 @@ class UserLevel extends ValueObject<int> {
   factory UserLevel(int input) => UserLevel._(
         validateBoundedInteger(
           input: input,
-          limit: limit,
+          limit: _limit,
         ),
       );
 
@@ -22,9 +22,7 @@ class UserLevel extends ValueObject<int> {
   List<Object> get props => [value];
 }
 
-// TODO: Should this be getters of UserLevel?
 class Levels {
-  // TODO: Make a geometric leveling system
   static const _multiplier = 100;
 
   /// Gives the experience points required to get to the given level

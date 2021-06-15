@@ -73,9 +73,6 @@ class ProfileUsersTabView extends StatelessWidget {
                     ),
                 failure: state.failure,
                 specificMessage: none(),
-                // TODO: Find way to distinguish what feed was being watched to show the proper not found message
-                // "notFoundErrorFollowing"
-                // "notFoundErrorFollowed"
               ),
             ),
             Align(

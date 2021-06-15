@@ -15,9 +15,6 @@ import 'package:worldon/domain/core/validation/objects/unique_id.dart';
 part 'achievement_dto.freezed.dart';
 part 'achievement_dto.g.dart';
 
-// TODO: Create DTOs that properly reflect the denormalized nature of the database
-// For example in the Experience it makes sense to have the names of the tags of the experience
-// but not the rest of the tag data, that way the documents in Firebase can be smaller neater and the transformation to and from domain easier
 @freezed
 class AchievementDto with _$AchievementDto {
   const AchievementDto._();

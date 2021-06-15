@@ -26,7 +26,6 @@ class Experience with _$Experience {
   const Experience._();
 
   const factory Experience({
-    // TODO: Add dislike counters
     required UniqueId id,
     required Name title,
     required EntityDescription description,

@@ -12,9 +12,7 @@ class MessagesButton extends StatelessWidget {
         Icons.message,
         size: 30,
       ),
-      onPressed: () {
-        // TODO: Navigate to MessagesPage
-      },
+      onPressed: () {},
     );
   }
 }

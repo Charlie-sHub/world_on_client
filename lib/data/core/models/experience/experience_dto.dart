@@ -45,7 +45,7 @@ class ExperienceDto with _$ExperienceDto {
     required Set<CommentDto> comments,
     required Set<String> likedBy,
     required Set<String> doneBy,
-    Set<String?>? toDoBy,
+    required Set<String> toDoBy,
     required bool isPromoted,
   }) = _ExperienceDto;
 
@@ -89,7 +89,7 @@ class ExperienceDto with _$ExperienceDto {
         comments: {},
         likedBy: likedBy.map((_id) => UniqueId.fromUniqueString(_id)).toSet(),
         doneBy: doneBy.map((_id) => UniqueId.fromUniqueString(_id)).toSet(),
-        toDoBy: toDoBy != null ? toDoBy!.map((_id) => UniqueId.fromUniqueString(_id!)).toSet() : <UniqueId>{},
+        toDoBy: toDoBy.map((_id) => UniqueId.fromUniqueString(_id)).toSet(),
         isPromoted: isPromoted,
       );
 

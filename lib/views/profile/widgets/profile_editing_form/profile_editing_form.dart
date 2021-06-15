@@ -53,8 +53,6 @@ class ProfileEditingForm extends StatelessWidget {
                           child: Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: <Widget>[
-                              // TODO: Refactor the text fields so they can be used in the register page too
-                              // Passing the event adding function as a parameter, like with the tag addition
                               NameTextFormField(
                                 initialValue: user.name.getOrCrash(),
                               ),

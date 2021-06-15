@@ -22,8 +22,6 @@ import 'package:worldon/domain/core/entities/item/item.dart';
 import 'package:worldon/domain/core/entities/promotion_plan/promotion_plan.dart';
 import 'package:worldon/domain/store/repository/store_repository_interface.dart';
 
-// TODO: Make IOS friendly version of this repository
-// The code must be slightly different for IOS
 @LazySingleton(as: StoreRepositoryInterface, env: [Environment.prod])
 class ProductionStoreRepository implements StoreRepositoryInterface {
   final _logger = Logger();

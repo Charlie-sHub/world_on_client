@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 import 'package:worldon/domain/core/entities/comment/comment.dart';
 import 'package:worldon/views/core/widgets/misc/user_image.dart';
 
-// TODO: Implement report functionality, edit and delete
 class CommentCard extends StatelessWidget {
   const CommentCard({
     Key? key,

@@ -65,7 +65,6 @@ const $Experience = _$ExperienceTearOff();
 
 /// @nodoc
 mixin _$Experience {
-// TODO: Add dislike counters
   UniqueId get id => throw _privateConstructorUsedError;
 
   Name get title => throw _privateConstructorUsedError;
@@ -96,11 +95,8 @@ mixin _$Experience {
 
   Set<Comment> get comments => throw _privateConstructorUsedError;
   Set<UniqueId> get likedBy => throw _privateConstructorUsedError;
-
   Set<UniqueId> get doneBy => throw _privateConstructorUsedError;
-
   Set<UniqueId> get toDoBy => throw _privateConstructorUsedError;
-
   bool get isPromoted => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
@@ -438,7 +434,7 @@ class _$_Experience extends _Experience {
       required this.isPromoted})
       : super._();
 
-  @override // TODO: Add dislike counters
+  @override
   final UniqueId id;
   @override
   final Name title;
@@ -558,7 +554,7 @@ abstract class _Experience extends Experience {
       required bool isPromoted}) = _$_Experience;
   const _Experience._() : super._();
 
-  @override // TODO: Add dislike counters
+  @override
   UniqueId get id => throw _privateConstructorUsedError;
   @override
   Name get title => throw _privateConstructorUsedError;
@@ -585,22 +581,16 @@ abstract class _Experience extends Experience {
   PastDate get modificationDate => throw _privateConstructorUsedError;
   @override
   ObjectiveList get objectives => throw _privateConstructorUsedError;
-
   @override
   RewardSet get rewards => throw _privateConstructorUsedError;
-
   @override
   TagSet get tags => throw _privateConstructorUsedError;
-
   @override
   Set<Comment> get comments => throw _privateConstructorUsedError;
-
   @override
   Set<UniqueId> get likedBy => throw _privateConstructorUsedError;
-
   @override
   Set<UniqueId> get doneBy => throw _privateConstructorUsedError;
-
   @override
   Set<UniqueId> get toDoBy => throw _privateConstructorUsedError;
 

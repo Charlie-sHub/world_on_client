@@ -222,6 +222,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "tapToReload": MessageLookupByLibrary.simpleMessage("Tap to reload"),
         "times": MessageLookupByLibrary.simpleMessage("times"),
         "title": MessageLookupByLibrary.simpleMessage("Title"),
+        "toDoBy": MessageLookupByLibrary.simpleMessage("To do by:"),
         "unAvailableStore": MessageLookupByLibrary.simpleMessage("The store is unavailable to you"),
         "unCheckedEulaMessage": MessageLookupByLibrary.simpleMessage("Please check the EULA"),
         "unauthorizedError": MessageLookupByLibrary.simpleMessage("You\'re not authorized to do that"),

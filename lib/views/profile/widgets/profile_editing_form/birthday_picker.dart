@@ -22,7 +22,6 @@ class BirthdayPicker extends StatelessWidget {
               ProfileEditingFormEvent.birthdayChanged(_birthDate!),
             );
       },
-      // TODO: Make it so the text changes to the selected date after selection or the failure
       child: Text(S.of(context).selectBirthday),
     );
   }

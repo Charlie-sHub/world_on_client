@@ -54,8 +54,6 @@ class ExperienceCommentsListView extends StatelessWidget {
                       ),
                       child: ListView.separated(
                         itemCount: state.comments.size,
-                        // TODO: shrinkWrap is an expensive operation
-                        // might not be a good idea to use this for the comment list
                         shrinkWrap: true,
                         physics: const ClampingScrollPhysics(),
                         separatorBuilder: (context, index) => const Divider(

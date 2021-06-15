@@ -63,9 +63,6 @@ class MapTabView extends StatelessWidget {
         _objective.coordinates.longitude.getOrCrash(),
       ),
       infoWindow: InfoWindow(
-        // TODO: Rework this so tapping on the info window also accomplishes the objective
-        // Tried that before but leads to some odd behaviour
-        // Gotta look into it more carefully later
         title: _objective.description.getOrCrash(),
         snippet: S.of(context).mapMarkerSnippet,
       ),

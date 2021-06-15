@@ -64,8 +64,6 @@ class ExperienceCreationForm extends StatelessWidget {
                 const SizedBox(height: 5),
                 const Divider(thickness: 2),
                 const SizedBox(height: 5),
-                // TODO: Figure out why the map can't be constant
-                // adding const freezes the map, meaning the marker can't change position
                 Map(),
                 const SizedBox(height: 5),
                 const Divider(thickness: 2),

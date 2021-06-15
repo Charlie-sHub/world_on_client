@@ -25,6 +25,4 @@ abstract class AuthenticationRepositoryInterface {
 
   /// Logs out of the application
   Future<void> logOut();
-
-// TODO: Add login and registration support with Twitter and Facebook
 }
