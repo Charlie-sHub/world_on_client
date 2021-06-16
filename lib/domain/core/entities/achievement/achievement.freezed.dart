@@ -377,7 +377,6 @@ abstract class _Achievement extends Achievement {
   Name get name => throw _privateConstructorUsedError;
   @override
   EntityDescription get description => throw _privateConstructorUsedError;
-
   @override
   String get imageURL => throw _privateConstructorUsedError;
   @override

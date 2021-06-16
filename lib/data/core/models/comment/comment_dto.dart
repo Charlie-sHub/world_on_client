@@ -1,7 +1,7 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:worldon/data/core/misc/server_timestamp_converter.dart';
-import 'package:worldon/data/core/models/user/user_dto.dart';
+import 'package:worldon/data/core/models/user/simple_user_dto.dart';
 import 'package:worldon/domain/core/entities/comment/comment.dart';
 import 'package:worldon/domain/core/validation/objects/comment_content.dart';
 import 'package:worldon/domain/core/validation/objects/past_date.dart';
@@ -16,7 +16,7 @@ class CommentDto with _$CommentDto {
 
   const factory CommentDto({
     @JsonKey(ignore: true) String? id,
-    required UserDto poster,
+    required SimpleUserDto poster,
     required String experienceId,
     required String content,
     @ServerTimestampConverter() required DateTime creationDate,
@@ -25,7 +25,7 @@ class CommentDto with _$CommentDto {
 
   factory CommentDto.fromDomain(Comment comment) => CommentDto(
         id: comment.id.getOrCrash(),
-        poster: UserDto.fromDomain(comment.poster),
+        poster: SimpleUserDto.fromDomain(comment.poster),
         experienceId: comment.experienceId.getOrCrash(),
         content: comment.content.getOrCrash(),
         creationDate: comment.creationDate.getOrCrash(),

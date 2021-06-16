@@ -25,7 +25,7 @@ class SimpleSquareUserCard extends StatelessWidget {
     return InkWell(
       onTap: () => context.read<NavigationActorBloc>().add(
             NavigationActorEvent.profileTapped(
-              userOption: some(user),
+              userIdOption: some(user.id),
               currentUserProfile: false,
             ),
           ),
@@ -39,7 +39,7 @@ class SimpleSquareUserCard extends StatelessWidget {
               BlocProvider(
                 create: (context) => getIt<FollowActorBloc>()
                   ..add(
-                    FollowActorEvent.initialized(user),
+                    FollowActorEvent.initialized(user.id),
                   ),
                 child: BlocBuilder<FollowActorBloc, FollowActorState>(
                   builder: (context, state) => state.maybeMap(

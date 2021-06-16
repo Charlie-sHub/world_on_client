@@ -16,21 +16,21 @@ final _privateConstructorUsedError = UnsupportedError(
 class _$FollowActorEventTearOff {
   const _$FollowActorEventTearOff();
 
-  _Initialized initialized(User user) {
+  _Initialized initialized(UniqueId userId) {
     return _Initialized(
-      user,
+      userId,
     );
   }
 
-  _Followed followed(User user) {
+  _Followed followed(UniqueId userId) {
     return _Followed(
-      user,
+      userId,
     );
   }
 
-  _UnFollowed unFollowed(User user) {
+  _UnFollowed unFollowed(UniqueId userId) {
     return _UnFollowed(
-      user,
+      userId,
     );
   }
 }
@@ -40,20 +40,20 @@ const $FollowActorEvent = _$FollowActorEventTearOff();
 
 /// @nodoc
 mixin _$FollowActorEvent {
-  User get user => throw _privateConstructorUsedError;
+  UniqueId get userId => throw _privateConstructorUsedError;
 
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(User user) initialized,
-    required TResult Function(User user) followed,
-    required TResult Function(User user) unFollowed,
+    required TResult Function(UniqueId userId) initialized,
+    required TResult Function(UniqueId userId) followed,
+    required TResult Function(UniqueId userId) unFollowed,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(User user)? initialized,
-    TResult Function(User user)? followed,
-    TResult Function(User user)? unFollowed,
+    TResult Function(UniqueId userId)? initialized,
+    TResult Function(UniqueId userId)? followed,
+    TResult Function(UniqueId userId)? unFollowed,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -81,9 +81,7 @@ mixin _$FollowActorEvent {
 abstract class $FollowActorEventCopyWith<$Res> {
   factory $FollowActorEventCopyWith(FollowActorEvent value, $Res Function(FollowActorEvent) then) = _$FollowActorEventCopyWithImpl<$Res>;
 
-  $Res call({User user});
-
-  $UserCopyWith<$Res> get user;
+  $Res call({UniqueId userId});
 }
 
 /// @nodoc
@@ -97,21 +95,14 @@ class _$FollowActorEventCopyWithImpl<$Res> implements $FollowActorEventCopyWith<
 
   @override
   $Res call({
-    Object? user = freezed,
+    Object? userId = freezed,
   }) {
     return _then(_value.copyWith(
-      user: user == freezed
-          ? _value.user
-          : user // ignore: cast_nullable_to_non_nullable
-              as User,
+      userId: userId == freezed
+          ? _value.userId
+          : userId // ignore: cast_nullable_to_non_nullable
+              as UniqueId,
     ));
-  }
-
-  @override
-  $UserCopyWith<$Res> get user {
-    return $UserCopyWith<$Res>(_value.user, (value) {
-      return _then(_value.copyWith(user: value));
-    });
   }
 }
 
@@ -120,10 +111,7 @@ abstract class _$InitializedCopyWith<$Res> implements $FollowActorEventCopyWith<
   factory _$InitializedCopyWith(_Initialized value, $Res Function(_Initialized) then) = __$InitializedCopyWithImpl<$Res>;
 
   @override
-  $Res call({User user});
-
-  @override
-  $UserCopyWith<$Res> get user;
+  $Res call({UniqueId userId});
 }
 
 /// @nodoc
@@ -135,13 +123,13 @@ class __$InitializedCopyWithImpl<$Res> extends _$FollowActorEventCopyWithImpl<$R
 
   @override
   $Res call({
-    Object? user = freezed,
+    Object? userId = freezed,
   }) {
     return _then(_Initialized(
-      user == freezed
-          ? _value.user
-          : user // ignore: cast_nullable_to_non_nullable
-              as User,
+      userId == freezed
+          ? _value.userId
+          : userId // ignore: cast_nullable_to_non_nullable
+              as UniqueId,
     ));
   }
 }
@@ -149,23 +137,23 @@ class __$InitializedCopyWithImpl<$Res> extends _$FollowActorEventCopyWithImpl<$R
 /// @nodoc
 
 class _$_Initialized implements _Initialized {
-  const _$_Initialized(this.user);
+  const _$_Initialized(this.userId);
 
   @override
-  final User user;
+  final UniqueId userId;
 
   @override
   String toString() {
-    return 'FollowActorEvent.initialized(user: $user)';
+    return 'FollowActorEvent.initialized(userId: $userId)';
   }
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _Initialized && (identical(other.user, user) || const DeepCollectionEquality().equals(other.user, user)));
+    return identical(this, other) || (other is _Initialized && (identical(other.userId, userId) || const DeepCollectionEquality().equals(other.userId, userId)));
   }
 
   @override
-  int get hashCode => runtimeType.hashCode ^ const DeepCollectionEquality().hash(user);
+  int get hashCode => runtimeType.hashCode ^ const DeepCollectionEquality().hash(userId);
 
   @JsonKey(ignore: true)
   @override
@@ -174,23 +162,23 @@ class _$_Initialized implements _Initialized {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(User user) initialized,
-    required TResult Function(User user) followed,
-    required TResult Function(User user) unFollowed,
+    required TResult Function(UniqueId userId) initialized,
+    required TResult Function(UniqueId userId) followed,
+    required TResult Function(UniqueId userId) unFollowed,
   }) {
-    return initialized(user);
+    return initialized(userId);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(User user)? initialized,
-    TResult Function(User user)? followed,
-    TResult Function(User user)? unFollowed,
+    TResult Function(UniqueId userId)? initialized,
+    TResult Function(UniqueId userId)? followed,
+    TResult Function(UniqueId userId)? unFollowed,
     required TResult orElse(),
   }) {
     if (initialized != null) {
-      return initialized(user);
+      return initialized(userId);
     }
     return orElse();
   }
@@ -221,10 +209,10 @@ class _$_Initialized implements _Initialized {
 }
 
 abstract class _Initialized implements FollowActorEvent {
-  const factory _Initialized(User user) = _$_Initialized;
+  const factory _Initialized(UniqueId userId) = _$_Initialized;
 
   @override
-  User get user => throw _privateConstructorUsedError;
+  UniqueId get userId => throw _privateConstructorUsedError;
 
   @override
   @JsonKey(ignore: true)
@@ -236,10 +224,7 @@ abstract class _$FollowedCopyWith<$Res> implements $FollowActorEventCopyWith<$Re
   factory _$FollowedCopyWith(_Followed value, $Res Function(_Followed) then) = __$FollowedCopyWithImpl<$Res>;
 
   @override
-  $Res call({User user});
-
-  @override
-  $UserCopyWith<$Res> get user;
+  $Res call({UniqueId userId});
 }
 
 /// @nodoc
@@ -251,13 +236,13 @@ class __$FollowedCopyWithImpl<$Res> extends _$FollowActorEventCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object? user = freezed,
+    Object? userId = freezed,
   }) {
     return _then(_Followed(
-      user == freezed
-          ? _value.user
-          : user // ignore: cast_nullable_to_non_nullable
-              as User,
+      userId == freezed
+          ? _value.userId
+          : userId // ignore: cast_nullable_to_non_nullable
+              as UniqueId,
     ));
   }
 }
@@ -265,23 +250,23 @@ class __$FollowedCopyWithImpl<$Res> extends _$FollowActorEventCopyWithImpl<$Res>
 /// @nodoc
 
 class _$_Followed implements _Followed {
-  const _$_Followed(this.user);
+  const _$_Followed(this.userId);
 
   @override
-  final User user;
+  final UniqueId userId;
 
   @override
   String toString() {
-    return 'FollowActorEvent.followed(user: $user)';
+    return 'FollowActorEvent.followed(userId: $userId)';
   }
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _Followed && (identical(other.user, user) || const DeepCollectionEquality().equals(other.user, user)));
+    return identical(this, other) || (other is _Followed && (identical(other.userId, userId) || const DeepCollectionEquality().equals(other.userId, userId)));
   }
 
   @override
-  int get hashCode => runtimeType.hashCode ^ const DeepCollectionEquality().hash(user);
+  int get hashCode => runtimeType.hashCode ^ const DeepCollectionEquality().hash(userId);
 
   @JsonKey(ignore: true)
   @override
@@ -290,23 +275,23 @@ class _$_Followed implements _Followed {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(User user) initialized,
-    required TResult Function(User user) followed,
-    required TResult Function(User user) unFollowed,
+    required TResult Function(UniqueId userId) initialized,
+    required TResult Function(UniqueId userId) followed,
+    required TResult Function(UniqueId userId) unFollowed,
   }) {
-    return followed(user);
+    return followed(userId);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(User user)? initialized,
-    TResult Function(User user)? followed,
-    TResult Function(User user)? unFollowed,
+    TResult Function(UniqueId userId)? initialized,
+    TResult Function(UniqueId userId)? followed,
+    TResult Function(UniqueId userId)? unFollowed,
     required TResult orElse(),
   }) {
     if (followed != null) {
-      return followed(user);
+      return followed(userId);
     }
     return orElse();
   }
@@ -337,10 +322,10 @@ class _$_Followed implements _Followed {
 }
 
 abstract class _Followed implements FollowActorEvent {
-  const factory _Followed(User user) = _$_Followed;
+  const factory _Followed(UniqueId userId) = _$_Followed;
 
   @override
-  User get user => throw _privateConstructorUsedError;
+  UniqueId get userId => throw _privateConstructorUsedError;
 
   @override
   @JsonKey(ignore: true)
@@ -352,10 +337,7 @@ abstract class _$UnFollowedCopyWith<$Res> implements $FollowActorEventCopyWith<$
   factory _$UnFollowedCopyWith(_UnFollowed value, $Res Function(_UnFollowed) then) = __$UnFollowedCopyWithImpl<$Res>;
 
   @override
-  $Res call({User user});
-
-  @override
-  $UserCopyWith<$Res> get user;
+  $Res call({UniqueId userId});
 }
 
 /// @nodoc
@@ -367,13 +349,13 @@ class __$UnFollowedCopyWithImpl<$Res> extends _$FollowActorEventCopyWithImpl<$Re
 
   @override
   $Res call({
-    Object? user = freezed,
+    Object? userId = freezed,
   }) {
     return _then(_UnFollowed(
-      user == freezed
-          ? _value.user
-          : user // ignore: cast_nullable_to_non_nullable
-              as User,
+      userId == freezed
+          ? _value.userId
+          : userId // ignore: cast_nullable_to_non_nullable
+              as UniqueId,
     ));
   }
 }
@@ -381,23 +363,23 @@ class __$UnFollowedCopyWithImpl<$Res> extends _$FollowActorEventCopyWithImpl<$Re
 /// @nodoc
 
 class _$_UnFollowed implements _UnFollowed {
-  const _$_UnFollowed(this.user);
+  const _$_UnFollowed(this.userId);
 
   @override
-  final User user;
+  final UniqueId userId;
 
   @override
   String toString() {
-    return 'FollowActorEvent.unFollowed(user: $user)';
+    return 'FollowActorEvent.unFollowed(userId: $userId)';
   }
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _UnFollowed && (identical(other.user, user) || const DeepCollectionEquality().equals(other.user, user)));
+    return identical(this, other) || (other is _UnFollowed && (identical(other.userId, userId) || const DeepCollectionEquality().equals(other.userId, userId)));
   }
 
   @override
-  int get hashCode => runtimeType.hashCode ^ const DeepCollectionEquality().hash(user);
+  int get hashCode => runtimeType.hashCode ^ const DeepCollectionEquality().hash(userId);
 
   @JsonKey(ignore: true)
   @override
@@ -406,23 +388,23 @@ class _$_UnFollowed implements _UnFollowed {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(User user) initialized,
-    required TResult Function(User user) followed,
-    required TResult Function(User user) unFollowed,
+    required TResult Function(UniqueId userId) initialized,
+    required TResult Function(UniqueId userId) followed,
+    required TResult Function(UniqueId userId) unFollowed,
   }) {
-    return unFollowed(user);
+    return unFollowed(userId);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(User user)? initialized,
-    TResult Function(User user)? followed,
-    TResult Function(User user)? unFollowed,
+    TResult Function(UniqueId userId)? initialized,
+    TResult Function(UniqueId userId)? followed,
+    TResult Function(UniqueId userId)? unFollowed,
     required TResult orElse(),
   }) {
     if (unFollowed != null) {
-      return unFollowed(user);
+      return unFollowed(userId);
     }
     return orElse();
   }
@@ -453,10 +435,10 @@ class _$_UnFollowed implements _UnFollowed {
 }
 
 abstract class _UnFollowed implements FollowActorEvent {
-  const factory _UnFollowed(User user) = _$_UnFollowed;
+  const factory _UnFollowed(UniqueId userId) = _$_UnFollowed;
 
   @override
-  User get user => throw _privateConstructorUsedError;
+  UniqueId get userId => throw _privateConstructorUsedError;
 
   @override
   @JsonKey(ignore: true)

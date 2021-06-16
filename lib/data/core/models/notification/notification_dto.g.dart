@@ -8,8 +8,8 @@ part of 'notification_dto.dart';
 
 _$_NotificationDto _$_$_NotificationDtoFromJson(Map<String, dynamic> json) {
   return _$_NotificationDto(
-    sender: UserDto.fromJson(json['sender'] as Map<String, dynamic>),
-    receiver: UserDto.fromJson(json['receiver'] as Map<String, dynamic>),
+    sender: SimpleUserDto.fromJson(json['sender'] as Map<String, dynamic>),
+    receiverId: json['receiverId'] as String,
     description: json['description'] as String,
     seen: json['seen'] as bool,
     creationDate: const ServerTimestampConverter().fromJson(json['creationDate'] as Timestamp),
@@ -20,7 +20,7 @@ _$_NotificationDto _$_$_NotificationDtoFromJson(Map<String, dynamic> json) {
 
 Map<String, dynamic> _$_$_NotificationDtoToJson(_$_NotificationDto instance) => <String, dynamic>{
       'sender': instance.sender.toJson(),
-      'receiver': instance.receiver.toJson(),
+      'receiverId': instance.receiverId,
       'description': instance.description,
       'seen': instance.seen,
       'creationDate': const ServerTimestampConverter().toJson(instance.creationDate),

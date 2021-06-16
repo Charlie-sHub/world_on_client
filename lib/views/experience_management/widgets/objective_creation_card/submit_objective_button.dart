@@ -14,14 +14,7 @@ class SubmitObjectiveButton extends StatelessWidget {
       onPressed: () => context.read<ObjectiveFormBloc>().add(
             const ObjectiveFormEvent.submitted(),
           ),
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: <Widget>[
-          const Icon(Icons.check),
-          const SizedBox(width: 5),
-          Text(S.of(context).submitButton),
-        ],
-      ),
+      child: Text(S.of(context).createObjective),
     );
   }
 }

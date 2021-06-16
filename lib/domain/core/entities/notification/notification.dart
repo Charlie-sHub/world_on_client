@@ -2,6 +2,7 @@ import 'package:dartz/dartz.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:worldon/domain/core/entities/experience/experience.dart';
 import 'package:worldon/domain/core/entities/notification/notification_type_enum.dart';
+import 'package:worldon/domain/core/entities/user/simple_user.dart';
 import 'package:worldon/domain/core/entities/user/user.dart';
 import 'package:worldon/domain/core/failures/value_failure.dart';
 import 'package:worldon/domain/core/validation/objects/entity_description.dart';
@@ -19,8 +20,8 @@ class Notification with _$Notification {
 
   const factory Notification({
     required UniqueId id,
-    required User sender,
-    required User receiver,
+    required SimpleUser sender,
+    required UniqueId receiverId,
     required EntityDescription description,
     required bool seen,
     required PastDate creationDate,
@@ -30,8 +31,8 @@ class Notification with _$Notification {
 
   factory Notification.empty() => Notification(
         id: UniqueId(),
-        sender: User.empty(),
-        receiver: User.empty(),
+        sender: SimpleUser.empty(),
+        receiverId: UniqueId(),
         description: EntityDescription(""),
         seen: false,
         creationDate: PastDate(DateTime.now()),
@@ -40,7 +41,7 @@ class Notification with _$Notification {
       );
 
   Option<ValueFailure<dynamic>> get failureOption {
-    return description.failureOrUnit.andThen(receiver.failureOrUnit).andThen(sender.failureOrUnit).andThen(creationDate.failureOrUnit).fold(
+    return description.failureOrUnit.andThen(sender.failureOrUnit).andThen(creationDate.failureOrUnit).fold(
           (failure) => some(failure),
           (_) => none(),
         );

@@ -28,7 +28,7 @@ class _$ExperienceDtoTearOff {
       required CoordinatesDto coordinates,
       required LocationDto location,
       required String creatorId,
-      required UserDto creator,
+      required SimpleUserDto creator,
       required int difficulty,
       @ServerTimestampConverter() required DateTime creationDate,
       @ServerTimestampConverter() required DateTime modificationDate,
@@ -79,8 +79,11 @@ mixin _$ExperienceDto {
   Set<String> get imageURLs => throw _privateConstructorUsedError;
   CoordinatesDto get coordinates => throw _privateConstructorUsedError;
   LocationDto get location => throw _privateConstructorUsedError;
+
   String get creatorId => throw _privateConstructorUsedError;
-  UserDto get creator => throw _privateConstructorUsedError;
+
+  SimpleUserDto get creator => throw _privateConstructorUsedError;
+
   int get difficulty => throw _privateConstructorUsedError;
   @ServerTimestampConverter()
   DateTime get creationDate => throw _privateConstructorUsedError;
@@ -91,11 +94,8 @@ mixin _$ExperienceDto {
   Set<TagDto> get tags => throw _privateConstructorUsedError;
   Set<CommentDto> get comments => throw _privateConstructorUsedError;
   Set<String> get likedBy => throw _privateConstructorUsedError;
-
   Set<String> get doneBy => throw _privateConstructorUsedError;
-
   Set<String> get toDoBy => throw _privateConstructorUsedError;
-
   bool get isPromoted => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -116,7 +116,7 @@ abstract class $ExperienceDtoCopyWith<$Res> {
       CoordinatesDto coordinates,
       LocationDto location,
       String creatorId,
-      UserDto creator,
+      SimpleUserDto creator,
       int difficulty,
       @ServerTimestampConverter() DateTime creationDate,
       @ServerTimestampConverter() DateTime modificationDate,
@@ -130,8 +130,10 @@ abstract class $ExperienceDtoCopyWith<$Res> {
       bool isPromoted});
 
   $CoordinatesDtoCopyWith<$Res> get coordinates;
+
   $LocationDtoCopyWith<$Res> get location;
-  $UserDtoCopyWith<$Res> get creator;
+
+  $SimpleUserDtoCopyWith<$Res> get creator;
 }
 
 /// @nodoc
@@ -197,7 +199,7 @@ class _$ExperienceDtoCopyWithImpl<$Res> implements $ExperienceDtoCopyWith<$Res> 
       creator: creator == freezed
           ? _value.creator
           : creator // ignore: cast_nullable_to_non_nullable
-              as UserDto,
+              as SimpleUserDto,
       difficulty: difficulty == freezed
           ? _value.difficulty
           : difficulty // ignore: cast_nullable_to_non_nullable
@@ -260,8 +262,8 @@ class _$ExperienceDtoCopyWithImpl<$Res> implements $ExperienceDtoCopyWith<$Res> 
   }
 
   @override
-  $UserDtoCopyWith<$Res> get creator {
-    return $UserDtoCopyWith<$Res>(_value.creator, (value) {
+  $SimpleUserDtoCopyWith<$Res> get creator {
+    return $SimpleUserDtoCopyWith<$Res>(_value.creator, (value) {
       return _then(_value.copyWith(creator: value));
     });
   }
@@ -280,7 +282,7 @@ abstract class _$ExperienceDtoCopyWith<$Res> implements $ExperienceDtoCopyWith<$
       CoordinatesDto coordinates,
       LocationDto location,
       String creatorId,
-      UserDto creator,
+      SimpleUserDto creator,
       int difficulty,
       @ServerTimestampConverter() DateTime creationDate,
       @ServerTimestampConverter() DateTime modificationDate,
@@ -295,10 +297,12 @@ abstract class _$ExperienceDtoCopyWith<$Res> implements $ExperienceDtoCopyWith<$
 
   @override
   $CoordinatesDtoCopyWith<$Res> get coordinates;
+
   @override
   $LocationDtoCopyWith<$Res> get location;
+
   @override
-  $UserDtoCopyWith<$Res> get creator;
+  $SimpleUserDtoCopyWith<$Res> get creator;
 }
 
 /// @nodoc
@@ -362,7 +366,7 @@ class __$ExperienceDtoCopyWithImpl<$Res> extends _$ExperienceDtoCopyWithImpl<$Re
       creator: creator == freezed
           ? _value.creator
           : creator // ignore: cast_nullable_to_non_nullable
-              as UserDto,
+              as SimpleUserDto,
       difficulty: difficulty == freezed
           ? _value.difficulty
           : difficulty // ignore: cast_nullable_to_non_nullable
@@ -453,7 +457,7 @@ class _$_ExperienceDto extends _ExperienceDto {
   @override
   final String creatorId;
   @override
-  final UserDto creator;
+  final SimpleUserDto creator;
   @override
   final int difficulty;
   @override
@@ -551,7 +555,7 @@ abstract class _ExperienceDto extends ExperienceDto {
       required CoordinatesDto coordinates,
       required LocationDto location,
       required String creatorId,
-      required UserDto creator,
+      required SimpleUserDto creator,
       required int difficulty,
       @ServerTimestampConverter() required DateTime creationDate,
       @ServerTimestampConverter() required DateTime modificationDate,
@@ -584,10 +588,13 @@ abstract class _ExperienceDto extends ExperienceDto {
   CoordinatesDto get coordinates => throw _privateConstructorUsedError;
   @override
   LocationDto get location => throw _privateConstructorUsedError;
+
   @override
   String get creatorId => throw _privateConstructorUsedError;
+
   @override
-  UserDto get creator => throw _privateConstructorUsedError;
+  SimpleUserDto get creator => throw _privateConstructorUsedError;
+
   @override
   int get difficulty => throw _privateConstructorUsedError;
   @override
@@ -606,10 +613,8 @@ abstract class _ExperienceDto extends ExperienceDto {
   Set<CommentDto> get comments => throw _privateConstructorUsedError;
   @override
   Set<String> get likedBy => throw _privateConstructorUsedError;
-
   @override
   Set<String> get doneBy => throw _privateConstructorUsedError;
-
   @override
   Set<String> get toDoBy => throw _privateConstructorUsedError;
 

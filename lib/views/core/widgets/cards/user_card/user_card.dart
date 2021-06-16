@@ -25,12 +25,17 @@ class UserCard extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: <Widget>[
               UserImage(
-                user: user,
+                userId: user.id,
+                imageUrl: user.imageURL,
+                adminPowers: user.adminPowers,
                 avatarRadius: 30,
                 checkIconSize: 20,
               ),
-              NameUsernameDisplay(user: user),
-              FollowUnfollowButtonBuilder(user: user),
+              NameUsernameDisplay(
+                name: user.name,
+                username: user.username,
+              ),
+              FollowUnfollowButtonBuilder(userId: user.id),
               // BlockUnblockButtonBuilder(user: user),
               const SizedBox(width: 7),
             ],

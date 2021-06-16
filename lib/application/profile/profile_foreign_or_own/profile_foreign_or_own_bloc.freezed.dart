@@ -16,9 +16,9 @@ final _privateConstructorUsedError = UnsupportedError(
 class _$ProfileForeignOrOwnEventTearOff {
   const _$ProfileForeignOrOwnEventTearOff();
 
-  _InitializedForeignOrOwn initializedForeignOrOwn(Option<User> userOption) {
+  _InitializedForeignOrOwn initializedForeignOrOwn(Option<UniqueId> userIdOption) {
     return _InitializedForeignOrOwn(
-      userOption,
+      userIdOption,
     );
   }
 }
@@ -28,16 +28,16 @@ const $ProfileForeignOrOwnEvent = _$ProfileForeignOrOwnEventTearOff();
 
 /// @nodoc
 mixin _$ProfileForeignOrOwnEvent {
-  Option<User> get userOption => throw _privateConstructorUsedError;
+  Option<UniqueId> get userIdOption => throw _privateConstructorUsedError;
 
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(Option<User> userOption) initializedForeignOrOwn,
+    required TResult Function(Option<UniqueId> userIdOption) initializedForeignOrOwn,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(Option<User> userOption)? initializedForeignOrOwn,
+    TResult Function(Option<UniqueId> userIdOption)? initializedForeignOrOwn,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -52,7 +52,7 @@ mixin _$ProfileForeignOrOwnEvent {
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
-
+  
   @JsonKey(ignore: true)
   $ProfileForeignOrOwnEventCopyWith<ProfileForeignOrOwnEvent> get copyWith => throw _privateConstructorUsedError;
 }
@@ -61,7 +61,7 @@ mixin _$ProfileForeignOrOwnEvent {
 abstract class $ProfileForeignOrOwnEventCopyWith<$Res> {
   factory $ProfileForeignOrOwnEventCopyWith(ProfileForeignOrOwnEvent value, $Res Function(ProfileForeignOrOwnEvent) then) = _$ProfileForeignOrOwnEventCopyWithImpl<$Res>;
 
-  $Res call({Option<User> userOption});
+  $Res call({Option<UniqueId> userIdOption});
 }
 
 /// @nodoc
@@ -75,13 +75,13 @@ class _$ProfileForeignOrOwnEventCopyWithImpl<$Res> implements $ProfileForeignOrO
 
   @override
   $Res call({
-    Object? userOption = freezed,
+    Object? userIdOption = freezed,
   }) {
     return _then(_value.copyWith(
-      userOption: userOption == freezed
-          ? _value.userOption
-          : userOption // ignore: cast_nullable_to_non_nullable
-              as Option<User>,
+      userIdOption: userIdOption == freezed
+          ? _value.userIdOption
+          : userIdOption // ignore: cast_nullable_to_non_nullable
+              as Option<UniqueId>,
     ));
   }
 }
@@ -91,7 +91,7 @@ abstract class _$InitializedForeignOrOwnCopyWith<$Res> implements $ProfileForeig
   factory _$InitializedForeignOrOwnCopyWith(_InitializedForeignOrOwn value, $Res Function(_InitializedForeignOrOwn) then) = __$InitializedForeignOrOwnCopyWithImpl<$Res>;
 
   @override
-  $Res call({Option<User> userOption});
+  $Res call({Option<UniqueId> userIdOption});
 }
 
 /// @nodoc
@@ -103,13 +103,13 @@ class __$InitializedForeignOrOwnCopyWithImpl<$Res> extends _$ProfileForeignOrOwn
 
   @override
   $Res call({
-    Object? userOption = freezed,
+    Object? userIdOption = freezed,
   }) {
     return _then(_InitializedForeignOrOwn(
-      userOption == freezed
-          ? _value.userOption
-          : userOption // ignore: cast_nullable_to_non_nullable
-              as Option<User>,
+      userIdOption == freezed
+          ? _value.userIdOption
+          : userIdOption // ignore: cast_nullable_to_non_nullable
+              as Option<UniqueId>,
     ));
   }
 }
@@ -117,23 +117,23 @@ class __$InitializedForeignOrOwnCopyWithImpl<$Res> extends _$ProfileForeignOrOwn
 /// @nodoc
 
 class _$_InitializedForeignOrOwn implements _InitializedForeignOrOwn {
-  const _$_InitializedForeignOrOwn(this.userOption);
+  const _$_InitializedForeignOrOwn(this.userIdOption);
 
   @override
-  final Option<User> userOption;
+  final Option<UniqueId> userIdOption;
 
   @override
   String toString() {
-    return 'ProfileForeignOrOwnEvent.initializedForeignOrOwn(userOption: $userOption)';
+    return 'ProfileForeignOrOwnEvent.initializedForeignOrOwn(userIdOption: $userIdOption)';
   }
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _InitializedForeignOrOwn && (identical(other.userOption, userOption) || const DeepCollectionEquality().equals(other.userOption, userOption)));
+    return identical(this, other) || (other is _InitializedForeignOrOwn && (identical(other.userIdOption, userIdOption) || const DeepCollectionEquality().equals(other.userIdOption, userIdOption)));
   }
 
   @override
-  int get hashCode => runtimeType.hashCode ^ const DeepCollectionEquality().hash(userOption);
+  int get hashCode => runtimeType.hashCode ^ const DeepCollectionEquality().hash(userIdOption);
 
   @JsonKey(ignore: true)
   @override
@@ -142,19 +142,19 @@ class _$_InitializedForeignOrOwn implements _InitializedForeignOrOwn {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(Option<User> userOption) initializedForeignOrOwn,
+    required TResult Function(Option<UniqueId> userIdOption) initializedForeignOrOwn,
   }) {
-    return initializedForeignOrOwn(userOption);
+    return initializedForeignOrOwn(userIdOption);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(Option<User> userOption)? initializedForeignOrOwn,
+    TResult Function(Option<UniqueId> userIdOption)? initializedForeignOrOwn,
     required TResult orElse(),
   }) {
     if (initializedForeignOrOwn != null) {
-      return initializedForeignOrOwn(userOption);
+      return initializedForeignOrOwn(userIdOption);
     }
     return orElse();
   }
@@ -181,10 +181,10 @@ class _$_InitializedForeignOrOwn implements _InitializedForeignOrOwn {
 }
 
 abstract class _InitializedForeignOrOwn implements ProfileForeignOrOwnEvent {
-  const factory _InitializedForeignOrOwn(Option<User> userOption) = _$_InitializedForeignOrOwn;
+  const factory _InitializedForeignOrOwn(Option<UniqueId> userIdOption) = _$_InitializedForeignOrOwn;
 
   @override
-  Option<User> get userOption => throw _privateConstructorUsedError;
+  Option<UniqueId> get userIdOption => throw _privateConstructorUsedError;
 
   @override
   @JsonKey(ignore: true)

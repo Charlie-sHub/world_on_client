@@ -16,11 +16,11 @@ final _privateConstructorUsedError = UnsupportedError(
 class _$MessageTearOff {
   const _$MessageTearOff();
 
-  _Message call({required UniqueId id, required User sender, required User receiver, required MessageContent content, required PastDate creationDate}) {
+  _Message call({required UniqueId id, required SimpleUser sender, required UniqueId receiverId, required MessageContent content, required PastDate creationDate}) {
     return _Message(
       id: id,
       sender: sender,
-      receiver: receiver,
+      receiverId: receiverId,
       content: content,
       creationDate: creationDate,
     );
@@ -33,9 +33,13 @@ const $Message = _$MessageTearOff();
 /// @nodoc
 mixin _$Message {
   UniqueId get id => throw _privateConstructorUsedError;
-  User get sender => throw _privateConstructorUsedError;
-  User get receiver => throw _privateConstructorUsedError;
+
+  SimpleUser get sender => throw _privateConstructorUsedError;
+
+  UniqueId get receiverId => throw _privateConstructorUsedError;
+
   MessageContent get content => throw _privateConstructorUsedError;
+
   PastDate get creationDate => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
@@ -46,11 +50,9 @@ mixin _$Message {
 abstract class $MessageCopyWith<$Res> {
   factory $MessageCopyWith(Message value, $Res Function(Message) then) = _$MessageCopyWithImpl<$Res>;
 
-  $Res call({UniqueId id, User sender, User receiver, MessageContent content, PastDate creationDate});
+  $Res call({UniqueId id, SimpleUser sender, UniqueId receiverId, MessageContent content, PastDate creationDate});
 
-  $UserCopyWith<$Res> get sender;
-
-  $UserCopyWith<$Res> get receiver;
+  $SimpleUserCopyWith<$Res> get sender;
 }
 
 /// @nodoc
@@ -65,7 +67,7 @@ class _$MessageCopyWithImpl<$Res> implements $MessageCopyWith<$Res> {
   $Res call({
     Object? id = freezed,
     Object? sender = freezed,
-    Object? receiver = freezed,
+    Object? receiverId = freezed,
     Object? content = freezed,
     Object? creationDate = freezed,
   }) {
@@ -77,11 +79,11 @@ class _$MessageCopyWithImpl<$Res> implements $MessageCopyWith<$Res> {
       sender: sender == freezed
           ? _value.sender
           : sender // ignore: cast_nullable_to_non_nullable
-              as User,
-      receiver: receiver == freezed
-          ? _value.receiver
-          : receiver // ignore: cast_nullable_to_non_nullable
-              as User,
+              as SimpleUser,
+      receiverId: receiverId == freezed
+          ? _value.receiverId
+          : receiverId // ignore: cast_nullable_to_non_nullable
+              as UniqueId,
       content: content == freezed
           ? _value.content
           : content // ignore: cast_nullable_to_non_nullable
@@ -94,16 +96,9 @@ class _$MessageCopyWithImpl<$Res> implements $MessageCopyWith<$Res> {
   }
 
   @override
-  $UserCopyWith<$Res> get sender {
-    return $UserCopyWith<$Res>(_value.sender, (value) {
+  $SimpleUserCopyWith<$Res> get sender {
+    return $SimpleUserCopyWith<$Res>(_value.sender, (value) {
       return _then(_value.copyWith(sender: value));
-    });
-  }
-
-  @override
-  $UserCopyWith<$Res> get receiver {
-    return $UserCopyWith<$Res>(_value.receiver, (value) {
-      return _then(_value.copyWith(receiver: value));
     });
   }
 }
@@ -113,12 +108,10 @@ abstract class _$MessageCopyWith<$Res> implements $MessageCopyWith<$Res> {
   factory _$MessageCopyWith(_Message value, $Res Function(_Message) then) = __$MessageCopyWithImpl<$Res>;
 
   @override
-  $Res call({UniqueId id, User sender, User receiver, MessageContent content, PastDate creationDate});
+  $Res call({UniqueId id, SimpleUser sender, UniqueId receiverId, MessageContent content, PastDate creationDate});
 
   @override
-  $UserCopyWith<$Res> get sender;
-  @override
-  $UserCopyWith<$Res> get receiver;
+  $SimpleUserCopyWith<$Res> get sender;
 }
 
 /// @nodoc
@@ -132,7 +125,7 @@ class __$MessageCopyWithImpl<$Res> extends _$MessageCopyWithImpl<$Res> implement
   $Res call({
     Object? id = freezed,
     Object? sender = freezed,
-    Object? receiver = freezed,
+    Object? receiverId = freezed,
     Object? content = freezed,
     Object? creationDate = freezed,
   }) {
@@ -144,11 +137,11 @@ class __$MessageCopyWithImpl<$Res> extends _$MessageCopyWithImpl<$Res> implement
       sender: sender == freezed
           ? _value.sender
           : sender // ignore: cast_nullable_to_non_nullable
-              as User,
-      receiver: receiver == freezed
-          ? _value.receiver
-          : receiver // ignore: cast_nullable_to_non_nullable
-              as User,
+              as SimpleUser,
+      receiverId: receiverId == freezed
+          ? _value.receiverId
+          : receiverId // ignore: cast_nullable_to_non_nullable
+              as UniqueId,
       content: content == freezed
           ? _value.content
           : content // ignore: cast_nullable_to_non_nullable
@@ -164,14 +157,14 @@ class __$MessageCopyWithImpl<$Res> extends _$MessageCopyWithImpl<$Res> implement
 /// @nodoc
 
 class _$_Message extends _Message {
-  const _$_Message({required this.id, required this.sender, required this.receiver, required this.content, required this.creationDate}) : super._();
+  const _$_Message({required this.id, required this.sender, required this.receiverId, required this.content, required this.creationDate}) : super._();
 
   @override
   final UniqueId id;
   @override
-  final User sender;
+  final SimpleUser sender;
   @override
-  final User receiver;
+  final UniqueId receiverId;
   @override
   final MessageContent content;
   @override
@@ -179,7 +172,7 @@ class _$_Message extends _Message {
 
   @override
   String toString() {
-    return 'Message(id: $id, sender: $sender, receiver: $receiver, content: $content, creationDate: $creationDate)';
+    return 'Message(id: $id, sender: $sender, receiverId: $receiverId, content: $content, creationDate: $creationDate)';
   }
 
   @override
@@ -188,7 +181,7 @@ class _$_Message extends _Message {
         (other is _Message &&
             (identical(other.id, id) || const DeepCollectionEquality().equals(other.id, id)) &&
             (identical(other.sender, sender) || const DeepCollectionEquality().equals(other.sender, sender)) &&
-            (identical(other.receiver, receiver) || const DeepCollectionEquality().equals(other.receiver, receiver)) &&
+            (identical(other.receiverId, receiverId) || const DeepCollectionEquality().equals(other.receiverId, receiverId)) &&
             (identical(other.content, content) || const DeepCollectionEquality().equals(other.content, content)) &&
             (identical(other.creationDate, creationDate) || const DeepCollectionEquality().equals(other.creationDate, creationDate)));
   }
@@ -198,7 +191,7 @@ class _$_Message extends _Message {
       runtimeType.hashCode ^
       const DeepCollectionEquality().hash(id) ^
       const DeepCollectionEquality().hash(sender) ^
-      const DeepCollectionEquality().hash(receiver) ^
+      const DeepCollectionEquality().hash(receiverId) ^
       const DeepCollectionEquality().hash(content) ^
       const DeepCollectionEquality().hash(creationDate);
 
@@ -208,7 +201,7 @@ class _$_Message extends _Message {
 }
 
 abstract class _Message extends Message {
-  const factory _Message({required UniqueId id, required User sender, required User receiver, required MessageContent content, required PastDate creationDate}) = _$_Message;
+  const factory _Message({required UniqueId id, required SimpleUser sender, required UniqueId receiverId, required MessageContent content, required PastDate creationDate}) = _$_Message;
 
   const _Message._() : super._();
 
@@ -216,10 +209,10 @@ abstract class _Message extends Message {
   UniqueId get id => throw _privateConstructorUsedError;
 
   @override
-  User get sender => throw _privateConstructorUsedError;
+  SimpleUser get sender => throw _privateConstructorUsedError;
 
   @override
-  User get receiver => throw _privateConstructorUsedError;
+  UniqueId get receiverId => throw _privateConstructorUsedError;
 
   @override
   MessageContent get content => throw _privateConstructorUsedError;

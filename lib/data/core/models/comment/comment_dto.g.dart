@@ -8,7 +8,7 @@ part of 'comment_dto.dart';
 
 _$_CommentDto _$_$_CommentDtoFromJson(Map<String, dynamic> json) {
   return _$_CommentDto(
-    poster: UserDto.fromJson(json['poster'] as Map<String, dynamic>),
+    poster: SimpleUserDto.fromJson(json['poster'] as Map<String, dynamic>),
     experienceId: json['experienceId'] as String,
     content: json['content'] as String,
     creationDate: const ServerTimestampConverter().fromJson(json['creationDate'] as Timestamp),

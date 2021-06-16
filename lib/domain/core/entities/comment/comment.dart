@@ -1,6 +1,7 @@
 import 'package:dartz/dartz.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:worldon/domain/core/entities/experience/experience.dart';
+import 'package:worldon/domain/core/entities/user/simple_user.dart';
 import 'package:worldon/domain/core/entities/user/user.dart';
 import 'package:worldon/domain/core/failures/value_failure.dart';
 import 'package:worldon/domain/core/validation/objects/comment_content.dart';
@@ -18,7 +19,7 @@ class Comment with _$Comment {
 
   const factory Comment({
     required UniqueId id,
-    required User poster,
+    required SimpleUser poster,
     required UniqueId experienceId,
     required CommentContent content,
     required PastDate creationDate,
@@ -27,7 +28,7 @@ class Comment with _$Comment {
 
   factory Comment.empty() => Comment(
         id: UniqueId(),
-        poster: User.empty(),
+        poster: SimpleUser.empty(),
         experienceId: UniqueId(),
         content: CommentContent(""),
         creationDate: PastDate(DateTime.now()),

@@ -1,14 +1,16 @@
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
-import 'package:worldon/domain/core/entities/user/user.dart';
+import 'package:worldon/domain/core/validation/objects/name.dart';
 
 class NameUsernameDisplay extends StatelessWidget {
   const NameUsernameDisplay({
     Key? key,
-    required this.user,
+    required this.name,
+    required this.username,
   }) : super(key: key);
 
-  final User user;
+  final Name name;
+  final Name username;
 
   @override
   Widget build(BuildContext context) {
@@ -18,7 +20,7 @@ class NameUsernameDisplay extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: <Widget>[
           AutoSizeText(
-            user.name.getOrCrash(),
+            name.getOrCrash(),
             overflow: TextOverflow.fade,
             softWrap: true,
             style: const TextStyle(
@@ -27,7 +29,7 @@ class NameUsernameDisplay extends StatelessWidget {
             ),
           ),
           AutoSizeText(
-            "@${user.username.getOrCrash()}",
+            "@${username.getOrCrash()}",
             overflow: TextOverflow.fade,
             style: const TextStyle(
               fontSize: 12,

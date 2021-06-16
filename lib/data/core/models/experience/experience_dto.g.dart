@@ -15,7 +15,7 @@ _$_ExperienceDto _$_$_ExperienceDtoFromJson(Map<String, dynamic> json) {
     coordinates: CoordinatesDto.fromJson(json['coordinates'] as Map<String, dynamic>),
     location: LocationDto.fromJson(json['location'] as Map<String, dynamic>),
     creatorId: json['creatorId'] as String,
-    creator: UserDto.fromJson(json['creator'] as Map<String, dynamic>),
+    creator: SimpleUserDto.fromJson(json['creator'] as Map<String, dynamic>),
     difficulty: json['difficulty'] as int,
     creationDate: const ServerTimestampConverter().fromJson(json['creationDate'] as Timestamp),
     modificationDate: const ServerTimestampConverter().fromJson(json['modificationDate'] as Timestamp),

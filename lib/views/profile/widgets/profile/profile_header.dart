@@ -96,7 +96,7 @@ class ProfileHeader extends SliverPersistentHeaderDelegate {
           )
         else
           FollowUnfollowButtonBuilder(
-            user: user,
+            userId: user.id,
           ),
         const SizedBox(height: 5),
       ],

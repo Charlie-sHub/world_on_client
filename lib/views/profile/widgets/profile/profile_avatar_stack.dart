@@ -20,6 +20,7 @@ class ProfileAvatarStack extends StatelessWidget {
       children: [
         CircularPercentIndicator(
           radius: 90,
+          circularStrokeCap: CircularStrokeCap.round,
           percent: user.percentageToNextLevel,
           progressColor: WorldOnColors.primary,
           backgroundColor: Colors.transparent,

@@ -11,9 +11,7 @@ import 'package:worldon/domain/profile/use_case/delete_experience.dart' as delet
 import 'package:worldon/injection.dart';
 
 part 'experience_management_actor_bloc.freezed.dart';
-
 part 'experience_management_actor_event.dart';
-
 part 'experience_management_actor_state.dart';
 
 @injectable
@@ -32,7 +30,7 @@ class ExperienceManagementActorBloc extends Bloc<ExperienceManagementActorEvent,
     yield const ExperienceManagementActorState.actionInProgress();
     final _isCreator = await getIt<is_logged_in_user.IsLoggedInUser>().call(
       is_logged_in_user.Params(
-        userToCompareWith: event.experience.creator,
+        userToCompareWithId: event.experience.creator.id,
       ),
     );
     if (_isCreator) {

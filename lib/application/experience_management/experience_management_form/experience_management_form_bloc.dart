@@ -16,6 +16,7 @@ import 'package:worldon/domain/core/entities/experience/experience.dart';
 import 'package:worldon/domain/core/entities/objective/objective.dart';
 import 'package:worldon/domain/core/entities/reward/reward.dart';
 import 'package:worldon/domain/core/entities/tag/tag.dart';
+import 'package:worldon/domain/core/entities/user/simple_user.dart';
 import 'package:worldon/domain/core/failures/error.dart';
 import 'package:worldon/domain/core/use_case/get_current_location.dart';
 import 'package:worldon/domain/core/use_case/use_case.dart';
@@ -220,7 +221,7 @@ class ExperienceManagementFormBloc extends Bloc<ExperienceManagementFormEvent, E
         final _isPromoted = _currentUser.adminPowers && _isNotCarlos || _currentUser.promotionPlan.isUsable;
         return state.copyWith(
           experience: Experience.empty().copyWith(
-            creator: _currentUser,
+            creator: SimpleUser.fromUser(_currentUser),
             coordinates: _coordinates,
             isPromoted: _isPromoted,
           ),

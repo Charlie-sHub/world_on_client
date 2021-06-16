@@ -931,7 +931,7 @@ class _$_CoordinatesChanged implements _CoordinatesChanged {
             (identical(other.latitude, latitude) || const DeepCollectionEquality().equals(other.latitude, latitude)) &&
             (identical(other.longitude, longitude) || const DeepCollectionEquality().equals(other.longitude, longitude)));
   }
-  
+
   @override
   int get hashCode => runtimeType.hashCode ^ const DeepCollectionEquality().hash(latitude) ^ const DeepCollectionEquality().hash(longitude);
 
@@ -1923,7 +1923,7 @@ class _$_ExperienceManagementFormState implements _ExperienceManagementFormState
       const DeepCollectionEquality().hash(isSubmitting) ^
       const DeepCollectionEquality().hash(loadedCoordinates) ^
       const DeepCollectionEquality().hash(failureOrSuccessOption);
-  
+
   @JsonKey(ignore: true)
   @override
   _$ExperienceManagementFormStateCopyWith<_ExperienceManagementFormState> get copyWith => __$ExperienceManagementFormStateCopyWithImpl<_ExperienceManagementFormState>(this, _$identity);
@@ -1946,7 +1946,7 @@ abstract class _ExperienceManagementFormState implements ExperienceManagementFor
   bool get isEditing => throw _privateConstructorUsedError;
   @override
   bool get isSubmitting => throw _privateConstructorUsedError;
-  
+
   @override
   bool get loadedCoordinates => throw _privateConstructorUsedError;
 

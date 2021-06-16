@@ -8,6 +8,7 @@ import 'package:worldon/domain/authentication/use_case/get_logged_in_user.dart';
 import 'package:worldon/domain/core/entities/user/user.dart';
 import 'package:worldon/domain/core/use_case/is_logged_in_user.dart' as is_logged_in_user;
 import 'package:worldon/domain/core/use_case/use_case.dart';
+import 'package:worldon/domain/core/validation/objects/unique_id.dart';
 import 'package:worldon/domain/profile/use_case/load_user.dart' as load_user;
 import 'package:worldon/injection.dart';
 
@@ -28,7 +29,7 @@ class ProfileForeignOrOwnBloc extends Bloc<ProfileForeignOrOwnEvent, ProfileFore
 
   Stream<ProfileForeignOrOwnState> _onInitializedForeignOrOwn(_InitializedForeignOrOwn event) async* {
     yield const ProfileForeignOrOwnState.loadInProgress();
-    yield* event.userOption.fold(
+    yield* event.userIdOption.fold(
       () async* {
         final _loggedInUserOption = await getIt<GetLoggedInUser>()(getIt<NoParams>());
         yield _loggedInUserOption.fold(
@@ -37,13 +38,13 @@ class ProfileForeignOrOwnBloc extends Bloc<ProfileForeignOrOwnEvent, ProfileFore
           (user) => ProfileForeignOrOwnState.own(user),
         );
       },
-      (user) async* {
+      (userId) async* {
         final _isOwn = await getIt<is_logged_in_user.IsLoggedInUser>()(
-          is_logged_in_user.Params(userToCompareWith: user),
+          is_logged_in_user.Params(userToCompareWithId: userId),
         );
         if (_isOwn) {
           final _own = await getIt<load_user.LoadUser>()(
-            load_user.Params(id: user.id),
+            load_user.Params(id: userId),
           );
           yield _own.fold(
             (_) => const ProfileForeignOrOwnState.loadFailure(),
@@ -51,7 +52,7 @@ class ProfileForeignOrOwnBloc extends Bloc<ProfileForeignOrOwnEvent, ProfileFore
           );
         } else {
           final _foreignUser = await getIt<load_user.LoadUser>()(
-            load_user.Params(id: user.id),
+            load_user.Params(id: userId),
           );
           yield _foreignUser.fold(
             (_) => const ProfileForeignOrOwnState.loadFailure(),

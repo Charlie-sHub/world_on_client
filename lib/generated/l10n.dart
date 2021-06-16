@@ -1177,6 +1177,16 @@ class S {
     );
   }
 
+  /// `Create Objective`
+  String get createObjective {
+    return Intl.message(
+      'Create Objective',
+      name: 'createObjective',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `User`
   String get user {
     return Intl.message(

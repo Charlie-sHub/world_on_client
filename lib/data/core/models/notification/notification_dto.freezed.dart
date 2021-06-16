@@ -22,8 +22,8 @@ class _$NotificationDtoTearOff {
 
   _NotificationDto call(
       {@JsonKey(ignore: true) String? id,
-      required UserDto sender,
-      required UserDto receiver,
+      required SimpleUserDto sender,
+      required String receiverId,
       required String description,
       required bool seen,
       @ServerTimestampConverter() required DateTime creationDate,
@@ -32,7 +32,7 @@ class _$NotificationDtoTearOff {
     return _NotificationDto(
       id: id,
       sender: sender,
-      receiver: receiver,
+      receiverId: receiverId,
       description: description,
       seen: seen,
       creationDate: creationDate,
@@ -53,16 +53,24 @@ const $NotificationDto = _$NotificationDtoTearOff();
 mixin _$NotificationDto {
   @JsonKey(ignore: true)
   String? get id => throw _privateConstructorUsedError;
-  UserDto get sender => throw _privateConstructorUsedError;
-  UserDto get receiver => throw _privateConstructorUsedError;
+
+  SimpleUserDto get sender => throw _privateConstructorUsedError;
+
+  String get receiverId => throw _privateConstructorUsedError;
+
   String get description => throw _privateConstructorUsedError;
+
   bool get seen => throw _privateConstructorUsedError;
+
   @ServerTimestampConverter()
   DateTime get creationDate => throw _privateConstructorUsedError;
+
   NotificationType get type => throw _privateConstructorUsedError;
+
   ExperienceDto? get experience => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+
   @JsonKey(ignore: true)
   $NotificationDtoCopyWith<NotificationDto> get copyWith => throw _privateConstructorUsedError;
 }
@@ -73,16 +81,16 @@ abstract class $NotificationDtoCopyWith<$Res> {
 
   $Res call(
       {@JsonKey(ignore: true) String? id,
-      UserDto sender,
-      UserDto receiver,
+      SimpleUserDto sender,
+      String receiverId,
       String description,
       bool seen,
       @ServerTimestampConverter() DateTime creationDate,
       NotificationType type,
       ExperienceDto? experience});
 
-  $UserDtoCopyWith<$Res> get sender;
-  $UserDtoCopyWith<$Res> get receiver;
+  $SimpleUserDtoCopyWith<$Res> get sender;
+
   $ExperienceDtoCopyWith<$Res>? get experience;
 }
 
@@ -99,7 +107,7 @@ class _$NotificationDtoCopyWithImpl<$Res> implements $NotificationDtoCopyWith<$R
   $Res call({
     Object? id = freezed,
     Object? sender = freezed,
-    Object? receiver = freezed,
+    Object? receiverId = freezed,
     Object? description = freezed,
     Object? seen = freezed,
     Object? creationDate = freezed,
@@ -114,11 +122,11 @@ class _$NotificationDtoCopyWithImpl<$Res> implements $NotificationDtoCopyWith<$R
       sender: sender == freezed
           ? _value.sender
           : sender // ignore: cast_nullable_to_non_nullable
-              as UserDto,
-      receiver: receiver == freezed
-          ? _value.receiver
-          : receiver // ignore: cast_nullable_to_non_nullable
-              as UserDto,
+              as SimpleUserDto,
+      receiverId: receiverId == freezed
+          ? _value.receiverId
+          : receiverId // ignore: cast_nullable_to_non_nullable
+              as String,
       description: description == freezed
           ? _value.description
           : description // ignore: cast_nullable_to_non_nullable
@@ -143,16 +151,9 @@ class _$NotificationDtoCopyWithImpl<$Res> implements $NotificationDtoCopyWith<$R
   }
 
   @override
-  $UserDtoCopyWith<$Res> get sender {
-    return $UserDtoCopyWith<$Res>(_value.sender, (value) {
+  $SimpleUserDtoCopyWith<$Res> get sender {
+    return $SimpleUserDtoCopyWith<$Res>(_value.sender, (value) {
       return _then(_value.copyWith(sender: value));
-    });
-  }
-
-  @override
-  $UserDtoCopyWith<$Res> get receiver {
-    return $UserDtoCopyWith<$Res>(_value.receiver, (value) {
-      return _then(_value.copyWith(receiver: value));
     });
   }
 
@@ -175,8 +176,8 @@ abstract class _$NotificationDtoCopyWith<$Res> implements $NotificationDtoCopyWi
   @override
   $Res call(
       {@JsonKey(ignore: true) String? id,
-      UserDto sender,
-      UserDto receiver,
+      SimpleUserDto sender,
+      String receiverId,
       String description,
       bool seen,
       @ServerTimestampConverter() DateTime creationDate,
@@ -184,9 +185,8 @@ abstract class _$NotificationDtoCopyWith<$Res> implements $NotificationDtoCopyWi
       ExperienceDto? experience});
 
   @override
-  $UserDtoCopyWith<$Res> get sender;
-  @override
-  $UserDtoCopyWith<$Res> get receiver;
+  $SimpleUserDtoCopyWith<$Res> get sender;
+
   @override
   $ExperienceDtoCopyWith<$Res>? get experience;
 }
@@ -202,7 +202,7 @@ class __$NotificationDtoCopyWithImpl<$Res> extends _$NotificationDtoCopyWithImpl
   $Res call({
     Object? id = freezed,
     Object? sender = freezed,
-    Object? receiver = freezed,
+    Object? receiverId = freezed,
     Object? description = freezed,
     Object? seen = freezed,
     Object? creationDate = freezed,
@@ -217,11 +217,11 @@ class __$NotificationDtoCopyWithImpl<$Res> extends _$NotificationDtoCopyWithImpl
       sender: sender == freezed
           ? _value.sender
           : sender // ignore: cast_nullable_to_non_nullable
-              as UserDto,
-      receiver: receiver == freezed
-          ? _value.receiver
-          : receiver // ignore: cast_nullable_to_non_nullable
-              as UserDto,
+              as SimpleUserDto,
+      receiverId: receiverId == freezed
+          ? _value.receiverId
+          : receiverId // ignore: cast_nullable_to_non_nullable
+              as String,
       description: description == freezed
           ? _value.description
           : description // ignore: cast_nullable_to_non_nullable
@@ -252,7 +252,7 @@ class _$_NotificationDto extends _NotificationDto {
   const _$_NotificationDto(
       {@JsonKey(ignore: true) this.id,
       required this.sender,
-      required this.receiver,
+      required this.receiverId,
       required this.description,
       required this.seen,
       @ServerTimestampConverter() required this.creationDate,
@@ -266,9 +266,9 @@ class _$_NotificationDto extends _NotificationDto {
   @JsonKey(ignore: true)
   final String? id;
   @override
-  final UserDto sender;
+  final SimpleUserDto sender;
   @override
-  final UserDto receiver;
+  final String receiverId;
   @override
   final String description;
   @override
@@ -283,7 +283,7 @@ class _$_NotificationDto extends _NotificationDto {
 
   @override
   String toString() {
-    return 'NotificationDto(id: $id, sender: $sender, receiver: $receiver, description: $description, seen: $seen, creationDate: $creationDate, type: $type, experience: $experience)';
+    return 'NotificationDto(id: $id, sender: $sender, receiverId: $receiverId, description: $description, seen: $seen, creationDate: $creationDate, type: $type, experience: $experience)';
   }
 
   @override
@@ -292,7 +292,7 @@ class _$_NotificationDto extends _NotificationDto {
         (other is _NotificationDto &&
             (identical(other.id, id) || const DeepCollectionEquality().equals(other.id, id)) &&
             (identical(other.sender, sender) || const DeepCollectionEquality().equals(other.sender, sender)) &&
-            (identical(other.receiver, receiver) || const DeepCollectionEquality().equals(other.receiver, receiver)) &&
+            (identical(other.receiverId, receiverId) || const DeepCollectionEquality().equals(other.receiverId, receiverId)) &&
             (identical(other.description, description) || const DeepCollectionEquality().equals(other.description, description)) &&
             (identical(other.seen, seen) || const DeepCollectionEquality().equals(other.seen, seen)) &&
             (identical(other.creationDate, creationDate) || const DeepCollectionEquality().equals(other.creationDate, creationDate)) &&
@@ -305,7 +305,7 @@ class _$_NotificationDto extends _NotificationDto {
       runtimeType.hashCode ^
       const DeepCollectionEquality().hash(id) ^
       const DeepCollectionEquality().hash(sender) ^
-      const DeepCollectionEquality().hash(receiver) ^
+      const DeepCollectionEquality().hash(receiverId) ^
       const DeepCollectionEquality().hash(description) ^
       const DeepCollectionEquality().hash(seen) ^
       const DeepCollectionEquality().hash(creationDate) ^
@@ -325,8 +325,8 @@ class _$_NotificationDto extends _NotificationDto {
 abstract class _NotificationDto extends NotificationDto {
   const factory _NotificationDto(
       {@JsonKey(ignore: true) String? id,
-      required UserDto sender,
-      required UserDto receiver,
+      required SimpleUserDto sender,
+      required String receiverId,
       required String description,
       required bool seen,
       @ServerTimestampConverter() required DateTime creationDate,
@@ -342,10 +342,10 @@ abstract class _NotificationDto extends NotificationDto {
   String? get id => throw _privateConstructorUsedError;
 
   @override
-  UserDto get sender => throw _privateConstructorUsedError;
+  SimpleUserDto get sender => throw _privateConstructorUsedError;
 
   @override
-  UserDto get receiver => throw _privateConstructorUsedError;
+  String get receiverId => throw _privateConstructorUsedError;
 
   @override
   String get description => throw _privateConstructorUsedError;

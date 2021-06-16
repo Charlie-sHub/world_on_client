@@ -6,7 +6,7 @@ import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:injectable/injectable.dart';
 import 'package:meta/meta.dart';
 import 'package:worldon/domain/core/entities/experience/experience.dart';
-import 'package:worldon/domain/core/entities/user/user.dart';
+import 'package:worldon/domain/core/validation/objects/unique_id.dart';
 
 part 'navigation_actor_bloc.freezed.dart';
 part 'navigation_actor_event.dart';
@@ -45,7 +45,7 @@ class NavigationActorBloc extends Bloc<NavigationActorEvent, NavigationActorStat
 
   Stream<NavigationActorState> _onProfileTapped(_ProfileTapped event) async* {
     yield NavigationActorState.profileView(
-      userOption: event.userOption,
+      userIdOption: event.userIdOption,
       currentUserProfile: event.currentUserProfile,
     );
   }

@@ -45,6 +45,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "commentStringWithInvalidCharacters": MessageLookupByLibrary.simpleMessage("The comment has invalid characters"),
         "continueToMainPage": MessageLookupByLibrary.simpleMessage("CONTINUE"),
         "create": MessageLookupByLibrary.simpleMessage("Create"),
+        "createObjective": MessageLookupByLibrary.simpleMessage("Create Objective"),
         "created": MessageLookupByLibrary.simpleMessage("Created"),
         "criticalErrorDisplayRetry": MessageLookupByLibrary.simpleMessage("Tap to try again"),
         "criticalErrorDisplayTitle": MessageLookupByLibrary.simpleMessage("There\'s been a critical failure"),

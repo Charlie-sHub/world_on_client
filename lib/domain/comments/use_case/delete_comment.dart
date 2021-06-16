@@ -23,7 +23,7 @@ class DeleteComment implements AsyncUseCase<Unit, Params> {
       () => throw UnAuthenticatedError(),
       id,
     );
-    final _isAuthorized = _userRequesting == params.comment.poster || _userRequesting.adminPowers;
+    final _isAuthorized = _userRequesting.id == params.comment.poster.id || _userRequesting.adminPowers;
     if (_isAuthorized) {
       return _repository.removeComment(
         params.comment.experienceId,

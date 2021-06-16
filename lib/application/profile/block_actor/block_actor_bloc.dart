@@ -9,6 +9,7 @@ import 'package:worldon/core/error/failure.dart';
 import 'package:worldon/domain/authentication/use_case/get_logged_in_user.dart';
 import 'package:worldon/domain/core/entities/notification/notification.dart';
 import 'package:worldon/domain/core/entities/notification/notification_type_enum.dart';
+import 'package:worldon/domain/core/entities/user/simple_user.dart';
 import 'package:worldon/domain/core/entities/user/user.dart';
 import 'package:worldon/domain/core/failures/error.dart';
 import 'package:worldon/domain/core/use_case/use_case.dart';
@@ -53,8 +54,8 @@ class BlockActorBloc extends Bloc<BlockActorEvent, BlockActorState> {
         getIt<send_notification.SendNotification>()(
           send_notification.Params(
             notification: Notification.empty().copyWith(
-              sender: _currentUser,
-              receiver: event.user,
+              sender: SimpleUser.fromUser(_currentUser),
+              receiverId: event.user.id,
               description: EntityDescription("${_currentUser.username.getOrCrash()} unblocked you"),
               type: NotificationType.unblock,
             ),
@@ -84,8 +85,8 @@ class BlockActorBloc extends Bloc<BlockActorEvent, BlockActorState> {
         getIt<send_notification.SendNotification>()(
           send_notification.Params(
             notification: Notification.empty().copyWith(
-              sender: _currentUser,
-              receiver: event.user,
+              sender: SimpleUser.fromUser(_currentUser),
+              receiverId: event.user.id,
               description: EntityDescription("${_currentUser.username.getOrCrash()} blocked you"),
               type: NotificationType.block,
             ),

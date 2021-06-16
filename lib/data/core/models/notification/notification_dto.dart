@@ -3,7 +3,7 @@ import 'package:dartz/dartz.dart' as dartz;
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:worldon/data/core/misc/server_timestamp_converter.dart';
 import 'package:worldon/data/core/models/experience/experience_dto.dart';
-import 'package:worldon/data/core/models/user/user_dto.dart';
+import 'package:worldon/data/core/models/user/simple_user_dto.dart';
 import 'package:worldon/domain/core/entities/notification/notification.dart';
 import 'package:worldon/domain/core/entities/notification/notification_type_enum.dart';
 import 'package:worldon/domain/core/validation/objects/entity_description.dart';
@@ -19,8 +19,8 @@ class NotificationDto with _$NotificationDto {
 
   const factory NotificationDto({
     @JsonKey(ignore: true) String? id,
-    required UserDto sender,
-    required UserDto receiver,
+    required SimpleUserDto sender,
+    required String receiverId,
     required String description,
     required bool seen,
     @ServerTimestampConverter() required DateTime creationDate,
@@ -30,8 +30,8 @@ class NotificationDto with _$NotificationDto {
 
   factory NotificationDto.fromDomain(Notification notification) => NotificationDto(
         id: notification.id.getOrCrash(),
-        sender: UserDto.fromDomain(notification.sender),
-        receiver: UserDto.fromDomain(notification.receiver),
+        sender: SimpleUserDto.fromDomain(notification.sender),
+        receiverId: notification.receiverId.getOrCrash(),
         description: notification.description.getOrCrash(),
         seen: notification.seen,
         creationDate: notification.creationDate.getOrCrash(),
@@ -45,7 +45,7 @@ class NotificationDto with _$NotificationDto {
   Notification toDomain() => Notification(
         id: UniqueId.fromUniqueString(id!),
         sender: sender.toDomain(),
-        receiver: receiver.toDomain(),
+        receiverId: UniqueId.fromUniqueString(receiverId),
         description: EntityDescription(description),
         seen: seen,
         creationDate: PastDate(creationDate),

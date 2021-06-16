@@ -90,8 +90,8 @@ class MainPage extends StatelessWidget {
                         ),
                   ),
                   ProfileBody(
-                    userOption: context.read<NavigationActorBloc>().state.maybeMap(
-                          profileView: (state) => state.userOption,
+                    userIdOption: context.read<NavigationActorBloc>().state.maybeMap(
+                          profileView: (state) => state.userIdOption,
                           orElse: () => none(),
                         ),
                     currentUserProfile: context.read<NavigationActorBloc>().state.maybeMap(

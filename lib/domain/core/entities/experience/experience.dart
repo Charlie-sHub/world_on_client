@@ -5,6 +5,7 @@ import 'package:multi_image_picker/multi_image_picker.dart';
 import 'package:worldon/domain/core/entities/comment/comment.dart';
 import 'package:worldon/domain/core/entities/coordinates/coordinates.dart';
 import 'package:worldon/domain/core/entities/location/location.dart';
+import 'package:worldon/domain/core/entities/user/simple_user.dart';
 import 'package:worldon/domain/core/entities/user/user.dart';
 import 'package:worldon/domain/core/failures/value_failure.dart';
 import 'package:worldon/domain/core/validation/objects/difficulty.dart';
@@ -33,7 +34,7 @@ class Experience with _$Experience {
     required Option<List<Asset>> imageAssetsOption,
     required Coordinates coordinates,
     required Location location,
-    required User creator,
+    required SimpleUser creator,
     required Difficulty difficulty,
     required PastDate creationDate,
     required PastDate modificationDate,
@@ -55,7 +56,7 @@ class Experience with _$Experience {
         imageAssetsOption: none(),
         coordinates: Coordinates.empty(),
         location: Location.empty(),
-        creator: User.empty(),
+        creator: SimpleUser.empty(),
         difficulty: Difficulty(1),
         creationDate: PastDate(DateTime.now()),
         modificationDate: PastDate(DateTime.now()),

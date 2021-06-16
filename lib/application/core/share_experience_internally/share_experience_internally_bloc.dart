@@ -10,6 +10,7 @@ import 'package:worldon/domain/authentication/use_case/get_logged_in_user.dart';
 import 'package:worldon/domain/core/entities/experience/experience.dart';
 import 'package:worldon/domain/core/entities/notification/notification.dart';
 import 'package:worldon/domain/core/entities/notification/notification_type_enum.dart';
+import 'package:worldon/domain/core/entities/user/simple_user.dart';
 import 'package:worldon/domain/core/entities/user/user.dart';
 import 'package:worldon/domain/core/failures/error.dart';
 import 'package:worldon/domain/core/use_case/use_case.dart';
@@ -63,12 +64,12 @@ class ShareExperienceInternallyBloc extends Bloc<ShareExperienceInternallyEvent,
       () => throw UnAuthenticatedError,
       id,
     );
-    for (final _user in state.users.dart) {
+    for (final _userReceiver in state.users.dart) {
       getIt<SendNotification>()(
         Params(
           notification: Notification.empty().copyWith(
-            sender: _currentUser,
-            receiver: _user,
+            sender: SimpleUser.fromUser(_currentUser),
+            receiverId: _userReceiver.id,
             description: EntityDescription("${_currentUser.username.getOrCrash()} shared"),
             type: NotificationType.share,
             experienceOption: some(state.experience),

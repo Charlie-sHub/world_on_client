@@ -9,10 +9,11 @@ import 'package:worldon/core/error/failure.dart';
 import 'package:worldon/domain/authentication/use_case/get_logged_in_user.dart';
 import 'package:worldon/domain/core/entities/notification/notification.dart';
 import 'package:worldon/domain/core/entities/notification/notification_type_enum.dart';
-import 'package:worldon/domain/core/entities/user/user.dart';
+import 'package:worldon/domain/core/entities/user/simple_user.dart';
 import 'package:worldon/domain/core/failures/error.dart';
 import 'package:worldon/domain/core/use_case/use_case.dart';
 import 'package:worldon/domain/core/validation/objects/entity_description.dart';
+import 'package:worldon/domain/core/validation/objects/unique_id.dart';
 import 'package:worldon/domain/notifications/use_case/send_notification.dart' as send_notification;
 import 'package:worldon/domain/profile/use_case/follow_user.dart' as follow_user;
 import 'package:worldon/domain/profile/use_case/un_follow_user.dart' as un_follow_user;
@@ -38,7 +39,7 @@ class FollowActorBloc extends Bloc<FollowActorEvent, FollowActorState> {
   Stream<FollowActorState> _onUnFollowed(_UnFollowed event) async* {
     yield const FollowActorState.actionInProgress();
     final _failureOrUnit = await getIt<un_follow_user.UnFollowUser>()(
-      un_follow_user.Params(userToUnFollowId: event.user.id),
+      un_follow_user.Params(userToUnFollowId: event.userId),
     );
     yield* _failureOrUnit.fold(
       (failure) async* {
@@ -53,8 +54,8 @@ class FollowActorBloc extends Bloc<FollowActorEvent, FollowActorState> {
         getIt<send_notification.SendNotification>()(
           send_notification.Params(
             notification: Notification.empty().copyWith(
-              sender: _currentUser,
-              receiver: event.user,
+              sender: SimpleUser.fromUser(_currentUser),
+              receiverId: event.userId,
               description: EntityDescription("${_currentUser.username.getOrCrash()} unfollowed you"),
               type: NotificationType.unfollow,
             ),
@@ -69,7 +70,7 @@ class FollowActorBloc extends Bloc<FollowActorEvent, FollowActorState> {
   Stream<FollowActorState> _onFollowed(_Followed event) async* {
     yield const FollowActorState.actionInProgress();
     final _failureOrUnit = await getIt<follow_user.FollowUser>()(
-      follow_user.Params(userToFollowId: event.user.id),
+      follow_user.Params(userToFollowId: event.userId),
     );
     yield* _failureOrUnit.fold(
       (failure) async* {
@@ -84,8 +85,8 @@ class FollowActorBloc extends Bloc<FollowActorEvent, FollowActorState> {
         getIt<send_notification.SendNotification>()(
           send_notification.Params(
             notification: Notification.empty().copyWith(
-              sender: _currentUser,
-              receiver: event.user,
+              sender: SimpleUser.fromUser(_currentUser),
+              receiverId: event.userId,
               description: EntityDescription("${_currentUser.username.getOrCrash()} is following you"),
               type: NotificationType.follow,
             ),
@@ -103,7 +104,7 @@ class FollowActorBloc extends Bloc<FollowActorEvent, FollowActorState> {
       () => throw UnAuthenticatedError(),
       id,
     );
-    if (_user.followedUsersIds.contains(event.user.id)) {
+    if (_user.followedUsersIds.contains(event.userId)) {
       yield const FollowActorState.follows();
     } else {
       yield const FollowActorState.followsNot();

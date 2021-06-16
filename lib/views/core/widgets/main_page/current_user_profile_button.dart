@@ -33,7 +33,7 @@ class CurrentUserProfileButton extends StatelessWidget {
           shape: const CircleBorder(),
           onPressed: () => context.read<NavigationActorBloc>().add(
                 NavigationActorEvent.profileTapped(
-                  userOption: none(),
+                  userIdOption: none(),
                   currentUserProfile: true,
                 ),
               ),

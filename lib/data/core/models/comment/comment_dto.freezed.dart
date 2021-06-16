@@ -22,7 +22,7 @@ class _$CommentDtoTearOff {
 
   _CommentDto call(
       {@JsonKey(ignore: true) String? id,
-      required UserDto poster,
+      required SimpleUserDto poster,
       required String experienceId,
       required String content,
       @ServerTimestampConverter() required DateTime creationDate,
@@ -49,7 +49,9 @@ const $CommentDto = _$CommentDtoTearOff();
 mixin _$CommentDto {
   @JsonKey(ignore: true)
   String? get id => throw _privateConstructorUsedError;
-  UserDto get poster => throw _privateConstructorUsedError;
+
+  SimpleUserDto get poster => throw _privateConstructorUsedError;
+
   String get experienceId => throw _privateConstructorUsedError;
   String get content => throw _privateConstructorUsedError;
   @ServerTimestampConverter()
@@ -58,6 +60,7 @@ mixin _$CommentDto {
   DateTime get modificationDate => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+
   @JsonKey(ignore: true)
   $CommentDtoCopyWith<CommentDto> get copyWith => throw _privateConstructorUsedError;
 }
@@ -68,13 +71,13 @@ abstract class $CommentDtoCopyWith<$Res> {
 
   $Res call(
       {@JsonKey(ignore: true) String? id,
-      UserDto poster,
+      SimpleUserDto poster,
       String experienceId,
       String content,
       @ServerTimestampConverter() DateTime creationDate,
       @ServerTimestampConverter() DateTime modificationDate});
 
-  $UserDtoCopyWith<$Res> get poster;
+  $SimpleUserDtoCopyWith<$Res> get poster;
 }
 
 /// @nodoc
@@ -102,7 +105,7 @@ class _$CommentDtoCopyWithImpl<$Res> implements $CommentDtoCopyWith<$Res> {
       poster: poster == freezed
           ? _value.poster
           : poster // ignore: cast_nullable_to_non_nullable
-              as UserDto,
+              as SimpleUserDto,
       experienceId: experienceId == freezed
           ? _value.experienceId
           : experienceId // ignore: cast_nullable_to_non_nullable
@@ -123,8 +126,8 @@ class _$CommentDtoCopyWithImpl<$Res> implements $CommentDtoCopyWith<$Res> {
   }
 
   @override
-  $UserDtoCopyWith<$Res> get poster {
-    return $UserDtoCopyWith<$Res>(_value.poster, (value) {
+  $SimpleUserDtoCopyWith<$Res> get poster {
+    return $SimpleUserDtoCopyWith<$Res>(_value.poster, (value) {
       return _then(_value.copyWith(poster: value));
     });
   }
@@ -137,14 +140,14 @@ abstract class _$CommentDtoCopyWith<$Res> implements $CommentDtoCopyWith<$Res> {
   @override
   $Res call(
       {@JsonKey(ignore: true) String? id,
-      UserDto poster,
+      SimpleUserDto poster,
       String experienceId,
       String content,
       @ServerTimestampConverter() DateTime creationDate,
       @ServerTimestampConverter() DateTime modificationDate});
 
   @override
-  $UserDtoCopyWith<$Res> get poster;
+  $SimpleUserDtoCopyWith<$Res> get poster;
 }
 
 /// @nodoc
@@ -171,7 +174,7 @@ class __$CommentDtoCopyWithImpl<$Res> extends _$CommentDtoCopyWithImpl<$Res> imp
       poster: poster == freezed
           ? _value.poster
           : poster // ignore: cast_nullable_to_non_nullable
-              as UserDto,
+              as SimpleUserDto,
       experienceId: experienceId == freezed
           ? _value.experienceId
           : experienceId // ignore: cast_nullable_to_non_nullable
@@ -210,7 +213,7 @@ class _$_CommentDto extends _CommentDto {
   @JsonKey(ignore: true)
   final String? id;
   @override
-  final UserDto poster;
+  final SimpleUserDto poster;
   @override
   final String experienceId;
   @override
@@ -262,7 +265,7 @@ class _$_CommentDto extends _CommentDto {
 abstract class _CommentDto extends CommentDto {
   const factory _CommentDto(
       {@JsonKey(ignore: true) String? id,
-      required UserDto poster,
+      required SimpleUserDto poster,
       required String experienceId,
       required String content,
       @ServerTimestampConverter() required DateTime creationDate,
@@ -277,7 +280,7 @@ abstract class _CommentDto extends CommentDto {
   String? get id => throw _privateConstructorUsedError;
 
   @override
-  UserDto get poster => throw _privateConstructorUsedError;
+  SimpleUserDto get poster => throw _privateConstructorUsedError;
 
   @override
   String get experienceId => throw _privateConstructorUsedError;

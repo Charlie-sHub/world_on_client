@@ -67,7 +67,7 @@ class WorldOnBottomNavigationBar extends StatelessWidget {
         context.read<NavigationActorBloc>().add(
               NavigationActorEvent.profileTapped(
                 currentUserProfile: false,
-                userOption: none(),
+                userIdOption: none(),
               ),
             );
         break;

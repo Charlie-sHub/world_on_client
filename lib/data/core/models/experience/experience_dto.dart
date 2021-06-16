@@ -9,7 +9,7 @@ import 'package:worldon/data/core/models/location/location_dto.dart';
 import 'package:worldon/data/core/models/objective/objective_dto.dart';
 import 'package:worldon/data/core/models/reward/reward_dto.dart';
 import 'package:worldon/data/core/models/tag/tag_dto.dart';
-import 'package:worldon/data/core/models/user/user_dto.dart';
+import 'package:worldon/data/core/models/user/simple_user_dto.dart';
 import 'package:worldon/domain/core/entities/experience/experience.dart';
 import 'package:worldon/domain/core/validation/objects/difficulty.dart';
 import 'package:worldon/domain/core/validation/objects/entity_description.dart';
@@ -35,7 +35,7 @@ class ExperienceDto with _$ExperienceDto {
     required CoordinatesDto coordinates,
     required LocationDto location,
     required String creatorId,
-    required UserDto creator,
+    required SimpleUserDto creator,
     required int difficulty,
     @ServerTimestampConverter() required DateTime creationDate,
     @ServerTimestampConverter() required DateTime modificationDate,
@@ -57,7 +57,7 @@ class ExperienceDto with _$ExperienceDto {
         coordinates: CoordinatesDto.fromDomain(experience.coordinates),
         location: LocationDto.fromDomain(experience.location),
         creatorId: experience.creator.id.getOrCrash(),
-        creator: UserDto.fromDomain(experience.creator),
+        creator: SimpleUserDto.fromDomain(experience.creator),
         difficulty: experience.difficulty.getOrCrash(),
         creationDate: experience.creationDate.getOrCrash(),
         modificationDate: experience.modificationDate.getOrCrash(),

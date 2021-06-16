@@ -7,6 +7,7 @@ import 'package:worldon/domain/core/entities/item/item.dart';
 import 'package:worldon/domain/core/entities/options/options.dart';
 import 'package:worldon/domain/core/entities/promotion_plan/promotion_plan.dart';
 import 'package:worldon/domain/core/entities/system/system.dart';
+import 'package:worldon/domain/core/entities/user/simple_user.dart';
 import 'package:worldon/domain/core/failures/value_failure.dart';
 import 'package:worldon/domain/core/validation/objects/email_address.dart';
 import 'package:worldon/domain/core/validation/objects/entity_description.dart';
@@ -95,6 +96,17 @@ class User with _$User {
         coins: 0,
         followersAmount: 0,
         promotionPlan: PromotionPlan.empty(),
+      );
+
+  factory User.fromSimpleUser(SimpleUser simpleUser) => User.empty().copyWith(
+        id: simpleUser.id,
+        name: simpleUser.name,
+        username: simpleUser.username,
+        imageURL: simpleUser.imageURL,
+        level: simpleUser.level,
+        experiencePoints: simpleUser.experiencePoints,
+        adminPowers: simpleUser.adminPowers,
+        followersAmount: simpleUser.followersAmount,
       );
 
   Option<ValueFailure<dynamic>> get failureOption {

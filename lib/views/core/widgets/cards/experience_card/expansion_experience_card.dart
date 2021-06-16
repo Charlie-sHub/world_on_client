@@ -107,7 +107,9 @@ class ExpansionExperienceCard extends StatelessWidget {
                         top: 5,
                       ),
                       child: UserImage(
-                        user: experience.creator,
+                        userId: experience.creator.id,
+                        imageUrl: experience.creator.imageURL,
+                        adminPowers: experience.creator.adminPowers,
                         avatarRadius: 25,
                         checkIconSize: 17,
                       ),

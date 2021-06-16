@@ -46,7 +46,9 @@ class SharedExperienceDismissibleCard extends StatelessWidget {
               ),
             ),
         leading: UserImage(
-          user: notification.sender,
+          adminPowers: notification.sender.adminPowers,
+          imageUrl: notification.sender.imageURL,
+          userId: notification.sender.id,
           avatarRadius: 25,
           checkIconSize: 17,
         ),

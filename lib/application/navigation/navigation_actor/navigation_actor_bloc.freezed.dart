@@ -30,9 +30,9 @@ class _$NavigationActorEventTearOff {
     );
   }
 
-  _ProfileTapped profileTapped({required Option<User> userOption, required bool currentUserProfile}) {
+  _ProfileTapped profileTapped({required Option<UniqueId> userIdOption, required bool currentUserProfile}) {
     return _ProfileTapped(
-      userOption: userOption,
+      userIdOption: userIdOption,
       currentUserProfile: currentUserProfile,
     );
   }
@@ -52,7 +52,7 @@ mixin _$NavigationActorEvent {
     required TResult Function() mainFeedTapped,
     required TResult Function() searchTapped,
     required TResult Function(Option<Experience> experienceOption) experienceNavigationTapped,
-    required TResult Function(Option<User> userOption, bool currentUserProfile) profileTapped,
+    required TResult Function(Option<UniqueId> userIdOption, bool currentUserProfile) profileTapped,
     required TResult Function() notificationsTapped,
   }) =>
       throw _privateConstructorUsedError;
@@ -61,7 +61,7 @@ mixin _$NavigationActorEvent {
     TResult Function()? mainFeedTapped,
     TResult Function()? searchTapped,
     TResult Function(Option<Experience> experienceOption)? experienceNavigationTapped,
-    TResult Function(Option<User> userOption, bool currentUserProfile)? profileTapped,
+    TResult Function(Option<UniqueId> userIdOption, bool currentUserProfile)? profileTapped,
     TResult Function()? notificationsTapped,
     required TResult orElse(),
   }) =>
@@ -139,7 +139,7 @@ class _$_MainFeedTapped implements _MainFeedTapped {
     required TResult Function() mainFeedTapped,
     required TResult Function() searchTapped,
     required TResult Function(Option<Experience> experienceOption) experienceNavigationTapped,
-    required TResult Function(Option<User> userOption, bool currentUserProfile) profileTapped,
+    required TResult Function(Option<UniqueId> userIdOption, bool currentUserProfile) profileTapped,
     required TResult Function() notificationsTapped,
   }) {
     return mainFeedTapped();
@@ -151,7 +151,7 @@ class _$_MainFeedTapped implements _MainFeedTapped {
     TResult Function()? mainFeedTapped,
     TResult Function()? searchTapped,
     TResult Function(Option<Experience> experienceOption)? experienceNavigationTapped,
-    TResult Function(Option<User> userOption, bool currentUserProfile)? profileTapped,
+    TResult Function(Option<UniqueId> userIdOption, bool currentUserProfile)? profileTapped,
     TResult Function()? notificationsTapped,
     required TResult orElse(),
   }) {
@@ -231,7 +231,7 @@ class _$_SearchTapped implements _SearchTapped {
     required TResult Function() mainFeedTapped,
     required TResult Function() searchTapped,
     required TResult Function(Option<Experience> experienceOption) experienceNavigationTapped,
-    required TResult Function(Option<User> userOption, bool currentUserProfile) profileTapped,
+    required TResult Function(Option<UniqueId> userIdOption, bool currentUserProfile) profileTapped,
     required TResult Function() notificationsTapped,
   }) {
     return searchTapped();
@@ -243,7 +243,7 @@ class _$_SearchTapped implements _SearchTapped {
     TResult Function()? mainFeedTapped,
     TResult Function()? searchTapped,
     TResult Function(Option<Experience> experienceOption)? experienceNavigationTapped,
-    TResult Function(Option<User> userOption, bool currentUserProfile)? profileTapped,
+    TResult Function(Option<UniqueId> userIdOption, bool currentUserProfile)? profileTapped,
     TResult Function()? notificationsTapped,
     required TResult orElse(),
   }) {
@@ -345,7 +345,7 @@ class _$_ExperienceNavigationTapped implements _ExperienceNavigationTapped {
     required TResult Function() mainFeedTapped,
     required TResult Function() searchTapped,
     required TResult Function(Option<Experience> experienceOption) experienceNavigationTapped,
-    required TResult Function(Option<User> userOption, bool currentUserProfile) profileTapped,
+    required TResult Function(Option<UniqueId> userIdOption, bool currentUserProfile) profileTapped,
     required TResult Function() notificationsTapped,
   }) {
     return experienceNavigationTapped(experienceOption);
@@ -357,7 +357,7 @@ class _$_ExperienceNavigationTapped implements _ExperienceNavigationTapped {
     TResult Function()? mainFeedTapped,
     TResult Function()? searchTapped,
     TResult Function(Option<Experience> experienceOption)? experienceNavigationTapped,
-    TResult Function(Option<User> userOption, bool currentUserProfile)? profileTapped,
+    TResult Function(Option<UniqueId> userIdOption, bool currentUserProfile)? profileTapped,
     TResult Function()? notificationsTapped,
     required TResult orElse(),
   }) {
@@ -409,7 +409,7 @@ abstract class _ExperienceNavigationTapped implements NavigationActorEvent {
 abstract class _$ProfileTappedCopyWith<$Res> {
   factory _$ProfileTappedCopyWith(_ProfileTapped value, $Res Function(_ProfileTapped) then) = __$ProfileTappedCopyWithImpl<$Res>;
 
-  $Res call({Option<User> userOption, bool currentUserProfile});
+  $Res call({Option<UniqueId> userIdOption, bool currentUserProfile});
 }
 
 /// @nodoc
@@ -421,14 +421,14 @@ class __$ProfileTappedCopyWithImpl<$Res> extends _$NavigationActorEventCopyWithI
 
   @override
   $Res call({
-    Object? userOption = freezed,
+    Object? userIdOption = freezed,
     Object? currentUserProfile = freezed,
   }) {
     return _then(_ProfileTapped(
-      userOption: userOption == freezed
-          ? _value.userOption
-          : userOption // ignore: cast_nullable_to_non_nullable
-              as Option<User>,
+      userIdOption: userIdOption == freezed
+          ? _value.userIdOption
+          : userIdOption // ignore: cast_nullable_to_non_nullable
+              as Option<UniqueId>,
       currentUserProfile: currentUserProfile == freezed
           ? _value.currentUserProfile
           : currentUserProfile // ignore: cast_nullable_to_non_nullable
@@ -440,28 +440,28 @@ class __$ProfileTappedCopyWithImpl<$Res> extends _$NavigationActorEventCopyWithI
 /// @nodoc
 
 class _$_ProfileTapped implements _ProfileTapped {
-  const _$_ProfileTapped({required this.userOption, required this.currentUserProfile});
+  const _$_ProfileTapped({required this.userIdOption, required this.currentUserProfile});
 
   @override
-  final Option<User> userOption;
+  final Option<UniqueId> userIdOption;
   @override
   final bool currentUserProfile;
 
   @override
   String toString() {
-    return 'NavigationActorEvent.profileTapped(userOption: $userOption, currentUserProfile: $currentUserProfile)';
+    return 'NavigationActorEvent.profileTapped(userIdOption: $userIdOption, currentUserProfile: $currentUserProfile)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other is _ProfileTapped &&
-            (identical(other.userOption, userOption) || const DeepCollectionEquality().equals(other.userOption, userOption)) &&
+            (identical(other.userIdOption, userIdOption) || const DeepCollectionEquality().equals(other.userIdOption, userIdOption)) &&
             (identical(other.currentUserProfile, currentUserProfile) || const DeepCollectionEquality().equals(other.currentUserProfile, currentUserProfile)));
   }
 
   @override
-  int get hashCode => runtimeType.hashCode ^ const DeepCollectionEquality().hash(userOption) ^ const DeepCollectionEquality().hash(currentUserProfile);
+  int get hashCode => runtimeType.hashCode ^ const DeepCollectionEquality().hash(userIdOption) ^ const DeepCollectionEquality().hash(currentUserProfile);
 
   @JsonKey(ignore: true)
   @override
@@ -473,10 +473,10 @@ class _$_ProfileTapped implements _ProfileTapped {
     required TResult Function() mainFeedTapped,
     required TResult Function() searchTapped,
     required TResult Function(Option<Experience> experienceOption) experienceNavigationTapped,
-    required TResult Function(Option<User> userOption, bool currentUserProfile) profileTapped,
+    required TResult Function(Option<UniqueId> userIdOption, bool currentUserProfile) profileTapped,
     required TResult Function() notificationsTapped,
   }) {
-    return profileTapped(userOption, currentUserProfile);
+    return profileTapped(userIdOption, currentUserProfile);
   }
 
   @override
@@ -485,12 +485,12 @@ class _$_ProfileTapped implements _ProfileTapped {
     TResult Function()? mainFeedTapped,
     TResult Function()? searchTapped,
     TResult Function(Option<Experience> experienceOption)? experienceNavigationTapped,
-    TResult Function(Option<User> userOption, bool currentUserProfile)? profileTapped,
+    TResult Function(Option<UniqueId> userIdOption, bool currentUserProfile)? profileTapped,
     TResult Function()? notificationsTapped,
     required TResult orElse(),
   }) {
     if (profileTapped != null) {
-      return profileTapped(userOption, currentUserProfile);
+      return profileTapped(userIdOption, currentUserProfile);
     }
     return orElse();
   }
@@ -525,9 +525,9 @@ class _$_ProfileTapped implements _ProfileTapped {
 }
 
 abstract class _ProfileTapped implements NavigationActorEvent {
-  const factory _ProfileTapped({required Option<User> userOption, required bool currentUserProfile}) = _$_ProfileTapped;
+  const factory _ProfileTapped({required Option<UniqueId> userIdOption, required bool currentUserProfile}) = _$_ProfileTapped;
 
-  Option<User> get userOption => throw _privateConstructorUsedError;
+  Option<UniqueId> get userIdOption => throw _privateConstructorUsedError;
 
   bool get currentUserProfile => throw _privateConstructorUsedError;
 
@@ -572,7 +572,7 @@ class _$_NotificationsTapped implements _NotificationsTapped {
     required TResult Function() mainFeedTapped,
     required TResult Function() searchTapped,
     required TResult Function(Option<Experience> experienceOption) experienceNavigationTapped,
-    required TResult Function(Option<User> userOption, bool currentUserProfile) profileTapped,
+    required TResult Function(Option<UniqueId> userIdOption, bool currentUserProfile) profileTapped,
     required TResult Function() notificationsTapped,
   }) {
     return notificationsTapped();
@@ -584,7 +584,7 @@ class _$_NotificationsTapped implements _NotificationsTapped {
     TResult Function()? mainFeedTapped,
     TResult Function()? searchTapped,
     TResult Function(Option<Experience> experienceOption)? experienceNavigationTapped,
-    TResult Function(Option<User> userOption, bool currentUserProfile)? profileTapped,
+    TResult Function(Option<UniqueId> userIdOption, bool currentUserProfile)? profileTapped,
     TResult Function()? notificationsTapped,
     required TResult orElse(),
   }) {
@@ -645,9 +645,9 @@ class _$NavigationActorStateTearOff {
     );
   }
 
-  _ProfileView profileView({required Option<User> userOption, required bool currentUserProfile}) {
+  _ProfileView profileView({required Option<UniqueId> userIdOption, required bool currentUserProfile}) {
     return _ProfileView(
-      userOption: userOption,
+      userIdOption: userIdOption,
       currentUserProfile: currentUserProfile,
     );
   }
@@ -671,7 +671,7 @@ mixin _$NavigationActorState {
     required TResult Function() mainFeedView,
     required TResult Function() searchView,
     required TResult Function(Option<Experience> experienceOption) navigateExperienceView,
-    required TResult Function(Option<User> userOption, bool currentUserProfile) profileView,
+    required TResult Function(Option<UniqueId> userIdOption, bool currentUserProfile) profileView,
     required TResult Function() errorView,
     required TResult Function() notificationsView,
   }) =>
@@ -681,7 +681,7 @@ mixin _$NavigationActorState {
     TResult Function()? mainFeedView,
     TResult Function()? searchView,
     TResult Function(Option<Experience> experienceOption)? navigateExperienceView,
-    TResult Function(Option<User> userOption, bool currentUserProfile)? profileView,
+    TResult Function(Option<UniqueId> userIdOption, bool currentUserProfile)? profileView,
     TResult Function()? errorView,
     TResult Function()? notificationsView,
     required TResult orElse(),
@@ -762,7 +762,7 @@ class _$_MainFeedView implements _MainFeedView {
     required TResult Function() mainFeedView,
     required TResult Function() searchView,
     required TResult Function(Option<Experience> experienceOption) navigateExperienceView,
-    required TResult Function(Option<User> userOption, bool currentUserProfile) profileView,
+    required TResult Function(Option<UniqueId> userIdOption, bool currentUserProfile) profileView,
     required TResult Function() errorView,
     required TResult Function() notificationsView,
   }) {
@@ -775,7 +775,7 @@ class _$_MainFeedView implements _MainFeedView {
     TResult Function()? mainFeedView,
     TResult Function()? searchView,
     TResult Function(Option<Experience> experienceOption)? navigateExperienceView,
-    TResult Function(Option<User> userOption, bool currentUserProfile)? profileView,
+    TResult Function(Option<UniqueId> userIdOption, bool currentUserProfile)? profileView,
     TResult Function()? errorView,
     TResult Function()? notificationsView,
     required TResult orElse(),
@@ -858,7 +858,7 @@ class _$_SearchView implements _SearchView {
     required TResult Function() mainFeedView,
     required TResult Function() searchView,
     required TResult Function(Option<Experience> experienceOption) navigateExperienceView,
-    required TResult Function(Option<User> userOption, bool currentUserProfile) profileView,
+    required TResult Function(Option<UniqueId> userIdOption, bool currentUserProfile) profileView,
     required TResult Function() errorView,
     required TResult Function() notificationsView,
   }) {
@@ -871,7 +871,7 @@ class _$_SearchView implements _SearchView {
     TResult Function()? mainFeedView,
     TResult Function()? searchView,
     TResult Function(Option<Experience> experienceOption)? navigateExperienceView,
-    TResult Function(Option<User> userOption, bool currentUserProfile)? profileView,
+    TResult Function(Option<UniqueId> userIdOption, bool currentUserProfile)? profileView,
     TResult Function()? errorView,
     TResult Function()? notificationsView,
     required TResult orElse(),
@@ -976,7 +976,7 @@ class _$_NavigateExperienceView implements _NavigateExperienceView {
     required TResult Function() mainFeedView,
     required TResult Function() searchView,
     required TResult Function(Option<Experience> experienceOption) navigateExperienceView,
-    required TResult Function(Option<User> userOption, bool currentUserProfile) profileView,
+    required TResult Function(Option<UniqueId> userIdOption, bool currentUserProfile) profileView,
     required TResult Function() errorView,
     required TResult Function() notificationsView,
   }) {
@@ -989,7 +989,7 @@ class _$_NavigateExperienceView implements _NavigateExperienceView {
     TResult Function()? mainFeedView,
     TResult Function()? searchView,
     TResult Function(Option<Experience> experienceOption)? navigateExperienceView,
-    TResult Function(Option<User> userOption, bool currentUserProfile)? profileView,
+    TResult Function(Option<UniqueId> userIdOption, bool currentUserProfile)? profileView,
     TResult Function()? errorView,
     TResult Function()? notificationsView,
     required TResult orElse(),
@@ -1044,7 +1044,7 @@ abstract class _NavigateExperienceView implements NavigationActorState {
 abstract class _$ProfileViewCopyWith<$Res> {
   factory _$ProfileViewCopyWith(_ProfileView value, $Res Function(_ProfileView) then) = __$ProfileViewCopyWithImpl<$Res>;
 
-  $Res call({Option<User> userOption, bool currentUserProfile});
+  $Res call({Option<UniqueId> userIdOption, bool currentUserProfile});
 }
 
 /// @nodoc
@@ -1056,14 +1056,14 @@ class __$ProfileViewCopyWithImpl<$Res> extends _$NavigationActorStateCopyWithImp
 
   @override
   $Res call({
-    Object? userOption = freezed,
+    Object? userIdOption = freezed,
     Object? currentUserProfile = freezed,
   }) {
     return _then(_ProfileView(
-      userOption: userOption == freezed
-          ? _value.userOption
-          : userOption // ignore: cast_nullable_to_non_nullable
-              as Option<User>,
+      userIdOption: userIdOption == freezed
+          ? _value.userIdOption
+          : userIdOption // ignore: cast_nullable_to_non_nullable
+              as Option<UniqueId>,
       currentUserProfile: currentUserProfile == freezed
           ? _value.currentUserProfile
           : currentUserProfile // ignore: cast_nullable_to_non_nullable
@@ -1075,28 +1075,28 @@ class __$ProfileViewCopyWithImpl<$Res> extends _$NavigationActorStateCopyWithImp
 /// @nodoc
 
 class _$_ProfileView implements _ProfileView {
-  const _$_ProfileView({required this.userOption, required this.currentUserProfile});
+  const _$_ProfileView({required this.userIdOption, required this.currentUserProfile});
 
   @override
-  final Option<User> userOption;
+  final Option<UniqueId> userIdOption;
   @override
   final bool currentUserProfile;
 
   @override
   String toString() {
-    return 'NavigationActorState.profileView(userOption: $userOption, currentUserProfile: $currentUserProfile)';
+    return 'NavigationActorState.profileView(userIdOption: $userIdOption, currentUserProfile: $currentUserProfile)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other is _ProfileView &&
-            (identical(other.userOption, userOption) || const DeepCollectionEquality().equals(other.userOption, userOption)) &&
+            (identical(other.userIdOption, userIdOption) || const DeepCollectionEquality().equals(other.userIdOption, userIdOption)) &&
             (identical(other.currentUserProfile, currentUserProfile) || const DeepCollectionEquality().equals(other.currentUserProfile, currentUserProfile)));
   }
 
   @override
-  int get hashCode => runtimeType.hashCode ^ const DeepCollectionEquality().hash(userOption) ^ const DeepCollectionEquality().hash(currentUserProfile);
+  int get hashCode => runtimeType.hashCode ^ const DeepCollectionEquality().hash(userIdOption) ^ const DeepCollectionEquality().hash(currentUserProfile);
 
   @JsonKey(ignore: true)
   @override
@@ -1108,11 +1108,11 @@ class _$_ProfileView implements _ProfileView {
     required TResult Function() mainFeedView,
     required TResult Function() searchView,
     required TResult Function(Option<Experience> experienceOption) navigateExperienceView,
-    required TResult Function(Option<User> userOption, bool currentUserProfile) profileView,
+    required TResult Function(Option<UniqueId> userIdOption, bool currentUserProfile) profileView,
     required TResult Function() errorView,
     required TResult Function() notificationsView,
   }) {
-    return profileView(userOption, currentUserProfile);
+    return profileView(userIdOption, currentUserProfile);
   }
 
   @override
@@ -1121,13 +1121,13 @@ class _$_ProfileView implements _ProfileView {
     TResult Function()? mainFeedView,
     TResult Function()? searchView,
     TResult Function(Option<Experience> experienceOption)? navigateExperienceView,
-    TResult Function(Option<User> userOption, bool currentUserProfile)? profileView,
+    TResult Function(Option<UniqueId> userIdOption, bool currentUserProfile)? profileView,
     TResult Function()? errorView,
     TResult Function()? notificationsView,
     required TResult orElse(),
   }) {
     if (profileView != null) {
-      return profileView(userOption, currentUserProfile);
+      return profileView(userIdOption, currentUserProfile);
     }
     return orElse();
   }
@@ -1164,9 +1164,9 @@ class _$_ProfileView implements _ProfileView {
 }
 
 abstract class _ProfileView implements NavigationActorState {
-  const factory _ProfileView({required Option<User> userOption, required bool currentUserProfile}) = _$_ProfileView;
+  const factory _ProfileView({required Option<UniqueId> userIdOption, required bool currentUserProfile}) = _$_ProfileView;
 
-  Option<User> get userOption => throw _privateConstructorUsedError;
+  Option<UniqueId> get userIdOption => throw _privateConstructorUsedError;
 
   bool get currentUserProfile => throw _privateConstructorUsedError;
 
@@ -1211,7 +1211,7 @@ class _$_ErrorView implements _ErrorView {
     required TResult Function() mainFeedView,
     required TResult Function() searchView,
     required TResult Function(Option<Experience> experienceOption) navigateExperienceView,
-    required TResult Function(Option<User> userOption, bool currentUserProfile) profileView,
+    required TResult Function(Option<UniqueId> userIdOption, bool currentUserProfile) profileView,
     required TResult Function() errorView,
     required TResult Function() notificationsView,
   }) {
@@ -1224,7 +1224,7 @@ class _$_ErrorView implements _ErrorView {
     TResult Function()? mainFeedView,
     TResult Function()? searchView,
     TResult Function(Option<Experience> experienceOption)? navigateExperienceView,
-    TResult Function(Option<User> userOption, bool currentUserProfile)? profileView,
+    TResult Function(Option<UniqueId> userIdOption, bool currentUserProfile)? profileView,
     TResult Function()? errorView,
     TResult Function()? notificationsView,
     required TResult orElse(),
@@ -1307,7 +1307,7 @@ class _$_NotificationsView implements _NotificationsView {
     required TResult Function() mainFeedView,
     required TResult Function() searchView,
     required TResult Function(Option<Experience> experienceOption) navigateExperienceView,
-    required TResult Function(Option<User> userOption, bool currentUserProfile) profileView,
+    required TResult Function(Option<UniqueId> userIdOption, bool currentUserProfile) profileView,
     required TResult Function() errorView,
     required TResult Function() notificationsView,
   }) {
@@ -1320,7 +1320,7 @@ class _$_NotificationsView implements _NotificationsView {
     TResult Function()? mainFeedView,
     TResult Function()? searchView,
     TResult Function(Option<Experience> experienceOption)? navigateExperienceView,
-    TResult Function(Option<User> userOption, bool currentUserProfile)? profileView,
+    TResult Function(Option<UniqueId> userIdOption, bool currentUserProfile)? profileView,
     TResult Function()? errorView,
     TResult Function()? notificationsView,
     required TResult orElse(),

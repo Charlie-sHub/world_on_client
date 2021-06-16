@@ -24,7 +24,7 @@ class _$ExperienceTearOff {
       required Option<List<Asset>> imageAssetsOption,
       required Coordinates coordinates,
       required Location location,
-      required User creator,
+      required SimpleUser creator,
       required Difficulty difficulty,
       required PastDate creationDate,
       required PastDate modificationDate,
@@ -79,7 +79,7 @@ mixin _$Experience {
 
   Location get location => throw _privateConstructorUsedError;
 
-  User get creator => throw _privateConstructorUsedError;
+  SimpleUser get creator => throw _privateConstructorUsedError;
 
   Difficulty get difficulty => throw _privateConstructorUsedError;
 
@@ -115,7 +115,7 @@ abstract class $ExperienceCopyWith<$Res> {
       Option<List<Asset>> imageAssetsOption,
       Coordinates coordinates,
       Location location,
-      User creator,
+      SimpleUser creator,
       Difficulty difficulty,
       PastDate creationDate,
       PastDate modificationDate,
@@ -129,8 +129,10 @@ abstract class $ExperienceCopyWith<$Res> {
       bool isPromoted});
 
   $CoordinatesCopyWith<$Res> get coordinates;
+
   $LocationCopyWith<$Res> get location;
-  $UserCopyWith<$Res> get creator;
+
+  $SimpleUserCopyWith<$Res> get creator;
 }
 
 /// @nodoc
@@ -195,7 +197,7 @@ class _$ExperienceCopyWithImpl<$Res> implements $ExperienceCopyWith<$Res> {
       creator: creator == freezed
           ? _value.creator
           : creator // ignore: cast_nullable_to_non_nullable
-              as User,
+              as SimpleUser,
       difficulty: difficulty == freezed
           ? _value.difficulty
           : difficulty // ignore: cast_nullable_to_non_nullable
@@ -258,8 +260,8 @@ class _$ExperienceCopyWithImpl<$Res> implements $ExperienceCopyWith<$Res> {
   }
 
   @override
-  $UserCopyWith<$Res> get creator {
-    return $UserCopyWith<$Res>(_value.creator, (value) {
+  $SimpleUserCopyWith<$Res> get creator {
+    return $SimpleUserCopyWith<$Res>(_value.creator, (value) {
       return _then(_value.copyWith(creator: value));
     });
   }
@@ -278,7 +280,7 @@ abstract class _$ExperienceCopyWith<$Res> implements $ExperienceCopyWith<$Res> {
       Option<List<Asset>> imageAssetsOption,
       Coordinates coordinates,
       Location location,
-      User creator,
+      SimpleUser creator,
       Difficulty difficulty,
       PastDate creationDate,
       PastDate modificationDate,
@@ -293,10 +295,12 @@ abstract class _$ExperienceCopyWith<$Res> implements $ExperienceCopyWith<$Res> {
 
   @override
   $CoordinatesCopyWith<$Res> get coordinates;
+
   @override
   $LocationCopyWith<$Res> get location;
+
   @override
-  $UserCopyWith<$Res> get creator;
+  $SimpleUserCopyWith<$Res> get creator;
 }
 
 /// @nodoc
@@ -360,7 +364,7 @@ class __$ExperienceCopyWithImpl<$Res> extends _$ExperienceCopyWithImpl<$Res> imp
       creator: creator == freezed
           ? _value.creator
           : creator // ignore: cast_nullable_to_non_nullable
-              as User,
+              as SimpleUser,
       difficulty: difficulty == freezed
           ? _value.difficulty
           : difficulty // ignore: cast_nullable_to_non_nullable
@@ -449,7 +453,7 @@ class _$_Experience extends _Experience {
   @override
   final Location location;
   @override
-  final User creator;
+  final SimpleUser creator;
   @override
   final Difficulty difficulty;
   @override
@@ -540,7 +544,7 @@ abstract class _Experience extends Experience {
       required Option<List<Asset>> imageAssetsOption,
       required Coordinates coordinates,
       required Location location,
-      required User creator,
+      required SimpleUser creator,
       required Difficulty difficulty,
       required PastDate creationDate,
       required PastDate modificationDate,
@@ -569,10 +573,13 @@ abstract class _Experience extends Experience {
 
   @override
   Coordinates get coordinates => throw _privateConstructorUsedError;
+
   @override
   Location get location => throw _privateConstructorUsedError;
+
   @override
-  User get creator => throw _privateConstructorUsedError;
+  SimpleUser get creator => throw _privateConstructorUsedError;
+
   @override
   Difficulty get difficulty => throw _privateConstructorUsedError;
   @override

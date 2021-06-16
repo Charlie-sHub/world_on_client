@@ -9,7 +9,7 @@ class NavigationActorState with _$NavigationActorState {
   const factory NavigationActorState.navigateExperienceView(Option<Experience> experienceOption) = _NavigateExperienceView;
 
   const factory NavigationActorState.profileView({
-    required Option<User> userOption,
+    required Option<UniqueId> userIdOption,
     required bool currentUserProfile,
   }) = _ProfileView;
 

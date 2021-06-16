@@ -27,7 +27,7 @@ class CircularAvatarUserCard extends StatelessWidget {
         BlocProvider(
           create: (context) => getIt<FollowActorBloc>()
             ..add(
-              FollowActorEvent.initialized(user),
+              FollowActorEvent.initialized(user.id),
             ),
           child: BlocBuilder<FollowActorBloc, FollowActorState>(
             builder: (context, state) => state.maybeMap(
@@ -37,7 +37,7 @@ class CircularAvatarUserCard extends StatelessWidget {
                 return InkWell(
                   onTap: () => context.read<NavigationActorBloc>().add(
                         NavigationActorEvent.profileTapped(
-                          userOption: some(user),
+                          userIdOption: some(user.id),
                           currentUserProfile: false,
                         ),
                       ),
@@ -94,7 +94,9 @@ class CircularAvatarUserCard extends StatelessWidget {
                 );
               },
               orElse: () => UserImage(
-                user: user,
+                userId: user.id,
+                imageUrl: user.imageURL,
+                adminPowers: user.adminPowers,
                 avatarRadius: _avatarRadius,
                 checkIconSize: 20,
               ),

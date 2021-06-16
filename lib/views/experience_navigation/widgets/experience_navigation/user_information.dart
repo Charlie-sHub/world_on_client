@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:worldon/domain/core/entities/user/user.dart';
+import 'package:worldon/domain/core/entities/user/simple_user.dart';
 import 'package:worldon/views/core/widgets/cards/user_card/name_username_display.dart';
 import 'package:worldon/views/core/widgets/misc/follow_unfollow_button_builder/follow_unfollow_button_builder.dart';
 import 'package:worldon/views/core/widgets/misc/user_image.dart';
@@ -10,7 +10,7 @@ class UserInformation extends StatelessWidget {
     required this.creator,
   }) : super(key: key);
 
-  final User creator;
+  final SimpleUser creator;
 
   @override
   Widget build(BuildContext context) {
@@ -20,15 +20,20 @@ class UserInformation extends StatelessWidget {
         Row(
           children: [
             UserImage(
-              user: creator,
+              userId: creator.id,
+              imageUrl: creator.imageURL,
+              adminPowers: creator.adminPowers,
               avatarRadius: 30,
               checkIconSize: 20,
             ),
             const SizedBox(width: 5),
-            NameUsernameDisplay(user: creator),
+            NameUsernameDisplay(
+              name: creator.name,
+              username: creator.username,
+            ),
           ],
         ),
-        FollowUnfollowButtonBuilder(user: creator),
+        FollowUnfollowButtonBuilder(userId: creator.id),
       ],
     );
   }

@@ -3,18 +3,22 @@ import 'package:dartz/dartz.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:worldon/application/navigation/navigation_actor/navigation_actor_bloc.dart';
-import 'package:worldon/domain/core/entities/user/user.dart';
+import 'package:worldon/domain/core/validation/objects/unique_id.dart';
 import 'package:worldon/views/core/misc/world_on_colors.dart';
 
 class UserImage extends StatelessWidget {
   const UserImage({
     Key? key,
-    required this.user,
+    required this.userId,
+    required this.imageUrl,
+    required this.adminPowers,
     required this.avatarRadius,
     required this.checkIconSize,
   }) : super(key: key);
 
-  final User user;
+  final UniqueId userId;
+  final String imageUrl;
+  final bool adminPowers;
   final double avatarRadius;
   final double checkIconSize;
 
@@ -23,7 +27,7 @@ class UserImage extends StatelessWidget {
     return InkWell(
       onTap: () => context.read<NavigationActorBloc>().add(
             NavigationActorEvent.profileTapped(
-              userOption: some(user),
+              userIdOption: some(userId),
               currentUserProfile: false,
             ),
           ),
@@ -36,12 +40,12 @@ class UserImage extends StatelessWidget {
                 padding: const EdgeInsets.all(2),
                 child: CircleAvatar(
                   radius: avatarRadius,
-                  backgroundImage: CachedNetworkImageProvider(user.imageURL),
+                  backgroundImage: CachedNetworkImageProvider(imageUrl),
                 ),
               ),
             ),
           ),
-          if (user.adminPowers)
+          if (adminPowers)
             ClipOval(
               child: Container(
                 color: Colors.white,

@@ -16,7 +16,8 @@ final _privateConstructorUsedError = UnsupportedError(
 class _$CommentTearOff {
   const _$CommentTearOff();
 
-  _Comment call({required UniqueId id, required User poster, required UniqueId experienceId, required CommentContent content, required PastDate creationDate, required PastDate modificationDate}) {
+  _Comment call(
+      {required UniqueId id, required SimpleUser poster, required UniqueId experienceId, required CommentContent content, required PastDate creationDate, required PastDate modificationDate}) {
     return _Comment(
       id: id,
       poster: poster,
@@ -34,7 +35,9 @@ const $Comment = _$CommentTearOff();
 /// @nodoc
 mixin _$Comment {
   UniqueId get id => throw _privateConstructorUsedError;
-  User get poster => throw _privateConstructorUsedError;
+
+  SimpleUser get poster => throw _privateConstructorUsedError;
+
   UniqueId get experienceId => throw _privateConstructorUsedError;
   CommentContent get content => throw _privateConstructorUsedError;
   PastDate get creationDate => throw _privateConstructorUsedError;
@@ -48,9 +51,9 @@ mixin _$Comment {
 abstract class $CommentCopyWith<$Res> {
   factory $CommentCopyWith(Comment value, $Res Function(Comment) then) = _$CommentCopyWithImpl<$Res>;
 
-  $Res call({UniqueId id, User poster, UniqueId experienceId, CommentContent content, PastDate creationDate, PastDate modificationDate});
+  $Res call({UniqueId id, SimpleUser poster, UniqueId experienceId, CommentContent content, PastDate creationDate, PastDate modificationDate});
 
-  $UserCopyWith<$Res> get poster;
+  $SimpleUserCopyWith<$Res> get poster;
 }
 
 /// @nodoc
@@ -78,7 +81,7 @@ class _$CommentCopyWithImpl<$Res> implements $CommentCopyWith<$Res> {
       poster: poster == freezed
           ? _value.poster
           : poster // ignore: cast_nullable_to_non_nullable
-              as User,
+              as SimpleUser,
       experienceId: experienceId == freezed
           ? _value.experienceId
           : experienceId // ignore: cast_nullable_to_non_nullable
@@ -99,8 +102,8 @@ class _$CommentCopyWithImpl<$Res> implements $CommentCopyWith<$Res> {
   }
 
   @override
-  $UserCopyWith<$Res> get poster {
-    return $UserCopyWith<$Res>(_value.poster, (value) {
+  $SimpleUserCopyWith<$Res> get poster {
+    return $SimpleUserCopyWith<$Res>(_value.poster, (value) {
       return _then(_value.copyWith(poster: value));
     });
   }
@@ -111,10 +114,10 @@ abstract class _$CommentCopyWith<$Res> implements $CommentCopyWith<$Res> {
   factory _$CommentCopyWith(_Comment value, $Res Function(_Comment) then) = __$CommentCopyWithImpl<$Res>;
 
   @override
-  $Res call({UniqueId id, User poster, UniqueId experienceId, CommentContent content, PastDate creationDate, PastDate modificationDate});
+  $Res call({UniqueId id, SimpleUser poster, UniqueId experienceId, CommentContent content, PastDate creationDate, PastDate modificationDate});
 
   @override
-  $UserCopyWith<$Res> get poster;
+  $SimpleUserCopyWith<$Res> get poster;
 }
 
 /// @nodoc
@@ -141,7 +144,7 @@ class __$CommentCopyWithImpl<$Res> extends _$CommentCopyWithImpl<$Res> implement
       poster: poster == freezed
           ? _value.poster
           : poster // ignore: cast_nullable_to_non_nullable
-              as User,
+              as SimpleUser,
       experienceId: experienceId == freezed
           ? _value.experienceId
           : experienceId // ignore: cast_nullable_to_non_nullable
@@ -170,7 +173,7 @@ class _$_Comment extends _Comment {
   @override
   final UniqueId id;
   @override
-  final User poster;
+  final SimpleUser poster;
   @override
   final UniqueId experienceId;
   @override
@@ -214,13 +217,20 @@ class _$_Comment extends _Comment {
 
 abstract class _Comment extends Comment {
   const factory _Comment(
-      {required UniqueId id, required User poster, required UniqueId experienceId, required CommentContent content, required PastDate creationDate, required PastDate modificationDate}) = _$_Comment;
+      {required UniqueId id,
+      required SimpleUser poster,
+      required UniqueId experienceId,
+      required CommentContent content,
+      required PastDate creationDate,
+      required PastDate modificationDate}) = _$_Comment;
   const _Comment._() : super._();
 
   @override
   UniqueId get id => throw _privateConstructorUsedError;
+
   @override
-  User get poster => throw _privateConstructorUsedError;
+  SimpleUser get poster => throw _privateConstructorUsedError;
+
   @override
   UniqueId get experienceId => throw _privateConstructorUsedError;
   @override

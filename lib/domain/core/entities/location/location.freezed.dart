@@ -33,11 +33,8 @@ const $Location = _$LocationTearOff();
 /// @nodoc
 mixin _$Location {
   UniqueId get id => throw _privateConstructorUsedError;
-
   String get city => throw _privateConstructorUsedError;
-
   String get country => throw _privateConstructorUsedError;
-
   String get postalCode => throw _privateConstructorUsedError;
   Set<Experience> get experiences => throw _privateConstructorUsedError;
 

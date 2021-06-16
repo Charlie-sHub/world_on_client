@@ -22,7 +22,9 @@ class ImageStack extends StatelessWidget {
           left: 1,
           top: 1,
           child: UserImage(
-            user: experience.creator,
+            userId: experience.creator.id,
+            imageUrl: experience.creator.imageURL,
+            adminPowers: experience.creator.adminPowers,
             avatarRadius: 30,
             checkIconSize: 20,
           ),

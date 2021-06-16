@@ -73,7 +73,9 @@ class SimpleExperienceCard extends StatelessWidget {
                   left: 3,
                   top: 3,
                   child: UserImage(
-                    user: experience.creator,
+                    userId: experience.creator.id,
+                    imageUrl: experience.creator.imageURL,
+                    adminPowers: experience.creator.adminPowers,
                     avatarRadius: 20,
                     checkIconSize: 15,
                   ),

@@ -1,5 +1,6 @@
 import 'package:dartz/dartz.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:worldon/domain/core/entities/user/user.dart';
 import 'package:worldon/domain/core/failures/value_failure.dart';
 import 'package:worldon/domain/core/validation/objects/experience_points.dart';
 import 'package:worldon/domain/core/validation/objects/name.dart';
@@ -35,6 +36,17 @@ class SimpleUser with _$SimpleUser {
         experiencePoints: ExperiencePoints(100),
         adminPowers: false,
         followersAmount: 0,
+      );
+
+  factory SimpleUser.fromUser(User user) => SimpleUser(
+        id: user.id,
+        name: user.name,
+        username: user.username,
+        imageURL: user.imageURL,
+        level: user.level,
+        experiencePoints: user.experiencePoints,
+        adminPowers: user.adminPowers,
+        followersAmount: user.followersAmount,
       );
 
   Option<ValueFailure<dynamic>> get failureOption {
