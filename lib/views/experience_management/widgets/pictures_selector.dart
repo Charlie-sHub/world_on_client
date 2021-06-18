@@ -2,7 +2,7 @@ import 'package:dartz/dartz.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:logger/logger.dart';
-import 'package:multi_image_picker/multi_image_picker.dart';
+import 'package:multi_image_picker2/multi_image_picker2.dart';
 import 'package:worldon/application/experience_management/experience_management_form/experience_management_form_bloc.dart';
 import 'package:worldon/generated/l10n.dart';
 
@@ -90,6 +90,10 @@ class PicturesSelector extends StatelessWidget {
           actionBarTitle: "World On",
           allViewTitle: S.of(context).multiImagePickerAllViewTitle,
           useDetailsView: false,
+          actionBarColor: "#302B27",
+          actionBarTitleColor: "#FCA311",
+          selectCircleStrokeColor: "#FCA311",
+          statusBarColor: "#000000",
         ),
       );
       context.read<ExperienceManagementFormBloc>().add(

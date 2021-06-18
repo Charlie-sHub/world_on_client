@@ -1,27 +1,20 @@
 import 'package:another_flushbar/flushbar_helper.dart';
 import 'package:auto_size_text/auto_size_text.dart';
-import 'package:dartz/dartz.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:worldon/application/core/experience_card_actor/experience_card_actor_bloc.dart';
-import 'package:worldon/application/navigation/navigation_actor/navigation_actor_bloc.dart';
 import 'package:worldon/domain/core/entities/experience/experience.dart';
 import 'package:worldon/generated/l10n.dart';
 import 'package:worldon/injection.dart';
-import 'package:worldon/views/core/widgets/cards/experience_card/log_button.dart';
 import 'package:worldon/views/core/widgets/cards/experience_card/participate_button.dart';
-import 'package:worldon/views/core/widgets/cards/experience_card/share_externally_button.dart';
-import 'package:worldon/views/core/widgets/cards/experience_card/share_internally_button.dart';
 import 'package:worldon/views/core/widgets/cards/tag_card/simple_tag_card_builder.dart';
-import 'package:worldon/views/core/widgets/misc/carousel_builder.dart';
 import 'package:worldon/views/core/widgets/misc/difficulty_display.dart';
 import 'package:worldon/views/core/widgets/misc/experience_done_counter.dart';
 import 'package:worldon/views/core/widgets/misc/experience_likes_counter.dart';
 import 'package:worldon/views/core/widgets/misc/experience_points_view.dart';
 import 'package:worldon/views/core/widgets/misc/user_image.dart';
-import 'package:worldon/views/core/widgets/misc/world_on_cached_image.dart';
 
-import 'manage_button_builder.dart';
+import 'image_stack.dart';
 
 class ExpansionExperienceCard extends StatelessWidget {
   final Experience experience;
@@ -46,55 +39,9 @@ class ExpansionExperienceCard extends StatelessWidget {
           clipBehavior: Clip.antiAlias,
           child: Column(
             children: <Widget>[
-              SizedBox(
-                height: MediaQuery.of(context).size.height * 0.3,
-                child: Stack(
-                  children: [
-                    ShaderMask(
-                      blendMode: BlendMode.darken,
-                      shaderCallback: (bounds) => LinearGradient(
-                        begin: Alignment.center,
-                        end: Alignment.topCenter,
-                        colors: [
-                          Colors.transparent,
-                          Colors.black.withOpacity(0.4),
-                        ],
-                        stops: const [
-                          0,
-                          1,
-                        ],
-                      ).createShader(bounds),
-                      child: CarouselBuilder(
-                        itemCount: experience.imageURLs.length,
-                        function: (index) => InkWell(
-                          onTap: () => context.read<NavigationActorBloc>().add(
-                                NavigationActorEvent.experienceNavigationTapped(
-                                  some(experience),
-                                ),
-                              ),
-                          child: WorldOnCachedImage(
-                            imageURL: experience.imageURLs.elementAt(index),
-                          ),
-                        ),
-                      ),
-                    ),
-                    Positioned(
-                      right: 0,
-                      top: 0,
-                      child: Row(
-                        children: [
-                          ShareExternallyButton(experience: experience),
-                          ShareInternallyButton(experience: experience),
-                          LogButton(experience: experience),
-                          ManageButtonBuilder(
-                            experience: experience,
-                            reloadFunction: reloadFunction,
-                          ),
-                        ],
-                      ),
-                    ),
-                  ],
-                ),
+              ImageStack(
+                experience: experience,
+                reloadFunction: reloadFunction,
               ),
               ExpansionTile(
                 title: Row(

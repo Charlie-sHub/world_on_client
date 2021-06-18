@@ -7,13 +7,12 @@ import 'package:worldon/domain/core/validation/objects/unique_id.dart';
 import 'package:worldon/domain/core/validation/objects/user_level.dart';
 
 part 'simple_user_dto.freezed.dart';
-
 part 'simple_user_dto.g.dart';
 
 @freezed
 class SimpleUserDto with _$SimpleUserDto {
   const SimpleUserDto._();
-  
+
   const factory SimpleUserDto({
     required String id,
     required String name,
@@ -24,9 +23,8 @@ class SimpleUserDto with _$SimpleUserDto {
     required bool adminPowers,
     required int followersAmount,
   }) = _SimpleUserDto;
-  
+
   factory SimpleUserDto.fromDomain(SimpleUser user) {
-    j
     return SimpleUserDto(
       id: user.id.getOrCrash(),
       name: user.name.getOrCrash(),
@@ -38,25 +36,23 @@ class SimpleUserDto with _$SimpleUserDto {
       followersAmount: user.followersAmount,
     );
   }
-  
-  SimpleUser toDomain() =>
-    SimpleUser(
-      id: UniqueId.fromUniqueString(id),
-      name: Name(name),
-      username: Name(username),
-      imageURL: imageURL,
-      level: UserLevel(level),
-      experiencePoints: ExperiencePoints(experiencePoints),
-      adminPowers: adminPowers,
-      followersAmount: followersAmount,
-    );
-  
+
+  SimpleUser toDomain() => SimpleUser(
+        id: UniqueId.fromUniqueString(id),
+        name: Name(name),
+        username: Name(username),
+        imageURL: imageURL,
+        level: UserLevel(level),
+        experiencePoints: ExperiencePoints(experiencePoints),
+        adminPowers: adminPowers,
+        followersAmount: followersAmount,
+      );
+
   factory SimpleUserDto.fromJson(Map<String, dynamic> json) => _$SimpleUserDtoFromJson(json);
-  
-  factory SimpleUserDto.fromFirestore(DocumentSnapshot document) =>
-    SimpleUserDto.fromJson(
-      document.data()!,
-    ).copyWith(
-      id: document.id,
-    );
+
+  factory SimpleUserDto.fromFirestore(DocumentSnapshot document) => SimpleUserDto.fromJson(
+        document.data()!,
+      ).copyWith(
+        id: document.id,
+      );
 }

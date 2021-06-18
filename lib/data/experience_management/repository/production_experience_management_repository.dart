@@ -25,20 +25,18 @@ import 'package:worldon/injection.dart';
 class ProductionExperienceManagementRepository implements ExperienceManagementRepositoryInterface {
   final _logger = Logger();
   final _geo = Geoflutterfire();
-  final FirebaseFirestore _firestore;
   final _functions = FirebaseFunctions.instanceFor(region: "europe-west1");
+  final FirebaseFirestore _firestore;
 
   ProductionExperienceManagementRepository(this._firestore);
 
   @override
   Future<Either<Failure, Unit>> createExperience(Experience experience) async {
     try {
-      final _cloudStorageService = getIt<CloudStorageService>();
       final _rewardSet = <Reward>{};
       final _objectiveList = <Objective>[];
-      await uploadImages(
+      await _uploadImages(
         experience,
-        _cloudStorageService,
         _rewardSet,
         _objectiveList,
       );
@@ -48,28 +46,19 @@ class ProductionExperienceManagementRepository implements ExperienceManagementRe
           objectives: ObjectiveList(_objectiveList.toImmutableList()),
         ),
       );
+      final _flutterFireGeoPosition = _geo.point(
+        latitude: _experienceDto.coordinates.latitude,
+        longitude: _experienceDto.coordinates.longitude,
+      );
+      final _experienceJson = _experienceDto.toJson();
+      _experienceJson[ExperienceFields.position] = _flutterFireGeoPosition.data;
       _firestore.experienceCollection
           .doc(
             experience.id.getOrCrash(),
           )
           .set(
-            _experienceDto.toJson(),
+            _experienceJson,
           );
-      // I don't like doing this but seems like the best solution for now
-      final _flutterFireGeoPosition = _geo.point(
-        latitude: _experienceDto.coordinates.latitude,
-        longitude: _experienceDto.coordinates.longitude,
-      );
-      _firestore.experienceCollection
-          .doc(
-        experience.id.getOrCrash(),
-      )
-          .set(
-        {
-          ExperienceFields.position: _flutterFireGeoPosition.data,
-        },
-        SetOptions(merge: true),
-      );
       return right(unit);
     } catch (e) {
       return _onException(e);
@@ -79,13 +68,11 @@ class ProductionExperienceManagementRepository implements ExperienceManagementRe
   @override
   Future<Either<Failure, Unit>> editExperience(Experience experience) async {
     try {
-      final _cloudStorageService = getIt<CloudStorageService>();
       final _rewardSet = <Reward>{};
       final _objectiveList = <Objective>[];
       final _experienceId = experience.id.getOrCrash();
-      await uploadImages(
+      await _uploadImages(
         experience,
-        _cloudStorageService,
         _rewardSet,
         _objectiveList,
       );
@@ -98,19 +85,25 @@ class ProductionExperienceManagementRepository implements ExperienceManagementRe
           objectives: ObjectiveList(_objectiveList.toImmutableList()),
         ),
       );
+      final _flutterFireGeoPosition = _geo.point(
+        latitude: _experienceDto.coordinates.latitude,
+        longitude: _experienceDto.coordinates.longitude,
+      );
+      final _experienceJson = _experienceDto.toJson();
+      _experienceJson[ExperienceFields.position] = _flutterFireGeoPosition.data;
       _firestore.experienceCollection
           .doc(
             _experienceId,
           )
           .update(
-            _experienceDto.toJson(),
+            _experienceJson,
           );
-      final _propagateExperienceUpdateCallable = _functions.httpsCallable("propagateExperienceUpdate");
-      _propagateExperienceUpdateCallable.call(
+      final _propagateUpdateCallable = _functions.httpsCallable("propagateExperienceUpdate");
+      _propagateUpdateCallable.call(
         <String, dynamic>{"experienceId": _experienceId},
       );
-      final _updateExperienceIndex = _functions.httpsCallable("updateExperienceIndex");
-      await _updateExperienceIndex.call(
+      final _updateIndexCallable = _functions.httpsCallable("updateExperienceIndex");
+      await _updateIndexCallable.call(
         <String, dynamic>{"experienceId": _experienceId},
       );
       return right(unit);
@@ -122,8 +115,14 @@ class ProductionExperienceManagementRepository implements ExperienceManagementRe
   @override
   Future<Either<Failure, Experience>> getExperience(UniqueId id) async {
     try {
-      final _experienceSnapshot = await _firestore.experienceCollection.doc(id.getOrCrash()).get();
-      final _experience = ExperienceDto.fromFirestore(_experienceSnapshot).toDomain();
+      final _experienceSnapshot = await _firestore.experienceCollection
+          .doc(
+            id.getOrCrash(),
+          )
+          .get();
+      final _experience = ExperienceDto.fromFirestore(
+        _experienceSnapshot,
+      ).toDomain();
       return right(_experience);
     } catch (e) {
       return _onException(e);
@@ -133,19 +132,23 @@ class ProductionExperienceManagementRepository implements ExperienceManagementRe
   @override
   Future<Either<Failure, Unit>> removeExperience(UniqueId id) async {
     try {
-      _firestore.experienceCollection.doc(id.getOrCrash()).delete();
+      _firestore.experienceCollection
+          .doc(
+            id.getOrCrash(),
+          )
+          .delete();
       return right(unit);
     } catch (e) {
       return _onException(e);
     }
   }
 
-  Future uploadImages(
+  Future _uploadImages(
     Experience experience,
-    CloudStorageService _cloudStorageService,
-    Set<Reward> _rewardSet,
-    List<Objective> _objectiveList,
+    Set<Reward> rewardSet,
+    List<Objective> objectiveList,
   ) async {
+    final _cloudStorageService = getIt<CloudStorageService>();
     final _imageAssets = experience.imageAssetsOption.getOrElse(() => []);
     for (final _imageAsset in _imageAssets) {
       final _imageName = _imageAsset.name! + experience.id.getOrCrash();
@@ -166,7 +169,7 @@ class ProductionExperienceManagementRepository implements ExperienceManagementRe
             name: _reward.id.getOrCrash(),
           );
           final _rewardWithImage = _reward.copyWith(imageURL: _imageURL);
-          _rewardSet.add(_rewardWithImage);
+          rewardSet.add(_rewardWithImage);
         },
       );
     }
@@ -180,7 +183,7 @@ class ProductionExperienceManagementRepository implements ExperienceManagementRe
             name: _objective.id.getOrCrash(),
           );
           final _objectiveWithImage = _objective.copyWith(imageURL: _imageURL);
-          _objectiveList.add(_objectiveWithImage);
+          objectiveList.add(_objectiveWithImage);
         },
       );
     }

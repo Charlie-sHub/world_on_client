@@ -3,7 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:worldon/application/authentication/registration_form/registration_form_bloc.dart';
 import 'package:worldon/generated/l10n.dart';
 
-import 'open_dialog_function.dart';
+import '../../../core/misc/common_functions/open_picture_select_dialog.dart';
 
 class CameraButton extends StatelessWidget {
   @override
@@ -16,7 +16,7 @@ class CameraButton extends StatelessWidget {
             Icons.photo_camera,
           ),
           onPressed: () async {
-            final _imageFile = await openDialog(context);
+            final _imageFile = await openPictureSelectDialog(context);
             if (_imageFile != null) {
               context.read<RegistrationFormBloc>().add(
                     RegistrationFormEvent.imageChanged(_imageFile),

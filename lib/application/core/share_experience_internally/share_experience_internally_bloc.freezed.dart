@@ -695,7 +695,7 @@ class _$_ShareExperienceInternallyState implements _ShareExperienceInternallySta
             (identical(other.users, users) || const DeepCollectionEquality().equals(other.users, users)) &&
             (identical(other.submitted, submitted) || const DeepCollectionEquality().equals(other.submitted, submitted)));
   }
-  
+
   @override
   int get hashCode => runtimeType.hashCode ^ const DeepCollectionEquality().hash(experience) ^ const DeepCollectionEquality().hash(users) ^ const DeepCollectionEquality().hash(submitted);
 

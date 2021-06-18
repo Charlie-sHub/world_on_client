@@ -33,13 +33,9 @@ const $Message = _$MessageTearOff();
 /// @nodoc
 mixin _$Message {
   UniqueId get id => throw _privateConstructorUsedError;
-
   SimpleUser get sender => throw _privateConstructorUsedError;
-
   UniqueId get receiverId => throw _privateConstructorUsedError;
-
   MessageContent get content => throw _privateConstructorUsedError;
-
   PastDate get creationDate => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)

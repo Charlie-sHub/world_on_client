@@ -1937,10 +1937,10 @@ class S {
     );
   }
 
-  /// `Objective's localization`
+  /// `Objective's location`
   String get objectiveLocalization {
     return Intl.message(
-      'Objective\'s localization',
+      'Objective\'s location',
       name: 'objectiveLocalization',
       desc: '',
       args: [],

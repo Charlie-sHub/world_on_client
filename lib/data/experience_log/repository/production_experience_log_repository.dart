@@ -34,8 +34,10 @@ class ProductionExperienceLogRepository implements ExperienceLogRepositoryInterf
         },
       );
       return right(unit);
-    } on FirebaseException catch (e) {
-      return onFirebaseException(e);
+    } on FirebaseException catch (error) {
+      return left(
+        _onError(error),
+      );
     }
   }
 
@@ -49,8 +51,10 @@ class ProductionExperienceLogRepository implements ExperienceLogRepositoryInterf
         },
       );
       return right(unit);
-    } on FirebaseException catch (e) {
-      return onFirebaseException(e);
+    } catch (error) {
+      return left(
+        _onError(error),
+      );
     }
   }
 
@@ -69,10 +73,6 @@ class ProductionExperienceLogRepository implements ExperienceLogRepositoryInterf
                 .where(
                   ExperienceFields.id,
                   whereIn: _idList,
-                )
-                .orderBy(
-                  ExperienceFields.creationDate,
-                  descending: true,
                 )
                 .snapshots(),
           )
@@ -104,7 +104,9 @@ class ProductionExperienceLogRepository implements ExperienceLogRepositoryInterf
           }
         },
       ).onErrorReturnWith(
-        (error) => left(onError(error)),
+        (error) => left(
+          _onError(error),
+        ),
       );
     } else {
       yield* Stream.value(
@@ -117,16 +119,7 @@ class ProductionExperienceLogRepository implements ExperienceLogRepositoryInterf
     }
   }
 
-  Either<Failure, Unit> onFirebaseException(FirebaseException e) {
-    _logger.e("FirebaseException: ${e.message}");
-    return left(
-      const Failure.coreData(
-        CoreDataFailure.serverError(errorString: "Unknown server error"),
-      ),
-    );
-  }
-
-  Failure onError(dynamic error) {
+  Failure _onError(dynamic error) {
     if (error is FirebaseException) {
       _logger.e("FirebaseException: ${error.message}");
       return Failure.coreData(

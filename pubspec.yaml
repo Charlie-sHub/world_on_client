@@ -59,7 +59,7 @@ dependencies:
   kt_dart: ^0.9.1
   logger: ^1.0.0
   material_design_icons_flutter: ^5.0.5955-rc.1
-  multi_image_picker: ^4.8.1
+  multi_image_picker2: ^5.0.2
   number_display: ^3.0.0
   path_provider: ^2.0.2
   percent_indicator: ^3.0.1

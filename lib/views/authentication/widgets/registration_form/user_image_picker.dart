@@ -5,7 +5,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:worldon/application/authentication/registration_form/registration_form_bloc.dart';
 import 'package:worldon/views/authentication/widgets/registration_form/camera_button.dart';
 
-import 'open_dialog_function.dart';
+import '../../../core/misc/common_functions/open_picture_select_dialog.dart';
 
 class UserImagePicker extends StatelessWidget {
   const UserImagePicker({
@@ -26,7 +26,7 @@ class UserImagePicker extends StatelessWidget {
                 if (_imageURL.isNotEmpty) {
                   return TextButton(
                     onPressed: () async {
-                      final _imageFile = await openDialog(context);
+                      final _imageFile = await openPictureSelectDialog(context);
                       if (_imageFile != null) {
                         context.read<RegistrationFormBloc>().add(
                               RegistrationFormEvent.imageChanged(_imageFile),
@@ -45,7 +45,7 @@ class UserImagePicker extends StatelessWidget {
             ),
             (imageFile) => TextButton(
               onPressed: () async {
-                final _imageFile = await openDialog(context);
+                final _imageFile = await openPictureSelectDialog(context);
                 if (_imageFile != null) {
                   context.read<RegistrationFormBloc>().add(
                         RegistrationFormEvent.imageChanged(_imageFile),

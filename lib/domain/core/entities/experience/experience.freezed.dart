@@ -129,9 +129,7 @@ abstract class $ExperienceCopyWith<$Res> {
       bool isPromoted});
 
   $CoordinatesCopyWith<$Res> get coordinates;
-
   $LocationCopyWith<$Res> get location;
-
   $SimpleUserCopyWith<$Res> get creator;
 }
 
@@ -295,10 +293,8 @@ abstract class _$ExperienceCopyWith<$Res> implements $ExperienceCopyWith<$Res> {
 
   @override
   $CoordinatesCopyWith<$Res> get coordinates;
-
   @override
   $LocationCopyWith<$Res> get location;
-
   @override
   $SimpleUserCopyWith<$Res> get creator;
 }
@@ -573,13 +569,10 @@ abstract class _Experience extends Experience {
 
   @override
   Coordinates get coordinates => throw _privateConstructorUsedError;
-
   @override
   Location get location => throw _privateConstructorUsedError;
-
   @override
   SimpleUser get creator => throw _privateConstructorUsedError;
-
   @override
   Difficulty get difficulty => throw _privateConstructorUsedError;
   @override

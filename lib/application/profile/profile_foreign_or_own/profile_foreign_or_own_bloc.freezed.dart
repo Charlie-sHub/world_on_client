@@ -52,7 +52,7 @@ mixin _$ProfileForeignOrOwnEvent {
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
-  
+
   @JsonKey(ignore: true)
   $ProfileForeignOrOwnEventCopyWith<ProfileForeignOrOwnEvent> get copyWith => throw _privateConstructorUsedError;
 }

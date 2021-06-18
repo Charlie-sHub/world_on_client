@@ -35,9 +35,7 @@ const $Comment = _$CommentTearOff();
 /// @nodoc
 mixin _$Comment {
   UniqueId get id => throw _privateConstructorUsedError;
-
   SimpleUser get poster => throw _privateConstructorUsedError;
-
   UniqueId get experienceId => throw _privateConstructorUsedError;
   CommentContent get content => throw _privateConstructorUsedError;
   PastDate get creationDate => throw _privateConstructorUsedError;
@@ -227,10 +225,8 @@ abstract class _Comment extends Comment {
 
   @override
   UniqueId get id => throw _privateConstructorUsedError;
-
   @override
   SimpleUser get poster => throw _privateConstructorUsedError;
-
   @override
   UniqueId get experienceId => throw _privateConstructorUsedError;
   @override

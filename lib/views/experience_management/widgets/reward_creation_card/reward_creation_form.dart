@@ -1,10 +1,8 @@
-import 'dart:io';
-
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:worldon/application/experience_management/reward_form/reward_form_bloc.dart';
 import 'package:worldon/generated/l10n.dart';
-import 'package:worldon/views/core/widgets/misc/image_picker_dialog.dart';
+import 'package:worldon/views/core/misc/common_functions/open_picture_select_dialog.dart';
 import 'package:worldon/views/experience_management/widgets/reward_creation_card/reward_description_text_field.dart';
 import 'package:worldon/views/experience_management/widgets/reward_creation_card/reward_name_text_field.dart';
 import 'package:worldon/views/experience_management/widgets/reward_creation_card/submit_reward_button.dart';
@@ -40,7 +38,7 @@ class RewardCreationForm extends StatelessWidget {
                         Icons.photo_camera,
                       ),
                       onPressed: () async {
-                        final _imageFile = await _openDialog(context);
+                        final _imageFile = await openPictureSelectDialog(context);
                         if (_imageFile != null) {
                           context.read<RewardFormBloc>().add(
                                 RewardFormEvent.imageChanged(_imageFile),
@@ -62,7 +60,7 @@ class RewardCreationForm extends StatelessWidget {
                   padding: const EdgeInsets.all(10),
                   child: TextButton(
                     onPressed: () async {
-                      final _imageFile = await _openDialog(context);
+                      final _imageFile = await openPictureSelectDialog(context);
                       if (_imageFile != null) {
                         context.read<RewardFormBloc>().add(
                               RewardFormEvent.imageChanged(_imageFile),
@@ -81,15 +79,6 @@ class RewardCreationForm extends StatelessWidget {
           const SubmitRewardButton(),
         ],
       ),
-    );
-  }
-
-  Future<File?> _openDialog(BuildContext context) async {
-    return showDialog<File>(
-      context: context,
-      useSafeArea: true,
-      barrierDismissible: true,
-      builder: (context) => ImagePickerDialog(),
     );
   }
 }

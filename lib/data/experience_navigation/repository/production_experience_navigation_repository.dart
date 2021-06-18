@@ -43,9 +43,7 @@ class ProductionExperienceNavigationRepository implements ExperienceNavigationRe
       _userDocument.update(
         {
           UserFields.experiencesDoneIds: FieldValue.arrayUnion(
-            [
-              experienceId.getOrCrash(),
-            ],
+            [experienceId.getOrCrash()],
           ),
         },
       );
@@ -59,7 +57,7 @@ class ProductionExperienceNavigationRepository implements ExperienceNavigationRe
           ),
         },
       );
-      final _saveDocument = await _firestore.userCollection
+      _firestore.userCollection
           .doc(
             _userDocument.id,
           )
@@ -67,8 +65,7 @@ class ProductionExperienceNavigationRepository implements ExperienceNavigationRe
           .doc(
             experienceId.getOrCrash(),
           )
-          .get();
-      _saveDocument.reference.delete();
+          .delete();
       _propagate(experienceId);
       return right(unit);
     } on FirebaseException catch (exception) {
@@ -82,13 +79,19 @@ class ProductionExperienceNavigationRepository implements ExperienceNavigationRe
       final _userDocument = await _firestore.userDocument();
       _userDocument.update(
         {
-          UserFields.experiencesLikedIds: FieldValue.arrayUnion([experienceId.getOrCrash()]),
+          UserFields.experiencesLikedIds: FieldValue.arrayUnion(
+            [experienceId.getOrCrash()],
+          ),
         },
       );
-      final _experienceDocument = await _firestore.experienceDocument(experienceId.getOrCrash());
+      final _experienceDocument = await _firestore.experienceDocument(
+        experienceId.getOrCrash(),
+      );
       _experienceDocument.update(
         {
-          ExperienceFields.likedBy: FieldValue.arrayUnion([_userDocument.id]),
+          ExperienceFields.likedBy: FieldValue.arrayUnion(
+            [_userDocument.id],
+          ),
         },
       );
       _propagate(experienceId);
@@ -105,13 +108,13 @@ class ProductionExperienceNavigationRepository implements ExperienceNavigationRe
       _userDocument.update(
         {
           UserFields.experiencesLikedIds: FieldValue.arrayRemove(
-            [
-              experienceId.getOrCrash(),
-            ],
+            [experienceId.getOrCrash()],
           ),
         },
       );
-      final _experienceDocument = await _firestore.experienceDocument(experienceId.getOrCrash());
+      final _experienceDocument = await _firestore.experienceDocument(
+        experienceId.getOrCrash(),
+      );
       _experienceDocument.update(
         {
           ExperienceFields.likedBy: FieldValue.arrayRemove(
@@ -127,8 +130,8 @@ class ProductionExperienceNavigationRepository implements ExperienceNavigationRe
   }
 
   void _propagate(UniqueId experienceId) {
-    final _propagateExperienceUpdateCallable = _functions.httpsCallable("propagateExperienceUpdate");
-    _propagateExperienceUpdateCallable.call(
+    final _propagateUpdateCallable = _functions.httpsCallable("propagateExperienceUpdate");
+    _propagateUpdateCallable.call(
       <String, dynamic>{"experienceId": experienceId.getOrCrash()},
     );
   }
@@ -141,6 +144,9 @@ class ProductionExperienceNavigationRepository implements ExperienceNavigationRe
     // The difficulty should be the average of all user's rating, not just the rating of the last user
     // But how to implement that? perhaps with a backend function
     // Right now it doesn't change anything, better to simply leave the creator's original difficulty
+
+    // What about a sub-document that stores all the ratings
+    // Then a cloud function reads it and updates the experience document with the average rating
     try {
       /*
       await _firestore.experienceCollection.doc(experienceId.getOrCrash()).update(

@@ -157,7 +157,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "notifications": MessageLookupByLibrary.simpleMessage("Notifications"),
         "objective": MessageLookupByLibrary.simpleMessage("Objective"),
         "objectiveCreationCardTitle": MessageLookupByLibrary.simpleMessage("Create the Objectives"),
-        "objectiveLocalization": MessageLookupByLibrary.simpleMessage("Objective\'s localization"),
+        "objectiveLocalization": MessageLookupByLibrary.simpleMessage("Objective\'s location"),
         "objectivesTab": MessageLookupByLibrary.simpleMessage("Objectives"),
         "optional": MessageLookupByLibrary.simpleMessage("Optional"),
         "owned": MessageLookupByLibrary.simpleMessage("Owned"),

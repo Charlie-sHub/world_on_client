@@ -53,24 +53,16 @@ const $NotificationDto = _$NotificationDtoTearOff();
 mixin _$NotificationDto {
   @JsonKey(ignore: true)
   String? get id => throw _privateConstructorUsedError;
-
   SimpleUserDto get sender => throw _privateConstructorUsedError;
-
   String get receiverId => throw _privateConstructorUsedError;
-
   String get description => throw _privateConstructorUsedError;
-
   bool get seen => throw _privateConstructorUsedError;
-
   @ServerTimestampConverter()
   DateTime get creationDate => throw _privateConstructorUsedError;
-
   NotificationType get type => throw _privateConstructorUsedError;
-
   ExperienceDto? get experience => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-
   @JsonKey(ignore: true)
   $NotificationDtoCopyWith<NotificationDto> get copyWith => throw _privateConstructorUsedError;
 }
@@ -90,7 +82,6 @@ abstract class $NotificationDtoCopyWith<$Res> {
       ExperienceDto? experience});
 
   $SimpleUserDtoCopyWith<$Res> get sender;
-
   $ExperienceDtoCopyWith<$Res>? get experience;
 }
 
@@ -186,7 +177,6 @@ abstract class _$NotificationDtoCopyWith<$Res> implements $NotificationDtoCopyWi
 
   @override
   $SimpleUserDtoCopyWith<$Res> get sender;
-
   @override
   $ExperienceDtoCopyWith<$Res>? get experience;
 }

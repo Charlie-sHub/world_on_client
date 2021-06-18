@@ -44,19 +44,12 @@ const $Notification = _$NotificationTearOff();
 /// @nodoc
 mixin _$Notification {
   UniqueId get id => throw _privateConstructorUsedError;
-
   SimpleUser get sender => throw _privateConstructorUsedError;
-
   UniqueId get receiverId => throw _privateConstructorUsedError;
-
   EntityDescription get description => throw _privateConstructorUsedError;
-
   bool get seen => throw _privateConstructorUsedError;
-
   PastDate get creationDate => throw _privateConstructorUsedError;
-
   NotificationType get type => throw _privateConstructorUsedError;
-
   Option<Experience> get experienceOption => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
@@ -275,13 +268,10 @@ abstract class _Notification extends Notification {
 
   @override
   UniqueId get id => throw _privateConstructorUsedError;
-
   @override
   SimpleUser get sender => throw _privateConstructorUsedError;
-
   @override
   UniqueId get receiverId => throw _privateConstructorUsedError;
-
   @override
   EntityDescription get description => throw _privateConstructorUsedError;
   @override

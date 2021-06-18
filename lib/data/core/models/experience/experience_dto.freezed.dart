@@ -79,11 +79,8 @@ mixin _$ExperienceDto {
   Set<String> get imageURLs => throw _privateConstructorUsedError;
   CoordinatesDto get coordinates => throw _privateConstructorUsedError;
   LocationDto get location => throw _privateConstructorUsedError;
-
   String get creatorId => throw _privateConstructorUsedError;
-
   SimpleUserDto get creator => throw _privateConstructorUsedError;
-
   int get difficulty => throw _privateConstructorUsedError;
   @ServerTimestampConverter()
   DateTime get creationDate => throw _privateConstructorUsedError;
@@ -99,7 +96,6 @@ mixin _$ExperienceDto {
   bool get isPromoted => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-
   @JsonKey(ignore: true)
   $ExperienceDtoCopyWith<ExperienceDto> get copyWith => throw _privateConstructorUsedError;
 }
@@ -130,9 +126,7 @@ abstract class $ExperienceDtoCopyWith<$Res> {
       bool isPromoted});
 
   $CoordinatesDtoCopyWith<$Res> get coordinates;
-
   $LocationDtoCopyWith<$Res> get location;
-
   $SimpleUserDtoCopyWith<$Res> get creator;
 }
 
@@ -297,10 +291,8 @@ abstract class _$ExperienceDtoCopyWith<$Res> implements $ExperienceDtoCopyWith<$
 
   @override
   $CoordinatesDtoCopyWith<$Res> get coordinates;
-
   @override
   $LocationDtoCopyWith<$Res> get location;
-
   @override
   $SimpleUserDtoCopyWith<$Res> get creator;
 }
@@ -588,13 +580,10 @@ abstract class _ExperienceDto extends ExperienceDto {
   CoordinatesDto get coordinates => throw _privateConstructorUsedError;
   @override
   LocationDto get location => throw _privateConstructorUsedError;
-
   @override
   String get creatorId => throw _privateConstructorUsedError;
-
   @override
   SimpleUserDto get creator => throw _privateConstructorUsedError;
-
   @override
   int get difficulty => throw _privateConstructorUsedError;
   @override

@@ -52,23 +52,15 @@ const $SimpleUserDto = _$SimpleUserDtoTearOff();
 /// @nodoc
 mixin _$SimpleUserDto {
   String get id => throw _privateConstructorUsedError;
-
   String get name => throw _privateConstructorUsedError;
-
   String get username => throw _privateConstructorUsedError;
-
   String get imageURL => throw _privateConstructorUsedError;
-
   int get level => throw _privateConstructorUsedError;
-
   int get experiencePoints => throw _privateConstructorUsedError;
-
   bool get adminPowers => throw _privateConstructorUsedError;
-
   int get followersAmount => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-
   @JsonKey(ignore: true)
   $SimpleUserDtoCopyWith<SimpleUserDto> get copyWith => throw _privateConstructorUsedError;
 }
@@ -203,18 +195,18 @@ class __$SimpleUserDtoCopyWithImpl<$Res> extends _$SimpleUserDtoCopyWithImpl<$Re
 /// @nodoc
 @JsonSerializable()
 class _$_SimpleUserDto extends _SimpleUserDto {
-  const _$_SimpleUserDto(
-      {required this.id,
-      required this.name,
-      required this.username,
-      required this.imageURL,
-      required this.level,
-      required this.experiencePoints,
-      required this.adminPowers,
-      required this.followersAmount})
-      : super._();
+  const _$_SimpleUserDto({required this.id,
+    required this.name,
+    required this.username,
+    required this.imageURL,
+    required this.level,
+    required this.experiencePoints,
+    required this.adminPowers,
+    required this.followersAmount})
+    : super._();
 
-  factory _$_SimpleUserDto.fromJson(Map<String, dynamic> json) => _$_$_SimpleUserDtoFromJson(json);
+  factory _$_SimpleUserDto.fromJson(Map<String, dynamic> json) =>
+    _$_$_SimpleUserDtoFromJson(json);
 
   @override
   final String id;
@@ -275,19 +267,19 @@ class _$_SimpleUserDto extends _SimpleUserDto {
 }
 
 abstract class _SimpleUserDto extends SimpleUserDto {
-  const factory _SimpleUserDto(
-      {required String id,
-      required String name,
-      required String username,
-      required String imageURL,
-      required int level,
-      required int experiencePoints,
-      required bool adminPowers,
-      required int followersAmount}) = _$_SimpleUserDto;
+  const factory _SimpleUserDto({required String id,
+    required String name,
+    required String username,
+    required String imageURL,
+    required int level,
+    required int experiencePoints,
+    required bool adminPowers,
+    required int followersAmount}) = _$_SimpleUserDto;
 
   const _SimpleUserDto._() : super._();
 
-  factory _SimpleUserDto.fromJson(Map<String, dynamic> json) = _$_SimpleUserDto.fromJson;
+  factory _SimpleUserDto.fromJson(Map<String, dynamic> json) =
+  _$_SimpleUserDto.fromJson;
 
   @override
   String get id => throw _privateConstructorUsedError;
@@ -303,10 +295,8 @@ abstract class _SimpleUserDto extends SimpleUserDto {
 
   @override
   int get level => throw _privateConstructorUsedError;
-
   @override
   int get experiencePoints => throw _privateConstructorUsedError;
-
   @override
   bool get adminPowers => throw _privateConstructorUsedError;
 
