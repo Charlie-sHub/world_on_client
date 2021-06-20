@@ -78,12 +78,17 @@ class ProductionProfileRepository implements ProfileRepositoryInterface {
   @override
   Future<Either<Failure, Unit>> followUser(UniqueId userToFollowId) async {
     try {
-      final _userDocument = await _firestore.currentUserReference();
-      _userDocument.update(
+      final _currentUserDocument = await _firestore.currentUserReference();
+      final _userToFollowDocument = _firestore.userCollection.doc(userToFollowId.getOrCrash());
+      _currentUserDocument.update(
         {
           UserFields.followedUsersIds: FieldValue.arrayUnion(
             [userToFollowId.getOrCrash()],
           ),
+        },
+      );
+      _userToFollowDocument.update(
+        {
           UserFields.followersAmount: FieldValue.increment(1),
         },
       );
@@ -98,12 +103,17 @@ class ProductionProfileRepository implements ProfileRepositoryInterface {
   @override
   Future<Either<Failure, Unit>> unFollowUser(UniqueId userToUnFollowId) async {
     try {
-      final _userDocument = await _firestore.currentUserReference();
-      _userDocument.update(
+      final _currentUserDocument = await _firestore.currentUserReference();
+      final _userToFollowDocument = _firestore.userCollection.doc(userToUnFollowId.getOrCrash());
+      _currentUserDocument.update(
         {
           UserFields.followedUsersIds: FieldValue.arrayRemove(
             [userToUnFollowId.getOrCrash()],
           ),
+        },
+      );
+      _userToFollowDocument.update(
+        {
           UserFields.followersAmount: FieldValue.increment(-1),
         },
       );

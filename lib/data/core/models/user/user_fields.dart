@@ -28,6 +28,5 @@ abstract class UserFields {
   static const items = "items";
   static const coins = "coins";
   static const followersAmount = "followersAmount";
-  static const followingAmount = "followingAmount";
   static const promotionPlan = "promotionPlan";
 }
