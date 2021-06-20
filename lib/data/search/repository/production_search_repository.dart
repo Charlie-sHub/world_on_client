@@ -44,7 +44,8 @@ class ProductionSearchRepository implements SearchRepositoryInterface {
       final _querySnapshot = await _algoliaQuery.getObjects();
       for (final _queryResult in _querySnapshot.hits) {
         final _id = _queryResult.objectID;
-        final _experienceDocument = await _firestore.experienceCollection.doc(_id).get();
+        final _documentReference = await _firestore.experienceDocumentReference(_id);
+        final _experienceDocument = await _documentReference.get();
         final _experience = ExperienceDto.fromFirestore(_experienceDocument).toDomain();
         _results.add(_experience);
       }
@@ -225,8 +226,7 @@ class ProductionSearchRepository implements SearchRepositoryInterface {
   @override
   Future<Either<Failure, KtList<User>>> getShareableUsers() async {
     try {
-      final _userDocument = await _firestore.userDocument();
-      final _userDto = UserDto.fromFirestore(await _userDocument.get());
+      final _userDto = await _firestore.currentUserDto();
       final _querySnapshot = await _firestore.userCollection
           .where(
             UserFields.followedUsersIds,
@@ -248,7 +248,7 @@ class ProductionSearchRepository implements SearchRepositoryInterface {
   Future<Either<Failure, KtList<User>>> searchShareableUsers(SearchTerm name) async {
     try {
       final _searchString = name.getOrCrash().toLowerCase();
-      final _userDocument = await _firestore.userDocument();
+      final _userDocument = await _firestore.currentUserDocumentReference();
       final _currentUserDto = UserDto.fromFirestore(await _userDocument.get());
       final _querySnapshot = await _firestore.userCollection
           .where(

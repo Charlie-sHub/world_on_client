@@ -3,6 +3,7 @@ import 'package:kt_dart/kt.dart';
 import 'package:worldon/core/error/failure.dart';
 import 'package:worldon/domain/core/entities/coordinates/coordinates.dart';
 import 'package:worldon/domain/core/entities/experience/experience.dart';
+import 'package:worldon/domain/core/entities/item/item.dart';
 import 'package:worldon/domain/core/entities/objective/objective.dart';
 import 'package:worldon/domain/core/entities/user/user.dart';
 import 'package:worldon/domain/core/use_case/use_case.dart';
@@ -21,8 +22,13 @@ abstract class ExperienceNavigationRepositoryInterface {
   });
 
   /// Sends and amount of experience point so the server rewards the logged in [User]
-  /// returns the experience points awarded and whether or not the [User] leveled up
-  Future<Either<Failure, Map>> rewardUser(int experiencePoints);
+  Future<Either<Failure, Unit>> rewardUser(
+    int experiencePoints,
+    int userLevel,
+  );
+
+  /// Removes an expired experience boost [Item]
+  Future<Either<Failure, Unit>> removeExperienceBoostItem(Item item);
 
   /// Sends the ID of an [Experience] so the server adds the [Experience] to the logged in [User]'s liked list
   Future<Either<Failure, Unit>> likeExperience(UniqueId experienceId);

@@ -85,7 +85,7 @@ class AppRouter extends _i1.RootStackRouter {
           return _i12.StorePage();
         })
   };
-  
+
   @override
   List<_i1.RouteConfig> get routes => [
         _i1.RouteConfig(SplashPageRoute.name, path: '/'),

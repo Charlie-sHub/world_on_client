@@ -1,24 +1,40 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:worldon/data/core/models/user/user_dto.dart';
-import 'package:worldon/domain/authentication/repository/authentication_repository_interface.dart';
-import 'package:worldon/domain/core/entities/user/user.dart';
+import 'package:worldon/domain/core/entities/user/user.dart' as entity;
 import 'package:worldon/domain/core/failures/error.dart';
-
-import '../../../../injection.dart';
+import 'package:worldon/injection.dart';
 
 extension FirestoreX on FirebaseFirestore {
-  Future<DocumentReference> experienceDocument(String experienceId) async => FirebaseFirestore.instance.experienceCollection.doc(experienceId);
+  Future<DocumentReference> experienceDocumentReference(
+    String experienceId,
+  ) async =>
+      experienceCollection.doc(
+        experienceId,
+      );
 
-  Future<DocumentReference> userDocument() async {
-    final _userOption = await getIt<AuthenticationRepositoryInterface>().getLoggedInUser();
-    final _user = _userOption.getOrElse(() => throw UnAuthenticatedError());
-    return FirebaseFirestore.instance.userCollection.doc(_user.id.getOrCrash());
+  Future<DocumentReference> currentUserDocumentReference() async {
+    final _firebaseAuthInstance = getIt<FirebaseAuth>();
+    final _firebaseUser = _firebaseAuthInstance.currentUser;
+    if (_firebaseUser != null) {
+      final _documentReference = userCollection.doc(_firebaseUser.uid);
+      return _documentReference;
+    } else {
+      throw UnAuthenticatedError();
+    }
   }
 
-  Future<User> currentUser() async {
-    final _userDocument = await userDocument();
-    final _userDto = UserDto.fromFirestore(await _userDocument.get());
-    final _user = _userDto.toDomain();
+  Future<UserDto> currentUserDto() async {
+    final _documentReference = await currentUserDocumentReference();
+    final _userDocument = await _documentReference.get();
+    final _userDto = UserDto.fromFirestore(_userDocument);
+    return _userDto;
+  }
+
+  Future<entity.User> currentUser() async {
+    final _documentReference = await currentUserDocumentReference();
+    final _userDocument = await _documentReference.get();
+    final _user = UserDto.fromFirestore(_userDocument).toDomain();
     return _user;
   }
 

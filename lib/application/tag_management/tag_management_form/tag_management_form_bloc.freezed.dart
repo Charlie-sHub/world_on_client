@@ -593,7 +593,7 @@ abstract class _TagManagementFormState implements TagManagementFormState {
   bool get showErrorMessages => throw _privateConstructorUsedError;
   @override
   bool get isEditing => throw _privateConstructorUsedError;
-  
+
   @override
   bool get isSubmitting => throw _privateConstructorUsedError;
 

@@ -23,7 +23,7 @@ class ProductionTagRepository implements TagCoreRepositoryInterface {
   @override
   Future<Either<Failure, Unit>> addTagToInterests(Tag tag) async {
     try {
-      final _userDocument = await _firestore.userDocument();
+      final _userDocument = await _firestore.currentUserDocumentReference();
       _userDocument.update(
         {
           UserFields.interestsIds: FieldValue.arrayUnion([tag.id.getOrCrash()]),
@@ -38,7 +38,7 @@ class ProductionTagRepository implements TagCoreRepositoryInterface {
   @override
   Future<Either<Failure, Unit>> dismissTagFromInterests(Tag tag) async {
     try {
-      final _userDocument = await _firestore.userDocument();
+      final _userDocument = await _firestore.currentUserDocumentReference();
       _userDocument.update(
         {
           UserFields.interestsIds: FieldValue.arrayRemove([tag.id.getOrCrash()]),

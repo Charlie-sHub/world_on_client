@@ -48,7 +48,7 @@ class ProductionStoreRepository implements StoreRepositoryInterface {
           await _inAppPurchaseInstance.buyConsumable(
             purchaseParam: _purchaseParam,
           );
-          final _userDocument = await _firestore.userDocument();
+          final _userDocument = await _firestore.currentUserDocumentReference();
           await _userDocument.update(
             {
               UserFields.coins: FieldValue.increment(1),
@@ -131,8 +131,7 @@ class ProductionStoreRepository implements StoreRepositoryInterface {
   @override
   Stream<Either<Failure, KtList<Item>>> streamOwnedItems() async* {
     // Not sure this makes sense as a stream
-    final _userDocument = await _firestore.userDocument();
-    final _userDto = UserDto.fromFirestore(await _userDocument.get());
+    final _userDto = await _firestore.currentUserDto();
     if (_userDto.items.isNotEmpty) {
       final _iterableOfIdLists = partition(
         _userDto.followedUsersIds,

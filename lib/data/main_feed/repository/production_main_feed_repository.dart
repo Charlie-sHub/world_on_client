@@ -10,7 +10,6 @@ import 'package:worldon/data/core/failures/core_data_failure.dart';
 import 'package:worldon/data/core/misc/firebase/firebase_helpers.dart';
 import 'package:worldon/data/core/models/experience/experience_dto.dart';
 import 'package:worldon/data/core/models/experience/experience_fields.dart';
-import 'package:worldon/data/core/models/user/user_dto.dart';
 import 'package:worldon/data/core/models/user/user_fields.dart';
 import 'package:worldon/domain/core/entities/experience/experience.dart';
 import 'package:worldon/domain/core/failures/core_domain_failure.dart';
@@ -27,8 +26,7 @@ class ProductionMainFeedRepository implements MainFeedRepositoryInterface {
   Stream<Either<Failure, KtList<Experience>>> watchFeed() async* {
     // The limit is just a number that made sense at the time
     const _promotedExperiencesLimit = 5;
-    final _userDocument = await _firestore.userDocument();
-    final _userDto = UserDto.fromFirestore(await _userDocument.get());
+    final _userDto = await _firestore.currentUserDto();
     if (_userDto.followedUsersIds.isNotEmpty) {
       final _iterableOfIdLists = partition(
         _userDto.followedUsersIds,
@@ -44,7 +42,6 @@ class ProductionMainFeedRepository implements MainFeedRepositoryInterface {
                 .snapshots(),
           )
           .toList();
-
       final _promotedStream = _firestore.experienceCollection
           .where(
             ExperienceFields.isPromoted,
@@ -71,27 +68,30 @@ class ProductionMainFeedRepository implements MainFeedRepositoryInterface {
       yield* CombineLatestStream(
         _combinedStreamList,
         (List<QuerySnapshot> values) {
-          final _experienceList = <Experience>[];
+          final _documentSet = <QueryDocumentSnapshot>{};
           for (final _snapshot in values) {
-            for (final document in _snapshot.docs) {
-              final _experience = ExperienceDto.fromFirestore(document).toDomain();
-              _experienceList.add(_experience);
-            }
+            _documentSet.addAll(_snapshot.docs);
           }
-          // .toSet().toList() is used to remove duplicates
-          // For example when an user follows someone that is promoting their experiences
-          // A given experience would be added to the user's feed
-          // both by following the person and the experience being promoted
-          return _experienceList.toSet().toList();
+          final _experienceDtoList = _documentSet
+              .map(
+                (_document) => ExperienceDto.fromFirestore(_document),
+              )
+              .toList();
+          _experienceDtoList.sort(
+            (_a, _b) => _b.creationDate.compareTo(
+              _a.creationDate,
+            ),
+          );
+          final _experienceList = _experienceDtoList
+              .map(
+                (_experienceDto) => _experienceDto.toDomain(),
+              )
+              .toList();
+          return _experienceList;
         },
       ).map(
         (_experiences) {
           if (_experiences.isNotEmpty) {
-            _experiences.sort(
-              (_a, _b) => _b.creationDate.getOrCrash().compareTo(
-                    _a.creationDate.getOrCrash(),
-                  ),
-            );
             return right<Failure, KtList<Experience>>(
               _experiences.toImmutableList(),
             );

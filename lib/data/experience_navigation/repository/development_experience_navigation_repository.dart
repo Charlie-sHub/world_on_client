@@ -4,6 +4,7 @@ import 'package:kt_dart/kt.dart';
 import 'package:worldon/core/error/failure.dart';
 import 'package:worldon/domain/core/entities/coordinates/coordinates.dart';
 import 'package:worldon/domain/core/entities/experience/experience.dart';
+import 'package:worldon/domain/core/entities/item/item.dart';
 import 'package:worldon/domain/core/entities/objective/objective.dart';
 import 'package:worldon/domain/core/validation/objects/difficulty.dart';
 import 'package:worldon/domain/core/validation/objects/objective_list.dart';
@@ -36,7 +37,10 @@ class DevelopmentExperienceNavigationRepository implements ExperienceNavigationR
   }
 
   @override
-  Future<Either<Failure, Map>> rewardUser(int experiencePoints) async {
+  Future<Either<Failure, Unit>> rewardUser(
+    int experiencePoints,
+    int userLevel,
+  ) async {
     throw UnimplementedError();
   }
 
@@ -62,6 +66,11 @@ class DevelopmentExperienceNavigationRepository implements ExperienceNavigationR
 
   @override
   Future<Either<Failure, Unit>> unAccomplishObjective(Objective objective, UniqueId experienceId) {
+    throw UnimplementedError();
+  }
+
+  @override
+  Future<Either<Failure, Unit>> removeExperienceBoostItem(Item item) {
     throw UnimplementedError();
   }
 }

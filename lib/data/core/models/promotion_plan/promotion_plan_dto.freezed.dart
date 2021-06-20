@@ -275,7 +275,7 @@ abstract class _PromotionPlan extends PromotionPlanDto {
   @override
   @ServerTimestampConverter()
   DateTime get boughtDate => throw _privateConstructorUsedError;
-  
+
   @override
   int get timesSeen => throw _privateConstructorUsedError;
 

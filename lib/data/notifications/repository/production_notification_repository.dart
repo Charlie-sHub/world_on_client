@@ -9,7 +9,6 @@ import 'package:worldon/data/core/failures/core_data_failure.dart';
 import 'package:worldon/data/core/misc/firebase/firebase_helpers.dart';
 import 'package:worldon/data/core/models/notification/notification_dto.dart';
 import 'package:worldon/data/core/models/notification/notification_fields.dart';
-import 'package:worldon/data/core/models/user/user_dto.dart';
 import 'package:worldon/domain/core/entities/notification/notification.dart';
 import 'package:worldon/domain/core/validation/objects/unique_id.dart';
 import 'package:worldon/domain/notifications/repository/notification_repository_interface.dart';
@@ -41,8 +40,7 @@ class ProductionNotificationRepository implements NotificationRepositoryInterfac
 
   @override
   Stream<Either<Failure, KtList<Notification>>> watchNotifications() async* {
-    final _userDocument = await _firestore.userDocument();
-    final _userDto = UserDto.fromFirestore(await _userDocument.get());
+    final _userDto = await _firestore.currentUserDto();
     yield* _firestore.notificationCollection
         .where(
           "${NotificationFields.receiver}.id",
@@ -81,8 +79,7 @@ class ProductionNotificationRepository implements NotificationRepositoryInterfac
 
   @override
   Stream<Either<Failure, bool>> watchIfNewNotifications() async* {
-    final _userDocument = await _firestore.userDocument();
-    final _userDto = UserDto.fromFirestore(await _userDocument.get());
+    final _userDto = await _firestore.currentUserDto();
     yield* _firestore.notificationCollection
         .where(
           "${NotificationFields.receiver}.id",

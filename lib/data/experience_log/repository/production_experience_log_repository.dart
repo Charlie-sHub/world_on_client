@@ -10,7 +10,6 @@ import 'package:worldon/data/core/failures/core_data_failure.dart';
 import 'package:worldon/data/core/misc/firebase/firebase_helpers.dart';
 import 'package:worldon/data/core/models/experience/experience_dto.dart';
 import 'package:worldon/data/core/models/experience/experience_fields.dart';
-import 'package:worldon/data/core/models/user/user_dto.dart';
 import 'package:worldon/data/core/models/user/user_fields.dart';
 import 'package:worldon/domain/core/entities/experience/experience.dart';
 import 'package:worldon/domain/core/validation/objects/unique_id.dart';
@@ -27,7 +26,7 @@ class ProductionExperienceLogRepository implements ExperienceLogRepositoryInterf
   @override
   Future<Either<Failure, Unit>> addExperienceToLog(UniqueId experienceId) async {
     try {
-      final _userDocument = await _firestore.userDocument();
+      final _userDocument = await _firestore.currentUserDocumentReference();
       _userDocument.update(
         {
           UserFields.experiencesToDoIds: FieldValue.arrayUnion([experienceId.getOrCrash()]),
@@ -44,7 +43,7 @@ class ProductionExperienceLogRepository implements ExperienceLogRepositoryInterf
   @override
   Future<Either<Failure, Unit>> dismissExperienceFromLog(UniqueId experienceId) async {
     try {
-      final _userDocument = await _firestore.userDocument();
+      final _userDocument = await _firestore.currentUserDocumentReference();
       _userDocument.update(
         {
           UserFields.experiencesToDoIds: FieldValue.arrayRemove([experienceId.getOrCrash()]),
@@ -60,8 +59,7 @@ class ProductionExperienceLogRepository implements ExperienceLogRepositoryInterf
 
   @override
   Stream<Either<Failure, KtList<Experience>>> watchUserLog() async* {
-    final _userDocument = await _firestore.userDocument();
-    final _userDto = UserDto.fromFirestore(await _userDocument.get());
+    final _userDto = await _firestore.currentUserDto();
     if (_userDto.experiencesToDoIds.isNotEmpty) {
       final _iterableOfIdLists = partition(
         _userDto.experiencesToDoIds,

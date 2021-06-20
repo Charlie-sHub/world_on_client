@@ -40,7 +40,7 @@ class ProductionProfileRepository implements ProfileRepositoryInterface {
   @override
   Future<Either<Failure, Unit>> blockUser(UniqueId blockedId) async {
     try {
-      final _userDocument = await _firestore.userDocument();
+      final _userDocument = await _firestore.currentUserDocumentReference();
       _userDocument.update(
         {
           UserFields.blockedUsersIds: FieldValue.arrayUnion([blockedId.getOrCrash()]),
@@ -55,7 +55,7 @@ class ProductionProfileRepository implements ProfileRepositoryInterface {
   @override
   Future<Either<Failure, Unit>> unBlockUser(UniqueId blockedId) async {
     try {
-      final _userDocument = await _firestore.userDocument();
+      final _userDocument = await _firestore.currentUserDocumentReference();
       _userDocument.update(
         {
           UserFields.blockedUsersIds: FieldValue.arrayRemove([blockedId.getOrCrash()]),
@@ -70,7 +70,7 @@ class ProductionProfileRepository implements ProfileRepositoryInterface {
   @override
   Future<Either<Failure, Unit>> followUser(UniqueId userToFollowId) async {
     try {
-      final _userDocument = await _firestore.userDocument();
+      final _userDocument = await _firestore.currentUserDocumentReference();
       _userDocument.update(
         {
           UserFields.followedUsersIds: FieldValue.arrayUnion([userToFollowId.getOrCrash()]),
@@ -86,7 +86,7 @@ class ProductionProfileRepository implements ProfileRepositoryInterface {
   @override
   Future<Either<Failure, Unit>> unFollowUser(UniqueId userToUnFollowId) async {
     try {
-      final _userDocument = await _firestore.userDocument();
+      final _userDocument = await _firestore.currentUserDocumentReference();
       _userDocument.update(
         {
           UserFields.followedUsersIds: FieldValue.arrayRemove([userToUnFollowId.getOrCrash()]),
@@ -154,7 +154,7 @@ class ProductionProfileRepository implements ProfileRepositoryInterface {
   @override
   Future<Either<Failure, Unit>> removeExperienceLiked(UniqueId experienceId) async {
     try {
-      final _userDocument = await _firestore.userDocument();
+      final _userDocument = await _firestore.currentUserDocumentReference();
       _userDocument.update(
         {
           UserFields.experiencesLikedIds: FieldValue.arrayRemove([experienceId.getOrCrash()]),
@@ -605,7 +605,10 @@ class ProductionProfileRepository implements ProfileRepositoryInterface {
   @override
   Future<Either<Failure, Unit>> deleteExperience(UniqueId experienceId) async {
     try {
-      await _firestore.experienceCollection.doc(experienceId.getOrCrash()).delete();
+      final _experienceDocument = await _firestore.experienceDocumentReference(
+        experienceId.getOrCrash(),
+      );
+      _experienceDocument.delete();
       return right(unit);
     } on FirebaseException catch (exception) {
       return onFirebaseException(exception);

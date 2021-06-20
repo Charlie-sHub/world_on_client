@@ -11,7 +11,6 @@ import 'package:worldon/data/core/failures/core_data_failure.dart';
 import 'package:worldon/data/core/misc/firebase/cloud_storage/cloud_storage_service.dart';
 import 'package:worldon/data/core/misc/firebase/cloud_storage/storage_folder_enum.dart';
 import 'package:worldon/data/core/misc/firebase/firebase_helpers.dart';
-import 'package:worldon/data/core/misc/firebase/firebase_user_mapper.dart';
 import 'package:worldon/data/core/models/user/user_dto.dart';
 import 'package:worldon/data/core/models/user/user_fields.dart';
 import 'package:worldon/domain/authentication/failures/authentication_domain_failure.dart';
@@ -168,7 +167,7 @@ class ProductionAuthenticationRepository implements AuthenticationRepositoryInte
     if (_firebaseCurrentUser == null) {
       return none();
     } else {
-      final _user = await _firebaseCurrentUser.toDomain();
+      final _user = await _firestore.currentUser();
       return some(_user);
     }
   }
