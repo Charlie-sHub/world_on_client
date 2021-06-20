@@ -52,16 +52,9 @@ class ProductionCommentRepository implements CommentRepositoryInterface {
       },
     ).onErrorReturnWith(
       (error) {
-        if (error is FirebaseException) {
-          return onFirebaseException(error);
-        } else {
-          _logger.e("Unknown server error: ${error.runtimeType}");
-          return left(
-            const Failure.coreData(
-              CoreDataFailure.serverError(errorString: "Unknown server error"),
-            ),
-          );
-        }
+        return left(
+          _onError(error),
+        );
       },
     );
   }
@@ -82,8 +75,10 @@ class ProductionCommentRepository implements CommentRepositoryInterface {
             _commentDto.toJson(),
           );
       return right(unit);
-    } on FirebaseException catch (e) {
-      return onFirebaseException(e);
+    } catch (error) {
+      return left(
+        _onError(error),
+      );
     }
   }
 
@@ -103,8 +98,10 @@ class ProductionCommentRepository implements CommentRepositoryInterface {
             _commentDto.toJson(),
           );
       return right(unit);
-    } on FirebaseException catch (e) {
-      return onFirebaseException(e);
+    } catch (error) {
+      return left(
+        _onError(error),
+      );
     }
   }
 
@@ -121,8 +118,10 @@ class ProductionCommentRepository implements CommentRepositoryInterface {
           )
           .delete();
       return right(unit);
-    } on FirebaseException catch (e) {
-      return onFirebaseException(e);
+    } catch (error) {
+      return left(
+        _onError(error),
+      );
     }
   }
 
@@ -131,12 +130,17 @@ class ProductionCommentRepository implements CommentRepositoryInterface {
     throw UnimplementedError();
   }
 
-  Either<Failure, T> onFirebaseException<T>(FirebaseException e) {
-    _logger.e("FirebaseException: ${e.message}");
-    return left(
-      Failure.coreData(
-        CoreDataFailure.serverError(errorString: "FirebaseException: ${e.message}"),
-      ),
-    );
+  Failure _onError(dynamic error) {
+    if (error is FirebaseException) {
+      _logger.e("FirebaseException: ${error.message}");
+      return Failure.coreData(
+        CoreDataFailure.serverError(errorString: "Firebase error: ${error.message}"),
+      );
+    } else {
+      _logger.e("Unknown server error:  ${error.runtimeType}");
+      return const Failure.coreData(
+        CoreDataFailure.serverError(errorString: "Unknown data layer error"),
+      );
+    }
   }
 }

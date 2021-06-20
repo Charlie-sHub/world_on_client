@@ -40,103 +40,127 @@ class ProductionProfileRepository implements ProfileRepositoryInterface {
   @override
   Future<Either<Failure, Unit>> blockUser(UniqueId blockedId) async {
     try {
-      final _userDocument = await _firestore.currentUserDocumentReference();
+      final _userDocument = await _firestore.currentUserReference();
       _userDocument.update(
         {
-          UserFields.blockedUsersIds: FieldValue.arrayUnion([blockedId.getOrCrash()]),
+          UserFields.blockedUsersIds: FieldValue.arrayUnion(
+            [blockedId.getOrCrash()],
+          ),
         },
       );
       return right(unit);
-    } on FirebaseException catch (e) {
-      return onFirebaseException(e);
+    } catch (error) {
+      return left(
+        _onError(error),
+      );
     }
   }
 
   @override
   Future<Either<Failure, Unit>> unBlockUser(UniqueId blockedId) async {
     try {
-      final _userDocument = await _firestore.currentUserDocumentReference();
+      final _userDocument = await _firestore.currentUserReference();
       _userDocument.update(
         {
-          UserFields.blockedUsersIds: FieldValue.arrayRemove([blockedId.getOrCrash()]),
+          UserFields.blockedUsersIds: FieldValue.arrayRemove(
+            [blockedId.getOrCrash()],
+          ),
         },
       );
       return right(unit);
-    } on FirebaseException catch (e) {
-      return onFirebaseException(e);
+    } catch (error) {
+      return left(
+        _onError(error),
+      );
     }
   }
 
   @override
   Future<Either<Failure, Unit>> followUser(UniqueId userToFollowId) async {
     try {
-      final _userDocument = await _firestore.currentUserDocumentReference();
+      final _userDocument = await _firestore.currentUserReference();
       _userDocument.update(
         {
-          UserFields.followedUsersIds: FieldValue.arrayUnion([userToFollowId.getOrCrash()]),
+          UserFields.followedUsersIds: FieldValue.arrayUnion(
+            [userToFollowId.getOrCrash()],
+          ),
           UserFields.followersAmount: FieldValue.increment(1),
         },
       );
       return right(unit);
-    } on FirebaseException catch (e) {
-      return onFirebaseException(e);
+    } catch (error) {
+      return left(
+        _onError(error),
+      );
     }
   }
 
   @override
   Future<Either<Failure, Unit>> unFollowUser(UniqueId userToUnFollowId) async {
     try {
-      final _userDocument = await _firestore.currentUserDocumentReference();
+      final _userDocument = await _firestore.currentUserReference();
       _userDocument.update(
         {
-          UserFields.followedUsersIds: FieldValue.arrayRemove([userToUnFollowId.getOrCrash()]),
+          UserFields.followedUsersIds: FieldValue.arrayRemove(
+            [userToUnFollowId.getOrCrash()],
+          ),
           UserFields.followersAmount: FieldValue.increment(-1),
         },
       );
       return right(unit);
-    } on FirebaseException catch (e) {
-      return onFirebaseException(e);
+    } catch (error) {
+      return left(
+        _onError(error),
+      );
     }
   }
 
   @override
   Future<Either<Failure, Unit>> editUser(User user) async {
     try {
-      final _userId = user.id.getOrCrash();
+      // This is a way to ensure the edited user only changes the current user's document
+      final _userReference = await _firestore.currentUserReference();
+      final _userId = _userReference.id;
+      String _imageUrl = "";
       await user.imageFileOption.fold(
         () async {
-          final _jsonUser = UserDto.fromDomain(user).toJson();
-          await _firestore.userCollection
-              .doc(
-                _userId,
-              )
-              .update(_jsonUser);
+          _imageUrl = user.imageURL;
         },
         (_file) async {
-          final _imageUrl = await getIt<CloudStorageService>().uploadFileImage(
+          _imageUrl = await getIt<CloudStorageService>().uploadFileImage(
             imageToUpload: _file!,
             folder: StorageFolder.users,
             name: _userId,
           );
-          final _jsonUser = UserDto.fromDomain(
-            user.copyWith(
-              imageURL: _imageUrl,
-            ),
-          ).toJson();
-          await _firestore.userCollection.doc(_userId).update(_jsonUser);
         },
       );
-      final _propagateUserUpdateCallable = _functions.httpsCallable("propagateUserUpdate");
+      final _jsonUser = UserDto.fromDomain(
+        user.copyWith(
+          imageURL: _imageUrl,
+        ),
+      ).toJson();
+      await _firestore.userCollection
+          .doc(
+            _userId,
+          )
+          .update(_jsonUser);
+      final _propagateUserUpdateCallable = _functions.httpsCallable(
+        "propagateUserUpdate",
+      );
       _propagateUserUpdateCallable.call(
         <String, dynamic>{"userId": _userId},
       );
-      final _updateUserIndex = _functions.httpsCallable("updateUserIndex");
+      final _updateUserIndex = _functions.httpsCallable(
+        "updateUserIndex",
+      );
       await _updateUserIndex.call(
         <String, dynamic>{"userId": _userId},
       );
       return right(unit);
-    } on FirebaseException catch (e) {
-      return onFirebaseException(e);
+    } catch (error) {
+      return left(
+        _onError(error),
+      );
     }
   }
 
@@ -146,23 +170,27 @@ class ProductionProfileRepository implements ProfileRepositoryInterface {
       final _userDocument = await _firestore.userCollection.doc(id.getOrCrash()).get();
       final _user = UserDto.fromFirestore(_userDocument).toDomain();
       return right(_user);
-    } on FirebaseException catch (e) {
-      return onFirebaseException(e);
+    } catch (error) {
+      return left(
+        _onError(error),
+      );
     }
   }
 
   @override
   Future<Either<Failure, Unit>> removeExperienceLiked(UniqueId experienceId) async {
     try {
-      final _userDocument = await _firestore.currentUserDocumentReference();
+      final _userDocument = await _firestore.currentUserReference();
       _userDocument.update(
         {
           UserFields.experiencesLikedIds: FieldValue.arrayRemove([experienceId.getOrCrash()]),
         },
       );
       return right(unit);
-    } on FirebaseException catch (e) {
-      return onFirebaseException(e);
+    } catch (error) {
+      return left(
+        _onError(error),
+      );
     }
   }
 
@@ -218,17 +246,15 @@ class ProductionProfileRepository implements ProfileRepositoryInterface {
                 UserFields.id,
                 whereIn: _idList,
               )
-              .orderBy(
-                UserFields.creationDate,
-                descending: true,
-              )
               .snapshots(),
         )
         .toList();
     return _combinedStreamList;
   }
 
-  Stream<Either<Failure, KtList<User>>> _mergeStreamOfUserDocuments(List<Stream<QuerySnapshot>> _combinedStreamList) {
+  Stream<Either<Failure, KtList<User>>> _mergeStreamOfUserDocuments(
+    List<Stream<QuerySnapshot>> _combinedStreamList,
+  ) {
     return CombineLatestStream(
       _combinedStreamList,
       (List<QuerySnapshot> values) {
@@ -256,7 +282,9 @@ class ProductionProfileRepository implements ProfileRepositoryInterface {
         }
       },
     ).onErrorReturnWith(
-      (error) => left(_onError(error)),
+      (error) => left(
+        _onError(error),
+      ),
     );
   }
 
@@ -266,10 +294,6 @@ class ProductionProfileRepository implements ProfileRepositoryInterface {
         .where(
           UserFields.followedUsersIds,
           arrayContains: id.getOrCrash(),
-        )
-        .orderBy(
-          UserFields.creationDate,
-          descending: true,
         )
         .snapshots()
         .map(
@@ -292,24 +316,10 @@ class ProductionProfileRepository implements ProfileRepositoryInterface {
         }
       },
     ).onErrorReturnWith(
-      (error) => left(_onError(error)),
+      (error) => left(
+        _onError(error),
+      ),
     );
-  }
-
-  @override
-  Future<Either<Failure, int>> getAmountOfFollowers(UniqueId id) async {
-    try {
-      final _followersSnapshot = await _firestore.userCollection
-          .where(
-            UserFields.followedUsersIds,
-            arrayContains: id.getOrCrash(),
-          )
-          .get();
-      final _followedAmount = _followersSnapshot.docs.length;
-      return right(_followedAmount);
-    } on FirebaseException catch (exception) {
-      return onFirebaseException(exception);
-    }
   }
 
   @override
@@ -366,10 +376,6 @@ class ProductionProfileRepository implements ProfileRepositoryInterface {
                   ExperienceFields.id,
                   whereIn: _idList,
                 )
-                .orderBy(
-                  ExperienceFields.creationDate,
-                  descending: true,
-                )
                 .snapshots(),
           )
           .toList();
@@ -378,8 +384,8 @@ class ProductionProfileRepository implements ProfileRepositoryInterface {
         (List<QuerySnapshot> values) {
           final _experienceList = <Experience>[];
           for (final _snapshot in values) {
-            for (final document in _snapshot.docs) {
-              final _experience = ExperienceDto.fromFirestore(document).toDomain();
+            for (final _document in _snapshot.docs) {
+              final _experience = ExperienceDto.fromFirestore(_document).toDomain();
               _experienceList.add(_experience);
             }
           }
@@ -400,7 +406,9 @@ class ProductionProfileRepository implements ProfileRepositoryInterface {
           }
         },
       ).onErrorReturnWith(
-        (error) => left(_onError(error)),
+        (error) => left(
+          _onError(error),
+        ),
       );
     } else {
       yield* Stream.value(
@@ -441,8 +449,8 @@ class ProductionProfileRepository implements ProfileRepositoryInterface {
         (List<QuerySnapshot> values) {
           final _experienceList = <Experience>[];
           for (final _snapshot in values) {
-            for (final document in _snapshot.docs) {
-              final _experience = ExperienceDto.fromFirestore(document).toDomain();
+            for (final _document in _snapshot.docs) {
+              final _experience = ExperienceDto.fromFirestore(_document).toDomain();
               _experienceList.add(_experience);
             }
           }
@@ -463,7 +471,9 @@ class ProductionProfileRepository implements ProfileRepositoryInterface {
           }
         },
       ).onErrorReturnWith(
-        (error) => left(_onError(error)),
+        (error) => left(
+          _onError(error),
+        ),
       );
     } else {
       yield* Stream.value(
@@ -492,10 +502,6 @@ class ProductionProfileRepository implements ProfileRepositoryInterface {
                   AchievementFields.id,
                   whereIn: _idList,
                 )
-                .orderBy(
-                  AchievementFields.creationDate,
-                  descending: true,
-                )
                 .snapshots(),
           )
           .toList();
@@ -504,8 +510,8 @@ class ProductionProfileRepository implements ProfileRepositoryInterface {
         (List<QuerySnapshot> values) {
           final _achievementList = <Achievement>[];
           for (final _snapshot in values) {
-            for (final document in _snapshot.docs) {
-              final _achievement = AchievementDto.fromFirestore(document).toDomain();
+            for (final _document in _snapshot.docs) {
+              final _achievement = AchievementDto.fromFirestore(_document).toDomain();
               _achievementList.add(_achievement);
             }
           }
@@ -526,7 +532,9 @@ class ProductionProfileRepository implements ProfileRepositoryInterface {
           }
         },
       ).onErrorReturnWith(
-        (error) => left(_onError(error)),
+        (error) => left(
+          _onError(error),
+        ),
       );
     } else {
       yield* Stream.value(
@@ -554,10 +562,6 @@ class ProductionProfileRepository implements ProfileRepositoryInterface {
                 .where(
                   TagFields.id,
                   whereIn: _idList,
-                )
-                .orderBy(
-                  TagFields.creationDate,
-                  descending: true,
                 )
                 .snapshots(),
           )
@@ -589,7 +593,9 @@ class ProductionProfileRepository implements ProfileRepositoryInterface {
           }
         },
       ).onErrorReturnWith(
-        (error) => left(_onError(error)),
+        (error) => left(
+          _onError(error),
+        ),
       );
     } else {
       yield* Stream.value(
@@ -610,8 +616,10 @@ class ProductionProfileRepository implements ProfileRepositoryInterface {
       );
       _experienceDocument.delete();
       return right(unit);
-    } on FirebaseException catch (exception) {
-      return onFirebaseException(exception);
+    } catch (error) {
+      return left(
+        _onError(error),
+      );
     }
   }
 
@@ -638,29 +646,18 @@ class ProductionProfileRepository implements ProfileRepositoryInterface {
     );
   }
 
-  Either<Failure, T> onFirebaseException<T>(FirebaseException exception) {
-    _logger.e("FirebaseException: ${exception.message} Code: ${exception.code}");
-    if (exception.code == "permission-denied") {
-      return left(
-        const Failure.coreDomain(
-          CoreDomainFailure.unAuthorizedError(),
-        ),
-      );
-    } else {
-      return left(
-        Failure.coreData(
-          CoreDataFailure.serverError(errorString: exception.message!),
-        ),
-      );
-    }
-  }
-
   Failure _onError(dynamic error) {
     if (error is FirebaseException) {
-      _logger.e("FirebaseException: ${error.message}");
-      return Failure.coreData(
-        CoreDataFailure.serverError(errorString: "Firebase error: ${error.message}"),
-      );
+      _logger.e("FirebaseException: ${error.message} Code: ${error.code}");
+      if (error.code == "permission-denied") {
+        return const Failure.coreDomain(
+          CoreDomainFailure.unAuthorizedError(),
+        );
+      } else {
+        return Failure.coreData(
+          CoreDataFailure.serverError(errorString: error.message!),
+        );
+      }
     } else if (error is FormatException) {
       _logger.e("FormatException: ${error.message}");
       return Failure.coreDomain(
@@ -669,7 +666,7 @@ class ProductionProfileRepository implements ProfileRepositoryInterface {
     } else {
       _logger.e("Unknown server error:  ${error.runtimeType}");
       return const Failure.coreData(
-        CoreDataFailure.serverError(errorString: "Unknown server error"),
+        CoreDataFailure.serverError(errorString: "Unknown data layer error"),
       );
     }
   }

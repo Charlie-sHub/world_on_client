@@ -92,11 +92,6 @@ class DevelopmentProfileRepository implements ProfileRepositoryInterface {
   }
 
   @override
-  Future<Either<Failure, int>> getAmountOfFollowers(UniqueId id) {
-    throw UnimplementedError();
-  }
-
-  @override
   Stream<Either<Failure, User>> watchProfile(UniqueId userId) {
     throw UnimplementedError();
   }

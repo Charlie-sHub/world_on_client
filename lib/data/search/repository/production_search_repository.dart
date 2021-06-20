@@ -226,11 +226,11 @@ class ProductionSearchRepository implements SearchRepositoryInterface {
   @override
   Future<Either<Failure, KtList<User>>> getShareableUsers() async {
     try {
-      final _userDto = await _firestore.currentUserDto();
+      final _userDocumentReference = await _firestore.currentUserReference();
       final _querySnapshot = await _firestore.userCollection
           .where(
             UserFields.followedUsersIds,
-            arrayContains: _userDto.id,
+            arrayContains: _userDocumentReference.id,
           )
           .get();
       final _userList = _querySnapshot.docs.map(
@@ -248,12 +248,11 @@ class ProductionSearchRepository implements SearchRepositoryInterface {
   Future<Either<Failure, KtList<User>>> searchShareableUsers(SearchTerm name) async {
     try {
       final _searchString = name.getOrCrash().toLowerCase();
-      final _userDocument = await _firestore.currentUserDocumentReference();
-      final _currentUserDto = UserDto.fromFirestore(await _userDocument.get());
+      final _userDocumentReference = await _firestore.currentUserReference();
       final _querySnapshot = await _firestore.userCollection
           .where(
             UserFields.followedUsersIds,
-            arrayContains: _currentUserDto.id,
+            arrayContains: _userDocumentReference.id,
           )
           .get();
       final _userDtoList = _querySnapshot.docs.map(
@@ -294,7 +293,7 @@ class ProductionSearchRepository implements SearchRepositoryInterface {
     } else {
       _logger.e("Unknown server error, type: ${error.runtimeType}");
       return const Failure.coreData(
-        CoreDataFailure.serverError(errorString: "Unknown server error"),
+        CoreDataFailure.serverError(errorString: "Unknown data layer error"),
       );
     }
   }

@@ -44,8 +44,10 @@ class ProductionTagManagementRepository implements TagManagementRepositoryInterf
           ),
         );
       }
-    } on FirebaseException catch (e) {
-      return onFirebaseException(e);
+    } catch (error) {
+      return left(
+        _onError(error),
+      );
     }
   }
 
@@ -61,8 +63,10 @@ class ProductionTagManagementRepository implements TagManagementRepositoryInterf
             _tagDto.toJson(),
           );
       return right(unit);
-    } on FirebaseException catch (e) {
-      return onFirebaseException(e);
+    } catch (error) {
+      return left(
+        _onError(error),
+      );
     }
   }
 
@@ -72,8 +76,10 @@ class ProductionTagManagementRepository implements TagManagementRepositoryInterf
       final _tagDocument = await _firestore.tagCollection.doc(id.getOrCrash()).get();
       final _tag = TagDto.fromFirestore(_tagDocument).toDomain();
       return right(_tag);
-    } on FirebaseException catch (e) {
-      return onFirebaseException(e);
+    } catch (error) {
+      return left(
+        _onError(error),
+      );
     }
   }
 
@@ -109,8 +115,10 @@ class ProductionTagManagementRepository implements TagManagementRepositoryInterf
         return right(
           _tagSet.toImmutableSet(),
         );
-      } on FirebaseException catch (e) {
-        return onFirebaseException(e);
+      } catch (error) {
+        return left(
+          _onError(error),
+        );
       }
     } else {
       return right(
@@ -124,17 +132,24 @@ class ProductionTagManagementRepository implements TagManagementRepositoryInterf
     try {
       _firestore.tagCollection.doc(id.getOrCrash()).delete();
       return right(unit);
-    } on FirebaseException catch (e) {
-      return onFirebaseException(e);
+    } catch (error) {
+      return left(
+        _onError(error),
+      );
     }
   }
 
-  Either<Failure, T> onFirebaseException<T>(FirebaseException e) {
-    _logger.e("FirebaseException: ${e.message}");
-    return left(
-      const Failure.coreData(
-        CoreDataFailure.serverError(errorString: "Unknown server error"),
-      ),
-    );
+  Failure _onError(dynamic error) {
+    if (error is FirebaseException) {
+      _logger.e("FirebaseException: ${error.message}");
+      return Failure.coreData(
+        CoreDataFailure.serverError(errorString: "Firebase error: ${error.message}"),
+      );
+    } else {
+      _logger.e("Unknown server error:  ${error.runtimeType}");
+      return const Failure.coreData(
+        CoreDataFailure.serverError(errorString: "Unknown data layer error"),
+      );
+    }
   }
 }

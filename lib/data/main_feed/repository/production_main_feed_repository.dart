@@ -68,11 +68,11 @@ class ProductionMainFeedRepository implements MainFeedRepositoryInterface {
       yield* CombineLatestStream(
         _combinedStreamList,
         (List<QuerySnapshot> values) {
-          final _documentSet = <QueryDocumentSnapshot>{};
+          final _documentList = <QueryDocumentSnapshot>[];
           for (final _snapshot in values) {
-            _documentSet.addAll(_snapshot.docs);
+            _documentList.addAll(_snapshot.docs);
           }
-          final _experienceDtoList = _documentSet
+          final _experienceDtoList = _documentList
               .map(
                 (_document) => ExperienceDto.fromFirestore(_document),
               )
@@ -82,7 +82,10 @@ class ProductionMainFeedRepository implements MainFeedRepositoryInterface {
               _a.creationDate,
             ),
           );
+          // .toSet().toList() is there to eliminate duplicates
           final _experienceList = _experienceDtoList
+              .toSet()
+              .toList()
               .map(
                 (_experienceDto) => _experienceDto.toDomain(),
               )

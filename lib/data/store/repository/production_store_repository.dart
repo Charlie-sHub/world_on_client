@@ -48,7 +48,7 @@ class ProductionStoreRepository implements StoreRepositoryInterface {
           await _inAppPurchaseInstance.buyConsumable(
             purchaseParam: _purchaseParam,
           );
-          final _userDocument = await _firestore.currentUserDocumentReference();
+          final _userDocument = await _firestore.currentUserReference();
           await _userDocument.update(
             {
               UserFields.coins: FieldValue.increment(1),
@@ -246,7 +246,7 @@ class ProductionStoreRepository implements StoreRepositoryInterface {
     } else {
       _logger.e("Unknown server error:  ${error.runtimeType}");
       return const Failure.coreData(
-        CoreDataFailure.serverError(errorString: "Unknown server error"),
+        CoreDataFailure.serverError(errorString: "Unknown data layer error"),
       );
     }
   }

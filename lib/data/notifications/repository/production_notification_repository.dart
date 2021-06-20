@@ -33,18 +33,20 @@ class ProductionNotificationRepository implements NotificationRepositoryInterfac
         },
       );
       return right(unit);
-    } on FirebaseException catch (e) {
-      return onFirebaseException(e);
+    } catch (error) {
+      return left(
+        _onError(error),
+      );
     }
   }
 
   @override
   Stream<Either<Failure, KtList<Notification>>> watchNotifications() async* {
-    final _userDto = await _firestore.currentUserDto();
+    final _userDocumentReference = await _firestore.currentUserReference();
     yield* _firestore.notificationCollection
         .where(
           "${NotificationFields.receiver}.id",
-          isEqualTo: _userDto.id,
+          isEqualTo: _userDocumentReference.id,
         )
         .orderBy(
           NotificationFields.creationDate,
@@ -72,33 +74,34 @@ class ProductionNotificationRepository implements NotificationRepositoryInterfac
       },
     ).onErrorReturnWith(
       (error) => left(
-        onError(error),
+        _onError(error),
       ),
     );
   }
 
   @override
   Stream<Either<Failure, bool>> watchIfNewNotifications() async* {
-    final _userDto = await _firestore.currentUserDto();
+    final _userDocumentReference = await _firestore.currentUserReference();
     yield* _firestore.notificationCollection
         .where(
           "${NotificationFields.receiver}.id",
-          isEqualTo: _userDto.id,
+          isEqualTo: _userDocumentReference.id,
         )
         .where(
           NotificationFields.seen,
           isEqualTo: false,
         )
+        .limit(1)
         .snapshots()
         .map(
           (snapshot) => snapshot.docs.isNotEmpty,
         )
         .map(
-          (_newNotificationsBool) => right<Failure, bool>(_newNotificationsBool),
+          (_newNotifications) => right<Failure, bool>(_newNotifications),
         )
         .onErrorReturnWith(
           (error) => left(
-            onError(error),
+            _onError(error),
           ),
         );
   }
@@ -115,8 +118,10 @@ class ProductionNotificationRepository implements NotificationRepositoryInterfac
             _notificationDto.toJson(),
           );
       return right(unit);
-    } on FirebaseException catch (e) {
-      return onFirebaseException(e);
+    } catch (error) {
+      return left(
+        _onError(error),
+      );
     }
   }
 
@@ -125,8 +130,10 @@ class ProductionNotificationRepository implements NotificationRepositoryInterfac
     try {
       _firestore.notificationCollection.doc(id.getOrCrash()).delete();
       return right(unit);
-    } on FirebaseException catch (e) {
-      return onFirebaseException(e);
+    } catch (error) {
+      return left(
+        _onError(error),
+      );
     }
   }
 
@@ -136,16 +143,7 @@ class ProductionNotificationRepository implements NotificationRepositoryInterfac
     throw UnimplementedError();
   }
 
-  Either<Failure, Unit> onFirebaseException(FirebaseException e) {
-    _logger.e("FirebaseException: ${e.message}");
-    return left(
-      Failure.coreData(
-        CoreDataFailure.serverError(errorString: "FirebaseException: ${e.message}"),
-      ),
-    );
-  }
-
-  Failure onError(dynamic error) {
+  Failure _onError(dynamic error) {
     if (error is FirebaseException) {
       _logger.e("FirebaseException: ${error.message}");
       return Failure.coreData(
@@ -154,7 +152,7 @@ class ProductionNotificationRepository implements NotificationRepositoryInterfac
     } else {
       _logger.e("Unknown server error:  ${error.runtimeType}");
       return const Failure.coreData(
-        CoreDataFailure.serverError(errorString: "Unknown server error"),
+        CoreDataFailure.serverError(errorString: "Unknown data layer error"),
       );
     }
   }

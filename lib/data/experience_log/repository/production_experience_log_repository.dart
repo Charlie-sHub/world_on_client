@@ -26,7 +26,7 @@ class ProductionExperienceLogRepository implements ExperienceLogRepositoryInterf
   @override
   Future<Either<Failure, Unit>> addExperienceToLog(UniqueId experienceId) async {
     try {
-      final _userDocument = await _firestore.currentUserDocumentReference();
+      final _userDocument = await _firestore.currentUserReference();
       _userDocument.update(
         {
           UserFields.experiencesToDoIds: FieldValue.arrayUnion([experienceId.getOrCrash()]),
@@ -43,7 +43,7 @@ class ProductionExperienceLogRepository implements ExperienceLogRepositoryInterf
   @override
   Future<Either<Failure, Unit>> dismissExperienceFromLog(UniqueId experienceId) async {
     try {
-      final _userDocument = await _firestore.currentUserDocumentReference();
+      final _userDocument = await _firestore.currentUserReference();
       _userDocument.update(
         {
           UserFields.experiencesToDoIds: FieldValue.arrayRemove([experienceId.getOrCrash()]),
@@ -126,7 +126,7 @@ class ProductionExperienceLogRepository implements ExperienceLogRepositoryInterf
     } else {
       _logger.e("Unknown server error:  ${error.runtimeType}");
       return const Failure.coreData(
-        CoreDataFailure.serverError(errorString: "Unknown server error"),
+        CoreDataFailure.serverError(errorString: "Unknown data layer error"),
       );
     }
   }

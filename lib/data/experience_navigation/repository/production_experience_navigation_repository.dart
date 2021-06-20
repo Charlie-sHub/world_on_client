@@ -37,7 +37,7 @@ class ProductionExperienceNavigationRepository implements ExperienceNavigationRe
   @override
   Future<Either<Failure, Unit>> finishExperience(UniqueId experienceId) async {
     try {
-      final _userDocument = await _firestore.currentUserDocumentReference();
+      final _userDocument = await _firestore.currentUserReference();
       _userDocument.update(
         {
           UserFields.experiencesDoneIds: FieldValue.arrayUnion(
@@ -74,7 +74,7 @@ class ProductionExperienceNavigationRepository implements ExperienceNavigationRe
   @override
   Future<Either<Failure, Unit>> likeExperience(UniqueId experienceId) async {
     try {
-      final _userDocument = await _firestore.currentUserDocumentReference();
+      final _userDocument = await _firestore.currentUserReference();
       _userDocument.update(
         {
           UserFields.experiencesLikedIds: FieldValue.arrayUnion(
@@ -102,7 +102,7 @@ class ProductionExperienceNavigationRepository implements ExperienceNavigationRe
   @override
   Future<Either<Failure, Unit>> dislikeExperience(UniqueId experienceId) async {
     try {
-      final _userDocument = await _firestore.currentUserDocumentReference();
+      final _userDocument = await _firestore.currentUserReference();
       _userDocument.update(
         {
           UserFields.experiencesLikedIds: FieldValue.arrayRemove(
@@ -166,7 +166,7 @@ class ProductionExperienceNavigationRepository implements ExperienceNavigationRe
     int userLevel,
   ) async {
     try {
-      final _userDocument = await _firestore.currentUserDocumentReference();
+      final _userDocument = await _firestore.currentUserReference();
       _userDocument.update(
         {
           UserFields.experiencePoints: FieldValue.increment(experiencePoints),
@@ -211,12 +211,12 @@ class ProductionExperienceNavigationRepository implements ExperienceNavigationRe
           .map(
             (_documentList) => _documentList
                 .map(
-            (_document) => ExperienceDto.fromFirestore(_document),
+                  (_document) => ExperienceDto.fromFirestore(_document),
                 )
                 .toList(),
           )
           .map(
-          (experienceDTOs) {
+        (experienceDTOs) {
           // Don't like filtering here, but couldn't make the query work
           // In any case, it's better to filter by location first and then by tags
           // the first filter should take out most of the experiences that don't fit
@@ -291,7 +291,7 @@ class ProductionExperienceNavigationRepository implements ExperienceNavigationRe
   ) async {
     try {
       final _objectiveList = objectiveList.getOrCrash().dart;
-      final _currentUserDoc = await _firestore.currentUserDocumentReference();
+      final _currentUserDoc = await _firestore.currentUserReference();
       final _saveDocument = await _getSaveDocument(
         _currentUserDoc.id,
         experienceId.getOrCrash(),
@@ -331,7 +331,7 @@ class ProductionExperienceNavigationRepository implements ExperienceNavigationRe
     UniqueId experienceId,
   ) async {
     try {
-      final _currentUserDoc = await _firestore.currentUserDocumentReference();
+      final _currentUserDoc = await _firestore.currentUserReference();
       final _saveDocument = await _getSaveDocument(
         _currentUserDoc.id,
         experienceId.getOrCrash(),
@@ -357,7 +357,7 @@ class ProductionExperienceNavigationRepository implements ExperienceNavigationRe
     UniqueId experienceId,
   ) async {
     try {
-      final _currentUserDoc = await _firestore.currentUserDocumentReference();
+      final _currentUserDoc = await _firestore.currentUserReference();
       final _saveDocument = await _getSaveDocument(
         _currentUserDoc.id,
         experienceId.getOrCrash(),
@@ -421,7 +421,7 @@ class ProductionExperienceNavigationRepository implements ExperienceNavigationRe
       _logger.e("Unknown server error, type: ${error.runtimeType}");
       return left(
         const Failure.coreData(
-          CoreDataFailure.serverError(errorString: "Unknown server error"),
+          CoreDataFailure.serverError(errorString: "Unknown data layer error"),
         ),
       );
     }
@@ -431,7 +431,7 @@ class ProductionExperienceNavigationRepository implements ExperienceNavigationRe
     _logger.e("FirebaseException: ${exception.message}");
     return left(
       const Failure.coreData(
-        CoreDataFailure.serverError(errorString: "Unknown server error"),
+        CoreDataFailure.serverError(errorString: "Unknown data layer error"),
       ),
     );
   }

@@ -12,9 +12,6 @@ abstract class ProfileRepositoryInterface {
   /// Gets the [User] associated with the given id
   Future<Either<Failure, User>> getUser(UniqueId id);
 
-  /// Gets the amount of [User]s that follow a given [User]
-  Future<Either<Failure, int>> getAmountOfFollowers(UniqueId id);
-
   /// Sends a edited [User] to the server to be saved on the database
   Future<Either<Failure, Unit>> editUser(User user);
 

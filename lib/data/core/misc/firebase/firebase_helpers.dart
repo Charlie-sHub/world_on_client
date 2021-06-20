@@ -13,7 +13,7 @@ extension FirestoreX on FirebaseFirestore {
         experienceId,
       );
 
-  Future<DocumentReference> currentUserDocumentReference() async {
+  Future<DocumentReference> currentUserReference() async {
     final _firebaseAuthInstance = getIt<FirebaseAuth>();
     final _firebaseUser = _firebaseAuthInstance.currentUser;
     if (_firebaseUser != null) {
@@ -25,16 +25,15 @@ extension FirestoreX on FirebaseFirestore {
   }
 
   Future<UserDto> currentUserDto() async {
-    final _documentReference = await currentUserDocumentReference();
+    final _documentReference = await currentUserReference();
     final _userDocument = await _documentReference.get();
     final _userDto = UserDto.fromFirestore(_userDocument);
     return _userDto;
   }
 
   Future<entity.User> currentUser() async {
-    final _documentReference = await currentUserDocumentReference();
-    final _userDocument = await _documentReference.get();
-    final _user = UserDto.fromFirestore(_userDocument).toDomain();
+    final _userDto = await currentUserDto();
+    final _user = _userDto.toDomain();
     return _user;
   }
 

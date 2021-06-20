@@ -17,8 +17,6 @@ import 'package:worldon/domain/profile/use_case/watch_following_users.dart';
 import 'package:worldon/domain/profile/use_case/watch_user_achievements.dart';
 import 'package:worldon/domain/profile/use_case/watch_user_interests.dart';
 
-import 'get_amout_of_followers.dart';
-
 @LazySingleton(as: BlockUser, env: [Environment.test])
 class MockBlockUser extends Mock implements BlockUser {}
 
@@ -66,6 +64,3 @@ class MockUnBlockUser extends Mock implements UnBlockUser {}
 
 @LazySingleton(as: UnFollowUser, env: [Environment.test])
 class MockUnFollowUser extends Mock implements UnFollowUser {}
-
-@LazySingleton(as: GetAmountOfFollowers, env: [Environment.test])
-class MockGetAmountOfFollowers extends Mock implements GetAmountOfFollowers {}

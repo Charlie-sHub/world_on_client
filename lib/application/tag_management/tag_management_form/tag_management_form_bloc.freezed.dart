@@ -573,7 +573,7 @@ class _$_TagManagementFormState implements _TagManagementFormState {
       const DeepCollectionEquality().hash(isEditing) ^
       const DeepCollectionEquality().hash(isSubmitting) ^
       const DeepCollectionEquality().hash(failureOrSuccessOption);
-
+  
   @JsonKey(ignore: true)
   @override
   _$TagManagementFormStateCopyWith<_TagManagementFormState> get copyWith => __$TagManagementFormStateCopyWithImpl<_TagManagementFormState>(this, _$identity);
@@ -593,7 +593,7 @@ abstract class _TagManagementFormState implements TagManagementFormState {
   bool get showErrorMessages => throw _privateConstructorUsedError;
   @override
   bool get isEditing => throw _privateConstructorUsedError;
-
+  
   @override
   bool get isSubmitting => throw _privateConstructorUsedError;
 

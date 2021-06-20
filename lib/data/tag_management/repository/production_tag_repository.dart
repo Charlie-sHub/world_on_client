@@ -23,30 +23,34 @@ class ProductionTagRepository implements TagCoreRepositoryInterface {
   @override
   Future<Either<Failure, Unit>> addTagToInterests(Tag tag) async {
     try {
-      final _userDocument = await _firestore.currentUserDocumentReference();
+      final _userDocument = await _firestore.currentUserReference();
       _userDocument.update(
         {
           UserFields.interestsIds: FieldValue.arrayUnion([tag.id.getOrCrash()]),
         },
       );
       return right(unit);
-    } on FirebaseException catch (e) {
-      return onFirebaseException(e);
+    } catch (error) {
+      return left(
+        _onError(error),
+      );
     }
   }
 
   @override
   Future<Either<Failure, Unit>> dismissTagFromInterests(Tag tag) async {
     try {
-      final _userDocument = await _firestore.currentUserDocumentReference();
+      final _userDocument = await _firestore.currentUserReference();
       _userDocument.update(
         {
           UserFields.interestsIds: FieldValue.arrayRemove([tag.id.getOrCrash()]),
         },
       );
       return right(unit);
-    } on FirebaseException catch (e) {
-      return onFirebaseException(e);
+    } catch (error) {
+      return left(
+        _onError(error),
+      );
     }
   }
 
@@ -68,12 +72,17 @@ class ProductionTagRepository implements TagCoreRepositoryInterface {
     throw UnimplementedError();
   }
 
-  Either<Failure, T> onFirebaseException<T>(FirebaseException e) {
-    _logger.e("FirebaseException: ${e.message}");
-    return left(
-      const Failure.coreData(
-        CoreDataFailure.serverError(errorString: "Unknown server error"),
-      ),
-    );
+  Failure _onError(dynamic error) {
+    if (error is FirebaseException) {
+      _logger.e("FirebaseException: ${error.message}");
+      return Failure.coreData(
+        CoreDataFailure.serverError(errorString: "Firebase error: ${error.message}"),
+      );
+    } else {
+      _logger.e("Unknown server error:  ${error.runtimeType}");
+      return const Failure.coreData(
+        CoreDataFailure.serverError(errorString: "Unknown data layer error"),
+      );
+    }
   }
 }
