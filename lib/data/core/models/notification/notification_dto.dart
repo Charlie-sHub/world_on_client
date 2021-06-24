@@ -18,7 +18,7 @@ class NotificationDto with _$NotificationDto {
   const NotificationDto._();
 
   const factory NotificationDto({
-    @JsonKey(ignore: true) String? id,
+    required String id,
     required SimpleUserDto sender,
     required String receiverId,
     required String description,
@@ -43,7 +43,7 @@ class NotificationDto with _$NotificationDto {
       );
 
   Notification toDomain() => Notification(
-        id: UniqueId.fromUniqueString(id!),
+        id: UniqueId.fromUniqueString(id),
         sender: sender.toDomain(),
         receiverId: UniqueId.fromUniqueString(receiverId),
         description: EntityDescription(description),
@@ -54,10 +54,4 @@ class NotificationDto with _$NotificationDto {
       );
 
   factory NotificationDto.fromJson(Map<String, dynamic> json) => _$NotificationDtoFromJson(json);
-
-  factory NotificationDto.fromFirestore(DocumentSnapshot document) => NotificationDto.fromJson(
-        document.data()!,
-      ).copyWith(
-        id: document.id,
-      );
 }

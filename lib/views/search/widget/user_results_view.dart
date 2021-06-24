@@ -10,7 +10,7 @@ import 'package:worldon/views/core/widgets/cards/error_card.dart';
 import 'package:worldon/views/core/widgets/cards/user_card/simple_square_user_card.dart';
 import 'package:worldon/views/core/widgets/misc/world_on_progress_indicator.dart';
 
-import '../search_error_display.dart';
+import 'search_error_display.dart';
 
 class UserResultsView extends StatelessWidget {
   final SearchTerm searchTerm;

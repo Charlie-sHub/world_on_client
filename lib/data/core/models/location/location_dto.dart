@@ -1,4 +1,3 @@
-import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:worldon/data/core/models/experience/experience_dto.dart';
 import 'package:worldon/domain/core/entities/location/location.dart';
@@ -36,10 +35,4 @@ class LocationDto with _$LocationDto {
       );
 
   factory LocationDto.fromJson(Map<String, dynamic> json) => _$LocationDtoFromJson(json);
-
-  factory LocationDto.fromFirestore(DocumentSnapshot document) => LocationDto.fromJson(
-        document.data()!,
-      ).copyWith(
-        id: document.id,
-      );
 }

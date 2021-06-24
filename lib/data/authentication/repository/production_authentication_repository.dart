@@ -23,7 +23,7 @@ import 'package:worldon/injection.dart';
 
 @LazySingleton(as: AuthenticationRepositoryInterface, env: [Environment.prod])
 class ProductionAuthenticationRepository implements AuthenticationRepositoryInterface {
-  final _logger = Logger();
+  final Logger _logger;
   final FirebaseAuth _firebaseAuth;
   final GoogleSignIn _googleSignIn;
   final FirebaseFirestore _firestore;
@@ -32,6 +32,7 @@ class ProductionAuthenticationRepository implements AuthenticationRepositoryInte
     this._firebaseAuth,
     this._googleSignIn,
     this._firestore,
+    this._logger,
   );
 
   @override
@@ -48,15 +49,15 @@ class ProductionAuthenticationRepository implements AuthenticationRepositoryInte
           folder: StorageFolder.users,
           name: _firebaseUser.uid,
         );
-        final _jsonUser = UserDto.fromDomain(
+        final _userDto = UserDto.fromDomain(
           user.copyWith(
             id: UniqueId.fromUniqueString(
               _firebaseUser.uid,
             ),
             imageURL: _imageURL,
           ),
-        ).toJson();
-        await _firestore.userCollection.doc(_firebaseUser.uid).set(_jsonUser);
+        );
+        await _firestore.userCollection.doc(_firebaseUser.uid).set(_userDto);
         return right(unit);
       } else {
         return left(

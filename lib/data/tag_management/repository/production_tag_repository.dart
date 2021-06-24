@@ -14,11 +14,14 @@ import 'package:worldon/domain/tag_management/repository/tag_repository_interfac
 
 @LazySingleton(as: TagCoreRepositoryInterface, env: [Environment.prod])
 class ProductionTagRepository implements TagCoreRepositoryInterface {
-  final _logger = Logger();
+  final Logger _logger;
 
   final FirebaseFirestore _firestore;
 
-  ProductionTagRepository(this._firestore);
+  ProductionTagRepository(
+    this._firestore,
+    this._logger,
+  );
 
   @override
   Future<Either<Failure, Unit>> addTagToInterests(Tag tag) async {
@@ -26,11 +29,13 @@ class ProductionTagRepository implements TagCoreRepositoryInterface {
       final _userDocument = await _firestore.currentUserReference();
       _userDocument.update(
         {
-          UserFields.interestsIds: FieldValue.arrayUnion([tag.id.getOrCrash()]),
+          UserFields.interestsIds: FieldValue.arrayUnion(
+            [tag.id.getOrCrash()],
+          ),
         },
       );
       return right(unit);
-    } catch (error) {
+    } catch (error, _) {
       return left(
         _onError(error),
       );
@@ -43,11 +48,13 @@ class ProductionTagRepository implements TagCoreRepositoryInterface {
       final _userDocument = await _firestore.currentUserReference();
       _userDocument.update(
         {
-          UserFields.interestsIds: FieldValue.arrayRemove([tag.id.getOrCrash()]),
+          UserFields.interestsIds: FieldValue.arrayRemove(
+            [tag.id.getOrCrash()],
+          ),
         },
       );
       return right(unit);
-    } catch (error) {
+    } catch (error, _) {
       return left(
         _onError(error),
       );

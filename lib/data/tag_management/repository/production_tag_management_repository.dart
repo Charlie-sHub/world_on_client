@@ -15,25 +15,33 @@ import 'package:worldon/domain/tag_management/repository/tag_management_reposito
 
 @LazySingleton(as: TagManagementRepositoryInterface, env: [Environment.prod])
 class ProductionTagManagementRepository implements TagManagementRepositoryInterface {
-  final _logger = Logger();
+  final Logger _logger;
 
   final FirebaseFirestore _firestore;
 
-  ProductionTagManagementRepository(this._firestore);
+  ProductionTagManagementRepository(
+    this._firestore,
+    this._logger,
+  );
 
   @override
   Future<Either<Failure, Unit>> createTag(Tag tag) async {
     try {
-      // Is this the best way to check if the tag already exists?
-      final _aux = await _firestore.tagCollection
+      final _oldTag = await _firestore.tagCollection
           .where(
             TagFields.name,
             isEqualTo: tag.name.getOrCrash(),
           )
           .get();
-      if (_aux.docs.isEmpty) {
+      if (_oldTag.docs.isEmpty) {
         final _tagDto = TagDto.fromDomain(tag);
-        _firestore.tagCollection.doc(tag.id.getOrCrash()).set(_tagDto.toJson());
+        _firestore.tagCollection
+            .doc(
+              tag.id.getOrCrash(),
+            )
+            .set(
+              _tagDto,
+            );
         return right(unit);
       } else {
         return left(
@@ -44,7 +52,7 @@ class ProductionTagManagementRepository implements TagManagementRepositoryInterf
           ),
         );
       }
-    } catch (error) {
+    } catch (error, _) {
       return left(
         _onError(error),
       );
@@ -57,13 +65,13 @@ class ProductionTagManagementRepository implements TagManagementRepositoryInterf
       final _tagDto = TagDto.fromDomain(tag);
       _firestore.tagCollection
           .doc(
-            tag.id.getOrCrash(),
+            _tagDto.id,
           )
           .update(
             _tagDto.toJson(),
           );
       return right(unit);
-    } catch (error) {
+    } catch (error, _) {
       return left(
         _onError(error),
       );
@@ -74,15 +82,16 @@ class ProductionTagManagementRepository implements TagManagementRepositoryInterf
   Future<Either<Failure, Tag>> getTag(UniqueId id) async {
     try {
       final _tagDocument = await _firestore.tagCollection.doc(id.getOrCrash()).get();
-      final _tag = TagDto.fromFirestore(_tagDocument).toDomain();
+      final _tag = _tagDocument.data()!.toDomain();
       return right(_tag);
-    } catch (error) {
+    } catch (error, _) {
       return left(
         _onError(error),
       );
     }
   }
 
+  // Why is this method even a thing?
   @override
   Future<Either<Failure, KtSet<Tag>>> getTags(Set<UniqueId> tagsUniqueIds) async {
     final _tagSet = <Tag>{};
@@ -108,14 +117,14 @@ class ProductionTagManagementRepository implements TagManagementRepositoryInterf
               )
               .get();
           final _tagsFromQuery = _querySnapshot.docs.map(
-            (_documentSnapshot) => TagDto.fromFirestore(_documentSnapshot).toDomain(),
+            (_documentSnapshot) => _documentSnapshot.data().toDomain(),
           );
           _tagSet.addAll(_tagsFromQuery);
         }
         return right(
           _tagSet.toImmutableSet(),
         );
-      } catch (error) {
+      } catch (error, _) {
         return left(
           _onError(error),
         );
@@ -132,7 +141,7 @@ class ProductionTagManagementRepository implements TagManagementRepositoryInterf
     try {
       _firestore.tagCollection.doc(id.getOrCrash()).delete();
       return right(unit);
-    } catch (error) {
+    } catch (error, _) {
       return left(
         _onError(error),
       );

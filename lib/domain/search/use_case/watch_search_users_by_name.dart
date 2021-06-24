@@ -15,7 +15,7 @@ class WatchSearchUsersByName implements StreamUseCase<KtList<User>, Params> {
 
   @override
   Stream<Either<Failure, KtList<User>>> call(Params params) async* {
-    yield* _repository.watchSearchUsersByName(params.name);
+    yield* _repository.watchUsersByName(params.name);
   }
 }
 

@@ -25,6 +25,10 @@ class _$SearchToShareEventTearOff {
       searchTermString,
     );
   }
+
+  _Submitted submitted() {
+    return const _Submitted();
+  }
 }
 
 /// @nodoc
@@ -36,12 +40,14 @@ mixin _$SearchToShareEvent {
   TResult when<TResult extends Object?>({
     required TResult Function() initialized,
     required TResult Function(String searchTermString) searchTermChanged,
+    required TResult Function() submitted,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initialized,
     TResult Function(String searchTermString)? searchTermChanged,
+    TResult Function()? submitted,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -49,12 +55,14 @@ mixin _$SearchToShareEvent {
   TResult map<TResult extends Object?>({
     required TResult Function(_Initialized value) initialized,
     required TResult Function(_SearchTermChanged value) searchTermChanged,
+    required TResult Function(_Submitted value) submitted,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initialized value)? initialized,
     TResult Function(_SearchTermChanged value)? searchTermChanged,
+    TResult Function(_Submitted value)? submitted,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -111,6 +119,7 @@ class _$_Initialized implements _Initialized {
   TResult when<TResult extends Object?>({
     required TResult Function() initialized,
     required TResult Function(String searchTermString) searchTermChanged,
+    required TResult Function() submitted,
   }) {
     return initialized();
   }
@@ -120,6 +129,7 @@ class _$_Initialized implements _Initialized {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initialized,
     TResult Function(String searchTermString)? searchTermChanged,
+    TResult Function()? submitted,
     required TResult orElse(),
   }) {
     if (initialized != null) {
@@ -133,6 +143,7 @@ class _$_Initialized implements _Initialized {
   TResult map<TResult extends Object?>({
     required TResult Function(_Initialized value) initialized,
     required TResult Function(_SearchTermChanged value) searchTermChanged,
+    required TResult Function(_Submitted value) submitted,
   }) {
     return initialized(this);
   }
@@ -142,6 +153,7 @@ class _$_Initialized implements _Initialized {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initialized value)? initialized,
     TResult Function(_SearchTermChanged value)? searchTermChanged,
+    TResult Function(_Submitted value)? submitted,
     required TResult orElse(),
   }) {
     if (initialized != null) {
@@ -213,6 +225,7 @@ class _$_SearchTermChanged implements _SearchTermChanged {
   TResult when<TResult extends Object?>({
     required TResult Function() initialized,
     required TResult Function(String searchTermString) searchTermChanged,
+    required TResult Function() submitted,
   }) {
     return searchTermChanged(searchTermString);
   }
@@ -222,6 +235,7 @@ class _$_SearchTermChanged implements _SearchTermChanged {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initialized,
     TResult Function(String searchTermString)? searchTermChanged,
+    TResult Function()? submitted,
     required TResult orElse(),
   }) {
     if (searchTermChanged != null) {
@@ -235,6 +249,7 @@ class _$_SearchTermChanged implements _SearchTermChanged {
   TResult map<TResult extends Object?>({
     required TResult Function(_Initialized value) initialized,
     required TResult Function(_SearchTermChanged value) searchTermChanged,
+    required TResult Function(_Submitted value) submitted,
   }) {
     return searchTermChanged(this);
   }
@@ -244,6 +259,7 @@ class _$_SearchTermChanged implements _SearchTermChanged {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initialized value)? initialized,
     TResult Function(_SearchTermChanged value)? searchTermChanged,
+    TResult Function(_Submitted value)? submitted,
     required TResult orElse(),
   }) {
     if (searchTermChanged != null) {
@@ -260,6 +276,90 @@ abstract class _SearchTermChanged implements SearchToShareEvent {
 
   @JsonKey(ignore: true)
   _$SearchTermChangedCopyWith<_SearchTermChanged> get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$SubmittedCopyWith<$Res> {
+  factory _$SubmittedCopyWith(_Submitted value, $Res Function(_Submitted) then) = __$SubmittedCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$SubmittedCopyWithImpl<$Res> extends _$SearchToShareEventCopyWithImpl<$Res> implements _$SubmittedCopyWith<$Res> {
+  __$SubmittedCopyWithImpl(_Submitted _value, $Res Function(_Submitted) _then) : super(_value, (v) => _then(v as _Submitted));
+
+  @override
+  _Submitted get _value => super._value as _Submitted;
+}
+
+/// @nodoc
+
+class _$_Submitted implements _Submitted {
+  const _$_Submitted();
+
+  @override
+  String toString() {
+    return 'SearchToShareEvent.submitted()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) || (other is _Submitted);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initialized,
+    required TResult Function(String searchTermString) searchTermChanged,
+    required TResult Function() submitted,
+  }) {
+    return submitted();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initialized,
+    TResult Function(String searchTermString)? searchTermChanged,
+    TResult Function()? submitted,
+    required TResult orElse(),
+  }) {
+    if (submitted != null) {
+      return submitted();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initialized value) initialized,
+    required TResult Function(_SearchTermChanged value) searchTermChanged,
+    required TResult Function(_Submitted value) submitted,
+  }) {
+    return submitted(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initialized value)? initialized,
+    TResult Function(_SearchTermChanged value)? searchTermChanged,
+    TResult Function(_Submitted value)? submitted,
+    required TResult orElse(),
+  }) {
+    if (submitted != null) {
+      return submitted(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _Submitted implements SearchToShareEvent {
+  const factory _Submitted() = _$_Submitted;
 }
 
 /// @nodoc
@@ -392,7 +492,7 @@ class _$_SearchToShareState implements _SearchToShareState {
             (identical(other.users, users) || const DeepCollectionEquality().equals(other.users, users)) &&
             (identical(other.failureOrSuccessOption, failureOrSuccessOption) || const DeepCollectionEquality().equals(other.failureOrSuccessOption, failureOrSuccessOption)));
   }
-
+  
   @override
   int get hashCode => runtimeType.hashCode ^ const DeepCollectionEquality().hash(searchTerm) ^ const DeepCollectionEquality().hash(users) ^ const DeepCollectionEquality().hash(failureOrSuccessOption);
 

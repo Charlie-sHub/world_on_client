@@ -63,10 +63,4 @@ class AchievementDto with _$AchievementDto {
       );
 
   factory AchievementDto.fromJson(Map<String, dynamic> json) => _$AchievementDtoFromJson(json);
-
-  factory AchievementDto.fromFirestore(DocumentSnapshot document) => AchievementDto.fromJson(
-        document.data()!,
-      ).copyWith(
-        id: document.id,
-      );
 }

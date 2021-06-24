@@ -6,9 +6,9 @@ import 'package:multi_image_picker2/multi_image_picker2.dart';
 import 'package:worldon/application/experience_management/experience_management_form/experience_management_form_bloc.dart';
 import 'package:worldon/generated/l10n.dart';
 
-class PicturesSelector extends StatelessWidget {
-  final _logger = Logger();
+import '../../../injection.dart';
 
+class PicturesSelector extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final _state = context.read<ExperienceManagementFormBloc>().state;
@@ -101,7 +101,7 @@ class PicturesSelector extends StatelessWidget {
           );
     } on Exception catch (error) {
       // This try-catch only exists to control for when the user cancels the selection
-      _logger.e("Exception: $error");
+      getIt<Logger>().e("Exception: $error");
     }
   }
 }

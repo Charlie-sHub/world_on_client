@@ -11,8 +11,8 @@ import 'package:worldon/views/core/widgets/misc/world_on_cached_image.dart';
 
 import 'manage_button_builder.dart';
 
-class ImageStack extends StatelessWidget {
-  const ImageStack({
+class ImageGalleryStack extends StatelessWidget {
+  const ImageGalleryStack({
     Key? key,
     required this.experience,
     required this.reloadFunction,

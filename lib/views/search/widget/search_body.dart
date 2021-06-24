@@ -12,7 +12,7 @@ import 'package:worldon/injection.dart';
 import 'package:worldon/views/search/widget/experience_results_view.dart';
 import 'package:worldon/views/search/widget/search_header.dart';
 import 'package:worldon/views/search/widget/tag_results_view.dart';
-import 'package:worldon/views/search/widget/user_results_view/user_results_view.dart';
+import 'package:worldon/views/search/widget/user_results_view.dart';
 
 class SearchBody extends StatelessWidget {
   const SearchBody({Key? key}) : super(key: key);

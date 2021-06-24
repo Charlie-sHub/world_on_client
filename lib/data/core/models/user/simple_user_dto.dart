@@ -1,4 +1,3 @@
-import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:worldon/domain/core/entities/user/simple_user.dart';
 import 'package:worldon/domain/core/validation/objects/experience_points.dart';
@@ -49,10 +48,4 @@ class SimpleUserDto with _$SimpleUserDto {
       );
 
   factory SimpleUserDto.fromJson(Map<String, dynamic> json) => _$SimpleUserDtoFromJson(json);
-
-  factory SimpleUserDto.fromFirestore(DocumentSnapshot document) => SimpleUserDto.fromJson(
-        document.data()!,
-      ).copyWith(
-        id: document.id,
-      );
 }

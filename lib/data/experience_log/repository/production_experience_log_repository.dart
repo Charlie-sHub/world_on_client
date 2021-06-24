@@ -17,11 +17,14 @@ import 'package:worldon/domain/experience_log/repository/experience_log_reposito
 
 @LazySingleton(as: ExperienceLogRepositoryInterface, env: [Environment.prod])
 class ProductionExperienceLogRepository implements ExperienceLogRepositoryInterface {
-  final _logger = Logger();
+  final Logger _logger;
 
   final FirebaseFirestore _firestore;
 
-  ProductionExperienceLogRepository(this._firestore);
+  ProductionExperienceLogRepository(
+    this._firestore,
+    this._logger,
+  );
 
   @override
   Future<Either<Failure, Unit>> addExperienceToLog(UniqueId experienceId) async {
@@ -33,7 +36,7 @@ class ProductionExperienceLogRepository implements ExperienceLogRepositoryInterf
         },
       );
       return right(unit);
-    } on FirebaseException catch (error) {
+    } on FirebaseException catch (error, _) {
       return left(
         _onError(error),
       );
@@ -50,7 +53,7 @@ class ProductionExperienceLogRepository implements ExperienceLogRepositoryInterf
         },
       );
       return right(unit);
-    } catch (error) {
+    } catch (error, _) {
       return left(
         _onError(error),
       );
@@ -77,11 +80,11 @@ class ProductionExperienceLogRepository implements ExperienceLogRepositoryInterf
           .toList();
       yield* CombineLatestStream(
         _combinedStreamList,
-        (List<QuerySnapshot> values) {
+        (List<QuerySnapshot<ExperienceDto>> values) {
           final _experienceList = <Experience>[];
           for (final _snapshot in values) {
-            for (final document in _snapshot.docs) {
-              final _experience = ExperienceDto.fromFirestore(document).toDomain();
+            for (final _document in _snapshot.docs) {
+              final _experience = _document.data().toDomain();
               _experienceList.add(_experience);
             }
           }
@@ -102,7 +105,7 @@ class ProductionExperienceLogRepository implements ExperienceLogRepositoryInterf
           }
         },
       ).onErrorReturnWith(
-        (error) => left(
+        (error, _) => left(
           _onError(error),
         ),
       );

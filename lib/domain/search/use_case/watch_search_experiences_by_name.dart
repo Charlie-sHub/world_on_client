@@ -15,7 +15,7 @@ class WatchSearchExperiencesByName implements StreamUseCase<KtList<Experience>, 
 
   @override
   Stream<Either<Failure, KtList<Experience>>> call(Params params) async* {
-    yield* _repository.watchSearchExperiencesByTitle(params.name);
+    yield* _repository.watchExperiencesByTitle(params.name);
   }
 }
 

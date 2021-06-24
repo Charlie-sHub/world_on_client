@@ -11,19 +11,19 @@ import 'package:worldon/domain/core/validation/objects/tag_set.dart';
 /// Repository for the search feature
 abstract class SearchRepositoryInterface {
   /// Sends a given [SearchTerm] to the server and it returns the [User]s with said [SearchTerm] in their names
-  Stream<Either<Failure, KtList<User>>> watchSearchUsersByName(SearchTerm name);
+  Stream<Either<Failure, KtList<User>>> watchUsersByName(SearchTerm name);
 
   /// Sends a given [SearchTerm] to the server and it returns the [Tag]s with said [SearchTerm] in their names
-  Stream<Either<Failure, KtList<Tag>>> watchSearchTagsByName(SearchTerm name);
+  Stream<Either<Failure, KtList<Tag>>> watchTagsByName(SearchTerm name);
 
   /// Sends a given [SearchTerm] to the server and it returns the [Experience]s with said [SearchTerm] in their names
-  Stream<Either<Failure, KtList<Experience>>> watchSearchExperiencesByTitle(SearchTerm title);
+  Stream<Either<Failure, KtList<Experience>>> watchExperiencesByTitle(SearchTerm title);
 
   /// Sends a [KtList] of [Tag]s and it returns the [Experience]s with at least  all the given [Tag]s
-  Stream<Either<Failure, KtList<Experience>>> watchSearchExperiencesByTags(TagSet tags);
+  Stream<Either<Failure, KtList<Experience>>> watchExperiencesByTags(TagSet tags);
 
   /// Sends a given [int] to the server and it returns the [Experience]s with a difficulty around the given [Difficulty]
-  Stream<Either<Failure, KtList<Experience>>> watchSearchExperiencesByDifficulty(Difficulty difficulty);
+  Stream<Either<Failure, KtList<Experience>>> watchExperiencesByDifficulty(Difficulty difficulty);
 
   /// Sends a given [SearchTerm] to the server and it returns the [User]s with said [SearchTerm] in their names
   /// That the current [User] can share to

@@ -42,10 +42,4 @@ class CommentDto with _$CommentDto {
       );
 
   factory CommentDto.fromJson(Map<String, dynamic> json) => _$CommentDtoFromJson(json);
-
-  factory CommentDto.fromFirestore(DocumentSnapshot document) => CommentDto.fromJson(
-        document.data()!,
-      ).copyWith(
-        id: document.id,
-      );
 }

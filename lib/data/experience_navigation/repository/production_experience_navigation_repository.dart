@@ -27,12 +27,15 @@ import 'package:worldon/domain/experience_navigation/repository/experience_navig
 
 @LazySingleton(as: ExperienceNavigationRepositoryInterface, env: [Environment.prod])
 class ProductionExperienceNavigationRepository implements ExperienceNavigationRepositoryInterface {
-  final _logger = Logger();
+  final Logger _logger;
   final _geo = Geoflutterfire();
   final FirebaseFirestore _firestore;
   final _functions = FirebaseFunctions.instanceFor(region: "europe-west1");
 
-  ProductionExperienceNavigationRepository(this._firestore);
+  ProductionExperienceNavigationRepository(
+    this._firestore,
+    this._logger,
+  );
 
   @override
   Future<Either<Failure, Unit>> finishExperience(UniqueId experienceId) async {
@@ -201,7 +204,7 @@ class ProductionExperienceNavigationRepository implements ExperienceNavigationRe
       const double _kmRadius = 30;
       yield* _geo
           .collection(
-            collectionRef: _firestore.experienceCollection,
+            collectionRef: _firestore.collection("experiences"),
           )
           .within(
             center: _flutterFireGeoposition,
@@ -211,7 +214,7 @@ class ProductionExperienceNavigationRepository implements ExperienceNavigationRe
           .map(
             (_documentList) => _documentList
                 .map(
-                  (_document) => ExperienceDto.fromFirestore(_document),
+                  (_document) => ExperienceDto.fromJson(_document.data()!),
                 )
                 .toList(),
           )
@@ -271,7 +274,7 @@ class ProductionExperienceNavigationRepository implements ExperienceNavigationRe
           }
         },
       ).onErrorReturnWith(
-        (error) => _onStreamError(error),
+        (error, _) => _onStreamError(error),
       );
     } else {
       yield* Stream.value(
@@ -297,12 +300,10 @@ class ProductionExperienceNavigationRepository implements ExperienceNavigationRe
         experienceId.getOrCrash(),
       );
       if (_saveDocument.exists) {
-        final _objectiveIdList = ObjectiveIdListDto.fromFirestore(
-          _saveDocument,
-        );
+        final _objectiveIdList = _saveDocument.data();
         final _filteredObjectives = _objectiveList
             .where(
-              (objective) => _objectiveIdList.objectivesIds.contains(
+              (objective) => _objectiveIdList!.objectivesIds.contains(
                 objective.id.getOrCrash(),
               ),
             )
@@ -316,7 +317,7 @@ class ProductionExperienceNavigationRepository implements ExperienceNavigationRe
           objectiveList,
         );
         await _saveDocument.reference.set(
-          _objectivesToSave.toJson(),
+          _objectivesToSave,
         );
         return right(objectiveList);
       }
@@ -377,7 +378,7 @@ class ProductionExperienceNavigationRepository implements ExperienceNavigationRe
     }
   }
 
-  Future<DocumentSnapshot> _getSaveDocument(
+  Future<DocumentSnapshot<ObjectiveIdListDto>> _getSaveDocument(
     String userId,
     String experienceId,
   ) async =>

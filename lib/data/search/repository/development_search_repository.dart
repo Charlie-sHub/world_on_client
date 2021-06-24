@@ -13,27 +13,27 @@ import 'package:worldon/domain/search/repository/search_repository_interface.dar
 @LazySingleton(as: SearchRepositoryInterface, env: [Environment.dev])
 class DevelopmentSearchRepository implements SearchRepositoryInterface {
   @override
-  Stream<Either<Failure, KtList<Experience>>> watchSearchExperiencesByDifficulty(Difficulty difficulty) async* {
+  Stream<Either<Failure, KtList<Experience>>> watchExperiencesByDifficulty(Difficulty difficulty) async* {
     throw UnimplementedError();
   }
 
   @override
-  Stream<Either<Failure, KtList<Experience>>> watchSearchExperiencesByTags(TagSet tags) async* {
+  Stream<Either<Failure, KtList<Experience>>> watchExperiencesByTags(TagSet tags) async* {
     throw UnimplementedError();
   }
 
   @override
-  Stream<Either<Failure, KtList<Experience>>> watchSearchExperiencesByTitle(SearchTerm title) async* {
+  Stream<Either<Failure, KtList<Experience>>> watchExperiencesByTitle(SearchTerm title) async* {
     throw UnimplementedError();
   }
 
   @override
-  Stream<Either<Failure, KtList<Tag>>> watchSearchTagsByName(SearchTerm name) async* {
+  Stream<Either<Failure, KtList<Tag>>> watchTagsByName(SearchTerm name) async* {
     throw UnimplementedError();
   }
 
   @override
-  Stream<Either<Failure, KtList<User>>> watchSearchUsersByName(SearchTerm name) async* {
+  Stream<Either<Failure, KtList<User>>> watchUsersByName(SearchTerm name) async* {
     throw UnimplementedError();
   }
 

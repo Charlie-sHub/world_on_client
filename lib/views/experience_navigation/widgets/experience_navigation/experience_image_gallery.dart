@@ -65,6 +65,8 @@ class ExperienceImageGallery extends StatelessWidget {
             top: 0,
             child: Row(
               children: [
+                ShareExternallyButton(experience: experience),
+                ShareInternallyButton(experience: experience),
                 BlocProvider(
                   create: (context) => getIt<ExperienceCardActorBloc>()
                     ..add(
@@ -72,8 +74,6 @@ class ExperienceImageGallery extends StatelessWidget {
                     ),
                   child: LogButton(experience: experience),
                 ),
-                ShareExternallyButton(experience: experience),
-                ShareInternallyButton(experience: experience),
               ],
             ),
           ),

@@ -11,10 +11,8 @@ import 'package:rxdart/rxdart.dart';
 import 'package:worldon/core/error/failure.dart';
 import 'package:worldon/data/core/failures/core_data_failure.dart';
 import 'package:worldon/data/core/misc/firebase/firebase_helpers.dart';
-import 'package:worldon/data/core/models/coins/coins_dto.dart';
 import 'package:worldon/data/core/models/item/item_dto.dart';
 import 'package:worldon/data/core/models/item/item_fields.dart';
-import 'package:worldon/data/core/models/promotion_plan/promotion_plan_dto.dart';
 import 'package:worldon/data/core/models/user/user_dto.dart';
 import 'package:worldon/data/core/models/user/user_fields.dart';
 import 'package:worldon/data/store/failure/store_data_failure.dart';
@@ -24,23 +22,25 @@ import 'package:worldon/domain/store/repository/store_repository_interface.dart'
 
 @LazySingleton(as: StoreRepositoryInterface, env: [Environment.prod])
 class ProductionStoreRepository implements StoreRepositoryInterface {
-  final _logger = Logger();
+  final Logger _logger;
   final FirebaseFirestore _firestore;
   final _inAppPurchaseInstance = InAppPurchase.instance;
 
-  ProductionStoreRepository(this._firestore);
+  ProductionStoreRepository(
+    this._firestore,
+    this._logger,
+  );
 
   @override
   Future<Either<Failure, Unit>> buyCoins(int amount) async {
     final _ableToBuy = await _inAppPurchaseInstance.isAvailable();
     if (_ableToBuy) {
       try {
-        final _coins = CoinsDto.fromFirestore(
-          await _firestore.getCoinProductIds(),
-        );
+        final _snapshot = await _firestore.coinCollection.doc("coins").get();
+        final _coins = _snapshot.data();
         if (amount == 10) {
           final _productDetailsResponse = await _inAppPurchaseInstance.queryProductDetails(
-            {_coins.tenCoinsProductId},
+            {_coins!.tenCoinsProductId},
           );
           final _purchaseParam = PurchaseParam(
             productDetails: _productDetailsResponse.productDetails.first,
@@ -56,7 +56,7 @@ class ProductionStoreRepository implements StoreRepositoryInterface {
           );
         }
         return right(unit);
-      } catch (error) {
+      } catch (error, _) {
         return left(_onError(error));
       }
     } else {
@@ -75,14 +75,14 @@ class ProductionStoreRepository implements StoreRepositoryInterface {
       final _boughtItem = item.copyWith(boughtDate: DateTime.now());
       final _user = await _firestore.currentUser();
       if (_user.coins >= _boughtItem.value) {
+        _user.items.add(_boughtItem);
         final _jsonUser = UserDto.fromDomain(
           _user.copyWith(
             coins: _user.coins - _boughtItem.value,
-            // Doing this is pretty dumb, transforming to KtSet to then Set again
-            items: _user.items.toImmutableSet().plusElement(_boughtItem).dart,
           ),
         ).toJson();
-        await _firestore.userCollection.doc(_user.id.getOrCrash()).update(_jsonUser);
+        final _userDocument = await _firestore.currentUserReference();
+        _userDocument.update(_jsonUser);
         return right(unit);
       } else {
         return left(
@@ -91,7 +91,7 @@ class ProductionStoreRepository implements StoreRepositoryInterface {
           ),
         );
       }
-    } catch (error) {
+    } catch (error, _) {
       return left(_onError(error));
     }
   }
@@ -117,9 +117,10 @@ class ProductionStoreRepository implements StoreRepositoryInterface {
           promotionPlan: plan,
         );
         final _jsonUser = UserDto.fromDomain(_updatedUser).toJson();
-        await _firestore.userCollection.doc(_updatedUser.id.getOrCrash()).update(_jsonUser);
+        final _userDocument = await _firestore.currentUserReference();
+        _userDocument.update(_jsonUser);
         return right(unit);
-      } catch (error) {
+      } catch (error, _) {
         return left(_onError(error));
       }
     } else {
@@ -149,11 +150,11 @@ class ProductionStoreRepository implements StoreRepositoryInterface {
           .toList();
       yield* CombineLatestStream(
         _combinedStreamList,
-        (List<QuerySnapshot> values) {
+          (List<QuerySnapshot<ItemDto>> values) {
           final _itemList = <Item>[];
           for (final _snapshot in values) {
-            for (final document in _snapshot.docs) {
-              final _item = ItemDto.fromFirestore(document).toDomain();
+            for (final _document in _snapshot.docs) {
+              final _item = _document.data().toDomain();
               _itemList.add(_item);
             }
           }
@@ -174,7 +175,7 @@ class ProductionStoreRepository implements StoreRepositoryInterface {
           }
         },
       ).onErrorReturnWith(
-        (error) => left(_onError(error)),
+          (error, _) => left(_onError(error)),
       );
     } else {
       yield* Stream.value(
@@ -195,7 +196,7 @@ class ProductionStoreRepository implements StoreRepositoryInterface {
         .snapshots()
         .map(
           (snapshot) => snapshot.docs.map(
-            (document) => ItemDto.fromFirestore(document).toDomain(),
+              (document) => document.data().toDomain(),
           ),
         )
         .map(
@@ -213,7 +214,7 @@ class ProductionStoreRepository implements StoreRepositoryInterface {
         }
       },
     ).onErrorReturnWith(
-      (error) => left(_onError(error)),
+        (error, _) => left(_onError(error)),
     );
   }
 
@@ -223,11 +224,11 @@ class ProductionStoreRepository implements StoreRepositoryInterface {
       final _querySnapshot = await _firestore.promotionPlanCollection.get();
       final _promotionPlans = _querySnapshot.docs
           .map(
-            (_document) => PromotionPlanDto.fromFirestore(_document).toDomain(),
+            (_document) => _document.data().toDomain(),
           )
           .toImmutableList();
       return right(_promotionPlans);
-    } catch (error) {
+    } catch (error, _) {
       return left(_onError(error));
     }
   }

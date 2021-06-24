@@ -1,4 +1,3 @@
-import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:worldon/domain/core/entities/system/system.dart';
 import 'package:worldon/domain/core/validation/objects/unique_id.dart';
@@ -32,10 +31,4 @@ class SystemDto with _$SystemDto {
       );
 
   factory SystemDto.fromJson(Map<String, dynamic> json) => _$SystemDtoFromJson(json);
-
-  factory SystemDto.fromFirestore(DocumentSnapshot document) => SystemDto.fromJson(
-        document.data()!,
-      ).copyWith(
-        id: document.id,
-      );
 }

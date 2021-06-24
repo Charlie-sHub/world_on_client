@@ -17,10 +17,13 @@ import 'package:worldon/domain/main_feed/repository/main_feed_repository_interfa
 
 @LazySingleton(as: MainFeedRepositoryInterface, env: [Environment.prod])
 class ProductionMainFeedRepository implements MainFeedRepositoryInterface {
-  final _logger = Logger();
+  final Logger _logger;
   final FirebaseFirestore _firestore;
 
-  ProductionMainFeedRepository(this._firestore);
+  ProductionMainFeedRepository(
+    this._firestore,
+    this._logger,
+  );
 
   @override
   Stream<Either<Failure, KtList<Experience>>> watchFeed() async* {
@@ -51,7 +54,7 @@ class ProductionMainFeedRepository implements MainFeedRepositoryInterface {
           .snapshots();
       final _promotedStreamQuery = await _promotedStream.first;
       for (final _experienceDoc in _promotedStreamQuery.docs) {
-        final _experience = ExperienceDto.fromFirestore(_experienceDoc).toDomain();
+        final _experience = _experienceDoc.data().toDomain();
         final _creator = _experience.creator;
         _firestore.userCollection.doc(_creator.id.getOrCrash()).update(
           {
@@ -67,14 +70,14 @@ class ProductionMainFeedRepository implements MainFeedRepositoryInterface {
       // This can't be the only app that needs to filter by more than 10 items (fucking absurd limitation imo)
       yield* CombineLatestStream(
         _combinedStreamList,
-        (List<QuerySnapshot> values) {
-          final _documentList = <QueryDocumentSnapshot>[];
+        (List<QuerySnapshot<ExperienceDto>> values) {
+          final _documentList = <QueryDocumentSnapshot<ExperienceDto>>[];
           for (final _snapshot in values) {
             _documentList.addAll(_snapshot.docs);
           }
           final _experienceDtoList = _documentList
               .map(
-                (_document) => ExperienceDto.fromFirestore(_document),
+                (_document) => _document.data(),
               )
               .toList();
           _experienceDtoList.sort(
@@ -107,7 +110,9 @@ class ProductionMainFeedRepository implements MainFeedRepositoryInterface {
           }
         },
       ).onErrorReturnWith(
-        (error) => left(onError(error)),
+        (error, _) => left(
+          _onError(error),
+        ),
       );
     } else {
       // Not sure about creating a stream out of nowhere, but it's the best solution for now
@@ -121,7 +126,7 @@ class ProductionMainFeedRepository implements MainFeedRepositoryInterface {
     }
   }
 
-  Failure onError(dynamic error) {
+  Failure _onError(dynamic error) {
     if (error is FirebaseException) {
       _logger.e("FirebaseException: ${error.message}");
       return Failure.coreData(

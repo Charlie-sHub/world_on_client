@@ -48,10 +48,4 @@ class ItemDto with _$ItemDto {
       );
 
   factory ItemDto.fromJson(Map<String, dynamic> json) => _$ItemDtoFromJson(json);
-
-  factory ItemDto.fromFirestore(DocumentSnapshot document) => ItemDto.fromJson(
-        document.data()!,
-      ).copyWith(
-        id: document.id,
-      );
 }

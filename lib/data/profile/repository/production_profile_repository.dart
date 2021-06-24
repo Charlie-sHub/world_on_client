@@ -31,11 +31,14 @@ import '../../../injection.dart';
 
 @LazySingleton(as: ProfileRepositoryInterface, env: [Environment.prod])
 class ProductionProfileRepository implements ProfileRepositoryInterface {
-  final _logger = Logger();
+  final Logger _logger;
   final FirebaseFirestore _firestore;
   final _functions = FirebaseFunctions.instanceFor(region: "europe-west1");
 
-  ProductionProfileRepository(this._firestore);
+  ProductionProfileRepository(
+    this._firestore,
+    this._logger,
+  );
 
   @override
   Future<Either<Failure, Unit>> blockUser(UniqueId blockedId) async {
@@ -49,7 +52,7 @@ class ProductionProfileRepository implements ProfileRepositoryInterface {
         },
       );
       return right(unit);
-    } catch (error) {
+    } catch (error, _) {
       return left(
         _onError(error),
       );
@@ -68,7 +71,7 @@ class ProductionProfileRepository implements ProfileRepositoryInterface {
         },
       );
       return right(unit);
-    } catch (error) {
+    } catch (error, _) {
       return left(
         _onError(error),
       );
@@ -93,7 +96,7 @@ class ProductionProfileRepository implements ProfileRepositoryInterface {
         },
       );
       return right(unit);
-    } catch (error) {
+    } catch (error, _) {
       return left(
         _onError(error),
       );
@@ -118,7 +121,7 @@ class ProductionProfileRepository implements ProfileRepositoryInterface {
         },
       );
       return right(unit);
-    } catch (error) {
+    } catch (error, _) {
       return left(
         _onError(error),
       );
@@ -167,7 +170,7 @@ class ProductionProfileRepository implements ProfileRepositoryInterface {
         <String, dynamic>{"userId": _userId},
       );
       return right(unit);
-    } catch (error) {
+    } catch (error, _) {
       return left(
         _onError(error),
       );
@@ -178,9 +181,9 @@ class ProductionProfileRepository implements ProfileRepositoryInterface {
   Future<Either<Failure, User>> getUser(UniqueId id) async {
     try {
       final _userDocument = await _firestore.userCollection.doc(id.getOrCrash()).get();
-      final _user = UserDto.fromFirestore(_userDocument).toDomain();
+      final _user = _userDocument.data()!.toDomain();
       return right(_user);
-    } catch (error) {
+    } catch (error, _) {
       return left(
         _onError(error),
       );
@@ -197,7 +200,7 @@ class ProductionProfileRepository implements ProfileRepositoryInterface {
         },
       );
       return right(unit);
-    } catch (error) {
+    } catch (error, _) {
       return left(
         _onError(error),
       );
@@ -207,8 +210,8 @@ class ProductionProfileRepository implements ProfileRepositoryInterface {
   @override
   Stream<Either<Failure, KtList<User>>> watchBlockedUsers(UniqueId id) async* {
     final _userDocument = await _firestore.userCollection.doc(id.getOrCrash()).get();
-    final _userDto = UserDto.fromFirestore(_userDocument);
-    if (_userDto.blockedUsersIds.isNotEmpty) {
+    final _userDto = _userDocument.data();
+    if (_userDto!.blockedUsersIds.isNotEmpty) {
       final _iterableOfIdLists = partition(
         _userDto.blockedUsersIds,
         10,
@@ -229,8 +232,8 @@ class ProductionProfileRepository implements ProfileRepositoryInterface {
   @override
   Stream<Either<Failure, KtList<User>>> watchFollowedUsers(UniqueId id) async* {
     final _userDocument = await _firestore.userCollection.doc(id.getOrCrash()).get();
-    final _userDto = UserDto.fromFirestore(_userDocument);
-    if (_userDto.followedUsersIds.isNotEmpty) {
+    final _userDto = _userDocument.data();
+    if (_userDto!.followedUsersIds.isNotEmpty) {
       final _iterableOfIdLists = partition(
         _userDto.followedUsersIds,
         10,
@@ -248,7 +251,7 @@ class ProductionProfileRepository implements ProfileRepositoryInterface {
     }
   }
 
-  List<Stream<QuerySnapshot>> _getCombinedStreamList(Iterable<List<String>> _iterableOfIdLists) {
+  List<Stream<QuerySnapshot<UserDto>>> _getCombinedStreamList(Iterable<List<String>> _iterableOfIdLists) {
     final _combinedStreamList = _iterableOfIdLists
         .map(
           (_idList) => _firestore.userCollection
@@ -263,15 +266,15 @@ class ProductionProfileRepository implements ProfileRepositoryInterface {
   }
 
   Stream<Either<Failure, KtList<User>>> _mergeStreamOfUserDocuments(
-    List<Stream<QuerySnapshot>> _combinedStreamList,
+    List<Stream<QuerySnapshot<UserDto>>> _combinedStreamList,
   ) {
     return CombineLatestStream(
       _combinedStreamList,
-      (List<QuerySnapshot> values) {
+      (List<QuerySnapshot<UserDto>> values) {
         final _userList = <User>[];
         for (final _snapshot in values) {
-          for (final document in _snapshot.docs) {
-            final _user = UserDto.fromFirestore(document).toDomain();
+          for (final _document in _snapshot.docs) {
+            final _user = _document.data().toDomain();
             _userList.add(_user);
           }
         }
@@ -292,7 +295,7 @@ class ProductionProfileRepository implements ProfileRepositoryInterface {
         }
       },
     ).onErrorReturnWith(
-      (error) => left(
+      (error, _) => left(
         _onError(error),
       ),
     );
@@ -308,7 +311,7 @@ class ProductionProfileRepository implements ProfileRepositoryInterface {
         .snapshots()
         .map(
           (snapshot) => snapshot.docs.map(
-            (document) => UserDto.fromFirestore(document).toDomain(),
+            (document) => document.data().toDomain(),
           ),
         )
         .map(
@@ -326,7 +329,7 @@ class ProductionProfileRepository implements ProfileRepositoryInterface {
         }
       },
     ).onErrorReturnWith(
-      (error) => left(
+      (error, _) => left(
         _onError(error),
       ),
     );
@@ -346,7 +349,7 @@ class ProductionProfileRepository implements ProfileRepositoryInterface {
         .snapshots()
         .map(
           (snapshot) => snapshot.docs.map(
-            (document) => ExperienceDto.fromFirestore(document).toDomain(),
+            (document) => document.data().toDomain(),
           ),
         )
         .map(
@@ -364,7 +367,7 @@ class ProductionProfileRepository implements ProfileRepositoryInterface {
         }
       },
     ).onErrorReturnWith(
-      (error) => left(
+      (error, _) => left(
         _onError(error),
       ),
     );
@@ -373,8 +376,8 @@ class ProductionProfileRepository implements ProfileRepositoryInterface {
   @override
   Stream<Either<Failure, KtList<Experience>>> watchExperiencesDone(UniqueId id) async* {
     final _userDocument = await _firestore.userCollection.doc(id.getOrCrash()).get();
-    final _userDto = UserDto.fromFirestore(_userDocument);
-    if (_userDto.experiencesDoneIds.isNotEmpty) {
+    final _userDto = _userDocument.data();
+    if (_userDto!.experiencesDoneIds.isNotEmpty) {
       final _iterableOfIdLists = partition(
         _userDto.experiencesDoneIds,
         10,
@@ -391,11 +394,11 @@ class ProductionProfileRepository implements ProfileRepositoryInterface {
           .toList();
       yield* CombineLatestStream(
         _combinedStreamList,
-        (List<QuerySnapshot> values) {
+        (List<QuerySnapshot<ExperienceDto>> values) {
           final _experienceList = <Experience>[];
           for (final _snapshot in values) {
             for (final _document in _snapshot.docs) {
-              final _experience = ExperienceDto.fromFirestore(_document).toDomain();
+              final _experience = _document.data().toDomain();
               _experienceList.add(_experience);
             }
           }
@@ -416,7 +419,7 @@ class ProductionProfileRepository implements ProfileRepositoryInterface {
           }
         },
       ).onErrorReturnWith(
-        (error) => left(
+        (error, _) => left(
           _onError(error),
         ),
       );
@@ -434,8 +437,8 @@ class ProductionProfileRepository implements ProfileRepositoryInterface {
   @override
   Stream<Either<Failure, KtList<Experience>>> watchExperiencesLiked(UniqueId id) async* {
     final _userDocument = await _firestore.userCollection.doc(id.getOrCrash()).get();
-    final _userDto = UserDto.fromFirestore(_userDocument);
-    if (_userDto.experiencesLikedIds.isNotEmpty) {
+    final _userDto = _userDocument.data();
+    if (_userDto!.experiencesLikedIds.isNotEmpty) {
       final _iterableOfIdLists = partition(
         _userDto.experiencesLikedIds,
         10,
@@ -456,11 +459,11 @@ class ProductionProfileRepository implements ProfileRepositoryInterface {
           .toList();
       yield* CombineLatestStream(
         _combinedStreamList,
-        (List<QuerySnapshot> values) {
+        (List<QuerySnapshot<ExperienceDto>> values) {
           final _experienceList = <Experience>[];
           for (final _snapshot in values) {
             for (final _document in _snapshot.docs) {
-              final _experience = ExperienceDto.fromFirestore(_document).toDomain();
+              final _experience = _document.data().toDomain();
               _experienceList.add(_experience);
             }
           }
@@ -481,7 +484,7 @@ class ProductionProfileRepository implements ProfileRepositoryInterface {
           }
         },
       ).onErrorReturnWith(
-        (error) => left(
+        (error, _) => left(
           _onError(error),
         ),
       );
@@ -499,8 +502,8 @@ class ProductionProfileRepository implements ProfileRepositoryInterface {
   @override
   Stream<Either<Failure, KtList<Achievement>>> watchUserAchievements(UniqueId id) async* {
     final _userDocument = await _firestore.userCollection.doc(id.getOrCrash()).get();
-    final _userDto = UserDto.fromFirestore(_userDocument);
-    if (_userDto.achievementsIds.isNotEmpty) {
+    final _userDto = _userDocument.data();
+    if (_userDto!.achievementsIds.isNotEmpty) {
       final _iterableOfIdLists = partition(
         _userDto.achievementsIds,
         10,
@@ -517,11 +520,11 @@ class ProductionProfileRepository implements ProfileRepositoryInterface {
           .toList();
       yield* CombineLatestStream(
         _combinedStreamList,
-        (List<QuerySnapshot> values) {
+        (List<QuerySnapshot<AchievementDto>> values) {
           final _achievementList = <Achievement>[];
           for (final _snapshot in values) {
             for (final _document in _snapshot.docs) {
-              final _achievement = AchievementDto.fromFirestore(_document).toDomain();
+              final _achievement = _document.data().toDomain();
               _achievementList.add(_achievement);
             }
           }
@@ -542,7 +545,7 @@ class ProductionProfileRepository implements ProfileRepositoryInterface {
           }
         },
       ).onErrorReturnWith(
-        (error) => left(
+        (error, _) => left(
           _onError(error),
         ),
       );
@@ -560,8 +563,8 @@ class ProductionProfileRepository implements ProfileRepositoryInterface {
   @override
   Stream<Either<Failure, KtList<Tag>>> watchUserInterests(UniqueId id) async* {
     final _userDocument = await _firestore.userCollection.doc(id.getOrCrash()).get();
-    final _userDto = UserDto.fromFirestore(_userDocument);
-    if (_userDto.interestsIds.isNotEmpty) {
+    final _userDto = _userDocument.data();
+    if (_userDto!.interestsIds.isNotEmpty) {
       final _iterableOfIdLists = partition(
         _userDto.interestsIds,
         10,
@@ -578,11 +581,11 @@ class ProductionProfileRepository implements ProfileRepositoryInterface {
           .toList();
       yield* CombineLatestStream(
         _combinedStreamList,
-        (List<QuerySnapshot> values) {
+        (List<QuerySnapshot<TagDto>> values) {
           final _tagList = <Tag>[];
           for (final _snapshot in values) {
-            for (final document in _snapshot.docs) {
-              final _tag = TagDto.fromFirestore(document).toDomain();
+            for (final _document in _snapshot.docs) {
+              final _tag = _document.data().toDomain();
               _tagList.add(_tag);
             }
           }
@@ -603,7 +606,7 @@ class ProductionProfileRepository implements ProfileRepositoryInterface {
           }
         },
       ).onErrorReturnWith(
-        (error) => left(
+        (error, _) => left(
           _onError(error),
         ),
       );
@@ -626,7 +629,7 @@ class ProductionProfileRepository implements ProfileRepositoryInterface {
       );
       _experienceDocument.delete();
       return right(unit);
-    } catch (error) {
+    } catch (error, _) {
       return left(
         _onError(error),
       );
@@ -641,7 +644,7 @@ class ProductionProfileRepository implements ProfileRepositoryInterface {
         )
         .snapshots()
         .map(
-          (snapshot) => UserDto.fromFirestore(snapshot).toDomain(),
+          (snapshot) => snapshot.data()!.toDomain(),
         )
         .map(
       (_user) {
@@ -650,7 +653,7 @@ class ProductionProfileRepository implements ProfileRepositoryInterface {
         );
       },
     ).onErrorReturnWith(
-      (error) => left(
+      (error, _) => left(
         _onError(error),
       ),
     );

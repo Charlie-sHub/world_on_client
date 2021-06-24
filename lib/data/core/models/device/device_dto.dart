@@ -1,4 +1,3 @@
-import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:worldon/domain/core/entities/device/device.dart';
 import 'package:worldon/domain/core/validation/objects/unique_id.dart';
@@ -33,10 +32,4 @@ class DeviceDto with _$DeviceDto {
       );
 
   factory DeviceDto.fromJson(Map<String, dynamic> json) => _$DeviceDtoFromJson(json);
-
-  factory DeviceDto.fromFirestore(DocumentSnapshot document) => DeviceDto.fromJson(
-        document.data()!,
-      ).copyWith(
-        id: document.id,
-      );
 }

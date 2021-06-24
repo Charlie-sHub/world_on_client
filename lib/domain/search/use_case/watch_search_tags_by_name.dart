@@ -15,7 +15,7 @@ class WatchSearchTagsByName implements StreamUseCase<KtList<Tag>, Params> {
 
   @override
   Stream<Either<Failure, KtList<Tag>>> call(Params params) async* {
-    yield* _repository.watchSearchTagsByName(params.name);
+    yield* _repository.watchTagsByName(params.name);
   }
 }
 

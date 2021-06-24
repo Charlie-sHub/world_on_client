@@ -8,8 +8,8 @@ publish_to: 'none'
 # Then it goes back to 0 and it's neighbour to the left increases by 1
 # The number after the + always increases by 1
 # Usually both numbers should increase by 1 at the same time
-# For example 1.1.7+17 => 1.1.8+18
-version: 1.2.9+29
+# For example 1.1.8+18 => 1.1.9+19 => 1.2.0+20
+version: 1.3.0+30
 
 environment:
   sdk: ">=2.12.0 <3.0.0"
@@ -24,7 +24,7 @@ dependencies:
   bloc_test: ^8.0.2
   cached_network_image: ^3.0.0
   carousel_slider: ^4.0.0-nullsafety.0
-  cloud_firestore: ^1.0.7
+  cloud_firestore: ^2.2.2
   cloud_functions: ^1.1.2
   dartz: ^0.10.0-nullsafety.2
   email_validator: ^2.0.1
@@ -45,13 +45,13 @@ dependencies:
   freezed: ^0.14.2
   freezed_annotation: ^0.14.2
   geoflutterfire: ^3.0.0-nullsafety.2
-  geolocator: ^7.1.0
+  geolocator: ^7.1.1
   get_it: ^7.1.3
   google_maps_flutter:
   google_sign_in: ^5.0.4
-  image_picker: ^0.8.0+3
+  image_picker: ^0.8.0+4
   implicitly_animated_reorderable_list: ^0.4.0-dev+2
-  in_app_purchase: ^1.0.5
+  in_app_purchase: ^1.0.6
   injectable: ^1.4.1
   intl: ^0.17.0
   jiffy: ^4.1.0
@@ -66,7 +66,7 @@ dependencies:
   permission_handler: ^8.1.1
   provider: ^5.0.0
   quiver: ^3.0.1
-  rxdart: ^0.26.0
+  rxdart: ^0.27.1
   simple_animations: ^3.1.1
   social_share: ^2.1.1
   uuid: ^3.0.4

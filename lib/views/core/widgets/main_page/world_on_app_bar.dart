@@ -15,7 +15,7 @@ class WorldOnAppBar extends StatelessWidget implements PreferredSizeWidget {
         StorePageButton(),
         NotificationsButton(),
         CurrentUserProfileButton(),
-        SizedBox(width: 5),
+        SizedBox(width: 15),
       ],
       elevation: 0,
     );

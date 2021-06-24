@@ -1,4 +1,3 @@
-import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:dartz/dartz.dart' as dartz;
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:worldon/domain/core/entities/reward/reward.dart';
@@ -36,10 +35,4 @@ class RewardDto with _$RewardDto {
       );
 
   factory RewardDto.fromJson(Map<String, dynamic> json) => _$RewardDtoFromJson(json);
-
-  factory RewardDto.fromFirestore(DocumentSnapshot document) => RewardDto.fromJson(
-        document.data()!,
-      ).copyWith(
-        id: document.id,
-      );
 }

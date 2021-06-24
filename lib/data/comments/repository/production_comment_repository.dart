@@ -15,11 +15,14 @@ import 'package:worldon/domain/core/validation/objects/unique_id.dart';
 
 @LazySingleton(as: CommentRepositoryInterface, env: [Environment.prod])
 class ProductionCommentRepository implements CommentRepositoryInterface {
-  final _logger = Logger();
+  final Logger _logger;
 
   final FirebaseFirestore _firestore;
 
-  ProductionCommentRepository(this._firestore);
+  ProductionCommentRepository(
+    this._firestore,
+    this._logger,
+  );
 
   @override
   Stream<Either<Failure, KtList<Comment>>> watchExperienceComments(UniqueId experienceId) async* {
@@ -33,7 +36,7 @@ class ProductionCommentRepository implements CommentRepositoryInterface {
         .snapshots()
         .map(
           (snapshot) => snapshot.docs.map(
-            (document) => CommentDto.fromFirestore(document).toDomain(),
+            (document) => document.data().toDomain(),
           ),
         )
         .map(
@@ -51,7 +54,7 @@ class ProductionCommentRepository implements CommentRepositoryInterface {
         }
       },
     ).onErrorReturnWith(
-      (error) {
+      (error, _) {
         return left(
           _onError(error),
         );
@@ -72,10 +75,10 @@ class ProductionCommentRepository implements CommentRepositoryInterface {
             comment.id.getOrCrash(),
           )
           .set(
-            _commentDto.toJson(),
+            _commentDto,
           );
       return right(unit);
-    } catch (error) {
+    } catch (error, _) {
       return left(
         _onError(error),
       );
@@ -98,7 +101,7 @@ class ProductionCommentRepository implements CommentRepositoryInterface {
             _commentDto.toJson(),
           );
       return right(unit);
-    } catch (error) {
+    } catch (error, _) {
       return left(
         _onError(error),
       );
@@ -118,7 +121,7 @@ class ProductionCommentRepository implements CommentRepositoryInterface {
           )
           .delete();
       return right(unit);
-    } catch (error) {
+    } catch (error, _) {
       return left(
         _onError(error),
       );

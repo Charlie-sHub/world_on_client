@@ -23,12 +23,15 @@ import 'package:worldon/injection.dart';
 
 @LazySingleton(as: ExperienceManagementRepositoryInterface, env: [Environment.prod])
 class ProductionExperienceManagementRepository implements ExperienceManagementRepositoryInterface {
-  final _logger = Logger();
+  final Logger _logger;
   final _geo = Geoflutterfire();
   final _functions = FirebaseFunctions.instanceFor(region: "europe-west1");
   final FirebaseFirestore _firestore;
 
-  ProductionExperienceManagementRepository(this._firestore);
+  ProductionExperienceManagementRepository(
+    this._firestore,
+    this._logger,
+  );
 
   @override
   Future<Either<Failure, Unit>> createExperience(Experience experience) async {
@@ -52,12 +55,14 @@ class ProductionExperienceManagementRepository implements ExperienceManagementRe
       );
       final _experienceJson = _experienceDto.toJson();
       _experienceJson[ExperienceFields.position] = _flutterFireGeoPosition.data;
+      // Don't like that at all but it's the best for now
+      final _experienceDtoWithGeoData = ExperienceDto.fromJson(_experienceJson);
       _firestore.experienceCollection
           .doc(
             experience.id.getOrCrash(),
           )
           .set(
-            _experienceJson,
+            _experienceDtoWithGeoData,
           );
       return right(unit);
     } catch (e) {
@@ -120,9 +125,7 @@ class ProductionExperienceManagementRepository implements ExperienceManagementRe
             id.getOrCrash(),
           )
           .get();
-      final _experience = ExperienceDto.fromFirestore(
-        _experienceSnapshot,
-      ).toDomain();
+      final _experience = _experienceSnapshot.data()!.toDomain();
       return right(_experience);
     } catch (e) {
       return _onException(e);

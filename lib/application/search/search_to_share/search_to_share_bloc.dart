@@ -24,17 +24,11 @@ class SearchToShareBloc extends Bloc<SearchToShareEvent, SearchToShareState> {
     yield* event.map(
       initialized: _onInitialized,
       searchTermChanged: _onSearchTermChanged,
+      submitted: _onSubmitted,
     );
   }
 
-  Stream<SearchToShareState> _onSearchTermChanged(_SearchTermChanged event) async* {
-    final _oldSearchTerm = state.searchTerm.toString();
-    if (event.searchTermString != _oldSearchTerm) {
-      yield state.copyWith(
-        searchTerm: SearchTerm(event.searchTermString),
-        failureOrSuccessOption: none(),
-      );
-    }
+  Stream<SearchToShareState> _onSubmitted(_Submitted event) async* {
     final _failureOrResults = await getIt<SearchToShare>()(
       Params(searchTerm: state.searchTerm),
     );
@@ -46,6 +40,17 @@ class SearchToShareBloc extends Bloc<SearchToShareEvent, SearchToShareState> {
         users: _users,
       ),
     );
+  }
+
+  Stream<SearchToShareState> _onSearchTermChanged(_SearchTermChanged event) async* {
+    final _oldSearchTerm = state.searchTerm.toString();
+    if (event.searchTermString != _oldSearchTerm) {
+      yield state.copyWith(
+        searchTerm: SearchTerm(event.searchTermString),
+        failureOrSuccessOption: none(),
+      );
+    }
+    add(const SearchToShareEvent.submitted());
   }
 
   Stream<SearchToShareState> _onInitialized(_Initialized event) async* {

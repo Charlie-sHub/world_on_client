@@ -38,10 +38,4 @@ class TagDto with _$TagDto {
       );
 
   factory TagDto.fromJson(Map<String, dynamic> json) => _$TagDtoFromJson(json);
-
-  factory TagDto.fromFirestore(DocumentSnapshot document) => TagDto.fromJson(
-        document.data()!,
-      ).copyWith(
-        id: document.id,
-      );
 }

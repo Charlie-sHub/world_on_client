@@ -1,4 +1,3 @@
-import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:kt_dart/kt.dart';
 import 'package:worldon/domain/core/validation/objects/objective_list.dart';
@@ -19,8 +18,4 @@ class ObjectiveIdListDto with _$ObjectiveIdListDto {
       );
 
   factory ObjectiveIdListDto.fromJson(Map<String, dynamic> json) => _$ObjectiveIdListDtoFromJson(json);
-
-  factory ObjectiveIdListDto.fromFirestore(DocumentSnapshot document) => ObjectiveIdListDto.fromJson(
-        document.data()!,
-      );
 }

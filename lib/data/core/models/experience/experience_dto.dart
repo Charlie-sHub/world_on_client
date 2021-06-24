@@ -94,10 +94,4 @@ class ExperienceDto with _$ExperienceDto {
       );
 
   factory ExperienceDto.fromJson(Map<String, dynamic> json) => _$ExperienceDtoFromJson(json);
-
-  factory ExperienceDto.fromFirestore(DocumentSnapshot document) => ExperienceDto.fromJson(
-        document.data()!,
-      ).copyWith(
-        id: document.id,
-      );
 }

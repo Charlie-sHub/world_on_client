@@ -15,10 +15,13 @@ import 'package:worldon/domain/notifications/repository/notification_repository_
 
 @LazySingleton(as: NotificationRepositoryInterface, env: [Environment.prod])
 class ProductionNotificationRepository implements NotificationRepositoryInterface {
-  final _logger = Logger();
+  final Logger _logger;
   final FirebaseFirestore _firestore;
 
-  ProductionNotificationRepository(this._firestore);
+  ProductionNotificationRepository(
+    this._firestore,
+    this._logger,
+  );
 
   @override
   Future<Either<Failure, Unit>> checkNotification(UniqueId id) async {
@@ -33,7 +36,7 @@ class ProductionNotificationRepository implements NotificationRepositoryInterfac
         },
       );
       return right(unit);
-    } catch (error) {
+    } catch (error, _) {
       return left(
         _onError(error),
       );
@@ -45,7 +48,7 @@ class ProductionNotificationRepository implements NotificationRepositoryInterfac
     final _userDocumentReference = await _firestore.currentUserReference();
     yield* _firestore.notificationCollection
         .where(
-          "${NotificationFields.receiver}.id",
+          NotificationFields.receiverId,
           isEqualTo: _userDocumentReference.id,
         )
         .orderBy(
@@ -55,7 +58,7 @@ class ProductionNotificationRepository implements NotificationRepositoryInterfac
         .snapshots()
         .map(
           (snapshot) => snapshot.docs.map(
-            (document) => NotificationDto.fromFirestore(document).toDomain(),
+            (document) => document.data().toDomain(),
           ),
         )
         .map(
@@ -73,7 +76,7 @@ class ProductionNotificationRepository implements NotificationRepositoryInterfac
         }
       },
     ).onErrorReturnWith(
-      (error) => left(
+      (error, _) => left(
         _onError(error),
       ),
     );
@@ -84,7 +87,7 @@ class ProductionNotificationRepository implements NotificationRepositoryInterfac
     final _userDocumentReference = await _firestore.currentUserReference();
     yield* _firestore.notificationCollection
         .where(
-          "${NotificationFields.receiver}.id",
+          NotificationFields.receiverId,
           isEqualTo: _userDocumentReference.id,
         )
         .where(
@@ -100,7 +103,7 @@ class ProductionNotificationRepository implements NotificationRepositoryInterfac
           (_newNotifications) => right<Failure, bool>(_newNotifications),
         )
         .onErrorReturnWith(
-          (error) => left(
+          (error, _) => left(
             _onError(error),
           ),
         );
@@ -115,10 +118,10 @@ class ProductionNotificationRepository implements NotificationRepositoryInterfac
             notification.id.getOrCrash(),
           )
           .set(
-            _notificationDto.toJson(),
+            _notificationDto,
           );
       return right(unit);
-    } catch (error) {
+    } catch (error, _) {
       return left(
         _onError(error),
       );
@@ -130,7 +133,7 @@ class ProductionNotificationRepository implements NotificationRepositoryInterfac
     try {
       _firestore.notificationCollection.doc(id.getOrCrash()).delete();
       return right(unit);
-    } catch (error) {
+    } catch (error, _) {
       return left(
         _onError(error),
       );

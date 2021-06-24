@@ -1,4 +1,3 @@
-import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:worldon/domain/core/entities/options/options.dart';
 import 'package:worldon/domain/core/validation/objects/unique_id.dart';
@@ -26,10 +25,4 @@ class OptionsDto with _$OptionsDto {
       );
 
   factory OptionsDto.fromJson(Map<String, dynamic> json) => _$OptionsDtoFromJson(json);
-
-  factory OptionsDto.fromFirestore(DocumentSnapshot document) => OptionsDto.fromJson(
-        document.data()!,
-      ).copyWith(
-        id: document.id,
-      );
 }

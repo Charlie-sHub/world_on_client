@@ -45,10 +45,4 @@ class PromotionPlanDto with _$PromotionPlanDto {
       );
 
   factory PromotionPlanDto.fromJson(Map<String, dynamic> json) => _$PromotionPlanDtoFromJson(json);
-
-  factory PromotionPlanDto.fromFirestore(DocumentSnapshot document) => PromotionPlanDto.fromJson(
-        document.data()!,
-      ).copyWith(
-        id: document.id,
-      );
 }

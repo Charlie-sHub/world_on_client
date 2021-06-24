@@ -11,7 +11,9 @@ import 'package:worldon/domain/core/validation/objects/longitude.dart';
 
 @LazySingleton(as: GeoLocationRepositoryInterface, env: [Environment.prod])
 class ProductionGeoLocationRepository implements GeoLocationRepositoryInterface {
-  final _logger = Logger();
+  final Logger _logger;
+
+  ProductionGeoLocationRepository(this._logger);
 
   @override
   Future<Either<Failure, Coordinates>> getCurrentLocation() async {

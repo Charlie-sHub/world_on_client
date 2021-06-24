@@ -12,8 +12,6 @@ import 'package:worldon/data/core/misc/algolia/algolia_helpers.dart';
 import 'package:worldon/data/core/misc/firebase/firebase_helpers.dart';
 import 'package:worldon/data/core/models/experience/experience_dto.dart';
 import 'package:worldon/data/core/models/experience/experience_fields.dart';
-import 'package:worldon/data/core/models/tag/tag_dto.dart';
-import 'package:worldon/data/core/models/user/user_dto.dart';
 import 'package:worldon/data/core/models/user/user_fields.dart';
 import 'package:worldon/domain/core/entities/experience/experience.dart';
 import 'package:worldon/domain/core/entities/tag/tag.dart';
@@ -25,28 +23,31 @@ import 'package:worldon/domain/search/repository/search_repository_interface.dar
 
 @LazySingleton(as: SearchRepositoryInterface, env: [Environment.prod])
 class ProductionSearchRepository implements SearchRepositoryInterface {
-  final _logger = Logger();
+  final Logger _logger;
   final FirebaseFirestore _firestore;
 
-  // TODO: Use environment variables instead of hard coding the apikey and applicationId
+  // TODO: Use environment variables instead of hard coding the apiKey and applicationId
   Algolia algolia = const Algolia.init(
     applicationId: "F2D62LNQIN",
     apiKey: "8e7f2dd6d6d42450a4b3d12388b96207",
   );
 
-  ProductionSearchRepository(this._firestore);
+  ProductionSearchRepository(
+    this._firestore,
+    this._logger,
+  );
 
   @override
-  Stream<Either<Failure, KtList<Experience>>> watchSearchExperiencesByTitle(SearchTerm title) async* {
-    final List<Experience> _results = [];
+  Stream<Either<Failure, KtList<Experience>>> watchExperiencesByTitle(SearchTerm term) async* {
+    final _results = <Experience>[];
     try {
-      final _algoliaQuery = algolia.queryExperienceIndex().query(title.getOrCrash()).setLength(50);
+      final _algoliaQuery = algolia.queryExperienceIndex().query(term.getOrCrash()).setLength(40);
       final _querySnapshot = await _algoliaQuery.getObjects();
       for (final _queryResult in _querySnapshot.hits) {
         final _id = _queryResult.objectID;
         final _documentReference = await _firestore.experienceDocumentReference(_id);
         final _experienceDocument = await _documentReference.get();
-        final _experience = ExperienceDto.fromFirestore(_experienceDocument).toDomain();
+        final _experience = _experienceDocument.data()!.toDomain();
         _results.add(_experience);
       }
       if (_results.isNotEmpty) {
@@ -60,23 +61,23 @@ class ProductionSearchRepository implements SearchRepositoryInterface {
           ),
         );
       }
-    } catch (error) {
+    } catch (error, _) {
       yield left<Failure, KtList<Experience>>(
-        onError(error),
+        _onError(error),
       );
     }
   }
 
   @override
-  Stream<Either<Failure, KtList<Tag>>> watchSearchTagsByName(SearchTerm name) async* {
-    final List<Tag> _results = [];
+  Stream<Either<Failure, KtList<Tag>>> watchTagsByName(SearchTerm term) async* {
+    final _results = <Tag>[];
     try {
-      final _algoliaQuery = algolia.queryTagIndex().query(name.getOrCrash()).setLength(50);
+      final _algoliaQuery = algolia.queryTagIndex().query(term.getOrCrash()).setLength(50);
       final _querySnapshot = await _algoliaQuery.getObjects();
       for (final _queryResult in _querySnapshot.hits) {
         final _id = _queryResult.objectID;
         final _tagDocument = await _firestore.tagCollection.doc(_id).get();
-        final _tag = TagDto.fromFirestore(_tagDocument).toDomain();
+        final _tag = _tagDocument.data()!.toDomain();
         _results.add(_tag);
       }
       if (_results.isNotEmpty) {
@@ -90,23 +91,23 @@ class ProductionSearchRepository implements SearchRepositoryInterface {
           ),
         );
       }
-    } catch (error) {
+    } catch (error, _) {
       yield left<Failure, KtList<Tag>>(
-        onError(error),
+        _onError(error),
       );
     }
   }
 
   @override
-  Stream<Either<Failure, KtList<User>>> watchSearchUsersByName(SearchTerm name) async* {
-    final List<User> _results = [];
+  Stream<Either<Failure, KtList<User>>> watchUsersByName(SearchTerm term) async* {
+    final _results = <User>[];
     try {
-      final _algoliaQuery = algolia.queryUserIndex().query(name.getOrCrash()).setLength(50);
+      final _algoliaQuery = algolia.queryUserIndex().query(term.getOrCrash()).setLength(50);
       final _querySnapshot = await _algoliaQuery.getObjects();
       for (final _queryResult in _querySnapshot.hits) {
         final _id = _queryResult.objectID;
         final _userDocument = await _firestore.userCollection.doc(_id).get();
-        final _user = UserDto.fromFirestore(_userDocument).toDomain();
+        final _user = _userDocument.data()!.toDomain();
         _results.add(_user);
       }
       if (_results.isNotEmpty) {
@@ -120,17 +121,18 @@ class ProductionSearchRepository implements SearchRepositoryInterface {
           ),
         );
       }
-    } catch (error) {
+    } catch (error, _) {
       yield left<Failure, KtList<User>>(
-        onError(error),
+        _onError(error),
       );
     }
   }
 
   @override
-  Stream<Either<Failure, KtList<Experience>>> watchSearchExperiencesByTags(TagSet tags) async* {
-    if (tags.getOrCrash().isNotEmpty()) {
-      final _auxTagList = tags.getOrCrash().toList().asList();
+  Stream<Either<Failure, KtList<Experience>>> watchExperiencesByTags(TagSet tags) async* {
+    final _tags = tags.getOrCrash();
+    if (_tags.isNotEmpty()) {
+      final _auxTagList = _tags.toList().asList();
       final _iterableOfIdLists = partition(
         _auxTagList,
         10,
@@ -151,15 +153,18 @@ class ProductionSearchRepository implements SearchRepositoryInterface {
           .toList();
       yield* CombineLatestStream(
         _combinedStreamList,
-        (List<QuerySnapshot> values) {
-          final _experienceList = <Experience>[];
+        (List<QuerySnapshot<ExperienceDto>> values) {
+          final _documentList = <QueryDocumentSnapshot<ExperienceDto>>[];
           for (final _snapshot in values) {
-            for (final document in _snapshot.docs) {
-              final _experience = ExperienceDto.fromFirestore(document).toDomain();
-              _experienceList.add(_experience);
+            for (final _document in _snapshot.docs) {
+              _documentList.add(_document);
             }
           }
-          return _experienceList.take(50);
+          final _filteredList = _documentList.take(50);
+          final _experienceList = _filteredList.map(
+            (_document) => _document.data().toDomain(),
+          );
+          return _experienceList;
         },
       ).map(
         (experiences) {
@@ -176,7 +181,7 @@ class ProductionSearchRepository implements SearchRepositoryInterface {
           }
         },
       ).onErrorReturnWith(
-        (error) => left(onError(error)),
+        (error, _) => left(_onError(error)),
       );
     } else {
       yield* Stream.value(
@@ -190,7 +195,7 @@ class ProductionSearchRepository implements SearchRepositoryInterface {
   }
 
   @override
-  Stream<Either<Failure, KtList<Experience>>> watchSearchExperiencesByDifficulty(Difficulty difficulty) async* {
+  Stream<Either<Failure, KtList<Experience>>> watchExperiencesByDifficulty(Difficulty difficulty) async* {
     yield* _firestore.experienceCollection
         .where(
           ExperienceFields.difficulty,
@@ -201,7 +206,7 @@ class ProductionSearchRepository implements SearchRepositoryInterface {
         .snapshots()
         .map(
           (snapshot) => snapshot.docs.map(
-            (document) => ExperienceDto.fromFirestore(document).toDomain(),
+            (document) => document.data().toDomain(),
           ),
         )
         .map(
@@ -219,7 +224,7 @@ class ProductionSearchRepository implements SearchRepositoryInterface {
         }
       },
     ).onErrorReturnWith(
-      (error) => left(onError(error)),
+      (error, _) => left(_onError(error)),
     );
   }
 
@@ -232,22 +237,31 @@ class ProductionSearchRepository implements SearchRepositoryInterface {
             UserFields.followedUsersIds,
             arrayContains: _userDocumentReference.id,
           )
+          .limit(100)
           .get();
       final _userList = _querySnapshot.docs.map(
-        (_queryDocumentSnapshot) => UserDto.fromFirestore(_queryDocumentSnapshot).toDomain(),
+        (_queryDocumentSnapshot) => _queryDocumentSnapshot.data().toDomain(),
       );
-      return right(_userList.toImmutableList());
-    } catch (error) {
+      if (_userList.isNotEmpty) {
+        return right(_userList.toImmutableList());
+      } else {
+        return left<Failure, KtList<User>>(
+          const Failure.coreData(
+            CoreDataFailure.notFoundError(),
+          ),
+        );
+      }
+    } catch (error, _) {
       return left(
-        onError(error),
+        _onError(error),
       );
     }
   }
 
   @override
-  Future<Either<Failure, KtList<User>>> searchShareableUsers(SearchTerm name) async {
+  Future<Either<Failure, KtList<User>>> searchShareableUsers(SearchTerm term) async {
     try {
-      final _searchString = name.getOrCrash().toLowerCase();
+      final _searchString = term.getOrCrash().toLowerCase();
       final _userDocumentReference = await _firestore.currentUserReference();
       final _querySnapshot = await _firestore.userCollection
           .where(
@@ -256,25 +270,39 @@ class ProductionSearchRepository implements SearchRepositoryInterface {
           )
           .get();
       final _userDtoList = _querySnapshot.docs.map(
-        (_queryDocumentSnapshot) => UserDto.fromFirestore(_queryDocumentSnapshot),
+        (_queryDocumentSnapshot) => _queryDocumentSnapshot.data(),
       );
       final _filteredList = _userDtoList.where(
-        (_userDto) => _userDto.name.toLowerCase().contains(_searchString) || _userDto.username.toLowerCase().contains(_searchString),
+        (_userDto) =>
+            _userDto.name.toLowerCase().contains(
+                  _searchString,
+                ) ||
+            _userDto.username.toLowerCase().contains(
+                  _searchString,
+                ),
       );
       final _userList = _filteredList
           .map(
             (_userDto) => _userDto.toDomain(),
           )
           .toList();
-      return right(_userList.toImmutableList());
-    } catch (error) {
+      if (_userList.isNotEmpty) {
+        return right(_userList.toImmutableList());
+      } else {
+        return left<Failure, KtList<User>>(
+          const Failure.coreData(
+            CoreDataFailure.notFoundError(),
+          ),
+        );
+      }
+    } catch (error, _) {
       return left(
-        onError(error),
+        _onError(error),
       );
     }
   }
 
-  Failure onError(dynamic error) {
+  Failure _onError(dynamic error) {
     if (error is FirebaseException) {
       _logger.e("FirebaseException: ${error.message}");
       return Failure.coreData(

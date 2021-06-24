@@ -1,4 +1,3 @@
-import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:dartz/dartz.dart' as dartz;
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:worldon/data/core/models/coordinates/coordinates_dto.dart';
@@ -36,10 +35,4 @@ class ObjectiveDto with _$ObjectiveDto {
       );
 
   factory ObjectiveDto.fromJson(Map<String, dynamic> json) => _$ObjectiveDtoFromJson(json);
-
-  factory ObjectiveDto.fromFirestore(DocumentSnapshot document) => ObjectiveDto.fromJson(
-        document.data()!,
-      ).copyWith(
-        id: document.id,
-      );
 }

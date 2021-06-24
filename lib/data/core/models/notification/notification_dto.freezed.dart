@@ -21,7 +21,7 @@ class _$NotificationDtoTearOff {
   const _$NotificationDtoTearOff();
 
   _NotificationDto call(
-      {@JsonKey(ignore: true) String? id,
+      {required String id,
       required SimpleUserDto sender,
       required String receiverId,
       required String description,
@@ -51,8 +51,8 @@ const $NotificationDto = _$NotificationDtoTearOff();
 
 /// @nodoc
 mixin _$NotificationDto {
-  @JsonKey(ignore: true)
-  String? get id => throw _privateConstructorUsedError;
+  String get id => throw _privateConstructorUsedError;
+
   SimpleUserDto get sender => throw _privateConstructorUsedError;
   String get receiverId => throw _privateConstructorUsedError;
   String get description => throw _privateConstructorUsedError;
@@ -63,6 +63,7 @@ mixin _$NotificationDto {
   ExperienceDto? get experience => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+
   @JsonKey(ignore: true)
   $NotificationDtoCopyWith<NotificationDto> get copyWith => throw _privateConstructorUsedError;
 }
@@ -71,15 +72,7 @@ mixin _$NotificationDto {
 abstract class $NotificationDtoCopyWith<$Res> {
   factory $NotificationDtoCopyWith(NotificationDto value, $Res Function(NotificationDto) then) = _$NotificationDtoCopyWithImpl<$Res>;
 
-  $Res call(
-      {@JsonKey(ignore: true) String? id,
-      SimpleUserDto sender,
-      String receiverId,
-      String description,
-      bool seen,
-      @ServerTimestampConverter() DateTime creationDate,
-      NotificationType type,
-      ExperienceDto? experience});
+  $Res call({String id, SimpleUserDto sender, String receiverId, String description, bool seen, @ServerTimestampConverter() DateTime creationDate, NotificationType type, ExperienceDto? experience});
 
   $SimpleUserDtoCopyWith<$Res> get sender;
   $ExperienceDtoCopyWith<$Res>? get experience;
@@ -109,7 +102,7 @@ class _$NotificationDtoCopyWithImpl<$Res> implements $NotificationDtoCopyWith<$R
       id: id == freezed
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as String,
       sender: sender == freezed
           ? _value.sender
           : sender // ignore: cast_nullable_to_non_nullable
@@ -165,15 +158,7 @@ abstract class _$NotificationDtoCopyWith<$Res> implements $NotificationDtoCopyWi
   factory _$NotificationDtoCopyWith(_NotificationDto value, $Res Function(_NotificationDto) then) = __$NotificationDtoCopyWithImpl<$Res>;
 
   @override
-  $Res call(
-      {@JsonKey(ignore: true) String? id,
-      SimpleUserDto sender,
-      String receiverId,
-      String description,
-      bool seen,
-      @ServerTimestampConverter() DateTime creationDate,
-      NotificationType type,
-      ExperienceDto? experience});
+  $Res call({String id, SimpleUserDto sender, String receiverId, String description, bool seen, @ServerTimestampConverter() DateTime creationDate, NotificationType type, ExperienceDto? experience});
 
   @override
   $SimpleUserDtoCopyWith<$Res> get sender;
@@ -203,7 +188,7 @@ class __$NotificationDtoCopyWithImpl<$Res> extends _$NotificationDtoCopyWithImpl
       id: id == freezed
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as String,
       sender: sender == freezed
           ? _value.sender
           : sender // ignore: cast_nullable_to_non_nullable
@@ -240,7 +225,7 @@ class __$NotificationDtoCopyWithImpl<$Res> extends _$NotificationDtoCopyWithImpl
 @JsonSerializable()
 class _$_NotificationDto extends _NotificationDto {
   const _$_NotificationDto(
-      {@JsonKey(ignore: true) this.id,
+      {required this.id,
       required this.sender,
       required this.receiverId,
       required this.description,
@@ -253,8 +238,7 @@ class _$_NotificationDto extends _NotificationDto {
   factory _$_NotificationDto.fromJson(Map<String, dynamic> json) => _$_$_NotificationDtoFromJson(json);
 
   @override
-  @JsonKey(ignore: true)
-  final String? id;
+  final String id;
   @override
   final SimpleUserDto sender;
   @override
@@ -314,7 +298,7 @@ class _$_NotificationDto extends _NotificationDto {
 
 abstract class _NotificationDto extends NotificationDto {
   const factory _NotificationDto(
-      {@JsonKey(ignore: true) String? id,
+      {required String id,
       required SimpleUserDto sender,
       required String receiverId,
       required String description,
@@ -328,8 +312,7 @@ abstract class _NotificationDto extends NotificationDto {
   factory _NotificationDto.fromJson(Map<String, dynamic> json) = _$_NotificationDto.fromJson;
 
   @override
-  @JsonKey(ignore: true)
-  String? get id => throw _privateConstructorUsedError;
+  String get id => throw _privateConstructorUsedError;
 
   @override
   SimpleUserDto get sender => throw _privateConstructorUsedError;
@@ -339,6 +322,7 @@ abstract class _NotificationDto extends NotificationDto {
 
   @override
   String get description => throw _privateConstructorUsedError;
+
   @override
   bool get seen => throw _privateConstructorUsedError;
   @override

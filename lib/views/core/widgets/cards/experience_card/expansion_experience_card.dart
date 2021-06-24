@@ -39,7 +39,7 @@ class ExpansionExperienceCard extends StatelessWidget {
           clipBehavior: Clip.antiAlias,
           child: Column(
             children: <Widget>[
-              ImageStack(
+              ImageGalleryStack(
                 experience: experience,
                 reloadFunction: reloadFunction,
               ),

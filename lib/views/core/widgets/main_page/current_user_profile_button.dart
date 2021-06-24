@@ -16,37 +16,42 @@ class CurrentUserProfileButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return BlocBuilder<UserProfileButtonWatcherBloc, UserProfileButtonWatcherState>(
-      builder: (context, state) => state.map(
-        initial: (_) => const Icon(
-          Icons.person_outline,
-          size: 25,
-        ),
-        actionInProgress: (_) => const WorldOnProgressIndicator(
-          size: 15,
-        ),
-        loadSuccess: (state) => MaterialButton(
-          minWidth: 0,
-          elevation: 0,
-          // color: Colors.transparent,
-          padding: EdgeInsets.zero,
-          shape: const CircleBorder(),
-          onPressed: () => context.read<NavigationActorBloc>().add(
-                NavigationActorEvent.profileTapped(
-                  userIdOption: none(),
-                  currentUserProfile: true,
-                ),
-              ),
-          onLongPress: () => _onLongPress(context),
-          child: CircleAvatar(
-            radius: 15,
-            backgroundImage: CachedNetworkImageProvider(state.imageUrl),
+    const double _size = 27;
+    return SizedBox(
+      width: _size,
+      height: _size,
+      child: BlocBuilder<UserProfileButtonWatcherBloc, UserProfileButtonWatcherState>(
+        builder: (context, state) => state.map(
+          initial: (_) => const Icon(
+            Icons.person_outline,
+            size: 25,
           ),
-        ),
-        loadFailure: (_) => const Icon(
-          Icons.person_outline,
-          size: 25,
-          color: WorldOnColors.red,
+          actionInProgress: (_) => const WorldOnProgressIndicator(
+            size: 15,
+          ),
+          loadSuccess: (state) => MaterialButton(
+            minWidth: 0,
+            elevation: 0,
+            // color: Colors.transparent,
+            padding: EdgeInsets.zero,
+            shape: const CircleBorder(),
+            onPressed: () => context.read<NavigationActorBloc>().add(
+                  NavigationActorEvent.profileTapped(
+                    userIdOption: none(),
+                    currentUserProfile: true,
+                  ),
+                ),
+            onLongPress: () => _onLongPress(context),
+            child: CircleAvatar(
+              radius: 15,
+              backgroundImage: CachedNetworkImageProvider(state.imageUrl),
+            ),
+          ),
+          loadFailure: (_) => const Icon(
+            Icons.person_outline,
+            size: 25,
+            color: WorldOnColors.red,
+          ),
         ),
       ),
     );
@@ -69,6 +74,7 @@ class CurrentUserProfileButton extends StatelessWidget {
                 ),
               ),
             ),
+            const SizedBox(width: 5),
             ElevatedButton(
               onPressed: () => Navigator.of(context).pop(false),
               child: Text(
