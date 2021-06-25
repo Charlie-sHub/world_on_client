@@ -49,21 +49,32 @@ class ProfileTabBar extends SliverPersistentHeaderDelegate {
                 text: S.of(context).experiences,
               ),
             ),
-            Container(
-              height: 40,
-              width: double.infinity,
-              decoration: BoxDecoration(
-                border: Border(
-                  right: BorderSide(
-                    color: _grey75,
+            if (isOwn)
+              Container(
+                height: 40,
+                width: double.infinity,
+                decoration: BoxDecoration(
+                  border: Border(
+                    right: BorderSide(
+                      color: _grey75,
+                    ),
                   ),
                 ),
-              ),
-              child: Tab(
+                child: Tab(
+                  iconMargin: EdgeInsets.zero,
+                  text: S.of(context).profileRelationTab,
+                ),
+              )
+            else
+              Tab(
                 iconMargin: EdgeInsets.zero,
                 text: S.of(context).profileRelationTab,
               ),
-            ),
+            if (isOwn)
+              Tab(
+                iconMargin: EdgeInsets.zero,
+                text: S.of(context).profileLogTab,
+              ),
             /*
             Tab(
               iconMargin: const EdgeInsets.all(2),
@@ -71,11 +82,6 @@ class ProfileTabBar extends SliverPersistentHeaderDelegate {
               text: S.of(context).profileAchievementsTab,
             ),
             */
-            if (isOwn)
-              Tab(
-                iconMargin: EdgeInsets.zero,
-                text: S.of(context).profileLogTab,
-              ),
           ],
         ),
       ),

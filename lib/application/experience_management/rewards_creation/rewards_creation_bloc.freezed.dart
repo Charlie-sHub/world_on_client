@@ -74,7 +74,9 @@ mixin _$RewardsCreationEvent {
 
 /// @nodoc
 abstract class $RewardsCreationEventCopyWith<$Res> {
-  factory $RewardsCreationEventCopyWith(RewardsCreationEvent value, $Res Function(RewardsCreationEvent) then) = _$RewardsCreationEventCopyWithImpl<$Res>;
+  factory $RewardsCreationEventCopyWith(
+          RewardsCreationEvent value, $Res Function(RewardsCreationEvent) then) =
+      _$RewardsCreationEventCopyWithImpl<$Res>;
 }
 
 /// @nodoc
@@ -89,14 +91,17 @@ class _$RewardsCreationEventCopyWithImpl<$Res> implements $RewardsCreationEventC
 
 /// @nodoc
 abstract class _$InitializedCopyWith<$Res> {
-  factory _$InitializedCopyWith(_Initialized value, $Res Function(_Initialized) then) = __$InitializedCopyWithImpl<$Res>;
+  factory _$InitializedCopyWith(_Initialized value, $Res Function(_Initialized) then) =
+      __$InitializedCopyWithImpl<$Res>;
 
   $Res call({Option<RewardSet> rewardSetOption});
 }
 
 /// @nodoc
-class __$InitializedCopyWithImpl<$Res> extends _$RewardsCreationEventCopyWithImpl<$Res> implements _$InitializedCopyWith<$Res> {
-  __$InitializedCopyWithImpl(_Initialized _value, $Res Function(_Initialized) _then) : super(_value, (v) => _then(v as _Initialized));
+class __$InitializedCopyWithImpl<$Res> extends _$RewardsCreationEventCopyWithImpl<$Res>
+    implements _$InitializedCopyWith<$Res> {
+  __$InitializedCopyWithImpl(_Initialized _value, $Res Function(_Initialized) _then)
+      : super(_value, (v) => _then(v as _Initialized));
 
   @override
   _Initialized get _value => super._value as _Initialized;
@@ -129,7 +134,10 @@ class _$_Initialized implements _Initialized {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _Initialized && (identical(other.rewardSetOption, rewardSetOption) || const DeepCollectionEquality().equals(other.rewardSetOption, rewardSetOption)));
+    return identical(this, other) ||
+        (other is _Initialized &&
+            (identical(other.rewardSetOption, rewardSetOption) ||
+                const DeepCollectionEquality().equals(other.rewardSetOption, rewardSetOption)));
   }
 
   @override
@@ -137,7 +145,8 @@ class _$_Initialized implements _Initialized {
 
   @JsonKey(ignore: true)
   @override
-  _$InitializedCopyWith<_Initialized> get copyWith => __$InitializedCopyWithImpl<_Initialized>(this, _$identity);
+  _$InitializedCopyWith<_Initialized> get copyWith =>
+      __$InitializedCopyWithImpl<_Initialized>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -199,7 +208,8 @@ abstract class _Initialized implements RewardsCreationEvent {
 
 /// @nodoc
 abstract class _$AddedRewardCopyWith<$Res> {
-  factory _$AddedRewardCopyWith(_AddedReward value, $Res Function(_AddedReward) then) = __$AddedRewardCopyWithImpl<$Res>;
+  factory _$AddedRewardCopyWith(_AddedReward value, $Res Function(_AddedReward) then) =
+      __$AddedRewardCopyWithImpl<$Res>;
 
   $Res call({Reward reward});
 
@@ -207,8 +217,10 @@ abstract class _$AddedRewardCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$AddedRewardCopyWithImpl<$Res> extends _$RewardsCreationEventCopyWithImpl<$Res> implements _$AddedRewardCopyWith<$Res> {
-  __$AddedRewardCopyWithImpl(_AddedReward _value, $Res Function(_AddedReward) _then) : super(_value, (v) => _then(v as _AddedReward));
+class __$AddedRewardCopyWithImpl<$Res> extends _$RewardsCreationEventCopyWithImpl<$Res>
+    implements _$AddedRewardCopyWith<$Res> {
+  __$AddedRewardCopyWithImpl(_AddedReward _value, $Res Function(_AddedReward) _then)
+      : super(_value, (v) => _then(v as _AddedReward));
 
   @override
   _AddedReward get _value => super._value as _AddedReward;
@@ -248,7 +260,10 @@ class _$_AddedReward implements _AddedReward {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _AddedReward && (identical(other.reward, reward) || const DeepCollectionEquality().equals(other.reward, reward)));
+    return identical(this, other) ||
+        (other is _AddedReward &&
+            (identical(other.reward, reward) ||
+                const DeepCollectionEquality().equals(other.reward, reward)));
   }
 
   @override
@@ -256,7 +271,8 @@ class _$_AddedReward implements _AddedReward {
 
   @JsonKey(ignore: true)
   @override
-  _$AddedRewardCopyWith<_AddedReward> get copyWith => __$AddedRewardCopyWithImpl<_AddedReward>(this, _$identity);
+  _$AddedRewardCopyWith<_AddedReward> get copyWith =>
+      __$AddedRewardCopyWithImpl<_AddedReward>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -318,7 +334,8 @@ abstract class _AddedReward implements RewardsCreationEvent {
 
 /// @nodoc
 abstract class _$RemovedRewardCopyWith<$Res> {
-  factory _$RemovedRewardCopyWith(_RemovedReward value, $Res Function(_RemovedReward) then) = __$RemovedRewardCopyWithImpl<$Res>;
+  factory _$RemovedRewardCopyWith(_RemovedReward value, $Res Function(_RemovedReward) then) =
+      __$RemovedRewardCopyWithImpl<$Res>;
 
   $Res call({Reward reward});
 
@@ -326,8 +343,10 @@ abstract class _$RemovedRewardCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$RemovedRewardCopyWithImpl<$Res> extends _$RewardsCreationEventCopyWithImpl<$Res> implements _$RemovedRewardCopyWith<$Res> {
-  __$RemovedRewardCopyWithImpl(_RemovedReward _value, $Res Function(_RemovedReward) _then) : super(_value, (v) => _then(v as _RemovedReward));
+class __$RemovedRewardCopyWithImpl<$Res> extends _$RewardsCreationEventCopyWithImpl<$Res>
+    implements _$RemovedRewardCopyWith<$Res> {
+  __$RemovedRewardCopyWithImpl(_RemovedReward _value, $Res Function(_RemovedReward) _then)
+      : super(_value, (v) => _then(v as _RemovedReward));
 
   @override
   _RemovedReward get _value => super._value as _RemovedReward;
@@ -367,7 +386,10 @@ class _$_RemovedReward implements _RemovedReward {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _RemovedReward && (identical(other.reward, reward) || const DeepCollectionEquality().equals(other.reward, reward)));
+    return identical(this, other) ||
+        (other is _RemovedReward &&
+            (identical(other.reward, reward) ||
+                const DeepCollectionEquality().equals(other.reward, reward)));
   }
 
   @override
@@ -375,7 +397,8 @@ class _$_RemovedReward implements _RemovedReward {
 
   @JsonKey(ignore: true)
   @override
-  _$RemovedRewardCopyWith<_RemovedReward> get copyWith => __$RemovedRewardCopyWithImpl<_RemovedReward>(this, _$identity);
+  _$RemovedRewardCopyWith<_RemovedReward> get copyWith =>
+      __$RemovedRewardCopyWithImpl<_RemovedReward>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -454,12 +477,15 @@ mixin _$RewardsCreationState {
   KtSet<Reward> get rewardsCreated => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
-  $RewardsCreationStateCopyWith<RewardsCreationState> get copyWith => throw _privateConstructorUsedError;
+  $RewardsCreationStateCopyWith<RewardsCreationState> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $RewardsCreationStateCopyWith<$Res> {
-  factory $RewardsCreationStateCopyWith(RewardsCreationState value, $Res Function(RewardsCreationState) then) = _$RewardsCreationStateCopyWithImpl<$Res>;
+  factory $RewardsCreationStateCopyWith(
+          RewardsCreationState value, $Res Function(RewardsCreationState) then) =
+      _$RewardsCreationStateCopyWithImpl<$Res>;
 
   $Res call({KtSet<Reward> rewardsCreated});
 }
@@ -488,15 +514,20 @@ class _$RewardsCreationStateCopyWithImpl<$Res> implements $RewardsCreationStateC
 
 /// @nodoc
 abstract class _$RewardsCreationStateCopyWith<$Res> implements $RewardsCreationStateCopyWith<$Res> {
-  factory _$RewardsCreationStateCopyWith(_RewardsCreationState value, $Res Function(_RewardsCreationState) then) = __$RewardsCreationStateCopyWithImpl<$Res>;
+  factory _$RewardsCreationStateCopyWith(
+          _RewardsCreationState value, $Res Function(_RewardsCreationState) then) =
+      __$RewardsCreationStateCopyWithImpl<$Res>;
 
   @override
   $Res call({KtSet<Reward> rewardsCreated});
 }
 
 /// @nodoc
-class __$RewardsCreationStateCopyWithImpl<$Res> extends _$RewardsCreationStateCopyWithImpl<$Res> implements _$RewardsCreationStateCopyWith<$Res> {
-  __$RewardsCreationStateCopyWithImpl(_RewardsCreationState _value, $Res Function(_RewardsCreationState) _then) : super(_value, (v) => _then(v as _RewardsCreationState));
+class __$RewardsCreationStateCopyWithImpl<$Res> extends _$RewardsCreationStateCopyWithImpl<$Res>
+    implements _$RewardsCreationStateCopyWith<$Res> {
+  __$RewardsCreationStateCopyWithImpl(
+      _RewardsCreationState _value, $Res Function(_RewardsCreationState) _then)
+      : super(_value, (v) => _then(v as _RewardsCreationState));
 
   @override
   _RewardsCreationState get _value => super._value as _RewardsCreationState;
@@ -530,7 +561,9 @@ class _$_RewardsCreationState implements _RewardsCreationState {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _RewardsCreationState && (identical(other.rewardsCreated, rewardsCreated) || const DeepCollectionEquality().equals(other.rewardsCreated, rewardsCreated)));
+        (other is _RewardsCreationState &&
+            (identical(other.rewardsCreated, rewardsCreated) ||
+                const DeepCollectionEquality().equals(other.rewardsCreated, rewardsCreated)));
   }
 
   @override
@@ -538,16 +571,19 @@ class _$_RewardsCreationState implements _RewardsCreationState {
 
   @JsonKey(ignore: true)
   @override
-  _$RewardsCreationStateCopyWith<_RewardsCreationState> get copyWith => __$RewardsCreationStateCopyWithImpl<_RewardsCreationState>(this, _$identity);
+  _$RewardsCreationStateCopyWith<_RewardsCreationState> get copyWith =>
+      __$RewardsCreationStateCopyWithImpl<_RewardsCreationState>(this, _$identity);
 }
 
 abstract class _RewardsCreationState implements RewardsCreationState {
-  const factory _RewardsCreationState({required KtSet<Reward> rewardsCreated}) = _$_RewardsCreationState;
+  const factory _RewardsCreationState({required KtSet<Reward> rewardsCreated}) =
+      _$_RewardsCreationState;
 
   @override
   KtSet<Reward> get rewardsCreated => throw _privateConstructorUsedError;
 
   @override
   @JsonKey(ignore: true)
-  _$RewardsCreationStateCopyWith<_RewardsCreationState> get copyWith => throw _privateConstructorUsedError;
+  _$RewardsCreationStateCopyWith<_RewardsCreationState> get copyWith =>
+      throw _privateConstructorUsedError;
 }

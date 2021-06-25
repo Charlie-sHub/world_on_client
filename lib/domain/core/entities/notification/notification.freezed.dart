@@ -58,9 +58,18 @@ mixin _$Notification {
 
 /// @nodoc
 abstract class $NotificationCopyWith<$Res> {
-  factory $NotificationCopyWith(Notification value, $Res Function(Notification) then) = _$NotificationCopyWithImpl<$Res>;
+  factory $NotificationCopyWith(Notification value, $Res Function(Notification) then) =
+      _$NotificationCopyWithImpl<$Res>;
 
-  $Res call({UniqueId id, SimpleUser sender, UniqueId receiverId, EntityDescription description, bool seen, PastDate creationDate, NotificationType type, Option<Experience> experienceOption});
+  $Res call(
+      {UniqueId id,
+      SimpleUser sender,
+      UniqueId receiverId,
+      EntityDescription description,
+      bool seen,
+      PastDate creationDate,
+      NotificationType type,
+      Option<Experience> experienceOption});
 
   $SimpleUserCopyWith<$Res> get sender;
 }
@@ -130,18 +139,29 @@ class _$NotificationCopyWithImpl<$Res> implements $NotificationCopyWith<$Res> {
 
 /// @nodoc
 abstract class _$NotificationCopyWith<$Res> implements $NotificationCopyWith<$Res> {
-  factory _$NotificationCopyWith(_Notification value, $Res Function(_Notification) then) = __$NotificationCopyWithImpl<$Res>;
+  factory _$NotificationCopyWith(_Notification value, $Res Function(_Notification) then) =
+      __$NotificationCopyWithImpl<$Res>;
 
   @override
-  $Res call({UniqueId id, SimpleUser sender, UniqueId receiverId, EntityDescription description, bool seen, PastDate creationDate, NotificationType type, Option<Experience> experienceOption});
+  $Res call(
+      {UniqueId id,
+      SimpleUser sender,
+      UniqueId receiverId,
+      EntityDescription description,
+      bool seen,
+      PastDate creationDate,
+      NotificationType type,
+      Option<Experience> experienceOption});
 
   @override
   $SimpleUserCopyWith<$Res> get sender;
 }
 
 /// @nodoc
-class __$NotificationCopyWithImpl<$Res> extends _$NotificationCopyWithImpl<$Res> implements _$NotificationCopyWith<$Res> {
-  __$NotificationCopyWithImpl(_Notification _value, $Res Function(_Notification) _then) : super(_value, (v) => _then(v as _Notification));
+class __$NotificationCopyWithImpl<$Res> extends _$NotificationCopyWithImpl<$Res>
+    implements _$NotificationCopyWith<$Res> {
+  __$NotificationCopyWithImpl(_Notification _value, $Res Function(_Notification) _then)
+      : super(_value, (v) => _then(v as _Notification));
 
   @override
   _Notification get _value => super._value as _Notification;
@@ -198,7 +218,14 @@ class __$NotificationCopyWithImpl<$Res> extends _$NotificationCopyWithImpl<$Res>
 
 class _$_Notification extends _Notification {
   const _$_Notification(
-      {required this.id, required this.sender, required this.receiverId, required this.description, required this.seen, required this.creationDate, required this.type, required this.experienceOption})
+      {required this.id,
+      required this.sender,
+      required this.receiverId,
+      required this.description,
+      required this.seen,
+      required this.creationDate,
+      required this.type,
+      required this.experienceOption})
       : super._();
 
   @override
@@ -228,13 +255,20 @@ class _$_Notification extends _Notification {
     return identical(this, other) ||
         (other is _Notification &&
             (identical(other.id, id) || const DeepCollectionEquality().equals(other.id, id)) &&
-            (identical(other.sender, sender) || const DeepCollectionEquality().equals(other.sender, sender)) &&
-            (identical(other.receiverId, receiverId) || const DeepCollectionEquality().equals(other.receiverId, receiverId)) &&
-            (identical(other.description, description) || const DeepCollectionEquality().equals(other.description, description)) &&
-            (identical(other.seen, seen) || const DeepCollectionEquality().equals(other.seen, seen)) &&
-            (identical(other.creationDate, creationDate) || const DeepCollectionEquality().equals(other.creationDate, creationDate)) &&
-            (identical(other.type, type) || const DeepCollectionEquality().equals(other.type, type)) &&
-            (identical(other.experienceOption, experienceOption) || const DeepCollectionEquality().equals(other.experienceOption, experienceOption)));
+            (identical(other.sender, sender) ||
+                const DeepCollectionEquality().equals(other.sender, sender)) &&
+            (identical(other.receiverId, receiverId) ||
+                const DeepCollectionEquality().equals(other.receiverId, receiverId)) &&
+            (identical(other.description, description) ||
+                const DeepCollectionEquality().equals(other.description, description)) &&
+            (identical(other.seen, seen) ||
+                const DeepCollectionEquality().equals(other.seen, seen)) &&
+            (identical(other.creationDate, creationDate) ||
+                const DeepCollectionEquality().equals(other.creationDate, creationDate)) &&
+            (identical(other.type, type) ||
+                const DeepCollectionEquality().equals(other.type, type)) &&
+            (identical(other.experienceOption, experienceOption) ||
+                const DeepCollectionEquality().equals(other.experienceOption, experienceOption)));
   }
 
   @override
@@ -251,7 +285,8 @@ class _$_Notification extends _Notification {
 
   @JsonKey(ignore: true)
   @override
-  _$NotificationCopyWith<_Notification> get copyWith => __$NotificationCopyWithImpl<_Notification>(this, _$identity);
+  _$NotificationCopyWith<_Notification> get copyWith =>
+      __$NotificationCopyWithImpl<_Notification>(this, _$identity);
 }
 
 abstract class _Notification extends Notification {

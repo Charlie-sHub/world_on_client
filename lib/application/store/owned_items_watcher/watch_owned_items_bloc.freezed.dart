@@ -62,7 +62,9 @@ mixin _$WatchOwnedItemsEvent {
 
 /// @nodoc
 abstract class $WatchOwnedItemsEventCopyWith<$Res> {
-  factory $WatchOwnedItemsEventCopyWith(WatchOwnedItemsEvent value, $Res Function(WatchOwnedItemsEvent) then) = _$WatchOwnedItemsEventCopyWithImpl<$Res>;
+  factory $WatchOwnedItemsEventCopyWith(
+          WatchOwnedItemsEvent value, $Res Function(WatchOwnedItemsEvent) then) =
+      _$WatchOwnedItemsEventCopyWithImpl<$Res>;
 }
 
 /// @nodoc
@@ -77,12 +79,17 @@ class _$WatchOwnedItemsEventCopyWithImpl<$Res> implements $WatchOwnedItemsEventC
 
 /// @nodoc
 abstract class _$WatchOwnedItemsStartedCopyWith<$Res> {
-  factory _$WatchOwnedItemsStartedCopyWith(_WatchOwnedItemsStarted value, $Res Function(_WatchOwnedItemsStarted) then) = __$WatchOwnedItemsStartedCopyWithImpl<$Res>;
+  factory _$WatchOwnedItemsStartedCopyWith(
+          _WatchOwnedItemsStarted value, $Res Function(_WatchOwnedItemsStarted) then) =
+      __$WatchOwnedItemsStartedCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$WatchOwnedItemsStartedCopyWithImpl<$Res> extends _$WatchOwnedItemsEventCopyWithImpl<$Res> implements _$WatchOwnedItemsStartedCopyWith<$Res> {
-  __$WatchOwnedItemsStartedCopyWithImpl(_WatchOwnedItemsStarted _value, $Res Function(_WatchOwnedItemsStarted) _then) : super(_value, (v) => _then(v as _WatchOwnedItemsStarted));
+class __$WatchOwnedItemsStartedCopyWithImpl<$Res> extends _$WatchOwnedItemsEventCopyWithImpl<$Res>
+    implements _$WatchOwnedItemsStartedCopyWith<$Res> {
+  __$WatchOwnedItemsStartedCopyWithImpl(
+      _WatchOwnedItemsStarted _value, $Res Function(_WatchOwnedItemsStarted) _then)
+      : super(_value, (v) => _then(v as _WatchOwnedItemsStarted));
 
   @override
   _WatchOwnedItemsStarted get _value => super._value as _WatchOwnedItemsStarted;
@@ -157,14 +164,17 @@ abstract class _WatchOwnedItemsStarted implements WatchOwnedItemsEvent {
 
 /// @nodoc
 abstract class _$ResultsReceivedCopyWith<$Res> {
-  factory _$ResultsReceivedCopyWith(_ResultsReceived value, $Res Function(_ResultsReceived) then) = __$ResultsReceivedCopyWithImpl<$Res>;
+  factory _$ResultsReceivedCopyWith(_ResultsReceived value, $Res Function(_ResultsReceived) then) =
+      __$ResultsReceivedCopyWithImpl<$Res>;
 
   $Res call({Either<Failure, KtList<Item>> failureOrItems});
 }
 
 /// @nodoc
-class __$ResultsReceivedCopyWithImpl<$Res> extends _$WatchOwnedItemsEventCopyWithImpl<$Res> implements _$ResultsReceivedCopyWith<$Res> {
-  __$ResultsReceivedCopyWithImpl(_ResultsReceived _value, $Res Function(_ResultsReceived) _then) : super(_value, (v) => _then(v as _ResultsReceived));
+class __$ResultsReceivedCopyWithImpl<$Res> extends _$WatchOwnedItemsEventCopyWithImpl<$Res>
+    implements _$ResultsReceivedCopyWith<$Res> {
+  __$ResultsReceivedCopyWithImpl(_ResultsReceived _value, $Res Function(_ResultsReceived) _then)
+      : super(_value, (v) => _then(v as _ResultsReceived));
 
   @override
   _ResultsReceived get _value => super._value as _ResultsReceived;
@@ -197,7 +207,10 @@ class _$_ResultsReceived implements _ResultsReceived {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _ResultsReceived && (identical(other.failureOrItems, failureOrItems) || const DeepCollectionEquality().equals(other.failureOrItems, failureOrItems)));
+    return identical(this, other) ||
+        (other is _ResultsReceived &&
+            (identical(other.failureOrItems, failureOrItems) ||
+                const DeepCollectionEquality().equals(other.failureOrItems, failureOrItems)));
   }
 
   @override
@@ -205,7 +218,8 @@ class _$_ResultsReceived implements _ResultsReceived {
 
   @JsonKey(ignore: true)
   @override
-  _$ResultsReceivedCopyWith<_ResultsReceived> get copyWith => __$ResultsReceivedCopyWithImpl<_ResultsReceived>(this, _$identity);
+  _$ResultsReceivedCopyWith<_ResultsReceived> get copyWith =>
+      __$ResultsReceivedCopyWithImpl<_ResultsReceived>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -329,7 +343,9 @@ mixin _$WatchOwnedItemsState {
 
 /// @nodoc
 abstract class $WatchOwnedItemsStateCopyWith<$Res> {
-  factory $WatchOwnedItemsStateCopyWith(WatchOwnedItemsState value, $Res Function(WatchOwnedItemsState) then) = _$WatchOwnedItemsStateCopyWithImpl<$Res>;
+  factory $WatchOwnedItemsStateCopyWith(
+          WatchOwnedItemsState value, $Res Function(WatchOwnedItemsState) then) =
+      _$WatchOwnedItemsStateCopyWithImpl<$Res>;
 }
 
 /// @nodoc
@@ -344,12 +360,15 @@ class _$WatchOwnedItemsStateCopyWithImpl<$Res> implements $WatchOwnedItemsStateC
 
 /// @nodoc
 abstract class _$InitialCopyWith<$Res> {
-  factory _$InitialCopyWith(_Initial value, $Res Function(_Initial) then) = __$InitialCopyWithImpl<$Res>;
+  factory _$InitialCopyWith(_Initial value, $Res Function(_Initial) then) =
+      __$InitialCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$InitialCopyWithImpl<$Res> extends _$WatchOwnedItemsStateCopyWithImpl<$Res> implements _$InitialCopyWith<$Res> {
-  __$InitialCopyWithImpl(_Initial _value, $Res Function(_Initial) _then) : super(_value, (v) => _then(v as _Initial));
+class __$InitialCopyWithImpl<$Res> extends _$WatchOwnedItemsStateCopyWithImpl<$Res>
+    implements _$InitialCopyWith<$Res> {
+  __$InitialCopyWithImpl(_Initial _value, $Res Function(_Initial) _then)
+      : super(_value, (v) => _then(v as _Initial));
 
   @override
   _Initial get _value => super._value as _Initial;
@@ -432,12 +451,15 @@ abstract class _Initial implements WatchOwnedItemsState {
 
 /// @nodoc
 abstract class _$LoadInProgressCopyWith<$Res> {
-  factory _$LoadInProgressCopyWith(_LoadInProgress value, $Res Function(_LoadInProgress) then) = __$LoadInProgressCopyWithImpl<$Res>;
+  factory _$LoadInProgressCopyWith(_LoadInProgress value, $Res Function(_LoadInProgress) then) =
+      __$LoadInProgressCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$LoadInProgressCopyWithImpl<$Res> extends _$WatchOwnedItemsStateCopyWithImpl<$Res> implements _$LoadInProgressCopyWith<$Res> {
-  __$LoadInProgressCopyWithImpl(_LoadInProgress _value, $Res Function(_LoadInProgress) _then) : super(_value, (v) => _then(v as _LoadInProgress));
+class __$LoadInProgressCopyWithImpl<$Res> extends _$WatchOwnedItemsStateCopyWithImpl<$Res>
+    implements _$LoadInProgressCopyWith<$Res> {
+  __$LoadInProgressCopyWithImpl(_LoadInProgress _value, $Res Function(_LoadInProgress) _then)
+      : super(_value, (v) => _then(v as _LoadInProgress));
 
   @override
   _LoadInProgress get _value => super._value as _LoadInProgress;
@@ -520,14 +542,17 @@ abstract class _LoadInProgress implements WatchOwnedItemsState {
 
 /// @nodoc
 abstract class _$LoadSuccessCopyWith<$Res> {
-  factory _$LoadSuccessCopyWith(_LoadSuccess value, $Res Function(_LoadSuccess) then) = __$LoadSuccessCopyWithImpl<$Res>;
+  factory _$LoadSuccessCopyWith(_LoadSuccess value, $Res Function(_LoadSuccess) then) =
+      __$LoadSuccessCopyWithImpl<$Res>;
 
   $Res call({KtList<Item> items});
 }
 
 /// @nodoc
-class __$LoadSuccessCopyWithImpl<$Res> extends _$WatchOwnedItemsStateCopyWithImpl<$Res> implements _$LoadSuccessCopyWith<$Res> {
-  __$LoadSuccessCopyWithImpl(_LoadSuccess _value, $Res Function(_LoadSuccess) _then) : super(_value, (v) => _then(v as _LoadSuccess));
+class __$LoadSuccessCopyWithImpl<$Res> extends _$WatchOwnedItemsStateCopyWithImpl<$Res>
+    implements _$LoadSuccessCopyWith<$Res> {
+  __$LoadSuccessCopyWithImpl(_LoadSuccess _value, $Res Function(_LoadSuccess) _then)
+      : super(_value, (v) => _then(v as _LoadSuccess));
 
   @override
   _LoadSuccess get _value => super._value as _LoadSuccess;
@@ -560,7 +585,10 @@ class _$_LoadSuccess implements _LoadSuccess {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _LoadSuccess && (identical(other.items, items) || const DeepCollectionEquality().equals(other.items, items)));
+    return identical(this, other) ||
+        (other is _LoadSuccess &&
+            (identical(other.items, items) ||
+                const DeepCollectionEquality().equals(other.items, items)));
   }
 
   @override
@@ -568,7 +596,8 @@ class _$_LoadSuccess implements _LoadSuccess {
 
   @JsonKey(ignore: true)
   @override
-  _$LoadSuccessCopyWith<_LoadSuccess> get copyWith => __$LoadSuccessCopyWithImpl<_LoadSuccess>(this, _$identity);
+  _$LoadSuccessCopyWith<_LoadSuccess> get copyWith =>
+      __$LoadSuccessCopyWithImpl<_LoadSuccess>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -634,7 +663,8 @@ abstract class _LoadSuccess implements WatchOwnedItemsState {
 
 /// @nodoc
 abstract class _$LoadFailureCopyWith<$Res> {
-  factory _$LoadFailureCopyWith(_LoadFailure value, $Res Function(_LoadFailure) then) = __$LoadFailureCopyWithImpl<$Res>;
+  factory _$LoadFailureCopyWith(_LoadFailure value, $Res Function(_LoadFailure) then) =
+      __$LoadFailureCopyWithImpl<$Res>;
 
   $Res call({Failure<dynamic> failure});
 
@@ -642,8 +672,10 @@ abstract class _$LoadFailureCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$LoadFailureCopyWithImpl<$Res> extends _$WatchOwnedItemsStateCopyWithImpl<$Res> implements _$LoadFailureCopyWith<$Res> {
-  __$LoadFailureCopyWithImpl(_LoadFailure _value, $Res Function(_LoadFailure) _then) : super(_value, (v) => _then(v as _LoadFailure));
+class __$LoadFailureCopyWithImpl<$Res> extends _$WatchOwnedItemsStateCopyWithImpl<$Res>
+    implements _$LoadFailureCopyWith<$Res> {
+  __$LoadFailureCopyWithImpl(_LoadFailure _value, $Res Function(_LoadFailure) _then)
+      : super(_value, (v) => _then(v as _LoadFailure));
 
   @override
   _LoadFailure get _value => super._value as _LoadFailure;
@@ -683,7 +715,10 @@ class _$_LoadFailure implements _LoadFailure {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _LoadFailure && (identical(other.failure, failure) || const DeepCollectionEquality().equals(other.failure, failure)));
+    return identical(this, other) ||
+        (other is _LoadFailure &&
+            (identical(other.failure, failure) ||
+                const DeepCollectionEquality().equals(other.failure, failure)));
   }
 
   @override
@@ -691,7 +726,8 @@ class _$_LoadFailure implements _LoadFailure {
 
   @JsonKey(ignore: true)
   @override
-  _$LoadFailureCopyWith<_LoadFailure> get copyWith => __$LoadFailureCopyWithImpl<_LoadFailure>(this, _$identity);
+  _$LoadFailureCopyWith<_LoadFailure> get copyWith =>
+      __$LoadFailureCopyWithImpl<_LoadFailure>(this, _$identity);
 
   @override
   @optionalTypeArgs

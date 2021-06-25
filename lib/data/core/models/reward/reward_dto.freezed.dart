@@ -20,7 +20,11 @@ RewardDto _$RewardDtoFromJson(Map<String, dynamic> json) {
 class _$RewardDtoTearOff {
   const _$RewardDtoTearOff();
 
-  _RewardDto call({required String id, required String name, required String description, required String imageURL}) {
+  _RewardDto call(
+      {required String id,
+      required String name,
+      required String description,
+      required String imageURL}) {
     return _RewardDto(
       id: id,
       name: name,
@@ -52,7 +56,8 @@ mixin _$RewardDto {
 
 /// @nodoc
 abstract class $RewardDtoCopyWith<$Res> {
-  factory $RewardDtoCopyWith(RewardDto value, $Res Function(RewardDto) then) = _$RewardDtoCopyWithImpl<$Res>;
+  factory $RewardDtoCopyWith(RewardDto value, $Res Function(RewardDto) then) =
+      _$RewardDtoCopyWithImpl<$Res>;
 
   $Res call({String id, String name, String description, String imageURL});
 }
@@ -95,15 +100,18 @@ class _$RewardDtoCopyWithImpl<$Res> implements $RewardDtoCopyWith<$Res> {
 
 /// @nodoc
 abstract class _$RewardDtoCopyWith<$Res> implements $RewardDtoCopyWith<$Res> {
-  factory _$RewardDtoCopyWith(_RewardDto value, $Res Function(_RewardDto) then) = __$RewardDtoCopyWithImpl<$Res>;
+  factory _$RewardDtoCopyWith(_RewardDto value, $Res Function(_RewardDto) then) =
+      __$RewardDtoCopyWithImpl<$Res>;
 
   @override
   $Res call({String id, String name, String description, String imageURL});
 }
 
 /// @nodoc
-class __$RewardDtoCopyWithImpl<$Res> extends _$RewardDtoCopyWithImpl<$Res> implements _$RewardDtoCopyWith<$Res> {
-  __$RewardDtoCopyWithImpl(_RewardDto _value, $Res Function(_RewardDto) _then) : super(_value, (v) => _then(v as _RewardDto));
+class __$RewardDtoCopyWithImpl<$Res> extends _$RewardDtoCopyWithImpl<$Res>
+    implements _$RewardDtoCopyWith<$Res> {
+  __$RewardDtoCopyWithImpl(_RewardDto _value, $Res Function(_RewardDto) _then)
+      : super(_value, (v) => _then(v as _RewardDto));
 
   @override
   _RewardDto get _value => super._value as _RewardDto;
@@ -139,7 +147,9 @@ class __$RewardDtoCopyWithImpl<$Res> extends _$RewardDtoCopyWithImpl<$Res> imple
 /// @nodoc
 @JsonSerializable()
 class _$_RewardDto extends _RewardDto {
-  const _$_RewardDto({required this.id, required this.name, required this.description, required this.imageURL}) : super._();
+  const _$_RewardDto(
+      {required this.id, required this.name, required this.description, required this.imageURL})
+      : super._();
 
   factory _$_RewardDto.fromJson(Map<String, dynamic> json) => _$_$_RewardDtoFromJson(json);
 
@@ -162,9 +172,12 @@ class _$_RewardDto extends _RewardDto {
     return identical(this, other) ||
         (other is _RewardDto &&
             (identical(other.id, id) || const DeepCollectionEquality().equals(other.id, id)) &&
-            (identical(other.name, name) || const DeepCollectionEquality().equals(other.name, name)) &&
-            (identical(other.description, description) || const DeepCollectionEquality().equals(other.description, description)) &&
-            (identical(other.imageURL, imageURL) || const DeepCollectionEquality().equals(other.imageURL, imageURL)));
+            (identical(other.name, name) ||
+                const DeepCollectionEquality().equals(other.name, name)) &&
+            (identical(other.description, description) ||
+                const DeepCollectionEquality().equals(other.description, description)) &&
+            (identical(other.imageURL, imageURL) ||
+                const DeepCollectionEquality().equals(other.imageURL, imageURL)));
   }
 
   @override
@@ -174,10 +187,11 @@ class _$_RewardDto extends _RewardDto {
       const DeepCollectionEquality().hash(name) ^
       const DeepCollectionEquality().hash(description) ^
       const DeepCollectionEquality().hash(imageURL);
-  
+
   @JsonKey(ignore: true)
   @override
-  _$RewardDtoCopyWith<_RewardDto> get copyWith => __$RewardDtoCopyWithImpl<_RewardDto>(this, _$identity);
+  _$RewardDtoCopyWith<_RewardDto> get copyWith =>
+      __$RewardDtoCopyWithImpl<_RewardDto>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
@@ -186,7 +200,11 @@ class _$_RewardDto extends _RewardDto {
 }
 
 abstract class _RewardDto extends RewardDto {
-  const factory _RewardDto({required String id, required String name, required String description, required String imageURL}) = _$_RewardDto;
+  const factory _RewardDto(
+      {required String id,
+      required String name,
+      required String description,
+      required String imageURL}) = _$_RewardDto;
 
   const _RewardDto._() : super._();
 

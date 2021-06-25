@@ -112,7 +112,9 @@ mixin _$CoreDataFailure<T> {
 
 /// @nodoc
 abstract class $CoreDataFailureCopyWith<T, $Res> {
-  factory $CoreDataFailureCopyWith(CoreDataFailure<T> value, $Res Function(CoreDataFailure<T>) then) = _$CoreDataFailureCopyWithImpl<T, $Res>;
+  factory $CoreDataFailureCopyWith(
+          CoreDataFailure<T> value, $Res Function(CoreDataFailure<T>) then) =
+      _$CoreDataFailureCopyWithImpl<T, $Res>;
 }
 
 /// @nodoc
@@ -127,14 +129,17 @@ class _$CoreDataFailureCopyWithImpl<T, $Res> implements $CoreDataFailureCopyWith
 
 /// @nodoc
 abstract class $ServerErrorCopyWith<T, $Res> {
-  factory $ServerErrorCopyWith(ServerError<T> value, $Res Function(ServerError<T>) then) = _$ServerErrorCopyWithImpl<T, $Res>;
+  factory $ServerErrorCopyWith(ServerError<T> value, $Res Function(ServerError<T>) then) =
+      _$ServerErrorCopyWithImpl<T, $Res>;
 
   $Res call({String errorString});
 }
 
 /// @nodoc
-class _$ServerErrorCopyWithImpl<T, $Res> extends _$CoreDataFailureCopyWithImpl<T, $Res> implements $ServerErrorCopyWith<T, $Res> {
-  _$ServerErrorCopyWithImpl(ServerError<T> _value, $Res Function(ServerError<T>) _then) : super(_value, (v) => _then(v as ServerError<T>));
+class _$ServerErrorCopyWithImpl<T, $Res> extends _$CoreDataFailureCopyWithImpl<T, $Res>
+    implements $ServerErrorCopyWith<T, $Res> {
+  _$ServerErrorCopyWithImpl(ServerError<T> _value, $Res Function(ServerError<T>) _then)
+      : super(_value, (v) => _then(v as ServerError<T>));
 
   @override
   ServerError<T> get _value => super._value as ServerError<T>;
@@ -167,7 +172,10 @@ class _$ServerError<T> implements ServerError<T> {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is ServerError<T> && (identical(other.errorString, errorString) || const DeepCollectionEquality().equals(other.errorString, errorString)));
+    return identical(this, other) ||
+        (other is ServerError<T> &&
+            (identical(other.errorString, errorString) ||
+                const DeepCollectionEquality().equals(other.errorString, errorString)));
   }
 
   @override
@@ -175,7 +183,8 @@ class _$ServerError<T> implements ServerError<T> {
 
   @JsonKey(ignore: true)
   @override
-  $ServerErrorCopyWith<T, ServerError<T>> get copyWith => _$ServerErrorCopyWithImpl<T, ServerError<T>>(this, _$identity);
+  $ServerErrorCopyWith<T, ServerError<T>> get copyWith =>
+      _$ServerErrorCopyWithImpl<T, ServerError<T>>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -253,12 +262,15 @@ abstract class ServerError<T> implements CoreDataFailure<T> {
 
 /// @nodoc
 abstract class $NotFoundErrorCopyWith<T, $Res> {
-  factory $NotFoundErrorCopyWith(NotFoundError<T> value, $Res Function(NotFoundError<T>) then) = _$NotFoundErrorCopyWithImpl<T, $Res>;
+  factory $NotFoundErrorCopyWith(NotFoundError<T> value, $Res Function(NotFoundError<T>) then) =
+      _$NotFoundErrorCopyWithImpl<T, $Res>;
 }
 
 /// @nodoc
-class _$NotFoundErrorCopyWithImpl<T, $Res> extends _$CoreDataFailureCopyWithImpl<T, $Res> implements $NotFoundErrorCopyWith<T, $Res> {
-  _$NotFoundErrorCopyWithImpl(NotFoundError<T> _value, $Res Function(NotFoundError<T>) _then) : super(_value, (v) => _then(v as NotFoundError<T>));
+class _$NotFoundErrorCopyWithImpl<T, $Res> extends _$CoreDataFailureCopyWithImpl<T, $Res>
+    implements $NotFoundErrorCopyWith<T, $Res> {
+  _$NotFoundErrorCopyWithImpl(NotFoundError<T> _value, $Res Function(NotFoundError<T>) _then)
+      : super(_value, (v) => _then(v as NotFoundError<T>));
 
   @override
   NotFoundError<T> get _value => super._value as NotFoundError<T>;
@@ -353,14 +365,17 @@ abstract class NotFoundError<T> implements CoreDataFailure<T> {
 
 /// @nodoc
 abstract class $CacheErrorCopyWith<T, $Res> {
-  factory $CacheErrorCopyWith(CacheError<T> value, $Res Function(CacheError<T>) then) = _$CacheErrorCopyWithImpl<T, $Res>;
+  factory $CacheErrorCopyWith(CacheError<T> value, $Res Function(CacheError<T>) then) =
+      _$CacheErrorCopyWithImpl<T, $Res>;
 
   $Res call({String errorString});
 }
 
 /// @nodoc
-class _$CacheErrorCopyWithImpl<T, $Res> extends _$CoreDataFailureCopyWithImpl<T, $Res> implements $CacheErrorCopyWith<T, $Res> {
-  _$CacheErrorCopyWithImpl(CacheError<T> _value, $Res Function(CacheError<T>) _then) : super(_value, (v) => _then(v as CacheError<T>));
+class _$CacheErrorCopyWithImpl<T, $Res> extends _$CoreDataFailureCopyWithImpl<T, $Res>
+    implements $CacheErrorCopyWith<T, $Res> {
+  _$CacheErrorCopyWithImpl(CacheError<T> _value, $Res Function(CacheError<T>) _then)
+      : super(_value, (v) => _then(v as CacheError<T>));
 
   @override
   CacheError<T> get _value => super._value as CacheError<T>;
@@ -393,7 +408,10 @@ class _$CacheError<T> implements CacheError<T> {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is CacheError<T> && (identical(other.errorString, errorString) || const DeepCollectionEquality().equals(other.errorString, errorString)));
+    return identical(this, other) ||
+        (other is CacheError<T> &&
+            (identical(other.errorString, errorString) ||
+                const DeepCollectionEquality().equals(other.errorString, errorString)));
   }
 
   @override
@@ -401,7 +419,8 @@ class _$CacheError<T> implements CacheError<T> {
 
   @JsonKey(ignore: true)
   @override
-  $CacheErrorCopyWith<T, CacheError<T>> get copyWith => _$CacheErrorCopyWithImpl<T, CacheError<T>>(this, _$identity);
+  $CacheErrorCopyWith<T, CacheError<T>> get copyWith =>
+      _$CacheErrorCopyWithImpl<T, CacheError<T>>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -479,14 +498,19 @@ abstract class CacheError<T> implements CoreDataFailure<T> {
 
 /// @nodoc
 abstract class $GeoLocationErrorCopyWith<T, $Res> {
-  factory $GeoLocationErrorCopyWith(GeoLocationError<T> value, $Res Function(GeoLocationError<T>) then) = _$GeoLocationErrorCopyWithImpl<T, $Res>;
+  factory $GeoLocationErrorCopyWith(
+          GeoLocationError<T> value, $Res Function(GeoLocationError<T>) then) =
+      _$GeoLocationErrorCopyWithImpl<T, $Res>;
 
   $Res call({String errorString});
 }
 
 /// @nodoc
-class _$GeoLocationErrorCopyWithImpl<T, $Res> extends _$CoreDataFailureCopyWithImpl<T, $Res> implements $GeoLocationErrorCopyWith<T, $Res> {
-  _$GeoLocationErrorCopyWithImpl(GeoLocationError<T> _value, $Res Function(GeoLocationError<T>) _then) : super(_value, (v) => _then(v as GeoLocationError<T>));
+class _$GeoLocationErrorCopyWithImpl<T, $Res> extends _$CoreDataFailureCopyWithImpl<T, $Res>
+    implements $GeoLocationErrorCopyWith<T, $Res> {
+  _$GeoLocationErrorCopyWithImpl(
+      GeoLocationError<T> _value, $Res Function(GeoLocationError<T>) _then)
+      : super(_value, (v) => _then(v as GeoLocationError<T>));
 
   @override
   GeoLocationError<T> get _value => super._value as GeoLocationError<T>;
@@ -519,7 +543,10 @@ class _$GeoLocationError<T> implements GeoLocationError<T> {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is GeoLocationError<T> && (identical(other.errorString, errorString) || const DeepCollectionEquality().equals(other.errorString, errorString)));
+    return identical(this, other) ||
+        (other is GeoLocationError<T> &&
+            (identical(other.errorString, errorString) ||
+                const DeepCollectionEquality().equals(other.errorString, errorString)));
   }
 
   @override
@@ -527,7 +554,8 @@ class _$GeoLocationError<T> implements GeoLocationError<T> {
 
   @JsonKey(ignore: true)
   @override
-  $GeoLocationErrorCopyWith<T, GeoLocationError<T>> get copyWith => _$GeoLocationErrorCopyWithImpl<T, GeoLocationError<T>>(this, _$identity);
+  $GeoLocationErrorCopyWith<T, GeoLocationError<T>> get copyWith =>
+      _$GeoLocationErrorCopyWithImpl<T, GeoLocationError<T>>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -600,19 +628,25 @@ abstract class GeoLocationError<T> implements CoreDataFailure<T> {
   String get errorString => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
-  $GeoLocationErrorCopyWith<T, GeoLocationError<T>> get copyWith => throw _privateConstructorUsedError;
+  $GeoLocationErrorCopyWith<T, GeoLocationError<T>> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $UsernameAlreadyInUseCopyWith<T, $Res> {
-  factory $UsernameAlreadyInUseCopyWith(UsernameAlreadyInUse<T> value, $Res Function(UsernameAlreadyInUse<T>) then) = _$UsernameAlreadyInUseCopyWithImpl<T, $Res>;
+  factory $UsernameAlreadyInUseCopyWith(
+          UsernameAlreadyInUse<T> value, $Res Function(UsernameAlreadyInUse<T>) then) =
+      _$UsernameAlreadyInUseCopyWithImpl<T, $Res>;
 
   $Res call({Name username});
 }
 
 /// @nodoc
-class _$UsernameAlreadyInUseCopyWithImpl<T, $Res> extends _$CoreDataFailureCopyWithImpl<T, $Res> implements $UsernameAlreadyInUseCopyWith<T, $Res> {
-  _$UsernameAlreadyInUseCopyWithImpl(UsernameAlreadyInUse<T> _value, $Res Function(UsernameAlreadyInUse<T>) _then) : super(_value, (v) => _then(v as UsernameAlreadyInUse<T>));
+class _$UsernameAlreadyInUseCopyWithImpl<T, $Res> extends _$CoreDataFailureCopyWithImpl<T, $Res>
+    implements $UsernameAlreadyInUseCopyWith<T, $Res> {
+  _$UsernameAlreadyInUseCopyWithImpl(
+      UsernameAlreadyInUse<T> _value, $Res Function(UsernameAlreadyInUse<T>) _then)
+      : super(_value, (v) => _then(v as UsernameAlreadyInUse<T>));
 
   @override
   UsernameAlreadyInUse<T> get _value => super._value as UsernameAlreadyInUse<T>;
@@ -645,7 +679,10 @@ class _$UsernameAlreadyInUse<T> implements UsernameAlreadyInUse<T> {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is UsernameAlreadyInUse<T> && (identical(other.username, username) || const DeepCollectionEquality().equals(other.username, username)));
+    return identical(this, other) ||
+        (other is UsernameAlreadyInUse<T> &&
+            (identical(other.username, username) ||
+                const DeepCollectionEquality().equals(other.username, username)));
   }
 
   @override
@@ -653,7 +690,8 @@ class _$UsernameAlreadyInUse<T> implements UsernameAlreadyInUse<T> {
 
   @JsonKey(ignore: true)
   @override
-  $UsernameAlreadyInUseCopyWith<T, UsernameAlreadyInUse<T>> get copyWith => _$UsernameAlreadyInUseCopyWithImpl<T, UsernameAlreadyInUse<T>>(this, _$identity);
+  $UsernameAlreadyInUseCopyWith<T, UsernameAlreadyInUse<T>> get copyWith =>
+      _$UsernameAlreadyInUseCopyWithImpl<T, UsernameAlreadyInUse<T>>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -726,19 +764,25 @@ abstract class UsernameAlreadyInUse<T> implements CoreDataFailure<T> {
   Name get username => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
-  $UsernameAlreadyInUseCopyWith<T, UsernameAlreadyInUse<T>> get copyWith => throw _privateConstructorUsedError;
+  $UsernameAlreadyInUseCopyWith<T, UsernameAlreadyInUse<T>> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $EmailAlreadyInUseCopyWith<T, $Res> {
-  factory $EmailAlreadyInUseCopyWith(EmailAlreadyInUse<T> value, $Res Function(EmailAlreadyInUse<T>) then) = _$EmailAlreadyInUseCopyWithImpl<T, $Res>;
+  factory $EmailAlreadyInUseCopyWith(
+          EmailAlreadyInUse<T> value, $Res Function(EmailAlreadyInUse<T>) then) =
+      _$EmailAlreadyInUseCopyWithImpl<T, $Res>;
 
   $Res call({EmailAddress email});
 }
 
 /// @nodoc
-class _$EmailAlreadyInUseCopyWithImpl<T, $Res> extends _$CoreDataFailureCopyWithImpl<T, $Res> implements $EmailAlreadyInUseCopyWith<T, $Res> {
-  _$EmailAlreadyInUseCopyWithImpl(EmailAlreadyInUse<T> _value, $Res Function(EmailAlreadyInUse<T>) _then) : super(_value, (v) => _then(v as EmailAlreadyInUse<T>));
+class _$EmailAlreadyInUseCopyWithImpl<T, $Res> extends _$CoreDataFailureCopyWithImpl<T, $Res>
+    implements $EmailAlreadyInUseCopyWith<T, $Res> {
+  _$EmailAlreadyInUseCopyWithImpl(
+      EmailAlreadyInUse<T> _value, $Res Function(EmailAlreadyInUse<T>) _then)
+      : super(_value, (v) => _then(v as EmailAlreadyInUse<T>));
 
   @override
   EmailAlreadyInUse<T> get _value => super._value as EmailAlreadyInUse<T>;
@@ -771,7 +815,10 @@ class _$EmailAlreadyInUse<T> implements EmailAlreadyInUse<T> {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is EmailAlreadyInUse<T> && (identical(other.email, email) || const DeepCollectionEquality().equals(other.email, email)));
+    return identical(this, other) ||
+        (other is EmailAlreadyInUse<T> &&
+            (identical(other.email, email) ||
+                const DeepCollectionEquality().equals(other.email, email)));
   }
 
   @override
@@ -779,7 +826,8 @@ class _$EmailAlreadyInUse<T> implements EmailAlreadyInUse<T> {
 
   @JsonKey(ignore: true)
   @override
-  $EmailAlreadyInUseCopyWith<T, EmailAlreadyInUse<T>> get copyWith => _$EmailAlreadyInUseCopyWithImpl<T, EmailAlreadyInUse<T>>(this, _$identity);
+  $EmailAlreadyInUseCopyWith<T, EmailAlreadyInUse<T>> get copyWith =>
+      _$EmailAlreadyInUseCopyWithImpl<T, EmailAlreadyInUse<T>>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -852,19 +900,25 @@ abstract class EmailAlreadyInUse<T> implements CoreDataFailure<T> {
   EmailAddress get email => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
-  $EmailAlreadyInUseCopyWith<T, EmailAlreadyInUse<T>> get copyWith => throw _privateConstructorUsedError;
+  $EmailAlreadyInUseCopyWith<T, EmailAlreadyInUse<T>> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $NameAlreadyInUseCopyWith<T, $Res> {
-  factory $NameAlreadyInUseCopyWith(NameAlreadyInUse<T> value, $Res Function(NameAlreadyInUse<T>) then) = _$NameAlreadyInUseCopyWithImpl<T, $Res>;
+  factory $NameAlreadyInUseCopyWith(
+          NameAlreadyInUse<T> value, $Res Function(NameAlreadyInUse<T>) then) =
+      _$NameAlreadyInUseCopyWithImpl<T, $Res>;
 
   $Res call({Name name});
 }
 
 /// @nodoc
-class _$NameAlreadyInUseCopyWithImpl<T, $Res> extends _$CoreDataFailureCopyWithImpl<T, $Res> implements $NameAlreadyInUseCopyWith<T, $Res> {
-  _$NameAlreadyInUseCopyWithImpl(NameAlreadyInUse<T> _value, $Res Function(NameAlreadyInUse<T>) _then) : super(_value, (v) => _then(v as NameAlreadyInUse<T>));
+class _$NameAlreadyInUseCopyWithImpl<T, $Res> extends _$CoreDataFailureCopyWithImpl<T, $Res>
+    implements $NameAlreadyInUseCopyWith<T, $Res> {
+  _$NameAlreadyInUseCopyWithImpl(
+      NameAlreadyInUse<T> _value, $Res Function(NameAlreadyInUse<T>) _then)
+      : super(_value, (v) => _then(v as NameAlreadyInUse<T>));
 
   @override
   NameAlreadyInUse<T> get _value => super._value as NameAlreadyInUse<T>;
@@ -897,7 +951,10 @@ class _$NameAlreadyInUse<T> implements NameAlreadyInUse<T> {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is NameAlreadyInUse<T> && (identical(other.name, name) || const DeepCollectionEquality().equals(other.name, name)));
+    return identical(this, other) ||
+        (other is NameAlreadyInUse<T> &&
+            (identical(other.name, name) ||
+                const DeepCollectionEquality().equals(other.name, name)));
   }
 
   @override
@@ -905,7 +962,8 @@ class _$NameAlreadyInUse<T> implements NameAlreadyInUse<T> {
 
   @JsonKey(ignore: true)
   @override
-  $NameAlreadyInUseCopyWith<T, NameAlreadyInUse<T>> get copyWith => _$NameAlreadyInUseCopyWithImpl<T, NameAlreadyInUse<T>>(this, _$identity);
+  $NameAlreadyInUseCopyWith<T, NameAlreadyInUse<T>> get copyWith =>
+      _$NameAlreadyInUseCopyWithImpl<T, NameAlreadyInUse<T>>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -978,5 +1036,6 @@ abstract class NameAlreadyInUse<T> implements CoreDataFailure<T> {
   Name get name => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
-  $NameAlreadyInUseCopyWith<T, NameAlreadyInUse<T>> get copyWith => throw _privateConstructorUsedError;
+  $NameAlreadyInUseCopyWith<T, NameAlreadyInUse<T>> get copyWith =>
+      throw _privateConstructorUsedError;
 }

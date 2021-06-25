@@ -75,7 +75,9 @@ mixin _$ObjectivesTrackerEvent {
 
 /// @nodoc
 abstract class $ObjectivesTrackerEventCopyWith<$Res> {
-  factory $ObjectivesTrackerEventCopyWith(ObjectivesTrackerEvent value, $Res Function(ObjectivesTrackerEvent) then) = _$ObjectivesTrackerEventCopyWithImpl<$Res>;
+  factory $ObjectivesTrackerEventCopyWith(
+          ObjectivesTrackerEvent value, $Res Function(ObjectivesTrackerEvent) then) =
+      _$ObjectivesTrackerEventCopyWithImpl<$Res>;
 }
 
 /// @nodoc
@@ -90,14 +92,17 @@ class _$ObjectivesTrackerEventCopyWithImpl<$Res> implements $ObjectivesTrackerEv
 
 /// @nodoc
 abstract class _$InitializedCopyWith<$Res> {
-  factory _$InitializedCopyWith(_Initialized value, $Res Function(_Initialized) then) = __$InitializedCopyWithImpl<$Res>;
+  factory _$InitializedCopyWith(_Initialized value, $Res Function(_Initialized) then) =
+      __$InitializedCopyWithImpl<$Res>;
 
   $Res call({ObjectiveList objectiveList, UniqueId experienceId});
 }
 
 /// @nodoc
-class __$InitializedCopyWithImpl<$Res> extends _$ObjectivesTrackerEventCopyWithImpl<$Res> implements _$InitializedCopyWith<$Res> {
-  __$InitializedCopyWithImpl(_Initialized _value, $Res Function(_Initialized) _then) : super(_value, (v) => _then(v as _Initialized));
+class __$InitializedCopyWithImpl<$Res> extends _$ObjectivesTrackerEventCopyWithImpl<$Res>
+    implements _$InitializedCopyWith<$Res> {
+  __$InitializedCopyWithImpl(_Initialized _value, $Res Function(_Initialized) _then)
+      : super(_value, (v) => _then(v as _Initialized));
 
   @override
   _Initialized get _value => super._value as _Initialized;
@@ -139,16 +144,22 @@ class _$_Initialized implements _Initialized {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other is _Initialized &&
-            (identical(other.objectiveList, objectiveList) || const DeepCollectionEquality().equals(other.objectiveList, objectiveList)) &&
-            (identical(other.experienceId, experienceId) || const DeepCollectionEquality().equals(other.experienceId, experienceId)));
+            (identical(other.objectiveList, objectiveList) ||
+                const DeepCollectionEquality().equals(other.objectiveList, objectiveList)) &&
+            (identical(other.experienceId, experienceId) ||
+                const DeepCollectionEquality().equals(other.experienceId, experienceId)));
   }
 
   @override
-  int get hashCode => runtimeType.hashCode ^ const DeepCollectionEquality().hash(objectiveList) ^ const DeepCollectionEquality().hash(experienceId);
+  int get hashCode =>
+      runtimeType.hashCode ^
+      const DeepCollectionEquality().hash(objectiveList) ^
+      const DeepCollectionEquality().hash(experienceId);
 
   @JsonKey(ignore: true)
   @override
-  _$InitializedCopyWith<_Initialized> get copyWith => __$InitializedCopyWithImpl<_Initialized>(this, _$identity);
+  _$InitializedCopyWith<_Initialized> get copyWith =>
+      __$InitializedCopyWithImpl<_Initialized>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -212,7 +223,9 @@ abstract class _Initialized implements ObjectivesTrackerEvent {
 
 /// @nodoc
 abstract class _$ObjectiveAccomplishedCopyWith<$Res> {
-  factory _$ObjectiveAccomplishedCopyWith(_ObjectiveAccomplished value, $Res Function(_ObjectiveAccomplished) then) = __$ObjectiveAccomplishedCopyWithImpl<$Res>;
+  factory _$ObjectiveAccomplishedCopyWith(
+          _ObjectiveAccomplished value, $Res Function(_ObjectiveAccomplished) then) =
+      __$ObjectiveAccomplishedCopyWithImpl<$Res>;
 
   $Res call({Objective objective});
 
@@ -220,8 +233,11 @@ abstract class _$ObjectiveAccomplishedCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$ObjectiveAccomplishedCopyWithImpl<$Res> extends _$ObjectivesTrackerEventCopyWithImpl<$Res> implements _$ObjectiveAccomplishedCopyWith<$Res> {
-  __$ObjectiveAccomplishedCopyWithImpl(_ObjectiveAccomplished _value, $Res Function(_ObjectiveAccomplished) _then) : super(_value, (v) => _then(v as _ObjectiveAccomplished));
+class __$ObjectiveAccomplishedCopyWithImpl<$Res> extends _$ObjectivesTrackerEventCopyWithImpl<$Res>
+    implements _$ObjectiveAccomplishedCopyWith<$Res> {
+  __$ObjectiveAccomplishedCopyWithImpl(
+      _ObjectiveAccomplished _value, $Res Function(_ObjectiveAccomplished) _then)
+      : super(_value, (v) => _then(v as _ObjectiveAccomplished));
 
   @override
   _ObjectiveAccomplished get _value => super._value as _ObjectiveAccomplished;
@@ -261,7 +277,10 @@ class _$_ObjectiveAccomplished implements _ObjectiveAccomplished {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _ObjectiveAccomplished && (identical(other.objective, objective) || const DeepCollectionEquality().equals(other.objective, objective)));
+    return identical(this, other) ||
+        (other is _ObjectiveAccomplished &&
+            (identical(other.objective, objective) ||
+                const DeepCollectionEquality().equals(other.objective, objective)));
   }
 
   @override
@@ -269,7 +288,8 @@ class _$_ObjectiveAccomplished implements _ObjectiveAccomplished {
 
   @JsonKey(ignore: true)
   @override
-  _$ObjectiveAccomplishedCopyWith<_ObjectiveAccomplished> get copyWith => __$ObjectiveAccomplishedCopyWithImpl<_ObjectiveAccomplished>(this, _$identity);
+  _$ObjectiveAccomplishedCopyWith<_ObjectiveAccomplished> get copyWith =>
+      __$ObjectiveAccomplishedCopyWithImpl<_ObjectiveAccomplished>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -326,12 +346,15 @@ abstract class _ObjectiveAccomplished implements ObjectivesTrackerEvent {
   Objective get objective => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
-  _$ObjectiveAccomplishedCopyWith<_ObjectiveAccomplished> get copyWith => throw _privateConstructorUsedError;
+  _$ObjectiveAccomplishedCopyWith<_ObjectiveAccomplished> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class _$ObjectiveUnaccomplishedCopyWith<$Res> {
-  factory _$ObjectiveUnaccomplishedCopyWith(_ObjectiveUnaccomplished value, $Res Function(_ObjectiveUnaccomplished) then) = __$ObjectiveUnaccomplishedCopyWithImpl<$Res>;
+  factory _$ObjectiveUnaccomplishedCopyWith(
+          _ObjectiveUnaccomplished value, $Res Function(_ObjectiveUnaccomplished) then) =
+      __$ObjectiveUnaccomplishedCopyWithImpl<$Res>;
 
   $Res call({Objective objective});
 
@@ -339,8 +362,12 @@ abstract class _$ObjectiveUnaccomplishedCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$ObjectiveUnaccomplishedCopyWithImpl<$Res> extends _$ObjectivesTrackerEventCopyWithImpl<$Res> implements _$ObjectiveUnaccomplishedCopyWith<$Res> {
-  __$ObjectiveUnaccomplishedCopyWithImpl(_ObjectiveUnaccomplished _value, $Res Function(_ObjectiveUnaccomplished) _then) : super(_value, (v) => _then(v as _ObjectiveUnaccomplished));
+class __$ObjectiveUnaccomplishedCopyWithImpl<$Res>
+    extends _$ObjectivesTrackerEventCopyWithImpl<$Res>
+    implements _$ObjectiveUnaccomplishedCopyWith<$Res> {
+  __$ObjectiveUnaccomplishedCopyWithImpl(
+      _ObjectiveUnaccomplished _value, $Res Function(_ObjectiveUnaccomplished) _then)
+      : super(_value, (v) => _then(v as _ObjectiveUnaccomplished));
 
   @override
   _ObjectiveUnaccomplished get _value => super._value as _ObjectiveUnaccomplished;
@@ -380,7 +407,10 @@ class _$_ObjectiveUnaccomplished implements _ObjectiveUnaccomplished {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _ObjectiveUnaccomplished && (identical(other.objective, objective) || const DeepCollectionEquality().equals(other.objective, objective)));
+    return identical(this, other) ||
+        (other is _ObjectiveUnaccomplished &&
+            (identical(other.objective, objective) ||
+                const DeepCollectionEquality().equals(other.objective, objective)));
   }
 
   @override
@@ -388,7 +418,8 @@ class _$_ObjectiveUnaccomplished implements _ObjectiveUnaccomplished {
 
   @JsonKey(ignore: true)
   @override
-  _$ObjectiveUnaccomplishedCopyWith<_ObjectiveUnaccomplished> get copyWith => __$ObjectiveUnaccomplishedCopyWithImpl<_ObjectiveUnaccomplished>(this, _$identity);
+  _$ObjectiveUnaccomplishedCopyWith<_ObjectiveUnaccomplished> get copyWith =>
+      __$ObjectiveUnaccomplishedCopyWithImpl<_ObjectiveUnaccomplished>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -445,14 +476,18 @@ abstract class _ObjectiveUnaccomplished implements ObjectivesTrackerEvent {
   Objective get objective => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
-  _$ObjectiveUnaccomplishedCopyWith<_ObjectiveUnaccomplished> get copyWith => throw _privateConstructorUsedError;
+  _$ObjectiveUnaccomplishedCopyWith<_ObjectiveUnaccomplished> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 class _$ObjectivesTrackerStateTearOff {
   const _$ObjectivesTrackerStateTearOff();
 
-  _ObjectivesTrackerState call({required KtList<Objective> objectivesToDo, required UniqueId experienceId, required bool isFinished}) {
+  _ObjectivesTrackerState call(
+      {required KtList<Objective> objectivesToDo,
+      required UniqueId experienceId,
+      required bool isFinished}) {
     return _ObjectivesTrackerState(
       objectivesToDo: objectivesToDo,
       experienceId: experienceId,
@@ -471,12 +506,15 @@ mixin _$ObjectivesTrackerState {
   bool get isFinished => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
-  $ObjectivesTrackerStateCopyWith<ObjectivesTrackerState> get copyWith => throw _privateConstructorUsedError;
+  $ObjectivesTrackerStateCopyWith<ObjectivesTrackerState> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $ObjectivesTrackerStateCopyWith<$Res> {
-  factory $ObjectivesTrackerStateCopyWith(ObjectivesTrackerState value, $Res Function(ObjectivesTrackerState) then) = _$ObjectivesTrackerStateCopyWithImpl<$Res>;
+  factory $ObjectivesTrackerStateCopyWith(
+          ObjectivesTrackerState value, $Res Function(ObjectivesTrackerState) then) =
+      _$ObjectivesTrackerStateCopyWithImpl<$Res>;
 
   $Res call({KtList<Objective> objectivesToDo, UniqueId experienceId, bool isFinished});
 }
@@ -514,16 +552,22 @@ class _$ObjectivesTrackerStateCopyWithImpl<$Res> implements $ObjectivesTrackerSt
 }
 
 /// @nodoc
-abstract class _$ObjectivesTrackerStateCopyWith<$Res> implements $ObjectivesTrackerStateCopyWith<$Res> {
-  factory _$ObjectivesTrackerStateCopyWith(_ObjectivesTrackerState value, $Res Function(_ObjectivesTrackerState) then) = __$ObjectivesTrackerStateCopyWithImpl<$Res>;
+abstract class _$ObjectivesTrackerStateCopyWith<$Res>
+    implements $ObjectivesTrackerStateCopyWith<$Res> {
+  factory _$ObjectivesTrackerStateCopyWith(
+          _ObjectivesTrackerState value, $Res Function(_ObjectivesTrackerState) then) =
+      __$ObjectivesTrackerStateCopyWithImpl<$Res>;
 
   @override
   $Res call({KtList<Objective> objectivesToDo, UniqueId experienceId, bool isFinished});
 }
 
 /// @nodoc
-class __$ObjectivesTrackerStateCopyWithImpl<$Res> extends _$ObjectivesTrackerStateCopyWithImpl<$Res> implements _$ObjectivesTrackerStateCopyWith<$Res> {
-  __$ObjectivesTrackerStateCopyWithImpl(_ObjectivesTrackerState _value, $Res Function(_ObjectivesTrackerState) _then) : super(_value, (v) => _then(v as _ObjectivesTrackerState));
+class __$ObjectivesTrackerStateCopyWithImpl<$Res> extends _$ObjectivesTrackerStateCopyWithImpl<$Res>
+    implements _$ObjectivesTrackerStateCopyWith<$Res> {
+  __$ObjectivesTrackerStateCopyWithImpl(
+      _ObjectivesTrackerState _value, $Res Function(_ObjectivesTrackerState) _then)
+      : super(_value, (v) => _then(v as _ObjectivesTrackerState));
 
   @override
   _ObjectivesTrackerState get _value => super._value as _ObjectivesTrackerState;
@@ -554,7 +598,8 @@ class __$ObjectivesTrackerStateCopyWithImpl<$Res> extends _$ObjectivesTrackerSta
 /// @nodoc
 
 class _$_ObjectivesTrackerState implements _ObjectivesTrackerState {
-  const _$_ObjectivesTrackerState({required this.objectivesToDo, required this.experienceId, required this.isFinished});
+  const _$_ObjectivesTrackerState(
+      {required this.objectivesToDo, required this.experienceId, required this.isFinished});
 
   @override
   final KtList<Objective> objectivesToDo;
@@ -572,21 +617,32 @@ class _$_ObjectivesTrackerState implements _ObjectivesTrackerState {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other is _ObjectivesTrackerState &&
-            (identical(other.objectivesToDo, objectivesToDo) || const DeepCollectionEquality().equals(other.objectivesToDo, objectivesToDo)) &&
-            (identical(other.experienceId, experienceId) || const DeepCollectionEquality().equals(other.experienceId, experienceId)) &&
-            (identical(other.isFinished, isFinished) || const DeepCollectionEquality().equals(other.isFinished, isFinished)));
+            (identical(other.objectivesToDo, objectivesToDo) ||
+                const DeepCollectionEquality().equals(other.objectivesToDo, objectivesToDo)) &&
+            (identical(other.experienceId, experienceId) ||
+                const DeepCollectionEquality().equals(other.experienceId, experienceId)) &&
+            (identical(other.isFinished, isFinished) ||
+                const DeepCollectionEquality().equals(other.isFinished, isFinished)));
   }
 
   @override
-  int get hashCode => runtimeType.hashCode ^ const DeepCollectionEquality().hash(objectivesToDo) ^ const DeepCollectionEquality().hash(experienceId) ^ const DeepCollectionEquality().hash(isFinished);
+  int get hashCode =>
+      runtimeType.hashCode ^
+      const DeepCollectionEquality().hash(objectivesToDo) ^
+      const DeepCollectionEquality().hash(experienceId) ^
+      const DeepCollectionEquality().hash(isFinished);
 
   @JsonKey(ignore: true)
   @override
-  _$ObjectivesTrackerStateCopyWith<_ObjectivesTrackerState> get copyWith => __$ObjectivesTrackerStateCopyWithImpl<_ObjectivesTrackerState>(this, _$identity);
+  _$ObjectivesTrackerStateCopyWith<_ObjectivesTrackerState> get copyWith =>
+      __$ObjectivesTrackerStateCopyWithImpl<_ObjectivesTrackerState>(this, _$identity);
 }
 
 abstract class _ObjectivesTrackerState implements ObjectivesTrackerState {
-  const factory _ObjectivesTrackerState({required KtList<Objective> objectivesToDo, required UniqueId experienceId, required bool isFinished}) = _$_ObjectivesTrackerState;
+  const factory _ObjectivesTrackerState(
+      {required KtList<Objective> objectivesToDo,
+      required UniqueId experienceId,
+      required bool isFinished}) = _$_ObjectivesTrackerState;
 
   @override
   KtList<Objective> get objectivesToDo => throw _privateConstructorUsedError;
@@ -599,5 +655,6 @@ abstract class _ObjectivesTrackerState implements ObjectivesTrackerState {
 
   @override
   @JsonKey(ignore: true)
-  _$ObjectivesTrackerStateCopyWith<_ObjectivesTrackerState> get copyWith => throw _privateConstructorUsedError;
+  _$ObjectivesTrackerStateCopyWith<_ObjectivesTrackerState> get copyWith =>
+      throw _privateConstructorUsedError;
 }

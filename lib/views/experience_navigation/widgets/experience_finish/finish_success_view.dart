@@ -103,7 +103,7 @@ class FinishSuccessView extends StatelessWidget {
                       ),
                     ),
                     const SizedBox(width: 5),
-                    LikeDislikeButtonBuilder(experience: experience),
+                    LikeDislikeButtonBuilder(experienceId: experience.id),
                   ],
                 ),
                 const SizedBox(height: 15),

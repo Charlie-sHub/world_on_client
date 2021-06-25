@@ -1,15 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:worldon/application/experience_navigation/experience_like_actor/experience_like_actor_bloc.dart';
-import 'package:worldon/domain/core/entities/experience/experience.dart';
+import 'package:worldon/domain/core/validation/objects/unique_id.dart';
 
 class LikeExperienceButton extends StatelessWidget {
   const LikeExperienceButton({
     Key? key,
-    required this.experience,
+    required this.experienceId,
   }) : super(key: key);
 
-  final Experience experience;
+  final UniqueId experienceId;
 
   @override
   Widget build(BuildContext context) {
@@ -21,7 +21,7 @@ class LikeExperienceButton extends StatelessWidget {
       ),
       padding: EdgeInsets.zero,
       onPressed: () => context.read<ExperienceLikeActorBloc>().add(
-            ExperienceLikeActorEvent.liked(experience),
+            ExperienceLikeActorEvent.liked(experienceId),
           ),
     );
   }

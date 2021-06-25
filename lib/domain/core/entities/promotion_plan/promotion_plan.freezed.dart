@@ -55,9 +55,17 @@ mixin _$PromotionPlan {
 
 /// @nodoc
 abstract class $PromotionPlanCopyWith<$Res> {
-  factory $PromotionPlanCopyWith(PromotionPlan value, $Res Function(PromotionPlan) then) = _$PromotionPlanCopyWithImpl<$Res>;
+  factory $PromotionPlanCopyWith(PromotionPlan value, $Res Function(PromotionPlan) then) =
+      _$PromotionPlanCopyWithImpl<$Res>;
 
-  $Res call({UniqueId id, Name name, EntityDescription description, PromotionPlanCode code, int valueInEuros, DateTime boughtDate, int timesSeen});
+  $Res call(
+      {UniqueId id,
+      Name name,
+      EntityDescription description,
+      PromotionPlanCode code,
+      int valueInEuros,
+      DateTime boughtDate,
+      int timesSeen});
 }
 
 /// @nodoc
@@ -114,15 +122,25 @@ class _$PromotionPlanCopyWithImpl<$Res> implements $PromotionPlanCopyWith<$Res> 
 
 /// @nodoc
 abstract class _$PromotionPlanCopyWith<$Res> implements $PromotionPlanCopyWith<$Res> {
-  factory _$PromotionPlanCopyWith(_PromotionPlan value, $Res Function(_PromotionPlan) then) = __$PromotionPlanCopyWithImpl<$Res>;
+  factory _$PromotionPlanCopyWith(_PromotionPlan value, $Res Function(_PromotionPlan) then) =
+      __$PromotionPlanCopyWithImpl<$Res>;
 
   @override
-  $Res call({UniqueId id, Name name, EntityDescription description, PromotionPlanCode code, int valueInEuros, DateTime boughtDate, int timesSeen});
+  $Res call(
+      {UniqueId id,
+      Name name,
+      EntityDescription description,
+      PromotionPlanCode code,
+      int valueInEuros,
+      DateTime boughtDate,
+      int timesSeen});
 }
 
 /// @nodoc
-class __$PromotionPlanCopyWithImpl<$Res> extends _$PromotionPlanCopyWithImpl<$Res> implements _$PromotionPlanCopyWith<$Res> {
-  __$PromotionPlanCopyWithImpl(_PromotionPlan _value, $Res Function(_PromotionPlan) _then) : super(_value, (v) => _then(v as _PromotionPlan));
+class __$PromotionPlanCopyWithImpl<$Res> extends _$PromotionPlanCopyWithImpl<$Res>
+    implements _$PromotionPlanCopyWith<$Res> {
+  __$PromotionPlanCopyWithImpl(_PromotionPlan _value, $Res Function(_PromotionPlan) _then)
+      : super(_value, (v) => _then(v as _PromotionPlan));
 
   @override
   _PromotionPlan get _value => super._value as _PromotionPlan;
@@ -173,7 +191,14 @@ class __$PromotionPlanCopyWithImpl<$Res> extends _$PromotionPlanCopyWithImpl<$Re
 /// @nodoc
 
 class _$_PromotionPlan extends _PromotionPlan {
-  const _$_PromotionPlan({required this.id, required this.name, required this.description, required this.code, required this.valueInEuros, required this.boughtDate, required this.timesSeen})
+  const _$_PromotionPlan(
+      {required this.id,
+      required this.name,
+      required this.description,
+      required this.code,
+      required this.valueInEuros,
+      required this.boughtDate,
+      required this.timesSeen})
       : super._();
 
   @override
@@ -201,12 +226,18 @@ class _$_PromotionPlan extends _PromotionPlan {
     return identical(this, other) ||
         (other is _PromotionPlan &&
             (identical(other.id, id) || const DeepCollectionEquality().equals(other.id, id)) &&
-            (identical(other.name, name) || const DeepCollectionEquality().equals(other.name, name)) &&
-            (identical(other.description, description) || const DeepCollectionEquality().equals(other.description, description)) &&
-            (identical(other.code, code) || const DeepCollectionEquality().equals(other.code, code)) &&
-            (identical(other.valueInEuros, valueInEuros) || const DeepCollectionEquality().equals(other.valueInEuros, valueInEuros)) &&
-            (identical(other.boughtDate, boughtDate) || const DeepCollectionEquality().equals(other.boughtDate, boughtDate)) &&
-            (identical(other.timesSeen, timesSeen) || const DeepCollectionEquality().equals(other.timesSeen, timesSeen)));
+            (identical(other.name, name) ||
+                const DeepCollectionEquality().equals(other.name, name)) &&
+            (identical(other.description, description) ||
+                const DeepCollectionEquality().equals(other.description, description)) &&
+            (identical(other.code, code) ||
+                const DeepCollectionEquality().equals(other.code, code)) &&
+            (identical(other.valueInEuros, valueInEuros) ||
+                const DeepCollectionEquality().equals(other.valueInEuros, valueInEuros)) &&
+            (identical(other.boughtDate, boughtDate) ||
+                const DeepCollectionEquality().equals(other.boughtDate, boughtDate)) &&
+            (identical(other.timesSeen, timesSeen) ||
+                const DeepCollectionEquality().equals(other.timesSeen, timesSeen)));
   }
 
   @override
@@ -219,10 +250,11 @@ class _$_PromotionPlan extends _PromotionPlan {
       const DeepCollectionEquality().hash(valueInEuros) ^
       const DeepCollectionEquality().hash(boughtDate) ^
       const DeepCollectionEquality().hash(timesSeen);
-  
+
   @JsonKey(ignore: true)
   @override
-  _$PromotionPlanCopyWith<_PromotionPlan> get copyWith => __$PromotionPlanCopyWithImpl<_PromotionPlan>(this, _$identity);
+  _$PromotionPlanCopyWith<_PromotionPlan> get copyWith =>
+      __$PromotionPlanCopyWithImpl<_PromotionPlan>(this, _$identity);
 }
 
 abstract class _PromotionPlan extends PromotionPlan {

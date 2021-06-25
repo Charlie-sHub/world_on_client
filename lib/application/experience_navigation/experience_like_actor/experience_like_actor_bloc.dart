@@ -7,11 +7,13 @@ import 'package:injectable/injectable.dart';
 import 'package:meta/meta.dart';
 import 'package:worldon/core/error/failure.dart';
 import 'package:worldon/domain/authentication/use_case/get_logged_in_user.dart';
-import 'package:worldon/domain/core/entities/experience/experience.dart';
 import 'package:worldon/domain/core/failures/error.dart';
 import 'package:worldon/domain/core/use_case/use_case.dart';
-import 'package:worldon/domain/experience_navigation/use_case/dislike_experience.dart' as dislike_experience;
-import 'package:worldon/domain/experience_navigation/use_case/like_experience.dart' as like_experience;
+import 'package:worldon/domain/core/validation/objects/unique_id.dart';
+import 'package:worldon/domain/experience_navigation/use_case/dislike_experience.dart'
+    as dislike_experience;
+import 'package:worldon/domain/experience_navigation/use_case/like_experience.dart'
+    as like_experience;
 
 import '../../../injection.dart';
 
@@ -35,7 +37,7 @@ class ExperienceLikeActorBloc extends Bloc<ExperienceLikeActorEvent, ExperienceL
   Stream<ExperienceLikeActorState> _onDisliked(_Disliked event) async* {
     yield const ExperienceLikeActorState.actionInProgress();
     final _failureOrUnit = await getIt<dislike_experience.DislikeExperience>()(
-      dislike_experience.Params(experienceId: event.experience.id),
+      dislike_experience.Params(experienceId: event.experienceId),
     );
     yield _failureOrUnit.fold(
       (failure) => ExperienceLikeActorState.dislikeFailure(failure),
@@ -46,7 +48,7 @@ class ExperienceLikeActorBloc extends Bloc<ExperienceLikeActorEvent, ExperienceL
   Stream<ExperienceLikeActorState> _onLiked(_Liked event) async* {
     yield const ExperienceLikeActorState.actionInProgress();
     final _failureOrUnit = await getIt<like_experience.LikeExperience>()(
-      like_experience.Params(experienceId: event.experience.id),
+      like_experience.Params(experienceId: event.experienceId),
     );
     yield _failureOrUnit.fold(
       (failure) => ExperienceLikeActorState.likeFailure(failure),
@@ -60,7 +62,7 @@ class ExperienceLikeActorBloc extends Bloc<ExperienceLikeActorEvent, ExperienceL
       () => throw UnAuthenticatedError(),
       id,
     );
-    if (_user.experiencesLikedIds.contains(event.experience.id)) {
+    if (_user.experiencesLikedIds.contains(event.experienceId)) {
       yield const ExperienceLikeActorState.likes();
     } else {
       yield const ExperienceLikeActorState.neutral();

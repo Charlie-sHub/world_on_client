@@ -20,7 +20,8 @@ SystemDto _$SystemDtoFromJson(Map<String, dynamic> json) {
 class _$SystemDtoTearOff {
   const _$SystemDtoTearOff();
 
-  _SystemDto call({required String id, required String name, required String type, required String company}) {
+  _SystemDto call(
+      {required String id, required String name, required String type, required String company}) {
     return _SystemDto(
       id: id,
       name: name,
@@ -52,7 +53,8 @@ mixin _$SystemDto {
 
 /// @nodoc
 abstract class $SystemDtoCopyWith<$Res> {
-  factory $SystemDtoCopyWith(SystemDto value, $Res Function(SystemDto) then) = _$SystemDtoCopyWithImpl<$Res>;
+  factory $SystemDtoCopyWith(SystemDto value, $Res Function(SystemDto) then) =
+      _$SystemDtoCopyWithImpl<$Res>;
 
   $Res call({String id, String name, String type, String company});
 }
@@ -95,15 +97,18 @@ class _$SystemDtoCopyWithImpl<$Res> implements $SystemDtoCopyWith<$Res> {
 
 /// @nodoc
 abstract class _$SystemDtoCopyWith<$Res> implements $SystemDtoCopyWith<$Res> {
-  factory _$SystemDtoCopyWith(_SystemDto value, $Res Function(_SystemDto) then) = __$SystemDtoCopyWithImpl<$Res>;
+  factory _$SystemDtoCopyWith(_SystemDto value, $Res Function(_SystemDto) then) =
+      __$SystemDtoCopyWithImpl<$Res>;
 
   @override
   $Res call({String id, String name, String type, String company});
 }
 
 /// @nodoc
-class __$SystemDtoCopyWithImpl<$Res> extends _$SystemDtoCopyWithImpl<$Res> implements _$SystemDtoCopyWith<$Res> {
-  __$SystemDtoCopyWithImpl(_SystemDto _value, $Res Function(_SystemDto) _then) : super(_value, (v) => _then(v as _SystemDto));
+class __$SystemDtoCopyWithImpl<$Res> extends _$SystemDtoCopyWithImpl<$Res>
+    implements _$SystemDtoCopyWith<$Res> {
+  __$SystemDtoCopyWithImpl(_SystemDto _value, $Res Function(_SystemDto) _then)
+      : super(_value, (v) => _then(v as _SystemDto));
 
   @override
   _SystemDto get _value => super._value as _SystemDto;
@@ -139,7 +144,9 @@ class __$SystemDtoCopyWithImpl<$Res> extends _$SystemDtoCopyWithImpl<$Res> imple
 /// @nodoc
 @JsonSerializable()
 class _$_SystemDto extends _SystemDto {
-  const _$_SystemDto({required this.id, required this.name, required this.type, required this.company}) : super._();
+  const _$_SystemDto(
+      {required this.id, required this.name, required this.type, required this.company})
+      : super._();
 
   factory _$_SystemDto.fromJson(Map<String, dynamic> json) => _$_$_SystemDtoFromJson(json);
 
@@ -162,9 +169,12 @@ class _$_SystemDto extends _SystemDto {
     return identical(this, other) ||
         (other is _SystemDto &&
             (identical(other.id, id) || const DeepCollectionEquality().equals(other.id, id)) &&
-            (identical(other.name, name) || const DeepCollectionEquality().equals(other.name, name)) &&
-            (identical(other.type, type) || const DeepCollectionEquality().equals(other.type, type)) &&
-            (identical(other.company, company) || const DeepCollectionEquality().equals(other.company, company)));
+            (identical(other.name, name) ||
+                const DeepCollectionEquality().equals(other.name, name)) &&
+            (identical(other.type, type) ||
+                const DeepCollectionEquality().equals(other.type, type)) &&
+            (identical(other.company, company) ||
+                const DeepCollectionEquality().equals(other.company, company)));
   }
 
   @override
@@ -174,10 +184,11 @@ class _$_SystemDto extends _SystemDto {
       const DeepCollectionEquality().hash(name) ^
       const DeepCollectionEquality().hash(type) ^
       const DeepCollectionEquality().hash(company);
-  
+
   @JsonKey(ignore: true)
   @override
-  _$SystemDtoCopyWith<_SystemDto> get copyWith => __$SystemDtoCopyWithImpl<_SystemDto>(this, _$identity);
+  _$SystemDtoCopyWith<_SystemDto> get copyWith =>
+      __$SystemDtoCopyWithImpl<_SystemDto>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
@@ -186,7 +197,11 @@ class _$_SystemDto extends _SystemDto {
 }
 
 abstract class _SystemDto extends SystemDto {
-  const factory _SystemDto({required String id, required String name, required String type, required String company}) = _$_SystemDto;
+  const factory _SystemDto(
+      {required String id,
+      required String name,
+      required String type,
+      required String company}) = _$_SystemDto;
 
   const _SystemDto._() : super._();
 

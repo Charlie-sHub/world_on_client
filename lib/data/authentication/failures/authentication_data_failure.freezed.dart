@@ -60,11 +60,14 @@ mixin _$AuthenticationDataFailure<T> {
 
 /// @nodoc
 abstract class $AuthenticationDataFailureCopyWith<T, $Res> {
-  factory $AuthenticationDataFailureCopyWith(AuthenticationDataFailure<T> value, $Res Function(AuthenticationDataFailure<T>) then) = _$AuthenticationDataFailureCopyWithImpl<T, $Res>;
+  factory $AuthenticationDataFailureCopyWith(
+          AuthenticationDataFailure<T> value, $Res Function(AuthenticationDataFailure<T>) then) =
+      _$AuthenticationDataFailureCopyWithImpl<T, $Res>;
 }
 
 /// @nodoc
-class _$AuthenticationDataFailureCopyWithImpl<T, $Res> implements $AuthenticationDataFailureCopyWith<T, $Res> {
+class _$AuthenticationDataFailureCopyWithImpl<T, $Res>
+    implements $AuthenticationDataFailureCopyWith<T, $Res> {
   _$AuthenticationDataFailureCopyWithImpl(this._value, this._then);
 
   final AuthenticationDataFailure<T> _value;
@@ -75,12 +78,18 @@ class _$AuthenticationDataFailureCopyWithImpl<T, $Res> implements $Authenticatio
 
 /// @nodoc
 abstract class $InvalidCredentialsCopyWith<T, $Res> {
-  factory $InvalidCredentialsCopyWith(InvalidCredentials<T> value, $Res Function(InvalidCredentials<T>) then) = _$InvalidCredentialsCopyWithImpl<T, $Res>;
+  factory $InvalidCredentialsCopyWith(
+          InvalidCredentials<T> value, $Res Function(InvalidCredentials<T>) then) =
+      _$InvalidCredentialsCopyWithImpl<T, $Res>;
 }
 
 /// @nodoc
-class _$InvalidCredentialsCopyWithImpl<T, $Res> extends _$AuthenticationDataFailureCopyWithImpl<T, $Res> implements $InvalidCredentialsCopyWith<T, $Res> {
-  _$InvalidCredentialsCopyWithImpl(InvalidCredentials<T> _value, $Res Function(InvalidCredentials<T>) _then) : super(_value, (v) => _then(v as InvalidCredentials<T>));
+class _$InvalidCredentialsCopyWithImpl<T, $Res>
+    extends _$AuthenticationDataFailureCopyWithImpl<T, $Res>
+    implements $InvalidCredentialsCopyWith<T, $Res> {
+  _$InvalidCredentialsCopyWithImpl(
+      InvalidCredentials<T> _value, $Res Function(InvalidCredentials<T>) _then)
+      : super(_value, (v) => _then(v as InvalidCredentials<T>));
 
   @override
   InvalidCredentials<T> get _value => super._value as InvalidCredentials<T>;
@@ -155,12 +164,18 @@ abstract class InvalidCredentials<T> implements AuthenticationDataFailure<T> {
 
 /// @nodoc
 abstract class $UnregisteredUserCopyWith<T, $Res> {
-  factory $UnregisteredUserCopyWith(UnregisteredUser<T> value, $Res Function(UnregisteredUser<T>) then) = _$UnregisteredUserCopyWithImpl<T, $Res>;
+  factory $UnregisteredUserCopyWith(
+          UnregisteredUser<T> value, $Res Function(UnregisteredUser<T>) then) =
+      _$UnregisteredUserCopyWithImpl<T, $Res>;
 }
 
 /// @nodoc
-class _$UnregisteredUserCopyWithImpl<T, $Res> extends _$AuthenticationDataFailureCopyWithImpl<T, $Res> implements $UnregisteredUserCopyWith<T, $Res> {
-  _$UnregisteredUserCopyWithImpl(UnregisteredUser<T> _value, $Res Function(UnregisteredUser<T>) _then) : super(_value, (v) => _then(v as UnregisteredUser<T>));
+class _$UnregisteredUserCopyWithImpl<T, $Res>
+    extends _$AuthenticationDataFailureCopyWithImpl<T, $Res>
+    implements $UnregisteredUserCopyWith<T, $Res> {
+  _$UnregisteredUserCopyWithImpl(
+      UnregisteredUser<T> _value, $Res Function(UnregisteredUser<T>) _then)
+      : super(_value, (v) => _then(v as UnregisteredUser<T>));
 
   @override
   UnregisteredUser<T> get _value => super._value as UnregisteredUser<T>;

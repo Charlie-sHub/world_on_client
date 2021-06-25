@@ -9,12 +9,7 @@ import 'package:worldon/data/core/misc/firebase/cloud_storage/storage_folder_enu
 class CloudStorageService {
   final _storageInstance = FirebaseStorage.instance;
 
-  Future<void> deleteImage({
-    required String url,
-    required StorageFolder folder,
-  }) async {
-    // TODO: Delete images
-  }
+  Future<void> deleteImage(String url) async => _storageInstance.refFromURL(url).delete();
 
   Future<String> uploadFileImage({
     required File imageToUpload,

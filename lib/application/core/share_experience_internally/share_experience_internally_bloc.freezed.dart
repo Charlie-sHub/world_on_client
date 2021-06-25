@@ -82,11 +82,14 @@ mixin _$ShareExperienceInternallyEvent {
 
 /// @nodoc
 abstract class $ShareExperienceInternallyEventCopyWith<$Res> {
-  factory $ShareExperienceInternallyEventCopyWith(ShareExperienceInternallyEvent value, $Res Function(ShareExperienceInternallyEvent) then) = _$ShareExperienceInternallyEventCopyWithImpl<$Res>;
+  factory $ShareExperienceInternallyEventCopyWith(ShareExperienceInternallyEvent value,
+          $Res Function(ShareExperienceInternallyEvent) then) =
+      _$ShareExperienceInternallyEventCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class _$ShareExperienceInternallyEventCopyWithImpl<$Res> implements $ShareExperienceInternallyEventCopyWith<$Res> {
+class _$ShareExperienceInternallyEventCopyWithImpl<$Res>
+    implements $ShareExperienceInternallyEventCopyWith<$Res> {
   _$ShareExperienceInternallyEventCopyWithImpl(this._value, this._then);
 
   final ShareExperienceInternallyEvent _value;
@@ -97,7 +100,8 @@ class _$ShareExperienceInternallyEventCopyWithImpl<$Res> implements $ShareExperi
 
 /// @nodoc
 abstract class _$InitializedCopyWith<$Res> {
-  factory _$InitializedCopyWith(_Initialized value, $Res Function(_Initialized) then) = __$InitializedCopyWithImpl<$Res>;
+  factory _$InitializedCopyWith(_Initialized value, $Res Function(_Initialized) then) =
+      __$InitializedCopyWithImpl<$Res>;
 
   $Res call({Experience experience});
 
@@ -105,8 +109,10 @@ abstract class _$InitializedCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$InitializedCopyWithImpl<$Res> extends _$ShareExperienceInternallyEventCopyWithImpl<$Res> implements _$InitializedCopyWith<$Res> {
-  __$InitializedCopyWithImpl(_Initialized _value, $Res Function(_Initialized) _then) : super(_value, (v) => _then(v as _Initialized));
+class __$InitializedCopyWithImpl<$Res> extends _$ShareExperienceInternallyEventCopyWithImpl<$Res>
+    implements _$InitializedCopyWith<$Res> {
+  __$InitializedCopyWithImpl(_Initialized _value, $Res Function(_Initialized) _then)
+      : super(_value, (v) => _then(v as _Initialized));
 
   @override
   _Initialized get _value => super._value as _Initialized;
@@ -146,7 +152,10 @@ class _$_Initialized implements _Initialized {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _Initialized && (identical(other.experience, experience) || const DeepCollectionEquality().equals(other.experience, experience)));
+    return identical(this, other) ||
+        (other is _Initialized &&
+            (identical(other.experience, experience) ||
+                const DeepCollectionEquality().equals(other.experience, experience)));
   }
 
   @override
@@ -154,7 +163,8 @@ class _$_Initialized implements _Initialized {
 
   @JsonKey(ignore: true)
   @override
-  _$InitializedCopyWith<_Initialized> get copyWith => __$InitializedCopyWithImpl<_Initialized>(this, _$identity);
+  _$InitializedCopyWith<_Initialized> get copyWith =>
+      __$InitializedCopyWithImpl<_Initialized>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -220,7 +230,8 @@ abstract class _Initialized implements ShareExperienceInternallyEvent {
 
 /// @nodoc
 abstract class _$RemovedUserCopyWith<$Res> {
-  factory _$RemovedUserCopyWith(_RemovedUser value, $Res Function(_RemovedUser) then) = __$RemovedUserCopyWithImpl<$Res>;
+  factory _$RemovedUserCopyWith(_RemovedUser value, $Res Function(_RemovedUser) then) =
+      __$RemovedUserCopyWithImpl<$Res>;
 
   $Res call({User user});
 
@@ -228,8 +239,10 @@ abstract class _$RemovedUserCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$RemovedUserCopyWithImpl<$Res> extends _$ShareExperienceInternallyEventCopyWithImpl<$Res> implements _$RemovedUserCopyWith<$Res> {
-  __$RemovedUserCopyWithImpl(_RemovedUser _value, $Res Function(_RemovedUser) _then) : super(_value, (v) => _then(v as _RemovedUser));
+class __$RemovedUserCopyWithImpl<$Res> extends _$ShareExperienceInternallyEventCopyWithImpl<$Res>
+    implements _$RemovedUserCopyWith<$Res> {
+  __$RemovedUserCopyWithImpl(_RemovedUser _value, $Res Function(_RemovedUser) _then)
+      : super(_value, (v) => _then(v as _RemovedUser));
 
   @override
   _RemovedUser get _value => super._value as _RemovedUser;
@@ -269,7 +282,10 @@ class _$_RemovedUser implements _RemovedUser {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _RemovedUser && (identical(other.user, user) || const DeepCollectionEquality().equals(other.user, user)));
+    return identical(this, other) ||
+        (other is _RemovedUser &&
+            (identical(other.user, user) ||
+                const DeepCollectionEquality().equals(other.user, user)));
   }
 
   @override
@@ -277,7 +293,8 @@ class _$_RemovedUser implements _RemovedUser {
 
   @JsonKey(ignore: true)
   @override
-  _$RemovedUserCopyWith<_RemovedUser> get copyWith => __$RemovedUserCopyWithImpl<_RemovedUser>(this, _$identity);
+  _$RemovedUserCopyWith<_RemovedUser> get copyWith =>
+      __$RemovedUserCopyWithImpl<_RemovedUser>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -343,7 +360,8 @@ abstract class _RemovedUser implements ShareExperienceInternallyEvent {
 
 /// @nodoc
 abstract class _$AddedUserCopyWith<$Res> {
-  factory _$AddedUserCopyWith(_AddedUser value, $Res Function(_AddedUser) then) = __$AddedUserCopyWithImpl<$Res>;
+  factory _$AddedUserCopyWith(_AddedUser value, $Res Function(_AddedUser) then) =
+      __$AddedUserCopyWithImpl<$Res>;
 
   $Res call({User user});
 
@@ -351,8 +369,10 @@ abstract class _$AddedUserCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$AddedUserCopyWithImpl<$Res> extends _$ShareExperienceInternallyEventCopyWithImpl<$Res> implements _$AddedUserCopyWith<$Res> {
-  __$AddedUserCopyWithImpl(_AddedUser _value, $Res Function(_AddedUser) _then) : super(_value, (v) => _then(v as _AddedUser));
+class __$AddedUserCopyWithImpl<$Res> extends _$ShareExperienceInternallyEventCopyWithImpl<$Res>
+    implements _$AddedUserCopyWith<$Res> {
+  __$AddedUserCopyWithImpl(_AddedUser _value, $Res Function(_AddedUser) _then)
+      : super(_value, (v) => _then(v as _AddedUser));
 
   @override
   _AddedUser get _value => super._value as _AddedUser;
@@ -392,7 +412,10 @@ class _$_AddedUser implements _AddedUser {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _AddedUser && (identical(other.user, user) || const DeepCollectionEquality().equals(other.user, user)));
+    return identical(this, other) ||
+        (other is _AddedUser &&
+            (identical(other.user, user) ||
+                const DeepCollectionEquality().equals(other.user, user)));
   }
 
   @override
@@ -400,7 +423,8 @@ class _$_AddedUser implements _AddedUser {
 
   @JsonKey(ignore: true)
   @override
-  _$AddedUserCopyWith<_AddedUser> get copyWith => __$AddedUserCopyWithImpl<_AddedUser>(this, _$identity);
+  _$AddedUserCopyWith<_AddedUser> get copyWith =>
+      __$AddedUserCopyWithImpl<_AddedUser>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -466,12 +490,15 @@ abstract class _AddedUser implements ShareExperienceInternallyEvent {
 
 /// @nodoc
 abstract class _$SharedCopyWith<$Res> {
-  factory _$SharedCopyWith(_Shared value, $Res Function(_Shared) then) = __$SharedCopyWithImpl<$Res>;
+  factory _$SharedCopyWith(_Shared value, $Res Function(_Shared) then) =
+      __$SharedCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$SharedCopyWithImpl<$Res> extends _$ShareExperienceInternallyEventCopyWithImpl<$Res> implements _$SharedCopyWith<$Res> {
-  __$SharedCopyWithImpl(_Shared _value, $Res Function(_Shared) _then) : super(_value, (v) => _then(v as _Shared));
+class __$SharedCopyWithImpl<$Res> extends _$ShareExperienceInternallyEventCopyWithImpl<$Res>
+    implements _$SharedCopyWith<$Res> {
+  __$SharedCopyWithImpl(_Shared _value, $Res Function(_Shared) _then)
+      : super(_value, (v) => _then(v as _Shared));
 
   @override
   _Shared get _value => super._value as _Shared;
@@ -556,7 +583,8 @@ abstract class _Shared implements ShareExperienceInternallyEvent {
 class _$ShareExperienceInternallyStateTearOff {
   const _$ShareExperienceInternallyStateTearOff();
 
-  _ShareExperienceInternallyState call({required Experience experience, required KtSet<User> users, required bool submitted}) {
+  _ShareExperienceInternallyState call(
+      {required Experience experience, required KtSet<User> users, required bool submitted}) {
     return _ShareExperienceInternallyState(
       experience: experience,
       users: users,
@@ -577,12 +605,15 @@ mixin _$ShareExperienceInternallyState {
   bool get submitted => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
-  $ShareExperienceInternallyStateCopyWith<ShareExperienceInternallyState> get copyWith => throw _privateConstructorUsedError;
+  $ShareExperienceInternallyStateCopyWith<ShareExperienceInternallyState> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $ShareExperienceInternallyStateCopyWith<$Res> {
-  factory $ShareExperienceInternallyStateCopyWith(ShareExperienceInternallyState value, $Res Function(ShareExperienceInternallyState) then) = _$ShareExperienceInternallyStateCopyWithImpl<$Res>;
+  factory $ShareExperienceInternallyStateCopyWith(ShareExperienceInternallyState value,
+          $Res Function(ShareExperienceInternallyState) then) =
+      _$ShareExperienceInternallyStateCopyWithImpl<$Res>;
 
   $Res call({Experience experience, KtSet<User> users, bool submitted});
 
@@ -590,7 +621,8 @@ abstract class $ShareExperienceInternallyStateCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$ShareExperienceInternallyStateCopyWithImpl<$Res> implements $ShareExperienceInternallyStateCopyWith<$Res> {
+class _$ShareExperienceInternallyStateCopyWithImpl<$Res>
+    implements $ShareExperienceInternallyStateCopyWith<$Res> {
   _$ShareExperienceInternallyStateCopyWithImpl(this._value, this._then);
 
   final ShareExperienceInternallyState _value;
@@ -629,8 +661,11 @@ class _$ShareExperienceInternallyStateCopyWithImpl<$Res> implements $ShareExperi
 }
 
 /// @nodoc
-abstract class _$ShareExperienceInternallyStateCopyWith<$Res> implements $ShareExperienceInternallyStateCopyWith<$Res> {
-  factory _$ShareExperienceInternallyStateCopyWith(_ShareExperienceInternallyState value, $Res Function(_ShareExperienceInternallyState) then) = __$ShareExperienceInternallyStateCopyWithImpl<$Res>;
+abstract class _$ShareExperienceInternallyStateCopyWith<$Res>
+    implements $ShareExperienceInternallyStateCopyWith<$Res> {
+  factory _$ShareExperienceInternallyStateCopyWith(_ShareExperienceInternallyState value,
+          $Res Function(_ShareExperienceInternallyState) then) =
+      __$ShareExperienceInternallyStateCopyWithImpl<$Res>;
 
   @override
   $Res call({Experience experience, KtSet<User> users, bool submitted});
@@ -640,8 +675,11 @@ abstract class _$ShareExperienceInternallyStateCopyWith<$Res> implements $ShareE
 }
 
 /// @nodoc
-class __$ShareExperienceInternallyStateCopyWithImpl<$Res> extends _$ShareExperienceInternallyStateCopyWithImpl<$Res> implements _$ShareExperienceInternallyStateCopyWith<$Res> {
-  __$ShareExperienceInternallyStateCopyWithImpl(_ShareExperienceInternallyState _value, $Res Function(_ShareExperienceInternallyState) _then)
+class __$ShareExperienceInternallyStateCopyWithImpl<$Res>
+    extends _$ShareExperienceInternallyStateCopyWithImpl<$Res>
+    implements _$ShareExperienceInternallyStateCopyWith<$Res> {
+  __$ShareExperienceInternallyStateCopyWithImpl(
+      _ShareExperienceInternallyState _value, $Res Function(_ShareExperienceInternallyState) _then)
       : super(_value, (v) => _then(v as _ShareExperienceInternallyState));
 
   @override
@@ -673,7 +711,8 @@ class __$ShareExperienceInternallyStateCopyWithImpl<$Res> extends _$ShareExperie
 /// @nodoc
 
 class _$_ShareExperienceInternallyState implements _ShareExperienceInternallyState {
-  const _$_ShareExperienceInternallyState({required this.experience, required this.users, required this.submitted});
+  const _$_ShareExperienceInternallyState(
+      {required this.experience, required this.users, required this.submitted});
 
   @override
   final Experience experience;
@@ -691,21 +730,33 @@ class _$_ShareExperienceInternallyState implements _ShareExperienceInternallySta
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other is _ShareExperienceInternallyState &&
-            (identical(other.experience, experience) || const DeepCollectionEquality().equals(other.experience, experience)) &&
-            (identical(other.users, users) || const DeepCollectionEquality().equals(other.users, users)) &&
-            (identical(other.submitted, submitted) || const DeepCollectionEquality().equals(other.submitted, submitted)));
+            (identical(other.experience, experience) ||
+                const DeepCollectionEquality().equals(other.experience, experience)) &&
+            (identical(other.users, users) ||
+                const DeepCollectionEquality().equals(other.users, users)) &&
+            (identical(other.submitted, submitted) ||
+                const DeepCollectionEquality().equals(other.submitted, submitted)));
   }
-  
+
   @override
-  int get hashCode => runtimeType.hashCode ^ const DeepCollectionEquality().hash(experience) ^ const DeepCollectionEquality().hash(users) ^ const DeepCollectionEquality().hash(submitted);
+  int get hashCode =>
+      runtimeType.hashCode ^
+      const DeepCollectionEquality().hash(experience) ^
+      const DeepCollectionEquality().hash(users) ^
+      const DeepCollectionEquality().hash(submitted);
 
   @JsonKey(ignore: true)
   @override
-  _$ShareExperienceInternallyStateCopyWith<_ShareExperienceInternallyState> get copyWith => __$ShareExperienceInternallyStateCopyWithImpl<_ShareExperienceInternallyState>(this, _$identity);
+  _$ShareExperienceInternallyStateCopyWith<_ShareExperienceInternallyState> get copyWith =>
+      __$ShareExperienceInternallyStateCopyWithImpl<_ShareExperienceInternallyState>(
+          this, _$identity);
 }
 
 abstract class _ShareExperienceInternallyState implements ShareExperienceInternallyState {
-  const factory _ShareExperienceInternallyState({required Experience experience, required KtSet<User> users, required bool submitted}) = _$_ShareExperienceInternallyState;
+  const factory _ShareExperienceInternallyState(
+      {required Experience experience,
+      required KtSet<User> users,
+      required bool submitted}) = _$_ShareExperienceInternallyState;
 
   @override
   Experience get experience => throw _privateConstructorUsedError;
@@ -718,5 +769,6 @@ abstract class _ShareExperienceInternallyState implements ShareExperienceInterna
 
   @override
   @JsonKey(ignore: true)
-  _$ShareExperienceInternallyStateCopyWith<_ShareExperienceInternallyState> get copyWith => throw _privateConstructorUsedError;
+  _$ShareExperienceInternallyStateCopyWith<_ShareExperienceInternallyState> get copyWith =>
+      throw _privateConstructorUsedError;
 }

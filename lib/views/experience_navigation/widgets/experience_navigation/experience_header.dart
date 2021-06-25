@@ -16,6 +16,7 @@ class ExperienceHeader extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Row(
+      mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
         Flexible(
           flex: 5,
@@ -28,17 +29,20 @@ class ExperienceHeader extends StatelessWidget {
             ),
           ),
         ),
-        const Expanded(
-          child: SizedBox(
-            width: 1,
-          ),
-        ),
-        LikeDislikeButtonBuilder(
-          experience: experience,
-        ),
-        const SizedBox(width: 5),
-        Text(
-          createWorldOnDisplay(experience.likedBy.length),
+        Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            LikeDislikeButtonBuilder(
+              experienceId: experience.id,
+            ),
+            const SizedBox(width: 5),
+            Text(
+              createWorldOnDisplay(experience.likedBy.length),
+              style: const TextStyle(
+                fontWeight: FontWeight.w800,
+              ),
+            ),
+          ],
         ),
       ],
     );

@@ -82,11 +82,6 @@ class DevelopmentProfileRepository implements ProfileRepositoryInterface {
   }
 
   @override
-  Future<Either<Failure, Unit>> deleteExperience(UniqueId experienceId) {
-    throw UnimplementedError();
-  }
-
-  @override
   Stream<Either<Failure, KtList<User>>> watchBlockedUsers(UniqueId id) {
     throw UnimplementedError();
   }

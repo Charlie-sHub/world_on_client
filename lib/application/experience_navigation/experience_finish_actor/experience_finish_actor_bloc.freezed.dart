@@ -54,12 +54,15 @@ mixin _$ExperienceFinishActorEvent {
       throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
-  $ExperienceFinishActorEventCopyWith<ExperienceFinishActorEvent> get copyWith => throw _privateConstructorUsedError;
+  $ExperienceFinishActorEventCopyWith<ExperienceFinishActorEvent> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $ExperienceFinishActorEventCopyWith<$Res> {
-  factory $ExperienceFinishActorEventCopyWith(ExperienceFinishActorEvent value, $Res Function(ExperienceFinishActorEvent) then) = _$ExperienceFinishActorEventCopyWithImpl<$Res>;
+  factory $ExperienceFinishActorEventCopyWith(
+          ExperienceFinishActorEvent value, $Res Function(ExperienceFinishActorEvent) then) =
+      _$ExperienceFinishActorEventCopyWithImpl<$Res>;
 
   $Res call({Experience experience});
 
@@ -67,7 +70,8 @@ abstract class $ExperienceFinishActorEventCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$ExperienceFinishActorEventCopyWithImpl<$Res> implements $ExperienceFinishActorEventCopyWith<$Res> {
+class _$ExperienceFinishActorEventCopyWithImpl<$Res>
+    implements $ExperienceFinishActorEventCopyWith<$Res> {
   _$ExperienceFinishActorEventCopyWithImpl(this._value, this._then);
 
   final ExperienceFinishActorEvent _value;
@@ -96,8 +100,11 @@ class _$ExperienceFinishActorEventCopyWithImpl<$Res> implements $ExperienceFinis
 }
 
 /// @nodoc
-abstract class _$FinishedExperienceCopyWith<$Res> implements $ExperienceFinishActorEventCopyWith<$Res> {
-  factory _$FinishedExperienceCopyWith(_FinishedExperience value, $Res Function(_FinishedExperience) then) = __$FinishedExperienceCopyWithImpl<$Res>;
+abstract class _$FinishedExperienceCopyWith<$Res>
+    implements $ExperienceFinishActorEventCopyWith<$Res> {
+  factory _$FinishedExperienceCopyWith(
+          _FinishedExperience value, $Res Function(_FinishedExperience) then) =
+      __$FinishedExperienceCopyWithImpl<$Res>;
 
   @override
   $Res call({Experience experience});
@@ -107,8 +114,11 @@ abstract class _$FinishedExperienceCopyWith<$Res> implements $ExperienceFinishAc
 }
 
 /// @nodoc
-class __$FinishedExperienceCopyWithImpl<$Res> extends _$ExperienceFinishActorEventCopyWithImpl<$Res> implements _$FinishedExperienceCopyWith<$Res> {
-  __$FinishedExperienceCopyWithImpl(_FinishedExperience _value, $Res Function(_FinishedExperience) _then) : super(_value, (v) => _then(v as _FinishedExperience));
+class __$FinishedExperienceCopyWithImpl<$Res> extends _$ExperienceFinishActorEventCopyWithImpl<$Res>
+    implements _$FinishedExperienceCopyWith<$Res> {
+  __$FinishedExperienceCopyWithImpl(
+      _FinishedExperience _value, $Res Function(_FinishedExperience) _then)
+      : super(_value, (v) => _then(v as _FinishedExperience));
 
   @override
   _FinishedExperience get _value => super._value as _FinishedExperience;
@@ -141,7 +151,10 @@ class _$_FinishedExperience implements _FinishedExperience {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _FinishedExperience && (identical(other.experience, experience) || const DeepCollectionEquality().equals(other.experience, experience)));
+    return identical(this, other) ||
+        (other is _FinishedExperience &&
+            (identical(other.experience, experience) ||
+                const DeepCollectionEquality().equals(other.experience, experience)));
   }
 
   @override
@@ -149,7 +162,8 @@ class _$_FinishedExperience implements _FinishedExperience {
 
   @JsonKey(ignore: true)
   @override
-  _$FinishedExperienceCopyWith<_FinishedExperience> get copyWith => __$FinishedExperienceCopyWithImpl<_FinishedExperience>(this, _$identity);
+  _$FinishedExperienceCopyWith<_FinishedExperience> get copyWith =>
+      __$FinishedExperienceCopyWithImpl<_FinishedExperience>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -200,7 +214,8 @@ abstract class _FinishedExperience implements ExperienceFinishActorEvent {
 
   @override
   @JsonKey(ignore: true)
-  _$FinishedExperienceCopyWith<_FinishedExperience> get copyWith => throw _privateConstructorUsedError;
+  _$FinishedExperienceCopyWith<_FinishedExperience> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -272,11 +287,14 @@ mixin _$ExperienceFinishActorState {
 
 /// @nodoc
 abstract class $ExperienceFinishActorStateCopyWith<$Res> {
-  factory $ExperienceFinishActorStateCopyWith(ExperienceFinishActorState value, $Res Function(ExperienceFinishActorState) then) = _$ExperienceFinishActorStateCopyWithImpl<$Res>;
+  factory $ExperienceFinishActorStateCopyWith(
+          ExperienceFinishActorState value, $Res Function(ExperienceFinishActorState) then) =
+      _$ExperienceFinishActorStateCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class _$ExperienceFinishActorStateCopyWithImpl<$Res> implements $ExperienceFinishActorStateCopyWith<$Res> {
+class _$ExperienceFinishActorStateCopyWithImpl<$Res>
+    implements $ExperienceFinishActorStateCopyWith<$Res> {
   _$ExperienceFinishActorStateCopyWithImpl(this._value, this._then);
 
   final ExperienceFinishActorState _value;
@@ -287,12 +305,15 @@ class _$ExperienceFinishActorStateCopyWithImpl<$Res> implements $ExperienceFinis
 
 /// @nodoc
 abstract class _$InitialCopyWith<$Res> {
-  factory _$InitialCopyWith(_Initial value, $Res Function(_Initial) then) = __$InitialCopyWithImpl<$Res>;
+  factory _$InitialCopyWith(_Initial value, $Res Function(_Initial) then) =
+      __$InitialCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$InitialCopyWithImpl<$Res> extends _$ExperienceFinishActorStateCopyWithImpl<$Res> implements _$InitialCopyWith<$Res> {
-  __$InitialCopyWithImpl(_Initial _value, $Res Function(_Initial) _then) : super(_value, (v) => _then(v as _Initial));
+class __$InitialCopyWithImpl<$Res> extends _$ExperienceFinishActorStateCopyWithImpl<$Res>
+    implements _$InitialCopyWith<$Res> {
+  __$InitialCopyWithImpl(_Initial _value, $Res Function(_Initial) _then)
+      : super(_value, (v) => _then(v as _Initial));
 
   @override
   _Initial get _value => super._value as _Initial;
@@ -375,12 +396,16 @@ abstract class _Initial implements ExperienceFinishActorState {
 
 /// @nodoc
 abstract class _$ActionInProgressCopyWith<$Res> {
-  factory _$ActionInProgressCopyWith(_ActionInProgress value, $Res Function(_ActionInProgress) then) = __$ActionInProgressCopyWithImpl<$Res>;
+  factory _$ActionInProgressCopyWith(
+          _ActionInProgress value, $Res Function(_ActionInProgress) then) =
+      __$ActionInProgressCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$ActionInProgressCopyWithImpl<$Res> extends _$ExperienceFinishActorStateCopyWithImpl<$Res> implements _$ActionInProgressCopyWith<$Res> {
-  __$ActionInProgressCopyWithImpl(_ActionInProgress _value, $Res Function(_ActionInProgress) _then) : super(_value, (v) => _then(v as _ActionInProgress));
+class __$ActionInProgressCopyWithImpl<$Res> extends _$ExperienceFinishActorStateCopyWithImpl<$Res>
+    implements _$ActionInProgressCopyWith<$Res> {
+  __$ActionInProgressCopyWithImpl(_ActionInProgress _value, $Res Function(_ActionInProgress) _then)
+      : super(_value, (v) => _then(v as _ActionInProgress));
 
   @override
   _ActionInProgress get _value => super._value as _ActionInProgress;
@@ -463,14 +488,17 @@ abstract class _ActionInProgress implements ExperienceFinishActorState {
 
 /// @nodoc
 abstract class _$FinishSuccessCopyWith<$Res> {
-  factory _$FinishSuccessCopyWith(_FinishSuccess value, $Res Function(_FinishSuccess) then) = __$FinishSuccessCopyWithImpl<$Res>;
+  factory _$FinishSuccessCopyWith(_FinishSuccess value, $Res Function(_FinishSuccess) then) =
+      __$FinishSuccessCopyWithImpl<$Res>;
 
   $Res call({int amountXP, bool leveledUp});
 }
 
 /// @nodoc
-class __$FinishSuccessCopyWithImpl<$Res> extends _$ExperienceFinishActorStateCopyWithImpl<$Res> implements _$FinishSuccessCopyWith<$Res> {
-  __$FinishSuccessCopyWithImpl(_FinishSuccess _value, $Res Function(_FinishSuccess) _then) : super(_value, (v) => _then(v as _FinishSuccess));
+class __$FinishSuccessCopyWithImpl<$Res> extends _$ExperienceFinishActorStateCopyWithImpl<$Res>
+    implements _$FinishSuccessCopyWith<$Res> {
+  __$FinishSuccessCopyWithImpl(_FinishSuccess _value, $Res Function(_FinishSuccess) _then)
+      : super(_value, (v) => _then(v as _FinishSuccess));
 
   @override
   _FinishSuccess get _value => super._value as _FinishSuccess;
@@ -512,16 +540,22 @@ class _$_FinishSuccess implements _FinishSuccess {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other is _FinishSuccess &&
-            (identical(other.amountXP, amountXP) || const DeepCollectionEquality().equals(other.amountXP, amountXP)) &&
-            (identical(other.leveledUp, leveledUp) || const DeepCollectionEquality().equals(other.leveledUp, leveledUp)));
+            (identical(other.amountXP, amountXP) ||
+                const DeepCollectionEquality().equals(other.amountXP, amountXP)) &&
+            (identical(other.leveledUp, leveledUp) ||
+                const DeepCollectionEquality().equals(other.leveledUp, leveledUp)));
   }
 
   @override
-  int get hashCode => runtimeType.hashCode ^ const DeepCollectionEquality().hash(amountXP) ^ const DeepCollectionEquality().hash(leveledUp);
+  int get hashCode =>
+      runtimeType.hashCode ^
+      const DeepCollectionEquality().hash(amountXP) ^
+      const DeepCollectionEquality().hash(leveledUp);
 
   @JsonKey(ignore: true)
   @override
-  _$FinishSuccessCopyWith<_FinishSuccess> get copyWith => __$FinishSuccessCopyWithImpl<_FinishSuccess>(this, _$identity);
+  _$FinishSuccessCopyWith<_FinishSuccess> get copyWith =>
+      __$FinishSuccessCopyWithImpl<_FinishSuccess>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -589,7 +623,8 @@ abstract class _FinishSuccess implements ExperienceFinishActorState {
 
 /// @nodoc
 abstract class _$FinishFailureCopyWith<$Res> {
-  factory _$FinishFailureCopyWith(_FinishFailure value, $Res Function(_FinishFailure) then) = __$FinishFailureCopyWithImpl<$Res>;
+  factory _$FinishFailureCopyWith(_FinishFailure value, $Res Function(_FinishFailure) then) =
+      __$FinishFailureCopyWithImpl<$Res>;
 
   $Res call({Failure<dynamic> failure});
 
@@ -597,8 +632,10 @@ abstract class _$FinishFailureCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$FinishFailureCopyWithImpl<$Res> extends _$ExperienceFinishActorStateCopyWithImpl<$Res> implements _$FinishFailureCopyWith<$Res> {
-  __$FinishFailureCopyWithImpl(_FinishFailure _value, $Res Function(_FinishFailure) _then) : super(_value, (v) => _then(v as _FinishFailure));
+class __$FinishFailureCopyWithImpl<$Res> extends _$ExperienceFinishActorStateCopyWithImpl<$Res>
+    implements _$FinishFailureCopyWith<$Res> {
+  __$FinishFailureCopyWithImpl(_FinishFailure _value, $Res Function(_FinishFailure) _then)
+      : super(_value, (v) => _then(v as _FinishFailure));
 
   @override
   _FinishFailure get _value => super._value as _FinishFailure;
@@ -638,7 +675,10 @@ class _$_FinishFailure implements _FinishFailure {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _FinishFailure && (identical(other.failure, failure) || const DeepCollectionEquality().equals(other.failure, failure)));
+    return identical(this, other) ||
+        (other is _FinishFailure &&
+            (identical(other.failure, failure) ||
+                const DeepCollectionEquality().equals(other.failure, failure)));
   }
 
   @override
@@ -646,7 +686,8 @@ class _$_FinishFailure implements _FinishFailure {
 
   @JsonKey(ignore: true)
   @override
-  _$FinishFailureCopyWith<_FinishFailure> get copyWith => __$FinishFailureCopyWithImpl<_FinishFailure>(this, _$identity);
+  _$FinishFailureCopyWith<_FinishFailure> get copyWith =>
+      __$FinishFailureCopyWithImpl<_FinishFailure>(this, _$identity);
 
   @override
   @optionalTypeArgs

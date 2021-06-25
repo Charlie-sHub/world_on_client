@@ -62,11 +62,14 @@ mixin _$BuyPromotionPlanActorEvent {
 
 /// @nodoc
 abstract class $BuyPromotionPlanActorEventCopyWith<$Res> {
-  factory $BuyPromotionPlanActorEventCopyWith(BuyPromotionPlanActorEvent value, $Res Function(BuyPromotionPlanActorEvent) then) = _$BuyPromotionPlanActorEventCopyWithImpl<$Res>;
+  factory $BuyPromotionPlanActorEventCopyWith(
+          BuyPromotionPlanActorEvent value, $Res Function(BuyPromotionPlanActorEvent) then) =
+      _$BuyPromotionPlanActorEventCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class _$BuyPromotionPlanActorEventCopyWithImpl<$Res> implements $BuyPromotionPlanActorEventCopyWith<$Res> {
+class _$BuyPromotionPlanActorEventCopyWithImpl<$Res>
+    implements $BuyPromotionPlanActorEventCopyWith<$Res> {
   _$BuyPromotionPlanActorEventCopyWithImpl(this._value, this._then);
 
   final BuyPromotionPlanActorEvent _value;
@@ -77,12 +80,15 @@ class _$BuyPromotionPlanActorEventCopyWithImpl<$Res> implements $BuyPromotionPla
 
 /// @nodoc
 abstract class _$InitializedCopyWith<$Res> {
-  factory _$InitializedCopyWith(_Initialized value, $Res Function(_Initialized) then) = __$InitializedCopyWithImpl<$Res>;
+  factory _$InitializedCopyWith(_Initialized value, $Res Function(_Initialized) then) =
+      __$InitializedCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$InitializedCopyWithImpl<$Res> extends _$BuyPromotionPlanActorEventCopyWithImpl<$Res> implements _$InitializedCopyWith<$Res> {
-  __$InitializedCopyWithImpl(_Initialized _value, $Res Function(_Initialized) _then) : super(_value, (v) => _then(v as _Initialized));
+class __$InitializedCopyWithImpl<$Res> extends _$BuyPromotionPlanActorEventCopyWithImpl<$Res>
+    implements _$InitializedCopyWith<$Res> {
+  __$InitializedCopyWithImpl(_Initialized _value, $Res Function(_Initialized) _then)
+      : super(_value, (v) => _then(v as _Initialized));
 
   @override
   _Initialized get _value => super._value as _Initialized;
@@ -157,7 +163,9 @@ abstract class _Initialized implements BuyPromotionPlanActorEvent {
 
 /// @nodoc
 abstract class _$BoughtPromotionPlanCopyWith<$Res> {
-  factory _$BoughtPromotionPlanCopyWith(_BoughtPromotionPlan value, $Res Function(_BoughtPromotionPlan) then) = __$BoughtPromotionPlanCopyWithImpl<$Res>;
+  factory _$BoughtPromotionPlanCopyWith(
+          _BoughtPromotionPlan value, $Res Function(_BoughtPromotionPlan) then) =
+      __$BoughtPromotionPlanCopyWithImpl<$Res>;
 
   $Res call({PromotionPlan promotionPlan});
 
@@ -165,8 +173,12 @@ abstract class _$BoughtPromotionPlanCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$BoughtPromotionPlanCopyWithImpl<$Res> extends _$BuyPromotionPlanActorEventCopyWithImpl<$Res> implements _$BoughtPromotionPlanCopyWith<$Res> {
-  __$BoughtPromotionPlanCopyWithImpl(_BoughtPromotionPlan _value, $Res Function(_BoughtPromotionPlan) _then) : super(_value, (v) => _then(v as _BoughtPromotionPlan));
+class __$BoughtPromotionPlanCopyWithImpl<$Res>
+    extends _$BuyPromotionPlanActorEventCopyWithImpl<$Res>
+    implements _$BoughtPromotionPlanCopyWith<$Res> {
+  __$BoughtPromotionPlanCopyWithImpl(
+      _BoughtPromotionPlan _value, $Res Function(_BoughtPromotionPlan) _then)
+      : super(_value, (v) => _then(v as _BoughtPromotionPlan));
 
   @override
   _BoughtPromotionPlan get _value => super._value as _BoughtPromotionPlan;
@@ -206,7 +218,10 @@ class _$_BoughtPromotionPlan implements _BoughtPromotionPlan {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _BoughtPromotionPlan && (identical(other.promotionPlan, promotionPlan) || const DeepCollectionEquality().equals(other.promotionPlan, promotionPlan)));
+    return identical(this, other) ||
+        (other is _BoughtPromotionPlan &&
+            (identical(other.promotionPlan, promotionPlan) ||
+                const DeepCollectionEquality().equals(other.promotionPlan, promotionPlan)));
   }
 
   @override
@@ -214,7 +229,8 @@ class _$_BoughtPromotionPlan implements _BoughtPromotionPlan {
 
   @JsonKey(ignore: true)
   @override
-  _$BoughtPromotionPlanCopyWith<_BoughtPromotionPlan> get copyWith => __$BoughtPromotionPlanCopyWithImpl<_BoughtPromotionPlan>(this, _$identity);
+  _$BoughtPromotionPlanCopyWith<_BoughtPromotionPlan> get copyWith =>
+      __$BoughtPromotionPlanCopyWithImpl<_BoughtPromotionPlan>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -267,7 +283,8 @@ abstract class _BoughtPromotionPlan implements BuyPromotionPlanActorEvent {
   PromotionPlan get promotionPlan => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
-  _$BoughtPromotionPlanCopyWith<_BoughtPromotionPlan> get copyWith => throw _privateConstructorUsedError;
+  _$BoughtPromotionPlanCopyWith<_BoughtPromotionPlan> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -354,11 +371,14 @@ mixin _$BuyPromotionPlanActorState {
 
 /// @nodoc
 abstract class $BuyPromotionPlanActorStateCopyWith<$Res> {
-  factory $BuyPromotionPlanActorStateCopyWith(BuyPromotionPlanActorState value, $Res Function(BuyPromotionPlanActorState) then) = _$BuyPromotionPlanActorStateCopyWithImpl<$Res>;
+  factory $BuyPromotionPlanActorStateCopyWith(
+          BuyPromotionPlanActorState value, $Res Function(BuyPromotionPlanActorState) then) =
+      _$BuyPromotionPlanActorStateCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class _$BuyPromotionPlanActorStateCopyWithImpl<$Res> implements $BuyPromotionPlanActorStateCopyWith<$Res> {
+class _$BuyPromotionPlanActorStateCopyWithImpl<$Res>
+    implements $BuyPromotionPlanActorStateCopyWith<$Res> {
   _$BuyPromotionPlanActorStateCopyWithImpl(this._value, this._then);
 
   final BuyPromotionPlanActorState _value;
@@ -369,12 +389,15 @@ class _$BuyPromotionPlanActorStateCopyWithImpl<$Res> implements $BuyPromotionPla
 
 /// @nodoc
 abstract class _$InitialCopyWith<$Res> {
-  factory _$InitialCopyWith(_Initial value, $Res Function(_Initial) then) = __$InitialCopyWithImpl<$Res>;
+  factory _$InitialCopyWith(_Initial value, $Res Function(_Initial) then) =
+      __$InitialCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$InitialCopyWithImpl<$Res> extends _$BuyPromotionPlanActorStateCopyWithImpl<$Res> implements _$InitialCopyWith<$Res> {
-  __$InitialCopyWithImpl(_Initial _value, $Res Function(_Initial) _then) : super(_value, (v) => _then(v as _Initial));
+class __$InitialCopyWithImpl<$Res> extends _$BuyPromotionPlanActorStateCopyWithImpl<$Res>
+    implements _$InitialCopyWith<$Res> {
+  __$InitialCopyWithImpl(_Initial _value, $Res Function(_Initial) _then)
+      : super(_value, (v) => _then(v as _Initial));
 
   @override
   _Initial get _value => super._value as _Initial;
@@ -465,12 +488,16 @@ abstract class _Initial implements BuyPromotionPlanActorState {
 
 /// @nodoc
 abstract class _$ActionInProgressCopyWith<$Res> {
-  factory _$ActionInProgressCopyWith(_ActionInProgress value, $Res Function(_ActionInProgress) then) = __$ActionInProgressCopyWithImpl<$Res>;
+  factory _$ActionInProgressCopyWith(
+          _ActionInProgress value, $Res Function(_ActionInProgress) then) =
+      __$ActionInProgressCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$ActionInProgressCopyWithImpl<$Res> extends _$BuyPromotionPlanActorStateCopyWithImpl<$Res> implements _$ActionInProgressCopyWith<$Res> {
-  __$ActionInProgressCopyWithImpl(_ActionInProgress _value, $Res Function(_ActionInProgress) _then) : super(_value, (v) => _then(v as _ActionInProgress));
+class __$ActionInProgressCopyWithImpl<$Res> extends _$BuyPromotionPlanActorStateCopyWithImpl<$Res>
+    implements _$ActionInProgressCopyWith<$Res> {
+  __$ActionInProgressCopyWithImpl(_ActionInProgress _value, $Res Function(_ActionInProgress) _then)
+      : super(_value, (v) => _then(v as _ActionInProgress));
 
   @override
   _ActionInProgress get _value => super._value as _ActionInProgress;
@@ -561,12 +588,15 @@ abstract class _ActionInProgress implements BuyPromotionPlanActorState {
 
 /// @nodoc
 abstract class _$PurchaseSuccessCopyWith<$Res> {
-  factory _$PurchaseSuccessCopyWith(_PurchaseSuccess value, $Res Function(_PurchaseSuccess) then) = __$PurchaseSuccessCopyWithImpl<$Res>;
+  factory _$PurchaseSuccessCopyWith(_PurchaseSuccess value, $Res Function(_PurchaseSuccess) then) =
+      __$PurchaseSuccessCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$PurchaseSuccessCopyWithImpl<$Res> extends _$BuyPromotionPlanActorStateCopyWithImpl<$Res> implements _$PurchaseSuccessCopyWith<$Res> {
-  __$PurchaseSuccessCopyWithImpl(_PurchaseSuccess _value, $Res Function(_PurchaseSuccess) _then) : super(_value, (v) => _then(v as _PurchaseSuccess));
+class __$PurchaseSuccessCopyWithImpl<$Res> extends _$BuyPromotionPlanActorStateCopyWithImpl<$Res>
+    implements _$PurchaseSuccessCopyWith<$Res> {
+  __$PurchaseSuccessCopyWithImpl(_PurchaseSuccess _value, $Res Function(_PurchaseSuccess) _then)
+      : super(_value, (v) => _then(v as _PurchaseSuccess));
 
   @override
   _PurchaseSuccess get _value => super._value as _PurchaseSuccess;
@@ -657,12 +687,15 @@ abstract class _PurchaseSuccess implements BuyPromotionPlanActorState {
 
 /// @nodoc
 abstract class _$NoPromotionPlanCopyWith<$Res> {
-  factory _$NoPromotionPlanCopyWith(_NoPromotionPlan value, $Res Function(_NoPromotionPlan) then) = __$NoPromotionPlanCopyWithImpl<$Res>;
+  factory _$NoPromotionPlanCopyWith(_NoPromotionPlan value, $Res Function(_NoPromotionPlan) then) =
+      __$NoPromotionPlanCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$NoPromotionPlanCopyWithImpl<$Res> extends _$BuyPromotionPlanActorStateCopyWithImpl<$Res> implements _$NoPromotionPlanCopyWith<$Res> {
-  __$NoPromotionPlanCopyWithImpl(_NoPromotionPlan _value, $Res Function(_NoPromotionPlan) _then) : super(_value, (v) => _then(v as _NoPromotionPlan));
+class __$NoPromotionPlanCopyWithImpl<$Res> extends _$BuyPromotionPlanActorStateCopyWithImpl<$Res>
+    implements _$NoPromotionPlanCopyWith<$Res> {
+  __$NoPromotionPlanCopyWithImpl(_NoPromotionPlan _value, $Res Function(_NoPromotionPlan) _then)
+      : super(_value, (v) => _then(v as _NoPromotionPlan));
 
   @override
   _NoPromotionPlan get _value => super._value as _NoPromotionPlan;
@@ -753,7 +786,8 @@ abstract class _NoPromotionPlan implements BuyPromotionPlanActorState {
 
 /// @nodoc
 abstract class _$CurrentPlanCopyWith<$Res> {
-  factory _$CurrentPlanCopyWith(_CurrentPlan value, $Res Function(_CurrentPlan) then) = __$CurrentPlanCopyWithImpl<$Res>;
+  factory _$CurrentPlanCopyWith(_CurrentPlan value, $Res Function(_CurrentPlan) then) =
+      __$CurrentPlanCopyWithImpl<$Res>;
 
   $Res call({PromotionPlan promotionPlan});
 
@@ -761,8 +795,10 @@ abstract class _$CurrentPlanCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$CurrentPlanCopyWithImpl<$Res> extends _$BuyPromotionPlanActorStateCopyWithImpl<$Res> implements _$CurrentPlanCopyWith<$Res> {
-  __$CurrentPlanCopyWithImpl(_CurrentPlan _value, $Res Function(_CurrentPlan) _then) : super(_value, (v) => _then(v as _CurrentPlan));
+class __$CurrentPlanCopyWithImpl<$Res> extends _$BuyPromotionPlanActorStateCopyWithImpl<$Res>
+    implements _$CurrentPlanCopyWith<$Res> {
+  __$CurrentPlanCopyWithImpl(_CurrentPlan _value, $Res Function(_CurrentPlan) _then)
+      : super(_value, (v) => _then(v as _CurrentPlan));
 
   @override
   _CurrentPlan get _value => super._value as _CurrentPlan;
@@ -802,7 +838,10 @@ class _$_CurrentPlan implements _CurrentPlan {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _CurrentPlan && (identical(other.promotionPlan, promotionPlan) || const DeepCollectionEquality().equals(other.promotionPlan, promotionPlan)));
+    return identical(this, other) ||
+        (other is _CurrentPlan &&
+            (identical(other.promotionPlan, promotionPlan) ||
+                const DeepCollectionEquality().equals(other.promotionPlan, promotionPlan)));
   }
 
   @override
@@ -810,7 +849,8 @@ class _$_CurrentPlan implements _CurrentPlan {
 
   @JsonKey(ignore: true)
   @override
-  _$CurrentPlanCopyWith<_CurrentPlan> get copyWith => __$CurrentPlanCopyWithImpl<_CurrentPlan>(this, _$identity);
+  _$CurrentPlanCopyWith<_CurrentPlan> get copyWith =>
+      __$CurrentPlanCopyWithImpl<_CurrentPlan>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -884,7 +924,8 @@ abstract class _CurrentPlan implements BuyPromotionPlanActorState {
 
 /// @nodoc
 abstract class _$PurchaseFailureCopyWith<$Res> {
-  factory _$PurchaseFailureCopyWith(_PurchaseFailure value, $Res Function(_PurchaseFailure) then) = __$PurchaseFailureCopyWithImpl<$Res>;
+  factory _$PurchaseFailureCopyWith(_PurchaseFailure value, $Res Function(_PurchaseFailure) then) =
+      __$PurchaseFailureCopyWithImpl<$Res>;
 
   $Res call({Failure<dynamic> failure});
 
@@ -892,8 +933,10 @@ abstract class _$PurchaseFailureCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$PurchaseFailureCopyWithImpl<$Res> extends _$BuyPromotionPlanActorStateCopyWithImpl<$Res> implements _$PurchaseFailureCopyWith<$Res> {
-  __$PurchaseFailureCopyWithImpl(_PurchaseFailure _value, $Res Function(_PurchaseFailure) _then) : super(_value, (v) => _then(v as _PurchaseFailure));
+class __$PurchaseFailureCopyWithImpl<$Res> extends _$BuyPromotionPlanActorStateCopyWithImpl<$Res>
+    implements _$PurchaseFailureCopyWith<$Res> {
+  __$PurchaseFailureCopyWithImpl(_PurchaseFailure _value, $Res Function(_PurchaseFailure) _then)
+      : super(_value, (v) => _then(v as _PurchaseFailure));
 
   @override
   _PurchaseFailure get _value => super._value as _PurchaseFailure;
@@ -933,7 +976,10 @@ class _$_PurchaseFailure implements _PurchaseFailure {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _PurchaseFailure && (identical(other.failure, failure) || const DeepCollectionEquality().equals(other.failure, failure)));
+    return identical(this, other) ||
+        (other is _PurchaseFailure &&
+            (identical(other.failure, failure) ||
+                const DeepCollectionEquality().equals(other.failure, failure)));
   }
 
   @override
@@ -941,7 +987,8 @@ class _$_PurchaseFailure implements _PurchaseFailure {
 
   @JsonKey(ignore: true)
   @override
-  _$PurchaseFailureCopyWith<_PurchaseFailure> get copyWith => __$PurchaseFailureCopyWithImpl<_PurchaseFailure>(this, _$identity);
+  _$PurchaseFailureCopyWith<_PurchaseFailure> get copyWith =>
+      __$PurchaseFailureCopyWithImpl<_PurchaseFailure>(this, _$identity);
 
   @override
   @optionalTypeArgs

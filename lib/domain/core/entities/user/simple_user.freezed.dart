@@ -58,9 +58,18 @@ mixin _$SimpleUser {
 
 /// @nodoc
 abstract class $SimpleUserCopyWith<$Res> {
-  factory $SimpleUserCopyWith(SimpleUser value, $Res Function(SimpleUser) then) = _$SimpleUserCopyWithImpl<$Res>;
+  factory $SimpleUserCopyWith(SimpleUser value, $Res Function(SimpleUser) then) =
+      _$SimpleUserCopyWithImpl<$Res>;
 
-  $Res call({UniqueId id, Name name, Name username, String imageURL, UserLevel level, ExperiencePoints experiencePoints, bool adminPowers, int followersAmount});
+  $Res call(
+      {UniqueId id,
+      Name name,
+      Name username,
+      String imageURL,
+      UserLevel level,
+      ExperiencePoints experiencePoints,
+      bool adminPowers,
+      int followersAmount});
 }
 
 /// @nodoc
@@ -121,15 +130,26 @@ class _$SimpleUserCopyWithImpl<$Res> implements $SimpleUserCopyWith<$Res> {
 
 /// @nodoc
 abstract class _$SimpleUserCopyWith<$Res> implements $SimpleUserCopyWith<$Res> {
-  factory _$SimpleUserCopyWith(_SimpleUser value, $Res Function(_SimpleUser) then) = __$SimpleUserCopyWithImpl<$Res>;
+  factory _$SimpleUserCopyWith(_SimpleUser value, $Res Function(_SimpleUser) then) =
+      __$SimpleUserCopyWithImpl<$Res>;
 
   @override
-  $Res call({UniqueId id, Name name, Name username, String imageURL, UserLevel level, ExperiencePoints experiencePoints, bool adminPowers, int followersAmount});
+  $Res call(
+      {UniqueId id,
+      Name name,
+      Name username,
+      String imageURL,
+      UserLevel level,
+      ExperiencePoints experiencePoints,
+      bool adminPowers,
+      int followersAmount});
 }
 
 /// @nodoc
-class __$SimpleUserCopyWithImpl<$Res> extends _$SimpleUserCopyWithImpl<$Res> implements _$SimpleUserCopyWith<$Res> {
-  __$SimpleUserCopyWithImpl(_SimpleUser _value, $Res Function(_SimpleUser) _then) : super(_value, (v) => _then(v as _SimpleUser));
+class __$SimpleUserCopyWithImpl<$Res> extends _$SimpleUserCopyWithImpl<$Res>
+    implements _$SimpleUserCopyWith<$Res> {
+  __$SimpleUserCopyWithImpl(_SimpleUser _value, $Res Function(_SimpleUser) _then)
+      : super(_value, (v) => _then(v as _SimpleUser));
 
   @override
   _SimpleUser get _value => super._value as _SimpleUser;
@@ -223,13 +243,20 @@ class _$_SimpleUser extends _SimpleUser {
     return identical(this, other) ||
         (other is _SimpleUser &&
             (identical(other.id, id) || const DeepCollectionEquality().equals(other.id, id)) &&
-            (identical(other.name, name) || const DeepCollectionEquality().equals(other.name, name)) &&
-            (identical(other.username, username) || const DeepCollectionEquality().equals(other.username, username)) &&
-            (identical(other.imageURL, imageURL) || const DeepCollectionEquality().equals(other.imageURL, imageURL)) &&
-            (identical(other.level, level) || const DeepCollectionEquality().equals(other.level, level)) &&
-            (identical(other.experiencePoints, experiencePoints) || const DeepCollectionEquality().equals(other.experiencePoints, experiencePoints)) &&
-            (identical(other.adminPowers, adminPowers) || const DeepCollectionEquality().equals(other.adminPowers, adminPowers)) &&
-            (identical(other.followersAmount, followersAmount) || const DeepCollectionEquality().equals(other.followersAmount, followersAmount)));
+            (identical(other.name, name) ||
+                const DeepCollectionEquality().equals(other.name, name)) &&
+            (identical(other.username, username) ||
+                const DeepCollectionEquality().equals(other.username, username)) &&
+            (identical(other.imageURL, imageURL) ||
+                const DeepCollectionEquality().equals(other.imageURL, imageURL)) &&
+            (identical(other.level, level) ||
+                const DeepCollectionEquality().equals(other.level, level)) &&
+            (identical(other.experiencePoints, experiencePoints) ||
+                const DeepCollectionEquality().equals(other.experiencePoints, experiencePoints)) &&
+            (identical(other.adminPowers, adminPowers) ||
+                const DeepCollectionEquality().equals(other.adminPowers, adminPowers)) &&
+            (identical(other.followersAmount, followersAmount) ||
+                const DeepCollectionEquality().equals(other.followersAmount, followersAmount)));
   }
 
   @override
@@ -246,7 +273,8 @@ class _$_SimpleUser extends _SimpleUser {
 
   @JsonKey(ignore: true)
   @override
-  _$SimpleUserCopyWith<_SimpleUser> get copyWith => __$SimpleUserCopyWithImpl<_SimpleUser>(this, _$identity);
+  _$SimpleUserCopyWith<_SimpleUser> get copyWith =>
+      __$SimpleUserCopyWithImpl<_SimpleUser>(this, _$identity);
 }
 
 abstract class _SimpleUser extends SimpleUser {

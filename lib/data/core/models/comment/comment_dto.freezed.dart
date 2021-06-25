@@ -64,7 +64,8 @@ mixin _$CommentDto {
 
 /// @nodoc
 abstract class $CommentDtoCopyWith<$Res> {
-  factory $CommentDtoCopyWith(CommentDto value, $Res Function(CommentDto) then) = _$CommentDtoCopyWithImpl<$Res>;
+  factory $CommentDtoCopyWith(CommentDto value, $Res Function(CommentDto) then) =
+      _$CommentDtoCopyWithImpl<$Res>;
 
   $Res call(
       {@JsonKey(ignore: true) String? id,
@@ -132,7 +133,8 @@ class _$CommentDtoCopyWithImpl<$Res> implements $CommentDtoCopyWith<$Res> {
 
 /// @nodoc
 abstract class _$CommentDtoCopyWith<$Res> implements $CommentDtoCopyWith<$Res> {
-  factory _$CommentDtoCopyWith(_CommentDto value, $Res Function(_CommentDto) then) = __$CommentDtoCopyWithImpl<$Res>;
+  factory _$CommentDtoCopyWith(_CommentDto value, $Res Function(_CommentDto) then) =
+      __$CommentDtoCopyWithImpl<$Res>;
 
   @override
   $Res call(
@@ -148,8 +150,10 @@ abstract class _$CommentDtoCopyWith<$Res> implements $CommentDtoCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$CommentDtoCopyWithImpl<$Res> extends _$CommentDtoCopyWithImpl<$Res> implements _$CommentDtoCopyWith<$Res> {
-  __$CommentDtoCopyWithImpl(_CommentDto _value, $Res Function(_CommentDto) _then) : super(_value, (v) => _then(v as _CommentDto));
+class __$CommentDtoCopyWithImpl<$Res> extends _$CommentDtoCopyWithImpl<$Res>
+    implements _$CommentDtoCopyWith<$Res> {
+  __$CommentDtoCopyWithImpl(_CommentDto _value, $Res Function(_CommentDto) _then)
+      : super(_value, (v) => _then(v as _CommentDto));
 
   @override
   _CommentDto get _value => super._value as _CommentDto;
@@ -232,11 +236,16 @@ class _$_CommentDto extends _CommentDto {
     return identical(this, other) ||
         (other is _CommentDto &&
             (identical(other.id, id) || const DeepCollectionEquality().equals(other.id, id)) &&
-            (identical(other.poster, poster) || const DeepCollectionEquality().equals(other.poster, poster)) &&
-            (identical(other.experienceId, experienceId) || const DeepCollectionEquality().equals(other.experienceId, experienceId)) &&
-            (identical(other.content, content) || const DeepCollectionEquality().equals(other.content, content)) &&
-            (identical(other.creationDate, creationDate) || const DeepCollectionEquality().equals(other.creationDate, creationDate)) &&
-            (identical(other.modificationDate, modificationDate) || const DeepCollectionEquality().equals(other.modificationDate, modificationDate)));
+            (identical(other.poster, poster) ||
+                const DeepCollectionEquality().equals(other.poster, poster)) &&
+            (identical(other.experienceId, experienceId) ||
+                const DeepCollectionEquality().equals(other.experienceId, experienceId)) &&
+            (identical(other.content, content) ||
+                const DeepCollectionEquality().equals(other.content, content)) &&
+            (identical(other.creationDate, creationDate) ||
+                const DeepCollectionEquality().equals(other.creationDate, creationDate)) &&
+            (identical(other.modificationDate, modificationDate) ||
+                const DeepCollectionEquality().equals(other.modificationDate, modificationDate)));
   }
 
   @override
@@ -251,7 +260,8 @@ class _$_CommentDto extends _CommentDto {
 
   @JsonKey(ignore: true)
   @override
-  _$CommentDtoCopyWith<_CommentDto> get copyWith => __$CommentDtoCopyWithImpl<_CommentDto>(this, _$identity);
+  _$CommentDtoCopyWith<_CommentDto> get copyWith =>
+      __$CommentDtoCopyWithImpl<_CommentDto>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {

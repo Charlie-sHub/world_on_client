@@ -62,7 +62,12 @@ mixin _$TagDto {
 abstract class $TagDtoCopyWith<$Res> {
   factory $TagDtoCopyWith(TagDto value, $Res Function(TagDto) then) = _$TagDtoCopyWithImpl<$Res>;
 
-  $Res call({String id, String name, String creatorId, @ServerTimestampConverter() DateTime creationDate, @ServerTimestampConverter() DateTime modificationDate});
+  $Res call(
+      {String id,
+      String name,
+      String creatorId,
+      @ServerTimestampConverter() DateTime creationDate,
+      @ServerTimestampConverter() DateTime modificationDate});
 }
 
 /// @nodoc
@@ -108,15 +113,23 @@ class _$TagDtoCopyWithImpl<$Res> implements $TagDtoCopyWith<$Res> {
 
 /// @nodoc
 abstract class _$TagDtoCopyWith<$Res> implements $TagDtoCopyWith<$Res> {
-  factory _$TagDtoCopyWith(_TagDto value, $Res Function(_TagDto) then) = __$TagDtoCopyWithImpl<$Res>;
+  factory _$TagDtoCopyWith(_TagDto value, $Res Function(_TagDto) then) =
+      __$TagDtoCopyWithImpl<$Res>;
 
   @override
-  $Res call({String id, String name, String creatorId, @ServerTimestampConverter() DateTime creationDate, @ServerTimestampConverter() DateTime modificationDate});
+  $Res call(
+      {String id,
+      String name,
+      String creatorId,
+      @ServerTimestampConverter() DateTime creationDate,
+      @ServerTimestampConverter() DateTime modificationDate});
 }
 
 /// @nodoc
-class __$TagDtoCopyWithImpl<$Res> extends _$TagDtoCopyWithImpl<$Res> implements _$TagDtoCopyWith<$Res> {
-  __$TagDtoCopyWithImpl(_TagDto _value, $Res Function(_TagDto) _then) : super(_value, (v) => _then(v as _TagDto));
+class __$TagDtoCopyWithImpl<$Res> extends _$TagDtoCopyWithImpl<$Res>
+    implements _$TagDtoCopyWith<$Res> {
+  __$TagDtoCopyWithImpl(_TagDto _value, $Res Function(_TagDto) _then)
+      : super(_value, (v) => _then(v as _TagDto));
 
   @override
   _TagDto get _value => super._value as _TagDto;
@@ -157,7 +170,12 @@ class __$TagDtoCopyWithImpl<$Res> extends _$TagDtoCopyWithImpl<$Res> implements 
 /// @nodoc
 @JsonSerializable()
 class _$_TagDto extends _TagDto {
-  const _$_TagDto({required this.id, required this.name, required this.creatorId, @ServerTimestampConverter() required this.creationDate, @ServerTimestampConverter() required this.modificationDate})
+  const _$_TagDto(
+      {required this.id,
+      required this.name,
+      required this.creatorId,
+      @ServerTimestampConverter() required this.creationDate,
+      @ServerTimestampConverter() required this.modificationDate})
       : super._();
 
   factory _$_TagDto.fromJson(Map<String, dynamic> json) => _$_$_TagDtoFromJson(json);
@@ -185,10 +203,14 @@ class _$_TagDto extends _TagDto {
     return identical(this, other) ||
         (other is _TagDto &&
             (identical(other.id, id) || const DeepCollectionEquality().equals(other.id, id)) &&
-            (identical(other.name, name) || const DeepCollectionEquality().equals(other.name, name)) &&
-            (identical(other.creatorId, creatorId) || const DeepCollectionEquality().equals(other.creatorId, creatorId)) &&
-            (identical(other.creationDate, creationDate) || const DeepCollectionEquality().equals(other.creationDate, creationDate)) &&
-            (identical(other.modificationDate, modificationDate) || const DeepCollectionEquality().equals(other.modificationDate, modificationDate)));
+            (identical(other.name, name) ||
+                const DeepCollectionEquality().equals(other.name, name)) &&
+            (identical(other.creatorId, creatorId) ||
+                const DeepCollectionEquality().equals(other.creatorId, creatorId)) &&
+            (identical(other.creationDate, creationDate) ||
+                const DeepCollectionEquality().equals(other.creationDate, creationDate)) &&
+            (identical(other.modificationDate, modificationDate) ||
+                const DeepCollectionEquality().equals(other.modificationDate, modificationDate)));
   }
 
   @override
@@ -199,7 +221,7 @@ class _$_TagDto extends _TagDto {
       const DeepCollectionEquality().hash(creatorId) ^
       const DeepCollectionEquality().hash(creationDate) ^
       const DeepCollectionEquality().hash(modificationDate);
-  
+
   @JsonKey(ignore: true)
   @override
   _$TagDtoCopyWith<_TagDto> get copyWith => __$TagDtoCopyWithImpl<_TagDto>(this, _$identity);

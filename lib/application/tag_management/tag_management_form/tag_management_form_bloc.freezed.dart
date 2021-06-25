@@ -72,7 +72,9 @@ mixin _$TagManagementFormEvent {
 
 /// @nodoc
 abstract class $TagManagementFormEventCopyWith<$Res> {
-  factory $TagManagementFormEventCopyWith(TagManagementFormEvent value, $Res Function(TagManagementFormEvent) then) = _$TagManagementFormEventCopyWithImpl<$Res>;
+  factory $TagManagementFormEventCopyWith(
+          TagManagementFormEvent value, $Res Function(TagManagementFormEvent) then) =
+      _$TagManagementFormEventCopyWithImpl<$Res>;
 }
 
 /// @nodoc
@@ -87,14 +89,17 @@ class _$TagManagementFormEventCopyWithImpl<$Res> implements $TagManagementFormEv
 
 /// @nodoc
 abstract class _$InitializedCopyWith<$Res> {
-  factory _$InitializedCopyWith(_Initialized value, $Res Function(_Initialized) then) = __$InitializedCopyWithImpl<$Res>;
+  factory _$InitializedCopyWith(_Initialized value, $Res Function(_Initialized) then) =
+      __$InitializedCopyWithImpl<$Res>;
 
   $Res call({Option<Tag> tagOption});
 }
 
 /// @nodoc
-class __$InitializedCopyWithImpl<$Res> extends _$TagManagementFormEventCopyWithImpl<$Res> implements _$InitializedCopyWith<$Res> {
-  __$InitializedCopyWithImpl(_Initialized _value, $Res Function(_Initialized) _then) : super(_value, (v) => _then(v as _Initialized));
+class __$InitializedCopyWithImpl<$Res> extends _$TagManagementFormEventCopyWithImpl<$Res>
+    implements _$InitializedCopyWith<$Res> {
+  __$InitializedCopyWithImpl(_Initialized _value, $Res Function(_Initialized) _then)
+      : super(_value, (v) => _then(v as _Initialized));
 
   @override
   _Initialized get _value => super._value as _Initialized;
@@ -127,7 +132,10 @@ class _$_Initialized implements _Initialized {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _Initialized && (identical(other.tagOption, tagOption) || const DeepCollectionEquality().equals(other.tagOption, tagOption)));
+    return identical(this, other) ||
+        (other is _Initialized &&
+            (identical(other.tagOption, tagOption) ||
+                const DeepCollectionEquality().equals(other.tagOption, tagOption)));
   }
 
   @override
@@ -135,7 +143,8 @@ class _$_Initialized implements _Initialized {
 
   @JsonKey(ignore: true)
   @override
-  _$InitializedCopyWith<_Initialized> get copyWith => __$InitializedCopyWithImpl<_Initialized>(this, _$identity);
+  _$InitializedCopyWith<_Initialized> get copyWith =>
+      __$InitializedCopyWithImpl<_Initialized>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -197,14 +206,17 @@ abstract class _Initialized implements TagManagementFormEvent {
 
 /// @nodoc
 abstract class _$NameChangedCopyWith<$Res> {
-  factory _$NameChangedCopyWith(_NameChanged value, $Res Function(_NameChanged) then) = __$NameChangedCopyWithImpl<$Res>;
+  factory _$NameChangedCopyWith(_NameChanged value, $Res Function(_NameChanged) then) =
+      __$NameChangedCopyWithImpl<$Res>;
 
   $Res call({String name});
 }
 
 /// @nodoc
-class __$NameChangedCopyWithImpl<$Res> extends _$TagManagementFormEventCopyWithImpl<$Res> implements _$NameChangedCopyWith<$Res> {
-  __$NameChangedCopyWithImpl(_NameChanged _value, $Res Function(_NameChanged) _then) : super(_value, (v) => _then(v as _NameChanged));
+class __$NameChangedCopyWithImpl<$Res> extends _$TagManagementFormEventCopyWithImpl<$Res>
+    implements _$NameChangedCopyWith<$Res> {
+  __$NameChangedCopyWithImpl(_NameChanged _value, $Res Function(_NameChanged) _then)
+      : super(_value, (v) => _then(v as _NameChanged));
 
   @override
   _NameChanged get _value => super._value as _NameChanged;
@@ -237,7 +249,10 @@ class _$_NameChanged implements _NameChanged {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _NameChanged && (identical(other.name, name) || const DeepCollectionEquality().equals(other.name, name)));
+    return identical(this, other) ||
+        (other is _NameChanged &&
+            (identical(other.name, name) ||
+                const DeepCollectionEquality().equals(other.name, name)));
   }
 
   @override
@@ -245,7 +260,8 @@ class _$_NameChanged implements _NameChanged {
 
   @JsonKey(ignore: true)
   @override
-  _$NameChangedCopyWith<_NameChanged> get copyWith => __$NameChangedCopyWithImpl<_NameChanged>(this, _$identity);
+  _$NameChangedCopyWith<_NameChanged> get copyWith =>
+      __$NameChangedCopyWithImpl<_NameChanged>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -307,12 +323,15 @@ abstract class _NameChanged implements TagManagementFormEvent {
 
 /// @nodoc
 abstract class _$SubmittedCopyWith<$Res> {
-  factory _$SubmittedCopyWith(_Submitted value, $Res Function(_Submitted) then) = __$SubmittedCopyWithImpl<$Res>;
+  factory _$SubmittedCopyWith(_Submitted value, $Res Function(_Submitted) then) =
+      __$SubmittedCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$SubmittedCopyWithImpl<$Res> extends _$TagManagementFormEventCopyWithImpl<$Res> implements _$SubmittedCopyWith<$Res> {
-  __$SubmittedCopyWithImpl(_Submitted _value, $Res Function(_Submitted) _then) : super(_value, (v) => _then(v as _Submitted));
+class __$SubmittedCopyWithImpl<$Res> extends _$TagManagementFormEventCopyWithImpl<$Res>
+    implements _$SubmittedCopyWith<$Res> {
+  __$SubmittedCopyWithImpl(_Submitted _value, $Res Function(_Submitted) _then)
+      : super(_value, (v) => _then(v as _Submitted));
 
   @override
   _Submitted get _value => super._value as _Submitted;
@@ -394,7 +413,11 @@ class _$TagManagementFormStateTearOff {
   const _$TagManagementFormStateTearOff();
 
   _TagManagementFormState call(
-      {required Tag tag, required bool showErrorMessages, required bool isEditing, required bool isSubmitting, required Option<Either<Failure, Unit>> failureOrSuccessOption}) {
+      {required Tag tag,
+      required bool showErrorMessages,
+      required bool isEditing,
+      required bool isSubmitting,
+      required Option<Either<Failure, Unit>> failureOrSuccessOption}) {
     return _TagManagementFormState(
       tag: tag,
       showErrorMessages: showErrorMessages,
@@ -421,14 +444,22 @@ mixin _$TagManagementFormState {
   Option<Either<Failure, Unit>> get failureOrSuccessOption => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
-  $TagManagementFormStateCopyWith<TagManagementFormState> get copyWith => throw _privateConstructorUsedError;
+  $TagManagementFormStateCopyWith<TagManagementFormState> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $TagManagementFormStateCopyWith<$Res> {
-  factory $TagManagementFormStateCopyWith(TagManagementFormState value, $Res Function(TagManagementFormState) then) = _$TagManagementFormStateCopyWithImpl<$Res>;
+  factory $TagManagementFormStateCopyWith(
+          TagManagementFormState value, $Res Function(TagManagementFormState) then) =
+      _$TagManagementFormStateCopyWithImpl<$Res>;
 
-  $Res call({Tag tag, bool showErrorMessages, bool isEditing, bool isSubmitting, Option<Either<Failure, Unit>> failureOrSuccessOption});
+  $Res call(
+      {Tag tag,
+      bool showErrorMessages,
+      bool isEditing,
+      bool isSubmitting,
+      Option<Either<Failure, Unit>> failureOrSuccessOption});
 
   $TagCopyWith<$Res> get tag;
 }
@@ -483,19 +514,30 @@ class _$TagManagementFormStateCopyWithImpl<$Res> implements $TagManagementFormSt
 }
 
 /// @nodoc
-abstract class _$TagManagementFormStateCopyWith<$Res> implements $TagManagementFormStateCopyWith<$Res> {
-  factory _$TagManagementFormStateCopyWith(_TagManagementFormState value, $Res Function(_TagManagementFormState) then) = __$TagManagementFormStateCopyWithImpl<$Res>;
+abstract class _$TagManagementFormStateCopyWith<$Res>
+    implements $TagManagementFormStateCopyWith<$Res> {
+  factory _$TagManagementFormStateCopyWith(
+          _TagManagementFormState value, $Res Function(_TagManagementFormState) then) =
+      __$TagManagementFormStateCopyWithImpl<$Res>;
 
   @override
-  $Res call({Tag tag, bool showErrorMessages, bool isEditing, bool isSubmitting, Option<Either<Failure, Unit>> failureOrSuccessOption});
+  $Res call(
+      {Tag tag,
+      bool showErrorMessages,
+      bool isEditing,
+      bool isSubmitting,
+      Option<Either<Failure, Unit>> failureOrSuccessOption});
 
   @override
   $TagCopyWith<$Res> get tag;
 }
 
 /// @nodoc
-class __$TagManagementFormStateCopyWithImpl<$Res> extends _$TagManagementFormStateCopyWithImpl<$Res> implements _$TagManagementFormStateCopyWith<$Res> {
-  __$TagManagementFormStateCopyWithImpl(_TagManagementFormState _value, $Res Function(_TagManagementFormState) _then) : super(_value, (v) => _then(v as _TagManagementFormState));
+class __$TagManagementFormStateCopyWithImpl<$Res> extends _$TagManagementFormStateCopyWithImpl<$Res>
+    implements _$TagManagementFormStateCopyWith<$Res> {
+  __$TagManagementFormStateCopyWithImpl(
+      _TagManagementFormState _value, $Res Function(_TagManagementFormState) _then)
+      : super(_value, (v) => _then(v as _TagManagementFormState));
 
   @override
   _TagManagementFormState get _value => super._value as _TagManagementFormState;
@@ -536,7 +578,12 @@ class __$TagManagementFormStateCopyWithImpl<$Res> extends _$TagManagementFormSta
 /// @nodoc
 
 class _$_TagManagementFormState implements _TagManagementFormState {
-  const _$_TagManagementFormState({required this.tag, required this.showErrorMessages, required this.isEditing, required this.isSubmitting, required this.failureOrSuccessOption});
+  const _$_TagManagementFormState(
+      {required this.tag,
+      required this.showErrorMessages,
+      required this.isEditing,
+      required this.isSubmitting,
+      required this.failureOrSuccessOption});
 
   @override
   final Tag tag;
@@ -559,10 +606,16 @@ class _$_TagManagementFormState implements _TagManagementFormState {
     return identical(this, other) ||
         (other is _TagManagementFormState &&
             (identical(other.tag, tag) || const DeepCollectionEquality().equals(other.tag, tag)) &&
-            (identical(other.showErrorMessages, showErrorMessages) || const DeepCollectionEquality().equals(other.showErrorMessages, showErrorMessages)) &&
-            (identical(other.isEditing, isEditing) || const DeepCollectionEquality().equals(other.isEditing, isEditing)) &&
-            (identical(other.isSubmitting, isSubmitting) || const DeepCollectionEquality().equals(other.isSubmitting, isSubmitting)) &&
-            (identical(other.failureOrSuccessOption, failureOrSuccessOption) || const DeepCollectionEquality().equals(other.failureOrSuccessOption, failureOrSuccessOption)));
+            (identical(other.showErrorMessages, showErrorMessages) ||
+                const DeepCollectionEquality()
+                    .equals(other.showErrorMessages, showErrorMessages)) &&
+            (identical(other.isEditing, isEditing) ||
+                const DeepCollectionEquality().equals(other.isEditing, isEditing)) &&
+            (identical(other.isSubmitting, isSubmitting) ||
+                const DeepCollectionEquality().equals(other.isSubmitting, isSubmitting)) &&
+            (identical(other.failureOrSuccessOption, failureOrSuccessOption) ||
+                const DeepCollectionEquality()
+                    .equals(other.failureOrSuccessOption, failureOrSuccessOption)));
   }
 
   @override
@@ -573,10 +626,11 @@ class _$_TagManagementFormState implements _TagManagementFormState {
       const DeepCollectionEquality().hash(isEditing) ^
       const DeepCollectionEquality().hash(isSubmitting) ^
       const DeepCollectionEquality().hash(failureOrSuccessOption);
-  
+
   @JsonKey(ignore: true)
   @override
-  _$TagManagementFormStateCopyWith<_TagManagementFormState> get copyWith => __$TagManagementFormStateCopyWithImpl<_TagManagementFormState>(this, _$identity);
+  _$TagManagementFormStateCopyWith<_TagManagementFormState> get copyWith =>
+      __$TagManagementFormStateCopyWithImpl<_TagManagementFormState>(this, _$identity);
 }
 
 abstract class _TagManagementFormState implements TagManagementFormState {
@@ -593,7 +647,7 @@ abstract class _TagManagementFormState implements TagManagementFormState {
   bool get showErrorMessages => throw _privateConstructorUsedError;
   @override
   bool get isEditing => throw _privateConstructorUsedError;
-  
+
   @override
   bool get isSubmitting => throw _privateConstructorUsedError;
 
@@ -602,5 +656,6 @@ abstract class _TagManagementFormState implements TagManagementFormState {
 
   @override
   @JsonKey(ignore: true)
-  _$TagManagementFormStateCopyWith<_TagManagementFormState> get copyWith => throw _privateConstructorUsedError;
+  _$TagManagementFormStateCopyWith<_TagManagementFormState> get copyWith =>
+      throw _privateConstructorUsedError;
 }

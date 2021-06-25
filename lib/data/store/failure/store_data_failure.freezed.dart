@@ -68,7 +68,9 @@ mixin _$StoreDataFailure<T> {
 
 /// @nodoc
 abstract class $StoreDataFailureCopyWith<T, $Res> {
-  factory $StoreDataFailureCopyWith(StoreDataFailure<T> value, $Res Function(StoreDataFailure<T>) then) = _$StoreDataFailureCopyWithImpl<T, $Res>;
+  factory $StoreDataFailureCopyWith(
+          StoreDataFailure<T> value, $Res Function(StoreDataFailure<T>) then) =
+      _$StoreDataFailureCopyWithImpl<T, $Res>;
 }
 
 /// @nodoc
@@ -83,12 +85,15 @@ class _$StoreDataFailureCopyWithImpl<T, $Res> implements $StoreDataFailureCopyWi
 
 /// @nodoc
 abstract class $NotEnoughCoinsCopyWith<T, $Res> {
-  factory $NotEnoughCoinsCopyWith(NotEnoughCoins<T> value, $Res Function(NotEnoughCoins<T>) then) = _$NotEnoughCoinsCopyWithImpl<T, $Res>;
+  factory $NotEnoughCoinsCopyWith(NotEnoughCoins<T> value, $Res Function(NotEnoughCoins<T>) then) =
+      _$NotEnoughCoinsCopyWithImpl<T, $Res>;
 }
 
 /// @nodoc
-class _$NotEnoughCoinsCopyWithImpl<T, $Res> extends _$StoreDataFailureCopyWithImpl<T, $Res> implements $NotEnoughCoinsCopyWith<T, $Res> {
-  _$NotEnoughCoinsCopyWithImpl(NotEnoughCoins<T> _value, $Res Function(NotEnoughCoins<T>) _then) : super(_value, (v) => _then(v as NotEnoughCoins<T>));
+class _$NotEnoughCoinsCopyWithImpl<T, $Res> extends _$StoreDataFailureCopyWithImpl<T, $Res>
+    implements $NotEnoughCoinsCopyWith<T, $Res> {
+  _$NotEnoughCoinsCopyWithImpl(NotEnoughCoins<T> _value, $Res Function(NotEnoughCoins<T>) _then)
+      : super(_value, (v) => _then(v as NotEnoughCoins<T>));
 
   @override
   NotEnoughCoins<T> get _value => super._value as NotEnoughCoins<T>;
@@ -167,12 +172,15 @@ abstract class NotEnoughCoins<T> implements StoreDataFailure<T> {
 
 /// @nodoc
 abstract class $CancelledCopyWith<T, $Res> {
-  factory $CancelledCopyWith(Cancelled<T> value, $Res Function(Cancelled<T>) then) = _$CancelledCopyWithImpl<T, $Res>;
+  factory $CancelledCopyWith(Cancelled<T> value, $Res Function(Cancelled<T>) then) =
+      _$CancelledCopyWithImpl<T, $Res>;
 }
 
 /// @nodoc
-class _$CancelledCopyWithImpl<T, $Res> extends _$StoreDataFailureCopyWithImpl<T, $Res> implements $CancelledCopyWith<T, $Res> {
-  _$CancelledCopyWithImpl(Cancelled<T> _value, $Res Function(Cancelled<T>) _then) : super(_value, (v) => _then(v as Cancelled<T>));
+class _$CancelledCopyWithImpl<T, $Res> extends _$StoreDataFailureCopyWithImpl<T, $Res>
+    implements $CancelledCopyWith<T, $Res> {
+  _$CancelledCopyWithImpl(Cancelled<T> _value, $Res Function(Cancelled<T>) _then)
+      : super(_value, (v) => _then(v as Cancelled<T>));
 
   @override
   Cancelled<T> get _value => super._value as Cancelled<T>;
@@ -251,12 +259,17 @@ abstract class Cancelled<T> implements StoreDataFailure<T> {
 
 /// @nodoc
 abstract class $UnAvailableStoreCopyWith<T, $Res> {
-  factory $UnAvailableStoreCopyWith(UnAvailableStore<T> value, $Res Function(UnAvailableStore<T>) then) = _$UnAvailableStoreCopyWithImpl<T, $Res>;
+  factory $UnAvailableStoreCopyWith(
+          UnAvailableStore<T> value, $Res Function(UnAvailableStore<T>) then) =
+      _$UnAvailableStoreCopyWithImpl<T, $Res>;
 }
 
 /// @nodoc
-class _$UnAvailableStoreCopyWithImpl<T, $Res> extends _$StoreDataFailureCopyWithImpl<T, $Res> implements $UnAvailableStoreCopyWith<T, $Res> {
-  _$UnAvailableStoreCopyWithImpl(UnAvailableStore<T> _value, $Res Function(UnAvailableStore<T>) _then) : super(_value, (v) => _then(v as UnAvailableStore<T>));
+class _$UnAvailableStoreCopyWithImpl<T, $Res> extends _$StoreDataFailureCopyWithImpl<T, $Res>
+    implements $UnAvailableStoreCopyWith<T, $Res> {
+  _$UnAvailableStoreCopyWithImpl(
+      UnAvailableStore<T> _value, $Res Function(UnAvailableStore<T>) _then)
+      : super(_value, (v) => _then(v as UnAvailableStore<T>));
 
   @override
   UnAvailableStore<T> get _value => super._value as UnAvailableStore<T>;

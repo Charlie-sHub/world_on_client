@@ -35,7 +35,8 @@ mixin _$ExperienceLogWatcherEvent {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() watchExperiencesLogStarted,
-    required TResult Function(Either<Failure, KtList<Experience>> failureOrExperiences) resultsReceived,
+    required TResult Function(Either<Failure, KtList<Experience>> failureOrExperiences)
+        resultsReceived,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -62,11 +63,14 @@ mixin _$ExperienceLogWatcherEvent {
 
 /// @nodoc
 abstract class $ExperienceLogWatcherEventCopyWith<$Res> {
-  factory $ExperienceLogWatcherEventCopyWith(ExperienceLogWatcherEvent value, $Res Function(ExperienceLogWatcherEvent) then) = _$ExperienceLogWatcherEventCopyWithImpl<$Res>;
+  factory $ExperienceLogWatcherEventCopyWith(
+          ExperienceLogWatcherEvent value, $Res Function(ExperienceLogWatcherEvent) then) =
+      _$ExperienceLogWatcherEventCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class _$ExperienceLogWatcherEventCopyWithImpl<$Res> implements $ExperienceLogWatcherEventCopyWith<$Res> {
+class _$ExperienceLogWatcherEventCopyWithImpl<$Res>
+    implements $ExperienceLogWatcherEventCopyWith<$Res> {
   _$ExperienceLogWatcherEventCopyWithImpl(this._value, this._then);
 
   final ExperienceLogWatcherEvent _value;
@@ -77,12 +81,18 @@ class _$ExperienceLogWatcherEventCopyWithImpl<$Res> implements $ExperienceLogWat
 
 /// @nodoc
 abstract class _$WatchExperiencesLogStartedCopyWith<$Res> {
-  factory _$WatchExperiencesLogStartedCopyWith(_WatchExperiencesLogStarted value, $Res Function(_WatchExperiencesLogStarted) then) = __$WatchExperiencesLogStartedCopyWithImpl<$Res>;
+  factory _$WatchExperiencesLogStartedCopyWith(
+          _WatchExperiencesLogStarted value, $Res Function(_WatchExperiencesLogStarted) then) =
+      __$WatchExperiencesLogStartedCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$WatchExperiencesLogStartedCopyWithImpl<$Res> extends _$ExperienceLogWatcherEventCopyWithImpl<$Res> implements _$WatchExperiencesLogStartedCopyWith<$Res> {
-  __$WatchExperiencesLogStartedCopyWithImpl(_WatchExperiencesLogStarted _value, $Res Function(_WatchExperiencesLogStarted) _then) : super(_value, (v) => _then(v as _WatchExperiencesLogStarted));
+class __$WatchExperiencesLogStartedCopyWithImpl<$Res>
+    extends _$ExperienceLogWatcherEventCopyWithImpl<$Res>
+    implements _$WatchExperiencesLogStartedCopyWith<$Res> {
+  __$WatchExperiencesLogStartedCopyWithImpl(
+      _WatchExperiencesLogStarted _value, $Res Function(_WatchExperiencesLogStarted) _then)
+      : super(_value, (v) => _then(v as _WatchExperiencesLogStarted));
 
   @override
   _WatchExperiencesLogStarted get _value => super._value as _WatchExperiencesLogStarted;
@@ -110,7 +120,8 @@ class _$_WatchExperiencesLogStarted implements _WatchExperiencesLogStarted {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() watchExperiencesLogStarted,
-    required TResult Function(Either<Failure, KtList<Experience>> failureOrExperiences) resultsReceived,
+    required TResult Function(Either<Failure, KtList<Experience>> failureOrExperiences)
+        resultsReceived,
   }) {
     return watchExperiencesLogStarted();
   }
@@ -157,14 +168,17 @@ abstract class _WatchExperiencesLogStarted implements ExperienceLogWatcherEvent 
 
 /// @nodoc
 abstract class _$ResultsReceivedCopyWith<$Res> {
-  factory _$ResultsReceivedCopyWith(_ResultsReceived value, $Res Function(_ResultsReceived) then) = __$ResultsReceivedCopyWithImpl<$Res>;
+  factory _$ResultsReceivedCopyWith(_ResultsReceived value, $Res Function(_ResultsReceived) then) =
+      __$ResultsReceivedCopyWithImpl<$Res>;
 
   $Res call({Either<Failure, KtList<Experience>> failureOrExperiences});
 }
 
 /// @nodoc
-class __$ResultsReceivedCopyWithImpl<$Res> extends _$ExperienceLogWatcherEventCopyWithImpl<$Res> implements _$ResultsReceivedCopyWith<$Res> {
-  __$ResultsReceivedCopyWithImpl(_ResultsReceived _value, $Res Function(_ResultsReceived) _then) : super(_value, (v) => _then(v as _ResultsReceived));
+class __$ResultsReceivedCopyWithImpl<$Res> extends _$ExperienceLogWatcherEventCopyWithImpl<$Res>
+    implements _$ResultsReceivedCopyWith<$Res> {
+  __$ResultsReceivedCopyWithImpl(_ResultsReceived _value, $Res Function(_ResultsReceived) _then)
+      : super(_value, (v) => _then(v as _ResultsReceived));
 
   @override
   _ResultsReceived get _value => super._value as _ResultsReceived;
@@ -198,21 +212,27 @@ class _$_ResultsReceived implements _ResultsReceived {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _ResultsReceived && (identical(other.failureOrExperiences, failureOrExperiences) || const DeepCollectionEquality().equals(other.failureOrExperiences, failureOrExperiences)));
+        (other is _ResultsReceived &&
+            (identical(other.failureOrExperiences, failureOrExperiences) ||
+                const DeepCollectionEquality()
+                    .equals(other.failureOrExperiences, failureOrExperiences)));
   }
 
   @override
-  int get hashCode => runtimeType.hashCode ^ const DeepCollectionEquality().hash(failureOrExperiences);
+  int get hashCode =>
+      runtimeType.hashCode ^ const DeepCollectionEquality().hash(failureOrExperiences);
 
   @JsonKey(ignore: true)
   @override
-  _$ResultsReceivedCopyWith<_ResultsReceived> get copyWith => __$ResultsReceivedCopyWithImpl<_ResultsReceived>(this, _$identity);
+  _$ResultsReceivedCopyWith<_ResultsReceived> get copyWith =>
+      __$ResultsReceivedCopyWithImpl<_ResultsReceived>(this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() watchExperiencesLogStarted,
-    required TResult Function(Either<Failure, KtList<Experience>> failureOrExperiences) resultsReceived,
+    required TResult Function(Either<Failure, KtList<Experience>> failureOrExperiences)
+        resultsReceived,
   }) {
     return resultsReceived(failureOrExperiences);
   }
@@ -254,9 +274,11 @@ class _$_ResultsReceived implements _ResultsReceived {
 }
 
 abstract class _ResultsReceived implements ExperienceLogWatcherEvent {
-  const factory _ResultsReceived(Either<Failure, KtList<Experience>> failureOrExperiences) = _$_ResultsReceived;
+  const factory _ResultsReceived(Either<Failure, KtList<Experience>> failureOrExperiences) =
+      _$_ResultsReceived;
 
-  Either<Failure, KtList<Experience>> get failureOrExperiences => throw _privateConstructorUsedError;
+  Either<Failure, KtList<Experience>> get failureOrExperiences =>
+      throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
   _$ResultsReceivedCopyWith<_ResultsReceived> get copyWith => throw _privateConstructorUsedError;
@@ -330,11 +352,14 @@ mixin _$ExperienceLogWatcherState {
 
 /// @nodoc
 abstract class $ExperienceLogWatcherStateCopyWith<$Res> {
-  factory $ExperienceLogWatcherStateCopyWith(ExperienceLogWatcherState value, $Res Function(ExperienceLogWatcherState) then) = _$ExperienceLogWatcherStateCopyWithImpl<$Res>;
+  factory $ExperienceLogWatcherStateCopyWith(
+          ExperienceLogWatcherState value, $Res Function(ExperienceLogWatcherState) then) =
+      _$ExperienceLogWatcherStateCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class _$ExperienceLogWatcherStateCopyWithImpl<$Res> implements $ExperienceLogWatcherStateCopyWith<$Res> {
+class _$ExperienceLogWatcherStateCopyWithImpl<$Res>
+    implements $ExperienceLogWatcherStateCopyWith<$Res> {
   _$ExperienceLogWatcherStateCopyWithImpl(this._value, this._then);
 
   final ExperienceLogWatcherState _value;
@@ -345,12 +370,15 @@ class _$ExperienceLogWatcherStateCopyWithImpl<$Res> implements $ExperienceLogWat
 
 /// @nodoc
 abstract class _$InitialCopyWith<$Res> {
-  factory _$InitialCopyWith(_Initial value, $Res Function(_Initial) then) = __$InitialCopyWithImpl<$Res>;
+  factory _$InitialCopyWith(_Initial value, $Res Function(_Initial) then) =
+      __$InitialCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$InitialCopyWithImpl<$Res> extends _$ExperienceLogWatcherStateCopyWithImpl<$Res> implements _$InitialCopyWith<$Res> {
-  __$InitialCopyWithImpl(_Initial _value, $Res Function(_Initial) _then) : super(_value, (v) => _then(v as _Initial));
+class __$InitialCopyWithImpl<$Res> extends _$ExperienceLogWatcherStateCopyWithImpl<$Res>
+    implements _$InitialCopyWith<$Res> {
+  __$InitialCopyWithImpl(_Initial _value, $Res Function(_Initial) _then)
+      : super(_value, (v) => _then(v as _Initial));
 
   @override
   _Initial get _value => super._value as _Initial;
@@ -433,12 +461,15 @@ abstract class _Initial implements ExperienceLogWatcherState {
 
 /// @nodoc
 abstract class _$LoadInProgressCopyWith<$Res> {
-  factory _$LoadInProgressCopyWith(_LoadInProgress value, $Res Function(_LoadInProgress) then) = __$LoadInProgressCopyWithImpl<$Res>;
+  factory _$LoadInProgressCopyWith(_LoadInProgress value, $Res Function(_LoadInProgress) then) =
+      __$LoadInProgressCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$LoadInProgressCopyWithImpl<$Res> extends _$ExperienceLogWatcherStateCopyWithImpl<$Res> implements _$LoadInProgressCopyWith<$Res> {
-  __$LoadInProgressCopyWithImpl(_LoadInProgress _value, $Res Function(_LoadInProgress) _then) : super(_value, (v) => _then(v as _LoadInProgress));
+class __$LoadInProgressCopyWithImpl<$Res> extends _$ExperienceLogWatcherStateCopyWithImpl<$Res>
+    implements _$LoadInProgressCopyWith<$Res> {
+  __$LoadInProgressCopyWithImpl(_LoadInProgress _value, $Res Function(_LoadInProgress) _then)
+      : super(_value, (v) => _then(v as _LoadInProgress));
 
   @override
   _LoadInProgress get _value => super._value as _LoadInProgress;
@@ -521,14 +552,17 @@ abstract class _LoadInProgress implements ExperienceLogWatcherState {
 
 /// @nodoc
 abstract class _$LoadSuccessCopyWith<$Res> {
-  factory _$LoadSuccessCopyWith(_LoadSuccess value, $Res Function(_LoadSuccess) then) = __$LoadSuccessCopyWithImpl<$Res>;
+  factory _$LoadSuccessCopyWith(_LoadSuccess value, $Res Function(_LoadSuccess) then) =
+      __$LoadSuccessCopyWithImpl<$Res>;
 
   $Res call({KtList<Experience> experiences});
 }
 
 /// @nodoc
-class __$LoadSuccessCopyWithImpl<$Res> extends _$ExperienceLogWatcherStateCopyWithImpl<$Res> implements _$LoadSuccessCopyWith<$Res> {
-  __$LoadSuccessCopyWithImpl(_LoadSuccess _value, $Res Function(_LoadSuccess) _then) : super(_value, (v) => _then(v as _LoadSuccess));
+class __$LoadSuccessCopyWithImpl<$Res> extends _$ExperienceLogWatcherStateCopyWithImpl<$Res>
+    implements _$LoadSuccessCopyWith<$Res> {
+  __$LoadSuccessCopyWithImpl(_LoadSuccess _value, $Res Function(_LoadSuccess) _then)
+      : super(_value, (v) => _then(v as _LoadSuccess));
 
   @override
   _LoadSuccess get _value => super._value as _LoadSuccess;
@@ -561,7 +595,10 @@ class _$_LoadSuccess implements _LoadSuccess {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _LoadSuccess && (identical(other.experiences, experiences) || const DeepCollectionEquality().equals(other.experiences, experiences)));
+    return identical(this, other) ||
+        (other is _LoadSuccess &&
+            (identical(other.experiences, experiences) ||
+                const DeepCollectionEquality().equals(other.experiences, experiences)));
   }
 
   @override
@@ -569,7 +606,8 @@ class _$_LoadSuccess implements _LoadSuccess {
 
   @JsonKey(ignore: true)
   @override
-  _$LoadSuccessCopyWith<_LoadSuccess> get copyWith => __$LoadSuccessCopyWithImpl<_LoadSuccess>(this, _$identity);
+  _$LoadSuccessCopyWith<_LoadSuccess> get copyWith =>
+      __$LoadSuccessCopyWithImpl<_LoadSuccess>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -635,7 +673,8 @@ abstract class _LoadSuccess implements ExperienceLogWatcherState {
 
 /// @nodoc
 abstract class _$LoadFailureCopyWith<$Res> {
-  factory _$LoadFailureCopyWith(_LoadFailure value, $Res Function(_LoadFailure) then) = __$LoadFailureCopyWithImpl<$Res>;
+  factory _$LoadFailureCopyWith(_LoadFailure value, $Res Function(_LoadFailure) then) =
+      __$LoadFailureCopyWithImpl<$Res>;
 
   $Res call({Failure<dynamic> failure});
 
@@ -643,8 +682,10 @@ abstract class _$LoadFailureCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$LoadFailureCopyWithImpl<$Res> extends _$ExperienceLogWatcherStateCopyWithImpl<$Res> implements _$LoadFailureCopyWith<$Res> {
-  __$LoadFailureCopyWithImpl(_LoadFailure _value, $Res Function(_LoadFailure) _then) : super(_value, (v) => _then(v as _LoadFailure));
+class __$LoadFailureCopyWithImpl<$Res> extends _$ExperienceLogWatcherStateCopyWithImpl<$Res>
+    implements _$LoadFailureCopyWith<$Res> {
+  __$LoadFailureCopyWithImpl(_LoadFailure _value, $Res Function(_LoadFailure) _then)
+      : super(_value, (v) => _then(v as _LoadFailure));
 
   @override
   _LoadFailure get _value => super._value as _LoadFailure;
@@ -684,7 +725,10 @@ class _$_LoadFailure implements _LoadFailure {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _LoadFailure && (identical(other.failure, failure) || const DeepCollectionEquality().equals(other.failure, failure)));
+    return identical(this, other) ||
+        (other is _LoadFailure &&
+            (identical(other.failure, failure) ||
+                const DeepCollectionEquality().equals(other.failure, failure)));
   }
 
   @override
@@ -692,7 +736,8 @@ class _$_LoadFailure implements _LoadFailure {
 
   @JsonKey(ignore: true)
   @override
-  _$LoadFailureCopyWith<_LoadFailure> get copyWith => __$LoadFailureCopyWithImpl<_LoadFailure>(this, _$identity);
+  _$LoadFailureCopyWith<_LoadFailure> get copyWith =>
+      __$LoadFailureCopyWithImpl<_LoadFailure>(this, _$identity);
 
   @override
   @optionalTypeArgs

@@ -52,11 +52,14 @@ mixin _$PromotionPlansLoaderEvent {
 
 /// @nodoc
 abstract class $PromotionPlansLoaderEventCopyWith<$Res> {
-  factory $PromotionPlansLoaderEventCopyWith(PromotionPlansLoaderEvent value, $Res Function(PromotionPlansLoaderEvent) then) = _$PromotionPlansLoaderEventCopyWithImpl<$Res>;
+  factory $PromotionPlansLoaderEventCopyWith(
+          PromotionPlansLoaderEvent value, $Res Function(PromotionPlansLoaderEvent) then) =
+      _$PromotionPlansLoaderEventCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class _$PromotionPlansLoaderEventCopyWithImpl<$Res> implements $PromotionPlansLoaderEventCopyWith<$Res> {
+class _$PromotionPlansLoaderEventCopyWithImpl<$Res>
+    implements $PromotionPlansLoaderEventCopyWith<$Res> {
   _$PromotionPlansLoaderEventCopyWithImpl(this._value, this._then);
 
   final PromotionPlansLoaderEvent _value;
@@ -67,12 +70,17 @@ class _$PromotionPlansLoaderEventCopyWithImpl<$Res> implements $PromotionPlansLo
 
 /// @nodoc
 abstract class _$LoadPromotionPlansCopyWith<$Res> {
-  factory _$LoadPromotionPlansCopyWith(_LoadPromotionPlans value, $Res Function(_LoadPromotionPlans) then) = __$LoadPromotionPlansCopyWithImpl<$Res>;
+  factory _$LoadPromotionPlansCopyWith(
+          _LoadPromotionPlans value, $Res Function(_LoadPromotionPlans) then) =
+      __$LoadPromotionPlansCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$LoadPromotionPlansCopyWithImpl<$Res> extends _$PromotionPlansLoaderEventCopyWithImpl<$Res> implements _$LoadPromotionPlansCopyWith<$Res> {
-  __$LoadPromotionPlansCopyWithImpl(_LoadPromotionPlans _value, $Res Function(_LoadPromotionPlans) _then) : super(_value, (v) => _then(v as _LoadPromotionPlans));
+class __$LoadPromotionPlansCopyWithImpl<$Res> extends _$PromotionPlansLoaderEventCopyWithImpl<$Res>
+    implements _$LoadPromotionPlansCopyWith<$Res> {
+  __$LoadPromotionPlansCopyWithImpl(
+      _LoadPromotionPlans _value, $Res Function(_LoadPromotionPlans) _then)
+      : super(_value, (v) => _then(v as _LoadPromotionPlans));
 
   @override
   _LoadPromotionPlans get _value => super._value as _LoadPromotionPlans;
@@ -209,11 +217,14 @@ mixin _$PromotionPlansLoaderState {
 
 /// @nodoc
 abstract class $PromotionPlansLoaderStateCopyWith<$Res> {
-  factory $PromotionPlansLoaderStateCopyWith(PromotionPlansLoaderState value, $Res Function(PromotionPlansLoaderState) then) = _$PromotionPlansLoaderStateCopyWithImpl<$Res>;
+  factory $PromotionPlansLoaderStateCopyWith(
+          PromotionPlansLoaderState value, $Res Function(PromotionPlansLoaderState) then) =
+      _$PromotionPlansLoaderStateCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class _$PromotionPlansLoaderStateCopyWithImpl<$Res> implements $PromotionPlansLoaderStateCopyWith<$Res> {
+class _$PromotionPlansLoaderStateCopyWithImpl<$Res>
+    implements $PromotionPlansLoaderStateCopyWith<$Res> {
   _$PromotionPlansLoaderStateCopyWithImpl(this._value, this._then);
 
   final PromotionPlansLoaderState _value;
@@ -224,12 +235,15 @@ class _$PromotionPlansLoaderStateCopyWithImpl<$Res> implements $PromotionPlansLo
 
 /// @nodoc
 abstract class _$InitialCopyWith<$Res> {
-  factory _$InitialCopyWith(_Initial value, $Res Function(_Initial) then) = __$InitialCopyWithImpl<$Res>;
+  factory _$InitialCopyWith(_Initial value, $Res Function(_Initial) then) =
+      __$InitialCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$InitialCopyWithImpl<$Res> extends _$PromotionPlansLoaderStateCopyWithImpl<$Res> implements _$InitialCopyWith<$Res> {
-  __$InitialCopyWithImpl(_Initial _value, $Res Function(_Initial) _then) : super(_value, (v) => _then(v as _Initial));
+class __$InitialCopyWithImpl<$Res> extends _$PromotionPlansLoaderStateCopyWithImpl<$Res>
+    implements _$InitialCopyWith<$Res> {
+  __$InitialCopyWithImpl(_Initial _value, $Res Function(_Initial) _then)
+      : super(_value, (v) => _then(v as _Initial));
 
   @override
   _Initial get _value => super._value as _Initial;
@@ -312,12 +326,15 @@ abstract class _Initial implements PromotionPlansLoaderState {
 
 /// @nodoc
 abstract class _$LoadInProgressCopyWith<$Res> {
-  factory _$LoadInProgressCopyWith(_LoadInProgress value, $Res Function(_LoadInProgress) then) = __$LoadInProgressCopyWithImpl<$Res>;
+  factory _$LoadInProgressCopyWith(_LoadInProgress value, $Res Function(_LoadInProgress) then) =
+      __$LoadInProgressCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$LoadInProgressCopyWithImpl<$Res> extends _$PromotionPlansLoaderStateCopyWithImpl<$Res> implements _$LoadInProgressCopyWith<$Res> {
-  __$LoadInProgressCopyWithImpl(_LoadInProgress _value, $Res Function(_LoadInProgress) _then) : super(_value, (v) => _then(v as _LoadInProgress));
+class __$LoadInProgressCopyWithImpl<$Res> extends _$PromotionPlansLoaderStateCopyWithImpl<$Res>
+    implements _$LoadInProgressCopyWith<$Res> {
+  __$LoadInProgressCopyWithImpl(_LoadInProgress _value, $Res Function(_LoadInProgress) _then)
+      : super(_value, (v) => _then(v as _LoadInProgress));
 
   @override
   _LoadInProgress get _value => super._value as _LoadInProgress;
@@ -400,14 +417,20 @@ abstract class _LoadInProgress implements PromotionPlansLoaderState {
 
 /// @nodoc
 abstract class _$LoadedPromotionPlansCopyWith<$Res> {
-  factory _$LoadedPromotionPlansCopyWith(_LoadedPromotionPlans value, $Res Function(_LoadedPromotionPlans) then) = __$LoadedPromotionPlansCopyWithImpl<$Res>;
+  factory _$LoadedPromotionPlansCopyWith(
+          _LoadedPromotionPlans value, $Res Function(_LoadedPromotionPlans) then) =
+      __$LoadedPromotionPlansCopyWithImpl<$Res>;
 
   $Res call({KtList<PromotionPlan> plans});
 }
 
 /// @nodoc
-class __$LoadedPromotionPlansCopyWithImpl<$Res> extends _$PromotionPlansLoaderStateCopyWithImpl<$Res> implements _$LoadedPromotionPlansCopyWith<$Res> {
-  __$LoadedPromotionPlansCopyWithImpl(_LoadedPromotionPlans _value, $Res Function(_LoadedPromotionPlans) _then) : super(_value, (v) => _then(v as _LoadedPromotionPlans));
+class __$LoadedPromotionPlansCopyWithImpl<$Res>
+    extends _$PromotionPlansLoaderStateCopyWithImpl<$Res>
+    implements _$LoadedPromotionPlansCopyWith<$Res> {
+  __$LoadedPromotionPlansCopyWithImpl(
+      _LoadedPromotionPlans _value, $Res Function(_LoadedPromotionPlans) _then)
+      : super(_value, (v) => _then(v as _LoadedPromotionPlans));
 
   @override
   _LoadedPromotionPlans get _value => super._value as _LoadedPromotionPlans;
@@ -440,7 +463,10 @@ class _$_LoadedPromotionPlans implements _LoadedPromotionPlans {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _LoadedPromotionPlans && (identical(other.plans, plans) || const DeepCollectionEquality().equals(other.plans, plans)));
+    return identical(this, other) ||
+        (other is _LoadedPromotionPlans &&
+            (identical(other.plans, plans) ||
+                const DeepCollectionEquality().equals(other.plans, plans)));
   }
 
   @override
@@ -448,7 +474,8 @@ class _$_LoadedPromotionPlans implements _LoadedPromotionPlans {
 
   @JsonKey(ignore: true)
   @override
-  _$LoadedPromotionPlansCopyWith<_LoadedPromotionPlans> get copyWith => __$LoadedPromotionPlansCopyWithImpl<_LoadedPromotionPlans>(this, _$identity);
+  _$LoadedPromotionPlansCopyWith<_LoadedPromotionPlans> get copyWith =>
+      __$LoadedPromotionPlansCopyWithImpl<_LoadedPromotionPlans>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -509,12 +536,14 @@ abstract class _LoadedPromotionPlans implements PromotionPlansLoaderState {
   KtList<PromotionPlan> get plans => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
-  _$LoadedPromotionPlansCopyWith<_LoadedPromotionPlans> get copyWith => throw _privateConstructorUsedError;
+  _$LoadedPromotionPlansCopyWith<_LoadedPromotionPlans> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class _$LoadFailureCopyWith<$Res> {
-  factory _$LoadFailureCopyWith(_LoadFailure value, $Res Function(_LoadFailure) then) = __$LoadFailureCopyWithImpl<$Res>;
+  factory _$LoadFailureCopyWith(_LoadFailure value, $Res Function(_LoadFailure) then) =
+      __$LoadFailureCopyWithImpl<$Res>;
 
   $Res call({Failure<dynamic> failure});
 
@@ -522,8 +551,10 @@ abstract class _$LoadFailureCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$LoadFailureCopyWithImpl<$Res> extends _$PromotionPlansLoaderStateCopyWithImpl<$Res> implements _$LoadFailureCopyWith<$Res> {
-  __$LoadFailureCopyWithImpl(_LoadFailure _value, $Res Function(_LoadFailure) _then) : super(_value, (v) => _then(v as _LoadFailure));
+class __$LoadFailureCopyWithImpl<$Res> extends _$PromotionPlansLoaderStateCopyWithImpl<$Res>
+    implements _$LoadFailureCopyWith<$Res> {
+  __$LoadFailureCopyWithImpl(_LoadFailure _value, $Res Function(_LoadFailure) _then)
+      : super(_value, (v) => _then(v as _LoadFailure));
 
   @override
   _LoadFailure get _value => super._value as _LoadFailure;
@@ -563,7 +594,10 @@ class _$_LoadFailure implements _LoadFailure {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _LoadFailure && (identical(other.failure, failure) || const DeepCollectionEquality().equals(other.failure, failure)));
+    return identical(this, other) ||
+        (other is _LoadFailure &&
+            (identical(other.failure, failure) ||
+                const DeepCollectionEquality().equals(other.failure, failure)));
   }
 
   @override
@@ -571,7 +605,8 @@ class _$_LoadFailure implements _LoadFailure {
 
   @JsonKey(ignore: true)
   @override
-  _$LoadFailureCopyWith<_LoadFailure> get copyWith => __$LoadFailureCopyWithImpl<_LoadFailure>(this, _$identity);
+  _$LoadFailureCopyWith<_LoadFailure> get copyWith =>
+      __$LoadFailureCopyWithImpl<_LoadFailure>(this, _$identity);
 
   @override
   @optionalTypeArgs

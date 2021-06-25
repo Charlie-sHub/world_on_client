@@ -70,7 +70,9 @@ mixin _$SearchToShareEvent {
 
 /// @nodoc
 abstract class $SearchToShareEventCopyWith<$Res> {
-  factory $SearchToShareEventCopyWith(SearchToShareEvent value, $Res Function(SearchToShareEvent) then) = _$SearchToShareEventCopyWithImpl<$Res>;
+  factory $SearchToShareEventCopyWith(
+          SearchToShareEvent value, $Res Function(SearchToShareEvent) then) =
+      _$SearchToShareEventCopyWithImpl<$Res>;
 }
 
 /// @nodoc
@@ -85,12 +87,15 @@ class _$SearchToShareEventCopyWithImpl<$Res> implements $SearchToShareEventCopyW
 
 /// @nodoc
 abstract class _$InitializedCopyWith<$Res> {
-  factory _$InitializedCopyWith(_Initialized value, $Res Function(_Initialized) then) = __$InitializedCopyWithImpl<$Res>;
+  factory _$InitializedCopyWith(_Initialized value, $Res Function(_Initialized) then) =
+      __$InitializedCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$InitializedCopyWithImpl<$Res> extends _$SearchToShareEventCopyWithImpl<$Res> implements _$InitializedCopyWith<$Res> {
-  __$InitializedCopyWithImpl(_Initialized _value, $Res Function(_Initialized) _then) : super(_value, (v) => _then(v as _Initialized));
+class __$InitializedCopyWithImpl<$Res> extends _$SearchToShareEventCopyWithImpl<$Res>
+    implements _$InitializedCopyWith<$Res> {
+  __$InitializedCopyWithImpl(_Initialized _value, $Res Function(_Initialized) _then)
+      : super(_value, (v) => _then(v as _Initialized));
 
   @override
   _Initialized get _value => super._value as _Initialized;
@@ -169,14 +174,19 @@ abstract class _Initialized implements SearchToShareEvent {
 
 /// @nodoc
 abstract class _$SearchTermChangedCopyWith<$Res> {
-  factory _$SearchTermChangedCopyWith(_SearchTermChanged value, $Res Function(_SearchTermChanged) then) = __$SearchTermChangedCopyWithImpl<$Res>;
+  factory _$SearchTermChangedCopyWith(
+          _SearchTermChanged value, $Res Function(_SearchTermChanged) then) =
+      __$SearchTermChangedCopyWithImpl<$Res>;
 
   $Res call({String searchTermString});
 }
 
 /// @nodoc
-class __$SearchTermChangedCopyWithImpl<$Res> extends _$SearchToShareEventCopyWithImpl<$Res> implements _$SearchTermChangedCopyWith<$Res> {
-  __$SearchTermChangedCopyWithImpl(_SearchTermChanged _value, $Res Function(_SearchTermChanged) _then) : super(_value, (v) => _then(v as _SearchTermChanged));
+class __$SearchTermChangedCopyWithImpl<$Res> extends _$SearchToShareEventCopyWithImpl<$Res>
+    implements _$SearchTermChangedCopyWith<$Res> {
+  __$SearchTermChangedCopyWithImpl(
+      _SearchTermChanged _value, $Res Function(_SearchTermChanged) _then)
+      : super(_value, (v) => _then(v as _SearchTermChanged));
 
   @override
   _SearchTermChanged get _value => super._value as _SearchTermChanged;
@@ -210,7 +220,9 @@ class _$_SearchTermChanged implements _SearchTermChanged {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _SearchTermChanged && (identical(other.searchTermString, searchTermString) || const DeepCollectionEquality().equals(other.searchTermString, searchTermString)));
+        (other is _SearchTermChanged &&
+            (identical(other.searchTermString, searchTermString) ||
+                const DeepCollectionEquality().equals(other.searchTermString, searchTermString)));
   }
 
   @override
@@ -218,7 +230,8 @@ class _$_SearchTermChanged implements _SearchTermChanged {
 
   @JsonKey(ignore: true)
   @override
-  _$SearchTermChangedCopyWith<_SearchTermChanged> get copyWith => __$SearchTermChangedCopyWithImpl<_SearchTermChanged>(this, _$identity);
+  _$SearchTermChangedCopyWith<_SearchTermChanged> get copyWith =>
+      __$SearchTermChangedCopyWithImpl<_SearchTermChanged>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -275,17 +288,21 @@ abstract class _SearchTermChanged implements SearchToShareEvent {
   String get searchTermString => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
-  _$SearchTermChangedCopyWith<_SearchTermChanged> get copyWith => throw _privateConstructorUsedError;
+  _$SearchTermChangedCopyWith<_SearchTermChanged> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class _$SubmittedCopyWith<$Res> {
-  factory _$SubmittedCopyWith(_Submitted value, $Res Function(_Submitted) then) = __$SubmittedCopyWithImpl<$Res>;
+  factory _$SubmittedCopyWith(_Submitted value, $Res Function(_Submitted) then) =
+      __$SubmittedCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$SubmittedCopyWithImpl<$Res> extends _$SearchToShareEventCopyWithImpl<$Res> implements _$SubmittedCopyWith<$Res> {
-  __$SubmittedCopyWithImpl(_Submitted _value, $Res Function(_Submitted) _then) : super(_value, (v) => _then(v as _Submitted));
+class __$SubmittedCopyWithImpl<$Res> extends _$SearchToShareEventCopyWithImpl<$Res>
+    implements _$SubmittedCopyWith<$Res> {
+  __$SubmittedCopyWithImpl(_Submitted _value, $Res Function(_Submitted) _then)
+      : super(_value, (v) => _then(v as _Submitted));
 
   @override
   _Submitted get _value => super._value as _Submitted;
@@ -366,7 +383,10 @@ abstract class _Submitted implements SearchToShareEvent {
 class _$SearchToShareStateTearOff {
   const _$SearchToShareStateTearOff();
 
-  _SearchToShareState call({required SearchTerm searchTerm, required KtList<User> users, required Option<Failure> failureOrSuccessOption}) {
+  _SearchToShareState call(
+      {required SearchTerm searchTerm,
+      required KtList<User> users,
+      required Option<Failure> failureOrSuccessOption}) {
     return _SearchToShareState(
       searchTerm: searchTerm,
       users: users,
@@ -387,12 +407,15 @@ mixin _$SearchToShareState {
   Option<Failure> get failureOrSuccessOption => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
-  $SearchToShareStateCopyWith<SearchToShareState> get copyWith => throw _privateConstructorUsedError;
+  $SearchToShareStateCopyWith<SearchToShareState> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $SearchToShareStateCopyWith<$Res> {
-  factory $SearchToShareStateCopyWith(SearchToShareState value, $Res Function(SearchToShareState) then) = _$SearchToShareStateCopyWithImpl<$Res>;
+  factory $SearchToShareStateCopyWith(
+          SearchToShareState value, $Res Function(SearchToShareState) then) =
+      _$SearchToShareStateCopyWithImpl<$Res>;
 
   $Res call({SearchTerm searchTerm, KtList<User> users, Option<Failure> failureOrSuccessOption});
 }
@@ -431,15 +454,20 @@ class _$SearchToShareStateCopyWithImpl<$Res> implements $SearchToShareStateCopyW
 
 /// @nodoc
 abstract class _$SearchToShareStateCopyWith<$Res> implements $SearchToShareStateCopyWith<$Res> {
-  factory _$SearchToShareStateCopyWith(_SearchToShareState value, $Res Function(_SearchToShareState) then) = __$SearchToShareStateCopyWithImpl<$Res>;
+  factory _$SearchToShareStateCopyWith(
+          _SearchToShareState value, $Res Function(_SearchToShareState) then) =
+      __$SearchToShareStateCopyWithImpl<$Res>;
 
   @override
   $Res call({SearchTerm searchTerm, KtList<User> users, Option<Failure> failureOrSuccessOption});
 }
 
 /// @nodoc
-class __$SearchToShareStateCopyWithImpl<$Res> extends _$SearchToShareStateCopyWithImpl<$Res> implements _$SearchToShareStateCopyWith<$Res> {
-  __$SearchToShareStateCopyWithImpl(_SearchToShareState _value, $Res Function(_SearchToShareState) _then) : super(_value, (v) => _then(v as _SearchToShareState));
+class __$SearchToShareStateCopyWithImpl<$Res> extends _$SearchToShareStateCopyWithImpl<$Res>
+    implements _$SearchToShareStateCopyWith<$Res> {
+  __$SearchToShareStateCopyWithImpl(
+      _SearchToShareState _value, $Res Function(_SearchToShareState) _then)
+      : super(_value, (v) => _then(v as _SearchToShareState));
 
   @override
   _SearchToShareState get _value => super._value as _SearchToShareState;
@@ -470,7 +498,8 @@ class __$SearchToShareStateCopyWithImpl<$Res> extends _$SearchToShareStateCopyWi
 /// @nodoc
 
 class _$_SearchToShareState implements _SearchToShareState {
-  const _$_SearchToShareState({required this.searchTerm, required this.users, required this.failureOrSuccessOption});
+  const _$_SearchToShareState(
+      {required this.searchTerm, required this.users, required this.failureOrSuccessOption});
 
   @override
   final SearchTerm searchTerm;
@@ -488,21 +517,33 @@ class _$_SearchToShareState implements _SearchToShareState {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other is _SearchToShareState &&
-            (identical(other.searchTerm, searchTerm) || const DeepCollectionEquality().equals(other.searchTerm, searchTerm)) &&
-            (identical(other.users, users) || const DeepCollectionEquality().equals(other.users, users)) &&
-            (identical(other.failureOrSuccessOption, failureOrSuccessOption) || const DeepCollectionEquality().equals(other.failureOrSuccessOption, failureOrSuccessOption)));
+            (identical(other.searchTerm, searchTerm) ||
+                const DeepCollectionEquality().equals(other.searchTerm, searchTerm)) &&
+            (identical(other.users, users) ||
+                const DeepCollectionEquality().equals(other.users, users)) &&
+            (identical(other.failureOrSuccessOption, failureOrSuccessOption) ||
+                const DeepCollectionEquality()
+                    .equals(other.failureOrSuccessOption, failureOrSuccessOption)));
   }
-  
+
   @override
-  int get hashCode => runtimeType.hashCode ^ const DeepCollectionEquality().hash(searchTerm) ^ const DeepCollectionEquality().hash(users) ^ const DeepCollectionEquality().hash(failureOrSuccessOption);
+  int get hashCode =>
+      runtimeType.hashCode ^
+      const DeepCollectionEquality().hash(searchTerm) ^
+      const DeepCollectionEquality().hash(users) ^
+      const DeepCollectionEquality().hash(failureOrSuccessOption);
 
   @JsonKey(ignore: true)
   @override
-  _$SearchToShareStateCopyWith<_SearchToShareState> get copyWith => __$SearchToShareStateCopyWithImpl<_SearchToShareState>(this, _$identity);
+  _$SearchToShareStateCopyWith<_SearchToShareState> get copyWith =>
+      __$SearchToShareStateCopyWithImpl<_SearchToShareState>(this, _$identity);
 }
 
 abstract class _SearchToShareState implements SearchToShareState {
-  const factory _SearchToShareState({required SearchTerm searchTerm, required KtList<User> users, required Option<Failure> failureOrSuccessOption}) = _$_SearchToShareState;
+  const factory _SearchToShareState(
+      {required SearchTerm searchTerm,
+      required KtList<User> users,
+      required Option<Failure> failureOrSuccessOption}) = _$_SearchToShareState;
 
   @override
   SearchTerm get searchTerm => throw _privateConstructorUsedError;
@@ -515,5 +556,6 @@ abstract class _SearchToShareState implements SearchToShareState {
 
   @override
   @JsonKey(ignore: true)
-  _$SearchToShareStateCopyWith<_SearchToShareState> get copyWith => throw _privateConstructorUsedError;
+  _$SearchToShareStateCopyWith<_SearchToShareState> get copyWith =>
+      throw _privateConstructorUsedError;
 }

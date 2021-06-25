@@ -1,7 +1,6 @@
 import 'package:injectable/injectable.dart';
 import 'package:mockito/mockito.dart';
 import 'package:worldon/domain/profile/use_case/block_user.dart';
-import 'package:worldon/domain/profile/use_case/delete_experience.dart';
 import 'package:worldon/domain/profile/use_case/edit_user.dart';
 import 'package:worldon/domain/profile/use_case/follow_user.dart';
 import 'package:worldon/domain/profile/use_case/load_user.dart';
@@ -19,9 +18,6 @@ import 'package:worldon/domain/profile/use_case/watch_user_interests.dart';
 
 @LazySingleton(as: BlockUser, env: [Environment.test])
 class MockBlockUser extends Mock implements BlockUser {}
-
-@LazySingleton(as: DeleteExperience, env: [Environment.test])
-class MockDeleteExperience extends Mock implements DeleteExperience {}
 
 @LazySingleton(as: EditUser, env: [Environment.test])
 class MockEditUser extends Mock implements EditUser {}

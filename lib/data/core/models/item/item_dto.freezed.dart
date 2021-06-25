@@ -68,9 +68,18 @@ mixin _$ItemDto {
 
 /// @nodoc
 abstract class $ItemDtoCopyWith<$Res> {
-  factory $ItemDtoCopyWith(ItemDto value, $Res Function(ItemDto) then) = _$ItemDtoCopyWithImpl<$Res>;
+  factory $ItemDtoCopyWith(ItemDto value, $Res Function(ItemDto) then) =
+      _$ItemDtoCopyWithImpl<$Res>;
 
-  $Res call({String id, String name, String description, ItemCode code, int value, int timeLimitInDays, String imageURL, @ServerTimestampConverter() DateTime boughtDate});
+  $Res call(
+      {String id,
+      String name,
+      String description,
+      ItemCode code,
+      int value,
+      int timeLimitInDays,
+      String imageURL,
+      @ServerTimestampConverter() DateTime boughtDate});
 }
 
 /// @nodoc
@@ -134,12 +143,22 @@ abstract class _$ItemCopyWith<$Res> implements $ItemDtoCopyWith<$Res> {
   factory _$ItemCopyWith(_Item value, $Res Function(_Item) then) = __$ItemCopyWithImpl<$Res>;
 
   @override
-  $Res call({String id, String name, String description, ItemCode code, int value, int timeLimitInDays, String imageURL, @ServerTimestampConverter() DateTime boughtDate});
+  $Res call(
+      {String id,
+      String name,
+      String description,
+      ItemCode code,
+      int value,
+      int timeLimitInDays,
+      String imageURL,
+      @ServerTimestampConverter() DateTime boughtDate});
 }
 
 /// @nodoc
-class __$ItemCopyWithImpl<$Res> extends _$ItemDtoCopyWithImpl<$Res> implements _$ItemCopyWith<$Res> {
-  __$ItemCopyWithImpl(_Item _value, $Res Function(_Item) _then) : super(_value, (v) => _then(v as _Item));
+class __$ItemCopyWithImpl<$Res> extends _$ItemDtoCopyWithImpl<$Res>
+    implements _$ItemCopyWith<$Res> {
+  __$ItemCopyWithImpl(_Item _value, $Res Function(_Item) _then)
+      : super(_value, (v) => _then(v as _Item));
 
   @override
   _Item get _value => super._value as _Item;
@@ -236,13 +255,20 @@ class _$_Item extends _Item {
     return identical(this, other) ||
         (other is _Item &&
             (identical(other.id, id) || const DeepCollectionEquality().equals(other.id, id)) &&
-            (identical(other.name, name) || const DeepCollectionEquality().equals(other.name, name)) &&
-            (identical(other.description, description) || const DeepCollectionEquality().equals(other.description, description)) &&
-            (identical(other.code, code) || const DeepCollectionEquality().equals(other.code, code)) &&
-            (identical(other.value, value) || const DeepCollectionEquality().equals(other.value, value)) &&
-            (identical(other.timeLimitInDays, timeLimitInDays) || const DeepCollectionEquality().equals(other.timeLimitInDays, timeLimitInDays)) &&
-            (identical(other.imageURL, imageURL) || const DeepCollectionEquality().equals(other.imageURL, imageURL)) &&
-            (identical(other.boughtDate, boughtDate) || const DeepCollectionEquality().equals(other.boughtDate, boughtDate)));
+            (identical(other.name, name) ||
+                const DeepCollectionEquality().equals(other.name, name)) &&
+            (identical(other.description, description) ||
+                const DeepCollectionEquality().equals(other.description, description)) &&
+            (identical(other.code, code) ||
+                const DeepCollectionEquality().equals(other.code, code)) &&
+            (identical(other.value, value) ||
+                const DeepCollectionEquality().equals(other.value, value)) &&
+            (identical(other.timeLimitInDays, timeLimitInDays) ||
+                const DeepCollectionEquality().equals(other.timeLimitInDays, timeLimitInDays)) &&
+            (identical(other.imageURL, imageURL) ||
+                const DeepCollectionEquality().equals(other.imageURL, imageURL)) &&
+            (identical(other.boughtDate, boughtDate) ||
+                const DeepCollectionEquality().equals(other.boughtDate, boughtDate)));
   }
 
   @override

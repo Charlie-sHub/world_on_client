@@ -76,7 +76,9 @@ mixin _$StoreAppBarTitleEvent {
 
 /// @nodoc
 abstract class $StoreAppBarTitleEventCopyWith<$Res> {
-  factory $StoreAppBarTitleEventCopyWith(StoreAppBarTitleEvent value, $Res Function(StoreAppBarTitleEvent) then) = _$StoreAppBarTitleEventCopyWithImpl<$Res>;
+  factory $StoreAppBarTitleEventCopyWith(
+          StoreAppBarTitleEvent value, $Res Function(StoreAppBarTitleEvent) then) =
+      _$StoreAppBarTitleEventCopyWithImpl<$Res>;
 }
 
 /// @nodoc
@@ -91,12 +93,15 @@ class _$StoreAppBarTitleEventCopyWithImpl<$Res> implements $StoreAppBarTitleEven
 
 /// @nodoc
 abstract class _$InitializedCopyWith<$Res> {
-  factory _$InitializedCopyWith(_Initialized value, $Res Function(_Initialized) then) = __$InitializedCopyWithImpl<$Res>;
+  factory _$InitializedCopyWith(_Initialized value, $Res Function(_Initialized) then) =
+      __$InitializedCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$InitializedCopyWithImpl<$Res> extends _$StoreAppBarTitleEventCopyWithImpl<$Res> implements _$InitializedCopyWith<$Res> {
-  __$InitializedCopyWithImpl(_Initialized _value, $Res Function(_Initialized) _then) : super(_value, (v) => _then(v as _Initialized));
+class __$InitializedCopyWithImpl<$Res> extends _$StoreAppBarTitleEventCopyWithImpl<$Res>
+    implements _$InitializedCopyWith<$Res> {
+  __$InitializedCopyWithImpl(_Initialized _value, $Res Function(_Initialized) _then)
+      : super(_value, (v) => _then(v as _Initialized));
 
   @override
   _Initialized get _value => super._value as _Initialized;
@@ -179,12 +184,15 @@ abstract class _Initialized implements StoreAppBarTitleEvent {
 
 /// @nodoc
 abstract class _$ShowedStoreCopyWith<$Res> {
-  factory _$ShowedStoreCopyWith(_ShowedStore value, $Res Function(_ShowedStore) then) = __$ShowedStoreCopyWithImpl<$Res>;
+  factory _$ShowedStoreCopyWith(_ShowedStore value, $Res Function(_ShowedStore) then) =
+      __$ShowedStoreCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$ShowedStoreCopyWithImpl<$Res> extends _$StoreAppBarTitleEventCopyWithImpl<$Res> implements _$ShowedStoreCopyWith<$Res> {
-  __$ShowedStoreCopyWithImpl(_ShowedStore _value, $Res Function(_ShowedStore) _then) : super(_value, (v) => _then(v as _ShowedStore));
+class __$ShowedStoreCopyWithImpl<$Res> extends _$StoreAppBarTitleEventCopyWithImpl<$Res>
+    implements _$ShowedStoreCopyWith<$Res> {
+  __$ShowedStoreCopyWithImpl(_ShowedStore _value, $Res Function(_ShowedStore) _then)
+      : super(_value, (v) => _then(v as _ShowedStore));
 
   @override
   _ShowedStore get _value => super._value as _ShowedStore;
@@ -267,12 +275,16 @@ abstract class _ShowedStore implements StoreAppBarTitleEvent {
 
 /// @nodoc
 abstract class _$ShowedPromotionsCopyWith<$Res> {
-  factory _$ShowedPromotionsCopyWith(_ShowedPromotions value, $Res Function(_ShowedPromotions) then) = __$ShowedPromotionsCopyWithImpl<$Res>;
+  factory _$ShowedPromotionsCopyWith(
+          _ShowedPromotions value, $Res Function(_ShowedPromotions) then) =
+      __$ShowedPromotionsCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$ShowedPromotionsCopyWithImpl<$Res> extends _$StoreAppBarTitleEventCopyWithImpl<$Res> implements _$ShowedPromotionsCopyWith<$Res> {
-  __$ShowedPromotionsCopyWithImpl(_ShowedPromotions _value, $Res Function(_ShowedPromotions) _then) : super(_value, (v) => _then(v as _ShowedPromotions));
+class __$ShowedPromotionsCopyWithImpl<$Res> extends _$StoreAppBarTitleEventCopyWithImpl<$Res>
+    implements _$ShowedPromotionsCopyWith<$Res> {
+  __$ShowedPromotionsCopyWithImpl(_ShowedPromotions _value, $Res Function(_ShowedPromotions) _then)
+      : super(_value, (v) => _then(v as _ShowedPromotions));
 
   @override
   _ShowedPromotions get _value => super._value as _ShowedPromotions;
@@ -355,12 +367,15 @@ abstract class _ShowedPromotions implements StoreAppBarTitleEvent {
 
 /// @nodoc
 abstract class _$ShowedMyItemsCopyWith<$Res> {
-  factory _$ShowedMyItemsCopyWith(_ShowedMyItems value, $Res Function(_ShowedMyItems) then) = __$ShowedMyItemsCopyWithImpl<$Res>;
+  factory _$ShowedMyItemsCopyWith(_ShowedMyItems value, $Res Function(_ShowedMyItems) then) =
+      __$ShowedMyItemsCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$ShowedMyItemsCopyWithImpl<$Res> extends _$StoreAppBarTitleEventCopyWithImpl<$Res> implements _$ShowedMyItemsCopyWith<$Res> {
-  __$ShowedMyItemsCopyWithImpl(_ShowedMyItems _value, $Res Function(_ShowedMyItems) _then) : super(_value, (v) => _then(v as _ShowedMyItems));
+class __$ShowedMyItemsCopyWithImpl<$Res> extends _$StoreAppBarTitleEventCopyWithImpl<$Res>
+    implements _$ShowedMyItemsCopyWith<$Res> {
+  __$ShowedMyItemsCopyWithImpl(_ShowedMyItems _value, $Res Function(_ShowedMyItems) _then)
+      : super(_value, (v) => _then(v as _ShowedMyItems));
 
   @override
   _ShowedMyItems get _value => super._value as _ShowedMyItems;
@@ -505,7 +520,9 @@ mixin _$StoreAppBarTitleState {
 
 /// @nodoc
 abstract class $StoreAppBarTitleStateCopyWith<$Res> {
-  factory $StoreAppBarTitleStateCopyWith(StoreAppBarTitleState value, $Res Function(StoreAppBarTitleState) then) = _$StoreAppBarTitleStateCopyWithImpl<$Res>;
+  factory $StoreAppBarTitleStateCopyWith(
+          StoreAppBarTitleState value, $Res Function(StoreAppBarTitleState) then) =
+      _$StoreAppBarTitleStateCopyWithImpl<$Res>;
 }
 
 /// @nodoc
@@ -520,12 +537,15 @@ class _$StoreAppBarTitleStateCopyWithImpl<$Res> implements $StoreAppBarTitleStat
 
 /// @nodoc
 abstract class _$InitialCopyWith<$Res> {
-  factory _$InitialCopyWith(_Initial value, $Res Function(_Initial) then) = __$InitialCopyWithImpl<$Res>;
+  factory _$InitialCopyWith(_Initial value, $Res Function(_Initial) then) =
+      __$InitialCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$InitialCopyWithImpl<$Res> extends _$StoreAppBarTitleStateCopyWithImpl<$Res> implements _$InitialCopyWith<$Res> {
-  __$InitialCopyWithImpl(_Initial _value, $Res Function(_Initial) _then) : super(_value, (v) => _then(v as _Initial));
+class __$InitialCopyWithImpl<$Res> extends _$StoreAppBarTitleStateCopyWithImpl<$Res>
+    implements _$InitialCopyWith<$Res> {
+  __$InitialCopyWithImpl(_Initial _value, $Res Function(_Initial) _then)
+      : super(_value, (v) => _then(v as _Initial));
 
   @override
   _Initial get _value => super._value as _Initial;
@@ -612,8 +632,10 @@ abstract class _$StoreCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$StoreCopyWithImpl<$Res> extends _$StoreAppBarTitleStateCopyWithImpl<$Res> implements _$StoreCopyWith<$Res> {
-  __$StoreCopyWithImpl(_Store _value, $Res Function(_Store) _then) : super(_value, (v) => _then(v as _Store));
+class __$StoreCopyWithImpl<$Res> extends _$StoreAppBarTitleStateCopyWithImpl<$Res>
+    implements _$StoreCopyWith<$Res> {
+  __$StoreCopyWithImpl(_Store _value, $Res Function(_Store) _then)
+      : super(_value, (v) => _then(v as _Store));
 
   @override
   _Store get _value => super._value as _Store;
@@ -696,12 +718,15 @@ abstract class _Store implements StoreAppBarTitleState {
 
 /// @nodoc
 abstract class _$PromotionsCopyWith<$Res> {
-  factory _$PromotionsCopyWith(_Promotions value, $Res Function(_Promotions) then) = __$PromotionsCopyWithImpl<$Res>;
+  factory _$PromotionsCopyWith(_Promotions value, $Res Function(_Promotions) then) =
+      __$PromotionsCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$PromotionsCopyWithImpl<$Res> extends _$StoreAppBarTitleStateCopyWithImpl<$Res> implements _$PromotionsCopyWith<$Res> {
-  __$PromotionsCopyWithImpl(_Promotions _value, $Res Function(_Promotions) _then) : super(_value, (v) => _then(v as _Promotions));
+class __$PromotionsCopyWithImpl<$Res> extends _$StoreAppBarTitleStateCopyWithImpl<$Res>
+    implements _$PromotionsCopyWith<$Res> {
+  __$PromotionsCopyWithImpl(_Promotions _value, $Res Function(_Promotions) _then)
+      : super(_value, (v) => _then(v as _Promotions));
 
   @override
   _Promotions get _value => super._value as _Promotions;
@@ -784,12 +809,15 @@ abstract class _Promotions implements StoreAppBarTitleState {
 
 /// @nodoc
 abstract class _$MyItemsCopyWith<$Res> {
-  factory _$MyItemsCopyWith(_MyItems value, $Res Function(_MyItems) then) = __$MyItemsCopyWithImpl<$Res>;
+  factory _$MyItemsCopyWith(_MyItems value, $Res Function(_MyItems) then) =
+      __$MyItemsCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$MyItemsCopyWithImpl<$Res> extends _$StoreAppBarTitleStateCopyWithImpl<$Res> implements _$MyItemsCopyWith<$Res> {
-  __$MyItemsCopyWithImpl(_MyItems _value, $Res Function(_MyItems) _then) : super(_value, (v) => _then(v as _MyItems));
+class __$MyItemsCopyWithImpl<$Res> extends _$StoreAppBarTitleStateCopyWithImpl<$Res>
+    implements _$MyItemsCopyWith<$Res> {
+  __$MyItemsCopyWithImpl(_MyItems _value, $Res Function(_MyItems) _then)
+      : super(_value, (v) => _then(v as _MyItems));
 
   @override
   _MyItems get _value => super._value as _MyItems;

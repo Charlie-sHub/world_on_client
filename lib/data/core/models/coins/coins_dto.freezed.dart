@@ -45,7 +45,8 @@ mixin _$CoinsDto {
 
 /// @nodoc
 abstract class $CoinsDtoCopyWith<$Res> {
-  factory $CoinsDtoCopyWith(CoinsDto value, $Res Function(CoinsDto) then) = _$CoinsDtoCopyWithImpl<$Res>;
+  factory $CoinsDtoCopyWith(CoinsDto value, $Res Function(CoinsDto) then) =
+      _$CoinsDtoCopyWithImpl<$Res>;
 
   $Res call({String tenCoinsProductId});
 }
@@ -73,15 +74,18 @@ class _$CoinsDtoCopyWithImpl<$Res> implements $CoinsDtoCopyWith<$Res> {
 
 /// @nodoc
 abstract class _$CoinsDtoCopyWith<$Res> implements $CoinsDtoCopyWith<$Res> {
-  factory _$CoinsDtoCopyWith(_CoinsDto value, $Res Function(_CoinsDto) then) = __$CoinsDtoCopyWithImpl<$Res>;
+  factory _$CoinsDtoCopyWith(_CoinsDto value, $Res Function(_CoinsDto) then) =
+      __$CoinsDtoCopyWithImpl<$Res>;
 
   @override
   $Res call({String tenCoinsProductId});
 }
 
 /// @nodoc
-class __$CoinsDtoCopyWithImpl<$Res> extends _$CoinsDtoCopyWithImpl<$Res> implements _$CoinsDtoCopyWith<$Res> {
-  __$CoinsDtoCopyWithImpl(_CoinsDto _value, $Res Function(_CoinsDto) _then) : super(_value, (v) => _then(v as _CoinsDto));
+class __$CoinsDtoCopyWithImpl<$Res> extends _$CoinsDtoCopyWithImpl<$Res>
+    implements _$CoinsDtoCopyWith<$Res> {
+  __$CoinsDtoCopyWithImpl(_CoinsDto _value, $Res Function(_CoinsDto) _then)
+      : super(_value, (v) => _then(v as _CoinsDto));
 
   @override
   _CoinsDto get _value => super._value as _CoinsDto;
@@ -117,7 +121,9 @@ class _$_CoinsDto extends _CoinsDto {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _CoinsDto && (identical(other.tenCoinsProductId, tenCoinsProductId) || const DeepCollectionEquality().equals(other.tenCoinsProductId, tenCoinsProductId)));
+        (other is _CoinsDto &&
+            (identical(other.tenCoinsProductId, tenCoinsProductId) ||
+                const DeepCollectionEquality().equals(other.tenCoinsProductId, tenCoinsProductId)));
   }
 
   @override
@@ -125,7 +131,8 @@ class _$_CoinsDto extends _CoinsDto {
 
   @JsonKey(ignore: true)
   @override
-  _$CoinsDtoCopyWith<_CoinsDto> get copyWith => __$CoinsDtoCopyWithImpl<_CoinsDto>(this, _$identity);
+  _$CoinsDtoCopyWith<_CoinsDto> get copyWith =>
+      __$CoinsDtoCopyWithImpl<_CoinsDto>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {

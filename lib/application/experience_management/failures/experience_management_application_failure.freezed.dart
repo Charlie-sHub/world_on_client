@@ -54,19 +54,23 @@ mixin _$ExperienceManagementApplicationFailure<T> {
       throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
-  $ExperienceManagementApplicationFailureCopyWith<T, ExperienceManagementApplicationFailure<T>> get copyWith => throw _privateConstructorUsedError;
+  $ExperienceManagementApplicationFailureCopyWith<T, ExperienceManagementApplicationFailure<T>>
+      get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $ExperienceManagementApplicationFailureCopyWith<T, $Res> {
-  factory $ExperienceManagementApplicationFailureCopyWith(ExperienceManagementApplicationFailure<T> value, $Res Function(ExperienceManagementApplicationFailure<T>) then) =
+  factory $ExperienceManagementApplicationFailureCopyWith(
+          ExperienceManagementApplicationFailure<T> value,
+          $Res Function(ExperienceManagementApplicationFailure<T>) then) =
       _$ExperienceManagementApplicationFailureCopyWithImpl<T, $Res>;
 
   $Res call({int limit});
 }
 
 /// @nodoc
-class _$ExperienceManagementApplicationFailureCopyWithImpl<T, $Res> implements $ExperienceManagementApplicationFailureCopyWith<T, $Res> {
+class _$ExperienceManagementApplicationFailureCopyWithImpl<T, $Res>
+    implements $ExperienceManagementApplicationFailureCopyWith<T, $Res> {
   _$ExperienceManagementApplicationFailureCopyWithImpl(this._value, this._then);
 
   final ExperienceManagementApplicationFailure<T> _value;
@@ -88,16 +92,23 @@ class _$ExperienceManagementApplicationFailureCopyWithImpl<T, $Res> implements $
 }
 
 /// @nodoc
-abstract class $SurpassedImageLimitCopyWith<T, $Res> implements $ExperienceManagementApplicationFailureCopyWith<T, $Res> {
-  factory $SurpassedImageLimitCopyWith(SurpassedImageLimit<T> value, $Res Function(SurpassedImageLimit<T>) then) = _$SurpassedImageLimitCopyWithImpl<T, $Res>;
+abstract class $SurpassedImageLimitCopyWith<T, $Res>
+    implements $ExperienceManagementApplicationFailureCopyWith<T, $Res> {
+  factory $SurpassedImageLimitCopyWith(
+          SurpassedImageLimit<T> value, $Res Function(SurpassedImageLimit<T>) then) =
+      _$SurpassedImageLimitCopyWithImpl<T, $Res>;
 
   @override
   $Res call({int limit});
 }
 
 /// @nodoc
-class _$SurpassedImageLimitCopyWithImpl<T, $Res> extends _$ExperienceManagementApplicationFailureCopyWithImpl<T, $Res> implements $SurpassedImageLimitCopyWith<T, $Res> {
-  _$SurpassedImageLimitCopyWithImpl(SurpassedImageLimit<T> _value, $Res Function(SurpassedImageLimit<T>) _then) : super(_value, (v) => _then(v as SurpassedImageLimit<T>));
+class _$SurpassedImageLimitCopyWithImpl<T, $Res>
+    extends _$ExperienceManagementApplicationFailureCopyWithImpl<T, $Res>
+    implements $SurpassedImageLimitCopyWith<T, $Res> {
+  _$SurpassedImageLimitCopyWithImpl(
+      SurpassedImageLimit<T> _value, $Res Function(SurpassedImageLimit<T>) _then)
+      : super(_value, (v) => _then(v as SurpassedImageLimit<T>));
 
   @override
   SurpassedImageLimit<T> get _value => super._value as SurpassedImageLimit<T>;
@@ -130,7 +141,10 @@ class _$SurpassedImageLimit<T> implements SurpassedImageLimit<T> {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is SurpassedImageLimit<T> && (identical(other.limit, limit) || const DeepCollectionEquality().equals(other.limit, limit)));
+    return identical(this, other) ||
+        (other is SurpassedImageLimit<T> &&
+            (identical(other.limit, limit) ||
+                const DeepCollectionEquality().equals(other.limit, limit)));
   }
 
   @override
@@ -138,7 +152,8 @@ class _$SurpassedImageLimit<T> implements SurpassedImageLimit<T> {
 
   @JsonKey(ignore: true)
   @override
-  $SurpassedImageLimitCopyWith<T, SurpassedImageLimit<T>> get copyWith => _$SurpassedImageLimitCopyWithImpl<T, SurpassedImageLimit<T>>(this, _$identity);
+  $SurpassedImageLimitCopyWith<T, SurpassedImageLimit<T>> get copyWith =>
+      _$SurpassedImageLimitCopyWithImpl<T, SurpassedImageLimit<T>>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -189,5 +204,6 @@ abstract class SurpassedImageLimit<T> implements ExperienceManagementApplication
 
   @override
   @JsonKey(ignore: true)
-  $SurpassedImageLimitCopyWith<T, SurpassedImageLimit<T>> get copyWith => throw _privateConstructorUsedError;
+  $SurpassedImageLimitCopyWith<T, SurpassedImageLimit<T>> get copyWith =>
+      throw _privateConstructorUsedError;
 }

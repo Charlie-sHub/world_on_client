@@ -47,7 +47,8 @@ mixin _$OptionsDto {
 
 /// @nodoc
 abstract class $OptionsDtoCopyWith<$Res> {
-  factory $OptionsDtoCopyWith(OptionsDto value, $Res Function(OptionsDto) then) = _$OptionsDtoCopyWithImpl<$Res>;
+  factory $OptionsDtoCopyWith(OptionsDto value, $Res Function(OptionsDto) then) =
+      _$OptionsDtoCopyWithImpl<$Res>;
 
   $Res call({String id, String languageCode});
 }
@@ -80,15 +81,18 @@ class _$OptionsDtoCopyWithImpl<$Res> implements $OptionsDtoCopyWith<$Res> {
 
 /// @nodoc
 abstract class _$OptionsDtoCopyWith<$Res> implements $OptionsDtoCopyWith<$Res> {
-  factory _$OptionsDtoCopyWith(_OptionsDto value, $Res Function(_OptionsDto) then) = __$OptionsDtoCopyWithImpl<$Res>;
+  factory _$OptionsDtoCopyWith(_OptionsDto value, $Res Function(_OptionsDto) then) =
+      __$OptionsDtoCopyWithImpl<$Res>;
 
   @override
   $Res call({String id, String languageCode});
 }
 
 /// @nodoc
-class __$OptionsDtoCopyWithImpl<$Res> extends _$OptionsDtoCopyWithImpl<$Res> implements _$OptionsDtoCopyWith<$Res> {
-  __$OptionsDtoCopyWithImpl(_OptionsDto _value, $Res Function(_OptionsDto) _then) : super(_value, (v) => _then(v as _OptionsDto));
+class __$OptionsDtoCopyWithImpl<$Res> extends _$OptionsDtoCopyWithImpl<$Res>
+    implements _$OptionsDtoCopyWith<$Res> {
+  __$OptionsDtoCopyWithImpl(_OptionsDto _value, $Res Function(_OptionsDto) _then)
+      : super(_value, (v) => _then(v as _OptionsDto));
 
   @override
   _OptionsDto get _value => super._value as _OptionsDto;
@@ -133,15 +137,20 @@ class _$_OptionsDto extends _OptionsDto {
     return identical(this, other) ||
         (other is _OptionsDto &&
             (identical(other.id, id) || const DeepCollectionEquality().equals(other.id, id)) &&
-            (identical(other.languageCode, languageCode) || const DeepCollectionEquality().equals(other.languageCode, languageCode)));
+            (identical(other.languageCode, languageCode) ||
+                const DeepCollectionEquality().equals(other.languageCode, languageCode)));
   }
 
   @override
-  int get hashCode => runtimeType.hashCode ^ const DeepCollectionEquality().hash(id) ^ const DeepCollectionEquality().hash(languageCode);
+  int get hashCode =>
+      runtimeType.hashCode ^
+      const DeepCollectionEquality().hash(id) ^
+      const DeepCollectionEquality().hash(languageCode);
 
   @JsonKey(ignore: true)
   @override
-  _$OptionsDtoCopyWith<_OptionsDto> get copyWith => __$OptionsDtoCopyWithImpl<_OptionsDto>(this, _$identity);
+  _$OptionsDtoCopyWith<_OptionsDto> get copyWith =>
+      __$OptionsDtoCopyWithImpl<_OptionsDto>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {

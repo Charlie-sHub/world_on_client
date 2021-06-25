@@ -64,7 +64,9 @@ mixin _$CommentWatcherEvent {
 
 /// @nodoc
 abstract class $CommentWatcherEventCopyWith<$Res> {
-  factory $CommentWatcherEventCopyWith(CommentWatcherEvent value, $Res Function(CommentWatcherEvent) then) = _$CommentWatcherEventCopyWithImpl<$Res>;
+  factory $CommentWatcherEventCopyWith(
+          CommentWatcherEvent value, $Res Function(CommentWatcherEvent) then) =
+      _$CommentWatcherEventCopyWithImpl<$Res>;
 }
 
 /// @nodoc
@@ -79,14 +81,19 @@ class _$CommentWatcherEventCopyWithImpl<$Res> implements $CommentWatcherEventCop
 
 /// @nodoc
 abstract class _$WatchExperienceCommentsStartedCopyWith<$Res> {
-  factory _$WatchExperienceCommentsStartedCopyWith(_WatchExperienceCommentsStarted value, $Res Function(_WatchExperienceCommentsStarted) then) = __$WatchExperienceCommentsStartedCopyWithImpl<$Res>;
+  factory _$WatchExperienceCommentsStartedCopyWith(_WatchExperienceCommentsStarted value,
+          $Res Function(_WatchExperienceCommentsStarted) then) =
+      __$WatchExperienceCommentsStartedCopyWithImpl<$Res>;
 
   $Res call({UniqueId experienceId});
 }
 
 /// @nodoc
-class __$WatchExperienceCommentsStartedCopyWithImpl<$Res> extends _$CommentWatcherEventCopyWithImpl<$Res> implements _$WatchExperienceCommentsStartedCopyWith<$Res> {
-  __$WatchExperienceCommentsStartedCopyWithImpl(_WatchExperienceCommentsStarted _value, $Res Function(_WatchExperienceCommentsStarted) _then)
+class __$WatchExperienceCommentsStartedCopyWithImpl<$Res>
+    extends _$CommentWatcherEventCopyWithImpl<$Res>
+    implements _$WatchExperienceCommentsStartedCopyWith<$Res> {
+  __$WatchExperienceCommentsStartedCopyWithImpl(
+      _WatchExperienceCommentsStarted _value, $Res Function(_WatchExperienceCommentsStarted) _then)
       : super(_value, (v) => _then(v as _WatchExperienceCommentsStarted));
 
   @override
@@ -121,7 +128,9 @@ class _$_WatchExperienceCommentsStarted implements _WatchExperienceCommentsStart
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _WatchExperienceCommentsStarted && (identical(other.experienceId, experienceId) || const DeepCollectionEquality().equals(other.experienceId, experienceId)));
+        (other is _WatchExperienceCommentsStarted &&
+            (identical(other.experienceId, experienceId) ||
+                const DeepCollectionEquality().equals(other.experienceId, experienceId)));
   }
 
   @override
@@ -129,7 +138,9 @@ class _$_WatchExperienceCommentsStarted implements _WatchExperienceCommentsStart
 
   @JsonKey(ignore: true)
   @override
-  _$WatchExperienceCommentsStartedCopyWith<_WatchExperienceCommentsStarted> get copyWith => __$WatchExperienceCommentsStartedCopyWithImpl<_WatchExperienceCommentsStarted>(this, _$identity);
+  _$WatchExperienceCommentsStartedCopyWith<_WatchExperienceCommentsStarted> get copyWith =>
+      __$WatchExperienceCommentsStartedCopyWithImpl<_WatchExperienceCommentsStarted>(
+          this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -177,24 +188,29 @@ class _$_WatchExperienceCommentsStarted implements _WatchExperienceCommentsStart
 }
 
 abstract class _WatchExperienceCommentsStarted implements CommentWatcherEvent {
-  const factory _WatchExperienceCommentsStarted(UniqueId experienceId) = _$_WatchExperienceCommentsStarted;
+  const factory _WatchExperienceCommentsStarted(UniqueId experienceId) =
+      _$_WatchExperienceCommentsStarted;
 
   UniqueId get experienceId => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
-  _$WatchExperienceCommentsStartedCopyWith<_WatchExperienceCommentsStarted> get copyWith => throw _privateConstructorUsedError;
+  _$WatchExperienceCommentsStartedCopyWith<_WatchExperienceCommentsStarted> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class _$ResultsReceivedCopyWith<$Res> {
-  factory _$ResultsReceivedCopyWith(_ResultsReceived value, $Res Function(_ResultsReceived) then) = __$ResultsReceivedCopyWithImpl<$Res>;
+  factory _$ResultsReceivedCopyWith(_ResultsReceived value, $Res Function(_ResultsReceived) then) =
+      __$ResultsReceivedCopyWithImpl<$Res>;
 
   $Res call({Either<Failure, KtList<Comment>> failureOrComments});
 }
 
 /// @nodoc
-class __$ResultsReceivedCopyWithImpl<$Res> extends _$CommentWatcherEventCopyWithImpl<$Res> implements _$ResultsReceivedCopyWith<$Res> {
-  __$ResultsReceivedCopyWithImpl(_ResultsReceived _value, $Res Function(_ResultsReceived) _then) : super(_value, (v) => _then(v as _ResultsReceived));
+class __$ResultsReceivedCopyWithImpl<$Res> extends _$CommentWatcherEventCopyWithImpl<$Res>
+    implements _$ResultsReceivedCopyWith<$Res> {
+  __$ResultsReceivedCopyWithImpl(_ResultsReceived _value, $Res Function(_ResultsReceived) _then)
+      : super(_value, (v) => _then(v as _ResultsReceived));
 
   @override
   _ResultsReceived get _value => super._value as _ResultsReceived;
@@ -228,7 +244,9 @@ class _$_ResultsReceived implements _ResultsReceived {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _ResultsReceived && (identical(other.failureOrComments, failureOrComments) || const DeepCollectionEquality().equals(other.failureOrComments, failureOrComments)));
+        (other is _ResultsReceived &&
+            (identical(other.failureOrComments, failureOrComments) ||
+                const DeepCollectionEquality().equals(other.failureOrComments, failureOrComments)));
   }
 
   @override
@@ -236,7 +254,8 @@ class _$_ResultsReceived implements _ResultsReceived {
 
   @JsonKey(ignore: true)
   @override
-  _$ResultsReceivedCopyWith<_ResultsReceived> get copyWith => __$ResultsReceivedCopyWithImpl<_ResultsReceived>(this, _$identity);
+  _$ResultsReceivedCopyWith<_ResultsReceived> get copyWith =>
+      __$ResultsReceivedCopyWithImpl<_ResultsReceived>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -284,7 +303,8 @@ class _$_ResultsReceived implements _ResultsReceived {
 }
 
 abstract class _ResultsReceived implements CommentWatcherEvent {
-  const factory _ResultsReceived(Either<Failure, KtList<Comment>> failureOrComments) = _$_ResultsReceived;
+  const factory _ResultsReceived(Either<Failure, KtList<Comment>> failureOrComments) =
+      _$_ResultsReceived;
 
   Either<Failure, KtList<Comment>> get failureOrComments => throw _privateConstructorUsedError;
 
@@ -360,7 +380,9 @@ mixin _$CommentWatcherState {
 
 /// @nodoc
 abstract class $CommentWatcherStateCopyWith<$Res> {
-  factory $CommentWatcherStateCopyWith(CommentWatcherState value, $Res Function(CommentWatcherState) then) = _$CommentWatcherStateCopyWithImpl<$Res>;
+  factory $CommentWatcherStateCopyWith(
+          CommentWatcherState value, $Res Function(CommentWatcherState) then) =
+      _$CommentWatcherStateCopyWithImpl<$Res>;
 }
 
 /// @nodoc
@@ -375,12 +397,15 @@ class _$CommentWatcherStateCopyWithImpl<$Res> implements $CommentWatcherStateCop
 
 /// @nodoc
 abstract class _$InitialCopyWith<$Res> {
-  factory _$InitialCopyWith(_Initial value, $Res Function(_Initial) then) = __$InitialCopyWithImpl<$Res>;
+  factory _$InitialCopyWith(_Initial value, $Res Function(_Initial) then) =
+      __$InitialCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$InitialCopyWithImpl<$Res> extends _$CommentWatcherStateCopyWithImpl<$Res> implements _$InitialCopyWith<$Res> {
-  __$InitialCopyWithImpl(_Initial _value, $Res Function(_Initial) _then) : super(_value, (v) => _then(v as _Initial));
+class __$InitialCopyWithImpl<$Res> extends _$CommentWatcherStateCopyWithImpl<$Res>
+    implements _$InitialCopyWith<$Res> {
+  __$InitialCopyWithImpl(_Initial _value, $Res Function(_Initial) _then)
+      : super(_value, (v) => _then(v as _Initial));
 
   @override
   _Initial get _value => super._value as _Initial;
@@ -463,12 +488,15 @@ abstract class _Initial implements CommentWatcherState {
 
 /// @nodoc
 abstract class _$LoadInProgressCopyWith<$Res> {
-  factory _$LoadInProgressCopyWith(_LoadInProgress value, $Res Function(_LoadInProgress) then) = __$LoadInProgressCopyWithImpl<$Res>;
+  factory _$LoadInProgressCopyWith(_LoadInProgress value, $Res Function(_LoadInProgress) then) =
+      __$LoadInProgressCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$LoadInProgressCopyWithImpl<$Res> extends _$CommentWatcherStateCopyWithImpl<$Res> implements _$LoadInProgressCopyWith<$Res> {
-  __$LoadInProgressCopyWithImpl(_LoadInProgress _value, $Res Function(_LoadInProgress) _then) : super(_value, (v) => _then(v as _LoadInProgress));
+class __$LoadInProgressCopyWithImpl<$Res> extends _$CommentWatcherStateCopyWithImpl<$Res>
+    implements _$LoadInProgressCopyWith<$Res> {
+  __$LoadInProgressCopyWithImpl(_LoadInProgress _value, $Res Function(_LoadInProgress) _then)
+      : super(_value, (v) => _then(v as _LoadInProgress));
 
   @override
   _LoadInProgress get _value => super._value as _LoadInProgress;
@@ -551,14 +579,17 @@ abstract class _LoadInProgress implements CommentWatcherState {
 
 /// @nodoc
 abstract class _$LoadSuccessCopyWith<$Res> {
-  factory _$LoadSuccessCopyWith(_LoadSuccess value, $Res Function(_LoadSuccess) then) = __$LoadSuccessCopyWithImpl<$Res>;
+  factory _$LoadSuccessCopyWith(_LoadSuccess value, $Res Function(_LoadSuccess) then) =
+      __$LoadSuccessCopyWithImpl<$Res>;
 
   $Res call({KtList<Comment> comments});
 }
 
 /// @nodoc
-class __$LoadSuccessCopyWithImpl<$Res> extends _$CommentWatcherStateCopyWithImpl<$Res> implements _$LoadSuccessCopyWith<$Res> {
-  __$LoadSuccessCopyWithImpl(_LoadSuccess _value, $Res Function(_LoadSuccess) _then) : super(_value, (v) => _then(v as _LoadSuccess));
+class __$LoadSuccessCopyWithImpl<$Res> extends _$CommentWatcherStateCopyWithImpl<$Res>
+    implements _$LoadSuccessCopyWith<$Res> {
+  __$LoadSuccessCopyWithImpl(_LoadSuccess _value, $Res Function(_LoadSuccess) _then)
+      : super(_value, (v) => _then(v as _LoadSuccess));
 
   @override
   _LoadSuccess get _value => super._value as _LoadSuccess;
@@ -591,7 +622,10 @@ class _$_LoadSuccess implements _LoadSuccess {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _LoadSuccess && (identical(other.comments, comments) || const DeepCollectionEquality().equals(other.comments, comments)));
+    return identical(this, other) ||
+        (other is _LoadSuccess &&
+            (identical(other.comments, comments) ||
+                const DeepCollectionEquality().equals(other.comments, comments)));
   }
 
   @override
@@ -599,7 +633,8 @@ class _$_LoadSuccess implements _LoadSuccess {
 
   @JsonKey(ignore: true)
   @override
-  _$LoadSuccessCopyWith<_LoadSuccess> get copyWith => __$LoadSuccessCopyWithImpl<_LoadSuccess>(this, _$identity);
+  _$LoadSuccessCopyWith<_LoadSuccess> get copyWith =>
+      __$LoadSuccessCopyWithImpl<_LoadSuccess>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -665,7 +700,8 @@ abstract class _LoadSuccess implements CommentWatcherState {
 
 /// @nodoc
 abstract class _$LoadFailureCopyWith<$Res> {
-  factory _$LoadFailureCopyWith(_LoadFailure value, $Res Function(_LoadFailure) then) = __$LoadFailureCopyWithImpl<$Res>;
+  factory _$LoadFailureCopyWith(_LoadFailure value, $Res Function(_LoadFailure) then) =
+      __$LoadFailureCopyWithImpl<$Res>;
 
   $Res call({Failure<dynamic> failure});
 
@@ -673,8 +709,10 @@ abstract class _$LoadFailureCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$LoadFailureCopyWithImpl<$Res> extends _$CommentWatcherStateCopyWithImpl<$Res> implements _$LoadFailureCopyWith<$Res> {
-  __$LoadFailureCopyWithImpl(_LoadFailure _value, $Res Function(_LoadFailure) _then) : super(_value, (v) => _then(v as _LoadFailure));
+class __$LoadFailureCopyWithImpl<$Res> extends _$CommentWatcherStateCopyWithImpl<$Res>
+    implements _$LoadFailureCopyWith<$Res> {
+  __$LoadFailureCopyWithImpl(_LoadFailure _value, $Res Function(_LoadFailure) _then)
+      : super(_value, (v) => _then(v as _LoadFailure));
 
   @override
   _LoadFailure get _value => super._value as _LoadFailure;
@@ -714,7 +752,10 @@ class _$_LoadFailure implements _LoadFailure {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _LoadFailure && (identical(other.failure, failure) || const DeepCollectionEquality().equals(other.failure, failure)));
+    return identical(this, other) ||
+        (other is _LoadFailure &&
+            (identical(other.failure, failure) ||
+                const DeepCollectionEquality().equals(other.failure, failure)));
   }
 
   @override
@@ -722,7 +763,8 @@ class _$_LoadFailure implements _LoadFailure {
 
   @JsonKey(ignore: true)
   @override
-  _$LoadFailureCopyWith<_LoadFailure> get copyWith => __$LoadFailureCopyWithImpl<_LoadFailure>(this, _$identity);
+  _$LoadFailureCopyWith<_LoadFailure> get copyWith =>
+      __$LoadFailureCopyWithImpl<_LoadFailure>(this, _$identity);
 
   @override
   @optionalTypeArgs

@@ -20,7 +20,8 @@ DeviceDto _$DeviceDtoFromJson(Map<String, dynamic> json) {
 class _$DeviceDtoTearOff {
   const _$DeviceDtoTearOff();
 
-  _DeviceDto call({required String id, required String name, required String type, required String company}) {
+  _DeviceDto call(
+      {required String id, required String name, required String type, required String company}) {
     return _DeviceDto(
       id: id,
       name: name,
@@ -52,7 +53,8 @@ mixin _$DeviceDto {
 
 /// @nodoc
 abstract class $DeviceDtoCopyWith<$Res> {
-  factory $DeviceDtoCopyWith(DeviceDto value, $Res Function(DeviceDto) then) = _$DeviceDtoCopyWithImpl<$Res>;
+  factory $DeviceDtoCopyWith(DeviceDto value, $Res Function(DeviceDto) then) =
+      _$DeviceDtoCopyWithImpl<$Res>;
 
   $Res call({String id, String name, String type, String company});
 }
@@ -95,15 +97,18 @@ class _$DeviceDtoCopyWithImpl<$Res> implements $DeviceDtoCopyWith<$Res> {
 
 /// @nodoc
 abstract class _$DeviceDtoCopyWith<$Res> implements $DeviceDtoCopyWith<$Res> {
-  factory _$DeviceDtoCopyWith(_DeviceDto value, $Res Function(_DeviceDto) then) = __$DeviceDtoCopyWithImpl<$Res>;
+  factory _$DeviceDtoCopyWith(_DeviceDto value, $Res Function(_DeviceDto) then) =
+      __$DeviceDtoCopyWithImpl<$Res>;
 
   @override
   $Res call({String id, String name, String type, String company});
 }
 
 /// @nodoc
-class __$DeviceDtoCopyWithImpl<$Res> extends _$DeviceDtoCopyWithImpl<$Res> implements _$DeviceDtoCopyWith<$Res> {
-  __$DeviceDtoCopyWithImpl(_DeviceDto _value, $Res Function(_DeviceDto) _then) : super(_value, (v) => _then(v as _DeviceDto));
+class __$DeviceDtoCopyWithImpl<$Res> extends _$DeviceDtoCopyWithImpl<$Res>
+    implements _$DeviceDtoCopyWith<$Res> {
+  __$DeviceDtoCopyWithImpl(_DeviceDto _value, $Res Function(_DeviceDto) _then)
+      : super(_value, (v) => _then(v as _DeviceDto));
 
   @override
   _DeviceDto get _value => super._value as _DeviceDto;
@@ -139,7 +144,9 @@ class __$DeviceDtoCopyWithImpl<$Res> extends _$DeviceDtoCopyWithImpl<$Res> imple
 /// @nodoc
 @JsonSerializable()
 class _$_DeviceDto extends _DeviceDto {
-  const _$_DeviceDto({required this.id, required this.name, required this.type, required this.company}) : super._();
+  const _$_DeviceDto(
+      {required this.id, required this.name, required this.type, required this.company})
+      : super._();
 
   factory _$_DeviceDto.fromJson(Map<String, dynamic> json) => _$_$_DeviceDtoFromJson(json);
 
@@ -162,9 +169,12 @@ class _$_DeviceDto extends _DeviceDto {
     return identical(this, other) ||
         (other is _DeviceDto &&
             (identical(other.id, id) || const DeepCollectionEquality().equals(other.id, id)) &&
-            (identical(other.name, name) || const DeepCollectionEquality().equals(other.name, name)) &&
-            (identical(other.type, type) || const DeepCollectionEquality().equals(other.type, type)) &&
-            (identical(other.company, company) || const DeepCollectionEquality().equals(other.company, company)));
+            (identical(other.name, name) ||
+                const DeepCollectionEquality().equals(other.name, name)) &&
+            (identical(other.type, type) ||
+                const DeepCollectionEquality().equals(other.type, type)) &&
+            (identical(other.company, company) ||
+                const DeepCollectionEquality().equals(other.company, company)));
   }
 
   @override
@@ -177,7 +187,8 @@ class _$_DeviceDto extends _DeviceDto {
 
   @JsonKey(ignore: true)
   @override
-  _$DeviceDtoCopyWith<_DeviceDto> get copyWith => __$DeviceDtoCopyWithImpl<_DeviceDto>(this, _$identity);
+  _$DeviceDtoCopyWith<_DeviceDto> get copyWith =>
+      __$DeviceDtoCopyWithImpl<_DeviceDto>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
@@ -186,7 +197,11 @@ class _$_DeviceDto extends _DeviceDto {
 }
 
 abstract class _DeviceDto extends DeviceDto {
-  const factory _DeviceDto({required String id, required String name, required String type, required String company}) = _$_DeviceDto;
+  const factory _DeviceDto(
+      {required String id,
+      required String name,
+      required String type,
+      required String company}) = _$_DeviceDto;
 
   const _DeviceDto._() : super._();
 

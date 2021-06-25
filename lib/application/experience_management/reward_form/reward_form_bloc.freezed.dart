@@ -82,7 +82,8 @@ mixin _$RewardFormEvent {
 
 /// @nodoc
 abstract class $RewardFormEventCopyWith<$Res> {
-  factory $RewardFormEventCopyWith(RewardFormEvent value, $Res Function(RewardFormEvent) then) = _$RewardFormEventCopyWithImpl<$Res>;
+  factory $RewardFormEventCopyWith(RewardFormEvent value, $Res Function(RewardFormEvent) then) =
+      _$RewardFormEventCopyWithImpl<$Res>;
 }
 
 /// @nodoc
@@ -97,14 +98,17 @@ class _$RewardFormEventCopyWithImpl<$Res> implements $RewardFormEventCopyWith<$R
 
 /// @nodoc
 abstract class _$NameChangedCopyWith<$Res> {
-  factory _$NameChangedCopyWith(_NameChanged value, $Res Function(_NameChanged) then) = __$NameChangedCopyWithImpl<$Res>;
+  factory _$NameChangedCopyWith(_NameChanged value, $Res Function(_NameChanged) then) =
+      __$NameChangedCopyWithImpl<$Res>;
 
   $Res call({String name});
 }
 
 /// @nodoc
-class __$NameChangedCopyWithImpl<$Res> extends _$RewardFormEventCopyWithImpl<$Res> implements _$NameChangedCopyWith<$Res> {
-  __$NameChangedCopyWithImpl(_NameChanged _value, $Res Function(_NameChanged) _then) : super(_value, (v) => _then(v as _NameChanged));
+class __$NameChangedCopyWithImpl<$Res> extends _$RewardFormEventCopyWithImpl<$Res>
+    implements _$NameChangedCopyWith<$Res> {
+  __$NameChangedCopyWithImpl(_NameChanged _value, $Res Function(_NameChanged) _then)
+      : super(_value, (v) => _then(v as _NameChanged));
 
   @override
   _NameChanged get _value => super._value as _NameChanged;
@@ -137,7 +141,10 @@ class _$_NameChanged implements _NameChanged {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _NameChanged && (identical(other.name, name) || const DeepCollectionEquality().equals(other.name, name)));
+    return identical(this, other) ||
+        (other is _NameChanged &&
+            (identical(other.name, name) ||
+                const DeepCollectionEquality().equals(other.name, name)));
   }
 
   @override
@@ -145,7 +152,8 @@ class _$_NameChanged implements _NameChanged {
 
   @JsonKey(ignore: true)
   @override
-  _$NameChangedCopyWith<_NameChanged> get copyWith => __$NameChangedCopyWithImpl<_NameChanged>(this, _$identity);
+  _$NameChangedCopyWith<_NameChanged> get copyWith =>
+      __$NameChangedCopyWithImpl<_NameChanged>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -211,14 +219,19 @@ abstract class _NameChanged implements RewardFormEvent {
 
 /// @nodoc
 abstract class _$DescriptionChangedCopyWith<$Res> {
-  factory _$DescriptionChangedCopyWith(_DescriptionChanged value, $Res Function(_DescriptionChanged) then) = __$DescriptionChangedCopyWithImpl<$Res>;
+  factory _$DescriptionChangedCopyWith(
+          _DescriptionChanged value, $Res Function(_DescriptionChanged) then) =
+      __$DescriptionChangedCopyWithImpl<$Res>;
 
   $Res call({String description});
 }
 
 /// @nodoc
-class __$DescriptionChangedCopyWithImpl<$Res> extends _$RewardFormEventCopyWithImpl<$Res> implements _$DescriptionChangedCopyWith<$Res> {
-  __$DescriptionChangedCopyWithImpl(_DescriptionChanged _value, $Res Function(_DescriptionChanged) _then) : super(_value, (v) => _then(v as _DescriptionChanged));
+class __$DescriptionChangedCopyWithImpl<$Res> extends _$RewardFormEventCopyWithImpl<$Res>
+    implements _$DescriptionChangedCopyWith<$Res> {
+  __$DescriptionChangedCopyWithImpl(
+      _DescriptionChanged _value, $Res Function(_DescriptionChanged) _then)
+      : super(_value, (v) => _then(v as _DescriptionChanged));
 
   @override
   _DescriptionChanged get _value => super._value as _DescriptionChanged;
@@ -251,7 +264,10 @@ class _$_DescriptionChanged implements _DescriptionChanged {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _DescriptionChanged && (identical(other.description, description) || const DeepCollectionEquality().equals(other.description, description)));
+    return identical(this, other) ||
+        (other is _DescriptionChanged &&
+            (identical(other.description, description) ||
+                const DeepCollectionEquality().equals(other.description, description)));
   }
 
   @override
@@ -259,7 +275,8 @@ class _$_DescriptionChanged implements _DescriptionChanged {
 
   @JsonKey(ignore: true)
   @override
-  _$DescriptionChangedCopyWith<_DescriptionChanged> get copyWith => __$DescriptionChangedCopyWithImpl<_DescriptionChanged>(this, _$identity);
+  _$DescriptionChangedCopyWith<_DescriptionChanged> get copyWith =>
+      __$DescriptionChangedCopyWithImpl<_DescriptionChanged>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -320,19 +337,23 @@ abstract class _DescriptionChanged implements RewardFormEvent {
   String get description => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
-  _$DescriptionChangedCopyWith<_DescriptionChanged> get copyWith => throw _privateConstructorUsedError;
+  _$DescriptionChangedCopyWith<_DescriptionChanged> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class _$ImageChangedCopyWith<$Res> {
-  factory _$ImageChangedCopyWith(_ImageChanged value, $Res Function(_ImageChanged) then) = __$ImageChangedCopyWithImpl<$Res>;
+  factory _$ImageChangedCopyWith(_ImageChanged value, $Res Function(_ImageChanged) then) =
+      __$ImageChangedCopyWithImpl<$Res>;
 
   $Res call({File imageFile});
 }
 
 /// @nodoc
-class __$ImageChangedCopyWithImpl<$Res> extends _$RewardFormEventCopyWithImpl<$Res> implements _$ImageChangedCopyWith<$Res> {
-  __$ImageChangedCopyWithImpl(_ImageChanged _value, $Res Function(_ImageChanged) _then) : super(_value, (v) => _then(v as _ImageChanged));
+class __$ImageChangedCopyWithImpl<$Res> extends _$RewardFormEventCopyWithImpl<$Res>
+    implements _$ImageChangedCopyWith<$Res> {
+  __$ImageChangedCopyWithImpl(_ImageChanged _value, $Res Function(_ImageChanged) _then)
+      : super(_value, (v) => _then(v as _ImageChanged));
 
   @override
   _ImageChanged get _value => super._value as _ImageChanged;
@@ -365,7 +386,10 @@ class _$_ImageChanged implements _ImageChanged {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _ImageChanged && (identical(other.imageFile, imageFile) || const DeepCollectionEquality().equals(other.imageFile, imageFile)));
+    return identical(this, other) ||
+        (other is _ImageChanged &&
+            (identical(other.imageFile, imageFile) ||
+                const DeepCollectionEquality().equals(other.imageFile, imageFile)));
   }
 
   @override
@@ -373,7 +397,8 @@ class _$_ImageChanged implements _ImageChanged {
 
   @JsonKey(ignore: true)
   @override
-  _$ImageChangedCopyWith<_ImageChanged> get copyWith => __$ImageChangedCopyWithImpl<_ImageChanged>(this, _$identity);
+  _$ImageChangedCopyWith<_ImageChanged> get copyWith =>
+      __$ImageChangedCopyWithImpl<_ImageChanged>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -439,12 +464,15 @@ abstract class _ImageChanged implements RewardFormEvent {
 
 /// @nodoc
 abstract class _$SubmittedCopyWith<$Res> {
-  factory _$SubmittedCopyWith(_Submitted value, $Res Function(_Submitted) then) = __$SubmittedCopyWithImpl<$Res>;
+  factory _$SubmittedCopyWith(_Submitted value, $Res Function(_Submitted) then) =
+      __$SubmittedCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$SubmittedCopyWithImpl<$Res> extends _$RewardFormEventCopyWithImpl<$Res> implements _$SubmittedCopyWith<$Res> {
-  __$SubmittedCopyWithImpl(_Submitted _value, $Res Function(_Submitted) _then) : super(_value, (v) => _then(v as _Submitted));
+class __$SubmittedCopyWithImpl<$Res> extends _$RewardFormEventCopyWithImpl<$Res>
+    implements _$SubmittedCopyWith<$Res> {
+  __$SubmittedCopyWithImpl(_Submitted _value, $Res Function(_Submitted) _then)
+      : super(_value, (v) => _then(v as _Submitted));
 
   @override
   _Submitted get _value => super._value as _Submitted;
@@ -529,7 +557,8 @@ abstract class _Submitted implements RewardFormEvent {
 class _$RewardFormStateTearOff {
   const _$RewardFormStateTearOff();
 
-  _RewardFormState call({required Reward reward, required bool showErrorMessages, required bool isSubmitting}) {
+  _RewardFormState call(
+      {required Reward reward, required bool showErrorMessages, required bool isSubmitting}) {
     return _RewardFormState(
       reward: reward,
       showErrorMessages: showErrorMessages,
@@ -553,7 +582,8 @@ mixin _$RewardFormState {
 
 /// @nodoc
 abstract class $RewardFormStateCopyWith<$Res> {
-  factory $RewardFormStateCopyWith(RewardFormState value, $Res Function(RewardFormState) then) = _$RewardFormStateCopyWithImpl<$Res>;
+  factory $RewardFormStateCopyWith(RewardFormState value, $Res Function(RewardFormState) then) =
+      _$RewardFormStateCopyWithImpl<$Res>;
 
   $Res call({Reward reward, bool showErrorMessages, bool isSubmitting});
 
@@ -601,7 +631,8 @@ class _$RewardFormStateCopyWithImpl<$Res> implements $RewardFormStateCopyWith<$R
 
 /// @nodoc
 abstract class _$RewardFormStateCopyWith<$Res> implements $RewardFormStateCopyWith<$Res> {
-  factory _$RewardFormStateCopyWith(_RewardFormState value, $Res Function(_RewardFormState) then) = __$RewardFormStateCopyWithImpl<$Res>;
+  factory _$RewardFormStateCopyWith(_RewardFormState value, $Res Function(_RewardFormState) then) =
+      __$RewardFormStateCopyWithImpl<$Res>;
 
   @override
   $Res call({Reward reward, bool showErrorMessages, bool isSubmitting});
@@ -611,8 +642,10 @@ abstract class _$RewardFormStateCopyWith<$Res> implements $RewardFormStateCopyWi
 }
 
 /// @nodoc
-class __$RewardFormStateCopyWithImpl<$Res> extends _$RewardFormStateCopyWithImpl<$Res> implements _$RewardFormStateCopyWith<$Res> {
-  __$RewardFormStateCopyWithImpl(_RewardFormState _value, $Res Function(_RewardFormState) _then) : super(_value, (v) => _then(v as _RewardFormState));
+class __$RewardFormStateCopyWithImpl<$Res> extends _$RewardFormStateCopyWithImpl<$Res>
+    implements _$RewardFormStateCopyWith<$Res> {
+  __$RewardFormStateCopyWithImpl(_RewardFormState _value, $Res Function(_RewardFormState) _then)
+      : super(_value, (v) => _then(v as _RewardFormState));
 
   @override
   _RewardFormState get _value => super._value as _RewardFormState;
@@ -643,7 +676,8 @@ class __$RewardFormStateCopyWithImpl<$Res> extends _$RewardFormStateCopyWithImpl
 /// @nodoc
 
 class _$_RewardFormState implements _RewardFormState {
-  const _$_RewardFormState({required this.reward, required this.showErrorMessages, required this.isSubmitting});
+  const _$_RewardFormState(
+      {required this.reward, required this.showErrorMessages, required this.isSubmitting});
 
   @override
   final Reward reward;
@@ -661,21 +695,33 @@ class _$_RewardFormState implements _RewardFormState {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other is _RewardFormState &&
-            (identical(other.reward, reward) || const DeepCollectionEquality().equals(other.reward, reward)) &&
-            (identical(other.showErrorMessages, showErrorMessages) || const DeepCollectionEquality().equals(other.showErrorMessages, showErrorMessages)) &&
-            (identical(other.isSubmitting, isSubmitting) || const DeepCollectionEquality().equals(other.isSubmitting, isSubmitting)));
+            (identical(other.reward, reward) ||
+                const DeepCollectionEquality().equals(other.reward, reward)) &&
+            (identical(other.showErrorMessages, showErrorMessages) ||
+                const DeepCollectionEquality()
+                    .equals(other.showErrorMessages, showErrorMessages)) &&
+            (identical(other.isSubmitting, isSubmitting) ||
+                const DeepCollectionEquality().equals(other.isSubmitting, isSubmitting)));
   }
-  
+
   @override
-  int get hashCode => runtimeType.hashCode ^ const DeepCollectionEquality().hash(reward) ^ const DeepCollectionEquality().hash(showErrorMessages) ^ const DeepCollectionEquality().hash(isSubmitting);
+  int get hashCode =>
+      runtimeType.hashCode ^
+      const DeepCollectionEquality().hash(reward) ^
+      const DeepCollectionEquality().hash(showErrorMessages) ^
+      const DeepCollectionEquality().hash(isSubmitting);
 
   @JsonKey(ignore: true)
   @override
-  _$RewardFormStateCopyWith<_RewardFormState> get copyWith => __$RewardFormStateCopyWithImpl<_RewardFormState>(this, _$identity);
+  _$RewardFormStateCopyWith<_RewardFormState> get copyWith =>
+      __$RewardFormStateCopyWithImpl<_RewardFormState>(this, _$identity);
 }
 
 abstract class _RewardFormState implements RewardFormState {
-  const factory _RewardFormState({required Reward reward, required bool showErrorMessages, required bool isSubmitting}) = _$_RewardFormState;
+  const factory _RewardFormState(
+      {required Reward reward,
+      required bool showErrorMessages,
+      required bool isSubmitting}) = _$_RewardFormState;
 
   @override
   Reward get reward => throw _privateConstructorUsedError;

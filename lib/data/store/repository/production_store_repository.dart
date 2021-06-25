@@ -150,7 +150,7 @@ class ProductionStoreRepository implements StoreRepositoryInterface {
           .toList();
       yield* CombineLatestStream(
         _combinedStreamList,
-          (List<QuerySnapshot<ItemDto>> values) {
+        (List<QuerySnapshot<ItemDto>> values) {
           final _itemList = <Item>[];
           for (final _snapshot in values) {
             for (final _document in _snapshot.docs) {
@@ -175,7 +175,7 @@ class ProductionStoreRepository implements StoreRepositoryInterface {
           }
         },
       ).onErrorReturnWith(
-          (error, _) => left(_onError(error)),
+        (error, _) => left(_onError(error)),
       );
     } else {
       yield* Stream.value(
@@ -196,7 +196,7 @@ class ProductionStoreRepository implements StoreRepositoryInterface {
         .snapshots()
         .map(
           (snapshot) => snapshot.docs.map(
-              (document) => document.data().toDomain(),
+            (document) => document.data().toDomain(),
           ),
         )
         .map(
@@ -214,7 +214,7 @@ class ProductionStoreRepository implements StoreRepositoryInterface {
         }
       },
     ).onErrorReturnWith(
-        (error, _) => left(_onError(error)),
+      (error, _) => left(_onError(error)),
     );
   }
 

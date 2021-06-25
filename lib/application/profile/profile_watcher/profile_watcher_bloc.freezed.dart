@@ -64,7 +64,9 @@ mixin _$ProfileWatcherEvent {
 
 /// @nodoc
 abstract class $ProfileWatcherEventCopyWith<$Res> {
-  factory $ProfileWatcherEventCopyWith(ProfileWatcherEvent value, $Res Function(ProfileWatcherEvent) then) = _$ProfileWatcherEventCopyWithImpl<$Res>;
+  factory $ProfileWatcherEventCopyWith(
+          ProfileWatcherEvent value, $Res Function(ProfileWatcherEvent) then) =
+      _$ProfileWatcherEventCopyWithImpl<$Res>;
 }
 
 /// @nodoc
@@ -79,14 +81,19 @@ class _$ProfileWatcherEventCopyWithImpl<$Res> implements $ProfileWatcherEventCop
 
 /// @nodoc
 abstract class _$WatchProfileStartedCopyWith<$Res> {
-  factory _$WatchProfileStartedCopyWith(_WatchProfileStarted value, $Res Function(_WatchProfileStarted) then) = __$WatchProfileStartedCopyWithImpl<$Res>;
+  factory _$WatchProfileStartedCopyWith(
+          _WatchProfileStarted value, $Res Function(_WatchProfileStarted) then) =
+      __$WatchProfileStartedCopyWithImpl<$Res>;
 
   $Res call({UniqueId userId});
 }
 
 /// @nodoc
-class __$WatchProfileStartedCopyWithImpl<$Res> extends _$ProfileWatcherEventCopyWithImpl<$Res> implements _$WatchProfileStartedCopyWith<$Res> {
-  __$WatchProfileStartedCopyWithImpl(_WatchProfileStarted _value, $Res Function(_WatchProfileStarted) _then) : super(_value, (v) => _then(v as _WatchProfileStarted));
+class __$WatchProfileStartedCopyWithImpl<$Res> extends _$ProfileWatcherEventCopyWithImpl<$Res>
+    implements _$WatchProfileStartedCopyWith<$Res> {
+  __$WatchProfileStartedCopyWithImpl(
+      _WatchProfileStarted _value, $Res Function(_WatchProfileStarted) _then)
+      : super(_value, (v) => _then(v as _WatchProfileStarted));
 
   @override
   _WatchProfileStarted get _value => super._value as _WatchProfileStarted;
@@ -119,7 +126,10 @@ class _$_WatchProfileStarted implements _WatchProfileStarted {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _WatchProfileStarted && (identical(other.userId, userId) || const DeepCollectionEquality().equals(other.userId, userId)));
+    return identical(this, other) ||
+        (other is _WatchProfileStarted &&
+            (identical(other.userId, userId) ||
+                const DeepCollectionEquality().equals(other.userId, userId)));
   }
 
   @override
@@ -127,7 +137,8 @@ class _$_WatchProfileStarted implements _WatchProfileStarted {
 
   @JsonKey(ignore: true)
   @override
-  _$WatchProfileStartedCopyWith<_WatchProfileStarted> get copyWith => __$WatchProfileStartedCopyWithImpl<_WatchProfileStarted>(this, _$identity);
+  _$WatchProfileStartedCopyWith<_WatchProfileStarted> get copyWith =>
+      __$WatchProfileStartedCopyWithImpl<_WatchProfileStarted>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -180,19 +191,23 @@ abstract class _WatchProfileStarted implements ProfileWatcherEvent {
   UniqueId get userId => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
-  _$WatchProfileStartedCopyWith<_WatchProfileStarted> get copyWith => throw _privateConstructorUsedError;
+  _$WatchProfileStartedCopyWith<_WatchProfileStarted> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class _$ResultsReceivedCopyWith<$Res> {
-  factory _$ResultsReceivedCopyWith(_ResultsReceived value, $Res Function(_ResultsReceived) then) = __$ResultsReceivedCopyWithImpl<$Res>;
+  factory _$ResultsReceivedCopyWith(_ResultsReceived value, $Res Function(_ResultsReceived) then) =
+      __$ResultsReceivedCopyWithImpl<$Res>;
 
   $Res call({Either<Failure, User> failureOrUser});
 }
 
 /// @nodoc
-class __$ResultsReceivedCopyWithImpl<$Res> extends _$ProfileWatcherEventCopyWithImpl<$Res> implements _$ResultsReceivedCopyWith<$Res> {
-  __$ResultsReceivedCopyWithImpl(_ResultsReceived _value, $Res Function(_ResultsReceived) _then) : super(_value, (v) => _then(v as _ResultsReceived));
+class __$ResultsReceivedCopyWithImpl<$Res> extends _$ProfileWatcherEventCopyWithImpl<$Res>
+    implements _$ResultsReceivedCopyWith<$Res> {
+  __$ResultsReceivedCopyWithImpl(_ResultsReceived _value, $Res Function(_ResultsReceived) _then)
+      : super(_value, (v) => _then(v as _ResultsReceived));
 
   @override
   _ResultsReceived get _value => super._value as _ResultsReceived;
@@ -225,7 +240,10 @@ class _$_ResultsReceived implements _ResultsReceived {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _ResultsReceived && (identical(other.failureOrUser, failureOrUser) || const DeepCollectionEquality().equals(other.failureOrUser, failureOrUser)));
+    return identical(this, other) ||
+        (other is _ResultsReceived &&
+            (identical(other.failureOrUser, failureOrUser) ||
+                const DeepCollectionEquality().equals(other.failureOrUser, failureOrUser)));
   }
 
   @override
@@ -233,7 +251,8 @@ class _$_ResultsReceived implements _ResultsReceived {
 
   @JsonKey(ignore: true)
   @override
-  _$ResultsReceivedCopyWith<_ResultsReceived> get copyWith => __$ResultsReceivedCopyWithImpl<_ResultsReceived>(this, _$identity);
+  _$ResultsReceivedCopyWith<_ResultsReceived> get copyWith =>
+      __$ResultsReceivedCopyWithImpl<_ResultsReceived>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -347,7 +366,9 @@ mixin _$ProfileWatcherState {
 
 /// @nodoc
 abstract class $ProfileWatcherStateCopyWith<$Res> {
-  factory $ProfileWatcherStateCopyWith(ProfileWatcherState value, $Res Function(ProfileWatcherState) then) = _$ProfileWatcherStateCopyWithImpl<$Res>;
+  factory $ProfileWatcherStateCopyWith(
+          ProfileWatcherState value, $Res Function(ProfileWatcherState) then) =
+      _$ProfileWatcherStateCopyWithImpl<$Res>;
 }
 
 /// @nodoc
@@ -362,12 +383,15 @@ class _$ProfileWatcherStateCopyWithImpl<$Res> implements $ProfileWatcherStateCop
 
 /// @nodoc
 abstract class _$InitialCopyWith<$Res> {
-  factory _$InitialCopyWith(_Initial value, $Res Function(_Initial) then) = __$InitialCopyWithImpl<$Res>;
+  factory _$InitialCopyWith(_Initial value, $Res Function(_Initial) then) =
+      __$InitialCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$InitialCopyWithImpl<$Res> extends _$ProfileWatcherStateCopyWithImpl<$Res> implements _$InitialCopyWith<$Res> {
-  __$InitialCopyWithImpl(_Initial _value, $Res Function(_Initial) _then) : super(_value, (v) => _then(v as _Initial));
+class __$InitialCopyWithImpl<$Res> extends _$ProfileWatcherStateCopyWithImpl<$Res>
+    implements _$InitialCopyWith<$Res> {
+  __$InitialCopyWithImpl(_Initial _value, $Res Function(_Initial) _then)
+      : super(_value, (v) => _then(v as _Initial));
 
   @override
   _Initial get _value => super._value as _Initial;
@@ -446,7 +470,9 @@ abstract class _Initial implements ProfileWatcherState {
 
 /// @nodoc
 abstract class _$NewProfileUpdateCopyWith<$Res> {
-  factory _$NewProfileUpdateCopyWith(_NewProfileUpdate value, $Res Function(_NewProfileUpdate) then) = __$NewProfileUpdateCopyWithImpl<$Res>;
+  factory _$NewProfileUpdateCopyWith(
+          _NewProfileUpdate value, $Res Function(_NewProfileUpdate) then) =
+      __$NewProfileUpdateCopyWithImpl<$Res>;
 
   $Res call({User user});
 
@@ -454,8 +480,10 @@ abstract class _$NewProfileUpdateCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$NewProfileUpdateCopyWithImpl<$Res> extends _$ProfileWatcherStateCopyWithImpl<$Res> implements _$NewProfileUpdateCopyWith<$Res> {
-  __$NewProfileUpdateCopyWithImpl(_NewProfileUpdate _value, $Res Function(_NewProfileUpdate) _then) : super(_value, (v) => _then(v as _NewProfileUpdate));
+class __$NewProfileUpdateCopyWithImpl<$Res> extends _$ProfileWatcherStateCopyWithImpl<$Res>
+    implements _$NewProfileUpdateCopyWith<$Res> {
+  __$NewProfileUpdateCopyWithImpl(_NewProfileUpdate _value, $Res Function(_NewProfileUpdate) _then)
+      : super(_value, (v) => _then(v as _NewProfileUpdate));
 
   @override
   _NewProfileUpdate get _value => super._value as _NewProfileUpdate;
@@ -495,7 +523,10 @@ class _$_NewProfileUpdate implements _NewProfileUpdate {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _NewProfileUpdate && (identical(other.user, user) || const DeepCollectionEquality().equals(other.user, user)));
+    return identical(this, other) ||
+        (other is _NewProfileUpdate &&
+            (identical(other.user, user) ||
+                const DeepCollectionEquality().equals(other.user, user)));
   }
 
   @override
@@ -503,7 +534,8 @@ class _$_NewProfileUpdate implements _NewProfileUpdate {
 
   @JsonKey(ignore: true)
   @override
-  _$NewProfileUpdateCopyWith<_NewProfileUpdate> get copyWith => __$NewProfileUpdateCopyWithImpl<_NewProfileUpdate>(this, _$identity);
+  _$NewProfileUpdateCopyWith<_NewProfileUpdate> get copyWith =>
+      __$NewProfileUpdateCopyWithImpl<_NewProfileUpdate>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -565,12 +597,15 @@ abstract class _NewProfileUpdate implements ProfileWatcherState {
 
 /// @nodoc
 abstract class _$FailureCopyWith<$Res> {
-  factory _$FailureCopyWith(_Failure value, $Res Function(_Failure) then) = __$FailureCopyWithImpl<$Res>;
+  factory _$FailureCopyWith(_Failure value, $Res Function(_Failure) then) =
+      __$FailureCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$FailureCopyWithImpl<$Res> extends _$ProfileWatcherStateCopyWithImpl<$Res> implements _$FailureCopyWith<$Res> {
-  __$FailureCopyWithImpl(_Failure _value, $Res Function(_Failure) _then) : super(_value, (v) => _then(v as _Failure));
+class __$FailureCopyWithImpl<$Res> extends _$ProfileWatcherStateCopyWithImpl<$Res>
+    implements _$FailureCopyWith<$Res> {
+  __$FailureCopyWithImpl(_Failure _value, $Res Function(_Failure) _then)
+      : super(_value, (v) => _then(v as _Failure));
 
   @override
   _Failure get _value => super._value as _Failure;

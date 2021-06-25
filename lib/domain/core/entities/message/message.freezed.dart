@@ -16,7 +16,12 @@ final _privateConstructorUsedError = UnsupportedError(
 class _$MessageTearOff {
   const _$MessageTearOff();
 
-  _Message call({required UniqueId id, required SimpleUser sender, required UniqueId receiverId, required MessageContent content, required PastDate creationDate}) {
+  _Message call(
+      {required UniqueId id,
+      required SimpleUser sender,
+      required UniqueId receiverId,
+      required MessageContent content,
+      required PastDate creationDate}) {
     return _Message(
       id: id,
       sender: sender,
@@ -44,9 +49,15 @@ mixin _$Message {
 
 /// @nodoc
 abstract class $MessageCopyWith<$Res> {
-  factory $MessageCopyWith(Message value, $Res Function(Message) then) = _$MessageCopyWithImpl<$Res>;
+  factory $MessageCopyWith(Message value, $Res Function(Message) then) =
+      _$MessageCopyWithImpl<$Res>;
 
-  $Res call({UniqueId id, SimpleUser sender, UniqueId receiverId, MessageContent content, PastDate creationDate});
+  $Res call(
+      {UniqueId id,
+      SimpleUser sender,
+      UniqueId receiverId,
+      MessageContent content,
+      PastDate creationDate});
 
   $SimpleUserCopyWith<$Res> get sender;
 }
@@ -101,18 +112,26 @@ class _$MessageCopyWithImpl<$Res> implements $MessageCopyWith<$Res> {
 
 /// @nodoc
 abstract class _$MessageCopyWith<$Res> implements $MessageCopyWith<$Res> {
-  factory _$MessageCopyWith(_Message value, $Res Function(_Message) then) = __$MessageCopyWithImpl<$Res>;
+  factory _$MessageCopyWith(_Message value, $Res Function(_Message) then) =
+      __$MessageCopyWithImpl<$Res>;
 
   @override
-  $Res call({UniqueId id, SimpleUser sender, UniqueId receiverId, MessageContent content, PastDate creationDate});
+  $Res call(
+      {UniqueId id,
+      SimpleUser sender,
+      UniqueId receiverId,
+      MessageContent content,
+      PastDate creationDate});
 
   @override
   $SimpleUserCopyWith<$Res> get sender;
 }
 
 /// @nodoc
-class __$MessageCopyWithImpl<$Res> extends _$MessageCopyWithImpl<$Res> implements _$MessageCopyWith<$Res> {
-  __$MessageCopyWithImpl(_Message _value, $Res Function(_Message) _then) : super(_value, (v) => _then(v as _Message));
+class __$MessageCopyWithImpl<$Res> extends _$MessageCopyWithImpl<$Res>
+    implements _$MessageCopyWith<$Res> {
+  __$MessageCopyWithImpl(_Message _value, $Res Function(_Message) _then)
+      : super(_value, (v) => _then(v as _Message));
 
   @override
   _Message get _value => super._value as _Message;
@@ -153,7 +172,13 @@ class __$MessageCopyWithImpl<$Res> extends _$MessageCopyWithImpl<$Res> implement
 /// @nodoc
 
 class _$_Message extends _Message {
-  const _$_Message({required this.id, required this.sender, required this.receiverId, required this.content, required this.creationDate}) : super._();
+  const _$_Message(
+      {required this.id,
+      required this.sender,
+      required this.receiverId,
+      required this.content,
+      required this.creationDate})
+      : super._();
 
   @override
   final UniqueId id;
@@ -176,10 +201,14 @@ class _$_Message extends _Message {
     return identical(this, other) ||
         (other is _Message &&
             (identical(other.id, id) || const DeepCollectionEquality().equals(other.id, id)) &&
-            (identical(other.sender, sender) || const DeepCollectionEquality().equals(other.sender, sender)) &&
-            (identical(other.receiverId, receiverId) || const DeepCollectionEquality().equals(other.receiverId, receiverId)) &&
-            (identical(other.content, content) || const DeepCollectionEquality().equals(other.content, content)) &&
-            (identical(other.creationDate, creationDate) || const DeepCollectionEquality().equals(other.creationDate, creationDate)));
+            (identical(other.sender, sender) ||
+                const DeepCollectionEquality().equals(other.sender, sender)) &&
+            (identical(other.receiverId, receiverId) ||
+                const DeepCollectionEquality().equals(other.receiverId, receiverId)) &&
+            (identical(other.content, content) ||
+                const DeepCollectionEquality().equals(other.content, content)) &&
+            (identical(other.creationDate, creationDate) ||
+                const DeepCollectionEquality().equals(other.creationDate, creationDate)));
   }
 
   @override
@@ -197,7 +226,12 @@ class _$_Message extends _Message {
 }
 
 abstract class _Message extends Message {
-  const factory _Message({required UniqueId id, required SimpleUser sender, required UniqueId receiverId, required MessageContent content, required PastDate creationDate}) = _$_Message;
+  const factory _Message(
+      {required UniqueId id,
+      required SimpleUser sender,
+      required UniqueId receiverId,
+      required MessageContent content,
+      required PastDate creationDate}) = _$_Message;
 
   const _Message._() : super._();
 

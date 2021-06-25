@@ -52,7 +52,6 @@ const $NotificationDto = _$NotificationDtoTearOff();
 /// @nodoc
 mixin _$NotificationDto {
   String get id => throw _privateConstructorUsedError;
-
   SimpleUserDto get sender => throw _privateConstructorUsedError;
   String get receiverId => throw _privateConstructorUsedError;
   String get description => throw _privateConstructorUsedError;
@@ -63,18 +62,27 @@ mixin _$NotificationDto {
   ExperienceDto? get experience => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-
   @JsonKey(ignore: true)
   $NotificationDtoCopyWith<NotificationDto> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $NotificationDtoCopyWith<$Res> {
-  factory $NotificationDtoCopyWith(NotificationDto value, $Res Function(NotificationDto) then) = _$NotificationDtoCopyWithImpl<$Res>;
+  factory $NotificationDtoCopyWith(NotificationDto value, $Res Function(NotificationDto) then) =
+      _$NotificationDtoCopyWithImpl<$Res>;
 
-  $Res call({String id, SimpleUserDto sender, String receiverId, String description, bool seen, @ServerTimestampConverter() DateTime creationDate, NotificationType type, ExperienceDto? experience});
+  $Res call(
+      {String id,
+      SimpleUserDto sender,
+      String receiverId,
+      String description,
+      bool seen,
+      @ServerTimestampConverter() DateTime creationDate,
+      NotificationType type,
+      ExperienceDto? experience});
 
   $SimpleUserDtoCopyWith<$Res> get sender;
+
   $ExperienceDtoCopyWith<$Res>? get experience;
 }
 
@@ -155,10 +163,19 @@ class _$NotificationDtoCopyWithImpl<$Res> implements $NotificationDtoCopyWith<$R
 
 /// @nodoc
 abstract class _$NotificationDtoCopyWith<$Res> implements $NotificationDtoCopyWith<$Res> {
-  factory _$NotificationDtoCopyWith(_NotificationDto value, $Res Function(_NotificationDto) then) = __$NotificationDtoCopyWithImpl<$Res>;
+  factory _$NotificationDtoCopyWith(_NotificationDto value, $Res Function(_NotificationDto) then) =
+      __$NotificationDtoCopyWithImpl<$Res>;
 
   @override
-  $Res call({String id, SimpleUserDto sender, String receiverId, String description, bool seen, @ServerTimestampConverter() DateTime creationDate, NotificationType type, ExperienceDto? experience});
+  $Res call(
+      {String id,
+      SimpleUserDto sender,
+      String receiverId,
+      String description,
+      bool seen,
+      @ServerTimestampConverter() DateTime creationDate,
+      NotificationType type,
+      ExperienceDto? experience});
 
   @override
   $SimpleUserDtoCopyWith<$Res> get sender;
@@ -167,8 +184,10 @@ abstract class _$NotificationDtoCopyWith<$Res> implements $NotificationDtoCopyWi
 }
 
 /// @nodoc
-class __$NotificationDtoCopyWithImpl<$Res> extends _$NotificationDtoCopyWithImpl<$Res> implements _$NotificationDtoCopyWith<$Res> {
-  __$NotificationDtoCopyWithImpl(_NotificationDto _value, $Res Function(_NotificationDto) _then) : super(_value, (v) => _then(v as _NotificationDto));
+class __$NotificationDtoCopyWithImpl<$Res> extends _$NotificationDtoCopyWithImpl<$Res>
+    implements _$NotificationDtoCopyWith<$Res> {
+  __$NotificationDtoCopyWithImpl(_NotificationDto _value, $Res Function(_NotificationDto) _then)
+      : super(_value, (v) => _then(v as _NotificationDto));
 
   @override
   _NotificationDto get _value => super._value as _NotificationDto;
@@ -235,7 +254,8 @@ class _$_NotificationDto extends _NotificationDto {
       this.experience})
       : super._();
 
-  factory _$_NotificationDto.fromJson(Map<String, dynamic> json) => _$_$_NotificationDtoFromJson(json);
+  factory _$_NotificationDto.fromJson(Map<String, dynamic> json) =>
+      _$_$_NotificationDtoFromJson(json);
 
   @override
   final String id;
@@ -265,13 +285,20 @@ class _$_NotificationDto extends _NotificationDto {
     return identical(this, other) ||
         (other is _NotificationDto &&
             (identical(other.id, id) || const DeepCollectionEquality().equals(other.id, id)) &&
-            (identical(other.sender, sender) || const DeepCollectionEquality().equals(other.sender, sender)) &&
-            (identical(other.receiverId, receiverId) || const DeepCollectionEquality().equals(other.receiverId, receiverId)) &&
-            (identical(other.description, description) || const DeepCollectionEquality().equals(other.description, description)) &&
-            (identical(other.seen, seen) || const DeepCollectionEquality().equals(other.seen, seen)) &&
-            (identical(other.creationDate, creationDate) || const DeepCollectionEquality().equals(other.creationDate, creationDate)) &&
-            (identical(other.type, type) || const DeepCollectionEquality().equals(other.type, type)) &&
-            (identical(other.experience, experience) || const DeepCollectionEquality().equals(other.experience, experience)));
+            (identical(other.sender, sender) ||
+                const DeepCollectionEquality().equals(other.sender, sender)) &&
+            (identical(other.receiverId, receiverId) ||
+                const DeepCollectionEquality().equals(other.receiverId, receiverId)) &&
+            (identical(other.description, description) ||
+                const DeepCollectionEquality().equals(other.description, description)) &&
+            (identical(other.seen, seen) ||
+                const DeepCollectionEquality().equals(other.seen, seen)) &&
+            (identical(other.creationDate, creationDate) ||
+                const DeepCollectionEquality().equals(other.creationDate, creationDate)) &&
+            (identical(other.type, type) ||
+                const DeepCollectionEquality().equals(other.type, type)) &&
+            (identical(other.experience, experience) ||
+                const DeepCollectionEquality().equals(other.experience, experience)));
   }
 
   @override
@@ -288,7 +315,8 @@ class _$_NotificationDto extends _NotificationDto {
 
   @JsonKey(ignore: true)
   @override
-  _$NotificationDtoCopyWith<_NotificationDto> get copyWith => __$NotificationDtoCopyWithImpl<_NotificationDto>(this, _$identity);
+  _$NotificationDtoCopyWith<_NotificationDto> get copyWith =>
+      __$NotificationDtoCopyWithImpl<_NotificationDto>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {

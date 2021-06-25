@@ -38,7 +38,8 @@ mixin _$Coordinates {
 
 /// @nodoc
 abstract class $CoordinatesCopyWith<$Res> {
-  factory $CoordinatesCopyWith(Coordinates value, $Res Function(Coordinates) then) = _$CoordinatesCopyWithImpl<$Res>;
+  factory $CoordinatesCopyWith(Coordinates value, $Res Function(Coordinates) then) =
+      _$CoordinatesCopyWithImpl<$Res>;
 
   $Res call({Latitude latitude, Longitude longitude});
 }
@@ -71,15 +72,18 @@ class _$CoordinatesCopyWithImpl<$Res> implements $CoordinatesCopyWith<$Res> {
 
 /// @nodoc
 abstract class _$CoordinatesCopyWith<$Res> implements $CoordinatesCopyWith<$Res> {
-  factory _$CoordinatesCopyWith(_Coordinates value, $Res Function(_Coordinates) then) = __$CoordinatesCopyWithImpl<$Res>;
+  factory _$CoordinatesCopyWith(_Coordinates value, $Res Function(_Coordinates) then) =
+      __$CoordinatesCopyWithImpl<$Res>;
 
   @override
   $Res call({Latitude latitude, Longitude longitude});
 }
 
 /// @nodoc
-class __$CoordinatesCopyWithImpl<$Res> extends _$CoordinatesCopyWithImpl<$Res> implements _$CoordinatesCopyWith<$Res> {
-  __$CoordinatesCopyWithImpl(_Coordinates _value, $Res Function(_Coordinates) _then) : super(_value, (v) => _then(v as _Coordinates));
+class __$CoordinatesCopyWithImpl<$Res> extends _$CoordinatesCopyWithImpl<$Res>
+    implements _$CoordinatesCopyWith<$Res> {
+  __$CoordinatesCopyWithImpl(_Coordinates _value, $Res Function(_Coordinates) _then)
+      : super(_value, (v) => _then(v as _Coordinates));
 
   @override
   _Coordinates get _value => super._value as _Coordinates;
@@ -121,20 +125,27 @@ class _$_Coordinates extends _Coordinates {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other is _Coordinates &&
-            (identical(other.latitude, latitude) || const DeepCollectionEquality().equals(other.latitude, latitude)) &&
-            (identical(other.longitude, longitude) || const DeepCollectionEquality().equals(other.longitude, longitude)));
+            (identical(other.latitude, latitude) ||
+                const DeepCollectionEquality().equals(other.latitude, latitude)) &&
+            (identical(other.longitude, longitude) ||
+                const DeepCollectionEquality().equals(other.longitude, longitude)));
   }
 
   @override
-  int get hashCode => runtimeType.hashCode ^ const DeepCollectionEquality().hash(latitude) ^ const DeepCollectionEquality().hash(longitude);
+  int get hashCode =>
+      runtimeType.hashCode ^
+      const DeepCollectionEquality().hash(latitude) ^
+      const DeepCollectionEquality().hash(longitude);
 
   @JsonKey(ignore: true)
   @override
-  _$CoordinatesCopyWith<_Coordinates> get copyWith => __$CoordinatesCopyWithImpl<_Coordinates>(this, _$identity);
+  _$CoordinatesCopyWith<_Coordinates> get copyWith =>
+      __$CoordinatesCopyWithImpl<_Coordinates>(this, _$identity);
 }
 
 abstract class _Coordinates extends Coordinates {
-  const factory _Coordinates({required Latitude latitude, required Longitude longitude}) = _$_Coordinates;
+  const factory _Coordinates({required Latitude latitude, required Longitude longitude}) =
+      _$_Coordinates;
 
   const _Coordinates._() : super._();
 

@@ -52,7 +52,8 @@ mixin _$LoadUserEvent {
 
 /// @nodoc
 abstract class $LoadUserEventCopyWith<$Res> {
-  factory $LoadUserEventCopyWith(LoadUserEvent value, $Res Function(LoadUserEvent) then) = _$LoadUserEventCopyWithImpl<$Res>;
+  factory $LoadUserEventCopyWith(LoadUserEvent value, $Res Function(LoadUserEvent) then) =
+      _$LoadUserEventCopyWithImpl<$Res>;
 }
 
 /// @nodoc
@@ -67,12 +68,15 @@ class _$LoadUserEventCopyWithImpl<$Res> implements $LoadUserEventCopyWith<$Res> 
 
 /// @nodoc
 abstract class _$LoadedUserCopyWith<$Res> {
-  factory _$LoadedUserCopyWith(_LoadedUser value, $Res Function(_LoadedUser) then) = __$LoadedUserCopyWithImpl<$Res>;
+  factory _$LoadedUserCopyWith(_LoadedUser value, $Res Function(_LoadedUser) then) =
+      __$LoadedUserCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$LoadedUserCopyWithImpl<$Res> extends _$LoadUserEventCopyWithImpl<$Res> implements _$LoadedUserCopyWith<$Res> {
-  __$LoadedUserCopyWithImpl(_LoadedUser _value, $Res Function(_LoadedUser) _then) : super(_value, (v) => _then(v as _LoadedUser));
+class __$LoadedUserCopyWithImpl<$Res> extends _$LoadUserEventCopyWithImpl<$Res>
+    implements _$LoadedUserCopyWith<$Res> {
+  __$LoadedUserCopyWithImpl(_LoadedUser _value, $Res Function(_LoadedUser) _then)
+      : super(_value, (v) => _then(v as _LoadedUser));
 
   @override
   _LoadedUser get _value => super._value as _LoadedUser;
@@ -209,7 +213,8 @@ mixin _$LoadUserState {
 
 /// @nodoc
 abstract class $LoadUserStateCopyWith<$Res> {
-  factory $LoadUserStateCopyWith(LoadUserState value, $Res Function(LoadUserState) then) = _$LoadUserStateCopyWithImpl<$Res>;
+  factory $LoadUserStateCopyWith(LoadUserState value, $Res Function(LoadUserState) then) =
+      _$LoadUserStateCopyWithImpl<$Res>;
 }
 
 /// @nodoc
@@ -224,12 +229,15 @@ class _$LoadUserStateCopyWithImpl<$Res> implements $LoadUserStateCopyWith<$Res> 
 
 /// @nodoc
 abstract class _$InitialCopyWith<$Res> {
-  factory _$InitialCopyWith(_Initial value, $Res Function(_Initial) then) = __$InitialCopyWithImpl<$Res>;
+  factory _$InitialCopyWith(_Initial value, $Res Function(_Initial) then) =
+      __$InitialCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$InitialCopyWithImpl<$Res> extends _$LoadUserStateCopyWithImpl<$Res> implements _$InitialCopyWith<$Res> {
-  __$InitialCopyWithImpl(_Initial _value, $Res Function(_Initial) _then) : super(_value, (v) => _then(v as _Initial));
+class __$InitialCopyWithImpl<$Res> extends _$LoadUserStateCopyWithImpl<$Res>
+    implements _$InitialCopyWith<$Res> {
+  __$InitialCopyWithImpl(_Initial _value, $Res Function(_Initial) _then)
+      : super(_value, (v) => _then(v as _Initial));
 
   @override
   _Initial get _value => super._value as _Initial;
@@ -312,12 +320,16 @@ abstract class _Initial implements LoadUserState {
 
 /// @nodoc
 abstract class _$ActionInProgressCopyWith<$Res> {
-  factory _$ActionInProgressCopyWith(_ActionInProgress value, $Res Function(_ActionInProgress) then) = __$ActionInProgressCopyWithImpl<$Res>;
+  factory _$ActionInProgressCopyWith(
+          _ActionInProgress value, $Res Function(_ActionInProgress) then) =
+      __$ActionInProgressCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$ActionInProgressCopyWithImpl<$Res> extends _$LoadUserStateCopyWithImpl<$Res> implements _$ActionInProgressCopyWith<$Res> {
-  __$ActionInProgressCopyWithImpl(_ActionInProgress _value, $Res Function(_ActionInProgress) _then) : super(_value, (v) => _then(v as _ActionInProgress));
+class __$ActionInProgressCopyWithImpl<$Res> extends _$LoadUserStateCopyWithImpl<$Res>
+    implements _$ActionInProgressCopyWith<$Res> {
+  __$ActionInProgressCopyWithImpl(_ActionInProgress _value, $Res Function(_ActionInProgress) _then)
+      : super(_value, (v) => _then(v as _ActionInProgress));
 
   @override
   _ActionInProgress get _value => super._value as _ActionInProgress;
@@ -400,7 +412,8 @@ abstract class _ActionInProgress implements LoadUserState {
 
 /// @nodoc
 abstract class _$LoadSuccessCopyWith<$Res> {
-  factory _$LoadSuccessCopyWith(_LoadSuccess value, $Res Function(_LoadSuccess) then) = __$LoadSuccessCopyWithImpl<$Res>;
+  factory _$LoadSuccessCopyWith(_LoadSuccess value, $Res Function(_LoadSuccess) then) =
+      __$LoadSuccessCopyWithImpl<$Res>;
 
   $Res call({User user});
 
@@ -408,8 +421,10 @@ abstract class _$LoadSuccessCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$LoadSuccessCopyWithImpl<$Res> extends _$LoadUserStateCopyWithImpl<$Res> implements _$LoadSuccessCopyWith<$Res> {
-  __$LoadSuccessCopyWithImpl(_LoadSuccess _value, $Res Function(_LoadSuccess) _then) : super(_value, (v) => _then(v as _LoadSuccess));
+class __$LoadSuccessCopyWithImpl<$Res> extends _$LoadUserStateCopyWithImpl<$Res>
+    implements _$LoadSuccessCopyWith<$Res> {
+  __$LoadSuccessCopyWithImpl(_LoadSuccess _value, $Res Function(_LoadSuccess) _then)
+      : super(_value, (v) => _then(v as _LoadSuccess));
 
   @override
   _LoadSuccess get _value => super._value as _LoadSuccess;
@@ -449,7 +464,10 @@ class _$_LoadSuccess implements _LoadSuccess {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _LoadSuccess && (identical(other.user, user) || const DeepCollectionEquality().equals(other.user, user)));
+    return identical(this, other) ||
+        (other is _LoadSuccess &&
+            (identical(other.user, user) ||
+                const DeepCollectionEquality().equals(other.user, user)));
   }
 
   @override
@@ -457,7 +475,8 @@ class _$_LoadSuccess implements _LoadSuccess {
 
   @JsonKey(ignore: true)
   @override
-  _$LoadSuccessCopyWith<_LoadSuccess> get copyWith => __$LoadSuccessCopyWithImpl<_LoadSuccess>(this, _$identity);
+  _$LoadSuccessCopyWith<_LoadSuccess> get copyWith =>
+      __$LoadSuccessCopyWithImpl<_LoadSuccess>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -523,7 +542,8 @@ abstract class _LoadSuccess implements LoadUserState {
 
 /// @nodoc
 abstract class _$LoadFailureCopyWith<$Res> {
-  factory _$LoadFailureCopyWith(_LoadFailure value, $Res Function(_LoadFailure) then) = __$LoadFailureCopyWithImpl<$Res>;
+  factory _$LoadFailureCopyWith(_LoadFailure value, $Res Function(_LoadFailure) then) =
+      __$LoadFailureCopyWithImpl<$Res>;
 
   $Res call({Failure<dynamic> failure});
 
@@ -531,8 +551,10 @@ abstract class _$LoadFailureCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$LoadFailureCopyWithImpl<$Res> extends _$LoadUserStateCopyWithImpl<$Res> implements _$LoadFailureCopyWith<$Res> {
-  __$LoadFailureCopyWithImpl(_LoadFailure _value, $Res Function(_LoadFailure) _then) : super(_value, (v) => _then(v as _LoadFailure));
+class __$LoadFailureCopyWithImpl<$Res> extends _$LoadUserStateCopyWithImpl<$Res>
+    implements _$LoadFailureCopyWith<$Res> {
+  __$LoadFailureCopyWithImpl(_LoadFailure _value, $Res Function(_LoadFailure) _then)
+      : super(_value, (v) => _then(v as _LoadFailure));
 
   @override
   _LoadFailure get _value => super._value as _LoadFailure;
@@ -572,7 +594,10 @@ class _$_LoadFailure implements _LoadFailure {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _LoadFailure && (identical(other.failure, failure) || const DeepCollectionEquality().equals(other.failure, failure)));
+    return identical(this, other) ||
+        (other is _LoadFailure &&
+            (identical(other.failure, failure) ||
+                const DeepCollectionEquality().equals(other.failure, failure)));
   }
 
   @override
@@ -580,7 +605,8 @@ class _$_LoadFailure implements _LoadFailure {
 
   @JsonKey(ignore: true)
   @override
-  _$LoadFailureCopyWith<_LoadFailure> get copyWith => __$LoadFailureCopyWithImpl<_LoadFailure>(this, _$identity);
+  _$LoadFailureCopyWith<_LoadFailure> get copyWith =>
+      __$LoadFailureCopyWithImpl<_LoadFailure>(this, _$identity);
 
   @override
   @optionalTypeArgs

@@ -20,7 +20,12 @@ LocationDto _$LocationDtoFromJson(Map<String, dynamic> json) {
 class _$LocationDtoTearOff {
   const _$LocationDtoTearOff();
 
-  _LocationDto call({required String id, required String city, required String country, required String postalCode, required Set<ExperienceDto> experiences}) {
+  _LocationDto call(
+      {required String id,
+      required String city,
+      required String country,
+      required String postalCode,
+      required Set<ExperienceDto> experiences}) {
     return _LocationDto(
       id: id,
       city: city,
@@ -54,9 +59,11 @@ mixin _$LocationDto {
 
 /// @nodoc
 abstract class $LocationDtoCopyWith<$Res> {
-  factory $LocationDtoCopyWith(LocationDto value, $Res Function(LocationDto) then) = _$LocationDtoCopyWithImpl<$Res>;
+  factory $LocationDtoCopyWith(LocationDto value, $Res Function(LocationDto) then) =
+      _$LocationDtoCopyWithImpl<$Res>;
 
-  $Res call({String id, String city, String country, String postalCode, Set<ExperienceDto> experiences});
+  $Res call(
+      {String id, String city, String country, String postalCode, Set<ExperienceDto> experiences});
 }
 
 /// @nodoc
@@ -102,15 +109,19 @@ class _$LocationDtoCopyWithImpl<$Res> implements $LocationDtoCopyWith<$Res> {
 
 /// @nodoc
 abstract class _$LocationDtoCopyWith<$Res> implements $LocationDtoCopyWith<$Res> {
-  factory _$LocationDtoCopyWith(_LocationDto value, $Res Function(_LocationDto) then) = __$LocationDtoCopyWithImpl<$Res>;
+  factory _$LocationDtoCopyWith(_LocationDto value, $Res Function(_LocationDto) then) =
+      __$LocationDtoCopyWithImpl<$Res>;
 
   @override
-  $Res call({String id, String city, String country, String postalCode, Set<ExperienceDto> experiences});
+  $Res call(
+      {String id, String city, String country, String postalCode, Set<ExperienceDto> experiences});
 }
 
 /// @nodoc
-class __$LocationDtoCopyWithImpl<$Res> extends _$LocationDtoCopyWithImpl<$Res> implements _$LocationDtoCopyWith<$Res> {
-  __$LocationDtoCopyWithImpl(_LocationDto _value, $Res Function(_LocationDto) _then) : super(_value, (v) => _then(v as _LocationDto));
+class __$LocationDtoCopyWithImpl<$Res> extends _$LocationDtoCopyWithImpl<$Res>
+    implements _$LocationDtoCopyWith<$Res> {
+  __$LocationDtoCopyWithImpl(_LocationDto _value, $Res Function(_LocationDto) _then)
+      : super(_value, (v) => _then(v as _LocationDto));
 
   @override
   _LocationDto get _value => super._value as _LocationDto;
@@ -151,7 +162,13 @@ class __$LocationDtoCopyWithImpl<$Res> extends _$LocationDtoCopyWithImpl<$Res> i
 /// @nodoc
 @JsonSerializable()
 class _$_LocationDto extends _LocationDto {
-  const _$_LocationDto({required this.id, required this.city, required this.country, required this.postalCode, required this.experiences}) : super._();
+  const _$_LocationDto(
+      {required this.id,
+      required this.city,
+      required this.country,
+      required this.postalCode,
+      required this.experiences})
+      : super._();
 
   factory _$_LocationDto.fromJson(Map<String, dynamic> json) => _$_$_LocationDtoFromJson(json);
 
@@ -176,10 +193,14 @@ class _$_LocationDto extends _LocationDto {
     return identical(this, other) ||
         (other is _LocationDto &&
             (identical(other.id, id) || const DeepCollectionEquality().equals(other.id, id)) &&
-            (identical(other.city, city) || const DeepCollectionEquality().equals(other.city, city)) &&
-            (identical(other.country, country) || const DeepCollectionEquality().equals(other.country, country)) &&
-            (identical(other.postalCode, postalCode) || const DeepCollectionEquality().equals(other.postalCode, postalCode)) &&
-            (identical(other.experiences, experiences) || const DeepCollectionEquality().equals(other.experiences, experiences)));
+            (identical(other.city, city) ||
+                const DeepCollectionEquality().equals(other.city, city)) &&
+            (identical(other.country, country) ||
+                const DeepCollectionEquality().equals(other.country, country)) &&
+            (identical(other.postalCode, postalCode) ||
+                const DeepCollectionEquality().equals(other.postalCode, postalCode)) &&
+            (identical(other.experiences, experiences) ||
+                const DeepCollectionEquality().equals(other.experiences, experiences)));
   }
 
   @override
@@ -193,7 +214,8 @@ class _$_LocationDto extends _LocationDto {
 
   @JsonKey(ignore: true)
   @override
-  _$LocationDtoCopyWith<_LocationDto> get copyWith => __$LocationDtoCopyWithImpl<_LocationDto>(this, _$identity);
+  _$LocationDtoCopyWith<_LocationDto> get copyWith =>
+      __$LocationDtoCopyWithImpl<_LocationDto>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
@@ -202,7 +224,12 @@ class _$_LocationDto extends _LocationDto {
 }
 
 abstract class _LocationDto extends LocationDto {
-  const factory _LocationDto({required String id, required String city, required String country, required String postalCode, required Set<ExperienceDto> experiences}) = _$_LocationDto;
+  const factory _LocationDto(
+      {required String id,
+      required String city,
+      required String country,
+      required String postalCode,
+      required Set<ExperienceDto> experiences}) = _$_LocationDto;
 
   const _LocationDto._() : super._();
 

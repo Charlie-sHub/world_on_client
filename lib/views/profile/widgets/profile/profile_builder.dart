@@ -32,9 +32,11 @@ class ProfileBuilder extends StatelessWidget {
             user: user,
           ),
           newProfileUpdate: (_newProfileUpdate) {
-            context.read<UserProfileButtonWatcherBloc>().add(
-                  const UserProfileButtonWatcherEvent.initialized(),
-                );
+            if (isOwn) {
+              context.read<UserProfileButtonWatcherBloc>().add(
+                    const UserProfileButtonWatcherEvent.initialized(),
+                  );
+            }
             return Profile(
               isOwn: isOwn,
               user: _newProfileUpdate.user,

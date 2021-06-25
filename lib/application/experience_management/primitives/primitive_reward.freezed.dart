@@ -16,7 +16,11 @@ final _privateConstructorUsedError = UnsupportedError(
 class _$PrimitiveRewardTearOff {
   const _$PrimitiveRewardTearOff();
 
-  _PrimitiveReward call({required UniqueId id, required String name, required String description, required File? imageFile}) {
+  _PrimitiveReward call(
+      {required UniqueId id,
+      required String name,
+      required String description,
+      required File? imageFile}) {
     return _PrimitiveReward(
       id: id,
       name: name,
@@ -42,7 +46,8 @@ mixin _$PrimitiveReward {
 
 /// @nodoc
 abstract class $PrimitiveRewardCopyWith<$Res> {
-  factory $PrimitiveRewardCopyWith(PrimitiveReward value, $Res Function(PrimitiveReward) then) = _$PrimitiveRewardCopyWithImpl<$Res>;
+  factory $PrimitiveRewardCopyWith(PrimitiveReward value, $Res Function(PrimitiveReward) then) =
+      _$PrimitiveRewardCopyWithImpl<$Res>;
 
   $Res call({UniqueId id, String name, String description, File? imageFile});
 }
@@ -86,15 +91,18 @@ class _$PrimitiveRewardCopyWithImpl<$Res> implements $PrimitiveRewardCopyWith<$R
 
 /// @nodoc
 abstract class _$PrimitiveRewardCopyWith<$Res> implements $PrimitiveRewardCopyWith<$Res> {
-  factory _$PrimitiveRewardCopyWith(_PrimitiveReward value, $Res Function(_PrimitiveReward) then) = __$PrimitiveRewardCopyWithImpl<$Res>;
+  factory _$PrimitiveRewardCopyWith(_PrimitiveReward value, $Res Function(_PrimitiveReward) then) =
+      __$PrimitiveRewardCopyWithImpl<$Res>;
 
   @override
   $Res call({UniqueId id, String name, String description, File? imageFile});
 }
 
 /// @nodoc
-class __$PrimitiveRewardCopyWithImpl<$Res> extends _$PrimitiveRewardCopyWithImpl<$Res> implements _$PrimitiveRewardCopyWith<$Res> {
-  __$PrimitiveRewardCopyWithImpl(_PrimitiveReward _value, $Res Function(_PrimitiveReward) _then) : super(_value, (v) => _then(v as _PrimitiveReward));
+class __$PrimitiveRewardCopyWithImpl<$Res> extends _$PrimitiveRewardCopyWithImpl<$Res>
+    implements _$PrimitiveRewardCopyWith<$Res> {
+  __$PrimitiveRewardCopyWithImpl(_PrimitiveReward _value, $Res Function(_PrimitiveReward) _then)
+      : super(_value, (v) => _then(v as _PrimitiveReward));
 
   @override
   _PrimitiveReward get _value => super._value as _PrimitiveReward;
@@ -130,7 +138,9 @@ class __$PrimitiveRewardCopyWithImpl<$Res> extends _$PrimitiveRewardCopyWithImpl
 /// @nodoc
 
 class _$_PrimitiveReward extends _PrimitiveReward {
-  const _$_PrimitiveReward({required this.id, required this.name, required this.description, required this.imageFile}) : super._();
+  const _$_PrimitiveReward(
+      {required this.id, required this.name, required this.description, required this.imageFile})
+      : super._();
 
   @override
   final UniqueId id;
@@ -151,9 +161,12 @@ class _$_PrimitiveReward extends _PrimitiveReward {
     return identical(this, other) ||
         (other is _PrimitiveReward &&
             (identical(other.id, id) || const DeepCollectionEquality().equals(other.id, id)) &&
-            (identical(other.name, name) || const DeepCollectionEquality().equals(other.name, name)) &&
-            (identical(other.description, description) || const DeepCollectionEquality().equals(other.description, description)) &&
-            (identical(other.imageFile, imageFile) || const DeepCollectionEquality().equals(other.imageFile, imageFile)));
+            (identical(other.name, name) ||
+                const DeepCollectionEquality().equals(other.name, name)) &&
+            (identical(other.description, description) ||
+                const DeepCollectionEquality().equals(other.description, description)) &&
+            (identical(other.imageFile, imageFile) ||
+                const DeepCollectionEquality().equals(other.imageFile, imageFile)));
   }
 
   @override
@@ -166,11 +179,16 @@ class _$_PrimitiveReward extends _PrimitiveReward {
 
   @JsonKey(ignore: true)
   @override
-  _$PrimitiveRewardCopyWith<_PrimitiveReward> get copyWith => __$PrimitiveRewardCopyWithImpl<_PrimitiveReward>(this, _$identity);
+  _$PrimitiveRewardCopyWith<_PrimitiveReward> get copyWith =>
+      __$PrimitiveRewardCopyWithImpl<_PrimitiveReward>(this, _$identity);
 }
 
 abstract class _PrimitiveReward extends PrimitiveReward {
-  const factory _PrimitiveReward({required UniqueId id, required String name, required String description, required File? imageFile}) = _$_PrimitiveReward;
+  const factory _PrimitiveReward(
+      {required UniqueId id,
+      required String name,
+      required String description,
+      required File? imageFile}) = _$_PrimitiveReward;
 
   const _PrimitiveReward._() : super._();
 

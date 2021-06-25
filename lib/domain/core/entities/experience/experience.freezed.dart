@@ -105,7 +105,8 @@ mixin _$Experience {
 
 /// @nodoc
 abstract class $ExperienceCopyWith<$Res> {
-  factory $ExperienceCopyWith(Experience value, $Res Function(Experience) then) = _$ExperienceCopyWithImpl<$Res>;
+  factory $ExperienceCopyWith(Experience value, $Res Function(Experience) then) =
+      _$ExperienceCopyWithImpl<$Res>;
 
   $Res call(
       {UniqueId id,
@@ -267,7 +268,8 @@ class _$ExperienceCopyWithImpl<$Res> implements $ExperienceCopyWith<$Res> {
 
 /// @nodoc
 abstract class _$ExperienceCopyWith<$Res> implements $ExperienceCopyWith<$Res> {
-  factory _$ExperienceCopyWith(_Experience value, $Res Function(_Experience) then) = __$ExperienceCopyWithImpl<$Res>;
+  factory _$ExperienceCopyWith(_Experience value, $Res Function(_Experience) then) =
+      __$ExperienceCopyWithImpl<$Res>;
 
   @override
   $Res call(
@@ -300,8 +302,10 @@ abstract class _$ExperienceCopyWith<$Res> implements $ExperienceCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$ExperienceCopyWithImpl<$Res> extends _$ExperienceCopyWithImpl<$Res> implements _$ExperienceCopyWith<$Res> {
-  __$ExperienceCopyWithImpl(_Experience _value, $Res Function(_Experience) _then) : super(_value, (v) => _then(v as _Experience));
+class __$ExperienceCopyWithImpl<$Res> extends _$ExperienceCopyWithImpl<$Res>
+    implements _$ExperienceCopyWith<$Res> {
+  __$ExperienceCopyWithImpl(_Experience _value, $Res Function(_Experience) _then)
+      : super(_value, (v) => _then(v as _Experience));
 
   @override
   _Experience get _value => super._value as _Experience;
@@ -483,24 +487,43 @@ class _$_Experience extends _Experience {
     return identical(this, other) ||
         (other is _Experience &&
             (identical(other.id, id) || const DeepCollectionEquality().equals(other.id, id)) &&
-            (identical(other.title, title) || const DeepCollectionEquality().equals(other.title, title)) &&
-            (identical(other.description, description) || const DeepCollectionEquality().equals(other.description, description)) &&
-            (identical(other.imageURLs, imageURLs) || const DeepCollectionEquality().equals(other.imageURLs, imageURLs)) &&
-            (identical(other.imageAssetsOption, imageAssetsOption) || const DeepCollectionEquality().equals(other.imageAssetsOption, imageAssetsOption)) &&
-            (identical(other.coordinates, coordinates) || const DeepCollectionEquality().equals(other.coordinates, coordinates)) &&
-            (identical(other.location, location) || const DeepCollectionEquality().equals(other.location, location)) &&
-            (identical(other.creator, creator) || const DeepCollectionEquality().equals(other.creator, creator)) &&
-            (identical(other.difficulty, difficulty) || const DeepCollectionEquality().equals(other.difficulty, difficulty)) &&
-            (identical(other.creationDate, creationDate) || const DeepCollectionEquality().equals(other.creationDate, creationDate)) &&
-            (identical(other.modificationDate, modificationDate) || const DeepCollectionEquality().equals(other.modificationDate, modificationDate)) &&
-            (identical(other.objectives, objectives) || const DeepCollectionEquality().equals(other.objectives, objectives)) &&
-            (identical(other.rewards, rewards) || const DeepCollectionEquality().equals(other.rewards, rewards)) &&
-            (identical(other.tags, tags) || const DeepCollectionEquality().equals(other.tags, tags)) &&
-            (identical(other.comments, comments) || const DeepCollectionEquality().equals(other.comments, comments)) &&
-            (identical(other.likedBy, likedBy) || const DeepCollectionEquality().equals(other.likedBy, likedBy)) &&
-            (identical(other.doneBy, doneBy) || const DeepCollectionEquality().equals(other.doneBy, doneBy)) &&
-            (identical(other.toDoBy, toDoBy) || const DeepCollectionEquality().equals(other.toDoBy, toDoBy)) &&
-            (identical(other.isPromoted, isPromoted) || const DeepCollectionEquality().equals(other.isPromoted, isPromoted)));
+            (identical(other.title, title) ||
+                const DeepCollectionEquality().equals(other.title, title)) &&
+            (identical(other.description, description) ||
+                const DeepCollectionEquality().equals(other.description, description)) &&
+            (identical(other.imageURLs, imageURLs) ||
+                const DeepCollectionEquality().equals(other.imageURLs, imageURLs)) &&
+            (identical(other.imageAssetsOption, imageAssetsOption) ||
+                const DeepCollectionEquality()
+                    .equals(other.imageAssetsOption, imageAssetsOption)) &&
+            (identical(other.coordinates, coordinates) ||
+                const DeepCollectionEquality().equals(other.coordinates, coordinates)) &&
+            (identical(other.location, location) ||
+                const DeepCollectionEquality().equals(other.location, location)) &&
+            (identical(other.creator, creator) ||
+                const DeepCollectionEquality().equals(other.creator, creator)) &&
+            (identical(other.difficulty, difficulty) ||
+                const DeepCollectionEquality().equals(other.difficulty, difficulty)) &&
+            (identical(other.creationDate, creationDate) ||
+                const DeepCollectionEquality().equals(other.creationDate, creationDate)) &&
+            (identical(other.modificationDate, modificationDate) ||
+                const DeepCollectionEquality().equals(other.modificationDate, modificationDate)) &&
+            (identical(other.objectives, objectives) ||
+                const DeepCollectionEquality().equals(other.objectives, objectives)) &&
+            (identical(other.rewards, rewards) ||
+                const DeepCollectionEquality().equals(other.rewards, rewards)) &&
+            (identical(other.tags, tags) ||
+                const DeepCollectionEquality().equals(other.tags, tags)) &&
+            (identical(other.comments, comments) ||
+                const DeepCollectionEquality().equals(other.comments, comments)) &&
+            (identical(other.likedBy, likedBy) ||
+                const DeepCollectionEquality().equals(other.likedBy, likedBy)) &&
+            (identical(other.doneBy, doneBy) ||
+                const DeepCollectionEquality().equals(other.doneBy, doneBy)) &&
+            (identical(other.toDoBy, toDoBy) ||
+                const DeepCollectionEquality().equals(other.toDoBy, toDoBy)) &&
+            (identical(other.isPromoted, isPromoted) ||
+                const DeepCollectionEquality().equals(other.isPromoted, isPromoted)));
   }
 
   @override
@@ -528,7 +551,8 @@ class _$_Experience extends _Experience {
 
   @JsonKey(ignore: true)
   @override
-  _$ExperienceCopyWith<_Experience> get copyWith => __$ExperienceCopyWithImpl<_Experience>(this, _$identity);
+  _$ExperienceCopyWith<_Experience> get copyWith =>
+      __$ExperienceCopyWithImpl<_Experience>(this, _$identity);
 }
 
 abstract class _Experience extends Experience {

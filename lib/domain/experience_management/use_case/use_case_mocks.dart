@@ -4,6 +4,8 @@ import 'package:worldon/domain/experience_management/use_case/create_experience.
 import 'package:worldon/domain/experience_management/use_case/edit_experience.dart';
 import 'package:worldon/domain/experience_management/use_case/get_experience.dart';
 
+import 'delete_experience.dart';
+
 @LazySingleton(as: CreateExperience, env: [Environment.test])
 class MockCreateExperience extends Mock implements CreateExperience {}
 
@@ -12,3 +14,6 @@ class MockEditExperience extends Mock implements EditExperience {}
 
 @LazySingleton(as: GetExperience, env: [Environment.test])
 class MockGetExperience extends Mock implements GetExperience {}
+
+@LazySingleton(as: DeleteExperience, env: [Environment.test])
+class MockDeleteExperience extends Mock implements DeleteExperience {}

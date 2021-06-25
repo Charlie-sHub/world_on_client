@@ -9,7 +9,7 @@ publish_to: 'none'
 # The number after the + always increases by 1
 # Usually both numbers should increase by 1 at the same time
 # For example 1.1.8+18 => 1.1.9+19 => 1.2.0+20
-version: 1.3.0+30
+version: 1.3.1+31
 
 environment:
   sdk: ">=2.12.0 <3.0.0"
@@ -23,7 +23,7 @@ dependencies:
   auto_size_text: ^3.0.0-nullsafety.0
   bloc_test: ^8.0.2
   cached_network_image: ^3.0.0
-  carousel_slider: ^4.0.0-nullsafety.0
+  carousel_slider: ^4.0.0
   cloud_firestore: ^2.2.2
   cloud_functions: ^1.1.2
   dartz: ^0.10.0-nullsafety.2
@@ -44,12 +44,12 @@ dependencies:
   flutter_vector_icons: ^1.0.0
   freezed: ^0.14.2
   freezed_annotation: ^0.14.2
-  geoflutterfire: ^3.0.0-nullsafety.2
+  geoflutterfire: ^3.0.0-nullsafety.4
   geolocator: ^7.1.1
   get_it: ^7.1.3
   google_maps_flutter:
   google_sign_in: ^5.0.4
-  image_picker: ^0.8.0+4
+  image_picker: ^0.8.1+1
   implicitly_animated_reorderable_list: ^0.4.0-dev+2
   in_app_purchase: ^1.0.6
   injectable: ^1.4.1

@@ -62,11 +62,14 @@ mixin _$CoreApplicationFailure<T> {
 
 /// @nodoc
 abstract class $CoreApplicationFailureCopyWith<T, $Res> {
-  factory $CoreApplicationFailureCopyWith(CoreApplicationFailure<T> value, $Res Function(CoreApplicationFailure<T>) then) = _$CoreApplicationFailureCopyWithImpl<T, $Res>;
+  factory $CoreApplicationFailureCopyWith(
+          CoreApplicationFailure<T> value, $Res Function(CoreApplicationFailure<T>) then) =
+      _$CoreApplicationFailureCopyWithImpl<T, $Res>;
 }
 
 /// @nodoc
-class _$CoreApplicationFailureCopyWithImpl<T, $Res> implements $CoreApplicationFailureCopyWith<T, $Res> {
+class _$CoreApplicationFailureCopyWithImpl<T, $Res>
+    implements $CoreApplicationFailureCopyWith<T, $Res> {
   _$CoreApplicationFailureCopyWithImpl(this._value, this._then);
 
   final CoreApplicationFailure<T> _value;
@@ -77,14 +80,19 @@ class _$CoreApplicationFailureCopyWithImpl<T, $Res> implements $CoreApplicationF
 
 /// @nodoc
 abstract class $UnknownApplicationLayerErrorCopyWith<T, $Res> {
-  factory $UnknownApplicationLayerErrorCopyWith(UnknownApplicationLayerError<T> value, $Res Function(UnknownApplicationLayerError<T>) then) = _$UnknownApplicationLayerErrorCopyWithImpl<T, $Res>;
+  factory $UnknownApplicationLayerErrorCopyWith(UnknownApplicationLayerError<T> value,
+          $Res Function(UnknownApplicationLayerError<T>) then) =
+      _$UnknownApplicationLayerErrorCopyWithImpl<T, $Res>;
 
   $Res call({String errorString});
 }
 
 /// @nodoc
-class _$UnknownApplicationLayerErrorCopyWithImpl<T, $Res> extends _$CoreApplicationFailureCopyWithImpl<T, $Res> implements $UnknownApplicationLayerErrorCopyWith<T, $Res> {
-  _$UnknownApplicationLayerErrorCopyWithImpl(UnknownApplicationLayerError<T> _value, $Res Function(UnknownApplicationLayerError<T>) _then)
+class _$UnknownApplicationLayerErrorCopyWithImpl<T, $Res>
+    extends _$CoreApplicationFailureCopyWithImpl<T, $Res>
+    implements $UnknownApplicationLayerErrorCopyWith<T, $Res> {
+  _$UnknownApplicationLayerErrorCopyWithImpl(
+      UnknownApplicationLayerError<T> _value, $Res Function(UnknownApplicationLayerError<T>) _then)
       : super(_value, (v) => _then(v as UnknownApplicationLayerError<T>));
 
   @override
@@ -118,7 +126,10 @@ class _$UnknownApplicationLayerError<T> implements UnknownApplicationLayerError<
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is UnknownApplicationLayerError<T> && (identical(other.errorString, errorString) || const DeepCollectionEquality().equals(other.errorString, errorString)));
+    return identical(this, other) ||
+        (other is UnknownApplicationLayerError<T> &&
+            (identical(other.errorString, errorString) ||
+                const DeepCollectionEquality().equals(other.errorString, errorString)));
   }
 
   @override
@@ -126,7 +137,9 @@ class _$UnknownApplicationLayerError<T> implements UnknownApplicationLayerError<
 
   @JsonKey(ignore: true)
   @override
-  $UnknownApplicationLayerErrorCopyWith<T, UnknownApplicationLayerError<T>> get copyWith => _$UnknownApplicationLayerErrorCopyWithImpl<T, UnknownApplicationLayerError<T>>(this, _$identity);
+  $UnknownApplicationLayerErrorCopyWith<T, UnknownApplicationLayerError<T>> get copyWith =>
+      _$UnknownApplicationLayerErrorCopyWithImpl<T, UnknownApplicationLayerError<T>>(
+          this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -174,22 +187,27 @@ class _$UnknownApplicationLayerError<T> implements UnknownApplicationLayerError<
 }
 
 abstract class UnknownApplicationLayerError<T> implements CoreApplicationFailure<T> {
-  const factory UnknownApplicationLayerError({required String errorString}) = _$UnknownApplicationLayerError<T>;
+  const factory UnknownApplicationLayerError({required String errorString}) =
+      _$UnknownApplicationLayerError<T>;
 
   String get errorString => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
-  $UnknownApplicationLayerErrorCopyWith<T, UnknownApplicationLayerError<T>> get copyWith => throw _privateConstructorUsedError;
+  $UnknownApplicationLayerErrorCopyWith<T, UnknownApplicationLayerError<T>> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $EmptyFieldsCopyWith<T, $Res> {
-  factory $EmptyFieldsCopyWith(EmptyFields<T> value, $Res Function(EmptyFields<T>) then) = _$EmptyFieldsCopyWithImpl<T, $Res>;
+  factory $EmptyFieldsCopyWith(EmptyFields<T> value, $Res Function(EmptyFields<T>) then) =
+      _$EmptyFieldsCopyWithImpl<T, $Res>;
 }
 
 /// @nodoc
-class _$EmptyFieldsCopyWithImpl<T, $Res> extends _$CoreApplicationFailureCopyWithImpl<T, $Res> implements $EmptyFieldsCopyWith<T, $Res> {
-  _$EmptyFieldsCopyWithImpl(EmptyFields<T> _value, $Res Function(EmptyFields<T>) _then) : super(_value, (v) => _then(v as EmptyFields<T>));
+class _$EmptyFieldsCopyWithImpl<T, $Res> extends _$CoreApplicationFailureCopyWithImpl<T, $Res>
+    implements $EmptyFieldsCopyWith<T, $Res> {
+  _$EmptyFieldsCopyWithImpl(EmptyFields<T> _value, $Res Function(EmptyFields<T>) _then)
+      : super(_value, (v) => _then(v as EmptyFields<T>));
 
   @override
   EmptyFields<T> get _value => super._value as EmptyFields<T>;

@@ -60,7 +60,9 @@ mixin _$AuthenticationEvent {
 
 /// @nodoc
 abstract class $AuthenticationEventCopyWith<$Res> {
-  factory $AuthenticationEventCopyWith(AuthenticationEvent value, $Res Function(AuthenticationEvent) then) = _$AuthenticationEventCopyWithImpl<$Res>;
+  factory $AuthenticationEventCopyWith(
+          AuthenticationEvent value, $Res Function(AuthenticationEvent) then) =
+      _$AuthenticationEventCopyWithImpl<$Res>;
 }
 
 /// @nodoc
@@ -75,12 +77,17 @@ class _$AuthenticationEventCopyWithImpl<$Res> implements $AuthenticationEventCop
 
 /// @nodoc
 abstract class _$AuthenticationCheckRequestedCopyWith<$Res> {
-  factory _$AuthenticationCheckRequestedCopyWith(_AuthenticationCheckRequested value, $Res Function(_AuthenticationCheckRequested) then) = __$AuthenticationCheckRequestedCopyWithImpl<$Res>;
+  factory _$AuthenticationCheckRequestedCopyWith(
+          _AuthenticationCheckRequested value, $Res Function(_AuthenticationCheckRequested) then) =
+      __$AuthenticationCheckRequestedCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$AuthenticationCheckRequestedCopyWithImpl<$Res> extends _$AuthenticationEventCopyWithImpl<$Res> implements _$AuthenticationCheckRequestedCopyWith<$Res> {
-  __$AuthenticationCheckRequestedCopyWithImpl(_AuthenticationCheckRequested _value, $Res Function(_AuthenticationCheckRequested) _then)
+class __$AuthenticationCheckRequestedCopyWithImpl<$Res>
+    extends _$AuthenticationEventCopyWithImpl<$Res>
+    implements _$AuthenticationCheckRequestedCopyWith<$Res> {
+  __$AuthenticationCheckRequestedCopyWithImpl(
+      _AuthenticationCheckRequested _value, $Res Function(_AuthenticationCheckRequested) _then)
       : super(_value, (v) => _then(v as _AuthenticationCheckRequested));
 
   @override
@@ -156,12 +163,15 @@ abstract class _AuthenticationCheckRequested implements AuthenticationEvent {
 
 /// @nodoc
 abstract class _$LoggedOutCopyWith<$Res> {
-  factory _$LoggedOutCopyWith(_LoggedOut value, $Res Function(_LoggedOut) then) = __$LoggedOutCopyWithImpl<$Res>;
+  factory _$LoggedOutCopyWith(_LoggedOut value, $Res Function(_LoggedOut) then) =
+      __$LoggedOutCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$LoggedOutCopyWithImpl<$Res> extends _$AuthenticationEventCopyWithImpl<$Res> implements _$LoggedOutCopyWith<$Res> {
-  __$LoggedOutCopyWithImpl(_LoggedOut _value, $Res Function(_LoggedOut) _then) : super(_value, (v) => _then(v as _LoggedOut));
+class __$LoggedOutCopyWithImpl<$Res> extends _$AuthenticationEventCopyWithImpl<$Res>
+    implements _$LoggedOutCopyWith<$Res> {
+  __$LoggedOutCopyWithImpl(_LoggedOut _value, $Res Function(_LoggedOut) _then)
+      : super(_value, (v) => _then(v as _LoggedOut));
 
   @override
   _LoggedOut get _value => super._value as _LoggedOut;
@@ -290,7 +300,9 @@ mixin _$AuthenticationState {
 
 /// @nodoc
 abstract class $AuthenticationStateCopyWith<$Res> {
-  factory $AuthenticationStateCopyWith(AuthenticationState value, $Res Function(AuthenticationState) then) = _$AuthenticationStateCopyWithImpl<$Res>;
+  factory $AuthenticationStateCopyWith(
+          AuthenticationState value, $Res Function(AuthenticationState) then) =
+      _$AuthenticationStateCopyWithImpl<$Res>;
 }
 
 /// @nodoc
@@ -305,12 +317,15 @@ class _$AuthenticationStateCopyWithImpl<$Res> implements $AuthenticationStateCop
 
 /// @nodoc
 abstract class _$InitialCopyWith<$Res> {
-  factory _$InitialCopyWith(_Initial value, $Res Function(_Initial) then) = __$InitialCopyWithImpl<$Res>;
+  factory _$InitialCopyWith(_Initial value, $Res Function(_Initial) then) =
+      __$InitialCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$InitialCopyWithImpl<$Res> extends _$AuthenticationStateCopyWithImpl<$Res> implements _$InitialCopyWith<$Res> {
-  __$InitialCopyWithImpl(_Initial _value, $Res Function(_Initial) _then) : super(_value, (v) => _then(v as _Initial));
+class __$InitialCopyWithImpl<$Res> extends _$AuthenticationStateCopyWithImpl<$Res>
+    implements _$InitialCopyWith<$Res> {
+  __$InitialCopyWithImpl(_Initial _value, $Res Function(_Initial) _then)
+      : super(_value, (v) => _then(v as _Initial));
 
   @override
   _Initial get _value => super._value as _Initial;
@@ -389,12 +404,15 @@ abstract class _Initial implements AuthenticationState {
 
 /// @nodoc
 abstract class _$AuthenticatedCopyWith<$Res> {
-  factory _$AuthenticatedCopyWith(_Authenticated value, $Res Function(_Authenticated) then) = __$AuthenticatedCopyWithImpl<$Res>;
+  factory _$AuthenticatedCopyWith(_Authenticated value, $Res Function(_Authenticated) then) =
+      __$AuthenticatedCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$AuthenticatedCopyWithImpl<$Res> extends _$AuthenticationStateCopyWithImpl<$Res> implements _$AuthenticatedCopyWith<$Res> {
-  __$AuthenticatedCopyWithImpl(_Authenticated _value, $Res Function(_Authenticated) _then) : super(_value, (v) => _then(v as _Authenticated));
+class __$AuthenticatedCopyWithImpl<$Res> extends _$AuthenticationStateCopyWithImpl<$Res>
+    implements _$AuthenticatedCopyWith<$Res> {
+  __$AuthenticatedCopyWithImpl(_Authenticated _value, $Res Function(_Authenticated) _then)
+      : super(_value, (v) => _then(v as _Authenticated));
 
   @override
   _Authenticated get _value => super._value as _Authenticated;
@@ -473,12 +491,15 @@ abstract class _Authenticated implements AuthenticationState {
 
 /// @nodoc
 abstract class _$UnAuthenticatedCopyWith<$Res> {
-  factory _$UnAuthenticatedCopyWith(_UnAuthenticated value, $Res Function(_UnAuthenticated) then) = __$UnAuthenticatedCopyWithImpl<$Res>;
+  factory _$UnAuthenticatedCopyWith(_UnAuthenticated value, $Res Function(_UnAuthenticated) then) =
+      __$UnAuthenticatedCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$UnAuthenticatedCopyWithImpl<$Res> extends _$AuthenticationStateCopyWithImpl<$Res> implements _$UnAuthenticatedCopyWith<$Res> {
-  __$UnAuthenticatedCopyWithImpl(_UnAuthenticated _value, $Res Function(_UnAuthenticated) _then) : super(_value, (v) => _then(v as _UnAuthenticated));
+class __$UnAuthenticatedCopyWithImpl<$Res> extends _$AuthenticationStateCopyWithImpl<$Res>
+    implements _$UnAuthenticatedCopyWith<$Res> {
+  __$UnAuthenticatedCopyWithImpl(_UnAuthenticated _value, $Res Function(_UnAuthenticated) _then)
+      : super(_value, (v) => _then(v as _UnAuthenticated));
 
   @override
   _UnAuthenticated get _value => super._value as _UnAuthenticated;

@@ -79,7 +79,8 @@ mixin _$BlockActorEvent {
 
 /// @nodoc
 abstract class $BlockActorEventCopyWith<$Res> {
-  factory $BlockActorEventCopyWith(BlockActorEvent value, $Res Function(BlockActorEvent) then) = _$BlockActorEventCopyWithImpl<$Res>;
+  factory $BlockActorEventCopyWith(BlockActorEvent value, $Res Function(BlockActorEvent) then) =
+      _$BlockActorEventCopyWithImpl<$Res>;
 
   $Res call({User user});
 
@@ -117,7 +118,8 @@ class _$BlockActorEventCopyWithImpl<$Res> implements $BlockActorEventCopyWith<$R
 
 /// @nodoc
 abstract class _$InitializedCopyWith<$Res> implements $BlockActorEventCopyWith<$Res> {
-  factory _$InitializedCopyWith(_Initialized value, $Res Function(_Initialized) then) = __$InitializedCopyWithImpl<$Res>;
+  factory _$InitializedCopyWith(_Initialized value, $Res Function(_Initialized) then) =
+      __$InitializedCopyWithImpl<$Res>;
 
   @override
   $Res call({User user});
@@ -127,8 +129,10 @@ abstract class _$InitializedCopyWith<$Res> implements $BlockActorEventCopyWith<$
 }
 
 /// @nodoc
-class __$InitializedCopyWithImpl<$Res> extends _$BlockActorEventCopyWithImpl<$Res> implements _$InitializedCopyWith<$Res> {
-  __$InitializedCopyWithImpl(_Initialized _value, $Res Function(_Initialized) _then) : super(_value, (v) => _then(v as _Initialized));
+class __$InitializedCopyWithImpl<$Res> extends _$BlockActorEventCopyWithImpl<$Res>
+    implements _$InitializedCopyWith<$Res> {
+  __$InitializedCopyWithImpl(_Initialized _value, $Res Function(_Initialized) _then)
+      : super(_value, (v) => _then(v as _Initialized));
 
   @override
   _Initialized get _value => super._value as _Initialized;
@@ -161,7 +165,10 @@ class _$_Initialized implements _Initialized {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _Initialized && (identical(other.user, user) || const DeepCollectionEquality().equals(other.user, user)));
+    return identical(this, other) ||
+        (other is _Initialized &&
+            (identical(other.user, user) ||
+                const DeepCollectionEquality().equals(other.user, user)));
   }
 
   @override
@@ -169,7 +176,8 @@ class _$_Initialized implements _Initialized {
 
   @JsonKey(ignore: true)
   @override
-  _$InitializedCopyWith<_Initialized> get copyWith => __$InitializedCopyWithImpl<_Initialized>(this, _$identity);
+  _$InitializedCopyWith<_Initialized> get copyWith =>
+      __$InitializedCopyWithImpl<_Initialized>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -233,7 +241,8 @@ abstract class _Initialized implements BlockActorEvent {
 
 /// @nodoc
 abstract class _$BlockedCopyWith<$Res> implements $BlockActorEventCopyWith<$Res> {
-  factory _$BlockedCopyWith(_Blocked value, $Res Function(_Blocked) then) = __$BlockedCopyWithImpl<$Res>;
+  factory _$BlockedCopyWith(_Blocked value, $Res Function(_Blocked) then) =
+      __$BlockedCopyWithImpl<$Res>;
 
   @override
   $Res call({User user});
@@ -243,8 +252,10 @@ abstract class _$BlockedCopyWith<$Res> implements $BlockActorEventCopyWith<$Res>
 }
 
 /// @nodoc
-class __$BlockedCopyWithImpl<$Res> extends _$BlockActorEventCopyWithImpl<$Res> implements _$BlockedCopyWith<$Res> {
-  __$BlockedCopyWithImpl(_Blocked _value, $Res Function(_Blocked) _then) : super(_value, (v) => _then(v as _Blocked));
+class __$BlockedCopyWithImpl<$Res> extends _$BlockActorEventCopyWithImpl<$Res>
+    implements _$BlockedCopyWith<$Res> {
+  __$BlockedCopyWithImpl(_Blocked _value, $Res Function(_Blocked) _then)
+      : super(_value, (v) => _then(v as _Blocked));
 
   @override
   _Blocked get _value => super._value as _Blocked;
@@ -277,7 +288,10 @@ class _$_Blocked implements _Blocked {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _Blocked && (identical(other.user, user) || const DeepCollectionEquality().equals(other.user, user)));
+    return identical(this, other) ||
+        (other is _Blocked &&
+            (identical(other.user, user) ||
+                const DeepCollectionEquality().equals(other.user, user)));
   }
 
   @override
@@ -349,7 +363,8 @@ abstract class _Blocked implements BlockActorEvent {
 
 /// @nodoc
 abstract class _$UnBlockedCopyWith<$Res> implements $BlockActorEventCopyWith<$Res> {
-  factory _$UnBlockedCopyWith(_UnBlocked value, $Res Function(_UnBlocked) then) = __$UnBlockedCopyWithImpl<$Res>;
+  factory _$UnBlockedCopyWith(_UnBlocked value, $Res Function(_UnBlocked) then) =
+      __$UnBlockedCopyWithImpl<$Res>;
 
   @override
   $Res call({User user});
@@ -359,8 +374,10 @@ abstract class _$UnBlockedCopyWith<$Res> implements $BlockActorEventCopyWith<$Re
 }
 
 /// @nodoc
-class __$UnBlockedCopyWithImpl<$Res> extends _$BlockActorEventCopyWithImpl<$Res> implements _$UnBlockedCopyWith<$Res> {
-  __$UnBlockedCopyWithImpl(_UnBlocked _value, $Res Function(_UnBlocked) _then) : super(_value, (v) => _then(v as _UnBlocked));
+class __$UnBlockedCopyWithImpl<$Res> extends _$BlockActorEventCopyWithImpl<$Res>
+    implements _$UnBlockedCopyWith<$Res> {
+  __$UnBlockedCopyWithImpl(_UnBlocked _value, $Res Function(_UnBlocked) _then)
+      : super(_value, (v) => _then(v as _UnBlocked));
 
   @override
   _UnBlocked get _value => super._value as _UnBlocked;
@@ -393,7 +410,10 @@ class _$_UnBlocked implements _UnBlocked {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _UnBlocked && (identical(other.user, user) || const DeepCollectionEquality().equals(other.user, user)));
+    return identical(this, other) ||
+        (other is _UnBlocked &&
+            (identical(other.user, user) ||
+                const DeepCollectionEquality().equals(other.user, user)));
   }
 
   @override
@@ -401,7 +421,8 @@ class _$_UnBlocked implements _UnBlocked {
 
   @JsonKey(ignore: true)
   @override
-  _$UnBlockedCopyWith<_UnBlocked> get copyWith => __$UnBlockedCopyWithImpl<_UnBlocked>(this, _$identity);
+  _$UnBlockedCopyWith<_UnBlocked> get copyWith =>
+      __$UnBlockedCopyWithImpl<_UnBlocked>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -563,7 +584,8 @@ mixin _$BlockActorState {
 
 /// @nodoc
 abstract class $BlockActorStateCopyWith<$Res> {
-  factory $BlockActorStateCopyWith(BlockActorState value, $Res Function(BlockActorState) then) = _$BlockActorStateCopyWithImpl<$Res>;
+  factory $BlockActorStateCopyWith(BlockActorState value, $Res Function(BlockActorState) then) =
+      _$BlockActorStateCopyWithImpl<$Res>;
 }
 
 /// @nodoc
@@ -578,12 +600,15 @@ class _$BlockActorStateCopyWithImpl<$Res> implements $BlockActorStateCopyWith<$R
 
 /// @nodoc
 abstract class _$InitialCopyWith<$Res> {
-  factory _$InitialCopyWith(_Initial value, $Res Function(_Initial) then) = __$InitialCopyWithImpl<$Res>;
+  factory _$InitialCopyWith(_Initial value, $Res Function(_Initial) then) =
+      __$InitialCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$InitialCopyWithImpl<$Res> extends _$BlockActorStateCopyWithImpl<$Res> implements _$InitialCopyWith<$Res> {
-  __$InitialCopyWithImpl(_Initial _value, $Res Function(_Initial) _then) : super(_value, (v) => _then(v as _Initial));
+class __$InitialCopyWithImpl<$Res> extends _$BlockActorStateCopyWithImpl<$Res>
+    implements _$InitialCopyWith<$Res> {
+  __$InitialCopyWithImpl(_Initial _value, $Res Function(_Initial) _then)
+      : super(_value, (v) => _then(v as _Initial));
 
   @override
   _Initial get _value => super._value as _Initial;
@@ -682,12 +707,16 @@ abstract class _Initial implements BlockActorState {
 
 /// @nodoc
 abstract class _$ActionInProgressCopyWith<$Res> {
-  factory _$ActionInProgressCopyWith(_ActionInProgress value, $Res Function(_ActionInProgress) then) = __$ActionInProgressCopyWithImpl<$Res>;
+  factory _$ActionInProgressCopyWith(
+          _ActionInProgress value, $Res Function(_ActionInProgress) then) =
+      __$ActionInProgressCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$ActionInProgressCopyWithImpl<$Res> extends _$BlockActorStateCopyWithImpl<$Res> implements _$ActionInProgressCopyWith<$Res> {
-  __$ActionInProgressCopyWithImpl(_ActionInProgress _value, $Res Function(_ActionInProgress) _then) : super(_value, (v) => _then(v as _ActionInProgress));
+class __$ActionInProgressCopyWithImpl<$Res> extends _$BlockActorStateCopyWithImpl<$Res>
+    implements _$ActionInProgressCopyWith<$Res> {
+  __$ActionInProgressCopyWithImpl(_ActionInProgress _value, $Res Function(_ActionInProgress) _then)
+      : super(_value, (v) => _then(v as _ActionInProgress));
 
   @override
   _ActionInProgress get _value => super._value as _ActionInProgress;
@@ -786,12 +815,15 @@ abstract class _ActionInProgress implements BlockActorState {
 
 /// @nodoc
 abstract class _$BlocksCopyWith<$Res> {
-  factory _$BlocksCopyWith(_Blocks value, $Res Function(_Blocks) then) = __$BlocksCopyWithImpl<$Res>;
+  factory _$BlocksCopyWith(_Blocks value, $Res Function(_Blocks) then) =
+      __$BlocksCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$BlocksCopyWithImpl<$Res> extends _$BlockActorStateCopyWithImpl<$Res> implements _$BlocksCopyWith<$Res> {
-  __$BlocksCopyWithImpl(_Blocks _value, $Res Function(_Blocks) _then) : super(_value, (v) => _then(v as _Blocks));
+class __$BlocksCopyWithImpl<$Res> extends _$BlockActorStateCopyWithImpl<$Res>
+    implements _$BlocksCopyWith<$Res> {
+  __$BlocksCopyWithImpl(_Blocks _value, $Res Function(_Blocks) _then)
+      : super(_value, (v) => _then(v as _Blocks));
 
   @override
   _Blocks get _value => super._value as _Blocks;
@@ -890,12 +922,15 @@ abstract class _Blocks implements BlockActorState {
 
 /// @nodoc
 abstract class _$BlocksNotCopyWith<$Res> {
-  factory _$BlocksNotCopyWith(_BlocksNot value, $Res Function(_BlocksNot) then) = __$BlocksNotCopyWithImpl<$Res>;
+  factory _$BlocksNotCopyWith(_BlocksNot value, $Res Function(_BlocksNot) then) =
+      __$BlocksNotCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$BlocksNotCopyWithImpl<$Res> extends _$BlockActorStateCopyWithImpl<$Res> implements _$BlocksNotCopyWith<$Res> {
-  __$BlocksNotCopyWithImpl(_BlocksNot _value, $Res Function(_BlocksNot) _then) : super(_value, (v) => _then(v as _BlocksNot));
+class __$BlocksNotCopyWithImpl<$Res> extends _$BlockActorStateCopyWithImpl<$Res>
+    implements _$BlocksNotCopyWith<$Res> {
+  __$BlocksNotCopyWithImpl(_BlocksNot _value, $Res Function(_BlocksNot) _then)
+      : super(_value, (v) => _then(v as _BlocksNot));
 
   @override
   _BlocksNot get _value => super._value as _BlocksNot;
@@ -994,12 +1029,15 @@ abstract class _BlocksNot implements BlockActorState {
 
 /// @nodoc
 abstract class _$BlockSuccessCopyWith<$Res> {
-  factory _$BlockSuccessCopyWith(_BlockSuccess value, $Res Function(_BlockSuccess) then) = __$BlockSuccessCopyWithImpl<$Res>;
+  factory _$BlockSuccessCopyWith(_BlockSuccess value, $Res Function(_BlockSuccess) then) =
+      __$BlockSuccessCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$BlockSuccessCopyWithImpl<$Res> extends _$BlockActorStateCopyWithImpl<$Res> implements _$BlockSuccessCopyWith<$Res> {
-  __$BlockSuccessCopyWithImpl(_BlockSuccess _value, $Res Function(_BlockSuccess) _then) : super(_value, (v) => _then(v as _BlockSuccess));
+class __$BlockSuccessCopyWithImpl<$Res> extends _$BlockActorStateCopyWithImpl<$Res>
+    implements _$BlockSuccessCopyWith<$Res> {
+  __$BlockSuccessCopyWithImpl(_BlockSuccess _value, $Res Function(_BlockSuccess) _then)
+      : super(_value, (v) => _then(v as _BlockSuccess));
 
   @override
   _BlockSuccess get _value => super._value as _BlockSuccess;
@@ -1098,7 +1136,8 @@ abstract class _BlockSuccess implements BlockActorState {
 
 /// @nodoc
 abstract class _$BlockFailureCopyWith<$Res> {
-  factory _$BlockFailureCopyWith(_BlockFailure value, $Res Function(_BlockFailure) then) = __$BlockFailureCopyWithImpl<$Res>;
+  factory _$BlockFailureCopyWith(_BlockFailure value, $Res Function(_BlockFailure) then) =
+      __$BlockFailureCopyWithImpl<$Res>;
 
   $Res call({Failure<dynamic> failure});
 
@@ -1106,8 +1145,10 @@ abstract class _$BlockFailureCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$BlockFailureCopyWithImpl<$Res> extends _$BlockActorStateCopyWithImpl<$Res> implements _$BlockFailureCopyWith<$Res> {
-  __$BlockFailureCopyWithImpl(_BlockFailure _value, $Res Function(_BlockFailure) _then) : super(_value, (v) => _then(v as _BlockFailure));
+class __$BlockFailureCopyWithImpl<$Res> extends _$BlockActorStateCopyWithImpl<$Res>
+    implements _$BlockFailureCopyWith<$Res> {
+  __$BlockFailureCopyWithImpl(_BlockFailure _value, $Res Function(_BlockFailure) _then)
+      : super(_value, (v) => _then(v as _BlockFailure));
 
   @override
   _BlockFailure get _value => super._value as _BlockFailure;
@@ -1147,7 +1188,10 @@ class _$_BlockFailure implements _BlockFailure {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _BlockFailure && (identical(other.failure, failure) || const DeepCollectionEquality().equals(other.failure, failure)));
+    return identical(this, other) ||
+        (other is _BlockFailure &&
+            (identical(other.failure, failure) ||
+                const DeepCollectionEquality().equals(other.failure, failure)));
   }
 
   @override
@@ -1155,7 +1199,8 @@ class _$_BlockFailure implements _BlockFailure {
 
   @JsonKey(ignore: true)
   @override
-  _$BlockFailureCopyWith<_BlockFailure> get copyWith => __$BlockFailureCopyWithImpl<_BlockFailure>(this, _$identity);
+  _$BlockFailureCopyWith<_BlockFailure> get copyWith =>
+      __$BlockFailureCopyWithImpl<_BlockFailure>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -1237,12 +1282,15 @@ abstract class _BlockFailure implements BlockActorState {
 
 /// @nodoc
 abstract class _$UnBlockSuccessCopyWith<$Res> {
-  factory _$UnBlockSuccessCopyWith(_UnBlockSuccess value, $Res Function(_UnBlockSuccess) then) = __$UnBlockSuccessCopyWithImpl<$Res>;
+  factory _$UnBlockSuccessCopyWith(_UnBlockSuccess value, $Res Function(_UnBlockSuccess) then) =
+      __$UnBlockSuccessCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$UnBlockSuccessCopyWithImpl<$Res> extends _$BlockActorStateCopyWithImpl<$Res> implements _$UnBlockSuccessCopyWith<$Res> {
-  __$UnBlockSuccessCopyWithImpl(_UnBlockSuccess _value, $Res Function(_UnBlockSuccess) _then) : super(_value, (v) => _then(v as _UnBlockSuccess));
+class __$UnBlockSuccessCopyWithImpl<$Res> extends _$BlockActorStateCopyWithImpl<$Res>
+    implements _$UnBlockSuccessCopyWith<$Res> {
+  __$UnBlockSuccessCopyWithImpl(_UnBlockSuccess _value, $Res Function(_UnBlockSuccess) _then)
+      : super(_value, (v) => _then(v as _UnBlockSuccess));
 
   @override
   _UnBlockSuccess get _value => super._value as _UnBlockSuccess;
@@ -1341,7 +1389,8 @@ abstract class _UnBlockSuccess implements BlockActorState {
 
 /// @nodoc
 abstract class _$UnBlockFailureCopyWith<$Res> {
-  factory _$UnBlockFailureCopyWith(_UnBlockFailure value, $Res Function(_UnBlockFailure) then) = __$UnBlockFailureCopyWithImpl<$Res>;
+  factory _$UnBlockFailureCopyWith(_UnBlockFailure value, $Res Function(_UnBlockFailure) then) =
+      __$UnBlockFailureCopyWithImpl<$Res>;
 
   $Res call({Failure<dynamic> failure});
 
@@ -1349,8 +1398,10 @@ abstract class _$UnBlockFailureCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$UnBlockFailureCopyWithImpl<$Res> extends _$BlockActorStateCopyWithImpl<$Res> implements _$UnBlockFailureCopyWith<$Res> {
-  __$UnBlockFailureCopyWithImpl(_UnBlockFailure _value, $Res Function(_UnBlockFailure) _then) : super(_value, (v) => _then(v as _UnBlockFailure));
+class __$UnBlockFailureCopyWithImpl<$Res> extends _$BlockActorStateCopyWithImpl<$Res>
+    implements _$UnBlockFailureCopyWith<$Res> {
+  __$UnBlockFailureCopyWithImpl(_UnBlockFailure _value, $Res Function(_UnBlockFailure) _then)
+      : super(_value, (v) => _then(v as _UnBlockFailure));
 
   @override
   _UnBlockFailure get _value => super._value as _UnBlockFailure;
@@ -1390,7 +1441,10 @@ class _$_UnBlockFailure implements _UnBlockFailure {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _UnBlockFailure && (identical(other.failure, failure) || const DeepCollectionEquality().equals(other.failure, failure)));
+    return identical(this, other) ||
+        (other is _UnBlockFailure &&
+            (identical(other.failure, failure) ||
+                const DeepCollectionEquality().equals(other.failure, failure)));
   }
 
   @override
@@ -1398,7 +1452,8 @@ class _$_UnBlockFailure implements _UnBlockFailure {
 
   @JsonKey(ignore: true)
   @override
-  _$UnBlockFailureCopyWith<_UnBlockFailure> get copyWith => __$UnBlockFailureCopyWithImpl<_UnBlockFailure>(this, _$identity);
+  _$UnBlockFailureCopyWith<_UnBlockFailure> get copyWith =>
+      __$UnBlockFailureCopyWithImpl<_UnBlockFailure>(this, _$identity);
 
   @override
   @optionalTypeArgs

@@ -16,41 +16,40 @@ class CurrentUserProfileButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    const double _size = 27;
-    return SizedBox(
-      width: _size,
-      height: _size,
-      child: BlocBuilder<UserProfileButtonWatcherBloc, UserProfileButtonWatcherState>(
-        builder: (context, state) => state.map(
-          initial: (_) => const Icon(
-            Icons.person_outline,
-            size: 25,
+    const double _size = 25;
+    return MaterialButton(
+      minWidth: 40,
+      elevation: 0,
+      padding: EdgeInsets.zero,
+      shape: const CircleBorder(),
+      onPressed: () => context.read<NavigationActorBloc>().add(
+            NavigationActorEvent.profileTapped(
+              userIdOption: none(),
+              currentUserProfile: true,
+            ),
           ),
-          actionInProgress: (_) => const WorldOnProgressIndicator(
-            size: 15,
-          ),
-          loadSuccess: (state) => MaterialButton(
-            minWidth: 0,
-            elevation: 0,
-            // color: Colors.transparent,
-            padding: EdgeInsets.zero,
-            shape: const CircleBorder(),
-            onPressed: () => context.read<NavigationActorBloc>().add(
-                  NavigationActorEvent.profileTapped(
-                    userIdOption: none(),
-                    currentUserProfile: true,
-                  ),
-                ),
-            onLongPress: () => _onLongPress(context),
-            child: CircleAvatar(
+      onLongPress: () => _onLongPress(context),
+      child: SizedBox(
+        width: _size,
+        height: _size,
+        child: BlocBuilder<UserProfileButtonWatcherBloc, UserProfileButtonWatcherState>(
+          builder: (context, state) => state.map(
+            initial: (_) => const Icon(
+              Icons.person_outline,
+              size: 25,
+            ),
+            actionInProgress: (_) => const WorldOnProgressIndicator(
+              size: 15,
+            ),
+            loadSuccess: (state) => CircleAvatar(
               radius: 15,
               backgroundImage: CachedNetworkImageProvider(state.imageUrl),
             ),
-          ),
-          loadFailure: (_) => const Icon(
-            Icons.person_outline,
-            size: 25,
-            color: WorldOnColors.red,
+            loadFailure: (_) => const Icon(
+              Icons.person_outline,
+              size: 25,
+              color: WorldOnColors.red,
+            ),
           ),
         ),
       ),

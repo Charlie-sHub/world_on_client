@@ -1,28 +1,30 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:worldon/application/experience_navigation/experience_like_actor/experience_like_actor_bloc.dart';
-import 'package:worldon/domain/core/entities/experience/experience.dart';
+import 'package:worldon/domain/core/validation/objects/unique_id.dart';
 import 'package:worldon/injection.dart';
-import 'package:worldon/views/experience_navigation/widgets/dislike_experience_button.dart';
-import 'package:worldon/views/experience_navigation/widgets/like_experience_button.dart';
+
+import 'dislike_experience_button.dart';
+import 'like_experience_button.dart';
 
 class LikeDislikeButtonBuilder extends StatelessWidget {
   const LikeDislikeButtonBuilder({
     Key? key,
-    required this.experience,
+    required this.experienceId,
   }) : super(key: key);
 
-  final Experience experience;
+  final UniqueId experienceId;
 
   @override
   Widget build(BuildContext context) {
+    const double _size = 30;
     return SizedBox(
-      height: 30,
-      width: 30,
+      height: _size,
+      width: _size,
       child: BlocProvider(
         create: (context) => getIt<ExperienceLikeActorBloc>()
           ..add(
-            ExperienceLikeActorEvent.initialized(experience),
+            ExperienceLikeActorEvent.initialized(experienceId),
           ),
         child: BlocBuilder<ExperienceLikeActorBloc, ExperienceLikeActorState>(
           builder: (context, state) => AnimatedSwitcher(
@@ -34,12 +36,12 @@ class LikeDislikeButtonBuilder extends StatelessWidget {
             child: state.map(
               initial: (_) => Container(),
               actionInProgress: (_) => const CircularProgressIndicator(),
-              likes: (_) => DislikeExperienceButton(experience: experience),
-              neutral: (_) => LikeExperienceButton(experience: experience),
-              likeSuccess: (_) => DislikeExperienceButton(experience: experience),
-              likeFailure: (_) => LikeExperienceButton(experience: experience),
-              dislikeFailure: (_) => DislikeExperienceButton(experience: experience),
-              dislikeSuccess: (_) => LikeExperienceButton(experience: experience),
+              likes: (_) => DislikeExperienceButton(experienceId: experienceId),
+              neutral: (_) => LikeExperienceButton(experienceId: experienceId),
+              likeSuccess: (_) => DislikeExperienceButton(experienceId: experienceId),
+              likeFailure: (_) => LikeExperienceButton(experienceId: experienceId),
+              dislikeFailure: (_) => DislikeExperienceButton(experienceId: experienceId),
+              dislikeSuccess: (_) => LikeExperienceButton(experienceId: experienceId),
             ),
           ),
         ),

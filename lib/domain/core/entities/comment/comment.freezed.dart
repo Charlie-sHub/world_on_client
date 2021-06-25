@@ -17,7 +17,12 @@ class _$CommentTearOff {
   const _$CommentTearOff();
 
   _Comment call(
-      {required UniqueId id, required SimpleUser poster, required UniqueId experienceId, required CommentContent content, required PastDate creationDate, required PastDate modificationDate}) {
+      {required UniqueId id,
+      required SimpleUser poster,
+      required UniqueId experienceId,
+      required CommentContent content,
+      required PastDate creationDate,
+      required PastDate modificationDate}) {
     return _Comment(
       id: id,
       poster: poster,
@@ -47,9 +52,16 @@ mixin _$Comment {
 
 /// @nodoc
 abstract class $CommentCopyWith<$Res> {
-  factory $CommentCopyWith(Comment value, $Res Function(Comment) then) = _$CommentCopyWithImpl<$Res>;
+  factory $CommentCopyWith(Comment value, $Res Function(Comment) then) =
+      _$CommentCopyWithImpl<$Res>;
 
-  $Res call({UniqueId id, SimpleUser poster, UniqueId experienceId, CommentContent content, PastDate creationDate, PastDate modificationDate});
+  $Res call(
+      {UniqueId id,
+      SimpleUser poster,
+      UniqueId experienceId,
+      CommentContent content,
+      PastDate creationDate,
+      PastDate modificationDate});
 
   $SimpleUserCopyWith<$Res> get poster;
 }
@@ -109,18 +121,27 @@ class _$CommentCopyWithImpl<$Res> implements $CommentCopyWith<$Res> {
 
 /// @nodoc
 abstract class _$CommentCopyWith<$Res> implements $CommentCopyWith<$Res> {
-  factory _$CommentCopyWith(_Comment value, $Res Function(_Comment) then) = __$CommentCopyWithImpl<$Res>;
+  factory _$CommentCopyWith(_Comment value, $Res Function(_Comment) then) =
+      __$CommentCopyWithImpl<$Res>;
 
   @override
-  $Res call({UniqueId id, SimpleUser poster, UniqueId experienceId, CommentContent content, PastDate creationDate, PastDate modificationDate});
+  $Res call(
+      {UniqueId id,
+      SimpleUser poster,
+      UniqueId experienceId,
+      CommentContent content,
+      PastDate creationDate,
+      PastDate modificationDate});
 
   @override
   $SimpleUserCopyWith<$Res> get poster;
 }
 
 /// @nodoc
-class __$CommentCopyWithImpl<$Res> extends _$CommentCopyWithImpl<$Res> implements _$CommentCopyWith<$Res> {
-  __$CommentCopyWithImpl(_Comment _value, $Res Function(_Comment) _then) : super(_value, (v) => _then(v as _Comment));
+class __$CommentCopyWithImpl<$Res> extends _$CommentCopyWithImpl<$Res>
+    implements _$CommentCopyWith<$Res> {
+  __$CommentCopyWithImpl(_Comment _value, $Res Function(_Comment) _then)
+      : super(_value, (v) => _then(v as _Comment));
 
   @override
   _Comment get _value => super._value as _Comment;
@@ -166,7 +187,14 @@ class __$CommentCopyWithImpl<$Res> extends _$CommentCopyWithImpl<$Res> implement
 /// @nodoc
 
 class _$_Comment extends _Comment {
-  const _$_Comment({required this.id, required this.poster, required this.experienceId, required this.content, required this.creationDate, required this.modificationDate}) : super._();
+  const _$_Comment(
+      {required this.id,
+      required this.poster,
+      required this.experienceId,
+      required this.content,
+      required this.creationDate,
+      required this.modificationDate})
+      : super._();
 
   @override
   final UniqueId id;
@@ -191,11 +219,16 @@ class _$_Comment extends _Comment {
     return identical(this, other) ||
         (other is _Comment &&
             (identical(other.id, id) || const DeepCollectionEquality().equals(other.id, id)) &&
-            (identical(other.poster, poster) || const DeepCollectionEquality().equals(other.poster, poster)) &&
-            (identical(other.experienceId, experienceId) || const DeepCollectionEquality().equals(other.experienceId, experienceId)) &&
-            (identical(other.content, content) || const DeepCollectionEquality().equals(other.content, content)) &&
-            (identical(other.creationDate, creationDate) || const DeepCollectionEquality().equals(other.creationDate, creationDate)) &&
-            (identical(other.modificationDate, modificationDate) || const DeepCollectionEquality().equals(other.modificationDate, modificationDate)));
+            (identical(other.poster, poster) ||
+                const DeepCollectionEquality().equals(other.poster, poster)) &&
+            (identical(other.experienceId, experienceId) ||
+                const DeepCollectionEquality().equals(other.experienceId, experienceId)) &&
+            (identical(other.content, content) ||
+                const DeepCollectionEquality().equals(other.content, content)) &&
+            (identical(other.creationDate, creationDate) ||
+                const DeepCollectionEquality().equals(other.creationDate, creationDate)) &&
+            (identical(other.modificationDate, modificationDate) ||
+                const DeepCollectionEquality().equals(other.modificationDate, modificationDate)));
   }
 
   @override

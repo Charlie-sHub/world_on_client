@@ -66,7 +66,7 @@ class ProductionExperienceManagementRepository implements ExperienceManagementRe
           );
       return right(unit);
     } catch (e) {
-      return _onException(e);
+      return _onError(e);
     }
   }
 
@@ -113,7 +113,7 @@ class ProductionExperienceManagementRepository implements ExperienceManagementRe
       );
       return right(unit);
     } catch (e) {
-      return _onException(e);
+      return _onError(e);
     }
   }
 
@@ -128,21 +128,32 @@ class ProductionExperienceManagementRepository implements ExperienceManagementRe
       final _experience = _experienceSnapshot.data()!.toDomain();
       return right(_experience);
     } catch (e) {
-      return _onException(e);
+      return _onError(e);
     }
   }
 
   @override
-  Future<Either<Failure, Unit>> removeExperience(UniqueId id) async {
+  Future<Either<Failure, Unit>> deleteExperience(UniqueId experienceId) async {
     try {
-      _firestore.experienceCollection
-          .doc(
-            id.getOrCrash(),
-          )
-          .delete();
+      final _cloudStorageService = getIt<CloudStorageService>();
+      final _documentReference = await _firestore.experienceDocumentReference(
+        experienceId.getOrCrash(),
+      );
+      final _documentSnapshot = await _documentReference.get();
+      final _experienceDto = _documentSnapshot.data();
+      for (final _imageUrl in _experienceDto!.imageURLs) {
+        _cloudStorageService.deleteImage(_imageUrl);
+      }
+      for (final _objective in _experienceDto.objectives) {
+        _cloudStorageService.deleteImage(_objective.imageURL);
+      }
+      for (final _reward in _experienceDto.rewards) {
+        _cloudStorageService.deleteImage(_reward.imageURL);
+      }
+      _documentReference.delete();
       return right(unit);
-    } catch (e) {
-      return _onException(e);
+    } catch (error, _) {
+      return _onError(error);
     }
   }
 
@@ -192,7 +203,7 @@ class ProductionExperienceManagementRepository implements ExperienceManagementRe
     }
   }
 
-  Either<Failure, T> _onException<T>(dynamic error) {
+  Either<Failure, T> _onError<T>(dynamic error) {
     if (error is FirebaseException) {
       _logger.e("FirebaseException: ${error.message}");
       return left(

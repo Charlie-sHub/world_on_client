@@ -60,7 +60,15 @@ mixin _$Item {
 abstract class $ItemCopyWith<$Res> {
   factory $ItemCopyWith(Item value, $Res Function(Item) then) = _$ItemCopyWithImpl<$Res>;
 
-  $Res call({UniqueId id, Name name, EntityDescription description, ItemCode code, int value, String imageURL, int timeLimitInDays, DateTime boughtDate});
+  $Res call(
+      {UniqueId id,
+      Name name,
+      EntityDescription description,
+      ItemCode code,
+      int value,
+      String imageURL,
+      int timeLimitInDays,
+      DateTime boughtDate});
 }
 
 /// @nodoc
@@ -124,12 +132,21 @@ abstract class _$ItemCopyWith<$Res> implements $ItemCopyWith<$Res> {
   factory _$ItemCopyWith(_Item value, $Res Function(_Item) then) = __$ItemCopyWithImpl<$Res>;
 
   @override
-  $Res call({UniqueId id, Name name, EntityDescription description, ItemCode code, int value, String imageURL, int timeLimitInDays, DateTime boughtDate});
+  $Res call(
+      {UniqueId id,
+      Name name,
+      EntityDescription description,
+      ItemCode code,
+      int value,
+      String imageURL,
+      int timeLimitInDays,
+      DateTime boughtDate});
 }
 
 /// @nodoc
 class __$ItemCopyWithImpl<$Res> extends _$ItemCopyWithImpl<$Res> implements _$ItemCopyWith<$Res> {
-  __$ItemCopyWithImpl(_Item _value, $Res Function(_Item) _then) : super(_value, (v) => _then(v as _Item));
+  __$ItemCopyWithImpl(_Item _value, $Res Function(_Item) _then)
+      : super(_value, (v) => _then(v as _Item));
 
   @override
   _Item get _value => super._value as _Item;
@@ -186,7 +203,14 @@ class __$ItemCopyWithImpl<$Res> extends _$ItemCopyWithImpl<$Res> implements _$It
 
 class _$_Item extends _Item {
   const _$_Item(
-      {required this.id, required this.name, required this.description, required this.code, required this.value, required this.imageURL, required this.timeLimitInDays, required this.boughtDate})
+      {required this.id,
+      required this.name,
+      required this.description,
+      required this.code,
+      required this.value,
+      required this.imageURL,
+      required this.timeLimitInDays,
+      required this.boughtDate})
       : super._();
 
   @override
@@ -216,13 +240,20 @@ class _$_Item extends _Item {
     return identical(this, other) ||
         (other is _Item &&
             (identical(other.id, id) || const DeepCollectionEquality().equals(other.id, id)) &&
-            (identical(other.name, name) || const DeepCollectionEquality().equals(other.name, name)) &&
-            (identical(other.description, description) || const DeepCollectionEquality().equals(other.description, description)) &&
-            (identical(other.code, code) || const DeepCollectionEquality().equals(other.code, code)) &&
-            (identical(other.value, value) || const DeepCollectionEquality().equals(other.value, value)) &&
-            (identical(other.imageURL, imageURL) || const DeepCollectionEquality().equals(other.imageURL, imageURL)) &&
-            (identical(other.timeLimitInDays, timeLimitInDays) || const DeepCollectionEquality().equals(other.timeLimitInDays, timeLimitInDays)) &&
-            (identical(other.boughtDate, boughtDate) || const DeepCollectionEquality().equals(other.boughtDate, boughtDate)));
+            (identical(other.name, name) ||
+                const DeepCollectionEquality().equals(other.name, name)) &&
+            (identical(other.description, description) ||
+                const DeepCollectionEquality().equals(other.description, description)) &&
+            (identical(other.code, code) ||
+                const DeepCollectionEquality().equals(other.code, code)) &&
+            (identical(other.value, value) ||
+                const DeepCollectionEquality().equals(other.value, value)) &&
+            (identical(other.imageURL, imageURL) ||
+                const DeepCollectionEquality().equals(other.imageURL, imageURL)) &&
+            (identical(other.timeLimitInDays, timeLimitInDays) ||
+                const DeepCollectionEquality().equals(other.timeLimitInDays, timeLimitInDays)) &&
+            (identical(other.boughtDate, boughtDate) ||
+                const DeepCollectionEquality().equals(other.boughtDate, boughtDate)));
   }
 
   @override

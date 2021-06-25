@@ -140,7 +140,9 @@ class ProductionProfileRepository implements ProfileRepositoryInterface {
           _imageUrl = user.imageURL;
         },
         (_file) async {
-          _imageUrl = await getIt<CloudStorageService>().uploadFileImage(
+          final _cloudStorageService = getIt<CloudStorageService>();
+          _cloudStorageService.deleteImage(user.imageURL);
+          _imageUrl = await _cloudStorageService.uploadFileImage(
             imageToUpload: _file!,
             folder: StorageFolder.users,
             name: _userId,
@@ -251,7 +253,8 @@ class ProductionProfileRepository implements ProfileRepositoryInterface {
     }
   }
 
-  List<Stream<QuerySnapshot<UserDto>>> _getCombinedStreamList(Iterable<List<String>> _iterableOfIdLists) {
+  List<Stream<QuerySnapshot<UserDto>>> _getCombinedStreamList(
+      Iterable<List<String>> _iterableOfIdLists) {
     final _combinedStreamList = _iterableOfIdLists
         .map(
           (_idList) => _firestore.userCollection
@@ -622,21 +625,6 @@ class ProductionProfileRepository implements ProfileRepositoryInterface {
   }
 
   @override
-  Future<Either<Failure, Unit>> deleteExperience(UniqueId experienceId) async {
-    try {
-      final _experienceDocument = await _firestore.experienceDocumentReference(
-        experienceId.getOrCrash(),
-      );
-      _experienceDocument.delete();
-      return right(unit);
-    } catch (error, _) {
-      return left(
-        _onError(error),
-      );
-    }
-  }
-
-  @override
   Stream<Either<Failure, User>> watchProfile(UniqueId userId) async* {
     yield* _firestore.userCollection
         .doc(
@@ -674,7 +662,8 @@ class ProductionProfileRepository implements ProfileRepositoryInterface {
     } else if (error is FormatException) {
       _logger.e("FormatException: ${error.message}");
       return Failure.coreDomain(
-        CoreDomainFailure.unknownDomainLayerError(errorString: "Format exception: ${error.message}"),
+        CoreDomainFailure.unknownDomainLayerError(
+            errorString: "Format exception: ${error.message}"),
       );
     } else {
       _logger.e("Unknown server error:  ${error.runtimeType}");

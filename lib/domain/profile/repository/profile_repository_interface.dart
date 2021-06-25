@@ -30,9 +30,6 @@ abstract class ProfileRepositoryInterface {
   /// Sends the id of an [Experience] to the server so this one can be removed from the liked [Experience]s list of the logged in [User]
   Future<Either<Failure, Unit>> removeExperienceLiked(UniqueId experienceId);
 
-  /// Sends the id of an [Experience] to the server so this one can be deleted
-  Future<Either<Failure, Unit>> deleteExperience(UniqueId experienceId);
-
   /// Sends an [User]'s id to the server so it returns a [KtList] of the [User]s it follows
   Stream<Either<Failure, KtList<User>>> watchFollowedUsers(UniqueId id);
 

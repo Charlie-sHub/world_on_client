@@ -54,18 +54,22 @@ mixin _$ExperienceLogActorEvent {
       throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
-  $ExperienceLogActorEventCopyWith<ExperienceLogActorEvent> get copyWith => throw _privateConstructorUsedError;
+  $ExperienceLogActorEventCopyWith<ExperienceLogActorEvent> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $ExperienceLogActorEventCopyWith<$Res> {
-  factory $ExperienceLogActorEventCopyWith(ExperienceLogActorEvent value, $Res Function(ExperienceLogActorEvent) then) = _$ExperienceLogActorEventCopyWithImpl<$Res>;
+  factory $ExperienceLogActorEventCopyWith(
+          ExperienceLogActorEvent value, $Res Function(ExperienceLogActorEvent) then) =
+      _$ExperienceLogActorEventCopyWithImpl<$Res>;
 
   $Res call({UniqueId experienceId});
 }
 
 /// @nodoc
-class _$ExperienceLogActorEventCopyWithImpl<$Res> implements $ExperienceLogActorEventCopyWith<$Res> {
+class _$ExperienceLogActorEventCopyWithImpl<$Res>
+    implements $ExperienceLogActorEventCopyWith<$Res> {
   _$ExperienceLogActorEventCopyWithImpl(this._value, this._then);
 
   final ExperienceLogActorEvent _value;
@@ -87,16 +91,22 @@ class _$ExperienceLogActorEventCopyWithImpl<$Res> implements $ExperienceLogActor
 }
 
 /// @nodoc
-abstract class _$ExperienceDismissedCopyWith<$Res> implements $ExperienceLogActorEventCopyWith<$Res> {
-  factory _$ExperienceDismissedCopyWith(_ExperienceDismissed value, $Res Function(_ExperienceDismissed) then) = __$ExperienceDismissedCopyWithImpl<$Res>;
+abstract class _$ExperienceDismissedCopyWith<$Res>
+    implements $ExperienceLogActorEventCopyWith<$Res> {
+  factory _$ExperienceDismissedCopyWith(
+          _ExperienceDismissed value, $Res Function(_ExperienceDismissed) then) =
+      __$ExperienceDismissedCopyWithImpl<$Res>;
 
   @override
   $Res call({UniqueId experienceId});
 }
 
 /// @nodoc
-class __$ExperienceDismissedCopyWithImpl<$Res> extends _$ExperienceLogActorEventCopyWithImpl<$Res> implements _$ExperienceDismissedCopyWith<$Res> {
-  __$ExperienceDismissedCopyWithImpl(_ExperienceDismissed _value, $Res Function(_ExperienceDismissed) _then) : super(_value, (v) => _then(v as _ExperienceDismissed));
+class __$ExperienceDismissedCopyWithImpl<$Res> extends _$ExperienceLogActorEventCopyWithImpl<$Res>
+    implements _$ExperienceDismissedCopyWith<$Res> {
+  __$ExperienceDismissedCopyWithImpl(
+      _ExperienceDismissed _value, $Res Function(_ExperienceDismissed) _then)
+      : super(_value, (v) => _then(v as _ExperienceDismissed));
 
   @override
   _ExperienceDismissed get _value => super._value as _ExperienceDismissed;
@@ -129,7 +139,10 @@ class _$_ExperienceDismissed implements _ExperienceDismissed {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _ExperienceDismissed && (identical(other.experienceId, experienceId) || const DeepCollectionEquality().equals(other.experienceId, experienceId)));
+    return identical(this, other) ||
+        (other is _ExperienceDismissed &&
+            (identical(other.experienceId, experienceId) ||
+                const DeepCollectionEquality().equals(other.experienceId, experienceId)));
   }
 
   @override
@@ -137,7 +150,8 @@ class _$_ExperienceDismissed implements _ExperienceDismissed {
 
   @JsonKey(ignore: true)
   @override
-  _$ExperienceDismissedCopyWith<_ExperienceDismissed> get copyWith => __$ExperienceDismissedCopyWithImpl<_ExperienceDismissed>(this, _$identity);
+  _$ExperienceDismissedCopyWith<_ExperienceDismissed> get copyWith =>
+      __$ExperienceDismissedCopyWithImpl<_ExperienceDismissed>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -188,7 +202,8 @@ abstract class _ExperienceDismissed implements ExperienceLogActorEvent {
 
   @override
   @JsonKey(ignore: true)
-  _$ExperienceDismissedCopyWith<_ExperienceDismissed> get copyWith => throw _privateConstructorUsedError;
+  _$ExperienceDismissedCopyWith<_ExperienceDismissed> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -257,11 +272,14 @@ mixin _$ExperienceLogActorState {
 
 /// @nodoc
 abstract class $ExperienceLogActorStateCopyWith<$Res> {
-  factory $ExperienceLogActorStateCopyWith(ExperienceLogActorState value, $Res Function(ExperienceLogActorState) then) = _$ExperienceLogActorStateCopyWithImpl<$Res>;
+  factory $ExperienceLogActorStateCopyWith(
+          ExperienceLogActorState value, $Res Function(ExperienceLogActorState) then) =
+      _$ExperienceLogActorStateCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class _$ExperienceLogActorStateCopyWithImpl<$Res> implements $ExperienceLogActorStateCopyWith<$Res> {
+class _$ExperienceLogActorStateCopyWithImpl<$Res>
+    implements $ExperienceLogActorStateCopyWith<$Res> {
   _$ExperienceLogActorStateCopyWithImpl(this._value, this._then);
 
   final ExperienceLogActorState _value;
@@ -272,12 +290,15 @@ class _$ExperienceLogActorStateCopyWithImpl<$Res> implements $ExperienceLogActor
 
 /// @nodoc
 abstract class _$InitialCopyWith<$Res> {
-  factory _$InitialCopyWith(_Initial value, $Res Function(_Initial) then) = __$InitialCopyWithImpl<$Res>;
+  factory _$InitialCopyWith(_Initial value, $Res Function(_Initial) then) =
+      __$InitialCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$InitialCopyWithImpl<$Res> extends _$ExperienceLogActorStateCopyWithImpl<$Res> implements _$InitialCopyWith<$Res> {
-  __$InitialCopyWithImpl(_Initial _value, $Res Function(_Initial) _then) : super(_value, (v) => _then(v as _Initial));
+class __$InitialCopyWithImpl<$Res> extends _$ExperienceLogActorStateCopyWithImpl<$Res>
+    implements _$InitialCopyWith<$Res> {
+  __$InitialCopyWithImpl(_Initial _value, $Res Function(_Initial) _then)
+      : super(_value, (v) => _then(v as _Initial));
 
   @override
   _Initial get _value => super._value as _Initial;
@@ -360,12 +381,16 @@ abstract class _Initial implements ExperienceLogActorState {
 
 /// @nodoc
 abstract class _$ActionInProgressCopyWith<$Res> {
-  factory _$ActionInProgressCopyWith(_ActionInProgress value, $Res Function(_ActionInProgress) then) = __$ActionInProgressCopyWithImpl<$Res>;
+  factory _$ActionInProgressCopyWith(
+          _ActionInProgress value, $Res Function(_ActionInProgress) then) =
+      __$ActionInProgressCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$ActionInProgressCopyWithImpl<$Res> extends _$ExperienceLogActorStateCopyWithImpl<$Res> implements _$ActionInProgressCopyWith<$Res> {
-  __$ActionInProgressCopyWithImpl(_ActionInProgress _value, $Res Function(_ActionInProgress) _then) : super(_value, (v) => _then(v as _ActionInProgress));
+class __$ActionInProgressCopyWithImpl<$Res> extends _$ExperienceLogActorStateCopyWithImpl<$Res>
+    implements _$ActionInProgressCopyWith<$Res> {
+  __$ActionInProgressCopyWithImpl(_ActionInProgress _value, $Res Function(_ActionInProgress) _then)
+      : super(_value, (v) => _then(v as _ActionInProgress));
 
   @override
   _ActionInProgress get _value => super._value as _ActionInProgress;
@@ -448,12 +473,16 @@ abstract class _ActionInProgress implements ExperienceLogActorState {
 
 /// @nodoc
 abstract class _$DismissalSuccessCopyWith<$Res> {
-  factory _$DismissalSuccessCopyWith(_DismissalSuccess value, $Res Function(_DismissalSuccess) then) = __$DismissalSuccessCopyWithImpl<$Res>;
+  factory _$DismissalSuccessCopyWith(
+          _DismissalSuccess value, $Res Function(_DismissalSuccess) then) =
+      __$DismissalSuccessCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$DismissalSuccessCopyWithImpl<$Res> extends _$ExperienceLogActorStateCopyWithImpl<$Res> implements _$DismissalSuccessCopyWith<$Res> {
-  __$DismissalSuccessCopyWithImpl(_DismissalSuccess _value, $Res Function(_DismissalSuccess) _then) : super(_value, (v) => _then(v as _DismissalSuccess));
+class __$DismissalSuccessCopyWithImpl<$Res> extends _$ExperienceLogActorStateCopyWithImpl<$Res>
+    implements _$DismissalSuccessCopyWith<$Res> {
+  __$DismissalSuccessCopyWithImpl(_DismissalSuccess _value, $Res Function(_DismissalSuccess) _then)
+      : super(_value, (v) => _then(v as _DismissalSuccess));
 
   @override
   _DismissalSuccess get _value => super._value as _DismissalSuccess;
@@ -536,7 +565,9 @@ abstract class _DismissalSuccess implements ExperienceLogActorState {
 
 /// @nodoc
 abstract class _$DismissalFailureCopyWith<$Res> {
-  factory _$DismissalFailureCopyWith(_DismissalFailure value, $Res Function(_DismissalFailure) then) = __$DismissalFailureCopyWithImpl<$Res>;
+  factory _$DismissalFailureCopyWith(
+          _DismissalFailure value, $Res Function(_DismissalFailure) then) =
+      __$DismissalFailureCopyWithImpl<$Res>;
 
   $Res call({Failure<dynamic> failure});
 
@@ -544,8 +575,10 @@ abstract class _$DismissalFailureCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$DismissalFailureCopyWithImpl<$Res> extends _$ExperienceLogActorStateCopyWithImpl<$Res> implements _$DismissalFailureCopyWith<$Res> {
-  __$DismissalFailureCopyWithImpl(_DismissalFailure _value, $Res Function(_DismissalFailure) _then) : super(_value, (v) => _then(v as _DismissalFailure));
+class __$DismissalFailureCopyWithImpl<$Res> extends _$ExperienceLogActorStateCopyWithImpl<$Res>
+    implements _$DismissalFailureCopyWith<$Res> {
+  __$DismissalFailureCopyWithImpl(_DismissalFailure _value, $Res Function(_DismissalFailure) _then)
+      : super(_value, (v) => _then(v as _DismissalFailure));
 
   @override
   _DismissalFailure get _value => super._value as _DismissalFailure;
@@ -585,7 +618,10 @@ class _$_DismissalFailure implements _DismissalFailure {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _DismissalFailure && (identical(other.failure, failure) || const DeepCollectionEquality().equals(other.failure, failure)));
+    return identical(this, other) ||
+        (other is _DismissalFailure &&
+            (identical(other.failure, failure) ||
+                const DeepCollectionEquality().equals(other.failure, failure)));
   }
 
   @override
@@ -593,7 +629,8 @@ class _$_DismissalFailure implements _DismissalFailure {
 
   @JsonKey(ignore: true)
   @override
-  _$DismissalFailureCopyWith<_DismissalFailure> get copyWith => __$DismissalFailureCopyWithImpl<_DismissalFailure>(this, _$identity);
+  _$DismissalFailureCopyWith<_DismissalFailure> get copyWith =>
+      __$DismissalFailureCopyWithImpl<_DismissalFailure>(this, _$identity);
 
   @override
   @optionalTypeArgs

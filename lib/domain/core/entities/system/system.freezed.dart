@@ -16,7 +16,8 @@ final _privateConstructorUsedError = UnsupportedError(
 class _$SystemTearOff {
   const _$SystemTearOff();
 
-  _System call({required UniqueId id, required String name, required String type, required String company}) {
+  _System call(
+      {required UniqueId id, required String name, required String type, required String company}) {
     return _System(
       id: id,
       name: name,
@@ -85,15 +86,18 @@ class _$SystemCopyWithImpl<$Res> implements $SystemCopyWith<$Res> {
 
 /// @nodoc
 abstract class _$SystemCopyWith<$Res> implements $SystemCopyWith<$Res> {
-  factory _$SystemCopyWith(_System value, $Res Function(_System) then) = __$SystemCopyWithImpl<$Res>;
+  factory _$SystemCopyWith(_System value, $Res Function(_System) then) =
+      __$SystemCopyWithImpl<$Res>;
 
   @override
   $Res call({UniqueId id, String name, String type, String company});
 }
 
 /// @nodoc
-class __$SystemCopyWithImpl<$Res> extends _$SystemCopyWithImpl<$Res> implements _$SystemCopyWith<$Res> {
-  __$SystemCopyWithImpl(_System _value, $Res Function(_System) _then) : super(_value, (v) => _then(v as _System));
+class __$SystemCopyWithImpl<$Res> extends _$SystemCopyWithImpl<$Res>
+    implements _$SystemCopyWith<$Res> {
+  __$SystemCopyWithImpl(_System _value, $Res Function(_System) _then)
+      : super(_value, (v) => _then(v as _System));
 
   @override
   _System get _value => super._value as _System;
@@ -129,7 +133,8 @@ class __$SystemCopyWithImpl<$Res> extends _$SystemCopyWithImpl<$Res> implements 
 /// @nodoc
 
 class _$_System extends _System {
-  const _$_System({required this.id, required this.name, required this.type, required this.company}) : super._();
+  const _$_System({required this.id, required this.name, required this.type, required this.company})
+      : super._();
 
   @override
   final UniqueId id;
@@ -150,9 +155,12 @@ class _$_System extends _System {
     return identical(this, other) ||
         (other is _System &&
             (identical(other.id, id) || const DeepCollectionEquality().equals(other.id, id)) &&
-            (identical(other.name, name) || const DeepCollectionEquality().equals(other.name, name)) &&
-            (identical(other.type, type) || const DeepCollectionEquality().equals(other.type, type)) &&
-            (identical(other.company, company) || const DeepCollectionEquality().equals(other.company, company)));
+            (identical(other.name, name) ||
+                const DeepCollectionEquality().equals(other.name, name)) &&
+            (identical(other.type, type) ||
+                const DeepCollectionEquality().equals(other.type, type)) &&
+            (identical(other.company, company) ||
+                const DeepCollectionEquality().equals(other.company, company)));
   }
 
   @override
@@ -162,14 +170,18 @@ class _$_System extends _System {
       const DeepCollectionEquality().hash(name) ^
       const DeepCollectionEquality().hash(type) ^
       const DeepCollectionEquality().hash(company);
-  
+
   @JsonKey(ignore: true)
   @override
   _$SystemCopyWith<_System> get copyWith => __$SystemCopyWithImpl<_System>(this, _$identity);
 }
 
 abstract class _System extends System {
-  const factory _System({required UniqueId id, required String name, required String type, required String company}) = _$_System;
+  const factory _System(
+      {required UniqueId id,
+      required String name,
+      required String type,
+      required String company}) = _$_System;
 
   const _System._() : super._();
 

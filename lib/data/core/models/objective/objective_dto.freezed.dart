@@ -20,7 +20,11 @@ ObjectiveDto _$ObjectiveDtoFromJson(Map<String, dynamic> json) {
 class _$ObjectiveDtoTearOff {
   const _$ObjectiveDtoTearOff();
 
-  _ObjectiveDto call({required String id, required String description, required CoordinatesDto coordinates, required String imageURL}) {
+  _ObjectiveDto call(
+      {required String id,
+      required String description,
+      required CoordinatesDto coordinates,
+      required String imageURL}) {
     return _ObjectiveDto(
       id: id,
       description: description,
@@ -52,7 +56,8 @@ mixin _$ObjectiveDto {
 
 /// @nodoc
 abstract class $ObjectiveDtoCopyWith<$Res> {
-  factory $ObjectiveDtoCopyWith(ObjectiveDto value, $Res Function(ObjectiveDto) then) = _$ObjectiveDtoCopyWithImpl<$Res>;
+  factory $ObjectiveDtoCopyWith(ObjectiveDto value, $Res Function(ObjectiveDto) then) =
+      _$ObjectiveDtoCopyWithImpl<$Res>;
 
   $Res call({String id, String description, CoordinatesDto coordinates, String imageURL});
 
@@ -104,7 +109,8 @@ class _$ObjectiveDtoCopyWithImpl<$Res> implements $ObjectiveDtoCopyWith<$Res> {
 
 /// @nodoc
 abstract class _$ObjectiveDtoCopyWith<$Res> implements $ObjectiveDtoCopyWith<$Res> {
-  factory _$ObjectiveDtoCopyWith(_ObjectiveDto value, $Res Function(_ObjectiveDto) then) = __$ObjectiveDtoCopyWithImpl<$Res>;
+  factory _$ObjectiveDtoCopyWith(_ObjectiveDto value, $Res Function(_ObjectiveDto) then) =
+      __$ObjectiveDtoCopyWithImpl<$Res>;
 
   @override
   $Res call({String id, String description, CoordinatesDto coordinates, String imageURL});
@@ -114,8 +120,10 @@ abstract class _$ObjectiveDtoCopyWith<$Res> implements $ObjectiveDtoCopyWith<$Re
 }
 
 /// @nodoc
-class __$ObjectiveDtoCopyWithImpl<$Res> extends _$ObjectiveDtoCopyWithImpl<$Res> implements _$ObjectiveDtoCopyWith<$Res> {
-  __$ObjectiveDtoCopyWithImpl(_ObjectiveDto _value, $Res Function(_ObjectiveDto) _then) : super(_value, (v) => _then(v as _ObjectiveDto));
+class __$ObjectiveDtoCopyWithImpl<$Res> extends _$ObjectiveDtoCopyWithImpl<$Res>
+    implements _$ObjectiveDtoCopyWith<$Res> {
+  __$ObjectiveDtoCopyWithImpl(_ObjectiveDto _value, $Res Function(_ObjectiveDto) _then)
+      : super(_value, (v) => _then(v as _ObjectiveDto));
 
   @override
   _ObjectiveDto get _value => super._value as _ObjectiveDto;
@@ -151,7 +159,12 @@ class __$ObjectiveDtoCopyWithImpl<$Res> extends _$ObjectiveDtoCopyWithImpl<$Res>
 /// @nodoc
 @JsonSerializable()
 class _$_ObjectiveDto extends _ObjectiveDto {
-  const _$_ObjectiveDto({required this.id, required this.description, required this.coordinates, required this.imageURL}) : super._();
+  const _$_ObjectiveDto(
+      {required this.id,
+      required this.description,
+      required this.coordinates,
+      required this.imageURL})
+      : super._();
 
   factory _$_ObjectiveDto.fromJson(Map<String, dynamic> json) => _$_$_ObjectiveDtoFromJson(json);
 
@@ -174,9 +187,12 @@ class _$_ObjectiveDto extends _ObjectiveDto {
     return identical(this, other) ||
         (other is _ObjectiveDto &&
             (identical(other.id, id) || const DeepCollectionEquality().equals(other.id, id)) &&
-            (identical(other.description, description) || const DeepCollectionEquality().equals(other.description, description)) &&
-            (identical(other.coordinates, coordinates) || const DeepCollectionEquality().equals(other.coordinates, coordinates)) &&
-            (identical(other.imageURL, imageURL) || const DeepCollectionEquality().equals(other.imageURL, imageURL)));
+            (identical(other.description, description) ||
+                const DeepCollectionEquality().equals(other.description, description)) &&
+            (identical(other.coordinates, coordinates) ||
+                const DeepCollectionEquality().equals(other.coordinates, coordinates)) &&
+            (identical(other.imageURL, imageURL) ||
+                const DeepCollectionEquality().equals(other.imageURL, imageURL)));
   }
 
   @override
@@ -189,7 +205,8 @@ class _$_ObjectiveDto extends _ObjectiveDto {
 
   @JsonKey(ignore: true)
   @override
-  _$ObjectiveDtoCopyWith<_ObjectiveDto> get copyWith => __$ObjectiveDtoCopyWithImpl<_ObjectiveDto>(this, _$identity);
+  _$ObjectiveDtoCopyWith<_ObjectiveDto> get copyWith =>
+      __$ObjectiveDtoCopyWithImpl<_ObjectiveDto>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
@@ -198,7 +215,11 @@ class _$_ObjectiveDto extends _ObjectiveDto {
 }
 
 abstract class _ObjectiveDto extends ObjectiveDto {
-  const factory _ObjectiveDto({required String id, required String description, required CoordinatesDto coordinates, required String imageURL}) = _$_ObjectiveDto;
+  const factory _ObjectiveDto(
+      {required String id,
+      required String description,
+      required CoordinatesDto coordinates,
+      required String imageURL}) = _$_ObjectiveDto;
 
   const _ObjectiveDto._() : super._();
 

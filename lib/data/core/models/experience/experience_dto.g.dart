@@ -18,11 +18,20 @@ _$_ExperienceDto _$_$_ExperienceDtoFromJson(Map<String, dynamic> json) {
     creator: SimpleUserDto.fromJson(json['creator'] as Map<String, dynamic>),
     difficulty: json['difficulty'] as int,
     creationDate: const ServerTimestampConverter().fromJson(json['creationDate'] as Timestamp),
-    modificationDate: const ServerTimestampConverter().fromJson(json['modificationDate'] as Timestamp),
-    objectives: (json['objectives'] as List<dynamic>).map((e) => ObjectiveDto.fromJson(e as Map<String, dynamic>)).toList(),
-    rewards: (json['rewards'] as List<dynamic>).map((e) => RewardDto.fromJson(e as Map<String, dynamic>)).toSet(),
-    tags: (json['tags'] as List<dynamic>).map((e) => TagDto.fromJson(e as Map<String, dynamic>)).toSet(),
-    comments: (json['comments'] as List<dynamic>).map((e) => CommentDto.fromJson(e as Map<String, dynamic>)).toSet(),
+    modificationDate:
+        const ServerTimestampConverter().fromJson(json['modificationDate'] as Timestamp),
+    objectives: (json['objectives'] as List<dynamic>)
+        .map((e) => ObjectiveDto.fromJson(e as Map<String, dynamic>))
+        .toList(),
+    rewards: (json['rewards'] as List<dynamic>)
+        .map((e) => RewardDto.fromJson(e as Map<String, dynamic>))
+        .toSet(),
+    tags: (json['tags'] as List<dynamic>)
+        .map((e) => TagDto.fromJson(e as Map<String, dynamic>))
+        .toSet(),
+    comments: (json['comments'] as List<dynamic>)
+        .map((e) => CommentDto.fromJson(e as Map<String, dynamic>))
+        .toSet(),
     likedBy: (json['likedBy'] as List<dynamic>).map((e) => e as String).toSet(),
     doneBy: (json['doneBy'] as List<dynamic>).map((e) => e as String).toSet(),
     toDoBy: (json['toDoBy'] as List<dynamic>).map((e) => e as String).toSet(),

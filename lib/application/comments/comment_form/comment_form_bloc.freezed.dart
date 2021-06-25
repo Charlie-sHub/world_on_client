@@ -16,7 +16,8 @@ final _privateConstructorUsedError = UnsupportedError(
 class _$CommentFormEventTearOff {
   const _$CommentFormEventTearOff();
 
-  _Initialized initialized({required Option<Comment> commentOption, required UniqueId experienceId}) {
+  _Initialized initialized(
+      {required Option<Comment> commentOption, required UniqueId experienceId}) {
     return _Initialized(
       commentOption: commentOption,
       experienceId: experienceId,
@@ -73,7 +74,8 @@ mixin _$CommentFormEvent {
 
 /// @nodoc
 abstract class $CommentFormEventCopyWith<$Res> {
-  factory $CommentFormEventCopyWith(CommentFormEvent value, $Res Function(CommentFormEvent) then) = _$CommentFormEventCopyWithImpl<$Res>;
+  factory $CommentFormEventCopyWith(CommentFormEvent value, $Res Function(CommentFormEvent) then) =
+      _$CommentFormEventCopyWithImpl<$Res>;
 }
 
 /// @nodoc
@@ -88,14 +90,17 @@ class _$CommentFormEventCopyWithImpl<$Res> implements $CommentFormEventCopyWith<
 
 /// @nodoc
 abstract class _$InitializedCopyWith<$Res> {
-  factory _$InitializedCopyWith(_Initialized value, $Res Function(_Initialized) then) = __$InitializedCopyWithImpl<$Res>;
+  factory _$InitializedCopyWith(_Initialized value, $Res Function(_Initialized) then) =
+      __$InitializedCopyWithImpl<$Res>;
 
   $Res call({Option<Comment> commentOption, UniqueId experienceId});
 }
 
 /// @nodoc
-class __$InitializedCopyWithImpl<$Res> extends _$CommentFormEventCopyWithImpl<$Res> implements _$InitializedCopyWith<$Res> {
-  __$InitializedCopyWithImpl(_Initialized _value, $Res Function(_Initialized) _then) : super(_value, (v) => _then(v as _Initialized));
+class __$InitializedCopyWithImpl<$Res> extends _$CommentFormEventCopyWithImpl<$Res>
+    implements _$InitializedCopyWith<$Res> {
+  __$InitializedCopyWithImpl(_Initialized _value, $Res Function(_Initialized) _then)
+      : super(_value, (v) => _then(v as _Initialized));
 
   @override
   _Initialized get _value => super._value as _Initialized;
@@ -137,16 +142,22 @@ class _$_Initialized implements _Initialized {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other is _Initialized &&
-            (identical(other.commentOption, commentOption) || const DeepCollectionEquality().equals(other.commentOption, commentOption)) &&
-            (identical(other.experienceId, experienceId) || const DeepCollectionEquality().equals(other.experienceId, experienceId)));
+            (identical(other.commentOption, commentOption) ||
+                const DeepCollectionEquality().equals(other.commentOption, commentOption)) &&
+            (identical(other.experienceId, experienceId) ||
+                const DeepCollectionEquality().equals(other.experienceId, experienceId)));
   }
 
   @override
-  int get hashCode => runtimeType.hashCode ^ const DeepCollectionEquality().hash(commentOption) ^ const DeepCollectionEquality().hash(experienceId);
+  int get hashCode =>
+      runtimeType.hashCode ^
+      const DeepCollectionEquality().hash(commentOption) ^
+      const DeepCollectionEquality().hash(experienceId);
 
   @JsonKey(ignore: true)
   @override
-  _$InitializedCopyWith<_Initialized> get copyWith => __$InitializedCopyWithImpl<_Initialized>(this, _$identity);
+  _$InitializedCopyWith<_Initialized> get copyWith =>
+      __$InitializedCopyWithImpl<_Initialized>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -198,7 +209,8 @@ class _$_Initialized implements _Initialized {
 }
 
 abstract class _Initialized implements CommentFormEvent {
-  const factory _Initialized({required Option<Comment> commentOption, required UniqueId experienceId}) = _$_Initialized;
+  const factory _Initialized(
+      {required Option<Comment> commentOption, required UniqueId experienceId}) = _$_Initialized;
 
   Option<Comment> get commentOption => throw _privateConstructorUsedError;
 
@@ -210,14 +222,17 @@ abstract class _Initialized implements CommentFormEvent {
 
 /// @nodoc
 abstract class _$ContentChangedCopyWith<$Res> {
-  factory _$ContentChangedCopyWith(_ContentChanged value, $Res Function(_ContentChanged) then) = __$ContentChangedCopyWithImpl<$Res>;
+  factory _$ContentChangedCopyWith(_ContentChanged value, $Res Function(_ContentChanged) then) =
+      __$ContentChangedCopyWithImpl<$Res>;
 
   $Res call({String content});
 }
 
 /// @nodoc
-class __$ContentChangedCopyWithImpl<$Res> extends _$CommentFormEventCopyWithImpl<$Res> implements _$ContentChangedCopyWith<$Res> {
-  __$ContentChangedCopyWithImpl(_ContentChanged _value, $Res Function(_ContentChanged) _then) : super(_value, (v) => _then(v as _ContentChanged));
+class __$ContentChangedCopyWithImpl<$Res> extends _$CommentFormEventCopyWithImpl<$Res>
+    implements _$ContentChangedCopyWith<$Res> {
+  __$ContentChangedCopyWithImpl(_ContentChanged _value, $Res Function(_ContentChanged) _then)
+      : super(_value, (v) => _then(v as _ContentChanged));
 
   @override
   _ContentChanged get _value => super._value as _ContentChanged;
@@ -250,7 +265,10 @@ class _$_ContentChanged implements _ContentChanged {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _ContentChanged && (identical(other.content, content) || const DeepCollectionEquality().equals(other.content, content)));
+    return identical(this, other) ||
+        (other is _ContentChanged &&
+            (identical(other.content, content) ||
+                const DeepCollectionEquality().equals(other.content, content)));
   }
 
   @override
@@ -258,7 +276,8 @@ class _$_ContentChanged implements _ContentChanged {
 
   @JsonKey(ignore: true)
   @override
-  _$ContentChangedCopyWith<_ContentChanged> get copyWith => __$ContentChangedCopyWithImpl<_ContentChanged>(this, _$identity);
+  _$ContentChangedCopyWith<_ContentChanged> get copyWith =>
+      __$ContentChangedCopyWithImpl<_ContentChanged>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -320,12 +339,15 @@ abstract class _ContentChanged implements CommentFormEvent {
 
 /// @nodoc
 abstract class _$SubmittedCopyWith<$Res> {
-  factory _$SubmittedCopyWith(_Submitted value, $Res Function(_Submitted) then) = __$SubmittedCopyWithImpl<$Res>;
+  factory _$SubmittedCopyWith(_Submitted value, $Res Function(_Submitted) then) =
+      __$SubmittedCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$SubmittedCopyWithImpl<$Res> extends _$CommentFormEventCopyWithImpl<$Res> implements _$SubmittedCopyWith<$Res> {
-  __$SubmittedCopyWithImpl(_Submitted _value, $Res Function(_Submitted) _then) : super(_value, (v) => _then(v as _Submitted));
+class __$SubmittedCopyWithImpl<$Res> extends _$CommentFormEventCopyWithImpl<$Res>
+    implements _$SubmittedCopyWith<$Res> {
+  __$SubmittedCopyWithImpl(_Submitted _value, $Res Function(_Submitted) _then)
+      : super(_value, (v) => _then(v as _Submitted));
 
   @override
   _Submitted get _value => super._value as _Submitted;
@@ -407,7 +429,11 @@ class _$CommentFormStateTearOff {
   const _$CommentFormStateTearOff();
 
   _CommentFormState call(
-      {required Comment comment, required bool showErrorMessages, required bool isEditing, required bool isSubmitting, required Option<Either<Failure, Unit>> failureOrSuccessOption}) {
+      {required Comment comment,
+      required bool showErrorMessages,
+      required bool isEditing,
+      required bool isSubmitting,
+      required Option<Either<Failure, Unit>> failureOrSuccessOption}) {
     return _CommentFormState(
       comment: comment,
       showErrorMessages: showErrorMessages,
@@ -439,9 +465,15 @@ mixin _$CommentFormState {
 
 /// @nodoc
 abstract class $CommentFormStateCopyWith<$Res> {
-  factory $CommentFormStateCopyWith(CommentFormState value, $Res Function(CommentFormState) then) = _$CommentFormStateCopyWithImpl<$Res>;
+  factory $CommentFormStateCopyWith(CommentFormState value, $Res Function(CommentFormState) then) =
+      _$CommentFormStateCopyWithImpl<$Res>;
 
-  $Res call({Comment comment, bool showErrorMessages, bool isEditing, bool isSubmitting, Option<Either<Failure, Unit>> failureOrSuccessOption});
+  $Res call(
+      {Comment comment,
+      bool showErrorMessages,
+      bool isEditing,
+      bool isSubmitting,
+      Option<Either<Failure, Unit>> failureOrSuccessOption});
 
   $CommentCopyWith<$Res> get comment;
 }
@@ -497,18 +529,27 @@ class _$CommentFormStateCopyWithImpl<$Res> implements $CommentFormStateCopyWith<
 
 /// @nodoc
 abstract class _$CommentFormStateCopyWith<$Res> implements $CommentFormStateCopyWith<$Res> {
-  factory _$CommentFormStateCopyWith(_CommentFormState value, $Res Function(_CommentFormState) then) = __$CommentFormStateCopyWithImpl<$Res>;
+  factory _$CommentFormStateCopyWith(
+          _CommentFormState value, $Res Function(_CommentFormState) then) =
+      __$CommentFormStateCopyWithImpl<$Res>;
 
   @override
-  $Res call({Comment comment, bool showErrorMessages, bool isEditing, bool isSubmitting, Option<Either<Failure, Unit>> failureOrSuccessOption});
+  $Res call(
+      {Comment comment,
+      bool showErrorMessages,
+      bool isEditing,
+      bool isSubmitting,
+      Option<Either<Failure, Unit>> failureOrSuccessOption});
 
   @override
   $CommentCopyWith<$Res> get comment;
 }
 
 /// @nodoc
-class __$CommentFormStateCopyWithImpl<$Res> extends _$CommentFormStateCopyWithImpl<$Res> implements _$CommentFormStateCopyWith<$Res> {
-  __$CommentFormStateCopyWithImpl(_CommentFormState _value, $Res Function(_CommentFormState) _then) : super(_value, (v) => _then(v as _CommentFormState));
+class __$CommentFormStateCopyWithImpl<$Res> extends _$CommentFormStateCopyWithImpl<$Res>
+    implements _$CommentFormStateCopyWith<$Res> {
+  __$CommentFormStateCopyWithImpl(_CommentFormState _value, $Res Function(_CommentFormState) _then)
+      : super(_value, (v) => _then(v as _CommentFormState));
 
   @override
   _CommentFormState get _value => super._value as _CommentFormState;
@@ -549,7 +590,12 @@ class __$CommentFormStateCopyWithImpl<$Res> extends _$CommentFormStateCopyWithIm
 /// @nodoc
 
 class _$_CommentFormState implements _CommentFormState {
-  const _$_CommentFormState({required this.comment, required this.showErrorMessages, required this.isEditing, required this.isSubmitting, required this.failureOrSuccessOption});
+  const _$_CommentFormState(
+      {required this.comment,
+      required this.showErrorMessages,
+      required this.isEditing,
+      required this.isSubmitting,
+      required this.failureOrSuccessOption});
 
   @override
   final Comment comment;
@@ -571,11 +617,18 @@ class _$_CommentFormState implements _CommentFormState {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other is _CommentFormState &&
-            (identical(other.comment, comment) || const DeepCollectionEquality().equals(other.comment, comment)) &&
-            (identical(other.showErrorMessages, showErrorMessages) || const DeepCollectionEquality().equals(other.showErrorMessages, showErrorMessages)) &&
-            (identical(other.isEditing, isEditing) || const DeepCollectionEquality().equals(other.isEditing, isEditing)) &&
-            (identical(other.isSubmitting, isSubmitting) || const DeepCollectionEquality().equals(other.isSubmitting, isSubmitting)) &&
-            (identical(other.failureOrSuccessOption, failureOrSuccessOption) || const DeepCollectionEquality().equals(other.failureOrSuccessOption, failureOrSuccessOption)));
+            (identical(other.comment, comment) ||
+                const DeepCollectionEquality().equals(other.comment, comment)) &&
+            (identical(other.showErrorMessages, showErrorMessages) ||
+                const DeepCollectionEquality()
+                    .equals(other.showErrorMessages, showErrorMessages)) &&
+            (identical(other.isEditing, isEditing) ||
+                const DeepCollectionEquality().equals(other.isEditing, isEditing)) &&
+            (identical(other.isSubmitting, isSubmitting) ||
+                const DeepCollectionEquality().equals(other.isSubmitting, isSubmitting)) &&
+            (identical(other.failureOrSuccessOption, failureOrSuccessOption) ||
+                const DeepCollectionEquality()
+                    .equals(other.failureOrSuccessOption, failureOrSuccessOption)));
   }
 
   @override
@@ -589,7 +642,8 @@ class _$_CommentFormState implements _CommentFormState {
 
   @JsonKey(ignore: true)
   @override
-  _$CommentFormStateCopyWith<_CommentFormState> get copyWith => __$CommentFormStateCopyWithImpl<_CommentFormState>(this, _$identity);
+  _$CommentFormStateCopyWith<_CommentFormState> get copyWith =>
+      __$CommentFormStateCopyWithImpl<_CommentFormState>(this, _$identity);
 }
 
 abstract class _CommentFormState implements CommentFormState {

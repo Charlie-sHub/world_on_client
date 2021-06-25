@@ -52,11 +52,14 @@ mixin _$UserProfileButtonWatcherEvent {
 
 /// @nodoc
 abstract class $UserProfileButtonWatcherEventCopyWith<$Res> {
-  factory $UserProfileButtonWatcherEventCopyWith(UserProfileButtonWatcherEvent value, $Res Function(UserProfileButtonWatcherEvent) then) = _$UserProfileButtonWatcherEventCopyWithImpl<$Res>;
+  factory $UserProfileButtonWatcherEventCopyWith(
+          UserProfileButtonWatcherEvent value, $Res Function(UserProfileButtonWatcherEvent) then) =
+      _$UserProfileButtonWatcherEventCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class _$UserProfileButtonWatcherEventCopyWithImpl<$Res> implements $UserProfileButtonWatcherEventCopyWith<$Res> {
+class _$UserProfileButtonWatcherEventCopyWithImpl<$Res>
+    implements $UserProfileButtonWatcherEventCopyWith<$Res> {
   _$UserProfileButtonWatcherEventCopyWithImpl(this._value, this._then);
 
   final UserProfileButtonWatcherEvent _value;
@@ -67,12 +70,15 @@ class _$UserProfileButtonWatcherEventCopyWithImpl<$Res> implements $UserProfileB
 
 /// @nodoc
 abstract class _$InitializedCopyWith<$Res> {
-  factory _$InitializedCopyWith(_Initialized value, $Res Function(_Initialized) then) = __$InitializedCopyWithImpl<$Res>;
+  factory _$InitializedCopyWith(_Initialized value, $Res Function(_Initialized) then) =
+      __$InitializedCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$InitializedCopyWithImpl<$Res> extends _$UserProfileButtonWatcherEventCopyWithImpl<$Res> implements _$InitializedCopyWith<$Res> {
-  __$InitializedCopyWithImpl(_Initialized _value, $Res Function(_Initialized) _then) : super(_value, (v) => _then(v as _Initialized));
+class __$InitializedCopyWithImpl<$Res> extends _$UserProfileButtonWatcherEventCopyWithImpl<$Res>
+    implements _$InitializedCopyWith<$Res> {
+  __$InitializedCopyWithImpl(_Initialized _value, $Res Function(_Initialized) _then)
+      : super(_value, (v) => _then(v as _Initialized));
 
   @override
   _Initialized get _value => super._value as _Initialized;
@@ -207,11 +213,14 @@ mixin _$UserProfileButtonWatcherState {
 
 /// @nodoc
 abstract class $UserProfileButtonWatcherStateCopyWith<$Res> {
-  factory $UserProfileButtonWatcherStateCopyWith(UserProfileButtonWatcherState value, $Res Function(UserProfileButtonWatcherState) then) = _$UserProfileButtonWatcherStateCopyWithImpl<$Res>;
+  factory $UserProfileButtonWatcherStateCopyWith(
+          UserProfileButtonWatcherState value, $Res Function(UserProfileButtonWatcherState) then) =
+      _$UserProfileButtonWatcherStateCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class _$UserProfileButtonWatcherStateCopyWithImpl<$Res> implements $UserProfileButtonWatcherStateCopyWith<$Res> {
+class _$UserProfileButtonWatcherStateCopyWithImpl<$Res>
+    implements $UserProfileButtonWatcherStateCopyWith<$Res> {
   _$UserProfileButtonWatcherStateCopyWithImpl(this._value, this._then);
 
   final UserProfileButtonWatcherState _value;
@@ -222,12 +231,15 @@ class _$UserProfileButtonWatcherStateCopyWithImpl<$Res> implements $UserProfileB
 
 /// @nodoc
 abstract class _$InitialCopyWith<$Res> {
-  factory _$InitialCopyWith(_Initial value, $Res Function(_Initial) then) = __$InitialCopyWithImpl<$Res>;
+  factory _$InitialCopyWith(_Initial value, $Res Function(_Initial) then) =
+      __$InitialCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$InitialCopyWithImpl<$Res> extends _$UserProfileButtonWatcherStateCopyWithImpl<$Res> implements _$InitialCopyWith<$Res> {
-  __$InitialCopyWithImpl(_Initial _value, $Res Function(_Initial) _then) : super(_value, (v) => _then(v as _Initial));
+class __$InitialCopyWithImpl<$Res> extends _$UserProfileButtonWatcherStateCopyWithImpl<$Res>
+    implements _$InitialCopyWith<$Res> {
+  __$InitialCopyWithImpl(_Initial _value, $Res Function(_Initial) _then)
+      : super(_value, (v) => _then(v as _Initial));
 
   @override
   _Initial get _value => super._value as _Initial;
@@ -310,12 +322,17 @@ abstract class _Initial implements UserProfileButtonWatcherState {
 
 /// @nodoc
 abstract class _$ActionInProgressCopyWith<$Res> {
-  factory _$ActionInProgressCopyWith(_ActionInProgress value, $Res Function(_ActionInProgress) then) = __$ActionInProgressCopyWithImpl<$Res>;
+  factory _$ActionInProgressCopyWith(
+          _ActionInProgress value, $Res Function(_ActionInProgress) then) =
+      __$ActionInProgressCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$ActionInProgressCopyWithImpl<$Res> extends _$UserProfileButtonWatcherStateCopyWithImpl<$Res> implements _$ActionInProgressCopyWith<$Res> {
-  __$ActionInProgressCopyWithImpl(_ActionInProgress _value, $Res Function(_ActionInProgress) _then) : super(_value, (v) => _then(v as _ActionInProgress));
+class __$ActionInProgressCopyWithImpl<$Res>
+    extends _$UserProfileButtonWatcherStateCopyWithImpl<$Res>
+    implements _$ActionInProgressCopyWith<$Res> {
+  __$ActionInProgressCopyWithImpl(_ActionInProgress _value, $Res Function(_ActionInProgress) _then)
+      : super(_value, (v) => _then(v as _ActionInProgress));
 
   @override
   _ActionInProgress get _value => super._value as _ActionInProgress;
@@ -398,14 +415,17 @@ abstract class _ActionInProgress implements UserProfileButtonWatcherState {
 
 /// @nodoc
 abstract class _$LoadSuccessCopyWith<$Res> {
-  factory _$LoadSuccessCopyWith(_LoadSuccess value, $Res Function(_LoadSuccess) then) = __$LoadSuccessCopyWithImpl<$Res>;
+  factory _$LoadSuccessCopyWith(_LoadSuccess value, $Res Function(_LoadSuccess) then) =
+      __$LoadSuccessCopyWithImpl<$Res>;
 
   $Res call({String imageUrl});
 }
 
 /// @nodoc
-class __$LoadSuccessCopyWithImpl<$Res> extends _$UserProfileButtonWatcherStateCopyWithImpl<$Res> implements _$LoadSuccessCopyWith<$Res> {
-  __$LoadSuccessCopyWithImpl(_LoadSuccess _value, $Res Function(_LoadSuccess) _then) : super(_value, (v) => _then(v as _LoadSuccess));
+class __$LoadSuccessCopyWithImpl<$Res> extends _$UserProfileButtonWatcherStateCopyWithImpl<$Res>
+    implements _$LoadSuccessCopyWith<$Res> {
+  __$LoadSuccessCopyWithImpl(_LoadSuccess _value, $Res Function(_LoadSuccess) _then)
+      : super(_value, (v) => _then(v as _LoadSuccess));
 
   @override
   _LoadSuccess get _value => super._value as _LoadSuccess;
@@ -438,7 +458,10 @@ class _$_LoadSuccess implements _LoadSuccess {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _LoadSuccess && (identical(other.imageUrl, imageUrl) || const DeepCollectionEquality().equals(other.imageUrl, imageUrl)));
+    return identical(this, other) ||
+        (other is _LoadSuccess &&
+            (identical(other.imageUrl, imageUrl) ||
+                const DeepCollectionEquality().equals(other.imageUrl, imageUrl)));
   }
 
   @override
@@ -446,7 +469,8 @@ class _$_LoadSuccess implements _LoadSuccess {
 
   @JsonKey(ignore: true)
   @override
-  _$LoadSuccessCopyWith<_LoadSuccess> get copyWith => __$LoadSuccessCopyWithImpl<_LoadSuccess>(this, _$identity);
+  _$LoadSuccessCopyWith<_LoadSuccess> get copyWith =>
+      __$LoadSuccessCopyWithImpl<_LoadSuccess>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -512,12 +536,15 @@ abstract class _LoadSuccess implements UserProfileButtonWatcherState {
 
 /// @nodoc
 abstract class _$FailureCopyWith<$Res> {
-  factory _$FailureCopyWith(_Failure value, $Res Function(_Failure) then) = __$FailureCopyWithImpl<$Res>;
+  factory _$FailureCopyWith(_Failure value, $Res Function(_Failure) then) =
+      __$FailureCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$FailureCopyWithImpl<$Res> extends _$UserProfileButtonWatcherStateCopyWithImpl<$Res> implements _$FailureCopyWith<$Res> {
-  __$FailureCopyWithImpl(_Failure _value, $Res Function(_Failure) _then) : super(_value, (v) => _then(v as _Failure));
+class __$FailureCopyWithImpl<$Res> extends _$UserProfileButtonWatcherStateCopyWithImpl<$Res>
+    implements _$FailureCopyWith<$Res> {
+  __$FailureCopyWithImpl(_Failure _value, $Res Function(_Failure) _then)
+      : super(_value, (v) => _then(v as _Failure));
 
   @override
   _Failure get _value => super._value as _Failure;

@@ -65,9 +65,17 @@ mixin _$PromotionPlanDto {
 
 /// @nodoc
 abstract class $PromotionPlanDtoCopyWith<$Res> {
-  factory $PromotionPlanDtoCopyWith(PromotionPlanDto value, $Res Function(PromotionPlanDto) then) = _$PromotionPlanDtoCopyWithImpl<$Res>;
+  factory $PromotionPlanDtoCopyWith(PromotionPlanDto value, $Res Function(PromotionPlanDto) then) =
+      _$PromotionPlanDtoCopyWithImpl<$Res>;
 
-  $Res call({String id, String name, String description, PromotionPlanCode code, int valueInEuros, @ServerTimestampConverter() DateTime boughtDate, int timesSeen});
+  $Res call(
+      {String id,
+      String name,
+      String description,
+      PromotionPlanCode code,
+      int valueInEuros,
+      @ServerTimestampConverter() DateTime boughtDate,
+      int timesSeen});
 }
 
 /// @nodoc
@@ -124,15 +132,25 @@ class _$PromotionPlanDtoCopyWithImpl<$Res> implements $PromotionPlanDtoCopyWith<
 
 /// @nodoc
 abstract class _$PromotionPlanCopyWith<$Res> implements $PromotionPlanDtoCopyWith<$Res> {
-  factory _$PromotionPlanCopyWith(_PromotionPlan value, $Res Function(_PromotionPlan) then) = __$PromotionPlanCopyWithImpl<$Res>;
+  factory _$PromotionPlanCopyWith(_PromotionPlan value, $Res Function(_PromotionPlan) then) =
+      __$PromotionPlanCopyWithImpl<$Res>;
 
   @override
-  $Res call({String id, String name, String description, PromotionPlanCode code, int valueInEuros, @ServerTimestampConverter() DateTime boughtDate, int timesSeen});
+  $Res call(
+      {String id,
+      String name,
+      String description,
+      PromotionPlanCode code,
+      int valueInEuros,
+      @ServerTimestampConverter() DateTime boughtDate,
+      int timesSeen});
 }
 
 /// @nodoc
-class __$PromotionPlanCopyWithImpl<$Res> extends _$PromotionPlanDtoCopyWithImpl<$Res> implements _$PromotionPlanCopyWith<$Res> {
-  __$PromotionPlanCopyWithImpl(_PromotionPlan _value, $Res Function(_PromotionPlan) _then) : super(_value, (v) => _then(v as _PromotionPlan));
+class __$PromotionPlanCopyWithImpl<$Res> extends _$PromotionPlanDtoCopyWithImpl<$Res>
+    implements _$PromotionPlanCopyWith<$Res> {
+  __$PromotionPlanCopyWithImpl(_PromotionPlan _value, $Res Function(_PromotionPlan) _then)
+      : super(_value, (v) => _then(v as _PromotionPlan));
 
   @override
   _PromotionPlan get _value => super._value as _PromotionPlan;
@@ -184,7 +202,13 @@ class __$PromotionPlanCopyWithImpl<$Res> extends _$PromotionPlanDtoCopyWithImpl<
 @JsonSerializable()
 class _$_PromotionPlan extends _PromotionPlan {
   const _$_PromotionPlan(
-      {required this.id, required this.name, required this.description, required this.code, required this.valueInEuros, @ServerTimestampConverter() required this.boughtDate, required this.timesSeen})
+      {required this.id,
+      required this.name,
+      required this.description,
+      required this.code,
+      required this.valueInEuros,
+      @ServerTimestampConverter() required this.boughtDate,
+      required this.timesSeen})
       : super._();
 
   factory _$_PromotionPlan.fromJson(Map<String, dynamic> json) => _$_$_PromotionPlanFromJson(json);
@@ -215,12 +239,18 @@ class _$_PromotionPlan extends _PromotionPlan {
     return identical(this, other) ||
         (other is _PromotionPlan &&
             (identical(other.id, id) || const DeepCollectionEquality().equals(other.id, id)) &&
-            (identical(other.name, name) || const DeepCollectionEquality().equals(other.name, name)) &&
-            (identical(other.description, description) || const DeepCollectionEquality().equals(other.description, description)) &&
-            (identical(other.code, code) || const DeepCollectionEquality().equals(other.code, code)) &&
-            (identical(other.valueInEuros, valueInEuros) || const DeepCollectionEquality().equals(other.valueInEuros, valueInEuros)) &&
-            (identical(other.boughtDate, boughtDate) || const DeepCollectionEquality().equals(other.boughtDate, boughtDate)) &&
-            (identical(other.timesSeen, timesSeen) || const DeepCollectionEquality().equals(other.timesSeen, timesSeen)));
+            (identical(other.name, name) ||
+                const DeepCollectionEquality().equals(other.name, name)) &&
+            (identical(other.description, description) ||
+                const DeepCollectionEquality().equals(other.description, description)) &&
+            (identical(other.code, code) ||
+                const DeepCollectionEquality().equals(other.code, code)) &&
+            (identical(other.valueInEuros, valueInEuros) ||
+                const DeepCollectionEquality().equals(other.valueInEuros, valueInEuros)) &&
+            (identical(other.boughtDate, boughtDate) ||
+                const DeepCollectionEquality().equals(other.boughtDate, boughtDate)) &&
+            (identical(other.timesSeen, timesSeen) ||
+                const DeepCollectionEquality().equals(other.timesSeen, timesSeen)));
   }
 
   @override
@@ -233,10 +263,11 @@ class _$_PromotionPlan extends _PromotionPlan {
       const DeepCollectionEquality().hash(valueInEuros) ^
       const DeepCollectionEquality().hash(boughtDate) ^
       const DeepCollectionEquality().hash(timesSeen);
-  
+
   @JsonKey(ignore: true)
   @override
-  _$PromotionPlanCopyWith<_PromotionPlan> get copyWith => __$PromotionPlanCopyWithImpl<_PromotionPlan>(this, _$identity);
+  _$PromotionPlanCopyWith<_PromotionPlan> get copyWith =>
+      __$PromotionPlanCopyWithImpl<_PromotionPlan>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
@@ -275,7 +306,7 @@ abstract class _PromotionPlan extends PromotionPlanDto {
   @override
   @ServerTimestampConverter()
   DateTime get boughtDate => throw _privateConstructorUsedError;
-  
+
   @override
   int get timesSeen => throw _privateConstructorUsedError;
 

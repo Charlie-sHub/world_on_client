@@ -16,7 +16,12 @@ final _privateConstructorUsedError = UnsupportedError(
 class _$TagTearOff {
   const _$TagTearOff();
 
-  _Tag call({required UniqueId id, required Name name, required UniqueId creatorId, required PastDate creationDate, required PastDate modificationDate}) {
+  _Tag call(
+      {required UniqueId id,
+      required Name name,
+      required UniqueId creatorId,
+      required PastDate creationDate,
+      required PastDate modificationDate}) {
     return _Tag(
       id: id,
       name: name,
@@ -46,7 +51,12 @@ mixin _$Tag {
 abstract class $TagCopyWith<$Res> {
   factory $TagCopyWith(Tag value, $Res Function(Tag) then) = _$TagCopyWithImpl<$Res>;
 
-  $Res call({UniqueId id, Name name, UniqueId creatorId, PastDate creationDate, PastDate modificationDate});
+  $Res call(
+      {UniqueId id,
+      Name name,
+      UniqueId creatorId,
+      PastDate creationDate,
+      PastDate modificationDate});
 }
 
 /// @nodoc
@@ -95,12 +105,18 @@ abstract class _$TagCopyWith<$Res> implements $TagCopyWith<$Res> {
   factory _$TagCopyWith(_Tag value, $Res Function(_Tag) then) = __$TagCopyWithImpl<$Res>;
 
   @override
-  $Res call({UniqueId id, Name name, UniqueId creatorId, PastDate creationDate, PastDate modificationDate});
+  $Res call(
+      {UniqueId id,
+      Name name,
+      UniqueId creatorId,
+      PastDate creationDate,
+      PastDate modificationDate});
 }
 
 /// @nodoc
 class __$TagCopyWithImpl<$Res> extends _$TagCopyWithImpl<$Res> implements _$TagCopyWith<$Res> {
-  __$TagCopyWithImpl(_Tag _value, $Res Function(_Tag) _then) : super(_value, (v) => _then(v as _Tag));
+  __$TagCopyWithImpl(_Tag _value, $Res Function(_Tag) _then)
+      : super(_value, (v) => _then(v as _Tag));
 
   @override
   _Tag get _value => super._value as _Tag;
@@ -141,7 +157,13 @@ class __$TagCopyWithImpl<$Res> extends _$TagCopyWithImpl<$Res> implements _$TagC
 /// @nodoc
 
 class _$_Tag extends _Tag {
-  const _$_Tag({required this.id, required this.name, required this.creatorId, required this.creationDate, required this.modificationDate}) : super._();
+  const _$_Tag(
+      {required this.id,
+      required this.name,
+      required this.creatorId,
+      required this.creationDate,
+      required this.modificationDate})
+      : super._();
 
   @override
   final UniqueId id;
@@ -164,10 +186,14 @@ class _$_Tag extends _Tag {
     return identical(this, other) ||
         (other is _Tag &&
             (identical(other.id, id) || const DeepCollectionEquality().equals(other.id, id)) &&
-            (identical(other.name, name) || const DeepCollectionEquality().equals(other.name, name)) &&
-            (identical(other.creatorId, creatorId) || const DeepCollectionEquality().equals(other.creatorId, creatorId)) &&
-            (identical(other.creationDate, creationDate) || const DeepCollectionEquality().equals(other.creationDate, creationDate)) &&
-            (identical(other.modificationDate, modificationDate) || const DeepCollectionEquality().equals(other.modificationDate, modificationDate)));
+            (identical(other.name, name) ||
+                const DeepCollectionEquality().equals(other.name, name)) &&
+            (identical(other.creatorId, creatorId) ||
+                const DeepCollectionEquality().equals(other.creatorId, creatorId)) &&
+            (identical(other.creationDate, creationDate) ||
+                const DeepCollectionEquality().equals(other.creationDate, creationDate)) &&
+            (identical(other.modificationDate, modificationDate) ||
+                const DeepCollectionEquality().equals(other.modificationDate, modificationDate)));
   }
 
   @override
@@ -178,14 +204,19 @@ class _$_Tag extends _Tag {
       const DeepCollectionEquality().hash(creatorId) ^
       const DeepCollectionEquality().hash(creationDate) ^
       const DeepCollectionEquality().hash(modificationDate);
-  
+
   @JsonKey(ignore: true)
   @override
   _$TagCopyWith<_Tag> get copyWith => __$TagCopyWithImpl<_Tag>(this, _$identity);
 }
 
 abstract class _Tag extends Tag {
-  const factory _Tag({required UniqueId id, required Name name, required UniqueId creatorId, required PastDate creationDate, required PastDate modificationDate}) = _$_Tag;
+  const factory _Tag(
+      {required UniqueId id,
+      required Name name,
+      required UniqueId creatorId,
+      required PastDate creationDate,
+      required PastDate modificationDate}) = _$_Tag;
 
   const _Tag._() : super._();
 

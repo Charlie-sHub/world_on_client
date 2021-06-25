@@ -12,7 +12,8 @@ _$_CommentDto _$_$_CommentDtoFromJson(Map<String, dynamic> json) {
     experienceId: json['experienceId'] as String,
     content: json['content'] as String,
     creationDate: const ServerTimestampConverter().fromJson(json['creationDate'] as Timestamp),
-    modificationDate: const ServerTimestampConverter().fromJson(json['modificationDate'] as Timestamp),
+    modificationDate:
+        const ServerTimestampConverter().fromJson(json['modificationDate'] as Timestamp),
   );
 }
 

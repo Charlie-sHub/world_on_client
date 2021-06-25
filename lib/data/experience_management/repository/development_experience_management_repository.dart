@@ -1,4 +1,3 @@
-
 import 'package:dartz/dartz.dart';
 import 'package:injectable/injectable.dart';
 import 'package:worldon/core/error/failure.dart';
@@ -8,7 +7,6 @@ import 'package:worldon/domain/experience_management/repository/experience_manag
 
 @LazySingleton(as: ExperienceManagementRepositoryInterface, env: [Environment.dev])
 class DevelopmentExperienceManagementRepository implements ExperienceManagementRepositoryInterface {
-
   @override
   Future<Either<Failure, Unit>> createExperience(Experience experience) async {
     throw UnimplementedError();
@@ -29,7 +27,7 @@ class DevelopmentExperienceManagementRepository implements ExperienceManagementR
   }
 
   @override
-  Future<Either<Failure, Unit>> removeExperience(UniqueId id) {
+  Future<Either<Failure, Unit>> deleteExperience(UniqueId experienceId) {
     throw UnimplementedError();
   }
 }
