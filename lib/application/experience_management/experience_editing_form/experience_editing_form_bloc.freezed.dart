@@ -164,7 +164,6 @@ class _$ExperienceEditingFormEventCopyWithImpl<$Res>
   _$ExperienceEditingFormEventCopyWithImpl(this._value, this._then);
 
   final ExperienceEditingFormEvent _value;
-
   // ignore: unused_field
   final $Res Function(ExperienceEditingFormEvent) _then;
 }
@@ -481,7 +480,6 @@ abstract class _$DescriptionChangedCopyWith<$Res> {
   factory _$DescriptionChangedCopyWith(
           _DescriptionChanged value, $Res Function(_DescriptionChanged) then) =
       __$DescriptionChangedCopyWithImpl<$Res>;
-
   $Res call({String description});
 }
 
@@ -622,7 +620,6 @@ abstract class _DescriptionChanged implements ExperienceEditingFormEvent {
   const factory _DescriptionChanged(String description) = _$_DescriptionChanged;
 
   String get description => throw _privateConstructorUsedError;
-
   @JsonKey(ignore: true)
   _$DescriptionChangedCopyWith<_DescriptionChanged> get copyWith =>
       throw _privateConstructorUsedError;
@@ -931,7 +928,6 @@ abstract class _$CoordinatesChangedCopyWith<$Res> {
   factory _$CoordinatesChangedCopyWith(
           _CoordinatesChanged value, $Res Function(_CoordinatesChanged) then) =
       __$CoordinatesChangedCopyWithImpl<$Res>;
-
   $Res call({double latitude, double longitude});
 }
 
@@ -1098,7 +1094,6 @@ abstract class _$DifficultyChangedCopyWith<$Res> {
   factory _$DifficultyChangedCopyWith(
           _DifficultyChanged value, $Res Function(_DifficultyChanged) then) =
       __$DifficultyChangedCopyWithImpl<$Res>;
-
   $Res call({int difficulty});
 }
 
@@ -1239,7 +1234,6 @@ abstract class _DifficultyChanged implements ExperienceEditingFormEvent {
   const factory _DifficultyChanged(int difficulty) = _$_DifficultyChanged;
 
   int get difficulty => throw _privateConstructorUsedError;
-
   @JsonKey(ignore: true)
   _$DifficultyChangedCopyWith<_DifficultyChanged> get copyWith =>
       throw _privateConstructorUsedError;
@@ -1250,7 +1244,6 @@ abstract class _$ObjectivesChangedCopyWith<$Res> {
   factory _$ObjectivesChangedCopyWith(
           _ObjectivesChanged value, $Res Function(_ObjectivesChanged) then) =
       __$ObjectivesChangedCopyWithImpl<$Res>;
-
   $Res call({KtList<Objective> objectives});
 }
 
@@ -1820,12 +1813,14 @@ class _$ExperienceEditingFormStateTearOff {
 
   _ExperienceEditingFormState call(
       {required Experience experience,
+      required List<String> imageUrlsToDelete,
       required bool showErrorMessages,
       required bool isSubmitting,
       required bool loadedCoordinates,
       required Option<Either<Failure, Unit>> failureOrSuccessOption}) {
     return _ExperienceEditingFormState(
       experience: experience,
+      imageUrlsToDelete: imageUrlsToDelete,
       showErrorMessages: showErrorMessages,
       isSubmitting: isSubmitting,
       loadedCoordinates: loadedCoordinates,
@@ -1840,6 +1835,8 @@ const $ExperienceEditingFormState = _$ExperienceEditingFormStateTearOff();
 /// @nodoc
 mixin _$ExperienceEditingFormState {
   Experience get experience => throw _privateConstructorUsedError;
+
+  List<String> get imageUrlsToDelete => throw _privateConstructorUsedError;
 
   bool get showErrorMessages => throw _privateConstructorUsedError;
 
@@ -1862,6 +1859,7 @@ abstract class $ExperienceEditingFormStateCopyWith<$Res> {
 
   $Res call(
       {Experience experience,
+      List<String> imageUrlsToDelete,
       bool showErrorMessages,
       bool isSubmitting,
       bool loadedCoordinates,
@@ -1876,13 +1874,13 @@ class _$ExperienceEditingFormStateCopyWithImpl<$Res>
   _$ExperienceEditingFormStateCopyWithImpl(this._value, this._then);
 
   final ExperienceEditingFormState _value;
-
   // ignore: unused_field
   final $Res Function(ExperienceEditingFormState) _then;
 
   @override
   $Res call({
     Object? experience = freezed,
+    Object? imageUrlsToDelete = freezed,
     Object? showErrorMessages = freezed,
     Object? isSubmitting = freezed,
     Object? loadedCoordinates = freezed,
@@ -1893,6 +1891,10 @@ class _$ExperienceEditingFormStateCopyWithImpl<$Res>
           ? _value.experience
           : experience // ignore: cast_nullable_to_non_nullable
               as Experience,
+      imageUrlsToDelete: imageUrlsToDelete == freezed
+          ? _value.imageUrlsToDelete
+          : imageUrlsToDelete // ignore: cast_nullable_to_non_nullable
+              as List<String>,
       showErrorMessages: showErrorMessages == freezed
           ? _value.showErrorMessages
           : showErrorMessages // ignore: cast_nullable_to_non_nullable
@@ -1926,10 +1928,10 @@ abstract class _$ExperienceEditingFormStateCopyWith<$Res>
   factory _$ExperienceEditingFormStateCopyWith(
           _ExperienceEditingFormState value, $Res Function(_ExperienceEditingFormState) then) =
       __$ExperienceEditingFormStateCopyWithImpl<$Res>;
-
   @override
   $Res call(
       {Experience experience,
+      List<String> imageUrlsToDelete,
       bool showErrorMessages,
       bool isSubmitting,
       bool loadedCoordinates,
@@ -1953,6 +1955,7 @@ class __$ExperienceEditingFormStateCopyWithImpl<$Res>
   @override
   $Res call({
     Object? experience = freezed,
+    Object? imageUrlsToDelete = freezed,
     Object? showErrorMessages = freezed,
     Object? isSubmitting = freezed,
     Object? loadedCoordinates = freezed,
@@ -1963,6 +1966,10 @@ class __$ExperienceEditingFormStateCopyWithImpl<$Res>
           ? _value.experience
           : experience // ignore: cast_nullable_to_non_nullable
               as Experience,
+      imageUrlsToDelete: imageUrlsToDelete == freezed
+          ? _value.imageUrlsToDelete
+          : imageUrlsToDelete // ignore: cast_nullable_to_non_nullable
+              as List<String>,
       showErrorMessages: showErrorMessages == freezed
           ? _value.showErrorMessages
           : showErrorMessages // ignore: cast_nullable_to_non_nullable
@@ -1988,6 +1995,7 @@ class __$ExperienceEditingFormStateCopyWithImpl<$Res>
 class _$_ExperienceEditingFormState implements _ExperienceEditingFormState {
   const _$_ExperienceEditingFormState(
       {required this.experience,
+      required this.imageUrlsToDelete,
       required this.showErrorMessages,
       required this.isSubmitting,
       required this.loadedCoordinates,
@@ -1995,6 +2003,8 @@ class _$_ExperienceEditingFormState implements _ExperienceEditingFormState {
 
   @override
   final Experience experience;
+  @override
+  final List<String> imageUrlsToDelete;
   @override
   final bool showErrorMessages;
   @override
@@ -2006,7 +2016,7 @@ class _$_ExperienceEditingFormState implements _ExperienceEditingFormState {
 
   @override
   String toString() {
-    return 'ExperienceEditingFormState(experience: $experience, showErrorMessages: $showErrorMessages, isSubmitting: $isSubmitting, loadedCoordinates: $loadedCoordinates, failureOrSuccessOption: $failureOrSuccessOption)';
+    return 'ExperienceEditingFormState(experience: $experience, imageUrlsToDelete: $imageUrlsToDelete, showErrorMessages: $showErrorMessages, isSubmitting: $isSubmitting, loadedCoordinates: $loadedCoordinates, failureOrSuccessOption: $failureOrSuccessOption)';
   }
 
   @override
@@ -2015,6 +2025,9 @@ class _$_ExperienceEditingFormState implements _ExperienceEditingFormState {
         (other is _ExperienceEditingFormState &&
             (identical(other.experience, experience) ||
                 const DeepCollectionEquality().equals(other.experience, experience)) &&
+            (identical(other.imageUrlsToDelete, imageUrlsToDelete) ||
+                const DeepCollectionEquality()
+                    .equals(other.imageUrlsToDelete, imageUrlsToDelete)) &&
             (identical(other.showErrorMessages, showErrorMessages) ||
                 const DeepCollectionEquality()
                     .equals(other.showErrorMessages, showErrorMessages)) &&
@@ -2032,6 +2045,7 @@ class _$_ExperienceEditingFormState implements _ExperienceEditingFormState {
   int get hashCode =>
       runtimeType.hashCode ^
       const DeepCollectionEquality().hash(experience) ^
+      const DeepCollectionEquality().hash(imageUrlsToDelete) ^
       const DeepCollectionEquality().hash(showErrorMessages) ^
       const DeepCollectionEquality().hash(isSubmitting) ^
       const DeepCollectionEquality().hash(loadedCoordinates) ^
@@ -2046,6 +2060,7 @@ class _$_ExperienceEditingFormState implements _ExperienceEditingFormState {
 abstract class _ExperienceEditingFormState implements ExperienceEditingFormState {
   const factory _ExperienceEditingFormState(
           {required Experience experience,
+          required List<String> imageUrlsToDelete,
           required bool showErrorMessages,
           required bool isSubmitting,
           required bool loadedCoordinates,
@@ -2054,8 +2069,13 @@ abstract class _ExperienceEditingFormState implements ExperienceEditingFormState
 
   @override
   Experience get experience => throw _privateConstructorUsedError;
+
+  @override
+  List<String> get imageUrlsToDelete => throw _privateConstructorUsedError;
+
   @override
   bool get showErrorMessages => throw _privateConstructorUsedError;
+
   @override
   bool get isSubmitting => throw _privateConstructorUsedError;
 

@@ -177,7 +177,6 @@ abstract class _$SearchTermChangedCopyWith<$Res> {
   factory _$SearchTermChangedCopyWith(
           _SearchTermChanged value, $Res Function(_SearchTermChanged) then) =
       __$SearchTermChangedCopyWithImpl<$Res>;
-
   $Res call({String searchTermString});
 }
 

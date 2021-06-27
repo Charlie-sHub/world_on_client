@@ -73,7 +73,6 @@ class _$ForgottenPasswordFormEventCopyWithImpl<$Res>
   _$ForgottenPasswordFormEventCopyWithImpl(this._value, this._then);
 
   final ForgottenPasswordFormEvent _value;
-
   // ignore: unused_field
   final $Res Function(ForgottenPasswordFormEvent) _then;
 }
@@ -329,7 +328,6 @@ class _$ForgottenPasswordFormStateCopyWithImpl<$Res>
   _$ForgottenPasswordFormStateCopyWithImpl(this._value, this._then);
 
   final ForgottenPasswordFormState _value;
-
   // ignore: unused_field
   final $Res Function(ForgottenPasswordFormState) _then;
 
@@ -367,7 +365,6 @@ abstract class _$ForgottenPasswordFormStateCopyWith<$Res>
   factory _$ForgottenPasswordFormStateCopyWith(
           _ForgottenPasswordFormState value, $Res Function(_ForgottenPasswordFormState) then) =
       __$ForgottenPasswordFormStateCopyWithImpl<$Res>;
-
   @override
   $Res call(
       {EmailAddress email,

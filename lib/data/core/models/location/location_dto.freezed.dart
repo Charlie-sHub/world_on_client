@@ -52,7 +52,6 @@ mixin _$LocationDto {
   Set<ExperienceDto> get experiences => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-
   @JsonKey(ignore: true)
   $LocationDtoCopyWith<LocationDto> get copyWith => throw _privateConstructorUsedError;
 }

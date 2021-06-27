@@ -210,7 +210,6 @@ abstract class _Initialized implements TagSelectorEvent {
 abstract class _$AddedTagCopyWith<$Res> {
   factory _$AddedTagCopyWith(_AddedTag value, $Res Function(_AddedTag) then) =
       __$AddedTagCopyWithImpl<$Res>;
-
   $Res call({Tag tag});
 
   $TagCopyWith<$Res> get tag;

@@ -82,7 +82,6 @@ abstract class $TagCardActorEventCopyWith<$Res> {
   factory $TagCardActorEventCopyWith(
           TagCardActorEvent value, $Res Function(TagCardActorEvent) then) =
       _$TagCardActorEventCopyWithImpl<$Res>;
-
   $Res call({Tag tag});
 
   $TagCopyWith<$Res> get tag;
@@ -357,7 +356,6 @@ abstract class _DismissedFromInterests implements TagCardActorEvent {
 
   @override
   Tag get tag => throw _privateConstructorUsedError;
-
   @override
   @JsonKey(ignore: true)
   _$DismissedFromInterestsCopyWith<_DismissedFromInterests> get copyWith =>
@@ -1397,7 +1395,6 @@ abstract class _$DismissalFailureCopyWith<$Res> {
   factory _$DismissalFailureCopyWith(
           _DismissalFailure value, $Res Function(_DismissalFailure) then) =
       __$DismissalFailureCopyWithImpl<$Res>;
-
   $Res call({Failure<dynamic> failure});
 
   $FailureCopyWith<dynamic, $Res> get failure;

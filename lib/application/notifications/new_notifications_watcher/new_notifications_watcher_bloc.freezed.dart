@@ -73,7 +73,6 @@ class _$NewNotificationsWatcherEventCopyWithImpl<$Res>
   _$NewNotificationsWatcherEventCopyWithImpl(this._value, this._then);
 
   final NewNotificationsWatcherEvent _value;
-
   // ignore: unused_field
   final $Res Function(NewNotificationsWatcherEvent) _then;
 }
@@ -352,7 +351,6 @@ class _$NewNotificationsWatcherStateCopyWithImpl<$Res>
   _$NewNotificationsWatcherStateCopyWithImpl(this._value, this._then);
 
   final NewNotificationsWatcherState _value;
-
   // ignore: unused_field
   final $Res Function(NewNotificationsWatcherState) _then;
 }

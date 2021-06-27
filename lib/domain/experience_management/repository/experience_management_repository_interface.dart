@@ -9,7 +9,10 @@ abstract class ExperienceManagementRepositoryInterface {
   Future<Either<Failure, Unit>> createExperience(Experience experience);
 
   /// Sends an edited [Experience] for the changes to be saved on the server.
-  Future<Either<Failure, Unit>> editExperience(Experience experience);
+  Future<Either<Failure, Unit>> editExperience(
+    Experience experience,
+    List<String> imageUrlListToDelete,
+  );
 
   /// Sends the id of an [Experience] to the server so this one can be deleted
   Future<Either<Failure, Unit>> deleteExperience(UniqueId experienceId);

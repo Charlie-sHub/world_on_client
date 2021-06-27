@@ -47,7 +47,6 @@ mixin _$CoinsDto {
 abstract class $CoinsDtoCopyWith<$Res> {
   factory $CoinsDtoCopyWith(CoinsDto value, $Res Function(CoinsDto) then) =
       _$CoinsDtoCopyWithImpl<$Res>;
-
   $Res call({String tenCoinsProductId});
 }
 
@@ -76,7 +75,6 @@ class _$CoinsDtoCopyWithImpl<$Res> implements $CoinsDtoCopyWith<$Res> {
 abstract class _$CoinsDtoCopyWith<$Res> implements $CoinsDtoCopyWith<$Res> {
   factory _$CoinsDtoCopyWith(_CoinsDto value, $Res Function(_CoinsDto) then) =
       __$CoinsDtoCopyWithImpl<$Res>;
-
   @override
   $Res call({String tenCoinsProductId});
 }

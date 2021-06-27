@@ -51,7 +51,6 @@ mixin _$Objective {
 abstract class $ObjectiveCopyWith<$Res> {
   factory $ObjectiveCopyWith(Objective value, $Res Function(Objective) then) =
       _$ObjectiveCopyWithImpl<$Res>;
-
   $Res call(
       {UniqueId id,
       EntityDescription description,
@@ -233,18 +232,14 @@ abstract class _Objective extends Objective {
       required Coordinates coordinates,
       required String imageURL,
       required Option<File> imageFile}) = _$_Objective;
-
   const _Objective._() : super._();
 
   @override
   UniqueId get id => throw _privateConstructorUsedError;
-
   @override
   EntityDescription get description => throw _privateConstructorUsedError;
-
   @override
   Coordinates get coordinates => throw _privateConstructorUsedError;
-
   @override
   String get imageURL => throw _privateConstructorUsedError;
 

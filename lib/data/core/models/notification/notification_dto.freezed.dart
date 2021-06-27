@@ -82,7 +82,6 @@ abstract class $NotificationDtoCopyWith<$Res> {
       ExperienceDto? experience});
 
   $SimpleUserDtoCopyWith<$Res> get sender;
-
   $ExperienceDtoCopyWith<$Res>? get experience;
 }
 

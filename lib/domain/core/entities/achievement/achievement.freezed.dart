@@ -52,27 +52,17 @@ const $Achievement = _$AchievementTearOff();
 /// @nodoc
 mixin _$Achievement {
   UniqueId get id => throw _privateConstructorUsedError;
-
   Name get name => throw _privateConstructorUsedError;
-
   EntityDescription get description => throw _privateConstructorUsedError;
-
   String get imageURL => throw _privateConstructorUsedError;
-
   Option<File> get imageFile => throw _privateConstructorUsedError;
-
   String get type => throw _privateConstructorUsedError;
-
   int get requisite =>
       throw _privateConstructorUsedError; // This will probably be reworked in the future to accommodate different kinds of achievements
   ExperiencePoints get experiencePoints => throw _privateConstructorUsedError;
-
   UniqueId get creatorId => throw _privateConstructorUsedError;
-
   PastDate get creationDate => throw _privateConstructorUsedError;
-
   PastDate get modificationDate => throw _privateConstructorUsedError;
-
   TagSet get tags => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)

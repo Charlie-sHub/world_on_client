@@ -85,7 +85,6 @@ class _$ProfileUsersWatcherEventCopyWithImpl<$Res>
   _$ProfileUsersWatcherEventCopyWithImpl(this._value, this._then);
 
   final ProfileUsersWatcherEvent _value;
-
   // ignore: unused_field
   final $Res Function(ProfileUsersWatcherEvent) _then;
 }
@@ -225,7 +224,6 @@ abstract class _$WatchFollowingUsersStartedCopyWith<$Res> {
   factory _$WatchFollowingUsersStartedCopyWith(
           _WatchFollowingUsersStarted value, $Res Function(_WatchFollowingUsersStarted) then) =
       __$WatchFollowingUsersStartedCopyWithImpl<$Res>;
-
   $Res call({User user});
 
   $UserCopyWith<$Res> get user;
@@ -546,7 +544,6 @@ class _$ProfileUsersWatcherStateCopyWithImpl<$Res>
   _$ProfileUsersWatcherStateCopyWithImpl(this._value, this._then);
 
   final ProfileUsersWatcherState _value;
-
   // ignore: unused_field
   final $Res Function(ProfileUsersWatcherState) _then;
 }

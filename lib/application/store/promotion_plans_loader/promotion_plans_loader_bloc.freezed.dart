@@ -63,7 +63,6 @@ class _$PromotionPlansLoaderEventCopyWithImpl<$Res>
   _$PromotionPlansLoaderEventCopyWithImpl(this._value, this._then);
 
   final PromotionPlansLoaderEvent _value;
-
   // ignore: unused_field
   final $Res Function(PromotionPlansLoaderEvent) _then;
 }
@@ -228,7 +227,6 @@ class _$PromotionPlansLoaderStateCopyWithImpl<$Res>
   _$PromotionPlansLoaderStateCopyWithImpl(this._value, this._then);
 
   final PromotionPlansLoaderState _value;
-
   // ignore: unused_field
   final $Res Function(PromotionPlansLoaderState) _then;
 }

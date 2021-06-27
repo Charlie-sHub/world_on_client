@@ -76,7 +76,6 @@ class _$ExperienceNavigationWatcherEventCopyWithImpl<$Res>
   _$ExperienceNavigationWatcherEventCopyWithImpl(this._value, this._then);
 
   final ExperienceNavigationWatcherEvent _value;
-
   // ignore: unused_field
   final $Res Function(ExperienceNavigationWatcherEvent) _then;
 }
@@ -399,7 +398,6 @@ class _$ExperienceNavigationWatcherStateCopyWithImpl<$Res>
   _$ExperienceNavigationWatcherStateCopyWithImpl(this._value, this._then);
 
   final ExperienceNavigationWatcherState _value;
-
   // ignore: unused_field
   final $Res Function(ExperienceNavigationWatcherState) _then;
 }
@@ -725,7 +723,6 @@ abstract class _$FinishExperienceCopyWith<$Res> {
   factory _$FinishExperienceCopyWith(
           _FinishExperience value, $Res Function(_FinishExperience) then) =
       __$FinishExperienceCopyWithImpl<$Res>;
-
   $Res call({Experience experience});
 
   $ExperienceCopyWith<$Res> get experience;

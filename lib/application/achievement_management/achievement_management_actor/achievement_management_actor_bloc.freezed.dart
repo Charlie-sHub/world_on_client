@@ -75,7 +75,6 @@ class _$AchievementManagementActorEventCopyWithImpl<$Res>
   _$AchievementManagementActorEventCopyWithImpl(this._value, this._then);
 
   final AchievementManagementActorEvent _value;
-
   // ignore: unused_field
   final $Res Function(AchievementManagementActorEvent) _then;
 
@@ -290,7 +289,6 @@ class _$AchievementManagementActorStateCopyWithImpl<$Res>
   _$AchievementManagementActorStateCopyWithImpl(this._value, this._then);
 
   final AchievementManagementActorState _value;
-
   // ignore: unused_field
   final $Res Function(AchievementManagementActorState) _then;
 }

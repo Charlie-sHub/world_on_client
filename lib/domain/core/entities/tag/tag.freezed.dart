@@ -217,18 +217,14 @@ abstract class _Tag extends Tag {
       required UniqueId creatorId,
       required PastDate creationDate,
       required PastDate modificationDate}) = _$_Tag;
-
   const _Tag._() : super._();
 
   @override
   UniqueId get id => throw _privateConstructorUsedError;
-
   @override
   Name get name => throw _privateConstructorUsedError;
-
   @override
   UniqueId get creatorId => throw _privateConstructorUsedError;
-
   @override
   PastDate get creationDate => throw _privateConstructorUsedError;
   @override

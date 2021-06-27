@@ -49,7 +49,6 @@ mixin _$RewardDto {
   String get imageURL => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-
   @JsonKey(ignore: true)
   $RewardDtoCopyWith<RewardDto> get copyWith => throw _privateConstructorUsedError;
 }
@@ -58,7 +57,6 @@ mixin _$RewardDto {
 abstract class $RewardDtoCopyWith<$Res> {
   factory $RewardDtoCopyWith(RewardDto value, $Res Function(RewardDto) then) =
       _$RewardDtoCopyWithImpl<$Res>;
-
   $Res call({String id, String name, String description, String imageURL});
 }
 

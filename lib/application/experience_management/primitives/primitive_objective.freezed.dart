@@ -216,24 +216,18 @@ abstract class _PrimitiveObjective extends PrimitiveObjective {
       required double latitude,
       required double longitude,
       required File? imageFile}) = _$_PrimitiveObjective;
-
   const _PrimitiveObjective._() : super._();
 
   @override
   UniqueId get id => throw _privateConstructorUsedError;
-
   @override
   String get description => throw _privateConstructorUsedError;
-
   @override
   double get latitude => throw _privateConstructorUsedError;
-
   @override
   double get longitude => throw _privateConstructorUsedError;
-
   @override
   File? get imageFile => throw _privateConstructorUsedError;
-
   @override
   @JsonKey(ignore: true)
   _$PrimitiveObjectiveCopyWith<_PrimitiveObjective> get copyWith =>

@@ -4,6 +4,7 @@ part of 'experience_editing_form_bloc.dart';
 class ExperienceEditingFormState with _$ExperienceEditingFormState {
   const factory ExperienceEditingFormState({
     required Experience experience,
+    required List<String> imageUrlsToDelete,
     required bool showErrorMessages,
     required bool isSubmitting,
     required bool loadedCoordinates,
@@ -12,6 +13,7 @@ class ExperienceEditingFormState with _$ExperienceEditingFormState {
 
   factory ExperienceEditingFormState.initial() => ExperienceEditingFormState(
         experience: Experience.empty(),
+        imageUrlsToDelete: [],
         showErrorMessages: false,
         isSubmitting: false,
         loadedCoordinates: false,

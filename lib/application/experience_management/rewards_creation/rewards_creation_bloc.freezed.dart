@@ -581,7 +581,6 @@ abstract class _RewardsCreationState implements RewardsCreationState {
 
   @override
   KtSet<Reward> get rewardsCreated => throw _privateConstructorUsedError;
-
   @override
   @JsonKey(ignore: true)
   _$RewardsCreationStateCopyWith<_RewardsCreationState> get copyWith =>

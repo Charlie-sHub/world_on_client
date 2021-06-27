@@ -115,7 +115,6 @@ class _$TagDtoCopyWithImpl<$Res> implements $TagDtoCopyWith<$Res> {
 abstract class _$TagDtoCopyWith<$Res> implements $TagDtoCopyWith<$Res> {
   factory _$TagDtoCopyWith(_TagDto value, $Res Function(_TagDto) then) =
       __$TagDtoCopyWithImpl<$Res>;
-
   @override
   $Res call(
       {String id,

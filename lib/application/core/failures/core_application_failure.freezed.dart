@@ -73,7 +73,6 @@ class _$CoreApplicationFailureCopyWithImpl<T, $Res>
   _$CoreApplicationFailureCopyWithImpl(this._value, this._then);
 
   final CoreApplicationFailure<T> _value;
-
   // ignore: unused_field
   final $Res Function(CoreApplicationFailure<T>) _then;
 }

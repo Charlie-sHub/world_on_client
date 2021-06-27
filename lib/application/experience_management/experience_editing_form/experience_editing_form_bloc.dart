@@ -22,7 +22,8 @@ import 'package:worldon/domain/core/validation/objects/name.dart';
 import 'package:worldon/domain/core/validation/objects/objective_list.dart';
 import 'package:worldon/domain/core/validation/objects/reward_set.dart';
 import 'package:worldon/domain/core/validation/objects/tag_set.dart';
-import 'package:worldon/domain/experience_management/use_case/edit_experience.dart' as edit_experience;
+import 'package:worldon/domain/experience_management/use_case/edit_experience.dart'
+    as edit_experience;
 
 import '../../../injection.dart';
 
@@ -31,7 +32,8 @@ part 'experience_editing_form_event.dart';
 part 'experience_editing_form_state.dart';
 
 @injectable
-class ExperienceEditingFormBloc extends Bloc<ExperienceEditingFormEvent, ExperienceEditingFormState> {
+class ExperienceEditingFormBloc
+    extends Bloc<ExperienceEditingFormEvent, ExperienceEditingFormState> {
   ExperienceEditingFormBloc() : super(ExperienceEditingFormState.initial());
 
   static const _imageNumberLimit = 15;
@@ -67,7 +69,10 @@ class ExperienceEditingFormBloc extends Bloc<ExperienceEditingFormEvent, Experie
         );
         if (state.experience.imageURLs.length + _filesCount <= _imageNumberLimit) {
           _failureOrUnit = await getIt<edit_experience.EditExperience>()(
-            edit_experience.Params(experience: state.experience),
+            edit_experience.Params(
+              experience: state.experience,
+              originalImageUrls: state.imageUrlsToDelete,
+            ),
           );
         } else {
           yield state.copyWith(
@@ -76,7 +81,8 @@ class ExperienceEditingFormBloc extends Bloc<ExperienceEditingFormEvent, Experie
             failureOrSuccessOption: optionOf(
               left(
                 const Failure.experienceManagementApplication(
-                  ExperienceManagementApplicationFailure.surpassedImageLimit(limit: _imageNumberLimit),
+                  ExperienceManagementApplicationFailure.surpassedImageLimit(
+                      limit: _imageNumberLimit),
                 ),
               ),
             ),

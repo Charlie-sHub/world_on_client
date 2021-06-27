@@ -26,11 +26,13 @@ class ProductionExperienceManagementRepository implements ExperienceManagementRe
   final Logger _logger;
   final _geo = Geoflutterfire();
   final _functions = FirebaseFunctions.instanceFor(region: "europe-west1");
+  final CloudStorageService _cloudStorageService;
   final FirebaseFirestore _firestore;
 
   ProductionExperienceManagementRepository(
     this._firestore,
     this._logger,
+    this._cloudStorageService,
   );
 
   @override
@@ -71,7 +73,10 @@ class ProductionExperienceManagementRepository implements ExperienceManagementRe
   }
 
   @override
-  Future<Either<Failure, Unit>> editExperience(Experience experience) async {
+  Future<Either<Failure, Unit>> editExperience(
+    Experience experience,
+    List<String> imageUrlListToDelete,
+  ) async {
     try {
       final _rewardSet = <Reward>{};
       final _objectiveList = <Objective>[];
@@ -111,6 +116,9 @@ class ProductionExperienceManagementRepository implements ExperienceManagementRe
       await _updateIndexCallable.call(
         <String, dynamic>{"experienceId": _experienceId},
       );
+      for (final _imageUrl in imageUrlListToDelete) {
+        _cloudStorageService.deleteImage(_imageUrl);
+      }
       return right(unit);
     } catch (e) {
       return _onError(e);
@@ -162,7 +170,6 @@ class ProductionExperienceManagementRepository implements ExperienceManagementRe
     Set<Reward> rewardSet,
     List<Objective> objectiveList,
   ) async {
-    final _cloudStorageService = getIt<CloudStorageService>();
     final _imageAssets = experience.imageAssetsOption.getOrElse(() => []);
     for (final _imageAsset in _imageAssets) {
       final _imageName = _imageAsset.name! + experience.id.getOrCrash();

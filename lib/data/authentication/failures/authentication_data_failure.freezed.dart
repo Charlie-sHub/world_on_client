@@ -71,7 +71,6 @@ class _$AuthenticationDataFailureCopyWithImpl<T, $Res>
   _$AuthenticationDataFailureCopyWithImpl(this._value, this._then);
 
   final AuthenticationDataFailure<T> _value;
-
   // ignore: unused_field
   final $Res Function(AuthenticationDataFailure<T>) _then;
 }

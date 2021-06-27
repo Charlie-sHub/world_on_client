@@ -680,7 +680,6 @@ abstract class $InvalidPasswordCopyWith<T, $Res> {
   factory $InvalidPasswordCopyWith(
           InvalidPassword<T> value, $Res Function(InvalidPassword<T>) then) =
       _$InvalidPasswordCopyWithImpl<T, $Res>;
-
   $Res call({String failedValue});
 }
 
@@ -1342,7 +1341,6 @@ abstract class $MultiLineStringCopyWith<T, $Res> {
   factory $MultiLineStringCopyWith(
           MultiLineString<T> value, $Res Function(MultiLineString<T>) then) =
       _$MultiLineStringCopyWithImpl<T, $Res>;
-
   $Res call({String failedValue});
 }
 

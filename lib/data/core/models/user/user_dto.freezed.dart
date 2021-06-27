@@ -96,27 +96,18 @@ const $UserDto = _$UserDtoTearOff();
 /// @nodoc
 mixin _$UserDto {
   String get id => throw _privateConstructorUsedError;
-
   String get name => throw _privateConstructorUsedError;
-
   String get username =>
       throw _privateConstructorUsedError; // Shouldn't this be encrypted in some way?
 // Maybe it shouldn't even be part of the dto at all, as Firebase handles it at login time
   String get password => throw _privateConstructorUsedError;
-
   String get email => throw _privateConstructorUsedError;
-
   @ServerTimestampConverter()
   DateTime get birthday => throw _privateConstructorUsedError;
-
   String get description => throw _privateConstructorUsedError;
-
   String get imageURL => throw _privateConstructorUsedError;
-
   int get level => throw _privateConstructorUsedError;
-
   int get experiencePoints => throw _privateConstructorUsedError;
-
   bool get privacy => throw _privateConstructorUsedError;
   bool get adminPowers => throw _privateConstructorUsedError;
   bool get enabled => throw _privateConstructorUsedError;
@@ -150,7 +141,6 @@ mixin _$UserDto {
 abstract class $UserDtoCopyWith<$Res> {
   factory $UserDtoCopyWith(UserDto value, $Res Function(UserDto) then) =
       _$UserDtoCopyWithImpl<$Res>;
-
   $Res call(
       {String id,
       String name,
@@ -371,7 +361,6 @@ class _$UserDtoCopyWithImpl<$Res> implements $UserDtoCopyWith<$Res> {
 abstract class _$UserDtoCopyWith<$Res> implements $UserDtoCopyWith<$Res> {
   factory _$UserDtoCopyWith(_UserDto value, $Res Function(_UserDto) then) =
       __$UserDtoCopyWithImpl<$Res>;
-
   @override
   $Res call(
       {String id,
@@ -743,7 +732,8 @@ class _$_UserDto extends _UserDto {
                     .equals(other.experiencesToDoIds, experiencesToDoIds)) &&
             (identical(other.devices, devices) ||
                 const DeepCollectionEquality().equals(other.devices, devices)) &&
-            (identical(other.systems, systems) || const DeepCollectionEquality().equals(other.systems, systems)) &&
+            (identical(other.systems, systems) ||
+                const DeepCollectionEquality().equals(other.systems, systems)) &&
             (identical(other.items, items) || const DeepCollectionEquality().equals(other.items, items)) &&
             (identical(other.coins, coins) || const DeepCollectionEquality().equals(other.coins, coins)) &&
             (identical(other.followersAmount, followersAmount) || const DeepCollectionEquality().equals(other.followersAmount, followersAmount)) &&

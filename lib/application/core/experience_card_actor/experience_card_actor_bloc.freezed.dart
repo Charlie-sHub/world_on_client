@@ -95,7 +95,6 @@ class _$ExperienceCardActorEventCopyWithImpl<$Res>
   _$ExperienceCardActorEventCopyWithImpl(this._value, this._then);
 
   final ExperienceCardActorEvent _value;
-
   // ignore: unused_field
   final $Res Function(ExperienceCardActorEvent) _then;
 
@@ -375,7 +374,6 @@ abstract class _$DismissedExperienceFromLogCopyWith<$Res>
   factory _$DismissedExperienceFromLogCopyWith(
           _DismissedExperienceFromLog value, $Res Function(_DismissedExperienceFromLog) then) =
       __$DismissedExperienceFromLogCopyWithImpl<$Res>;
-
   @override
   $Res call({Experience experience});
 
@@ -608,7 +606,6 @@ class _$ExperienceCardActorStateCopyWithImpl<$Res>
   _$ExperienceCardActorStateCopyWithImpl(this._value, this._then);
 
   final ExperienceCardActorState _value;
-
   // ignore: unused_field
   final $Res Function(ExperienceCardActorState) _then;
 }
@@ -1407,7 +1404,6 @@ abstract class _$DismissalFailureCopyWith<$Res> {
   factory _$DismissalFailureCopyWith(
           _DismissalFailure value, $Res Function(_DismissalFailure) then) =
       __$DismissalFailureCopyWithImpl<$Res>;
-
   $Res call({Failure<dynamic> failure});
 
   $FailureCopyWith<dynamic, $Res> get failure;

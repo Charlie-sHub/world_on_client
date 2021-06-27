@@ -123,7 +123,6 @@ class _$AchievementManagementFormEventCopyWithImpl<$Res>
   _$AchievementManagementFormEventCopyWithImpl(this._value, this._then);
 
   final AchievementManagementFormEvent _value;
-
   // ignore: unused_field
   final $Res Function(AchievementManagementFormEvent) _then;
 }
@@ -399,7 +398,6 @@ abstract class _$DescriptionChangedCopyWith<$Res> {
   factory _$DescriptionChangedCopyWith(
           _DescriptionChanged value, $Res Function(_DescriptionChanged) then) =
       __$DescriptionChangedCopyWithImpl<$Res>;
-
   $Res call({String description});
 }
 
@@ -525,7 +523,6 @@ abstract class _DescriptionChanged implements AchievementManagementFormEvent {
   const factory _DescriptionChanged(String description) = _$_DescriptionChanged;
 
   String get description => throw _privateConstructorUsedError;
-
   @JsonKey(ignore: true)
   _$DescriptionChangedCopyWith<_DescriptionChanged> get copyWith =>
       throw _privateConstructorUsedError;
@@ -1099,7 +1096,6 @@ class _$AchievementManagementFormStateCopyWithImpl<$Res>
   _$AchievementManagementFormStateCopyWithImpl(this._value, this._then);
 
   final AchievementManagementFormState _value;
-
   // ignore: unused_field
   final $Res Function(AchievementManagementFormState) _then;
 

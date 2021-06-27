@@ -93,7 +93,6 @@ class _$ExperienceLikeActorEventCopyWithImpl<$Res>
   _$ExperienceLikeActorEventCopyWithImpl(this._value, this._then);
 
   final ExperienceLikeActorEvent _value;
-
   // ignore: unused_field
   final $Res Function(ExperienceLikeActorEvent) _then;
 
@@ -342,7 +341,6 @@ abstract class _Liked implements ExperienceLikeActorEvent {
 
   @override
   UniqueId get experienceId => throw _privateConstructorUsedError;
-
   @override
   @JsonKey(ignore: true)
   _$LikedCopyWith<_Liked> get copyWith => throw _privateConstructorUsedError;
@@ -579,7 +577,6 @@ class _$ExperienceLikeActorStateCopyWithImpl<$Res>
   _$ExperienceLikeActorStateCopyWithImpl(this._value, this._then);
 
   final ExperienceLikeActorState _value;
-
   // ignore: unused_field
   final $Res Function(ExperienceLikeActorState) _then;
 }

@@ -214,7 +214,6 @@ abstract class $DomainLayerErrorCopyWith<T, $Res> {
   factory $DomainLayerErrorCopyWith(
           DomainLayerError<T> value, $Res Function(DomainLayerError<T>) then) =
       _$DomainLayerErrorCopyWithImpl<T, $Res>;
-
   $Res call({String errorString});
 }
 

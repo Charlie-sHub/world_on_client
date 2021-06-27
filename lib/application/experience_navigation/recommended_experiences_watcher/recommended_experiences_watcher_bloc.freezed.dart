@@ -75,7 +75,6 @@ class _$RecommendedExperiencesWatcherEventCopyWithImpl<$Res>
   _$RecommendedExperiencesWatcherEventCopyWithImpl(this._value, this._then);
 
   final RecommendedExperiencesWatcherEvent _value;
-
   // ignore: unused_field
   final $Res Function(RecommendedExperiencesWatcherEvent) _then;
 }
@@ -368,7 +367,6 @@ class _$RecommendedExperiencesWatcherStateCopyWithImpl<$Res>
   _$RecommendedExperiencesWatcherStateCopyWithImpl(this._value, this._then);
 
   final RecommendedExperiencesWatcherState _value;
-
   // ignore: unused_field
   final $Res Function(RecommendedExperiencesWatcherState) _then;
 }

@@ -75,7 +75,6 @@ class _$SearchTagsByNameWatcherEventCopyWithImpl<$Res>
   _$SearchTagsByNameWatcherEventCopyWithImpl(this._value, this._then);
 
   final SearchTagsByNameWatcherEvent _value;
-
   // ignore: unused_field
   final $Res Function(SearchTagsByNameWatcherEvent) _then;
 }
@@ -85,7 +84,6 @@ abstract class _$WatchTagsFoundByNameStartedCopyWith<$Res> {
   factory _$WatchTagsFoundByNameStartedCopyWith(
           _WatchTagsFoundByNameStarted value, $Res Function(_WatchTagsFoundByNameStarted) then) =
       __$WatchTagsFoundByNameStartedCopyWithImpl<$Res>;
-
   $Res call({SearchTerm searchTerm});
 }
 
@@ -390,7 +388,6 @@ class _$SearchTagsByNameWatcherStateCopyWithImpl<$Res>
   _$SearchTagsByNameWatcherStateCopyWithImpl(this._value, this._then);
 
   final SearchTagsByNameWatcherState _value;
-
   // ignore: unused_field
   final $Res Function(SearchTagsByNameWatcherState) _then;
 }

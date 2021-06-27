@@ -63,7 +63,6 @@ abstract class $ExperienceCardLikeCheckEventCopyWith<$Res> {
   factory $ExperienceCardLikeCheckEventCopyWith(
           ExperienceCardLikeCheckEvent value, $Res Function(ExperienceCardLikeCheckEvent) then) =
       _$ExperienceCardLikeCheckEventCopyWithImpl<$Res>;
-
   $Res call({Experience experience});
 
   $ExperienceCopyWith<$Res> get experience;
@@ -75,7 +74,6 @@ class _$ExperienceCardLikeCheckEventCopyWithImpl<$Res>
   _$ExperienceCardLikeCheckEventCopyWithImpl(this._value, this._then);
 
   final ExperienceCardLikeCheckEvent _value;
-
   // ignore: unused_field
   final $Res Function(ExperienceCardLikeCheckEvent) _then;
 
@@ -281,7 +279,6 @@ class _$ExperienceCardLikeCheckStateCopyWithImpl<$Res>
   _$ExperienceCardLikeCheckStateCopyWithImpl(this._value, this._then);
 
   final ExperienceCardLikeCheckState _value;
-
   // ignore: unused_field
   final $Res Function(ExperienceCardLikeCheckState) _then;
 }

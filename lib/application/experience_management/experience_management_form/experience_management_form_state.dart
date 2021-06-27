@@ -4,6 +4,7 @@ part of 'experience_management_form_bloc.dart';
 class ExperienceManagementFormState with _$ExperienceManagementFormState {
   const factory ExperienceManagementFormState({
     required Experience experience,
+    required List<String> originalImageUrls,
     required bool showErrorMessages,
     required bool isEditing,
     required bool isSubmitting,
@@ -13,6 +14,7 @@ class ExperienceManagementFormState with _$ExperienceManagementFormState {
 
   factory ExperienceManagementFormState.initial() => ExperienceManagementFormState(
         experience: Experience.empty(),
+        originalImageUrls: [],
         showErrorMessages: false,
         isEditing: false,
         isSubmitting: false,

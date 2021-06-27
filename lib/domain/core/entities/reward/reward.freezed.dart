@@ -104,7 +104,6 @@ class _$RewardCopyWithImpl<$Res> implements $RewardCopyWith<$Res> {
 abstract class _$RewardCopyWith<$Res> implements $RewardCopyWith<$Res> {
   factory _$RewardCopyWith(_Reward value, $Res Function(_Reward) then) =
       __$RewardCopyWithImpl<$Res>;
-
   @override
   $Res call(
       {UniqueId id,
@@ -219,18 +218,14 @@ abstract class _Reward extends Reward {
       required EntityDescription description,
       required String imageURL,
       required Option<File> imageFile}) = _$_Reward;
-
   const _Reward._() : super._();
 
   @override
   UniqueId get id => throw _privateConstructorUsedError;
-
   @override
   Name get name => throw _privateConstructorUsedError;
-
   @override
   EntityDescription get description => throw _privateConstructorUsedError;
-
   @override
   String get imageURL => throw _privateConstructorUsedError;
   @override

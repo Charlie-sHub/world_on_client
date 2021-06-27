@@ -17,7 +17,10 @@ class DevelopmentExperienceManagementRepository implements ExperienceManagementR
   }
 
   @override
-  Future<Either<Failure, Unit>> editExperience(Experience experience) {
+  Future<Either<Failure, Unit>> editExperience(
+    Experience experience,
+    List<String> imageUrlListToDelete,
+  ) {
     throw UnimplementedError();
   }
 

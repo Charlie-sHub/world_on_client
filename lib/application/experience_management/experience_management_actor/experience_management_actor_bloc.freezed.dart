@@ -85,7 +85,6 @@ class _$ExperienceManagementActorEventCopyWithImpl<$Res>
   _$ExperienceManagementActorEventCopyWithImpl(this._value, this._then);
 
   final ExperienceManagementActorEvent _value;
-
   // ignore: unused_field
   final $Res Function(ExperienceManagementActorEvent) _then;
 
@@ -440,7 +439,6 @@ class _$ExperienceManagementActorStateCopyWithImpl<$Res>
   _$ExperienceManagementActorStateCopyWithImpl(this._value, this._then);
 
   final ExperienceManagementActorState _value;
-
   // ignore: unused_field
   final $Res Function(ExperienceManagementActorState) _then;
 }

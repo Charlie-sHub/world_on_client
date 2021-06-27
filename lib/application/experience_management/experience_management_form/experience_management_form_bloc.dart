@@ -28,23 +28,28 @@ import 'package:worldon/domain/core/validation/objects/name.dart';
 import 'package:worldon/domain/core/validation/objects/objective_list.dart';
 import 'package:worldon/domain/core/validation/objects/reward_set.dart';
 import 'package:worldon/domain/core/validation/objects/tag_set.dart';
-import 'package:worldon/domain/experience_management/use_case/create_experience.dart' as create_experience;
-import 'package:worldon/domain/experience_management/use_case/edit_experience.dart' as edit_experience;
+import 'package:worldon/domain/experience_management/use_case/create_experience.dart'
+    as create_experience;
+import 'package:worldon/domain/experience_management/use_case/edit_experience.dart'
+    as edit_experience;
 
 import '../../../injection.dart';
 
 part 'experience_management_form_bloc.freezed.dart';
-part 'experience_management_form_event.dart';
+part 'experience_management_form_event.dart';xperience_management_form_event.dart';
+
 part 'experience_management_form_state.dart';
 
 @injectable
-class ExperienceManagementFormBloc extends Bloc<ExperienceManagementFormEvent, ExperienceManagementFormState> {
+class ExperienceManagementFormBloc
+    extends Bloc<ExperienceManagementFormEvent, ExperienceManagementFormState> {
   ExperienceManagementFormBloc() : super(ExperienceManagementFormState.initial());
 
   static const _imageNumberLimit = 15;
 
   @override
-  Stream<ExperienceManagementFormState> mapEventToState(ExperienceManagementFormEvent event) async* {
+  Stream<ExperienceManagementFormState> mapEventToState(
+      ExperienceManagementFormEvent event) async* {
     yield* event.map(
       initialized: _onInitialized,
       titleChanged: _onTitleChanged,
@@ -74,7 +79,10 @@ class ExperienceManagementFormBloc extends Bloc<ExperienceManagementFormEvent, E
       if (state.experience.imageURLs.length + _filesCount <= _imageNumberLimit) {
         if (state.isEditing && state.experience.imageURLs.length + _filesCount >= 1) {
           _failureOrUnit = await getIt<edit_experience.EditExperience>()(
-            edit_experience.Params(experience: state.experience),
+            edit_experience.Params(
+              experience: state.experience,
+              originalImageUrls: state.originalImageUrls,
+            ),
           );
         } else {
           if (_filesCount >= 1) {
@@ -90,7 +98,8 @@ class ExperienceManagementFormBloc extends Bloc<ExperienceManagementFormEvent, E
           failureOrSuccessOption: optionOf(
             left(
               const Failure.experienceManagementApplication(
-                ExperienceManagementApplicationFailure.surpassedImageLimit(limit: _imageNumberLimit),
+                ExperienceManagementApplicationFailure.surpassedImageLimit(
+                    limit: _imageNumberLimit),
               ),
             ),
           ),
@@ -218,7 +227,8 @@ class ExperienceManagementFormBloc extends Bloc<ExperienceManagementFormEvent, E
         // I don't want my experiences to be promoted as most if not all of them will be tests
         // Maybe other developers will need to be excluded too in the future
         final _isNotCarlos = _currentUser.id.getOrCrash() != "RmdTGeylpDVVcyTVNbe6Ngj3DRV2";
-        final _isPromoted = _currentUser.adminPowers && _isNotCarlos || _currentUser.promotionPlan.isUsable;
+        final _isPromoted =
+            _currentUser.adminPowers && _isNotCarlos || _currentUser.promotionPlan.isUsable;
         return state.copyWith(
           experience: Experience.empty().copyWith(
             creator: SimpleUser.fromUser(_currentUser),
@@ -228,11 +238,27 @@ class ExperienceManagementFormBloc extends Bloc<ExperienceManagementFormEvent, E
           loadedCoordinates: true,
         );
       },
-      (experience) => state.copyWith(
-        experience: experience,
-        isEditing: true,
-        loadedCoordinates: true,
-      ),
+      (experience) {
+        final _imageList = experience.imageURLs.toList();
+        final _objectivesImageUrls = experience.objectives.getOrCrash().dart.map(
+              (_objective) => _objective.imageURL,
+            );
+        final _rewardsImageUrls = experience.rewards.getOrCrash().dart.map(
+              (_reward) => _reward.imageURL,
+            );
+        _imageList.addAll(
+          _objectivesImageUrls,
+        );
+        _imageList.addAll(
+          _rewardsImageUrls,
+        );
+        return state.copyWith(
+          experience: experience,
+          originalImageUrls: _imageList,
+          isEditing: true,
+          loadedCoordinates: true,
+        );
+      },
     );
   }
 }

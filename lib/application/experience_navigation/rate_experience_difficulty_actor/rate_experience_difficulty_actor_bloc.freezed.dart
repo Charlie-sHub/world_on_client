@@ -76,7 +76,6 @@ class _$RateExperienceDifficultyActorEventCopyWithImpl<$Res>
   _$RateExperienceDifficultyActorEventCopyWithImpl(this._value, this._then);
 
   final RateExperienceDifficultyActorEvent _value;
-
   // ignore: unused_field
   final $Res Function(RateExperienceDifficultyActorEvent) _then;
 }
@@ -86,7 +85,6 @@ abstract class _$DifficultyChangedCopyWith<$Res> {
   factory _$DifficultyChangedCopyWith(
           _DifficultyChanged value, $Res Function(_DifficultyChanged) then) =
       __$DifficultyChangedCopyWithImpl<$Res>;
-
   $Res call({int difficultyRating});
 }
 
@@ -369,7 +367,6 @@ class _$RateExperienceDifficultyActorStateCopyWithImpl<$Res>
   _$RateExperienceDifficultyActorStateCopyWithImpl(this._value, this._then);
 
   final RateExperienceDifficultyActorState _value;
-
   // ignore: unused_field
   final $Res Function(RateExperienceDifficultyActorState) _then;
 

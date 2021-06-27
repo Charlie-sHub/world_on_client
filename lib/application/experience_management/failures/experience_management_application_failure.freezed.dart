@@ -64,7 +64,6 @@ abstract class $ExperienceManagementApplicationFailureCopyWith<T, $Res> {
           ExperienceManagementApplicationFailure<T> value,
           $Res Function(ExperienceManagementApplicationFailure<T>) then) =
       _$ExperienceManagementApplicationFailureCopyWithImpl<T, $Res>;
-
   $Res call({int limit});
 }
 
@@ -74,7 +73,6 @@ class _$ExperienceManagementApplicationFailureCopyWithImpl<T, $Res>
   _$ExperienceManagementApplicationFailureCopyWithImpl(this._value, this._then);
 
   final ExperienceManagementApplicationFailure<T> _value;
-
   // ignore: unused_field
   final $Res Function(ExperienceManagementApplicationFailure<T>) _then;
 

@@ -75,7 +75,6 @@ class _$TagManagementActorEventCopyWithImpl<$Res>
   _$TagManagementActorEventCopyWithImpl(this._value, this._then);
 
   final TagManagementActorEvent _value;
-
   // ignore: unused_field
   final $Res Function(TagManagementActorEvent) _then;
 
@@ -289,7 +288,6 @@ class _$TagManagementActorStateCopyWithImpl<$Res>
   _$TagManagementActorStateCopyWithImpl(this._value, this._then);
 
   final TagManagementActorState _value;
-
   // ignore: unused_field
   final $Res Function(TagManagementActorState) _then;
 }

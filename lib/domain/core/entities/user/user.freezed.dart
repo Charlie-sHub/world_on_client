@@ -727,7 +727,8 @@ class _$_User extends _User {
             (identical(other.experiencesToDoIds, experiencesToDoIds) ||
                 const DeepCollectionEquality()
                     .equals(other.experiencesToDoIds, experiencesToDoIds)) &&
-            (identical(other.devices, devices) || const DeepCollectionEquality().equals(other.devices, devices)) &&
+            (identical(other.devices, devices) ||
+                const DeepCollectionEquality().equals(other.devices, devices)) &&
             (identical(other.systems, systems) || const DeepCollectionEquality().equals(other.systems, systems)) &&
             (identical(other.items, items) || const DeepCollectionEquality().equals(other.items, items)) &&
             (identical(other.coins, coins) || const DeepCollectionEquality().equals(other.coins, coins)) &&

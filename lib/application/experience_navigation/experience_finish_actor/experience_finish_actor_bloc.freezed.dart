@@ -75,7 +75,6 @@ class _$ExperienceFinishActorEventCopyWithImpl<$Res>
   _$ExperienceFinishActorEventCopyWithImpl(this._value, this._then);
 
   final ExperienceFinishActorEvent _value;
-
   // ignore: unused_field
   final $Res Function(ExperienceFinishActorEvent) _then;
 
@@ -105,7 +104,6 @@ abstract class _$FinishedExperienceCopyWith<$Res>
   factory _$FinishedExperienceCopyWith(
           _FinishedExperience value, $Res Function(_FinishedExperience) then) =
       __$FinishedExperienceCopyWithImpl<$Res>;
-
   @override
   $Res call({Experience experience});
 
@@ -298,7 +296,6 @@ class _$ExperienceFinishActorStateCopyWithImpl<$Res>
   _$ExperienceFinishActorStateCopyWithImpl(this._value, this._then);
 
   final ExperienceFinishActorState _value;
-
   // ignore: unused_field
   final $Res Function(ExperienceFinishActorState) _then;
 }

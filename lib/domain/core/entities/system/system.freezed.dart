@@ -88,7 +88,6 @@ class _$SystemCopyWithImpl<$Res> implements $SystemCopyWith<$Res> {
 abstract class _$SystemCopyWith<$Res> implements $SystemCopyWith<$Res> {
   factory _$SystemCopyWith(_System value, $Res Function(_System) then) =
       __$SystemCopyWithImpl<$Res>;
-
   @override
   $Res call({UniqueId id, String name, String type, String company});
 }
@@ -182,18 +181,14 @@ abstract class _System extends System {
       required String name,
       required String type,
       required String company}) = _$_System;
-
   const _System._() : super._();
 
   @override
   UniqueId get id => throw _privateConstructorUsedError;
-
   @override
   String get name => throw _privateConstructorUsedError;
-
   @override
   String get type => throw _privateConstructorUsedError;
-
   @override
   String get company => throw _privateConstructorUsedError;
   @override

@@ -63,7 +63,6 @@ class _$UserProfileButtonWatcherEventCopyWithImpl<$Res>
   _$UserProfileButtonWatcherEventCopyWithImpl(this._value, this._then);
 
   final UserProfileButtonWatcherEvent _value;
-
   // ignore: unused_field
   final $Res Function(UserProfileButtonWatcherEvent) _then;
 }
@@ -224,7 +223,6 @@ class _$UserProfileButtonWatcherStateCopyWithImpl<$Res>
   _$UserProfileButtonWatcherStateCopyWithImpl(this._value, this._then);
 
   final UserProfileButtonWatcherState _value;
-
   // ignore: unused_field
   final $Res Function(UserProfileButtonWatcherState) _then;
 }

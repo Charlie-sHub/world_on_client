@@ -87,7 +87,6 @@ class _$StoreNavigationActorEventCopyWithImpl<$Res>
   _$StoreNavigationActorEventCopyWithImpl(this._value, this._then);
 
   final StoreNavigationActorEvent _value;
-
   // ignore: unused_field
   final $Res Function(StoreNavigationActorEvent) _then;
 }
@@ -534,7 +533,6 @@ class _$StoreNavigationActorStateCopyWithImpl<$Res>
   _$StoreNavigationActorStateCopyWithImpl(this._value, this._then);
 
   final StoreNavigationActorState _value;
-
   // ignore: unused_field
   final $Res Function(StoreNavigationActorState) _then;
 }

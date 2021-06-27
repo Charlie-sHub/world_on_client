@@ -93,7 +93,6 @@ class _$ShareExperienceInternallyEventCopyWithImpl<$Res>
   _$ShareExperienceInternallyEventCopyWithImpl(this._value, this._then);
 
   final ShareExperienceInternallyEvent _value;
-
   // ignore: unused_field
   final $Res Function(ShareExperienceInternallyEvent) _then;
 }
@@ -626,7 +625,6 @@ class _$ShareExperienceInternallyStateCopyWithImpl<$Res>
   _$ShareExperienceInternallyStateCopyWithImpl(this._value, this._then);
 
   final ShareExperienceInternallyState _value;
-
   // ignore: unused_field
   final $Res Function(ShareExperienceInternallyState) _then;
 

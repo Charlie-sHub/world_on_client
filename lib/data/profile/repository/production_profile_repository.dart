@@ -141,12 +141,15 @@ class ProductionProfileRepository implements ProfileRepositoryInterface {
         },
         (_file) async {
           final _cloudStorageService = getIt<CloudStorageService>();
-          _cloudStorageService.deleteImage(user.imageURL);
           _imageUrl = await _cloudStorageService.uploadFileImage(
             imageToUpload: _file!,
             folder: StorageFolder.users,
             name: _userId,
           );
+          // Deleting the old image of the user
+          if (_imageUrl != "") {
+            _cloudStorageService.deleteImage(user.imageURL);
+          }
         },
       );
       final _jsonUser = UserDto.fromDomain(

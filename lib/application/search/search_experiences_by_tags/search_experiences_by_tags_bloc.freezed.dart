@@ -76,7 +76,6 @@ class _$SearchExperiencesByTagsEventCopyWithImpl<$Res>
   _$SearchExperiencesByTagsEventCopyWithImpl(this._value, this._then);
 
   final SearchExperiencesByTagsEvent _value;
-
   // ignore: unused_field
   final $Res Function(SearchExperiencesByTagsEvent) _then;
 }
@@ -402,7 +401,6 @@ class _$SearchExperiencesByTagsStateCopyWithImpl<$Res>
   _$SearchExperiencesByTagsStateCopyWithImpl(this._value, this._then);
 
   final SearchExperiencesByTagsState _value;
-
   // ignore: unused_field
   final $Res Function(SearchExperiencesByTagsState) _then;
 }

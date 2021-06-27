@@ -51,7 +51,6 @@ mixin _$Message {
 abstract class $MessageCopyWith<$Res> {
   factory $MessageCopyWith(Message value, $Res Function(Message) then) =
       _$MessageCopyWithImpl<$Res>;
-
   $Res call(
       {UniqueId id,
       SimpleUser sender,
@@ -114,7 +113,6 @@ class _$MessageCopyWithImpl<$Res> implements $MessageCopyWith<$Res> {
 abstract class _$MessageCopyWith<$Res> implements $MessageCopyWith<$Res> {
   factory _$MessageCopyWith(_Message value, $Res Function(_Message) then) =
       __$MessageCopyWithImpl<$Res>;
-
   @override
   $Res call(
       {UniqueId id,
@@ -232,18 +230,14 @@ abstract class _Message extends Message {
       required UniqueId receiverId,
       required MessageContent content,
       required PastDate creationDate}) = _$_Message;
-
   const _Message._() : super._();
 
   @override
   UniqueId get id => throw _privateConstructorUsedError;
-
   @override
   SimpleUser get sender => throw _privateConstructorUsedError;
-
   @override
   UniqueId get receiverId => throw _privateConstructorUsedError;
-
   @override
   MessageContent get content => throw _privateConstructorUsedError;
 

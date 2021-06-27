@@ -49,7 +49,6 @@ mixin _$ObjectiveDto {
   String get imageURL => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-
   @JsonKey(ignore: true)
   $ObjectiveDtoCopyWith<ObjectiveDto> get copyWith => throw _privateConstructorUsedError;
 }

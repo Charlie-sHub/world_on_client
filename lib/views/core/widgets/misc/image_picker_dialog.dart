@@ -61,6 +61,8 @@ class ImagePickerDialog extends StatelessWidget {
     final _imagePicked = await ImagePicker().getImage(
       source: source,
       imageQuality: 30,
+      maxHeight: 1440,
+      maxWidth: 2560,
     );
     if (_imagePicked != null) {
       return File(_imagePicked.path);

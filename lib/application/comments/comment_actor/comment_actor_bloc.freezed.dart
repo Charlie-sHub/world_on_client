@@ -62,7 +62,6 @@ abstract class $CommentActorEventCopyWith<$Res> {
   factory $CommentActorEventCopyWith(
           CommentActorEvent value, $Res Function(CommentActorEvent) then) =
       _$CommentActorEventCopyWithImpl<$Res>;
-
   $Res call({Comment comment});
 
   $CommentCopyWith<$Res> get comment;

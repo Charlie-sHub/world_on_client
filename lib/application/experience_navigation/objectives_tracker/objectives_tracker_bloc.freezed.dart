@@ -646,13 +646,10 @@ abstract class _ObjectivesTrackerState implements ObjectivesTrackerState {
 
   @override
   KtList<Objective> get objectivesToDo => throw _privateConstructorUsedError;
-
   @override
   UniqueId get experienceId => throw _privateConstructorUsedError;
-
   @override
   bool get isFinished => throw _privateConstructorUsedError;
-
   @override
   @JsonKey(ignore: true)
   _$ObjectivesTrackerStateCopyWith<_ObjectivesTrackerState> get copyWith =>

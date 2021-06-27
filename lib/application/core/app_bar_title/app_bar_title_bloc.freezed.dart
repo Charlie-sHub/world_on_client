@@ -2844,7 +2844,6 @@ abstract class _Following implements AppBarTitleState {
 abstract class _$UsernameCopyWith<$Res> {
   factory _$UsernameCopyWith(_Username value, $Res Function(_Username) then) =
       __$UsernameCopyWithImpl<$Res>;
-
   $Res call({String username});
 }
 

@@ -74,7 +74,6 @@ class _$AchievementManagementWatcherEventCopyWithImpl<$Res>
   _$AchievementManagementWatcherEventCopyWithImpl(this._value, this._then);
 
   final AchievementManagementWatcherEvent _value;
-
   // ignore: unused_field
   final $Res Function(AchievementManagementWatcherEvent) _then;
 }
@@ -364,7 +363,6 @@ class _$AchievementManagementWatcherStateCopyWithImpl<$Res>
   _$AchievementManagementWatcherStateCopyWithImpl(this._value, this._then);
 
   final AchievementManagementWatcherState _value;
-
   // ignore: unused_field
   final $Res Function(AchievementManagementWatcherState) _then;
 }

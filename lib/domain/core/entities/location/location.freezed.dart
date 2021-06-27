@@ -213,18 +213,14 @@ abstract class _Location extends Location {
       required String country,
       required String postalCode,
       required Set<Experience> experiences}) = _$_Location;
-
   const _Location._() : super._();
 
   @override
   UniqueId get id => throw _privateConstructorUsedError;
-
   @override
   String get city => throw _privateConstructorUsedError;
-
   @override
   String get country => throw _privateConstructorUsedError;
-
   @override
   String get postalCode => throw _privateConstructorUsedError;
 

@@ -501,7 +501,6 @@ abstract class $GeoLocationErrorCopyWith<T, $Res> {
   factory $GeoLocationErrorCopyWith(
           GeoLocationError<T> value, $Res Function(GeoLocationError<T>) then) =
       _$GeoLocationErrorCopyWithImpl<T, $Res>;
-
   $Res call({String errorString});
 }
 
@@ -909,7 +908,6 @@ abstract class $NameAlreadyInUseCopyWith<T, $Res> {
   factory $NameAlreadyInUseCopyWith(
           NameAlreadyInUse<T> value, $Res Function(NameAlreadyInUse<T>) then) =
       _$NameAlreadyInUseCopyWithImpl<T, $Res>;
-
   $Res call({Name name});
 }
 
@@ -1034,7 +1032,6 @@ abstract class NameAlreadyInUse<T> implements CoreDataFailure<T> {
   const factory NameAlreadyInUse({required Name name}) = _$NameAlreadyInUse<T>;
 
   Name get name => throw _privateConstructorUsedError;
-
   @JsonKey(ignore: true)
   $NameAlreadyInUseCopyWith<T, NameAlreadyInUse<T>> get copyWith =>
       throw _privateConstructorUsedError;

@@ -82,7 +82,6 @@ abstract class _$SearchTermChangedCopyWith<$Res> {
   factory _$SearchTermChangedCopyWith(
           _SearchTermChanged value, $Res Function(_SearchTermChanged) then) =
       __$SearchTermChangedCopyWithImpl<$Res>;
-
   $Res call({String searchTermString});
 }
 
@@ -477,7 +476,6 @@ abstract class _SearchByNameFormState implements SearchByNameFormState {
 
   @override
   SearchTerm get searchTerm => throw _privateConstructorUsedError;
-
   @override
   bool get showErrorMessages => throw _privateConstructorUsedError;
 

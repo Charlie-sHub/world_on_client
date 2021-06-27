@@ -366,7 +366,6 @@ abstract class _$ObjectivesChangedCopyWith<$Res> {
   factory _$ObjectivesChangedCopyWith(
           _ObjectivesChanged value, $Res Function(_ObjectivesChanged) then) =
       __$ObjectivesChangedCopyWithImpl<$Res>;
-
   $Res call({KtList<Objective> objectives});
 }
 
@@ -682,16 +681,12 @@ abstract class _MapControllerState implements MapControllerState {
 
   @override
   Coordinates get coordinates => throw _privateConstructorUsedError;
-
   @override
   KtList<Objective> get objectives => throw _privateConstructorUsedError;
-
   @override
   double get zoom => throw _privateConstructorUsedError;
-
   @override
   bool get loadedCoordinates => throw _privateConstructorUsedError;
-
   @override
   @JsonKey(ignore: true)
   _$MapControllerStateCopyWith<_MapControllerState> get copyWith =>

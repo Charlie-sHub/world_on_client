@@ -40,7 +40,6 @@ mixin _$Options {
 abstract class $OptionsCopyWith<$Res> {
   factory $OptionsCopyWith(Options value, $Res Function(Options) then) =
       _$OptionsCopyWithImpl<$Res>;
-
   $Res call({UniqueId id, String languageCode});
 }
 
@@ -74,7 +73,6 @@ class _$OptionsCopyWithImpl<$Res> implements $OptionsCopyWith<$Res> {
 abstract class _$OptionsCopyWith<$Res> implements $OptionsCopyWith<$Res> {
   factory _$OptionsCopyWith(_Options value, $Res Function(_Options) then) =
       __$OptionsCopyWithImpl<$Res>;
-
   @override
   $Res call({UniqueId id, String languageCode});
 }

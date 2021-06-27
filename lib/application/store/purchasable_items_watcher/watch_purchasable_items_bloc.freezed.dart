@@ -73,7 +73,6 @@ class _$WatchPurchasableItemsEventCopyWithImpl<$Res>
   _$WatchPurchasableItemsEventCopyWithImpl(this._value, this._then);
 
   final WatchPurchasableItemsEvent _value;
-
   // ignore: unused_field
   final $Res Function(WatchPurchasableItemsEvent) _then;
 }
@@ -356,7 +355,6 @@ class _$WatchPurchasableItemsStateCopyWithImpl<$Res>
   _$WatchPurchasableItemsStateCopyWithImpl(this._value, this._then);
 
   final WatchPurchasableItemsState _value;
-
   // ignore: unused_field
   final $Res Function(WatchPurchasableItemsState) _then;
 }

@@ -79,7 +79,6 @@ class _$SearchExperiencesByNameWatcherEventCopyWithImpl<$Res>
   _$SearchExperiencesByNameWatcherEventCopyWithImpl(this._value, this._then);
 
   final SearchExperiencesByNameWatcherEvent _value;
-
   // ignore: unused_field
   final $Res Function(SearchExperiencesByNameWatcherEvent) _then;
 }
@@ -410,7 +409,6 @@ class _$SearchExperiencesByNameWatcherStateCopyWithImpl<$Res>
   _$SearchExperiencesByNameWatcherStateCopyWithImpl(this._value, this._then);
 
   final SearchExperiencesByNameWatcherState _value;
-
   // ignore: unused_field
   final $Res Function(SearchExperiencesByNameWatcherState) _then;
 }

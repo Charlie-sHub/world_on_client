@@ -222,7 +222,6 @@ abstract class _$DescriptionChangedCopyWith<$Res> {
   factory _$DescriptionChangedCopyWith(
           _DescriptionChanged value, $Res Function(_DescriptionChanged) then) =
       __$DescriptionChangedCopyWithImpl<$Res>;
-
   $Res call({String description});
 }
 
@@ -335,7 +334,6 @@ abstract class _DescriptionChanged implements RewardFormEvent {
   const factory _DescriptionChanged(String description) = _$_DescriptionChanged;
 
   String get description => throw _privateConstructorUsedError;
-
   @JsonKey(ignore: true)
   _$DescriptionChangedCopyWith<_DescriptionChanged> get copyWith =>
       throw _privateConstructorUsedError;
@@ -725,7 +723,6 @@ abstract class _RewardFormState implements RewardFormState {
 
   @override
   Reward get reward => throw _privateConstructorUsedError;
-
   @override
   bool get showErrorMessages => throw _privateConstructorUsedError;
 

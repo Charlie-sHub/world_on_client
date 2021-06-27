@@ -189,15 +189,12 @@ abstract class _PrimitiveReward extends PrimitiveReward {
       required String name,
       required String description,
       required File? imageFile}) = _$_PrimitiveReward;
-
   const _PrimitiveReward._() : super._();
 
   @override
   UniqueId get id => throw _privateConstructorUsedError;
-
   @override
   String get name => throw _privateConstructorUsedError;
-
   @override
   String get description => throw _privateConstructorUsedError;
 

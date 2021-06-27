@@ -619,7 +619,6 @@ abstract class _OptionsFormState implements OptionsFormState {
 
   @override
   Options get options => throw _privateConstructorUsedError;
-
   @override
   bool get showErrorMessages => throw _privateConstructorUsedError;
 

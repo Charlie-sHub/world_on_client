@@ -76,7 +76,6 @@ class _$ProfileAchievementsWatcherEventCopyWithImpl<$Res>
   _$ProfileAchievementsWatcherEventCopyWithImpl(this._value, this._then);
 
   final ProfileAchievementsWatcherEvent _value;
-
   // ignore: unused_field
   final $Res Function(ProfileAchievementsWatcherEvent) _then;
 }
@@ -406,7 +405,6 @@ class _$ProfileAchievementsWatcherStateCopyWithImpl<$Res>
   _$ProfileAchievementsWatcherStateCopyWithImpl(this._value, this._then);
 
   final ProfileAchievementsWatcherState _value;
-
   // ignore: unused_field
   final $Res Function(ProfileAchievementsWatcherState) _then;
 }

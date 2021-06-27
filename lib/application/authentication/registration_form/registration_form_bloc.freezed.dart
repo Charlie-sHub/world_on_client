@@ -945,7 +945,6 @@ abstract class _$PasswordConfirmationChangedCopyWith<$Res> {
   factory _$PasswordConfirmationChangedCopyWith(
           _PasswordConfirmationChanged value, $Res Function(_PasswordConfirmationChanged) then) =
       __$PasswordConfirmationChangedCopyWithImpl<$Res>;
-
   $Res call({String passwordConfirmation});
 }
 
@@ -1414,7 +1413,6 @@ abstract class _$DescriptionChangedCopyWith<$Res> {
   factory _$DescriptionChangedCopyWith(
           _DescriptionChanged value, $Res Function(_DescriptionChanged) then) =
       __$DescriptionChangedCopyWithImpl<$Res>;
-
   $Res call({String description});
 }
 
@@ -1559,7 +1557,6 @@ abstract class _DescriptionChanged implements RegistrationFormEvent {
   const factory _DescriptionChanged(String description) = _$_DescriptionChanged;
 
   String get description => throw _privateConstructorUsedError;
-
   @JsonKey(ignore: true)
   _$DescriptionChangedCopyWith<_DescriptionChanged> get copyWith =>
       throw _privateConstructorUsedError;
@@ -1570,7 +1567,6 @@ abstract class _$InterestsChangedCopyWith<$Res> {
   factory _$InterestsChangedCopyWith(
           _InterestsChanged value, $Res Function(_InterestsChanged) then) =
       __$InterestsChangedCopyWithImpl<$Res>;
-
   $Res call({KtSet<Tag> interests});
 }
 

@@ -300,7 +300,6 @@ abstract class _$ExperienceNavigationTappedCopyWith<$Res> {
   factory _$ExperienceNavigationTappedCopyWith(
           _ExperienceNavigationTapped value, $Res Function(_ExperienceNavigationTapped) then) =
       __$ExperienceNavigationTappedCopyWithImpl<$Res>;
-
   $Res call({Option<Experience> experienceOption});
 }
 
@@ -1090,7 +1089,6 @@ abstract class _NavigateExperienceView implements NavigationActorState {
       _$_NavigateExperienceView;
 
   Option<Experience> get experienceOption => throw _privateConstructorUsedError;
-
   @JsonKey(ignore: true)
   _$NavigateExperienceViewCopyWith<_NavigateExperienceView> get copyWith =>
       throw _privateConstructorUsedError;

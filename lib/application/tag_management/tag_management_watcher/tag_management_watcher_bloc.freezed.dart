@@ -73,7 +73,6 @@ class _$TagManagementWatcherEventCopyWithImpl<$Res>
   _$TagManagementWatcherEventCopyWithImpl(this._value, this._then);
 
   final TagManagementWatcherEvent _value;
-
   // ignore: unused_field
   final $Res Function(TagManagementWatcherEvent) _then;
 }
@@ -355,7 +354,6 @@ class _$TagManagementWatcherStateCopyWithImpl<$Res>
   _$TagManagementWatcherStateCopyWithImpl(this._value, this._then);
 
   final TagManagementWatcherState _value;
-
   // ignore: unused_field
   final $Res Function(TagManagementWatcherState) _then;
 }

@@ -75,7 +75,6 @@ class _$ProfileInterestsWatcherEventCopyWithImpl<$Res>
   _$ProfileInterestsWatcherEventCopyWithImpl(this._value, this._then);
 
   final ProfileInterestsWatcherEvent _value;
-
   // ignore: unused_field
   final $Res Function(ProfileInterestsWatcherEvent) _then;
 }
@@ -200,7 +199,6 @@ abstract class _WatchInterestsStarted implements ProfileInterestsWatcherEvent {
   const factory _WatchInterestsStarted(User user) = _$_WatchInterestsStarted;
 
   User get user => throw _privateConstructorUsedError;
-
   @JsonKey(ignore: true)
   _$WatchInterestsStartedCopyWith<_WatchInterestsStarted> get copyWith =>
       throw _privateConstructorUsedError;
@@ -398,7 +396,6 @@ class _$ProfileInterestsWatcherStateCopyWithImpl<$Res>
   _$ProfileInterestsWatcherStateCopyWithImpl(this._value, this._then);
 
   final ProfileInterestsWatcherState _value;
-
   // ignore: unused_field
   final $Res Function(ProfileInterestsWatcherState) _then;
 }

@@ -76,7 +76,6 @@ class _$SearchExperiencesByDifficultyEventCopyWithImpl<$Res>
   _$SearchExperiencesByDifficultyEventCopyWithImpl(this._value, this._then);
 
   final SearchExperiencesByDifficultyEvent _value;
-
   // ignore: unused_field
   final $Res Function(SearchExperiencesByDifficultyEvent) _then;
 }
@@ -403,7 +402,6 @@ class _$SearchExperiencesByDifficultyStateCopyWithImpl<$Res>
   _$SearchExperiencesByDifficultyStateCopyWithImpl(this._value, this._then);
 
   final SearchExperiencesByDifficultyState _value;
-
   // ignore: unused_field
   final $Res Function(SearchExperiencesByDifficultyState) _then;
 }

@@ -70,7 +70,6 @@ mixin _$ItemDto {
 abstract class $ItemDtoCopyWith<$Res> {
   factory $ItemDtoCopyWith(ItemDto value, $Res Function(ItemDto) then) =
       _$ItemDtoCopyWithImpl<$Res>;
-
   $Res call(
       {String id,
       String name,

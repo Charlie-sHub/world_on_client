@@ -88,7 +88,6 @@ class _$DeviceCopyWithImpl<$Res> implements $DeviceCopyWith<$Res> {
 abstract class _$DeviceCopyWith<$Res> implements $DeviceCopyWith<$Res> {
   factory _$DeviceCopyWith(_Device value, $Res Function(_Device) then) =
       __$DeviceCopyWithImpl<$Res>;
-
   @override
   $Res call({UniqueId id, String name, String type, String company});
 }
@@ -182,18 +181,14 @@ abstract class _Device extends Device {
       required String name,
       required String type,
       required String company}) = _$_Device;
-
   const _Device._() : super._();
 
   @override
   UniqueId get id => throw _privateConstructorUsedError;
-
   @override
   String get name => throw _privateConstructorUsedError;
-
   @override
   String get type => throw _privateConstructorUsedError;
-
   @override
   String get company => throw _privateConstructorUsedError;
   @override
