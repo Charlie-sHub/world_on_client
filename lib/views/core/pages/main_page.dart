@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:worldon/application/authentication/authentication/authentication_bloc.dart';
 import 'package:worldon/application/core/app_bar_title/app_bar_title_bloc.dart';
-import 'package:worldon/application/core/user_profile_button_watcher/user_profile_button_watcher_bloc.dart';
+import 'package:worldon/application/core/watch_current_user/watch_current_user_bloc.dart';
 import 'package:worldon/application/navigation/navigation_actor/navigation_actor_bloc.dart';
 import 'package:worldon/generated/l10n.dart';
 import 'package:worldon/injection.dart';
@@ -38,9 +38,9 @@ class MainPage extends StatelessWidget {
               ),
           ),
           BlocProvider(
-            create: (context) => getIt<UserProfileButtonWatcherBloc>()
+            create: (context) => getIt<WatchCurrentUserBloc>()
               ..add(
-                const UserProfileButtonWatcherEvent.initialized(),
+                const WatchCurrentUserEvent.watchCurrentUserStarted(),
               ),
           ),
         ],

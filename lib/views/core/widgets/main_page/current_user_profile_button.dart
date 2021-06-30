@@ -3,11 +3,10 @@ import 'package:dartz/dartz.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:worldon/application/authentication/authentication/authentication_bloc.dart';
-import 'package:worldon/application/core/user_profile_button_watcher/user_profile_button_watcher_bloc.dart';
+import 'package:worldon/application/core/watch_current_user/watch_current_user_bloc.dart';
 import 'package:worldon/application/navigation/navigation_actor/navigation_actor_bloc.dart';
 import 'package:worldon/generated/l10n.dart';
 import 'package:worldon/views/core/misc/world_on_colors.dart';
-import 'package:worldon/views/core/widgets/misc/world_on_progress_indicator.dart';
 
 class CurrentUserProfileButton extends StatelessWidget {
   const CurrentUserProfileButton({
@@ -32,18 +31,30 @@ class CurrentUserProfileButton extends StatelessWidget {
       child: SizedBox(
         width: _size,
         height: _size,
-        child: BlocBuilder<UserProfileButtonWatcherBloc, UserProfileButtonWatcherState>(
+        child: BlocBuilder<WatchCurrentUserBloc, WatchCurrentUserState>(
+          buildWhen: (previous, current) => current.map(
+            initial: (_) => true,
+            loadSuccess: (_) {
+              final _previousImageUrl = previous.maybeMap(
+                loadSuccess: (successState) => successState.user.imageURL,
+                orElse: () => "",
+              );
+              final _currentImageUrl = current.maybeMap(
+                loadSuccess: (successState) => successState.user.imageURL,
+                orElse: () => "",
+              );
+              return _previousImageUrl != _currentImageUrl;
+            },
+            loadFailure: (_) => true,
+          ),
           builder: (context, state) => state.map(
             initial: (_) => const Icon(
               Icons.person_outline,
               size: 25,
             ),
-            actionInProgress: (_) => const WorldOnProgressIndicator(
-              size: 15,
-            ),
             loadSuccess: (state) => CircleAvatar(
               radius: 15,
-              backgroundImage: CachedNetworkImageProvider(state.imageUrl),
+              backgroundImage: CachedNetworkImageProvider(state.user.imageURL),
             ),
             loadFailure: (_) => const Icon(
               Icons.person_outline,

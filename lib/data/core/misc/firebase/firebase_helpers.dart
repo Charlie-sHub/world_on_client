@@ -61,7 +61,8 @@ extension FirestoreX on FirebaseFirestore {
         toFirestore: (tagDto, _) => tagDto.toJson(),
       );
 
-  CollectionReference<ExperienceDto> get experienceCollection => collection("experiences").withConverter<ExperienceDto>(
+  CollectionReference<ExperienceDto> get experienceCollection =>
+      collection("experiences").withConverter<ExperienceDto>(
         fromFirestore: (snapshots, _) => ExperienceDto.fromJson(snapshots.data()!),
         toFirestore: (experienceDto, _) => experienceDto.toJson(),
       );
@@ -71,29 +72,34 @@ extension FirestoreX on FirebaseFirestore {
         toFirestore: (itemDto, _) => itemDto.toJson(),
       );
 
-  CollectionReference<PromotionPlanDto> get promotionPlanCollection => collection("promotionPlans").withConverter<PromotionPlanDto>(
+  CollectionReference<PromotionPlanDto> get promotionPlanCollection =>
+      collection("promotionPlans").withConverter<PromotionPlanDto>(
         fromFirestore: (snapshots, _) => PromotionPlanDto.fromJson(snapshots.data()!),
         toFirestore: (promotionPlan, _) => promotionPlan.toJson(),
       );
 
-  CollectionReference<AchievementDto> get achievementCollection => collection("achievements").withConverter<AchievementDto>(
+  CollectionReference<AchievementDto> get achievementCollection =>
+      collection("achievements").withConverter<AchievementDto>(
         fromFirestore: (snapshots, _) => AchievementDto.fromJson(snapshots.data()!),
         toFirestore: (achievementDto, _) => achievementDto.toJson(),
       );
 
-  CollectionReference<NotificationDto> get notificationCollection => collection("notifications").withConverter<NotificationDto>(
+  CollectionReference<NotificationDto> get notificationCollection =>
+      collection("notifications").withConverter<NotificationDto>(
         fromFirestore: (snapshots, _) => NotificationDto.fromJson(snapshots.data()!),
         toFirestore: (notificationDto, _) => notificationDto.toJson(),
       );
 }
 
 extension DocumentReferenceX on DocumentReference {
-  CollectionReference<CommentDto> get commentCollection => collection("comments").withConverter<CommentDto>(
+  CollectionReference<CommentDto> get commentCollection =>
+      collection("comments").withConverter<CommentDto>(
         fromFirestore: (snapshots, _) => CommentDto.fromJson(snapshots.data()!),
         toFirestore: (commentDto, _) => commentDto.toJson(),
       );
 
-  CollectionReference<ObjectiveIdListDto> get saveCollection => collection("saves").withConverter<ObjectiveIdListDto>(
+  CollectionReference<ObjectiveIdListDto> get saveCollection =>
+      collection("saves").withConverter<ObjectiveIdListDto>(
         fromFirestore: (snapshots, _) => ObjectiveIdListDto.fromJson(snapshots.data()!),
         toFirestore: (objectiveListDto, _) => objectiveListDto.toJson(),
       );

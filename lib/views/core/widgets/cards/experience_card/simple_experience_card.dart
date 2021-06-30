@@ -4,7 +4,7 @@ import 'package:cached_network_image/cached_network_image.dart';
 import 'package:dartz/dartz.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:worldon/application/core/experience_card_actor/experience_card_actor_bloc.dart';
+import 'package:worldon/application/core/experience_add_to_log_actor/experience_add_to_log_actor_bloc.dart';
 import 'package:worldon/application/navigation/navigation_actor/navigation_actor_bloc.dart';
 import 'package:worldon/domain/core/entities/experience/experience.dart';
 import 'package:worldon/generated/l10n.dart';
@@ -32,11 +32,11 @@ class SimpleExperienceCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
-      create: (context) => getIt<ExperienceCardActorBloc>()
+      create: (context) => getIt<ExperienceAddToLogActorBloc>()
         ..add(
-          ExperienceCardActorEvent.initialized(experience),
+          ExperienceAddToLogActorEvent.initialized(experience),
         ),
-      child: BlocListener<ExperienceCardActorBloc, ExperienceCardActorState>(
+      child: BlocListener<ExperienceAddToLogActorBloc, ExperienceAddToLogActorState>(
         listener: _experienceCardListener,
         child: InkWell(
           onTap: () => context.read<NavigationActorBloc>().add(
@@ -135,7 +135,8 @@ class SimpleExperienceCard extends StatelessWidget {
     );
   }
 
-  void _experienceCardListener(BuildContext context, ExperienceCardActorState state) => state.maybeMap(
+  void _experienceCardListener(BuildContext context, ExperienceAddToLogActorState state) =>
+      state.maybeMap(
         additionFailure: (state) => FlushbarHelper.createError(
           duration: const Duration(seconds: 2),
           message: state.failure.maybeMap(

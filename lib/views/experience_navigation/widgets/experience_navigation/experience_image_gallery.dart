@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:worldon/application/core/experience_card_actor/experience_card_actor_bloc.dart';
+import 'package:worldon/application/core/experience_add_to_log_actor/experience_add_to_log_actor_bloc.dart';
 import 'package:worldon/domain/core/entities/experience/experience.dart';
 import 'package:worldon/injection.dart';
 import 'package:worldon/views/core/widgets/cards/experience_card/log_button.dart';
@@ -68,9 +68,9 @@ class ExperienceImageGallery extends StatelessWidget {
                 ShareExternallyButton(experience: experience),
                 ShareInternallyButton(experience: experience),
                 BlocProvider(
-                  create: (context) => getIt<ExperienceCardActorBloc>()
+                  create: (context) => getIt<ExperienceAddToLogActorBloc>()
                     ..add(
-                      ExperienceCardActorEvent.initialized(experience),
+                      ExperienceAddToLogActorEvent.initialized(experience),
                     ),
                   child: LogButton(experience: experience),
                 ),

@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides
 
-part of 'experience_card_actor_bloc.dart';
+part of 'experience_add_to_log_actor_bloc.dart';
 
 // **************************************************************************
 // FreezedGenerator
@@ -13,12 +13,13 @@ final _privateConstructorUsedError = UnsupportedError(
     'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 /// @nodoc
-class _$ExperienceCardActorEventTearOff {
-  const _$ExperienceCardActorEventTearOff();
+class _$ExperienceAddToLogActorEventTearOff {
+  const _$ExperienceAddToLogActorEventTearOff();
 
-  _Initialized initialized(Experience experience) {
+  _Initialized initialized(Experience experience, Set<UniqueId> experiencesToDoIds) {
     return _Initialized(
       experience,
+      experiencesToDoIds,
     );
   }
 
@@ -36,22 +37,22 @@ class _$ExperienceCardActorEventTearOff {
 }
 
 /// @nodoc
-const $ExperienceCardActorEvent = _$ExperienceCardActorEventTearOff();
+const $ExperienceAddToLogActorEvent = _$ExperienceAddToLogActorEventTearOff();
 
 /// @nodoc
-mixin _$ExperienceCardActorEvent {
+mixin _$ExperienceAddToLogActorEvent {
   Experience get experience => throw _privateConstructorUsedError;
 
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(Experience experience) initialized,
+    required TResult Function(Experience experience, Set<UniqueId> experiencesToDoIds) initialized,
     required TResult Function(Experience experience) addedExperienceToLog,
     required TResult Function(Experience experience) dismissedExperienceFromLog,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(Experience experience)? initialized,
+    TResult Function(Experience experience, Set<UniqueId> experiencesToDoIds)? initialized,
     TResult Function(Experience experience)? addedExperienceToLog,
     TResult Function(Experience experience)? dismissedExperienceFromLog,
     required TResult orElse(),
@@ -74,15 +75,15 @@ mixin _$ExperienceCardActorEvent {
       throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
-  $ExperienceCardActorEventCopyWith<ExperienceCardActorEvent> get copyWith =>
+  $ExperienceAddToLogActorEventCopyWith<ExperienceAddToLogActorEvent> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $ExperienceCardActorEventCopyWith<$Res> {
-  factory $ExperienceCardActorEventCopyWith(
-          ExperienceCardActorEvent value, $Res Function(ExperienceCardActorEvent) then) =
-      _$ExperienceCardActorEventCopyWithImpl<$Res>;
+abstract class $ExperienceAddToLogActorEventCopyWith<$Res> {
+  factory $ExperienceAddToLogActorEventCopyWith(
+          ExperienceAddToLogActorEvent value, $Res Function(ExperienceAddToLogActorEvent) then) =
+      _$ExperienceAddToLogActorEventCopyWithImpl<$Res>;
 
   $Res call({Experience experience});
 
@@ -90,13 +91,14 @@ abstract class $ExperienceCardActorEventCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$ExperienceCardActorEventCopyWithImpl<$Res>
-    implements $ExperienceCardActorEventCopyWith<$Res> {
-  _$ExperienceCardActorEventCopyWithImpl(this._value, this._then);
+class _$ExperienceAddToLogActorEventCopyWithImpl<$Res>
+    implements $ExperienceAddToLogActorEventCopyWith<$Res> {
+  _$ExperienceAddToLogActorEventCopyWithImpl(this._value, this._then);
 
-  final ExperienceCardActorEvent _value;
+  final ExperienceAddToLogActorEvent _value;
+
   // ignore: unused_field
-  final $Res Function(ExperienceCardActorEvent) _then;
+  final $Res Function(ExperienceAddToLogActorEvent) _then;
 
   @override
   $Res call({
@@ -119,19 +121,19 @@ class _$ExperienceCardActorEventCopyWithImpl<$Res>
 }
 
 /// @nodoc
-abstract class _$InitializedCopyWith<$Res> implements $ExperienceCardActorEventCopyWith<$Res> {
+abstract class _$InitializedCopyWith<$Res> implements $ExperienceAddToLogActorEventCopyWith<$Res> {
   factory _$InitializedCopyWith(_Initialized value, $Res Function(_Initialized) then) =
       __$InitializedCopyWithImpl<$Res>;
 
   @override
-  $Res call({Experience experience});
+  $Res call({Experience experience, Set<UniqueId> experiencesToDoIds});
 
   @override
   $ExperienceCopyWith<$Res> get experience;
 }
 
 /// @nodoc
-class __$InitializedCopyWithImpl<$Res> extends _$ExperienceCardActorEventCopyWithImpl<$Res>
+class __$InitializedCopyWithImpl<$Res> extends _$ExperienceAddToLogActorEventCopyWithImpl<$Res>
     implements _$InitializedCopyWith<$Res> {
   __$InitializedCopyWithImpl(_Initialized _value, $Res Function(_Initialized) _then)
       : super(_value, (v) => _then(v as _Initialized));
@@ -142,12 +144,17 @@ class __$InitializedCopyWithImpl<$Res> extends _$ExperienceCardActorEventCopyWit
   @override
   $Res call({
     Object? experience = freezed,
+    Object? experiencesToDoIds = freezed,
   }) {
     return _then(_Initialized(
       experience == freezed
           ? _value.experience
           : experience // ignore: cast_nullable_to_non_nullable
               as Experience,
+      experiencesToDoIds == freezed
+          ? _value.experiencesToDoIds
+          : experiencesToDoIds // ignore: cast_nullable_to_non_nullable
+              as Set<UniqueId>,
     ));
   }
 }
@@ -155,14 +162,16 @@ class __$InitializedCopyWithImpl<$Res> extends _$ExperienceCardActorEventCopyWit
 /// @nodoc
 
 class _$_Initialized implements _Initialized {
-  const _$_Initialized(this.experience);
+  const _$_Initialized(this.experience, this.experiencesToDoIds);
 
   @override
   final Experience experience;
+  @override
+  final Set<UniqueId> experiencesToDoIds;
 
   @override
   String toString() {
-    return 'ExperienceCardActorEvent.initialized(experience: $experience)';
+    return 'ExperienceAddToLogActorEvent.initialized(experience: $experience, experiencesToDoIds: $experiencesToDoIds)';
   }
 
   @override
@@ -170,11 +179,17 @@ class _$_Initialized implements _Initialized {
     return identical(this, other) ||
         (other is _Initialized &&
             (identical(other.experience, experience) ||
-                const DeepCollectionEquality().equals(other.experience, experience)));
+                const DeepCollectionEquality().equals(other.experience, experience)) &&
+            (identical(other.experiencesToDoIds, experiencesToDoIds) ||
+                const DeepCollectionEquality()
+                    .equals(other.experiencesToDoIds, experiencesToDoIds)));
   }
 
   @override
-  int get hashCode => runtimeType.hashCode ^ const DeepCollectionEquality().hash(experience);
+  int get hashCode =>
+      runtimeType.hashCode ^
+      const DeepCollectionEquality().hash(experience) ^
+      const DeepCollectionEquality().hash(experiencesToDoIds);
 
   @JsonKey(ignore: true)
   @override
@@ -184,23 +199,23 @@ class _$_Initialized implements _Initialized {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(Experience experience) initialized,
+    required TResult Function(Experience experience, Set<UniqueId> experiencesToDoIds) initialized,
     required TResult Function(Experience experience) addedExperienceToLog,
     required TResult Function(Experience experience) dismissedExperienceFromLog,
   }) {
-    return initialized(experience);
+    return initialized(experience, experiencesToDoIds);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(Experience experience)? initialized,
+    TResult Function(Experience experience, Set<UniqueId> experiencesToDoIds)? initialized,
     TResult Function(Experience experience)? addedExperienceToLog,
     TResult Function(Experience experience)? dismissedExperienceFromLog,
     required TResult orElse(),
   }) {
     if (initialized != null) {
-      return initialized(experience);
+      return initialized(experience, experiencesToDoIds);
     }
     return orElse();
   }
@@ -230,11 +245,14 @@ class _$_Initialized implements _Initialized {
   }
 }
 
-abstract class _Initialized implements ExperienceCardActorEvent {
-  const factory _Initialized(Experience experience) = _$_Initialized;
+abstract class _Initialized implements ExperienceAddToLogActorEvent {
+  const factory _Initialized(Experience experience, Set<UniqueId> experiencesToDoIds) =
+      _$_Initialized;
 
   @override
   Experience get experience => throw _privateConstructorUsedError;
+
+  Set<UniqueId> get experiencesToDoIds => throw _privateConstructorUsedError;
 
   @override
   @JsonKey(ignore: true)
@@ -243,7 +261,7 @@ abstract class _Initialized implements ExperienceCardActorEvent {
 
 /// @nodoc
 abstract class _$AddedExperienceToLogCopyWith<$Res>
-    implements $ExperienceCardActorEventCopyWith<$Res> {
+    implements $ExperienceAddToLogActorEventCopyWith<$Res> {
   factory _$AddedExperienceToLogCopyWith(
           _AddedExperienceToLog value, $Res Function(_AddedExperienceToLog) then) =
       __$AddedExperienceToLogCopyWithImpl<$Res>;
@@ -256,7 +274,8 @@ abstract class _$AddedExperienceToLogCopyWith<$Res>
 }
 
 /// @nodoc
-class __$AddedExperienceToLogCopyWithImpl<$Res> extends _$ExperienceCardActorEventCopyWithImpl<$Res>
+class __$AddedExperienceToLogCopyWithImpl<$Res>
+    extends _$ExperienceAddToLogActorEventCopyWithImpl<$Res>
     implements _$AddedExperienceToLogCopyWith<$Res> {
   __$AddedExperienceToLogCopyWithImpl(
       _AddedExperienceToLog _value, $Res Function(_AddedExperienceToLog) _then)
@@ -288,7 +307,7 @@ class _$_AddedExperienceToLog implements _AddedExperienceToLog {
 
   @override
   String toString() {
-    return 'ExperienceCardActorEvent.addedExperienceToLog(experience: $experience)';
+    return 'ExperienceAddToLogActorEvent.addedExperienceToLog(experience: $experience)';
   }
 
   @override
@@ -310,7 +329,7 @@ class _$_AddedExperienceToLog implements _AddedExperienceToLog {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(Experience experience) initialized,
+    required TResult Function(Experience experience, Set<UniqueId> experiencesToDoIds) initialized,
     required TResult Function(Experience experience) addedExperienceToLog,
     required TResult Function(Experience experience) dismissedExperienceFromLog,
   }) {
@@ -320,7 +339,7 @@ class _$_AddedExperienceToLog implements _AddedExperienceToLog {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(Experience experience)? initialized,
+    TResult Function(Experience experience, Set<UniqueId> experiencesToDoIds)? initialized,
     TResult Function(Experience experience)? addedExperienceToLog,
     TResult Function(Experience experience)? dismissedExperienceFromLog,
     required TResult orElse(),
@@ -356,7 +375,7 @@ class _$_AddedExperienceToLog implements _AddedExperienceToLog {
   }
 }
 
-abstract class _AddedExperienceToLog implements ExperienceCardActorEvent {
+abstract class _AddedExperienceToLog implements ExperienceAddToLogActorEvent {
   const factory _AddedExperienceToLog(Experience experience) = _$_AddedExperienceToLog;
 
   @override
@@ -370,10 +389,11 @@ abstract class _AddedExperienceToLog implements ExperienceCardActorEvent {
 
 /// @nodoc
 abstract class _$DismissedExperienceFromLogCopyWith<$Res>
-    implements $ExperienceCardActorEventCopyWith<$Res> {
+    implements $ExperienceAddToLogActorEventCopyWith<$Res> {
   factory _$DismissedExperienceFromLogCopyWith(
           _DismissedExperienceFromLog value, $Res Function(_DismissedExperienceFromLog) then) =
       __$DismissedExperienceFromLogCopyWithImpl<$Res>;
+
   @override
   $Res call({Experience experience});
 
@@ -383,7 +403,7 @@ abstract class _$DismissedExperienceFromLogCopyWith<$Res>
 
 /// @nodoc
 class __$DismissedExperienceFromLogCopyWithImpl<$Res>
-    extends _$ExperienceCardActorEventCopyWithImpl<$Res>
+    extends _$ExperienceAddToLogActorEventCopyWithImpl<$Res>
     implements _$DismissedExperienceFromLogCopyWith<$Res> {
   __$DismissedExperienceFromLogCopyWithImpl(
       _DismissedExperienceFromLog _value, $Res Function(_DismissedExperienceFromLog) _then)
@@ -415,7 +435,7 @@ class _$_DismissedExperienceFromLog implements _DismissedExperienceFromLog {
 
   @override
   String toString() {
-    return 'ExperienceCardActorEvent.dismissedExperienceFromLog(experience: $experience)';
+    return 'ExperienceAddToLogActorEvent.dismissedExperienceFromLog(experience: $experience)';
   }
 
   @override
@@ -437,7 +457,7 @@ class _$_DismissedExperienceFromLog implements _DismissedExperienceFromLog {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(Experience experience) initialized,
+    required TResult Function(Experience experience, Set<UniqueId> experiencesToDoIds) initialized,
     required TResult Function(Experience experience) addedExperienceToLog,
     required TResult Function(Experience experience) dismissedExperienceFromLog,
   }) {
@@ -447,7 +467,7 @@ class _$_DismissedExperienceFromLog implements _DismissedExperienceFromLog {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(Experience experience)? initialized,
+    TResult Function(Experience experience, Set<UniqueId> experiencesToDoIds)? initialized,
     TResult Function(Experience experience)? addedExperienceToLog,
     TResult Function(Experience experience)? dismissedExperienceFromLog,
     required TResult orElse(),
@@ -483,7 +503,7 @@ class _$_DismissedExperienceFromLog implements _DismissedExperienceFromLog {
   }
 }
 
-abstract class _DismissedExperienceFromLog implements ExperienceCardActorEvent {
+abstract class _DismissedExperienceFromLog implements ExperienceAddToLogActorEvent {
   const factory _DismissedExperienceFromLog(Experience experience) = _$_DismissedExperienceFromLog;
 
   @override
@@ -496,8 +516,8 @@ abstract class _DismissedExperienceFromLog implements ExperienceCardActorEvent {
 }
 
 /// @nodoc
-class _$ExperienceCardActorStateTearOff {
-  const _$ExperienceCardActorStateTearOff();
+class _$ExperienceAddToLogActorStateTearOff {
+  const _$ExperienceAddToLogActorStateTearOff();
 
   _Initial initial() {
     return const _Initial();
@@ -537,10 +557,10 @@ class _$ExperienceCardActorStateTearOff {
 }
 
 /// @nodoc
-const $ExperienceCardActorState = _$ExperienceCardActorStateTearOff();
+const $ExperienceAddToLogActorState = _$ExperienceAddToLogActorStateTearOff();
 
 /// @nodoc
-mixin _$ExperienceCardActorState {
+mixin _$ExperienceAddToLogActorState {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
@@ -594,20 +614,21 @@ mixin _$ExperienceCardActorState {
 }
 
 /// @nodoc
-abstract class $ExperienceCardActorStateCopyWith<$Res> {
-  factory $ExperienceCardActorStateCopyWith(
-          ExperienceCardActorState value, $Res Function(ExperienceCardActorState) then) =
-      _$ExperienceCardActorStateCopyWithImpl<$Res>;
+abstract class $ExperienceAddToLogActorStateCopyWith<$Res> {
+  factory $ExperienceAddToLogActorStateCopyWith(
+          ExperienceAddToLogActorState value, $Res Function(ExperienceAddToLogActorState) then) =
+      _$ExperienceAddToLogActorStateCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class _$ExperienceCardActorStateCopyWithImpl<$Res>
-    implements $ExperienceCardActorStateCopyWith<$Res> {
-  _$ExperienceCardActorStateCopyWithImpl(this._value, this._then);
+class _$ExperienceAddToLogActorStateCopyWithImpl<$Res>
+    implements $ExperienceAddToLogActorStateCopyWith<$Res> {
+  _$ExperienceAddToLogActorStateCopyWithImpl(this._value, this._then);
 
-  final ExperienceCardActorState _value;
+  final ExperienceAddToLogActorState _value;
+
   // ignore: unused_field
-  final $Res Function(ExperienceCardActorState) _then;
+  final $Res Function(ExperienceAddToLogActorState) _then;
 }
 
 /// @nodoc
@@ -617,7 +638,7 @@ abstract class _$InitialCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$InitialCopyWithImpl<$Res> extends _$ExperienceCardActorStateCopyWithImpl<$Res>
+class __$InitialCopyWithImpl<$Res> extends _$ExperienceAddToLogActorStateCopyWithImpl<$Res>
     implements _$InitialCopyWith<$Res> {
   __$InitialCopyWithImpl(_Initial _value, $Res Function(_Initial) _then)
       : super(_value, (v) => _then(v as _Initial));
@@ -633,7 +654,7 @@ class _$_Initial implements _Initial {
 
   @override
   String toString() {
-    return 'ExperienceCardActorState.initial()';
+    return 'ExperienceAddToLogActorState.initial()';
   }
 
   @override
@@ -713,7 +734,7 @@ class _$_Initial implements _Initial {
   }
 }
 
-abstract class _Initial implements ExperienceCardActorState {
+abstract class _Initial implements ExperienceAddToLogActorState {
   const factory _Initial() = _$_Initial;
 }
 
@@ -725,7 +746,7 @@ abstract class _$ActionInProgressCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$ActionInProgressCopyWithImpl<$Res> extends _$ExperienceCardActorStateCopyWithImpl<$Res>
+class __$ActionInProgressCopyWithImpl<$Res> extends _$ExperienceAddToLogActorStateCopyWithImpl<$Res>
     implements _$ActionInProgressCopyWith<$Res> {
   __$ActionInProgressCopyWithImpl(_ActionInProgress _value, $Res Function(_ActionInProgress) _then)
       : super(_value, (v) => _then(v as _ActionInProgress));
@@ -741,7 +762,7 @@ class _$_ActionInProgress implements _ActionInProgress {
 
   @override
   String toString() {
-    return 'ExperienceCardActorState.actionInProgress()';
+    return 'ExperienceAddToLogActorState.actionInProgress()';
   }
 
   @override
@@ -821,7 +842,7 @@ class _$_ActionInProgress implements _ActionInProgress {
   }
 }
 
-abstract class _ActionInProgress implements ExperienceCardActorState {
+abstract class _ActionInProgress implements ExperienceAddToLogActorState {
   const factory _ActionInProgress() = _$_ActionInProgress;
 }
 
@@ -831,7 +852,7 @@ abstract class _$InLogCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$InLogCopyWithImpl<$Res> extends _$ExperienceCardActorStateCopyWithImpl<$Res>
+class __$InLogCopyWithImpl<$Res> extends _$ExperienceAddToLogActorStateCopyWithImpl<$Res>
     implements _$InLogCopyWith<$Res> {
   __$InLogCopyWithImpl(_InLog _value, $Res Function(_InLog) _then)
       : super(_value, (v) => _then(v as _InLog));
@@ -847,7 +868,7 @@ class _$_InLog implements _InLog {
 
   @override
   String toString() {
-    return 'ExperienceCardActorState.inLog()';
+    return 'ExperienceAddToLogActorState.inLog()';
   }
 
   @override
@@ -927,7 +948,7 @@ class _$_InLog implements _InLog {
   }
 }
 
-abstract class _InLog implements ExperienceCardActorState {
+abstract class _InLog implements ExperienceAddToLogActorState {
   const factory _InLog() = _$_InLog;
 }
 
@@ -938,7 +959,7 @@ abstract class _$NotInLogCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$NotInLogCopyWithImpl<$Res> extends _$ExperienceCardActorStateCopyWithImpl<$Res>
+class __$NotInLogCopyWithImpl<$Res> extends _$ExperienceAddToLogActorStateCopyWithImpl<$Res>
     implements _$NotInLogCopyWith<$Res> {
   __$NotInLogCopyWithImpl(_NotInLog _value, $Res Function(_NotInLog) _then)
       : super(_value, (v) => _then(v as _NotInLog));
@@ -954,7 +975,7 @@ class _$_NotInLog implements _NotInLog {
 
   @override
   String toString() {
-    return 'ExperienceCardActorState.notInLog()';
+    return 'ExperienceAddToLogActorState.notInLog()';
   }
 
   @override
@@ -1034,7 +1055,7 @@ class _$_NotInLog implements _NotInLog {
   }
 }
 
-abstract class _NotInLog implements ExperienceCardActorState {
+abstract class _NotInLog implements ExperienceAddToLogActorState {
   const factory _NotInLog() = _$_NotInLog;
 }
 
@@ -1045,7 +1066,7 @@ abstract class _$AdditionSuccessCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$AdditionSuccessCopyWithImpl<$Res> extends _$ExperienceCardActorStateCopyWithImpl<$Res>
+class __$AdditionSuccessCopyWithImpl<$Res> extends _$ExperienceAddToLogActorStateCopyWithImpl<$Res>
     implements _$AdditionSuccessCopyWith<$Res> {
   __$AdditionSuccessCopyWithImpl(_AdditionSuccess _value, $Res Function(_AdditionSuccess) _then)
       : super(_value, (v) => _then(v as _AdditionSuccess));
@@ -1061,7 +1082,7 @@ class _$_AdditionSuccess implements _AdditionSuccess {
 
   @override
   String toString() {
-    return 'ExperienceCardActorState.additionSuccess()';
+    return 'ExperienceAddToLogActorState.additionSuccess()';
   }
 
   @override
@@ -1141,7 +1162,7 @@ class _$_AdditionSuccess implements _AdditionSuccess {
   }
 }
 
-abstract class _AdditionSuccess implements ExperienceCardActorState {
+abstract class _AdditionSuccess implements ExperienceAddToLogActorState {
   const factory _AdditionSuccess() = _$_AdditionSuccess;
 }
 
@@ -1156,7 +1177,7 @@ abstract class _$AdditionFailureCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$AdditionFailureCopyWithImpl<$Res> extends _$ExperienceCardActorStateCopyWithImpl<$Res>
+class __$AdditionFailureCopyWithImpl<$Res> extends _$ExperienceAddToLogActorStateCopyWithImpl<$Res>
     implements _$AdditionFailureCopyWith<$Res> {
   __$AdditionFailureCopyWithImpl(_AdditionFailure _value, $Res Function(_AdditionFailure) _then)
       : super(_value, (v) => _then(v as _AdditionFailure));
@@ -1194,7 +1215,7 @@ class _$_AdditionFailure implements _AdditionFailure {
 
   @override
   String toString() {
-    return 'ExperienceCardActorState.additionFailure(failure: $failure)';
+    return 'ExperienceAddToLogActorState.additionFailure(failure: $failure)';
   }
 
   @override
@@ -1282,7 +1303,7 @@ class _$_AdditionFailure implements _AdditionFailure {
   }
 }
 
-abstract class _AdditionFailure implements ExperienceCardActorState {
+abstract class _AdditionFailure implements ExperienceAddToLogActorState {
   const factory _AdditionFailure(Failure<dynamic> failure) = _$_AdditionFailure;
 
   Failure<dynamic> get failure => throw _privateConstructorUsedError;
@@ -1299,7 +1320,7 @@ abstract class _$DismissalSuccessCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$DismissalSuccessCopyWithImpl<$Res> extends _$ExperienceCardActorStateCopyWithImpl<$Res>
+class __$DismissalSuccessCopyWithImpl<$Res> extends _$ExperienceAddToLogActorStateCopyWithImpl<$Res>
     implements _$DismissalSuccessCopyWith<$Res> {
   __$DismissalSuccessCopyWithImpl(_DismissalSuccess _value, $Res Function(_DismissalSuccess) _then)
       : super(_value, (v) => _then(v as _DismissalSuccess));
@@ -1315,7 +1336,7 @@ class _$_DismissalSuccess implements _DismissalSuccess {
 
   @override
   String toString() {
-    return 'ExperienceCardActorState.dismissalSuccess()';
+    return 'ExperienceAddToLogActorState.dismissalSuccess()';
   }
 
   @override
@@ -1395,7 +1416,7 @@ class _$_DismissalSuccess implements _DismissalSuccess {
   }
 }
 
-abstract class _DismissalSuccess implements ExperienceCardActorState {
+abstract class _DismissalSuccess implements ExperienceAddToLogActorState {
   const factory _DismissalSuccess() = _$_DismissalSuccess;
 }
 
@@ -1410,7 +1431,7 @@ abstract class _$DismissalFailureCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$DismissalFailureCopyWithImpl<$Res> extends _$ExperienceCardActorStateCopyWithImpl<$Res>
+class __$DismissalFailureCopyWithImpl<$Res> extends _$ExperienceAddToLogActorStateCopyWithImpl<$Res>
     implements _$DismissalFailureCopyWith<$Res> {
   __$DismissalFailureCopyWithImpl(_DismissalFailure _value, $Res Function(_DismissalFailure) _then)
       : super(_value, (v) => _then(v as _DismissalFailure));
@@ -1448,7 +1469,7 @@ class _$_DismissalFailure implements _DismissalFailure {
 
   @override
   String toString() {
-    return 'ExperienceCardActorState.dismissalFailure(failure: $failure)';
+    return 'ExperienceAddToLogActorState.dismissalFailure(failure: $failure)';
   }
 
   @override
@@ -1536,7 +1557,7 @@ class _$_DismissalFailure implements _DismissalFailure {
   }
 }
 
-abstract class _DismissalFailure implements ExperienceCardActorState {
+abstract class _DismissalFailure implements ExperienceAddToLogActorState {
   const factory _DismissalFailure(Failure<dynamic> failure) = _$_DismissalFailure;
 
   Failure<dynamic> get failure => throw _privateConstructorUsedError;

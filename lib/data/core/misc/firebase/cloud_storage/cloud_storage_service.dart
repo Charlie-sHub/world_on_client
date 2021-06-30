@@ -5,7 +5,7 @@ import 'package:injectable/injectable.dart';
 import 'package:multi_image_picker2/multi_image_picker2.dart';
 import 'package:worldon/data/core/misc/firebase/cloud_storage/storage_folder_enum.dart';
 
-@injectable
+@lazySingleton
 class CloudStorageService {
   final _storageInstance = FirebaseStorage.instance;
 

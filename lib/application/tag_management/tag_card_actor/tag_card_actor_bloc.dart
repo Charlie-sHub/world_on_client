@@ -1,21 +1,22 @@
 import 'dart:async';
 
 import 'package:bloc/bloc.dart';
-import 'package:dartz/dartz.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:injectable/injectable.dart';
 import 'package:meta/meta.dart';
 import 'package:worldon/core/error/failure.dart';
-import 'package:worldon/domain/authentication/use_case/get_logged_in_user.dart';
 import 'package:worldon/domain/core/entities/tag/tag.dart';
-import 'package:worldon/domain/core/failures/error.dart';
-import 'package:worldon/domain/core/use_case/use_case.dart';
-import 'package:worldon/domain/tag_management/use_case/add_tag_to_interests.dart' as add_tag_to_interests;
-import 'package:worldon/domain/tag_management/use_case/dismiss_tag_from_interests.dart' as dismiss_tag_from_interests;
+import 'package:worldon/domain/core/validation/objects/unique_id.dart';
+import 'package:worldon/domain/tag_management/use_case/add_tag_to_interests.dart'
+    as add_tag_to_interests;
+import 'package:worldon/domain/tag_management/use_case/dismiss_tag_from_interests.dart'
+    as dismiss_tag_from_interests;
 import 'package:worldon/injection.dart';
 
 part 'tag_card_actor_bloc.freezed.dart';
+
 part 'tag_card_actor_event.dart';
+
 part 'tag_card_actor_state.dart';
 
 @injectable
@@ -54,12 +55,7 @@ class TagCardActorBloc extends Bloc<TagCardActorEvent, TagCardActorState> {
   }
 
   Stream<TagCardActorState> _onInitialized(_Initialized event) async* {
-    final _userOption = await getIt<GetLoggedInUser>()(getIt<NoParams>());
-    final _user = _userOption.fold(
-      () => throw UnAuthenticatedError(),
-      id,
-    );
-    if (_user.interestsIds.contains(event.tag.id)) {
+    if (event.interestsIds.contains(event.tag.id)) {
       yield const TagCardActorState.inInterests();
     } else {
       yield const TagCardActorState.notInInterests();

@@ -15,7 +15,8 @@ part 'new_notifications_watcher_event.dart';
 part 'new_notifications_watcher_state.dart';
 
 @injectable
-class NewNotificationsWatcherBloc extends Bloc<NewNotificationsWatcherEvent, NewNotificationsWatcherState> {
+class NewNotificationsWatcherBloc
+    extends Bloc<NewNotificationsWatcherEvent, NewNotificationsWatcherState> {
   NewNotificationsWatcherBloc() : super(const NewNotificationsWatcherState.initial());
 
   StreamSubscription<Either<Failure, bool>>? _newNotificationsStreamSubscription;
@@ -43,8 +44,12 @@ class NewNotificationsWatcherBloc extends Bloc<NewNotificationsWatcherEvent, New
 
   Stream<NewNotificationsWatcherState> onWatchNewNotificationsStarted(_) async* {
     await _newNotificationsStreamSubscription?.cancel();
-    _newNotificationsStreamSubscription = getIt<WatchIfNewNotifications>()(getIt<NoParams>()).listen(
-      (_failureOrBool) => add(NewNotificationsWatcherEvent.resultsReceived(_failureOrBool)),
+    _newNotificationsStreamSubscription = getIt<WatchIfNewNotifications>()(
+      getIt<NoParams>(),
+    ).listen(
+      (_failureOrBool) => add(
+        NewNotificationsWatcherEvent.resultsReceived(_failureOrBool),
+      ),
     );
   }
 

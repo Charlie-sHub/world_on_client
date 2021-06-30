@@ -30,7 +30,7 @@ class CreatedObjectivesList extends StatelessWidget {
             itemBuilder: (context, animation, _objective, i) {
               if (_objective.isValid) {
                 return Reorderable(
-                  key: Key(_objective.id.getOrCrash()),
+                  key: Key("orderable_${_objective.id.getOrCrash()}"),
                   builder: (context, animation, inDrag) => CreatedObjectiveCard(
                     animation: animation,
                     objective: _objective,
@@ -39,7 +39,7 @@ class CreatedObjectivesList extends StatelessWidget {
                 );
               } else {
                 return Reorderable(
-                  key: Key(_objective.id.getOrCrash()),
+                  key: Key("orderable_${_objective.id.getOrCrash()}"),
                   builder: (context, animation, inDrag) => ErrorCard(
                     entityType: S.of(context).objective,
                     valueFailureString: _objective.failureOption.fold(

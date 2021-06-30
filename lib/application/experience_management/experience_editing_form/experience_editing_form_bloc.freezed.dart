@@ -2069,13 +2069,10 @@ abstract class _ExperienceEditingFormState implements ExperienceEditingFormState
 
   @override
   Experience get experience => throw _privateConstructorUsedError;
-
   @override
   List<String> get imageUrlsToDelete => throw _privateConstructorUsedError;
-
   @override
   bool get showErrorMessages => throw _privateConstructorUsedError;
-
   @override
   bool get isSubmitting => throw _privateConstructorUsedError;
 

@@ -56,7 +56,8 @@ class FollowActorBloc extends Bloc<FollowActorEvent, FollowActorState> {
             notification: Notification.empty().copyWith(
               sender: SimpleUser.fromUser(_currentUser),
               receiverId: event.userId,
-              description: EntityDescription("${_currentUser.username.getOrCrash()} unfollowed you"),
+              description:
+                  EntityDescription("${_currentUser.username.getOrCrash()} unfollowed you"),
               type: NotificationType.unfollow,
             ),
           ),
@@ -87,7 +88,8 @@ class FollowActorBloc extends Bloc<FollowActorEvent, FollowActorState> {
             notification: Notification.empty().copyWith(
               sender: SimpleUser.fromUser(_currentUser),
               receiverId: event.userId,
-              description: EntityDescription("${_currentUser.username.getOrCrash()} is following you"),
+              description:
+                  EntityDescription("${_currentUser.username.getOrCrash()} is following you"),
               type: NotificationType.follow,
             ),
           ),
@@ -99,12 +101,7 @@ class FollowActorBloc extends Bloc<FollowActorEvent, FollowActorState> {
   }
 
   Stream<FollowActorState> _onInitialized(_Initialized event) async* {
-    final _userOption = await getIt<GetLoggedInUser>()(getIt<NoParams>());
-    final _user = _userOption.fold(
-      () => throw UnAuthenticatedError(),
-      id,
-    );
-    if (_user.followedUsersIds.contains(event.userId)) {
+    if (event.followedUsersIds.contains(event.userId)) {
       yield const FollowActorState.follows();
     } else {
       yield const FollowActorState.followsNot();

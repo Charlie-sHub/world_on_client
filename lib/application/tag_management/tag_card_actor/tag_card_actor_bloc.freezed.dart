@@ -16,9 +16,10 @@ final _privateConstructorUsedError = UnsupportedError(
 class _$TagCardActorEventTearOff {
   const _$TagCardActorEventTearOff();
 
-  _Initialized initialized(Tag tag) {
+  _Initialized initialized(Tag tag, Set<UniqueId> interestsIds) {
     return _Initialized(
       tag,
+      interestsIds,
     );
   }
 
@@ -44,14 +45,14 @@ mixin _$TagCardActorEvent {
 
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(Tag tag) initialized,
+    required TResult Function(Tag tag, Set<UniqueId> interestsIds) initialized,
     required TResult Function(Tag tag) dismissedFromInterests,
     required TResult Function(Tag tag) addedToInterests,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(Tag tag)? initialized,
+    TResult Function(Tag tag, Set<UniqueId> interestsIds)? initialized,
     TResult Function(Tag tag)? dismissedFromInterests,
     TResult Function(Tag tag)? addedToInterests,
     required TResult orElse(),
@@ -122,7 +123,7 @@ abstract class _$InitializedCopyWith<$Res> implements $TagCardActorEventCopyWith
       __$InitializedCopyWithImpl<$Res>;
 
   @override
-  $Res call({Tag tag});
+  $Res call({Tag tag, Set<UniqueId> interestsIds});
 
   @override
   $TagCopyWith<$Res> get tag;
@@ -140,12 +141,17 @@ class __$InitializedCopyWithImpl<$Res> extends _$TagCardActorEventCopyWithImpl<$
   @override
   $Res call({
     Object? tag = freezed,
+    Object? interestsIds = freezed,
   }) {
     return _then(_Initialized(
       tag == freezed
           ? _value.tag
           : tag // ignore: cast_nullable_to_non_nullable
               as Tag,
+      interestsIds == freezed
+          ? _value.interestsIds
+          : interestsIds // ignore: cast_nullable_to_non_nullable
+              as Set<UniqueId>,
     ));
   }
 }
@@ -153,25 +159,32 @@ class __$InitializedCopyWithImpl<$Res> extends _$TagCardActorEventCopyWithImpl<$
 /// @nodoc
 
 class _$_Initialized implements _Initialized {
-  const _$_Initialized(this.tag);
+  const _$_Initialized(this.tag, this.interestsIds);
 
   @override
   final Tag tag;
+  @override
+  final Set<UniqueId> interestsIds;
 
   @override
   String toString() {
-    return 'TagCardActorEvent.initialized(tag: $tag)';
+    return 'TagCardActorEvent.initialized(tag: $tag, interestsIds: $interestsIds)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other is _Initialized &&
-            (identical(other.tag, tag) || const DeepCollectionEquality().equals(other.tag, tag)));
+            (identical(other.tag, tag) || const DeepCollectionEquality().equals(other.tag, tag)) &&
+            (identical(other.interestsIds, interestsIds) ||
+                const DeepCollectionEquality().equals(other.interestsIds, interestsIds)));
   }
 
   @override
-  int get hashCode => runtimeType.hashCode ^ const DeepCollectionEquality().hash(tag);
+  int get hashCode =>
+      runtimeType.hashCode ^
+      const DeepCollectionEquality().hash(tag) ^
+      const DeepCollectionEquality().hash(interestsIds);
 
   @JsonKey(ignore: true)
   @override
@@ -181,23 +194,23 @@ class _$_Initialized implements _Initialized {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(Tag tag) initialized,
+    required TResult Function(Tag tag, Set<UniqueId> interestsIds) initialized,
     required TResult Function(Tag tag) dismissedFromInterests,
     required TResult Function(Tag tag) addedToInterests,
   }) {
-    return initialized(tag);
+    return initialized(tag, interestsIds);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(Tag tag)? initialized,
+    TResult Function(Tag tag, Set<UniqueId> interestsIds)? initialized,
     TResult Function(Tag tag)? dismissedFromInterests,
     TResult Function(Tag tag)? addedToInterests,
     required TResult orElse(),
   }) {
     if (initialized != null) {
-      return initialized(tag);
+      return initialized(tag, interestsIds);
     }
     return orElse();
   }
@@ -228,10 +241,12 @@ class _$_Initialized implements _Initialized {
 }
 
 abstract class _Initialized implements TagCardActorEvent {
-  const factory _Initialized(Tag tag) = _$_Initialized;
+  const factory _Initialized(Tag tag, Set<UniqueId> interestsIds) = _$_Initialized;
 
   @override
   Tag get tag => throw _privateConstructorUsedError;
+
+  Set<UniqueId> get interestsIds => throw _privateConstructorUsedError;
 
   @override
   @JsonKey(ignore: true)
@@ -305,7 +320,7 @@ class _$_DismissedFromInterests implements _DismissedFromInterests {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(Tag tag) initialized,
+    required TResult Function(Tag tag, Set<UniqueId> interestsIds) initialized,
     required TResult Function(Tag tag) dismissedFromInterests,
     required TResult Function(Tag tag) addedToInterests,
   }) {
@@ -315,7 +330,7 @@ class _$_DismissedFromInterests implements _DismissedFromInterests {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(Tag tag)? initialized,
+    TResult Function(Tag tag, Set<UniqueId> interestsIds)? initialized,
     TResult Function(Tag tag)? dismissedFromInterests,
     TResult Function(Tag tag)? addedToInterests,
     required TResult orElse(),
@@ -428,7 +443,7 @@ class _$_AddedToInterests implements _AddedToInterests {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(Tag tag) initialized,
+    required TResult Function(Tag tag, Set<UniqueId> interestsIds) initialized,
     required TResult Function(Tag tag) dismissedFromInterests,
     required TResult Function(Tag tag) addedToInterests,
   }) {
@@ -438,7 +453,7 @@ class _$_AddedToInterests implements _AddedToInterests {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(Tag tag)? initialized,
+    TResult Function(Tag tag, Set<UniqueId> interestsIds)? initialized,
     TResult Function(Tag tag)? dismissedFromInterests,
     TResult Function(Tag tag)? addedToInterests,
     required TResult orElse(),

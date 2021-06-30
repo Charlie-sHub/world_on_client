@@ -3,7 +3,7 @@ import 'package:dartz/dartz.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:injectable/injectable.dart' as injectable;
 import 'package:mockito/mockito.dart';
-import 'package:worldon/application/core/experience_card_actor/experience_card_actor_bloc.dart';
+import 'package:worldon/application/core/experience_card_actor/experience_add_to_log_actor_bloc.dart';
 import 'package:worldon/core/error/failure.dart';
 import 'package:worldon/data/core/failures/core_data_failure.dart';
 import 'package:worldon/data/core/misc/common_methods_for_dev_repositories/get_valid_entities/get_valid_experience.dart';
@@ -30,7 +30,8 @@ void main() {
   );
   final experience = getValidExperience();
   final user = getValidUser().copyWith(experiencesToDoIds: {experience.id});
-  const failure = Failure.coreData(CoreDataFailure.serverError(errorString: TestDescription.errorString));
+  const failure =
+      Failure.coreData(CoreDataFailure.serverError(errorString: TestDescription.errorString));
   blocTest(
     TestDescription.shouldEmitInitial,
     build: () => getIt<ExperienceCardActorBloc>(),
@@ -58,7 +59,8 @@ void main() {
           when(getLoggedInUser.call(any)).thenAnswer((_) async => some(user));
           return getIt<ExperienceCardActorBloc>();
         },
-        act: (bloc) async => bloc.add(ExperienceCardActorEvent.initialized(experience.copyWith(id: UniqueId()))),
+        act: (bloc) async =>
+            bloc.add(ExperienceCardActorEvent.initialized(experience.copyWith(id: UniqueId()))),
         verify: (_) async {
           verify(getLoggedInUser.call(any));
           verifyNoMoreInteractions(getLoggedInUser);
@@ -113,7 +115,8 @@ void main() {
           when(dismissExperienceFromLog.call(any)).thenAnswer((_) async => right(unit));
           return getIt<ExperienceCardActorBloc>();
         },
-        act: (bloc) async => bloc.add(ExperienceCardActorEvent.dismissedExperienceFromLog(experience)),
+        act: (bloc) async =>
+            bloc.add(ExperienceCardActorEvent.dismissedExperienceFromLog(experience)),
         verify: (_) async {
           verify(dismissExperienceFromLog.call(any));
           verifyNoMoreInteractions(dismissExperienceFromLog);
@@ -129,7 +132,8 @@ void main() {
           when(dismissExperienceFromLog.call(any)).thenAnswer((_) async => left(failure));
           return getIt<ExperienceCardActorBloc>();
         },
-        act: (bloc) async => bloc.add(ExperienceCardActorEvent.dismissedExperienceFromLog(experience)),
+        act: (bloc) async =>
+            bloc.add(ExperienceCardActorEvent.dismissedExperienceFromLog(experience)),
         verify: (_) async {
           verify(dismissExperienceFromLog.call(any));
           verifyNoMoreInteractions(dismissExperienceFromLog);

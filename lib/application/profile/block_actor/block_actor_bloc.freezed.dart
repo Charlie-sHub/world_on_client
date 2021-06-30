@@ -16,9 +16,10 @@ final _privateConstructorUsedError = UnsupportedError(
 class _$BlockActorEventTearOff {
   const _$BlockActorEventTearOff();
 
-  _Initialized initialized(User user) {
+  _Initialized initialized(User user, Set<UniqueId> blockedUsersIds) {
     return _Initialized(
       user,
+      blockedUsersIds,
     );
   }
 
@@ -44,14 +45,14 @@ mixin _$BlockActorEvent {
 
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(User user) initialized,
+    required TResult Function(User user, Set<UniqueId> blockedUsersIds) initialized,
     required TResult Function(User user) blocked,
     required TResult Function(User user) unBlocked,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(User user)? initialized,
+    TResult Function(User user, Set<UniqueId> blockedUsersIds)? initialized,
     TResult Function(User user)? blocked,
     TResult Function(User user)? unBlocked,
     required TResult orElse(),
@@ -122,7 +123,7 @@ abstract class _$InitializedCopyWith<$Res> implements $BlockActorEventCopyWith<$
       __$InitializedCopyWithImpl<$Res>;
 
   @override
-  $Res call({User user});
+  $Res call({User user, Set<UniqueId> blockedUsersIds});
 
   @override
   $UserCopyWith<$Res> get user;
@@ -140,12 +141,17 @@ class __$InitializedCopyWithImpl<$Res> extends _$BlockActorEventCopyWithImpl<$Re
   @override
   $Res call({
     Object? user = freezed,
+    Object? blockedUsersIds = freezed,
   }) {
     return _then(_Initialized(
       user == freezed
           ? _value.user
           : user // ignore: cast_nullable_to_non_nullable
               as User,
+      blockedUsersIds == freezed
+          ? _value.blockedUsersIds
+          : blockedUsersIds // ignore: cast_nullable_to_non_nullable
+              as Set<UniqueId>,
     ));
   }
 }
@@ -153,14 +159,16 @@ class __$InitializedCopyWithImpl<$Res> extends _$BlockActorEventCopyWithImpl<$Re
 /// @nodoc
 
 class _$_Initialized implements _Initialized {
-  const _$_Initialized(this.user);
+  const _$_Initialized(this.user, this.blockedUsersIds);
 
   @override
   final User user;
+  @override
+  final Set<UniqueId> blockedUsersIds;
 
   @override
   String toString() {
-    return 'BlockActorEvent.initialized(user: $user)';
+    return 'BlockActorEvent.initialized(user: $user, blockedUsersIds: $blockedUsersIds)';
   }
 
   @override
@@ -168,11 +176,16 @@ class _$_Initialized implements _Initialized {
     return identical(this, other) ||
         (other is _Initialized &&
             (identical(other.user, user) ||
-                const DeepCollectionEquality().equals(other.user, user)));
+                const DeepCollectionEquality().equals(other.user, user)) &&
+            (identical(other.blockedUsersIds, blockedUsersIds) ||
+                const DeepCollectionEquality().equals(other.blockedUsersIds, blockedUsersIds)));
   }
 
   @override
-  int get hashCode => runtimeType.hashCode ^ const DeepCollectionEquality().hash(user);
+  int get hashCode =>
+      runtimeType.hashCode ^
+      const DeepCollectionEquality().hash(user) ^
+      const DeepCollectionEquality().hash(blockedUsersIds);
 
   @JsonKey(ignore: true)
   @override
@@ -182,23 +195,23 @@ class _$_Initialized implements _Initialized {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(User user) initialized,
+    required TResult Function(User user, Set<UniqueId> blockedUsersIds) initialized,
     required TResult Function(User user) blocked,
     required TResult Function(User user) unBlocked,
   }) {
-    return initialized(user);
+    return initialized(user, blockedUsersIds);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(User user)? initialized,
+    TResult Function(User user, Set<UniqueId> blockedUsersIds)? initialized,
     TResult Function(User user)? blocked,
     TResult Function(User user)? unBlocked,
     required TResult orElse(),
   }) {
     if (initialized != null) {
-      return initialized(user);
+      return initialized(user, blockedUsersIds);
     }
     return orElse();
   }
@@ -229,10 +242,12 @@ class _$_Initialized implements _Initialized {
 }
 
 abstract class _Initialized implements BlockActorEvent {
-  const factory _Initialized(User user) = _$_Initialized;
+  const factory _Initialized(User user, Set<UniqueId> blockedUsersIds) = _$_Initialized;
 
   @override
   User get user => throw _privateConstructorUsedError;
+
+  Set<UniqueId> get blockedUsersIds => throw _privateConstructorUsedError;
 
   @override
   @JsonKey(ignore: true)
@@ -304,7 +319,7 @@ class _$_Blocked implements _Blocked {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(User user) initialized,
+    required TResult Function(User user, Set<UniqueId> blockedUsersIds) initialized,
     required TResult Function(User user) blocked,
     required TResult Function(User user) unBlocked,
   }) {
@@ -314,7 +329,7 @@ class _$_Blocked implements _Blocked {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(User user)? initialized,
+    TResult Function(User user, Set<UniqueId> blockedUsersIds)? initialized,
     TResult Function(User user)? blocked,
     TResult Function(User user)? unBlocked,
     required TResult orElse(),
@@ -427,7 +442,7 @@ class _$_UnBlocked implements _UnBlocked {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(User user) initialized,
+    required TResult Function(User user, Set<UniqueId> blockedUsersIds) initialized,
     required TResult Function(User user) blocked,
     required TResult Function(User user) unBlocked,
   }) {
@@ -437,7 +452,7 @@ class _$_UnBlocked implements _UnBlocked {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(User user)? initialized,
+    TResult Function(User user, Set<UniqueId> blockedUsersIds)? initialized,
     TResult Function(User user)? blocked,
     TResult Function(User user)? unBlocked,
     required TResult orElse(),

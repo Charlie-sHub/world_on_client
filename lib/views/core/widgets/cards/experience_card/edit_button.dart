@@ -34,7 +34,6 @@ class EditButton extends StatelessWidget {
             experienceOption: some(experience),
           ),
         );
-        reloadFunction.call();
       },
       child: Row(
         children: [

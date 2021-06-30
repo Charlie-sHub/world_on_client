@@ -16,9 +16,10 @@ final _privateConstructorUsedError = UnsupportedError(
 class _$FollowActorEventTearOff {
   const _$FollowActorEventTearOff();
 
-  _Initialized initialized(UniqueId userId) {
+  _Initialized initialized(UniqueId userId, Set<UniqueId> followedUsersIds) {
     return _Initialized(
       userId,
+      followedUsersIds,
     );
   }
 
@@ -44,14 +45,14 @@ mixin _$FollowActorEvent {
 
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(UniqueId userId) initialized,
+    required TResult Function(UniqueId userId, Set<UniqueId> followedUsersIds) initialized,
     required TResult Function(UniqueId userId) followed,
     required TResult Function(UniqueId userId) unFollowed,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(UniqueId userId)? initialized,
+    TResult Function(UniqueId userId, Set<UniqueId> followedUsersIds)? initialized,
     TResult Function(UniqueId userId)? followed,
     TResult Function(UniqueId userId)? unFollowed,
     required TResult orElse(),
@@ -113,7 +114,7 @@ abstract class _$InitializedCopyWith<$Res> implements $FollowActorEventCopyWith<
       __$InitializedCopyWithImpl<$Res>;
 
   @override
-  $Res call({UniqueId userId});
+  $Res call({UniqueId userId, Set<UniqueId> followedUsersIds});
 }
 
 /// @nodoc
@@ -128,12 +129,17 @@ class __$InitializedCopyWithImpl<$Res> extends _$FollowActorEventCopyWithImpl<$R
   @override
   $Res call({
     Object? userId = freezed,
+    Object? followedUsersIds = freezed,
   }) {
     return _then(_Initialized(
       userId == freezed
           ? _value.userId
           : userId // ignore: cast_nullable_to_non_nullable
               as UniqueId,
+      followedUsersIds == freezed
+          ? _value.followedUsersIds
+          : followedUsersIds // ignore: cast_nullable_to_non_nullable
+              as Set<UniqueId>,
     ));
   }
 }
@@ -141,14 +147,16 @@ class __$InitializedCopyWithImpl<$Res> extends _$FollowActorEventCopyWithImpl<$R
 /// @nodoc
 
 class _$_Initialized implements _Initialized {
-  const _$_Initialized(this.userId);
+  const _$_Initialized(this.userId, this.followedUsersIds);
 
   @override
   final UniqueId userId;
+  @override
+  final Set<UniqueId> followedUsersIds;
 
   @override
   String toString() {
-    return 'FollowActorEvent.initialized(userId: $userId)';
+    return 'FollowActorEvent.initialized(userId: $userId, followedUsersIds: $followedUsersIds)';
   }
 
   @override
@@ -156,11 +164,16 @@ class _$_Initialized implements _Initialized {
     return identical(this, other) ||
         (other is _Initialized &&
             (identical(other.userId, userId) ||
-                const DeepCollectionEquality().equals(other.userId, userId)));
+                const DeepCollectionEquality().equals(other.userId, userId)) &&
+            (identical(other.followedUsersIds, followedUsersIds) ||
+                const DeepCollectionEquality().equals(other.followedUsersIds, followedUsersIds)));
   }
 
   @override
-  int get hashCode => runtimeType.hashCode ^ const DeepCollectionEquality().hash(userId);
+  int get hashCode =>
+      runtimeType.hashCode ^
+      const DeepCollectionEquality().hash(userId) ^
+      const DeepCollectionEquality().hash(followedUsersIds);
 
   @JsonKey(ignore: true)
   @override
@@ -170,23 +183,23 @@ class _$_Initialized implements _Initialized {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(UniqueId userId) initialized,
+    required TResult Function(UniqueId userId, Set<UniqueId> followedUsersIds) initialized,
     required TResult Function(UniqueId userId) followed,
     required TResult Function(UniqueId userId) unFollowed,
   }) {
-    return initialized(userId);
+    return initialized(userId, followedUsersIds);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(UniqueId userId)? initialized,
+    TResult Function(UniqueId userId, Set<UniqueId> followedUsersIds)? initialized,
     TResult Function(UniqueId userId)? followed,
     TResult Function(UniqueId userId)? unFollowed,
     required TResult orElse(),
   }) {
     if (initialized != null) {
-      return initialized(userId);
+      return initialized(userId, followedUsersIds);
     }
     return orElse();
   }
@@ -217,10 +230,12 @@ class _$_Initialized implements _Initialized {
 }
 
 abstract class _Initialized implements FollowActorEvent {
-  const factory _Initialized(UniqueId userId) = _$_Initialized;
+  const factory _Initialized(UniqueId userId, Set<UniqueId> followedUsersIds) = _$_Initialized;
 
   @override
   UniqueId get userId => throw _privateConstructorUsedError;
+
+  Set<UniqueId> get followedUsersIds => throw _privateConstructorUsedError;
 
   @override
   @JsonKey(ignore: true)
@@ -290,7 +305,7 @@ class _$_Followed implements _Followed {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(UniqueId userId) initialized,
+    required TResult Function(UniqueId userId, Set<UniqueId> followedUsersIds) initialized,
     required TResult Function(UniqueId userId) followed,
     required TResult Function(UniqueId userId) unFollowed,
   }) {
@@ -300,7 +315,7 @@ class _$_Followed implements _Followed {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(UniqueId userId)? initialized,
+    TResult Function(UniqueId userId, Set<UniqueId> followedUsersIds)? initialized,
     TResult Function(UniqueId userId)? followed,
     TResult Function(UniqueId userId)? unFollowed,
     required TResult orElse(),
@@ -410,7 +425,7 @@ class _$_UnFollowed implements _UnFollowed {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(UniqueId userId) initialized,
+    required TResult Function(UniqueId userId, Set<UniqueId> followedUsersIds) initialized,
     required TResult Function(UniqueId userId) followed,
     required TResult Function(UniqueId userId) unFollowed,
   }) {
@@ -420,7 +435,7 @@ class _$_UnFollowed implements _UnFollowed {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(UniqueId userId)? initialized,
+    TResult Function(UniqueId userId, Set<UniqueId> followedUsersIds)? initialized,
     TResult Function(UniqueId userId)? followed,
     TResult Function(UniqueId userId)? unFollowed,
     required TResult orElse(),

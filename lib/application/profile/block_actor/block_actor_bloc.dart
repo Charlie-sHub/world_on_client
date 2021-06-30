@@ -14,6 +14,7 @@ import 'package:worldon/domain/core/entities/user/user.dart';
 import 'package:worldon/domain/core/failures/error.dart';
 import 'package:worldon/domain/core/use_case/use_case.dart';
 import 'package:worldon/domain/core/validation/objects/entity_description.dart';
+import 'package:worldon/domain/core/validation/objects/unique_id.dart';
 import 'package:worldon/domain/notifications/use_case/send_notification.dart' as send_notification;
 import 'package:worldon/domain/profile/use_case/block_user.dart' as block_user;
 import 'package:worldon/domain/profile/use_case/un_block_user.dart' as un_block_user;
@@ -99,12 +100,7 @@ class BlockActorBloc extends Bloc<BlockActorEvent, BlockActorState> {
   }
 
   Stream<BlockActorState> _onInitialized(_Initialized event) async* {
-    final _loggedInUserOption = await getIt<GetLoggedInUser>()(getIt<NoParams>());
-    final _loggedInUser = _loggedInUserOption.fold(
-      () => throw UnAuthenticatedError(),
-      id,
-    );
-    if (_loggedInUser.blockedUsersIds.contains(event.user.id)) {
+    if (event.blockedUsersIds.contains(event.user.id)) {
       yield const BlockActorState.blocks();
     } else {
       yield const BlockActorState.blocksNot();

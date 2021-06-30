@@ -16,9 +16,10 @@ final _privateConstructorUsedError = UnsupportedError(
 class _$ExperienceLikeActorEventTearOff {
   const _$ExperienceLikeActorEventTearOff();
 
-  _Initialized initialized(UniqueId experienceId) {
+  _Initialized initialized(UniqueId experienceId, Set<UniqueId> experiencesLikedIds) {
     return _Initialized(
       experienceId,
+      experiencesLikedIds,
     );
   }
 
@@ -44,14 +45,14 @@ mixin _$ExperienceLikeActorEvent {
 
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(UniqueId experienceId) initialized,
+    required TResult Function(UniqueId experienceId, Set<UniqueId> experiencesLikedIds) initialized,
     required TResult Function(UniqueId experienceId) liked,
     required TResult Function(UniqueId experienceId) disliked,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(UniqueId experienceId)? initialized,
+    TResult Function(UniqueId experienceId, Set<UniqueId> experiencesLikedIds)? initialized,
     TResult Function(UniqueId experienceId)? liked,
     TResult Function(UniqueId experienceId)? disliked,
     required TResult orElse(),
@@ -115,7 +116,7 @@ abstract class _$InitializedCopyWith<$Res> implements $ExperienceLikeActorEventC
       __$InitializedCopyWithImpl<$Res>;
 
   @override
-  $Res call({UniqueId experienceId});
+  $Res call({UniqueId experienceId, Set<UniqueId> experiencesLikedIds});
 }
 
 /// @nodoc
@@ -130,12 +131,17 @@ class __$InitializedCopyWithImpl<$Res> extends _$ExperienceLikeActorEventCopyWit
   @override
   $Res call({
     Object? experienceId = freezed,
+    Object? experiencesLikedIds = freezed,
   }) {
     return _then(_Initialized(
       experienceId == freezed
           ? _value.experienceId
           : experienceId // ignore: cast_nullable_to_non_nullable
               as UniqueId,
+      experiencesLikedIds == freezed
+          ? _value.experiencesLikedIds
+          : experiencesLikedIds // ignore: cast_nullable_to_non_nullable
+              as Set<UniqueId>,
     ));
   }
 }
@@ -143,14 +149,16 @@ class __$InitializedCopyWithImpl<$Res> extends _$ExperienceLikeActorEventCopyWit
 /// @nodoc
 
 class _$_Initialized implements _Initialized {
-  const _$_Initialized(this.experienceId);
+  const _$_Initialized(this.experienceId, this.experiencesLikedIds);
 
   @override
   final UniqueId experienceId;
+  @override
+  final Set<UniqueId> experiencesLikedIds;
 
   @override
   String toString() {
-    return 'ExperienceLikeActorEvent.initialized(experienceId: $experienceId)';
+    return 'ExperienceLikeActorEvent.initialized(experienceId: $experienceId, experiencesLikedIds: $experiencesLikedIds)';
   }
 
   @override
@@ -158,11 +166,17 @@ class _$_Initialized implements _Initialized {
     return identical(this, other) ||
         (other is _Initialized &&
             (identical(other.experienceId, experienceId) ||
-                const DeepCollectionEquality().equals(other.experienceId, experienceId)));
+                const DeepCollectionEquality().equals(other.experienceId, experienceId)) &&
+            (identical(other.experiencesLikedIds, experiencesLikedIds) ||
+                const DeepCollectionEquality()
+                    .equals(other.experiencesLikedIds, experiencesLikedIds)));
   }
 
   @override
-  int get hashCode => runtimeType.hashCode ^ const DeepCollectionEquality().hash(experienceId);
+  int get hashCode =>
+      runtimeType.hashCode ^
+      const DeepCollectionEquality().hash(experienceId) ^
+      const DeepCollectionEquality().hash(experiencesLikedIds);
 
   @JsonKey(ignore: true)
   @override
@@ -172,23 +186,23 @@ class _$_Initialized implements _Initialized {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(UniqueId experienceId) initialized,
+    required TResult Function(UniqueId experienceId, Set<UniqueId> experiencesLikedIds) initialized,
     required TResult Function(UniqueId experienceId) liked,
     required TResult Function(UniqueId experienceId) disliked,
   }) {
-    return initialized(experienceId);
+    return initialized(experienceId, experiencesLikedIds);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(UniqueId experienceId)? initialized,
+    TResult Function(UniqueId experienceId, Set<UniqueId> experiencesLikedIds)? initialized,
     TResult Function(UniqueId experienceId)? liked,
     TResult Function(UniqueId experienceId)? disliked,
     required TResult orElse(),
   }) {
     if (initialized != null) {
-      return initialized(experienceId);
+      return initialized(experienceId, experiencesLikedIds);
     }
     return orElse();
   }
@@ -219,10 +233,13 @@ class _$_Initialized implements _Initialized {
 }
 
 abstract class _Initialized implements ExperienceLikeActorEvent {
-  const factory _Initialized(UniqueId experienceId) = _$_Initialized;
+  const factory _Initialized(UniqueId experienceId, Set<UniqueId> experiencesLikedIds) =
+      _$_Initialized;
 
   @override
   UniqueId get experienceId => throw _privateConstructorUsedError;
+
+  Set<UniqueId> get experiencesLikedIds => throw _privateConstructorUsedError;
 
   @override
   @JsonKey(ignore: true)
@@ -290,7 +307,7 @@ class _$_Liked implements _Liked {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(UniqueId experienceId) initialized,
+    required TResult Function(UniqueId experienceId, Set<UniqueId> experiencesLikedIds) initialized,
     required TResult Function(UniqueId experienceId) liked,
     required TResult Function(UniqueId experienceId) disliked,
   }) {
@@ -300,7 +317,7 @@ class _$_Liked implements _Liked {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(UniqueId experienceId)? initialized,
+    TResult Function(UniqueId experienceId, Set<UniqueId> experiencesLikedIds)? initialized,
     TResult Function(UniqueId experienceId)? liked,
     TResult Function(UniqueId experienceId)? disliked,
     required TResult orElse(),
@@ -409,7 +426,7 @@ class _$_Disliked implements _Disliked {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(UniqueId experienceId) initialized,
+    required TResult Function(UniqueId experienceId, Set<UniqueId> experiencesLikedIds) initialized,
     required TResult Function(UniqueId experienceId) liked,
     required TResult Function(UniqueId experienceId) disliked,
   }) {
@@ -419,7 +436,7 @@ class _$_Disliked implements _Disliked {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(UniqueId experienceId)? initialized,
+    TResult Function(UniqueId experienceId, Set<UniqueId> experiencesLikedIds)? initialized,
     TResult Function(UniqueId experienceId)? liked,
     TResult Function(UniqueId experienceId)? disliked,
     required TResult orElse(),

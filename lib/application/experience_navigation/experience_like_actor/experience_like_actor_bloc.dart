@@ -1,14 +1,10 @@
 import 'dart:async';
 
 import 'package:bloc/bloc.dart';
-import 'package:dartz/dartz.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:injectable/injectable.dart';
 import 'package:meta/meta.dart';
 import 'package:worldon/core/error/failure.dart';
-import 'package:worldon/domain/authentication/use_case/get_logged_in_user.dart';
-import 'package:worldon/domain/core/failures/error.dart';
-import 'package:worldon/domain/core/use_case/use_case.dart';
 import 'package:worldon/domain/core/validation/objects/unique_id.dart';
 import 'package:worldon/domain/experience_navigation/use_case/dislike_experience.dart'
     as dislike_experience;
@@ -57,12 +53,7 @@ class ExperienceLikeActorBloc extends Bloc<ExperienceLikeActorEvent, ExperienceL
   }
 
   Stream<ExperienceLikeActorState> _onInitialized(_Initialized event) async* {
-    final _userOption = await getIt<GetLoggedInUser>()(getIt<NoParams>());
-    final _user = _userOption.fold(
-      () => throw UnAuthenticatedError(),
-      id,
-    );
-    if (_user.experiencesLikedIds.contains(event.experienceId)) {
+    if (event.experiencesLikedIds.contains(event.experienceId)) {
       yield const ExperienceLikeActorState.likes();
     } else {
       yield const ExperienceLikeActorState.neutral();

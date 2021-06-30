@@ -2088,16 +2088,12 @@ abstract class _ExperienceManagementFormState implements ExperienceManagementFor
 
   @override
   Experience get experience => throw _privateConstructorUsedError;
-
   @override
   List<String> get originalImageUrls => throw _privateConstructorUsedError;
-
   @override
   bool get showErrorMessages => throw _privateConstructorUsedError;
-
   @override
   bool get isEditing => throw _privateConstructorUsedError;
-
   @override
   bool get isSubmitting => throw _privateConstructorUsedError;
 
