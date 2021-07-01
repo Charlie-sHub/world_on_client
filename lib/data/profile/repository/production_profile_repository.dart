@@ -27,17 +27,17 @@ import 'package:worldon/domain/core/failures/core_domain_failure.dart';
 import 'package:worldon/domain/core/validation/objects/unique_id.dart';
 import 'package:worldon/domain/profile/repository/profile_repository_interface.dart';
 
-import '../../../injection.dart';
-
 @LazySingleton(as: ProfileRepositoryInterface, env: [Environment.prod])
 class ProductionProfileRepository implements ProfileRepositoryInterface {
   final Logger _logger;
   final FirebaseFirestore _firestore;
+  final CloudStorageService _cloudStorageService;
   final _functions = FirebaseFunctions.instanceFor(region: "europe-west1");
 
   ProductionProfileRepository(
     this._firestore,
     this._logger,
+    this._cloudStorageService,
   );
 
   @override
@@ -140,16 +140,11 @@ class ProductionProfileRepository implements ProfileRepositoryInterface {
           _imageUrl = user.imageURL;
         },
         (_file) async {
-          final _cloudStorageService = getIt<CloudStorageService>();
           _imageUrl = await _cloudStorageService.uploadFileImage(
             imageToUpload: _file!,
             folder: StorageFolder.users,
             name: _userId,
           );
-          // Deleting the old image of the user
-          if (_imageUrl != "") {
-            _cloudStorageService.deleteImage(user.imageURL);
-          }
         },
       );
       final _jsonUser = UserDto.fromDomain(

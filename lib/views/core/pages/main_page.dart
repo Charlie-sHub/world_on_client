@@ -1,3 +1,4 @@
+import 'package:another_flushbar/flushbar_helper.dart';
 import 'package:auto_route/auto_route.dart';
 import 'package:dartz/dartz.dart';
 import 'package:flutter/material.dart';
@@ -44,75 +45,93 @@ class MainPage extends StatelessWidget {
               ),
           ),
         ],
-        child: BlocConsumer<NavigationActorBloc, NavigationActorState>(
-          listener: (context, state) => state.map(
-            mainFeedView: (_) => context.read<AppBarTitleBloc>().add(
-                  const AppBarTitleEvent.showedMainFeed(),
-                ),
-            searchView: (_) => context.read<AppBarTitleBloc>().add(
-                  const AppBarTitleEvent.showedSearch(),
-                ),
-            navigateExperienceView: (_) => context.read<AppBarTitleBloc>().add(
-                  const AppBarTitleEvent.showedExperienceNavigation(),
-                ),
-            profileView: (_) => context.read<AppBarTitleBloc>().add(
-                  const AppBarTitleEvent.showedProfile(),
-                ),
-            errorView: (_) => context.read<AppBarTitleBloc>().add(
-                  const AppBarTitleEvent.initialized(),
-                ),
-            notificationsView: (_) => context.read<AppBarTitleBloc>().add(
-                  const AppBarTitleEvent.showedNotifications(),
-                ),
-          ),
-          builder: (context, state) => SafeArea(
-            child: Scaffold(
-              appBar: WorldOnAppBar(),
-              extendBody: true,
-              body: IndexedStack(
-                // Feels rather duct tape-ish to return the index this way
-                // but changing the state would mess with the rest of the navigation, such as when "participating" in a experience
-                index: context.read<NavigationActorBloc>().state.map(
-                      mainFeedView: (_) => 0,
-                      searchView: (_) => 1,
-                      navigateExperienceView: (_) => 2,
-                      profileView: (_) => 3,
-                      errorView: (_) => 4,
-                      notificationsView: (_) => 5,
+        child: BlocListener<WatchCurrentUserBloc, WatchCurrentUserState>(
+          listener: _watchUserListener,
+          child: BlocConsumer<NavigationActorBloc, NavigationActorState>(
+            listener: _navigationListener,
+            builder: (context, state) => SafeArea(
+              child: Scaffold(
+                appBar: WorldOnAppBar(),
+                extendBody: true,
+                body: IndexedStack(
+                  // Feels rather duct tape-ish to return the index this way
+                  // but changing the state would mess with the rest of the navigation, such as when "participating" in a experience
+                  index: context.read<NavigationActorBloc>().state.map(
+                        mainFeedView: (_) => 0,
+                        searchView: (_) => 1,
+                        navigateExperienceView: (_) => 2,
+                        profileView: (_) => 3,
+                        errorView: (_) => 4,
+                        notificationsView: (_) => 5,
+                      ),
+                  children: <Widget>[
+                    const MainFeedBody(),
+                    const SearchBody(),
+                    ExperienceNavigationBody(
+                      experienceOption: context.read<NavigationActorBloc>().state.maybeMap(
+                            navigateExperienceView: (state) => state.experienceOption,
+                            orElse: () => none(),
+                          ),
                     ),
-                children: <Widget>[
-                  const MainFeedBody(),
-                  const SearchBody(),
-                  ExperienceNavigationBody(
-                    experienceOption: context.read<NavigationActorBloc>().state.maybeMap(
-                          navigateExperienceView: (state) => state.experienceOption,
-                          orElse: () => none(),
-                        ),
-                  ),
-                  ProfileBody(
-                    userIdOption: context.read<NavigationActorBloc>().state.maybeMap(
-                          profileView: (state) => state.userIdOption,
-                          orElse: () => none(),
-                        ),
-                    currentUserProfile: context.read<NavigationActorBloc>().state.maybeMap(
-                          profileView: (state) => state.currentUserProfile,
-                          orElse: () => true,
-                        ),
-                  ),
-                  Center(
-                    child: Text(S.of(context).error),
-                  ),
-                  const NotificationsBody(),
-                ],
+                    ProfileBody(
+                      userIdOption: context.read<NavigationActorBloc>().state.maybeMap(
+                            profileView: (state) => state.userIdOption,
+                            orElse: () => none(),
+                          ),
+                      currentUserProfile: context.read<NavigationActorBloc>().state.maybeMap(
+                            profileView: (state) => state.currentUserProfile,
+                            orElse: () => true,
+                          ),
+                    ),
+                    Center(
+                      child: Text(S.of(context).error),
+                    ),
+                    const NotificationsBody(),
+                  ],
+                ),
+                resizeToAvoidBottomInset: false,
+                floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
+                floatingActionButton: const CreateExperienceFloatingButton(),
+                bottomNavigationBar: WorldOnBottomNavigationBar(),
               ),
-              resizeToAvoidBottomInset: false,
-              floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
-              floatingActionButton: const CreateExperienceFloatingButton(),
-              bottomNavigationBar: WorldOnBottomNavigationBar(),
             ),
           ),
         ),
       ),
     );
   }
+
+  void _watchUserListener(BuildContext context, WatchCurrentUserState state) => state.maybeMap(
+        loadFailure: (_failureState) => FlushbarHelper.createError(
+          duration: const Duration(seconds: 2),
+          message: _failureState.failure.maybeMap(
+              coreData: (failure) => failure.coreDataFailure.maybeMap(
+                    serverError: (failure) => failure.errorString,
+                    orElse: () => S.of(context).unknownError,
+                  ),
+              orElse: () => S.of(context).unknownError),
+        ).show(context),
+        orElse: () {},
+      );
+
+  void _navigationListener(BuildContext context, NavigationActorState state) => state.map(
+        mainFeedView: (_) => context.read<AppBarTitleBloc>().add(
+              const AppBarTitleEvent.showedMainFeed(),
+            ),
+        searchView: (_) => context.read<AppBarTitleBloc>().add(
+              const AppBarTitleEvent.showedSearch(),
+            ),
+        navigateExperienceView: (_) => context.read<AppBarTitleBloc>().add(
+              const AppBarTitleEvent.showedExperienceNavigation(),
+            ),
+        profileView: (_) => context.read<AppBarTitleBloc>().add(
+              const AppBarTitleEvent.showedProfile(),
+            ),
+        errorView: (_) => context.read<AppBarTitleBloc>().add(
+              const AppBarTitleEvent.initialized(),
+            ),
+        notificationsView: (_) => context.read<AppBarTitleBloc>().add(
+              const AppBarTitleEvent.showedNotifications(),
+            ),
+      );
 }

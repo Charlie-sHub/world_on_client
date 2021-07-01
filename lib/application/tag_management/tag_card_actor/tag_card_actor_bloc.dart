@@ -14,9 +14,7 @@ import 'package:worldon/domain/tag_management/use_case/dismiss_tag_from_interest
 import 'package:worldon/injection.dart';
 
 part 'tag_card_actor_bloc.freezed.dart';
-
 part 'tag_card_actor_event.dart';
-
 part 'tag_card_actor_state.dart';
 
 @injectable

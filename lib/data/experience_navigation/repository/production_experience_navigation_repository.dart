@@ -231,11 +231,12 @@ class ProductionExperienceNavigationRepository implements ExperienceNavigationRe
                       (_tag) => _tag.id,
                     )
                     .toList();
-                final _containsId = _userDto.interestsIds.any(
+                final _containsInterest = _userDto.interestsIds.any(
                   (_id) => _experienceTagIds.contains(_id),
                 );
                 final _isNotCreator = _experience.creator.id != _userDto.id;
-                return _containsId && _isNotCreator || _experience.isPromoted;
+                return _containsInterest && _isNotCreator ||
+                    _experience.isPromoted && _isNotCreator;
               },
             ).toList();
             _filteredExperienceDtoList.sort(

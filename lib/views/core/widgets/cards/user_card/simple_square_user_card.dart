@@ -3,6 +3,7 @@ import 'package:cached_network_image/cached_network_image.dart';
 import 'package:dartz/dartz.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:worldon/application/core/watch_current_user/watch_current_user_bloc.dart';
 import 'package:worldon/application/navigation/navigation_actor/navigation_actor_bloc.dart';
 import 'package:worldon/application/profile/follow_actor/follow_actor_bloc.dart';
 import 'package:worldon/domain/core/entities/user/user.dart';
@@ -36,50 +37,68 @@ class SimpleSquareUserCard extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: <Widget>[
-              BlocProvider(
-                create: (context) => getIt<FollowActorBloc>()
-                  ..add(
-                    FollowActorEvent.initialized(user.id),
-                  ),
-                child: BlocBuilder<FollowActorBloc, FollowActorState>(
-                  builder: (context, state) => state.maybeMap(
-                    initial: (_) => Container(),
-                    actionInProgress: (_) => const CircularProgressIndicator(),
-                    follows: (_) {
-                      return Stack(
-                        alignment: Alignment.center,
-                        children: [
-                          CachedNetworkImage(
-                            imageUrl: user.imageURL,
-                            height: MediaQuery.of(context).size.height * _multiplier,
-                            width: MediaQuery.of(context).size.height * _multiplier,
-                            fit: BoxFit.cover,
-                            progressIndicatorBuilder: (context, url, progress) => WorldOnPlasma(),
-                          ),
-                          Container(
-                            decoration: BoxDecoration(
-                              color: WorldOnColors.primary.withOpacity(0.25),
-                            ),
-                            height: MediaQuery.of(context).size.height * _multiplier,
-                            width: MediaQuery.of(context).size.height * _multiplier,
-                            child: const Center(
-                              child: Icon(
-                                Icons.check_rounded,
-                                color: WorldOnColors.white,
-                                size: 30,
+              BlocBuilder<WatchCurrentUserBloc, WatchCurrentUserState>(
+                buildWhen: _buildWhen,
+                builder: (context, state) => state.map(
+                  initial: (_) => const CircularProgressIndicator(),
+                  loadSuccess: (successState) => BlocProvider(
+                    create: (context) => getIt<FollowActorBloc>()
+                      ..add(
+                        FollowActorEvent.initialized(
+                          user.id,
+                          successState.user.followedUsersIds,
+                        ),
+                      ),
+                    child: Stack(
+                      alignment: Alignment.center,
+                      children: [
+                        CachedNetworkImage(
+                          imageUrl: user.imageURL,
+                          height: MediaQuery.of(context).size.height * _multiplier,
+                          width: MediaQuery.of(context).size.height * _multiplier,
+                          fit: BoxFit.cover,
+                          progressIndicatorBuilder: (
+                            context,
+                            url,
+                            progress,
+                          ) =>
+                              WorldOnPlasma(),
+                        ),
+                        BlocBuilder<FollowActorBloc, FollowActorState>(
+                          builder: (context, state) => state.maybeMap(
+                            initial: (_) => Container(),
+                            actionInProgress: (_) => const CircularProgressIndicator(),
+                            follows: (_) => Container(
+                              decoration: BoxDecoration(
+                                color: WorldOnColors.primary.withOpacity(0.25),
+                              ),
+                              height: MediaQuery.of(context).size.height * _multiplier,
+                              width: MediaQuery.of(context).size.height * _multiplier,
+                              child: const Center(
+                                child: Icon(
+                                  Icons.check_rounded,
+                                  color: WorldOnColors.white,
+                                  size: 30,
+                                ),
                               ),
                             ),
+                            orElse: () => Container(),
                           ),
-                        ],
-                      );
-                    },
-                    orElse: () => CachedNetworkImage(
-                      imageUrl: user.imageURL,
-                      height: MediaQuery.of(context).size.height * _multiplier,
-                      width: MediaQuery.of(context).size.height * _multiplier,
-                      fit: BoxFit.cover,
-                      progressIndicatorBuilder: (context, url, progress) => WorldOnPlasma(),
+                        ),
+                      ],
                     ),
+                  ),
+                  loadFailure: (_) => CachedNetworkImage(
+                    imageUrl: user.imageURL,
+                    height: MediaQuery.of(context).size.height * _multiplier,
+                    width: MediaQuery.of(context).size.height * _multiplier,
+                    fit: BoxFit.cover,
+                    progressIndicatorBuilder: (
+                      context,
+                      url,
+                      progress,
+                    ) =>
+                        WorldOnPlasma(),
                   ),
                 ),
               ),
@@ -124,4 +143,24 @@ class SimpleSquareUserCard extends StatelessWidget {
       ),
     );
   }
+
+  bool _buildWhen(WatchCurrentUserState previous, WatchCurrentUserState current) => current.map(
+        initial: (_) => true,
+        loadSuccess: (_) {
+          final _previousFollowsContainsUser = previous.maybeMap(
+            loadSuccess: (successState) => successState.user.followedUsersIds.contains(
+              user.id,
+            ),
+            orElse: () => true,
+          );
+          final _currentFollowsContainsUser = current.maybeMap(
+            loadSuccess: (successState) => successState.user.followedUsersIds.contains(
+              user.id,
+            ),
+            orElse: () => true,
+          );
+          return _previousFollowsContainsUser != _currentFollowsContainsUser;
+        },
+        loadFailure: (_) => true,
+      );
 }

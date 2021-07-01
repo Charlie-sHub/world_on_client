@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:worldon/domain/core/entities/user/simple_user.dart';
 import 'package:worldon/views/core/widgets/cards/user_card/name_username_display.dart';
 import 'package:worldon/views/core/widgets/misc/follow_unfollow_button_builder/follow_unfollow_button_builder.dart';
-import 'package:worldon/views/core/widgets/misc/user_image.dart';
+import 'package:worldon/views/core/widgets/misc/user_avatar_follow_checker.dart';
 
 class UserInformation extends StatelessWidget {
   const UserInformation({
@@ -19,12 +19,12 @@ class UserInformation extends StatelessWidget {
       children: <Widget>[
         Row(
           children: [
-            UserImage(
+            UserAvatarFollowChecker(
               userId: creator.id,
-              imageUrl: creator.imageURL,
               adminPowers: creator.adminPowers,
-              avatarRadius: 30,
+              imageUrl: creator.imageURL,
               checkIconSize: 20,
+              avatarRadius: 30,
             ),
             const SizedBox(width: 5),
             NameUsernameDisplay(

@@ -224,5 +224,6 @@
   "days": "days",
   "promotionsHeaderTitle": "Promote your experiences to reach everyone!",
   "noItemsOwned": "Currently you don't own any items",
-  "toDoBy": "To do by:"
+  "toDoBy": "To do by:",
+  "cantBlockSelf": "You can't block yourself"
 }

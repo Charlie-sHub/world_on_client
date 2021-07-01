@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:worldon/application/core/user_profile_button_watcher/user_profile_button_watcher_bloc.dart';
 import 'package:worldon/application/profile/profile_watcher/profile_watcher_bloc.dart';
 import 'package:worldon/domain/core/entities/user/user.dart';
 import 'package:worldon/injection.dart';
@@ -31,17 +30,10 @@ class ProfileBuilder extends StatelessWidget {
             isOwn: isOwn,
             user: user,
           ),
-          newProfileUpdate: (_newProfileUpdate) {
-            if (isOwn) {
-              context.read<UserProfileButtonWatcherBloc>().add(
-                    const UserProfileButtonWatcherEvent.initialized(),
-                  );
-            }
-            return Profile(
-              isOwn: isOwn,
-              user: _newProfileUpdate.user,
-            );
-          },
+          newProfileUpdate: (_newProfileUpdate) => Profile(
+            isOwn: isOwn,
+            user: _newProfileUpdate.user,
+          ),
           failure: (value) => InkWell(
             onTap: () async => context.read<ProfileWatcherBloc>().add(
                   ProfileWatcherEvent.watchProfileStarted(user.id),

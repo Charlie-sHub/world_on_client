@@ -5,7 +5,6 @@ import 'package:material_design_icons_flutter/material_design_icons_flutter.dart
 import 'package:worldon/application/core/experience_add_to_log_actor/experience_add_to_log_actor_bloc.dart';
 import 'package:worldon/application/core/watch_current_user/watch_current_user_bloc.dart';
 import 'package:worldon/domain/core/entities/experience/experience.dart';
-import 'package:worldon/domain/core/validation/objects/unique_id.dart';
 import 'package:worldon/generated/l10n.dart';
 import 'package:worldon/views/core/misc/world_on_colors.dart';
 import 'package:worldon/views/core/widgets/cards/experience_card/add_to_log_button.dart';
@@ -28,21 +27,7 @@ class LogButton extends StatelessWidget {
       height: 35,
       width: 35,
       child: BlocBuilder<WatchCurrentUserBloc, WatchCurrentUserState>(
-        buildWhen: (previous, current) => current.map(
-          initial: (_) => true,
-          loadSuccess: (_) {
-            final _previousToDos = previous.maybeMap(
-              loadSuccess: (successState) => successState.user.experiencesToDoIds,
-              orElse: () => <UniqueId>{},
-            );
-            final _currentToDos = current.maybeMap(
-              loadSuccess: (successState) => successState.user.experiencesToDoIds,
-              orElse: () => <UniqueId>{},
-            );
-            return _previousToDos != _currentToDos;
-          },
-          loadFailure: (_) => true,
-        ),
+        buildWhen: _buildWhen,
         builder: (context, state) => state.map(
           initial: (_) => const WorldOnProgressIndicator(size: 25),
           loadSuccess: (_successState) => BlocProvider(
@@ -83,6 +68,26 @@ class LogButton extends StatelessWidget {
       ),
     );
   }
+
+  bool _buildWhen(WatchCurrentUserState previous, WatchCurrentUserState current) => current.map(
+        initial: (_) => true,
+        loadSuccess: (_) {
+          final _previousToDosContainsExperience = previous.maybeMap(
+            loadSuccess: (successState) => successState.user.experiencesToDoIds.contains(
+              experience.id,
+            ),
+            orElse: () => true,
+          );
+          final _currentToDosContainsExperience = current.maybeMap(
+            loadSuccess: (successState) => successState.user.experiencesToDoIds.contains(
+              experience.id,
+            ),
+            orElse: () => true,
+          );
+          return _previousToDosContainsExperience != _currentToDosContainsExperience;
+        },
+        loadFailure: (_) => true,
+      );
 
   void _experienceCardListener(BuildContext context, ExperienceAddToLogActorState state) =>
       state.maybeMap(

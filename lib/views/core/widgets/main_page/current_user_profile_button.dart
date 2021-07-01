@@ -32,21 +32,7 @@ class CurrentUserProfileButton extends StatelessWidget {
         width: _size,
         height: _size,
         child: BlocBuilder<WatchCurrentUserBloc, WatchCurrentUserState>(
-          buildWhen: (previous, current) => current.map(
-            initial: (_) => true,
-            loadSuccess: (_) {
-              final _previousImageUrl = previous.maybeMap(
-                loadSuccess: (successState) => successState.user.imageURL,
-                orElse: () => "",
-              );
-              final _currentImageUrl = current.maybeMap(
-                loadSuccess: (successState) => successState.user.imageURL,
-                orElse: () => "",
-              );
-              return _previousImageUrl != _currentImageUrl;
-            },
-            loadFailure: (_) => true,
-          ),
+          buildWhen: _buildWhen,
           builder: (context, state) => state.map(
             initial: (_) => const Icon(
               Icons.person_outline,
@@ -66,6 +52,22 @@ class CurrentUserProfileButton extends StatelessWidget {
       ),
     );
   }
+
+  bool _buildWhen(WatchCurrentUserState previous, WatchCurrentUserState current) => current.map(
+        initial: (_) => true,
+        loadSuccess: (_) {
+          final _previousImageUrl = previous.maybeMap(
+            loadSuccess: (successState) => successState.user.imageURL,
+            orElse: () => "",
+          );
+          final _currentImageUrl = current.maybeMap(
+            loadSuccess: (successState) => successState.user.imageURL,
+            orElse: () => "",
+          );
+          return _previousImageUrl != _currentImageUrl;
+        },
+        loadFailure: (_) => true,
+      );
 
   Future _onLongPress(BuildContext context) async {
     final _confirmed = await showDialog<bool>(

@@ -12,9 +12,7 @@ import 'package:worldon/domain/core/use_case/watch_current_user.dart';
 import '../../../injection.dart';
 
 part 'watch_current_user_bloc.freezed.dart';
-
 part 'watch_current_user_event.dart';
-
 part 'watch_current_user_state.dart';
 
 @injectable

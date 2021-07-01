@@ -224,5 +224,6 @@
   "days": "dias",
   "promotionsHeaderTitle": "¡Promociona tus experiencias para que alcancen a todos!",
   "noItemsOwned": "Actualmente no posees ningun item",
-  "toDoBy": "Para hacer por:"
+  "toDoBy": "Para hacer por:",
+  "cantBlockSelf": "No te puedes bloquear"
 }

@@ -38,6 +38,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "camera": MessageLookupByLibrary.simpleMessage("Camera"),
         "cancel": MessageLookupByLibrary.simpleMessage("Cancel"),
         "cancelledByUser": MessageLookupByLibrary.simpleMessage("Cancelled"),
+        "cantBlockSelf": MessageLookupByLibrary.simpleMessage("You can\'t block yourself"),
         "comment": MessageLookupByLibrary.simpleMessage("Leave a comment"),
         "commentEmptyString": MessageLookupByLibrary.simpleMessage("The comment can\'t be empty"),
         "commentPostSuccess": MessageLookupByLibrary.simpleMessage("The Comment was posted"),

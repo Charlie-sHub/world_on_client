@@ -4,8 +4,8 @@ import 'package:worldon/views/core/widgets/cards/user_card/name_username_display
 import 'package:worldon/views/core/widgets/cards/user_card/user_bio.dart';
 import 'package:worldon/views/core/widgets/misc/follow_unfollow_button_builder/follow_unfollow_button_builder.dart';
 import 'package:worldon/views/core/widgets/misc/followers_following_counters.dart';
+import 'package:worldon/views/core/widgets/misc/user_avatar_follow_checker.dart';
 import 'package:worldon/views/core/widgets/misc/user_experience_info.dart';
-import 'package:worldon/views/core/widgets/misc/user_image.dart';
 
 class UserCard extends StatelessWidget {
   final User user;
@@ -24,12 +24,12 @@ class UserCard extends StatelessWidget {
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: <Widget>[
-              UserImage(
+              UserAvatarFollowChecker(
                 userId: user.id,
-                imageUrl: user.imageURL,
                 adminPowers: user.adminPowers,
-                avatarRadius: 30,
+                imageUrl: user.imageURL,
                 checkIconSize: 20,
+                avatarRadius: 30,
               ),
               NameUsernameDisplay(
                 name: user.name,

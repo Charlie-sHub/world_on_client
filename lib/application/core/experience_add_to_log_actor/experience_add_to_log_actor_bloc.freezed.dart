@@ -84,7 +84,6 @@ abstract class $ExperienceAddToLogActorEventCopyWith<$Res> {
   factory $ExperienceAddToLogActorEventCopyWith(
           ExperienceAddToLogActorEvent value, $Res Function(ExperienceAddToLogActorEvent) then) =
       _$ExperienceAddToLogActorEventCopyWithImpl<$Res>;
-
   $Res call({Experience experience});
 
   $ExperienceCopyWith<$Res> get experience;
@@ -96,7 +95,6 @@ class _$ExperienceAddToLogActorEventCopyWithImpl<$Res>
   _$ExperienceAddToLogActorEventCopyWithImpl(this._value, this._then);
 
   final ExperienceAddToLogActorEvent _value;
-
   // ignore: unused_field
   final $Res Function(ExperienceAddToLogActorEvent) _then;
 
@@ -393,7 +391,6 @@ abstract class _$DismissedExperienceFromLogCopyWith<$Res>
   factory _$DismissedExperienceFromLogCopyWith(
           _DismissedExperienceFromLog value, $Res Function(_DismissedExperienceFromLog) then) =
       __$DismissedExperienceFromLogCopyWithImpl<$Res>;
-
   @override
   $Res call({Experience experience});
 
@@ -626,7 +623,6 @@ class _$ExperienceAddToLogActorStateCopyWithImpl<$Res>
   _$ExperienceAddToLogActorStateCopyWithImpl(this._value, this._then);
 
   final ExperienceAddToLogActorState _value;
-
   // ignore: unused_field
   final $Res Function(ExperienceAddToLogActorState) _then;
 }

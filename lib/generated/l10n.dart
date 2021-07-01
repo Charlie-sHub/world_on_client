@@ -2298,6 +2298,16 @@ class S {
       args: [],
     );
   }
+
+  /// `You can't block yourself`
+  String get cantBlockSelf {
+    return Intl.message(
+      'You can\'t block yourself',
+      name: 'cantBlockSelf',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

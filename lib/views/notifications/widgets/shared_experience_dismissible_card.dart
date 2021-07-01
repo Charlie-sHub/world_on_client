@@ -10,7 +10,7 @@ import 'package:worldon/domain/core/entities/experience/experience.dart';
 import 'package:worldon/domain/core/entities/notification/notification.dart';
 import 'package:worldon/generated/l10n.dart';
 import 'package:worldon/views/core/misc/world_on_colors.dart';
-import 'package:worldon/views/core/widgets/misc/user_image.dart';
+import 'package:worldon/views/core/widgets/misc/user_avatar_follow_checker.dart';
 import 'package:worldon/views/core/widgets/misc/world_on_plasma.dart';
 
 class SharedExperienceDismissibleCard extends StatelessWidget {
@@ -45,12 +45,12 @@ class SharedExperienceDismissibleCard extends StatelessWidget {
                 some(experience),
               ),
             ),
-        leading: UserImage(
+        leading: UserAvatarFollowChecker(
+          userId: notification.sender.id,
           adminPowers: notification.sender.adminPowers,
           imageUrl: notification.sender.imageURL,
-          userId: notification.sender.id,
-          avatarRadius: 25,
           checkIconSize: 17,
+          avatarRadius: 25,
         ),
         title: Stack(
           alignment: Alignment.center,

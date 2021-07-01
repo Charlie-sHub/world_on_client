@@ -736,7 +736,8 @@ class _$_UserDto extends _UserDto {
                 const DeepCollectionEquality().equals(other.systems, systems)) &&
             (identical(other.items, items) ||
                 const DeepCollectionEquality().equals(other.items, items)) &&
-            (identical(other.coins, coins) || const DeepCollectionEquality().equals(other.coins, coins)) &&
+            (identical(other.coins, coins) ||
+                const DeepCollectionEquality().equals(other.coins, coins)) &&
             (identical(other.followersAmount, followersAmount) || const DeepCollectionEquality().equals(other.followersAmount, followersAmount)) &&
             (identical(other.promotionPlan, promotionPlan) || const DeepCollectionEquality().equals(other.promotionPlan, promotionPlan)));
   }

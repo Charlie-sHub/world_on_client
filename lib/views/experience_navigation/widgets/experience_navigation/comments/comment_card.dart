@@ -1,7 +1,7 @@
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:worldon/domain/core/entities/comment/comment.dart';
-import 'package:worldon/views/core/widgets/misc/user_image.dart';
+import 'package:worldon/views/core/widgets/misc/user_avatar_follow_checker.dart';
 
 class CommentCard extends StatelessWidget {
   const CommentCard({
@@ -14,12 +14,12 @@ class CommentCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ListTile(
-      leading: UserImage(
+      leading: UserAvatarFollowChecker(
         userId: comment.poster.id,
-        imageUrl: comment.poster.imageURL,
         adminPowers: comment.poster.adminPowers,
-        avatarRadius: 16,
+        imageUrl: comment.poster.imageURL,
         checkIconSize: 12,
+        avatarRadius: 16,
       ),
       title: AutoSizeText.rich(
         TextSpan(

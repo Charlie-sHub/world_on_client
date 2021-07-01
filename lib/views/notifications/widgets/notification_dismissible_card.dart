@@ -7,7 +7,7 @@ import 'package:worldon/domain/core/entities/notification/notification.dart';
 import 'package:worldon/domain/core/entities/notification/notification_type_enum.dart';
 import 'package:worldon/generated/l10n.dart';
 import 'package:worldon/views/core/misc/world_on_colors.dart';
-import 'package:worldon/views/core/widgets/misc/user_image.dart';
+import 'package:worldon/views/core/widgets/misc/user_avatar_follow_checker.dart';
 
 class NotificationDismissibleTile extends StatelessWidget {
   final Notification notification;
@@ -30,12 +30,12 @@ class NotificationDismissibleTile extends StatelessWidget {
       ],
       actionPane: const SlidableScrollActionPane(),
       child: ListTile(
-        leading: UserImage(
+        leading: UserAvatarFollowChecker(
+          userId: notification.sender.id,
           adminPowers: notification.sender.adminPowers,
           imageUrl: notification.sender.imageURL,
-          userId: notification.sender.id,
-          avatarRadius: 25,
           checkIconSize: 17,
+          avatarRadius: 25,
         ),
         title: SizedBox(
           height: 50,

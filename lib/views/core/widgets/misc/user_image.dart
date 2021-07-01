@@ -12,6 +12,7 @@ class UserImage extends StatelessWidget {
     required this.userId,
     required this.imageUrl,
     required this.adminPowers,
+    required this.follows,
     required this.avatarRadius,
     required this.checkIconSize,
   }) : super(key: key);
@@ -19,6 +20,7 @@ class UserImage extends StatelessWidget {
   final UniqueId userId;
   final String imageUrl;
   final bool adminPowers;
+  final bool follows;
   final double avatarRadius;
   final double checkIconSize;
 
@@ -32,6 +34,7 @@ class UserImage extends StatelessWidget {
             ),
           ),
       child: Stack(
+        alignment: Alignment.center,
         children: [
           ClipOval(
             child: Container(
@@ -45,14 +48,34 @@ class UserImage extends StatelessWidget {
               ),
             ),
           ),
-          if (adminPowers)
-            ClipOval(
-              child: Container(
-                color: Colors.white,
+          if (follows)
+            Container(
+              decoration: BoxDecoration(
+                color: WorldOnColors.primary.withOpacity(0.25),
+                shape: BoxShape.circle,
+              ),
+              height: avatarRadius * 2,
+              width: avatarRadius * 2,
+              child: const Center(
                 child: Icon(
-                  Icons.check_circle_rounded,
-                  size: checkIconSize,
-                  color: WorldOnColors.blue,
+                  Icons.check_rounded,
+                  color: WorldOnColors.white,
+                  size: 30,
+                ),
+              ),
+            ),
+          if (adminPowers)
+            Positioned(
+              top: 0,
+              left: 0,
+              child: ClipOval(
+                child: Container(
+                  color: Colors.white,
+                  child: Icon(
+                    Icons.check_circle_rounded,
+                    size: checkIconSize,
+                    color: WorldOnColors.blue,
+                  ),
                 ),
               ),
             ),

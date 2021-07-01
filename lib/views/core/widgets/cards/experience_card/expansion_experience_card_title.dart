@@ -2,7 +2,7 @@ import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:worldon/domain/core/entities/experience/experience.dart';
 import 'package:worldon/views/core/widgets/misc/experience_likes_counter.dart';
-import 'package:worldon/views/core/widgets/misc/user_image.dart';
+import 'package:worldon/views/core/widgets/misc/user_avatar_follow_checker.dart';
 
 class ExpansionExperienceCardTitle extends StatelessWidget {
   const ExpansionExperienceCardTitle({
@@ -23,12 +23,12 @@ class ExpansionExperienceCardTitle extends StatelessWidget {
             bottom: 5,
             top: 5,
           ),
-          child: UserImage(
+          child: UserAvatarFollowChecker(
             userId: experience.creator.id,
-            imageUrl: experience.creator.imageURL,
             adminPowers: experience.creator.adminPowers,
-            avatarRadius: 25,
+            imageUrl: experience.creator.imageURL,
             checkIconSize: 17,
+            avatarRadius: 25,
           ),
         ),
         Flexible(

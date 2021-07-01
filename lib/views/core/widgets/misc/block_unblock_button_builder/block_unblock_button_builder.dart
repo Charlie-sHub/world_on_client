@@ -1,6 +1,7 @@
 import 'package:another_flushbar/flushbar_helper.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:worldon/application/core/watch_current_user/watch_current_user_bloc.dart';
 import 'package:worldon/application/profile/block_actor/block_actor_bloc.dart';
 import 'package:worldon/domain/core/entities/user/user.dart';
 import 'package:worldon/generated/l10n.dart';
@@ -22,32 +23,42 @@ class BlockUnblockButtonBuilder extends StatelessWidget {
     return SizedBox(
       width: 40,
       height: 40,
-      child: BlocProvider(
-        create: (context) => getIt<BlockActorBloc>()
-          ..add(
-            BlockActorEvent.initialized(user),
-          ),
-        child: BlocListener<BlockActorBloc, BlockActorState>(
-          listener: _userBlockListener,
-          child: BlocBuilder<BlockActorBloc, BlockActorState>(
-            builder: (context, state) => AnimatedSwitcher(
-              duration: const Duration(milliseconds: 250),
-              transitionBuilder: (child, animation) => FadeTransition(
-                opacity: animation,
-                child: child,
+      child: BlocBuilder<WatchCurrentUserBloc, WatchCurrentUserState>(
+        buildWhen: _buildWhen,
+        builder: (context, state) => state.map(
+          initial: (_) => Container(),
+          loadSuccess: (successState) => BlocProvider(
+            create: (context) => getIt<BlockActorBloc>()
+              ..add(
+                BlockActorEvent.initialized(
+                  user,
+                  successState.user.blockedUsersIds,
+                ),
               ),
-              child: state.map(
-                initial: (_) => Container(),
-                actionInProgress: (_) => const CircularProgressIndicator(),
-                blocks: (_) => UnBlockButton(user: user),
-                blocksNot: (_) => BlockButton(user: user),
-                blockSuccess: (_) => UnBlockButton(user: user),
-                blockFailure: (_) => BlockButton(user: user),
-                unBlockSuccess: (_) => BlockButton(user: user),
-                unBlockFailure: (_) => UnBlockButton(user: user),
+            child: BlocListener<BlockActorBloc, BlockActorState>(
+              listener: _userBlockListener,
+              child: BlocBuilder<BlockActorBloc, BlockActorState>(
+                builder: (context, state) => AnimatedSwitcher(
+                  duration: const Duration(milliseconds: 250),
+                  transitionBuilder: (child, animation) => FadeTransition(
+                    opacity: animation,
+                    child: child,
+                  ),
+                  child: state.map(
+                    initial: (_) => Container(),
+                    actionInProgress: (_) => const CircularProgressIndicator(),
+                    blocks: (_) => UnBlockButton(user: user),
+                    blocksNot: (_) => BlockButton(user: user),
+                    blockSuccess: (_) => UnBlockButton(user: user),
+                    blockFailure: (_) => BlockButton(user: user),
+                    unBlockSuccess: (_) => BlockButton(user: user),
+                    unBlockFailure: (_) => UnBlockButton(user: user),
+                  ),
+                ),
               ),
             ),
           ),
+          loadFailure: (_) => BlockButton(user: user),
         ),
       ),
     );
@@ -62,7 +73,7 @@ class BlockUnblockButtonBuilder extends StatelessWidget {
               orElse: () => S.of(context).unknownError,
             ),
             profileDomain: (failure) => failure.profileDomainFailure.maybeMap(
-              blockItself: (_) => "You can't block yourself",
+              blockItself: (_) => S.of(context).cantBlockSelf,
               orElse: () => S.of(context).unknownError,
             ),
             orElse: () => S.of(context).unknownError,
@@ -79,5 +90,25 @@ class BlockUnblockButtonBuilder extends StatelessWidget {
           ),
         ).show(context),
         orElse: () {},
+      );
+
+  bool _buildWhen(WatchCurrentUserState previous, WatchCurrentUserState current) => current.map(
+        initial: (_) => true,
+        loadSuccess: (_) {
+          final _previousBlockedContainsUser = previous.maybeMap(
+            loadSuccess: (successState) => successState.user.blockedUsersIds.contains(
+              user.id,
+            ),
+            orElse: () => true,
+          );
+          final _currentBlockedContainsUser = current.maybeMap(
+            loadSuccess: (successState) => successState.user.blockedUsersIds.contains(
+              user.id,
+            ),
+            orElse: () => true,
+          );
+          return _previousBlockedContainsUser != _currentBlockedContainsUser;
+        },
+        loadFailure: (_) => true,
       );
 }
