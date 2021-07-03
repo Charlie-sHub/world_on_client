@@ -34,15 +34,15 @@ class ProfileAvatarStack extends StatelessWidget {
           ),
         ),
         Positioned(
-          right: 1,
-          bottom: 1,
+          right: 0,
+          bottom: 0,
           child: Container(
             decoration: const BoxDecoration(
               color: WorldOnColors.primary,
               shape: BoxShape.circle,
             ),
-            height: 30,
-            width: 30,
+            height: 28,
+            width: 28,
             child: Center(
               child: AutoSizeText(
                 user.level.getOrCrash().toString(),

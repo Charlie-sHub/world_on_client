@@ -24,9 +24,7 @@ class ExpansionExperienceCardTitle extends StatelessWidget {
             top: 5,
           ),
           child: UserAvatarFollowChecker(
-            userId: experience.creator.id,
-            adminPowers: experience.creator.adminPowers,
-            imageUrl: experience.creator.imageURL,
+            user: experience.creator,
             checkIconSize: 17,
             avatarRadius: 25,
           ),

@@ -62,9 +62,7 @@ class SimpleExperienceCard extends StatelessWidget {
               left: 3,
               top: 3,
               child: UserAvatarFollowChecker(
-                userId: experience.creator.id,
-                adminPowers: experience.creator.adminPowers,
-                imageUrl: experience.creator.imageURL,
+                user: experience.creator,
                 checkIconSize: 15,
                 avatarRadius: 20,
               ),

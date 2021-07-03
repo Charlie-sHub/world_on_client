@@ -15,9 +15,7 @@ class CommentCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return ListTile(
       leading: UserAvatarFollowChecker(
-        userId: comment.poster.id,
-        adminPowers: comment.poster.adminPowers,
-        imageUrl: comment.poster.imageURL,
+        user: comment.poster,
         checkIconSize: 12,
         avatarRadius: 16,
       ),

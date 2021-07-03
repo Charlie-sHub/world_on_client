@@ -32,11 +32,12 @@ import 'package:worldon/domain/experience_management/use_case/create_experience.
     as create_experience;
 import 'package:worldon/domain/experience_management/use_case/edit_experience.dart'
     as edit_experience;
+import 'package:worldon/domain/experience_navigation/use_case/reward_user.dart' as reward_user;
 
 import '../../../injection.dart';
 
 part 'experience_management_form_bloc.freezed.dart';
-part 'experience_management_form_event.dart';xperience_management_form_event.dart';
+part 'experience_management_form_event.dart';experience_management_form_event.dart';
 
 part 'experience_management_form_state.dart';
 
@@ -88,6 +89,12 @@ class ExperienceManagementFormBloc
           if (_filesCount >= 1) {
             _failureOrUnit = await getIt<create_experience.CreateExperience>()(
               create_experience.Params(experience: state.experience),
+            );
+            // Rewarding users for creating experiences too
+            getIt<reward_user.RewardUser>()(
+              reward_user.Params(
+                difficulty: Difficulty(10),
+              ),
             );
           }
         }

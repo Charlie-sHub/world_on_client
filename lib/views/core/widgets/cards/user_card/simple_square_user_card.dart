@@ -85,6 +85,30 @@ class SimpleSquareUserCard extends StatelessWidget {
                             orElse: () => Container(),
                           ),
                         ),
+                        Positioned(
+                          right: 0,
+                          bottom: 0,
+                          child: Container(
+                            decoration: const BoxDecoration(
+                              color: WorldOnColors.primary,
+                              borderRadius: BorderRadius.only(
+                                topLeft: Radius.circular(10),
+                              ),
+                            ),
+                            height: 30,
+                            width: 30,
+                            child: Center(
+                              child: AutoSizeText(
+                                user.level.getOrCrash().toString(),
+                                style: const TextStyle(
+                                  color: WorldOnColors.white,
+                                  fontWeight: FontWeight.w900,
+                                  fontSize: 12,
+                                ),
+                              ),
+                            ),
+                          ),
+                        ),
                       ],
                     ),
                   ),

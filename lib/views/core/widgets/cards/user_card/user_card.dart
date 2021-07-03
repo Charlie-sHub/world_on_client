@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:worldon/domain/core/entities/user/simple_user.dart';
 import 'package:worldon/domain/core/entities/user/user.dart';
 import 'package:worldon/views/core/widgets/cards/user_card/name_username_display.dart';
 import 'package:worldon/views/core/widgets/cards/user_card/user_bio.dart';
@@ -25,9 +26,7 @@ class UserCard extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: <Widget>[
               UserAvatarFollowChecker(
-                userId: user.id,
-                adminPowers: user.adminPowers,
-                imageUrl: user.imageURL,
+                user: SimpleUser.fromUser(user),
                 checkIconSize: 20,
                 avatarRadius: 30,
               ),

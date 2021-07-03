@@ -38,7 +38,6 @@ mixin _$WatchCurrentUserEvent {
     required TResult Function(Either<Failure, User> failureOrUser) resultReceived,
   }) =>
       throw _privateConstructorUsedError;
-
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? watchCurrentUserStarted,
@@ -46,14 +45,12 @@ mixin _$WatchCurrentUserEvent {
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
-
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_WatchCurrentUserStarted value) watchCurrentUserStarted,
     required TResult Function(_ResultReceived value) resultReceived,
   }) =>
       throw _privateConstructorUsedError;
-
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_WatchCurrentUserStarted value)? watchCurrentUserStarted,
@@ -311,7 +308,6 @@ mixin _$WatchCurrentUserState {
     required TResult Function(Failure<dynamic> failure) loadFailure,
   }) =>
       throw _privateConstructorUsedError;
-
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
@@ -320,7 +316,6 @@ mixin _$WatchCurrentUserState {
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
-
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Initial value) initial,
@@ -328,7 +323,6 @@ mixin _$WatchCurrentUserState {
     required TResult Function(_LoadFailure value) loadFailure,
   }) =>
       throw _privateConstructorUsedError;
-
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial value)? initial,

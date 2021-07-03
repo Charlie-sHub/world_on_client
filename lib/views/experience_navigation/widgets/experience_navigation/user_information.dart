@@ -20,9 +20,7 @@ class UserInformation extends StatelessWidget {
         Row(
           children: [
             UserAvatarFollowChecker(
-              userId: creator.id,
-              adminPowers: creator.adminPowers,
-              imageUrl: creator.imageURL,
+              user: creator,
               checkIconSize: 20,
               avatarRadius: 30,
             ),

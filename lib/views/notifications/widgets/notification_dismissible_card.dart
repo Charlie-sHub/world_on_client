@@ -31,9 +31,7 @@ class NotificationDismissibleTile extends StatelessWidget {
       actionPane: const SlidableScrollActionPane(),
       child: ListTile(
         leading: UserAvatarFollowChecker(
-          userId: notification.sender.id,
-          adminPowers: notification.sender.adminPowers,
-          imageUrl: notification.sender.imageURL,
+          user: notification.sender,
           checkIconSize: 17,
           avatarRadius: 25,
         ),
