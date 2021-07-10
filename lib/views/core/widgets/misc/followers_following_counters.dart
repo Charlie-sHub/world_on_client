@@ -30,7 +30,7 @@ class FollowersFollowingCounters extends StatelessWidget {
               ),
             ),
             AutoSizeText(
-              createWorldOnDisplay(user.followersAmount),
+              createNumberDisplay(user.followersAmount),
               style: const TextStyle(
                 fontWeight: FontWeight.w800,
                 fontSize: 10,
@@ -49,7 +49,7 @@ class FollowersFollowingCounters extends StatelessWidget {
               ),
             ),
             AutoSizeText(
-              createWorldOnDisplay(user.followedUsersIds.length),
+              createNumberDisplay(user.followedUsersIds.length),
               style: const TextStyle(
                 fontWeight: FontWeight.w800,
                 fontSize: 10,

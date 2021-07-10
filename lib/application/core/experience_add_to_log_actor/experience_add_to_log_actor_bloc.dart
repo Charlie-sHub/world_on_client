@@ -1,11 +1,11 @@
 import 'dart:async';
 
 import 'package:bloc/bloc.dart';
+import 'package:dartz/dartz.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:injectable/injectable.dart';
 import 'package:meta/meta.dart';
 import 'package:worldon/core/error/failure.dart';
-import 'package:worldon/domain/core/entities/experience/experience.dart';
 import 'package:worldon/domain/core/validation/objects/unique_id.dart';
 import 'package:worldon/domain/experience_log/use_case/add_experience_to_log.dart'
     as add_experience_to_log;
@@ -21,7 +21,7 @@ part 'experience_add_to_log_actor_state.dart';
 @injectable
 class ExperienceAddToLogActorBloc
     extends Bloc<ExperienceAddToLogActorEvent, ExperienceAddToLogActorState> {
-  ExperienceAddToLogActorBloc() : super(const ExperienceAddToLogActorState.initial());
+  ExperienceAddToLogActorBloc() : super(ExperienceAddToLogActorState.initial());
 
   @override
   Stream<ExperienceAddToLogActorState> mapEventToState(ExperienceAddToLogActorEvent event) async* {
@@ -33,33 +33,65 @@ class ExperienceAddToLogActorBloc
   }
 
   Stream<ExperienceAddToLogActorState> _onAddedExperienceToLog(_AddedExperienceToLog event) async* {
-    yield const ExperienceAddToLogActorState.actionInProgress();
+    yield state.copyWith(
+      failureOrSuccessOption: none(),
+    );
     final _failureOrUnit = await getIt<add_experience_to_log.AddExperienceToLog>()(
-      add_experience_to_log.Params(experienceId: event.experience.id),
+      add_experience_to_log.Params(experienceId: event.experienceId),
     );
     yield _failureOrUnit.fold(
-      (failure) => ExperienceAddToLogActorState.additionFailure(failure),
-      (_) => const ExperienceAddToLogActorState.additionSuccess(),
+      (failure) => state.copyWith(
+        failureOrSuccessOption: some(
+          left(failure),
+        ),
+      ),
+      (_) => state.inLog
+          ? state.copyWith(
+              toDoAmount: state.toDoAmount,
+            )
+          : state.copyWith(
+              inLog: true,
+              toDoAmount: state.toDoAmount + 1,
+            ),
     );
   }
 
   Stream<ExperienceAddToLogActorState> _onDismissedExperienceFromLog(
       _DismissedExperienceFromLog event) async* {
-    yield const ExperienceAddToLogActorState.actionInProgress();
+    yield state.copyWith(
+      failureOrSuccessOption: none(),
+    );
     final _failureOrUnit = await getIt<dismiss_experience_from_log.DismissExperienceFromLog>()(
-      dismiss_experience_from_log.Params(experienceId: event.experience.id),
+      dismiss_experience_from_log.Params(experienceId: event.experienceId),
     );
     yield _failureOrUnit.fold(
-      (failure) => ExperienceAddToLogActorState.dismissalFailure(failure),
-      (_) => const ExperienceAddToLogActorState.dismissalSuccess(),
+      (failure) => state.copyWith(
+        failureOrSuccessOption: some(
+          left(failure),
+        ),
+      ),
+      (_) => state.inLog
+          ? state.copyWith(
+              inLog: false,
+              toDoAmount: state.toDoAmount - 1,
+            )
+          : state.copyWith(
+              toDoAmount: state.toDoAmount,
+            ),
     );
   }
 
   Stream<ExperienceAddToLogActorState> _onInitialized(_Initialized event) async* {
-    if (event.experiencesToDoIds.contains(event.experience.id)) {
-      yield const ExperienceAddToLogActorState.inLog();
+    if (event.experiencesToDoIds.contains(event.experienceId)) {
+      yield state.copyWith(
+        inLog: true,
+        toDoAmount: event.toDoAmount,
+      );
     } else {
-      yield const ExperienceAddToLogActorState.notInLog();
+      yield state.copyWith(
+        inLog: false,
+        toDoAmount: event.toDoAmount,
+      );
     }
   }
 }

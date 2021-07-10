@@ -39,7 +39,7 @@ class ExperienceCommentsListView extends StatelessWidget {
               child: Column(
                 children: [
                   Text(
-                    "${createWorldOnDisplay(state.comments.size)} ${S.of(context).experienceInformationCommentsNumber}",
+                    "${createNumberDisplay(state.comments.size)} ${S.of(context).experienceInformationCommentsNumber}",
                     style: const TextStyle(
                       fontSize: 13,
                       color: Colors.grey,

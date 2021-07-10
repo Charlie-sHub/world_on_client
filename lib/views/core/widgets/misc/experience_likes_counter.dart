@@ -42,7 +42,7 @@ class ExperienceLikesCounter extends StatelessWidget {
         ),
         const SizedBox(width: 5),
         Text(
-          createWorldOnDisplay(experience.likedBy.length),
+          createNumberDisplay(experience.likedBy.length),
         ),
       ],
     );

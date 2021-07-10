@@ -11,7 +11,7 @@ import 'package:worldon/views/core/widgets/cards/experience_card/share_internall
 import 'package:worldon/views/core/widgets/misc/user_avatar_follow_checker.dart';
 import 'package:worldon/views/core/widgets/misc/world_on_plasma.dart';
 
-import 'log_button.dart';
+import 'log_button_builder.dart';
 import 'manage_button_builder.dart';
 
 class SimpleExperienceCard extends StatelessWidget {
@@ -74,7 +74,7 @@ class SimpleExperienceCard extends StatelessWidget {
                 children: [
                   ShareExternallyButton(experience: experience),
                   ShareInternallyButton(experience: experience),
-                  LogButton(experience: experience),
+                  LogButtonBuilder(experience: experience),
                   ManageButtonBuilder(
                     experience: experience,
                     reloadFunction: reloadFunction,

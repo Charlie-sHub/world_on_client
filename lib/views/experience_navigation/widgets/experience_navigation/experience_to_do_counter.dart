@@ -29,7 +29,7 @@ class ExperienceToDoCounter extends StatelessWidget {
         ),
         const SizedBox(width: 5),
         AutoSizeText(
-          createWorldOnDisplay(amount),
+          createNumberDisplay(amount),
           style: const TextStyle(
             fontSize: 15,
             fontWeight: FontWeight.bold,

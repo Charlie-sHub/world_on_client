@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:worldon/application/navigation/navigation_actor/navigation_actor_bloc.dart';
 import 'package:worldon/domain/core/entities/experience/experience.dart';
-import 'package:worldon/views/core/widgets/cards/experience_card/log_button.dart';
+import 'package:worldon/views/core/widgets/cards/experience_card/log_button_builder.dart';
 import 'package:worldon/views/core/widgets/cards/experience_card/share_externally_button.dart';
 import 'package:worldon/views/core/widgets/cards/experience_card/share_internally_button.dart';
 import 'package:worldon/views/core/widgets/misc/carousel_builder.dart';
@@ -62,7 +62,7 @@ class ImageGalleryStack extends StatelessWidget {
               children: [
                 ShareExternallyButton(experience: experience),
                 ShareInternallyButton(experience: experience),
-                LogButton(experience: experience),
+                LogButtonBuilder(experience: experience),
                 ManageButtonBuilder(
                   experience: experience,
                   reloadFunction: reloadFunction,

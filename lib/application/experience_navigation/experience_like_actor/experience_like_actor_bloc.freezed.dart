@@ -16,10 +16,12 @@ final _privateConstructorUsedError = UnsupportedError(
 class _$ExperienceLikeActorEventTearOff {
   const _$ExperienceLikeActorEventTearOff();
 
-  _Initialized initialized(UniqueId experienceId, Set<UniqueId> experiencesLikedIds) {
+  _Initialized initialized(
+      UniqueId experienceId, Set<UniqueId> experiencesLikedIds, int likesAmount) {
     return _Initialized(
       experienceId,
       experiencesLikedIds,
+      likesAmount,
     );
   }
 
@@ -45,14 +47,17 @@ mixin _$ExperienceLikeActorEvent {
 
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(UniqueId experienceId, Set<UniqueId> experiencesLikedIds) initialized,
+    required TResult Function(
+            UniqueId experienceId, Set<UniqueId> experiencesLikedIds, int likesAmount)
+        initialized,
     required TResult Function(UniqueId experienceId) liked,
     required TResult Function(UniqueId experienceId) disliked,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(UniqueId experienceId, Set<UniqueId> experiencesLikedIds)? initialized,
+    TResult Function(UniqueId experienceId, Set<UniqueId> experiencesLikedIds, int likesAmount)?
+        initialized,
     TResult Function(UniqueId experienceId)? liked,
     TResult Function(UniqueId experienceId)? disliked,
     required TResult orElse(),
@@ -116,7 +121,7 @@ abstract class _$InitializedCopyWith<$Res> implements $ExperienceLikeActorEventC
       __$InitializedCopyWithImpl<$Res>;
 
   @override
-  $Res call({UniqueId experienceId, Set<UniqueId> experiencesLikedIds});
+  $Res call({UniqueId experienceId, Set<UniqueId> experiencesLikedIds, int likesAmount});
 }
 
 /// @nodoc
@@ -132,6 +137,7 @@ class __$InitializedCopyWithImpl<$Res> extends _$ExperienceLikeActorEventCopyWit
   $Res call({
     Object? experienceId = freezed,
     Object? experiencesLikedIds = freezed,
+    Object? likesAmount = freezed,
   }) {
     return _then(_Initialized(
       experienceId == freezed
@@ -142,6 +148,10 @@ class __$InitializedCopyWithImpl<$Res> extends _$ExperienceLikeActorEventCopyWit
           ? _value.experiencesLikedIds
           : experiencesLikedIds // ignore: cast_nullable_to_non_nullable
               as Set<UniqueId>,
+      likesAmount == freezed
+          ? _value.likesAmount
+          : likesAmount // ignore: cast_nullable_to_non_nullable
+              as int,
     ));
   }
 }
@@ -149,16 +159,18 @@ class __$InitializedCopyWithImpl<$Res> extends _$ExperienceLikeActorEventCopyWit
 /// @nodoc
 
 class _$_Initialized implements _Initialized {
-  const _$_Initialized(this.experienceId, this.experiencesLikedIds);
+  const _$_Initialized(this.experienceId, this.experiencesLikedIds, this.likesAmount);
 
   @override
   final UniqueId experienceId;
   @override
   final Set<UniqueId> experiencesLikedIds;
+  @override
+  final int likesAmount;
 
   @override
   String toString() {
-    return 'ExperienceLikeActorEvent.initialized(experienceId: $experienceId, experiencesLikedIds: $experiencesLikedIds)';
+    return 'ExperienceLikeActorEvent.initialized(experienceId: $experienceId, experiencesLikedIds: $experiencesLikedIds, likesAmount: $likesAmount)';
   }
 
   @override
@@ -169,14 +181,17 @@ class _$_Initialized implements _Initialized {
                 const DeepCollectionEquality().equals(other.experienceId, experienceId)) &&
             (identical(other.experiencesLikedIds, experiencesLikedIds) ||
                 const DeepCollectionEquality()
-                    .equals(other.experiencesLikedIds, experiencesLikedIds)));
+                    .equals(other.experiencesLikedIds, experiencesLikedIds)) &&
+            (identical(other.likesAmount, likesAmount) ||
+                const DeepCollectionEquality().equals(other.likesAmount, likesAmount)));
   }
 
   @override
   int get hashCode =>
       runtimeType.hashCode ^
       const DeepCollectionEquality().hash(experienceId) ^
-      const DeepCollectionEquality().hash(experiencesLikedIds);
+      const DeepCollectionEquality().hash(experiencesLikedIds) ^
+      const DeepCollectionEquality().hash(likesAmount);
 
   @JsonKey(ignore: true)
   @override
@@ -186,23 +201,26 @@ class _$_Initialized implements _Initialized {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(UniqueId experienceId, Set<UniqueId> experiencesLikedIds) initialized,
+    required TResult Function(
+            UniqueId experienceId, Set<UniqueId> experiencesLikedIds, int likesAmount)
+        initialized,
     required TResult Function(UniqueId experienceId) liked,
     required TResult Function(UniqueId experienceId) disliked,
   }) {
-    return initialized(experienceId, experiencesLikedIds);
+    return initialized(experienceId, experiencesLikedIds, likesAmount);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(UniqueId experienceId, Set<UniqueId> experiencesLikedIds)? initialized,
+    TResult Function(UniqueId experienceId, Set<UniqueId> experiencesLikedIds, int likesAmount)?
+        initialized,
     TResult Function(UniqueId experienceId)? liked,
     TResult Function(UniqueId experienceId)? disliked,
     required TResult orElse(),
   }) {
     if (initialized != null) {
-      return initialized(experienceId, experiencesLikedIds);
+      return initialized(experienceId, experiencesLikedIds, likesAmount);
     }
     return orElse();
   }
@@ -233,13 +251,15 @@ class _$_Initialized implements _Initialized {
 }
 
 abstract class _Initialized implements ExperienceLikeActorEvent {
-  const factory _Initialized(UniqueId experienceId, Set<UniqueId> experiencesLikedIds) =
-      _$_Initialized;
+  const factory _Initialized(
+      UniqueId experienceId, Set<UniqueId> experiencesLikedIds, int likesAmount) = _$_Initialized;
 
   @override
   UniqueId get experienceId => throw _privateConstructorUsedError;
 
   Set<UniqueId> get experiencesLikedIds => throw _privateConstructorUsedError;
+
+  int get likesAmount => throw _privateConstructorUsedError;
 
   @override
   @JsonKey(ignore: true)
@@ -307,7 +327,9 @@ class _$_Liked implements _Liked {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(UniqueId experienceId, Set<UniqueId> experiencesLikedIds) initialized,
+    required TResult Function(
+            UniqueId experienceId, Set<UniqueId> experiencesLikedIds, int likesAmount)
+        initialized,
     required TResult Function(UniqueId experienceId) liked,
     required TResult Function(UniqueId experienceId) disliked,
   }) {
@@ -317,7 +339,8 @@ class _$_Liked implements _Liked {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(UniqueId experienceId, Set<UniqueId> experiencesLikedIds)? initialized,
+    TResult Function(UniqueId experienceId, Set<UniqueId> experiencesLikedIds, int likesAmount)?
+        initialized,
     TResult Function(UniqueId experienceId)? liked,
     TResult Function(UniqueId experienceId)? disliked,
     required TResult orElse(),
@@ -426,7 +449,9 @@ class _$_Disliked implements _Disliked {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(UniqueId experienceId, Set<UniqueId> experiencesLikedIds) initialized,
+    required TResult Function(
+            UniqueId experienceId, Set<UniqueId> experiencesLikedIds, int likesAmount)
+        initialized,
     required TResult Function(UniqueId experienceId) liked,
     required TResult Function(UniqueId experienceId) disliked,
   }) {
@@ -436,7 +461,8 @@ class _$_Disliked implements _Disliked {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(UniqueId experienceId, Set<UniqueId> experiencesLikedIds)? initialized,
+    TResult Function(UniqueId experienceId, Set<UniqueId> experiencesLikedIds, int likesAmount)?
+        initialized,
     TResult Function(UniqueId experienceId)? liked,
     TResult Function(UniqueId experienceId)? disliked,
     required TResult orElse(),
@@ -487,39 +513,14 @@ abstract class _Disliked implements ExperienceLikeActorEvent {
 class _$ExperienceLikeActorStateTearOff {
   const _$ExperienceLikeActorStateTearOff();
 
-  _Initial initial() {
-    return const _Initial();
-  }
-
-  _ActionInProgress actionInProgress() {
-    return const _ActionInProgress();
-  }
-
-  _Likes likes() {
-    return const _Likes();
-  }
-
-  _Neutral neutral() {
-    return const _Neutral();
-  }
-
-  _LikeSuccess likeSuccess() {
-    return const _LikeSuccess();
-  }
-
-  _LikeFailure likeFailure(Failure<dynamic> failure) {
-    return _LikeFailure(
-      failure,
-    );
-  }
-
-  _DislikeSuccess dislikeSuccess() {
-    return const _DislikeSuccess();
-  }
-
-  _DislikeFailure dislikeFailure(Failure<dynamic> failure) {
-    return _DislikeFailure(
-      failure,
+  _ExperienceLikeActorState call(
+      {required bool likes,
+      required int likesAmount,
+      required Option<Either<Failure, Unit>> failureOrSuccessOption}) {
+    return _ExperienceLikeActorState(
+      likes: likes,
+      likesAmount: likesAmount,
+      failureOrSuccessOption: failureOrSuccessOption,
     );
   }
 }
@@ -529,55 +530,14 @@ const $ExperienceLikeActorState = _$ExperienceLikeActorStateTearOff();
 
 /// @nodoc
 mixin _$ExperienceLikeActorState {
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() initial,
-    required TResult Function() actionInProgress,
-    required TResult Function() likes,
-    required TResult Function() neutral,
-    required TResult Function() likeSuccess,
-    required TResult Function(Failure<dynamic> failure) likeFailure,
-    required TResult Function() dislikeSuccess,
-    required TResult Function(Failure<dynamic> failure) dislikeFailure,
-  }) =>
-      throw _privateConstructorUsedError;
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? initial,
-    TResult Function()? actionInProgress,
-    TResult Function()? likes,
-    TResult Function()? neutral,
-    TResult Function()? likeSuccess,
-    TResult Function(Failure<dynamic> failure)? likeFailure,
-    TResult Function()? dislikeSuccess,
-    TResult Function(Failure<dynamic> failure)? dislikeFailure,
-    required TResult orElse(),
-  }) =>
-      throw _privateConstructorUsedError;
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_Initial value) initial,
-    required TResult Function(_ActionInProgress value) actionInProgress,
-    required TResult Function(_Likes value) likes,
-    required TResult Function(_Neutral value) neutral,
-    required TResult Function(_LikeSuccess value) likeSuccess,
-    required TResult Function(_LikeFailure value) likeFailure,
-    required TResult Function(_DislikeSuccess value) dislikeSuccess,
-    required TResult Function(_DislikeFailure value) dislikeFailure,
-  }) =>
-      throw _privateConstructorUsedError;
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
-    TResult Function(_ActionInProgress value)? actionInProgress,
-    TResult Function(_Likes value)? likes,
-    TResult Function(_Neutral value)? neutral,
-    TResult Function(_LikeSuccess value)? likeSuccess,
-    TResult Function(_LikeFailure value)? likeFailure,
-    TResult Function(_DislikeSuccess value)? dislikeSuccess,
-    TResult Function(_DislikeFailure value)? dislikeFailure,
-    required TResult orElse(),
-  }) =>
+  bool get likes => throw _privateConstructorUsedError;
+
+  int get likesAmount => throw _privateConstructorUsedError;
+
+  Option<Either<Failure, Unit>> get failureOrSuccessOption => throw _privateConstructorUsedError;
+
+  @JsonKey(ignore: true)
+  $ExperienceLikeActorStateCopyWith<ExperienceLikeActorState> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
@@ -586,6 +546,8 @@ abstract class $ExperienceLikeActorStateCopyWith<$Res> {
   factory $ExperienceLikeActorStateCopyWith(
           ExperienceLikeActorState value, $Res Function(ExperienceLikeActorState) then) =
       _$ExperienceLikeActorStateCopyWithImpl<$Res>;
+
+  $Res call({bool likes, int likesAmount, Option<Either<Failure, Unit>> failureOrSuccessOption});
 }
 
 /// @nodoc
@@ -596,938 +558,136 @@ class _$ExperienceLikeActorStateCopyWithImpl<$Res>
   final ExperienceLikeActorState _value;
   // ignore: unused_field
   final $Res Function(ExperienceLikeActorState) _then;
-}
-
-/// @nodoc
-abstract class _$InitialCopyWith<$Res> {
-  factory _$InitialCopyWith(_Initial value, $Res Function(_Initial) then) =
-      __$InitialCopyWithImpl<$Res>;
-}
-
-/// @nodoc
-class __$InitialCopyWithImpl<$Res> extends _$ExperienceLikeActorStateCopyWithImpl<$Res>
-    implements _$InitialCopyWith<$Res> {
-  __$InitialCopyWithImpl(_Initial _value, $Res Function(_Initial) _then)
-      : super(_value, (v) => _then(v as _Initial));
-
-  @override
-  _Initial get _value => super._value as _Initial;
-}
-
-/// @nodoc
-
-class _$_Initial implements _Initial {
-  const _$_Initial();
-
-  @override
-  String toString() {
-    return 'ExperienceLikeActorState.initial()';
-  }
-
-  @override
-  bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _Initial);
-  }
-
-  @override
-  int get hashCode => runtimeType.hashCode;
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() initial,
-    required TResult Function() actionInProgress,
-    required TResult Function() likes,
-    required TResult Function() neutral,
-    required TResult Function() likeSuccess,
-    required TResult Function(Failure<dynamic> failure) likeFailure,
-    required TResult Function() dislikeSuccess,
-    required TResult Function(Failure<dynamic> failure) dislikeFailure,
-  }) {
-    return initial();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? initial,
-    TResult Function()? actionInProgress,
-    TResult Function()? likes,
-    TResult Function()? neutral,
-    TResult Function()? likeSuccess,
-    TResult Function(Failure<dynamic> failure)? likeFailure,
-    TResult Function()? dislikeSuccess,
-    TResult Function(Failure<dynamic> failure)? dislikeFailure,
-    required TResult orElse(),
-  }) {
-    if (initial != null) {
-      return initial();
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_Initial value) initial,
-    required TResult Function(_ActionInProgress value) actionInProgress,
-    required TResult Function(_Likes value) likes,
-    required TResult Function(_Neutral value) neutral,
-    required TResult Function(_LikeSuccess value) likeSuccess,
-    required TResult Function(_LikeFailure value) likeFailure,
-    required TResult Function(_DislikeSuccess value) dislikeSuccess,
-    required TResult Function(_DislikeFailure value) dislikeFailure,
-  }) {
-    return initial(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
-    TResult Function(_ActionInProgress value)? actionInProgress,
-    TResult Function(_Likes value)? likes,
-    TResult Function(_Neutral value)? neutral,
-    TResult Function(_LikeSuccess value)? likeSuccess,
-    TResult Function(_LikeFailure value)? likeFailure,
-    TResult Function(_DislikeSuccess value)? dislikeSuccess,
-    TResult Function(_DislikeFailure value)? dislikeFailure,
-    required TResult orElse(),
-  }) {
-    if (initial != null) {
-      return initial(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class _Initial implements ExperienceLikeActorState {
-  const factory _Initial() = _$_Initial;
-}
-
-/// @nodoc
-abstract class _$ActionInProgressCopyWith<$Res> {
-  factory _$ActionInProgressCopyWith(
-          _ActionInProgress value, $Res Function(_ActionInProgress) then) =
-      __$ActionInProgressCopyWithImpl<$Res>;
-}
-
-/// @nodoc
-class __$ActionInProgressCopyWithImpl<$Res> extends _$ExperienceLikeActorStateCopyWithImpl<$Res>
-    implements _$ActionInProgressCopyWith<$Res> {
-  __$ActionInProgressCopyWithImpl(_ActionInProgress _value, $Res Function(_ActionInProgress) _then)
-      : super(_value, (v) => _then(v as _ActionInProgress));
-
-  @override
-  _ActionInProgress get _value => super._value as _ActionInProgress;
-}
-
-/// @nodoc
-
-class _$_ActionInProgress implements _ActionInProgress {
-  const _$_ActionInProgress();
-
-  @override
-  String toString() {
-    return 'ExperienceLikeActorState.actionInProgress()';
-  }
-
-  @override
-  bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _ActionInProgress);
-  }
-
-  @override
-  int get hashCode => runtimeType.hashCode;
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() initial,
-    required TResult Function() actionInProgress,
-    required TResult Function() likes,
-    required TResult Function() neutral,
-    required TResult Function() likeSuccess,
-    required TResult Function(Failure<dynamic> failure) likeFailure,
-    required TResult Function() dislikeSuccess,
-    required TResult Function(Failure<dynamic> failure) dislikeFailure,
-  }) {
-    return actionInProgress();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? initial,
-    TResult Function()? actionInProgress,
-    TResult Function()? likes,
-    TResult Function()? neutral,
-    TResult Function()? likeSuccess,
-    TResult Function(Failure<dynamic> failure)? likeFailure,
-    TResult Function()? dislikeSuccess,
-    TResult Function(Failure<dynamic> failure)? dislikeFailure,
-    required TResult orElse(),
-  }) {
-    if (actionInProgress != null) {
-      return actionInProgress();
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_Initial value) initial,
-    required TResult Function(_ActionInProgress value) actionInProgress,
-    required TResult Function(_Likes value) likes,
-    required TResult Function(_Neutral value) neutral,
-    required TResult Function(_LikeSuccess value) likeSuccess,
-    required TResult Function(_LikeFailure value) likeFailure,
-    required TResult Function(_DislikeSuccess value) dislikeSuccess,
-    required TResult Function(_DislikeFailure value) dislikeFailure,
-  }) {
-    return actionInProgress(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
-    TResult Function(_ActionInProgress value)? actionInProgress,
-    TResult Function(_Likes value)? likes,
-    TResult Function(_Neutral value)? neutral,
-    TResult Function(_LikeSuccess value)? likeSuccess,
-    TResult Function(_LikeFailure value)? likeFailure,
-    TResult Function(_DislikeSuccess value)? dislikeSuccess,
-    TResult Function(_DislikeFailure value)? dislikeFailure,
-    required TResult orElse(),
-  }) {
-    if (actionInProgress != null) {
-      return actionInProgress(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class _ActionInProgress implements ExperienceLikeActorState {
-  const factory _ActionInProgress() = _$_ActionInProgress;
-}
-
-/// @nodoc
-abstract class _$LikesCopyWith<$Res> {
-  factory _$LikesCopyWith(_Likes value, $Res Function(_Likes) then) = __$LikesCopyWithImpl<$Res>;
-}
-
-/// @nodoc
-class __$LikesCopyWithImpl<$Res> extends _$ExperienceLikeActorStateCopyWithImpl<$Res>
-    implements _$LikesCopyWith<$Res> {
-  __$LikesCopyWithImpl(_Likes _value, $Res Function(_Likes) _then)
-      : super(_value, (v) => _then(v as _Likes));
-
-  @override
-  _Likes get _value => super._value as _Likes;
-}
-
-/// @nodoc
-
-class _$_Likes implements _Likes {
-  const _$_Likes();
-
-  @override
-  String toString() {
-    return 'ExperienceLikeActorState.likes()';
-  }
-
-  @override
-  bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _Likes);
-  }
-
-  @override
-  int get hashCode => runtimeType.hashCode;
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() initial,
-    required TResult Function() actionInProgress,
-    required TResult Function() likes,
-    required TResult Function() neutral,
-    required TResult Function() likeSuccess,
-    required TResult Function(Failure<dynamic> failure) likeFailure,
-    required TResult Function() dislikeSuccess,
-    required TResult Function(Failure<dynamic> failure) dislikeFailure,
-  }) {
-    return likes();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? initial,
-    TResult Function()? actionInProgress,
-    TResult Function()? likes,
-    TResult Function()? neutral,
-    TResult Function()? likeSuccess,
-    TResult Function(Failure<dynamic> failure)? likeFailure,
-    TResult Function()? dislikeSuccess,
-    TResult Function(Failure<dynamic> failure)? dislikeFailure,
-    required TResult orElse(),
-  }) {
-    if (likes != null) {
-      return likes();
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_Initial value) initial,
-    required TResult Function(_ActionInProgress value) actionInProgress,
-    required TResult Function(_Likes value) likes,
-    required TResult Function(_Neutral value) neutral,
-    required TResult Function(_LikeSuccess value) likeSuccess,
-    required TResult Function(_LikeFailure value) likeFailure,
-    required TResult Function(_DislikeSuccess value) dislikeSuccess,
-    required TResult Function(_DislikeFailure value) dislikeFailure,
-  }) {
-    return likes(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
-    TResult Function(_ActionInProgress value)? actionInProgress,
-    TResult Function(_Likes value)? likes,
-    TResult Function(_Neutral value)? neutral,
-    TResult Function(_LikeSuccess value)? likeSuccess,
-    TResult Function(_LikeFailure value)? likeFailure,
-    TResult Function(_DislikeSuccess value)? dislikeSuccess,
-    TResult Function(_DislikeFailure value)? dislikeFailure,
-    required TResult orElse(),
-  }) {
-    if (likes != null) {
-      return likes(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class _Likes implements ExperienceLikeActorState {
-  const factory _Likes() = _$_Likes;
-}
-
-/// @nodoc
-abstract class _$NeutralCopyWith<$Res> {
-  factory _$NeutralCopyWith(_Neutral value, $Res Function(_Neutral) then) =
-      __$NeutralCopyWithImpl<$Res>;
-}
-
-/// @nodoc
-class __$NeutralCopyWithImpl<$Res> extends _$ExperienceLikeActorStateCopyWithImpl<$Res>
-    implements _$NeutralCopyWith<$Res> {
-  __$NeutralCopyWithImpl(_Neutral _value, $Res Function(_Neutral) _then)
-      : super(_value, (v) => _then(v as _Neutral));
-
-  @override
-  _Neutral get _value => super._value as _Neutral;
-}
-
-/// @nodoc
-
-class _$_Neutral implements _Neutral {
-  const _$_Neutral();
-
-  @override
-  String toString() {
-    return 'ExperienceLikeActorState.neutral()';
-  }
-
-  @override
-  bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _Neutral);
-  }
-
-  @override
-  int get hashCode => runtimeType.hashCode;
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() initial,
-    required TResult Function() actionInProgress,
-    required TResult Function() likes,
-    required TResult Function() neutral,
-    required TResult Function() likeSuccess,
-    required TResult Function(Failure<dynamic> failure) likeFailure,
-    required TResult Function() dislikeSuccess,
-    required TResult Function(Failure<dynamic> failure) dislikeFailure,
-  }) {
-    return neutral();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? initial,
-    TResult Function()? actionInProgress,
-    TResult Function()? likes,
-    TResult Function()? neutral,
-    TResult Function()? likeSuccess,
-    TResult Function(Failure<dynamic> failure)? likeFailure,
-    TResult Function()? dislikeSuccess,
-    TResult Function(Failure<dynamic> failure)? dislikeFailure,
-    required TResult orElse(),
-  }) {
-    if (neutral != null) {
-      return neutral();
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_Initial value) initial,
-    required TResult Function(_ActionInProgress value) actionInProgress,
-    required TResult Function(_Likes value) likes,
-    required TResult Function(_Neutral value) neutral,
-    required TResult Function(_LikeSuccess value) likeSuccess,
-    required TResult Function(_LikeFailure value) likeFailure,
-    required TResult Function(_DislikeSuccess value) dislikeSuccess,
-    required TResult Function(_DislikeFailure value) dislikeFailure,
-  }) {
-    return neutral(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
-    TResult Function(_ActionInProgress value)? actionInProgress,
-    TResult Function(_Likes value)? likes,
-    TResult Function(_Neutral value)? neutral,
-    TResult Function(_LikeSuccess value)? likeSuccess,
-    TResult Function(_LikeFailure value)? likeFailure,
-    TResult Function(_DislikeSuccess value)? dislikeSuccess,
-    TResult Function(_DislikeFailure value)? dislikeFailure,
-    required TResult orElse(),
-  }) {
-    if (neutral != null) {
-      return neutral(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class _Neutral implements ExperienceLikeActorState {
-  const factory _Neutral() = _$_Neutral;
-}
-
-/// @nodoc
-abstract class _$LikeSuccessCopyWith<$Res> {
-  factory _$LikeSuccessCopyWith(_LikeSuccess value, $Res Function(_LikeSuccess) then) =
-      __$LikeSuccessCopyWithImpl<$Res>;
-}
-
-/// @nodoc
-class __$LikeSuccessCopyWithImpl<$Res> extends _$ExperienceLikeActorStateCopyWithImpl<$Res>
-    implements _$LikeSuccessCopyWith<$Res> {
-  __$LikeSuccessCopyWithImpl(_LikeSuccess _value, $Res Function(_LikeSuccess) _then)
-      : super(_value, (v) => _then(v as _LikeSuccess));
-
-  @override
-  _LikeSuccess get _value => super._value as _LikeSuccess;
-}
-
-/// @nodoc
-
-class _$_LikeSuccess implements _LikeSuccess {
-  const _$_LikeSuccess();
-
-  @override
-  String toString() {
-    return 'ExperienceLikeActorState.likeSuccess()';
-  }
-
-  @override
-  bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _LikeSuccess);
-  }
-
-  @override
-  int get hashCode => runtimeType.hashCode;
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() initial,
-    required TResult Function() actionInProgress,
-    required TResult Function() likes,
-    required TResult Function() neutral,
-    required TResult Function() likeSuccess,
-    required TResult Function(Failure<dynamic> failure) likeFailure,
-    required TResult Function() dislikeSuccess,
-    required TResult Function(Failure<dynamic> failure) dislikeFailure,
-  }) {
-    return likeSuccess();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? initial,
-    TResult Function()? actionInProgress,
-    TResult Function()? likes,
-    TResult Function()? neutral,
-    TResult Function()? likeSuccess,
-    TResult Function(Failure<dynamic> failure)? likeFailure,
-    TResult Function()? dislikeSuccess,
-    TResult Function(Failure<dynamic> failure)? dislikeFailure,
-    required TResult orElse(),
-  }) {
-    if (likeSuccess != null) {
-      return likeSuccess();
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_Initial value) initial,
-    required TResult Function(_ActionInProgress value) actionInProgress,
-    required TResult Function(_Likes value) likes,
-    required TResult Function(_Neutral value) neutral,
-    required TResult Function(_LikeSuccess value) likeSuccess,
-    required TResult Function(_LikeFailure value) likeFailure,
-    required TResult Function(_DislikeSuccess value) dislikeSuccess,
-    required TResult Function(_DislikeFailure value) dislikeFailure,
-  }) {
-    return likeSuccess(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
-    TResult Function(_ActionInProgress value)? actionInProgress,
-    TResult Function(_Likes value)? likes,
-    TResult Function(_Neutral value)? neutral,
-    TResult Function(_LikeSuccess value)? likeSuccess,
-    TResult Function(_LikeFailure value)? likeFailure,
-    TResult Function(_DislikeSuccess value)? dislikeSuccess,
-    TResult Function(_DislikeFailure value)? dislikeFailure,
-    required TResult orElse(),
-  }) {
-    if (likeSuccess != null) {
-      return likeSuccess(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class _LikeSuccess implements ExperienceLikeActorState {
-  const factory _LikeSuccess() = _$_LikeSuccess;
-}
-
-/// @nodoc
-abstract class _$LikeFailureCopyWith<$Res> {
-  factory _$LikeFailureCopyWith(_LikeFailure value, $Res Function(_LikeFailure) then) =
-      __$LikeFailureCopyWithImpl<$Res>;
-
-  $Res call({Failure<dynamic> failure});
-
-  $FailureCopyWith<dynamic, $Res> get failure;
-}
-
-/// @nodoc
-class __$LikeFailureCopyWithImpl<$Res> extends _$ExperienceLikeActorStateCopyWithImpl<$Res>
-    implements _$LikeFailureCopyWith<$Res> {
-  __$LikeFailureCopyWithImpl(_LikeFailure _value, $Res Function(_LikeFailure) _then)
-      : super(_value, (v) => _then(v as _LikeFailure));
-
-  @override
-  _LikeFailure get _value => super._value as _LikeFailure;
 
   @override
   $Res call({
-    Object? failure = freezed,
+    Object? likes = freezed,
+    Object? likesAmount = freezed,
+    Object? failureOrSuccessOption = freezed,
   }) {
-    return _then(_LikeFailure(
-      failure == freezed
-          ? _value.failure
-          : failure // ignore: cast_nullable_to_non_nullable
-              as Failure<dynamic>,
+    return _then(_value.copyWith(
+      likes: likes == freezed
+          ? _value.likes
+          : likes // ignore: cast_nullable_to_non_nullable
+              as bool,
+      likesAmount: likesAmount == freezed
+          ? _value.likesAmount
+          : likesAmount // ignore: cast_nullable_to_non_nullable
+              as int,
+      failureOrSuccessOption: failureOrSuccessOption == freezed
+          ? _value.failureOrSuccessOption
+          : failureOrSuccessOption // ignore: cast_nullable_to_non_nullable
+              as Option<Either<Failure, Unit>>,
     ));
   }
+}
+
+/// @nodoc
+abstract class _$ExperienceLikeActorStateCopyWith<$Res>
+    implements $ExperienceLikeActorStateCopyWith<$Res> {
+  factory _$ExperienceLikeActorStateCopyWith(
+          _ExperienceLikeActorState value, $Res Function(_ExperienceLikeActorState) then) =
+      __$ExperienceLikeActorStateCopyWithImpl<$Res>;
 
   @override
-  $FailureCopyWith<dynamic, $Res> get failure {
-    return $FailureCopyWith<dynamic, $Res>(_value.failure, (value) {
-      return _then(_value.copyWith(failure: value));
-    });
+  $Res call({bool likes, int likesAmount, Option<Either<Failure, Unit>> failureOrSuccessOption});
+}
+
+/// @nodoc
+class __$ExperienceLikeActorStateCopyWithImpl<$Res>
+    extends _$ExperienceLikeActorStateCopyWithImpl<$Res>
+    implements _$ExperienceLikeActorStateCopyWith<$Res> {
+  __$ExperienceLikeActorStateCopyWithImpl(
+      _ExperienceLikeActorState _value, $Res Function(_ExperienceLikeActorState) _then)
+      : super(_value, (v) => _then(v as _ExperienceLikeActorState));
+
+  @override
+  _ExperienceLikeActorState get _value => super._value as _ExperienceLikeActorState;
+
+  @override
+  $Res call({
+    Object? likes = freezed,
+    Object? likesAmount = freezed,
+    Object? failureOrSuccessOption = freezed,
+  }) {
+    return _then(_ExperienceLikeActorState(
+      likes: likes == freezed
+          ? _value.likes
+          : likes // ignore: cast_nullable_to_non_nullable
+              as bool,
+      likesAmount: likesAmount == freezed
+          ? _value.likesAmount
+          : likesAmount // ignore: cast_nullable_to_non_nullable
+              as int,
+      failureOrSuccessOption: failureOrSuccessOption == freezed
+          ? _value.failureOrSuccessOption
+          : failureOrSuccessOption // ignore: cast_nullable_to_non_nullable
+              as Option<Either<Failure, Unit>>,
+    ));
   }
 }
 
 /// @nodoc
 
-class _$_LikeFailure implements _LikeFailure {
-  const _$_LikeFailure(this.failure);
+class _$_ExperienceLikeActorState implements _ExperienceLikeActorState {
+  const _$_ExperienceLikeActorState(
+      {required this.likes, required this.likesAmount, required this.failureOrSuccessOption});
 
   @override
-  final Failure<dynamic> failure;
+  final bool likes;
+  @override
+  final int likesAmount;
+  @override
+  final Option<Either<Failure, Unit>> failureOrSuccessOption;
 
   @override
   String toString() {
-    return 'ExperienceLikeActorState.likeFailure(failure: $failure)';
+    return 'ExperienceLikeActorState(likes: $likes, likesAmount: $likesAmount, failureOrSuccessOption: $failureOrSuccessOption)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _LikeFailure &&
-            (identical(other.failure, failure) ||
-                const DeepCollectionEquality().equals(other.failure, failure)));
+        (other is _ExperienceLikeActorState &&
+            (identical(other.likes, likes) ||
+                const DeepCollectionEquality().equals(other.likes, likes)) &&
+            (identical(other.likesAmount, likesAmount) ||
+                const DeepCollectionEquality().equals(other.likesAmount, likesAmount)) &&
+            (identical(other.failureOrSuccessOption, failureOrSuccessOption) ||
+                const DeepCollectionEquality()
+                    .equals(other.failureOrSuccessOption, failureOrSuccessOption)));
   }
 
   @override
-  int get hashCode => runtimeType.hashCode ^ const DeepCollectionEquality().hash(failure);
+  int get hashCode =>
+      runtimeType.hashCode ^
+      const DeepCollectionEquality().hash(likes) ^
+      const DeepCollectionEquality().hash(likesAmount) ^
+      const DeepCollectionEquality().hash(failureOrSuccessOption);
 
   @JsonKey(ignore: true)
   @override
-  _$LikeFailureCopyWith<_LikeFailure> get copyWith =>
-      __$LikeFailureCopyWithImpl<_LikeFailure>(this, _$identity);
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() initial,
-    required TResult Function() actionInProgress,
-    required TResult Function() likes,
-    required TResult Function() neutral,
-    required TResult Function() likeSuccess,
-    required TResult Function(Failure<dynamic> failure) likeFailure,
-    required TResult Function() dislikeSuccess,
-    required TResult Function(Failure<dynamic> failure) dislikeFailure,
-  }) {
-    return likeFailure(failure);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? initial,
-    TResult Function()? actionInProgress,
-    TResult Function()? likes,
-    TResult Function()? neutral,
-    TResult Function()? likeSuccess,
-    TResult Function(Failure<dynamic> failure)? likeFailure,
-    TResult Function()? dislikeSuccess,
-    TResult Function(Failure<dynamic> failure)? dislikeFailure,
-    required TResult orElse(),
-  }) {
-    if (likeFailure != null) {
-      return likeFailure(failure);
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_Initial value) initial,
-    required TResult Function(_ActionInProgress value) actionInProgress,
-    required TResult Function(_Likes value) likes,
-    required TResult Function(_Neutral value) neutral,
-    required TResult Function(_LikeSuccess value) likeSuccess,
-    required TResult Function(_LikeFailure value) likeFailure,
-    required TResult Function(_DislikeSuccess value) dislikeSuccess,
-    required TResult Function(_DislikeFailure value) dislikeFailure,
-  }) {
-    return likeFailure(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
-    TResult Function(_ActionInProgress value)? actionInProgress,
-    TResult Function(_Likes value)? likes,
-    TResult Function(_Neutral value)? neutral,
-    TResult Function(_LikeSuccess value)? likeSuccess,
-    TResult Function(_LikeFailure value)? likeFailure,
-    TResult Function(_DislikeSuccess value)? dislikeSuccess,
-    TResult Function(_DislikeFailure value)? dislikeFailure,
-    required TResult orElse(),
-  }) {
-    if (likeFailure != null) {
-      return likeFailure(this);
-    }
-    return orElse();
-  }
+  _$ExperienceLikeActorStateCopyWith<_ExperienceLikeActorState> get copyWith =>
+      __$ExperienceLikeActorStateCopyWithImpl<_ExperienceLikeActorState>(this, _$identity);
 }
 
-abstract class _LikeFailure implements ExperienceLikeActorState {
-  const factory _LikeFailure(Failure<dynamic> failure) = _$_LikeFailure;
+abstract class _ExperienceLikeActorState implements ExperienceLikeActorState {
+  const factory _ExperienceLikeActorState(
+      {required bool likes,
+      required int likesAmount,
+      required Option<Either<Failure, Unit>> failureOrSuccessOption}) = _$_ExperienceLikeActorState;
 
-  Failure<dynamic> get failure => throw _privateConstructorUsedError;
+  @override
+  bool get likes => throw _privateConstructorUsedError;
 
+  @override
+  int get likesAmount => throw _privateConstructorUsedError;
+
+  @override
+  Option<Either<Failure, Unit>> get failureOrSuccessOption => throw _privateConstructorUsedError;
+
+  @override
   @JsonKey(ignore: true)
-  _$LikeFailureCopyWith<_LikeFailure> get copyWith => throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class _$DislikeSuccessCopyWith<$Res> {
-  factory _$DislikeSuccessCopyWith(_DislikeSuccess value, $Res Function(_DislikeSuccess) then) =
-      __$DislikeSuccessCopyWithImpl<$Res>;
-}
-
-/// @nodoc
-class __$DislikeSuccessCopyWithImpl<$Res> extends _$ExperienceLikeActorStateCopyWithImpl<$Res>
-    implements _$DislikeSuccessCopyWith<$Res> {
-  __$DislikeSuccessCopyWithImpl(_DislikeSuccess _value, $Res Function(_DislikeSuccess) _then)
-      : super(_value, (v) => _then(v as _DislikeSuccess));
-
-  @override
-  _DislikeSuccess get _value => super._value as _DislikeSuccess;
-}
-
-/// @nodoc
-
-class _$_DislikeSuccess implements _DislikeSuccess {
-  const _$_DislikeSuccess();
-
-  @override
-  String toString() {
-    return 'ExperienceLikeActorState.dislikeSuccess()';
-  }
-
-  @override
-  bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _DislikeSuccess);
-  }
-
-  @override
-  int get hashCode => runtimeType.hashCode;
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() initial,
-    required TResult Function() actionInProgress,
-    required TResult Function() likes,
-    required TResult Function() neutral,
-    required TResult Function() likeSuccess,
-    required TResult Function(Failure<dynamic> failure) likeFailure,
-    required TResult Function() dislikeSuccess,
-    required TResult Function(Failure<dynamic> failure) dislikeFailure,
-  }) {
-    return dislikeSuccess();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? initial,
-    TResult Function()? actionInProgress,
-    TResult Function()? likes,
-    TResult Function()? neutral,
-    TResult Function()? likeSuccess,
-    TResult Function(Failure<dynamic> failure)? likeFailure,
-    TResult Function()? dislikeSuccess,
-    TResult Function(Failure<dynamic> failure)? dislikeFailure,
-    required TResult orElse(),
-  }) {
-    if (dislikeSuccess != null) {
-      return dislikeSuccess();
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_Initial value) initial,
-    required TResult Function(_ActionInProgress value) actionInProgress,
-    required TResult Function(_Likes value) likes,
-    required TResult Function(_Neutral value) neutral,
-    required TResult Function(_LikeSuccess value) likeSuccess,
-    required TResult Function(_LikeFailure value) likeFailure,
-    required TResult Function(_DislikeSuccess value) dislikeSuccess,
-    required TResult Function(_DislikeFailure value) dislikeFailure,
-  }) {
-    return dislikeSuccess(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
-    TResult Function(_ActionInProgress value)? actionInProgress,
-    TResult Function(_Likes value)? likes,
-    TResult Function(_Neutral value)? neutral,
-    TResult Function(_LikeSuccess value)? likeSuccess,
-    TResult Function(_LikeFailure value)? likeFailure,
-    TResult Function(_DislikeSuccess value)? dislikeSuccess,
-    TResult Function(_DislikeFailure value)? dislikeFailure,
-    required TResult orElse(),
-  }) {
-    if (dislikeSuccess != null) {
-      return dislikeSuccess(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class _DislikeSuccess implements ExperienceLikeActorState {
-  const factory _DislikeSuccess() = _$_DislikeSuccess;
-}
-
-/// @nodoc
-abstract class _$DislikeFailureCopyWith<$Res> {
-  factory _$DislikeFailureCopyWith(_DislikeFailure value, $Res Function(_DislikeFailure) then) =
-      __$DislikeFailureCopyWithImpl<$Res>;
-
-  $Res call({Failure<dynamic> failure});
-
-  $FailureCopyWith<dynamic, $Res> get failure;
-}
-
-/// @nodoc
-class __$DislikeFailureCopyWithImpl<$Res> extends _$ExperienceLikeActorStateCopyWithImpl<$Res>
-    implements _$DislikeFailureCopyWith<$Res> {
-  __$DislikeFailureCopyWithImpl(_DislikeFailure _value, $Res Function(_DislikeFailure) _then)
-      : super(_value, (v) => _then(v as _DislikeFailure));
-
-  @override
-  _DislikeFailure get _value => super._value as _DislikeFailure;
-
-  @override
-  $Res call({
-    Object? failure = freezed,
-  }) {
-    return _then(_DislikeFailure(
-      failure == freezed
-          ? _value.failure
-          : failure // ignore: cast_nullable_to_non_nullable
-              as Failure<dynamic>,
-    ));
-  }
-
-  @override
-  $FailureCopyWith<dynamic, $Res> get failure {
-    return $FailureCopyWith<dynamic, $Res>(_value.failure, (value) {
-      return _then(_value.copyWith(failure: value));
-    });
-  }
-}
-
-/// @nodoc
-
-class _$_DislikeFailure implements _DislikeFailure {
-  const _$_DislikeFailure(this.failure);
-
-  @override
-  final Failure<dynamic> failure;
-
-  @override
-  String toString() {
-    return 'ExperienceLikeActorState.dislikeFailure(failure: $failure)';
-  }
-
-  @override
-  bool operator ==(dynamic other) {
-    return identical(this, other) ||
-        (other is _DislikeFailure &&
-            (identical(other.failure, failure) ||
-                const DeepCollectionEquality().equals(other.failure, failure)));
-  }
-
-  @override
-  int get hashCode => runtimeType.hashCode ^ const DeepCollectionEquality().hash(failure);
-
-  @JsonKey(ignore: true)
-  @override
-  _$DislikeFailureCopyWith<_DislikeFailure> get copyWith =>
-      __$DislikeFailureCopyWithImpl<_DislikeFailure>(this, _$identity);
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() initial,
-    required TResult Function() actionInProgress,
-    required TResult Function() likes,
-    required TResult Function() neutral,
-    required TResult Function() likeSuccess,
-    required TResult Function(Failure<dynamic> failure) likeFailure,
-    required TResult Function() dislikeSuccess,
-    required TResult Function(Failure<dynamic> failure) dislikeFailure,
-  }) {
-    return dislikeFailure(failure);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? initial,
-    TResult Function()? actionInProgress,
-    TResult Function()? likes,
-    TResult Function()? neutral,
-    TResult Function()? likeSuccess,
-    TResult Function(Failure<dynamic> failure)? likeFailure,
-    TResult Function()? dislikeSuccess,
-    TResult Function(Failure<dynamic> failure)? dislikeFailure,
-    required TResult orElse(),
-  }) {
-    if (dislikeFailure != null) {
-      return dislikeFailure(failure);
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_Initial value) initial,
-    required TResult Function(_ActionInProgress value) actionInProgress,
-    required TResult Function(_Likes value) likes,
-    required TResult Function(_Neutral value) neutral,
-    required TResult Function(_LikeSuccess value) likeSuccess,
-    required TResult Function(_LikeFailure value) likeFailure,
-    required TResult Function(_DislikeSuccess value) dislikeSuccess,
-    required TResult Function(_DislikeFailure value) dislikeFailure,
-  }) {
-    return dislikeFailure(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
-    TResult Function(_ActionInProgress value)? actionInProgress,
-    TResult Function(_Likes value)? likes,
-    TResult Function(_Neutral value)? neutral,
-    TResult Function(_LikeSuccess value)? likeSuccess,
-    TResult Function(_LikeFailure value)? likeFailure,
-    TResult Function(_DislikeSuccess value)? dislikeSuccess,
-    TResult Function(_DislikeFailure value)? dislikeFailure,
-    required TResult orElse(),
-  }) {
-    if (dislikeFailure != null) {
-      return dislikeFailure(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class _DislikeFailure implements ExperienceLikeActorState {
-  const factory _DislikeFailure(Failure<dynamic> failure) = _$_DislikeFailure;
-
-  Failure<dynamic> get failure => throw _privateConstructorUsedError;
-
-  @JsonKey(ignore: true)
-  _$DislikeFailureCopyWith<_DislikeFailure> get copyWith => throw _privateConstructorUsedError;
+  _$ExperienceLikeActorStateCopyWith<_ExperienceLikeActorState> get copyWith =>
+      throw _privateConstructorUsedError;
 }

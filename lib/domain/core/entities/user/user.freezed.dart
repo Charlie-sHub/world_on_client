@@ -735,7 +735,8 @@ class _$_User extends _User {
                 const DeepCollectionEquality().equals(other.items, items)) &&
             (identical(other.coins, coins) ||
                 const DeepCollectionEquality().equals(other.coins, coins)) &&
-            (identical(other.followersAmount, followersAmount) || const DeepCollectionEquality().equals(other.followersAmount, followersAmount)) &&
+            (identical(other.followersAmount, followersAmount) ||
+                const DeepCollectionEquality().equals(other.followersAmount, followersAmount)) &&
             (identical(other.promotionPlan, promotionPlan) || const DeepCollectionEquality().equals(other.promotionPlan, promotionPlan)));
   }
 

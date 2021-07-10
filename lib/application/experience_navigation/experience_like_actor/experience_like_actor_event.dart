@@ -5,6 +5,7 @@ class ExperienceLikeActorEvent with _$ExperienceLikeActorEvent {
   const factory ExperienceLikeActorEvent.initialized(
     UniqueId experienceId,
     Set<UniqueId> experiencesLikedIds,
+    int likesAmount,
   ) = _Initialized;
 
   const factory ExperienceLikeActorEvent.liked(UniqueId experienceId) = _Liked;

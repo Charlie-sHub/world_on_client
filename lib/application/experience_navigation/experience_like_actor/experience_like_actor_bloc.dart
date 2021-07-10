@@ -1,9 +1,9 @@
 import 'dart:async';
 
 import 'package:bloc/bloc.dart';
+import 'package:dartz/dartz.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:injectable/injectable.dart';
-import 'package:meta/meta.dart';
 import 'package:worldon/core/error/failure.dart';
 import 'package:worldon/domain/core/validation/objects/unique_id.dart';
 import 'package:worldon/domain/experience_navigation/use_case/dislike_experience.dart'
@@ -19,7 +19,7 @@ part 'experience_like_actor_state.dart';
 
 @injectable
 class ExperienceLikeActorBloc extends Bloc<ExperienceLikeActorEvent, ExperienceLikeActorState> {
-  ExperienceLikeActorBloc() : super(const ExperienceLikeActorState.initial());
+  ExperienceLikeActorBloc() : super(ExperienceLikeActorState.initial());
 
   @override
   Stream<ExperienceLikeActorState> mapEventToState(ExperienceLikeActorEvent event) async* {
@@ -31,32 +31,64 @@ class ExperienceLikeActorBloc extends Bloc<ExperienceLikeActorEvent, ExperienceL
   }
 
   Stream<ExperienceLikeActorState> _onDisliked(_Disliked event) async* {
-    yield const ExperienceLikeActorState.actionInProgress();
+    yield state.copyWith(
+      failureOrSuccessOption: none(),
+    );
     final _failureOrUnit = await getIt<dislike_experience.DislikeExperience>()(
       dislike_experience.Params(experienceId: event.experienceId),
     );
     yield _failureOrUnit.fold(
-      (failure) => ExperienceLikeActorState.dislikeFailure(failure),
-      (_) => const ExperienceLikeActorState.dislikeSuccess(),
+      (failure) => state.copyWith(
+        failureOrSuccessOption: some(
+          left(failure),
+        ),
+      ),
+      (_) => state.likes
+          ? state.copyWith(
+              likes: false,
+              likesAmount: state.likesAmount - 1,
+            )
+          : state.copyWith(
+              likesAmount: state.likesAmount,
+            ),
     );
   }
 
   Stream<ExperienceLikeActorState> _onLiked(_Liked event) async* {
-    yield const ExperienceLikeActorState.actionInProgress();
+    yield state.copyWith(
+      failureOrSuccessOption: none(),
+    );
     final _failureOrUnit = await getIt<like_experience.LikeExperience>()(
       like_experience.Params(experienceId: event.experienceId),
     );
     yield _failureOrUnit.fold(
-      (failure) => ExperienceLikeActorState.likeFailure(failure),
-      (_) => const ExperienceLikeActorState.likeSuccess(),
+      (failure) => state.copyWith(
+        failureOrSuccessOption: some(
+          left(failure),
+        ),
+      ),
+      (_) => state.likes
+          ? state.copyWith(
+              likesAmount: state.likesAmount,
+            )
+          : state.copyWith(
+              likes: true,
+              likesAmount: state.likesAmount + 1,
+            ),
     );
   }
 
   Stream<ExperienceLikeActorState> _onInitialized(_Initialized event) async* {
     if (event.experiencesLikedIds.contains(event.experienceId)) {
-      yield const ExperienceLikeActorState.likes();
+      yield state.copyWith(
+        likes: true,
+        likesAmount: event.likesAmount,
+      );
     } else {
-      yield const ExperienceLikeActorState.neutral();
+      yield state.copyWith(
+        likes: false,
+        likesAmount: event.likesAmount,
+      );
     }
   }
 }

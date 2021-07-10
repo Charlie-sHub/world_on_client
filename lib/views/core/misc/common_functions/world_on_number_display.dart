@@ -1,6 +1,6 @@
 import 'package:number_display/number_display.dart';
 
-String createWorldOnDisplay(int number) {
+String createNumberDisplay(int number) {
   final _display = createDisplay(
     length: 4,
     units: [

@@ -17,7 +17,7 @@ environment:
 dependencies:
   algolia: ^1.0.1
   animated_bottom_navigation_bar: ^0.3.2
-  another_flushbar: ^1.10.23
+  another_flushbar: ^1.10.24
   auth_buttons: ^1.0.1+4
   auto_route: ^2.2.0
   auto_size_text: ^3.0.0-nullsafety.0

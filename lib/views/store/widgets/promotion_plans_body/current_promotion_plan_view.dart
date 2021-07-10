@@ -47,7 +47,8 @@ class CurrentPromotionPlanView extends StatelessWidget {
                     ),
                     children: [
                       TextSpan(
-                        text: "${plan.boughtDate.year}-${plan.boughtDate.month}-${plan.boughtDate.day}",
+                        text:
+                            "${plan.boughtDate.year}-${plan.boughtDate.month}-${plan.boughtDate.day}",
                         style: const TextStyle(
                           fontSize: 14,
                           color: WorldOnColors.accent,
@@ -67,7 +68,8 @@ class CurrentPromotionPlanView extends StatelessWidget {
                     ),
                     children: [
                       TextSpan(
-                        text: "${_expirationDate.year}-${_expirationDate.month}-${_expirationDate.day}",
+                        text:
+                            "${_expirationDate.year}-${_expirationDate.month}-${_expirationDate.day}",
                         style: const TextStyle(
                           fontSize: 14,
                           color: WorldOnColors.red,
@@ -90,7 +92,7 @@ class CurrentPromotionPlanView extends StatelessWidget {
                 ),
                 children: [
                   TextSpan(
-                    text: createWorldOnDisplay(plan.timesSeen),
+                    text: createNumberDisplay(plan.timesSeen),
                     style: const TextStyle(
                       fontSize: 15,
                       color: WorldOnColors.primary,
