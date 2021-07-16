@@ -487,11 +487,13 @@ class _$ObjectivesTrackerStateTearOff {
   _ObjectivesTrackerState call(
       {required KtList<Objective> objectivesToDo,
       required UniqueId experienceId,
-      required bool isFinished}) {
+      required bool isFinished,
+      required bool showExplanation}) {
     return _ObjectivesTrackerState(
       objectivesToDo: objectivesToDo,
       experienceId: experienceId,
       isFinished: isFinished,
+      showExplanation: showExplanation,
     );
   }
 }
@@ -503,7 +505,10 @@ const $ObjectivesTrackerState = _$ObjectivesTrackerStateTearOff();
 mixin _$ObjectivesTrackerState {
   KtList<Objective> get objectivesToDo => throw _privateConstructorUsedError;
   UniqueId get experienceId => throw _privateConstructorUsedError;
+
   bool get isFinished => throw _privateConstructorUsedError;
+
+  bool get showExplanation => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
   $ObjectivesTrackerStateCopyWith<ObjectivesTrackerState> get copyWith =>
@@ -516,7 +521,11 @@ abstract class $ObjectivesTrackerStateCopyWith<$Res> {
           ObjectivesTrackerState value, $Res Function(ObjectivesTrackerState) then) =
       _$ObjectivesTrackerStateCopyWithImpl<$Res>;
 
-  $Res call({KtList<Objective> objectivesToDo, UniqueId experienceId, bool isFinished});
+  $Res call(
+      {KtList<Objective> objectivesToDo,
+      UniqueId experienceId,
+      bool isFinished,
+      bool showExplanation});
 }
 
 /// @nodoc
@@ -533,6 +542,7 @@ class _$ObjectivesTrackerStateCopyWithImpl<$Res> implements $ObjectivesTrackerSt
     Object? objectivesToDo = freezed,
     Object? experienceId = freezed,
     Object? isFinished = freezed,
+    Object? showExplanation = freezed,
   }) {
     return _then(_value.copyWith(
       objectivesToDo: objectivesToDo == freezed
@@ -547,6 +557,10 @@ class _$ObjectivesTrackerStateCopyWithImpl<$Res> implements $ObjectivesTrackerSt
           ? _value.isFinished
           : isFinished // ignore: cast_nullable_to_non_nullable
               as bool,
+      showExplanation: showExplanation == freezed
+          ? _value.showExplanation
+          : showExplanation // ignore: cast_nullable_to_non_nullable
+              as bool,
     ));
   }
 }
@@ -559,7 +573,11 @@ abstract class _$ObjectivesTrackerStateCopyWith<$Res>
       __$ObjectivesTrackerStateCopyWithImpl<$Res>;
 
   @override
-  $Res call({KtList<Objective> objectivesToDo, UniqueId experienceId, bool isFinished});
+  $Res call(
+      {KtList<Objective> objectivesToDo,
+      UniqueId experienceId,
+      bool isFinished,
+      bool showExplanation});
 }
 
 /// @nodoc
@@ -577,6 +595,7 @@ class __$ObjectivesTrackerStateCopyWithImpl<$Res> extends _$ObjectivesTrackerSta
     Object? objectivesToDo = freezed,
     Object? experienceId = freezed,
     Object? isFinished = freezed,
+    Object? showExplanation = freezed,
   }) {
     return _then(_ObjectivesTrackerState(
       objectivesToDo: objectivesToDo == freezed
@@ -591,6 +610,10 @@ class __$ObjectivesTrackerStateCopyWithImpl<$Res> extends _$ObjectivesTrackerSta
           ? _value.isFinished
           : isFinished // ignore: cast_nullable_to_non_nullable
               as bool,
+      showExplanation: showExplanation == freezed
+          ? _value.showExplanation
+          : showExplanation // ignore: cast_nullable_to_non_nullable
+              as bool,
     ));
   }
 }
@@ -599,7 +622,10 @@ class __$ObjectivesTrackerStateCopyWithImpl<$Res> extends _$ObjectivesTrackerSta
 
 class _$_ObjectivesTrackerState implements _ObjectivesTrackerState {
   const _$_ObjectivesTrackerState(
-      {required this.objectivesToDo, required this.experienceId, required this.isFinished});
+      {required this.objectivesToDo,
+      required this.experienceId,
+      required this.isFinished,
+      required this.showExplanation});
 
   @override
   final KtList<Objective> objectivesToDo;
@@ -607,10 +633,12 @@ class _$_ObjectivesTrackerState implements _ObjectivesTrackerState {
   final UniqueId experienceId;
   @override
   final bool isFinished;
+  @override
+  final bool showExplanation;
 
   @override
   String toString() {
-    return 'ObjectivesTrackerState(objectivesToDo: $objectivesToDo, experienceId: $experienceId, isFinished: $isFinished)';
+    return 'ObjectivesTrackerState(objectivesToDo: $objectivesToDo, experienceId: $experienceId, isFinished: $isFinished, showExplanation: $showExplanation)';
   }
 
   @override
@@ -622,7 +650,9 @@ class _$_ObjectivesTrackerState implements _ObjectivesTrackerState {
             (identical(other.experienceId, experienceId) ||
                 const DeepCollectionEquality().equals(other.experienceId, experienceId)) &&
             (identical(other.isFinished, isFinished) ||
-                const DeepCollectionEquality().equals(other.isFinished, isFinished)));
+                const DeepCollectionEquality().equals(other.isFinished, isFinished)) &&
+            (identical(other.showExplanation, showExplanation) ||
+                const DeepCollectionEquality().equals(other.showExplanation, showExplanation)));
   }
 
   @override
@@ -630,7 +660,8 @@ class _$_ObjectivesTrackerState implements _ObjectivesTrackerState {
       runtimeType.hashCode ^
       const DeepCollectionEquality().hash(objectivesToDo) ^
       const DeepCollectionEquality().hash(experienceId) ^
-      const DeepCollectionEquality().hash(isFinished);
+      const DeepCollectionEquality().hash(isFinished) ^
+      const DeepCollectionEquality().hash(showExplanation);
 
   @JsonKey(ignore: true)
   @override
@@ -642,14 +673,21 @@ abstract class _ObjectivesTrackerState implements ObjectivesTrackerState {
   const factory _ObjectivesTrackerState(
       {required KtList<Objective> objectivesToDo,
       required UniqueId experienceId,
-      required bool isFinished}) = _$_ObjectivesTrackerState;
+      required bool isFinished,
+      required bool showExplanation}) = _$_ObjectivesTrackerState;
 
   @override
   KtList<Objective> get objectivesToDo => throw _privateConstructorUsedError;
+
   @override
   UniqueId get experienceId => throw _privateConstructorUsedError;
+
   @override
   bool get isFinished => throw _privateConstructorUsedError;
+
+  @override
+  bool get showExplanation => throw _privateConstructorUsedError;
+
   @override
   @JsonKey(ignore: true)
   _$ObjectivesTrackerStateCopyWith<_ObjectivesTrackerState> get copyWith =>

@@ -9,7 +9,6 @@ import 'package:worldon/core/error/failure.dart';
 import 'package:worldon/domain/authentication/use_case/get_logged_in_user.dart';
 import 'package:worldon/domain/core/entities/notification/notification.dart';
 import 'package:worldon/domain/core/entities/notification/notification_type_enum.dart';
-import 'package:worldon/domain/core/entities/user/simple_user.dart';
 import 'package:worldon/domain/core/failures/error.dart';
 import 'package:worldon/domain/core/use_case/use_case.dart';
 import 'package:worldon/domain/core/validation/objects/entity_description.dart';
@@ -54,7 +53,7 @@ class FollowActorBloc extends Bloc<FollowActorEvent, FollowActorState> {
         getIt<send_notification.SendNotification>()(
           send_notification.Params(
             notification: Notification.empty().copyWith(
-              sender: SimpleUser.fromUser(_currentUser),
+              sender: _currentUser.simplified,
               receiverId: event.userId,
               description:
                   EntityDescription("${_currentUser.username.getOrCrash()} unfollowed you"),
@@ -86,7 +85,7 @@ class FollowActorBloc extends Bloc<FollowActorEvent, FollowActorState> {
         getIt<send_notification.SendNotification>()(
           send_notification.Params(
             notification: Notification.empty().copyWith(
-              sender: SimpleUser.fromUser(_currentUser),
+              sender: _currentUser.simplified,
               receiverId: event.userId,
               description:
                   EntityDescription("${_currentUser.username.getOrCrash()} is following you"),

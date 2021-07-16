@@ -57,7 +57,9 @@ class MapTabView extends StatelessWidget {
 
   Marker _mapObjectiveToMarker(Objective _objective, BuildContext context) {
     return Marker(
-      markerId: MarkerId(_objective.id.toString()),
+      markerId: MarkerId(
+        _objective.id.toString(),
+      ),
       position: LatLng(
         _objective.coordinates.latitude.getOrCrash(),
         _objective.coordinates.longitude.getOrCrash(),
@@ -69,13 +71,17 @@ class MapTabView extends StatelessWidget {
     );
   }
 
-  void _onCameraMoved(BuildContext context, CameraPosition position) => context.read<MapControllerBloc>().add(
-        MapControllerEvent.cameraPositionChanged(
-          coordinates: Coordinates(
-            latitude: Latitude(position.target.latitude),
-            longitude: Longitude(position.target.longitude),
-          ),
-          zoom: position.zoom,
-        ),
-      );
+  void _onCameraMoved(
+    BuildContext context,
+    CameraPosition position,
+  ) =>
+      context.read<MapControllerBloc>().add(
+            MapControllerEvent.cameraPositionChanged(
+              coordinates: Coordinates(
+                latitude: Latitude(position.target.latitude),
+                longitude: Longitude(position.target.longitude),
+              ),
+              zoom: position.zoom,
+            ),
+          );
 }

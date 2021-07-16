@@ -30,7 +30,8 @@ class RegistrationPage extends StatelessWidget {
               RegistrationFormEvent.initialized(userOption),
             ),
           child: BlocConsumer<RegistrationFormBloc, RegistrationFormState>(
-            listenWhen: (previous, current) => previous.failureOrSuccessOption != current.failureOrSuccessOption,
+            listenWhen: (previous, current) =>
+                previous.failureOrSuccessOption != current.failureOrSuccessOption,
             listener: (context, state) => state.failureOrSuccessOption.fold(
               () {},
               (either) => either.fold(
@@ -64,7 +65,8 @@ class RegistrationPage extends StatelessWidget {
             usernameAlreadyInUse: (_) => S.of(context).usernameAlreadyInUse,
             orElse: () => S.of(context).unknownError,
           ),
-          coreApplication: (_coreApplicationFailure) => _coreApplicationFailure.coreApplicationFailure.maybeMap(
+          coreApplication: (_coreApplicationFailure) =>
+              _coreApplicationFailure.coreApplicationFailure.maybeMap(
             emptyFields: (_) => S.of(context).emptyFields,
             orElse: () => S.of(context).unknownError,
           ),
@@ -73,7 +75,11 @@ class RegistrationPage extends StatelessWidget {
       ).show(context);
 
   void _onSuccess(BuildContext context) {
-    context.router.replace(const WelcomePageRoute());
-    context.read<AuthenticationBloc>().add(const AuthenticationEvent.authenticationCheckRequested());
+    context.router.replace(
+      const WelcomePageRoute(),
+    );
+    context.read<AuthenticationBloc>().add(
+          const AuthenticationEvent.authenticationCheckRequested(),
+        );
   }
 }

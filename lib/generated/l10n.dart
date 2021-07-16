@@ -2308,6 +2308,16 @@ class S {
       args: [],
     );
   }
+
+  /// `Check the objectives as you complete them`
+  String get objectivesExplanation {
+    return Intl.message(
+      'Check the objectives as you complete them',
+      name: 'objectivesExplanation',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

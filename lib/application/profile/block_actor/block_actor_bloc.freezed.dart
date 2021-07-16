@@ -16,22 +16,24 @@ final _privateConstructorUsedError = UnsupportedError(
 class _$BlockActorEventTearOff {
   const _$BlockActorEventTearOff();
 
-  _Initialized initialized(User user, Set<UniqueId> blockedUsersIds) {
+  _Initialized initialized(UniqueId userToCheckId, Set<UniqueId> blockedUsersIds) {
     return _Initialized(
-      user,
+      userToCheckId,
       blockedUsersIds,
     );
   }
 
-  _Blocked blocked(User user) {
+  _Blocked blocked(UniqueId userToBlockId, SimpleUser currentUser) {
     return _Blocked(
-      user,
+      userToBlockId,
+      currentUser,
     );
   }
 
-  _UnBlocked unBlocked(User user) {
+  _UnBlocked unBlocked(UniqueId userToUnBlockId, SimpleUser currentUser) {
     return _UnBlocked(
-      user,
+      userToUnBlockId,
+      currentUser,
     );
   }
 }
@@ -41,20 +43,18 @@ const $BlockActorEvent = _$BlockActorEventTearOff();
 
 /// @nodoc
 mixin _$BlockActorEvent {
-  User get user => throw _privateConstructorUsedError;
-
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(User user, Set<UniqueId> blockedUsersIds) initialized,
-    required TResult Function(User user) blocked,
-    required TResult Function(User user) unBlocked,
+    required TResult Function(UniqueId userToCheckId, Set<UniqueId> blockedUsersIds) initialized,
+    required TResult Function(UniqueId userToBlockId, SimpleUser currentUser) blocked,
+    required TResult Function(UniqueId userToUnBlockId, SimpleUser currentUser) unBlocked,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(User user, Set<UniqueId> blockedUsersIds)? initialized,
-    TResult Function(User user)? blocked,
-    TResult Function(User user)? unBlocked,
+    TResult Function(UniqueId userToCheckId, Set<UniqueId> blockedUsersIds)? initialized,
+    TResult Function(UniqueId userToBlockId, SimpleUser currentUser)? blocked,
+    TResult Function(UniqueId userToUnBlockId, SimpleUser currentUser)? unBlocked,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -73,19 +73,12 @@ mixin _$BlockActorEvent {
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
-
-  @JsonKey(ignore: true)
-  $BlockActorEventCopyWith<BlockActorEvent> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $BlockActorEventCopyWith<$Res> {
   factory $BlockActorEventCopyWith(BlockActorEvent value, $Res Function(BlockActorEvent) then) =
       _$BlockActorEventCopyWithImpl<$Res>;
-
-  $Res call({User user});
-
-  $UserCopyWith<$Res> get user;
 }
 
 /// @nodoc
@@ -96,37 +89,14 @@ class _$BlockActorEventCopyWithImpl<$Res> implements $BlockActorEventCopyWith<$R
 
   // ignore: unused_field
   final $Res Function(BlockActorEvent) _then;
-
-  @override
-  $Res call({
-    Object? user = freezed,
-  }) {
-    return _then(_value.copyWith(
-      user: user == freezed
-          ? _value.user
-          : user // ignore: cast_nullable_to_non_nullable
-              as User,
-    ));
-  }
-
-  @override
-  $UserCopyWith<$Res> get user {
-    return $UserCopyWith<$Res>(_value.user, (value) {
-      return _then(_value.copyWith(user: value));
-    });
-  }
 }
 
 /// @nodoc
-abstract class _$InitializedCopyWith<$Res> implements $BlockActorEventCopyWith<$Res> {
+abstract class _$InitializedCopyWith<$Res> {
   factory _$InitializedCopyWith(_Initialized value, $Res Function(_Initialized) then) =
       __$InitializedCopyWithImpl<$Res>;
 
-  @override
-  $Res call({User user, Set<UniqueId> blockedUsersIds});
-
-  @override
-  $UserCopyWith<$Res> get user;
+  $Res call({UniqueId userToCheckId, Set<UniqueId> blockedUsersIds});
 }
 
 /// @nodoc
@@ -140,14 +110,14 @@ class __$InitializedCopyWithImpl<$Res> extends _$BlockActorEventCopyWithImpl<$Re
 
   @override
   $Res call({
-    Object? user = freezed,
+    Object? userToCheckId = freezed,
     Object? blockedUsersIds = freezed,
   }) {
     return _then(_Initialized(
-      user == freezed
-          ? _value.user
-          : user // ignore: cast_nullable_to_non_nullable
-              as User,
+      userToCheckId == freezed
+          ? _value.userToCheckId
+          : userToCheckId // ignore: cast_nullable_to_non_nullable
+              as UniqueId,
       blockedUsersIds == freezed
           ? _value.blockedUsersIds
           : blockedUsersIds // ignore: cast_nullable_to_non_nullable
@@ -159,24 +129,24 @@ class __$InitializedCopyWithImpl<$Res> extends _$BlockActorEventCopyWithImpl<$Re
 /// @nodoc
 
 class _$_Initialized implements _Initialized {
-  const _$_Initialized(this.user, this.blockedUsersIds);
+  const _$_Initialized(this.userToCheckId, this.blockedUsersIds);
 
   @override
-  final User user;
+  final UniqueId userToCheckId;
   @override
   final Set<UniqueId> blockedUsersIds;
 
   @override
   String toString() {
-    return 'BlockActorEvent.initialized(user: $user, blockedUsersIds: $blockedUsersIds)';
+    return 'BlockActorEvent.initialized(userToCheckId: $userToCheckId, blockedUsersIds: $blockedUsersIds)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other is _Initialized &&
-            (identical(other.user, user) ||
-                const DeepCollectionEquality().equals(other.user, user)) &&
+            (identical(other.userToCheckId, userToCheckId) ||
+                const DeepCollectionEquality().equals(other.userToCheckId, userToCheckId)) &&
             (identical(other.blockedUsersIds, blockedUsersIds) ||
                 const DeepCollectionEquality().equals(other.blockedUsersIds, blockedUsersIds)));
   }
@@ -184,7 +154,7 @@ class _$_Initialized implements _Initialized {
   @override
   int get hashCode =>
       runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(user) ^
+      const DeepCollectionEquality().hash(userToCheckId) ^
       const DeepCollectionEquality().hash(blockedUsersIds);
 
   @JsonKey(ignore: true)
@@ -195,23 +165,23 @@ class _$_Initialized implements _Initialized {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(User user, Set<UniqueId> blockedUsersIds) initialized,
-    required TResult Function(User user) blocked,
-    required TResult Function(User user) unBlocked,
+    required TResult Function(UniqueId userToCheckId, Set<UniqueId> blockedUsersIds) initialized,
+    required TResult Function(UniqueId userToBlockId, SimpleUser currentUser) blocked,
+    required TResult Function(UniqueId userToUnBlockId, SimpleUser currentUser) unBlocked,
   }) {
-    return initialized(user, blockedUsersIds);
+    return initialized(userToCheckId, blockedUsersIds);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(User user, Set<UniqueId> blockedUsersIds)? initialized,
-    TResult Function(User user)? blocked,
-    TResult Function(User user)? unBlocked,
+    TResult Function(UniqueId userToCheckId, Set<UniqueId> blockedUsersIds)? initialized,
+    TResult Function(UniqueId userToBlockId, SimpleUser currentUser)? blocked,
+    TResult Function(UniqueId userToUnBlockId, SimpleUser currentUser)? unBlocked,
     required TResult orElse(),
   }) {
     if (initialized != null) {
-      return initialized(user, blockedUsersIds);
+      return initialized(userToCheckId, blockedUsersIds);
     }
     return orElse();
   }
@@ -242,28 +212,25 @@ class _$_Initialized implements _Initialized {
 }
 
 abstract class _Initialized implements BlockActorEvent {
-  const factory _Initialized(User user, Set<UniqueId> blockedUsersIds) = _$_Initialized;
+  const factory _Initialized(UniqueId userToCheckId, Set<UniqueId> blockedUsersIds) =
+      _$_Initialized;
 
-  @override
-  User get user => throw _privateConstructorUsedError;
+  UniqueId get userToCheckId => throw _privateConstructorUsedError;
 
   Set<UniqueId> get blockedUsersIds => throw _privateConstructorUsedError;
 
-  @override
   @JsonKey(ignore: true)
   _$InitializedCopyWith<_Initialized> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$BlockedCopyWith<$Res> implements $BlockActorEventCopyWith<$Res> {
+abstract class _$BlockedCopyWith<$Res> {
   factory _$BlockedCopyWith(_Blocked value, $Res Function(_Blocked) then) =
       __$BlockedCopyWithImpl<$Res>;
 
-  @override
-  $Res call({User user});
+  $Res call({UniqueId userToBlockId, SimpleUser currentUser});
 
-  @override
-  $UserCopyWith<$Res> get user;
+  $SimpleUserCopyWith<$Res> get currentUser;
 }
 
 /// @nodoc
@@ -277,40 +244,59 @@ class __$BlockedCopyWithImpl<$Res> extends _$BlockActorEventCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object? user = freezed,
+    Object? userToBlockId = freezed,
+    Object? currentUser = freezed,
   }) {
     return _then(_Blocked(
-      user == freezed
-          ? _value.user
-          : user // ignore: cast_nullable_to_non_nullable
-              as User,
+      userToBlockId == freezed
+          ? _value.userToBlockId
+          : userToBlockId // ignore: cast_nullable_to_non_nullable
+              as UniqueId,
+      currentUser == freezed
+          ? _value.currentUser
+          : currentUser // ignore: cast_nullable_to_non_nullable
+              as SimpleUser,
     ));
+  }
+
+  @override
+  $SimpleUserCopyWith<$Res> get currentUser {
+    return $SimpleUserCopyWith<$Res>(_value.currentUser, (value) {
+      return _then(_value.copyWith(currentUser: value));
+    });
   }
 }
 
 /// @nodoc
 
 class _$_Blocked implements _Blocked {
-  const _$_Blocked(this.user);
+  const _$_Blocked(this.userToBlockId, this.currentUser);
 
   @override
-  final User user;
+  final UniqueId userToBlockId;
+  @override
+  final SimpleUser currentUser;
 
   @override
   String toString() {
-    return 'BlockActorEvent.blocked(user: $user)';
+    return 'BlockActorEvent.blocked(userToBlockId: $userToBlockId, currentUser: $currentUser)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other is _Blocked &&
-            (identical(other.user, user) ||
-                const DeepCollectionEquality().equals(other.user, user)));
+            (identical(other.userToBlockId, userToBlockId) ||
+                const DeepCollectionEquality().equals(other.userToBlockId, userToBlockId)) &&
+            (identical(other.currentUser, currentUser) ||
+                const DeepCollectionEquality().equals(other.currentUser, currentUser)));
   }
 
   @override
-  int get hashCode => runtimeType.hashCode ^ const DeepCollectionEquality().hash(user);
+  int get hashCode =>
+      runtimeType.hashCode ^
+      const DeepCollectionEquality().hash(userToBlockId) ^
+      const DeepCollectionEquality().hash(currentUser);
 
   @JsonKey(ignore: true)
   @override
@@ -319,23 +305,23 @@ class _$_Blocked implements _Blocked {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(User user, Set<UniqueId> blockedUsersIds) initialized,
-    required TResult Function(User user) blocked,
-    required TResult Function(User user) unBlocked,
+    required TResult Function(UniqueId userToCheckId, Set<UniqueId> blockedUsersIds) initialized,
+    required TResult Function(UniqueId userToBlockId, SimpleUser currentUser) blocked,
+    required TResult Function(UniqueId userToUnBlockId, SimpleUser currentUser) unBlocked,
   }) {
-    return blocked(user);
+    return blocked(userToBlockId, currentUser);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(User user, Set<UniqueId> blockedUsersIds)? initialized,
-    TResult Function(User user)? blocked,
-    TResult Function(User user)? unBlocked,
+    TResult Function(UniqueId userToCheckId, Set<UniqueId> blockedUsersIds)? initialized,
+    TResult Function(UniqueId userToBlockId, SimpleUser currentUser)? blocked,
+    TResult Function(UniqueId userToUnBlockId, SimpleUser currentUser)? unBlocked,
     required TResult orElse(),
   }) {
     if (blocked != null) {
-      return blocked(user);
+      return blocked(userToBlockId, currentUser);
     }
     return orElse();
   }
@@ -366,26 +352,24 @@ class _$_Blocked implements _Blocked {
 }
 
 abstract class _Blocked implements BlockActorEvent {
-  const factory _Blocked(User user) = _$_Blocked;
+  const factory _Blocked(UniqueId userToBlockId, SimpleUser currentUser) = _$_Blocked;
 
-  @override
-  User get user => throw _privateConstructorUsedError;
+  UniqueId get userToBlockId => throw _privateConstructorUsedError;
 
-  @override
+  SimpleUser get currentUser => throw _privateConstructorUsedError;
+
   @JsonKey(ignore: true)
   _$BlockedCopyWith<_Blocked> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$UnBlockedCopyWith<$Res> implements $BlockActorEventCopyWith<$Res> {
+abstract class _$UnBlockedCopyWith<$Res> {
   factory _$UnBlockedCopyWith(_UnBlocked value, $Res Function(_UnBlocked) then) =
       __$UnBlockedCopyWithImpl<$Res>;
 
-  @override
-  $Res call({User user});
+  $Res call({UniqueId userToUnBlockId, SimpleUser currentUser});
 
-  @override
-  $UserCopyWith<$Res> get user;
+  $SimpleUserCopyWith<$Res> get currentUser;
 }
 
 /// @nodoc
@@ -399,40 +383,59 @@ class __$UnBlockedCopyWithImpl<$Res> extends _$BlockActorEventCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object? user = freezed,
+    Object? userToUnBlockId = freezed,
+    Object? currentUser = freezed,
   }) {
     return _then(_UnBlocked(
-      user == freezed
-          ? _value.user
-          : user // ignore: cast_nullable_to_non_nullable
-              as User,
+      userToUnBlockId == freezed
+          ? _value.userToUnBlockId
+          : userToUnBlockId // ignore: cast_nullable_to_non_nullable
+              as UniqueId,
+      currentUser == freezed
+          ? _value.currentUser
+          : currentUser // ignore: cast_nullable_to_non_nullable
+              as SimpleUser,
     ));
+  }
+
+  @override
+  $SimpleUserCopyWith<$Res> get currentUser {
+    return $SimpleUserCopyWith<$Res>(_value.currentUser, (value) {
+      return _then(_value.copyWith(currentUser: value));
+    });
   }
 }
 
 /// @nodoc
 
 class _$_UnBlocked implements _UnBlocked {
-  const _$_UnBlocked(this.user);
+  const _$_UnBlocked(this.userToUnBlockId, this.currentUser);
 
   @override
-  final User user;
+  final UniqueId userToUnBlockId;
+  @override
+  final SimpleUser currentUser;
 
   @override
   String toString() {
-    return 'BlockActorEvent.unBlocked(user: $user)';
+    return 'BlockActorEvent.unBlocked(userToUnBlockId: $userToUnBlockId, currentUser: $currentUser)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other is _UnBlocked &&
-            (identical(other.user, user) ||
-                const DeepCollectionEquality().equals(other.user, user)));
+            (identical(other.userToUnBlockId, userToUnBlockId) ||
+                const DeepCollectionEquality().equals(other.userToUnBlockId, userToUnBlockId)) &&
+            (identical(other.currentUser, currentUser) ||
+                const DeepCollectionEquality().equals(other.currentUser, currentUser)));
   }
 
   @override
-  int get hashCode => runtimeType.hashCode ^ const DeepCollectionEquality().hash(user);
+  int get hashCode =>
+      runtimeType.hashCode ^
+      const DeepCollectionEquality().hash(userToUnBlockId) ^
+      const DeepCollectionEquality().hash(currentUser);
 
   @JsonKey(ignore: true)
   @override
@@ -442,23 +445,23 @@ class _$_UnBlocked implements _UnBlocked {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(User user, Set<UniqueId> blockedUsersIds) initialized,
-    required TResult Function(User user) blocked,
-    required TResult Function(User user) unBlocked,
+    required TResult Function(UniqueId userToCheckId, Set<UniqueId> blockedUsersIds) initialized,
+    required TResult Function(UniqueId userToBlockId, SimpleUser currentUser) blocked,
+    required TResult Function(UniqueId userToUnBlockId, SimpleUser currentUser) unBlocked,
   }) {
-    return unBlocked(user);
+    return unBlocked(userToUnBlockId, currentUser);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(User user, Set<UniqueId> blockedUsersIds)? initialized,
-    TResult Function(User user)? blocked,
-    TResult Function(User user)? unBlocked,
+    TResult Function(UniqueId userToCheckId, Set<UniqueId> blockedUsersIds)? initialized,
+    TResult Function(UniqueId userToBlockId, SimpleUser currentUser)? blocked,
+    TResult Function(UniqueId userToUnBlockId, SimpleUser currentUser)? unBlocked,
     required TResult orElse(),
   }) {
     if (unBlocked != null) {
-      return unBlocked(user);
+      return unBlocked(userToUnBlockId, currentUser);
     }
     return orElse();
   }
@@ -489,12 +492,12 @@ class _$_UnBlocked implements _UnBlocked {
 }
 
 abstract class _UnBlocked implements BlockActorEvent {
-  const factory _UnBlocked(User user) = _$_UnBlocked;
+  const factory _UnBlocked(UniqueId userToUnBlockId, SimpleUser currentUser) = _$_UnBlocked;
 
-  @override
-  User get user => throw _privateConstructorUsedError;
+  UniqueId get userToUnBlockId => throw _privateConstructorUsedError;
 
-  @override
+  SimpleUser get currentUser => throw _privateConstructorUsedError;
+
   @JsonKey(ignore: true)
   _$UnBlockedCopyWith<_UnBlocked> get copyWith => throw _privateConstructorUsedError;
 }

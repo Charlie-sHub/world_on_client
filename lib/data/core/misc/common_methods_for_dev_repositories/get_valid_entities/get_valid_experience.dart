@@ -6,7 +6,6 @@ import 'package:worldon/data/core/misc/common_methods_for_dev_repositories/get_v
 import 'package:worldon/data/core/misc/common_methods_for_dev_repositories/get_valid_entities/get_valid_user.dart';
 import 'package:worldon/domain/core/entities/coordinates/coordinates.dart';
 import 'package:worldon/domain/core/entities/experience/experience.dart';
-import 'package:worldon/domain/core/entities/user/simple_user.dart';
 import 'package:worldon/domain/core/validation/objects/comment_content.dart';
 import 'package:worldon/domain/core/validation/objects/difficulty.dart';
 import 'package:worldon/domain/core/validation/objects/entity_description.dart';
@@ -27,13 +26,14 @@ Experience getValidExperience() {
   return Experience.empty().copyWith(
     id: UniqueId(),
     title: Name("Malesuada fames ac ante"),
-    description: EntityDescription("Donec bibendum congue libero nec viverra. Cras eget placerat libero. Maecenas cursus turpis vitae ultricies tempus. In suscipit orci id dapibus molestie."),
+    description: EntityDescription(
+        "Donec bibendum congue libero nec viverra. Cras eget placerat libero. Maecenas cursus turpis vitae ultricies tempus. In suscipit orci id dapibus molestie."),
     imageURLs: {
       Assets.experiencePlaceholder,
     },
     coordinates: getValidCoordinates(),
     location: getValidLocation(),
-    creator: SimpleUser.fromUser(getValidUser()),
+    creator: getValidUser().simplified,
     difficulty: Difficulty(2),
     creationDate: PastDate(DateTime.now().subtract(const Duration(days: 100))),
     modificationDate: PastDate(DateTime.now()),
@@ -42,7 +42,8 @@ Experience getValidExperience() {
         getValidObjective(),
         getValidObjective().copyWith(
           id: UniqueId(),
-          description: EntityDescription("Poaching Whistler cruiser white room, carbon chowder dirtbag death cookies steeps."),
+          description: EntityDescription(
+              "Poaching Whistler cruiser white room, carbon chowder dirtbag death cookies steeps."),
           coordinates: Coordinates(
             latitude: Latitude(40.428938),
             longitude: Longitude(-3.680765),
@@ -76,7 +77,8 @@ Chillax gapers Whistler skid."""),
         ),
         getValidObjective().copyWith(
           id: UniqueId(),
-          description: EntityDescription("Disrupt selvage blue bottle whatever, synth craft beer messenger bag."),
+          description: EntityDescription(
+              "Disrupt selvage blue bottle whatever, synth craft beer messenger bag."),
           coordinates: Coordinates(
             latitude: Latitude(40.435630),
             longitude: Longitude(-3.644995),
@@ -124,7 +126,8 @@ Chillax gapers Whistler skid."""),
       ),
       getValidComment().copyWith(
         id: UniqueId(),
-        content: CommentContent("Af paleo tacos, pinterest bespoke yuccie VHS messenger bag small batch."),
+        content: CommentContent(
+            "Af paleo tacos, pinterest bespoke yuccie VHS messenger bag small batch."),
       ),
       getValidComment().copyWith(
         id: UniqueId(),

@@ -1,6 +1,10 @@
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:worldon/application/core/watch_current_user/watch_current_user_bloc.dart';
+import 'package:worldon/application/experience_navigation/experience_like_actor/experience_like_actor_bloc.dart';
 import 'package:worldon/domain/core/entities/experience/experience.dart';
+import 'package:worldon/domain/core/validation/objects/unique_id.dart';
 import 'package:worldon/generated/l10n.dart';
 import 'package:worldon/views/core/widgets/cards/experience_card/share_externally_button.dart';
 import 'package:worldon/views/core/widgets/cards/experience_card/share_internally_button.dart';
@@ -8,6 +12,7 @@ import 'package:worldon/views/core/widgets/misc/world_on_cached_image.dart';
 import 'package:worldon/views/experience_navigation/widgets/experience_finish/experience_gained_text.dart';
 import 'package:worldon/views/experience_navigation/widgets/experience_finish/finish_button.dart';
 
+import '../../../../injection.dart';
 import '../like_dislike_button_builder.dart';
 import 'experience_points_coin_stack.dart';
 
@@ -103,13 +108,28 @@ class FinishSuccessView extends StatelessWidget {
                       ),
                     ),
                     const SizedBox(width: 5),
-                    LikeDislikeButtonBuilder(
-                      experienceId: experience.id,
+                    BlocProvider(
+                      create: (context) => getIt<ExperienceLikeActorBloc>()
+                        ..add(
+                          ExperienceLikeActorEvent.initialized(
+                            experience.id,
+                            context.read<WatchCurrentUserBloc>().state.maybeMap(
+                                  loadSuccess: (successState) =>
+                                      successState.user.experiencesLikedIds,
+                                  orElse: () => <UniqueId>{},
+                                ),
+                            experience.likedBy.length,
+                          ),
+                        ),
+                      child: LikeDislikeButtonBuilder(
+                        experienceId: experience.id,
+                      ),
                     ),
                   ],
                 ),
-                const SizedBox(height: 15),
+                const SizedBox(height: 20),
                 const FinishButton(),
+                const SizedBox(height: 40),
               ],
             ),
           ),

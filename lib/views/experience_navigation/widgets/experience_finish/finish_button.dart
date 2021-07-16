@@ -13,7 +13,9 @@ class FinishButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return ElevatedButton(
       onPressed: () => context.read<ExperienceNavigationWatcherBloc>().add(
-            ExperienceNavigationWatcherEvent.initialized(none()),
+            ExperienceNavigationWatcherEvent.initialized(
+              none(),
+            ),
           ),
       child: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 15),

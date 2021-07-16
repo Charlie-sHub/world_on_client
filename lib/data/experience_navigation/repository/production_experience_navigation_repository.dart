@@ -275,7 +275,7 @@ class ProductionExperienceNavigationRepository implements ExperienceNavigationRe
           }
         },
       ).onErrorReturnWith(
-        (error, _) => _onStreamError(error),
+        (error, _) => _onError(error),
       );
     } else {
       yield* Stream.value(
@@ -342,7 +342,9 @@ class ProductionExperienceNavigationRepository implements ExperienceNavigationRe
         await _saveDocument.reference.update(
           {
             ObjectiveIdListFields.objectivesIds: FieldValue.arrayRemove(
-              [objective.id.getOrCrash()],
+              [
+                objective.id.getOrCrash(),
+              ],
             ),
           },
         );
@@ -368,7 +370,9 @@ class ProductionExperienceNavigationRepository implements ExperienceNavigationRe
         await _saveDocument.reference.update(
           {
             ObjectiveIdListFields.objectivesIds: FieldValue.arrayUnion(
-              [objective.id.getOrCrash()],
+              [
+                objective.id.getOrCrash(),
+              ],
             ),
           },
         );
@@ -404,7 +408,7 @@ class ProductionExperienceNavigationRepository implements ExperienceNavigationRe
     }
   }
 
-  Either<Failure, KtList<Experience>> _onStreamError(dynamic error) {
+  Either<Failure, T> _onError<T>(dynamic error) {
     if (error is FirebaseException) {
       _logger.e("FirebaseException: ${error.message}");
       return left(
@@ -427,14 +431,5 @@ class ProductionExperienceNavigationRepository implements ExperienceNavigationRe
         ),
       );
     }
-  }
-
-  Either<Failure, T> _onError<T>(FirebaseException exception) {
-    _logger.e("FirebaseException: ${exception.message}");
-    return left(
-      const Failure.coreData(
-        CoreDataFailure.serverError(errorString: "Unknown data layer error"),
-      ),
-    );
   }
 }

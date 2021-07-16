@@ -137,6 +137,8 @@ class User with _$User {
 
   bool get isValid => failureOption.isNone();
 
+  SimpleUser get simplified => SimpleUser.fromUser(this);
+
   double get percentageToNextLevel {
     final _nextLevelRequirements = Levels.experiencePointsRequired(level.getOrCrash() + 1);
     int _totalToCurrentLevelRequirements = 0;

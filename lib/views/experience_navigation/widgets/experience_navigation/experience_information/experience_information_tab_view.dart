@@ -5,13 +5,13 @@ import 'package:worldon/views/core/widgets/cards/tag_card/simple_tag_card_builde
 import 'package:worldon/views/core/widgets/misc/difficulty_display.dart';
 import 'package:worldon/views/core/widgets/misc/experience_done_counter.dart';
 import 'package:worldon/views/core/widgets/misc/experience_points_view.dart';
-import 'package:worldon/views/experience_navigation/widgets/experience_navigation/experience_to_do_counter.dart';
-import 'package:worldon/views/experience_navigation/widgets/experience_navigation/user_information.dart';
+import 'package:worldon/views/experience_navigation/widgets/experience_navigation/comments/experience_comments_list_view.dart';
+import 'package:worldon/views/experience_navigation/widgets/experience_navigation/experience_information/user_information.dart';
 
-import 'comments/experience_comments_list_view.dart';
 import 'experience_description.dart';
 import 'experience_header.dart';
 import 'experience_image_gallery.dart';
+import 'experience_to_do_counter.dart';
 
 class ExperienceInformationTabView extends StatelessWidget {
   const ExperienceInformationTabView({

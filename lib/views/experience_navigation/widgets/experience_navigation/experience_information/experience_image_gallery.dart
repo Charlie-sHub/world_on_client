@@ -3,9 +3,8 @@ import 'package:worldon/domain/core/entities/experience/experience.dart';
 import 'package:worldon/views/core/widgets/cards/experience_card/log_button_builder.dart';
 import 'package:worldon/views/core/widgets/cards/experience_card/share_externally_button.dart';
 import 'package:worldon/views/core/widgets/cards/experience_card/share_internally_button.dart';
+import 'package:worldon/views/core/widgets/misc/carousel_builder.dart';
 import 'package:worldon/views/core/widgets/misc/world_on_cached_image.dart';
-
-import '../../../core/widgets/misc/carousel_builder.dart';
 
 class ExperienceImageGallery extends StatelessWidget {
   const ExperienceImageGallery({

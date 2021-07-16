@@ -62,25 +62,6 @@ class LogButtonBuilder extends StatelessWidget {
         ),
       );
 
-  bool _buildWhen(WatchCurrentUserState previous, WatchCurrentUserState current) => current.map(
-        initial: (_) => true,
-        loadSuccess: (_) {
-          final _previousToDosContainsExperience = previous.maybeMap(
-            loadSuccess: (successState) => successState.user.experiencesToDoIds.contains(
-              experience.id,
-            ),
-            orElse: () => true,
-          );
-          final _currentToDosContainsExperience = current.maybeMap(
-            loadSuccess: (successState) => successState.user.experiencesToDoIds.contains(
-              experience.id,
-            ),
-            orElse: () => true,
-          );
-          return _previousToDosContainsExperience != _currentToDosContainsExperience;
-        },
-        loadFailure: (_) => true,
-      );
 
   void _experienceCardListener(BuildContext context, ExperienceAddToLogActorState state) =>
       state.failureOrSuccessOption.fold(

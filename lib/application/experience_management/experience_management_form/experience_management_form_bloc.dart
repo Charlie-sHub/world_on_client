@@ -16,7 +16,6 @@ import 'package:worldon/domain/core/entities/experience/experience.dart';
 import 'package:worldon/domain/core/entities/objective/objective.dart';
 import 'package:worldon/domain/core/entities/reward/reward.dart';
 import 'package:worldon/domain/core/entities/tag/tag.dart';
-import 'package:worldon/domain/core/entities/user/simple_user.dart';
 import 'package:worldon/domain/core/failures/error.dart';
 import 'package:worldon/domain/core/use_case/get_current_location.dart';
 import 'package:worldon/domain/core/use_case/use_case.dart';
@@ -37,7 +36,7 @@ import 'package:worldon/domain/experience_navigation/use_case/reward_user.dart' 
 import '../../../injection.dart';
 
 part 'experience_management_form_bloc.freezed.dart';
-part 'experience_management_form_event.dart';experience_management_form_event.dart';
+part 'experience_management_form_event.dart';xperience_management_form_event.dart';
 
 part 'experience_management_form_state.dart';
 
@@ -233,12 +232,13 @@ class ExperienceManagementFormBloc
         );
         // I don't want my experiences to be promoted as most if not all of them will be tests
         // Maybe other developers will need to be excluded too in the future
+        // Don't like hard coding this though
         final _isNotCarlos = _currentUser.id.getOrCrash() != "RmdTGeylpDVVcyTVNbe6Ngj3DRV2";
         final _isPromoted =
             _currentUser.adminPowers && _isNotCarlos || _currentUser.promotionPlan.isUsable;
         return state.copyWith(
           experience: Experience.empty().copyWith(
-            creator: SimpleUser.fromUser(_currentUser),
+            creator: _currentUser.simplified,
             coordinates: _coordinates,
             isPromoted: _isPromoted,
           ),

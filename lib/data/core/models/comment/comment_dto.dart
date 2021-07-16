@@ -15,7 +15,7 @@ class CommentDto with _$CommentDto {
   const CommentDto._();
 
   const factory CommentDto({
-    @JsonKey(ignore: true) String? id,
+    required String id,
     required SimpleUserDto poster,
     required String experienceId,
     required String content,
@@ -33,7 +33,7 @@ class CommentDto with _$CommentDto {
       );
 
   Comment toDomain() => Comment(
-        id: UniqueId.fromUniqueString(id!),
+        id: UniqueId.fromUniqueString(id),
         poster: poster.toDomain(),
         experienceId: UniqueId.fromUniqueString(experienceId),
         content: CommentContent(content),

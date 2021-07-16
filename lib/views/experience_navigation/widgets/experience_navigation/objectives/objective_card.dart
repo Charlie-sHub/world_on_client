@@ -45,7 +45,12 @@ class ObjectiveCard extends StatelessWidget {
                 child: CachedNetworkImage(
                   imageUrl: objective.imageURL,
                   fit: BoxFit.fill,
-                  progressIndicatorBuilder: (context, url, progress) => WorldOnPlasma(),
+                  progressIndicatorBuilder: (
+                    context,
+                    url,
+                    progress,
+                  ) =>
+                      WorldOnPlasma(),
                 ),
               ),
             ),

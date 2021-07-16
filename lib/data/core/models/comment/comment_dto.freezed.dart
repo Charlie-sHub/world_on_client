@@ -21,7 +21,7 @@ class _$CommentDtoTearOff {
   const _$CommentDtoTearOff();
 
   _CommentDto call(
-      {@JsonKey(ignore: true) String? id,
+      {required String id,
       required SimpleUserDto poster,
       required String experienceId,
       required String content,
@@ -47,8 +47,8 @@ const $CommentDto = _$CommentDtoTearOff();
 
 /// @nodoc
 mixin _$CommentDto {
-  @JsonKey(ignore: true)
-  String? get id => throw _privateConstructorUsedError;
+  String get id => throw _privateConstructorUsedError;
+
   SimpleUserDto get poster => throw _privateConstructorUsedError;
   String get experienceId => throw _privateConstructorUsedError;
   String get content => throw _privateConstructorUsedError;
@@ -58,6 +58,7 @@ mixin _$CommentDto {
   DateTime get modificationDate => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+
   @JsonKey(ignore: true)
   $CommentDtoCopyWith<CommentDto> get copyWith => throw _privateConstructorUsedError;
 }
@@ -68,7 +69,7 @@ abstract class $CommentDtoCopyWith<$Res> {
       _$CommentDtoCopyWithImpl<$Res>;
 
   $Res call(
-      {@JsonKey(ignore: true) String? id,
+      {String id,
       SimpleUserDto poster,
       String experienceId,
       String content,
@@ -99,7 +100,7 @@ class _$CommentDtoCopyWithImpl<$Res> implements $CommentDtoCopyWith<$Res> {
       id: id == freezed
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as String,
       poster: poster == freezed
           ? _value.poster
           : poster // ignore: cast_nullable_to_non_nullable
@@ -138,7 +139,7 @@ abstract class _$CommentDtoCopyWith<$Res> implements $CommentDtoCopyWith<$Res> {
 
   @override
   $Res call(
-      {@JsonKey(ignore: true) String? id,
+      {String id,
       SimpleUserDto poster,
       String experienceId,
       String content,
@@ -171,7 +172,7 @@ class __$CommentDtoCopyWithImpl<$Res> extends _$CommentDtoCopyWithImpl<$Res>
       id: id == freezed
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as String,
       poster: poster == freezed
           ? _value.poster
           : poster // ignore: cast_nullable_to_non_nullable
@@ -200,7 +201,7 @@ class __$CommentDtoCopyWithImpl<$Res> extends _$CommentDtoCopyWithImpl<$Res>
 @JsonSerializable()
 class _$_CommentDto extends _CommentDto {
   const _$_CommentDto(
-      {@JsonKey(ignore: true) this.id,
+      {required this.id,
       required this.poster,
       required this.experienceId,
       required this.content,
@@ -211,8 +212,7 @@ class _$_CommentDto extends _CommentDto {
   factory _$_CommentDto.fromJson(Map<String, dynamic> json) => _$_$_CommentDtoFromJson(json);
 
   @override
-  @JsonKey(ignore: true)
-  final String? id;
+  final String id;
   @override
   final SimpleUserDto poster;
   @override
@@ -271,7 +271,7 @@ class _$_CommentDto extends _CommentDto {
 
 abstract class _CommentDto extends CommentDto {
   const factory _CommentDto(
-      {@JsonKey(ignore: true) String? id,
+      {required String id,
       required SimpleUserDto poster,
       required String experienceId,
       required String content,
@@ -283,8 +283,7 @@ abstract class _CommentDto extends CommentDto {
   factory _CommentDto.fromJson(Map<String, dynamic> json) = _$_CommentDto.fromJson;
 
   @override
-  @JsonKey(ignore: true)
-  String? get id => throw _privateConstructorUsedError;
+  String get id => throw _privateConstructorUsedError;
 
   @override
   SimpleUserDto get poster => throw _privateConstructorUsedError;
@@ -294,6 +293,7 @@ abstract class _CommentDto extends CommentDto {
 
   @override
   String get content => throw _privateConstructorUsedError;
+
   @override
   @ServerTimestampConverter()
   DateTime get creationDate => throw _privateConstructorUsedError;

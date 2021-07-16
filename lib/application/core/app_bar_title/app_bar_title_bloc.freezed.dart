@@ -56,8 +56,10 @@ class _$AppBarTitleEventTearOff {
     return const _ShowedFollowing();
   }
 
-  _ShowedUsername showedUsername() {
-    return const _ShowedUsername();
+  _ShowedUsername showedUsername(String username) {
+    return _ShowedUsername(
+      username,
+    );
   }
 }
 
@@ -78,7 +80,7 @@ mixin _$AppBarTitleEvent {
     required TResult Function() showedNotifications,
     required TResult Function() showedFollowers,
     required TResult Function() showedFollowing,
-    required TResult Function() showedUsername,
+    required TResult Function(String username) showedUsername,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -93,7 +95,7 @@ mixin _$AppBarTitleEvent {
     TResult Function()? showedNotifications,
     TResult Function()? showedFollowers,
     TResult Function()? showedFollowing,
-    TResult Function()? showedUsername,
+    TResult Function(String username)? showedUsername,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -193,7 +195,7 @@ class _$_Initialized implements _Initialized {
     required TResult Function() showedNotifications,
     required TResult Function() showedFollowers,
     required TResult Function() showedFollowing,
-    required TResult Function() showedUsername,
+    required TResult Function(String username) showedUsername,
   }) {
     return initialized();
   }
@@ -211,7 +213,7 @@ class _$_Initialized implements _Initialized {
     TResult Function()? showedNotifications,
     TResult Function()? showedFollowers,
     TResult Function()? showedFollowing,
-    TResult Function()? showedUsername,
+    TResult Function(String username)? showedUsername,
     required TResult orElse(),
   }) {
     if (initialized != null) {
@@ -312,7 +314,7 @@ class _$_ShowedMainFeed implements _ShowedMainFeed {
     required TResult Function() showedNotifications,
     required TResult Function() showedFollowers,
     required TResult Function() showedFollowing,
-    required TResult Function() showedUsername,
+    required TResult Function(String username) showedUsername,
   }) {
     return showedMainFeed();
   }
@@ -330,7 +332,7 @@ class _$_ShowedMainFeed implements _ShowedMainFeed {
     TResult Function()? showedNotifications,
     TResult Function()? showedFollowers,
     TResult Function()? showedFollowing,
-    TResult Function()? showedUsername,
+    TResult Function(String username)? showedUsername,
     required TResult orElse(),
   }) {
     if (showedMainFeed != null) {
@@ -431,7 +433,7 @@ class _$_ShowedSearch implements _ShowedSearch {
     required TResult Function() showedNotifications,
     required TResult Function() showedFollowers,
     required TResult Function() showedFollowing,
-    required TResult Function() showedUsername,
+    required TResult Function(String username) showedUsername,
   }) {
     return showedSearch();
   }
@@ -449,7 +451,7 @@ class _$_ShowedSearch implements _ShowedSearch {
     TResult Function()? showedNotifications,
     TResult Function()? showedFollowers,
     TResult Function()? showedFollowing,
-    TResult Function()? showedUsername,
+    TResult Function(String username)? showedUsername,
     required TResult orElse(),
   }) {
     if (showedSearch != null) {
@@ -552,7 +554,7 @@ class _$_ShowedRecommendations implements _ShowedRecommendations {
     required TResult Function() showedNotifications,
     required TResult Function() showedFollowers,
     required TResult Function() showedFollowing,
-    required TResult Function() showedUsername,
+    required TResult Function(String username) showedUsername,
   }) {
     return showedRecommendations();
   }
@@ -570,7 +572,7 @@ class _$_ShowedRecommendations implements _ShowedRecommendations {
     TResult Function()? showedNotifications,
     TResult Function()? showedFollowers,
     TResult Function()? showedFollowing,
-    TResult Function()? showedUsername,
+    TResult Function(String username)? showedUsername,
     required TResult orElse(),
   }) {
     if (showedRecommendations != null) {
@@ -673,7 +675,7 @@ class _$_ShowedExperienceNavigation implements _ShowedExperienceNavigation {
     required TResult Function() showedNotifications,
     required TResult Function() showedFollowers,
     required TResult Function() showedFollowing,
-    required TResult Function() showedUsername,
+    required TResult Function(String username) showedUsername,
   }) {
     return showedExperienceNavigation();
   }
@@ -691,7 +693,7 @@ class _$_ShowedExperienceNavigation implements _ShowedExperienceNavigation {
     TResult Function()? showedNotifications,
     TResult Function()? showedFollowers,
     TResult Function()? showedFollowing,
-    TResult Function()? showedUsername,
+    TResult Function(String username)? showedUsername,
     required TResult orElse(),
   }) {
     if (showedExperienceNavigation != null) {
@@ -794,7 +796,7 @@ class _$_ShowedExperienceFinish implements _ShowedExperienceFinish {
     required TResult Function() showedNotifications,
     required TResult Function() showedFollowers,
     required TResult Function() showedFollowing,
-    required TResult Function() showedUsername,
+    required TResult Function(String username) showedUsername,
   }) {
     return showedExperienceFinish();
   }
@@ -812,7 +814,7 @@ class _$_ShowedExperienceFinish implements _ShowedExperienceFinish {
     TResult Function()? showedNotifications,
     TResult Function()? showedFollowers,
     TResult Function()? showedFollowing,
-    TResult Function()? showedUsername,
+    TResult Function(String username)? showedUsername,
     required TResult orElse(),
   }) {
     if (showedExperienceFinish != null) {
@@ -913,7 +915,7 @@ class _$_ShowedProfile implements _ShowedProfile {
     required TResult Function() showedNotifications,
     required TResult Function() showedFollowers,
     required TResult Function() showedFollowing,
-    required TResult Function() showedUsername,
+    required TResult Function(String username) showedUsername,
   }) {
     return showedProfile();
   }
@@ -931,7 +933,7 @@ class _$_ShowedProfile implements _ShowedProfile {
     TResult Function()? showedNotifications,
     TResult Function()? showedFollowers,
     TResult Function()? showedFollowing,
-    TResult Function()? showedUsername,
+    TResult Function(String username)? showedUsername,
     required TResult orElse(),
   }) {
     if (showedProfile != null) {
@@ -1034,7 +1036,7 @@ class _$_ShowedNotifications implements _ShowedNotifications {
     required TResult Function() showedNotifications,
     required TResult Function() showedFollowers,
     required TResult Function() showedFollowing,
-    required TResult Function() showedUsername,
+    required TResult Function(String username) showedUsername,
   }) {
     return showedNotifications();
   }
@@ -1052,7 +1054,7 @@ class _$_ShowedNotifications implements _ShowedNotifications {
     TResult Function()? showedNotifications,
     TResult Function()? showedFollowers,
     TResult Function()? showedFollowing,
-    TResult Function()? showedUsername,
+    TResult Function(String username)? showedUsername,
     required TResult orElse(),
   }) {
     if (showedNotifications != null) {
@@ -1153,7 +1155,7 @@ class _$_ShowedFollowers implements _ShowedFollowers {
     required TResult Function() showedNotifications,
     required TResult Function() showedFollowers,
     required TResult Function() showedFollowing,
-    required TResult Function() showedUsername,
+    required TResult Function(String username) showedUsername,
   }) {
     return showedFollowers();
   }
@@ -1171,7 +1173,7 @@ class _$_ShowedFollowers implements _ShowedFollowers {
     TResult Function()? showedNotifications,
     TResult Function()? showedFollowers,
     TResult Function()? showedFollowing,
-    TResult Function()? showedUsername,
+    TResult Function(String username)? showedUsername,
     required TResult orElse(),
   }) {
     if (showedFollowers != null) {
@@ -1272,7 +1274,7 @@ class _$_ShowedFollowing implements _ShowedFollowing {
     required TResult Function() showedNotifications,
     required TResult Function() showedFollowers,
     required TResult Function() showedFollowing,
-    required TResult Function() showedUsername,
+    required TResult Function(String username) showedUsername,
   }) {
     return showedFollowing();
   }
@@ -1290,7 +1292,7 @@ class _$_ShowedFollowing implements _ShowedFollowing {
     TResult Function()? showedNotifications,
     TResult Function()? showedFollowers,
     TResult Function()? showedFollowing,
-    TResult Function()? showedUsername,
+    TResult Function(String username)? showedUsername,
     required TResult orElse(),
   }) {
     if (showedFollowing != null) {
@@ -1348,6 +1350,8 @@ abstract class _ShowedFollowing implements AppBarTitleEvent {
 abstract class _$ShowedUsernameCopyWith<$Res> {
   factory _$ShowedUsernameCopyWith(_ShowedUsername value, $Res Function(_ShowedUsername) then) =
       __$ShowedUsernameCopyWithImpl<$Res>;
+
+  $Res call({String username});
 }
 
 /// @nodoc
@@ -1358,25 +1362,48 @@ class __$ShowedUsernameCopyWithImpl<$Res> extends _$AppBarTitleEventCopyWithImpl
 
   @override
   _ShowedUsername get _value => super._value as _ShowedUsername;
+
+  @override
+  $Res call({
+    Object? username = freezed,
+  }) {
+    return _then(_ShowedUsername(
+      username == freezed
+          ? _value.username
+          : username // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
 }
 
 /// @nodoc
 
 class _$_ShowedUsername implements _ShowedUsername {
-  const _$_ShowedUsername();
+  const _$_ShowedUsername(this.username);
+
+  @override
+  final String username;
 
   @override
   String toString() {
-    return 'AppBarTitleEvent.showedUsername()';
+    return 'AppBarTitleEvent.showedUsername(username: $username)';
   }
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _ShowedUsername);
+    return identical(this, other) ||
+        (other is _ShowedUsername &&
+            (identical(other.username, username) ||
+                const DeepCollectionEquality().equals(other.username, username)));
   }
 
   @override
-  int get hashCode => runtimeType.hashCode;
+  int get hashCode => runtimeType.hashCode ^ const DeepCollectionEquality().hash(username);
+
+  @JsonKey(ignore: true)
+  @override
+  _$ShowedUsernameCopyWith<_ShowedUsername> get copyWith =>
+      __$ShowedUsernameCopyWithImpl<_ShowedUsername>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -1391,9 +1418,9 @@ class _$_ShowedUsername implements _ShowedUsername {
     required TResult Function() showedNotifications,
     required TResult Function() showedFollowers,
     required TResult Function() showedFollowing,
-    required TResult Function() showedUsername,
+    required TResult Function(String username) showedUsername,
   }) {
-    return showedUsername();
+    return showedUsername(username);
   }
 
   @override
@@ -1409,11 +1436,11 @@ class _$_ShowedUsername implements _ShowedUsername {
     TResult Function()? showedNotifications,
     TResult Function()? showedFollowers,
     TResult Function()? showedFollowing,
-    TResult Function()? showedUsername,
+    TResult Function(String username)? showedUsername,
     required TResult orElse(),
   }) {
     if (showedUsername != null) {
-      return showedUsername();
+      return showedUsername(username);
     }
     return orElse();
   }
@@ -1460,7 +1487,12 @@ class _$_ShowedUsername implements _ShowedUsername {
 }
 
 abstract class _ShowedUsername implements AppBarTitleEvent {
-  const factory _ShowedUsername() = _$_ShowedUsername;
+  const factory _ShowedUsername(String username) = _$_ShowedUsername;
+
+  String get username => throw _privateConstructorUsedError;
+
+  @JsonKey(ignore: true)
+  _$ShowedUsernameCopyWith<_ShowedUsername> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc

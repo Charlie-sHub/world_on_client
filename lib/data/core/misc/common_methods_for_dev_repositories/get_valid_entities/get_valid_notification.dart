@@ -1,7 +1,6 @@
 import 'package:dartz/dartz.dart';
 import 'package:worldon/domain/core/entities/notification/notification.dart';
 import 'package:worldon/domain/core/entities/notification/notification_type_enum.dart';
-import 'package:worldon/domain/core/entities/user/simple_user.dart';
 import 'package:worldon/domain/core/validation/objects/entity_description.dart';
 import 'package:worldon/domain/core/validation/objects/past_date.dart';
 import 'package:worldon/domain/core/validation/objects/unique_id.dart';
@@ -11,7 +10,7 @@ import 'get_valid_user.dart';
 Notification getValidNotification() {
   return Notification(
     id: UniqueId(),
-    sender: SimpleUser.fromUser(getValidUser()),
+    sender: getValidUser().simplified,
     receiverId: UniqueId(),
     description: EntityDescription("${getValidUser().name.getOrCrash()} is following you now"),
     seen: false,

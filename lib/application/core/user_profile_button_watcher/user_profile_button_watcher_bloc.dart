@@ -13,8 +13,10 @@ part 'user_profile_button_watcher_bloc.freezed.dart';
 part 'user_profile_button_watcher_event.dart';
 part 'user_profile_button_watcher_state.dart';
 
+@Deprecated("Better to use WatchCurrentUserBloc and get the image url from there")
 @injectable
-class UserProfileButtonWatcherBloc extends Bloc<UserProfileButtonWatcherEvent, UserProfileButtonWatcherState> {
+class UserProfileButtonWatcherBloc
+    extends Bloc<UserProfileButtonWatcherEvent, UserProfileButtonWatcherState> {
   UserProfileButtonWatcherBloc() : super(const UserProfileButtonWatcherState.initial());
 
   @override
@@ -30,8 +32,8 @@ class UserProfileButtonWatcherBloc extends Bloc<UserProfileButtonWatcherEvent, U
     yield const UserProfileButtonWatcherState.actionInProgress();
     final _loggedInUserOption = await getIt<GetLoggedInUser>()(getIt<NoParams>());
     yield _loggedInUserOption.fold(
-      () => const UserProfileButtonWatcherState.loadFailure(),
-      (_user) => UserProfileButtonWatcherState.loadSuccess(_user.imageURL),
+          () => const UserProfileButtonWatcherState.loadFailure(),
+          (_user) => UserProfileButtonWatcherState.loadSuccess(_user.imageURL),
     );
   }
 }

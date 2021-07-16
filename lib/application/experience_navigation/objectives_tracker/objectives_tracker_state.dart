@@ -6,11 +6,13 @@ class ObjectivesTrackerState with _$ObjectivesTrackerState {
     required KtList<Objective> objectivesToDo,
     required UniqueId experienceId,
     required bool isFinished,
+    required bool showExplanation,
   }) = _ObjectivesTrackerState;
 
   factory ObjectivesTrackerState.initial() => ObjectivesTrackerState(
         objectivesToDo: const KtList.empty(),
         experienceId: UniqueId(),
         isFinished: false,
+        showExplanation: true,
       );
 }

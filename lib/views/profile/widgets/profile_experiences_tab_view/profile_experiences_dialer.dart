@@ -29,8 +29,8 @@ class ProfileExperiencesDialer extends StatelessWidget {
           size: 30,
         ),
         buttonSize: 48,
-        marginBottom: 10,
-        marginEnd: 10,
+        childrenButtonSize: 50,
+        childMargin: const EdgeInsets.symmetric(horizontal: 5),
         children: [
           SpeedDialChild(
             onTap: () => context.read<ProfileExperiencesWatcherBloc>().add(

@@ -3,9 +3,6 @@ import 'dart:async';
 import 'package:bloc/bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:injectable/injectable.dart';
-import 'package:worldon/domain/authentication/use_case/get_logged_in_user.dart';
-import 'package:worldon/domain/core/use_case/use_case.dart';
-import 'package:worldon/injection.dart';
 
 part 'app_bar_title_bloc.freezed.dart';
 part 'app_bar_title_event.dart';
@@ -32,16 +29,8 @@ class AppBarTitleBloc extends Bloc<AppBarTitleEvent, AppBarTitleState> {
     );
   }
 
-  Stream<AppBarTitleState> _onShowedUsername(_) async* {
-    final _userOption = await getIt<GetLoggedInUser>()(
-      getIt<NoParams>(),
-    );
-    yield _userOption.fold(
-      () => const AppBarTitleState.error(),
-      (_user) => AppBarTitleState.username(
-        _user.username.getOrCrash(),
-      ),
-    );
+  Stream<AppBarTitleState> _onShowedUsername(_ShowedUsername event) async* {
+    yield AppBarTitleState.username(event.username);
   }
 
   Stream<AppBarTitleState> _onShowedFollowing(_) async* {

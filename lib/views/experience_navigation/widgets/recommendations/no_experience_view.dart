@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:worldon/generated/l10n.dart';
 import 'package:worldon/views/core/misc/world_on_colors.dart';
-import 'package:worldon/views/experience_navigation/widgets/no_experience_selected/recommended_experiences_body.dart';
+import 'package:worldon/views/experience_navigation/widgets/recommendations/recommended_experiences_body.dart';
 
 class NoExperienceView extends StatelessWidget {
   const NoExperienceView({

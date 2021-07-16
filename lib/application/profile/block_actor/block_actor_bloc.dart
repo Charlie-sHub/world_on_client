@@ -1,18 +1,13 @@
 import 'dart:async';
 
 import 'package:bloc/bloc.dart';
-import 'package:dartz/dartz.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:injectable/injectable.dart';
 import 'package:meta/meta.dart';
 import 'package:worldon/core/error/failure.dart';
-import 'package:worldon/domain/authentication/use_case/get_logged_in_user.dart';
 import 'package:worldon/domain/core/entities/notification/notification.dart';
 import 'package:worldon/domain/core/entities/notification/notification_type_enum.dart';
 import 'package:worldon/domain/core/entities/user/simple_user.dart';
-import 'package:worldon/domain/core/entities/user/user.dart';
-import 'package:worldon/domain/core/failures/error.dart';
-import 'package:worldon/domain/core/use_case/use_case.dart';
 import 'package:worldon/domain/core/validation/objects/entity_description.dart';
 import 'package:worldon/domain/core/validation/objects/unique_id.dart';
 import 'package:worldon/domain/notifications/use_case/send_notification.dart' as send_notification;
@@ -40,24 +35,20 @@ class BlockActorBloc extends Bloc<BlockActorEvent, BlockActorState> {
   Stream<BlockActorState> _onUnBlocked(_UnBlocked event) async* {
     yield const BlockActorState.actionInProgress();
     final _failureOrUnit = await getIt<un_block_user.UnBlockUser>()(
-      un_block_user.Params(blockedId: event.user.id),
+      un_block_user.Params(blockedId: event.userToUnBlockId),
     );
     yield* _failureOrUnit.fold(
       (failure) async* {
         yield BlockActorState.unBlockFailure(failure);
       },
       (_) async* {
-        final _currentUserOption = await getIt<GetLoggedInUser>()(NoParams());
-        final _currentUser = _currentUserOption.fold(
-          () => throw UnAuthenticatedError,
-          id,
-        );
         getIt<send_notification.SendNotification>()(
           send_notification.Params(
             notification: Notification.empty().copyWith(
-              sender: SimpleUser.fromUser(_currentUser),
-              receiverId: event.user.id,
-              description: EntityDescription("${_currentUser.username.getOrCrash()} unblocked you"),
+              sender: event.currentUser,
+              receiverId: event.userToUnBlockId,
+              description:
+                  EntityDescription("${event.currentUser.username.getOrCrash()} unblocked you"),
               type: NotificationType.unblock,
             ),
           ),
@@ -71,24 +62,20 @@ class BlockActorBloc extends Bloc<BlockActorEvent, BlockActorState> {
   Stream<BlockActorState> _onBlocked(_Blocked event) async* {
     yield const BlockActorState.actionInProgress();
     final _failureOrUnit = await getIt<block_user.BlockUser>()(
-      block_user.Params(blockedId: event.user.id),
+      block_user.Params(blockedId: event.userToBlockId),
     );
     yield* _failureOrUnit.fold(
       (failure) async* {
         yield BlockActorState.blockFailure(failure);
       },
       (_) async* {
-        final _currentUserOption = await getIt<GetLoggedInUser>()(NoParams());
-        final _currentUser = _currentUserOption.fold(
-          () => throw UnAuthenticatedError,
-          id,
-        );
         getIt<send_notification.SendNotification>()(
           send_notification.Params(
             notification: Notification.empty().copyWith(
-              sender: SimpleUser.fromUser(_currentUser),
-              receiverId: event.user.id,
-              description: EntityDescription("${_currentUser.username.getOrCrash()} blocked you"),
+              sender: event.currentUser,
+              receiverId: event.userToBlockId,
+              description:
+                  EntityDescription("${event.currentUser.username.getOrCrash()} blocked you"),
               type: NotificationType.block,
             ),
           ),
@@ -100,7 +87,7 @@ class BlockActorBloc extends Bloc<BlockActorEvent, BlockActorState> {
   }
 
   Stream<BlockActorState> _onInitialized(_Initialized event) async* {
-    if (event.blockedUsersIds.contains(event.user.id)) {
+    if (event.blockedUsersIds.contains(event.userToCheckId)) {
       yield const BlockActorState.blocks();
     } else {
       yield const BlockActorState.blocksNot();

@@ -3,7 +3,6 @@ import 'package:worldon/data/core/misc/common_methods_for_dev_repositories/get_v
 import 'package:worldon/data/core/misc/common_methods_for_dev_repositories/get_valid_entities/get_valid_user.dart';
 import 'package:worldon/domain/core/entities/experience/experience.dart';
 import 'package:worldon/domain/core/entities/location/location.dart';
-import 'package:worldon/domain/core/entities/user/simple_user.dart';
 import 'package:worldon/domain/core/validation/objects/entity_description.dart';
 import 'package:worldon/domain/core/validation/objects/name.dart';
 import 'package:worldon/domain/core/validation/objects/objective_list.dart';
@@ -30,7 +29,7 @@ Location getValidLocation() {
 If the patriarchialist paradigm of narrative holds,
 we have to choose between neocapitalist libertarianism and neodialectic capitalist theory.
 But the main theme of the works of Joyce is the collapse, and some would say the futility, of subdialectic truth."""),
-        creator: SimpleUser.fromUser(getValidUser()),
+        creator: getValidUser().simplified,
         location: Location.empty().copyWith(
           id: UniqueId(),
         ),

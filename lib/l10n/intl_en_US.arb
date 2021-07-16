@@ -225,5 +225,6 @@
   "promotionsHeaderTitle": "Promote your experiences to reach everyone!",
   "noItemsOwned": "Currently you don't own any items",
   "toDoBy": "To do by:",
-  "cantBlockSelf": "You can't block yourself"
+  "cantBlockSelf": "You can't block yourself",
+  "objectivesExplanation": "Check the objectives as you complete them"
 }

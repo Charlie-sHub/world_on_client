@@ -22,5 +22,5 @@ class AppBarTitleEvent with _$AppBarTitleEvent {
 
   const factory AppBarTitleEvent.showedFollowing() = _ShowedFollowing;
 
-  const factory AppBarTitleEvent.showedUsername() = _ShowedUsername;
+  const factory AppBarTitleEvent.showedUsername(String username) = _ShowedUsername;
 }

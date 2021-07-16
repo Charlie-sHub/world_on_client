@@ -89,7 +89,6 @@ abstract class $ExperienceAddToLogActorEventCopyWith<$Res> {
   factory $ExperienceAddToLogActorEventCopyWith(
           ExperienceAddToLogActorEvent value, $Res Function(ExperienceAddToLogActorEvent) then) =
       _$ExperienceAddToLogActorEventCopyWithImpl<$Res>;
-
   $Res call({UniqueId experienceId});
 }
 
@@ -400,7 +399,6 @@ abstract class _$DismissedExperienceFromLogCopyWith<$Res>
   factory _$DismissedExperienceFromLogCopyWith(
           _DismissedExperienceFromLog value, $Res Function(_DismissedExperienceFromLog) then) =
       __$DismissedExperienceFromLogCopyWithImpl<$Res>;
-
   @override
   $Res call({UniqueId experienceId});
 }

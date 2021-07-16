@@ -31,7 +31,7 @@ class BlockUnblockButtonBuilder extends StatelessWidget {
             create: (context) => getIt<BlockActorBloc>()
               ..add(
                 BlockActorEvent.initialized(
-                  user,
+                  user.id,
                   successState.user.blockedUsersIds,
                 ),
               ),

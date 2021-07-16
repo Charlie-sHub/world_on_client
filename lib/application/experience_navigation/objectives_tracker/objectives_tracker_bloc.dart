@@ -8,13 +8,17 @@ import 'package:meta/meta.dart';
 import 'package:worldon/domain/core/entities/objective/objective.dart';
 import 'package:worldon/domain/core/validation/objects/objective_list.dart';
 import 'package:worldon/domain/core/validation/objects/unique_id.dart';
-import 'package:worldon/domain/experience_navigation/use_case/accomplish_objective.dart' as accomplish_objective;
-import 'package:worldon/domain/experience_navigation/use_case/save_user_progress.dart' as save_user_progress;
-import 'package:worldon/domain/experience_navigation/use_case/unaccomplish_objective.dart' as unaccomplish_objective;
+import 'package:worldon/domain/experience_navigation/use_case/accomplish_objective.dart'
+    as accomplish_objective;
+import 'package:worldon/domain/experience_navigation/use_case/save_user_progress.dart'
+    as save_user_progress;
+import 'package:worldon/domain/experience_navigation/use_case/unaccomplish_objective.dart'
+    as unaccomplish_objective;
 import 'package:worldon/injection.dart';
 
 part 'objectives_tracker_bloc.freezed.dart';
-part 'objectives_tracker_event.dart';
+part 'objectives_tracker_event.dart';racker_event.dart';
+
 part 'objectives_tracker_state.dart';
 
 @injectable
@@ -54,6 +58,7 @@ class ObjectivesTrackerBloc extends Bloc<ObjectivesTrackerEvent, ObjectivesTrack
     yield state.copyWith(
       objectivesToDo: _objectivesLeft,
       isFinished: _objectivesLeft.isEmpty(),
+      showExplanation: false,
     );
   }
 

@@ -5,6 +5,8 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:worldon/application/comments/comment_form/comment_form_bloc.dart';
 import 'package:worldon/application/comments/comment_watcher/comment_watcher_bloc.dart';
+import 'package:worldon/application/core/watch_current_user/watch_current_user_bloc.dart';
+import 'package:worldon/domain/core/entities/user/simple_user.dart';
 import 'package:worldon/domain/core/validation/objects/comment_content.dart';
 import 'package:worldon/domain/core/validation/objects/unique_id.dart';
 import 'package:worldon/generated/l10n.dart';
@@ -26,19 +28,26 @@ class CommentForm extends HookWidget {
       create: (context) => getIt<CommentFormBloc>()
         ..add(
           CommentFormEvent.initialized(
+            user: context.read<WatchCurrentUserBloc>().state.maybeMap(
+                  loadSuccess: (successState) => successState.user.simplified,
+                  orElse: () => SimpleUser.empty(),
+                ),
             commentOption: none(),
             experienceId: experienceId,
           ),
         ),
       child: BlocConsumer<CommentFormBloc, CommentFormState>(
-        listenWhen: (previous, current) => previous.failureOrSuccessOption != current.failureOrSuccessOption,
+        listenWhen: (previous, current) =>
+            previous.failureOrSuccessOption != current.failureOrSuccessOption,
         listener: (context, state) => _commentFormListener(
           state,
           context,
           _textEditingController,
         ),
         builder: (context, state) => Form(
-          autovalidateMode: context.read<CommentFormBloc>().state.showErrorMessages ? AutovalidateMode.always : AutovalidateMode.disabled,
+          autovalidateMode: context.read<CommentFormBloc>().state.showErrorMessages
+              ? AutovalidateMode.always
+              : AutovalidateMode.disabled,
           child: Padding(
             padding: const EdgeInsets.all(5),
             child: TextFormField(
@@ -53,7 +62,8 @@ class CommentForm extends HookWidget {
                     (failure) => failure.maybeMap(
                       emptyString: (_) => S.of(context).commentEmptyString,
                       stringExceedsLength: (_) => S.of(context).commentStringExceedsLength,
-                      stringWithInvalidCharacters: (_) => S.of(context).commentStringWithInvalidCharacters,
+                      stringWithInvalidCharacters: (_) =>
+                          S.of(context).commentStringWithInvalidCharacters,
                       orElse: () => S.of(context).unknownError,
                     ),
                     (_) => null,
@@ -83,7 +93,9 @@ class CommentForm extends HookWidget {
     );
   }
 
-  void _commentFormListener(CommentFormState state, BuildContext context, TextEditingController _textEditingController) => state.failureOrSuccessOption.fold(
+  void _commentFormListener(CommentFormState state, BuildContext context,
+          TextEditingController _textEditingController) =>
+      state.failureOrSuccessOption.fold(
         () {},
         (either) => either.fold(
           (failure) => FlushbarHelper.createError(
@@ -99,6 +111,10 @@ class CommentForm extends HookWidget {
             _textEditingController.clear();
             context.read<CommentFormBloc>().add(
                   CommentFormEvent.initialized(
+                    user: context.read<WatchCurrentUserBloc>().state.maybeMap(
+                          loadSuccess: (successState) => successState.user.simplified,
+                          orElse: () => SimpleUser.empty(),
+                        ),
                     commentOption: none(),
                     experienceId: experienceId,
                   ),

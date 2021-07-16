@@ -17,8 +17,11 @@ class _$CommentFormEventTearOff {
   const _$CommentFormEventTearOff();
 
   _Initialized initialized(
-      {required Option<Comment> commentOption, required UniqueId experienceId}) {
+      {required SimpleUser user,
+      required Option<Comment> commentOption,
+      required UniqueId experienceId}) {
     return _Initialized(
+      user: user,
       commentOption: commentOption,
       experienceId: experienceId,
     );
@@ -42,14 +45,16 @@ const $CommentFormEvent = _$CommentFormEventTearOff();
 mixin _$CommentFormEvent {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(Option<Comment> commentOption, UniqueId experienceId) initialized,
+    required TResult Function(SimpleUser user, Option<Comment> commentOption, UniqueId experienceId)
+        initialized,
     required TResult Function(String content) contentChanged,
     required TResult Function() submitted,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(Option<Comment> commentOption, UniqueId experienceId)? initialized,
+    TResult Function(SimpleUser user, Option<Comment> commentOption, UniqueId experienceId)?
+        initialized,
     TResult Function(String content)? contentChanged,
     TResult Function()? submitted,
     required TResult orElse(),
@@ -93,7 +98,9 @@ abstract class _$InitializedCopyWith<$Res> {
   factory _$InitializedCopyWith(_Initialized value, $Res Function(_Initialized) then) =
       __$InitializedCopyWithImpl<$Res>;
 
-  $Res call({Option<Comment> commentOption, UniqueId experienceId});
+  $Res call({SimpleUser user, Option<Comment> commentOption, UniqueId experienceId});
+
+  $SimpleUserCopyWith<$Res> get user;
 }
 
 /// @nodoc
@@ -107,10 +114,15 @@ class __$InitializedCopyWithImpl<$Res> extends _$CommentFormEventCopyWithImpl<$R
 
   @override
   $Res call({
+    Object? user = freezed,
     Object? commentOption = freezed,
     Object? experienceId = freezed,
   }) {
     return _then(_Initialized(
+      user: user == freezed
+          ? _value.user
+          : user // ignore: cast_nullable_to_non_nullable
+              as SimpleUser,
       commentOption: commentOption == freezed
           ? _value.commentOption
           : commentOption // ignore: cast_nullable_to_non_nullable
@@ -121,13 +133,23 @@ class __$InitializedCopyWithImpl<$Res> extends _$CommentFormEventCopyWithImpl<$R
               as UniqueId,
     ));
   }
+
+  @override
+  $SimpleUserCopyWith<$Res> get user {
+    return $SimpleUserCopyWith<$Res>(_value.user, (value) {
+      return _then(_value.copyWith(user: value));
+    });
+  }
 }
 
 /// @nodoc
 
 class _$_Initialized implements _Initialized {
-  const _$_Initialized({required this.commentOption, required this.experienceId});
+  const _$_Initialized(
+      {required this.user, required this.commentOption, required this.experienceId});
 
+  @override
+  final SimpleUser user;
   @override
   final Option<Comment> commentOption;
   @override
@@ -135,13 +157,15 @@ class _$_Initialized implements _Initialized {
 
   @override
   String toString() {
-    return 'CommentFormEvent.initialized(commentOption: $commentOption, experienceId: $experienceId)';
+    return 'CommentFormEvent.initialized(user: $user, commentOption: $commentOption, experienceId: $experienceId)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other is _Initialized &&
+            (identical(other.user, user) ||
+                const DeepCollectionEquality().equals(other.user, user)) &&
             (identical(other.commentOption, commentOption) ||
                 const DeepCollectionEquality().equals(other.commentOption, commentOption)) &&
             (identical(other.experienceId, experienceId) ||
@@ -151,6 +175,7 @@ class _$_Initialized implements _Initialized {
   @override
   int get hashCode =>
       runtimeType.hashCode ^
+      const DeepCollectionEquality().hash(user) ^
       const DeepCollectionEquality().hash(commentOption) ^
       const DeepCollectionEquality().hash(experienceId);
 
@@ -162,23 +187,25 @@ class _$_Initialized implements _Initialized {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(Option<Comment> commentOption, UniqueId experienceId) initialized,
+    required TResult Function(SimpleUser user, Option<Comment> commentOption, UniqueId experienceId)
+        initialized,
     required TResult Function(String content) contentChanged,
     required TResult Function() submitted,
   }) {
-    return initialized(commentOption, experienceId);
+    return initialized(user, commentOption, experienceId);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(Option<Comment> commentOption, UniqueId experienceId)? initialized,
+    TResult Function(SimpleUser user, Option<Comment> commentOption, UniqueId experienceId)?
+        initialized,
     TResult Function(String content)? contentChanged,
     TResult Function()? submitted,
     required TResult orElse(),
   }) {
     if (initialized != null) {
-      return initialized(commentOption, experienceId);
+      return initialized(user, commentOption, experienceId);
     }
     return orElse();
   }
@@ -210,7 +237,11 @@ class _$_Initialized implements _Initialized {
 
 abstract class _Initialized implements CommentFormEvent {
   const factory _Initialized(
-      {required Option<Comment> commentOption, required UniqueId experienceId}) = _$_Initialized;
+      {required SimpleUser user,
+      required Option<Comment> commentOption,
+      required UniqueId experienceId}) = _$_Initialized;
+
+  SimpleUser get user => throw _privateConstructorUsedError;
 
   Option<Comment> get commentOption => throw _privateConstructorUsedError;
 
@@ -282,7 +313,8 @@ class _$_ContentChanged implements _ContentChanged {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(Option<Comment> commentOption, UniqueId experienceId) initialized,
+    required TResult Function(SimpleUser user, Option<Comment> commentOption, UniqueId experienceId)
+        initialized,
     required TResult Function(String content) contentChanged,
     required TResult Function() submitted,
   }) {
@@ -292,7 +324,8 @@ class _$_ContentChanged implements _ContentChanged {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(Option<Comment> commentOption, UniqueId experienceId)? initialized,
+    TResult Function(SimpleUser user, Option<Comment> commentOption, UniqueId experienceId)?
+        initialized,
     TResult Function(String content)? contentChanged,
     TResult Function()? submitted,
     required TResult orElse(),
@@ -374,7 +407,8 @@ class _$_Submitted implements _Submitted {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(Option<Comment> commentOption, UniqueId experienceId) initialized,
+    required TResult Function(SimpleUser user, Option<Comment> commentOption, UniqueId experienceId)
+        initialized,
     required TResult Function(String content) contentChanged,
     required TResult Function() submitted,
   }) {
@@ -384,7 +418,8 @@ class _$_Submitted implements _Submitted {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(Option<Comment> commentOption, UniqueId experienceId)? initialized,
+    TResult Function(SimpleUser user, Option<Comment> commentOption, UniqueId experienceId)?
+        initialized,
     TResult Function(String content)? contentChanged,
     TResult Function()? submitted,
     required TResult orElse(),

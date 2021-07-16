@@ -11,21 +11,34 @@ class SubmitRegisterButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ElevatedButton(
-      onPressed: () => context.read<RegistrationFormBloc>().add(
-            const RegistrationFormEvent.submitted(),
-          ),
-      style: ButtonStyle(
-        backgroundColor: MaterialStateProperty.all(
-          WorldOnColors.primary,
-        ),
-      ),
-      child: Text(
-        S.of(context).submitRegister,
-        style: const TextStyle(
-          fontSize: 20,
-        ),
-      ),
+    return BlocBuilder<RegistrationFormBloc, RegistrationFormState>(
+      buildWhen: (previous, current) => previous.isSubmitting != current.isSubmitting,
+      builder: (context, state) => state.isSubmitting
+          ? const Center(
+              child: SizedBox(
+                width: 40,
+                height: 40,
+                child: CircularProgressIndicator(
+                  valueColor: AlwaysStoppedAnimation<Color>(WorldOnColors.primary),
+                ),
+              ),
+            )
+          : ElevatedButton(
+              onPressed: () => context.read<RegistrationFormBloc>().add(
+                    const RegistrationFormEvent.submitted(),
+                  ),
+              style: ButtonStyle(
+                backgroundColor: MaterialStateProperty.all(
+                  WorldOnColors.primary,
+                ),
+              ),
+              child: Text(
+                S.of(context).submitRegister,
+                style: const TextStyle(
+                  fontSize: 20,
+                ),
+              ),
+            ),
     );
   }
 }

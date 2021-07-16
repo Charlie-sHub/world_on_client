@@ -11,9 +11,9 @@ import 'package:worldon/injection.dart';
 import 'package:worldon/views/experience_navigation/widgets/experience_navigation/experience_navigation_tab_bar.dart';
 
 import '../../../../injection.dart';
-import 'experience_information_tab_view.dart';
-import 'map_tab_view.dart';
-import 'objectives_tab_view.dart';
+import 'experience_information/experience_information_tab_view.dart';
+import 'map/map_tab_view.dart';
+import 'objectives/objectives_tab_view.dart';
 
 class ExperienceNavigation extends StatelessWidget {
   final Experience experience;
@@ -61,7 +61,9 @@ class ExperienceNavigation extends StatelessWidget {
           state.maybeMap(
             navigatingExperience: (navigatingState) {
               context.read<MapControllerBloc>().add(
-                    MapControllerEvent.initialized(navigatingState.experience),
+                    MapControllerEvent.initialized(
+                      navigatingState.experience,
+                    ),
                   );
               context.read<ObjectivesTrackerBloc>().add(
                     ObjectivesTrackerEvent.initialized(

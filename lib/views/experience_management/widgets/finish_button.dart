@@ -15,49 +15,45 @@ class FinishButton extends StatelessWidget {
       padding: const EdgeInsets.all(10),
       child: BlocBuilder<ExperienceManagementFormBloc, ExperienceManagementFormState>(
         buildWhen: (previous, current) => previous.isSubmitting != current.isSubmitting,
-        builder: (context, state) {
-          if (state.isSubmitting) {
-            return const Center(
-              child: SizedBox(
-                width: 40,
-                height: 40,
-                child: CircularProgressIndicator(
-                  valueColor: AlwaysStoppedAnimation<Color>(WorldOnColors.primary),
-                ),
-              ),
-            );
-          } else {
-            return ElevatedButton(
-              onPressed: () => context.read<ExperienceManagementFormBloc>().add(
-                    const ExperienceManagementFormEvent.submitted(),
-                  ),
-              style: ButtonStyle(
-                backgroundColor: MaterialStateProperty.all(
-                  WorldOnColors.primary,
-                ),
-                shape: MaterialStateProperty.all(
-                  RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(3),
-                    side: const BorderSide(color: WorldOnColors.primary),
+        builder: (context, state) => state.isSubmitting
+            ? const Center(
+                child: SizedBox(
+                  width: 40,
+                  height: 40,
+                  child: CircularProgressIndicator(
+                    valueColor: AlwaysStoppedAnimation<Color>(WorldOnColors.primary),
                   ),
                 ),
-              ),
-              child: Padding(
-                padding: const EdgeInsets.symmetric(
-                  horizontal: 25,
-                  vertical: 5,
+              )
+            : ElevatedButton(
+                onPressed: () => context.read<ExperienceManagementFormBloc>().add(
+                      const ExperienceManagementFormEvent.submitted(),
+                    ),
+                style: ButtonStyle(
+                  backgroundColor: MaterialStateProperty.all(
+                    WorldOnColors.primary,
+                  ),
+                  shape: MaterialStateProperty.all(
+                    RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(3),
+                      side: const BorderSide(color: WorldOnColors.primary),
+                    ),
+                  ),
                 ),
-                child: Text(
-                  S.of(context).experienceFinishButton,
-                  style: const TextStyle(
-                    color: WorldOnColors.background,
-                    fontSize: 30,
+                child: Padding(
+                  padding: const EdgeInsets.symmetric(
+                    horizontal: 25,
+                    vertical: 5,
+                  ),
+                  child: Text(
+                    S.of(context).experienceFinishButton,
+                    style: const TextStyle(
+                      color: WorldOnColors.background,
+                      fontSize: 30,
+                    ),
                   ),
                 ),
               ),
-            );
-          }
-        },
       ),
     );
   }

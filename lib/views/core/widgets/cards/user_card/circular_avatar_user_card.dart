@@ -1,6 +1,5 @@
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
-import 'package:worldon/domain/core/entities/user/simple_user.dart';
 import 'package:worldon/domain/core/entities/user/user.dart';
 import 'package:worldon/views/core/widgets/misc/user_avatar_follow_checker.dart';
 
@@ -18,7 +17,7 @@ class CircularAvatarUserCard extends StatelessWidget {
     return Column(
       children: <Widget>[
         UserAvatarFollowChecker(
-          user: SimpleUser.fromUser(user),
+          user: user.simplified,
           checkIconSize: 20,
           avatarRadius: _avatarRadius,
         ),
