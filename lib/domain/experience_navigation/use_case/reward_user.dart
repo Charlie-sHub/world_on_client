@@ -67,5 +67,7 @@ class RewardUser implements AsyncUseCase<Map, Params> {
 class Params {
   final Difficulty difficulty;
 
-  Params({required this.difficulty});
+  Params({
+    required this.difficulty,
+  });
 }

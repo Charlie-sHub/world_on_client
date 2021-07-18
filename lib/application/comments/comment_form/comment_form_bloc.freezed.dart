@@ -33,8 +33,10 @@ class _$CommentFormEventTearOff {
     );
   }
 
-  _Submitted submitted() {
-    return const _Submitted();
+  _Submitted submitted(User currentUser) {
+    return _Submitted(
+      currentUser,
+    );
   }
 }
 
@@ -48,7 +50,7 @@ mixin _$CommentFormEvent {
     required TResult Function(SimpleUser user, Option<Comment> commentOption, UniqueId experienceId)
         initialized,
     required TResult Function(String content) contentChanged,
-    required TResult Function() submitted,
+    required TResult Function(User currentUser) submitted,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -56,7 +58,7 @@ mixin _$CommentFormEvent {
     TResult Function(SimpleUser user, Option<Comment> commentOption, UniqueId experienceId)?
         initialized,
     TResult Function(String content)? contentChanged,
-    TResult Function()? submitted,
+    TResult Function(User currentUser)? submitted,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -190,7 +192,7 @@ class _$_Initialized implements _Initialized {
     required TResult Function(SimpleUser user, Option<Comment> commentOption, UniqueId experienceId)
         initialized,
     required TResult Function(String content) contentChanged,
-    required TResult Function() submitted,
+    required TResult Function(User currentUser) submitted,
   }) {
     return initialized(user, commentOption, experienceId);
   }
@@ -201,7 +203,7 @@ class _$_Initialized implements _Initialized {
     TResult Function(SimpleUser user, Option<Comment> commentOption, UniqueId experienceId)?
         initialized,
     TResult Function(String content)? contentChanged,
-    TResult Function()? submitted,
+    TResult Function(User currentUser)? submitted,
     required TResult orElse(),
   }) {
     if (initialized != null) {
@@ -242,7 +244,6 @@ abstract class _Initialized implements CommentFormEvent {
       required UniqueId experienceId}) = _$_Initialized;
 
   SimpleUser get user => throw _privateConstructorUsedError;
-
   Option<Comment> get commentOption => throw _privateConstructorUsedError;
 
   UniqueId get experienceId => throw _privateConstructorUsedError;
@@ -316,7 +317,7 @@ class _$_ContentChanged implements _ContentChanged {
     required TResult Function(SimpleUser user, Option<Comment> commentOption, UniqueId experienceId)
         initialized,
     required TResult Function(String content) contentChanged,
-    required TResult Function() submitted,
+    required TResult Function(User currentUser) submitted,
   }) {
     return contentChanged(content);
   }
@@ -327,7 +328,7 @@ class _$_ContentChanged implements _ContentChanged {
     TResult Function(SimpleUser user, Option<Comment> commentOption, UniqueId experienceId)?
         initialized,
     TResult Function(String content)? contentChanged,
-    TResult Function()? submitted,
+    TResult Function(User currentUser)? submitted,
     required TResult orElse(),
   }) {
     if (contentChanged != null) {
@@ -374,6 +375,10 @@ abstract class _ContentChanged implements CommentFormEvent {
 abstract class _$SubmittedCopyWith<$Res> {
   factory _$SubmittedCopyWith(_Submitted value, $Res Function(_Submitted) then) =
       __$SubmittedCopyWithImpl<$Res>;
+
+  $Res call({User currentUser});
+
+  $UserCopyWith<$Res> get currentUser;
 }
 
 /// @nodoc
@@ -384,25 +389,55 @@ class __$SubmittedCopyWithImpl<$Res> extends _$CommentFormEventCopyWithImpl<$Res
 
   @override
   _Submitted get _value => super._value as _Submitted;
+
+  @override
+  $Res call({
+    Object? currentUser = freezed,
+  }) {
+    return _then(_Submitted(
+      currentUser == freezed
+          ? _value.currentUser
+          : currentUser // ignore: cast_nullable_to_non_nullable
+              as User,
+    ));
+  }
+
+  @override
+  $UserCopyWith<$Res> get currentUser {
+    return $UserCopyWith<$Res>(_value.currentUser, (value) {
+      return _then(_value.copyWith(currentUser: value));
+    });
+  }
 }
 
 /// @nodoc
 
 class _$_Submitted implements _Submitted {
-  const _$_Submitted();
+  const _$_Submitted(this.currentUser);
+
+  @override
+  final User currentUser;
 
   @override
   String toString() {
-    return 'CommentFormEvent.submitted()';
+    return 'CommentFormEvent.submitted(currentUser: $currentUser)';
   }
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _Submitted);
+    return identical(this, other) ||
+        (other is _Submitted &&
+            (identical(other.currentUser, currentUser) ||
+                const DeepCollectionEquality().equals(other.currentUser, currentUser)));
   }
 
   @override
-  int get hashCode => runtimeType.hashCode;
+  int get hashCode => runtimeType.hashCode ^ const DeepCollectionEquality().hash(currentUser);
+
+  @JsonKey(ignore: true)
+  @override
+  _$SubmittedCopyWith<_Submitted> get copyWith =>
+      __$SubmittedCopyWithImpl<_Submitted>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -410,9 +445,9 @@ class _$_Submitted implements _Submitted {
     required TResult Function(SimpleUser user, Option<Comment> commentOption, UniqueId experienceId)
         initialized,
     required TResult Function(String content) contentChanged,
-    required TResult Function() submitted,
+    required TResult Function(User currentUser) submitted,
   }) {
-    return submitted();
+    return submitted(currentUser);
   }
 
   @override
@@ -421,11 +456,11 @@ class _$_Submitted implements _Submitted {
     TResult Function(SimpleUser user, Option<Comment> commentOption, UniqueId experienceId)?
         initialized,
     TResult Function(String content)? contentChanged,
-    TResult Function()? submitted,
+    TResult Function(User currentUser)? submitted,
     required TResult orElse(),
   }) {
     if (submitted != null) {
-      return submitted();
+      return submitted(currentUser);
     }
     return orElse();
   }
@@ -456,7 +491,12 @@ class _$_Submitted implements _Submitted {
 }
 
 abstract class _Submitted implements CommentFormEvent {
-  const factory _Submitted() = _$_Submitted;
+  const factory _Submitted(User currentUser) = _$_Submitted;
+
+  User get currentUser => throw _privateConstructorUsedError;
+
+  @JsonKey(ignore: true)
+  _$SubmittedCopyWith<_Submitted> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc

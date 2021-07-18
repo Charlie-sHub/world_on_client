@@ -7,6 +7,7 @@ import 'package:worldon/application/comments/comment_form/comment_form_bloc.dart
 import 'package:worldon/application/comments/comment_watcher/comment_watcher_bloc.dart';
 import 'package:worldon/application/core/watch_current_user/watch_current_user_bloc.dart';
 import 'package:worldon/domain/core/entities/user/simple_user.dart';
+import 'package:worldon/domain/core/entities/user/user.dart';
 import 'package:worldon/domain/core/validation/objects/comment_content.dart';
 import 'package:worldon/domain/core/validation/objects/unique_id.dart';
 import 'package:worldon/generated/l10n.dart';
@@ -79,7 +80,12 @@ class CommentForm extends HookWidget {
                   ),
                   onPressed: () {
                     context.read<CommentFormBloc>().add(
-                          const CommentFormEvent.submitted(),
+                          CommentFormEvent.submitted(
+                            context.read<WatchCurrentUserBloc>().state.maybeMap(
+                                  loadSuccess: (successState) => successState.user,
+                                  orElse: () => User.empty(),
+                                ),
+                          ),
                         );
                     _textEditingController.clear();
                   },

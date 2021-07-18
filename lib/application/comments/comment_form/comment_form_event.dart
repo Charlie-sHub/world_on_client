@@ -10,5 +10,5 @@ class CommentFormEvent with _$CommentFormEvent {
 
   const factory CommentFormEvent.contentChanged(String content) = _ContentChanged;
 
-  const factory CommentFormEvent.submitted() = _Submitted;
+  const factory CommentFormEvent.submitted(User currentUser) = _Submitted;
 }

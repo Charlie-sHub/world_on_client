@@ -7,7 +7,13 @@ class FollowActorEvent with _$FollowActorEvent {
     Set<UniqueId> followedUsersIds,
   ) = _Initialized;
 
-  const factory FollowActorEvent.followed(UniqueId userId) = _Followed;
+  const factory FollowActorEvent.followed(
+    UniqueId userToFollowId,
+    SimpleUser currentUser,
+  ) = _Followed;
 
-  const factory FollowActorEvent.unFollowed(UniqueId userId) = _UnFollowed;
+  const factory FollowActorEvent.unFollowed(
+    UniqueId userToUnFollowId,
+    SimpleUser currentUser,
+  ) = _UnFollowed;
 }

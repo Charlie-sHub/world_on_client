@@ -505,9 +505,7 @@ const $ObjectivesTrackerState = _$ObjectivesTrackerStateTearOff();
 mixin _$ObjectivesTrackerState {
   KtList<Objective> get objectivesToDo => throw _privateConstructorUsedError;
   UniqueId get experienceId => throw _privateConstructorUsedError;
-
   bool get isFinished => throw _privateConstructorUsedError;
-
   bool get showExplanation => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
@@ -678,16 +676,12 @@ abstract class _ObjectivesTrackerState implements ObjectivesTrackerState {
 
   @override
   KtList<Objective> get objectivesToDo => throw _privateConstructorUsedError;
-
   @override
   UniqueId get experienceId => throw _privateConstructorUsedError;
-
   @override
   bool get isFinished => throw _privateConstructorUsedError;
-
   @override
   bool get showExplanation => throw _privateConstructorUsedError;
-
   @override
   @JsonKey(ignore: true)
   _$ObjectivesTrackerStateCopyWith<_ObjectivesTrackerState> get copyWith =>

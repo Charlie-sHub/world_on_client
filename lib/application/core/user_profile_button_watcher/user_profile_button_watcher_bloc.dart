@@ -32,8 +32,8 @@ class UserProfileButtonWatcherBloc
     yield const UserProfileButtonWatcherState.actionInProgress();
     final _loggedInUserOption = await getIt<GetLoggedInUser>()(getIt<NoParams>());
     yield _loggedInUserOption.fold(
-          () => const UserProfileButtonWatcherState.loadFailure(),
-          (_user) => UserProfileButtonWatcherState.loadSuccess(_user.imageURL),
+      () => const UserProfileButtonWatcherState.loadFailure(),
+      (_user) => UserProfileButtonWatcherState.loadSuccess(_user.imageURL),
     );
   }
 }

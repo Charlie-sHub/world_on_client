@@ -62,7 +62,10 @@ class BlockActorBloc extends Bloc<BlockActorEvent, BlockActorState> {
   Stream<BlockActorState> _onBlocked(_Blocked event) async* {
     yield const BlockActorState.actionInProgress();
     final _failureOrUnit = await getIt<block_user.BlockUser>()(
-      block_user.Params(blockedId: event.userToBlockId),
+      block_user.Params(
+        blockedId: event.userToBlockId,
+        currentUserId: event.currentUser.id,
+      ),
     );
     yield* _failureOrUnit.fold(
       (failure) async* {

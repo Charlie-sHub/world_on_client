@@ -16,9 +16,10 @@ final _privateConstructorUsedError = UnsupportedError(
 class _$CommentActorEventTearOff {
   const _$CommentActorEventTearOff();
 
-  _Deleted deleted(Comment comment) {
+  _Deleted deleted(Comment comment, User currentUser) {
     return _Deleted(
       comment,
+      currentUser,
     );
   }
 }
@@ -30,14 +31,16 @@ const $CommentActorEvent = _$CommentActorEventTearOff();
 mixin _$CommentActorEvent {
   Comment get comment => throw _privateConstructorUsedError;
 
+  User get currentUser => throw _privateConstructorUsedError;
+
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(Comment comment) deleted,
+    required TResult Function(Comment comment, User currentUser) deleted,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(Comment comment)? deleted,
+    TResult Function(Comment comment, User currentUser)? deleted,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -62,9 +65,12 @@ abstract class $CommentActorEventCopyWith<$Res> {
   factory $CommentActorEventCopyWith(
           CommentActorEvent value, $Res Function(CommentActorEvent) then) =
       _$CommentActorEventCopyWithImpl<$Res>;
-  $Res call({Comment comment});
+
+  $Res call({Comment comment, User currentUser});
 
   $CommentCopyWith<$Res> get comment;
+
+  $UserCopyWith<$Res> get currentUser;
 }
 
 /// @nodoc
@@ -79,12 +85,17 @@ class _$CommentActorEventCopyWithImpl<$Res> implements $CommentActorEventCopyWit
   @override
   $Res call({
     Object? comment = freezed,
+    Object? currentUser = freezed,
   }) {
     return _then(_value.copyWith(
       comment: comment == freezed
           ? _value.comment
           : comment // ignore: cast_nullable_to_non_nullable
               as Comment,
+      currentUser: currentUser == freezed
+          ? _value.currentUser
+          : currentUser // ignore: cast_nullable_to_non_nullable
+              as User,
     ));
   }
 
@@ -92,6 +103,13 @@ class _$CommentActorEventCopyWithImpl<$Res> implements $CommentActorEventCopyWit
   $CommentCopyWith<$Res> get comment {
     return $CommentCopyWith<$Res>(_value.comment, (value) {
       return _then(_value.copyWith(comment: value));
+    });
+  }
+
+  @override
+  $UserCopyWith<$Res> get currentUser {
+    return $UserCopyWith<$Res>(_value.currentUser, (value) {
+      return _then(_value.copyWith(currentUser: value));
     });
   }
 }
@@ -102,10 +120,13 @@ abstract class _$DeletedCopyWith<$Res> implements $CommentActorEventCopyWith<$Re
       __$DeletedCopyWithImpl<$Res>;
 
   @override
-  $Res call({Comment comment});
+  $Res call({Comment comment, User currentUser});
 
   @override
   $CommentCopyWith<$Res> get comment;
+
+  @override
+  $UserCopyWith<$Res> get currentUser;
 }
 
 /// @nodoc
@@ -120,12 +141,17 @@ class __$DeletedCopyWithImpl<$Res> extends _$CommentActorEventCopyWithImpl<$Res>
   @override
   $Res call({
     Object? comment = freezed,
+    Object? currentUser = freezed,
   }) {
     return _then(_Deleted(
       comment == freezed
           ? _value.comment
           : comment // ignore: cast_nullable_to_non_nullable
               as Comment,
+      currentUser == freezed
+          ? _value.currentUser
+          : currentUser // ignore: cast_nullable_to_non_nullable
+              as User,
     ));
   }
 }
@@ -133,14 +159,16 @@ class __$DeletedCopyWithImpl<$Res> extends _$CommentActorEventCopyWithImpl<$Res>
 /// @nodoc
 
 class _$_Deleted implements _Deleted {
-  const _$_Deleted(this.comment);
+  const _$_Deleted(this.comment, this.currentUser);
 
   @override
   final Comment comment;
+  @override
+  final User currentUser;
 
   @override
   String toString() {
-    return 'CommentActorEvent.deleted(comment: $comment)';
+    return 'CommentActorEvent.deleted(comment: $comment, currentUser: $currentUser)';
   }
 
   @override
@@ -148,11 +176,16 @@ class _$_Deleted implements _Deleted {
     return identical(this, other) ||
         (other is _Deleted &&
             (identical(other.comment, comment) ||
-                const DeepCollectionEquality().equals(other.comment, comment)));
+                const DeepCollectionEquality().equals(other.comment, comment)) &&
+            (identical(other.currentUser, currentUser) ||
+                const DeepCollectionEquality().equals(other.currentUser, currentUser)));
   }
 
   @override
-  int get hashCode => runtimeType.hashCode ^ const DeepCollectionEquality().hash(comment);
+  int get hashCode =>
+      runtimeType.hashCode ^
+      const DeepCollectionEquality().hash(comment) ^
+      const DeepCollectionEquality().hash(currentUser);
 
   @JsonKey(ignore: true)
   @override
@@ -161,19 +194,19 @@ class _$_Deleted implements _Deleted {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(Comment comment) deleted,
+    required TResult Function(Comment comment, User currentUser) deleted,
   }) {
-    return deleted(comment);
+    return deleted(comment, currentUser);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(Comment comment)? deleted,
+    TResult Function(Comment comment, User currentUser)? deleted,
     required TResult orElse(),
   }) {
     if (deleted != null) {
-      return deleted(comment);
+      return deleted(comment, currentUser);
     }
     return orElse();
   }
@@ -200,10 +233,13 @@ class _$_Deleted implements _Deleted {
 }
 
 abstract class _Deleted implements CommentActorEvent {
-  const factory _Deleted(Comment comment) = _$_Deleted;
+  const factory _Deleted(Comment comment, User currentUser) = _$_Deleted;
 
   @override
   Comment get comment => throw _privateConstructorUsedError;
+
+  @override
+  User get currentUser => throw _privateConstructorUsedError;
 
   @override
   @JsonKey(ignore: true)

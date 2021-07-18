@@ -58,7 +58,9 @@ class DeleteButton extends StatelessWidget {
     if (_confirmed != null) {
       if (_confirmed) {
         context.read<ExperienceManagementActorBloc>().add(
-              ExperienceManagementActorEvent.deleted(experience),
+              ExperienceManagementActorEvent.deleted(
+                experience,
+              ),
             );
       }
     }

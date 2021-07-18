@@ -48,7 +48,6 @@ const $CommentDto = _$CommentDtoTearOff();
 /// @nodoc
 mixin _$CommentDto {
   String get id => throw _privateConstructorUsedError;
-
   SimpleUserDto get poster => throw _privateConstructorUsedError;
   String get experienceId => throw _privateConstructorUsedError;
   String get content => throw _privateConstructorUsedError;
@@ -58,7 +57,6 @@ mixin _$CommentDto {
   DateTime get modificationDate => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-
   @JsonKey(ignore: true)
   $CommentDtoCopyWith<CommentDto> get copyWith => throw _privateConstructorUsedError;
 }

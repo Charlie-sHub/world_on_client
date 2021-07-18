@@ -19,7 +19,9 @@ class DeleteExperience implements AsyncUseCase<Unit, Params> {
 
   @override
   Future<Either<Failure, Unit>> call(Params params) async {
-    final _userRequestingOption = await getIt<GetLoggedInUser>().call(getIt<NoParams>());
+    final _userRequestingOption = await getIt<GetLoggedInUser>().call(
+      getIt<NoParams>(),
+    );
     final _userRequesting = _userRequestingOption.fold(
       () => throw UnAuthenticatedError(),
       id,
@@ -29,7 +31,11 @@ class DeleteExperience implements AsyncUseCase<Unit, Params> {
     if (_isAuthorized) {
       return _repository.deleteExperience(params.experience.id);
     } else {
-      return left(const Failure.coreDomain(CoreDomainFailure.unAuthorizedError()));
+      return left(
+        const Failure.coreDomain(
+          CoreDomainFailure.unAuthorizedError(),
+        ),
+      );
     }
   }
 }

@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:worldon/application/core/watch_current_user/watch_current_user_bloc.dart';
 import 'package:worldon/application/profile/follow_actor/follow_actor_bloc.dart';
+import 'package:worldon/domain/core/entities/user/simple_user.dart';
 import 'package:worldon/domain/core/validation/objects/unique_id.dart';
 import 'package:worldon/generated/l10n.dart';
 import 'package:worldon/views/core/misc/world_on_colors.dart';
@@ -17,7 +19,13 @@ class UnFollowButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return ElevatedButton(
       onPressed: () => context.read<FollowActorBloc>().add(
-            FollowActorEvent.unFollowed(userId),
+            FollowActorEvent.unFollowed(
+              userId,
+              context.read<WatchCurrentUserBloc>().state.maybeMap(
+                    loadSuccess: (successState) => successState.user.simplified,
+                    orElse: () => SimpleUser.empty(),
+                  ),
+            ),
           ),
       style: ButtonStyle(
         shape: MaterialStateProperty.all(
