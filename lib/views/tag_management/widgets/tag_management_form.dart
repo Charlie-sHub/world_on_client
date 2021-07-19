@@ -14,7 +14,9 @@ class TagManagementForm extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Form(
-      autovalidateMode: context.read<TagManagementFormBloc>().state.showErrorMessages ? AutovalidateMode.always : AutovalidateMode.disabled,
+      autovalidateMode: context.read<TagManagementFormBloc>().state.showErrorMessages
+          ? AutovalidateMode.always
+          : AutovalidateMode.disabled,
       child: Material(
         elevation: 15,
         borderRadius: const BorderRadius.all(
@@ -27,10 +29,11 @@ class TagManagementForm extends StatelessWidget {
               ),
           validator: (_) => context.read<TagManagementFormBloc>().state.tag.name.value.fold(
                 (failure) => failure.maybeMap(
-                  emptyString: (_) => S.of(context).tagCreationNameEmptyString,
+              emptyString: (_) => S.of(context).tagCreationNameEmptyString,
                   multiLineString: (_) => S.of(context).tagCreationNameMultiLineString,
                   stringExceedsLength: (_) => S.of(context).tagCreationNameStringExceedsLength,
-                  stringWithInvalidCharacters: (_) => S.of(context).tagCreationNameStringWithInvalidCharacters,
+                  stringWithInvalidCharacters: (_) =>
+                      S.of(context).tagCreationNameStringWithInvalidCharacters,
                   orElse: () => S.of(context).unknownError,
                 ),
                 (_) => null,
@@ -43,9 +46,12 @@ class TagManagementForm extends StatelessWidget {
                 Icons.add,
                 size: 35,
               ),
-              onPressed: () => context.read<TagManagementFormBloc>().add(
-                    const TagManagementFormEvent.submitted(),
-                  ),
+              onPressed: () {
+                FocusScope.of(context).unfocus();
+                context.read<TagManagementFormBloc>().add(
+                      const TagManagementFormEvent.submitted(),
+                    );
+              },
             ),
             border: InputBorder.none,
             focusedBorder: InputBorder.none,

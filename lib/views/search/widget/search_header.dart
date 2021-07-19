@@ -11,7 +11,9 @@ class SearchHeader extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Form(
-      autovalidateMode: context.read<SearchByNameFormBloc>().state.showErrorMessages ? AutovalidateMode.always : AutovalidateMode.disabled,
+      autovalidateMode: context.read<SearchByNameFormBloc>().state.showErrorMessages
+          ? AutovalidateMode.always
+          : AutovalidateMode.disabled,
       child: Padding(
         padding: const EdgeInsets.symmetric(
           vertical: 5,
@@ -45,7 +47,10 @@ class SearchHeader extends StatelessWidget {
     );
   }
 
-  void _submit(BuildContext context) => context.read<SearchByNameFormBloc>().add(
-        const SearchByNameFormEvent.submitted(),
-      );
+  void _submit(BuildContext context) {
+    FocusScope.of(context).unfocus();
+    context.read<SearchByNameFormBloc>().add(
+          const SearchByNameFormEvent.submitted(),
+        );
+  }
 }

@@ -35,29 +35,32 @@ class ObjectivesTrackerBloc extends Bloc<ObjectivesTrackerEvent, ObjectivesTrack
   }
 
   Stream<ObjectivesTrackerState> _onObjectiveUnaccomplished(_ObjectiveUnaccomplished event) async* {
+    final _objectivesLeft = state.objectivesToDo.plusElement(event.objective);
     getIt<unaccomplish_objective.UnAccomplishObjective>()(
       unaccomplish_objective.Params(
         objective: event.objective,
         experienceId: state.experienceId,
       ),
     );
-    final _objectivesLeft = state.objectivesToDo.plusElement(event.objective);
     yield state.copyWith(
       objectivesToDo: _objectivesLeft,
     );
   }
 
   Stream<ObjectivesTrackerState> _onObjectiveAccomplished(_ObjectiveAccomplished event) async* {
-    getIt<accomplish_objective.AccomplishObjective>()(
-      accomplish_objective.Params(
-        objective: event.objective,
-        experienceId: state.experienceId,
-      ),
-    );
     final _objectivesLeft = state.objectivesToDo.minusElement(event.objective);
+    final _finished = _objectivesLeft.isEmpty();
+    if (!_finished) {
+      getIt<accomplish_objective.AccomplishObjective>()(
+        accomplish_objective.Params(
+          objective: event.objective,
+          experienceId: state.experienceId,
+        ),
+      );
+    }
     yield state.copyWith(
       objectivesToDo: _objectivesLeft,
-      isFinished: _objectivesLeft.isEmpty(),
+      isFinished: _finished,
       showExplanation: false,
     );
   }

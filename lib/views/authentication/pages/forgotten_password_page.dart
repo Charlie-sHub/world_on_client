@@ -14,6 +14,7 @@ class ForgottenPasswordPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
+        resizeToAvoidBottomInset: false,
         appBar: AppBar(
           title: Text(
             S.of(context).forgottenPassword,
@@ -27,7 +28,8 @@ class ForgottenPasswordPage extends StatelessWidget {
           child: BlocProvider(
             create: (context) => getIt<ForgottenPasswordFormBloc>(),
             child: BlocConsumer<ForgottenPasswordFormBloc, ForgottenPasswordFormState>(
-              listenWhen: (previous, current) => previous.failureOrSuccessOption != current.failureOrSuccessOption,
+              listenWhen: (previous, current) =>
+                  previous.failureOrSuccessOption != current.failureOrSuccessOption,
               listener: (context, state) => state.failureOrSuccessOption.fold(
                 () {},
                 (either) => either.fold(
@@ -39,19 +41,22 @@ class ForgottenPasswordPage extends StatelessWidget {
                 child: Padding(
                   padding: const EdgeInsets.all(20),
                   child: Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    crossAxisAlignment: CrossAxisAlignment.stretch,
                     children: [
+                      const SizedBox(height: 100),
                       EmailTextField(
                         validator: (_) => _emailValidator(context),
                         eventToAdd: (String value) => context.read<ForgottenPasswordFormBloc>().add(
                               ForgottenPasswordFormEvent.emailChanged(value),
                             ),
                       ),
+                      const SizedBox(height: 20),
                       ElevatedButton(
-                        onPressed: () => context.read<ForgottenPasswordFormBloc>().add(
-                              const ForgottenPasswordFormEvent.sentRequest(),
-                            ),
+                        onPressed: () {
+                          FocusScope.of(context).unfocus();
+                          context.read<ForgottenPasswordFormBloc>().add(
+                                const ForgottenPasswordFormEvent.sentRequest(),
+                              );
+                        },
                         style: ButtonStyle(
                           backgroundColor: MaterialStateProperty.all(
                             WorldOnColors.primary,

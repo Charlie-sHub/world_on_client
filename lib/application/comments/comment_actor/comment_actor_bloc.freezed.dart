@@ -30,7 +30,6 @@ const $CommentActorEvent = _$CommentActorEventTearOff();
 /// @nodoc
 mixin _$CommentActorEvent {
   Comment get comment => throw _privateConstructorUsedError;
-
   User get currentUser => throw _privateConstructorUsedError;
 
   @optionalTypeArgs
@@ -65,11 +64,9 @@ abstract class $CommentActorEventCopyWith<$Res> {
   factory $CommentActorEventCopyWith(
           CommentActorEvent value, $Res Function(CommentActorEvent) then) =
       _$CommentActorEventCopyWithImpl<$Res>;
-
   $Res call({Comment comment, User currentUser});
 
   $CommentCopyWith<$Res> get comment;
-
   $UserCopyWith<$Res> get currentUser;
 }
 

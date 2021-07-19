@@ -226,7 +226,6 @@ abstract class _Initialized implements FollowActorEvent {
 abstract class _$FollowedCopyWith<$Res> {
   factory _$FollowedCopyWith(_Followed value, $Res Function(_Followed) then) =
       __$FollowedCopyWithImpl<$Res>;
-
   $Res call({UniqueId userToFollowId, SimpleUser currentUser});
 
   $SimpleUserCopyWith<$Res> get currentUser;
