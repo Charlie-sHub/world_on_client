@@ -29,7 +29,7 @@ class TagManagementForm extends StatelessWidget {
               ),
           validator: (_) => context.read<TagManagementFormBloc>().state.tag.name.value.fold(
                 (failure) => failure.maybeMap(
-              emptyString: (_) => S.of(context).tagCreationNameEmptyString,
+                  emptyString: (_) => S.of(context).tagCreationNameEmptyString,
                   multiLineString: (_) => S.of(context).tagCreationNameMultiLineString,
                   stringExceedsLength: (_) => S.of(context).tagCreationNameStringExceedsLength,
                   stringWithInvalidCharacters: (_) =>

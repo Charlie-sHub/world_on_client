@@ -1,10 +1,13 @@
 import 'package:another_flushbar/flushbar_helper.dart';
 import 'package:dartz/dartz.dart';
-import 'package:flutter/material.dart';
+import 'package:flutter/material.dart' hide Notification;
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_local_notifications/flutter_local_notifications.dart';
 import 'package:visibility_detector/visibility_detector.dart';
 import 'package:worldon/application/notifications/notification_actor/notification_actor_bloc.dart';
 import 'package:worldon/application/notifications/notifications_watcher/notifications_watcher_bloc.dart';
+import 'package:worldon/domain/core/entities/notification/notification.dart';
+import 'package:worldon/domain/core/entities/notification/notification_type_enum.dart';
 import 'package:worldon/generated/l10n.dart';
 import 'package:worldon/injection.dart';
 import 'package:worldon/views/core/misc/world_on_colors.dart';
@@ -63,6 +66,14 @@ class NotificationsBody extends StatelessWidget {
                   // Throws Looking up a deactivated widget's ancestor is unsafe. otherwise when deleting
                   // Figured it must be using the context directly in a deleted widget
                   final _auxContext = context.read<NotificationActorBloc>();
+                  final _message = _getNotificationMessage(context, _notification);
+                  if (!_notification.seen) {
+                    _showLocalNotification(
+                      index,
+                      context,
+                      _message,
+                    );
+                  }
                   return VisibilityDetector(
                     key: Key(_notification.id.getOrCrash()),
                     onVisibilityChanged: (info) {
@@ -70,11 +81,13 @@ class NotificationsBody extends StatelessWidget {
                         _auxContext.add(
                           NotificationActorEvent.checked(_notification),
                         );
+                        getIt<FlutterLocalNotificationsPlugin>().cancel(index);
                       }
                     },
                     child: _notification.experienceOption.fold(
                       () => NotificationDismissibleTile(
                         notification: _notification,
+                        message: _message,
                         key: Key(_notification.id.toString()),
                       ),
                       (_experience) => SharedExperienceDismissibleCard(
@@ -106,5 +119,47 @@ class NotificationsBody extends StatelessWidget {
         ),
       ),
     );
+  }
+
+  void _showLocalNotification(int index, BuildContext context, String _message) {
+    const androidPlatformChannelSpecifics = AndroidNotificationDetails(
+      "notification_notification",
+      "notification_notification",
+      "World On notifications channel",
+      importance: Importance.high,
+      playSound: false,
+    );
+    const platformChannelSpecifics = NotificationDetails(
+      android: androidPlatformChannelSpecifics,
+    );
+    getIt<FlutterLocalNotificationsPlugin>().show(
+      index,
+      S.of(context).newNotification,
+      _message,
+      platformChannelSpecifics,
+    );
+  }
+
+  String _getNotificationMessage(BuildContext context, Notification notification) {
+    String _notificationDescription;
+    switch (notification.type) {
+      case NotificationType.block:
+        _notificationDescription = S.of(context).blockedYou;
+        break;
+      case NotificationType.unblock:
+        _notificationDescription = S.of(context).unblockedYou;
+        break;
+      case NotificationType.unfollow:
+        _notificationDescription = S.of(context).unfollowedYou;
+        break;
+      case NotificationType.follow:
+        _notificationDescription = S.of(context).followedYou;
+        break;
+      case NotificationType.share:
+        // Should never enter here though
+        _notificationDescription = S.of(context).shared;
+        break;
+    }
+    return "${notification.sender.username.getOrCrash()} $_notificationDescription";
   }
 }

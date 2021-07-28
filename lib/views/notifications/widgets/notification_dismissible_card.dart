@@ -4,15 +4,18 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_slidable/flutter_slidable.dart';
 import 'package:worldon/application/notifications/notification_actor/notification_actor_bloc.dart';
 import 'package:worldon/domain/core/entities/notification/notification.dart';
-import 'package:worldon/domain/core/entities/notification/notification_type_enum.dart';
-import 'package:worldon/generated/l10n.dart';
 import 'package:worldon/views/core/misc/world_on_colors.dart';
 import 'package:worldon/views/core/widgets/misc/user_avatar_follow_checker.dart';
 
 class NotificationDismissibleTile extends StatelessWidget {
   final Notification notification;
+  final String message;
 
-  const NotificationDismissibleTile({Key? key, required this.notification}) : super(key: key);
+  const NotificationDismissibleTile({
+    Key? key,
+    required this.notification,
+    required this.message,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -40,7 +43,7 @@ class NotificationDismissibleTile extends StatelessWidget {
           width: 150,
           child: Center(
             child: AutoSizeText(
-              _getNotificationMessage(context),
+              message,
               minFontSize: 8,
               maxFontSize: 15,
               style: const TextStyle(
@@ -51,28 +54,5 @@ class NotificationDismissibleTile extends StatelessWidget {
         ),
       ),
     );
-  }
-
-  String _getNotificationMessage(BuildContext context) {
-    String _notificationDescription;
-    switch (notification.type) {
-      case NotificationType.block:
-        _notificationDescription = S.of(context).blockedYou;
-        break;
-      case NotificationType.unblock:
-        _notificationDescription = S.of(context).unblockedYou;
-        break;
-      case NotificationType.unfollow:
-        _notificationDescription = S.of(context).unfollowedYou;
-        break;
-      case NotificationType.follow:
-        _notificationDescription = S.of(context).followedYou;
-        break;
-      case NotificationType.share:
-        // Should never enter here though
-        _notificationDescription = S.of(context).shared;
-        break;
-    }
-    return "${notification.sender.username.getOrCrash()} $_notificationDescription";
   }
 }

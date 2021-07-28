@@ -2318,6 +2318,16 @@ class S {
       args: [],
     );
   }
+
+  /// `New Notification`
+  String get newNotification {
+    return Intl.message(
+      'New Notification',
+      name: 'newNotification',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

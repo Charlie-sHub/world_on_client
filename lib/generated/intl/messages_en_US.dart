@@ -156,6 +156,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "nameStringExceedsLength": MessageLookupByLibrary.simpleMessage("The name is too long"),
         "nameStringWithInvalidCharacters":
             MessageLookupByLibrary.simpleMessage("The name has invalid characters"),
+        "newNotification": MessageLookupByLibrary.simpleMessage("New Notification"),
         "noActivePlan":
             MessageLookupByLibrary.simpleMessage("You don\'t have an active promotion plan"),
         "noError": MessageLookupByLibrary.simpleMessage("No error"),

@@ -226,5 +226,6 @@
   "noItemsOwned": "Currently you don't own any items",
   "toDoBy": "To do by:",
   "cantBlockSelf": "You can't block yourself",
-  "objectivesExplanation": "Check the objectives as you complete them"
+  "objectivesExplanation": "Check the objectives as you complete them",
+  "newNotification": "New Notification"
 }
