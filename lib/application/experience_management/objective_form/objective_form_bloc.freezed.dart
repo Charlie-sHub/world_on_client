@@ -91,8 +91,7 @@ mixin _$ObjectiveFormEvent {
 
 /// @nodoc
 abstract class $ObjectiveFormEventCopyWith<$Res> {
-  factory $ObjectiveFormEventCopyWith(
-          ObjectiveFormEvent value, $Res Function(ObjectiveFormEvent) then) =
+  factory $ObjectiveFormEventCopyWith(ObjectiveFormEvent value, $Res Function(ObjectiveFormEvent) then) =
       _$ObjectiveFormEventCopyWithImpl<$Res>;
 }
 
@@ -203,8 +202,7 @@ abstract class _Initialized implements ObjectiveFormEvent {
 
 /// @nodoc
 abstract class _$DescriptionChangedCopyWith<$Res> {
-  factory _$DescriptionChangedCopyWith(
-          _DescriptionChanged value, $Res Function(_DescriptionChanged) then) =
+  factory _$DescriptionChangedCopyWith(_DescriptionChanged value, $Res Function(_DescriptionChanged) then) =
       __$DescriptionChangedCopyWithImpl<$Res>;
   $Res call({String description});
 }
@@ -212,8 +210,7 @@ abstract class _$DescriptionChangedCopyWith<$Res> {
 /// @nodoc
 class __$DescriptionChangedCopyWithImpl<$Res> extends _$ObjectiveFormEventCopyWithImpl<$Res>
     implements _$DescriptionChangedCopyWith<$Res> {
-  __$DescriptionChangedCopyWithImpl(
-      _DescriptionChanged _value, $Res Function(_DescriptionChanged) _then)
+  __$DescriptionChangedCopyWithImpl(_DescriptionChanged _value, $Res Function(_DescriptionChanged) _then)
       : super(_value, (v) => _then(v as _DescriptionChanged));
 
   @override
@@ -323,14 +320,12 @@ abstract class _DescriptionChanged implements ObjectiveFormEvent {
 
   String get description => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  _$DescriptionChangedCopyWith<_DescriptionChanged> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$DescriptionChangedCopyWith<_DescriptionChanged> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class _$CoordinatesChangedCopyWith<$Res> {
-  factory _$CoordinatesChangedCopyWith(
-          _CoordinatesChanged value, $Res Function(_CoordinatesChanged) then) =
+  factory _$CoordinatesChangedCopyWith(_CoordinatesChanged value, $Res Function(_CoordinatesChanged) then) =
       __$CoordinatesChangedCopyWithImpl<$Res>;
   $Res call({double latitude, double longitude});
 }
@@ -338,8 +333,7 @@ abstract class _$CoordinatesChangedCopyWith<$Res> {
 /// @nodoc
 class __$CoordinatesChangedCopyWithImpl<$Res> extends _$ObjectiveFormEventCopyWithImpl<$Res>
     implements _$CoordinatesChangedCopyWith<$Res> {
-  __$CoordinatesChangedCopyWithImpl(
-      _CoordinatesChanged _value, $Res Function(_CoordinatesChanged) _then)
+  __$CoordinatesChangedCopyWithImpl(_CoordinatesChanged _value, $Res Function(_CoordinatesChanged) _then)
       : super(_value, (v) => _then(v as _CoordinatesChanged));
 
   @override
@@ -465,8 +459,7 @@ abstract class _CoordinatesChanged implements ObjectiveFormEvent {
   double get longitude => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
-  _$CoordinatesChangedCopyWith<_CoordinatesChanged> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$CoordinatesChangedCopyWith<_CoordinatesChanged> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -718,18 +711,15 @@ mixin _$ObjectiveFormState {
   bool get loadedCoordinates => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
-  $ObjectiveFormStateCopyWith<ObjectiveFormState> get copyWith =>
-      throw _privateConstructorUsedError;
+  $ObjectiveFormStateCopyWith<ObjectiveFormState> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $ObjectiveFormStateCopyWith<$Res> {
-  factory $ObjectiveFormStateCopyWith(
-          ObjectiveFormState value, $Res Function(ObjectiveFormState) then) =
+  factory $ObjectiveFormStateCopyWith(ObjectiveFormState value, $Res Function(ObjectiveFormState) then) =
       _$ObjectiveFormStateCopyWithImpl<$Res>;
 
-  $Res call(
-      {Objective objective, bool showErrorMessages, bool isSubmitting, bool loadedCoordinates});
+  $Res call({Objective objective, bool showErrorMessages, bool isSubmitting, bool loadedCoordinates});
 
   $ObjectiveCopyWith<$Res> get objective;
 }
@@ -780,13 +770,11 @@ class _$ObjectiveFormStateCopyWithImpl<$Res> implements $ObjectiveFormStateCopyW
 
 /// @nodoc
 abstract class _$ObjectiveFormStateCopyWith<$Res> implements $ObjectiveFormStateCopyWith<$Res> {
-  factory _$ObjectiveFormStateCopyWith(
-          _ObjectiveFormState value, $Res Function(_ObjectiveFormState) then) =
+  factory _$ObjectiveFormStateCopyWith(_ObjectiveFormState value, $Res Function(_ObjectiveFormState) then) =
       __$ObjectiveFormStateCopyWithImpl<$Res>;
 
   @override
-  $Res call(
-      {Objective objective, bool showErrorMessages, bool isSubmitting, bool loadedCoordinates});
+  $Res call({Objective objective, bool showErrorMessages, bool isSubmitting, bool loadedCoordinates});
 
   @override
   $ObjectiveCopyWith<$Res> get objective;
@@ -795,8 +783,7 @@ abstract class _$ObjectiveFormStateCopyWith<$Res> implements $ObjectiveFormState
 /// @nodoc
 class __$ObjectiveFormStateCopyWithImpl<$Res> extends _$ObjectiveFormStateCopyWithImpl<$Res>
     implements _$ObjectiveFormStateCopyWith<$Res> {
-  __$ObjectiveFormStateCopyWithImpl(
-      _ObjectiveFormState _value, $Res Function(_ObjectiveFormState) _then)
+  __$ObjectiveFormStateCopyWithImpl(_ObjectiveFormState _value, $Res Function(_ObjectiveFormState) _then)
       : super(_value, (v) => _then(v as _ObjectiveFormState));
 
   @override
@@ -860,8 +847,7 @@ class _$_ObjectiveFormState implements _ObjectiveFormState {
             (identical(other.objective, objective) ||
                 const DeepCollectionEquality().equals(other.objective, objective)) &&
             (identical(other.showErrorMessages, showErrorMessages) ||
-                const DeepCollectionEquality()
-                    .equals(other.showErrorMessages, showErrorMessages)) &&
+                const DeepCollectionEquality().equals(other.showErrorMessages, showErrorMessages)) &&
             (identical(other.isSubmitting, isSubmitting) ||
                 const DeepCollectionEquality().equals(other.isSubmitting, isSubmitting)) &&
             (identical(other.loadedCoordinates, loadedCoordinates) ||
@@ -899,6 +885,5 @@ abstract class _ObjectiveFormState implements ObjectiveFormState {
   bool get loadedCoordinates => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
-  _$ObjectiveFormStateCopyWith<_ObjectiveFormState> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$ObjectiveFormStateCopyWith<_ObjectiveFormState> get copyWith => throw _privateConstructorUsedError;
 }

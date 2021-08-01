@@ -83,11 +83,9 @@ abstract class $InvalidCredentialsCopyWith<T, $Res> {
 }
 
 /// @nodoc
-class _$InvalidCredentialsCopyWithImpl<T, $Res>
-    extends _$AuthenticationDataFailureCopyWithImpl<T, $Res>
+class _$InvalidCredentialsCopyWithImpl<T, $Res> extends _$AuthenticationDataFailureCopyWithImpl<T, $Res>
     implements $InvalidCredentialsCopyWith<T, $Res> {
-  _$InvalidCredentialsCopyWithImpl(
-      InvalidCredentials<T> _value, $Res Function(InvalidCredentials<T>) _then)
+  _$InvalidCredentialsCopyWithImpl(InvalidCredentials<T> _value, $Res Function(InvalidCredentials<T>) _then)
       : super(_value, (v) => _then(v as InvalidCredentials<T>));
 
   @override
@@ -163,17 +161,14 @@ abstract class InvalidCredentials<T> implements AuthenticationDataFailure<T> {
 
 /// @nodoc
 abstract class $UnregisteredUserCopyWith<T, $Res> {
-  factory $UnregisteredUserCopyWith(
-          UnregisteredUser<T> value, $Res Function(UnregisteredUser<T>) then) =
+  factory $UnregisteredUserCopyWith(UnregisteredUser<T> value, $Res Function(UnregisteredUser<T>) then) =
       _$UnregisteredUserCopyWithImpl<T, $Res>;
 }
 
 /// @nodoc
-class _$UnregisteredUserCopyWithImpl<T, $Res>
-    extends _$AuthenticationDataFailureCopyWithImpl<T, $Res>
+class _$UnregisteredUserCopyWithImpl<T, $Res> extends _$AuthenticationDataFailureCopyWithImpl<T, $Res>
     implements $UnregisteredUserCopyWith<T, $Res> {
-  _$UnregisteredUserCopyWithImpl(
-      UnregisteredUser<T> _value, $Res Function(UnregisteredUser<T>) _then)
+  _$UnregisteredUserCopyWithImpl(UnregisteredUser<T> _value, $Res Function(UnregisteredUser<T>) _then)
       : super(_value, (v) => _then(v as UnregisteredUser<T>));
 
   @override

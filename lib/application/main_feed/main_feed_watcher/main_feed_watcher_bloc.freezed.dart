@@ -35,8 +35,7 @@ mixin _$MainFeedWatcherEvent {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() watchMainFeedStarted,
-    required TResult Function(Either<Failure, KtList<Experience>> failureOrExperiences)
-        resultsReceived,
+    required TResult Function(Either<Failure, KtList<Experience>> failureOrExperiences) resultsReceived,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -118,8 +117,7 @@ class _$_WatchMainFeedStarted implements _WatchMainFeedStarted {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() watchMainFeedStarted,
-    required TResult Function(Either<Failure, KtList<Experience>> failureOrExperiences)
-        resultsReceived,
+    required TResult Function(Either<Failure, KtList<Experience>> failureOrExperiences) resultsReceived,
   }) {
     return watchMainFeedStarted();
   }
@@ -212,13 +210,11 @@ class _$_ResultsReceived implements _ResultsReceived {
     return identical(this, other) ||
         (other is _ResultsReceived &&
             (identical(other.failureOrExperiences, failureOrExperiences) ||
-                const DeepCollectionEquality()
-                    .equals(other.failureOrExperiences, failureOrExperiences)));
+                const DeepCollectionEquality().equals(other.failureOrExperiences, failureOrExperiences)));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(failureOrExperiences);
+  int get hashCode => runtimeType.hashCode ^ const DeepCollectionEquality().hash(failureOrExperiences);
 
   @JsonKey(ignore: true)
   @override
@@ -229,8 +225,7 @@ class _$_ResultsReceived implements _ResultsReceived {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() watchMainFeedStarted,
-    required TResult Function(Either<Failure, KtList<Experience>> failureOrExperiences)
-        resultsReceived,
+    required TResult Function(Either<Failure, KtList<Experience>> failureOrExperiences) resultsReceived,
   }) {
     return resultsReceived(failureOrExperiences);
   }
@@ -275,8 +270,7 @@ abstract class _ResultsReceived implements MainFeedWatcherEvent {
   const factory _ResultsReceived(Either<Failure, KtList<Experience>> failureOrExperiences) =
       _$_ResultsReceived;
 
-  Either<Failure, KtList<Experience>> get failureOrExperiences =>
-      throw _privateConstructorUsedError;
+  Either<Failure, KtList<Experience>> get failureOrExperiences => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
   _$ResultsReceivedCopyWith<_ResultsReceived> get copyWith => throw _privateConstructorUsedError;
@@ -367,8 +361,7 @@ class _$MainFeedWatcherStateCopyWithImpl<$Res> implements $MainFeedWatcherStateC
 
 /// @nodoc
 abstract class _$InitialCopyWith<$Res> {
-  factory _$InitialCopyWith(_Initial value, $Res Function(_Initial) then) =
-      __$InitialCopyWithImpl<$Res>;
+  factory _$InitialCopyWith(_Initial value, $Res Function(_Initial) then) = __$InitialCopyWithImpl<$Res>;
 }
 
 /// @nodoc

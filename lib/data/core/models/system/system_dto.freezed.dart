@@ -20,8 +20,7 @@ SystemDto _$SystemDtoFromJson(Map<String, dynamic> json) {
 class _$SystemDtoTearOff {
   const _$SystemDtoTearOff();
 
-  _SystemDto call(
-      {required String id, required String name, required String type, required String company}) {
+  _SystemDto call({required String id, required String name, required String type, required String company}) {
     return _SystemDto(
       id: id,
       name: name,
@@ -143,8 +142,7 @@ class __$SystemDtoCopyWithImpl<$Res> extends _$SystemDtoCopyWithImpl<$Res>
 /// @nodoc
 @JsonSerializable()
 class _$_SystemDto extends _SystemDto {
-  const _$_SystemDto(
-      {required this.id, required this.name, required this.type, required this.company})
+  const _$_SystemDto({required this.id, required this.name, required this.type, required this.company})
       : super._();
 
   factory _$_SystemDto.fromJson(Map<String, dynamic> json) => _$_$_SystemDtoFromJson(json);
@@ -168,8 +166,7 @@ class _$_SystemDto extends _SystemDto {
     return identical(this, other) ||
         (other is _SystemDto &&
             (identical(other.id, id) || const DeepCollectionEquality().equals(other.id, id)) &&
-            (identical(other.name, name) ||
-                const DeepCollectionEquality().equals(other.name, name)) &&
+            (identical(other.name, name) || const DeepCollectionEquality().equals(other.name, name)) &&
             (identical(other.type, type) ||
                 const DeepCollectionEquality().equals(other.type, type)) &&
             (identical(other.company, company) ||

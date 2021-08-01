@@ -253,8 +253,7 @@ class _$_NotificationDto extends _NotificationDto {
       this.experience})
       : super._();
 
-  factory _$_NotificationDto.fromJson(Map<String, dynamic> json) =>
-      _$_$_NotificationDtoFromJson(json);
+  factory _$_NotificationDto.fromJson(Map<String, dynamic> json) => _$_$_NotificationDtoFromJson(json);
 
   @override
   final String id;
@@ -290,12 +289,10 @@ class _$_NotificationDto extends _NotificationDto {
                 const DeepCollectionEquality().equals(other.receiverId, receiverId)) &&
             (identical(other.description, description) ||
                 const DeepCollectionEquality().equals(other.description, description)) &&
-            (identical(other.seen, seen) ||
-                const DeepCollectionEquality().equals(other.seen, seen)) &&
+            (identical(other.seen, seen) || const DeepCollectionEquality().equals(other.seen, seen)) &&
             (identical(other.creationDate, creationDate) ||
                 const DeepCollectionEquality().equals(other.creationDate, creationDate)) &&
-            (identical(other.type, type) ||
-                const DeepCollectionEquality().equals(other.type, type)) &&
+            (identical(other.type, type) || const DeepCollectionEquality().equals(other.type, type)) &&
             (identical(other.experience, experience) ||
                 const DeepCollectionEquality().equals(other.experience, experience)));
   }

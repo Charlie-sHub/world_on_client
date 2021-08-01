@@ -60,8 +60,7 @@ mixin _$ExperienceManagementApplicationFailure<T> {
 
 /// @nodoc
 abstract class $ExperienceManagementApplicationFailureCopyWith<T, $Res> {
-  factory $ExperienceManagementApplicationFailureCopyWith(
-          ExperienceManagementApplicationFailure<T> value,
+  factory $ExperienceManagementApplicationFailureCopyWith(ExperienceManagementApplicationFailure<T> value,
           $Res Function(ExperienceManagementApplicationFailure<T>) then) =
       _$ExperienceManagementApplicationFailureCopyWithImpl<T, $Res>;
   $Res call({int limit});
@@ -141,8 +140,7 @@ class _$SurpassedImageLimit<T> implements SurpassedImageLimit<T> {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other is SurpassedImageLimit<T> &&
-            (identical(other.limit, limit) ||
-                const DeepCollectionEquality().equals(other.limit, limit)));
+            (identical(other.limit, limit) || const DeepCollectionEquality().equals(other.limit, limit)));
   }
 
   @override
@@ -202,6 +200,5 @@ abstract class SurpassedImageLimit<T> implements ExperienceManagementApplication
 
   @override
   @JsonKey(ignore: true)
-  $SurpassedImageLimitCopyWith<T, SurpassedImageLimit<T>> get copyWith =>
-      throw _privateConstructorUsedError;
+  $SurpassedImageLimitCopyWith<T, SurpassedImageLimit<T>> get copyWith => throw _privateConstructorUsedError;
 }

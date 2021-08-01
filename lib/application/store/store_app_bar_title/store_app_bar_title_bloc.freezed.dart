@@ -634,8 +634,7 @@ abstract class _$StoreCopyWith<$Res> {
 /// @nodoc
 class __$StoreCopyWithImpl<$Res> extends _$StoreAppBarTitleStateCopyWithImpl<$Res>
     implements _$StoreCopyWith<$Res> {
-  __$StoreCopyWithImpl(_Store _value, $Res Function(_Store) _then)
-      : super(_value, (v) => _then(v as _Store));
+  __$StoreCopyWithImpl(_Store _value, $Res Function(_Store) _then) : super(_value, (v) => _then(v as _Store));
 
   @override
   _Store get _value => super._value as _Store;

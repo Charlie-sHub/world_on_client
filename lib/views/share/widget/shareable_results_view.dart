@@ -1,12 +1,12 @@
 import 'package:dartz/dartz.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:worldon/application/core/share_experience_internally/share_experience_internally_bloc.dart';
-import 'package:worldon/application/search/search_to_share/search_to_share_bloc.dart';
+import 'package:worldon/application/share/search_to_share/search_to_share_bloc.dart';
+import 'package:worldon/application/share/share_experience_internally/share_experience_internally_bloc.dart';
 import 'package:worldon/generated/l10n.dart';
 import 'package:worldon/views/core/widgets/cards/error_card.dart';
-import 'package:worldon/views/core/widgets/cards/experience_card/internal_share/shareable_circular_avatar_card.dart';
 import 'package:worldon/views/search/widget/search_error_display.dart';
+import 'package:worldon/views/share/widget/shareable_circular_avatar_card.dart';
 
 class ShareableResultsView extends StatelessWidget {
   @override
@@ -14,9 +14,10 @@ class ShareableResultsView extends StatelessWidget {
     return BlocBuilder<ShareExperienceInternallyBloc, ShareExperienceInternallyState>(
       buildWhen: (previous, current) => previous.users != current.users,
       builder: (context, shareInternallyState) => BlocBuilder<SearchToShareBloc, SearchToShareState>(
-        builder: (context, state) => SizedBox(
+        // buildWhen: (previous, current) => true,
+        builder: (context, searchState) => SizedBox(
           height: MediaQuery.of(context).size.height * 0.3,
-          child: state.failureOrSuccessOption.fold(
+          child: searchState.failureOrSuccessOption.fold(
             () => GridView.builder(
               physics: const ClampingScrollPhysics(),
               shrinkWrap: true,
@@ -24,9 +25,9 @@ class ShareableResultsView extends StatelessWidget {
                 crossAxisCount: 4,
                 mainAxisExtent: 110,
               ),
-              itemCount: state.users.size,
+              itemCount: searchState.searchedUsers.size,
               itemBuilder: (context, index) {
-                final _user = state.users[index];
+                final _user = searchState.searchedUsers[index];
                 if (_user.isValid) {
                   return ShareableCircularAvatarCard(
                     user: _user,

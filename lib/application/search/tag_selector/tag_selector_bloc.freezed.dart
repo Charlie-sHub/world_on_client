@@ -197,8 +197,7 @@ class _$_Initialized implements _Initialized {
 }
 
 abstract class _Initialized implements TagSelectorEvent {
-  const factory _Initialized(Option<Either<TagSet, Set<UniqueId>>> tagsEitherOption) =
-      _$_Initialized;
+  const factory _Initialized(Option<Either<TagSet, Set<UniqueId>>> tagsEitherOption) = _$_Initialized;
 
   Option<Either<TagSet, Set<UniqueId>>> get tagsEitherOption => throw _privateConstructorUsedError;
 
@@ -509,8 +508,7 @@ class _$TagSelectorStateCopyWithImpl<$Res> implements $TagSelectorStateCopyWith<
 
 /// @nodoc
 abstract class _$TagSearchFormStateCopyWith<$Res> implements $TagSelectorStateCopyWith<$Res> {
-  factory _$TagSearchFormStateCopyWith(
-          _TagSearchFormState value, $Res Function(_TagSearchFormState) then) =
+  factory _$TagSearchFormStateCopyWith(_TagSearchFormState value, $Res Function(_TagSearchFormState) then) =
       __$TagSearchFormStateCopyWithImpl<$Res>;
 
   @override
@@ -520,8 +518,7 @@ abstract class _$TagSearchFormStateCopyWith<$Res> implements $TagSelectorStateCo
 /// @nodoc
 class __$TagSearchFormStateCopyWithImpl<$Res> extends _$TagSelectorStateCopyWithImpl<$Res>
     implements _$TagSearchFormStateCopyWith<$Res> {
-  __$TagSearchFormStateCopyWithImpl(
-      _TagSearchFormState _value, $Res Function(_TagSearchFormState) _then)
+  __$TagSearchFormStateCopyWithImpl(_TagSearchFormState _value, $Res Function(_TagSearchFormState) _then)
       : super(_value, (v) => _then(v as _TagSearchFormState));
 
   @override
@@ -578,6 +575,5 @@ abstract class _TagSearchFormState implements TagSelectorState {
 
   @override
   @JsonKey(ignore: true)
-  _$TagSearchFormStateCopyWith<_TagSearchFormState> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$TagSearchFormStateCopyWith<_TagSearchFormState> get copyWith => throw _privateConstructorUsedError;
 }

@@ -87,8 +87,7 @@ abstract class _$WatchAllTagsStartedCopyWith<$Res> {
 /// @nodoc
 class __$WatchAllTagsStartedCopyWithImpl<$Res> extends _$TagManagementWatcherEventCopyWithImpl<$Res>
     implements _$WatchAllTagsStartedCopyWith<$Res> {
-  __$WatchAllTagsStartedCopyWithImpl(
-      _WatchAllTagsStarted _value, $Res Function(_WatchAllTagsStarted) _then)
+  __$WatchAllTagsStartedCopyWithImpl(_WatchAllTagsStarted _value, $Res Function(_WatchAllTagsStarted) _then)
       : super(_value, (v) => _then(v as _WatchAllTagsStarted));
 
   @override

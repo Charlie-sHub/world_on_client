@@ -144,8 +144,7 @@ class _$_Coordinates extends _Coordinates {
 }
 
 abstract class _Coordinates extends Coordinates {
-  const factory _Coordinates({required Latitude latitude, required Longitude longitude}) =
-      _$_Coordinates;
+  const factory _Coordinates({required Latitude latitude, required Longitude longitude}) = _$_Coordinates;
 
   const _Coordinates._() : super._();
 

@@ -16,8 +16,7 @@ final _privateConstructorUsedError = UnsupportedError(
 class _$DeviceTearOff {
   const _$DeviceTearOff();
 
-  _Device call(
-      {required UniqueId id, required String name, required String type, required String company}) {
+  _Device call({required UniqueId id, required String name, required String type, required String company}) {
     return _Device(
       id: id,
       name: name,
@@ -86,15 +85,13 @@ class _$DeviceCopyWithImpl<$Res> implements $DeviceCopyWith<$Res> {
 
 /// @nodoc
 abstract class _$DeviceCopyWith<$Res> implements $DeviceCopyWith<$Res> {
-  factory _$DeviceCopyWith(_Device value, $Res Function(_Device) then) =
-      __$DeviceCopyWithImpl<$Res>;
+  factory _$DeviceCopyWith(_Device value, $Res Function(_Device) then) = __$DeviceCopyWithImpl<$Res>;
   @override
   $Res call({UniqueId id, String name, String type, String company});
 }
 
 /// @nodoc
-class __$DeviceCopyWithImpl<$Res> extends _$DeviceCopyWithImpl<$Res>
-    implements _$DeviceCopyWith<$Res> {
+class __$DeviceCopyWithImpl<$Res> extends _$DeviceCopyWithImpl<$Res> implements _$DeviceCopyWith<$Res> {
   __$DeviceCopyWithImpl(_Device _value, $Res Function(_Device) _then)
       : super(_value, (v) => _then(v as _Device));
 
@@ -154,10 +151,8 @@ class _$_Device extends _Device {
     return identical(this, other) ||
         (other is _Device &&
             (identical(other.id, id) || const DeepCollectionEquality().equals(other.id, id)) &&
-            (identical(other.name, name) ||
-                const DeepCollectionEquality().equals(other.name, name)) &&
-            (identical(other.type, type) ||
-                const DeepCollectionEquality().equals(other.type, type)) &&
+            (identical(other.name, name) || const DeepCollectionEquality().equals(other.name, name)) &&
+            (identical(other.type, type) || const DeepCollectionEquality().equals(other.type, type)) &&
             (identical(other.company, company) ||
                 const DeepCollectionEquality().equals(other.company, company)));
   }

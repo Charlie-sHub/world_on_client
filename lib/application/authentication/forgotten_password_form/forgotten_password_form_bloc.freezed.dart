@@ -68,8 +68,7 @@ abstract class $ForgottenPasswordFormEventCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$ForgottenPasswordFormEventCopyWithImpl<$Res>
-    implements $ForgottenPasswordFormEventCopyWith<$Res> {
+class _$ForgottenPasswordFormEventCopyWithImpl<$Res> implements $ForgottenPasswordFormEventCopyWith<$Res> {
   _$ForgottenPasswordFormEventCopyWithImpl(this._value, this._then);
 
   final ForgottenPasswordFormEvent _value;
@@ -124,8 +123,7 @@ class _$_EmailChanged implements _EmailChanged {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other is _EmailChanged &&
-            (identical(other.email, email) ||
-                const DeepCollectionEquality().equals(other.email, email)));
+            (identical(other.email, email) || const DeepCollectionEquality().equals(other.email, email)));
   }
 
   @override
@@ -323,8 +321,7 @@ abstract class $ForgottenPasswordFormStateCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$ForgottenPasswordFormStateCopyWithImpl<$Res>
-    implements $ForgottenPasswordFormStateCopyWith<$Res> {
+class _$ForgottenPasswordFormStateCopyWithImpl<$Res> implements $ForgottenPasswordFormStateCopyWith<$Res> {
   _$ForgottenPasswordFormStateCopyWithImpl(this._value, this._then);
 
   final ForgottenPasswordFormState _value;
@@ -374,8 +371,7 @@ abstract class _$ForgottenPasswordFormStateCopyWith<$Res>
 }
 
 /// @nodoc
-class __$ForgottenPasswordFormStateCopyWithImpl<$Res>
-    extends _$ForgottenPasswordFormStateCopyWithImpl<$Res>
+class __$ForgottenPasswordFormStateCopyWithImpl<$Res> extends _$ForgottenPasswordFormStateCopyWithImpl<$Res>
     implements _$ForgottenPasswordFormStateCopyWith<$Res> {
   __$ForgottenPasswordFormStateCopyWithImpl(
       _ForgottenPasswordFormState _value, $Res Function(_ForgottenPasswordFormState) _then)
@@ -439,16 +435,13 @@ class _$_ForgottenPasswordFormState implements _ForgottenPasswordFormState {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other is _ForgottenPasswordFormState &&
-            (identical(other.email, email) ||
-                const DeepCollectionEquality().equals(other.email, email)) &&
+            (identical(other.email, email) || const DeepCollectionEquality().equals(other.email, email)) &&
             (identical(other.showErrorMessages, showErrorMessages) ||
-                const DeepCollectionEquality()
-                    .equals(other.showErrorMessages, showErrorMessages)) &&
+                const DeepCollectionEquality().equals(other.showErrorMessages, showErrorMessages)) &&
             (identical(other.isSubmitting, isSubmitting) ||
                 const DeepCollectionEquality().equals(other.isSubmitting, isSubmitting)) &&
             (identical(other.failureOrSuccessOption, failureOrSuccessOption) ||
-                const DeepCollectionEquality()
-                    .equals(other.failureOrSuccessOption, failureOrSuccessOption)));
+                const DeepCollectionEquality().equals(other.failureOrSuccessOption, failureOrSuccessOption)));
   }
 
   @override
@@ -467,11 +460,10 @@ class _$_ForgottenPasswordFormState implements _ForgottenPasswordFormState {
 
 abstract class _ForgottenPasswordFormState implements ForgottenPasswordFormState {
   const factory _ForgottenPasswordFormState(
-          {required EmailAddress email,
-          required bool showErrorMessages,
-          required bool isSubmitting,
-          required Option<Either<Failure, Unit>> failureOrSuccessOption}) =
-      _$_ForgottenPasswordFormState;
+      {required EmailAddress email,
+      required bool showErrorMessages,
+      required bool isSubmitting,
+      required Option<Either<Failure, Unit>> failureOrSuccessOption}) = _$_ForgottenPasswordFormState;
 
   @override
   EmailAddress get email => throw _privateConstructorUsedError;

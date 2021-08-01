@@ -159,10 +159,7 @@ class __$ObjectiveDtoCopyWithImpl<$Res> extends _$ObjectiveDtoCopyWithImpl<$Res>
 @JsonSerializable()
 class _$_ObjectiveDto extends _ObjectiveDto {
   const _$_ObjectiveDto(
-      {required this.id,
-      required this.description,
-      required this.coordinates,
-      required this.imageURL})
+      {required this.id, required this.description, required this.coordinates, required this.imageURL})
       : super._();
 
   factory _$_ObjectiveDto.fromJson(Map<String, dynamic> json) => _$_$_ObjectiveDtoFromJson(json);

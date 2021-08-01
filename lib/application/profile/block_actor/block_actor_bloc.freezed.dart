@@ -212,8 +212,7 @@ class _$_Initialized implements _Initialized {
 }
 
 abstract class _Initialized implements BlockActorEvent {
-  const factory _Initialized(UniqueId userToCheckId, Set<UniqueId> blockedUsersIds) =
-      _$_Initialized;
+  const factory _Initialized(UniqueId userToCheckId, Set<UniqueId> blockedUsersIds) = _$_Initialized;
 
   UniqueId get userToCheckId => throw _privateConstructorUsedError;
 
@@ -225,8 +224,7 @@ abstract class _Initialized implements BlockActorEvent {
 
 /// @nodoc
 abstract class _$BlockedCopyWith<$Res> {
-  factory _$BlockedCopyWith(_Blocked value, $Res Function(_Blocked) then) =
-      __$BlockedCopyWithImpl<$Res>;
+  factory _$BlockedCopyWith(_Blocked value, $Res Function(_Blocked) then) = __$BlockedCopyWithImpl<$Res>;
   $Res call({UniqueId userToBlockId, SimpleUser currentUser});
 
   $SimpleUserCopyWith<$Res> get currentUser;
@@ -438,8 +436,7 @@ class _$_UnBlocked implements _UnBlocked {
 
   @JsonKey(ignore: true)
   @override
-  _$UnBlockedCopyWith<_UnBlocked> get copyWith =>
-      __$UnBlockedCopyWithImpl<_UnBlocked>(this, _$identity);
+  _$UnBlockedCopyWith<_UnBlocked> get copyWith => __$UnBlockedCopyWithImpl<_UnBlocked>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -617,8 +614,7 @@ class _$BlockActorStateCopyWithImpl<$Res> implements $BlockActorStateCopyWith<$R
 
 /// @nodoc
 abstract class _$InitialCopyWith<$Res> {
-  factory _$InitialCopyWith(_Initial value, $Res Function(_Initial) then) =
-      __$InitialCopyWithImpl<$Res>;
+  factory _$InitialCopyWith(_Initial value, $Res Function(_Initial) then) = __$InitialCopyWithImpl<$Res>;
 }
 
 /// @nodoc
@@ -724,8 +720,7 @@ abstract class _Initial implements BlockActorState {
 
 /// @nodoc
 abstract class _$ActionInProgressCopyWith<$Res> {
-  factory _$ActionInProgressCopyWith(
-          _ActionInProgress value, $Res Function(_ActionInProgress) then) =
+  factory _$ActionInProgressCopyWith(_ActionInProgress value, $Res Function(_ActionInProgress) then) =
       __$ActionInProgressCopyWithImpl<$Res>;
 }
 
@@ -832,8 +827,7 @@ abstract class _ActionInProgress implements BlockActorState {
 
 /// @nodoc
 abstract class _$BlocksCopyWith<$Res> {
-  factory _$BlocksCopyWith(_Blocks value, $Res Function(_Blocks) then) =
-      __$BlocksCopyWithImpl<$Res>;
+  factory _$BlocksCopyWith(_Blocks value, $Res Function(_Blocks) then) = __$BlocksCopyWithImpl<$Res>;
 }
 
 /// @nodoc

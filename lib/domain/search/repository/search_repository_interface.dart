@@ -24,11 +24,4 @@ abstract class SearchRepositoryInterface {
 
   /// Sends a given [int] to the server and it returns the [Experience]s with a difficulty around the given [Difficulty]
   Stream<Either<Failure, KtList<Experience>>> watchExperiencesByDifficulty(Difficulty difficulty);
-
-  /// Sends a given [SearchTerm] to the server and it returns the [User]s with said [SearchTerm] in their names
-  /// That the current [User] can share to
-  Future<Either<Failure, KtList<User>>> searchShareableUsers(SearchTerm name);
-
-  /// Gets all the [User]s that the current  [User] can share to
-  Future<Either<Failure, KtList<User>>> getShareableUsers();
 }

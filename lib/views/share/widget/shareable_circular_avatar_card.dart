@@ -2,7 +2,7 @@ import 'package:auto_size_text/auto_size_text.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:worldon/application/core/share_experience_internally/share_experience_internally_bloc.dart';
+import 'package:worldon/application/share/share_experience_internally/share_experience_internally_bloc.dart';
 import 'package:worldon/domain/core/entities/user/user.dart';
 import 'package:worldon/views/core/misc/world_on_colors.dart';
 

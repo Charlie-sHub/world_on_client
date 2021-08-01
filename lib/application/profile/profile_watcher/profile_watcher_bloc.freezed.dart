@@ -64,8 +64,7 @@ mixin _$ProfileWatcherEvent {
 
 /// @nodoc
 abstract class $ProfileWatcherEventCopyWith<$Res> {
-  factory $ProfileWatcherEventCopyWith(
-          ProfileWatcherEvent value, $Res Function(ProfileWatcherEvent) then) =
+  factory $ProfileWatcherEventCopyWith(ProfileWatcherEvent value, $Res Function(ProfileWatcherEvent) then) =
       _$ProfileWatcherEventCopyWithImpl<$Res>;
 }
 
@@ -91,8 +90,7 @@ abstract class _$WatchProfileStartedCopyWith<$Res> {
 /// @nodoc
 class __$WatchProfileStartedCopyWithImpl<$Res> extends _$ProfileWatcherEventCopyWithImpl<$Res>
     implements _$WatchProfileStartedCopyWith<$Res> {
-  __$WatchProfileStartedCopyWithImpl(
-      _WatchProfileStarted _value, $Res Function(_WatchProfileStarted) _then)
+  __$WatchProfileStartedCopyWithImpl(_WatchProfileStarted _value, $Res Function(_WatchProfileStarted) _then)
       : super(_value, (v) => _then(v as _WatchProfileStarted));
 
   @override
@@ -128,8 +126,7 @@ class _$_WatchProfileStarted implements _WatchProfileStarted {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other is _WatchProfileStarted &&
-            (identical(other.userId, userId) ||
-                const DeepCollectionEquality().equals(other.userId, userId)));
+            (identical(other.userId, userId) || const DeepCollectionEquality().equals(other.userId, userId)));
   }
 
   @override
@@ -190,8 +187,7 @@ abstract class _WatchProfileStarted implements ProfileWatcherEvent {
 
   UniqueId get userId => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  _$WatchProfileStartedCopyWith<_WatchProfileStarted> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$WatchProfileStartedCopyWith<_WatchProfileStarted> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -365,8 +361,7 @@ mixin _$ProfileWatcherState {
 
 /// @nodoc
 abstract class $ProfileWatcherStateCopyWith<$Res> {
-  factory $ProfileWatcherStateCopyWith(
-          ProfileWatcherState value, $Res Function(ProfileWatcherState) then) =
+  factory $ProfileWatcherStateCopyWith(ProfileWatcherState value, $Res Function(ProfileWatcherState) then) =
       _$ProfileWatcherStateCopyWithImpl<$Res>;
 }
 
@@ -382,8 +377,7 @@ class _$ProfileWatcherStateCopyWithImpl<$Res> implements $ProfileWatcherStateCop
 
 /// @nodoc
 abstract class _$InitialCopyWith<$Res> {
-  factory _$InitialCopyWith(_Initial value, $Res Function(_Initial) then) =
-      __$InitialCopyWithImpl<$Res>;
+  factory _$InitialCopyWith(_Initial value, $Res Function(_Initial) then) = __$InitialCopyWithImpl<$Res>;
 }
 
 /// @nodoc
@@ -469,8 +463,7 @@ abstract class _Initial implements ProfileWatcherState {
 
 /// @nodoc
 abstract class _$NewProfileUpdateCopyWith<$Res> {
-  factory _$NewProfileUpdateCopyWith(
-          _NewProfileUpdate value, $Res Function(_NewProfileUpdate) then) =
+  factory _$NewProfileUpdateCopyWith(_NewProfileUpdate value, $Res Function(_NewProfileUpdate) then) =
       __$NewProfileUpdateCopyWithImpl<$Res>;
   $Res call({User user});
 
@@ -523,8 +516,7 @@ class _$_NewProfileUpdate implements _NewProfileUpdate {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other is _NewProfileUpdate &&
-            (identical(other.user, user) ||
-                const DeepCollectionEquality().equals(other.user, user)));
+            (identical(other.user, user) || const DeepCollectionEquality().equals(other.user, user)));
   }
 
   @override
@@ -595,8 +587,7 @@ abstract class _NewProfileUpdate implements ProfileWatcherState {
 
 /// @nodoc
 abstract class _$FailureCopyWith<$Res> {
-  factory _$FailureCopyWith(_Failure value, $Res Function(_Failure) then) =
-      __$FailureCopyWithImpl<$Res>;
+  factory _$FailureCopyWith(_Failure value, $Res Function(_Failure) then) = __$FailureCopyWithImpl<$Res>;
 }
 
 /// @nodoc

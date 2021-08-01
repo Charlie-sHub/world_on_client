@@ -44,14 +44,12 @@ mixin _$PrimitiveObjective {
   File? get imageFile => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
-  $PrimitiveObjectiveCopyWith<PrimitiveObjective> get copyWith =>
-      throw _privateConstructorUsedError;
+  $PrimitiveObjectiveCopyWith<PrimitiveObjective> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $PrimitiveObjectiveCopyWith<$Res> {
-  factory $PrimitiveObjectiveCopyWith(
-          PrimitiveObjective value, $Res Function(PrimitiveObjective) then) =
+  factory $PrimitiveObjectiveCopyWith(PrimitiveObjective value, $Res Function(PrimitiveObjective) then) =
       _$PrimitiveObjectiveCopyWithImpl<$Res>;
 
   $Res call({UniqueId id, String description, double latitude, double longitude, File? imageFile});
@@ -101,8 +99,7 @@ class _$PrimitiveObjectiveCopyWithImpl<$Res> implements $PrimitiveObjectiveCopyW
 
 /// @nodoc
 abstract class _$PrimitiveObjectiveCopyWith<$Res> implements $PrimitiveObjectiveCopyWith<$Res> {
-  factory _$PrimitiveObjectiveCopyWith(
-          _PrimitiveObjective value, $Res Function(_PrimitiveObjective) then) =
+  factory _$PrimitiveObjectiveCopyWith(_PrimitiveObjective value, $Res Function(_PrimitiveObjective) then) =
       __$PrimitiveObjectiveCopyWithImpl<$Res>;
 
   @override
@@ -112,8 +109,7 @@ abstract class _$PrimitiveObjectiveCopyWith<$Res> implements $PrimitiveObjective
 /// @nodoc
 class __$PrimitiveObjectiveCopyWithImpl<$Res> extends _$PrimitiveObjectiveCopyWithImpl<$Res>
     implements _$PrimitiveObjectiveCopyWith<$Res> {
-  __$PrimitiveObjectiveCopyWithImpl(
-      _PrimitiveObjective _value, $Res Function(_PrimitiveObjective) _then)
+  __$PrimitiveObjectiveCopyWithImpl(_PrimitiveObjective _value, $Res Function(_PrimitiveObjective) _then)
       : super(_value, (v) => _then(v as _PrimitiveObjective));
 
   @override
@@ -230,6 +226,5 @@ abstract class _PrimitiveObjective extends PrimitiveObjective {
   File? get imageFile => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
-  _$PrimitiveObjectiveCopyWith<_PrimitiveObjective> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$PrimitiveObjectiveCopyWith<_PrimitiveObjective> get copyWith => throw _privateConstructorUsedError;
 }

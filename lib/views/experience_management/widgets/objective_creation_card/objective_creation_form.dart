@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:worldon/application/experience_management/objective_form/objective_form_bloc.dart';
 import 'package:worldon/generated/l10n.dart';
-import 'package:worldon/views/core/misc/common_functions/open_picture_select_dialog.dart';
+import 'package:worldon/views/core/misc/functions/open_picture_select_dialog.dart';
 import 'package:worldon/views/experience_management/widgets/objective_creation_card/objective_coordinates_picker.dart';
 import 'package:worldon/views/experience_management/widgets/objective_creation_card/objective_description_text_field.dart';
 import 'package:worldon/views/experience_management/widgets/objective_creation_card/submit_objective_button.dart';
@@ -19,7 +19,8 @@ class ObjectiveCreationForm extends StatelessWidget {
   Widget build(BuildContext context) {
     final _objectiveFormState = context.read<ObjectiveFormBloc>().state;
     return Form(
-      autovalidateMode: _objectiveFormState.showErrorMessages ? AutovalidateMode.always : AutovalidateMode.disabled,
+      autovalidateMode:
+          _objectiveFormState.showErrorMessages ? AutovalidateMode.always : AutovalidateMode.disabled,
       child: Column(
         children: <Widget>[
           ObjectiveDescriptionTextField(textController: textEditingController),
@@ -43,7 +44,8 @@ class ObjectiveCreationForm extends StatelessWidget {
                         }
                       },
                     ),
-                    if (_objectiveFormState.showErrorMessages && _objectiveFormState.objective.imageFile.isNone())
+                    if (_objectiveFormState.showErrorMessages &&
+                        _objectiveFormState.objective.imageFile.isNone())
                       Text(
                         S.of(context).pictureSelectionMessage,
                         textAlign: TextAlign.center,

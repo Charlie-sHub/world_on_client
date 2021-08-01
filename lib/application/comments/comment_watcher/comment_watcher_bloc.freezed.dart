@@ -64,8 +64,7 @@ mixin _$CommentWatcherEvent {
 
 /// @nodoc
 abstract class $CommentWatcherEventCopyWith<$Res> {
-  factory $CommentWatcherEventCopyWith(
-          CommentWatcherEvent value, $Res Function(CommentWatcherEvent) then) =
+  factory $CommentWatcherEventCopyWith(CommentWatcherEvent value, $Res Function(CommentWatcherEvent) then) =
       _$CommentWatcherEventCopyWithImpl<$Res>;
 }
 
@@ -81,16 +80,15 @@ class _$CommentWatcherEventCopyWithImpl<$Res> implements $CommentWatcherEventCop
 
 /// @nodoc
 abstract class _$WatchExperienceCommentsStartedCopyWith<$Res> {
-  factory _$WatchExperienceCommentsStartedCopyWith(_WatchExperienceCommentsStarted value,
-          $Res Function(_WatchExperienceCommentsStarted) then) =
+  factory _$WatchExperienceCommentsStartedCopyWith(
+          _WatchExperienceCommentsStarted value, $Res Function(_WatchExperienceCommentsStarted) then) =
       __$WatchExperienceCommentsStartedCopyWithImpl<$Res>;
 
   $Res call({UniqueId experienceId});
 }
 
 /// @nodoc
-class __$WatchExperienceCommentsStartedCopyWithImpl<$Res>
-    extends _$CommentWatcherEventCopyWithImpl<$Res>
+class __$WatchExperienceCommentsStartedCopyWithImpl<$Res> extends _$CommentWatcherEventCopyWithImpl<$Res>
     implements _$WatchExperienceCommentsStartedCopyWith<$Res> {
   __$WatchExperienceCommentsStartedCopyWithImpl(
       _WatchExperienceCommentsStarted _value, $Res Function(_WatchExperienceCommentsStarted) _then)
@@ -139,8 +137,7 @@ class _$_WatchExperienceCommentsStarted implements _WatchExperienceCommentsStart
   @JsonKey(ignore: true)
   @override
   _$WatchExperienceCommentsStartedCopyWith<_WatchExperienceCommentsStarted> get copyWith =>
-      __$WatchExperienceCommentsStartedCopyWithImpl<_WatchExperienceCommentsStarted>(
-          this, _$identity);
+      __$WatchExperienceCommentsStartedCopyWithImpl<_WatchExperienceCommentsStarted>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -188,8 +185,7 @@ class _$_WatchExperienceCommentsStarted implements _WatchExperienceCommentsStart
 }
 
 abstract class _WatchExperienceCommentsStarted implements CommentWatcherEvent {
-  const factory _WatchExperienceCommentsStarted(UniqueId experienceId) =
-      _$_WatchExperienceCommentsStarted;
+  const factory _WatchExperienceCommentsStarted(UniqueId experienceId) = _$_WatchExperienceCommentsStarted;
 
   UniqueId get experienceId => throw _privateConstructorUsedError;
 
@@ -303,8 +299,7 @@ class _$_ResultsReceived implements _ResultsReceived {
 }
 
 abstract class _ResultsReceived implements CommentWatcherEvent {
-  const factory _ResultsReceived(Either<Failure, KtList<Comment>> failureOrComments) =
-      _$_ResultsReceived;
+  const factory _ResultsReceived(Either<Failure, KtList<Comment>> failureOrComments) = _$_ResultsReceived;
 
   Either<Failure, KtList<Comment>> get failureOrComments => throw _privateConstructorUsedError;
 
@@ -380,8 +375,7 @@ mixin _$CommentWatcherState {
 
 /// @nodoc
 abstract class $CommentWatcherStateCopyWith<$Res> {
-  factory $CommentWatcherStateCopyWith(
-          CommentWatcherState value, $Res Function(CommentWatcherState) then) =
+  factory $CommentWatcherStateCopyWith(CommentWatcherState value, $Res Function(CommentWatcherState) then) =
       _$CommentWatcherStateCopyWithImpl<$Res>;
 }
 
@@ -397,8 +391,7 @@ class _$CommentWatcherStateCopyWithImpl<$Res> implements $CommentWatcherStateCop
 
 /// @nodoc
 abstract class _$InitialCopyWith<$Res> {
-  factory _$InitialCopyWith(_Initial value, $Res Function(_Initial) then) =
-      __$InitialCopyWithImpl<$Res>;
+  factory _$InitialCopyWith(_Initial value, $Res Function(_Initial) then) = __$InitialCopyWithImpl<$Res>;
 }
 
 /// @nodoc

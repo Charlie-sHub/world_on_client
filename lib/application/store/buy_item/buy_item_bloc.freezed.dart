@@ -156,8 +156,7 @@ class _$_Initialized implements _Initialized {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other is _Initialized &&
-            (identical(other.item, item) ||
-                const DeepCollectionEquality().equals(other.item, item)));
+            (identical(other.item, item) || const DeepCollectionEquality().equals(other.item, item)));
   }
 
   @override
@@ -275,8 +274,7 @@ class _$_BoughtItem implements _BoughtItem {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other is _BoughtItem &&
-            (identical(other.item, item) ||
-                const DeepCollectionEquality().equals(other.item, item)));
+            (identical(other.item, item) || const DeepCollectionEquality().equals(other.item, item)));
   }
 
   @override
@@ -284,8 +282,7 @@ class _$_BoughtItem implements _BoughtItem {
 
   @JsonKey(ignore: true)
   @override
-  _$BoughtItemCopyWith<_BoughtItem> get copyWith =>
-      __$BoughtItemCopyWithImpl<_BoughtItem>(this, _$identity);
+  _$BoughtItemCopyWith<_BoughtItem> get copyWith => __$BoughtItemCopyWithImpl<_BoughtItem>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -440,8 +437,7 @@ class _$BuyItemStateCopyWithImpl<$Res> implements $BuyItemStateCopyWith<$Res> {
 
 /// @nodoc
 abstract class _$InitialCopyWith<$Res> {
-  factory _$InitialCopyWith(_Initial value, $Res Function(_Initial) then) =
-      __$InitialCopyWithImpl<$Res>;
+  factory _$InitialCopyWith(_Initial value, $Res Function(_Initial) then) = __$InitialCopyWithImpl<$Res>;
 }
 
 /// @nodoc
@@ -539,8 +535,7 @@ abstract class _Initial implements BuyItemState {
 
 /// @nodoc
 abstract class _$ActionInProgressCopyWith<$Res> {
-  factory _$ActionInProgressCopyWith(
-          _ActionInProgress value, $Res Function(_ActionInProgress) then) =
+  factory _$ActionInProgressCopyWith(_ActionInProgress value, $Res Function(_ActionInProgress) then) =
       __$ActionInProgressCopyWithImpl<$Res>;
 }
 
@@ -643,10 +638,8 @@ abstract class _$OwnsCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$OwnsCopyWithImpl<$Res> extends _$BuyItemStateCopyWithImpl<$Res>
-    implements _$OwnsCopyWith<$Res> {
-  __$OwnsCopyWithImpl(_Owns _value, $Res Function(_Owns) _then)
-      : super(_value, (v) => _then(v as _Owns));
+class __$OwnsCopyWithImpl<$Res> extends _$BuyItemStateCopyWithImpl<$Res> implements _$OwnsCopyWith<$Res> {
+  __$OwnsCopyWithImpl(_Owns _value, $Res Function(_Owns) _then) : super(_value, (v) => _then(v as _Owns));
 
   @override
   _Owns get _value => super._value as _Owns;

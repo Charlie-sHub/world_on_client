@@ -22,8 +22,7 @@ class _$SearchExperiencesByNameWatcherEventTearOff {
     );
   }
 
-  _SearchResultsReceived searchResultsReceived(
-      Either<Failure, KtList<Experience>> failureOrExperiences) {
+  _SearchResultsReceived searchResultsReceived(Either<Failure, KtList<Experience>> failureOrExperiences) {
     return _SearchResultsReceived(
       failureOrExperiences,
     );
@@ -38,8 +37,7 @@ mixin _$SearchExperiencesByNameWatcherEvent {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(SearchTerm searchTerm) watchExperiencesFoundByNameStarted,
-    required TResult Function(Either<Failure, KtList<Experience>> failureOrExperiences)
-        searchResultsReceived,
+    required TResult Function(Either<Failure, KtList<Experience>> failureOrExperiences) searchResultsReceived,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -52,8 +50,7 @@ mixin _$SearchExperiencesByNameWatcherEvent {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_WatchExperiencesFoundByNameStarted value)
-        watchExperiencesFoundByNameStarted,
+    required TResult Function(_WatchExperiencesFoundByNameStarted value) watchExperiencesFoundByNameStarted,
     required TResult Function(_SearchResultsReceived value) searchResultsReceived,
   }) =>
       throw _privateConstructorUsedError;
@@ -96,13 +93,12 @@ abstract class _$WatchExperiencesFoundByNameStartedCopyWith<$Res> {
 class __$WatchExperiencesFoundByNameStartedCopyWithImpl<$Res>
     extends _$SearchExperiencesByNameWatcherEventCopyWithImpl<$Res>
     implements _$WatchExperiencesFoundByNameStartedCopyWith<$Res> {
-  __$WatchExperiencesFoundByNameStartedCopyWithImpl(_WatchExperiencesFoundByNameStarted _value,
-      $Res Function(_WatchExperiencesFoundByNameStarted) _then)
+  __$WatchExperiencesFoundByNameStartedCopyWithImpl(
+      _WatchExperiencesFoundByNameStarted _value, $Res Function(_WatchExperiencesFoundByNameStarted) _then)
       : super(_value, (v) => _then(v as _WatchExperiencesFoundByNameStarted));
 
   @override
-  _WatchExperiencesFoundByNameStarted get _value =>
-      super._value as _WatchExperiencesFoundByNameStarted;
+  _WatchExperiencesFoundByNameStarted get _value => super._value as _WatchExperiencesFoundByNameStarted;
 
   @override
   $Res call({
@@ -151,8 +147,7 @@ class _$_WatchExperiencesFoundByNameStarted implements _WatchExperiencesFoundByN
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(SearchTerm searchTerm) watchExperiencesFoundByNameStarted,
-    required TResult Function(Either<Failure, KtList<Experience>> failureOrExperiences)
-        searchResultsReceived,
+    required TResult Function(Either<Failure, KtList<Experience>> failureOrExperiences) searchResultsReceived,
   }) {
     return watchExperiencesFoundByNameStarted(searchTerm);
   }
@@ -174,8 +169,7 @@ class _$_WatchExperiencesFoundByNameStarted implements _WatchExperiencesFoundByN
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_WatchExperiencesFoundByNameStarted value)
-        watchExperiencesFoundByNameStarted,
+    required TResult Function(_WatchExperiencesFoundByNameStarted value) watchExperiencesFoundByNameStarted,
     required TResult Function(_SearchResultsReceived value) searchResultsReceived,
   }) {
     return watchExperiencesFoundByNameStarted(this);
@@ -262,8 +256,7 @@ class _$_SearchResultsReceived implements _SearchResultsReceived {
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(failureOrExperiences);
+  int get hashCode => runtimeType.hashCode ^ const DeepCollectionEquality().hash(failureOrExperiences);
 
   @JsonKey(ignore: true)
   @override
@@ -274,8 +267,7 @@ class _$_SearchResultsReceived implements _SearchResultsReceived {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(SearchTerm searchTerm) watchExperiencesFoundByNameStarted,
-    required TResult Function(Either<Failure, KtList<Experience>> failureOrExperiences)
-        searchResultsReceived,
+    required TResult Function(Either<Failure, KtList<Experience>> failureOrExperiences) searchResultsReceived,
   }) {
     return searchResultsReceived(failureOrExperiences);
   }
@@ -297,8 +289,7 @@ class _$_SearchResultsReceived implements _SearchResultsReceived {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_WatchExperiencesFoundByNameStarted value)
-        watchExperiencesFoundByNameStarted,
+    required TResult Function(_WatchExperiencesFoundByNameStarted value) watchExperiencesFoundByNameStarted,
     required TResult Function(_SearchResultsReceived value) searchResultsReceived,
   }) {
     return searchResultsReceived(this);
@@ -322,12 +313,10 @@ abstract class _SearchResultsReceived implements SearchExperiencesByNameWatcherE
   const factory _SearchResultsReceived(Either<Failure, KtList<Experience>> failureOrExperiences) =
       _$_SearchResultsReceived;
 
-  Either<Failure, KtList<Experience>> get failureOrExperiences =>
-      throw _privateConstructorUsedError;
+  Either<Failure, KtList<Experience>> get failureOrExperiences => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
-  _$SearchResultsReceivedCopyWith<_SearchResultsReceived> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$SearchResultsReceivedCopyWith<_SearchResultsReceived> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc

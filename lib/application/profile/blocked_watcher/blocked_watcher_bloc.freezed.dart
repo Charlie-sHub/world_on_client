@@ -64,8 +64,7 @@ mixin _$BlockedWatcherEvent {
 
 /// @nodoc
 abstract class $BlockedWatcherEventCopyWith<$Res> {
-  factory $BlockedWatcherEventCopyWith(
-          BlockedWatcherEvent value, $Res Function(BlockedWatcherEvent) then) =
+  factory $BlockedWatcherEventCopyWith(BlockedWatcherEvent value, $Res Function(BlockedWatcherEvent) then) =
       _$BlockedWatcherEventCopyWithImpl<$Res>;
 }
 
@@ -137,8 +136,7 @@ class _$_WatchBlockedUsersStarted implements _WatchBlockedUsersStarted {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other is _WatchBlockedUsersStarted &&
-            (identical(other.user, user) ||
-                const DeepCollectionEquality().equals(other.user, user)));
+            (identical(other.user, user) || const DeepCollectionEquality().equals(other.user, user)));
   }
 
   @override
@@ -385,8 +383,7 @@ mixin _$BlockedWatcherState {
 
 /// @nodoc
 abstract class $BlockedWatcherStateCopyWith<$Res> {
-  factory $BlockedWatcherStateCopyWith(
-          BlockedWatcherState value, $Res Function(BlockedWatcherState) then) =
+  factory $BlockedWatcherStateCopyWith(BlockedWatcherState value, $Res Function(BlockedWatcherState) then) =
       _$BlockedWatcherStateCopyWithImpl<$Res>;
 }
 
@@ -402,8 +399,7 @@ class _$BlockedWatcherStateCopyWithImpl<$Res> implements $BlockedWatcherStateCop
 
 /// @nodoc
 abstract class _$InitialCopyWith<$Res> {
-  factory _$InitialCopyWith(_Initial value, $Res Function(_Initial) then) =
-      __$InitialCopyWithImpl<$Res>;
+  factory _$InitialCopyWith(_Initial value, $Res Function(_Initial) then) = __$InitialCopyWithImpl<$Res>;
 }
 
 /// @nodoc

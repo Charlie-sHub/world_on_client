@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:worldon/application/experience_management/reward_form/reward_form_bloc.dart';
 import 'package:worldon/generated/l10n.dart';
-import 'package:worldon/views/core/misc/common_functions/open_picture_select_dialog.dart';
+import 'package:worldon/views/core/misc/functions/open_picture_select_dialog.dart';
 import 'package:worldon/views/experience_management/widgets/reward_creation_card/reward_description_text_field.dart';
 import 'package:worldon/views/experience_management/widgets/reward_creation_card/reward_name_text_field.dart';
 import 'package:worldon/views/experience_management/widgets/reward_creation_card/submit_reward_button.dart';
@@ -21,7 +21,8 @@ class RewardCreationForm extends StatelessWidget {
   Widget build(BuildContext context) {
     final _rewardFormState = context.read<RewardFormBloc>().state;
     return Form(
-      autovalidateMode: _rewardFormState.showErrorMessages ? AutovalidateMode.always : AutovalidateMode.disabled,
+      autovalidateMode:
+          _rewardFormState.showErrorMessages ? AutovalidateMode.always : AutovalidateMode.disabled,
       child: Column(
         children: <Widget>[
           RewardNameTextField(textController: nameTextEditingController),

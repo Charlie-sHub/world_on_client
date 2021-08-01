@@ -346,8 +346,7 @@ abstract class _ObjectiveAccomplished implements ObjectivesTrackerEvent {
   Objective get objective => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
-  _$ObjectiveAccomplishedCopyWith<_ObjectiveAccomplished> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$ObjectiveAccomplishedCopyWith<_ObjectiveAccomplished> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -362,8 +361,7 @@ abstract class _$ObjectiveUnaccomplishedCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$ObjectiveUnaccomplishedCopyWithImpl<$Res>
-    extends _$ObjectivesTrackerEventCopyWithImpl<$Res>
+class __$ObjectiveUnaccomplishedCopyWithImpl<$Res> extends _$ObjectivesTrackerEventCopyWithImpl<$Res>
     implements _$ObjectiveUnaccomplishedCopyWith<$Res> {
   __$ObjectiveUnaccomplishedCopyWithImpl(
       _ObjectiveUnaccomplished _value, $Res Function(_ObjectiveUnaccomplished) _then)
@@ -509,8 +507,7 @@ mixin _$ObjectivesTrackerState {
   bool get showExplanation => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
-  $ObjectivesTrackerStateCopyWith<ObjectivesTrackerState> get copyWith =>
-      throw _privateConstructorUsedError;
+  $ObjectivesTrackerStateCopyWith<ObjectivesTrackerState> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -519,11 +516,7 @@ abstract class $ObjectivesTrackerStateCopyWith<$Res> {
           ObjectivesTrackerState value, $Res Function(ObjectivesTrackerState) then) =
       _$ObjectivesTrackerStateCopyWithImpl<$Res>;
 
-  $Res call(
-      {KtList<Objective> objectivesToDo,
-      UniqueId experienceId,
-      bool isFinished,
-      bool showExplanation});
+  $Res call({KtList<Objective> objectivesToDo, UniqueId experienceId, bool isFinished, bool showExplanation});
 }
 
 /// @nodoc
@@ -564,18 +557,13 @@ class _$ObjectivesTrackerStateCopyWithImpl<$Res> implements $ObjectivesTrackerSt
 }
 
 /// @nodoc
-abstract class _$ObjectivesTrackerStateCopyWith<$Res>
-    implements $ObjectivesTrackerStateCopyWith<$Res> {
+abstract class _$ObjectivesTrackerStateCopyWith<$Res> implements $ObjectivesTrackerStateCopyWith<$Res> {
   factory _$ObjectivesTrackerStateCopyWith(
           _ObjectivesTrackerState value, $Res Function(_ObjectivesTrackerState) then) =
       __$ObjectivesTrackerStateCopyWithImpl<$Res>;
 
   @override
-  $Res call(
-      {KtList<Objective> objectivesToDo,
-      UniqueId experienceId,
-      bool isFinished,
-      bool showExplanation});
+  $Res call({KtList<Objective> objectivesToDo, UniqueId experienceId, bool isFinished, bool showExplanation});
 }
 
 /// @nodoc

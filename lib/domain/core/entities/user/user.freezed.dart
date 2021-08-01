@@ -397,8 +397,7 @@ abstract class _$UserCopyWith<$Res> implements $UserCopyWith<$Res> {
 
 /// @nodoc
 class __$UserCopyWithImpl<$Res> extends _$UserCopyWithImpl<$Res> implements _$UserCopyWith<$Res> {
-  __$UserCopyWithImpl(_User _value, $Res Function(_User) _then)
-      : super(_value, (v) => _then(v as _User));
+  __$UserCopyWithImpl(_User _value, $Res Function(_User) _then) : super(_value, (v) => _then(v as _User));
 
   @override
   _User get _value => super._value as _User;
@@ -676,14 +675,12 @@ class _$_User extends _User {
     return identical(this, other) ||
         (other is _User &&
             (identical(other.id, id) || const DeepCollectionEquality().equals(other.id, id)) &&
-            (identical(other.name, name) ||
-                const DeepCollectionEquality().equals(other.name, name)) &&
+            (identical(other.name, name) || const DeepCollectionEquality().equals(other.name, name)) &&
             (identical(other.username, username) ||
                 const DeepCollectionEquality().equals(other.username, username)) &&
             (identical(other.password, password) ||
                 const DeepCollectionEquality().equals(other.password, password)) &&
-            (identical(other.email, email) ||
-                const DeepCollectionEquality().equals(other.email, email)) &&
+            (identical(other.email, email) || const DeepCollectionEquality().equals(other.email, email)) &&
             (identical(other.birthday, birthday) ||
                 const DeepCollectionEquality().equals(other.birthday, birthday)) &&
             (identical(other.description, description) ||
@@ -692,8 +689,7 @@ class _$_User extends _User {
                 const DeepCollectionEquality().equals(other.imageURL, imageURL)) &&
             (identical(other.imageFileOption, imageFileOption) ||
                 const DeepCollectionEquality().equals(other.imageFileOption, imageFileOption)) &&
-            (identical(other.level, level) ||
-                const DeepCollectionEquality().equals(other.level, level)) &&
+            (identical(other.level, level) || const DeepCollectionEquality().equals(other.level, level)) &&
             (identical(other.experiencePoints, experiencePoints) ||
                 const DeepCollectionEquality().equals(other.experiencePoints, experiencePoints)) &&
             (identical(other.privacy, privacy) ||
@@ -719,22 +715,17 @@ class _$_User extends _User {
             (identical(other.achievementsIds, achievementsIds) ||
                 const DeepCollectionEquality().equals(other.achievementsIds, achievementsIds)) &&
             (identical(other.experiencesDoneIds, experiencesDoneIds) ||
-                const DeepCollectionEquality()
-                    .equals(other.experiencesDoneIds, experiencesDoneIds)) &&
+                const DeepCollectionEquality().equals(other.experiencesDoneIds, experiencesDoneIds)) &&
             (identical(other.experiencesLikedIds, experiencesLikedIds) ||
-                const DeepCollectionEquality()
-                    .equals(other.experiencesLikedIds, experiencesLikedIds)) &&
+                const DeepCollectionEquality().equals(other.experiencesLikedIds, experiencesLikedIds)) &&
             (identical(other.experiencesToDoIds, experiencesToDoIds) ||
-                const DeepCollectionEquality()
-                    .equals(other.experiencesToDoIds, experiencesToDoIds)) &&
+                const DeepCollectionEquality().equals(other.experiencesToDoIds, experiencesToDoIds)) &&
             (identical(other.devices, devices) ||
                 const DeepCollectionEquality().equals(other.devices, devices)) &&
             (identical(other.systems, systems) ||
                 const DeepCollectionEquality().equals(other.systems, systems)) &&
-            (identical(other.items, items) ||
-                const DeepCollectionEquality().equals(other.items, items)) &&
-            (identical(other.coins, coins) ||
-                const DeepCollectionEquality().equals(other.coins, coins)) &&
+            (identical(other.items, items) || const DeepCollectionEquality().equals(other.items, items)) &&
+            (identical(other.coins, coins) || const DeepCollectionEquality().equals(other.coins, coins)) &&
             (identical(other.followersAmount, followersAmount) ||
                 const DeepCollectionEquality().equals(other.followersAmount, followersAmount)) &&
             (identical(other.promotionPlan, promotionPlan) ||

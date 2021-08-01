@@ -17,10 +17,7 @@ class _$PrimitiveRewardTearOff {
   const _$PrimitiveRewardTearOff();
 
   _PrimitiveReward call(
-      {required UniqueId id,
-      required String name,
-      required String description,
-      required File? imageFile}) {
+      {required UniqueId id, required String name, required String description, required File? imageFile}) {
     return _PrimitiveReward(
       id: id,
       name: name,
@@ -161,8 +158,7 @@ class _$_PrimitiveReward extends _PrimitiveReward {
     return identical(this, other) ||
         (other is _PrimitiveReward &&
             (identical(other.id, id) || const DeepCollectionEquality().equals(other.id, id)) &&
-            (identical(other.name, name) ||
-                const DeepCollectionEquality().equals(other.name, name)) &&
+            (identical(other.name, name) || const DeepCollectionEquality().equals(other.name, name)) &&
             (identical(other.description, description) ||
                 const DeepCollectionEquality().equals(other.description, description)) &&
             (identical(other.imageFile, imageFile) ||

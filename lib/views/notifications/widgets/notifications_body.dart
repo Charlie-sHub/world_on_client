@@ -67,7 +67,7 @@ class NotificationsBody extends StatelessWidget {
                   // Figured it must be using the context directly in a deleted widget
                   final _auxContext = context.read<NotificationActorBloc>();
                   final _message = _getNotificationMessage(context, _notification);
-                  if (!_notification.seen) {
+                  if (!_notification.seen && index < 5) {
                     _showLocalNotification(
                       index,
                       context,

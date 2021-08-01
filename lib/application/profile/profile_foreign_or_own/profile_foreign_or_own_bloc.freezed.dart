@@ -68,8 +68,7 @@ abstract class $ProfileForeignOrOwnEventCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$ProfileForeignOrOwnEventCopyWithImpl<$Res>
-    implements $ProfileForeignOrOwnEventCopyWith<$Res> {
+class _$ProfileForeignOrOwnEventCopyWithImpl<$Res> implements $ProfileForeignOrOwnEventCopyWith<$Res> {
   _$ProfileForeignOrOwnEventCopyWithImpl(this._value, this._then);
 
   final ProfileForeignOrOwnEvent _value;
@@ -90,8 +89,7 @@ class _$ProfileForeignOrOwnEventCopyWithImpl<$Res>
 }
 
 /// @nodoc
-abstract class _$InitializedForeignOrOwnCopyWith<$Res>
-    implements $ProfileForeignOrOwnEventCopyWith<$Res> {
+abstract class _$InitializedForeignOrOwnCopyWith<$Res> implements $ProfileForeignOrOwnEventCopyWith<$Res> {
   factory _$InitializedForeignOrOwnCopyWith(
           _InitializedForeignOrOwn value, $Res Function(_InitializedForeignOrOwn) then) =
       __$InitializedForeignOrOwnCopyWithImpl<$Res>;
@@ -101,8 +99,7 @@ abstract class _$InitializedForeignOrOwnCopyWith<$Res>
 }
 
 /// @nodoc
-class __$InitializedForeignOrOwnCopyWithImpl<$Res>
-    extends _$ProfileForeignOrOwnEventCopyWithImpl<$Res>
+class __$InitializedForeignOrOwnCopyWithImpl<$Res> extends _$ProfileForeignOrOwnEventCopyWithImpl<$Res>
     implements _$InitializedForeignOrOwnCopyWith<$Res> {
   __$InitializedForeignOrOwnCopyWithImpl(
       _InitializedForeignOrOwn _value, $Res Function(_InitializedForeignOrOwn) _then)
@@ -195,8 +192,7 @@ class _$_InitializedForeignOrOwn implements _InitializedForeignOrOwn {
 }
 
 abstract class _InitializedForeignOrOwn implements ProfileForeignOrOwnEvent {
-  const factory _InitializedForeignOrOwn(Option<UniqueId> userIdOption) =
-      _$_InitializedForeignOrOwn;
+  const factory _InitializedForeignOrOwn(Option<UniqueId> userIdOption) = _$_InitializedForeignOrOwn;
 
   @override
   Option<UniqueId> get userIdOption => throw _privateConstructorUsedError;
@@ -288,8 +284,7 @@ abstract class $ProfileForeignOrOwnStateCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$ProfileForeignOrOwnStateCopyWithImpl<$Res>
-    implements $ProfileForeignOrOwnStateCopyWith<$Res> {
+class _$ProfileForeignOrOwnStateCopyWithImpl<$Res> implements $ProfileForeignOrOwnStateCopyWith<$Res> {
   _$ProfileForeignOrOwnStateCopyWithImpl(this._value, this._then);
 
   final ProfileForeignOrOwnState _value;
@@ -299,8 +294,7 @@ class _$ProfileForeignOrOwnStateCopyWithImpl<$Res>
 
 /// @nodoc
 abstract class _$InitialCopyWith<$Res> {
-  factory _$InitialCopyWith(_Initial value, $Res Function(_Initial) then) =
-      __$InitialCopyWithImpl<$Res>;
+  factory _$InitialCopyWith(_Initial value, $Res Function(_Initial) then) = __$InitialCopyWithImpl<$Res>;
 }
 
 /// @nodoc
@@ -499,8 +493,7 @@ abstract class _$OwnCopyWith<$Res> {
 /// @nodoc
 class __$OwnCopyWithImpl<$Res> extends _$ProfileForeignOrOwnStateCopyWithImpl<$Res>
     implements _$OwnCopyWith<$Res> {
-  __$OwnCopyWithImpl(_Own _value, $Res Function(_Own) _then)
-      : super(_value, (v) => _then(v as _Own));
+  __$OwnCopyWithImpl(_Own _value, $Res Function(_Own) _then) : super(_value, (v) => _then(v as _Own));
 
   @override
   _Own get _value => super._value as _Own;
@@ -542,8 +535,7 @@ class _$_Own implements _Own {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other is _Own &&
-            (identical(other.user, user) ||
-                const DeepCollectionEquality().equals(other.user, user)));
+            (identical(other.user, user) || const DeepCollectionEquality().equals(other.user, user)));
   }
 
   @override
@@ -620,8 +612,7 @@ abstract class _Own implements ProfileForeignOrOwnState {
 
 /// @nodoc
 abstract class _$ForeignCopyWith<$Res> {
-  factory _$ForeignCopyWith(_Foreign value, $Res Function(_Foreign) then) =
-      __$ForeignCopyWithImpl<$Res>;
+  factory _$ForeignCopyWith(_Foreign value, $Res Function(_Foreign) then) = __$ForeignCopyWithImpl<$Res>;
   $Res call({User user});
 
   $UserCopyWith<$Res> get user;
@@ -673,8 +664,7 @@ class _$_Foreign implements _Foreign {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other is _Foreign &&
-            (identical(other.user, user) ||
-                const DeepCollectionEquality().equals(other.user, user)));
+            (identical(other.user, user) || const DeepCollectionEquality().equals(other.user, user)));
   }
 
   @override

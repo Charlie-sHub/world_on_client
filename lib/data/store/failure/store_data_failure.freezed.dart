@@ -267,8 +267,7 @@ abstract class $UnAvailableStoreCopyWith<T, $Res> {
 /// @nodoc
 class _$UnAvailableStoreCopyWithImpl<T, $Res> extends _$StoreDataFailureCopyWithImpl<T, $Res>
     implements $UnAvailableStoreCopyWith<T, $Res> {
-  _$UnAvailableStoreCopyWithImpl(
-      UnAvailableStore<T> _value, $Res Function(UnAvailableStore<T>) _then)
+  _$UnAvailableStoreCopyWithImpl(UnAvailableStore<T> _value, $Res Function(UnAvailableStore<T>) _then)
       : super(_value, (v) => _then(v as UnAvailableStore<T>));
 
   @override

@@ -12,7 +12,6 @@ _$_ObjectiveIdListDto _$_$_ObjectiveIdListDtoFromJson(Map<String, dynamic> json)
   );
 }
 
-Map<String, dynamic> _$_$_ObjectiveIdListDtoToJson(_$_ObjectiveIdListDto instance) =>
-    <String, dynamic>{
+Map<String, dynamic> _$_$_ObjectiveIdListDtoToJson(_$_ObjectiveIdListDto instance) => <String, dynamic>{
       'objectivesIds': instance.objectivesIds,
     };

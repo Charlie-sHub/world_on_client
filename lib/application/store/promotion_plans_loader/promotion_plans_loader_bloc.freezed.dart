@@ -77,8 +77,7 @@ abstract class _$LoadPromotionPlansCopyWith<$Res> {
 /// @nodoc
 class __$LoadPromotionPlansCopyWithImpl<$Res> extends _$PromotionPlansLoaderEventCopyWithImpl<$Res>
     implements _$LoadPromotionPlansCopyWith<$Res> {
-  __$LoadPromotionPlansCopyWithImpl(
-      _LoadPromotionPlans _value, $Res Function(_LoadPromotionPlans) _then)
+  __$LoadPromotionPlansCopyWithImpl(_LoadPromotionPlans _value, $Res Function(_LoadPromotionPlans) _then)
       : super(_value, (v) => _then(v as _LoadPromotionPlans));
 
   @override
@@ -534,8 +533,7 @@ abstract class _LoadedPromotionPlans implements PromotionPlansLoaderState {
   KtList<PromotionPlan> get plans => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
-  _$LoadedPromotionPlansCopyWith<_LoadedPromotionPlans> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$LoadedPromotionPlansCopyWith<_LoadedPromotionPlans> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc

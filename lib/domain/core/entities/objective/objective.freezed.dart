@@ -49,8 +49,7 @@ mixin _$Objective {
 
 /// @nodoc
 abstract class $ObjectiveCopyWith<$Res> {
-  factory $ObjectiveCopyWith(Objective value, $Res Function(Objective) then) =
-      _$ObjectiveCopyWithImpl<$Res>;
+  factory $ObjectiveCopyWith(Objective value, $Res Function(Objective) then) = _$ObjectiveCopyWithImpl<$Res>;
   $Res call(
       {UniqueId id,
       EntityDescription description,
@@ -221,8 +220,7 @@ class _$_Objective extends _Objective {
 
   @JsonKey(ignore: true)
   @override
-  _$ObjectiveCopyWith<_Objective> get copyWith =>
-      __$ObjectiveCopyWithImpl<_Objective>(this, _$identity);
+  _$ObjectiveCopyWith<_Objective> get copyWith => __$ObjectiveCopyWithImpl<_Objective>(this, _$identity);
 }
 
 abstract class _Objective extends Objective {

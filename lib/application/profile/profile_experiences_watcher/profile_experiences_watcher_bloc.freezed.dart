@@ -34,8 +34,7 @@ class _$ProfileExperiencesWatcherEventTearOff {
     );
   }
 
-  _ExperiencesReceived experiencesReceived(
-      Either<Failure, KtList<Experience>> failureOrExperiences) {
+  _ExperiencesReceived experiencesReceived(Either<Failure, KtList<Experience>> failureOrExperiences) {
     return _ExperiencesReceived(
       failureOrExperiences,
     );
@@ -52,8 +51,7 @@ mixin _$ProfileExperiencesWatcherEvent {
     required TResult Function(User user) watchExperiencesDoneStarted,
     required TResult Function(User user) watchExperiencesLikedStarted,
     required TResult Function(User user) watchExperiencesCreatedStarted,
-    required TResult Function(Either<Failure, KtList<Experience>> failureOrExperiences)
-        experiencesReceived,
+    required TResult Function(Either<Failure, KtList<Experience>> failureOrExperiences) experiencesReceived,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -86,8 +84,8 @@ mixin _$ProfileExperiencesWatcherEvent {
 
 /// @nodoc
 abstract class $ProfileExperiencesWatcherEventCopyWith<$Res> {
-  factory $ProfileExperiencesWatcherEventCopyWith(ProfileExperiencesWatcherEvent value,
-          $Res Function(ProfileExperiencesWatcherEvent) then) =
+  factory $ProfileExperiencesWatcherEventCopyWith(
+          ProfileExperiencesWatcherEvent value, $Res Function(ProfileExperiencesWatcherEvent) then) =
       _$ProfileExperiencesWatcherEventCopyWithImpl<$Res>;
 }
 
@@ -159,8 +157,7 @@ class _$_WatchExperiencesDoneStarted implements _WatchExperiencesDoneStarted {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other is _WatchExperiencesDoneStarted &&
-            (identical(other.user, user) ||
-                const DeepCollectionEquality().equals(other.user, user)));
+            (identical(other.user, user) || const DeepCollectionEquality().equals(other.user, user)));
   }
 
   @override
@@ -177,8 +174,7 @@ class _$_WatchExperiencesDoneStarted implements _WatchExperiencesDoneStarted {
     required TResult Function(User user) watchExperiencesDoneStarted,
     required TResult Function(User user) watchExperiencesLikedStarted,
     required TResult Function(User user) watchExperiencesCreatedStarted,
-    required TResult Function(Either<Failure, KtList<Experience>> failureOrExperiences)
-        experiencesReceived,
+    required TResult Function(Either<Failure, KtList<Experience>> failureOrExperiences) experiencesReceived,
   }) {
     return watchExperiencesDoneStarted(user);
   }
@@ -293,8 +289,7 @@ class _$_WatchExperiencesLikedStarted implements _WatchExperiencesLikedStarted {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other is _WatchExperiencesLikedStarted &&
-            (identical(other.user, user) ||
-                const DeepCollectionEquality().equals(other.user, user)));
+            (identical(other.user, user) || const DeepCollectionEquality().equals(other.user, user)));
   }
 
   @override
@@ -311,8 +306,7 @@ class _$_WatchExperiencesLikedStarted implements _WatchExperiencesLikedStarted {
     required TResult Function(User user) watchExperiencesDoneStarted,
     required TResult Function(User user) watchExperiencesLikedStarted,
     required TResult Function(User user) watchExperiencesCreatedStarted,
-    required TResult Function(Either<Failure, KtList<Experience>> failureOrExperiences)
-        experiencesReceived,
+    required TResult Function(Either<Failure, KtList<Experience>> failureOrExperiences) experiencesReceived,
   }) {
     return watchExperiencesLikedStarted(user);
   }
@@ -371,8 +365,8 @@ abstract class _WatchExperiencesLikedStarted implements ProfileExperiencesWatche
 
 /// @nodoc
 abstract class _$WatchExperiencesCreatedStartedCopyWith<$Res> {
-  factory _$WatchExperiencesCreatedStartedCopyWith(_WatchExperiencesCreatedStarted value,
-          $Res Function(_WatchExperiencesCreatedStarted) then) =
+  factory _$WatchExperiencesCreatedStartedCopyWith(
+          _WatchExperiencesCreatedStarted value, $Res Function(_WatchExperiencesCreatedStarted) then) =
       __$WatchExperiencesCreatedStartedCopyWithImpl<$Res>;
 
   $Res call({User user});
@@ -428,8 +422,7 @@ class _$_WatchExperiencesCreatedStarted implements _WatchExperiencesCreatedStart
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other is _WatchExperiencesCreatedStarted &&
-            (identical(other.user, user) ||
-                const DeepCollectionEquality().equals(other.user, user)));
+            (identical(other.user, user) || const DeepCollectionEquality().equals(other.user, user)));
   }
 
   @override
@@ -438,8 +431,7 @@ class _$_WatchExperiencesCreatedStarted implements _WatchExperiencesCreatedStart
   @JsonKey(ignore: true)
   @override
   _$WatchExperiencesCreatedStartedCopyWith<_WatchExperiencesCreatedStarted> get copyWith =>
-      __$WatchExperiencesCreatedStartedCopyWithImpl<_WatchExperiencesCreatedStarted>(
-          this, _$identity);
+      __$WatchExperiencesCreatedStartedCopyWithImpl<_WatchExperiencesCreatedStarted>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -447,8 +439,7 @@ class _$_WatchExperiencesCreatedStarted implements _WatchExperiencesCreatedStart
     required TResult Function(User user) watchExperiencesDoneStarted,
     required TResult Function(User user) watchExperiencesLikedStarted,
     required TResult Function(User user) watchExperiencesCreatedStarted,
-    required TResult Function(Either<Failure, KtList<Experience>> failureOrExperiences)
-        experiencesReceived,
+    required TResult Function(Either<Failure, KtList<Experience>> failureOrExperiences) experiencesReceived,
   }) {
     return watchExperiencesCreatedStarted(user);
   }
@@ -515,11 +506,9 @@ abstract class _$ExperiencesReceivedCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$ExperiencesReceivedCopyWithImpl<$Res>
-    extends _$ProfileExperiencesWatcherEventCopyWithImpl<$Res>
+class __$ExperiencesReceivedCopyWithImpl<$Res> extends _$ProfileExperiencesWatcherEventCopyWithImpl<$Res>
     implements _$ExperiencesReceivedCopyWith<$Res> {
-  __$ExperiencesReceivedCopyWithImpl(
-      _ExperiencesReceived _value, $Res Function(_ExperiencesReceived) _then)
+  __$ExperiencesReceivedCopyWithImpl(_ExperiencesReceived _value, $Res Function(_ExperiencesReceived) _then)
       : super(_value, (v) => _then(v as _ExperiencesReceived));
 
   @override
@@ -556,13 +545,11 @@ class _$_ExperiencesReceived implements _ExperiencesReceived {
     return identical(this, other) ||
         (other is _ExperiencesReceived &&
             (identical(other.failureOrExperiences, failureOrExperiences) ||
-                const DeepCollectionEquality()
-                    .equals(other.failureOrExperiences, failureOrExperiences)));
+                const DeepCollectionEquality().equals(other.failureOrExperiences, failureOrExperiences)));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(failureOrExperiences);
+  int get hashCode => runtimeType.hashCode ^ const DeepCollectionEquality().hash(failureOrExperiences);
 
   @JsonKey(ignore: true)
   @override
@@ -575,8 +562,7 @@ class _$_ExperiencesReceived implements _ExperiencesReceived {
     required TResult Function(User user) watchExperiencesDoneStarted,
     required TResult Function(User user) watchExperiencesLikedStarted,
     required TResult Function(User user) watchExperiencesCreatedStarted,
-    required TResult Function(Either<Failure, KtList<Experience>> failureOrExperiences)
-        experiencesReceived,
+    required TResult Function(Either<Failure, KtList<Experience>> failureOrExperiences) experiencesReceived,
   }) {
     return experiencesReceived(failureOrExperiences);
   }
@@ -627,12 +613,10 @@ abstract class _ExperiencesReceived implements ProfileExperiencesWatcherEvent {
   const factory _ExperiencesReceived(Either<Failure, KtList<Experience>> failureOrExperiences) =
       _$_ExperiencesReceived;
 
-  Either<Failure, KtList<Experience>> get failureOrExperiences =>
-      throw _privateConstructorUsedError;
+  Either<Failure, KtList<Experience>> get failureOrExperiences => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
-  _$ExperiencesReceivedCopyWith<_ExperiencesReceived> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$ExperiencesReceivedCopyWith<_ExperiencesReceived> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -703,8 +687,8 @@ mixin _$ProfileExperiencesWatcherState {
 
 /// @nodoc
 abstract class $ProfileExperiencesWatcherStateCopyWith<$Res> {
-  factory $ProfileExperiencesWatcherStateCopyWith(ProfileExperiencesWatcherState value,
-          $Res Function(ProfileExperiencesWatcherState) then) =
+  factory $ProfileExperiencesWatcherStateCopyWith(
+          ProfileExperiencesWatcherState value, $Res Function(ProfileExperiencesWatcherState) then) =
       _$ProfileExperiencesWatcherStateCopyWithImpl<$Res>;
 }
 
@@ -720,8 +704,7 @@ class _$ProfileExperiencesWatcherStateCopyWithImpl<$Res>
 
 /// @nodoc
 abstract class _$InitialCopyWith<$Res> {
-  factory _$InitialCopyWith(_Initial value, $Res Function(_Initial) then) =
-      __$InitialCopyWithImpl<$Res>;
+  factory _$InitialCopyWith(_Initial value, $Res Function(_Initial) then) = __$InitialCopyWithImpl<$Res>;
 }
 
 /// @nodoc

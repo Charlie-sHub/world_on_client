@@ -37,8 +37,7 @@ mixin _$SearchExperiencesByTagsEvent {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(Set<Tag> tags) submitted,
-    required TResult Function(Either<Failure, KtList<Experience>> failureOrExperiences)
-        resultsReceived,
+    required TResult Function(Either<Failure, KtList<Experience>> failureOrExperiences) resultsReceived,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -143,8 +142,7 @@ class _$_Submitted implements _Submitted {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(Set<Tag> tags) submitted,
-    required TResult Function(Either<Failure, KtList<Experience>> failureOrExperiences)
-        resultsReceived,
+    required TResult Function(Either<Failure, KtList<Experience>> failureOrExperiences) resultsReceived,
   }) {
     return submitted(tags);
   }
@@ -247,8 +245,7 @@ class _$_ResultsReceived implements _ResultsReceived {
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(failureOrExperiences);
+  int get hashCode => runtimeType.hashCode ^ const DeepCollectionEquality().hash(failureOrExperiences);
 
   @JsonKey(ignore: true)
   @override
@@ -259,8 +256,7 @@ class _$_ResultsReceived implements _ResultsReceived {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(Set<Tag> tags) submitted,
-    required TResult Function(Either<Failure, KtList<Experience>> failureOrExperiences)
-        resultsReceived,
+    required TResult Function(Either<Failure, KtList<Experience>> failureOrExperiences) resultsReceived,
   }) {
     return resultsReceived(failureOrExperiences);
   }
@@ -305,8 +301,7 @@ abstract class _ResultsReceived implements SearchExperiencesByTagsEvent {
   const factory _ResultsReceived(Either<Failure, KtList<Experience>> failureOrExperiences) =
       _$_ResultsReceived;
 
-  Either<Failure, KtList<Experience>> get failureOrExperiences =>
-      throw _privateConstructorUsedError;
+  Either<Failure, KtList<Experience>> get failureOrExperiences => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
   _$ResultsReceivedCopyWith<_ResultsReceived> get copyWith => throw _privateConstructorUsedError;

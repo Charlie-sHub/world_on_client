@@ -100,8 +100,7 @@ class _$TagManagementActorEventCopyWithImpl<$Res>
 
 /// @nodoc
 abstract class _$DeletedCopyWith<$Res> implements $TagManagementActorEventCopyWith<$Res> {
-  factory _$DeletedCopyWith(_Deleted value, $Res Function(_Deleted) then) =
-      __$DeletedCopyWithImpl<$Res>;
+  factory _$DeletedCopyWith(_Deleted value, $Res Function(_Deleted) then) = __$DeletedCopyWithImpl<$Res>;
 
   @override
   $Res call({Tag tag});

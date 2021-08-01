@@ -30,8 +30,7 @@ class _$NavigationActorEventTearOff {
     );
   }
 
-  _ProfileTapped profileTapped(
-      {required Option<UniqueId> userIdOption, required bool currentUserProfile}) {
+  _ProfileTapped profileTapped({required Option<UniqueId> userIdOption, required bool currentUserProfile}) {
     return _ProfileTapped(
       userIdOption: userIdOption,
       currentUserProfile: currentUserProfile,
@@ -304,8 +303,7 @@ abstract class _$ExperienceNavigationTappedCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$ExperienceNavigationTappedCopyWithImpl<$Res>
-    extends _$NavigationActorEventCopyWithImpl<$Res>
+class __$ExperienceNavigationTappedCopyWithImpl<$Res> extends _$NavigationActorEventCopyWithImpl<$Res>
     implements _$ExperienceNavigationTappedCopyWith<$Res> {
   __$ExperienceNavigationTappedCopyWithImpl(
       _ExperienceNavigationTapped _value, $Res Function(_ExperienceNavigationTapped) _then)
@@ -481,8 +479,7 @@ class _$_ProfileTapped implements _ProfileTapped {
             (identical(other.userIdOption, userIdOption) ||
                 const DeepCollectionEquality().equals(other.userIdOption, userIdOption)) &&
             (identical(other.currentUserProfile, currentUserProfile) ||
-                const DeepCollectionEquality()
-                    .equals(other.currentUserProfile, currentUserProfile)));
+                const DeepCollectionEquality().equals(other.currentUserProfile, currentUserProfile)));
   }
 
   @override
@@ -554,9 +551,8 @@ class _$_ProfileTapped implements _ProfileTapped {
 }
 
 abstract class _ProfileTapped implements NavigationActorEvent {
-  const factory _ProfileTapped(
-      {required Option<UniqueId> userIdOption,
-      required bool currentUserProfile}) = _$_ProfileTapped;
+  const factory _ProfileTapped({required Option<UniqueId> userIdOption, required bool currentUserProfile}) =
+      _$_ProfileTapped;
 
   Option<UniqueId> get userIdOption => throw _privateConstructorUsedError;
 
@@ -576,8 +572,7 @@ abstract class _$NotificationsTappedCopyWith<$Res> {
 /// @nodoc
 class __$NotificationsTappedCopyWithImpl<$Res> extends _$NavigationActorEventCopyWithImpl<$Res>
     implements _$NotificationsTappedCopyWith<$Res> {
-  __$NotificationsTappedCopyWithImpl(
-      _NotificationsTapped _value, $Res Function(_NotificationsTapped) _then)
+  __$NotificationsTappedCopyWithImpl(_NotificationsTapped _value, $Res Function(_NotificationsTapped) _then)
       : super(_value, (v) => _then(v as _NotificationsTapped));
 
   @override
@@ -681,8 +676,7 @@ class _$NavigationActorStateTearOff {
     );
   }
 
-  _ProfileView profileView(
-      {required Option<UniqueId> userIdOption, required bool currentUserProfile}) {
+  _ProfileView profileView({required Option<UniqueId> userIdOption, required bool currentUserProfile}) {
     return _ProfileView(
       userIdOption: userIdOption,
       currentUserProfile: currentUserProfile,
@@ -1085,8 +1079,7 @@ class _$_NavigateExperienceView implements _NavigateExperienceView {
 }
 
 abstract class _NavigateExperienceView implements NavigationActorState {
-  const factory _NavigateExperienceView(Option<Experience> experienceOption) =
-      _$_NavigateExperienceView;
+  const factory _NavigateExperienceView(Option<Experience> experienceOption) = _$_NavigateExperienceView;
 
   Option<Experience> get experienceOption => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -1151,8 +1144,7 @@ class _$_ProfileView implements _ProfileView {
             (identical(other.userIdOption, userIdOption) ||
                 const DeepCollectionEquality().equals(other.userIdOption, userIdOption)) &&
             (identical(other.currentUserProfile, currentUserProfile) ||
-                const DeepCollectionEquality()
-                    .equals(other.currentUserProfile, currentUserProfile)));
+                const DeepCollectionEquality().equals(other.currentUserProfile, currentUserProfile)));
   }
 
   @override
@@ -1228,8 +1220,8 @@ class _$_ProfileView implements _ProfileView {
 }
 
 abstract class _ProfileView implements NavigationActorState {
-  const factory _ProfileView(
-      {required Option<UniqueId> userIdOption, required bool currentUserProfile}) = _$_ProfileView;
+  const factory _ProfileView({required Option<UniqueId> userIdOption, required bool currentUserProfile}) =
+      _$_ProfileView;
 
   Option<UniqueId> get userIdOption => throw _privateConstructorUsedError;
 
@@ -1340,16 +1332,14 @@ abstract class _ErrorView implements NavigationActorState {
 
 /// @nodoc
 abstract class _$NotificationsViewCopyWith<$Res> {
-  factory _$NotificationsViewCopyWith(
-          _NotificationsView value, $Res Function(_NotificationsView) then) =
+  factory _$NotificationsViewCopyWith(_NotificationsView value, $Res Function(_NotificationsView) then) =
       __$NotificationsViewCopyWithImpl<$Res>;
 }
 
 /// @nodoc
 class __$NotificationsViewCopyWithImpl<$Res> extends _$NavigationActorStateCopyWithImpl<$Res>
     implements _$NotificationsViewCopyWith<$Res> {
-  __$NotificationsViewCopyWithImpl(
-      _NotificationsView _value, $Res Function(_NotificationsView) _then)
+  __$NotificationsViewCopyWithImpl(_NotificationsView _value, $Res Function(_NotificationsView) _then)
       : super(_value, (v) => _then(v as _NotificationsView));
 
   @override

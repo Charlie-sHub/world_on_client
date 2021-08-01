@@ -2,8 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:worldon/application/authentication/registration_form/registration_form_bloc.dart';
 import 'package:worldon/generated/l10n.dart';
-
-import '../../../core/misc/common_functions/open_picture_select_dialog.dart';
+import 'package:worldon/views/core/misc/functions/open_picture_select_dialog.dart';
 
 class CameraButton extends StatelessWidget {
   @override

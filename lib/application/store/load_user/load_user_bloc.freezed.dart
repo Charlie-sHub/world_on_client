@@ -229,8 +229,7 @@ class _$LoadUserStateCopyWithImpl<$Res> implements $LoadUserStateCopyWith<$Res> 
 
 /// @nodoc
 abstract class _$InitialCopyWith<$Res> {
-  factory _$InitialCopyWith(_Initial value, $Res Function(_Initial) then) =
-      __$InitialCopyWithImpl<$Res>;
+  factory _$InitialCopyWith(_Initial value, $Res Function(_Initial) then) = __$InitialCopyWithImpl<$Res>;
 }
 
 /// @nodoc
@@ -320,8 +319,7 @@ abstract class _Initial implements LoadUserState {
 
 /// @nodoc
 abstract class _$ActionInProgressCopyWith<$Res> {
-  factory _$ActionInProgressCopyWith(
-          _ActionInProgress value, $Res Function(_ActionInProgress) then) =
+  factory _$ActionInProgressCopyWith(_ActionInProgress value, $Res Function(_ActionInProgress) then) =
       __$ActionInProgressCopyWithImpl<$Res>;
 }
 
@@ -466,8 +464,7 @@ class _$_LoadSuccess implements _LoadSuccess {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other is _LoadSuccess &&
-            (identical(other.user, user) ||
-                const DeepCollectionEquality().equals(other.user, user)));
+            (identical(other.user, user) || const DeepCollectionEquality().equals(other.user, user)));
   }
 
   @override

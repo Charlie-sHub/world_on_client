@@ -487,15 +487,13 @@ class _$_Experience extends _Experience {
     return identical(this, other) ||
         (other is _Experience &&
             (identical(other.id, id) || const DeepCollectionEquality().equals(other.id, id)) &&
-            (identical(other.title, title) ||
-                const DeepCollectionEquality().equals(other.title, title)) &&
+            (identical(other.title, title) || const DeepCollectionEquality().equals(other.title, title)) &&
             (identical(other.description, description) ||
                 const DeepCollectionEquality().equals(other.description, description)) &&
             (identical(other.imageURLs, imageURLs) ||
                 const DeepCollectionEquality().equals(other.imageURLs, imageURLs)) &&
             (identical(other.imageAssetsOption, imageAssetsOption) ||
-                const DeepCollectionEquality()
-                    .equals(other.imageAssetsOption, imageAssetsOption)) &&
+                const DeepCollectionEquality().equals(other.imageAssetsOption, imageAssetsOption)) &&
             (identical(other.coordinates, coordinates) ||
                 const DeepCollectionEquality().equals(other.coordinates, coordinates)) &&
             (identical(other.location, location) ||
@@ -512,8 +510,7 @@ class _$_Experience extends _Experience {
                 const DeepCollectionEquality().equals(other.objectives, objectives)) &&
             (identical(other.rewards, rewards) ||
                 const DeepCollectionEquality().equals(other.rewards, rewards)) &&
-            (identical(other.tags, tags) ||
-                const DeepCollectionEquality().equals(other.tags, tags)) &&
+            (identical(other.tags, tags) || const DeepCollectionEquality().equals(other.tags, tags)) &&
             (identical(other.comments, comments) ||
                 const DeepCollectionEquality().equals(other.comments, comments)) &&
             (identical(other.likedBy, likedBy) ||
@@ -551,8 +548,7 @@ class _$_Experience extends _Experience {
 
   @JsonKey(ignore: true)
   @override
-  _$ExperienceCopyWith<_Experience> get copyWith =>
-      __$ExperienceCopyWithImpl<_Experience>(this, _$identity);
+  _$ExperienceCopyWith<_Experience> get copyWith => __$ExperienceCopyWithImpl<_Experience>(this, _$identity);
 }
 
 abstract class _Experience extends Experience {

@@ -243,14 +243,12 @@ class _$_SimpleUser extends _SimpleUser {
     return identical(this, other) ||
         (other is _SimpleUser &&
             (identical(other.id, id) || const DeepCollectionEquality().equals(other.id, id)) &&
-            (identical(other.name, name) ||
-                const DeepCollectionEquality().equals(other.name, name)) &&
+            (identical(other.name, name) || const DeepCollectionEquality().equals(other.name, name)) &&
             (identical(other.username, username) ||
                 const DeepCollectionEquality().equals(other.username, username)) &&
             (identical(other.imageURL, imageURL) ||
                 const DeepCollectionEquality().equals(other.imageURL, imageURL)) &&
-            (identical(other.level, level) ||
-                const DeepCollectionEquality().equals(other.level, level)) &&
+            (identical(other.level, level) || const DeepCollectionEquality().equals(other.level, level)) &&
             (identical(other.experiencePoints, experiencePoints) ||
                 const DeepCollectionEquality().equals(other.experiencePoints, experiencePoints)) &&
             (identical(other.adminPowers, adminPowers) ||

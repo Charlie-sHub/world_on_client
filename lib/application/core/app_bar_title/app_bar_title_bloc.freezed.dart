@@ -997,8 +997,7 @@ abstract class _$ShowedNotificationsCopyWith<$Res> {
 /// @nodoc
 class __$ShowedNotificationsCopyWithImpl<$Res> extends _$AppBarTitleEventCopyWithImpl<$Res>
     implements _$ShowedNotificationsCopyWith<$Res> {
-  __$ShowedNotificationsCopyWithImpl(
-      _ShowedNotifications _value, $Res Function(_ShowedNotifications) _then)
+  __$ShowedNotificationsCopyWithImpl(_ShowedNotifications _value, $Res Function(_ShowedNotifications) _then)
       : super(_value, (v) => _then(v as _ShowedNotifications));
 
   @override
@@ -1641,8 +1640,7 @@ class _$AppBarTitleStateCopyWithImpl<$Res> implements $AppBarTitleStateCopyWith<
 
 /// @nodoc
 abstract class _$InitialCopyWith<$Res> {
-  factory _$InitialCopyWith(_Initial value, $Res Function(_Initial) then) =
-      __$InitialCopyWithImpl<$Res>;
+  factory _$InitialCopyWith(_Initial value, $Res Function(_Initial) then) = __$InitialCopyWithImpl<$Res>;
 }
 
 /// @nodoc
@@ -1764,8 +1762,7 @@ abstract class _Initial implements AppBarTitleState {
 
 /// @nodoc
 abstract class _$MainFeedCopyWith<$Res> {
-  factory _$MainFeedCopyWith(_MainFeed value, $Res Function(_MainFeed) then) =
-      __$MainFeedCopyWithImpl<$Res>;
+  factory _$MainFeedCopyWith(_MainFeed value, $Res Function(_MainFeed) then) = __$MainFeedCopyWithImpl<$Res>;
 }
 
 /// @nodoc
@@ -1887,8 +1884,7 @@ abstract class _MainFeed implements AppBarTitleState {
 
 /// @nodoc
 abstract class _$SearchCopyWith<$Res> {
-  factory _$SearchCopyWith(_Search value, $Res Function(_Search) then) =
-      __$SearchCopyWithImpl<$Res>;
+  factory _$SearchCopyWith(_Search value, $Res Function(_Search) then) = __$SearchCopyWithImpl<$Res>;
 }
 
 /// @nodoc
@@ -2258,8 +2254,7 @@ abstract class _ExperienceNavigation implements AppBarTitleState {
 
 /// @nodoc
 abstract class _$ExperienceFinishCopyWith<$Res> {
-  factory _$ExperienceFinishCopyWith(
-          _ExperienceFinish value, $Res Function(_ExperienceFinish) then) =
+  factory _$ExperienceFinishCopyWith(_ExperienceFinish value, $Res Function(_ExperienceFinish) then) =
       __$ExperienceFinishCopyWithImpl<$Res>;
 }
 
@@ -2382,8 +2377,7 @@ abstract class _ExperienceFinish implements AppBarTitleState {
 
 /// @nodoc
 abstract class _$ProfileCopyWith<$Res> {
-  factory _$ProfileCopyWith(_Profile value, $Res Function(_Profile) then) =
-      __$ProfileCopyWithImpl<$Res>;
+  factory _$ProfileCopyWith(_Profile value, $Res Function(_Profile) then) = __$ProfileCopyWithImpl<$Res>;
 }
 
 /// @nodoc
@@ -2874,8 +2868,7 @@ abstract class _Following implements AppBarTitleState {
 
 /// @nodoc
 abstract class _$UsernameCopyWith<$Res> {
-  factory _$UsernameCopyWith(_Username value, $Res Function(_Username) then) =
-      __$UsernameCopyWithImpl<$Res>;
+  factory _$UsernameCopyWith(_Username value, $Res Function(_Username) then) = __$UsernameCopyWithImpl<$Res>;
   $Res call({String username});
 }
 
@@ -2927,8 +2920,7 @@ class _$_Username implements _Username {
 
   @JsonKey(ignore: true)
   @override
-  _$UsernameCopyWith<_Username> get copyWith =>
-      __$UsernameCopyWithImpl<_Username>(this, _$identity);
+  _$UsernameCopyWith<_Username> get copyWith => __$UsernameCopyWithImpl<_Username>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -3032,8 +3024,7 @@ abstract class _$ErrorCopyWith<$Res> {
 /// @nodoc
 class __$ErrorCopyWithImpl<$Res> extends _$AppBarTitleStateCopyWithImpl<$Res>
     implements _$ErrorCopyWith<$Res> {
-  __$ErrorCopyWithImpl(_Error _value, $Res Function(_Error) _then)
-      : super(_value, (v) => _then(v as _Error));
+  __$ErrorCopyWithImpl(_Error _value, $Res Function(_Error) _then) : super(_value, (v) => _then(v as _Error));
 
   @override
   _Error get _value => super._value as _Error;

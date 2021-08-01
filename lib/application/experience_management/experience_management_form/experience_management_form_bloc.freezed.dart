@@ -364,8 +364,7 @@ class _$_TitleChanged implements _TitleChanged {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other is _TitleChanged &&
-            (identical(other.title, title) ||
-                const DeepCollectionEquality().equals(other.title, title)));
+            (identical(other.title, title) || const DeepCollectionEquality().equals(other.title, title)));
   }
 
   @override
@@ -468,18 +467,15 @@ abstract class _TitleChanged implements ExperienceManagementFormEvent {
 
 /// @nodoc
 abstract class _$DescriptionChangedCopyWith<$Res> {
-  factory _$DescriptionChangedCopyWith(
-          _DescriptionChanged value, $Res Function(_DescriptionChanged) then) =
+  factory _$DescriptionChangedCopyWith(_DescriptionChanged value, $Res Function(_DescriptionChanged) then) =
       __$DescriptionChangedCopyWithImpl<$Res>;
   $Res call({String description});
 }
 
 /// @nodoc
-class __$DescriptionChangedCopyWithImpl<$Res>
-    extends _$ExperienceManagementFormEventCopyWithImpl<$Res>
+class __$DescriptionChangedCopyWithImpl<$Res> extends _$ExperienceManagementFormEventCopyWithImpl<$Res>
     implements _$DescriptionChangedCopyWith<$Res> {
-  __$DescriptionChangedCopyWithImpl(
-      _DescriptionChanged _value, $Res Function(_DescriptionChanged) _then)
+  __$DescriptionChangedCopyWithImpl(_DescriptionChanged _value, $Res Function(_DescriptionChanged) _then)
       : super(_value, (v) => _then(v as _DescriptionChanged));
 
   @override
@@ -613,8 +609,7 @@ abstract class _DescriptionChanged implements ExperienceManagementFormEvent {
 
   String get description => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  _$DescriptionChangedCopyWith<_DescriptionChanged> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$DescriptionChangedCopyWith<_DescriptionChanged> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -917,18 +912,15 @@ abstract class _ImagesChanged implements ExperienceManagementFormEvent {
 
 /// @nodoc
 abstract class _$CoordinatesChangedCopyWith<$Res> {
-  factory _$CoordinatesChangedCopyWith(
-          _CoordinatesChanged value, $Res Function(_CoordinatesChanged) then) =
+  factory _$CoordinatesChangedCopyWith(_CoordinatesChanged value, $Res Function(_CoordinatesChanged) then) =
       __$CoordinatesChangedCopyWithImpl<$Res>;
   $Res call({double latitude, double longitude});
 }
 
 /// @nodoc
-class __$CoordinatesChangedCopyWithImpl<$Res>
-    extends _$ExperienceManagementFormEventCopyWithImpl<$Res>
+class __$CoordinatesChangedCopyWithImpl<$Res> extends _$ExperienceManagementFormEventCopyWithImpl<$Res>
     implements _$CoordinatesChangedCopyWith<$Res> {
-  __$CoordinatesChangedCopyWithImpl(
-      _CoordinatesChanged _value, $Res Function(_CoordinatesChanged) _then)
+  __$CoordinatesChangedCopyWithImpl(_CoordinatesChanged _value, $Res Function(_CoordinatesChanged) _then)
       : super(_value, (v) => _then(v as _CoordinatesChanged));
 
   @override
@@ -1078,24 +1070,20 @@ abstract class _CoordinatesChanged implements ExperienceManagementFormEvent {
   double get longitude => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
-  _$CoordinatesChangedCopyWith<_CoordinatesChanged> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$CoordinatesChangedCopyWith<_CoordinatesChanged> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class _$DifficultyChangedCopyWith<$Res> {
-  factory _$DifficultyChangedCopyWith(
-          _DifficultyChanged value, $Res Function(_DifficultyChanged) then) =
+  factory _$DifficultyChangedCopyWith(_DifficultyChanged value, $Res Function(_DifficultyChanged) then) =
       __$DifficultyChangedCopyWithImpl<$Res>;
   $Res call({int difficulty});
 }
 
 /// @nodoc
-class __$DifficultyChangedCopyWithImpl<$Res>
-    extends _$ExperienceManagementFormEventCopyWithImpl<$Res>
+class __$DifficultyChangedCopyWithImpl<$Res> extends _$ExperienceManagementFormEventCopyWithImpl<$Res>
     implements _$DifficultyChangedCopyWith<$Res> {
-  __$DifficultyChangedCopyWithImpl(
-      _DifficultyChanged _value, $Res Function(_DifficultyChanged) _then)
+  __$DifficultyChangedCopyWithImpl(_DifficultyChanged _value, $Res Function(_DifficultyChanged) _then)
       : super(_value, (v) => _then(v as _DifficultyChanged));
 
   @override
@@ -1229,24 +1217,20 @@ abstract class _DifficultyChanged implements ExperienceManagementFormEvent {
 
   int get difficulty => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  _$DifficultyChangedCopyWith<_DifficultyChanged> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$DifficultyChangedCopyWith<_DifficultyChanged> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class _$ObjectivesChangedCopyWith<$Res> {
-  factory _$ObjectivesChangedCopyWith(
-          _ObjectivesChanged value, $Res Function(_ObjectivesChanged) then) =
+  factory _$ObjectivesChangedCopyWith(_ObjectivesChanged value, $Res Function(_ObjectivesChanged) then) =
       __$ObjectivesChangedCopyWithImpl<$Res>;
   $Res call({KtList<Objective> objectives});
 }
 
 /// @nodoc
-class __$ObjectivesChangedCopyWithImpl<$Res>
-    extends _$ExperienceManagementFormEventCopyWithImpl<$Res>
+class __$ObjectivesChangedCopyWithImpl<$Res> extends _$ExperienceManagementFormEventCopyWithImpl<$Res>
     implements _$ObjectivesChangedCopyWith<$Res> {
-  __$ObjectivesChangedCopyWithImpl(
-      _ObjectivesChanged _value, $Res Function(_ObjectivesChanged) _then)
+  __$ObjectivesChangedCopyWithImpl(_ObjectivesChanged _value, $Res Function(_ObjectivesChanged) _then)
       : super(_value, (v) => _then(v as _ObjectivesChanged));
 
   @override
@@ -1381,8 +1365,7 @@ abstract class _ObjectivesChanged implements ExperienceManagementFormEvent {
   KtList<Objective> get objectives => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
-  _$ObjectivesChangedCopyWith<_ObjectivesChanged> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$ObjectivesChangedCopyWith<_ObjectivesChanged> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -1581,8 +1564,7 @@ class _$_TagsChanged implements _TagsChanged {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other is _TagsChanged &&
-            (identical(other.tags, tags) ||
-                const DeepCollectionEquality().equals(other.tags, tags)));
+            (identical(other.tags, tags) || const DeepCollectionEquality().equals(other.tags, tags)));
   }
 
   @override
@@ -1929,8 +1911,8 @@ class _$ExperienceManagementFormStateCopyWithImpl<$Res>
 /// @nodoc
 abstract class _$ExperienceManagementFormStateCopyWith<$Res>
     implements $ExperienceManagementFormStateCopyWith<$Res> {
-  factory _$ExperienceManagementFormStateCopyWith(_ExperienceManagementFormState value,
-          $Res Function(_ExperienceManagementFormState) then) =
+  factory _$ExperienceManagementFormStateCopyWith(
+          _ExperienceManagementFormState value, $Res Function(_ExperienceManagementFormState) then) =
       __$ExperienceManagementFormStateCopyWithImpl<$Res>;
 
   @override
@@ -2040,21 +2022,17 @@ class _$_ExperienceManagementFormState implements _ExperienceManagementFormState
             (identical(other.experience, experience) ||
                 const DeepCollectionEquality().equals(other.experience, experience)) &&
             (identical(other.originalImageUrls, originalImageUrls) ||
-                const DeepCollectionEquality()
-                    .equals(other.originalImageUrls, originalImageUrls)) &&
+                const DeepCollectionEquality().equals(other.originalImageUrls, originalImageUrls)) &&
             (identical(other.showErrorMessages, showErrorMessages) ||
-                const DeepCollectionEquality()
-                    .equals(other.showErrorMessages, showErrorMessages)) &&
+                const DeepCollectionEquality().equals(other.showErrorMessages, showErrorMessages)) &&
             (identical(other.isEditing, isEditing) ||
                 const DeepCollectionEquality().equals(other.isEditing, isEditing)) &&
             (identical(other.isSubmitting, isSubmitting) ||
                 const DeepCollectionEquality().equals(other.isSubmitting, isSubmitting)) &&
             (identical(other.loadedCoordinates, loadedCoordinates) ||
-                const DeepCollectionEquality()
-                    .equals(other.loadedCoordinates, loadedCoordinates)) &&
+                const DeepCollectionEquality().equals(other.loadedCoordinates, loadedCoordinates)) &&
             (identical(other.failureOrSuccessOption, failureOrSuccessOption) ||
-                const DeepCollectionEquality()
-                    .equals(other.failureOrSuccessOption, failureOrSuccessOption)));
+                const DeepCollectionEquality().equals(other.failureOrSuccessOption, failureOrSuccessOption)));
   }
 
   @override
@@ -2071,20 +2049,18 @@ class _$_ExperienceManagementFormState implements _ExperienceManagementFormState
   @JsonKey(ignore: true)
   @override
   _$ExperienceManagementFormStateCopyWith<_ExperienceManagementFormState> get copyWith =>
-      __$ExperienceManagementFormStateCopyWithImpl<_ExperienceManagementFormState>(
-          this, _$identity);
+      __$ExperienceManagementFormStateCopyWithImpl<_ExperienceManagementFormState>(this, _$identity);
 }
 
 abstract class _ExperienceManagementFormState implements ExperienceManagementFormState {
   const factory _ExperienceManagementFormState(
-          {required Experience experience,
-          required List<String> originalImageUrls,
-          required bool showErrorMessages,
-          required bool isEditing,
-          required bool isSubmitting,
-          required bool loadedCoordinates,
-          required Option<Either<Failure, Unit>> failureOrSuccessOption}) =
-      _$_ExperienceManagementFormState;
+      {required Experience experience,
+      required List<String> originalImageUrls,
+      required bool showErrorMessages,
+      required bool isEditing,
+      required bool isSubmitting,
+      required bool loadedCoordinates,
+      required Option<Either<Failure, Unit>> failureOrSuccessOption}) = _$_ExperienceManagementFormState;
 
   @override
   Experience get experience => throw _privateConstructorUsedError;

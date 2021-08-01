@@ -224,8 +224,7 @@ abstract class _Initialized implements FollowActorEvent {
 
 /// @nodoc
 abstract class _$FollowedCopyWith<$Res> {
-  factory _$FollowedCopyWith(_Followed value, $Res Function(_Followed) then) =
-      __$FollowedCopyWithImpl<$Res>;
+  factory _$FollowedCopyWith(_Followed value, $Res Function(_Followed) then) = __$FollowedCopyWithImpl<$Res>;
   $Res call({UniqueId userToFollowId, SimpleUser currentUser});
 
   $SimpleUserCopyWith<$Res> get currentUser;
@@ -298,8 +297,7 @@ class _$_Followed implements _Followed {
 
   @JsonKey(ignore: true)
   @override
-  _$FollowedCopyWith<_Followed> get copyWith =>
-      __$FollowedCopyWithImpl<_Followed>(this, _$identity);
+  _$FollowedCopyWith<_Followed> get copyWith => __$FollowedCopyWithImpl<_Followed>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -438,8 +436,7 @@ class _$_UnFollowed implements _UnFollowed {
 
   @JsonKey(ignore: true)
   @override
-  _$UnFollowedCopyWith<_UnFollowed> get copyWith =>
-      __$UnFollowedCopyWithImpl<_UnFollowed>(this, _$identity);
+  _$UnFollowedCopyWith<_UnFollowed> get copyWith => __$UnFollowedCopyWithImpl<_UnFollowed>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -617,8 +614,7 @@ class _$FollowActorStateCopyWithImpl<$Res> implements $FollowActorStateCopyWith<
 
 /// @nodoc
 abstract class _$InitialCopyWith<$Res> {
-  factory _$InitialCopyWith(_Initial value, $Res Function(_Initial) then) =
-      __$InitialCopyWithImpl<$Res>;
+  factory _$InitialCopyWith(_Initial value, $Res Function(_Initial) then) = __$InitialCopyWithImpl<$Res>;
 }
 
 /// @nodoc
@@ -724,8 +720,7 @@ abstract class _Initial implements FollowActorState {
 
 /// @nodoc
 abstract class _$ActionInProgressCopyWith<$Res> {
-  factory _$ActionInProgressCopyWith(
-          _ActionInProgress value, $Res Function(_ActionInProgress) then) =
+  factory _$ActionInProgressCopyWith(_ActionInProgress value, $Res Function(_ActionInProgress) then) =
       __$ActionInProgressCopyWithImpl<$Res>;
 }
 
@@ -832,8 +827,7 @@ abstract class _ActionInProgress implements FollowActorState {
 
 /// @nodoc
 abstract class _$FollowsCopyWith<$Res> {
-  factory _$FollowsCopyWith(_Follows value, $Res Function(_Follows) then) =
-      __$FollowsCopyWithImpl<$Res>;
+  factory _$FollowsCopyWith(_Follows value, $Res Function(_Follows) then) = __$FollowsCopyWithImpl<$Res>;
 }
 
 /// @nodoc

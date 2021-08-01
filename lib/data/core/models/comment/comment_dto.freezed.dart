@@ -258,8 +258,7 @@ class _$_CommentDto extends _CommentDto {
 
   @JsonKey(ignore: true)
   @override
-  _$CommentDtoCopyWith<_CommentDto> get copyWith =>
-      __$CommentDtoCopyWithImpl<_CommentDto>(this, _$identity);
+  _$CommentDtoCopyWith<_CommentDto> get copyWith => __$CommentDtoCopyWithImpl<_CommentDto>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {

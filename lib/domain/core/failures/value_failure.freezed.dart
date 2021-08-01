@@ -837,8 +837,7 @@ abstract class InvalidPassword<T> implements ValueFailure<T> {
   String get failedValue => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
-  $InvalidPasswordCopyWith<T, InvalidPassword<T>> get copyWith =>
-      throw _privateConstructorUsedError;
+  $InvalidPasswordCopyWith<T, InvalidPassword<T>> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -1498,8 +1497,7 @@ abstract class MultiLineString<T> implements ValueFailure<T> {
   String get failedValue => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
-  $MultiLineStringCopyWith<T, MultiLineString<T>> get copyWith =>
-      throw _privateConstructorUsedError;
+  $MultiLineStringCopyWith<T, MultiLineString<T>> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -1681,8 +1679,7 @@ abstract class StringExceedsLength<T> implements ValueFailure<T> {
   int get maxLength => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
-  $StringExceedsLengthCopyWith<T, StringExceedsLength<T>> get copyWith =>
-      throw _privateConstructorUsedError;
+  $StringExceedsLengthCopyWith<T, StringExceedsLength<T>> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -1697,8 +1694,7 @@ abstract class $IntegerOutOfBoundsCopyWith<T, $Res> {
 /// @nodoc
 class _$IntegerOutOfBoundsCopyWithImpl<T, $Res> extends _$ValueFailureCopyWithImpl<T, $Res>
     implements $IntegerOutOfBoundsCopyWith<T, $Res> {
-  _$IntegerOutOfBoundsCopyWithImpl(
-      IntegerOutOfBounds<T> _value, $Res Function(IntegerOutOfBounds<T>) _then)
+  _$IntegerOutOfBoundsCopyWithImpl(IntegerOutOfBounds<T> _value, $Res Function(IntegerOutOfBounds<T>) _then)
       : super(_value, (v) => _then(v as IntegerOutOfBounds<T>));
 
   @override
@@ -1849,14 +1845,13 @@ abstract class IntegerOutOfBounds<T> implements ValueFailure<T> {
   int get failedValue => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
-  $IntegerOutOfBoundsCopyWith<T, IntegerOutOfBounds<T>> get copyWith =>
-      throw _privateConstructorUsedError;
+  $IntegerOutOfBoundsCopyWith<T, IntegerOutOfBounds<T>> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $StringWithInvalidCharactersCopyWith<T, $Res> {
-  factory $StringWithInvalidCharactersCopyWith(StringWithInvalidCharacters<T> value,
-          $Res Function(StringWithInvalidCharacters<T>) then) =
+  factory $StringWithInvalidCharactersCopyWith(
+          StringWithInvalidCharacters<T> value, $Res Function(StringWithInvalidCharacters<T>) then) =
       _$StringWithInvalidCharactersCopyWithImpl<T, $Res>;
 
   $Res call({String failedValue});
@@ -1912,8 +1907,7 @@ class _$StringWithInvalidCharacters<T> implements StringWithInvalidCharacters<T>
   @JsonKey(ignore: true)
   @override
   $StringWithInvalidCharactersCopyWith<T, StringWithInvalidCharacters<T>> get copyWith =>
-      _$StringWithInvalidCharactersCopyWithImpl<T, StringWithInvalidCharacters<T>>(
-          this, _$identity);
+      _$StringWithInvalidCharactersCopyWithImpl<T, StringWithInvalidCharacters<T>>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -2035,8 +2029,7 @@ abstract class $InvalidCoordinatesCopyWith<T, $Res> {
 /// @nodoc
 class _$InvalidCoordinatesCopyWithImpl<T, $Res> extends _$ValueFailureCopyWithImpl<T, $Res>
     implements $InvalidCoordinatesCopyWith<T, $Res> {
-  _$InvalidCoordinatesCopyWithImpl(
-      InvalidCoordinates<T> _value, $Res Function(InvalidCoordinates<T>) _then)
+  _$InvalidCoordinatesCopyWithImpl(InvalidCoordinates<T> _value, $Res Function(InvalidCoordinates<T>) _then)
       : super(_value, (v) => _then(v as InvalidCoordinates<T>));
 
   @override
@@ -2187,8 +2180,7 @@ abstract class InvalidCoordinates<T> implements ValueFailure<T> {
   double get failedValue => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
-  $InvalidCoordinatesCopyWith<T, InvalidCoordinates<T>> get copyWith =>
-      throw _privateConstructorUsedError;
+  $InvalidCoordinatesCopyWith<T, InvalidCoordinates<T>> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc

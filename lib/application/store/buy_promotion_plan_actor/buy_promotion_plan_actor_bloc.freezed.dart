@@ -68,8 +68,7 @@ abstract class $BuyPromotionPlanActorEventCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$BuyPromotionPlanActorEventCopyWithImpl<$Res>
-    implements $BuyPromotionPlanActorEventCopyWith<$Res> {
+class _$BuyPromotionPlanActorEventCopyWithImpl<$Res> implements $BuyPromotionPlanActorEventCopyWith<$Res> {
   _$BuyPromotionPlanActorEventCopyWithImpl(this._value, this._then);
 
   final BuyPromotionPlanActorEvent _value;
@@ -172,11 +171,9 @@ abstract class _$BoughtPromotionPlanCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$BoughtPromotionPlanCopyWithImpl<$Res>
-    extends _$BuyPromotionPlanActorEventCopyWithImpl<$Res>
+class __$BoughtPromotionPlanCopyWithImpl<$Res> extends _$BuyPromotionPlanActorEventCopyWithImpl<$Res>
     implements _$BoughtPromotionPlanCopyWith<$Res> {
-  __$BoughtPromotionPlanCopyWithImpl(
-      _BoughtPromotionPlan _value, $Res Function(_BoughtPromotionPlan) _then)
+  __$BoughtPromotionPlanCopyWithImpl(_BoughtPromotionPlan _value, $Res Function(_BoughtPromotionPlan) _then)
       : super(_value, (v) => _then(v as _BoughtPromotionPlan));
 
   @override
@@ -282,8 +279,7 @@ abstract class _BoughtPromotionPlan implements BuyPromotionPlanActorEvent {
   PromotionPlan get promotionPlan => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
-  _$BoughtPromotionPlanCopyWith<_BoughtPromotionPlan> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$BoughtPromotionPlanCopyWith<_BoughtPromotionPlan> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -376,8 +372,7 @@ abstract class $BuyPromotionPlanActorStateCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$BuyPromotionPlanActorStateCopyWithImpl<$Res>
-    implements $BuyPromotionPlanActorStateCopyWith<$Res> {
+class _$BuyPromotionPlanActorStateCopyWithImpl<$Res> implements $BuyPromotionPlanActorStateCopyWith<$Res> {
   _$BuyPromotionPlanActorStateCopyWithImpl(this._value, this._then);
 
   final BuyPromotionPlanActorState _value;
@@ -387,8 +382,7 @@ class _$BuyPromotionPlanActorStateCopyWithImpl<$Res>
 
 /// @nodoc
 abstract class _$InitialCopyWith<$Res> {
-  factory _$InitialCopyWith(_Initial value, $Res Function(_Initial) then) =
-      __$InitialCopyWithImpl<$Res>;
+  factory _$InitialCopyWith(_Initial value, $Res Function(_Initial) then) = __$InitialCopyWithImpl<$Res>;
 }
 
 /// @nodoc
@@ -486,8 +480,7 @@ abstract class _Initial implements BuyPromotionPlanActorState {
 
 /// @nodoc
 abstract class _$ActionInProgressCopyWith<$Res> {
-  factory _$ActionInProgressCopyWith(
-          _ActionInProgress value, $Res Function(_ActionInProgress) then) =
+  factory _$ActionInProgressCopyWith(_ActionInProgress value, $Res Function(_ActionInProgress) then) =
       __$ActionInProgressCopyWithImpl<$Res>;
 }
 

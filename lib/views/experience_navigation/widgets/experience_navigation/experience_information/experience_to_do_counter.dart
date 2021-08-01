@@ -2,7 +2,7 @@ import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
 import 'package:worldon/generated/l10n.dart';
-import 'package:worldon/views/core/misc/common_functions/world_on_number_display.dart';
+import 'package:worldon/views/core/misc/functions/world_on_number_display.dart';
 
 class ExperienceToDoCounter extends StatelessWidget {
   const ExperienceToDoCounter({

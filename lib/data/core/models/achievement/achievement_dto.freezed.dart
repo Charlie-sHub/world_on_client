@@ -276,8 +276,7 @@ class _$_AchievementDto extends _AchievementDto {
       required this.tagNames})
       : super._();
 
-  factory _$_AchievementDto.fromJson(Map<String, dynamic> json) =>
-      _$_$_AchievementDtoFromJson(json);
+  factory _$_AchievementDto.fromJson(Map<String, dynamic> json) => _$_$_AchievementDtoFromJson(json);
 
   @override
   final String id;
@@ -314,14 +313,12 @@ class _$_AchievementDto extends _AchievementDto {
     return identical(this, other) ||
         (other is _AchievementDto &&
             (identical(other.id, id) || const DeepCollectionEquality().equals(other.id, id)) &&
-            (identical(other.name, name) ||
-                const DeepCollectionEquality().equals(other.name, name)) &&
+            (identical(other.name, name) || const DeepCollectionEquality().equals(other.name, name)) &&
             (identical(other.description, description) ||
                 const DeepCollectionEquality().equals(other.description, description)) &&
             (identical(other.imageURL, imageURL) ||
                 const DeepCollectionEquality().equals(other.imageURL, imageURL)) &&
-            (identical(other.type, type) ||
-                const DeepCollectionEquality().equals(other.type, type)) &&
+            (identical(other.type, type) || const DeepCollectionEquality().equals(other.type, type)) &&
             (identical(other.requisite, requisite) ||
                 const DeepCollectionEquality().equals(other.requisite, requisite)) &&
             (identical(other.experiencePoints, experiencePoints) ||

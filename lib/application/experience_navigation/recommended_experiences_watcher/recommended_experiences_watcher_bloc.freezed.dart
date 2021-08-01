@@ -35,8 +35,7 @@ mixin _$RecommendedExperiencesWatcherEvent {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() watchRecommendedExperiencesStarted,
-    required TResult Function(Either<Failure, KtList<Experience>> failureOrExperiences)
-        resultsReceived,
+    required TResult Function(Either<Failure, KtList<Experience>> failureOrExperiences) resultsReceived,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -64,8 +63,8 @@ mixin _$RecommendedExperiencesWatcherEvent {
 
 /// @nodoc
 abstract class $RecommendedExperiencesWatcherEventCopyWith<$Res> {
-  factory $RecommendedExperiencesWatcherEventCopyWith(RecommendedExperiencesWatcherEvent value,
-          $Res Function(RecommendedExperiencesWatcherEvent) then) =
+  factory $RecommendedExperiencesWatcherEventCopyWith(
+          RecommendedExperiencesWatcherEvent value, $Res Function(RecommendedExperiencesWatcherEvent) then) =
       _$RecommendedExperiencesWatcherEventCopyWithImpl<$Res>;
 }
 
@@ -90,13 +89,12 @@ abstract class _$WatchRecommendedExperiencesStartedCopyWith<$Res> {
 class __$WatchRecommendedExperiencesStartedCopyWithImpl<$Res>
     extends _$RecommendedExperiencesWatcherEventCopyWithImpl<$Res>
     implements _$WatchRecommendedExperiencesStartedCopyWith<$Res> {
-  __$WatchRecommendedExperiencesStartedCopyWithImpl(_WatchRecommendedExperiencesStarted _value,
-      $Res Function(_WatchRecommendedExperiencesStarted) _then)
+  __$WatchRecommendedExperiencesStartedCopyWithImpl(
+      _WatchRecommendedExperiencesStarted _value, $Res Function(_WatchRecommendedExperiencesStarted) _then)
       : super(_value, (v) => _then(v as _WatchRecommendedExperiencesStarted));
 
   @override
-  _WatchRecommendedExperiencesStarted get _value =>
-      super._value as _WatchRecommendedExperiencesStarted;
+  _WatchRecommendedExperiencesStarted get _value => super._value as _WatchRecommendedExperiencesStarted;
 }
 
 /// @nodoc
@@ -121,8 +119,7 @@ class _$_WatchRecommendedExperiencesStarted implements _WatchRecommendedExperien
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() watchRecommendedExperiencesStarted,
-    required TResult Function(Either<Failure, KtList<Experience>> failureOrExperiences)
-        resultsReceived,
+    required TResult Function(Either<Failure, KtList<Experience>> failureOrExperiences) resultsReceived,
   }) {
     return watchRecommendedExperiencesStarted();
   }
@@ -222,8 +219,7 @@ class _$_ResultsReceived implements _ResultsReceived {
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(failureOrExperiences);
+  int get hashCode => runtimeType.hashCode ^ const DeepCollectionEquality().hash(failureOrExperiences);
 
   @JsonKey(ignore: true)
   @override
@@ -234,8 +230,7 @@ class _$_ResultsReceived implements _ResultsReceived {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() watchRecommendedExperiencesStarted,
-    required TResult Function(Either<Failure, KtList<Experience>> failureOrExperiences)
-        resultsReceived,
+    required TResult Function(Either<Failure, KtList<Experience>> failureOrExperiences) resultsReceived,
   }) {
     return resultsReceived(failureOrExperiences);
   }
@@ -281,8 +276,7 @@ abstract class _ResultsReceived implements RecommendedExperiencesWatcherEvent {
   const factory _ResultsReceived(Either<Failure, KtList<Experience>> failureOrExperiences) =
       _$_ResultsReceived;
 
-  Either<Failure, KtList<Experience>> get failureOrExperiences =>
-      throw _privateConstructorUsedError;
+  Either<Failure, KtList<Experience>> get failureOrExperiences => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
   _$ResultsReceivedCopyWith<_ResultsReceived> get copyWith => throw _privateConstructorUsedError;
@@ -356,8 +350,8 @@ mixin _$RecommendedExperiencesWatcherState {
 
 /// @nodoc
 abstract class $RecommendedExperiencesWatcherStateCopyWith<$Res> {
-  factory $RecommendedExperiencesWatcherStateCopyWith(RecommendedExperiencesWatcherState value,
-          $Res Function(RecommendedExperiencesWatcherState) then) =
+  factory $RecommendedExperiencesWatcherStateCopyWith(
+          RecommendedExperiencesWatcherState value, $Res Function(RecommendedExperiencesWatcherState) then) =
       _$RecommendedExperiencesWatcherStateCopyWithImpl<$Res>;
 }
 

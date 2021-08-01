@@ -2328,6 +2328,16 @@ class S {
       args: [],
     );
   }
+
+  /// `New Experience`
+  String get newExperience {
+    return Intl.message(
+      'New Experience',
+      name: 'newExperience',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

@@ -90,8 +90,7 @@ abstract class $ObjectivesCreationEventCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$ObjectivesCreationEventCopyWithImpl<$Res>
-    implements $ObjectivesCreationEventCopyWith<$Res> {
+class _$ObjectivesCreationEventCopyWithImpl<$Res> implements $ObjectivesCreationEventCopyWith<$Res> {
   _$ObjectivesCreationEventCopyWithImpl(this._value, this._then);
 
   final ObjectivesCreationEvent _value;
@@ -147,13 +146,11 @@ class _$_Initialized implements _Initialized {
     return identical(this, other) ||
         (other is _Initialized &&
             (identical(other.objectiveListOption, objectiveListOption) ||
-                const DeepCollectionEquality()
-                    .equals(other.objectiveListOption, objectiveListOption)));
+                const DeepCollectionEquality().equals(other.objectiveListOption, objectiveListOption)));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(objectiveListOption);
+  int get hashCode => runtimeType.hashCode ^ const DeepCollectionEquality().hash(objectiveListOption);
 
   @JsonKey(ignore: true)
   @override
@@ -354,8 +351,7 @@ abstract class _AddedObjective implements ObjectivesCreationEvent {
 
 /// @nodoc
 abstract class _$RemovedObjectiveCopyWith<$Res> {
-  factory _$RemovedObjectiveCopyWith(
-          _RemovedObjective value, $Res Function(_RemovedObjective) then) =
+  factory _$RemovedObjectiveCopyWith(_RemovedObjective value, $Res Function(_RemovedObjective) then) =
       __$RemovedObjectiveCopyWithImpl<$Res>;
   $Res call({Objective objective});
 
@@ -636,8 +632,7 @@ abstract class $ObjectivesCreationStateCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$ObjectivesCreationStateCopyWithImpl<$Res>
-    implements $ObjectivesCreationStateCopyWith<$Res> {
+class _$ObjectivesCreationStateCopyWithImpl<$Res> implements $ObjectivesCreationStateCopyWith<$Res> {
   _$ObjectivesCreationStateCopyWithImpl(this._value, this._then);
 
   final ObjectivesCreationState _value;
@@ -658,8 +653,7 @@ class _$ObjectivesCreationStateCopyWithImpl<$Res>
 }
 
 /// @nodoc
-abstract class _$ObjectivesCreationStateCopyWith<$Res>
-    implements $ObjectivesCreationStateCopyWith<$Res> {
+abstract class _$ObjectivesCreationStateCopyWith<$Res> implements $ObjectivesCreationStateCopyWith<$Res> {
   factory _$ObjectivesCreationStateCopyWith(
           _ObjectivesCreationState value, $Res Function(_ObjectivesCreationState) then) =
       __$ObjectivesCreationStateCopyWithImpl<$Res>;
@@ -669,8 +663,7 @@ abstract class _$ObjectivesCreationStateCopyWith<$Res>
 }
 
 /// @nodoc
-class __$ObjectivesCreationStateCopyWithImpl<$Res>
-    extends _$ObjectivesCreationStateCopyWithImpl<$Res>
+class __$ObjectivesCreationStateCopyWithImpl<$Res> extends _$ObjectivesCreationStateCopyWithImpl<$Res>
     implements _$ObjectivesCreationStateCopyWith<$Res> {
   __$ObjectivesCreationStateCopyWithImpl(
       _ObjectivesCreationState _value, $Res Function(_ObjectivesCreationState) _then)

@@ -444,8 +444,7 @@ mixin _$TagManagementFormState {
   Option<Either<Failure, Unit>> get failureOrSuccessOption => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
-  $TagManagementFormStateCopyWith<TagManagementFormState> get copyWith =>
-      throw _privateConstructorUsedError;
+  $TagManagementFormStateCopyWith<TagManagementFormState> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -607,15 +606,13 @@ class _$_TagManagementFormState implements _TagManagementFormState {
         (other is _TagManagementFormState &&
             (identical(other.tag, tag) || const DeepCollectionEquality().equals(other.tag, tag)) &&
             (identical(other.showErrorMessages, showErrorMessages) ||
-                const DeepCollectionEquality()
-                    .equals(other.showErrorMessages, showErrorMessages)) &&
+                const DeepCollectionEquality().equals(other.showErrorMessages, showErrorMessages)) &&
             (identical(other.isEditing, isEditing) ||
                 const DeepCollectionEquality().equals(other.isEditing, isEditing)) &&
             (identical(other.isSubmitting, isSubmitting) ||
                 const DeepCollectionEquality().equals(other.isSubmitting, isSubmitting)) &&
             (identical(other.failureOrSuccessOption, failureOrSuccessOption) ||
-                const DeepCollectionEquality()
-                    .equals(other.failureOrSuccessOption, failureOrSuccessOption)));
+                const DeepCollectionEquality().equals(other.failureOrSuccessOption, failureOrSuccessOption)));
   }
 
   @override

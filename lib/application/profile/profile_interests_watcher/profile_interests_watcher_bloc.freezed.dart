@@ -91,8 +91,7 @@ abstract class _$WatchInterestsStartedCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$WatchInterestsStartedCopyWithImpl<$Res>
-    extends _$ProfileInterestsWatcherEventCopyWithImpl<$Res>
+class __$WatchInterestsStartedCopyWithImpl<$Res> extends _$ProfileInterestsWatcherEventCopyWithImpl<$Res>
     implements _$WatchInterestsStartedCopyWith<$Res> {
   __$WatchInterestsStartedCopyWithImpl(
       _WatchInterestsStarted _value, $Res Function(_WatchInterestsStarted) _then)
@@ -138,8 +137,7 @@ class _$_WatchInterestsStarted implements _WatchInterestsStarted {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other is _WatchInterestsStarted &&
-            (identical(other.user, user) ||
-                const DeepCollectionEquality().equals(other.user, user)));
+            (identical(other.user, user) || const DeepCollectionEquality().equals(other.user, user)));
   }
 
   @override
@@ -200,8 +198,7 @@ abstract class _WatchInterestsStarted implements ProfileInterestsWatcherEvent {
 
   User get user => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  _$WatchInterestsStartedCopyWith<_WatchInterestsStarted> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$WatchInterestsStartedCopyWith<_WatchInterestsStarted> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -402,8 +399,7 @@ class _$ProfileInterestsWatcherStateCopyWithImpl<$Res>
 
 /// @nodoc
 abstract class _$InitialCopyWith<$Res> {
-  factory _$InitialCopyWith(_Initial value, $Res Function(_Initial) then) =
-      __$InitialCopyWithImpl<$Res>;
+  factory _$InitialCopyWith(_Initial value, $Res Function(_Initial) then) = __$InitialCopyWithImpl<$Res>;
 }
 
 /// @nodoc

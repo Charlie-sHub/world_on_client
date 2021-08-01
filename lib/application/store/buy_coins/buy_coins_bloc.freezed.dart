@@ -135,8 +135,7 @@ class _$_BoughtCoins implements _BoughtCoins {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other is _BoughtCoins &&
-            (identical(other.amount, amount) ||
-                const DeepCollectionEquality().equals(other.amount, amount)));
+            (identical(other.amount, amount) || const DeepCollectionEquality().equals(other.amount, amount)));
   }
 
   @override
@@ -281,8 +280,7 @@ class _$BuyCoinsStateCopyWithImpl<$Res> implements $BuyCoinsStateCopyWith<$Res> 
 
 /// @nodoc
 abstract class _$InitialCopyWith<$Res> {
-  factory _$InitialCopyWith(_Initial value, $Res Function(_Initial) then) =
-      __$InitialCopyWithImpl<$Res>;
+  factory _$InitialCopyWith(_Initial value, $Res Function(_Initial) then) = __$InitialCopyWithImpl<$Res>;
 }
 
 /// @nodoc
@@ -372,8 +370,7 @@ abstract class _Initial implements BuyCoinsState {
 
 /// @nodoc
 abstract class _$ActionInProgressCopyWith<$Res> {
-  factory _$ActionInProgressCopyWith(
-          _ActionInProgress value, $Res Function(_ActionInProgress) then) =
+  factory _$ActionInProgressCopyWith(_ActionInProgress value, $Res Function(_ActionInProgress) then) =
       __$ActionInProgressCopyWithImpl<$Res>;
 }
 

@@ -64,8 +64,7 @@ mixin _$NotificationActorEvent {
       throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
-  $NotificationActorEventCopyWith<NotificationActorEvent> get copyWith =>
-      throw _privateConstructorUsedError;
+  $NotificationActorEventCopyWith<NotificationActorEvent> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -110,8 +109,7 @@ class _$NotificationActorEventCopyWithImpl<$Res> implements $NotificationActorEv
 
 /// @nodoc
 abstract class _$DeletedCopyWith<$Res> implements $NotificationActorEventCopyWith<$Res> {
-  factory _$DeletedCopyWith(_Deleted value, $Res Function(_Deleted) then) =
-      __$DeletedCopyWithImpl<$Res>;
+  factory _$DeletedCopyWith(_Deleted value, $Res Function(_Deleted) then) = __$DeletedCopyWithImpl<$Res>;
 
   @override
   $Res call({Notification notification});
@@ -228,8 +226,7 @@ abstract class _Deleted implements NotificationActorEvent {
 
 /// @nodoc
 abstract class _$CheckedCopyWith<$Res> implements $NotificationActorEventCopyWith<$Res> {
-  factory _$CheckedCopyWith(_Checked value, $Res Function(_Checked) then) =
-      __$CheckedCopyWithImpl<$Res>;
+  factory _$CheckedCopyWith(_Checked value, $Res Function(_Checked) then) = __$CheckedCopyWithImpl<$Res>;
 
   @override
   $Res call({Notification notification});
@@ -435,8 +432,7 @@ class _$NotificationActorStateCopyWithImpl<$Res> implements $NotificationActorSt
 
 /// @nodoc
 abstract class _$InitialCopyWith<$Res> {
-  factory _$InitialCopyWith(_Initial value, $Res Function(_Initial) then) =
-      __$InitialCopyWithImpl<$Res>;
+  factory _$InitialCopyWith(_Initial value, $Res Function(_Initial) then) = __$InitialCopyWithImpl<$Res>;
 }
 
 /// @nodoc
@@ -530,8 +526,7 @@ abstract class _Initial implements NotificationActorState {
 
 /// @nodoc
 abstract class _$ActionInProgressCopyWith<$Res> {
-  factory _$ActionInProgressCopyWith(
-          _ActionInProgress value, $Res Function(_ActionInProgress) then) =
+  factory _$ActionInProgressCopyWith(_ActionInProgress value, $Res Function(_ActionInProgress) then) =
       __$ActionInProgressCopyWithImpl<$Res>;
 }
 

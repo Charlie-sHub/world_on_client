@@ -37,8 +37,7 @@ mixin _$ProfileAchievementsWatcherEvent {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(User user) watchAchievementsStarted,
-    required TResult Function(Either<Failure, KtList<Achievement>> failureOrAchievements)
-        resultsReceived,
+    required TResult Function(Either<Failure, KtList<Achievement>> failureOrAchievements) resultsReceived,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -65,8 +64,8 @@ mixin _$ProfileAchievementsWatcherEvent {
 
 /// @nodoc
 abstract class $ProfileAchievementsWatcherEventCopyWith<$Res> {
-  factory $ProfileAchievementsWatcherEventCopyWith(ProfileAchievementsWatcherEvent value,
-          $Res Function(ProfileAchievementsWatcherEvent) then) =
+  factory $ProfileAchievementsWatcherEventCopyWith(
+          ProfileAchievementsWatcherEvent value, $Res Function(ProfileAchievementsWatcherEvent) then) =
       _$ProfileAchievementsWatcherEventCopyWithImpl<$Res>;
 }
 
@@ -139,8 +138,7 @@ class _$_WatchAchievementsStarted implements _WatchAchievementsStarted {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other is _WatchAchievementsStarted &&
-            (identical(other.user, user) ||
-                const DeepCollectionEquality().equals(other.user, user)));
+            (identical(other.user, user) || const DeepCollectionEquality().equals(other.user, user)));
   }
 
   @override
@@ -155,8 +153,7 @@ class _$_WatchAchievementsStarted implements _WatchAchievementsStarted {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(User user) watchAchievementsStarted,
-    required TResult Function(Either<Failure, KtList<Achievement>> failureOrAchievements)
-        resultsReceived,
+    required TResult Function(Either<Failure, KtList<Achievement>> failureOrAchievements) resultsReceived,
   }) {
     return watchAchievementsStarted(user);
   }
@@ -216,8 +213,7 @@ abstract class _$ResultsReceivedCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$ResultsReceivedCopyWithImpl<$Res>
-    extends _$ProfileAchievementsWatcherEventCopyWithImpl<$Res>
+class __$ResultsReceivedCopyWithImpl<$Res> extends _$ProfileAchievementsWatcherEventCopyWithImpl<$Res>
     implements _$ResultsReceivedCopyWith<$Res> {
   __$ResultsReceivedCopyWithImpl(_ResultsReceived _value, $Res Function(_ResultsReceived) _then)
       : super(_value, (v) => _then(v as _ResultsReceived));
@@ -256,13 +252,11 @@ class _$_ResultsReceived implements _ResultsReceived {
     return identical(this, other) ||
         (other is _ResultsReceived &&
             (identical(other.failureOrAchievements, failureOrAchievements) ||
-                const DeepCollectionEquality()
-                    .equals(other.failureOrAchievements, failureOrAchievements)));
+                const DeepCollectionEquality().equals(other.failureOrAchievements, failureOrAchievements)));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(failureOrAchievements);
+  int get hashCode => runtimeType.hashCode ^ const DeepCollectionEquality().hash(failureOrAchievements);
 
   @JsonKey(ignore: true)
   @override
@@ -273,8 +267,7 @@ class _$_ResultsReceived implements _ResultsReceived {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(User user) watchAchievementsStarted,
-    required TResult Function(Either<Failure, KtList<Achievement>> failureOrAchievements)
-        resultsReceived,
+    required TResult Function(Either<Failure, KtList<Achievement>> failureOrAchievements) resultsReceived,
   }) {
     return resultsReceived(failureOrAchievements);
   }
@@ -319,8 +312,7 @@ abstract class _ResultsReceived implements ProfileAchievementsWatcherEvent {
   const factory _ResultsReceived(Either<Failure, KtList<Achievement>> failureOrAchievements) =
       _$_ResultsReceived;
 
-  Either<Failure, KtList<Achievement>> get failureOrAchievements =>
-      throw _privateConstructorUsedError;
+  Either<Failure, KtList<Achievement>> get failureOrAchievements => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
   _$ResultsReceivedCopyWith<_ResultsReceived> get copyWith => throw _privateConstructorUsedError;
@@ -394,8 +386,8 @@ mixin _$ProfileAchievementsWatcherState {
 
 /// @nodoc
 abstract class $ProfileAchievementsWatcherStateCopyWith<$Res> {
-  factory $ProfileAchievementsWatcherStateCopyWith(ProfileAchievementsWatcherState value,
-          $Res Function(ProfileAchievementsWatcherState) then) =
+  factory $ProfileAchievementsWatcherStateCopyWith(
+          ProfileAchievementsWatcherState value, $Res Function(ProfileAchievementsWatcherState) then) =
       _$ProfileAchievementsWatcherStateCopyWithImpl<$Res>;
 }
 
@@ -411,8 +403,7 @@ class _$ProfileAchievementsWatcherStateCopyWithImpl<$Res>
 
 /// @nodoc
 abstract class _$InitialCopyWith<$Res> {
-  factory _$InitialCopyWith(_Initial value, $Res Function(_Initial) then) =
-      __$InitialCopyWithImpl<$Res>;
+  factory _$InitialCopyWith(_Initial value, $Res Function(_Initial) then) = __$InitialCopyWithImpl<$Res>;
 }
 
 /// @nodoc
@@ -507,8 +498,7 @@ abstract class _$LoadInProgressCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$LoadInProgressCopyWithImpl<$Res>
-    extends _$ProfileAchievementsWatcherStateCopyWithImpl<$Res>
+class __$LoadInProgressCopyWithImpl<$Res> extends _$ProfileAchievementsWatcherStateCopyWithImpl<$Res>
     implements _$LoadInProgressCopyWith<$Res> {
   __$LoadInProgressCopyWithImpl(_LoadInProgress _value, $Res Function(_LoadInProgress) _then)
       : super(_value, (v) => _then(v as _LoadInProgress));

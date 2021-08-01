@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:worldon/application/profile/profile_editing_form/profile_editing_form_bloc.dart';
 import 'package:worldon/domain/core/entities/user/user.dart';
-import 'package:worldon/views/core/misc/common_functions/open_picture_select_dialog.dart';
+import 'package:worldon/views/core/misc/functions/open_picture_select_dialog.dart';
 
 class UserImagePicker extends StatelessWidget {
   final User user;

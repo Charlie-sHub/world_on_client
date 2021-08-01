@@ -88,8 +88,7 @@ abstract class _$SearchTermChangedCopyWith<$Res> {
 /// @nodoc
 class __$SearchTermChangedCopyWithImpl<$Res> extends _$SearchByNameFormEventCopyWithImpl<$Res>
     implements _$SearchTermChangedCopyWith<$Res> {
-  __$SearchTermChangedCopyWithImpl(
-      _SearchTermChanged _value, $Res Function(_SearchTermChanged) _then)
+  __$SearchTermChangedCopyWithImpl(_SearchTermChanged _value, $Res Function(_SearchTermChanged) _then)
       : super(_value, (v) => _then(v as _SearchTermChanged));
 
   @override
@@ -188,8 +187,7 @@ abstract class _SearchTermChanged implements SearchByNameFormEvent {
   String get searchTermString => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
-  _$SearchTermChangedCopyWith<_SearchTermChanged> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$SearchTermChangedCopyWith<_SearchTermChanged> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -307,8 +305,7 @@ mixin _$SearchByNameFormState {
   Option<ValueFailure> get failureOrSuccessOption => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
-  $SearchByNameFormStateCopyWith<SearchByNameFormState> get copyWith =>
-      throw _privateConstructorUsedError;
+  $SearchByNameFormStateCopyWith<SearchByNameFormState> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -444,13 +441,11 @@ class _$_SearchByNameFormState implements _SearchByNameFormState {
             (identical(other.searchTerm, searchTerm) ||
                 const DeepCollectionEquality().equals(other.searchTerm, searchTerm)) &&
             (identical(other.showErrorMessages, showErrorMessages) ||
-                const DeepCollectionEquality()
-                    .equals(other.showErrorMessages, showErrorMessages)) &&
+                const DeepCollectionEquality().equals(other.showErrorMessages, showErrorMessages)) &&
             (identical(other.isSubmitting, isSubmitting) ||
                 const DeepCollectionEquality().equals(other.isSubmitting, isSubmitting)) &&
             (identical(other.failureOrSuccessOption, failureOrSuccessOption) ||
-                const DeepCollectionEquality()
-                    .equals(other.failureOrSuccessOption, failureOrSuccessOption)));
+                const DeepCollectionEquality().equals(other.failureOrSuccessOption, failureOrSuccessOption)));
   }
 
   @override
@@ -487,6 +482,5 @@ abstract class _SearchByNameFormState implements SearchByNameFormState {
 
   @override
   @JsonKey(ignore: true)
-  _$SearchByNameFormStateCopyWith<_SearchByNameFormState> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$SearchByNameFormStateCopyWith<_SearchByNameFormState> get copyWith => throw _privateConstructorUsedError;
 }

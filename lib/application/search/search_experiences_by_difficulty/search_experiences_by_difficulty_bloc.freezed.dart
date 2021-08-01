@@ -37,8 +37,7 @@ mixin _$SearchExperiencesByDifficultyEvent {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(int difficulty) submitted,
-    required TResult Function(Either<Failure, KtList<Experience>> failureOrExperiences)
-        resultsReceived,
+    required TResult Function(Either<Failure, KtList<Experience>> failureOrExperiences) resultsReceived,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -65,8 +64,8 @@ mixin _$SearchExperiencesByDifficultyEvent {
 
 /// @nodoc
 abstract class $SearchExperiencesByDifficultyEventCopyWith<$Res> {
-  factory $SearchExperiencesByDifficultyEventCopyWith(SearchExperiencesByDifficultyEvent value,
-          $Res Function(SearchExperiencesByDifficultyEvent) then) =
+  factory $SearchExperiencesByDifficultyEventCopyWith(
+          SearchExperiencesByDifficultyEvent value, $Res Function(SearchExperiencesByDifficultyEvent) then) =
       _$SearchExperiencesByDifficultyEventCopyWithImpl<$Res>;
 }
 
@@ -143,8 +142,7 @@ class _$_Submitted implements _Submitted {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(int difficulty) submitted,
-    required TResult Function(Either<Failure, KtList<Experience>> failureOrExperiences)
-        resultsReceived,
+    required TResult Function(Either<Failure, KtList<Experience>> failureOrExperiences) resultsReceived,
   }) {
     return submitted(difficulty);
   }
@@ -248,8 +246,7 @@ class _$_ResultsReceived implements _ResultsReceived {
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(failureOrExperiences);
+  int get hashCode => runtimeType.hashCode ^ const DeepCollectionEquality().hash(failureOrExperiences);
 
   @JsonKey(ignore: true)
   @override
@@ -260,8 +257,7 @@ class _$_ResultsReceived implements _ResultsReceived {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(int difficulty) submitted,
-    required TResult Function(Either<Failure, KtList<Experience>> failureOrExperiences)
-        resultsReceived,
+    required TResult Function(Either<Failure, KtList<Experience>> failureOrExperiences) resultsReceived,
   }) {
     return resultsReceived(failureOrExperiences);
   }
@@ -306,8 +302,7 @@ abstract class _ResultsReceived implements SearchExperiencesByDifficultyEvent {
   const factory _ResultsReceived(Either<Failure, KtList<Experience>> failureOrExperiences) =
       _$_ResultsReceived;
 
-  Either<Failure, KtList<Experience>> get failureOrExperiences =>
-      throw _privateConstructorUsedError;
+  Either<Failure, KtList<Experience>> get failureOrExperiences => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
   _$ResultsReceivedCopyWith<_ResultsReceived> get copyWith => throw _privateConstructorUsedError;
@@ -391,8 +386,8 @@ mixin _$SearchExperiencesByDifficultyState {
 
 /// @nodoc
 abstract class $SearchExperiencesByDifficultyStateCopyWith<$Res> {
-  factory $SearchExperiencesByDifficultyStateCopyWith(SearchExperiencesByDifficultyState value,
-          $Res Function(SearchExperiencesByDifficultyState) then) =
+  factory $SearchExperiencesByDifficultyStateCopyWith(
+          SearchExperiencesByDifficultyState value, $Res Function(SearchExperiencesByDifficultyState) then) =
       _$SearchExperiencesByDifficultyStateCopyWithImpl<$Res>;
 }
 

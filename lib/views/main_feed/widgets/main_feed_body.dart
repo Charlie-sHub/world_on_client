@@ -42,6 +42,16 @@ class MainFeedBody extends StatelessWidget {
               itemBuilder: (context, index) {
                 final _experience = state.experiences[index];
                 if (_experience.isValid) {
+                  // A way of checking if the user has seen the experience before should be implemented
+                  // Otherwise the user will see constant notifications for already seen experiences
+                  /*
+                  _showLocalNotification(
+                    index,
+                    context,
+                    _experience.creator.username.getOrCrash(),
+                    _experience.title.getOrCrash(),
+                  );
+                   */
                   return ExpansionExperienceCard(
                     experience: _experience,
                     key: Key(_experience.id.toString()),
@@ -72,4 +82,30 @@ class MainFeedBody extends StatelessWidget {
       ),
     );
   }
+
+/*
+  void _showLocalNotification(
+    int index,
+    BuildContext context,
+    String experienceTitle,
+    String username,
+  ) {
+    const androidPlatformChannelSpecifics = AndroidNotificationDetails(
+      "main_feed_notification",
+      "main_feed_notification",
+      "World On main feed notifications channel",
+      importance: Importance.low,
+      playSound: false,
+    );
+    const platformChannelSpecifics = NotificationDetails(
+      android: androidPlatformChannelSpecifics,
+    );
+    getIt<FlutterLocalNotificationsPlugin>().show(
+      index,
+      username,
+      experienceTitle,
+      platformChannelSpecifics,
+    );
+  }
+   */
 }

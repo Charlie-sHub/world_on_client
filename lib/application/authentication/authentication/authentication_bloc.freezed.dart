@@ -60,8 +60,7 @@ mixin _$AuthenticationEvent {
 
 /// @nodoc
 abstract class $AuthenticationEventCopyWith<$Res> {
-  factory $AuthenticationEventCopyWith(
-          AuthenticationEvent value, $Res Function(AuthenticationEvent) then) =
+  factory $AuthenticationEventCopyWith(AuthenticationEvent value, $Res Function(AuthenticationEvent) then) =
       _$AuthenticationEventCopyWithImpl<$Res>;
 }
 
@@ -83,8 +82,7 @@ abstract class _$AuthenticationCheckRequestedCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$AuthenticationCheckRequestedCopyWithImpl<$Res>
-    extends _$AuthenticationEventCopyWithImpl<$Res>
+class __$AuthenticationCheckRequestedCopyWithImpl<$Res> extends _$AuthenticationEventCopyWithImpl<$Res>
     implements _$AuthenticationCheckRequestedCopyWith<$Res> {
   __$AuthenticationCheckRequestedCopyWithImpl(
       _AuthenticationCheckRequested _value, $Res Function(_AuthenticationCheckRequested) _then)
@@ -300,8 +298,7 @@ mixin _$AuthenticationState {
 
 /// @nodoc
 abstract class $AuthenticationStateCopyWith<$Res> {
-  factory $AuthenticationStateCopyWith(
-          AuthenticationState value, $Res Function(AuthenticationState) then) =
+  factory $AuthenticationStateCopyWith(AuthenticationState value, $Res Function(AuthenticationState) then) =
       _$AuthenticationStateCopyWithImpl<$Res>;
 }
 
@@ -317,8 +314,7 @@ class _$AuthenticationStateCopyWithImpl<$Res> implements $AuthenticationStateCop
 
 /// @nodoc
 abstract class _$InitialCopyWith<$Res> {
-  factory _$InitialCopyWith(_Initial value, $Res Function(_Initial) then) =
-      __$InitialCopyWithImpl<$Res>;
+  factory _$InitialCopyWith(_Initial value, $Res Function(_Initial) then) = __$InitialCopyWithImpl<$Res>;
 }
 
 /// @nodoc

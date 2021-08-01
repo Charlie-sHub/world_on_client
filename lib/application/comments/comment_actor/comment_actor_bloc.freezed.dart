@@ -61,8 +61,7 @@ mixin _$CommentActorEvent {
 
 /// @nodoc
 abstract class $CommentActorEventCopyWith<$Res> {
-  factory $CommentActorEventCopyWith(
-          CommentActorEvent value, $Res Function(CommentActorEvent) then) =
+  factory $CommentActorEventCopyWith(CommentActorEvent value, $Res Function(CommentActorEvent) then) =
       _$CommentActorEventCopyWithImpl<$Res>;
   $Res call({Comment comment, User currentUser});
 
@@ -113,8 +112,7 @@ class _$CommentActorEventCopyWithImpl<$Res> implements $CommentActorEventCopyWit
 
 /// @nodoc
 abstract class _$DeletedCopyWith<$Res> implements $CommentActorEventCopyWith<$Res> {
-  factory _$DeletedCopyWith(_Deleted value, $Res Function(_Deleted) then) =
-      __$DeletedCopyWithImpl<$Res>;
+  factory _$DeletedCopyWith(_Deleted value, $Res Function(_Deleted) then) = __$DeletedCopyWithImpl<$Res>;
 
   @override
   $Res call({Comment comment, User currentUser});
@@ -309,8 +307,7 @@ mixin _$CommentActorState {
 
 /// @nodoc
 abstract class $CommentActorStateCopyWith<$Res> {
-  factory $CommentActorStateCopyWith(
-          CommentActorState value, $Res Function(CommentActorState) then) =
+  factory $CommentActorStateCopyWith(CommentActorState value, $Res Function(CommentActorState) then) =
       _$CommentActorStateCopyWithImpl<$Res>;
 }
 
@@ -326,8 +323,7 @@ class _$CommentActorStateCopyWithImpl<$Res> implements $CommentActorStateCopyWit
 
 /// @nodoc
 abstract class _$InitialCopyWith<$Res> {
-  factory _$InitialCopyWith(_Initial value, $Res Function(_Initial) then) =
-      __$InitialCopyWithImpl<$Res>;
+  factory _$InitialCopyWith(_Initial value, $Res Function(_Initial) then) = __$InitialCopyWithImpl<$Res>;
 }
 
 /// @nodoc
@@ -417,8 +413,7 @@ abstract class _Initial implements CommentActorState {
 
 /// @nodoc
 abstract class _$ActionInProgressCopyWith<$Res> {
-  factory _$ActionInProgressCopyWith(
-          _ActionInProgress value, $Res Function(_ActionInProgress) then) =
+  factory _$ActionInProgressCopyWith(_ActionInProgress value, $Res Function(_ActionInProgress) then) =
       __$ActionInProgressCopyWithImpl<$Res>;
 }
 

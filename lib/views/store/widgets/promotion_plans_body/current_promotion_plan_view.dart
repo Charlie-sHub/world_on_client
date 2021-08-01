@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:worldon/domain/core/entities/promotion_plan/promotion_plan.dart';
 import 'package:worldon/domain/core/entities/promotion_plan/promotion_plan_code.dart';
 import 'package:worldon/generated/l10n.dart';
-import 'package:worldon/views/core/misc/common_functions/world_on_number_display.dart';
+import 'package:worldon/views/core/misc/functions/world_on_number_display.dart';
 import 'package:worldon/views/core/misc/world_on_colors.dart';
 
 class CurrentPromotionPlanView extends StatelessWidget {

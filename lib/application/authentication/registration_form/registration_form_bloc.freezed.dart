@@ -995,8 +995,7 @@ class _$_PasswordConfirmationChanged implements _PasswordConfirmationChanged {
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(passwordConfirmation);
+  int get hashCode => runtimeType.hashCode ^ const DeepCollectionEquality().hash(passwordConfirmation);
 
   @JsonKey(ignore: true)
   @override
@@ -1111,8 +1110,7 @@ abstract class _$EmailAddressChangedCopyWith<$Res> {
 /// @nodoc
 class __$EmailAddressChangedCopyWithImpl<$Res> extends _$RegistrationFormEventCopyWithImpl<$Res>
     implements _$EmailAddressChangedCopyWith<$Res> {
-  __$EmailAddressChangedCopyWithImpl(
-      _EmailAddressChanged _value, $Res Function(_EmailAddressChanged) _then)
+  __$EmailAddressChangedCopyWithImpl(_EmailAddressChanged _value, $Res Function(_EmailAddressChanged) _then)
       : super(_value, (v) => _then(v as _EmailAddressChanged));
 
   @override
@@ -1251,8 +1249,7 @@ abstract class _EmailAddressChanged implements RegistrationFormEvent {
   String get emailAddress => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
-  _$EmailAddressChangedCopyWith<_EmailAddressChanged> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$EmailAddressChangedCopyWith<_EmailAddressChanged> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -1419,8 +1416,7 @@ abstract class _$DescriptionChangedCopyWith<$Res> {
 /// @nodoc
 class __$DescriptionChangedCopyWithImpl<$Res> extends _$RegistrationFormEventCopyWithImpl<$Res>
     implements _$DescriptionChangedCopyWith<$Res> {
-  __$DescriptionChangedCopyWithImpl(
-      _DescriptionChanged _value, $Res Function(_DescriptionChanged) _then)
+  __$DescriptionChangedCopyWithImpl(_DescriptionChanged _value, $Res Function(_DescriptionChanged) _then)
       : super(_value, (v) => _then(v as _DescriptionChanged));
 
   @override
@@ -2009,8 +2005,7 @@ mixin _$RegistrationFormState {
   Option<Either<Failure, Unit>> get failureOrSuccessOption => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
-  $RegistrationFormStateCopyWith<RegistrationFormState> get copyWith =>
-      throw _privateConstructorUsedError;
+  $RegistrationFormStateCopyWith<RegistrationFormState> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -2218,14 +2213,11 @@ class _$_RegistrationFormState implements _RegistrationFormState {
             (identical(other.user, user) ||
                 const DeepCollectionEquality().equals(other.user, user)) &&
             (identical(other.passwordConfirmator, passwordConfirmator) ||
-                const DeepCollectionEquality()
-                    .equals(other.passwordConfirmator, passwordConfirmator)) &&
+                const DeepCollectionEquality().equals(other.passwordConfirmator, passwordConfirmator)) &&
             (identical(other.passwordToCompare, passwordToCompare) ||
-                const DeepCollectionEquality()
-                    .equals(other.passwordToCompare, passwordToCompare)) &&
+                const DeepCollectionEquality().equals(other.passwordToCompare, passwordToCompare)) &&
             (identical(other.showErrorMessages, showErrorMessages) ||
-                const DeepCollectionEquality()
-                    .equals(other.showErrorMessages, showErrorMessages)) &&
+                const DeepCollectionEquality().equals(other.showErrorMessages, showErrorMessages)) &&
             (identical(other.isSubmitting, isSubmitting) ||
                 const DeepCollectionEquality().equals(other.isSubmitting, isSubmitting)) &&
             (identical(other.acceptedEULA, acceptedEULA) ||
@@ -2233,8 +2225,7 @@ class _$_RegistrationFormState implements _RegistrationFormState {
             (identical(other.initialized, initialized) ||
                 const DeepCollectionEquality().equals(other.initialized, initialized)) &&
             (identical(other.failureOrSuccessOption, failureOrSuccessOption) ||
-                const DeepCollectionEquality()
-                    .equals(other.failureOrSuccessOption, failureOrSuccessOption)));
+                const DeepCollectionEquality().equals(other.failureOrSuccessOption, failureOrSuccessOption)));
   }
 
   @override
@@ -2289,6 +2280,5 @@ abstract class _RegistrationFormState implements RegistrationFormState {
 
   @override
   @JsonKey(ignore: true)
-  _$RegistrationFormStateCopyWith<_RegistrationFormState> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$RegistrationFormStateCopyWith<_RegistrationFormState> get copyWith => throw _privateConstructorUsedError;
 }

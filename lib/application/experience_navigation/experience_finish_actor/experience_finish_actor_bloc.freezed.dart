@@ -70,8 +70,7 @@ abstract class $ExperienceFinishActorEventCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$ExperienceFinishActorEventCopyWithImpl<$Res>
-    implements $ExperienceFinishActorEventCopyWith<$Res> {
+class _$ExperienceFinishActorEventCopyWithImpl<$Res> implements $ExperienceFinishActorEventCopyWith<$Res> {
   _$ExperienceFinishActorEventCopyWithImpl(this._value, this._then);
 
   final ExperienceFinishActorEvent _value;
@@ -99,10 +98,8 @@ class _$ExperienceFinishActorEventCopyWithImpl<$Res>
 }
 
 /// @nodoc
-abstract class _$FinishedExperienceCopyWith<$Res>
-    implements $ExperienceFinishActorEventCopyWith<$Res> {
-  factory _$FinishedExperienceCopyWith(
-          _FinishedExperience value, $Res Function(_FinishedExperience) then) =
+abstract class _$FinishedExperienceCopyWith<$Res> implements $ExperienceFinishActorEventCopyWith<$Res> {
+  factory _$FinishedExperienceCopyWith(_FinishedExperience value, $Res Function(_FinishedExperience) then) =
       __$FinishedExperienceCopyWithImpl<$Res>;
   @override
   $Res call({Experience experience});
@@ -114,8 +111,7 @@ abstract class _$FinishedExperienceCopyWith<$Res>
 /// @nodoc
 class __$FinishedExperienceCopyWithImpl<$Res> extends _$ExperienceFinishActorEventCopyWithImpl<$Res>
     implements _$FinishedExperienceCopyWith<$Res> {
-  __$FinishedExperienceCopyWithImpl(
-      _FinishedExperience _value, $Res Function(_FinishedExperience) _then)
+  __$FinishedExperienceCopyWithImpl(_FinishedExperience _value, $Res Function(_FinishedExperience) _then)
       : super(_value, (v) => _then(v as _FinishedExperience));
 
   @override
@@ -212,8 +208,7 @@ abstract class _FinishedExperience implements ExperienceFinishActorEvent {
 
   @override
   @JsonKey(ignore: true)
-  _$FinishedExperienceCopyWith<_FinishedExperience> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$FinishedExperienceCopyWith<_FinishedExperience> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -291,8 +286,7 @@ abstract class $ExperienceFinishActorStateCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$ExperienceFinishActorStateCopyWithImpl<$Res>
-    implements $ExperienceFinishActorStateCopyWith<$Res> {
+class _$ExperienceFinishActorStateCopyWithImpl<$Res> implements $ExperienceFinishActorStateCopyWith<$Res> {
   _$ExperienceFinishActorStateCopyWithImpl(this._value, this._then);
 
   final ExperienceFinishActorState _value;
@@ -302,8 +296,7 @@ class _$ExperienceFinishActorStateCopyWithImpl<$Res>
 
 /// @nodoc
 abstract class _$InitialCopyWith<$Res> {
-  factory _$InitialCopyWith(_Initial value, $Res Function(_Initial) then) =
-      __$InitialCopyWithImpl<$Res>;
+  factory _$InitialCopyWith(_Initial value, $Res Function(_Initial) then) = __$InitialCopyWithImpl<$Res>;
 }
 
 /// @nodoc
@@ -393,8 +386,7 @@ abstract class _Initial implements ExperienceFinishActorState {
 
 /// @nodoc
 abstract class _$ActionInProgressCopyWith<$Res> {
-  factory _$ActionInProgressCopyWith(
-          _ActionInProgress value, $Res Function(_ActionInProgress) then) =
+  factory _$ActionInProgressCopyWith(_ActionInProgress value, $Res Function(_ActionInProgress) then) =
       __$ActionInProgressCopyWithImpl<$Res>;
 }
 

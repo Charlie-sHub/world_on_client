@@ -5,7 +5,7 @@ import 'package:worldon/application/experience_navigation/rate_experience_diffic
 import 'package:worldon/domain/core/entities/experience/experience.dart';
 import 'package:worldon/generated/l10n.dart';
 import 'package:worldon/injection.dart';
-import 'package:worldon/views/core/misc/common_functions/get_color_by_difficulty.dart';
+import 'package:worldon/views/core/misc/functions/get_color_by_difficulty.dart';
 
 class RateDifficultyWidget extends StatelessWidget {
   const RateDifficultyWidget({
@@ -83,7 +83,8 @@ class RateDifficultyWidget extends StatelessWidget {
           duration: const Duration(seconds: 2),
           message: failure.maybeMap(
             value: (failure) => failure.valueFailure.maybeMap(
-              integerOutOfBounds: (failure) => "${S.of(context).difficultyOutOfBounds}: ${failure.failedValue}",
+              integerOutOfBounds: (failure) =>
+                  "${S.of(context).difficultyOutOfBounds}: ${failure.failedValue}",
               orElse: () => S.of(context).unknownError,
             ),
             coreData: (failure) => failure.coreDataFailure.maybeMap(

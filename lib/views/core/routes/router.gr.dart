@@ -71,8 +71,7 @@ class AppRouter extends _i1.RootStackRouter {
         routeData: routeData,
         builder: (data) {
           final args = data.argsAs<ExperienceManagementPageRouteArgs>();
-          return _i10.ExperienceManagementPage(
-              key: args.key, experienceOption: args.experienceOption);
+          return _i10.ExperienceManagementPage(key: args.key, experienceOption: args.experienceOption);
         }),
     TagManagementPageRoute.name: (routeData) => _i1.MaterialPageX<dynamic>(
         routeData: routeData,
@@ -88,8 +87,7 @@ class AppRouter extends _i1.RootStackRouter {
   };
 
   @override
-  List<_i1.RouteConfig> get routes =>
-      [
+  List<_i1.RouteConfig> get routes => [
         _i1.RouteConfig(SplashPageRoute.name, path: '/'),
         _i1.RouteConfig(LogInPageRoute.name, path: '/log-in-page'),
         _i1.RouteConfig(ForgottenPasswordPageRoute.name, path: '/forgotten-password-page'),
@@ -124,8 +122,7 @@ class ForgottenPasswordPageRoute extends _i1.PageRouteInfo {
 class RegistrationPageRoute extends _i1.PageRouteInfo<RegistrationPageRouteArgs> {
   RegistrationPageRoute({_i2.Key? key, required _i13.Option<_i14.User> userOption})
       : super(name,
-            path: '/registration-page',
-            args: RegistrationPageRouteArgs(key: key, userOption: userOption));
+            path: '/registration-page', args: RegistrationPageRouteArgs(key: key, userOption: userOption));
 
   static const String name = 'RegistrationPageRoute';
 }
@@ -152,8 +149,7 @@ class MainPageRoute extends _i1.PageRouteInfo {
 
 class ProfileEditingPageRoute extends _i1.PageRouteInfo<ProfileEditingPageRouteArgs> {
   ProfileEditingPageRoute({_i2.Key? key, required _i14.User user})
-      : super(name,
-            path: '/profile-editing-page', args: ProfileEditingPageRouteArgs(key: key, user: user));
+      : super(name, path: '/profile-editing-page', args: ProfileEditingPageRouteArgs(key: key, user: user));
 
   static const String name = 'ProfileEditingPageRoute';
 }
@@ -167,8 +163,7 @@ class ProfileEditingPageRouteArgs {
 }
 
 class ExperienceManagementPageRoute extends _i1.PageRouteInfo<ExperienceManagementPageRouteArgs> {
-  ExperienceManagementPageRoute(
-      {_i2.Key? key, required _i13.Option<_i15.Experience> experienceOption})
+  ExperienceManagementPageRoute({_i2.Key? key, required _i13.Option<_i15.Experience> experienceOption})
       : super(name,
             path: '/experience-management-page',
             args: ExperienceManagementPageRouteArgs(key: key, experienceOption: experienceOption));
@@ -187,8 +182,7 @@ class ExperienceManagementPageRouteArgs {
 class TagManagementPageRoute extends _i1.PageRouteInfo<TagManagementPageRouteArgs> {
   TagManagementPageRoute({_i2.Key? key, required _i13.Option<_i16.Tag> tagOption})
       : super(name,
-            path: '/tag-management-page',
-            args: TagManagementPageRouteArgs(key: key, tagOption: tagOption));
+            path: '/tag-management-page', args: TagManagementPageRouteArgs(key: key, tagOption: tagOption));
 
   static const String name = 'TagManagementPageRoute';
 }

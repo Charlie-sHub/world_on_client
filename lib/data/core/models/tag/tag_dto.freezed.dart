@@ -202,8 +202,7 @@ class _$_TagDto extends _TagDto {
     return identical(this, other) ||
         (other is _TagDto &&
             (identical(other.id, id) || const DeepCollectionEquality().equals(other.id, id)) &&
-            (identical(other.name, name) ||
-                const DeepCollectionEquality().equals(other.name, name)) &&
+            (identical(other.name, name) || const DeepCollectionEquality().equals(other.name, name)) &&
             (identical(other.creatorId, creatorId) ||
                 const DeepCollectionEquality().equals(other.creatorId, creatorId)) &&
             (identical(other.creationDate, creationDate) ||

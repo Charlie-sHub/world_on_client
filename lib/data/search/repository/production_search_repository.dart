@@ -12,7 +12,6 @@ import 'package:worldon/data/core/misc/algolia/algolia_helpers.dart';
 import 'package:worldon/data/core/misc/firebase/firebase_helpers.dart';
 import 'package:worldon/data/core/models/experience/experience_dto.dart';
 import 'package:worldon/data/core/models/experience/experience_fields.dart';
-import 'package:worldon/data/core/models/user/user_fields.dart';
 import 'package:worldon/domain/core/entities/experience/experience.dart';
 import 'package:worldon/domain/core/entities/tag/tag.dart';
 import 'package:worldon/domain/core/entities/user/user.dart';
@@ -226,80 +225,6 @@ class ProductionSearchRepository implements SearchRepositoryInterface {
     ).onErrorReturnWith(
       (error, _) => left(_onError(error)),
     );
-  }
-
-  @override
-  Future<Either<Failure, KtList<User>>> getShareableUsers() async {
-    try {
-      final _userDocumentReference = await _firestore.currentUserReference();
-      final _querySnapshot = await _firestore.userCollection
-          .where(
-            UserFields.followedUsersIds,
-            arrayContains: _userDocumentReference.id,
-          )
-          .limit(100)
-          .get();
-      final _userList = _querySnapshot.docs.map(
-        (_queryDocumentSnapshot) => _queryDocumentSnapshot.data().toDomain(),
-      );
-      if (_userList.isNotEmpty) {
-        return right(_userList.toImmutableList());
-      } else {
-        return left<Failure, KtList<User>>(
-          const Failure.coreData(
-            CoreDataFailure.notFoundError(),
-          ),
-        );
-      }
-    } catch (error, _) {
-      return left(
-        _onError(error),
-      );
-    }
-  }
-
-  @override
-  Future<Either<Failure, KtList<User>>> searchShareableUsers(SearchTerm term) async {
-    try {
-      final _searchString = term.getOrCrash().toLowerCase();
-      final _userDocumentReference = await _firestore.currentUserReference();
-      final _querySnapshot = await _firestore.userCollection
-          .where(
-            UserFields.followedUsersIds,
-            arrayContains: _userDocumentReference.id,
-          )
-          .get();
-      final _userDtoList = _querySnapshot.docs.map(
-        (_queryDocumentSnapshot) => _queryDocumentSnapshot.data(),
-      );
-      final _filteredList = _userDtoList.where(
-        (_userDto) =>
-            _userDto.name.toLowerCase().contains(
-                  _searchString,
-                ) ||
-            _userDto.username.toLowerCase().contains(
-                  _searchString,
-                ),
-      );
-      final _userList = _filteredList
-          .map(
-            (_userDto) => _userDto.toDomain(),
-          )
-          .toList();
-      if (_userList.isNotEmpty) {
-        return right(_userList.toImmutableList());
-      } else {
-        return left<Failure, KtList<User>>(
-          const Failure.coreData(
-            CoreDataFailure.notFoundError(),
-          ),
-        );
-      }
-    } catch (error, _) {
-      return left(
-        _onError(error),
-      );
-    }
   }
 
   Failure _onError(dynamic error) {

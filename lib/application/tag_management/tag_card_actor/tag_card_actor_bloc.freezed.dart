@@ -379,8 +379,7 @@ abstract class _DismissedFromInterests implements TagCardActorEvent {
 
 /// @nodoc
 abstract class _$AddedToInterestsCopyWith<$Res> implements $TagCardActorEventCopyWith<$Res> {
-  factory _$AddedToInterestsCopyWith(
-          _AddedToInterests value, $Res Function(_AddedToInterests) then) =
+  factory _$AddedToInterestsCopyWith(_AddedToInterests value, $Res Function(_AddedToInterests) then) =
       __$AddedToInterestsCopyWithImpl<$Res>;
 
   @override

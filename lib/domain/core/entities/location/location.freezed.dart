@@ -49,11 +49,9 @@ mixin _$Location {
 
 /// @nodoc
 abstract class $LocationCopyWith<$Res> {
-  factory $LocationCopyWith(Location value, $Res Function(Location) then) =
-      _$LocationCopyWithImpl<$Res>;
+  factory $LocationCopyWith(Location value, $Res Function(Location) then) = _$LocationCopyWithImpl<$Res>;
 
-  $Res call(
-      {UniqueId id, String city, String country, String postalCode, Set<Experience> experiences});
+  $Res call({UniqueId id, String city, String country, String postalCode, Set<Experience> experiences});
 }
 
 /// @nodoc
@@ -99,17 +97,14 @@ class _$LocationCopyWithImpl<$Res> implements $LocationCopyWith<$Res> {
 
 /// @nodoc
 abstract class _$LocationCopyWith<$Res> implements $LocationCopyWith<$Res> {
-  factory _$LocationCopyWith(_Location value, $Res Function(_Location) then) =
-      __$LocationCopyWithImpl<$Res>;
+  factory _$LocationCopyWith(_Location value, $Res Function(_Location) then) = __$LocationCopyWithImpl<$Res>;
 
   @override
-  $Res call(
-      {UniqueId id, String city, String country, String postalCode, Set<Experience> experiences});
+  $Res call({UniqueId id, String city, String country, String postalCode, Set<Experience> experiences});
 }
 
 /// @nodoc
-class __$LocationCopyWithImpl<$Res> extends _$LocationCopyWithImpl<$Res>
-    implements _$LocationCopyWith<$Res> {
+class __$LocationCopyWithImpl<$Res> extends _$LocationCopyWithImpl<$Res> implements _$LocationCopyWith<$Res> {
   __$LocationCopyWithImpl(_Location _value, $Res Function(_Location) _then)
       : super(_value, (v) => _then(v as _Location));
 
@@ -181,8 +176,7 @@ class _$_Location extends _Location {
     return identical(this, other) ||
         (other is _Location &&
             (identical(other.id, id) || const DeepCollectionEquality().equals(other.id, id)) &&
-            (identical(other.city, city) ||
-                const DeepCollectionEquality().equals(other.city, city)) &&
+            (identical(other.city, city) || const DeepCollectionEquality().equals(other.city, city)) &&
             (identical(other.country, country) ||
                 const DeepCollectionEquality().equals(other.country, country)) &&
             (identical(other.postalCode, postalCode) ||
@@ -202,8 +196,7 @@ class _$_Location extends _Location {
 
   @JsonKey(ignore: true)
   @override
-  _$LocationCopyWith<_Location> get copyWith =>
-      __$LocationCopyWithImpl<_Location>(this, _$identity);
+  _$LocationCopyWith<_Location> get copyWith => __$LocationCopyWithImpl<_Location>(this, _$identity);
 }
 
 abstract class _Location extends Location {

@@ -357,8 +357,7 @@ class _$NewNotificationsWatcherStateCopyWithImpl<$Res>
 
 /// @nodoc
 abstract class _$InitialCopyWith<$Res> {
-  factory _$InitialCopyWith(_Initial value, $Res Function(_Initial) then) =
-      __$InitialCopyWithImpl<$Res>;
+  factory _$InitialCopyWith(_Initial value, $Res Function(_Initial) then) = __$InitialCopyWithImpl<$Res>;
 }
 
 /// @nodoc
@@ -448,8 +447,7 @@ abstract class _Initial implements NewNotificationsWatcherState {
 
 /// @nodoc
 abstract class _$NewNotificationsCopyWith<$Res> {
-  factory _$NewNotificationsCopyWith(
-          _NewNotifications value, $Res Function(_NewNotifications) then) =
+  factory _$NewNotificationsCopyWith(_NewNotifications value, $Res Function(_NewNotifications) then) =
       __$NewNotificationsCopyWithImpl<$Res>;
 }
 
@@ -540,17 +538,14 @@ abstract class _NewNotifications implements NewNotificationsWatcherState {
 
 /// @nodoc
 abstract class _$NoNewNotificationsCopyWith<$Res> {
-  factory _$NoNewNotificationsCopyWith(
-          _NoNewNotifications value, $Res Function(_NoNewNotifications) then) =
+  factory _$NoNewNotificationsCopyWith(_NoNewNotifications value, $Res Function(_NoNewNotifications) then) =
       __$NoNewNotificationsCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$NoNewNotificationsCopyWithImpl<$Res>
-    extends _$NewNotificationsWatcherStateCopyWithImpl<$Res>
+class __$NoNewNotificationsCopyWithImpl<$Res> extends _$NewNotificationsWatcherStateCopyWithImpl<$Res>
     implements _$NoNewNotificationsCopyWith<$Res> {
-  __$NoNewNotificationsCopyWithImpl(
-      _NoNewNotifications _value, $Res Function(_NoNewNotifications) _then)
+  __$NoNewNotificationsCopyWithImpl(_NoNewNotifications _value, $Res Function(_NoNewNotifications) _then)
       : super(_value, (v) => _then(v as _NoNewNotifications));
 
   @override
@@ -634,8 +629,7 @@ abstract class _NoNewNotifications implements NewNotificationsWatcherState {
 
 /// @nodoc
 abstract class _$FailureCopyWith<$Res> {
-  factory _$FailureCopyWith(_Failure value, $Res Function(_Failure) then) =
-      __$FailureCopyWithImpl<$Res>;
+  factory _$FailureCopyWith(_Failure value, $Res Function(_Failure) then) = __$FailureCopyWithImpl<$Res>;
 }
 
 /// @nodoc

@@ -158,8 +158,7 @@ abstract class $ProfileEditingFormEventCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$ProfileEditingFormEventCopyWithImpl<$Res>
-    implements $ProfileEditingFormEventCopyWith<$Res> {
+class _$ProfileEditingFormEventCopyWithImpl<$Res> implements $ProfileEditingFormEventCopyWith<$Res> {
   _$ProfileEditingFormEventCopyWithImpl(this._value, this._then);
 
   final ProfileEditingFormEvent _value;
@@ -372,8 +371,7 @@ class _$_NameChanged implements _NameChanged {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other is _NameChanged &&
-            (identical(other.name, name) ||
-                const DeepCollectionEquality().equals(other.name, name)));
+            (identical(other.name, name) || const DeepCollectionEquality().equals(other.name, name)));
   }
 
   @override
@@ -930,8 +928,7 @@ abstract class _$PasswordConfirmationChangedCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$PasswordConfirmationChangedCopyWithImpl<$Res>
-    extends _$ProfileEditingFormEventCopyWithImpl<$Res>
+class __$PasswordConfirmationChangedCopyWithImpl<$Res> extends _$ProfileEditingFormEventCopyWithImpl<$Res>
     implements _$PasswordConfirmationChangedCopyWith<$Res> {
   __$PasswordConfirmationChangedCopyWithImpl(
       _PasswordConfirmationChanged _value, $Res Function(_PasswordConfirmationChanged) _then)
@@ -971,13 +968,11 @@ class _$_PasswordConfirmationChanged implements _PasswordConfirmationChanged {
     return identical(this, other) ||
         (other is _PasswordConfirmationChanged &&
             (identical(other.passwordConfirmation, passwordConfirmation) ||
-                const DeepCollectionEquality()
-                    .equals(other.passwordConfirmation, passwordConfirmation)));
+                const DeepCollectionEquality().equals(other.passwordConfirmation, passwordConfirmation)));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(passwordConfirmation);
+  int get hashCode => runtimeType.hashCode ^ const DeepCollectionEquality().hash(passwordConfirmation);
 
   @JsonKey(ignore: true)
   @override
@@ -1066,8 +1061,7 @@ class _$_PasswordConfirmationChanged implements _PasswordConfirmationChanged {
 }
 
 abstract class _PasswordConfirmationChanged implements ProfileEditingFormEvent {
-  const factory _PasswordConfirmationChanged(String passwordConfirmation) =
-      _$_PasswordConfirmationChanged;
+  const factory _PasswordConfirmationChanged(String passwordConfirmation) = _$_PasswordConfirmationChanged;
 
   String get passwordConfirmation => throw _privateConstructorUsedError;
 
@@ -1088,8 +1082,7 @@ abstract class _$EmailAddressChangedCopyWith<$Res> {
 /// @nodoc
 class __$EmailAddressChangedCopyWithImpl<$Res> extends _$ProfileEditingFormEventCopyWithImpl<$Res>
     implements _$EmailAddressChangedCopyWith<$Res> {
-  __$EmailAddressChangedCopyWithImpl(
-      _EmailAddressChanged _value, $Res Function(_EmailAddressChanged) _then)
+  __$EmailAddressChangedCopyWithImpl(_EmailAddressChanged _value, $Res Function(_EmailAddressChanged) _then)
       : super(_value, (v) => _then(v as _EmailAddressChanged));
 
   @override
@@ -1224,8 +1217,7 @@ abstract class _EmailAddressChanged implements ProfileEditingFormEvent {
   String get emailAddress => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
-  _$EmailAddressChangedCopyWith<_EmailAddressChanged> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$EmailAddressChangedCopyWith<_EmailAddressChanged> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -1379,8 +1371,7 @@ abstract class _BirthdayChanged implements ProfileEditingFormEvent {
 
 /// @nodoc
 abstract class _$DescriptionChangedCopyWith<$Res> {
-  factory _$DescriptionChangedCopyWith(
-          _DescriptionChanged value, $Res Function(_DescriptionChanged) then) =
+  factory _$DescriptionChangedCopyWith(_DescriptionChanged value, $Res Function(_DescriptionChanged) then) =
       __$DescriptionChangedCopyWithImpl<$Res>;
   $Res call({String description});
 }
@@ -1388,8 +1379,7 @@ abstract class _$DescriptionChangedCopyWith<$Res> {
 /// @nodoc
 class __$DescriptionChangedCopyWithImpl<$Res> extends _$ProfileEditingFormEventCopyWithImpl<$Res>
     implements _$DescriptionChangedCopyWith<$Res> {
-  __$DescriptionChangedCopyWithImpl(
-      _DescriptionChanged _value, $Res Function(_DescriptionChanged) _then)
+  __$DescriptionChangedCopyWithImpl(_DescriptionChanged _value, $Res Function(_DescriptionChanged) _then)
       : super(_value, (v) => _then(v as _DescriptionChanged));
 
   @override
@@ -1523,14 +1513,12 @@ abstract class _DescriptionChanged implements ProfileEditingFormEvent {
 
   String get description => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  _$DescriptionChangedCopyWith<_DescriptionChanged> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$DescriptionChangedCopyWith<_DescriptionChanged> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class _$InterestsChangedCopyWith<$Res> {
-  factory _$InterestsChangedCopyWith(
-          _InterestsChanged value, $Res Function(_InterestsChanged) then) =
+  factory _$InterestsChangedCopyWith(_InterestsChanged value, $Res Function(_InterestsChanged) then) =
       __$InterestsChangedCopyWithImpl<$Res>;
   $Res call({KtSet<Tag> interests});
 }
@@ -1857,8 +1845,7 @@ abstract class $ProfileEditingFormStateCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$ProfileEditingFormStateCopyWithImpl<$Res>
-    implements $ProfileEditingFormStateCopyWith<$Res> {
+class _$ProfileEditingFormStateCopyWithImpl<$Res> implements $ProfileEditingFormStateCopyWith<$Res> {
   _$ProfileEditingFormStateCopyWithImpl(this._value, this._then);
 
   final ProfileEditingFormState _value;
@@ -1911,8 +1898,7 @@ class _$ProfileEditingFormStateCopyWithImpl<$Res>
 }
 
 /// @nodoc
-abstract class _$ProfileEditingFormStateCopyWith<$Res>
-    implements $ProfileEditingFormStateCopyWith<$Res> {
+abstract class _$ProfileEditingFormStateCopyWith<$Res> implements $ProfileEditingFormStateCopyWith<$Res> {
   factory _$ProfileEditingFormStateCopyWith(
           _ProfileEditingFormState value, $Res Function(_ProfileEditingFormState) then) =
       __$ProfileEditingFormStateCopyWithImpl<$Res>;
@@ -1931,8 +1917,7 @@ abstract class _$ProfileEditingFormStateCopyWith<$Res>
 }
 
 /// @nodoc
-class __$ProfileEditingFormStateCopyWithImpl<$Res>
-    extends _$ProfileEditingFormStateCopyWithImpl<$Res>
+class __$ProfileEditingFormStateCopyWithImpl<$Res> extends _$ProfileEditingFormStateCopyWithImpl<$Res>
     implements _$ProfileEditingFormStateCopyWith<$Res> {
   __$ProfileEditingFormStateCopyWithImpl(
       _ProfileEditingFormState _value, $Res Function(_ProfileEditingFormState) _then)
@@ -2012,22 +1997,17 @@ class _$_ProfileEditingFormState implements _ProfileEditingFormState {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other is _ProfileEditingFormState &&
-            (identical(other.user, user) ||
-                const DeepCollectionEquality().equals(other.user, user)) &&
+            (identical(other.user, user) || const DeepCollectionEquality().equals(other.user, user)) &&
             (identical(other.passwordConfirmator, passwordConfirmator) ||
-                const DeepCollectionEquality()
-                    .equals(other.passwordConfirmator, passwordConfirmator)) &&
+                const DeepCollectionEquality().equals(other.passwordConfirmator, passwordConfirmator)) &&
             (identical(other.passwordToCompare, passwordToCompare) ||
-                const DeepCollectionEquality()
-                    .equals(other.passwordToCompare, passwordToCompare)) &&
+                const DeepCollectionEquality().equals(other.passwordToCompare, passwordToCompare)) &&
             (identical(other.showErrorMessages, showErrorMessages) ||
-                const DeepCollectionEquality()
-                    .equals(other.showErrorMessages, showErrorMessages)) &&
+                const DeepCollectionEquality().equals(other.showErrorMessages, showErrorMessages)) &&
             (identical(other.isSubmitting, isSubmitting) ||
                 const DeepCollectionEquality().equals(other.isSubmitting, isSubmitting)) &&
             (identical(other.failureOrSuccessOption, failureOrSuccessOption) ||
-                const DeepCollectionEquality()
-                    .equals(other.failureOrSuccessOption, failureOrSuccessOption)));
+                const DeepCollectionEquality().equals(other.failureOrSuccessOption, failureOrSuccessOption)));
   }
 
   @override

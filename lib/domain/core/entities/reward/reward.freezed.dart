@@ -51,12 +51,7 @@ mixin _$Reward {
 abstract class $RewardCopyWith<$Res> {
   factory $RewardCopyWith(Reward value, $Res Function(Reward) then) = _$RewardCopyWithImpl<$Res>;
 
-  $Res call(
-      {UniqueId id,
-      Name name,
-      EntityDescription description,
-      String imageURL,
-      Option<File> imageFile});
+  $Res call({UniqueId id, Name name, EntityDescription description, String imageURL, Option<File> imageFile});
 }
 
 /// @nodoc
@@ -187,8 +182,7 @@ class _$_Reward extends _Reward {
     return identical(this, other) ||
         (other is _Reward &&
             (identical(other.id, id) || const DeepCollectionEquality().equals(other.id, id)) &&
-            (identical(other.name, name) ||
-                const DeepCollectionEquality().equals(other.name, name)) &&
+            (identical(other.name, name) || const DeepCollectionEquality().equals(other.name, name)) &&
             (identical(other.description, description) ||
                 const DeepCollectionEquality().equals(other.description, description)) &&
             (identical(other.imageURL, imageURL) ||

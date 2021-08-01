@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:worldon/application/experience_navigation/experience_like_actor/experience_like_actor_bloc.dart';
 import 'package:worldon/domain/core/entities/experience/experience.dart';
-import 'package:worldon/views/core/misc/common_functions/world_on_number_display.dart';
+import 'package:worldon/views/core/misc/functions/world_on_number_display.dart';
 import 'package:worldon/views/core/misc/world_on_colors.dart';
 import 'package:worldon/views/experience_navigation/widgets/like_dislike_button_builder.dart';
 

@@ -215,8 +215,7 @@ abstract class _$LanguageCodeChangedCopyWith<$Res> {
 /// @nodoc
 class __$LanguageCodeChangedCopyWithImpl<$Res> extends _$OptionsFormEventCopyWithImpl<$Res>
     implements _$LanguageCodeChangedCopyWith<$Res> {
-  __$LanguageCodeChangedCopyWithImpl(
-      _LanguageCodeChanged _value, $Res Function(_LanguageCodeChanged) _then)
+  __$LanguageCodeChangedCopyWithImpl(_LanguageCodeChanged _value, $Res Function(_LanguageCodeChanged) _then)
       : super(_value, (v) => _then(v as _LanguageCodeChanged));
 
   @override
@@ -319,8 +318,7 @@ abstract class _LanguageCodeChanged implements OptionsFormEvent {
   String get languageCode => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
-  _$LanguageCodeChangedCopyWith<_LanguageCodeChanged> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$LanguageCodeChangedCopyWith<_LanguageCodeChanged> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -505,8 +503,7 @@ class _$OptionsFormStateCopyWithImpl<$Res> implements $OptionsFormStateCopyWith<
 
 /// @nodoc
 abstract class _$OptionsFormStateCopyWith<$Res> implements $OptionsFormStateCopyWith<$Res> {
-  factory _$OptionsFormStateCopyWith(
-          _OptionsFormState value, $Res Function(_OptionsFormState) then) =
+  factory _$OptionsFormStateCopyWith(_OptionsFormState value, $Res Function(_OptionsFormState) then) =
       __$OptionsFormStateCopyWithImpl<$Res>;
 
   @override
@@ -587,13 +584,11 @@ class _$_OptionsFormState implements _OptionsFormState {
             (identical(other.options, options) ||
                 const DeepCollectionEquality().equals(other.options, options)) &&
             (identical(other.showErrorMessages, showErrorMessages) ||
-                const DeepCollectionEquality()
-                    .equals(other.showErrorMessages, showErrorMessages)) &&
+                const DeepCollectionEquality().equals(other.showErrorMessages, showErrorMessages)) &&
             (identical(other.isSubmitting, isSubmitting) ||
                 const DeepCollectionEquality().equals(other.isSubmitting, isSubmitting)) &&
             (identical(other.failureOrSuccessOption, failureOrSuccessOption) ||
-                const DeepCollectionEquality()
-                    .equals(other.failureOrSuccessOption, failureOrSuccessOption)));
+                const DeepCollectionEquality().equals(other.failureOrSuccessOption, failureOrSuccessOption)));
   }
 
   @override

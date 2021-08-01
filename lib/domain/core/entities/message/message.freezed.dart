@@ -49,14 +49,9 @@ mixin _$Message {
 
 /// @nodoc
 abstract class $MessageCopyWith<$Res> {
-  factory $MessageCopyWith(Message value, $Res Function(Message) then) =
-      _$MessageCopyWithImpl<$Res>;
+  factory $MessageCopyWith(Message value, $Res Function(Message) then) = _$MessageCopyWithImpl<$Res>;
   $Res call(
-      {UniqueId id,
-      SimpleUser sender,
-      UniqueId receiverId,
-      MessageContent content,
-      PastDate creationDate});
+      {UniqueId id, SimpleUser sender, UniqueId receiverId, MessageContent content, PastDate creationDate});
 
   $SimpleUserCopyWith<$Res> get sender;
 }
@@ -111,23 +106,17 @@ class _$MessageCopyWithImpl<$Res> implements $MessageCopyWith<$Res> {
 
 /// @nodoc
 abstract class _$MessageCopyWith<$Res> implements $MessageCopyWith<$Res> {
-  factory _$MessageCopyWith(_Message value, $Res Function(_Message) then) =
-      __$MessageCopyWithImpl<$Res>;
+  factory _$MessageCopyWith(_Message value, $Res Function(_Message) then) = __$MessageCopyWithImpl<$Res>;
   @override
   $Res call(
-      {UniqueId id,
-      SimpleUser sender,
-      UniqueId receiverId,
-      MessageContent content,
-      PastDate creationDate});
+      {UniqueId id, SimpleUser sender, UniqueId receiverId, MessageContent content, PastDate creationDate});
 
   @override
   $SimpleUserCopyWith<$Res> get sender;
 }
 
 /// @nodoc
-class __$MessageCopyWithImpl<$Res> extends _$MessageCopyWithImpl<$Res>
-    implements _$MessageCopyWith<$Res> {
+class __$MessageCopyWithImpl<$Res> extends _$MessageCopyWithImpl<$Res> implements _$MessageCopyWith<$Res> {
   __$MessageCopyWithImpl(_Message _value, $Res Function(_Message) _then)
       : super(_value, (v) => _then(v as _Message));
 

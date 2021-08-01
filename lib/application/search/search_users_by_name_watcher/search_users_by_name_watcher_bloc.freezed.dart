@@ -309,8 +309,7 @@ abstract class _SearchResultsReceived implements SearchUsersByNameWatcherEvent {
   Either<Failure, KtList<User>> get failureOrUsers => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
-  _$SearchResultsReceivedCopyWith<_SearchResultsReceived> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$SearchResultsReceivedCopyWith<_SearchResultsReceived> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc

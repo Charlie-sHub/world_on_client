@@ -729,8 +729,7 @@ abstract class _$PromotionPlansViewCopyWith<$Res> {
 /// @nodoc
 class __$PromotionPlansViewCopyWithImpl<$Res> extends _$StoreNavigationActorStateCopyWithImpl<$Res>
     implements _$PromotionPlansViewCopyWith<$Res> {
-  __$PromotionPlansViewCopyWithImpl(
-      _PromotionPlansView _value, $Res Function(_PromotionPlansView) _then)
+  __$PromotionPlansViewCopyWithImpl(_PromotionPlansView _value, $Res Function(_PromotionPlansView) _then)
       : super(_value, (v) => _then(v as _PromotionPlansView));
 
   @override

@@ -65,8 +65,8 @@ mixin _$ExperienceNavigationWatcherEvent {
 
 /// @nodoc
 abstract class $ExperienceNavigationWatcherEventCopyWith<$Res> {
-  factory $ExperienceNavigationWatcherEventCopyWith(ExperienceNavigationWatcherEvent value,
-          $Res Function(ExperienceNavigationWatcherEvent) then) =
+  factory $ExperienceNavigationWatcherEventCopyWith(
+          ExperienceNavigationWatcherEvent value, $Res Function(ExperienceNavigationWatcherEvent) then) =
       _$ExperienceNavigationWatcherEventCopyWithImpl<$Res>;
 }
 
@@ -387,8 +387,8 @@ mixin _$ExperienceNavigationWatcherState {
 
 /// @nodoc
 abstract class $ExperienceNavigationWatcherStateCopyWith<$Res> {
-  factory $ExperienceNavigationWatcherStateCopyWith(ExperienceNavigationWatcherState value,
-          $Res Function(ExperienceNavigationWatcherState) then) =
+  factory $ExperienceNavigationWatcherStateCopyWith(
+          ExperienceNavigationWatcherState value, $Res Function(ExperienceNavigationWatcherState) then) =
       _$ExperienceNavigationWatcherStateCopyWithImpl<$Res>;
 }
 
@@ -404,8 +404,7 @@ class _$ExperienceNavigationWatcherStateCopyWithImpl<$Res>
 
 /// @nodoc
 abstract class _$InitialCopyWith<$Res> {
-  factory _$InitialCopyWith(_Initial value, $Res Function(_Initial) then) =
-      __$InitialCopyWithImpl<$Res>;
+  factory _$InitialCopyWith(_Initial value, $Res Function(_Initial) then) = __$InitialCopyWithImpl<$Res>;
 }
 
 /// @nodoc
@@ -596,8 +595,7 @@ abstract class _$NavigatingExperienceCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$NavigatingExperienceCopyWithImpl<$Res>
-    extends _$ExperienceNavigationWatcherStateCopyWithImpl<$Res>
+class __$NavigatingExperienceCopyWithImpl<$Res> extends _$ExperienceNavigationWatcherStateCopyWithImpl<$Res>
     implements _$NavigatingExperienceCopyWith<$Res> {
   __$NavigatingExperienceCopyWithImpl(
       _NavigatingExperience _value, $Res Function(_NavigatingExperience) _then)
@@ -714,14 +712,12 @@ abstract class _NavigatingExperience implements ExperienceNavigationWatcherState
   Experience get experience => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
-  _$NavigatingExperienceCopyWith<_NavigatingExperience> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$NavigatingExperienceCopyWith<_NavigatingExperience> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class _$FinishExperienceCopyWith<$Res> {
-  factory _$FinishExperienceCopyWith(
-          _FinishExperience value, $Res Function(_FinishExperience) then) =
+  factory _$FinishExperienceCopyWith(_FinishExperience value, $Res Function(_FinishExperience) then) =
       __$FinishExperienceCopyWithImpl<$Res>;
   $Res call({Experience experience});
 
@@ -729,8 +725,7 @@ abstract class _$FinishExperienceCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$FinishExperienceCopyWithImpl<$Res>
-    extends _$ExperienceNavigationWatcherStateCopyWithImpl<$Res>
+class __$FinishExperienceCopyWithImpl<$Res> extends _$ExperienceNavigationWatcherStateCopyWithImpl<$Res>
     implements _$FinishExperienceCopyWith<$Res> {
   __$FinishExperienceCopyWithImpl(_FinishExperience _value, $Res Function(_FinishExperience) _then)
       : super(_value, (v) => _then(v as _FinishExperience));

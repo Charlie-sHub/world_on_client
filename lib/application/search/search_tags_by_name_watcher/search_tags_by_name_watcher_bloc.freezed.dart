@@ -186,8 +186,7 @@ class _$_WatchTagsFoundByNameStarted implements _WatchTagsFoundByNameStarted {
 }
 
 abstract class _WatchTagsFoundByNameStarted implements SearchTagsByNameWatcherEvent {
-  const factory _WatchTagsFoundByNameStarted(SearchTerm searchTerm) =
-      _$_WatchTagsFoundByNameStarted;
+  const factory _WatchTagsFoundByNameStarted(SearchTerm searchTerm) = _$_WatchTagsFoundByNameStarted;
 
   SearchTerm get searchTerm => throw _privateConstructorUsedError;
 

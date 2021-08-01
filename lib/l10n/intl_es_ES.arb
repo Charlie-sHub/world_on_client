@@ -227,5 +227,6 @@
   "toDoBy": "Para hacer por:",
   "cantBlockSelf": "No te puedes bloquear",
   "objectivesExplanation": "Dale al check conformes completes los objetivos",
-  "newNotification": "Nueva notificacion"
+  "newNotification": "Nueva notificacion",
+  "newExperience": "Nueva experiencia"
 }

@@ -228,8 +228,7 @@ abstract class _$DescriptionChangedCopyWith<$Res> {
 /// @nodoc
 class __$DescriptionChangedCopyWithImpl<$Res> extends _$RewardFormEventCopyWithImpl<$Res>
     implements _$DescriptionChangedCopyWith<$Res> {
-  __$DescriptionChangedCopyWithImpl(
-      _DescriptionChanged _value, $Res Function(_DescriptionChanged) _then)
+  __$DescriptionChangedCopyWithImpl(_DescriptionChanged _value, $Res Function(_DescriptionChanged) _then)
       : super(_value, (v) => _then(v as _DescriptionChanged));
 
   @override
@@ -696,8 +695,7 @@ class _$_RewardFormState implements _RewardFormState {
             (identical(other.reward, reward) ||
                 const DeepCollectionEquality().equals(other.reward, reward)) &&
             (identical(other.showErrorMessages, showErrorMessages) ||
-                const DeepCollectionEquality()
-                    .equals(other.showErrorMessages, showErrorMessages)) &&
+                const DeepCollectionEquality().equals(other.showErrorMessages, showErrorMessages)) &&
             (identical(other.isSubmitting, isSubmitting) ||
                 const DeepCollectionEquality().equals(other.isSubmitting, isSubmitting)));
   }

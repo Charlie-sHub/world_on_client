@@ -112,8 +112,8 @@ mixin _$AchievementManagementFormEvent {
 
 /// @nodoc
 abstract class $AchievementManagementFormEventCopyWith<$Res> {
-  factory $AchievementManagementFormEventCopyWith(AchievementManagementFormEvent value,
-          $Res Function(AchievementManagementFormEvent) then) =
+  factory $AchievementManagementFormEventCopyWith(
+          AchievementManagementFormEvent value, $Res Function(AchievementManagementFormEvent) then) =
       _$AchievementManagementFormEventCopyWithImpl<$Res>;
 }
 
@@ -307,8 +307,7 @@ class _$_NameChanged implements _NameChanged {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other is _NameChanged &&
-            (identical(other.name, name) ||
-                const DeepCollectionEquality().equals(other.name, name)));
+            (identical(other.name, name) || const DeepCollectionEquality().equals(other.name, name)));
   }
 
   @override
@@ -395,18 +394,15 @@ abstract class _NameChanged implements AchievementManagementFormEvent {
 
 /// @nodoc
 abstract class _$DescriptionChangedCopyWith<$Res> {
-  factory _$DescriptionChangedCopyWith(
-          _DescriptionChanged value, $Res Function(_DescriptionChanged) then) =
+  factory _$DescriptionChangedCopyWith(_DescriptionChanged value, $Res Function(_DescriptionChanged) then) =
       __$DescriptionChangedCopyWithImpl<$Res>;
   $Res call({String description});
 }
 
 /// @nodoc
-class __$DescriptionChangedCopyWithImpl<$Res>
-    extends _$AchievementManagementFormEventCopyWithImpl<$Res>
+class __$DescriptionChangedCopyWithImpl<$Res> extends _$AchievementManagementFormEventCopyWithImpl<$Res>
     implements _$DescriptionChangedCopyWith<$Res> {
-  __$DescriptionChangedCopyWithImpl(
-      _DescriptionChanged _value, $Res Function(_DescriptionChanged) _then)
+  __$DescriptionChangedCopyWithImpl(_DescriptionChanged _value, $Res Function(_DescriptionChanged) _then)
       : super(_value, (v) => _then(v as _DescriptionChanged));
 
   @override
@@ -524,8 +520,7 @@ abstract class _DescriptionChanged implements AchievementManagementFormEvent {
 
   String get description => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  _$DescriptionChangedCopyWith<_DescriptionChanged> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$DescriptionChangedCopyWith<_DescriptionChanged> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -538,8 +533,7 @@ abstract class _$ExperiencePointsChangedCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$ExperiencePointsChangedCopyWithImpl<$Res>
-    extends _$AchievementManagementFormEventCopyWithImpl<$Res>
+class __$ExperiencePointsChangedCopyWithImpl<$Res> extends _$AchievementManagementFormEventCopyWithImpl<$Res>
     implements _$ExperiencePointsChangedCopyWith<$Res> {
   __$ExperiencePointsChangedCopyWithImpl(
       _ExperiencePointsChanged _value, $Res Function(_ExperiencePointsChanged) _then)
@@ -712,8 +706,7 @@ class _$_TagsChanged implements _TagsChanged {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other is _TagsChanged &&
-            (identical(other.tags, tags) ||
-                const DeepCollectionEquality().equals(other.tags, tags)));
+            (identical(other.tags, tags) || const DeepCollectionEquality().equals(other.tags, tags)));
   }
 
   @override
@@ -845,8 +838,7 @@ class _$_ImageChanged implements _ImageChanged {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other is _ImageChanged &&
-            (identical(other.image, image) ||
-                const DeepCollectionEquality().equals(other.image, image)));
+            (identical(other.image, image) || const DeepCollectionEquality().equals(other.image, image)));
   }
 
   @override
@@ -1076,8 +1068,8 @@ mixin _$AchievementManagementFormState {
 
 /// @nodoc
 abstract class $AchievementManagementFormStateCopyWith<$Res> {
-  factory $AchievementManagementFormStateCopyWith(AchievementManagementFormState value,
-          $Res Function(AchievementManagementFormState) then) =
+  factory $AchievementManagementFormStateCopyWith(
+          AchievementManagementFormState value, $Res Function(AchievementManagementFormState) then) =
       _$AchievementManagementFormStateCopyWithImpl<$Res>;
 
   $Res call(
@@ -1142,8 +1134,8 @@ class _$AchievementManagementFormStateCopyWithImpl<$Res>
 /// @nodoc
 abstract class _$AchievementManagementFormStateCopyWith<$Res>
     implements $AchievementManagementFormStateCopyWith<$Res> {
-  factory _$AchievementManagementFormStateCopyWith(_AchievementManagementFormState value,
-          $Res Function(_AchievementManagementFormState) then) =
+  factory _$AchievementManagementFormStateCopyWith(
+          _AchievementManagementFormState value, $Res Function(_AchievementManagementFormState) then) =
       __$AchievementManagementFormStateCopyWithImpl<$Res>;
 
   @override
@@ -1235,15 +1227,13 @@ class _$_AchievementManagementFormState implements _AchievementManagementFormSta
             (identical(other.achievement, achievement) ||
                 const DeepCollectionEquality().equals(other.achievement, achievement)) &&
             (identical(other.showErrorMessages, showErrorMessages) ||
-                const DeepCollectionEquality()
-                    .equals(other.showErrorMessages, showErrorMessages)) &&
+                const DeepCollectionEquality().equals(other.showErrorMessages, showErrorMessages)) &&
             (identical(other.isEditing, isEditing) ||
                 const DeepCollectionEquality().equals(other.isEditing, isEditing)) &&
             (identical(other.isSubmitting, isSubmitting) ||
                 const DeepCollectionEquality().equals(other.isSubmitting, isSubmitting)) &&
             (identical(other.failureOrSuccessOption, failureOrSuccessOption) ||
-                const DeepCollectionEquality()
-                    .equals(other.failureOrSuccessOption, failureOrSuccessOption)));
+                const DeepCollectionEquality().equals(other.failureOrSuccessOption, failureOrSuccessOption)));
   }
 
   @override
@@ -1258,18 +1248,16 @@ class _$_AchievementManagementFormState implements _AchievementManagementFormSta
   @JsonKey(ignore: true)
   @override
   _$AchievementManagementFormStateCopyWith<_AchievementManagementFormState> get copyWith =>
-      __$AchievementManagementFormStateCopyWithImpl<_AchievementManagementFormState>(
-          this, _$identity);
+      __$AchievementManagementFormStateCopyWithImpl<_AchievementManagementFormState>(this, _$identity);
 }
 
 abstract class _AchievementManagementFormState implements AchievementManagementFormState {
   const factory _AchievementManagementFormState(
-          {required Achievement achievement,
-          required bool showErrorMessages,
-          required bool isEditing,
-          required bool isSubmitting,
-          required Option<Either<Failure, Unit>> failureOrSuccessOption}) =
-      _$_AchievementManagementFormState;
+      {required Achievement achievement,
+      required bool showErrorMessages,
+      required bool isEditing,
+      required bool isSubmitting,
+      required Option<Either<Failure, Unit>> failureOrSuccessOption}) = _$_AchievementManagementFormState;
 
   @override
   Achievement get achievement => throw _privateConstructorUsedError;

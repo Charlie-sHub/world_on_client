@@ -1,7 +1,7 @@
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:worldon/generated/l10n.dart';
-import 'package:worldon/views/core/misc/common_functions/get_color_by_difficulty.dart';
+import 'package:worldon/views/core/misc/functions/get_color_by_difficulty.dart';
 import 'package:worldon/views/core/misc/world_on_colors.dart';
 
 class DifficultyDisplay extends StatelessWidget {

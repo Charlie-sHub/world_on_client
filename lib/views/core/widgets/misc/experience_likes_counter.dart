@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:worldon/application/core/watch_current_user/watch_current_user_bloc.dart';
 import 'package:worldon/domain/core/entities/experience/experience.dart';
-import 'package:worldon/views/core/misc/common_functions/world_on_number_display.dart';
+import 'package:worldon/views/core/misc/functions/world_on_number_display.dart';
 import 'package:worldon/views/core/misc/world_on_colors.dart';
 
 class ExperienceLikesCounter extends StatelessWidget {

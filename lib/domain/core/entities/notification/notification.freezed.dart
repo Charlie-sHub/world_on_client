@@ -261,12 +261,10 @@ class _$_Notification extends _Notification {
                 const DeepCollectionEquality().equals(other.receiverId, receiverId)) &&
             (identical(other.description, description) ||
                 const DeepCollectionEquality().equals(other.description, description)) &&
-            (identical(other.seen, seen) ||
-                const DeepCollectionEquality().equals(other.seen, seen)) &&
+            (identical(other.seen, seen) || const DeepCollectionEquality().equals(other.seen, seen)) &&
             (identical(other.creationDate, creationDate) ||
                 const DeepCollectionEquality().equals(other.creationDate, creationDate)) &&
-            (identical(other.type, type) ||
-                const DeepCollectionEquality().equals(other.type, type)) &&
+            (identical(other.type, type) || const DeepCollectionEquality().equals(other.type, type)) &&
             (identical(other.experienceOption, experienceOption) ||
                 const DeepCollectionEquality().equals(other.experienceOption, experienceOption)));
   }

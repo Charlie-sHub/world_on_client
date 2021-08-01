@@ -141,8 +141,7 @@ class _$_EmailChanged implements _EmailChanged {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other is _EmailChanged &&
-            (identical(other.email, email) ||
-                const DeepCollectionEquality().equals(other.email, email)));
+            (identical(other.email, email) || const DeepCollectionEquality().equals(other.email, email)));
   }
 
   @override
@@ -338,8 +337,7 @@ abstract class _PasswordChanged implements LogInFormEvent {
 
 /// @nodoc
 abstract class _$LoggedInCopyWith<$Res> {
-  factory _$LoggedInCopyWith(_LoggedIn value, $Res Function(_LoggedIn) then) =
-      __$LoggedInCopyWithImpl<$Res>;
+  factory _$LoggedInCopyWith(_LoggedIn value, $Res Function(_LoggedIn) then) = __$LoggedInCopyWithImpl<$Res>;
 }
 
 /// @nodoc
@@ -717,21 +715,17 @@ class _$_LogInFormState implements _LogInFormState {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other is _LogInFormState &&
-            (identical(other.email, email) ||
-                const DeepCollectionEquality().equals(other.email, email)) &&
+            (identical(other.email, email) || const DeepCollectionEquality().equals(other.email, email)) &&
             (identical(other.password, password) ||
                 const DeepCollectionEquality().equals(other.password, password)) &&
             (identical(other.showErrorMessages, showErrorMessages) ||
-                const DeepCollectionEquality()
-                    .equals(other.showErrorMessages, showErrorMessages)) &&
+                const DeepCollectionEquality().equals(other.showErrorMessages, showErrorMessages)) &&
             (identical(other.isSubmitting, isSubmitting) ||
                 const DeepCollectionEquality().equals(other.isSubmitting, isSubmitting)) &&
             (identical(other.thirdPartyUserOption, thirdPartyUserOption) ||
-                const DeepCollectionEquality()
-                    .equals(other.thirdPartyUserOption, thirdPartyUserOption)) &&
+                const DeepCollectionEquality().equals(other.thirdPartyUserOption, thirdPartyUserOption)) &&
             (identical(other.failureOrSuccessOption, failureOrSuccessOption) ||
-                const DeepCollectionEquality()
-                    .equals(other.failureOrSuccessOption, failureOrSuccessOption)));
+                const DeepCollectionEquality().equals(other.failureOrSuccessOption, failureOrSuccessOption)));
   }
 
   @override

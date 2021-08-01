@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:worldon/application/search/search_to_share/search_to_share_bloc.dart';
+import 'package:worldon/application/share/search_to_share/search_to_share_bloc.dart';
 import 'package:worldon/generated/l10n.dart';
 
 class InternalShareForm extends StatelessWidget {

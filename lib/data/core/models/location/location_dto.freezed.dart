@@ -61,8 +61,7 @@ abstract class $LocationDtoCopyWith<$Res> {
   factory $LocationDtoCopyWith(LocationDto value, $Res Function(LocationDto) then) =
       _$LocationDtoCopyWithImpl<$Res>;
 
-  $Res call(
-      {String id, String city, String country, String postalCode, Set<ExperienceDto> experiences});
+  $Res call({String id, String city, String country, String postalCode, Set<ExperienceDto> experiences});
 }
 
 /// @nodoc
@@ -112,8 +111,7 @@ abstract class _$LocationDtoCopyWith<$Res> implements $LocationDtoCopyWith<$Res>
       __$LocationDtoCopyWithImpl<$Res>;
 
   @override
-  $Res call(
-      {String id, String city, String country, String postalCode, Set<ExperienceDto> experiences});
+  $Res call({String id, String city, String country, String postalCode, Set<ExperienceDto> experiences});
 }
 
 /// @nodoc
@@ -192,8 +190,7 @@ class _$_LocationDto extends _LocationDto {
     return identical(this, other) ||
         (other is _LocationDto &&
             (identical(other.id, id) || const DeepCollectionEquality().equals(other.id, id)) &&
-            (identical(other.city, city) ||
-                const DeepCollectionEquality().equals(other.city, city)) &&
+            (identical(other.city, city) || const DeepCollectionEquality().equals(other.city, city)) &&
             (identical(other.country, country) ||
                 const DeepCollectionEquality().equals(other.country, country)) &&
             (identical(other.postalCode, postalCode) ||

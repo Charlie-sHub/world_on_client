@@ -52,8 +52,8 @@ mixin _$AuthenticationDomainFailure<T> {
 
 /// @nodoc
 abstract class $AuthenticationDomainFailureCopyWith<T, $Res> {
-  factory $AuthenticationDomainFailureCopyWith(AuthenticationDomainFailure<T> value,
-          $Res Function(AuthenticationDomainFailure<T>) then) =
+  factory $AuthenticationDomainFailureCopyWith(
+          AuthenticationDomainFailure<T> value, $Res Function(AuthenticationDomainFailure<T>) then) =
       _$AuthenticationDomainFailureCopyWithImpl<T, $Res>;
 }
 
@@ -69,14 +69,12 @@ class _$AuthenticationDomainFailureCopyWithImpl<T, $Res>
 
 /// @nodoc
 abstract class $CancelledByUserCopyWith<T, $Res> {
-  factory $CancelledByUserCopyWith(
-          CancelledByUser<T> value, $Res Function(CancelledByUser<T>) then) =
+  factory $CancelledByUserCopyWith(CancelledByUser<T> value, $Res Function(CancelledByUser<T>) then) =
       _$CancelledByUserCopyWithImpl<T, $Res>;
 }
 
 /// @nodoc
-class _$CancelledByUserCopyWithImpl<T, $Res>
-    extends _$AuthenticationDomainFailureCopyWithImpl<T, $Res>
+class _$CancelledByUserCopyWithImpl<T, $Res> extends _$AuthenticationDomainFailureCopyWithImpl<T, $Res>
     implements $CancelledByUserCopyWith<T, $Res> {
   _$CancelledByUserCopyWithImpl(CancelledByUser<T> _value, $Res Function(CancelledByUser<T>) _then)
       : super(_value, (v) => _then(v as CancelledByUser<T>));

@@ -149,8 +149,7 @@ class _$_OptionsDto extends _OptionsDto {
 
   @JsonKey(ignore: true)
   @override
-  _$OptionsDtoCopyWith<_OptionsDto> get copyWith =>
-      __$OptionsDtoCopyWithImpl<_OptionsDto>(this, _$identity);
+  _$OptionsDtoCopyWith<_OptionsDto> get copyWith => __$OptionsDtoCopyWithImpl<_OptionsDto>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {

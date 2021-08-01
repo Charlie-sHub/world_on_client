@@ -98,8 +98,7 @@ class _$UserActorEventCopyWithImpl<$Res> implements $UserActorEventCopyWith<$Res
 
 /// @nodoc
 abstract class _$DeletedCopyWith<$Res> implements $UserActorEventCopyWith<$Res> {
-  factory _$DeletedCopyWith(_Deleted value, $Res Function(_Deleted) then) =
-      __$DeletedCopyWithImpl<$Res>;
+  factory _$DeletedCopyWith(_Deleted value, $Res Function(_Deleted) then) = __$DeletedCopyWithImpl<$Res>;
 
   @override
   $Res call({User user});

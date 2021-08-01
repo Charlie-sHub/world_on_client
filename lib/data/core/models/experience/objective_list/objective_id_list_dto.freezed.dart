@@ -40,14 +40,12 @@ mixin _$ObjectiveIdListDto {
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $ObjectiveIdListDtoCopyWith<ObjectiveIdListDto> get copyWith =>
-      throw _privateConstructorUsedError;
+  $ObjectiveIdListDtoCopyWith<ObjectiveIdListDto> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $ObjectiveIdListDtoCopyWith<$Res> {
-  factory $ObjectiveIdListDtoCopyWith(
-          ObjectiveIdListDto value, $Res Function(ObjectiveIdListDto) then) =
+  factory $ObjectiveIdListDtoCopyWith(ObjectiveIdListDto value, $Res Function(ObjectiveIdListDto) then) =
       _$ObjectiveIdListDtoCopyWithImpl<$Res>;
   $Res call({List<String> objectivesIds});
 }
@@ -76,8 +74,7 @@ class _$ObjectiveIdListDtoCopyWithImpl<$Res> implements $ObjectiveIdListDtoCopyW
 
 /// @nodoc
 abstract class _$ObjectiveIdListDtoCopyWith<$Res> implements $ObjectiveIdListDtoCopyWith<$Res> {
-  factory _$ObjectiveIdListDtoCopyWith(
-          _ObjectiveIdListDto value, $Res Function(_ObjectiveIdListDto) then) =
+  factory _$ObjectiveIdListDtoCopyWith(_ObjectiveIdListDto value, $Res Function(_ObjectiveIdListDto) then) =
       __$ObjectiveIdListDtoCopyWithImpl<$Res>;
 
   @override
@@ -87,8 +84,7 @@ abstract class _$ObjectiveIdListDtoCopyWith<$Res> implements $ObjectiveIdListDto
 /// @nodoc
 class __$ObjectiveIdListDtoCopyWithImpl<$Res> extends _$ObjectiveIdListDtoCopyWithImpl<$Res>
     implements _$ObjectiveIdListDtoCopyWith<$Res> {
-  __$ObjectiveIdListDtoCopyWithImpl(
-      _ObjectiveIdListDto _value, $Res Function(_ObjectiveIdListDto) _then)
+  __$ObjectiveIdListDtoCopyWithImpl(_ObjectiveIdListDto _value, $Res Function(_ObjectiveIdListDto) _then)
       : super(_value, (v) => _then(v as _ObjectiveIdListDto));
 
   @override
@@ -112,8 +108,7 @@ class __$ObjectiveIdListDtoCopyWithImpl<$Res> extends _$ObjectiveIdListDtoCopyWi
 class _$_ObjectiveIdListDto extends _ObjectiveIdListDto {
   const _$_ObjectiveIdListDto({required this.objectivesIds}) : super._();
 
-  factory _$_ObjectiveIdListDto.fromJson(Map<String, dynamic> json) =>
-      _$_$_ObjectiveIdListDtoFromJson(json);
+  factory _$_ObjectiveIdListDto.fromJson(Map<String, dynamic> json) => _$_$_ObjectiveIdListDtoFromJson(json);
 
   @override
   final List<String> objectivesIds;
@@ -157,6 +152,5 @@ abstract class _ObjectiveIdListDto extends ObjectiveIdListDto {
 
   @override
   @JsonKey(ignore: true)
-  _$ObjectiveIdListDtoCopyWith<_ObjectiveIdListDto> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$ObjectiveIdListDtoCopyWith<_ObjectiveIdListDto> get copyWith => throw _privateConstructorUsedError;
 }

@@ -80,8 +80,7 @@ abstract class $ProfileUsersWatcherEventCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$ProfileUsersWatcherEventCopyWithImpl<$Res>
-    implements $ProfileUsersWatcherEventCopyWith<$Res> {
+class _$ProfileUsersWatcherEventCopyWithImpl<$Res> implements $ProfileUsersWatcherEventCopyWith<$Res> {
   _$ProfileUsersWatcherEventCopyWithImpl(this._value, this._then);
 
   final ProfileUsersWatcherEvent _value;
@@ -101,8 +100,7 @@ abstract class _$WatchFollowedUsersStartedCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$WatchFollowedUsersStartedCopyWithImpl<$Res>
-    extends _$ProfileUsersWatcherEventCopyWithImpl<$Res>
+class __$WatchFollowedUsersStartedCopyWithImpl<$Res> extends _$ProfileUsersWatcherEventCopyWithImpl<$Res>
     implements _$WatchFollowedUsersStartedCopyWith<$Res> {
   __$WatchFollowedUsersStartedCopyWithImpl(
       _WatchFollowedUsersStarted _value, $Res Function(_WatchFollowedUsersStarted) _then)
@@ -148,8 +146,7 @@ class _$_WatchFollowedUsersStarted implements _WatchFollowedUsersStarted {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other is _WatchFollowedUsersStarted &&
-            (identical(other.user, user) ||
-                const DeepCollectionEquality().equals(other.user, user)));
+            (identical(other.user, user) || const DeepCollectionEquality().equals(other.user, user)));
   }
 
   @override
@@ -230,8 +227,7 @@ abstract class _$WatchFollowingUsersStartedCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$WatchFollowingUsersStartedCopyWithImpl<$Res>
-    extends _$ProfileUsersWatcherEventCopyWithImpl<$Res>
+class __$WatchFollowingUsersStartedCopyWithImpl<$Res> extends _$ProfileUsersWatcherEventCopyWithImpl<$Res>
     implements _$WatchFollowingUsersStartedCopyWith<$Res> {
   __$WatchFollowingUsersStartedCopyWithImpl(
       _WatchFollowingUsersStarted _value, $Res Function(_WatchFollowingUsersStarted) _then)
@@ -277,8 +273,7 @@ class _$_WatchFollowingUsersStarted implements _WatchFollowingUsersStarted {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other is _WatchFollowingUsersStarted &&
-            (identical(other.user, user) ||
-                const DeepCollectionEquality().equals(other.user, user)));
+            (identical(other.user, user) || const DeepCollectionEquality().equals(other.user, user)));
   }
 
   @override
@@ -539,8 +534,7 @@ abstract class $ProfileUsersWatcherStateCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$ProfileUsersWatcherStateCopyWithImpl<$Res>
-    implements $ProfileUsersWatcherStateCopyWith<$Res> {
+class _$ProfileUsersWatcherStateCopyWithImpl<$Res> implements $ProfileUsersWatcherStateCopyWith<$Res> {
   _$ProfileUsersWatcherStateCopyWithImpl(this._value, this._then);
 
   final ProfileUsersWatcherState _value;
@@ -550,8 +544,7 @@ class _$ProfileUsersWatcherStateCopyWithImpl<$Res>
 
 /// @nodoc
 abstract class _$InitialCopyWith<$Res> {
-  factory _$InitialCopyWith(_Initial value, $Res Function(_Initial) then) =
-      __$InitialCopyWithImpl<$Res>;
+  factory _$InitialCopyWith(_Initial value, $Res Function(_Initial) then) = __$InitialCopyWithImpl<$Res>;
 }
 
 /// @nodoc
@@ -777,8 +770,7 @@ class _$_LoadSuccess implements _LoadSuccess {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other is _LoadSuccess &&
-            (identical(other.users, users) ||
-                const DeepCollectionEquality().equals(other.users, users)));
+            (identical(other.users, users) || const DeepCollectionEquality().equals(other.users, users)));
   }
 
   @override

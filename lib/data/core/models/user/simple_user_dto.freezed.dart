@@ -215,18 +215,18 @@ class __$SimpleUserDtoCopyWithImpl<$Res> extends _$SimpleUserDtoCopyWithImpl<$Re
 /// @nodoc
 @JsonSerializable()
 class _$_SimpleUserDto extends _SimpleUserDto {
-  const _$_SimpleUserDto({required this.id,
-    required this.name,
-    required this.username,
-    required this.imageURL,
-    required this.level,
-    required this.experiencePoints,
-    required this.adminPowers,
-    required this.followersAmount})
+  const _$_SimpleUserDto(
+      {required this.id,
+      required this.name,
+      required this.username,
+      required this.imageURL,
+      required this.level,
+      required this.experiencePoints,
+      required this.adminPowers,
+      required this.followersAmount})
       : super._();
 
-  factory _$_SimpleUserDto.fromJson(Map<String, dynamic> json) =>
-      _$_$_SimpleUserDtoFromJson(json);
+  factory _$_SimpleUserDto.fromJson(Map<String, dynamic> json) => _$_$_SimpleUserDtoFromJson(json);
 
   @override
   final String id;
@@ -255,14 +255,12 @@ class _$_SimpleUserDto extends _SimpleUserDto {
     return identical(this, other) ||
         (other is _SimpleUserDto &&
             (identical(other.id, id) || const DeepCollectionEquality().equals(other.id, id)) &&
-            (identical(other.name, name) ||
-                const DeepCollectionEquality().equals(other.name, name)) &&
+            (identical(other.name, name) || const DeepCollectionEquality().equals(other.name, name)) &&
             (identical(other.username, username) ||
                 const DeepCollectionEquality().equals(other.username, username)) &&
             (identical(other.imageURL, imageURL) ||
                 const DeepCollectionEquality().equals(other.imageURL, imageURL)) &&
-            (identical(other.level, level) ||
-                const DeepCollectionEquality().equals(other.level, level)) &&
+            (identical(other.level, level) || const DeepCollectionEquality().equals(other.level, level)) &&
             (identical(other.experiencePoints, experiencePoints) ||
                 const DeepCollectionEquality().equals(other.experiencePoints, experiencePoints)) &&
             (identical(other.adminPowers, adminPowers) ||
@@ -295,19 +293,19 @@ class _$_SimpleUserDto extends _SimpleUserDto {
 }
 
 abstract class _SimpleUserDto extends SimpleUserDto {
-  const factory _SimpleUserDto({required String id,
-    required String name,
-    required String username,
-    required String imageURL,
-    required int level,
-    required int experiencePoints,
-    required bool adminPowers,
-    required int followersAmount}) = _$_SimpleUserDto;
+  const factory _SimpleUserDto(
+      {required String id,
+      required String name,
+      required String username,
+      required String imageURL,
+      required int level,
+      required int experiencePoints,
+      required bool adminPowers,
+      required int followersAmount}) = _$_SimpleUserDto;
 
   const _SimpleUserDto._() : super._();
 
-  factory _SimpleUserDto.fromJson(Map<String, dynamic> json) =
-  _$_SimpleUserDto.fromJson;
+  factory _SimpleUserDto.fromJson(Map<String, dynamic> json) = _$_SimpleUserDto.fromJson;
 
   @override
   String get id => throw _privateConstructorUsedError;
@@ -317,10 +315,8 @@ abstract class _SimpleUserDto extends SimpleUserDto {
 
   @override
   String get username => throw _privateConstructorUsedError;
-
   @override
   String get imageURL => throw _privateConstructorUsedError;
-
   @override
   int get level => throw _privateConstructorUsedError;
   @override

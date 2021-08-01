@@ -82,8 +82,8 @@ mixin _$ShareExperienceInternallyEvent {
 
 /// @nodoc
 abstract class $ShareExperienceInternallyEventCopyWith<$Res> {
-  factory $ShareExperienceInternallyEventCopyWith(ShareExperienceInternallyEvent value,
-          $Res Function(ShareExperienceInternallyEvent) then) =
+  factory $ShareExperienceInternallyEventCopyWith(
+          ShareExperienceInternallyEvent value, $Res Function(ShareExperienceInternallyEvent) then) =
       _$ShareExperienceInternallyEventCopyWithImpl<$Res>;
 }
 
@@ -610,8 +610,8 @@ mixin _$ShareExperienceInternallyState {
 
 /// @nodoc
 abstract class $ShareExperienceInternallyStateCopyWith<$Res> {
-  factory $ShareExperienceInternallyStateCopyWith(ShareExperienceInternallyState value,
-          $Res Function(ShareExperienceInternallyState) then) =
+  factory $ShareExperienceInternallyStateCopyWith(
+          ShareExperienceInternallyState value, $Res Function(ShareExperienceInternallyState) then) =
       _$ShareExperienceInternallyStateCopyWithImpl<$Res>;
 
   $Res call({Experience experience, KtSet<User> users, bool submitted});
@@ -661,8 +661,8 @@ class _$ShareExperienceInternallyStateCopyWithImpl<$Res>
 /// @nodoc
 abstract class _$ShareExperienceInternallyStateCopyWith<$Res>
     implements $ShareExperienceInternallyStateCopyWith<$Res> {
-  factory _$ShareExperienceInternallyStateCopyWith(_ShareExperienceInternallyState value,
-          $Res Function(_ShareExperienceInternallyState) then) =
+  factory _$ShareExperienceInternallyStateCopyWith(
+          _ShareExperienceInternallyState value, $Res Function(_ShareExperienceInternallyState) then) =
       __$ShareExperienceInternallyStateCopyWithImpl<$Res>;
 
   @override
@@ -730,8 +730,7 @@ class _$_ShareExperienceInternallyState implements _ShareExperienceInternallySta
         (other is _ShareExperienceInternallyState &&
             (identical(other.experience, experience) ||
                 const DeepCollectionEquality().equals(other.experience, experience)) &&
-            (identical(other.users, users) ||
-                const DeepCollectionEquality().equals(other.users, users)) &&
+            (identical(other.users, users) || const DeepCollectionEquality().equals(other.users, users)) &&
             (identical(other.submitted, submitted) ||
                 const DeepCollectionEquality().equals(other.submitted, submitted)));
   }
@@ -746,8 +745,7 @@ class _$_ShareExperienceInternallyState implements _ShareExperienceInternallySta
   @JsonKey(ignore: true)
   @override
   _$ShareExperienceInternallyStateCopyWith<_ShareExperienceInternallyState> get copyWith =>
-      __$ShareExperienceInternallyStateCopyWithImpl<_ShareExperienceInternallyState>(
-          this, _$identity);
+      __$ShareExperienceInternallyStateCopyWithImpl<_ShareExperienceInternallyState>(this, _$identity);
 }
 
 abstract class _ShareExperienceInternallyState implements ShareExperienceInternallyState {

@@ -121,8 +121,7 @@ class __$CoordinatesDtoCopyWithImpl<$Res> extends _$CoordinatesDtoCopyWithImpl<$
 class _$_CoordinatesDto extends _CoordinatesDto {
   const _$_CoordinatesDto({required this.latitude, required this.longitude}) : super._();
 
-  factory _$_CoordinatesDto.fromJson(Map<String, dynamic> json) =>
-      _$_$_CoordinatesDtoFromJson(json);
+  factory _$_CoordinatesDto.fromJson(Map<String, dynamic> json) => _$_$_CoordinatesDtoFromJson(json);
 
   @override
   final double latitude;
@@ -162,8 +161,7 @@ class _$_CoordinatesDto extends _CoordinatesDto {
 }
 
 abstract class _CoordinatesDto extends CoordinatesDto {
-  const factory _CoordinatesDto({required double latitude, required double longitude}) =
-      _$_CoordinatesDto;
+  const factory _CoordinatesDto({required double latitude, required double longitude}) = _$_CoordinatesDto;
 
   const _CoordinatesDto._() : super._();
 

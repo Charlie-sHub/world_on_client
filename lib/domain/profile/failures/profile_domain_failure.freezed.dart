@@ -66,8 +66,7 @@ abstract class $ProfileDomainFailureCopyWith<T, $Res> {
 }
 
 /// @nodoc
-class _$ProfileDomainFailureCopyWithImpl<T, $Res>
-    implements $ProfileDomainFailureCopyWith<T, $Res> {
+class _$ProfileDomainFailureCopyWithImpl<T, $Res> implements $ProfileDomainFailureCopyWith<T, $Res> {
   _$ProfileDomainFailureCopyWithImpl(this._value, this._then);
 
   final ProfileDomainFailure<T> _value;

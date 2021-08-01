@@ -489,8 +489,7 @@ class _$_ExperienceDto extends _ExperienceDto {
     return identical(this, other) ||
         (other is _ExperienceDto &&
             (identical(other.id, id) || const DeepCollectionEquality().equals(other.id, id)) &&
-            (identical(other.title, title) ||
-                const DeepCollectionEquality().equals(other.title, title)) &&
+            (identical(other.title, title) || const DeepCollectionEquality().equals(other.title, title)) &&
             (identical(other.description, description) ||
                 const DeepCollectionEquality().equals(other.description, description)) &&
             (identical(other.imageURLs, imageURLs) ||
@@ -513,8 +512,7 @@ class _$_ExperienceDto extends _ExperienceDto {
                 const DeepCollectionEquality().equals(other.objectives, objectives)) &&
             (identical(other.rewards, rewards) ||
                 const DeepCollectionEquality().equals(other.rewards, rewards)) &&
-            (identical(other.tags, tags) ||
-                const DeepCollectionEquality().equals(other.tags, tags)) &&
+            (identical(other.tags, tags) || const DeepCollectionEquality().equals(other.tags, tags)) &&
             (identical(other.comments, comments) ||
                 const DeepCollectionEquality().equals(other.comments, comments)) &&
             (identical(other.likedBy, likedBy) ||

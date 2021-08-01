@@ -70,8 +70,8 @@ mixin _$ExperienceManagementActorEvent {
 
 /// @nodoc
 abstract class $ExperienceManagementActorEventCopyWith<$Res> {
-  factory $ExperienceManagementActorEventCopyWith(ExperienceManagementActorEvent value,
-          $Res Function(ExperienceManagementActorEvent) then) =
+  factory $ExperienceManagementActorEventCopyWith(
+          ExperienceManagementActorEvent value, $Res Function(ExperienceManagementActorEvent) then) =
       _$ExperienceManagementActorEventCopyWithImpl<$Res>;
 
   $Res call({Experience experience});
@@ -109,8 +109,7 @@ class _$ExperienceManagementActorEventCopyWithImpl<$Res>
 }
 
 /// @nodoc
-abstract class _$CheckCreatorCopyWith<$Res>
-    implements $ExperienceManagementActorEventCopyWith<$Res> {
+abstract class _$CheckCreatorCopyWith<$Res> implements $ExperienceManagementActorEventCopyWith<$Res> {
   factory _$CheckCreatorCopyWith(_CheckCreator value, $Res Function(_CheckCreator) then) =
       __$CheckCreatorCopyWithImpl<$Res>;
 
@@ -230,8 +229,7 @@ abstract class _CheckCreator implements ExperienceManagementActorEvent {
 
 /// @nodoc
 abstract class _$DeletedCopyWith<$Res> implements $ExperienceManagementActorEventCopyWith<$Res> {
-  factory _$DeletedCopyWith(_Deleted value, $Res Function(_Deleted) then) =
-      __$DeletedCopyWithImpl<$Res>;
+  factory _$DeletedCopyWith(_Deleted value, $Res Function(_Deleted) then) = __$DeletedCopyWithImpl<$Res>;
 
   @override
   $Res call({Experience experience});
@@ -428,8 +426,8 @@ mixin _$ExperienceManagementActorState {
 
 /// @nodoc
 abstract class $ExperienceManagementActorStateCopyWith<$Res> {
-  factory $ExperienceManagementActorStateCopyWith(ExperienceManagementActorState value,
-          $Res Function(ExperienceManagementActorState) then) =
+  factory $ExperienceManagementActorStateCopyWith(
+          ExperienceManagementActorState value, $Res Function(ExperienceManagementActorState) then) =
       _$ExperienceManagementActorStateCopyWithImpl<$Res>;
 }
 
@@ -445,8 +443,7 @@ class _$ExperienceManagementActorStateCopyWithImpl<$Res>
 
 /// @nodoc
 abstract class _$InitialCopyWith<$Res> {
-  factory _$InitialCopyWith(_Initial value, $Res Function(_Initial) then) =
-      __$InitialCopyWithImpl<$Res>;
+  factory _$InitialCopyWith(_Initial value, $Res Function(_Initial) then) = __$InitialCopyWithImpl<$Res>;
 }
 
 /// @nodoc
@@ -742,14 +739,12 @@ abstract class _IsNotCreator implements ExperienceManagementActorState {
 
 /// @nodoc
 abstract class _$ActionInProgressCopyWith<$Res> {
-  factory _$ActionInProgressCopyWith(
-          _ActionInProgress value, $Res Function(_ActionInProgress) then) =
+  factory _$ActionInProgressCopyWith(_ActionInProgress value, $Res Function(_ActionInProgress) then) =
       __$ActionInProgressCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$ActionInProgressCopyWithImpl<$Res>
-    extends _$ExperienceManagementActorStateCopyWithImpl<$Res>
+class __$ActionInProgressCopyWithImpl<$Res> extends _$ExperienceManagementActorStateCopyWithImpl<$Res>
     implements _$ActionInProgressCopyWith<$Res> {
   __$ActionInProgressCopyWithImpl(_ActionInProgress _value, $Res Function(_ActionInProgress) _then)
       : super(_value, (v) => _then(v as _ActionInProgress));
@@ -848,8 +843,7 @@ abstract class _$DeletionSuccessCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$DeletionSuccessCopyWithImpl<$Res>
-    extends _$ExperienceManagementActorStateCopyWithImpl<$Res>
+class __$DeletionSuccessCopyWithImpl<$Res> extends _$ExperienceManagementActorStateCopyWithImpl<$Res>
     implements _$DeletionSuccessCopyWith<$Res> {
   __$DeletionSuccessCopyWithImpl(_DeletionSuccess _value, $Res Function(_DeletionSuccess) _then)
       : super(_value, (v) => _then(v as _DeletionSuccess));
@@ -952,8 +946,7 @@ abstract class _$DeletionFailureCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$DeletionFailureCopyWithImpl<$Res>
-    extends _$ExperienceManagementActorStateCopyWithImpl<$Res>
+class __$DeletionFailureCopyWithImpl<$Res> extends _$ExperienceManagementActorStateCopyWithImpl<$Res>
     implements _$DeletionFailureCopyWith<$Res> {
   __$DeletionFailureCopyWithImpl(_DeletionFailure _value, $Res Function(_DeletionFailure) _then)
       : super(_value, (v) => _then(v as _DeletionFailure));

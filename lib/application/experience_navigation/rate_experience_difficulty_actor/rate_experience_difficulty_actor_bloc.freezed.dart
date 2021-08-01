@@ -65,8 +65,8 @@ mixin _$RateExperienceDifficultyActorEvent {
 
 /// @nodoc
 abstract class $RateExperienceDifficultyActorEventCopyWith<$Res> {
-  factory $RateExperienceDifficultyActorEventCopyWith(RateExperienceDifficultyActorEvent value,
-          $Res Function(RateExperienceDifficultyActorEvent) then) =
+  factory $RateExperienceDifficultyActorEventCopyWith(
+          RateExperienceDifficultyActorEvent value, $Res Function(RateExperienceDifficultyActorEvent) then) =
       _$RateExperienceDifficultyActorEventCopyWithImpl<$Res>;
 }
 
@@ -192,8 +192,7 @@ abstract class _DifficultyChanged implements RateExperienceDifficultyActorEvent 
   int get difficultyRating => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
-  _$DifficultyChangedCopyWith<_DifficultyChanged> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$DifficultyChangedCopyWith<_DifficultyChanged> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -353,12 +352,11 @@ mixin _$RateExperienceDifficultyActorState {
 
 /// @nodoc
 abstract class $RateExperienceDifficultyActorStateCopyWith<$Res> {
-  factory $RateExperienceDifficultyActorStateCopyWith(RateExperienceDifficultyActorState value,
-          $Res Function(RateExperienceDifficultyActorState) then) =
+  factory $RateExperienceDifficultyActorStateCopyWith(
+          RateExperienceDifficultyActorState value, $Res Function(RateExperienceDifficultyActorState) then) =
       _$RateExperienceDifficultyActorStateCopyWithImpl<$Res>;
 
-  $Res call(
-      {int difficulty, bool isSubmitting, Option<Either<Failure, Unit>> failureOrSuccessOption});
+  $Res call({int difficulty, bool isSubmitting, Option<Either<Failure, Unit>> failureOrSuccessOption});
 }
 
 /// @nodoc
@@ -401,21 +399,19 @@ abstract class _$RateExperienceDifficultyActorStateCopyWith<$Res>
       __$RateExperienceDifficultyActorStateCopyWithImpl<$Res>;
 
   @override
-  $Res call(
-      {int difficulty, bool isSubmitting, Option<Either<Failure, Unit>> failureOrSuccessOption});
+  $Res call({int difficulty, bool isSubmitting, Option<Either<Failure, Unit>> failureOrSuccessOption});
 }
 
 /// @nodoc
 class __$RateExperienceDifficultyActorStateCopyWithImpl<$Res>
     extends _$RateExperienceDifficultyActorStateCopyWithImpl<$Res>
     implements _$RateExperienceDifficultyActorStateCopyWith<$Res> {
-  __$RateExperienceDifficultyActorStateCopyWithImpl(_RateExperienceDifficultyActorState _value,
-      $Res Function(_RateExperienceDifficultyActorState) _then)
+  __$RateExperienceDifficultyActorStateCopyWithImpl(
+      _RateExperienceDifficultyActorState _value, $Res Function(_RateExperienceDifficultyActorState) _then)
       : super(_value, (v) => _then(v as _RateExperienceDifficultyActorState));
 
   @override
-  _RateExperienceDifficultyActorState get _value =>
-      super._value as _RateExperienceDifficultyActorState;
+  _RateExperienceDifficultyActorState get _value => super._value as _RateExperienceDifficultyActorState;
 
   @override
   $Res call({
@@ -467,8 +463,7 @@ class _$_RateExperienceDifficultyActorState implements _RateExperienceDifficulty
             (identical(other.isSubmitting, isSubmitting) ||
                 const DeepCollectionEquality().equals(other.isSubmitting, isSubmitting)) &&
             (identical(other.failureOrSuccessOption, failureOrSuccessOption) ||
-                const DeepCollectionEquality()
-                    .equals(other.failureOrSuccessOption, failureOrSuccessOption)));
+                const DeepCollectionEquality().equals(other.failureOrSuccessOption, failureOrSuccessOption)));
   }
 
   @override
@@ -487,10 +482,9 @@ class _$_RateExperienceDifficultyActorState implements _RateExperienceDifficulty
 
 abstract class _RateExperienceDifficultyActorState implements RateExperienceDifficultyActorState {
   const factory _RateExperienceDifficultyActorState(
-          {required int difficulty,
-          required bool isSubmitting,
-          required Option<Either<Failure, Unit>> failureOrSuccessOption}) =
-      _$_RateExperienceDifficultyActorState;
+      {required int difficulty,
+      required bool isSubmitting,
+      required Option<Either<Failure, Unit>> failureOrSuccessOption}) = _$_RateExperienceDifficultyActorState;
 
   @override
   int get difficulty => throw _privateConstructorUsedError;
