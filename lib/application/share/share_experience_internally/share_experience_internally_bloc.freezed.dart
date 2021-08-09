@@ -613,7 +613,6 @@ abstract class $ShareExperienceInternallyStateCopyWith<$Res> {
   factory $ShareExperienceInternallyStateCopyWith(
           ShareExperienceInternallyState value, $Res Function(ShareExperienceInternallyState) then) =
       _$ShareExperienceInternallyStateCopyWithImpl<$Res>;
-
   $Res call({Experience experience, KtSet<User> users, bool submitted});
 
   $ExperienceCopyWith<$Res> get experience;
@@ -664,7 +663,6 @@ abstract class _$ShareExperienceInternallyStateCopyWith<$Res>
   factory _$ShareExperienceInternallyStateCopyWith(
           _ShareExperienceInternallyState value, $Res Function(_ShareExperienceInternallyState) then) =
       __$ShareExperienceInternallyStateCopyWithImpl<$Res>;
-
   @override
   $Res call({Experience experience, KtSet<User> users, bool submitted});
 

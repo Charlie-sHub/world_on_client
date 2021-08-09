@@ -63,6 +63,7 @@ abstract class $ExperienceManagementApplicationFailureCopyWith<T, $Res> {
   factory $ExperienceManagementApplicationFailureCopyWith(ExperienceManagementApplicationFailure<T> value,
           $Res Function(ExperienceManagementApplicationFailure<T>) then) =
       _$ExperienceManagementApplicationFailureCopyWithImpl<T, $Res>;
+
   $Res call({int limit});
 }
 

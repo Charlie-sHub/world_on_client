@@ -72,6 +72,7 @@ class _$ExperienceLogWatcherEventCopyWithImpl<$Res> implements $ExperienceLogWat
   _$ExperienceLogWatcherEventCopyWithImpl(this._value, this._then);
 
   final ExperienceLogWatcherEvent _value;
+
   // ignore: unused_field
   final $Res Function(ExperienceLogWatcherEvent) _then;
 }
@@ -353,6 +354,7 @@ class _$ExperienceLogWatcherStateCopyWithImpl<$Res> implements $ExperienceLogWat
   _$ExperienceLogWatcherStateCopyWithImpl(this._value, this._then);
 
   final ExperienceLogWatcherState _value;
+
   // ignore: unused_field
   final $Res Function(ExperienceLogWatcherState) _then;
 }

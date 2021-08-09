@@ -228,5 +228,8 @@
   "cantBlockSelf": "No te puedes bloquear",
   "objectivesExplanation": "Dale al check conformes completes los objetivos",
   "newNotification": "Nueva notificacion",
-  "newExperience": "Nueva experiencia"
+  "newExperience": "Nueva experiencia",
+  "createExperienceButtonShowCase": "Crea y comparte experiencias",
+  "experienceCardShowCase": "Experiencias creadas por otros usuarios",
+  "userLeverShowCase": "El nivel del usuario, se sube al crear y realizar experiencias"
 }

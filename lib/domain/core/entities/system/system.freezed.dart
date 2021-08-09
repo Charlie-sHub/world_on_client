@@ -154,8 +154,7 @@ class _$_System extends _System {
         (other is _System &&
             (identical(other.id, id) || const DeepCollectionEquality().equals(other.id, id)) &&
             (identical(other.name, name) || const DeepCollectionEquality().equals(other.name, name)) &&
-            (identical(other.type, type) ||
-                const DeepCollectionEquality().equals(other.type, type)) &&
+            (identical(other.type, type) || const DeepCollectionEquality().equals(other.type, type)) &&
             (identical(other.company, company) ||
                 const DeepCollectionEquality().equals(other.company, company)));
   }

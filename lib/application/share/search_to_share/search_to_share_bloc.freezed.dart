@@ -562,10 +562,11 @@ class _$_SearchToShareState implements _SearchToShareState {
 }
 
 abstract class _SearchToShareState implements SearchToShareState {
-  const factory _SearchToShareState({required SearchTerm searchTerm,
-    required KtList<User> searchedUsers,
-    required KtList<User> allUsers,
-    required Option<Failure> failureOrSuccessOption}) = _$_SearchToShareState;
+  const factory _SearchToShareState(
+      {required SearchTerm searchTerm,
+      required KtList<User> searchedUsers,
+      required KtList<User> allUsers,
+      required Option<Failure> failureOrSuccessOption}) = _$_SearchToShareState;
 
   @override
   SearchTerm get searchTerm => throw _privateConstructorUsedError;
@@ -577,9 +578,7 @@ abstract class _SearchToShareState implements SearchToShareState {
   KtList<User> get allUsers => throw _privateConstructorUsedError;
 
   @override
-  Option<Failure> get failureOrSuccessOption =>
-      throw _privateConstructorUsedError;
-
+  Option<Failure> get failureOrSuccessOption => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
   _$SearchToShareStateCopyWith<_SearchToShareState> get copyWith =>

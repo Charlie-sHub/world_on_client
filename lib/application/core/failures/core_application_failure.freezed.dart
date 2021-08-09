@@ -72,6 +72,7 @@ class _$CoreApplicationFailureCopyWithImpl<T, $Res> implements $CoreApplicationF
   _$CoreApplicationFailureCopyWithImpl(this._value, this._then);
 
   final CoreApplicationFailure<T> _value;
+
   // ignore: unused_field
   final $Res Function(CoreApplicationFailure<T>) _then;
 }
@@ -81,7 +82,6 @@ abstract class $UnknownApplicationLayerErrorCopyWith<T, $Res> {
   factory $UnknownApplicationLayerErrorCopyWith(
           UnknownApplicationLayerError<T> value, $Res Function(UnknownApplicationLayerError<T>) then) =
       _$UnknownApplicationLayerErrorCopyWithImpl<T, $Res>;
-
   $Res call({String errorString});
 }
 

@@ -47,6 +47,7 @@ mixin _$ObjectiveIdListDto {
 abstract class $ObjectiveIdListDtoCopyWith<$Res> {
   factory $ObjectiveIdListDtoCopyWith(ObjectiveIdListDto value, $Res Function(ObjectiveIdListDto) then) =
       _$ObjectiveIdListDtoCopyWithImpl<$Res>;
+
   $Res call({List<String> objectivesIds});
 }
 

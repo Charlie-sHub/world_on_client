@@ -2210,8 +2210,7 @@ class _$_RegistrationFormState implements _RegistrationFormState {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other is _RegistrationFormState &&
-            (identical(other.user, user) ||
-                const DeepCollectionEquality().equals(other.user, user)) &&
+            (identical(other.user, user) || const DeepCollectionEquality().equals(other.user, user)) &&
             (identical(other.passwordConfirmator, passwordConfirmator) ||
                 const DeepCollectionEquality().equals(other.passwordConfirmator, passwordConfirmator)) &&
             (identical(other.passwordToCompare, passwordToCompare) ||

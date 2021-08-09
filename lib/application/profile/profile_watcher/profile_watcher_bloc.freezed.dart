@@ -186,6 +186,7 @@ abstract class _WatchProfileStarted implements ProfileWatcherEvent {
   const factory _WatchProfileStarted(UniqueId userId) = _$_WatchProfileStarted;
 
   UniqueId get userId => throw _privateConstructorUsedError;
+
   @JsonKey(ignore: true)
   _$WatchProfileStartedCopyWith<_WatchProfileStarted> get copyWith => throw _privateConstructorUsedError;
 }
@@ -465,6 +466,7 @@ abstract class _Initial implements ProfileWatcherState {
 abstract class _$NewProfileUpdateCopyWith<$Res> {
   factory _$NewProfileUpdateCopyWith(_NewProfileUpdate value, $Res Function(_NewProfileUpdate) then) =
       __$NewProfileUpdateCopyWithImpl<$Res>;
+
   $Res call({User user});
 
   $UserCopyWith<$Res> get user;

@@ -162,6 +162,7 @@ class _$ProfileEditingFormEventCopyWithImpl<$Res> implements $ProfileEditingForm
   _$ProfileEditingFormEventCopyWithImpl(this._value, this._then);
 
   final ProfileEditingFormEvent _value;
+
   // ignore: unused_field
   final $Res Function(ProfileEditingFormEvent) _then;
 }
@@ -1373,6 +1374,7 @@ abstract class _BirthdayChanged implements ProfileEditingFormEvent {
 abstract class _$DescriptionChangedCopyWith<$Res> {
   factory _$DescriptionChangedCopyWith(_DescriptionChanged value, $Res Function(_DescriptionChanged) then) =
       __$DescriptionChangedCopyWithImpl<$Res>;
+
   $Res call({String description});
 }
 
@@ -1512,6 +1514,7 @@ abstract class _DescriptionChanged implements ProfileEditingFormEvent {
   const factory _DescriptionChanged(String description) = _$_DescriptionChanged;
 
   String get description => throw _privateConstructorUsedError;
+
   @JsonKey(ignore: true)
   _$DescriptionChangedCopyWith<_DescriptionChanged> get copyWith => throw _privateConstructorUsedError;
 }
@@ -1520,6 +1523,7 @@ abstract class _DescriptionChanged implements ProfileEditingFormEvent {
 abstract class _$InterestsChangedCopyWith<$Res> {
   factory _$InterestsChangedCopyWith(_InterestsChanged value, $Res Function(_InterestsChanged) then) =
       __$InterestsChangedCopyWithImpl<$Res>;
+
   $Res call({KtSet<Tag> interests});
 }
 
@@ -1849,6 +1853,7 @@ class _$ProfileEditingFormStateCopyWithImpl<$Res> implements $ProfileEditingForm
   _$ProfileEditingFormStateCopyWithImpl(this._value, this._then);
 
   final ProfileEditingFormState _value;
+
   // ignore: unused_field
   final $Res Function(ProfileEditingFormState) _then;
 

@@ -1853,7 +1853,6 @@ abstract class $StringWithInvalidCharactersCopyWith<T, $Res> {
   factory $StringWithInvalidCharactersCopyWith(
           StringWithInvalidCharacters<T> value, $Res Function(StringWithInvalidCharacters<T>) then) =
       _$StringWithInvalidCharactersCopyWithImpl<T, $Res>;
-
   $Res call({String failedValue});
 }
 

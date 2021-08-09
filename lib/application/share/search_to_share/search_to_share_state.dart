@@ -10,7 +10,7 @@ class SearchToShareState with _$SearchToShareState {
   }) = _SearchToShareState;
 
   factory SearchToShareState.initial() => SearchToShareState(
-    searchTerm: SearchTerm(""),
+        searchTerm: SearchTerm(""),
         searchedUsers: const KtList.empty(),
         allUsers: const KtList.empty(),
         failureOrSuccessOption: none(),

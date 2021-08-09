@@ -225,6 +225,7 @@ abstract class _Initialized implements BlockActorEvent {
 /// @nodoc
 abstract class _$BlockedCopyWith<$Res> {
   factory _$BlockedCopyWith(_Blocked value, $Res Function(_Blocked) then) = __$BlockedCopyWithImpl<$Res>;
+
   $Res call({UniqueId userToBlockId, SimpleUser currentUser});
 
   $SimpleUserCopyWith<$Res> get currentUser;

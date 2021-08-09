@@ -19,7 +19,9 @@ class LogInPage extends StatelessWidget {
         body: BlocProvider(
           create: (context) => getIt<LogInFormBloc>(),
           child: BlocConsumer<LogInFormBloc, LogInFormState>(
-            listenWhen: (previous, current) => previous.failureOrSuccessOption != current.failureOrSuccessOption || current.thirdPartyUserOption.isSome(),
+            listenWhen: (previous, current) =>
+                previous.failureOrSuccessOption != current.failureOrSuccessOption ||
+                current.thirdPartyUserOption.isSome(),
             listener: (context, state) => state.thirdPartyUserOption.fold(
               () => state.failureOrSuccessOption.fold(
                 () {},
@@ -65,7 +67,13 @@ class LogInPage extends StatelessWidget {
   }
 
   void _onSuccess(BuildContext context) {
-    context.router.replace(const MainPageRoute());
-    context.read<AuthenticationBloc>().add(const AuthenticationEvent.authenticationCheckRequested());
+    context.router.replace(
+      MainPageRoute(
+        isNewUser: false,
+      ),
+    );
+    context.read<AuthenticationBloc>().add(
+          const AuthenticationEvent.authenticationCheckRequested(),
+        );
   }
 }

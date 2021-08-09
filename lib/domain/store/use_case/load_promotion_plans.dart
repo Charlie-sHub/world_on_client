@@ -13,7 +13,6 @@ class LoadPromotionPlans implements AsyncUseCase<KtList<PromotionPlan>, NoParams
   LoadPromotionPlans(this._repository);
 
   @override
-  Future<Either<Failure, KtList<PromotionPlan>>> call(NoParams params) async {
-    return _repository.loadPromotionPlans();
-  }
+  Future<Either<Failure, KtList<PromotionPlan>>> call(NoParams params) async =>
+      _repository.loadPromotionPlans();
 }

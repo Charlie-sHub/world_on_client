@@ -70,6 +70,7 @@ class _$ProfileDomainFailureCopyWithImpl<T, $Res> implements $ProfileDomainFailu
   _$ProfileDomainFailureCopyWithImpl(this._value, this._then);
 
   final ProfileDomainFailure<T> _value;
+
   // ignore: unused_field
   final $Res Function(ProfileDomainFailure<T>) _then;
 }

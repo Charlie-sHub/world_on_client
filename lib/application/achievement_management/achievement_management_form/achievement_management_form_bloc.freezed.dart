@@ -396,6 +396,7 @@ abstract class _NameChanged implements AchievementManagementFormEvent {
 abstract class _$DescriptionChangedCopyWith<$Res> {
   factory _$DescriptionChangedCopyWith(_DescriptionChanged value, $Res Function(_DescriptionChanged) then) =
       __$DescriptionChangedCopyWithImpl<$Res>;
+
   $Res call({String description});
 }
 
@@ -519,6 +520,7 @@ abstract class _DescriptionChanged implements AchievementManagementFormEvent {
   const factory _DescriptionChanged(String description) = _$_DescriptionChanged;
 
   String get description => throw _privateConstructorUsedError;
+
   @JsonKey(ignore: true)
   _$DescriptionChangedCopyWith<_DescriptionChanged> get copyWith => throw _privateConstructorUsedError;
 }
@@ -1071,7 +1073,6 @@ abstract class $AchievementManagementFormStateCopyWith<$Res> {
   factory $AchievementManagementFormStateCopyWith(
           AchievementManagementFormState value, $Res Function(AchievementManagementFormState) then) =
       _$AchievementManagementFormStateCopyWithImpl<$Res>;
-
   $Res call(
       {Achievement achievement,
       bool showErrorMessages,
@@ -1137,7 +1138,6 @@ abstract class _$AchievementManagementFormStateCopyWith<$Res>
   factory _$AchievementManagementFormStateCopyWith(
           _AchievementManagementFormState value, $Res Function(_AchievementManagementFormState) then) =
       __$AchievementManagementFormStateCopyWithImpl<$Res>;
-
   @override
   $Res call(
       {Achievement achievement,

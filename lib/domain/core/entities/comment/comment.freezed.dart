@@ -53,6 +53,7 @@ mixin _$Comment {
 /// @nodoc
 abstract class $CommentCopyWith<$Res> {
   factory $CommentCopyWith(Comment value, $Res Function(Comment) then) = _$CommentCopyWithImpl<$Res>;
+
   $Res call(
       {UniqueId id,
       SimpleUser poster,
@@ -120,6 +121,7 @@ class _$CommentCopyWithImpl<$Res> implements $CommentCopyWith<$Res> {
 /// @nodoc
 abstract class _$CommentCopyWith<$Res> implements $CommentCopyWith<$Res> {
   factory _$CommentCopyWith(_Comment value, $Res Function(_Comment) then) = __$CommentCopyWithImpl<$Res>;
+
   @override
   $Res call(
       {UniqueId id,

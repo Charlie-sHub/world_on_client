@@ -50,6 +50,7 @@ mixin _$Objective {
 /// @nodoc
 abstract class $ObjectiveCopyWith<$Res> {
   factory $ObjectiveCopyWith(Objective value, $Res Function(Objective) then) = _$ObjectiveCopyWithImpl<$Res>;
+
   $Res call(
       {UniqueId id,
       EntityDescription description,

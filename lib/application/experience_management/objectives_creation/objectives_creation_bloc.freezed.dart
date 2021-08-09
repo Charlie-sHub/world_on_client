@@ -94,6 +94,7 @@ class _$ObjectivesCreationEventCopyWithImpl<$Res> implements $ObjectivesCreation
   _$ObjectivesCreationEventCopyWithImpl(this._value, this._then);
 
   final ObjectivesCreationEvent _value;
+
   // ignore: unused_field
   final $Res Function(ObjectivesCreationEvent) _then;
 }
@@ -353,6 +354,7 @@ abstract class _AddedObjective implements ObjectivesCreationEvent {
 abstract class _$RemovedObjectiveCopyWith<$Res> {
   factory _$RemovedObjectiveCopyWith(_RemovedObjective value, $Res Function(_RemovedObjective) then) =
       __$RemovedObjectiveCopyWithImpl<$Res>;
+
   $Res call({Objective objective});
 
   $ObjectiveCopyWith<$Res> get objective;
@@ -636,6 +638,7 @@ class _$ObjectivesCreationStateCopyWithImpl<$Res> implements $ObjectivesCreation
   _$ObjectivesCreationStateCopyWithImpl(this._value, this._then);
 
   final ObjectivesCreationState _value;
+
   // ignore: unused_field
   final $Res Function(ObjectivesCreationState) _then;
 

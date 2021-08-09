@@ -63,7 +63,6 @@ abstract class $AchievementManagementActorEventCopyWith<$Res> {
   factory $AchievementManagementActorEventCopyWith(
           AchievementManagementActorEvent value, $Res Function(AchievementManagementActorEvent) then) =
       _$AchievementManagementActorEventCopyWithImpl<$Res>;
-
   $Res call({Achievement achievement});
 
   $AchievementCopyWith<$Res> get achievement;

@@ -72,6 +72,7 @@ class _$ProfileForeignOrOwnEventCopyWithImpl<$Res> implements $ProfileForeignOrO
   _$ProfileForeignOrOwnEventCopyWithImpl(this._value, this._then);
 
   final ProfileForeignOrOwnEvent _value;
+
   // ignore: unused_field
   final $Res Function(ProfileForeignOrOwnEvent) _then;
 
@@ -196,6 +197,7 @@ abstract class _InitializedForeignOrOwn implements ProfileForeignOrOwnEvent {
 
   @override
   Option<UniqueId> get userIdOption => throw _privateConstructorUsedError;
+
   @override
   @JsonKey(ignore: true)
   _$InitializedForeignOrOwnCopyWith<_InitializedForeignOrOwn> get copyWith =>
@@ -288,6 +290,7 @@ class _$ProfileForeignOrOwnStateCopyWithImpl<$Res> implements $ProfileForeignOrO
   _$ProfileForeignOrOwnStateCopyWithImpl(this._value, this._then);
 
   final ProfileForeignOrOwnState _value;
+
   // ignore: unused_field
   final $Res Function(ProfileForeignOrOwnState) _then;
 }
@@ -613,6 +616,7 @@ abstract class _Own implements ProfileForeignOrOwnState {
 /// @nodoc
 abstract class _$ForeignCopyWith<$Res> {
   factory _$ForeignCopyWith(_Foreign value, $Res Function(_Foreign) then) = __$ForeignCopyWithImpl<$Res>;
+
   $Res call({User user});
 
   $UserCopyWith<$Res> get user;

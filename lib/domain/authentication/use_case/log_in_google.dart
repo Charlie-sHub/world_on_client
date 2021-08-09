@@ -12,7 +12,5 @@ class LogInGoogle implements AsyncUseCase<Option<User>, NoParams> {
   LogInGoogle(this._repository);
 
   @override
-  Future<Either<Failure, Option<User>>> call(NoParams params) {
-    return _repository.logInGoogle();
-  }
+  Future<Either<Failure, Option<User>>> call(NoParams params) => _repository.logInGoogle();
 }

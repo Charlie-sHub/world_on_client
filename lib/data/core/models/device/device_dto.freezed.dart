@@ -53,6 +53,7 @@ mixin _$DeviceDto {
 /// @nodoc
 abstract class $DeviceDtoCopyWith<$Res> {
   factory $DeviceDtoCopyWith(DeviceDto value, $Res Function(DeviceDto) then) = _$DeviceDtoCopyWithImpl<$Res>;
+
   $Res call({String id, String name, String type, String company});
 }
 

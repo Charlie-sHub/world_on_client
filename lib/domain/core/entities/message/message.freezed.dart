@@ -50,6 +50,7 @@ mixin _$Message {
 /// @nodoc
 abstract class $MessageCopyWith<$Res> {
   factory $MessageCopyWith(Message value, $Res Function(Message) then) = _$MessageCopyWithImpl<$Res>;
+
   $Res call(
       {UniqueId id, SimpleUser sender, UniqueId receiverId, MessageContent content, PastDate creationDate});
 
@@ -107,6 +108,7 @@ class _$MessageCopyWithImpl<$Res> implements $MessageCopyWith<$Res> {
 /// @nodoc
 abstract class _$MessageCopyWith<$Res> implements $MessageCopyWith<$Res> {
   factory _$MessageCopyWith(_Message value, $Res Function(_Message) then) = __$MessageCopyWithImpl<$Res>;
+
   @override
   $Res call(
       {UniqueId id, SimpleUser sender, UniqueId receiverId, MessageContent content, PastDate creationDate});

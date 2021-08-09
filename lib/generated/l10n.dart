@@ -1,7 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
-
 import 'intl/messages_all.dart';
 
 // **************************************************************************
@@ -2334,6 +2333,36 @@ class S {
     return Intl.message(
       'New Experience',
       name: 'newExperience',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Create and share experiences`
+  String get createExperienceButtonShowCase {
+    return Intl.message(
+      'Create and share experiences',
+      name: 'createExperienceButtonShowCase',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Experiences created by other users`
+  String get experienceCardShowCase {
+    return Intl.message(
+      'Experiences created by other users',
+      name: 'experienceCardShowCase',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `User's level, it goes up with creating nad doing experiences`
+  String get userLeverShowCase {
+    return Intl.message(
+      'User\'s level, it goes up with creating nad doing experiences',
+      name: 'userLeverShowCase',
       desc: '',
       args: [],
     );

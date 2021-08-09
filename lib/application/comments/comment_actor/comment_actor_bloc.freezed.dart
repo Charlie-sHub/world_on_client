@@ -63,9 +63,11 @@ mixin _$CommentActorEvent {
 abstract class $CommentActorEventCopyWith<$Res> {
   factory $CommentActorEventCopyWith(CommentActorEvent value, $Res Function(CommentActorEvent) then) =
       _$CommentActorEventCopyWithImpl<$Res>;
+
   $Res call({Comment comment, User currentUser});
 
   $CommentCopyWith<$Res> get comment;
+
   $UserCopyWith<$Res> get currentUser;
 }
 

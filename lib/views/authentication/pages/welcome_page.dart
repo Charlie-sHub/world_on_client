@@ -39,7 +39,11 @@ class WelcomePage extends StatelessWidget {
                 ),
               ),
               TextButton(
-                onPressed: () => context.router.replace(const MainPageRoute()),
+                onPressed: () => context.router.replace(
+                  MainPageRoute(
+                    isNewUser: true,
+                  ),
+                ),
                 child: const Icon(
                   Icons.check,
                   size: 90,

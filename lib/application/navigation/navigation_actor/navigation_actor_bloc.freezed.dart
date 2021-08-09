@@ -1082,6 +1082,7 @@ abstract class _NavigateExperienceView implements NavigationActorState {
   const factory _NavigateExperienceView(Option<Experience> experienceOption) = _$_NavigateExperienceView;
 
   Option<Experience> get experienceOption => throw _privateConstructorUsedError;
+
   @JsonKey(ignore: true)
   _$NavigateExperienceViewCopyWith<_NavigateExperienceView> get copyWith =>
       throw _privateConstructorUsedError;

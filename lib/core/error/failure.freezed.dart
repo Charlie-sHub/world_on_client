@@ -1262,6 +1262,7 @@ abstract class _StoreData<T> implements Failure<T> {
 /// @nodoc
 abstract class _$ValueCopyWith<T, $Res> {
   factory _$ValueCopyWith(_Value<T> value, $Res Function(_Value<T>) then) = __$ValueCopyWithImpl<T, $Res>;
+
   $Res call({ValueFailure<T> valueFailure});
 
   $ValueFailureCopyWith<T, $Res> get valueFailure;

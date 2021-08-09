@@ -84,6 +84,7 @@ class _$ProfileUsersWatcherEventCopyWithImpl<$Res> implements $ProfileUsersWatch
   _$ProfileUsersWatcherEventCopyWithImpl(this._value, this._then);
 
   final ProfileUsersWatcherEvent _value;
+
   // ignore: unused_field
   final $Res Function(ProfileUsersWatcherEvent) _then;
 }
@@ -538,6 +539,7 @@ class _$ProfileUsersWatcherStateCopyWithImpl<$Res> implements $ProfileUsersWatch
   _$ProfileUsersWatcherStateCopyWithImpl(this._value, this._then);
 
   final ProfileUsersWatcherState _value;
+
   // ignore: unused_field
   final $Res Function(ProfileUsersWatcherState) _then;
 }

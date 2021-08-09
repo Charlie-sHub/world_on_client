@@ -163,6 +163,7 @@ class _$ExperienceEditingFormEventCopyWithImpl<$Res> implements $ExperienceEditi
   _$ExperienceEditingFormEventCopyWithImpl(this._value, this._then);
 
   final ExperienceEditingFormEvent _value;
+
   // ignore: unused_field
   final $Res Function(ExperienceEditingFormEvent) _then;
 }
@@ -477,6 +478,7 @@ abstract class _TitleChanged implements ExperienceEditingFormEvent {
 abstract class _$DescriptionChangedCopyWith<$Res> {
   factory _$DescriptionChangedCopyWith(_DescriptionChanged value, $Res Function(_DescriptionChanged) then) =
       __$DescriptionChangedCopyWithImpl<$Res>;
+
   $Res call({String description});
 }
 
@@ -616,6 +618,7 @@ abstract class _DescriptionChanged implements ExperienceEditingFormEvent {
   const factory _DescriptionChanged(String description) = _$_DescriptionChanged;
 
   String get description => throw _privateConstructorUsedError;
+
   @JsonKey(ignore: true)
   _$DescriptionChangedCopyWith<_DescriptionChanged> get copyWith => throw _privateConstructorUsedError;
 }
@@ -922,6 +925,7 @@ abstract class _ImageDeleted implements ExperienceEditingFormEvent {
 abstract class _$CoordinatesChangedCopyWith<$Res> {
   factory _$CoordinatesChangedCopyWith(_CoordinatesChanged value, $Res Function(_CoordinatesChanged) then) =
       __$CoordinatesChangedCopyWithImpl<$Res>;
+
   $Res call({double latitude, double longitude});
 }
 
@@ -1085,6 +1089,7 @@ abstract class _CoordinatesChanged implements ExperienceEditingFormEvent {
 abstract class _$DifficultyChangedCopyWith<$Res> {
   factory _$DifficultyChangedCopyWith(_DifficultyChanged value, $Res Function(_DifficultyChanged) then) =
       __$DifficultyChangedCopyWithImpl<$Res>;
+
   $Res call({int difficulty});
 }
 
@@ -1224,6 +1229,7 @@ abstract class _DifficultyChanged implements ExperienceEditingFormEvent {
   const factory _DifficultyChanged(int difficulty) = _$_DifficultyChanged;
 
   int get difficulty => throw _privateConstructorUsedError;
+
   @JsonKey(ignore: true)
   _$DifficultyChangedCopyWith<_DifficultyChanged> get copyWith => throw _privateConstructorUsedError;
 }
@@ -1232,6 +1238,7 @@ abstract class _DifficultyChanged implements ExperienceEditingFormEvent {
 abstract class _$ObjectivesChangedCopyWith<$Res> {
   factory _$ObjectivesChangedCopyWith(_ObjectivesChanged value, $Res Function(_ObjectivesChanged) then) =
       __$ObjectivesChangedCopyWithImpl<$Res>;
+
   $Res call({KtList<Objective> objectives});
 }
 
@@ -1858,6 +1865,7 @@ class _$ExperienceEditingFormStateCopyWithImpl<$Res> implements $ExperienceEditi
   _$ExperienceEditingFormStateCopyWithImpl(this._value, this._then);
 
   final ExperienceEditingFormState _value;
+
   // ignore: unused_field
   final $Res Function(ExperienceEditingFormState) _then;
 

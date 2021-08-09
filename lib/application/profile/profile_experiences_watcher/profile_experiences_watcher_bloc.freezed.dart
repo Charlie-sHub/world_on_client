@@ -368,7 +368,6 @@ abstract class _$WatchExperiencesCreatedStartedCopyWith<$Res> {
   factory _$WatchExperiencesCreatedStartedCopyWith(
           _WatchExperiencesCreatedStarted value, $Res Function(_WatchExperiencesCreatedStarted) then) =
       __$WatchExperiencesCreatedStartedCopyWithImpl<$Res>;
-
   $Res call({User user});
 
   $UserCopyWith<$Res> get user;

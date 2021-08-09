@@ -95,6 +95,7 @@ class _$ExperienceLikeActorEventCopyWithImpl<$Res> implements $ExperienceLikeAct
   _$ExperienceLikeActorEventCopyWithImpl(this._value, this._then);
 
   final ExperienceLikeActorEvent _value;
+
   // ignore: unused_field
   final $Res Function(ExperienceLikeActorEvent) _then;
 
@@ -541,6 +542,7 @@ class _$ExperienceLikeActorStateCopyWithImpl<$Res> implements $ExperienceLikeAct
   _$ExperienceLikeActorStateCopyWithImpl(this._value, this._then);
 
   final ExperienceLikeActorState _value;
+
   // ignore: unused_field
   final $Res Function(ExperienceLikeActorState) _then;
 

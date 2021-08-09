@@ -83,7 +83,6 @@ abstract class _$WatchExperienceCommentsStartedCopyWith<$Res> {
   factory _$WatchExperienceCommentsStartedCopyWith(
           _WatchExperienceCommentsStarted value, $Res Function(_WatchExperienceCommentsStarted) then) =
       __$WatchExperienceCommentsStartedCopyWithImpl<$Res>;
-
   $Res call({UniqueId experienceId});
 }
 

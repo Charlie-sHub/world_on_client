@@ -73,7 +73,6 @@ abstract class $ExperienceManagementActorEventCopyWith<$Res> {
   factory $ExperienceManagementActorEventCopyWith(
           ExperienceManagementActorEvent value, $Res Function(ExperienceManagementActorEvent) then) =
       _$ExperienceManagementActorEventCopyWithImpl<$Res>;
-
   $Res call({Experience experience});
 
   $ExperienceCopyWith<$Res> get experience;

@@ -11,7 +11,5 @@ class DeleteUserNotifications implements AsyncUseCase<Unit, NoParams> {
   DeleteUserNotifications(this._repository);
 
   @override
-  Future<Either<Failure, Unit>> call(NoParams params) async {
-    return _repository.deleteUserNotifications();
-  }
+  Future<Either<Failure, Unit>> call(NoParams params) async => _repository.deleteUserNotifications();
 }

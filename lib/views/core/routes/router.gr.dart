@@ -55,8 +55,9 @@ class AppRouter extends _i1.RootStackRouter {
         }),
     MainPageRoute.name: (routeData) => _i1.MaterialPageX<dynamic>(
         routeData: routeData,
-        builder: (_) {
-          return _i8.MainPage();
+        builder: (data) {
+          final args = data.argsAs<MainPageRouteArgs>();
+          return _i8.MainPage(key: args.key, isNewUser: args.isNewUser);
         }),
     ProfileEditingPageRoute.name: (routeData) => _i1.CustomPage<bool>(
         routeData: routeData,
@@ -87,7 +88,8 @@ class AppRouter extends _i1.RootStackRouter {
   };
 
   @override
-  List<_i1.RouteConfig> get routes => [
+  List<_i1.RouteConfig> get routes =>
+      [
         _i1.RouteConfig(SplashPageRoute.name, path: '/'),
         _i1.RouteConfig(LogInPageRoute.name, path: '/log-in-page'),
         _i1.RouteConfig(ForgottenPasswordPageRoute.name, path: '/forgotten-password-page'),
@@ -141,10 +143,19 @@ class WelcomePageRoute extends _i1.PageRouteInfo {
   static const String name = 'WelcomePageRoute';
 }
 
-class MainPageRoute extends _i1.PageRouteInfo {
-  const MainPageRoute() : super(name, path: '/main-page');
+class MainPageRoute extends _i1.PageRouteInfo<MainPageRouteArgs> {
+  MainPageRoute({_i2.Key? key, required bool isNewUser})
+      : super(name, path: '/main-page', args: MainPageRouteArgs(key: key, isNewUser: isNewUser));
 
   static const String name = 'MainPageRoute';
+}
+
+class MainPageRouteArgs {
+  const MainPageRouteArgs({this.key, required this.isNewUser});
+
+  final _i2.Key? key;
+
+  final bool isNewUser;
 }
 
 class ProfileEditingPageRoute extends _i1.PageRouteInfo<ProfileEditingPageRouteArgs> {

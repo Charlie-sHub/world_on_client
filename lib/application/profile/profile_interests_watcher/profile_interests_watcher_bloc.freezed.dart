@@ -197,6 +197,7 @@ abstract class _WatchInterestsStarted implements ProfileInterestsWatcherEvent {
   const factory _WatchInterestsStarted(User user) = _$_WatchInterestsStarted;
 
   User get user => throw _privateConstructorUsedError;
+
   @JsonKey(ignore: true)
   _$WatchInterestsStartedCopyWith<_WatchInterestsStarted> get copyWith => throw _privateConstructorUsedError;
 }

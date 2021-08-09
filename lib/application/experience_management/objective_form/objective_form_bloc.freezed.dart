@@ -204,6 +204,7 @@ abstract class _Initialized implements ObjectiveFormEvent {
 abstract class _$DescriptionChangedCopyWith<$Res> {
   factory _$DescriptionChangedCopyWith(_DescriptionChanged value, $Res Function(_DescriptionChanged) then) =
       __$DescriptionChangedCopyWithImpl<$Res>;
+
   $Res call({String description});
 }
 
@@ -319,6 +320,7 @@ abstract class _DescriptionChanged implements ObjectiveFormEvent {
   const factory _DescriptionChanged(String description) = _$_DescriptionChanged;
 
   String get description => throw _privateConstructorUsedError;
+
   @JsonKey(ignore: true)
   _$DescriptionChangedCopyWith<_DescriptionChanged> get copyWith => throw _privateConstructorUsedError;
 }
@@ -327,6 +329,7 @@ abstract class _DescriptionChanged implements ObjectiveFormEvent {
 abstract class _$CoordinatesChangedCopyWith<$Res> {
   factory _$CoordinatesChangedCopyWith(_CoordinatesChanged value, $Res Function(_CoordinatesChanged) then) =
       __$CoordinatesChangedCopyWithImpl<$Res>;
+
   $Res call({double latitude, double longitude});
 }
 
@@ -881,8 +884,10 @@ abstract class _ObjectiveFormState implements ObjectiveFormState {
   bool get showErrorMessages => throw _privateConstructorUsedError;
   @override
   bool get isSubmitting => throw _privateConstructorUsedError;
+
   @override
   bool get loadedCoordinates => throw _privateConstructorUsedError;
+
   @override
   @JsonKey(ignore: true)
   _$ObjectiveFormStateCopyWith<_ObjectiveFormState> get copyWith => throw _privateConstructorUsedError;

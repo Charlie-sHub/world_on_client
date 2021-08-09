@@ -222,8 +222,10 @@ abstract class _PrimitiveObjective extends PrimitiveObjective {
   double get latitude => throw _privateConstructorUsedError;
   @override
   double get longitude => throw _privateConstructorUsedError;
+
   @override
   File? get imageFile => throw _privateConstructorUsedError;
+
   @override
   @JsonKey(ignore: true)
   _$PrimitiveObjectiveCopyWith<_PrimitiveObjective> get copyWith => throw _privateConstructorUsedError;

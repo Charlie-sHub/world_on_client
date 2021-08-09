@@ -72,6 +72,7 @@ class _$ForgottenPasswordFormEventCopyWithImpl<$Res> implements $ForgottenPasswo
   _$ForgottenPasswordFormEventCopyWithImpl(this._value, this._then);
 
   final ForgottenPasswordFormEvent _value;
+
   // ignore: unused_field
   final $Res Function(ForgottenPasswordFormEvent) _then;
 }
@@ -325,6 +326,7 @@ class _$ForgottenPasswordFormStateCopyWithImpl<$Res> implements $ForgottenPasswo
   _$ForgottenPasswordFormStateCopyWithImpl(this._value, this._then);
 
   final ForgottenPasswordFormState _value;
+
   // ignore: unused_field
   final $Res Function(ForgottenPasswordFormState) _then;
 

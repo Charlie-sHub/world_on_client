@@ -228,5 +228,8 @@
   "cantBlockSelf": "You can't block yourself",
   "objectivesExplanation": "Check the objectives as you complete them",
   "newNotification": "New Notification",
-  "newExperience": "New Experience"
+  "newExperience": "New Experience",
+  "createExperienceButtonShowCase": "Create and share experiences",
+  "experienceCardShowCase": "Experiences created by other users",
+  "userLeverShowCase": "User's level, it goes up with creating nad doing experiences"
 }

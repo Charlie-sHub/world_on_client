@@ -719,6 +719,7 @@ abstract class _NavigatingExperience implements ExperienceNavigationWatcherState
 abstract class _$FinishExperienceCopyWith<$Res> {
   factory _$FinishExperienceCopyWith(_FinishExperience value, $Res Function(_FinishExperience) then) =
       __$FinishExperienceCopyWithImpl<$Res>;
+
   $Res call({Experience experience});
 
   $ExperienceCopyWith<$Res> get experience;

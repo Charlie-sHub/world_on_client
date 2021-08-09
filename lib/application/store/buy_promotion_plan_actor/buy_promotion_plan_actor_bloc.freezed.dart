@@ -72,6 +72,7 @@ class _$BuyPromotionPlanActorEventCopyWithImpl<$Res> implements $BuyPromotionPla
   _$BuyPromotionPlanActorEventCopyWithImpl(this._value, this._then);
 
   final BuyPromotionPlanActorEvent _value;
+
   // ignore: unused_field
   final $Res Function(BuyPromotionPlanActorEvent) _then;
 }
@@ -376,6 +377,7 @@ class _$BuyPromotionPlanActorStateCopyWithImpl<$Res> implements $BuyPromotionPla
   _$BuyPromotionPlanActorStateCopyWithImpl(this._value, this._then);
 
   final BuyPromotionPlanActorState _value;
+
   // ignore: unused_field
   final $Res Function(BuyPromotionPlanActorState) _then;
 }
