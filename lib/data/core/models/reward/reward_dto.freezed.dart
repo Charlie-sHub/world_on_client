@@ -50,7 +50,8 @@ mixin _$RewardDto {
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $RewardDtoCopyWith<RewardDto> get copyWith => throw _privateConstructorUsedError;
+  $RewardDtoCopyWith<RewardDto> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -98,9 +99,9 @@ class _$RewardDtoCopyWithImpl<$Res> implements $RewardDtoCopyWith<$Res> {
 
 /// @nodoc
 abstract class _$RewardDtoCopyWith<$Res> implements $RewardDtoCopyWith<$Res> {
-  factory _$RewardDtoCopyWith(_RewardDto value, $Res Function(_RewardDto) then) =
+  factory _$RewardDtoCopyWith(
+          _RewardDto value, $Res Function(_RewardDto) then) =
       __$RewardDtoCopyWithImpl<$Res>;
-
   @override
   $Res call({String id, String name, String description, String imageURL});
 }
@@ -146,10 +147,14 @@ class __$RewardDtoCopyWithImpl<$Res> extends _$RewardDtoCopyWithImpl<$Res>
 @JsonSerializable()
 class _$_RewardDto extends _RewardDto {
   const _$_RewardDto(
-      {required this.id, required this.name, required this.description, required this.imageURL})
+      {required this.id,
+      required this.name,
+      required this.description,
+      required this.imageURL})
       : super._();
 
-  factory _$_RewardDto.fromJson(Map<String, dynamic> json) => _$_$_RewardDtoFromJson(json);
+  factory _$_RewardDto.fromJson(Map<String, dynamic> json) =>
+      _$_$_RewardDtoFromJson(json);
 
   @override
   final String id;
@@ -169,12 +174,16 @@ class _$_RewardDto extends _RewardDto {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other is _RewardDto &&
-            (identical(other.id, id) || const DeepCollectionEquality().equals(other.id, id)) &&
-            (identical(other.name, name) || const DeepCollectionEquality().equals(other.name, name)) &&
+            (identical(other.id, id) ||
+                const DeepCollectionEquality().equals(other.id, id)) &&
+            (identical(other.name, name) ||
+                const DeepCollectionEquality().equals(other.name, name)) &&
             (identical(other.description, description) ||
-                const DeepCollectionEquality().equals(other.description, description)) &&
+                const DeepCollectionEquality()
+                    .equals(other.description, description)) &&
             (identical(other.imageURL, imageURL) ||
-                const DeepCollectionEquality().equals(other.imageURL, imageURL)));
+                const DeepCollectionEquality()
+                    .equals(other.imageURL, imageURL)));
   }
 
   @override
@@ -202,24 +211,21 @@ abstract class _RewardDto extends RewardDto {
       required String name,
       required String description,
       required String imageURL}) = _$_RewardDto;
-
   const _RewardDto._() : super._();
 
-  factory _RewardDto.fromJson(Map<String, dynamic> json) = _$_RewardDto.fromJson;
+  factory _RewardDto.fromJson(Map<String, dynamic> json) =
+      _$_RewardDto.fromJson;
 
   @override
   String get id => throw _privateConstructorUsedError;
-
   @override
   String get name => throw _privateConstructorUsedError;
-
   @override
   String get description => throw _privateConstructorUsedError;
-
   @override
   String get imageURL => throw _privateConstructorUsedError;
-
   @override
   @JsonKey(ignore: true)
-  _$RewardDtoCopyWith<_RewardDto> get copyWith => throw _privateConstructorUsedError;
+  _$RewardDtoCopyWith<_RewardDto> get copyWith =>
+      throw _privateConstructorUsedError;
 }

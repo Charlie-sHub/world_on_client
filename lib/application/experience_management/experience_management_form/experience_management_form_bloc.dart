@@ -36,8 +36,7 @@ import 'package:worldon/domain/experience_navigation/use_case/reward_user.dart' 
 import '../../../injection.dart';
 
 part 'experience_management_form_bloc.freezed.dart';
-part 'experience_management_form_event.dart';xperience_management_form_event.dart';
-
+part 'experience_management_form_event.dart';
 part 'experience_management_form_state.dart';
 
 @injectable

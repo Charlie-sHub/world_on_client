@@ -82,32 +82,35 @@ mixin _$RewardFormEvent {
 
 /// @nodoc
 abstract class $RewardFormEventCopyWith<$Res> {
-  factory $RewardFormEventCopyWith(RewardFormEvent value, $Res Function(RewardFormEvent) then) =
+  factory $RewardFormEventCopyWith(
+          RewardFormEvent value, $Res Function(RewardFormEvent) then) =
       _$RewardFormEventCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class _$RewardFormEventCopyWithImpl<$Res> implements $RewardFormEventCopyWith<$Res> {
+class _$RewardFormEventCopyWithImpl<$Res>
+    implements $RewardFormEventCopyWith<$Res> {
   _$RewardFormEventCopyWithImpl(this._value, this._then);
 
   final RewardFormEvent _value;
-
   // ignore: unused_field
   final $Res Function(RewardFormEvent) _then;
 }
 
 /// @nodoc
 abstract class _$NameChangedCopyWith<$Res> {
-  factory _$NameChangedCopyWith(_NameChanged value, $Res Function(_NameChanged) then) =
+  factory _$NameChangedCopyWith(
+          _NameChanged value, $Res Function(_NameChanged) then) =
       __$NameChangedCopyWithImpl<$Res>;
-
   $Res call({String name});
 }
 
 /// @nodoc
-class __$NameChangedCopyWithImpl<$Res> extends _$RewardFormEventCopyWithImpl<$Res>
+class __$NameChangedCopyWithImpl<$Res>
+    extends _$RewardFormEventCopyWithImpl<$Res>
     implements _$NameChangedCopyWith<$Res> {
-  __$NameChangedCopyWithImpl(_NameChanged _value, $Res Function(_NameChanged) _then)
+  __$NameChangedCopyWithImpl(
+      _NameChanged _value, $Res Function(_NameChanged) _then)
       : super(_value, (v) => _then(v as _NameChanged));
 
   @override
@@ -148,7 +151,8 @@ class _$_NameChanged implements _NameChanged {
   }
 
   @override
-  int get hashCode => runtimeType.hashCode ^ const DeepCollectionEquality().hash(name);
+  int get hashCode =>
+      runtimeType.hashCode ^ const DeepCollectionEquality().hash(name);
 
   @JsonKey(ignore: true)
   @override
@@ -212,9 +216,9 @@ abstract class _NameChanged implements RewardFormEvent {
   const factory _NameChanged(String name) = _$_NameChanged;
 
   String get name => throw _privateConstructorUsedError;
-
   @JsonKey(ignore: true)
-  _$NameChangedCopyWith<_NameChanged> get copyWith => throw _privateConstructorUsedError;
+  _$NameChangedCopyWith<_NameChanged> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -226,9 +230,11 @@ abstract class _$DescriptionChangedCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$DescriptionChangedCopyWithImpl<$Res> extends _$RewardFormEventCopyWithImpl<$Res>
+class __$DescriptionChangedCopyWithImpl<$Res>
+    extends _$RewardFormEventCopyWithImpl<$Res>
     implements _$DescriptionChangedCopyWith<$Res> {
-  __$DescriptionChangedCopyWithImpl(_DescriptionChanged _value, $Res Function(_DescriptionChanged) _then)
+  __$DescriptionChangedCopyWithImpl(
+      _DescriptionChanged _value, $Res Function(_DescriptionChanged) _then)
       : super(_value, (v) => _then(v as _DescriptionChanged));
 
   @override
@@ -265,11 +271,13 @@ class _$_DescriptionChanged implements _DescriptionChanged {
     return identical(this, other) ||
         (other is _DescriptionChanged &&
             (identical(other.description, description) ||
-                const DeepCollectionEquality().equals(other.description, description)));
+                const DeepCollectionEquality()
+                    .equals(other.description, description)));
   }
 
   @override
-  int get hashCode => runtimeType.hashCode ^ const DeepCollectionEquality().hash(description);
+  int get hashCode =>
+      runtimeType.hashCode ^ const DeepCollectionEquality().hash(description);
 
   @JsonKey(ignore: true)
   @override
@@ -340,16 +348,18 @@ abstract class _DescriptionChanged implements RewardFormEvent {
 
 /// @nodoc
 abstract class _$ImageChangedCopyWith<$Res> {
-  factory _$ImageChangedCopyWith(_ImageChanged value, $Res Function(_ImageChanged) then) =
+  factory _$ImageChangedCopyWith(
+          _ImageChanged value, $Res Function(_ImageChanged) then) =
       __$ImageChangedCopyWithImpl<$Res>;
-
   $Res call({File imageFile});
 }
 
 /// @nodoc
-class __$ImageChangedCopyWithImpl<$Res> extends _$RewardFormEventCopyWithImpl<$Res>
+class __$ImageChangedCopyWithImpl<$Res>
+    extends _$RewardFormEventCopyWithImpl<$Res>
     implements _$ImageChangedCopyWith<$Res> {
-  __$ImageChangedCopyWithImpl(_ImageChanged _value, $Res Function(_ImageChanged) _then)
+  __$ImageChangedCopyWithImpl(
+      _ImageChanged _value, $Res Function(_ImageChanged) _then)
       : super(_value, (v) => _then(v as _ImageChanged));
 
   @override
@@ -386,11 +396,13 @@ class _$_ImageChanged implements _ImageChanged {
     return identical(this, other) ||
         (other is _ImageChanged &&
             (identical(other.imageFile, imageFile) ||
-                const DeepCollectionEquality().equals(other.imageFile, imageFile)));
+                const DeepCollectionEquality()
+                    .equals(other.imageFile, imageFile)));
   }
 
   @override
-  int get hashCode => runtimeType.hashCode ^ const DeepCollectionEquality().hash(imageFile);
+  int get hashCode =>
+      runtimeType.hashCode ^ const DeepCollectionEquality().hash(imageFile);
 
   @JsonKey(ignore: true)
   @override
@@ -454,14 +466,15 @@ abstract class _ImageChanged implements RewardFormEvent {
   const factory _ImageChanged(File imageFile) = _$_ImageChanged;
 
   File get imageFile => throw _privateConstructorUsedError;
-
   @JsonKey(ignore: true)
-  _$ImageChangedCopyWith<_ImageChanged> get copyWith => throw _privateConstructorUsedError;
+  _$ImageChangedCopyWith<_ImageChanged> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class _$SubmittedCopyWith<$Res> {
-  factory _$SubmittedCopyWith(_Submitted value, $Res Function(_Submitted) then) =
+  factory _$SubmittedCopyWith(
+          _Submitted value, $Res Function(_Submitted) then) =
       __$SubmittedCopyWithImpl<$Res>;
 }
 
@@ -555,7 +568,9 @@ class _$RewardFormStateTearOff {
   const _$RewardFormStateTearOff();
 
   _RewardFormState call(
-      {required Reward reward, required bool showErrorMessages, required bool isSubmitting}) {
+      {required Reward reward,
+      required bool showErrorMessages,
+      required bool isSubmitting}) {
     return _RewardFormState(
       reward: reward,
       showErrorMessages: showErrorMessages,
@@ -574,25 +589,26 @@ mixin _$RewardFormState {
   bool get isSubmitting => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
-  $RewardFormStateCopyWith<RewardFormState> get copyWith => throw _privateConstructorUsedError;
+  $RewardFormStateCopyWith<RewardFormState> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $RewardFormStateCopyWith<$Res> {
-  factory $RewardFormStateCopyWith(RewardFormState value, $Res Function(RewardFormState) then) =
+  factory $RewardFormStateCopyWith(
+          RewardFormState value, $Res Function(RewardFormState) then) =
       _$RewardFormStateCopyWithImpl<$Res>;
-
   $Res call({Reward reward, bool showErrorMessages, bool isSubmitting});
 
   $RewardCopyWith<$Res> get reward;
 }
 
 /// @nodoc
-class _$RewardFormStateCopyWithImpl<$Res> implements $RewardFormStateCopyWith<$Res> {
+class _$RewardFormStateCopyWithImpl<$Res>
+    implements $RewardFormStateCopyWith<$Res> {
   _$RewardFormStateCopyWithImpl(this._value, this._then);
 
   final RewardFormState _value;
-
   // ignore: unused_field
   final $Res Function(RewardFormState) _then;
 
@@ -627,10 +643,11 @@ class _$RewardFormStateCopyWithImpl<$Res> implements $RewardFormStateCopyWith<$R
 }
 
 /// @nodoc
-abstract class _$RewardFormStateCopyWith<$Res> implements $RewardFormStateCopyWith<$Res> {
-  factory _$RewardFormStateCopyWith(_RewardFormState value, $Res Function(_RewardFormState) then) =
+abstract class _$RewardFormStateCopyWith<$Res>
+    implements $RewardFormStateCopyWith<$Res> {
+  factory _$RewardFormStateCopyWith(
+          _RewardFormState value, $Res Function(_RewardFormState) then) =
       __$RewardFormStateCopyWithImpl<$Res>;
-
   @override
   $Res call({Reward reward, bool showErrorMessages, bool isSubmitting});
 
@@ -639,9 +656,11 @@ abstract class _$RewardFormStateCopyWith<$Res> implements $RewardFormStateCopyWi
 }
 
 /// @nodoc
-class __$RewardFormStateCopyWithImpl<$Res> extends _$RewardFormStateCopyWithImpl<$Res>
+class __$RewardFormStateCopyWithImpl<$Res>
+    extends _$RewardFormStateCopyWithImpl<$Res>
     implements _$RewardFormStateCopyWith<$Res> {
-  __$RewardFormStateCopyWithImpl(_RewardFormState _value, $Res Function(_RewardFormState) _then)
+  __$RewardFormStateCopyWithImpl(
+      _RewardFormState _value, $Res Function(_RewardFormState) _then)
       : super(_value, (v) => _then(v as _RewardFormState));
 
   @override
@@ -674,7 +693,9 @@ class __$RewardFormStateCopyWithImpl<$Res> extends _$RewardFormStateCopyWithImpl
 
 class _$_RewardFormState implements _RewardFormState {
   const _$_RewardFormState(
-      {required this.reward, required this.showErrorMessages, required this.isSubmitting});
+      {required this.reward,
+      required this.showErrorMessages,
+      required this.isSubmitting});
 
   @override
   final Reward reward;
@@ -695,9 +716,11 @@ class _$_RewardFormState implements _RewardFormState {
             (identical(other.reward, reward) ||
                 const DeepCollectionEquality().equals(other.reward, reward)) &&
             (identical(other.showErrorMessages, showErrorMessages) ||
-                const DeepCollectionEquality().equals(other.showErrorMessages, showErrorMessages)) &&
+                const DeepCollectionEquality()
+                    .equals(other.showErrorMessages, showErrorMessages)) &&
             (identical(other.isSubmitting, isSubmitting) ||
-                const DeepCollectionEquality().equals(other.isSubmitting, isSubmitting)));
+                const DeepCollectionEquality()
+                    .equals(other.isSubmitting, isSubmitting)));
   }
 
   @override
@@ -723,11 +746,10 @@ abstract class _RewardFormState implements RewardFormState {
   Reward get reward => throw _privateConstructorUsedError;
   @override
   bool get showErrorMessages => throw _privateConstructorUsedError;
-
   @override
   bool get isSubmitting => throw _privateConstructorUsedError;
-
   @override
   @JsonKey(ignore: true)
-  _$RewardFormStateCopyWith<_RewardFormState> get copyWith => throw _privateConstructorUsedError;
+  _$RewardFormStateCopyWith<_RewardFormState> get copyWith =>
+      throw _privateConstructorUsedError;
 }

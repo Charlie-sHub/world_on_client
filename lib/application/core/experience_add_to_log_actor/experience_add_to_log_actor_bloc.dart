@@ -14,8 +14,7 @@ import 'package:worldon/domain/experience_log/use_case/dismiss_experience_from_l
 import 'package:worldon/injection.dart';
 
 part 'experience_add_to_log_actor_bloc.freezed.dart';
-part 'experience_add_to_log_actor_event.dart';tor_event.dart';
-
+part 'experience_add_to_log_actor_event.dart';
 part 'experience_add_to_log_actor_state.dart';
 
 @injectable

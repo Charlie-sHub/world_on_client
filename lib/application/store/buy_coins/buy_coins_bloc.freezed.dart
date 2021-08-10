@@ -54,23 +54,24 @@ mixin _$BuyCoinsEvent {
       throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
-  $BuyCoinsEventCopyWith<BuyCoinsEvent> get copyWith => throw _privateConstructorUsedError;
+  $BuyCoinsEventCopyWith<BuyCoinsEvent> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $BuyCoinsEventCopyWith<$Res> {
-  factory $BuyCoinsEventCopyWith(BuyCoinsEvent value, $Res Function(BuyCoinsEvent) then) =
+  factory $BuyCoinsEventCopyWith(
+          BuyCoinsEvent value, $Res Function(BuyCoinsEvent) then) =
       _$BuyCoinsEventCopyWithImpl<$Res>;
-
   $Res call({int amount});
 }
 
 /// @nodoc
-class _$BuyCoinsEventCopyWithImpl<$Res> implements $BuyCoinsEventCopyWith<$Res> {
+class _$BuyCoinsEventCopyWithImpl<$Res>
+    implements $BuyCoinsEventCopyWith<$Res> {
   _$BuyCoinsEventCopyWithImpl(this._value, this._then);
 
   final BuyCoinsEvent _value;
-
   // ignore: unused_field
   final $Res Function(BuyCoinsEvent) _then;
 
@@ -88,10 +89,11 @@ class _$BuyCoinsEventCopyWithImpl<$Res> implements $BuyCoinsEventCopyWith<$Res> 
 }
 
 /// @nodoc
-abstract class _$BoughtCoinsCopyWith<$Res> implements $BuyCoinsEventCopyWith<$Res> {
-  factory _$BoughtCoinsCopyWith(_BoughtCoins value, $Res Function(_BoughtCoins) then) =
+abstract class _$BoughtCoinsCopyWith<$Res>
+    implements $BuyCoinsEventCopyWith<$Res> {
+  factory _$BoughtCoinsCopyWith(
+          _BoughtCoins value, $Res Function(_BoughtCoins) then) =
       __$BoughtCoinsCopyWithImpl<$Res>;
-
   @override
   $Res call({int amount});
 }
@@ -99,7 +101,8 @@ abstract class _$BoughtCoinsCopyWith<$Res> implements $BuyCoinsEventCopyWith<$Re
 /// @nodoc
 class __$BoughtCoinsCopyWithImpl<$Res> extends _$BuyCoinsEventCopyWithImpl<$Res>
     implements _$BoughtCoinsCopyWith<$Res> {
-  __$BoughtCoinsCopyWithImpl(_BoughtCoins _value, $Res Function(_BoughtCoins) _then)
+  __$BoughtCoinsCopyWithImpl(
+      _BoughtCoins _value, $Res Function(_BoughtCoins) _then)
       : super(_value, (v) => _then(v as _BoughtCoins));
 
   @override
@@ -135,11 +138,13 @@ class _$_BoughtCoins implements _BoughtCoins {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other is _BoughtCoins &&
-            (identical(other.amount, amount) || const DeepCollectionEquality().equals(other.amount, amount)));
+            (identical(other.amount, amount) ||
+                const DeepCollectionEquality().equals(other.amount, amount)));
   }
 
   @override
-  int get hashCode => runtimeType.hashCode ^ const DeepCollectionEquality().hash(amount);
+  int get hashCode =>
+      runtimeType.hashCode ^ const DeepCollectionEquality().hash(amount);
 
   @JsonKey(ignore: true)
   @override
@@ -192,10 +197,10 @@ abstract class _BoughtCoins implements BuyCoinsEvent {
 
   @override
   int get amount => throw _privateConstructorUsedError;
-
   @override
   @JsonKey(ignore: true)
-  _$BoughtCoinsCopyWith<_BoughtCoins> get copyWith => throw _privateConstructorUsedError;
+  _$BoughtCoinsCopyWith<_BoughtCoins> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -264,23 +269,25 @@ mixin _$BuyCoinsState {
 
 /// @nodoc
 abstract class $BuyCoinsStateCopyWith<$Res> {
-  factory $BuyCoinsStateCopyWith(BuyCoinsState value, $Res Function(BuyCoinsState) then) =
+  factory $BuyCoinsStateCopyWith(
+          BuyCoinsState value, $Res Function(BuyCoinsState) then) =
       _$BuyCoinsStateCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class _$BuyCoinsStateCopyWithImpl<$Res> implements $BuyCoinsStateCopyWith<$Res> {
+class _$BuyCoinsStateCopyWithImpl<$Res>
+    implements $BuyCoinsStateCopyWith<$Res> {
   _$BuyCoinsStateCopyWithImpl(this._value, this._then);
 
   final BuyCoinsState _value;
-
   // ignore: unused_field
   final $Res Function(BuyCoinsState) _then;
 }
 
 /// @nodoc
 abstract class _$InitialCopyWith<$Res> {
-  factory _$InitialCopyWith(_Initial value, $Res Function(_Initial) then) = __$InitialCopyWithImpl<$Res>;
+  factory _$InitialCopyWith(_Initial value, $Res Function(_Initial) then) =
+      __$InitialCopyWithImpl<$Res>;
 }
 
 /// @nodoc
@@ -370,14 +377,17 @@ abstract class _Initial implements BuyCoinsState {
 
 /// @nodoc
 abstract class _$ActionInProgressCopyWith<$Res> {
-  factory _$ActionInProgressCopyWith(_ActionInProgress value, $Res Function(_ActionInProgress) then) =
+  factory _$ActionInProgressCopyWith(
+          _ActionInProgress value, $Res Function(_ActionInProgress) then) =
       __$ActionInProgressCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$ActionInProgressCopyWithImpl<$Res> extends _$BuyCoinsStateCopyWithImpl<$Res>
+class __$ActionInProgressCopyWithImpl<$Res>
+    extends _$BuyCoinsStateCopyWithImpl<$Res>
     implements _$ActionInProgressCopyWith<$Res> {
-  __$ActionInProgressCopyWithImpl(_ActionInProgress _value, $Res Function(_ActionInProgress) _then)
+  __$ActionInProgressCopyWithImpl(
+      _ActionInProgress _value, $Res Function(_ActionInProgress) _then)
       : super(_value, (v) => _then(v as _ActionInProgress));
 
   @override
@@ -461,14 +471,17 @@ abstract class _ActionInProgress implements BuyCoinsState {
 
 /// @nodoc
 abstract class _$PurchaseSuccessCopyWith<$Res> {
-  factory _$PurchaseSuccessCopyWith(_PurchaseSuccess value, $Res Function(_PurchaseSuccess) then) =
+  factory _$PurchaseSuccessCopyWith(
+          _PurchaseSuccess value, $Res Function(_PurchaseSuccess) then) =
       __$PurchaseSuccessCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$PurchaseSuccessCopyWithImpl<$Res> extends _$BuyCoinsStateCopyWithImpl<$Res>
+class __$PurchaseSuccessCopyWithImpl<$Res>
+    extends _$BuyCoinsStateCopyWithImpl<$Res>
     implements _$PurchaseSuccessCopyWith<$Res> {
-  __$PurchaseSuccessCopyWithImpl(_PurchaseSuccess _value, $Res Function(_PurchaseSuccess) _then)
+  __$PurchaseSuccessCopyWithImpl(
+      _PurchaseSuccess _value, $Res Function(_PurchaseSuccess) _then)
       : super(_value, (v) => _then(v as _PurchaseSuccess));
 
   @override
@@ -552,18 +565,20 @@ abstract class _PurchaseSuccess implements BuyCoinsState {
 
 /// @nodoc
 abstract class _$PurchaseFailureCopyWith<$Res> {
-  factory _$PurchaseFailureCopyWith(_PurchaseFailure value, $Res Function(_PurchaseFailure) then) =
+  factory _$PurchaseFailureCopyWith(
+          _PurchaseFailure value, $Res Function(_PurchaseFailure) then) =
       __$PurchaseFailureCopyWithImpl<$Res>;
-
   $Res call({Failure<dynamic> failure});
 
   $FailureCopyWith<dynamic, $Res> get failure;
 }
 
 /// @nodoc
-class __$PurchaseFailureCopyWithImpl<$Res> extends _$BuyCoinsStateCopyWithImpl<$Res>
+class __$PurchaseFailureCopyWithImpl<$Res>
+    extends _$BuyCoinsStateCopyWithImpl<$Res>
     implements _$PurchaseFailureCopyWith<$Res> {
-  __$PurchaseFailureCopyWithImpl(_PurchaseFailure _value, $Res Function(_PurchaseFailure) _then)
+  __$PurchaseFailureCopyWithImpl(
+      _PurchaseFailure _value, $Res Function(_PurchaseFailure) _then)
       : super(_value, (v) => _then(v as _PurchaseFailure));
 
   @override
@@ -611,7 +626,8 @@ class _$_PurchaseFailure implements _PurchaseFailure {
   }
 
   @override
-  int get hashCode => runtimeType.hashCode ^ const DeepCollectionEquality().hash(failure);
+  int get hashCode =>
+      runtimeType.hashCode ^ const DeepCollectionEquality().hash(failure);
 
   @JsonKey(ignore: true)
   @override
@@ -675,7 +691,7 @@ abstract class _PurchaseFailure implements BuyCoinsState {
   const factory _PurchaseFailure(Failure<dynamic> failure) = _$_PurchaseFailure;
 
   Failure<dynamic> get failure => throw _privateConstructorUsedError;
-
   @JsonKey(ignore: true)
-  _$PurchaseFailureCopyWith<_PurchaseFailure> get copyWith => throw _privateConstructorUsedError;
+  _$PurchaseFailureCopyWith<_PurchaseFailure> get copyWith =>
+      throw _privateConstructorUsedError;
 }

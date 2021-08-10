@@ -53,7 +53,8 @@ mixin _$UserProfileButtonWatcherEvent {
 /// @nodoc
 abstract class $UserProfileButtonWatcherEventCopyWith<$Res> {
   factory $UserProfileButtonWatcherEventCopyWith(
-          UserProfileButtonWatcherEvent value, $Res Function(UserProfileButtonWatcherEvent) then) =
+          UserProfileButtonWatcherEvent value,
+          $Res Function(UserProfileButtonWatcherEvent) then) =
       _$UserProfileButtonWatcherEventCopyWithImpl<$Res>;
 }
 
@@ -69,14 +70,17 @@ class _$UserProfileButtonWatcherEventCopyWithImpl<$Res>
 
 /// @nodoc
 abstract class _$InitializedCopyWith<$Res> {
-  factory _$InitializedCopyWith(_Initialized value, $Res Function(_Initialized) then) =
+  factory _$InitializedCopyWith(
+          _Initialized value, $Res Function(_Initialized) then) =
       __$InitializedCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$InitializedCopyWithImpl<$Res> extends _$UserProfileButtonWatcherEventCopyWithImpl<$Res>
+class __$InitializedCopyWithImpl<$Res>
+    extends _$UserProfileButtonWatcherEventCopyWithImpl<$Res>
     implements _$InitializedCopyWith<$Res> {
-  __$InitializedCopyWithImpl(_Initialized _value, $Res Function(_Initialized) _then)
+  __$InitializedCopyWithImpl(
+      _Initialized _value, $Res Function(_Initialized) _then)
       : super(_value, (v) => _then(v as _Initialized));
 
   @override
@@ -213,7 +217,8 @@ mixin _$UserProfileButtonWatcherState {
 /// @nodoc
 abstract class $UserProfileButtonWatcherStateCopyWith<$Res> {
   factory $UserProfileButtonWatcherStateCopyWith(
-          UserProfileButtonWatcherState value, $Res Function(UserProfileButtonWatcherState) then) =
+          UserProfileButtonWatcherState value,
+          $Res Function(UserProfileButtonWatcherState) then) =
       _$UserProfileButtonWatcherStateCopyWithImpl<$Res>;
 }
 
@@ -234,7 +239,8 @@ abstract class _$InitialCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$InitialCopyWithImpl<$Res> extends _$UserProfileButtonWatcherStateCopyWithImpl<$Res>
+class __$InitialCopyWithImpl<$Res>
+    extends _$UserProfileButtonWatcherStateCopyWithImpl<$Res>
     implements _$InitialCopyWith<$Res> {
   __$InitialCopyWithImpl(_Initial _value, $Res Function(_Initial) _then)
       : super(_value, (v) => _then(v as _Initial));
@@ -329,7 +335,8 @@ abstract class _$ActionInProgressCopyWith<$Res> {
 class __$ActionInProgressCopyWithImpl<$Res>
     extends _$UserProfileButtonWatcherStateCopyWithImpl<$Res>
     implements _$ActionInProgressCopyWith<$Res> {
-  __$ActionInProgressCopyWithImpl(_ActionInProgress _value, $Res Function(_ActionInProgress) _then)
+  __$ActionInProgressCopyWithImpl(
+      _ActionInProgress _value, $Res Function(_ActionInProgress) _then)
       : super(_value, (v) => _then(v as _ActionInProgress));
 
   @override
@@ -413,16 +420,18 @@ abstract class _ActionInProgress implements UserProfileButtonWatcherState {
 
 /// @nodoc
 abstract class _$LoadSuccessCopyWith<$Res> {
-  factory _$LoadSuccessCopyWith(_LoadSuccess value, $Res Function(_LoadSuccess) then) =
+  factory _$LoadSuccessCopyWith(
+          _LoadSuccess value, $Res Function(_LoadSuccess) then) =
       __$LoadSuccessCopyWithImpl<$Res>;
-
   $Res call({String imageUrl});
 }
 
 /// @nodoc
-class __$LoadSuccessCopyWithImpl<$Res> extends _$UserProfileButtonWatcherStateCopyWithImpl<$Res>
+class __$LoadSuccessCopyWithImpl<$Res>
+    extends _$UserProfileButtonWatcherStateCopyWithImpl<$Res>
     implements _$LoadSuccessCopyWith<$Res> {
-  __$LoadSuccessCopyWithImpl(_LoadSuccess _value, $Res Function(_LoadSuccess) _then)
+  __$LoadSuccessCopyWithImpl(
+      _LoadSuccess _value, $Res Function(_LoadSuccess) _then)
       : super(_value, (v) => _then(v as _LoadSuccess));
 
   @override
@@ -459,11 +468,13 @@ class _$_LoadSuccess implements _LoadSuccess {
     return identical(this, other) ||
         (other is _LoadSuccess &&
             (identical(other.imageUrl, imageUrl) ||
-                const DeepCollectionEquality().equals(other.imageUrl, imageUrl)));
+                const DeepCollectionEquality()
+                    .equals(other.imageUrl, imageUrl)));
   }
 
   @override
-  int get hashCode => runtimeType.hashCode ^ const DeepCollectionEquality().hash(imageUrl);
+  int get hashCode =>
+      runtimeType.hashCode ^ const DeepCollectionEquality().hash(imageUrl);
 
   @JsonKey(ignore: true)
   @override
@@ -527,9 +538,9 @@ abstract class _LoadSuccess implements UserProfileButtonWatcherState {
   const factory _LoadSuccess(String imageUrl) = _$_LoadSuccess;
 
   String get imageUrl => throw _privateConstructorUsedError;
-
   @JsonKey(ignore: true)
-  _$LoadSuccessCopyWith<_LoadSuccess> get copyWith => throw _privateConstructorUsedError;
+  _$LoadSuccessCopyWith<_LoadSuccess> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -539,7 +550,8 @@ abstract class _$FailureCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$FailureCopyWithImpl<$Res> extends _$UserProfileButtonWatcherStateCopyWithImpl<$Res>
+class __$FailureCopyWithImpl<$Res>
+    extends _$UserProfileButtonWatcherStateCopyWithImpl<$Res>
     implements _$FailureCopyWith<$Res> {
   __$FailureCopyWithImpl(_Failure _value, $Res Function(_Failure) _then)
       : super(_value, (v) => _then(v as _Failure));

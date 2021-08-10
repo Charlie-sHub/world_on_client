@@ -49,10 +49,14 @@ mixin _$Message {
 
 /// @nodoc
 abstract class $MessageCopyWith<$Res> {
-  factory $MessageCopyWith(Message value, $Res Function(Message) then) = _$MessageCopyWithImpl<$Res>;
-
+  factory $MessageCopyWith(Message value, $Res Function(Message) then) =
+      _$MessageCopyWithImpl<$Res>;
   $Res call(
-      {UniqueId id, SimpleUser sender, UniqueId receiverId, MessageContent content, PastDate creationDate});
+      {UniqueId id,
+      SimpleUser sender,
+      UniqueId receiverId,
+      MessageContent content,
+      PastDate creationDate});
 
   $SimpleUserCopyWith<$Res> get sender;
 }
@@ -107,18 +111,23 @@ class _$MessageCopyWithImpl<$Res> implements $MessageCopyWith<$Res> {
 
 /// @nodoc
 abstract class _$MessageCopyWith<$Res> implements $MessageCopyWith<$Res> {
-  factory _$MessageCopyWith(_Message value, $Res Function(_Message) then) = __$MessageCopyWithImpl<$Res>;
-
+  factory _$MessageCopyWith(_Message value, $Res Function(_Message) then) =
+      __$MessageCopyWithImpl<$Res>;
   @override
   $Res call(
-      {UniqueId id, SimpleUser sender, UniqueId receiverId, MessageContent content, PastDate creationDate});
+      {UniqueId id,
+      SimpleUser sender,
+      UniqueId receiverId,
+      MessageContent content,
+      PastDate creationDate});
 
   @override
   $SimpleUserCopyWith<$Res> get sender;
 }
 
 /// @nodoc
-class __$MessageCopyWithImpl<$Res> extends _$MessageCopyWithImpl<$Res> implements _$MessageCopyWith<$Res> {
+class __$MessageCopyWithImpl<$Res> extends _$MessageCopyWithImpl<$Res>
+    implements _$MessageCopyWith<$Res> {
   __$MessageCopyWithImpl(_Message _value, $Res Function(_Message) _then)
       : super(_value, (v) => _then(v as _Message));
 
@@ -189,15 +198,19 @@ class _$_Message extends _Message {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other is _Message &&
-            (identical(other.id, id) || const DeepCollectionEquality().equals(other.id, id)) &&
+            (identical(other.id, id) ||
+                const DeepCollectionEquality().equals(other.id, id)) &&
             (identical(other.sender, sender) ||
                 const DeepCollectionEquality().equals(other.sender, sender)) &&
             (identical(other.receiverId, receiverId) ||
-                const DeepCollectionEquality().equals(other.receiverId, receiverId)) &&
+                const DeepCollectionEquality()
+                    .equals(other.receiverId, receiverId)) &&
             (identical(other.content, content) ||
-                const DeepCollectionEquality().equals(other.content, content)) &&
+                const DeepCollectionEquality()
+                    .equals(other.content, content)) &&
             (identical(other.creationDate, creationDate) ||
-                const DeepCollectionEquality().equals(other.creationDate, creationDate)));
+                const DeepCollectionEquality()
+                    .equals(other.creationDate, creationDate)));
   }
 
   @override
@@ -211,7 +224,8 @@ class _$_Message extends _Message {
 
   @JsonKey(ignore: true)
   @override
-  _$MessageCopyWith<_Message> get copyWith => __$MessageCopyWithImpl<_Message>(this, _$identity);
+  _$MessageCopyWith<_Message> get copyWith =>
+      __$MessageCopyWithImpl<_Message>(this, _$identity);
 }
 
 abstract class _Message extends Message {
@@ -231,11 +245,10 @@ abstract class _Message extends Message {
   UniqueId get receiverId => throw _privateConstructorUsedError;
   @override
   MessageContent get content => throw _privateConstructorUsedError;
-
   @override
   PastDate get creationDate => throw _privateConstructorUsedError;
-
   @override
   @JsonKey(ignore: true)
-  _$MessageCopyWith<_Message> get copyWith => throw _privateConstructorUsedError;
+  _$MessageCopyWith<_Message> get copyWith =>
+      throw _privateConstructorUsedError;
 }

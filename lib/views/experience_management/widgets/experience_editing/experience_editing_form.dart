@@ -1,9 +1,10 @@
 import 'package:auto_route/auto_route.dart';
-import 'package:dartz/dartz.dart';
+import 'package:dartz/dartz.dart' hide State;
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:kt_dart/kt.dart';
 import 'package:multi_image_picker2/multi_image_picker2.dart';
+import 'package:showcaseview/showcaseview.dart';
 import 'package:worldon/application/experience_management/experience_management_form/experience_management_form_bloc.dart';
 import 'package:worldon/domain/core/entities/experience/experience.dart';
 import 'package:worldon/domain/core/entities/tag/tag.dart';
@@ -23,10 +24,20 @@ import 'original_pictures_grid_view.dart';
 
 class ExperienceEditingForm extends StatelessWidget {
   final Experience experience;
+  final GlobalKey<State<StatefulWidget>> difficultyShowKey;
+  final GlobalKey<State<StatefulWidget>> mapShowKey;
+  final GlobalKey<State<StatefulWidget>> objectivesShowKey;
+  final GlobalKey<State<StatefulWidget>> tagCreationShowKey;
+  final ScrollController scrollController;
 
   const ExperienceEditingForm({
     Key? key,
     required this.experience,
+    required this.difficultyShowKey,
+    required this.mapShowKey,
+    required this.objectivesShowKey,
+    required this.tagCreationShowKey,
+    required this.scrollController,
   }) : super(key: key);
 
   @override
@@ -45,6 +56,7 @@ class ExperienceEditingForm extends StatelessWidget {
       ),
       buildWhen: _buildWhen,
       builder: (context, state) => SingleChildScrollView(
+        controller: scrollController,
         child: Form(
           autovalidateMode: state.showErrorMessages ? AutovalidateMode.always : AutovalidateMode.disabled,
           child: Padding(
@@ -83,30 +95,40 @@ class ExperienceEditingForm extends StatelessWidget {
                     fontSize: 15,
                   ),
                 ),
-                DifficultySlider(),
+                DifficultySlider(
+                  showKey: difficultyShowKey,
+                ),
                 const SizedBox(height: 5),
                 const Divider(thickness: 2),
                 const SizedBox(height: 5),
-                Map(),
+                Map(
+                  showKey: mapShowKey,
+                ),
                 const SizedBox(height: 5),
                 const Divider(thickness: 2),
                 const SizedBox(height: 5),
                 ObjectiveCreationCard(
                   objectiveListOption: some(experience.objectives),
+                  objectivesShowKey: objectivesShowKey,
                 ),
                 if (experience.rewards.isNotEmpty)
                   RewardCreationCard(
                     rewardSetOption: some(experience.rewards),
                   ),
                 //Change back to TagAdditionCard if necessary
-                TagAdditionCreationCard(
-                  tagChangeFunction: (KtSet<Tag> tags) => context.read<ExperienceManagementFormBloc>().add(
-                        ExperienceManagementFormEvent.tagsChanged(tags),
-                      ),
-                  tagsEitherOption: some(
-                    left(experience.tags),
+                Showcase(
+                  key: tagCreationShowKey,
+                  description: S.of(context).tagCreationShowCase,
+                  overlayPadding: const EdgeInsets.all(5),
+                  child: TagAdditionCreationCard(
+                    tagChangeFunction: (KtSet<Tag> tags) => context.read<ExperienceManagementFormBloc>().add(
+                          ExperienceManagementFormEvent.tagsChanged(tags),
+                        ),
+                    tagsEitherOption: some(
+                      left(experience.tags),
+                    ),
+                    showErrorMessage: true,
                   ),
-                  showErrorMessage: true,
                 ),
                 const FinishButton(),
               ],

@@ -46,7 +46,8 @@ class _$RegistrationFormEventTearOff {
     );
   }
 
-  _PasswordConfirmationChanged passwordConfirmationChanged(String passwordConfirmation) {
+  _PasswordConfirmationChanged passwordConfirmationChanged(
+      String passwordConfirmation) {
     return _PasswordConfirmationChanged(
       passwordConfirmation,
     );
@@ -97,7 +98,8 @@ mixin _$RegistrationFormEvent {
     required TResult Function(String name) nameChanged,
     required TResult Function(String username) usernameChanged,
     required TResult Function(String password) passwordChanged,
-    required TResult Function(String passwordConfirmation) passwordConfirmationChanged,
+    required TResult Function(String passwordConfirmation)
+        passwordConfirmationChanged,
     required TResult Function(String emailAddress) emailAddressChanged,
     required TResult Function(DateTime birthday) birthdayChanged,
     required TResult Function(String description) descriptionChanged,
@@ -130,7 +132,8 @@ mixin _$RegistrationFormEvent {
     required TResult Function(_NameChanged value) nameChanged,
     required TResult Function(_UsernameChanged value) usernameChanged,
     required TResult Function(_PasswordChanged value) passwordChanged,
-    required TResult Function(_PasswordConfirmationChanged value) passwordConfirmationChanged,
+    required TResult Function(_PasswordConfirmationChanged value)
+        passwordConfirmationChanged,
     required TResult Function(_EmailAddressChanged value) emailAddressChanged,
     required TResult Function(_BirthdayChanged value) birthdayChanged,
     required TResult Function(_DescriptionChanged value) descriptionChanged,
@@ -146,7 +149,8 @@ mixin _$RegistrationFormEvent {
     TResult Function(_NameChanged value)? nameChanged,
     TResult Function(_UsernameChanged value)? usernameChanged,
     TResult Function(_PasswordChanged value)? passwordChanged,
-    TResult Function(_PasswordConfirmationChanged value)? passwordConfirmationChanged,
+    TResult Function(_PasswordConfirmationChanged value)?
+        passwordConfirmationChanged,
     TResult Function(_EmailAddressChanged value)? emailAddressChanged,
     TResult Function(_BirthdayChanged value)? birthdayChanged,
     TResult Function(_DescriptionChanged value)? descriptionChanged,
@@ -160,33 +164,35 @@ mixin _$RegistrationFormEvent {
 
 /// @nodoc
 abstract class $RegistrationFormEventCopyWith<$Res> {
-  factory $RegistrationFormEventCopyWith(
-          RegistrationFormEvent value, $Res Function(RegistrationFormEvent) then) =
+  factory $RegistrationFormEventCopyWith(RegistrationFormEvent value,
+          $Res Function(RegistrationFormEvent) then) =
       _$RegistrationFormEventCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class _$RegistrationFormEventCopyWithImpl<$Res> implements $RegistrationFormEventCopyWith<$Res> {
+class _$RegistrationFormEventCopyWithImpl<$Res>
+    implements $RegistrationFormEventCopyWith<$Res> {
   _$RegistrationFormEventCopyWithImpl(this._value, this._then);
 
   final RegistrationFormEvent _value;
-
   // ignore: unused_field
   final $Res Function(RegistrationFormEvent) _then;
 }
 
 /// @nodoc
 abstract class _$InitializedCopyWith<$Res> {
-  factory _$InitializedCopyWith(_Initialized value, $Res Function(_Initialized) then) =
+  factory _$InitializedCopyWith(
+          _Initialized value, $Res Function(_Initialized) then) =
       __$InitializedCopyWithImpl<$Res>;
-
   $Res call({Option<User> userOption});
 }
 
 /// @nodoc
-class __$InitializedCopyWithImpl<$Res> extends _$RegistrationFormEventCopyWithImpl<$Res>
+class __$InitializedCopyWithImpl<$Res>
+    extends _$RegistrationFormEventCopyWithImpl<$Res>
     implements _$InitializedCopyWith<$Res> {
-  __$InitializedCopyWithImpl(_Initialized _value, $Res Function(_Initialized) _then)
+  __$InitializedCopyWithImpl(
+      _Initialized _value, $Res Function(_Initialized) _then)
       : super(_value, (v) => _then(v as _Initialized));
 
   @override
@@ -223,11 +229,13 @@ class _$_Initialized implements _Initialized {
     return identical(this, other) ||
         (other is _Initialized &&
             (identical(other.userOption, userOption) ||
-                const DeepCollectionEquality().equals(other.userOption, userOption)));
+                const DeepCollectionEquality()
+                    .equals(other.userOption, userOption)));
   }
 
   @override
-  int get hashCode => runtimeType.hashCode ^ const DeepCollectionEquality().hash(userOption);
+  int get hashCode =>
+      runtimeType.hashCode ^ const DeepCollectionEquality().hash(userOption);
 
   @JsonKey(ignore: true)
   @override
@@ -242,7 +250,8 @@ class _$_Initialized implements _Initialized {
     required TResult Function(String name) nameChanged,
     required TResult Function(String username) usernameChanged,
     required TResult Function(String password) passwordChanged,
-    required TResult Function(String passwordConfirmation) passwordConfirmationChanged,
+    required TResult Function(String passwordConfirmation)
+        passwordConfirmationChanged,
     required TResult Function(String emailAddress) emailAddressChanged,
     required TResult Function(DateTime birthday) birthdayChanged,
     required TResult Function(String description) descriptionChanged,
@@ -284,7 +293,8 @@ class _$_Initialized implements _Initialized {
     required TResult Function(_NameChanged value) nameChanged,
     required TResult Function(_UsernameChanged value) usernameChanged,
     required TResult Function(_PasswordChanged value) passwordChanged,
-    required TResult Function(_PasswordConfirmationChanged value) passwordConfirmationChanged,
+    required TResult Function(_PasswordConfirmationChanged value)
+        passwordConfirmationChanged,
     required TResult Function(_EmailAddressChanged value) emailAddressChanged,
     required TResult Function(_BirthdayChanged value) birthdayChanged,
     required TResult Function(_DescriptionChanged value) descriptionChanged,
@@ -303,7 +313,8 @@ class _$_Initialized implements _Initialized {
     TResult Function(_NameChanged value)? nameChanged,
     TResult Function(_UsernameChanged value)? usernameChanged,
     TResult Function(_PasswordChanged value)? passwordChanged,
-    TResult Function(_PasswordConfirmationChanged value)? passwordConfirmationChanged,
+    TResult Function(_PasswordConfirmationChanged value)?
+        passwordConfirmationChanged,
     TResult Function(_EmailAddressChanged value)? emailAddressChanged,
     TResult Function(_BirthdayChanged value)? birthdayChanged,
     TResult Function(_DescriptionChanged value)? descriptionChanged,
@@ -323,23 +334,25 @@ abstract class _Initialized implements RegistrationFormEvent {
   const factory _Initialized(Option<User> userOption) = _$_Initialized;
 
   Option<User> get userOption => throw _privateConstructorUsedError;
-
   @JsonKey(ignore: true)
-  _$InitializedCopyWith<_Initialized> get copyWith => throw _privateConstructorUsedError;
+  _$InitializedCopyWith<_Initialized> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class _$ImageChangedCopyWith<$Res> {
-  factory _$ImageChangedCopyWith(_ImageChanged value, $Res Function(_ImageChanged) then) =
+  factory _$ImageChangedCopyWith(
+          _ImageChanged value, $Res Function(_ImageChanged) then) =
       __$ImageChangedCopyWithImpl<$Res>;
-
   $Res call({File imageFile});
 }
 
 /// @nodoc
-class __$ImageChangedCopyWithImpl<$Res> extends _$RegistrationFormEventCopyWithImpl<$Res>
+class __$ImageChangedCopyWithImpl<$Res>
+    extends _$RegistrationFormEventCopyWithImpl<$Res>
     implements _$ImageChangedCopyWith<$Res> {
-  __$ImageChangedCopyWithImpl(_ImageChanged _value, $Res Function(_ImageChanged) _then)
+  __$ImageChangedCopyWithImpl(
+      _ImageChanged _value, $Res Function(_ImageChanged) _then)
       : super(_value, (v) => _then(v as _ImageChanged));
 
   @override
@@ -376,11 +389,13 @@ class _$_ImageChanged implements _ImageChanged {
     return identical(this, other) ||
         (other is _ImageChanged &&
             (identical(other.imageFile, imageFile) ||
-                const DeepCollectionEquality().equals(other.imageFile, imageFile)));
+                const DeepCollectionEquality()
+                    .equals(other.imageFile, imageFile)));
   }
 
   @override
-  int get hashCode => runtimeType.hashCode ^ const DeepCollectionEquality().hash(imageFile);
+  int get hashCode =>
+      runtimeType.hashCode ^ const DeepCollectionEquality().hash(imageFile);
 
   @JsonKey(ignore: true)
   @override
@@ -395,7 +410,8 @@ class _$_ImageChanged implements _ImageChanged {
     required TResult Function(String name) nameChanged,
     required TResult Function(String username) usernameChanged,
     required TResult Function(String password) passwordChanged,
-    required TResult Function(String passwordConfirmation) passwordConfirmationChanged,
+    required TResult Function(String passwordConfirmation)
+        passwordConfirmationChanged,
     required TResult Function(String emailAddress) emailAddressChanged,
     required TResult Function(DateTime birthday) birthdayChanged,
     required TResult Function(String description) descriptionChanged,
@@ -437,7 +453,8 @@ class _$_ImageChanged implements _ImageChanged {
     required TResult Function(_NameChanged value) nameChanged,
     required TResult Function(_UsernameChanged value) usernameChanged,
     required TResult Function(_PasswordChanged value) passwordChanged,
-    required TResult Function(_PasswordConfirmationChanged value) passwordConfirmationChanged,
+    required TResult Function(_PasswordConfirmationChanged value)
+        passwordConfirmationChanged,
     required TResult Function(_EmailAddressChanged value) emailAddressChanged,
     required TResult Function(_BirthdayChanged value) birthdayChanged,
     required TResult Function(_DescriptionChanged value) descriptionChanged,
@@ -456,7 +473,8 @@ class _$_ImageChanged implements _ImageChanged {
     TResult Function(_NameChanged value)? nameChanged,
     TResult Function(_UsernameChanged value)? usernameChanged,
     TResult Function(_PasswordChanged value)? passwordChanged,
-    TResult Function(_PasswordConfirmationChanged value)? passwordConfirmationChanged,
+    TResult Function(_PasswordConfirmationChanged value)?
+        passwordConfirmationChanged,
     TResult Function(_EmailAddressChanged value)? emailAddressChanged,
     TResult Function(_BirthdayChanged value)? birthdayChanged,
     TResult Function(_DescriptionChanged value)? descriptionChanged,
@@ -476,23 +494,25 @@ abstract class _ImageChanged implements RegistrationFormEvent {
   const factory _ImageChanged(File imageFile) = _$_ImageChanged;
 
   File get imageFile => throw _privateConstructorUsedError;
-
   @JsonKey(ignore: true)
-  _$ImageChangedCopyWith<_ImageChanged> get copyWith => throw _privateConstructorUsedError;
+  _$ImageChangedCopyWith<_ImageChanged> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class _$NameChangedCopyWith<$Res> {
-  factory _$NameChangedCopyWith(_NameChanged value, $Res Function(_NameChanged) then) =
+  factory _$NameChangedCopyWith(
+          _NameChanged value, $Res Function(_NameChanged) then) =
       __$NameChangedCopyWithImpl<$Res>;
-
   $Res call({String name});
 }
 
 /// @nodoc
-class __$NameChangedCopyWithImpl<$Res> extends _$RegistrationFormEventCopyWithImpl<$Res>
+class __$NameChangedCopyWithImpl<$Res>
+    extends _$RegistrationFormEventCopyWithImpl<$Res>
     implements _$NameChangedCopyWith<$Res> {
-  __$NameChangedCopyWithImpl(_NameChanged _value, $Res Function(_NameChanged) _then)
+  __$NameChangedCopyWithImpl(
+      _NameChanged _value, $Res Function(_NameChanged) _then)
       : super(_value, (v) => _then(v as _NameChanged));
 
   @override
@@ -533,7 +553,8 @@ class _$_NameChanged implements _NameChanged {
   }
 
   @override
-  int get hashCode => runtimeType.hashCode ^ const DeepCollectionEquality().hash(name);
+  int get hashCode =>
+      runtimeType.hashCode ^ const DeepCollectionEquality().hash(name);
 
   @JsonKey(ignore: true)
   @override
@@ -548,7 +569,8 @@ class _$_NameChanged implements _NameChanged {
     required TResult Function(String name) nameChanged,
     required TResult Function(String username) usernameChanged,
     required TResult Function(String password) passwordChanged,
-    required TResult Function(String passwordConfirmation) passwordConfirmationChanged,
+    required TResult Function(String passwordConfirmation)
+        passwordConfirmationChanged,
     required TResult Function(String emailAddress) emailAddressChanged,
     required TResult Function(DateTime birthday) birthdayChanged,
     required TResult Function(String description) descriptionChanged,
@@ -590,7 +612,8 @@ class _$_NameChanged implements _NameChanged {
     required TResult Function(_NameChanged value) nameChanged,
     required TResult Function(_UsernameChanged value) usernameChanged,
     required TResult Function(_PasswordChanged value) passwordChanged,
-    required TResult Function(_PasswordConfirmationChanged value) passwordConfirmationChanged,
+    required TResult Function(_PasswordConfirmationChanged value)
+        passwordConfirmationChanged,
     required TResult Function(_EmailAddressChanged value) emailAddressChanged,
     required TResult Function(_BirthdayChanged value) birthdayChanged,
     required TResult Function(_DescriptionChanged value) descriptionChanged,
@@ -609,7 +632,8 @@ class _$_NameChanged implements _NameChanged {
     TResult Function(_NameChanged value)? nameChanged,
     TResult Function(_UsernameChanged value)? usernameChanged,
     TResult Function(_PasswordChanged value)? passwordChanged,
-    TResult Function(_PasswordConfirmationChanged value)? passwordConfirmationChanged,
+    TResult Function(_PasswordConfirmationChanged value)?
+        passwordConfirmationChanged,
     TResult Function(_EmailAddressChanged value)? emailAddressChanged,
     TResult Function(_BirthdayChanged value)? birthdayChanged,
     TResult Function(_DescriptionChanged value)? descriptionChanged,
@@ -629,23 +653,25 @@ abstract class _NameChanged implements RegistrationFormEvent {
   const factory _NameChanged(String name) = _$_NameChanged;
 
   String get name => throw _privateConstructorUsedError;
-
   @JsonKey(ignore: true)
-  _$NameChangedCopyWith<_NameChanged> get copyWith => throw _privateConstructorUsedError;
+  _$NameChangedCopyWith<_NameChanged> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class _$UsernameChangedCopyWith<$Res> {
-  factory _$UsernameChangedCopyWith(_UsernameChanged value, $Res Function(_UsernameChanged) then) =
+  factory _$UsernameChangedCopyWith(
+          _UsernameChanged value, $Res Function(_UsernameChanged) then) =
       __$UsernameChangedCopyWithImpl<$Res>;
-
   $Res call({String username});
 }
 
 /// @nodoc
-class __$UsernameChangedCopyWithImpl<$Res> extends _$RegistrationFormEventCopyWithImpl<$Res>
+class __$UsernameChangedCopyWithImpl<$Res>
+    extends _$RegistrationFormEventCopyWithImpl<$Res>
     implements _$UsernameChangedCopyWith<$Res> {
-  __$UsernameChangedCopyWithImpl(_UsernameChanged _value, $Res Function(_UsernameChanged) _then)
+  __$UsernameChangedCopyWithImpl(
+      _UsernameChanged _value, $Res Function(_UsernameChanged) _then)
       : super(_value, (v) => _then(v as _UsernameChanged));
 
   @override
@@ -682,11 +708,13 @@ class _$_UsernameChanged implements _UsernameChanged {
     return identical(this, other) ||
         (other is _UsernameChanged &&
             (identical(other.username, username) ||
-                const DeepCollectionEquality().equals(other.username, username)));
+                const DeepCollectionEquality()
+                    .equals(other.username, username)));
   }
 
   @override
-  int get hashCode => runtimeType.hashCode ^ const DeepCollectionEquality().hash(username);
+  int get hashCode =>
+      runtimeType.hashCode ^ const DeepCollectionEquality().hash(username);
 
   @JsonKey(ignore: true)
   @override
@@ -701,7 +729,8 @@ class _$_UsernameChanged implements _UsernameChanged {
     required TResult Function(String name) nameChanged,
     required TResult Function(String username) usernameChanged,
     required TResult Function(String password) passwordChanged,
-    required TResult Function(String passwordConfirmation) passwordConfirmationChanged,
+    required TResult Function(String passwordConfirmation)
+        passwordConfirmationChanged,
     required TResult Function(String emailAddress) emailAddressChanged,
     required TResult Function(DateTime birthday) birthdayChanged,
     required TResult Function(String description) descriptionChanged,
@@ -743,7 +772,8 @@ class _$_UsernameChanged implements _UsernameChanged {
     required TResult Function(_NameChanged value) nameChanged,
     required TResult Function(_UsernameChanged value) usernameChanged,
     required TResult Function(_PasswordChanged value) passwordChanged,
-    required TResult Function(_PasswordConfirmationChanged value) passwordConfirmationChanged,
+    required TResult Function(_PasswordConfirmationChanged value)
+        passwordConfirmationChanged,
     required TResult Function(_EmailAddressChanged value) emailAddressChanged,
     required TResult Function(_BirthdayChanged value) birthdayChanged,
     required TResult Function(_DescriptionChanged value) descriptionChanged,
@@ -762,7 +792,8 @@ class _$_UsernameChanged implements _UsernameChanged {
     TResult Function(_NameChanged value)? nameChanged,
     TResult Function(_UsernameChanged value)? usernameChanged,
     TResult Function(_PasswordChanged value)? passwordChanged,
-    TResult Function(_PasswordConfirmationChanged value)? passwordConfirmationChanged,
+    TResult Function(_PasswordConfirmationChanged value)?
+        passwordConfirmationChanged,
     TResult Function(_EmailAddressChanged value)? emailAddressChanged,
     TResult Function(_BirthdayChanged value)? birthdayChanged,
     TResult Function(_DescriptionChanged value)? descriptionChanged,
@@ -782,23 +813,25 @@ abstract class _UsernameChanged implements RegistrationFormEvent {
   const factory _UsernameChanged(String username) = _$_UsernameChanged;
 
   String get username => throw _privateConstructorUsedError;
-
   @JsonKey(ignore: true)
-  _$UsernameChangedCopyWith<_UsernameChanged> get copyWith => throw _privateConstructorUsedError;
+  _$UsernameChangedCopyWith<_UsernameChanged> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class _$PasswordChangedCopyWith<$Res> {
-  factory _$PasswordChangedCopyWith(_PasswordChanged value, $Res Function(_PasswordChanged) then) =
+  factory _$PasswordChangedCopyWith(
+          _PasswordChanged value, $Res Function(_PasswordChanged) then) =
       __$PasswordChangedCopyWithImpl<$Res>;
-
   $Res call({String password});
 }
 
 /// @nodoc
-class __$PasswordChangedCopyWithImpl<$Res> extends _$RegistrationFormEventCopyWithImpl<$Res>
+class __$PasswordChangedCopyWithImpl<$Res>
+    extends _$RegistrationFormEventCopyWithImpl<$Res>
     implements _$PasswordChangedCopyWith<$Res> {
-  __$PasswordChangedCopyWithImpl(_PasswordChanged _value, $Res Function(_PasswordChanged) _then)
+  __$PasswordChangedCopyWithImpl(
+      _PasswordChanged _value, $Res Function(_PasswordChanged) _then)
       : super(_value, (v) => _then(v as _PasswordChanged));
 
   @override
@@ -835,11 +868,13 @@ class _$_PasswordChanged implements _PasswordChanged {
     return identical(this, other) ||
         (other is _PasswordChanged &&
             (identical(other.password, password) ||
-                const DeepCollectionEquality().equals(other.password, password)));
+                const DeepCollectionEquality()
+                    .equals(other.password, password)));
   }
 
   @override
-  int get hashCode => runtimeType.hashCode ^ const DeepCollectionEquality().hash(password);
+  int get hashCode =>
+      runtimeType.hashCode ^ const DeepCollectionEquality().hash(password);
 
   @JsonKey(ignore: true)
   @override
@@ -854,7 +889,8 @@ class _$_PasswordChanged implements _PasswordChanged {
     required TResult Function(String name) nameChanged,
     required TResult Function(String username) usernameChanged,
     required TResult Function(String password) passwordChanged,
-    required TResult Function(String passwordConfirmation) passwordConfirmationChanged,
+    required TResult Function(String passwordConfirmation)
+        passwordConfirmationChanged,
     required TResult Function(String emailAddress) emailAddressChanged,
     required TResult Function(DateTime birthday) birthdayChanged,
     required TResult Function(String description) descriptionChanged,
@@ -896,7 +932,8 @@ class _$_PasswordChanged implements _PasswordChanged {
     required TResult Function(_NameChanged value) nameChanged,
     required TResult Function(_UsernameChanged value) usernameChanged,
     required TResult Function(_PasswordChanged value) passwordChanged,
-    required TResult Function(_PasswordConfirmationChanged value) passwordConfirmationChanged,
+    required TResult Function(_PasswordConfirmationChanged value)
+        passwordConfirmationChanged,
     required TResult Function(_EmailAddressChanged value) emailAddressChanged,
     required TResult Function(_BirthdayChanged value) birthdayChanged,
     required TResult Function(_DescriptionChanged value) descriptionChanged,
@@ -915,7 +952,8 @@ class _$_PasswordChanged implements _PasswordChanged {
     TResult Function(_NameChanged value)? nameChanged,
     TResult Function(_UsernameChanged value)? usernameChanged,
     TResult Function(_PasswordChanged value)? passwordChanged,
-    TResult Function(_PasswordConfirmationChanged value)? passwordConfirmationChanged,
+    TResult Function(_PasswordConfirmationChanged value)?
+        passwordConfirmationChanged,
     TResult Function(_EmailAddressChanged value)? emailAddressChanged,
     TResult Function(_BirthdayChanged value)? birthdayChanged,
     TResult Function(_DescriptionChanged value)? descriptionChanged,
@@ -935,15 +973,16 @@ abstract class _PasswordChanged implements RegistrationFormEvent {
   const factory _PasswordChanged(String password) = _$_PasswordChanged;
 
   String get password => throw _privateConstructorUsedError;
-
   @JsonKey(ignore: true)
-  _$PasswordChangedCopyWith<_PasswordChanged> get copyWith => throw _privateConstructorUsedError;
+  _$PasswordChangedCopyWith<_PasswordChanged> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class _$PasswordConfirmationChangedCopyWith<$Res> {
   factory _$PasswordConfirmationChangedCopyWith(
-          _PasswordConfirmationChanged value, $Res Function(_PasswordConfirmationChanged) then) =
+          _PasswordConfirmationChanged value,
+          $Res Function(_PasswordConfirmationChanged) then) =
       __$PasswordConfirmationChangedCopyWithImpl<$Res>;
   $Res call({String passwordConfirmation});
 }
@@ -953,11 +992,13 @@ class __$PasswordConfirmationChangedCopyWithImpl<$Res>
     extends _$RegistrationFormEventCopyWithImpl<$Res>
     implements _$PasswordConfirmationChangedCopyWith<$Res> {
   __$PasswordConfirmationChangedCopyWithImpl(
-      _PasswordConfirmationChanged _value, $Res Function(_PasswordConfirmationChanged) _then)
+      _PasswordConfirmationChanged _value,
+      $Res Function(_PasswordConfirmationChanged) _then)
       : super(_value, (v) => _then(v as _PasswordConfirmationChanged));
 
   @override
-  _PasswordConfirmationChanged get _value => super._value as _PasswordConfirmationChanged;
+  _PasswordConfirmationChanged get _value =>
+      super._value as _PasswordConfirmationChanged;
 
   @override
   $Res call({
@@ -995,12 +1036,15 @@ class _$_PasswordConfirmationChanged implements _PasswordConfirmationChanged {
   }
 
   @override
-  int get hashCode => runtimeType.hashCode ^ const DeepCollectionEquality().hash(passwordConfirmation);
+  int get hashCode =>
+      runtimeType.hashCode ^
+      const DeepCollectionEquality().hash(passwordConfirmation);
 
   @JsonKey(ignore: true)
   @override
-  _$PasswordConfirmationChangedCopyWith<_PasswordConfirmationChanged> get copyWith =>
-      __$PasswordConfirmationChangedCopyWithImpl<_PasswordConfirmationChanged>(this, _$identity);
+  _$PasswordConfirmationChangedCopyWith<_PasswordConfirmationChanged>
+      get copyWith => __$PasswordConfirmationChangedCopyWithImpl<
+          _PasswordConfirmationChanged>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -1010,7 +1054,8 @@ class _$_PasswordConfirmationChanged implements _PasswordConfirmationChanged {
     required TResult Function(String name) nameChanged,
     required TResult Function(String username) usernameChanged,
     required TResult Function(String password) passwordChanged,
-    required TResult Function(String passwordConfirmation) passwordConfirmationChanged,
+    required TResult Function(String passwordConfirmation)
+        passwordConfirmationChanged,
     required TResult Function(String emailAddress) emailAddressChanged,
     required TResult Function(DateTime birthday) birthdayChanged,
     required TResult Function(String description) descriptionChanged,
@@ -1052,7 +1097,8 @@ class _$_PasswordConfirmationChanged implements _PasswordConfirmationChanged {
     required TResult Function(_NameChanged value) nameChanged,
     required TResult Function(_UsernameChanged value) usernameChanged,
     required TResult Function(_PasswordChanged value) passwordChanged,
-    required TResult Function(_PasswordConfirmationChanged value) passwordConfirmationChanged,
+    required TResult Function(_PasswordConfirmationChanged value)
+        passwordConfirmationChanged,
     required TResult Function(_EmailAddressChanged value) emailAddressChanged,
     required TResult Function(_BirthdayChanged value) birthdayChanged,
     required TResult Function(_DescriptionChanged value) descriptionChanged,
@@ -1071,7 +1117,8 @@ class _$_PasswordConfirmationChanged implements _PasswordConfirmationChanged {
     TResult Function(_NameChanged value)? nameChanged,
     TResult Function(_UsernameChanged value)? usernameChanged,
     TResult Function(_PasswordChanged value)? passwordChanged,
-    TResult Function(_PasswordConfirmationChanged value)? passwordConfirmationChanged,
+    TResult Function(_PasswordConfirmationChanged value)?
+        passwordConfirmationChanged,
     TResult Function(_EmailAddressChanged value)? emailAddressChanged,
     TResult Function(_BirthdayChanged value)? birthdayChanged,
     TResult Function(_DescriptionChanged value)? descriptionChanged,
@@ -1092,25 +1139,25 @@ abstract class _PasswordConfirmationChanged implements RegistrationFormEvent {
       _$_PasswordConfirmationChanged;
 
   String get passwordConfirmation => throw _privateConstructorUsedError;
-
   @JsonKey(ignore: true)
-  _$PasswordConfirmationChangedCopyWith<_PasswordConfirmationChanged> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$PasswordConfirmationChangedCopyWith<_PasswordConfirmationChanged>
+      get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class _$EmailAddressChangedCopyWith<$Res> {
-  factory _$EmailAddressChangedCopyWith(
-          _EmailAddressChanged value, $Res Function(_EmailAddressChanged) then) =
+  factory _$EmailAddressChangedCopyWith(_EmailAddressChanged value,
+          $Res Function(_EmailAddressChanged) then) =
       __$EmailAddressChangedCopyWithImpl<$Res>;
-
   $Res call({String emailAddress});
 }
 
 /// @nodoc
-class __$EmailAddressChangedCopyWithImpl<$Res> extends _$RegistrationFormEventCopyWithImpl<$Res>
+class __$EmailAddressChangedCopyWithImpl<$Res>
+    extends _$RegistrationFormEventCopyWithImpl<$Res>
     implements _$EmailAddressChangedCopyWith<$Res> {
-  __$EmailAddressChangedCopyWithImpl(_EmailAddressChanged _value, $Res Function(_EmailAddressChanged) _then)
+  __$EmailAddressChangedCopyWithImpl(
+      _EmailAddressChanged _value, $Res Function(_EmailAddressChanged) _then)
       : super(_value, (v) => _then(v as _EmailAddressChanged));
 
   @override
@@ -1147,16 +1194,19 @@ class _$_EmailAddressChanged implements _EmailAddressChanged {
     return identical(this, other) ||
         (other is _EmailAddressChanged &&
             (identical(other.emailAddress, emailAddress) ||
-                const DeepCollectionEquality().equals(other.emailAddress, emailAddress)));
+                const DeepCollectionEquality()
+                    .equals(other.emailAddress, emailAddress)));
   }
 
   @override
-  int get hashCode => runtimeType.hashCode ^ const DeepCollectionEquality().hash(emailAddress);
+  int get hashCode =>
+      runtimeType.hashCode ^ const DeepCollectionEquality().hash(emailAddress);
 
   @JsonKey(ignore: true)
   @override
   _$EmailAddressChangedCopyWith<_EmailAddressChanged> get copyWith =>
-      __$EmailAddressChangedCopyWithImpl<_EmailAddressChanged>(this, _$identity);
+      __$EmailAddressChangedCopyWithImpl<_EmailAddressChanged>(
+          this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -1166,7 +1216,8 @@ class _$_EmailAddressChanged implements _EmailAddressChanged {
     required TResult Function(String name) nameChanged,
     required TResult Function(String username) usernameChanged,
     required TResult Function(String password) passwordChanged,
-    required TResult Function(String passwordConfirmation) passwordConfirmationChanged,
+    required TResult Function(String passwordConfirmation)
+        passwordConfirmationChanged,
     required TResult Function(String emailAddress) emailAddressChanged,
     required TResult Function(DateTime birthday) birthdayChanged,
     required TResult Function(String description) descriptionChanged,
@@ -1208,7 +1259,8 @@ class _$_EmailAddressChanged implements _EmailAddressChanged {
     required TResult Function(_NameChanged value) nameChanged,
     required TResult Function(_UsernameChanged value) usernameChanged,
     required TResult Function(_PasswordChanged value) passwordChanged,
-    required TResult Function(_PasswordConfirmationChanged value) passwordConfirmationChanged,
+    required TResult Function(_PasswordConfirmationChanged value)
+        passwordConfirmationChanged,
     required TResult Function(_EmailAddressChanged value) emailAddressChanged,
     required TResult Function(_BirthdayChanged value) birthdayChanged,
     required TResult Function(_DescriptionChanged value) descriptionChanged,
@@ -1227,7 +1279,8 @@ class _$_EmailAddressChanged implements _EmailAddressChanged {
     TResult Function(_NameChanged value)? nameChanged,
     TResult Function(_UsernameChanged value)? usernameChanged,
     TResult Function(_PasswordChanged value)? passwordChanged,
-    TResult Function(_PasswordConfirmationChanged value)? passwordConfirmationChanged,
+    TResult Function(_PasswordConfirmationChanged value)?
+        passwordConfirmationChanged,
     TResult Function(_EmailAddressChanged value)? emailAddressChanged,
     TResult Function(_BirthdayChanged value)? birthdayChanged,
     TResult Function(_DescriptionChanged value)? descriptionChanged,
@@ -1244,26 +1297,29 @@ class _$_EmailAddressChanged implements _EmailAddressChanged {
 }
 
 abstract class _EmailAddressChanged implements RegistrationFormEvent {
-  const factory _EmailAddressChanged(String emailAddress) = _$_EmailAddressChanged;
+  const factory _EmailAddressChanged(String emailAddress) =
+      _$_EmailAddressChanged;
 
   String get emailAddress => throw _privateConstructorUsedError;
-
   @JsonKey(ignore: true)
-  _$EmailAddressChangedCopyWith<_EmailAddressChanged> get copyWith => throw _privateConstructorUsedError;
+  _$EmailAddressChangedCopyWith<_EmailAddressChanged> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class _$BirthdayChangedCopyWith<$Res> {
-  factory _$BirthdayChangedCopyWith(_BirthdayChanged value, $Res Function(_BirthdayChanged) then) =
+  factory _$BirthdayChangedCopyWith(
+          _BirthdayChanged value, $Res Function(_BirthdayChanged) then) =
       __$BirthdayChangedCopyWithImpl<$Res>;
-
   $Res call({DateTime birthday});
 }
 
 /// @nodoc
-class __$BirthdayChangedCopyWithImpl<$Res> extends _$RegistrationFormEventCopyWithImpl<$Res>
+class __$BirthdayChangedCopyWithImpl<$Res>
+    extends _$RegistrationFormEventCopyWithImpl<$Res>
     implements _$BirthdayChangedCopyWith<$Res> {
-  __$BirthdayChangedCopyWithImpl(_BirthdayChanged _value, $Res Function(_BirthdayChanged) _then)
+  __$BirthdayChangedCopyWithImpl(
+      _BirthdayChanged _value, $Res Function(_BirthdayChanged) _then)
       : super(_value, (v) => _then(v as _BirthdayChanged));
 
   @override
@@ -1300,11 +1356,13 @@ class _$_BirthdayChanged implements _BirthdayChanged {
     return identical(this, other) ||
         (other is _BirthdayChanged &&
             (identical(other.birthday, birthday) ||
-                const DeepCollectionEquality().equals(other.birthday, birthday)));
+                const DeepCollectionEquality()
+                    .equals(other.birthday, birthday)));
   }
 
   @override
-  int get hashCode => runtimeType.hashCode ^ const DeepCollectionEquality().hash(birthday);
+  int get hashCode =>
+      runtimeType.hashCode ^ const DeepCollectionEquality().hash(birthday);
 
   @JsonKey(ignore: true)
   @override
@@ -1319,7 +1377,8 @@ class _$_BirthdayChanged implements _BirthdayChanged {
     required TResult Function(String name) nameChanged,
     required TResult Function(String username) usernameChanged,
     required TResult Function(String password) passwordChanged,
-    required TResult Function(String passwordConfirmation) passwordConfirmationChanged,
+    required TResult Function(String passwordConfirmation)
+        passwordConfirmationChanged,
     required TResult Function(String emailAddress) emailAddressChanged,
     required TResult Function(DateTime birthday) birthdayChanged,
     required TResult Function(String description) descriptionChanged,
@@ -1361,7 +1420,8 @@ class _$_BirthdayChanged implements _BirthdayChanged {
     required TResult Function(_NameChanged value) nameChanged,
     required TResult Function(_UsernameChanged value) usernameChanged,
     required TResult Function(_PasswordChanged value) passwordChanged,
-    required TResult Function(_PasswordConfirmationChanged value) passwordConfirmationChanged,
+    required TResult Function(_PasswordConfirmationChanged value)
+        passwordConfirmationChanged,
     required TResult Function(_EmailAddressChanged value) emailAddressChanged,
     required TResult Function(_BirthdayChanged value) birthdayChanged,
     required TResult Function(_DescriptionChanged value) descriptionChanged,
@@ -1380,7 +1440,8 @@ class _$_BirthdayChanged implements _BirthdayChanged {
     TResult Function(_NameChanged value)? nameChanged,
     TResult Function(_UsernameChanged value)? usernameChanged,
     TResult Function(_PasswordChanged value)? passwordChanged,
-    TResult Function(_PasswordConfirmationChanged value)? passwordConfirmationChanged,
+    TResult Function(_PasswordConfirmationChanged value)?
+        passwordConfirmationChanged,
     TResult Function(_EmailAddressChanged value)? emailAddressChanged,
     TResult Function(_BirthdayChanged value)? birthdayChanged,
     TResult Function(_DescriptionChanged value)? descriptionChanged,
@@ -1400,9 +1461,9 @@ abstract class _BirthdayChanged implements RegistrationFormEvent {
   const factory _BirthdayChanged(DateTime birthday) = _$_BirthdayChanged;
 
   DateTime get birthday => throw _privateConstructorUsedError;
-
   @JsonKey(ignore: true)
-  _$BirthdayChangedCopyWith<_BirthdayChanged> get copyWith => throw _privateConstructorUsedError;
+  _$BirthdayChangedCopyWith<_BirthdayChanged> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -1414,9 +1475,11 @@ abstract class _$DescriptionChangedCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$DescriptionChangedCopyWithImpl<$Res> extends _$RegistrationFormEventCopyWithImpl<$Res>
+class __$DescriptionChangedCopyWithImpl<$Res>
+    extends _$RegistrationFormEventCopyWithImpl<$Res>
     implements _$DescriptionChangedCopyWith<$Res> {
-  __$DescriptionChangedCopyWithImpl(_DescriptionChanged _value, $Res Function(_DescriptionChanged) _then)
+  __$DescriptionChangedCopyWithImpl(
+      _DescriptionChanged _value, $Res Function(_DescriptionChanged) _then)
       : super(_value, (v) => _then(v as _DescriptionChanged));
 
   @override
@@ -1453,11 +1516,13 @@ class _$_DescriptionChanged implements _DescriptionChanged {
     return identical(this, other) ||
         (other is _DescriptionChanged &&
             (identical(other.description, description) ||
-                const DeepCollectionEquality().equals(other.description, description)));
+                const DeepCollectionEquality()
+                    .equals(other.description, description)));
   }
 
   @override
-  int get hashCode => runtimeType.hashCode ^ const DeepCollectionEquality().hash(description);
+  int get hashCode =>
+      runtimeType.hashCode ^ const DeepCollectionEquality().hash(description);
 
   @JsonKey(ignore: true)
   @override
@@ -1472,7 +1537,8 @@ class _$_DescriptionChanged implements _DescriptionChanged {
     required TResult Function(String name) nameChanged,
     required TResult Function(String username) usernameChanged,
     required TResult Function(String password) passwordChanged,
-    required TResult Function(String passwordConfirmation) passwordConfirmationChanged,
+    required TResult Function(String passwordConfirmation)
+        passwordConfirmationChanged,
     required TResult Function(String emailAddress) emailAddressChanged,
     required TResult Function(DateTime birthday) birthdayChanged,
     required TResult Function(String description) descriptionChanged,
@@ -1514,7 +1580,8 @@ class _$_DescriptionChanged implements _DescriptionChanged {
     required TResult Function(_NameChanged value) nameChanged,
     required TResult Function(_UsernameChanged value) usernameChanged,
     required TResult Function(_PasswordChanged value) passwordChanged,
-    required TResult Function(_PasswordConfirmationChanged value) passwordConfirmationChanged,
+    required TResult Function(_PasswordConfirmationChanged value)
+        passwordConfirmationChanged,
     required TResult Function(_EmailAddressChanged value) emailAddressChanged,
     required TResult Function(_BirthdayChanged value) birthdayChanged,
     required TResult Function(_DescriptionChanged value) descriptionChanged,
@@ -1533,7 +1600,8 @@ class _$_DescriptionChanged implements _DescriptionChanged {
     TResult Function(_NameChanged value)? nameChanged,
     TResult Function(_UsernameChanged value)? usernameChanged,
     TResult Function(_PasswordChanged value)? passwordChanged,
-    TResult Function(_PasswordConfirmationChanged value)? passwordConfirmationChanged,
+    TResult Function(_PasswordConfirmationChanged value)?
+        passwordConfirmationChanged,
     TResult Function(_EmailAddressChanged value)? emailAddressChanged,
     TResult Function(_BirthdayChanged value)? birthdayChanged,
     TResult Function(_DescriptionChanged value)? descriptionChanged,
@@ -1567,9 +1635,11 @@ abstract class _$InterestsChangedCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$InterestsChangedCopyWithImpl<$Res> extends _$RegistrationFormEventCopyWithImpl<$Res>
+class __$InterestsChangedCopyWithImpl<$Res>
+    extends _$RegistrationFormEventCopyWithImpl<$Res>
     implements _$InterestsChangedCopyWith<$Res> {
-  __$InterestsChangedCopyWithImpl(_InterestsChanged _value, $Res Function(_InterestsChanged) _then)
+  __$InterestsChangedCopyWithImpl(
+      _InterestsChanged _value, $Res Function(_InterestsChanged) _then)
       : super(_value, (v) => _then(v as _InterestsChanged));
 
   @override
@@ -1606,11 +1676,13 @@ class _$_InterestsChanged implements _InterestsChanged {
     return identical(this, other) ||
         (other is _InterestsChanged &&
             (identical(other.interests, interests) ||
-                const DeepCollectionEquality().equals(other.interests, interests)));
+                const DeepCollectionEquality()
+                    .equals(other.interests, interests)));
   }
 
   @override
-  int get hashCode => runtimeType.hashCode ^ const DeepCollectionEquality().hash(interests);
+  int get hashCode =>
+      runtimeType.hashCode ^ const DeepCollectionEquality().hash(interests);
 
   @JsonKey(ignore: true)
   @override
@@ -1625,7 +1697,8 @@ class _$_InterestsChanged implements _InterestsChanged {
     required TResult Function(String name) nameChanged,
     required TResult Function(String username) usernameChanged,
     required TResult Function(String password) passwordChanged,
-    required TResult Function(String passwordConfirmation) passwordConfirmationChanged,
+    required TResult Function(String passwordConfirmation)
+        passwordConfirmationChanged,
     required TResult Function(String emailAddress) emailAddressChanged,
     required TResult Function(DateTime birthday) birthdayChanged,
     required TResult Function(String description) descriptionChanged,
@@ -1667,7 +1740,8 @@ class _$_InterestsChanged implements _InterestsChanged {
     required TResult Function(_NameChanged value) nameChanged,
     required TResult Function(_UsernameChanged value) usernameChanged,
     required TResult Function(_PasswordChanged value) passwordChanged,
-    required TResult Function(_PasswordConfirmationChanged value) passwordConfirmationChanged,
+    required TResult Function(_PasswordConfirmationChanged value)
+        passwordConfirmationChanged,
     required TResult Function(_EmailAddressChanged value) emailAddressChanged,
     required TResult Function(_BirthdayChanged value) birthdayChanged,
     required TResult Function(_DescriptionChanged value) descriptionChanged,
@@ -1686,7 +1760,8 @@ class _$_InterestsChanged implements _InterestsChanged {
     TResult Function(_NameChanged value)? nameChanged,
     TResult Function(_UsernameChanged value)? usernameChanged,
     TResult Function(_PasswordChanged value)? passwordChanged,
-    TResult Function(_PasswordConfirmationChanged value)? passwordConfirmationChanged,
+    TResult Function(_PasswordConfirmationChanged value)?
+        passwordConfirmationChanged,
     TResult Function(_EmailAddressChanged value)? emailAddressChanged,
     TResult Function(_BirthdayChanged value)? birthdayChanged,
     TResult Function(_DescriptionChanged value)? descriptionChanged,
@@ -1706,21 +1781,24 @@ abstract class _InterestsChanged implements RegistrationFormEvent {
   const factory _InterestsChanged(KtSet<Tag> interests) = _$_InterestsChanged;
 
   KtSet<Tag> get interests => throw _privateConstructorUsedError;
-
   @JsonKey(ignore: true)
-  _$InterestsChangedCopyWith<_InterestsChanged> get copyWith => throw _privateConstructorUsedError;
+  _$InterestsChangedCopyWith<_InterestsChanged> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class _$TappedEULACopyWith<$Res> {
-  factory _$TappedEULACopyWith(_TappedEULA value, $Res Function(_TappedEULA) then) =
+  factory _$TappedEULACopyWith(
+          _TappedEULA value, $Res Function(_TappedEULA) then) =
       __$TappedEULACopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$TappedEULACopyWithImpl<$Res> extends _$RegistrationFormEventCopyWithImpl<$Res>
+class __$TappedEULACopyWithImpl<$Res>
+    extends _$RegistrationFormEventCopyWithImpl<$Res>
     implements _$TappedEULACopyWith<$Res> {
-  __$TappedEULACopyWithImpl(_TappedEULA _value, $Res Function(_TappedEULA) _then)
+  __$TappedEULACopyWithImpl(
+      _TappedEULA _value, $Res Function(_TappedEULA) _then)
       : super(_value, (v) => _then(v as _TappedEULA));
 
   @override
@@ -1753,7 +1831,8 @@ class _$_TappedEULA implements _TappedEULA {
     required TResult Function(String name) nameChanged,
     required TResult Function(String username) usernameChanged,
     required TResult Function(String password) passwordChanged,
-    required TResult Function(String passwordConfirmation) passwordConfirmationChanged,
+    required TResult Function(String passwordConfirmation)
+        passwordConfirmationChanged,
     required TResult Function(String emailAddress) emailAddressChanged,
     required TResult Function(DateTime birthday) birthdayChanged,
     required TResult Function(String description) descriptionChanged,
@@ -1795,7 +1874,8 @@ class _$_TappedEULA implements _TappedEULA {
     required TResult Function(_NameChanged value) nameChanged,
     required TResult Function(_UsernameChanged value) usernameChanged,
     required TResult Function(_PasswordChanged value) passwordChanged,
-    required TResult Function(_PasswordConfirmationChanged value) passwordConfirmationChanged,
+    required TResult Function(_PasswordConfirmationChanged value)
+        passwordConfirmationChanged,
     required TResult Function(_EmailAddressChanged value) emailAddressChanged,
     required TResult Function(_BirthdayChanged value) birthdayChanged,
     required TResult Function(_DescriptionChanged value) descriptionChanged,
@@ -1814,7 +1894,8 @@ class _$_TappedEULA implements _TappedEULA {
     TResult Function(_NameChanged value)? nameChanged,
     TResult Function(_UsernameChanged value)? usernameChanged,
     TResult Function(_PasswordChanged value)? passwordChanged,
-    TResult Function(_PasswordConfirmationChanged value)? passwordConfirmationChanged,
+    TResult Function(_PasswordConfirmationChanged value)?
+        passwordConfirmationChanged,
     TResult Function(_EmailAddressChanged value)? emailAddressChanged,
     TResult Function(_BirthdayChanged value)? birthdayChanged,
     TResult Function(_DescriptionChanged value)? descriptionChanged,
@@ -1836,12 +1917,14 @@ abstract class _TappedEULA implements RegistrationFormEvent {
 
 /// @nodoc
 abstract class _$SubmittedCopyWith<$Res> {
-  factory _$SubmittedCopyWith(_Submitted value, $Res Function(_Submitted) then) =
+  factory _$SubmittedCopyWith(
+          _Submitted value, $Res Function(_Submitted) then) =
       __$SubmittedCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$SubmittedCopyWithImpl<$Res> extends _$RegistrationFormEventCopyWithImpl<$Res>
+class __$SubmittedCopyWithImpl<$Res>
+    extends _$RegistrationFormEventCopyWithImpl<$Res>
     implements _$SubmittedCopyWith<$Res> {
   __$SubmittedCopyWithImpl(_Submitted _value, $Res Function(_Submitted) _then)
       : super(_value, (v) => _then(v as _Submitted));
@@ -1876,7 +1959,8 @@ class _$_Submitted implements _Submitted {
     required TResult Function(String name) nameChanged,
     required TResult Function(String username) usernameChanged,
     required TResult Function(String password) passwordChanged,
-    required TResult Function(String passwordConfirmation) passwordConfirmationChanged,
+    required TResult Function(String passwordConfirmation)
+        passwordConfirmationChanged,
     required TResult Function(String emailAddress) emailAddressChanged,
     required TResult Function(DateTime birthday) birthdayChanged,
     required TResult Function(String description) descriptionChanged,
@@ -1918,7 +2002,8 @@ class _$_Submitted implements _Submitted {
     required TResult Function(_NameChanged value) nameChanged,
     required TResult Function(_UsernameChanged value) usernameChanged,
     required TResult Function(_PasswordChanged value) passwordChanged,
-    required TResult Function(_PasswordConfirmationChanged value) passwordConfirmationChanged,
+    required TResult Function(_PasswordConfirmationChanged value)
+        passwordConfirmationChanged,
     required TResult Function(_EmailAddressChanged value) emailAddressChanged,
     required TResult Function(_BirthdayChanged value) birthdayChanged,
     required TResult Function(_DescriptionChanged value) descriptionChanged,
@@ -1937,7 +2022,8 @@ class _$_Submitted implements _Submitted {
     TResult Function(_NameChanged value)? nameChanged,
     TResult Function(_UsernameChanged value)? usernameChanged,
     TResult Function(_PasswordChanged value)? passwordChanged,
-    TResult Function(_PasswordConfirmationChanged value)? passwordConfirmationChanged,
+    TResult Function(_PasswordConfirmationChanged value)?
+        passwordConfirmationChanged,
     TResult Function(_EmailAddressChanged value)? emailAddressChanged,
     TResult Function(_BirthdayChanged value)? birthdayChanged,
     TResult Function(_DescriptionChanged value)? descriptionChanged,
@@ -1989,31 +2075,26 @@ const $RegistrationFormState = _$RegistrationFormStateTearOff();
 /// @nodoc
 mixin _$RegistrationFormState {
   User get user => throw _privateConstructorUsedError;
-
-  PasswordConfirmator get passwordConfirmator => throw _privateConstructorUsedError;
-
+  PasswordConfirmator get passwordConfirmator =>
+      throw _privateConstructorUsedError;
   String get passwordToCompare => throw _privateConstructorUsedError;
-
   bool get showErrorMessages => throw _privateConstructorUsedError;
-
   bool get isSubmitting => throw _privateConstructorUsedError;
-
   bool get acceptedEULA => throw _privateConstructorUsedError;
-
   bool get initialized => throw _privateConstructorUsedError;
-
-  Option<Either<Failure, Unit>> get failureOrSuccessOption => throw _privateConstructorUsedError;
+  Option<Either<Failure, Unit>> get failureOrSuccessOption =>
+      throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
-  $RegistrationFormStateCopyWith<RegistrationFormState> get copyWith => throw _privateConstructorUsedError;
+  $RegistrationFormStateCopyWith<RegistrationFormState> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $RegistrationFormStateCopyWith<$Res> {
-  factory $RegistrationFormStateCopyWith(
-          RegistrationFormState value, $Res Function(RegistrationFormState) then) =
+  factory $RegistrationFormStateCopyWith(RegistrationFormState value,
+          $Res Function(RegistrationFormState) then) =
       _$RegistrationFormStateCopyWithImpl<$Res>;
-
   $Res call(
       {User user,
       PasswordConfirmator passwordConfirmator,
@@ -2028,11 +2109,11 @@ abstract class $RegistrationFormStateCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$RegistrationFormStateCopyWithImpl<$Res> implements $RegistrationFormStateCopyWith<$Res> {
+class _$RegistrationFormStateCopyWithImpl<$Res>
+    implements $RegistrationFormStateCopyWith<$Res> {
   _$RegistrationFormStateCopyWithImpl(this._value, this._then);
 
   final RegistrationFormState _value;
-
   // ignore: unused_field
   final $Res Function(RegistrationFormState) _then;
 
@@ -2094,10 +2175,9 @@ class _$RegistrationFormStateCopyWithImpl<$Res> implements $RegistrationFormStat
 /// @nodoc
 abstract class _$RegistrationFormStateCopyWith<$Res>
     implements $RegistrationFormStateCopyWith<$Res> {
-  factory _$RegistrationFormStateCopyWith(
-          _RegistrationFormState value, $Res Function(_RegistrationFormState) then) =
+  factory _$RegistrationFormStateCopyWith(_RegistrationFormState value,
+          $Res Function(_RegistrationFormState) then) =
       __$RegistrationFormStateCopyWithImpl<$Res>;
-
   @override
   $Res call(
       {User user,
@@ -2114,10 +2194,11 @@ abstract class _$RegistrationFormStateCopyWith<$Res>
 }
 
 /// @nodoc
-class __$RegistrationFormStateCopyWithImpl<$Res> extends _$RegistrationFormStateCopyWithImpl<$Res>
+class __$RegistrationFormStateCopyWithImpl<$Res>
+    extends _$RegistrationFormStateCopyWithImpl<$Res>
     implements _$RegistrationFormStateCopyWith<$Res> {
-  __$RegistrationFormStateCopyWithImpl(
-      _RegistrationFormState _value, $Res Function(_RegistrationFormState) _then)
+  __$RegistrationFormStateCopyWithImpl(_RegistrationFormState _value,
+      $Res Function(_RegistrationFormState) _then)
       : super(_value, (v) => _then(v as _RegistrationFormState));
 
   @override
@@ -2210,21 +2291,29 @@ class _$_RegistrationFormState implements _RegistrationFormState {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other is _RegistrationFormState &&
-            (identical(other.user, user) || const DeepCollectionEquality().equals(other.user, user)) &&
+            (identical(other.user, user) ||
+                const DeepCollectionEquality().equals(other.user, user)) &&
             (identical(other.passwordConfirmator, passwordConfirmator) ||
-                const DeepCollectionEquality().equals(other.passwordConfirmator, passwordConfirmator)) &&
+                const DeepCollectionEquality()
+                    .equals(other.passwordConfirmator, passwordConfirmator)) &&
             (identical(other.passwordToCompare, passwordToCompare) ||
-                const DeepCollectionEquality().equals(other.passwordToCompare, passwordToCompare)) &&
+                const DeepCollectionEquality()
+                    .equals(other.passwordToCompare, passwordToCompare)) &&
             (identical(other.showErrorMessages, showErrorMessages) ||
-                const DeepCollectionEquality().equals(other.showErrorMessages, showErrorMessages)) &&
+                const DeepCollectionEquality()
+                    .equals(other.showErrorMessages, showErrorMessages)) &&
             (identical(other.isSubmitting, isSubmitting) ||
-                const DeepCollectionEquality().equals(other.isSubmitting, isSubmitting)) &&
+                const DeepCollectionEquality()
+                    .equals(other.isSubmitting, isSubmitting)) &&
             (identical(other.acceptedEULA, acceptedEULA) ||
-                const DeepCollectionEquality().equals(other.acceptedEULA, acceptedEULA)) &&
+                const DeepCollectionEquality()
+                    .equals(other.acceptedEULA, acceptedEULA)) &&
             (identical(other.initialized, initialized) ||
-                const DeepCollectionEquality().equals(other.initialized, initialized)) &&
+                const DeepCollectionEquality()
+                    .equals(other.initialized, initialized)) &&
             (identical(other.failureOrSuccessOption, failureOrSuccessOption) ||
-                const DeepCollectionEquality().equals(other.failureOrSuccessOption, failureOrSuccessOption)));
+                const DeepCollectionEquality().equals(
+                    other.failureOrSuccessOption, failureOrSuccessOption)));
   }
 
   @override
@@ -2242,26 +2331,27 @@ class _$_RegistrationFormState implements _RegistrationFormState {
   @JsonKey(ignore: true)
   @override
   _$RegistrationFormStateCopyWith<_RegistrationFormState> get copyWith =>
-      __$RegistrationFormStateCopyWithImpl<_RegistrationFormState>(this, _$identity);
+      __$RegistrationFormStateCopyWithImpl<_RegistrationFormState>(
+          this, _$identity);
 }
 
 abstract class _RegistrationFormState implements RegistrationFormState {
   const factory _RegistrationFormState(
-      {required User user,
-      required PasswordConfirmator passwordConfirmator,
-      required String passwordToCompare,
-      required bool showErrorMessages,
-      required bool isSubmitting,
-      required bool acceptedEULA,
-      required bool initialized,
-      required Option<Either<Failure, Unit>> failureOrSuccessOption}) = _$_RegistrationFormState;
+          {required User user,
+          required PasswordConfirmator passwordConfirmator,
+          required String passwordToCompare,
+          required bool showErrorMessages,
+          required bool isSubmitting,
+          required bool acceptedEULA,
+          required bool initialized,
+          required Option<Either<Failure, Unit>> failureOrSuccessOption}) =
+      _$_RegistrationFormState;
 
   @override
   User get user => throw _privateConstructorUsedError;
-
   @override
-  PasswordConfirmator get passwordConfirmator => throw _privateConstructorUsedError;
-
+  PasswordConfirmator get passwordConfirmator =>
+      throw _privateConstructorUsedError;
   @override
   String get passwordToCompare => throw _privateConstructorUsedError;
   @override
@@ -2270,14 +2360,13 @@ abstract class _RegistrationFormState implements RegistrationFormState {
   bool get isSubmitting => throw _privateConstructorUsedError;
   @override
   bool get acceptedEULA => throw _privateConstructorUsedError;
-
   @override
   bool get initialized => throw _privateConstructorUsedError;
-
   @override
-  Option<Either<Failure, Unit>> get failureOrSuccessOption => throw _privateConstructorUsedError;
-
+  Option<Either<Failure, Unit>> get failureOrSuccessOption =>
+      throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
-  _$RegistrationFormStateCopyWith<_RegistrationFormState> get copyWith => throw _privateConstructorUsedError;
+  _$RegistrationFormStateCopyWith<_RegistrationFormState> get copyWith =>
+      throw _privateConstructorUsedError;
 }

@@ -54,25 +54,26 @@ mixin _$UserActorEvent {
       throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
-  $UserActorEventCopyWith<UserActorEvent> get copyWith => throw _privateConstructorUsedError;
+  $UserActorEventCopyWith<UserActorEvent> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $UserActorEventCopyWith<$Res> {
-  factory $UserActorEventCopyWith(UserActorEvent value, $Res Function(UserActorEvent) then) =
+  factory $UserActorEventCopyWith(
+          UserActorEvent value, $Res Function(UserActorEvent) then) =
       _$UserActorEventCopyWithImpl<$Res>;
-
   $Res call({User user});
 
   $UserCopyWith<$Res> get user;
 }
 
 /// @nodoc
-class _$UserActorEventCopyWithImpl<$Res> implements $UserActorEventCopyWith<$Res> {
+class _$UserActorEventCopyWithImpl<$Res>
+    implements $UserActorEventCopyWith<$Res> {
   _$UserActorEventCopyWithImpl(this._value, this._then);
 
   final UserActorEvent _value;
-
   // ignore: unused_field
   final $Res Function(UserActorEvent) _then;
 
@@ -97,9 +98,10 @@ class _$UserActorEventCopyWithImpl<$Res> implements $UserActorEventCopyWith<$Res
 }
 
 /// @nodoc
-abstract class _$DeletedCopyWith<$Res> implements $UserActorEventCopyWith<$Res> {
-  factory _$DeletedCopyWith(_Deleted value, $Res Function(_Deleted) then) = __$DeletedCopyWithImpl<$Res>;
-
+abstract class _$DeletedCopyWith<$Res>
+    implements $UserActorEventCopyWith<$Res> {
+  factory _$DeletedCopyWith(_Deleted value, $Res Function(_Deleted) then) =
+      __$DeletedCopyWithImpl<$Res>;
   @override
   $Res call({User user});
 
@@ -151,11 +153,13 @@ class _$_Deleted implements _Deleted {
   }
 
   @override
-  int get hashCode => runtimeType.hashCode ^ const DeepCollectionEquality().hash(user);
+  int get hashCode =>
+      runtimeType.hashCode ^ const DeepCollectionEquality().hash(user);
 
   @JsonKey(ignore: true)
   @override
-  _$DeletedCopyWith<_Deleted> get copyWith => __$DeletedCopyWithImpl<_Deleted>(this, _$identity);
+  _$DeletedCopyWith<_Deleted> get copyWith =>
+      __$DeletedCopyWithImpl<_Deleted>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -203,10 +207,10 @@ abstract class _Deleted implements UserActorEvent {
 
   @override
   User get user => throw _privateConstructorUsedError;
-
   @override
   @JsonKey(ignore: true)
-  _$DeletedCopyWith<_Deleted> get copyWith => throw _privateConstructorUsedError;
+  _$DeletedCopyWith<_Deleted> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -275,16 +279,17 @@ mixin _$UserActorState {
 
 /// @nodoc
 abstract class $UserActorStateCopyWith<$Res> {
-  factory $UserActorStateCopyWith(UserActorState value, $Res Function(UserActorState) then) =
+  factory $UserActorStateCopyWith(
+          UserActorState value, $Res Function(UserActorState) then) =
       _$UserActorStateCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class _$UserActorStateCopyWithImpl<$Res> implements $UserActorStateCopyWith<$Res> {
+class _$UserActorStateCopyWithImpl<$Res>
+    implements $UserActorStateCopyWith<$Res> {
   _$UserActorStateCopyWithImpl(this._value, this._then);
 
   final UserActorState _value;
-
   // ignore: unused_field
   final $Res Function(UserActorState) _then;
 }
@@ -388,9 +393,11 @@ abstract class _$ActionInProgressCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$ActionInProgressCopyWithImpl<$Res> extends _$UserActorStateCopyWithImpl<$Res>
+class __$ActionInProgressCopyWithImpl<$Res>
+    extends _$UserActorStateCopyWithImpl<$Res>
     implements _$ActionInProgressCopyWith<$Res> {
-  __$ActionInProgressCopyWithImpl(_ActionInProgress _value, $Res Function(_ActionInProgress) _then)
+  __$ActionInProgressCopyWithImpl(
+      _ActionInProgress _value, $Res Function(_ActionInProgress) _then)
       : super(_value, (v) => _then(v as _ActionInProgress));
 
   @override
@@ -474,18 +481,20 @@ abstract class _ActionInProgress implements UserActorState {
 
 /// @nodoc
 abstract class _$DeletionFailureCopyWith<$Res> {
-  factory _$DeletionFailureCopyWith(_DeletionFailure value, $Res Function(_DeletionFailure) then) =
+  factory _$DeletionFailureCopyWith(
+          _DeletionFailure value, $Res Function(_DeletionFailure) then) =
       __$DeletionFailureCopyWithImpl<$Res>;
-
   $Res call({Failure<dynamic> failure});
 
   $FailureCopyWith<dynamic, $Res> get failure;
 }
 
 /// @nodoc
-class __$DeletionFailureCopyWithImpl<$Res> extends _$UserActorStateCopyWithImpl<$Res>
+class __$DeletionFailureCopyWithImpl<$Res>
+    extends _$UserActorStateCopyWithImpl<$Res>
     implements _$DeletionFailureCopyWith<$Res> {
-  __$DeletionFailureCopyWithImpl(_DeletionFailure _value, $Res Function(_DeletionFailure) _then)
+  __$DeletionFailureCopyWithImpl(
+      _DeletionFailure _value, $Res Function(_DeletionFailure) _then)
       : super(_value, (v) => _then(v as _DeletionFailure));
 
   @override
@@ -533,7 +542,8 @@ class _$_DeletionFailure implements _DeletionFailure {
   }
 
   @override
-  int get hashCode => runtimeType.hashCode ^ const DeepCollectionEquality().hash(failure);
+  int get hashCode =>
+      runtimeType.hashCode ^ const DeepCollectionEquality().hash(failure);
 
   @JsonKey(ignore: true)
   @override
@@ -597,21 +607,24 @@ abstract class _DeletionFailure implements UserActorState {
   const factory _DeletionFailure(Failure<dynamic> failure) = _$_DeletionFailure;
 
   Failure<dynamic> get failure => throw _privateConstructorUsedError;
-
   @JsonKey(ignore: true)
-  _$DeletionFailureCopyWith<_DeletionFailure> get copyWith => throw _privateConstructorUsedError;
+  _$DeletionFailureCopyWith<_DeletionFailure> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class _$DeletionSuccessCopyWith<$Res> {
-  factory _$DeletionSuccessCopyWith(_DeletionSuccess value, $Res Function(_DeletionSuccess) then) =
+  factory _$DeletionSuccessCopyWith(
+          _DeletionSuccess value, $Res Function(_DeletionSuccess) then) =
       __$DeletionSuccessCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$DeletionSuccessCopyWithImpl<$Res> extends _$UserActorStateCopyWithImpl<$Res>
+class __$DeletionSuccessCopyWithImpl<$Res>
+    extends _$UserActorStateCopyWithImpl<$Res>
     implements _$DeletionSuccessCopyWith<$Res> {
-  __$DeletionSuccessCopyWithImpl(_DeletionSuccess _value, $Res Function(_DeletionSuccess) _then)
+  __$DeletionSuccessCopyWithImpl(
+      _DeletionSuccess _value, $Res Function(_DeletionSuccess) _then)
       : super(_value, (v) => _then(v as _DeletionSuccess));
 
   @override

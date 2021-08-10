@@ -53,14 +53,15 @@ mixin _$SimpleUser {
   int get followersAmount => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
-  $SimpleUserCopyWith<SimpleUser> get copyWith => throw _privateConstructorUsedError;
+  $SimpleUserCopyWith<SimpleUser> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $SimpleUserCopyWith<$Res> {
-  factory $SimpleUserCopyWith(SimpleUser value, $Res Function(SimpleUser) then) =
+  factory $SimpleUserCopyWith(
+          SimpleUser value, $Res Function(SimpleUser) then) =
       _$SimpleUserCopyWithImpl<$Res>;
-
   $Res call(
       {UniqueId id,
       Name name,
@@ -130,9 +131,9 @@ class _$SimpleUserCopyWithImpl<$Res> implements $SimpleUserCopyWith<$Res> {
 
 /// @nodoc
 abstract class _$SimpleUserCopyWith<$Res> implements $SimpleUserCopyWith<$Res> {
-  factory _$SimpleUserCopyWith(_SimpleUser value, $Res Function(_SimpleUser) then) =
+  factory _$SimpleUserCopyWith(
+          _SimpleUser value, $Res Function(_SimpleUser) then) =
       __$SimpleUserCopyWithImpl<$Res>;
-
   @override
   $Res call(
       {UniqueId id,
@@ -148,7 +149,8 @@ abstract class _$SimpleUserCopyWith<$Res> implements $SimpleUserCopyWith<$Res> {
 /// @nodoc
 class __$SimpleUserCopyWithImpl<$Res> extends _$SimpleUserCopyWithImpl<$Res>
     implements _$SimpleUserCopyWith<$Res> {
-  __$SimpleUserCopyWithImpl(_SimpleUser _value, $Res Function(_SimpleUser) _then)
+  __$SimpleUserCopyWithImpl(
+      _SimpleUser _value, $Res Function(_SimpleUser) _then)
       : super(_value, (v) => _then(v as _SimpleUser));
 
   @override
@@ -242,19 +244,27 @@ class _$_SimpleUser extends _SimpleUser {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other is _SimpleUser &&
-            (identical(other.id, id) || const DeepCollectionEquality().equals(other.id, id)) &&
-            (identical(other.name, name) || const DeepCollectionEquality().equals(other.name, name)) &&
+            (identical(other.id, id) ||
+                const DeepCollectionEquality().equals(other.id, id)) &&
+            (identical(other.name, name) ||
+                const DeepCollectionEquality().equals(other.name, name)) &&
             (identical(other.username, username) ||
-                const DeepCollectionEquality().equals(other.username, username)) &&
+                const DeepCollectionEquality()
+                    .equals(other.username, username)) &&
             (identical(other.imageURL, imageURL) ||
-                const DeepCollectionEquality().equals(other.imageURL, imageURL)) &&
-            (identical(other.level, level) || const DeepCollectionEquality().equals(other.level, level)) &&
+                const DeepCollectionEquality()
+                    .equals(other.imageURL, imageURL)) &&
+            (identical(other.level, level) ||
+                const DeepCollectionEquality().equals(other.level, level)) &&
             (identical(other.experiencePoints, experiencePoints) ||
-                const DeepCollectionEquality().equals(other.experiencePoints, experiencePoints)) &&
+                const DeepCollectionEquality()
+                    .equals(other.experiencePoints, experiencePoints)) &&
             (identical(other.adminPowers, adminPowers) ||
-                const DeepCollectionEquality().equals(other.adminPowers, adminPowers)) &&
+                const DeepCollectionEquality()
+                    .equals(other.adminPowers, adminPowers)) &&
             (identical(other.followersAmount, followersAmount) ||
-                const DeepCollectionEquality().equals(other.followersAmount, followersAmount)));
+                const DeepCollectionEquality()
+                    .equals(other.followersAmount, followersAmount)));
   }
 
   @override
@@ -301,11 +311,10 @@ abstract class _SimpleUser extends SimpleUser {
   ExperiencePoints get experiencePoints => throw _privateConstructorUsedError;
   @override
   bool get adminPowers => throw _privateConstructorUsedError;
-
   @override
   int get followersAmount => throw _privateConstructorUsedError;
-
   @override
   @JsonKey(ignore: true)
-  _$SimpleUserCopyWith<_SimpleUser> get copyWith => throw _privateConstructorUsedError;
+  _$SimpleUserCopyWith<_SimpleUser> get copyWith =>
+      throw _privateConstructorUsedError;
 }

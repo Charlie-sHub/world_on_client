@@ -26,7 +26,8 @@ class _$ObjectiveFormEventTearOff {
     );
   }
 
-  _CoordinatesChanged coordinatesChanged({required double latitude, required double longitude}) {
+  _CoordinatesChanged coordinatesChanged(
+      {required double latitude, required double longitude}) {
     return _CoordinatesChanged(
       latitude: latitude,
       longitude: longitude,
@@ -53,7 +54,8 @@ mixin _$ObjectiveFormEvent {
   TResult when<TResult extends Object?>({
     required TResult Function() initialized,
     required TResult Function(String description) descriptionChanged,
-    required TResult Function(double latitude, double longitude) coordinatesChanged,
+    required TResult Function(double latitude, double longitude)
+        coordinatesChanged,
     required TResult Function(File imageFile) imageChanged,
     required TResult Function() submitted,
   }) =>
@@ -91,30 +93,34 @@ mixin _$ObjectiveFormEvent {
 
 /// @nodoc
 abstract class $ObjectiveFormEventCopyWith<$Res> {
-  factory $ObjectiveFormEventCopyWith(ObjectiveFormEvent value, $Res Function(ObjectiveFormEvent) then) =
+  factory $ObjectiveFormEventCopyWith(
+          ObjectiveFormEvent value, $Res Function(ObjectiveFormEvent) then) =
       _$ObjectiveFormEventCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class _$ObjectiveFormEventCopyWithImpl<$Res> implements $ObjectiveFormEventCopyWith<$Res> {
+class _$ObjectiveFormEventCopyWithImpl<$Res>
+    implements $ObjectiveFormEventCopyWith<$Res> {
   _$ObjectiveFormEventCopyWithImpl(this._value, this._then);
 
   final ObjectiveFormEvent _value;
-
   // ignore: unused_field
   final $Res Function(ObjectiveFormEvent) _then;
 }
 
 /// @nodoc
 abstract class _$InitializedCopyWith<$Res> {
-  factory _$InitializedCopyWith(_Initialized value, $Res Function(_Initialized) then) =
+  factory _$InitializedCopyWith(
+          _Initialized value, $Res Function(_Initialized) then) =
       __$InitializedCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$InitializedCopyWithImpl<$Res> extends _$ObjectiveFormEventCopyWithImpl<$Res>
+class __$InitializedCopyWithImpl<$Res>
+    extends _$ObjectiveFormEventCopyWithImpl<$Res>
     implements _$InitializedCopyWith<$Res> {
-  __$InitializedCopyWithImpl(_Initialized _value, $Res Function(_Initialized) _then)
+  __$InitializedCopyWithImpl(
+      _Initialized _value, $Res Function(_Initialized) _then)
       : super(_value, (v) => _then(v as _Initialized));
 
   @override
@@ -144,7 +150,8 @@ class _$_Initialized implements _Initialized {
   TResult when<TResult extends Object?>({
     required TResult Function() initialized,
     required TResult Function(String description) descriptionChanged,
-    required TResult Function(double latitude, double longitude) coordinatesChanged,
+    required TResult Function(double latitude, double longitude)
+        coordinatesChanged,
     required TResult Function(File imageFile) imageChanged,
     required TResult Function() submitted,
   }) {
@@ -202,16 +209,18 @@ abstract class _Initialized implements ObjectiveFormEvent {
 
 /// @nodoc
 abstract class _$DescriptionChangedCopyWith<$Res> {
-  factory _$DescriptionChangedCopyWith(_DescriptionChanged value, $Res Function(_DescriptionChanged) then) =
+  factory _$DescriptionChangedCopyWith(
+          _DescriptionChanged value, $Res Function(_DescriptionChanged) then) =
       __$DescriptionChangedCopyWithImpl<$Res>;
-
   $Res call({String description});
 }
 
 /// @nodoc
-class __$DescriptionChangedCopyWithImpl<$Res> extends _$ObjectiveFormEventCopyWithImpl<$Res>
+class __$DescriptionChangedCopyWithImpl<$Res>
+    extends _$ObjectiveFormEventCopyWithImpl<$Res>
     implements _$DescriptionChangedCopyWith<$Res> {
-  __$DescriptionChangedCopyWithImpl(_DescriptionChanged _value, $Res Function(_DescriptionChanged) _then)
+  __$DescriptionChangedCopyWithImpl(
+      _DescriptionChanged _value, $Res Function(_DescriptionChanged) _then)
       : super(_value, (v) => _then(v as _DescriptionChanged));
 
   @override
@@ -248,11 +257,13 @@ class _$_DescriptionChanged implements _DescriptionChanged {
     return identical(this, other) ||
         (other is _DescriptionChanged &&
             (identical(other.description, description) ||
-                const DeepCollectionEquality().equals(other.description, description)));
+                const DeepCollectionEquality()
+                    .equals(other.description, description)));
   }
 
   @override
-  int get hashCode => runtimeType.hashCode ^ const DeepCollectionEquality().hash(description);
+  int get hashCode =>
+      runtimeType.hashCode ^ const DeepCollectionEquality().hash(description);
 
   @JsonKey(ignore: true)
   @override
@@ -264,7 +275,8 @@ class _$_DescriptionChanged implements _DescriptionChanged {
   TResult when<TResult extends Object?>({
     required TResult Function() initialized,
     required TResult Function(String description) descriptionChanged,
-    required TResult Function(double latitude, double longitude) coordinatesChanged,
+    required TResult Function(double latitude, double longitude)
+        coordinatesChanged,
     required TResult Function(File imageFile) imageChanged,
     required TResult Function() submitted,
   }) {
@@ -320,23 +332,25 @@ abstract class _DescriptionChanged implements ObjectiveFormEvent {
   const factory _DescriptionChanged(String description) = _$_DescriptionChanged;
 
   String get description => throw _privateConstructorUsedError;
-
   @JsonKey(ignore: true)
-  _$DescriptionChangedCopyWith<_DescriptionChanged> get copyWith => throw _privateConstructorUsedError;
+  _$DescriptionChangedCopyWith<_DescriptionChanged> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class _$CoordinatesChangedCopyWith<$Res> {
-  factory _$CoordinatesChangedCopyWith(_CoordinatesChanged value, $Res Function(_CoordinatesChanged) then) =
+  factory _$CoordinatesChangedCopyWith(
+          _CoordinatesChanged value, $Res Function(_CoordinatesChanged) then) =
       __$CoordinatesChangedCopyWithImpl<$Res>;
-
   $Res call({double latitude, double longitude});
 }
 
 /// @nodoc
-class __$CoordinatesChangedCopyWithImpl<$Res> extends _$ObjectiveFormEventCopyWithImpl<$Res>
+class __$CoordinatesChangedCopyWithImpl<$Res>
+    extends _$ObjectiveFormEventCopyWithImpl<$Res>
     implements _$CoordinatesChangedCopyWith<$Res> {
-  __$CoordinatesChangedCopyWithImpl(_CoordinatesChanged _value, $Res Function(_CoordinatesChanged) _then)
+  __$CoordinatesChangedCopyWithImpl(
+      _CoordinatesChanged _value, $Res Function(_CoordinatesChanged) _then)
       : super(_value, (v) => _then(v as _CoordinatesChanged));
 
   @override
@@ -363,7 +377,8 @@ class __$CoordinatesChangedCopyWithImpl<$Res> extends _$ObjectiveFormEventCopyWi
 /// @nodoc
 
 class _$_CoordinatesChanged implements _CoordinatesChanged {
-  const _$_CoordinatesChanged({required this.latitude, required this.longitude});
+  const _$_CoordinatesChanged(
+      {required this.latitude, required this.longitude});
 
   @override
   final double latitude;
@@ -380,9 +395,11 @@ class _$_CoordinatesChanged implements _CoordinatesChanged {
     return identical(this, other) ||
         (other is _CoordinatesChanged &&
             (identical(other.latitude, latitude) ||
-                const DeepCollectionEquality().equals(other.latitude, latitude)) &&
+                const DeepCollectionEquality()
+                    .equals(other.latitude, latitude)) &&
             (identical(other.longitude, longitude) ||
-                const DeepCollectionEquality().equals(other.longitude, longitude)));
+                const DeepCollectionEquality()
+                    .equals(other.longitude, longitude)));
   }
 
   @override
@@ -401,7 +418,8 @@ class _$_CoordinatesChanged implements _CoordinatesChanged {
   TResult when<TResult extends Object?>({
     required TResult Function() initialized,
     required TResult Function(String description) descriptionChanged,
-    required TResult Function(double latitude, double longitude) coordinatesChanged,
+    required TResult Function(double latitude, double longitude)
+        coordinatesChanged,
     required TResult Function(File imageFile) imageChanged,
     required TResult Function() submitted,
   }) {
@@ -454,29 +472,31 @@ class _$_CoordinatesChanged implements _CoordinatesChanged {
 }
 
 abstract class _CoordinatesChanged implements ObjectiveFormEvent {
-  const factory _CoordinatesChanged({required double latitude, required double longitude}) =
-      _$_CoordinatesChanged;
+  const factory _CoordinatesChanged(
+      {required double latitude,
+      required double longitude}) = _$_CoordinatesChanged;
 
   double get latitude => throw _privateConstructorUsedError;
-
   double get longitude => throw _privateConstructorUsedError;
-
   @JsonKey(ignore: true)
-  _$CoordinatesChangedCopyWith<_CoordinatesChanged> get copyWith => throw _privateConstructorUsedError;
+  _$CoordinatesChangedCopyWith<_CoordinatesChanged> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class _$ImageChangedCopyWith<$Res> {
-  factory _$ImageChangedCopyWith(_ImageChanged value, $Res Function(_ImageChanged) then) =
+  factory _$ImageChangedCopyWith(
+          _ImageChanged value, $Res Function(_ImageChanged) then) =
       __$ImageChangedCopyWithImpl<$Res>;
-
   $Res call({File imageFile});
 }
 
 /// @nodoc
-class __$ImageChangedCopyWithImpl<$Res> extends _$ObjectiveFormEventCopyWithImpl<$Res>
+class __$ImageChangedCopyWithImpl<$Res>
+    extends _$ObjectiveFormEventCopyWithImpl<$Res>
     implements _$ImageChangedCopyWith<$Res> {
-  __$ImageChangedCopyWithImpl(_ImageChanged _value, $Res Function(_ImageChanged) _then)
+  __$ImageChangedCopyWithImpl(
+      _ImageChanged _value, $Res Function(_ImageChanged) _then)
       : super(_value, (v) => _then(v as _ImageChanged));
 
   @override
@@ -513,11 +533,13 @@ class _$_ImageChanged implements _ImageChanged {
     return identical(this, other) ||
         (other is _ImageChanged &&
             (identical(other.imageFile, imageFile) ||
-                const DeepCollectionEquality().equals(other.imageFile, imageFile)));
+                const DeepCollectionEquality()
+                    .equals(other.imageFile, imageFile)));
   }
 
   @override
-  int get hashCode => runtimeType.hashCode ^ const DeepCollectionEquality().hash(imageFile);
+  int get hashCode =>
+      runtimeType.hashCode ^ const DeepCollectionEquality().hash(imageFile);
 
   @JsonKey(ignore: true)
   @override
@@ -529,7 +551,8 @@ class _$_ImageChanged implements _ImageChanged {
   TResult when<TResult extends Object?>({
     required TResult Function() initialized,
     required TResult Function(String description) descriptionChanged,
-    required TResult Function(double latitude, double longitude) coordinatesChanged,
+    required TResult Function(double latitude, double longitude)
+        coordinatesChanged,
     required TResult Function(File imageFile) imageChanged,
     required TResult Function() submitted,
   }) {
@@ -585,19 +608,21 @@ abstract class _ImageChanged implements ObjectiveFormEvent {
   const factory _ImageChanged(File imageFile) = _$_ImageChanged;
 
   File get imageFile => throw _privateConstructorUsedError;
-
   @JsonKey(ignore: true)
-  _$ImageChangedCopyWith<_ImageChanged> get copyWith => throw _privateConstructorUsedError;
+  _$ImageChangedCopyWith<_ImageChanged> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class _$SubmittedCopyWith<$Res> {
-  factory _$SubmittedCopyWith(_Submitted value, $Res Function(_Submitted) then) =
+  factory _$SubmittedCopyWith(
+          _Submitted value, $Res Function(_Submitted) then) =
       __$SubmittedCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$SubmittedCopyWithImpl<$Res> extends _$ObjectiveFormEventCopyWithImpl<$Res>
+class __$SubmittedCopyWithImpl<$Res>
+    extends _$ObjectiveFormEventCopyWithImpl<$Res>
     implements _$SubmittedCopyWith<$Res> {
   __$SubmittedCopyWithImpl(_Submitted _value, $Res Function(_Submitted) _then)
       : super(_value, (v) => _then(v as _Submitted));
@@ -629,7 +654,8 @@ class _$_Submitted implements _Submitted {
   TResult when<TResult extends Object?>({
     required TResult Function() initialized,
     required TResult Function(String description) descriptionChanged,
-    required TResult Function(double latitude, double longitude) coordinatesChanged,
+    required TResult Function(double latitude, double longitude)
+        coordinatesChanged,
     required TResult Function(File imageFile) imageChanged,
     required TResult Function() submitted,
   }) {
@@ -714,25 +740,30 @@ mixin _$ObjectiveFormState {
   bool get loadedCoordinates => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
-  $ObjectiveFormStateCopyWith<ObjectiveFormState> get copyWith => throw _privateConstructorUsedError;
+  $ObjectiveFormStateCopyWith<ObjectiveFormState> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $ObjectiveFormStateCopyWith<$Res> {
-  factory $ObjectiveFormStateCopyWith(ObjectiveFormState value, $Res Function(ObjectiveFormState) then) =
+  factory $ObjectiveFormStateCopyWith(
+          ObjectiveFormState value, $Res Function(ObjectiveFormState) then) =
       _$ObjectiveFormStateCopyWithImpl<$Res>;
-
-  $Res call({Objective objective, bool showErrorMessages, bool isSubmitting, bool loadedCoordinates});
+  $Res call(
+      {Objective objective,
+      bool showErrorMessages,
+      bool isSubmitting,
+      bool loadedCoordinates});
 
   $ObjectiveCopyWith<$Res> get objective;
 }
 
 /// @nodoc
-class _$ObjectiveFormStateCopyWithImpl<$Res> implements $ObjectiveFormStateCopyWith<$Res> {
+class _$ObjectiveFormStateCopyWithImpl<$Res>
+    implements $ObjectiveFormStateCopyWith<$Res> {
   _$ObjectiveFormStateCopyWithImpl(this._value, this._then);
 
   final ObjectiveFormState _value;
-
   // ignore: unused_field
   final $Res Function(ObjectiveFormState) _then;
 
@@ -772,21 +803,28 @@ class _$ObjectiveFormStateCopyWithImpl<$Res> implements $ObjectiveFormStateCopyW
 }
 
 /// @nodoc
-abstract class _$ObjectiveFormStateCopyWith<$Res> implements $ObjectiveFormStateCopyWith<$Res> {
-  factory _$ObjectiveFormStateCopyWith(_ObjectiveFormState value, $Res Function(_ObjectiveFormState) then) =
+abstract class _$ObjectiveFormStateCopyWith<$Res>
+    implements $ObjectiveFormStateCopyWith<$Res> {
+  factory _$ObjectiveFormStateCopyWith(
+          _ObjectiveFormState value, $Res Function(_ObjectiveFormState) then) =
       __$ObjectiveFormStateCopyWithImpl<$Res>;
-
   @override
-  $Res call({Objective objective, bool showErrorMessages, bool isSubmitting, bool loadedCoordinates});
+  $Res call(
+      {Objective objective,
+      bool showErrorMessages,
+      bool isSubmitting,
+      bool loadedCoordinates});
 
   @override
   $ObjectiveCopyWith<$Res> get objective;
 }
 
 /// @nodoc
-class __$ObjectiveFormStateCopyWithImpl<$Res> extends _$ObjectiveFormStateCopyWithImpl<$Res>
+class __$ObjectiveFormStateCopyWithImpl<$Res>
+    extends _$ObjectiveFormStateCopyWithImpl<$Res>
     implements _$ObjectiveFormStateCopyWith<$Res> {
-  __$ObjectiveFormStateCopyWithImpl(_ObjectiveFormState _value, $Res Function(_ObjectiveFormState) _then)
+  __$ObjectiveFormStateCopyWithImpl(
+      _ObjectiveFormState _value, $Res Function(_ObjectiveFormState) _then)
       : super(_value, (v) => _then(v as _ObjectiveFormState));
 
   @override
@@ -848,13 +886,17 @@ class _$_ObjectiveFormState implements _ObjectiveFormState {
     return identical(this, other) ||
         (other is _ObjectiveFormState &&
             (identical(other.objective, objective) ||
-                const DeepCollectionEquality().equals(other.objective, objective)) &&
+                const DeepCollectionEquality()
+                    .equals(other.objective, objective)) &&
             (identical(other.showErrorMessages, showErrorMessages) ||
-                const DeepCollectionEquality().equals(other.showErrorMessages, showErrorMessages)) &&
+                const DeepCollectionEquality()
+                    .equals(other.showErrorMessages, showErrorMessages)) &&
             (identical(other.isSubmitting, isSubmitting) ||
-                const DeepCollectionEquality().equals(other.isSubmitting, isSubmitting)) &&
+                const DeepCollectionEquality()
+                    .equals(other.isSubmitting, isSubmitting)) &&
             (identical(other.loadedCoordinates, loadedCoordinates) ||
-                const DeepCollectionEquality().equals(other.loadedCoordinates, loadedCoordinates)));
+                const DeepCollectionEquality()
+                    .equals(other.loadedCoordinates, loadedCoordinates)));
   }
 
   @override
@@ -884,11 +926,10 @@ abstract class _ObjectiveFormState implements ObjectiveFormState {
   bool get showErrorMessages => throw _privateConstructorUsedError;
   @override
   bool get isSubmitting => throw _privateConstructorUsedError;
-
   @override
   bool get loadedCoordinates => throw _privateConstructorUsedError;
-
   @override
   @JsonKey(ignore: true)
-  _$ObjectiveFormStateCopyWith<_ObjectiveFormState> get copyWith => throw _privateConstructorUsedError;
+  _$ObjectiveFormStateCopyWith<_ObjectiveFormState> get copyWith =>
+      throw _privateConstructorUsedError;
 }

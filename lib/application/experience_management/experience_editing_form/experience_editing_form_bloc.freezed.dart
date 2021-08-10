@@ -46,7 +46,8 @@ class _$ExperienceEditingFormEventTearOff {
     );
   }
 
-  _CoordinatesChanged coordinatesChanged({required double latitude, required double longitude}) {
+  _CoordinatesChanged coordinatesChanged(
+      {required double latitude, required double longitude}) {
     return _CoordinatesChanged(
       latitude: latitude,
       longitude: longitude,
@@ -94,7 +95,8 @@ mixin _$ExperienceEditingFormEvent {
     required TResult Function(String description) descriptionChanged,
     required TResult Function(List<Asset> imageAssets) imagesChanged,
     required TResult Function(String imageURL) imageDeleted,
-    required TResult Function(double latitude, double longitude) coordinatesChanged,
+    required TResult Function(double latitude, double longitude)
+        coordinatesChanged,
     required TResult Function(int difficulty) difficultyChanged,
     required TResult Function(KtList<Objective> objectives) objectivesChanged,
     required TResult Function(KtSet<Reward> rewards) rewardsChanged,
@@ -153,35 +155,37 @@ mixin _$ExperienceEditingFormEvent {
 
 /// @nodoc
 abstract class $ExperienceEditingFormEventCopyWith<$Res> {
-  factory $ExperienceEditingFormEventCopyWith(
-          ExperienceEditingFormEvent value, $Res Function(ExperienceEditingFormEvent) then) =
+  factory $ExperienceEditingFormEventCopyWith(ExperienceEditingFormEvent value,
+          $Res Function(ExperienceEditingFormEvent) then) =
       _$ExperienceEditingFormEventCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class _$ExperienceEditingFormEventCopyWithImpl<$Res> implements $ExperienceEditingFormEventCopyWith<$Res> {
+class _$ExperienceEditingFormEventCopyWithImpl<$Res>
+    implements $ExperienceEditingFormEventCopyWith<$Res> {
   _$ExperienceEditingFormEventCopyWithImpl(this._value, this._then);
 
   final ExperienceEditingFormEvent _value;
-
   // ignore: unused_field
   final $Res Function(ExperienceEditingFormEvent) _then;
 }
 
 /// @nodoc
 abstract class _$InitializedCopyWith<$Res> {
-  factory _$InitializedCopyWith(_Initialized value, $Res Function(_Initialized) then) =
+  factory _$InitializedCopyWith(
+          _Initialized value, $Res Function(_Initialized) then) =
       __$InitializedCopyWithImpl<$Res>;
-
   $Res call({Experience experience});
 
   $ExperienceCopyWith<$Res> get experience;
 }
 
 /// @nodoc
-class __$InitializedCopyWithImpl<$Res> extends _$ExperienceEditingFormEventCopyWithImpl<$Res>
+class __$InitializedCopyWithImpl<$Res>
+    extends _$ExperienceEditingFormEventCopyWithImpl<$Res>
     implements _$InitializedCopyWith<$Res> {
-  __$InitializedCopyWithImpl(_Initialized _value, $Res Function(_Initialized) _then)
+  __$InitializedCopyWithImpl(
+      _Initialized _value, $Res Function(_Initialized) _then)
       : super(_value, (v) => _then(v as _Initialized));
 
   @override
@@ -225,11 +229,13 @@ class _$_Initialized implements _Initialized {
     return identical(this, other) ||
         (other is _Initialized &&
             (identical(other.experience, experience) ||
-                const DeepCollectionEquality().equals(other.experience, experience)));
+                const DeepCollectionEquality()
+                    .equals(other.experience, experience)));
   }
 
   @override
-  int get hashCode => runtimeType.hashCode ^ const DeepCollectionEquality().hash(experience);
+  int get hashCode =>
+      runtimeType.hashCode ^ const DeepCollectionEquality().hash(experience);
 
   @JsonKey(ignore: true)
   @override
@@ -244,7 +250,8 @@ class _$_Initialized implements _Initialized {
     required TResult Function(String description) descriptionChanged,
     required TResult Function(List<Asset> imageAssets) imagesChanged,
     required TResult Function(String imageURL) imageDeleted,
-    required TResult Function(double latitude, double longitude) coordinatesChanged,
+    required TResult Function(double latitude, double longitude)
+        coordinatesChanged,
     required TResult Function(int difficulty) difficultyChanged,
     required TResult Function(KtList<Objective> objectives) objectivesChanged,
     required TResult Function(KtSet<Reward> rewards) rewardsChanged,
@@ -321,23 +328,25 @@ abstract class _Initialized implements ExperienceEditingFormEvent {
   const factory _Initialized(Experience experience) = _$_Initialized;
 
   Experience get experience => throw _privateConstructorUsedError;
-
   @JsonKey(ignore: true)
-  _$InitializedCopyWith<_Initialized> get copyWith => throw _privateConstructorUsedError;
+  _$InitializedCopyWith<_Initialized> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class _$TitleChangedCopyWith<$Res> {
-  factory _$TitleChangedCopyWith(_TitleChanged value, $Res Function(_TitleChanged) then) =
+  factory _$TitleChangedCopyWith(
+          _TitleChanged value, $Res Function(_TitleChanged) then) =
       __$TitleChangedCopyWithImpl<$Res>;
-
   $Res call({String title});
 }
 
 /// @nodoc
-class __$TitleChangedCopyWithImpl<$Res> extends _$ExperienceEditingFormEventCopyWithImpl<$Res>
+class __$TitleChangedCopyWithImpl<$Res>
+    extends _$ExperienceEditingFormEventCopyWithImpl<$Res>
     implements _$TitleChangedCopyWith<$Res> {
-  __$TitleChangedCopyWithImpl(_TitleChanged _value, $Res Function(_TitleChanged) _then)
+  __$TitleChangedCopyWithImpl(
+      _TitleChanged _value, $Res Function(_TitleChanged) _then)
       : super(_value, (v) => _then(v as _TitleChanged));
 
   @override
@@ -373,11 +382,13 @@ class _$_TitleChanged implements _TitleChanged {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other is _TitleChanged &&
-            (identical(other.title, title) || const DeepCollectionEquality().equals(other.title, title)));
+            (identical(other.title, title) ||
+                const DeepCollectionEquality().equals(other.title, title)));
   }
 
   @override
-  int get hashCode => runtimeType.hashCode ^ const DeepCollectionEquality().hash(title);
+  int get hashCode =>
+      runtimeType.hashCode ^ const DeepCollectionEquality().hash(title);
 
   @JsonKey(ignore: true)
   @override
@@ -392,7 +403,8 @@ class _$_TitleChanged implements _TitleChanged {
     required TResult Function(String description) descriptionChanged,
     required TResult Function(List<Asset> imageAssets) imagesChanged,
     required TResult Function(String imageURL) imageDeleted,
-    required TResult Function(double latitude, double longitude) coordinatesChanged,
+    required TResult Function(double latitude, double longitude)
+        coordinatesChanged,
     required TResult Function(int difficulty) difficultyChanged,
     required TResult Function(KtList<Objective> objectives) objectivesChanged,
     required TResult Function(KtSet<Reward> rewards) rewardsChanged,
@@ -469,23 +481,25 @@ abstract class _TitleChanged implements ExperienceEditingFormEvent {
   const factory _TitleChanged(String title) = _$_TitleChanged;
 
   String get title => throw _privateConstructorUsedError;
-
   @JsonKey(ignore: true)
-  _$TitleChangedCopyWith<_TitleChanged> get copyWith => throw _privateConstructorUsedError;
+  _$TitleChangedCopyWith<_TitleChanged> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class _$DescriptionChangedCopyWith<$Res> {
-  factory _$DescriptionChangedCopyWith(_DescriptionChanged value, $Res Function(_DescriptionChanged) then) =
+  factory _$DescriptionChangedCopyWith(
+          _DescriptionChanged value, $Res Function(_DescriptionChanged) then) =
       __$DescriptionChangedCopyWithImpl<$Res>;
-
   $Res call({String description});
 }
 
 /// @nodoc
-class __$DescriptionChangedCopyWithImpl<$Res> extends _$ExperienceEditingFormEventCopyWithImpl<$Res>
+class __$DescriptionChangedCopyWithImpl<$Res>
+    extends _$ExperienceEditingFormEventCopyWithImpl<$Res>
     implements _$DescriptionChangedCopyWith<$Res> {
-  __$DescriptionChangedCopyWithImpl(_DescriptionChanged _value, $Res Function(_DescriptionChanged) _then)
+  __$DescriptionChangedCopyWithImpl(
+      _DescriptionChanged _value, $Res Function(_DescriptionChanged) _then)
       : super(_value, (v) => _then(v as _DescriptionChanged));
 
   @override
@@ -522,11 +536,13 @@ class _$_DescriptionChanged implements _DescriptionChanged {
     return identical(this, other) ||
         (other is _DescriptionChanged &&
             (identical(other.description, description) ||
-                const DeepCollectionEquality().equals(other.description, description)));
+                const DeepCollectionEquality()
+                    .equals(other.description, description)));
   }
 
   @override
-  int get hashCode => runtimeType.hashCode ^ const DeepCollectionEquality().hash(description);
+  int get hashCode =>
+      runtimeType.hashCode ^ const DeepCollectionEquality().hash(description);
 
   @JsonKey(ignore: true)
   @override
@@ -541,7 +557,8 @@ class _$_DescriptionChanged implements _DescriptionChanged {
     required TResult Function(String description) descriptionChanged,
     required TResult Function(List<Asset> imageAssets) imagesChanged,
     required TResult Function(String imageURL) imageDeleted,
-    required TResult Function(double latitude, double longitude) coordinatesChanged,
+    required TResult Function(double latitude, double longitude)
+        coordinatesChanged,
     required TResult Function(int difficulty) difficultyChanged,
     required TResult Function(KtList<Objective> objectives) objectivesChanged,
     required TResult Function(KtSet<Reward> rewards) rewardsChanged,
@@ -618,23 +635,25 @@ abstract class _DescriptionChanged implements ExperienceEditingFormEvent {
   const factory _DescriptionChanged(String description) = _$_DescriptionChanged;
 
   String get description => throw _privateConstructorUsedError;
-
   @JsonKey(ignore: true)
-  _$DescriptionChangedCopyWith<_DescriptionChanged> get copyWith => throw _privateConstructorUsedError;
+  _$DescriptionChangedCopyWith<_DescriptionChanged> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class _$ImagesChangedCopyWith<$Res> {
-  factory _$ImagesChangedCopyWith(_ImagesChanged value, $Res Function(_ImagesChanged) then) =
+  factory _$ImagesChangedCopyWith(
+          _ImagesChanged value, $Res Function(_ImagesChanged) then) =
       __$ImagesChangedCopyWithImpl<$Res>;
-
   $Res call({List<Asset> imageAssets});
 }
 
 /// @nodoc
-class __$ImagesChangedCopyWithImpl<$Res> extends _$ExperienceEditingFormEventCopyWithImpl<$Res>
+class __$ImagesChangedCopyWithImpl<$Res>
+    extends _$ExperienceEditingFormEventCopyWithImpl<$Res>
     implements _$ImagesChangedCopyWith<$Res> {
-  __$ImagesChangedCopyWithImpl(_ImagesChanged _value, $Res Function(_ImagesChanged) _then)
+  __$ImagesChangedCopyWithImpl(
+      _ImagesChanged _value, $Res Function(_ImagesChanged) _then)
       : super(_value, (v) => _then(v as _ImagesChanged));
 
   @override
@@ -671,11 +690,13 @@ class _$_ImagesChanged implements _ImagesChanged {
     return identical(this, other) ||
         (other is _ImagesChanged &&
             (identical(other.imageAssets, imageAssets) ||
-                const DeepCollectionEquality().equals(other.imageAssets, imageAssets)));
+                const DeepCollectionEquality()
+                    .equals(other.imageAssets, imageAssets)));
   }
 
   @override
-  int get hashCode => runtimeType.hashCode ^ const DeepCollectionEquality().hash(imageAssets);
+  int get hashCode =>
+      runtimeType.hashCode ^ const DeepCollectionEquality().hash(imageAssets);
 
   @JsonKey(ignore: true)
   @override
@@ -690,7 +711,8 @@ class _$_ImagesChanged implements _ImagesChanged {
     required TResult Function(String description) descriptionChanged,
     required TResult Function(List<Asset> imageAssets) imagesChanged,
     required TResult Function(String imageURL) imageDeleted,
-    required TResult Function(double latitude, double longitude) coordinatesChanged,
+    required TResult Function(double latitude, double longitude)
+        coordinatesChanged,
     required TResult Function(int difficulty) difficultyChanged,
     required TResult Function(KtList<Objective> objectives) objectivesChanged,
     required TResult Function(KtSet<Reward> rewards) rewardsChanged,
@@ -767,23 +789,25 @@ abstract class _ImagesChanged implements ExperienceEditingFormEvent {
   const factory _ImagesChanged(List<Asset> imageAssets) = _$_ImagesChanged;
 
   List<Asset> get imageAssets => throw _privateConstructorUsedError;
-
   @JsonKey(ignore: true)
-  _$ImagesChangedCopyWith<_ImagesChanged> get copyWith => throw _privateConstructorUsedError;
+  _$ImagesChangedCopyWith<_ImagesChanged> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class _$ImageDeletedCopyWith<$Res> {
-  factory _$ImageDeletedCopyWith(_ImageDeleted value, $Res Function(_ImageDeleted) then) =
+  factory _$ImageDeletedCopyWith(
+          _ImageDeleted value, $Res Function(_ImageDeleted) then) =
       __$ImageDeletedCopyWithImpl<$Res>;
-
   $Res call({String imageURL});
 }
 
 /// @nodoc
-class __$ImageDeletedCopyWithImpl<$Res> extends _$ExperienceEditingFormEventCopyWithImpl<$Res>
+class __$ImageDeletedCopyWithImpl<$Res>
+    extends _$ExperienceEditingFormEventCopyWithImpl<$Res>
     implements _$ImageDeletedCopyWith<$Res> {
-  __$ImageDeletedCopyWithImpl(_ImageDeleted _value, $Res Function(_ImageDeleted) _then)
+  __$ImageDeletedCopyWithImpl(
+      _ImageDeleted _value, $Res Function(_ImageDeleted) _then)
       : super(_value, (v) => _then(v as _ImageDeleted));
 
   @override
@@ -820,11 +844,13 @@ class _$_ImageDeleted implements _ImageDeleted {
     return identical(this, other) ||
         (other is _ImageDeleted &&
             (identical(other.imageURL, imageURL) ||
-                const DeepCollectionEquality().equals(other.imageURL, imageURL)));
+                const DeepCollectionEquality()
+                    .equals(other.imageURL, imageURL)));
   }
 
   @override
-  int get hashCode => runtimeType.hashCode ^ const DeepCollectionEquality().hash(imageURL);
+  int get hashCode =>
+      runtimeType.hashCode ^ const DeepCollectionEquality().hash(imageURL);
 
   @JsonKey(ignore: true)
   @override
@@ -839,7 +865,8 @@ class _$_ImageDeleted implements _ImageDeleted {
     required TResult Function(String description) descriptionChanged,
     required TResult Function(List<Asset> imageAssets) imagesChanged,
     required TResult Function(String imageURL) imageDeleted,
-    required TResult Function(double latitude, double longitude) coordinatesChanged,
+    required TResult Function(double latitude, double longitude)
+        coordinatesChanged,
     required TResult Function(int difficulty) difficultyChanged,
     required TResult Function(KtList<Objective> objectives) objectivesChanged,
     required TResult Function(KtSet<Reward> rewards) rewardsChanged,
@@ -916,23 +943,25 @@ abstract class _ImageDeleted implements ExperienceEditingFormEvent {
   const factory _ImageDeleted(String imageURL) = _$_ImageDeleted;
 
   String get imageURL => throw _privateConstructorUsedError;
-
   @JsonKey(ignore: true)
-  _$ImageDeletedCopyWith<_ImageDeleted> get copyWith => throw _privateConstructorUsedError;
+  _$ImageDeletedCopyWith<_ImageDeleted> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class _$CoordinatesChangedCopyWith<$Res> {
-  factory _$CoordinatesChangedCopyWith(_CoordinatesChanged value, $Res Function(_CoordinatesChanged) then) =
+  factory _$CoordinatesChangedCopyWith(
+          _CoordinatesChanged value, $Res Function(_CoordinatesChanged) then) =
       __$CoordinatesChangedCopyWithImpl<$Res>;
-
   $Res call({double latitude, double longitude});
 }
 
 /// @nodoc
-class __$CoordinatesChangedCopyWithImpl<$Res> extends _$ExperienceEditingFormEventCopyWithImpl<$Res>
+class __$CoordinatesChangedCopyWithImpl<$Res>
+    extends _$ExperienceEditingFormEventCopyWithImpl<$Res>
     implements _$CoordinatesChangedCopyWith<$Res> {
-  __$CoordinatesChangedCopyWithImpl(_CoordinatesChanged _value, $Res Function(_CoordinatesChanged) _then)
+  __$CoordinatesChangedCopyWithImpl(
+      _CoordinatesChanged _value, $Res Function(_CoordinatesChanged) _then)
       : super(_value, (v) => _then(v as _CoordinatesChanged));
 
   @override
@@ -959,7 +988,8 @@ class __$CoordinatesChangedCopyWithImpl<$Res> extends _$ExperienceEditingFormEve
 /// @nodoc
 
 class _$_CoordinatesChanged implements _CoordinatesChanged {
-  const _$_CoordinatesChanged({required this.latitude, required this.longitude});
+  const _$_CoordinatesChanged(
+      {required this.latitude, required this.longitude});
 
   @override
   final double latitude;
@@ -976,9 +1006,11 @@ class _$_CoordinatesChanged implements _CoordinatesChanged {
     return identical(this, other) ||
         (other is _CoordinatesChanged &&
             (identical(other.latitude, latitude) ||
-                const DeepCollectionEquality().equals(other.latitude, latitude)) &&
+                const DeepCollectionEquality()
+                    .equals(other.latitude, latitude)) &&
             (identical(other.longitude, longitude) ||
-                const DeepCollectionEquality().equals(other.longitude, longitude)));
+                const DeepCollectionEquality()
+                    .equals(other.longitude, longitude)));
   }
 
   @override
@@ -1000,7 +1032,8 @@ class _$_CoordinatesChanged implements _CoordinatesChanged {
     required TResult Function(String description) descriptionChanged,
     required TResult Function(List<Asset> imageAssets) imagesChanged,
     required TResult Function(String imageURL) imageDeleted,
-    required TResult Function(double latitude, double longitude) coordinatesChanged,
+    required TResult Function(double latitude, double longitude)
+        coordinatesChanged,
     required TResult Function(int difficulty) difficultyChanged,
     required TResult Function(KtList<Objective> objectives) objectivesChanged,
     required TResult Function(KtSet<Reward> rewards) rewardsChanged,
@@ -1074,29 +1107,31 @@ class _$_CoordinatesChanged implements _CoordinatesChanged {
 }
 
 abstract class _CoordinatesChanged implements ExperienceEditingFormEvent {
-  const factory _CoordinatesChanged({required double latitude, required double longitude}) =
-      _$_CoordinatesChanged;
+  const factory _CoordinatesChanged(
+      {required double latitude,
+      required double longitude}) = _$_CoordinatesChanged;
 
   double get latitude => throw _privateConstructorUsedError;
-
   double get longitude => throw _privateConstructorUsedError;
-
   @JsonKey(ignore: true)
-  _$CoordinatesChangedCopyWith<_CoordinatesChanged> get copyWith => throw _privateConstructorUsedError;
+  _$CoordinatesChangedCopyWith<_CoordinatesChanged> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class _$DifficultyChangedCopyWith<$Res> {
-  factory _$DifficultyChangedCopyWith(_DifficultyChanged value, $Res Function(_DifficultyChanged) then) =
+  factory _$DifficultyChangedCopyWith(
+          _DifficultyChanged value, $Res Function(_DifficultyChanged) then) =
       __$DifficultyChangedCopyWithImpl<$Res>;
-
   $Res call({int difficulty});
 }
 
 /// @nodoc
-class __$DifficultyChangedCopyWithImpl<$Res> extends _$ExperienceEditingFormEventCopyWithImpl<$Res>
+class __$DifficultyChangedCopyWithImpl<$Res>
+    extends _$ExperienceEditingFormEventCopyWithImpl<$Res>
     implements _$DifficultyChangedCopyWith<$Res> {
-  __$DifficultyChangedCopyWithImpl(_DifficultyChanged _value, $Res Function(_DifficultyChanged) _then)
+  __$DifficultyChangedCopyWithImpl(
+      _DifficultyChanged _value, $Res Function(_DifficultyChanged) _then)
       : super(_value, (v) => _then(v as _DifficultyChanged));
 
   @override
@@ -1133,11 +1168,13 @@ class _$_DifficultyChanged implements _DifficultyChanged {
     return identical(this, other) ||
         (other is _DifficultyChanged &&
             (identical(other.difficulty, difficulty) ||
-                const DeepCollectionEquality().equals(other.difficulty, difficulty)));
+                const DeepCollectionEquality()
+                    .equals(other.difficulty, difficulty)));
   }
 
   @override
-  int get hashCode => runtimeType.hashCode ^ const DeepCollectionEquality().hash(difficulty);
+  int get hashCode =>
+      runtimeType.hashCode ^ const DeepCollectionEquality().hash(difficulty);
 
   @JsonKey(ignore: true)
   @override
@@ -1152,7 +1189,8 @@ class _$_DifficultyChanged implements _DifficultyChanged {
     required TResult Function(String description) descriptionChanged,
     required TResult Function(List<Asset> imageAssets) imagesChanged,
     required TResult Function(String imageURL) imageDeleted,
-    required TResult Function(double latitude, double longitude) coordinatesChanged,
+    required TResult Function(double latitude, double longitude)
+        coordinatesChanged,
     required TResult Function(int difficulty) difficultyChanged,
     required TResult Function(KtList<Objective> objectives) objectivesChanged,
     required TResult Function(KtSet<Reward> rewards) rewardsChanged,
@@ -1229,23 +1267,25 @@ abstract class _DifficultyChanged implements ExperienceEditingFormEvent {
   const factory _DifficultyChanged(int difficulty) = _$_DifficultyChanged;
 
   int get difficulty => throw _privateConstructorUsedError;
-
   @JsonKey(ignore: true)
-  _$DifficultyChangedCopyWith<_DifficultyChanged> get copyWith => throw _privateConstructorUsedError;
+  _$DifficultyChangedCopyWith<_DifficultyChanged> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class _$ObjectivesChangedCopyWith<$Res> {
-  factory _$ObjectivesChangedCopyWith(_ObjectivesChanged value, $Res Function(_ObjectivesChanged) then) =
+  factory _$ObjectivesChangedCopyWith(
+          _ObjectivesChanged value, $Res Function(_ObjectivesChanged) then) =
       __$ObjectivesChangedCopyWithImpl<$Res>;
-
   $Res call({KtList<Objective> objectives});
 }
 
 /// @nodoc
-class __$ObjectivesChangedCopyWithImpl<$Res> extends _$ExperienceEditingFormEventCopyWithImpl<$Res>
+class __$ObjectivesChangedCopyWithImpl<$Res>
+    extends _$ExperienceEditingFormEventCopyWithImpl<$Res>
     implements _$ObjectivesChangedCopyWith<$Res> {
-  __$ObjectivesChangedCopyWithImpl(_ObjectivesChanged _value, $Res Function(_ObjectivesChanged) _then)
+  __$ObjectivesChangedCopyWithImpl(
+      _ObjectivesChanged _value, $Res Function(_ObjectivesChanged) _then)
       : super(_value, (v) => _then(v as _ObjectivesChanged));
 
   @override
@@ -1282,11 +1322,13 @@ class _$_ObjectivesChanged implements _ObjectivesChanged {
     return identical(this, other) ||
         (other is _ObjectivesChanged &&
             (identical(other.objectives, objectives) ||
-                const DeepCollectionEquality().equals(other.objectives, objectives)));
+                const DeepCollectionEquality()
+                    .equals(other.objectives, objectives)));
   }
 
   @override
-  int get hashCode => runtimeType.hashCode ^ const DeepCollectionEquality().hash(objectives);
+  int get hashCode =>
+      runtimeType.hashCode ^ const DeepCollectionEquality().hash(objectives);
 
   @JsonKey(ignore: true)
   @override
@@ -1301,7 +1343,8 @@ class _$_ObjectivesChanged implements _ObjectivesChanged {
     required TResult Function(String description) descriptionChanged,
     required TResult Function(List<Asset> imageAssets) imagesChanged,
     required TResult Function(String imageURL) imageDeleted,
-    required TResult Function(double latitude, double longitude) coordinatesChanged,
+    required TResult Function(double latitude, double longitude)
+        coordinatesChanged,
     required TResult Function(int difficulty) difficultyChanged,
     required TResult Function(KtList<Objective> objectives) objectivesChanged,
     required TResult Function(KtSet<Reward> rewards) rewardsChanged,
@@ -1375,26 +1418,29 @@ class _$_ObjectivesChanged implements _ObjectivesChanged {
 }
 
 abstract class _ObjectivesChanged implements ExperienceEditingFormEvent {
-  const factory _ObjectivesChanged(KtList<Objective> objectives) = _$_ObjectivesChanged;
+  const factory _ObjectivesChanged(KtList<Objective> objectives) =
+      _$_ObjectivesChanged;
 
   KtList<Objective> get objectives => throw _privateConstructorUsedError;
-
   @JsonKey(ignore: true)
-  _$ObjectivesChangedCopyWith<_ObjectivesChanged> get copyWith => throw _privateConstructorUsedError;
+  _$ObjectivesChangedCopyWith<_ObjectivesChanged> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class _$RewardsChangedCopyWith<$Res> {
-  factory _$RewardsChangedCopyWith(_RewardsChanged value, $Res Function(_RewardsChanged) then) =
+  factory _$RewardsChangedCopyWith(
+          _RewardsChanged value, $Res Function(_RewardsChanged) then) =
       __$RewardsChangedCopyWithImpl<$Res>;
-
   $Res call({KtSet<Reward> rewards});
 }
 
 /// @nodoc
-class __$RewardsChangedCopyWithImpl<$Res> extends _$ExperienceEditingFormEventCopyWithImpl<$Res>
+class __$RewardsChangedCopyWithImpl<$Res>
+    extends _$ExperienceEditingFormEventCopyWithImpl<$Res>
     implements _$RewardsChangedCopyWith<$Res> {
-  __$RewardsChangedCopyWithImpl(_RewardsChanged _value, $Res Function(_RewardsChanged) _then)
+  __$RewardsChangedCopyWithImpl(
+      _RewardsChanged _value, $Res Function(_RewardsChanged) _then)
       : super(_value, (v) => _then(v as _RewardsChanged));
 
   @override
@@ -1435,7 +1481,8 @@ class _$_RewardsChanged implements _RewardsChanged {
   }
 
   @override
-  int get hashCode => runtimeType.hashCode ^ const DeepCollectionEquality().hash(rewards);
+  int get hashCode =>
+      runtimeType.hashCode ^ const DeepCollectionEquality().hash(rewards);
 
   @JsonKey(ignore: true)
   @override
@@ -1450,7 +1497,8 @@ class _$_RewardsChanged implements _RewardsChanged {
     required TResult Function(String description) descriptionChanged,
     required TResult Function(List<Asset> imageAssets) imagesChanged,
     required TResult Function(String imageURL) imageDeleted,
-    required TResult Function(double latitude, double longitude) coordinatesChanged,
+    required TResult Function(double latitude, double longitude)
+        coordinatesChanged,
     required TResult Function(int difficulty) difficultyChanged,
     required TResult Function(KtList<Objective> objectives) objectivesChanged,
     required TResult Function(KtSet<Reward> rewards) rewardsChanged,
@@ -1527,23 +1575,25 @@ abstract class _RewardsChanged implements ExperienceEditingFormEvent {
   const factory _RewardsChanged(KtSet<Reward> rewards) = _$_RewardsChanged;
 
   KtSet<Reward> get rewards => throw _privateConstructorUsedError;
-
   @JsonKey(ignore: true)
-  _$RewardsChangedCopyWith<_RewardsChanged> get copyWith => throw _privateConstructorUsedError;
+  _$RewardsChangedCopyWith<_RewardsChanged> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class _$TagsChangedCopyWith<$Res> {
-  factory _$TagsChangedCopyWith(_TagsChanged value, $Res Function(_TagsChanged) then) =
+  factory _$TagsChangedCopyWith(
+          _TagsChanged value, $Res Function(_TagsChanged) then) =
       __$TagsChangedCopyWithImpl<$Res>;
-
   $Res call({KtSet<Tag> tags});
 }
 
 /// @nodoc
-class __$TagsChangedCopyWithImpl<$Res> extends _$ExperienceEditingFormEventCopyWithImpl<$Res>
+class __$TagsChangedCopyWithImpl<$Res>
+    extends _$ExperienceEditingFormEventCopyWithImpl<$Res>
     implements _$TagsChangedCopyWith<$Res> {
-  __$TagsChangedCopyWithImpl(_TagsChanged _value, $Res Function(_TagsChanged) _then)
+  __$TagsChangedCopyWithImpl(
+      _TagsChanged _value, $Res Function(_TagsChanged) _then)
       : super(_value, (v) => _then(v as _TagsChanged));
 
   @override
@@ -1579,11 +1629,13 @@ class _$_TagsChanged implements _TagsChanged {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other is _TagsChanged &&
-            (identical(other.tags, tags) || const DeepCollectionEquality().equals(other.tags, tags)));
+            (identical(other.tags, tags) ||
+                const DeepCollectionEquality().equals(other.tags, tags)));
   }
 
   @override
-  int get hashCode => runtimeType.hashCode ^ const DeepCollectionEquality().hash(tags);
+  int get hashCode =>
+      runtimeType.hashCode ^ const DeepCollectionEquality().hash(tags);
 
   @JsonKey(ignore: true)
   @override
@@ -1598,7 +1650,8 @@ class _$_TagsChanged implements _TagsChanged {
     required TResult Function(String description) descriptionChanged,
     required TResult Function(List<Asset> imageAssets) imagesChanged,
     required TResult Function(String imageURL) imageDeleted,
-    required TResult Function(double latitude, double longitude) coordinatesChanged,
+    required TResult Function(double latitude, double longitude)
+        coordinatesChanged,
     required TResult Function(int difficulty) difficultyChanged,
     required TResult Function(KtList<Objective> objectives) objectivesChanged,
     required TResult Function(KtSet<Reward> rewards) rewardsChanged,
@@ -1675,19 +1728,21 @@ abstract class _TagsChanged implements ExperienceEditingFormEvent {
   const factory _TagsChanged(KtSet<Tag> tags) = _$_TagsChanged;
 
   KtSet<Tag> get tags => throw _privateConstructorUsedError;
-
   @JsonKey(ignore: true)
-  _$TagsChangedCopyWith<_TagsChanged> get copyWith => throw _privateConstructorUsedError;
+  _$TagsChangedCopyWith<_TagsChanged> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class _$SubmittedCopyWith<$Res> {
-  factory _$SubmittedCopyWith(_Submitted value, $Res Function(_Submitted) then) =
+  factory _$SubmittedCopyWith(
+          _Submitted value, $Res Function(_Submitted) then) =
       __$SubmittedCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$SubmittedCopyWithImpl<$Res> extends _$ExperienceEditingFormEventCopyWithImpl<$Res>
+class __$SubmittedCopyWithImpl<$Res>
+    extends _$ExperienceEditingFormEventCopyWithImpl<$Res>
     implements _$SubmittedCopyWith<$Res> {
   __$SubmittedCopyWithImpl(_Submitted _value, $Res Function(_Submitted) _then)
       : super(_value, (v) => _then(v as _Submitted));
@@ -1722,7 +1777,8 @@ class _$_Submitted implements _Submitted {
     required TResult Function(String description) descriptionChanged,
     required TResult Function(List<Asset> imageAssets) imagesChanged,
     required TResult Function(String imageURL) imageDeleted,
-    required TResult Function(double latitude, double longitude) coordinatesChanged,
+    required TResult Function(double latitude, double longitude)
+        coordinatesChanged,
     required TResult Function(int difficulty) difficultyChanged,
     required TResult Function(KtList<Objective> objectives) objectivesChanged,
     required TResult Function(KtSet<Reward> rewards) rewardsChanged,
@@ -1827,28 +1883,23 @@ const $ExperienceEditingFormState = _$ExperienceEditingFormStateTearOff();
 /// @nodoc
 mixin _$ExperienceEditingFormState {
   Experience get experience => throw _privateConstructorUsedError;
-
   List<String> get imageUrlsToDelete => throw _privateConstructorUsedError;
-
   bool get showErrorMessages => throw _privateConstructorUsedError;
-
   bool get isSubmitting => throw _privateConstructorUsedError;
-
   bool get loadedCoordinates => throw _privateConstructorUsedError;
-
-  Option<Either<Failure, Unit>> get failureOrSuccessOption => throw _privateConstructorUsedError;
+  Option<Either<Failure, Unit>> get failureOrSuccessOption =>
+      throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
-  $ExperienceEditingFormStateCopyWith<ExperienceEditingFormState> get copyWith =>
-      throw _privateConstructorUsedError;
+  $ExperienceEditingFormStateCopyWith<ExperienceEditingFormState>
+      get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $ExperienceEditingFormStateCopyWith<$Res> {
-  factory $ExperienceEditingFormStateCopyWith(
-          ExperienceEditingFormState value, $Res Function(ExperienceEditingFormState) then) =
+  factory $ExperienceEditingFormStateCopyWith(ExperienceEditingFormState value,
+          $Res Function(ExperienceEditingFormState) then) =
       _$ExperienceEditingFormStateCopyWithImpl<$Res>;
-
   $Res call(
       {Experience experience,
       List<String> imageUrlsToDelete,
@@ -1861,11 +1912,11 @@ abstract class $ExperienceEditingFormStateCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$ExperienceEditingFormStateCopyWithImpl<$Res> implements $ExperienceEditingFormStateCopyWith<$Res> {
+class _$ExperienceEditingFormStateCopyWithImpl<$Res>
+    implements $ExperienceEditingFormStateCopyWith<$Res> {
   _$ExperienceEditingFormStateCopyWithImpl(this._value, this._then);
 
   final ExperienceEditingFormState _value;
-
   // ignore: unused_field
   final $Res Function(ExperienceEditingFormState) _then;
 
@@ -1918,7 +1969,8 @@ class _$ExperienceEditingFormStateCopyWithImpl<$Res> implements $ExperienceEditi
 abstract class _$ExperienceEditingFormStateCopyWith<$Res>
     implements $ExperienceEditingFormStateCopyWith<$Res> {
   factory _$ExperienceEditingFormStateCopyWith(
-          _ExperienceEditingFormState value, $Res Function(_ExperienceEditingFormState) then) =
+          _ExperienceEditingFormState value,
+          $Res Function(_ExperienceEditingFormState) then) =
       __$ExperienceEditingFormStateCopyWithImpl<$Res>;
   @override
   $Res call(
@@ -1934,14 +1986,16 @@ abstract class _$ExperienceEditingFormStateCopyWith<$Res>
 }
 
 /// @nodoc
-class __$ExperienceEditingFormStateCopyWithImpl<$Res> extends _$ExperienceEditingFormStateCopyWithImpl<$Res>
+class __$ExperienceEditingFormStateCopyWithImpl<$Res>
+    extends _$ExperienceEditingFormStateCopyWithImpl<$Res>
     implements _$ExperienceEditingFormStateCopyWith<$Res> {
-  __$ExperienceEditingFormStateCopyWithImpl(
-      _ExperienceEditingFormState _value, $Res Function(_ExperienceEditingFormState) _then)
+  __$ExperienceEditingFormStateCopyWithImpl(_ExperienceEditingFormState _value,
+      $Res Function(_ExperienceEditingFormState) _then)
       : super(_value, (v) => _then(v as _ExperienceEditingFormState));
 
   @override
-  _ExperienceEditingFormState get _value => super._value as _ExperienceEditingFormState;
+  _ExperienceEditingFormState get _value =>
+      super._value as _ExperienceEditingFormState;
 
   @override
   $Res call({
@@ -2015,17 +2069,23 @@ class _$_ExperienceEditingFormState implements _ExperienceEditingFormState {
     return identical(this, other) ||
         (other is _ExperienceEditingFormState &&
             (identical(other.experience, experience) ||
-                const DeepCollectionEquality().equals(other.experience, experience)) &&
+                const DeepCollectionEquality()
+                    .equals(other.experience, experience)) &&
             (identical(other.imageUrlsToDelete, imageUrlsToDelete) ||
-                const DeepCollectionEquality().equals(other.imageUrlsToDelete, imageUrlsToDelete)) &&
+                const DeepCollectionEquality()
+                    .equals(other.imageUrlsToDelete, imageUrlsToDelete)) &&
             (identical(other.showErrorMessages, showErrorMessages) ||
-                const DeepCollectionEquality().equals(other.showErrorMessages, showErrorMessages)) &&
+                const DeepCollectionEquality()
+                    .equals(other.showErrorMessages, showErrorMessages)) &&
             (identical(other.isSubmitting, isSubmitting) ||
-                const DeepCollectionEquality().equals(other.isSubmitting, isSubmitting)) &&
+                const DeepCollectionEquality()
+                    .equals(other.isSubmitting, isSubmitting)) &&
             (identical(other.loadedCoordinates, loadedCoordinates) ||
-                const DeepCollectionEquality().equals(other.loadedCoordinates, loadedCoordinates)) &&
+                const DeepCollectionEquality()
+                    .equals(other.loadedCoordinates, loadedCoordinates)) &&
             (identical(other.failureOrSuccessOption, failureOrSuccessOption) ||
-                const DeepCollectionEquality().equals(other.failureOrSuccessOption, failureOrSuccessOption)));
+                const DeepCollectionEquality().equals(
+                    other.failureOrSuccessOption, failureOrSuccessOption)));
   }
 
   @override
@@ -2040,18 +2100,21 @@ class _$_ExperienceEditingFormState implements _ExperienceEditingFormState {
 
   @JsonKey(ignore: true)
   @override
-  _$ExperienceEditingFormStateCopyWith<_ExperienceEditingFormState> get copyWith =>
-      __$ExperienceEditingFormStateCopyWithImpl<_ExperienceEditingFormState>(this, _$identity);
+  _$ExperienceEditingFormStateCopyWith<_ExperienceEditingFormState>
+      get copyWith => __$ExperienceEditingFormStateCopyWithImpl<
+          _ExperienceEditingFormState>(this, _$identity);
 }
 
-abstract class _ExperienceEditingFormState implements ExperienceEditingFormState {
+abstract class _ExperienceEditingFormState
+    implements ExperienceEditingFormState {
   const factory _ExperienceEditingFormState(
-      {required Experience experience,
-      required List<String> imageUrlsToDelete,
-      required bool showErrorMessages,
-      required bool isSubmitting,
-      required bool loadedCoordinates,
-      required Option<Either<Failure, Unit>> failureOrSuccessOption}) = _$_ExperienceEditingFormState;
+          {required Experience experience,
+          required List<String> imageUrlsToDelete,
+          required bool showErrorMessages,
+          required bool isSubmitting,
+          required bool loadedCoordinates,
+          required Option<Either<Failure, Unit>> failureOrSuccessOption}) =
+      _$_ExperienceEditingFormState;
 
   @override
   Experience get experience => throw _privateConstructorUsedError;
@@ -2061,15 +2124,13 @@ abstract class _ExperienceEditingFormState implements ExperienceEditingFormState
   bool get showErrorMessages => throw _privateConstructorUsedError;
   @override
   bool get isSubmitting => throw _privateConstructorUsedError;
-
   @override
   bool get loadedCoordinates => throw _privateConstructorUsedError;
-
   @override
-  Option<Either<Failure, Unit>> get failureOrSuccessOption => throw _privateConstructorUsedError;
-
+  Option<Either<Failure, Unit>> get failureOrSuccessOption =>
+      throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
-  _$ExperienceEditingFormStateCopyWith<_ExperienceEditingFormState> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$ExperienceEditingFormStateCopyWith<_ExperienceEditingFormState>
+      get copyWith => throw _privateConstructorUsedError;
 }

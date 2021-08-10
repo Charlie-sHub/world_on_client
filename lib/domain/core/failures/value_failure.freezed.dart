@@ -76,7 +76,8 @@ class _$ValueFailureTearOff {
     );
   }
 
-  StringWithInvalidCharacters<T> stringWithInvalidCharacters<T>({required String failedValue}) {
+  StringWithInvalidCharacters<T> stringWithInvalidCharacters<T>(
+      {required String failedValue}) {
     return StringWithInvalidCharacters<T>(
       failedValue: failedValue,
     );
@@ -124,13 +125,15 @@ mixin _$ValueFailure<T> {
     required TResult Function(String failedValue) invalidName,
     required TResult Function(String failedValue) emptyString,
     required TResult Function(String failedValue) multiLineString,
-    required TResult Function(String failedValue, int maxLength) stringExceedsLength,
+    required TResult Function(String failedValue, int maxLength)
+        stringExceedsLength,
     required TResult Function(int failedValue) integerOutOfBounds,
     required TResult Function(String failedValue) stringWithInvalidCharacters,
     required TResult Function(double failedValue) invalidCoordinate,
     required TResult Function(T failedValue) emptySet,
     required TResult Function(T failedValue) emptyList,
-    required TResult Function(T failedValue, int maxLength) collectionExceedsLength,
+    required TResult Function(T failedValue, int maxLength)
+        collectionExceedsLength,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -165,11 +168,13 @@ mixin _$ValueFailure<T> {
     required TResult Function(MultiLineString<T> value) multiLineString,
     required TResult Function(StringExceedsLength<T> value) stringExceedsLength,
     required TResult Function(IntegerOutOfBounds<T> value) integerOutOfBounds,
-    required TResult Function(StringWithInvalidCharacters<T> value) stringWithInvalidCharacters,
+    required TResult Function(StringWithInvalidCharacters<T> value)
+        stringWithInvalidCharacters,
     required TResult Function(InvalidCoordinates<T> value) invalidCoordinate,
     required TResult Function(EmptySet<T> value) emptySet,
     required TResult Function(EmptyList<T> value) emptyList,
-    required TResult Function(CollectionExceedsLength<T> value) collectionExceedsLength,
+    required TResult Function(CollectionExceedsLength<T> value)
+        collectionExceedsLength,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -184,7 +189,8 @@ mixin _$ValueFailure<T> {
     TResult Function(MultiLineString<T> value)? multiLineString,
     TResult Function(StringExceedsLength<T> value)? stringExceedsLength,
     TResult Function(IntegerOutOfBounds<T> value)? integerOutOfBounds,
-    TResult Function(StringWithInvalidCharacters<T> value)? stringWithInvalidCharacters,
+    TResult Function(StringWithInvalidCharacters<T> value)?
+        stringWithInvalidCharacters,
     TResult Function(InvalidCoordinates<T> value)? invalidCoordinate,
     TResult Function(EmptySet<T> value)? emptySet,
     TResult Function(EmptyList<T> value)? emptyList,
@@ -196,30 +202,34 @@ mixin _$ValueFailure<T> {
 
 /// @nodoc
 abstract class $ValueFailureCopyWith<T, $Res> {
-  factory $ValueFailureCopyWith(ValueFailure<T> value, $Res Function(ValueFailure<T>) then) =
+  factory $ValueFailureCopyWith(
+          ValueFailure<T> value, $Res Function(ValueFailure<T>) then) =
       _$ValueFailureCopyWithImpl<T, $Res>;
 }
 
 /// @nodoc
-class _$ValueFailureCopyWithImpl<T, $Res> implements $ValueFailureCopyWith<T, $Res> {
+class _$ValueFailureCopyWithImpl<T, $Res>
+    implements $ValueFailureCopyWith<T, $Res> {
   _$ValueFailureCopyWithImpl(this._value, this._then);
 
   final ValueFailure<T> _value;
-
   // ignore: unused_field
   final $Res Function(ValueFailure<T>) _then;
 }
 
 /// @nodoc
 abstract class $NullInputCopyWith<T, $Res> {
-  factory $NullInputCopyWith(NullInput<T> value, $Res Function(NullInput<T>) then) =
+  factory $NullInputCopyWith(
+          NullInput<T> value, $Res Function(NullInput<T>) then) =
       _$NullInputCopyWithImpl<T, $Res>;
 }
 
 /// @nodoc
-class _$NullInputCopyWithImpl<T, $Res> extends _$ValueFailureCopyWithImpl<T, $Res>
+class _$NullInputCopyWithImpl<T, $Res>
+    extends _$ValueFailureCopyWithImpl<T, $Res>
     implements $NullInputCopyWith<T, $Res> {
-  _$NullInputCopyWithImpl(NullInput<T> _value, $Res Function(NullInput<T>) _then)
+  _$NullInputCopyWithImpl(
+      NullInput<T> _value, $Res Function(NullInput<T>) _then)
       : super(_value, (v) => _then(v as NullInput<T>));
 
   @override
@@ -255,13 +265,15 @@ class _$NullInput<T> implements NullInput<T> {
     required TResult Function(String failedValue) invalidName,
     required TResult Function(String failedValue) emptyString,
     required TResult Function(String failedValue) multiLineString,
-    required TResult Function(String failedValue, int maxLength) stringExceedsLength,
+    required TResult Function(String failedValue, int maxLength)
+        stringExceedsLength,
     required TResult Function(int failedValue) integerOutOfBounds,
     required TResult Function(String failedValue) stringWithInvalidCharacters,
     required TResult Function(double failedValue) invalidCoordinate,
     required TResult Function(T failedValue) emptySet,
     required TResult Function(T failedValue) emptyList,
-    required TResult Function(T failedValue, int maxLength) collectionExceedsLength,
+    required TResult Function(T failedValue, int maxLength)
+        collectionExceedsLength,
   }) {
     return nullInput();
   }
@@ -305,11 +317,13 @@ class _$NullInput<T> implements NullInput<T> {
     required TResult Function(MultiLineString<T> value) multiLineString,
     required TResult Function(StringExceedsLength<T> value) stringExceedsLength,
     required TResult Function(IntegerOutOfBounds<T> value) integerOutOfBounds,
-    required TResult Function(StringWithInvalidCharacters<T> value) stringWithInvalidCharacters,
+    required TResult Function(StringWithInvalidCharacters<T> value)
+        stringWithInvalidCharacters,
     required TResult Function(InvalidCoordinates<T> value) invalidCoordinate,
     required TResult Function(EmptySet<T> value) emptySet,
     required TResult Function(EmptyList<T> value) emptyList,
-    required TResult Function(CollectionExceedsLength<T> value) collectionExceedsLength,
+    required TResult Function(CollectionExceedsLength<T> value)
+        collectionExceedsLength,
   }) {
     return nullInput(this);
   }
@@ -327,7 +341,8 @@ class _$NullInput<T> implements NullInput<T> {
     TResult Function(MultiLineString<T> value)? multiLineString,
     TResult Function(StringExceedsLength<T> value)? stringExceedsLength,
     TResult Function(IntegerOutOfBounds<T> value)? integerOutOfBounds,
-    TResult Function(StringWithInvalidCharacters<T> value)? stringWithInvalidCharacters,
+    TResult Function(StringWithInvalidCharacters<T> value)?
+        stringWithInvalidCharacters,
     TResult Function(InvalidCoordinates<T> value)? invalidCoordinate,
     TResult Function(EmptySet<T> value)? emptySet,
     TResult Function(EmptyList<T> value)? emptyList,
@@ -347,16 +362,18 @@ abstract class NullInput<T> implements ValueFailure<T> {
 
 /// @nodoc
 abstract class $InvalidDateCopyWith<T, $Res> {
-  factory $InvalidDateCopyWith(InvalidDate<T> value, $Res Function(InvalidDate<T>) then) =
+  factory $InvalidDateCopyWith(
+          InvalidDate<T> value, $Res Function(InvalidDate<T>) then) =
       _$InvalidDateCopyWithImpl<T, $Res>;
-
   $Res call({DateTime failedValue});
 }
 
 /// @nodoc
-class _$InvalidDateCopyWithImpl<T, $Res> extends _$ValueFailureCopyWithImpl<T, $Res>
+class _$InvalidDateCopyWithImpl<T, $Res>
+    extends _$ValueFailureCopyWithImpl<T, $Res>
     implements $InvalidDateCopyWith<T, $Res> {
-  _$InvalidDateCopyWithImpl(InvalidDate<T> _value, $Res Function(InvalidDate<T>) _then)
+  _$InvalidDateCopyWithImpl(
+      InvalidDate<T> _value, $Res Function(InvalidDate<T>) _then)
       : super(_value, (v) => _then(v as InvalidDate<T>));
 
   @override
@@ -393,11 +410,13 @@ class _$InvalidDate<T> implements InvalidDate<T> {
     return identical(this, other) ||
         (other is InvalidDate<T> &&
             (identical(other.failedValue, failedValue) ||
-                const DeepCollectionEquality().equals(other.failedValue, failedValue)));
+                const DeepCollectionEquality()
+                    .equals(other.failedValue, failedValue)));
   }
 
   @override
-  int get hashCode => runtimeType.hashCode ^ const DeepCollectionEquality().hash(failedValue);
+  int get hashCode =>
+      runtimeType.hashCode ^ const DeepCollectionEquality().hash(failedValue);
 
   @JsonKey(ignore: true)
   @override
@@ -415,13 +434,15 @@ class _$InvalidDate<T> implements InvalidDate<T> {
     required TResult Function(String failedValue) invalidName,
     required TResult Function(String failedValue) emptyString,
     required TResult Function(String failedValue) multiLineString,
-    required TResult Function(String failedValue, int maxLength) stringExceedsLength,
+    required TResult Function(String failedValue, int maxLength)
+        stringExceedsLength,
     required TResult Function(int failedValue) integerOutOfBounds,
     required TResult Function(String failedValue) stringWithInvalidCharacters,
     required TResult Function(double failedValue) invalidCoordinate,
     required TResult Function(T failedValue) emptySet,
     required TResult Function(T failedValue) emptyList,
-    required TResult Function(T failedValue, int maxLength) collectionExceedsLength,
+    required TResult Function(T failedValue, int maxLength)
+        collectionExceedsLength,
   }) {
     return invalidDate(failedValue);
   }
@@ -465,11 +486,13 @@ class _$InvalidDate<T> implements InvalidDate<T> {
     required TResult Function(MultiLineString<T> value) multiLineString,
     required TResult Function(StringExceedsLength<T> value) stringExceedsLength,
     required TResult Function(IntegerOutOfBounds<T> value) integerOutOfBounds,
-    required TResult Function(StringWithInvalidCharacters<T> value) stringWithInvalidCharacters,
+    required TResult Function(StringWithInvalidCharacters<T> value)
+        stringWithInvalidCharacters,
     required TResult Function(InvalidCoordinates<T> value) invalidCoordinate,
     required TResult Function(EmptySet<T> value) emptySet,
     required TResult Function(EmptyList<T> value) emptyList,
-    required TResult Function(CollectionExceedsLength<T> value) collectionExceedsLength,
+    required TResult Function(CollectionExceedsLength<T> value)
+        collectionExceedsLength,
   }) {
     return invalidDate(this);
   }
@@ -487,7 +510,8 @@ class _$InvalidDate<T> implements InvalidDate<T> {
     TResult Function(MultiLineString<T> value)? multiLineString,
     TResult Function(StringExceedsLength<T> value)? stringExceedsLength,
     TResult Function(IntegerOutOfBounds<T> value)? integerOutOfBounds,
-    TResult Function(StringWithInvalidCharacters<T> value)? stringWithInvalidCharacters,
+    TResult Function(StringWithInvalidCharacters<T> value)?
+        stringWithInvalidCharacters,
     TResult Function(InvalidCoordinates<T> value)? invalidCoordinate,
     TResult Function(EmptySet<T> value)? emptySet,
     TResult Function(EmptyList<T> value)? emptyList,
@@ -505,23 +529,25 @@ abstract class InvalidDate<T> implements ValueFailure<T> {
   const factory InvalidDate({required DateTime failedValue}) = _$InvalidDate<T>;
 
   DateTime get failedValue => throw _privateConstructorUsedError;
-
   @JsonKey(ignore: true)
-  $InvalidDateCopyWith<T, InvalidDate<T>> get copyWith => throw _privateConstructorUsedError;
+  $InvalidDateCopyWith<T, InvalidDate<T>> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $InvalidEmailCopyWith<T, $Res> {
-  factory $InvalidEmailCopyWith(InvalidEmail<T> value, $Res Function(InvalidEmail<T>) then) =
+  factory $InvalidEmailCopyWith(
+          InvalidEmail<T> value, $Res Function(InvalidEmail<T>) then) =
       _$InvalidEmailCopyWithImpl<T, $Res>;
-
   $Res call({String failedValue});
 }
 
 /// @nodoc
-class _$InvalidEmailCopyWithImpl<T, $Res> extends _$ValueFailureCopyWithImpl<T, $Res>
+class _$InvalidEmailCopyWithImpl<T, $Res>
+    extends _$ValueFailureCopyWithImpl<T, $Res>
     implements $InvalidEmailCopyWith<T, $Res> {
-  _$InvalidEmailCopyWithImpl(InvalidEmail<T> _value, $Res Function(InvalidEmail<T>) _then)
+  _$InvalidEmailCopyWithImpl(
+      InvalidEmail<T> _value, $Res Function(InvalidEmail<T>) _then)
       : super(_value, (v) => _then(v as InvalidEmail<T>));
 
   @override
@@ -558,11 +584,13 @@ class _$InvalidEmail<T> implements InvalidEmail<T> {
     return identical(this, other) ||
         (other is InvalidEmail<T> &&
             (identical(other.failedValue, failedValue) ||
-                const DeepCollectionEquality().equals(other.failedValue, failedValue)));
+                const DeepCollectionEquality()
+                    .equals(other.failedValue, failedValue)));
   }
 
   @override
-  int get hashCode => runtimeType.hashCode ^ const DeepCollectionEquality().hash(failedValue);
+  int get hashCode =>
+      runtimeType.hashCode ^ const DeepCollectionEquality().hash(failedValue);
 
   @JsonKey(ignore: true)
   @override
@@ -580,13 +608,15 @@ class _$InvalidEmail<T> implements InvalidEmail<T> {
     required TResult Function(String failedValue) invalidName,
     required TResult Function(String failedValue) emptyString,
     required TResult Function(String failedValue) multiLineString,
-    required TResult Function(String failedValue, int maxLength) stringExceedsLength,
+    required TResult Function(String failedValue, int maxLength)
+        stringExceedsLength,
     required TResult Function(int failedValue) integerOutOfBounds,
     required TResult Function(String failedValue) stringWithInvalidCharacters,
     required TResult Function(double failedValue) invalidCoordinate,
     required TResult Function(T failedValue) emptySet,
     required TResult Function(T failedValue) emptyList,
-    required TResult Function(T failedValue, int maxLength) collectionExceedsLength,
+    required TResult Function(T failedValue, int maxLength)
+        collectionExceedsLength,
   }) {
     return invalidEmail(failedValue);
   }
@@ -630,11 +660,13 @@ class _$InvalidEmail<T> implements InvalidEmail<T> {
     required TResult Function(MultiLineString<T> value) multiLineString,
     required TResult Function(StringExceedsLength<T> value) stringExceedsLength,
     required TResult Function(IntegerOutOfBounds<T> value) integerOutOfBounds,
-    required TResult Function(StringWithInvalidCharacters<T> value) stringWithInvalidCharacters,
+    required TResult Function(StringWithInvalidCharacters<T> value)
+        stringWithInvalidCharacters,
     required TResult Function(InvalidCoordinates<T> value) invalidCoordinate,
     required TResult Function(EmptySet<T> value) emptySet,
     required TResult Function(EmptyList<T> value) emptyList,
-    required TResult Function(CollectionExceedsLength<T> value) collectionExceedsLength,
+    required TResult Function(CollectionExceedsLength<T> value)
+        collectionExceedsLength,
   }) {
     return invalidEmail(this);
   }
@@ -652,7 +684,8 @@ class _$InvalidEmail<T> implements InvalidEmail<T> {
     TResult Function(MultiLineString<T> value)? multiLineString,
     TResult Function(StringExceedsLength<T> value)? stringExceedsLength,
     TResult Function(IntegerOutOfBounds<T> value)? integerOutOfBounds,
-    TResult Function(StringWithInvalidCharacters<T> value)? stringWithInvalidCharacters,
+    TResult Function(StringWithInvalidCharacters<T> value)?
+        stringWithInvalidCharacters,
     TResult Function(InvalidCoordinates<T> value)? invalidCoordinate,
     TResult Function(EmptySet<T> value)? emptySet,
     TResult Function(EmptyList<T> value)? emptyList,
@@ -670,9 +703,9 @@ abstract class InvalidEmail<T> implements ValueFailure<T> {
   const factory InvalidEmail({required String failedValue}) = _$InvalidEmail<T>;
 
   String get failedValue => throw _privateConstructorUsedError;
-
   @JsonKey(ignore: true)
-  $InvalidEmailCopyWith<T, InvalidEmail<T>> get copyWith => throw _privateConstructorUsedError;
+  $InvalidEmailCopyWith<T, InvalidEmail<T>> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -684,9 +717,11 @@ abstract class $InvalidPasswordCopyWith<T, $Res> {
 }
 
 /// @nodoc
-class _$InvalidPasswordCopyWithImpl<T, $Res> extends _$ValueFailureCopyWithImpl<T, $Res>
+class _$InvalidPasswordCopyWithImpl<T, $Res>
+    extends _$ValueFailureCopyWithImpl<T, $Res>
     implements $InvalidPasswordCopyWith<T, $Res> {
-  _$InvalidPasswordCopyWithImpl(InvalidPassword<T> _value, $Res Function(InvalidPassword<T>) _then)
+  _$InvalidPasswordCopyWithImpl(
+      InvalidPassword<T> _value, $Res Function(InvalidPassword<T>) _then)
       : super(_value, (v) => _then(v as InvalidPassword<T>));
 
   @override
@@ -723,11 +758,13 @@ class _$InvalidPassword<T> implements InvalidPassword<T> {
     return identical(this, other) ||
         (other is InvalidPassword<T> &&
             (identical(other.failedValue, failedValue) ||
-                const DeepCollectionEquality().equals(other.failedValue, failedValue)));
+                const DeepCollectionEquality()
+                    .equals(other.failedValue, failedValue)));
   }
 
   @override
-  int get hashCode => runtimeType.hashCode ^ const DeepCollectionEquality().hash(failedValue);
+  int get hashCode =>
+      runtimeType.hashCode ^ const DeepCollectionEquality().hash(failedValue);
 
   @JsonKey(ignore: true)
   @override
@@ -745,13 +782,15 @@ class _$InvalidPassword<T> implements InvalidPassword<T> {
     required TResult Function(String failedValue) invalidName,
     required TResult Function(String failedValue) emptyString,
     required TResult Function(String failedValue) multiLineString,
-    required TResult Function(String failedValue, int maxLength) stringExceedsLength,
+    required TResult Function(String failedValue, int maxLength)
+        stringExceedsLength,
     required TResult Function(int failedValue) integerOutOfBounds,
     required TResult Function(String failedValue) stringWithInvalidCharacters,
     required TResult Function(double failedValue) invalidCoordinate,
     required TResult Function(T failedValue) emptySet,
     required TResult Function(T failedValue) emptyList,
-    required TResult Function(T failedValue, int maxLength) collectionExceedsLength,
+    required TResult Function(T failedValue, int maxLength)
+        collectionExceedsLength,
   }) {
     return invalidPassword(failedValue);
   }
@@ -795,11 +834,13 @@ class _$InvalidPassword<T> implements InvalidPassword<T> {
     required TResult Function(MultiLineString<T> value) multiLineString,
     required TResult Function(StringExceedsLength<T> value) stringExceedsLength,
     required TResult Function(IntegerOutOfBounds<T> value) integerOutOfBounds,
-    required TResult Function(StringWithInvalidCharacters<T> value) stringWithInvalidCharacters,
+    required TResult Function(StringWithInvalidCharacters<T> value)
+        stringWithInvalidCharacters,
     required TResult Function(InvalidCoordinates<T> value) invalidCoordinate,
     required TResult Function(EmptySet<T> value) emptySet,
     required TResult Function(EmptyList<T> value) emptyList,
-    required TResult Function(CollectionExceedsLength<T> value) collectionExceedsLength,
+    required TResult Function(CollectionExceedsLength<T> value)
+        collectionExceedsLength,
   }) {
     return invalidPassword(this);
   }
@@ -817,7 +858,8 @@ class _$InvalidPassword<T> implements InvalidPassword<T> {
     TResult Function(MultiLineString<T> value)? multiLineString,
     TResult Function(StringExceedsLength<T> value)? stringExceedsLength,
     TResult Function(IntegerOutOfBounds<T> value)? integerOutOfBounds,
-    TResult Function(StringWithInvalidCharacters<T> value)? stringWithInvalidCharacters,
+    TResult Function(StringWithInvalidCharacters<T> value)?
+        stringWithInvalidCharacters,
     TResult Function(InvalidCoordinates<T> value)? invalidCoordinate,
     TResult Function(EmptySet<T> value)? emptySet,
     TResult Function(EmptyList<T> value)? emptyList,
@@ -832,26 +874,29 @@ class _$InvalidPassword<T> implements InvalidPassword<T> {
 }
 
 abstract class InvalidPassword<T> implements ValueFailure<T> {
-  const factory InvalidPassword({required String failedValue}) = _$InvalidPassword<T>;
+  const factory InvalidPassword({required String failedValue}) =
+      _$InvalidPassword<T>;
 
   String get failedValue => throw _privateConstructorUsedError;
-
   @JsonKey(ignore: true)
-  $InvalidPasswordCopyWith<T, InvalidPassword<T>> get copyWith => throw _privateConstructorUsedError;
+  $InvalidPasswordCopyWith<T, InvalidPassword<T>> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $StringMismatchCopyWith<T, $Res> {
-  factory $StringMismatchCopyWith(StringMismatch<T> value, $Res Function(StringMismatch<T>) then) =
+  factory $StringMismatchCopyWith(
+          StringMismatch<T> value, $Res Function(StringMismatch<T>) then) =
       _$StringMismatchCopyWithImpl<T, $Res>;
-
   $Res call({String failedValue});
 }
 
 /// @nodoc
-class _$StringMismatchCopyWithImpl<T, $Res> extends _$ValueFailureCopyWithImpl<T, $Res>
+class _$StringMismatchCopyWithImpl<T, $Res>
+    extends _$ValueFailureCopyWithImpl<T, $Res>
     implements $StringMismatchCopyWith<T, $Res> {
-  _$StringMismatchCopyWithImpl(StringMismatch<T> _value, $Res Function(StringMismatch<T>) _then)
+  _$StringMismatchCopyWithImpl(
+      StringMismatch<T> _value, $Res Function(StringMismatch<T>) _then)
       : super(_value, (v) => _then(v as StringMismatch<T>));
 
   @override
@@ -888,11 +933,13 @@ class _$StringMismatch<T> implements StringMismatch<T> {
     return identical(this, other) ||
         (other is StringMismatch<T> &&
             (identical(other.failedValue, failedValue) ||
-                const DeepCollectionEquality().equals(other.failedValue, failedValue)));
+                const DeepCollectionEquality()
+                    .equals(other.failedValue, failedValue)));
   }
 
   @override
-  int get hashCode => runtimeType.hashCode ^ const DeepCollectionEquality().hash(failedValue);
+  int get hashCode =>
+      runtimeType.hashCode ^ const DeepCollectionEquality().hash(failedValue);
 
   @JsonKey(ignore: true)
   @override
@@ -910,13 +957,15 @@ class _$StringMismatch<T> implements StringMismatch<T> {
     required TResult Function(String failedValue) invalidName,
     required TResult Function(String failedValue) emptyString,
     required TResult Function(String failedValue) multiLineString,
-    required TResult Function(String failedValue, int maxLength) stringExceedsLength,
+    required TResult Function(String failedValue, int maxLength)
+        stringExceedsLength,
     required TResult Function(int failedValue) integerOutOfBounds,
     required TResult Function(String failedValue) stringWithInvalidCharacters,
     required TResult Function(double failedValue) invalidCoordinate,
     required TResult Function(T failedValue) emptySet,
     required TResult Function(T failedValue) emptyList,
-    required TResult Function(T failedValue, int maxLength) collectionExceedsLength,
+    required TResult Function(T failedValue, int maxLength)
+        collectionExceedsLength,
   }) {
     return stringMismatch(failedValue);
   }
@@ -960,11 +1009,13 @@ class _$StringMismatch<T> implements StringMismatch<T> {
     required TResult Function(MultiLineString<T> value) multiLineString,
     required TResult Function(StringExceedsLength<T> value) stringExceedsLength,
     required TResult Function(IntegerOutOfBounds<T> value) integerOutOfBounds,
-    required TResult Function(StringWithInvalidCharacters<T> value) stringWithInvalidCharacters,
+    required TResult Function(StringWithInvalidCharacters<T> value)
+        stringWithInvalidCharacters,
     required TResult Function(InvalidCoordinates<T> value) invalidCoordinate,
     required TResult Function(EmptySet<T> value) emptySet,
     required TResult Function(EmptyList<T> value) emptyList,
-    required TResult Function(CollectionExceedsLength<T> value) collectionExceedsLength,
+    required TResult Function(CollectionExceedsLength<T> value)
+        collectionExceedsLength,
   }) {
     return stringMismatch(this);
   }
@@ -982,7 +1033,8 @@ class _$StringMismatch<T> implements StringMismatch<T> {
     TResult Function(MultiLineString<T> value)? multiLineString,
     TResult Function(StringExceedsLength<T> value)? stringExceedsLength,
     TResult Function(IntegerOutOfBounds<T> value)? integerOutOfBounds,
-    TResult Function(StringWithInvalidCharacters<T> value)? stringWithInvalidCharacters,
+    TResult Function(StringWithInvalidCharacters<T> value)?
+        stringWithInvalidCharacters,
     TResult Function(InvalidCoordinates<T> value)? invalidCoordinate,
     TResult Function(EmptySet<T> value)? emptySet,
     TResult Function(EmptyList<T> value)? emptyList,
@@ -997,26 +1049,29 @@ class _$StringMismatch<T> implements StringMismatch<T> {
 }
 
 abstract class StringMismatch<T> implements ValueFailure<T> {
-  const factory StringMismatch({required String failedValue}) = _$StringMismatch<T>;
+  const factory StringMismatch({required String failedValue}) =
+      _$StringMismatch<T>;
 
   String get failedValue => throw _privateConstructorUsedError;
-
   @JsonKey(ignore: true)
-  $StringMismatchCopyWith<T, StringMismatch<T>> get copyWith => throw _privateConstructorUsedError;
+  $StringMismatchCopyWith<T, StringMismatch<T>> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $InvalidNameCopyWith<T, $Res> {
-  factory $InvalidNameCopyWith(InvalidName<T> value, $Res Function(InvalidName<T>) then) =
+  factory $InvalidNameCopyWith(
+          InvalidName<T> value, $Res Function(InvalidName<T>) then) =
       _$InvalidNameCopyWithImpl<T, $Res>;
-
   $Res call({String failedValue});
 }
 
 /// @nodoc
-class _$InvalidNameCopyWithImpl<T, $Res> extends _$ValueFailureCopyWithImpl<T, $Res>
+class _$InvalidNameCopyWithImpl<T, $Res>
+    extends _$ValueFailureCopyWithImpl<T, $Res>
     implements $InvalidNameCopyWith<T, $Res> {
-  _$InvalidNameCopyWithImpl(InvalidName<T> _value, $Res Function(InvalidName<T>) _then)
+  _$InvalidNameCopyWithImpl(
+      InvalidName<T> _value, $Res Function(InvalidName<T>) _then)
       : super(_value, (v) => _then(v as InvalidName<T>));
 
   @override
@@ -1053,11 +1108,13 @@ class _$InvalidName<T> implements InvalidName<T> {
     return identical(this, other) ||
         (other is InvalidName<T> &&
             (identical(other.failedValue, failedValue) ||
-                const DeepCollectionEquality().equals(other.failedValue, failedValue)));
+                const DeepCollectionEquality()
+                    .equals(other.failedValue, failedValue)));
   }
 
   @override
-  int get hashCode => runtimeType.hashCode ^ const DeepCollectionEquality().hash(failedValue);
+  int get hashCode =>
+      runtimeType.hashCode ^ const DeepCollectionEquality().hash(failedValue);
 
   @JsonKey(ignore: true)
   @override
@@ -1075,13 +1132,15 @@ class _$InvalidName<T> implements InvalidName<T> {
     required TResult Function(String failedValue) invalidName,
     required TResult Function(String failedValue) emptyString,
     required TResult Function(String failedValue) multiLineString,
-    required TResult Function(String failedValue, int maxLength) stringExceedsLength,
+    required TResult Function(String failedValue, int maxLength)
+        stringExceedsLength,
     required TResult Function(int failedValue) integerOutOfBounds,
     required TResult Function(String failedValue) stringWithInvalidCharacters,
     required TResult Function(double failedValue) invalidCoordinate,
     required TResult Function(T failedValue) emptySet,
     required TResult Function(T failedValue) emptyList,
-    required TResult Function(T failedValue, int maxLength) collectionExceedsLength,
+    required TResult Function(T failedValue, int maxLength)
+        collectionExceedsLength,
   }) {
     return invalidName(failedValue);
   }
@@ -1125,11 +1184,13 @@ class _$InvalidName<T> implements InvalidName<T> {
     required TResult Function(MultiLineString<T> value) multiLineString,
     required TResult Function(StringExceedsLength<T> value) stringExceedsLength,
     required TResult Function(IntegerOutOfBounds<T> value) integerOutOfBounds,
-    required TResult Function(StringWithInvalidCharacters<T> value) stringWithInvalidCharacters,
+    required TResult Function(StringWithInvalidCharacters<T> value)
+        stringWithInvalidCharacters,
     required TResult Function(InvalidCoordinates<T> value) invalidCoordinate,
     required TResult Function(EmptySet<T> value) emptySet,
     required TResult Function(EmptyList<T> value) emptyList,
-    required TResult Function(CollectionExceedsLength<T> value) collectionExceedsLength,
+    required TResult Function(CollectionExceedsLength<T> value)
+        collectionExceedsLength,
   }) {
     return invalidName(this);
   }
@@ -1147,7 +1208,8 @@ class _$InvalidName<T> implements InvalidName<T> {
     TResult Function(MultiLineString<T> value)? multiLineString,
     TResult Function(StringExceedsLength<T> value)? stringExceedsLength,
     TResult Function(IntegerOutOfBounds<T> value)? integerOutOfBounds,
-    TResult Function(StringWithInvalidCharacters<T> value)? stringWithInvalidCharacters,
+    TResult Function(StringWithInvalidCharacters<T> value)?
+        stringWithInvalidCharacters,
     TResult Function(InvalidCoordinates<T> value)? invalidCoordinate,
     TResult Function(EmptySet<T> value)? emptySet,
     TResult Function(EmptyList<T> value)? emptyList,
@@ -1165,23 +1227,25 @@ abstract class InvalidName<T> implements ValueFailure<T> {
   const factory InvalidName({required String failedValue}) = _$InvalidName<T>;
 
   String get failedValue => throw _privateConstructorUsedError;
-
   @JsonKey(ignore: true)
-  $InvalidNameCopyWith<T, InvalidName<T>> get copyWith => throw _privateConstructorUsedError;
+  $InvalidNameCopyWith<T, InvalidName<T>> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $EmptyStringCopyWith<T, $Res> {
-  factory $EmptyStringCopyWith(EmptyString<T> value, $Res Function(EmptyString<T>) then) =
+  factory $EmptyStringCopyWith(
+          EmptyString<T> value, $Res Function(EmptyString<T>) then) =
       _$EmptyStringCopyWithImpl<T, $Res>;
-
   $Res call({String failedValue});
 }
 
 /// @nodoc
-class _$EmptyStringCopyWithImpl<T, $Res> extends _$ValueFailureCopyWithImpl<T, $Res>
+class _$EmptyStringCopyWithImpl<T, $Res>
+    extends _$ValueFailureCopyWithImpl<T, $Res>
     implements $EmptyStringCopyWith<T, $Res> {
-  _$EmptyStringCopyWithImpl(EmptyString<T> _value, $Res Function(EmptyString<T>) _then)
+  _$EmptyStringCopyWithImpl(
+      EmptyString<T> _value, $Res Function(EmptyString<T>) _then)
       : super(_value, (v) => _then(v as EmptyString<T>));
 
   @override
@@ -1218,11 +1282,13 @@ class _$EmptyString<T> implements EmptyString<T> {
     return identical(this, other) ||
         (other is EmptyString<T> &&
             (identical(other.failedValue, failedValue) ||
-                const DeepCollectionEquality().equals(other.failedValue, failedValue)));
+                const DeepCollectionEquality()
+                    .equals(other.failedValue, failedValue)));
   }
 
   @override
-  int get hashCode => runtimeType.hashCode ^ const DeepCollectionEquality().hash(failedValue);
+  int get hashCode =>
+      runtimeType.hashCode ^ const DeepCollectionEquality().hash(failedValue);
 
   @JsonKey(ignore: true)
   @override
@@ -1240,13 +1306,15 @@ class _$EmptyString<T> implements EmptyString<T> {
     required TResult Function(String failedValue) invalidName,
     required TResult Function(String failedValue) emptyString,
     required TResult Function(String failedValue) multiLineString,
-    required TResult Function(String failedValue, int maxLength) stringExceedsLength,
+    required TResult Function(String failedValue, int maxLength)
+        stringExceedsLength,
     required TResult Function(int failedValue) integerOutOfBounds,
     required TResult Function(String failedValue) stringWithInvalidCharacters,
     required TResult Function(double failedValue) invalidCoordinate,
     required TResult Function(T failedValue) emptySet,
     required TResult Function(T failedValue) emptyList,
-    required TResult Function(T failedValue, int maxLength) collectionExceedsLength,
+    required TResult Function(T failedValue, int maxLength)
+        collectionExceedsLength,
   }) {
     return emptyString(failedValue);
   }
@@ -1290,11 +1358,13 @@ class _$EmptyString<T> implements EmptyString<T> {
     required TResult Function(MultiLineString<T> value) multiLineString,
     required TResult Function(StringExceedsLength<T> value) stringExceedsLength,
     required TResult Function(IntegerOutOfBounds<T> value) integerOutOfBounds,
-    required TResult Function(StringWithInvalidCharacters<T> value) stringWithInvalidCharacters,
+    required TResult Function(StringWithInvalidCharacters<T> value)
+        stringWithInvalidCharacters,
     required TResult Function(InvalidCoordinates<T> value) invalidCoordinate,
     required TResult Function(EmptySet<T> value) emptySet,
     required TResult Function(EmptyList<T> value) emptyList,
-    required TResult Function(CollectionExceedsLength<T> value) collectionExceedsLength,
+    required TResult Function(CollectionExceedsLength<T> value)
+        collectionExceedsLength,
   }) {
     return emptyString(this);
   }
@@ -1312,7 +1382,8 @@ class _$EmptyString<T> implements EmptyString<T> {
     TResult Function(MultiLineString<T> value)? multiLineString,
     TResult Function(StringExceedsLength<T> value)? stringExceedsLength,
     TResult Function(IntegerOutOfBounds<T> value)? integerOutOfBounds,
-    TResult Function(StringWithInvalidCharacters<T> value)? stringWithInvalidCharacters,
+    TResult Function(StringWithInvalidCharacters<T> value)?
+        stringWithInvalidCharacters,
     TResult Function(InvalidCoordinates<T> value)? invalidCoordinate,
     TResult Function(EmptySet<T> value)? emptySet,
     TResult Function(EmptyList<T> value)? emptyList,
@@ -1330,9 +1401,9 @@ abstract class EmptyString<T> implements ValueFailure<T> {
   const factory EmptyString({required String failedValue}) = _$EmptyString<T>;
 
   String get failedValue => throw _privateConstructorUsedError;
-
   @JsonKey(ignore: true)
-  $EmptyStringCopyWith<T, EmptyString<T>> get copyWith => throw _privateConstructorUsedError;
+  $EmptyStringCopyWith<T, EmptyString<T>> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -1344,9 +1415,11 @@ abstract class $MultiLineStringCopyWith<T, $Res> {
 }
 
 /// @nodoc
-class _$MultiLineStringCopyWithImpl<T, $Res> extends _$ValueFailureCopyWithImpl<T, $Res>
+class _$MultiLineStringCopyWithImpl<T, $Res>
+    extends _$ValueFailureCopyWithImpl<T, $Res>
     implements $MultiLineStringCopyWith<T, $Res> {
-  _$MultiLineStringCopyWithImpl(MultiLineString<T> _value, $Res Function(MultiLineString<T>) _then)
+  _$MultiLineStringCopyWithImpl(
+      MultiLineString<T> _value, $Res Function(MultiLineString<T>) _then)
       : super(_value, (v) => _then(v as MultiLineString<T>));
 
   @override
@@ -1383,11 +1456,13 @@ class _$MultiLineString<T> implements MultiLineString<T> {
     return identical(this, other) ||
         (other is MultiLineString<T> &&
             (identical(other.failedValue, failedValue) ||
-                const DeepCollectionEquality().equals(other.failedValue, failedValue)));
+                const DeepCollectionEquality()
+                    .equals(other.failedValue, failedValue)));
   }
 
   @override
-  int get hashCode => runtimeType.hashCode ^ const DeepCollectionEquality().hash(failedValue);
+  int get hashCode =>
+      runtimeType.hashCode ^ const DeepCollectionEquality().hash(failedValue);
 
   @JsonKey(ignore: true)
   @override
@@ -1405,13 +1480,15 @@ class _$MultiLineString<T> implements MultiLineString<T> {
     required TResult Function(String failedValue) invalidName,
     required TResult Function(String failedValue) emptyString,
     required TResult Function(String failedValue) multiLineString,
-    required TResult Function(String failedValue, int maxLength) stringExceedsLength,
+    required TResult Function(String failedValue, int maxLength)
+        stringExceedsLength,
     required TResult Function(int failedValue) integerOutOfBounds,
     required TResult Function(String failedValue) stringWithInvalidCharacters,
     required TResult Function(double failedValue) invalidCoordinate,
     required TResult Function(T failedValue) emptySet,
     required TResult Function(T failedValue) emptyList,
-    required TResult Function(T failedValue, int maxLength) collectionExceedsLength,
+    required TResult Function(T failedValue, int maxLength)
+        collectionExceedsLength,
   }) {
     return multiLineString(failedValue);
   }
@@ -1455,11 +1532,13 @@ class _$MultiLineString<T> implements MultiLineString<T> {
     required TResult Function(MultiLineString<T> value) multiLineString,
     required TResult Function(StringExceedsLength<T> value) stringExceedsLength,
     required TResult Function(IntegerOutOfBounds<T> value) integerOutOfBounds,
-    required TResult Function(StringWithInvalidCharacters<T> value) stringWithInvalidCharacters,
+    required TResult Function(StringWithInvalidCharacters<T> value)
+        stringWithInvalidCharacters,
     required TResult Function(InvalidCoordinates<T> value) invalidCoordinate,
     required TResult Function(EmptySet<T> value) emptySet,
     required TResult Function(EmptyList<T> value) emptyList,
-    required TResult Function(CollectionExceedsLength<T> value) collectionExceedsLength,
+    required TResult Function(CollectionExceedsLength<T> value)
+        collectionExceedsLength,
   }) {
     return multiLineString(this);
   }
@@ -1477,7 +1556,8 @@ class _$MultiLineString<T> implements MultiLineString<T> {
     TResult Function(MultiLineString<T> value)? multiLineString,
     TResult Function(StringExceedsLength<T> value)? stringExceedsLength,
     TResult Function(IntegerOutOfBounds<T> value)? integerOutOfBounds,
-    TResult Function(StringWithInvalidCharacters<T> value)? stringWithInvalidCharacters,
+    TResult Function(StringWithInvalidCharacters<T> value)?
+        stringWithInvalidCharacters,
     TResult Function(InvalidCoordinates<T> value)? invalidCoordinate,
     TResult Function(EmptySet<T> value)? emptySet,
     TResult Function(EmptyList<T> value)? emptyList,
@@ -1492,28 +1572,29 @@ class _$MultiLineString<T> implements MultiLineString<T> {
 }
 
 abstract class MultiLineString<T> implements ValueFailure<T> {
-  const factory MultiLineString({required String failedValue}) = _$MultiLineString<T>;
+  const factory MultiLineString({required String failedValue}) =
+      _$MultiLineString<T>;
 
   String get failedValue => throw _privateConstructorUsedError;
-
   @JsonKey(ignore: true)
-  $MultiLineStringCopyWith<T, MultiLineString<T>> get copyWith => throw _privateConstructorUsedError;
+  $MultiLineStringCopyWith<T, MultiLineString<T>> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $StringExceedsLengthCopyWith<T, $Res> {
-  factory $StringExceedsLengthCopyWith(
-          StringExceedsLength<T> value, $Res Function(StringExceedsLength<T>) then) =
+  factory $StringExceedsLengthCopyWith(StringExceedsLength<T> value,
+          $Res Function(StringExceedsLength<T>) then) =
       _$StringExceedsLengthCopyWithImpl<T, $Res>;
-
   $Res call({String failedValue, int maxLength});
 }
 
 /// @nodoc
-class _$StringExceedsLengthCopyWithImpl<T, $Res> extends _$ValueFailureCopyWithImpl<T, $Res>
+class _$StringExceedsLengthCopyWithImpl<T, $Res>
+    extends _$ValueFailureCopyWithImpl<T, $Res>
     implements $StringExceedsLengthCopyWith<T, $Res> {
-  _$StringExceedsLengthCopyWithImpl(
-      StringExceedsLength<T> _value, $Res Function(StringExceedsLength<T>) _then)
+  _$StringExceedsLengthCopyWithImpl(StringExceedsLength<T> _value,
+      $Res Function(StringExceedsLength<T>) _then)
       : super(_value, (v) => _then(v as StringExceedsLength<T>));
 
   @override
@@ -1540,7 +1621,8 @@ class _$StringExceedsLengthCopyWithImpl<T, $Res> extends _$ValueFailureCopyWithI
 /// @nodoc
 
 class _$StringExceedsLength<T> implements StringExceedsLength<T> {
-  const _$StringExceedsLength({required this.failedValue, required this.maxLength});
+  const _$StringExceedsLength(
+      {required this.failedValue, required this.maxLength});
 
   @override
   final String failedValue;
@@ -1557,9 +1639,11 @@ class _$StringExceedsLength<T> implements StringExceedsLength<T> {
     return identical(this, other) ||
         (other is StringExceedsLength<T> &&
             (identical(other.failedValue, failedValue) ||
-                const DeepCollectionEquality().equals(other.failedValue, failedValue)) &&
+                const DeepCollectionEquality()
+                    .equals(other.failedValue, failedValue)) &&
             (identical(other.maxLength, maxLength) ||
-                const DeepCollectionEquality().equals(other.maxLength, maxLength)));
+                const DeepCollectionEquality()
+                    .equals(other.maxLength, maxLength)));
   }
 
   @override
@@ -1571,7 +1655,8 @@ class _$StringExceedsLength<T> implements StringExceedsLength<T> {
   @JsonKey(ignore: true)
   @override
   $StringExceedsLengthCopyWith<T, StringExceedsLength<T>> get copyWith =>
-      _$StringExceedsLengthCopyWithImpl<T, StringExceedsLength<T>>(this, _$identity);
+      _$StringExceedsLengthCopyWithImpl<T, StringExceedsLength<T>>(
+          this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -1584,13 +1669,15 @@ class _$StringExceedsLength<T> implements StringExceedsLength<T> {
     required TResult Function(String failedValue) invalidName,
     required TResult Function(String failedValue) emptyString,
     required TResult Function(String failedValue) multiLineString,
-    required TResult Function(String failedValue, int maxLength) stringExceedsLength,
+    required TResult Function(String failedValue, int maxLength)
+        stringExceedsLength,
     required TResult Function(int failedValue) integerOutOfBounds,
     required TResult Function(String failedValue) stringWithInvalidCharacters,
     required TResult Function(double failedValue) invalidCoordinate,
     required TResult Function(T failedValue) emptySet,
     required TResult Function(T failedValue) emptyList,
-    required TResult Function(T failedValue, int maxLength) collectionExceedsLength,
+    required TResult Function(T failedValue, int maxLength)
+        collectionExceedsLength,
   }) {
     return stringExceedsLength(failedValue, maxLength);
   }
@@ -1634,11 +1721,13 @@ class _$StringExceedsLength<T> implements StringExceedsLength<T> {
     required TResult Function(MultiLineString<T> value) multiLineString,
     required TResult Function(StringExceedsLength<T> value) stringExceedsLength,
     required TResult Function(IntegerOutOfBounds<T> value) integerOutOfBounds,
-    required TResult Function(StringWithInvalidCharacters<T> value) stringWithInvalidCharacters,
+    required TResult Function(StringWithInvalidCharacters<T> value)
+        stringWithInvalidCharacters,
     required TResult Function(InvalidCoordinates<T> value) invalidCoordinate,
     required TResult Function(EmptySet<T> value) emptySet,
     required TResult Function(EmptyList<T> value) emptyList,
-    required TResult Function(CollectionExceedsLength<T> value) collectionExceedsLength,
+    required TResult Function(CollectionExceedsLength<T> value)
+        collectionExceedsLength,
   }) {
     return stringExceedsLength(this);
   }
@@ -1656,7 +1745,8 @@ class _$StringExceedsLength<T> implements StringExceedsLength<T> {
     TResult Function(MultiLineString<T> value)? multiLineString,
     TResult Function(StringExceedsLength<T> value)? stringExceedsLength,
     TResult Function(IntegerOutOfBounds<T> value)? integerOutOfBounds,
-    TResult Function(StringWithInvalidCharacters<T> value)? stringWithInvalidCharacters,
+    TResult Function(StringWithInvalidCharacters<T> value)?
+        stringWithInvalidCharacters,
     TResult Function(InvalidCoordinates<T> value)? invalidCoordinate,
     TResult Function(EmptySet<T> value)? emptySet,
     TResult Function(EmptyList<T> value)? emptyList,
@@ -1671,30 +1761,31 @@ class _$StringExceedsLength<T> implements StringExceedsLength<T> {
 }
 
 abstract class StringExceedsLength<T> implements ValueFailure<T> {
-  const factory StringExceedsLength({required String failedValue, required int maxLength}) =
-      _$StringExceedsLength<T>;
+  const factory StringExceedsLength(
+      {required String failedValue,
+      required int maxLength}) = _$StringExceedsLength<T>;
 
   String get failedValue => throw _privateConstructorUsedError;
-
   int get maxLength => throw _privateConstructorUsedError;
-
   @JsonKey(ignore: true)
-  $StringExceedsLengthCopyWith<T, StringExceedsLength<T>> get copyWith => throw _privateConstructorUsedError;
+  $StringExceedsLengthCopyWith<T, StringExceedsLength<T>> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $IntegerOutOfBoundsCopyWith<T, $Res> {
-  factory $IntegerOutOfBoundsCopyWith(
-          IntegerOutOfBounds<T> value, $Res Function(IntegerOutOfBounds<T>) then) =
+  factory $IntegerOutOfBoundsCopyWith(IntegerOutOfBounds<T> value,
+          $Res Function(IntegerOutOfBounds<T>) then) =
       _$IntegerOutOfBoundsCopyWithImpl<T, $Res>;
-
   $Res call({int failedValue});
 }
 
 /// @nodoc
-class _$IntegerOutOfBoundsCopyWithImpl<T, $Res> extends _$ValueFailureCopyWithImpl<T, $Res>
+class _$IntegerOutOfBoundsCopyWithImpl<T, $Res>
+    extends _$ValueFailureCopyWithImpl<T, $Res>
     implements $IntegerOutOfBoundsCopyWith<T, $Res> {
-  _$IntegerOutOfBoundsCopyWithImpl(IntegerOutOfBounds<T> _value, $Res Function(IntegerOutOfBounds<T>) _then)
+  _$IntegerOutOfBoundsCopyWithImpl(
+      IntegerOutOfBounds<T> _value, $Res Function(IntegerOutOfBounds<T>) _then)
       : super(_value, (v) => _then(v as IntegerOutOfBounds<T>));
 
   @override
@@ -1731,16 +1822,19 @@ class _$IntegerOutOfBounds<T> implements IntegerOutOfBounds<T> {
     return identical(this, other) ||
         (other is IntegerOutOfBounds<T> &&
             (identical(other.failedValue, failedValue) ||
-                const DeepCollectionEquality().equals(other.failedValue, failedValue)));
+                const DeepCollectionEquality()
+                    .equals(other.failedValue, failedValue)));
   }
 
   @override
-  int get hashCode => runtimeType.hashCode ^ const DeepCollectionEquality().hash(failedValue);
+  int get hashCode =>
+      runtimeType.hashCode ^ const DeepCollectionEquality().hash(failedValue);
 
   @JsonKey(ignore: true)
   @override
   $IntegerOutOfBoundsCopyWith<T, IntegerOutOfBounds<T>> get copyWith =>
-      _$IntegerOutOfBoundsCopyWithImpl<T, IntegerOutOfBounds<T>>(this, _$identity);
+      _$IntegerOutOfBoundsCopyWithImpl<T, IntegerOutOfBounds<T>>(
+          this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -1753,13 +1847,15 @@ class _$IntegerOutOfBounds<T> implements IntegerOutOfBounds<T> {
     required TResult Function(String failedValue) invalidName,
     required TResult Function(String failedValue) emptyString,
     required TResult Function(String failedValue) multiLineString,
-    required TResult Function(String failedValue, int maxLength) stringExceedsLength,
+    required TResult Function(String failedValue, int maxLength)
+        stringExceedsLength,
     required TResult Function(int failedValue) integerOutOfBounds,
     required TResult Function(String failedValue) stringWithInvalidCharacters,
     required TResult Function(double failedValue) invalidCoordinate,
     required TResult Function(T failedValue) emptySet,
     required TResult Function(T failedValue) emptyList,
-    required TResult Function(T failedValue, int maxLength) collectionExceedsLength,
+    required TResult Function(T failedValue, int maxLength)
+        collectionExceedsLength,
   }) {
     return integerOutOfBounds(failedValue);
   }
@@ -1803,11 +1899,13 @@ class _$IntegerOutOfBounds<T> implements IntegerOutOfBounds<T> {
     required TResult Function(MultiLineString<T> value) multiLineString,
     required TResult Function(StringExceedsLength<T> value) stringExceedsLength,
     required TResult Function(IntegerOutOfBounds<T> value) integerOutOfBounds,
-    required TResult Function(StringWithInvalidCharacters<T> value) stringWithInvalidCharacters,
+    required TResult Function(StringWithInvalidCharacters<T> value)
+        stringWithInvalidCharacters,
     required TResult Function(InvalidCoordinates<T> value) invalidCoordinate,
     required TResult Function(EmptySet<T> value) emptySet,
     required TResult Function(EmptyList<T> value) emptyList,
-    required TResult Function(CollectionExceedsLength<T> value) collectionExceedsLength,
+    required TResult Function(CollectionExceedsLength<T> value)
+        collectionExceedsLength,
   }) {
     return integerOutOfBounds(this);
   }
@@ -1825,7 +1923,8 @@ class _$IntegerOutOfBounds<T> implements IntegerOutOfBounds<T> {
     TResult Function(MultiLineString<T> value)? multiLineString,
     TResult Function(StringExceedsLength<T> value)? stringExceedsLength,
     TResult Function(IntegerOutOfBounds<T> value)? integerOutOfBounds,
-    TResult Function(StringWithInvalidCharacters<T> value)? stringWithInvalidCharacters,
+    TResult Function(StringWithInvalidCharacters<T> value)?
+        stringWithInvalidCharacters,
     TResult Function(InvalidCoordinates<T> value)? invalidCoordinate,
     TResult Function(EmptySet<T> value)? emptySet,
     TResult Function(EmptyList<T> value)? emptyList,
@@ -1840,31 +1939,36 @@ class _$IntegerOutOfBounds<T> implements IntegerOutOfBounds<T> {
 }
 
 abstract class IntegerOutOfBounds<T> implements ValueFailure<T> {
-  const factory IntegerOutOfBounds({required int failedValue}) = _$IntegerOutOfBounds<T>;
+  const factory IntegerOutOfBounds({required int failedValue}) =
+      _$IntegerOutOfBounds<T>;
 
   int get failedValue => throw _privateConstructorUsedError;
-
   @JsonKey(ignore: true)
-  $IntegerOutOfBoundsCopyWith<T, IntegerOutOfBounds<T>> get copyWith => throw _privateConstructorUsedError;
+  $IntegerOutOfBoundsCopyWith<T, IntegerOutOfBounds<T>> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $StringWithInvalidCharactersCopyWith<T, $Res> {
   factory $StringWithInvalidCharactersCopyWith(
-          StringWithInvalidCharacters<T> value, $Res Function(StringWithInvalidCharacters<T>) then) =
+          StringWithInvalidCharacters<T> value,
+          $Res Function(StringWithInvalidCharacters<T>) then) =
       _$StringWithInvalidCharactersCopyWithImpl<T, $Res>;
   $Res call({String failedValue});
 }
 
 /// @nodoc
-class _$StringWithInvalidCharactersCopyWithImpl<T, $Res> extends _$ValueFailureCopyWithImpl<T, $Res>
+class _$StringWithInvalidCharactersCopyWithImpl<T, $Res>
+    extends _$ValueFailureCopyWithImpl<T, $Res>
     implements $StringWithInvalidCharactersCopyWith<T, $Res> {
   _$StringWithInvalidCharactersCopyWithImpl(
-      StringWithInvalidCharacters<T> _value, $Res Function(StringWithInvalidCharacters<T>) _then)
+      StringWithInvalidCharacters<T> _value,
+      $Res Function(StringWithInvalidCharacters<T>) _then)
       : super(_value, (v) => _then(v as StringWithInvalidCharacters<T>));
 
   @override
-  StringWithInvalidCharacters<T> get _value => super._value as StringWithInvalidCharacters<T>;
+  StringWithInvalidCharacters<T> get _value =>
+      super._value as StringWithInvalidCharacters<T>;
 
   @override
   $Res call({
@@ -1881,7 +1985,8 @@ class _$StringWithInvalidCharactersCopyWithImpl<T, $Res> extends _$ValueFailureC
 
 /// @nodoc
 
-class _$StringWithInvalidCharacters<T> implements StringWithInvalidCharacters<T> {
+class _$StringWithInvalidCharacters<T>
+    implements StringWithInvalidCharacters<T> {
   const _$StringWithInvalidCharacters({required this.failedValue});
 
   @override
@@ -1897,16 +2002,19 @@ class _$StringWithInvalidCharacters<T> implements StringWithInvalidCharacters<T>
     return identical(this, other) ||
         (other is StringWithInvalidCharacters<T> &&
             (identical(other.failedValue, failedValue) ||
-                const DeepCollectionEquality().equals(other.failedValue, failedValue)));
+                const DeepCollectionEquality()
+                    .equals(other.failedValue, failedValue)));
   }
 
   @override
-  int get hashCode => runtimeType.hashCode ^ const DeepCollectionEquality().hash(failedValue);
+  int get hashCode =>
+      runtimeType.hashCode ^ const DeepCollectionEquality().hash(failedValue);
 
   @JsonKey(ignore: true)
   @override
-  $StringWithInvalidCharactersCopyWith<T, StringWithInvalidCharacters<T>> get copyWith =>
-      _$StringWithInvalidCharactersCopyWithImpl<T, StringWithInvalidCharacters<T>>(this, _$identity);
+  $StringWithInvalidCharactersCopyWith<T, StringWithInvalidCharacters<T>>
+      get copyWith => _$StringWithInvalidCharactersCopyWithImpl<T,
+          StringWithInvalidCharacters<T>>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -1919,13 +2027,15 @@ class _$StringWithInvalidCharacters<T> implements StringWithInvalidCharacters<T>
     required TResult Function(String failedValue) invalidName,
     required TResult Function(String failedValue) emptyString,
     required TResult Function(String failedValue) multiLineString,
-    required TResult Function(String failedValue, int maxLength) stringExceedsLength,
+    required TResult Function(String failedValue, int maxLength)
+        stringExceedsLength,
     required TResult Function(int failedValue) integerOutOfBounds,
     required TResult Function(String failedValue) stringWithInvalidCharacters,
     required TResult Function(double failedValue) invalidCoordinate,
     required TResult Function(T failedValue) emptySet,
     required TResult Function(T failedValue) emptyList,
-    required TResult Function(T failedValue, int maxLength) collectionExceedsLength,
+    required TResult Function(T failedValue, int maxLength)
+        collectionExceedsLength,
   }) {
     return stringWithInvalidCharacters(failedValue);
   }
@@ -1969,11 +2079,13 @@ class _$StringWithInvalidCharacters<T> implements StringWithInvalidCharacters<T>
     required TResult Function(MultiLineString<T> value) multiLineString,
     required TResult Function(StringExceedsLength<T> value) stringExceedsLength,
     required TResult Function(IntegerOutOfBounds<T> value) integerOutOfBounds,
-    required TResult Function(StringWithInvalidCharacters<T> value) stringWithInvalidCharacters,
+    required TResult Function(StringWithInvalidCharacters<T> value)
+        stringWithInvalidCharacters,
     required TResult Function(InvalidCoordinates<T> value) invalidCoordinate,
     required TResult Function(EmptySet<T> value) emptySet,
     required TResult Function(EmptyList<T> value) emptyList,
-    required TResult Function(CollectionExceedsLength<T> value) collectionExceedsLength,
+    required TResult Function(CollectionExceedsLength<T> value)
+        collectionExceedsLength,
   }) {
     return stringWithInvalidCharacters(this);
   }
@@ -1991,7 +2103,8 @@ class _$StringWithInvalidCharacters<T> implements StringWithInvalidCharacters<T>
     TResult Function(MultiLineString<T> value)? multiLineString,
     TResult Function(StringExceedsLength<T> value)? stringExceedsLength,
     TResult Function(IntegerOutOfBounds<T> value)? integerOutOfBounds,
-    TResult Function(StringWithInvalidCharacters<T> value)? stringWithInvalidCharacters,
+    TResult Function(StringWithInvalidCharacters<T> value)?
+        stringWithInvalidCharacters,
     TResult Function(InvalidCoordinates<T> value)? invalidCoordinate,
     TResult Function(EmptySet<T> value)? emptySet,
     TResult Function(EmptyList<T> value)? emptyList,
@@ -2010,25 +2123,25 @@ abstract class StringWithInvalidCharacters<T> implements ValueFailure<T> {
       _$StringWithInvalidCharacters<T>;
 
   String get failedValue => throw _privateConstructorUsedError;
-
   @JsonKey(ignore: true)
-  $StringWithInvalidCharactersCopyWith<T, StringWithInvalidCharacters<T>> get copyWith =>
-      throw _privateConstructorUsedError;
+  $StringWithInvalidCharactersCopyWith<T, StringWithInvalidCharacters<T>>
+      get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $InvalidCoordinatesCopyWith<T, $Res> {
-  factory $InvalidCoordinatesCopyWith(
-          InvalidCoordinates<T> value, $Res Function(InvalidCoordinates<T>) then) =
+  factory $InvalidCoordinatesCopyWith(InvalidCoordinates<T> value,
+          $Res Function(InvalidCoordinates<T>) then) =
       _$InvalidCoordinatesCopyWithImpl<T, $Res>;
-
   $Res call({double failedValue});
 }
 
 /// @nodoc
-class _$InvalidCoordinatesCopyWithImpl<T, $Res> extends _$ValueFailureCopyWithImpl<T, $Res>
+class _$InvalidCoordinatesCopyWithImpl<T, $Res>
+    extends _$ValueFailureCopyWithImpl<T, $Res>
     implements $InvalidCoordinatesCopyWith<T, $Res> {
-  _$InvalidCoordinatesCopyWithImpl(InvalidCoordinates<T> _value, $Res Function(InvalidCoordinates<T>) _then)
+  _$InvalidCoordinatesCopyWithImpl(
+      InvalidCoordinates<T> _value, $Res Function(InvalidCoordinates<T>) _then)
       : super(_value, (v) => _then(v as InvalidCoordinates<T>));
 
   @override
@@ -2065,16 +2178,19 @@ class _$InvalidCoordinates<T> implements InvalidCoordinates<T> {
     return identical(this, other) ||
         (other is InvalidCoordinates<T> &&
             (identical(other.failedValue, failedValue) ||
-                const DeepCollectionEquality().equals(other.failedValue, failedValue)));
+                const DeepCollectionEquality()
+                    .equals(other.failedValue, failedValue)));
   }
 
   @override
-  int get hashCode => runtimeType.hashCode ^ const DeepCollectionEquality().hash(failedValue);
+  int get hashCode =>
+      runtimeType.hashCode ^ const DeepCollectionEquality().hash(failedValue);
 
   @JsonKey(ignore: true)
   @override
   $InvalidCoordinatesCopyWith<T, InvalidCoordinates<T>> get copyWith =>
-      _$InvalidCoordinatesCopyWithImpl<T, InvalidCoordinates<T>>(this, _$identity);
+      _$InvalidCoordinatesCopyWithImpl<T, InvalidCoordinates<T>>(
+          this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -2087,13 +2203,15 @@ class _$InvalidCoordinates<T> implements InvalidCoordinates<T> {
     required TResult Function(String failedValue) invalidName,
     required TResult Function(String failedValue) emptyString,
     required TResult Function(String failedValue) multiLineString,
-    required TResult Function(String failedValue, int maxLength) stringExceedsLength,
+    required TResult Function(String failedValue, int maxLength)
+        stringExceedsLength,
     required TResult Function(int failedValue) integerOutOfBounds,
     required TResult Function(String failedValue) stringWithInvalidCharacters,
     required TResult Function(double failedValue) invalidCoordinate,
     required TResult Function(T failedValue) emptySet,
     required TResult Function(T failedValue) emptyList,
-    required TResult Function(T failedValue, int maxLength) collectionExceedsLength,
+    required TResult Function(T failedValue, int maxLength)
+        collectionExceedsLength,
   }) {
     return invalidCoordinate(failedValue);
   }
@@ -2137,11 +2255,13 @@ class _$InvalidCoordinates<T> implements InvalidCoordinates<T> {
     required TResult Function(MultiLineString<T> value) multiLineString,
     required TResult Function(StringExceedsLength<T> value) stringExceedsLength,
     required TResult Function(IntegerOutOfBounds<T> value) integerOutOfBounds,
-    required TResult Function(StringWithInvalidCharacters<T> value) stringWithInvalidCharacters,
+    required TResult Function(StringWithInvalidCharacters<T> value)
+        stringWithInvalidCharacters,
     required TResult Function(InvalidCoordinates<T> value) invalidCoordinate,
     required TResult Function(EmptySet<T> value) emptySet,
     required TResult Function(EmptyList<T> value) emptyList,
-    required TResult Function(CollectionExceedsLength<T> value) collectionExceedsLength,
+    required TResult Function(CollectionExceedsLength<T> value)
+        collectionExceedsLength,
   }) {
     return invalidCoordinate(this);
   }
@@ -2159,7 +2279,8 @@ class _$InvalidCoordinates<T> implements InvalidCoordinates<T> {
     TResult Function(MultiLineString<T> value)? multiLineString,
     TResult Function(StringExceedsLength<T> value)? stringExceedsLength,
     TResult Function(IntegerOutOfBounds<T> value)? integerOutOfBounds,
-    TResult Function(StringWithInvalidCharacters<T> value)? stringWithInvalidCharacters,
+    TResult Function(StringWithInvalidCharacters<T> value)?
+        stringWithInvalidCharacters,
     TResult Function(InvalidCoordinates<T> value)? invalidCoordinate,
     TResult Function(EmptySet<T> value)? emptySet,
     TResult Function(EmptyList<T> value)? emptyList,
@@ -2174,24 +2295,26 @@ class _$InvalidCoordinates<T> implements InvalidCoordinates<T> {
 }
 
 abstract class InvalidCoordinates<T> implements ValueFailure<T> {
-  const factory InvalidCoordinates({required double failedValue}) = _$InvalidCoordinates<T>;
+  const factory InvalidCoordinates({required double failedValue}) =
+      _$InvalidCoordinates<T>;
 
   double get failedValue => throw _privateConstructorUsedError;
-
   @JsonKey(ignore: true)
-  $InvalidCoordinatesCopyWith<T, InvalidCoordinates<T>> get copyWith => throw _privateConstructorUsedError;
+  $InvalidCoordinatesCopyWith<T, InvalidCoordinates<T>> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $EmptySetCopyWith<T, $Res> {
-  factory $EmptySetCopyWith(EmptySet<T> value, $Res Function(EmptySet<T>) then) =
+  factory $EmptySetCopyWith(
+          EmptySet<T> value, $Res Function(EmptySet<T>) then) =
       _$EmptySetCopyWithImpl<T, $Res>;
-
   $Res call({T failedValue});
 }
 
 /// @nodoc
-class _$EmptySetCopyWithImpl<T, $Res> extends _$ValueFailureCopyWithImpl<T, $Res>
+class _$EmptySetCopyWithImpl<T, $Res>
+    extends _$ValueFailureCopyWithImpl<T, $Res>
     implements $EmptySetCopyWith<T, $Res> {
   _$EmptySetCopyWithImpl(EmptySet<T> _value, $Res Function(EmptySet<T>) _then)
       : super(_value, (v) => _then(v as EmptySet<T>));
@@ -2230,11 +2353,13 @@ class _$EmptySet<T> implements EmptySet<T> {
     return identical(this, other) ||
         (other is EmptySet<T> &&
             (identical(other.failedValue, failedValue) ||
-                const DeepCollectionEquality().equals(other.failedValue, failedValue)));
+                const DeepCollectionEquality()
+                    .equals(other.failedValue, failedValue)));
   }
 
   @override
-  int get hashCode => runtimeType.hashCode ^ const DeepCollectionEquality().hash(failedValue);
+  int get hashCode =>
+      runtimeType.hashCode ^ const DeepCollectionEquality().hash(failedValue);
 
   @JsonKey(ignore: true)
   @override
@@ -2252,13 +2377,15 @@ class _$EmptySet<T> implements EmptySet<T> {
     required TResult Function(String failedValue) invalidName,
     required TResult Function(String failedValue) emptyString,
     required TResult Function(String failedValue) multiLineString,
-    required TResult Function(String failedValue, int maxLength) stringExceedsLength,
+    required TResult Function(String failedValue, int maxLength)
+        stringExceedsLength,
     required TResult Function(int failedValue) integerOutOfBounds,
     required TResult Function(String failedValue) stringWithInvalidCharacters,
     required TResult Function(double failedValue) invalidCoordinate,
     required TResult Function(T failedValue) emptySet,
     required TResult Function(T failedValue) emptyList,
-    required TResult Function(T failedValue, int maxLength) collectionExceedsLength,
+    required TResult Function(T failedValue, int maxLength)
+        collectionExceedsLength,
   }) {
     return emptySet(failedValue);
   }
@@ -2302,11 +2429,13 @@ class _$EmptySet<T> implements EmptySet<T> {
     required TResult Function(MultiLineString<T> value) multiLineString,
     required TResult Function(StringExceedsLength<T> value) stringExceedsLength,
     required TResult Function(IntegerOutOfBounds<T> value) integerOutOfBounds,
-    required TResult Function(StringWithInvalidCharacters<T> value) stringWithInvalidCharacters,
+    required TResult Function(StringWithInvalidCharacters<T> value)
+        stringWithInvalidCharacters,
     required TResult Function(InvalidCoordinates<T> value) invalidCoordinate,
     required TResult Function(EmptySet<T> value) emptySet,
     required TResult Function(EmptyList<T> value) emptyList,
-    required TResult Function(CollectionExceedsLength<T> value) collectionExceedsLength,
+    required TResult Function(CollectionExceedsLength<T> value)
+        collectionExceedsLength,
   }) {
     return emptySet(this);
   }
@@ -2324,7 +2453,8 @@ class _$EmptySet<T> implements EmptySet<T> {
     TResult Function(MultiLineString<T> value)? multiLineString,
     TResult Function(StringExceedsLength<T> value)? stringExceedsLength,
     TResult Function(IntegerOutOfBounds<T> value)? integerOutOfBounds,
-    TResult Function(StringWithInvalidCharacters<T> value)? stringWithInvalidCharacters,
+    TResult Function(StringWithInvalidCharacters<T> value)?
+        stringWithInvalidCharacters,
     TResult Function(InvalidCoordinates<T> value)? invalidCoordinate,
     TResult Function(EmptySet<T> value)? emptySet,
     TResult Function(EmptyList<T> value)? emptyList,
@@ -2342,23 +2472,25 @@ abstract class EmptySet<T> implements ValueFailure<T> {
   const factory EmptySet({required T failedValue}) = _$EmptySet<T>;
 
   T get failedValue => throw _privateConstructorUsedError;
-
   @JsonKey(ignore: true)
-  $EmptySetCopyWith<T, EmptySet<T>> get copyWith => throw _privateConstructorUsedError;
+  $EmptySetCopyWith<T, EmptySet<T>> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $EmptyListCopyWith<T, $Res> {
-  factory $EmptyListCopyWith(EmptyList<T> value, $Res Function(EmptyList<T>) then) =
+  factory $EmptyListCopyWith(
+          EmptyList<T> value, $Res Function(EmptyList<T>) then) =
       _$EmptyListCopyWithImpl<T, $Res>;
-
   $Res call({T failedValue});
 }
 
 /// @nodoc
-class _$EmptyListCopyWithImpl<T, $Res> extends _$ValueFailureCopyWithImpl<T, $Res>
+class _$EmptyListCopyWithImpl<T, $Res>
+    extends _$ValueFailureCopyWithImpl<T, $Res>
     implements $EmptyListCopyWith<T, $Res> {
-  _$EmptyListCopyWithImpl(EmptyList<T> _value, $Res Function(EmptyList<T>) _then)
+  _$EmptyListCopyWithImpl(
+      EmptyList<T> _value, $Res Function(EmptyList<T>) _then)
       : super(_value, (v) => _then(v as EmptyList<T>));
 
   @override
@@ -2395,11 +2527,13 @@ class _$EmptyList<T> implements EmptyList<T> {
     return identical(this, other) ||
         (other is EmptyList<T> &&
             (identical(other.failedValue, failedValue) ||
-                const DeepCollectionEquality().equals(other.failedValue, failedValue)));
+                const DeepCollectionEquality()
+                    .equals(other.failedValue, failedValue)));
   }
 
   @override
-  int get hashCode => runtimeType.hashCode ^ const DeepCollectionEquality().hash(failedValue);
+  int get hashCode =>
+      runtimeType.hashCode ^ const DeepCollectionEquality().hash(failedValue);
 
   @JsonKey(ignore: true)
   @override
@@ -2417,13 +2551,15 @@ class _$EmptyList<T> implements EmptyList<T> {
     required TResult Function(String failedValue) invalidName,
     required TResult Function(String failedValue) emptyString,
     required TResult Function(String failedValue) multiLineString,
-    required TResult Function(String failedValue, int maxLength) stringExceedsLength,
+    required TResult Function(String failedValue, int maxLength)
+        stringExceedsLength,
     required TResult Function(int failedValue) integerOutOfBounds,
     required TResult Function(String failedValue) stringWithInvalidCharacters,
     required TResult Function(double failedValue) invalidCoordinate,
     required TResult Function(T failedValue) emptySet,
     required TResult Function(T failedValue) emptyList,
-    required TResult Function(T failedValue, int maxLength) collectionExceedsLength,
+    required TResult Function(T failedValue, int maxLength)
+        collectionExceedsLength,
   }) {
     return emptyList(failedValue);
   }
@@ -2467,11 +2603,13 @@ class _$EmptyList<T> implements EmptyList<T> {
     required TResult Function(MultiLineString<T> value) multiLineString,
     required TResult Function(StringExceedsLength<T> value) stringExceedsLength,
     required TResult Function(IntegerOutOfBounds<T> value) integerOutOfBounds,
-    required TResult Function(StringWithInvalidCharacters<T> value) stringWithInvalidCharacters,
+    required TResult Function(StringWithInvalidCharacters<T> value)
+        stringWithInvalidCharacters,
     required TResult Function(InvalidCoordinates<T> value) invalidCoordinate,
     required TResult Function(EmptySet<T> value) emptySet,
     required TResult Function(EmptyList<T> value) emptyList,
-    required TResult Function(CollectionExceedsLength<T> value) collectionExceedsLength,
+    required TResult Function(CollectionExceedsLength<T> value)
+        collectionExceedsLength,
   }) {
     return emptyList(this);
   }
@@ -2489,7 +2627,8 @@ class _$EmptyList<T> implements EmptyList<T> {
     TResult Function(MultiLineString<T> value)? multiLineString,
     TResult Function(StringExceedsLength<T> value)? stringExceedsLength,
     TResult Function(IntegerOutOfBounds<T> value)? integerOutOfBounds,
-    TResult Function(StringWithInvalidCharacters<T> value)? stringWithInvalidCharacters,
+    TResult Function(StringWithInvalidCharacters<T> value)?
+        stringWithInvalidCharacters,
     TResult Function(InvalidCoordinates<T> value)? invalidCoordinate,
     TResult Function(EmptySet<T> value)? emptySet,
     TResult Function(EmptyList<T> value)? emptyList,
@@ -2507,29 +2646,30 @@ abstract class EmptyList<T> implements ValueFailure<T> {
   const factory EmptyList({required T failedValue}) = _$EmptyList<T>;
 
   T get failedValue => throw _privateConstructorUsedError;
-
   @JsonKey(ignore: true)
-  $EmptyListCopyWith<T, EmptyList<T>> get copyWith => throw _privateConstructorUsedError;
+  $EmptyListCopyWith<T, EmptyList<T>> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $CollectionExceedsLengthCopyWith<T, $Res> {
-  factory $CollectionExceedsLengthCopyWith(
-          CollectionExceedsLength<T> value, $Res Function(CollectionExceedsLength<T>) then) =
+  factory $CollectionExceedsLengthCopyWith(CollectionExceedsLength<T> value,
+          $Res Function(CollectionExceedsLength<T>) then) =
       _$CollectionExceedsLengthCopyWithImpl<T, $Res>;
-
   $Res call({T failedValue, int maxLength});
 }
 
 /// @nodoc
-class _$CollectionExceedsLengthCopyWithImpl<T, $Res> extends _$ValueFailureCopyWithImpl<T, $Res>
+class _$CollectionExceedsLengthCopyWithImpl<T, $Res>
+    extends _$ValueFailureCopyWithImpl<T, $Res>
     implements $CollectionExceedsLengthCopyWith<T, $Res> {
-  _$CollectionExceedsLengthCopyWithImpl(
-      CollectionExceedsLength<T> _value, $Res Function(CollectionExceedsLength<T>) _then)
+  _$CollectionExceedsLengthCopyWithImpl(CollectionExceedsLength<T> _value,
+      $Res Function(CollectionExceedsLength<T>) _then)
       : super(_value, (v) => _then(v as CollectionExceedsLength<T>));
 
   @override
-  CollectionExceedsLength<T> get _value => super._value as CollectionExceedsLength<T>;
+  CollectionExceedsLength<T> get _value =>
+      super._value as CollectionExceedsLength<T>;
 
   @override
   $Res call({
@@ -2552,7 +2692,8 @@ class _$CollectionExceedsLengthCopyWithImpl<T, $Res> extends _$ValueFailureCopyW
 /// @nodoc
 
 class _$CollectionExceedsLength<T> implements CollectionExceedsLength<T> {
-  const _$CollectionExceedsLength({required this.failedValue, required this.maxLength});
+  const _$CollectionExceedsLength(
+      {required this.failedValue, required this.maxLength});
 
   @override
   final T failedValue;
@@ -2569,9 +2710,11 @@ class _$CollectionExceedsLength<T> implements CollectionExceedsLength<T> {
     return identical(this, other) ||
         (other is CollectionExceedsLength<T> &&
             (identical(other.failedValue, failedValue) ||
-                const DeepCollectionEquality().equals(other.failedValue, failedValue)) &&
+                const DeepCollectionEquality()
+                    .equals(other.failedValue, failedValue)) &&
             (identical(other.maxLength, maxLength) ||
-                const DeepCollectionEquality().equals(other.maxLength, maxLength)));
+                const DeepCollectionEquality()
+                    .equals(other.maxLength, maxLength)));
   }
 
   @override
@@ -2582,8 +2725,10 @@ class _$CollectionExceedsLength<T> implements CollectionExceedsLength<T> {
 
   @JsonKey(ignore: true)
   @override
-  $CollectionExceedsLengthCopyWith<T, CollectionExceedsLength<T>> get copyWith =>
-      _$CollectionExceedsLengthCopyWithImpl<T, CollectionExceedsLength<T>>(this, _$identity);
+  $CollectionExceedsLengthCopyWith<T, CollectionExceedsLength<T>>
+      get copyWith =>
+          _$CollectionExceedsLengthCopyWithImpl<T, CollectionExceedsLength<T>>(
+              this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -2596,13 +2741,15 @@ class _$CollectionExceedsLength<T> implements CollectionExceedsLength<T> {
     required TResult Function(String failedValue) invalidName,
     required TResult Function(String failedValue) emptyString,
     required TResult Function(String failedValue) multiLineString,
-    required TResult Function(String failedValue, int maxLength) stringExceedsLength,
+    required TResult Function(String failedValue, int maxLength)
+        stringExceedsLength,
     required TResult Function(int failedValue) integerOutOfBounds,
     required TResult Function(String failedValue) stringWithInvalidCharacters,
     required TResult Function(double failedValue) invalidCoordinate,
     required TResult Function(T failedValue) emptySet,
     required TResult Function(T failedValue) emptyList,
-    required TResult Function(T failedValue, int maxLength) collectionExceedsLength,
+    required TResult Function(T failedValue, int maxLength)
+        collectionExceedsLength,
   }) {
     return collectionExceedsLength(failedValue, maxLength);
   }
@@ -2646,11 +2793,13 @@ class _$CollectionExceedsLength<T> implements CollectionExceedsLength<T> {
     required TResult Function(MultiLineString<T> value) multiLineString,
     required TResult Function(StringExceedsLength<T> value) stringExceedsLength,
     required TResult Function(IntegerOutOfBounds<T> value) integerOutOfBounds,
-    required TResult Function(StringWithInvalidCharacters<T> value) stringWithInvalidCharacters,
+    required TResult Function(StringWithInvalidCharacters<T> value)
+        stringWithInvalidCharacters,
     required TResult Function(InvalidCoordinates<T> value) invalidCoordinate,
     required TResult Function(EmptySet<T> value) emptySet,
     required TResult Function(EmptyList<T> value) emptyList,
-    required TResult Function(CollectionExceedsLength<T> value) collectionExceedsLength,
+    required TResult Function(CollectionExceedsLength<T> value)
+        collectionExceedsLength,
   }) {
     return collectionExceedsLength(this);
   }
@@ -2668,7 +2817,8 @@ class _$CollectionExceedsLength<T> implements CollectionExceedsLength<T> {
     TResult Function(MultiLineString<T> value)? multiLineString,
     TResult Function(StringExceedsLength<T> value)? stringExceedsLength,
     TResult Function(IntegerOutOfBounds<T> value)? integerOutOfBounds,
-    TResult Function(StringWithInvalidCharacters<T> value)? stringWithInvalidCharacters,
+    TResult Function(StringWithInvalidCharacters<T> value)?
+        stringWithInvalidCharacters,
     TResult Function(InvalidCoordinates<T> value)? invalidCoordinate,
     TResult Function(EmptySet<T> value)? emptySet,
     TResult Function(EmptyList<T> value)? emptyList,
@@ -2683,14 +2833,13 @@ class _$CollectionExceedsLength<T> implements CollectionExceedsLength<T> {
 }
 
 abstract class CollectionExceedsLength<T> implements ValueFailure<T> {
-  const factory CollectionExceedsLength({required T failedValue, required int maxLength}) =
-      _$CollectionExceedsLength<T>;
+  const factory CollectionExceedsLength(
+      {required T failedValue,
+      required int maxLength}) = _$CollectionExceedsLength<T>;
 
   T get failedValue => throw _privateConstructorUsedError;
-
   int get maxLength => throw _privateConstructorUsedError;
-
   @JsonKey(ignore: true)
-  $CollectionExceedsLengthCopyWith<T, CollectionExceedsLength<T>> get copyWith =>
-      throw _privateConstructorUsedError;
+  $CollectionExceedsLengthCopyWith<T, CollectionExceedsLength<T>>
+      get copyWith => throw _privateConstructorUsedError;
 }

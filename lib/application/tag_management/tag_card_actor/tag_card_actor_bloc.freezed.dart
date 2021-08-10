@@ -61,7 +61,8 @@ mixin _$TagCardActorEvent {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Initialized value) initialized,
-    required TResult Function(_DismissedFromInterests value) dismissedFromInterests,
+    required TResult Function(_DismissedFromInterests value)
+        dismissedFromInterests,
     required TResult Function(_AddedToInterests value) addedToInterests,
   }) =>
       throw _privateConstructorUsedError;
@@ -75,7 +76,8 @@ mixin _$TagCardActorEvent {
       throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
-  $TagCardActorEventCopyWith<TagCardActorEvent> get copyWith => throw _privateConstructorUsedError;
+  $TagCardActorEventCopyWith<TagCardActorEvent> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -89,11 +91,11 @@ abstract class $TagCardActorEventCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$TagCardActorEventCopyWithImpl<$Res> implements $TagCardActorEventCopyWith<$Res> {
+class _$TagCardActorEventCopyWithImpl<$Res>
+    implements $TagCardActorEventCopyWith<$Res> {
   _$TagCardActorEventCopyWithImpl(this._value, this._then);
 
   final TagCardActorEvent _value;
-
   // ignore: unused_field
   final $Res Function(TagCardActorEvent) _then;
 
@@ -118,10 +120,11 @@ class _$TagCardActorEventCopyWithImpl<$Res> implements $TagCardActorEventCopyWit
 }
 
 /// @nodoc
-abstract class _$InitializedCopyWith<$Res> implements $TagCardActorEventCopyWith<$Res> {
-  factory _$InitializedCopyWith(_Initialized value, $Res Function(_Initialized) then) =
+abstract class _$InitializedCopyWith<$Res>
+    implements $TagCardActorEventCopyWith<$Res> {
+  factory _$InitializedCopyWith(
+          _Initialized value, $Res Function(_Initialized) then) =
       __$InitializedCopyWithImpl<$Res>;
-
   @override
   $Res call({Tag tag, Set<UniqueId> interestsIds});
 
@@ -130,9 +133,11 @@ abstract class _$InitializedCopyWith<$Res> implements $TagCardActorEventCopyWith
 }
 
 /// @nodoc
-class __$InitializedCopyWithImpl<$Res> extends _$TagCardActorEventCopyWithImpl<$Res>
+class __$InitializedCopyWithImpl<$Res>
+    extends _$TagCardActorEventCopyWithImpl<$Res>
     implements _$InitializedCopyWith<$Res> {
-  __$InitializedCopyWithImpl(_Initialized _value, $Res Function(_Initialized) _then)
+  __$InitializedCopyWithImpl(
+      _Initialized _value, $Res Function(_Initialized) _then)
       : super(_value, (v) => _then(v as _Initialized));
 
   @override
@@ -175,9 +180,11 @@ class _$_Initialized implements _Initialized {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other is _Initialized &&
-            (identical(other.tag, tag) || const DeepCollectionEquality().equals(other.tag, tag)) &&
+            (identical(other.tag, tag) ||
+                const DeepCollectionEquality().equals(other.tag, tag)) &&
             (identical(other.interestsIds, interestsIds) ||
-                const DeepCollectionEquality().equals(other.interestsIds, interestsIds)));
+                const DeepCollectionEquality()
+                    .equals(other.interestsIds, interestsIds)));
   }
 
   @override
@@ -219,7 +226,8 @@ class _$_Initialized implements _Initialized {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Initialized value) initialized,
-    required TResult Function(_DismissedFromInterests value) dismissedFromInterests,
+    required TResult Function(_DismissedFromInterests value)
+        dismissedFromInterests,
     required TResult Function(_AddedToInterests value) addedToInterests,
   }) {
     return initialized(this);
@@ -241,24 +249,24 @@ class _$_Initialized implements _Initialized {
 }
 
 abstract class _Initialized implements TagCardActorEvent {
-  const factory _Initialized(Tag tag, Set<UniqueId> interestsIds) = _$_Initialized;
+  const factory _Initialized(Tag tag, Set<UniqueId> interestsIds) =
+      _$_Initialized;
 
   @override
   Tag get tag => throw _privateConstructorUsedError;
-
   Set<UniqueId> get interestsIds => throw _privateConstructorUsedError;
-
   @override
   @JsonKey(ignore: true)
-  _$InitializedCopyWith<_Initialized> get copyWith => throw _privateConstructorUsedError;
+  _$InitializedCopyWith<_Initialized> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$DismissedFromInterestsCopyWith<$Res> implements $TagCardActorEventCopyWith<$Res> {
-  factory _$DismissedFromInterestsCopyWith(
-          _DismissedFromInterests value, $Res Function(_DismissedFromInterests) then) =
+abstract class _$DismissedFromInterestsCopyWith<$Res>
+    implements $TagCardActorEventCopyWith<$Res> {
+  factory _$DismissedFromInterestsCopyWith(_DismissedFromInterests value,
+          $Res Function(_DismissedFromInterests) then) =
       __$DismissedFromInterestsCopyWithImpl<$Res>;
-
   @override
   $Res call({Tag tag});
 
@@ -267,10 +275,11 @@ abstract class _$DismissedFromInterestsCopyWith<$Res> implements $TagCardActorEv
 }
 
 /// @nodoc
-class __$DismissedFromInterestsCopyWithImpl<$Res> extends _$TagCardActorEventCopyWithImpl<$Res>
+class __$DismissedFromInterestsCopyWithImpl<$Res>
+    extends _$TagCardActorEventCopyWithImpl<$Res>
     implements _$DismissedFromInterestsCopyWith<$Res> {
-  __$DismissedFromInterestsCopyWithImpl(
-      _DismissedFromInterests _value, $Res Function(_DismissedFromInterests) _then)
+  __$DismissedFromInterestsCopyWithImpl(_DismissedFromInterests _value,
+      $Res Function(_DismissedFromInterests) _then)
       : super(_value, (v) => _then(v as _DismissedFromInterests));
 
   @override
@@ -306,16 +315,19 @@ class _$_DismissedFromInterests implements _DismissedFromInterests {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other is _DismissedFromInterests &&
-            (identical(other.tag, tag) || const DeepCollectionEquality().equals(other.tag, tag)));
+            (identical(other.tag, tag) ||
+                const DeepCollectionEquality().equals(other.tag, tag)));
   }
 
   @override
-  int get hashCode => runtimeType.hashCode ^ const DeepCollectionEquality().hash(tag);
+  int get hashCode =>
+      runtimeType.hashCode ^ const DeepCollectionEquality().hash(tag);
 
   @JsonKey(ignore: true)
   @override
   _$DismissedFromInterestsCopyWith<_DismissedFromInterests> get copyWith =>
-      __$DismissedFromInterestsCopyWithImpl<_DismissedFromInterests>(this, _$identity);
+      __$DismissedFromInterestsCopyWithImpl<_DismissedFromInterests>(
+          this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -345,7 +357,8 @@ class _$_DismissedFromInterests implements _DismissedFromInterests {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Initialized value) initialized,
-    required TResult Function(_DismissedFromInterests value) dismissedFromInterests,
+    required TResult Function(_DismissedFromInterests value)
+        dismissedFromInterests,
     required TResult Function(_AddedToInterests value) addedToInterests,
   }) {
     return dismissedFromInterests(this);
@@ -378,10 +391,11 @@ abstract class _DismissedFromInterests implements TagCardActorEvent {
 }
 
 /// @nodoc
-abstract class _$AddedToInterestsCopyWith<$Res> implements $TagCardActorEventCopyWith<$Res> {
-  factory _$AddedToInterestsCopyWith(_AddedToInterests value, $Res Function(_AddedToInterests) then) =
+abstract class _$AddedToInterestsCopyWith<$Res>
+    implements $TagCardActorEventCopyWith<$Res> {
+  factory _$AddedToInterestsCopyWith(
+          _AddedToInterests value, $Res Function(_AddedToInterests) then) =
       __$AddedToInterestsCopyWithImpl<$Res>;
-
   @override
   $Res call({Tag tag});
 
@@ -390,9 +404,11 @@ abstract class _$AddedToInterestsCopyWith<$Res> implements $TagCardActorEventCop
 }
 
 /// @nodoc
-class __$AddedToInterestsCopyWithImpl<$Res> extends _$TagCardActorEventCopyWithImpl<$Res>
+class __$AddedToInterestsCopyWithImpl<$Res>
+    extends _$TagCardActorEventCopyWithImpl<$Res>
     implements _$AddedToInterestsCopyWith<$Res> {
-  __$AddedToInterestsCopyWithImpl(_AddedToInterests _value, $Res Function(_AddedToInterests) _then)
+  __$AddedToInterestsCopyWithImpl(
+      _AddedToInterests _value, $Res Function(_AddedToInterests) _then)
       : super(_value, (v) => _then(v as _AddedToInterests));
 
   @override
@@ -428,11 +444,13 @@ class _$_AddedToInterests implements _AddedToInterests {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other is _AddedToInterests &&
-            (identical(other.tag, tag) || const DeepCollectionEquality().equals(other.tag, tag)));
+            (identical(other.tag, tag) ||
+                const DeepCollectionEquality().equals(other.tag, tag)));
   }
 
   @override
-  int get hashCode => runtimeType.hashCode ^ const DeepCollectionEquality().hash(tag);
+  int get hashCode =>
+      runtimeType.hashCode ^ const DeepCollectionEquality().hash(tag);
 
   @JsonKey(ignore: true)
   @override
@@ -467,7 +485,8 @@ class _$_AddedToInterests implements _AddedToInterests {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Initialized value) initialized,
-    required TResult Function(_DismissedFromInterests value) dismissedFromInterests,
+    required TResult Function(_DismissedFromInterests value)
+        dismissedFromInterests,
     required TResult Function(_AddedToInterests value) addedToInterests,
   }) {
     return addedToInterests(this);
@@ -493,10 +512,10 @@ abstract class _AddedToInterests implements TagCardActorEvent {
 
   @override
   Tag get tag => throw _privateConstructorUsedError;
-
   @override
   @JsonKey(ignore: true)
-  _$AddedToInterestsCopyWith<_AddedToInterests> get copyWith => throw _privateConstructorUsedError;
+  _$AddedToInterestsCopyWith<_AddedToInterests> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -605,11 +624,11 @@ abstract class $TagCardActorStateCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$TagCardActorStateCopyWithImpl<$Res> implements $TagCardActorStateCopyWith<$Res> {
+class _$TagCardActorStateCopyWithImpl<$Res>
+    implements $TagCardActorStateCopyWith<$Res> {
   _$TagCardActorStateCopyWithImpl(this._value, this._then);
 
   final TagCardActorState _value;
-
   // ignore: unused_field
   final $Res Function(TagCardActorState) _then;
 }
@@ -723,14 +742,17 @@ abstract class _Initial implements TagCardActorState {
 
 /// @nodoc
 abstract class _$InInterestsCopyWith<$Res> {
-  factory _$InInterestsCopyWith(_InInterests value, $Res Function(_InInterests) then) =
+  factory _$InInterestsCopyWith(
+          _InInterests value, $Res Function(_InInterests) then) =
       __$InInterestsCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$InInterestsCopyWithImpl<$Res> extends _$TagCardActorStateCopyWithImpl<$Res>
+class __$InInterestsCopyWithImpl<$Res>
+    extends _$TagCardActorStateCopyWithImpl<$Res>
     implements _$InInterestsCopyWith<$Res> {
-  __$InInterestsCopyWithImpl(_InInterests _value, $Res Function(_InInterests) _then)
+  __$InInterestsCopyWithImpl(
+      _InInterests _value, $Res Function(_InInterests) _then)
       : super(_value, (v) => _then(v as _InInterests));
 
   @override
@@ -830,14 +852,17 @@ abstract class _InInterests implements TagCardActorState {
 
 /// @nodoc
 abstract class _$NotInInterestsCopyWith<$Res> {
-  factory _$NotInInterestsCopyWith(_NotInInterests value, $Res Function(_NotInInterests) then) =
+  factory _$NotInInterestsCopyWith(
+          _NotInInterests value, $Res Function(_NotInInterests) then) =
       __$NotInInterestsCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$NotInInterestsCopyWithImpl<$Res> extends _$TagCardActorStateCopyWithImpl<$Res>
+class __$NotInInterestsCopyWithImpl<$Res>
+    extends _$TagCardActorStateCopyWithImpl<$Res>
     implements _$NotInInterestsCopyWith<$Res> {
-  __$NotInInterestsCopyWithImpl(_NotInInterests _value, $Res Function(_NotInInterests) _then)
+  __$NotInInterestsCopyWithImpl(
+      _NotInInterests _value, $Res Function(_NotInInterests) _then)
       : super(_value, (v) => _then(v as _NotInInterests));
 
   @override
@@ -943,9 +968,11 @@ abstract class _$ActionInProgressCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$ActionInProgressCopyWithImpl<$Res> extends _$TagCardActorStateCopyWithImpl<$Res>
+class __$ActionInProgressCopyWithImpl<$Res>
+    extends _$TagCardActorStateCopyWithImpl<$Res>
     implements _$ActionInProgressCopyWith<$Res> {
-  __$ActionInProgressCopyWithImpl(_ActionInProgress _value, $Res Function(_ActionInProgress) _then)
+  __$ActionInProgressCopyWithImpl(
+      _ActionInProgress _value, $Res Function(_ActionInProgress) _then)
       : super(_value, (v) => _then(v as _ActionInProgress));
 
   @override
@@ -1045,14 +1072,17 @@ abstract class _ActionInProgress implements TagCardActorState {
 
 /// @nodoc
 abstract class _$AdditionSuccessCopyWith<$Res> {
-  factory _$AdditionSuccessCopyWith(_AdditionSuccess value, $Res Function(_AdditionSuccess) then) =
+  factory _$AdditionSuccessCopyWith(
+          _AdditionSuccess value, $Res Function(_AdditionSuccess) then) =
       __$AdditionSuccessCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$AdditionSuccessCopyWithImpl<$Res> extends _$TagCardActorStateCopyWithImpl<$Res>
+class __$AdditionSuccessCopyWithImpl<$Res>
+    extends _$TagCardActorStateCopyWithImpl<$Res>
     implements _$AdditionSuccessCopyWith<$Res> {
-  __$AdditionSuccessCopyWithImpl(_AdditionSuccess _value, $Res Function(_AdditionSuccess) _then)
+  __$AdditionSuccessCopyWithImpl(
+      _AdditionSuccess _value, $Res Function(_AdditionSuccess) _then)
       : super(_value, (v) => _then(v as _AdditionSuccess));
 
   @override
@@ -1152,18 +1182,20 @@ abstract class _AdditionSuccess implements TagCardActorState {
 
 /// @nodoc
 abstract class _$AdditionFailureCopyWith<$Res> {
-  factory _$AdditionFailureCopyWith(_AdditionFailure value, $Res Function(_AdditionFailure) then) =
+  factory _$AdditionFailureCopyWith(
+          _AdditionFailure value, $Res Function(_AdditionFailure) then) =
       __$AdditionFailureCopyWithImpl<$Res>;
-
   $Res call({Failure<dynamic> failure});
 
   $FailureCopyWith<dynamic, $Res> get failure;
 }
 
 /// @nodoc
-class __$AdditionFailureCopyWithImpl<$Res> extends _$TagCardActorStateCopyWithImpl<$Res>
+class __$AdditionFailureCopyWithImpl<$Res>
+    extends _$TagCardActorStateCopyWithImpl<$Res>
     implements _$AdditionFailureCopyWith<$Res> {
-  __$AdditionFailureCopyWithImpl(_AdditionFailure _value, $Res Function(_AdditionFailure) _then)
+  __$AdditionFailureCopyWithImpl(
+      _AdditionFailure _value, $Res Function(_AdditionFailure) _then)
       : super(_value, (v) => _then(v as _AdditionFailure));
 
   @override
@@ -1211,7 +1243,8 @@ class _$_AdditionFailure implements _AdditionFailure {
   }
 
   @override
-  int get hashCode => runtimeType.hashCode ^ const DeepCollectionEquality().hash(failure);
+  int get hashCode =>
+      runtimeType.hashCode ^ const DeepCollectionEquality().hash(failure);
 
   @JsonKey(ignore: true)
   @override
@@ -1291,9 +1324,9 @@ abstract class _AdditionFailure implements TagCardActorState {
   const factory _AdditionFailure(Failure<dynamic> failure) = _$_AdditionFailure;
 
   Failure<dynamic> get failure => throw _privateConstructorUsedError;
-
   @JsonKey(ignore: true)
-  _$AdditionFailureCopyWith<_AdditionFailure> get copyWith => throw _privateConstructorUsedError;
+  _$AdditionFailureCopyWith<_AdditionFailure> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -1304,9 +1337,11 @@ abstract class _$DismissalSuccessCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$DismissalSuccessCopyWithImpl<$Res> extends _$TagCardActorStateCopyWithImpl<$Res>
+class __$DismissalSuccessCopyWithImpl<$Res>
+    extends _$TagCardActorStateCopyWithImpl<$Res>
     implements _$DismissalSuccessCopyWith<$Res> {
-  __$DismissalSuccessCopyWithImpl(_DismissalSuccess _value, $Res Function(_DismissalSuccess) _then)
+  __$DismissalSuccessCopyWithImpl(
+      _DismissalSuccess _value, $Res Function(_DismissalSuccess) _then)
       : super(_value, (v) => _then(v as _DismissalSuccess));
 
   @override
@@ -1415,9 +1450,11 @@ abstract class _$DismissalFailureCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$DismissalFailureCopyWithImpl<$Res> extends _$TagCardActorStateCopyWithImpl<$Res>
+class __$DismissalFailureCopyWithImpl<$Res>
+    extends _$TagCardActorStateCopyWithImpl<$Res>
     implements _$DismissalFailureCopyWith<$Res> {
-  __$DismissalFailureCopyWithImpl(_DismissalFailure _value, $Res Function(_DismissalFailure) _then)
+  __$DismissalFailureCopyWithImpl(
+      _DismissalFailure _value, $Res Function(_DismissalFailure) _then)
       : super(_value, (v) => _then(v as _DismissalFailure));
 
   @override
@@ -1465,7 +1502,8 @@ class _$_DismissalFailure implements _DismissalFailure {
   }
 
   @override
-  int get hashCode => runtimeType.hashCode ^ const DeepCollectionEquality().hash(failure);
+  int get hashCode =>
+      runtimeType.hashCode ^ const DeepCollectionEquality().hash(failure);
 
   @JsonKey(ignore: true)
   @override
@@ -1542,10 +1580,11 @@ class _$_DismissalFailure implements _DismissalFailure {
 }
 
 abstract class _DismissalFailure implements TagCardActorState {
-  const factory _DismissalFailure(Failure<dynamic> failure) = _$_DismissalFailure;
+  const factory _DismissalFailure(Failure<dynamic> failure) =
+      _$_DismissalFailure;
 
   Failure<dynamic> get failure => throw _privateConstructorUsedError;
-
   @JsonKey(ignore: true)
-  _$DismissalFailureCopyWith<_DismissalFailure> get copyWith => throw _privateConstructorUsedError;
+  _$DismissalFailureCopyWith<_DismissalFailure> get copyWith =>
+      throw _privateConstructorUsedError;
 }

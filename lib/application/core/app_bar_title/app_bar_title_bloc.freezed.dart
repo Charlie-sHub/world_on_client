@@ -104,9 +104,12 @@ mixin _$AppBarTitleEvent {
     required TResult Function(_Initialized value) initialized,
     required TResult Function(_ShowedMainFeed value) showedMainFeed,
     required TResult Function(_ShowedSearch value) showedSearch,
-    required TResult Function(_ShowedRecommendations value) showedRecommendations,
-    required TResult Function(_ShowedExperienceNavigation value) showedExperienceNavigation,
-    required TResult Function(_ShowedExperienceFinish value) showedExperienceFinish,
+    required TResult Function(_ShowedRecommendations value)
+        showedRecommendations,
+    required TResult Function(_ShowedExperienceNavigation value)
+        showedExperienceNavigation,
+    required TResult Function(_ShowedExperienceFinish value)
+        showedExperienceFinish,
     required TResult Function(_ShowedProfile value) showedProfile,
     required TResult Function(_ShowedNotifications value) showedNotifications,
     required TResult Function(_ShowedFollowers value) showedFollowers,
@@ -120,7 +123,8 @@ mixin _$AppBarTitleEvent {
     TResult Function(_ShowedMainFeed value)? showedMainFeed,
     TResult Function(_ShowedSearch value)? showedSearch,
     TResult Function(_ShowedRecommendations value)? showedRecommendations,
-    TResult Function(_ShowedExperienceNavigation value)? showedExperienceNavigation,
+    TResult Function(_ShowedExperienceNavigation value)?
+        showedExperienceNavigation,
     TResult Function(_ShowedExperienceFinish value)? showedExperienceFinish,
     TResult Function(_ShowedProfile value)? showedProfile,
     TResult Function(_ShowedNotifications value)? showedNotifications,
@@ -134,30 +138,34 @@ mixin _$AppBarTitleEvent {
 
 /// @nodoc
 abstract class $AppBarTitleEventCopyWith<$Res> {
-  factory $AppBarTitleEventCopyWith(AppBarTitleEvent value, $Res Function(AppBarTitleEvent) then) =
+  factory $AppBarTitleEventCopyWith(
+          AppBarTitleEvent value, $Res Function(AppBarTitleEvent) then) =
       _$AppBarTitleEventCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class _$AppBarTitleEventCopyWithImpl<$Res> implements $AppBarTitleEventCopyWith<$Res> {
+class _$AppBarTitleEventCopyWithImpl<$Res>
+    implements $AppBarTitleEventCopyWith<$Res> {
   _$AppBarTitleEventCopyWithImpl(this._value, this._then);
 
   final AppBarTitleEvent _value;
-
   // ignore: unused_field
   final $Res Function(AppBarTitleEvent) _then;
 }
 
 /// @nodoc
 abstract class _$InitializedCopyWith<$Res> {
-  factory _$InitializedCopyWith(_Initialized value, $Res Function(_Initialized) then) =
+  factory _$InitializedCopyWith(
+          _Initialized value, $Res Function(_Initialized) then) =
       __$InitializedCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$InitializedCopyWithImpl<$Res> extends _$AppBarTitleEventCopyWithImpl<$Res>
+class __$InitializedCopyWithImpl<$Res>
+    extends _$AppBarTitleEventCopyWithImpl<$Res>
     implements _$InitializedCopyWith<$Res> {
-  __$InitializedCopyWithImpl(_Initialized _value, $Res Function(_Initialized) _then)
+  __$InitializedCopyWithImpl(
+      _Initialized _value, $Res Function(_Initialized) _then)
       : super(_value, (v) => _then(v as _Initialized));
 
   @override
@@ -228,9 +236,12 @@ class _$_Initialized implements _Initialized {
     required TResult Function(_Initialized value) initialized,
     required TResult Function(_ShowedMainFeed value) showedMainFeed,
     required TResult Function(_ShowedSearch value) showedSearch,
-    required TResult Function(_ShowedRecommendations value) showedRecommendations,
-    required TResult Function(_ShowedExperienceNavigation value) showedExperienceNavigation,
-    required TResult Function(_ShowedExperienceFinish value) showedExperienceFinish,
+    required TResult Function(_ShowedRecommendations value)
+        showedRecommendations,
+    required TResult Function(_ShowedExperienceNavigation value)
+        showedExperienceNavigation,
+    required TResult Function(_ShowedExperienceFinish value)
+        showedExperienceFinish,
     required TResult Function(_ShowedProfile value) showedProfile,
     required TResult Function(_ShowedNotifications value) showedNotifications,
     required TResult Function(_ShowedFollowers value) showedFollowers,
@@ -247,7 +258,8 @@ class _$_Initialized implements _Initialized {
     TResult Function(_ShowedMainFeed value)? showedMainFeed,
     TResult Function(_ShowedSearch value)? showedSearch,
     TResult Function(_ShowedRecommendations value)? showedRecommendations,
-    TResult Function(_ShowedExperienceNavigation value)? showedExperienceNavigation,
+    TResult Function(_ShowedExperienceNavigation value)?
+        showedExperienceNavigation,
     TResult Function(_ShowedExperienceFinish value)? showedExperienceFinish,
     TResult Function(_ShowedProfile value)? showedProfile,
     TResult Function(_ShowedNotifications value)? showedNotifications,
@@ -269,14 +281,17 @@ abstract class _Initialized implements AppBarTitleEvent {
 
 /// @nodoc
 abstract class _$ShowedMainFeedCopyWith<$Res> {
-  factory _$ShowedMainFeedCopyWith(_ShowedMainFeed value, $Res Function(_ShowedMainFeed) then) =
+  factory _$ShowedMainFeedCopyWith(
+          _ShowedMainFeed value, $Res Function(_ShowedMainFeed) then) =
       __$ShowedMainFeedCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$ShowedMainFeedCopyWithImpl<$Res> extends _$AppBarTitleEventCopyWithImpl<$Res>
+class __$ShowedMainFeedCopyWithImpl<$Res>
+    extends _$AppBarTitleEventCopyWithImpl<$Res>
     implements _$ShowedMainFeedCopyWith<$Res> {
-  __$ShowedMainFeedCopyWithImpl(_ShowedMainFeed _value, $Res Function(_ShowedMainFeed) _then)
+  __$ShowedMainFeedCopyWithImpl(
+      _ShowedMainFeed _value, $Res Function(_ShowedMainFeed) _then)
       : super(_value, (v) => _then(v as _ShowedMainFeed));
 
   @override
@@ -347,9 +362,12 @@ class _$_ShowedMainFeed implements _ShowedMainFeed {
     required TResult Function(_Initialized value) initialized,
     required TResult Function(_ShowedMainFeed value) showedMainFeed,
     required TResult Function(_ShowedSearch value) showedSearch,
-    required TResult Function(_ShowedRecommendations value) showedRecommendations,
-    required TResult Function(_ShowedExperienceNavigation value) showedExperienceNavigation,
-    required TResult Function(_ShowedExperienceFinish value) showedExperienceFinish,
+    required TResult Function(_ShowedRecommendations value)
+        showedRecommendations,
+    required TResult Function(_ShowedExperienceNavigation value)
+        showedExperienceNavigation,
+    required TResult Function(_ShowedExperienceFinish value)
+        showedExperienceFinish,
     required TResult Function(_ShowedProfile value) showedProfile,
     required TResult Function(_ShowedNotifications value) showedNotifications,
     required TResult Function(_ShowedFollowers value) showedFollowers,
@@ -366,7 +384,8 @@ class _$_ShowedMainFeed implements _ShowedMainFeed {
     TResult Function(_ShowedMainFeed value)? showedMainFeed,
     TResult Function(_ShowedSearch value)? showedSearch,
     TResult Function(_ShowedRecommendations value)? showedRecommendations,
-    TResult Function(_ShowedExperienceNavigation value)? showedExperienceNavigation,
+    TResult Function(_ShowedExperienceNavigation value)?
+        showedExperienceNavigation,
     TResult Function(_ShowedExperienceFinish value)? showedExperienceFinish,
     TResult Function(_ShowedProfile value)? showedProfile,
     TResult Function(_ShowedNotifications value)? showedNotifications,
@@ -388,14 +407,17 @@ abstract class _ShowedMainFeed implements AppBarTitleEvent {
 
 /// @nodoc
 abstract class _$ShowedSearchCopyWith<$Res> {
-  factory _$ShowedSearchCopyWith(_ShowedSearch value, $Res Function(_ShowedSearch) then) =
+  factory _$ShowedSearchCopyWith(
+          _ShowedSearch value, $Res Function(_ShowedSearch) then) =
       __$ShowedSearchCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$ShowedSearchCopyWithImpl<$Res> extends _$AppBarTitleEventCopyWithImpl<$Res>
+class __$ShowedSearchCopyWithImpl<$Res>
+    extends _$AppBarTitleEventCopyWithImpl<$Res>
     implements _$ShowedSearchCopyWith<$Res> {
-  __$ShowedSearchCopyWithImpl(_ShowedSearch _value, $Res Function(_ShowedSearch) _then)
+  __$ShowedSearchCopyWithImpl(
+      _ShowedSearch _value, $Res Function(_ShowedSearch) _then)
       : super(_value, (v) => _then(v as _ShowedSearch));
 
   @override
@@ -466,9 +488,12 @@ class _$_ShowedSearch implements _ShowedSearch {
     required TResult Function(_Initialized value) initialized,
     required TResult Function(_ShowedMainFeed value) showedMainFeed,
     required TResult Function(_ShowedSearch value) showedSearch,
-    required TResult Function(_ShowedRecommendations value) showedRecommendations,
-    required TResult Function(_ShowedExperienceNavigation value) showedExperienceNavigation,
-    required TResult Function(_ShowedExperienceFinish value) showedExperienceFinish,
+    required TResult Function(_ShowedRecommendations value)
+        showedRecommendations,
+    required TResult Function(_ShowedExperienceNavigation value)
+        showedExperienceNavigation,
+    required TResult Function(_ShowedExperienceFinish value)
+        showedExperienceFinish,
     required TResult Function(_ShowedProfile value) showedProfile,
     required TResult Function(_ShowedNotifications value) showedNotifications,
     required TResult Function(_ShowedFollowers value) showedFollowers,
@@ -485,7 +510,8 @@ class _$_ShowedSearch implements _ShowedSearch {
     TResult Function(_ShowedMainFeed value)? showedMainFeed,
     TResult Function(_ShowedSearch value)? showedSearch,
     TResult Function(_ShowedRecommendations value)? showedRecommendations,
-    TResult Function(_ShowedExperienceNavigation value)? showedExperienceNavigation,
+    TResult Function(_ShowedExperienceNavigation value)?
+        showedExperienceNavigation,
     TResult Function(_ShowedExperienceFinish value)? showedExperienceFinish,
     TResult Function(_ShowedProfile value)? showedProfile,
     TResult Function(_ShowedNotifications value)? showedNotifications,
@@ -507,16 +533,17 @@ abstract class _ShowedSearch implements AppBarTitleEvent {
 
 /// @nodoc
 abstract class _$ShowedRecommendationsCopyWith<$Res> {
-  factory _$ShowedRecommendationsCopyWith(
-          _ShowedRecommendations value, $Res Function(_ShowedRecommendations) then) =
+  factory _$ShowedRecommendationsCopyWith(_ShowedRecommendations value,
+          $Res Function(_ShowedRecommendations) then) =
       __$ShowedRecommendationsCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$ShowedRecommendationsCopyWithImpl<$Res> extends _$AppBarTitleEventCopyWithImpl<$Res>
+class __$ShowedRecommendationsCopyWithImpl<$Res>
+    extends _$AppBarTitleEventCopyWithImpl<$Res>
     implements _$ShowedRecommendationsCopyWith<$Res> {
-  __$ShowedRecommendationsCopyWithImpl(
-      _ShowedRecommendations _value, $Res Function(_ShowedRecommendations) _then)
+  __$ShowedRecommendationsCopyWithImpl(_ShowedRecommendations _value,
+      $Res Function(_ShowedRecommendations) _then)
       : super(_value, (v) => _then(v as _ShowedRecommendations));
 
   @override
@@ -587,9 +614,12 @@ class _$_ShowedRecommendations implements _ShowedRecommendations {
     required TResult Function(_Initialized value) initialized,
     required TResult Function(_ShowedMainFeed value) showedMainFeed,
     required TResult Function(_ShowedSearch value) showedSearch,
-    required TResult Function(_ShowedRecommendations value) showedRecommendations,
-    required TResult Function(_ShowedExperienceNavigation value) showedExperienceNavigation,
-    required TResult Function(_ShowedExperienceFinish value) showedExperienceFinish,
+    required TResult Function(_ShowedRecommendations value)
+        showedRecommendations,
+    required TResult Function(_ShowedExperienceNavigation value)
+        showedExperienceNavigation,
+    required TResult Function(_ShowedExperienceFinish value)
+        showedExperienceFinish,
     required TResult Function(_ShowedProfile value) showedProfile,
     required TResult Function(_ShowedNotifications value) showedNotifications,
     required TResult Function(_ShowedFollowers value) showedFollowers,
@@ -606,7 +636,8 @@ class _$_ShowedRecommendations implements _ShowedRecommendations {
     TResult Function(_ShowedMainFeed value)? showedMainFeed,
     TResult Function(_ShowedSearch value)? showedSearch,
     TResult Function(_ShowedRecommendations value)? showedRecommendations,
-    TResult Function(_ShowedExperienceNavigation value)? showedExperienceNavigation,
+    TResult Function(_ShowedExperienceNavigation value)?
+        showedExperienceNavigation,
     TResult Function(_ShowedExperienceFinish value)? showedExperienceFinish,
     TResult Function(_ShowedProfile value)? showedProfile,
     TResult Function(_ShowedNotifications value)? showedNotifications,
@@ -629,19 +660,22 @@ abstract class _ShowedRecommendations implements AppBarTitleEvent {
 /// @nodoc
 abstract class _$ShowedExperienceNavigationCopyWith<$Res> {
   factory _$ShowedExperienceNavigationCopyWith(
-          _ShowedExperienceNavigation value, $Res Function(_ShowedExperienceNavigation) then) =
+          _ShowedExperienceNavigation value,
+          $Res Function(_ShowedExperienceNavigation) then) =
       __$ShowedExperienceNavigationCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$ShowedExperienceNavigationCopyWithImpl<$Res> extends _$AppBarTitleEventCopyWithImpl<$Res>
+class __$ShowedExperienceNavigationCopyWithImpl<$Res>
+    extends _$AppBarTitleEventCopyWithImpl<$Res>
     implements _$ShowedExperienceNavigationCopyWith<$Res> {
-  __$ShowedExperienceNavigationCopyWithImpl(
-      _ShowedExperienceNavigation _value, $Res Function(_ShowedExperienceNavigation) _then)
+  __$ShowedExperienceNavigationCopyWithImpl(_ShowedExperienceNavigation _value,
+      $Res Function(_ShowedExperienceNavigation) _then)
       : super(_value, (v) => _then(v as _ShowedExperienceNavigation));
 
   @override
-  _ShowedExperienceNavigation get _value => super._value as _ShowedExperienceNavigation;
+  _ShowedExperienceNavigation get _value =>
+      super._value as _ShowedExperienceNavigation;
 }
 
 /// @nodoc
@@ -708,9 +742,12 @@ class _$_ShowedExperienceNavigation implements _ShowedExperienceNavigation {
     required TResult Function(_Initialized value) initialized,
     required TResult Function(_ShowedMainFeed value) showedMainFeed,
     required TResult Function(_ShowedSearch value) showedSearch,
-    required TResult Function(_ShowedRecommendations value) showedRecommendations,
-    required TResult Function(_ShowedExperienceNavigation value) showedExperienceNavigation,
-    required TResult Function(_ShowedExperienceFinish value) showedExperienceFinish,
+    required TResult Function(_ShowedRecommendations value)
+        showedRecommendations,
+    required TResult Function(_ShowedExperienceNavigation value)
+        showedExperienceNavigation,
+    required TResult Function(_ShowedExperienceFinish value)
+        showedExperienceFinish,
     required TResult Function(_ShowedProfile value) showedProfile,
     required TResult Function(_ShowedNotifications value) showedNotifications,
     required TResult Function(_ShowedFollowers value) showedFollowers,
@@ -727,7 +764,8 @@ class _$_ShowedExperienceNavigation implements _ShowedExperienceNavigation {
     TResult Function(_ShowedMainFeed value)? showedMainFeed,
     TResult Function(_ShowedSearch value)? showedSearch,
     TResult Function(_ShowedRecommendations value)? showedRecommendations,
-    TResult Function(_ShowedExperienceNavigation value)? showedExperienceNavigation,
+    TResult Function(_ShowedExperienceNavigation value)?
+        showedExperienceNavigation,
     TResult Function(_ShowedExperienceFinish value)? showedExperienceFinish,
     TResult Function(_ShowedProfile value)? showedProfile,
     TResult Function(_ShowedNotifications value)? showedNotifications,
@@ -749,16 +787,17 @@ abstract class _ShowedExperienceNavigation implements AppBarTitleEvent {
 
 /// @nodoc
 abstract class _$ShowedExperienceFinishCopyWith<$Res> {
-  factory _$ShowedExperienceFinishCopyWith(
-          _ShowedExperienceFinish value, $Res Function(_ShowedExperienceFinish) then) =
+  factory _$ShowedExperienceFinishCopyWith(_ShowedExperienceFinish value,
+          $Res Function(_ShowedExperienceFinish) then) =
       __$ShowedExperienceFinishCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$ShowedExperienceFinishCopyWithImpl<$Res> extends _$AppBarTitleEventCopyWithImpl<$Res>
+class __$ShowedExperienceFinishCopyWithImpl<$Res>
+    extends _$AppBarTitleEventCopyWithImpl<$Res>
     implements _$ShowedExperienceFinishCopyWith<$Res> {
-  __$ShowedExperienceFinishCopyWithImpl(
-      _ShowedExperienceFinish _value, $Res Function(_ShowedExperienceFinish) _then)
+  __$ShowedExperienceFinishCopyWithImpl(_ShowedExperienceFinish _value,
+      $Res Function(_ShowedExperienceFinish) _then)
       : super(_value, (v) => _then(v as _ShowedExperienceFinish));
 
   @override
@@ -829,9 +868,12 @@ class _$_ShowedExperienceFinish implements _ShowedExperienceFinish {
     required TResult Function(_Initialized value) initialized,
     required TResult Function(_ShowedMainFeed value) showedMainFeed,
     required TResult Function(_ShowedSearch value) showedSearch,
-    required TResult Function(_ShowedRecommendations value) showedRecommendations,
-    required TResult Function(_ShowedExperienceNavigation value) showedExperienceNavigation,
-    required TResult Function(_ShowedExperienceFinish value) showedExperienceFinish,
+    required TResult Function(_ShowedRecommendations value)
+        showedRecommendations,
+    required TResult Function(_ShowedExperienceNavigation value)
+        showedExperienceNavigation,
+    required TResult Function(_ShowedExperienceFinish value)
+        showedExperienceFinish,
     required TResult Function(_ShowedProfile value) showedProfile,
     required TResult Function(_ShowedNotifications value) showedNotifications,
     required TResult Function(_ShowedFollowers value) showedFollowers,
@@ -848,7 +890,8 @@ class _$_ShowedExperienceFinish implements _ShowedExperienceFinish {
     TResult Function(_ShowedMainFeed value)? showedMainFeed,
     TResult Function(_ShowedSearch value)? showedSearch,
     TResult Function(_ShowedRecommendations value)? showedRecommendations,
-    TResult Function(_ShowedExperienceNavigation value)? showedExperienceNavigation,
+    TResult Function(_ShowedExperienceNavigation value)?
+        showedExperienceNavigation,
     TResult Function(_ShowedExperienceFinish value)? showedExperienceFinish,
     TResult Function(_ShowedProfile value)? showedProfile,
     TResult Function(_ShowedNotifications value)? showedNotifications,
@@ -870,14 +913,17 @@ abstract class _ShowedExperienceFinish implements AppBarTitleEvent {
 
 /// @nodoc
 abstract class _$ShowedProfileCopyWith<$Res> {
-  factory _$ShowedProfileCopyWith(_ShowedProfile value, $Res Function(_ShowedProfile) then) =
+  factory _$ShowedProfileCopyWith(
+          _ShowedProfile value, $Res Function(_ShowedProfile) then) =
       __$ShowedProfileCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$ShowedProfileCopyWithImpl<$Res> extends _$AppBarTitleEventCopyWithImpl<$Res>
+class __$ShowedProfileCopyWithImpl<$Res>
+    extends _$AppBarTitleEventCopyWithImpl<$Res>
     implements _$ShowedProfileCopyWith<$Res> {
-  __$ShowedProfileCopyWithImpl(_ShowedProfile _value, $Res Function(_ShowedProfile) _then)
+  __$ShowedProfileCopyWithImpl(
+      _ShowedProfile _value, $Res Function(_ShowedProfile) _then)
       : super(_value, (v) => _then(v as _ShowedProfile));
 
   @override
@@ -948,9 +994,12 @@ class _$_ShowedProfile implements _ShowedProfile {
     required TResult Function(_Initialized value) initialized,
     required TResult Function(_ShowedMainFeed value) showedMainFeed,
     required TResult Function(_ShowedSearch value) showedSearch,
-    required TResult Function(_ShowedRecommendations value) showedRecommendations,
-    required TResult Function(_ShowedExperienceNavigation value) showedExperienceNavigation,
-    required TResult Function(_ShowedExperienceFinish value) showedExperienceFinish,
+    required TResult Function(_ShowedRecommendations value)
+        showedRecommendations,
+    required TResult Function(_ShowedExperienceNavigation value)
+        showedExperienceNavigation,
+    required TResult Function(_ShowedExperienceFinish value)
+        showedExperienceFinish,
     required TResult Function(_ShowedProfile value) showedProfile,
     required TResult Function(_ShowedNotifications value) showedNotifications,
     required TResult Function(_ShowedFollowers value) showedFollowers,
@@ -967,7 +1016,8 @@ class _$_ShowedProfile implements _ShowedProfile {
     TResult Function(_ShowedMainFeed value)? showedMainFeed,
     TResult Function(_ShowedSearch value)? showedSearch,
     TResult Function(_ShowedRecommendations value)? showedRecommendations,
-    TResult Function(_ShowedExperienceNavigation value)? showedExperienceNavigation,
+    TResult Function(_ShowedExperienceNavigation value)?
+        showedExperienceNavigation,
     TResult Function(_ShowedExperienceFinish value)? showedExperienceFinish,
     TResult Function(_ShowedProfile value)? showedProfile,
     TResult Function(_ShowedNotifications value)? showedNotifications,
@@ -989,15 +1039,17 @@ abstract class _ShowedProfile implements AppBarTitleEvent {
 
 /// @nodoc
 abstract class _$ShowedNotificationsCopyWith<$Res> {
-  factory _$ShowedNotificationsCopyWith(
-          _ShowedNotifications value, $Res Function(_ShowedNotifications) then) =
+  factory _$ShowedNotificationsCopyWith(_ShowedNotifications value,
+          $Res Function(_ShowedNotifications) then) =
       __$ShowedNotificationsCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$ShowedNotificationsCopyWithImpl<$Res> extends _$AppBarTitleEventCopyWithImpl<$Res>
+class __$ShowedNotificationsCopyWithImpl<$Res>
+    extends _$AppBarTitleEventCopyWithImpl<$Res>
     implements _$ShowedNotificationsCopyWith<$Res> {
-  __$ShowedNotificationsCopyWithImpl(_ShowedNotifications _value, $Res Function(_ShowedNotifications) _then)
+  __$ShowedNotificationsCopyWithImpl(
+      _ShowedNotifications _value, $Res Function(_ShowedNotifications) _then)
       : super(_value, (v) => _then(v as _ShowedNotifications));
 
   @override
@@ -1068,9 +1120,12 @@ class _$_ShowedNotifications implements _ShowedNotifications {
     required TResult Function(_Initialized value) initialized,
     required TResult Function(_ShowedMainFeed value) showedMainFeed,
     required TResult Function(_ShowedSearch value) showedSearch,
-    required TResult Function(_ShowedRecommendations value) showedRecommendations,
-    required TResult Function(_ShowedExperienceNavigation value) showedExperienceNavigation,
-    required TResult Function(_ShowedExperienceFinish value) showedExperienceFinish,
+    required TResult Function(_ShowedRecommendations value)
+        showedRecommendations,
+    required TResult Function(_ShowedExperienceNavigation value)
+        showedExperienceNavigation,
+    required TResult Function(_ShowedExperienceFinish value)
+        showedExperienceFinish,
     required TResult Function(_ShowedProfile value) showedProfile,
     required TResult Function(_ShowedNotifications value) showedNotifications,
     required TResult Function(_ShowedFollowers value) showedFollowers,
@@ -1087,7 +1142,8 @@ class _$_ShowedNotifications implements _ShowedNotifications {
     TResult Function(_ShowedMainFeed value)? showedMainFeed,
     TResult Function(_ShowedSearch value)? showedSearch,
     TResult Function(_ShowedRecommendations value)? showedRecommendations,
-    TResult Function(_ShowedExperienceNavigation value)? showedExperienceNavigation,
+    TResult Function(_ShowedExperienceNavigation value)?
+        showedExperienceNavigation,
     TResult Function(_ShowedExperienceFinish value)? showedExperienceFinish,
     TResult Function(_ShowedProfile value)? showedProfile,
     TResult Function(_ShowedNotifications value)? showedNotifications,
@@ -1109,14 +1165,17 @@ abstract class _ShowedNotifications implements AppBarTitleEvent {
 
 /// @nodoc
 abstract class _$ShowedFollowersCopyWith<$Res> {
-  factory _$ShowedFollowersCopyWith(_ShowedFollowers value, $Res Function(_ShowedFollowers) then) =
+  factory _$ShowedFollowersCopyWith(
+          _ShowedFollowers value, $Res Function(_ShowedFollowers) then) =
       __$ShowedFollowersCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$ShowedFollowersCopyWithImpl<$Res> extends _$AppBarTitleEventCopyWithImpl<$Res>
+class __$ShowedFollowersCopyWithImpl<$Res>
+    extends _$AppBarTitleEventCopyWithImpl<$Res>
     implements _$ShowedFollowersCopyWith<$Res> {
-  __$ShowedFollowersCopyWithImpl(_ShowedFollowers _value, $Res Function(_ShowedFollowers) _then)
+  __$ShowedFollowersCopyWithImpl(
+      _ShowedFollowers _value, $Res Function(_ShowedFollowers) _then)
       : super(_value, (v) => _then(v as _ShowedFollowers));
 
   @override
@@ -1187,9 +1246,12 @@ class _$_ShowedFollowers implements _ShowedFollowers {
     required TResult Function(_Initialized value) initialized,
     required TResult Function(_ShowedMainFeed value) showedMainFeed,
     required TResult Function(_ShowedSearch value) showedSearch,
-    required TResult Function(_ShowedRecommendations value) showedRecommendations,
-    required TResult Function(_ShowedExperienceNavigation value) showedExperienceNavigation,
-    required TResult Function(_ShowedExperienceFinish value) showedExperienceFinish,
+    required TResult Function(_ShowedRecommendations value)
+        showedRecommendations,
+    required TResult Function(_ShowedExperienceNavigation value)
+        showedExperienceNavigation,
+    required TResult Function(_ShowedExperienceFinish value)
+        showedExperienceFinish,
     required TResult Function(_ShowedProfile value) showedProfile,
     required TResult Function(_ShowedNotifications value) showedNotifications,
     required TResult Function(_ShowedFollowers value) showedFollowers,
@@ -1206,7 +1268,8 @@ class _$_ShowedFollowers implements _ShowedFollowers {
     TResult Function(_ShowedMainFeed value)? showedMainFeed,
     TResult Function(_ShowedSearch value)? showedSearch,
     TResult Function(_ShowedRecommendations value)? showedRecommendations,
-    TResult Function(_ShowedExperienceNavigation value)? showedExperienceNavigation,
+    TResult Function(_ShowedExperienceNavigation value)?
+        showedExperienceNavigation,
     TResult Function(_ShowedExperienceFinish value)? showedExperienceFinish,
     TResult Function(_ShowedProfile value)? showedProfile,
     TResult Function(_ShowedNotifications value)? showedNotifications,
@@ -1228,14 +1291,17 @@ abstract class _ShowedFollowers implements AppBarTitleEvent {
 
 /// @nodoc
 abstract class _$ShowedFollowingCopyWith<$Res> {
-  factory _$ShowedFollowingCopyWith(_ShowedFollowing value, $Res Function(_ShowedFollowing) then) =
+  factory _$ShowedFollowingCopyWith(
+          _ShowedFollowing value, $Res Function(_ShowedFollowing) then) =
       __$ShowedFollowingCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$ShowedFollowingCopyWithImpl<$Res> extends _$AppBarTitleEventCopyWithImpl<$Res>
+class __$ShowedFollowingCopyWithImpl<$Res>
+    extends _$AppBarTitleEventCopyWithImpl<$Res>
     implements _$ShowedFollowingCopyWith<$Res> {
-  __$ShowedFollowingCopyWithImpl(_ShowedFollowing _value, $Res Function(_ShowedFollowing) _then)
+  __$ShowedFollowingCopyWithImpl(
+      _ShowedFollowing _value, $Res Function(_ShowedFollowing) _then)
       : super(_value, (v) => _then(v as _ShowedFollowing));
 
   @override
@@ -1306,9 +1372,12 @@ class _$_ShowedFollowing implements _ShowedFollowing {
     required TResult Function(_Initialized value) initialized,
     required TResult Function(_ShowedMainFeed value) showedMainFeed,
     required TResult Function(_ShowedSearch value) showedSearch,
-    required TResult Function(_ShowedRecommendations value) showedRecommendations,
-    required TResult Function(_ShowedExperienceNavigation value) showedExperienceNavigation,
-    required TResult Function(_ShowedExperienceFinish value) showedExperienceFinish,
+    required TResult Function(_ShowedRecommendations value)
+        showedRecommendations,
+    required TResult Function(_ShowedExperienceNavigation value)
+        showedExperienceNavigation,
+    required TResult Function(_ShowedExperienceFinish value)
+        showedExperienceFinish,
     required TResult Function(_ShowedProfile value) showedProfile,
     required TResult Function(_ShowedNotifications value) showedNotifications,
     required TResult Function(_ShowedFollowers value) showedFollowers,
@@ -1325,7 +1394,8 @@ class _$_ShowedFollowing implements _ShowedFollowing {
     TResult Function(_ShowedMainFeed value)? showedMainFeed,
     TResult Function(_ShowedSearch value)? showedSearch,
     TResult Function(_ShowedRecommendations value)? showedRecommendations,
-    TResult Function(_ShowedExperienceNavigation value)? showedExperienceNavigation,
+    TResult Function(_ShowedExperienceNavigation value)?
+        showedExperienceNavigation,
     TResult Function(_ShowedExperienceFinish value)? showedExperienceFinish,
     TResult Function(_ShowedProfile value)? showedProfile,
     TResult Function(_ShowedNotifications value)? showedNotifications,
@@ -1347,16 +1417,18 @@ abstract class _ShowedFollowing implements AppBarTitleEvent {
 
 /// @nodoc
 abstract class _$ShowedUsernameCopyWith<$Res> {
-  factory _$ShowedUsernameCopyWith(_ShowedUsername value, $Res Function(_ShowedUsername) then) =
+  factory _$ShowedUsernameCopyWith(
+          _ShowedUsername value, $Res Function(_ShowedUsername) then) =
       __$ShowedUsernameCopyWithImpl<$Res>;
-
   $Res call({String username});
 }
 
 /// @nodoc
-class __$ShowedUsernameCopyWithImpl<$Res> extends _$AppBarTitleEventCopyWithImpl<$Res>
+class __$ShowedUsernameCopyWithImpl<$Res>
+    extends _$AppBarTitleEventCopyWithImpl<$Res>
     implements _$ShowedUsernameCopyWith<$Res> {
-  __$ShowedUsernameCopyWithImpl(_ShowedUsername _value, $Res Function(_ShowedUsername) _then)
+  __$ShowedUsernameCopyWithImpl(
+      _ShowedUsername _value, $Res Function(_ShowedUsername) _then)
       : super(_value, (v) => _then(v as _ShowedUsername));
 
   @override
@@ -1393,11 +1465,13 @@ class _$_ShowedUsername implements _ShowedUsername {
     return identical(this, other) ||
         (other is _ShowedUsername &&
             (identical(other.username, username) ||
-                const DeepCollectionEquality().equals(other.username, username)));
+                const DeepCollectionEquality()
+                    .equals(other.username, username)));
   }
 
   @override
-  int get hashCode => runtimeType.hashCode ^ const DeepCollectionEquality().hash(username);
+  int get hashCode =>
+      runtimeType.hashCode ^ const DeepCollectionEquality().hash(username);
 
   @JsonKey(ignore: true)
   @override
@@ -1450,9 +1524,12 @@ class _$_ShowedUsername implements _ShowedUsername {
     required TResult Function(_Initialized value) initialized,
     required TResult Function(_ShowedMainFeed value) showedMainFeed,
     required TResult Function(_ShowedSearch value) showedSearch,
-    required TResult Function(_ShowedRecommendations value) showedRecommendations,
-    required TResult Function(_ShowedExperienceNavigation value) showedExperienceNavigation,
-    required TResult Function(_ShowedExperienceFinish value) showedExperienceFinish,
+    required TResult Function(_ShowedRecommendations value)
+        showedRecommendations,
+    required TResult Function(_ShowedExperienceNavigation value)
+        showedExperienceNavigation,
+    required TResult Function(_ShowedExperienceFinish value)
+        showedExperienceFinish,
     required TResult Function(_ShowedProfile value) showedProfile,
     required TResult Function(_ShowedNotifications value) showedNotifications,
     required TResult Function(_ShowedFollowers value) showedFollowers,
@@ -1469,7 +1546,8 @@ class _$_ShowedUsername implements _ShowedUsername {
     TResult Function(_ShowedMainFeed value)? showedMainFeed,
     TResult Function(_ShowedSearch value)? showedSearch,
     TResult Function(_ShowedRecommendations value)? showedRecommendations,
-    TResult Function(_ShowedExperienceNavigation value)? showedExperienceNavigation,
+    TResult Function(_ShowedExperienceNavigation value)?
+        showedExperienceNavigation,
     TResult Function(_ShowedExperienceFinish value)? showedExperienceFinish,
     TResult Function(_ShowedProfile value)? showedProfile,
     TResult Function(_ShowedNotifications value)? showedNotifications,
@@ -1489,9 +1567,9 @@ abstract class _ShowedUsername implements AppBarTitleEvent {
   const factory _ShowedUsername(String username) = _$_ShowedUsername;
 
   String get username => throw _privateConstructorUsedError;
-
   @JsonKey(ignore: true)
-  _$ShowedUsernameCopyWith<_ShowedUsername> get copyWith => throw _privateConstructorUsedError;
+  _$ShowedUsernameCopyWith<_ShowedUsername> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -1624,23 +1702,25 @@ mixin _$AppBarTitleState {
 
 /// @nodoc
 abstract class $AppBarTitleStateCopyWith<$Res> {
-  factory $AppBarTitleStateCopyWith(AppBarTitleState value, $Res Function(AppBarTitleState) then) =
+  factory $AppBarTitleStateCopyWith(
+          AppBarTitleState value, $Res Function(AppBarTitleState) then) =
       _$AppBarTitleStateCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class _$AppBarTitleStateCopyWithImpl<$Res> implements $AppBarTitleStateCopyWith<$Res> {
+class _$AppBarTitleStateCopyWithImpl<$Res>
+    implements $AppBarTitleStateCopyWith<$Res> {
   _$AppBarTitleStateCopyWithImpl(this._value, this._then);
 
   final AppBarTitleState _value;
-
   // ignore: unused_field
   final $Res Function(AppBarTitleState) _then;
 }
 
 /// @nodoc
 abstract class _$InitialCopyWith<$Res> {
-  factory _$InitialCopyWith(_Initial value, $Res Function(_Initial) then) = __$InitialCopyWithImpl<$Res>;
+  factory _$InitialCopyWith(_Initial value, $Res Function(_Initial) then) =
+      __$InitialCopyWithImpl<$Res>;
 }
 
 /// @nodoc
@@ -1762,7 +1842,8 @@ abstract class _Initial implements AppBarTitleState {
 
 /// @nodoc
 abstract class _$MainFeedCopyWith<$Res> {
-  factory _$MainFeedCopyWith(_MainFeed value, $Res Function(_MainFeed) then) = __$MainFeedCopyWithImpl<$Res>;
+  factory _$MainFeedCopyWith(_MainFeed value, $Res Function(_MainFeed) then) =
+      __$MainFeedCopyWithImpl<$Res>;
 }
 
 /// @nodoc
@@ -1884,7 +1965,8 @@ abstract class _MainFeed implements AppBarTitleState {
 
 /// @nodoc
 abstract class _$SearchCopyWith<$Res> {
-  factory _$SearchCopyWith(_Search value, $Res Function(_Search) then) = __$SearchCopyWithImpl<$Res>;
+  factory _$SearchCopyWith(_Search value, $Res Function(_Search) then) =
+      __$SearchCopyWithImpl<$Res>;
 }
 
 /// @nodoc
@@ -2006,14 +2088,17 @@ abstract class _Search implements AppBarTitleState {
 
 /// @nodoc
 abstract class _$RecommendationsCopyWith<$Res> {
-  factory _$RecommendationsCopyWith(_Recommendations value, $Res Function(_Recommendations) then) =
+  factory _$RecommendationsCopyWith(
+          _Recommendations value, $Res Function(_Recommendations) then) =
       __$RecommendationsCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$RecommendationsCopyWithImpl<$Res> extends _$AppBarTitleStateCopyWithImpl<$Res>
+class __$RecommendationsCopyWithImpl<$Res>
+    extends _$AppBarTitleStateCopyWithImpl<$Res>
     implements _$RecommendationsCopyWith<$Res> {
-  __$RecommendationsCopyWithImpl(_Recommendations _value, $Res Function(_Recommendations) _then)
+  __$RecommendationsCopyWithImpl(
+      _Recommendations _value, $Res Function(_Recommendations) _then)
       : super(_value, (v) => _then(v as _Recommendations));
 
   @override
@@ -2129,13 +2214,14 @@ abstract class _Recommendations implements AppBarTitleState {
 
 /// @nodoc
 abstract class _$ExperienceNavigationCopyWith<$Res> {
-  factory _$ExperienceNavigationCopyWith(
-          _ExperienceNavigation value, $Res Function(_ExperienceNavigation) then) =
+  factory _$ExperienceNavigationCopyWith(_ExperienceNavigation value,
+          $Res Function(_ExperienceNavigation) then) =
       __$ExperienceNavigationCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$ExperienceNavigationCopyWithImpl<$Res> extends _$AppBarTitleStateCopyWithImpl<$Res>
+class __$ExperienceNavigationCopyWithImpl<$Res>
+    extends _$AppBarTitleStateCopyWithImpl<$Res>
     implements _$ExperienceNavigationCopyWith<$Res> {
   __$ExperienceNavigationCopyWithImpl(
       _ExperienceNavigation _value, $Res Function(_ExperienceNavigation) _then)
@@ -2254,14 +2340,17 @@ abstract class _ExperienceNavigation implements AppBarTitleState {
 
 /// @nodoc
 abstract class _$ExperienceFinishCopyWith<$Res> {
-  factory _$ExperienceFinishCopyWith(_ExperienceFinish value, $Res Function(_ExperienceFinish) then) =
+  factory _$ExperienceFinishCopyWith(
+          _ExperienceFinish value, $Res Function(_ExperienceFinish) then) =
       __$ExperienceFinishCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$ExperienceFinishCopyWithImpl<$Res> extends _$AppBarTitleStateCopyWithImpl<$Res>
+class __$ExperienceFinishCopyWithImpl<$Res>
+    extends _$AppBarTitleStateCopyWithImpl<$Res>
     implements _$ExperienceFinishCopyWith<$Res> {
-  __$ExperienceFinishCopyWithImpl(_ExperienceFinish _value, $Res Function(_ExperienceFinish) _then)
+  __$ExperienceFinishCopyWithImpl(
+      _ExperienceFinish _value, $Res Function(_ExperienceFinish) _then)
       : super(_value, (v) => _then(v as _ExperienceFinish));
 
   @override
@@ -2377,7 +2466,8 @@ abstract class _ExperienceFinish implements AppBarTitleState {
 
 /// @nodoc
 abstract class _$ProfileCopyWith<$Res> {
-  factory _$ProfileCopyWith(_Profile value, $Res Function(_Profile) then) = __$ProfileCopyWithImpl<$Res>;
+  factory _$ProfileCopyWith(_Profile value, $Res Function(_Profile) then) =
+      __$ProfileCopyWithImpl<$Res>;
 }
 
 /// @nodoc
@@ -2499,14 +2589,17 @@ abstract class _Profile implements AppBarTitleState {
 
 /// @nodoc
 abstract class _$NotificationsCopyWith<$Res> {
-  factory _$NotificationsCopyWith(_Notifications value, $Res Function(_Notifications) then) =
+  factory _$NotificationsCopyWith(
+          _Notifications value, $Res Function(_Notifications) then) =
       __$NotificationsCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$NotificationsCopyWithImpl<$Res> extends _$AppBarTitleStateCopyWithImpl<$Res>
+class __$NotificationsCopyWithImpl<$Res>
+    extends _$AppBarTitleStateCopyWithImpl<$Res>
     implements _$NotificationsCopyWith<$Res> {
-  __$NotificationsCopyWithImpl(_Notifications _value, $Res Function(_Notifications) _then)
+  __$NotificationsCopyWithImpl(
+      _Notifications _value, $Res Function(_Notifications) _then)
       : super(_value, (v) => _then(v as _Notifications));
 
   @override
@@ -2622,12 +2715,14 @@ abstract class _Notifications implements AppBarTitleState {
 
 /// @nodoc
 abstract class _$FollowersCopyWith<$Res> {
-  factory _$FollowersCopyWith(_Followers value, $Res Function(_Followers) then) =
+  factory _$FollowersCopyWith(
+          _Followers value, $Res Function(_Followers) then) =
       __$FollowersCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$FollowersCopyWithImpl<$Res> extends _$AppBarTitleStateCopyWithImpl<$Res>
+class __$FollowersCopyWithImpl<$Res>
+    extends _$AppBarTitleStateCopyWithImpl<$Res>
     implements _$FollowersCopyWith<$Res> {
   __$FollowersCopyWithImpl(_Followers _value, $Res Function(_Followers) _then)
       : super(_value, (v) => _then(v as _Followers));
@@ -2745,12 +2840,14 @@ abstract class _Followers implements AppBarTitleState {
 
 /// @nodoc
 abstract class _$FollowingCopyWith<$Res> {
-  factory _$FollowingCopyWith(_Following value, $Res Function(_Following) then) =
+  factory _$FollowingCopyWith(
+          _Following value, $Res Function(_Following) then) =
       __$FollowingCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$FollowingCopyWithImpl<$Res> extends _$AppBarTitleStateCopyWithImpl<$Res>
+class __$FollowingCopyWithImpl<$Res>
+    extends _$AppBarTitleStateCopyWithImpl<$Res>
     implements _$FollowingCopyWith<$Res> {
   __$FollowingCopyWithImpl(_Following _value, $Res Function(_Following) _then)
       : super(_value, (v) => _then(v as _Following));
@@ -2868,8 +2965,8 @@ abstract class _Following implements AppBarTitleState {
 
 /// @nodoc
 abstract class _$UsernameCopyWith<$Res> {
-  factory _$UsernameCopyWith(_Username value, $Res Function(_Username) then) = __$UsernameCopyWithImpl<$Res>;
-
+  factory _$UsernameCopyWith(_Username value, $Res Function(_Username) then) =
+      __$UsernameCopyWithImpl<$Res>;
   $Res call({String username});
 }
 
@@ -2913,15 +3010,18 @@ class _$_Username implements _Username {
     return identical(this, other) ||
         (other is _Username &&
             (identical(other.username, username) ||
-                const DeepCollectionEquality().equals(other.username, username)));
+                const DeepCollectionEquality()
+                    .equals(other.username, username)));
   }
 
   @override
-  int get hashCode => runtimeType.hashCode ^ const DeepCollectionEquality().hash(username);
+  int get hashCode =>
+      runtimeType.hashCode ^ const DeepCollectionEquality().hash(username);
 
   @JsonKey(ignore: true)
   @override
-  _$UsernameCopyWith<_Username> get copyWith => __$UsernameCopyWithImpl<_Username>(this, _$identity);
+  _$UsernameCopyWith<_Username> get copyWith =>
+      __$UsernameCopyWithImpl<_Username>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -3012,20 +3112,22 @@ abstract class _Username implements AppBarTitleState {
   const factory _Username(String username) = _$_Username;
 
   String get username => throw _privateConstructorUsedError;
-
   @JsonKey(ignore: true)
-  _$UsernameCopyWith<_Username> get copyWith => throw _privateConstructorUsedError;
+  _$UsernameCopyWith<_Username> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class _$ErrorCopyWith<$Res> {
-  factory _$ErrorCopyWith(_Error value, $Res Function(_Error) then) = __$ErrorCopyWithImpl<$Res>;
+  factory _$ErrorCopyWith(_Error value, $Res Function(_Error) then) =
+      __$ErrorCopyWithImpl<$Res>;
 }
 
 /// @nodoc
 class __$ErrorCopyWithImpl<$Res> extends _$AppBarTitleStateCopyWithImpl<$Res>
     implements _$ErrorCopyWith<$Res> {
-  __$ErrorCopyWithImpl(_Error _value, $Res Function(_Error) _then) : super(_value, (v) => _then(v as _Error));
+  __$ErrorCopyWithImpl(_Error _value, $Res Function(_Error) _then)
+      : super(_value, (v) => _then(v as _Error));
 
   @override
   _Error get _value => super._value as _Error;

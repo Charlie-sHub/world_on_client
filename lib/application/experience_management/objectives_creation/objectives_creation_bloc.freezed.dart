@@ -48,7 +48,8 @@ const $ObjectivesCreationEvent = _$ObjectivesCreationEventTearOff();
 mixin _$ObjectivesCreationEvent {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(Option<ObjectiveList> objectiveListOption) initialized,
+    required TResult Function(Option<ObjectiveList> objectiveListOption)
+        initialized,
     required TResult Function(Objective objective) addedObjective,
     required TResult Function(Objective objective) removedObjective,
     required TResult Function(List<Objective> reorderedList) reorderedList,
@@ -84,33 +85,35 @@ mixin _$ObjectivesCreationEvent {
 
 /// @nodoc
 abstract class $ObjectivesCreationEventCopyWith<$Res> {
-  factory $ObjectivesCreationEventCopyWith(
-          ObjectivesCreationEvent value, $Res Function(ObjectivesCreationEvent) then) =
+  factory $ObjectivesCreationEventCopyWith(ObjectivesCreationEvent value,
+          $Res Function(ObjectivesCreationEvent) then) =
       _$ObjectivesCreationEventCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class _$ObjectivesCreationEventCopyWithImpl<$Res> implements $ObjectivesCreationEventCopyWith<$Res> {
+class _$ObjectivesCreationEventCopyWithImpl<$Res>
+    implements $ObjectivesCreationEventCopyWith<$Res> {
   _$ObjectivesCreationEventCopyWithImpl(this._value, this._then);
 
   final ObjectivesCreationEvent _value;
-
   // ignore: unused_field
   final $Res Function(ObjectivesCreationEvent) _then;
 }
 
 /// @nodoc
 abstract class _$InitializedCopyWith<$Res> {
-  factory _$InitializedCopyWith(_Initialized value, $Res Function(_Initialized) then) =
+  factory _$InitializedCopyWith(
+          _Initialized value, $Res Function(_Initialized) then) =
       __$InitializedCopyWithImpl<$Res>;
-
   $Res call({Option<ObjectiveList> objectiveListOption});
 }
 
 /// @nodoc
-class __$InitializedCopyWithImpl<$Res> extends _$ObjectivesCreationEventCopyWithImpl<$Res>
+class __$InitializedCopyWithImpl<$Res>
+    extends _$ObjectivesCreationEventCopyWithImpl<$Res>
     implements _$InitializedCopyWith<$Res> {
-  __$InitializedCopyWithImpl(_Initialized _value, $Res Function(_Initialized) _then)
+  __$InitializedCopyWithImpl(
+      _Initialized _value, $Res Function(_Initialized) _then)
       : super(_value, (v) => _then(v as _Initialized));
 
   @override
@@ -147,11 +150,14 @@ class _$_Initialized implements _Initialized {
     return identical(this, other) ||
         (other is _Initialized &&
             (identical(other.objectiveListOption, objectiveListOption) ||
-                const DeepCollectionEquality().equals(other.objectiveListOption, objectiveListOption)));
+                const DeepCollectionEquality()
+                    .equals(other.objectiveListOption, objectiveListOption)));
   }
 
   @override
-  int get hashCode => runtimeType.hashCode ^ const DeepCollectionEquality().hash(objectiveListOption);
+  int get hashCode =>
+      runtimeType.hashCode ^
+      const DeepCollectionEquality().hash(objectiveListOption);
 
   @JsonKey(ignore: true)
   @override
@@ -161,7 +167,8 @@ class _$_Initialized implements _Initialized {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(Option<ObjectiveList> objectiveListOption) initialized,
+    required TResult Function(Option<ObjectiveList> objectiveListOption)
+        initialized,
     required TResult Function(Objective objective) addedObjective,
     required TResult Function(Objective objective) removedObjective,
     required TResult Function(List<Objective> reorderedList) reorderedList,
@@ -212,28 +219,32 @@ class _$_Initialized implements _Initialized {
 }
 
 abstract class _Initialized implements ObjectivesCreationEvent {
-  const factory _Initialized(Option<ObjectiveList> objectiveListOption) = _$_Initialized;
+  const factory _Initialized(Option<ObjectiveList> objectiveListOption) =
+      _$_Initialized;
 
-  Option<ObjectiveList> get objectiveListOption => throw _privateConstructorUsedError;
-
+  Option<ObjectiveList> get objectiveListOption =>
+      throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  _$InitializedCopyWith<_Initialized> get copyWith => throw _privateConstructorUsedError;
+  _$InitializedCopyWith<_Initialized> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class _$AddedObjectiveCopyWith<$Res> {
-  factory _$AddedObjectiveCopyWith(_AddedObjective value, $Res Function(_AddedObjective) then) =
+  factory _$AddedObjectiveCopyWith(
+          _AddedObjective value, $Res Function(_AddedObjective) then) =
       __$AddedObjectiveCopyWithImpl<$Res>;
-
   $Res call({Objective objective});
 
   $ObjectiveCopyWith<$Res> get objective;
 }
 
 /// @nodoc
-class __$AddedObjectiveCopyWithImpl<$Res> extends _$ObjectivesCreationEventCopyWithImpl<$Res>
+class __$AddedObjectiveCopyWithImpl<$Res>
+    extends _$ObjectivesCreationEventCopyWithImpl<$Res>
     implements _$AddedObjectiveCopyWith<$Res> {
-  __$AddedObjectiveCopyWithImpl(_AddedObjective _value, $Res Function(_AddedObjective) _then)
+  __$AddedObjectiveCopyWithImpl(
+      _AddedObjective _value, $Res Function(_AddedObjective) _then)
       : super(_value, (v) => _then(v as _AddedObjective));
 
   @override
@@ -277,11 +288,13 @@ class _$_AddedObjective implements _AddedObjective {
     return identical(this, other) ||
         (other is _AddedObjective &&
             (identical(other.objective, objective) ||
-                const DeepCollectionEquality().equals(other.objective, objective)));
+                const DeepCollectionEquality()
+                    .equals(other.objective, objective)));
   }
 
   @override
-  int get hashCode => runtimeType.hashCode ^ const DeepCollectionEquality().hash(objective);
+  int get hashCode =>
+      runtimeType.hashCode ^ const DeepCollectionEquality().hash(objective);
 
   @JsonKey(ignore: true)
   @override
@@ -291,7 +304,8 @@ class _$_AddedObjective implements _AddedObjective {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(Option<ObjectiveList> objectiveListOption) initialized,
+    required TResult Function(Option<ObjectiveList> objectiveListOption)
+        initialized,
     required TResult Function(Objective objective) addedObjective,
     required TResult Function(Objective objective) removedObjective,
     required TResult Function(List<Objective> reorderedList) reorderedList,
@@ -345,25 +359,27 @@ abstract class _AddedObjective implements ObjectivesCreationEvent {
   const factory _AddedObjective(Objective objective) = _$_AddedObjective;
 
   Objective get objective => throw _privateConstructorUsedError;
-
   @JsonKey(ignore: true)
-  _$AddedObjectiveCopyWith<_AddedObjective> get copyWith => throw _privateConstructorUsedError;
+  _$AddedObjectiveCopyWith<_AddedObjective> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class _$RemovedObjectiveCopyWith<$Res> {
-  factory _$RemovedObjectiveCopyWith(_RemovedObjective value, $Res Function(_RemovedObjective) then) =
+  factory _$RemovedObjectiveCopyWith(
+          _RemovedObjective value, $Res Function(_RemovedObjective) then) =
       __$RemovedObjectiveCopyWithImpl<$Res>;
-
   $Res call({Objective objective});
 
   $ObjectiveCopyWith<$Res> get objective;
 }
 
 /// @nodoc
-class __$RemovedObjectiveCopyWithImpl<$Res> extends _$ObjectivesCreationEventCopyWithImpl<$Res>
+class __$RemovedObjectiveCopyWithImpl<$Res>
+    extends _$ObjectivesCreationEventCopyWithImpl<$Res>
     implements _$RemovedObjectiveCopyWith<$Res> {
-  __$RemovedObjectiveCopyWithImpl(_RemovedObjective _value, $Res Function(_RemovedObjective) _then)
+  __$RemovedObjectiveCopyWithImpl(
+      _RemovedObjective _value, $Res Function(_RemovedObjective) _then)
       : super(_value, (v) => _then(v as _RemovedObjective));
 
   @override
@@ -407,11 +423,13 @@ class _$_RemovedObjective implements _RemovedObjective {
     return identical(this, other) ||
         (other is _RemovedObjective &&
             (identical(other.objective, objective) ||
-                const DeepCollectionEquality().equals(other.objective, objective)));
+                const DeepCollectionEquality()
+                    .equals(other.objective, objective)));
   }
 
   @override
-  int get hashCode => runtimeType.hashCode ^ const DeepCollectionEquality().hash(objective);
+  int get hashCode =>
+      runtimeType.hashCode ^ const DeepCollectionEquality().hash(objective);
 
   @JsonKey(ignore: true)
   @override
@@ -421,7 +439,8 @@ class _$_RemovedObjective implements _RemovedObjective {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(Option<ObjectiveList> objectiveListOption) initialized,
+    required TResult Function(Option<ObjectiveList> objectiveListOption)
+        initialized,
     required TResult Function(Objective objective) addedObjective,
     required TResult Function(Objective objective) removedObjective,
     required TResult Function(List<Objective> reorderedList) reorderedList,
@@ -475,23 +494,25 @@ abstract class _RemovedObjective implements ObjectivesCreationEvent {
   const factory _RemovedObjective(Objective objective) = _$_RemovedObjective;
 
   Objective get objective => throw _privateConstructorUsedError;
-
   @JsonKey(ignore: true)
-  _$RemovedObjectiveCopyWith<_RemovedObjective> get copyWith => throw _privateConstructorUsedError;
+  _$RemovedObjectiveCopyWith<_RemovedObjective> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class _$ReorderedListCopyWith<$Res> {
-  factory _$ReorderedListCopyWith(_ReorderedList value, $Res Function(_ReorderedList) then) =
+  factory _$ReorderedListCopyWith(
+          _ReorderedList value, $Res Function(_ReorderedList) then) =
       __$ReorderedListCopyWithImpl<$Res>;
-
   $Res call({List<Objective> reorderedList});
 }
 
 /// @nodoc
-class __$ReorderedListCopyWithImpl<$Res> extends _$ObjectivesCreationEventCopyWithImpl<$Res>
+class __$ReorderedListCopyWithImpl<$Res>
+    extends _$ObjectivesCreationEventCopyWithImpl<$Res>
     implements _$ReorderedListCopyWith<$Res> {
-  __$ReorderedListCopyWithImpl(_ReorderedList _value, $Res Function(_ReorderedList) _then)
+  __$ReorderedListCopyWithImpl(
+      _ReorderedList _value, $Res Function(_ReorderedList) _then)
       : super(_value, (v) => _then(v as _ReorderedList));
 
   @override
@@ -528,11 +549,13 @@ class _$_ReorderedList implements _ReorderedList {
     return identical(this, other) ||
         (other is _ReorderedList &&
             (identical(other.reorderedList, reorderedList) ||
-                const DeepCollectionEquality().equals(other.reorderedList, reorderedList)));
+                const DeepCollectionEquality()
+                    .equals(other.reorderedList, reorderedList)));
   }
 
   @override
-  int get hashCode => runtimeType.hashCode ^ const DeepCollectionEquality().hash(reorderedList);
+  int get hashCode =>
+      runtimeType.hashCode ^ const DeepCollectionEquality().hash(reorderedList);
 
   @JsonKey(ignore: true)
   @override
@@ -542,7 +565,8 @@ class _$_ReorderedList implements _ReorderedList {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(Option<ObjectiveList> objectiveListOption) initialized,
+    required TResult Function(Option<ObjectiveList> objectiveListOption)
+        initialized,
     required TResult Function(Objective objective) addedObjective,
     required TResult Function(Objective objective) removedObjective,
     required TResult Function(List<Objective> reorderedList) reorderedList,
@@ -593,19 +617,21 @@ class _$_ReorderedList implements _ReorderedList {
 }
 
 abstract class _ReorderedList implements ObjectivesCreationEvent {
-  const factory _ReorderedList(List<Objective> reorderedList) = _$_ReorderedList;
+  const factory _ReorderedList(List<Objective> reorderedList) =
+      _$_ReorderedList;
 
   List<Objective> get reorderedList => throw _privateConstructorUsedError;
-
   @JsonKey(ignore: true)
-  _$ReorderedListCopyWith<_ReorderedList> get copyWith => throw _privateConstructorUsedError;
+  _$ReorderedListCopyWith<_ReorderedList> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 class _$ObjectivesCreationStateTearOff {
   const _$ObjectivesCreationStateTearOff();
 
-  _ObjectivesCreationState call({required KtList<Objective> objectivesCreated}) {
+  _ObjectivesCreationState call(
+      {required KtList<Objective> objectivesCreated}) {
     return _ObjectivesCreationState(
       objectivesCreated: objectivesCreated,
     );
@@ -626,19 +652,18 @@ mixin _$ObjectivesCreationState {
 
 /// @nodoc
 abstract class $ObjectivesCreationStateCopyWith<$Res> {
-  factory $ObjectivesCreationStateCopyWith(
-          ObjectivesCreationState value, $Res Function(ObjectivesCreationState) then) =
+  factory $ObjectivesCreationStateCopyWith(ObjectivesCreationState value,
+          $Res Function(ObjectivesCreationState) then) =
       _$ObjectivesCreationStateCopyWithImpl<$Res>;
-
   $Res call({KtList<Objective> objectivesCreated});
 }
 
 /// @nodoc
-class _$ObjectivesCreationStateCopyWithImpl<$Res> implements $ObjectivesCreationStateCopyWith<$Res> {
+class _$ObjectivesCreationStateCopyWithImpl<$Res>
+    implements $ObjectivesCreationStateCopyWith<$Res> {
   _$ObjectivesCreationStateCopyWithImpl(this._value, this._then);
 
   final ObjectivesCreationState _value;
-
   // ignore: unused_field
   final $Res Function(ObjectivesCreationState) _then;
 
@@ -656,24 +681,26 @@ class _$ObjectivesCreationStateCopyWithImpl<$Res> implements $ObjectivesCreation
 }
 
 /// @nodoc
-abstract class _$ObjectivesCreationStateCopyWith<$Res> implements $ObjectivesCreationStateCopyWith<$Res> {
-  factory _$ObjectivesCreationStateCopyWith(
-          _ObjectivesCreationState value, $Res Function(_ObjectivesCreationState) then) =
+abstract class _$ObjectivesCreationStateCopyWith<$Res>
+    implements $ObjectivesCreationStateCopyWith<$Res> {
+  factory _$ObjectivesCreationStateCopyWith(_ObjectivesCreationState value,
+          $Res Function(_ObjectivesCreationState) then) =
       __$ObjectivesCreationStateCopyWithImpl<$Res>;
-
   @override
   $Res call({KtList<Objective> objectivesCreated});
 }
 
 /// @nodoc
-class __$ObjectivesCreationStateCopyWithImpl<$Res> extends _$ObjectivesCreationStateCopyWithImpl<$Res>
+class __$ObjectivesCreationStateCopyWithImpl<$Res>
+    extends _$ObjectivesCreationStateCopyWithImpl<$Res>
     implements _$ObjectivesCreationStateCopyWith<$Res> {
-  __$ObjectivesCreationStateCopyWithImpl(
-      _ObjectivesCreationState _value, $Res Function(_ObjectivesCreationState) _then)
+  __$ObjectivesCreationStateCopyWithImpl(_ObjectivesCreationState _value,
+      $Res Function(_ObjectivesCreationState) _then)
       : super(_value, (v) => _then(v as _ObjectivesCreationState));
 
   @override
-  _ObjectivesCreationState get _value => super._value as _ObjectivesCreationState;
+  _ObjectivesCreationState get _value =>
+      super._value as _ObjectivesCreationState;
 
   @override
   $Res call({
@@ -706,25 +733,29 @@ class _$_ObjectivesCreationState implements _ObjectivesCreationState {
     return identical(this, other) ||
         (other is _ObjectivesCreationState &&
             (identical(other.objectivesCreated, objectivesCreated) ||
-                const DeepCollectionEquality().equals(other.objectivesCreated, objectivesCreated)));
+                const DeepCollectionEquality()
+                    .equals(other.objectivesCreated, objectivesCreated)));
   }
 
   @override
-  int get hashCode => runtimeType.hashCode ^ const DeepCollectionEquality().hash(objectivesCreated);
+  int get hashCode =>
+      runtimeType.hashCode ^
+      const DeepCollectionEquality().hash(objectivesCreated);
 
   @JsonKey(ignore: true)
   @override
   _$ObjectivesCreationStateCopyWith<_ObjectivesCreationState> get copyWith =>
-      __$ObjectivesCreationStateCopyWithImpl<_ObjectivesCreationState>(this, _$identity);
+      __$ObjectivesCreationStateCopyWithImpl<_ObjectivesCreationState>(
+          this, _$identity);
 }
 
 abstract class _ObjectivesCreationState implements ObjectivesCreationState {
-  const factory _ObjectivesCreationState({required KtList<Objective> objectivesCreated}) =
+  const factory _ObjectivesCreationState(
+          {required KtList<Objective> objectivesCreated}) =
       _$_ObjectivesCreationState;
 
   @override
   KtList<Objective> get objectivesCreated => throw _privateConstructorUsedError;
-
   @override
   @JsonKey(ignore: true)
   _$ObjectivesCreationStateCopyWith<_ObjectivesCreationState> get copyWith =>

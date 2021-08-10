@@ -1,6 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
+
 import 'intl/messages_all.dart';
 
 // **************************************************************************
@@ -26,7 +27,9 @@ class S {
   static const AppLocalizationDelegate delegate = AppLocalizationDelegate();
 
   static Future<S> load(Locale locale) {
-    final name = (locale.countryCode?.isEmpty ?? false) ? locale.languageCode : locale.toString();
+    final name = (locale.countryCode?.isEmpty ?? false)
+        ? locale.languageCode
+        : locale.toString();
     final localeName = Intl.canonicalizedLocale(name);
     return initializeMessages(localeName).then((_) {
       Intl.defaultLocale = localeName;
@@ -2358,11 +2361,51 @@ class S {
     );
   }
 
-  /// `User's level, it goes up with creating nad doing experiences`
+  /// `User's level, it goes up with creating and doing experiences`
   String get userLeverShowCase {
     return Intl.message(
-      'User\'s level, it goes up with creating nad doing experiences',
+      'User\'s level, it goes up with creating and doing experiences',
       name: 'userLeverShowCase',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `How difficult will the experience be?`
+  String get difficultyShowCase {
+    return Intl.message(
+      'How difficult will the experience be?',
+      name: 'difficultyShowCase',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `What is the initial location of the experience?`
+  String get mapShowCase {
+    return Intl.message(
+      'What is the initial location of the experience?',
+      name: 'mapShowCase',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Create the objectives of the experience or in other words the steps to follows`
+  String get objectivesShowCase {
+    return Intl.message(
+      'Create the objectives of the experience or in other words the steps to follows',
+      name: 'objectivesShowCase',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Create or look for tags that describe the experience you have created`
+  String get tagCreationShowCase {
+    return Intl.message(
+      'Create or look for tags that describe the experience you have created',
+      name: 'tagCreationShowCase',
       desc: '',
       args: [],
     );

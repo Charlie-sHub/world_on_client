@@ -52,8 +52,8 @@ mixin _$Comment {
 
 /// @nodoc
 abstract class $CommentCopyWith<$Res> {
-  factory $CommentCopyWith(Comment value, $Res Function(Comment) then) = _$CommentCopyWithImpl<$Res>;
-
+  factory $CommentCopyWith(Comment value, $Res Function(Comment) then) =
+      _$CommentCopyWithImpl<$Res>;
   $Res call(
       {UniqueId id,
       SimpleUser poster,
@@ -120,8 +120,8 @@ class _$CommentCopyWithImpl<$Res> implements $CommentCopyWith<$Res> {
 
 /// @nodoc
 abstract class _$CommentCopyWith<$Res> implements $CommentCopyWith<$Res> {
-  factory _$CommentCopyWith(_Comment value, $Res Function(_Comment) then) = __$CommentCopyWithImpl<$Res>;
-
+  factory _$CommentCopyWith(_Comment value, $Res Function(_Comment) then) =
+      __$CommentCopyWithImpl<$Res>;
   @override
   $Res call(
       {UniqueId id,
@@ -136,7 +136,8 @@ abstract class _$CommentCopyWith<$Res> implements $CommentCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$CommentCopyWithImpl<$Res> extends _$CommentCopyWithImpl<$Res> implements _$CommentCopyWith<$Res> {
+class __$CommentCopyWithImpl<$Res> extends _$CommentCopyWithImpl<$Res>
+    implements _$CommentCopyWith<$Res> {
   __$CommentCopyWithImpl(_Comment _value, $Res Function(_Comment) _then)
       : super(_value, (v) => _then(v as _Comment));
 
@@ -215,17 +216,22 @@ class _$_Comment extends _Comment {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other is _Comment &&
-            (identical(other.id, id) || const DeepCollectionEquality().equals(other.id, id)) &&
+            (identical(other.id, id) ||
+                const DeepCollectionEquality().equals(other.id, id)) &&
             (identical(other.poster, poster) ||
                 const DeepCollectionEquality().equals(other.poster, poster)) &&
             (identical(other.experienceId, experienceId) ||
-                const DeepCollectionEquality().equals(other.experienceId, experienceId)) &&
+                const DeepCollectionEquality()
+                    .equals(other.experienceId, experienceId)) &&
             (identical(other.content, content) ||
-                const DeepCollectionEquality().equals(other.content, content)) &&
+                const DeepCollectionEquality()
+                    .equals(other.content, content)) &&
             (identical(other.creationDate, creationDate) ||
-                const DeepCollectionEquality().equals(other.creationDate, creationDate)) &&
+                const DeepCollectionEquality()
+                    .equals(other.creationDate, creationDate)) &&
             (identical(other.modificationDate, modificationDate) ||
-                const DeepCollectionEquality().equals(other.modificationDate, modificationDate)));
+                const DeepCollectionEquality()
+                    .equals(other.modificationDate, modificationDate)));
   }
 
   @override
@@ -240,7 +246,8 @@ class _$_Comment extends _Comment {
 
   @JsonKey(ignore: true)
   @override
-  _$CommentCopyWith<_Comment> get copyWith => __$CommentCopyWithImpl<_Comment>(this, _$identity);
+  _$CommentCopyWith<_Comment> get copyWith =>
+      __$CommentCopyWithImpl<_Comment>(this, _$identity);
 }
 
 abstract class _Comment extends Comment {
@@ -263,11 +270,10 @@ abstract class _Comment extends Comment {
   CommentContent get content => throw _privateConstructorUsedError;
   @override
   PastDate get creationDate => throw _privateConstructorUsedError;
-
   @override
   PastDate get modificationDate => throw _privateConstructorUsedError;
-
   @override
   @JsonKey(ignore: true)
-  _$CommentCopyWith<_Comment> get copyWith => throw _privateConstructorUsedError;
+  _$CommentCopyWith<_Comment> get copyWith =>
+      throw _privateConstructorUsedError;
 }

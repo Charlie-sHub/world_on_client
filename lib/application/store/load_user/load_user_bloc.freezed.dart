@@ -52,30 +52,33 @@ mixin _$LoadUserEvent {
 
 /// @nodoc
 abstract class $LoadUserEventCopyWith<$Res> {
-  factory $LoadUserEventCopyWith(LoadUserEvent value, $Res Function(LoadUserEvent) then) =
+  factory $LoadUserEventCopyWith(
+          LoadUserEvent value, $Res Function(LoadUserEvent) then) =
       _$LoadUserEventCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class _$LoadUserEventCopyWithImpl<$Res> implements $LoadUserEventCopyWith<$Res> {
+class _$LoadUserEventCopyWithImpl<$Res>
+    implements $LoadUserEventCopyWith<$Res> {
   _$LoadUserEventCopyWithImpl(this._value, this._then);
 
   final LoadUserEvent _value;
-
   // ignore: unused_field
   final $Res Function(LoadUserEvent) _then;
 }
 
 /// @nodoc
 abstract class _$LoadedUserCopyWith<$Res> {
-  factory _$LoadedUserCopyWith(_LoadedUser value, $Res Function(_LoadedUser) then) =
+  factory _$LoadedUserCopyWith(
+          _LoadedUser value, $Res Function(_LoadedUser) then) =
       __$LoadedUserCopyWithImpl<$Res>;
 }
 
 /// @nodoc
 class __$LoadedUserCopyWithImpl<$Res> extends _$LoadUserEventCopyWithImpl<$Res>
     implements _$LoadedUserCopyWith<$Res> {
-  __$LoadedUserCopyWithImpl(_LoadedUser _value, $Res Function(_LoadedUser) _then)
+  __$LoadedUserCopyWithImpl(
+      _LoadedUser _value, $Res Function(_LoadedUser) _then)
       : super(_value, (v) => _then(v as _LoadedUser));
 
   @override
@@ -213,23 +216,25 @@ mixin _$LoadUserState {
 
 /// @nodoc
 abstract class $LoadUserStateCopyWith<$Res> {
-  factory $LoadUserStateCopyWith(LoadUserState value, $Res Function(LoadUserState) then) =
+  factory $LoadUserStateCopyWith(
+          LoadUserState value, $Res Function(LoadUserState) then) =
       _$LoadUserStateCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class _$LoadUserStateCopyWithImpl<$Res> implements $LoadUserStateCopyWith<$Res> {
+class _$LoadUserStateCopyWithImpl<$Res>
+    implements $LoadUserStateCopyWith<$Res> {
   _$LoadUserStateCopyWithImpl(this._value, this._then);
 
   final LoadUserState _value;
-
   // ignore: unused_field
   final $Res Function(LoadUserState) _then;
 }
 
 /// @nodoc
 abstract class _$InitialCopyWith<$Res> {
-  factory _$InitialCopyWith(_Initial value, $Res Function(_Initial) then) = __$InitialCopyWithImpl<$Res>;
+  factory _$InitialCopyWith(_Initial value, $Res Function(_Initial) then) =
+      __$InitialCopyWithImpl<$Res>;
 }
 
 /// @nodoc
@@ -319,14 +324,17 @@ abstract class _Initial implements LoadUserState {
 
 /// @nodoc
 abstract class _$ActionInProgressCopyWith<$Res> {
-  factory _$ActionInProgressCopyWith(_ActionInProgress value, $Res Function(_ActionInProgress) then) =
+  factory _$ActionInProgressCopyWith(
+          _ActionInProgress value, $Res Function(_ActionInProgress) then) =
       __$ActionInProgressCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$ActionInProgressCopyWithImpl<$Res> extends _$LoadUserStateCopyWithImpl<$Res>
+class __$ActionInProgressCopyWithImpl<$Res>
+    extends _$LoadUserStateCopyWithImpl<$Res>
     implements _$ActionInProgressCopyWith<$Res> {
-  __$ActionInProgressCopyWithImpl(_ActionInProgress _value, $Res Function(_ActionInProgress) _then)
+  __$ActionInProgressCopyWithImpl(
+      _ActionInProgress _value, $Res Function(_ActionInProgress) _then)
       : super(_value, (v) => _then(v as _ActionInProgress));
 
   @override
@@ -410,9 +418,9 @@ abstract class _ActionInProgress implements LoadUserState {
 
 /// @nodoc
 abstract class _$LoadSuccessCopyWith<$Res> {
-  factory _$LoadSuccessCopyWith(_LoadSuccess value, $Res Function(_LoadSuccess) then) =
+  factory _$LoadSuccessCopyWith(
+          _LoadSuccess value, $Res Function(_LoadSuccess) then) =
       __$LoadSuccessCopyWithImpl<$Res>;
-
   $Res call({User user});
 
   $UserCopyWith<$Res> get user;
@@ -421,7 +429,8 @@ abstract class _$LoadSuccessCopyWith<$Res> {
 /// @nodoc
 class __$LoadSuccessCopyWithImpl<$Res> extends _$LoadUserStateCopyWithImpl<$Res>
     implements _$LoadSuccessCopyWith<$Res> {
-  __$LoadSuccessCopyWithImpl(_LoadSuccess _value, $Res Function(_LoadSuccess) _then)
+  __$LoadSuccessCopyWithImpl(
+      _LoadSuccess _value, $Res Function(_LoadSuccess) _then)
       : super(_value, (v) => _then(v as _LoadSuccess));
 
   @override
@@ -464,11 +473,13 @@ class _$_LoadSuccess implements _LoadSuccess {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other is _LoadSuccess &&
-            (identical(other.user, user) || const DeepCollectionEquality().equals(other.user, user)));
+            (identical(other.user, user) ||
+                const DeepCollectionEquality().equals(other.user, user)));
   }
 
   @override
-  int get hashCode => runtimeType.hashCode ^ const DeepCollectionEquality().hash(user);
+  int get hashCode =>
+      runtimeType.hashCode ^ const DeepCollectionEquality().hash(user);
 
   @JsonKey(ignore: true)
   @override
@@ -532,16 +543,16 @@ abstract class _LoadSuccess implements LoadUserState {
   const factory _LoadSuccess(User user) = _$_LoadSuccess;
 
   User get user => throw _privateConstructorUsedError;
-
   @JsonKey(ignore: true)
-  _$LoadSuccessCopyWith<_LoadSuccess> get copyWith => throw _privateConstructorUsedError;
+  _$LoadSuccessCopyWith<_LoadSuccess> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class _$LoadFailureCopyWith<$Res> {
-  factory _$LoadFailureCopyWith(_LoadFailure value, $Res Function(_LoadFailure) then) =
+  factory _$LoadFailureCopyWith(
+          _LoadFailure value, $Res Function(_LoadFailure) then) =
       __$LoadFailureCopyWithImpl<$Res>;
-
   $Res call({Failure<dynamic> failure});
 
   $FailureCopyWith<dynamic, $Res> get failure;
@@ -550,7 +561,8 @@ abstract class _$LoadFailureCopyWith<$Res> {
 /// @nodoc
 class __$LoadFailureCopyWithImpl<$Res> extends _$LoadUserStateCopyWithImpl<$Res>
     implements _$LoadFailureCopyWith<$Res> {
-  __$LoadFailureCopyWithImpl(_LoadFailure _value, $Res Function(_LoadFailure) _then)
+  __$LoadFailureCopyWithImpl(
+      _LoadFailure _value, $Res Function(_LoadFailure) _then)
       : super(_value, (v) => _then(v as _LoadFailure));
 
   @override
@@ -598,7 +610,8 @@ class _$_LoadFailure implements _LoadFailure {
   }
 
   @override
-  int get hashCode => runtimeType.hashCode ^ const DeepCollectionEquality().hash(failure);
+  int get hashCode =>
+      runtimeType.hashCode ^ const DeepCollectionEquality().hash(failure);
 
   @JsonKey(ignore: true)
   @override
@@ -662,7 +675,7 @@ abstract class _LoadFailure implements LoadUserState {
   const factory _LoadFailure(Failure<dynamic> failure) = _$_LoadFailure;
 
   Failure<dynamic> get failure => throw _privateConstructorUsedError;
-
   @JsonKey(ignore: true)
-  _$LoadFailureCopyWith<_LoadFailure> get copyWith => throw _privateConstructorUsedError;
+  _$LoadFailureCopyWith<_LoadFailure> get copyWith =>
+      throw _privateConstructorUsedError;
 }

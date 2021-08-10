@@ -24,7 +24,8 @@ class _$ExperienceManagementApplicationFailureTearOff {
 }
 
 /// @nodoc
-const $ExperienceManagementApplicationFailure = _$ExperienceManagementApplicationFailureTearOff();
+const $ExperienceManagementApplicationFailure =
+    _$ExperienceManagementApplicationFailureTearOff();
 
 /// @nodoc
 mixin _$ExperienceManagementApplicationFailure<T> {
@@ -54,16 +55,17 @@ mixin _$ExperienceManagementApplicationFailure<T> {
       throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
-  $ExperienceManagementApplicationFailureCopyWith<T, ExperienceManagementApplicationFailure<T>>
+  $ExperienceManagementApplicationFailureCopyWith<T,
+          ExperienceManagementApplicationFailure<T>>
       get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $ExperienceManagementApplicationFailureCopyWith<T, $Res> {
-  factory $ExperienceManagementApplicationFailureCopyWith(ExperienceManagementApplicationFailure<T> value,
+  factory $ExperienceManagementApplicationFailureCopyWith(
+          ExperienceManagementApplicationFailure<T> value,
           $Res Function(ExperienceManagementApplicationFailure<T>) then) =
       _$ExperienceManagementApplicationFailureCopyWithImpl<T, $Res>;
-
   $Res call({int limit});
 }
 
@@ -92,10 +94,9 @@ class _$ExperienceManagementApplicationFailureCopyWithImpl<T, $Res>
 /// @nodoc
 abstract class $SurpassedImageLimitCopyWith<T, $Res>
     implements $ExperienceManagementApplicationFailureCopyWith<T, $Res> {
-  factory $SurpassedImageLimitCopyWith(
-          SurpassedImageLimit<T> value, $Res Function(SurpassedImageLimit<T>) then) =
+  factory $SurpassedImageLimitCopyWith(SurpassedImageLimit<T> value,
+          $Res Function(SurpassedImageLimit<T>) then) =
       _$SurpassedImageLimitCopyWithImpl<T, $Res>;
-
   @override
   $Res call({int limit});
 }
@@ -104,8 +105,8 @@ abstract class $SurpassedImageLimitCopyWith<T, $Res>
 class _$SurpassedImageLimitCopyWithImpl<T, $Res>
     extends _$ExperienceManagementApplicationFailureCopyWithImpl<T, $Res>
     implements $SurpassedImageLimitCopyWith<T, $Res> {
-  _$SurpassedImageLimitCopyWithImpl(
-      SurpassedImageLimit<T> _value, $Res Function(SurpassedImageLimit<T>) _then)
+  _$SurpassedImageLimitCopyWithImpl(SurpassedImageLimit<T> _value,
+      $Res Function(SurpassedImageLimit<T>) _then)
       : super(_value, (v) => _then(v as SurpassedImageLimit<T>));
 
   @override
@@ -141,16 +142,19 @@ class _$SurpassedImageLimit<T> implements SurpassedImageLimit<T> {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other is SurpassedImageLimit<T> &&
-            (identical(other.limit, limit) || const DeepCollectionEquality().equals(other.limit, limit)));
+            (identical(other.limit, limit) ||
+                const DeepCollectionEquality().equals(other.limit, limit)));
   }
 
   @override
-  int get hashCode => runtimeType.hashCode ^ const DeepCollectionEquality().hash(limit);
+  int get hashCode =>
+      runtimeType.hashCode ^ const DeepCollectionEquality().hash(limit);
 
   @JsonKey(ignore: true)
   @override
   $SurpassedImageLimitCopyWith<T, SurpassedImageLimit<T>> get copyWith =>
-      _$SurpassedImageLimitCopyWithImpl<T, SurpassedImageLimit<T>>(this, _$identity);
+      _$SurpassedImageLimitCopyWithImpl<T, SurpassedImageLimit<T>>(
+          this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -193,13 +197,15 @@ class _$SurpassedImageLimit<T> implements SurpassedImageLimit<T> {
   }
 }
 
-abstract class SurpassedImageLimit<T> implements ExperienceManagementApplicationFailure<T> {
-  const factory SurpassedImageLimit({required int limit}) = _$SurpassedImageLimit<T>;
+abstract class SurpassedImageLimit<T>
+    implements ExperienceManagementApplicationFailure<T> {
+  const factory SurpassedImageLimit({required int limit}) =
+      _$SurpassedImageLimit<T>;
 
   @override
   int get limit => throw _privateConstructorUsedError;
-
   @override
   @JsonKey(ignore: true)
-  $SurpassedImageLimitCopyWith<T, SurpassedImageLimit<T>> get copyWith => throw _privateConstructorUsedError;
+  $SurpassedImageLimitCopyWith<T, SurpassedImageLimit<T>> get copyWith =>
+      throw _privateConstructorUsedError;
 }

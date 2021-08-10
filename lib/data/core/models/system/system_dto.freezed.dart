@@ -20,7 +20,11 @@ SystemDto _$SystemDtoFromJson(Map<String, dynamic> json) {
 class _$SystemDtoTearOff {
   const _$SystemDtoTearOff();
 
-  _SystemDto call({required String id, required String name, required String type, required String company}) {
+  _SystemDto call(
+      {required String id,
+      required String name,
+      required String type,
+      required String company}) {
     return _SystemDto(
       id: id,
       name: name,
@@ -45,9 +49,9 @@ mixin _$SystemDto {
   String get company => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-
   @JsonKey(ignore: true)
-  $SystemDtoCopyWith<SystemDto> get copyWith => throw _privateConstructorUsedError;
+  $SystemDtoCopyWith<SystemDto> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -95,9 +99,9 @@ class _$SystemDtoCopyWithImpl<$Res> implements $SystemDtoCopyWith<$Res> {
 
 /// @nodoc
 abstract class _$SystemDtoCopyWith<$Res> implements $SystemDtoCopyWith<$Res> {
-  factory _$SystemDtoCopyWith(_SystemDto value, $Res Function(_SystemDto) then) =
+  factory _$SystemDtoCopyWith(
+          _SystemDto value, $Res Function(_SystemDto) then) =
       __$SystemDtoCopyWithImpl<$Res>;
-
   @override
   $Res call({String id, String name, String type, String company});
 }
@@ -142,10 +146,15 @@ class __$SystemDtoCopyWithImpl<$Res> extends _$SystemDtoCopyWithImpl<$Res>
 /// @nodoc
 @JsonSerializable()
 class _$_SystemDto extends _SystemDto {
-  const _$_SystemDto({required this.id, required this.name, required this.type, required this.company})
+  const _$_SystemDto(
+      {required this.id,
+      required this.name,
+      required this.type,
+      required this.company})
       : super._();
 
-  factory _$_SystemDto.fromJson(Map<String, dynamic> json) => _$_$_SystemDtoFromJson(json);
+  factory _$_SystemDto.fromJson(Map<String, dynamic> json) =>
+      _$_$_SystemDtoFromJson(json);
 
   @override
   final String id;
@@ -165,9 +174,12 @@ class _$_SystemDto extends _SystemDto {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other is _SystemDto &&
-            (identical(other.id, id) || const DeepCollectionEquality().equals(other.id, id)) &&
-            (identical(other.name, name) || const DeepCollectionEquality().equals(other.name, name)) &&
-            (identical(other.type, type) || const DeepCollectionEquality().equals(other.type, type)) &&
+            (identical(other.id, id) ||
+                const DeepCollectionEquality().equals(other.id, id)) &&
+            (identical(other.name, name) ||
+                const DeepCollectionEquality().equals(other.name, name)) &&
+            (identical(other.type, type) ||
+                const DeepCollectionEquality().equals(other.type, type)) &&
             (identical(other.company, company) ||
                 const DeepCollectionEquality().equals(other.company, company)));
   }
@@ -197,24 +209,21 @@ abstract class _SystemDto extends SystemDto {
       required String name,
       required String type,
       required String company}) = _$_SystemDto;
-
   const _SystemDto._() : super._();
 
-  factory _SystemDto.fromJson(Map<String, dynamic> json) = _$_SystemDto.fromJson;
+  factory _SystemDto.fromJson(Map<String, dynamic> json) =
+      _$_SystemDto.fromJson;
 
   @override
   String get id => throw _privateConstructorUsedError;
-
   @override
   String get name => throw _privateConstructorUsedError;
-
   @override
   String get type => throw _privateConstructorUsedError;
-
   @override
   String get company => throw _privateConstructorUsedError;
-
   @override
   @JsonKey(ignore: true)
-  _$SystemDtoCopyWith<_SystemDto> get copyWith => throw _privateConstructorUsedError;
+  _$SystemDtoCopyWith<_SystemDto> get copyWith =>
+      throw _privateConstructorUsedError;
 }

@@ -44,13 +44,14 @@ mixin _$Objective {
   Option<File> get imageFile => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
-  $ObjectiveCopyWith<Objective> get copyWith => throw _privateConstructorUsedError;
+  $ObjectiveCopyWith<Objective> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $ObjectiveCopyWith<$Res> {
-  factory $ObjectiveCopyWith(Objective value, $Res Function(Objective) then) = _$ObjectiveCopyWithImpl<$Res>;
-
+  factory $ObjectiveCopyWith(Objective value, $Res Function(Objective) then) =
+      _$ObjectiveCopyWithImpl<$Res>;
   $Res call(
       {UniqueId id,
       EntityDescription description,
@@ -111,9 +112,9 @@ class _$ObjectiveCopyWithImpl<$Res> implements $ObjectiveCopyWith<$Res> {
 
 /// @nodoc
 abstract class _$ObjectiveCopyWith<$Res> implements $ObjectiveCopyWith<$Res> {
-  factory _$ObjectiveCopyWith(_Objective value, $Res Function(_Objective) then) =
+  factory _$ObjectiveCopyWith(
+          _Objective value, $Res Function(_Objective) then) =
       __$ObjectiveCopyWithImpl<$Res>;
-
   @override
   $Res call(
       {UniqueId id,
@@ -199,15 +200,20 @@ class _$_Objective extends _Objective {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other is _Objective &&
-            (identical(other.id, id) || const DeepCollectionEquality().equals(other.id, id)) &&
+            (identical(other.id, id) ||
+                const DeepCollectionEquality().equals(other.id, id)) &&
             (identical(other.description, description) ||
-                const DeepCollectionEquality().equals(other.description, description)) &&
+                const DeepCollectionEquality()
+                    .equals(other.description, description)) &&
             (identical(other.coordinates, coordinates) ||
-                const DeepCollectionEquality().equals(other.coordinates, coordinates)) &&
+                const DeepCollectionEquality()
+                    .equals(other.coordinates, coordinates)) &&
             (identical(other.imageURL, imageURL) ||
-                const DeepCollectionEquality().equals(other.imageURL, imageURL)) &&
+                const DeepCollectionEquality()
+                    .equals(other.imageURL, imageURL)) &&
             (identical(other.imageFile, imageFile) ||
-                const DeepCollectionEquality().equals(other.imageFile, imageFile)));
+                const DeepCollectionEquality()
+                    .equals(other.imageFile, imageFile)));
   }
 
   @override
@@ -221,7 +227,8 @@ class _$_Objective extends _Objective {
 
   @JsonKey(ignore: true)
   @override
-  _$ObjectiveCopyWith<_Objective> get copyWith => __$ObjectiveCopyWithImpl<_Objective>(this, _$identity);
+  _$ObjectiveCopyWith<_Objective> get copyWith =>
+      __$ObjectiveCopyWithImpl<_Objective>(this, _$identity);
 }
 
 abstract class _Objective extends Objective {
@@ -241,11 +248,10 @@ abstract class _Objective extends Objective {
   Coordinates get coordinates => throw _privateConstructorUsedError;
   @override
   String get imageURL => throw _privateConstructorUsedError;
-
   @override
   Option<File> get imageFile => throw _privateConstructorUsedError;
-
   @override
   @JsonKey(ignore: true)
-  _$ObjectiveCopyWith<_Objective> get copyWith => throw _privateConstructorUsedError;
+  _$ObjectiveCopyWith<_Objective> get copyWith =>
+      throw _privateConstructorUsedError;
 }

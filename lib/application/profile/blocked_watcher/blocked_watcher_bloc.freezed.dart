@@ -22,7 +22,8 @@ class _$BlockedWatcherEventTearOff {
     );
   }
 
-  _ResultsReceived resultsReceived(Either<Failure, KtList<User>> failureOrUsers) {
+  _ResultsReceived resultsReceived(
+      Either<Failure, KtList<User>> failureOrUsers) {
     return _ResultsReceived(
       failureOrUsers,
     );
@@ -37,19 +38,22 @@ mixin _$BlockedWatcherEvent {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(User user) watchBlockedUsersStarted,
-    required TResult Function(Either<Failure, KtList<User>> failureOrUsers) resultsReceived,
+    required TResult Function(Either<Failure, KtList<User>> failureOrUsers)
+        resultsReceived,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(User user)? watchBlockedUsersStarted,
-    TResult Function(Either<Failure, KtList<User>> failureOrUsers)? resultsReceived,
+    TResult Function(Either<Failure, KtList<User>> failureOrUsers)?
+        resultsReceived,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_WatchBlockedUsersStarted value) watchBlockedUsersStarted,
+    required TResult Function(_WatchBlockedUsersStarted value)
+        watchBlockedUsersStarted,
     required TResult Function(_ResultsReceived value) resultsReceived,
   }) =>
       throw _privateConstructorUsedError;
@@ -64,40 +68,42 @@ mixin _$BlockedWatcherEvent {
 
 /// @nodoc
 abstract class $BlockedWatcherEventCopyWith<$Res> {
-  factory $BlockedWatcherEventCopyWith(BlockedWatcherEvent value, $Res Function(BlockedWatcherEvent) then) =
+  factory $BlockedWatcherEventCopyWith(
+          BlockedWatcherEvent value, $Res Function(BlockedWatcherEvent) then) =
       _$BlockedWatcherEventCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class _$BlockedWatcherEventCopyWithImpl<$Res> implements $BlockedWatcherEventCopyWith<$Res> {
+class _$BlockedWatcherEventCopyWithImpl<$Res>
+    implements $BlockedWatcherEventCopyWith<$Res> {
   _$BlockedWatcherEventCopyWithImpl(this._value, this._then);
 
   final BlockedWatcherEvent _value;
-
   // ignore: unused_field
   final $Res Function(BlockedWatcherEvent) _then;
 }
 
 /// @nodoc
 abstract class _$WatchBlockedUsersStartedCopyWith<$Res> {
-  factory _$WatchBlockedUsersStartedCopyWith(
-          _WatchBlockedUsersStarted value, $Res Function(_WatchBlockedUsersStarted) then) =
+  factory _$WatchBlockedUsersStartedCopyWith(_WatchBlockedUsersStarted value,
+          $Res Function(_WatchBlockedUsersStarted) then) =
       __$WatchBlockedUsersStartedCopyWithImpl<$Res>;
-
   $Res call({User user});
 
   $UserCopyWith<$Res> get user;
 }
 
 /// @nodoc
-class __$WatchBlockedUsersStartedCopyWithImpl<$Res> extends _$BlockedWatcherEventCopyWithImpl<$Res>
+class __$WatchBlockedUsersStartedCopyWithImpl<$Res>
+    extends _$BlockedWatcherEventCopyWithImpl<$Res>
     implements _$WatchBlockedUsersStartedCopyWith<$Res> {
-  __$WatchBlockedUsersStartedCopyWithImpl(
-      _WatchBlockedUsersStarted _value, $Res Function(_WatchBlockedUsersStarted) _then)
+  __$WatchBlockedUsersStartedCopyWithImpl(_WatchBlockedUsersStarted _value,
+      $Res Function(_WatchBlockedUsersStarted) _then)
       : super(_value, (v) => _then(v as _WatchBlockedUsersStarted));
 
   @override
-  _WatchBlockedUsersStarted get _value => super._value as _WatchBlockedUsersStarted;
+  _WatchBlockedUsersStarted get _value =>
+      super._value as _WatchBlockedUsersStarted;
 
   @override
   $Res call({
@@ -136,22 +142,26 @@ class _$_WatchBlockedUsersStarted implements _WatchBlockedUsersStarted {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other is _WatchBlockedUsersStarted &&
-            (identical(other.user, user) || const DeepCollectionEquality().equals(other.user, user)));
+            (identical(other.user, user) ||
+                const DeepCollectionEquality().equals(other.user, user)));
   }
 
   @override
-  int get hashCode => runtimeType.hashCode ^ const DeepCollectionEquality().hash(user);
+  int get hashCode =>
+      runtimeType.hashCode ^ const DeepCollectionEquality().hash(user);
 
   @JsonKey(ignore: true)
   @override
   _$WatchBlockedUsersStartedCopyWith<_WatchBlockedUsersStarted> get copyWith =>
-      __$WatchBlockedUsersStartedCopyWithImpl<_WatchBlockedUsersStarted>(this, _$identity);
+      __$WatchBlockedUsersStartedCopyWithImpl<_WatchBlockedUsersStarted>(
+          this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(User user) watchBlockedUsersStarted,
-    required TResult Function(Either<Failure, KtList<User>> failureOrUsers) resultsReceived,
+    required TResult Function(Either<Failure, KtList<User>> failureOrUsers)
+        resultsReceived,
   }) {
     return watchBlockedUsersStarted(user);
   }
@@ -160,7 +170,8 @@ class _$_WatchBlockedUsersStarted implements _WatchBlockedUsersStarted {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(User user)? watchBlockedUsersStarted,
-    TResult Function(Either<Failure, KtList<User>> failureOrUsers)? resultsReceived,
+    TResult Function(Either<Failure, KtList<User>> failureOrUsers)?
+        resultsReceived,
     required TResult orElse(),
   }) {
     if (watchBlockedUsersStarted != null) {
@@ -172,7 +183,8 @@ class _$_WatchBlockedUsersStarted implements _WatchBlockedUsersStarted {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_WatchBlockedUsersStarted value) watchBlockedUsersStarted,
+    required TResult Function(_WatchBlockedUsersStarted value)
+        watchBlockedUsersStarted,
     required TResult Function(_ResultsReceived value) resultsReceived,
   }) {
     return watchBlockedUsersStarted(this);
@@ -193,10 +205,10 @@ class _$_WatchBlockedUsersStarted implements _WatchBlockedUsersStarted {
 }
 
 abstract class _WatchBlockedUsersStarted implements BlockedWatcherEvent {
-  const factory _WatchBlockedUsersStarted(User user) = _$_WatchBlockedUsersStarted;
+  const factory _WatchBlockedUsersStarted(User user) =
+      _$_WatchBlockedUsersStarted;
 
   User get user => throw _privateConstructorUsedError;
-
   @JsonKey(ignore: true)
   _$WatchBlockedUsersStartedCopyWith<_WatchBlockedUsersStarted> get copyWith =>
       throw _privateConstructorUsedError;
@@ -204,16 +216,18 @@ abstract class _WatchBlockedUsersStarted implements BlockedWatcherEvent {
 
 /// @nodoc
 abstract class _$ResultsReceivedCopyWith<$Res> {
-  factory _$ResultsReceivedCopyWith(_ResultsReceived value, $Res Function(_ResultsReceived) then) =
+  factory _$ResultsReceivedCopyWith(
+          _ResultsReceived value, $Res Function(_ResultsReceived) then) =
       __$ResultsReceivedCopyWithImpl<$Res>;
-
   $Res call({Either<Failure, KtList<User>> failureOrUsers});
 }
 
 /// @nodoc
-class __$ResultsReceivedCopyWithImpl<$Res> extends _$BlockedWatcherEventCopyWithImpl<$Res>
+class __$ResultsReceivedCopyWithImpl<$Res>
+    extends _$BlockedWatcherEventCopyWithImpl<$Res>
     implements _$ResultsReceivedCopyWith<$Res> {
-  __$ResultsReceivedCopyWithImpl(_ResultsReceived _value, $Res Function(_ResultsReceived) _then)
+  __$ResultsReceivedCopyWithImpl(
+      _ResultsReceived _value, $Res Function(_ResultsReceived) _then)
       : super(_value, (v) => _then(v as _ResultsReceived));
 
   @override
@@ -250,11 +264,14 @@ class _$_ResultsReceived implements _ResultsReceived {
     return identical(this, other) ||
         (other is _ResultsReceived &&
             (identical(other.failureOrUsers, failureOrUsers) ||
-                const DeepCollectionEquality().equals(other.failureOrUsers, failureOrUsers)));
+                const DeepCollectionEquality()
+                    .equals(other.failureOrUsers, failureOrUsers)));
   }
 
   @override
-  int get hashCode => runtimeType.hashCode ^ const DeepCollectionEquality().hash(failureOrUsers);
+  int get hashCode =>
+      runtimeType.hashCode ^
+      const DeepCollectionEquality().hash(failureOrUsers);
 
   @JsonKey(ignore: true)
   @override
@@ -265,7 +282,8 @@ class _$_ResultsReceived implements _ResultsReceived {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(User user) watchBlockedUsersStarted,
-    required TResult Function(Either<Failure, KtList<User>> failureOrUsers) resultsReceived,
+    required TResult Function(Either<Failure, KtList<User>> failureOrUsers)
+        resultsReceived,
   }) {
     return resultsReceived(failureOrUsers);
   }
@@ -274,7 +292,8 @@ class _$_ResultsReceived implements _ResultsReceived {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(User user)? watchBlockedUsersStarted,
-    TResult Function(Either<Failure, KtList<User>> failureOrUsers)? resultsReceived,
+    TResult Function(Either<Failure, KtList<User>> failureOrUsers)?
+        resultsReceived,
     required TResult orElse(),
   }) {
     if (resultsReceived != null) {
@@ -286,7 +305,8 @@ class _$_ResultsReceived implements _ResultsReceived {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_WatchBlockedUsersStarted value) watchBlockedUsersStarted,
+    required TResult Function(_WatchBlockedUsersStarted value)
+        watchBlockedUsersStarted,
     required TResult Function(_ResultsReceived value) resultsReceived,
   }) {
     return resultsReceived(this);
@@ -307,12 +327,14 @@ class _$_ResultsReceived implements _ResultsReceived {
 }
 
 abstract class _ResultsReceived implements BlockedWatcherEvent {
-  const factory _ResultsReceived(Either<Failure, KtList<User>> failureOrUsers) = _$_ResultsReceived;
+  const factory _ResultsReceived(Either<Failure, KtList<User>> failureOrUsers) =
+      _$_ResultsReceived;
 
-  Either<Failure, KtList<User>> get failureOrUsers => throw _privateConstructorUsedError;
-
+  Either<Failure, KtList<User>> get failureOrUsers =>
+      throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  _$ResultsReceivedCopyWith<_ResultsReceived> get copyWith => throw _privateConstructorUsedError;
+  _$ResultsReceivedCopyWith<_ResultsReceived> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -383,27 +405,30 @@ mixin _$BlockedWatcherState {
 
 /// @nodoc
 abstract class $BlockedWatcherStateCopyWith<$Res> {
-  factory $BlockedWatcherStateCopyWith(BlockedWatcherState value, $Res Function(BlockedWatcherState) then) =
+  factory $BlockedWatcherStateCopyWith(
+          BlockedWatcherState value, $Res Function(BlockedWatcherState) then) =
       _$BlockedWatcherStateCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class _$BlockedWatcherStateCopyWithImpl<$Res> implements $BlockedWatcherStateCopyWith<$Res> {
+class _$BlockedWatcherStateCopyWithImpl<$Res>
+    implements $BlockedWatcherStateCopyWith<$Res> {
   _$BlockedWatcherStateCopyWithImpl(this._value, this._then);
 
   final BlockedWatcherState _value;
-
   // ignore: unused_field
   final $Res Function(BlockedWatcherState) _then;
 }
 
 /// @nodoc
 abstract class _$InitialCopyWith<$Res> {
-  factory _$InitialCopyWith(_Initial value, $Res Function(_Initial) then) = __$InitialCopyWithImpl<$Res>;
+  factory _$InitialCopyWith(_Initial value, $Res Function(_Initial) then) =
+      __$InitialCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$InitialCopyWithImpl<$Res> extends _$BlockedWatcherStateCopyWithImpl<$Res>
+class __$InitialCopyWithImpl<$Res>
+    extends _$BlockedWatcherStateCopyWithImpl<$Res>
     implements _$InitialCopyWith<$Res> {
   __$InitialCopyWithImpl(_Initial _value, $Res Function(_Initial) _then)
       : super(_value, (v) => _then(v as _Initial));
@@ -489,14 +514,17 @@ abstract class _Initial implements BlockedWatcherState {
 
 /// @nodoc
 abstract class _$LoadInProgressCopyWith<$Res> {
-  factory _$LoadInProgressCopyWith(_LoadInProgress value, $Res Function(_LoadInProgress) then) =
+  factory _$LoadInProgressCopyWith(
+          _LoadInProgress value, $Res Function(_LoadInProgress) then) =
       __$LoadInProgressCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$LoadInProgressCopyWithImpl<$Res> extends _$BlockedWatcherStateCopyWithImpl<$Res>
+class __$LoadInProgressCopyWithImpl<$Res>
+    extends _$BlockedWatcherStateCopyWithImpl<$Res>
     implements _$LoadInProgressCopyWith<$Res> {
-  __$LoadInProgressCopyWithImpl(_LoadInProgress _value, $Res Function(_LoadInProgress) _then)
+  __$LoadInProgressCopyWithImpl(
+      _LoadInProgress _value, $Res Function(_LoadInProgress) _then)
       : super(_value, (v) => _then(v as _LoadInProgress));
 
   @override
@@ -580,16 +608,18 @@ abstract class _LoadInProgress implements BlockedWatcherState {
 
 /// @nodoc
 abstract class _$LoadSuccessCopyWith<$Res> {
-  factory _$LoadSuccessCopyWith(_LoadSuccess value, $Res Function(_LoadSuccess) then) =
+  factory _$LoadSuccessCopyWith(
+          _LoadSuccess value, $Res Function(_LoadSuccess) then) =
       __$LoadSuccessCopyWithImpl<$Res>;
-
   $Res call({KtList<User> blockedUsers});
 }
 
 /// @nodoc
-class __$LoadSuccessCopyWithImpl<$Res> extends _$BlockedWatcherStateCopyWithImpl<$Res>
+class __$LoadSuccessCopyWithImpl<$Res>
+    extends _$BlockedWatcherStateCopyWithImpl<$Res>
     implements _$LoadSuccessCopyWith<$Res> {
-  __$LoadSuccessCopyWithImpl(_LoadSuccess _value, $Res Function(_LoadSuccess) _then)
+  __$LoadSuccessCopyWithImpl(
+      _LoadSuccess _value, $Res Function(_LoadSuccess) _then)
       : super(_value, (v) => _then(v as _LoadSuccess));
 
   @override
@@ -626,11 +656,13 @@ class _$_LoadSuccess implements _LoadSuccess {
     return identical(this, other) ||
         (other is _LoadSuccess &&
             (identical(other.blockedUsers, blockedUsers) ||
-                const DeepCollectionEquality().equals(other.blockedUsers, blockedUsers)));
+                const DeepCollectionEquality()
+                    .equals(other.blockedUsers, blockedUsers)));
   }
 
   @override
-  int get hashCode => runtimeType.hashCode ^ const DeepCollectionEquality().hash(blockedUsers);
+  int get hashCode =>
+      runtimeType.hashCode ^ const DeepCollectionEquality().hash(blockedUsers);
 
   @JsonKey(ignore: true)
   @override
@@ -694,25 +726,27 @@ abstract class _LoadSuccess implements BlockedWatcherState {
   const factory _LoadSuccess(KtList<User> blockedUsers) = _$_LoadSuccess;
 
   KtList<User> get blockedUsers => throw _privateConstructorUsedError;
-
   @JsonKey(ignore: true)
-  _$LoadSuccessCopyWith<_LoadSuccess> get copyWith => throw _privateConstructorUsedError;
+  _$LoadSuccessCopyWith<_LoadSuccess> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class _$LoadFailureCopyWith<$Res> {
-  factory _$LoadFailureCopyWith(_LoadFailure value, $Res Function(_LoadFailure) then) =
+  factory _$LoadFailureCopyWith(
+          _LoadFailure value, $Res Function(_LoadFailure) then) =
       __$LoadFailureCopyWithImpl<$Res>;
-
   $Res call({Failure<dynamic> failure});
 
   $FailureCopyWith<dynamic, $Res> get failure;
 }
 
 /// @nodoc
-class __$LoadFailureCopyWithImpl<$Res> extends _$BlockedWatcherStateCopyWithImpl<$Res>
+class __$LoadFailureCopyWithImpl<$Res>
+    extends _$BlockedWatcherStateCopyWithImpl<$Res>
     implements _$LoadFailureCopyWith<$Res> {
-  __$LoadFailureCopyWithImpl(_LoadFailure _value, $Res Function(_LoadFailure) _then)
+  __$LoadFailureCopyWithImpl(
+      _LoadFailure _value, $Res Function(_LoadFailure) _then)
       : super(_value, (v) => _then(v as _LoadFailure));
 
   @override
@@ -760,7 +794,8 @@ class _$_LoadFailure implements _LoadFailure {
   }
 
   @override
-  int get hashCode => runtimeType.hashCode ^ const DeepCollectionEquality().hash(failure);
+  int get hashCode =>
+      runtimeType.hashCode ^ const DeepCollectionEquality().hash(failure);
 
   @JsonKey(ignore: true)
   @override
@@ -824,7 +859,7 @@ abstract class _LoadFailure implements BlockedWatcherState {
   const factory _LoadFailure(Failure<dynamic> failure) = _$_LoadFailure;
 
   Failure<dynamic> get failure => throw _privateConstructorUsedError;
-
   @JsonKey(ignore: true)
-  _$LoadFailureCopyWith<_LoadFailure> get copyWith => throw _privateConstructorUsedError;
+  _$LoadFailureCopyWith<_LoadFailure> get copyWith =>
+      throw _privateConstructorUsedError;
 }

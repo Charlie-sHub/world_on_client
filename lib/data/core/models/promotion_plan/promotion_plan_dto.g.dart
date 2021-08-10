@@ -13,18 +13,21 @@ _$_PromotionPlan _$_$_PromotionPlanFromJson(Map<String, dynamic> json) {
     description: json['description'] as String,
     code: _$enumDecode(_$PromotionPlanCodeEnumMap, json['code']),
     valueInEuros: json['valueInEuros'] as int,
-    boughtDate: const ServerTimestampConverter().fromJson(json['boughtDate'] as Timestamp),
+    boughtDate: const ServerTimestampConverter()
+        .fromJson(json['boughtDate'] as Timestamp),
     timesSeen: json['timesSeen'] as int,
   );
 }
 
-Map<String, dynamic> _$_$_PromotionPlanToJson(_$_PromotionPlan instance) => <String, dynamic>{
+Map<String, dynamic> _$_$_PromotionPlanToJson(_$_PromotionPlan instance) =>
+    <String, dynamic>{
       'id': instance.id,
       'name': instance.name,
       'description': instance.description,
       'code': _$PromotionPlanCodeEnumMap[instance.code],
       'valueInEuros': instance.valueInEuros,
-      'boughtDate': const ServerTimestampConverter().toJson(instance.boughtDate),
+      'boughtDate':
+          const ServerTimestampConverter().toJson(instance.boughtDate),
       'timesSeen': instance.timesSeen,
     };
 

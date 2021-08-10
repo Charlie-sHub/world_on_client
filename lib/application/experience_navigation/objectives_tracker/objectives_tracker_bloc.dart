@@ -17,8 +17,7 @@ import 'package:worldon/domain/experience_navigation/use_case/unaccomplish_objec
 import 'package:worldon/injection.dart';
 
 part 'objectives_tracker_bloc.freezed.dart';
-part 'objectives_tracker_event.dart';racker_event.dart';
-
+part 'objectives_tracker_event.dart';
 part 'objectives_tracker_state.dart';
 
 @injectable

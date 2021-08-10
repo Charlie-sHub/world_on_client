@@ -8,14 +8,16 @@ import 'package:worldon/views/profile/widgets/profile/profile.dart';
 import '../profile_critical_failure.dart';
 
 class ProfileBuilder extends StatelessWidget {
+  final GlobalKey<State<StatefulWidget>> userLevelShowKey;
+  final User user;
+  final bool isOwn;
+
   const ProfileBuilder({
     Key? key,
     required this.user,
     required this.isOwn,
+    required this.userLevelShowKey,
   }) : super(key: key);
-
-  final User user;
-  final bool isOwn;
 
   @override
   Widget build(BuildContext context) {
@@ -29,10 +31,12 @@ class ProfileBuilder extends StatelessWidget {
           initial: (value) => Profile(
             isOwn: isOwn,
             user: user,
+            userLevelShowKey: userLevelShowKey,
           ),
           newProfileUpdate: (_newProfileUpdate) => Profile(
             isOwn: isOwn,
             user: _newProfileUpdate.user,
+            userLevelShowKey: userLevelShowKey,
           ),
           failure: (value) => InkWell(
             onTap: () async => context.read<ProfileWatcherBloc>().add(

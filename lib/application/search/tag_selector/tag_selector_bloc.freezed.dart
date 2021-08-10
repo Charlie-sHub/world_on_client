@@ -16,7 +16,8 @@ final _privateConstructorUsedError = UnsupportedError(
 class _$TagSelectorEventTearOff {
   const _$TagSelectorEventTearOff();
 
-  _Initialized initialized(Option<Either<TagSet, Set<UniqueId>>> tagsEitherOption) {
+  _Initialized initialized(
+      Option<Either<TagSet, Set<UniqueId>>> tagsEitherOption) {
     return _Initialized(
       tagsEitherOption,
     );
@@ -42,14 +43,17 @@ const $TagSelectorEvent = _$TagSelectorEventTearOff();
 mixin _$TagSelectorEvent {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(Option<Either<TagSet, Set<UniqueId>>> tagsEitherOption) initialized,
+    required TResult Function(
+            Option<Either<TagSet, Set<UniqueId>>> tagsEitherOption)
+        initialized,
     required TResult Function(Tag tag) addedTag,
     required TResult Function(Tag tag) removedTag,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(Option<Either<TagSet, Set<UniqueId>>> tagsEitherOption)? initialized,
+    TResult Function(Option<Either<TagSet, Set<UniqueId>>> tagsEitherOption)?
+        initialized,
     TResult Function(Tag tag)? addedTag,
     TResult Function(Tag tag)? removedTag,
     required TResult orElse(),
@@ -74,32 +78,35 @@ mixin _$TagSelectorEvent {
 
 /// @nodoc
 abstract class $TagSelectorEventCopyWith<$Res> {
-  factory $TagSelectorEventCopyWith(TagSelectorEvent value, $Res Function(TagSelectorEvent) then) =
+  factory $TagSelectorEventCopyWith(
+          TagSelectorEvent value, $Res Function(TagSelectorEvent) then) =
       _$TagSelectorEventCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class _$TagSelectorEventCopyWithImpl<$Res> implements $TagSelectorEventCopyWith<$Res> {
+class _$TagSelectorEventCopyWithImpl<$Res>
+    implements $TagSelectorEventCopyWith<$Res> {
   _$TagSelectorEventCopyWithImpl(this._value, this._then);
 
   final TagSelectorEvent _value;
-
   // ignore: unused_field
   final $Res Function(TagSelectorEvent) _then;
 }
 
 /// @nodoc
 abstract class _$InitializedCopyWith<$Res> {
-  factory _$InitializedCopyWith(_Initialized value, $Res Function(_Initialized) then) =
+  factory _$InitializedCopyWith(
+          _Initialized value, $Res Function(_Initialized) then) =
       __$InitializedCopyWithImpl<$Res>;
-
   $Res call({Option<Either<TagSet, Set<UniqueId>>> tagsEitherOption});
 }
 
 /// @nodoc
-class __$InitializedCopyWithImpl<$Res> extends _$TagSelectorEventCopyWithImpl<$Res>
+class __$InitializedCopyWithImpl<$Res>
+    extends _$TagSelectorEventCopyWithImpl<$Res>
     implements _$InitializedCopyWith<$Res> {
-  __$InitializedCopyWithImpl(_Initialized _value, $Res Function(_Initialized) _then)
+  __$InitializedCopyWithImpl(
+      _Initialized _value, $Res Function(_Initialized) _then)
       : super(_value, (v) => _then(v as _Initialized));
 
   @override
@@ -136,11 +143,14 @@ class _$_Initialized implements _Initialized {
     return identical(this, other) ||
         (other is _Initialized &&
             (identical(other.tagsEitherOption, tagsEitherOption) ||
-                const DeepCollectionEquality().equals(other.tagsEitherOption, tagsEitherOption)));
+                const DeepCollectionEquality()
+                    .equals(other.tagsEitherOption, tagsEitherOption)));
   }
 
   @override
-  int get hashCode => runtimeType.hashCode ^ const DeepCollectionEquality().hash(tagsEitherOption);
+  int get hashCode =>
+      runtimeType.hashCode ^
+      const DeepCollectionEquality().hash(tagsEitherOption);
 
   @JsonKey(ignore: true)
   @override
@@ -150,7 +160,9 @@ class _$_Initialized implements _Initialized {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(Option<Either<TagSet, Set<UniqueId>>> tagsEitherOption) initialized,
+    required TResult Function(
+            Option<Either<TagSet, Set<UniqueId>>> tagsEitherOption)
+        initialized,
     required TResult Function(Tag tag) addedTag,
     required TResult Function(Tag tag) removedTag,
   }) {
@@ -160,7 +172,8 @@ class _$_Initialized implements _Initialized {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(Option<Either<TagSet, Set<UniqueId>>> tagsEitherOption)? initialized,
+    TResult Function(Option<Either<TagSet, Set<UniqueId>>> tagsEitherOption)?
+        initialized,
     TResult Function(Tag tag)? addedTag,
     TResult Function(Tag tag)? removedTag,
     required TResult orElse(),
@@ -197,12 +210,14 @@ class _$_Initialized implements _Initialized {
 }
 
 abstract class _Initialized implements TagSelectorEvent {
-  const factory _Initialized(Option<Either<TagSet, Set<UniqueId>>> tagsEitherOption) = _$_Initialized;
+  const factory _Initialized(
+      Option<Either<TagSet, Set<UniqueId>>> tagsEitherOption) = _$_Initialized;
 
-  Option<Either<TagSet, Set<UniqueId>>> get tagsEitherOption => throw _privateConstructorUsedError;
-
+  Option<Either<TagSet, Set<UniqueId>>> get tagsEitherOption =>
+      throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  _$InitializedCopyWith<_Initialized> get copyWith => throw _privateConstructorUsedError;
+  _$InitializedCopyWith<_Initialized> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -260,11 +275,13 @@ class _$_AddedTag implements _AddedTag {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other is _AddedTag &&
-            (identical(other.tag, tag) || const DeepCollectionEquality().equals(other.tag, tag)));
+            (identical(other.tag, tag) ||
+                const DeepCollectionEquality().equals(other.tag, tag)));
   }
 
   @override
-  int get hashCode => runtimeType.hashCode ^ const DeepCollectionEquality().hash(tag);
+  int get hashCode =>
+      runtimeType.hashCode ^ const DeepCollectionEquality().hash(tag);
 
   @JsonKey(ignore: true)
   @override
@@ -274,7 +291,9 @@ class _$_AddedTag implements _AddedTag {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(Option<Either<TagSet, Set<UniqueId>>> tagsEitherOption) initialized,
+    required TResult Function(
+            Option<Either<TagSet, Set<UniqueId>>> tagsEitherOption)
+        initialized,
     required TResult Function(Tag tag) addedTag,
     required TResult Function(Tag tag) removedTag,
   }) {
@@ -284,7 +303,8 @@ class _$_AddedTag implements _AddedTag {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(Option<Either<TagSet, Set<UniqueId>>> tagsEitherOption)? initialized,
+    TResult Function(Option<Either<TagSet, Set<UniqueId>>> tagsEitherOption)?
+        initialized,
     TResult Function(Tag tag)? addedTag,
     TResult Function(Tag tag)? removedTag,
     required TResult orElse(),
@@ -324,25 +344,27 @@ abstract class _AddedTag implements TagSelectorEvent {
   const factory _AddedTag(Tag tag) = _$_AddedTag;
 
   Tag get tag => throw _privateConstructorUsedError;
-
   @JsonKey(ignore: true)
-  _$AddedTagCopyWith<_AddedTag> get copyWith => throw _privateConstructorUsedError;
+  _$AddedTagCopyWith<_AddedTag> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class _$RemovedTagCopyWith<$Res> {
-  factory _$RemovedTagCopyWith(_RemovedTag value, $Res Function(_RemovedTag) then) =
+  factory _$RemovedTagCopyWith(
+          _RemovedTag value, $Res Function(_RemovedTag) then) =
       __$RemovedTagCopyWithImpl<$Res>;
-
   $Res call({Tag tag});
 
   $TagCopyWith<$Res> get tag;
 }
 
 /// @nodoc
-class __$RemovedTagCopyWithImpl<$Res> extends _$TagSelectorEventCopyWithImpl<$Res>
+class __$RemovedTagCopyWithImpl<$Res>
+    extends _$TagSelectorEventCopyWithImpl<$Res>
     implements _$RemovedTagCopyWith<$Res> {
-  __$RemovedTagCopyWithImpl(_RemovedTag _value, $Res Function(_RemovedTag) _then)
+  __$RemovedTagCopyWithImpl(
+      _RemovedTag _value, $Res Function(_RemovedTag) _then)
       : super(_value, (v) => _then(v as _RemovedTag));
 
   @override
@@ -385,11 +407,13 @@ class _$_RemovedTag implements _RemovedTag {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other is _RemovedTag &&
-            (identical(other.tag, tag) || const DeepCollectionEquality().equals(other.tag, tag)));
+            (identical(other.tag, tag) ||
+                const DeepCollectionEquality().equals(other.tag, tag)));
   }
 
   @override
-  int get hashCode => runtimeType.hashCode ^ const DeepCollectionEquality().hash(tag);
+  int get hashCode =>
+      runtimeType.hashCode ^ const DeepCollectionEquality().hash(tag);
 
   @JsonKey(ignore: true)
   @override
@@ -399,7 +423,9 @@ class _$_RemovedTag implements _RemovedTag {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(Option<Either<TagSet, Set<UniqueId>>> tagsEitherOption) initialized,
+    required TResult Function(
+            Option<Either<TagSet, Set<UniqueId>>> tagsEitherOption)
+        initialized,
     required TResult Function(Tag tag) addedTag,
     required TResult Function(Tag tag) removedTag,
   }) {
@@ -409,7 +435,8 @@ class _$_RemovedTag implements _RemovedTag {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(Option<Either<TagSet, Set<UniqueId>>> tagsEitherOption)? initialized,
+    TResult Function(Option<Either<TagSet, Set<UniqueId>>> tagsEitherOption)?
+        initialized,
     TResult Function(Tag tag)? addedTag,
     TResult Function(Tag tag)? removedTag,
     required TResult orElse(),
@@ -449,9 +476,9 @@ abstract class _RemovedTag implements TagSelectorEvent {
   const factory _RemovedTag(Tag tag) = _$_RemovedTag;
 
   Tag get tag => throw _privateConstructorUsedError;
-
   @JsonKey(ignore: true)
-  _$RemovedTagCopyWith<_RemovedTag> get copyWith => throw _privateConstructorUsedError;
+  _$RemovedTagCopyWith<_RemovedTag> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -473,23 +500,24 @@ mixin _$TagSelectorState {
   KtSet<Tag> get tagsSelected => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
-  $TagSelectorStateCopyWith<TagSelectorState> get copyWith => throw _privateConstructorUsedError;
+  $TagSelectorStateCopyWith<TagSelectorState> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $TagSelectorStateCopyWith<$Res> {
-  factory $TagSelectorStateCopyWith(TagSelectorState value, $Res Function(TagSelectorState) then) =
+  factory $TagSelectorStateCopyWith(
+          TagSelectorState value, $Res Function(TagSelectorState) then) =
       _$TagSelectorStateCopyWithImpl<$Res>;
-
   $Res call({KtSet<Tag> tagsSelected});
 }
 
 /// @nodoc
-class _$TagSelectorStateCopyWithImpl<$Res> implements $TagSelectorStateCopyWith<$Res> {
+class _$TagSelectorStateCopyWithImpl<$Res>
+    implements $TagSelectorStateCopyWith<$Res> {
   _$TagSelectorStateCopyWithImpl(this._value, this._then);
 
   final TagSelectorState _value;
-
   // ignore: unused_field
   final $Res Function(TagSelectorState) _then;
 
@@ -507,18 +535,21 @@ class _$TagSelectorStateCopyWithImpl<$Res> implements $TagSelectorStateCopyWith<
 }
 
 /// @nodoc
-abstract class _$TagSearchFormStateCopyWith<$Res> implements $TagSelectorStateCopyWith<$Res> {
-  factory _$TagSearchFormStateCopyWith(_TagSearchFormState value, $Res Function(_TagSearchFormState) then) =
+abstract class _$TagSearchFormStateCopyWith<$Res>
+    implements $TagSelectorStateCopyWith<$Res> {
+  factory _$TagSearchFormStateCopyWith(
+          _TagSearchFormState value, $Res Function(_TagSearchFormState) then) =
       __$TagSearchFormStateCopyWithImpl<$Res>;
-
   @override
   $Res call({KtSet<Tag> tagsSelected});
 }
 
 /// @nodoc
-class __$TagSearchFormStateCopyWithImpl<$Res> extends _$TagSelectorStateCopyWithImpl<$Res>
+class __$TagSearchFormStateCopyWithImpl<$Res>
+    extends _$TagSelectorStateCopyWithImpl<$Res>
     implements _$TagSearchFormStateCopyWith<$Res> {
-  __$TagSearchFormStateCopyWithImpl(_TagSearchFormState _value, $Res Function(_TagSearchFormState) _then)
+  __$TagSearchFormStateCopyWithImpl(
+      _TagSearchFormState _value, $Res Function(_TagSearchFormState) _then)
       : super(_value, (v) => _then(v as _TagSearchFormState));
 
   @override
@@ -555,11 +586,13 @@ class _$_TagSearchFormState implements _TagSearchFormState {
     return identical(this, other) ||
         (other is _TagSearchFormState &&
             (identical(other.tagsSelected, tagsSelected) ||
-                const DeepCollectionEquality().equals(other.tagsSelected, tagsSelected)));
+                const DeepCollectionEquality()
+                    .equals(other.tagsSelected, tagsSelected)));
   }
 
   @override
-  int get hashCode => runtimeType.hashCode ^ const DeepCollectionEquality().hash(tagsSelected);
+  int get hashCode =>
+      runtimeType.hashCode ^ const DeepCollectionEquality().hash(tagsSelected);
 
   @JsonKey(ignore: true)
   @override
@@ -568,12 +601,13 @@ class _$_TagSearchFormState implements _TagSearchFormState {
 }
 
 abstract class _TagSearchFormState implements TagSelectorState {
-  const factory _TagSearchFormState({required KtSet<Tag> tagsSelected}) = _$_TagSearchFormState;
+  const factory _TagSearchFormState({required KtSet<Tag> tagsSelected}) =
+      _$_TagSearchFormState;
 
   @override
   KtSet<Tag> get tagsSelected => throw _privateConstructorUsedError;
-
   @override
   @JsonKey(ignore: true)
-  _$TagSearchFormStateCopyWith<_TagSearchFormState> get copyWith => throw _privateConstructorUsedError;
+  _$TagSearchFormStateCopyWith<_TagSearchFormState> get copyWith =>
+      throw _privateConstructorUsedError;
 }

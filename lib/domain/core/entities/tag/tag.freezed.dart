@@ -49,9 +49,14 @@ mixin _$Tag {
 
 /// @nodoc
 abstract class $TagCopyWith<$Res> {
-  factory $TagCopyWith(Tag value, $Res Function(Tag) then) = _$TagCopyWithImpl<$Res>;
-
-  $Res call({UniqueId id, Name name, UniqueId creatorId, PastDate creationDate, PastDate modificationDate});
+  factory $TagCopyWith(Tag value, $Res Function(Tag) then) =
+      _$TagCopyWithImpl<$Res>;
+  $Res call(
+      {UniqueId id,
+      Name name,
+      UniqueId creatorId,
+      PastDate creationDate,
+      PastDate modificationDate});
 }
 
 /// @nodoc
@@ -97,15 +102,22 @@ class _$TagCopyWithImpl<$Res> implements $TagCopyWith<$Res> {
 
 /// @nodoc
 abstract class _$TagCopyWith<$Res> implements $TagCopyWith<$Res> {
-  factory _$TagCopyWith(_Tag value, $Res Function(_Tag) then) = __$TagCopyWithImpl<$Res>;
-
+  factory _$TagCopyWith(_Tag value, $Res Function(_Tag) then) =
+      __$TagCopyWithImpl<$Res>;
   @override
-  $Res call({UniqueId id, Name name, UniqueId creatorId, PastDate creationDate, PastDate modificationDate});
+  $Res call(
+      {UniqueId id,
+      Name name,
+      UniqueId creatorId,
+      PastDate creationDate,
+      PastDate modificationDate});
 }
 
 /// @nodoc
-class __$TagCopyWithImpl<$Res> extends _$TagCopyWithImpl<$Res> implements _$TagCopyWith<$Res> {
-  __$TagCopyWithImpl(_Tag _value, $Res Function(_Tag) _then) : super(_value, (v) => _then(v as _Tag));
+class __$TagCopyWithImpl<$Res> extends _$TagCopyWithImpl<$Res>
+    implements _$TagCopyWith<$Res> {
+  __$TagCopyWithImpl(_Tag _value, $Res Function(_Tag) _then)
+      : super(_value, (v) => _then(v as _Tag));
 
   @override
   _Tag get _value => super._value as _Tag;
@@ -174,14 +186,19 @@ class _$_Tag extends _Tag {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other is _Tag &&
-            (identical(other.id, id) || const DeepCollectionEquality().equals(other.id, id)) &&
-            (identical(other.name, name) || const DeepCollectionEquality().equals(other.name, name)) &&
+            (identical(other.id, id) ||
+                const DeepCollectionEquality().equals(other.id, id)) &&
+            (identical(other.name, name) ||
+                const DeepCollectionEquality().equals(other.name, name)) &&
             (identical(other.creatorId, creatorId) ||
-                const DeepCollectionEquality().equals(other.creatorId, creatorId)) &&
+                const DeepCollectionEquality()
+                    .equals(other.creatorId, creatorId)) &&
             (identical(other.creationDate, creationDate) ||
-                const DeepCollectionEquality().equals(other.creationDate, creationDate)) &&
+                const DeepCollectionEquality()
+                    .equals(other.creationDate, creationDate)) &&
             (identical(other.modificationDate, modificationDate) ||
-                const DeepCollectionEquality().equals(other.modificationDate, modificationDate)));
+                const DeepCollectionEquality()
+                    .equals(other.modificationDate, modificationDate)));
   }
 
   @override
@@ -195,7 +212,8 @@ class _$_Tag extends _Tag {
 
   @JsonKey(ignore: true)
   @override
-  _$TagCopyWith<_Tag> get copyWith => __$TagCopyWithImpl<_Tag>(this, _$identity);
+  _$TagCopyWith<_Tag> get copyWith =>
+      __$TagCopyWithImpl<_Tag>(this, _$identity);
 }
 
 abstract class _Tag extends Tag {

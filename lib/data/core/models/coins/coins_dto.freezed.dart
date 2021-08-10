@@ -40,13 +40,14 @@ mixin _$CoinsDto {
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $CoinsDtoCopyWith<CoinsDto> get copyWith => throw _privateConstructorUsedError;
+  $CoinsDtoCopyWith<CoinsDto> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $CoinsDtoCopyWith<$Res> {
-  factory $CoinsDtoCopyWith(CoinsDto value, $Res Function(CoinsDto) then) = _$CoinsDtoCopyWithImpl<$Res>;
-
+  factory $CoinsDtoCopyWith(CoinsDto value, $Res Function(CoinsDto) then) =
+      _$CoinsDtoCopyWithImpl<$Res>;
   $Res call({String tenCoinsProductId});
 }
 
@@ -73,14 +74,15 @@ class _$CoinsDtoCopyWithImpl<$Res> implements $CoinsDtoCopyWith<$Res> {
 
 /// @nodoc
 abstract class _$CoinsDtoCopyWith<$Res> implements $CoinsDtoCopyWith<$Res> {
-  factory _$CoinsDtoCopyWith(_CoinsDto value, $Res Function(_CoinsDto) then) = __$CoinsDtoCopyWithImpl<$Res>;
-
+  factory _$CoinsDtoCopyWith(_CoinsDto value, $Res Function(_CoinsDto) then) =
+      __$CoinsDtoCopyWithImpl<$Res>;
   @override
   $Res call({String tenCoinsProductId});
 }
 
 /// @nodoc
-class __$CoinsDtoCopyWithImpl<$Res> extends _$CoinsDtoCopyWithImpl<$Res> implements _$CoinsDtoCopyWith<$Res> {
+class __$CoinsDtoCopyWithImpl<$Res> extends _$CoinsDtoCopyWithImpl<$Res>
+    implements _$CoinsDtoCopyWith<$Res> {
   __$CoinsDtoCopyWithImpl(_CoinsDto _value, $Res Function(_CoinsDto) _then)
       : super(_value, (v) => _then(v as _CoinsDto));
 
@@ -105,7 +107,8 @@ class __$CoinsDtoCopyWithImpl<$Res> extends _$CoinsDtoCopyWithImpl<$Res> impleme
 class _$_CoinsDto extends _CoinsDto {
   const _$_CoinsDto({required this.tenCoinsProductId}) : super._();
 
-  factory _$_CoinsDto.fromJson(Map<String, dynamic> json) => _$_$_CoinsDtoFromJson(json);
+  factory _$_CoinsDto.fromJson(Map<String, dynamic> json) =>
+      _$_$_CoinsDtoFromJson(json);
 
   @override
   final String tenCoinsProductId;
@@ -120,15 +123,19 @@ class _$_CoinsDto extends _CoinsDto {
     return identical(this, other) ||
         (other is _CoinsDto &&
             (identical(other.tenCoinsProductId, tenCoinsProductId) ||
-                const DeepCollectionEquality().equals(other.tenCoinsProductId, tenCoinsProductId)));
+                const DeepCollectionEquality()
+                    .equals(other.tenCoinsProductId, tenCoinsProductId)));
   }
 
   @override
-  int get hashCode => runtimeType.hashCode ^ const DeepCollectionEquality().hash(tenCoinsProductId);
+  int get hashCode =>
+      runtimeType.hashCode ^
+      const DeepCollectionEquality().hash(tenCoinsProductId);
 
   @JsonKey(ignore: true)
   @override
-  _$CoinsDtoCopyWith<_CoinsDto> get copyWith => __$CoinsDtoCopyWithImpl<_CoinsDto>(this, _$identity);
+  _$CoinsDtoCopyWith<_CoinsDto> get copyWith =>
+      __$CoinsDtoCopyWithImpl<_CoinsDto>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
@@ -144,8 +151,8 @@ abstract class _CoinsDto extends CoinsDto {
 
   @override
   String get tenCoinsProductId => throw _privateConstructorUsedError;
-
   @override
   @JsonKey(ignore: true)
-  _$CoinsDtoCopyWith<_CoinsDto> get copyWith => throw _privateConstructorUsedError;
+  _$CoinsDtoCopyWith<_CoinsDto> get copyWith =>
+      throw _privateConstructorUsedError;
 }

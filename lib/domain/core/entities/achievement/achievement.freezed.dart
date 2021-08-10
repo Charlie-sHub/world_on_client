@@ -66,14 +66,15 @@ mixin _$Achievement {
   TagSet get tags => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
-  $AchievementCopyWith<Achievement> get copyWith => throw _privateConstructorUsedError;
+  $AchievementCopyWith<Achievement> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $AchievementCopyWith<$Res> {
-  factory $AchievementCopyWith(Achievement value, $Res Function(Achievement) then) =
+  factory $AchievementCopyWith(
+          Achievement value, $Res Function(Achievement) then) =
       _$AchievementCopyWithImpl<$Res>;
-
   $Res call(
       {UniqueId id,
       Name name,
@@ -166,10 +167,11 @@ class _$AchievementCopyWithImpl<$Res> implements $AchievementCopyWith<$Res> {
 }
 
 /// @nodoc
-abstract class _$AchievementCopyWith<$Res> implements $AchievementCopyWith<$Res> {
-  factory _$AchievementCopyWith(_Achievement value, $Res Function(_Achievement) then) =
+abstract class _$AchievementCopyWith<$Res>
+    implements $AchievementCopyWith<$Res> {
+  factory _$AchievementCopyWith(
+          _Achievement value, $Res Function(_Achievement) then) =
       __$AchievementCopyWithImpl<$Res>;
-
   @override
   $Res call(
       {UniqueId id,
@@ -189,7 +191,8 @@ abstract class _$AchievementCopyWith<$Res> implements $AchievementCopyWith<$Res>
 /// @nodoc
 class __$AchievementCopyWithImpl<$Res> extends _$AchievementCopyWithImpl<$Res>
     implements _$AchievementCopyWith<$Res> {
-  __$AchievementCopyWithImpl(_Achievement _value, $Res Function(_Achievement) _then)
+  __$AchievementCopyWithImpl(
+      _Achievement _value, $Res Function(_Achievement) _then)
       : super(_value, (v) => _then(v as _Achievement));
 
   @override
@@ -315,26 +318,38 @@ class _$_Achievement extends _Achievement {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other is _Achievement &&
-            (identical(other.id, id) || const DeepCollectionEquality().equals(other.id, id)) &&
-            (identical(other.name, name) || const DeepCollectionEquality().equals(other.name, name)) &&
+            (identical(other.id, id) ||
+                const DeepCollectionEquality().equals(other.id, id)) &&
+            (identical(other.name, name) ||
+                const DeepCollectionEquality().equals(other.name, name)) &&
             (identical(other.description, description) ||
-                const DeepCollectionEquality().equals(other.description, description)) &&
+                const DeepCollectionEquality()
+                    .equals(other.description, description)) &&
             (identical(other.imageURL, imageURL) ||
-                const DeepCollectionEquality().equals(other.imageURL, imageURL)) &&
+                const DeepCollectionEquality()
+                    .equals(other.imageURL, imageURL)) &&
             (identical(other.imageFile, imageFile) ||
-                const DeepCollectionEquality().equals(other.imageFile, imageFile)) &&
-            (identical(other.type, type) || const DeepCollectionEquality().equals(other.type, type)) &&
+                const DeepCollectionEquality()
+                    .equals(other.imageFile, imageFile)) &&
+            (identical(other.type, type) ||
+                const DeepCollectionEquality().equals(other.type, type)) &&
             (identical(other.requisite, requisite) ||
-                const DeepCollectionEquality().equals(other.requisite, requisite)) &&
+                const DeepCollectionEquality()
+                    .equals(other.requisite, requisite)) &&
             (identical(other.experiencePoints, experiencePoints) ||
-                const DeepCollectionEquality().equals(other.experiencePoints, experiencePoints)) &&
+                const DeepCollectionEquality()
+                    .equals(other.experiencePoints, experiencePoints)) &&
             (identical(other.creatorId, creatorId) ||
-                const DeepCollectionEquality().equals(other.creatorId, creatorId)) &&
+                const DeepCollectionEquality()
+                    .equals(other.creatorId, creatorId)) &&
             (identical(other.creationDate, creationDate) ||
-                const DeepCollectionEquality().equals(other.creationDate, creationDate)) &&
+                const DeepCollectionEquality()
+                    .equals(other.creationDate, creationDate)) &&
             (identical(other.modificationDate, modificationDate) ||
-                const DeepCollectionEquality().equals(other.modificationDate, modificationDate)) &&
-            (identical(other.tags, tags) || const DeepCollectionEquality().equals(other.tags, tags)));
+                const DeepCollectionEquality()
+                    .equals(other.modificationDate, modificationDate)) &&
+            (identical(other.tags, tags) ||
+                const DeepCollectionEquality().equals(other.tags, tags)));
   }
 
   @override
@@ -397,11 +412,10 @@ abstract class _Achievement extends Achievement {
   PastDate get creationDate => throw _privateConstructorUsedError;
   @override
   PastDate get modificationDate => throw _privateConstructorUsedError;
-
   @override
   TagSet get tags => throw _privateConstructorUsedError;
-
   @override
   @JsonKey(ignore: true)
-  _$AchievementCopyWith<_Achievement> get copyWith => throw _privateConstructorUsedError;
+  _$AchievementCopyWith<_Achievement> get copyWith =>
+      throw _privateConstructorUsedError;
 }

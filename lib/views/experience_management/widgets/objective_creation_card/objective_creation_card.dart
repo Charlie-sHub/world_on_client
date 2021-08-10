@@ -1,4 +1,4 @@
-import 'package:dartz/dartz.dart';
+import 'package:dartz/dartz.dart' hide State;
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
@@ -13,12 +13,14 @@ import 'package:worldon/views/experience_management/widgets/objective_creation_c
 import 'created_objectives_list.dart';
 
 class ObjectiveCreationCard extends HookWidget {
+  final Option<ObjectiveList> objectiveListOption;
+  final GlobalKey<State<StatefulWidget>> objectivesShowKey;
+
   const ObjectiveCreationCard({
     Key? key,
     required this.objectiveListOption,
+    required this.objectivesShowKey,
   }) : super(key: key);
-
-  final Option<ObjectiveList> objectiveListOption;
 
   @override
   Widget build(BuildContext context) {
@@ -41,7 +43,9 @@ class ObjectiveCreationCard extends HookWidget {
             mainAxisSize: MainAxisSize.min,
             children: <Widget>[
               Text(
-                _experienceFormState.isEditing ? S.of(context).editObjectives : S.of(context).objectiveCreationCardTitle,
+                _experienceFormState.isEditing
+                    ? S.of(context).editObjectives
+                    : S.of(context).objectiveCreationCardTitle,
                 textAlign: TextAlign.center,
                 style: const TextStyle(
                   fontWeight: FontWeight.bold,
@@ -65,11 +69,13 @@ class ObjectiveCreationCard extends HookWidget {
                     ),
                     builder: (context, state) => ObjectiveCreationForm(
                       textEditingController: _textEditingController,
+                      showKey: objectivesShowKey,
                     ),
                   ),
                 ),
               ),
-              if (_experienceFormState.showErrorMessages && !_experienceFormState.experience.objectives.isValid())
+              if (_experienceFormState.showErrorMessages &&
+                  !_experienceFormState.experience.objectives.isValid())
                 Text(
                   S.of(context).noObjectivesErrorMessage,
                   textAlign: TextAlign.center,

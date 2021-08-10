@@ -58,14 +58,15 @@ mixin _$CommentDto {
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $CommentDtoCopyWith<CommentDto> get copyWith => throw _privateConstructorUsedError;
+  $CommentDtoCopyWith<CommentDto> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $CommentDtoCopyWith<$Res> {
-  factory $CommentDtoCopyWith(CommentDto value, $Res Function(CommentDto) then) =
+  factory $CommentDtoCopyWith(
+          CommentDto value, $Res Function(CommentDto) then) =
       _$CommentDtoCopyWithImpl<$Res>;
-
   $Res call(
       {String id,
       SimpleUserDto poster,
@@ -132,9 +133,9 @@ class _$CommentDtoCopyWithImpl<$Res> implements $CommentDtoCopyWith<$Res> {
 
 /// @nodoc
 abstract class _$CommentDtoCopyWith<$Res> implements $CommentDtoCopyWith<$Res> {
-  factory _$CommentDtoCopyWith(_CommentDto value, $Res Function(_CommentDto) then) =
+  factory _$CommentDtoCopyWith(
+          _CommentDto value, $Res Function(_CommentDto) then) =
       __$CommentDtoCopyWithImpl<$Res>;
-
   @override
   $Res call(
       {String id,
@@ -151,7 +152,8 @@ abstract class _$CommentDtoCopyWith<$Res> implements $CommentDtoCopyWith<$Res> {
 /// @nodoc
 class __$CommentDtoCopyWithImpl<$Res> extends _$CommentDtoCopyWithImpl<$Res>
     implements _$CommentDtoCopyWith<$Res> {
-  __$CommentDtoCopyWithImpl(_CommentDto _value, $Res Function(_CommentDto) _then)
+  __$CommentDtoCopyWithImpl(
+      _CommentDto _value, $Res Function(_CommentDto) _then)
       : super(_value, (v) => _then(v as _CommentDto));
 
   @override
@@ -207,7 +209,8 @@ class _$_CommentDto extends _CommentDto {
       @ServerTimestampConverter() required this.modificationDate})
       : super._();
 
-  factory _$_CommentDto.fromJson(Map<String, dynamic> json) => _$_$_CommentDtoFromJson(json);
+  factory _$_CommentDto.fromJson(Map<String, dynamic> json) =>
+      _$_$_CommentDtoFromJson(json);
 
   @override
   final String id;
@@ -233,17 +236,22 @@ class _$_CommentDto extends _CommentDto {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other is _CommentDto &&
-            (identical(other.id, id) || const DeepCollectionEquality().equals(other.id, id)) &&
+            (identical(other.id, id) ||
+                const DeepCollectionEquality().equals(other.id, id)) &&
             (identical(other.poster, poster) ||
                 const DeepCollectionEquality().equals(other.poster, poster)) &&
             (identical(other.experienceId, experienceId) ||
-                const DeepCollectionEquality().equals(other.experienceId, experienceId)) &&
+                const DeepCollectionEquality()
+                    .equals(other.experienceId, experienceId)) &&
             (identical(other.content, content) ||
-                const DeepCollectionEquality().equals(other.content, content)) &&
+                const DeepCollectionEquality()
+                    .equals(other.content, content)) &&
             (identical(other.creationDate, creationDate) ||
-                const DeepCollectionEquality().equals(other.creationDate, creationDate)) &&
+                const DeepCollectionEquality()
+                    .equals(other.creationDate, creationDate)) &&
             (identical(other.modificationDate, modificationDate) ||
-                const DeepCollectionEquality().equals(other.modificationDate, modificationDate)));
+                const DeepCollectionEquality()
+                    .equals(other.modificationDate, modificationDate)));
   }
 
   @override
@@ -258,7 +266,8 @@ class _$_CommentDto extends _CommentDto {
 
   @JsonKey(ignore: true)
   @override
-  _$CommentDtoCopyWith<_CommentDto> get copyWith => __$CommentDtoCopyWithImpl<_CommentDto>(this, _$identity);
+  _$CommentDtoCopyWith<_CommentDto> get copyWith =>
+      __$CommentDtoCopyWithImpl<_CommentDto>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
@@ -268,38 +277,34 @@ class _$_CommentDto extends _CommentDto {
 
 abstract class _CommentDto extends CommentDto {
   const factory _CommentDto(
-      {required String id,
-      required SimpleUserDto poster,
-      required String experienceId,
-      required String content,
-      @ServerTimestampConverter() required DateTime creationDate,
-      @ServerTimestampConverter() required DateTime modificationDate}) = _$_CommentDto;
-
+          {required String id,
+          required SimpleUserDto poster,
+          required String experienceId,
+          required String content,
+          @ServerTimestampConverter() required DateTime creationDate,
+          @ServerTimestampConverter() required DateTime modificationDate}) =
+      _$_CommentDto;
   const _CommentDto._() : super._();
 
-  factory _CommentDto.fromJson(Map<String, dynamic> json) = _$_CommentDto.fromJson;
+  factory _CommentDto.fromJson(Map<String, dynamic> json) =
+      _$_CommentDto.fromJson;
 
   @override
   String get id => throw _privateConstructorUsedError;
-
   @override
   SimpleUserDto get poster => throw _privateConstructorUsedError;
-
   @override
   String get experienceId => throw _privateConstructorUsedError;
-
   @override
   String get content => throw _privateConstructorUsedError;
-
   @override
   @ServerTimestampConverter()
   DateTime get creationDate => throw _privateConstructorUsedError;
-
   @override
   @ServerTimestampConverter()
   DateTime get modificationDate => throw _privateConstructorUsedError;
-
   @override
   @JsonKey(ignore: true)
-  _$CommentDtoCopyWith<_CommentDto> get copyWith => throw _privateConstructorUsedError;
+  _$CommentDtoCopyWith<_CommentDto> get copyWith =>
+      throw _privateConstructorUsedError;
 }

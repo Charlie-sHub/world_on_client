@@ -22,7 +22,8 @@ class _$SearchExperiencesByDifficultyEventTearOff {
     );
   }
 
-  _ResultsReceived resultsReceived(Either<Failure, KtList<Experience>> failureOrExperiences) {
+  _ResultsReceived resultsReceived(
+      Either<Failure, KtList<Experience>> failureOrExperiences) {
     return _ResultsReceived(
       failureOrExperiences,
     );
@@ -30,20 +31,24 @@ class _$SearchExperiencesByDifficultyEventTearOff {
 }
 
 /// @nodoc
-const $SearchExperiencesByDifficultyEvent = _$SearchExperiencesByDifficultyEventTearOff();
+const $SearchExperiencesByDifficultyEvent =
+    _$SearchExperiencesByDifficultyEventTearOff();
 
 /// @nodoc
 mixin _$SearchExperiencesByDifficultyEvent {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(int difficulty) submitted,
-    required TResult Function(Either<Failure, KtList<Experience>> failureOrExperiences) resultsReceived,
+    required TResult Function(
+            Either<Failure, KtList<Experience>> failureOrExperiences)
+        resultsReceived,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(int difficulty)? submitted,
-    TResult Function(Either<Failure, KtList<Experience>> failureOrExperiences)? resultsReceived,
+    TResult Function(Either<Failure, KtList<Experience>> failureOrExperiences)?
+        resultsReceived,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -65,7 +70,8 @@ mixin _$SearchExperiencesByDifficultyEvent {
 /// @nodoc
 abstract class $SearchExperiencesByDifficultyEventCopyWith<$Res> {
   factory $SearchExperiencesByDifficultyEventCopyWith(
-          SearchExperiencesByDifficultyEvent value, $Res Function(SearchExperiencesByDifficultyEvent) then) =
+          SearchExperiencesByDifficultyEvent value,
+          $Res Function(SearchExperiencesByDifficultyEvent) then) =
       _$SearchExperiencesByDifficultyEventCopyWithImpl<$Res>;
 }
 
@@ -81,14 +87,15 @@ class _$SearchExperiencesByDifficultyEventCopyWithImpl<$Res>
 
 /// @nodoc
 abstract class _$SubmittedCopyWith<$Res> {
-  factory _$SubmittedCopyWith(_Submitted value, $Res Function(_Submitted) then) =
+  factory _$SubmittedCopyWith(
+          _Submitted value, $Res Function(_Submitted) then) =
       __$SubmittedCopyWithImpl<$Res>;
-
   $Res call({int difficulty});
 }
 
 /// @nodoc
-class __$SubmittedCopyWithImpl<$Res> extends _$SearchExperiencesByDifficultyEventCopyWithImpl<$Res>
+class __$SubmittedCopyWithImpl<$Res>
+    extends _$SearchExperiencesByDifficultyEventCopyWithImpl<$Res>
     implements _$SubmittedCopyWith<$Res> {
   __$SubmittedCopyWithImpl(_Submitted _value, $Res Function(_Submitted) _then)
       : super(_value, (v) => _then(v as _Submitted));
@@ -127,11 +134,13 @@ class _$_Submitted implements _Submitted {
     return identical(this, other) ||
         (other is _Submitted &&
             (identical(other.difficulty, difficulty) ||
-                const DeepCollectionEquality().equals(other.difficulty, difficulty)));
+                const DeepCollectionEquality()
+                    .equals(other.difficulty, difficulty)));
   }
 
   @override
-  int get hashCode => runtimeType.hashCode ^ const DeepCollectionEquality().hash(difficulty);
+  int get hashCode =>
+      runtimeType.hashCode ^ const DeepCollectionEquality().hash(difficulty);
 
   @JsonKey(ignore: true)
   @override
@@ -142,7 +151,9 @@ class _$_Submitted implements _Submitted {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(int difficulty) submitted,
-    required TResult Function(Either<Failure, KtList<Experience>> failureOrExperiences) resultsReceived,
+    required TResult Function(
+            Either<Failure, KtList<Experience>> failureOrExperiences)
+        resultsReceived,
   }) {
     return submitted(difficulty);
   }
@@ -151,7 +162,8 @@ class _$_Submitted implements _Submitted {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(int difficulty)? submitted,
-    TResult Function(Either<Failure, KtList<Experience>> failureOrExperiences)? resultsReceived,
+    TResult Function(Either<Failure, KtList<Experience>> failureOrExperiences)?
+        resultsReceived,
     required TResult orElse(),
   }) {
     if (submitted != null) {
@@ -187,16 +199,16 @@ abstract class _Submitted implements SearchExperiencesByDifficultyEvent {
   const factory _Submitted(int difficulty) = _$_Submitted;
 
   int get difficulty => throw _privateConstructorUsedError;
-
   @JsonKey(ignore: true)
-  _$SubmittedCopyWith<_Submitted> get copyWith => throw _privateConstructorUsedError;
+  _$SubmittedCopyWith<_Submitted> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class _$ResultsReceivedCopyWith<$Res> {
-  factory _$ResultsReceivedCopyWith(_ResultsReceived value, $Res Function(_ResultsReceived) then) =
+  factory _$ResultsReceivedCopyWith(
+          _ResultsReceived value, $Res Function(_ResultsReceived) then) =
       __$ResultsReceivedCopyWithImpl<$Res>;
-
   $Res call({Either<Failure, KtList<Experience>> failureOrExperiences});
 }
 
@@ -204,7 +216,8 @@ abstract class _$ResultsReceivedCopyWith<$Res> {
 class __$ResultsReceivedCopyWithImpl<$Res>
     extends _$SearchExperiencesByDifficultyEventCopyWithImpl<$Res>
     implements _$ResultsReceivedCopyWith<$Res> {
-  __$ResultsReceivedCopyWithImpl(_ResultsReceived _value, $Res Function(_ResultsReceived) _then)
+  __$ResultsReceivedCopyWithImpl(
+      _ResultsReceived _value, $Res Function(_ResultsReceived) _then)
       : super(_value, (v) => _then(v as _ResultsReceived));
 
   @override
@@ -246,7 +259,9 @@ class _$_ResultsReceived implements _ResultsReceived {
   }
 
   @override
-  int get hashCode => runtimeType.hashCode ^ const DeepCollectionEquality().hash(failureOrExperiences);
+  int get hashCode =>
+      runtimeType.hashCode ^
+      const DeepCollectionEquality().hash(failureOrExperiences);
 
   @JsonKey(ignore: true)
   @override
@@ -257,7 +272,9 @@ class _$_ResultsReceived implements _ResultsReceived {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(int difficulty) submitted,
-    required TResult Function(Either<Failure, KtList<Experience>> failureOrExperiences) resultsReceived,
+    required TResult Function(
+            Either<Failure, KtList<Experience>> failureOrExperiences)
+        resultsReceived,
   }) {
     return resultsReceived(failureOrExperiences);
   }
@@ -266,7 +283,8 @@ class _$_ResultsReceived implements _ResultsReceived {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(int difficulty)? submitted,
-    TResult Function(Either<Failure, KtList<Experience>> failureOrExperiences)? resultsReceived,
+    TResult Function(Either<Failure, KtList<Experience>> failureOrExperiences)?
+        resultsReceived,
     required TResult orElse(),
   }) {
     if (resultsReceived != null) {
@@ -299,13 +317,15 @@ class _$_ResultsReceived implements _ResultsReceived {
 }
 
 abstract class _ResultsReceived implements SearchExperiencesByDifficultyEvent {
-  const factory _ResultsReceived(Either<Failure, KtList<Experience>> failureOrExperiences) =
+  const factory _ResultsReceived(
+          Either<Failure, KtList<Experience>> failureOrExperiences) =
       _$_ResultsReceived;
 
-  Either<Failure, KtList<Experience>> get failureOrExperiences => throw _privateConstructorUsedError;
-
+  Either<Failure, KtList<Experience>> get failureOrExperiences =>
+      throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  _$ResultsReceivedCopyWith<_ResultsReceived> get copyWith => throw _privateConstructorUsedError;
+  _$ResultsReceivedCopyWith<_ResultsReceived> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -340,7 +360,8 @@ class _$SearchExperiencesByDifficultyStateTearOff {
 }
 
 /// @nodoc
-const $SearchExperiencesByDifficultyState = _$SearchExperiencesByDifficultyStateTearOff();
+const $SearchExperiencesByDifficultyState =
+    _$SearchExperiencesByDifficultyStateTearOff();
 
 /// @nodoc
 mixin _$SearchExperiencesByDifficultyState {
@@ -348,7 +369,8 @@ mixin _$SearchExperiencesByDifficultyState {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() searchInProgress,
-    required TResult Function(KtList<Experience> experiencesFound) searchSuccess,
+    required TResult Function(KtList<Experience> experiencesFound)
+        searchSuccess,
     required TResult Function(Failure<dynamic> failure) searchFailure,
     required TResult Function(ValueFailure<int> failure) valueFailure,
   }) =>
@@ -387,7 +409,8 @@ mixin _$SearchExperiencesByDifficultyState {
 /// @nodoc
 abstract class $SearchExperiencesByDifficultyStateCopyWith<$Res> {
   factory $SearchExperiencesByDifficultyStateCopyWith(
-          SearchExperiencesByDifficultyState value, $Res Function(SearchExperiencesByDifficultyState) then) =
+          SearchExperiencesByDifficultyState value,
+          $Res Function(SearchExperiencesByDifficultyState) then) =
       _$SearchExperiencesByDifficultyStateCopyWithImpl<$Res>;
 }
 
@@ -408,7 +431,8 @@ abstract class _$InitialCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$InitialCopyWithImpl<$Res> extends _$SearchExperiencesByDifficultyStateCopyWithImpl<$Res>
+class __$InitialCopyWithImpl<$Res>
+    extends _$SearchExperiencesByDifficultyStateCopyWithImpl<$Res>
     implements _$InitialCopyWith<$Res> {
   __$InitialCopyWithImpl(_Initial _value, $Res Function(_Initial) _then)
       : super(_value, (v) => _then(v as _Initial));
@@ -440,7 +464,8 @@ class _$_Initial implements _Initial {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() searchInProgress,
-    required TResult Function(KtList<Experience> experiencesFound) searchSuccess,
+    required TResult Function(KtList<Experience> experiencesFound)
+        searchSuccess,
     required TResult Function(Failure<dynamic> failure) searchFailure,
     required TResult Function(ValueFailure<int> failure) valueFailure,
   }) {
@@ -507,7 +532,8 @@ abstract class _$SearchInProgressCopyWith<$Res> {
 class __$SearchInProgressCopyWithImpl<$Res>
     extends _$SearchExperiencesByDifficultyStateCopyWithImpl<$Res>
     implements _$SearchInProgressCopyWith<$Res> {
-  __$SearchInProgressCopyWithImpl(_SearchInProgress _value, $Res Function(_SearchInProgress) _then)
+  __$SearchInProgressCopyWithImpl(
+      _SearchInProgress _value, $Res Function(_SearchInProgress) _then)
       : super(_value, (v) => _then(v as _SearchInProgress));
 
   @override
@@ -537,7 +563,8 @@ class _$_SearchInProgress implements _SearchInProgress {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() searchInProgress,
-    required TResult Function(KtList<Experience> experiencesFound) searchSuccess,
+    required TResult Function(KtList<Experience> experiencesFound)
+        searchSuccess,
     required TResult Function(Failure<dynamic> failure) searchFailure,
     required TResult Function(ValueFailure<int> failure) valueFailure,
   }) {
@@ -595,9 +622,9 @@ abstract class _SearchInProgress implements SearchExperiencesByDifficultyState {
 
 /// @nodoc
 abstract class _$SearchSuccessCopyWith<$Res> {
-  factory _$SearchSuccessCopyWith(_SearchSuccess value, $Res Function(_SearchSuccess) then) =
+  factory _$SearchSuccessCopyWith(
+          _SearchSuccess value, $Res Function(_SearchSuccess) then) =
       __$SearchSuccessCopyWithImpl<$Res>;
-
   $Res call({KtList<Experience> experiencesFound});
 }
 
@@ -605,7 +632,8 @@ abstract class _$SearchSuccessCopyWith<$Res> {
 class __$SearchSuccessCopyWithImpl<$Res>
     extends _$SearchExperiencesByDifficultyStateCopyWithImpl<$Res>
     implements _$SearchSuccessCopyWith<$Res> {
-  __$SearchSuccessCopyWithImpl(_SearchSuccess _value, $Res Function(_SearchSuccess) _then)
+  __$SearchSuccessCopyWithImpl(
+      _SearchSuccess _value, $Res Function(_SearchSuccess) _then)
       : super(_value, (v) => _then(v as _SearchSuccess));
 
   @override
@@ -642,11 +670,14 @@ class _$_SearchSuccess implements _SearchSuccess {
     return identical(this, other) ||
         (other is _SearchSuccess &&
             (identical(other.experiencesFound, experiencesFound) ||
-                const DeepCollectionEquality().equals(other.experiencesFound, experiencesFound)));
+                const DeepCollectionEquality()
+                    .equals(other.experiencesFound, experiencesFound)));
   }
 
   @override
-  int get hashCode => runtimeType.hashCode ^ const DeepCollectionEquality().hash(experiencesFound);
+  int get hashCode =>
+      runtimeType.hashCode ^
+      const DeepCollectionEquality().hash(experiencesFound);
 
   @JsonKey(ignore: true)
   @override
@@ -658,7 +689,8 @@ class _$_SearchSuccess implements _SearchSuccess {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() searchInProgress,
-    required TResult Function(KtList<Experience> experiencesFound) searchSuccess,
+    required TResult Function(KtList<Experience> experiencesFound)
+        searchSuccess,
     required TResult Function(Failure<dynamic> failure) searchFailure,
     required TResult Function(ValueFailure<int> failure) valueFailure,
   }) {
@@ -711,19 +743,20 @@ class _$_SearchSuccess implements _SearchSuccess {
 }
 
 abstract class _SearchSuccess implements SearchExperiencesByDifficultyState {
-  const factory _SearchSuccess(KtList<Experience> experiencesFound) = _$_SearchSuccess;
+  const factory _SearchSuccess(KtList<Experience> experiencesFound) =
+      _$_SearchSuccess;
 
   KtList<Experience> get experiencesFound => throw _privateConstructorUsedError;
-
   @JsonKey(ignore: true)
-  _$SearchSuccessCopyWith<_SearchSuccess> get copyWith => throw _privateConstructorUsedError;
+  _$SearchSuccessCopyWith<_SearchSuccess> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class _$SearchFailureCopyWith<$Res> {
-  factory _$SearchFailureCopyWith(_SearchFailure value, $Res Function(_SearchFailure) then) =
+  factory _$SearchFailureCopyWith(
+          _SearchFailure value, $Res Function(_SearchFailure) then) =
       __$SearchFailureCopyWithImpl<$Res>;
-
   $Res call({Failure<dynamic> failure});
 
   $FailureCopyWith<dynamic, $Res> get failure;
@@ -733,7 +766,8 @@ abstract class _$SearchFailureCopyWith<$Res> {
 class __$SearchFailureCopyWithImpl<$Res>
     extends _$SearchExperiencesByDifficultyStateCopyWithImpl<$Res>
     implements _$SearchFailureCopyWith<$Res> {
-  __$SearchFailureCopyWithImpl(_SearchFailure _value, $Res Function(_SearchFailure) _then)
+  __$SearchFailureCopyWithImpl(
+      _SearchFailure _value, $Res Function(_SearchFailure) _then)
       : super(_value, (v) => _then(v as _SearchFailure));
 
   @override
@@ -781,7 +815,8 @@ class _$_SearchFailure implements _SearchFailure {
   }
 
   @override
-  int get hashCode => runtimeType.hashCode ^ const DeepCollectionEquality().hash(failure);
+  int get hashCode =>
+      runtimeType.hashCode ^ const DeepCollectionEquality().hash(failure);
 
   @JsonKey(ignore: true)
   @override
@@ -793,7 +828,8 @@ class _$_SearchFailure implements _SearchFailure {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() searchInProgress,
-    required TResult Function(KtList<Experience> experiencesFound) searchSuccess,
+    required TResult Function(KtList<Experience> experiencesFound)
+        searchSuccess,
     required TResult Function(Failure<dynamic> failure) searchFailure,
     required TResult Function(ValueFailure<int> failure) valueFailure,
   }) {
@@ -849,16 +885,16 @@ abstract class _SearchFailure implements SearchExperiencesByDifficultyState {
   const factory _SearchFailure(Failure<dynamic> failure) = _$_SearchFailure;
 
   Failure<dynamic> get failure => throw _privateConstructorUsedError;
-
   @JsonKey(ignore: true)
-  _$SearchFailureCopyWith<_SearchFailure> get copyWith => throw _privateConstructorUsedError;
+  _$SearchFailureCopyWith<_SearchFailure> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class _$ValueFailureCopyWith<$Res> {
-  factory _$ValueFailureCopyWith(_ValueFailure value, $Res Function(_ValueFailure) then) =
+  factory _$ValueFailureCopyWith(
+          _ValueFailure value, $Res Function(_ValueFailure) then) =
       __$ValueFailureCopyWithImpl<$Res>;
-
   $Res call({ValueFailure<int> failure});
 
   $ValueFailureCopyWith<int, $Res> get failure;
@@ -868,7 +904,8 @@ abstract class _$ValueFailureCopyWith<$Res> {
 class __$ValueFailureCopyWithImpl<$Res>
     extends _$SearchExperiencesByDifficultyStateCopyWithImpl<$Res>
     implements _$ValueFailureCopyWith<$Res> {
-  __$ValueFailureCopyWithImpl(_ValueFailure _value, $Res Function(_ValueFailure) _then)
+  __$ValueFailureCopyWithImpl(
+      _ValueFailure _value, $Res Function(_ValueFailure) _then)
       : super(_value, (v) => _then(v as _ValueFailure));
 
   @override
@@ -916,7 +953,8 @@ class _$_ValueFailure implements _ValueFailure {
   }
 
   @override
-  int get hashCode => runtimeType.hashCode ^ const DeepCollectionEquality().hash(failure);
+  int get hashCode =>
+      runtimeType.hashCode ^ const DeepCollectionEquality().hash(failure);
 
   @JsonKey(ignore: true)
   @override
@@ -928,7 +966,8 @@ class _$_ValueFailure implements _ValueFailure {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() searchInProgress,
-    required TResult Function(KtList<Experience> experiencesFound) searchSuccess,
+    required TResult Function(KtList<Experience> experiencesFound)
+        searchSuccess,
     required TResult Function(Failure<dynamic> failure) searchFailure,
     required TResult Function(ValueFailure<int> failure) valueFailure,
   }) {
@@ -984,7 +1023,7 @@ abstract class _ValueFailure implements SearchExperiencesByDifficultyState {
   const factory _ValueFailure(ValueFailure<int> failure) = _$_ValueFailure;
 
   ValueFailure<int> get failure => throw _privateConstructorUsedError;
-
   @JsonKey(ignore: true)
-  _$ValueFailureCopyWith<_ValueFailure> get copyWith => throw _privateConstructorUsedError;
+  _$ValueFailureCopyWith<_ValueFailure> get copyWith =>
+      throw _privateConstructorUsedError;
 }

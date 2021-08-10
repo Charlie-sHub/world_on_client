@@ -1,4 +1,4 @@
-import 'package:dartz/dartz.dart';
+import 'package:dartz/dartz.dart' hide State;
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:worldon/application/navigation/navigation_actor/navigation_actor_bloc.dart';
@@ -11,14 +11,16 @@ import 'package:worldon/views/profile/widgets/profile_critical_failure.dart';
 import '../../../injection.dart';
 
 class ProfileBody extends StatelessWidget {
+  final GlobalKey<State<StatefulWidget>> userLevelShowKey;
+  final Option<UniqueId> userIdOption;
+  final bool currentUserProfile;
+
   const ProfileBody({
     Key? key,
     required this.userIdOption,
+    required this.userLevelShowKey,
     required this.currentUserProfile,
   }) : super(key: key);
-
-  final Option<UniqueId> userIdOption;
-  final bool currentUserProfile;
 
   @override
   Widget build(BuildContext context) {
@@ -60,10 +62,12 @@ class ProfileBody extends StatelessWidget {
             own: (state) => ProfileBuilder(
               user: state.user,
               isOwn: true,
+              userLevelShowKey: userLevelShowKey,
             ),
             foreign: (state) => ProfileBuilder(
               user: state.user,
               isOwn: false,
+              userLevelShowKey: userLevelShowKey,
             ),
             loadFailure: (_) => InkWell(
               onTap: () async => context.read<ProfileForeignOrOwnBloc>().add(

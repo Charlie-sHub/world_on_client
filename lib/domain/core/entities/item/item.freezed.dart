@@ -58,8 +58,8 @@ mixin _$Item {
 
 /// @nodoc
 abstract class $ItemCopyWith<$Res> {
-  factory $ItemCopyWith(Item value, $Res Function(Item) then) = _$ItemCopyWithImpl<$Res>;
-
+  factory $ItemCopyWith(Item value, $Res Function(Item) then) =
+      _$ItemCopyWithImpl<$Res>;
   $Res call(
       {UniqueId id,
       Name name,
@@ -129,8 +129,8 @@ class _$ItemCopyWithImpl<$Res> implements $ItemCopyWith<$Res> {
 
 /// @nodoc
 abstract class _$ItemCopyWith<$Res> implements $ItemCopyWith<$Res> {
-  factory _$ItemCopyWith(_Item value, $Res Function(_Item) then) = __$ItemCopyWithImpl<$Res>;
-
+  factory _$ItemCopyWith(_Item value, $Res Function(_Item) then) =
+      __$ItemCopyWithImpl<$Res>;
   @override
   $Res call(
       {UniqueId id,
@@ -144,8 +144,10 @@ abstract class _$ItemCopyWith<$Res> implements $ItemCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$ItemCopyWithImpl<$Res> extends _$ItemCopyWithImpl<$Res> implements _$ItemCopyWith<$Res> {
-  __$ItemCopyWithImpl(_Item _value, $Res Function(_Item) _then) : super(_value, (v) => _then(v as _Item));
+class __$ItemCopyWithImpl<$Res> extends _$ItemCopyWithImpl<$Res>
+    implements _$ItemCopyWith<$Res> {
+  __$ItemCopyWithImpl(_Item _value, $Res Function(_Item) _then)
+      : super(_value, (v) => _then(v as _Item));
 
   @override
   _Item get _value => super._value as _Item;
@@ -238,18 +240,26 @@ class _$_Item extends _Item {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other is _Item &&
-            (identical(other.id, id) || const DeepCollectionEquality().equals(other.id, id)) &&
-            (identical(other.name, name) || const DeepCollectionEquality().equals(other.name, name)) &&
+            (identical(other.id, id) ||
+                const DeepCollectionEquality().equals(other.id, id)) &&
+            (identical(other.name, name) ||
+                const DeepCollectionEquality().equals(other.name, name)) &&
             (identical(other.description, description) ||
-                const DeepCollectionEquality().equals(other.description, description)) &&
-            (identical(other.code, code) || const DeepCollectionEquality().equals(other.code, code)) &&
-            (identical(other.value, value) || const DeepCollectionEquality().equals(other.value, value)) &&
+                const DeepCollectionEquality()
+                    .equals(other.description, description)) &&
+            (identical(other.code, code) ||
+                const DeepCollectionEquality().equals(other.code, code)) &&
+            (identical(other.value, value) ||
+                const DeepCollectionEquality().equals(other.value, value)) &&
             (identical(other.imageURL, imageURL) ||
-                const DeepCollectionEquality().equals(other.imageURL, imageURL)) &&
+                const DeepCollectionEquality()
+                    .equals(other.imageURL, imageURL)) &&
             (identical(other.timeLimitInDays, timeLimitInDays) ||
-                const DeepCollectionEquality().equals(other.timeLimitInDays, timeLimitInDays)) &&
+                const DeepCollectionEquality()
+                    .equals(other.timeLimitInDays, timeLimitInDays)) &&
             (identical(other.boughtDate, boughtDate) ||
-                const DeepCollectionEquality().equals(other.boughtDate, boughtDate)));
+                const DeepCollectionEquality()
+                    .equals(other.boughtDate, boughtDate)));
   }
 
   @override
@@ -266,7 +276,8 @@ class _$_Item extends _Item {
 
   @JsonKey(ignore: true)
   @override
-  _$ItemCopyWith<_Item> get copyWith => __$ItemCopyWithImpl<_Item>(this, _$identity);
+  _$ItemCopyWith<_Item> get copyWith =>
+      __$ItemCopyWithImpl<_Item>(this, _$identity);
 }
 
 abstract class _Item extends Item {

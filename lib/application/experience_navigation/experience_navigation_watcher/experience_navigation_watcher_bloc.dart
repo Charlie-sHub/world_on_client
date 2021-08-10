@@ -11,8 +11,7 @@ import 'package:worldon/domain/experience_management/use_case/get_experience.dar
 import '../../../injection.dart';
 
 part 'experience_navigation_watcher_bloc.freezed.dart';
-part 'experience_navigation_watcher_event.dart';_event.dart';
-
+part 'experience_navigation_watcher_event.dart';
 part 'experience_navigation_watcher_state.dart';
 
 @injectable

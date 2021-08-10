@@ -72,32 +72,35 @@ mixin _$OptionsFormEvent {
 
 /// @nodoc
 abstract class $OptionsFormEventCopyWith<$Res> {
-  factory $OptionsFormEventCopyWith(OptionsFormEvent value, $Res Function(OptionsFormEvent) then) =
+  factory $OptionsFormEventCopyWith(
+          OptionsFormEvent value, $Res Function(OptionsFormEvent) then) =
       _$OptionsFormEventCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class _$OptionsFormEventCopyWithImpl<$Res> implements $OptionsFormEventCopyWith<$Res> {
+class _$OptionsFormEventCopyWithImpl<$Res>
+    implements $OptionsFormEventCopyWith<$Res> {
   _$OptionsFormEventCopyWithImpl(this._value, this._then);
 
   final OptionsFormEvent _value;
-
   // ignore: unused_field
   final $Res Function(OptionsFormEvent) _then;
 }
 
 /// @nodoc
 abstract class _$InitializedCopyWith<$Res> {
-  factory _$InitializedCopyWith(_Initialized value, $Res Function(_Initialized) then) =
+  factory _$InitializedCopyWith(
+          _Initialized value, $Res Function(_Initialized) then) =
       __$InitializedCopyWithImpl<$Res>;
-
   $Res call({Option<Options> optionsOption});
 }
 
 /// @nodoc
-class __$InitializedCopyWithImpl<$Res> extends _$OptionsFormEventCopyWithImpl<$Res>
+class __$InitializedCopyWithImpl<$Res>
+    extends _$OptionsFormEventCopyWithImpl<$Res>
     implements _$InitializedCopyWith<$Res> {
-  __$InitializedCopyWithImpl(_Initialized _value, $Res Function(_Initialized) _then)
+  __$InitializedCopyWithImpl(
+      _Initialized _value, $Res Function(_Initialized) _then)
       : super(_value, (v) => _then(v as _Initialized));
 
   @override
@@ -134,11 +137,13 @@ class _$_Initialized implements _Initialized {
     return identical(this, other) ||
         (other is _Initialized &&
             (identical(other.optionsOption, optionsOption) ||
-                const DeepCollectionEquality().equals(other.optionsOption, optionsOption)));
+                const DeepCollectionEquality()
+                    .equals(other.optionsOption, optionsOption)));
   }
 
   @override
-  int get hashCode => runtimeType.hashCode ^ const DeepCollectionEquality().hash(optionsOption);
+  int get hashCode =>
+      runtimeType.hashCode ^ const DeepCollectionEquality().hash(optionsOption);
 
   @JsonKey(ignore: true)
   @override
@@ -198,24 +203,25 @@ abstract class _Initialized implements OptionsFormEvent {
   const factory _Initialized(Option<Options> optionsOption) = _$_Initialized;
 
   Option<Options> get optionsOption => throw _privateConstructorUsedError;
-
   @JsonKey(ignore: true)
-  _$InitializedCopyWith<_Initialized> get copyWith => throw _privateConstructorUsedError;
+  _$InitializedCopyWith<_Initialized> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class _$LanguageCodeChangedCopyWith<$Res> {
-  factory _$LanguageCodeChangedCopyWith(
-          _LanguageCodeChanged value, $Res Function(_LanguageCodeChanged) then) =
+  factory _$LanguageCodeChangedCopyWith(_LanguageCodeChanged value,
+          $Res Function(_LanguageCodeChanged) then) =
       __$LanguageCodeChangedCopyWithImpl<$Res>;
-
   $Res call({String languageCode});
 }
 
 /// @nodoc
-class __$LanguageCodeChangedCopyWithImpl<$Res> extends _$OptionsFormEventCopyWithImpl<$Res>
+class __$LanguageCodeChangedCopyWithImpl<$Res>
+    extends _$OptionsFormEventCopyWithImpl<$Res>
     implements _$LanguageCodeChangedCopyWith<$Res> {
-  __$LanguageCodeChangedCopyWithImpl(_LanguageCodeChanged _value, $Res Function(_LanguageCodeChanged) _then)
+  __$LanguageCodeChangedCopyWithImpl(
+      _LanguageCodeChanged _value, $Res Function(_LanguageCodeChanged) _then)
       : super(_value, (v) => _then(v as _LanguageCodeChanged));
 
   @override
@@ -252,16 +258,19 @@ class _$_LanguageCodeChanged implements _LanguageCodeChanged {
     return identical(this, other) ||
         (other is _LanguageCodeChanged &&
             (identical(other.languageCode, languageCode) ||
-                const DeepCollectionEquality().equals(other.languageCode, languageCode)));
+                const DeepCollectionEquality()
+                    .equals(other.languageCode, languageCode)));
   }
 
   @override
-  int get hashCode => runtimeType.hashCode ^ const DeepCollectionEquality().hash(languageCode);
+  int get hashCode =>
+      runtimeType.hashCode ^ const DeepCollectionEquality().hash(languageCode);
 
   @JsonKey(ignore: true)
   @override
   _$LanguageCodeChangedCopyWith<_LanguageCodeChanged> get copyWith =>
-      __$LanguageCodeChangedCopyWithImpl<_LanguageCodeChanged>(this, _$identity);
+      __$LanguageCodeChangedCopyWithImpl<_LanguageCodeChanged>(
+          this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -313,22 +322,25 @@ class _$_LanguageCodeChanged implements _LanguageCodeChanged {
 }
 
 abstract class _LanguageCodeChanged implements OptionsFormEvent {
-  const factory _LanguageCodeChanged(String languageCode) = _$_LanguageCodeChanged;
+  const factory _LanguageCodeChanged(String languageCode) =
+      _$_LanguageCodeChanged;
 
   String get languageCode => throw _privateConstructorUsedError;
-
   @JsonKey(ignore: true)
-  _$LanguageCodeChangedCopyWith<_LanguageCodeChanged> get copyWith => throw _privateConstructorUsedError;
+  _$LanguageCodeChangedCopyWith<_LanguageCodeChanged> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class _$SubmittedCopyWith<$Res> {
-  factory _$SubmittedCopyWith(_Submitted value, $Res Function(_Submitted) then) =
+  factory _$SubmittedCopyWith(
+          _Submitted value, $Res Function(_Submitted) then) =
       __$SubmittedCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$SubmittedCopyWithImpl<$Res> extends _$OptionsFormEventCopyWithImpl<$Res>
+class __$SubmittedCopyWithImpl<$Res>
+    extends _$OptionsFormEventCopyWithImpl<$Res>
     implements _$SubmittedCopyWith<$Res> {
   __$SubmittedCopyWithImpl(_Submitted _value, $Res Function(_Submitted) _then)
       : super(_value, (v) => _then(v as _Submitted));
@@ -432,22 +444,21 @@ const $OptionsFormState = _$OptionsFormStateTearOff();
 /// @nodoc
 mixin _$OptionsFormState {
   Options get options => throw _privateConstructorUsedError;
-
   bool get showErrorMessages => throw _privateConstructorUsedError;
-
   bool get isSubmitting => throw _privateConstructorUsedError;
-
-  Option<Either<Failure, Unit>> get failureOrSuccessOption => throw _privateConstructorUsedError;
+  Option<Either<Failure, Unit>> get failureOrSuccessOption =>
+      throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
-  $OptionsFormStateCopyWith<OptionsFormState> get copyWith => throw _privateConstructorUsedError;
+  $OptionsFormStateCopyWith<OptionsFormState> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $OptionsFormStateCopyWith<$Res> {
-  factory $OptionsFormStateCopyWith(OptionsFormState value, $Res Function(OptionsFormState) then) =
+  factory $OptionsFormStateCopyWith(
+          OptionsFormState value, $Res Function(OptionsFormState) then) =
       _$OptionsFormStateCopyWithImpl<$Res>;
-
   $Res call(
       {Options options,
       bool showErrorMessages,
@@ -458,11 +469,11 @@ abstract class $OptionsFormStateCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$OptionsFormStateCopyWithImpl<$Res> implements $OptionsFormStateCopyWith<$Res> {
+class _$OptionsFormStateCopyWithImpl<$Res>
+    implements $OptionsFormStateCopyWith<$Res> {
   _$OptionsFormStateCopyWithImpl(this._value, this._then);
 
   final OptionsFormState _value;
-
   // ignore: unused_field
   final $Res Function(OptionsFormState) _then;
 
@@ -502,10 +513,11 @@ class _$OptionsFormStateCopyWithImpl<$Res> implements $OptionsFormStateCopyWith<
 }
 
 /// @nodoc
-abstract class _$OptionsFormStateCopyWith<$Res> implements $OptionsFormStateCopyWith<$Res> {
-  factory _$OptionsFormStateCopyWith(_OptionsFormState value, $Res Function(_OptionsFormState) then) =
+abstract class _$OptionsFormStateCopyWith<$Res>
+    implements $OptionsFormStateCopyWith<$Res> {
+  factory _$OptionsFormStateCopyWith(
+          _OptionsFormState value, $Res Function(_OptionsFormState) then) =
       __$OptionsFormStateCopyWithImpl<$Res>;
-
   @override
   $Res call(
       {Options options,
@@ -518,9 +530,11 @@ abstract class _$OptionsFormStateCopyWith<$Res> implements $OptionsFormStateCopy
 }
 
 /// @nodoc
-class __$OptionsFormStateCopyWithImpl<$Res> extends _$OptionsFormStateCopyWithImpl<$Res>
+class __$OptionsFormStateCopyWithImpl<$Res>
+    extends _$OptionsFormStateCopyWithImpl<$Res>
     implements _$OptionsFormStateCopyWith<$Res> {
-  __$OptionsFormStateCopyWithImpl(_OptionsFormState _value, $Res Function(_OptionsFormState) _then)
+  __$OptionsFormStateCopyWithImpl(
+      _OptionsFormState _value, $Res Function(_OptionsFormState) _then)
       : super(_value, (v) => _then(v as _OptionsFormState));
 
   @override
@@ -582,13 +596,17 @@ class _$_OptionsFormState implements _OptionsFormState {
     return identical(this, other) ||
         (other is _OptionsFormState &&
             (identical(other.options, options) ||
-                const DeepCollectionEquality().equals(other.options, options)) &&
+                const DeepCollectionEquality()
+                    .equals(other.options, options)) &&
             (identical(other.showErrorMessages, showErrorMessages) ||
-                const DeepCollectionEquality().equals(other.showErrorMessages, showErrorMessages)) &&
+                const DeepCollectionEquality()
+                    .equals(other.showErrorMessages, showErrorMessages)) &&
             (identical(other.isSubmitting, isSubmitting) ||
-                const DeepCollectionEquality().equals(other.isSubmitting, isSubmitting)) &&
+                const DeepCollectionEquality()
+                    .equals(other.isSubmitting, isSubmitting)) &&
             (identical(other.failureOrSuccessOption, failureOrSuccessOption) ||
-                const DeepCollectionEquality().equals(other.failureOrSuccessOption, failureOrSuccessOption)));
+                const DeepCollectionEquality().equals(
+                    other.failureOrSuccessOption, failureOrSuccessOption)));
   }
 
   @override
@@ -607,23 +625,23 @@ class _$_OptionsFormState implements _OptionsFormState {
 
 abstract class _OptionsFormState implements OptionsFormState {
   const factory _OptionsFormState(
-      {required Options options,
-      required bool showErrorMessages,
-      required bool isSubmitting,
-      required Option<Either<Failure, Unit>> failureOrSuccessOption}) = _$_OptionsFormState;
+          {required Options options,
+          required bool showErrorMessages,
+          required bool isSubmitting,
+          required Option<Either<Failure, Unit>> failureOrSuccessOption}) =
+      _$_OptionsFormState;
 
   @override
   Options get options => throw _privateConstructorUsedError;
   @override
   bool get showErrorMessages => throw _privateConstructorUsedError;
-
   @override
   bool get isSubmitting => throw _privateConstructorUsedError;
-
   @override
-  Option<Either<Failure, Unit>> get failureOrSuccessOption => throw _privateConstructorUsedError;
-
+  Option<Either<Failure, Unit>> get failureOrSuccessOption =>
+      throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
-  _$OptionsFormStateCopyWith<_OptionsFormState> get copyWith => throw _privateConstructorUsedError;
+  _$OptionsFormStateCopyWith<_OptionsFormState> get copyWith =>
+      throw _privateConstructorUsedError;
 }

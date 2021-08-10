@@ -12,6 +12,7 @@ _$_CoinsDto _$_$_CoinsDtoFromJson(Map<String, dynamic> json) {
   );
 }
 
-Map<String, dynamic> _$_$_CoinsDtoToJson(_$_CoinsDto instance) => <String, dynamic>{
+Map<String, dynamic> _$_$_CoinsDtoToJson(_$_CoinsDto instance) =>
+    <String, dynamic>{
       'tenCoinsProductId': instance.tenCoinsProductId,
     };

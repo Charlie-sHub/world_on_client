@@ -30,7 +30,8 @@ class _$ExperienceNavigationWatcherEventTearOff {
 }
 
 /// @nodoc
-const $ExperienceNavigationWatcherEvent = _$ExperienceNavigationWatcherEventTearOff();
+const $ExperienceNavigationWatcherEvent =
+    _$ExperienceNavigationWatcherEventTearOff();
 
 /// @nodoc
 mixin _$ExperienceNavigationWatcherEvent {
@@ -40,7 +41,6 @@ mixin _$ExperienceNavigationWatcherEvent {
     required TResult Function(Experience experience) allObjectivesAccomplished,
   }) =>
       throw _privateConstructorUsedError;
-
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(Option<Experience> experienceOption)? initialized,
@@ -51,13 +51,15 @@ mixin _$ExperienceNavigationWatcherEvent {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Initialized value) initialized,
-    required TResult Function(_AllObjectivesAccomplished value) allObjectivesAccomplished,
+    required TResult Function(_AllObjectivesAccomplished value)
+        allObjectivesAccomplished,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initialized value)? initialized,
-    TResult Function(_AllObjectivesAccomplished value)? allObjectivesAccomplished,
+    TResult Function(_AllObjectivesAccomplished value)?
+        allObjectivesAccomplished,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -66,7 +68,8 @@ mixin _$ExperienceNavigationWatcherEvent {
 /// @nodoc
 abstract class $ExperienceNavigationWatcherEventCopyWith<$Res> {
   factory $ExperienceNavigationWatcherEventCopyWith(
-          ExperienceNavigationWatcherEvent value, $Res Function(ExperienceNavigationWatcherEvent) then) =
+          ExperienceNavigationWatcherEvent value,
+          $Res Function(ExperienceNavigationWatcherEvent) then) =
       _$ExperienceNavigationWatcherEventCopyWithImpl<$Res>;
 }
 
@@ -82,16 +85,18 @@ class _$ExperienceNavigationWatcherEventCopyWithImpl<$Res>
 
 /// @nodoc
 abstract class _$InitializedCopyWith<$Res> {
-  factory _$InitializedCopyWith(_Initialized value, $Res Function(_Initialized) then) =
+  factory _$InitializedCopyWith(
+          _Initialized value, $Res Function(_Initialized) then) =
       __$InitializedCopyWithImpl<$Res>;
-
   $Res call({Option<Experience> experienceOption});
 }
 
 /// @nodoc
-class __$InitializedCopyWithImpl<$Res> extends _$ExperienceNavigationWatcherEventCopyWithImpl<$Res>
+class __$InitializedCopyWithImpl<$Res>
+    extends _$ExperienceNavigationWatcherEventCopyWithImpl<$Res>
     implements _$InitializedCopyWith<$Res> {
-  __$InitializedCopyWithImpl(_Initialized _value, $Res Function(_Initialized) _then)
+  __$InitializedCopyWithImpl(
+      _Initialized _value, $Res Function(_Initialized) _then)
       : super(_value, (v) => _then(v as _Initialized));
 
   @override
@@ -128,11 +133,14 @@ class _$_Initialized implements _Initialized {
     return identical(this, other) ||
         (other is _Initialized &&
             (identical(other.experienceOption, experienceOption) ||
-                const DeepCollectionEquality().equals(other.experienceOption, experienceOption)));
+                const DeepCollectionEquality()
+                    .equals(other.experienceOption, experienceOption)));
   }
 
   @override
-  int get hashCode => runtimeType.hashCode ^ const DeepCollectionEquality().hash(experienceOption);
+  int get hashCode =>
+      runtimeType.hashCode ^
+      const DeepCollectionEquality().hash(experienceOption);
 
   @JsonKey(ignore: true)
   @override
@@ -165,7 +173,8 @@ class _$_Initialized implements _Initialized {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Initialized value) initialized,
-    required TResult Function(_AllObjectivesAccomplished value) allObjectivesAccomplished,
+    required TResult Function(_AllObjectivesAccomplished value)
+        allObjectivesAccomplished,
   }) {
     return initialized(this);
   }
@@ -174,7 +183,8 @@ class _$_Initialized implements _Initialized {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initialized value)? initialized,
-    TResult Function(_AllObjectivesAccomplished value)? allObjectivesAccomplished,
+    TResult Function(_AllObjectivesAccomplished value)?
+        allObjectivesAccomplished,
     required TResult orElse(),
   }) {
     if (initialized != null) {
@@ -185,20 +195,20 @@ class _$_Initialized implements _Initialized {
 }
 
 abstract class _Initialized implements ExperienceNavigationWatcherEvent {
-  const factory _Initialized(Option<Experience> experienceOption) = _$_Initialized;
+  const factory _Initialized(Option<Experience> experienceOption) =
+      _$_Initialized;
 
   Option<Experience> get experienceOption => throw _privateConstructorUsedError;
-
   @JsonKey(ignore: true)
-  _$InitializedCopyWith<_Initialized> get copyWith => throw _privateConstructorUsedError;
+  _$InitializedCopyWith<_Initialized> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class _$AllObjectivesAccomplishedCopyWith<$Res> {
-  factory _$AllObjectivesAccomplishedCopyWith(
-          _AllObjectivesAccomplished value, $Res Function(_AllObjectivesAccomplished) then) =
+  factory _$AllObjectivesAccomplishedCopyWith(_AllObjectivesAccomplished value,
+          $Res Function(_AllObjectivesAccomplished) then) =
       __$AllObjectivesAccomplishedCopyWithImpl<$Res>;
-
   $Res call({Experience experience});
 
   $ExperienceCopyWith<$Res> get experience;
@@ -208,12 +218,13 @@ abstract class _$AllObjectivesAccomplishedCopyWith<$Res> {
 class __$AllObjectivesAccomplishedCopyWithImpl<$Res>
     extends _$ExperienceNavigationWatcherEventCopyWithImpl<$Res>
     implements _$AllObjectivesAccomplishedCopyWith<$Res> {
-  __$AllObjectivesAccomplishedCopyWithImpl(
-      _AllObjectivesAccomplished _value, $Res Function(_AllObjectivesAccomplished) _then)
+  __$AllObjectivesAccomplishedCopyWithImpl(_AllObjectivesAccomplished _value,
+      $Res Function(_AllObjectivesAccomplished) _then)
       : super(_value, (v) => _then(v as _AllObjectivesAccomplished));
 
   @override
-  _AllObjectivesAccomplished get _value => super._value as _AllObjectivesAccomplished;
+  _AllObjectivesAccomplished get _value =>
+      super._value as _AllObjectivesAccomplished;
 
   @override
   $Res call({
@@ -253,16 +264,20 @@ class _$_AllObjectivesAccomplished implements _AllObjectivesAccomplished {
     return identical(this, other) ||
         (other is _AllObjectivesAccomplished &&
             (identical(other.experience, experience) ||
-                const DeepCollectionEquality().equals(other.experience, experience)));
+                const DeepCollectionEquality()
+                    .equals(other.experience, experience)));
   }
 
   @override
-  int get hashCode => runtimeType.hashCode ^ const DeepCollectionEquality().hash(experience);
+  int get hashCode =>
+      runtimeType.hashCode ^ const DeepCollectionEquality().hash(experience);
 
   @JsonKey(ignore: true)
   @override
-  _$AllObjectivesAccomplishedCopyWith<_AllObjectivesAccomplished> get copyWith =>
-      __$AllObjectivesAccomplishedCopyWithImpl<_AllObjectivesAccomplished>(this, _$identity);
+  _$AllObjectivesAccomplishedCopyWith<_AllObjectivesAccomplished>
+      get copyWith =>
+          __$AllObjectivesAccomplishedCopyWithImpl<_AllObjectivesAccomplished>(
+              this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -290,7 +305,8 @@ class _$_AllObjectivesAccomplished implements _AllObjectivesAccomplished {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Initialized value) initialized,
-    required TResult Function(_AllObjectivesAccomplished value) allObjectivesAccomplished,
+    required TResult Function(_AllObjectivesAccomplished value)
+        allObjectivesAccomplished,
   }) {
     return allObjectivesAccomplished(this);
   }
@@ -299,7 +315,8 @@ class _$_AllObjectivesAccomplished implements _AllObjectivesAccomplished {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initialized value)? initialized,
-    TResult Function(_AllObjectivesAccomplished value)? allObjectivesAccomplished,
+    TResult Function(_AllObjectivesAccomplished value)?
+        allObjectivesAccomplished,
     required TResult orElse(),
   }) {
     if (allObjectivesAccomplished != null) {
@@ -309,14 +326,15 @@ class _$_AllObjectivesAccomplished implements _AllObjectivesAccomplished {
   }
 }
 
-abstract class _AllObjectivesAccomplished implements ExperienceNavigationWatcherEvent {
-  const factory _AllObjectivesAccomplished(Experience experience) = _$_AllObjectivesAccomplished;
+abstract class _AllObjectivesAccomplished
+    implements ExperienceNavigationWatcherEvent {
+  const factory _AllObjectivesAccomplished(Experience experience) =
+      _$_AllObjectivesAccomplished;
 
   Experience get experience => throw _privateConstructorUsedError;
-
   @JsonKey(ignore: true)
-  _$AllObjectivesAccomplishedCopyWith<_AllObjectivesAccomplished> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$AllObjectivesAccomplishedCopyWith<_AllObjectivesAccomplished>
+      get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -345,7 +363,8 @@ class _$ExperienceNavigationWatcherStateTearOff {
 }
 
 /// @nodoc
-const $ExperienceNavigationWatcherState = _$ExperienceNavigationWatcherStateTearOff();
+const $ExperienceNavigationWatcherState =
+    _$ExperienceNavigationWatcherStateTearOff();
 
 /// @nodoc
 mixin _$ExperienceNavigationWatcherState {
@@ -388,7 +407,8 @@ mixin _$ExperienceNavigationWatcherState {
 /// @nodoc
 abstract class $ExperienceNavigationWatcherStateCopyWith<$Res> {
   factory $ExperienceNavigationWatcherStateCopyWith(
-          ExperienceNavigationWatcherState value, $Res Function(ExperienceNavigationWatcherState) then) =
+          ExperienceNavigationWatcherState value,
+          $Res Function(ExperienceNavigationWatcherState) then) =
       _$ExperienceNavigationWatcherStateCopyWithImpl<$Res>;
 }
 
@@ -404,11 +424,13 @@ class _$ExperienceNavigationWatcherStateCopyWithImpl<$Res>
 
 /// @nodoc
 abstract class _$InitialCopyWith<$Res> {
-  factory _$InitialCopyWith(_Initial value, $Res Function(_Initial) then) = __$InitialCopyWithImpl<$Res>;
+  factory _$InitialCopyWith(_Initial value, $Res Function(_Initial) then) =
+      __$InitialCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$InitialCopyWithImpl<$Res> extends _$ExperienceNavigationWatcherStateCopyWithImpl<$Res>
+class __$InitialCopyWithImpl<$Res>
+    extends _$ExperienceNavigationWatcherStateCopyWithImpl<$Res>
     implements _$InitialCopyWith<$Res> {
   __$InitialCopyWithImpl(_Initial _value, $Res Function(_Initial) _then)
       : super(_value, (v) => _then(v as _Initial));
@@ -494,14 +516,17 @@ abstract class _Initial implements ExperienceNavigationWatcherState {
 
 /// @nodoc
 abstract class _$NoExperienceCopyWith<$Res> {
-  factory _$NoExperienceCopyWith(_NoExperience value, $Res Function(_NoExperience) then) =
+  factory _$NoExperienceCopyWith(
+          _NoExperience value, $Res Function(_NoExperience) then) =
       __$NoExperienceCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$NoExperienceCopyWithImpl<$Res> extends _$ExperienceNavigationWatcherStateCopyWithImpl<$Res>
+class __$NoExperienceCopyWithImpl<$Res>
+    extends _$ExperienceNavigationWatcherStateCopyWithImpl<$Res>
     implements _$NoExperienceCopyWith<$Res> {
-  __$NoExperienceCopyWithImpl(_NoExperience _value, $Res Function(_NoExperience) _then)
+  __$NoExperienceCopyWithImpl(
+      _NoExperience _value, $Res Function(_NoExperience) _then)
       : super(_value, (v) => _then(v as _NoExperience));
 
   @override
@@ -585,17 +610,17 @@ abstract class _NoExperience implements ExperienceNavigationWatcherState {
 
 /// @nodoc
 abstract class _$NavigatingExperienceCopyWith<$Res> {
-  factory _$NavigatingExperienceCopyWith(
-          _NavigatingExperience value, $Res Function(_NavigatingExperience) then) =
+  factory _$NavigatingExperienceCopyWith(_NavigatingExperience value,
+          $Res Function(_NavigatingExperience) then) =
       __$NavigatingExperienceCopyWithImpl<$Res>;
-
   $Res call({Experience experience});
 
   $ExperienceCopyWith<$Res> get experience;
 }
 
 /// @nodoc
-class __$NavigatingExperienceCopyWithImpl<$Res> extends _$ExperienceNavigationWatcherStateCopyWithImpl<$Res>
+class __$NavigatingExperienceCopyWithImpl<$Res>
+    extends _$ExperienceNavigationWatcherStateCopyWithImpl<$Res>
     implements _$NavigatingExperienceCopyWith<$Res> {
   __$NavigatingExperienceCopyWithImpl(
       _NavigatingExperience _value, $Res Function(_NavigatingExperience) _then)
@@ -642,16 +667,19 @@ class _$_NavigatingExperience implements _NavigatingExperience {
     return identical(this, other) ||
         (other is _NavigatingExperience &&
             (identical(other.experience, experience) ||
-                const DeepCollectionEquality().equals(other.experience, experience)));
+                const DeepCollectionEquality()
+                    .equals(other.experience, experience)));
   }
 
   @override
-  int get hashCode => runtimeType.hashCode ^ const DeepCollectionEquality().hash(experience);
+  int get hashCode =>
+      runtimeType.hashCode ^ const DeepCollectionEquality().hash(experience);
 
   @JsonKey(ignore: true)
   @override
   _$NavigatingExperienceCopyWith<_NavigatingExperience> get copyWith =>
-      __$NavigatingExperienceCopyWithImpl<_NavigatingExperience>(this, _$identity);
+      __$NavigatingExperienceCopyWithImpl<_NavigatingExperience>(
+          this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -706,29 +734,33 @@ class _$_NavigatingExperience implements _NavigatingExperience {
   }
 }
 
-abstract class _NavigatingExperience implements ExperienceNavigationWatcherState {
-  const factory _NavigatingExperience(Experience experience) = _$_NavigatingExperience;
+abstract class _NavigatingExperience
+    implements ExperienceNavigationWatcherState {
+  const factory _NavigatingExperience(Experience experience) =
+      _$_NavigatingExperience;
 
   Experience get experience => throw _privateConstructorUsedError;
-
   @JsonKey(ignore: true)
-  _$NavigatingExperienceCopyWith<_NavigatingExperience> get copyWith => throw _privateConstructorUsedError;
+  _$NavigatingExperienceCopyWith<_NavigatingExperience> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class _$FinishExperienceCopyWith<$Res> {
-  factory _$FinishExperienceCopyWith(_FinishExperience value, $Res Function(_FinishExperience) then) =
+  factory _$FinishExperienceCopyWith(
+          _FinishExperience value, $Res Function(_FinishExperience) then) =
       __$FinishExperienceCopyWithImpl<$Res>;
-
   $Res call({Experience experience});
 
   $ExperienceCopyWith<$Res> get experience;
 }
 
 /// @nodoc
-class __$FinishExperienceCopyWithImpl<$Res> extends _$ExperienceNavigationWatcherStateCopyWithImpl<$Res>
+class __$FinishExperienceCopyWithImpl<$Res>
+    extends _$ExperienceNavigationWatcherStateCopyWithImpl<$Res>
     implements _$FinishExperienceCopyWith<$Res> {
-  __$FinishExperienceCopyWithImpl(_FinishExperience _value, $Res Function(_FinishExperience) _then)
+  __$FinishExperienceCopyWithImpl(
+      _FinishExperience _value, $Res Function(_FinishExperience) _then)
       : super(_value, (v) => _then(v as _FinishExperience));
 
   @override
@@ -772,11 +804,13 @@ class _$_FinishExperience implements _FinishExperience {
     return identical(this, other) ||
         (other is _FinishExperience &&
             (identical(other.experience, experience) ||
-                const DeepCollectionEquality().equals(other.experience, experience)));
+                const DeepCollectionEquality()
+                    .equals(other.experience, experience)));
   }
 
   @override
-  int get hashCode => runtimeType.hashCode ^ const DeepCollectionEquality().hash(experience);
+  int get hashCode =>
+      runtimeType.hashCode ^ const DeepCollectionEquality().hash(experience);
 
   @JsonKey(ignore: true)
   @override
@@ -840,7 +874,7 @@ abstract class _FinishExperience implements ExperienceNavigationWatcherState {
   const factory _FinishExperience(Experience experience) = _$_FinishExperience;
 
   Experience get experience => throw _privateConstructorUsedError;
-
   @JsonKey(ignore: true)
-  _$FinishExperienceCopyWith<_FinishExperience> get copyWith => throw _privateConstructorUsedError;
+  _$FinishExperienceCopyWith<_FinishExperience> get copyWith =>
+      throw _privateConstructorUsedError;
 }

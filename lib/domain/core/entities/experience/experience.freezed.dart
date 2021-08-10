@@ -66,33 +66,20 @@ const $Experience = _$ExperienceTearOff();
 /// @nodoc
 mixin _$Experience {
   UniqueId get id => throw _privateConstructorUsedError;
-
   Name get title => throw _privateConstructorUsedError;
-
   EntityDescription get description => throw _privateConstructorUsedError;
-
   Set<String> get imageURLs => throw _privateConstructorUsedError;
-
-  Option<List<Asset>> get imageAssetsOption => throw _privateConstructorUsedError;
-
+  Option<List<Asset>> get imageAssetsOption =>
+      throw _privateConstructorUsedError;
   Coordinates get coordinates => throw _privateConstructorUsedError;
-
   Location get location => throw _privateConstructorUsedError;
-
   SimpleUser get creator => throw _privateConstructorUsedError;
-
   Difficulty get difficulty => throw _privateConstructorUsedError;
-
   PastDate get creationDate => throw _privateConstructorUsedError;
-
   PastDate get modificationDate => throw _privateConstructorUsedError;
-
   ObjectiveList get objectives => throw _privateConstructorUsedError;
-
   RewardSet get rewards => throw _privateConstructorUsedError;
-
   TagSet get tags => throw _privateConstructorUsedError;
-
   Set<Comment> get comments => throw _privateConstructorUsedError;
   Set<UniqueId> get likedBy => throw _privateConstructorUsedError;
   Set<UniqueId> get doneBy => throw _privateConstructorUsedError;
@@ -100,14 +87,15 @@ mixin _$Experience {
   bool get isPromoted => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
-  $ExperienceCopyWith<Experience> get copyWith => throw _privateConstructorUsedError;
+  $ExperienceCopyWith<Experience> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $ExperienceCopyWith<$Res> {
-  factory $ExperienceCopyWith(Experience value, $Res Function(Experience) then) =
+  factory $ExperienceCopyWith(
+          Experience value, $Res Function(Experience) then) =
       _$ExperienceCopyWithImpl<$Res>;
-
   $Res call(
       {UniqueId id,
       Name title,
@@ -268,9 +256,9 @@ class _$ExperienceCopyWithImpl<$Res> implements $ExperienceCopyWith<$Res> {
 
 /// @nodoc
 abstract class _$ExperienceCopyWith<$Res> implements $ExperienceCopyWith<$Res> {
-  factory _$ExperienceCopyWith(_Experience value, $Res Function(_Experience) then) =
+  factory _$ExperienceCopyWith(
+          _Experience value, $Res Function(_Experience) then) =
       __$ExperienceCopyWithImpl<$Res>;
-
   @override
   $Res call(
       {UniqueId id,
@@ -304,7 +292,8 @@ abstract class _$ExperienceCopyWith<$Res> implements $ExperienceCopyWith<$Res> {
 /// @nodoc
 class __$ExperienceCopyWithImpl<$Res> extends _$ExperienceCopyWithImpl<$Res>
     implements _$ExperienceCopyWith<$Res> {
-  __$ExperienceCopyWithImpl(_Experience _value, $Res Function(_Experience) _then)
+  __$ExperienceCopyWithImpl(
+      _Experience _value, $Res Function(_Experience) _then)
       : super(_value, (v) => _then(v as _Experience));
 
   @override
@@ -486,41 +475,58 @@ class _$_Experience extends _Experience {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other is _Experience &&
-            (identical(other.id, id) || const DeepCollectionEquality().equals(other.id, id)) &&
-            (identical(other.title, title) || const DeepCollectionEquality().equals(other.title, title)) &&
+            (identical(other.id, id) ||
+                const DeepCollectionEquality().equals(other.id, id)) &&
+            (identical(other.title, title) ||
+                const DeepCollectionEquality().equals(other.title, title)) &&
             (identical(other.description, description) ||
-                const DeepCollectionEquality().equals(other.description, description)) &&
+                const DeepCollectionEquality()
+                    .equals(other.description, description)) &&
             (identical(other.imageURLs, imageURLs) ||
-                const DeepCollectionEquality().equals(other.imageURLs, imageURLs)) &&
+                const DeepCollectionEquality()
+                    .equals(other.imageURLs, imageURLs)) &&
             (identical(other.imageAssetsOption, imageAssetsOption) ||
-                const DeepCollectionEquality().equals(other.imageAssetsOption, imageAssetsOption)) &&
+                const DeepCollectionEquality()
+                    .equals(other.imageAssetsOption, imageAssetsOption)) &&
             (identical(other.coordinates, coordinates) ||
-                const DeepCollectionEquality().equals(other.coordinates, coordinates)) &&
+                const DeepCollectionEquality()
+                    .equals(other.coordinates, coordinates)) &&
             (identical(other.location, location) ||
-                const DeepCollectionEquality().equals(other.location, location)) &&
+                const DeepCollectionEquality()
+                    .equals(other.location, location)) &&
             (identical(other.creator, creator) ||
-                const DeepCollectionEquality().equals(other.creator, creator)) &&
+                const DeepCollectionEquality()
+                    .equals(other.creator, creator)) &&
             (identical(other.difficulty, difficulty) ||
-                const DeepCollectionEquality().equals(other.difficulty, difficulty)) &&
+                const DeepCollectionEquality()
+                    .equals(other.difficulty, difficulty)) &&
             (identical(other.creationDate, creationDate) ||
-                const DeepCollectionEquality().equals(other.creationDate, creationDate)) &&
+                const DeepCollectionEquality()
+                    .equals(other.creationDate, creationDate)) &&
             (identical(other.modificationDate, modificationDate) ||
-                const DeepCollectionEquality().equals(other.modificationDate, modificationDate)) &&
+                const DeepCollectionEquality()
+                    .equals(other.modificationDate, modificationDate)) &&
             (identical(other.objectives, objectives) ||
-                const DeepCollectionEquality().equals(other.objectives, objectives)) &&
+                const DeepCollectionEquality()
+                    .equals(other.objectives, objectives)) &&
             (identical(other.rewards, rewards) ||
-                const DeepCollectionEquality().equals(other.rewards, rewards)) &&
-            (identical(other.tags, tags) || const DeepCollectionEquality().equals(other.tags, tags)) &&
+                const DeepCollectionEquality()
+                    .equals(other.rewards, rewards)) &&
+            (identical(other.tags, tags) ||
+                const DeepCollectionEquality().equals(other.tags, tags)) &&
             (identical(other.comments, comments) ||
-                const DeepCollectionEquality().equals(other.comments, comments)) &&
+                const DeepCollectionEquality()
+                    .equals(other.comments, comments)) &&
             (identical(other.likedBy, likedBy) ||
-                const DeepCollectionEquality().equals(other.likedBy, likedBy)) &&
+                const DeepCollectionEquality()
+                    .equals(other.likedBy, likedBy)) &&
             (identical(other.doneBy, doneBy) ||
                 const DeepCollectionEquality().equals(other.doneBy, doneBy)) &&
             (identical(other.toDoBy, toDoBy) ||
                 const DeepCollectionEquality().equals(other.toDoBy, toDoBy)) &&
             (identical(other.isPromoted, isPromoted) ||
-                const DeepCollectionEquality().equals(other.isPromoted, isPromoted)));
+                const DeepCollectionEquality()
+                    .equals(other.isPromoted, isPromoted)));
   }
 
   @override
@@ -548,7 +554,8 @@ class _$_Experience extends _Experience {
 
   @JsonKey(ignore: true)
   @override
-  _$ExperienceCopyWith<_Experience> get copyWith => __$ExperienceCopyWithImpl<_Experience>(this, _$identity);
+  _$ExperienceCopyWith<_Experience> get copyWith =>
+      __$ExperienceCopyWithImpl<_Experience>(this, _$identity);
 }
 
 abstract class _Experience extends Experience {
@@ -580,13 +587,11 @@ abstract class _Experience extends Experience {
   Name get title => throw _privateConstructorUsedError;
   @override
   EntityDescription get description => throw _privateConstructorUsedError;
-
   @override
   Set<String> get imageURLs => throw _privateConstructorUsedError;
-
   @override
-  Option<List<Asset>> get imageAssetsOption => throw _privateConstructorUsedError;
-
+  Option<List<Asset>> get imageAssetsOption =>
+      throw _privateConstructorUsedError;
   @override
   Coordinates get coordinates => throw _privateConstructorUsedError;
   @override
@@ -613,11 +618,10 @@ abstract class _Experience extends Experience {
   Set<UniqueId> get doneBy => throw _privateConstructorUsedError;
   @override
   Set<UniqueId> get toDoBy => throw _privateConstructorUsedError;
-
   @override
   bool get isPromoted => throw _privateConstructorUsedError;
-
   @override
   @JsonKey(ignore: true)
-  _$ExperienceCopyWith<_Experience> get copyWith => throw _privateConstructorUsedError;
+  _$ExperienceCopyWith<_Experience> get copyWith =>
+      throw _privateConstructorUsedError;
 }

@@ -9,14 +9,16 @@ import 'package:worldon/views/profile/widgets/profile_users_tab_view/profile_use
 import 'profile_tab_bar.dart';
 
 class Profile extends StatelessWidget {
+  final GlobalKey<State<StatefulWidget>> userLevelShowKey;
+  final bool isOwn;
+  final User user;
+
   const Profile({
     Key? key,
     required this.isOwn,
     required this.user,
+    required this.userLevelShowKey,
   }) : super(key: key);
-
-  final bool isOwn;
-  final User user;
 
   @override
   Widget build(BuildContext context) {
@@ -41,6 +43,7 @@ class Profile extends StatelessWidget {
               minExtent: MediaQuery.of(context).size.height * 0.32,
               maxExtent: MediaQuery.of(context).size.height * 0.32,
               isOwn: isOwn,
+              userLevelShowKey: userLevelShowKey,
             ),
           ),
           SliverPersistentHeader(

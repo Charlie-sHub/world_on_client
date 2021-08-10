@@ -14,10 +14,12 @@ import 'package:worldon/views/search/widget/search_body.dart';
 
 class MainPageScaffold extends StatelessWidget {
   final GlobalKey<State<StatefulWidget>> createExperienceShowKey;
+  final GlobalKey<State<StatefulWidget>> userLevelShowKey;
 
   const MainPageScaffold({
     Key? key,
     required this.createExperienceShowKey,
+    required this.userLevelShowKey,
   }) : super(key: key);
 
   @override
@@ -54,6 +56,7 @@ class MainPageScaffold extends StatelessWidget {
                   profileView: (state) => state.currentUserProfile,
                   orElse: () => true,
                 ),
+            userLevelShowKey: userLevelShowKey,
           ),
           Center(
             child: Text(S.of(context).error),

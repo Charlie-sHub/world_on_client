@@ -231,5 +231,9 @@
   "newExperience": "Nueva experiencia",
   "createExperienceButtonShowCase": "Crea y comparte experiencias",
   "experienceCardShowCase": "Experiencias creadas por otros usuarios",
-  "userLeverShowCase": "El nivel del usuario, se sube al crear y realizar experiencias"
+  "userLeverShowCase": "El nivel del usuario, se sube al crear y realizar experiencias",
+  "difficultyShowCase": "Que tan dificil sera completar la experiencia?",
+  "mapShowCase": "Cual sera la ubicacion inicial de la experiencia?",
+  "objectivesShowCase": "Crea los objetivos de la experiencia, o en otras palabras los pasos a seguir",
+  "tagCreationShowCase": "Crea o busca etiquetas que describan la experincia que has creado"
 }

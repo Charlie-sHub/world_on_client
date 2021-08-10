@@ -38,8 +38,8 @@ mixin _$Options {
 
 /// @nodoc
 abstract class $OptionsCopyWith<$Res> {
-  factory $OptionsCopyWith(Options value, $Res Function(Options) then) = _$OptionsCopyWithImpl<$Res>;
-
+  factory $OptionsCopyWith(Options value, $Res Function(Options) then) =
+      _$OptionsCopyWithImpl<$Res>;
   $Res call({UniqueId id, String languageCode});
 }
 
@@ -71,14 +71,15 @@ class _$OptionsCopyWithImpl<$Res> implements $OptionsCopyWith<$Res> {
 
 /// @nodoc
 abstract class _$OptionsCopyWith<$Res> implements $OptionsCopyWith<$Res> {
-  factory _$OptionsCopyWith(_Options value, $Res Function(_Options) then) = __$OptionsCopyWithImpl<$Res>;
-
+  factory _$OptionsCopyWith(_Options value, $Res Function(_Options) then) =
+      __$OptionsCopyWithImpl<$Res>;
   @override
   $Res call({UniqueId id, String languageCode});
 }
 
 /// @nodoc
-class __$OptionsCopyWithImpl<$Res> extends _$OptionsCopyWithImpl<$Res> implements _$OptionsCopyWith<$Res> {
+class __$OptionsCopyWithImpl<$Res> extends _$OptionsCopyWithImpl<$Res>
+    implements _$OptionsCopyWith<$Res> {
   __$OptionsCopyWithImpl(_Options _value, $Res Function(_Options) _then)
       : super(_value, (v) => _then(v as _Options));
 
@@ -122,9 +123,11 @@ class _$_Options extends _Options {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other is _Options &&
-            (identical(other.id, id) || const DeepCollectionEquality().equals(other.id, id)) &&
+            (identical(other.id, id) ||
+                const DeepCollectionEquality().equals(other.id, id)) &&
             (identical(other.languageCode, languageCode) ||
-                const DeepCollectionEquality().equals(other.languageCode, languageCode)));
+                const DeepCollectionEquality()
+                    .equals(other.languageCode, languageCode)));
   }
 
   @override
@@ -135,21 +138,21 @@ class _$_Options extends _Options {
 
   @JsonKey(ignore: true)
   @override
-  _$OptionsCopyWith<_Options> get copyWith => __$OptionsCopyWithImpl<_Options>(this, _$identity);
+  _$OptionsCopyWith<_Options> get copyWith =>
+      __$OptionsCopyWithImpl<_Options>(this, _$identity);
 }
 
 abstract class _Options extends Options {
-  const factory _Options({required UniqueId id, required String languageCode}) = _$_Options;
-
+  const factory _Options({required UniqueId id, required String languageCode}) =
+      _$_Options;
   const _Options._() : super._();
 
   @override
   UniqueId get id => throw _privateConstructorUsedError;
-
   @override
   String get languageCode => throw _privateConstructorUsedError;
-
   @override
   @JsonKey(ignore: true)
-  _$OptionsCopyWith<_Options> get copyWith => throw _privateConstructorUsedError;
+  _$OptionsCopyWith<_Options> get copyWith =>
+      throw _privateConstructorUsedError;
 }

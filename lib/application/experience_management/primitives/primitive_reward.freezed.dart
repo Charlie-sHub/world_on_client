@@ -17,7 +17,10 @@ class _$PrimitiveRewardTearOff {
   const _$PrimitiveRewardTearOff();
 
   _PrimitiveReward call(
-      {required UniqueId id, required String name, required String description, required File? imageFile}) {
+      {required UniqueId id,
+      required String name,
+      required String description,
+      required File? imageFile}) {
     return _PrimitiveReward(
       id: id,
       name: name,
@@ -38,23 +41,24 @@ mixin _$PrimitiveReward {
   File? get imageFile => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
-  $PrimitiveRewardCopyWith<PrimitiveReward> get copyWith => throw _privateConstructorUsedError;
+  $PrimitiveRewardCopyWith<PrimitiveReward> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $PrimitiveRewardCopyWith<$Res> {
-  factory $PrimitiveRewardCopyWith(PrimitiveReward value, $Res Function(PrimitiveReward) then) =
+  factory $PrimitiveRewardCopyWith(
+          PrimitiveReward value, $Res Function(PrimitiveReward) then) =
       _$PrimitiveRewardCopyWithImpl<$Res>;
-
   $Res call({UniqueId id, String name, String description, File? imageFile});
 }
 
 /// @nodoc
-class _$PrimitiveRewardCopyWithImpl<$Res> implements $PrimitiveRewardCopyWith<$Res> {
+class _$PrimitiveRewardCopyWithImpl<$Res>
+    implements $PrimitiveRewardCopyWith<$Res> {
   _$PrimitiveRewardCopyWithImpl(this._value, this._then);
 
   final PrimitiveReward _value;
-
   // ignore: unused_field
   final $Res Function(PrimitiveReward) _then;
 
@@ -87,18 +91,21 @@ class _$PrimitiveRewardCopyWithImpl<$Res> implements $PrimitiveRewardCopyWith<$R
 }
 
 /// @nodoc
-abstract class _$PrimitiveRewardCopyWith<$Res> implements $PrimitiveRewardCopyWith<$Res> {
-  factory _$PrimitiveRewardCopyWith(_PrimitiveReward value, $Res Function(_PrimitiveReward) then) =
+abstract class _$PrimitiveRewardCopyWith<$Res>
+    implements $PrimitiveRewardCopyWith<$Res> {
+  factory _$PrimitiveRewardCopyWith(
+          _PrimitiveReward value, $Res Function(_PrimitiveReward) then) =
       __$PrimitiveRewardCopyWithImpl<$Res>;
-
   @override
   $Res call({UniqueId id, String name, String description, File? imageFile});
 }
 
 /// @nodoc
-class __$PrimitiveRewardCopyWithImpl<$Res> extends _$PrimitiveRewardCopyWithImpl<$Res>
+class __$PrimitiveRewardCopyWithImpl<$Res>
+    extends _$PrimitiveRewardCopyWithImpl<$Res>
     implements _$PrimitiveRewardCopyWith<$Res> {
-  __$PrimitiveRewardCopyWithImpl(_PrimitiveReward _value, $Res Function(_PrimitiveReward) _then)
+  __$PrimitiveRewardCopyWithImpl(
+      _PrimitiveReward _value, $Res Function(_PrimitiveReward) _then)
       : super(_value, (v) => _then(v as _PrimitiveReward));
 
   @override
@@ -136,7 +143,10 @@ class __$PrimitiveRewardCopyWithImpl<$Res> extends _$PrimitiveRewardCopyWithImpl
 
 class _$_PrimitiveReward extends _PrimitiveReward {
   const _$_PrimitiveReward(
-      {required this.id, required this.name, required this.description, required this.imageFile})
+      {required this.id,
+      required this.name,
+      required this.description,
+      required this.imageFile})
       : super._();
 
   @override
@@ -157,12 +167,16 @@ class _$_PrimitiveReward extends _PrimitiveReward {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other is _PrimitiveReward &&
-            (identical(other.id, id) || const DeepCollectionEquality().equals(other.id, id)) &&
-            (identical(other.name, name) || const DeepCollectionEquality().equals(other.name, name)) &&
+            (identical(other.id, id) ||
+                const DeepCollectionEquality().equals(other.id, id)) &&
+            (identical(other.name, name) ||
+                const DeepCollectionEquality().equals(other.name, name)) &&
             (identical(other.description, description) ||
-                const DeepCollectionEquality().equals(other.description, description)) &&
+                const DeepCollectionEquality()
+                    .equals(other.description, description)) &&
             (identical(other.imageFile, imageFile) ||
-                const DeepCollectionEquality().equals(other.imageFile, imageFile)));
+                const DeepCollectionEquality()
+                    .equals(other.imageFile, imageFile)));
   }
 
   @override
@@ -193,11 +207,10 @@ abstract class _PrimitiveReward extends PrimitiveReward {
   String get name => throw _privateConstructorUsedError;
   @override
   String get description => throw _privateConstructorUsedError;
-
   @override
   File? get imageFile => throw _privateConstructorUsedError;
-
   @override
   @JsonKey(ignore: true)
-  _$PrimitiveRewardCopyWith<_PrimitiveReward> get copyWith => throw _privateConstructorUsedError;
+  _$PrimitiveRewardCopyWith<_PrimitiveReward> get copyWith =>
+      throw _privateConstructorUsedError;
 }

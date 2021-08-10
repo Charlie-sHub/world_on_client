@@ -20,7 +20,8 @@ class _$NotificationsWatcherEventTearOff {
     return const _WatchNotificationsStarted();
   }
 
-  _ResultsReceived resultsReceived(Either<Failure, KtList<Notification>> failureOrNotifications) {
+  _ResultsReceived resultsReceived(
+      Either<Failure, KtList<Notification>> failureOrNotifications) {
     return _ResultsReceived(
       failureOrNotifications,
     );
@@ -35,25 +36,31 @@ mixin _$NotificationsWatcherEvent {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() watchNotificationsStarted,
-    required TResult Function(Either<Failure, KtList<Notification>> failureOrNotifications) resultsReceived,
+    required TResult Function(
+            Either<Failure, KtList<Notification>> failureOrNotifications)
+        resultsReceived,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? watchNotificationsStarted,
-    TResult Function(Either<Failure, KtList<Notification>> failureOrNotifications)? resultsReceived,
+    TResult Function(
+            Either<Failure, KtList<Notification>> failureOrNotifications)?
+        resultsReceived,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_WatchNotificationsStarted value) watchNotificationsStarted,
+    required TResult Function(_WatchNotificationsStarted value)
+        watchNotificationsStarted,
     required TResult Function(_ResultsReceived value) resultsReceived,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_WatchNotificationsStarted value)? watchNotificationsStarted,
+    TResult Function(_WatchNotificationsStarted value)?
+        watchNotificationsStarted,
     TResult Function(_ResultsReceived value)? resultsReceived,
     required TResult orElse(),
   }) =>
@@ -62,37 +69,39 @@ mixin _$NotificationsWatcherEvent {
 
 /// @nodoc
 abstract class $NotificationsWatcherEventCopyWith<$Res> {
-  factory $NotificationsWatcherEventCopyWith(
-          NotificationsWatcherEvent value, $Res Function(NotificationsWatcherEvent) then) =
+  factory $NotificationsWatcherEventCopyWith(NotificationsWatcherEvent value,
+          $Res Function(NotificationsWatcherEvent) then) =
       _$NotificationsWatcherEventCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class _$NotificationsWatcherEventCopyWithImpl<$Res> implements $NotificationsWatcherEventCopyWith<$Res> {
+class _$NotificationsWatcherEventCopyWithImpl<$Res>
+    implements $NotificationsWatcherEventCopyWith<$Res> {
   _$NotificationsWatcherEventCopyWithImpl(this._value, this._then);
 
   final NotificationsWatcherEvent _value;
-
   // ignore: unused_field
   final $Res Function(NotificationsWatcherEvent) _then;
 }
 
 /// @nodoc
 abstract class _$WatchNotificationsStartedCopyWith<$Res> {
-  factory _$WatchNotificationsStartedCopyWith(
-          _WatchNotificationsStarted value, $Res Function(_WatchNotificationsStarted) then) =
+  factory _$WatchNotificationsStartedCopyWith(_WatchNotificationsStarted value,
+          $Res Function(_WatchNotificationsStarted) then) =
       __$WatchNotificationsStartedCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$WatchNotificationsStartedCopyWithImpl<$Res> extends _$NotificationsWatcherEventCopyWithImpl<$Res>
+class __$WatchNotificationsStartedCopyWithImpl<$Res>
+    extends _$NotificationsWatcherEventCopyWithImpl<$Res>
     implements _$WatchNotificationsStartedCopyWith<$Res> {
-  __$WatchNotificationsStartedCopyWithImpl(
-      _WatchNotificationsStarted _value, $Res Function(_WatchNotificationsStarted) _then)
+  __$WatchNotificationsStartedCopyWithImpl(_WatchNotificationsStarted _value,
+      $Res Function(_WatchNotificationsStarted) _then)
       : super(_value, (v) => _then(v as _WatchNotificationsStarted));
 
   @override
-  _WatchNotificationsStarted get _value => super._value as _WatchNotificationsStarted;
+  _WatchNotificationsStarted get _value =>
+      super._value as _WatchNotificationsStarted;
 }
 
 /// @nodoc
@@ -117,7 +126,9 @@ class _$_WatchNotificationsStarted implements _WatchNotificationsStarted {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() watchNotificationsStarted,
-    required TResult Function(Either<Failure, KtList<Notification>> failureOrNotifications) resultsReceived,
+    required TResult Function(
+            Either<Failure, KtList<Notification>> failureOrNotifications)
+        resultsReceived,
   }) {
     return watchNotificationsStarted();
   }
@@ -126,7 +137,9 @@ class _$_WatchNotificationsStarted implements _WatchNotificationsStarted {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? watchNotificationsStarted,
-    TResult Function(Either<Failure, KtList<Notification>> failureOrNotifications)? resultsReceived,
+    TResult Function(
+            Either<Failure, KtList<Notification>> failureOrNotifications)?
+        resultsReceived,
     required TResult orElse(),
   }) {
     if (watchNotificationsStarted != null) {
@@ -138,7 +151,8 @@ class _$_WatchNotificationsStarted implements _WatchNotificationsStarted {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_WatchNotificationsStarted value) watchNotificationsStarted,
+    required TResult Function(_WatchNotificationsStarted value)
+        watchNotificationsStarted,
     required TResult Function(_ResultsReceived value) resultsReceived,
   }) {
     return watchNotificationsStarted(this);
@@ -147,7 +161,8 @@ class _$_WatchNotificationsStarted implements _WatchNotificationsStarted {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_WatchNotificationsStarted value)? watchNotificationsStarted,
+    TResult Function(_WatchNotificationsStarted value)?
+        watchNotificationsStarted,
     TResult Function(_ResultsReceived value)? resultsReceived,
     required TResult orElse(),
   }) {
@@ -164,16 +179,18 @@ abstract class _WatchNotificationsStarted implements NotificationsWatcherEvent {
 
 /// @nodoc
 abstract class _$ResultsReceivedCopyWith<$Res> {
-  factory _$ResultsReceivedCopyWith(_ResultsReceived value, $Res Function(_ResultsReceived) then) =
+  factory _$ResultsReceivedCopyWith(
+          _ResultsReceived value, $Res Function(_ResultsReceived) then) =
       __$ResultsReceivedCopyWithImpl<$Res>;
-
   $Res call({Either<Failure, KtList<Notification>> failureOrNotifications});
 }
 
 /// @nodoc
-class __$ResultsReceivedCopyWithImpl<$Res> extends _$NotificationsWatcherEventCopyWithImpl<$Res>
+class __$ResultsReceivedCopyWithImpl<$Res>
+    extends _$NotificationsWatcherEventCopyWithImpl<$Res>
     implements _$ResultsReceivedCopyWith<$Res> {
-  __$ResultsReceivedCopyWithImpl(_ResultsReceived _value, $Res Function(_ResultsReceived) _then)
+  __$ResultsReceivedCopyWithImpl(
+      _ResultsReceived _value, $Res Function(_ResultsReceived) _then)
       : super(_value, (v) => _then(v as _ResultsReceived));
 
   @override
@@ -210,11 +227,14 @@ class _$_ResultsReceived implements _ResultsReceived {
     return identical(this, other) ||
         (other is _ResultsReceived &&
             (identical(other.failureOrNotifications, failureOrNotifications) ||
-                const DeepCollectionEquality().equals(other.failureOrNotifications, failureOrNotifications)));
+                const DeepCollectionEquality().equals(
+                    other.failureOrNotifications, failureOrNotifications)));
   }
 
   @override
-  int get hashCode => runtimeType.hashCode ^ const DeepCollectionEquality().hash(failureOrNotifications);
+  int get hashCode =>
+      runtimeType.hashCode ^
+      const DeepCollectionEquality().hash(failureOrNotifications);
 
   @JsonKey(ignore: true)
   @override
@@ -225,7 +245,9 @@ class _$_ResultsReceived implements _ResultsReceived {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() watchNotificationsStarted,
-    required TResult Function(Either<Failure, KtList<Notification>> failureOrNotifications) resultsReceived,
+    required TResult Function(
+            Either<Failure, KtList<Notification>> failureOrNotifications)
+        resultsReceived,
   }) {
     return resultsReceived(failureOrNotifications);
   }
@@ -234,7 +256,9 @@ class _$_ResultsReceived implements _ResultsReceived {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? watchNotificationsStarted,
-    TResult Function(Either<Failure, KtList<Notification>> failureOrNotifications)? resultsReceived,
+    TResult Function(
+            Either<Failure, KtList<Notification>> failureOrNotifications)?
+        resultsReceived,
     required TResult orElse(),
   }) {
     if (resultsReceived != null) {
@@ -246,7 +270,8 @@ class _$_ResultsReceived implements _ResultsReceived {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_WatchNotificationsStarted value) watchNotificationsStarted,
+    required TResult Function(_WatchNotificationsStarted value)
+        watchNotificationsStarted,
     required TResult Function(_ResultsReceived value) resultsReceived,
   }) {
     return resultsReceived(this);
@@ -255,7 +280,8 @@ class _$_ResultsReceived implements _ResultsReceived {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_WatchNotificationsStarted value)? watchNotificationsStarted,
+    TResult Function(_WatchNotificationsStarted value)?
+        watchNotificationsStarted,
     TResult Function(_ResultsReceived value)? resultsReceived,
     required TResult orElse(),
   }) {
@@ -267,13 +293,15 @@ class _$_ResultsReceived implements _ResultsReceived {
 }
 
 abstract class _ResultsReceived implements NotificationsWatcherEvent {
-  const factory _ResultsReceived(Either<Failure, KtList<Notification>> failureOrNotifications) =
+  const factory _ResultsReceived(
+          Either<Failure, KtList<Notification>> failureOrNotifications) =
       _$_ResultsReceived;
 
-  Either<Failure, KtList<Notification>> get failureOrNotifications => throw _privateConstructorUsedError;
-
+  Either<Failure, KtList<Notification>> get failureOrNotifications =>
+      throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  _$ResultsReceivedCopyWith<_ResultsReceived> get copyWith => throw _privateConstructorUsedError;
+  _$ResultsReceivedCopyWith<_ResultsReceived> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -344,28 +372,30 @@ mixin _$NotificationsWatcherState {
 
 /// @nodoc
 abstract class $NotificationsWatcherStateCopyWith<$Res> {
-  factory $NotificationsWatcherStateCopyWith(
-          NotificationsWatcherState value, $Res Function(NotificationsWatcherState) then) =
+  factory $NotificationsWatcherStateCopyWith(NotificationsWatcherState value,
+          $Res Function(NotificationsWatcherState) then) =
       _$NotificationsWatcherStateCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class _$NotificationsWatcherStateCopyWithImpl<$Res> implements $NotificationsWatcherStateCopyWith<$Res> {
+class _$NotificationsWatcherStateCopyWithImpl<$Res>
+    implements $NotificationsWatcherStateCopyWith<$Res> {
   _$NotificationsWatcherStateCopyWithImpl(this._value, this._then);
 
   final NotificationsWatcherState _value;
-
   // ignore: unused_field
   final $Res Function(NotificationsWatcherState) _then;
 }
 
 /// @nodoc
 abstract class _$InitialCopyWith<$Res> {
-  factory _$InitialCopyWith(_Initial value, $Res Function(_Initial) then) = __$InitialCopyWithImpl<$Res>;
+  factory _$InitialCopyWith(_Initial value, $Res Function(_Initial) then) =
+      __$InitialCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$InitialCopyWithImpl<$Res> extends _$NotificationsWatcherStateCopyWithImpl<$Res>
+class __$InitialCopyWithImpl<$Res>
+    extends _$NotificationsWatcherStateCopyWithImpl<$Res>
     implements _$InitialCopyWith<$Res> {
   __$InitialCopyWithImpl(_Initial _value, $Res Function(_Initial) _then)
       : super(_value, (v) => _then(v as _Initial));
@@ -451,14 +481,17 @@ abstract class _Initial implements NotificationsWatcherState {
 
 /// @nodoc
 abstract class _$LoadInProgressCopyWith<$Res> {
-  factory _$LoadInProgressCopyWith(_LoadInProgress value, $Res Function(_LoadInProgress) then) =
+  factory _$LoadInProgressCopyWith(
+          _LoadInProgress value, $Res Function(_LoadInProgress) then) =
       __$LoadInProgressCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$LoadInProgressCopyWithImpl<$Res> extends _$NotificationsWatcherStateCopyWithImpl<$Res>
+class __$LoadInProgressCopyWithImpl<$Res>
+    extends _$NotificationsWatcherStateCopyWithImpl<$Res>
     implements _$LoadInProgressCopyWith<$Res> {
-  __$LoadInProgressCopyWithImpl(_LoadInProgress _value, $Res Function(_LoadInProgress) _then)
+  __$LoadInProgressCopyWithImpl(
+      _LoadInProgress _value, $Res Function(_LoadInProgress) _then)
       : super(_value, (v) => _then(v as _LoadInProgress));
 
   @override
@@ -542,16 +575,18 @@ abstract class _LoadInProgress implements NotificationsWatcherState {
 
 /// @nodoc
 abstract class _$LoadSuccessCopyWith<$Res> {
-  factory _$LoadSuccessCopyWith(_LoadSuccess value, $Res Function(_LoadSuccess) then) =
+  factory _$LoadSuccessCopyWith(
+          _LoadSuccess value, $Res Function(_LoadSuccess) then) =
       __$LoadSuccessCopyWithImpl<$Res>;
-
   $Res call({KtList<Notification> notifications});
 }
 
 /// @nodoc
-class __$LoadSuccessCopyWithImpl<$Res> extends _$NotificationsWatcherStateCopyWithImpl<$Res>
+class __$LoadSuccessCopyWithImpl<$Res>
+    extends _$NotificationsWatcherStateCopyWithImpl<$Res>
     implements _$LoadSuccessCopyWith<$Res> {
-  __$LoadSuccessCopyWithImpl(_LoadSuccess _value, $Res Function(_LoadSuccess) _then)
+  __$LoadSuccessCopyWithImpl(
+      _LoadSuccess _value, $Res Function(_LoadSuccess) _then)
       : super(_value, (v) => _then(v as _LoadSuccess));
 
   @override
@@ -588,11 +623,13 @@ class _$_LoadSuccess implements _LoadSuccess {
     return identical(this, other) ||
         (other is _LoadSuccess &&
             (identical(other.notifications, notifications) ||
-                const DeepCollectionEquality().equals(other.notifications, notifications)));
+                const DeepCollectionEquality()
+                    .equals(other.notifications, notifications)));
   }
 
   @override
-  int get hashCode => runtimeType.hashCode ^ const DeepCollectionEquality().hash(notifications);
+  int get hashCode =>
+      runtimeType.hashCode ^ const DeepCollectionEquality().hash(notifications);
 
   @JsonKey(ignore: true)
   @override
@@ -653,28 +690,31 @@ class _$_LoadSuccess implements _LoadSuccess {
 }
 
 abstract class _LoadSuccess implements NotificationsWatcherState {
-  const factory _LoadSuccess(KtList<Notification> notifications) = _$_LoadSuccess;
+  const factory _LoadSuccess(KtList<Notification> notifications) =
+      _$_LoadSuccess;
 
   KtList<Notification> get notifications => throw _privateConstructorUsedError;
-
   @JsonKey(ignore: true)
-  _$LoadSuccessCopyWith<_LoadSuccess> get copyWith => throw _privateConstructorUsedError;
+  _$LoadSuccessCopyWith<_LoadSuccess> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class _$LoadFailureCopyWith<$Res> {
-  factory _$LoadFailureCopyWith(_LoadFailure value, $Res Function(_LoadFailure) then) =
+  factory _$LoadFailureCopyWith(
+          _LoadFailure value, $Res Function(_LoadFailure) then) =
       __$LoadFailureCopyWithImpl<$Res>;
-
   $Res call({Failure<dynamic> failure});
 
   $FailureCopyWith<dynamic, $Res> get failure;
 }
 
 /// @nodoc
-class __$LoadFailureCopyWithImpl<$Res> extends _$NotificationsWatcherStateCopyWithImpl<$Res>
+class __$LoadFailureCopyWithImpl<$Res>
+    extends _$NotificationsWatcherStateCopyWithImpl<$Res>
     implements _$LoadFailureCopyWith<$Res> {
-  __$LoadFailureCopyWithImpl(_LoadFailure _value, $Res Function(_LoadFailure) _then)
+  __$LoadFailureCopyWithImpl(
+      _LoadFailure _value, $Res Function(_LoadFailure) _then)
       : super(_value, (v) => _then(v as _LoadFailure));
 
   @override
@@ -722,7 +762,8 @@ class _$_LoadFailure implements _LoadFailure {
   }
 
   @override
-  int get hashCode => runtimeType.hashCode ^ const DeepCollectionEquality().hash(failure);
+  int get hashCode =>
+      runtimeType.hashCode ^ const DeepCollectionEquality().hash(failure);
 
   @JsonKey(ignore: true)
   @override
@@ -786,7 +827,7 @@ abstract class _LoadFailure implements NotificationsWatcherState {
   const factory _LoadFailure(Failure<dynamic> failure) = _$_LoadFailure;
 
   Failure<dynamic> get failure => throw _privateConstructorUsedError;
-
   @JsonKey(ignore: true)
-  _$LoadFailureCopyWith<_LoadFailure> get copyWith => throw _privateConstructorUsedError;
+  _$LoadFailureCopyWith<_LoadFailure> get copyWith =>
+      throw _privateConstructorUsedError;
 }

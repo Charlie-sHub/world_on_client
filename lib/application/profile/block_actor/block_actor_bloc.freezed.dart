@@ -16,7 +16,8 @@ final _privateConstructorUsedError = UnsupportedError(
 class _$BlockActorEventTearOff {
   const _$BlockActorEventTearOff();
 
-  _Initialized initialized(UniqueId userToCheckId, Set<UniqueId> blockedUsersIds) {
+  _Initialized initialized(
+      UniqueId userToCheckId, Set<UniqueId> blockedUsersIds) {
     return _Initialized(
       userToCheckId,
       blockedUsersIds,
@@ -45,16 +46,22 @@ const $BlockActorEvent = _$BlockActorEventTearOff();
 mixin _$BlockActorEvent {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(UniqueId userToCheckId, Set<UniqueId> blockedUsersIds) initialized,
-    required TResult Function(UniqueId userToBlockId, SimpleUser currentUser) blocked,
-    required TResult Function(UniqueId userToUnBlockId, SimpleUser currentUser) unBlocked,
+    required TResult Function(
+            UniqueId userToCheckId, Set<UniqueId> blockedUsersIds)
+        initialized,
+    required TResult Function(UniqueId userToBlockId, SimpleUser currentUser)
+        blocked,
+    required TResult Function(UniqueId userToUnBlockId, SimpleUser currentUser)
+        unBlocked,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(UniqueId userToCheckId, Set<UniqueId> blockedUsersIds)? initialized,
+    TResult Function(UniqueId userToCheckId, Set<UniqueId> blockedUsersIds)?
+        initialized,
     TResult Function(UniqueId userToBlockId, SimpleUser currentUser)? blocked,
-    TResult Function(UniqueId userToUnBlockId, SimpleUser currentUser)? unBlocked,
+    TResult Function(UniqueId userToUnBlockId, SimpleUser currentUser)?
+        unBlocked,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -77,32 +84,35 @@ mixin _$BlockActorEvent {
 
 /// @nodoc
 abstract class $BlockActorEventCopyWith<$Res> {
-  factory $BlockActorEventCopyWith(BlockActorEvent value, $Res Function(BlockActorEvent) then) =
+  factory $BlockActorEventCopyWith(
+          BlockActorEvent value, $Res Function(BlockActorEvent) then) =
       _$BlockActorEventCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class _$BlockActorEventCopyWithImpl<$Res> implements $BlockActorEventCopyWith<$Res> {
+class _$BlockActorEventCopyWithImpl<$Res>
+    implements $BlockActorEventCopyWith<$Res> {
   _$BlockActorEventCopyWithImpl(this._value, this._then);
 
   final BlockActorEvent _value;
-
   // ignore: unused_field
   final $Res Function(BlockActorEvent) _then;
 }
 
 /// @nodoc
 abstract class _$InitializedCopyWith<$Res> {
-  factory _$InitializedCopyWith(_Initialized value, $Res Function(_Initialized) then) =
+  factory _$InitializedCopyWith(
+          _Initialized value, $Res Function(_Initialized) then) =
       __$InitializedCopyWithImpl<$Res>;
-
   $Res call({UniqueId userToCheckId, Set<UniqueId> blockedUsersIds});
 }
 
 /// @nodoc
-class __$InitializedCopyWithImpl<$Res> extends _$BlockActorEventCopyWithImpl<$Res>
+class __$InitializedCopyWithImpl<$Res>
+    extends _$BlockActorEventCopyWithImpl<$Res>
     implements _$InitializedCopyWith<$Res> {
-  __$InitializedCopyWithImpl(_Initialized _value, $Res Function(_Initialized) _then)
+  __$InitializedCopyWithImpl(
+      _Initialized _value, $Res Function(_Initialized) _then)
       : super(_value, (v) => _then(v as _Initialized));
 
   @override
@@ -146,9 +156,11 @@ class _$_Initialized implements _Initialized {
     return identical(this, other) ||
         (other is _Initialized &&
             (identical(other.userToCheckId, userToCheckId) ||
-                const DeepCollectionEquality().equals(other.userToCheckId, userToCheckId)) &&
+                const DeepCollectionEquality()
+                    .equals(other.userToCheckId, userToCheckId)) &&
             (identical(other.blockedUsersIds, blockedUsersIds) ||
-                const DeepCollectionEquality().equals(other.blockedUsersIds, blockedUsersIds)));
+                const DeepCollectionEquality()
+                    .equals(other.blockedUsersIds, blockedUsersIds)));
   }
 
   @override
@@ -165,9 +177,13 @@ class _$_Initialized implements _Initialized {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(UniqueId userToCheckId, Set<UniqueId> blockedUsersIds) initialized,
-    required TResult Function(UniqueId userToBlockId, SimpleUser currentUser) blocked,
-    required TResult Function(UniqueId userToUnBlockId, SimpleUser currentUser) unBlocked,
+    required TResult Function(
+            UniqueId userToCheckId, Set<UniqueId> blockedUsersIds)
+        initialized,
+    required TResult Function(UniqueId userToBlockId, SimpleUser currentUser)
+        blocked,
+    required TResult Function(UniqueId userToUnBlockId, SimpleUser currentUser)
+        unBlocked,
   }) {
     return initialized(userToCheckId, blockedUsersIds);
   }
@@ -175,9 +191,11 @@ class _$_Initialized implements _Initialized {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(UniqueId userToCheckId, Set<UniqueId> blockedUsersIds)? initialized,
+    TResult Function(UniqueId userToCheckId, Set<UniqueId> blockedUsersIds)?
+        initialized,
     TResult Function(UniqueId userToBlockId, SimpleUser currentUser)? blocked,
-    TResult Function(UniqueId userToUnBlockId, SimpleUser currentUser)? unBlocked,
+    TResult Function(UniqueId userToUnBlockId, SimpleUser currentUser)?
+        unBlocked,
     required TResult orElse(),
   }) {
     if (initialized != null) {
@@ -212,20 +230,20 @@ class _$_Initialized implements _Initialized {
 }
 
 abstract class _Initialized implements BlockActorEvent {
-  const factory _Initialized(UniqueId userToCheckId, Set<UniqueId> blockedUsersIds) = _$_Initialized;
+  const factory _Initialized(
+      UniqueId userToCheckId, Set<UniqueId> blockedUsersIds) = _$_Initialized;
 
   UniqueId get userToCheckId => throw _privateConstructorUsedError;
-
   Set<UniqueId> get blockedUsersIds => throw _privateConstructorUsedError;
-
   @JsonKey(ignore: true)
-  _$InitializedCopyWith<_Initialized> get copyWith => throw _privateConstructorUsedError;
+  _$InitializedCopyWith<_Initialized> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class _$BlockedCopyWith<$Res> {
-  factory _$BlockedCopyWith(_Blocked value, $Res Function(_Blocked) then) = __$BlockedCopyWithImpl<$Res>;
-
+  factory _$BlockedCopyWith(_Blocked value, $Res Function(_Blocked) then) =
+      __$BlockedCopyWithImpl<$Res>;
   $Res call({UniqueId userToBlockId, SimpleUser currentUser});
 
   $SimpleUserCopyWith<$Res> get currentUser;
@@ -285,9 +303,11 @@ class _$_Blocked implements _Blocked {
     return identical(this, other) ||
         (other is _Blocked &&
             (identical(other.userToBlockId, userToBlockId) ||
-                const DeepCollectionEquality().equals(other.userToBlockId, userToBlockId)) &&
+                const DeepCollectionEquality()
+                    .equals(other.userToBlockId, userToBlockId)) &&
             (identical(other.currentUser, currentUser) ||
-                const DeepCollectionEquality().equals(other.currentUser, currentUser)));
+                const DeepCollectionEquality()
+                    .equals(other.currentUser, currentUser)));
   }
 
   @override
@@ -298,14 +318,19 @@ class _$_Blocked implements _Blocked {
 
   @JsonKey(ignore: true)
   @override
-  _$BlockedCopyWith<_Blocked> get copyWith => __$BlockedCopyWithImpl<_Blocked>(this, _$identity);
+  _$BlockedCopyWith<_Blocked> get copyWith =>
+      __$BlockedCopyWithImpl<_Blocked>(this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(UniqueId userToCheckId, Set<UniqueId> blockedUsersIds) initialized,
-    required TResult Function(UniqueId userToBlockId, SimpleUser currentUser) blocked,
-    required TResult Function(UniqueId userToUnBlockId, SimpleUser currentUser) unBlocked,
+    required TResult Function(
+            UniqueId userToCheckId, Set<UniqueId> blockedUsersIds)
+        initialized,
+    required TResult Function(UniqueId userToBlockId, SimpleUser currentUser)
+        blocked,
+    required TResult Function(UniqueId userToUnBlockId, SimpleUser currentUser)
+        unBlocked,
   }) {
     return blocked(userToBlockId, currentUser);
   }
@@ -313,9 +338,11 @@ class _$_Blocked implements _Blocked {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(UniqueId userToCheckId, Set<UniqueId> blockedUsersIds)? initialized,
+    TResult Function(UniqueId userToCheckId, Set<UniqueId> blockedUsersIds)?
+        initialized,
     TResult Function(UniqueId userToBlockId, SimpleUser currentUser)? blocked,
-    TResult Function(UniqueId userToUnBlockId, SimpleUser currentUser)? unBlocked,
+    TResult Function(UniqueId userToUnBlockId, SimpleUser currentUser)?
+        unBlocked,
     required TResult orElse(),
   }) {
     if (blocked != null) {
@@ -350,21 +377,21 @@ class _$_Blocked implements _Blocked {
 }
 
 abstract class _Blocked implements BlockActorEvent {
-  const factory _Blocked(UniqueId userToBlockId, SimpleUser currentUser) = _$_Blocked;
+  const factory _Blocked(UniqueId userToBlockId, SimpleUser currentUser) =
+      _$_Blocked;
 
   UniqueId get userToBlockId => throw _privateConstructorUsedError;
-
   SimpleUser get currentUser => throw _privateConstructorUsedError;
-
   @JsonKey(ignore: true)
-  _$BlockedCopyWith<_Blocked> get copyWith => throw _privateConstructorUsedError;
+  _$BlockedCopyWith<_Blocked> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class _$UnBlockedCopyWith<$Res> {
-  factory _$UnBlockedCopyWith(_UnBlocked value, $Res Function(_UnBlocked) then) =
+  factory _$UnBlockedCopyWith(
+          _UnBlocked value, $Res Function(_UnBlocked) then) =
       __$UnBlockedCopyWithImpl<$Res>;
-
   $Res call({UniqueId userToUnBlockId, SimpleUser currentUser});
 
   $SimpleUserCopyWith<$Res> get currentUser;
@@ -424,9 +451,11 @@ class _$_UnBlocked implements _UnBlocked {
     return identical(this, other) ||
         (other is _UnBlocked &&
             (identical(other.userToUnBlockId, userToUnBlockId) ||
-                const DeepCollectionEquality().equals(other.userToUnBlockId, userToUnBlockId)) &&
+                const DeepCollectionEquality()
+                    .equals(other.userToUnBlockId, userToUnBlockId)) &&
             (identical(other.currentUser, currentUser) ||
-                const DeepCollectionEquality().equals(other.currentUser, currentUser)));
+                const DeepCollectionEquality()
+                    .equals(other.currentUser, currentUser)));
   }
 
   @override
@@ -437,14 +466,19 @@ class _$_UnBlocked implements _UnBlocked {
 
   @JsonKey(ignore: true)
   @override
-  _$UnBlockedCopyWith<_UnBlocked> get copyWith => __$UnBlockedCopyWithImpl<_UnBlocked>(this, _$identity);
+  _$UnBlockedCopyWith<_UnBlocked> get copyWith =>
+      __$UnBlockedCopyWithImpl<_UnBlocked>(this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(UniqueId userToCheckId, Set<UniqueId> blockedUsersIds) initialized,
-    required TResult Function(UniqueId userToBlockId, SimpleUser currentUser) blocked,
-    required TResult Function(UniqueId userToUnBlockId, SimpleUser currentUser) unBlocked,
+    required TResult Function(
+            UniqueId userToCheckId, Set<UniqueId> blockedUsersIds)
+        initialized,
+    required TResult Function(UniqueId userToBlockId, SimpleUser currentUser)
+        blocked,
+    required TResult Function(UniqueId userToUnBlockId, SimpleUser currentUser)
+        unBlocked,
   }) {
     return unBlocked(userToUnBlockId, currentUser);
   }
@@ -452,9 +486,11 @@ class _$_UnBlocked implements _UnBlocked {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(UniqueId userToCheckId, Set<UniqueId> blockedUsersIds)? initialized,
+    TResult Function(UniqueId userToCheckId, Set<UniqueId> blockedUsersIds)?
+        initialized,
     TResult Function(UniqueId userToBlockId, SimpleUser currentUser)? blocked,
-    TResult Function(UniqueId userToUnBlockId, SimpleUser currentUser)? unBlocked,
+    TResult Function(UniqueId userToUnBlockId, SimpleUser currentUser)?
+        unBlocked,
     required TResult orElse(),
   }) {
     if (unBlocked != null) {
@@ -489,14 +525,14 @@ class _$_UnBlocked implements _UnBlocked {
 }
 
 abstract class _UnBlocked implements BlockActorEvent {
-  const factory _UnBlocked(UniqueId userToUnBlockId, SimpleUser currentUser) = _$_UnBlocked;
+  const factory _UnBlocked(UniqueId userToUnBlockId, SimpleUser currentUser) =
+      _$_UnBlocked;
 
   UniqueId get userToUnBlockId => throw _privateConstructorUsedError;
-
   SimpleUser get currentUser => throw _privateConstructorUsedError;
-
   @JsonKey(ignore: true)
-  _$UnBlockedCopyWith<_UnBlocked> get copyWith => throw _privateConstructorUsedError;
+  _$UnBlockedCopyWith<_UnBlocked> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -599,23 +635,25 @@ mixin _$BlockActorState {
 
 /// @nodoc
 abstract class $BlockActorStateCopyWith<$Res> {
-  factory $BlockActorStateCopyWith(BlockActorState value, $Res Function(BlockActorState) then) =
+  factory $BlockActorStateCopyWith(
+          BlockActorState value, $Res Function(BlockActorState) then) =
       _$BlockActorStateCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class _$BlockActorStateCopyWithImpl<$Res> implements $BlockActorStateCopyWith<$Res> {
+class _$BlockActorStateCopyWithImpl<$Res>
+    implements $BlockActorStateCopyWith<$Res> {
   _$BlockActorStateCopyWithImpl(this._value, this._then);
 
   final BlockActorState _value;
-
   // ignore: unused_field
   final $Res Function(BlockActorState) _then;
 }
 
 /// @nodoc
 abstract class _$InitialCopyWith<$Res> {
-  factory _$InitialCopyWith(_Initial value, $Res Function(_Initial) then) = __$InitialCopyWithImpl<$Res>;
+  factory _$InitialCopyWith(_Initial value, $Res Function(_Initial) then) =
+      __$InitialCopyWithImpl<$Res>;
 }
 
 /// @nodoc
@@ -721,14 +759,17 @@ abstract class _Initial implements BlockActorState {
 
 /// @nodoc
 abstract class _$ActionInProgressCopyWith<$Res> {
-  factory _$ActionInProgressCopyWith(_ActionInProgress value, $Res Function(_ActionInProgress) then) =
+  factory _$ActionInProgressCopyWith(
+          _ActionInProgress value, $Res Function(_ActionInProgress) then) =
       __$ActionInProgressCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$ActionInProgressCopyWithImpl<$Res> extends _$BlockActorStateCopyWithImpl<$Res>
+class __$ActionInProgressCopyWithImpl<$Res>
+    extends _$BlockActorStateCopyWithImpl<$Res>
     implements _$ActionInProgressCopyWith<$Res> {
-  __$ActionInProgressCopyWithImpl(_ActionInProgress _value, $Res Function(_ActionInProgress) _then)
+  __$ActionInProgressCopyWithImpl(
+      _ActionInProgress _value, $Res Function(_ActionInProgress) _then)
       : super(_value, (v) => _then(v as _ActionInProgress));
 
   @override
@@ -828,7 +869,8 @@ abstract class _ActionInProgress implements BlockActorState {
 
 /// @nodoc
 abstract class _$BlocksCopyWith<$Res> {
-  factory _$BlocksCopyWith(_Blocks value, $Res Function(_Blocks) then) = __$BlocksCopyWithImpl<$Res>;
+  factory _$BlocksCopyWith(_Blocks value, $Res Function(_Blocks) then) =
+      __$BlocksCopyWithImpl<$Res>;
 }
 
 /// @nodoc
@@ -934,7 +976,8 @@ abstract class _Blocks implements BlockActorState {
 
 /// @nodoc
 abstract class _$BlocksNotCopyWith<$Res> {
-  factory _$BlocksNotCopyWith(_BlocksNot value, $Res Function(_BlocksNot) then) =
+  factory _$BlocksNotCopyWith(
+          _BlocksNot value, $Res Function(_BlocksNot) then) =
       __$BlocksNotCopyWithImpl<$Res>;
 }
 
@@ -1041,14 +1084,17 @@ abstract class _BlocksNot implements BlockActorState {
 
 /// @nodoc
 abstract class _$BlockSuccessCopyWith<$Res> {
-  factory _$BlockSuccessCopyWith(_BlockSuccess value, $Res Function(_BlockSuccess) then) =
+  factory _$BlockSuccessCopyWith(
+          _BlockSuccess value, $Res Function(_BlockSuccess) then) =
       __$BlockSuccessCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$BlockSuccessCopyWithImpl<$Res> extends _$BlockActorStateCopyWithImpl<$Res>
+class __$BlockSuccessCopyWithImpl<$Res>
+    extends _$BlockActorStateCopyWithImpl<$Res>
     implements _$BlockSuccessCopyWith<$Res> {
-  __$BlockSuccessCopyWithImpl(_BlockSuccess _value, $Res Function(_BlockSuccess) _then)
+  __$BlockSuccessCopyWithImpl(
+      _BlockSuccess _value, $Res Function(_BlockSuccess) _then)
       : super(_value, (v) => _then(v as _BlockSuccess));
 
   @override
@@ -1148,18 +1194,20 @@ abstract class _BlockSuccess implements BlockActorState {
 
 /// @nodoc
 abstract class _$BlockFailureCopyWith<$Res> {
-  factory _$BlockFailureCopyWith(_BlockFailure value, $Res Function(_BlockFailure) then) =
+  factory _$BlockFailureCopyWith(
+          _BlockFailure value, $Res Function(_BlockFailure) then) =
       __$BlockFailureCopyWithImpl<$Res>;
-
   $Res call({Failure<dynamic> failure});
 
   $FailureCopyWith<dynamic, $Res> get failure;
 }
 
 /// @nodoc
-class __$BlockFailureCopyWithImpl<$Res> extends _$BlockActorStateCopyWithImpl<$Res>
+class __$BlockFailureCopyWithImpl<$Res>
+    extends _$BlockActorStateCopyWithImpl<$Res>
     implements _$BlockFailureCopyWith<$Res> {
-  __$BlockFailureCopyWithImpl(_BlockFailure _value, $Res Function(_BlockFailure) _then)
+  __$BlockFailureCopyWithImpl(
+      _BlockFailure _value, $Res Function(_BlockFailure) _then)
       : super(_value, (v) => _then(v as _BlockFailure));
 
   @override
@@ -1207,7 +1255,8 @@ class _$_BlockFailure implements _BlockFailure {
   }
 
   @override
-  int get hashCode => runtimeType.hashCode ^ const DeepCollectionEquality().hash(failure);
+  int get hashCode =>
+      runtimeType.hashCode ^ const DeepCollectionEquality().hash(failure);
 
   @JsonKey(ignore: true)
   @override
@@ -1287,21 +1336,24 @@ abstract class _BlockFailure implements BlockActorState {
   const factory _BlockFailure(Failure<dynamic> failure) = _$_BlockFailure;
 
   Failure<dynamic> get failure => throw _privateConstructorUsedError;
-
   @JsonKey(ignore: true)
-  _$BlockFailureCopyWith<_BlockFailure> get copyWith => throw _privateConstructorUsedError;
+  _$BlockFailureCopyWith<_BlockFailure> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class _$UnBlockSuccessCopyWith<$Res> {
-  factory _$UnBlockSuccessCopyWith(_UnBlockSuccess value, $Res Function(_UnBlockSuccess) then) =
+  factory _$UnBlockSuccessCopyWith(
+          _UnBlockSuccess value, $Res Function(_UnBlockSuccess) then) =
       __$UnBlockSuccessCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$UnBlockSuccessCopyWithImpl<$Res> extends _$BlockActorStateCopyWithImpl<$Res>
+class __$UnBlockSuccessCopyWithImpl<$Res>
+    extends _$BlockActorStateCopyWithImpl<$Res>
     implements _$UnBlockSuccessCopyWith<$Res> {
-  __$UnBlockSuccessCopyWithImpl(_UnBlockSuccess _value, $Res Function(_UnBlockSuccess) _then)
+  __$UnBlockSuccessCopyWithImpl(
+      _UnBlockSuccess _value, $Res Function(_UnBlockSuccess) _then)
       : super(_value, (v) => _then(v as _UnBlockSuccess));
 
   @override
@@ -1401,18 +1453,20 @@ abstract class _UnBlockSuccess implements BlockActorState {
 
 /// @nodoc
 abstract class _$UnBlockFailureCopyWith<$Res> {
-  factory _$UnBlockFailureCopyWith(_UnBlockFailure value, $Res Function(_UnBlockFailure) then) =
+  factory _$UnBlockFailureCopyWith(
+          _UnBlockFailure value, $Res Function(_UnBlockFailure) then) =
       __$UnBlockFailureCopyWithImpl<$Res>;
-
   $Res call({Failure<dynamic> failure});
 
   $FailureCopyWith<dynamic, $Res> get failure;
 }
 
 /// @nodoc
-class __$UnBlockFailureCopyWithImpl<$Res> extends _$BlockActorStateCopyWithImpl<$Res>
+class __$UnBlockFailureCopyWithImpl<$Res>
+    extends _$BlockActorStateCopyWithImpl<$Res>
     implements _$UnBlockFailureCopyWith<$Res> {
-  __$UnBlockFailureCopyWithImpl(_UnBlockFailure _value, $Res Function(_UnBlockFailure) _then)
+  __$UnBlockFailureCopyWithImpl(
+      _UnBlockFailure _value, $Res Function(_UnBlockFailure) _then)
       : super(_value, (v) => _then(v as _UnBlockFailure));
 
   @override
@@ -1460,7 +1514,8 @@ class _$_UnBlockFailure implements _UnBlockFailure {
   }
 
   @override
-  int get hashCode => runtimeType.hashCode ^ const DeepCollectionEquality().hash(failure);
+  int get hashCode =>
+      runtimeType.hashCode ^ const DeepCollectionEquality().hash(failure);
 
   @JsonKey(ignore: true)
   @override
@@ -1540,7 +1595,7 @@ abstract class _UnBlockFailure implements BlockActorState {
   const factory _UnBlockFailure(Failure<dynamic> failure) = _$_UnBlockFailure;
 
   Failure<dynamic> get failure => throw _privateConstructorUsedError;
-
   @JsonKey(ignore: true)
-  _$UnBlockFailureCopyWith<_UnBlockFailure> get copyWith => throw _privateConstructorUsedError;
+  _$UnBlockFailureCopyWith<_UnBlockFailure> get copyWith =>
+      throw _privateConstructorUsedError;
 }

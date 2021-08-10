@@ -15,7 +15,8 @@ _$_Item _$_$_ItemFromJson(Map<String, dynamic> json) {
     value: json['value'] as int,
     timeLimitInDays: json['timeLimitInDays'] as int,
     imageURL: json['imageURL'] as String,
-    boughtDate: const ServerTimestampConverter().fromJson(json['boughtDate'] as Timestamp),
+    boughtDate: const ServerTimestampConverter()
+        .fromJson(json['boughtDate'] as Timestamp),
   );
 }
 
@@ -27,7 +28,8 @@ Map<String, dynamic> _$_$_ItemToJson(_$_Item instance) => <String, dynamic>{
       'value': instance.value,
       'timeLimitInDays': instance.timeLimitInDays,
       'imageURL': instance.imageURL,
-      'boughtDate': const ServerTimestampConverter().toJson(instance.boughtDate),
+      'boughtDate':
+          const ServerTimestampConverter().toJson(instance.boughtDate),
     };
 
 K _$enumDecode<K, V>(

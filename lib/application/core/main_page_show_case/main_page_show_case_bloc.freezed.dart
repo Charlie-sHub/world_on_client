@@ -38,7 +38,6 @@ mixin _$MainPageShowCaseEvent {
     required TResult Function() finished,
   }) =>
       throw _privateConstructorUsedError;
-
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(bool isNewUser)? initialized,
@@ -46,14 +45,12 @@ mixin _$MainPageShowCaseEvent {
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
-
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Initialized value) initialized,
     required TResult Function(_Finished value) finished,
   }) =>
       throw _privateConstructorUsedError;
-
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initialized value)? initialized,
@@ -65,33 +62,35 @@ mixin _$MainPageShowCaseEvent {
 
 /// @nodoc
 abstract class $MainPageShowCaseEventCopyWith<$Res> {
-  factory $MainPageShowCaseEventCopyWith(
-          MainPageShowCaseEvent value, $Res Function(MainPageShowCaseEvent) then) =
+  factory $MainPageShowCaseEventCopyWith(MainPageShowCaseEvent value,
+          $Res Function(MainPageShowCaseEvent) then) =
       _$MainPageShowCaseEventCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class _$MainPageShowCaseEventCopyWithImpl<$Res> implements $MainPageShowCaseEventCopyWith<$Res> {
+class _$MainPageShowCaseEventCopyWithImpl<$Res>
+    implements $MainPageShowCaseEventCopyWith<$Res> {
   _$MainPageShowCaseEventCopyWithImpl(this._value, this._then);
 
   final MainPageShowCaseEvent _value;
-
   // ignore: unused_field
   final $Res Function(MainPageShowCaseEvent) _then;
 }
 
 /// @nodoc
 abstract class _$InitializedCopyWith<$Res> {
-  factory _$InitializedCopyWith(_Initialized value, $Res Function(_Initialized) then) =
+  factory _$InitializedCopyWith(
+          _Initialized value, $Res Function(_Initialized) then) =
       __$InitializedCopyWithImpl<$Res>;
-
   $Res call({bool isNewUser});
 }
 
 /// @nodoc
-class __$InitializedCopyWithImpl<$Res> extends _$MainPageShowCaseEventCopyWithImpl<$Res>
+class __$InitializedCopyWithImpl<$Res>
+    extends _$MainPageShowCaseEventCopyWithImpl<$Res>
     implements _$InitializedCopyWith<$Res> {
-  __$InitializedCopyWithImpl(_Initialized _value, $Res Function(_Initialized) _then)
+  __$InitializedCopyWithImpl(
+      _Initialized _value, $Res Function(_Initialized) _then)
       : super(_value, (v) => _then(v as _Initialized));
 
   @override
@@ -128,11 +127,13 @@ class _$_Initialized implements _Initialized {
     return identical(this, other) ||
         (other is _Initialized &&
             (identical(other.isNewUser, isNewUser) ||
-                const DeepCollectionEquality().equals(other.isNewUser, isNewUser)));
+                const DeepCollectionEquality()
+                    .equals(other.isNewUser, isNewUser)));
   }
 
   @override
-  int get hashCode => runtimeType.hashCode ^ const DeepCollectionEquality().hash(isNewUser);
+  int get hashCode =>
+      runtimeType.hashCode ^ const DeepCollectionEquality().hash(isNewUser);
 
   @JsonKey(ignore: true)
   @override
@@ -188,18 +189,20 @@ abstract class _Initialized implements MainPageShowCaseEvent {
   const factory _Initialized({required bool isNewUser}) = _$_Initialized;
 
   bool get isNewUser => throw _privateConstructorUsedError;
-
   @JsonKey(ignore: true)
-  _$InitializedCopyWith<_Initialized> get copyWith => throw _privateConstructorUsedError;
+  _$InitializedCopyWith<_Initialized> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class _$FinishedCopyWith<$Res> {
-  factory _$FinishedCopyWith(_Finished value, $Res Function(_Finished) then) = __$FinishedCopyWithImpl<$Res>;
+  factory _$FinishedCopyWith(_Finished value, $Res Function(_Finished) then) =
+      __$FinishedCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$FinishedCopyWithImpl<$Res> extends _$MainPageShowCaseEventCopyWithImpl<$Res>
+class __$FinishedCopyWithImpl<$Res>
+    extends _$MainPageShowCaseEventCopyWithImpl<$Res>
     implements _$FinishedCopyWith<$Res> {
   __$FinishedCopyWithImpl(_Finished _value, $Res Function(_Finished) _then)
       : super(_value, (v) => _then(v as _Finished));
@@ -304,7 +307,6 @@ mixin _$MainPageShowCaseState {
     required TResult Function() showNot,
   }) =>
       throw _privateConstructorUsedError;
-
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
@@ -313,7 +315,6 @@ mixin _$MainPageShowCaseState {
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
-
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Initial value) initial,
@@ -321,7 +322,6 @@ mixin _$MainPageShowCaseState {
     required TResult Function(_ShowNot value) showNot,
   }) =>
       throw _privateConstructorUsedError;
-
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
@@ -334,28 +334,30 @@ mixin _$MainPageShowCaseState {
 
 /// @nodoc
 abstract class $MainPageShowCaseStateCopyWith<$Res> {
-  factory $MainPageShowCaseStateCopyWith(
-          MainPageShowCaseState value, $Res Function(MainPageShowCaseState) then) =
+  factory $MainPageShowCaseStateCopyWith(MainPageShowCaseState value,
+          $Res Function(MainPageShowCaseState) then) =
       _$MainPageShowCaseStateCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class _$MainPageShowCaseStateCopyWithImpl<$Res> implements $MainPageShowCaseStateCopyWith<$Res> {
+class _$MainPageShowCaseStateCopyWithImpl<$Res>
+    implements $MainPageShowCaseStateCopyWith<$Res> {
   _$MainPageShowCaseStateCopyWithImpl(this._value, this._then);
 
   final MainPageShowCaseState _value;
-
   // ignore: unused_field
   final $Res Function(MainPageShowCaseState) _then;
 }
 
 /// @nodoc
 abstract class _$InitialCopyWith<$Res> {
-  factory _$InitialCopyWith(_Initial value, $Res Function(_Initial) then) = __$InitialCopyWithImpl<$Res>;
+  factory _$InitialCopyWith(_Initial value, $Res Function(_Initial) then) =
+      __$InitialCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$InitialCopyWithImpl<$Res> extends _$MainPageShowCaseStateCopyWithImpl<$Res>
+class __$InitialCopyWithImpl<$Res>
+    extends _$MainPageShowCaseStateCopyWithImpl<$Res>
     implements _$InitialCopyWith<$Res> {
   __$InitialCopyWithImpl(_Initial _value, $Res Function(_Initial) _then)
       : super(_value, (v) => _then(v as _Initial));
@@ -437,13 +439,16 @@ abstract class _Initial implements MainPageShowCaseState {
 
 /// @nodoc
 abstract class _$ShowCopyWith<$Res> {
-  factory _$ShowCopyWith(_Show value, $Res Function(_Show) then) = __$ShowCopyWithImpl<$Res>;
+  factory _$ShowCopyWith(_Show value, $Res Function(_Show) then) =
+      __$ShowCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$ShowCopyWithImpl<$Res> extends _$MainPageShowCaseStateCopyWithImpl<$Res>
+class __$ShowCopyWithImpl<$Res>
+    extends _$MainPageShowCaseStateCopyWithImpl<$Res>
     implements _$ShowCopyWith<$Res> {
-  __$ShowCopyWithImpl(_Show _value, $Res Function(_Show) _then) : super(_value, (v) => _then(v as _Show));
+  __$ShowCopyWithImpl(_Show _value, $Res Function(_Show) _then)
+      : super(_value, (v) => _then(v as _Show));
 
   @override
   _Show get _value => super._value as _Show;
@@ -522,11 +527,13 @@ abstract class _Show implements MainPageShowCaseState {
 
 /// @nodoc
 abstract class _$ShowNotCopyWith<$Res> {
-  factory _$ShowNotCopyWith(_ShowNot value, $Res Function(_ShowNot) then) = __$ShowNotCopyWithImpl<$Res>;
+  factory _$ShowNotCopyWith(_ShowNot value, $Res Function(_ShowNot) then) =
+      __$ShowNotCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$ShowNotCopyWithImpl<$Res> extends _$MainPageShowCaseStateCopyWithImpl<$Res>
+class __$ShowNotCopyWithImpl<$Res>
+    extends _$MainPageShowCaseStateCopyWithImpl<$Res>
     implements _$ShowNotCopyWith<$Res> {
   __$ShowNotCopyWithImpl(_ShowNot _value, $Res Function(_ShowNot) _then)
       : super(_value, (v) => _then(v as _ShowNot));

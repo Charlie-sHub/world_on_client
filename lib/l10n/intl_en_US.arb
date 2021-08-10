@@ -231,5 +231,9 @@
   "newExperience": "New Experience",
   "createExperienceButtonShowCase": "Create and share experiences",
   "experienceCardShowCase": "Experiences created by other users",
-  "userLeverShowCase": "User's level, it goes up with creating nad doing experiences"
+  "userLeverShowCase": "User's level, it goes up with creating and doing experiences",
+  "difficultyShowCase": "How difficult will the experience be?",
+  "mapShowCase": "What is the initial location of the experience?",
+  "objectivesShowCase": "Create the objectives of the experience or in other words the steps to follows",
+  "tagCreationShowCase": "Create or look for tags that describe the experience you have created"
 }

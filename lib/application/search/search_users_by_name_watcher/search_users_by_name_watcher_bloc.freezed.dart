@@ -22,7 +22,8 @@ class _$SearchUsersByNameWatcherEventTearOff {
     );
   }
 
-  _SearchResultsReceived searchResultsReceived(Either<Failure, KtList<User>> failureOrUsers) {
+  _SearchResultsReceived searchResultsReceived(
+      Either<Failure, KtList<User>> failureOrUsers) {
     return _SearchResultsReceived(
       failureOrUsers,
     );
@@ -37,25 +38,30 @@ mixin _$SearchUsersByNameWatcherEvent {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(SearchTerm name) watchUsersFoundByNameStarted,
-    required TResult Function(Either<Failure, KtList<User>> failureOrUsers) searchResultsReceived,
+    required TResult Function(Either<Failure, KtList<User>> failureOrUsers)
+        searchResultsReceived,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(SearchTerm name)? watchUsersFoundByNameStarted,
-    TResult Function(Either<Failure, KtList<User>> failureOrUsers)? searchResultsReceived,
+    TResult Function(Either<Failure, KtList<User>> failureOrUsers)?
+        searchResultsReceived,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_WatchUsersFoundByNameStarted value) watchUsersFoundByNameStarted,
-    required TResult Function(_SearchResultsReceived value) searchResultsReceived,
+    required TResult Function(_WatchUsersFoundByNameStarted value)
+        watchUsersFoundByNameStarted,
+    required TResult Function(_SearchResultsReceived value)
+        searchResultsReceived,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_WatchUsersFoundByNameStarted value)? watchUsersFoundByNameStarted,
+    TResult Function(_WatchUsersFoundByNameStarted value)?
+        watchUsersFoundByNameStarted,
     TResult Function(_SearchResultsReceived value)? searchResultsReceived,
     required TResult orElse(),
   }) =>
@@ -65,7 +71,8 @@ mixin _$SearchUsersByNameWatcherEvent {
 /// @nodoc
 abstract class $SearchUsersByNameWatcherEventCopyWith<$Res> {
   factory $SearchUsersByNameWatcherEventCopyWith(
-          SearchUsersByNameWatcherEvent value, $Res Function(SearchUsersByNameWatcherEvent) then) =
+          SearchUsersByNameWatcherEvent value,
+          $Res Function(SearchUsersByNameWatcherEvent) then) =
       _$SearchUsersByNameWatcherEventCopyWithImpl<$Res>;
 }
 
@@ -82,7 +89,8 @@ class _$SearchUsersByNameWatcherEventCopyWithImpl<$Res>
 /// @nodoc
 abstract class _$WatchUsersFoundByNameStartedCopyWith<$Res> {
   factory _$WatchUsersFoundByNameStartedCopyWith(
-          _WatchUsersFoundByNameStarted value, $Res Function(_WatchUsersFoundByNameStarted) then) =
+          _WatchUsersFoundByNameStarted value,
+          $Res Function(_WatchUsersFoundByNameStarted) then) =
       __$WatchUsersFoundByNameStartedCopyWithImpl<$Res>;
   $Res call({SearchTerm name});
 }
@@ -92,11 +100,13 @@ class __$WatchUsersFoundByNameStartedCopyWithImpl<$Res>
     extends _$SearchUsersByNameWatcherEventCopyWithImpl<$Res>
     implements _$WatchUsersFoundByNameStartedCopyWith<$Res> {
   __$WatchUsersFoundByNameStartedCopyWithImpl(
-      _WatchUsersFoundByNameStarted _value, $Res Function(_WatchUsersFoundByNameStarted) _then)
+      _WatchUsersFoundByNameStarted _value,
+      $Res Function(_WatchUsersFoundByNameStarted) _then)
       : super(_value, (v) => _then(v as _WatchUsersFoundByNameStarted));
 
   @override
-  _WatchUsersFoundByNameStarted get _value => super._value as _WatchUsersFoundByNameStarted;
+  _WatchUsersFoundByNameStarted get _value =>
+      super._value as _WatchUsersFoundByNameStarted;
 
   @override
   $Res call({
@@ -133,18 +143,21 @@ class _$_WatchUsersFoundByNameStarted implements _WatchUsersFoundByNameStarted {
   }
 
   @override
-  int get hashCode => runtimeType.hashCode ^ const DeepCollectionEquality().hash(name);
+  int get hashCode =>
+      runtimeType.hashCode ^ const DeepCollectionEquality().hash(name);
 
   @JsonKey(ignore: true)
   @override
-  _$WatchUsersFoundByNameStartedCopyWith<_WatchUsersFoundByNameStarted> get copyWith =>
-      __$WatchUsersFoundByNameStartedCopyWithImpl<_WatchUsersFoundByNameStarted>(this, _$identity);
+  _$WatchUsersFoundByNameStartedCopyWith<_WatchUsersFoundByNameStarted>
+      get copyWith => __$WatchUsersFoundByNameStartedCopyWithImpl<
+          _WatchUsersFoundByNameStarted>(this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(SearchTerm name) watchUsersFoundByNameStarted,
-    required TResult Function(Either<Failure, KtList<User>> failureOrUsers) searchResultsReceived,
+    required TResult Function(Either<Failure, KtList<User>> failureOrUsers)
+        searchResultsReceived,
   }) {
     return watchUsersFoundByNameStarted(name);
   }
@@ -153,7 +166,8 @@ class _$_WatchUsersFoundByNameStarted implements _WatchUsersFoundByNameStarted {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(SearchTerm name)? watchUsersFoundByNameStarted,
-    TResult Function(Either<Failure, KtList<User>> failureOrUsers)? searchResultsReceived,
+    TResult Function(Either<Failure, KtList<User>> failureOrUsers)?
+        searchResultsReceived,
     required TResult orElse(),
   }) {
     if (watchUsersFoundByNameStarted != null) {
@@ -165,8 +179,10 @@ class _$_WatchUsersFoundByNameStarted implements _WatchUsersFoundByNameStarted {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_WatchUsersFoundByNameStarted value) watchUsersFoundByNameStarted,
-    required TResult Function(_SearchResultsReceived value) searchResultsReceived,
+    required TResult Function(_WatchUsersFoundByNameStarted value)
+        watchUsersFoundByNameStarted,
+    required TResult Function(_SearchResultsReceived value)
+        searchResultsReceived,
   }) {
     return watchUsersFoundByNameStarted(this);
   }
@@ -174,7 +190,8 @@ class _$_WatchUsersFoundByNameStarted implements _WatchUsersFoundByNameStarted {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_WatchUsersFoundByNameStarted value)? watchUsersFoundByNameStarted,
+    TResult Function(_WatchUsersFoundByNameStarted value)?
+        watchUsersFoundByNameStarted,
     TResult Function(_SearchResultsReceived value)? searchResultsReceived,
     required TResult orElse(),
   }) {
@@ -185,22 +202,22 @@ class _$_WatchUsersFoundByNameStarted implements _WatchUsersFoundByNameStarted {
   }
 }
 
-abstract class _WatchUsersFoundByNameStarted implements SearchUsersByNameWatcherEvent {
-  const factory _WatchUsersFoundByNameStarted(SearchTerm name) = _$_WatchUsersFoundByNameStarted;
+abstract class _WatchUsersFoundByNameStarted
+    implements SearchUsersByNameWatcherEvent {
+  const factory _WatchUsersFoundByNameStarted(SearchTerm name) =
+      _$_WatchUsersFoundByNameStarted;
 
   SearchTerm get name => throw _privateConstructorUsedError;
-
   @JsonKey(ignore: true)
-  _$WatchUsersFoundByNameStartedCopyWith<_WatchUsersFoundByNameStarted> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$WatchUsersFoundByNameStartedCopyWith<_WatchUsersFoundByNameStarted>
+      get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class _$SearchResultsReceivedCopyWith<$Res> {
-  factory _$SearchResultsReceivedCopyWith(
-          _SearchResultsReceived value, $Res Function(_SearchResultsReceived) then) =
+  factory _$SearchResultsReceivedCopyWith(_SearchResultsReceived value,
+          $Res Function(_SearchResultsReceived) then) =
       __$SearchResultsReceivedCopyWithImpl<$Res>;
-
   $Res call({Either<Failure, KtList<User>> failureOrUsers});
 }
 
@@ -208,8 +225,8 @@ abstract class _$SearchResultsReceivedCopyWith<$Res> {
 class __$SearchResultsReceivedCopyWithImpl<$Res>
     extends _$SearchUsersByNameWatcherEventCopyWithImpl<$Res>
     implements _$SearchResultsReceivedCopyWith<$Res> {
-  __$SearchResultsReceivedCopyWithImpl(
-      _SearchResultsReceived _value, $Res Function(_SearchResultsReceived) _then)
+  __$SearchResultsReceivedCopyWithImpl(_SearchResultsReceived _value,
+      $Res Function(_SearchResultsReceived) _then)
       : super(_value, (v) => _then(v as _SearchResultsReceived));
 
   @override
@@ -246,22 +263,27 @@ class _$_SearchResultsReceived implements _SearchResultsReceived {
     return identical(this, other) ||
         (other is _SearchResultsReceived &&
             (identical(other.failureOrUsers, failureOrUsers) ||
-                const DeepCollectionEquality().equals(other.failureOrUsers, failureOrUsers)));
+                const DeepCollectionEquality()
+                    .equals(other.failureOrUsers, failureOrUsers)));
   }
 
   @override
-  int get hashCode => runtimeType.hashCode ^ const DeepCollectionEquality().hash(failureOrUsers);
+  int get hashCode =>
+      runtimeType.hashCode ^
+      const DeepCollectionEquality().hash(failureOrUsers);
 
   @JsonKey(ignore: true)
   @override
   _$SearchResultsReceivedCopyWith<_SearchResultsReceived> get copyWith =>
-      __$SearchResultsReceivedCopyWithImpl<_SearchResultsReceived>(this, _$identity);
+      __$SearchResultsReceivedCopyWithImpl<_SearchResultsReceived>(
+          this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(SearchTerm name) watchUsersFoundByNameStarted,
-    required TResult Function(Either<Failure, KtList<User>> failureOrUsers) searchResultsReceived,
+    required TResult Function(Either<Failure, KtList<User>> failureOrUsers)
+        searchResultsReceived,
   }) {
     return searchResultsReceived(failureOrUsers);
   }
@@ -270,7 +292,8 @@ class _$_SearchResultsReceived implements _SearchResultsReceived {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(SearchTerm name)? watchUsersFoundByNameStarted,
-    TResult Function(Either<Failure, KtList<User>> failureOrUsers)? searchResultsReceived,
+    TResult Function(Either<Failure, KtList<User>> failureOrUsers)?
+        searchResultsReceived,
     required TResult orElse(),
   }) {
     if (searchResultsReceived != null) {
@@ -282,8 +305,10 @@ class _$_SearchResultsReceived implements _SearchResultsReceived {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_WatchUsersFoundByNameStarted value) watchUsersFoundByNameStarted,
-    required TResult Function(_SearchResultsReceived value) searchResultsReceived,
+    required TResult Function(_WatchUsersFoundByNameStarted value)
+        watchUsersFoundByNameStarted,
+    required TResult Function(_SearchResultsReceived value)
+        searchResultsReceived,
   }) {
     return searchResultsReceived(this);
   }
@@ -291,7 +316,8 @@ class _$_SearchResultsReceived implements _SearchResultsReceived {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_WatchUsersFoundByNameStarted value)? watchUsersFoundByNameStarted,
+    TResult Function(_WatchUsersFoundByNameStarted value)?
+        watchUsersFoundByNameStarted,
     TResult Function(_SearchResultsReceived value)? searchResultsReceived,
     required TResult orElse(),
   }) {
@@ -303,13 +329,14 @@ class _$_SearchResultsReceived implements _SearchResultsReceived {
 }
 
 abstract class _SearchResultsReceived implements SearchUsersByNameWatcherEvent {
-  const factory _SearchResultsReceived(Either<Failure, KtList<User>> failureOrUsers) =
-      _$_SearchResultsReceived;
+  const factory _SearchResultsReceived(
+      Either<Failure, KtList<User>> failureOrUsers) = _$_SearchResultsReceived;
 
-  Either<Failure, KtList<User>> get failureOrUsers => throw _privateConstructorUsedError;
-
+  Either<Failure, KtList<User>> get failureOrUsers =>
+      throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  _$SearchResultsReceivedCopyWith<_SearchResultsReceived> get copyWith => throw _privateConstructorUsedError;
+  _$SearchResultsReceivedCopyWith<_SearchResultsReceived> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -381,7 +408,8 @@ mixin _$SearchUsersByNameWatcherState {
 /// @nodoc
 abstract class $SearchUsersByNameWatcherStateCopyWith<$Res> {
   factory $SearchUsersByNameWatcherStateCopyWith(
-          SearchUsersByNameWatcherState value, $Res Function(SearchUsersByNameWatcherState) then) =
+          SearchUsersByNameWatcherState value,
+          $Res Function(SearchUsersByNameWatcherState) then) =
       _$SearchUsersByNameWatcherStateCopyWithImpl<$Res>;
 }
 
@@ -402,7 +430,8 @@ abstract class _$InitialCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$InitialCopyWithImpl<$Res> extends _$SearchUsersByNameWatcherStateCopyWithImpl<$Res>
+class __$InitialCopyWithImpl<$Res>
+    extends _$SearchUsersByNameWatcherStateCopyWithImpl<$Res>
     implements _$InitialCopyWith<$Res> {
   __$InitialCopyWithImpl(_Initial _value, $Res Function(_Initial) _then)
       : super(_value, (v) => _then(v as _Initial));
@@ -497,7 +526,8 @@ abstract class _$SearchInPorgressCopyWith<$Res> {
 class __$SearchInPorgressCopyWithImpl<$Res>
     extends _$SearchUsersByNameWatcherStateCopyWithImpl<$Res>
     implements _$SearchInPorgressCopyWith<$Res> {
-  __$SearchInPorgressCopyWithImpl(_SearchInPorgress _value, $Res Function(_SearchInPorgress) _then)
+  __$SearchInPorgressCopyWithImpl(
+      _SearchInPorgress _value, $Res Function(_SearchInPorgress) _then)
       : super(_value, (v) => _then(v as _SearchInPorgress));
 
   @override
@@ -581,16 +611,18 @@ abstract class _SearchInPorgress implements SearchUsersByNameWatcherState {
 
 /// @nodoc
 abstract class _$SearchSuccessCopyWith<$Res> {
-  factory _$SearchSuccessCopyWith(_SearchSuccess value, $Res Function(_SearchSuccess) then) =
+  factory _$SearchSuccessCopyWith(
+          _SearchSuccess value, $Res Function(_SearchSuccess) then) =
       __$SearchSuccessCopyWithImpl<$Res>;
-
   $Res call({KtList<User> usersFound});
 }
 
 /// @nodoc
-class __$SearchSuccessCopyWithImpl<$Res> extends _$SearchUsersByNameWatcherStateCopyWithImpl<$Res>
+class __$SearchSuccessCopyWithImpl<$Res>
+    extends _$SearchUsersByNameWatcherStateCopyWithImpl<$Res>
     implements _$SearchSuccessCopyWith<$Res> {
-  __$SearchSuccessCopyWithImpl(_SearchSuccess _value, $Res Function(_SearchSuccess) _then)
+  __$SearchSuccessCopyWithImpl(
+      _SearchSuccess _value, $Res Function(_SearchSuccess) _then)
       : super(_value, (v) => _then(v as _SearchSuccess));
 
   @override
@@ -627,11 +659,13 @@ class _$_SearchSuccess implements _SearchSuccess {
     return identical(this, other) ||
         (other is _SearchSuccess &&
             (identical(other.usersFound, usersFound) ||
-                const DeepCollectionEquality().equals(other.usersFound, usersFound)));
+                const DeepCollectionEquality()
+                    .equals(other.usersFound, usersFound)));
   }
 
   @override
-  int get hashCode => runtimeType.hashCode ^ const DeepCollectionEquality().hash(usersFound);
+  int get hashCode =>
+      runtimeType.hashCode ^ const DeepCollectionEquality().hash(usersFound);
 
   @JsonKey(ignore: true)
   @override
@@ -695,25 +729,27 @@ abstract class _SearchSuccess implements SearchUsersByNameWatcherState {
   const factory _SearchSuccess(KtList<User> usersFound) = _$_SearchSuccess;
 
   KtList<User> get usersFound => throw _privateConstructorUsedError;
-
   @JsonKey(ignore: true)
-  _$SearchSuccessCopyWith<_SearchSuccess> get copyWith => throw _privateConstructorUsedError;
+  _$SearchSuccessCopyWith<_SearchSuccess> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class _$SearchFailureCopyWith<$Res> {
-  factory _$SearchFailureCopyWith(_SearchFailure value, $Res Function(_SearchFailure) then) =
+  factory _$SearchFailureCopyWith(
+          _SearchFailure value, $Res Function(_SearchFailure) then) =
       __$SearchFailureCopyWithImpl<$Res>;
-
   $Res call({Failure<dynamic> failure});
 
   $FailureCopyWith<dynamic, $Res> get failure;
 }
 
 /// @nodoc
-class __$SearchFailureCopyWithImpl<$Res> extends _$SearchUsersByNameWatcherStateCopyWithImpl<$Res>
+class __$SearchFailureCopyWithImpl<$Res>
+    extends _$SearchUsersByNameWatcherStateCopyWithImpl<$Res>
     implements _$SearchFailureCopyWith<$Res> {
-  __$SearchFailureCopyWithImpl(_SearchFailure _value, $Res Function(_SearchFailure) _then)
+  __$SearchFailureCopyWithImpl(
+      _SearchFailure _value, $Res Function(_SearchFailure) _then)
       : super(_value, (v) => _then(v as _SearchFailure));
 
   @override
@@ -761,7 +797,8 @@ class _$_SearchFailure implements _SearchFailure {
   }
 
   @override
-  int get hashCode => runtimeType.hashCode ^ const DeepCollectionEquality().hash(failure);
+  int get hashCode =>
+      runtimeType.hashCode ^ const DeepCollectionEquality().hash(failure);
 
   @JsonKey(ignore: true)
   @override
@@ -825,7 +862,7 @@ abstract class _SearchFailure implements SearchUsersByNameWatcherState {
   const factory _SearchFailure(Failure<dynamic> failure) = _$_SearchFailure;
 
   Failure<dynamic> get failure => throw _privateConstructorUsedError;
-
   @JsonKey(ignore: true)
-  _$SearchFailureCopyWith<_SearchFailure> get copyWith => throw _privateConstructorUsedError;
+  _$SearchFailureCopyWith<_SearchFailure> get copyWith =>
+      throw _privateConstructorUsedError;
 }

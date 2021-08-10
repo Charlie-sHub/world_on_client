@@ -30,7 +30,8 @@ class _$ExperienceManagementActorEventTearOff {
 }
 
 /// @nodoc
-const $ExperienceManagementActorEvent = _$ExperienceManagementActorEventTearOff();
+const $ExperienceManagementActorEvent =
+    _$ExperienceManagementActorEventTearOff();
 
 /// @nodoc
 mixin _$ExperienceManagementActorEvent {
@@ -64,14 +65,15 @@ mixin _$ExperienceManagementActorEvent {
       throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
-  $ExperienceManagementActorEventCopyWith<ExperienceManagementActorEvent> get copyWith =>
-      throw _privateConstructorUsedError;
+  $ExperienceManagementActorEventCopyWith<ExperienceManagementActorEvent>
+      get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $ExperienceManagementActorEventCopyWith<$Res> {
   factory $ExperienceManagementActorEventCopyWith(
-          ExperienceManagementActorEvent value, $Res Function(ExperienceManagementActorEvent) then) =
+          ExperienceManagementActorEvent value,
+          $Res Function(ExperienceManagementActorEvent) then) =
       _$ExperienceManagementActorEventCopyWithImpl<$Res>;
   $Res call({Experience experience});
 
@@ -108,10 +110,11 @@ class _$ExperienceManagementActorEventCopyWithImpl<$Res>
 }
 
 /// @nodoc
-abstract class _$CheckCreatorCopyWith<$Res> implements $ExperienceManagementActorEventCopyWith<$Res> {
-  factory _$CheckCreatorCopyWith(_CheckCreator value, $Res Function(_CheckCreator) then) =
+abstract class _$CheckCreatorCopyWith<$Res>
+    implements $ExperienceManagementActorEventCopyWith<$Res> {
+  factory _$CheckCreatorCopyWith(
+          _CheckCreator value, $Res Function(_CheckCreator) then) =
       __$CheckCreatorCopyWithImpl<$Res>;
-
   @override
   $Res call({Experience experience});
 
@@ -120,9 +123,11 @@ abstract class _$CheckCreatorCopyWith<$Res> implements $ExperienceManagementActo
 }
 
 /// @nodoc
-class __$CheckCreatorCopyWithImpl<$Res> extends _$ExperienceManagementActorEventCopyWithImpl<$Res>
+class __$CheckCreatorCopyWithImpl<$Res>
+    extends _$ExperienceManagementActorEventCopyWithImpl<$Res>
     implements _$CheckCreatorCopyWith<$Res> {
-  __$CheckCreatorCopyWithImpl(_CheckCreator _value, $Res Function(_CheckCreator) _then)
+  __$CheckCreatorCopyWithImpl(
+      _CheckCreator _value, $Res Function(_CheckCreator) _then)
       : super(_value, (v) => _then(v as _CheckCreator));
 
   @override
@@ -159,11 +164,13 @@ class _$_CheckCreator implements _CheckCreator {
     return identical(this, other) ||
         (other is _CheckCreator &&
             (identical(other.experience, experience) ||
-                const DeepCollectionEquality().equals(other.experience, experience)));
+                const DeepCollectionEquality()
+                    .equals(other.experience, experience)));
   }
 
   @override
-  int get hashCode => runtimeType.hashCode ^ const DeepCollectionEquality().hash(experience);
+  int get hashCode =>
+      runtimeType.hashCode ^ const DeepCollectionEquality().hash(experience);
 
   @JsonKey(ignore: true)
   @override
@@ -220,16 +227,17 @@ abstract class _CheckCreator implements ExperienceManagementActorEvent {
 
   @override
   Experience get experience => throw _privateConstructorUsedError;
-
   @override
   @JsonKey(ignore: true)
-  _$CheckCreatorCopyWith<_CheckCreator> get copyWith => throw _privateConstructorUsedError;
+  _$CheckCreatorCopyWith<_CheckCreator> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$DeletedCopyWith<$Res> implements $ExperienceManagementActorEventCopyWith<$Res> {
-  factory _$DeletedCopyWith(_Deleted value, $Res Function(_Deleted) then) = __$DeletedCopyWithImpl<$Res>;
-
+abstract class _$DeletedCopyWith<$Res>
+    implements $ExperienceManagementActorEventCopyWith<$Res> {
+  factory _$DeletedCopyWith(_Deleted value, $Res Function(_Deleted) then) =
+      __$DeletedCopyWithImpl<$Res>;
   @override
   $Res call({Experience experience});
 
@@ -238,7 +246,8 @@ abstract class _$DeletedCopyWith<$Res> implements $ExperienceManagementActorEven
 }
 
 /// @nodoc
-class __$DeletedCopyWithImpl<$Res> extends _$ExperienceManagementActorEventCopyWithImpl<$Res>
+class __$DeletedCopyWithImpl<$Res>
+    extends _$ExperienceManagementActorEventCopyWithImpl<$Res>
     implements _$DeletedCopyWith<$Res> {
   __$DeletedCopyWithImpl(_Deleted _value, $Res Function(_Deleted) _then)
       : super(_value, (v) => _then(v as _Deleted));
@@ -277,15 +286,18 @@ class _$_Deleted implements _Deleted {
     return identical(this, other) ||
         (other is _Deleted &&
             (identical(other.experience, experience) ||
-                const DeepCollectionEquality().equals(other.experience, experience)));
+                const DeepCollectionEquality()
+                    .equals(other.experience, experience)));
   }
 
   @override
-  int get hashCode => runtimeType.hashCode ^ const DeepCollectionEquality().hash(experience);
+  int get hashCode =>
+      runtimeType.hashCode ^ const DeepCollectionEquality().hash(experience);
 
   @JsonKey(ignore: true)
   @override
-  _$DeletedCopyWith<_Deleted> get copyWith => __$DeletedCopyWithImpl<_Deleted>(this, _$identity);
+  _$DeletedCopyWith<_Deleted> get copyWith =>
+      __$DeletedCopyWithImpl<_Deleted>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -337,10 +349,10 @@ abstract class _Deleted implements ExperienceManagementActorEvent {
 
   @override
   Experience get experience => throw _privateConstructorUsedError;
-
   @override
   @JsonKey(ignore: true)
-  _$DeletedCopyWith<_Deleted> get copyWith => throw _privateConstructorUsedError;
+  _$DeletedCopyWith<_Deleted> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -375,7 +387,8 @@ class _$ExperienceManagementActorStateTearOff {
 }
 
 /// @nodoc
-const $ExperienceManagementActorState = _$ExperienceManagementActorStateTearOff();
+const $ExperienceManagementActorState =
+    _$ExperienceManagementActorStateTearOff();
 
 /// @nodoc
 mixin _$ExperienceManagementActorState {
@@ -426,7 +439,8 @@ mixin _$ExperienceManagementActorState {
 /// @nodoc
 abstract class $ExperienceManagementActorStateCopyWith<$Res> {
   factory $ExperienceManagementActorStateCopyWith(
-          ExperienceManagementActorState value, $Res Function(ExperienceManagementActorState) then) =
+          ExperienceManagementActorState value,
+          $Res Function(ExperienceManagementActorState) then) =
       _$ExperienceManagementActorStateCopyWithImpl<$Res>;
 }
 
@@ -442,11 +456,13 @@ class _$ExperienceManagementActorStateCopyWithImpl<$Res>
 
 /// @nodoc
 abstract class _$InitialCopyWith<$Res> {
-  factory _$InitialCopyWith(_Initial value, $Res Function(_Initial) then) = __$InitialCopyWithImpl<$Res>;
+  factory _$InitialCopyWith(_Initial value, $Res Function(_Initial) then) =
+      __$InitialCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$InitialCopyWithImpl<$Res> extends _$ExperienceManagementActorStateCopyWithImpl<$Res>
+class __$InitialCopyWithImpl<$Res>
+    extends _$ExperienceManagementActorStateCopyWithImpl<$Res>
     implements _$InitialCopyWith<$Res> {
   __$InitialCopyWithImpl(_Initial _value, $Res Function(_Initial) _then)
       : super(_value, (v) => _then(v as _Initial));
@@ -540,12 +556,14 @@ abstract class _Initial implements ExperienceManagementActorState {
 
 /// @nodoc
 abstract class _$IsCreatorCopyWith<$Res> {
-  factory _$IsCreatorCopyWith(_IsCreator value, $Res Function(_IsCreator) then) =
+  factory _$IsCreatorCopyWith(
+          _IsCreator value, $Res Function(_IsCreator) then) =
       __$IsCreatorCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$IsCreatorCopyWithImpl<$Res> extends _$ExperienceManagementActorStateCopyWithImpl<$Res>
+class __$IsCreatorCopyWithImpl<$Res>
+    extends _$ExperienceManagementActorStateCopyWithImpl<$Res>
     implements _$IsCreatorCopyWith<$Res> {
   __$IsCreatorCopyWithImpl(_IsCreator _value, $Res Function(_IsCreator) _then)
       : super(_value, (v) => _then(v as _IsCreator));
@@ -639,14 +657,17 @@ abstract class _IsCreator implements ExperienceManagementActorState {
 
 /// @nodoc
 abstract class _$IsNotCreatorCopyWith<$Res> {
-  factory _$IsNotCreatorCopyWith(_IsNotCreator value, $Res Function(_IsNotCreator) then) =
+  factory _$IsNotCreatorCopyWith(
+          _IsNotCreator value, $Res Function(_IsNotCreator) then) =
       __$IsNotCreatorCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$IsNotCreatorCopyWithImpl<$Res> extends _$ExperienceManagementActorStateCopyWithImpl<$Res>
+class __$IsNotCreatorCopyWithImpl<$Res>
+    extends _$ExperienceManagementActorStateCopyWithImpl<$Res>
     implements _$IsNotCreatorCopyWith<$Res> {
-  __$IsNotCreatorCopyWithImpl(_IsNotCreator _value, $Res Function(_IsNotCreator) _then)
+  __$IsNotCreatorCopyWithImpl(
+      _IsNotCreator _value, $Res Function(_IsNotCreator) _then)
       : super(_value, (v) => _then(v as _IsNotCreator));
 
   @override
@@ -738,14 +759,17 @@ abstract class _IsNotCreator implements ExperienceManagementActorState {
 
 /// @nodoc
 abstract class _$ActionInProgressCopyWith<$Res> {
-  factory _$ActionInProgressCopyWith(_ActionInProgress value, $Res Function(_ActionInProgress) then) =
+  factory _$ActionInProgressCopyWith(
+          _ActionInProgress value, $Res Function(_ActionInProgress) then) =
       __$ActionInProgressCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$ActionInProgressCopyWithImpl<$Res> extends _$ExperienceManagementActorStateCopyWithImpl<$Res>
+class __$ActionInProgressCopyWithImpl<$Res>
+    extends _$ExperienceManagementActorStateCopyWithImpl<$Res>
     implements _$ActionInProgressCopyWith<$Res> {
-  __$ActionInProgressCopyWithImpl(_ActionInProgress _value, $Res Function(_ActionInProgress) _then)
+  __$ActionInProgressCopyWithImpl(
+      _ActionInProgress _value, $Res Function(_ActionInProgress) _then)
       : super(_value, (v) => _then(v as _ActionInProgress));
 
   @override
@@ -837,14 +861,17 @@ abstract class _ActionInProgress implements ExperienceManagementActorState {
 
 /// @nodoc
 abstract class _$DeletionSuccessCopyWith<$Res> {
-  factory _$DeletionSuccessCopyWith(_DeletionSuccess value, $Res Function(_DeletionSuccess) then) =
+  factory _$DeletionSuccessCopyWith(
+          _DeletionSuccess value, $Res Function(_DeletionSuccess) then) =
       __$DeletionSuccessCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$DeletionSuccessCopyWithImpl<$Res> extends _$ExperienceManagementActorStateCopyWithImpl<$Res>
+class __$DeletionSuccessCopyWithImpl<$Res>
+    extends _$ExperienceManagementActorStateCopyWithImpl<$Res>
     implements _$DeletionSuccessCopyWith<$Res> {
-  __$DeletionSuccessCopyWithImpl(_DeletionSuccess _value, $Res Function(_DeletionSuccess) _then)
+  __$DeletionSuccessCopyWithImpl(
+      _DeletionSuccess _value, $Res Function(_DeletionSuccess) _then)
       : super(_value, (v) => _then(v as _DeletionSuccess));
 
   @override
@@ -936,18 +963,20 @@ abstract class _DeletionSuccess implements ExperienceManagementActorState {
 
 /// @nodoc
 abstract class _$DeletionFailureCopyWith<$Res> {
-  factory _$DeletionFailureCopyWith(_DeletionFailure value, $Res Function(_DeletionFailure) then) =
+  factory _$DeletionFailureCopyWith(
+          _DeletionFailure value, $Res Function(_DeletionFailure) then) =
       __$DeletionFailureCopyWithImpl<$Res>;
-
   $Res call({Failure<dynamic> failure});
 
   $FailureCopyWith<dynamic, $Res> get failure;
 }
 
 /// @nodoc
-class __$DeletionFailureCopyWithImpl<$Res> extends _$ExperienceManagementActorStateCopyWithImpl<$Res>
+class __$DeletionFailureCopyWithImpl<$Res>
+    extends _$ExperienceManagementActorStateCopyWithImpl<$Res>
     implements _$DeletionFailureCopyWith<$Res> {
-  __$DeletionFailureCopyWithImpl(_DeletionFailure _value, $Res Function(_DeletionFailure) _then)
+  __$DeletionFailureCopyWithImpl(
+      _DeletionFailure _value, $Res Function(_DeletionFailure) _then)
       : super(_value, (v) => _then(v as _DeletionFailure));
 
   @override
@@ -995,7 +1024,8 @@ class _$_DeletionFailure implements _DeletionFailure {
   }
 
   @override
-  int get hashCode => runtimeType.hashCode ^ const DeepCollectionEquality().hash(failure);
+  int get hashCode =>
+      runtimeType.hashCode ^ const DeepCollectionEquality().hash(failure);
 
   @JsonKey(ignore: true)
   @override
@@ -1067,7 +1097,7 @@ abstract class _DeletionFailure implements ExperienceManagementActorState {
   const factory _DeletionFailure(Failure<dynamic> failure) = _$_DeletionFailure;
 
   Failure<dynamic> get failure => throw _privateConstructorUsedError;
-
   @JsonKey(ignore: true)
-  _$DeletionFailureCopyWith<_DeletionFailure> get copyWith => throw _privateConstructorUsedError;
+  _$DeletionFailureCopyWith<_DeletionFailure> get copyWith =>
+      throw _privateConstructorUsedError;
 }

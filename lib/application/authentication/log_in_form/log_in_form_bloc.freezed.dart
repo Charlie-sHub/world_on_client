@@ -80,32 +80,35 @@ mixin _$LogInFormEvent {
 
 /// @nodoc
 abstract class $LogInFormEventCopyWith<$Res> {
-  factory $LogInFormEventCopyWith(LogInFormEvent value, $Res Function(LogInFormEvent) then) =
+  factory $LogInFormEventCopyWith(
+          LogInFormEvent value, $Res Function(LogInFormEvent) then) =
       _$LogInFormEventCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class _$LogInFormEventCopyWithImpl<$Res> implements $LogInFormEventCopyWith<$Res> {
+class _$LogInFormEventCopyWithImpl<$Res>
+    implements $LogInFormEventCopyWith<$Res> {
   _$LogInFormEventCopyWithImpl(this._value, this._then);
 
   final LogInFormEvent _value;
-
   // ignore: unused_field
   final $Res Function(LogInFormEvent) _then;
 }
 
 /// @nodoc
 abstract class _$EmailChangedCopyWith<$Res> {
-  factory _$EmailChangedCopyWith(_EmailChanged value, $Res Function(_EmailChanged) then) =
+  factory _$EmailChangedCopyWith(
+          _EmailChanged value, $Res Function(_EmailChanged) then) =
       __$EmailChangedCopyWithImpl<$Res>;
-
   $Res call({String email});
 }
 
 /// @nodoc
-class __$EmailChangedCopyWithImpl<$Res> extends _$LogInFormEventCopyWithImpl<$Res>
+class __$EmailChangedCopyWithImpl<$Res>
+    extends _$LogInFormEventCopyWithImpl<$Res>
     implements _$EmailChangedCopyWith<$Res> {
-  __$EmailChangedCopyWithImpl(_EmailChanged _value, $Res Function(_EmailChanged) _then)
+  __$EmailChangedCopyWithImpl(
+      _EmailChanged _value, $Res Function(_EmailChanged) _then)
       : super(_value, (v) => _then(v as _EmailChanged));
 
   @override
@@ -141,11 +144,13 @@ class _$_EmailChanged implements _EmailChanged {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other is _EmailChanged &&
-            (identical(other.email, email) || const DeepCollectionEquality().equals(other.email, email)));
+            (identical(other.email, email) ||
+                const DeepCollectionEquality().equals(other.email, email)));
   }
 
   @override
-  int get hashCode => runtimeType.hashCode ^ const DeepCollectionEquality().hash(email);
+  int get hashCode =>
+      runtimeType.hashCode ^ const DeepCollectionEquality().hash(email);
 
   @JsonKey(ignore: true)
   @override
@@ -209,23 +214,25 @@ abstract class _EmailChanged implements LogInFormEvent {
   const factory _EmailChanged(String email) = _$_EmailChanged;
 
   String get email => throw _privateConstructorUsedError;
-
   @JsonKey(ignore: true)
-  _$EmailChangedCopyWith<_EmailChanged> get copyWith => throw _privateConstructorUsedError;
+  _$EmailChangedCopyWith<_EmailChanged> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class _$PasswordChangedCopyWith<$Res> {
-  factory _$PasswordChangedCopyWith(_PasswordChanged value, $Res Function(_PasswordChanged) then) =
+  factory _$PasswordChangedCopyWith(
+          _PasswordChanged value, $Res Function(_PasswordChanged) then) =
       __$PasswordChangedCopyWithImpl<$Res>;
-
   $Res call({String password});
 }
 
 /// @nodoc
-class __$PasswordChangedCopyWithImpl<$Res> extends _$LogInFormEventCopyWithImpl<$Res>
+class __$PasswordChangedCopyWithImpl<$Res>
+    extends _$LogInFormEventCopyWithImpl<$Res>
     implements _$PasswordChangedCopyWith<$Res> {
-  __$PasswordChangedCopyWithImpl(_PasswordChanged _value, $Res Function(_PasswordChanged) _then)
+  __$PasswordChangedCopyWithImpl(
+      _PasswordChanged _value, $Res Function(_PasswordChanged) _then)
       : super(_value, (v) => _then(v as _PasswordChanged));
 
   @override
@@ -262,11 +269,13 @@ class _$_PasswordChanged implements _PasswordChanged {
     return identical(this, other) ||
         (other is _PasswordChanged &&
             (identical(other.password, password) ||
-                const DeepCollectionEquality().equals(other.password, password)));
+                const DeepCollectionEquality()
+                    .equals(other.password, password)));
   }
 
   @override
-  int get hashCode => runtimeType.hashCode ^ const DeepCollectionEquality().hash(password);
+  int get hashCode =>
+      runtimeType.hashCode ^ const DeepCollectionEquality().hash(password);
 
   @JsonKey(ignore: true)
   @override
@@ -330,14 +339,15 @@ abstract class _PasswordChanged implements LogInFormEvent {
   const factory _PasswordChanged(String password) = _$_PasswordChanged;
 
   String get password => throw _privateConstructorUsedError;
-
   @JsonKey(ignore: true)
-  _$PasswordChangedCopyWith<_PasswordChanged> get copyWith => throw _privateConstructorUsedError;
+  _$PasswordChangedCopyWith<_PasswordChanged> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class _$LoggedInCopyWith<$Res> {
-  factory _$LoggedInCopyWith(_LoggedIn value, $Res Function(_LoggedIn) then) = __$LoggedInCopyWithImpl<$Res>;
+  factory _$LoggedInCopyWith(_LoggedIn value, $Res Function(_LoggedIn) then) =
+      __$LoggedInCopyWithImpl<$Res>;
 }
 
 /// @nodoc
@@ -427,14 +437,17 @@ abstract class _LoggedIn implements LogInFormEvent {
 
 /// @nodoc
 abstract class _$LoggedInGoogleCopyWith<$Res> {
-  factory _$LoggedInGoogleCopyWith(_LoggedInGoogle value, $Res Function(_LoggedInGoogle) then) =
+  factory _$LoggedInGoogleCopyWith(
+          _LoggedInGoogle value, $Res Function(_LoggedInGoogle) then) =
       __$LoggedInGoogleCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$LoggedInGoogleCopyWithImpl<$Res> extends _$LogInFormEventCopyWithImpl<$Res>
+class __$LoggedInGoogleCopyWithImpl<$Res>
+    extends _$LogInFormEventCopyWithImpl<$Res>
     implements _$LoggedInGoogleCopyWith<$Res> {
-  __$LoggedInGoogleCopyWithImpl(_LoggedInGoogle _value, $Res Function(_LoggedInGoogle) _then)
+  __$LoggedInGoogleCopyWithImpl(
+      _LoggedInGoogle _value, $Res Function(_LoggedInGoogle) _then)
       : super(_value, (v) => _then(v as _LoggedInGoogle));
 
   @override
@@ -544,26 +557,23 @@ const $LogInFormState = _$LogInFormStateTearOff();
 /// @nodoc
 mixin _$LogInFormState {
   EmailAddress get email => throw _privateConstructorUsedError;
-
   Password get password => throw _privateConstructorUsedError;
-
   bool get showErrorMessages => throw _privateConstructorUsedError;
-
   bool get isSubmitting => throw _privateConstructorUsedError;
-
   Option<User> get thirdPartyUserOption => throw _privateConstructorUsedError;
-
-  Option<Either<Failure, Unit>> get failureOrSuccessOption => throw _privateConstructorUsedError;
+  Option<Either<Failure, Unit>> get failureOrSuccessOption =>
+      throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
-  $LogInFormStateCopyWith<LogInFormState> get copyWith => throw _privateConstructorUsedError;
+  $LogInFormStateCopyWith<LogInFormState> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $LogInFormStateCopyWith<$Res> {
-  factory $LogInFormStateCopyWith(LogInFormState value, $Res Function(LogInFormState) then) =
+  factory $LogInFormStateCopyWith(
+          LogInFormState value, $Res Function(LogInFormState) then) =
       _$LogInFormStateCopyWithImpl<$Res>;
-
   $Res call(
       {EmailAddress email,
       Password password,
@@ -574,11 +584,11 @@ abstract class $LogInFormStateCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$LogInFormStateCopyWithImpl<$Res> implements $LogInFormStateCopyWith<$Res> {
+class _$LogInFormStateCopyWithImpl<$Res>
+    implements $LogInFormStateCopyWith<$Res> {
   _$LogInFormStateCopyWithImpl(this._value, this._then);
 
   final LogInFormState _value;
-
   // ignore: unused_field
   final $Res Function(LogInFormState) _then;
 
@@ -621,10 +631,11 @@ class _$LogInFormStateCopyWithImpl<$Res> implements $LogInFormStateCopyWith<$Res
 }
 
 /// @nodoc
-abstract class _$LogInFormStateCopyWith<$Res> implements $LogInFormStateCopyWith<$Res> {
-  factory _$LogInFormStateCopyWith(_LogInFormState value, $Res Function(_LogInFormState) then) =
+abstract class _$LogInFormStateCopyWith<$Res>
+    implements $LogInFormStateCopyWith<$Res> {
+  factory _$LogInFormStateCopyWith(
+          _LogInFormState value, $Res Function(_LogInFormState) then) =
       __$LogInFormStateCopyWithImpl<$Res>;
-
   @override
   $Res call(
       {EmailAddress email,
@@ -636,9 +647,11 @@ abstract class _$LogInFormStateCopyWith<$Res> implements $LogInFormStateCopyWith
 }
 
 /// @nodoc
-class __$LogInFormStateCopyWithImpl<$Res> extends _$LogInFormStateCopyWithImpl<$Res>
+class __$LogInFormStateCopyWithImpl<$Res>
+    extends _$LogInFormStateCopyWithImpl<$Res>
     implements _$LogInFormStateCopyWith<$Res> {
-  __$LogInFormStateCopyWithImpl(_LogInFormState _value, $Res Function(_LogInFormState) _then)
+  __$LogInFormStateCopyWithImpl(
+      _LogInFormState _value, $Res Function(_LogInFormState) _then)
       : super(_value, (v) => _then(v as _LogInFormState));
 
   @override
@@ -715,17 +728,23 @@ class _$_LogInFormState implements _LogInFormState {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other is _LogInFormState &&
-            (identical(other.email, email) || const DeepCollectionEquality().equals(other.email, email)) &&
+            (identical(other.email, email) ||
+                const DeepCollectionEquality().equals(other.email, email)) &&
             (identical(other.password, password) ||
-                const DeepCollectionEquality().equals(other.password, password)) &&
+                const DeepCollectionEquality()
+                    .equals(other.password, password)) &&
             (identical(other.showErrorMessages, showErrorMessages) ||
-                const DeepCollectionEquality().equals(other.showErrorMessages, showErrorMessages)) &&
+                const DeepCollectionEquality()
+                    .equals(other.showErrorMessages, showErrorMessages)) &&
             (identical(other.isSubmitting, isSubmitting) ||
-                const DeepCollectionEquality().equals(other.isSubmitting, isSubmitting)) &&
+                const DeepCollectionEquality()
+                    .equals(other.isSubmitting, isSubmitting)) &&
             (identical(other.thirdPartyUserOption, thirdPartyUserOption) ||
-                const DeepCollectionEquality().equals(other.thirdPartyUserOption, thirdPartyUserOption)) &&
+                const DeepCollectionEquality().equals(
+                    other.thirdPartyUserOption, thirdPartyUserOption)) &&
             (identical(other.failureOrSuccessOption, failureOrSuccessOption) ||
-                const DeepCollectionEquality().equals(other.failureOrSuccessOption, failureOrSuccessOption)));
+                const DeepCollectionEquality().equals(
+                    other.failureOrSuccessOption, failureOrSuccessOption)));
   }
 
   @override
@@ -746,12 +765,13 @@ class _$_LogInFormState implements _LogInFormState {
 
 abstract class _LogInFormState implements LogInFormState {
   const factory _LogInFormState(
-      {required EmailAddress email,
-      required Password password,
-      required bool showErrorMessages,
-      required bool isSubmitting,
-      required Option<User> thirdPartyUserOption,
-      required Option<Either<Failure, Unit>> failureOrSuccessOption}) = _$_LogInFormState;
+          {required EmailAddress email,
+          required Password password,
+          required bool showErrorMessages,
+          required bool isSubmitting,
+          required Option<User> thirdPartyUserOption,
+          required Option<Either<Failure, Unit>> failureOrSuccessOption}) =
+      _$_LogInFormState;
 
   @override
   EmailAddress get email => throw _privateConstructorUsedError;
@@ -761,14 +781,13 @@ abstract class _LogInFormState implements LogInFormState {
   bool get showErrorMessages => throw _privateConstructorUsedError;
   @override
   bool get isSubmitting => throw _privateConstructorUsedError;
-
   @override
   Option<User> get thirdPartyUserOption => throw _privateConstructorUsedError;
-
   @override
-  Option<Either<Failure, Unit>> get failureOrSuccessOption => throw _privateConstructorUsedError;
-
+  Option<Either<Failure, Unit>> get failureOrSuccessOption =>
+      throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
-  _$LogInFormStateCopyWith<_LogInFormState> get copyWith => throw _privateConstructorUsedError;
+  _$LogInFormStateCopyWith<_LogInFormState> get copyWith =>
+      throw _privateConstructorUsedError;
 }

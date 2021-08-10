@@ -58,13 +58,15 @@ class _$AchievementManagementFormEventTearOff {
 }
 
 /// @nodoc
-const $AchievementManagementFormEvent = _$AchievementManagementFormEventTearOff();
+const $AchievementManagementFormEvent =
+    _$AchievementManagementFormEventTearOff();
 
 /// @nodoc
 mixin _$AchievementManagementFormEvent {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(Option<Achievement> achievementOption) initialized,
+    required TResult Function(Option<Achievement> achievementOption)
+        initialized,
     required TResult Function(String name) nameChanged,
     required TResult Function(String description) descriptionChanged,
     required TResult Function(int experiencePoints) experiencePointsChanged,
@@ -90,7 +92,8 @@ mixin _$AchievementManagementFormEvent {
     required TResult Function(_Initialized value) initialized,
     required TResult Function(_NameChanged value) nameChanged,
     required TResult Function(_DescriptionChanged value) descriptionChanged,
-    required TResult Function(_ExperiencePointsChanged value) experiencePointsChanged,
+    required TResult Function(_ExperiencePointsChanged value)
+        experiencePointsChanged,
     required TResult Function(_TagsChanged value) tagsChanged,
     required TResult Function(_ImageChanged value) imageChanged,
     required TResult Function(_Submitted value) submitted,
@@ -113,7 +116,8 @@ mixin _$AchievementManagementFormEvent {
 /// @nodoc
 abstract class $AchievementManagementFormEventCopyWith<$Res> {
   factory $AchievementManagementFormEventCopyWith(
-          AchievementManagementFormEvent value, $Res Function(AchievementManagementFormEvent) then) =
+          AchievementManagementFormEvent value,
+          $Res Function(AchievementManagementFormEvent) then) =
       _$AchievementManagementFormEventCopyWithImpl<$Res>;
 }
 
@@ -129,16 +133,18 @@ class _$AchievementManagementFormEventCopyWithImpl<$Res>
 
 /// @nodoc
 abstract class _$InitializedCopyWith<$Res> {
-  factory _$InitializedCopyWith(_Initialized value, $Res Function(_Initialized) then) =
+  factory _$InitializedCopyWith(
+          _Initialized value, $Res Function(_Initialized) then) =
       __$InitializedCopyWithImpl<$Res>;
-
   $Res call({Option<Achievement> achievementOption});
 }
 
 /// @nodoc
-class __$InitializedCopyWithImpl<$Res> extends _$AchievementManagementFormEventCopyWithImpl<$Res>
+class __$InitializedCopyWithImpl<$Res>
+    extends _$AchievementManagementFormEventCopyWithImpl<$Res>
     implements _$InitializedCopyWith<$Res> {
-  __$InitializedCopyWithImpl(_Initialized _value, $Res Function(_Initialized) _then)
+  __$InitializedCopyWithImpl(
+      _Initialized _value, $Res Function(_Initialized) _then)
       : super(_value, (v) => _then(v as _Initialized));
 
   @override
@@ -175,11 +181,14 @@ class _$_Initialized implements _Initialized {
     return identical(this, other) ||
         (other is _Initialized &&
             (identical(other.achievementOption, achievementOption) ||
-                const DeepCollectionEquality().equals(other.achievementOption, achievementOption)));
+                const DeepCollectionEquality()
+                    .equals(other.achievementOption, achievementOption)));
   }
 
   @override
-  int get hashCode => runtimeType.hashCode ^ const DeepCollectionEquality().hash(achievementOption);
+  int get hashCode =>
+      runtimeType.hashCode ^
+      const DeepCollectionEquality().hash(achievementOption);
 
   @JsonKey(ignore: true)
   @override
@@ -189,7 +198,8 @@ class _$_Initialized implements _Initialized {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(Option<Achievement> achievementOption) initialized,
+    required TResult Function(Option<Achievement> achievementOption)
+        initialized,
     required TResult Function(String name) nameChanged,
     required TResult Function(String description) descriptionChanged,
     required TResult Function(int experiencePoints) experiencePointsChanged,
@@ -224,7 +234,8 @@ class _$_Initialized implements _Initialized {
     required TResult Function(_Initialized value) initialized,
     required TResult Function(_NameChanged value) nameChanged,
     required TResult Function(_DescriptionChanged value) descriptionChanged,
-    required TResult Function(_ExperiencePointsChanged value) experiencePointsChanged,
+    required TResult Function(_ExperiencePointsChanged value)
+        experiencePointsChanged,
     required TResult Function(_TagsChanged value) tagsChanged,
     required TResult Function(_ImageChanged value) imageChanged,
     required TResult Function(_Submitted value) submitted,
@@ -252,26 +263,30 @@ class _$_Initialized implements _Initialized {
 }
 
 abstract class _Initialized implements AchievementManagementFormEvent {
-  const factory _Initialized(Option<Achievement> achievementOption) = _$_Initialized;
+  const factory _Initialized(Option<Achievement> achievementOption) =
+      _$_Initialized;
 
-  Option<Achievement> get achievementOption => throw _privateConstructorUsedError;
-
+  Option<Achievement> get achievementOption =>
+      throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  _$InitializedCopyWith<_Initialized> get copyWith => throw _privateConstructorUsedError;
+  _$InitializedCopyWith<_Initialized> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class _$NameChangedCopyWith<$Res> {
-  factory _$NameChangedCopyWith(_NameChanged value, $Res Function(_NameChanged) then) =
+  factory _$NameChangedCopyWith(
+          _NameChanged value, $Res Function(_NameChanged) then) =
       __$NameChangedCopyWithImpl<$Res>;
-
   $Res call({String name});
 }
 
 /// @nodoc
-class __$NameChangedCopyWithImpl<$Res> extends _$AchievementManagementFormEventCopyWithImpl<$Res>
+class __$NameChangedCopyWithImpl<$Res>
+    extends _$AchievementManagementFormEventCopyWithImpl<$Res>
     implements _$NameChangedCopyWith<$Res> {
-  __$NameChangedCopyWithImpl(_NameChanged _value, $Res Function(_NameChanged) _then)
+  __$NameChangedCopyWithImpl(
+      _NameChanged _value, $Res Function(_NameChanged) _then)
       : super(_value, (v) => _then(v as _NameChanged));
 
   @override
@@ -307,11 +322,13 @@ class _$_NameChanged implements _NameChanged {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other is _NameChanged &&
-            (identical(other.name, name) || const DeepCollectionEquality().equals(other.name, name)));
+            (identical(other.name, name) ||
+                const DeepCollectionEquality().equals(other.name, name)));
   }
 
   @override
-  int get hashCode => runtimeType.hashCode ^ const DeepCollectionEquality().hash(name);
+  int get hashCode =>
+      runtimeType.hashCode ^ const DeepCollectionEquality().hash(name);
 
   @JsonKey(ignore: true)
   @override
@@ -321,7 +338,8 @@ class _$_NameChanged implements _NameChanged {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(Option<Achievement> achievementOption) initialized,
+    required TResult Function(Option<Achievement> achievementOption)
+        initialized,
     required TResult Function(String name) nameChanged,
     required TResult Function(String description) descriptionChanged,
     required TResult Function(int experiencePoints) experiencePointsChanged,
@@ -356,7 +374,8 @@ class _$_NameChanged implements _NameChanged {
     required TResult Function(_Initialized value) initialized,
     required TResult Function(_NameChanged value) nameChanged,
     required TResult Function(_DescriptionChanged value) descriptionChanged,
-    required TResult Function(_ExperiencePointsChanged value) experiencePointsChanged,
+    required TResult Function(_ExperiencePointsChanged value)
+        experiencePointsChanged,
     required TResult Function(_TagsChanged value) tagsChanged,
     required TResult Function(_ImageChanged value) imageChanged,
     required TResult Function(_Submitted value) submitted,
@@ -387,23 +406,25 @@ abstract class _NameChanged implements AchievementManagementFormEvent {
   const factory _NameChanged(String name) = _$_NameChanged;
 
   String get name => throw _privateConstructorUsedError;
-
   @JsonKey(ignore: true)
-  _$NameChangedCopyWith<_NameChanged> get copyWith => throw _privateConstructorUsedError;
+  _$NameChangedCopyWith<_NameChanged> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class _$DescriptionChangedCopyWith<$Res> {
-  factory _$DescriptionChangedCopyWith(_DescriptionChanged value, $Res Function(_DescriptionChanged) then) =
+  factory _$DescriptionChangedCopyWith(
+          _DescriptionChanged value, $Res Function(_DescriptionChanged) then) =
       __$DescriptionChangedCopyWithImpl<$Res>;
-
   $Res call({String description});
 }
 
 /// @nodoc
-class __$DescriptionChangedCopyWithImpl<$Res> extends _$AchievementManagementFormEventCopyWithImpl<$Res>
+class __$DescriptionChangedCopyWithImpl<$Res>
+    extends _$AchievementManagementFormEventCopyWithImpl<$Res>
     implements _$DescriptionChangedCopyWith<$Res> {
-  __$DescriptionChangedCopyWithImpl(_DescriptionChanged _value, $Res Function(_DescriptionChanged) _then)
+  __$DescriptionChangedCopyWithImpl(
+      _DescriptionChanged _value, $Res Function(_DescriptionChanged) _then)
       : super(_value, (v) => _then(v as _DescriptionChanged));
 
   @override
@@ -440,11 +461,13 @@ class _$_DescriptionChanged implements _DescriptionChanged {
     return identical(this, other) ||
         (other is _DescriptionChanged &&
             (identical(other.description, description) ||
-                const DeepCollectionEquality().equals(other.description, description)));
+                const DeepCollectionEquality()
+                    .equals(other.description, description)));
   }
 
   @override
-  int get hashCode => runtimeType.hashCode ^ const DeepCollectionEquality().hash(description);
+  int get hashCode =>
+      runtimeType.hashCode ^ const DeepCollectionEquality().hash(description);
 
   @JsonKey(ignore: true)
   @override
@@ -454,7 +477,8 @@ class _$_DescriptionChanged implements _DescriptionChanged {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(Option<Achievement> achievementOption) initialized,
+    required TResult Function(Option<Achievement> achievementOption)
+        initialized,
     required TResult Function(String name) nameChanged,
     required TResult Function(String description) descriptionChanged,
     required TResult Function(int experiencePoints) experiencePointsChanged,
@@ -489,7 +513,8 @@ class _$_DescriptionChanged implements _DescriptionChanged {
     required TResult Function(_Initialized value) initialized,
     required TResult Function(_NameChanged value) nameChanged,
     required TResult Function(_DescriptionChanged value) descriptionChanged,
-    required TResult Function(_ExperiencePointsChanged value) experiencePointsChanged,
+    required TResult Function(_ExperiencePointsChanged value)
+        experiencePointsChanged,
     required TResult Function(_TagsChanged value) tagsChanged,
     required TResult Function(_ImageChanged value) imageChanged,
     required TResult Function(_Submitted value) submitted,
@@ -520,29 +545,30 @@ abstract class _DescriptionChanged implements AchievementManagementFormEvent {
   const factory _DescriptionChanged(String description) = _$_DescriptionChanged;
 
   String get description => throw _privateConstructorUsedError;
-
   @JsonKey(ignore: true)
-  _$DescriptionChangedCopyWith<_DescriptionChanged> get copyWith => throw _privateConstructorUsedError;
+  _$DescriptionChangedCopyWith<_DescriptionChanged> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class _$ExperiencePointsChangedCopyWith<$Res> {
-  factory _$ExperiencePointsChangedCopyWith(
-          _ExperiencePointsChanged value, $Res Function(_ExperiencePointsChanged) then) =
+  factory _$ExperiencePointsChangedCopyWith(_ExperiencePointsChanged value,
+          $Res Function(_ExperiencePointsChanged) then) =
       __$ExperiencePointsChangedCopyWithImpl<$Res>;
-
   $Res call({int experiencePoints});
 }
 
 /// @nodoc
-class __$ExperiencePointsChangedCopyWithImpl<$Res> extends _$AchievementManagementFormEventCopyWithImpl<$Res>
+class __$ExperiencePointsChangedCopyWithImpl<$Res>
+    extends _$AchievementManagementFormEventCopyWithImpl<$Res>
     implements _$ExperiencePointsChangedCopyWith<$Res> {
-  __$ExperiencePointsChangedCopyWithImpl(
-      _ExperiencePointsChanged _value, $Res Function(_ExperiencePointsChanged) _then)
+  __$ExperiencePointsChangedCopyWithImpl(_ExperiencePointsChanged _value,
+      $Res Function(_ExperiencePointsChanged) _then)
       : super(_value, (v) => _then(v as _ExperiencePointsChanged));
 
   @override
-  _ExperiencePointsChanged get _value => super._value as _ExperiencePointsChanged;
+  _ExperiencePointsChanged get _value =>
+      super._value as _ExperiencePointsChanged;
 
   @override
   $Res call({
@@ -575,21 +601,26 @@ class _$_ExperiencePointsChanged implements _ExperiencePointsChanged {
     return identical(this, other) ||
         (other is _ExperiencePointsChanged &&
             (identical(other.experiencePoints, experiencePoints) ||
-                const DeepCollectionEquality().equals(other.experiencePoints, experiencePoints)));
+                const DeepCollectionEquality()
+                    .equals(other.experiencePoints, experiencePoints)));
   }
 
   @override
-  int get hashCode => runtimeType.hashCode ^ const DeepCollectionEquality().hash(experiencePoints);
+  int get hashCode =>
+      runtimeType.hashCode ^
+      const DeepCollectionEquality().hash(experiencePoints);
 
   @JsonKey(ignore: true)
   @override
   _$ExperiencePointsChangedCopyWith<_ExperiencePointsChanged> get copyWith =>
-      __$ExperiencePointsChangedCopyWithImpl<_ExperiencePointsChanged>(this, _$identity);
+      __$ExperiencePointsChangedCopyWithImpl<_ExperiencePointsChanged>(
+          this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(Option<Achievement> achievementOption) initialized,
+    required TResult Function(Option<Achievement> achievementOption)
+        initialized,
     required TResult Function(String name) nameChanged,
     required TResult Function(String description) descriptionChanged,
     required TResult Function(int experiencePoints) experiencePointsChanged,
@@ -624,7 +655,8 @@ class _$_ExperiencePointsChanged implements _ExperiencePointsChanged {
     required TResult Function(_Initialized value) initialized,
     required TResult Function(_NameChanged value) nameChanged,
     required TResult Function(_DescriptionChanged value) descriptionChanged,
-    required TResult Function(_ExperiencePointsChanged value) experiencePointsChanged,
+    required TResult Function(_ExperiencePointsChanged value)
+        experiencePointsChanged,
     required TResult Function(_TagsChanged value) tagsChanged,
     required TResult Function(_ImageChanged value) imageChanged,
     required TResult Function(_Submitted value) submitted,
@@ -651,11 +683,12 @@ class _$_ExperiencePointsChanged implements _ExperiencePointsChanged {
   }
 }
 
-abstract class _ExperiencePointsChanged implements AchievementManagementFormEvent {
-  const factory _ExperiencePointsChanged(int experiencePoints) = _$_ExperiencePointsChanged;
+abstract class _ExperiencePointsChanged
+    implements AchievementManagementFormEvent {
+  const factory _ExperiencePointsChanged(int experiencePoints) =
+      _$_ExperiencePointsChanged;
 
   int get experiencePoints => throw _privateConstructorUsedError;
-
   @JsonKey(ignore: true)
   _$ExperiencePointsChangedCopyWith<_ExperiencePointsChanged> get copyWith =>
       throw _privateConstructorUsedError;
@@ -663,16 +696,18 @@ abstract class _ExperiencePointsChanged implements AchievementManagementFormEven
 
 /// @nodoc
 abstract class _$TagsChangedCopyWith<$Res> {
-  factory _$TagsChangedCopyWith(_TagsChanged value, $Res Function(_TagsChanged) then) =
+  factory _$TagsChangedCopyWith(
+          _TagsChanged value, $Res Function(_TagsChanged) then) =
       __$TagsChangedCopyWithImpl<$Res>;
-
   $Res call({KtSet<Tag> tags});
 }
 
 /// @nodoc
-class __$TagsChangedCopyWithImpl<$Res> extends _$AchievementManagementFormEventCopyWithImpl<$Res>
+class __$TagsChangedCopyWithImpl<$Res>
+    extends _$AchievementManagementFormEventCopyWithImpl<$Res>
     implements _$TagsChangedCopyWith<$Res> {
-  __$TagsChangedCopyWithImpl(_TagsChanged _value, $Res Function(_TagsChanged) _then)
+  __$TagsChangedCopyWithImpl(
+      _TagsChanged _value, $Res Function(_TagsChanged) _then)
       : super(_value, (v) => _then(v as _TagsChanged));
 
   @override
@@ -708,11 +743,13 @@ class _$_TagsChanged implements _TagsChanged {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other is _TagsChanged &&
-            (identical(other.tags, tags) || const DeepCollectionEquality().equals(other.tags, tags)));
+            (identical(other.tags, tags) ||
+                const DeepCollectionEquality().equals(other.tags, tags)));
   }
 
   @override
-  int get hashCode => runtimeType.hashCode ^ const DeepCollectionEquality().hash(tags);
+  int get hashCode =>
+      runtimeType.hashCode ^ const DeepCollectionEquality().hash(tags);
 
   @JsonKey(ignore: true)
   @override
@@ -722,7 +759,8 @@ class _$_TagsChanged implements _TagsChanged {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(Option<Achievement> achievementOption) initialized,
+    required TResult Function(Option<Achievement> achievementOption)
+        initialized,
     required TResult Function(String name) nameChanged,
     required TResult Function(String description) descriptionChanged,
     required TResult Function(int experiencePoints) experiencePointsChanged,
@@ -757,7 +795,8 @@ class _$_TagsChanged implements _TagsChanged {
     required TResult Function(_Initialized value) initialized,
     required TResult Function(_NameChanged value) nameChanged,
     required TResult Function(_DescriptionChanged value) descriptionChanged,
-    required TResult Function(_ExperiencePointsChanged value) experiencePointsChanged,
+    required TResult Function(_ExperiencePointsChanged value)
+        experiencePointsChanged,
     required TResult Function(_TagsChanged value) tagsChanged,
     required TResult Function(_ImageChanged value) imageChanged,
     required TResult Function(_Submitted value) submitted,
@@ -788,23 +827,25 @@ abstract class _TagsChanged implements AchievementManagementFormEvent {
   const factory _TagsChanged(KtSet<Tag> tags) = _$_TagsChanged;
 
   KtSet<Tag> get tags => throw _privateConstructorUsedError;
-
   @JsonKey(ignore: true)
-  _$TagsChangedCopyWith<_TagsChanged> get copyWith => throw _privateConstructorUsedError;
+  _$TagsChangedCopyWith<_TagsChanged> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class _$ImageChangedCopyWith<$Res> {
-  factory _$ImageChangedCopyWith(_ImageChanged value, $Res Function(_ImageChanged) then) =
+  factory _$ImageChangedCopyWith(
+          _ImageChanged value, $Res Function(_ImageChanged) then) =
       __$ImageChangedCopyWithImpl<$Res>;
-
   $Res call({File image});
 }
 
 /// @nodoc
-class __$ImageChangedCopyWithImpl<$Res> extends _$AchievementManagementFormEventCopyWithImpl<$Res>
+class __$ImageChangedCopyWithImpl<$Res>
+    extends _$AchievementManagementFormEventCopyWithImpl<$Res>
     implements _$ImageChangedCopyWith<$Res> {
-  __$ImageChangedCopyWithImpl(_ImageChanged _value, $Res Function(_ImageChanged) _then)
+  __$ImageChangedCopyWithImpl(
+      _ImageChanged _value, $Res Function(_ImageChanged) _then)
       : super(_value, (v) => _then(v as _ImageChanged));
 
   @override
@@ -840,11 +881,13 @@ class _$_ImageChanged implements _ImageChanged {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other is _ImageChanged &&
-            (identical(other.image, image) || const DeepCollectionEquality().equals(other.image, image)));
+            (identical(other.image, image) ||
+                const DeepCollectionEquality().equals(other.image, image)));
   }
 
   @override
-  int get hashCode => runtimeType.hashCode ^ const DeepCollectionEquality().hash(image);
+  int get hashCode =>
+      runtimeType.hashCode ^ const DeepCollectionEquality().hash(image);
 
   @JsonKey(ignore: true)
   @override
@@ -854,7 +897,8 @@ class _$_ImageChanged implements _ImageChanged {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(Option<Achievement> achievementOption) initialized,
+    required TResult Function(Option<Achievement> achievementOption)
+        initialized,
     required TResult Function(String name) nameChanged,
     required TResult Function(String description) descriptionChanged,
     required TResult Function(int experiencePoints) experiencePointsChanged,
@@ -889,7 +933,8 @@ class _$_ImageChanged implements _ImageChanged {
     required TResult Function(_Initialized value) initialized,
     required TResult Function(_NameChanged value) nameChanged,
     required TResult Function(_DescriptionChanged value) descriptionChanged,
-    required TResult Function(_ExperiencePointsChanged value) experiencePointsChanged,
+    required TResult Function(_ExperiencePointsChanged value)
+        experiencePointsChanged,
     required TResult Function(_TagsChanged value) tagsChanged,
     required TResult Function(_ImageChanged value) imageChanged,
     required TResult Function(_Submitted value) submitted,
@@ -920,19 +965,21 @@ abstract class _ImageChanged implements AchievementManagementFormEvent {
   const factory _ImageChanged(File image) = _$_ImageChanged;
 
   File get image => throw _privateConstructorUsedError;
-
   @JsonKey(ignore: true)
-  _$ImageChangedCopyWith<_ImageChanged> get copyWith => throw _privateConstructorUsedError;
+  _$ImageChangedCopyWith<_ImageChanged> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class _$SubmittedCopyWith<$Res> {
-  factory _$SubmittedCopyWith(_Submitted value, $Res Function(_Submitted) then) =
+  factory _$SubmittedCopyWith(
+          _Submitted value, $Res Function(_Submitted) then) =
       __$SubmittedCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$SubmittedCopyWithImpl<$Res> extends _$AchievementManagementFormEventCopyWithImpl<$Res>
+class __$SubmittedCopyWithImpl<$Res>
+    extends _$AchievementManagementFormEventCopyWithImpl<$Res>
     implements _$SubmittedCopyWith<$Res> {
   __$SubmittedCopyWithImpl(_Submitted _value, $Res Function(_Submitted) _then)
       : super(_value, (v) => _then(v as _Submitted));
@@ -962,7 +1009,8 @@ class _$_Submitted implements _Submitted {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(Option<Achievement> achievementOption) initialized,
+    required TResult Function(Option<Achievement> achievementOption)
+        initialized,
     required TResult Function(String name) nameChanged,
     required TResult Function(String description) descriptionChanged,
     required TResult Function(int experiencePoints) experiencePointsChanged,
@@ -997,7 +1045,8 @@ class _$_Submitted implements _Submitted {
     required TResult Function(_Initialized value) initialized,
     required TResult Function(_NameChanged value) nameChanged,
     required TResult Function(_DescriptionChanged value) descriptionChanged,
-    required TResult Function(_ExperiencePointsChanged value) experiencePointsChanged,
+    required TResult Function(_ExperiencePointsChanged value)
+        experiencePointsChanged,
     required TResult Function(_TagsChanged value) tagsChanged,
     required TResult Function(_ImageChanged value) imageChanged,
     required TResult Function(_Submitted value) submitted,
@@ -1049,29 +1098,28 @@ class _$AchievementManagementFormStateTearOff {
 }
 
 /// @nodoc
-const $AchievementManagementFormState = _$AchievementManagementFormStateTearOff();
+const $AchievementManagementFormState =
+    _$AchievementManagementFormStateTearOff();
 
 /// @nodoc
 mixin _$AchievementManagementFormState {
   Achievement get achievement => throw _privateConstructorUsedError;
-
   bool get showErrorMessages => throw _privateConstructorUsedError;
-
   bool get isEditing => throw _privateConstructorUsedError;
-
   bool get isSubmitting => throw _privateConstructorUsedError;
-
-  Option<Either<Failure, Unit>> get failureOrSuccessOption => throw _privateConstructorUsedError;
+  Option<Either<Failure, Unit>> get failureOrSuccessOption =>
+      throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
-  $AchievementManagementFormStateCopyWith<AchievementManagementFormState> get copyWith =>
-      throw _privateConstructorUsedError;
+  $AchievementManagementFormStateCopyWith<AchievementManagementFormState>
+      get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $AchievementManagementFormStateCopyWith<$Res> {
   factory $AchievementManagementFormStateCopyWith(
-          AchievementManagementFormState value, $Res Function(AchievementManagementFormState) then) =
+          AchievementManagementFormState value,
+          $Res Function(AchievementManagementFormState) then) =
       _$AchievementManagementFormStateCopyWithImpl<$Res>;
   $Res call(
       {Achievement achievement,
@@ -1136,7 +1184,8 @@ class _$AchievementManagementFormStateCopyWithImpl<$Res>
 abstract class _$AchievementManagementFormStateCopyWith<$Res>
     implements $AchievementManagementFormStateCopyWith<$Res> {
   factory _$AchievementManagementFormStateCopyWith(
-          _AchievementManagementFormState value, $Res Function(_AchievementManagementFormState) then) =
+          _AchievementManagementFormState value,
+          $Res Function(_AchievementManagementFormState) then) =
       __$AchievementManagementFormStateCopyWithImpl<$Res>;
   @override
   $Res call(
@@ -1155,11 +1204,13 @@ class __$AchievementManagementFormStateCopyWithImpl<$Res>
     extends _$AchievementManagementFormStateCopyWithImpl<$Res>
     implements _$AchievementManagementFormStateCopyWith<$Res> {
   __$AchievementManagementFormStateCopyWithImpl(
-      _AchievementManagementFormState _value, $Res Function(_AchievementManagementFormState) _then)
+      _AchievementManagementFormState _value,
+      $Res Function(_AchievementManagementFormState) _then)
       : super(_value, (v) => _then(v as _AchievementManagementFormState));
 
   @override
-  _AchievementManagementFormState get _value => super._value as _AchievementManagementFormState;
+  _AchievementManagementFormState get _value =>
+      super._value as _AchievementManagementFormState;
 
   @override
   $Res call({
@@ -1196,7 +1247,8 @@ class __$AchievementManagementFormStateCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_AchievementManagementFormState implements _AchievementManagementFormState {
+class _$_AchievementManagementFormState
+    implements _AchievementManagementFormState {
   const _$_AchievementManagementFormState(
       {required this.achievement,
       required this.showErrorMessages,
@@ -1225,15 +1277,20 @@ class _$_AchievementManagementFormState implements _AchievementManagementFormSta
     return identical(this, other) ||
         (other is _AchievementManagementFormState &&
             (identical(other.achievement, achievement) ||
-                const DeepCollectionEquality().equals(other.achievement, achievement)) &&
+                const DeepCollectionEquality()
+                    .equals(other.achievement, achievement)) &&
             (identical(other.showErrorMessages, showErrorMessages) ||
-                const DeepCollectionEquality().equals(other.showErrorMessages, showErrorMessages)) &&
+                const DeepCollectionEquality()
+                    .equals(other.showErrorMessages, showErrorMessages)) &&
             (identical(other.isEditing, isEditing) ||
-                const DeepCollectionEquality().equals(other.isEditing, isEditing)) &&
+                const DeepCollectionEquality()
+                    .equals(other.isEditing, isEditing)) &&
             (identical(other.isSubmitting, isSubmitting) ||
-                const DeepCollectionEquality().equals(other.isSubmitting, isSubmitting)) &&
+                const DeepCollectionEquality()
+                    .equals(other.isSubmitting, isSubmitting)) &&
             (identical(other.failureOrSuccessOption, failureOrSuccessOption) ||
-                const DeepCollectionEquality().equals(other.failureOrSuccessOption, failureOrSuccessOption)));
+                const DeepCollectionEquality().equals(
+                    other.failureOrSuccessOption, failureOrSuccessOption)));
   }
 
   @override
@@ -1247,17 +1304,20 @@ class _$_AchievementManagementFormState implements _AchievementManagementFormSta
 
   @JsonKey(ignore: true)
   @override
-  _$AchievementManagementFormStateCopyWith<_AchievementManagementFormState> get copyWith =>
-      __$AchievementManagementFormStateCopyWithImpl<_AchievementManagementFormState>(this, _$identity);
+  _$AchievementManagementFormStateCopyWith<_AchievementManagementFormState>
+      get copyWith => __$AchievementManagementFormStateCopyWithImpl<
+          _AchievementManagementFormState>(this, _$identity);
 }
 
-abstract class _AchievementManagementFormState implements AchievementManagementFormState {
+abstract class _AchievementManagementFormState
+    implements AchievementManagementFormState {
   const factory _AchievementManagementFormState(
-      {required Achievement achievement,
-      required bool showErrorMessages,
-      required bool isEditing,
-      required bool isSubmitting,
-      required Option<Either<Failure, Unit>> failureOrSuccessOption}) = _$_AchievementManagementFormState;
+          {required Achievement achievement,
+          required bool showErrorMessages,
+          required bool isEditing,
+          required bool isSubmitting,
+          required Option<Either<Failure, Unit>> failureOrSuccessOption}) =
+      _$_AchievementManagementFormState;
 
   @override
   Achievement get achievement => throw _privateConstructorUsedError;
@@ -1265,15 +1325,13 @@ abstract class _AchievementManagementFormState implements AchievementManagementF
   bool get showErrorMessages => throw _privateConstructorUsedError;
   @override
   bool get isEditing => throw _privateConstructorUsedError;
-
   @override
   bool get isSubmitting => throw _privateConstructorUsedError;
-
   @override
-  Option<Either<Failure, Unit>> get failureOrSuccessOption => throw _privateConstructorUsedError;
-
+  Option<Either<Failure, Unit>> get failureOrSuccessOption =>
+      throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
-  _$AchievementManagementFormStateCopyWith<_AchievementManagementFormState> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$AchievementManagementFormStateCopyWith<_AchievementManagementFormState>
+      get copyWith => throw _privateConstructorUsedError;
 }

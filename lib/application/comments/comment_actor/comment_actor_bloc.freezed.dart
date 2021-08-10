@@ -56,27 +56,27 @@ mixin _$CommentActorEvent {
       throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
-  $CommentActorEventCopyWith<CommentActorEvent> get copyWith => throw _privateConstructorUsedError;
+  $CommentActorEventCopyWith<CommentActorEvent> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $CommentActorEventCopyWith<$Res> {
-  factory $CommentActorEventCopyWith(CommentActorEvent value, $Res Function(CommentActorEvent) then) =
+  factory $CommentActorEventCopyWith(
+          CommentActorEvent value, $Res Function(CommentActorEvent) then) =
       _$CommentActorEventCopyWithImpl<$Res>;
-
   $Res call({Comment comment, User currentUser});
 
   $CommentCopyWith<$Res> get comment;
-
   $UserCopyWith<$Res> get currentUser;
 }
 
 /// @nodoc
-class _$CommentActorEventCopyWithImpl<$Res> implements $CommentActorEventCopyWith<$Res> {
+class _$CommentActorEventCopyWithImpl<$Res>
+    implements $CommentActorEventCopyWith<$Res> {
   _$CommentActorEventCopyWithImpl(this._value, this._then);
 
   final CommentActorEvent _value;
-
   // ignore: unused_field
   final $Res Function(CommentActorEvent) _then;
 
@@ -113,15 +113,15 @@ class _$CommentActorEventCopyWithImpl<$Res> implements $CommentActorEventCopyWit
 }
 
 /// @nodoc
-abstract class _$DeletedCopyWith<$Res> implements $CommentActorEventCopyWith<$Res> {
-  factory _$DeletedCopyWith(_Deleted value, $Res Function(_Deleted) then) = __$DeletedCopyWithImpl<$Res>;
-
+abstract class _$DeletedCopyWith<$Res>
+    implements $CommentActorEventCopyWith<$Res> {
+  factory _$DeletedCopyWith(_Deleted value, $Res Function(_Deleted) then) =
+      __$DeletedCopyWithImpl<$Res>;
   @override
   $Res call({Comment comment, User currentUser});
 
   @override
   $CommentCopyWith<$Res> get comment;
-
   @override
   $UserCopyWith<$Res> get currentUser;
 }
@@ -173,9 +173,11 @@ class _$_Deleted implements _Deleted {
     return identical(this, other) ||
         (other is _Deleted &&
             (identical(other.comment, comment) ||
-                const DeepCollectionEquality().equals(other.comment, comment)) &&
+                const DeepCollectionEquality()
+                    .equals(other.comment, comment)) &&
             (identical(other.currentUser, currentUser) ||
-                const DeepCollectionEquality().equals(other.currentUser, currentUser)));
+                const DeepCollectionEquality()
+                    .equals(other.currentUser, currentUser)));
   }
 
   @override
@@ -186,7 +188,8 @@ class _$_Deleted implements _Deleted {
 
   @JsonKey(ignore: true)
   @override
-  _$DeletedCopyWith<_Deleted> get copyWith => __$DeletedCopyWithImpl<_Deleted>(this, _$identity);
+  _$DeletedCopyWith<_Deleted> get copyWith =>
+      __$DeletedCopyWithImpl<_Deleted>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -234,13 +237,12 @@ abstract class _Deleted implements CommentActorEvent {
 
   @override
   Comment get comment => throw _privateConstructorUsedError;
-
   @override
   User get currentUser => throw _privateConstructorUsedError;
-
   @override
   @JsonKey(ignore: true)
-  _$DeletedCopyWith<_Deleted> get copyWith => throw _privateConstructorUsedError;
+  _$DeletedCopyWith<_Deleted> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -309,23 +311,25 @@ mixin _$CommentActorState {
 
 /// @nodoc
 abstract class $CommentActorStateCopyWith<$Res> {
-  factory $CommentActorStateCopyWith(CommentActorState value, $Res Function(CommentActorState) then) =
+  factory $CommentActorStateCopyWith(
+          CommentActorState value, $Res Function(CommentActorState) then) =
       _$CommentActorStateCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class _$CommentActorStateCopyWithImpl<$Res> implements $CommentActorStateCopyWith<$Res> {
+class _$CommentActorStateCopyWithImpl<$Res>
+    implements $CommentActorStateCopyWith<$Res> {
   _$CommentActorStateCopyWithImpl(this._value, this._then);
 
   final CommentActorState _value;
-
   // ignore: unused_field
   final $Res Function(CommentActorState) _then;
 }
 
 /// @nodoc
 abstract class _$InitialCopyWith<$Res> {
-  factory _$InitialCopyWith(_Initial value, $Res Function(_Initial) then) = __$InitialCopyWithImpl<$Res>;
+  factory _$InitialCopyWith(_Initial value, $Res Function(_Initial) then) =
+      __$InitialCopyWithImpl<$Res>;
 }
 
 /// @nodoc
@@ -415,14 +419,17 @@ abstract class _Initial implements CommentActorState {
 
 /// @nodoc
 abstract class _$ActionInProgressCopyWith<$Res> {
-  factory _$ActionInProgressCopyWith(_ActionInProgress value, $Res Function(_ActionInProgress) then) =
+  factory _$ActionInProgressCopyWith(
+          _ActionInProgress value, $Res Function(_ActionInProgress) then) =
       __$ActionInProgressCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$ActionInProgressCopyWithImpl<$Res> extends _$CommentActorStateCopyWithImpl<$Res>
+class __$ActionInProgressCopyWithImpl<$Res>
+    extends _$CommentActorStateCopyWithImpl<$Res>
     implements _$ActionInProgressCopyWith<$Res> {
-  __$ActionInProgressCopyWithImpl(_ActionInProgress _value, $Res Function(_ActionInProgress) _then)
+  __$ActionInProgressCopyWithImpl(
+      _ActionInProgress _value, $Res Function(_ActionInProgress) _then)
       : super(_value, (v) => _then(v as _ActionInProgress));
 
   @override
@@ -506,14 +513,17 @@ abstract class _ActionInProgress implements CommentActorState {
 
 /// @nodoc
 abstract class _$DeletionSuccessCopyWith<$Res> {
-  factory _$DeletionSuccessCopyWith(_DeletionSuccess value, $Res Function(_DeletionSuccess) then) =
+  factory _$DeletionSuccessCopyWith(
+          _DeletionSuccess value, $Res Function(_DeletionSuccess) then) =
       __$DeletionSuccessCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$DeletionSuccessCopyWithImpl<$Res> extends _$CommentActorStateCopyWithImpl<$Res>
+class __$DeletionSuccessCopyWithImpl<$Res>
+    extends _$CommentActorStateCopyWithImpl<$Res>
     implements _$DeletionSuccessCopyWith<$Res> {
-  __$DeletionSuccessCopyWithImpl(_DeletionSuccess _value, $Res Function(_DeletionSuccess) _then)
+  __$DeletionSuccessCopyWithImpl(
+      _DeletionSuccess _value, $Res Function(_DeletionSuccess) _then)
       : super(_value, (v) => _then(v as _DeletionSuccess));
 
   @override
@@ -597,18 +607,20 @@ abstract class _DeletionSuccess implements CommentActorState {
 
 /// @nodoc
 abstract class _$DeletionFailureCopyWith<$Res> {
-  factory _$DeletionFailureCopyWith(_DeletionFailure value, $Res Function(_DeletionFailure) then) =
+  factory _$DeletionFailureCopyWith(
+          _DeletionFailure value, $Res Function(_DeletionFailure) then) =
       __$DeletionFailureCopyWithImpl<$Res>;
-
   $Res call({Failure<dynamic> failure});
 
   $FailureCopyWith<dynamic, $Res> get failure;
 }
 
 /// @nodoc
-class __$DeletionFailureCopyWithImpl<$Res> extends _$CommentActorStateCopyWithImpl<$Res>
+class __$DeletionFailureCopyWithImpl<$Res>
+    extends _$CommentActorStateCopyWithImpl<$Res>
     implements _$DeletionFailureCopyWith<$Res> {
-  __$DeletionFailureCopyWithImpl(_DeletionFailure _value, $Res Function(_DeletionFailure) _then)
+  __$DeletionFailureCopyWithImpl(
+      _DeletionFailure _value, $Res Function(_DeletionFailure) _then)
       : super(_value, (v) => _then(v as _DeletionFailure));
 
   @override
@@ -656,7 +668,8 @@ class _$_DeletionFailure implements _DeletionFailure {
   }
 
   @override
-  int get hashCode => runtimeType.hashCode ^ const DeepCollectionEquality().hash(failure);
+  int get hashCode =>
+      runtimeType.hashCode ^ const DeepCollectionEquality().hash(failure);
 
   @JsonKey(ignore: true)
   @override
@@ -720,7 +733,7 @@ abstract class _DeletionFailure implements CommentActorState {
   const factory _DeletionFailure(Failure<dynamic> failure) = _$_DeletionFailure;
 
   Failure<dynamic> get failure => throw _privateConstructorUsedError;
-
   @JsonKey(ignore: true)
-  _$DeletionFailureCopyWith<_DeletionFailure> get copyWith => throw _privateConstructorUsedError;
+  _$DeletionFailureCopyWith<_DeletionFailure> get copyWith =>
+      throw _privateConstructorUsedError;
 }

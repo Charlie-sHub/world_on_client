@@ -85,6 +85,8 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Invalid difficulty value"),
         "difficultyQuestion": MessageLookupByLibrary.simpleMessage(
             "How difficult was the experience?"),
+        "difficultyShowCase": MessageLookupByLibrary.simpleMessage(
+            "How difficult will the experience be?"),
         "dismissFromLog": MessageLookupByLibrary.simpleMessage("Dismiss"),
         "done": MessageLookupByLibrary.simpleMessage("Done"),
         "doneBy": MessageLookupByLibrary.simpleMessage("Done by: "),
@@ -193,6 +195,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "mainFeedTitle": MessageLookupByLibrary.simpleMessage("Discover"),
         "mapMarkerSnippet":
             MessageLookupByLibrary.simpleMessage("Tap to complete"),
+        "mapShowCase": MessageLookupByLibrary.simpleMessage(
+            "What is the initial location of the experience?"),
         "mapTab": MessageLookupByLibrary.simpleMessage("Map"),
         "multiImagePickerAllViewTitle":
             MessageLookupByLibrary.simpleMessage("All Photos"),
@@ -256,6 +260,8 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Objective\'s location"),
         "objectivesExplanation": MessageLookupByLibrary.simpleMessage(
             "Check the objectives as you complete them"),
+        "objectivesShowCase": MessageLookupByLibrary.simpleMessage(
+            "Create the objectives of the experience or in other words the steps to follows"),
         "objectivesTab": MessageLookupByLibrary.simpleMessage("Objectives"),
         "optional": MessageLookupByLibrary.simpleMessage("Optional"),
         "owned": MessageLookupByLibrary.simpleMessage("Owned"),
@@ -348,6 +354,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "tagCreationNameStringWithInvalidCharacters":
             MessageLookupByLibrary.simpleMessage(
                 "The Tag has invalid characters"),
+        "tagCreationShowCase": MessageLookupByLibrary.simpleMessage(
+            "Create or look for tags that describe the experience you have created"),
         "tagCreationSuccessMessage":
             MessageLookupByLibrary.simpleMessage("The Tag was created"),
         "tagCreationTitle":
@@ -376,7 +384,7 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Please register first"),
         "user": MessageLookupByLibrary.simpleMessage("User"),
         "userLeverShowCase": MessageLookupByLibrary.simpleMessage(
-            "User\'s level, it goes up with creating nad doing experiences"),
+            "User\'s level, it goes up with creating and doing experiences"),
         "username": MessageLookupByLibrary.simpleMessage("Username"),
         "usernameAlreadyInUse": MessageLookupByLibrary.simpleMessage(
             "The username is already in use"),

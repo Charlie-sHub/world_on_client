@@ -44,23 +44,29 @@ mixin _$PrimitiveObjective {
   File? get imageFile => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
-  $PrimitiveObjectiveCopyWith<PrimitiveObjective> get copyWith => throw _privateConstructorUsedError;
+  $PrimitiveObjectiveCopyWith<PrimitiveObjective> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $PrimitiveObjectiveCopyWith<$Res> {
-  factory $PrimitiveObjectiveCopyWith(PrimitiveObjective value, $Res Function(PrimitiveObjective) then) =
+  factory $PrimitiveObjectiveCopyWith(
+          PrimitiveObjective value, $Res Function(PrimitiveObjective) then) =
       _$PrimitiveObjectiveCopyWithImpl<$Res>;
-
-  $Res call({UniqueId id, String description, double latitude, double longitude, File? imageFile});
+  $Res call(
+      {UniqueId id,
+      String description,
+      double latitude,
+      double longitude,
+      File? imageFile});
 }
 
 /// @nodoc
-class _$PrimitiveObjectiveCopyWithImpl<$Res> implements $PrimitiveObjectiveCopyWith<$Res> {
+class _$PrimitiveObjectiveCopyWithImpl<$Res>
+    implements $PrimitiveObjectiveCopyWith<$Res> {
   _$PrimitiveObjectiveCopyWithImpl(this._value, this._then);
 
   final PrimitiveObjective _value;
-
   // ignore: unused_field
   final $Res Function(PrimitiveObjective) _then;
 
@@ -98,18 +104,26 @@ class _$PrimitiveObjectiveCopyWithImpl<$Res> implements $PrimitiveObjectiveCopyW
 }
 
 /// @nodoc
-abstract class _$PrimitiveObjectiveCopyWith<$Res> implements $PrimitiveObjectiveCopyWith<$Res> {
-  factory _$PrimitiveObjectiveCopyWith(_PrimitiveObjective value, $Res Function(_PrimitiveObjective) then) =
+abstract class _$PrimitiveObjectiveCopyWith<$Res>
+    implements $PrimitiveObjectiveCopyWith<$Res> {
+  factory _$PrimitiveObjectiveCopyWith(
+          _PrimitiveObjective value, $Res Function(_PrimitiveObjective) then) =
       __$PrimitiveObjectiveCopyWithImpl<$Res>;
-
   @override
-  $Res call({UniqueId id, String description, double latitude, double longitude, File? imageFile});
+  $Res call(
+      {UniqueId id,
+      String description,
+      double latitude,
+      double longitude,
+      File? imageFile});
 }
 
 /// @nodoc
-class __$PrimitiveObjectiveCopyWithImpl<$Res> extends _$PrimitiveObjectiveCopyWithImpl<$Res>
+class __$PrimitiveObjectiveCopyWithImpl<$Res>
+    extends _$PrimitiveObjectiveCopyWithImpl<$Res>
     implements _$PrimitiveObjectiveCopyWith<$Res> {
-  __$PrimitiveObjectiveCopyWithImpl(_PrimitiveObjective _value, $Res Function(_PrimitiveObjective) _then)
+  __$PrimitiveObjectiveCopyWithImpl(
+      _PrimitiveObjective _value, $Res Function(_PrimitiveObjective) _then)
       : super(_value, (v) => _then(v as _PrimitiveObjective));
 
   @override
@@ -179,15 +193,20 @@ class _$_PrimitiveObjective extends _PrimitiveObjective {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other is _PrimitiveObjective &&
-            (identical(other.id, id) || const DeepCollectionEquality().equals(other.id, id)) &&
+            (identical(other.id, id) ||
+                const DeepCollectionEquality().equals(other.id, id)) &&
             (identical(other.description, description) ||
-                const DeepCollectionEquality().equals(other.description, description)) &&
+                const DeepCollectionEquality()
+                    .equals(other.description, description)) &&
             (identical(other.latitude, latitude) ||
-                const DeepCollectionEquality().equals(other.latitude, latitude)) &&
+                const DeepCollectionEquality()
+                    .equals(other.latitude, latitude)) &&
             (identical(other.longitude, longitude) ||
-                const DeepCollectionEquality().equals(other.longitude, longitude)) &&
+                const DeepCollectionEquality()
+                    .equals(other.longitude, longitude)) &&
             (identical(other.imageFile, imageFile) ||
-                const DeepCollectionEquality().equals(other.imageFile, imageFile)));
+                const DeepCollectionEquality()
+                    .equals(other.imageFile, imageFile)));
   }
 
   @override
@@ -222,11 +241,10 @@ abstract class _PrimitiveObjective extends PrimitiveObjective {
   double get latitude => throw _privateConstructorUsedError;
   @override
   double get longitude => throw _privateConstructorUsedError;
-
   @override
   File? get imageFile => throw _privateConstructorUsedError;
-
   @override
   @JsonKey(ignore: true)
-  _$PrimitiveObjectiveCopyWith<_PrimitiveObjective> get copyWith => throw _privateConstructorUsedError;
+  _$PrimitiveObjectiveCopyWith<_PrimitiveObjective> get copyWith =>
+      throw _privateConstructorUsedError;
 }

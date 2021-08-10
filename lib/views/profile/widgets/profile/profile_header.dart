@@ -8,11 +8,14 @@ import 'package:worldon/views/profile/widgets/profile/edit_profile_button.dart';
 import 'package:worldon/views/profile/widgets/profile/profile_avatar_stack.dart';
 
 class ProfileHeader extends SliverPersistentHeaderDelegate {
+  final GlobalKey<State<StatefulWidget>> userLevelShowKey;
+
   const ProfileHeader({
     required this.user,
     required this.isOwn,
     required this.maxExtent,
     required this.minExtent,
+    required this.userLevelShowKey,
   });
 
   final User user;
@@ -33,7 +36,10 @@ class ProfileHeader extends SliverPersistentHeaderDelegate {
       children: <Widget>[
         Column(
           children: [
-            ProfileAvatarStack(user: user),
+            ProfileAvatarStack(
+              user: user,
+              showKey: userLevelShowKey,
+            ),
             FittedBox(
               child: Column(
                 children: [

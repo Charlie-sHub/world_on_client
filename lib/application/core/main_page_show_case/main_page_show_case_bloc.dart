@@ -5,8 +5,7 @@ import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:injectable/injectable.dart';
 
 part 'main_page_show_case_bloc.freezed.dart';
-part 'main_page_show_case_event.dart';.dart';
-
+part 'main_page_show_case_event.dart';
 part 'main_page_show_case_state.dart';
 
 @injectable
@@ -25,9 +24,7 @@ class MainPageShowCaseBloc extends Bloc<MainPageShowCaseEvent, MainPageShowCaseS
     if (event.isNewUser) {
       yield const MainPageShowCaseState.show();
     } else {
-      yield const MainPageShowCaseState.show();
-      // TODO: yield showNot after tests
-      // yield const MainPageShowCaseState.showNot();
+      yield const MainPageShowCaseState.showNot();
     }
   }
 

@@ -62,14 +62,15 @@ mixin _$SimpleUserDto {
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $SimpleUserDtoCopyWith<SimpleUserDto> get copyWith => throw _privateConstructorUsedError;
+  $SimpleUserDtoCopyWith<SimpleUserDto> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $SimpleUserDtoCopyWith<$Res> {
-  factory $SimpleUserDtoCopyWith(SimpleUserDto value, $Res Function(SimpleUserDto) then) =
+  factory $SimpleUserDtoCopyWith(
+          SimpleUserDto value, $Res Function(SimpleUserDto) then) =
       _$SimpleUserDtoCopyWithImpl<$Res>;
-
   $Res call(
       {String id,
       String name,
@@ -82,11 +83,11 @@ abstract class $SimpleUserDtoCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$SimpleUserDtoCopyWithImpl<$Res> implements $SimpleUserDtoCopyWith<$Res> {
+class _$SimpleUserDtoCopyWithImpl<$Res>
+    implements $SimpleUserDtoCopyWith<$Res> {
   _$SimpleUserDtoCopyWithImpl(this._value, this._then);
 
   final SimpleUserDto _value;
-
   // ignore: unused_field
   final $Res Function(SimpleUserDto) _then;
 
@@ -139,10 +140,11 @@ class _$SimpleUserDtoCopyWithImpl<$Res> implements $SimpleUserDtoCopyWith<$Res> 
 }
 
 /// @nodoc
-abstract class _$SimpleUserDtoCopyWith<$Res> implements $SimpleUserDtoCopyWith<$Res> {
-  factory _$SimpleUserDtoCopyWith(_SimpleUserDto value, $Res Function(_SimpleUserDto) then) =
+abstract class _$SimpleUserDtoCopyWith<$Res>
+    implements $SimpleUserDtoCopyWith<$Res> {
+  factory _$SimpleUserDtoCopyWith(
+          _SimpleUserDto value, $Res Function(_SimpleUserDto) then) =
       __$SimpleUserDtoCopyWithImpl<$Res>;
-
   @override
   $Res call(
       {String id,
@@ -156,9 +158,11 @@ abstract class _$SimpleUserDtoCopyWith<$Res> implements $SimpleUserDtoCopyWith<$
 }
 
 /// @nodoc
-class __$SimpleUserDtoCopyWithImpl<$Res> extends _$SimpleUserDtoCopyWithImpl<$Res>
+class __$SimpleUserDtoCopyWithImpl<$Res>
+    extends _$SimpleUserDtoCopyWithImpl<$Res>
     implements _$SimpleUserDtoCopyWith<$Res> {
-  __$SimpleUserDtoCopyWithImpl(_SimpleUserDto _value, $Res Function(_SimpleUserDto) _then)
+  __$SimpleUserDtoCopyWithImpl(
+      _SimpleUserDto _value, $Res Function(_SimpleUserDto) _then)
       : super(_value, (v) => _then(v as _SimpleUserDto));
 
   @override
@@ -215,14 +219,15 @@ class __$SimpleUserDtoCopyWithImpl<$Res> extends _$SimpleUserDtoCopyWithImpl<$Re
 /// @nodoc
 @JsonSerializable()
 class _$_SimpleUserDto extends _SimpleUserDto {
-  const _$_SimpleUserDto({required this.id,
-    required this.name,
-    required this.username,
-    required this.imageURL,
-    required this.level,
-    required this.experiencePoints,
-    required this.adminPowers,
-    required this.followersAmount})
+  const _$_SimpleUserDto(
+      {required this.id,
+      required this.name,
+      required this.username,
+      required this.imageURL,
+      required this.level,
+      required this.experiencePoints,
+      required this.adminPowers,
+      required this.followersAmount})
       : super._();
 
   factory _$_SimpleUserDto.fromJson(Map<String, dynamic> json) =>
@@ -254,19 +259,27 @@ class _$_SimpleUserDto extends _SimpleUserDto {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other is _SimpleUserDto &&
-            (identical(other.id, id) || const DeepCollectionEquality().equals(other.id, id)) &&
-            (identical(other.name, name) || const DeepCollectionEquality().equals(other.name, name)) &&
+            (identical(other.id, id) ||
+                const DeepCollectionEquality().equals(other.id, id)) &&
+            (identical(other.name, name) ||
+                const DeepCollectionEquality().equals(other.name, name)) &&
             (identical(other.username, username) ||
-                const DeepCollectionEquality().equals(other.username, username)) &&
+                const DeepCollectionEquality()
+                    .equals(other.username, username)) &&
             (identical(other.imageURL, imageURL) ||
-                const DeepCollectionEquality().equals(other.imageURL, imageURL)) &&
-            (identical(other.level, level) || const DeepCollectionEquality().equals(other.level, level)) &&
+                const DeepCollectionEquality()
+                    .equals(other.imageURL, imageURL)) &&
+            (identical(other.level, level) ||
+                const DeepCollectionEquality().equals(other.level, level)) &&
             (identical(other.experiencePoints, experiencePoints) ||
-                const DeepCollectionEquality().equals(other.experiencePoints, experiencePoints)) &&
+                const DeepCollectionEquality()
+                    .equals(other.experiencePoints, experiencePoints)) &&
             (identical(other.adminPowers, adminPowers) ||
-                const DeepCollectionEquality().equals(other.adminPowers, adminPowers)) &&
+                const DeepCollectionEquality()
+                    .equals(other.adminPowers, adminPowers)) &&
             (identical(other.followersAmount, followersAmount) ||
-                const DeepCollectionEquality().equals(other.followersAmount, followersAmount)));
+                const DeepCollectionEquality()
+                    .equals(other.followersAmount, followersAmount)));
   }
 
   @override
@@ -293,43 +306,38 @@ class _$_SimpleUserDto extends _SimpleUserDto {
 }
 
 abstract class _SimpleUserDto extends SimpleUserDto {
-  const factory _SimpleUserDto({required String id,
-    required String name,
-    required String username,
-    required String imageURL,
-    required int level,
-    required int experiencePoints,
-    required bool adminPowers,
-    required int followersAmount}) = _$_SimpleUserDto;
-
+  const factory _SimpleUserDto(
+      {required String id,
+      required String name,
+      required String username,
+      required String imageURL,
+      required int level,
+      required int experiencePoints,
+      required bool adminPowers,
+      required int followersAmount}) = _$_SimpleUserDto;
   const _SimpleUserDto._() : super._();
 
   factory _SimpleUserDto.fromJson(Map<String, dynamic> json) =
-  _$_SimpleUserDto.fromJson;
+      _$_SimpleUserDto.fromJson;
 
   @override
   String get id => throw _privateConstructorUsedError;
-
   @override
   String get name => throw _privateConstructorUsedError;
-
   @override
   String get username => throw _privateConstructorUsedError;
-
   @override
   String get imageURL => throw _privateConstructorUsedError;
-
   @override
   int get level => throw _privateConstructorUsedError;
   @override
   int get experiencePoints => throw _privateConstructorUsedError;
   @override
   bool get adminPowers => throw _privateConstructorUsedError;
-
   @override
   int get followersAmount => throw _privateConstructorUsedError;
-
   @override
   @JsonKey(ignore: true)
-  _$SimpleUserDtoCopyWith<_SimpleUserDto> get copyWith => throw _privateConstructorUsedError;
+  _$SimpleUserDtoCopyWith<_SimpleUserDto> get copyWith =>
+      throw _privateConstructorUsedError;
 }

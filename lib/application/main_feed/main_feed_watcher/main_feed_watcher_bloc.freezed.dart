@@ -20,7 +20,8 @@ class _$MainFeedWatcherEventTearOff {
     return const _WatchMainFeedStarted();
   }
 
-  _ResultsReceived resultsReceived(Either<Failure, KtList<Experience>> failureOrExperiences) {
+  _ResultsReceived resultsReceived(
+      Either<Failure, KtList<Experience>> failureOrExperiences) {
     return _ResultsReceived(
       failureOrExperiences,
     );
@@ -35,13 +36,16 @@ mixin _$MainFeedWatcherEvent {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() watchMainFeedStarted,
-    required TResult Function(Either<Failure, KtList<Experience>> failureOrExperiences) resultsReceived,
+    required TResult Function(
+            Either<Failure, KtList<Experience>> failureOrExperiences)
+        resultsReceived,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? watchMainFeedStarted,
-    TResult Function(Either<Failure, KtList<Experience>> failureOrExperiences)? resultsReceived,
+    TResult Function(Either<Failure, KtList<Experience>> failureOrExperiences)?
+        resultsReceived,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -62,30 +66,31 @@ mixin _$MainFeedWatcherEvent {
 
 /// @nodoc
 abstract class $MainFeedWatcherEventCopyWith<$Res> {
-  factory $MainFeedWatcherEventCopyWith(
-          MainFeedWatcherEvent value, $Res Function(MainFeedWatcherEvent) then) =
+  factory $MainFeedWatcherEventCopyWith(MainFeedWatcherEvent value,
+          $Res Function(MainFeedWatcherEvent) then) =
       _$MainFeedWatcherEventCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class _$MainFeedWatcherEventCopyWithImpl<$Res> implements $MainFeedWatcherEventCopyWith<$Res> {
+class _$MainFeedWatcherEventCopyWithImpl<$Res>
+    implements $MainFeedWatcherEventCopyWith<$Res> {
   _$MainFeedWatcherEventCopyWithImpl(this._value, this._then);
 
   final MainFeedWatcherEvent _value;
-
   // ignore: unused_field
   final $Res Function(MainFeedWatcherEvent) _then;
 }
 
 /// @nodoc
 abstract class _$WatchMainFeedStartedCopyWith<$Res> {
-  factory _$WatchMainFeedStartedCopyWith(
-          _WatchMainFeedStarted value, $Res Function(_WatchMainFeedStarted) then) =
+  factory _$WatchMainFeedStartedCopyWith(_WatchMainFeedStarted value,
+          $Res Function(_WatchMainFeedStarted) then) =
       __$WatchMainFeedStartedCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$WatchMainFeedStartedCopyWithImpl<$Res> extends _$MainFeedWatcherEventCopyWithImpl<$Res>
+class __$WatchMainFeedStartedCopyWithImpl<$Res>
+    extends _$MainFeedWatcherEventCopyWithImpl<$Res>
     implements _$WatchMainFeedStartedCopyWith<$Res> {
   __$WatchMainFeedStartedCopyWithImpl(
       _WatchMainFeedStarted _value, $Res Function(_WatchMainFeedStarted) _then)
@@ -117,7 +122,9 @@ class _$_WatchMainFeedStarted implements _WatchMainFeedStarted {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() watchMainFeedStarted,
-    required TResult Function(Either<Failure, KtList<Experience>> failureOrExperiences) resultsReceived,
+    required TResult Function(
+            Either<Failure, KtList<Experience>> failureOrExperiences)
+        resultsReceived,
   }) {
     return watchMainFeedStarted();
   }
@@ -126,7 +133,8 @@ class _$_WatchMainFeedStarted implements _WatchMainFeedStarted {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? watchMainFeedStarted,
-    TResult Function(Either<Failure, KtList<Experience>> failureOrExperiences)? resultsReceived,
+    TResult Function(Either<Failure, KtList<Experience>> failureOrExperiences)?
+        resultsReceived,
     required TResult orElse(),
   }) {
     if (watchMainFeedStarted != null) {
@@ -164,16 +172,18 @@ abstract class _WatchMainFeedStarted implements MainFeedWatcherEvent {
 
 /// @nodoc
 abstract class _$ResultsReceivedCopyWith<$Res> {
-  factory _$ResultsReceivedCopyWith(_ResultsReceived value, $Res Function(_ResultsReceived) then) =
+  factory _$ResultsReceivedCopyWith(
+          _ResultsReceived value, $Res Function(_ResultsReceived) then) =
       __$ResultsReceivedCopyWithImpl<$Res>;
-
   $Res call({Either<Failure, KtList<Experience>> failureOrExperiences});
 }
 
 /// @nodoc
-class __$ResultsReceivedCopyWithImpl<$Res> extends _$MainFeedWatcherEventCopyWithImpl<$Res>
+class __$ResultsReceivedCopyWithImpl<$Res>
+    extends _$MainFeedWatcherEventCopyWithImpl<$Res>
     implements _$ResultsReceivedCopyWith<$Res> {
-  __$ResultsReceivedCopyWithImpl(_ResultsReceived _value, $Res Function(_ResultsReceived) _then)
+  __$ResultsReceivedCopyWithImpl(
+      _ResultsReceived _value, $Res Function(_ResultsReceived) _then)
       : super(_value, (v) => _then(v as _ResultsReceived));
 
   @override
@@ -210,11 +220,14 @@ class _$_ResultsReceived implements _ResultsReceived {
     return identical(this, other) ||
         (other is _ResultsReceived &&
             (identical(other.failureOrExperiences, failureOrExperiences) ||
-                const DeepCollectionEquality().equals(other.failureOrExperiences, failureOrExperiences)));
+                const DeepCollectionEquality()
+                    .equals(other.failureOrExperiences, failureOrExperiences)));
   }
 
   @override
-  int get hashCode => runtimeType.hashCode ^ const DeepCollectionEquality().hash(failureOrExperiences);
+  int get hashCode =>
+      runtimeType.hashCode ^
+      const DeepCollectionEquality().hash(failureOrExperiences);
 
   @JsonKey(ignore: true)
   @override
@@ -225,7 +238,9 @@ class _$_ResultsReceived implements _ResultsReceived {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() watchMainFeedStarted,
-    required TResult Function(Either<Failure, KtList<Experience>> failureOrExperiences) resultsReceived,
+    required TResult Function(
+            Either<Failure, KtList<Experience>> failureOrExperiences)
+        resultsReceived,
   }) {
     return resultsReceived(failureOrExperiences);
   }
@@ -234,7 +249,8 @@ class _$_ResultsReceived implements _ResultsReceived {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? watchMainFeedStarted,
-    TResult Function(Either<Failure, KtList<Experience>> failureOrExperiences)? resultsReceived,
+    TResult Function(Either<Failure, KtList<Experience>> failureOrExperiences)?
+        resultsReceived,
     required TResult orElse(),
   }) {
     if (resultsReceived != null) {
@@ -267,13 +283,15 @@ class _$_ResultsReceived implements _ResultsReceived {
 }
 
 abstract class _ResultsReceived implements MainFeedWatcherEvent {
-  const factory _ResultsReceived(Either<Failure, KtList<Experience>> failureOrExperiences) =
+  const factory _ResultsReceived(
+          Either<Failure, KtList<Experience>> failureOrExperiences) =
       _$_ResultsReceived;
 
-  Either<Failure, KtList<Experience>> get failureOrExperiences => throw _privateConstructorUsedError;
-
+  Either<Failure, KtList<Experience>> get failureOrExperiences =>
+      throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  _$ResultsReceivedCopyWith<_ResultsReceived> get copyWith => throw _privateConstructorUsedError;
+  _$ResultsReceivedCopyWith<_ResultsReceived> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -344,28 +362,30 @@ mixin _$MainFeedWatcherState {
 
 /// @nodoc
 abstract class $MainFeedWatcherStateCopyWith<$Res> {
-  factory $MainFeedWatcherStateCopyWith(
-          MainFeedWatcherState value, $Res Function(MainFeedWatcherState) then) =
+  factory $MainFeedWatcherStateCopyWith(MainFeedWatcherState value,
+          $Res Function(MainFeedWatcherState) then) =
       _$MainFeedWatcherStateCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class _$MainFeedWatcherStateCopyWithImpl<$Res> implements $MainFeedWatcherStateCopyWith<$Res> {
+class _$MainFeedWatcherStateCopyWithImpl<$Res>
+    implements $MainFeedWatcherStateCopyWith<$Res> {
   _$MainFeedWatcherStateCopyWithImpl(this._value, this._then);
 
   final MainFeedWatcherState _value;
-
   // ignore: unused_field
   final $Res Function(MainFeedWatcherState) _then;
 }
 
 /// @nodoc
 abstract class _$InitialCopyWith<$Res> {
-  factory _$InitialCopyWith(_Initial value, $Res Function(_Initial) then) = __$InitialCopyWithImpl<$Res>;
+  factory _$InitialCopyWith(_Initial value, $Res Function(_Initial) then) =
+      __$InitialCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$InitialCopyWithImpl<$Res> extends _$MainFeedWatcherStateCopyWithImpl<$Res>
+class __$InitialCopyWithImpl<$Res>
+    extends _$MainFeedWatcherStateCopyWithImpl<$Res>
     implements _$InitialCopyWith<$Res> {
   __$InitialCopyWithImpl(_Initial _value, $Res Function(_Initial) _then)
       : super(_value, (v) => _then(v as _Initial));
@@ -451,14 +471,17 @@ abstract class _Initial implements MainFeedWatcherState {
 
 /// @nodoc
 abstract class _$LoadInProgressCopyWith<$Res> {
-  factory _$LoadInProgressCopyWith(_LoadInProgress value, $Res Function(_LoadInProgress) then) =
+  factory _$LoadInProgressCopyWith(
+          _LoadInProgress value, $Res Function(_LoadInProgress) then) =
       __$LoadInProgressCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$LoadInProgressCopyWithImpl<$Res> extends _$MainFeedWatcherStateCopyWithImpl<$Res>
+class __$LoadInProgressCopyWithImpl<$Res>
+    extends _$MainFeedWatcherStateCopyWithImpl<$Res>
     implements _$LoadInProgressCopyWith<$Res> {
-  __$LoadInProgressCopyWithImpl(_LoadInProgress _value, $Res Function(_LoadInProgress) _then)
+  __$LoadInProgressCopyWithImpl(
+      _LoadInProgress _value, $Res Function(_LoadInProgress) _then)
       : super(_value, (v) => _then(v as _LoadInProgress));
 
   @override
@@ -542,16 +565,18 @@ abstract class _LoadInProgress implements MainFeedWatcherState {
 
 /// @nodoc
 abstract class _$LoadSuccessCopyWith<$Res> {
-  factory _$LoadSuccessCopyWith(_LoadSuccess value, $Res Function(_LoadSuccess) then) =
+  factory _$LoadSuccessCopyWith(
+          _LoadSuccess value, $Res Function(_LoadSuccess) then) =
       __$LoadSuccessCopyWithImpl<$Res>;
-
   $Res call({KtList<Experience> experiences});
 }
 
 /// @nodoc
-class __$LoadSuccessCopyWithImpl<$Res> extends _$MainFeedWatcherStateCopyWithImpl<$Res>
+class __$LoadSuccessCopyWithImpl<$Res>
+    extends _$MainFeedWatcherStateCopyWithImpl<$Res>
     implements _$LoadSuccessCopyWith<$Res> {
-  __$LoadSuccessCopyWithImpl(_LoadSuccess _value, $Res Function(_LoadSuccess) _then)
+  __$LoadSuccessCopyWithImpl(
+      _LoadSuccess _value, $Res Function(_LoadSuccess) _then)
       : super(_value, (v) => _then(v as _LoadSuccess));
 
   @override
@@ -588,11 +613,13 @@ class _$_LoadSuccess implements _LoadSuccess {
     return identical(this, other) ||
         (other is _LoadSuccess &&
             (identical(other.experiences, experiences) ||
-                const DeepCollectionEquality().equals(other.experiences, experiences)));
+                const DeepCollectionEquality()
+                    .equals(other.experiences, experiences)));
   }
 
   @override
-  int get hashCode => runtimeType.hashCode ^ const DeepCollectionEquality().hash(experiences);
+  int get hashCode =>
+      runtimeType.hashCode ^ const DeepCollectionEquality().hash(experiences);
 
   @JsonKey(ignore: true)
   @override
@@ -656,25 +683,27 @@ abstract class _LoadSuccess implements MainFeedWatcherState {
   const factory _LoadSuccess(KtList<Experience> experiences) = _$_LoadSuccess;
 
   KtList<Experience> get experiences => throw _privateConstructorUsedError;
-
   @JsonKey(ignore: true)
-  _$LoadSuccessCopyWith<_LoadSuccess> get copyWith => throw _privateConstructorUsedError;
+  _$LoadSuccessCopyWith<_LoadSuccess> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class _$LoadFailureCopyWith<$Res> {
-  factory _$LoadFailureCopyWith(_LoadFailure value, $Res Function(_LoadFailure) then) =
+  factory _$LoadFailureCopyWith(
+          _LoadFailure value, $Res Function(_LoadFailure) then) =
       __$LoadFailureCopyWithImpl<$Res>;
-
   $Res call({Failure<dynamic> failure});
 
   $FailureCopyWith<dynamic, $Res> get failure;
 }
 
 /// @nodoc
-class __$LoadFailureCopyWithImpl<$Res> extends _$MainFeedWatcherStateCopyWithImpl<$Res>
+class __$LoadFailureCopyWithImpl<$Res>
+    extends _$MainFeedWatcherStateCopyWithImpl<$Res>
     implements _$LoadFailureCopyWith<$Res> {
-  __$LoadFailureCopyWithImpl(_LoadFailure _value, $Res Function(_LoadFailure) _then)
+  __$LoadFailureCopyWithImpl(
+      _LoadFailure _value, $Res Function(_LoadFailure) _then)
       : super(_value, (v) => _then(v as _LoadFailure));
 
   @override
@@ -722,7 +751,8 @@ class _$_LoadFailure implements _LoadFailure {
   }
 
   @override
-  int get hashCode => runtimeType.hashCode ^ const DeepCollectionEquality().hash(failure);
+  int get hashCode =>
+      runtimeType.hashCode ^ const DeepCollectionEquality().hash(failure);
 
   @JsonKey(ignore: true)
   @override
@@ -786,7 +816,7 @@ abstract class _LoadFailure implements MainFeedWatcherState {
   const factory _LoadFailure(Failure<dynamic> failure) = _$_LoadFailure;
 
   Failure<dynamic> get failure => throw _privateConstructorUsedError;
-
   @JsonKey(ignore: true)
-  _$LoadFailureCopyWith<_LoadFailure> get copyWith => throw _privateConstructorUsedError;
+  _$LoadFailureCopyWith<_LoadFailure> get copyWith =>
+      throw _privateConstructorUsedError;
 }

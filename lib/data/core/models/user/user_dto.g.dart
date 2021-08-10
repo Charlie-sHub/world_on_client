@@ -13,7 +13,8 @@ _$_UserDto _$_$_UserDtoFromJson(Map<String, dynamic> json) {
     username: json['username'] as String,
     password: json['password'] as String,
     email: json['email'] as String,
-    birthday: const ServerTimestampConverter().fromJson(json['birthday'] as Timestamp),
+    birthday: const ServerTimestampConverter()
+        .fromJson(json['birthday'] as Timestamp),
     description: json['description'] as String,
     imageURL: json['imageURL'] as String,
     level: json['level'] as int,
@@ -21,29 +22,51 @@ _$_UserDto _$_$_UserDtoFromJson(Map<String, dynamic> json) {
     privacy: json['privacy'] as bool,
     adminPowers: json['adminPowers'] as bool,
     enabled: json['enabled'] as bool,
-    lastLogin: const ServerTimestampConverter().fromJson(json['lastLogin'] as Timestamp),
-    creationDate: const ServerTimestampConverter().fromJson(json['creationDate'] as Timestamp),
-    modificationDate: const ServerTimestampConverter().fromJson(json['modificationDate'] as Timestamp),
+    lastLogin: const ServerTimestampConverter()
+        .fromJson(json['lastLogin'] as Timestamp),
+    creationDate: const ServerTimestampConverter()
+        .fromJson(json['creationDate'] as Timestamp),
+    modificationDate: const ServerTimestampConverter()
+        .fromJson(json['modificationDate'] as Timestamp),
     options: OptionsDto.fromJson(json['options'] as Map<String, dynamic>),
-    blockedUsersIds: (json['blockedUsersIds'] as List<dynamic>).map((e) => e as String).toSet(),
-    followedUsersIds: (json['followedUsersIds'] as List<dynamic>).map((e) => e as String).toSet(),
-    interestsIds: (json['interestsIds'] as List<dynamic>).map((e) => e as String).toSet(),
-    achievementsIds: (json['achievementsIds'] as List<dynamic>).map((e) => e as String).toSet(),
-    experiencesDoneIds: (json['experiencesDoneIds'] as List<dynamic>).map((e) => e as String).toSet(),
-    experiencesLikedIds: (json['experiencesLikedIds'] as List<dynamic>).map((e) => e as String).toSet(),
-    experiencesToDoIds: (json['experiencesToDoIds'] as List<dynamic>).map((e) => e as String).toSet(),
-    devices:
-        (json['devices'] as List<dynamic>).map((e) => DeviceDto.fromJson(e as Map<String, dynamic>)).toSet(),
-    systems:
-        (json['systems'] as List<dynamic>).map((e) => SystemDto.fromJson(e as Map<String, dynamic>)).toSet(),
-    items: (json['items'] as List<dynamic>).map((e) => ItemDto.fromJson(e as Map<String, dynamic>)).toSet(),
+    blockedUsersIds: (json['blockedUsersIds'] as List<dynamic>)
+        .map((e) => e as String)
+        .toSet(),
+    followedUsersIds: (json['followedUsersIds'] as List<dynamic>)
+        .map((e) => e as String)
+        .toSet(),
+    interestsIds:
+        (json['interestsIds'] as List<dynamic>).map((e) => e as String).toSet(),
+    achievementsIds: (json['achievementsIds'] as List<dynamic>)
+        .map((e) => e as String)
+        .toSet(),
+    experiencesDoneIds: (json['experiencesDoneIds'] as List<dynamic>)
+        .map((e) => e as String)
+        .toSet(),
+    experiencesLikedIds: (json['experiencesLikedIds'] as List<dynamic>)
+        .map((e) => e as String)
+        .toSet(),
+    experiencesToDoIds: (json['experiencesToDoIds'] as List<dynamic>)
+        .map((e) => e as String)
+        .toSet(),
+    devices: (json['devices'] as List<dynamic>)
+        .map((e) => DeviceDto.fromJson(e as Map<String, dynamic>))
+        .toSet(),
+    systems: (json['systems'] as List<dynamic>)
+        .map((e) => SystemDto.fromJson(e as Map<String, dynamic>))
+        .toSet(),
+    items: (json['items'] as List<dynamic>)
+        .map((e) => ItemDto.fromJson(e as Map<String, dynamic>))
+        .toSet(),
     coins: json['coins'] as int,
     followersAmount: json['followersAmount'] as int,
-    promotionPlan: PromotionPlanDto.fromJson(json['promotionPlan'] as Map<String, dynamic>),
+    promotionPlan: PromotionPlanDto.fromJson(
+        json['promotionPlan'] as Map<String, dynamic>),
   );
 }
 
-Map<String, dynamic> _$_$_UserDtoToJson(_$_UserDto instance) => <String, dynamic>{
+Map<String, dynamic> _$_$_UserDtoToJson(_$_UserDto instance) =>
+    <String, dynamic>{
       'id': instance.id,
       'name': instance.name,
       'username': instance.username,
@@ -58,8 +81,10 @@ Map<String, dynamic> _$_$_UserDtoToJson(_$_UserDto instance) => <String, dynamic
       'adminPowers': instance.adminPowers,
       'enabled': instance.enabled,
       'lastLogin': const ServerTimestampConverter().toJson(instance.lastLogin),
-      'creationDate': const ServerTimestampConverter().toJson(instance.creationDate),
-      'modificationDate': const ServerTimestampConverter().toJson(instance.modificationDate),
+      'creationDate':
+          const ServerTimestampConverter().toJson(instance.creationDate),
+      'modificationDate':
+          const ServerTimestampConverter().toJson(instance.modificationDate),
       'options': instance.options.toJson(),
       'blockedUsersIds': instance.blockedUsersIds.toList(),
       'followedUsersIds': instance.followedUsersIds.toList(),

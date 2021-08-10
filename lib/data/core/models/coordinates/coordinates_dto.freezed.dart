@@ -42,23 +42,24 @@ mixin _$CoordinatesDto {
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $CoordinatesDtoCopyWith<CoordinatesDto> get copyWith => throw _privateConstructorUsedError;
+  $CoordinatesDtoCopyWith<CoordinatesDto> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $CoordinatesDtoCopyWith<$Res> {
-  factory $CoordinatesDtoCopyWith(CoordinatesDto value, $Res Function(CoordinatesDto) then) =
+  factory $CoordinatesDtoCopyWith(
+          CoordinatesDto value, $Res Function(CoordinatesDto) then) =
       _$CoordinatesDtoCopyWithImpl<$Res>;
-
   $Res call({double latitude, double longitude});
 }
 
 /// @nodoc
-class _$CoordinatesDtoCopyWithImpl<$Res> implements $CoordinatesDtoCopyWith<$Res> {
+class _$CoordinatesDtoCopyWithImpl<$Res>
+    implements $CoordinatesDtoCopyWith<$Res> {
   _$CoordinatesDtoCopyWithImpl(this._value, this._then);
 
   final CoordinatesDto _value;
-
   // ignore: unused_field
   final $Res Function(CoordinatesDto) _then;
 
@@ -81,18 +82,21 @@ class _$CoordinatesDtoCopyWithImpl<$Res> implements $CoordinatesDtoCopyWith<$Res
 }
 
 /// @nodoc
-abstract class _$CoordinatesDtoCopyWith<$Res> implements $CoordinatesDtoCopyWith<$Res> {
-  factory _$CoordinatesDtoCopyWith(_CoordinatesDto value, $Res Function(_CoordinatesDto) then) =
+abstract class _$CoordinatesDtoCopyWith<$Res>
+    implements $CoordinatesDtoCopyWith<$Res> {
+  factory _$CoordinatesDtoCopyWith(
+          _CoordinatesDto value, $Res Function(_CoordinatesDto) then) =
       __$CoordinatesDtoCopyWithImpl<$Res>;
-
   @override
   $Res call({double latitude, double longitude});
 }
 
 /// @nodoc
-class __$CoordinatesDtoCopyWithImpl<$Res> extends _$CoordinatesDtoCopyWithImpl<$Res>
+class __$CoordinatesDtoCopyWithImpl<$Res>
+    extends _$CoordinatesDtoCopyWithImpl<$Res>
     implements _$CoordinatesDtoCopyWith<$Res> {
-  __$CoordinatesDtoCopyWithImpl(_CoordinatesDto _value, $Res Function(_CoordinatesDto) _then)
+  __$CoordinatesDtoCopyWithImpl(
+      _CoordinatesDto _value, $Res Function(_CoordinatesDto) _then)
       : super(_value, (v) => _then(v as _CoordinatesDto));
 
   @override
@@ -119,9 +123,11 @@ class __$CoordinatesDtoCopyWithImpl<$Res> extends _$CoordinatesDtoCopyWithImpl<$
 /// @nodoc
 @JsonSerializable()
 class _$_CoordinatesDto extends _CoordinatesDto {
-  const _$_CoordinatesDto({required this.latitude, required this.longitude}) : super._();
+  const _$_CoordinatesDto({required this.latitude, required this.longitude})
+      : super._();
 
-  factory _$_CoordinatesDto.fromJson(Map<String, dynamic> json) => _$_$_CoordinatesDtoFromJson(json);
+  factory _$_CoordinatesDto.fromJson(Map<String, dynamic> json) =>
+      _$_$_CoordinatesDtoFromJson(json);
 
   @override
   final double latitude;
@@ -138,9 +144,11 @@ class _$_CoordinatesDto extends _CoordinatesDto {
     return identical(this, other) ||
         (other is _CoordinatesDto &&
             (identical(other.latitude, latitude) ||
-                const DeepCollectionEquality().equals(other.latitude, latitude)) &&
+                const DeepCollectionEquality()
+                    .equals(other.latitude, latitude)) &&
             (identical(other.longitude, longitude) ||
-                const DeepCollectionEquality().equals(other.longitude, longitude)));
+                const DeepCollectionEquality()
+                    .equals(other.longitude, longitude)));
   }
 
   @override
@@ -161,19 +169,20 @@ class _$_CoordinatesDto extends _CoordinatesDto {
 }
 
 abstract class _CoordinatesDto extends CoordinatesDto {
-  const factory _CoordinatesDto({required double latitude, required double longitude}) = _$_CoordinatesDto;
-
+  const factory _CoordinatesDto(
+      {required double latitude,
+      required double longitude}) = _$_CoordinatesDto;
   const _CoordinatesDto._() : super._();
 
-  factory _CoordinatesDto.fromJson(Map<String, dynamic> json) = _$_CoordinatesDto.fromJson;
+  factory _CoordinatesDto.fromJson(Map<String, dynamic> json) =
+      _$_CoordinatesDto.fromJson;
 
   @override
   double get latitude => throw _privateConstructorUsedError;
-
   @override
   double get longitude => throw _privateConstructorUsedError;
-
   @override
   @JsonKey(ignore: true)
-  _$CoordinatesDtoCopyWith<_CoordinatesDto> get copyWith => throw _privateConstructorUsedError;
+  _$CoordinatesDtoCopyWith<_CoordinatesDto> get copyWith =>
+      throw _privateConstructorUsedError;
 }

@@ -76,8 +76,8 @@ mixin _$StoreNavigationActorEvent {
 
 /// @nodoc
 abstract class $StoreNavigationActorEventCopyWith<$Res> {
-  factory $StoreNavigationActorEventCopyWith(
-          StoreNavigationActorEvent value, $Res Function(StoreNavigationActorEvent) then) =
+  factory $StoreNavigationActorEventCopyWith(StoreNavigationActorEvent value,
+          $Res Function(StoreNavigationActorEvent) then) =
       _$StoreNavigationActorEventCopyWithImpl<$Res>;
 }
 
@@ -93,14 +93,17 @@ class _$StoreNavigationActorEventCopyWithImpl<$Res>
 
 /// @nodoc
 abstract class _$ItemStoreTappedCopyWith<$Res> {
-  factory _$ItemStoreTappedCopyWith(_ItemStoreTapped value, $Res Function(_ItemStoreTapped) then) =
+  factory _$ItemStoreTappedCopyWith(
+          _ItemStoreTapped value, $Res Function(_ItemStoreTapped) then) =
       __$ItemStoreTappedCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$ItemStoreTappedCopyWithImpl<$Res> extends _$StoreNavigationActorEventCopyWithImpl<$Res>
+class __$ItemStoreTappedCopyWithImpl<$Res>
+    extends _$StoreNavigationActorEventCopyWithImpl<$Res>
     implements _$ItemStoreTappedCopyWith<$Res> {
-  __$ItemStoreTappedCopyWithImpl(_ItemStoreTapped _value, $Res Function(_ItemStoreTapped) _then)
+  __$ItemStoreTappedCopyWithImpl(
+      _ItemStoreTapped _value, $Res Function(_ItemStoreTapped) _then)
       : super(_value, (v) => _then(v as _ItemStoreTapped));
 
   @override
@@ -184,14 +187,17 @@ abstract class _ItemStoreTapped implements StoreNavigationActorEvent {
 
 /// @nodoc
 abstract class _$CoinStoreTappedCopyWith<$Res> {
-  factory _$CoinStoreTappedCopyWith(_CoinStoreTapped value, $Res Function(_CoinStoreTapped) then) =
+  factory _$CoinStoreTappedCopyWith(
+          _CoinStoreTapped value, $Res Function(_CoinStoreTapped) then) =
       __$CoinStoreTappedCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$CoinStoreTappedCopyWithImpl<$Res> extends _$StoreNavigationActorEventCopyWithImpl<$Res>
+class __$CoinStoreTappedCopyWithImpl<$Res>
+    extends _$StoreNavigationActorEventCopyWithImpl<$Res>
     implements _$CoinStoreTappedCopyWith<$Res> {
-  __$CoinStoreTappedCopyWithImpl(_CoinStoreTapped _value, $Res Function(_CoinStoreTapped) _then)
+  __$CoinStoreTappedCopyWithImpl(
+      _CoinStoreTapped _value, $Res Function(_CoinStoreTapped) _then)
       : super(_value, (v) => _then(v as _CoinStoreTapped));
 
   @override
@@ -275,8 +281,8 @@ abstract class _CoinStoreTapped implements StoreNavigationActorEvent {
 
 /// @nodoc
 abstract class _$PromotionPlansTappedCopyWith<$Res> {
-  factory _$PromotionPlansTappedCopyWith(
-          _PromotionPlansTapped value, $Res Function(_PromotionPlansTapped) then) =
+  factory _$PromotionPlansTappedCopyWith(_PromotionPlansTapped value,
+          $Res Function(_PromotionPlansTapped) then) =
       __$PromotionPlansTappedCopyWithImpl<$Res>;
 }
 
@@ -369,14 +375,17 @@ abstract class _PromotionPlansTapped implements StoreNavigationActorEvent {
 
 /// @nodoc
 abstract class _$MyItemsTappedCopyWith<$Res> {
-  factory _$MyItemsTappedCopyWith(_MyItemsTapped value, $Res Function(_MyItemsTapped) then) =
+  factory _$MyItemsTappedCopyWith(
+          _MyItemsTapped value, $Res Function(_MyItemsTapped) then) =
       __$MyItemsTappedCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$MyItemsTappedCopyWithImpl<$Res> extends _$StoreNavigationActorEventCopyWithImpl<$Res>
+class __$MyItemsTappedCopyWithImpl<$Res>
+    extends _$StoreNavigationActorEventCopyWithImpl<$Res>
     implements _$MyItemsTappedCopyWith<$Res> {
-  __$MyItemsTappedCopyWithImpl(_MyItemsTapped _value, $Res Function(_MyItemsTapped) _then)
+  __$MyItemsTappedCopyWithImpl(
+      _MyItemsTapped _value, $Res Function(_MyItemsTapped) _then)
       : super(_value, (v) => _then(v as _MyItemsTapped));
 
   @override
@@ -522,8 +531,8 @@ mixin _$StoreNavigationActorState {
 
 /// @nodoc
 abstract class $StoreNavigationActorStateCopyWith<$Res> {
-  factory $StoreNavigationActorStateCopyWith(
-          StoreNavigationActorState value, $Res Function(StoreNavigationActorState) then) =
+  factory $StoreNavigationActorStateCopyWith(StoreNavigationActorState value,
+          $Res Function(StoreNavigationActorState) then) =
       _$StoreNavigationActorStateCopyWithImpl<$Res>;
 }
 
@@ -539,14 +548,17 @@ class _$StoreNavigationActorStateCopyWithImpl<$Res>
 
 /// @nodoc
 abstract class _$ItemStoreViewCopyWith<$Res> {
-  factory _$ItemStoreViewCopyWith(_ItemStoreView value, $Res Function(_ItemStoreView) then) =
+  factory _$ItemStoreViewCopyWith(
+          _ItemStoreView value, $Res Function(_ItemStoreView) then) =
       __$ItemStoreViewCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$ItemStoreViewCopyWithImpl<$Res> extends _$StoreNavigationActorStateCopyWithImpl<$Res>
+class __$ItemStoreViewCopyWithImpl<$Res>
+    extends _$StoreNavigationActorStateCopyWithImpl<$Res>
     implements _$ItemStoreViewCopyWith<$Res> {
-  __$ItemStoreViewCopyWithImpl(_ItemStoreView _value, $Res Function(_ItemStoreView) _then)
+  __$ItemStoreViewCopyWithImpl(
+      _ItemStoreView _value, $Res Function(_ItemStoreView) _then)
       : super(_value, (v) => _then(v as _ItemStoreView));
 
   @override
@@ -630,14 +642,17 @@ abstract class _ItemStoreView implements StoreNavigationActorState {
 
 /// @nodoc
 abstract class _$CoinStoreViewCopyWith<$Res> {
-  factory _$CoinStoreViewCopyWith(_CoinStoreView value, $Res Function(_CoinStoreView) then) =
+  factory _$CoinStoreViewCopyWith(
+          _CoinStoreView value, $Res Function(_CoinStoreView) then) =
       __$CoinStoreViewCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$CoinStoreViewCopyWithImpl<$Res> extends _$StoreNavigationActorStateCopyWithImpl<$Res>
+class __$CoinStoreViewCopyWithImpl<$Res>
+    extends _$StoreNavigationActorStateCopyWithImpl<$Res>
     implements _$CoinStoreViewCopyWith<$Res> {
-  __$CoinStoreViewCopyWithImpl(_CoinStoreView _value, $Res Function(_CoinStoreView) _then)
+  __$CoinStoreViewCopyWithImpl(
+      _CoinStoreView _value, $Res Function(_CoinStoreView) _then)
       : super(_value, (v) => _then(v as _CoinStoreView));
 
   @override
@@ -727,9 +742,11 @@ abstract class _$PromotionPlansViewCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$PromotionPlansViewCopyWithImpl<$Res> extends _$StoreNavigationActorStateCopyWithImpl<$Res>
+class __$PromotionPlansViewCopyWithImpl<$Res>
+    extends _$StoreNavigationActorStateCopyWithImpl<$Res>
     implements _$PromotionPlansViewCopyWith<$Res> {
-  __$PromotionPlansViewCopyWithImpl(_PromotionPlansView _value, $Res Function(_PromotionPlansView) _then)
+  __$PromotionPlansViewCopyWithImpl(
+      _PromotionPlansView _value, $Res Function(_PromotionPlansView) _then)
       : super(_value, (v) => _then(v as _PromotionPlansView));
 
   @override
@@ -813,14 +830,17 @@ abstract class _PromotionPlansView implements StoreNavigationActorState {
 
 /// @nodoc
 abstract class _$MyItemsViewCopyWith<$Res> {
-  factory _$MyItemsViewCopyWith(_MyItemsView value, $Res Function(_MyItemsView) then) =
+  factory _$MyItemsViewCopyWith(
+          _MyItemsView value, $Res Function(_MyItemsView) then) =
       __$MyItemsViewCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$MyItemsViewCopyWithImpl<$Res> extends _$StoreNavigationActorStateCopyWithImpl<$Res>
+class __$MyItemsViewCopyWithImpl<$Res>
+    extends _$StoreNavigationActorStateCopyWithImpl<$Res>
     implements _$MyItemsViewCopyWith<$Res> {
-  __$MyItemsViewCopyWithImpl(_MyItemsView _value, $Res Function(_MyItemsView) _then)
+  __$MyItemsViewCopyWithImpl(
+      _MyItemsView _value, $Res Function(_MyItemsView) _then)
       : super(_value, (v) => _then(v as _MyItemsView));
 
   @override

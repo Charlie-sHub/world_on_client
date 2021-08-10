@@ -23,7 +23,8 @@ class _$FailureTearOff {
     );
   }
 
-  _AuthenticationData<T> authenticationData<T>(AuthenticationDataFailure<T> authenticationDataFailure) {
+  _AuthenticationData<T> authenticationData<T>(
+      AuthenticationDataFailure<T> authenticationDataFailure) {
     return _AuthenticationData<T>(
       authenticationDataFailure,
     );
@@ -35,14 +36,16 @@ class _$FailureTearOff {
     );
   }
 
-  _CoreAppllication<T> coreApplication<T>(CoreApplicationFailure<T> coreApplicationFailure) {
+  _CoreAppllication<T> coreApplication<T>(
+      CoreApplicationFailure<T> coreApplicationFailure) {
     return _CoreAppllication<T>(
       coreApplicationFailure,
     );
   }
 
   _ExperienceManagementApplicationFailure<T> experienceManagementApplication<T>(
-      ExperienceManagementApplicationFailure<T> experienceManagementApplicationFailure) {
+      ExperienceManagementApplicationFailure<T>
+          experienceManagementApplicationFailure) {
     return _ExperienceManagementApplicationFailure<T>(
       experienceManagementApplicationFailure,
     );
@@ -66,7 +69,8 @@ class _$FailureTearOff {
     );
   }
 
-  _ProfileDomain<T> profileDomain<T>(ProfileDomainFailure<T> profileDomainFailure) {
+  _ProfileDomain<T> profileDomain<T>(
+      ProfileDomainFailure<T> profileDomainFailure) {
     return _ProfileDomain<T>(
       profileDomainFailure,
     );
@@ -80,38 +84,53 @@ const $Failure = _$FailureTearOff();
 mixin _$Failure<T> {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(AuthenticationDomainFailure<T> authenticationDomainFailure)
-        authenticationDomain,
-    required TResult Function(AuthenticationDataFailure<T> authenticationDataFailure) authenticationData,
-    required TResult Function(CoreDomainFailure<T> coreDomainFailure) coreDomain,
-    required TResult Function(CoreApplicationFailure<T> coreApplicationFailure) coreApplication,
     required TResult Function(
-            ExperienceManagementApplicationFailure<T> experienceManagementApplicationFailure)
+            AuthenticationDomainFailure<T> authenticationDomainFailure)
+        authenticationDomain,
+    required TResult Function(
+            AuthenticationDataFailure<T> authenticationDataFailure)
+        authenticationData,
+    required TResult Function(CoreDomainFailure<T> coreDomainFailure)
+        coreDomain,
+    required TResult Function(CoreApplicationFailure<T> coreApplicationFailure)
+        coreApplication,
+    required TResult Function(
+            ExperienceManagementApplicationFailure<T>
+                experienceManagementApplicationFailure)
         experienceManagementApplication,
     required TResult Function(CoreDataFailure<T> coreDataFailure) coreData,
     required TResult Function(StoreDataFailure<T> storeDataFailure) storeData,
     required TResult Function(ValueFailure<T> valueFailure) value,
-    required TResult Function(ProfileDomainFailure<T> profileDomainFailure) profileDomain,
+    required TResult Function(ProfileDomainFailure<T> profileDomainFailure)
+        profileDomain,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(AuthenticationDomainFailure<T> authenticationDomainFailure)? authenticationDomain,
-    TResult Function(AuthenticationDataFailure<T> authenticationDataFailure)? authenticationData,
+    TResult Function(
+            AuthenticationDomainFailure<T> authenticationDomainFailure)?
+        authenticationDomain,
+    TResult Function(AuthenticationDataFailure<T> authenticationDataFailure)?
+        authenticationData,
     TResult Function(CoreDomainFailure<T> coreDomainFailure)? coreDomain,
-    TResult Function(CoreApplicationFailure<T> coreApplicationFailure)? coreApplication,
-    TResult Function(ExperienceManagementApplicationFailure<T> experienceManagementApplicationFailure)?
+    TResult Function(CoreApplicationFailure<T> coreApplicationFailure)?
+        coreApplication,
+    TResult Function(
+            ExperienceManagementApplicationFailure<T>
+                experienceManagementApplicationFailure)?
         experienceManagementApplication,
     TResult Function(CoreDataFailure<T> coreDataFailure)? coreData,
     TResult Function(StoreDataFailure<T> storeDataFailure)? storeData,
     TResult Function(ValueFailure<T> valueFailure)? value,
-    TResult Function(ProfileDomainFailure<T> profileDomainFailure)? profileDomain,
+    TResult Function(ProfileDomainFailure<T> profileDomainFailure)?
+        profileDomain,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_AuthenticationDomain<T> value) authenticationDomain,
+    required TResult Function(_AuthenticationDomain<T> value)
+        authenticationDomain,
     required TResult Function(_AuthenticationData<T> value) authenticationData,
     required TResult Function(_CoreDomain<T> value) coreDomain,
     required TResult Function(_CoreAppllication<T> value) coreApplication,
@@ -129,7 +148,8 @@ mixin _$Failure<T> {
     TResult Function(_AuthenticationData<T> value)? authenticationData,
     TResult Function(_CoreDomain<T> value)? coreDomain,
     TResult Function(_CoreAppllication<T> value)? coreApplication,
-    TResult Function(_ExperienceManagementApplicationFailure<T> value)? experienceManagementApplication,
+    TResult Function(_ExperienceManagementApplicationFailure<T> value)?
+        experienceManagementApplication,
     TResult Function(_CoreData<T> value)? coreData,
     TResult Function(_StoreData<T> value)? storeData,
     TResult Function(_Value<T> value)? value,
@@ -141,7 +161,8 @@ mixin _$Failure<T> {
 
 /// @nodoc
 abstract class $FailureCopyWith<T, $Res> {
-  factory $FailureCopyWith(Failure<T> value, $Res Function(Failure<T>) then) = _$FailureCopyWithImpl<T, $Res>;
+  factory $FailureCopyWith(Failure<T> value, $Res Function(Failure<T>) then) =
+      _$FailureCopyWithImpl<T, $Res>;
 }
 
 /// @nodoc
@@ -155,24 +176,25 @@ class _$FailureCopyWithImpl<T, $Res> implements $FailureCopyWith<T, $Res> {
 
 /// @nodoc
 abstract class _$AuthenticationDomainCopyWith<T, $Res> {
-  factory _$AuthenticationDomainCopyWith(
-          _AuthenticationDomain<T> value, $Res Function(_AuthenticationDomain<T>) then) =
+  factory _$AuthenticationDomainCopyWith(_AuthenticationDomain<T> value,
+          $Res Function(_AuthenticationDomain<T>) then) =
       __$AuthenticationDomainCopyWithImpl<T, $Res>;
-
   $Res call({AuthenticationDomainFailure<T> authenticationDomainFailure});
 
   $AuthenticationDomainFailureCopyWith<T, $Res> get authenticationDomainFailure;
 }
 
 /// @nodoc
-class __$AuthenticationDomainCopyWithImpl<T, $Res> extends _$FailureCopyWithImpl<T, $Res>
+class __$AuthenticationDomainCopyWithImpl<T, $Res>
+    extends _$FailureCopyWithImpl<T, $Res>
     implements _$AuthenticationDomainCopyWith<T, $Res> {
-  __$AuthenticationDomainCopyWithImpl(
-      _AuthenticationDomain<T> _value, $Res Function(_AuthenticationDomain<T>) _then)
+  __$AuthenticationDomainCopyWithImpl(_AuthenticationDomain<T> _value,
+      $Res Function(_AuthenticationDomain<T>) _then)
       : super(_value, (v) => _then(v as _AuthenticationDomain<T>));
 
   @override
-  _AuthenticationDomain<T> get _value => super._value as _AuthenticationDomain<T>;
+  _AuthenticationDomain<T> get _value =>
+      super._value as _AuthenticationDomain<T>;
 
   @override
   $Res call({
@@ -187,8 +209,10 @@ class __$AuthenticationDomainCopyWithImpl<T, $Res> extends _$FailureCopyWithImpl
   }
 
   @override
-  $AuthenticationDomainFailureCopyWith<T, $Res> get authenticationDomainFailure {
-    return $AuthenticationDomainFailureCopyWith<T, $Res>(_value.authenticationDomainFailure, (value) {
+  $AuthenticationDomainFailureCopyWith<T, $Res>
+      get authenticationDomainFailure {
+    return $AuthenticationDomainFailureCopyWith<T, $Res>(
+        _value.authenticationDomainFailure, (value) {
       return _then(_value.copyWith(authenticationDomainFailure: value));
     });
   }
@@ -211,34 +235,46 @@ class _$_AuthenticationDomain<T> implements _AuthenticationDomain<T> {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other is _AuthenticationDomain<T> &&
-            (identical(other.authenticationDomainFailure, authenticationDomainFailure) ||
-                const DeepCollectionEquality()
-                    .equals(other.authenticationDomainFailure, authenticationDomainFailure)));
+            (identical(other.authenticationDomainFailure,
+                    authenticationDomainFailure) ||
+                const DeepCollectionEquality().equals(
+                    other.authenticationDomainFailure,
+                    authenticationDomainFailure)));
   }
 
   @override
-  int get hashCode => runtimeType.hashCode ^ const DeepCollectionEquality().hash(authenticationDomainFailure);
+  int get hashCode =>
+      runtimeType.hashCode ^
+      const DeepCollectionEquality().hash(authenticationDomainFailure);
 
   @JsonKey(ignore: true)
   @override
   _$AuthenticationDomainCopyWith<T, _AuthenticationDomain<T>> get copyWith =>
-      __$AuthenticationDomainCopyWithImpl<T, _AuthenticationDomain<T>>(this, _$identity);
+      __$AuthenticationDomainCopyWithImpl<T, _AuthenticationDomain<T>>(
+          this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(AuthenticationDomainFailure<T> authenticationDomainFailure)
-        authenticationDomain,
-    required TResult Function(AuthenticationDataFailure<T> authenticationDataFailure) authenticationData,
-    required TResult Function(CoreDomainFailure<T> coreDomainFailure) coreDomain,
-    required TResult Function(CoreApplicationFailure<T> coreApplicationFailure) coreApplication,
     required TResult Function(
-            ExperienceManagementApplicationFailure<T> experienceManagementApplicationFailure)
+            AuthenticationDomainFailure<T> authenticationDomainFailure)
+        authenticationDomain,
+    required TResult Function(
+            AuthenticationDataFailure<T> authenticationDataFailure)
+        authenticationData,
+    required TResult Function(CoreDomainFailure<T> coreDomainFailure)
+        coreDomain,
+    required TResult Function(CoreApplicationFailure<T> coreApplicationFailure)
+        coreApplication,
+    required TResult Function(
+            ExperienceManagementApplicationFailure<T>
+                experienceManagementApplicationFailure)
         experienceManagementApplication,
     required TResult Function(CoreDataFailure<T> coreDataFailure) coreData,
     required TResult Function(StoreDataFailure<T> storeDataFailure) storeData,
     required TResult Function(ValueFailure<T> valueFailure) value,
-    required TResult Function(ProfileDomainFailure<T> profileDomainFailure) profileDomain,
+    required TResult Function(ProfileDomainFailure<T> profileDomainFailure)
+        profileDomain,
   }) {
     return authenticationDomain(authenticationDomainFailure);
   }
@@ -246,16 +282,23 @@ class _$_AuthenticationDomain<T> implements _AuthenticationDomain<T> {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(AuthenticationDomainFailure<T> authenticationDomainFailure)? authenticationDomain,
-    TResult Function(AuthenticationDataFailure<T> authenticationDataFailure)? authenticationData,
+    TResult Function(
+            AuthenticationDomainFailure<T> authenticationDomainFailure)?
+        authenticationDomain,
+    TResult Function(AuthenticationDataFailure<T> authenticationDataFailure)?
+        authenticationData,
     TResult Function(CoreDomainFailure<T> coreDomainFailure)? coreDomain,
-    TResult Function(CoreApplicationFailure<T> coreApplicationFailure)? coreApplication,
-    TResult Function(ExperienceManagementApplicationFailure<T> experienceManagementApplicationFailure)?
+    TResult Function(CoreApplicationFailure<T> coreApplicationFailure)?
+        coreApplication,
+    TResult Function(
+            ExperienceManagementApplicationFailure<T>
+                experienceManagementApplicationFailure)?
         experienceManagementApplication,
     TResult Function(CoreDataFailure<T> coreDataFailure)? coreData,
     TResult Function(StoreDataFailure<T> storeDataFailure)? storeData,
     TResult Function(ValueFailure<T> valueFailure)? value,
-    TResult Function(ProfileDomainFailure<T> profileDomainFailure)? profileDomain,
+    TResult Function(ProfileDomainFailure<T> profileDomainFailure)?
+        profileDomain,
     required TResult orElse(),
   }) {
     if (authenticationDomain != null) {
@@ -267,7 +310,8 @@ class _$_AuthenticationDomain<T> implements _AuthenticationDomain<T> {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_AuthenticationDomain<T> value) authenticationDomain,
+    required TResult Function(_AuthenticationDomain<T> value)
+        authenticationDomain,
     required TResult Function(_AuthenticationData<T> value) authenticationData,
     required TResult Function(_CoreDomain<T> value) coreDomain,
     required TResult Function(_CoreAppllication<T> value) coreApplication,
@@ -288,7 +332,8 @@ class _$_AuthenticationDomain<T> implements _AuthenticationDomain<T> {
     TResult Function(_AuthenticationData<T> value)? authenticationData,
     TResult Function(_CoreDomain<T> value)? coreDomain,
     TResult Function(_CoreAppllication<T> value)? coreApplication,
-    TResult Function(_ExperienceManagementApplicationFailure<T> value)? experienceManagementApplication,
+    TResult Function(_ExperienceManagementApplicationFailure<T> value)?
+        experienceManagementApplication,
     TResult Function(_CoreData<T> value)? coreData,
     TResult Function(_StoreData<T> value)? storeData,
     TResult Function(_Value<T> value)? value,
@@ -303,11 +348,12 @@ class _$_AuthenticationDomain<T> implements _AuthenticationDomain<T> {
 }
 
 abstract class _AuthenticationDomain<T> implements Failure<T> {
-  const factory _AuthenticationDomain(AuthenticationDomainFailure<T> authenticationDomainFailure) =
+  const factory _AuthenticationDomain(
+          AuthenticationDomainFailure<T> authenticationDomainFailure) =
       _$_AuthenticationDomain<T>;
 
-  AuthenticationDomainFailure<T> get authenticationDomainFailure => throw _privateConstructorUsedError;
-
+  AuthenticationDomainFailure<T> get authenticationDomainFailure =>
+      throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
   _$AuthenticationDomainCopyWith<T, _AuthenticationDomain<T>> get copyWith =>
       throw _privateConstructorUsedError;
@@ -315,20 +361,20 @@ abstract class _AuthenticationDomain<T> implements Failure<T> {
 
 /// @nodoc
 abstract class _$AuthenticationDataCopyWith<T, $Res> {
-  factory _$AuthenticationDataCopyWith(
-          _AuthenticationData<T> value, $Res Function(_AuthenticationData<T>) then) =
+  factory _$AuthenticationDataCopyWith(_AuthenticationData<T> value,
+          $Res Function(_AuthenticationData<T>) then) =
       __$AuthenticationDataCopyWithImpl<T, $Res>;
-
   $Res call({AuthenticationDataFailure<T> authenticationDataFailure});
 
   $AuthenticationDataFailureCopyWith<T, $Res> get authenticationDataFailure;
 }
 
 /// @nodoc
-class __$AuthenticationDataCopyWithImpl<T, $Res> extends _$FailureCopyWithImpl<T, $Res>
+class __$AuthenticationDataCopyWithImpl<T, $Res>
+    extends _$FailureCopyWithImpl<T, $Res>
     implements _$AuthenticationDataCopyWith<T, $Res> {
-  __$AuthenticationDataCopyWithImpl(
-      _AuthenticationData<T> _value, $Res Function(_AuthenticationData<T>) _then)
+  __$AuthenticationDataCopyWithImpl(_AuthenticationData<T> _value,
+      $Res Function(_AuthenticationData<T>) _then)
       : super(_value, (v) => _then(v as _AuthenticationData<T>));
 
   @override
@@ -348,7 +394,8 @@ class __$AuthenticationDataCopyWithImpl<T, $Res> extends _$FailureCopyWithImpl<T
 
   @override
   $AuthenticationDataFailureCopyWith<T, $Res> get authenticationDataFailure {
-    return $AuthenticationDataFailureCopyWith<T, $Res>(_value.authenticationDataFailure, (value) {
+    return $AuthenticationDataFailureCopyWith<T, $Res>(
+        _value.authenticationDataFailure, (value) {
       return _then(_value.copyWith(authenticationDataFailure: value));
     });
   }
@@ -371,34 +418,46 @@ class _$_AuthenticationData<T> implements _AuthenticationData<T> {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other is _AuthenticationData<T> &&
-            (identical(other.authenticationDataFailure, authenticationDataFailure) ||
-                const DeepCollectionEquality()
-                    .equals(other.authenticationDataFailure, authenticationDataFailure)));
+            (identical(other.authenticationDataFailure,
+                    authenticationDataFailure) ||
+                const DeepCollectionEquality().equals(
+                    other.authenticationDataFailure,
+                    authenticationDataFailure)));
   }
 
   @override
-  int get hashCode => runtimeType.hashCode ^ const DeepCollectionEquality().hash(authenticationDataFailure);
+  int get hashCode =>
+      runtimeType.hashCode ^
+      const DeepCollectionEquality().hash(authenticationDataFailure);
 
   @JsonKey(ignore: true)
   @override
   _$AuthenticationDataCopyWith<T, _AuthenticationData<T>> get copyWith =>
-      __$AuthenticationDataCopyWithImpl<T, _AuthenticationData<T>>(this, _$identity);
+      __$AuthenticationDataCopyWithImpl<T, _AuthenticationData<T>>(
+          this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(AuthenticationDomainFailure<T> authenticationDomainFailure)
-        authenticationDomain,
-    required TResult Function(AuthenticationDataFailure<T> authenticationDataFailure) authenticationData,
-    required TResult Function(CoreDomainFailure<T> coreDomainFailure) coreDomain,
-    required TResult Function(CoreApplicationFailure<T> coreApplicationFailure) coreApplication,
     required TResult Function(
-            ExperienceManagementApplicationFailure<T> experienceManagementApplicationFailure)
+            AuthenticationDomainFailure<T> authenticationDomainFailure)
+        authenticationDomain,
+    required TResult Function(
+            AuthenticationDataFailure<T> authenticationDataFailure)
+        authenticationData,
+    required TResult Function(CoreDomainFailure<T> coreDomainFailure)
+        coreDomain,
+    required TResult Function(CoreApplicationFailure<T> coreApplicationFailure)
+        coreApplication,
+    required TResult Function(
+            ExperienceManagementApplicationFailure<T>
+                experienceManagementApplicationFailure)
         experienceManagementApplication,
     required TResult Function(CoreDataFailure<T> coreDataFailure) coreData,
     required TResult Function(StoreDataFailure<T> storeDataFailure) storeData,
     required TResult Function(ValueFailure<T> valueFailure) value,
-    required TResult Function(ProfileDomainFailure<T> profileDomainFailure) profileDomain,
+    required TResult Function(ProfileDomainFailure<T> profileDomainFailure)
+        profileDomain,
   }) {
     return authenticationData(authenticationDataFailure);
   }
@@ -406,16 +465,23 @@ class _$_AuthenticationData<T> implements _AuthenticationData<T> {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(AuthenticationDomainFailure<T> authenticationDomainFailure)? authenticationDomain,
-    TResult Function(AuthenticationDataFailure<T> authenticationDataFailure)? authenticationData,
+    TResult Function(
+            AuthenticationDomainFailure<T> authenticationDomainFailure)?
+        authenticationDomain,
+    TResult Function(AuthenticationDataFailure<T> authenticationDataFailure)?
+        authenticationData,
     TResult Function(CoreDomainFailure<T> coreDomainFailure)? coreDomain,
-    TResult Function(CoreApplicationFailure<T> coreApplicationFailure)? coreApplication,
-    TResult Function(ExperienceManagementApplicationFailure<T> experienceManagementApplicationFailure)?
+    TResult Function(CoreApplicationFailure<T> coreApplicationFailure)?
+        coreApplication,
+    TResult Function(
+            ExperienceManagementApplicationFailure<T>
+                experienceManagementApplicationFailure)?
         experienceManagementApplication,
     TResult Function(CoreDataFailure<T> coreDataFailure)? coreData,
     TResult Function(StoreDataFailure<T> storeDataFailure)? storeData,
     TResult Function(ValueFailure<T> valueFailure)? value,
-    TResult Function(ProfileDomainFailure<T> profileDomainFailure)? profileDomain,
+    TResult Function(ProfileDomainFailure<T> profileDomainFailure)?
+        profileDomain,
     required TResult orElse(),
   }) {
     if (authenticationData != null) {
@@ -427,7 +493,8 @@ class _$_AuthenticationData<T> implements _AuthenticationData<T> {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_AuthenticationDomain<T> value) authenticationDomain,
+    required TResult Function(_AuthenticationDomain<T> value)
+        authenticationDomain,
     required TResult Function(_AuthenticationData<T> value) authenticationData,
     required TResult Function(_CoreDomain<T> value) coreDomain,
     required TResult Function(_CoreAppllication<T> value) coreApplication,
@@ -448,7 +515,8 @@ class _$_AuthenticationData<T> implements _AuthenticationData<T> {
     TResult Function(_AuthenticationData<T> value)? authenticationData,
     TResult Function(_CoreDomain<T> value)? coreDomain,
     TResult Function(_CoreAppllication<T> value)? coreApplication,
-    TResult Function(_ExperienceManagementApplicationFailure<T> value)? experienceManagementApplication,
+    TResult Function(_ExperienceManagementApplicationFailure<T> value)?
+        experienceManagementApplication,
     TResult Function(_CoreData<T> value)? coreData,
     TResult Function(_StoreData<T> value)? storeData,
     TResult Function(_Value<T> value)? value,
@@ -463,20 +531,22 @@ class _$_AuthenticationData<T> implements _AuthenticationData<T> {
 }
 
 abstract class _AuthenticationData<T> implements Failure<T> {
-  const factory _AuthenticationData(AuthenticationDataFailure<T> authenticationDataFailure) =
+  const factory _AuthenticationData(
+          AuthenticationDataFailure<T> authenticationDataFailure) =
       _$_AuthenticationData<T>;
 
-  AuthenticationDataFailure<T> get authenticationDataFailure => throw _privateConstructorUsedError;
-
+  AuthenticationDataFailure<T> get authenticationDataFailure =>
+      throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  _$AuthenticationDataCopyWith<T, _AuthenticationData<T>> get copyWith => throw _privateConstructorUsedError;
+  _$AuthenticationDataCopyWith<T, _AuthenticationData<T>> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class _$CoreDomainCopyWith<T, $Res> {
-  factory _$CoreDomainCopyWith(_CoreDomain<T> value, $Res Function(_CoreDomain<T>) then) =
+  factory _$CoreDomainCopyWith(
+          _CoreDomain<T> value, $Res Function(_CoreDomain<T>) then) =
       __$CoreDomainCopyWithImpl<T, $Res>;
-
   $Res call({CoreDomainFailure<T> coreDomainFailure});
 
   $CoreDomainFailureCopyWith<T, $Res> get coreDomainFailure;
@@ -485,7 +555,8 @@ abstract class _$CoreDomainCopyWith<T, $Res> {
 /// @nodoc
 class __$CoreDomainCopyWithImpl<T, $Res> extends _$FailureCopyWithImpl<T, $Res>
     implements _$CoreDomainCopyWith<T, $Res> {
-  __$CoreDomainCopyWithImpl(_CoreDomain<T> _value, $Res Function(_CoreDomain<T>) _then)
+  __$CoreDomainCopyWithImpl(
+      _CoreDomain<T> _value, $Res Function(_CoreDomain<T>) _then)
       : super(_value, (v) => _then(v as _CoreDomain<T>));
 
   @override
@@ -505,7 +576,8 @@ class __$CoreDomainCopyWithImpl<T, $Res> extends _$FailureCopyWithImpl<T, $Res>
 
   @override
   $CoreDomainFailureCopyWith<T, $Res> get coreDomainFailure {
-    return $CoreDomainFailureCopyWith<T, $Res>(_value.coreDomainFailure, (value) {
+    return $CoreDomainFailureCopyWith<T, $Res>(_value.coreDomainFailure,
+        (value) {
       return _then(_value.copyWith(coreDomainFailure: value));
     });
   }
@@ -529,11 +601,14 @@ class _$_CoreDomain<T> implements _CoreDomain<T> {
     return identical(this, other) ||
         (other is _CoreDomain<T> &&
             (identical(other.coreDomainFailure, coreDomainFailure) ||
-                const DeepCollectionEquality().equals(other.coreDomainFailure, coreDomainFailure)));
+                const DeepCollectionEquality()
+                    .equals(other.coreDomainFailure, coreDomainFailure)));
   }
 
   @override
-  int get hashCode => runtimeType.hashCode ^ const DeepCollectionEquality().hash(coreDomainFailure);
+  int get hashCode =>
+      runtimeType.hashCode ^
+      const DeepCollectionEquality().hash(coreDomainFailure);
 
   @JsonKey(ignore: true)
   @override
@@ -543,18 +618,25 @@ class _$_CoreDomain<T> implements _CoreDomain<T> {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(AuthenticationDomainFailure<T> authenticationDomainFailure)
-        authenticationDomain,
-    required TResult Function(AuthenticationDataFailure<T> authenticationDataFailure) authenticationData,
-    required TResult Function(CoreDomainFailure<T> coreDomainFailure) coreDomain,
-    required TResult Function(CoreApplicationFailure<T> coreApplicationFailure) coreApplication,
     required TResult Function(
-            ExperienceManagementApplicationFailure<T> experienceManagementApplicationFailure)
+            AuthenticationDomainFailure<T> authenticationDomainFailure)
+        authenticationDomain,
+    required TResult Function(
+            AuthenticationDataFailure<T> authenticationDataFailure)
+        authenticationData,
+    required TResult Function(CoreDomainFailure<T> coreDomainFailure)
+        coreDomain,
+    required TResult Function(CoreApplicationFailure<T> coreApplicationFailure)
+        coreApplication,
+    required TResult Function(
+            ExperienceManagementApplicationFailure<T>
+                experienceManagementApplicationFailure)
         experienceManagementApplication,
     required TResult Function(CoreDataFailure<T> coreDataFailure) coreData,
     required TResult Function(StoreDataFailure<T> storeDataFailure) storeData,
     required TResult Function(ValueFailure<T> valueFailure) value,
-    required TResult Function(ProfileDomainFailure<T> profileDomainFailure) profileDomain,
+    required TResult Function(ProfileDomainFailure<T> profileDomainFailure)
+        profileDomain,
   }) {
     return coreDomain(coreDomainFailure);
   }
@@ -562,16 +644,23 @@ class _$_CoreDomain<T> implements _CoreDomain<T> {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(AuthenticationDomainFailure<T> authenticationDomainFailure)? authenticationDomain,
-    TResult Function(AuthenticationDataFailure<T> authenticationDataFailure)? authenticationData,
+    TResult Function(
+            AuthenticationDomainFailure<T> authenticationDomainFailure)?
+        authenticationDomain,
+    TResult Function(AuthenticationDataFailure<T> authenticationDataFailure)?
+        authenticationData,
     TResult Function(CoreDomainFailure<T> coreDomainFailure)? coreDomain,
-    TResult Function(CoreApplicationFailure<T> coreApplicationFailure)? coreApplication,
-    TResult Function(ExperienceManagementApplicationFailure<T> experienceManagementApplicationFailure)?
+    TResult Function(CoreApplicationFailure<T> coreApplicationFailure)?
+        coreApplication,
+    TResult Function(
+            ExperienceManagementApplicationFailure<T>
+                experienceManagementApplicationFailure)?
         experienceManagementApplication,
     TResult Function(CoreDataFailure<T> coreDataFailure)? coreData,
     TResult Function(StoreDataFailure<T> storeDataFailure)? storeData,
     TResult Function(ValueFailure<T> valueFailure)? value,
-    TResult Function(ProfileDomainFailure<T> profileDomainFailure)? profileDomain,
+    TResult Function(ProfileDomainFailure<T> profileDomainFailure)?
+        profileDomain,
     required TResult orElse(),
   }) {
     if (coreDomain != null) {
@@ -583,7 +672,8 @@ class _$_CoreDomain<T> implements _CoreDomain<T> {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_AuthenticationDomain<T> value) authenticationDomain,
+    required TResult Function(_AuthenticationDomain<T> value)
+        authenticationDomain,
     required TResult Function(_AuthenticationData<T> value) authenticationData,
     required TResult Function(_CoreDomain<T> value) coreDomain,
     required TResult Function(_CoreAppllication<T> value) coreApplication,
@@ -604,7 +694,8 @@ class _$_CoreDomain<T> implements _CoreDomain<T> {
     TResult Function(_AuthenticationData<T> value)? authenticationData,
     TResult Function(_CoreDomain<T> value)? coreDomain,
     TResult Function(_CoreAppllication<T> value)? coreApplication,
-    TResult Function(_ExperienceManagementApplicationFailure<T> value)? experienceManagementApplication,
+    TResult Function(_ExperienceManagementApplicationFailure<T> value)?
+        experienceManagementApplication,
     TResult Function(_CoreData<T> value)? coreData,
     TResult Function(_StoreData<T> value)? storeData,
     TResult Function(_Value<T> value)? value,
@@ -619,28 +710,32 @@ class _$_CoreDomain<T> implements _CoreDomain<T> {
 }
 
 abstract class _CoreDomain<T> implements Failure<T> {
-  const factory _CoreDomain(CoreDomainFailure<T> coreDomainFailure) = _$_CoreDomain<T>;
+  const factory _CoreDomain(CoreDomainFailure<T> coreDomainFailure) =
+      _$_CoreDomain<T>;
 
-  CoreDomainFailure<T> get coreDomainFailure => throw _privateConstructorUsedError;
-
+  CoreDomainFailure<T> get coreDomainFailure =>
+      throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  _$CoreDomainCopyWith<T, _CoreDomain<T>> get copyWith => throw _privateConstructorUsedError;
+  _$CoreDomainCopyWith<T, _CoreDomain<T>> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class _$CoreAppllicationCopyWith<T, $Res> {
-  factory _$CoreAppllicationCopyWith(_CoreAppllication<T> value, $Res Function(_CoreAppllication<T>) then) =
+  factory _$CoreAppllicationCopyWith(_CoreAppllication<T> value,
+          $Res Function(_CoreAppllication<T>) then) =
       __$CoreAppllicationCopyWithImpl<T, $Res>;
-
   $Res call({CoreApplicationFailure<T> coreApplicationFailure});
 
   $CoreApplicationFailureCopyWith<T, $Res> get coreApplicationFailure;
 }
 
 /// @nodoc
-class __$CoreAppllicationCopyWithImpl<T, $Res> extends _$FailureCopyWithImpl<T, $Res>
+class __$CoreAppllicationCopyWithImpl<T, $Res>
+    extends _$FailureCopyWithImpl<T, $Res>
     implements _$CoreAppllicationCopyWith<T, $Res> {
-  __$CoreAppllicationCopyWithImpl(_CoreAppllication<T> _value, $Res Function(_CoreAppllication<T>) _then)
+  __$CoreAppllicationCopyWithImpl(
+      _CoreAppllication<T> _value, $Res Function(_CoreAppllication<T>) _then)
       : super(_value, (v) => _then(v as _CoreAppllication<T>));
 
   @override
@@ -660,7 +755,8 @@ class __$CoreAppllicationCopyWithImpl<T, $Res> extends _$FailureCopyWithImpl<T, 
 
   @override
   $CoreApplicationFailureCopyWith<T, $Res> get coreApplicationFailure {
-    return $CoreApplicationFailureCopyWith<T, $Res>(_value.coreApplicationFailure, (value) {
+    return $CoreApplicationFailureCopyWith<T, $Res>(
+        _value.coreApplicationFailure, (value) {
       return _then(_value.copyWith(coreApplicationFailure: value));
     });
   }
@@ -684,32 +780,43 @@ class _$_CoreAppllication<T> implements _CoreAppllication<T> {
     return identical(this, other) ||
         (other is _CoreAppllication<T> &&
             (identical(other.coreApplicationFailure, coreApplicationFailure) ||
-                const DeepCollectionEquality().equals(other.coreApplicationFailure, coreApplicationFailure)));
+                const DeepCollectionEquality().equals(
+                    other.coreApplicationFailure, coreApplicationFailure)));
   }
 
   @override
-  int get hashCode => runtimeType.hashCode ^ const DeepCollectionEquality().hash(coreApplicationFailure);
+  int get hashCode =>
+      runtimeType.hashCode ^
+      const DeepCollectionEquality().hash(coreApplicationFailure);
 
   @JsonKey(ignore: true)
   @override
   _$CoreAppllicationCopyWith<T, _CoreAppllication<T>> get copyWith =>
-      __$CoreAppllicationCopyWithImpl<T, _CoreAppllication<T>>(this, _$identity);
+      __$CoreAppllicationCopyWithImpl<T, _CoreAppllication<T>>(
+          this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(AuthenticationDomainFailure<T> authenticationDomainFailure)
-        authenticationDomain,
-    required TResult Function(AuthenticationDataFailure<T> authenticationDataFailure) authenticationData,
-    required TResult Function(CoreDomainFailure<T> coreDomainFailure) coreDomain,
-    required TResult Function(CoreApplicationFailure<T> coreApplicationFailure) coreApplication,
     required TResult Function(
-            ExperienceManagementApplicationFailure<T> experienceManagementApplicationFailure)
+            AuthenticationDomainFailure<T> authenticationDomainFailure)
+        authenticationDomain,
+    required TResult Function(
+            AuthenticationDataFailure<T> authenticationDataFailure)
+        authenticationData,
+    required TResult Function(CoreDomainFailure<T> coreDomainFailure)
+        coreDomain,
+    required TResult Function(CoreApplicationFailure<T> coreApplicationFailure)
+        coreApplication,
+    required TResult Function(
+            ExperienceManagementApplicationFailure<T>
+                experienceManagementApplicationFailure)
         experienceManagementApplication,
     required TResult Function(CoreDataFailure<T> coreDataFailure) coreData,
     required TResult Function(StoreDataFailure<T> storeDataFailure) storeData,
     required TResult Function(ValueFailure<T> valueFailure) value,
-    required TResult Function(ProfileDomainFailure<T> profileDomainFailure) profileDomain,
+    required TResult Function(ProfileDomainFailure<T> profileDomainFailure)
+        profileDomain,
   }) {
     return coreApplication(coreApplicationFailure);
   }
@@ -717,16 +824,23 @@ class _$_CoreAppllication<T> implements _CoreAppllication<T> {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(AuthenticationDomainFailure<T> authenticationDomainFailure)? authenticationDomain,
-    TResult Function(AuthenticationDataFailure<T> authenticationDataFailure)? authenticationData,
+    TResult Function(
+            AuthenticationDomainFailure<T> authenticationDomainFailure)?
+        authenticationDomain,
+    TResult Function(AuthenticationDataFailure<T> authenticationDataFailure)?
+        authenticationData,
     TResult Function(CoreDomainFailure<T> coreDomainFailure)? coreDomain,
-    TResult Function(CoreApplicationFailure<T> coreApplicationFailure)? coreApplication,
-    TResult Function(ExperienceManagementApplicationFailure<T> experienceManagementApplicationFailure)?
+    TResult Function(CoreApplicationFailure<T> coreApplicationFailure)?
+        coreApplication,
+    TResult Function(
+            ExperienceManagementApplicationFailure<T>
+                experienceManagementApplicationFailure)?
         experienceManagementApplication,
     TResult Function(CoreDataFailure<T> coreDataFailure)? coreData,
     TResult Function(StoreDataFailure<T> storeDataFailure)? storeData,
     TResult Function(ValueFailure<T> valueFailure)? value,
-    TResult Function(ProfileDomainFailure<T> profileDomainFailure)? profileDomain,
+    TResult Function(ProfileDomainFailure<T> profileDomainFailure)?
+        profileDomain,
     required TResult orElse(),
   }) {
     if (coreApplication != null) {
@@ -738,7 +852,8 @@ class _$_CoreAppllication<T> implements _CoreAppllication<T> {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_AuthenticationDomain<T> value) authenticationDomain,
+    required TResult Function(_AuthenticationDomain<T> value)
+        authenticationDomain,
     required TResult Function(_AuthenticationData<T> value) authenticationData,
     required TResult Function(_CoreDomain<T> value) coreDomain,
     required TResult Function(_CoreAppllication<T> value) coreApplication,
@@ -759,7 +874,8 @@ class _$_CoreAppllication<T> implements _CoreAppllication<T> {
     TResult Function(_AuthenticationData<T> value)? authenticationData,
     TResult Function(_CoreDomain<T> value)? coreDomain,
     TResult Function(_CoreAppllication<T> value)? coreApplication,
-    TResult Function(_ExperienceManagementApplicationFailure<T> value)? experienceManagementApplication,
+    TResult Function(_ExperienceManagementApplicationFailure<T> value)?
+        experienceManagementApplication,
     TResult Function(_CoreData<T> value)? coreData,
     TResult Function(_StoreData<T> value)? storeData,
     TResult Function(_Value<T> value)? value,
@@ -774,31 +890,40 @@ class _$_CoreAppllication<T> implements _CoreAppllication<T> {
 }
 
 abstract class _CoreAppllication<T> implements Failure<T> {
-  const factory _CoreAppllication(CoreApplicationFailure<T> coreApplicationFailure) = _$_CoreAppllication<T>;
+  const factory _CoreAppllication(
+          CoreApplicationFailure<T> coreApplicationFailure) =
+      _$_CoreAppllication<T>;
 
-  CoreApplicationFailure<T> get coreApplicationFailure => throw _privateConstructorUsedError;
-
+  CoreApplicationFailure<T> get coreApplicationFailure =>
+      throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  _$CoreAppllicationCopyWith<T, _CoreAppllication<T>> get copyWith => throw _privateConstructorUsedError;
+  _$CoreAppllicationCopyWith<T, _CoreAppllication<T>> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class _$ExperienceManagementApplicationFailureCopyWith<T, $Res> {
-  factory _$ExperienceManagementApplicationFailureCopyWith(_ExperienceManagementApplicationFailure<T> value,
+  factory _$ExperienceManagementApplicationFailureCopyWith(
+          _ExperienceManagementApplicationFailure<T> value,
           $Res Function(_ExperienceManagementApplicationFailure<T>) then) =
       __$ExperienceManagementApplicationFailureCopyWithImpl<T, $Res>;
+  $Res call(
+      {ExperienceManagementApplicationFailure<T>
+          experienceManagementApplicationFailure});
 
-  $Res call({ExperienceManagementApplicationFailure<T> experienceManagementApplicationFailure});
-
-  $ExperienceManagementApplicationFailureCopyWith<T, $Res> get experienceManagementApplicationFailure;
+  $ExperienceManagementApplicationFailureCopyWith<T, $Res>
+      get experienceManagementApplicationFailure;
 }
 
 /// @nodoc
-class __$ExperienceManagementApplicationFailureCopyWithImpl<T, $Res> extends _$FailureCopyWithImpl<T, $Res>
+class __$ExperienceManagementApplicationFailureCopyWithImpl<T, $Res>
+    extends _$FailureCopyWithImpl<T, $Res>
     implements _$ExperienceManagementApplicationFailureCopyWith<T, $Res> {
-  __$ExperienceManagementApplicationFailureCopyWithImpl(_ExperienceManagementApplicationFailure<T> _value,
+  __$ExperienceManagementApplicationFailureCopyWithImpl(
+      _ExperienceManagementApplicationFailure<T> _value,
       $Res Function(_ExperienceManagementApplicationFailure<T>) _then)
-      : super(_value, (v) => _then(v as _ExperienceManagementApplicationFailure<T>));
+      : super(_value,
+            (v) => _then(v as _ExperienceManagementApplicationFailure<T>));
 
   @override
   _ExperienceManagementApplicationFailure<T> get _value =>
@@ -817,21 +942,26 @@ class __$ExperienceManagementApplicationFailureCopyWithImpl<T, $Res> extends _$F
   }
 
   @override
-  $ExperienceManagementApplicationFailureCopyWith<T, $Res> get experienceManagementApplicationFailure {
+  $ExperienceManagementApplicationFailureCopyWith<T, $Res>
+      get experienceManagementApplicationFailure {
     return $ExperienceManagementApplicationFailureCopyWith<T, $Res>(
         _value.experienceManagementApplicationFailure, (value) {
-      return _then(_value.copyWith(experienceManagementApplicationFailure: value));
+      return _then(
+          _value.copyWith(experienceManagementApplicationFailure: value));
     });
   }
 }
 
 /// @nodoc
 
-class _$_ExperienceManagementApplicationFailure<T> implements _ExperienceManagementApplicationFailure<T> {
-  const _$_ExperienceManagementApplicationFailure(this.experienceManagementApplicationFailure);
+class _$_ExperienceManagementApplicationFailure<T>
+    implements _ExperienceManagementApplicationFailure<T> {
+  const _$_ExperienceManagementApplicationFailure(
+      this.experienceManagementApplicationFailure);
 
   @override
-  final ExperienceManagementApplicationFailure<T> experienceManagementApplicationFailure;
+  final ExperienceManagementApplicationFailure<T>
+      experienceManagementApplicationFailure;
 
   @override
   String toString() {
@@ -842,58 +972,78 @@ class _$_ExperienceManagementApplicationFailure<T> implements _ExperienceManagem
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other is _ExperienceManagementApplicationFailure<T> &&
-            (identical(
-                    other.experienceManagementApplicationFailure, experienceManagementApplicationFailure) ||
+            (identical(other.experienceManagementApplicationFailure,
+                    experienceManagementApplicationFailure) ||
                 const DeepCollectionEquality().equals(
-                    other.experienceManagementApplicationFailure, experienceManagementApplicationFailure)));
+                    other.experienceManagementApplicationFailure,
+                    experienceManagementApplicationFailure)));
   }
 
   @override
   int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(experienceManagementApplicationFailure);
+      runtimeType.hashCode ^
+      const DeepCollectionEquality()
+          .hash(experienceManagementApplicationFailure);
 
   @JsonKey(ignore: true)
   @override
-  _$ExperienceManagementApplicationFailureCopyWith<T, _ExperienceManagementApplicationFailure<T>>
+  _$ExperienceManagementApplicationFailureCopyWith<T,
+          _ExperienceManagementApplicationFailure<T>>
       get copyWith => __$ExperienceManagementApplicationFailureCopyWithImpl<T,
           _ExperienceManagementApplicationFailure<T>>(this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(AuthenticationDomainFailure<T> authenticationDomainFailure)
-        authenticationDomain,
-    required TResult Function(AuthenticationDataFailure<T> authenticationDataFailure) authenticationData,
-    required TResult Function(CoreDomainFailure<T> coreDomainFailure) coreDomain,
-    required TResult Function(CoreApplicationFailure<T> coreApplicationFailure) coreApplication,
     required TResult Function(
-            ExperienceManagementApplicationFailure<T> experienceManagementApplicationFailure)
+            AuthenticationDomainFailure<T> authenticationDomainFailure)
+        authenticationDomain,
+    required TResult Function(
+            AuthenticationDataFailure<T> authenticationDataFailure)
+        authenticationData,
+    required TResult Function(CoreDomainFailure<T> coreDomainFailure)
+        coreDomain,
+    required TResult Function(CoreApplicationFailure<T> coreApplicationFailure)
+        coreApplication,
+    required TResult Function(
+            ExperienceManagementApplicationFailure<T>
+                experienceManagementApplicationFailure)
         experienceManagementApplication,
     required TResult Function(CoreDataFailure<T> coreDataFailure) coreData,
     required TResult Function(StoreDataFailure<T> storeDataFailure) storeData,
     required TResult Function(ValueFailure<T> valueFailure) value,
-    required TResult Function(ProfileDomainFailure<T> profileDomainFailure) profileDomain,
+    required TResult Function(ProfileDomainFailure<T> profileDomainFailure)
+        profileDomain,
   }) {
-    return experienceManagementApplication(experienceManagementApplicationFailure);
+    return experienceManagementApplication(
+        experienceManagementApplicationFailure);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(AuthenticationDomainFailure<T> authenticationDomainFailure)? authenticationDomain,
-    TResult Function(AuthenticationDataFailure<T> authenticationDataFailure)? authenticationData,
+    TResult Function(
+            AuthenticationDomainFailure<T> authenticationDomainFailure)?
+        authenticationDomain,
+    TResult Function(AuthenticationDataFailure<T> authenticationDataFailure)?
+        authenticationData,
     TResult Function(CoreDomainFailure<T> coreDomainFailure)? coreDomain,
-    TResult Function(CoreApplicationFailure<T> coreApplicationFailure)? coreApplication,
-    TResult Function(ExperienceManagementApplicationFailure<T> experienceManagementApplicationFailure)?
+    TResult Function(CoreApplicationFailure<T> coreApplicationFailure)?
+        coreApplication,
+    TResult Function(
+            ExperienceManagementApplicationFailure<T>
+                experienceManagementApplicationFailure)?
         experienceManagementApplication,
     TResult Function(CoreDataFailure<T> coreDataFailure)? coreData,
     TResult Function(StoreDataFailure<T> storeDataFailure)? storeData,
     TResult Function(ValueFailure<T> valueFailure)? value,
-    TResult Function(ProfileDomainFailure<T> profileDomainFailure)? profileDomain,
+    TResult Function(ProfileDomainFailure<T> profileDomainFailure)?
+        profileDomain,
     required TResult orElse(),
   }) {
     if (experienceManagementApplication != null) {
-      return experienceManagementApplication(experienceManagementApplicationFailure);
+      return experienceManagementApplication(
+          experienceManagementApplicationFailure);
     }
     return orElse();
   }
@@ -901,7 +1051,8 @@ class _$_ExperienceManagementApplicationFailure<T> implements _ExperienceManagem
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_AuthenticationDomain<T> value) authenticationDomain,
+    required TResult Function(_AuthenticationDomain<T> value)
+        authenticationDomain,
     required TResult Function(_AuthenticationData<T> value) authenticationData,
     required TResult Function(_CoreDomain<T> value) coreDomain,
     required TResult Function(_CoreAppllication<T> value) coreApplication,
@@ -922,7 +1073,8 @@ class _$_ExperienceManagementApplicationFailure<T> implements _ExperienceManagem
     TResult Function(_AuthenticationData<T> value)? authenticationData,
     TResult Function(_CoreDomain<T> value)? coreDomain,
     TResult Function(_CoreAppllication<T> value)? coreApplication,
-    TResult Function(_ExperienceManagementApplicationFailure<T> value)? experienceManagementApplication,
+    TResult Function(_ExperienceManagementApplicationFailure<T> value)?
+        experienceManagementApplication,
     TResult Function(_CoreData<T> value)? coreData,
     TResult Function(_StoreData<T> value)? storeData,
     TResult Function(_Value<T> value)? value,
@@ -936,24 +1088,27 @@ class _$_ExperienceManagementApplicationFailure<T> implements _ExperienceManagem
   }
 }
 
-abstract class _ExperienceManagementApplicationFailure<T> implements Failure<T> {
+abstract class _ExperienceManagementApplicationFailure<T>
+    implements Failure<T> {
   const factory _ExperienceManagementApplicationFailure(
-          ExperienceManagementApplicationFailure<T> experienceManagementApplicationFailure) =
+          ExperienceManagementApplicationFailure<T>
+              experienceManagementApplicationFailure) =
       _$_ExperienceManagementApplicationFailure<T>;
 
-  ExperienceManagementApplicationFailure<T> get experienceManagementApplicationFailure =>
-      throw _privateConstructorUsedError;
-
+  ExperienceManagementApplicationFailure<T>
+      get experienceManagementApplicationFailure =>
+          throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  _$ExperienceManagementApplicationFailureCopyWith<T, _ExperienceManagementApplicationFailure<T>>
+  _$ExperienceManagementApplicationFailureCopyWith<T,
+          _ExperienceManagementApplicationFailure<T>>
       get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class _$CoreDataCopyWith<T, $Res> {
-  factory _$CoreDataCopyWith(_CoreData<T> value, $Res Function(_CoreData<T>) then) =
+  factory _$CoreDataCopyWith(
+          _CoreData<T> value, $Res Function(_CoreData<T>) then) =
       __$CoreDataCopyWithImpl<T, $Res>;
-
   $Res call({CoreDataFailure<T> coreDataFailure});
 
   $CoreDataFailureCopyWith<T, $Res> get coreDataFailure;
@@ -962,7 +1117,8 @@ abstract class _$CoreDataCopyWith<T, $Res> {
 /// @nodoc
 class __$CoreDataCopyWithImpl<T, $Res> extends _$FailureCopyWithImpl<T, $Res>
     implements _$CoreDataCopyWith<T, $Res> {
-  __$CoreDataCopyWithImpl(_CoreData<T> _value, $Res Function(_CoreData<T>) _then)
+  __$CoreDataCopyWithImpl(
+      _CoreData<T> _value, $Res Function(_CoreData<T>) _then)
       : super(_value, (v) => _then(v as _CoreData<T>));
 
   @override
@@ -1006,11 +1162,14 @@ class _$_CoreData<T> implements _CoreData<T> {
     return identical(this, other) ||
         (other is _CoreData<T> &&
             (identical(other.coreDataFailure, coreDataFailure) ||
-                const DeepCollectionEquality().equals(other.coreDataFailure, coreDataFailure)));
+                const DeepCollectionEquality()
+                    .equals(other.coreDataFailure, coreDataFailure)));
   }
 
   @override
-  int get hashCode => runtimeType.hashCode ^ const DeepCollectionEquality().hash(coreDataFailure);
+  int get hashCode =>
+      runtimeType.hashCode ^
+      const DeepCollectionEquality().hash(coreDataFailure);
 
   @JsonKey(ignore: true)
   @override
@@ -1020,18 +1179,25 @@ class _$_CoreData<T> implements _CoreData<T> {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(AuthenticationDomainFailure<T> authenticationDomainFailure)
-        authenticationDomain,
-    required TResult Function(AuthenticationDataFailure<T> authenticationDataFailure) authenticationData,
-    required TResult Function(CoreDomainFailure<T> coreDomainFailure) coreDomain,
-    required TResult Function(CoreApplicationFailure<T> coreApplicationFailure) coreApplication,
     required TResult Function(
-            ExperienceManagementApplicationFailure<T> experienceManagementApplicationFailure)
+            AuthenticationDomainFailure<T> authenticationDomainFailure)
+        authenticationDomain,
+    required TResult Function(
+            AuthenticationDataFailure<T> authenticationDataFailure)
+        authenticationData,
+    required TResult Function(CoreDomainFailure<T> coreDomainFailure)
+        coreDomain,
+    required TResult Function(CoreApplicationFailure<T> coreApplicationFailure)
+        coreApplication,
+    required TResult Function(
+            ExperienceManagementApplicationFailure<T>
+                experienceManagementApplicationFailure)
         experienceManagementApplication,
     required TResult Function(CoreDataFailure<T> coreDataFailure) coreData,
     required TResult Function(StoreDataFailure<T> storeDataFailure) storeData,
     required TResult Function(ValueFailure<T> valueFailure) value,
-    required TResult Function(ProfileDomainFailure<T> profileDomainFailure) profileDomain,
+    required TResult Function(ProfileDomainFailure<T> profileDomainFailure)
+        profileDomain,
   }) {
     return coreData(coreDataFailure);
   }
@@ -1039,16 +1205,23 @@ class _$_CoreData<T> implements _CoreData<T> {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(AuthenticationDomainFailure<T> authenticationDomainFailure)? authenticationDomain,
-    TResult Function(AuthenticationDataFailure<T> authenticationDataFailure)? authenticationData,
+    TResult Function(
+            AuthenticationDomainFailure<T> authenticationDomainFailure)?
+        authenticationDomain,
+    TResult Function(AuthenticationDataFailure<T> authenticationDataFailure)?
+        authenticationData,
     TResult Function(CoreDomainFailure<T> coreDomainFailure)? coreDomain,
-    TResult Function(CoreApplicationFailure<T> coreApplicationFailure)? coreApplication,
-    TResult Function(ExperienceManagementApplicationFailure<T> experienceManagementApplicationFailure)?
+    TResult Function(CoreApplicationFailure<T> coreApplicationFailure)?
+        coreApplication,
+    TResult Function(
+            ExperienceManagementApplicationFailure<T>
+                experienceManagementApplicationFailure)?
         experienceManagementApplication,
     TResult Function(CoreDataFailure<T> coreDataFailure)? coreData,
     TResult Function(StoreDataFailure<T> storeDataFailure)? storeData,
     TResult Function(ValueFailure<T> valueFailure)? value,
-    TResult Function(ProfileDomainFailure<T> profileDomainFailure)? profileDomain,
+    TResult Function(ProfileDomainFailure<T> profileDomainFailure)?
+        profileDomain,
     required TResult orElse(),
   }) {
     if (coreData != null) {
@@ -1060,7 +1233,8 @@ class _$_CoreData<T> implements _CoreData<T> {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_AuthenticationDomain<T> value) authenticationDomain,
+    required TResult Function(_AuthenticationDomain<T> value)
+        authenticationDomain,
     required TResult Function(_AuthenticationData<T> value) authenticationData,
     required TResult Function(_CoreDomain<T> value) coreDomain,
     required TResult Function(_CoreAppllication<T> value) coreApplication,
@@ -1081,7 +1255,8 @@ class _$_CoreData<T> implements _CoreData<T> {
     TResult Function(_AuthenticationData<T> value)? authenticationData,
     TResult Function(_CoreDomain<T> value)? coreDomain,
     TResult Function(_CoreAppllication<T> value)? coreApplication,
-    TResult Function(_ExperienceManagementApplicationFailure<T> value)? experienceManagementApplication,
+    TResult Function(_ExperienceManagementApplicationFailure<T> value)?
+        experienceManagementApplication,
     TResult Function(_CoreData<T> value)? coreData,
     TResult Function(_StoreData<T> value)? storeData,
     TResult Function(_Value<T> value)? value,
@@ -1099,16 +1274,16 @@ abstract class _CoreData<T> implements Failure<T> {
   const factory _CoreData(CoreDataFailure<T> coreDataFailure) = _$_CoreData<T>;
 
   CoreDataFailure<T> get coreDataFailure => throw _privateConstructorUsedError;
-
   @JsonKey(ignore: true)
-  _$CoreDataCopyWith<T, _CoreData<T>> get copyWith => throw _privateConstructorUsedError;
+  _$CoreDataCopyWith<T, _CoreData<T>> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class _$StoreDataCopyWith<T, $Res> {
-  factory _$StoreDataCopyWith(_StoreData<T> value, $Res Function(_StoreData<T>) then) =
+  factory _$StoreDataCopyWith(
+          _StoreData<T> value, $Res Function(_StoreData<T>) then) =
       __$StoreDataCopyWithImpl<T, $Res>;
-
   $Res call({StoreDataFailure<T> storeDataFailure});
 
   $StoreDataFailureCopyWith<T, $Res> get storeDataFailure;
@@ -1117,7 +1292,8 @@ abstract class _$StoreDataCopyWith<T, $Res> {
 /// @nodoc
 class __$StoreDataCopyWithImpl<T, $Res> extends _$FailureCopyWithImpl<T, $Res>
     implements _$StoreDataCopyWith<T, $Res> {
-  __$StoreDataCopyWithImpl(_StoreData<T> _value, $Res Function(_StoreData<T>) _then)
+  __$StoreDataCopyWithImpl(
+      _StoreData<T> _value, $Res Function(_StoreData<T>) _then)
       : super(_value, (v) => _then(v as _StoreData<T>));
 
   @override
@@ -1161,11 +1337,14 @@ class _$_StoreData<T> implements _StoreData<T> {
     return identical(this, other) ||
         (other is _StoreData<T> &&
             (identical(other.storeDataFailure, storeDataFailure) ||
-                const DeepCollectionEquality().equals(other.storeDataFailure, storeDataFailure)));
+                const DeepCollectionEquality()
+                    .equals(other.storeDataFailure, storeDataFailure)));
   }
 
   @override
-  int get hashCode => runtimeType.hashCode ^ const DeepCollectionEquality().hash(storeDataFailure);
+  int get hashCode =>
+      runtimeType.hashCode ^
+      const DeepCollectionEquality().hash(storeDataFailure);
 
   @JsonKey(ignore: true)
   @override
@@ -1175,18 +1354,25 @@ class _$_StoreData<T> implements _StoreData<T> {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(AuthenticationDomainFailure<T> authenticationDomainFailure)
-        authenticationDomain,
-    required TResult Function(AuthenticationDataFailure<T> authenticationDataFailure) authenticationData,
-    required TResult Function(CoreDomainFailure<T> coreDomainFailure) coreDomain,
-    required TResult Function(CoreApplicationFailure<T> coreApplicationFailure) coreApplication,
     required TResult Function(
-            ExperienceManagementApplicationFailure<T> experienceManagementApplicationFailure)
+            AuthenticationDomainFailure<T> authenticationDomainFailure)
+        authenticationDomain,
+    required TResult Function(
+            AuthenticationDataFailure<T> authenticationDataFailure)
+        authenticationData,
+    required TResult Function(CoreDomainFailure<T> coreDomainFailure)
+        coreDomain,
+    required TResult Function(CoreApplicationFailure<T> coreApplicationFailure)
+        coreApplication,
+    required TResult Function(
+            ExperienceManagementApplicationFailure<T>
+                experienceManagementApplicationFailure)
         experienceManagementApplication,
     required TResult Function(CoreDataFailure<T> coreDataFailure) coreData,
     required TResult Function(StoreDataFailure<T> storeDataFailure) storeData,
     required TResult Function(ValueFailure<T> valueFailure) value,
-    required TResult Function(ProfileDomainFailure<T> profileDomainFailure) profileDomain,
+    required TResult Function(ProfileDomainFailure<T> profileDomainFailure)
+        profileDomain,
   }) {
     return storeData(storeDataFailure);
   }
@@ -1194,16 +1380,23 @@ class _$_StoreData<T> implements _StoreData<T> {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(AuthenticationDomainFailure<T> authenticationDomainFailure)? authenticationDomain,
-    TResult Function(AuthenticationDataFailure<T> authenticationDataFailure)? authenticationData,
+    TResult Function(
+            AuthenticationDomainFailure<T> authenticationDomainFailure)?
+        authenticationDomain,
+    TResult Function(AuthenticationDataFailure<T> authenticationDataFailure)?
+        authenticationData,
     TResult Function(CoreDomainFailure<T> coreDomainFailure)? coreDomain,
-    TResult Function(CoreApplicationFailure<T> coreApplicationFailure)? coreApplication,
-    TResult Function(ExperienceManagementApplicationFailure<T> experienceManagementApplicationFailure)?
+    TResult Function(CoreApplicationFailure<T> coreApplicationFailure)?
+        coreApplication,
+    TResult Function(
+            ExperienceManagementApplicationFailure<T>
+                experienceManagementApplicationFailure)?
         experienceManagementApplication,
     TResult Function(CoreDataFailure<T> coreDataFailure)? coreData,
     TResult Function(StoreDataFailure<T> storeDataFailure)? storeData,
     TResult Function(ValueFailure<T> valueFailure)? value,
-    TResult Function(ProfileDomainFailure<T> profileDomainFailure)? profileDomain,
+    TResult Function(ProfileDomainFailure<T> profileDomainFailure)?
+        profileDomain,
     required TResult orElse(),
   }) {
     if (storeData != null) {
@@ -1215,7 +1408,8 @@ class _$_StoreData<T> implements _StoreData<T> {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_AuthenticationDomain<T> value) authenticationDomain,
+    required TResult Function(_AuthenticationDomain<T> value)
+        authenticationDomain,
     required TResult Function(_AuthenticationData<T> value) authenticationData,
     required TResult Function(_CoreDomain<T> value) coreDomain,
     required TResult Function(_CoreAppllication<T> value) coreApplication,
@@ -1236,7 +1430,8 @@ class _$_StoreData<T> implements _StoreData<T> {
     TResult Function(_AuthenticationData<T> value)? authenticationData,
     TResult Function(_CoreDomain<T> value)? coreDomain,
     TResult Function(_CoreAppllication<T> value)? coreApplication,
-    TResult Function(_ExperienceManagementApplicationFailure<T> value)? experienceManagementApplication,
+    TResult Function(_ExperienceManagementApplicationFailure<T> value)?
+        experienceManagementApplication,
     TResult Function(_CoreData<T> value)? coreData,
     TResult Function(_StoreData<T> value)? storeData,
     TResult Function(_Value<T> value)? value,
@@ -1251,18 +1446,20 @@ class _$_StoreData<T> implements _StoreData<T> {
 }
 
 abstract class _StoreData<T> implements Failure<T> {
-  const factory _StoreData(StoreDataFailure<T> storeDataFailure) = _$_StoreData<T>;
+  const factory _StoreData(StoreDataFailure<T> storeDataFailure) =
+      _$_StoreData<T>;
 
-  StoreDataFailure<T> get storeDataFailure => throw _privateConstructorUsedError;
-
+  StoreDataFailure<T> get storeDataFailure =>
+      throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  _$StoreDataCopyWith<T, _StoreData<T>> get copyWith => throw _privateConstructorUsedError;
+  _$StoreDataCopyWith<T, _StoreData<T>> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class _$ValueCopyWith<T, $Res> {
-  factory _$ValueCopyWith(_Value<T> value, $Res Function(_Value<T>) then) = __$ValueCopyWithImpl<T, $Res>;
-
+  factory _$ValueCopyWith(_Value<T> value, $Res Function(_Value<T>) then) =
+      __$ValueCopyWithImpl<T, $Res>;
   $Res call({ValueFailure<T> valueFailure});
 
   $ValueFailureCopyWith<T, $Res> get valueFailure;
@@ -1315,31 +1512,41 @@ class _$_Value<T> implements _Value<T> {
     return identical(this, other) ||
         (other is _Value<T> &&
             (identical(other.valueFailure, valueFailure) ||
-                const DeepCollectionEquality().equals(other.valueFailure, valueFailure)));
+                const DeepCollectionEquality()
+                    .equals(other.valueFailure, valueFailure)));
   }
 
   @override
-  int get hashCode => runtimeType.hashCode ^ const DeepCollectionEquality().hash(valueFailure);
+  int get hashCode =>
+      runtimeType.hashCode ^ const DeepCollectionEquality().hash(valueFailure);
 
   @JsonKey(ignore: true)
   @override
-  _$ValueCopyWith<T, _Value<T>> get copyWith => __$ValueCopyWithImpl<T, _Value<T>>(this, _$identity);
+  _$ValueCopyWith<T, _Value<T>> get copyWith =>
+      __$ValueCopyWithImpl<T, _Value<T>>(this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(AuthenticationDomainFailure<T> authenticationDomainFailure)
-        authenticationDomain,
-    required TResult Function(AuthenticationDataFailure<T> authenticationDataFailure) authenticationData,
-    required TResult Function(CoreDomainFailure<T> coreDomainFailure) coreDomain,
-    required TResult Function(CoreApplicationFailure<T> coreApplicationFailure) coreApplication,
     required TResult Function(
-            ExperienceManagementApplicationFailure<T> experienceManagementApplicationFailure)
+            AuthenticationDomainFailure<T> authenticationDomainFailure)
+        authenticationDomain,
+    required TResult Function(
+            AuthenticationDataFailure<T> authenticationDataFailure)
+        authenticationData,
+    required TResult Function(CoreDomainFailure<T> coreDomainFailure)
+        coreDomain,
+    required TResult Function(CoreApplicationFailure<T> coreApplicationFailure)
+        coreApplication,
+    required TResult Function(
+            ExperienceManagementApplicationFailure<T>
+                experienceManagementApplicationFailure)
         experienceManagementApplication,
     required TResult Function(CoreDataFailure<T> coreDataFailure) coreData,
     required TResult Function(StoreDataFailure<T> storeDataFailure) storeData,
     required TResult Function(ValueFailure<T> valueFailure) value,
-    required TResult Function(ProfileDomainFailure<T> profileDomainFailure) profileDomain,
+    required TResult Function(ProfileDomainFailure<T> profileDomainFailure)
+        profileDomain,
   }) {
     return value(valueFailure);
   }
@@ -1347,16 +1554,23 @@ class _$_Value<T> implements _Value<T> {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(AuthenticationDomainFailure<T> authenticationDomainFailure)? authenticationDomain,
-    TResult Function(AuthenticationDataFailure<T> authenticationDataFailure)? authenticationData,
+    TResult Function(
+            AuthenticationDomainFailure<T> authenticationDomainFailure)?
+        authenticationDomain,
+    TResult Function(AuthenticationDataFailure<T> authenticationDataFailure)?
+        authenticationData,
     TResult Function(CoreDomainFailure<T> coreDomainFailure)? coreDomain,
-    TResult Function(CoreApplicationFailure<T> coreApplicationFailure)? coreApplication,
-    TResult Function(ExperienceManagementApplicationFailure<T> experienceManagementApplicationFailure)?
+    TResult Function(CoreApplicationFailure<T> coreApplicationFailure)?
+        coreApplication,
+    TResult Function(
+            ExperienceManagementApplicationFailure<T>
+                experienceManagementApplicationFailure)?
         experienceManagementApplication,
     TResult Function(CoreDataFailure<T> coreDataFailure)? coreData,
     TResult Function(StoreDataFailure<T> storeDataFailure)? storeData,
     TResult Function(ValueFailure<T> valueFailure)? value,
-    TResult Function(ProfileDomainFailure<T> profileDomainFailure)? profileDomain,
+    TResult Function(ProfileDomainFailure<T> profileDomainFailure)?
+        profileDomain,
     required TResult orElse(),
   }) {
     if (value != null) {
@@ -1368,7 +1582,8 @@ class _$_Value<T> implements _Value<T> {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_AuthenticationDomain<T> value) authenticationDomain,
+    required TResult Function(_AuthenticationDomain<T> value)
+        authenticationDomain,
     required TResult Function(_AuthenticationData<T> value) authenticationData,
     required TResult Function(_CoreDomain<T> value) coreDomain,
     required TResult Function(_CoreAppllication<T> value) coreApplication,
@@ -1389,7 +1604,8 @@ class _$_Value<T> implements _Value<T> {
     TResult Function(_AuthenticationData<T> value)? authenticationData,
     TResult Function(_CoreDomain<T> value)? coreDomain,
     TResult Function(_CoreAppllication<T> value)? coreApplication,
-    TResult Function(_ExperienceManagementApplicationFailure<T> value)? experienceManagementApplication,
+    TResult Function(_ExperienceManagementApplicationFailure<T> value)?
+        experienceManagementApplication,
     TResult Function(_CoreData<T> value)? coreData,
     TResult Function(_StoreData<T> value)? storeData,
     TResult Function(_Value<T> value)? value,
@@ -1407,25 +1623,27 @@ abstract class _Value<T> implements Failure<T> {
   const factory _Value(ValueFailure<T> valueFailure) = _$_Value<T>;
 
   ValueFailure<T> get valueFailure => throw _privateConstructorUsedError;
-
   @JsonKey(ignore: true)
-  _$ValueCopyWith<T, _Value<T>> get copyWith => throw _privateConstructorUsedError;
+  _$ValueCopyWith<T, _Value<T>> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class _$ProfileDomainCopyWith<T, $Res> {
-  factory _$ProfileDomainCopyWith(_ProfileDomain<T> value, $Res Function(_ProfileDomain<T>) then) =
+  factory _$ProfileDomainCopyWith(
+          _ProfileDomain<T> value, $Res Function(_ProfileDomain<T>) then) =
       __$ProfileDomainCopyWithImpl<T, $Res>;
-
   $Res call({ProfileDomainFailure<T> profileDomainFailure});
 
   $ProfileDomainFailureCopyWith<T, $Res> get profileDomainFailure;
 }
 
 /// @nodoc
-class __$ProfileDomainCopyWithImpl<T, $Res> extends _$FailureCopyWithImpl<T, $Res>
+class __$ProfileDomainCopyWithImpl<T, $Res>
+    extends _$FailureCopyWithImpl<T, $Res>
     implements _$ProfileDomainCopyWith<T, $Res> {
-  __$ProfileDomainCopyWithImpl(_ProfileDomain<T> _value, $Res Function(_ProfileDomain<T>) _then)
+  __$ProfileDomainCopyWithImpl(
+      _ProfileDomain<T> _value, $Res Function(_ProfileDomain<T>) _then)
       : super(_value, (v) => _then(v as _ProfileDomain<T>));
 
   @override
@@ -1445,7 +1663,8 @@ class __$ProfileDomainCopyWithImpl<T, $Res> extends _$FailureCopyWithImpl<T, $Re
 
   @override
   $ProfileDomainFailureCopyWith<T, $Res> get profileDomainFailure {
-    return $ProfileDomainFailureCopyWith<T, $Res>(_value.profileDomainFailure, (value) {
+    return $ProfileDomainFailureCopyWith<T, $Res>(_value.profileDomainFailure,
+        (value) {
       return _then(_value.copyWith(profileDomainFailure: value));
     });
   }
@@ -1469,11 +1688,14 @@ class _$_ProfileDomain<T> implements _ProfileDomain<T> {
     return identical(this, other) ||
         (other is _ProfileDomain<T> &&
             (identical(other.profileDomainFailure, profileDomainFailure) ||
-                const DeepCollectionEquality().equals(other.profileDomainFailure, profileDomainFailure)));
+                const DeepCollectionEquality()
+                    .equals(other.profileDomainFailure, profileDomainFailure)));
   }
 
   @override
-  int get hashCode => runtimeType.hashCode ^ const DeepCollectionEquality().hash(profileDomainFailure);
+  int get hashCode =>
+      runtimeType.hashCode ^
+      const DeepCollectionEquality().hash(profileDomainFailure);
 
   @JsonKey(ignore: true)
   @override
@@ -1483,18 +1705,25 @@ class _$_ProfileDomain<T> implements _ProfileDomain<T> {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(AuthenticationDomainFailure<T> authenticationDomainFailure)
-        authenticationDomain,
-    required TResult Function(AuthenticationDataFailure<T> authenticationDataFailure) authenticationData,
-    required TResult Function(CoreDomainFailure<T> coreDomainFailure) coreDomain,
-    required TResult Function(CoreApplicationFailure<T> coreApplicationFailure) coreApplication,
     required TResult Function(
-            ExperienceManagementApplicationFailure<T> experienceManagementApplicationFailure)
+            AuthenticationDomainFailure<T> authenticationDomainFailure)
+        authenticationDomain,
+    required TResult Function(
+            AuthenticationDataFailure<T> authenticationDataFailure)
+        authenticationData,
+    required TResult Function(CoreDomainFailure<T> coreDomainFailure)
+        coreDomain,
+    required TResult Function(CoreApplicationFailure<T> coreApplicationFailure)
+        coreApplication,
+    required TResult Function(
+            ExperienceManagementApplicationFailure<T>
+                experienceManagementApplicationFailure)
         experienceManagementApplication,
     required TResult Function(CoreDataFailure<T> coreDataFailure) coreData,
     required TResult Function(StoreDataFailure<T> storeDataFailure) storeData,
     required TResult Function(ValueFailure<T> valueFailure) value,
-    required TResult Function(ProfileDomainFailure<T> profileDomainFailure) profileDomain,
+    required TResult Function(ProfileDomainFailure<T> profileDomainFailure)
+        profileDomain,
   }) {
     return profileDomain(profileDomainFailure);
   }
@@ -1502,16 +1731,23 @@ class _$_ProfileDomain<T> implements _ProfileDomain<T> {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(AuthenticationDomainFailure<T> authenticationDomainFailure)? authenticationDomain,
-    TResult Function(AuthenticationDataFailure<T> authenticationDataFailure)? authenticationData,
+    TResult Function(
+            AuthenticationDomainFailure<T> authenticationDomainFailure)?
+        authenticationDomain,
+    TResult Function(AuthenticationDataFailure<T> authenticationDataFailure)?
+        authenticationData,
     TResult Function(CoreDomainFailure<T> coreDomainFailure)? coreDomain,
-    TResult Function(CoreApplicationFailure<T> coreApplicationFailure)? coreApplication,
-    TResult Function(ExperienceManagementApplicationFailure<T> experienceManagementApplicationFailure)?
+    TResult Function(CoreApplicationFailure<T> coreApplicationFailure)?
+        coreApplication,
+    TResult Function(
+            ExperienceManagementApplicationFailure<T>
+                experienceManagementApplicationFailure)?
         experienceManagementApplication,
     TResult Function(CoreDataFailure<T> coreDataFailure)? coreData,
     TResult Function(StoreDataFailure<T> storeDataFailure)? storeData,
     TResult Function(ValueFailure<T> valueFailure)? value,
-    TResult Function(ProfileDomainFailure<T> profileDomainFailure)? profileDomain,
+    TResult Function(ProfileDomainFailure<T> profileDomainFailure)?
+        profileDomain,
     required TResult orElse(),
   }) {
     if (profileDomain != null) {
@@ -1523,7 +1759,8 @@ class _$_ProfileDomain<T> implements _ProfileDomain<T> {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_AuthenticationDomain<T> value) authenticationDomain,
+    required TResult Function(_AuthenticationDomain<T> value)
+        authenticationDomain,
     required TResult Function(_AuthenticationData<T> value) authenticationData,
     required TResult Function(_CoreDomain<T> value) coreDomain,
     required TResult Function(_CoreAppllication<T> value) coreApplication,
@@ -1544,7 +1781,8 @@ class _$_ProfileDomain<T> implements _ProfileDomain<T> {
     TResult Function(_AuthenticationData<T> value)? authenticationData,
     TResult Function(_CoreDomain<T> value)? coreDomain,
     TResult Function(_CoreAppllication<T> value)? coreApplication,
-    TResult Function(_ExperienceManagementApplicationFailure<T> value)? experienceManagementApplication,
+    TResult Function(_ExperienceManagementApplicationFailure<T> value)?
+        experienceManagementApplication,
     TResult Function(_CoreData<T> value)? coreData,
     TResult Function(_StoreData<T> value)? storeData,
     TResult Function(_Value<T> value)? value,
@@ -1559,10 +1797,12 @@ class _$_ProfileDomain<T> implements _ProfileDomain<T> {
 }
 
 abstract class _ProfileDomain<T> implements Failure<T> {
-  const factory _ProfileDomain(ProfileDomainFailure<T> profileDomainFailure) = _$_ProfileDomain<T>;
+  const factory _ProfileDomain(ProfileDomainFailure<T> profileDomainFailure) =
+      _$_ProfileDomain<T>;
 
-  ProfileDomainFailure<T> get profileDomainFailure => throw _privateConstructorUsedError;
-
+  ProfileDomainFailure<T> get profileDomainFailure =>
+      throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  _$ProfileDomainCopyWith<T, _ProfileDomain<T>> get copyWith => throw _privateConstructorUsedError;
+  _$ProfileDomainCopyWith<T, _ProfileDomain<T>> get copyWith =>
+      throw _privateConstructorUsedError;
 }

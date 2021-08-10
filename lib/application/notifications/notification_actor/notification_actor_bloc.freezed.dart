@@ -64,26 +64,26 @@ mixin _$NotificationActorEvent {
       throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
-  $NotificationActorEventCopyWith<NotificationActorEvent> get copyWith => throw _privateConstructorUsedError;
+  $NotificationActorEventCopyWith<NotificationActorEvent> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $NotificationActorEventCopyWith<$Res> {
-  factory $NotificationActorEventCopyWith(
-          NotificationActorEvent value, $Res Function(NotificationActorEvent) then) =
+  factory $NotificationActorEventCopyWith(NotificationActorEvent value,
+          $Res Function(NotificationActorEvent) then) =
       _$NotificationActorEventCopyWithImpl<$Res>;
-
   $Res call({Notification notification});
 
   $NotificationCopyWith<$Res> get notification;
 }
 
 /// @nodoc
-class _$NotificationActorEventCopyWithImpl<$Res> implements $NotificationActorEventCopyWith<$Res> {
+class _$NotificationActorEventCopyWithImpl<$Res>
+    implements $NotificationActorEventCopyWith<$Res> {
   _$NotificationActorEventCopyWithImpl(this._value, this._then);
 
   final NotificationActorEvent _value;
-
   // ignore: unused_field
   final $Res Function(NotificationActorEvent) _then;
 
@@ -108,9 +108,10 @@ class _$NotificationActorEventCopyWithImpl<$Res> implements $NotificationActorEv
 }
 
 /// @nodoc
-abstract class _$DeletedCopyWith<$Res> implements $NotificationActorEventCopyWith<$Res> {
-  factory _$DeletedCopyWith(_Deleted value, $Res Function(_Deleted) then) = __$DeletedCopyWithImpl<$Res>;
-
+abstract class _$DeletedCopyWith<$Res>
+    implements $NotificationActorEventCopyWith<$Res> {
+  factory _$DeletedCopyWith(_Deleted value, $Res Function(_Deleted) then) =
+      __$DeletedCopyWithImpl<$Res>;
   @override
   $Res call({Notification notification});
 
@@ -119,7 +120,8 @@ abstract class _$DeletedCopyWith<$Res> implements $NotificationActorEventCopyWit
 }
 
 /// @nodoc
-class __$DeletedCopyWithImpl<$Res> extends _$NotificationActorEventCopyWithImpl<$Res>
+class __$DeletedCopyWithImpl<$Res>
+    extends _$NotificationActorEventCopyWithImpl<$Res>
     implements _$DeletedCopyWith<$Res> {
   __$DeletedCopyWithImpl(_Deleted _value, $Res Function(_Deleted) _then)
       : super(_value, (v) => _then(v as _Deleted));
@@ -158,15 +160,18 @@ class _$_Deleted implements _Deleted {
     return identical(this, other) ||
         (other is _Deleted &&
             (identical(other.notification, notification) ||
-                const DeepCollectionEquality().equals(other.notification, notification)));
+                const DeepCollectionEquality()
+                    .equals(other.notification, notification)));
   }
 
   @override
-  int get hashCode => runtimeType.hashCode ^ const DeepCollectionEquality().hash(notification);
+  int get hashCode =>
+      runtimeType.hashCode ^ const DeepCollectionEquality().hash(notification);
 
   @JsonKey(ignore: true)
   @override
-  _$DeletedCopyWith<_Deleted> get copyWith => __$DeletedCopyWithImpl<_Deleted>(this, _$identity);
+  _$DeletedCopyWith<_Deleted> get copyWith =>
+      __$DeletedCopyWithImpl<_Deleted>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -218,16 +223,17 @@ abstract class _Deleted implements NotificationActorEvent {
 
   @override
   Notification get notification => throw _privateConstructorUsedError;
-
   @override
   @JsonKey(ignore: true)
-  _$DeletedCopyWith<_Deleted> get copyWith => throw _privateConstructorUsedError;
+  _$DeletedCopyWith<_Deleted> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$CheckedCopyWith<$Res> implements $NotificationActorEventCopyWith<$Res> {
-  factory _$CheckedCopyWith(_Checked value, $Res Function(_Checked) then) = __$CheckedCopyWithImpl<$Res>;
-
+abstract class _$CheckedCopyWith<$Res>
+    implements $NotificationActorEventCopyWith<$Res> {
+  factory _$CheckedCopyWith(_Checked value, $Res Function(_Checked) then) =
+      __$CheckedCopyWithImpl<$Res>;
   @override
   $Res call({Notification notification});
 
@@ -236,7 +242,8 @@ abstract class _$CheckedCopyWith<$Res> implements $NotificationActorEventCopyWit
 }
 
 /// @nodoc
-class __$CheckedCopyWithImpl<$Res> extends _$NotificationActorEventCopyWithImpl<$Res>
+class __$CheckedCopyWithImpl<$Res>
+    extends _$NotificationActorEventCopyWithImpl<$Res>
     implements _$CheckedCopyWith<$Res> {
   __$CheckedCopyWithImpl(_Checked _value, $Res Function(_Checked) _then)
       : super(_value, (v) => _then(v as _Checked));
@@ -275,15 +282,18 @@ class _$_Checked implements _Checked {
     return identical(this, other) ||
         (other is _Checked &&
             (identical(other.notification, notification) ||
-                const DeepCollectionEquality().equals(other.notification, notification)));
+                const DeepCollectionEquality()
+                    .equals(other.notification, notification)));
   }
 
   @override
-  int get hashCode => runtimeType.hashCode ^ const DeepCollectionEquality().hash(notification);
+  int get hashCode =>
+      runtimeType.hashCode ^ const DeepCollectionEquality().hash(notification);
 
   @JsonKey(ignore: true)
   @override
-  _$CheckedCopyWith<_Checked> get copyWith => __$CheckedCopyWithImpl<_Checked>(this, _$identity);
+  _$CheckedCopyWith<_Checked> get copyWith =>
+      __$CheckedCopyWithImpl<_Checked>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -335,10 +345,10 @@ abstract class _Checked implements NotificationActorEvent {
 
   @override
   Notification get notification => throw _privateConstructorUsedError;
-
   @override
   @JsonKey(ignore: true)
-  _$CheckedCopyWith<_Checked> get copyWith => throw _privateConstructorUsedError;
+  _$CheckedCopyWith<_Checked> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -415,28 +425,30 @@ mixin _$NotificationActorState {
 
 /// @nodoc
 abstract class $NotificationActorStateCopyWith<$Res> {
-  factory $NotificationActorStateCopyWith(
-          NotificationActorState value, $Res Function(NotificationActorState) then) =
+  factory $NotificationActorStateCopyWith(NotificationActorState value,
+          $Res Function(NotificationActorState) then) =
       _$NotificationActorStateCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class _$NotificationActorStateCopyWithImpl<$Res> implements $NotificationActorStateCopyWith<$Res> {
+class _$NotificationActorStateCopyWithImpl<$Res>
+    implements $NotificationActorStateCopyWith<$Res> {
   _$NotificationActorStateCopyWithImpl(this._value, this._then);
 
   final NotificationActorState _value;
-
   // ignore: unused_field
   final $Res Function(NotificationActorState) _then;
 }
 
 /// @nodoc
 abstract class _$InitialCopyWith<$Res> {
-  factory _$InitialCopyWith(_Initial value, $Res Function(_Initial) then) = __$InitialCopyWithImpl<$Res>;
+  factory _$InitialCopyWith(_Initial value, $Res Function(_Initial) then) =
+      __$InitialCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$InitialCopyWithImpl<$Res> extends _$NotificationActorStateCopyWithImpl<$Res>
+class __$InitialCopyWithImpl<$Res>
+    extends _$NotificationActorStateCopyWithImpl<$Res>
     implements _$InitialCopyWith<$Res> {
   __$InitialCopyWithImpl(_Initial _value, $Res Function(_Initial) _then)
       : super(_value, (v) => _then(v as _Initial));
@@ -526,14 +538,17 @@ abstract class _Initial implements NotificationActorState {
 
 /// @nodoc
 abstract class _$ActionInProgressCopyWith<$Res> {
-  factory _$ActionInProgressCopyWith(_ActionInProgress value, $Res Function(_ActionInProgress) then) =
+  factory _$ActionInProgressCopyWith(
+          _ActionInProgress value, $Res Function(_ActionInProgress) then) =
       __$ActionInProgressCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$ActionInProgressCopyWithImpl<$Res> extends _$NotificationActorStateCopyWithImpl<$Res>
+class __$ActionInProgressCopyWithImpl<$Res>
+    extends _$NotificationActorStateCopyWithImpl<$Res>
     implements _$ActionInProgressCopyWith<$Res> {
-  __$ActionInProgressCopyWithImpl(_ActionInProgress _value, $Res Function(_ActionInProgress) _then)
+  __$ActionInProgressCopyWithImpl(
+      _ActionInProgress _value, $Res Function(_ActionInProgress) _then)
       : super(_value, (v) => _then(v as _ActionInProgress));
 
   @override
@@ -621,14 +636,17 @@ abstract class _ActionInProgress implements NotificationActorState {
 
 /// @nodoc
 abstract class _$DeletionSuccessCopyWith<$Res> {
-  factory _$DeletionSuccessCopyWith(_DeletionSuccess value, $Res Function(_DeletionSuccess) then) =
+  factory _$DeletionSuccessCopyWith(
+          _DeletionSuccess value, $Res Function(_DeletionSuccess) then) =
       __$DeletionSuccessCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$DeletionSuccessCopyWithImpl<$Res> extends _$NotificationActorStateCopyWithImpl<$Res>
+class __$DeletionSuccessCopyWithImpl<$Res>
+    extends _$NotificationActorStateCopyWithImpl<$Res>
     implements _$DeletionSuccessCopyWith<$Res> {
-  __$DeletionSuccessCopyWithImpl(_DeletionSuccess _value, $Res Function(_DeletionSuccess) _then)
+  __$DeletionSuccessCopyWithImpl(
+      _DeletionSuccess _value, $Res Function(_DeletionSuccess) _then)
       : super(_value, (v) => _then(v as _DeletionSuccess));
 
   @override
@@ -716,18 +734,20 @@ abstract class _DeletionSuccess implements NotificationActorState {
 
 /// @nodoc
 abstract class _$DeletionFailureCopyWith<$Res> {
-  factory _$DeletionFailureCopyWith(_DeletionFailure value, $Res Function(_DeletionFailure) then) =
+  factory _$DeletionFailureCopyWith(
+          _DeletionFailure value, $Res Function(_DeletionFailure) then) =
       __$DeletionFailureCopyWithImpl<$Res>;
-
   $Res call({Failure<dynamic> failure});
 
   $FailureCopyWith<dynamic, $Res> get failure;
 }
 
 /// @nodoc
-class __$DeletionFailureCopyWithImpl<$Res> extends _$NotificationActorStateCopyWithImpl<$Res>
+class __$DeletionFailureCopyWithImpl<$Res>
+    extends _$NotificationActorStateCopyWithImpl<$Res>
     implements _$DeletionFailureCopyWith<$Res> {
-  __$DeletionFailureCopyWithImpl(_DeletionFailure _value, $Res Function(_DeletionFailure) _then)
+  __$DeletionFailureCopyWithImpl(
+      _DeletionFailure _value, $Res Function(_DeletionFailure) _then)
       : super(_value, (v) => _then(v as _DeletionFailure));
 
   @override
@@ -775,7 +795,8 @@ class _$_DeletionFailure implements _DeletionFailure {
   }
 
   @override
-  int get hashCode => runtimeType.hashCode ^ const DeepCollectionEquality().hash(failure);
+  int get hashCode =>
+      runtimeType.hashCode ^ const DeepCollectionEquality().hash(failure);
 
   @JsonKey(ignore: true)
   @override
@@ -843,21 +864,24 @@ abstract class _DeletionFailure implements NotificationActorState {
   const factory _DeletionFailure(Failure<dynamic> failure) = _$_DeletionFailure;
 
   Failure<dynamic> get failure => throw _privateConstructorUsedError;
-
   @JsonKey(ignore: true)
-  _$DeletionFailureCopyWith<_DeletionFailure> get copyWith => throw _privateConstructorUsedError;
+  _$DeletionFailureCopyWith<_DeletionFailure> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class _$CheckSuccessCopyWith<$Res> {
-  factory _$CheckSuccessCopyWith(_CheckSuccess value, $Res Function(_CheckSuccess) then) =
+  factory _$CheckSuccessCopyWith(
+          _CheckSuccess value, $Res Function(_CheckSuccess) then) =
       __$CheckSuccessCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$CheckSuccessCopyWithImpl<$Res> extends _$NotificationActorStateCopyWithImpl<$Res>
+class __$CheckSuccessCopyWithImpl<$Res>
+    extends _$NotificationActorStateCopyWithImpl<$Res>
     implements _$CheckSuccessCopyWith<$Res> {
-  __$CheckSuccessCopyWithImpl(_CheckSuccess _value, $Res Function(_CheckSuccess) _then)
+  __$CheckSuccessCopyWithImpl(
+      _CheckSuccess _value, $Res Function(_CheckSuccess) _then)
       : super(_value, (v) => _then(v as _CheckSuccess));
 
   @override

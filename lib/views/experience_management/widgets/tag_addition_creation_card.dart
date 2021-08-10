@@ -1,5 +1,5 @@
 import 'package:another_flushbar/flushbar_helper.dart';
-import 'package:dartz/dartz.dart';
+import 'package:dartz/dartz.dart' hide State;
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
@@ -20,13 +20,6 @@ import 'package:worldon/views/core/widgets/misc/tag_addition_card/tags_found_vie
 import 'package:worldon/views/tag_management/widgets/tag_management_form.dart';
 
 class TagAdditionCreationCard extends HookWidget {
-  const TagAdditionCreationCard({
-    Key? key,
-    required this.tagsEitherOption,
-    required this.tagChangeFunction,
-    required this.showErrorMessage,
-  }) : super(key: key);
-
   /// Option because when creating an [Experience]/[User] no [Tag] set will be sent
   /// Either because there are two ways to initialize the set of [Tag]s
   /// Left for the [Experience]'s [TagSet] and right for the [User]'s set of [UniqueId]s
@@ -35,6 +28,13 @@ class TagAdditionCreationCard extends HookWidget {
   final Option<Either<TagSet, Set<UniqueId>>> tagsEitherOption;
   final Function tagChangeFunction;
   final bool showErrorMessage;
+
+  const TagAdditionCreationCard({
+    Key? key,
+    required this.tagsEitherOption,
+    required this.tagChangeFunction,
+    required this.showErrorMessage,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -68,7 +68,8 @@ class TagAdditionCreationCard extends HookWidget {
             ),
             const SizedBox(height: 5),
             BlocListener<TagManagementFormBloc, TagManagementFormState>(
-              listenWhen: (previous, current) => previous.failureOrSuccessOption != current.failureOrSuccessOption,
+              listenWhen: (previous, current) =>
+                  previous.failureOrSuccessOption != current.failureOrSuccessOption,
               listener: (context, state) => _tagCreationListener(
                 context,
                 state,

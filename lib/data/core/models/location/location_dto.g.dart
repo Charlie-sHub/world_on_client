@@ -18,7 +18,8 @@ _$_LocationDto _$_$_LocationDtoFromJson(Map<String, dynamic> json) {
   );
 }
 
-Map<String, dynamic> _$_$_LocationDtoToJson(_$_LocationDto instance) => <String, dynamic>{
+Map<String, dynamic> _$_$_LocationDtoToJson(_$_LocationDto instance) =>
+    <String, dynamic>{
       'id': instance.id,
       'city': instance.city,
       'country': instance.country,

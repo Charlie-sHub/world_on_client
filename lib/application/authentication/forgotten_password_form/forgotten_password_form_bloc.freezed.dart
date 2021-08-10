@@ -62,33 +62,35 @@ mixin _$ForgottenPasswordFormEvent {
 
 /// @nodoc
 abstract class $ForgottenPasswordFormEventCopyWith<$Res> {
-  factory $ForgottenPasswordFormEventCopyWith(
-          ForgottenPasswordFormEvent value, $Res Function(ForgottenPasswordFormEvent) then) =
+  factory $ForgottenPasswordFormEventCopyWith(ForgottenPasswordFormEvent value,
+          $Res Function(ForgottenPasswordFormEvent) then) =
       _$ForgottenPasswordFormEventCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class _$ForgottenPasswordFormEventCopyWithImpl<$Res> implements $ForgottenPasswordFormEventCopyWith<$Res> {
+class _$ForgottenPasswordFormEventCopyWithImpl<$Res>
+    implements $ForgottenPasswordFormEventCopyWith<$Res> {
   _$ForgottenPasswordFormEventCopyWithImpl(this._value, this._then);
 
   final ForgottenPasswordFormEvent _value;
-
   // ignore: unused_field
   final $Res Function(ForgottenPasswordFormEvent) _then;
 }
 
 /// @nodoc
 abstract class _$EmailChangedCopyWith<$Res> {
-  factory _$EmailChangedCopyWith(_EmailChanged value, $Res Function(_EmailChanged) then) =
+  factory _$EmailChangedCopyWith(
+          _EmailChanged value, $Res Function(_EmailChanged) then) =
       __$EmailChangedCopyWithImpl<$Res>;
-
   $Res call({String email});
 }
 
 /// @nodoc
-class __$EmailChangedCopyWithImpl<$Res> extends _$ForgottenPasswordFormEventCopyWithImpl<$Res>
+class __$EmailChangedCopyWithImpl<$Res>
+    extends _$ForgottenPasswordFormEventCopyWithImpl<$Res>
     implements _$EmailChangedCopyWith<$Res> {
-  __$EmailChangedCopyWithImpl(_EmailChanged _value, $Res Function(_EmailChanged) _then)
+  __$EmailChangedCopyWithImpl(
+      _EmailChanged _value, $Res Function(_EmailChanged) _then)
       : super(_value, (v) => _then(v as _EmailChanged));
 
   @override
@@ -124,11 +126,13 @@ class _$_EmailChanged implements _EmailChanged {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other is _EmailChanged &&
-            (identical(other.email, email) || const DeepCollectionEquality().equals(other.email, email)));
+            (identical(other.email, email) ||
+                const DeepCollectionEquality().equals(other.email, email)));
   }
 
   @override
-  int get hashCode => runtimeType.hashCode ^ const DeepCollectionEquality().hash(email);
+  int get hashCode =>
+      runtimeType.hashCode ^ const DeepCollectionEquality().hash(email);
 
   @JsonKey(ignore: true)
   @override
@@ -184,21 +188,24 @@ abstract class _EmailChanged implements ForgottenPasswordFormEvent {
   const factory _EmailChanged(String email) = _$_EmailChanged;
 
   String get email => throw _privateConstructorUsedError;
-
   @JsonKey(ignore: true)
-  _$EmailChangedCopyWith<_EmailChanged> get copyWith => throw _privateConstructorUsedError;
+  _$EmailChangedCopyWith<_EmailChanged> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class _$SentRequestCopyWith<$Res> {
-  factory _$SentRequestCopyWith(_SentRequest value, $Res Function(_SentRequest) then) =
+  factory _$SentRequestCopyWith(
+          _SentRequest value, $Res Function(_SentRequest) then) =
       __$SentRequestCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$SentRequestCopyWithImpl<$Res> extends _$ForgottenPasswordFormEventCopyWithImpl<$Res>
+class __$SentRequestCopyWithImpl<$Res>
+    extends _$ForgottenPasswordFormEventCopyWithImpl<$Res>
     implements _$SentRequestCopyWith<$Res> {
-  __$SentRequestCopyWithImpl(_SentRequest _value, $Res Function(_SentRequest) _then)
+  __$SentRequestCopyWithImpl(
+      _SentRequest _value, $Res Function(_SentRequest) _then)
       : super(_value, (v) => _then(v as _SentRequest));
 
   @override
@@ -296,24 +303,21 @@ const $ForgottenPasswordFormState = _$ForgottenPasswordFormStateTearOff();
 /// @nodoc
 mixin _$ForgottenPasswordFormState {
   EmailAddress get email => throw _privateConstructorUsedError;
-
   bool get showErrorMessages => throw _privateConstructorUsedError;
-
   bool get isSubmitting => throw _privateConstructorUsedError;
-
-  Option<Either<Failure, Unit>> get failureOrSuccessOption => throw _privateConstructorUsedError;
+  Option<Either<Failure, Unit>> get failureOrSuccessOption =>
+      throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
-  $ForgottenPasswordFormStateCopyWith<ForgottenPasswordFormState> get copyWith =>
-      throw _privateConstructorUsedError;
+  $ForgottenPasswordFormStateCopyWith<ForgottenPasswordFormState>
+      get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $ForgottenPasswordFormStateCopyWith<$Res> {
-  factory $ForgottenPasswordFormStateCopyWith(
-          ForgottenPasswordFormState value, $Res Function(ForgottenPasswordFormState) then) =
+  factory $ForgottenPasswordFormStateCopyWith(ForgottenPasswordFormState value,
+          $Res Function(ForgottenPasswordFormState) then) =
       _$ForgottenPasswordFormStateCopyWithImpl<$Res>;
-
   $Res call(
       {EmailAddress email,
       bool showErrorMessages,
@@ -322,11 +326,11 @@ abstract class $ForgottenPasswordFormStateCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$ForgottenPasswordFormStateCopyWithImpl<$Res> implements $ForgottenPasswordFormStateCopyWith<$Res> {
+class _$ForgottenPasswordFormStateCopyWithImpl<$Res>
+    implements $ForgottenPasswordFormStateCopyWith<$Res> {
   _$ForgottenPasswordFormStateCopyWithImpl(this._value, this._then);
 
   final ForgottenPasswordFormState _value;
-
   // ignore: unused_field
   final $Res Function(ForgottenPasswordFormState) _then;
 
@@ -362,7 +366,8 @@ class _$ForgottenPasswordFormStateCopyWithImpl<$Res> implements $ForgottenPasswo
 abstract class _$ForgottenPasswordFormStateCopyWith<$Res>
     implements $ForgottenPasswordFormStateCopyWith<$Res> {
   factory _$ForgottenPasswordFormStateCopyWith(
-          _ForgottenPasswordFormState value, $Res Function(_ForgottenPasswordFormState) then) =
+          _ForgottenPasswordFormState value,
+          $Res Function(_ForgottenPasswordFormState) then) =
       __$ForgottenPasswordFormStateCopyWithImpl<$Res>;
   @override
   $Res call(
@@ -373,14 +378,16 @@ abstract class _$ForgottenPasswordFormStateCopyWith<$Res>
 }
 
 /// @nodoc
-class __$ForgottenPasswordFormStateCopyWithImpl<$Res> extends _$ForgottenPasswordFormStateCopyWithImpl<$Res>
+class __$ForgottenPasswordFormStateCopyWithImpl<$Res>
+    extends _$ForgottenPasswordFormStateCopyWithImpl<$Res>
     implements _$ForgottenPasswordFormStateCopyWith<$Res> {
-  __$ForgottenPasswordFormStateCopyWithImpl(
-      _ForgottenPasswordFormState _value, $Res Function(_ForgottenPasswordFormState) _then)
+  __$ForgottenPasswordFormStateCopyWithImpl(_ForgottenPasswordFormState _value,
+      $Res Function(_ForgottenPasswordFormState) _then)
       : super(_value, (v) => _then(v as _ForgottenPasswordFormState));
 
   @override
-  _ForgottenPasswordFormState get _value => super._value as _ForgottenPasswordFormState;
+  _ForgottenPasswordFormState get _value =>
+      super._value as _ForgottenPasswordFormState;
 
   @override
   $Res call({
@@ -437,13 +444,17 @@ class _$_ForgottenPasswordFormState implements _ForgottenPasswordFormState {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other is _ForgottenPasswordFormState &&
-            (identical(other.email, email) || const DeepCollectionEquality().equals(other.email, email)) &&
+            (identical(other.email, email) ||
+                const DeepCollectionEquality().equals(other.email, email)) &&
             (identical(other.showErrorMessages, showErrorMessages) ||
-                const DeepCollectionEquality().equals(other.showErrorMessages, showErrorMessages)) &&
+                const DeepCollectionEquality()
+                    .equals(other.showErrorMessages, showErrorMessages)) &&
             (identical(other.isSubmitting, isSubmitting) ||
-                const DeepCollectionEquality().equals(other.isSubmitting, isSubmitting)) &&
+                const DeepCollectionEquality()
+                    .equals(other.isSubmitting, isSubmitting)) &&
             (identical(other.failureOrSuccessOption, failureOrSuccessOption) ||
-                const DeepCollectionEquality().equals(other.failureOrSuccessOption, failureOrSuccessOption)));
+                const DeepCollectionEquality().equals(
+                    other.failureOrSuccessOption, failureOrSuccessOption)));
   }
 
   @override
@@ -456,31 +467,31 @@ class _$_ForgottenPasswordFormState implements _ForgottenPasswordFormState {
 
   @JsonKey(ignore: true)
   @override
-  _$ForgottenPasswordFormStateCopyWith<_ForgottenPasswordFormState> get copyWith =>
-      __$ForgottenPasswordFormStateCopyWithImpl<_ForgottenPasswordFormState>(this, _$identity);
+  _$ForgottenPasswordFormStateCopyWith<_ForgottenPasswordFormState>
+      get copyWith => __$ForgottenPasswordFormStateCopyWithImpl<
+          _ForgottenPasswordFormState>(this, _$identity);
 }
 
-abstract class _ForgottenPasswordFormState implements ForgottenPasswordFormState {
+abstract class _ForgottenPasswordFormState
+    implements ForgottenPasswordFormState {
   const factory _ForgottenPasswordFormState(
-      {required EmailAddress email,
-      required bool showErrorMessages,
-      required bool isSubmitting,
-      required Option<Either<Failure, Unit>> failureOrSuccessOption}) = _$_ForgottenPasswordFormState;
+          {required EmailAddress email,
+          required bool showErrorMessages,
+          required bool isSubmitting,
+          required Option<Either<Failure, Unit>> failureOrSuccessOption}) =
+      _$_ForgottenPasswordFormState;
 
   @override
   EmailAddress get email => throw _privateConstructorUsedError;
-
   @override
   bool get showErrorMessages => throw _privateConstructorUsedError;
-
   @override
   bool get isSubmitting => throw _privateConstructorUsedError;
-
   @override
-  Option<Either<Failure, Unit>> get failureOrSuccessOption => throw _privateConstructorUsedError;
-
+  Option<Either<Failure, Unit>> get failureOrSuccessOption =>
+      throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
-  _$ForgottenPasswordFormStateCopyWith<_ForgottenPasswordFormState> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$ForgottenPasswordFormStateCopyWith<_ForgottenPasswordFormState>
+      get copyWith => throw _privateConstructorUsedError;
 }

@@ -13,7 +13,8 @@ _$_NotificationDto _$_$_NotificationDtoFromJson(Map<String, dynamic> json) {
     receiverId: json['receiverId'] as String,
     description: json['description'] as String,
     seen: json['seen'] as bool,
-    creationDate: const ServerTimestampConverter().fromJson(json['creationDate'] as Timestamp),
+    creationDate: const ServerTimestampConverter()
+        .fromJson(json['creationDate'] as Timestamp),
     type: _$enumDecode(_$NotificationTypeEnumMap, json['type']),
     experience: json['experience'] == null
         ? null
@@ -21,13 +22,15 @@ _$_NotificationDto _$_$_NotificationDtoFromJson(Map<String, dynamic> json) {
   );
 }
 
-Map<String, dynamic> _$_$_NotificationDtoToJson(_$_NotificationDto instance) => <String, dynamic>{
+Map<String, dynamic> _$_$_NotificationDtoToJson(_$_NotificationDto instance) =>
+    <String, dynamic>{
       'id': instance.id,
       'sender': instance.sender.toJson(),
       'receiverId': instance.receiverId,
       'description': instance.description,
       'seen': instance.seen,
-      'creationDate': const ServerTimestampConverter().toJson(instance.creationDate),
+      'creationDate':
+          const ServerTimestampConverter().toJson(instance.creationDate),
       'type': _$NotificationTypeEnumMap[instance.type],
       'experience': instance.experience?.toJson(),
     };

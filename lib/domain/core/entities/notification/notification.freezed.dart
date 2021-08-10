@@ -53,14 +53,15 @@ mixin _$Notification {
   Option<Experience> get experienceOption => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
-  $NotificationCopyWith<Notification> get copyWith => throw _privateConstructorUsedError;
+  $NotificationCopyWith<Notification> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $NotificationCopyWith<$Res> {
-  factory $NotificationCopyWith(Notification value, $Res Function(Notification) then) =
+  factory $NotificationCopyWith(
+          Notification value, $Res Function(Notification) then) =
       _$NotificationCopyWithImpl<$Res>;
-
   $Res call(
       {UniqueId id,
       SimpleUser sender,
@@ -138,10 +139,11 @@ class _$NotificationCopyWithImpl<$Res> implements $NotificationCopyWith<$Res> {
 }
 
 /// @nodoc
-abstract class _$NotificationCopyWith<$Res> implements $NotificationCopyWith<$Res> {
-  factory _$NotificationCopyWith(_Notification value, $Res Function(_Notification) then) =
+abstract class _$NotificationCopyWith<$Res>
+    implements $NotificationCopyWith<$Res> {
+  factory _$NotificationCopyWith(
+          _Notification value, $Res Function(_Notification) then) =
       __$NotificationCopyWithImpl<$Res>;
-
   @override
   $Res call(
       {UniqueId id,
@@ -160,7 +162,8 @@ abstract class _$NotificationCopyWith<$Res> implements $NotificationCopyWith<$Re
 /// @nodoc
 class __$NotificationCopyWithImpl<$Res> extends _$NotificationCopyWithImpl<$Res>
     implements _$NotificationCopyWith<$Res> {
-  __$NotificationCopyWithImpl(_Notification _value, $Res Function(_Notification) _then)
+  __$NotificationCopyWithImpl(
+      _Notification _value, $Res Function(_Notification) _then)
       : super(_value, (v) => _then(v as _Notification));
 
   @override
@@ -254,19 +257,26 @@ class _$_Notification extends _Notification {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other is _Notification &&
-            (identical(other.id, id) || const DeepCollectionEquality().equals(other.id, id)) &&
+            (identical(other.id, id) ||
+                const DeepCollectionEquality().equals(other.id, id)) &&
             (identical(other.sender, sender) ||
                 const DeepCollectionEquality().equals(other.sender, sender)) &&
             (identical(other.receiverId, receiverId) ||
-                const DeepCollectionEquality().equals(other.receiverId, receiverId)) &&
+                const DeepCollectionEquality()
+                    .equals(other.receiverId, receiverId)) &&
             (identical(other.description, description) ||
-                const DeepCollectionEquality().equals(other.description, description)) &&
-            (identical(other.seen, seen) || const DeepCollectionEquality().equals(other.seen, seen)) &&
+                const DeepCollectionEquality()
+                    .equals(other.description, description)) &&
+            (identical(other.seen, seen) ||
+                const DeepCollectionEquality().equals(other.seen, seen)) &&
             (identical(other.creationDate, creationDate) ||
-                const DeepCollectionEquality().equals(other.creationDate, creationDate)) &&
-            (identical(other.type, type) || const DeepCollectionEquality().equals(other.type, type)) &&
+                const DeepCollectionEquality()
+                    .equals(other.creationDate, creationDate)) &&
+            (identical(other.type, type) ||
+                const DeepCollectionEquality().equals(other.type, type)) &&
             (identical(other.experienceOption, experienceOption) ||
-                const DeepCollectionEquality().equals(other.experienceOption, experienceOption)));
+                const DeepCollectionEquality()
+                    .equals(other.experienceOption, experienceOption)));
   }
 
   @override
@@ -313,11 +323,10 @@ abstract class _Notification extends Notification {
   PastDate get creationDate => throw _privateConstructorUsedError;
   @override
   NotificationType get type => throw _privateConstructorUsedError;
-
   @override
   Option<Experience> get experienceOption => throw _privateConstructorUsedError;
-
   @override
   @JsonKey(ignore: true)
-  _$NotificationCopyWith<_Notification> get copyWith => throw _privateConstructorUsedError;
+  _$NotificationCopyWith<_Notification> get copyWith =>
+      throw _privateConstructorUsedError;
 }

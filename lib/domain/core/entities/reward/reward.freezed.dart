@@ -49,9 +49,14 @@ mixin _$Reward {
 
 /// @nodoc
 abstract class $RewardCopyWith<$Res> {
-  factory $RewardCopyWith(Reward value, $Res Function(Reward) then) = _$RewardCopyWithImpl<$Res>;
-
-  $Res call({UniqueId id, Name name, EntityDescription description, String imageURL, Option<File> imageFile});
+  factory $RewardCopyWith(Reward value, $Res Function(Reward) then) =
+      _$RewardCopyWithImpl<$Res>;
+  $Res call(
+      {UniqueId id,
+      Name name,
+      EntityDescription description,
+      String imageURL,
+      Option<File> imageFile});
 }
 
 /// @nodoc
@@ -181,14 +186,19 @@ class _$_Reward extends _Reward {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other is _Reward &&
-            (identical(other.id, id) || const DeepCollectionEquality().equals(other.id, id)) &&
-            (identical(other.name, name) || const DeepCollectionEquality().equals(other.name, name)) &&
+            (identical(other.id, id) ||
+                const DeepCollectionEquality().equals(other.id, id)) &&
+            (identical(other.name, name) ||
+                const DeepCollectionEquality().equals(other.name, name)) &&
             (identical(other.description, description) ||
-                const DeepCollectionEquality().equals(other.description, description)) &&
+                const DeepCollectionEquality()
+                    .equals(other.description, description)) &&
             (identical(other.imageURL, imageURL) ||
-                const DeepCollectionEquality().equals(other.imageURL, imageURL)) &&
+                const DeepCollectionEquality()
+                    .equals(other.imageURL, imageURL)) &&
             (identical(other.imageFile, imageFile) ||
-                const DeepCollectionEquality().equals(other.imageFile, imageFile)));
+                const DeepCollectionEquality()
+                    .equals(other.imageFile, imageFile)));
   }
 
   @override
@@ -202,7 +212,8 @@ class _$_Reward extends _Reward {
 
   @JsonKey(ignore: true)
   @override
-  _$RewardCopyWith<_Reward> get copyWith => __$RewardCopyWithImpl<_Reward>(this, _$identity);
+  _$RewardCopyWith<_Reward> get copyWith =>
+      __$RewardCopyWithImpl<_Reward>(this, _$identity);
 }
 
 abstract class _Reward extends Reward {

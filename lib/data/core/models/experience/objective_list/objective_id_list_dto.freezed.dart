@@ -40,23 +40,24 @@ mixin _$ObjectiveIdListDto {
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $ObjectiveIdListDtoCopyWith<ObjectiveIdListDto> get copyWith => throw _privateConstructorUsedError;
+  $ObjectiveIdListDtoCopyWith<ObjectiveIdListDto> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $ObjectiveIdListDtoCopyWith<$Res> {
-  factory $ObjectiveIdListDtoCopyWith(ObjectiveIdListDto value, $Res Function(ObjectiveIdListDto) then) =
+  factory $ObjectiveIdListDtoCopyWith(
+          ObjectiveIdListDto value, $Res Function(ObjectiveIdListDto) then) =
       _$ObjectiveIdListDtoCopyWithImpl<$Res>;
-
   $Res call({List<String> objectivesIds});
 }
 
 /// @nodoc
-class _$ObjectiveIdListDtoCopyWithImpl<$Res> implements $ObjectiveIdListDtoCopyWith<$Res> {
+class _$ObjectiveIdListDtoCopyWithImpl<$Res>
+    implements $ObjectiveIdListDtoCopyWith<$Res> {
   _$ObjectiveIdListDtoCopyWithImpl(this._value, this._then);
 
   final ObjectiveIdListDto _value;
-
   // ignore: unused_field
   final $Res Function(ObjectiveIdListDto) _then;
 
@@ -74,18 +75,21 @@ class _$ObjectiveIdListDtoCopyWithImpl<$Res> implements $ObjectiveIdListDtoCopyW
 }
 
 /// @nodoc
-abstract class _$ObjectiveIdListDtoCopyWith<$Res> implements $ObjectiveIdListDtoCopyWith<$Res> {
-  factory _$ObjectiveIdListDtoCopyWith(_ObjectiveIdListDto value, $Res Function(_ObjectiveIdListDto) then) =
+abstract class _$ObjectiveIdListDtoCopyWith<$Res>
+    implements $ObjectiveIdListDtoCopyWith<$Res> {
+  factory _$ObjectiveIdListDtoCopyWith(
+          _ObjectiveIdListDto value, $Res Function(_ObjectiveIdListDto) then) =
       __$ObjectiveIdListDtoCopyWithImpl<$Res>;
-
   @override
   $Res call({List<String> objectivesIds});
 }
 
 /// @nodoc
-class __$ObjectiveIdListDtoCopyWithImpl<$Res> extends _$ObjectiveIdListDtoCopyWithImpl<$Res>
+class __$ObjectiveIdListDtoCopyWithImpl<$Res>
+    extends _$ObjectiveIdListDtoCopyWithImpl<$Res>
     implements _$ObjectiveIdListDtoCopyWith<$Res> {
-  __$ObjectiveIdListDtoCopyWithImpl(_ObjectiveIdListDto _value, $Res Function(_ObjectiveIdListDto) _then)
+  __$ObjectiveIdListDtoCopyWithImpl(
+      _ObjectiveIdListDto _value, $Res Function(_ObjectiveIdListDto) _then)
       : super(_value, (v) => _then(v as _ObjectiveIdListDto));
 
   @override
@@ -109,7 +113,8 @@ class __$ObjectiveIdListDtoCopyWithImpl<$Res> extends _$ObjectiveIdListDtoCopyWi
 class _$_ObjectiveIdListDto extends _ObjectiveIdListDto {
   const _$_ObjectiveIdListDto({required this.objectivesIds}) : super._();
 
-  factory _$_ObjectiveIdListDto.fromJson(Map<String, dynamic> json) => _$_$_ObjectiveIdListDtoFromJson(json);
+  factory _$_ObjectiveIdListDto.fromJson(Map<String, dynamic> json) =>
+      _$_$_ObjectiveIdListDtoFromJson(json);
 
   @override
   final List<String> objectivesIds;
@@ -124,11 +129,13 @@ class _$_ObjectiveIdListDto extends _ObjectiveIdListDto {
     return identical(this, other) ||
         (other is _ObjectiveIdListDto &&
             (identical(other.objectivesIds, objectivesIds) ||
-                const DeepCollectionEquality().equals(other.objectivesIds, objectivesIds)));
+                const DeepCollectionEquality()
+                    .equals(other.objectivesIds, objectivesIds)));
   }
 
   @override
-  int get hashCode => runtimeType.hashCode ^ const DeepCollectionEquality().hash(objectivesIds);
+  int get hashCode =>
+      runtimeType.hashCode ^ const DeepCollectionEquality().hash(objectivesIds);
 
   @JsonKey(ignore: true)
   @override
@@ -142,16 +149,17 @@ class _$_ObjectiveIdListDto extends _ObjectiveIdListDto {
 }
 
 abstract class _ObjectiveIdListDto extends ObjectiveIdListDto {
-  const factory _ObjectiveIdListDto({required List<String> objectivesIds}) = _$_ObjectiveIdListDto;
-
+  const factory _ObjectiveIdListDto({required List<String> objectivesIds}) =
+      _$_ObjectiveIdListDto;
   const _ObjectiveIdListDto._() : super._();
 
-  factory _ObjectiveIdListDto.fromJson(Map<String, dynamic> json) = _$_ObjectiveIdListDto.fromJson;
+  factory _ObjectiveIdListDto.fromJson(Map<String, dynamic> json) =
+      _$_ObjectiveIdListDto.fromJson;
 
   @override
   List<String> get objectivesIds => throw _privateConstructorUsedError;
-
   @override
   @JsonKey(ignore: true)
-  _$ObjectiveIdListDtoCopyWith<_ObjectiveIdListDto> get copyWith => throw _privateConstructorUsedError;
+  _$ObjectiveIdListDtoCopyWith<_ObjectiveIdListDto> get copyWith =>
+      throw _privateConstructorUsedError;
 }

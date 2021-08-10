@@ -16,7 +16,8 @@ final _privateConstructorUsedError = UnsupportedError(
 class _$ProfileForeignOrOwnEventTearOff {
   const _$ProfileForeignOrOwnEventTearOff();
 
-  _InitializedForeignOrOwn initializedForeignOrOwn(Option<UniqueId> userIdOption) {
+  _InitializedForeignOrOwn initializedForeignOrOwn(
+      Option<UniqueId> userIdOption) {
     return _InitializedForeignOrOwn(
       userIdOption,
     );
@@ -32,7 +33,8 @@ mixin _$ProfileForeignOrOwnEvent {
 
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(Option<UniqueId> userIdOption) initializedForeignOrOwn,
+    required TResult Function(Option<UniqueId> userIdOption)
+        initializedForeignOrOwn,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -43,7 +45,8 @@ mixin _$ProfileForeignOrOwnEvent {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_InitializedForeignOrOwn value) initializedForeignOrOwn,
+    required TResult Function(_InitializedForeignOrOwn value)
+        initializedForeignOrOwn,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -60,19 +63,18 @@ mixin _$ProfileForeignOrOwnEvent {
 
 /// @nodoc
 abstract class $ProfileForeignOrOwnEventCopyWith<$Res> {
-  factory $ProfileForeignOrOwnEventCopyWith(
-          ProfileForeignOrOwnEvent value, $Res Function(ProfileForeignOrOwnEvent) then) =
+  factory $ProfileForeignOrOwnEventCopyWith(ProfileForeignOrOwnEvent value,
+          $Res Function(ProfileForeignOrOwnEvent) then) =
       _$ProfileForeignOrOwnEventCopyWithImpl<$Res>;
-
   $Res call({Option<UniqueId> userIdOption});
 }
 
 /// @nodoc
-class _$ProfileForeignOrOwnEventCopyWithImpl<$Res> implements $ProfileForeignOrOwnEventCopyWith<$Res> {
+class _$ProfileForeignOrOwnEventCopyWithImpl<$Res>
+    implements $ProfileForeignOrOwnEventCopyWith<$Res> {
   _$ProfileForeignOrOwnEventCopyWithImpl(this._value, this._then);
 
   final ProfileForeignOrOwnEvent _value;
-
   // ignore: unused_field
   final $Res Function(ProfileForeignOrOwnEvent) _then;
 
@@ -90,24 +92,26 @@ class _$ProfileForeignOrOwnEventCopyWithImpl<$Res> implements $ProfileForeignOrO
 }
 
 /// @nodoc
-abstract class _$InitializedForeignOrOwnCopyWith<$Res> implements $ProfileForeignOrOwnEventCopyWith<$Res> {
-  factory _$InitializedForeignOrOwnCopyWith(
-          _InitializedForeignOrOwn value, $Res Function(_InitializedForeignOrOwn) then) =
+abstract class _$InitializedForeignOrOwnCopyWith<$Res>
+    implements $ProfileForeignOrOwnEventCopyWith<$Res> {
+  factory _$InitializedForeignOrOwnCopyWith(_InitializedForeignOrOwn value,
+          $Res Function(_InitializedForeignOrOwn) then) =
       __$InitializedForeignOrOwnCopyWithImpl<$Res>;
-
   @override
   $Res call({Option<UniqueId> userIdOption});
 }
 
 /// @nodoc
-class __$InitializedForeignOrOwnCopyWithImpl<$Res> extends _$ProfileForeignOrOwnEventCopyWithImpl<$Res>
+class __$InitializedForeignOrOwnCopyWithImpl<$Res>
+    extends _$ProfileForeignOrOwnEventCopyWithImpl<$Res>
     implements _$InitializedForeignOrOwnCopyWith<$Res> {
-  __$InitializedForeignOrOwnCopyWithImpl(
-      _InitializedForeignOrOwn _value, $Res Function(_InitializedForeignOrOwn) _then)
+  __$InitializedForeignOrOwnCopyWithImpl(_InitializedForeignOrOwn _value,
+      $Res Function(_InitializedForeignOrOwn) _then)
       : super(_value, (v) => _then(v as _InitializedForeignOrOwn));
 
   @override
-  _InitializedForeignOrOwn get _value => super._value as _InitializedForeignOrOwn;
+  _InitializedForeignOrOwn get _value =>
+      super._value as _InitializedForeignOrOwn;
 
   @override
   $Res call({
@@ -140,21 +144,25 @@ class _$_InitializedForeignOrOwn implements _InitializedForeignOrOwn {
     return identical(this, other) ||
         (other is _InitializedForeignOrOwn &&
             (identical(other.userIdOption, userIdOption) ||
-                const DeepCollectionEquality().equals(other.userIdOption, userIdOption)));
+                const DeepCollectionEquality()
+                    .equals(other.userIdOption, userIdOption)));
   }
 
   @override
-  int get hashCode => runtimeType.hashCode ^ const DeepCollectionEquality().hash(userIdOption);
+  int get hashCode =>
+      runtimeType.hashCode ^ const DeepCollectionEquality().hash(userIdOption);
 
   @JsonKey(ignore: true)
   @override
   _$InitializedForeignOrOwnCopyWith<_InitializedForeignOrOwn> get copyWith =>
-      __$InitializedForeignOrOwnCopyWithImpl<_InitializedForeignOrOwn>(this, _$identity);
+      __$InitializedForeignOrOwnCopyWithImpl<_InitializedForeignOrOwn>(
+          this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(Option<UniqueId> userIdOption) initializedForeignOrOwn,
+    required TResult Function(Option<UniqueId> userIdOption)
+        initializedForeignOrOwn,
   }) {
     return initializedForeignOrOwn(userIdOption);
   }
@@ -174,7 +182,8 @@ class _$_InitializedForeignOrOwn implements _InitializedForeignOrOwn {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_InitializedForeignOrOwn value) initializedForeignOrOwn,
+    required TResult Function(_InitializedForeignOrOwn value)
+        initializedForeignOrOwn,
   }) {
     return initializedForeignOrOwn(this);
   }
@@ -193,11 +202,11 @@ class _$_InitializedForeignOrOwn implements _InitializedForeignOrOwn {
 }
 
 abstract class _InitializedForeignOrOwn implements ProfileForeignOrOwnEvent {
-  const factory _InitializedForeignOrOwn(Option<UniqueId> userIdOption) = _$_InitializedForeignOrOwn;
+  const factory _InitializedForeignOrOwn(Option<UniqueId> userIdOption) =
+      _$_InitializedForeignOrOwn;
 
   @override
   Option<UniqueId> get userIdOption => throw _privateConstructorUsedError;
-
   @override
   @JsonKey(ignore: true)
   _$InitializedForeignOrOwnCopyWith<_InitializedForeignOrOwn> get copyWith =>
@@ -280,28 +289,30 @@ mixin _$ProfileForeignOrOwnState {
 
 /// @nodoc
 abstract class $ProfileForeignOrOwnStateCopyWith<$Res> {
-  factory $ProfileForeignOrOwnStateCopyWith(
-          ProfileForeignOrOwnState value, $Res Function(ProfileForeignOrOwnState) then) =
+  factory $ProfileForeignOrOwnStateCopyWith(ProfileForeignOrOwnState value,
+          $Res Function(ProfileForeignOrOwnState) then) =
       _$ProfileForeignOrOwnStateCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class _$ProfileForeignOrOwnStateCopyWithImpl<$Res> implements $ProfileForeignOrOwnStateCopyWith<$Res> {
+class _$ProfileForeignOrOwnStateCopyWithImpl<$Res>
+    implements $ProfileForeignOrOwnStateCopyWith<$Res> {
   _$ProfileForeignOrOwnStateCopyWithImpl(this._value, this._then);
 
   final ProfileForeignOrOwnState _value;
-
   // ignore: unused_field
   final $Res Function(ProfileForeignOrOwnState) _then;
 }
 
 /// @nodoc
 abstract class _$InitialCopyWith<$Res> {
-  factory _$InitialCopyWith(_Initial value, $Res Function(_Initial) then) = __$InitialCopyWithImpl<$Res>;
+  factory _$InitialCopyWith(_Initial value, $Res Function(_Initial) then) =
+      __$InitialCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$InitialCopyWithImpl<$Res> extends _$ProfileForeignOrOwnStateCopyWithImpl<$Res>
+class __$InitialCopyWithImpl<$Res>
+    extends _$ProfileForeignOrOwnStateCopyWithImpl<$Res>
     implements _$InitialCopyWith<$Res> {
   __$InitialCopyWithImpl(_Initial _value, $Res Function(_Initial) _then)
       : super(_value, (v) => _then(v as _Initial));
@@ -391,14 +402,17 @@ abstract class _Initial implements ProfileForeignOrOwnState {
 
 /// @nodoc
 abstract class _$LoadInProgressCopyWith<$Res> {
-  factory _$LoadInProgressCopyWith(_LoadInProgress value, $Res Function(_LoadInProgress) then) =
+  factory _$LoadInProgressCopyWith(
+          _LoadInProgress value, $Res Function(_LoadInProgress) then) =
       __$LoadInProgressCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$LoadInProgressCopyWithImpl<$Res> extends _$ProfileForeignOrOwnStateCopyWithImpl<$Res>
+class __$LoadInProgressCopyWithImpl<$Res>
+    extends _$ProfileForeignOrOwnStateCopyWithImpl<$Res>
     implements _$LoadInProgressCopyWith<$Res> {
-  __$LoadInProgressCopyWithImpl(_LoadInProgress _value, $Res Function(_LoadInProgress) _then)
+  __$LoadInProgressCopyWithImpl(
+      _LoadInProgress _value, $Res Function(_LoadInProgress) _then)
       : super(_value, (v) => _then(v as _LoadInProgress));
 
   @override
@@ -486,17 +500,19 @@ abstract class _LoadInProgress implements ProfileForeignOrOwnState {
 
 /// @nodoc
 abstract class _$OwnCopyWith<$Res> {
-  factory _$OwnCopyWith(_Own value, $Res Function(_Own) then) = __$OwnCopyWithImpl<$Res>;
-
+  factory _$OwnCopyWith(_Own value, $Res Function(_Own) then) =
+      __$OwnCopyWithImpl<$Res>;
   $Res call({User user});
 
   $UserCopyWith<$Res> get user;
 }
 
 /// @nodoc
-class __$OwnCopyWithImpl<$Res> extends _$ProfileForeignOrOwnStateCopyWithImpl<$Res>
+class __$OwnCopyWithImpl<$Res>
+    extends _$ProfileForeignOrOwnStateCopyWithImpl<$Res>
     implements _$OwnCopyWith<$Res> {
-  __$OwnCopyWithImpl(_Own _value, $Res Function(_Own) _then) : super(_value, (v) => _then(v as _Own));
+  __$OwnCopyWithImpl(_Own _value, $Res Function(_Own) _then)
+      : super(_value, (v) => _then(v as _Own));
 
   @override
   _Own get _value => super._value as _Own;
@@ -538,15 +554,18 @@ class _$_Own implements _Own {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other is _Own &&
-            (identical(other.user, user) || const DeepCollectionEquality().equals(other.user, user)));
+            (identical(other.user, user) ||
+                const DeepCollectionEquality().equals(other.user, user)));
   }
 
   @override
-  int get hashCode => runtimeType.hashCode ^ const DeepCollectionEquality().hash(user);
+  int get hashCode =>
+      runtimeType.hashCode ^ const DeepCollectionEquality().hash(user);
 
   @JsonKey(ignore: true)
   @override
-  _$OwnCopyWith<_Own> get copyWith => __$OwnCopyWithImpl<_Own>(this, _$identity);
+  _$OwnCopyWith<_Own> get copyWith =>
+      __$OwnCopyWithImpl<_Own>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -615,15 +634,16 @@ abstract class _Own implements ProfileForeignOrOwnState {
 
 /// @nodoc
 abstract class _$ForeignCopyWith<$Res> {
-  factory _$ForeignCopyWith(_Foreign value, $Res Function(_Foreign) then) = __$ForeignCopyWithImpl<$Res>;
-
+  factory _$ForeignCopyWith(_Foreign value, $Res Function(_Foreign) then) =
+      __$ForeignCopyWithImpl<$Res>;
   $Res call({User user});
 
   $UserCopyWith<$Res> get user;
 }
 
 /// @nodoc
-class __$ForeignCopyWithImpl<$Res> extends _$ProfileForeignOrOwnStateCopyWithImpl<$Res>
+class __$ForeignCopyWithImpl<$Res>
+    extends _$ProfileForeignOrOwnStateCopyWithImpl<$Res>
     implements _$ForeignCopyWith<$Res> {
   __$ForeignCopyWithImpl(_Foreign _value, $Res Function(_Foreign) _then)
       : super(_value, (v) => _then(v as _Foreign));
@@ -668,15 +688,18 @@ class _$_Foreign implements _Foreign {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other is _Foreign &&
-            (identical(other.user, user) || const DeepCollectionEquality().equals(other.user, user)));
+            (identical(other.user, user) ||
+                const DeepCollectionEquality().equals(other.user, user)));
   }
 
   @override
-  int get hashCode => runtimeType.hashCode ^ const DeepCollectionEquality().hash(user);
+  int get hashCode =>
+      runtimeType.hashCode ^ const DeepCollectionEquality().hash(user);
 
   @JsonKey(ignore: true)
   @override
-  _$ForeignCopyWith<_Foreign> get copyWith => __$ForeignCopyWithImpl<_Foreign>(this, _$identity);
+  _$ForeignCopyWith<_Foreign> get copyWith =>
+      __$ForeignCopyWithImpl<_Foreign>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -739,21 +762,24 @@ abstract class _Foreign implements ProfileForeignOrOwnState {
   const factory _Foreign(User user) = _$_Foreign;
 
   User get user => throw _privateConstructorUsedError;
-
   @JsonKey(ignore: true)
-  _$ForeignCopyWith<_Foreign> get copyWith => throw _privateConstructorUsedError;
+  _$ForeignCopyWith<_Foreign> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class _$LoadFailureCopyWith<$Res> {
-  factory _$LoadFailureCopyWith(_LoadFailure value, $Res Function(_LoadFailure) then) =
+  factory _$LoadFailureCopyWith(
+          _LoadFailure value, $Res Function(_LoadFailure) then) =
       __$LoadFailureCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$LoadFailureCopyWithImpl<$Res> extends _$ProfileForeignOrOwnStateCopyWithImpl<$Res>
+class __$LoadFailureCopyWithImpl<$Res>
+    extends _$ProfileForeignOrOwnStateCopyWithImpl<$Res>
     implements _$LoadFailureCopyWith<$Res> {
-  __$LoadFailureCopyWithImpl(_LoadFailure _value, $Res Function(_LoadFailure) _then)
+  __$LoadFailureCopyWithImpl(
+      _LoadFailure _value, $Res Function(_LoadFailure) _then)
       : super(_value, (v) => _then(v as _LoadFailure));
 
   @override

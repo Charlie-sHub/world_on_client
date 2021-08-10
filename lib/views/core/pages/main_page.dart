@@ -1,4 +1,5 @@
 import 'package:another_flushbar/flushbar_helper.dart';
+import 'package:dartz/dartz.dart' hide State;
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:showcaseview/showcaseview.dart';
@@ -23,11 +24,12 @@ class MainPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final _experienceCreationButtonKey = GlobalKey();
-    final _experienceCardKey = GlobalKey();
+    // What card will be shown if the user has nothing in its feed?
+    // final _experienceCardKey = GlobalKey();
     final _userLevelKey = GlobalKey();
     final _keys = [
       _experienceCreationButtonKey,
-      _experienceCardKey,
+      // _experienceCardKey,
       _userLevelKey,
     ];
     return BlocListener<AuthenticationBloc, AuthenticationState>(
@@ -64,9 +66,11 @@ class MainPage extends StatelessWidget {
             listener: _navigationListener,
             builder: (context, state) => SafeArea(
               child: ShowCaseWidget(
-                onComplete: (_, key) {
-                  // TODO: onComplete will check what key has been shown and move trough the app accordingly
-                },
+                onComplete: (_, key) => _onShowCaseComplete(
+                  key,
+                  _experienceCreationButtonKey,
+                  context,
+                ),
                 onFinish: () => context.read<MainPageShowCaseBloc>().add(
                       const MainPageShowCaseEvent.finished(),
                     ),
@@ -78,6 +82,7 @@ class MainPage extends StatelessWidget {
                     ),
                     child: MainPageScaffold(
                       createExperienceShowKey: _experienceCreationButtonKey,
+                      userLevelShowKey: _userLevelKey,
                     ),
                   ),
                 ),
@@ -87,6 +92,18 @@ class MainPage extends StatelessWidget {
         ),
       ),
     );
+  }
+
+  void _onShowCaseComplete(GlobalKey<State<StatefulWidget>> key,
+      GlobalKey<State<StatefulWidget>> _experienceCreationButtonKey, BuildContext context) {
+    if (key == _experienceCreationButtonKey) {
+      context.read<NavigationActorBloc>().add(
+            NavigationActorEvent.profileTapped(
+              currentUserProfile: false,
+              userIdOption: none(),
+            ),
+          );
+    }
   }
 
   void _authenticationListener(context, state) => state.maybeMap(

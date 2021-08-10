@@ -16,7 +16,8 @@ final _privateConstructorUsedError = UnsupportedError(
 class _$ExperienceLikeActorEventTearOff {
   const _$ExperienceLikeActorEventTearOff();
 
-  _Initialized initialized(UniqueId experienceId, Set<UniqueId> experiencesLikedIds, int likesAmount) {
+  _Initialized initialized(UniqueId experienceId,
+      Set<UniqueId> experiencesLikedIds, int likesAmount) {
     return _Initialized(
       experienceId,
       experiencesLikedIds,
@@ -46,7 +47,8 @@ mixin _$ExperienceLikeActorEvent {
 
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(UniqueId experienceId, Set<UniqueId> experiencesLikedIds, int likesAmount)
+    required TResult Function(UniqueId experienceId,
+            Set<UniqueId> experiencesLikedIds, int likesAmount)
         initialized,
     required TResult Function(UniqueId experienceId) liked,
     required TResult Function(UniqueId experienceId) disliked,
@@ -54,7 +56,9 @@ mixin _$ExperienceLikeActorEvent {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(UniqueId experienceId, Set<UniqueId> experiencesLikedIds, int likesAmount)? initialized,
+    TResult Function(UniqueId experienceId, Set<UniqueId> experiencesLikedIds,
+            int likesAmount)?
+        initialized,
     TResult Function(UniqueId experienceId)? liked,
     TResult Function(UniqueId experienceId)? disliked,
     required TResult orElse(),
@@ -83,19 +87,18 @@ mixin _$ExperienceLikeActorEvent {
 
 /// @nodoc
 abstract class $ExperienceLikeActorEventCopyWith<$Res> {
-  factory $ExperienceLikeActorEventCopyWith(
-          ExperienceLikeActorEvent value, $Res Function(ExperienceLikeActorEvent) then) =
+  factory $ExperienceLikeActorEventCopyWith(ExperienceLikeActorEvent value,
+          $Res Function(ExperienceLikeActorEvent) then) =
       _$ExperienceLikeActorEventCopyWithImpl<$Res>;
-
   $Res call({UniqueId experienceId});
 }
 
 /// @nodoc
-class _$ExperienceLikeActorEventCopyWithImpl<$Res> implements $ExperienceLikeActorEventCopyWith<$Res> {
+class _$ExperienceLikeActorEventCopyWithImpl<$Res>
+    implements $ExperienceLikeActorEventCopyWith<$Res> {
   _$ExperienceLikeActorEventCopyWithImpl(this._value, this._then);
 
   final ExperienceLikeActorEvent _value;
-
   // ignore: unused_field
   final $Res Function(ExperienceLikeActorEvent) _then;
 
@@ -113,18 +116,24 @@ class _$ExperienceLikeActorEventCopyWithImpl<$Res> implements $ExperienceLikeAct
 }
 
 /// @nodoc
-abstract class _$InitializedCopyWith<$Res> implements $ExperienceLikeActorEventCopyWith<$Res> {
-  factory _$InitializedCopyWith(_Initialized value, $Res Function(_Initialized) then) =
+abstract class _$InitializedCopyWith<$Res>
+    implements $ExperienceLikeActorEventCopyWith<$Res> {
+  factory _$InitializedCopyWith(
+          _Initialized value, $Res Function(_Initialized) then) =
       __$InitializedCopyWithImpl<$Res>;
-
   @override
-  $Res call({UniqueId experienceId, Set<UniqueId> experiencesLikedIds, int likesAmount});
+  $Res call(
+      {UniqueId experienceId,
+      Set<UniqueId> experiencesLikedIds,
+      int likesAmount});
 }
 
 /// @nodoc
-class __$InitializedCopyWithImpl<$Res> extends _$ExperienceLikeActorEventCopyWithImpl<$Res>
+class __$InitializedCopyWithImpl<$Res>
+    extends _$ExperienceLikeActorEventCopyWithImpl<$Res>
     implements _$InitializedCopyWith<$Res> {
-  __$InitializedCopyWithImpl(_Initialized _value, $Res Function(_Initialized) _then)
+  __$InitializedCopyWithImpl(
+      _Initialized _value, $Res Function(_Initialized) _then)
       : super(_value, (v) => _then(v as _Initialized));
 
   @override
@@ -156,7 +165,8 @@ class __$InitializedCopyWithImpl<$Res> extends _$ExperienceLikeActorEventCopyWit
 /// @nodoc
 
 class _$_Initialized implements _Initialized {
-  const _$_Initialized(this.experienceId, this.experiencesLikedIds, this.likesAmount);
+  const _$_Initialized(
+      this.experienceId, this.experiencesLikedIds, this.likesAmount);
 
   @override
   final UniqueId experienceId;
@@ -175,11 +185,14 @@ class _$_Initialized implements _Initialized {
     return identical(this, other) ||
         (other is _Initialized &&
             (identical(other.experienceId, experienceId) ||
-                const DeepCollectionEquality().equals(other.experienceId, experienceId)) &&
+                const DeepCollectionEquality()
+                    .equals(other.experienceId, experienceId)) &&
             (identical(other.experiencesLikedIds, experiencesLikedIds) ||
-                const DeepCollectionEquality().equals(other.experiencesLikedIds, experiencesLikedIds)) &&
+                const DeepCollectionEquality()
+                    .equals(other.experiencesLikedIds, experiencesLikedIds)) &&
             (identical(other.likesAmount, likesAmount) ||
-                const DeepCollectionEquality().equals(other.likesAmount, likesAmount)));
+                const DeepCollectionEquality()
+                    .equals(other.likesAmount, likesAmount)));
   }
 
   @override
@@ -197,7 +210,8 @@ class _$_Initialized implements _Initialized {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(UniqueId experienceId, Set<UniqueId> experiencesLikedIds, int likesAmount)
+    required TResult Function(UniqueId experienceId,
+            Set<UniqueId> experiencesLikedIds, int likesAmount)
         initialized,
     required TResult Function(UniqueId experienceId) liked,
     required TResult Function(UniqueId experienceId) disliked,
@@ -208,7 +222,9 @@ class _$_Initialized implements _Initialized {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(UniqueId experienceId, Set<UniqueId> experiencesLikedIds, int likesAmount)? initialized,
+    TResult Function(UniqueId experienceId, Set<UniqueId> experiencesLikedIds,
+            int likesAmount)?
+        initialized,
     TResult Function(UniqueId experienceId)? liked,
     TResult Function(UniqueId experienceId)? disliked,
     required TResult orElse(),
@@ -245,33 +261,34 @@ class _$_Initialized implements _Initialized {
 }
 
 abstract class _Initialized implements ExperienceLikeActorEvent {
-  const factory _Initialized(UniqueId experienceId, Set<UniqueId> experiencesLikedIds, int likesAmount) =
-      _$_Initialized;
+  const factory _Initialized(UniqueId experienceId,
+      Set<UniqueId> experiencesLikedIds, int likesAmount) = _$_Initialized;
 
   @override
   UniqueId get experienceId => throw _privateConstructorUsedError;
-
   Set<UniqueId> get experiencesLikedIds => throw _privateConstructorUsedError;
-
   int get likesAmount => throw _privateConstructorUsedError;
-
   @override
   @JsonKey(ignore: true)
-  _$InitializedCopyWith<_Initialized> get copyWith => throw _privateConstructorUsedError;
+  _$InitializedCopyWith<_Initialized> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$LikedCopyWith<$Res> implements $ExperienceLikeActorEventCopyWith<$Res> {
-  factory _$LikedCopyWith(_Liked value, $Res Function(_Liked) then) = __$LikedCopyWithImpl<$Res>;
-
+abstract class _$LikedCopyWith<$Res>
+    implements $ExperienceLikeActorEventCopyWith<$Res> {
+  factory _$LikedCopyWith(_Liked value, $Res Function(_Liked) then) =
+      __$LikedCopyWithImpl<$Res>;
   @override
   $Res call({UniqueId experienceId});
 }
 
 /// @nodoc
-class __$LikedCopyWithImpl<$Res> extends _$ExperienceLikeActorEventCopyWithImpl<$Res>
+class __$LikedCopyWithImpl<$Res>
+    extends _$ExperienceLikeActorEventCopyWithImpl<$Res>
     implements _$LikedCopyWith<$Res> {
-  __$LikedCopyWithImpl(_Liked _value, $Res Function(_Liked) _then) : super(_value, (v) => _then(v as _Liked));
+  __$LikedCopyWithImpl(_Liked _value, $Res Function(_Liked) _then)
+      : super(_value, (v) => _then(v as _Liked));
 
   @override
   _Liked get _value => super._value as _Liked;
@@ -307,20 +324,24 @@ class _$_Liked implements _Liked {
     return identical(this, other) ||
         (other is _Liked &&
             (identical(other.experienceId, experienceId) ||
-                const DeepCollectionEquality().equals(other.experienceId, experienceId)));
+                const DeepCollectionEquality()
+                    .equals(other.experienceId, experienceId)));
   }
 
   @override
-  int get hashCode => runtimeType.hashCode ^ const DeepCollectionEquality().hash(experienceId);
+  int get hashCode =>
+      runtimeType.hashCode ^ const DeepCollectionEquality().hash(experienceId);
 
   @JsonKey(ignore: true)
   @override
-  _$LikedCopyWith<_Liked> get copyWith => __$LikedCopyWithImpl<_Liked>(this, _$identity);
+  _$LikedCopyWith<_Liked> get copyWith =>
+      __$LikedCopyWithImpl<_Liked>(this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(UniqueId experienceId, Set<UniqueId> experiencesLikedIds, int likesAmount)
+    required TResult Function(UniqueId experienceId,
+            Set<UniqueId> experiencesLikedIds, int likesAmount)
         initialized,
     required TResult Function(UniqueId experienceId) liked,
     required TResult Function(UniqueId experienceId) disliked,
@@ -331,7 +352,9 @@ class _$_Liked implements _Liked {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(UniqueId experienceId, Set<UniqueId> experiencesLikedIds, int likesAmount)? initialized,
+    TResult Function(UniqueId experienceId, Set<UniqueId> experiencesLikedIds,
+            int likesAmount)?
+        initialized,
     TResult Function(UniqueId experienceId)? liked,
     TResult Function(UniqueId experienceId)? disliked,
     required TResult orElse(),
@@ -378,15 +401,17 @@ abstract class _Liked implements ExperienceLikeActorEvent {
 }
 
 /// @nodoc
-abstract class _$DislikedCopyWith<$Res> implements $ExperienceLikeActorEventCopyWith<$Res> {
-  factory _$DislikedCopyWith(_Disliked value, $Res Function(_Disliked) then) = __$DislikedCopyWithImpl<$Res>;
-
+abstract class _$DislikedCopyWith<$Res>
+    implements $ExperienceLikeActorEventCopyWith<$Res> {
+  factory _$DislikedCopyWith(_Disliked value, $Res Function(_Disliked) then) =
+      __$DislikedCopyWithImpl<$Res>;
   @override
   $Res call({UniqueId experienceId});
 }
 
 /// @nodoc
-class __$DislikedCopyWithImpl<$Res> extends _$ExperienceLikeActorEventCopyWithImpl<$Res>
+class __$DislikedCopyWithImpl<$Res>
+    extends _$ExperienceLikeActorEventCopyWithImpl<$Res>
     implements _$DislikedCopyWith<$Res> {
   __$DislikedCopyWithImpl(_Disliked _value, $Res Function(_Disliked) _then)
       : super(_value, (v) => _then(v as _Disliked));
@@ -425,20 +450,24 @@ class _$_Disliked implements _Disliked {
     return identical(this, other) ||
         (other is _Disliked &&
             (identical(other.experienceId, experienceId) ||
-                const DeepCollectionEquality().equals(other.experienceId, experienceId)));
+                const DeepCollectionEquality()
+                    .equals(other.experienceId, experienceId)));
   }
 
   @override
-  int get hashCode => runtimeType.hashCode ^ const DeepCollectionEquality().hash(experienceId);
+  int get hashCode =>
+      runtimeType.hashCode ^ const DeepCollectionEquality().hash(experienceId);
 
   @JsonKey(ignore: true)
   @override
-  _$DislikedCopyWith<_Disliked> get copyWith => __$DislikedCopyWithImpl<_Disliked>(this, _$identity);
+  _$DislikedCopyWith<_Disliked> get copyWith =>
+      __$DislikedCopyWithImpl<_Disliked>(this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(UniqueId experienceId, Set<UniqueId> experiencesLikedIds, int likesAmount)
+    required TResult Function(UniqueId experienceId,
+            Set<UniqueId> experiencesLikedIds, int likesAmount)
         initialized,
     required TResult Function(UniqueId experienceId) liked,
     required TResult Function(UniqueId experienceId) disliked,
@@ -449,7 +478,9 @@ class _$_Disliked implements _Disliked {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(UniqueId experienceId, Set<UniqueId> experiencesLikedIds, int likesAmount)? initialized,
+    TResult Function(UniqueId experienceId, Set<UniqueId> experiencesLikedIds,
+            int likesAmount)?
+        initialized,
     TResult Function(UniqueId experienceId)? liked,
     TResult Function(UniqueId experienceId)? disliked,
     required TResult orElse(),
@@ -490,10 +521,10 @@ abstract class _Disliked implements ExperienceLikeActorEvent {
 
   @override
   UniqueId get experienceId => throw _privateConstructorUsedError;
-
   @override
   @JsonKey(ignore: true)
-  _$DislikedCopyWith<_Disliked> get copyWith => throw _privateConstructorUsedError;
+  _$DislikedCopyWith<_Disliked> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -518,10 +549,9 @@ const $ExperienceLikeActorState = _$ExperienceLikeActorStateTearOff();
 /// @nodoc
 mixin _$ExperienceLikeActorState {
   bool get likes => throw _privateConstructorUsedError;
-
   int get likesAmount => throw _privateConstructorUsedError;
-
-  Option<Either<Failure, Unit>> get failureOrSuccessOption => throw _privateConstructorUsedError;
+  Option<Either<Failure, Unit>> get failureOrSuccessOption =>
+      throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
   $ExperienceLikeActorStateCopyWith<ExperienceLikeActorState> get copyWith =>
@@ -530,19 +560,21 @@ mixin _$ExperienceLikeActorState {
 
 /// @nodoc
 abstract class $ExperienceLikeActorStateCopyWith<$Res> {
-  factory $ExperienceLikeActorStateCopyWith(
-          ExperienceLikeActorState value, $Res Function(ExperienceLikeActorState) then) =
+  factory $ExperienceLikeActorStateCopyWith(ExperienceLikeActorState value,
+          $Res Function(ExperienceLikeActorState) then) =
       _$ExperienceLikeActorStateCopyWithImpl<$Res>;
-
-  $Res call({bool likes, int likesAmount, Option<Either<Failure, Unit>> failureOrSuccessOption});
+  $Res call(
+      {bool likes,
+      int likesAmount,
+      Option<Either<Failure, Unit>> failureOrSuccessOption});
 }
 
 /// @nodoc
-class _$ExperienceLikeActorStateCopyWithImpl<$Res> implements $ExperienceLikeActorStateCopyWith<$Res> {
+class _$ExperienceLikeActorStateCopyWithImpl<$Res>
+    implements $ExperienceLikeActorStateCopyWith<$Res> {
   _$ExperienceLikeActorStateCopyWithImpl(this._value, this._then);
 
   final ExperienceLikeActorState _value;
-
   // ignore: unused_field
   final $Res Function(ExperienceLikeActorState) _then;
 
@@ -570,24 +602,29 @@ class _$ExperienceLikeActorStateCopyWithImpl<$Res> implements $ExperienceLikeAct
 }
 
 /// @nodoc
-abstract class _$ExperienceLikeActorStateCopyWith<$Res> implements $ExperienceLikeActorStateCopyWith<$Res> {
-  factory _$ExperienceLikeActorStateCopyWith(
-          _ExperienceLikeActorState value, $Res Function(_ExperienceLikeActorState) then) =
+abstract class _$ExperienceLikeActorStateCopyWith<$Res>
+    implements $ExperienceLikeActorStateCopyWith<$Res> {
+  factory _$ExperienceLikeActorStateCopyWith(_ExperienceLikeActorState value,
+          $Res Function(_ExperienceLikeActorState) then) =
       __$ExperienceLikeActorStateCopyWithImpl<$Res>;
-
   @override
-  $Res call({bool likes, int likesAmount, Option<Either<Failure, Unit>> failureOrSuccessOption});
+  $Res call(
+      {bool likes,
+      int likesAmount,
+      Option<Either<Failure, Unit>> failureOrSuccessOption});
 }
 
 /// @nodoc
-class __$ExperienceLikeActorStateCopyWithImpl<$Res> extends _$ExperienceLikeActorStateCopyWithImpl<$Res>
+class __$ExperienceLikeActorStateCopyWithImpl<$Res>
+    extends _$ExperienceLikeActorStateCopyWithImpl<$Res>
     implements _$ExperienceLikeActorStateCopyWith<$Res> {
-  __$ExperienceLikeActorStateCopyWithImpl(
-      _ExperienceLikeActorState _value, $Res Function(_ExperienceLikeActorState) _then)
+  __$ExperienceLikeActorStateCopyWithImpl(_ExperienceLikeActorState _value,
+      $Res Function(_ExperienceLikeActorState) _then)
       : super(_value, (v) => _then(v as _ExperienceLikeActorState));
 
   @override
-  _ExperienceLikeActorState get _value => super._value as _ExperienceLikeActorState;
+  _ExperienceLikeActorState get _value =>
+      super._value as _ExperienceLikeActorState;
 
   @override
   $Res call({
@@ -616,7 +653,9 @@ class __$ExperienceLikeActorStateCopyWithImpl<$Res> extends _$ExperienceLikeActo
 
 class _$_ExperienceLikeActorState implements _ExperienceLikeActorState {
   const _$_ExperienceLikeActorState(
-      {required this.likes, required this.likesAmount, required this.failureOrSuccessOption});
+      {required this.likes,
+      required this.likesAmount,
+      required this.failureOrSuccessOption});
 
   @override
   final bool likes;
@@ -634,11 +673,14 @@ class _$_ExperienceLikeActorState implements _ExperienceLikeActorState {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other is _ExperienceLikeActorState &&
-            (identical(other.likes, likes) || const DeepCollectionEquality().equals(other.likes, likes)) &&
+            (identical(other.likes, likes) ||
+                const DeepCollectionEquality().equals(other.likes, likes)) &&
             (identical(other.likesAmount, likesAmount) ||
-                const DeepCollectionEquality().equals(other.likesAmount, likesAmount)) &&
+                const DeepCollectionEquality()
+                    .equals(other.likesAmount, likesAmount)) &&
             (identical(other.failureOrSuccessOption, failureOrSuccessOption) ||
-                const DeepCollectionEquality().equals(other.failureOrSuccessOption, failureOrSuccessOption)));
+                const DeepCollectionEquality().equals(
+                    other.failureOrSuccessOption, failureOrSuccessOption)));
   }
 
   @override
@@ -651,24 +693,24 @@ class _$_ExperienceLikeActorState implements _ExperienceLikeActorState {
   @JsonKey(ignore: true)
   @override
   _$ExperienceLikeActorStateCopyWith<_ExperienceLikeActorState> get copyWith =>
-      __$ExperienceLikeActorStateCopyWithImpl<_ExperienceLikeActorState>(this, _$identity);
+      __$ExperienceLikeActorStateCopyWithImpl<_ExperienceLikeActorState>(
+          this, _$identity);
 }
 
 abstract class _ExperienceLikeActorState implements ExperienceLikeActorState {
   const factory _ExperienceLikeActorState(
-      {required bool likes,
-      required int likesAmount,
-      required Option<Either<Failure, Unit>> failureOrSuccessOption}) = _$_ExperienceLikeActorState;
+          {required bool likes,
+          required int likesAmount,
+          required Option<Either<Failure, Unit>> failureOrSuccessOption}) =
+      _$_ExperienceLikeActorState;
 
   @override
   bool get likes => throw _privateConstructorUsedError;
-
   @override
   int get likesAmount => throw _privateConstructorUsedError;
-
   @override
-  Option<Either<Failure, Unit>> get failureOrSuccessOption => throw _privateConstructorUsedError;
-
+  Option<Either<Failure, Unit>> get failureOrSuccessOption =>
+      throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
   _$ExperienceLikeActorStateCopyWith<_ExperienceLikeActorState> get copyWith =>
