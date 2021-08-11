@@ -9,7 +9,7 @@ publish_to: 'none'
 # The number after the + always increases by 1
 # Usually both numbers should increase by 1 at the same time
 # For example 1.1.8+18 => 1.1.9+19 => 1.2.0+20
-version: 1.3.4+34
+version: 1.3.6+36
 
 environment:
   sdk: ">=2.12.0 <3.0.0"

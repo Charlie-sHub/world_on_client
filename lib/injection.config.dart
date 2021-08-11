@@ -145,7 +145,7 @@ import 'data/authentication/repository/development_authentication_repository.dar
     as _i17;
 import 'data/authentication/repository/production_authentication_repository.dart'
     as _i235;
-import 'data/comments/repository/development_comment_repository.dart' as _i35;
+import 'data/comments/repository/development_comment_repository.dart' as _i34;
 import 'data/comments/repository/production_comment_repository.dart' as _i239;
 import 'data/core/misc/firebase/cloud_storage/cloud_storage_service.dart'
     as _i30;
@@ -157,48 +157,48 @@ import 'data/core/repository/development_geo_location_repository.dart' as _i245;
 import 'data/core/repository/production_core_repository.dart' as _i240;
 import 'data/core/repository/production_geo_location_repository.dart' as _i244;
 import 'data/experience_log/repository/development_experience_log_repository.dart'
-    as _i68;
+    as _i67;
 import 'data/experience_log/repository/production_experience_log_repository.dart'
     as _i241;
 import 'data/experience_management/repository/development_experience_management_repository.dart'
-    as _i74;
+    as _i73;
 import 'data/experience_management/repository/production_experience_management_repository.dart'
     as _i242;
 import 'data/experience_navigation/repository/development_experience_navigation_repository.dart'
-    as _i77;
+    as _i78;
 import 'data/experience_navigation/repository/production_experience_navigation_repository.dart'
     as _i243;
 import 'data/main_feed/repository/development_main_feed_repository.dart'
-    as _i115;
+    as _i114;
 import 'data/main_feed/repository/production_main_feed_repository.dart'
-    as _i116;
+    as _i115;
 import 'data/notifications/repository/development_notification_repository.dart'
-    as _i125;
+    as _i127;
 import 'data/notifications/repository/production_notification_repository.dart'
-    as _i126;
+    as _i125;
 import 'data/options/repository/development_local_options_repository.dart'
     as _i106;
 import 'data/options/repository/development_remote_options_repository.dart'
     as _i152;
 import 'data/options/repository/production_local_options_repository.dart'
-    as _i107;
+    as _i105;
 import 'data/options/repository/production_remote_options_repository.dart'
     as _i153;
 import 'data/profile/repository/development_profile_repository.dart' as _i140;
 import 'data/profile/repository/production_profile_repository.dart' as _i141;
-import 'data/search/repository/development_search_repository.dart' as _i168;
-import 'data/search/repository/production_search_repository.dart' as _i169;
-import 'data/share/repository/development_search_repository.dart' as _i176;
-import 'data/share/repository/production_search_repository.dart' as _i178;
-import 'data/store/repository/development_store_repository.dart' as _i184;
-import 'data/store/repository/production_store_repository.dart' as _i183;
+import 'data/search/repository/development_search_repository.dart' as _i169;
+import 'data/search/repository/production_search_repository.dart' as _i168;
+import 'data/share/repository/development_search_repository.dart' as _i178;
+import 'data/share/repository/production_search_repository.dart' as _i177;
+import 'data/store/repository/development_store_repository.dart' as _i183;
+import 'data/store/repository/production_store_repository.dart' as _i182;
 import 'data/tag_management/repository/development_tag_management_repository.dart'
     as _i194;
 import 'data/tag_management/repository/development_tag_repository.dart'
-    as _i189;
+    as _i188;
 import 'data/tag_management/repository/production_tag_management_repository.dart'
     as _i195;
-import 'data/tag_management/repository/production_tag_repository.dart' as _i188;
+import 'data/tag_management/repository/production_tag_repository.dart' as _i187;
 import 'domain/achievement_management/repository/achievement_repository_interface.dart'
     as _i6;
 import 'domain/achievement_management/repository/achievement_repository_mock.dart'
@@ -223,7 +223,7 @@ import 'domain/authentication/use_case/register.dart' as _i149;
 import 'domain/authentication/use_case/reset_password.dart' as _i156;
 import 'domain/authentication/use_case/use_case_mocks.dart' as _i94;
 import 'domain/comments/repository/comment_repository_interface.dart' as _i33;
-import 'domain/comments/repository/comment_repository_mock.dart' as _i34;
+import 'domain/comments/repository/comment_repository_mock.dart' as _i35;
 import 'domain/comments/use_case/delete_comment.dart' as _i45;
 import 'domain/comments/use_case/edit_comment.dart' as _i58;
 import 'domain/comments/use_case/post_comment.dart' as _i133;
@@ -242,7 +242,7 @@ import 'domain/core/use_case/watch_current_user.dart' as _i206;
 import 'domain/experience_log/repository/experience_log_repository_interface.dart'
     as _i66;
 import 'domain/experience_log/repository/experience_log_repository_mock.dart'
-    as _i67;
+    as _i68;
 import 'domain/experience_log/use_case/add_experience_to_log.dart' as _i10;
 import 'domain/experience_log/use_case/dismiss_experience_from_log.dart'
     as _i55;
@@ -251,7 +251,7 @@ import 'domain/experience_log/use_case/watch_user_log.dart' as _i233;
 import 'domain/experience_management/repository/experience_management_repository_interface.dart'
     as _i72;
 import 'domain/experience_management/repository/experience_management_repository_mock.dart'
-    as _i73;
+    as _i74;
 import 'domain/experience_management/use_case/create_experience.dart' as _i41;
 import 'domain/experience_management/use_case/delete_experience.dart' as _i47;
 import 'domain/experience_management/use_case/edit_experience.dart' as _i59;
@@ -260,7 +260,7 @@ import 'domain/experience_management/use_case/use_case_mocks.dart' as _i42;
 import 'domain/experience_navigation/repository/experience_navigation_repository_interface.dart'
     as _i76;
 import 'domain/experience_navigation/repository/experience_navigation_repository_mock.dart'
-    as _i78;
+    as _i77;
 import 'domain/experience_navigation/use_case/accomplish_objective.dart'
     as _i234;
 import 'domain/experience_navigation/use_case/dislike_experience.dart' as _i53;
@@ -278,13 +278,13 @@ import 'domain/experience_navigation/use_case/watch_recommended_experiences.dart
     as _i222;
 import 'domain/main_feed/repository/main_feed_repository_interface.dart'
     as _i113;
-import 'domain/main_feed/repository/main_feed_repository_mock.dart' as _i114;
+import 'domain/main_feed/repository/main_feed_repository_mock.dart' as _i116;
 import 'domain/main_feed/use_case/use_case_mocks.dart' as _i213;
 import 'domain/main_feed/use_case/watch_feed.dart' as _i212;
 import 'domain/notifications/repository/notification_repository_interface.dart'
     as _i124;
 import 'domain/notifications/repository/notification_repository_mock.dart'
-    as _i127;
+    as _i126;
 import 'domain/notifications/use_case/check_notification.dart' as _i28;
 import 'domain/notifications/use_case/delete_notification.dart' as _i48;
 import 'domain/notifications/use_case/delete_user_notifications.dart' as _i52;
@@ -294,7 +294,7 @@ import 'domain/notifications/use_case/watch_if_new_notifications.dart' as _i216;
 import 'domain/notifications/use_case/watch_notifications.dart' as _i217;
 import 'domain/options/repository/local_options_repository_interface.dart'
     as _i104;
-import 'domain/options/repository/local_options_repository_mock.dart' as _i105;
+import 'domain/options/repository/local_options_repository_mock.dart' as _i107;
 import 'domain/options/repository/remote_options_repository_interface.dart'
     as _i151;
 import 'domain/options/repository/remote_options_repository_mock.dart' as _i154;
@@ -330,10 +330,10 @@ import 'domain/search/use_case/watch_search_experiences_by_tags.dart' as _i226;
 import 'domain/search/use_case/watch_search_tags_by_name.dart' as _i227;
 import 'domain/search/use_case/watch_search_users_by_name.dart' as _i228;
 import 'domain/share/repository/share_repository_interface.dart' as _i175;
-import 'domain/share/repository/share_repository_mock.dart' as _i177;
+import 'domain/share/repository/share_repository_mock.dart' as _i176;
 import 'domain/share/use_case/search_to_share.dart' as _i247;
 import 'domain/store/repository/store_repository_interface.dart' as _i181;
-import 'domain/store/repository/store_repository_mock.dart' as _i182;
+import 'domain/store/repository/store_repository_mock.dart' as _i184;
 import 'domain/store/use_case/buy_coin.dart' as _i236;
 import 'domain/store/use_case/buy_item.dart' as _i237;
 import 'domain/store/use_case/buy_promotion_plan.dart' as _i238;
@@ -346,7 +346,7 @@ import 'domain/tag_management/repository/tag_management_repository_mock.dart'
     as _i193;
 import 'domain/tag_management/repository/tag_repository_interface.dart'
     as _i186;
-import 'domain/tag_management/repository/tag_repository_mock.dart' as _i187;
+import 'domain/tag_management/repository/tag_repository_mock.dart' as _i189;
 import 'domain/tag_management/use_case/add_tag_to_interests.dart' as _i12;
 import 'domain/tag_management/use_case/create_tag.dart' as _i43;
 import 'domain/tag_management/use_case/delete_tag.dart' as _i49;
@@ -419,11 +419,11 @@ _i1.GetIt $initGetIt(_i1.GetIt get,
   gh.factory<_i31.CommentActorBloc>(() => _i31.CommentActorBloc());
   gh.factory<_i32.CommentFormBloc>(() => _i32.CommentFormBloc());
   gh.lazySingleton<_i33.CommentRepositoryInterface>(
-      () => _i34.MockCommentRepository(),
-      registerFor: {_test});
-  gh.lazySingleton<_i33.CommentRepositoryInterface>(
-      () => _i35.DevelopmentCommentRepository(),
+      () => _i34.DevelopmentCommentRepository(),
       registerFor: {_dev});
+  gh.lazySingleton<_i33.CommentRepositoryInterface>(
+      () => _i35.MockCommentRepository(),
+      registerFor: {_test});
   gh.factory<_i36.CommentWatcherBloc>(() => _i36.CommentWatcherBloc());
   gh.lazySingleton<_i37.CoreRepositoryInterface>(
       () => _i38.MockCoreRepository(),
@@ -445,11 +445,11 @@ _i1.GetIt $initGetIt(_i1.GetIt get,
       registerFor: {_dev, _prod});
   gh.lazySingleton<_i44.DeleteAchievement>(() => _i20.MockDeleteAchievement(),
       registerFor: {_test});
-  gh.lazySingleton<_i45.DeleteComment>(() => _i46.MockDeleteComment(),
-      registerFor: {_test});
   gh.lazySingleton<_i45.DeleteComment>(
       () => _i45.DeleteComment(get<_i33.CommentRepositoryInterface>()),
       registerFor: {_dev, _prod});
+  gh.lazySingleton<_i45.DeleteComment>(() => _i46.MockDeleteComment(),
+      registerFor: {_test});
   gh.lazySingleton<_i47.DeleteExperience>(() => _i42.MockDeleteExperience(),
       registerFor: {_test});
   gh.lazySingleton<_i48.DeleteNotification>(() => _i29.MockDeleteNotification(),
@@ -474,11 +474,11 @@ _i1.GetIt $initGetIt(_i1.GetIt get,
       registerFor: {_dev, _prod});
   gh.lazySingleton<_i57.EditAchievement>(() => _i20.MockEditAchievement(),
       registerFor: {_test});
-  gh.lazySingleton<_i58.EditComment>(() => _i46.MockEditComment(),
-      registerFor: {_test});
   gh.lazySingleton<_i58.EditComment>(
       () => _i58.EditComment(get<_i33.CommentRepositoryInterface>()),
       registerFor: {_dev, _prod});
+  gh.lazySingleton<_i58.EditComment>(() => _i46.MockEditComment(),
+      registerFor: {_test});
   gh.lazySingleton<_i59.EditExperience>(() => _i42.MockEditExperience(),
       registerFor: {_test});
   gh.lazySingleton<_i60.EditTag>(() => _i13.MockEditTag(),
@@ -494,11 +494,11 @@ _i1.GetIt $initGetIt(_i1.GetIt get,
   gh.factory<_i65.ExperienceLikeActorBloc>(
       () => _i65.ExperienceLikeActorBloc());
   gh.lazySingleton<_i66.ExperienceLogRepositoryInterface>(
-      () => _i67.MockExperienceLogRepository(),
-      registerFor: {_test});
-  gh.lazySingleton<_i66.ExperienceLogRepositoryInterface>(
-      () => _i68.DevelopmentExperienceLogRepository(),
+      () => _i67.DevelopmentExperienceLogRepository(),
       registerFor: {_dev});
+  gh.lazySingleton<_i66.ExperienceLogRepositoryInterface>(
+      () => _i68.MockExperienceLogRepository(),
+      registerFor: {_test});
   gh.factory<_i69.ExperienceLogWatcherBloc>(
       () => _i69.ExperienceLogWatcherBloc());
   gh.factory<_i70.ExperienceManagementActorBloc>(
@@ -506,27 +506,27 @@ _i1.GetIt $initGetIt(_i1.GetIt get,
   gh.factory<_i71.ExperienceManagementFormBloc>(
       () => _i71.ExperienceManagementFormBloc());
   gh.lazySingleton<_i72.ExperienceManagementRepositoryInterface>(
-      () => _i73.MockExperienceManagementRepository(),
-      registerFor: {_test});
-  gh.lazySingleton<_i72.ExperienceManagementRepositoryInterface>(
-      () => _i74.DevelopmentExperienceManagementRepository(),
+      () => _i73.DevelopmentExperienceManagementRepository(),
       registerFor: {_dev});
+  gh.lazySingleton<_i72.ExperienceManagementRepositoryInterface>(
+      () => _i74.MockExperienceManagementRepository(),
+      registerFor: {_test});
   gh.factory<_i75.ExperienceManagementShowCaseBloc>(
       () => _i75.ExperienceManagementShowCaseBloc());
   gh.lazySingleton<_i76.ExperienceNavigationRepositoryInterface>(
-      () => _i77.DevelopmentExperienceNavigationRepository(),
-      registerFor: {_dev});
-  gh.lazySingleton<_i76.ExperienceNavigationRepositoryInterface>(
-      () => _i78.MockExperienceNavigationRepository(),
+      () => _i77.MockExperienceNavigationRepository(),
       registerFor: {_test});
+  gh.lazySingleton<_i76.ExperienceNavigationRepositoryInterface>(
+      () => _i78.DevelopmentExperienceNavigationRepository(),
+      registerFor: {_dev});
   gh.factory<_i79.ExperienceNavigationWatcherBloc>(
       () => _i79.ExperienceNavigationWatcherBloc());
-  gh.lazySingleton<_i80.FinishExperience>(() => _i54.MockFinishExperience(),
-      registerFor: {_test});
   gh.lazySingleton<_i80.FinishExperience>(
       () => _i80.FinishExperience(
           get<_i76.ExperienceNavigationRepositoryInterface>()),
       registerFor: {_dev, _prod});
+  gh.lazySingleton<_i80.FinishExperience>(() => _i54.MockFinishExperience(),
+      registerFor: {_test});
   gh.lazySingleton<_i81.FirebaseAuth>(
       () => firebaseInjectableModule.firebaseAuth);
   gh.lazySingleton<_i82.FirebaseFirestore>(
@@ -542,22 +542,22 @@ _i1.GetIt $initGetIt(_i1.GetIt get,
   gh.lazySingleton<_i87.GeoLocationRepositoryInterface>(
       () => _i88.MockGeoLocationRepository(),
       registerFor: {_test});
+  gh.lazySingleton<_i89.GetAchievement>(() => _i20.MockGetAchievement(),
+      registerFor: {_test});
   gh.lazySingleton<_i89.GetAchievement>(
       () => _i89.GetAchievement(get<_i6.AchievementRepositoryInterface>()),
       registerFor: {_dev, _prod});
-  gh.lazySingleton<_i89.GetAchievement>(() => _i20.MockGetAchievement(),
-      registerFor: {_test});
   gh.lazySingleton<_i90.GetCurrentLocation>(() => _i91.MockGetCurrentLocation(),
       registerFor: {_test});
   gh.lazySingleton<_i90.GetCurrentLocation>(
       () => _i90.GetCurrentLocation(get<_i87.GeoLocationRepositoryInterface>()),
       registerFor: {_dev, _prod});
-  gh.lazySingleton<_i92.GetExperience>(() => _i42.MockGetExperience(),
-      registerFor: {_test});
   gh.lazySingleton<_i92.GetExperience>(
       () => _i92.GetExperience(
           get<_i72.ExperienceManagementRepositoryInterface>()),
       registerFor: {_dev, _prod});
+  gh.lazySingleton<_i92.GetExperience>(() => _i42.MockGetExperience(),
+      registerFor: {_test});
   gh.lazySingleton<_i93.GetLoggedInUser>(() => _i94.MockGetLoggedInUser(),
       registerFor: {_test});
   gh.lazySingleton<_i93.GetLoggedInUser>(
@@ -570,60 +570,60 @@ _i1.GetIt $initGetIt(_i1.GetIt get,
       registerFor: {_test});
   gh.lazySingleton<_i98.GoogleSignIn>(
       () => googleInjectableModule.googleSignIn);
-  gh.lazySingleton<_i99.IsLoggedInUser>(() => _i91.MockIsLoggedInUser(),
-      registerFor: {_test});
   gh.lazySingleton<_i99.IsLoggedInUser>(() => _i99.IsLoggedInUser(),
       registerFor: {_dev, _prod});
-  gh.lazySingleton<_i100.LikeExperience>(() => _i54.MockLikeExperience(),
+  gh.lazySingleton<_i99.IsLoggedInUser>(() => _i91.MockIsLoggedInUser(),
       registerFor: {_test});
   gh.lazySingleton<_i100.LikeExperience>(
       () => _i100.LikeExperience(
           get<_i76.ExperienceNavigationRepositoryInterface>()),
       registerFor: {_dev, _prod});
-  gh.lazySingleton<_i101.LoadSurroundingExperiences>(
-      () => _i54.MockLoadSurroundingExperiences(),
+  gh.lazySingleton<_i100.LikeExperience>(() => _i54.MockLikeExperience(),
       registerFor: {_test});
   gh.lazySingleton<_i101.LoadSurroundingExperiences>(
       () => _i101.LoadSurroundingExperiences(
           get<_i76.ExperienceNavigationRepositoryInterface>()),
       registerFor: {_dev, _prod});
+  gh.lazySingleton<_i101.LoadSurroundingExperiences>(
+      () => _i54.MockLoadSurroundingExperiences(),
+      registerFor: {_test});
   gh.lazySingleton<_i102.LoadUser>(() => _i23.MockLoadUser(),
       registerFor: {_test});
   gh.factory<_i103.LoadUserBloc>(() => _i103.LoadUserBloc());
   gh.lazySingleton<_i104.LocalOptionsRepositoryInterface>(
-      () => _i105.MockLocalOptionsRepository(),
-      registerFor: {_test});
+      () => _i105.ProductionLocalOptionsRepository(),
+      registerFor: {_prod});
   gh.lazySingleton<_i104.LocalOptionsRepositoryInterface>(
       () => _i106.DevelopmentLocalOptionsRepository(),
       registerFor: {_dev});
   gh.lazySingleton<_i104.LocalOptionsRepositoryInterface>(
-      () => _i107.ProductionLocalOptionsRepository(),
-      registerFor: {_prod});
-  gh.lazySingleton<_i108.LogIn>(() => _i94.MockLogIn(), registerFor: {_test});
+      () => _i107.MockLocalOptionsRepository(),
+      registerFor: {_test});
   gh.lazySingleton<_i108.LogIn>(
       () => _i108.LogIn(get<_i16.AuthenticationRepositoryInterface>()),
       registerFor: {_dev, _prod});
+  gh.lazySingleton<_i108.LogIn>(() => _i94.MockLogIn(), registerFor: {_test});
   gh.factory<_i109.LogInFormBloc>(() => _i109.LogInFormBloc());
+  gh.lazySingleton<_i110.LogInGoogle>(() => _i94.MockLogInGoogle(),
+      registerFor: {_test});
   gh.lazySingleton<_i110.LogInGoogle>(
       () => _i110.LogInGoogle(get<_i16.AuthenticationRepositoryInterface>()),
       registerFor: {_dev, _prod});
-  gh.lazySingleton<_i110.LogInGoogle>(() => _i94.MockLogInGoogle(),
-      registerFor: {_test});
-  gh.lazySingleton<_i111.LogOut>(() => _i94.MockLogOut(), registerFor: {_test});
   gh.lazySingleton<_i111.LogOut>(
       () => _i111.LogOut(get<_i16.AuthenticationRepositoryInterface>()),
       registerFor: {_dev, _prod});
+  gh.lazySingleton<_i111.LogOut>(() => _i94.MockLogOut(), registerFor: {_test});
   gh.lazySingleton<_i112.Logger>(() => loggerInjectableModule.logger);
   gh.lazySingleton<_i113.MainFeedRepositoryInterface>(
-      () => _i114.MockMainFeedRepository(),
-      registerFor: {_test});
-  gh.lazySingleton<_i113.MainFeedRepositoryInterface>(
-      () => _i115.DevelopmentMainFeedRepository(),
+      () => _i114.DevelopmentMainFeedRepository(),
       registerFor: {_dev});
   gh.lazySingleton<_i113.MainFeedRepositoryInterface>(
-      () => _i116.ProductionMainFeedRepository(
+      () => _i115.ProductionMainFeedRepository(
           get<_i82.FirebaseFirestore>(), get<_i112.Logger>()),
       registerFor: {_prod});
+  gh.lazySingleton<_i113.MainFeedRepositoryInterface>(
+      () => _i116.MockMainFeedRepository(),
+      registerFor: {_test});
   gh.factory<_i117.MainFeedWatcherBloc>(() => _i117.MainFeedWatcherBloc());
   gh.factory<_i118.MainPageShowCaseBloc>(() => _i118.MainPageShowCaseBloc());
   gh.factory<_i119.MapControllerBloc>(() => _i119.MapControllerBloc());
@@ -633,15 +633,15 @@ _i1.GetIt $initGetIt(_i1.GetIt get,
   gh.lazySingleton<_i122.NoParams>(() => _i122.NoParams());
   gh.factory<_i123.NotificationActorBloc>(() => _i123.NotificationActorBloc());
   gh.lazySingleton<_i124.NotificationRepositoryInterface>(
-      () => _i125.DevelopmentNotificationRepository(),
-      registerFor: {_dev});
-  gh.lazySingleton<_i124.NotificationRepositoryInterface>(
-      () => _i126.ProductionNotificationRepository(
+      () => _i125.ProductionNotificationRepository(
           get<_i82.FirebaseFirestore>(), get<_i112.Logger>()),
       registerFor: {_prod});
   gh.lazySingleton<_i124.NotificationRepositoryInterface>(
-      () => _i127.MockNotificationRepository(),
+      () => _i126.MockNotificationRepository(),
       registerFor: {_test});
+  gh.lazySingleton<_i124.NotificationRepositoryInterface>(
+      () => _i127.DevelopmentNotificationRepository(),
+      registerFor: {_dev});
   gh.factory<_i128.NotificationsWatcherBloc>(
       () => _i128.NotificationsWatcherBloc());
   gh.factory<_i129.ObjectiveFormBloc>(() => _i129.ObjectiveFormBloc());
@@ -689,11 +689,11 @@ _i1.GetIt $initGetIt(_i1.GetIt get,
       () => _i147.RateExperienceDifficultyActorBloc());
   gh.factory<_i148.RecommendedExperiencesWatcherBloc>(
       () => _i148.RecommendedExperiencesWatcherBloc());
-  gh.lazySingleton<_i149.Register>(() => _i94.MockRegister(),
-      registerFor: {_test});
   gh.lazySingleton<_i149.Register>(
       () => _i149.Register(get<_i16.AuthenticationRepositoryInterface>()),
       registerFor: {_dev, _prod});
+  gh.lazySingleton<_i149.Register>(() => _i94.MockRegister(),
+      registerFor: {_test});
   gh.factory<_i150.RegistrationFormBloc>(() => _i150.RegistrationFormBloc());
   gh.lazySingleton<_i151.RemoteOptionsRepositoryInterface>(
       () => _i152.DevelopmentRemoteOptionsRepository(),
@@ -705,12 +705,12 @@ _i1.GetIt $initGetIt(_i1.GetIt get,
       () => _i154.MockRemoteOptionsRepository(),
       registerFor: {_test});
   gh.lazySingleton<_i155.RemoveExperienceLiked>(
+      () => _i23.MockRemoveExperienceLiked(),
+      registerFor: {_test});
+  gh.lazySingleton<_i155.RemoveExperienceLiked>(
       () =>
           _i155.RemoveExperienceLiked(get<_i139.ProfileRepositoryInterface>()),
       registerFor: {_dev, _prod});
-  gh.lazySingleton<_i155.RemoveExperienceLiked>(
-      () => _i23.MockRemoveExperienceLiked(),
-      registerFor: {_test});
   gh.lazySingleton<_i156.ResetPassword>(
       () => _i156.ResetPassword(get<_i16.AuthenticationRepositoryInterface>()),
       registerFor: {_dev, _prod});
@@ -722,12 +722,12 @@ _i1.GetIt $initGetIt(_i1.GetIt get,
   gh.lazySingleton<_i158.RewardUser>(() => _i54.MockRewardUser(),
       registerFor: {_test});
   gh.factory<_i159.RewardsCreationBloc>(() => _i159.RewardsCreationBloc());
-  gh.lazySingleton<_i160.SaveGlobalOptions>(() => _i51.MockSaveGlobalOptions(),
-      registerFor: {_test});
   gh.lazySingleton<_i160.SaveGlobalOptions>(
       () => _i160.SaveGlobalOptions(
           get<_i151.RemoteOptionsRepositoryInterface>()),
       registerFor: {_dev, _prod});
+  gh.lazySingleton<_i160.SaveGlobalOptions>(() => _i51.MockSaveGlobalOptions(),
+      registerFor: {_test});
   gh.lazySingleton<_i161.SaveUserProgress>(
       () => _i161.SaveUserProgress(
           get<_i76.ExperienceNavigationRepositoryInterface>()),
@@ -743,12 +743,12 @@ _i1.GetIt $initGetIt(_i1.GetIt get,
       () => _i167.MockSearchRepository(),
       registerFor: {_test});
   gh.lazySingleton<_i166.SearchRepositoryInterface>(
-      () => _i168.DevelopmentSearchRepository(),
-      registerFor: {_dev});
-  gh.lazySingleton<_i166.SearchRepositoryInterface>(
-      () => _i169.ProductionSearchRepository(
+      () => _i168.ProductionSearchRepository(
           get<_i82.FirebaseFirestore>(), get<_i112.Logger>()),
       registerFor: {_prod});
+  gh.lazySingleton<_i166.SearchRepositoryInterface>(
+      () => _i169.DevelopmentSearchRepository(),
+      registerFor: {_dev});
   gh.factory<_i170.SearchTagsByNameWatcherBloc>(
       () => _i170.SearchTagsByNameWatcherBloc());
   gh.factory<_i171.SearchToShareBloc>(() => _i171.SearchToShareBloc());
@@ -763,39 +763,39 @@ _i1.GetIt $initGetIt(_i1.GetIt get,
   gh.factory<_i174.ShareExperienceInternallyBloc>(
       () => _i174.ShareExperienceInternallyBloc());
   gh.lazySingleton<_i175.ShareRepositoryInterface>(
-      () => _i176.DevelopmentShareRepository(),
-      registerFor: {_dev});
-  gh.lazySingleton<_i175.ShareRepositoryInterface>(
-      () => _i177.MockShareRepository(),
+      () => _i176.MockShareRepository(),
       registerFor: {_test});
   gh.lazySingleton<_i175.ShareRepositoryInterface>(
-      () => _i178.ProductionShareRepository(
+      () => _i177.ProductionShareRepository(
           get<_i82.FirebaseFirestore>(), get<_i112.Logger>()),
       registerFor: {_prod});
+  gh.lazySingleton<_i175.ShareRepositoryInterface>(
+      () => _i178.DevelopmentShareRepository(),
+      registerFor: {_dev});
   gh.factory<_i179.StoreAppBarTitleBloc>(() => _i179.StoreAppBarTitleBloc());
   gh.factory<_i180.StoreNavigationActorBloc>(
       () => _i180.StoreNavigationActorBloc());
   gh.lazySingleton<_i181.StoreRepositoryInterface>(
-      () => _i182.MockStoreRepository(),
-      registerFor: {_test});
-  gh.lazySingleton<_i181.StoreRepositoryInterface>(
-      () => _i183.ProductionStoreRepository(
+      () => _i182.ProductionStoreRepository(
           get<_i82.FirebaseFirestore>(), get<_i112.Logger>()),
       registerFor: {_prod});
   gh.lazySingleton<_i181.StoreRepositoryInterface>(
-      () => _i184.DevelopmentStoreRepository(),
+      () => _i183.DevelopmentStoreRepository(),
       registerFor: {_dev});
+  gh.lazySingleton<_i181.StoreRepositoryInterface>(
+      () => _i184.MockStoreRepository(),
+      registerFor: {_test});
   gh.factory<_i185.TagCardActorBloc>(() => _i185.TagCardActorBloc());
   gh.lazySingleton<_i186.TagCoreRepositoryInterface>(
-      () => _i187.MockTagRepository(),
-      registerFor: {_test});
-  gh.lazySingleton<_i186.TagCoreRepositoryInterface>(
-      () => _i188.ProductionTagRepository(
+      () => _i187.ProductionTagRepository(
           get<_i82.FirebaseFirestore>(), get<_i112.Logger>()),
       registerFor: {_prod});
   gh.lazySingleton<_i186.TagCoreRepositoryInterface>(
-      () => _i189.DevelopmentTagRepository(),
+      () => _i188.DevelopmentTagRepository(),
       registerFor: {_dev});
+  gh.lazySingleton<_i186.TagCoreRepositoryInterface>(
+      () => _i189.MockTagRepository(),
+      registerFor: {_test});
   gh.factory<_i190.TagManagementActorBloc>(
       () => _i190.TagManagementActorBloc());
   gh.factory<_i191.TagManagementFormBloc>(() => _i191.TagManagementFormBloc());
@@ -816,26 +816,26 @@ _i1.GetIt $initGetIt(_i1.GetIt get,
       () => _i198.UnAccomplishObjective(
           get<_i76.ExperienceNavigationRepositoryInterface>()),
       registerFor: {_dev, _prod});
-  gh.lazySingleton<_i199.UnBlockUser>(() => _i23.MockUnBlockUser(),
-      registerFor: {_test});
   gh.lazySingleton<_i199.UnBlockUser>(
       () => _i199.UnBlockUser(get<_i139.ProfileRepositoryInterface>()),
       registerFor: {_dev, _prod});
-  gh.lazySingleton<_i200.UnFollowUser>(() => _i23.MockUnFollowUser(),
+  gh.lazySingleton<_i199.UnBlockUser>(() => _i23.MockUnBlockUser(),
       registerFor: {_test});
   gh.lazySingleton<_i200.UnFollowUser>(
       () => _i200.UnFollowUser(get<_i139.ProfileRepositoryInterface>()),
       registerFor: {_dev, _prod});
+  gh.lazySingleton<_i200.UnFollowUser>(() => _i23.MockUnFollowUser(),
+      registerFor: {_test});
   gh.factory<_i201.UserActorBloc>(() => _i201.UserActorBloc());
   gh.factory<_i202.UserProfileButtonWatcherBloc>(
       () => _i202.UserProfileButtonWatcherBloc());
   gh.lazySingleton<_i203.WatchAllAchievements>(
-      () => _i20.MockGetAllAchievements(),
-      registerFor: {_test});
-  gh.lazySingleton<_i203.WatchAllAchievements>(
       () =>
           _i203.WatchAllAchievements(get<_i6.AchievementRepositoryInterface>()),
       registerFor: {_dev, _prod});
+  gh.lazySingleton<_i203.WatchAllAchievements>(
+      () => _i20.MockGetAllAchievements(),
+      registerFor: {_test});
   gh.lazySingleton<_i204.WatchAllTags>(() => _i13.MockGetAllTags(),
       registerFor: {_test});
   gh.lazySingleton<_i204.WatchAllTags>(
@@ -853,19 +853,19 @@ _i1.GetIt $initGetIt(_i1.GetIt get,
       registerFor: {_test});
   gh.factory<_i207.WatchCurrentUserBloc>(() => _i207.WatchCurrentUserBloc());
   gh.lazySingleton<_i208.WatchExperienceComments>(
+      () => _i46.MockGetExperienceComments(),
+      registerFor: {_test});
+  gh.lazySingleton<_i208.WatchExperienceComments>(
       () =>
           _i208.WatchExperienceComments(get<_i33.CommentRepositoryInterface>()),
       registerFor: {_dev, _prod});
-  gh.lazySingleton<_i208.WatchExperienceComments>(
-      () => _i46.MockGetExperienceComments(),
-      registerFor: {_test});
-  gh.lazySingleton<_i209.WatchExperiencesCreated>(
-      () => _i23.MockLoadExperiencesCreated(),
-      registerFor: {_test});
   gh.lazySingleton<_i209.WatchExperiencesCreated>(
       () => _i209.WatchExperiencesCreated(
           get<_i139.ProfileRepositoryInterface>()),
       registerFor: {_dev, _prod});
+  gh.lazySingleton<_i209.WatchExperiencesCreated>(
+      () => _i23.MockLoadExperiencesCreated(),
+      registerFor: {_test});
   gh.lazySingleton<_i210.WatchExperiencesDone>(
       () => _i210.WatchExperiencesDone(get<_i139.ProfileRepositoryInterface>()),
       registerFor: {_dev, _prod});
@@ -873,22 +873,22 @@ _i1.GetIt $initGetIt(_i1.GetIt get,
       () => _i23.MockLoadExperiencesDone(),
       registerFor: {_test});
   gh.lazySingleton<_i211.WatchExperiencesLiked>(
+      () => _i23.MockLoadExperiencesLiked(),
+      registerFor: {_test});
+  gh.lazySingleton<_i211.WatchExperiencesLiked>(
       () =>
           _i211.WatchExperiencesLiked(get<_i139.ProfileRepositoryInterface>()),
       registerFor: {_dev, _prod});
-  gh.lazySingleton<_i211.WatchExperiencesLiked>(
-      () => _i23.MockLoadExperiencesLiked(),
-      registerFor: {_test});
   gh.lazySingleton<_i212.WatchFeed>(() => _i213.MockFillFeed(),
       registerFor: {_test});
   gh.lazySingleton<_i212.WatchFeed>(
       () => _i212.WatchFeed(get<_i113.MainFeedRepositoryInterface>()),
       registerFor: {_dev, _prod});
+  gh.lazySingleton<_i214.WatchFollowedUsers>(() => _i23.MockLoadFollowedUsers(),
+      registerFor: {_test});
   gh.lazySingleton<_i214.WatchFollowedUsers>(
       () => _i214.WatchFollowedUsers(get<_i139.ProfileRepositoryInterface>()),
       registerFor: {_dev, _prod});
-  gh.lazySingleton<_i214.WatchFollowedUsers>(() => _i23.MockLoadFollowedUsers(),
-      registerFor: {_test});
   gh.lazySingleton<_i215.WatchFollowingUsers>(
       () => _i215.WatchFollowingUsers(get<_i139.ProfileRepositoryInterface>()),
       registerFor: {_dev, _prod});
@@ -921,19 +921,19 @@ _i1.GetIt $initGetIt(_i1.GetIt get,
           get<_i76.ExperienceNavigationRepositoryInterface>()),
       registerFor: {_dev, _prod});
   gh.lazySingleton<_i223.WatchSearchExperiencesByDifficulty>(
-      () => _i223.WatchSearchExperiencesByDifficulty(
-          get<_i166.SearchRepositoryInterface>()),
-      registerFor: {_dev, _prod});
-  gh.lazySingleton<_i223.WatchSearchExperiencesByDifficulty>(
       () => _i224.MockSearchExperiencesByDifficulty(),
       registerFor: {_test});
-  gh.lazySingleton<_i225.WatchSearchExperiencesByName>(
-      () => _i225.WatchSearchExperiencesByName(
+  gh.lazySingleton<_i223.WatchSearchExperiencesByDifficulty>(
+      () => _i223.WatchSearchExperiencesByDifficulty(
           get<_i166.SearchRepositoryInterface>()),
       registerFor: {_dev, _prod});
   gh.lazySingleton<_i225.WatchSearchExperiencesByName>(
       () => _i224.MockSearchExperiencesByName(),
       registerFor: {_test});
+  gh.lazySingleton<_i225.WatchSearchExperiencesByName>(
+      () => _i225.WatchSearchExperiencesByName(
+          get<_i166.SearchRepositoryInterface>()),
+      registerFor: {_dev, _prod});
   gh.lazySingleton<_i226.WatchSearchExperiencesByTags>(
       () => _i224.MockSearchExperiencesByTags(),
       registerFor: {_test});
@@ -971,11 +971,11 @@ _i1.GetIt $initGetIt(_i1.GetIt get,
       registerFor: {_dev, _prod});
   gh.lazySingleton<_i231.WatchUserComments>(() => _i46.MockGetUserComments(),
       registerFor: {_test});
+  gh.lazySingleton<_i232.WatchUserInterests>(() => _i23.MockLoadUserInterests(),
+      registerFor: {_test});
   gh.lazySingleton<_i232.WatchUserInterests>(
       () => _i232.WatchUserInterests(get<_i139.ProfileRepositoryInterface>()),
       registerFor: {_dev, _prod});
-  gh.lazySingleton<_i232.WatchUserInterests>(() => _i23.MockLoadUserInterests(),
-      registerFor: {_test});
   gh.lazySingleton<_i233.WatchUserLog>(
       () => _i233.WatchUserLog(get<_i66.ExperienceLogRepositoryInterface>()),
       registerFor: {_dev, _prod});

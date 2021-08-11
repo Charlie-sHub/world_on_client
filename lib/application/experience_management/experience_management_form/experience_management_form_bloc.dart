@@ -27,10 +27,8 @@ import 'package:worldon/domain/core/validation/objects/name.dart';
 import 'package:worldon/domain/core/validation/objects/objective_list.dart';
 import 'package:worldon/domain/core/validation/objects/reward_set.dart';
 import 'package:worldon/domain/core/validation/objects/tag_set.dart';
-import 'package:worldon/domain/experience_management/use_case/create_experience.dart'
-    as create_experience;
-import 'package:worldon/domain/experience_management/use_case/edit_experience.dart'
-    as edit_experience;
+import 'package:worldon/domain/experience_management/use_case/create_experience.dart' as create_experience;
+import 'package:worldon/domain/experience_management/use_case/edit_experience.dart' as edit_experience;
 import 'package:worldon/domain/experience_navigation/use_case/reward_user.dart' as reward_user;
 
 import '../../../injection.dart';
@@ -47,8 +45,7 @@ class ExperienceManagementFormBloc
   static const _imageNumberLimit = 15;
 
   @override
-  Stream<ExperienceManagementFormState> mapEventToState(
-      ExperienceManagementFormEvent event) async* {
+  Stream<ExperienceManagementFormState> mapEventToState(ExperienceManagementFormEvent event) async* {
     yield* event.map(
       initialized: _onInitialized,
       titleChanged: _onTitleChanged,
@@ -103,8 +100,7 @@ class ExperienceManagementFormBloc
           failureOrSuccessOption: optionOf(
             left(
               const Failure.experienceManagementApplication(
-                ExperienceManagementApplicationFailure.surpassedImageLimit(
-                    limit: _imageNumberLimit),
+                ExperienceManagementApplicationFailure.surpassedImageLimit(limit: _imageNumberLimit),
               ),
             ),
           ),
@@ -233,8 +229,7 @@ class ExperienceManagementFormBloc
         // Maybe other developers will need to be excluded too in the future
         // Don't like hard coding this though
         final _isNotCarlos = _currentUser.id.getOrCrash() != "RmdTGeylpDVVcyTVNbe6Ngj3DRV2";
-        final _isPromoted =
-            _currentUser.adminPowers && _isNotCarlos || _currentUser.promotionPlan.isUsable;
+        final _isPromoted = _currentUser.adminPowers && _isNotCarlos || _currentUser.promotionPlan.isUsable;
         return state.copyWith(
           experience: Experience.empty().copyWith(
             creator: _currentUser.simplified,

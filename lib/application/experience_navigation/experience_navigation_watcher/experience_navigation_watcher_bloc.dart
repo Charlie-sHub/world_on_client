@@ -20,8 +20,7 @@ class ExperienceNavigationWatcherBloc
   ExperienceNavigationWatcherBloc() : super(const ExperienceNavigationWatcherState.initial());
 
   @override
-  Stream<ExperienceNavigationWatcherState> mapEventToState(
-      ExperienceNavigationWatcherEvent event) async* {
+  Stream<ExperienceNavigationWatcherState> mapEventToState(ExperienceNavigationWatcherEvent event) async* {
     yield* event.map(
       initialized: _onInitialized,
       allObjectivesAccomplished: _onAllObjectivesAccomplished,

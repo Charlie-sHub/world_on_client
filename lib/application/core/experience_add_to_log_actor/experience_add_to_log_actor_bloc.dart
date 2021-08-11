@@ -7,8 +7,7 @@ import 'package:injectable/injectable.dart';
 import 'package:meta/meta.dart';
 import 'package:worldon/core/error/failure.dart';
 import 'package:worldon/domain/core/validation/objects/unique_id.dart';
-import 'package:worldon/domain/experience_log/use_case/add_experience_to_log.dart'
-    as add_experience_to_log;
+import 'package:worldon/domain/experience_log/use_case/add_experience_to_log.dart' as add_experience_to_log;
 import 'package:worldon/domain/experience_log/use_case/dismiss_experience_from_log.dart'
     as dismiss_experience_from_log;
 import 'package:worldon/injection.dart';
@@ -18,8 +17,7 @@ part 'experience_add_to_log_actor_event.dart';
 part 'experience_add_to_log_actor_state.dart';
 
 @injectable
-class ExperienceAddToLogActorBloc
-    extends Bloc<ExperienceAddToLogActorEvent, ExperienceAddToLogActorState> {
+class ExperienceAddToLogActorBloc extends Bloc<ExperienceAddToLogActorEvent, ExperienceAddToLogActorState> {
   ExperienceAddToLogActorBloc() : super(ExperienceAddToLogActorState.initial());
 
   @override
