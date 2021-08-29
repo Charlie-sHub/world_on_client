@@ -41,8 +41,12 @@ class MainFeedWatcherBloc extends Bloc<MainFeedWatcherEvent, MainFeedWatcherStat
   Stream<MainFeedWatcherState> _onWatchMainFeedStarted(_) async* {
     yield const MainFeedWatcherState.loadInProgress();
     await _mainFeedStreamSubscription?.cancel();
-    _mainFeedStreamSubscription = getIt<WatchFeed>()(getIt<NoParams>()).listen(
-      (_failureOrExperiences) => add(MainFeedWatcherEvent.resultsReceived(_failureOrExperiences)),
+    _mainFeedStreamSubscription = getIt<WatchFeed>()(
+      getIt<NoParams>(),
+    ).listen(
+      (_failureOrExperiences) => add(
+        MainFeedWatcherEvent.resultsReceived(_failureOrExperiences),
+      ),
     );
   }
 

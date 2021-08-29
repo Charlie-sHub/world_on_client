@@ -17,7 +17,11 @@ part 'user_profile_button_watcher_state.dart';
 @injectable
 class UserProfileButtonWatcherBloc
     extends Bloc<UserProfileButtonWatcherEvent, UserProfileButtonWatcherState> {
-  UserProfileButtonWatcherBloc() : super(const UserProfileButtonWatcherState.initial());
+  @Deprecated("Better to use WatchCurrentUserBloc and get the image url from there")
+  UserProfileButtonWatcherBloc()
+      : super(
+          const UserProfileButtonWatcherState.initial(),
+        );
 
   @override
   Stream<UserProfileButtonWatcherState> mapEventToState(

@@ -37,11 +37,15 @@ class LogInFormBloc extends Bloc<LogInFormEvent, LogInFormState> {
       isSubmitting: true,
       failureOrSuccessOption: none(),
     );
-    final _failureOrSuccess = await getIt<LogInGoogle>()(getIt<NoParams>());
+    final _failureOrSuccess = await getIt<LogInGoogle>()(
+      getIt<NoParams>(),
+    );
     yield _failureOrSuccess.fold(
       (_failure) => state.copyWith(
         isSubmitting: false,
-        failureOrSuccessOption: some(left(_failure)),
+        failureOrSuccessOption: some(
+          left(_failure),
+        ),
       ),
       (_userOption) => state.copyWith(
         isSubmitting: false,

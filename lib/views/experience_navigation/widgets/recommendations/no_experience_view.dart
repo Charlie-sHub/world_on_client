@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:worldon/generated/l10n.dart';
-import 'package:worldon/views/core/misc/world_on_colors.dart';
-import 'package:worldon/views/experience_navigation/widgets/recommendations/recommended_experiences_body.dart';
+import 'package:worldon/views/experience_navigation/widgets/recommendations/adventure_map.dart';
+import 'package:worldon/views/experience_navigation/widgets/recommendations/recommended_experiences_bottom_bar.dart';
 
 class NoExperienceView extends StatelessWidget {
   const NoExperienceView({
@@ -22,28 +22,16 @@ class NoExperienceView extends StatelessWidget {
                   textAlign: TextAlign.center,
                   style: const TextStyle(
                     fontWeight: FontWeight.w800,
-                    fontSize: 19,
+                    fontSize: 13,
                   ),
                 ),
                 const SizedBox(height: 5),
                 Text(
                   S.of(context).experienceNavigationNoneChosenDescription,
                   style: const TextStyle(
-                    fontSize: 15,
+                    fontSize: 11,
                     fontWeight: FontWeight.w300,
                     color: Colors.grey,
-                  ),
-                  textAlign: TextAlign.center,
-                ),
-                const Divider(
-                  color: WorldOnColors.accent,
-                ),
-                Text(
-                  S.of(context).recommendations,
-                  style: const TextStyle(
-                    color: WorldOnColors.primary,
-                    fontWeight: FontWeight.w800,
-                    fontSize: 17,
                   ),
                   textAlign: TextAlign.center,
                 ),
@@ -51,8 +39,10 @@ class NoExperienceView extends StatelessWidget {
             ),
           ),
           const Expanded(
-            child: RecommendedExperiencesBody(),
+            child: AdventureMap(),
           ),
+          const RecommendedExperiencesBottomBar(),
+          const SizedBox(height: kBottomNavigationBarHeight - 15),
         ],
       ),
     );

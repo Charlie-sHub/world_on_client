@@ -5,6 +5,7 @@ import 'package:worldon/domain/core/entities/tag/tag.dart';
 
 @Deprecated("Use the LikeableSimpleTagCard instead")
 class LikeTagButton extends StatelessWidget {
+  @Deprecated("Use the LikeableSimpleTagCard instead")
   const LikeTagButton({
     Key? key,
     required this.tag,

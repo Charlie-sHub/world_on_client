@@ -6,6 +6,7 @@ import 'package:worldon/views/core/misc/world_on_colors.dart';
 
 @Deprecated("Use the DislikeableSimpleTagCard instead")
 class DislikeTagButton extends StatelessWidget {
+  @Deprecated("Use the DislikeableSimpleTagCard instead")
   const DislikeTagButton({
     Key? key,
     required this.tag,

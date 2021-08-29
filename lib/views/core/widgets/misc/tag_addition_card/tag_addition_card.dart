@@ -16,6 +16,7 @@ import '../../../../../injection.dart';
 class TagAdditionCard extends StatelessWidget {
   final Function tagChangeFunction;
 
+  @Deprecated("Use the TagCreationAdditionCard instead")
   const TagAdditionCard({
     Key? key,
     required this.tagChangeFunction,

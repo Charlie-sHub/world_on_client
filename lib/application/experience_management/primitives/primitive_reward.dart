@@ -12,8 +12,10 @@ part 'primitive_reward.freezed.dart';
 @Deprecated("This class is not necessary for the current way to create rewards")
 @freezed
 class PrimitiveReward with _$PrimitiveReward {
+  @Deprecated("This class is not necessary for the current way to create rewards")
   const PrimitiveReward._();
 
+  @Deprecated("This class is not necessary for the current way to create rewards")
   const factory PrimitiveReward({
     required UniqueId id,
     required String name,
@@ -21,6 +23,7 @@ class PrimitiveReward with _$PrimitiveReward {
     required File? imageFile,
   }) = _PrimitiveReward;
 
+  @Deprecated("This class is not necessary for the current way to create rewards")
   factory PrimitiveReward.empty() => PrimitiveReward(
         id: UniqueId(),
         name: "",
@@ -28,6 +31,7 @@ class PrimitiveReward with _$PrimitiveReward {
         imageFile: null,
       );
 
+  @Deprecated("This class is not necessary for the current way to create rewards")
   factory PrimitiveReward.fromDomain(Reward reward) => PrimitiveReward(
         id: reward.id,
         name: reward.name.getOrCrash(),

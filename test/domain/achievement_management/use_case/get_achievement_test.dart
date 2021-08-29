@@ -31,7 +31,6 @@ void main() {
       // Arrange
       when(mockAchievementRepository.getAchievement(any)).thenAnswer((_) async => right(achievement));
       // Act
-
       final result = await useCase(params);
       // Assert
       expect(result, right(achievement));
