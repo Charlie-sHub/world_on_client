@@ -4,6 +4,7 @@ import 'package:injectable/injectable.dart' as injectable;
 import 'package:mockito/mockito.dart';
 import 'package:worldon/core/error/failure.dart';
 import 'package:worldon/data/core/failures/core_data_failure.dart';
+import 'package:worldon/domain/core/validation/objects/unique_id.dart';
 import 'package:worldon/domain/experience_navigation/repository/experience_navigation_repository_interface.dart';
 import 'package:worldon/domain/experience_navigation/use_case/like_experience.dart';
 import 'package:worldon/injection.dart';
@@ -21,7 +22,7 @@ void main() {
     },
   );
   final params = Params(
-    experienceId: 1,
+    experienceId: UniqueId(),
   );
   test(
     TestDescription.returnNothing,

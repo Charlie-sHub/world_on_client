@@ -5,6 +5,7 @@ import 'package:worldon/domain/core/entities/user/user.dart';
 import 'package:worldon/domain/core/failures/value_failure.dart';
 import 'package:worldon/domain/core/validation/objects/name.dart';
 import 'package:worldon/domain/core/validation/objects/past_date.dart';
+import 'package:worldon/domain/core/validation/objects/unique_id.dart';
 
 part 'tag.freezed.dart';
 
@@ -14,29 +15,30 @@ part 'tag.freezed.dart';
 ///
 /// Maybe [Tag]s should be simplified to just the name
 @freezed
-abstract class Tag implements _$Tag {
+class Tag with _$Tag {
   const Tag._();
 
   const factory Tag({
-    int id,
-    @required Name name,
-    @required int creatorId,
-    @required PastDate creationDate,
-    @required PastDate modificationDate,
+    required UniqueId id,
+    required Name name,
+    required UniqueId creatorId,
+    required PastDate creationDate,
+    required PastDate modificationDate,
   }) = _Tag;
 
   factory Tag.empty() => Tag(
-    name: Name(""),
-        creatorId: 0,
+        id: UniqueId(),
+        name: Name(""),
+        creatorId: UniqueId(),
         creationDate: PastDate(DateTime.now()),
         modificationDate: PastDate(DateTime.now()),
       );
 
   Option<ValueFailure<dynamic>> get failureOption {
     return name.failureOrUnit.andThen(creationDate.failureOrUnit).andThen(modificationDate.failureOrUnit).fold(
-        (failure) => some(failure),
-        (_) => none(),
-    );
+          (failure) => some(failure),
+          (_) => none(),
+        );
   }
 
   bool get isValid => failureOption.isNone();

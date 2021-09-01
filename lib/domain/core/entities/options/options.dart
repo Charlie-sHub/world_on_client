@@ -1,5 +1,6 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:worldon/domain/core/entities/user/user.dart';
+import 'package:worldon/domain/core/validation/objects/unique_id.dart';
 
 part 'options.freezed.dart';
 
@@ -7,15 +8,16 @@ part 'options.freezed.dart';
 ///
 /// [Options] are chosen by the [User] to customize his experience in the app.
 @freezed
-abstract class Options implements _$Options {
+class Options with _$Options {
   const Options._();
 
   const factory Options({
-    int id,
-    @required String languageCode,
+    required UniqueId id,
+    required String languageCode,
   }) = _Options;
 
-  factory Options.empty() => const Options(
+  factory Options.empty() => Options(
+        id: UniqueId(),
         languageCode: "",
       );
 }

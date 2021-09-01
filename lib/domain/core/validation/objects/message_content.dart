@@ -10,15 +10,12 @@ class MessageContent extends ValueObject<String> {
   @override
   final Either<ValueFailure<String>, String> value;
 
-  factory MessageContent(String input) {
-    assert(input != null);
-    return MessageContent._(
-      validateStringLength(
-        input: input,
-        length: maxLength,
-      ).flatMap(validateStringNotEmpty),
-    );
-  }
+  factory MessageContent(String input) => MessageContent._(
+        validateStringLength(
+          input: input,
+          length: maxLength,
+        ).flatMap(validateStringNotEmpty),
+      );
 
   const MessageContent._(this.value);
 

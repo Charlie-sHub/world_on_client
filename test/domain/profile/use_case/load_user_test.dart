@@ -5,6 +5,7 @@ import 'package:mockito/mockito.dart';
 import 'package:worldon/core/error/failure.dart';
 import 'package:worldon/data/core/failures/core_data_failure.dart';
 import 'package:worldon/domain/core/entities/user/user.dart';
+import 'package:worldon/domain/core/validation/objects/unique_id.dart';
 import 'package:worldon/domain/profile/repository/profile_repository_interface.dart';
 import 'package:worldon/domain/profile/use_case/load_user.dart';
 import 'package:worldon/injection.dart';
@@ -21,7 +22,7 @@ void main() {
       useCase = LoadUser(mockProfileRepository);
     },
   );
-  const id = 1;
+  final id = UniqueId();
   final user = User.empty().copyWith(id: id);
   test(
     "Should return a User if everything goes well",

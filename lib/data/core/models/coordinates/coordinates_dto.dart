@@ -4,16 +4,15 @@ import 'package:worldon/domain/core/validation/objects/latitude.dart';
 import 'package:worldon/domain/core/validation/objects/longitude.dart';
 
 part 'coordinates_dto.freezed.dart';
-
 part 'coordinates_dto.g.dart';
 
 @freezed
-abstract class CoordinatesDto implements _$CoordinatesDto {
+class CoordinatesDto with _$CoordinatesDto {
   const CoordinatesDto._();
 
   const factory CoordinatesDto({
-    @required double latitude,
-    @required double longitude,
+    required double latitude,
+    required double longitude,
   }) = _CoordinatesDto;
 
   factory CoordinatesDto.fromDomain(Coordinates coordinates) => CoordinatesDto(

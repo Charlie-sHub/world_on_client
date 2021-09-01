@@ -1,7 +1,7 @@
 part of 'profile_experiences_watcher_bloc.dart';
 
 @freezed
-abstract class ProfileExperiencesWatcherEvent with _$ProfileExperiencesWatcherEvent {
+class ProfileExperiencesWatcherEvent with _$ProfileExperiencesWatcherEvent {
   const factory ProfileExperiencesWatcherEvent.watchExperiencesDoneStarted(User user) = _WatchExperiencesDoneStarted;
 
   const factory ProfileExperiencesWatcherEvent.watchExperiencesLikedStarted(User user) = _WatchExperiencesLikedStarted;

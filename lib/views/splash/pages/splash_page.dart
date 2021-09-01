@@ -3,8 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:worldon/application/authentication/authentication/authentication_bloc.dart';
 import 'package:worldon/views/core/routes/router.gr.dart';
-import 'package:worldon/views/splash/widget/splash_progress_indicator.dart';
-import 'package:worldon/views/splash/widget/world_on_logo_big.dart';
+import 'package:worldon/views/core/widgets/misc/world_on_plasma.dart';
 
 class SplashPage extends StatelessWidget {
   @override
@@ -12,17 +11,18 @@ class SplashPage extends StatelessWidget {
     return BlocListener<AuthenticationBloc, AuthenticationState>(
       listener: (context, state) => state.map(
         initial: (_) => null,
-        authenticationSuccess: (_) => context.navigator.replace(Routes.mainPage),
-        authenticationFailure: (_) => context.navigator.replace(Routes.logInPage),
+        authenticated: (_) => context.router.replace(
+          MainPageRoute(
+            isNewUser: false,
+          ),
+        ),
+        unAuthenticated: (_) => context.router.replace(
+          const LogInPageRoute(),
+        ),
       ),
       child: Scaffold(
-        body: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: const <Widget>[
-            WorldOnLogoBig(),
-            SizedBox(height: 20),
-            SplashProgressIndicator(),
-          ],
+        body: Center(
+          child: WorldOnPlasma(),
         ),
       ),
     );

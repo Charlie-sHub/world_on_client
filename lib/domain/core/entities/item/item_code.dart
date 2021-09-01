@@ -1,0 +1,4 @@
+enum ItemCode {
+  none,
+  expBoost,
+}

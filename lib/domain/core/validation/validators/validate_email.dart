@@ -3,9 +3,7 @@ import 'package:email_validator/email_validator.dart';
 import 'package:worldon/domain/core/failures/value_failure.dart';
 
 Either<ValueFailure<String>, String> validateEmail(String input) {
-  if (input == null) {
-    return left(const ValueFailure.nullInput());
-  } else if (EmailValidator.validate(input)) {
+  if (EmailValidator.validate(input)) {
     return right(input);
   } else {
     return left(ValueFailure.invalidEmail(failedValue: input));

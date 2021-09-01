@@ -1,6 +1,7 @@
 import 'package:flutter_test/flutter_test.dart';
 import 'package:worldon/data/core/models/device/device_dto.dart';
 import 'package:worldon/domain/core/entities/device/device.dart';
+import 'package:worldon/domain/core/validation/objects/unique_id.dart';
 
 import '../../../test_descriptions.dart';
 
@@ -9,8 +10,8 @@ void main() {
     TestDescription.shouldEqualEntity,
     () async {
       // Arrange
-      const device = Device(
-        id: 1,
+      final device = Device(
+        id: UniqueId(),
         name: "Test",
         type: "Test",
         company: "Test",

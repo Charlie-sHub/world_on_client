@@ -6,6 +6,7 @@ import 'package:worldon/core/error/failure.dart';
 import 'package:worldon/data/core/failures/core_data_failure.dart';
 import 'package:worldon/domain/achievement_management/repository/achievement_repository_interface.dart';
 import 'package:worldon/domain/achievement_management/use_case/award_achievement.dart';
+import 'package:worldon/domain/core/validation/objects/unique_id.dart';
 import 'package:worldon/injection.dart';
 
 import '../../../test_descriptions.dart';
@@ -20,8 +21,8 @@ void main() {
       useCase = AwardAchievement(mockAchievementRepository);
     },
   );
-  const userId = 1;
-  const achievementId = 1;
+  final userId = UniqueId();
+  final achievementId = UniqueId();
   final params = Params(
     achievementId: achievementId,
     userId: userId,

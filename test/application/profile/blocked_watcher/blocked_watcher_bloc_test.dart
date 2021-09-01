@@ -8,6 +8,7 @@ import 'package:worldon/application/profile/blocked_watcher/blocked_watcher_bloc
 import 'package:worldon/core/error/failure.dart';
 import 'package:worldon/data/core/failures/core_data_failure.dart';
 import 'package:worldon/data/core/misc/common_methods_for_dev_repositories/get_valid_entities/get_valid_user.dart';
+import 'package:worldon/domain/core/validation/objects/unique_id.dart';
 import 'package:worldon/domain/profile/use_case/watch_blocked_users.dart';
 import 'package:worldon/injection.dart';
 
@@ -24,10 +25,10 @@ void main() {
   );
   final usersBlocked = KtList.of(
     getValidUser(),
-    getValidUser().copyWith(id: 2),
+    getValidUser().copyWith(id: UniqueId()),
   );
   final user = getValidUser().copyWith(
-    id: 3,
+    id: UniqueId(),
     blockedUsersIds: usersBlocked.map((_user) => _user.id).toSet().dart,
   );
   const failure = Failure.coreData(CoreDataFailure.serverError(errorString: TestDescription.errorString));

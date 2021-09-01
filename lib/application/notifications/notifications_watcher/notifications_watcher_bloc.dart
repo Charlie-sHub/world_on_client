@@ -20,7 +20,8 @@ part 'notifications_watcher_state.dart';
 @injectable
 class NotificationsWatcherBloc extends Bloc<NotificationsWatcherEvent, NotificationsWatcherState> {
   NotificationsWatcherBloc() : super(const NotificationsWatcherState.initial());
-  StreamSubscription<Either<Failure, KtList<Notification>>> _notificationsStreamSubscription;
+
+  StreamSubscription<Either<Failure, KtList<Notification>>>? _notificationsStreamSubscription;
 
   @override
   Stream<NotificationsWatcherState> mapEventToState(NotificationsWatcherEvent event) async* {

@@ -1,8 +1,8 @@
 part of 'registration_form_bloc.dart';
 
 @freezed
-abstract class RegistrationFormEvent with _$RegistrationFormEvent {
-  const factory RegistrationFormEvent.initialized() = _Initialized;
+class RegistrationFormEvent with _$RegistrationFormEvent {
+  const factory RegistrationFormEvent.initialized(Option<User> userOption) = _Initialized;
 
   const factory RegistrationFormEvent.imageChanged(File imageFile) = _ImageChanged;
 
@@ -20,7 +20,7 @@ abstract class RegistrationFormEvent with _$RegistrationFormEvent {
 
   const factory RegistrationFormEvent.descriptionChanged(String description) = _DescriptionChanged;
 
-  const factory RegistrationFormEvent.interestsChanged(Set<int> interests) = _InterestsChanged;
+  const factory RegistrationFormEvent.interestsChanged(KtSet<Tag> interests) = _InterestsChanged;
 
   const factory RegistrationFormEvent.tappedEULA() = _TappedEULA;
 

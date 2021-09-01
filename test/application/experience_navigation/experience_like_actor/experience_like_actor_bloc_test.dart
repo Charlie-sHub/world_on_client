@@ -9,6 +9,7 @@ import 'package:worldon/data/core/failures/core_data_failure.dart';
 import 'package:worldon/data/core/misc/common_methods_for_dev_repositories/get_valid_entities/get_valid_experience.dart';
 import 'package:worldon/data/core/misc/common_methods_for_dev_repositories/get_valid_entities/get_valid_user.dart';
 import 'package:worldon/domain/authentication/use_case/get_logged_in_user.dart';
+import 'package:worldon/domain/core/validation/objects/unique_id.dart';
 import 'package:worldon/domain/experience_navigation/use_case/dislike_experience.dart';
 import 'package:worldon/domain/experience_navigation/use_case/like_experience.dart';
 import 'package:worldon/injection.dart';
@@ -28,7 +29,7 @@ void main() {
     },
   );
   final experienceLiked = getValidExperience();
-  final experienceNotLiked = experienceLiked.copyWith(id: 2);
+  final experienceNotLiked = experienceLiked.copyWith(id: UniqueId());
   final user = getValidUser().copyWith(experiencesLikedIds: {experienceLiked.id});
   const failure = Failure.coreData(CoreDataFailure.serverError(errorString: TestDescription.errorString));
   blocTest(

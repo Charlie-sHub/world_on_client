@@ -21,7 +21,8 @@ part 'search_experiences_by_tags_state.dart';
 @injectable
 class SearchExperiencesByTagsBloc extends Bloc<SearchExperiencesByTagsEvent, SearchExperiencesByTagsState> {
   SearchExperiencesByTagsBloc() : super(const SearchExperiencesByTagsState.initial());
-  StreamSubscription<Either<Failure, KtList<Experience>>> _experiencesStreamSubscription;
+
+  StreamSubscription<Either<Failure, KtList<Experience>>>? _experiencesStreamSubscription;
 
   @override
   Stream<SearchExperiencesByTagsState> mapEventToState(SearchExperiencesByTagsEvent event) async* {

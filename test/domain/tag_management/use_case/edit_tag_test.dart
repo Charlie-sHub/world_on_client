@@ -10,6 +10,7 @@ import 'package:worldon/domain/core/entities/user/user.dart';
 import 'package:worldon/domain/core/failures/core_domain_failure.dart';
 import 'package:worldon/domain/core/failures/error.dart';
 import 'package:worldon/domain/core/validation/objects/name.dart';
+import 'package:worldon/domain/core/validation/objects/unique_id.dart';
 import 'package:worldon/domain/tag_management/repository/tag_management_repository_interface.dart';
 import 'package:worldon/domain/tag_management/use_case/edit_tag.dart';
 import 'package:worldon/injection.dart';
@@ -28,9 +29,9 @@ void main() {
       useCase = EditTag(mockTagManagementRepository);
     },
   );
-  final randomUser = User.empty().copyWith(id: 1, adminPowers: false);
-  final creatorUser = User.empty().copyWith(id: 2, adminPowers: false);
-  final admin = User.empty().copyWith(id: 3, adminPowers: true);
+  final randomUser = User.empty().copyWith(id: UniqueId(), adminPowers: false);
+  final creatorUser = User.empty().copyWith(id: UniqueId(), adminPowers: false);
+  final admin = User.empty().copyWith(id: UniqueId(), adminPowers: true);
   final name = Name("Test");
   final params = Params(tag: Tag.empty().copyWith(creatorId: creatorUser.id));
 

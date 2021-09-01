@@ -6,6 +6,7 @@ import 'package:mockito/mockito.dart';
 import 'package:worldon/application/experience_log/experience_log_actor/experience_log_actor_bloc.dart';
 import 'package:worldon/core/error/failure.dart';
 import 'package:worldon/data/core/failures/core_data_failure.dart';
+import 'package:worldon/domain/core/validation/objects/unique_id.dart';
 import 'package:worldon/domain/experience_log/use_case/dismiss_experience_from_log.dart';
 import 'package:worldon/injection.dart';
 
@@ -19,7 +20,7 @@ void main() {
       dismissExperience = getIt<DismissExperienceFromLog>();
     },
   );
-  const experienceId = 1;
+  final experienceId = UniqueId();
   const failure = Failure.coreData(CoreDataFailure.serverError(errorString: TestDescription.errorString));
   blocTest(
     TestDescription.shouldEmitInitial,
@@ -35,7 +36,7 @@ void main() {
           when(dismissExperience.call(any)).thenAnswer((_) async => right(unit));
           return getIt<ExperienceLogActorBloc>();
         },
-        act: (bloc) async => bloc.add(const ExperienceLogActorEvent.experienceDismissed(experienceId)),
+        act: (bloc) async => bloc.add(ExperienceLogActorEvent.experienceDismissed(experienceId)),
         verify: (_) async {
           verify(dismissExperience.call(any));
           verifyNoMoreInteractions(dismissExperience);
@@ -51,7 +52,7 @@ void main() {
           when(dismissExperience.call(any)).thenAnswer((_) async => left(failure));
           return getIt<ExperienceLogActorBloc>();
         },
-        act: (bloc) async => bloc.add(const ExperienceLogActorEvent.experienceDismissed(experienceId)),
+        act: (bloc) async => bloc.add(ExperienceLogActorEvent.experienceDismissed(experienceId)),
         verify: (_) async {
           verify(dismissExperience.call(any));
           verifyNoMoreInteractions(dismissExperience);

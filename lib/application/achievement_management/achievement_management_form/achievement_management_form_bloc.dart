@@ -43,7 +43,7 @@ class AchievementManagementFormBloc extends Bloc<AchievementManagementFormEvent,
   }
 
   Stream<AchievementManagementFormState> _onSubmitted(_) async* {
-    Either<Failure, Unit> _failureOrUnit;
+    late Either<Failure, Unit> _failureOrUnit;
     yield state.copyWith(
       isSubmitting: true,
       failureOrSuccessOption: none(),

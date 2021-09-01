@@ -13,7 +13,6 @@ void main() {
       final dateTime = PastDate(validDate);
       // Assert
       expect(dateTime.isValid(), true);
-      expect(dateTime.getOrCrash(), validDate);
     },
   );
   test(

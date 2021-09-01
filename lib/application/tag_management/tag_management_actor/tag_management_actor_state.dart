@@ -1,7 +1,7 @@
 part of 'tag_management_actor_bloc.dart';
 
 @freezed
-abstract class TagManagementActorState with _$TagManagementActorState {
+class TagManagementActorState with _$TagManagementActorState {
   const factory TagManagementActorState.initial() = _Initial;
 
   const factory TagManagementActorState.actionInProgress() = _ActionInProgress;

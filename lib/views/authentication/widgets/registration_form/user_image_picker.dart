@@ -1,48 +1,62 @@
-import 'dart:io';
-
+import 'package:cached_network_image/cached_network_image.dart';
+import 'package:dartz/dartz.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:image_picker/image_picker.dart';
 import 'package:worldon/application/authentication/registration_form/registration_form_bloc.dart';
+import 'package:worldon/views/authentication/widgets/registration_form/camera_button.dart';
+import 'package:worldon/views/core/misc/functions/open_picture_select_dialog.dart';
 
 class UserImagePicker extends StatelessWidget {
+  const UserImagePicker({
+    Key? key,
+    required this.imageURLOption,
+  }) : super(key: key);
+
+  final Option<String> imageURLOption;
+  static const double _avatarRadius = 80;
+
   @override
   Widget build(BuildContext context) {
     return Container(
-      child: context.bloc<RegistrationFormBloc>().state.user.imageFileOption.fold(
-            () => Column(
-              children: <Widget>[
-                IconButton(
-                  iconSize: 80,
-                  icon: const Icon(
-                    Icons.photo_camera,
-                  ),
-                  onPressed: () async => _pickImage(context),
-                ),
-                if (context.bloc<RegistrationFormBloc>().state.showErrorMessages)
-                  const Text(
-                    "Please select a picture",
-                    textAlign: TextAlign.center,
-                    style: TextStyle(color: Colors.red),
-                  )
-                else
-                  Container(),
-              ],
+      child: context.read<RegistrationFormBloc>().state.user.imageFileOption.fold(
+            () => imageURLOption.fold(
+              () => CameraButton(),
+              (_imageURL) {
+                if (_imageURL.isNotEmpty) {
+                  return TextButton(
+                    onPressed: () async {
+                      final _imageFile = await openPictureSelectDialog(context);
+                      if (_imageFile != null) {
+                        context.read<RegistrationFormBloc>().add(
+                              RegistrationFormEvent.imageChanged(_imageFile),
+                            );
+                      }
+                    },
+                    child: CircleAvatar(
+                      radius: _avatarRadius,
+                      backgroundImage: CachedNetworkImageProvider(_imageURL),
+                    ),
+                  );
+                } else {
+                  return CameraButton();
+                }
+              },
             ),
-            (imageFile) => FlatButton(
-              onPressed: () async => _pickImage(context),
+            (imageFile) => TextButton(
+              onPressed: () async {
+                final _imageFile = await openPictureSelectDialog(context);
+                if (_imageFile != null) {
+                  context.read<RegistrationFormBloc>().add(
+                        RegistrationFormEvent.imageChanged(_imageFile),
+                      );
+                }
+              },
               child: CircleAvatar(
-                radius: 80,
-                backgroundImage: FileImage(imageFile),
+                radius: _avatarRadius,
+                backgroundImage: FileImage(imageFile!),
               ),
             ),
           ),
     );
-  }
-
-  Future _pickImage(BuildContext context) async {
-    final imagePicked = await ImagePicker().getImage(source: ImageSource.gallery);
-    final imageFile = File(imagePicked.path);
-    context.bloc<RegistrationFormBloc>().add(RegistrationFormEvent.imageChanged(imageFile));
   }
 }

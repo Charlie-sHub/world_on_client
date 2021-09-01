@@ -1,5 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides
 
 part of 'value_failure.dart';
 
@@ -9,103 +9,101 @@ part of 'value_failure.dart';
 
 T _$identity<T>(T value) => value;
 
+final _privateConstructorUsedError = UnsupportedError(
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+
 /// @nodoc
 class _$ValueFailureTearOff {
   const _$ValueFailureTearOff();
 
-// ignore: unused_element
   NullInput<T> nullInput<T>() {
     return NullInput<T>();
   }
 
-// ignore: unused_element
-  InvalidDate<T> invalidDate<T>({@required DateTime failedValue}) {
+  InvalidDate<T> invalidDate<T>({required DateTime failedValue}) {
     return InvalidDate<T>(
       failedValue: failedValue,
     );
   }
 
-// ignore: unused_element
-  InvalidEmail<T> invalidEmail<T>({@required String failedValue}) {
+  InvalidEmail<T> invalidEmail<T>({required String failedValue}) {
     return InvalidEmail<T>(
       failedValue: failedValue,
     );
   }
 
-// ignore: unused_element
-  InvalidPassword<T> invalidPassword<T>({@required String failedValue}) {
+  InvalidPassword<T> invalidPassword<T>({required String failedValue}) {
     return InvalidPassword<T>(
       failedValue: failedValue,
     );
   }
 
-// ignore: unused_element
-  StringMismatch<T> stringMismatch<T>({@required String failedValue}) {
+  StringMismatch<T> stringMismatch<T>({required String failedValue}) {
     return StringMismatch<T>(
       failedValue: failedValue,
     );
   }
 
-// ignore: unused_element
-  InvalidName<T> invalidName<T>({@required String failedValue}) {
+  InvalidName<T> invalidName<T>({required String failedValue}) {
     return InvalidName<T>(
       failedValue: failedValue,
     );
   }
 
-// ignore: unused_element
-  EmptyString<T> emptyString<T>({@required String failedValue}) {
+  EmptyString<T> emptyString<T>({required String failedValue}) {
     return EmptyString<T>(
       failedValue: failedValue,
     );
   }
 
-// ignore: unused_element
-  MultiLineString<T> multiLineString<T>({@required String failedValue}) {
+  MultiLineString<T> multiLineString<T>({required String failedValue}) {
     return MultiLineString<T>(
       failedValue: failedValue,
     );
   }
 
-// ignore: unused_element
-  StringExceedsLength<T> stringExceedsLength<T>({@required String failedValue, @required int maxLength}) {
+  StringExceedsLength<T> stringExceedsLength<T>(
+      {required String failedValue, required int maxLength}) {
     return StringExceedsLength<T>(
       failedValue: failedValue,
       maxLength: maxLength,
     );
   }
 
-// ignore: unused_element
-  IntegerOutOfBounds<T> integerOutOfBounds<T>({@required int failedValue}) {
+  IntegerOutOfBounds<T> integerOutOfBounds<T>({required int failedValue}) {
     return IntegerOutOfBounds<T>(
       failedValue: failedValue,
     );
   }
 
-// ignore: unused_element
-  StringWithInvalidCharacters<T> stringWithInvalidCharacters<T>({@required String failedValue}) {
+  StringWithInvalidCharacters<T> stringWithInvalidCharacters<T>(
+      {required String failedValue}) {
     return StringWithInvalidCharacters<T>(
       failedValue: failedValue,
     );
   }
 
-// ignore: unused_element
-  InvalidCoordinates<T> invalidCoordinate<T>({@required double failedValue}) {
+  InvalidCoordinates<T> invalidCoordinate<T>({required double failedValue}) {
     return InvalidCoordinates<T>(
       failedValue: failedValue,
     );
   }
 
-// ignore: unused_element
-  EmptySet<T> emptySet<T>({@required T failedValue}) {
+  EmptySet<T> emptySet<T>({required T failedValue}) {
     return EmptySet<T>(
       failedValue: failedValue,
     );
   }
 
-// ignore: unused_element
-  SetExceedsLength<T> setExceedsLength<T>({@required T failedValue, @required int maxLength}) {
-    return SetExceedsLength<T>(
+  EmptyList<T> emptyList<T>({required T failedValue}) {
+    return EmptyList<T>(
+      failedValue: failedValue,
+    );
+  }
+
+  CollectionExceedsLength<T> collectionExceedsLength<T>(
+      {required T failedValue, required int maxLength}) {
+    return CollectionExceedsLength<T>(
       failedValue: failedValue,
       maxLength: maxLength,
     );
@@ -113,128 +111,139 @@ class _$ValueFailureTearOff {
 }
 
 /// @nodoc
-// ignore: unused_element
 const $ValueFailure = _$ValueFailureTearOff();
 
 /// @nodoc
 mixin _$ValueFailure<T> {
   @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result nullInput(),
-    @required Result invalidDate(DateTime failedValue),
-    @required Result invalidEmail(String failedValue),
-    @required Result invalidPassword(String failedValue),
-    @required Result stringMismatch(String failedValue),
-    @required Result invalidName(String failedValue),
-    @required Result emptyString(String failedValue),
-    @required Result multiLineString(String failedValue),
-    @required Result stringExceedsLength(String failedValue, int maxLength),
-    @required Result integerOutOfBounds(int failedValue),
-    @required Result stringWithInvalidCharacters(String failedValue),
-    @required Result invalidCoordinate(double failedValue),
-    @required Result emptySet(T failedValue),
-    @required Result setExceedsLength(T failedValue, int maxLength),
-  });
+  TResult when<TResult extends Object?>({
+    required TResult Function() nullInput,
+    required TResult Function(DateTime failedValue) invalidDate,
+    required TResult Function(String failedValue) invalidEmail,
+    required TResult Function(String failedValue) invalidPassword,
+    required TResult Function(String failedValue) stringMismatch,
+    required TResult Function(String failedValue) invalidName,
+    required TResult Function(String failedValue) emptyString,
+    required TResult Function(String failedValue) multiLineString,
+    required TResult Function(String failedValue, int maxLength)
+        stringExceedsLength,
+    required TResult Function(int failedValue) integerOutOfBounds,
+    required TResult Function(String failedValue) stringWithInvalidCharacters,
+    required TResult Function(double failedValue) invalidCoordinate,
+    required TResult Function(T failedValue) emptySet,
+    required TResult Function(T failedValue) emptyList,
+    required TResult Function(T failedValue, int maxLength)
+        collectionExceedsLength,
+  }) =>
+      throw _privateConstructorUsedError;
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result nullInput(),
-    Result invalidDate(DateTime failedValue),
-    Result invalidEmail(String failedValue),
-    Result invalidPassword(String failedValue),
-    Result stringMismatch(String failedValue),
-    Result invalidName(String failedValue),
-    Result emptyString(String failedValue),
-    Result multiLineString(String failedValue),
-    Result stringExceedsLength(String failedValue, int maxLength),
-    Result integerOutOfBounds(int failedValue),
-    Result stringWithInvalidCharacters(String failedValue),
-    Result invalidCoordinate(double failedValue),
-    Result emptySet(T failedValue),
-    Result setExceedsLength(T failedValue, int maxLength),
-    @required Result orElse(),
-  });
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? nullInput,
+    TResult Function(DateTime failedValue)? invalidDate,
+    TResult Function(String failedValue)? invalidEmail,
+    TResult Function(String failedValue)? invalidPassword,
+    TResult Function(String failedValue)? stringMismatch,
+    TResult Function(String failedValue)? invalidName,
+    TResult Function(String failedValue)? emptyString,
+    TResult Function(String failedValue)? multiLineString,
+    TResult Function(String failedValue, int maxLength)? stringExceedsLength,
+    TResult Function(int failedValue)? integerOutOfBounds,
+    TResult Function(String failedValue)? stringWithInvalidCharacters,
+    TResult Function(double failedValue)? invalidCoordinate,
+    TResult Function(T failedValue)? emptySet,
+    TResult Function(T failedValue)? emptyList,
+    TResult Function(T failedValue, int maxLength)? collectionExceedsLength,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result nullInput(NullInput<T> value),
-    @required Result invalidDate(InvalidDate<T> value),
-    @required Result invalidEmail(InvalidEmail<T> value),
-    @required Result invalidPassword(InvalidPassword<T> value),
-    @required Result stringMismatch(StringMismatch<T> value),
-    @required Result invalidName(InvalidName<T> value),
-    @required Result emptyString(EmptyString<T> value),
-    @required Result multiLineString(MultiLineString<T> value),
-    @required Result stringExceedsLength(StringExceedsLength<T> value),
-    @required Result integerOutOfBounds(IntegerOutOfBounds<T> value),
-    @required Result stringWithInvalidCharacters(StringWithInvalidCharacters<T> value),
-    @required Result invalidCoordinate(InvalidCoordinates<T> value),
-    @required Result emptySet(EmptySet<T> value),
-    @required Result setExceedsLength(SetExceedsLength<T> value),
-  });
+  TResult map<TResult extends Object?>({
+    required TResult Function(NullInput<T> value) nullInput,
+    required TResult Function(InvalidDate<T> value) invalidDate,
+    required TResult Function(InvalidEmail<T> value) invalidEmail,
+    required TResult Function(InvalidPassword<T> value) invalidPassword,
+    required TResult Function(StringMismatch<T> value) stringMismatch,
+    required TResult Function(InvalidName<T> value) invalidName,
+    required TResult Function(EmptyString<T> value) emptyString,
+    required TResult Function(MultiLineString<T> value) multiLineString,
+    required TResult Function(StringExceedsLength<T> value) stringExceedsLength,
+    required TResult Function(IntegerOutOfBounds<T> value) integerOutOfBounds,
+    required TResult Function(StringWithInvalidCharacters<T> value)
+        stringWithInvalidCharacters,
+    required TResult Function(InvalidCoordinates<T> value) invalidCoordinate,
+    required TResult Function(EmptySet<T> value) emptySet,
+    required TResult Function(EmptyList<T> value) emptyList,
+    required TResult Function(CollectionExceedsLength<T> value)
+        collectionExceedsLength,
+  }) =>
+      throw _privateConstructorUsedError;
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result nullInput(NullInput<T> value),
-    Result invalidDate(InvalidDate<T> value),
-    Result invalidEmail(InvalidEmail<T> value),
-    Result invalidPassword(InvalidPassword<T> value),
-    Result stringMismatch(StringMismatch<T> value),
-    Result invalidName(InvalidName<T> value),
-    Result emptyString(EmptyString<T> value),
-    Result multiLineString(MultiLineString<T> value),
-    Result stringExceedsLength(StringExceedsLength<T> value),
-    Result integerOutOfBounds(IntegerOutOfBounds<T> value),
-    Result stringWithInvalidCharacters(StringWithInvalidCharacters<T> value),
-    Result invalidCoordinate(InvalidCoordinates<T> value),
-    Result emptySet(EmptySet<T> value),
-    Result setExceedsLength(SetExceedsLength<T> value),
-    @required Result orElse(),
-  });
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(NullInput<T> value)? nullInput,
+    TResult Function(InvalidDate<T> value)? invalidDate,
+    TResult Function(InvalidEmail<T> value)? invalidEmail,
+    TResult Function(InvalidPassword<T> value)? invalidPassword,
+    TResult Function(StringMismatch<T> value)? stringMismatch,
+    TResult Function(InvalidName<T> value)? invalidName,
+    TResult Function(EmptyString<T> value)? emptyString,
+    TResult Function(MultiLineString<T> value)? multiLineString,
+    TResult Function(StringExceedsLength<T> value)? stringExceedsLength,
+    TResult Function(IntegerOutOfBounds<T> value)? integerOutOfBounds,
+    TResult Function(StringWithInvalidCharacters<T> value)?
+        stringWithInvalidCharacters,
+    TResult Function(InvalidCoordinates<T> value)? invalidCoordinate,
+    TResult Function(EmptySet<T> value)? emptySet,
+    TResult Function(EmptyList<T> value)? emptyList,
+    TResult Function(CollectionExceedsLength<T> value)? collectionExceedsLength,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $ValueFailureCopyWith<T, $Res> {
-  factory $ValueFailureCopyWith(ValueFailure<T> value, $Res Function(ValueFailure<T>) then) = _$ValueFailureCopyWithImpl<T, $Res>;
+  factory $ValueFailureCopyWith(
+          ValueFailure<T> value, $Res Function(ValueFailure<T>) then) =
+      _$ValueFailureCopyWithImpl<T, $Res>;
 }
 
 /// @nodoc
 class _$ValueFailureCopyWithImpl<T, $Res>
-  implements $ValueFailureCopyWith<T, $Res> {
+    implements $ValueFailureCopyWith<T, $Res> {
   _$ValueFailureCopyWithImpl(this._value, this._then);
-  
+
   final ValueFailure<T> _value;
-  
   // ignore: unused_field
   final $Res Function(ValueFailure<T>) _then;
 }
 
 /// @nodoc
 abstract class $NullInputCopyWith<T, $Res> {
-  factory $NullInputCopyWith(NullInput<T> value, $Res Function(NullInput<T>) then) =
-  _$NullInputCopyWithImpl<T, $Res>;
+  factory $NullInputCopyWith(
+          NullInput<T> value, $Res Function(NullInput<T>) then) =
+      _$NullInputCopyWithImpl<T, $Res>;
 }
 
 /// @nodoc
-class _$NullInputCopyWithImpl<T, $Res> extends _$ValueFailureCopyWithImpl<T, $Res>
-  implements $NullInputCopyWith<T, $Res> {
-  _$NullInputCopyWithImpl(NullInput<T> _value, $Res Function(NullInput<T>) _then)
-    : super(_value, (v) => _then(v as NullInput<T>));
-  
+class _$NullInputCopyWithImpl<T, $Res>
+    extends _$ValueFailureCopyWithImpl<T, $Res>
+    implements $NullInputCopyWith<T, $Res> {
+  _$NullInputCopyWithImpl(
+      NullInput<T> _value, $Res Function(NullInput<T>) _then)
+      : super(_value, (v) => _then(v as NullInput<T>));
+
   @override
   NullInput<T> get _value => super._value as NullInput<T>;
 }
 
 /// @nodoc
-class _$NullInput<T> with DiagnosticableTreeMixin implements NullInput<T> {
+
+class _$NullInput<T> implements NullInput<T> {
   const _$NullInput();
 
   @override
-  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+  String toString() {
     return 'ValueFailure<$T>.nullInput()';
-  }
-
-  @override
-  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
-    super.debugFillProperties(properties);
-    properties..add(DiagnosticsProperty('type', 'ValueFailure<$T>.nullInput'));
   }
 
   @override
@@ -247,59 +256,48 @@ class _$NullInput<T> with DiagnosticableTreeMixin implements NullInput<T> {
 
   @override
   @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result nullInput(),
-    @required Result invalidDate(DateTime failedValue),
-    @required Result invalidEmail(String failedValue),
-    @required Result invalidPassword(String failedValue),
-    @required Result stringMismatch(String failedValue),
-    @required Result invalidName(String failedValue),
-    @required Result emptyString(String failedValue),
-    @required Result multiLineString(String failedValue),
-    @required Result stringExceedsLength(String failedValue, int maxLength),
-    @required Result integerOutOfBounds(int failedValue),
-    @required Result stringWithInvalidCharacters(String failedValue),
-    @required Result invalidCoordinate(double failedValue),
-    @required Result emptySet(T failedValue),
-    @required Result setExceedsLength(T failedValue, int maxLength),
+  TResult when<TResult extends Object?>({
+    required TResult Function() nullInput,
+    required TResult Function(DateTime failedValue) invalidDate,
+    required TResult Function(String failedValue) invalidEmail,
+    required TResult Function(String failedValue) invalidPassword,
+    required TResult Function(String failedValue) stringMismatch,
+    required TResult Function(String failedValue) invalidName,
+    required TResult Function(String failedValue) emptyString,
+    required TResult Function(String failedValue) multiLineString,
+    required TResult Function(String failedValue, int maxLength)
+        stringExceedsLength,
+    required TResult Function(int failedValue) integerOutOfBounds,
+    required TResult Function(String failedValue) stringWithInvalidCharacters,
+    required TResult Function(double failedValue) invalidCoordinate,
+    required TResult Function(T failedValue) emptySet,
+    required TResult Function(T failedValue) emptyList,
+    required TResult Function(T failedValue, int maxLength)
+        collectionExceedsLength,
   }) {
-    assert(nullInput != null);
-    assert(invalidDate != null);
-    assert(invalidEmail != null);
-    assert(invalidPassword != null);
-    assert(stringMismatch != null);
-    assert(invalidName != null);
-    assert(emptyString != null);
-    assert(multiLineString != null);
-    assert(stringExceedsLength != null);
-    assert(integerOutOfBounds != null);
-    assert(stringWithInvalidCharacters != null);
-    assert(invalidCoordinate != null);
-    assert(emptySet != null);
-    assert(setExceedsLength != null);
     return nullInput();
   }
 
   @override
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result nullInput(),
-    Result invalidDate(DateTime failedValue),
-    Result invalidEmail(String failedValue),
-    Result invalidPassword(String failedValue),
-    Result stringMismatch(String failedValue),
-    Result invalidName(String failedValue),
-    Result emptyString(String failedValue),
-    Result multiLineString(String failedValue),
-    Result stringExceedsLength(String failedValue, int maxLength),
-    Result integerOutOfBounds(int failedValue),
-    Result stringWithInvalidCharacters(String failedValue),
-    Result invalidCoordinate(double failedValue),
-    Result emptySet(T failedValue),
-    Result setExceedsLength(T failedValue, int maxLength),
-    @required Result orElse(),
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? nullInput,
+    TResult Function(DateTime failedValue)? invalidDate,
+    TResult Function(String failedValue)? invalidEmail,
+    TResult Function(String failedValue)? invalidPassword,
+    TResult Function(String failedValue)? stringMismatch,
+    TResult Function(String failedValue)? invalidName,
+    TResult Function(String failedValue)? emptyString,
+    TResult Function(String failedValue)? multiLineString,
+    TResult Function(String failedValue, int maxLength)? stringExceedsLength,
+    TResult Function(int failedValue)? integerOutOfBounds,
+    TResult Function(String failedValue)? stringWithInvalidCharacters,
+    TResult Function(double failedValue)? invalidCoordinate,
+    TResult Function(T failedValue)? emptySet,
+    TResult Function(T failedValue)? emptyList,
+    TResult Function(T failedValue, int maxLength)? collectionExceedsLength,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (nullInput != null) {
       return nullInput();
     }
@@ -308,59 +306,49 @@ class _$NullInput<T> with DiagnosticableTreeMixin implements NullInput<T> {
 
   @override
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result nullInput(NullInput<T> value),
-    @required Result invalidDate(InvalidDate<T> value),
-    @required Result invalidEmail(InvalidEmail<T> value),
-    @required Result invalidPassword(InvalidPassword<T> value),
-    @required Result stringMismatch(StringMismatch<T> value),
-    @required Result invalidName(InvalidName<T> value),
-    @required Result emptyString(EmptyString<T> value),
-    @required Result multiLineString(MultiLineString<T> value),
-    @required Result stringExceedsLength(StringExceedsLength<T> value),
-    @required Result integerOutOfBounds(IntegerOutOfBounds<T> value),
-    @required Result stringWithInvalidCharacters(StringWithInvalidCharacters<T> value),
-    @required Result invalidCoordinate(InvalidCoordinates<T> value),
-    @required Result emptySet(EmptySet<T> value),
-    @required Result setExceedsLength(SetExceedsLength<T> value),
+  TResult map<TResult extends Object?>({
+    required TResult Function(NullInput<T> value) nullInput,
+    required TResult Function(InvalidDate<T> value) invalidDate,
+    required TResult Function(InvalidEmail<T> value) invalidEmail,
+    required TResult Function(InvalidPassword<T> value) invalidPassword,
+    required TResult Function(StringMismatch<T> value) stringMismatch,
+    required TResult Function(InvalidName<T> value) invalidName,
+    required TResult Function(EmptyString<T> value) emptyString,
+    required TResult Function(MultiLineString<T> value) multiLineString,
+    required TResult Function(StringExceedsLength<T> value) stringExceedsLength,
+    required TResult Function(IntegerOutOfBounds<T> value) integerOutOfBounds,
+    required TResult Function(StringWithInvalidCharacters<T> value)
+        stringWithInvalidCharacters,
+    required TResult Function(InvalidCoordinates<T> value) invalidCoordinate,
+    required TResult Function(EmptySet<T> value) emptySet,
+    required TResult Function(EmptyList<T> value) emptyList,
+    required TResult Function(CollectionExceedsLength<T> value)
+        collectionExceedsLength,
   }) {
-    assert(nullInput != null);
-    assert(invalidDate != null);
-    assert(invalidEmail != null);
-    assert(invalidPassword != null);
-    assert(stringMismatch != null);
-    assert(invalidName != null);
-    assert(emptyString != null);
-    assert(multiLineString != null);
-    assert(stringExceedsLength != null);
-    assert(integerOutOfBounds != null);
-    assert(stringWithInvalidCharacters != null);
-    assert(invalidCoordinate != null);
-    assert(emptySet != null);
-    assert(setExceedsLength != null);
     return nullInput(this);
   }
 
   @override
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result nullInput(NullInput<T> value),
-    Result invalidDate(InvalidDate<T> value),
-    Result invalidEmail(InvalidEmail<T> value),
-    Result invalidPassword(InvalidPassword<T> value),
-    Result stringMismatch(StringMismatch<T> value),
-    Result invalidName(InvalidName<T> value),
-    Result emptyString(EmptyString<T> value),
-    Result multiLineString(MultiLineString<T> value),
-    Result stringExceedsLength(StringExceedsLength<T> value),
-    Result integerOutOfBounds(IntegerOutOfBounds<T> value),
-    Result stringWithInvalidCharacters(StringWithInvalidCharacters<T> value),
-    Result invalidCoordinate(InvalidCoordinates<T> value),
-    Result emptySet(EmptySet<T> value),
-    Result setExceedsLength(SetExceedsLength<T> value),
-    @required Result orElse(),
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(NullInput<T> value)? nullInput,
+    TResult Function(InvalidDate<T> value)? invalidDate,
+    TResult Function(InvalidEmail<T> value)? invalidEmail,
+    TResult Function(InvalidPassword<T> value)? invalidPassword,
+    TResult Function(StringMismatch<T> value)? stringMismatch,
+    TResult Function(InvalidName<T> value)? invalidName,
+    TResult Function(EmptyString<T> value)? emptyString,
+    TResult Function(MultiLineString<T> value)? multiLineString,
+    TResult Function(StringExceedsLength<T> value)? stringExceedsLength,
+    TResult Function(IntegerOutOfBounds<T> value)? integerOutOfBounds,
+    TResult Function(StringWithInvalidCharacters<T> value)?
+        stringWithInvalidCharacters,
+    TResult Function(InvalidCoordinates<T> value)? invalidCoordinate,
+    TResult Function(EmptySet<T> value)? emptySet,
+    TResult Function(EmptyList<T> value)? emptyList,
+    TResult Function(CollectionExceedsLength<T> value)? collectionExceedsLength,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (nullInput != null) {
       return nullInput(this);
     }
@@ -374,123 +362,111 @@ abstract class NullInput<T> implements ValueFailure<T> {
 
 /// @nodoc
 abstract class $InvalidDateCopyWith<T, $Res> {
-  factory $InvalidDateCopyWith(InvalidDate<T> value, $Res Function(InvalidDate<T>) then) =
-  _$InvalidDateCopyWithImpl<T, $Res>;
-  
+  factory $InvalidDateCopyWith(
+          InvalidDate<T> value, $Res Function(InvalidDate<T>) then) =
+      _$InvalidDateCopyWithImpl<T, $Res>;
   $Res call({DateTime failedValue});
 }
 
 /// @nodoc
-class _$InvalidDateCopyWithImpl<T, $Res> extends _$ValueFailureCopyWithImpl<T, $Res>
-  implements $InvalidDateCopyWith<T, $Res> {
-  _$InvalidDateCopyWithImpl(InvalidDate<T> _value, $Res Function(InvalidDate<T>) _then)
-    : super(_value, (v) => _then(v as InvalidDate<T>));
-  
+class _$InvalidDateCopyWithImpl<T, $Res>
+    extends _$ValueFailureCopyWithImpl<T, $Res>
+    implements $InvalidDateCopyWith<T, $Res> {
+  _$InvalidDateCopyWithImpl(
+      InvalidDate<T> _value, $Res Function(InvalidDate<T>) _then)
+      : super(_value, (v) => _then(v as InvalidDate<T>));
+
   @override
   InvalidDate<T> get _value => super._value as InvalidDate<T>;
-  
+
   @override
   $Res call({
-    Object failedValue = freezed,
+    Object? failedValue = freezed,
   }) {
     return _then(InvalidDate<T>(
-      failedValue:
-      failedValue == freezed ? _value.failedValue : failedValue as DateTime,
+      failedValue: failedValue == freezed
+          ? _value.failedValue
+          : failedValue // ignore: cast_nullable_to_non_nullable
+              as DateTime,
     ));
   }
 }
 
 /// @nodoc
-class _$InvalidDate<T> with DiagnosticableTreeMixin implements InvalidDate<T> {
-  const _$InvalidDate({@required this.failedValue})
-    : assert(failedValue != null);
-  
+
+class _$InvalidDate<T> implements InvalidDate<T> {
+  const _$InvalidDate({required this.failedValue});
+
   @override
   final DateTime failedValue;
-  
+
   @override
-  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+  String toString() {
     return 'ValueFailure<$T>.invalidDate(failedValue: $failedValue)';
-  }
-  
-  @override
-  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
-    super.debugFillProperties(properties);
-    properties..add(DiagnosticsProperty('type', 'ValueFailure<$T>.invalidDate'))..add(DiagnosticsProperty('failedValue', failedValue));
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-      (other is InvalidDate<T> &&
-        (identical(other.failedValue, failedValue) ||
-          const DeepCollectionEquality()
-            .equals(other.failedValue, failedValue)));
+        (other is InvalidDate<T> &&
+            (identical(other.failedValue, failedValue) ||
+                const DeepCollectionEquality()
+                    .equals(other.failedValue, failedValue)));
   }
-  
+
   @override
   int get hashCode =>
-    runtimeType.hashCode ^ const DeepCollectionEquality().hash(failedValue);
-  
+      runtimeType.hashCode ^ const DeepCollectionEquality().hash(failedValue);
+
+  @JsonKey(ignore: true)
   @override
   $InvalidDateCopyWith<T, InvalidDate<T>> get copyWith =>
-    _$InvalidDateCopyWithImpl<T, InvalidDate<T>>(this, _$identity);
-  
+      _$InvalidDateCopyWithImpl<T, InvalidDate<T>>(this, _$identity);
+
   @override
   @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result nullInput(),
-    @required Result invalidDate(DateTime failedValue),
-    @required Result invalidEmail(String failedValue),
-    @required Result invalidPassword(String failedValue),
-    @required Result stringMismatch(String failedValue),
-    @required Result invalidName(String failedValue),
-    @required Result emptyString(String failedValue),
-    @required Result multiLineString(String failedValue),
-    @required Result stringExceedsLength(String failedValue, int maxLength),
-    @required Result integerOutOfBounds(int failedValue),
-    @required Result stringWithInvalidCharacters(String failedValue),
-    @required Result invalidCoordinate(double failedValue),
-    @required Result emptySet(T failedValue),
-    @required Result setExceedsLength(T failedValue, int maxLength),
+  TResult when<TResult extends Object?>({
+    required TResult Function() nullInput,
+    required TResult Function(DateTime failedValue) invalidDate,
+    required TResult Function(String failedValue) invalidEmail,
+    required TResult Function(String failedValue) invalidPassword,
+    required TResult Function(String failedValue) stringMismatch,
+    required TResult Function(String failedValue) invalidName,
+    required TResult Function(String failedValue) emptyString,
+    required TResult Function(String failedValue) multiLineString,
+    required TResult Function(String failedValue, int maxLength)
+        stringExceedsLength,
+    required TResult Function(int failedValue) integerOutOfBounds,
+    required TResult Function(String failedValue) stringWithInvalidCharacters,
+    required TResult Function(double failedValue) invalidCoordinate,
+    required TResult Function(T failedValue) emptySet,
+    required TResult Function(T failedValue) emptyList,
+    required TResult Function(T failedValue, int maxLength)
+        collectionExceedsLength,
   }) {
-    assert(nullInput != null);
-    assert(invalidDate != null);
-    assert(invalidEmail != null);
-    assert(invalidPassword != null);
-    assert(stringMismatch != null);
-    assert(invalidName != null);
-    assert(emptyString != null);
-    assert(multiLineString != null);
-    assert(stringExceedsLength != null);
-    assert(integerOutOfBounds != null);
-    assert(stringWithInvalidCharacters != null);
-    assert(invalidCoordinate != null);
-    assert(emptySet != null);
-    assert(setExceedsLength != null);
     return invalidDate(failedValue);
   }
 
   @override
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result nullInput(),
-    Result invalidDate(DateTime failedValue),
-    Result invalidEmail(String failedValue),
-    Result invalidPassword(String failedValue),
-    Result stringMismatch(String failedValue),
-    Result invalidName(String failedValue),
-    Result emptyString(String failedValue),
-    Result multiLineString(String failedValue),
-    Result stringExceedsLength(String failedValue, int maxLength),
-    Result integerOutOfBounds(int failedValue),
-    Result stringWithInvalidCharacters(String failedValue),
-    Result invalidCoordinate(double failedValue),
-    Result emptySet(T failedValue),
-    Result setExceedsLength(T failedValue, int maxLength),
-    @required Result orElse(),
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? nullInput,
+    TResult Function(DateTime failedValue)? invalidDate,
+    TResult Function(String failedValue)? invalidEmail,
+    TResult Function(String failedValue)? invalidPassword,
+    TResult Function(String failedValue)? stringMismatch,
+    TResult Function(String failedValue)? invalidName,
+    TResult Function(String failedValue)? emptyString,
+    TResult Function(String failedValue)? multiLineString,
+    TResult Function(String failedValue, int maxLength)? stringExceedsLength,
+    TResult Function(int failedValue)? integerOutOfBounds,
+    TResult Function(String failedValue)? stringWithInvalidCharacters,
+    TResult Function(double failedValue)? invalidCoordinate,
+    TResult Function(T failedValue)? emptySet,
+    TResult Function(T failedValue)? emptyList,
+    TResult Function(T failedValue, int maxLength)? collectionExceedsLength,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (invalidDate != null) {
       return invalidDate(failedValue);
     }
@@ -499,59 +475,49 @@ class _$InvalidDate<T> with DiagnosticableTreeMixin implements InvalidDate<T> {
 
   @override
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result nullInput(NullInput<T> value),
-    @required Result invalidDate(InvalidDate<T> value),
-    @required Result invalidEmail(InvalidEmail<T> value),
-    @required Result invalidPassword(InvalidPassword<T> value),
-    @required Result stringMismatch(StringMismatch<T> value),
-    @required Result invalidName(InvalidName<T> value),
-    @required Result emptyString(EmptyString<T> value),
-    @required Result multiLineString(MultiLineString<T> value),
-    @required Result stringExceedsLength(StringExceedsLength<T> value),
-    @required Result integerOutOfBounds(IntegerOutOfBounds<T> value),
-    @required Result stringWithInvalidCharacters(StringWithInvalidCharacters<T> value),
-    @required Result invalidCoordinate(InvalidCoordinates<T> value),
-    @required Result emptySet(EmptySet<T> value),
-    @required Result setExceedsLength(SetExceedsLength<T> value),
+  TResult map<TResult extends Object?>({
+    required TResult Function(NullInput<T> value) nullInput,
+    required TResult Function(InvalidDate<T> value) invalidDate,
+    required TResult Function(InvalidEmail<T> value) invalidEmail,
+    required TResult Function(InvalidPassword<T> value) invalidPassword,
+    required TResult Function(StringMismatch<T> value) stringMismatch,
+    required TResult Function(InvalidName<T> value) invalidName,
+    required TResult Function(EmptyString<T> value) emptyString,
+    required TResult Function(MultiLineString<T> value) multiLineString,
+    required TResult Function(StringExceedsLength<T> value) stringExceedsLength,
+    required TResult Function(IntegerOutOfBounds<T> value) integerOutOfBounds,
+    required TResult Function(StringWithInvalidCharacters<T> value)
+        stringWithInvalidCharacters,
+    required TResult Function(InvalidCoordinates<T> value) invalidCoordinate,
+    required TResult Function(EmptySet<T> value) emptySet,
+    required TResult Function(EmptyList<T> value) emptyList,
+    required TResult Function(CollectionExceedsLength<T> value)
+        collectionExceedsLength,
   }) {
-    assert(nullInput != null);
-    assert(invalidDate != null);
-    assert(invalidEmail != null);
-    assert(invalidPassword != null);
-    assert(stringMismatch != null);
-    assert(invalidName != null);
-    assert(emptyString != null);
-    assert(multiLineString != null);
-    assert(stringExceedsLength != null);
-    assert(integerOutOfBounds != null);
-    assert(stringWithInvalidCharacters != null);
-    assert(invalidCoordinate != null);
-    assert(emptySet != null);
-    assert(setExceedsLength != null);
     return invalidDate(this);
   }
 
   @override
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result nullInput(NullInput<T> value),
-    Result invalidDate(InvalidDate<T> value),
-    Result invalidEmail(InvalidEmail<T> value),
-    Result invalidPassword(InvalidPassword<T> value),
-    Result stringMismatch(StringMismatch<T> value),
-    Result invalidName(InvalidName<T> value),
-    Result emptyString(EmptyString<T> value),
-    Result multiLineString(MultiLineString<T> value),
-    Result stringExceedsLength(StringExceedsLength<T> value),
-    Result integerOutOfBounds(IntegerOutOfBounds<T> value),
-    Result stringWithInvalidCharacters(StringWithInvalidCharacters<T> value),
-    Result invalidCoordinate(InvalidCoordinates<T> value),
-    Result emptySet(EmptySet<T> value),
-    Result setExceedsLength(SetExceedsLength<T> value),
-    @required Result orElse(),
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(NullInput<T> value)? nullInput,
+    TResult Function(InvalidDate<T> value)? invalidDate,
+    TResult Function(InvalidEmail<T> value)? invalidEmail,
+    TResult Function(InvalidPassword<T> value)? invalidPassword,
+    TResult Function(StringMismatch<T> value)? stringMismatch,
+    TResult Function(InvalidName<T> value)? invalidName,
+    TResult Function(EmptyString<T> value)? emptyString,
+    TResult Function(MultiLineString<T> value)? multiLineString,
+    TResult Function(StringExceedsLength<T> value)? stringExceedsLength,
+    TResult Function(IntegerOutOfBounds<T> value)? integerOutOfBounds,
+    TResult Function(StringWithInvalidCharacters<T> value)?
+        stringWithInvalidCharacters,
+    TResult Function(InvalidCoordinates<T> value)? invalidCoordinate,
+    TResult Function(EmptySet<T> value)? emptySet,
+    TResult Function(EmptyList<T> value)? emptyList,
+    TResult Function(CollectionExceedsLength<T> value)? collectionExceedsLength,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (invalidDate != null) {
       return invalidDate(this);
     }
@@ -560,135 +526,121 @@ class _$InvalidDate<T> with DiagnosticableTreeMixin implements InvalidDate<T> {
 }
 
 abstract class InvalidDate<T> implements ValueFailure<T> {
-  const factory InvalidDate({@required DateTime failedValue}) =
-  _$InvalidDate<T>;
-  
-  DateTime get failedValue;
-  
-  $InvalidDateCopyWith<T, InvalidDate<T>> get copyWith;
+  const factory InvalidDate({required DateTime failedValue}) = _$InvalidDate<T>;
+
+  DateTime get failedValue => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  $InvalidDateCopyWith<T, InvalidDate<T>> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $InvalidEmailCopyWith<T, $Res> {
-  factory $InvalidEmailCopyWith(InvalidEmail<T> value, $Res Function(InvalidEmail<T>) then) =
-  _$InvalidEmailCopyWithImpl<T, $Res>;
-  
+  factory $InvalidEmailCopyWith(
+          InvalidEmail<T> value, $Res Function(InvalidEmail<T>) then) =
+      _$InvalidEmailCopyWithImpl<T, $Res>;
   $Res call({String failedValue});
 }
 
 /// @nodoc
-class _$InvalidEmailCopyWithImpl<T, $Res> extends _$ValueFailureCopyWithImpl<T, $Res>
-  implements $InvalidEmailCopyWith<T, $Res> {
-  _$InvalidEmailCopyWithImpl(InvalidEmail<T> _value, $Res Function(InvalidEmail<T>) _then)
-    : super(_value, (v) => _then(v as InvalidEmail<T>));
-  
+class _$InvalidEmailCopyWithImpl<T, $Res>
+    extends _$ValueFailureCopyWithImpl<T, $Res>
+    implements $InvalidEmailCopyWith<T, $Res> {
+  _$InvalidEmailCopyWithImpl(
+      InvalidEmail<T> _value, $Res Function(InvalidEmail<T>) _then)
+      : super(_value, (v) => _then(v as InvalidEmail<T>));
+
   @override
   InvalidEmail<T> get _value => super._value as InvalidEmail<T>;
-  
+
   @override
   $Res call({
-    Object failedValue = freezed,
+    Object? failedValue = freezed,
   }) {
     return _then(InvalidEmail<T>(
-      failedValue:
-      failedValue == freezed ? _value.failedValue : failedValue as String,
+      failedValue: failedValue == freezed
+          ? _value.failedValue
+          : failedValue // ignore: cast_nullable_to_non_nullable
+              as String,
     ));
   }
 }
 
 /// @nodoc
-class _$InvalidEmail<T>
-  with DiagnosticableTreeMixin
-  implements InvalidEmail<T> {
-  const _$InvalidEmail({@required this.failedValue})
-    : assert(failedValue != null);
-  
+
+class _$InvalidEmail<T> implements InvalidEmail<T> {
+  const _$InvalidEmail({required this.failedValue});
+
   @override
   final String failedValue;
-  
+
   @override
-  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+  String toString() {
     return 'ValueFailure<$T>.invalidEmail(failedValue: $failedValue)';
-  }
-  
-  @override
-  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
-    super.debugFillProperties(properties);
-    properties..add(DiagnosticsProperty('type', 'ValueFailure<$T>.invalidEmail'))..add(DiagnosticsProperty('failedValue', failedValue));
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-      (other is InvalidEmail<T> &&
-        (identical(other.failedValue, failedValue) ||
-          const DeepCollectionEquality()
-            .equals(other.failedValue, failedValue)));
+        (other is InvalidEmail<T> &&
+            (identical(other.failedValue, failedValue) ||
+                const DeepCollectionEquality()
+                    .equals(other.failedValue, failedValue)));
   }
-  
+
   @override
   int get hashCode =>
-    runtimeType.hashCode ^ const DeepCollectionEquality().hash(failedValue);
-  
+      runtimeType.hashCode ^ const DeepCollectionEquality().hash(failedValue);
+
+  @JsonKey(ignore: true)
   @override
   $InvalidEmailCopyWith<T, InvalidEmail<T>> get copyWith =>
-    _$InvalidEmailCopyWithImpl<T, InvalidEmail<T>>(this, _$identity);
-  
+      _$InvalidEmailCopyWithImpl<T, InvalidEmail<T>>(this, _$identity);
+
   @override
   @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result nullInput(),
-    @required Result invalidDate(DateTime failedValue),
-    @required Result invalidEmail(String failedValue),
-    @required Result invalidPassword(String failedValue),
-    @required Result stringMismatch(String failedValue),
-    @required Result invalidName(String failedValue),
-    @required Result emptyString(String failedValue),
-    @required Result multiLineString(String failedValue),
-    @required Result stringExceedsLength(String failedValue, int maxLength),
-    @required Result integerOutOfBounds(int failedValue),
-    @required Result stringWithInvalidCharacters(String failedValue),
-    @required Result invalidCoordinate(double failedValue),
-    @required Result emptySet(T failedValue),
-    @required Result setExceedsLength(T failedValue, int maxLength),
+  TResult when<TResult extends Object?>({
+    required TResult Function() nullInput,
+    required TResult Function(DateTime failedValue) invalidDate,
+    required TResult Function(String failedValue) invalidEmail,
+    required TResult Function(String failedValue) invalidPassword,
+    required TResult Function(String failedValue) stringMismatch,
+    required TResult Function(String failedValue) invalidName,
+    required TResult Function(String failedValue) emptyString,
+    required TResult Function(String failedValue) multiLineString,
+    required TResult Function(String failedValue, int maxLength)
+        stringExceedsLength,
+    required TResult Function(int failedValue) integerOutOfBounds,
+    required TResult Function(String failedValue) stringWithInvalidCharacters,
+    required TResult Function(double failedValue) invalidCoordinate,
+    required TResult Function(T failedValue) emptySet,
+    required TResult Function(T failedValue) emptyList,
+    required TResult Function(T failedValue, int maxLength)
+        collectionExceedsLength,
   }) {
-    assert(nullInput != null);
-    assert(invalidDate != null);
-    assert(invalidEmail != null);
-    assert(invalidPassword != null);
-    assert(stringMismatch != null);
-    assert(invalidName != null);
-    assert(emptyString != null);
-    assert(multiLineString != null);
-    assert(stringExceedsLength != null);
-    assert(integerOutOfBounds != null);
-    assert(stringWithInvalidCharacters != null);
-    assert(invalidCoordinate != null);
-    assert(emptySet != null);
-    assert(setExceedsLength != null);
     return invalidEmail(failedValue);
   }
 
   @override
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result nullInput(),
-    Result invalidDate(DateTime failedValue),
-    Result invalidEmail(String failedValue),
-    Result invalidPassword(String failedValue),
-    Result stringMismatch(String failedValue),
-    Result invalidName(String failedValue),
-    Result emptyString(String failedValue),
-    Result multiLineString(String failedValue),
-    Result stringExceedsLength(String failedValue, int maxLength),
-    Result integerOutOfBounds(int failedValue),
-    Result stringWithInvalidCharacters(String failedValue),
-    Result invalidCoordinate(double failedValue),
-    Result emptySet(T failedValue),
-    Result setExceedsLength(T failedValue, int maxLength),
-    @required Result orElse(),
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? nullInput,
+    TResult Function(DateTime failedValue)? invalidDate,
+    TResult Function(String failedValue)? invalidEmail,
+    TResult Function(String failedValue)? invalidPassword,
+    TResult Function(String failedValue)? stringMismatch,
+    TResult Function(String failedValue)? invalidName,
+    TResult Function(String failedValue)? emptyString,
+    TResult Function(String failedValue)? multiLineString,
+    TResult Function(String failedValue, int maxLength)? stringExceedsLength,
+    TResult Function(int failedValue)? integerOutOfBounds,
+    TResult Function(String failedValue)? stringWithInvalidCharacters,
+    TResult Function(double failedValue)? invalidCoordinate,
+    TResult Function(T failedValue)? emptySet,
+    TResult Function(T failedValue)? emptyList,
+    TResult Function(T failedValue, int maxLength)? collectionExceedsLength,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (invalidEmail != null) {
       return invalidEmail(failedValue);
     }
@@ -697,59 +649,49 @@ class _$InvalidEmail<T>
 
   @override
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result nullInput(NullInput<T> value),
-    @required Result invalidDate(InvalidDate<T> value),
-    @required Result invalidEmail(InvalidEmail<T> value),
-    @required Result invalidPassword(InvalidPassword<T> value),
-    @required Result stringMismatch(StringMismatch<T> value),
-    @required Result invalidName(InvalidName<T> value),
-    @required Result emptyString(EmptyString<T> value),
-    @required Result multiLineString(MultiLineString<T> value),
-    @required Result stringExceedsLength(StringExceedsLength<T> value),
-    @required Result integerOutOfBounds(IntegerOutOfBounds<T> value),
-    @required Result stringWithInvalidCharacters(StringWithInvalidCharacters<T> value),
-    @required Result invalidCoordinate(InvalidCoordinates<T> value),
-    @required Result emptySet(EmptySet<T> value),
-    @required Result setExceedsLength(SetExceedsLength<T> value),
+  TResult map<TResult extends Object?>({
+    required TResult Function(NullInput<T> value) nullInput,
+    required TResult Function(InvalidDate<T> value) invalidDate,
+    required TResult Function(InvalidEmail<T> value) invalidEmail,
+    required TResult Function(InvalidPassword<T> value) invalidPassword,
+    required TResult Function(StringMismatch<T> value) stringMismatch,
+    required TResult Function(InvalidName<T> value) invalidName,
+    required TResult Function(EmptyString<T> value) emptyString,
+    required TResult Function(MultiLineString<T> value) multiLineString,
+    required TResult Function(StringExceedsLength<T> value) stringExceedsLength,
+    required TResult Function(IntegerOutOfBounds<T> value) integerOutOfBounds,
+    required TResult Function(StringWithInvalidCharacters<T> value)
+        stringWithInvalidCharacters,
+    required TResult Function(InvalidCoordinates<T> value) invalidCoordinate,
+    required TResult Function(EmptySet<T> value) emptySet,
+    required TResult Function(EmptyList<T> value) emptyList,
+    required TResult Function(CollectionExceedsLength<T> value)
+        collectionExceedsLength,
   }) {
-    assert(nullInput != null);
-    assert(invalidDate != null);
-    assert(invalidEmail != null);
-    assert(invalidPassword != null);
-    assert(stringMismatch != null);
-    assert(invalidName != null);
-    assert(emptyString != null);
-    assert(multiLineString != null);
-    assert(stringExceedsLength != null);
-    assert(integerOutOfBounds != null);
-    assert(stringWithInvalidCharacters != null);
-    assert(invalidCoordinate != null);
-    assert(emptySet != null);
-    assert(setExceedsLength != null);
     return invalidEmail(this);
   }
 
   @override
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result nullInput(NullInput<T> value),
-    Result invalidDate(InvalidDate<T> value),
-    Result invalidEmail(InvalidEmail<T> value),
-    Result invalidPassword(InvalidPassword<T> value),
-    Result stringMismatch(StringMismatch<T> value),
-    Result invalidName(InvalidName<T> value),
-    Result emptyString(EmptyString<T> value),
-    Result multiLineString(MultiLineString<T> value),
-    Result stringExceedsLength(StringExceedsLength<T> value),
-    Result integerOutOfBounds(IntegerOutOfBounds<T> value),
-    Result stringWithInvalidCharacters(StringWithInvalidCharacters<T> value),
-    Result invalidCoordinate(InvalidCoordinates<T> value),
-    Result emptySet(EmptySet<T> value),
-    Result setExceedsLength(SetExceedsLength<T> value),
-    @required Result orElse(),
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(NullInput<T> value)? nullInput,
+    TResult Function(InvalidDate<T> value)? invalidDate,
+    TResult Function(InvalidEmail<T> value)? invalidEmail,
+    TResult Function(InvalidPassword<T> value)? invalidPassword,
+    TResult Function(StringMismatch<T> value)? stringMismatch,
+    TResult Function(InvalidName<T> value)? invalidName,
+    TResult Function(EmptyString<T> value)? emptyString,
+    TResult Function(MultiLineString<T> value)? multiLineString,
+    TResult Function(StringExceedsLength<T> value)? stringExceedsLength,
+    TResult Function(IntegerOutOfBounds<T> value)? integerOutOfBounds,
+    TResult Function(StringWithInvalidCharacters<T> value)?
+        stringWithInvalidCharacters,
+    TResult Function(InvalidCoordinates<T> value)? invalidCoordinate,
+    TResult Function(EmptySet<T> value)? emptySet,
+    TResult Function(EmptyList<T> value)? emptyList,
+    TResult Function(CollectionExceedsLength<T> value)? collectionExceedsLength,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (invalidEmail != null) {
       return invalidEmail(this);
     }
@@ -758,135 +700,121 @@ class _$InvalidEmail<T>
 }
 
 abstract class InvalidEmail<T> implements ValueFailure<T> {
-  const factory InvalidEmail({@required String failedValue}) =
-  _$InvalidEmail<T>;
-  
-  String get failedValue;
-  
-  $InvalidEmailCopyWith<T, InvalidEmail<T>> get copyWith;
+  const factory InvalidEmail({required String failedValue}) = _$InvalidEmail<T>;
+
+  String get failedValue => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  $InvalidEmailCopyWith<T, InvalidEmail<T>> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $InvalidPasswordCopyWith<T, $Res> {
-  factory $InvalidPasswordCopyWith(InvalidPassword<T> value, $Res Function(InvalidPassword<T>) then) =
-  _$InvalidPasswordCopyWithImpl<T, $Res>;
-  
+  factory $InvalidPasswordCopyWith(
+          InvalidPassword<T> value, $Res Function(InvalidPassword<T>) then) =
+      _$InvalidPasswordCopyWithImpl<T, $Res>;
   $Res call({String failedValue});
 }
 
 /// @nodoc
-class _$InvalidPasswordCopyWithImpl<T, $Res> extends _$ValueFailureCopyWithImpl<T, $Res>
-  implements $InvalidPasswordCopyWith<T, $Res> {
-  _$InvalidPasswordCopyWithImpl(InvalidPassword<T> _value, $Res Function(InvalidPassword<T>) _then)
-    : super(_value, (v) => _then(v as InvalidPassword<T>));
-  
+class _$InvalidPasswordCopyWithImpl<T, $Res>
+    extends _$ValueFailureCopyWithImpl<T, $Res>
+    implements $InvalidPasswordCopyWith<T, $Res> {
+  _$InvalidPasswordCopyWithImpl(
+      InvalidPassword<T> _value, $Res Function(InvalidPassword<T>) _then)
+      : super(_value, (v) => _then(v as InvalidPassword<T>));
+
   @override
   InvalidPassword<T> get _value => super._value as InvalidPassword<T>;
-  
+
   @override
   $Res call({
-    Object failedValue = freezed,
+    Object? failedValue = freezed,
   }) {
     return _then(InvalidPassword<T>(
-      failedValue:
-      failedValue == freezed ? _value.failedValue : failedValue as String,
+      failedValue: failedValue == freezed
+          ? _value.failedValue
+          : failedValue // ignore: cast_nullable_to_non_nullable
+              as String,
     ));
   }
 }
 
 /// @nodoc
-class _$InvalidPassword<T>
-  with DiagnosticableTreeMixin
-  implements InvalidPassword<T> {
-  const _$InvalidPassword({@required this.failedValue})
-    : assert(failedValue != null);
-  
+
+class _$InvalidPassword<T> implements InvalidPassword<T> {
+  const _$InvalidPassword({required this.failedValue});
+
   @override
   final String failedValue;
-  
+
   @override
-  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+  String toString() {
     return 'ValueFailure<$T>.invalidPassword(failedValue: $failedValue)';
-  }
-  
-  @override
-  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
-    super.debugFillProperties(properties);
-    properties..add(DiagnosticsProperty('type', 'ValueFailure<$T>.invalidPassword'))..add(DiagnosticsProperty('failedValue', failedValue));
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-      (other is InvalidPassword<T> &&
-        (identical(other.failedValue, failedValue) ||
-          const DeepCollectionEquality()
-            .equals(other.failedValue, failedValue)));
+        (other is InvalidPassword<T> &&
+            (identical(other.failedValue, failedValue) ||
+                const DeepCollectionEquality()
+                    .equals(other.failedValue, failedValue)));
   }
-  
+
   @override
   int get hashCode =>
-    runtimeType.hashCode ^ const DeepCollectionEquality().hash(failedValue);
-  
+      runtimeType.hashCode ^ const DeepCollectionEquality().hash(failedValue);
+
+  @JsonKey(ignore: true)
   @override
   $InvalidPasswordCopyWith<T, InvalidPassword<T>> get copyWith =>
-    _$InvalidPasswordCopyWithImpl<T, InvalidPassword<T>>(this, _$identity);
-  
+      _$InvalidPasswordCopyWithImpl<T, InvalidPassword<T>>(this, _$identity);
+
   @override
   @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result nullInput(),
-    @required Result invalidDate(DateTime failedValue),
-    @required Result invalidEmail(String failedValue),
-    @required Result invalidPassword(String failedValue),
-    @required Result stringMismatch(String failedValue),
-    @required Result invalidName(String failedValue),
-    @required Result emptyString(String failedValue),
-    @required Result multiLineString(String failedValue),
-    @required Result stringExceedsLength(String failedValue, int maxLength),
-    @required Result integerOutOfBounds(int failedValue),
-    @required Result stringWithInvalidCharacters(String failedValue),
-    @required Result invalidCoordinate(double failedValue),
-    @required Result emptySet(T failedValue),
-    @required Result setExceedsLength(T failedValue, int maxLength),
+  TResult when<TResult extends Object?>({
+    required TResult Function() nullInput,
+    required TResult Function(DateTime failedValue) invalidDate,
+    required TResult Function(String failedValue) invalidEmail,
+    required TResult Function(String failedValue) invalidPassword,
+    required TResult Function(String failedValue) stringMismatch,
+    required TResult Function(String failedValue) invalidName,
+    required TResult Function(String failedValue) emptyString,
+    required TResult Function(String failedValue) multiLineString,
+    required TResult Function(String failedValue, int maxLength)
+        stringExceedsLength,
+    required TResult Function(int failedValue) integerOutOfBounds,
+    required TResult Function(String failedValue) stringWithInvalidCharacters,
+    required TResult Function(double failedValue) invalidCoordinate,
+    required TResult Function(T failedValue) emptySet,
+    required TResult Function(T failedValue) emptyList,
+    required TResult Function(T failedValue, int maxLength)
+        collectionExceedsLength,
   }) {
-    assert(nullInput != null);
-    assert(invalidDate != null);
-    assert(invalidEmail != null);
-    assert(invalidPassword != null);
-    assert(stringMismatch != null);
-    assert(invalidName != null);
-    assert(emptyString != null);
-    assert(multiLineString != null);
-    assert(stringExceedsLength != null);
-    assert(integerOutOfBounds != null);
-    assert(stringWithInvalidCharacters != null);
-    assert(invalidCoordinate != null);
-    assert(emptySet != null);
-    assert(setExceedsLength != null);
     return invalidPassword(failedValue);
   }
 
   @override
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result nullInput(),
-    Result invalidDate(DateTime failedValue),
-    Result invalidEmail(String failedValue),
-    Result invalidPassword(String failedValue),
-    Result stringMismatch(String failedValue),
-    Result invalidName(String failedValue),
-    Result emptyString(String failedValue),
-    Result multiLineString(String failedValue),
-    Result stringExceedsLength(String failedValue, int maxLength),
-    Result integerOutOfBounds(int failedValue),
-    Result stringWithInvalidCharacters(String failedValue),
-    Result invalidCoordinate(double failedValue),
-    Result emptySet(T failedValue),
-    Result setExceedsLength(T failedValue, int maxLength),
-    @required Result orElse(),
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? nullInput,
+    TResult Function(DateTime failedValue)? invalidDate,
+    TResult Function(String failedValue)? invalidEmail,
+    TResult Function(String failedValue)? invalidPassword,
+    TResult Function(String failedValue)? stringMismatch,
+    TResult Function(String failedValue)? invalidName,
+    TResult Function(String failedValue)? emptyString,
+    TResult Function(String failedValue)? multiLineString,
+    TResult Function(String failedValue, int maxLength)? stringExceedsLength,
+    TResult Function(int failedValue)? integerOutOfBounds,
+    TResult Function(String failedValue)? stringWithInvalidCharacters,
+    TResult Function(double failedValue)? invalidCoordinate,
+    TResult Function(T failedValue)? emptySet,
+    TResult Function(T failedValue)? emptyList,
+    TResult Function(T failedValue, int maxLength)? collectionExceedsLength,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (invalidPassword != null) {
       return invalidPassword(failedValue);
     }
@@ -895,59 +823,49 @@ class _$InvalidPassword<T>
 
   @override
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result nullInput(NullInput<T> value),
-    @required Result invalidDate(InvalidDate<T> value),
-    @required Result invalidEmail(InvalidEmail<T> value),
-    @required Result invalidPassword(InvalidPassword<T> value),
-    @required Result stringMismatch(StringMismatch<T> value),
-    @required Result invalidName(InvalidName<T> value),
-    @required Result emptyString(EmptyString<T> value),
-    @required Result multiLineString(MultiLineString<T> value),
-    @required Result stringExceedsLength(StringExceedsLength<T> value),
-    @required Result integerOutOfBounds(IntegerOutOfBounds<T> value),
-    @required Result stringWithInvalidCharacters(StringWithInvalidCharacters<T> value),
-    @required Result invalidCoordinate(InvalidCoordinates<T> value),
-    @required Result emptySet(EmptySet<T> value),
-    @required Result setExceedsLength(SetExceedsLength<T> value),
+  TResult map<TResult extends Object?>({
+    required TResult Function(NullInput<T> value) nullInput,
+    required TResult Function(InvalidDate<T> value) invalidDate,
+    required TResult Function(InvalidEmail<T> value) invalidEmail,
+    required TResult Function(InvalidPassword<T> value) invalidPassword,
+    required TResult Function(StringMismatch<T> value) stringMismatch,
+    required TResult Function(InvalidName<T> value) invalidName,
+    required TResult Function(EmptyString<T> value) emptyString,
+    required TResult Function(MultiLineString<T> value) multiLineString,
+    required TResult Function(StringExceedsLength<T> value) stringExceedsLength,
+    required TResult Function(IntegerOutOfBounds<T> value) integerOutOfBounds,
+    required TResult Function(StringWithInvalidCharacters<T> value)
+        stringWithInvalidCharacters,
+    required TResult Function(InvalidCoordinates<T> value) invalidCoordinate,
+    required TResult Function(EmptySet<T> value) emptySet,
+    required TResult Function(EmptyList<T> value) emptyList,
+    required TResult Function(CollectionExceedsLength<T> value)
+        collectionExceedsLength,
   }) {
-    assert(nullInput != null);
-    assert(invalidDate != null);
-    assert(invalidEmail != null);
-    assert(invalidPassword != null);
-    assert(stringMismatch != null);
-    assert(invalidName != null);
-    assert(emptyString != null);
-    assert(multiLineString != null);
-    assert(stringExceedsLength != null);
-    assert(integerOutOfBounds != null);
-    assert(stringWithInvalidCharacters != null);
-    assert(invalidCoordinate != null);
-    assert(emptySet != null);
-    assert(setExceedsLength != null);
     return invalidPassword(this);
   }
 
   @override
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result nullInput(NullInput<T> value),
-    Result invalidDate(InvalidDate<T> value),
-    Result invalidEmail(InvalidEmail<T> value),
-    Result invalidPassword(InvalidPassword<T> value),
-    Result stringMismatch(StringMismatch<T> value),
-    Result invalidName(InvalidName<T> value),
-    Result emptyString(EmptyString<T> value),
-    Result multiLineString(MultiLineString<T> value),
-    Result stringExceedsLength(StringExceedsLength<T> value),
-    Result integerOutOfBounds(IntegerOutOfBounds<T> value),
-    Result stringWithInvalidCharacters(StringWithInvalidCharacters<T> value),
-    Result invalidCoordinate(InvalidCoordinates<T> value),
-    Result emptySet(EmptySet<T> value),
-    Result setExceedsLength(SetExceedsLength<T> value),
-    @required Result orElse(),
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(NullInput<T> value)? nullInput,
+    TResult Function(InvalidDate<T> value)? invalidDate,
+    TResult Function(InvalidEmail<T> value)? invalidEmail,
+    TResult Function(InvalidPassword<T> value)? invalidPassword,
+    TResult Function(StringMismatch<T> value)? stringMismatch,
+    TResult Function(InvalidName<T> value)? invalidName,
+    TResult Function(EmptyString<T> value)? emptyString,
+    TResult Function(MultiLineString<T> value)? multiLineString,
+    TResult Function(StringExceedsLength<T> value)? stringExceedsLength,
+    TResult Function(IntegerOutOfBounds<T> value)? integerOutOfBounds,
+    TResult Function(StringWithInvalidCharacters<T> value)?
+        stringWithInvalidCharacters,
+    TResult Function(InvalidCoordinates<T> value)? invalidCoordinate,
+    TResult Function(EmptySet<T> value)? emptySet,
+    TResult Function(EmptyList<T> value)? emptyList,
+    TResult Function(CollectionExceedsLength<T> value)? collectionExceedsLength,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (invalidPassword != null) {
       return invalidPassword(this);
     }
@@ -956,135 +874,122 @@ class _$InvalidPassword<T>
 }
 
 abstract class InvalidPassword<T> implements ValueFailure<T> {
-  const factory InvalidPassword({@required String failedValue}) =
-  _$InvalidPassword<T>;
-  
-  String get failedValue;
-  
-  $InvalidPasswordCopyWith<T, InvalidPassword<T>> get copyWith;
+  const factory InvalidPassword({required String failedValue}) =
+      _$InvalidPassword<T>;
+
+  String get failedValue => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  $InvalidPasswordCopyWith<T, InvalidPassword<T>> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $StringMismatchCopyWith<T, $Res> {
-  factory $StringMismatchCopyWith(StringMismatch<T> value, $Res Function(StringMismatch<T>) then) =
-  _$StringMismatchCopyWithImpl<T, $Res>;
-  
+  factory $StringMismatchCopyWith(
+          StringMismatch<T> value, $Res Function(StringMismatch<T>) then) =
+      _$StringMismatchCopyWithImpl<T, $Res>;
   $Res call({String failedValue});
 }
 
 /// @nodoc
-class _$StringMismatchCopyWithImpl<T, $Res> extends _$ValueFailureCopyWithImpl<T, $Res>
-  implements $StringMismatchCopyWith<T, $Res> {
-  _$StringMismatchCopyWithImpl(StringMismatch<T> _value, $Res Function(StringMismatch<T>) _then)
-    : super(_value, (v) => _then(v as StringMismatch<T>));
-  
+class _$StringMismatchCopyWithImpl<T, $Res>
+    extends _$ValueFailureCopyWithImpl<T, $Res>
+    implements $StringMismatchCopyWith<T, $Res> {
+  _$StringMismatchCopyWithImpl(
+      StringMismatch<T> _value, $Res Function(StringMismatch<T>) _then)
+      : super(_value, (v) => _then(v as StringMismatch<T>));
+
   @override
   StringMismatch<T> get _value => super._value as StringMismatch<T>;
-  
+
   @override
   $Res call({
-    Object failedValue = freezed,
+    Object? failedValue = freezed,
   }) {
     return _then(StringMismatch<T>(
-      failedValue:
-      failedValue == freezed ? _value.failedValue : failedValue as String,
+      failedValue: failedValue == freezed
+          ? _value.failedValue
+          : failedValue // ignore: cast_nullable_to_non_nullable
+              as String,
     ));
   }
 }
 
 /// @nodoc
-class _$StringMismatch<T>
-  with DiagnosticableTreeMixin
-  implements StringMismatch<T> {
-  const _$StringMismatch({@required this.failedValue})
-    : assert(failedValue != null);
-  
+
+class _$StringMismatch<T> implements StringMismatch<T> {
+  const _$StringMismatch({required this.failedValue});
+
   @override
   final String failedValue;
-  
+
   @override
-  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+  String toString() {
     return 'ValueFailure<$T>.stringMismatch(failedValue: $failedValue)';
-  }
-  
-  @override
-  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
-    super.debugFillProperties(properties);
-    properties..add(DiagnosticsProperty('type', 'ValueFailure<$T>.stringMismatch'))..add(DiagnosticsProperty('failedValue', failedValue));
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-      (other is StringMismatch<T> &&
-        (identical(other.failedValue, failedValue) ||
-          const DeepCollectionEquality()
-            .equals(other.failedValue, failedValue)));
+        (other is StringMismatch<T> &&
+            (identical(other.failedValue, failedValue) ||
+                const DeepCollectionEquality()
+                    .equals(other.failedValue, failedValue)));
   }
-  
+
   @override
   int get hashCode =>
-    runtimeType.hashCode ^ const DeepCollectionEquality().hash(failedValue);
-  
+      runtimeType.hashCode ^ const DeepCollectionEquality().hash(failedValue);
+
+  @JsonKey(ignore: true)
   @override
   $StringMismatchCopyWith<T, StringMismatch<T>> get copyWith =>
-    _$StringMismatchCopyWithImpl<T, StringMismatch<T>>(this, _$identity);
-  
+      _$StringMismatchCopyWithImpl<T, StringMismatch<T>>(this, _$identity);
+
   @override
   @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result nullInput(),
-    @required Result invalidDate(DateTime failedValue),
-    @required Result invalidEmail(String failedValue),
-    @required Result invalidPassword(String failedValue),
-    @required Result stringMismatch(String failedValue),
-    @required Result invalidName(String failedValue),
-    @required Result emptyString(String failedValue),
-    @required Result multiLineString(String failedValue),
-    @required Result stringExceedsLength(String failedValue, int maxLength),
-    @required Result integerOutOfBounds(int failedValue),
-    @required Result stringWithInvalidCharacters(String failedValue),
-    @required Result invalidCoordinate(double failedValue),
-    @required Result emptySet(T failedValue),
-    @required Result setExceedsLength(T failedValue, int maxLength),
+  TResult when<TResult extends Object?>({
+    required TResult Function() nullInput,
+    required TResult Function(DateTime failedValue) invalidDate,
+    required TResult Function(String failedValue) invalidEmail,
+    required TResult Function(String failedValue) invalidPassword,
+    required TResult Function(String failedValue) stringMismatch,
+    required TResult Function(String failedValue) invalidName,
+    required TResult Function(String failedValue) emptyString,
+    required TResult Function(String failedValue) multiLineString,
+    required TResult Function(String failedValue, int maxLength)
+        stringExceedsLength,
+    required TResult Function(int failedValue) integerOutOfBounds,
+    required TResult Function(String failedValue) stringWithInvalidCharacters,
+    required TResult Function(double failedValue) invalidCoordinate,
+    required TResult Function(T failedValue) emptySet,
+    required TResult Function(T failedValue) emptyList,
+    required TResult Function(T failedValue, int maxLength)
+        collectionExceedsLength,
   }) {
-    assert(nullInput != null);
-    assert(invalidDate != null);
-    assert(invalidEmail != null);
-    assert(invalidPassword != null);
-    assert(stringMismatch != null);
-    assert(invalidName != null);
-    assert(emptyString != null);
-    assert(multiLineString != null);
-    assert(stringExceedsLength != null);
-    assert(integerOutOfBounds != null);
-    assert(stringWithInvalidCharacters != null);
-    assert(invalidCoordinate != null);
-    assert(emptySet != null);
-    assert(setExceedsLength != null);
     return stringMismatch(failedValue);
   }
 
   @override
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result nullInput(),
-    Result invalidDate(DateTime failedValue),
-    Result invalidEmail(String failedValue),
-    Result invalidPassword(String failedValue),
-    Result stringMismatch(String failedValue),
-    Result invalidName(String failedValue),
-    Result emptyString(String failedValue),
-    Result multiLineString(String failedValue),
-    Result stringExceedsLength(String failedValue, int maxLength),
-    Result integerOutOfBounds(int failedValue),
-    Result stringWithInvalidCharacters(String failedValue),
-    Result invalidCoordinate(double failedValue),
-    Result emptySet(T failedValue),
-    Result setExceedsLength(T failedValue, int maxLength),
-    @required Result orElse(),
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? nullInput,
+    TResult Function(DateTime failedValue)? invalidDate,
+    TResult Function(String failedValue)? invalidEmail,
+    TResult Function(String failedValue)? invalidPassword,
+    TResult Function(String failedValue)? stringMismatch,
+    TResult Function(String failedValue)? invalidName,
+    TResult Function(String failedValue)? emptyString,
+    TResult Function(String failedValue)? multiLineString,
+    TResult Function(String failedValue, int maxLength)? stringExceedsLength,
+    TResult Function(int failedValue)? integerOutOfBounds,
+    TResult Function(String failedValue)? stringWithInvalidCharacters,
+    TResult Function(double failedValue)? invalidCoordinate,
+    TResult Function(T failedValue)? emptySet,
+    TResult Function(T failedValue)? emptyList,
+    TResult Function(T failedValue, int maxLength)? collectionExceedsLength,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (stringMismatch != null) {
       return stringMismatch(failedValue);
     }
@@ -1093,59 +998,49 @@ class _$StringMismatch<T>
 
   @override
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result nullInput(NullInput<T> value),
-    @required Result invalidDate(InvalidDate<T> value),
-    @required Result invalidEmail(InvalidEmail<T> value),
-    @required Result invalidPassword(InvalidPassword<T> value),
-    @required Result stringMismatch(StringMismatch<T> value),
-    @required Result invalidName(InvalidName<T> value),
-    @required Result emptyString(EmptyString<T> value),
-    @required Result multiLineString(MultiLineString<T> value),
-    @required Result stringExceedsLength(StringExceedsLength<T> value),
-    @required Result integerOutOfBounds(IntegerOutOfBounds<T> value),
-    @required Result stringWithInvalidCharacters(StringWithInvalidCharacters<T> value),
-    @required Result invalidCoordinate(InvalidCoordinates<T> value),
-    @required Result emptySet(EmptySet<T> value),
-    @required Result setExceedsLength(SetExceedsLength<T> value),
+  TResult map<TResult extends Object?>({
+    required TResult Function(NullInput<T> value) nullInput,
+    required TResult Function(InvalidDate<T> value) invalidDate,
+    required TResult Function(InvalidEmail<T> value) invalidEmail,
+    required TResult Function(InvalidPassword<T> value) invalidPassword,
+    required TResult Function(StringMismatch<T> value) stringMismatch,
+    required TResult Function(InvalidName<T> value) invalidName,
+    required TResult Function(EmptyString<T> value) emptyString,
+    required TResult Function(MultiLineString<T> value) multiLineString,
+    required TResult Function(StringExceedsLength<T> value) stringExceedsLength,
+    required TResult Function(IntegerOutOfBounds<T> value) integerOutOfBounds,
+    required TResult Function(StringWithInvalidCharacters<T> value)
+        stringWithInvalidCharacters,
+    required TResult Function(InvalidCoordinates<T> value) invalidCoordinate,
+    required TResult Function(EmptySet<T> value) emptySet,
+    required TResult Function(EmptyList<T> value) emptyList,
+    required TResult Function(CollectionExceedsLength<T> value)
+        collectionExceedsLength,
   }) {
-    assert(nullInput != null);
-    assert(invalidDate != null);
-    assert(invalidEmail != null);
-    assert(invalidPassword != null);
-    assert(stringMismatch != null);
-    assert(invalidName != null);
-    assert(emptyString != null);
-    assert(multiLineString != null);
-    assert(stringExceedsLength != null);
-    assert(integerOutOfBounds != null);
-    assert(stringWithInvalidCharacters != null);
-    assert(invalidCoordinate != null);
-    assert(emptySet != null);
-    assert(setExceedsLength != null);
     return stringMismatch(this);
   }
 
   @override
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result nullInput(NullInput<T> value),
-    Result invalidDate(InvalidDate<T> value),
-    Result invalidEmail(InvalidEmail<T> value),
-    Result invalidPassword(InvalidPassword<T> value),
-    Result stringMismatch(StringMismatch<T> value),
-    Result invalidName(InvalidName<T> value),
-    Result emptyString(EmptyString<T> value),
-    Result multiLineString(MultiLineString<T> value),
-    Result stringExceedsLength(StringExceedsLength<T> value),
-    Result integerOutOfBounds(IntegerOutOfBounds<T> value),
-    Result stringWithInvalidCharacters(StringWithInvalidCharacters<T> value),
-    Result invalidCoordinate(InvalidCoordinates<T> value),
-    Result emptySet(EmptySet<T> value),
-    Result setExceedsLength(SetExceedsLength<T> value),
-    @required Result orElse(),
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(NullInput<T> value)? nullInput,
+    TResult Function(InvalidDate<T> value)? invalidDate,
+    TResult Function(InvalidEmail<T> value)? invalidEmail,
+    TResult Function(InvalidPassword<T> value)? invalidPassword,
+    TResult Function(StringMismatch<T> value)? stringMismatch,
+    TResult Function(InvalidName<T> value)? invalidName,
+    TResult Function(EmptyString<T> value)? emptyString,
+    TResult Function(MultiLineString<T> value)? multiLineString,
+    TResult Function(StringExceedsLength<T> value)? stringExceedsLength,
+    TResult Function(IntegerOutOfBounds<T> value)? integerOutOfBounds,
+    TResult Function(StringWithInvalidCharacters<T> value)?
+        stringWithInvalidCharacters,
+    TResult Function(InvalidCoordinates<T> value)? invalidCoordinate,
+    TResult Function(EmptySet<T> value)? emptySet,
+    TResult Function(EmptyList<T> value)? emptyList,
+    TResult Function(CollectionExceedsLength<T> value)? collectionExceedsLength,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (stringMismatch != null) {
       return stringMismatch(this);
     }
@@ -1154,133 +1049,122 @@ class _$StringMismatch<T>
 }
 
 abstract class StringMismatch<T> implements ValueFailure<T> {
-  const factory StringMismatch({@required String failedValue}) =
-  _$StringMismatch<T>;
-  
-  String get failedValue;
-  
-  $StringMismatchCopyWith<T, StringMismatch<T>> get copyWith;
+  const factory StringMismatch({required String failedValue}) =
+      _$StringMismatch<T>;
+
+  String get failedValue => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  $StringMismatchCopyWith<T, StringMismatch<T>> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $InvalidNameCopyWith<T, $Res> {
-  factory $InvalidNameCopyWith(InvalidName<T> value, $Res Function(InvalidName<T>) then) =
-  _$InvalidNameCopyWithImpl<T, $Res>;
-  
+  factory $InvalidNameCopyWith(
+          InvalidName<T> value, $Res Function(InvalidName<T>) then) =
+      _$InvalidNameCopyWithImpl<T, $Res>;
   $Res call({String failedValue});
 }
 
 /// @nodoc
-class _$InvalidNameCopyWithImpl<T, $Res> extends _$ValueFailureCopyWithImpl<T, $Res>
-  implements $InvalidNameCopyWith<T, $Res> {
-  _$InvalidNameCopyWithImpl(InvalidName<T> _value, $Res Function(InvalidName<T>) _then)
-    : super(_value, (v) => _then(v as InvalidName<T>));
-  
+class _$InvalidNameCopyWithImpl<T, $Res>
+    extends _$ValueFailureCopyWithImpl<T, $Res>
+    implements $InvalidNameCopyWith<T, $Res> {
+  _$InvalidNameCopyWithImpl(
+      InvalidName<T> _value, $Res Function(InvalidName<T>) _then)
+      : super(_value, (v) => _then(v as InvalidName<T>));
+
   @override
   InvalidName<T> get _value => super._value as InvalidName<T>;
-  
+
   @override
   $Res call({
-    Object failedValue = freezed,
+    Object? failedValue = freezed,
   }) {
     return _then(InvalidName<T>(
-      failedValue:
-      failedValue == freezed ? _value.failedValue : failedValue as String,
+      failedValue: failedValue == freezed
+          ? _value.failedValue
+          : failedValue // ignore: cast_nullable_to_non_nullable
+              as String,
     ));
   }
 }
 
 /// @nodoc
-class _$InvalidName<T> with DiagnosticableTreeMixin implements InvalidName<T> {
-  const _$InvalidName({@required this.failedValue})
-    : assert(failedValue != null);
-  
+
+class _$InvalidName<T> implements InvalidName<T> {
+  const _$InvalidName({required this.failedValue});
+
   @override
   final String failedValue;
-  
+
   @override
-  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+  String toString() {
     return 'ValueFailure<$T>.invalidName(failedValue: $failedValue)';
-  }
-  
-  @override
-  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
-    super.debugFillProperties(properties);
-    properties..add(DiagnosticsProperty('type', 'ValueFailure<$T>.invalidName'))..add(DiagnosticsProperty('failedValue', failedValue));
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-      (other is InvalidName<T> &&
-        (identical(other.failedValue, failedValue) ||
-          const DeepCollectionEquality()
-            .equals(other.failedValue, failedValue)));
+        (other is InvalidName<T> &&
+            (identical(other.failedValue, failedValue) ||
+                const DeepCollectionEquality()
+                    .equals(other.failedValue, failedValue)));
   }
-  
+
   @override
   int get hashCode =>
-    runtimeType.hashCode ^ const DeepCollectionEquality().hash(failedValue);
-  
+      runtimeType.hashCode ^ const DeepCollectionEquality().hash(failedValue);
+
+  @JsonKey(ignore: true)
   @override
   $InvalidNameCopyWith<T, InvalidName<T>> get copyWith =>
-    _$InvalidNameCopyWithImpl<T, InvalidName<T>>(this, _$identity);
-  
+      _$InvalidNameCopyWithImpl<T, InvalidName<T>>(this, _$identity);
+
   @override
   @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result nullInput(),
-    @required Result invalidDate(DateTime failedValue),
-    @required Result invalidEmail(String failedValue),
-    @required Result invalidPassword(String failedValue),
-    @required Result stringMismatch(String failedValue),
-    @required Result invalidName(String failedValue),
-    @required Result emptyString(String failedValue),
-    @required Result multiLineString(String failedValue),
-    @required Result stringExceedsLength(String failedValue, int maxLength),
-    @required Result integerOutOfBounds(int failedValue),
-    @required Result stringWithInvalidCharacters(String failedValue),
-    @required Result invalidCoordinate(double failedValue),
-    @required Result emptySet(T failedValue),
-    @required Result setExceedsLength(T failedValue, int maxLength),
+  TResult when<TResult extends Object?>({
+    required TResult Function() nullInput,
+    required TResult Function(DateTime failedValue) invalidDate,
+    required TResult Function(String failedValue) invalidEmail,
+    required TResult Function(String failedValue) invalidPassword,
+    required TResult Function(String failedValue) stringMismatch,
+    required TResult Function(String failedValue) invalidName,
+    required TResult Function(String failedValue) emptyString,
+    required TResult Function(String failedValue) multiLineString,
+    required TResult Function(String failedValue, int maxLength)
+        stringExceedsLength,
+    required TResult Function(int failedValue) integerOutOfBounds,
+    required TResult Function(String failedValue) stringWithInvalidCharacters,
+    required TResult Function(double failedValue) invalidCoordinate,
+    required TResult Function(T failedValue) emptySet,
+    required TResult Function(T failedValue) emptyList,
+    required TResult Function(T failedValue, int maxLength)
+        collectionExceedsLength,
   }) {
-    assert(nullInput != null);
-    assert(invalidDate != null);
-    assert(invalidEmail != null);
-    assert(invalidPassword != null);
-    assert(stringMismatch != null);
-    assert(invalidName != null);
-    assert(emptyString != null);
-    assert(multiLineString != null);
-    assert(stringExceedsLength != null);
-    assert(integerOutOfBounds != null);
-    assert(stringWithInvalidCharacters != null);
-    assert(invalidCoordinate != null);
-    assert(emptySet != null);
-    assert(setExceedsLength != null);
     return invalidName(failedValue);
   }
 
   @override
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result nullInput(),
-    Result invalidDate(DateTime failedValue),
-    Result invalidEmail(String failedValue),
-    Result invalidPassword(String failedValue),
-    Result stringMismatch(String failedValue),
-    Result invalidName(String failedValue),
-    Result emptyString(String failedValue),
-    Result multiLineString(String failedValue),
-    Result stringExceedsLength(String failedValue, int maxLength),
-    Result integerOutOfBounds(int failedValue),
-    Result stringWithInvalidCharacters(String failedValue),
-    Result invalidCoordinate(double failedValue),
-    Result emptySet(T failedValue),
-    Result setExceedsLength(T failedValue, int maxLength),
-    @required Result orElse(),
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? nullInput,
+    TResult Function(DateTime failedValue)? invalidDate,
+    TResult Function(String failedValue)? invalidEmail,
+    TResult Function(String failedValue)? invalidPassword,
+    TResult Function(String failedValue)? stringMismatch,
+    TResult Function(String failedValue)? invalidName,
+    TResult Function(String failedValue)? emptyString,
+    TResult Function(String failedValue)? multiLineString,
+    TResult Function(String failedValue, int maxLength)? stringExceedsLength,
+    TResult Function(int failedValue)? integerOutOfBounds,
+    TResult Function(String failedValue)? stringWithInvalidCharacters,
+    TResult Function(double failedValue)? invalidCoordinate,
+    TResult Function(T failedValue)? emptySet,
+    TResult Function(T failedValue)? emptyList,
+    TResult Function(T failedValue, int maxLength)? collectionExceedsLength,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (invalidName != null) {
       return invalidName(failedValue);
     }
@@ -1289,59 +1173,49 @@ class _$InvalidName<T> with DiagnosticableTreeMixin implements InvalidName<T> {
 
   @override
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result nullInput(NullInput<T> value),
-    @required Result invalidDate(InvalidDate<T> value),
-    @required Result invalidEmail(InvalidEmail<T> value),
-    @required Result invalidPassword(InvalidPassword<T> value),
-    @required Result stringMismatch(StringMismatch<T> value),
-    @required Result invalidName(InvalidName<T> value),
-    @required Result emptyString(EmptyString<T> value),
-    @required Result multiLineString(MultiLineString<T> value),
-    @required Result stringExceedsLength(StringExceedsLength<T> value),
-    @required Result integerOutOfBounds(IntegerOutOfBounds<T> value),
-    @required Result stringWithInvalidCharacters(StringWithInvalidCharacters<T> value),
-    @required Result invalidCoordinate(InvalidCoordinates<T> value),
-    @required Result emptySet(EmptySet<T> value),
-    @required Result setExceedsLength(SetExceedsLength<T> value),
+  TResult map<TResult extends Object?>({
+    required TResult Function(NullInput<T> value) nullInput,
+    required TResult Function(InvalidDate<T> value) invalidDate,
+    required TResult Function(InvalidEmail<T> value) invalidEmail,
+    required TResult Function(InvalidPassword<T> value) invalidPassword,
+    required TResult Function(StringMismatch<T> value) stringMismatch,
+    required TResult Function(InvalidName<T> value) invalidName,
+    required TResult Function(EmptyString<T> value) emptyString,
+    required TResult Function(MultiLineString<T> value) multiLineString,
+    required TResult Function(StringExceedsLength<T> value) stringExceedsLength,
+    required TResult Function(IntegerOutOfBounds<T> value) integerOutOfBounds,
+    required TResult Function(StringWithInvalidCharacters<T> value)
+        stringWithInvalidCharacters,
+    required TResult Function(InvalidCoordinates<T> value) invalidCoordinate,
+    required TResult Function(EmptySet<T> value) emptySet,
+    required TResult Function(EmptyList<T> value) emptyList,
+    required TResult Function(CollectionExceedsLength<T> value)
+        collectionExceedsLength,
   }) {
-    assert(nullInput != null);
-    assert(invalidDate != null);
-    assert(invalidEmail != null);
-    assert(invalidPassword != null);
-    assert(stringMismatch != null);
-    assert(invalidName != null);
-    assert(emptyString != null);
-    assert(multiLineString != null);
-    assert(stringExceedsLength != null);
-    assert(integerOutOfBounds != null);
-    assert(stringWithInvalidCharacters != null);
-    assert(invalidCoordinate != null);
-    assert(emptySet != null);
-    assert(setExceedsLength != null);
     return invalidName(this);
   }
 
   @override
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result nullInput(NullInput<T> value),
-    Result invalidDate(InvalidDate<T> value),
-    Result invalidEmail(InvalidEmail<T> value),
-    Result invalidPassword(InvalidPassword<T> value),
-    Result stringMismatch(StringMismatch<T> value),
-    Result invalidName(InvalidName<T> value),
-    Result emptyString(EmptyString<T> value),
-    Result multiLineString(MultiLineString<T> value),
-    Result stringExceedsLength(StringExceedsLength<T> value),
-    Result integerOutOfBounds(IntegerOutOfBounds<T> value),
-    Result stringWithInvalidCharacters(StringWithInvalidCharacters<T> value),
-    Result invalidCoordinate(InvalidCoordinates<T> value),
-    Result emptySet(EmptySet<T> value),
-    Result setExceedsLength(SetExceedsLength<T> value),
-    @required Result orElse(),
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(NullInput<T> value)? nullInput,
+    TResult Function(InvalidDate<T> value)? invalidDate,
+    TResult Function(InvalidEmail<T> value)? invalidEmail,
+    TResult Function(InvalidPassword<T> value)? invalidPassword,
+    TResult Function(StringMismatch<T> value)? stringMismatch,
+    TResult Function(InvalidName<T> value)? invalidName,
+    TResult Function(EmptyString<T> value)? emptyString,
+    TResult Function(MultiLineString<T> value)? multiLineString,
+    TResult Function(StringExceedsLength<T> value)? stringExceedsLength,
+    TResult Function(IntegerOutOfBounds<T> value)? integerOutOfBounds,
+    TResult Function(StringWithInvalidCharacters<T> value)?
+        stringWithInvalidCharacters,
+    TResult Function(InvalidCoordinates<T> value)? invalidCoordinate,
+    TResult Function(EmptySet<T> value)? emptySet,
+    TResult Function(EmptyList<T> value)? emptyList,
+    TResult Function(CollectionExceedsLength<T> value)? collectionExceedsLength,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (invalidName != null) {
       return invalidName(this);
     }
@@ -1350,131 +1224,121 @@ class _$InvalidName<T> with DiagnosticableTreeMixin implements InvalidName<T> {
 }
 
 abstract class InvalidName<T> implements ValueFailure<T> {
-  const factory InvalidName({@required String failedValue}) = _$InvalidName<T>;
+  const factory InvalidName({required String failedValue}) = _$InvalidName<T>;
 
-  String get failedValue;
-  $InvalidNameCopyWith<T, InvalidName<T>> get copyWith;
+  String get failedValue => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  $InvalidNameCopyWith<T, InvalidName<T>> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $EmptyStringCopyWith<T, $Res> {
-  factory $EmptyStringCopyWith(EmptyString<T> value, $Res Function(EmptyString<T>) then) =
-  _$EmptyStringCopyWithImpl<T, $Res>;
-  
+  factory $EmptyStringCopyWith(
+          EmptyString<T> value, $Res Function(EmptyString<T>) then) =
+      _$EmptyStringCopyWithImpl<T, $Res>;
   $Res call({String failedValue});
 }
 
 /// @nodoc
-class _$EmptyStringCopyWithImpl<T, $Res> extends _$ValueFailureCopyWithImpl<T, $Res>
-  implements $EmptyStringCopyWith<T, $Res> {
-  _$EmptyStringCopyWithImpl(EmptyString<T> _value, $Res Function(EmptyString<T>) _then)
-    : super(_value, (v) => _then(v as EmptyString<T>));
-  
+class _$EmptyStringCopyWithImpl<T, $Res>
+    extends _$ValueFailureCopyWithImpl<T, $Res>
+    implements $EmptyStringCopyWith<T, $Res> {
+  _$EmptyStringCopyWithImpl(
+      EmptyString<T> _value, $Res Function(EmptyString<T>) _then)
+      : super(_value, (v) => _then(v as EmptyString<T>));
+
   @override
   EmptyString<T> get _value => super._value as EmptyString<T>;
-  
+
   @override
   $Res call({
-    Object failedValue = freezed,
+    Object? failedValue = freezed,
   }) {
     return _then(EmptyString<T>(
-      failedValue:
-      failedValue == freezed ? _value.failedValue : failedValue as String,
+      failedValue: failedValue == freezed
+          ? _value.failedValue
+          : failedValue // ignore: cast_nullable_to_non_nullable
+              as String,
     ));
   }
 }
 
 /// @nodoc
-class _$EmptyString<T> with DiagnosticableTreeMixin implements EmptyString<T> {
-  const _$EmptyString({@required this.failedValue})
-    : assert(failedValue != null);
-  
+
+class _$EmptyString<T> implements EmptyString<T> {
+  const _$EmptyString({required this.failedValue});
+
   @override
   final String failedValue;
-  
+
   @override
-  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+  String toString() {
     return 'ValueFailure<$T>.emptyString(failedValue: $failedValue)';
-  }
-  
-  @override
-  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
-    super.debugFillProperties(properties);
-    properties..add(DiagnosticsProperty('type', 'ValueFailure<$T>.emptyString'))..add(DiagnosticsProperty('failedValue', failedValue));
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-      (other is EmptyString<T> &&
-        (identical(other.failedValue, failedValue) ||
-          const DeepCollectionEquality()
-            .equals(other.failedValue, failedValue)));
+        (other is EmptyString<T> &&
+            (identical(other.failedValue, failedValue) ||
+                const DeepCollectionEquality()
+                    .equals(other.failedValue, failedValue)));
   }
-  
+
   @override
   int get hashCode =>
-    runtimeType.hashCode ^ const DeepCollectionEquality().hash(failedValue);
-  
+      runtimeType.hashCode ^ const DeepCollectionEquality().hash(failedValue);
+
+  @JsonKey(ignore: true)
   @override
   $EmptyStringCopyWith<T, EmptyString<T>> get copyWith =>
-    _$EmptyStringCopyWithImpl<T, EmptyString<T>>(this, _$identity);
-  
+      _$EmptyStringCopyWithImpl<T, EmptyString<T>>(this, _$identity);
+
   @override
   @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result nullInput(),
-    @required Result invalidDate(DateTime failedValue),
-    @required Result invalidEmail(String failedValue),
-    @required Result invalidPassword(String failedValue),
-    @required Result stringMismatch(String failedValue),
-    @required Result invalidName(String failedValue),
-    @required Result emptyString(String failedValue),
-    @required Result multiLineString(String failedValue),
-    @required Result stringExceedsLength(String failedValue, int maxLength),
-    @required Result integerOutOfBounds(int failedValue),
-    @required Result stringWithInvalidCharacters(String failedValue),
-    @required Result invalidCoordinate(double failedValue),
-    @required Result emptySet(T failedValue),
-    @required Result setExceedsLength(T failedValue, int maxLength),
+  TResult when<TResult extends Object?>({
+    required TResult Function() nullInput,
+    required TResult Function(DateTime failedValue) invalidDate,
+    required TResult Function(String failedValue) invalidEmail,
+    required TResult Function(String failedValue) invalidPassword,
+    required TResult Function(String failedValue) stringMismatch,
+    required TResult Function(String failedValue) invalidName,
+    required TResult Function(String failedValue) emptyString,
+    required TResult Function(String failedValue) multiLineString,
+    required TResult Function(String failedValue, int maxLength)
+        stringExceedsLength,
+    required TResult Function(int failedValue) integerOutOfBounds,
+    required TResult Function(String failedValue) stringWithInvalidCharacters,
+    required TResult Function(double failedValue) invalidCoordinate,
+    required TResult Function(T failedValue) emptySet,
+    required TResult Function(T failedValue) emptyList,
+    required TResult Function(T failedValue, int maxLength)
+        collectionExceedsLength,
   }) {
-    assert(nullInput != null);
-    assert(invalidDate != null);
-    assert(invalidEmail != null);
-    assert(invalidPassword != null);
-    assert(stringMismatch != null);
-    assert(invalidName != null);
-    assert(emptyString != null);
-    assert(multiLineString != null);
-    assert(stringExceedsLength != null);
-    assert(integerOutOfBounds != null);
-    assert(stringWithInvalidCharacters != null);
-    assert(invalidCoordinate != null);
-    assert(emptySet != null);
-    assert(setExceedsLength != null);
     return emptyString(failedValue);
   }
 
   @override
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result nullInput(),
-    Result invalidDate(DateTime failedValue),
-    Result invalidEmail(String failedValue),
-    Result invalidPassword(String failedValue),
-    Result stringMismatch(String failedValue),
-    Result invalidName(String failedValue),
-    Result emptyString(String failedValue),
-    Result multiLineString(String failedValue),
-    Result stringExceedsLength(String failedValue, int maxLength),
-    Result integerOutOfBounds(int failedValue),
-    Result stringWithInvalidCharacters(String failedValue),
-    Result invalidCoordinate(double failedValue),
-    Result emptySet(T failedValue),
-    Result setExceedsLength(T failedValue, int maxLength),
-    @required Result orElse(),
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? nullInput,
+    TResult Function(DateTime failedValue)? invalidDate,
+    TResult Function(String failedValue)? invalidEmail,
+    TResult Function(String failedValue)? invalidPassword,
+    TResult Function(String failedValue)? stringMismatch,
+    TResult Function(String failedValue)? invalidName,
+    TResult Function(String failedValue)? emptyString,
+    TResult Function(String failedValue)? multiLineString,
+    TResult Function(String failedValue, int maxLength)? stringExceedsLength,
+    TResult Function(int failedValue)? integerOutOfBounds,
+    TResult Function(String failedValue)? stringWithInvalidCharacters,
+    TResult Function(double failedValue)? invalidCoordinate,
+    TResult Function(T failedValue)? emptySet,
+    TResult Function(T failedValue)? emptyList,
+    TResult Function(T failedValue, int maxLength)? collectionExceedsLength,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (emptyString != null) {
       return emptyString(failedValue);
     }
@@ -1483,59 +1347,49 @@ class _$EmptyString<T> with DiagnosticableTreeMixin implements EmptyString<T> {
 
   @override
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result nullInput(NullInput<T> value),
-    @required Result invalidDate(InvalidDate<T> value),
-    @required Result invalidEmail(InvalidEmail<T> value),
-    @required Result invalidPassword(InvalidPassword<T> value),
-    @required Result stringMismatch(StringMismatch<T> value),
-    @required Result invalidName(InvalidName<T> value),
-    @required Result emptyString(EmptyString<T> value),
-    @required Result multiLineString(MultiLineString<T> value),
-    @required Result stringExceedsLength(StringExceedsLength<T> value),
-    @required Result integerOutOfBounds(IntegerOutOfBounds<T> value),
-    @required Result stringWithInvalidCharacters(StringWithInvalidCharacters<T> value),
-    @required Result invalidCoordinate(InvalidCoordinates<T> value),
-    @required Result emptySet(EmptySet<T> value),
-    @required Result setExceedsLength(SetExceedsLength<T> value),
+  TResult map<TResult extends Object?>({
+    required TResult Function(NullInput<T> value) nullInput,
+    required TResult Function(InvalidDate<T> value) invalidDate,
+    required TResult Function(InvalidEmail<T> value) invalidEmail,
+    required TResult Function(InvalidPassword<T> value) invalidPassword,
+    required TResult Function(StringMismatch<T> value) stringMismatch,
+    required TResult Function(InvalidName<T> value) invalidName,
+    required TResult Function(EmptyString<T> value) emptyString,
+    required TResult Function(MultiLineString<T> value) multiLineString,
+    required TResult Function(StringExceedsLength<T> value) stringExceedsLength,
+    required TResult Function(IntegerOutOfBounds<T> value) integerOutOfBounds,
+    required TResult Function(StringWithInvalidCharacters<T> value)
+        stringWithInvalidCharacters,
+    required TResult Function(InvalidCoordinates<T> value) invalidCoordinate,
+    required TResult Function(EmptySet<T> value) emptySet,
+    required TResult Function(EmptyList<T> value) emptyList,
+    required TResult Function(CollectionExceedsLength<T> value)
+        collectionExceedsLength,
   }) {
-    assert(nullInput != null);
-    assert(invalidDate != null);
-    assert(invalidEmail != null);
-    assert(invalidPassword != null);
-    assert(stringMismatch != null);
-    assert(invalidName != null);
-    assert(emptyString != null);
-    assert(multiLineString != null);
-    assert(stringExceedsLength != null);
-    assert(integerOutOfBounds != null);
-    assert(stringWithInvalidCharacters != null);
-    assert(invalidCoordinate != null);
-    assert(emptySet != null);
-    assert(setExceedsLength != null);
     return emptyString(this);
   }
 
   @override
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result nullInput(NullInput<T> value),
-    Result invalidDate(InvalidDate<T> value),
-    Result invalidEmail(InvalidEmail<T> value),
-    Result invalidPassword(InvalidPassword<T> value),
-    Result stringMismatch(StringMismatch<T> value),
-    Result invalidName(InvalidName<T> value),
-    Result emptyString(EmptyString<T> value),
-    Result multiLineString(MultiLineString<T> value),
-    Result stringExceedsLength(StringExceedsLength<T> value),
-    Result integerOutOfBounds(IntegerOutOfBounds<T> value),
-    Result stringWithInvalidCharacters(StringWithInvalidCharacters<T> value),
-    Result invalidCoordinate(InvalidCoordinates<T> value),
-    Result emptySet(EmptySet<T> value),
-    Result setExceedsLength(SetExceedsLength<T> value),
-    @required Result orElse(),
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(NullInput<T> value)? nullInput,
+    TResult Function(InvalidDate<T> value)? invalidDate,
+    TResult Function(InvalidEmail<T> value)? invalidEmail,
+    TResult Function(InvalidPassword<T> value)? invalidPassword,
+    TResult Function(StringMismatch<T> value)? stringMismatch,
+    TResult Function(InvalidName<T> value)? invalidName,
+    TResult Function(EmptyString<T> value)? emptyString,
+    TResult Function(MultiLineString<T> value)? multiLineString,
+    TResult Function(StringExceedsLength<T> value)? stringExceedsLength,
+    TResult Function(IntegerOutOfBounds<T> value)? integerOutOfBounds,
+    TResult Function(StringWithInvalidCharacters<T> value)?
+        stringWithInvalidCharacters,
+    TResult Function(InvalidCoordinates<T> value)? invalidCoordinate,
+    TResult Function(EmptySet<T> value)? emptySet,
+    TResult Function(EmptyList<T> value)? emptyList,
+    TResult Function(CollectionExceedsLength<T> value)? collectionExceedsLength,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (emptyString != null) {
       return emptyString(this);
     }
@@ -1544,133 +1398,121 @@ class _$EmptyString<T> with DiagnosticableTreeMixin implements EmptyString<T> {
 }
 
 abstract class EmptyString<T> implements ValueFailure<T> {
-  const factory EmptyString({@required String failedValue}) = _$EmptyString<T>;
+  const factory EmptyString({required String failedValue}) = _$EmptyString<T>;
 
-  String get failedValue;
-  $EmptyStringCopyWith<T, EmptyString<T>> get copyWith;
+  String get failedValue => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  $EmptyStringCopyWith<T, EmptyString<T>> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $MultiLineStringCopyWith<T, $Res> {
-  factory $MultiLineStringCopyWith(MultiLineString<T> value, $Res Function(MultiLineString<T>) then) =
-  _$MultiLineStringCopyWithImpl<T, $Res>;
-  
+  factory $MultiLineStringCopyWith(
+          MultiLineString<T> value, $Res Function(MultiLineString<T>) then) =
+      _$MultiLineStringCopyWithImpl<T, $Res>;
   $Res call({String failedValue});
 }
 
 /// @nodoc
-class _$MultiLineStringCopyWithImpl<T, $Res> extends _$ValueFailureCopyWithImpl<T, $Res>
-  implements $MultiLineStringCopyWith<T, $Res> {
-  _$MultiLineStringCopyWithImpl(MultiLineString<T> _value, $Res Function(MultiLineString<T>) _then)
-    : super(_value, (v) => _then(v as MultiLineString<T>));
-  
+class _$MultiLineStringCopyWithImpl<T, $Res>
+    extends _$ValueFailureCopyWithImpl<T, $Res>
+    implements $MultiLineStringCopyWith<T, $Res> {
+  _$MultiLineStringCopyWithImpl(
+      MultiLineString<T> _value, $Res Function(MultiLineString<T>) _then)
+      : super(_value, (v) => _then(v as MultiLineString<T>));
+
   @override
   MultiLineString<T> get _value => super._value as MultiLineString<T>;
-  
+
   @override
   $Res call({
-    Object failedValue = freezed,
+    Object? failedValue = freezed,
   }) {
     return _then(MultiLineString<T>(
-      failedValue:
-      failedValue == freezed ? _value.failedValue : failedValue as String,
+      failedValue: failedValue == freezed
+          ? _value.failedValue
+          : failedValue // ignore: cast_nullable_to_non_nullable
+              as String,
     ));
   }
 }
 
 /// @nodoc
-class _$MultiLineString<T>
-  with DiagnosticableTreeMixin
-  implements MultiLineString<T> {
-  const _$MultiLineString({@required this.failedValue})
-    : assert(failedValue != null);
-  
+
+class _$MultiLineString<T> implements MultiLineString<T> {
+  const _$MultiLineString({required this.failedValue});
+
   @override
   final String failedValue;
-  
+
   @override
-  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+  String toString() {
     return 'ValueFailure<$T>.multiLineString(failedValue: $failedValue)';
-  }
-  
-  @override
-  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
-    super.debugFillProperties(properties);
-    properties..add(DiagnosticsProperty('type', 'ValueFailure<$T>.multiLineString'))..add(DiagnosticsProperty('failedValue', failedValue));
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-      (other is MultiLineString<T> &&
-        (identical(other.failedValue, failedValue) ||
-          const DeepCollectionEquality()
-            .equals(other.failedValue, failedValue)));
+        (other is MultiLineString<T> &&
+            (identical(other.failedValue, failedValue) ||
+                const DeepCollectionEquality()
+                    .equals(other.failedValue, failedValue)));
   }
-  
+
   @override
   int get hashCode =>
-    runtimeType.hashCode ^ const DeepCollectionEquality().hash(failedValue);
-  
+      runtimeType.hashCode ^ const DeepCollectionEquality().hash(failedValue);
+
+  @JsonKey(ignore: true)
   @override
   $MultiLineStringCopyWith<T, MultiLineString<T>> get copyWith =>
-    _$MultiLineStringCopyWithImpl<T, MultiLineString<T>>(this, _$identity);
-  
+      _$MultiLineStringCopyWithImpl<T, MultiLineString<T>>(this, _$identity);
+
   @override
   @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result nullInput(),
-    @required Result invalidDate(DateTime failedValue),
-    @required Result invalidEmail(String failedValue),
-    @required Result invalidPassword(String failedValue),
-    @required Result stringMismatch(String failedValue),
-    @required Result invalidName(String failedValue),
-    @required Result emptyString(String failedValue),
-    @required Result multiLineString(String failedValue),
-    @required Result stringExceedsLength(String failedValue, int maxLength),
-    @required Result integerOutOfBounds(int failedValue),
-    @required Result stringWithInvalidCharacters(String failedValue),
-    @required Result invalidCoordinate(double failedValue),
-    @required Result emptySet(T failedValue),
-    @required Result setExceedsLength(T failedValue, int maxLength),
+  TResult when<TResult extends Object?>({
+    required TResult Function() nullInput,
+    required TResult Function(DateTime failedValue) invalidDate,
+    required TResult Function(String failedValue) invalidEmail,
+    required TResult Function(String failedValue) invalidPassword,
+    required TResult Function(String failedValue) stringMismatch,
+    required TResult Function(String failedValue) invalidName,
+    required TResult Function(String failedValue) emptyString,
+    required TResult Function(String failedValue) multiLineString,
+    required TResult Function(String failedValue, int maxLength)
+        stringExceedsLength,
+    required TResult Function(int failedValue) integerOutOfBounds,
+    required TResult Function(String failedValue) stringWithInvalidCharacters,
+    required TResult Function(double failedValue) invalidCoordinate,
+    required TResult Function(T failedValue) emptySet,
+    required TResult Function(T failedValue) emptyList,
+    required TResult Function(T failedValue, int maxLength)
+        collectionExceedsLength,
   }) {
-    assert(nullInput != null);
-    assert(invalidDate != null);
-    assert(invalidEmail != null);
-    assert(invalidPassword != null);
-    assert(stringMismatch != null);
-    assert(invalidName != null);
-    assert(emptyString != null);
-    assert(multiLineString != null);
-    assert(stringExceedsLength != null);
-    assert(integerOutOfBounds != null);
-    assert(stringWithInvalidCharacters != null);
-    assert(invalidCoordinate != null);
-    assert(emptySet != null);
-    assert(setExceedsLength != null);
     return multiLineString(failedValue);
   }
 
   @override
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result nullInput(),
-    Result invalidDate(DateTime failedValue),
-    Result invalidEmail(String failedValue),
-    Result invalidPassword(String failedValue),
-    Result stringMismatch(String failedValue),
-    Result invalidName(String failedValue),
-    Result emptyString(String failedValue),
-    Result multiLineString(String failedValue),
-    Result stringExceedsLength(String failedValue, int maxLength),
-    Result integerOutOfBounds(int failedValue),
-    Result stringWithInvalidCharacters(String failedValue),
-    Result invalidCoordinate(double failedValue),
-    Result emptySet(T failedValue),
-    Result setExceedsLength(T failedValue, int maxLength),
-    @required Result orElse(),
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? nullInput,
+    TResult Function(DateTime failedValue)? invalidDate,
+    TResult Function(String failedValue)? invalidEmail,
+    TResult Function(String failedValue)? invalidPassword,
+    TResult Function(String failedValue)? stringMismatch,
+    TResult Function(String failedValue)? invalidName,
+    TResult Function(String failedValue)? emptyString,
+    TResult Function(String failedValue)? multiLineString,
+    TResult Function(String failedValue, int maxLength)? stringExceedsLength,
+    TResult Function(int failedValue)? integerOutOfBounds,
+    TResult Function(String failedValue)? stringWithInvalidCharacters,
+    TResult Function(double failedValue)? invalidCoordinate,
+    TResult Function(T failedValue)? emptySet,
+    TResult Function(T failedValue)? emptyList,
+    TResult Function(T failedValue, int maxLength)? collectionExceedsLength,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (multiLineString != null) {
       return multiLineString(failedValue);
     }
@@ -1679,59 +1521,49 @@ class _$MultiLineString<T>
 
   @override
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result nullInput(NullInput<T> value),
-    @required Result invalidDate(InvalidDate<T> value),
-    @required Result invalidEmail(InvalidEmail<T> value),
-    @required Result invalidPassword(InvalidPassword<T> value),
-    @required Result stringMismatch(StringMismatch<T> value),
-    @required Result invalidName(InvalidName<T> value),
-    @required Result emptyString(EmptyString<T> value),
-    @required Result multiLineString(MultiLineString<T> value),
-    @required Result stringExceedsLength(StringExceedsLength<T> value),
-    @required Result integerOutOfBounds(IntegerOutOfBounds<T> value),
-    @required Result stringWithInvalidCharacters(StringWithInvalidCharacters<T> value),
-    @required Result invalidCoordinate(InvalidCoordinates<T> value),
-    @required Result emptySet(EmptySet<T> value),
-    @required Result setExceedsLength(SetExceedsLength<T> value),
+  TResult map<TResult extends Object?>({
+    required TResult Function(NullInput<T> value) nullInput,
+    required TResult Function(InvalidDate<T> value) invalidDate,
+    required TResult Function(InvalidEmail<T> value) invalidEmail,
+    required TResult Function(InvalidPassword<T> value) invalidPassword,
+    required TResult Function(StringMismatch<T> value) stringMismatch,
+    required TResult Function(InvalidName<T> value) invalidName,
+    required TResult Function(EmptyString<T> value) emptyString,
+    required TResult Function(MultiLineString<T> value) multiLineString,
+    required TResult Function(StringExceedsLength<T> value) stringExceedsLength,
+    required TResult Function(IntegerOutOfBounds<T> value) integerOutOfBounds,
+    required TResult Function(StringWithInvalidCharacters<T> value)
+        stringWithInvalidCharacters,
+    required TResult Function(InvalidCoordinates<T> value) invalidCoordinate,
+    required TResult Function(EmptySet<T> value) emptySet,
+    required TResult Function(EmptyList<T> value) emptyList,
+    required TResult Function(CollectionExceedsLength<T> value)
+        collectionExceedsLength,
   }) {
-    assert(nullInput != null);
-    assert(invalidDate != null);
-    assert(invalidEmail != null);
-    assert(invalidPassword != null);
-    assert(stringMismatch != null);
-    assert(invalidName != null);
-    assert(emptyString != null);
-    assert(multiLineString != null);
-    assert(stringExceedsLength != null);
-    assert(integerOutOfBounds != null);
-    assert(stringWithInvalidCharacters != null);
-    assert(invalidCoordinate != null);
-    assert(emptySet != null);
-    assert(setExceedsLength != null);
     return multiLineString(this);
   }
 
   @override
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result nullInput(NullInput<T> value),
-    Result invalidDate(InvalidDate<T> value),
-    Result invalidEmail(InvalidEmail<T> value),
-    Result invalidPassword(InvalidPassword<T> value),
-    Result stringMismatch(StringMismatch<T> value),
-    Result invalidName(InvalidName<T> value),
-    Result emptyString(EmptyString<T> value),
-    Result multiLineString(MultiLineString<T> value),
-    Result stringExceedsLength(StringExceedsLength<T> value),
-    Result integerOutOfBounds(IntegerOutOfBounds<T> value),
-    Result stringWithInvalidCharacters(StringWithInvalidCharacters<T> value),
-    Result invalidCoordinate(InvalidCoordinates<T> value),
-    Result emptySet(EmptySet<T> value),
-    Result setExceedsLength(SetExceedsLength<T> value),
-    @required Result orElse(),
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(NullInput<T> value)? nullInput,
+    TResult Function(InvalidDate<T> value)? invalidDate,
+    TResult Function(InvalidEmail<T> value)? invalidEmail,
+    TResult Function(InvalidPassword<T> value)? invalidPassword,
+    TResult Function(StringMismatch<T> value)? stringMismatch,
+    TResult Function(InvalidName<T> value)? invalidName,
+    TResult Function(EmptyString<T> value)? emptyString,
+    TResult Function(MultiLineString<T> value)? multiLineString,
+    TResult Function(StringExceedsLength<T> value)? stringExceedsLength,
+    TResult Function(IntegerOutOfBounds<T> value)? integerOutOfBounds,
+    TResult Function(StringWithInvalidCharacters<T> value)?
+        stringWithInvalidCharacters,
+    TResult Function(InvalidCoordinates<T> value)? invalidCoordinate,
+    TResult Function(EmptySet<T> value)? emptySet,
+    TResult Function(EmptyList<T> value)? emptyList,
+    TResult Function(CollectionExceedsLength<T> value)? collectionExceedsLength,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (multiLineString != null) {
       return multiLineString(this);
     }
@@ -1740,147 +1572,136 @@ class _$MultiLineString<T>
 }
 
 abstract class MultiLineString<T> implements ValueFailure<T> {
-  const factory MultiLineString({@required String failedValue}) =
-  _$MultiLineString<T>;
-  
-  String get failedValue;
-  
-  $MultiLineStringCopyWith<T, MultiLineString<T>> get copyWith;
+  const factory MultiLineString({required String failedValue}) =
+      _$MultiLineString<T>;
+
+  String get failedValue => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  $MultiLineStringCopyWith<T, MultiLineString<T>> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $StringExceedsLengthCopyWith<T, $Res> {
   factory $StringExceedsLengthCopyWith(StringExceedsLength<T> value,
-    $Res Function(StringExceedsLength<T>) then) =
-  _$StringExceedsLengthCopyWithImpl<T, $Res>;
+          $Res Function(StringExceedsLength<T>) then) =
+      _$StringExceedsLengthCopyWithImpl<T, $Res>;
   $Res call({String failedValue, int maxLength});
 }
 
 /// @nodoc
-class _$StringExceedsLengthCopyWithImpl<T, $Res> extends _$ValueFailureCopyWithImpl<T, $Res>
-  implements $StringExceedsLengthCopyWith<T, $Res> {
+class _$StringExceedsLengthCopyWithImpl<T, $Res>
+    extends _$ValueFailureCopyWithImpl<T, $Res>
+    implements $StringExceedsLengthCopyWith<T, $Res> {
   _$StringExceedsLengthCopyWithImpl(StringExceedsLength<T> _value,
-    $Res Function(StringExceedsLength<T>) _then)
-    : super(_value, (v) => _then(v as StringExceedsLength<T>));
-  
+      $Res Function(StringExceedsLength<T>) _then)
+      : super(_value, (v) => _then(v as StringExceedsLength<T>));
+
   @override
   StringExceedsLength<T> get _value => super._value as StringExceedsLength<T>;
-  
+
   @override
   $Res call({
-    Object failedValue = freezed,
-    Object maxLength = freezed,
+    Object? failedValue = freezed,
+    Object? maxLength = freezed,
   }) {
     return _then(StringExceedsLength<T>(
-      failedValue:
-      failedValue == freezed ? _value.failedValue : failedValue as String,
-      maxLength: maxLength == freezed ? _value.maxLength : maxLength as int,
+      failedValue: failedValue == freezed
+          ? _value.failedValue
+          : failedValue // ignore: cast_nullable_to_non_nullable
+              as String,
+      maxLength: maxLength == freezed
+          ? _value.maxLength
+          : maxLength // ignore: cast_nullable_to_non_nullable
+              as int,
     ));
   }
 }
 
 /// @nodoc
-class _$StringExceedsLength<T>
-  with DiagnosticableTreeMixin
-  implements StringExceedsLength<T> {
-  const _$StringExceedsLength({@required this.failedValue, @required this.maxLength})
-    : assert(failedValue != null),
-      assert(maxLength != null);
-  
+
+class _$StringExceedsLength<T> implements StringExceedsLength<T> {
+  const _$StringExceedsLength(
+      {required this.failedValue, required this.maxLength});
+
   @override
   final String failedValue;
   @override
   final int maxLength;
-  
-  @override
-  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'ValueFailure<$T>.stringExceedsLength(failedValue: $failedValue, maxLength: $maxLength)';
-  }
 
   @override
-  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
-    super.debugFillProperties(properties);
-    properties..add(DiagnosticsProperty('type', 'ValueFailure<$T>.stringExceedsLength'))..add(DiagnosticsProperty('failedValue', failedValue))..add(DiagnosticsProperty('maxLength', maxLength));
+  String toString() {
+    return 'ValueFailure<$T>.stringExceedsLength(failedValue: $failedValue, maxLength: $maxLength)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-      (other is StringExceedsLength<T> &&
-        (identical(other.failedValue, failedValue) ||
-          const DeepCollectionEquality()
-            .equals(other.failedValue, failedValue)) &&
-        (identical(other.maxLength, maxLength) ||
-          const DeepCollectionEquality()
-            .equals(other.maxLength, maxLength)));
+        (other is StringExceedsLength<T> &&
+            (identical(other.failedValue, failedValue) ||
+                const DeepCollectionEquality()
+                    .equals(other.failedValue, failedValue)) &&
+            (identical(other.maxLength, maxLength) ||
+                const DeepCollectionEquality()
+                    .equals(other.maxLength, maxLength)));
   }
-  
+
   @override
   int get hashCode =>
-    runtimeType.hashCode ^
-    const DeepCollectionEquality().hash(failedValue) ^
-    const DeepCollectionEquality().hash(maxLength);
-  
+      runtimeType.hashCode ^
+      const DeepCollectionEquality().hash(failedValue) ^
+      const DeepCollectionEquality().hash(maxLength);
+
+  @JsonKey(ignore: true)
   @override
   $StringExceedsLengthCopyWith<T, StringExceedsLength<T>> get copyWith =>
-    _$StringExceedsLengthCopyWithImpl<T, StringExceedsLength<T>>(
-      this, _$identity);
-  
+      _$StringExceedsLengthCopyWithImpl<T, StringExceedsLength<T>>(
+          this, _$identity);
+
   @override
   @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result nullInput(),
-    @required Result invalidDate(DateTime failedValue),
-    @required Result invalidEmail(String failedValue),
-    @required Result invalidPassword(String failedValue),
-    @required Result stringMismatch(String failedValue),
-    @required Result invalidName(String failedValue),
-    @required Result emptyString(String failedValue),
-    @required Result multiLineString(String failedValue),
-    @required Result stringExceedsLength(String failedValue, int maxLength),
-    @required Result integerOutOfBounds(int failedValue),
-    @required Result stringWithInvalidCharacters(String failedValue),
-    @required Result invalidCoordinate(double failedValue),
-    @required Result emptySet(T failedValue),
-    @required Result setExceedsLength(T failedValue, int maxLength),
+  TResult when<TResult extends Object?>({
+    required TResult Function() nullInput,
+    required TResult Function(DateTime failedValue) invalidDate,
+    required TResult Function(String failedValue) invalidEmail,
+    required TResult Function(String failedValue) invalidPassword,
+    required TResult Function(String failedValue) stringMismatch,
+    required TResult Function(String failedValue) invalidName,
+    required TResult Function(String failedValue) emptyString,
+    required TResult Function(String failedValue) multiLineString,
+    required TResult Function(String failedValue, int maxLength)
+        stringExceedsLength,
+    required TResult Function(int failedValue) integerOutOfBounds,
+    required TResult Function(String failedValue) stringWithInvalidCharacters,
+    required TResult Function(double failedValue) invalidCoordinate,
+    required TResult Function(T failedValue) emptySet,
+    required TResult Function(T failedValue) emptyList,
+    required TResult Function(T failedValue, int maxLength)
+        collectionExceedsLength,
   }) {
-    assert(nullInput != null);
-    assert(invalidDate != null);
-    assert(invalidEmail != null);
-    assert(invalidPassword != null);
-    assert(stringMismatch != null);
-    assert(invalidName != null);
-    assert(emptyString != null);
-    assert(multiLineString != null);
-    assert(stringExceedsLength != null);
-    assert(integerOutOfBounds != null);
-    assert(stringWithInvalidCharacters != null);
-    assert(invalidCoordinate != null);
-    assert(emptySet != null);
-    assert(setExceedsLength != null);
     return stringExceedsLength(failedValue, maxLength);
   }
 
   @override
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result nullInput(),
-    Result invalidDate(DateTime failedValue),
-    Result invalidEmail(String failedValue),
-    Result invalidPassword(String failedValue),
-    Result stringMismatch(String failedValue),
-    Result invalidName(String failedValue),
-    Result emptyString(String failedValue),
-    Result multiLineString(String failedValue),
-    Result stringExceedsLength(String failedValue, int maxLength),
-    Result integerOutOfBounds(int failedValue),
-    Result stringWithInvalidCharacters(String failedValue),
-    Result invalidCoordinate(double failedValue),
-    Result emptySet(T failedValue),
-    Result setExceedsLength(T failedValue, int maxLength),
-    @required Result orElse(),
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? nullInput,
+    TResult Function(DateTime failedValue)? invalidDate,
+    TResult Function(String failedValue)? invalidEmail,
+    TResult Function(String failedValue)? invalidPassword,
+    TResult Function(String failedValue)? stringMismatch,
+    TResult Function(String failedValue)? invalidName,
+    TResult Function(String failedValue)? emptyString,
+    TResult Function(String failedValue)? multiLineString,
+    TResult Function(String failedValue, int maxLength)? stringExceedsLength,
+    TResult Function(int failedValue)? integerOutOfBounds,
+    TResult Function(String failedValue)? stringWithInvalidCharacters,
+    TResult Function(double failedValue)? invalidCoordinate,
+    TResult Function(T failedValue)? emptySet,
+    TResult Function(T failedValue)? emptyList,
+    TResult Function(T failedValue, int maxLength)? collectionExceedsLength,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (stringExceedsLength != null) {
       return stringExceedsLength(failedValue, maxLength);
     }
@@ -1889,59 +1710,49 @@ class _$StringExceedsLength<T>
 
   @override
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result nullInput(NullInput<T> value),
-    @required Result invalidDate(InvalidDate<T> value),
-    @required Result invalidEmail(InvalidEmail<T> value),
-    @required Result invalidPassword(InvalidPassword<T> value),
-    @required Result stringMismatch(StringMismatch<T> value),
-    @required Result invalidName(InvalidName<T> value),
-    @required Result emptyString(EmptyString<T> value),
-    @required Result multiLineString(MultiLineString<T> value),
-    @required Result stringExceedsLength(StringExceedsLength<T> value),
-    @required Result integerOutOfBounds(IntegerOutOfBounds<T> value),
-    @required Result stringWithInvalidCharacters(StringWithInvalidCharacters<T> value),
-    @required Result invalidCoordinate(InvalidCoordinates<T> value),
-    @required Result emptySet(EmptySet<T> value),
-    @required Result setExceedsLength(SetExceedsLength<T> value),
+  TResult map<TResult extends Object?>({
+    required TResult Function(NullInput<T> value) nullInput,
+    required TResult Function(InvalidDate<T> value) invalidDate,
+    required TResult Function(InvalidEmail<T> value) invalidEmail,
+    required TResult Function(InvalidPassword<T> value) invalidPassword,
+    required TResult Function(StringMismatch<T> value) stringMismatch,
+    required TResult Function(InvalidName<T> value) invalidName,
+    required TResult Function(EmptyString<T> value) emptyString,
+    required TResult Function(MultiLineString<T> value) multiLineString,
+    required TResult Function(StringExceedsLength<T> value) stringExceedsLength,
+    required TResult Function(IntegerOutOfBounds<T> value) integerOutOfBounds,
+    required TResult Function(StringWithInvalidCharacters<T> value)
+        stringWithInvalidCharacters,
+    required TResult Function(InvalidCoordinates<T> value) invalidCoordinate,
+    required TResult Function(EmptySet<T> value) emptySet,
+    required TResult Function(EmptyList<T> value) emptyList,
+    required TResult Function(CollectionExceedsLength<T> value)
+        collectionExceedsLength,
   }) {
-    assert(nullInput != null);
-    assert(invalidDate != null);
-    assert(invalidEmail != null);
-    assert(invalidPassword != null);
-    assert(stringMismatch != null);
-    assert(invalidName != null);
-    assert(emptyString != null);
-    assert(multiLineString != null);
-    assert(stringExceedsLength != null);
-    assert(integerOutOfBounds != null);
-    assert(stringWithInvalidCharacters != null);
-    assert(invalidCoordinate != null);
-    assert(emptySet != null);
-    assert(setExceedsLength != null);
     return stringExceedsLength(this);
   }
 
   @override
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result nullInput(NullInput<T> value),
-    Result invalidDate(InvalidDate<T> value),
-    Result invalidEmail(InvalidEmail<T> value),
-    Result invalidPassword(InvalidPassword<T> value),
-    Result stringMismatch(StringMismatch<T> value),
-    Result invalidName(InvalidName<T> value),
-    Result emptyString(EmptyString<T> value),
-    Result multiLineString(MultiLineString<T> value),
-    Result stringExceedsLength(StringExceedsLength<T> value),
-    Result integerOutOfBounds(IntegerOutOfBounds<T> value),
-    Result stringWithInvalidCharacters(StringWithInvalidCharacters<T> value),
-    Result invalidCoordinate(InvalidCoordinates<T> value),
-    Result emptySet(EmptySet<T> value),
-    Result setExceedsLength(SetExceedsLength<T> value),
-    @required Result orElse(),
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(NullInput<T> value)? nullInput,
+    TResult Function(InvalidDate<T> value)? invalidDate,
+    TResult Function(InvalidEmail<T> value)? invalidEmail,
+    TResult Function(InvalidPassword<T> value)? invalidPassword,
+    TResult Function(StringMismatch<T> value)? stringMismatch,
+    TResult Function(InvalidName<T> value)? invalidName,
+    TResult Function(EmptyString<T> value)? emptyString,
+    TResult Function(MultiLineString<T> value)? multiLineString,
+    TResult Function(StringExceedsLength<T> value)? stringExceedsLength,
+    TResult Function(IntegerOutOfBounds<T> value)? integerOutOfBounds,
+    TResult Function(StringWithInvalidCharacters<T> value)?
+        stringWithInvalidCharacters,
+    TResult Function(InvalidCoordinates<T> value)? invalidCoordinate,
+    TResult Function(EmptySet<T> value)? emptySet,
+    TResult Function(EmptyList<T> value)? emptyList,
+    TResult Function(CollectionExceedsLength<T> value)? collectionExceedsLength,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (stringExceedsLength != null) {
       return stringExceedsLength(this);
     }
@@ -1950,138 +1761,125 @@ class _$StringExceedsLength<T>
 }
 
 abstract class StringExceedsLength<T> implements ValueFailure<T> {
-  const factory StringExceedsLength({@required String failedValue,
-    @required int maxLength}) = _$StringExceedsLength<T>;
-  
-  String get failedValue;
-  
-  int get maxLength;
-  
-  $StringExceedsLengthCopyWith<T, StringExceedsLength<T>> get copyWith;
+  const factory StringExceedsLength(
+      {required String failedValue,
+      required int maxLength}) = _$StringExceedsLength<T>;
+
+  String get failedValue => throw _privateConstructorUsedError;
+  int get maxLength => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  $StringExceedsLengthCopyWith<T, StringExceedsLength<T>> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $IntegerOutOfBoundsCopyWith<T, $Res> {
   factory $IntegerOutOfBoundsCopyWith(IntegerOutOfBounds<T> value,
-    $Res Function(IntegerOutOfBounds<T>) then) =
-  _$IntegerOutOfBoundsCopyWithImpl<T, $Res>;
+          $Res Function(IntegerOutOfBounds<T>) then) =
+      _$IntegerOutOfBoundsCopyWithImpl<T, $Res>;
   $Res call({int failedValue});
 }
 
 /// @nodoc
-class _$IntegerOutOfBoundsCopyWithImpl<T, $Res> extends _$ValueFailureCopyWithImpl<T, $Res>
-  implements $IntegerOutOfBoundsCopyWith<T, $Res> {
-  _$IntegerOutOfBoundsCopyWithImpl(IntegerOutOfBounds<T> _value, $Res Function(IntegerOutOfBounds<T>) _then)
-    : super(_value, (v) => _then(v as IntegerOutOfBounds<T>));
-  
+class _$IntegerOutOfBoundsCopyWithImpl<T, $Res>
+    extends _$ValueFailureCopyWithImpl<T, $Res>
+    implements $IntegerOutOfBoundsCopyWith<T, $Res> {
+  _$IntegerOutOfBoundsCopyWithImpl(
+      IntegerOutOfBounds<T> _value, $Res Function(IntegerOutOfBounds<T>) _then)
+      : super(_value, (v) => _then(v as IntegerOutOfBounds<T>));
+
   @override
   IntegerOutOfBounds<T> get _value => super._value as IntegerOutOfBounds<T>;
-  
+
   @override
   $Res call({
-    Object failedValue = freezed,
+    Object? failedValue = freezed,
   }) {
     return _then(IntegerOutOfBounds<T>(
-      failedValue:
-      failedValue == freezed ? _value.failedValue : failedValue as int,
+      failedValue: failedValue == freezed
+          ? _value.failedValue
+          : failedValue // ignore: cast_nullable_to_non_nullable
+              as int,
     ));
   }
 }
 
 /// @nodoc
-class _$IntegerOutOfBounds<T>
-  with DiagnosticableTreeMixin
-  implements IntegerOutOfBounds<T> {
-  const _$IntegerOutOfBounds({@required this.failedValue})
-    : assert(failedValue != null);
-  
+
+class _$IntegerOutOfBounds<T> implements IntegerOutOfBounds<T> {
+  const _$IntegerOutOfBounds({required this.failedValue});
+
   @override
   final int failedValue;
-  
+
   @override
-  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+  String toString() {
     return 'ValueFailure<$T>.integerOutOfBounds(failedValue: $failedValue)';
-  }
-  
-  @override
-  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
-    super.debugFillProperties(properties);
-    properties..add(DiagnosticsProperty('type', 'ValueFailure<$T>.integerOutOfBounds'))..add(DiagnosticsProperty('failedValue', failedValue));
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-      (other is IntegerOutOfBounds<T> &&
-        (identical(other.failedValue, failedValue) ||
-          const DeepCollectionEquality()
-            .equals(other.failedValue, failedValue)));
+        (other is IntegerOutOfBounds<T> &&
+            (identical(other.failedValue, failedValue) ||
+                const DeepCollectionEquality()
+                    .equals(other.failedValue, failedValue)));
   }
-  
+
   @override
   int get hashCode =>
-    runtimeType.hashCode ^ const DeepCollectionEquality().hash(failedValue);
-  
+      runtimeType.hashCode ^ const DeepCollectionEquality().hash(failedValue);
+
+  @JsonKey(ignore: true)
   @override
   $IntegerOutOfBoundsCopyWith<T, IntegerOutOfBounds<T>> get copyWith =>
-    _$IntegerOutOfBoundsCopyWithImpl<T, IntegerOutOfBounds<T>>(
-      this, _$identity);
-  
+      _$IntegerOutOfBoundsCopyWithImpl<T, IntegerOutOfBounds<T>>(
+          this, _$identity);
+
   @override
   @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result nullInput(),
-    @required Result invalidDate(DateTime failedValue),
-    @required Result invalidEmail(String failedValue),
-    @required Result invalidPassword(String failedValue),
-    @required Result stringMismatch(String failedValue),
-    @required Result invalidName(String failedValue),
-    @required Result emptyString(String failedValue),
-    @required Result multiLineString(String failedValue),
-    @required Result stringExceedsLength(String failedValue, int maxLength),
-    @required Result integerOutOfBounds(int failedValue),
-    @required Result stringWithInvalidCharacters(String failedValue),
-    @required Result invalidCoordinate(double failedValue),
-    @required Result emptySet(T failedValue),
-    @required Result setExceedsLength(T failedValue, int maxLength),
+  TResult when<TResult extends Object?>({
+    required TResult Function() nullInput,
+    required TResult Function(DateTime failedValue) invalidDate,
+    required TResult Function(String failedValue) invalidEmail,
+    required TResult Function(String failedValue) invalidPassword,
+    required TResult Function(String failedValue) stringMismatch,
+    required TResult Function(String failedValue) invalidName,
+    required TResult Function(String failedValue) emptyString,
+    required TResult Function(String failedValue) multiLineString,
+    required TResult Function(String failedValue, int maxLength)
+        stringExceedsLength,
+    required TResult Function(int failedValue) integerOutOfBounds,
+    required TResult Function(String failedValue) stringWithInvalidCharacters,
+    required TResult Function(double failedValue) invalidCoordinate,
+    required TResult Function(T failedValue) emptySet,
+    required TResult Function(T failedValue) emptyList,
+    required TResult Function(T failedValue, int maxLength)
+        collectionExceedsLength,
   }) {
-    assert(nullInput != null);
-    assert(invalidDate != null);
-    assert(invalidEmail != null);
-    assert(invalidPassword != null);
-    assert(stringMismatch != null);
-    assert(invalidName != null);
-    assert(emptyString != null);
-    assert(multiLineString != null);
-    assert(stringExceedsLength != null);
-    assert(integerOutOfBounds != null);
-    assert(stringWithInvalidCharacters != null);
-    assert(invalidCoordinate != null);
-    assert(emptySet != null);
-    assert(setExceedsLength != null);
     return integerOutOfBounds(failedValue);
   }
 
   @override
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result nullInput(),
-    Result invalidDate(DateTime failedValue),
-    Result invalidEmail(String failedValue),
-    Result invalidPassword(String failedValue),
-    Result stringMismatch(String failedValue),
-    Result invalidName(String failedValue),
-    Result emptyString(String failedValue),
-    Result multiLineString(String failedValue),
-    Result stringExceedsLength(String failedValue, int maxLength),
-    Result integerOutOfBounds(int failedValue),
-    Result stringWithInvalidCharacters(String failedValue),
-    Result invalidCoordinate(double failedValue),
-    Result emptySet(T failedValue),
-    Result setExceedsLength(T failedValue, int maxLength),
-    @required Result orElse(),
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? nullInput,
+    TResult Function(DateTime failedValue)? invalidDate,
+    TResult Function(String failedValue)? invalidEmail,
+    TResult Function(String failedValue)? invalidPassword,
+    TResult Function(String failedValue)? stringMismatch,
+    TResult Function(String failedValue)? invalidName,
+    TResult Function(String failedValue)? emptyString,
+    TResult Function(String failedValue)? multiLineString,
+    TResult Function(String failedValue, int maxLength)? stringExceedsLength,
+    TResult Function(int failedValue)? integerOutOfBounds,
+    TResult Function(String failedValue)? stringWithInvalidCharacters,
+    TResult Function(double failedValue)? invalidCoordinate,
+    TResult Function(T failedValue)? emptySet,
+    TResult Function(T failedValue)? emptyList,
+    TResult Function(T failedValue, int maxLength)? collectionExceedsLength,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (integerOutOfBounds != null) {
       return integerOutOfBounds(failedValue);
     }
@@ -2090,59 +1888,49 @@ class _$IntegerOutOfBounds<T>
 
   @override
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result nullInput(NullInput<T> value),
-    @required Result invalidDate(InvalidDate<T> value),
-    @required Result invalidEmail(InvalidEmail<T> value),
-    @required Result invalidPassword(InvalidPassword<T> value),
-    @required Result stringMismatch(StringMismatch<T> value),
-    @required Result invalidName(InvalidName<T> value),
-    @required Result emptyString(EmptyString<T> value),
-    @required Result multiLineString(MultiLineString<T> value),
-    @required Result stringExceedsLength(StringExceedsLength<T> value),
-    @required Result integerOutOfBounds(IntegerOutOfBounds<T> value),
-    @required Result stringWithInvalidCharacters(StringWithInvalidCharacters<T> value),
-    @required Result invalidCoordinate(InvalidCoordinates<T> value),
-    @required Result emptySet(EmptySet<T> value),
-    @required Result setExceedsLength(SetExceedsLength<T> value),
+  TResult map<TResult extends Object?>({
+    required TResult Function(NullInput<T> value) nullInput,
+    required TResult Function(InvalidDate<T> value) invalidDate,
+    required TResult Function(InvalidEmail<T> value) invalidEmail,
+    required TResult Function(InvalidPassword<T> value) invalidPassword,
+    required TResult Function(StringMismatch<T> value) stringMismatch,
+    required TResult Function(InvalidName<T> value) invalidName,
+    required TResult Function(EmptyString<T> value) emptyString,
+    required TResult Function(MultiLineString<T> value) multiLineString,
+    required TResult Function(StringExceedsLength<T> value) stringExceedsLength,
+    required TResult Function(IntegerOutOfBounds<T> value) integerOutOfBounds,
+    required TResult Function(StringWithInvalidCharacters<T> value)
+        stringWithInvalidCharacters,
+    required TResult Function(InvalidCoordinates<T> value) invalidCoordinate,
+    required TResult Function(EmptySet<T> value) emptySet,
+    required TResult Function(EmptyList<T> value) emptyList,
+    required TResult Function(CollectionExceedsLength<T> value)
+        collectionExceedsLength,
   }) {
-    assert(nullInput != null);
-    assert(invalidDate != null);
-    assert(invalidEmail != null);
-    assert(invalidPassword != null);
-    assert(stringMismatch != null);
-    assert(invalidName != null);
-    assert(emptyString != null);
-    assert(multiLineString != null);
-    assert(stringExceedsLength != null);
-    assert(integerOutOfBounds != null);
-    assert(stringWithInvalidCharacters != null);
-    assert(invalidCoordinate != null);
-    assert(emptySet != null);
-    assert(setExceedsLength != null);
     return integerOutOfBounds(this);
   }
 
   @override
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result nullInput(NullInput<T> value),
-    Result invalidDate(InvalidDate<T> value),
-    Result invalidEmail(InvalidEmail<T> value),
-    Result invalidPassword(InvalidPassword<T> value),
-    Result stringMismatch(StringMismatch<T> value),
-    Result invalidName(InvalidName<T> value),
-    Result emptyString(EmptyString<T> value),
-    Result multiLineString(MultiLineString<T> value),
-    Result stringExceedsLength(StringExceedsLength<T> value),
-    Result integerOutOfBounds(IntegerOutOfBounds<T> value),
-    Result stringWithInvalidCharacters(StringWithInvalidCharacters<T> value),
-    Result invalidCoordinate(InvalidCoordinates<T> value),
-    Result emptySet(EmptySet<T> value),
-    Result setExceedsLength(SetExceedsLength<T> value),
-    @required Result orElse(),
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(NullInput<T> value)? nullInput,
+    TResult Function(InvalidDate<T> value)? invalidDate,
+    TResult Function(InvalidEmail<T> value)? invalidEmail,
+    TResult Function(InvalidPassword<T> value)? invalidPassword,
+    TResult Function(StringMismatch<T> value)? stringMismatch,
+    TResult Function(InvalidName<T> value)? invalidName,
+    TResult Function(EmptyString<T> value)? emptyString,
+    TResult Function(MultiLineString<T> value)? multiLineString,
+    TResult Function(StringExceedsLength<T> value)? stringExceedsLength,
+    TResult Function(IntegerOutOfBounds<T> value)? integerOutOfBounds,
+    TResult Function(StringWithInvalidCharacters<T> value)?
+        stringWithInvalidCharacters,
+    TResult Function(InvalidCoordinates<T> value)? invalidCoordinate,
+    TResult Function(EmptySet<T> value)? emptySet,
+    TResult Function(EmptyList<T> value)? emptyList,
+    TResult Function(CollectionExceedsLength<T> value)? collectionExceedsLength,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (integerOutOfBounds != null) {
       return integerOutOfBounds(this);
     }
@@ -2151,141 +1939,127 @@ class _$IntegerOutOfBounds<T>
 }
 
 abstract class IntegerOutOfBounds<T> implements ValueFailure<T> {
-  const factory IntegerOutOfBounds({@required int failedValue}) =
-  _$IntegerOutOfBounds<T>;
-  
-  int get failedValue;
-  
-  $IntegerOutOfBoundsCopyWith<T, IntegerOutOfBounds<T>> get copyWith;
+  const factory IntegerOutOfBounds({required int failedValue}) =
+      _$IntegerOutOfBounds<T>;
+
+  int get failedValue => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  $IntegerOutOfBoundsCopyWith<T, IntegerOutOfBounds<T>> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $StringWithInvalidCharactersCopyWith<T, $Res> {
-  factory $StringWithInvalidCharactersCopyWith(StringWithInvalidCharacters<T> value,
-    $Res Function(StringWithInvalidCharacters<T>) then) =
-  _$StringWithInvalidCharactersCopyWithImpl<T, $Res>;
-  
+  factory $StringWithInvalidCharactersCopyWith(
+          StringWithInvalidCharacters<T> value,
+          $Res Function(StringWithInvalidCharacters<T>) then) =
+      _$StringWithInvalidCharactersCopyWithImpl<T, $Res>;
   $Res call({String failedValue});
 }
 
 /// @nodoc
-class _$StringWithInvalidCharactersCopyWithImpl<T, $Res> extends _$ValueFailureCopyWithImpl<T, $Res>
-  implements $StringWithInvalidCharactersCopyWith<T, $Res> {
-  _$StringWithInvalidCharactersCopyWithImpl(StringWithInvalidCharacters<T> _value,
-    $Res Function(StringWithInvalidCharacters<T>) _then)
-    : super(_value, (v) => _then(v as StringWithInvalidCharacters<T>));
-  
+class _$StringWithInvalidCharactersCopyWithImpl<T, $Res>
+    extends _$ValueFailureCopyWithImpl<T, $Res>
+    implements $StringWithInvalidCharactersCopyWith<T, $Res> {
+  _$StringWithInvalidCharactersCopyWithImpl(
+      StringWithInvalidCharacters<T> _value,
+      $Res Function(StringWithInvalidCharacters<T>) _then)
+      : super(_value, (v) => _then(v as StringWithInvalidCharacters<T>));
+
   @override
   StringWithInvalidCharacters<T> get _value =>
-    super._value as StringWithInvalidCharacters<T>;
-  
+      super._value as StringWithInvalidCharacters<T>;
+
   @override
   $Res call({
-    Object failedValue = freezed,
+    Object? failedValue = freezed,
   }) {
     return _then(StringWithInvalidCharacters<T>(
-      failedValue:
-      failedValue == freezed ? _value.failedValue : failedValue as String,
+      failedValue: failedValue == freezed
+          ? _value.failedValue
+          : failedValue // ignore: cast_nullable_to_non_nullable
+              as String,
     ));
   }
 }
 
 /// @nodoc
+
 class _$StringWithInvalidCharacters<T>
-  with DiagnosticableTreeMixin
-  implements StringWithInvalidCharacters<T> {
-  const _$StringWithInvalidCharacters({@required this.failedValue})
-    : assert(failedValue != null);
-  
+    implements StringWithInvalidCharacters<T> {
+  const _$StringWithInvalidCharacters({required this.failedValue});
+
   @override
   final String failedValue;
-  
+
   @override
-  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+  String toString() {
     return 'ValueFailure<$T>.stringWithInvalidCharacters(failedValue: $failedValue)';
-  }
-  
-  @override
-  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
-    super.debugFillProperties(properties);
-    properties..add(DiagnosticsProperty(
-      'type', 'ValueFailure<$T>.stringWithInvalidCharacters'))..add(DiagnosticsProperty('failedValue', failedValue));
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-      (other is StringWithInvalidCharacters<T> &&
-        (identical(other.failedValue, failedValue) ||
-          const DeepCollectionEquality()
-            .equals(other.failedValue, failedValue)));
+        (other is StringWithInvalidCharacters<T> &&
+            (identical(other.failedValue, failedValue) ||
+                const DeepCollectionEquality()
+                    .equals(other.failedValue, failedValue)));
   }
-  
+
   @override
   int get hashCode =>
-    runtimeType.hashCode ^ const DeepCollectionEquality().hash(failedValue);
-  
+      runtimeType.hashCode ^ const DeepCollectionEquality().hash(failedValue);
+
+  @JsonKey(ignore: true)
   @override
   $StringWithInvalidCharactersCopyWith<T, StringWithInvalidCharacters<T>>
-  get copyWith =>
-    _$StringWithInvalidCharactersCopyWithImpl<T,
-      StringWithInvalidCharacters<T>>(this, _$identity);
-  
+      get copyWith => _$StringWithInvalidCharactersCopyWithImpl<T,
+          StringWithInvalidCharacters<T>>(this, _$identity);
+
   @override
   @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result nullInput(),
-    @required Result invalidDate(DateTime failedValue),
-    @required Result invalidEmail(String failedValue),
-    @required Result invalidPassword(String failedValue),
-    @required Result stringMismatch(String failedValue),
-    @required Result invalidName(String failedValue),
-    @required Result emptyString(String failedValue),
-    @required Result multiLineString(String failedValue),
-    @required Result stringExceedsLength(String failedValue, int maxLength),
-    @required Result integerOutOfBounds(int failedValue),
-    @required Result stringWithInvalidCharacters(String failedValue),
-    @required Result invalidCoordinate(double failedValue),
-    @required Result emptySet(T failedValue),
-    @required Result setExceedsLength(T failedValue, int maxLength),
+  TResult when<TResult extends Object?>({
+    required TResult Function() nullInput,
+    required TResult Function(DateTime failedValue) invalidDate,
+    required TResult Function(String failedValue) invalidEmail,
+    required TResult Function(String failedValue) invalidPassword,
+    required TResult Function(String failedValue) stringMismatch,
+    required TResult Function(String failedValue) invalidName,
+    required TResult Function(String failedValue) emptyString,
+    required TResult Function(String failedValue) multiLineString,
+    required TResult Function(String failedValue, int maxLength)
+        stringExceedsLength,
+    required TResult Function(int failedValue) integerOutOfBounds,
+    required TResult Function(String failedValue) stringWithInvalidCharacters,
+    required TResult Function(double failedValue) invalidCoordinate,
+    required TResult Function(T failedValue) emptySet,
+    required TResult Function(T failedValue) emptyList,
+    required TResult Function(T failedValue, int maxLength)
+        collectionExceedsLength,
   }) {
-    assert(nullInput != null);
-    assert(invalidDate != null);
-    assert(invalidEmail != null);
-    assert(invalidPassword != null);
-    assert(stringMismatch != null);
-    assert(invalidName != null);
-    assert(emptyString != null);
-    assert(multiLineString != null);
-    assert(stringExceedsLength != null);
-    assert(integerOutOfBounds != null);
-    assert(stringWithInvalidCharacters != null);
-    assert(invalidCoordinate != null);
-    assert(emptySet != null);
-    assert(setExceedsLength != null);
     return stringWithInvalidCharacters(failedValue);
   }
 
   @override
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result nullInput(),
-    Result invalidDate(DateTime failedValue),
-    Result invalidEmail(String failedValue),
-    Result invalidPassword(String failedValue),
-    Result stringMismatch(String failedValue),
-    Result invalidName(String failedValue),
-    Result emptyString(String failedValue),
-    Result multiLineString(String failedValue),
-    Result stringExceedsLength(String failedValue, int maxLength),
-    Result integerOutOfBounds(int failedValue),
-    Result stringWithInvalidCharacters(String failedValue),
-    Result invalidCoordinate(double failedValue),
-    Result emptySet(T failedValue),
-    Result setExceedsLength(T failedValue, int maxLength),
-    @required Result orElse(),
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? nullInput,
+    TResult Function(DateTime failedValue)? invalidDate,
+    TResult Function(String failedValue)? invalidEmail,
+    TResult Function(String failedValue)? invalidPassword,
+    TResult Function(String failedValue)? stringMismatch,
+    TResult Function(String failedValue)? invalidName,
+    TResult Function(String failedValue)? emptyString,
+    TResult Function(String failedValue)? multiLineString,
+    TResult Function(String failedValue, int maxLength)? stringExceedsLength,
+    TResult Function(int failedValue)? integerOutOfBounds,
+    TResult Function(String failedValue)? stringWithInvalidCharacters,
+    TResult Function(double failedValue)? invalidCoordinate,
+    TResult Function(T failedValue)? emptySet,
+    TResult Function(T failedValue)? emptyList,
+    TResult Function(T failedValue, int maxLength)? collectionExceedsLength,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (stringWithInvalidCharacters != null) {
       return stringWithInvalidCharacters(failedValue);
     }
@@ -2294,59 +2068,49 @@ class _$StringWithInvalidCharacters<T>
 
   @override
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result nullInput(NullInput<T> value),
-    @required Result invalidDate(InvalidDate<T> value),
-    @required Result invalidEmail(InvalidEmail<T> value),
-    @required Result invalidPassword(InvalidPassword<T> value),
-    @required Result stringMismatch(StringMismatch<T> value),
-    @required Result invalidName(InvalidName<T> value),
-    @required Result emptyString(EmptyString<T> value),
-    @required Result multiLineString(MultiLineString<T> value),
-    @required Result stringExceedsLength(StringExceedsLength<T> value),
-    @required Result integerOutOfBounds(IntegerOutOfBounds<T> value),
-    @required Result stringWithInvalidCharacters(StringWithInvalidCharacters<T> value),
-    @required Result invalidCoordinate(InvalidCoordinates<T> value),
-    @required Result emptySet(EmptySet<T> value),
-    @required Result setExceedsLength(SetExceedsLength<T> value),
+  TResult map<TResult extends Object?>({
+    required TResult Function(NullInput<T> value) nullInput,
+    required TResult Function(InvalidDate<T> value) invalidDate,
+    required TResult Function(InvalidEmail<T> value) invalidEmail,
+    required TResult Function(InvalidPassword<T> value) invalidPassword,
+    required TResult Function(StringMismatch<T> value) stringMismatch,
+    required TResult Function(InvalidName<T> value) invalidName,
+    required TResult Function(EmptyString<T> value) emptyString,
+    required TResult Function(MultiLineString<T> value) multiLineString,
+    required TResult Function(StringExceedsLength<T> value) stringExceedsLength,
+    required TResult Function(IntegerOutOfBounds<T> value) integerOutOfBounds,
+    required TResult Function(StringWithInvalidCharacters<T> value)
+        stringWithInvalidCharacters,
+    required TResult Function(InvalidCoordinates<T> value) invalidCoordinate,
+    required TResult Function(EmptySet<T> value) emptySet,
+    required TResult Function(EmptyList<T> value) emptyList,
+    required TResult Function(CollectionExceedsLength<T> value)
+        collectionExceedsLength,
   }) {
-    assert(nullInput != null);
-    assert(invalidDate != null);
-    assert(invalidEmail != null);
-    assert(invalidPassword != null);
-    assert(stringMismatch != null);
-    assert(invalidName != null);
-    assert(emptyString != null);
-    assert(multiLineString != null);
-    assert(stringExceedsLength != null);
-    assert(integerOutOfBounds != null);
-    assert(stringWithInvalidCharacters != null);
-    assert(invalidCoordinate != null);
-    assert(emptySet != null);
-    assert(setExceedsLength != null);
     return stringWithInvalidCharacters(this);
   }
 
   @override
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result nullInput(NullInput<T> value),
-    Result invalidDate(InvalidDate<T> value),
-    Result invalidEmail(InvalidEmail<T> value),
-    Result invalidPassword(InvalidPassword<T> value),
-    Result stringMismatch(StringMismatch<T> value),
-    Result invalidName(InvalidName<T> value),
-    Result emptyString(EmptyString<T> value),
-    Result multiLineString(MultiLineString<T> value),
-    Result stringExceedsLength(StringExceedsLength<T> value),
-    Result integerOutOfBounds(IntegerOutOfBounds<T> value),
-    Result stringWithInvalidCharacters(StringWithInvalidCharacters<T> value),
-    Result invalidCoordinate(InvalidCoordinates<T> value),
-    Result emptySet(EmptySet<T> value),
-    Result setExceedsLength(SetExceedsLength<T> value),
-    @required Result orElse(),
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(NullInput<T> value)? nullInput,
+    TResult Function(InvalidDate<T> value)? invalidDate,
+    TResult Function(InvalidEmail<T> value)? invalidEmail,
+    TResult Function(InvalidPassword<T> value)? invalidPassword,
+    TResult Function(StringMismatch<T> value)? stringMismatch,
+    TResult Function(InvalidName<T> value)? invalidName,
+    TResult Function(EmptyString<T> value)? emptyString,
+    TResult Function(MultiLineString<T> value)? multiLineString,
+    TResult Function(StringExceedsLength<T> value)? stringExceedsLength,
+    TResult Function(IntegerOutOfBounds<T> value)? integerOutOfBounds,
+    TResult Function(StringWithInvalidCharacters<T> value)?
+        stringWithInvalidCharacters,
+    TResult Function(InvalidCoordinates<T> value)? invalidCoordinate,
+    TResult Function(EmptySet<T> value)? emptySet,
+    TResult Function(EmptyList<T> value)? emptyList,
+    TResult Function(CollectionExceedsLength<T> value)? collectionExceedsLength,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (stringWithInvalidCharacters != null) {
       return stringWithInvalidCharacters(this);
     }
@@ -2355,137 +2119,123 @@ class _$StringWithInvalidCharacters<T>
 }
 
 abstract class StringWithInvalidCharacters<T> implements ValueFailure<T> {
-  const factory StringWithInvalidCharacters({@required String failedValue}) =
-  _$StringWithInvalidCharacters<T>;
-  
-  String get failedValue;
-  
+  const factory StringWithInvalidCharacters({required String failedValue}) =
+      _$StringWithInvalidCharacters<T>;
+
+  String get failedValue => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
   $StringWithInvalidCharactersCopyWith<T, StringWithInvalidCharacters<T>>
-  get copyWith;
+      get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $InvalidCoordinatesCopyWith<T, $Res> {
   factory $InvalidCoordinatesCopyWith(InvalidCoordinates<T> value,
-    $Res Function(InvalidCoordinates<T>) then) =
-  _$InvalidCoordinatesCopyWithImpl<T, $Res>;
+          $Res Function(InvalidCoordinates<T>) then) =
+      _$InvalidCoordinatesCopyWithImpl<T, $Res>;
   $Res call({double failedValue});
 }
 
 /// @nodoc
-class _$InvalidCoordinatesCopyWithImpl<T, $Res> extends _$ValueFailureCopyWithImpl<T, $Res>
-  implements $InvalidCoordinatesCopyWith<T, $Res> {
-  _$InvalidCoordinatesCopyWithImpl(InvalidCoordinates<T> _value, $Res Function(InvalidCoordinates<T>) _then)
-    : super(_value, (v) => _then(v as InvalidCoordinates<T>));
-  
+class _$InvalidCoordinatesCopyWithImpl<T, $Res>
+    extends _$ValueFailureCopyWithImpl<T, $Res>
+    implements $InvalidCoordinatesCopyWith<T, $Res> {
+  _$InvalidCoordinatesCopyWithImpl(
+      InvalidCoordinates<T> _value, $Res Function(InvalidCoordinates<T>) _then)
+      : super(_value, (v) => _then(v as InvalidCoordinates<T>));
+
   @override
   InvalidCoordinates<T> get _value => super._value as InvalidCoordinates<T>;
-  
+
   @override
   $Res call({
-    Object failedValue = freezed,
+    Object? failedValue = freezed,
   }) {
     return _then(InvalidCoordinates<T>(
-      failedValue:
-      failedValue == freezed ? _value.failedValue : failedValue as double,
+      failedValue: failedValue == freezed
+          ? _value.failedValue
+          : failedValue // ignore: cast_nullable_to_non_nullable
+              as double,
     ));
   }
 }
 
 /// @nodoc
-class _$InvalidCoordinates<T>
-  with DiagnosticableTreeMixin
-  implements InvalidCoordinates<T> {
-  const _$InvalidCoordinates({@required this.failedValue})
-    : assert(failedValue != null);
-  
+
+class _$InvalidCoordinates<T> implements InvalidCoordinates<T> {
+  const _$InvalidCoordinates({required this.failedValue});
+
   @override
   final double failedValue;
-  
+
   @override
-  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+  String toString() {
     return 'ValueFailure<$T>.invalidCoordinate(failedValue: $failedValue)';
-  }
-  
-  @override
-  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
-    super.debugFillProperties(properties);
-    properties..add(DiagnosticsProperty('type', 'ValueFailure<$T>.invalidCoordinate'))..add(DiagnosticsProperty('failedValue', failedValue));
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-      (other is InvalidCoordinates<T> &&
-        (identical(other.failedValue, failedValue) ||
-          const DeepCollectionEquality()
-            .equals(other.failedValue, failedValue)));
+        (other is InvalidCoordinates<T> &&
+            (identical(other.failedValue, failedValue) ||
+                const DeepCollectionEquality()
+                    .equals(other.failedValue, failedValue)));
   }
-  
+
   @override
   int get hashCode =>
-    runtimeType.hashCode ^ const DeepCollectionEquality().hash(failedValue);
-  
+      runtimeType.hashCode ^ const DeepCollectionEquality().hash(failedValue);
+
+  @JsonKey(ignore: true)
   @override
   $InvalidCoordinatesCopyWith<T, InvalidCoordinates<T>> get copyWith =>
-    _$InvalidCoordinatesCopyWithImpl<T, InvalidCoordinates<T>>(
-      this, _$identity);
-  
+      _$InvalidCoordinatesCopyWithImpl<T, InvalidCoordinates<T>>(
+          this, _$identity);
+
   @override
   @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result nullInput(),
-    @required Result invalidDate(DateTime failedValue),
-    @required Result invalidEmail(String failedValue),
-    @required Result invalidPassword(String failedValue),
-    @required Result stringMismatch(String failedValue),
-    @required Result invalidName(String failedValue),
-    @required Result emptyString(String failedValue),
-    @required Result multiLineString(String failedValue),
-    @required Result stringExceedsLength(String failedValue, int maxLength),
-    @required Result integerOutOfBounds(int failedValue),
-    @required Result stringWithInvalidCharacters(String failedValue),
-    @required Result invalidCoordinate(double failedValue),
-    @required Result emptySet(T failedValue),
-    @required Result setExceedsLength(T failedValue, int maxLength),
+  TResult when<TResult extends Object?>({
+    required TResult Function() nullInput,
+    required TResult Function(DateTime failedValue) invalidDate,
+    required TResult Function(String failedValue) invalidEmail,
+    required TResult Function(String failedValue) invalidPassword,
+    required TResult Function(String failedValue) stringMismatch,
+    required TResult Function(String failedValue) invalidName,
+    required TResult Function(String failedValue) emptyString,
+    required TResult Function(String failedValue) multiLineString,
+    required TResult Function(String failedValue, int maxLength)
+        stringExceedsLength,
+    required TResult Function(int failedValue) integerOutOfBounds,
+    required TResult Function(String failedValue) stringWithInvalidCharacters,
+    required TResult Function(double failedValue) invalidCoordinate,
+    required TResult Function(T failedValue) emptySet,
+    required TResult Function(T failedValue) emptyList,
+    required TResult Function(T failedValue, int maxLength)
+        collectionExceedsLength,
   }) {
-    assert(nullInput != null);
-    assert(invalidDate != null);
-    assert(invalidEmail != null);
-    assert(invalidPassword != null);
-    assert(stringMismatch != null);
-    assert(invalidName != null);
-    assert(emptyString != null);
-    assert(multiLineString != null);
-    assert(stringExceedsLength != null);
-    assert(integerOutOfBounds != null);
-    assert(stringWithInvalidCharacters != null);
-    assert(invalidCoordinate != null);
-    assert(emptySet != null);
-    assert(setExceedsLength != null);
     return invalidCoordinate(failedValue);
   }
 
   @override
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result nullInput(),
-    Result invalidDate(DateTime failedValue),
-    Result invalidEmail(String failedValue),
-    Result invalidPassword(String failedValue),
-    Result stringMismatch(String failedValue),
-    Result invalidName(String failedValue),
-    Result emptyString(String failedValue),
-    Result multiLineString(String failedValue),
-    Result stringExceedsLength(String failedValue, int maxLength),
-    Result integerOutOfBounds(int failedValue),
-    Result stringWithInvalidCharacters(String failedValue),
-    Result invalidCoordinate(double failedValue),
-    Result emptySet(T failedValue),
-    Result setExceedsLength(T failedValue, int maxLength),
-    @required Result orElse(),
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? nullInput,
+    TResult Function(DateTime failedValue)? invalidDate,
+    TResult Function(String failedValue)? invalidEmail,
+    TResult Function(String failedValue)? invalidPassword,
+    TResult Function(String failedValue)? stringMismatch,
+    TResult Function(String failedValue)? invalidName,
+    TResult Function(String failedValue)? emptyString,
+    TResult Function(String failedValue)? multiLineString,
+    TResult Function(String failedValue, int maxLength)? stringExceedsLength,
+    TResult Function(int failedValue)? integerOutOfBounds,
+    TResult Function(String failedValue)? stringWithInvalidCharacters,
+    TResult Function(double failedValue)? invalidCoordinate,
+    TResult Function(T failedValue)? emptySet,
+    TResult Function(T failedValue)? emptyList,
+    TResult Function(T failedValue, int maxLength)? collectionExceedsLength,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (invalidCoordinate != null) {
       return invalidCoordinate(failedValue);
     }
@@ -2494,59 +2244,49 @@ class _$InvalidCoordinates<T>
 
   @override
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result nullInput(NullInput<T> value),
-    @required Result invalidDate(InvalidDate<T> value),
-    @required Result invalidEmail(InvalidEmail<T> value),
-    @required Result invalidPassword(InvalidPassword<T> value),
-    @required Result stringMismatch(StringMismatch<T> value),
-    @required Result invalidName(InvalidName<T> value),
-    @required Result emptyString(EmptyString<T> value),
-    @required Result multiLineString(MultiLineString<T> value),
-    @required Result stringExceedsLength(StringExceedsLength<T> value),
-    @required Result integerOutOfBounds(IntegerOutOfBounds<T> value),
-    @required Result stringWithInvalidCharacters(StringWithInvalidCharacters<T> value),
-    @required Result invalidCoordinate(InvalidCoordinates<T> value),
-    @required Result emptySet(EmptySet<T> value),
-    @required Result setExceedsLength(SetExceedsLength<T> value),
+  TResult map<TResult extends Object?>({
+    required TResult Function(NullInput<T> value) nullInput,
+    required TResult Function(InvalidDate<T> value) invalidDate,
+    required TResult Function(InvalidEmail<T> value) invalidEmail,
+    required TResult Function(InvalidPassword<T> value) invalidPassword,
+    required TResult Function(StringMismatch<T> value) stringMismatch,
+    required TResult Function(InvalidName<T> value) invalidName,
+    required TResult Function(EmptyString<T> value) emptyString,
+    required TResult Function(MultiLineString<T> value) multiLineString,
+    required TResult Function(StringExceedsLength<T> value) stringExceedsLength,
+    required TResult Function(IntegerOutOfBounds<T> value) integerOutOfBounds,
+    required TResult Function(StringWithInvalidCharacters<T> value)
+        stringWithInvalidCharacters,
+    required TResult Function(InvalidCoordinates<T> value) invalidCoordinate,
+    required TResult Function(EmptySet<T> value) emptySet,
+    required TResult Function(EmptyList<T> value) emptyList,
+    required TResult Function(CollectionExceedsLength<T> value)
+        collectionExceedsLength,
   }) {
-    assert(nullInput != null);
-    assert(invalidDate != null);
-    assert(invalidEmail != null);
-    assert(invalidPassword != null);
-    assert(stringMismatch != null);
-    assert(invalidName != null);
-    assert(emptyString != null);
-    assert(multiLineString != null);
-    assert(stringExceedsLength != null);
-    assert(integerOutOfBounds != null);
-    assert(stringWithInvalidCharacters != null);
-    assert(invalidCoordinate != null);
-    assert(emptySet != null);
-    assert(setExceedsLength != null);
     return invalidCoordinate(this);
   }
 
   @override
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result nullInput(NullInput<T> value),
-    Result invalidDate(InvalidDate<T> value),
-    Result invalidEmail(InvalidEmail<T> value),
-    Result invalidPassword(InvalidPassword<T> value),
-    Result stringMismatch(StringMismatch<T> value),
-    Result invalidName(InvalidName<T> value),
-    Result emptyString(EmptyString<T> value),
-    Result multiLineString(MultiLineString<T> value),
-    Result stringExceedsLength(StringExceedsLength<T> value),
-    Result integerOutOfBounds(IntegerOutOfBounds<T> value),
-    Result stringWithInvalidCharacters(StringWithInvalidCharacters<T> value),
-    Result invalidCoordinate(InvalidCoordinates<T> value),
-    Result emptySet(EmptySet<T> value),
-    Result setExceedsLength(SetExceedsLength<T> value),
-    @required Result orElse(),
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(NullInput<T> value)? nullInput,
+    TResult Function(InvalidDate<T> value)? invalidDate,
+    TResult Function(InvalidEmail<T> value)? invalidEmail,
+    TResult Function(InvalidPassword<T> value)? invalidPassword,
+    TResult Function(StringMismatch<T> value)? stringMismatch,
+    TResult Function(InvalidName<T> value)? invalidName,
+    TResult Function(EmptyString<T> value)? emptyString,
+    TResult Function(MultiLineString<T> value)? multiLineString,
+    TResult Function(StringExceedsLength<T> value)? stringExceedsLength,
+    TResult Function(IntegerOutOfBounds<T> value)? integerOutOfBounds,
+    TResult Function(StringWithInvalidCharacters<T> value)?
+        stringWithInvalidCharacters,
+    TResult Function(InvalidCoordinates<T> value)? invalidCoordinate,
+    TResult Function(EmptySet<T> value)? emptySet,
+    TResult Function(EmptyList<T> value)? emptyList,
+    TResult Function(CollectionExceedsLength<T> value)? collectionExceedsLength,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (invalidCoordinate != null) {
       return invalidCoordinate(this);
     }
@@ -2555,132 +2295,121 @@ class _$InvalidCoordinates<T>
 }
 
 abstract class InvalidCoordinates<T> implements ValueFailure<T> {
-  const factory InvalidCoordinates({@required double failedValue}) =
-  _$InvalidCoordinates<T>;
-  
-  double get failedValue;
-  
-  $InvalidCoordinatesCopyWith<T, InvalidCoordinates<T>> get copyWith;
+  const factory InvalidCoordinates({required double failedValue}) =
+      _$InvalidCoordinates<T>;
+
+  double get failedValue => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  $InvalidCoordinatesCopyWith<T, InvalidCoordinates<T>> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $EmptySetCopyWith<T, $Res> {
-  factory $EmptySetCopyWith(EmptySet<T> value, $Res Function(EmptySet<T>) then) =
-  _$EmptySetCopyWithImpl<T, $Res>;
-  
+  factory $EmptySetCopyWith(
+          EmptySet<T> value, $Res Function(EmptySet<T>) then) =
+      _$EmptySetCopyWithImpl<T, $Res>;
   $Res call({T failedValue});
 }
 
 /// @nodoc
-class _$EmptySetCopyWithImpl<T, $Res> extends _$ValueFailureCopyWithImpl<T, $Res>
-  implements $EmptySetCopyWith<T, $Res> {
+class _$EmptySetCopyWithImpl<T, $Res>
+    extends _$ValueFailureCopyWithImpl<T, $Res>
+    implements $EmptySetCopyWith<T, $Res> {
   _$EmptySetCopyWithImpl(EmptySet<T> _value, $Res Function(EmptySet<T>) _then)
-    : super(_value, (v) => _then(v as EmptySet<T>));
-  
+      : super(_value, (v) => _then(v as EmptySet<T>));
+
   @override
   EmptySet<T> get _value => super._value as EmptySet<T>;
-  
+
   @override
   $Res call({
-    Object failedValue = freezed,
+    Object? failedValue = freezed,
   }) {
     return _then(EmptySet<T>(
-      failedValue:
-      failedValue == freezed ? _value.failedValue : failedValue as T,
+      failedValue: failedValue == freezed
+          ? _value.failedValue
+          : failedValue // ignore: cast_nullable_to_non_nullable
+              as T,
     ));
   }
 }
 
 /// @nodoc
-class _$EmptySet<T> with DiagnosticableTreeMixin implements EmptySet<T> {
-  const _$EmptySet({@required this.failedValue}) : assert(failedValue != null);
+
+class _$EmptySet<T> implements EmptySet<T> {
+  const _$EmptySet({required this.failedValue});
 
   @override
   final T failedValue;
 
   @override
-  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+  String toString() {
     return 'ValueFailure<$T>.emptySet(failedValue: $failedValue)';
-  }
-
-  @override
-  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
-    super.debugFillProperties(properties);
-    properties..add(DiagnosticsProperty('type', 'ValueFailure<$T>.emptySet'))..add(DiagnosticsProperty('failedValue', failedValue));
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-      (other is EmptySet<T> &&
-        (identical(other.failedValue, failedValue) ||
-          const DeepCollectionEquality()
-            .equals(other.failedValue, failedValue)));
+        (other is EmptySet<T> &&
+            (identical(other.failedValue, failedValue) ||
+                const DeepCollectionEquality()
+                    .equals(other.failedValue, failedValue)));
   }
 
   @override
   int get hashCode =>
-    runtimeType.hashCode ^ const DeepCollectionEquality().hash(failedValue);
+      runtimeType.hashCode ^ const DeepCollectionEquality().hash(failedValue);
 
+  @JsonKey(ignore: true)
   @override
   $EmptySetCopyWith<T, EmptySet<T>> get copyWith =>
-    _$EmptySetCopyWithImpl<T, EmptySet<T>>(this, _$identity);
+      _$EmptySetCopyWithImpl<T, EmptySet<T>>(this, _$identity);
 
   @override
   @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result nullInput(),
-    @required Result invalidDate(DateTime failedValue),
-    @required Result invalidEmail(String failedValue),
-    @required Result invalidPassword(String failedValue),
-    @required Result stringMismatch(String failedValue),
-    @required Result invalidName(String failedValue),
-    @required Result emptyString(String failedValue),
-    @required Result multiLineString(String failedValue),
-    @required Result stringExceedsLength(String failedValue, int maxLength),
-    @required Result integerOutOfBounds(int failedValue),
-    @required Result stringWithInvalidCharacters(String failedValue),
-    @required Result invalidCoordinate(double failedValue),
-    @required Result emptySet(T failedValue),
-    @required Result setExceedsLength(T failedValue, int maxLength),
+  TResult when<TResult extends Object?>({
+    required TResult Function() nullInput,
+    required TResult Function(DateTime failedValue) invalidDate,
+    required TResult Function(String failedValue) invalidEmail,
+    required TResult Function(String failedValue) invalidPassword,
+    required TResult Function(String failedValue) stringMismatch,
+    required TResult Function(String failedValue) invalidName,
+    required TResult Function(String failedValue) emptyString,
+    required TResult Function(String failedValue) multiLineString,
+    required TResult Function(String failedValue, int maxLength)
+        stringExceedsLength,
+    required TResult Function(int failedValue) integerOutOfBounds,
+    required TResult Function(String failedValue) stringWithInvalidCharacters,
+    required TResult Function(double failedValue) invalidCoordinate,
+    required TResult Function(T failedValue) emptySet,
+    required TResult Function(T failedValue) emptyList,
+    required TResult Function(T failedValue, int maxLength)
+        collectionExceedsLength,
   }) {
-    assert(nullInput != null);
-    assert(invalidDate != null);
-    assert(invalidEmail != null);
-    assert(invalidPassword != null);
-    assert(stringMismatch != null);
-    assert(invalidName != null);
-    assert(emptyString != null);
-    assert(multiLineString != null);
-    assert(stringExceedsLength != null);
-    assert(integerOutOfBounds != null);
-    assert(stringWithInvalidCharacters != null);
-    assert(invalidCoordinate != null);
-    assert(emptySet != null);
-    assert(setExceedsLength != null);
     return emptySet(failedValue);
   }
 
   @override
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result nullInput(),
-    Result invalidDate(DateTime failedValue),
-    Result invalidEmail(String failedValue),
-    Result invalidPassword(String failedValue),
-    Result stringMismatch(String failedValue),
-    Result invalidName(String failedValue),
-    Result emptyString(String failedValue),
-    Result multiLineString(String failedValue),
-    Result stringExceedsLength(String failedValue, int maxLength),
-    Result integerOutOfBounds(int failedValue),
-    Result stringWithInvalidCharacters(String failedValue),
-    Result invalidCoordinate(double failedValue),
-    Result emptySet(T failedValue),
-    Result setExceedsLength(T failedValue, int maxLength),
-    @required Result orElse(),
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? nullInput,
+    TResult Function(DateTime failedValue)? invalidDate,
+    TResult Function(String failedValue)? invalidEmail,
+    TResult Function(String failedValue)? invalidPassword,
+    TResult Function(String failedValue)? stringMismatch,
+    TResult Function(String failedValue)? invalidName,
+    TResult Function(String failedValue)? emptyString,
+    TResult Function(String failedValue)? multiLineString,
+    TResult Function(String failedValue, int maxLength)? stringExceedsLength,
+    TResult Function(int failedValue)? integerOutOfBounds,
+    TResult Function(String failedValue)? stringWithInvalidCharacters,
+    TResult Function(double failedValue)? invalidCoordinate,
+    TResult Function(T failedValue)? emptySet,
+    TResult Function(T failedValue)? emptyList,
+    TResult Function(T failedValue, int maxLength)? collectionExceedsLength,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (emptySet != null) {
       return emptySet(failedValue);
     }
@@ -2689,59 +2418,49 @@ class _$EmptySet<T> with DiagnosticableTreeMixin implements EmptySet<T> {
 
   @override
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result nullInput(NullInput<T> value),
-    @required Result invalidDate(InvalidDate<T> value),
-    @required Result invalidEmail(InvalidEmail<T> value),
-    @required Result invalidPassword(InvalidPassword<T> value),
-    @required Result stringMismatch(StringMismatch<T> value),
-    @required Result invalidName(InvalidName<T> value),
-    @required Result emptyString(EmptyString<T> value),
-    @required Result multiLineString(MultiLineString<T> value),
-    @required Result stringExceedsLength(StringExceedsLength<T> value),
-    @required Result integerOutOfBounds(IntegerOutOfBounds<T> value),
-    @required Result stringWithInvalidCharacters(StringWithInvalidCharacters<T> value),
-    @required Result invalidCoordinate(InvalidCoordinates<T> value),
-    @required Result emptySet(EmptySet<T> value),
-    @required Result setExceedsLength(SetExceedsLength<T> value),
+  TResult map<TResult extends Object?>({
+    required TResult Function(NullInput<T> value) nullInput,
+    required TResult Function(InvalidDate<T> value) invalidDate,
+    required TResult Function(InvalidEmail<T> value) invalidEmail,
+    required TResult Function(InvalidPassword<T> value) invalidPassword,
+    required TResult Function(StringMismatch<T> value) stringMismatch,
+    required TResult Function(InvalidName<T> value) invalidName,
+    required TResult Function(EmptyString<T> value) emptyString,
+    required TResult Function(MultiLineString<T> value) multiLineString,
+    required TResult Function(StringExceedsLength<T> value) stringExceedsLength,
+    required TResult Function(IntegerOutOfBounds<T> value) integerOutOfBounds,
+    required TResult Function(StringWithInvalidCharacters<T> value)
+        stringWithInvalidCharacters,
+    required TResult Function(InvalidCoordinates<T> value) invalidCoordinate,
+    required TResult Function(EmptySet<T> value) emptySet,
+    required TResult Function(EmptyList<T> value) emptyList,
+    required TResult Function(CollectionExceedsLength<T> value)
+        collectionExceedsLength,
   }) {
-    assert(nullInput != null);
-    assert(invalidDate != null);
-    assert(invalidEmail != null);
-    assert(invalidPassword != null);
-    assert(stringMismatch != null);
-    assert(invalidName != null);
-    assert(emptyString != null);
-    assert(multiLineString != null);
-    assert(stringExceedsLength != null);
-    assert(integerOutOfBounds != null);
-    assert(stringWithInvalidCharacters != null);
-    assert(invalidCoordinate != null);
-    assert(emptySet != null);
-    assert(setExceedsLength != null);
     return emptySet(this);
   }
 
   @override
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result nullInput(NullInput<T> value),
-    Result invalidDate(InvalidDate<T> value),
-    Result invalidEmail(InvalidEmail<T> value),
-    Result invalidPassword(InvalidPassword<T> value),
-    Result stringMismatch(StringMismatch<T> value),
-    Result invalidName(InvalidName<T> value),
-    Result emptyString(EmptyString<T> value),
-    Result multiLineString(MultiLineString<T> value),
-    Result stringExceedsLength(StringExceedsLength<T> value),
-    Result integerOutOfBounds(IntegerOutOfBounds<T> value),
-    Result stringWithInvalidCharacters(StringWithInvalidCharacters<T> value),
-    Result invalidCoordinate(InvalidCoordinates<T> value),
-    Result emptySet(EmptySet<T> value),
-    Result setExceedsLength(SetExceedsLength<T> value),
-    @required Result orElse(),
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(NullInput<T> value)? nullInput,
+    TResult Function(InvalidDate<T> value)? invalidDate,
+    TResult Function(InvalidEmail<T> value)? invalidEmail,
+    TResult Function(InvalidPassword<T> value)? invalidPassword,
+    TResult Function(StringMismatch<T> value)? stringMismatch,
+    TResult Function(InvalidName<T> value)? invalidName,
+    TResult Function(EmptyString<T> value)? emptyString,
+    TResult Function(MultiLineString<T> value)? multiLineString,
+    TResult Function(StringExceedsLength<T> value)? stringExceedsLength,
+    TResult Function(IntegerOutOfBounds<T> value)? integerOutOfBounds,
+    TResult Function(StringWithInvalidCharacters<T> value)?
+        stringWithInvalidCharacters,
+    TResult Function(InvalidCoordinates<T> value)? invalidCoordinate,
+    TResult Function(EmptySet<T> value)? emptySet,
+    TResult Function(EmptyList<T> value)? emptyList,
+    TResult Function(CollectionExceedsLength<T> value)? collectionExceedsLength,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (emptySet != null) {
       return emptySet(this);
     }
@@ -2750,218 +2469,377 @@ class _$EmptySet<T> with DiagnosticableTreeMixin implements EmptySet<T> {
 }
 
 abstract class EmptySet<T> implements ValueFailure<T> {
-  const factory EmptySet({@required T failedValue}) = _$EmptySet<T>;
+  const factory EmptySet({required T failedValue}) = _$EmptySet<T>;
 
-  T get failedValue;
-  $EmptySetCopyWith<T, EmptySet<T>> get copyWith;
+  T get failedValue => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  $EmptySetCopyWith<T, EmptySet<T>> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $SetExceedsLengthCopyWith<T, $Res> {
-  factory $SetExceedsLengthCopyWith(SetExceedsLength<T> value, $Res Function(SetExceedsLength<T>) then) =
-  _$SetExceedsLengthCopyWithImpl<T, $Res>;
-  
-  $Res call({T failedValue, int maxLength});
+abstract class $EmptyListCopyWith<T, $Res> {
+  factory $EmptyListCopyWith(
+          EmptyList<T> value, $Res Function(EmptyList<T>) then) =
+      _$EmptyListCopyWithImpl<T, $Res>;
+  $Res call({T failedValue});
 }
 
 /// @nodoc
-class _$SetExceedsLengthCopyWithImpl<T, $Res> extends _$ValueFailureCopyWithImpl<T, $Res>
-  implements $SetExceedsLengthCopyWith<T, $Res> {
-  _$SetExceedsLengthCopyWithImpl(SetExceedsLength<T> _value, $Res Function(SetExceedsLength<T>) _then)
-    : super(_value, (v) => _then(v as SetExceedsLength<T>));
-  
+class _$EmptyListCopyWithImpl<T, $Res>
+    extends _$ValueFailureCopyWithImpl<T, $Res>
+    implements $EmptyListCopyWith<T, $Res> {
+  _$EmptyListCopyWithImpl(
+      EmptyList<T> _value, $Res Function(EmptyList<T>) _then)
+      : super(_value, (v) => _then(v as EmptyList<T>));
+
   @override
-  SetExceedsLength<T> get _value => super._value as SetExceedsLength<T>;
-  
+  EmptyList<T> get _value => super._value as EmptyList<T>;
+
   @override
   $Res call({
-    Object failedValue = freezed,
-    Object maxLength = freezed,
+    Object? failedValue = freezed,
   }) {
-    return _then(SetExceedsLength<T>(
-      failedValue:
-      failedValue == freezed ? _value.failedValue : failedValue as T,
-      maxLength: maxLength == freezed ? _value.maxLength : maxLength as int,
+    return _then(EmptyList<T>(
+      failedValue: failedValue == freezed
+          ? _value.failedValue
+          : failedValue // ignore: cast_nullable_to_non_nullable
+              as T,
     ));
   }
 }
 
 /// @nodoc
-class _$SetExceedsLength<T>
-  with DiagnosticableTreeMixin
-  implements SetExceedsLength<T> {
-  const _$SetExceedsLength({@required this.failedValue, @required this.maxLength})
-    : assert(failedValue != null),
-      assert(maxLength != null);
-  
-  @override
-  final T failedValue;
-  @override
-  final int maxLength;
-  
-  @override
-  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'ValueFailure<$T>.setExceedsLength(failedValue: $failedValue, maxLength: $maxLength)';
-  }
+
+class _$EmptyList<T> implements EmptyList<T> {
+  const _$EmptyList({required this.failedValue});
 
   @override
-  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
-    super.debugFillProperties(properties);
-    properties..add(DiagnosticsProperty('type', 'ValueFailure<$T>.setExceedsLength'))..add(DiagnosticsProperty('failedValue', failedValue))..add(DiagnosticsProperty('maxLength', maxLength));
+  final T failedValue;
+
+  @override
+  String toString() {
+    return 'ValueFailure<$T>.emptyList(failedValue: $failedValue)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-      (other is SetExceedsLength<T> &&
-        (identical(other.failedValue, failedValue) ||
-          const DeepCollectionEquality()
-            .equals(other.failedValue, failedValue)) &&
-        (identical(other.maxLength, maxLength) ||
-          const DeepCollectionEquality()
-            .equals(other.maxLength, maxLength)));
+        (other is EmptyList<T> &&
+            (identical(other.failedValue, failedValue) ||
+                const DeepCollectionEquality()
+                    .equals(other.failedValue, failedValue)));
   }
-  
+
   @override
   int get hashCode =>
-    runtimeType.hashCode ^
-    const DeepCollectionEquality().hash(failedValue) ^
-    const DeepCollectionEquality().hash(maxLength);
-  
+      runtimeType.hashCode ^ const DeepCollectionEquality().hash(failedValue);
+
+  @JsonKey(ignore: true)
   @override
-  $SetExceedsLengthCopyWith<T, SetExceedsLength<T>> get copyWith =>
-    _$SetExceedsLengthCopyWithImpl<T, SetExceedsLength<T>>(this, _$identity);
-  
+  $EmptyListCopyWith<T, EmptyList<T>> get copyWith =>
+      _$EmptyListCopyWithImpl<T, EmptyList<T>>(this, _$identity);
+
   @override
   @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result nullInput(),
-    @required Result invalidDate(DateTime failedValue),
-    @required Result invalidEmail(String failedValue),
-    @required Result invalidPassword(String failedValue),
-    @required Result stringMismatch(String failedValue),
-    @required Result invalidName(String failedValue),
-    @required Result emptyString(String failedValue),
-    @required Result multiLineString(String failedValue),
-    @required Result stringExceedsLength(String failedValue, int maxLength),
-    @required Result integerOutOfBounds(int failedValue),
-    @required Result stringWithInvalidCharacters(String failedValue),
-    @required Result invalidCoordinate(double failedValue),
-    @required Result emptySet(T failedValue),
-    @required Result setExceedsLength(T failedValue, int maxLength),
+  TResult when<TResult extends Object?>({
+    required TResult Function() nullInput,
+    required TResult Function(DateTime failedValue) invalidDate,
+    required TResult Function(String failedValue) invalidEmail,
+    required TResult Function(String failedValue) invalidPassword,
+    required TResult Function(String failedValue) stringMismatch,
+    required TResult Function(String failedValue) invalidName,
+    required TResult Function(String failedValue) emptyString,
+    required TResult Function(String failedValue) multiLineString,
+    required TResult Function(String failedValue, int maxLength)
+        stringExceedsLength,
+    required TResult Function(int failedValue) integerOutOfBounds,
+    required TResult Function(String failedValue) stringWithInvalidCharacters,
+    required TResult Function(double failedValue) invalidCoordinate,
+    required TResult Function(T failedValue) emptySet,
+    required TResult Function(T failedValue) emptyList,
+    required TResult Function(T failedValue, int maxLength)
+        collectionExceedsLength,
   }) {
-    assert(nullInput != null);
-    assert(invalidDate != null);
-    assert(invalidEmail != null);
-    assert(invalidPassword != null);
-    assert(stringMismatch != null);
-    assert(invalidName != null);
-    assert(emptyString != null);
-    assert(multiLineString != null);
-    assert(stringExceedsLength != null);
-    assert(integerOutOfBounds != null);
-    assert(stringWithInvalidCharacters != null);
-    assert(invalidCoordinate != null);
-    assert(emptySet != null);
-    assert(setExceedsLength != null);
-    return setExceedsLength(failedValue, maxLength);
+    return emptyList(failedValue);
   }
 
   @override
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result nullInput(),
-    Result invalidDate(DateTime failedValue),
-    Result invalidEmail(String failedValue),
-    Result invalidPassword(String failedValue),
-    Result stringMismatch(String failedValue),
-    Result invalidName(String failedValue),
-    Result emptyString(String failedValue),
-    Result multiLineString(String failedValue),
-    Result stringExceedsLength(String failedValue, int maxLength),
-    Result integerOutOfBounds(int failedValue),
-    Result stringWithInvalidCharacters(String failedValue),
-    Result invalidCoordinate(double failedValue),
-    Result emptySet(T failedValue),
-    Result setExceedsLength(T failedValue, int maxLength),
-    @required Result orElse(),
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? nullInput,
+    TResult Function(DateTime failedValue)? invalidDate,
+    TResult Function(String failedValue)? invalidEmail,
+    TResult Function(String failedValue)? invalidPassword,
+    TResult Function(String failedValue)? stringMismatch,
+    TResult Function(String failedValue)? invalidName,
+    TResult Function(String failedValue)? emptyString,
+    TResult Function(String failedValue)? multiLineString,
+    TResult Function(String failedValue, int maxLength)? stringExceedsLength,
+    TResult Function(int failedValue)? integerOutOfBounds,
+    TResult Function(String failedValue)? stringWithInvalidCharacters,
+    TResult Function(double failedValue)? invalidCoordinate,
+    TResult Function(T failedValue)? emptySet,
+    TResult Function(T failedValue)? emptyList,
+    TResult Function(T failedValue, int maxLength)? collectionExceedsLength,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
-    if (setExceedsLength != null) {
-      return setExceedsLength(failedValue, maxLength);
+    if (emptyList != null) {
+      return emptyList(failedValue);
     }
     return orElse();
   }
 
   @override
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result nullInput(NullInput<T> value),
-    @required Result invalidDate(InvalidDate<T> value),
-    @required Result invalidEmail(InvalidEmail<T> value),
-    @required Result invalidPassword(InvalidPassword<T> value),
-    @required Result stringMismatch(StringMismatch<T> value),
-    @required Result invalidName(InvalidName<T> value),
-    @required Result emptyString(EmptyString<T> value),
-    @required Result multiLineString(MultiLineString<T> value),
-    @required Result stringExceedsLength(StringExceedsLength<T> value),
-    @required Result integerOutOfBounds(IntegerOutOfBounds<T> value),
-    @required Result stringWithInvalidCharacters(StringWithInvalidCharacters<T> value),
-    @required Result invalidCoordinate(InvalidCoordinates<T> value),
-    @required Result emptySet(EmptySet<T> value),
-    @required Result setExceedsLength(SetExceedsLength<T> value),
+  TResult map<TResult extends Object?>({
+    required TResult Function(NullInput<T> value) nullInput,
+    required TResult Function(InvalidDate<T> value) invalidDate,
+    required TResult Function(InvalidEmail<T> value) invalidEmail,
+    required TResult Function(InvalidPassword<T> value) invalidPassword,
+    required TResult Function(StringMismatch<T> value) stringMismatch,
+    required TResult Function(InvalidName<T> value) invalidName,
+    required TResult Function(EmptyString<T> value) emptyString,
+    required TResult Function(MultiLineString<T> value) multiLineString,
+    required TResult Function(StringExceedsLength<T> value) stringExceedsLength,
+    required TResult Function(IntegerOutOfBounds<T> value) integerOutOfBounds,
+    required TResult Function(StringWithInvalidCharacters<T> value)
+        stringWithInvalidCharacters,
+    required TResult Function(InvalidCoordinates<T> value) invalidCoordinate,
+    required TResult Function(EmptySet<T> value) emptySet,
+    required TResult Function(EmptyList<T> value) emptyList,
+    required TResult Function(CollectionExceedsLength<T> value)
+        collectionExceedsLength,
   }) {
-    assert(nullInput != null);
-    assert(invalidDate != null);
-    assert(invalidEmail != null);
-    assert(invalidPassword != null);
-    assert(stringMismatch != null);
-    assert(invalidName != null);
-    assert(emptyString != null);
-    assert(multiLineString != null);
-    assert(stringExceedsLength != null);
-    assert(integerOutOfBounds != null);
-    assert(stringWithInvalidCharacters != null);
-    assert(invalidCoordinate != null);
-    assert(emptySet != null);
-    assert(setExceedsLength != null);
-    return setExceedsLength(this);
+    return emptyList(this);
   }
 
   @override
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result nullInput(NullInput<T> value),
-    Result invalidDate(InvalidDate<T> value),
-    Result invalidEmail(InvalidEmail<T> value),
-    Result invalidPassword(InvalidPassword<T> value),
-    Result stringMismatch(StringMismatch<T> value),
-    Result invalidName(InvalidName<T> value),
-    Result emptyString(EmptyString<T> value),
-    Result multiLineString(MultiLineString<T> value),
-    Result stringExceedsLength(StringExceedsLength<T> value),
-    Result integerOutOfBounds(IntegerOutOfBounds<T> value),
-    Result stringWithInvalidCharacters(StringWithInvalidCharacters<T> value),
-    Result invalidCoordinate(InvalidCoordinates<T> value),
-    Result emptySet(EmptySet<T> value),
-    Result setExceedsLength(SetExceedsLength<T> value),
-    @required Result orElse(),
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(NullInput<T> value)? nullInput,
+    TResult Function(InvalidDate<T> value)? invalidDate,
+    TResult Function(InvalidEmail<T> value)? invalidEmail,
+    TResult Function(InvalidPassword<T> value)? invalidPassword,
+    TResult Function(StringMismatch<T> value)? stringMismatch,
+    TResult Function(InvalidName<T> value)? invalidName,
+    TResult Function(EmptyString<T> value)? emptyString,
+    TResult Function(MultiLineString<T> value)? multiLineString,
+    TResult Function(StringExceedsLength<T> value)? stringExceedsLength,
+    TResult Function(IntegerOutOfBounds<T> value)? integerOutOfBounds,
+    TResult Function(StringWithInvalidCharacters<T> value)?
+        stringWithInvalidCharacters,
+    TResult Function(InvalidCoordinates<T> value)? invalidCoordinate,
+    TResult Function(EmptySet<T> value)? emptySet,
+    TResult Function(EmptyList<T> value)? emptyList,
+    TResult Function(CollectionExceedsLength<T> value)? collectionExceedsLength,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
-    if (setExceedsLength != null) {
-      return setExceedsLength(this);
+    if (emptyList != null) {
+      return emptyList(this);
     }
     return orElse();
   }
 }
 
-abstract class SetExceedsLength<T> implements ValueFailure<T> {
-  const factory SetExceedsLength({@required T failedValue,
-    @required int maxLength}) = _$SetExceedsLength<T>;
-  
-  T get failedValue;
-  
-  int get maxLength;
-  
-  $SetExceedsLengthCopyWith<T, SetExceedsLength<T>> get copyWith;
+abstract class EmptyList<T> implements ValueFailure<T> {
+  const factory EmptyList({required T failedValue}) = _$EmptyList<T>;
+
+  T get failedValue => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  $EmptyListCopyWith<T, EmptyList<T>> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $CollectionExceedsLengthCopyWith<T, $Res> {
+  factory $CollectionExceedsLengthCopyWith(CollectionExceedsLength<T> value,
+          $Res Function(CollectionExceedsLength<T>) then) =
+      _$CollectionExceedsLengthCopyWithImpl<T, $Res>;
+  $Res call({T failedValue, int maxLength});
+}
+
+/// @nodoc
+class _$CollectionExceedsLengthCopyWithImpl<T, $Res>
+    extends _$ValueFailureCopyWithImpl<T, $Res>
+    implements $CollectionExceedsLengthCopyWith<T, $Res> {
+  _$CollectionExceedsLengthCopyWithImpl(CollectionExceedsLength<T> _value,
+      $Res Function(CollectionExceedsLength<T>) _then)
+      : super(_value, (v) => _then(v as CollectionExceedsLength<T>));
+
+  @override
+  CollectionExceedsLength<T> get _value =>
+      super._value as CollectionExceedsLength<T>;
+
+  @override
+  $Res call({
+    Object? failedValue = freezed,
+    Object? maxLength = freezed,
+  }) {
+    return _then(CollectionExceedsLength<T>(
+      failedValue: failedValue == freezed
+          ? _value.failedValue
+          : failedValue // ignore: cast_nullable_to_non_nullable
+              as T,
+      maxLength: maxLength == freezed
+          ? _value.maxLength
+          : maxLength // ignore: cast_nullable_to_non_nullable
+              as int,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$CollectionExceedsLength<T> implements CollectionExceedsLength<T> {
+  const _$CollectionExceedsLength(
+      {required this.failedValue, required this.maxLength});
+
+  @override
+  final T failedValue;
+  @override
+  final int maxLength;
+
+  @override
+  String toString() {
+    return 'ValueFailure<$T>.collectionExceedsLength(failedValue: $failedValue, maxLength: $maxLength)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other is CollectionExceedsLength<T> &&
+            (identical(other.failedValue, failedValue) ||
+                const DeepCollectionEquality()
+                    .equals(other.failedValue, failedValue)) &&
+            (identical(other.maxLength, maxLength) ||
+                const DeepCollectionEquality()
+                    .equals(other.maxLength, maxLength)));
+  }
+
+  @override
+  int get hashCode =>
+      runtimeType.hashCode ^
+      const DeepCollectionEquality().hash(failedValue) ^
+      const DeepCollectionEquality().hash(maxLength);
+
+  @JsonKey(ignore: true)
+  @override
+  $CollectionExceedsLengthCopyWith<T, CollectionExceedsLength<T>>
+      get copyWith =>
+          _$CollectionExceedsLengthCopyWithImpl<T, CollectionExceedsLength<T>>(
+              this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() nullInput,
+    required TResult Function(DateTime failedValue) invalidDate,
+    required TResult Function(String failedValue) invalidEmail,
+    required TResult Function(String failedValue) invalidPassword,
+    required TResult Function(String failedValue) stringMismatch,
+    required TResult Function(String failedValue) invalidName,
+    required TResult Function(String failedValue) emptyString,
+    required TResult Function(String failedValue) multiLineString,
+    required TResult Function(String failedValue, int maxLength)
+        stringExceedsLength,
+    required TResult Function(int failedValue) integerOutOfBounds,
+    required TResult Function(String failedValue) stringWithInvalidCharacters,
+    required TResult Function(double failedValue) invalidCoordinate,
+    required TResult Function(T failedValue) emptySet,
+    required TResult Function(T failedValue) emptyList,
+    required TResult Function(T failedValue, int maxLength)
+        collectionExceedsLength,
+  }) {
+    return collectionExceedsLength(failedValue, maxLength);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? nullInput,
+    TResult Function(DateTime failedValue)? invalidDate,
+    TResult Function(String failedValue)? invalidEmail,
+    TResult Function(String failedValue)? invalidPassword,
+    TResult Function(String failedValue)? stringMismatch,
+    TResult Function(String failedValue)? invalidName,
+    TResult Function(String failedValue)? emptyString,
+    TResult Function(String failedValue)? multiLineString,
+    TResult Function(String failedValue, int maxLength)? stringExceedsLength,
+    TResult Function(int failedValue)? integerOutOfBounds,
+    TResult Function(String failedValue)? stringWithInvalidCharacters,
+    TResult Function(double failedValue)? invalidCoordinate,
+    TResult Function(T failedValue)? emptySet,
+    TResult Function(T failedValue)? emptyList,
+    TResult Function(T failedValue, int maxLength)? collectionExceedsLength,
+    required TResult orElse(),
+  }) {
+    if (collectionExceedsLength != null) {
+      return collectionExceedsLength(failedValue, maxLength);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(NullInput<T> value) nullInput,
+    required TResult Function(InvalidDate<T> value) invalidDate,
+    required TResult Function(InvalidEmail<T> value) invalidEmail,
+    required TResult Function(InvalidPassword<T> value) invalidPassword,
+    required TResult Function(StringMismatch<T> value) stringMismatch,
+    required TResult Function(InvalidName<T> value) invalidName,
+    required TResult Function(EmptyString<T> value) emptyString,
+    required TResult Function(MultiLineString<T> value) multiLineString,
+    required TResult Function(StringExceedsLength<T> value) stringExceedsLength,
+    required TResult Function(IntegerOutOfBounds<T> value) integerOutOfBounds,
+    required TResult Function(StringWithInvalidCharacters<T> value)
+        stringWithInvalidCharacters,
+    required TResult Function(InvalidCoordinates<T> value) invalidCoordinate,
+    required TResult Function(EmptySet<T> value) emptySet,
+    required TResult Function(EmptyList<T> value) emptyList,
+    required TResult Function(CollectionExceedsLength<T> value)
+        collectionExceedsLength,
+  }) {
+    return collectionExceedsLength(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(NullInput<T> value)? nullInput,
+    TResult Function(InvalidDate<T> value)? invalidDate,
+    TResult Function(InvalidEmail<T> value)? invalidEmail,
+    TResult Function(InvalidPassword<T> value)? invalidPassword,
+    TResult Function(StringMismatch<T> value)? stringMismatch,
+    TResult Function(InvalidName<T> value)? invalidName,
+    TResult Function(EmptyString<T> value)? emptyString,
+    TResult Function(MultiLineString<T> value)? multiLineString,
+    TResult Function(StringExceedsLength<T> value)? stringExceedsLength,
+    TResult Function(IntegerOutOfBounds<T> value)? integerOutOfBounds,
+    TResult Function(StringWithInvalidCharacters<T> value)?
+        stringWithInvalidCharacters,
+    TResult Function(InvalidCoordinates<T> value)? invalidCoordinate,
+    TResult Function(EmptySet<T> value)? emptySet,
+    TResult Function(EmptyList<T> value)? emptyList,
+    TResult Function(CollectionExceedsLength<T> value)? collectionExceedsLength,
+    required TResult orElse(),
+  }) {
+    if (collectionExceedsLength != null) {
+      return collectionExceedsLength(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class CollectionExceedsLength<T> implements ValueFailure<T> {
+  const factory CollectionExceedsLength(
+      {required T failedValue,
+      required int maxLength}) = _$CollectionExceedsLength<T>;
+
+  T get failedValue => throw _privateConstructorUsedError;
+  int get maxLength => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  $CollectionExceedsLengthCopyWith<T, CollectionExceedsLength<T>>
+      get copyWith => throw _privateConstructorUsedError;
 }

@@ -1,10 +1,14 @@
 part of 'experience_like_actor_bloc.dart';
 
 @freezed
-abstract class ExperienceLikeActorEvent with _$ExperienceLikeActorEvent {
-  const factory ExperienceLikeActorEvent.initialized(Experience experience) = _Initialized;
+class ExperienceLikeActorEvent with _$ExperienceLikeActorEvent {
+  const factory ExperienceLikeActorEvent.initialized(
+    UniqueId experienceId,
+    Set<UniqueId> experiencesLikedIds,
+    int likesAmount,
+  ) = _Initialized;
 
-  const factory ExperienceLikeActorEvent.liked(Experience experience) = _Liked;
+  const factory ExperienceLikeActorEvent.liked(UniqueId experienceId) = _Liked;
 
-  const factory ExperienceLikeActorEvent.disliked(Experience experience) = _Disliked;
+  const factory ExperienceLikeActorEvent.disliked(UniqueId experienceId) = _Disliked;
 }

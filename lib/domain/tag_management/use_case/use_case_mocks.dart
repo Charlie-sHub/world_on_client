@@ -10,6 +10,7 @@ import 'package:worldon/domain/tag_management/use_case/watch_tags_by_creator.dar
 
 import 'add_tag_to_interests.dart';
 import 'dismiss_tag_from_interests.dart';
+import 'get_tags.dart';
 
 @LazySingleton(as: CreateTag, env: [Environment.test])
 class MockCreateTag extends Mock implements CreateTag {}
@@ -25,6 +26,9 @@ class MockGetAllTags extends Mock implements WatchAllTags {}
 
 @LazySingleton(as: GetTag, env: [Environment.test])
 class MockGetTag extends Mock implements GetTag {}
+
+@LazySingleton(as: GetTags, env: [Environment.test])
+class MockGetTags extends Mock implements GetTags {}
 
 @LazySingleton(as: GetTagCreator, env: [Environment.test])
 class MockGetTagCreator extends Mock implements GetTagCreator {}

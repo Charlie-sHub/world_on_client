@@ -1,6 +1,9 @@
 part of 'comment_actor_bloc.dart';
 
 @freezed
-abstract class CommentActorEvent with _$CommentActorEvent {
-  const factory CommentActorEvent.deleted(Comment comment) = _Deleted;
+class CommentActorEvent with _$CommentActorEvent {
+  const factory CommentActorEvent.deleted(
+    Comment comment,
+    User currentUser,
+  ) = _Deleted;
 }

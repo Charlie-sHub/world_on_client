@@ -9,8 +9,9 @@ import 'package:worldon/domain/core/entities/experience/experience.dart';
 import 'package:worldon/domain/core/entities/user/user.dart';
 import 'package:worldon/domain/core/failures/core_domain_failure.dart';
 import 'package:worldon/domain/core/failures/error.dart';
+import 'package:worldon/domain/core/validation/objects/unique_id.dart';
+import 'package:worldon/domain/experience_management/use_case/delete_experience.dart';
 import 'package:worldon/domain/profile/repository/profile_repository_interface.dart';
-import 'package:worldon/domain/profile/use_case/delete_experience.dart';
 import 'package:worldon/injection.dart';
 
 import '../../../test_descriptions.dart';
@@ -27,9 +28,9 @@ void main() {
       useCase = DeleteExperience(mockProfileRepository);
     },
   );
-  final randomUser = User.empty().copyWith(id: 1, adminPowers: false);
-  final creatorUser = User.empty().copyWith(id: 2, adminPowers: false);
-  final admin = User.empty().copyWith(id: 3, adminPowers: true);
+  final randomUser = User.empty().copyWith(id: UniqueId(), adminPowers: false);
+  final creatorUser = User.empty().copyWith(id: UniqueId(), adminPowers: false);
+  final admin = User.empty().copyWith(id: UniqueId(), adminPowers: true);
   final experience = Experience.empty().copyWith(creator: creatorUser);
   final params = Params(experience: experience);
 
@@ -71,7 +72,8 @@ void main() {
         TestDescription.serverError,
         () async {
           // Arrange
-          const failure = Failure.coreData(CoreDataFailure.serverError(errorString: TestDescription.errorString));
+          const failure = Failure.coreData(
+              CoreDataFailure.serverError(errorString: TestDescription.errorString));
           when(mockProfileRepository.deleteExperience(any)).thenAnswer((_) async => left(failure));
           when(getLoggedInUser.call(any)).thenAnswer((_) async => some(creatorUser));
 

@@ -4,6 +4,7 @@ import 'package:injectable/injectable.dart' as injectable;
 import 'package:mockito/mockito.dart';
 import 'package:worldon/core/error/failure.dart';
 import 'package:worldon/data/core/failures/core_data_failure.dart';
+import 'package:worldon/domain/core/validation/objects/unique_id.dart';
 import 'package:worldon/domain/profile/repository/profile_repository_interface.dart';
 import 'package:worldon/domain/profile/use_case/un_block_user.dart';
 import 'package:worldon/injection.dart';
@@ -20,9 +21,7 @@ void main() {
       useCase = UnBlockUser(mockProfileRepository);
     },
   );
-  final params = Params(
-    blockedId: 1,
-  );
+  final params = Params(blockedId: UniqueId());
   test(
     TestDescription.returnNothing,
     () async {

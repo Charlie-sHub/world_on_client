@@ -1,10 +1,9 @@
 import 'package:dartz/dartz.dart';
-import 'package:flutter/foundation.dart';
 import 'package:injectable/injectable.dart';
 import 'package:worldon/domain/authentication/use_case/get_logged_in_user.dart';
-import 'package:worldon/domain/core/entities/user/user.dart';
 import 'package:worldon/domain/core/failures/error.dart';
 import 'package:worldon/domain/core/use_case/use_case.dart';
+import 'package:worldon/domain/core/validation/objects/unique_id.dart';
 import 'package:worldon/injection.dart';
 
 @LazySingleton(env: [Environment.dev, Environment.prod])
@@ -18,14 +17,14 @@ class IsLoggedInUser {
       () => throw UnAuthenticatedError(),
       id,
     );
-    return _loggedInUser.id == params.userToCompareWith.id;
+    return _loggedInUser.id == params.userToCompareWithId;
   }
 }
 
 class Params {
-  final User userToCompareWith;
+  final UniqueId userToCompareWithId;
 
   Params({
-    @required this.userToCompareWith,
+    required this.userToCompareWithId,
   });
 }

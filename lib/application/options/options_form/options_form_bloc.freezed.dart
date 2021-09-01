@@ -1,5 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides
 
 part of 'options_form_bloc.dart';
 
@@ -9,62 +9,65 @@ part of 'options_form_bloc.dart';
 
 T _$identity<T>(T value) => value;
 
+final _privateConstructorUsedError = UnsupportedError(
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+
 /// @nodoc
 class _$OptionsFormEventTearOff {
   const _$OptionsFormEventTearOff();
 
-// ignore: unused_element
   _Initialized initialized(Option<Options> optionsOption) {
     return _Initialized(
       optionsOption,
     );
   }
 
-// ignore: unused_element
   _LanguageCodeChanged languageCodeChanged(String languageCode) {
     return _LanguageCodeChanged(
       languageCode,
     );
   }
 
-// ignore: unused_element
   _Submitted submitted() {
     return const _Submitted();
   }
 }
 
 /// @nodoc
-// ignore: unused_element
 const $OptionsFormEvent = _$OptionsFormEventTearOff();
 
 /// @nodoc
 mixin _$OptionsFormEvent {
   @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result initialized(Option<Options> optionsOption),
-    @required Result languageCodeChanged(String languageCode),
-    @required Result submitted(),
-  });
+  TResult when<TResult extends Object?>({
+    required TResult Function(Option<Options> optionsOption) initialized,
+    required TResult Function(String languageCode) languageCodeChanged,
+    required TResult Function() submitted,
+  }) =>
+      throw _privateConstructorUsedError;
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result initialized(Option<Options> optionsOption),
-    Result languageCodeChanged(String languageCode),
-    Result submitted(),
-    @required Result orElse(),
-  });
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(Option<Options> optionsOption)? initialized,
+    TResult Function(String languageCode)? languageCodeChanged,
+    TResult Function()? submitted,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result initialized(_Initialized value),
-    @required Result languageCodeChanged(_LanguageCodeChanged value),
-    @required Result submitted(_Submitted value),
-  });
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initialized value) initialized,
+    required TResult Function(_LanguageCodeChanged value) languageCodeChanged,
+    required TResult Function(_Submitted value) submitted,
+  }) =>
+      throw _privateConstructorUsedError;
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result initialized(_Initialized value),
-    Result languageCodeChanged(_LanguageCodeChanged value),
-    Result submitted(_Submitted value),
-    @required Result orElse(),
-  });
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initialized value)? initialized,
+    TResult Function(_LanguageCodeChanged value)? languageCodeChanged,
+    TResult Function(_Submitted value)? submitted,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -105,19 +108,21 @@ class __$InitializedCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object optionsOption = freezed,
+    Object? optionsOption = freezed,
   }) {
     return _then(_Initialized(
       optionsOption == freezed
           ? _value.optionsOption
-          : optionsOption as Option<Options>,
+          : optionsOption // ignore: cast_nullable_to_non_nullable
+              as Option<Options>,
     ));
   }
 }
 
 /// @nodoc
+
 class _$_Initialized implements _Initialized {
-  const _$_Initialized(this.optionsOption) : assert(optionsOption != null);
+  const _$_Initialized(this.optionsOption);
 
   @override
   final Option<Options> optionsOption;
@@ -140,32 +145,29 @@ class _$_Initialized implements _Initialized {
   int get hashCode =>
       runtimeType.hashCode ^ const DeepCollectionEquality().hash(optionsOption);
 
+  @JsonKey(ignore: true)
   @override
   _$InitializedCopyWith<_Initialized> get copyWith =>
       __$InitializedCopyWithImpl<_Initialized>(this, _$identity);
 
   @override
   @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result initialized(Option<Options> optionsOption),
-    @required Result languageCodeChanged(String languageCode),
-    @required Result submitted(),
+  TResult when<TResult extends Object?>({
+    required TResult Function(Option<Options> optionsOption) initialized,
+    required TResult Function(String languageCode) languageCodeChanged,
+    required TResult Function() submitted,
   }) {
-    assert(initialized != null);
-    assert(languageCodeChanged != null);
-    assert(submitted != null);
     return initialized(optionsOption);
   }
 
   @override
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result initialized(Option<Options> optionsOption),
-    Result languageCodeChanged(String languageCode),
-    Result submitted(),
-    @required Result orElse(),
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(Option<Options> optionsOption)? initialized,
+    TResult Function(String languageCode)? languageCodeChanged,
+    TResult Function()? submitted,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (initialized != null) {
       return initialized(optionsOption);
     }
@@ -174,26 +176,22 @@ class _$_Initialized implements _Initialized {
 
   @override
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result initialized(_Initialized value),
-    @required Result languageCodeChanged(_LanguageCodeChanged value),
-    @required Result submitted(_Submitted value),
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initialized value) initialized,
+    required TResult Function(_LanguageCodeChanged value) languageCodeChanged,
+    required TResult Function(_Submitted value) submitted,
   }) {
-    assert(initialized != null);
-    assert(languageCodeChanged != null);
-    assert(submitted != null);
     return initialized(this);
   }
 
   @override
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result initialized(_Initialized value),
-    Result languageCodeChanged(_LanguageCodeChanged value),
-    Result submitted(_Submitted value),
-    @required Result orElse(),
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initialized value)? initialized,
+    TResult Function(_LanguageCodeChanged value)? languageCodeChanged,
+    TResult Function(_Submitted value)? submitted,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (initialized != null) {
       return initialized(this);
     }
@@ -204,8 +202,10 @@ class _$_Initialized implements _Initialized {
 abstract class _Initialized implements OptionsFormEvent {
   const factory _Initialized(Option<Options> optionsOption) = _$_Initialized;
 
-  Option<Options> get optionsOption;
-  _$InitializedCopyWith<_Initialized> get copyWith;
+  Option<Options> get optionsOption => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  _$InitializedCopyWith<_Initialized> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -229,18 +229,21 @@ class __$LanguageCodeChangedCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object languageCode = freezed,
+    Object? languageCode = freezed,
   }) {
     return _then(_LanguageCodeChanged(
-      languageCode == freezed ? _value.languageCode : languageCode as String,
+      languageCode == freezed
+          ? _value.languageCode
+          : languageCode // ignore: cast_nullable_to_non_nullable
+              as String,
     ));
   }
 }
 
 /// @nodoc
+
 class _$_LanguageCodeChanged implements _LanguageCodeChanged {
-  const _$_LanguageCodeChanged(this.languageCode)
-      : assert(languageCode != null);
+  const _$_LanguageCodeChanged(this.languageCode);
 
   @override
   final String languageCode;
@@ -263,6 +266,7 @@ class _$_LanguageCodeChanged implements _LanguageCodeChanged {
   int get hashCode =>
       runtimeType.hashCode ^ const DeepCollectionEquality().hash(languageCode);
 
+  @JsonKey(ignore: true)
   @override
   _$LanguageCodeChangedCopyWith<_LanguageCodeChanged> get copyWith =>
       __$LanguageCodeChangedCopyWithImpl<_LanguageCodeChanged>(
@@ -270,26 +274,22 @@ class _$_LanguageCodeChanged implements _LanguageCodeChanged {
 
   @override
   @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result initialized(Option<Options> optionsOption),
-    @required Result languageCodeChanged(String languageCode),
-    @required Result submitted(),
+  TResult when<TResult extends Object?>({
+    required TResult Function(Option<Options> optionsOption) initialized,
+    required TResult Function(String languageCode) languageCodeChanged,
+    required TResult Function() submitted,
   }) {
-    assert(initialized != null);
-    assert(languageCodeChanged != null);
-    assert(submitted != null);
     return languageCodeChanged(languageCode);
   }
 
   @override
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result initialized(Option<Options> optionsOption),
-    Result languageCodeChanged(String languageCode),
-    Result submitted(),
-    @required Result orElse(),
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(Option<Options> optionsOption)? initialized,
+    TResult Function(String languageCode)? languageCodeChanged,
+    TResult Function()? submitted,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (languageCodeChanged != null) {
       return languageCodeChanged(languageCode);
     }
@@ -298,26 +298,22 @@ class _$_LanguageCodeChanged implements _LanguageCodeChanged {
 
   @override
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result initialized(_Initialized value),
-    @required Result languageCodeChanged(_LanguageCodeChanged value),
-    @required Result submitted(_Submitted value),
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initialized value) initialized,
+    required TResult Function(_LanguageCodeChanged value) languageCodeChanged,
+    required TResult Function(_Submitted value) submitted,
   }) {
-    assert(initialized != null);
-    assert(languageCodeChanged != null);
-    assert(submitted != null);
     return languageCodeChanged(this);
   }
 
   @override
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result initialized(_Initialized value),
-    Result languageCodeChanged(_LanguageCodeChanged value),
-    Result submitted(_Submitted value),
-    @required Result orElse(),
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initialized value)? initialized,
+    TResult Function(_LanguageCodeChanged value)? languageCodeChanged,
+    TResult Function(_Submitted value)? submitted,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (languageCodeChanged != null) {
       return languageCodeChanged(this);
     }
@@ -329,8 +325,10 @@ abstract class _LanguageCodeChanged implements OptionsFormEvent {
   const factory _LanguageCodeChanged(String languageCode) =
       _$_LanguageCodeChanged;
 
-  String get languageCode;
-  _$LanguageCodeChangedCopyWith<_LanguageCodeChanged> get copyWith;
+  String get languageCode => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  _$LanguageCodeChangedCopyWith<_LanguageCodeChanged> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -352,6 +350,7 @@ class __$SubmittedCopyWithImpl<$Res>
 }
 
 /// @nodoc
+
 class _$_Submitted implements _Submitted {
   const _$_Submitted();
 
@@ -370,26 +369,22 @@ class _$_Submitted implements _Submitted {
 
   @override
   @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result initialized(Option<Options> optionsOption),
-    @required Result languageCodeChanged(String languageCode),
-    @required Result submitted(),
+  TResult when<TResult extends Object?>({
+    required TResult Function(Option<Options> optionsOption) initialized,
+    required TResult Function(String languageCode) languageCodeChanged,
+    required TResult Function() submitted,
   }) {
-    assert(initialized != null);
-    assert(languageCodeChanged != null);
-    assert(submitted != null);
     return submitted();
   }
 
   @override
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result initialized(Option<Options> optionsOption),
-    Result languageCodeChanged(String languageCode),
-    Result submitted(),
-    @required Result orElse(),
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(Option<Options> optionsOption)? initialized,
+    TResult Function(String languageCode)? languageCodeChanged,
+    TResult Function()? submitted,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (submitted != null) {
       return submitted();
     }
@@ -398,26 +393,22 @@ class _$_Submitted implements _Submitted {
 
   @override
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result initialized(_Initialized value),
-    @required Result languageCodeChanged(_LanguageCodeChanged value),
-    @required Result submitted(_Submitted value),
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initialized value) initialized,
+    required TResult Function(_LanguageCodeChanged value) languageCodeChanged,
+    required TResult Function(_Submitted value) submitted,
   }) {
-    assert(initialized != null);
-    assert(languageCodeChanged != null);
-    assert(submitted != null);
     return submitted(this);
   }
 
   @override
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result initialized(_Initialized value),
-    Result languageCodeChanged(_LanguageCodeChanged value),
-    Result submitted(_Submitted value),
-    @required Result orElse(),
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initialized value)? initialized,
+    TResult Function(_LanguageCodeChanged value)? languageCodeChanged,
+    TResult Function(_Submitted value)? submitted,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (submitted != null) {
       return submitted(this);
     }
@@ -433,12 +424,11 @@ abstract class _Submitted implements OptionsFormEvent {
 class _$OptionsFormStateTearOff {
   const _$OptionsFormStateTearOff();
 
-// ignore: unused_element
   _OptionsFormState call(
-      {@required Options options,
-      @required bool showErrorMessages,
-      @required bool isSubmitting,
-      @required Option<Either<Failure, Unit>> failureOrSuccessOption}) {
+      {required Options options,
+      required bool showErrorMessages,
+      required bool isSubmitting,
+      required Option<Either<Failure, Unit>> failureOrSuccessOption}) {
     return _OptionsFormState(
       options: options,
       showErrorMessages: showErrorMessages,
@@ -449,17 +439,19 @@ class _$OptionsFormStateTearOff {
 }
 
 /// @nodoc
-// ignore: unused_element
 const $OptionsFormState = _$OptionsFormStateTearOff();
 
 /// @nodoc
 mixin _$OptionsFormState {
-  Options get options;
-  bool get showErrorMessages;
-  bool get isSubmitting;
-  Option<Either<Failure, Unit>> get failureOrSuccessOption;
+  Options get options => throw _privateConstructorUsedError;
+  bool get showErrorMessages => throw _privateConstructorUsedError;
+  bool get isSubmitting => throw _privateConstructorUsedError;
+  Option<Either<Failure, Unit>> get failureOrSuccessOption =>
+      throw _privateConstructorUsedError;
 
-  $OptionsFormStateCopyWith<OptionsFormState> get copyWith;
+  @JsonKey(ignore: true)
+  $OptionsFormStateCopyWith<OptionsFormState> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -487,29 +479,33 @@ class _$OptionsFormStateCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object options = freezed,
-    Object showErrorMessages = freezed,
-    Object isSubmitting = freezed,
-    Object failureOrSuccessOption = freezed,
+    Object? options = freezed,
+    Object? showErrorMessages = freezed,
+    Object? isSubmitting = freezed,
+    Object? failureOrSuccessOption = freezed,
   }) {
     return _then(_value.copyWith(
-      options: options == freezed ? _value.options : options as Options,
+      options: options == freezed
+          ? _value.options
+          : options // ignore: cast_nullable_to_non_nullable
+              as Options,
       showErrorMessages: showErrorMessages == freezed
           ? _value.showErrorMessages
-          : showErrorMessages as bool,
-      isSubmitting:
-          isSubmitting == freezed ? _value.isSubmitting : isSubmitting as bool,
+          : showErrorMessages // ignore: cast_nullable_to_non_nullable
+              as bool,
+      isSubmitting: isSubmitting == freezed
+          ? _value.isSubmitting
+          : isSubmitting // ignore: cast_nullable_to_non_nullable
+              as bool,
       failureOrSuccessOption: failureOrSuccessOption == freezed
           ? _value.failureOrSuccessOption
-          : failureOrSuccessOption as Option<Either<Failure, Unit>>,
+          : failureOrSuccessOption // ignore: cast_nullable_to_non_nullable
+              as Option<Either<Failure, Unit>>,
     ));
   }
 
   @override
   $OptionsCopyWith<$Res> get options {
-    if (_value.options == null) {
-      return null;
-    }
     return $OptionsCopyWith<$Res>(_value.options, (value) {
       return _then(_value.copyWith(options: value));
     });
@@ -546,36 +542,40 @@ class __$OptionsFormStateCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object options = freezed,
-    Object showErrorMessages = freezed,
-    Object isSubmitting = freezed,
-    Object failureOrSuccessOption = freezed,
+    Object? options = freezed,
+    Object? showErrorMessages = freezed,
+    Object? isSubmitting = freezed,
+    Object? failureOrSuccessOption = freezed,
   }) {
     return _then(_OptionsFormState(
-      options: options == freezed ? _value.options : options as Options,
+      options: options == freezed
+          ? _value.options
+          : options // ignore: cast_nullable_to_non_nullable
+              as Options,
       showErrorMessages: showErrorMessages == freezed
           ? _value.showErrorMessages
-          : showErrorMessages as bool,
-      isSubmitting:
-          isSubmitting == freezed ? _value.isSubmitting : isSubmitting as bool,
+          : showErrorMessages // ignore: cast_nullable_to_non_nullable
+              as bool,
+      isSubmitting: isSubmitting == freezed
+          ? _value.isSubmitting
+          : isSubmitting // ignore: cast_nullable_to_non_nullable
+              as bool,
       failureOrSuccessOption: failureOrSuccessOption == freezed
           ? _value.failureOrSuccessOption
-          : failureOrSuccessOption as Option<Either<Failure, Unit>>,
+          : failureOrSuccessOption // ignore: cast_nullable_to_non_nullable
+              as Option<Either<Failure, Unit>>,
     ));
   }
 }
 
 /// @nodoc
+
 class _$_OptionsFormState implements _OptionsFormState {
   const _$_OptionsFormState(
-      {@required this.options,
-      @required this.showErrorMessages,
-      @required this.isSubmitting,
-      @required this.failureOrSuccessOption})
-      : assert(options != null),
-        assert(showErrorMessages != null),
-        assert(isSubmitting != null),
-        assert(failureOrSuccessOption != null);
+      {required this.options,
+      required this.showErrorMessages,
+      required this.isSubmitting,
+      required this.failureOrSuccessOption});
 
   @override
   final Options options;
@@ -617,6 +617,7 @@ class _$_OptionsFormState implements _OptionsFormState {
       const DeepCollectionEquality().hash(isSubmitting) ^
       const DeepCollectionEquality().hash(failureOrSuccessOption);
 
+  @JsonKey(ignore: true)
   @override
   _$OptionsFormStateCopyWith<_OptionsFormState> get copyWith =>
       __$OptionsFormStateCopyWithImpl<_OptionsFormState>(this, _$identity);
@@ -624,20 +625,23 @@ class _$_OptionsFormState implements _OptionsFormState {
 
 abstract class _OptionsFormState implements OptionsFormState {
   const factory _OptionsFormState(
-          {@required Options options,
-          @required bool showErrorMessages,
-          @required bool isSubmitting,
-          @required Option<Either<Failure, Unit>> failureOrSuccessOption}) =
+          {required Options options,
+          required bool showErrorMessages,
+          required bool isSubmitting,
+          required Option<Either<Failure, Unit>> failureOrSuccessOption}) =
       _$_OptionsFormState;
 
   @override
-  Options get options;
+  Options get options => throw _privateConstructorUsedError;
   @override
-  bool get showErrorMessages;
+  bool get showErrorMessages => throw _privateConstructorUsedError;
   @override
-  bool get isSubmitting;
+  bool get isSubmitting => throw _privateConstructorUsedError;
   @override
-  Option<Either<Failure, Unit>> get failureOrSuccessOption;
+  Option<Either<Failure, Unit>> get failureOrSuccessOption =>
+      throw _privateConstructorUsedError;
   @override
-  _$OptionsFormStateCopyWith<_OptionsFormState> get copyWith;
+  @JsonKey(ignore: true)
+  _$OptionsFormStateCopyWith<_OptionsFormState> get copyWith =>
+      throw _privateConstructorUsedError;
 }

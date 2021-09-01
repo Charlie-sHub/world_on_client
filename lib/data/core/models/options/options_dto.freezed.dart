@@ -1,5 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides
 
 part of 'options_dto.dart';
 
@@ -8,6 +8,10 @@ part of 'options_dto.dart';
 // **************************************************************************
 
 T _$identity<T>(T value) => value;
+
+final _privateConstructorUsedError = UnsupportedError(
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+
 OptionsDto _$OptionsDtoFromJson(Map<String, dynamic> json) {
   return _OptionsDto.fromJson(json);
 }
@@ -16,39 +20,38 @@ OptionsDto _$OptionsDtoFromJson(Map<String, dynamic> json) {
 class _$OptionsDtoTearOff {
   const _$OptionsDtoTearOff();
 
-// ignore: unused_element
-  _OptionsDto call({@required int id, @required String languageCode}) {
+  _OptionsDto call({required String id, required String languageCode}) {
     return _OptionsDto(
       id: id,
       languageCode: languageCode,
     );
   }
 
-// ignore: unused_element
   OptionsDto fromJson(Map<String, Object> json) {
     return OptionsDto.fromJson(json);
   }
 }
 
 /// @nodoc
-// ignore: unused_element
 const $OptionsDto = _$OptionsDtoTearOff();
 
 /// @nodoc
 mixin _$OptionsDto {
-  int get id;
-  String get languageCode;
+  String get id => throw _privateConstructorUsedError;
+  String get languageCode => throw _privateConstructorUsedError;
 
-  Map<String, dynamic> toJson();
-  $OptionsDtoCopyWith<OptionsDto> get copyWith;
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  $OptionsDtoCopyWith<OptionsDto> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $OptionsDtoCopyWith<$Res> {
-  factory $OptionsDtoCopyWith(OptionsDto value, $Res Function(OptionsDto) then) =
-  _$OptionsDtoCopyWithImpl<$Res>;
-  
-  $Res call({int id, String languageCode});
+  factory $OptionsDtoCopyWith(
+          OptionsDto value, $Res Function(OptionsDto) then) =
+      _$OptionsDtoCopyWithImpl<$Res>;
+  $Res call({String id, String languageCode});
 }
 
 /// @nodoc
@@ -61,66 +64,73 @@ class _$OptionsDtoCopyWithImpl<$Res> implements $OptionsDtoCopyWith<$Res> {
 
   @override
   $Res call({
-    Object id = freezed,
-    Object languageCode = freezed,
+    Object? id = freezed,
+    Object? languageCode = freezed,
   }) {
     return _then(_value.copyWith(
-      id: id == freezed ? _value.id : id as int,
+      id: id == freezed
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String,
       languageCode: languageCode == freezed
-        ? _value.languageCode
-        : languageCode as String,
+          ? _value.languageCode
+          : languageCode // ignore: cast_nullable_to_non_nullable
+              as String,
     ));
   }
 }
 
 /// @nodoc
 abstract class _$OptionsDtoCopyWith<$Res> implements $OptionsDtoCopyWith<$Res> {
-  factory _$OptionsDtoCopyWith(_OptionsDto value, $Res Function(_OptionsDto) then) =
-  __$OptionsDtoCopyWithImpl<$Res>;
-  
+  factory _$OptionsDtoCopyWith(
+          _OptionsDto value, $Res Function(_OptionsDto) then) =
+      __$OptionsDtoCopyWithImpl<$Res>;
   @override
-  $Res call({int id, String languageCode});
+  $Res call({String id, String languageCode});
 }
 
 /// @nodoc
 class __$OptionsDtoCopyWithImpl<$Res> extends _$OptionsDtoCopyWithImpl<$Res>
-  implements _$OptionsDtoCopyWith<$Res> {
-  __$OptionsDtoCopyWithImpl(_OptionsDto _value, $Res Function(_OptionsDto) _then)
-    : super(_value, (v) => _then(v as _OptionsDto));
-  
+    implements _$OptionsDtoCopyWith<$Res> {
+  __$OptionsDtoCopyWithImpl(
+      _OptionsDto _value, $Res Function(_OptionsDto) _then)
+      : super(_value, (v) => _then(v as _OptionsDto));
+
   @override
   _OptionsDto get _value => super._value as _OptionsDto;
-  
+
   @override
   $Res call({
-    Object id = freezed,
-    Object languageCode = freezed,
+    Object? id = freezed,
+    Object? languageCode = freezed,
   }) {
     return _then(_OptionsDto(
-      id: id == freezed ? _value.id : id as int,
+      id: id == freezed
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String,
       languageCode: languageCode == freezed
-        ? _value.languageCode
-        : languageCode as String,
+          ? _value.languageCode
+          : languageCode // ignore: cast_nullable_to_non_nullable
+              as String,
     ));
   }
 }
 
+/// @nodoc
 @JsonSerializable()
+class _$_OptionsDto extends _OptionsDto {
+  const _$_OptionsDto({required this.id, required this.languageCode})
+      : super._();
 
-/// @nodoc class _$_OptionsDto extends _OptionsDto {
-  const _$_OptionsDto({@required this.id, @required this.languageCode})
-    : assert(id != null),
-      assert(languageCode != null),
-      super._();
-  
   factory _$_OptionsDto.fromJson(Map<String, dynamic> json) =>
-    _$_$_OptionsDtoFromJson(json);
-  
+      _$_$_OptionsDtoFromJson(json);
+
   @override
-  final int id;
+  final String id;
   @override
   final String languageCode;
-  
+
   @override
   String toString() {
     return 'OptionsDto(id: $id, languageCode: $languageCode)';
@@ -129,24 +139,25 @@ class __$OptionsDtoCopyWithImpl<$Res> extends _$OptionsDtoCopyWithImpl<$Res>
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-      (other is _OptionsDto &&
-        (identical(other.id, id) ||
-          const DeepCollectionEquality().equals(other.id, id)) &&
-        (identical(other.languageCode, languageCode) ||
-          const DeepCollectionEquality()
-            .equals(other.languageCode, languageCode)));
+        (other is _OptionsDto &&
+            (identical(other.id, id) ||
+                const DeepCollectionEquality().equals(other.id, id)) &&
+            (identical(other.languageCode, languageCode) ||
+                const DeepCollectionEquality()
+                    .equals(other.languageCode, languageCode)));
   }
-  
+
   @override
   int get hashCode =>
-    runtimeType.hashCode ^
-    const DeepCollectionEquality().hash(id) ^
-    const DeepCollectionEquality().hash(languageCode);
-  
+      runtimeType.hashCode ^
+      const DeepCollectionEquality().hash(id) ^
+      const DeepCollectionEquality().hash(languageCode);
+
+  @JsonKey(ignore: true)
   @override
   _$OptionsDtoCopyWith<_OptionsDto> get copyWith =>
-    __$OptionsDtoCopyWithImpl<_OptionsDto>(this, _$identity);
-  
+      __$OptionsDtoCopyWithImpl<_OptionsDto>(this, _$identity);
+
   @override
   Map<String, dynamic> toJson() {
     return _$_$_OptionsDtoToJson(this);
@@ -154,20 +165,19 @@ class __$OptionsDtoCopyWithImpl<$Res> extends _$OptionsDtoCopyWithImpl<$Res>
 }
 
 abstract class _OptionsDto extends OptionsDto {
+  const factory _OptionsDto(
+      {required String id, required String languageCode}) = _$_OptionsDto;
   const _OptionsDto._() : super._();
-  
-  const factory _OptionsDto({@required int id, @required String languageCode}) =
-  _$_OptionsDto;
-  
+
   factory _OptionsDto.fromJson(Map<String, dynamic> json) =
-  _$_OptionsDto.fromJson;
-  
+      _$_OptionsDto.fromJson;
+
   @override
-  int get id;
-  
+  String get id => throw _privateConstructorUsedError;
   @override
-  String get languageCode;
-  
+  String get languageCode => throw _privateConstructorUsedError;
   @override
-  _$OptionsDtoCopyWith<_OptionsDto> get copyWith;
+  @JsonKey(ignore: true)
+  _$OptionsDtoCopyWith<_OptionsDto> get copyWith =>
+      throw _privateConstructorUsedError;
 }

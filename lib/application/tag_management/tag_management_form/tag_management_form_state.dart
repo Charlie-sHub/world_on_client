@@ -1,13 +1,13 @@
 part of 'tag_management_form_bloc.dart';
 
 @freezed
-abstract class TagManagementFormState with _$TagManagementFormState {
+class TagManagementFormState with _$TagManagementFormState {
   const factory TagManagementFormState({
-    @required Tag tag,
-    @required bool showErrorMessages,
-    @required bool isEditing,
-    @required bool isSubmitting,
-    @required Option<Either<Failure, Unit>> failureOrSuccessOption,
+    required Tag tag,
+    required bool showErrorMessages,
+    required bool isEditing,
+    required bool isSubmitting,
+    required Option<Either<Failure, Unit>> failureOrSuccessOption,
   }) = _TagManagementFormState;
 
   factory TagManagementFormState.initial() => TagManagementFormState(

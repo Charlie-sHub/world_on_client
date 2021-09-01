@@ -1,7 +1,7 @@
 part of 'experience_navigation_watcher_bloc.dart';
 
 @freezed
-abstract class ExperienceNavigationWatcherState with _$ExperienceNavigationWatcherState {
+class ExperienceNavigationWatcherState with _$ExperienceNavigationWatcherState {
   const factory ExperienceNavigationWatcherState.initial() = _Initial;
 
   const factory ExperienceNavigationWatcherState.noExperience() = _NoExperience;

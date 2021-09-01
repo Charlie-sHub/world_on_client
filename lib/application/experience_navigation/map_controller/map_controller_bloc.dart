@@ -43,6 +43,7 @@ class MapControllerBloc extends Bloc<MapControllerEvent, MapControllerState> {
     yield state.copyWith(
       coordinates: event.experience.coordinates,
       objectives: event.experience.objectives.getOrCrash().toList(),
+      loadedCoordinates: true,
     );
   }
 }

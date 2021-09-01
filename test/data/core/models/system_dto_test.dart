@@ -1,6 +1,7 @@
 import 'package:flutter_test/flutter_test.dart';
 import 'package:worldon/data/core/models/system/system_dto.dart';
 import 'package:worldon/domain/core/entities/system/system.dart';
+import 'package:worldon/domain/core/validation/objects/unique_id.dart';
 
 import '../../../test_descriptions.dart';
 
@@ -9,8 +10,8 @@ void main() {
     TestDescription.shouldEqualEntity,
     () async {
       // Arrange
-      const system = System(
-        id: 1,
+      final system = System(
+        id: UniqueId(),
         name: "Test",
         type: "Test",
         company: "Test",

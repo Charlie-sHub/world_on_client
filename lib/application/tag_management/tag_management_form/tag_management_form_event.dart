@@ -1,7 +1,7 @@
 part of 'tag_management_form_bloc.dart';
 
 @freezed
-abstract class TagManagementFormEvent with _$TagManagementFormEvent {
+class TagManagementFormEvent with _$TagManagementFormEvent {
   const factory TagManagementFormEvent.initialized(Option<Tag> tagOption) = _Initialized;
 
   const factory TagManagementFormEvent.nameChanged(String name) = _NameChanged;

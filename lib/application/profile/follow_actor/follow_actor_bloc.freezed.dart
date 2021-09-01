@@ -1,5 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides
 
 part of 'follow_actor_bloc.dart';
 
@@ -9,68 +9,75 @@ part of 'follow_actor_bloc.dart';
 
 T _$identity<T>(T value) => value;
 
+final _privateConstructorUsedError = UnsupportedError(
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+
 /// @nodoc
 class _$FollowActorEventTearOff {
   const _$FollowActorEventTearOff();
 
-// ignore: unused_element
-  _Initialized initialized(User user) {
+  _Initialized initialized(UniqueId userId, Set<UniqueId> followedUsersIds) {
     return _Initialized(
-      user,
+      userId,
+      followedUsersIds,
     );
   }
 
-// ignore: unused_element
-  _Followed followed(User user) {
+  _Followed followed(UniqueId userToFollowId, SimpleUser currentUser) {
     return _Followed(
-      user,
+      userToFollowId,
+      currentUser,
     );
   }
 
-// ignore: unused_element
-  _UnFollowed unFollowed(User user) {
+  _UnFollowed unFollowed(UniqueId userToUnFollowId, SimpleUser currentUser) {
     return _UnFollowed(
-      user,
+      userToUnFollowId,
+      currentUser,
     );
   }
 }
 
 /// @nodoc
-// ignore: unused_element
 const $FollowActorEvent = _$FollowActorEventTearOff();
 
 /// @nodoc
 mixin _$FollowActorEvent {
-  User get user;
-
   @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result initialized(User user),
-    @required Result followed(User user),
-    @required Result unFollowed(User user),
-  });
+  TResult when<TResult extends Object?>({
+    required TResult Function(UniqueId userId, Set<UniqueId> followedUsersIds)
+        initialized,
+    required TResult Function(UniqueId userToFollowId, SimpleUser currentUser)
+        followed,
+    required TResult Function(UniqueId userToUnFollowId, SimpleUser currentUser)
+        unFollowed,
+  }) =>
+      throw _privateConstructorUsedError;
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result initialized(User user),
-    Result followed(User user),
-    Result unFollowed(User user),
-    @required Result orElse(),
-  });
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(UniqueId userId, Set<UniqueId> followedUsersIds)?
+        initialized,
+    TResult Function(UniqueId userToFollowId, SimpleUser currentUser)? followed,
+    TResult Function(UniqueId userToUnFollowId, SimpleUser currentUser)?
+        unFollowed,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result initialized(_Initialized value),
-    @required Result followed(_Followed value),
-    @required Result unFollowed(_UnFollowed value),
-  });
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initialized value) initialized,
+    required TResult Function(_Followed value) followed,
+    required TResult Function(_UnFollowed value) unFollowed,
+  }) =>
+      throw _privateConstructorUsedError;
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result initialized(_Initialized value),
-    Result followed(_Followed value),
-    Result unFollowed(_UnFollowed value),
-    @required Result orElse(),
-  });
-
-  $FollowActorEventCopyWith<FollowActorEvent> get copyWith;
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initialized value)? initialized,
+    TResult Function(_Followed value)? followed,
+    TResult Function(_UnFollowed value)? unFollowed,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -78,9 +85,6 @@ abstract class $FollowActorEventCopyWith<$Res> {
   factory $FollowActorEventCopyWith(
           FollowActorEvent value, $Res Function(FollowActorEvent) then) =
       _$FollowActorEventCopyWithImpl<$Res>;
-  $Res call({User user});
-
-  $UserCopyWith<$Res> get user;
 }
 
 /// @nodoc
@@ -91,38 +95,14 @@ class _$FollowActorEventCopyWithImpl<$Res>
   final FollowActorEvent _value;
   // ignore: unused_field
   final $Res Function(FollowActorEvent) _then;
-
-  @override
-  $Res call({
-    Object user = freezed,
-  }) {
-    return _then(_value.copyWith(
-      user: user == freezed ? _value.user : user as User,
-    ));
-  }
-
-  @override
-  $UserCopyWith<$Res> get user {
-    if (_value.user == null) {
-      return null;
-    }
-    return $UserCopyWith<$Res>(_value.user, (value) {
-      return _then(_value.copyWith(user: value));
-    });
-  }
 }
 
 /// @nodoc
-abstract class _$InitializedCopyWith<$Res>
-    implements $FollowActorEventCopyWith<$Res> {
+abstract class _$InitializedCopyWith<$Res> {
   factory _$InitializedCopyWith(
           _Initialized value, $Res Function(_Initialized) then) =
       __$InitializedCopyWithImpl<$Res>;
-  @override
-  $Res call({User user});
-
-  @override
-  $UserCopyWith<$Res> get user;
+  $Res call({UniqueId userId, Set<UniqueId> followedUsersIds});
 }
 
 /// @nodoc
@@ -138,92 +118,106 @@ class __$InitializedCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object user = freezed,
+    Object? userId = freezed,
+    Object? followedUsersIds = freezed,
   }) {
     return _then(_Initialized(
-      user == freezed ? _value.user : user as User,
+      userId == freezed
+          ? _value.userId
+          : userId // ignore: cast_nullable_to_non_nullable
+              as UniqueId,
+      followedUsersIds == freezed
+          ? _value.followedUsersIds
+          : followedUsersIds // ignore: cast_nullable_to_non_nullable
+              as Set<UniqueId>,
     ));
   }
 }
 
 /// @nodoc
+
 class _$_Initialized implements _Initialized {
-  const _$_Initialized(this.user) : assert(user != null);
+  const _$_Initialized(this.userId, this.followedUsersIds);
 
   @override
-  final User user;
+  final UniqueId userId;
+  @override
+  final Set<UniqueId> followedUsersIds;
 
   @override
   String toString() {
-    return 'FollowActorEvent.initialized(user: $user)';
+    return 'FollowActorEvent.initialized(userId: $userId, followedUsersIds: $followedUsersIds)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other is _Initialized &&
-            (identical(other.user, user) ||
-                const DeepCollectionEquality().equals(other.user, user)));
+            (identical(other.userId, userId) ||
+                const DeepCollectionEquality().equals(other.userId, userId)) &&
+            (identical(other.followedUsersIds, followedUsersIds) ||
+                const DeepCollectionEquality()
+                    .equals(other.followedUsersIds, followedUsersIds)));
   }
 
   @override
   int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(user);
+      runtimeType.hashCode ^
+      const DeepCollectionEquality().hash(userId) ^
+      const DeepCollectionEquality().hash(followedUsersIds);
 
+  @JsonKey(ignore: true)
   @override
   _$InitializedCopyWith<_Initialized> get copyWith =>
       __$InitializedCopyWithImpl<_Initialized>(this, _$identity);
 
   @override
   @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result initialized(User user),
-    @required Result followed(User user),
-    @required Result unFollowed(User user),
+  TResult when<TResult extends Object?>({
+    required TResult Function(UniqueId userId, Set<UniqueId> followedUsersIds)
+        initialized,
+    required TResult Function(UniqueId userToFollowId, SimpleUser currentUser)
+        followed,
+    required TResult Function(UniqueId userToUnFollowId, SimpleUser currentUser)
+        unFollowed,
   }) {
-    assert(initialized != null);
-    assert(followed != null);
-    assert(unFollowed != null);
-    return initialized(user);
+    return initialized(userId, followedUsersIds);
   }
 
   @override
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result initialized(User user),
-    Result followed(User user),
-    Result unFollowed(User user),
-    @required Result orElse(),
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(UniqueId userId, Set<UniqueId> followedUsersIds)?
+        initialized,
+    TResult Function(UniqueId userToFollowId, SimpleUser currentUser)? followed,
+    TResult Function(UniqueId userToUnFollowId, SimpleUser currentUser)?
+        unFollowed,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (initialized != null) {
-      return initialized(user);
+      return initialized(userId, followedUsersIds);
     }
     return orElse();
   }
 
   @override
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result initialized(_Initialized value),
-    @required Result followed(_Followed value),
-    @required Result unFollowed(_UnFollowed value),
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initialized value) initialized,
+    required TResult Function(_Followed value) followed,
+    required TResult Function(_UnFollowed value) unFollowed,
   }) {
-    assert(initialized != null);
-    assert(followed != null);
-    assert(unFollowed != null);
     return initialized(this);
   }
 
   @override
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result initialized(_Initialized value),
-    Result followed(_Followed value),
-    Result unFollowed(_UnFollowed value),
-    @required Result orElse(),
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initialized value)? initialized,
+    TResult Function(_Followed value)? followed,
+    TResult Function(_UnFollowed value)? unFollowed,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (initialized != null) {
       return initialized(this);
     }
@@ -232,24 +226,23 @@ class _$_Initialized implements _Initialized {
 }
 
 abstract class _Initialized implements FollowActorEvent {
-  const factory _Initialized(User user) = _$_Initialized;
+  const factory _Initialized(UniqueId userId, Set<UniqueId> followedUsersIds) =
+      _$_Initialized;
 
-  @override
-  User get user;
-  @override
-  _$InitializedCopyWith<_Initialized> get copyWith;
+  UniqueId get userId => throw _privateConstructorUsedError;
+  Set<UniqueId> get followedUsersIds => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  _$InitializedCopyWith<_Initialized> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$FollowedCopyWith<$Res>
-    implements $FollowActorEventCopyWith<$Res> {
+abstract class _$FollowedCopyWith<$Res> {
   factory _$FollowedCopyWith(_Followed value, $Res Function(_Followed) then) =
       __$FollowedCopyWithImpl<$Res>;
-  @override
-  $Res call({User user});
+  $Res call({UniqueId userToFollowId, SimpleUser currentUser});
 
-  @override
-  $UserCopyWith<$Res> get user;
+  $SimpleUserCopyWith<$Res> get currentUser;
 }
 
 /// @nodoc
@@ -263,92 +256,114 @@ class __$FollowedCopyWithImpl<$Res> extends _$FollowActorEventCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object user = freezed,
+    Object? userToFollowId = freezed,
+    Object? currentUser = freezed,
   }) {
     return _then(_Followed(
-      user == freezed ? _value.user : user as User,
+      userToFollowId == freezed
+          ? _value.userToFollowId
+          : userToFollowId // ignore: cast_nullable_to_non_nullable
+              as UniqueId,
+      currentUser == freezed
+          ? _value.currentUser
+          : currentUser // ignore: cast_nullable_to_non_nullable
+              as SimpleUser,
     ));
+  }
+
+  @override
+  $SimpleUserCopyWith<$Res> get currentUser {
+    return $SimpleUserCopyWith<$Res>(_value.currentUser, (value) {
+      return _then(_value.copyWith(currentUser: value));
+    });
   }
 }
 
 /// @nodoc
+
 class _$_Followed implements _Followed {
-  const _$_Followed(this.user) : assert(user != null);
+  const _$_Followed(this.userToFollowId, this.currentUser);
 
   @override
-  final User user;
+  final UniqueId userToFollowId;
+  @override
+  final SimpleUser currentUser;
 
   @override
   String toString() {
-    return 'FollowActorEvent.followed(user: $user)';
+    return 'FollowActorEvent.followed(userToFollowId: $userToFollowId, currentUser: $currentUser)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other is _Followed &&
-            (identical(other.user, user) ||
-                const DeepCollectionEquality().equals(other.user, user)));
+            (identical(other.userToFollowId, userToFollowId) ||
+                const DeepCollectionEquality()
+                    .equals(other.userToFollowId, userToFollowId)) &&
+            (identical(other.currentUser, currentUser) ||
+                const DeepCollectionEquality()
+                    .equals(other.currentUser, currentUser)));
   }
 
   @override
   int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(user);
+      runtimeType.hashCode ^
+      const DeepCollectionEquality().hash(userToFollowId) ^
+      const DeepCollectionEquality().hash(currentUser);
 
+  @JsonKey(ignore: true)
   @override
   _$FollowedCopyWith<_Followed> get copyWith =>
       __$FollowedCopyWithImpl<_Followed>(this, _$identity);
 
   @override
   @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result initialized(User user),
-    @required Result followed(User user),
-    @required Result unFollowed(User user),
+  TResult when<TResult extends Object?>({
+    required TResult Function(UniqueId userId, Set<UniqueId> followedUsersIds)
+        initialized,
+    required TResult Function(UniqueId userToFollowId, SimpleUser currentUser)
+        followed,
+    required TResult Function(UniqueId userToUnFollowId, SimpleUser currentUser)
+        unFollowed,
   }) {
-    assert(initialized != null);
-    assert(followed != null);
-    assert(unFollowed != null);
-    return followed(user);
+    return followed(userToFollowId, currentUser);
   }
 
   @override
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result initialized(User user),
-    Result followed(User user),
-    Result unFollowed(User user),
-    @required Result orElse(),
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(UniqueId userId, Set<UniqueId> followedUsersIds)?
+        initialized,
+    TResult Function(UniqueId userToFollowId, SimpleUser currentUser)? followed,
+    TResult Function(UniqueId userToUnFollowId, SimpleUser currentUser)?
+        unFollowed,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (followed != null) {
-      return followed(user);
+      return followed(userToFollowId, currentUser);
     }
     return orElse();
   }
 
   @override
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result initialized(_Initialized value),
-    @required Result followed(_Followed value),
-    @required Result unFollowed(_UnFollowed value),
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initialized value) initialized,
+    required TResult Function(_Followed value) followed,
+    required TResult Function(_UnFollowed value) unFollowed,
   }) {
-    assert(initialized != null);
-    assert(followed != null);
-    assert(unFollowed != null);
     return followed(this);
   }
 
   @override
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result initialized(_Initialized value),
-    Result followed(_Followed value),
-    Result unFollowed(_UnFollowed value),
-    @required Result orElse(),
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initialized value)? initialized,
+    TResult Function(_Followed value)? followed,
+    TResult Function(_UnFollowed value)? unFollowed,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (followed != null) {
       return followed(this);
     }
@@ -357,25 +372,24 @@ class _$_Followed implements _Followed {
 }
 
 abstract class _Followed implements FollowActorEvent {
-  const factory _Followed(User user) = _$_Followed;
+  const factory _Followed(UniqueId userToFollowId, SimpleUser currentUser) =
+      _$_Followed;
 
-  @override
-  User get user;
-  @override
-  _$FollowedCopyWith<_Followed> get copyWith;
+  UniqueId get userToFollowId => throw _privateConstructorUsedError;
+  SimpleUser get currentUser => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  _$FollowedCopyWith<_Followed> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$UnFollowedCopyWith<$Res>
-    implements $FollowActorEventCopyWith<$Res> {
+abstract class _$UnFollowedCopyWith<$Res> {
   factory _$UnFollowedCopyWith(
           _UnFollowed value, $Res Function(_UnFollowed) then) =
       __$UnFollowedCopyWithImpl<$Res>;
-  @override
-  $Res call({User user});
+  $Res call({UniqueId userToUnFollowId, SimpleUser currentUser});
 
-  @override
-  $UserCopyWith<$Res> get user;
+  $SimpleUserCopyWith<$Res> get currentUser;
 }
 
 /// @nodoc
@@ -391,92 +405,114 @@ class __$UnFollowedCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object user = freezed,
+    Object? userToUnFollowId = freezed,
+    Object? currentUser = freezed,
   }) {
     return _then(_UnFollowed(
-      user == freezed ? _value.user : user as User,
+      userToUnFollowId == freezed
+          ? _value.userToUnFollowId
+          : userToUnFollowId // ignore: cast_nullable_to_non_nullable
+              as UniqueId,
+      currentUser == freezed
+          ? _value.currentUser
+          : currentUser // ignore: cast_nullable_to_non_nullable
+              as SimpleUser,
     ));
+  }
+
+  @override
+  $SimpleUserCopyWith<$Res> get currentUser {
+    return $SimpleUserCopyWith<$Res>(_value.currentUser, (value) {
+      return _then(_value.copyWith(currentUser: value));
+    });
   }
 }
 
 /// @nodoc
+
 class _$_UnFollowed implements _UnFollowed {
-  const _$_UnFollowed(this.user) : assert(user != null);
+  const _$_UnFollowed(this.userToUnFollowId, this.currentUser);
 
   @override
-  final User user;
+  final UniqueId userToUnFollowId;
+  @override
+  final SimpleUser currentUser;
 
   @override
   String toString() {
-    return 'FollowActorEvent.unFollowed(user: $user)';
+    return 'FollowActorEvent.unFollowed(userToUnFollowId: $userToUnFollowId, currentUser: $currentUser)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other is _UnFollowed &&
-            (identical(other.user, user) ||
-                const DeepCollectionEquality().equals(other.user, user)));
+            (identical(other.userToUnFollowId, userToUnFollowId) ||
+                const DeepCollectionEquality()
+                    .equals(other.userToUnFollowId, userToUnFollowId)) &&
+            (identical(other.currentUser, currentUser) ||
+                const DeepCollectionEquality()
+                    .equals(other.currentUser, currentUser)));
   }
 
   @override
   int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(user);
+      runtimeType.hashCode ^
+      const DeepCollectionEquality().hash(userToUnFollowId) ^
+      const DeepCollectionEquality().hash(currentUser);
 
+  @JsonKey(ignore: true)
   @override
   _$UnFollowedCopyWith<_UnFollowed> get copyWith =>
       __$UnFollowedCopyWithImpl<_UnFollowed>(this, _$identity);
 
   @override
   @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result initialized(User user),
-    @required Result followed(User user),
-    @required Result unFollowed(User user),
+  TResult when<TResult extends Object?>({
+    required TResult Function(UniqueId userId, Set<UniqueId> followedUsersIds)
+        initialized,
+    required TResult Function(UniqueId userToFollowId, SimpleUser currentUser)
+        followed,
+    required TResult Function(UniqueId userToUnFollowId, SimpleUser currentUser)
+        unFollowed,
   }) {
-    assert(initialized != null);
-    assert(followed != null);
-    assert(unFollowed != null);
-    return unFollowed(user);
+    return unFollowed(userToUnFollowId, currentUser);
   }
 
   @override
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result initialized(User user),
-    Result followed(User user),
-    Result unFollowed(User user),
-    @required Result orElse(),
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(UniqueId userId, Set<UniqueId> followedUsersIds)?
+        initialized,
+    TResult Function(UniqueId userToFollowId, SimpleUser currentUser)? followed,
+    TResult Function(UniqueId userToUnFollowId, SimpleUser currentUser)?
+        unFollowed,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (unFollowed != null) {
-      return unFollowed(user);
+      return unFollowed(userToUnFollowId, currentUser);
     }
     return orElse();
   }
 
   @override
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result initialized(_Initialized value),
-    @required Result followed(_Followed value),
-    @required Result unFollowed(_UnFollowed value),
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initialized value) initialized,
+    required TResult Function(_Followed value) followed,
+    required TResult Function(_UnFollowed value) unFollowed,
   }) {
-    assert(initialized != null);
-    assert(followed != null);
-    assert(unFollowed != null);
     return unFollowed(this);
   }
 
   @override
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result initialized(_Initialized value),
-    Result followed(_Followed value),
-    Result unFollowed(_UnFollowed value),
-    @required Result orElse(),
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initialized value)? initialized,
+    TResult Function(_Followed value)? followed,
+    TResult Function(_UnFollowed value)? unFollowed,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (unFollowed != null) {
       return unFollowed(this);
     }
@@ -485,56 +521,50 @@ class _$_UnFollowed implements _UnFollowed {
 }
 
 abstract class _UnFollowed implements FollowActorEvent {
-  const factory _UnFollowed(User user) = _$_UnFollowed;
+  const factory _UnFollowed(UniqueId userToUnFollowId, SimpleUser currentUser) =
+      _$_UnFollowed;
 
-  @override
-  User get user;
-  @override
-  _$UnFollowedCopyWith<_UnFollowed> get copyWith;
+  UniqueId get userToUnFollowId => throw _privateConstructorUsedError;
+  SimpleUser get currentUser => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  _$UnFollowedCopyWith<_UnFollowed> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 class _$FollowActorStateTearOff {
   const _$FollowActorStateTearOff();
 
-// ignore: unused_element
   _Initial initial() {
     return const _Initial();
   }
 
-// ignore: unused_element
   _ActionInProgress actionInProgress() {
     return const _ActionInProgress();
   }
 
-// ignore: unused_element
   _Follows follows() {
     return const _Follows();
   }
 
-// ignore: unused_element
   _FollowsNot followsNot() {
     return const _FollowsNot();
   }
 
-// ignore: unused_element
   _FollowSuccess followSuccess() {
     return const _FollowSuccess();
   }
 
-// ignore: unused_element
   _FollowFailure followFailure(Failure<dynamic> failure) {
     return _FollowFailure(
       failure,
     );
   }
 
-// ignore: unused_element
   _UnFollowSuccess unFollowSuccess() {
     return const _UnFollowSuccess();
   }
 
-// ignore: unused_element
   _UnFollowFailure unFollowFailure(Failure<dynamic> failure) {
     return _UnFollowFailure(
       failure,
@@ -543,57 +573,60 @@ class _$FollowActorStateTearOff {
 }
 
 /// @nodoc
-// ignore: unused_element
 const $FollowActorState = _$FollowActorStateTearOff();
 
 /// @nodoc
 mixin _$FollowActorState {
   @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result initial(),
-    @required Result actionInProgress(),
-    @required Result follows(),
-    @required Result followsNot(),
-    @required Result followSuccess(),
-    @required Result followFailure(Failure<dynamic> failure),
-    @required Result unFollowSuccess(),
-    @required Result unFollowFailure(Failure<dynamic> failure),
-  });
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() actionInProgress,
+    required TResult Function() follows,
+    required TResult Function() followsNot,
+    required TResult Function() followSuccess,
+    required TResult Function(Failure<dynamic> failure) followFailure,
+    required TResult Function() unFollowSuccess,
+    required TResult Function(Failure<dynamic> failure) unFollowFailure,
+  }) =>
+      throw _privateConstructorUsedError;
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result initial(),
-    Result actionInProgress(),
-    Result follows(),
-    Result followsNot(),
-    Result followSuccess(),
-    Result followFailure(Failure<dynamic> failure),
-    Result unFollowSuccess(),
-    Result unFollowFailure(Failure<dynamic> failure),
-    @required Result orElse(),
-  });
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? actionInProgress,
+    TResult Function()? follows,
+    TResult Function()? followsNot,
+    TResult Function()? followSuccess,
+    TResult Function(Failure<dynamic> failure)? followFailure,
+    TResult Function()? unFollowSuccess,
+    TResult Function(Failure<dynamic> failure)? unFollowFailure,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result initial(_Initial value),
-    @required Result actionInProgress(_ActionInProgress value),
-    @required Result follows(_Follows value),
-    @required Result followsNot(_FollowsNot value),
-    @required Result followSuccess(_FollowSuccess value),
-    @required Result followFailure(_FollowFailure value),
-    @required Result unFollowSuccess(_UnFollowSuccess value),
-    @required Result unFollowFailure(_UnFollowFailure value),
-  });
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial value) initial,
+    required TResult Function(_ActionInProgress value) actionInProgress,
+    required TResult Function(_Follows value) follows,
+    required TResult Function(_FollowsNot value) followsNot,
+    required TResult Function(_FollowSuccess value) followSuccess,
+    required TResult Function(_FollowFailure value) followFailure,
+    required TResult Function(_UnFollowSuccess value) unFollowSuccess,
+    required TResult Function(_UnFollowFailure value) unFollowFailure,
+  }) =>
+      throw _privateConstructorUsedError;
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result initial(_Initial value),
-    Result actionInProgress(_ActionInProgress value),
-    Result follows(_Follows value),
-    Result followsNot(_FollowsNot value),
-    Result followSuccess(_FollowSuccess value),
-    Result followFailure(_FollowFailure value),
-    Result unFollowSuccess(_UnFollowSuccess value),
-    Result unFollowFailure(_UnFollowFailure value),
-    @required Result orElse(),
-  });
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_ActionInProgress value)? actionInProgress,
+    TResult Function(_Follows value)? follows,
+    TResult Function(_FollowsNot value)? followsNot,
+    TResult Function(_FollowSuccess value)? followSuccess,
+    TResult Function(_FollowFailure value)? followFailure,
+    TResult Function(_UnFollowSuccess value)? unFollowSuccess,
+    TResult Function(_UnFollowFailure value)? unFollowFailure,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -630,6 +663,7 @@ class __$InitialCopyWithImpl<$Res> extends _$FollowActorStateCopyWithImpl<$Res>
 }
 
 /// @nodoc
+
 class _$_Initial implements _Initial {
   const _$_Initial();
 
@@ -648,41 +682,32 @@ class _$_Initial implements _Initial {
 
   @override
   @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result initial(),
-    @required Result actionInProgress(),
-    @required Result follows(),
-    @required Result followsNot(),
-    @required Result followSuccess(),
-    @required Result followFailure(Failure<dynamic> failure),
-    @required Result unFollowSuccess(),
-    @required Result unFollowFailure(Failure<dynamic> failure),
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() actionInProgress,
+    required TResult Function() follows,
+    required TResult Function() followsNot,
+    required TResult Function() followSuccess,
+    required TResult Function(Failure<dynamic> failure) followFailure,
+    required TResult Function() unFollowSuccess,
+    required TResult Function(Failure<dynamic> failure) unFollowFailure,
   }) {
-    assert(initial != null);
-    assert(actionInProgress != null);
-    assert(follows != null);
-    assert(followsNot != null);
-    assert(followSuccess != null);
-    assert(followFailure != null);
-    assert(unFollowSuccess != null);
-    assert(unFollowFailure != null);
     return initial();
   }
 
   @override
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result initial(),
-    Result actionInProgress(),
-    Result follows(),
-    Result followsNot(),
-    Result followSuccess(),
-    Result followFailure(Failure<dynamic> failure),
-    Result unFollowSuccess(),
-    Result unFollowFailure(Failure<dynamic> failure),
-    @required Result orElse(),
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? actionInProgress,
+    TResult Function()? follows,
+    TResult Function()? followsNot,
+    TResult Function()? followSuccess,
+    TResult Function(Failure<dynamic> failure)? followFailure,
+    TResult Function()? unFollowSuccess,
+    TResult Function(Failure<dynamic> failure)? unFollowFailure,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (initial != null) {
       return initial();
     }
@@ -691,41 +716,32 @@ class _$_Initial implements _Initial {
 
   @override
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result initial(_Initial value),
-    @required Result actionInProgress(_ActionInProgress value),
-    @required Result follows(_Follows value),
-    @required Result followsNot(_FollowsNot value),
-    @required Result followSuccess(_FollowSuccess value),
-    @required Result followFailure(_FollowFailure value),
-    @required Result unFollowSuccess(_UnFollowSuccess value),
-    @required Result unFollowFailure(_UnFollowFailure value),
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial value) initial,
+    required TResult Function(_ActionInProgress value) actionInProgress,
+    required TResult Function(_Follows value) follows,
+    required TResult Function(_FollowsNot value) followsNot,
+    required TResult Function(_FollowSuccess value) followSuccess,
+    required TResult Function(_FollowFailure value) followFailure,
+    required TResult Function(_UnFollowSuccess value) unFollowSuccess,
+    required TResult Function(_UnFollowFailure value) unFollowFailure,
   }) {
-    assert(initial != null);
-    assert(actionInProgress != null);
-    assert(follows != null);
-    assert(followsNot != null);
-    assert(followSuccess != null);
-    assert(followFailure != null);
-    assert(unFollowSuccess != null);
-    assert(unFollowFailure != null);
     return initial(this);
   }
 
   @override
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result initial(_Initial value),
-    Result actionInProgress(_ActionInProgress value),
-    Result follows(_Follows value),
-    Result followsNot(_FollowsNot value),
-    Result followSuccess(_FollowSuccess value),
-    Result followFailure(_FollowFailure value),
-    Result unFollowSuccess(_UnFollowSuccess value),
-    Result unFollowFailure(_UnFollowFailure value),
-    @required Result orElse(),
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_ActionInProgress value)? actionInProgress,
+    TResult Function(_Follows value)? follows,
+    TResult Function(_FollowsNot value)? followsNot,
+    TResult Function(_FollowSuccess value)? followSuccess,
+    TResult Function(_FollowFailure value)? followFailure,
+    TResult Function(_UnFollowSuccess value)? unFollowSuccess,
+    TResult Function(_UnFollowFailure value)? unFollowFailure,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (initial != null) {
       return initial(this);
     }
@@ -757,6 +773,7 @@ class __$ActionInProgressCopyWithImpl<$Res>
 }
 
 /// @nodoc
+
 class _$_ActionInProgress implements _ActionInProgress {
   const _$_ActionInProgress();
 
@@ -775,41 +792,32 @@ class _$_ActionInProgress implements _ActionInProgress {
 
   @override
   @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result initial(),
-    @required Result actionInProgress(),
-    @required Result follows(),
-    @required Result followsNot(),
-    @required Result followSuccess(),
-    @required Result followFailure(Failure<dynamic> failure),
-    @required Result unFollowSuccess(),
-    @required Result unFollowFailure(Failure<dynamic> failure),
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() actionInProgress,
+    required TResult Function() follows,
+    required TResult Function() followsNot,
+    required TResult Function() followSuccess,
+    required TResult Function(Failure<dynamic> failure) followFailure,
+    required TResult Function() unFollowSuccess,
+    required TResult Function(Failure<dynamic> failure) unFollowFailure,
   }) {
-    assert(initial != null);
-    assert(actionInProgress != null);
-    assert(follows != null);
-    assert(followsNot != null);
-    assert(followSuccess != null);
-    assert(followFailure != null);
-    assert(unFollowSuccess != null);
-    assert(unFollowFailure != null);
     return actionInProgress();
   }
 
   @override
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result initial(),
-    Result actionInProgress(),
-    Result follows(),
-    Result followsNot(),
-    Result followSuccess(),
-    Result followFailure(Failure<dynamic> failure),
-    Result unFollowSuccess(),
-    Result unFollowFailure(Failure<dynamic> failure),
-    @required Result orElse(),
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? actionInProgress,
+    TResult Function()? follows,
+    TResult Function()? followsNot,
+    TResult Function()? followSuccess,
+    TResult Function(Failure<dynamic> failure)? followFailure,
+    TResult Function()? unFollowSuccess,
+    TResult Function(Failure<dynamic> failure)? unFollowFailure,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (actionInProgress != null) {
       return actionInProgress();
     }
@@ -818,41 +826,32 @@ class _$_ActionInProgress implements _ActionInProgress {
 
   @override
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result initial(_Initial value),
-    @required Result actionInProgress(_ActionInProgress value),
-    @required Result follows(_Follows value),
-    @required Result followsNot(_FollowsNot value),
-    @required Result followSuccess(_FollowSuccess value),
-    @required Result followFailure(_FollowFailure value),
-    @required Result unFollowSuccess(_UnFollowSuccess value),
-    @required Result unFollowFailure(_UnFollowFailure value),
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial value) initial,
+    required TResult Function(_ActionInProgress value) actionInProgress,
+    required TResult Function(_Follows value) follows,
+    required TResult Function(_FollowsNot value) followsNot,
+    required TResult Function(_FollowSuccess value) followSuccess,
+    required TResult Function(_FollowFailure value) followFailure,
+    required TResult Function(_UnFollowSuccess value) unFollowSuccess,
+    required TResult Function(_UnFollowFailure value) unFollowFailure,
   }) {
-    assert(initial != null);
-    assert(actionInProgress != null);
-    assert(follows != null);
-    assert(followsNot != null);
-    assert(followSuccess != null);
-    assert(followFailure != null);
-    assert(unFollowSuccess != null);
-    assert(unFollowFailure != null);
     return actionInProgress(this);
   }
 
   @override
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result initial(_Initial value),
-    Result actionInProgress(_ActionInProgress value),
-    Result follows(_Follows value),
-    Result followsNot(_FollowsNot value),
-    Result followSuccess(_FollowSuccess value),
-    Result followFailure(_FollowFailure value),
-    Result unFollowSuccess(_UnFollowSuccess value),
-    Result unFollowFailure(_UnFollowFailure value),
-    @required Result orElse(),
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_ActionInProgress value)? actionInProgress,
+    TResult Function(_Follows value)? follows,
+    TResult Function(_FollowsNot value)? followsNot,
+    TResult Function(_FollowSuccess value)? followSuccess,
+    TResult Function(_FollowFailure value)? followFailure,
+    TResult Function(_UnFollowSuccess value)? unFollowSuccess,
+    TResult Function(_UnFollowFailure value)? unFollowFailure,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (actionInProgress != null) {
       return actionInProgress(this);
     }
@@ -881,6 +880,7 @@ class __$FollowsCopyWithImpl<$Res> extends _$FollowActorStateCopyWithImpl<$Res>
 }
 
 /// @nodoc
+
 class _$_Follows implements _Follows {
   const _$_Follows();
 
@@ -899,41 +899,32 @@ class _$_Follows implements _Follows {
 
   @override
   @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result initial(),
-    @required Result actionInProgress(),
-    @required Result follows(),
-    @required Result followsNot(),
-    @required Result followSuccess(),
-    @required Result followFailure(Failure<dynamic> failure),
-    @required Result unFollowSuccess(),
-    @required Result unFollowFailure(Failure<dynamic> failure),
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() actionInProgress,
+    required TResult Function() follows,
+    required TResult Function() followsNot,
+    required TResult Function() followSuccess,
+    required TResult Function(Failure<dynamic> failure) followFailure,
+    required TResult Function() unFollowSuccess,
+    required TResult Function(Failure<dynamic> failure) unFollowFailure,
   }) {
-    assert(initial != null);
-    assert(actionInProgress != null);
-    assert(follows != null);
-    assert(followsNot != null);
-    assert(followSuccess != null);
-    assert(followFailure != null);
-    assert(unFollowSuccess != null);
-    assert(unFollowFailure != null);
     return follows();
   }
 
   @override
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result initial(),
-    Result actionInProgress(),
-    Result follows(),
-    Result followsNot(),
-    Result followSuccess(),
-    Result followFailure(Failure<dynamic> failure),
-    Result unFollowSuccess(),
-    Result unFollowFailure(Failure<dynamic> failure),
-    @required Result orElse(),
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? actionInProgress,
+    TResult Function()? follows,
+    TResult Function()? followsNot,
+    TResult Function()? followSuccess,
+    TResult Function(Failure<dynamic> failure)? followFailure,
+    TResult Function()? unFollowSuccess,
+    TResult Function(Failure<dynamic> failure)? unFollowFailure,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (follows != null) {
       return follows();
     }
@@ -942,41 +933,32 @@ class _$_Follows implements _Follows {
 
   @override
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result initial(_Initial value),
-    @required Result actionInProgress(_ActionInProgress value),
-    @required Result follows(_Follows value),
-    @required Result followsNot(_FollowsNot value),
-    @required Result followSuccess(_FollowSuccess value),
-    @required Result followFailure(_FollowFailure value),
-    @required Result unFollowSuccess(_UnFollowSuccess value),
-    @required Result unFollowFailure(_UnFollowFailure value),
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial value) initial,
+    required TResult Function(_ActionInProgress value) actionInProgress,
+    required TResult Function(_Follows value) follows,
+    required TResult Function(_FollowsNot value) followsNot,
+    required TResult Function(_FollowSuccess value) followSuccess,
+    required TResult Function(_FollowFailure value) followFailure,
+    required TResult Function(_UnFollowSuccess value) unFollowSuccess,
+    required TResult Function(_UnFollowFailure value) unFollowFailure,
   }) {
-    assert(initial != null);
-    assert(actionInProgress != null);
-    assert(follows != null);
-    assert(followsNot != null);
-    assert(followSuccess != null);
-    assert(followFailure != null);
-    assert(unFollowSuccess != null);
-    assert(unFollowFailure != null);
     return follows(this);
   }
 
   @override
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result initial(_Initial value),
-    Result actionInProgress(_ActionInProgress value),
-    Result follows(_Follows value),
-    Result followsNot(_FollowsNot value),
-    Result followSuccess(_FollowSuccess value),
-    Result followFailure(_FollowFailure value),
-    Result unFollowSuccess(_UnFollowSuccess value),
-    Result unFollowFailure(_UnFollowFailure value),
-    @required Result orElse(),
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_ActionInProgress value)? actionInProgress,
+    TResult Function(_Follows value)? follows,
+    TResult Function(_FollowsNot value)? followsNot,
+    TResult Function(_FollowSuccess value)? followSuccess,
+    TResult Function(_FollowFailure value)? followFailure,
+    TResult Function(_UnFollowSuccess value)? unFollowSuccess,
+    TResult Function(_UnFollowFailure value)? unFollowFailure,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (follows != null) {
       return follows(this);
     }
@@ -1008,6 +990,7 @@ class __$FollowsNotCopyWithImpl<$Res>
 }
 
 /// @nodoc
+
 class _$_FollowsNot implements _FollowsNot {
   const _$_FollowsNot();
 
@@ -1026,41 +1009,32 @@ class _$_FollowsNot implements _FollowsNot {
 
   @override
   @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result initial(),
-    @required Result actionInProgress(),
-    @required Result follows(),
-    @required Result followsNot(),
-    @required Result followSuccess(),
-    @required Result followFailure(Failure<dynamic> failure),
-    @required Result unFollowSuccess(),
-    @required Result unFollowFailure(Failure<dynamic> failure),
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() actionInProgress,
+    required TResult Function() follows,
+    required TResult Function() followsNot,
+    required TResult Function() followSuccess,
+    required TResult Function(Failure<dynamic> failure) followFailure,
+    required TResult Function() unFollowSuccess,
+    required TResult Function(Failure<dynamic> failure) unFollowFailure,
   }) {
-    assert(initial != null);
-    assert(actionInProgress != null);
-    assert(follows != null);
-    assert(followsNot != null);
-    assert(followSuccess != null);
-    assert(followFailure != null);
-    assert(unFollowSuccess != null);
-    assert(unFollowFailure != null);
     return followsNot();
   }
 
   @override
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result initial(),
-    Result actionInProgress(),
-    Result follows(),
-    Result followsNot(),
-    Result followSuccess(),
-    Result followFailure(Failure<dynamic> failure),
-    Result unFollowSuccess(),
-    Result unFollowFailure(Failure<dynamic> failure),
-    @required Result orElse(),
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? actionInProgress,
+    TResult Function()? follows,
+    TResult Function()? followsNot,
+    TResult Function()? followSuccess,
+    TResult Function(Failure<dynamic> failure)? followFailure,
+    TResult Function()? unFollowSuccess,
+    TResult Function(Failure<dynamic> failure)? unFollowFailure,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (followsNot != null) {
       return followsNot();
     }
@@ -1069,41 +1043,32 @@ class _$_FollowsNot implements _FollowsNot {
 
   @override
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result initial(_Initial value),
-    @required Result actionInProgress(_ActionInProgress value),
-    @required Result follows(_Follows value),
-    @required Result followsNot(_FollowsNot value),
-    @required Result followSuccess(_FollowSuccess value),
-    @required Result followFailure(_FollowFailure value),
-    @required Result unFollowSuccess(_UnFollowSuccess value),
-    @required Result unFollowFailure(_UnFollowFailure value),
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial value) initial,
+    required TResult Function(_ActionInProgress value) actionInProgress,
+    required TResult Function(_Follows value) follows,
+    required TResult Function(_FollowsNot value) followsNot,
+    required TResult Function(_FollowSuccess value) followSuccess,
+    required TResult Function(_FollowFailure value) followFailure,
+    required TResult Function(_UnFollowSuccess value) unFollowSuccess,
+    required TResult Function(_UnFollowFailure value) unFollowFailure,
   }) {
-    assert(initial != null);
-    assert(actionInProgress != null);
-    assert(follows != null);
-    assert(followsNot != null);
-    assert(followSuccess != null);
-    assert(followFailure != null);
-    assert(unFollowSuccess != null);
-    assert(unFollowFailure != null);
     return followsNot(this);
   }
 
   @override
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result initial(_Initial value),
-    Result actionInProgress(_ActionInProgress value),
-    Result follows(_Follows value),
-    Result followsNot(_FollowsNot value),
-    Result followSuccess(_FollowSuccess value),
-    Result followFailure(_FollowFailure value),
-    Result unFollowSuccess(_UnFollowSuccess value),
-    Result unFollowFailure(_UnFollowFailure value),
-    @required Result orElse(),
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_ActionInProgress value)? actionInProgress,
+    TResult Function(_Follows value)? follows,
+    TResult Function(_FollowsNot value)? followsNot,
+    TResult Function(_FollowSuccess value)? followSuccess,
+    TResult Function(_FollowFailure value)? followFailure,
+    TResult Function(_UnFollowSuccess value)? unFollowSuccess,
+    TResult Function(_UnFollowFailure value)? unFollowFailure,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (followsNot != null) {
       return followsNot(this);
     }
@@ -1135,6 +1100,7 @@ class __$FollowSuccessCopyWithImpl<$Res>
 }
 
 /// @nodoc
+
 class _$_FollowSuccess implements _FollowSuccess {
   const _$_FollowSuccess();
 
@@ -1153,41 +1119,32 @@ class _$_FollowSuccess implements _FollowSuccess {
 
   @override
   @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result initial(),
-    @required Result actionInProgress(),
-    @required Result follows(),
-    @required Result followsNot(),
-    @required Result followSuccess(),
-    @required Result followFailure(Failure<dynamic> failure),
-    @required Result unFollowSuccess(),
-    @required Result unFollowFailure(Failure<dynamic> failure),
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() actionInProgress,
+    required TResult Function() follows,
+    required TResult Function() followsNot,
+    required TResult Function() followSuccess,
+    required TResult Function(Failure<dynamic> failure) followFailure,
+    required TResult Function() unFollowSuccess,
+    required TResult Function(Failure<dynamic> failure) unFollowFailure,
   }) {
-    assert(initial != null);
-    assert(actionInProgress != null);
-    assert(follows != null);
-    assert(followsNot != null);
-    assert(followSuccess != null);
-    assert(followFailure != null);
-    assert(unFollowSuccess != null);
-    assert(unFollowFailure != null);
     return followSuccess();
   }
 
   @override
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result initial(),
-    Result actionInProgress(),
-    Result follows(),
-    Result followsNot(),
-    Result followSuccess(),
-    Result followFailure(Failure<dynamic> failure),
-    Result unFollowSuccess(),
-    Result unFollowFailure(Failure<dynamic> failure),
-    @required Result orElse(),
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? actionInProgress,
+    TResult Function()? follows,
+    TResult Function()? followsNot,
+    TResult Function()? followSuccess,
+    TResult Function(Failure<dynamic> failure)? followFailure,
+    TResult Function()? unFollowSuccess,
+    TResult Function(Failure<dynamic> failure)? unFollowFailure,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (followSuccess != null) {
       return followSuccess();
     }
@@ -1196,41 +1153,32 @@ class _$_FollowSuccess implements _FollowSuccess {
 
   @override
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result initial(_Initial value),
-    @required Result actionInProgress(_ActionInProgress value),
-    @required Result follows(_Follows value),
-    @required Result followsNot(_FollowsNot value),
-    @required Result followSuccess(_FollowSuccess value),
-    @required Result followFailure(_FollowFailure value),
-    @required Result unFollowSuccess(_UnFollowSuccess value),
-    @required Result unFollowFailure(_UnFollowFailure value),
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial value) initial,
+    required TResult Function(_ActionInProgress value) actionInProgress,
+    required TResult Function(_Follows value) follows,
+    required TResult Function(_FollowsNot value) followsNot,
+    required TResult Function(_FollowSuccess value) followSuccess,
+    required TResult Function(_FollowFailure value) followFailure,
+    required TResult Function(_UnFollowSuccess value) unFollowSuccess,
+    required TResult Function(_UnFollowFailure value) unFollowFailure,
   }) {
-    assert(initial != null);
-    assert(actionInProgress != null);
-    assert(follows != null);
-    assert(followsNot != null);
-    assert(followSuccess != null);
-    assert(followFailure != null);
-    assert(unFollowSuccess != null);
-    assert(unFollowFailure != null);
     return followSuccess(this);
   }
 
   @override
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result initial(_Initial value),
-    Result actionInProgress(_ActionInProgress value),
-    Result follows(_Follows value),
-    Result followsNot(_FollowsNot value),
-    Result followSuccess(_FollowSuccess value),
-    Result followFailure(_FollowFailure value),
-    Result unFollowSuccess(_UnFollowSuccess value),
-    Result unFollowFailure(_UnFollowFailure value),
-    @required Result orElse(),
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_ActionInProgress value)? actionInProgress,
+    TResult Function(_Follows value)? follows,
+    TResult Function(_FollowsNot value)? followsNot,
+    TResult Function(_FollowSuccess value)? followSuccess,
+    TResult Function(_FollowFailure value)? followFailure,
+    TResult Function(_UnFollowSuccess value)? unFollowSuccess,
+    TResult Function(_UnFollowFailure value)? unFollowFailure,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (followSuccess != null) {
       return followSuccess(this);
     }
@@ -1265,18 +1213,18 @@ class __$FollowFailureCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object failure = freezed,
+    Object? failure = freezed,
   }) {
     return _then(_FollowFailure(
-      failure == freezed ? _value.failure : failure as Failure<dynamic>,
+      failure == freezed
+          ? _value.failure
+          : failure // ignore: cast_nullable_to_non_nullable
+              as Failure<dynamic>,
     ));
   }
 
   @override
   $FailureCopyWith<dynamic, $Res> get failure {
-    if (_value.failure == null) {
-      return null;
-    }
     return $FailureCopyWith<dynamic, $Res>(_value.failure, (value) {
       return _then(_value.copyWith(failure: value));
     });
@@ -1284,8 +1232,9 @@ class __$FollowFailureCopyWithImpl<$Res>
 }
 
 /// @nodoc
+
 class _$_FollowFailure implements _FollowFailure {
-  const _$_FollowFailure(this.failure) : assert(failure != null);
+  const _$_FollowFailure(this.failure);
 
   @override
   final Failure<dynamic> failure;
@@ -1307,47 +1256,39 @@ class _$_FollowFailure implements _FollowFailure {
   int get hashCode =>
       runtimeType.hashCode ^ const DeepCollectionEquality().hash(failure);
 
+  @JsonKey(ignore: true)
   @override
   _$FollowFailureCopyWith<_FollowFailure> get copyWith =>
       __$FollowFailureCopyWithImpl<_FollowFailure>(this, _$identity);
 
   @override
   @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result initial(),
-    @required Result actionInProgress(),
-    @required Result follows(),
-    @required Result followsNot(),
-    @required Result followSuccess(),
-    @required Result followFailure(Failure<dynamic> failure),
-    @required Result unFollowSuccess(),
-    @required Result unFollowFailure(Failure<dynamic> failure),
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() actionInProgress,
+    required TResult Function() follows,
+    required TResult Function() followsNot,
+    required TResult Function() followSuccess,
+    required TResult Function(Failure<dynamic> failure) followFailure,
+    required TResult Function() unFollowSuccess,
+    required TResult Function(Failure<dynamic> failure) unFollowFailure,
   }) {
-    assert(initial != null);
-    assert(actionInProgress != null);
-    assert(follows != null);
-    assert(followsNot != null);
-    assert(followSuccess != null);
-    assert(followFailure != null);
-    assert(unFollowSuccess != null);
-    assert(unFollowFailure != null);
     return followFailure(failure);
   }
 
   @override
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result initial(),
-    Result actionInProgress(),
-    Result follows(),
-    Result followsNot(),
-    Result followSuccess(),
-    Result followFailure(Failure<dynamic> failure),
-    Result unFollowSuccess(),
-    Result unFollowFailure(Failure<dynamic> failure),
-    @required Result orElse(),
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? actionInProgress,
+    TResult Function()? follows,
+    TResult Function()? followsNot,
+    TResult Function()? followSuccess,
+    TResult Function(Failure<dynamic> failure)? followFailure,
+    TResult Function()? unFollowSuccess,
+    TResult Function(Failure<dynamic> failure)? unFollowFailure,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (followFailure != null) {
       return followFailure(failure);
     }
@@ -1356,41 +1297,32 @@ class _$_FollowFailure implements _FollowFailure {
 
   @override
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result initial(_Initial value),
-    @required Result actionInProgress(_ActionInProgress value),
-    @required Result follows(_Follows value),
-    @required Result followsNot(_FollowsNot value),
-    @required Result followSuccess(_FollowSuccess value),
-    @required Result followFailure(_FollowFailure value),
-    @required Result unFollowSuccess(_UnFollowSuccess value),
-    @required Result unFollowFailure(_UnFollowFailure value),
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial value) initial,
+    required TResult Function(_ActionInProgress value) actionInProgress,
+    required TResult Function(_Follows value) follows,
+    required TResult Function(_FollowsNot value) followsNot,
+    required TResult Function(_FollowSuccess value) followSuccess,
+    required TResult Function(_FollowFailure value) followFailure,
+    required TResult Function(_UnFollowSuccess value) unFollowSuccess,
+    required TResult Function(_UnFollowFailure value) unFollowFailure,
   }) {
-    assert(initial != null);
-    assert(actionInProgress != null);
-    assert(follows != null);
-    assert(followsNot != null);
-    assert(followSuccess != null);
-    assert(followFailure != null);
-    assert(unFollowSuccess != null);
-    assert(unFollowFailure != null);
     return followFailure(this);
   }
 
   @override
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result initial(_Initial value),
-    Result actionInProgress(_ActionInProgress value),
-    Result follows(_Follows value),
-    Result followsNot(_FollowsNot value),
-    Result followSuccess(_FollowSuccess value),
-    Result followFailure(_FollowFailure value),
-    Result unFollowSuccess(_UnFollowSuccess value),
-    Result unFollowFailure(_UnFollowFailure value),
-    @required Result orElse(),
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_ActionInProgress value)? actionInProgress,
+    TResult Function(_Follows value)? follows,
+    TResult Function(_FollowsNot value)? followsNot,
+    TResult Function(_FollowSuccess value)? followSuccess,
+    TResult Function(_FollowFailure value)? followFailure,
+    TResult Function(_UnFollowSuccess value)? unFollowSuccess,
+    TResult Function(_UnFollowFailure value)? unFollowFailure,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (followFailure != null) {
       return followFailure(this);
     }
@@ -1401,8 +1333,10 @@ class _$_FollowFailure implements _FollowFailure {
 abstract class _FollowFailure implements FollowActorState {
   const factory _FollowFailure(Failure<dynamic> failure) = _$_FollowFailure;
 
-  Failure<dynamic> get failure;
-  _$FollowFailureCopyWith<_FollowFailure> get copyWith;
+  Failure<dynamic> get failure => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  _$FollowFailureCopyWith<_FollowFailure> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -1425,6 +1359,7 @@ class __$UnFollowSuccessCopyWithImpl<$Res>
 }
 
 /// @nodoc
+
 class _$_UnFollowSuccess implements _UnFollowSuccess {
   const _$_UnFollowSuccess();
 
@@ -1443,41 +1378,32 @@ class _$_UnFollowSuccess implements _UnFollowSuccess {
 
   @override
   @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result initial(),
-    @required Result actionInProgress(),
-    @required Result follows(),
-    @required Result followsNot(),
-    @required Result followSuccess(),
-    @required Result followFailure(Failure<dynamic> failure),
-    @required Result unFollowSuccess(),
-    @required Result unFollowFailure(Failure<dynamic> failure),
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() actionInProgress,
+    required TResult Function() follows,
+    required TResult Function() followsNot,
+    required TResult Function() followSuccess,
+    required TResult Function(Failure<dynamic> failure) followFailure,
+    required TResult Function() unFollowSuccess,
+    required TResult Function(Failure<dynamic> failure) unFollowFailure,
   }) {
-    assert(initial != null);
-    assert(actionInProgress != null);
-    assert(follows != null);
-    assert(followsNot != null);
-    assert(followSuccess != null);
-    assert(followFailure != null);
-    assert(unFollowSuccess != null);
-    assert(unFollowFailure != null);
     return unFollowSuccess();
   }
 
   @override
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result initial(),
-    Result actionInProgress(),
-    Result follows(),
-    Result followsNot(),
-    Result followSuccess(),
-    Result followFailure(Failure<dynamic> failure),
-    Result unFollowSuccess(),
-    Result unFollowFailure(Failure<dynamic> failure),
-    @required Result orElse(),
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? actionInProgress,
+    TResult Function()? follows,
+    TResult Function()? followsNot,
+    TResult Function()? followSuccess,
+    TResult Function(Failure<dynamic> failure)? followFailure,
+    TResult Function()? unFollowSuccess,
+    TResult Function(Failure<dynamic> failure)? unFollowFailure,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (unFollowSuccess != null) {
       return unFollowSuccess();
     }
@@ -1486,41 +1412,32 @@ class _$_UnFollowSuccess implements _UnFollowSuccess {
 
   @override
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result initial(_Initial value),
-    @required Result actionInProgress(_ActionInProgress value),
-    @required Result follows(_Follows value),
-    @required Result followsNot(_FollowsNot value),
-    @required Result followSuccess(_FollowSuccess value),
-    @required Result followFailure(_FollowFailure value),
-    @required Result unFollowSuccess(_UnFollowSuccess value),
-    @required Result unFollowFailure(_UnFollowFailure value),
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial value) initial,
+    required TResult Function(_ActionInProgress value) actionInProgress,
+    required TResult Function(_Follows value) follows,
+    required TResult Function(_FollowsNot value) followsNot,
+    required TResult Function(_FollowSuccess value) followSuccess,
+    required TResult Function(_FollowFailure value) followFailure,
+    required TResult Function(_UnFollowSuccess value) unFollowSuccess,
+    required TResult Function(_UnFollowFailure value) unFollowFailure,
   }) {
-    assert(initial != null);
-    assert(actionInProgress != null);
-    assert(follows != null);
-    assert(followsNot != null);
-    assert(followSuccess != null);
-    assert(followFailure != null);
-    assert(unFollowSuccess != null);
-    assert(unFollowFailure != null);
     return unFollowSuccess(this);
   }
 
   @override
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result initial(_Initial value),
-    Result actionInProgress(_ActionInProgress value),
-    Result follows(_Follows value),
-    Result followsNot(_FollowsNot value),
-    Result followSuccess(_FollowSuccess value),
-    Result followFailure(_FollowFailure value),
-    Result unFollowSuccess(_UnFollowSuccess value),
-    Result unFollowFailure(_UnFollowFailure value),
-    @required Result orElse(),
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_ActionInProgress value)? actionInProgress,
+    TResult Function(_Follows value)? follows,
+    TResult Function(_FollowsNot value)? followsNot,
+    TResult Function(_FollowSuccess value)? followSuccess,
+    TResult Function(_FollowFailure value)? followFailure,
+    TResult Function(_UnFollowSuccess value)? unFollowSuccess,
+    TResult Function(_UnFollowFailure value)? unFollowFailure,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (unFollowSuccess != null) {
       return unFollowSuccess(this);
     }
@@ -1555,18 +1472,18 @@ class __$UnFollowFailureCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object failure = freezed,
+    Object? failure = freezed,
   }) {
     return _then(_UnFollowFailure(
-      failure == freezed ? _value.failure : failure as Failure<dynamic>,
+      failure == freezed
+          ? _value.failure
+          : failure // ignore: cast_nullable_to_non_nullable
+              as Failure<dynamic>,
     ));
   }
 
   @override
   $FailureCopyWith<dynamic, $Res> get failure {
-    if (_value.failure == null) {
-      return null;
-    }
     return $FailureCopyWith<dynamic, $Res>(_value.failure, (value) {
       return _then(_value.copyWith(failure: value));
     });
@@ -1574,8 +1491,9 @@ class __$UnFollowFailureCopyWithImpl<$Res>
 }
 
 /// @nodoc
+
 class _$_UnFollowFailure implements _UnFollowFailure {
-  const _$_UnFollowFailure(this.failure) : assert(failure != null);
+  const _$_UnFollowFailure(this.failure);
 
   @override
   final Failure<dynamic> failure;
@@ -1597,47 +1515,39 @@ class _$_UnFollowFailure implements _UnFollowFailure {
   int get hashCode =>
       runtimeType.hashCode ^ const DeepCollectionEquality().hash(failure);
 
+  @JsonKey(ignore: true)
   @override
   _$UnFollowFailureCopyWith<_UnFollowFailure> get copyWith =>
       __$UnFollowFailureCopyWithImpl<_UnFollowFailure>(this, _$identity);
 
   @override
   @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result initial(),
-    @required Result actionInProgress(),
-    @required Result follows(),
-    @required Result followsNot(),
-    @required Result followSuccess(),
-    @required Result followFailure(Failure<dynamic> failure),
-    @required Result unFollowSuccess(),
-    @required Result unFollowFailure(Failure<dynamic> failure),
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() actionInProgress,
+    required TResult Function() follows,
+    required TResult Function() followsNot,
+    required TResult Function() followSuccess,
+    required TResult Function(Failure<dynamic> failure) followFailure,
+    required TResult Function() unFollowSuccess,
+    required TResult Function(Failure<dynamic> failure) unFollowFailure,
   }) {
-    assert(initial != null);
-    assert(actionInProgress != null);
-    assert(follows != null);
-    assert(followsNot != null);
-    assert(followSuccess != null);
-    assert(followFailure != null);
-    assert(unFollowSuccess != null);
-    assert(unFollowFailure != null);
     return unFollowFailure(failure);
   }
 
   @override
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result initial(),
-    Result actionInProgress(),
-    Result follows(),
-    Result followsNot(),
-    Result followSuccess(),
-    Result followFailure(Failure<dynamic> failure),
-    Result unFollowSuccess(),
-    Result unFollowFailure(Failure<dynamic> failure),
-    @required Result orElse(),
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? actionInProgress,
+    TResult Function()? follows,
+    TResult Function()? followsNot,
+    TResult Function()? followSuccess,
+    TResult Function(Failure<dynamic> failure)? followFailure,
+    TResult Function()? unFollowSuccess,
+    TResult Function(Failure<dynamic> failure)? unFollowFailure,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (unFollowFailure != null) {
       return unFollowFailure(failure);
     }
@@ -1646,41 +1556,32 @@ class _$_UnFollowFailure implements _UnFollowFailure {
 
   @override
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result initial(_Initial value),
-    @required Result actionInProgress(_ActionInProgress value),
-    @required Result follows(_Follows value),
-    @required Result followsNot(_FollowsNot value),
-    @required Result followSuccess(_FollowSuccess value),
-    @required Result followFailure(_FollowFailure value),
-    @required Result unFollowSuccess(_UnFollowSuccess value),
-    @required Result unFollowFailure(_UnFollowFailure value),
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial value) initial,
+    required TResult Function(_ActionInProgress value) actionInProgress,
+    required TResult Function(_Follows value) follows,
+    required TResult Function(_FollowsNot value) followsNot,
+    required TResult Function(_FollowSuccess value) followSuccess,
+    required TResult Function(_FollowFailure value) followFailure,
+    required TResult Function(_UnFollowSuccess value) unFollowSuccess,
+    required TResult Function(_UnFollowFailure value) unFollowFailure,
   }) {
-    assert(initial != null);
-    assert(actionInProgress != null);
-    assert(follows != null);
-    assert(followsNot != null);
-    assert(followSuccess != null);
-    assert(followFailure != null);
-    assert(unFollowSuccess != null);
-    assert(unFollowFailure != null);
     return unFollowFailure(this);
   }
 
   @override
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result initial(_Initial value),
-    Result actionInProgress(_ActionInProgress value),
-    Result follows(_Follows value),
-    Result followsNot(_FollowsNot value),
-    Result followSuccess(_FollowSuccess value),
-    Result followFailure(_FollowFailure value),
-    Result unFollowSuccess(_UnFollowSuccess value),
-    Result unFollowFailure(_UnFollowFailure value),
-    @required Result orElse(),
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_ActionInProgress value)? actionInProgress,
+    TResult Function(_Follows value)? follows,
+    TResult Function(_FollowsNot value)? followsNot,
+    TResult Function(_FollowSuccess value)? followSuccess,
+    TResult Function(_FollowFailure value)? followFailure,
+    TResult Function(_UnFollowSuccess value)? unFollowSuccess,
+    TResult Function(_UnFollowFailure value)? unFollowFailure,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (unFollowFailure != null) {
       return unFollowFailure(this);
     }
@@ -1691,6 +1592,8 @@ class _$_UnFollowFailure implements _UnFollowFailure {
 abstract class _UnFollowFailure implements FollowActorState {
   const factory _UnFollowFailure(Failure<dynamic> failure) = _$_UnFollowFailure;
 
-  Failure<dynamic> get failure;
-  _$UnFollowFailureCopyWith<_UnFollowFailure> get copyWith;
+  Failure<dynamic> get failure => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  _$UnFollowFailureCopyWith<_UnFollowFailure> get copyWith =>
+      throw _privateConstructorUsedError;
 }

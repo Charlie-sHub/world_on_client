@@ -4,6 +4,7 @@ import 'package:injectable/injectable.dart' as injectable;
 import 'package:mockito/mockito.dart';
 import 'package:worldon/core/error/failure.dart';
 import 'package:worldon/data/core/failures/core_data_failure.dart';
+import 'package:worldon/domain/core/validation/objects/unique_id.dart';
 import 'package:worldon/domain/notifications/repository/notification_repository_interface.dart';
 import 'package:worldon/domain/notifications/use_case/delete_notification.dart';
 import 'package:worldon/injection.dart';
@@ -20,7 +21,7 @@ void main() {
       useCase = DeleteNotification(mockNotificationRepository);
     },
   );
-  final params = Params(id: 1);
+  final params = Params(id: UniqueId());
   test(
     TestDescription.returnNothing,
     () async {

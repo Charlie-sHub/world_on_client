@@ -1,3 +1,4 @@
+import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:worldon/application/search/search_by_name_form/search_by_name_form_bloc.dart';
@@ -6,16 +7,16 @@ import 'package:worldon/application/search/search_experiences_by_name_watcher/se
 import 'package:worldon/application/search/search_experiences_by_tags/search_experiences_by_tags_bloc.dart';
 import 'package:worldon/application/search/search_tags_by_name_watcher/search_tags_by_name_watcher_bloc.dart';
 import 'package:worldon/application/search/search_users_by_name_watcher/search_users_by_name_watcher_bloc.dart';
+import 'package:worldon/generated/l10n.dart';
 import 'package:worldon/injection.dart';
-import 'package:worldon/views/search/widget/search_experiences_tab_bar_view.dart';
+import 'package:worldon/views/search/widget/experience_results_view.dart';
 import 'package:worldon/views/search/widget/search_header.dart';
-import 'package:worldon/views/search/widget/search_tab_bar.dart';
-import 'package:worldon/views/search/widget/search_tags_tab_view.dart';
-import 'package:worldon/views/search/widget/search_users_tab_view/search_users_tab_view.dart';
+import 'package:worldon/views/search/widget/tag_results_view.dart';
+import 'package:worldon/views/search/widget/user_results_view.dart';
 
-// TODO: Implement search experiences by difficulty and by tags
 class SearchBody extends StatelessWidget {
-  const SearchBody({Key key}) : super(key: key);
+  const SearchBody({Key? key}) : super(key: key);
+  static const double _separation = 5;
 
   @override
   Widget build(BuildContext context) {
@@ -29,48 +30,69 @@ class SearchBody extends StatelessWidget {
         BlocProvider(create: (context) => getIt<SearchExperiencesByTagsBloc>()),
       ],
       child: BlocConsumer<SearchByNameFormBloc, SearchByNameFormState>(
-        listenWhen: (previous, current) => previous.isSubmitting != current.isSubmitting,
+        listenWhen: (previous, current) => current.isSubmitting,
         listener: _searchFormListener,
         buildWhen: (previous, current) => previous.showErrorMessages != current.showErrorMessages,
-        builder: (context, state) => Padding(
-          padding: const EdgeInsets.all(5),
-          child: DefaultTabController(
-            length: 3,
-            child: Column(
-              children: <Widget>[
-                const SearchHeader(),
-                const SizedBox(height: 5),
-                const SearchTabBar(),
-                Expanded(
-                  child: TabBarView(
-                    children: [
-                      SearchExperiencesTabView(searchTerm: state.searchTerm),
-                      SearchUsersTabView(searchTerm: state.searchTerm),
-                      SearchTagsTabView(searchTerm: state.searchTerm),
-                    ],
+        builder: (context, state) {
+          return SingleChildScrollView(
+            child: Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 10),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  const SearchHeader(),
+                  const SizedBox(height: _separation),
+                  AutoSizeText(
+                    S.of(context).searchTags.toUpperCase(),
+                    style: const TextStyle(fontWeight: FontWeight.bold),
                   ),
-                ),
-              ],
+                  const SizedBox(height: _separation),
+                  SizedBox(
+                    height: MediaQuery.of(context).size.height * 0.07,
+                    child: const TagResultsView(),
+                  ),
+                  AutoSizeText(
+                    S.of(context).experiences.toUpperCase(),
+                    style: const TextStyle(fontWeight: FontWeight.bold),
+                  ),
+                  const SizedBox(height: _separation),
+                  SizedBox(
+                    height: MediaQuery.of(context).size.height * 0.32,
+                    child: ExperienceResultsView(searchTerm: state.searchTerm),
+                  ),
+                  const SizedBox(height: _separation),
+                  AutoSizeText(
+                    S.of(context).searchUsers.toUpperCase(),
+                    style: const TextStyle(fontWeight: FontWeight.bold),
+                  ),
+                  const SizedBox(height: _separation),
+                  SizedBox(
+                    height: MediaQuery.of(context).size.height * 0.25,
+                    child: UserResultsView(searchTerm: state.searchTerm),
+                  ),
+                  const SizedBox(height: kBottomNavigationBarHeight),
+                ],
+              ),
             ),
-          ),
-        ),
+          );
+        },
       ),
     );
   }
 
   void _searchFormListener(BuildContext context, SearchByNameFormState state) {
     if (state.searchTerm.value.isRight()) {
-      context.bloc<SearchUsersByNameWatcherBloc>().add(
-            SearchUsersByNameWatcherEvent.watchUsersFoundByUsernameStarted(
+      context.read<SearchUsersByNameWatcherBloc>().add(
+            SearchUsersByNameWatcherEvent.watchUsersFoundByNameStarted(
               state.searchTerm,
             ),
           );
-      context.bloc<SearchExperiencesByNameWatcherBloc>().add(
+      context.read<SearchExperiencesByNameWatcherBloc>().add(
             SearchExperiencesByNameWatcherEvent.watchExperiencesFoundByNameStarted(
               state.searchTerm,
             ),
           );
-      context.bloc<SearchTagsByNameWatcherBloc>().add(
+      context.read<SearchTagsByNameWatcherBloc>().add(
             SearchTagsByNameWatcherEvent.watchTagsFoundByNameStarted(
               state.searchTerm,
             ),

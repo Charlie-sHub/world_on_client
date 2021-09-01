@@ -12,7 +12,5 @@ class GetCurrentLocation implements AsyncUseCase<Coordinates, NoParams> {
   GetCurrentLocation(this._repository);
 
   @override
-  Future<Either<Failure, Coordinates>> call(NoParams params) async {
-    return _repository.getCurrentLocation();
-  }
+  Future<Either<Failure, Coordinates>> call(NoParams params) async => _repository.getCurrentLocation();
 }

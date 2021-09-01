@@ -49,8 +49,18 @@ void main() {
       blocTest(
         "Should emit profileView",
         build: () => getIt<NavigationActorBloc>(),
-        act: (bloc) async => bloc.add(NavigationActorEvent.profileTapped(none())),
-        expect: [NavigationActorState.profileView(none())],
+        act: (bloc) async => bloc.add(
+          NavigationActorEvent.profileTapped(
+            currentUserProfile: false,
+            userOption: none(),
+          ),
+        ),
+        expect: [
+          NavigationActorState.profileView(
+            userOption: none(),
+            currentUserProfile: false,
+          ),
+        ],
       );
       blocTest(
         "Should emit notificationsView",

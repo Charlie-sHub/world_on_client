@@ -1,7 +1,7 @@
 part of 'achievement_management_actor_bloc.dart';
 
 @freezed
-abstract class AchievementManagementActorState with _$AchievementManagementActorState {
+class AchievementManagementActorState with _$AchievementManagementActorState {
   const factory AchievementManagementActorState.initial() = _Initial;
 
   const factory AchievementManagementActorState.actionInProgress() = _ActionInProgress;

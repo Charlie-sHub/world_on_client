@@ -1,5 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides
 
 part of 'registration_form_bloc.dart';
 
@@ -9,312 +9,320 @@ part of 'registration_form_bloc.dart';
 
 T _$identity<T>(T value) => value;
 
+final _privateConstructorUsedError = UnsupportedError(
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+
 /// @nodoc
 class _$RegistrationFormEventTearOff {
   const _$RegistrationFormEventTearOff();
 
-// ignore: unused_element
-  _Initialized initialized() {
-    return const _Initialized();
+  _Initialized initialized(Option<User> userOption) {
+    return _Initialized(
+      userOption,
+    );
   }
 
-// ignore: unused_element
   _ImageChanged imageChanged(File imageFile) {
     return _ImageChanged(
       imageFile,
     );
   }
 
-// ignore: unused_element
   _NameChanged nameChanged(String name) {
     return _NameChanged(
       name,
     );
   }
 
-// ignore: unused_element
   _UsernameChanged usernameChanged(String username) {
     return _UsernameChanged(
       username,
     );
   }
 
-// ignore: unused_element
   _PasswordChanged passwordChanged(String password) {
     return _PasswordChanged(
       password,
     );
   }
 
-// ignore: unused_element
-  _PasswordConfirmationChanged passwordConfirmationChanged(String passwordConfirmation) {
+  _PasswordConfirmationChanged passwordConfirmationChanged(
+      String passwordConfirmation) {
     return _PasswordConfirmationChanged(
       passwordConfirmation,
     );
   }
 
-// ignore: unused_element
   _EmailAddressChanged emailAddressChanged(String emailAddress) {
     return _EmailAddressChanged(
       emailAddress,
     );
   }
 
-// ignore: unused_element
   _BirthdayChanged birthdayChanged(DateTime birthday) {
     return _BirthdayChanged(
       birthday,
     );
   }
 
-// ignore: unused_element
   _DescriptionChanged descriptionChanged(String description) {
     return _DescriptionChanged(
       description,
     );
   }
 
-// ignore: unused_element
-  _InterestsChanged interestsChanged(Set<int> interests) {
+  _InterestsChanged interestsChanged(KtSet<Tag> interests) {
     return _InterestsChanged(
       interests,
     );
   }
 
-// ignore: unused_element
   _TappedEULA tappedEULA() {
     return const _TappedEULA();
   }
 
-// ignore: unused_element
   _Submitted submitted() {
     return const _Submitted();
   }
 }
 
 /// @nodoc
-// ignore: unused_element
 const $RegistrationFormEvent = _$RegistrationFormEventTearOff();
 
 /// @nodoc
 mixin _$RegistrationFormEvent {
   @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result initialized(),
-    @required Result imageChanged(File imageFile),
-    @required Result nameChanged(String name),
-    @required Result usernameChanged(String username),
-    @required Result passwordChanged(String password),
-    @required Result passwordConfirmationChanged(String passwordConfirmation),
-    @required Result emailAddressChanged(String emailAddress),
-    @required Result birthdayChanged(DateTime birthday),
-    @required Result descriptionChanged(String description),
-    @required Result interestsChanged(Set<int> interests),
-    @required Result tappedEULA(),
-    @required Result submitted(),
-  });
+  TResult when<TResult extends Object?>({
+    required TResult Function(Option<User> userOption) initialized,
+    required TResult Function(File imageFile) imageChanged,
+    required TResult Function(String name) nameChanged,
+    required TResult Function(String username) usernameChanged,
+    required TResult Function(String password) passwordChanged,
+    required TResult Function(String passwordConfirmation)
+        passwordConfirmationChanged,
+    required TResult Function(String emailAddress) emailAddressChanged,
+    required TResult Function(DateTime birthday) birthdayChanged,
+    required TResult Function(String description) descriptionChanged,
+    required TResult Function(KtSet<Tag> interests) interestsChanged,
+    required TResult Function() tappedEULA,
+    required TResult Function() submitted,
+  }) =>
+      throw _privateConstructorUsedError;
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result initialized(),
-    Result imageChanged(File imageFile),
-    Result nameChanged(String name),
-    Result usernameChanged(String username),
-    Result passwordChanged(String password),
-    Result passwordConfirmationChanged(String passwordConfirmation),
-    Result emailAddressChanged(String emailAddress),
-    Result birthdayChanged(DateTime birthday),
-    Result descriptionChanged(String description),
-    Result interestsChanged(Set<int> interests),
-    Result tappedEULA(),
-    Result submitted(),
-    @required Result orElse(),
-  });
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(Option<User> userOption)? initialized,
+    TResult Function(File imageFile)? imageChanged,
+    TResult Function(String name)? nameChanged,
+    TResult Function(String username)? usernameChanged,
+    TResult Function(String password)? passwordChanged,
+    TResult Function(String passwordConfirmation)? passwordConfirmationChanged,
+    TResult Function(String emailAddress)? emailAddressChanged,
+    TResult Function(DateTime birthday)? birthdayChanged,
+    TResult Function(String description)? descriptionChanged,
+    TResult Function(KtSet<Tag> interests)? interestsChanged,
+    TResult Function()? tappedEULA,
+    TResult Function()? submitted,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result initialized(_Initialized value),
-    @required Result imageChanged(_ImageChanged value),
-    @required Result nameChanged(_NameChanged value),
-    @required Result usernameChanged(_UsernameChanged value),
-    @required Result passwordChanged(_PasswordChanged value),
-    @required Result passwordConfirmationChanged(_PasswordConfirmationChanged value),
-    @required Result emailAddressChanged(_EmailAddressChanged value),
-    @required Result birthdayChanged(_BirthdayChanged value),
-    @required Result descriptionChanged(_DescriptionChanged value),
-    @required Result interestsChanged(_InterestsChanged value),
-    @required Result tappedEULA(_TappedEULA value),
-    @required Result submitted(_Submitted value),
-  });
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initialized value) initialized,
+    required TResult Function(_ImageChanged value) imageChanged,
+    required TResult Function(_NameChanged value) nameChanged,
+    required TResult Function(_UsernameChanged value) usernameChanged,
+    required TResult Function(_PasswordChanged value) passwordChanged,
+    required TResult Function(_PasswordConfirmationChanged value)
+        passwordConfirmationChanged,
+    required TResult Function(_EmailAddressChanged value) emailAddressChanged,
+    required TResult Function(_BirthdayChanged value) birthdayChanged,
+    required TResult Function(_DescriptionChanged value) descriptionChanged,
+    required TResult Function(_InterestsChanged value) interestsChanged,
+    required TResult Function(_TappedEULA value) tappedEULA,
+    required TResult Function(_Submitted value) submitted,
+  }) =>
+      throw _privateConstructorUsedError;
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result initialized(_Initialized value),
-    Result imageChanged(_ImageChanged value),
-    Result nameChanged(_NameChanged value),
-    Result usernameChanged(_UsernameChanged value),
-    Result passwordChanged(_PasswordChanged value),
-    Result passwordConfirmationChanged(_PasswordConfirmationChanged value),
-    Result emailAddressChanged(_EmailAddressChanged value),
-    Result birthdayChanged(_BirthdayChanged value),
-    Result descriptionChanged(_DescriptionChanged value),
-    Result interestsChanged(_InterestsChanged value),
-    Result tappedEULA(_TappedEULA value),
-    Result submitted(_Submitted value),
-    @required Result orElse(),
-  });
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initialized value)? initialized,
+    TResult Function(_ImageChanged value)? imageChanged,
+    TResult Function(_NameChanged value)? nameChanged,
+    TResult Function(_UsernameChanged value)? usernameChanged,
+    TResult Function(_PasswordChanged value)? passwordChanged,
+    TResult Function(_PasswordConfirmationChanged value)?
+        passwordConfirmationChanged,
+    TResult Function(_EmailAddressChanged value)? emailAddressChanged,
+    TResult Function(_BirthdayChanged value)? birthdayChanged,
+    TResult Function(_DescriptionChanged value)? descriptionChanged,
+    TResult Function(_InterestsChanged value)? interestsChanged,
+    TResult Function(_TappedEULA value)? tappedEULA,
+    TResult Function(_Submitted value)? submitted,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $RegistrationFormEventCopyWith<$Res> {
-  factory $RegistrationFormEventCopyWith(RegistrationFormEvent value, $Res Function(RegistrationFormEvent) then) = _$RegistrationFormEventCopyWithImpl<$Res>;
+  factory $RegistrationFormEventCopyWith(RegistrationFormEvent value,
+          $Res Function(RegistrationFormEvent) then) =
+      _$RegistrationFormEventCopyWithImpl<$Res>;
 }
 
 /// @nodoc
 class _$RegistrationFormEventCopyWithImpl<$Res>
-  implements $RegistrationFormEventCopyWith<$Res> {
+    implements $RegistrationFormEventCopyWith<$Res> {
   _$RegistrationFormEventCopyWithImpl(this._value, this._then);
-  
+
   final RegistrationFormEvent _value;
-  
   // ignore: unused_field
   final $Res Function(RegistrationFormEvent) _then;
 }
 
 /// @nodoc
 abstract class _$InitializedCopyWith<$Res> {
-  factory _$InitializedCopyWith(_Initialized value, $Res Function(_Initialized) then) =
-  __$InitializedCopyWithImpl<$Res>;
+  factory _$InitializedCopyWith(
+          _Initialized value, $Res Function(_Initialized) then) =
+      __$InitializedCopyWithImpl<$Res>;
+  $Res call({Option<User> userOption});
 }
 
 /// @nodoc
-class __$InitializedCopyWithImpl<$Res> extends _$RegistrationFormEventCopyWithImpl<$Res>
-  implements _$InitializedCopyWith<$Res> {
-  __$InitializedCopyWithImpl(_Initialized _value, $Res Function(_Initialized) _then)
-    : super(_value, (v) => _then(v as _Initialized));
-  
+class __$InitializedCopyWithImpl<$Res>
+    extends _$RegistrationFormEventCopyWithImpl<$Res>
+    implements _$InitializedCopyWith<$Res> {
+  __$InitializedCopyWithImpl(
+      _Initialized _value, $Res Function(_Initialized) _then)
+      : super(_value, (v) => _then(v as _Initialized));
+
   @override
   _Initialized get _value => super._value as _Initialized;
+
+  @override
+  $Res call({
+    Object? userOption = freezed,
+  }) {
+    return _then(_Initialized(
+      userOption == freezed
+          ? _value.userOption
+          : userOption // ignore: cast_nullable_to_non_nullable
+              as Option<User>,
+    ));
+  }
 }
 
 /// @nodoc
+
 class _$_Initialized implements _Initialized {
-  const _$_Initialized();
+  const _$_Initialized(this.userOption);
+
+  @override
+  final Option<User> userOption;
 
   @override
   String toString() {
-    return 'RegistrationFormEvent.initialized()';
+    return 'RegistrationFormEvent.initialized(userOption: $userOption)';
   }
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _Initialized);
+    return identical(this, other) ||
+        (other is _Initialized &&
+            (identical(other.userOption, userOption) ||
+                const DeepCollectionEquality()
+                    .equals(other.userOption, userOption)));
   }
 
   @override
-  int get hashCode => runtimeType.hashCode;
+  int get hashCode =>
+      runtimeType.hashCode ^ const DeepCollectionEquality().hash(userOption);
+
+  @JsonKey(ignore: true)
+  @override
+  _$InitializedCopyWith<_Initialized> get copyWith =>
+      __$InitializedCopyWithImpl<_Initialized>(this, _$identity);
 
   @override
   @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result initialized(),
-    @required Result imageChanged(File imageFile),
-    @required Result nameChanged(String name),
-    @required Result usernameChanged(String username),
-    @required Result passwordChanged(String password),
-    @required Result passwordConfirmationChanged(String passwordConfirmation),
-    @required Result emailAddressChanged(String emailAddress),
-    @required Result birthdayChanged(DateTime birthday),
-    @required Result descriptionChanged(String description),
-    @required Result interestsChanged(Set<int> interests),
-    @required Result tappedEULA(),
-    @required Result submitted(),
+  TResult when<TResult extends Object?>({
+    required TResult Function(Option<User> userOption) initialized,
+    required TResult Function(File imageFile) imageChanged,
+    required TResult Function(String name) nameChanged,
+    required TResult Function(String username) usernameChanged,
+    required TResult Function(String password) passwordChanged,
+    required TResult Function(String passwordConfirmation)
+        passwordConfirmationChanged,
+    required TResult Function(String emailAddress) emailAddressChanged,
+    required TResult Function(DateTime birthday) birthdayChanged,
+    required TResult Function(String description) descriptionChanged,
+    required TResult Function(KtSet<Tag> interests) interestsChanged,
+    required TResult Function() tappedEULA,
+    required TResult Function() submitted,
   }) {
-    assert(initialized != null);
-    assert(imageChanged != null);
-    assert(nameChanged != null);
-    assert(usernameChanged != null);
-    assert(passwordChanged != null);
-    assert(passwordConfirmationChanged != null);
-    assert(emailAddressChanged != null);
-    assert(birthdayChanged != null);
-    assert(descriptionChanged != null);
-    assert(interestsChanged != null);
-    assert(tappedEULA != null);
-    assert(submitted != null);
-    return initialized();
+    return initialized(userOption);
   }
 
   @override
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result initialized(),
-    Result imageChanged(File imageFile),
-    Result nameChanged(String name),
-    Result usernameChanged(String username),
-    Result passwordChanged(String password),
-    Result passwordConfirmationChanged(String passwordConfirmation),
-    Result emailAddressChanged(String emailAddress),
-    Result birthdayChanged(DateTime birthday),
-    Result descriptionChanged(String description),
-    Result interestsChanged(Set<int> interests),
-    Result tappedEULA(),
-    Result submitted(),
-    @required Result orElse(),
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(Option<User> userOption)? initialized,
+    TResult Function(File imageFile)? imageChanged,
+    TResult Function(String name)? nameChanged,
+    TResult Function(String username)? usernameChanged,
+    TResult Function(String password)? passwordChanged,
+    TResult Function(String passwordConfirmation)? passwordConfirmationChanged,
+    TResult Function(String emailAddress)? emailAddressChanged,
+    TResult Function(DateTime birthday)? birthdayChanged,
+    TResult Function(String description)? descriptionChanged,
+    TResult Function(KtSet<Tag> interests)? interestsChanged,
+    TResult Function()? tappedEULA,
+    TResult Function()? submitted,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (initialized != null) {
-      return initialized();
+      return initialized(userOption);
     }
     return orElse();
   }
 
   @override
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result initialized(_Initialized value),
-    @required Result imageChanged(_ImageChanged value),
-    @required Result nameChanged(_NameChanged value),
-    @required Result usernameChanged(_UsernameChanged value),
-    @required Result passwordChanged(_PasswordChanged value),
-    @required Result passwordConfirmationChanged(_PasswordConfirmationChanged value),
-    @required Result emailAddressChanged(_EmailAddressChanged value),
-    @required Result birthdayChanged(_BirthdayChanged value),
-    @required Result descriptionChanged(_DescriptionChanged value),
-    @required Result interestsChanged(_InterestsChanged value),
-    @required Result tappedEULA(_TappedEULA value),
-    @required Result submitted(_Submitted value),
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initialized value) initialized,
+    required TResult Function(_ImageChanged value) imageChanged,
+    required TResult Function(_NameChanged value) nameChanged,
+    required TResult Function(_UsernameChanged value) usernameChanged,
+    required TResult Function(_PasswordChanged value) passwordChanged,
+    required TResult Function(_PasswordConfirmationChanged value)
+        passwordConfirmationChanged,
+    required TResult Function(_EmailAddressChanged value) emailAddressChanged,
+    required TResult Function(_BirthdayChanged value) birthdayChanged,
+    required TResult Function(_DescriptionChanged value) descriptionChanged,
+    required TResult Function(_InterestsChanged value) interestsChanged,
+    required TResult Function(_TappedEULA value) tappedEULA,
+    required TResult Function(_Submitted value) submitted,
   }) {
-    assert(initialized != null);
-    assert(imageChanged != null);
-    assert(nameChanged != null);
-    assert(usernameChanged != null);
-    assert(passwordChanged != null);
-    assert(passwordConfirmationChanged != null);
-    assert(emailAddressChanged != null);
-    assert(birthdayChanged != null);
-    assert(descriptionChanged != null);
-    assert(interestsChanged != null);
-    assert(tappedEULA != null);
-    assert(submitted != null);
     return initialized(this);
   }
 
   @override
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result initialized(_Initialized value),
-    Result imageChanged(_ImageChanged value),
-    Result nameChanged(_NameChanged value),
-    Result usernameChanged(_UsernameChanged value),
-    Result passwordChanged(_PasswordChanged value),
-    Result passwordConfirmationChanged(_PasswordConfirmationChanged value),
-    Result emailAddressChanged(_EmailAddressChanged value),
-    Result birthdayChanged(_BirthdayChanged value),
-    Result descriptionChanged(_DescriptionChanged value),
-    Result interestsChanged(_InterestsChanged value),
-    Result tappedEULA(_TappedEULA value),
-    Result submitted(_Submitted value),
-    @required Result orElse(),
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initialized value)? initialized,
+    TResult Function(_ImageChanged value)? imageChanged,
+    TResult Function(_NameChanged value)? nameChanged,
+    TResult Function(_UsernameChanged value)? usernameChanged,
+    TResult Function(_PasswordChanged value)? passwordChanged,
+    TResult Function(_PasswordConfirmationChanged value)?
+        passwordConfirmationChanged,
+    TResult Function(_EmailAddressChanged value)? emailAddressChanged,
+    TResult Function(_BirthdayChanged value)? birthdayChanged,
+    TResult Function(_DescriptionChanged value)? descriptionChanged,
+    TResult Function(_InterestsChanged value)? interestsChanged,
+    TResult Function(_TappedEULA value)? tappedEULA,
+    TResult Function(_Submitted value)? submitted,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (initialized != null) {
       return initialized(this);
     }
@@ -323,39 +331,50 @@ class _$_Initialized implements _Initialized {
 }
 
 abstract class _Initialized implements RegistrationFormEvent {
-  const factory _Initialized() = _$_Initialized;
+  const factory _Initialized(Option<User> userOption) = _$_Initialized;
+
+  Option<User> get userOption => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  _$InitializedCopyWith<_Initialized> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class _$ImageChangedCopyWith<$Res> {
-  factory _$ImageChangedCopyWith(_ImageChanged value, $Res Function(_ImageChanged) then) =
-  __$ImageChangedCopyWithImpl<$Res>;
-  
+  factory _$ImageChangedCopyWith(
+          _ImageChanged value, $Res Function(_ImageChanged) then) =
+      __$ImageChangedCopyWithImpl<$Res>;
   $Res call({File imageFile});
 }
 
 /// @nodoc
-class __$ImageChangedCopyWithImpl<$Res> extends _$RegistrationFormEventCopyWithImpl<$Res>
-  implements _$ImageChangedCopyWith<$Res> {
-  __$ImageChangedCopyWithImpl(_ImageChanged _value, $Res Function(_ImageChanged) _then)
-    : super(_value, (v) => _then(v as _ImageChanged));
-  
+class __$ImageChangedCopyWithImpl<$Res>
+    extends _$RegistrationFormEventCopyWithImpl<$Res>
+    implements _$ImageChangedCopyWith<$Res> {
+  __$ImageChangedCopyWithImpl(
+      _ImageChanged _value, $Res Function(_ImageChanged) _then)
+      : super(_value, (v) => _then(v as _ImageChanged));
+
   @override
   _ImageChanged get _value => super._value as _ImageChanged;
-  
+
   @override
   $Res call({
-    Object imageFile = freezed,
+    Object? imageFile = freezed,
   }) {
     return _then(_ImageChanged(
-      imageFile == freezed ? _value.imageFile : imageFile as File,
+      imageFile == freezed
+          ? _value.imageFile
+          : imageFile // ignore: cast_nullable_to_non_nullable
+              as File,
     ));
   }
 }
 
 /// @nodoc
+
 class _$_ImageChanged implements _ImageChanged {
-  const _$_ImageChanged(this.imageFile) : assert(imageFile != null);
+  const _$_ImageChanged(this.imageFile);
 
   @override
   final File imageFile;
@@ -368,69 +387,58 @@ class _$_ImageChanged implements _ImageChanged {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-      (other is _ImageChanged &&
-        (identical(other.imageFile, imageFile) ||
-          const DeepCollectionEquality()
-            .equals(other.imageFile, imageFile)));
+        (other is _ImageChanged &&
+            (identical(other.imageFile, imageFile) ||
+                const DeepCollectionEquality()
+                    .equals(other.imageFile, imageFile)));
   }
 
   @override
   int get hashCode =>
-    runtimeType.hashCode ^ const DeepCollectionEquality().hash(imageFile);
+      runtimeType.hashCode ^ const DeepCollectionEquality().hash(imageFile);
 
+  @JsonKey(ignore: true)
   @override
   _$ImageChangedCopyWith<_ImageChanged> get copyWith =>
-    __$ImageChangedCopyWithImpl<_ImageChanged>(this, _$identity);
+      __$ImageChangedCopyWithImpl<_ImageChanged>(this, _$identity);
 
   @override
   @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result initialized(),
-    @required Result imageChanged(File imageFile),
-    @required Result nameChanged(String name),
-    @required Result usernameChanged(String username),
-    @required Result passwordChanged(String password),
-    @required Result passwordConfirmationChanged(String passwordConfirmation),
-    @required Result emailAddressChanged(String emailAddress),
-    @required Result birthdayChanged(DateTime birthday),
-    @required Result descriptionChanged(String description),
-    @required Result interestsChanged(Set<int> interests),
-    @required Result tappedEULA(),
-    @required Result submitted(),
+  TResult when<TResult extends Object?>({
+    required TResult Function(Option<User> userOption) initialized,
+    required TResult Function(File imageFile) imageChanged,
+    required TResult Function(String name) nameChanged,
+    required TResult Function(String username) usernameChanged,
+    required TResult Function(String password) passwordChanged,
+    required TResult Function(String passwordConfirmation)
+        passwordConfirmationChanged,
+    required TResult Function(String emailAddress) emailAddressChanged,
+    required TResult Function(DateTime birthday) birthdayChanged,
+    required TResult Function(String description) descriptionChanged,
+    required TResult Function(KtSet<Tag> interests) interestsChanged,
+    required TResult Function() tappedEULA,
+    required TResult Function() submitted,
   }) {
-    assert(initialized != null);
-    assert(imageChanged != null);
-    assert(nameChanged != null);
-    assert(usernameChanged != null);
-    assert(passwordChanged != null);
-    assert(passwordConfirmationChanged != null);
-    assert(emailAddressChanged != null);
-    assert(birthdayChanged != null);
-    assert(descriptionChanged != null);
-    assert(interestsChanged != null);
-    assert(tappedEULA != null);
-    assert(submitted != null);
     return imageChanged(imageFile);
   }
 
   @override
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result initialized(),
-    Result imageChanged(File imageFile),
-    Result nameChanged(String name),
-    Result usernameChanged(String username),
-    Result passwordChanged(String password),
-    Result passwordConfirmationChanged(String passwordConfirmation),
-    Result emailAddressChanged(String emailAddress),
-    Result birthdayChanged(DateTime birthday),
-    Result descriptionChanged(String description),
-    Result interestsChanged(Set<int> interests),
-    Result tappedEULA(),
-    Result submitted(),
-    @required Result orElse(),
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(Option<User> userOption)? initialized,
+    TResult Function(File imageFile)? imageChanged,
+    TResult Function(String name)? nameChanged,
+    TResult Function(String username)? usernameChanged,
+    TResult Function(String password)? passwordChanged,
+    TResult Function(String passwordConfirmation)? passwordConfirmationChanged,
+    TResult Function(String emailAddress)? emailAddressChanged,
+    TResult Function(DateTime birthday)? birthdayChanged,
+    TResult Function(String description)? descriptionChanged,
+    TResult Function(KtSet<Tag> interests)? interestsChanged,
+    TResult Function()? tappedEULA,
+    TResult Function()? submitted,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (imageChanged != null) {
       return imageChanged(imageFile);
     }
@@ -439,53 +447,42 @@ class _$_ImageChanged implements _ImageChanged {
 
   @override
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result initialized(_Initialized value),
-    @required Result imageChanged(_ImageChanged value),
-    @required Result nameChanged(_NameChanged value),
-    @required Result usernameChanged(_UsernameChanged value),
-    @required Result passwordChanged(_PasswordChanged value),
-    @required Result passwordConfirmationChanged(_PasswordConfirmationChanged value),
-    @required Result emailAddressChanged(_EmailAddressChanged value),
-    @required Result birthdayChanged(_BirthdayChanged value),
-    @required Result descriptionChanged(_DescriptionChanged value),
-    @required Result interestsChanged(_InterestsChanged value),
-    @required Result tappedEULA(_TappedEULA value),
-    @required Result submitted(_Submitted value),
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initialized value) initialized,
+    required TResult Function(_ImageChanged value) imageChanged,
+    required TResult Function(_NameChanged value) nameChanged,
+    required TResult Function(_UsernameChanged value) usernameChanged,
+    required TResult Function(_PasswordChanged value) passwordChanged,
+    required TResult Function(_PasswordConfirmationChanged value)
+        passwordConfirmationChanged,
+    required TResult Function(_EmailAddressChanged value) emailAddressChanged,
+    required TResult Function(_BirthdayChanged value) birthdayChanged,
+    required TResult Function(_DescriptionChanged value) descriptionChanged,
+    required TResult Function(_InterestsChanged value) interestsChanged,
+    required TResult Function(_TappedEULA value) tappedEULA,
+    required TResult Function(_Submitted value) submitted,
   }) {
-    assert(initialized != null);
-    assert(imageChanged != null);
-    assert(nameChanged != null);
-    assert(usernameChanged != null);
-    assert(passwordChanged != null);
-    assert(passwordConfirmationChanged != null);
-    assert(emailAddressChanged != null);
-    assert(birthdayChanged != null);
-    assert(descriptionChanged != null);
-    assert(interestsChanged != null);
-    assert(tappedEULA != null);
-    assert(submitted != null);
     return imageChanged(this);
   }
 
   @override
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result initialized(_Initialized value),
-    Result imageChanged(_ImageChanged value),
-    Result nameChanged(_NameChanged value),
-    Result usernameChanged(_UsernameChanged value),
-    Result passwordChanged(_PasswordChanged value),
-    Result passwordConfirmationChanged(_PasswordConfirmationChanged value),
-    Result emailAddressChanged(_EmailAddressChanged value),
-    Result birthdayChanged(_BirthdayChanged value),
-    Result descriptionChanged(_DescriptionChanged value),
-    Result interestsChanged(_InterestsChanged value),
-    Result tappedEULA(_TappedEULA value),
-    Result submitted(_Submitted value),
-    @required Result orElse(),
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initialized value)? initialized,
+    TResult Function(_ImageChanged value)? imageChanged,
+    TResult Function(_NameChanged value)? nameChanged,
+    TResult Function(_UsernameChanged value)? usernameChanged,
+    TResult Function(_PasswordChanged value)? passwordChanged,
+    TResult Function(_PasswordConfirmationChanged value)?
+        passwordConfirmationChanged,
+    TResult Function(_EmailAddressChanged value)? emailAddressChanged,
+    TResult Function(_BirthdayChanged value)? birthdayChanged,
+    TResult Function(_DescriptionChanged value)? descriptionChanged,
+    TResult Function(_InterestsChanged value)? interestsChanged,
+    TResult Function(_TappedEULA value)? tappedEULA,
+    TResult Function(_Submitted value)? submitted,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (imageChanged != null) {
       return imageChanged(this);
     }
@@ -496,40 +493,48 @@ class _$_ImageChanged implements _ImageChanged {
 abstract class _ImageChanged implements RegistrationFormEvent {
   const factory _ImageChanged(File imageFile) = _$_ImageChanged;
 
-  File get imageFile;
-  _$ImageChangedCopyWith<_ImageChanged> get copyWith;
+  File get imageFile => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  _$ImageChangedCopyWith<_ImageChanged> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class _$NameChangedCopyWith<$Res> {
-  factory _$NameChangedCopyWith(_NameChanged value, $Res Function(_NameChanged) then) =
-  __$NameChangedCopyWithImpl<$Res>;
-  
+  factory _$NameChangedCopyWith(
+          _NameChanged value, $Res Function(_NameChanged) then) =
+      __$NameChangedCopyWithImpl<$Res>;
   $Res call({String name});
 }
 
 /// @nodoc
-class __$NameChangedCopyWithImpl<$Res> extends _$RegistrationFormEventCopyWithImpl<$Res>
-  implements _$NameChangedCopyWith<$Res> {
-  __$NameChangedCopyWithImpl(_NameChanged _value, $Res Function(_NameChanged) _then)
-    : super(_value, (v) => _then(v as _NameChanged));
-  
+class __$NameChangedCopyWithImpl<$Res>
+    extends _$RegistrationFormEventCopyWithImpl<$Res>
+    implements _$NameChangedCopyWith<$Res> {
+  __$NameChangedCopyWithImpl(
+      _NameChanged _value, $Res Function(_NameChanged) _then)
+      : super(_value, (v) => _then(v as _NameChanged));
+
   @override
   _NameChanged get _value => super._value as _NameChanged;
-  
+
   @override
   $Res call({
-    Object name = freezed,
+    Object? name = freezed,
   }) {
     return _then(_NameChanged(
-      name == freezed ? _value.name : name as String,
+      name == freezed
+          ? _value.name
+          : name // ignore: cast_nullable_to_non_nullable
+              as String,
     ));
   }
 }
 
 /// @nodoc
+
 class _$_NameChanged implements _NameChanged {
-  const _$_NameChanged(this.name) : assert(name != null);
+  const _$_NameChanged(this.name);
 
   @override
   final String name;
@@ -542,68 +547,57 @@ class _$_NameChanged implements _NameChanged {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-      (other is _NameChanged &&
-        (identical(other.name, name) ||
-          const DeepCollectionEquality().equals(other.name, name)));
+        (other is _NameChanged &&
+            (identical(other.name, name) ||
+                const DeepCollectionEquality().equals(other.name, name)));
   }
 
   @override
   int get hashCode =>
-    runtimeType.hashCode ^ const DeepCollectionEquality().hash(name);
+      runtimeType.hashCode ^ const DeepCollectionEquality().hash(name);
 
+  @JsonKey(ignore: true)
   @override
   _$NameChangedCopyWith<_NameChanged> get copyWith =>
-    __$NameChangedCopyWithImpl<_NameChanged>(this, _$identity);
+      __$NameChangedCopyWithImpl<_NameChanged>(this, _$identity);
 
   @override
   @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result initialized(),
-    @required Result imageChanged(File imageFile),
-    @required Result nameChanged(String name),
-    @required Result usernameChanged(String username),
-    @required Result passwordChanged(String password),
-    @required Result passwordConfirmationChanged(String passwordConfirmation),
-    @required Result emailAddressChanged(String emailAddress),
-    @required Result birthdayChanged(DateTime birthday),
-    @required Result descriptionChanged(String description),
-    @required Result interestsChanged(Set<int> interests),
-    @required Result tappedEULA(),
-    @required Result submitted(),
+  TResult when<TResult extends Object?>({
+    required TResult Function(Option<User> userOption) initialized,
+    required TResult Function(File imageFile) imageChanged,
+    required TResult Function(String name) nameChanged,
+    required TResult Function(String username) usernameChanged,
+    required TResult Function(String password) passwordChanged,
+    required TResult Function(String passwordConfirmation)
+        passwordConfirmationChanged,
+    required TResult Function(String emailAddress) emailAddressChanged,
+    required TResult Function(DateTime birthday) birthdayChanged,
+    required TResult Function(String description) descriptionChanged,
+    required TResult Function(KtSet<Tag> interests) interestsChanged,
+    required TResult Function() tappedEULA,
+    required TResult Function() submitted,
   }) {
-    assert(initialized != null);
-    assert(imageChanged != null);
-    assert(nameChanged != null);
-    assert(usernameChanged != null);
-    assert(passwordChanged != null);
-    assert(passwordConfirmationChanged != null);
-    assert(emailAddressChanged != null);
-    assert(birthdayChanged != null);
-    assert(descriptionChanged != null);
-    assert(interestsChanged != null);
-    assert(tappedEULA != null);
-    assert(submitted != null);
     return nameChanged(name);
   }
 
   @override
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result initialized(),
-    Result imageChanged(File imageFile),
-    Result nameChanged(String name),
-    Result usernameChanged(String username),
-    Result passwordChanged(String password),
-    Result passwordConfirmationChanged(String passwordConfirmation),
-    Result emailAddressChanged(String emailAddress),
-    Result birthdayChanged(DateTime birthday),
-    Result descriptionChanged(String description),
-    Result interestsChanged(Set<int> interests),
-    Result tappedEULA(),
-    Result submitted(),
-    @required Result orElse(),
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(Option<User> userOption)? initialized,
+    TResult Function(File imageFile)? imageChanged,
+    TResult Function(String name)? nameChanged,
+    TResult Function(String username)? usernameChanged,
+    TResult Function(String password)? passwordChanged,
+    TResult Function(String passwordConfirmation)? passwordConfirmationChanged,
+    TResult Function(String emailAddress)? emailAddressChanged,
+    TResult Function(DateTime birthday)? birthdayChanged,
+    TResult Function(String description)? descriptionChanged,
+    TResult Function(KtSet<Tag> interests)? interestsChanged,
+    TResult Function()? tappedEULA,
+    TResult Function()? submitted,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (nameChanged != null) {
       return nameChanged(name);
     }
@@ -612,53 +606,42 @@ class _$_NameChanged implements _NameChanged {
 
   @override
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result initialized(_Initialized value),
-    @required Result imageChanged(_ImageChanged value),
-    @required Result nameChanged(_NameChanged value),
-    @required Result usernameChanged(_UsernameChanged value),
-    @required Result passwordChanged(_PasswordChanged value),
-    @required Result passwordConfirmationChanged(_PasswordConfirmationChanged value),
-    @required Result emailAddressChanged(_EmailAddressChanged value),
-    @required Result birthdayChanged(_BirthdayChanged value),
-    @required Result descriptionChanged(_DescriptionChanged value),
-    @required Result interestsChanged(_InterestsChanged value),
-    @required Result tappedEULA(_TappedEULA value),
-    @required Result submitted(_Submitted value),
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initialized value) initialized,
+    required TResult Function(_ImageChanged value) imageChanged,
+    required TResult Function(_NameChanged value) nameChanged,
+    required TResult Function(_UsernameChanged value) usernameChanged,
+    required TResult Function(_PasswordChanged value) passwordChanged,
+    required TResult Function(_PasswordConfirmationChanged value)
+        passwordConfirmationChanged,
+    required TResult Function(_EmailAddressChanged value) emailAddressChanged,
+    required TResult Function(_BirthdayChanged value) birthdayChanged,
+    required TResult Function(_DescriptionChanged value) descriptionChanged,
+    required TResult Function(_InterestsChanged value) interestsChanged,
+    required TResult Function(_TappedEULA value) tappedEULA,
+    required TResult Function(_Submitted value) submitted,
   }) {
-    assert(initialized != null);
-    assert(imageChanged != null);
-    assert(nameChanged != null);
-    assert(usernameChanged != null);
-    assert(passwordChanged != null);
-    assert(passwordConfirmationChanged != null);
-    assert(emailAddressChanged != null);
-    assert(birthdayChanged != null);
-    assert(descriptionChanged != null);
-    assert(interestsChanged != null);
-    assert(tappedEULA != null);
-    assert(submitted != null);
     return nameChanged(this);
   }
 
   @override
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result initialized(_Initialized value),
-    Result imageChanged(_ImageChanged value),
-    Result nameChanged(_NameChanged value),
-    Result usernameChanged(_UsernameChanged value),
-    Result passwordChanged(_PasswordChanged value),
-    Result passwordConfirmationChanged(_PasswordConfirmationChanged value),
-    Result emailAddressChanged(_EmailAddressChanged value),
-    Result birthdayChanged(_BirthdayChanged value),
-    Result descriptionChanged(_DescriptionChanged value),
-    Result interestsChanged(_InterestsChanged value),
-    Result tappedEULA(_TappedEULA value),
-    Result submitted(_Submitted value),
-    @required Result orElse(),
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initialized value)? initialized,
+    TResult Function(_ImageChanged value)? imageChanged,
+    TResult Function(_NameChanged value)? nameChanged,
+    TResult Function(_UsernameChanged value)? usernameChanged,
+    TResult Function(_PasswordChanged value)? passwordChanged,
+    TResult Function(_PasswordConfirmationChanged value)?
+        passwordConfirmationChanged,
+    TResult Function(_EmailAddressChanged value)? emailAddressChanged,
+    TResult Function(_BirthdayChanged value)? birthdayChanged,
+    TResult Function(_DescriptionChanged value)? descriptionChanged,
+    TResult Function(_InterestsChanged value)? interestsChanged,
+    TResult Function(_TappedEULA value)? tappedEULA,
+    TResult Function(_Submitted value)? submitted,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (nameChanged != null) {
       return nameChanged(this);
     }
@@ -669,40 +652,48 @@ class _$_NameChanged implements _NameChanged {
 abstract class _NameChanged implements RegistrationFormEvent {
   const factory _NameChanged(String name) = _$_NameChanged;
 
-  String get name;
-  _$NameChangedCopyWith<_NameChanged> get copyWith;
+  String get name => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  _$NameChangedCopyWith<_NameChanged> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class _$UsernameChangedCopyWith<$Res> {
-  factory _$UsernameChangedCopyWith(_UsernameChanged value, $Res Function(_UsernameChanged) then) =
-  __$UsernameChangedCopyWithImpl<$Res>;
-  
+  factory _$UsernameChangedCopyWith(
+          _UsernameChanged value, $Res Function(_UsernameChanged) then) =
+      __$UsernameChangedCopyWithImpl<$Res>;
   $Res call({String username});
 }
 
 /// @nodoc
-class __$UsernameChangedCopyWithImpl<$Res> extends _$RegistrationFormEventCopyWithImpl<$Res>
-  implements _$UsernameChangedCopyWith<$Res> {
-  __$UsernameChangedCopyWithImpl(_UsernameChanged _value, $Res Function(_UsernameChanged) _then)
-    : super(_value, (v) => _then(v as _UsernameChanged));
-  
+class __$UsernameChangedCopyWithImpl<$Res>
+    extends _$RegistrationFormEventCopyWithImpl<$Res>
+    implements _$UsernameChangedCopyWith<$Res> {
+  __$UsernameChangedCopyWithImpl(
+      _UsernameChanged _value, $Res Function(_UsernameChanged) _then)
+      : super(_value, (v) => _then(v as _UsernameChanged));
+
   @override
   _UsernameChanged get _value => super._value as _UsernameChanged;
-  
+
   @override
   $Res call({
-    Object username = freezed,
+    Object? username = freezed,
   }) {
     return _then(_UsernameChanged(
-      username == freezed ? _value.username : username as String,
+      username == freezed
+          ? _value.username
+          : username // ignore: cast_nullable_to_non_nullable
+              as String,
     ));
   }
 }
 
 /// @nodoc
+
 class _$_UsernameChanged implements _UsernameChanged {
-  const _$_UsernameChanged(this.username) : assert(username != null);
+  const _$_UsernameChanged(this.username);
 
   @override
   final String username;
@@ -715,69 +706,58 @@ class _$_UsernameChanged implements _UsernameChanged {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-      (other is _UsernameChanged &&
-        (identical(other.username, username) ||
-          const DeepCollectionEquality()
-            .equals(other.username, username)));
+        (other is _UsernameChanged &&
+            (identical(other.username, username) ||
+                const DeepCollectionEquality()
+                    .equals(other.username, username)));
   }
 
   @override
   int get hashCode =>
-    runtimeType.hashCode ^ const DeepCollectionEquality().hash(username);
+      runtimeType.hashCode ^ const DeepCollectionEquality().hash(username);
 
+  @JsonKey(ignore: true)
   @override
   _$UsernameChangedCopyWith<_UsernameChanged> get copyWith =>
-    __$UsernameChangedCopyWithImpl<_UsernameChanged>(this, _$identity);
+      __$UsernameChangedCopyWithImpl<_UsernameChanged>(this, _$identity);
 
   @override
   @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result initialized(),
-    @required Result imageChanged(File imageFile),
-    @required Result nameChanged(String name),
-    @required Result usernameChanged(String username),
-    @required Result passwordChanged(String password),
-    @required Result passwordConfirmationChanged(String passwordConfirmation),
-    @required Result emailAddressChanged(String emailAddress),
-    @required Result birthdayChanged(DateTime birthday),
-    @required Result descriptionChanged(String description),
-    @required Result interestsChanged(Set<int> interests),
-    @required Result tappedEULA(),
-    @required Result submitted(),
+  TResult when<TResult extends Object?>({
+    required TResult Function(Option<User> userOption) initialized,
+    required TResult Function(File imageFile) imageChanged,
+    required TResult Function(String name) nameChanged,
+    required TResult Function(String username) usernameChanged,
+    required TResult Function(String password) passwordChanged,
+    required TResult Function(String passwordConfirmation)
+        passwordConfirmationChanged,
+    required TResult Function(String emailAddress) emailAddressChanged,
+    required TResult Function(DateTime birthday) birthdayChanged,
+    required TResult Function(String description) descriptionChanged,
+    required TResult Function(KtSet<Tag> interests) interestsChanged,
+    required TResult Function() tappedEULA,
+    required TResult Function() submitted,
   }) {
-    assert(initialized != null);
-    assert(imageChanged != null);
-    assert(nameChanged != null);
-    assert(usernameChanged != null);
-    assert(passwordChanged != null);
-    assert(passwordConfirmationChanged != null);
-    assert(emailAddressChanged != null);
-    assert(birthdayChanged != null);
-    assert(descriptionChanged != null);
-    assert(interestsChanged != null);
-    assert(tappedEULA != null);
-    assert(submitted != null);
     return usernameChanged(username);
   }
 
   @override
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result initialized(),
-    Result imageChanged(File imageFile),
-    Result nameChanged(String name),
-    Result usernameChanged(String username),
-    Result passwordChanged(String password),
-    Result passwordConfirmationChanged(String passwordConfirmation),
-    Result emailAddressChanged(String emailAddress),
-    Result birthdayChanged(DateTime birthday),
-    Result descriptionChanged(String description),
-    Result interestsChanged(Set<int> interests),
-    Result tappedEULA(),
-    Result submitted(),
-    @required Result orElse(),
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(Option<User> userOption)? initialized,
+    TResult Function(File imageFile)? imageChanged,
+    TResult Function(String name)? nameChanged,
+    TResult Function(String username)? usernameChanged,
+    TResult Function(String password)? passwordChanged,
+    TResult Function(String passwordConfirmation)? passwordConfirmationChanged,
+    TResult Function(String emailAddress)? emailAddressChanged,
+    TResult Function(DateTime birthday)? birthdayChanged,
+    TResult Function(String description)? descriptionChanged,
+    TResult Function(KtSet<Tag> interests)? interestsChanged,
+    TResult Function()? tappedEULA,
+    TResult Function()? submitted,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (usernameChanged != null) {
       return usernameChanged(username);
     }
@@ -786,53 +766,42 @@ class _$_UsernameChanged implements _UsernameChanged {
 
   @override
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result initialized(_Initialized value),
-    @required Result imageChanged(_ImageChanged value),
-    @required Result nameChanged(_NameChanged value),
-    @required Result usernameChanged(_UsernameChanged value),
-    @required Result passwordChanged(_PasswordChanged value),
-    @required Result passwordConfirmationChanged(_PasswordConfirmationChanged value),
-    @required Result emailAddressChanged(_EmailAddressChanged value),
-    @required Result birthdayChanged(_BirthdayChanged value),
-    @required Result descriptionChanged(_DescriptionChanged value),
-    @required Result interestsChanged(_InterestsChanged value),
-    @required Result tappedEULA(_TappedEULA value),
-    @required Result submitted(_Submitted value),
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initialized value) initialized,
+    required TResult Function(_ImageChanged value) imageChanged,
+    required TResult Function(_NameChanged value) nameChanged,
+    required TResult Function(_UsernameChanged value) usernameChanged,
+    required TResult Function(_PasswordChanged value) passwordChanged,
+    required TResult Function(_PasswordConfirmationChanged value)
+        passwordConfirmationChanged,
+    required TResult Function(_EmailAddressChanged value) emailAddressChanged,
+    required TResult Function(_BirthdayChanged value) birthdayChanged,
+    required TResult Function(_DescriptionChanged value) descriptionChanged,
+    required TResult Function(_InterestsChanged value) interestsChanged,
+    required TResult Function(_TappedEULA value) tappedEULA,
+    required TResult Function(_Submitted value) submitted,
   }) {
-    assert(initialized != null);
-    assert(imageChanged != null);
-    assert(nameChanged != null);
-    assert(usernameChanged != null);
-    assert(passwordChanged != null);
-    assert(passwordConfirmationChanged != null);
-    assert(emailAddressChanged != null);
-    assert(birthdayChanged != null);
-    assert(descriptionChanged != null);
-    assert(interestsChanged != null);
-    assert(tappedEULA != null);
-    assert(submitted != null);
     return usernameChanged(this);
   }
 
   @override
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result initialized(_Initialized value),
-    Result imageChanged(_ImageChanged value),
-    Result nameChanged(_NameChanged value),
-    Result usernameChanged(_UsernameChanged value),
-    Result passwordChanged(_PasswordChanged value),
-    Result passwordConfirmationChanged(_PasswordConfirmationChanged value),
-    Result emailAddressChanged(_EmailAddressChanged value),
-    Result birthdayChanged(_BirthdayChanged value),
-    Result descriptionChanged(_DescriptionChanged value),
-    Result interestsChanged(_InterestsChanged value),
-    Result tappedEULA(_TappedEULA value),
-    Result submitted(_Submitted value),
-    @required Result orElse(),
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initialized value)? initialized,
+    TResult Function(_ImageChanged value)? imageChanged,
+    TResult Function(_NameChanged value)? nameChanged,
+    TResult Function(_UsernameChanged value)? usernameChanged,
+    TResult Function(_PasswordChanged value)? passwordChanged,
+    TResult Function(_PasswordConfirmationChanged value)?
+        passwordConfirmationChanged,
+    TResult Function(_EmailAddressChanged value)? emailAddressChanged,
+    TResult Function(_BirthdayChanged value)? birthdayChanged,
+    TResult Function(_DescriptionChanged value)? descriptionChanged,
+    TResult Function(_InterestsChanged value)? interestsChanged,
+    TResult Function(_TappedEULA value)? tappedEULA,
+    TResult Function(_Submitted value)? submitted,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (usernameChanged != null) {
       return usernameChanged(this);
     }
@@ -843,40 +812,48 @@ class _$_UsernameChanged implements _UsernameChanged {
 abstract class _UsernameChanged implements RegistrationFormEvent {
   const factory _UsernameChanged(String username) = _$_UsernameChanged;
 
-  String get username;
-  _$UsernameChangedCopyWith<_UsernameChanged> get copyWith;
+  String get username => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  _$UsernameChangedCopyWith<_UsernameChanged> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class _$PasswordChangedCopyWith<$Res> {
-  factory _$PasswordChangedCopyWith(_PasswordChanged value, $Res Function(_PasswordChanged) then) =
-  __$PasswordChangedCopyWithImpl<$Res>;
-  
+  factory _$PasswordChangedCopyWith(
+          _PasswordChanged value, $Res Function(_PasswordChanged) then) =
+      __$PasswordChangedCopyWithImpl<$Res>;
   $Res call({String password});
 }
 
 /// @nodoc
-class __$PasswordChangedCopyWithImpl<$Res> extends _$RegistrationFormEventCopyWithImpl<$Res>
-  implements _$PasswordChangedCopyWith<$Res> {
-  __$PasswordChangedCopyWithImpl(_PasswordChanged _value, $Res Function(_PasswordChanged) _then)
-    : super(_value, (v) => _then(v as _PasswordChanged));
-  
+class __$PasswordChangedCopyWithImpl<$Res>
+    extends _$RegistrationFormEventCopyWithImpl<$Res>
+    implements _$PasswordChangedCopyWith<$Res> {
+  __$PasswordChangedCopyWithImpl(
+      _PasswordChanged _value, $Res Function(_PasswordChanged) _then)
+      : super(_value, (v) => _then(v as _PasswordChanged));
+
   @override
   _PasswordChanged get _value => super._value as _PasswordChanged;
-  
+
   @override
   $Res call({
-    Object password = freezed,
+    Object? password = freezed,
   }) {
     return _then(_PasswordChanged(
-      password == freezed ? _value.password : password as String,
+      password == freezed
+          ? _value.password
+          : password // ignore: cast_nullable_to_non_nullable
+              as String,
     ));
   }
 }
 
 /// @nodoc
+
 class _$_PasswordChanged implements _PasswordChanged {
-  const _$_PasswordChanged(this.password) : assert(password != null);
+  const _$_PasswordChanged(this.password);
 
   @override
   final String password;
@@ -889,69 +866,58 @@ class _$_PasswordChanged implements _PasswordChanged {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-      (other is _PasswordChanged &&
-        (identical(other.password, password) ||
-          const DeepCollectionEquality()
-            .equals(other.password, password)));
+        (other is _PasswordChanged &&
+            (identical(other.password, password) ||
+                const DeepCollectionEquality()
+                    .equals(other.password, password)));
   }
 
   @override
   int get hashCode =>
-    runtimeType.hashCode ^ const DeepCollectionEquality().hash(password);
+      runtimeType.hashCode ^ const DeepCollectionEquality().hash(password);
 
+  @JsonKey(ignore: true)
   @override
   _$PasswordChangedCopyWith<_PasswordChanged> get copyWith =>
-    __$PasswordChangedCopyWithImpl<_PasswordChanged>(this, _$identity);
+      __$PasswordChangedCopyWithImpl<_PasswordChanged>(this, _$identity);
 
   @override
   @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result initialized(),
-    @required Result imageChanged(File imageFile),
-    @required Result nameChanged(String name),
-    @required Result usernameChanged(String username),
-    @required Result passwordChanged(String password),
-    @required Result passwordConfirmationChanged(String passwordConfirmation),
-    @required Result emailAddressChanged(String emailAddress),
-    @required Result birthdayChanged(DateTime birthday),
-    @required Result descriptionChanged(String description),
-    @required Result interestsChanged(Set<int> interests),
-    @required Result tappedEULA(),
-    @required Result submitted(),
+  TResult when<TResult extends Object?>({
+    required TResult Function(Option<User> userOption) initialized,
+    required TResult Function(File imageFile) imageChanged,
+    required TResult Function(String name) nameChanged,
+    required TResult Function(String username) usernameChanged,
+    required TResult Function(String password) passwordChanged,
+    required TResult Function(String passwordConfirmation)
+        passwordConfirmationChanged,
+    required TResult Function(String emailAddress) emailAddressChanged,
+    required TResult Function(DateTime birthday) birthdayChanged,
+    required TResult Function(String description) descriptionChanged,
+    required TResult Function(KtSet<Tag> interests) interestsChanged,
+    required TResult Function() tappedEULA,
+    required TResult Function() submitted,
   }) {
-    assert(initialized != null);
-    assert(imageChanged != null);
-    assert(nameChanged != null);
-    assert(usernameChanged != null);
-    assert(passwordChanged != null);
-    assert(passwordConfirmationChanged != null);
-    assert(emailAddressChanged != null);
-    assert(birthdayChanged != null);
-    assert(descriptionChanged != null);
-    assert(interestsChanged != null);
-    assert(tappedEULA != null);
-    assert(submitted != null);
     return passwordChanged(password);
   }
 
   @override
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result initialized(),
-    Result imageChanged(File imageFile),
-    Result nameChanged(String name),
-    Result usernameChanged(String username),
-    Result passwordChanged(String password),
-    Result passwordConfirmationChanged(String passwordConfirmation),
-    Result emailAddressChanged(String emailAddress),
-    Result birthdayChanged(DateTime birthday),
-    Result descriptionChanged(String description),
-    Result interestsChanged(Set<int> interests),
-    Result tappedEULA(),
-    Result submitted(),
-    @required Result orElse(),
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(Option<User> userOption)? initialized,
+    TResult Function(File imageFile)? imageChanged,
+    TResult Function(String name)? nameChanged,
+    TResult Function(String username)? usernameChanged,
+    TResult Function(String password)? passwordChanged,
+    TResult Function(String passwordConfirmation)? passwordConfirmationChanged,
+    TResult Function(String emailAddress)? emailAddressChanged,
+    TResult Function(DateTime birthday)? birthdayChanged,
+    TResult Function(String description)? descriptionChanged,
+    TResult Function(KtSet<Tag> interests)? interestsChanged,
+    TResult Function()? tappedEULA,
+    TResult Function()? submitted,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (passwordChanged != null) {
       return passwordChanged(password);
     }
@@ -960,53 +926,42 @@ class _$_PasswordChanged implements _PasswordChanged {
 
   @override
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result initialized(_Initialized value),
-    @required Result imageChanged(_ImageChanged value),
-    @required Result nameChanged(_NameChanged value),
-    @required Result usernameChanged(_UsernameChanged value),
-    @required Result passwordChanged(_PasswordChanged value),
-    @required Result passwordConfirmationChanged(_PasswordConfirmationChanged value),
-    @required Result emailAddressChanged(_EmailAddressChanged value),
-    @required Result birthdayChanged(_BirthdayChanged value),
-    @required Result descriptionChanged(_DescriptionChanged value),
-    @required Result interestsChanged(_InterestsChanged value),
-    @required Result tappedEULA(_TappedEULA value),
-    @required Result submitted(_Submitted value),
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initialized value) initialized,
+    required TResult Function(_ImageChanged value) imageChanged,
+    required TResult Function(_NameChanged value) nameChanged,
+    required TResult Function(_UsernameChanged value) usernameChanged,
+    required TResult Function(_PasswordChanged value) passwordChanged,
+    required TResult Function(_PasswordConfirmationChanged value)
+        passwordConfirmationChanged,
+    required TResult Function(_EmailAddressChanged value) emailAddressChanged,
+    required TResult Function(_BirthdayChanged value) birthdayChanged,
+    required TResult Function(_DescriptionChanged value) descriptionChanged,
+    required TResult Function(_InterestsChanged value) interestsChanged,
+    required TResult Function(_TappedEULA value) tappedEULA,
+    required TResult Function(_Submitted value) submitted,
   }) {
-    assert(initialized != null);
-    assert(imageChanged != null);
-    assert(nameChanged != null);
-    assert(usernameChanged != null);
-    assert(passwordChanged != null);
-    assert(passwordConfirmationChanged != null);
-    assert(emailAddressChanged != null);
-    assert(birthdayChanged != null);
-    assert(descriptionChanged != null);
-    assert(interestsChanged != null);
-    assert(tappedEULA != null);
-    assert(submitted != null);
     return passwordChanged(this);
   }
 
   @override
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result initialized(_Initialized value),
-    Result imageChanged(_ImageChanged value),
-    Result nameChanged(_NameChanged value),
-    Result usernameChanged(_UsernameChanged value),
-    Result passwordChanged(_PasswordChanged value),
-    Result passwordConfirmationChanged(_PasswordConfirmationChanged value),
-    Result emailAddressChanged(_EmailAddressChanged value),
-    Result birthdayChanged(_BirthdayChanged value),
-    Result descriptionChanged(_DescriptionChanged value),
-    Result interestsChanged(_InterestsChanged value),
-    Result tappedEULA(_TappedEULA value),
-    Result submitted(_Submitted value),
-    @required Result orElse(),
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initialized value)? initialized,
+    TResult Function(_ImageChanged value)? imageChanged,
+    TResult Function(_NameChanged value)? nameChanged,
+    TResult Function(_UsernameChanged value)? usernameChanged,
+    TResult Function(_PasswordChanged value)? passwordChanged,
+    TResult Function(_PasswordConfirmationChanged value)?
+        passwordConfirmationChanged,
+    TResult Function(_EmailAddressChanged value)? emailAddressChanged,
+    TResult Function(_BirthdayChanged value)? birthdayChanged,
+    TResult Function(_DescriptionChanged value)? descriptionChanged,
+    TResult Function(_InterestsChanged value)? interestsChanged,
+    TResult Function(_TappedEULA value)? tappedEULA,
+    TResult Function(_Submitted value)? submitted,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (passwordChanged != null) {
       return passwordChanged(this);
     }
@@ -1017,124 +972,117 @@ class _$_PasswordChanged implements _PasswordChanged {
 abstract class _PasswordChanged implements RegistrationFormEvent {
   const factory _PasswordChanged(String password) = _$_PasswordChanged;
 
-  String get password;
-  _$PasswordChangedCopyWith<_PasswordChanged> get copyWith;
+  String get password => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  _$PasswordChangedCopyWith<_PasswordChanged> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class _$PasswordConfirmationChangedCopyWith<$Res> {
-  factory _$PasswordConfirmationChangedCopyWith(_PasswordConfirmationChanged value,
-    $Res Function(_PasswordConfirmationChanged) then) =
-  __$PasswordConfirmationChangedCopyWithImpl<$Res>;
-  
+  factory _$PasswordConfirmationChangedCopyWith(
+          _PasswordConfirmationChanged value,
+          $Res Function(_PasswordConfirmationChanged) then) =
+      __$PasswordConfirmationChangedCopyWithImpl<$Res>;
   $Res call({String passwordConfirmation});
 }
 
 /// @nodoc
-class __$PasswordConfirmationChangedCopyWithImpl<$Res> extends _$RegistrationFormEventCopyWithImpl<$Res>
-  implements _$PasswordConfirmationChangedCopyWith<$Res> {
-  __$PasswordConfirmationChangedCopyWithImpl(_PasswordConfirmationChanged _value,
-    $Res Function(_PasswordConfirmationChanged) _then)
-    : super(_value, (v) => _then(v as _PasswordConfirmationChanged));
-  
+class __$PasswordConfirmationChangedCopyWithImpl<$Res>
+    extends _$RegistrationFormEventCopyWithImpl<$Res>
+    implements _$PasswordConfirmationChangedCopyWith<$Res> {
+  __$PasswordConfirmationChangedCopyWithImpl(
+      _PasswordConfirmationChanged _value,
+      $Res Function(_PasswordConfirmationChanged) _then)
+      : super(_value, (v) => _then(v as _PasswordConfirmationChanged));
+
   @override
   _PasswordConfirmationChanged get _value =>
-    super._value as _PasswordConfirmationChanged;
-  
+      super._value as _PasswordConfirmationChanged;
+
   @override
   $Res call({
-    Object passwordConfirmation = freezed,
+    Object? passwordConfirmation = freezed,
   }) {
     return _then(_PasswordConfirmationChanged(
       passwordConfirmation == freezed
-        ? _value.passwordConfirmation
-        : passwordConfirmation as String,
+          ? _value.passwordConfirmation
+          : passwordConfirmation // ignore: cast_nullable_to_non_nullable
+              as String,
     ));
   }
 }
 
 /// @nodoc
+
 class _$_PasswordConfirmationChanged implements _PasswordConfirmationChanged {
-  const _$_PasswordConfirmationChanged(this.passwordConfirmation)
-    : assert(passwordConfirmation != null);
-  
+  const _$_PasswordConfirmationChanged(this.passwordConfirmation);
+
   @override
   final String passwordConfirmation;
-  
+
   @override
   String toString() {
     return 'RegistrationFormEvent.passwordConfirmationChanged(passwordConfirmation: $passwordConfirmation)';
   }
-  
+
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-      (other is _PasswordConfirmationChanged &&
-        (identical(other.passwordConfirmation, passwordConfirmation) ||
-          const DeepCollectionEquality()
-            .equals(other.passwordConfirmation, passwordConfirmation)));
+        (other is _PasswordConfirmationChanged &&
+            (identical(other.passwordConfirmation, passwordConfirmation) ||
+                const DeepCollectionEquality()
+                    .equals(other.passwordConfirmation, passwordConfirmation)));
   }
-  
+
   @override
   int get hashCode =>
-    runtimeType.hashCode ^
-    const DeepCollectionEquality().hash(passwordConfirmation);
-  
+      runtimeType.hashCode ^
+      const DeepCollectionEquality().hash(passwordConfirmation);
+
+  @JsonKey(ignore: true)
   @override
   _$PasswordConfirmationChangedCopyWith<_PasswordConfirmationChanged>
-  get copyWith =>
-    __$PasswordConfirmationChangedCopyWithImpl<
-      _PasswordConfirmationChanged>(this, _$identity);
-  
+      get copyWith => __$PasswordConfirmationChangedCopyWithImpl<
+          _PasswordConfirmationChanged>(this, _$identity);
+
   @override
   @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result initialized(),
-    @required Result imageChanged(File imageFile),
-    @required Result nameChanged(String name),
-    @required Result usernameChanged(String username),
-    @required Result passwordChanged(String password),
-    @required Result passwordConfirmationChanged(String passwordConfirmation),
-    @required Result emailAddressChanged(String emailAddress),
-    @required Result birthdayChanged(DateTime birthday),
-    @required Result descriptionChanged(String description),
-    @required Result interestsChanged(Set<int> interests),
-    @required Result tappedEULA(),
-    @required Result submitted(),
+  TResult when<TResult extends Object?>({
+    required TResult Function(Option<User> userOption) initialized,
+    required TResult Function(File imageFile) imageChanged,
+    required TResult Function(String name) nameChanged,
+    required TResult Function(String username) usernameChanged,
+    required TResult Function(String password) passwordChanged,
+    required TResult Function(String passwordConfirmation)
+        passwordConfirmationChanged,
+    required TResult Function(String emailAddress) emailAddressChanged,
+    required TResult Function(DateTime birthday) birthdayChanged,
+    required TResult Function(String description) descriptionChanged,
+    required TResult Function(KtSet<Tag> interests) interestsChanged,
+    required TResult Function() tappedEULA,
+    required TResult Function() submitted,
   }) {
-    assert(initialized != null);
-    assert(imageChanged != null);
-    assert(nameChanged != null);
-    assert(usernameChanged != null);
-    assert(passwordChanged != null);
-    assert(passwordConfirmationChanged != null);
-    assert(emailAddressChanged != null);
-    assert(birthdayChanged != null);
-    assert(descriptionChanged != null);
-    assert(interestsChanged != null);
-    assert(tappedEULA != null);
-    assert(submitted != null);
     return passwordConfirmationChanged(passwordConfirmation);
   }
 
   @override
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result initialized(),
-    Result imageChanged(File imageFile),
-    Result nameChanged(String name),
-    Result usernameChanged(String username),
-    Result passwordChanged(String password),
-    Result passwordConfirmationChanged(String passwordConfirmation),
-    Result emailAddressChanged(String emailAddress),
-    Result birthdayChanged(DateTime birthday),
-    Result descriptionChanged(String description),
-    Result interestsChanged(Set<int> interests),
-    Result tappedEULA(),
-    Result submitted(),
-    @required Result orElse(),
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(Option<User> userOption)? initialized,
+    TResult Function(File imageFile)? imageChanged,
+    TResult Function(String name)? nameChanged,
+    TResult Function(String username)? usernameChanged,
+    TResult Function(String password)? passwordChanged,
+    TResult Function(String passwordConfirmation)? passwordConfirmationChanged,
+    TResult Function(String emailAddress)? emailAddressChanged,
+    TResult Function(DateTime birthday)? birthdayChanged,
+    TResult Function(String description)? descriptionChanged,
+    TResult Function(KtSet<Tag> interests)? interestsChanged,
+    TResult Function()? tappedEULA,
+    TResult Function()? submitted,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (passwordConfirmationChanged != null) {
       return passwordConfirmationChanged(passwordConfirmation);
     }
@@ -1143,53 +1091,42 @@ class _$_PasswordConfirmationChanged implements _PasswordConfirmationChanged {
 
   @override
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result initialized(_Initialized value),
-    @required Result imageChanged(_ImageChanged value),
-    @required Result nameChanged(_NameChanged value),
-    @required Result usernameChanged(_UsernameChanged value),
-    @required Result passwordChanged(_PasswordChanged value),
-    @required Result passwordConfirmationChanged(_PasswordConfirmationChanged value),
-    @required Result emailAddressChanged(_EmailAddressChanged value),
-    @required Result birthdayChanged(_BirthdayChanged value),
-    @required Result descriptionChanged(_DescriptionChanged value),
-    @required Result interestsChanged(_InterestsChanged value),
-    @required Result tappedEULA(_TappedEULA value),
-    @required Result submitted(_Submitted value),
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initialized value) initialized,
+    required TResult Function(_ImageChanged value) imageChanged,
+    required TResult Function(_NameChanged value) nameChanged,
+    required TResult Function(_UsernameChanged value) usernameChanged,
+    required TResult Function(_PasswordChanged value) passwordChanged,
+    required TResult Function(_PasswordConfirmationChanged value)
+        passwordConfirmationChanged,
+    required TResult Function(_EmailAddressChanged value) emailAddressChanged,
+    required TResult Function(_BirthdayChanged value) birthdayChanged,
+    required TResult Function(_DescriptionChanged value) descriptionChanged,
+    required TResult Function(_InterestsChanged value) interestsChanged,
+    required TResult Function(_TappedEULA value) tappedEULA,
+    required TResult Function(_Submitted value) submitted,
   }) {
-    assert(initialized != null);
-    assert(imageChanged != null);
-    assert(nameChanged != null);
-    assert(usernameChanged != null);
-    assert(passwordChanged != null);
-    assert(passwordConfirmationChanged != null);
-    assert(emailAddressChanged != null);
-    assert(birthdayChanged != null);
-    assert(descriptionChanged != null);
-    assert(interestsChanged != null);
-    assert(tappedEULA != null);
-    assert(submitted != null);
     return passwordConfirmationChanged(this);
   }
 
   @override
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result initialized(_Initialized value),
-    Result imageChanged(_ImageChanged value),
-    Result nameChanged(_NameChanged value),
-    Result usernameChanged(_UsernameChanged value),
-    Result passwordChanged(_PasswordChanged value),
-    Result passwordConfirmationChanged(_PasswordConfirmationChanged value),
-    Result emailAddressChanged(_EmailAddressChanged value),
-    Result birthdayChanged(_BirthdayChanged value),
-    Result descriptionChanged(_DescriptionChanged value),
-    Result interestsChanged(_InterestsChanged value),
-    Result tappedEULA(_TappedEULA value),
-    Result submitted(_Submitted value),
-    @required Result orElse(),
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initialized value)? initialized,
+    TResult Function(_ImageChanged value)? imageChanged,
+    TResult Function(_NameChanged value)? nameChanged,
+    TResult Function(_UsernameChanged value)? usernameChanged,
+    TResult Function(_PasswordChanged value)? passwordChanged,
+    TResult Function(_PasswordConfirmationChanged value)?
+        passwordConfirmationChanged,
+    TResult Function(_EmailAddressChanged value)? emailAddressChanged,
+    TResult Function(_BirthdayChanged value)? birthdayChanged,
+    TResult Function(_DescriptionChanged value)? descriptionChanged,
+    TResult Function(_InterestsChanged value)? interestsChanged,
+    TResult Function(_TappedEULA value)? tappedEULA,
+    TResult Function(_Submitted value)? submitted,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (passwordConfirmationChanged != null) {
       return passwordConfirmationChanged(this);
     }
@@ -1199,121 +1136,115 @@ class _$_PasswordConfirmationChanged implements _PasswordConfirmationChanged {
 
 abstract class _PasswordConfirmationChanged implements RegistrationFormEvent {
   const factory _PasswordConfirmationChanged(String passwordConfirmation) =
-  _$_PasswordConfirmationChanged;
-  
-  String get passwordConfirmation;
-  
+      _$_PasswordConfirmationChanged;
+
+  String get passwordConfirmation => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
   _$PasswordConfirmationChangedCopyWith<_PasswordConfirmationChanged>
-  get copyWith;
+      get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class _$EmailAddressChangedCopyWith<$Res> {
   factory _$EmailAddressChangedCopyWith(_EmailAddressChanged value,
-    $Res Function(_EmailAddressChanged) then) =
-  __$EmailAddressChangedCopyWithImpl<$Res>;
+          $Res Function(_EmailAddressChanged) then) =
+      __$EmailAddressChangedCopyWithImpl<$Res>;
   $Res call({String emailAddress});
 }
 
 /// @nodoc
-class __$EmailAddressChangedCopyWithImpl<$Res> extends _$RegistrationFormEventCopyWithImpl<$Res>
-  implements _$EmailAddressChangedCopyWith<$Res> {
-  __$EmailAddressChangedCopyWithImpl(_EmailAddressChanged _value, $Res Function(_EmailAddressChanged) _then)
-    : super(_value, (v) => _then(v as _EmailAddressChanged));
-  
+class __$EmailAddressChangedCopyWithImpl<$Res>
+    extends _$RegistrationFormEventCopyWithImpl<$Res>
+    implements _$EmailAddressChangedCopyWith<$Res> {
+  __$EmailAddressChangedCopyWithImpl(
+      _EmailAddressChanged _value, $Res Function(_EmailAddressChanged) _then)
+      : super(_value, (v) => _then(v as _EmailAddressChanged));
+
   @override
   _EmailAddressChanged get _value => super._value as _EmailAddressChanged;
-  
+
   @override
   $Res call({
-    Object emailAddress = freezed,
+    Object? emailAddress = freezed,
   }) {
     return _then(_EmailAddressChanged(
-      emailAddress == freezed ? _value.emailAddress : emailAddress as String,
+      emailAddress == freezed
+          ? _value.emailAddress
+          : emailAddress // ignore: cast_nullable_to_non_nullable
+              as String,
     ));
   }
 }
 
 /// @nodoc
+
 class _$_EmailAddressChanged implements _EmailAddressChanged {
-  const _$_EmailAddressChanged(this.emailAddress)
-    : assert(emailAddress != null);
-  
+  const _$_EmailAddressChanged(this.emailAddress);
+
   @override
   final String emailAddress;
-  
+
   @override
   String toString() {
     return 'RegistrationFormEvent.emailAddressChanged(emailAddress: $emailAddress)';
   }
-  
+
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-      (other is _EmailAddressChanged &&
-        (identical(other.emailAddress, emailAddress) ||
-          const DeepCollectionEquality()
-            .equals(other.emailAddress, emailAddress)));
+        (other is _EmailAddressChanged &&
+            (identical(other.emailAddress, emailAddress) ||
+                const DeepCollectionEquality()
+                    .equals(other.emailAddress, emailAddress)));
   }
-  
+
   @override
   int get hashCode =>
-    runtimeType.hashCode ^ const DeepCollectionEquality().hash(emailAddress);
-  
+      runtimeType.hashCode ^ const DeepCollectionEquality().hash(emailAddress);
+
+  @JsonKey(ignore: true)
   @override
   _$EmailAddressChangedCopyWith<_EmailAddressChanged> get copyWith =>
-    __$EmailAddressChangedCopyWithImpl<_EmailAddressChanged>(
-      this, _$identity);
-  
+      __$EmailAddressChangedCopyWithImpl<_EmailAddressChanged>(
+          this, _$identity);
+
   @override
   @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result initialized(),
-    @required Result imageChanged(File imageFile),
-    @required Result nameChanged(String name),
-    @required Result usernameChanged(String username),
-    @required Result passwordChanged(String password),
-    @required Result passwordConfirmationChanged(String passwordConfirmation),
-    @required Result emailAddressChanged(String emailAddress),
-    @required Result birthdayChanged(DateTime birthday),
-    @required Result descriptionChanged(String description),
-    @required Result interestsChanged(Set<int> interests),
-    @required Result tappedEULA(),
-    @required Result submitted(),
+  TResult when<TResult extends Object?>({
+    required TResult Function(Option<User> userOption) initialized,
+    required TResult Function(File imageFile) imageChanged,
+    required TResult Function(String name) nameChanged,
+    required TResult Function(String username) usernameChanged,
+    required TResult Function(String password) passwordChanged,
+    required TResult Function(String passwordConfirmation)
+        passwordConfirmationChanged,
+    required TResult Function(String emailAddress) emailAddressChanged,
+    required TResult Function(DateTime birthday) birthdayChanged,
+    required TResult Function(String description) descriptionChanged,
+    required TResult Function(KtSet<Tag> interests) interestsChanged,
+    required TResult Function() tappedEULA,
+    required TResult Function() submitted,
   }) {
-    assert(initialized != null);
-    assert(imageChanged != null);
-    assert(nameChanged != null);
-    assert(usernameChanged != null);
-    assert(passwordChanged != null);
-    assert(passwordConfirmationChanged != null);
-    assert(emailAddressChanged != null);
-    assert(birthdayChanged != null);
-    assert(descriptionChanged != null);
-    assert(interestsChanged != null);
-    assert(tappedEULA != null);
-    assert(submitted != null);
     return emailAddressChanged(emailAddress);
   }
 
   @override
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result initialized(),
-    Result imageChanged(File imageFile),
-    Result nameChanged(String name),
-    Result usernameChanged(String username),
-    Result passwordChanged(String password),
-    Result passwordConfirmationChanged(String passwordConfirmation),
-    Result emailAddressChanged(String emailAddress),
-    Result birthdayChanged(DateTime birthday),
-    Result descriptionChanged(String description),
-    Result interestsChanged(Set<int> interests),
-    Result tappedEULA(),
-    Result submitted(),
-    @required Result orElse(),
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(Option<User> userOption)? initialized,
+    TResult Function(File imageFile)? imageChanged,
+    TResult Function(String name)? nameChanged,
+    TResult Function(String username)? usernameChanged,
+    TResult Function(String password)? passwordChanged,
+    TResult Function(String passwordConfirmation)? passwordConfirmationChanged,
+    TResult Function(String emailAddress)? emailAddressChanged,
+    TResult Function(DateTime birthday)? birthdayChanged,
+    TResult Function(String description)? descriptionChanged,
+    TResult Function(KtSet<Tag> interests)? interestsChanged,
+    TResult Function()? tappedEULA,
+    TResult Function()? submitted,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (emailAddressChanged != null) {
       return emailAddressChanged(emailAddress);
     }
@@ -1322,53 +1253,42 @@ class _$_EmailAddressChanged implements _EmailAddressChanged {
 
   @override
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result initialized(_Initialized value),
-    @required Result imageChanged(_ImageChanged value),
-    @required Result nameChanged(_NameChanged value),
-    @required Result usernameChanged(_UsernameChanged value),
-    @required Result passwordChanged(_PasswordChanged value),
-    @required Result passwordConfirmationChanged(_PasswordConfirmationChanged value),
-    @required Result emailAddressChanged(_EmailAddressChanged value),
-    @required Result birthdayChanged(_BirthdayChanged value),
-    @required Result descriptionChanged(_DescriptionChanged value),
-    @required Result interestsChanged(_InterestsChanged value),
-    @required Result tappedEULA(_TappedEULA value),
-    @required Result submitted(_Submitted value),
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initialized value) initialized,
+    required TResult Function(_ImageChanged value) imageChanged,
+    required TResult Function(_NameChanged value) nameChanged,
+    required TResult Function(_UsernameChanged value) usernameChanged,
+    required TResult Function(_PasswordChanged value) passwordChanged,
+    required TResult Function(_PasswordConfirmationChanged value)
+        passwordConfirmationChanged,
+    required TResult Function(_EmailAddressChanged value) emailAddressChanged,
+    required TResult Function(_BirthdayChanged value) birthdayChanged,
+    required TResult Function(_DescriptionChanged value) descriptionChanged,
+    required TResult Function(_InterestsChanged value) interestsChanged,
+    required TResult Function(_TappedEULA value) tappedEULA,
+    required TResult Function(_Submitted value) submitted,
   }) {
-    assert(initialized != null);
-    assert(imageChanged != null);
-    assert(nameChanged != null);
-    assert(usernameChanged != null);
-    assert(passwordChanged != null);
-    assert(passwordConfirmationChanged != null);
-    assert(emailAddressChanged != null);
-    assert(birthdayChanged != null);
-    assert(descriptionChanged != null);
-    assert(interestsChanged != null);
-    assert(tappedEULA != null);
-    assert(submitted != null);
     return emailAddressChanged(this);
   }
 
   @override
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result initialized(_Initialized value),
-    Result imageChanged(_ImageChanged value),
-    Result nameChanged(_NameChanged value),
-    Result usernameChanged(_UsernameChanged value),
-    Result passwordChanged(_PasswordChanged value),
-    Result passwordConfirmationChanged(_PasswordConfirmationChanged value),
-    Result emailAddressChanged(_EmailAddressChanged value),
-    Result birthdayChanged(_BirthdayChanged value),
-    Result descriptionChanged(_DescriptionChanged value),
-    Result interestsChanged(_InterestsChanged value),
-    Result tappedEULA(_TappedEULA value),
-    Result submitted(_Submitted value),
-    @required Result orElse(),
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initialized value)? initialized,
+    TResult Function(_ImageChanged value)? imageChanged,
+    TResult Function(_NameChanged value)? nameChanged,
+    TResult Function(_UsernameChanged value)? usernameChanged,
+    TResult Function(_PasswordChanged value)? passwordChanged,
+    TResult Function(_PasswordConfirmationChanged value)?
+        passwordConfirmationChanged,
+    TResult Function(_EmailAddressChanged value)? emailAddressChanged,
+    TResult Function(_BirthdayChanged value)? birthdayChanged,
+    TResult Function(_DescriptionChanged value)? descriptionChanged,
+    TResult Function(_InterestsChanged value)? interestsChanged,
+    TResult Function(_TappedEULA value)? tappedEULA,
+    TResult Function(_Submitted value)? submitted,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (emailAddressChanged != null) {
       return emailAddressChanged(this);
     }
@@ -1378,43 +1298,50 @@ class _$_EmailAddressChanged implements _EmailAddressChanged {
 
 abstract class _EmailAddressChanged implements RegistrationFormEvent {
   const factory _EmailAddressChanged(String emailAddress) =
-  _$_EmailAddressChanged;
-  
-  String get emailAddress;
-  
-  _$EmailAddressChangedCopyWith<_EmailAddressChanged> get copyWith;
+      _$_EmailAddressChanged;
+
+  String get emailAddress => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  _$EmailAddressChangedCopyWith<_EmailAddressChanged> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class _$BirthdayChangedCopyWith<$Res> {
-  factory _$BirthdayChangedCopyWith(_BirthdayChanged value, $Res Function(_BirthdayChanged) then) =
-  __$BirthdayChangedCopyWithImpl<$Res>;
-  
+  factory _$BirthdayChangedCopyWith(
+          _BirthdayChanged value, $Res Function(_BirthdayChanged) then) =
+      __$BirthdayChangedCopyWithImpl<$Res>;
   $Res call({DateTime birthday});
 }
 
 /// @nodoc
-class __$BirthdayChangedCopyWithImpl<$Res> extends _$RegistrationFormEventCopyWithImpl<$Res>
-  implements _$BirthdayChangedCopyWith<$Res> {
-  __$BirthdayChangedCopyWithImpl(_BirthdayChanged _value, $Res Function(_BirthdayChanged) _then)
-    : super(_value, (v) => _then(v as _BirthdayChanged));
-  
+class __$BirthdayChangedCopyWithImpl<$Res>
+    extends _$RegistrationFormEventCopyWithImpl<$Res>
+    implements _$BirthdayChangedCopyWith<$Res> {
+  __$BirthdayChangedCopyWithImpl(
+      _BirthdayChanged _value, $Res Function(_BirthdayChanged) _then)
+      : super(_value, (v) => _then(v as _BirthdayChanged));
+
   @override
   _BirthdayChanged get _value => super._value as _BirthdayChanged;
-  
+
   @override
   $Res call({
-    Object birthday = freezed,
+    Object? birthday = freezed,
   }) {
     return _then(_BirthdayChanged(
-      birthday == freezed ? _value.birthday : birthday as DateTime,
+      birthday == freezed
+          ? _value.birthday
+          : birthday // ignore: cast_nullable_to_non_nullable
+              as DateTime,
     ));
   }
 }
 
 /// @nodoc
+
 class _$_BirthdayChanged implements _BirthdayChanged {
-  const _$_BirthdayChanged(this.birthday) : assert(birthday != null);
+  const _$_BirthdayChanged(this.birthday);
 
   @override
   final DateTime birthday;
@@ -1427,69 +1354,58 @@ class _$_BirthdayChanged implements _BirthdayChanged {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-      (other is _BirthdayChanged &&
-        (identical(other.birthday, birthday) ||
-          const DeepCollectionEquality()
-            .equals(other.birthday, birthday)));
+        (other is _BirthdayChanged &&
+            (identical(other.birthday, birthday) ||
+                const DeepCollectionEquality()
+                    .equals(other.birthday, birthday)));
   }
 
   @override
   int get hashCode =>
-    runtimeType.hashCode ^ const DeepCollectionEquality().hash(birthday);
+      runtimeType.hashCode ^ const DeepCollectionEquality().hash(birthday);
 
+  @JsonKey(ignore: true)
   @override
   _$BirthdayChangedCopyWith<_BirthdayChanged> get copyWith =>
-    __$BirthdayChangedCopyWithImpl<_BirthdayChanged>(this, _$identity);
+      __$BirthdayChangedCopyWithImpl<_BirthdayChanged>(this, _$identity);
 
   @override
   @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result initialized(),
-    @required Result imageChanged(File imageFile),
-    @required Result nameChanged(String name),
-    @required Result usernameChanged(String username),
-    @required Result passwordChanged(String password),
-    @required Result passwordConfirmationChanged(String passwordConfirmation),
-    @required Result emailAddressChanged(String emailAddress),
-    @required Result birthdayChanged(DateTime birthday),
-    @required Result descriptionChanged(String description),
-    @required Result interestsChanged(Set<int> interests),
-    @required Result tappedEULA(),
-    @required Result submitted(),
+  TResult when<TResult extends Object?>({
+    required TResult Function(Option<User> userOption) initialized,
+    required TResult Function(File imageFile) imageChanged,
+    required TResult Function(String name) nameChanged,
+    required TResult Function(String username) usernameChanged,
+    required TResult Function(String password) passwordChanged,
+    required TResult Function(String passwordConfirmation)
+        passwordConfirmationChanged,
+    required TResult Function(String emailAddress) emailAddressChanged,
+    required TResult Function(DateTime birthday) birthdayChanged,
+    required TResult Function(String description) descriptionChanged,
+    required TResult Function(KtSet<Tag> interests) interestsChanged,
+    required TResult Function() tappedEULA,
+    required TResult Function() submitted,
   }) {
-    assert(initialized != null);
-    assert(imageChanged != null);
-    assert(nameChanged != null);
-    assert(usernameChanged != null);
-    assert(passwordChanged != null);
-    assert(passwordConfirmationChanged != null);
-    assert(emailAddressChanged != null);
-    assert(birthdayChanged != null);
-    assert(descriptionChanged != null);
-    assert(interestsChanged != null);
-    assert(tappedEULA != null);
-    assert(submitted != null);
     return birthdayChanged(birthday);
   }
 
   @override
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result initialized(),
-    Result imageChanged(File imageFile),
-    Result nameChanged(String name),
-    Result usernameChanged(String username),
-    Result passwordChanged(String password),
-    Result passwordConfirmationChanged(String passwordConfirmation),
-    Result emailAddressChanged(String emailAddress),
-    Result birthdayChanged(DateTime birthday),
-    Result descriptionChanged(String description),
-    Result interestsChanged(Set<int> interests),
-    Result tappedEULA(),
-    Result submitted(),
-    @required Result orElse(),
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(Option<User> userOption)? initialized,
+    TResult Function(File imageFile)? imageChanged,
+    TResult Function(String name)? nameChanged,
+    TResult Function(String username)? usernameChanged,
+    TResult Function(String password)? passwordChanged,
+    TResult Function(String passwordConfirmation)? passwordConfirmationChanged,
+    TResult Function(String emailAddress)? emailAddressChanged,
+    TResult Function(DateTime birthday)? birthdayChanged,
+    TResult Function(String description)? descriptionChanged,
+    TResult Function(KtSet<Tag> interests)? interestsChanged,
+    TResult Function()? tappedEULA,
+    TResult Function()? submitted,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (birthdayChanged != null) {
       return birthdayChanged(birthday);
     }
@@ -1498,53 +1414,42 @@ class _$_BirthdayChanged implements _BirthdayChanged {
 
   @override
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result initialized(_Initialized value),
-    @required Result imageChanged(_ImageChanged value),
-    @required Result nameChanged(_NameChanged value),
-    @required Result usernameChanged(_UsernameChanged value),
-    @required Result passwordChanged(_PasswordChanged value),
-    @required Result passwordConfirmationChanged(_PasswordConfirmationChanged value),
-    @required Result emailAddressChanged(_EmailAddressChanged value),
-    @required Result birthdayChanged(_BirthdayChanged value),
-    @required Result descriptionChanged(_DescriptionChanged value),
-    @required Result interestsChanged(_InterestsChanged value),
-    @required Result tappedEULA(_TappedEULA value),
-    @required Result submitted(_Submitted value),
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initialized value) initialized,
+    required TResult Function(_ImageChanged value) imageChanged,
+    required TResult Function(_NameChanged value) nameChanged,
+    required TResult Function(_UsernameChanged value) usernameChanged,
+    required TResult Function(_PasswordChanged value) passwordChanged,
+    required TResult Function(_PasswordConfirmationChanged value)
+        passwordConfirmationChanged,
+    required TResult Function(_EmailAddressChanged value) emailAddressChanged,
+    required TResult Function(_BirthdayChanged value) birthdayChanged,
+    required TResult Function(_DescriptionChanged value) descriptionChanged,
+    required TResult Function(_InterestsChanged value) interestsChanged,
+    required TResult Function(_TappedEULA value) tappedEULA,
+    required TResult Function(_Submitted value) submitted,
   }) {
-    assert(initialized != null);
-    assert(imageChanged != null);
-    assert(nameChanged != null);
-    assert(usernameChanged != null);
-    assert(passwordChanged != null);
-    assert(passwordConfirmationChanged != null);
-    assert(emailAddressChanged != null);
-    assert(birthdayChanged != null);
-    assert(descriptionChanged != null);
-    assert(interestsChanged != null);
-    assert(tappedEULA != null);
-    assert(submitted != null);
     return birthdayChanged(this);
   }
 
   @override
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result initialized(_Initialized value),
-    Result imageChanged(_ImageChanged value),
-    Result nameChanged(_NameChanged value),
-    Result usernameChanged(_UsernameChanged value),
-    Result passwordChanged(_PasswordChanged value),
-    Result passwordConfirmationChanged(_PasswordConfirmationChanged value),
-    Result emailAddressChanged(_EmailAddressChanged value),
-    Result birthdayChanged(_BirthdayChanged value),
-    Result descriptionChanged(_DescriptionChanged value),
-    Result interestsChanged(_InterestsChanged value),
-    Result tappedEULA(_TappedEULA value),
-    Result submitted(_Submitted value),
-    @required Result orElse(),
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initialized value)? initialized,
+    TResult Function(_ImageChanged value)? imageChanged,
+    TResult Function(_NameChanged value)? nameChanged,
+    TResult Function(_UsernameChanged value)? usernameChanged,
+    TResult Function(_PasswordChanged value)? passwordChanged,
+    TResult Function(_PasswordConfirmationChanged value)?
+        passwordConfirmationChanged,
+    TResult Function(_EmailAddressChanged value)? emailAddressChanged,
+    TResult Function(_BirthdayChanged value)? birthdayChanged,
+    TResult Function(_DescriptionChanged value)? descriptionChanged,
+    TResult Function(_InterestsChanged value)? interestsChanged,
+    TResult Function(_TappedEULA value)? tappedEULA,
+    TResult Function(_Submitted value)? submitted,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (birthdayChanged != null) {
       return birthdayChanged(this);
     }
@@ -1555,40 +1460,48 @@ class _$_BirthdayChanged implements _BirthdayChanged {
 abstract class _BirthdayChanged implements RegistrationFormEvent {
   const factory _BirthdayChanged(DateTime birthday) = _$_BirthdayChanged;
 
-  DateTime get birthday;
-  _$BirthdayChangedCopyWith<_BirthdayChanged> get copyWith;
+  DateTime get birthday => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  _$BirthdayChangedCopyWith<_BirthdayChanged> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class _$DescriptionChangedCopyWith<$Res> {
-  factory _$DescriptionChangedCopyWith(_DescriptionChanged value, $Res Function(_DescriptionChanged) then) =
-  __$DescriptionChangedCopyWithImpl<$Res>;
-  
+  factory _$DescriptionChangedCopyWith(
+          _DescriptionChanged value, $Res Function(_DescriptionChanged) then) =
+      __$DescriptionChangedCopyWithImpl<$Res>;
   $Res call({String description});
 }
 
 /// @nodoc
-class __$DescriptionChangedCopyWithImpl<$Res> extends _$RegistrationFormEventCopyWithImpl<$Res>
-  implements _$DescriptionChangedCopyWith<$Res> {
-  __$DescriptionChangedCopyWithImpl(_DescriptionChanged _value, $Res Function(_DescriptionChanged) _then)
-    : super(_value, (v) => _then(v as _DescriptionChanged));
-  
+class __$DescriptionChangedCopyWithImpl<$Res>
+    extends _$RegistrationFormEventCopyWithImpl<$Res>
+    implements _$DescriptionChangedCopyWith<$Res> {
+  __$DescriptionChangedCopyWithImpl(
+      _DescriptionChanged _value, $Res Function(_DescriptionChanged) _then)
+      : super(_value, (v) => _then(v as _DescriptionChanged));
+
   @override
   _DescriptionChanged get _value => super._value as _DescriptionChanged;
-  
+
   @override
   $Res call({
-    Object description = freezed,
+    Object? description = freezed,
   }) {
     return _then(_DescriptionChanged(
-      description == freezed ? _value.description : description as String,
+      description == freezed
+          ? _value.description
+          : description // ignore: cast_nullable_to_non_nullable
+              as String,
     ));
   }
 }
 
 /// @nodoc
+
 class _$_DescriptionChanged implements _DescriptionChanged {
-  const _$_DescriptionChanged(this.description) : assert(description != null);
+  const _$_DescriptionChanged(this.description);
 
   @override
   final String description;
@@ -1601,69 +1514,58 @@ class _$_DescriptionChanged implements _DescriptionChanged {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-      (other is _DescriptionChanged &&
-        (identical(other.description, description) ||
-          const DeepCollectionEquality()
-            .equals(other.description, description)));
+        (other is _DescriptionChanged &&
+            (identical(other.description, description) ||
+                const DeepCollectionEquality()
+                    .equals(other.description, description)));
   }
 
   @override
   int get hashCode =>
-    runtimeType.hashCode ^ const DeepCollectionEquality().hash(description);
+      runtimeType.hashCode ^ const DeepCollectionEquality().hash(description);
 
+  @JsonKey(ignore: true)
   @override
   _$DescriptionChangedCopyWith<_DescriptionChanged> get copyWith =>
-    __$DescriptionChangedCopyWithImpl<_DescriptionChanged>(this, _$identity);
+      __$DescriptionChangedCopyWithImpl<_DescriptionChanged>(this, _$identity);
 
   @override
   @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result initialized(),
-    @required Result imageChanged(File imageFile),
-    @required Result nameChanged(String name),
-    @required Result usernameChanged(String username),
-    @required Result passwordChanged(String password),
-    @required Result passwordConfirmationChanged(String passwordConfirmation),
-    @required Result emailAddressChanged(String emailAddress),
-    @required Result birthdayChanged(DateTime birthday),
-    @required Result descriptionChanged(String description),
-    @required Result interestsChanged(Set<int> interests),
-    @required Result tappedEULA(),
-    @required Result submitted(),
+  TResult when<TResult extends Object?>({
+    required TResult Function(Option<User> userOption) initialized,
+    required TResult Function(File imageFile) imageChanged,
+    required TResult Function(String name) nameChanged,
+    required TResult Function(String username) usernameChanged,
+    required TResult Function(String password) passwordChanged,
+    required TResult Function(String passwordConfirmation)
+        passwordConfirmationChanged,
+    required TResult Function(String emailAddress) emailAddressChanged,
+    required TResult Function(DateTime birthday) birthdayChanged,
+    required TResult Function(String description) descriptionChanged,
+    required TResult Function(KtSet<Tag> interests) interestsChanged,
+    required TResult Function() tappedEULA,
+    required TResult Function() submitted,
   }) {
-    assert(initialized != null);
-    assert(imageChanged != null);
-    assert(nameChanged != null);
-    assert(usernameChanged != null);
-    assert(passwordChanged != null);
-    assert(passwordConfirmationChanged != null);
-    assert(emailAddressChanged != null);
-    assert(birthdayChanged != null);
-    assert(descriptionChanged != null);
-    assert(interestsChanged != null);
-    assert(tappedEULA != null);
-    assert(submitted != null);
     return descriptionChanged(description);
   }
 
   @override
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result initialized(),
-    Result imageChanged(File imageFile),
-    Result nameChanged(String name),
-    Result usernameChanged(String username),
-    Result passwordChanged(String password),
-    Result passwordConfirmationChanged(String passwordConfirmation),
-    Result emailAddressChanged(String emailAddress),
-    Result birthdayChanged(DateTime birthday),
-    Result descriptionChanged(String description),
-    Result interestsChanged(Set<int> interests),
-    Result tappedEULA(),
-    Result submitted(),
-    @required Result orElse(),
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(Option<User> userOption)? initialized,
+    TResult Function(File imageFile)? imageChanged,
+    TResult Function(String name)? nameChanged,
+    TResult Function(String username)? usernameChanged,
+    TResult Function(String password)? passwordChanged,
+    TResult Function(String passwordConfirmation)? passwordConfirmationChanged,
+    TResult Function(String emailAddress)? emailAddressChanged,
+    TResult Function(DateTime birthday)? birthdayChanged,
+    TResult Function(String description)? descriptionChanged,
+    TResult Function(KtSet<Tag> interests)? interestsChanged,
+    TResult Function()? tappedEULA,
+    TResult Function()? submitted,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (descriptionChanged != null) {
       return descriptionChanged(description);
     }
@@ -1672,53 +1574,42 @@ class _$_DescriptionChanged implements _DescriptionChanged {
 
   @override
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result initialized(_Initialized value),
-    @required Result imageChanged(_ImageChanged value),
-    @required Result nameChanged(_NameChanged value),
-    @required Result usernameChanged(_UsernameChanged value),
-    @required Result passwordChanged(_PasswordChanged value),
-    @required Result passwordConfirmationChanged(_PasswordConfirmationChanged value),
-    @required Result emailAddressChanged(_EmailAddressChanged value),
-    @required Result birthdayChanged(_BirthdayChanged value),
-    @required Result descriptionChanged(_DescriptionChanged value),
-    @required Result interestsChanged(_InterestsChanged value),
-    @required Result tappedEULA(_TappedEULA value),
-    @required Result submitted(_Submitted value),
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initialized value) initialized,
+    required TResult Function(_ImageChanged value) imageChanged,
+    required TResult Function(_NameChanged value) nameChanged,
+    required TResult Function(_UsernameChanged value) usernameChanged,
+    required TResult Function(_PasswordChanged value) passwordChanged,
+    required TResult Function(_PasswordConfirmationChanged value)
+        passwordConfirmationChanged,
+    required TResult Function(_EmailAddressChanged value) emailAddressChanged,
+    required TResult Function(_BirthdayChanged value) birthdayChanged,
+    required TResult Function(_DescriptionChanged value) descriptionChanged,
+    required TResult Function(_InterestsChanged value) interestsChanged,
+    required TResult Function(_TappedEULA value) tappedEULA,
+    required TResult Function(_Submitted value) submitted,
   }) {
-    assert(initialized != null);
-    assert(imageChanged != null);
-    assert(nameChanged != null);
-    assert(usernameChanged != null);
-    assert(passwordChanged != null);
-    assert(passwordConfirmationChanged != null);
-    assert(emailAddressChanged != null);
-    assert(birthdayChanged != null);
-    assert(descriptionChanged != null);
-    assert(interestsChanged != null);
-    assert(tappedEULA != null);
-    assert(submitted != null);
     return descriptionChanged(this);
   }
 
   @override
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result initialized(_Initialized value),
-    Result imageChanged(_ImageChanged value),
-    Result nameChanged(_NameChanged value),
-    Result usernameChanged(_UsernameChanged value),
-    Result passwordChanged(_PasswordChanged value),
-    Result passwordConfirmationChanged(_PasswordConfirmationChanged value),
-    Result emailAddressChanged(_EmailAddressChanged value),
-    Result birthdayChanged(_BirthdayChanged value),
-    Result descriptionChanged(_DescriptionChanged value),
-    Result interestsChanged(_InterestsChanged value),
-    Result tappedEULA(_TappedEULA value),
-    Result submitted(_Submitted value),
-    @required Result orElse(),
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initialized value)? initialized,
+    TResult Function(_ImageChanged value)? imageChanged,
+    TResult Function(_NameChanged value)? nameChanged,
+    TResult Function(_UsernameChanged value)? usernameChanged,
+    TResult Function(_PasswordChanged value)? passwordChanged,
+    TResult Function(_PasswordConfirmationChanged value)?
+        passwordConfirmationChanged,
+    TResult Function(_EmailAddressChanged value)? emailAddressChanged,
+    TResult Function(_BirthdayChanged value)? birthdayChanged,
+    TResult Function(_DescriptionChanged value)? descriptionChanged,
+    TResult Function(_InterestsChanged value)? interestsChanged,
+    TResult Function(_TappedEULA value)? tappedEULA,
+    TResult Function(_Submitted value)? submitted,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (descriptionChanged != null) {
       return descriptionChanged(this);
     }
@@ -1729,43 +1620,51 @@ class _$_DescriptionChanged implements _DescriptionChanged {
 abstract class _DescriptionChanged implements RegistrationFormEvent {
   const factory _DescriptionChanged(String description) = _$_DescriptionChanged;
 
-  String get description;
-  _$DescriptionChangedCopyWith<_DescriptionChanged> get copyWith;
+  String get description => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  _$DescriptionChangedCopyWith<_DescriptionChanged> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class _$InterestsChangedCopyWith<$Res> {
-  factory _$InterestsChangedCopyWith(_InterestsChanged value, $Res Function(_InterestsChanged) then) =
-  __$InterestsChangedCopyWithImpl<$Res>;
-  
-  $Res call({Set<int> interests});
+  factory _$InterestsChangedCopyWith(
+          _InterestsChanged value, $Res Function(_InterestsChanged) then) =
+      __$InterestsChangedCopyWithImpl<$Res>;
+  $Res call({KtSet<Tag> interests});
 }
 
 /// @nodoc
-class __$InterestsChangedCopyWithImpl<$Res> extends _$RegistrationFormEventCopyWithImpl<$Res>
-  implements _$InterestsChangedCopyWith<$Res> {
-  __$InterestsChangedCopyWithImpl(_InterestsChanged _value, $Res Function(_InterestsChanged) _then)
-    : super(_value, (v) => _then(v as _InterestsChanged));
-  
+class __$InterestsChangedCopyWithImpl<$Res>
+    extends _$RegistrationFormEventCopyWithImpl<$Res>
+    implements _$InterestsChangedCopyWith<$Res> {
+  __$InterestsChangedCopyWithImpl(
+      _InterestsChanged _value, $Res Function(_InterestsChanged) _then)
+      : super(_value, (v) => _then(v as _InterestsChanged));
+
   @override
   _InterestsChanged get _value => super._value as _InterestsChanged;
-  
+
   @override
   $Res call({
-    Object interests = freezed,
+    Object? interests = freezed,
   }) {
     return _then(_InterestsChanged(
-      interests == freezed ? _value.interests : interests as Set<int>,
+      interests == freezed
+          ? _value.interests
+          : interests // ignore: cast_nullable_to_non_nullable
+              as KtSet<Tag>,
     ));
   }
 }
 
 /// @nodoc
+
 class _$_InterestsChanged implements _InterestsChanged {
-  const _$_InterestsChanged(this.interests) : assert(interests != null);
+  const _$_InterestsChanged(this.interests);
 
   @override
-  final Set<int> interests;
+  final KtSet<Tag> interests;
 
   @override
   String toString() {
@@ -1775,69 +1674,58 @@ class _$_InterestsChanged implements _InterestsChanged {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-      (other is _InterestsChanged &&
-        (identical(other.interests, interests) ||
-          const DeepCollectionEquality()
-            .equals(other.interests, interests)));
+        (other is _InterestsChanged &&
+            (identical(other.interests, interests) ||
+                const DeepCollectionEquality()
+                    .equals(other.interests, interests)));
   }
 
   @override
   int get hashCode =>
-    runtimeType.hashCode ^ const DeepCollectionEquality().hash(interests);
+      runtimeType.hashCode ^ const DeepCollectionEquality().hash(interests);
 
+  @JsonKey(ignore: true)
   @override
   _$InterestsChangedCopyWith<_InterestsChanged> get copyWith =>
-    __$InterestsChangedCopyWithImpl<_InterestsChanged>(this, _$identity);
+      __$InterestsChangedCopyWithImpl<_InterestsChanged>(this, _$identity);
 
   @override
   @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result initialized(),
-    @required Result imageChanged(File imageFile),
-    @required Result nameChanged(String name),
-    @required Result usernameChanged(String username),
-    @required Result passwordChanged(String password),
-    @required Result passwordConfirmationChanged(String passwordConfirmation),
-    @required Result emailAddressChanged(String emailAddress),
-    @required Result birthdayChanged(DateTime birthday),
-    @required Result descriptionChanged(String description),
-    @required Result interestsChanged(Set<int> interests),
-    @required Result tappedEULA(),
-    @required Result submitted(),
+  TResult when<TResult extends Object?>({
+    required TResult Function(Option<User> userOption) initialized,
+    required TResult Function(File imageFile) imageChanged,
+    required TResult Function(String name) nameChanged,
+    required TResult Function(String username) usernameChanged,
+    required TResult Function(String password) passwordChanged,
+    required TResult Function(String passwordConfirmation)
+        passwordConfirmationChanged,
+    required TResult Function(String emailAddress) emailAddressChanged,
+    required TResult Function(DateTime birthday) birthdayChanged,
+    required TResult Function(String description) descriptionChanged,
+    required TResult Function(KtSet<Tag> interests) interestsChanged,
+    required TResult Function() tappedEULA,
+    required TResult Function() submitted,
   }) {
-    assert(initialized != null);
-    assert(imageChanged != null);
-    assert(nameChanged != null);
-    assert(usernameChanged != null);
-    assert(passwordChanged != null);
-    assert(passwordConfirmationChanged != null);
-    assert(emailAddressChanged != null);
-    assert(birthdayChanged != null);
-    assert(descriptionChanged != null);
-    assert(interestsChanged != null);
-    assert(tappedEULA != null);
-    assert(submitted != null);
     return interestsChanged(interests);
   }
 
   @override
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result initialized(),
-    Result imageChanged(File imageFile),
-    Result nameChanged(String name),
-    Result usernameChanged(String username),
-    Result passwordChanged(String password),
-    Result passwordConfirmationChanged(String passwordConfirmation),
-    Result emailAddressChanged(String emailAddress),
-    Result birthdayChanged(DateTime birthday),
-    Result descriptionChanged(String description),
-    Result interestsChanged(Set<int> interests),
-    Result tappedEULA(),
-    Result submitted(),
-    @required Result orElse(),
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(Option<User> userOption)? initialized,
+    TResult Function(File imageFile)? imageChanged,
+    TResult Function(String name)? nameChanged,
+    TResult Function(String username)? usernameChanged,
+    TResult Function(String password)? passwordChanged,
+    TResult Function(String passwordConfirmation)? passwordConfirmationChanged,
+    TResult Function(String emailAddress)? emailAddressChanged,
+    TResult Function(DateTime birthday)? birthdayChanged,
+    TResult Function(String description)? descriptionChanged,
+    TResult Function(KtSet<Tag> interests)? interestsChanged,
+    TResult Function()? tappedEULA,
+    TResult Function()? submitted,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (interestsChanged != null) {
       return interestsChanged(interests);
     }
@@ -1846,53 +1734,42 @@ class _$_InterestsChanged implements _InterestsChanged {
 
   @override
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result initialized(_Initialized value),
-    @required Result imageChanged(_ImageChanged value),
-    @required Result nameChanged(_NameChanged value),
-    @required Result usernameChanged(_UsernameChanged value),
-    @required Result passwordChanged(_PasswordChanged value),
-    @required Result passwordConfirmationChanged(_PasswordConfirmationChanged value),
-    @required Result emailAddressChanged(_EmailAddressChanged value),
-    @required Result birthdayChanged(_BirthdayChanged value),
-    @required Result descriptionChanged(_DescriptionChanged value),
-    @required Result interestsChanged(_InterestsChanged value),
-    @required Result tappedEULA(_TappedEULA value),
-    @required Result submitted(_Submitted value),
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initialized value) initialized,
+    required TResult Function(_ImageChanged value) imageChanged,
+    required TResult Function(_NameChanged value) nameChanged,
+    required TResult Function(_UsernameChanged value) usernameChanged,
+    required TResult Function(_PasswordChanged value) passwordChanged,
+    required TResult Function(_PasswordConfirmationChanged value)
+        passwordConfirmationChanged,
+    required TResult Function(_EmailAddressChanged value) emailAddressChanged,
+    required TResult Function(_BirthdayChanged value) birthdayChanged,
+    required TResult Function(_DescriptionChanged value) descriptionChanged,
+    required TResult Function(_InterestsChanged value) interestsChanged,
+    required TResult Function(_TappedEULA value) tappedEULA,
+    required TResult Function(_Submitted value) submitted,
   }) {
-    assert(initialized != null);
-    assert(imageChanged != null);
-    assert(nameChanged != null);
-    assert(usernameChanged != null);
-    assert(passwordChanged != null);
-    assert(passwordConfirmationChanged != null);
-    assert(emailAddressChanged != null);
-    assert(birthdayChanged != null);
-    assert(descriptionChanged != null);
-    assert(interestsChanged != null);
-    assert(tappedEULA != null);
-    assert(submitted != null);
     return interestsChanged(this);
   }
 
   @override
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result initialized(_Initialized value),
-    Result imageChanged(_ImageChanged value),
-    Result nameChanged(_NameChanged value),
-    Result usernameChanged(_UsernameChanged value),
-    Result passwordChanged(_PasswordChanged value),
-    Result passwordConfirmationChanged(_PasswordConfirmationChanged value),
-    Result emailAddressChanged(_EmailAddressChanged value),
-    Result birthdayChanged(_BirthdayChanged value),
-    Result descriptionChanged(_DescriptionChanged value),
-    Result interestsChanged(_InterestsChanged value),
-    Result tappedEULA(_TappedEULA value),
-    Result submitted(_Submitted value),
-    @required Result orElse(),
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initialized value)? initialized,
+    TResult Function(_ImageChanged value)? imageChanged,
+    TResult Function(_NameChanged value)? nameChanged,
+    TResult Function(_UsernameChanged value)? usernameChanged,
+    TResult Function(_PasswordChanged value)? passwordChanged,
+    TResult Function(_PasswordConfirmationChanged value)?
+        passwordConfirmationChanged,
+    TResult Function(_EmailAddressChanged value)? emailAddressChanged,
+    TResult Function(_BirthdayChanged value)? birthdayChanged,
+    TResult Function(_DescriptionChanged value)? descriptionChanged,
+    TResult Function(_InterestsChanged value)? interestsChanged,
+    TResult Function(_TappedEULA value)? tappedEULA,
+    TResult Function(_Submitted value)? submitted,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (interestsChanged != null) {
       return interestsChanged(this);
     }
@@ -1901,29 +1778,35 @@ class _$_InterestsChanged implements _InterestsChanged {
 }
 
 abstract class _InterestsChanged implements RegistrationFormEvent {
-  const factory _InterestsChanged(Set<int> interests) = _$_InterestsChanged;
+  const factory _InterestsChanged(KtSet<Tag> interests) = _$_InterestsChanged;
 
-  Set<int> get interests;
-  _$InterestsChangedCopyWith<_InterestsChanged> get copyWith;
+  KtSet<Tag> get interests => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  _$InterestsChangedCopyWith<_InterestsChanged> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class _$TappedEULACopyWith<$Res> {
-  factory _$TappedEULACopyWith(_TappedEULA value, $Res Function(_TappedEULA) then) =
-  __$TappedEULACopyWithImpl<$Res>;
+  factory _$TappedEULACopyWith(
+          _TappedEULA value, $Res Function(_TappedEULA) then) =
+      __$TappedEULACopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$TappedEULACopyWithImpl<$Res> extends _$RegistrationFormEventCopyWithImpl<$Res>
-  implements _$TappedEULACopyWith<$Res> {
-  __$TappedEULACopyWithImpl(_TappedEULA _value, $Res Function(_TappedEULA) _then)
-    : super(_value, (v) => _then(v as _TappedEULA));
-  
+class __$TappedEULACopyWithImpl<$Res>
+    extends _$RegistrationFormEventCopyWithImpl<$Res>
+    implements _$TappedEULACopyWith<$Res> {
+  __$TappedEULACopyWithImpl(
+      _TappedEULA _value, $Res Function(_TappedEULA) _then)
+      : super(_value, (v) => _then(v as _TappedEULA));
+
   @override
   _TappedEULA get _value => super._value as _TappedEULA;
 }
 
 /// @nodoc
+
 class _$_TappedEULA implements _TappedEULA {
   const _$_TappedEULA();
 
@@ -1942,53 +1825,41 @@ class _$_TappedEULA implements _TappedEULA {
 
   @override
   @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result initialized(),
-    @required Result imageChanged(File imageFile),
-    @required Result nameChanged(String name),
-    @required Result usernameChanged(String username),
-    @required Result passwordChanged(String password),
-    @required Result passwordConfirmationChanged(String passwordConfirmation),
-    @required Result emailAddressChanged(String emailAddress),
-    @required Result birthdayChanged(DateTime birthday),
-    @required Result descriptionChanged(String description),
-    @required Result interestsChanged(Set<int> interests),
-    @required Result tappedEULA(),
-    @required Result submitted(),
+  TResult when<TResult extends Object?>({
+    required TResult Function(Option<User> userOption) initialized,
+    required TResult Function(File imageFile) imageChanged,
+    required TResult Function(String name) nameChanged,
+    required TResult Function(String username) usernameChanged,
+    required TResult Function(String password) passwordChanged,
+    required TResult Function(String passwordConfirmation)
+        passwordConfirmationChanged,
+    required TResult Function(String emailAddress) emailAddressChanged,
+    required TResult Function(DateTime birthday) birthdayChanged,
+    required TResult Function(String description) descriptionChanged,
+    required TResult Function(KtSet<Tag> interests) interestsChanged,
+    required TResult Function() tappedEULA,
+    required TResult Function() submitted,
   }) {
-    assert(initialized != null);
-    assert(imageChanged != null);
-    assert(nameChanged != null);
-    assert(usernameChanged != null);
-    assert(passwordChanged != null);
-    assert(passwordConfirmationChanged != null);
-    assert(emailAddressChanged != null);
-    assert(birthdayChanged != null);
-    assert(descriptionChanged != null);
-    assert(interestsChanged != null);
-    assert(tappedEULA != null);
-    assert(submitted != null);
     return tappedEULA();
   }
 
   @override
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result initialized(),
-    Result imageChanged(File imageFile),
-    Result nameChanged(String name),
-    Result usernameChanged(String username),
-    Result passwordChanged(String password),
-    Result passwordConfirmationChanged(String passwordConfirmation),
-    Result emailAddressChanged(String emailAddress),
-    Result birthdayChanged(DateTime birthday),
-    Result descriptionChanged(String description),
-    Result interestsChanged(Set<int> interests),
-    Result tappedEULA(),
-    Result submitted(),
-    @required Result orElse(),
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(Option<User> userOption)? initialized,
+    TResult Function(File imageFile)? imageChanged,
+    TResult Function(String name)? nameChanged,
+    TResult Function(String username)? usernameChanged,
+    TResult Function(String password)? passwordChanged,
+    TResult Function(String passwordConfirmation)? passwordConfirmationChanged,
+    TResult Function(String emailAddress)? emailAddressChanged,
+    TResult Function(DateTime birthday)? birthdayChanged,
+    TResult Function(String description)? descriptionChanged,
+    TResult Function(KtSet<Tag> interests)? interestsChanged,
+    TResult Function()? tappedEULA,
+    TResult Function()? submitted,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (tappedEULA != null) {
       return tappedEULA();
     }
@@ -1997,53 +1868,42 @@ class _$_TappedEULA implements _TappedEULA {
 
   @override
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result initialized(_Initialized value),
-    @required Result imageChanged(_ImageChanged value),
-    @required Result nameChanged(_NameChanged value),
-    @required Result usernameChanged(_UsernameChanged value),
-    @required Result passwordChanged(_PasswordChanged value),
-    @required Result passwordConfirmationChanged(_PasswordConfirmationChanged value),
-    @required Result emailAddressChanged(_EmailAddressChanged value),
-    @required Result birthdayChanged(_BirthdayChanged value),
-    @required Result descriptionChanged(_DescriptionChanged value),
-    @required Result interestsChanged(_InterestsChanged value),
-    @required Result tappedEULA(_TappedEULA value),
-    @required Result submitted(_Submitted value),
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initialized value) initialized,
+    required TResult Function(_ImageChanged value) imageChanged,
+    required TResult Function(_NameChanged value) nameChanged,
+    required TResult Function(_UsernameChanged value) usernameChanged,
+    required TResult Function(_PasswordChanged value) passwordChanged,
+    required TResult Function(_PasswordConfirmationChanged value)
+        passwordConfirmationChanged,
+    required TResult Function(_EmailAddressChanged value) emailAddressChanged,
+    required TResult Function(_BirthdayChanged value) birthdayChanged,
+    required TResult Function(_DescriptionChanged value) descriptionChanged,
+    required TResult Function(_InterestsChanged value) interestsChanged,
+    required TResult Function(_TappedEULA value) tappedEULA,
+    required TResult Function(_Submitted value) submitted,
   }) {
-    assert(initialized != null);
-    assert(imageChanged != null);
-    assert(nameChanged != null);
-    assert(usernameChanged != null);
-    assert(passwordChanged != null);
-    assert(passwordConfirmationChanged != null);
-    assert(emailAddressChanged != null);
-    assert(birthdayChanged != null);
-    assert(descriptionChanged != null);
-    assert(interestsChanged != null);
-    assert(tappedEULA != null);
-    assert(submitted != null);
     return tappedEULA(this);
   }
 
   @override
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result initialized(_Initialized value),
-    Result imageChanged(_ImageChanged value),
-    Result nameChanged(_NameChanged value),
-    Result usernameChanged(_UsernameChanged value),
-    Result passwordChanged(_PasswordChanged value),
-    Result passwordConfirmationChanged(_PasswordConfirmationChanged value),
-    Result emailAddressChanged(_EmailAddressChanged value),
-    Result birthdayChanged(_BirthdayChanged value),
-    Result descriptionChanged(_DescriptionChanged value),
-    Result interestsChanged(_InterestsChanged value),
-    Result tappedEULA(_TappedEULA value),
-    Result submitted(_Submitted value),
-    @required Result orElse(),
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initialized value)? initialized,
+    TResult Function(_ImageChanged value)? imageChanged,
+    TResult Function(_NameChanged value)? nameChanged,
+    TResult Function(_UsernameChanged value)? usernameChanged,
+    TResult Function(_PasswordChanged value)? passwordChanged,
+    TResult Function(_PasswordConfirmationChanged value)?
+        passwordConfirmationChanged,
+    TResult Function(_EmailAddressChanged value)? emailAddressChanged,
+    TResult Function(_BirthdayChanged value)? birthdayChanged,
+    TResult Function(_DescriptionChanged value)? descriptionChanged,
+    TResult Function(_InterestsChanged value)? interestsChanged,
+    TResult Function(_TappedEULA value)? tappedEULA,
+    TResult Function(_Submitted value)? submitted,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (tappedEULA != null) {
       return tappedEULA(this);
     }
@@ -2057,21 +1917,24 @@ abstract class _TappedEULA implements RegistrationFormEvent {
 
 /// @nodoc
 abstract class _$SubmittedCopyWith<$Res> {
-  factory _$SubmittedCopyWith(_Submitted value, $Res Function(_Submitted) then) =
-  __$SubmittedCopyWithImpl<$Res>;
+  factory _$SubmittedCopyWith(
+          _Submitted value, $Res Function(_Submitted) then) =
+      __$SubmittedCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$SubmittedCopyWithImpl<$Res> extends _$RegistrationFormEventCopyWithImpl<$Res>
-  implements _$SubmittedCopyWith<$Res> {
+class __$SubmittedCopyWithImpl<$Res>
+    extends _$RegistrationFormEventCopyWithImpl<$Res>
+    implements _$SubmittedCopyWith<$Res> {
   __$SubmittedCopyWithImpl(_Submitted _value, $Res Function(_Submitted) _then)
-    : super(_value, (v) => _then(v as _Submitted));
-  
+      : super(_value, (v) => _then(v as _Submitted));
+
   @override
   _Submitted get _value => super._value as _Submitted;
 }
 
 /// @nodoc
+
 class _$_Submitted implements _Submitted {
   const _$_Submitted();
 
@@ -2090,53 +1953,41 @@ class _$_Submitted implements _Submitted {
 
   @override
   @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result initialized(),
-    @required Result imageChanged(File imageFile),
-    @required Result nameChanged(String name),
-    @required Result usernameChanged(String username),
-    @required Result passwordChanged(String password),
-    @required Result passwordConfirmationChanged(String passwordConfirmation),
-    @required Result emailAddressChanged(String emailAddress),
-    @required Result birthdayChanged(DateTime birthday),
-    @required Result descriptionChanged(String description),
-    @required Result interestsChanged(Set<int> interests),
-    @required Result tappedEULA(),
-    @required Result submitted(),
+  TResult when<TResult extends Object?>({
+    required TResult Function(Option<User> userOption) initialized,
+    required TResult Function(File imageFile) imageChanged,
+    required TResult Function(String name) nameChanged,
+    required TResult Function(String username) usernameChanged,
+    required TResult Function(String password) passwordChanged,
+    required TResult Function(String passwordConfirmation)
+        passwordConfirmationChanged,
+    required TResult Function(String emailAddress) emailAddressChanged,
+    required TResult Function(DateTime birthday) birthdayChanged,
+    required TResult Function(String description) descriptionChanged,
+    required TResult Function(KtSet<Tag> interests) interestsChanged,
+    required TResult Function() tappedEULA,
+    required TResult Function() submitted,
   }) {
-    assert(initialized != null);
-    assert(imageChanged != null);
-    assert(nameChanged != null);
-    assert(usernameChanged != null);
-    assert(passwordChanged != null);
-    assert(passwordConfirmationChanged != null);
-    assert(emailAddressChanged != null);
-    assert(birthdayChanged != null);
-    assert(descriptionChanged != null);
-    assert(interestsChanged != null);
-    assert(tappedEULA != null);
-    assert(submitted != null);
     return submitted();
   }
 
   @override
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result initialized(),
-    Result imageChanged(File imageFile),
-    Result nameChanged(String name),
-    Result usernameChanged(String username),
-    Result passwordChanged(String password),
-    Result passwordConfirmationChanged(String passwordConfirmation),
-    Result emailAddressChanged(String emailAddress),
-    Result birthdayChanged(DateTime birthday),
-    Result descriptionChanged(String description),
-    Result interestsChanged(Set<int> interests),
-    Result tappedEULA(),
-    Result submitted(),
-    @required Result orElse(),
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(Option<User> userOption)? initialized,
+    TResult Function(File imageFile)? imageChanged,
+    TResult Function(String name)? nameChanged,
+    TResult Function(String username)? usernameChanged,
+    TResult Function(String password)? passwordChanged,
+    TResult Function(String passwordConfirmation)? passwordConfirmationChanged,
+    TResult Function(String emailAddress)? emailAddressChanged,
+    TResult Function(DateTime birthday)? birthdayChanged,
+    TResult Function(String description)? descriptionChanged,
+    TResult Function(KtSet<Tag> interests)? interestsChanged,
+    TResult Function()? tappedEULA,
+    TResult Function()? submitted,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (submitted != null) {
       return submitted();
     }
@@ -2145,53 +1996,42 @@ class _$_Submitted implements _Submitted {
 
   @override
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result initialized(_Initialized value),
-    @required Result imageChanged(_ImageChanged value),
-    @required Result nameChanged(_NameChanged value),
-    @required Result usernameChanged(_UsernameChanged value),
-    @required Result passwordChanged(_PasswordChanged value),
-    @required Result passwordConfirmationChanged(_PasswordConfirmationChanged value),
-    @required Result emailAddressChanged(_EmailAddressChanged value),
-    @required Result birthdayChanged(_BirthdayChanged value),
-    @required Result descriptionChanged(_DescriptionChanged value),
-    @required Result interestsChanged(_InterestsChanged value),
-    @required Result tappedEULA(_TappedEULA value),
-    @required Result submitted(_Submitted value),
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initialized value) initialized,
+    required TResult Function(_ImageChanged value) imageChanged,
+    required TResult Function(_NameChanged value) nameChanged,
+    required TResult Function(_UsernameChanged value) usernameChanged,
+    required TResult Function(_PasswordChanged value) passwordChanged,
+    required TResult Function(_PasswordConfirmationChanged value)
+        passwordConfirmationChanged,
+    required TResult Function(_EmailAddressChanged value) emailAddressChanged,
+    required TResult Function(_BirthdayChanged value) birthdayChanged,
+    required TResult Function(_DescriptionChanged value) descriptionChanged,
+    required TResult Function(_InterestsChanged value) interestsChanged,
+    required TResult Function(_TappedEULA value) tappedEULA,
+    required TResult Function(_Submitted value) submitted,
   }) {
-    assert(initialized != null);
-    assert(imageChanged != null);
-    assert(nameChanged != null);
-    assert(usernameChanged != null);
-    assert(passwordChanged != null);
-    assert(passwordConfirmationChanged != null);
-    assert(emailAddressChanged != null);
-    assert(birthdayChanged != null);
-    assert(descriptionChanged != null);
-    assert(interestsChanged != null);
-    assert(tappedEULA != null);
-    assert(submitted != null);
     return submitted(this);
   }
 
   @override
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result initialized(_Initialized value),
-    Result imageChanged(_ImageChanged value),
-    Result nameChanged(_NameChanged value),
-    Result usernameChanged(_UsernameChanged value),
-    Result passwordChanged(_PasswordChanged value),
-    Result passwordConfirmationChanged(_PasswordConfirmationChanged value),
-    Result emailAddressChanged(_EmailAddressChanged value),
-    Result birthdayChanged(_BirthdayChanged value),
-    Result descriptionChanged(_DescriptionChanged value),
-    Result interestsChanged(_InterestsChanged value),
-    Result tappedEULA(_TappedEULA value),
-    Result submitted(_Submitted value),
-    @required Result orElse(),
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initialized value)? initialized,
+    TResult Function(_ImageChanged value)? imageChanged,
+    TResult Function(_NameChanged value)? nameChanged,
+    TResult Function(_UsernameChanged value)? usernameChanged,
+    TResult Function(_PasswordChanged value)? passwordChanged,
+    TResult Function(_PasswordConfirmationChanged value)?
+        passwordConfirmationChanged,
+    TResult Function(_EmailAddressChanged value)? emailAddressChanged,
+    TResult Function(_BirthdayChanged value)? birthdayChanged,
+    TResult Function(_DescriptionChanged value)? descriptionChanged,
+    TResult Function(_InterestsChanged value)? interestsChanged,
+    TResult Function(_TappedEULA value)? tappedEULA,
+    TResult Function(_Submitted value)? submitted,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (submitted != null) {
       return submitted(this);
     }
@@ -2207,15 +2047,15 @@ abstract class _Submitted implements RegistrationFormEvent {
 class _$RegistrationFormStateTearOff {
   const _$RegistrationFormStateTearOff();
 
-// ignore: unused_element
   _RegistrationFormState call(
-      {@required User user,
-      @required PasswordConfirmator passwordConfirmator,
-      @required String passwordToCompare,
-      @required bool showErrorMessages,
-      @required bool isSubmitting,
-      @required bool acceptedEULA,
-      @required Option<Either<Failure, Unit>> failureOrSuccessOption}) {
+      {required User user,
+      required PasswordConfirmator passwordConfirmator,
+      required String passwordToCompare,
+      required bool showErrorMessages,
+      required bool isSubmitting,
+      required bool acceptedEULA,
+      required bool initialized,
+      required Option<Either<Failure, Unit>> failureOrSuccessOption}) {
     return _RegistrationFormState(
       user: user,
       passwordConfirmator: passwordConfirmator,
@@ -2223,91 +2063,109 @@ class _$RegistrationFormStateTearOff {
       showErrorMessages: showErrorMessages,
       isSubmitting: isSubmitting,
       acceptedEULA: acceptedEULA,
+      initialized: initialized,
       failureOrSuccessOption: failureOrSuccessOption,
     );
   }
 }
 
 /// @nodoc
-// ignore: unused_element
 const $RegistrationFormState = _$RegistrationFormStateTearOff();
 
 /// @nodoc
 mixin _$RegistrationFormState {
-  User get user;
-  PasswordConfirmator get passwordConfirmator;
-  String get passwordToCompare;
-  bool get showErrorMessages;
-  bool get isSubmitting;
-  bool get acceptedEULA;
-  Option<Either<Failure, Unit>> get failureOrSuccessOption;
+  User get user => throw _privateConstructorUsedError;
+  PasswordConfirmator get passwordConfirmator =>
+      throw _privateConstructorUsedError;
+  String get passwordToCompare => throw _privateConstructorUsedError;
+  bool get showErrorMessages => throw _privateConstructorUsedError;
+  bool get isSubmitting => throw _privateConstructorUsedError;
+  bool get acceptedEULA => throw _privateConstructorUsedError;
+  bool get initialized => throw _privateConstructorUsedError;
+  Option<Either<Failure, Unit>> get failureOrSuccessOption =>
+      throw _privateConstructorUsedError;
 
-  $RegistrationFormStateCopyWith<RegistrationFormState> get copyWith;
+  @JsonKey(ignore: true)
+  $RegistrationFormStateCopyWith<RegistrationFormState> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $RegistrationFormStateCopyWith<$Res> {
   factory $RegistrationFormStateCopyWith(RegistrationFormState value,
-    $Res Function(RegistrationFormState) then) =
-  _$RegistrationFormStateCopyWithImpl<$Res>;
-  
-  $Res call({User user,
-    PasswordConfirmator passwordConfirmator,
-    String passwordToCompare,
-    bool showErrorMessages,
-    bool isSubmitting,
-    bool acceptedEULA,
-    Option<Either<Failure, Unit>> failureOrSuccessOption});
-  
+          $Res Function(RegistrationFormState) then) =
+      _$RegistrationFormStateCopyWithImpl<$Res>;
+  $Res call(
+      {User user,
+      PasswordConfirmator passwordConfirmator,
+      String passwordToCompare,
+      bool showErrorMessages,
+      bool isSubmitting,
+      bool acceptedEULA,
+      bool initialized,
+      Option<Either<Failure, Unit>> failureOrSuccessOption});
+
   $UserCopyWith<$Res> get user;
 }
 
 /// @nodoc
 class _$RegistrationFormStateCopyWithImpl<$Res>
-  implements $RegistrationFormStateCopyWith<$Res> {
+    implements $RegistrationFormStateCopyWith<$Res> {
   _$RegistrationFormStateCopyWithImpl(this._value, this._then);
-  
+
   final RegistrationFormState _value;
-  
   // ignore: unused_field
   final $Res Function(RegistrationFormState) _then;
-  
+
   @override
   $Res call({
-    Object user = freezed,
-    Object passwordConfirmator = freezed,
-    Object passwordToCompare = freezed,
-    Object showErrorMessages = freezed,
-    Object isSubmitting = freezed,
-    Object acceptedEULA = freezed,
-    Object failureOrSuccessOption = freezed,
+    Object? user = freezed,
+    Object? passwordConfirmator = freezed,
+    Object? passwordToCompare = freezed,
+    Object? showErrorMessages = freezed,
+    Object? isSubmitting = freezed,
+    Object? acceptedEULA = freezed,
+    Object? initialized = freezed,
+    Object? failureOrSuccessOption = freezed,
   }) {
     return _then(_value.copyWith(
-      user: user == freezed ? _value.user : user as User,
+      user: user == freezed
+          ? _value.user
+          : user // ignore: cast_nullable_to_non_nullable
+              as User,
       passwordConfirmator: passwordConfirmator == freezed
-        ? _value.passwordConfirmator
-        : passwordConfirmator as PasswordConfirmator,
+          ? _value.passwordConfirmator
+          : passwordConfirmator // ignore: cast_nullable_to_non_nullable
+              as PasswordConfirmator,
       passwordToCompare: passwordToCompare == freezed
-        ? _value.passwordToCompare
-        : passwordToCompare as String,
+          ? _value.passwordToCompare
+          : passwordToCompare // ignore: cast_nullable_to_non_nullable
+              as String,
       showErrorMessages: showErrorMessages == freezed
-        ? _value.showErrorMessages
-        : showErrorMessages as bool,
-      isSubmitting:
-      isSubmitting == freezed ? _value.isSubmitting : isSubmitting as bool,
-      acceptedEULA:
-      acceptedEULA == freezed ? _value.acceptedEULA : acceptedEULA as bool,
+          ? _value.showErrorMessages
+          : showErrorMessages // ignore: cast_nullable_to_non_nullable
+              as bool,
+      isSubmitting: isSubmitting == freezed
+          ? _value.isSubmitting
+          : isSubmitting // ignore: cast_nullable_to_non_nullable
+              as bool,
+      acceptedEULA: acceptedEULA == freezed
+          ? _value.acceptedEULA
+          : acceptedEULA // ignore: cast_nullable_to_non_nullable
+              as bool,
+      initialized: initialized == freezed
+          ? _value.initialized
+          : initialized // ignore: cast_nullable_to_non_nullable
+              as bool,
       failureOrSuccessOption: failureOrSuccessOption == freezed
-        ? _value.failureOrSuccessOption
-        : failureOrSuccessOption as Option<Either<Failure, Unit>>,
+          ? _value.failureOrSuccessOption
+          : failureOrSuccessOption // ignore: cast_nullable_to_non_nullable
+              as Option<Either<Failure, Unit>>,
     ));
   }
 
   @override
   $UserCopyWith<$Res> get user {
-    if (_value.user == null) {
-      return null;
-    }
     return $UserCopyWith<$Res>(_value.user, (value) {
       return _then(_value.copyWith(user: value));
     });
@@ -2316,83 +2174,96 @@ class _$RegistrationFormStateCopyWithImpl<$Res>
 
 /// @nodoc
 abstract class _$RegistrationFormStateCopyWith<$Res>
-  implements $RegistrationFormStateCopyWith<$Res> {
+    implements $RegistrationFormStateCopyWith<$Res> {
   factory _$RegistrationFormStateCopyWith(_RegistrationFormState value,
-    $Res Function(_RegistrationFormState) then) =
-  __$RegistrationFormStateCopyWithImpl<$Res>;
-  
+          $Res Function(_RegistrationFormState) then) =
+      __$RegistrationFormStateCopyWithImpl<$Res>;
   @override
-  $Res call({User user,
-    PasswordConfirmator passwordConfirmator,
-    String passwordToCompare,
-    bool showErrorMessages,
-    bool isSubmitting,
-    bool acceptedEULA,
-    Option<Either<Failure, Unit>> failureOrSuccessOption});
+  $Res call(
+      {User user,
+      PasswordConfirmator passwordConfirmator,
+      String passwordToCompare,
+      bool showErrorMessages,
+      bool isSubmitting,
+      bool acceptedEULA,
+      bool initialized,
+      Option<Either<Failure, Unit>> failureOrSuccessOption});
 
   @override
   $UserCopyWith<$Res> get user;
 }
 
 /// @nodoc
-class __$RegistrationFormStateCopyWithImpl<$Res> extends _$RegistrationFormStateCopyWithImpl<$Res>
-  implements _$RegistrationFormStateCopyWith<$Res> {
+class __$RegistrationFormStateCopyWithImpl<$Res>
+    extends _$RegistrationFormStateCopyWithImpl<$Res>
+    implements _$RegistrationFormStateCopyWith<$Res> {
   __$RegistrationFormStateCopyWithImpl(_RegistrationFormState _value,
-    $Res Function(_RegistrationFormState) _then)
-    : super(_value, (v) => _then(v as _RegistrationFormState));
-  
+      $Res Function(_RegistrationFormState) _then)
+      : super(_value, (v) => _then(v as _RegistrationFormState));
+
   @override
   _RegistrationFormState get _value => super._value as _RegistrationFormState;
-  
+
   @override
   $Res call({
-    Object user = freezed,
-    Object passwordConfirmator = freezed,
-    Object passwordToCompare = freezed,
-    Object showErrorMessages = freezed,
-    Object isSubmitting = freezed,
-    Object acceptedEULA = freezed,
-    Object failureOrSuccessOption = freezed,
+    Object? user = freezed,
+    Object? passwordConfirmator = freezed,
+    Object? passwordToCompare = freezed,
+    Object? showErrorMessages = freezed,
+    Object? isSubmitting = freezed,
+    Object? acceptedEULA = freezed,
+    Object? initialized = freezed,
+    Object? failureOrSuccessOption = freezed,
   }) {
     return _then(_RegistrationFormState(
-      user: user == freezed ? _value.user : user as User,
+      user: user == freezed
+          ? _value.user
+          : user // ignore: cast_nullable_to_non_nullable
+              as User,
       passwordConfirmator: passwordConfirmator == freezed
-        ? _value.passwordConfirmator
-        : passwordConfirmator as PasswordConfirmator,
+          ? _value.passwordConfirmator
+          : passwordConfirmator // ignore: cast_nullable_to_non_nullable
+              as PasswordConfirmator,
       passwordToCompare: passwordToCompare == freezed
-        ? _value.passwordToCompare
-        : passwordToCompare as String,
+          ? _value.passwordToCompare
+          : passwordToCompare // ignore: cast_nullable_to_non_nullable
+              as String,
       showErrorMessages: showErrorMessages == freezed
-        ? _value.showErrorMessages
-        : showErrorMessages as bool,
-      isSubmitting:
-      isSubmitting == freezed ? _value.isSubmitting : isSubmitting as bool,
-      acceptedEULA:
-      acceptedEULA == freezed ? _value.acceptedEULA : acceptedEULA as bool,
+          ? _value.showErrorMessages
+          : showErrorMessages // ignore: cast_nullable_to_non_nullable
+              as bool,
+      isSubmitting: isSubmitting == freezed
+          ? _value.isSubmitting
+          : isSubmitting // ignore: cast_nullable_to_non_nullable
+              as bool,
+      acceptedEULA: acceptedEULA == freezed
+          ? _value.acceptedEULA
+          : acceptedEULA // ignore: cast_nullable_to_non_nullable
+              as bool,
+      initialized: initialized == freezed
+          ? _value.initialized
+          : initialized // ignore: cast_nullable_to_non_nullable
+              as bool,
       failureOrSuccessOption: failureOrSuccessOption == freezed
-        ? _value.failureOrSuccessOption
-        : failureOrSuccessOption as Option<Either<Failure, Unit>>,
+          ? _value.failureOrSuccessOption
+          : failureOrSuccessOption // ignore: cast_nullable_to_non_nullable
+              as Option<Either<Failure, Unit>>,
     ));
   }
 }
 
 /// @nodoc
+
 class _$_RegistrationFormState implements _RegistrationFormState {
   const _$_RegistrationFormState(
-      {@required this.user,
-      @required this.passwordConfirmator,
-      @required this.passwordToCompare,
-      @required this.showErrorMessages,
-      @required this.isSubmitting,
-      @required this.acceptedEULA,
-      @required this.failureOrSuccessOption})
-      : assert(user != null),
-        assert(passwordConfirmator != null),
-        assert(passwordToCompare != null),
-        assert(showErrorMessages != null),
-        assert(isSubmitting != null),
-        assert(acceptedEULA != null),
-        assert(failureOrSuccessOption != null);
+      {required this.user,
+      required this.passwordConfirmator,
+      required this.passwordToCompare,
+      required this.showErrorMessages,
+      required this.isSubmitting,
+      required this.acceptedEULA,
+      required this.initialized,
+      required this.failureOrSuccessOption});
 
   @override
   final User user;
@@ -2407,37 +2278,42 @@ class _$_RegistrationFormState implements _RegistrationFormState {
   @override
   final bool acceptedEULA;
   @override
+  final bool initialized;
+  @override
   final Option<Either<Failure, Unit>> failureOrSuccessOption;
 
   @override
   String toString() {
-    return 'RegistrationFormState(user: $user, passwordConfirmator: $passwordConfirmator, passwordToCompare: $passwordToCompare, showErrorMessages: $showErrorMessages, isSubmitting: $isSubmitting, acceptedEULA: $acceptedEULA, failureOrSuccessOption: $failureOrSuccessOption)';
+    return 'RegistrationFormState(user: $user, passwordConfirmator: $passwordConfirmator, passwordToCompare: $passwordToCompare, showErrorMessages: $showErrorMessages, isSubmitting: $isSubmitting, acceptedEULA: $acceptedEULA, initialized: $initialized, failureOrSuccessOption: $failureOrSuccessOption)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-      (other is _RegistrationFormState &&
-        (identical(other.user, user) ||
-          const DeepCollectionEquality().equals(other.user, user)) &&
-        (identical(other.passwordConfirmator, passwordConfirmator) ||
-          const DeepCollectionEquality()
-            .equals(other.passwordConfirmator, passwordConfirmator)) &&
-        (identical(other.passwordToCompare, passwordToCompare) ||
-          const DeepCollectionEquality()
-            .equals(other.passwordToCompare, passwordToCompare)) &&
-        (identical(other.showErrorMessages, showErrorMessages) ||
-          const DeepCollectionEquality()
-            .equals(other.showErrorMessages, showErrorMessages)) &&
-        (identical(other.isSubmitting, isSubmitting) ||
-          const DeepCollectionEquality()
-            .equals(other.isSubmitting, isSubmitting)) &&
-        (identical(other.acceptedEULA, acceptedEULA) ||
-          const DeepCollectionEquality()
-            .equals(other.acceptedEULA, acceptedEULA)) &&
-        (identical(other.failureOrSuccessOption, failureOrSuccessOption) ||
-          const DeepCollectionEquality().equals(
-            other.failureOrSuccessOption, failureOrSuccessOption)));
+        (other is _RegistrationFormState &&
+            (identical(other.user, user) ||
+                const DeepCollectionEquality().equals(other.user, user)) &&
+            (identical(other.passwordConfirmator, passwordConfirmator) ||
+                const DeepCollectionEquality()
+                    .equals(other.passwordConfirmator, passwordConfirmator)) &&
+            (identical(other.passwordToCompare, passwordToCompare) ||
+                const DeepCollectionEquality()
+                    .equals(other.passwordToCompare, passwordToCompare)) &&
+            (identical(other.showErrorMessages, showErrorMessages) ||
+                const DeepCollectionEquality()
+                    .equals(other.showErrorMessages, showErrorMessages)) &&
+            (identical(other.isSubmitting, isSubmitting) ||
+                const DeepCollectionEquality()
+                    .equals(other.isSubmitting, isSubmitting)) &&
+            (identical(other.acceptedEULA, acceptedEULA) ||
+                const DeepCollectionEquality()
+                    .equals(other.acceptedEULA, acceptedEULA)) &&
+            (identical(other.initialized, initialized) ||
+                const DeepCollectionEquality()
+                    .equals(other.initialized, initialized)) &&
+            (identical(other.failureOrSuccessOption, failureOrSuccessOption) ||
+                const DeepCollectionEquality().equals(
+                    other.failureOrSuccessOption, failureOrSuccessOption)));
   }
 
   @override
@@ -2449,42 +2325,48 @@ class _$_RegistrationFormState implements _RegistrationFormState {
       const DeepCollectionEquality().hash(showErrorMessages) ^
       const DeepCollectionEquality().hash(isSubmitting) ^
       const DeepCollectionEquality().hash(acceptedEULA) ^
+      const DeepCollectionEquality().hash(initialized) ^
       const DeepCollectionEquality().hash(failureOrSuccessOption);
 
+  @JsonKey(ignore: true)
   @override
   _$RegistrationFormStateCopyWith<_RegistrationFormState> get copyWith =>
-    __$RegistrationFormStateCopyWithImpl<_RegistrationFormState>(
-      this, _$identity);
+      __$RegistrationFormStateCopyWithImpl<_RegistrationFormState>(
+          this, _$identity);
 }
 
 abstract class _RegistrationFormState implements RegistrationFormState {
-  const factory _RegistrationFormState({@required User user,
-    @required PasswordConfirmator passwordConfirmator,
-    @required String passwordToCompare,
-    @required bool showErrorMessages,
-    @required bool isSubmitting,
-    @required bool acceptedEULA,
-    @required Option<Either<Failure, Unit>> failureOrSuccessOption}) =
-  _$_RegistrationFormState;
-  
+  const factory _RegistrationFormState(
+          {required User user,
+          required PasswordConfirmator passwordConfirmator,
+          required String passwordToCompare,
+          required bool showErrorMessages,
+          required bool isSubmitting,
+          required bool acceptedEULA,
+          required bool initialized,
+          required Option<Either<Failure, Unit>> failureOrSuccessOption}) =
+      _$_RegistrationFormState;
+
   @override
-  User get user;
-  
+  User get user => throw _privateConstructorUsedError;
   @override
-  PasswordConfirmator get passwordConfirmator;
-  
+  PasswordConfirmator get passwordConfirmator =>
+      throw _privateConstructorUsedError;
   @override
-  String get passwordToCompare;
-  
+  String get passwordToCompare => throw _privateConstructorUsedError;
   @override
-  bool get showErrorMessages;
-  
+  bool get showErrorMessages => throw _privateConstructorUsedError;
   @override
-  bool get isSubmitting;
+  bool get isSubmitting => throw _privateConstructorUsedError;
   @override
-  bool get acceptedEULA;
+  bool get acceptedEULA => throw _privateConstructorUsedError;
   @override
-  Option<Either<Failure, Unit>> get failureOrSuccessOption;
+  bool get initialized => throw _privateConstructorUsedError;
   @override
-  _$RegistrationFormStateCopyWith<_RegistrationFormState> get copyWith;
+  Option<Either<Failure, Unit>> get failureOrSuccessOption =>
+      throw _privateConstructorUsedError;
+  @override
+  @JsonKey(ignore: true)
+  _$RegistrationFormStateCopyWith<_RegistrationFormState> get copyWith =>
+      throw _privateConstructorUsedError;
 }

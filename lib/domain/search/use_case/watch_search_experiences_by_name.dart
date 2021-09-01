@@ -1,5 +1,4 @@
 import 'package:dartz/dartz.dart';
-import 'package:flutter/foundation.dart';
 import 'package:injectable/injectable.dart';
 import 'package:kt_dart/kt.dart';
 import 'package:worldon/core/error/failure.dart';
@@ -16,12 +15,12 @@ class WatchSearchExperiencesByName implements StreamUseCase<KtList<Experience>, 
 
   @override
   Stream<Either<Failure, KtList<Experience>>> call(Params params) async* {
-    yield* _repository.watchSearchExperiencesByTitle(params.name);
+    yield* _repository.watchExperiencesByTitle(params.name);
   }
 }
 
 class Params {
   final SearchTerm name;
 
-  Params({@required this.name});
+  Params({required this.name});
 }

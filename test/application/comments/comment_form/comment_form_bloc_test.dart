@@ -12,6 +12,7 @@ import 'package:worldon/domain/comments/use_case/edit_comment.dart';
 import 'package:worldon/domain/comments/use_case/post_comment.dart';
 import 'package:worldon/domain/core/entities/comment/comment.dart';
 import 'package:worldon/domain/core/validation/objects/comment_content.dart';
+import 'package:worldon/domain/core/validation/objects/unique_id.dart';
 import 'package:worldon/injection.dart';
 
 import '../../../test_descriptions.dart';
@@ -30,7 +31,7 @@ void main() {
   );
   final _validPoster = getValidUser();
   const content = "Testing";
-  const experienceId = 1;
+  final experienceId = UniqueId();
   final commentToEdit = Comment.empty().copyWith(
     poster: _validPoster,
     content: CommentContent(content),

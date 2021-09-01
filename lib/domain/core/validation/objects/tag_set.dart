@@ -14,17 +14,14 @@ class TagSet extends ValueObject<KtSet<Tag>> {
   // Maybe there shouldn't even be a maximum amount of tags
   static const maxLength = 10;
 
-  factory TagSet(KtSet<Tag> input) {
-    assert(input != null);
-    return TagSet._(
-      validateNotEmptySet(input).flatMap(
-        (input) => validateMaxSetLength(
-          input: input,
-          maxLength: maxLength,
+  factory TagSet(KtSet<Tag> input) => TagSet._(
+        validateNotEmptySet(input).flatMap(
+          (input) => validateMaxSetLength(
+            input: input,
+            maxLength: maxLength,
+          ),
         ),
-      ),
-    );
-  }
+      );
 
   const TagSet._(this.value);
 
@@ -56,6 +53,14 @@ class TagSet extends ValueObject<KtSet<Tag>> {
 
   bool get isFull {
     return length == maxLength;
+  }
+
+  bool get isEmpty {
+    return value.getOrElse(() => const KtSet<Tag>.empty()).isEmpty();
+  }
+
+  bool get isNotEmpty {
+    return value.getOrElse(() => const KtSet<Tag>.empty()).isNotEmpty();
   }
 
   @override

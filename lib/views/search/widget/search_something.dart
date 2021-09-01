@@ -1,15 +1,14 @@
 import 'package:flutter/material.dart';
-import 'package:worldon/views/core/misc/world_on_colors.dart';
+import 'package:worldon/generated/l10n.dart';
 
 class SearchSomething extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return const Center(
+    return Center(
       child: Text(
-        "Search for something!",
-        style: TextStyle(
+        S.of(context).noSearchesMessage,
+        style: const TextStyle(
           fontSize: 25,
-          color: WorldOnColors.white,
         ),
       ),
     );

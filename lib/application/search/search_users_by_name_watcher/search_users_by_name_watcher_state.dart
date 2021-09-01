@@ -1,7 +1,7 @@
 part of 'search_users_by_name_watcher_bloc.dart';
 
 @freezed
-abstract class SearchUsersByNameWatcherState with _$SearchUsersByNameWatcherState {
+class SearchUsersByNameWatcherState with _$SearchUsersByNameWatcherState {
   const factory SearchUsersByNameWatcherState.initial() = _Initial;
 
   const factory SearchUsersByNameWatcherState.searchInProgress() = _SearchInPorgress;

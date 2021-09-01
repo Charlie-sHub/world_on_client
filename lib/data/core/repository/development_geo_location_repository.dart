@@ -11,12 +11,16 @@ import 'package:worldon/domain/core/validation/objects/longitude.dart';
 
 @LazySingleton(as: GeoLocationRepositoryInterface, env: [Environment.dev])
 class DevelopmentGeoLocationRepository implements GeoLocationRepositoryInterface {
-  final _logger = Logger();
+  final Logger _logger;
+
+  DevelopmentGeoLocationRepository(this._logger);
 
   @override
   Future<Either<Failure, Coordinates>> getCurrentLocation() async {
     try {
-      final _position = await getCurrentPosition(desiredAccuracy: LocationAccuracy.high);
+      final _position = await Geolocator.getCurrentPosition(
+        desiredAccuracy: LocationAccuracy.high,
+      );
       final _coordinates = Coordinates(
         latitude: Latitude(_position.latitude),
         longitude: Longitude(_position.longitude),

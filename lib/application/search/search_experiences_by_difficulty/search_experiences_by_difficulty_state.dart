@@ -1,7 +1,7 @@
 part of 'search_experiences_by_difficulty_bloc.dart';
 
 @freezed
-abstract class SearchExperiencesByDifficultyState with _$SearchExperiencesByDifficultyState {
+class SearchExperiencesByDifficultyState with _$SearchExperiencesByDifficultyState {
   const factory SearchExperiencesByDifficultyState.initial() = _Initial;
 
   const factory SearchExperiencesByDifficultyState.searchInProgress() = _SearchInProgress;

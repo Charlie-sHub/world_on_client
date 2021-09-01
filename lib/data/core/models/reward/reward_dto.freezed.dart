@@ -1,5 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides
 
 part of 'reward_dto.dart';
 
@@ -8,6 +8,10 @@ part of 'reward_dto.dart';
 // **************************************************************************
 
 T _$identity<T>(T value) => value;
+
+final _privateConstructorUsedError = UnsupportedError(
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+
 RewardDto _$RewardDtoFromJson(Map<String, dynamic> json) {
   return _RewardDto.fromJson(json);
 }
@@ -16,11 +20,11 @@ RewardDto _$RewardDtoFromJson(Map<String, dynamic> json) {
 class _$RewardDtoTearOff {
   const _$RewardDtoTearOff();
 
-// ignore: unused_element
-  _RewardDto call({@required int id,
-    @required String name,
-    @required String description,
-    @required String imageURL}) {
+  _RewardDto call(
+      {required String id,
+      required String name,
+      required String description,
+      required String imageURL}) {
     return _RewardDto(
       id: id,
       name: name,
@@ -29,32 +33,32 @@ class _$RewardDtoTearOff {
     );
   }
 
-// ignore: unused_element
   RewardDto fromJson(Map<String, Object> json) {
     return RewardDto.fromJson(json);
   }
 }
 
 /// @nodoc
-// ignore: unused_element
 const $RewardDto = _$RewardDtoTearOff();
 
 /// @nodoc
 mixin _$RewardDto {
-  int get id;
-  String get name;
-  String get description;
-  String get imageURL;
+  String get id => throw _privateConstructorUsedError;
+  String get name => throw _privateConstructorUsedError;
+  String get description => throw _privateConstructorUsedError;
+  String get imageURL => throw _privateConstructorUsedError;
 
-  Map<String, dynamic> toJson();
-  $RewardDtoCopyWith<RewardDto> get copyWith;
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  $RewardDtoCopyWith<RewardDto> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $RewardDtoCopyWith<$Res> {
   factory $RewardDtoCopyWith(RewardDto value, $Res Function(RewardDto) then) =
-  _$RewardDtoCopyWithImpl<$Res>;
-  $Res call({int id, String name, String description, String imageURL});
+      _$RewardDtoCopyWithImpl<$Res>;
+  $Res call({String id, String name, String description, String imageURL});
 }
 
 /// @nodoc
@@ -67,74 +71,93 @@ class _$RewardDtoCopyWithImpl<$Res> implements $RewardDtoCopyWith<$Res> {
 
   @override
   $Res call({
-    Object id = freezed,
-    Object name = freezed,
-    Object description = freezed,
-    Object imageURL = freezed,
+    Object? id = freezed,
+    Object? name = freezed,
+    Object? description = freezed,
+    Object? imageURL = freezed,
   }) {
     return _then(_value.copyWith(
-      id: id == freezed ? _value.id : id as int,
-      name: name == freezed ? _value.name : name as String,
-      description:
-      description == freezed ? _value.description : description as String,
-      imageURL: imageURL == freezed ? _value.imageURL : imageURL as String,
+      id: id == freezed
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String,
+      name: name == freezed
+          ? _value.name
+          : name // ignore: cast_nullable_to_non_nullable
+              as String,
+      description: description == freezed
+          ? _value.description
+          : description // ignore: cast_nullable_to_non_nullable
+              as String,
+      imageURL: imageURL == freezed
+          ? _value.imageURL
+          : imageURL // ignore: cast_nullable_to_non_nullable
+              as String,
     ));
   }
 }
 
 /// @nodoc
 abstract class _$RewardDtoCopyWith<$Res> implements $RewardDtoCopyWith<$Res> {
-  factory _$RewardDtoCopyWith(_RewardDto value, $Res Function(_RewardDto) then) =
-  __$RewardDtoCopyWithImpl<$Res>;
-  
+  factory _$RewardDtoCopyWith(
+          _RewardDto value, $Res Function(_RewardDto) then) =
+      __$RewardDtoCopyWithImpl<$Res>;
   @override
-  $Res call({int id, String name, String description, String imageURL});
+  $Res call({String id, String name, String description, String imageURL});
 }
 
 /// @nodoc
 class __$RewardDtoCopyWithImpl<$Res> extends _$RewardDtoCopyWithImpl<$Res>
-  implements _$RewardDtoCopyWith<$Res> {
+    implements _$RewardDtoCopyWith<$Res> {
   __$RewardDtoCopyWithImpl(_RewardDto _value, $Res Function(_RewardDto) _then)
-    : super(_value, (v) => _then(v as _RewardDto));
-  
+      : super(_value, (v) => _then(v as _RewardDto));
+
   @override
   _RewardDto get _value => super._value as _RewardDto;
-  
+
   @override
   $Res call({
-    Object id = freezed,
-    Object name = freezed,
-    Object description = freezed,
-    Object imageURL = freezed,
+    Object? id = freezed,
+    Object? name = freezed,
+    Object? description = freezed,
+    Object? imageURL = freezed,
   }) {
     return _then(_RewardDto(
-      id: id == freezed ? _value.id : id as int,
-      name: name == freezed ? _value.name : name as String,
-      description:
-      description == freezed ? _value.description : description as String,
-      imageURL: imageURL == freezed ? _value.imageURL : imageURL as String,
+      id: id == freezed
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String,
+      name: name == freezed
+          ? _value.name
+          : name // ignore: cast_nullable_to_non_nullable
+              as String,
+      description: description == freezed
+          ? _value.description
+          : description // ignore: cast_nullable_to_non_nullable
+              as String,
+      imageURL: imageURL == freezed
+          ? _value.imageURL
+          : imageURL // ignore: cast_nullable_to_non_nullable
+              as String,
     ));
   }
 }
 
+/// @nodoc
 @JsonSerializable()
+class _$_RewardDto extends _RewardDto {
+  const _$_RewardDto(
+      {required this.id,
+      required this.name,
+      required this.description,
+      required this.imageURL})
+      : super._();
 
-/// @nodoc class _$_RewardDto extends _RewardDto {
-  const _$_RewardDto({@required this.id,
-    @required this.name,
-    @required this.description,
-    @required this.imageURL})
-    : assert(id != null),
-      assert(name != null),
-      assert(description != null),
-      assert(imageURL != null),
-      super._();
-  
   factory _$_RewardDto.fromJson(Map<String, dynamic> json) =>
-    _$_$_RewardDtoFromJson(json);
-  
+      _$_$_RewardDtoFromJson(json);
+
   @override
-  final int id;
+  final String id;
   @override
   final String name;
   @override
@@ -150,17 +173,17 @@ class __$RewardDtoCopyWithImpl<$Res> extends _$RewardDtoCopyWithImpl<$Res>
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-      (other is _RewardDto &&
-        (identical(other.id, id) ||
-          const DeepCollectionEquality().equals(other.id, id)) &&
-        (identical(other.name, name) ||
-          const DeepCollectionEquality().equals(other.name, name)) &&
-        (identical(other.description, description) ||
-          const DeepCollectionEquality()
-            .equals(other.description, description)) &&
-        (identical(other.imageURL, imageURL) ||
-          const DeepCollectionEquality()
-            .equals(other.imageURL, imageURL)));
+        (other is _RewardDto &&
+            (identical(other.id, id) ||
+                const DeepCollectionEquality().equals(other.id, id)) &&
+            (identical(other.name, name) ||
+                const DeepCollectionEquality().equals(other.name, name)) &&
+            (identical(other.description, description) ||
+                const DeepCollectionEquality()
+                    .equals(other.description, description)) &&
+            (identical(other.imageURL, imageURL) ||
+                const DeepCollectionEquality()
+                    .equals(other.imageURL, imageURL)));
   }
 
   @override
@@ -171,9 +194,10 @@ class __$RewardDtoCopyWithImpl<$Res> extends _$RewardDtoCopyWithImpl<$Res>
       const DeepCollectionEquality().hash(description) ^
       const DeepCollectionEquality().hash(imageURL);
 
+  @JsonKey(ignore: true)
   @override
   _$RewardDtoCopyWith<_RewardDto> get copyWith =>
-    __$RewardDtoCopyWithImpl<_RewardDto>(this, _$identity);
+      __$RewardDtoCopyWithImpl<_RewardDto>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
@@ -182,28 +206,26 @@ class __$RewardDtoCopyWithImpl<$Res> extends _$RewardDtoCopyWithImpl<$Res>
 }
 
 abstract class _RewardDto extends RewardDto {
+  const factory _RewardDto(
+      {required String id,
+      required String name,
+      required String description,
+      required String imageURL}) = _$_RewardDto;
   const _RewardDto._() : super._();
-  
-  const factory _RewardDto({@required int id,
-    @required String name,
-    @required String description,
-    @required String imageURL}) = _$_RewardDto;
-  
+
   factory _RewardDto.fromJson(Map<String, dynamic> json) =
-  _$_RewardDto.fromJson;
-  
+      _$_RewardDto.fromJson;
+
   @override
-  int get id;
-  
+  String get id => throw _privateConstructorUsedError;
   @override
-  String get name;
-  
+  String get name => throw _privateConstructorUsedError;
   @override
-  String get description;
-  
+  String get description => throw _privateConstructorUsedError;
   @override
-  String get imageURL;
-  
+  String get imageURL => throw _privateConstructorUsedError;
   @override
-  _$RewardDtoCopyWith<_RewardDto> get copyWith;
+  @JsonKey(ignore: true)
+  _$RewardDtoCopyWith<_RewardDto> get copyWith =>
+      throw _privateConstructorUsedError;
 }

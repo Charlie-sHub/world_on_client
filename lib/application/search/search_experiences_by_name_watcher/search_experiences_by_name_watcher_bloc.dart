@@ -19,7 +19,8 @@ part 'search_experiences_by_name_watcher_state.dart';
 @injectable
 class SearchExperiencesByNameWatcherBloc extends Bloc<SearchExperiencesByNameWatcherEvent, SearchExperiencesByNameWatcherState> {
   SearchExperiencesByNameWatcherBloc() : super(const SearchExperiencesByNameWatcherState.initial());
-  StreamSubscription<Either<Failure, KtList<Experience>>> _experiencesSearchStreamSubscription;
+
+  StreamSubscription<Either<Failure, KtList<Experience>>>? _experiencesSearchStreamSubscription;
 
   @override
   Stream<SearchExperiencesByNameWatcherState> mapEventToState(SearchExperiencesByNameWatcherEvent event) async* {

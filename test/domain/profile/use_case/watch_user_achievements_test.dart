@@ -6,6 +6,7 @@ import 'package:mockito/mockito.dart';
 import 'package:worldon/core/error/failure.dart';
 import 'package:worldon/data/core/failures/core_data_failure.dart';
 import 'package:worldon/domain/core/entities/achievement/achievement.dart';
+import 'package:worldon/domain/core/validation/objects/unique_id.dart';
 import 'package:worldon/domain/profile/repository/profile_repository_interface.dart';
 import 'package:worldon/domain/profile/use_case/watch_user_achievements.dart';
 import 'package:worldon/injection.dart';
@@ -23,7 +24,7 @@ void main() {
       useCase = WatchUserAchievements(mockProfileRepository);
     },
   );
-  final params = Params(userId: 1);
+  final params = Params(userId: UniqueId());
   final achievements = KtList.of(Achievement.empty());
   test(
     "Should return a KtList of Achievements",

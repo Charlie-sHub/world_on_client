@@ -1,10 +1,12 @@
 import 'package:dartz/dartz.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:worldon/domain/core/entities/experience/experience.dart';
+import 'package:worldon/domain/core/entities/user/simple_user.dart';
 import 'package:worldon/domain/core/entities/user/user.dart';
 import 'package:worldon/domain/core/failures/value_failure.dart';
 import 'package:worldon/domain/core/validation/objects/comment_content.dart';
 import 'package:worldon/domain/core/validation/objects/past_date.dart';
+import 'package:worldon/domain/core/validation/objects/unique_id.dart';
 
 part 'comment.freezed.dart';
 
@@ -12,21 +14,22 @@ part 'comment.freezed.dart';
 ///
 /// [Comment]s are messages left by [User]s in a [Experience].
 @freezed
-abstract class Comment implements _$Comment {
+class Comment with _$Comment {
   const Comment._();
 
   const factory Comment({
-    int id,
-    @required User poster,
-    @required int experienceId,
-    @required CommentContent content,
-    @required PastDate creationDate,
-    @required PastDate modificationDate,
+    required UniqueId id,
+    required SimpleUser poster,
+    required UniqueId experienceId,
+    required CommentContent content,
+    required PastDate creationDate,
+    required PastDate modificationDate,
   }) = _Comment;
 
   factory Comment.empty() => Comment(
-    poster: User.empty(),
-        experienceId: 0,
+        id: UniqueId(),
+        poster: SimpleUser.empty(),
+        experienceId: UniqueId(),
         content: CommentContent(""),
         creationDate: PastDate(DateTime.now()),
         modificationDate: PastDate(DateTime.now()),

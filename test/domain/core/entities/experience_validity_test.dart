@@ -12,7 +12,7 @@ import 'package:worldon/domain/core/validation/objects/difficulty.dart';
 import 'package:worldon/domain/core/validation/objects/entity_description.dart';
 import 'package:worldon/domain/core/validation/objects/latitude.dart';
 import 'package:worldon/domain/core/validation/objects/name.dart';
-import 'package:worldon/domain/core/validation/objects/objective_set.dart';
+import 'package:worldon/domain/core/validation/objects/objective_list.dart';
 import 'package:worldon/domain/core/validation/objects/past_date.dart';
 import 'package:worldon/domain/core/validation/objects/reward_set.dart';
 import 'package:worldon/domain/core/validation/objects/tag_set.dart';
@@ -28,7 +28,7 @@ void main() {
   final invalidDifficultyExperience = validExperience.copyWith(difficulty: Difficulty(12));
   final invalidCreationDateExperience = validExperience.copyWith(creationDate: PastDate(DateTime.now().add(const Duration(days: 10))));
   final invalidModificationDateExperience = validExperience.copyWith(modificationDate: PastDate(DateTime.now().add(const Duration(days: 10))));
-  final invalidObjectivesExperience = validExperience.copyWith(objectives: ObjectiveSet(const KtSet.empty()));
+  final invalidObjectivesExperience = validExperience.copyWith(objectives: ObjectiveList(const KtList.empty()));
   final invalidRewardsExperience = validExperience.copyWith(
     rewards: RewardSet(
       KtSet.of(
@@ -141,9 +141,9 @@ Experience _getValidExperience() {
   );
 }
 
-ObjectiveSet _getValidObjectiveSet() {
-  return ObjectiveSet(
-    KtSet.of(
+ObjectiveList _getValidObjectiveSet() {
+  return ObjectiveList(
+    KtList.of(
       Objective.empty().copyWith(
         description: EntityDescription("Test"),
       ),

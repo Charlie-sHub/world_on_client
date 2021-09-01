@@ -1,5 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides
 
 part of 'tag_management_form_bloc.dart';
 
@@ -9,62 +9,65 @@ part of 'tag_management_form_bloc.dart';
 
 T _$identity<T>(T value) => value;
 
+final _privateConstructorUsedError = UnsupportedError(
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+
 /// @nodoc
 class _$TagManagementFormEventTearOff {
   const _$TagManagementFormEventTearOff();
 
-// ignore: unused_element
   _Initialized initialized(Option<Tag> tagOption) {
     return _Initialized(
       tagOption,
     );
   }
 
-// ignore: unused_element
   _NameChanged nameChanged(String name) {
     return _NameChanged(
       name,
     );
   }
 
-// ignore: unused_element
   _Submitted submitted() {
     return const _Submitted();
   }
 }
 
 /// @nodoc
-// ignore: unused_element
 const $TagManagementFormEvent = _$TagManagementFormEventTearOff();
 
 /// @nodoc
 mixin _$TagManagementFormEvent {
   @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result initialized(Option<Tag> tagOption),
-    @required Result nameChanged(String name),
-    @required Result submitted(),
-  });
+  TResult when<TResult extends Object?>({
+    required TResult Function(Option<Tag> tagOption) initialized,
+    required TResult Function(String name) nameChanged,
+    required TResult Function() submitted,
+  }) =>
+      throw _privateConstructorUsedError;
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result initialized(Option<Tag> tagOption),
-    Result nameChanged(String name),
-    Result submitted(),
-    @required Result orElse(),
-  });
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(Option<Tag> tagOption)? initialized,
+    TResult Function(String name)? nameChanged,
+    TResult Function()? submitted,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result initialized(_Initialized value),
-    @required Result nameChanged(_NameChanged value),
-    @required Result submitted(_Submitted value),
-  });
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initialized value) initialized,
+    required TResult Function(_NameChanged value) nameChanged,
+    required TResult Function(_Submitted value) submitted,
+  }) =>
+      throw _privateConstructorUsedError;
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result initialized(_Initialized value),
-    Result nameChanged(_NameChanged value),
-    Result submitted(_Submitted value),
-    @required Result orElse(),
-  });
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initialized value)? initialized,
+    TResult Function(_NameChanged value)? nameChanged,
+    TResult Function(_Submitted value)? submitted,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -105,17 +108,21 @@ class __$InitializedCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object tagOption = freezed,
+    Object? tagOption = freezed,
   }) {
     return _then(_Initialized(
-      tagOption == freezed ? _value.tagOption : tagOption as Option<Tag>,
+      tagOption == freezed
+          ? _value.tagOption
+          : tagOption // ignore: cast_nullable_to_non_nullable
+              as Option<Tag>,
     ));
   }
 }
 
 /// @nodoc
+
 class _$_Initialized implements _Initialized {
-  const _$_Initialized(this.tagOption) : assert(tagOption != null);
+  const _$_Initialized(this.tagOption);
 
   @override
   final Option<Tag> tagOption;
@@ -138,32 +145,29 @@ class _$_Initialized implements _Initialized {
   int get hashCode =>
       runtimeType.hashCode ^ const DeepCollectionEquality().hash(tagOption);
 
+  @JsonKey(ignore: true)
   @override
   _$InitializedCopyWith<_Initialized> get copyWith =>
       __$InitializedCopyWithImpl<_Initialized>(this, _$identity);
 
   @override
   @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result initialized(Option<Tag> tagOption),
-    @required Result nameChanged(String name),
-    @required Result submitted(),
+  TResult when<TResult extends Object?>({
+    required TResult Function(Option<Tag> tagOption) initialized,
+    required TResult Function(String name) nameChanged,
+    required TResult Function() submitted,
   }) {
-    assert(initialized != null);
-    assert(nameChanged != null);
-    assert(submitted != null);
     return initialized(tagOption);
   }
 
   @override
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result initialized(Option<Tag> tagOption),
-    Result nameChanged(String name),
-    Result submitted(),
-    @required Result orElse(),
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(Option<Tag> tagOption)? initialized,
+    TResult Function(String name)? nameChanged,
+    TResult Function()? submitted,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (initialized != null) {
       return initialized(tagOption);
     }
@@ -172,26 +176,22 @@ class _$_Initialized implements _Initialized {
 
   @override
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result initialized(_Initialized value),
-    @required Result nameChanged(_NameChanged value),
-    @required Result submitted(_Submitted value),
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initialized value) initialized,
+    required TResult Function(_NameChanged value) nameChanged,
+    required TResult Function(_Submitted value) submitted,
   }) {
-    assert(initialized != null);
-    assert(nameChanged != null);
-    assert(submitted != null);
     return initialized(this);
   }
 
   @override
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result initialized(_Initialized value),
-    Result nameChanged(_NameChanged value),
-    Result submitted(_Submitted value),
-    @required Result orElse(),
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initialized value)? initialized,
+    TResult Function(_NameChanged value)? nameChanged,
+    TResult Function(_Submitted value)? submitted,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (initialized != null) {
       return initialized(this);
     }
@@ -202,8 +202,10 @@ class _$_Initialized implements _Initialized {
 abstract class _Initialized implements TagManagementFormEvent {
   const factory _Initialized(Option<Tag> tagOption) = _$_Initialized;
 
-  Option<Tag> get tagOption;
-  _$InitializedCopyWith<_Initialized> get copyWith;
+  Option<Tag> get tagOption => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  _$InitializedCopyWith<_Initialized> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -227,17 +229,21 @@ class __$NameChangedCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object name = freezed,
+    Object? name = freezed,
   }) {
     return _then(_NameChanged(
-      name == freezed ? _value.name : name as String,
+      name == freezed
+          ? _value.name
+          : name // ignore: cast_nullable_to_non_nullable
+              as String,
     ));
   }
 }
 
 /// @nodoc
+
 class _$_NameChanged implements _NameChanged {
-  const _$_NameChanged(this.name) : assert(name != null);
+  const _$_NameChanged(this.name);
 
   @override
   final String name;
@@ -259,32 +265,29 @@ class _$_NameChanged implements _NameChanged {
   int get hashCode =>
       runtimeType.hashCode ^ const DeepCollectionEquality().hash(name);
 
+  @JsonKey(ignore: true)
   @override
   _$NameChangedCopyWith<_NameChanged> get copyWith =>
       __$NameChangedCopyWithImpl<_NameChanged>(this, _$identity);
 
   @override
   @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result initialized(Option<Tag> tagOption),
-    @required Result nameChanged(String name),
-    @required Result submitted(),
+  TResult when<TResult extends Object?>({
+    required TResult Function(Option<Tag> tagOption) initialized,
+    required TResult Function(String name) nameChanged,
+    required TResult Function() submitted,
   }) {
-    assert(initialized != null);
-    assert(nameChanged != null);
-    assert(submitted != null);
     return nameChanged(name);
   }
 
   @override
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result initialized(Option<Tag> tagOption),
-    Result nameChanged(String name),
-    Result submitted(),
-    @required Result orElse(),
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(Option<Tag> tagOption)? initialized,
+    TResult Function(String name)? nameChanged,
+    TResult Function()? submitted,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (nameChanged != null) {
       return nameChanged(name);
     }
@@ -293,26 +296,22 @@ class _$_NameChanged implements _NameChanged {
 
   @override
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result initialized(_Initialized value),
-    @required Result nameChanged(_NameChanged value),
-    @required Result submitted(_Submitted value),
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initialized value) initialized,
+    required TResult Function(_NameChanged value) nameChanged,
+    required TResult Function(_Submitted value) submitted,
   }) {
-    assert(initialized != null);
-    assert(nameChanged != null);
-    assert(submitted != null);
     return nameChanged(this);
   }
 
   @override
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result initialized(_Initialized value),
-    Result nameChanged(_NameChanged value),
-    Result submitted(_Submitted value),
-    @required Result orElse(),
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initialized value)? initialized,
+    TResult Function(_NameChanged value)? nameChanged,
+    TResult Function(_Submitted value)? submitted,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (nameChanged != null) {
       return nameChanged(this);
     }
@@ -323,8 +322,10 @@ class _$_NameChanged implements _NameChanged {
 abstract class _NameChanged implements TagManagementFormEvent {
   const factory _NameChanged(String name) = _$_NameChanged;
 
-  String get name;
-  _$NameChangedCopyWith<_NameChanged> get copyWith;
+  String get name => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  _$NameChangedCopyWith<_NameChanged> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -346,6 +347,7 @@ class __$SubmittedCopyWithImpl<$Res>
 }
 
 /// @nodoc
+
 class _$_Submitted implements _Submitted {
   const _$_Submitted();
 
@@ -364,26 +366,22 @@ class _$_Submitted implements _Submitted {
 
   @override
   @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result initialized(Option<Tag> tagOption),
-    @required Result nameChanged(String name),
-    @required Result submitted(),
+  TResult when<TResult extends Object?>({
+    required TResult Function(Option<Tag> tagOption) initialized,
+    required TResult Function(String name) nameChanged,
+    required TResult Function() submitted,
   }) {
-    assert(initialized != null);
-    assert(nameChanged != null);
-    assert(submitted != null);
     return submitted();
   }
 
   @override
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result initialized(Option<Tag> tagOption),
-    Result nameChanged(String name),
-    Result submitted(),
-    @required Result orElse(),
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(Option<Tag> tagOption)? initialized,
+    TResult Function(String name)? nameChanged,
+    TResult Function()? submitted,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (submitted != null) {
       return submitted();
     }
@@ -392,26 +390,22 @@ class _$_Submitted implements _Submitted {
 
   @override
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result initialized(_Initialized value),
-    @required Result nameChanged(_NameChanged value),
-    @required Result submitted(_Submitted value),
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initialized value) initialized,
+    required TResult Function(_NameChanged value) nameChanged,
+    required TResult Function(_Submitted value) submitted,
   }) {
-    assert(initialized != null);
-    assert(nameChanged != null);
-    assert(submitted != null);
     return submitted(this);
   }
 
   @override
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result initialized(_Initialized value),
-    Result nameChanged(_NameChanged value),
-    Result submitted(_Submitted value),
-    @required Result orElse(),
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initialized value)? initialized,
+    TResult Function(_NameChanged value)? nameChanged,
+    TResult Function(_Submitted value)? submitted,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (submitted != null) {
       return submitted(this);
     }
@@ -427,13 +421,12 @@ abstract class _Submitted implements TagManagementFormEvent {
 class _$TagManagementFormStateTearOff {
   const _$TagManagementFormStateTearOff();
 
-// ignore: unused_element
   _TagManagementFormState call(
-      {@required Tag tag,
-      @required bool showErrorMessages,
-      @required bool isEditing,
-      @required bool isSubmitting,
-      @required Option<Either<Failure, Unit>> failureOrSuccessOption}) {
+      {required Tag tag,
+      required bool showErrorMessages,
+      required bool isEditing,
+      required bool isSubmitting,
+      required Option<Either<Failure, Unit>> failureOrSuccessOption}) {
     return _TagManagementFormState(
       tag: tag,
       showErrorMessages: showErrorMessages,
@@ -445,18 +438,20 @@ class _$TagManagementFormStateTearOff {
 }
 
 /// @nodoc
-// ignore: unused_element
 const $TagManagementFormState = _$TagManagementFormStateTearOff();
 
 /// @nodoc
 mixin _$TagManagementFormState {
-  Tag get tag;
-  bool get showErrorMessages;
-  bool get isEditing;
-  bool get isSubmitting;
-  Option<Either<Failure, Unit>> get failureOrSuccessOption;
+  Tag get tag => throw _privateConstructorUsedError;
+  bool get showErrorMessages => throw _privateConstructorUsedError;
+  bool get isEditing => throw _privateConstructorUsedError;
+  bool get isSubmitting => throw _privateConstructorUsedError;
+  Option<Either<Failure, Unit>> get failureOrSuccessOption =>
+      throw _privateConstructorUsedError;
 
-  $TagManagementFormStateCopyWith<TagManagementFormState> get copyWith;
+  @JsonKey(ignore: true)
+  $TagManagementFormStateCopyWith<TagManagementFormState> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -485,31 +480,38 @@ class _$TagManagementFormStateCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object tag = freezed,
-    Object showErrorMessages = freezed,
-    Object isEditing = freezed,
-    Object isSubmitting = freezed,
-    Object failureOrSuccessOption = freezed,
+    Object? tag = freezed,
+    Object? showErrorMessages = freezed,
+    Object? isEditing = freezed,
+    Object? isSubmitting = freezed,
+    Object? failureOrSuccessOption = freezed,
   }) {
     return _then(_value.copyWith(
-      tag: tag == freezed ? _value.tag : tag as Tag,
+      tag: tag == freezed
+          ? _value.tag
+          : tag // ignore: cast_nullable_to_non_nullable
+              as Tag,
       showErrorMessages: showErrorMessages == freezed
           ? _value.showErrorMessages
-          : showErrorMessages as bool,
-      isEditing: isEditing == freezed ? _value.isEditing : isEditing as bool,
-      isSubmitting:
-          isSubmitting == freezed ? _value.isSubmitting : isSubmitting as bool,
+          : showErrorMessages // ignore: cast_nullable_to_non_nullable
+              as bool,
+      isEditing: isEditing == freezed
+          ? _value.isEditing
+          : isEditing // ignore: cast_nullable_to_non_nullable
+              as bool,
+      isSubmitting: isSubmitting == freezed
+          ? _value.isSubmitting
+          : isSubmitting // ignore: cast_nullable_to_non_nullable
+              as bool,
       failureOrSuccessOption: failureOrSuccessOption == freezed
           ? _value.failureOrSuccessOption
-          : failureOrSuccessOption as Option<Either<Failure, Unit>>,
+          : failureOrSuccessOption // ignore: cast_nullable_to_non_nullable
+              as Option<Either<Failure, Unit>>,
     ));
   }
 
   @override
   $TagCopyWith<$Res> get tag {
-    if (_value.tag == null) {
-      return null;
-    }
     return $TagCopyWith<$Res>(_value.tag, (value) {
       return _then(_value.copyWith(tag: value));
     });
@@ -547,40 +549,46 @@ class __$TagManagementFormStateCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object tag = freezed,
-    Object showErrorMessages = freezed,
-    Object isEditing = freezed,
-    Object isSubmitting = freezed,
-    Object failureOrSuccessOption = freezed,
+    Object? tag = freezed,
+    Object? showErrorMessages = freezed,
+    Object? isEditing = freezed,
+    Object? isSubmitting = freezed,
+    Object? failureOrSuccessOption = freezed,
   }) {
     return _then(_TagManagementFormState(
-      tag: tag == freezed ? _value.tag : tag as Tag,
+      tag: tag == freezed
+          ? _value.tag
+          : tag // ignore: cast_nullable_to_non_nullable
+              as Tag,
       showErrorMessages: showErrorMessages == freezed
           ? _value.showErrorMessages
-          : showErrorMessages as bool,
-      isEditing: isEditing == freezed ? _value.isEditing : isEditing as bool,
-      isSubmitting:
-          isSubmitting == freezed ? _value.isSubmitting : isSubmitting as bool,
+          : showErrorMessages // ignore: cast_nullable_to_non_nullable
+              as bool,
+      isEditing: isEditing == freezed
+          ? _value.isEditing
+          : isEditing // ignore: cast_nullable_to_non_nullable
+              as bool,
+      isSubmitting: isSubmitting == freezed
+          ? _value.isSubmitting
+          : isSubmitting // ignore: cast_nullable_to_non_nullable
+              as bool,
       failureOrSuccessOption: failureOrSuccessOption == freezed
           ? _value.failureOrSuccessOption
-          : failureOrSuccessOption as Option<Either<Failure, Unit>>,
+          : failureOrSuccessOption // ignore: cast_nullable_to_non_nullable
+              as Option<Either<Failure, Unit>>,
     ));
   }
 }
 
 /// @nodoc
+
 class _$_TagManagementFormState implements _TagManagementFormState {
   const _$_TagManagementFormState(
-      {@required this.tag,
-      @required this.showErrorMessages,
-      @required this.isEditing,
-      @required this.isSubmitting,
-      @required this.failureOrSuccessOption})
-      : assert(tag != null),
-        assert(showErrorMessages != null),
-        assert(isEditing != null),
-        assert(isSubmitting != null),
-        assert(failureOrSuccessOption != null);
+      {required this.tag,
+      required this.showErrorMessages,
+      required this.isEditing,
+      required this.isSubmitting,
+      required this.failureOrSuccessOption});
 
   @override
   final Tag tag;
@@ -627,6 +635,7 @@ class _$_TagManagementFormState implements _TagManagementFormState {
       const DeepCollectionEquality().hash(isSubmitting) ^
       const DeepCollectionEquality().hash(failureOrSuccessOption);
 
+  @JsonKey(ignore: true)
   @override
   _$TagManagementFormStateCopyWith<_TagManagementFormState> get copyWith =>
       __$TagManagementFormStateCopyWithImpl<_TagManagementFormState>(
@@ -635,23 +644,26 @@ class _$_TagManagementFormState implements _TagManagementFormState {
 
 abstract class _TagManagementFormState implements TagManagementFormState {
   const factory _TagManagementFormState(
-          {@required Tag tag,
-          @required bool showErrorMessages,
-          @required bool isEditing,
-          @required bool isSubmitting,
-          @required Option<Either<Failure, Unit>> failureOrSuccessOption}) =
+          {required Tag tag,
+          required bool showErrorMessages,
+          required bool isEditing,
+          required bool isSubmitting,
+          required Option<Either<Failure, Unit>> failureOrSuccessOption}) =
       _$_TagManagementFormState;
 
   @override
-  Tag get tag;
+  Tag get tag => throw _privateConstructorUsedError;
   @override
-  bool get showErrorMessages;
+  bool get showErrorMessages => throw _privateConstructorUsedError;
   @override
-  bool get isEditing;
+  bool get isEditing => throw _privateConstructorUsedError;
   @override
-  bool get isSubmitting;
+  bool get isSubmitting => throw _privateConstructorUsedError;
   @override
-  Option<Either<Failure, Unit>> get failureOrSuccessOption;
+  Option<Either<Failure, Unit>> get failureOrSuccessOption =>
+      throw _privateConstructorUsedError;
   @override
-  _$TagManagementFormStateCopyWith<_TagManagementFormState> get copyWith;
+  @JsonKey(ignore: true)
+  _$TagManagementFormStateCopyWith<_TagManagementFormState> get copyWith =>
+      throw _privateConstructorUsedError;
 }

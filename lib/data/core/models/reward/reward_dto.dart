@@ -3,30 +3,31 @@ import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:worldon/domain/core/entities/reward/reward.dart';
 import 'package:worldon/domain/core/validation/objects/entity_description.dart';
 import 'package:worldon/domain/core/validation/objects/name.dart';
+import 'package:worldon/domain/core/validation/objects/unique_id.dart';
 
 part 'reward_dto.freezed.dart';
 part 'reward_dto.g.dart';
 
 @freezed
-abstract class RewardDto implements _$RewardDto {
+class RewardDto with _$RewardDto {
   const RewardDto._();
 
   const factory RewardDto({
-    @required int id,
-    @required String name,
-    @required String description,
-    @required String imageURL,
+    required String id,
+    required String name,
+    required String description,
+    required String imageURL,
   }) = _RewardDto;
 
   factory RewardDto.fromDomain(Reward reward) => RewardDto(
-        id: reward.id,
+        id: reward.id.getOrCrash(),
         name: reward.name.getOrCrash(),
         description: reward.description.getOrCrash(),
         imageURL: reward.imageURL,
       );
 
   Reward toDomain() => Reward(
-        id: id,
+        id: UniqueId.fromUniqueString(id),
         name: Name(name),
         description: EntityDescription(description),
         imageURL: imageURL,

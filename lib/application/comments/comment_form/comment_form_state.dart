@@ -1,13 +1,13 @@
 part of 'comment_form_bloc.dart';
 
 @freezed
-abstract class CommentFormState with _$CommentFormState {
+class CommentFormState with _$CommentFormState {
   const factory CommentFormState({
-    @required Comment comment,
-    @required bool showErrorMessages,
-    @required bool isEditing,
-    @required bool isSubmitting,
-    @required Option<Either<Failure, Unit>> failureOrSuccessOption,
+    required Comment comment,
+    required bool showErrorMessages,
+    required bool isEditing,
+    required bool isSubmitting,
+    required Option<Either<Failure, Unit>> failureOrSuccessOption,
   }) = _CommentFormState;
 
   factory CommentFormState.initial() => CommentFormState(

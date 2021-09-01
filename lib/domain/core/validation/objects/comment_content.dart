@@ -10,15 +10,12 @@ class CommentContent extends ValueObject<String> {
   @override
   final Either<ValueFailure<String>, String> value;
 
-  factory CommentContent(String input) {
-    assert(input != null);
-    return CommentContent._(
-      validateStringLength(
-        input: input,
-        length: maxLength,
-      ).flatMap(validateStringNotEmpty),
-    );
-  }
+  factory CommentContent(String input) => CommentContent._(
+        validateStringLength(
+          input: input,
+          length: maxLength,
+        ).flatMap(validateStringNotEmpty),
+      );
 
   const CommentContent._(this.value);
 

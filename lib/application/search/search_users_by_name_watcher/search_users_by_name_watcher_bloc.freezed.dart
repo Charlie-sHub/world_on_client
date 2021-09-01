@@ -1,5 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides
 
 part of 'search_users_by_name_watcher_bloc.dart';
 
@@ -9,26 +9,19 @@ part of 'search_users_by_name_watcher_bloc.dart';
 
 T _$identity<T>(T value) => value;
 
+final _privateConstructorUsedError = UnsupportedError(
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+
 /// @nodoc
 class _$SearchUsersByNameWatcherEventTearOff {
   const _$SearchUsersByNameWatcherEventTearOff();
 
-// ignore: unused_element
   _WatchUsersFoundByNameStarted watchUsersFoundByNameStarted(SearchTerm name) {
     return _WatchUsersFoundByNameStarted(
       name,
     );
   }
 
-// ignore: unused_element
-  _WatchUsersFoundByUsernameStarted watchUsersFoundByUsernameStarted(
-      SearchTerm username) {
-    return _WatchUsersFoundByUsernameStarted(
-      username,
-    );
-  }
-
-// ignore: unused_element
   _SearchResultsReceived searchResultsReceived(
       Either<Failure, KtList<User>> failureOrUsers) {
     return _SearchResultsReceived(
@@ -38,44 +31,41 @@ class _$SearchUsersByNameWatcherEventTearOff {
 }
 
 /// @nodoc
-// ignore: unused_element
 const $SearchUsersByNameWatcherEvent = _$SearchUsersByNameWatcherEventTearOff();
 
 /// @nodoc
 mixin _$SearchUsersByNameWatcherEvent {
   @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result watchUsersFoundByNameStarted(SearchTerm name),
-    @required Result watchUsersFoundByUsernameStarted(SearchTerm username),
-    @required
-        Result searchResultsReceived(
-            Either<Failure, KtList<User>> failureOrUsers),
-  });
+  TResult when<TResult extends Object?>({
+    required TResult Function(SearchTerm name) watchUsersFoundByNameStarted,
+    required TResult Function(Either<Failure, KtList<User>> failureOrUsers)
+        searchResultsReceived,
+  }) =>
+      throw _privateConstructorUsedError;
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result watchUsersFoundByNameStarted(SearchTerm name),
-    Result watchUsersFoundByUsernameStarted(SearchTerm username),
-    Result searchResultsReceived(Either<Failure, KtList<User>> failureOrUsers),
-    @required Result orElse(),
-  });
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(SearchTerm name)? watchUsersFoundByNameStarted,
+    TResult Function(Either<Failure, KtList<User>> failureOrUsers)?
+        searchResultsReceived,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required
-        Result watchUsersFoundByNameStarted(
-            _WatchUsersFoundByNameStarted value),
-    @required
-        Result watchUsersFoundByUsernameStarted(
-            _WatchUsersFoundByUsernameStarted value),
-    @required Result searchResultsReceived(_SearchResultsReceived value),
-  });
+  TResult map<TResult extends Object?>({
+    required TResult Function(_WatchUsersFoundByNameStarted value)
+        watchUsersFoundByNameStarted,
+    required TResult Function(_SearchResultsReceived value)
+        searchResultsReceived,
+  }) =>
+      throw _privateConstructorUsedError;
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result watchUsersFoundByNameStarted(_WatchUsersFoundByNameStarted value),
-    Result watchUsersFoundByUsernameStarted(
-        _WatchUsersFoundByUsernameStarted value),
-    Result searchResultsReceived(_SearchResultsReceived value),
-    @required Result orElse(),
-  });
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_WatchUsersFoundByNameStarted value)?
+        watchUsersFoundByNameStarted,
+    TResult Function(_SearchResultsReceived value)? searchResultsReceived,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -120,17 +110,21 @@ class __$WatchUsersFoundByNameStartedCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object name = freezed,
+    Object? name = freezed,
   }) {
     return _then(_WatchUsersFoundByNameStarted(
-      name == freezed ? _value.name : name as SearchTerm,
+      name == freezed
+          ? _value.name
+          : name // ignore: cast_nullable_to_non_nullable
+              as SearchTerm,
     ));
   }
 }
 
 /// @nodoc
+
 class _$_WatchUsersFoundByNameStarted implements _WatchUsersFoundByNameStarted {
-  const _$_WatchUsersFoundByNameStarted(this.name) : assert(name != null);
+  const _$_WatchUsersFoundByNameStarted(this.name);
 
   @override
   final SearchTerm name;
@@ -152,6 +146,7 @@ class _$_WatchUsersFoundByNameStarted implements _WatchUsersFoundByNameStarted {
   int get hashCode =>
       runtimeType.hashCode ^ const DeepCollectionEquality().hash(name);
 
+  @JsonKey(ignore: true)
   @override
   _$WatchUsersFoundByNameStartedCopyWith<_WatchUsersFoundByNameStarted>
       get copyWith => __$WatchUsersFoundByNameStartedCopyWithImpl<
@@ -159,28 +154,22 @@ class _$_WatchUsersFoundByNameStarted implements _WatchUsersFoundByNameStarted {
 
   @override
   @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result watchUsersFoundByNameStarted(SearchTerm name),
-    @required Result watchUsersFoundByUsernameStarted(SearchTerm username),
-    @required
-        Result searchResultsReceived(
-            Either<Failure, KtList<User>> failureOrUsers),
+  TResult when<TResult extends Object?>({
+    required TResult Function(SearchTerm name) watchUsersFoundByNameStarted,
+    required TResult Function(Either<Failure, KtList<User>> failureOrUsers)
+        searchResultsReceived,
   }) {
-    assert(watchUsersFoundByNameStarted != null);
-    assert(watchUsersFoundByUsernameStarted != null);
-    assert(searchResultsReceived != null);
     return watchUsersFoundByNameStarted(name);
   }
 
   @override
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result watchUsersFoundByNameStarted(SearchTerm name),
-    Result watchUsersFoundByUsernameStarted(SearchTerm username),
-    Result searchResultsReceived(Either<Failure, KtList<User>> failureOrUsers),
-    @required Result orElse(),
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(SearchTerm name)? watchUsersFoundByNameStarted,
+    TResult Function(Either<Failure, KtList<User>> failureOrUsers)?
+        searchResultsReceived,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (watchUsersFoundByNameStarted != null) {
       return watchUsersFoundByNameStarted(name);
     }
@@ -189,31 +178,23 @@ class _$_WatchUsersFoundByNameStarted implements _WatchUsersFoundByNameStarted {
 
   @override
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required
-        Result watchUsersFoundByNameStarted(
-            _WatchUsersFoundByNameStarted value),
-    @required
-        Result watchUsersFoundByUsernameStarted(
-            _WatchUsersFoundByUsernameStarted value),
-    @required Result searchResultsReceived(_SearchResultsReceived value),
+  TResult map<TResult extends Object?>({
+    required TResult Function(_WatchUsersFoundByNameStarted value)
+        watchUsersFoundByNameStarted,
+    required TResult Function(_SearchResultsReceived value)
+        searchResultsReceived,
   }) {
-    assert(watchUsersFoundByNameStarted != null);
-    assert(watchUsersFoundByUsernameStarted != null);
-    assert(searchResultsReceived != null);
     return watchUsersFoundByNameStarted(this);
   }
 
   @override
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result watchUsersFoundByNameStarted(_WatchUsersFoundByNameStarted value),
-    Result watchUsersFoundByUsernameStarted(
-        _WatchUsersFoundByUsernameStarted value),
-    Result searchResultsReceived(_SearchResultsReceived value),
-    @required Result orElse(),
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_WatchUsersFoundByNameStarted value)?
+        watchUsersFoundByNameStarted,
+    TResult Function(_SearchResultsReceived value)? searchResultsReceived,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (watchUsersFoundByNameStarted != null) {
       return watchUsersFoundByNameStarted(this);
     }
@@ -226,147 +207,10 @@ abstract class _WatchUsersFoundByNameStarted
   const factory _WatchUsersFoundByNameStarted(SearchTerm name) =
       _$_WatchUsersFoundByNameStarted;
 
-  SearchTerm get name;
+  SearchTerm get name => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
   _$WatchUsersFoundByNameStartedCopyWith<_WatchUsersFoundByNameStarted>
-      get copyWith;
-}
-
-/// @nodoc
-abstract class _$WatchUsersFoundByUsernameStartedCopyWith<$Res> {
-  factory _$WatchUsersFoundByUsernameStartedCopyWith(
-          _WatchUsersFoundByUsernameStarted value,
-          $Res Function(_WatchUsersFoundByUsernameStarted) then) =
-      __$WatchUsersFoundByUsernameStartedCopyWithImpl<$Res>;
-  $Res call({SearchTerm username});
-}
-
-/// @nodoc
-class __$WatchUsersFoundByUsernameStartedCopyWithImpl<$Res>
-    extends _$SearchUsersByNameWatcherEventCopyWithImpl<$Res>
-    implements _$WatchUsersFoundByUsernameStartedCopyWith<$Res> {
-  __$WatchUsersFoundByUsernameStartedCopyWithImpl(
-      _WatchUsersFoundByUsernameStarted _value,
-      $Res Function(_WatchUsersFoundByUsernameStarted) _then)
-      : super(_value, (v) => _then(v as _WatchUsersFoundByUsernameStarted));
-
-  @override
-  _WatchUsersFoundByUsernameStarted get _value =>
-      super._value as _WatchUsersFoundByUsernameStarted;
-
-  @override
-  $Res call({
-    Object username = freezed,
-  }) {
-    return _then(_WatchUsersFoundByUsernameStarted(
-      username == freezed ? _value.username : username as SearchTerm,
-    ));
-  }
-}
-
-/// @nodoc
-class _$_WatchUsersFoundByUsernameStarted
-    implements _WatchUsersFoundByUsernameStarted {
-  const _$_WatchUsersFoundByUsernameStarted(this.username)
-      : assert(username != null);
-
-  @override
-  final SearchTerm username;
-
-  @override
-  String toString() {
-    return 'SearchUsersByNameWatcherEvent.watchUsersFoundByUsernameStarted(username: $username)';
-  }
-
-  @override
-  bool operator ==(dynamic other) {
-    return identical(this, other) ||
-        (other is _WatchUsersFoundByUsernameStarted &&
-            (identical(other.username, username) ||
-                const DeepCollectionEquality()
-                    .equals(other.username, username)));
-  }
-
-  @override
-  int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(username);
-
-  @override
-  _$WatchUsersFoundByUsernameStartedCopyWith<_WatchUsersFoundByUsernameStarted>
-      get copyWith => __$WatchUsersFoundByUsernameStartedCopyWithImpl<
-          _WatchUsersFoundByUsernameStarted>(this, _$identity);
-
-  @override
-  @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result watchUsersFoundByNameStarted(SearchTerm name),
-    @required Result watchUsersFoundByUsernameStarted(SearchTerm username),
-    @required
-        Result searchResultsReceived(
-            Either<Failure, KtList<User>> failureOrUsers),
-  }) {
-    assert(watchUsersFoundByNameStarted != null);
-    assert(watchUsersFoundByUsernameStarted != null);
-    assert(searchResultsReceived != null);
-    return watchUsersFoundByUsernameStarted(username);
-  }
-
-  @override
-  @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result watchUsersFoundByNameStarted(SearchTerm name),
-    Result watchUsersFoundByUsernameStarted(SearchTerm username),
-    Result searchResultsReceived(Either<Failure, KtList<User>> failureOrUsers),
-    @required Result orElse(),
-  }) {
-    assert(orElse != null);
-    if (watchUsersFoundByUsernameStarted != null) {
-      return watchUsersFoundByUsernameStarted(username);
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required
-        Result watchUsersFoundByNameStarted(
-            _WatchUsersFoundByNameStarted value),
-    @required
-        Result watchUsersFoundByUsernameStarted(
-            _WatchUsersFoundByUsernameStarted value),
-    @required Result searchResultsReceived(_SearchResultsReceived value),
-  }) {
-    assert(watchUsersFoundByNameStarted != null);
-    assert(watchUsersFoundByUsernameStarted != null);
-    assert(searchResultsReceived != null);
-    return watchUsersFoundByUsernameStarted(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result watchUsersFoundByNameStarted(_WatchUsersFoundByNameStarted value),
-    Result watchUsersFoundByUsernameStarted(
-        _WatchUsersFoundByUsernameStarted value),
-    Result searchResultsReceived(_SearchResultsReceived value),
-    @required Result orElse(),
-  }) {
-    assert(orElse != null);
-    if (watchUsersFoundByUsernameStarted != null) {
-      return watchUsersFoundByUsernameStarted(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class _WatchUsersFoundByUsernameStarted
-    implements SearchUsersByNameWatcherEvent {
-  const factory _WatchUsersFoundByUsernameStarted(SearchTerm username) =
-      _$_WatchUsersFoundByUsernameStarted;
-
-  SearchTerm get username;
-  _$WatchUsersFoundByUsernameStartedCopyWith<_WatchUsersFoundByUsernameStarted>
-      get copyWith;
+      get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -390,20 +234,21 @@ class __$SearchResultsReceivedCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object failureOrUsers = freezed,
+    Object? failureOrUsers = freezed,
   }) {
     return _then(_SearchResultsReceived(
       failureOrUsers == freezed
           ? _value.failureOrUsers
-          : failureOrUsers as Either<Failure, KtList<User>>,
+          : failureOrUsers // ignore: cast_nullable_to_non_nullable
+              as Either<Failure, KtList<User>>,
     ));
   }
 }
 
 /// @nodoc
+
 class _$_SearchResultsReceived implements _SearchResultsReceived {
-  const _$_SearchResultsReceived(this.failureOrUsers)
-      : assert(failureOrUsers != null);
+  const _$_SearchResultsReceived(this.failureOrUsers);
 
   @override
   final Either<Failure, KtList<User>> failureOrUsers;
@@ -427,6 +272,7 @@ class _$_SearchResultsReceived implements _SearchResultsReceived {
       runtimeType.hashCode ^
       const DeepCollectionEquality().hash(failureOrUsers);
 
+  @JsonKey(ignore: true)
   @override
   _$SearchResultsReceivedCopyWith<_SearchResultsReceived> get copyWith =>
       __$SearchResultsReceivedCopyWithImpl<_SearchResultsReceived>(
@@ -434,28 +280,22 @@ class _$_SearchResultsReceived implements _SearchResultsReceived {
 
   @override
   @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result watchUsersFoundByNameStarted(SearchTerm name),
-    @required Result watchUsersFoundByUsernameStarted(SearchTerm username),
-    @required
-        Result searchResultsReceived(
-            Either<Failure, KtList<User>> failureOrUsers),
+  TResult when<TResult extends Object?>({
+    required TResult Function(SearchTerm name) watchUsersFoundByNameStarted,
+    required TResult Function(Either<Failure, KtList<User>> failureOrUsers)
+        searchResultsReceived,
   }) {
-    assert(watchUsersFoundByNameStarted != null);
-    assert(watchUsersFoundByUsernameStarted != null);
-    assert(searchResultsReceived != null);
     return searchResultsReceived(failureOrUsers);
   }
 
   @override
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result watchUsersFoundByNameStarted(SearchTerm name),
-    Result watchUsersFoundByUsernameStarted(SearchTerm username),
-    Result searchResultsReceived(Either<Failure, KtList<User>> failureOrUsers),
-    @required Result orElse(),
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(SearchTerm name)? watchUsersFoundByNameStarted,
+    TResult Function(Either<Failure, KtList<User>> failureOrUsers)?
+        searchResultsReceived,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (searchResultsReceived != null) {
       return searchResultsReceived(failureOrUsers);
     }
@@ -464,31 +304,23 @@ class _$_SearchResultsReceived implements _SearchResultsReceived {
 
   @override
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required
-        Result watchUsersFoundByNameStarted(
-            _WatchUsersFoundByNameStarted value),
-    @required
-        Result watchUsersFoundByUsernameStarted(
-            _WatchUsersFoundByUsernameStarted value),
-    @required Result searchResultsReceived(_SearchResultsReceived value),
+  TResult map<TResult extends Object?>({
+    required TResult Function(_WatchUsersFoundByNameStarted value)
+        watchUsersFoundByNameStarted,
+    required TResult Function(_SearchResultsReceived value)
+        searchResultsReceived,
   }) {
-    assert(watchUsersFoundByNameStarted != null);
-    assert(watchUsersFoundByUsernameStarted != null);
-    assert(searchResultsReceived != null);
     return searchResultsReceived(this);
   }
 
   @override
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result watchUsersFoundByNameStarted(_WatchUsersFoundByNameStarted value),
-    Result watchUsersFoundByUsernameStarted(
-        _WatchUsersFoundByUsernameStarted value),
-    Result searchResultsReceived(_SearchResultsReceived value),
-    @required Result orElse(),
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_WatchUsersFoundByNameStarted value)?
+        watchUsersFoundByNameStarted,
+    TResult Function(_SearchResultsReceived value)? searchResultsReceived,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (searchResultsReceived != null) {
       return searchResultsReceived(this);
     }
@@ -500,32 +332,31 @@ abstract class _SearchResultsReceived implements SearchUsersByNameWatcherEvent {
   const factory _SearchResultsReceived(
       Either<Failure, KtList<User>> failureOrUsers) = _$_SearchResultsReceived;
 
-  Either<Failure, KtList<User>> get failureOrUsers;
-  _$SearchResultsReceivedCopyWith<_SearchResultsReceived> get copyWith;
+  Either<Failure, KtList<User>> get failureOrUsers =>
+      throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  _$SearchResultsReceivedCopyWith<_SearchResultsReceived> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 class _$SearchUsersByNameWatcherStateTearOff {
   const _$SearchUsersByNameWatcherStateTearOff();
 
-// ignore: unused_element
   _Initial initial() {
     return const _Initial();
   }
 
-// ignore: unused_element
   _SearchInPorgress searchInProgress() {
     return const _SearchInPorgress();
   }
 
-// ignore: unused_element
   _SearchSuccess searchSuccess(KtList<User> usersFound) {
     return _SearchSuccess(
       usersFound,
     );
   }
 
-// ignore: unused_element
   _SearchFailure searchFailure(Failure<dynamic> failure) {
     return _SearchFailure(
       failure,
@@ -534,41 +365,44 @@ class _$SearchUsersByNameWatcherStateTearOff {
 }
 
 /// @nodoc
-// ignore: unused_element
 const $SearchUsersByNameWatcherState = _$SearchUsersByNameWatcherStateTearOff();
 
 /// @nodoc
 mixin _$SearchUsersByNameWatcherState {
   @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result initial(),
-    @required Result searchInProgress(),
-    @required Result searchSuccess(KtList<User> usersFound),
-    @required Result searchFailure(Failure<dynamic> failure),
-  });
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() searchInProgress,
+    required TResult Function(KtList<User> usersFound) searchSuccess,
+    required TResult Function(Failure<dynamic> failure) searchFailure,
+  }) =>
+      throw _privateConstructorUsedError;
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result initial(),
-    Result searchInProgress(),
-    Result searchSuccess(KtList<User> usersFound),
-    Result searchFailure(Failure<dynamic> failure),
-    @required Result orElse(),
-  });
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? searchInProgress,
+    TResult Function(KtList<User> usersFound)? searchSuccess,
+    TResult Function(Failure<dynamic> failure)? searchFailure,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result initial(_Initial value),
-    @required Result searchInProgress(_SearchInPorgress value),
-    @required Result searchSuccess(_SearchSuccess value),
-    @required Result searchFailure(_SearchFailure value),
-  });
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial value) initial,
+    required TResult Function(_SearchInPorgress value) searchInProgress,
+    required TResult Function(_SearchSuccess value) searchSuccess,
+    required TResult Function(_SearchFailure value) searchFailure,
+  }) =>
+      throw _privateConstructorUsedError;
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result initial(_Initial value),
-    Result searchInProgress(_SearchInPorgress value),
-    Result searchSuccess(_SearchSuccess value),
-    Result searchFailure(_SearchFailure value),
-    @required Result orElse(),
-  });
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_SearchInPorgress value)? searchInProgress,
+    TResult Function(_SearchSuccess value)? searchSuccess,
+    TResult Function(_SearchFailure value)? searchFailure,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -607,6 +441,7 @@ class __$InitialCopyWithImpl<$Res>
 }
 
 /// @nodoc
+
 class _$_Initial implements _Initial {
   const _$_Initial();
 
@@ -625,29 +460,24 @@ class _$_Initial implements _Initial {
 
   @override
   @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result initial(),
-    @required Result searchInProgress(),
-    @required Result searchSuccess(KtList<User> usersFound),
-    @required Result searchFailure(Failure<dynamic> failure),
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() searchInProgress,
+    required TResult Function(KtList<User> usersFound) searchSuccess,
+    required TResult Function(Failure<dynamic> failure) searchFailure,
   }) {
-    assert(initial != null);
-    assert(searchInProgress != null);
-    assert(searchSuccess != null);
-    assert(searchFailure != null);
     return initial();
   }
 
   @override
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result initial(),
-    Result searchInProgress(),
-    Result searchSuccess(KtList<User> usersFound),
-    Result searchFailure(Failure<dynamic> failure),
-    @required Result orElse(),
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? searchInProgress,
+    TResult Function(KtList<User> usersFound)? searchSuccess,
+    TResult Function(Failure<dynamic> failure)? searchFailure,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (initial != null) {
       return initial();
     }
@@ -656,29 +486,24 @@ class _$_Initial implements _Initial {
 
   @override
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result initial(_Initial value),
-    @required Result searchInProgress(_SearchInPorgress value),
-    @required Result searchSuccess(_SearchSuccess value),
-    @required Result searchFailure(_SearchFailure value),
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial value) initial,
+    required TResult Function(_SearchInPorgress value) searchInProgress,
+    required TResult Function(_SearchSuccess value) searchSuccess,
+    required TResult Function(_SearchFailure value) searchFailure,
   }) {
-    assert(initial != null);
-    assert(searchInProgress != null);
-    assert(searchSuccess != null);
-    assert(searchFailure != null);
     return initial(this);
   }
 
   @override
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result initial(_Initial value),
-    Result searchInProgress(_SearchInPorgress value),
-    Result searchSuccess(_SearchSuccess value),
-    Result searchFailure(_SearchFailure value),
-    @required Result orElse(),
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_SearchInPorgress value)? searchInProgress,
+    TResult Function(_SearchSuccess value)? searchSuccess,
+    TResult Function(_SearchFailure value)? searchFailure,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (initial != null) {
       return initial(this);
     }
@@ -710,6 +535,7 @@ class __$SearchInPorgressCopyWithImpl<$Res>
 }
 
 /// @nodoc
+
 class _$_SearchInPorgress implements _SearchInPorgress {
   const _$_SearchInPorgress();
 
@@ -728,29 +554,24 @@ class _$_SearchInPorgress implements _SearchInPorgress {
 
   @override
   @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result initial(),
-    @required Result searchInProgress(),
-    @required Result searchSuccess(KtList<User> usersFound),
-    @required Result searchFailure(Failure<dynamic> failure),
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() searchInProgress,
+    required TResult Function(KtList<User> usersFound) searchSuccess,
+    required TResult Function(Failure<dynamic> failure) searchFailure,
   }) {
-    assert(initial != null);
-    assert(searchInProgress != null);
-    assert(searchSuccess != null);
-    assert(searchFailure != null);
     return searchInProgress();
   }
 
   @override
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result initial(),
-    Result searchInProgress(),
-    Result searchSuccess(KtList<User> usersFound),
-    Result searchFailure(Failure<dynamic> failure),
-    @required Result orElse(),
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? searchInProgress,
+    TResult Function(KtList<User> usersFound)? searchSuccess,
+    TResult Function(Failure<dynamic> failure)? searchFailure,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (searchInProgress != null) {
       return searchInProgress();
     }
@@ -759,29 +580,24 @@ class _$_SearchInPorgress implements _SearchInPorgress {
 
   @override
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result initial(_Initial value),
-    @required Result searchInProgress(_SearchInPorgress value),
-    @required Result searchSuccess(_SearchSuccess value),
-    @required Result searchFailure(_SearchFailure value),
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial value) initial,
+    required TResult Function(_SearchInPorgress value) searchInProgress,
+    required TResult Function(_SearchSuccess value) searchSuccess,
+    required TResult Function(_SearchFailure value) searchFailure,
   }) {
-    assert(initial != null);
-    assert(searchInProgress != null);
-    assert(searchSuccess != null);
-    assert(searchFailure != null);
     return searchInProgress(this);
   }
 
   @override
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result initial(_Initial value),
-    Result searchInProgress(_SearchInPorgress value),
-    Result searchSuccess(_SearchSuccess value),
-    Result searchFailure(_SearchFailure value),
-    @required Result orElse(),
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_SearchInPorgress value)? searchInProgress,
+    TResult Function(_SearchSuccess value)? searchSuccess,
+    TResult Function(_SearchFailure value)? searchFailure,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (searchInProgress != null) {
       return searchInProgress(this);
     }
@@ -814,17 +630,21 @@ class __$SearchSuccessCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object usersFound = freezed,
+    Object? usersFound = freezed,
   }) {
     return _then(_SearchSuccess(
-      usersFound == freezed ? _value.usersFound : usersFound as KtList<User>,
+      usersFound == freezed
+          ? _value.usersFound
+          : usersFound // ignore: cast_nullable_to_non_nullable
+              as KtList<User>,
     ));
   }
 }
 
 /// @nodoc
+
 class _$_SearchSuccess implements _SearchSuccess {
-  const _$_SearchSuccess(this.usersFound) : assert(usersFound != null);
+  const _$_SearchSuccess(this.usersFound);
 
   @override
   final KtList<User> usersFound;
@@ -847,35 +667,31 @@ class _$_SearchSuccess implements _SearchSuccess {
   int get hashCode =>
       runtimeType.hashCode ^ const DeepCollectionEquality().hash(usersFound);
 
+  @JsonKey(ignore: true)
   @override
   _$SearchSuccessCopyWith<_SearchSuccess> get copyWith =>
       __$SearchSuccessCopyWithImpl<_SearchSuccess>(this, _$identity);
 
   @override
   @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result initial(),
-    @required Result searchInProgress(),
-    @required Result searchSuccess(KtList<User> usersFound),
-    @required Result searchFailure(Failure<dynamic> failure),
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() searchInProgress,
+    required TResult Function(KtList<User> usersFound) searchSuccess,
+    required TResult Function(Failure<dynamic> failure) searchFailure,
   }) {
-    assert(initial != null);
-    assert(searchInProgress != null);
-    assert(searchSuccess != null);
-    assert(searchFailure != null);
     return searchSuccess(usersFound);
   }
 
   @override
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result initial(),
-    Result searchInProgress(),
-    Result searchSuccess(KtList<User> usersFound),
-    Result searchFailure(Failure<dynamic> failure),
-    @required Result orElse(),
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? searchInProgress,
+    TResult Function(KtList<User> usersFound)? searchSuccess,
+    TResult Function(Failure<dynamic> failure)? searchFailure,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (searchSuccess != null) {
       return searchSuccess(usersFound);
     }
@@ -884,29 +700,24 @@ class _$_SearchSuccess implements _SearchSuccess {
 
   @override
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result initial(_Initial value),
-    @required Result searchInProgress(_SearchInPorgress value),
-    @required Result searchSuccess(_SearchSuccess value),
-    @required Result searchFailure(_SearchFailure value),
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial value) initial,
+    required TResult Function(_SearchInPorgress value) searchInProgress,
+    required TResult Function(_SearchSuccess value) searchSuccess,
+    required TResult Function(_SearchFailure value) searchFailure,
   }) {
-    assert(initial != null);
-    assert(searchInProgress != null);
-    assert(searchSuccess != null);
-    assert(searchFailure != null);
     return searchSuccess(this);
   }
 
   @override
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result initial(_Initial value),
-    Result searchInProgress(_SearchInPorgress value),
-    Result searchSuccess(_SearchSuccess value),
-    Result searchFailure(_SearchFailure value),
-    @required Result orElse(),
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_SearchInPorgress value)? searchInProgress,
+    TResult Function(_SearchSuccess value)? searchSuccess,
+    TResult Function(_SearchFailure value)? searchFailure,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (searchSuccess != null) {
       return searchSuccess(this);
     }
@@ -917,8 +728,10 @@ class _$_SearchSuccess implements _SearchSuccess {
 abstract class _SearchSuccess implements SearchUsersByNameWatcherState {
   const factory _SearchSuccess(KtList<User> usersFound) = _$_SearchSuccess;
 
-  KtList<User> get usersFound;
-  _$SearchSuccessCopyWith<_SearchSuccess> get copyWith;
+  KtList<User> get usersFound => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  _$SearchSuccessCopyWith<_SearchSuccess> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -944,18 +757,18 @@ class __$SearchFailureCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object failure = freezed,
+    Object? failure = freezed,
   }) {
     return _then(_SearchFailure(
-      failure == freezed ? _value.failure : failure as Failure<dynamic>,
+      failure == freezed
+          ? _value.failure
+          : failure // ignore: cast_nullable_to_non_nullable
+              as Failure<dynamic>,
     ));
   }
 
   @override
   $FailureCopyWith<dynamic, $Res> get failure {
-    if (_value.failure == null) {
-      return null;
-    }
     return $FailureCopyWith<dynamic, $Res>(_value.failure, (value) {
       return _then(_value.copyWith(failure: value));
     });
@@ -963,8 +776,9 @@ class __$SearchFailureCopyWithImpl<$Res>
 }
 
 /// @nodoc
+
 class _$_SearchFailure implements _SearchFailure {
-  const _$_SearchFailure(this.failure) : assert(failure != null);
+  const _$_SearchFailure(this.failure);
 
   @override
   final Failure<dynamic> failure;
@@ -986,35 +800,31 @@ class _$_SearchFailure implements _SearchFailure {
   int get hashCode =>
       runtimeType.hashCode ^ const DeepCollectionEquality().hash(failure);
 
+  @JsonKey(ignore: true)
   @override
   _$SearchFailureCopyWith<_SearchFailure> get copyWith =>
       __$SearchFailureCopyWithImpl<_SearchFailure>(this, _$identity);
 
   @override
   @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result initial(),
-    @required Result searchInProgress(),
-    @required Result searchSuccess(KtList<User> usersFound),
-    @required Result searchFailure(Failure<dynamic> failure),
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() searchInProgress,
+    required TResult Function(KtList<User> usersFound) searchSuccess,
+    required TResult Function(Failure<dynamic> failure) searchFailure,
   }) {
-    assert(initial != null);
-    assert(searchInProgress != null);
-    assert(searchSuccess != null);
-    assert(searchFailure != null);
     return searchFailure(failure);
   }
 
   @override
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result initial(),
-    Result searchInProgress(),
-    Result searchSuccess(KtList<User> usersFound),
-    Result searchFailure(Failure<dynamic> failure),
-    @required Result orElse(),
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? searchInProgress,
+    TResult Function(KtList<User> usersFound)? searchSuccess,
+    TResult Function(Failure<dynamic> failure)? searchFailure,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (searchFailure != null) {
       return searchFailure(failure);
     }
@@ -1023,29 +833,24 @@ class _$_SearchFailure implements _SearchFailure {
 
   @override
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result initial(_Initial value),
-    @required Result searchInProgress(_SearchInPorgress value),
-    @required Result searchSuccess(_SearchSuccess value),
-    @required Result searchFailure(_SearchFailure value),
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial value) initial,
+    required TResult Function(_SearchInPorgress value) searchInProgress,
+    required TResult Function(_SearchSuccess value) searchSuccess,
+    required TResult Function(_SearchFailure value) searchFailure,
   }) {
-    assert(initial != null);
-    assert(searchInProgress != null);
-    assert(searchSuccess != null);
-    assert(searchFailure != null);
     return searchFailure(this);
   }
 
   @override
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result initial(_Initial value),
-    Result searchInProgress(_SearchInPorgress value),
-    Result searchSuccess(_SearchSuccess value),
-    Result searchFailure(_SearchFailure value),
-    @required Result orElse(),
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_SearchInPorgress value)? searchInProgress,
+    TResult Function(_SearchSuccess value)? searchSuccess,
+    TResult Function(_SearchFailure value)? searchFailure,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (searchFailure != null) {
       return searchFailure(this);
     }
@@ -1056,6 +861,8 @@ class _$_SearchFailure implements _SearchFailure {
 abstract class _SearchFailure implements SearchUsersByNameWatcherState {
   const factory _SearchFailure(Failure<dynamic> failure) = _$_SearchFailure;
 
-  Failure<dynamic> get failure;
-  _$SearchFailureCopyWith<_SearchFailure> get copyWith;
+  Failure<dynamic> get failure => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  _$SearchFailureCopyWith<_SearchFailure> get copyWith =>
+      throw _privateConstructorUsedError;
 }

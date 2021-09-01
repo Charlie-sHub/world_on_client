@@ -11,6 +11,7 @@ import 'package:worldon/domain/core/entities/achievement/achievement.dart';
 import 'package:worldon/domain/core/entities/user/user.dart';
 import 'package:worldon/domain/core/failures/core_domain_failure.dart';
 import 'package:worldon/domain/core/failures/error.dart';
+import 'package:worldon/domain/core/validation/objects/unique_id.dart';
 import 'package:worldon/injection.dart';
 
 import '../../../test_descriptions.dart';
@@ -27,9 +28,9 @@ void main() {
       useCase = DeleteAchievement(mockAchievementRepository);
     },
   );
-  final randomUser = User.empty().copyWith(id: 1, adminPowers: false);
-  final creatorUser = User.empty().copyWith(id: 2, adminPowers: false);
-  final admin = User.empty().copyWith(id: 3, adminPowers: true);
+  final randomUser = User.empty().copyWith(id: UniqueId(), adminPowers: false);
+  final creatorUser = User.empty().copyWith(id: UniqueId(), adminPowers: false);
+  final admin = User.empty().copyWith(id: UniqueId(), adminPowers: true);
   final achievement = Achievement.empty().copyWith(creatorId: creatorUser.id);
   final params = Params(achievement: achievement);
   group(

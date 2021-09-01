@@ -13,7 +13,7 @@ import 'package:worldon/injection.dart';
 import '../../../test_descriptions.dart';
 
 void main() {
-  DeleteAchievement deleteAchievement;
+  late DeleteAchievement deleteAchievement;
   setUpAll(
     () {
       configureDependencies(injectable.Environment.test);
@@ -24,7 +24,7 @@ void main() {
   blocTest(
     TestDescription.shouldEmitInitial,
     build: () => getIt<AchievementManagementActorBloc>(),
-    expect: [],
+    expect: () => [],
   );
   group(
     TestDescription.deleteEventTests,

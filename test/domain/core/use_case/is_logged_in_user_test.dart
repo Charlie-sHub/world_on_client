@@ -6,6 +6,7 @@ import 'package:worldon/domain/authentication/use_case/get_logged_in_user.dart' 
 import 'package:worldon/domain/core/entities/user/user.dart';
 import 'package:worldon/domain/core/failures/error.dart';
 import 'package:worldon/domain/core/use_case/is_logged_in_user.dart';
+import 'package:worldon/domain/core/validation/objects/unique_id.dart';
 import 'package:worldon/injection.dart';
 
 import '../../../test_descriptions.dart';
@@ -20,8 +21,8 @@ void main() {
       useCase = IsLoggedInUser();
     },
   );
-  final randomUser = User.empty().copyWith(id: 1);
-  final user = User.empty().copyWith(id: 2);
+  final randomUser = User.empty().copyWith(id: UniqueId());
+  final user = User.empty().copyWith(id: UniqueId());
   test(
     "Should return true",
     () async {

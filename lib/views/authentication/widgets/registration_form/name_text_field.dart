@@ -1,40 +1,43 @@
-import 'package:dartz/dartz.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:worldon/application/authentication/registration_form/registration_form_bloc.dart';
 import 'package:worldon/domain/core/validation/objects/name.dart';
-import 'package:worldon/views/core/misc/string_constants.dart';
+import 'package:worldon/generated/l10n.dart';
+import 'package:worldon/views/core/misc/world_on_colors.dart';
 
 class NameTextField extends StatelessWidget {
   const NameTextField({
-    Key key,
+    Key? key,
+    required this.initialValue,
   }) : super(key: key);
+
+  final String? initialValue;
 
   @override
   Widget build(BuildContext context) {
     return TextFormField(
       maxLength: Name.maxLength,
-      onChanged: (value) => context.bloc<RegistrationFormBloc>().add(
+      initialValue: initialValue,
+      onChanged: (value) => context.read<RegistrationFormBloc>().add(
             RegistrationFormEvent.nameChanged(value.trim()),
           ),
-      validator: (_) => context.bloc<RegistrationFormBloc>().state.user.name.value.fold(
+      validator: (_) => context.read<RegistrationFormBloc>().state.user.name.value.fold(
             (failure) => failure.maybeMap(
-              emptyString: (_) => "The name can't be empty",
-              multiLineString: (_) => "The name can't be more than one line",
-              stringExceedsLength: (_) => "The name is too long",
-              stringWithInvalidCharacters: (_) => "The name has invalid characters",
-              orElse: () => StringConst.unknownError,
+              emptyString: (_) => S.of(context).nameEmptyString,
+              multiLineString: (_) => S.of(context).nameMultiLineString,
+              stringExceedsLength: (_) => S.of(context).nameStringExceedsLength,
+              stringWithInvalidCharacters: (_) => S.of(context).nameStringWithInvalidCharacters,
+              orElse: () => S.of(context).unknownError,
             ),
             (_) => null,
           ),
-      initialValue: context.bloc<RegistrationFormBloc>().state.user.name.value.fold(
-            (_) => "",
-            id,
-          ),
       autocorrect: false,
-      decoration: const InputDecoration(
-        labelText: "Name",
-        prefixIcon: Icon(Icons.assignment_ind),
+      decoration: InputDecoration(
+        labelText: S.of(context).name,
+        prefixIcon: const Icon(
+          Icons.assignment_ind,
+          color: WorldOnColors.primary,
+        ),
       ),
     );
   }

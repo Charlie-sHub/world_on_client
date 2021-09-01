@@ -1,10 +1,10 @@
 import 'package:dartz/dartz.dart';
-import 'package:flutter/foundation.dart';
 import 'package:injectable/injectable.dart';
 import 'package:worldon/core/error/failure.dart';
 import 'package:worldon/domain/achievement_management/repository/achievement_repository_interface.dart';
 import 'package:worldon/domain/core/entities/achievement/achievement.dart';
 import 'package:worldon/domain/core/use_case/use_case.dart';
+import 'package:worldon/domain/core/validation/objects/unique_id.dart';
 
 @LazySingleton(env: [Environment.dev, Environment.prod])
 class GetAchievement implements AsyncUseCase<Achievement, Params> {
@@ -19,7 +19,7 @@ class GetAchievement implements AsyncUseCase<Achievement, Params> {
 }
 
 class Params {
-  final int id;
+  final UniqueId id;
 
-  Params({@required this.id});
+  Params({required this.id});
 }

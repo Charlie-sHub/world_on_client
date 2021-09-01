@@ -6,6 +6,7 @@ import 'package:mockito/mockito.dart';
 import 'package:worldon/core/error/failure.dart';
 import 'package:worldon/data/core/failures/core_data_failure.dart';
 import 'package:worldon/domain/core/entities/user/user.dart';
+import 'package:worldon/domain/core/validation/objects/unique_id.dart';
 import 'package:worldon/domain/profile/repository/profile_repository_interface.dart';
 import 'package:worldon/domain/profile/use_case/watch_following_users.dart';
 import 'package:worldon/injection.dart';
@@ -23,7 +24,7 @@ void main() {
       useCase = WatchFollowingUsers(mockProfileRepository);
     },
   );
-  final params = Params(id: 1);
+  final params = Params(id: UniqueId());
   final followingUsers = KtList.of(User.empty());
   test(
     "Should return a KtList of Users if everything goes well",

@@ -28,6 +28,7 @@ import 'package:worldon/domain/core/validation/objects/name.dart';
 import 'package:worldon/domain/core/validation/objects/objective_set.dart';
 import 'package:worldon/domain/core/validation/objects/reward_set.dart';
 import 'package:worldon/domain/core/validation/objects/tag_set.dart';
+import 'package:worldon/domain/core/validation/objects/unique_id.dart';
 import 'package:worldon/domain/experience_management/use_case/create_experience.dart';
 import 'package:worldon/domain/experience_management/use_case/edit_experience.dart';
 import 'package:worldon/injection.dart';
@@ -59,8 +60,9 @@ void main() {
       100,
     ),
   ];
-  final objectives = KtSet.of(
+  final objectives = KtList.of(
     Objective(
+      id: UniqueId(),
       description: EntityDescription(description),
       coordinates: Coordinates(
         latitude: Latitude(latitude),
@@ -199,7 +201,7 @@ void main() {
         expect: [
           ExperienceManagementFormState.initial().copyWith(
             experience: Experience.empty().copyWith(
-              objectives: ObjectiveSet(objectives),
+              objectives: ObjectiveList(objectives),
             ),
           ),
         ],
@@ -325,7 +327,7 @@ void main() {
                 longitude: Longitude(longitude),
               ),
               difficulty: Difficulty(difficulty),
-              objectives: ObjectiveSet(objectives),
+              objectives: ObjectiveList(objectives),
             ),
           ),
           ExperienceManagementFormState.initial().copyWith(
@@ -339,7 +341,7 @@ void main() {
                 longitude: Longitude(longitude),
               ),
               difficulty: Difficulty(difficulty),
-              objectives: ObjectiveSet(objectives),
+              objectives: ObjectiveList(objectives),
               rewards: RewardSet(rewardSet),
             ),
           ),
@@ -354,7 +356,7 @@ void main() {
                 longitude: Longitude(longitude),
               ),
               difficulty: Difficulty(difficulty),
-              objectives: ObjectiveSet(objectives),
+              objectives: ObjectiveList(objectives),
               rewards: RewardSet(rewardSet),
               tags: TagSet(tags),
             ),
@@ -370,7 +372,7 @@ void main() {
                 longitude: Longitude(longitude),
               ),
               difficulty: Difficulty(difficulty),
-              objectives: ObjectiveSet(objectives),
+              objectives: ObjectiveList(objectives),
               rewards: RewardSet(rewardSet),
               tags: TagSet(tags),
             ),
@@ -387,7 +389,7 @@ void main() {
                 longitude: Longitude(longitude),
               ),
               difficulty: Difficulty(difficulty),
-              objectives: ObjectiveSet(objectives),
+              objectives: ObjectiveList(objectives),
               rewards: RewardSet(rewardSet),
               tags: TagSet(tags),
             ),
@@ -529,7 +531,7 @@ void main() {
                 longitude: Longitude(longitude),
               ),
               difficulty: Difficulty(difficulty),
-              objectives: ObjectiveSet(objectives),
+              objectives: ObjectiveList(objectives),
             ),
           ),
           ExperienceManagementFormState.initial().copyWith(
@@ -543,7 +545,7 @@ void main() {
                 longitude: Longitude(longitude),
               ),
               difficulty: Difficulty(difficulty),
-              objectives: ObjectiveSet(objectives),
+              objectives: ObjectiveList(objectives),
               rewards: RewardSet(rewardSet),
             ),
           ),
@@ -558,7 +560,7 @@ void main() {
                 longitude: Longitude(longitude),
               ),
               difficulty: Difficulty(difficulty),
-              objectives: ObjectiveSet(objectives),
+              objectives: ObjectiveList(objectives),
               rewards: RewardSet(rewardSet),
               tags: TagSet(tags),
             ),
@@ -574,7 +576,7 @@ void main() {
                 longitude: Longitude(longitude),
               ),
               difficulty: Difficulty(difficulty),
-              objectives: ObjectiveSet(objectives),
+              objectives: ObjectiveList(objectives),
               rewards: RewardSet(rewardSet),
               tags: TagSet(tags),
             ),
@@ -591,7 +593,7 @@ void main() {
                 longitude: Longitude(longitude),
               ),
               difficulty: Difficulty(difficulty),
-              objectives: ObjectiveSet(objectives),
+              objectives: ObjectiveList(objectives),
               rewards: RewardSet(rewardSet),
               tags: TagSet(tags),
             ),

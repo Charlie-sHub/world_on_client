@@ -3,6 +3,7 @@ import 'package:kt_dart/kt.dart';
 import 'package:worldon/core/error/failure.dart';
 import 'package:worldon/domain/core/entities/tag/tag.dart';
 import 'package:worldon/domain/core/entities/user/user.dart';
+import 'package:worldon/domain/core/validation/objects/unique_id.dart';
 
 /// Abstract class of the [Tag] repository
 abstract class TagCoreRepositoryInterface {
@@ -10,10 +11,10 @@ abstract class TagCoreRepositoryInterface {
   Stream<Either<Failure, KtList<Tag>>> watchAllTags();
 
   /// Gets all the [Tag]s created by a given [User]'s id
-  Stream<Either<Failure, KtList<Tag>>> watchTagsByCreator(int creatorId);
+  Stream<Either<Failure, KtList<Tag>>> watchTagsByCreator(UniqueId creatorId);
 
   /// Gets the [User] that created a given [Tag]
-  Future<Either<Failure, User>> getCreator(int id);
+  Future<Either<Failure, User>> getCreator(UniqueId id);
 
   /// Adds the given [Tag] to the logged in [User]'s interests
   Future<Either<Failure, Unit>> addTagToInterests(Tag tag);

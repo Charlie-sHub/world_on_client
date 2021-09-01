@@ -8,7 +8,11 @@ linter:
 analyzer:
   exclude:
     - "**/*.g.dart"
+    - "**/*.gr.dart"
     - "**/*.freezed.dart"
+    - "lib/generated/**"
+    - "lib/injection.config.dart"
+    - "test"
   errors:
     missing_return: error
     missing_required_param: error

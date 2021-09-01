@@ -9,15 +9,12 @@ class Latitude extends ValueObject<double> {
   @override
   final Either<ValueFailure<double>, double> value;
 
-  factory Latitude(double input) {
-    assert(input != null);
-    return Latitude._(
-      validateCoordinate(
-        limit: limit,
-        input: input,
-      ),
-    );
-  }
+  factory Latitude(double input) => Latitude._(
+        validateCoordinate(
+          limit: limit,
+          input: input,
+        ),
+      );
 
   const Latitude._(this.value);
 

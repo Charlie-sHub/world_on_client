@@ -8,14 +8,15 @@ part of 'reward_dto.dart';
 
 _$_RewardDto _$_$_RewardDtoFromJson(Map<String, dynamic> json) {
   return _$_RewardDto(
-    id: json['id'] as int,
+    id: json['id'] as String,
     name: json['name'] as String,
     description: json['description'] as String,
     imageURL: json['imageURL'] as String,
   );
 }
 
-Map<String, dynamic> _$_$_RewardDtoToJson(_$_RewardDto instance) => <String, dynamic>{
+Map<String, dynamic> _$_$_RewardDtoToJson(_$_RewardDto instance) =>
+    <String, dynamic>{
       'id': instance.id,
       'name': instance.name,
       'description': instance.description,

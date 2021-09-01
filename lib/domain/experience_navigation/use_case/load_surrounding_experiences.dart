@@ -1,5 +1,4 @@
 import 'package:dartz/dartz.dart';
-import 'package:flutter/foundation.dart';
 import 'package:injectable/injectable.dart';
 import 'package:kt_dart/kt.dart';
 import 'package:worldon/core/error/failure.dart';
@@ -14,7 +13,6 @@ class LoadSurroundingExperiences implements AsyncUseCase<KtSet<Experience>, Para
 
   LoadSurroundingExperiences(this._repository);
 
-  // TODO: Should this return a stream?
   @override
   Future<Either<Failure, KtSet<Experience>>> call(Params params) async {
     return _repository.loadSurroundingExperiences(params.coordinates);
@@ -25,6 +23,6 @@ class Params {
   final Coordinates coordinates;
 
   Params({
-    @required this.coordinates,
+    required this.coordinates,
   });
 }

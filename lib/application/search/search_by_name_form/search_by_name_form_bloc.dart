@@ -41,10 +41,16 @@ class SearchByNameFormBloc extends Bloc<SearchByNameFormEvent, SearchByNameFormS
   }
 
   Stream<SearchByNameFormState> _onSearchTermChanged(_SearchTermChanged event) async* {
-    yield state.copyWith(
-      searchTerm: SearchTerm(event.searchTermString),
-      isSubmitting: false,
-      failureOrSuccessOption: none(),
-    );
+    final _oldSearchTerm = state.searchTerm.toString();
+    if (event.searchTermString != _oldSearchTerm) {
+      yield state.copyWith(
+        searchTerm: SearchTerm(event.searchTermString),
+        isSubmitting: false,
+        failureOrSuccessOption: none(),
+      );
+      // Searching for every change of the term is simply too costly with Algolia
+      // Maybe it can be reimplemented in the future
+      // add(const SearchByNameFormEvent.submitted());
+    }
   }
 }

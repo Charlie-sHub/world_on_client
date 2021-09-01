@@ -8,7 +8,7 @@ import 'package:worldon/core/error/failure.dart';
 import 'package:worldon/data/core/failures/core_data_failure.dart';
 import 'package:worldon/domain/authentication/use_case/log_in.dart';
 import 'package:worldon/domain/authentication/use_case/log_in_google.dart';
-import 'package:worldon/domain/core/validation/objects/name.dart';
+import 'package:worldon/domain/core/validation/objects/email_address.dart';
 import 'package:worldon/domain/core/validation/objects/password.dart';
 import 'package:worldon/injection.dart';
 
@@ -24,7 +24,7 @@ void main() {
       logInGoogle = getIt<LogInGoogle>();
     },
   );
-  const username = "testing";
+  const email = "testing@test.test";
   const password = "abcd*1234";
   const failure = Failure.coreData(CoreDataFailure.serverError(errorString: TestDescription.errorString));
   blocTest(
@@ -42,26 +42,26 @@ void main() {
           return getIt<LogInFormBloc>();
         },
         act: (bloc) async {
-          bloc.add(const LogInFormEvent.usernameChanged(username));
+          bloc.add(const LogInFormEvent.emailChanged(email));
           bloc.add(const LogInFormEvent.passwordChanged(password));
           bloc.add(const LogInFormEvent.loggedIn());
         },
         verify: (_) async => verify(logIn.call(any)),
         expect: [
           LogInFormState.initial().copyWith(
-            username: Name(username),
+            email: EmailAddress(email),
           ),
           LogInFormState.initial().copyWith(
-            username: Name(username),
+            email: EmailAddress(email),
             password: Password(password),
           ),
           LogInFormState.initial().copyWith(
-            username: Name(username),
+            email: EmailAddress(email),
             password: Password(password),
             isSubmitting: true,
           ),
           LogInFormState.initial().copyWith(
-            username: Name(username),
+            email: EmailAddress(email),
             password: Password(password),
             isSubmitting: false,
             failureOrSuccessOption: some(right(unit)),
@@ -75,26 +75,26 @@ void main() {
           return getIt<LogInFormBloc>();
         },
         act: (bloc) async {
-          bloc.add(const LogInFormEvent.usernameChanged(username));
+          bloc.add(const LogInFormEvent.emailChanged(email));
           bloc.add(const LogInFormEvent.passwordChanged(password));
           bloc.add(const LogInFormEvent.loggedInGoogle());
         },
         verify: (_) async => verify(logInGoogle.call(any)),
         expect: [
           LogInFormState.initial().copyWith(
-            username: Name(username),
+            email: EmailAddress(email),
           ),
           LogInFormState.initial().copyWith(
-            username: Name(username),
+            email: EmailAddress(email),
             password: Password(password),
           ),
           LogInFormState.initial().copyWith(
-            username: Name(username),
+            email: EmailAddress(email),
             password: Password(password),
             isSubmitting: true,
           ),
           LogInFormState.initial().copyWith(
-            username: Name(username),
+            email: EmailAddress(email),
             password: Password(password),
             isSubmitting: false,
             failureOrSuccessOption: some(right(unit)),
@@ -110,26 +110,26 @@ void main() {
       return getIt<LogInFormBloc>();
     },
     act: (bloc) async {
-      bloc.add(const LogInFormEvent.usernameChanged(username));
+      bloc.add(const LogInFormEvent.emailChanged(email));
       bloc.add(const LogInFormEvent.passwordChanged(password));
       bloc.add(const LogInFormEvent.loggedIn());
     },
     verify: (_) async => verify(logIn.call(any)),
     expect: [
       LogInFormState.initial().copyWith(
-        username: Name(username),
+        email: EmailAddress(email),
       ),
       LogInFormState.initial().copyWith(
-        username: Name(username),
+        email: EmailAddress(email),
         password: Password(password),
       ),
       LogInFormState.initial().copyWith(
-        username: Name(username),
+        email: EmailAddress(email),
         password: Password(password),
         isSubmitting: true,
       ),
       LogInFormState.initial().copyWith(
-        username: Name(username),
+        email: EmailAddress(email),
         password: Password(password),
         isSubmitting: false,
         failureOrSuccessOption: some(left(failure)),

@@ -1,5 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides
 
 part of 'achievement_management_form_bloc.dart';
 
@@ -9,218 +9,219 @@ part of 'achievement_management_form_bloc.dart';
 
 T _$identity<T>(T value) => value;
 
+final _privateConstructorUsedError = UnsupportedError(
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+
 /// @nodoc
 class _$AchievementManagementFormEventTearOff {
   const _$AchievementManagementFormEventTearOff();
 
-// ignore: unused_element
   _Initialized initialized(Option<Achievement> achievementOption) {
     return _Initialized(
       achievementOption,
     );
   }
 
-// ignore: unused_element
   _NameChanged nameChanged(String name) {
     return _NameChanged(
       name,
     );
   }
 
-// ignore: unused_element
   _DescriptionChanged descriptionChanged(String description) {
     return _DescriptionChanged(
       description,
     );
   }
 
-// ignore: unused_element
   _ExperiencePointsChanged experiencePointsChanged(int experiencePoints) {
     return _ExperiencePointsChanged(
       experiencePoints,
     );
   }
 
-// ignore: unused_element
   _TagsChanged tagsChanged(KtSet<Tag> tags) {
     return _TagsChanged(
       tags,
     );
   }
 
-// ignore: unused_element
   _ImageChanged imageChanged(File image) {
     return _ImageChanged(
       image,
     );
   }
 
-// ignore: unused_element
   _Submitted submitted() {
     return const _Submitted();
   }
 }
 
 /// @nodoc
-// ignore: unused_element
-const $AchievementManagementFormEvent = _$AchievementManagementFormEventTearOff();
+const $AchievementManagementFormEvent =
+    _$AchievementManagementFormEventTearOff();
 
 /// @nodoc
 mixin _$AchievementManagementFormEvent {
   @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result initialized(Option<Achievement> achievementOption),
-    @required Result nameChanged(String name),
-    @required Result descriptionChanged(String description),
-    @required Result experiencePointsChanged(int experiencePoints),
-    @required Result tagsChanged(KtSet<Tag> tags),
-    @required Result imageChanged(File image),
-    @required Result submitted(),
-  });
+  TResult when<TResult extends Object?>({
+    required TResult Function(Option<Achievement> achievementOption)
+        initialized,
+    required TResult Function(String name) nameChanged,
+    required TResult Function(String description) descriptionChanged,
+    required TResult Function(int experiencePoints) experiencePointsChanged,
+    required TResult Function(KtSet<Tag> tags) tagsChanged,
+    required TResult Function(File image) imageChanged,
+    required TResult Function() submitted,
+  }) =>
+      throw _privateConstructorUsedError;
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result initialized(Option<Achievement> achievementOption),
-    Result nameChanged(String name),
-    Result descriptionChanged(String description),
-    Result experiencePointsChanged(int experiencePoints),
-    Result tagsChanged(KtSet<Tag> tags),
-    Result imageChanged(File image),
-    Result submitted(),
-    @required Result orElse(),
-  });
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(Option<Achievement> achievementOption)? initialized,
+    TResult Function(String name)? nameChanged,
+    TResult Function(String description)? descriptionChanged,
+    TResult Function(int experiencePoints)? experiencePointsChanged,
+    TResult Function(KtSet<Tag> tags)? tagsChanged,
+    TResult Function(File image)? imageChanged,
+    TResult Function()? submitted,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result initialized(_Initialized value),
-    @required Result nameChanged(_NameChanged value),
-    @required Result descriptionChanged(_DescriptionChanged value),
-    @required Result experiencePointsChanged(_ExperiencePointsChanged value),
-    @required Result tagsChanged(_TagsChanged value),
-    @required Result imageChanged(_ImageChanged value),
-    @required Result submitted(_Submitted value),
-  });
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initialized value) initialized,
+    required TResult Function(_NameChanged value) nameChanged,
+    required TResult Function(_DescriptionChanged value) descriptionChanged,
+    required TResult Function(_ExperiencePointsChanged value)
+        experiencePointsChanged,
+    required TResult Function(_TagsChanged value) tagsChanged,
+    required TResult Function(_ImageChanged value) imageChanged,
+    required TResult Function(_Submitted value) submitted,
+  }) =>
+      throw _privateConstructorUsedError;
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result initialized(_Initialized value),
-    Result nameChanged(_NameChanged value),
-    Result descriptionChanged(_DescriptionChanged value),
-    Result experiencePointsChanged(_ExperiencePointsChanged value),
-    Result tagsChanged(_TagsChanged value),
-    Result imageChanged(_ImageChanged value),
-    Result submitted(_Submitted value),
-    @required Result orElse(),
-  });
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initialized value)? initialized,
+    TResult Function(_NameChanged value)? nameChanged,
+    TResult Function(_DescriptionChanged value)? descriptionChanged,
+    TResult Function(_ExperiencePointsChanged value)? experiencePointsChanged,
+    TResult Function(_TagsChanged value)? tagsChanged,
+    TResult Function(_ImageChanged value)? imageChanged,
+    TResult Function(_Submitted value)? submitted,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $AchievementManagementFormEventCopyWith<$Res> {
-  factory $AchievementManagementFormEventCopyWith(AchievementManagementFormEvent value, $Res Function(AchievementManagementFormEvent) then) = _$AchievementManagementFormEventCopyWithImpl<$Res>;
+  factory $AchievementManagementFormEventCopyWith(
+          AchievementManagementFormEvent value,
+          $Res Function(AchievementManagementFormEvent) then) =
+      _$AchievementManagementFormEventCopyWithImpl<$Res>;
 }
 
 /// @nodoc
 class _$AchievementManagementFormEventCopyWithImpl<$Res>
-  implements $AchievementManagementFormEventCopyWith<$Res> {
+    implements $AchievementManagementFormEventCopyWith<$Res> {
   _$AchievementManagementFormEventCopyWithImpl(this._value, this._then);
-  
+
   final AchievementManagementFormEvent _value;
-  
   // ignore: unused_field
   final $Res Function(AchievementManagementFormEvent) _then;
 }
 
 /// @nodoc
 abstract class _$InitializedCopyWith<$Res> {
-  factory _$InitializedCopyWith(_Initialized value, $Res Function(_Initialized) then) =
-  __$InitializedCopyWithImpl<$Res>;
-  
+  factory _$InitializedCopyWith(
+          _Initialized value, $Res Function(_Initialized) then) =
+      __$InitializedCopyWithImpl<$Res>;
   $Res call({Option<Achievement> achievementOption});
 }
 
 /// @nodoc
-class __$InitializedCopyWithImpl<$Res> extends _$AchievementManagementFormEventCopyWithImpl<$Res>
-  implements _$InitializedCopyWith<$Res> {
-  __$InitializedCopyWithImpl(_Initialized _value, $Res Function(_Initialized) _then)
-    : super(_value, (v) => _then(v as _Initialized));
-  
+class __$InitializedCopyWithImpl<$Res>
+    extends _$AchievementManagementFormEventCopyWithImpl<$Res>
+    implements _$InitializedCopyWith<$Res> {
+  __$InitializedCopyWithImpl(
+      _Initialized _value, $Res Function(_Initialized) _then)
+      : super(_value, (v) => _then(v as _Initialized));
+
   @override
   _Initialized get _value => super._value as _Initialized;
-  
+
   @override
   $Res call({
-    Object achievementOption = freezed,
+    Object? achievementOption = freezed,
   }) {
     return _then(_Initialized(
       achievementOption == freezed
-        ? _value.achievementOption
-        : achievementOption as Option<Achievement>,
+          ? _value.achievementOption
+          : achievementOption // ignore: cast_nullable_to_non_nullable
+              as Option<Achievement>,
     ));
   }
 }
 
 /// @nodoc
+
 class _$_Initialized implements _Initialized {
-  const _$_Initialized(this.achievementOption)
-    : assert(achievementOption != null);
-  
+  const _$_Initialized(this.achievementOption);
+
   @override
   final Option<Achievement> achievementOption;
-  
+
   @override
   String toString() {
     return 'AchievementManagementFormEvent.initialized(achievementOption: $achievementOption)';
   }
-  
+
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-      (other is _Initialized &&
-        (identical(other.achievementOption, achievementOption) ||
-          const DeepCollectionEquality()
-            .equals(other.achievementOption, achievementOption)));
+        (other is _Initialized &&
+            (identical(other.achievementOption, achievementOption) ||
+                const DeepCollectionEquality()
+                    .equals(other.achievementOption, achievementOption)));
   }
-  
+
   @override
   int get hashCode =>
-    runtimeType.hashCode ^
-    const DeepCollectionEquality().hash(achievementOption);
-  
+      runtimeType.hashCode ^
+      const DeepCollectionEquality().hash(achievementOption);
+
+  @JsonKey(ignore: true)
   @override
   _$InitializedCopyWith<_Initialized> get copyWith =>
-    __$InitializedCopyWithImpl<_Initialized>(this, _$identity);
-  
+      __$InitializedCopyWithImpl<_Initialized>(this, _$identity);
+
   @override
   @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result initialized(Option<Achievement> achievementOption),
-    @required Result nameChanged(String name),
-    @required Result descriptionChanged(String description),
-    @required Result experiencePointsChanged(int experiencePoints),
-    @required Result tagsChanged(KtSet<Tag> tags),
-    @required Result imageChanged(File image),
-    @required Result submitted(),
+  TResult when<TResult extends Object?>({
+    required TResult Function(Option<Achievement> achievementOption)
+        initialized,
+    required TResult Function(String name) nameChanged,
+    required TResult Function(String description) descriptionChanged,
+    required TResult Function(int experiencePoints) experiencePointsChanged,
+    required TResult Function(KtSet<Tag> tags) tagsChanged,
+    required TResult Function(File image) imageChanged,
+    required TResult Function() submitted,
   }) {
-    assert(initialized != null);
-    assert(nameChanged != null);
-    assert(descriptionChanged != null);
-    assert(experiencePointsChanged != null);
-    assert(tagsChanged != null);
-    assert(imageChanged != null);
-    assert(submitted != null);
     return initialized(achievementOption);
   }
 
   @override
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result initialized(Option<Achievement> achievementOption),
-    Result nameChanged(String name),
-    Result descriptionChanged(String description),
-    Result experiencePointsChanged(int experiencePoints),
-    Result tagsChanged(KtSet<Tag> tags),
-    Result imageChanged(File image),
-    Result submitted(),
-    @required Result orElse(),
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(Option<Achievement> achievementOption)? initialized,
+    TResult Function(String name)? nameChanged,
+    TResult Function(String description)? descriptionChanged,
+    TResult Function(int experiencePoints)? experiencePointsChanged,
+    TResult Function(KtSet<Tag> tags)? tagsChanged,
+    TResult Function(File image)? imageChanged,
+    TResult Function()? submitted,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (initialized != null) {
       return initialized(achievementOption);
     }
@@ -229,38 +230,31 @@ class _$_Initialized implements _Initialized {
 
   @override
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result initialized(_Initialized value),
-    @required Result nameChanged(_NameChanged value),
-    @required Result descriptionChanged(_DescriptionChanged value),
-    @required Result experiencePointsChanged(_ExperiencePointsChanged value),
-    @required Result tagsChanged(_TagsChanged value),
-    @required Result imageChanged(_ImageChanged value),
-    @required Result submitted(_Submitted value),
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initialized value) initialized,
+    required TResult Function(_NameChanged value) nameChanged,
+    required TResult Function(_DescriptionChanged value) descriptionChanged,
+    required TResult Function(_ExperiencePointsChanged value)
+        experiencePointsChanged,
+    required TResult Function(_TagsChanged value) tagsChanged,
+    required TResult Function(_ImageChanged value) imageChanged,
+    required TResult Function(_Submitted value) submitted,
   }) {
-    assert(initialized != null);
-    assert(nameChanged != null);
-    assert(descriptionChanged != null);
-    assert(experiencePointsChanged != null);
-    assert(tagsChanged != null);
-    assert(imageChanged != null);
-    assert(submitted != null);
     return initialized(this);
   }
 
   @override
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result initialized(_Initialized value),
-    Result nameChanged(_NameChanged value),
-    Result descriptionChanged(_DescriptionChanged value),
-    Result experiencePointsChanged(_ExperiencePointsChanged value),
-    Result tagsChanged(_TagsChanged value),
-    Result imageChanged(_ImageChanged value),
-    Result submitted(_Submitted value),
-    @required Result orElse(),
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initialized value)? initialized,
+    TResult Function(_NameChanged value)? nameChanged,
+    TResult Function(_DescriptionChanged value)? descriptionChanged,
+    TResult Function(_ExperiencePointsChanged value)? experiencePointsChanged,
+    TResult Function(_TagsChanged value)? tagsChanged,
+    TResult Function(_ImageChanged value)? imageChanged,
+    TResult Function(_Submitted value)? submitted,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (initialized != null) {
       return initialized(this);
     }
@@ -270,43 +264,51 @@ class _$_Initialized implements _Initialized {
 
 abstract class _Initialized implements AchievementManagementFormEvent {
   const factory _Initialized(Option<Achievement> achievementOption) =
-  _$_Initialized;
-  
-  Option<Achievement> get achievementOption;
-  
-  _$InitializedCopyWith<_Initialized> get copyWith;
+      _$_Initialized;
+
+  Option<Achievement> get achievementOption =>
+      throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  _$InitializedCopyWith<_Initialized> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class _$NameChangedCopyWith<$Res> {
-  factory _$NameChangedCopyWith(_NameChanged value, $Res Function(_NameChanged) then) =
-  __$NameChangedCopyWithImpl<$Res>;
-  
+  factory _$NameChangedCopyWith(
+          _NameChanged value, $Res Function(_NameChanged) then) =
+      __$NameChangedCopyWithImpl<$Res>;
   $Res call({String name});
 }
 
 /// @nodoc
-class __$NameChangedCopyWithImpl<$Res> extends _$AchievementManagementFormEventCopyWithImpl<$Res>
-  implements _$NameChangedCopyWith<$Res> {
-  __$NameChangedCopyWithImpl(_NameChanged _value, $Res Function(_NameChanged) _then)
-    : super(_value, (v) => _then(v as _NameChanged));
-  
+class __$NameChangedCopyWithImpl<$Res>
+    extends _$AchievementManagementFormEventCopyWithImpl<$Res>
+    implements _$NameChangedCopyWith<$Res> {
+  __$NameChangedCopyWithImpl(
+      _NameChanged _value, $Res Function(_NameChanged) _then)
+      : super(_value, (v) => _then(v as _NameChanged));
+
   @override
   _NameChanged get _value => super._value as _NameChanged;
-  
+
   @override
   $Res call({
-    Object name = freezed,
+    Object? name = freezed,
   }) {
     return _then(_NameChanged(
-      name == freezed ? _value.name : name as String,
+      name == freezed
+          ? _value.name
+          : name // ignore: cast_nullable_to_non_nullable
+              as String,
     ));
   }
 }
 
 /// @nodoc
+
 class _$_NameChanged implements _NameChanged {
-  const _$_NameChanged(this.name) : assert(name != null);
+  const _$_NameChanged(this.name);
 
   @override
   final String name;
@@ -319,53 +321,47 @@ class _$_NameChanged implements _NameChanged {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-      (other is _NameChanged &&
-        (identical(other.name, name) ||
-          const DeepCollectionEquality().equals(other.name, name)));
+        (other is _NameChanged &&
+            (identical(other.name, name) ||
+                const DeepCollectionEquality().equals(other.name, name)));
   }
 
   @override
   int get hashCode =>
-    runtimeType.hashCode ^ const DeepCollectionEquality().hash(name);
+      runtimeType.hashCode ^ const DeepCollectionEquality().hash(name);
 
+  @JsonKey(ignore: true)
   @override
   _$NameChangedCopyWith<_NameChanged> get copyWith =>
-    __$NameChangedCopyWithImpl<_NameChanged>(this, _$identity);
+      __$NameChangedCopyWithImpl<_NameChanged>(this, _$identity);
 
   @override
   @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result initialized(Option<Achievement> achievementOption),
-    @required Result nameChanged(String name),
-    @required Result descriptionChanged(String description),
-    @required Result experiencePointsChanged(int experiencePoints),
-    @required Result tagsChanged(KtSet<Tag> tags),
-    @required Result imageChanged(File image),
-    @required Result submitted(),
+  TResult when<TResult extends Object?>({
+    required TResult Function(Option<Achievement> achievementOption)
+        initialized,
+    required TResult Function(String name) nameChanged,
+    required TResult Function(String description) descriptionChanged,
+    required TResult Function(int experiencePoints) experiencePointsChanged,
+    required TResult Function(KtSet<Tag> tags) tagsChanged,
+    required TResult Function(File image) imageChanged,
+    required TResult Function() submitted,
   }) {
-    assert(initialized != null);
-    assert(nameChanged != null);
-    assert(descriptionChanged != null);
-    assert(experiencePointsChanged != null);
-    assert(tagsChanged != null);
-    assert(imageChanged != null);
-    assert(submitted != null);
     return nameChanged(name);
   }
 
   @override
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result initialized(Option<Achievement> achievementOption),
-    Result nameChanged(String name),
-    Result descriptionChanged(String description),
-    Result experiencePointsChanged(int experiencePoints),
-    Result tagsChanged(KtSet<Tag> tags),
-    Result imageChanged(File image),
-    Result submitted(),
-    @required Result orElse(),
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(Option<Achievement> achievementOption)? initialized,
+    TResult Function(String name)? nameChanged,
+    TResult Function(String description)? descriptionChanged,
+    TResult Function(int experiencePoints)? experiencePointsChanged,
+    TResult Function(KtSet<Tag> tags)? tagsChanged,
+    TResult Function(File image)? imageChanged,
+    TResult Function()? submitted,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (nameChanged != null) {
       return nameChanged(name);
     }
@@ -374,38 +370,31 @@ class _$_NameChanged implements _NameChanged {
 
   @override
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result initialized(_Initialized value),
-    @required Result nameChanged(_NameChanged value),
-    @required Result descriptionChanged(_DescriptionChanged value),
-    @required Result experiencePointsChanged(_ExperiencePointsChanged value),
-    @required Result tagsChanged(_TagsChanged value),
-    @required Result imageChanged(_ImageChanged value),
-    @required Result submitted(_Submitted value),
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initialized value) initialized,
+    required TResult Function(_NameChanged value) nameChanged,
+    required TResult Function(_DescriptionChanged value) descriptionChanged,
+    required TResult Function(_ExperiencePointsChanged value)
+        experiencePointsChanged,
+    required TResult Function(_TagsChanged value) tagsChanged,
+    required TResult Function(_ImageChanged value) imageChanged,
+    required TResult Function(_Submitted value) submitted,
   }) {
-    assert(initialized != null);
-    assert(nameChanged != null);
-    assert(descriptionChanged != null);
-    assert(experiencePointsChanged != null);
-    assert(tagsChanged != null);
-    assert(imageChanged != null);
-    assert(submitted != null);
     return nameChanged(this);
   }
 
   @override
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result initialized(_Initialized value),
-    Result nameChanged(_NameChanged value),
-    Result descriptionChanged(_DescriptionChanged value),
-    Result experiencePointsChanged(_ExperiencePointsChanged value),
-    Result tagsChanged(_TagsChanged value),
-    Result imageChanged(_ImageChanged value),
-    Result submitted(_Submitted value),
-    @required Result orElse(),
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initialized value)? initialized,
+    TResult Function(_NameChanged value)? nameChanged,
+    TResult Function(_DescriptionChanged value)? descriptionChanged,
+    TResult Function(_ExperiencePointsChanged value)? experiencePointsChanged,
+    TResult Function(_TagsChanged value)? tagsChanged,
+    TResult Function(_ImageChanged value)? imageChanged,
+    TResult Function(_Submitted value)? submitted,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (nameChanged != null) {
       return nameChanged(this);
     }
@@ -416,40 +405,48 @@ class _$_NameChanged implements _NameChanged {
 abstract class _NameChanged implements AchievementManagementFormEvent {
   const factory _NameChanged(String name) = _$_NameChanged;
 
-  String get name;
-  _$NameChangedCopyWith<_NameChanged> get copyWith;
+  String get name => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  _$NameChangedCopyWith<_NameChanged> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class _$DescriptionChangedCopyWith<$Res> {
-  factory _$DescriptionChangedCopyWith(_DescriptionChanged value, $Res Function(_DescriptionChanged) then) =
-  __$DescriptionChangedCopyWithImpl<$Res>;
-  
+  factory _$DescriptionChangedCopyWith(
+          _DescriptionChanged value, $Res Function(_DescriptionChanged) then) =
+      __$DescriptionChangedCopyWithImpl<$Res>;
   $Res call({String description});
 }
 
 /// @nodoc
-class __$DescriptionChangedCopyWithImpl<$Res> extends _$AchievementManagementFormEventCopyWithImpl<$Res>
-  implements _$DescriptionChangedCopyWith<$Res> {
-  __$DescriptionChangedCopyWithImpl(_DescriptionChanged _value, $Res Function(_DescriptionChanged) _then)
-    : super(_value, (v) => _then(v as _DescriptionChanged));
-  
+class __$DescriptionChangedCopyWithImpl<$Res>
+    extends _$AchievementManagementFormEventCopyWithImpl<$Res>
+    implements _$DescriptionChangedCopyWith<$Res> {
+  __$DescriptionChangedCopyWithImpl(
+      _DescriptionChanged _value, $Res Function(_DescriptionChanged) _then)
+      : super(_value, (v) => _then(v as _DescriptionChanged));
+
   @override
   _DescriptionChanged get _value => super._value as _DescriptionChanged;
-  
+
   @override
   $Res call({
-    Object description = freezed,
+    Object? description = freezed,
   }) {
     return _then(_DescriptionChanged(
-      description == freezed ? _value.description : description as String,
+      description == freezed
+          ? _value.description
+          : description // ignore: cast_nullable_to_non_nullable
+              as String,
     ));
   }
 }
 
 /// @nodoc
+
 class _$_DescriptionChanged implements _DescriptionChanged {
-  const _$_DescriptionChanged(this.description) : assert(description != null);
+  const _$_DescriptionChanged(this.description);
 
   @override
   final String description;
@@ -462,54 +459,48 @@ class _$_DescriptionChanged implements _DescriptionChanged {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-      (other is _DescriptionChanged &&
-        (identical(other.description, description) ||
-          const DeepCollectionEquality()
-            .equals(other.description, description)));
+        (other is _DescriptionChanged &&
+            (identical(other.description, description) ||
+                const DeepCollectionEquality()
+                    .equals(other.description, description)));
   }
 
   @override
   int get hashCode =>
-    runtimeType.hashCode ^ const DeepCollectionEquality().hash(description);
+      runtimeType.hashCode ^ const DeepCollectionEquality().hash(description);
 
+  @JsonKey(ignore: true)
   @override
   _$DescriptionChangedCopyWith<_DescriptionChanged> get copyWith =>
-    __$DescriptionChangedCopyWithImpl<_DescriptionChanged>(this, _$identity);
+      __$DescriptionChangedCopyWithImpl<_DescriptionChanged>(this, _$identity);
 
   @override
   @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result initialized(Option<Achievement> achievementOption),
-    @required Result nameChanged(String name),
-    @required Result descriptionChanged(String description),
-    @required Result experiencePointsChanged(int experiencePoints),
-    @required Result tagsChanged(KtSet<Tag> tags),
-    @required Result imageChanged(File image),
-    @required Result submitted(),
+  TResult when<TResult extends Object?>({
+    required TResult Function(Option<Achievement> achievementOption)
+        initialized,
+    required TResult Function(String name) nameChanged,
+    required TResult Function(String description) descriptionChanged,
+    required TResult Function(int experiencePoints) experiencePointsChanged,
+    required TResult Function(KtSet<Tag> tags) tagsChanged,
+    required TResult Function(File image) imageChanged,
+    required TResult Function() submitted,
   }) {
-    assert(initialized != null);
-    assert(nameChanged != null);
-    assert(descriptionChanged != null);
-    assert(experiencePointsChanged != null);
-    assert(tagsChanged != null);
-    assert(imageChanged != null);
-    assert(submitted != null);
     return descriptionChanged(description);
   }
 
   @override
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result initialized(Option<Achievement> achievementOption),
-    Result nameChanged(String name),
-    Result descriptionChanged(String description),
-    Result experiencePointsChanged(int experiencePoints),
-    Result tagsChanged(KtSet<Tag> tags),
-    Result imageChanged(File image),
-    Result submitted(),
-    @required Result orElse(),
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(Option<Achievement> achievementOption)? initialized,
+    TResult Function(String name)? nameChanged,
+    TResult Function(String description)? descriptionChanged,
+    TResult Function(int experiencePoints)? experiencePointsChanged,
+    TResult Function(KtSet<Tag> tags)? tagsChanged,
+    TResult Function(File image)? imageChanged,
+    TResult Function()? submitted,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (descriptionChanged != null) {
       return descriptionChanged(description);
     }
@@ -518,38 +509,31 @@ class _$_DescriptionChanged implements _DescriptionChanged {
 
   @override
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result initialized(_Initialized value),
-    @required Result nameChanged(_NameChanged value),
-    @required Result descriptionChanged(_DescriptionChanged value),
-    @required Result experiencePointsChanged(_ExperiencePointsChanged value),
-    @required Result tagsChanged(_TagsChanged value),
-    @required Result imageChanged(_ImageChanged value),
-    @required Result submitted(_Submitted value),
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initialized value) initialized,
+    required TResult Function(_NameChanged value) nameChanged,
+    required TResult Function(_DescriptionChanged value) descriptionChanged,
+    required TResult Function(_ExperiencePointsChanged value)
+        experiencePointsChanged,
+    required TResult Function(_TagsChanged value) tagsChanged,
+    required TResult Function(_ImageChanged value) imageChanged,
+    required TResult Function(_Submitted value) submitted,
   }) {
-    assert(initialized != null);
-    assert(nameChanged != null);
-    assert(descriptionChanged != null);
-    assert(experiencePointsChanged != null);
-    assert(tagsChanged != null);
-    assert(imageChanged != null);
-    assert(submitted != null);
     return descriptionChanged(this);
   }
 
   @override
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result initialized(_Initialized value),
-    Result nameChanged(_NameChanged value),
-    Result descriptionChanged(_DescriptionChanged value),
-    Result experiencePointsChanged(_ExperiencePointsChanged value),
-    Result tagsChanged(_TagsChanged value),
-    Result imageChanged(_ImageChanged value),
-    Result submitted(_Submitted value),
-    @required Result orElse(),
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initialized value)? initialized,
+    TResult Function(_NameChanged value)? nameChanged,
+    TResult Function(_DescriptionChanged value)? descriptionChanged,
+    TResult Function(_ExperiencePointsChanged value)? experiencePointsChanged,
+    TResult Function(_TagsChanged value)? tagsChanged,
+    TResult Function(_ImageChanged value)? imageChanged,
+    TResult Function(_Submitted value)? submitted,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (descriptionChanged != null) {
       return descriptionChanged(this);
     }
@@ -560,107 +544,105 @@ class _$_DescriptionChanged implements _DescriptionChanged {
 abstract class _DescriptionChanged implements AchievementManagementFormEvent {
   const factory _DescriptionChanged(String description) = _$_DescriptionChanged;
 
-  String get description;
-  _$DescriptionChangedCopyWith<_DescriptionChanged> get copyWith;
+  String get description => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  _$DescriptionChangedCopyWith<_DescriptionChanged> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class _$ExperiencePointsChangedCopyWith<$Res> {
   factory _$ExperiencePointsChangedCopyWith(_ExperiencePointsChanged value,
-    $Res Function(_ExperiencePointsChanged) then) =
-  __$ExperiencePointsChangedCopyWithImpl<$Res>;
+          $Res Function(_ExperiencePointsChanged) then) =
+      __$ExperiencePointsChangedCopyWithImpl<$Res>;
   $Res call({int experiencePoints});
 }
 
 /// @nodoc
-class __$ExperiencePointsChangedCopyWithImpl<$Res> extends _$AchievementManagementFormEventCopyWithImpl<$Res>
-  implements _$ExperiencePointsChangedCopyWith<$Res> {
+class __$ExperiencePointsChangedCopyWithImpl<$Res>
+    extends _$AchievementManagementFormEventCopyWithImpl<$Res>
+    implements _$ExperiencePointsChangedCopyWith<$Res> {
   __$ExperiencePointsChangedCopyWithImpl(_ExperiencePointsChanged _value,
-    $Res Function(_ExperiencePointsChanged) _then)
-    : super(_value, (v) => _then(v as _ExperiencePointsChanged));
-  
+      $Res Function(_ExperiencePointsChanged) _then)
+      : super(_value, (v) => _then(v as _ExperiencePointsChanged));
+
   @override
   _ExperiencePointsChanged get _value =>
-    super._value as _ExperiencePointsChanged;
-  
+      super._value as _ExperiencePointsChanged;
+
   @override
   $Res call({
-    Object experiencePoints = freezed,
+    Object? experiencePoints = freezed,
   }) {
     return _then(_ExperiencePointsChanged(
       experiencePoints == freezed
-        ? _value.experiencePoints
-        : experiencePoints as int,
+          ? _value.experiencePoints
+          : experiencePoints // ignore: cast_nullable_to_non_nullable
+              as int,
     ));
   }
 }
 
 /// @nodoc
+
 class _$_ExperiencePointsChanged implements _ExperiencePointsChanged {
-  const _$_ExperiencePointsChanged(this.experiencePoints)
-    : assert(experiencePoints != null);
-  
+  const _$_ExperiencePointsChanged(this.experiencePoints);
+
   @override
   final int experiencePoints;
-  
+
   @override
   String toString() {
     return 'AchievementManagementFormEvent.experiencePointsChanged(experiencePoints: $experiencePoints)';
   }
-  
+
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-      (other is _ExperiencePointsChanged &&
-        (identical(other.experiencePoints, experiencePoints) ||
-          const DeepCollectionEquality()
-            .equals(other.experiencePoints, experiencePoints)));
+        (other is _ExperiencePointsChanged &&
+            (identical(other.experiencePoints, experiencePoints) ||
+                const DeepCollectionEquality()
+                    .equals(other.experiencePoints, experiencePoints)));
   }
-  
+
   @override
   int get hashCode =>
-    runtimeType.hashCode ^
-    const DeepCollectionEquality().hash(experiencePoints);
-  
+      runtimeType.hashCode ^
+      const DeepCollectionEquality().hash(experiencePoints);
+
+  @JsonKey(ignore: true)
   @override
   _$ExperiencePointsChangedCopyWith<_ExperiencePointsChanged> get copyWith =>
-    __$ExperiencePointsChangedCopyWithImpl<_ExperiencePointsChanged>(
-      this, _$identity);
-  
+      __$ExperiencePointsChangedCopyWithImpl<_ExperiencePointsChanged>(
+          this, _$identity);
+
   @override
   @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result initialized(Option<Achievement> achievementOption),
-    @required Result nameChanged(String name),
-    @required Result descriptionChanged(String description),
-    @required Result experiencePointsChanged(int experiencePoints),
-    @required Result tagsChanged(KtSet<Tag> tags),
-    @required Result imageChanged(File image),
-    @required Result submitted(),
+  TResult when<TResult extends Object?>({
+    required TResult Function(Option<Achievement> achievementOption)
+        initialized,
+    required TResult Function(String name) nameChanged,
+    required TResult Function(String description) descriptionChanged,
+    required TResult Function(int experiencePoints) experiencePointsChanged,
+    required TResult Function(KtSet<Tag> tags) tagsChanged,
+    required TResult Function(File image) imageChanged,
+    required TResult Function() submitted,
   }) {
-    assert(initialized != null);
-    assert(nameChanged != null);
-    assert(descriptionChanged != null);
-    assert(experiencePointsChanged != null);
-    assert(tagsChanged != null);
-    assert(imageChanged != null);
-    assert(submitted != null);
     return experiencePointsChanged(experiencePoints);
   }
 
   @override
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result initialized(Option<Achievement> achievementOption),
-    Result nameChanged(String name),
-    Result descriptionChanged(String description),
-    Result experiencePointsChanged(int experiencePoints),
-    Result tagsChanged(KtSet<Tag> tags),
-    Result imageChanged(File image),
-    Result submitted(),
-    @required Result orElse(),
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(Option<Achievement> achievementOption)? initialized,
+    TResult Function(String name)? nameChanged,
+    TResult Function(String description)? descriptionChanged,
+    TResult Function(int experiencePoints)? experiencePointsChanged,
+    TResult Function(KtSet<Tag> tags)? tagsChanged,
+    TResult Function(File image)? imageChanged,
+    TResult Function()? submitted,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (experiencePointsChanged != null) {
       return experiencePointsChanged(experiencePoints);
     }
@@ -669,38 +651,31 @@ class _$_ExperiencePointsChanged implements _ExperiencePointsChanged {
 
   @override
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result initialized(_Initialized value),
-    @required Result nameChanged(_NameChanged value),
-    @required Result descriptionChanged(_DescriptionChanged value),
-    @required Result experiencePointsChanged(_ExperiencePointsChanged value),
-    @required Result tagsChanged(_TagsChanged value),
-    @required Result imageChanged(_ImageChanged value),
-    @required Result submitted(_Submitted value),
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initialized value) initialized,
+    required TResult Function(_NameChanged value) nameChanged,
+    required TResult Function(_DescriptionChanged value) descriptionChanged,
+    required TResult Function(_ExperiencePointsChanged value)
+        experiencePointsChanged,
+    required TResult Function(_TagsChanged value) tagsChanged,
+    required TResult Function(_ImageChanged value) imageChanged,
+    required TResult Function(_Submitted value) submitted,
   }) {
-    assert(initialized != null);
-    assert(nameChanged != null);
-    assert(descriptionChanged != null);
-    assert(experiencePointsChanged != null);
-    assert(tagsChanged != null);
-    assert(imageChanged != null);
-    assert(submitted != null);
     return experiencePointsChanged(this);
   }
 
   @override
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result initialized(_Initialized value),
-    Result nameChanged(_NameChanged value),
-    Result descriptionChanged(_DescriptionChanged value),
-    Result experiencePointsChanged(_ExperiencePointsChanged value),
-    Result tagsChanged(_TagsChanged value),
-    Result imageChanged(_ImageChanged value),
-    Result submitted(_Submitted value),
-    @required Result orElse(),
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initialized value)? initialized,
+    TResult Function(_NameChanged value)? nameChanged,
+    TResult Function(_DescriptionChanged value)? descriptionChanged,
+    TResult Function(_ExperiencePointsChanged value)? experiencePointsChanged,
+    TResult Function(_TagsChanged value)? tagsChanged,
+    TResult Function(_ImageChanged value)? imageChanged,
+    TResult Function(_Submitted value)? submitted,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (experiencePointsChanged != null) {
       return experiencePointsChanged(this);
     }
@@ -709,45 +684,52 @@ class _$_ExperiencePointsChanged implements _ExperiencePointsChanged {
 }
 
 abstract class _ExperiencePointsChanged
-  implements AchievementManagementFormEvent {
+    implements AchievementManagementFormEvent {
   const factory _ExperiencePointsChanged(int experiencePoints) =
-  _$_ExperiencePointsChanged;
-  
-  int get experiencePoints;
-  
-  _$ExperiencePointsChangedCopyWith<_ExperiencePointsChanged> get copyWith;
+      _$_ExperiencePointsChanged;
+
+  int get experiencePoints => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  _$ExperiencePointsChangedCopyWith<_ExperiencePointsChanged> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class _$TagsChangedCopyWith<$Res> {
-  factory _$TagsChangedCopyWith(_TagsChanged value, $Res Function(_TagsChanged) then) =
-  __$TagsChangedCopyWithImpl<$Res>;
-  
+  factory _$TagsChangedCopyWith(
+          _TagsChanged value, $Res Function(_TagsChanged) then) =
+      __$TagsChangedCopyWithImpl<$Res>;
   $Res call({KtSet<Tag> tags});
 }
 
 /// @nodoc
-class __$TagsChangedCopyWithImpl<$Res> extends _$AchievementManagementFormEventCopyWithImpl<$Res>
-  implements _$TagsChangedCopyWith<$Res> {
-  __$TagsChangedCopyWithImpl(_TagsChanged _value, $Res Function(_TagsChanged) _then)
-    : super(_value, (v) => _then(v as _TagsChanged));
-  
+class __$TagsChangedCopyWithImpl<$Res>
+    extends _$AchievementManagementFormEventCopyWithImpl<$Res>
+    implements _$TagsChangedCopyWith<$Res> {
+  __$TagsChangedCopyWithImpl(
+      _TagsChanged _value, $Res Function(_TagsChanged) _then)
+      : super(_value, (v) => _then(v as _TagsChanged));
+
   @override
   _TagsChanged get _value => super._value as _TagsChanged;
-  
+
   @override
   $Res call({
-    Object tags = freezed,
+    Object? tags = freezed,
   }) {
     return _then(_TagsChanged(
-      tags == freezed ? _value.tags : tags as KtSet<Tag>,
+      tags == freezed
+          ? _value.tags
+          : tags // ignore: cast_nullable_to_non_nullable
+              as KtSet<Tag>,
     ));
   }
 }
 
 /// @nodoc
+
 class _$_TagsChanged implements _TagsChanged {
-  const _$_TagsChanged(this.tags) : assert(tags != null);
+  const _$_TagsChanged(this.tags);
 
   @override
   final KtSet<Tag> tags;
@@ -760,53 +742,47 @@ class _$_TagsChanged implements _TagsChanged {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-      (other is _TagsChanged &&
-        (identical(other.tags, tags) ||
-          const DeepCollectionEquality().equals(other.tags, tags)));
+        (other is _TagsChanged &&
+            (identical(other.tags, tags) ||
+                const DeepCollectionEquality().equals(other.tags, tags)));
   }
 
   @override
   int get hashCode =>
-    runtimeType.hashCode ^ const DeepCollectionEquality().hash(tags);
+      runtimeType.hashCode ^ const DeepCollectionEquality().hash(tags);
 
+  @JsonKey(ignore: true)
   @override
   _$TagsChangedCopyWith<_TagsChanged> get copyWith =>
-    __$TagsChangedCopyWithImpl<_TagsChanged>(this, _$identity);
+      __$TagsChangedCopyWithImpl<_TagsChanged>(this, _$identity);
 
   @override
   @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result initialized(Option<Achievement> achievementOption),
-    @required Result nameChanged(String name),
-    @required Result descriptionChanged(String description),
-    @required Result experiencePointsChanged(int experiencePoints),
-    @required Result tagsChanged(KtSet<Tag> tags),
-    @required Result imageChanged(File image),
-    @required Result submitted(),
+  TResult when<TResult extends Object?>({
+    required TResult Function(Option<Achievement> achievementOption)
+        initialized,
+    required TResult Function(String name) nameChanged,
+    required TResult Function(String description) descriptionChanged,
+    required TResult Function(int experiencePoints) experiencePointsChanged,
+    required TResult Function(KtSet<Tag> tags) tagsChanged,
+    required TResult Function(File image) imageChanged,
+    required TResult Function() submitted,
   }) {
-    assert(initialized != null);
-    assert(nameChanged != null);
-    assert(descriptionChanged != null);
-    assert(experiencePointsChanged != null);
-    assert(tagsChanged != null);
-    assert(imageChanged != null);
-    assert(submitted != null);
     return tagsChanged(tags);
   }
 
   @override
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result initialized(Option<Achievement> achievementOption),
-    Result nameChanged(String name),
-    Result descriptionChanged(String description),
-    Result experiencePointsChanged(int experiencePoints),
-    Result tagsChanged(KtSet<Tag> tags),
-    Result imageChanged(File image),
-    Result submitted(),
-    @required Result orElse(),
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(Option<Achievement> achievementOption)? initialized,
+    TResult Function(String name)? nameChanged,
+    TResult Function(String description)? descriptionChanged,
+    TResult Function(int experiencePoints)? experiencePointsChanged,
+    TResult Function(KtSet<Tag> tags)? tagsChanged,
+    TResult Function(File image)? imageChanged,
+    TResult Function()? submitted,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (tagsChanged != null) {
       return tagsChanged(tags);
     }
@@ -815,38 +791,31 @@ class _$_TagsChanged implements _TagsChanged {
 
   @override
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result initialized(_Initialized value),
-    @required Result nameChanged(_NameChanged value),
-    @required Result descriptionChanged(_DescriptionChanged value),
-    @required Result experiencePointsChanged(_ExperiencePointsChanged value),
-    @required Result tagsChanged(_TagsChanged value),
-    @required Result imageChanged(_ImageChanged value),
-    @required Result submitted(_Submitted value),
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initialized value) initialized,
+    required TResult Function(_NameChanged value) nameChanged,
+    required TResult Function(_DescriptionChanged value) descriptionChanged,
+    required TResult Function(_ExperiencePointsChanged value)
+        experiencePointsChanged,
+    required TResult Function(_TagsChanged value) tagsChanged,
+    required TResult Function(_ImageChanged value) imageChanged,
+    required TResult Function(_Submitted value) submitted,
   }) {
-    assert(initialized != null);
-    assert(nameChanged != null);
-    assert(descriptionChanged != null);
-    assert(experiencePointsChanged != null);
-    assert(tagsChanged != null);
-    assert(imageChanged != null);
-    assert(submitted != null);
     return tagsChanged(this);
   }
 
   @override
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result initialized(_Initialized value),
-    Result nameChanged(_NameChanged value),
-    Result descriptionChanged(_DescriptionChanged value),
-    Result experiencePointsChanged(_ExperiencePointsChanged value),
-    Result tagsChanged(_TagsChanged value),
-    Result imageChanged(_ImageChanged value),
-    Result submitted(_Submitted value),
-    @required Result orElse(),
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initialized value)? initialized,
+    TResult Function(_NameChanged value)? nameChanged,
+    TResult Function(_DescriptionChanged value)? descriptionChanged,
+    TResult Function(_ExperiencePointsChanged value)? experiencePointsChanged,
+    TResult Function(_TagsChanged value)? tagsChanged,
+    TResult Function(_ImageChanged value)? imageChanged,
+    TResult Function(_Submitted value)? submitted,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (tagsChanged != null) {
       return tagsChanged(this);
     }
@@ -857,40 +826,48 @@ class _$_TagsChanged implements _TagsChanged {
 abstract class _TagsChanged implements AchievementManagementFormEvent {
   const factory _TagsChanged(KtSet<Tag> tags) = _$_TagsChanged;
 
-  KtSet<Tag> get tags;
-  _$TagsChangedCopyWith<_TagsChanged> get copyWith;
+  KtSet<Tag> get tags => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  _$TagsChangedCopyWith<_TagsChanged> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class _$ImageChangedCopyWith<$Res> {
-  factory _$ImageChangedCopyWith(_ImageChanged value, $Res Function(_ImageChanged) then) =
-  __$ImageChangedCopyWithImpl<$Res>;
-  
+  factory _$ImageChangedCopyWith(
+          _ImageChanged value, $Res Function(_ImageChanged) then) =
+      __$ImageChangedCopyWithImpl<$Res>;
   $Res call({File image});
 }
 
 /// @nodoc
-class __$ImageChangedCopyWithImpl<$Res> extends _$AchievementManagementFormEventCopyWithImpl<$Res>
-  implements _$ImageChangedCopyWith<$Res> {
-  __$ImageChangedCopyWithImpl(_ImageChanged _value, $Res Function(_ImageChanged) _then)
-    : super(_value, (v) => _then(v as _ImageChanged));
-  
+class __$ImageChangedCopyWithImpl<$Res>
+    extends _$AchievementManagementFormEventCopyWithImpl<$Res>
+    implements _$ImageChangedCopyWith<$Res> {
+  __$ImageChangedCopyWithImpl(
+      _ImageChanged _value, $Res Function(_ImageChanged) _then)
+      : super(_value, (v) => _then(v as _ImageChanged));
+
   @override
   _ImageChanged get _value => super._value as _ImageChanged;
-  
+
   @override
   $Res call({
-    Object image = freezed,
+    Object? image = freezed,
   }) {
     return _then(_ImageChanged(
-      image == freezed ? _value.image : image as File,
+      image == freezed
+          ? _value.image
+          : image // ignore: cast_nullable_to_non_nullable
+              as File,
     ));
   }
 }
 
 /// @nodoc
+
 class _$_ImageChanged implements _ImageChanged {
-  const _$_ImageChanged(this.image) : assert(image != null);
+  const _$_ImageChanged(this.image);
 
   @override
   final File image;
@@ -903,53 +880,47 @@ class _$_ImageChanged implements _ImageChanged {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-      (other is _ImageChanged &&
-        (identical(other.image, image) ||
-          const DeepCollectionEquality().equals(other.image, image)));
+        (other is _ImageChanged &&
+            (identical(other.image, image) ||
+                const DeepCollectionEquality().equals(other.image, image)));
   }
 
   @override
   int get hashCode =>
-    runtimeType.hashCode ^ const DeepCollectionEquality().hash(image);
+      runtimeType.hashCode ^ const DeepCollectionEquality().hash(image);
 
+  @JsonKey(ignore: true)
   @override
   _$ImageChangedCopyWith<_ImageChanged> get copyWith =>
-    __$ImageChangedCopyWithImpl<_ImageChanged>(this, _$identity);
+      __$ImageChangedCopyWithImpl<_ImageChanged>(this, _$identity);
 
   @override
   @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result initialized(Option<Achievement> achievementOption),
-    @required Result nameChanged(String name),
-    @required Result descriptionChanged(String description),
-    @required Result experiencePointsChanged(int experiencePoints),
-    @required Result tagsChanged(KtSet<Tag> tags),
-    @required Result imageChanged(File image),
-    @required Result submitted(),
+  TResult when<TResult extends Object?>({
+    required TResult Function(Option<Achievement> achievementOption)
+        initialized,
+    required TResult Function(String name) nameChanged,
+    required TResult Function(String description) descriptionChanged,
+    required TResult Function(int experiencePoints) experiencePointsChanged,
+    required TResult Function(KtSet<Tag> tags) tagsChanged,
+    required TResult Function(File image) imageChanged,
+    required TResult Function() submitted,
   }) {
-    assert(initialized != null);
-    assert(nameChanged != null);
-    assert(descriptionChanged != null);
-    assert(experiencePointsChanged != null);
-    assert(tagsChanged != null);
-    assert(imageChanged != null);
-    assert(submitted != null);
     return imageChanged(image);
   }
 
   @override
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result initialized(Option<Achievement> achievementOption),
-    Result nameChanged(String name),
-    Result descriptionChanged(String description),
-    Result experiencePointsChanged(int experiencePoints),
-    Result tagsChanged(KtSet<Tag> tags),
-    Result imageChanged(File image),
-    Result submitted(),
-    @required Result orElse(),
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(Option<Achievement> achievementOption)? initialized,
+    TResult Function(String name)? nameChanged,
+    TResult Function(String description)? descriptionChanged,
+    TResult Function(int experiencePoints)? experiencePointsChanged,
+    TResult Function(KtSet<Tag> tags)? tagsChanged,
+    TResult Function(File image)? imageChanged,
+    TResult Function()? submitted,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (imageChanged != null) {
       return imageChanged(image);
     }
@@ -958,38 +929,31 @@ class _$_ImageChanged implements _ImageChanged {
 
   @override
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result initialized(_Initialized value),
-    @required Result nameChanged(_NameChanged value),
-    @required Result descriptionChanged(_DescriptionChanged value),
-    @required Result experiencePointsChanged(_ExperiencePointsChanged value),
-    @required Result tagsChanged(_TagsChanged value),
-    @required Result imageChanged(_ImageChanged value),
-    @required Result submitted(_Submitted value),
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initialized value) initialized,
+    required TResult Function(_NameChanged value) nameChanged,
+    required TResult Function(_DescriptionChanged value) descriptionChanged,
+    required TResult Function(_ExperiencePointsChanged value)
+        experiencePointsChanged,
+    required TResult Function(_TagsChanged value) tagsChanged,
+    required TResult Function(_ImageChanged value) imageChanged,
+    required TResult Function(_Submitted value) submitted,
   }) {
-    assert(initialized != null);
-    assert(nameChanged != null);
-    assert(descriptionChanged != null);
-    assert(experiencePointsChanged != null);
-    assert(tagsChanged != null);
-    assert(imageChanged != null);
-    assert(submitted != null);
     return imageChanged(this);
   }
 
   @override
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result initialized(_Initialized value),
-    Result nameChanged(_NameChanged value),
-    Result descriptionChanged(_DescriptionChanged value),
-    Result experiencePointsChanged(_ExperiencePointsChanged value),
-    Result tagsChanged(_TagsChanged value),
-    Result imageChanged(_ImageChanged value),
-    Result submitted(_Submitted value),
-    @required Result orElse(),
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initialized value)? initialized,
+    TResult Function(_NameChanged value)? nameChanged,
+    TResult Function(_DescriptionChanged value)? descriptionChanged,
+    TResult Function(_ExperiencePointsChanged value)? experiencePointsChanged,
+    TResult Function(_TagsChanged value)? tagsChanged,
+    TResult Function(_ImageChanged value)? imageChanged,
+    TResult Function(_Submitted value)? submitted,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (imageChanged != null) {
       return imageChanged(this);
     }
@@ -1000,27 +964,32 @@ class _$_ImageChanged implements _ImageChanged {
 abstract class _ImageChanged implements AchievementManagementFormEvent {
   const factory _ImageChanged(File image) = _$_ImageChanged;
 
-  File get image;
-  _$ImageChangedCopyWith<_ImageChanged> get copyWith;
+  File get image => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  _$ImageChangedCopyWith<_ImageChanged> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class _$SubmittedCopyWith<$Res> {
-  factory _$SubmittedCopyWith(_Submitted value, $Res Function(_Submitted) then) =
-  __$SubmittedCopyWithImpl<$Res>;
+  factory _$SubmittedCopyWith(
+          _Submitted value, $Res Function(_Submitted) then) =
+      __$SubmittedCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$SubmittedCopyWithImpl<$Res> extends _$AchievementManagementFormEventCopyWithImpl<$Res>
-  implements _$SubmittedCopyWith<$Res> {
+class __$SubmittedCopyWithImpl<$Res>
+    extends _$AchievementManagementFormEventCopyWithImpl<$Res>
+    implements _$SubmittedCopyWith<$Res> {
   __$SubmittedCopyWithImpl(_Submitted _value, $Res Function(_Submitted) _then)
-    : super(_value, (v) => _then(v as _Submitted));
-  
+      : super(_value, (v) => _then(v as _Submitted));
+
   @override
   _Submitted get _value => super._value as _Submitted;
 }
 
 /// @nodoc
+
 class _$_Submitted implements _Submitted {
   const _$_Submitted();
 
@@ -1039,38 +1008,31 @@ class _$_Submitted implements _Submitted {
 
   @override
   @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result initialized(Option<Achievement> achievementOption),
-    @required Result nameChanged(String name),
-    @required Result descriptionChanged(String description),
-    @required Result experiencePointsChanged(int experiencePoints),
-    @required Result tagsChanged(KtSet<Tag> tags),
-    @required Result imageChanged(File image),
-    @required Result submitted(),
+  TResult when<TResult extends Object?>({
+    required TResult Function(Option<Achievement> achievementOption)
+        initialized,
+    required TResult Function(String name) nameChanged,
+    required TResult Function(String description) descriptionChanged,
+    required TResult Function(int experiencePoints) experiencePointsChanged,
+    required TResult Function(KtSet<Tag> tags) tagsChanged,
+    required TResult Function(File image) imageChanged,
+    required TResult Function() submitted,
   }) {
-    assert(initialized != null);
-    assert(nameChanged != null);
-    assert(descriptionChanged != null);
-    assert(experiencePointsChanged != null);
-    assert(tagsChanged != null);
-    assert(imageChanged != null);
-    assert(submitted != null);
     return submitted();
   }
 
   @override
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result initialized(Option<Achievement> achievementOption),
-    Result nameChanged(String name),
-    Result descriptionChanged(String description),
-    Result experiencePointsChanged(int experiencePoints),
-    Result tagsChanged(KtSet<Tag> tags),
-    Result imageChanged(File image),
-    Result submitted(),
-    @required Result orElse(),
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(Option<Achievement> achievementOption)? initialized,
+    TResult Function(String name)? nameChanged,
+    TResult Function(String description)? descriptionChanged,
+    TResult Function(int experiencePoints)? experiencePointsChanged,
+    TResult Function(KtSet<Tag> tags)? tagsChanged,
+    TResult Function(File image)? imageChanged,
+    TResult Function()? submitted,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (submitted != null) {
       return submitted();
     }
@@ -1079,38 +1041,31 @@ class _$_Submitted implements _Submitted {
 
   @override
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result initialized(_Initialized value),
-    @required Result nameChanged(_NameChanged value),
-    @required Result descriptionChanged(_DescriptionChanged value),
-    @required Result experiencePointsChanged(_ExperiencePointsChanged value),
-    @required Result tagsChanged(_TagsChanged value),
-    @required Result imageChanged(_ImageChanged value),
-    @required Result submitted(_Submitted value),
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initialized value) initialized,
+    required TResult Function(_NameChanged value) nameChanged,
+    required TResult Function(_DescriptionChanged value) descriptionChanged,
+    required TResult Function(_ExperiencePointsChanged value)
+        experiencePointsChanged,
+    required TResult Function(_TagsChanged value) tagsChanged,
+    required TResult Function(_ImageChanged value) imageChanged,
+    required TResult Function(_Submitted value) submitted,
   }) {
-    assert(initialized != null);
-    assert(nameChanged != null);
-    assert(descriptionChanged != null);
-    assert(experiencePointsChanged != null);
-    assert(tagsChanged != null);
-    assert(imageChanged != null);
-    assert(submitted != null);
     return submitted(this);
   }
 
   @override
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result initialized(_Initialized value),
-    Result nameChanged(_NameChanged value),
-    Result descriptionChanged(_DescriptionChanged value),
-    Result experiencePointsChanged(_ExperiencePointsChanged value),
-    Result tagsChanged(_TagsChanged value),
-    Result imageChanged(_ImageChanged value),
-    Result submitted(_Submitted value),
-    @required Result orElse(),
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initialized value)? initialized,
+    TResult Function(_NameChanged value)? nameChanged,
+    TResult Function(_DescriptionChanged value)? descriptionChanged,
+    TResult Function(_ExperiencePointsChanged value)? experiencePointsChanged,
+    TResult Function(_TagsChanged value)? tagsChanged,
+    TResult Function(_ImageChanged value)? imageChanged,
+    TResult Function(_Submitted value)? submitted,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (submitted != null) {
       return submitted(this);
     }
@@ -1126,12 +1081,12 @@ abstract class _Submitted implements AchievementManagementFormEvent {
 class _$AchievementManagementFormStateTearOff {
   const _$AchievementManagementFormStateTearOff();
 
-// ignore: unused_element
-  _AchievementManagementFormState call({@required Achievement achievement,
-    @required bool showErrorMessages,
-    @required bool isEditing,
-    @required bool isSubmitting,
-    @required Option<Either<Failure, Unit>> failureOrSuccessOption}) {
+  _AchievementManagementFormState call(
+      {required Achievement achievement,
+      required bool showErrorMessages,
+      required bool isEditing,
+      required bool isSubmitting,
+      required Option<Either<Failure, Unit>> failureOrSuccessOption}) {
     return _AchievementManagementFormState(
       achievement: achievement,
       showErrorMessages: showErrorMessages,
@@ -1143,80 +1098,82 @@ class _$AchievementManagementFormStateTearOff {
 }
 
 /// @nodoc
-// ignore: unused_element
 const $AchievementManagementFormState =
-_$AchievementManagementFormStateTearOff();
+    _$AchievementManagementFormStateTearOff();
 
 /// @nodoc
 mixin _$AchievementManagementFormState {
-  Achievement get achievement;
-  
-  bool get showErrorMessages;
-  
-  bool get isEditing;
-  
-  bool get isSubmitting;
-  
-  Option<Either<Failure, Unit>> get failureOrSuccessOption;
-  
+  Achievement get achievement => throw _privateConstructorUsedError;
+  bool get showErrorMessages => throw _privateConstructorUsedError;
+  bool get isEditing => throw _privateConstructorUsedError;
+  bool get isSubmitting => throw _privateConstructorUsedError;
+  Option<Either<Failure, Unit>> get failureOrSuccessOption =>
+      throw _privateConstructorUsedError;
+
+  @JsonKey(ignore: true)
   $AchievementManagementFormStateCopyWith<AchievementManagementFormState>
-  get copyWith;
+      get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $AchievementManagementFormStateCopyWith<$Res> {
-  factory $AchievementManagementFormStateCopyWith(AchievementManagementFormState value,
-    $Res Function(AchievementManagementFormState) then) =
-  _$AchievementManagementFormStateCopyWithImpl<$Res>;
-  
-  $Res call({Achievement achievement,
-    bool showErrorMessages,
-    bool isEditing,
-    bool isSubmitting,
-    Option<Either<Failure, Unit>> failureOrSuccessOption});
-  
+  factory $AchievementManagementFormStateCopyWith(
+          AchievementManagementFormState value,
+          $Res Function(AchievementManagementFormState) then) =
+      _$AchievementManagementFormStateCopyWithImpl<$Res>;
+  $Res call(
+      {Achievement achievement,
+      bool showErrorMessages,
+      bool isEditing,
+      bool isSubmitting,
+      Option<Either<Failure, Unit>> failureOrSuccessOption});
+
   $AchievementCopyWith<$Res> get achievement;
 }
 
 /// @nodoc
 class _$AchievementManagementFormStateCopyWithImpl<$Res>
-  implements $AchievementManagementFormStateCopyWith<$Res> {
+    implements $AchievementManagementFormStateCopyWith<$Res> {
   _$AchievementManagementFormStateCopyWithImpl(this._value, this._then);
-  
+
   final AchievementManagementFormState _value;
-  
   // ignore: unused_field
   final $Res Function(AchievementManagementFormState) _then;
-  
+
   @override
   $Res call({
-    Object achievement = freezed,
-    Object showErrorMessages = freezed,
-    Object isEditing = freezed,
-    Object isSubmitting = freezed,
-    Object failureOrSuccessOption = freezed,
+    Object? achievement = freezed,
+    Object? showErrorMessages = freezed,
+    Object? isEditing = freezed,
+    Object? isSubmitting = freezed,
+    Object? failureOrSuccessOption = freezed,
   }) {
     return _then(_value.copyWith(
       achievement: achievement == freezed
-        ? _value.achievement
-        : achievement as Achievement,
+          ? _value.achievement
+          : achievement // ignore: cast_nullable_to_non_nullable
+              as Achievement,
       showErrorMessages: showErrorMessages == freezed
-        ? _value.showErrorMessages
-        : showErrorMessages as bool,
-      isEditing: isEditing == freezed ? _value.isEditing : isEditing as bool,
-      isSubmitting:
-      isSubmitting == freezed ? _value.isSubmitting : isSubmitting as bool,
+          ? _value.showErrorMessages
+          : showErrorMessages // ignore: cast_nullable_to_non_nullable
+              as bool,
+      isEditing: isEditing == freezed
+          ? _value.isEditing
+          : isEditing // ignore: cast_nullable_to_non_nullable
+              as bool,
+      isSubmitting: isSubmitting == freezed
+          ? _value.isSubmitting
+          : isSubmitting // ignore: cast_nullable_to_non_nullable
+              as bool,
       failureOrSuccessOption: failureOrSuccessOption == freezed
-        ? _value.failureOrSuccessOption
-        : failureOrSuccessOption as Option<Either<Failure, Unit>>,
+          ? _value.failureOrSuccessOption
+          : failureOrSuccessOption // ignore: cast_nullable_to_non_nullable
+              as Option<Either<Failure, Unit>>,
     ));
   }
 
   @override
   $AchievementCopyWith<$Res> get achievement {
-    if (_value.achievement == null) {
-      return null;
-    }
     return $AchievementCopyWith<$Res>(_value.achievement, (value) {
       return _then(_value.copyWith(achievement: value));
     });
@@ -1225,72 +1182,80 @@ class _$AchievementManagementFormStateCopyWithImpl<$Res>
 
 /// @nodoc
 abstract class _$AchievementManagementFormStateCopyWith<$Res>
-  implements $AchievementManagementFormStateCopyWith<$Res> {
-  factory _$AchievementManagementFormStateCopyWith(_AchievementManagementFormState value,
-    $Res Function(_AchievementManagementFormState) then) =
-  __$AchievementManagementFormStateCopyWithImpl<$Res>;
-  
+    implements $AchievementManagementFormStateCopyWith<$Res> {
+  factory _$AchievementManagementFormStateCopyWith(
+          _AchievementManagementFormState value,
+          $Res Function(_AchievementManagementFormState) then) =
+      __$AchievementManagementFormStateCopyWithImpl<$Res>;
   @override
-  $Res call({Achievement achievement,
-    bool showErrorMessages,
-    bool isEditing,
-    bool isSubmitting,
-    Option<Either<Failure, Unit>> failureOrSuccessOption});
-  
+  $Res call(
+      {Achievement achievement,
+      bool showErrorMessages,
+      bool isEditing,
+      bool isSubmitting,
+      Option<Either<Failure, Unit>> failureOrSuccessOption});
+
   @override
   $AchievementCopyWith<$Res> get achievement;
 }
 
 /// @nodoc
-class __$AchievementManagementFormStateCopyWithImpl<$Res> extends _$AchievementManagementFormStateCopyWithImpl<$Res>
-  implements _$AchievementManagementFormStateCopyWith<$Res> {
-  __$AchievementManagementFormStateCopyWithImpl(_AchievementManagementFormState _value,
-    $Res Function(_AchievementManagementFormState) _then)
-    : super(_value, (v) => _then(v as _AchievementManagementFormState));
-  
+class __$AchievementManagementFormStateCopyWithImpl<$Res>
+    extends _$AchievementManagementFormStateCopyWithImpl<$Res>
+    implements _$AchievementManagementFormStateCopyWith<$Res> {
+  __$AchievementManagementFormStateCopyWithImpl(
+      _AchievementManagementFormState _value,
+      $Res Function(_AchievementManagementFormState) _then)
+      : super(_value, (v) => _then(v as _AchievementManagementFormState));
+
   @override
   _AchievementManagementFormState get _value =>
-    super._value as _AchievementManagementFormState;
-  
+      super._value as _AchievementManagementFormState;
+
   @override
   $Res call({
-    Object achievement = freezed,
-    Object showErrorMessages = freezed,
-    Object isEditing = freezed,
-    Object isSubmitting = freezed,
-    Object failureOrSuccessOption = freezed,
+    Object? achievement = freezed,
+    Object? showErrorMessages = freezed,
+    Object? isEditing = freezed,
+    Object? isSubmitting = freezed,
+    Object? failureOrSuccessOption = freezed,
   }) {
     return _then(_AchievementManagementFormState(
       achievement: achievement == freezed
-        ? _value.achievement
-        : achievement as Achievement,
+          ? _value.achievement
+          : achievement // ignore: cast_nullable_to_non_nullable
+              as Achievement,
       showErrorMessages: showErrorMessages == freezed
-        ? _value.showErrorMessages
-        : showErrorMessages as bool,
-      isEditing: isEditing == freezed ? _value.isEditing : isEditing as bool,
-      isSubmitting:
-      isSubmitting == freezed ? _value.isSubmitting : isSubmitting as bool,
+          ? _value.showErrorMessages
+          : showErrorMessages // ignore: cast_nullable_to_non_nullable
+              as bool,
+      isEditing: isEditing == freezed
+          ? _value.isEditing
+          : isEditing // ignore: cast_nullable_to_non_nullable
+              as bool,
+      isSubmitting: isSubmitting == freezed
+          ? _value.isSubmitting
+          : isSubmitting // ignore: cast_nullable_to_non_nullable
+              as bool,
       failureOrSuccessOption: failureOrSuccessOption == freezed
-        ? _value.failureOrSuccessOption
-        : failureOrSuccessOption as Option<Either<Failure, Unit>>,
+          ? _value.failureOrSuccessOption
+          : failureOrSuccessOption // ignore: cast_nullable_to_non_nullable
+              as Option<Either<Failure, Unit>>,
     ));
   }
 }
 
 /// @nodoc
+
 class _$_AchievementManagementFormState
-  implements _AchievementManagementFormState {
-  const _$_AchievementManagementFormState({@required this.achievement,
-    @required this.showErrorMessages,
-    @required this.isEditing,
-    @required this.isSubmitting,
-    @required this.failureOrSuccessOption})
-    : assert(achievement != null),
-      assert(showErrorMessages != null),
-      assert(isEditing != null),
-      assert(isSubmitting != null),
-      assert(failureOrSuccessOption != null);
-  
+    implements _AchievementManagementFormState {
+  const _$_AchievementManagementFormState(
+      {required this.achievement,
+      required this.showErrorMessages,
+      required this.isEditing,
+      required this.isSubmitting,
+      required this.failureOrSuccessOption});
+
   @override
   final Achievement achievement;
   @override
@@ -1310,22 +1275,22 @@ class _$_AchievementManagementFormState
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-      (other is _AchievementManagementFormState &&
-        (identical(other.achievement, achievement) ||
-          const DeepCollectionEquality()
-            .equals(other.achievement, achievement)) &&
-        (identical(other.showErrorMessages, showErrorMessages) ||
-          const DeepCollectionEquality()
-            .equals(other.showErrorMessages, showErrorMessages)) &&
-        (identical(other.isEditing, isEditing) ||
-          const DeepCollectionEquality()
-            .equals(other.isEditing, isEditing)) &&
-        (identical(other.isSubmitting, isSubmitting) ||
-          const DeepCollectionEquality()
-            .equals(other.isSubmitting, isSubmitting)) &&
-        (identical(other.failureOrSuccessOption, failureOrSuccessOption) ||
-          const DeepCollectionEquality().equals(
-            other.failureOrSuccessOption, failureOrSuccessOption)));
+        (other is _AchievementManagementFormState &&
+            (identical(other.achievement, achievement) ||
+                const DeepCollectionEquality()
+                    .equals(other.achievement, achievement)) &&
+            (identical(other.showErrorMessages, showErrorMessages) ||
+                const DeepCollectionEquality()
+                    .equals(other.showErrorMessages, showErrorMessages)) &&
+            (identical(other.isEditing, isEditing) ||
+                const DeepCollectionEquality()
+                    .equals(other.isEditing, isEditing)) &&
+            (identical(other.isSubmitting, isSubmitting) ||
+                const DeepCollectionEquality()
+                    .equals(other.isSubmitting, isSubmitting)) &&
+            (identical(other.failureOrSuccessOption, failureOrSuccessOption) ||
+                const DeepCollectionEquality().equals(
+                    other.failureOrSuccessOption, failureOrSuccessOption)));
   }
 
   @override
@@ -1336,39 +1301,37 @@ class _$_AchievementManagementFormState
       const DeepCollectionEquality().hash(isEditing) ^
       const DeepCollectionEquality().hash(isSubmitting) ^
       const DeepCollectionEquality().hash(failureOrSuccessOption);
-  
+
+  @JsonKey(ignore: true)
   @override
   _$AchievementManagementFormStateCopyWith<_AchievementManagementFormState>
-  get copyWith =>
-    __$AchievementManagementFormStateCopyWithImpl<
-      _AchievementManagementFormState>(this, _$identity);
+      get copyWith => __$AchievementManagementFormStateCopyWithImpl<
+          _AchievementManagementFormState>(this, _$identity);
 }
 
 abstract class _AchievementManagementFormState
-  implements AchievementManagementFormState {
-  const factory _AchievementManagementFormState({@required Achievement achievement,
-    @required bool showErrorMessages,
-    @required bool isEditing,
-    @required bool isSubmitting,
-    @required Option<Either<Failure, Unit>> failureOrSuccessOption}) =
-  _$_AchievementManagementFormState;
-  
+    implements AchievementManagementFormState {
+  const factory _AchievementManagementFormState(
+          {required Achievement achievement,
+          required bool showErrorMessages,
+          required bool isEditing,
+          required bool isSubmitting,
+          required Option<Either<Failure, Unit>> failureOrSuccessOption}) =
+      _$_AchievementManagementFormState;
+
   @override
-  Achievement get achievement;
-  
+  Achievement get achievement => throw _privateConstructorUsedError;
   @override
-  bool get showErrorMessages;
-  
+  bool get showErrorMessages => throw _privateConstructorUsedError;
   @override
-  bool get isEditing;
-  
+  bool get isEditing => throw _privateConstructorUsedError;
   @override
-  bool get isSubmitting;
-  
+  bool get isSubmitting => throw _privateConstructorUsedError;
   @override
-  Option<Either<Failure, Unit>> get failureOrSuccessOption;
-  
+  Option<Either<Failure, Unit>> get failureOrSuccessOption =>
+      throw _privateConstructorUsedError;
   @override
+  @JsonKey(ignore: true)
   _$AchievementManagementFormStateCopyWith<_AchievementManagementFormState>
-  get copyWith;
+      get copyWith => throw _privateConstructorUsedError;
 }

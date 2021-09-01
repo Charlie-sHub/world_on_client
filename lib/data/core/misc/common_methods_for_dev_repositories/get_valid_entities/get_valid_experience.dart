@@ -12,10 +12,11 @@ import 'package:worldon/domain/core/validation/objects/entity_description.dart';
 import 'package:worldon/domain/core/validation/objects/latitude.dart';
 import 'package:worldon/domain/core/validation/objects/longitude.dart';
 import 'package:worldon/domain/core/validation/objects/name.dart';
-import 'package:worldon/domain/core/validation/objects/objective_set.dart';
+import 'package:worldon/domain/core/validation/objects/objective_list.dart';
 import 'package:worldon/domain/core/validation/objects/past_date.dart';
 import 'package:worldon/domain/core/validation/objects/reward_set.dart';
 import 'package:worldon/domain/core/validation/objects/tag_set.dart';
+import 'package:worldon/domain/core/validation/objects/unique_id.dart';
 
 import 'get_valid_location.dart';
 import 'get_valid_objective.dart';
@@ -23,37 +24,33 @@ import 'get_valid_reward.dart';
 
 Experience getValidExperience() {
   return Experience.empty().copyWith(
-    id: 1,
+    id: UniqueId(),
     title: Name("Malesuada fames ac ante"),
-    description: EntityDescription("Donec bibendum congue libero nec viverra. Cras eget placerat libero. Maecenas cursus turpis vitae ultricies tempus. In suscipit orci id dapibus molestie."),
+    description: EntityDescription(
+        "Donec bibendum congue libero nec viverra. Cras eget placerat libero. Maecenas cursus turpis vitae ultricies tempus. In suscipit orci id dapibus molestie."),
     imageURLs: {
       Assets.experiencePlaceholder,
-      "assets/experience_placeholder_image_2.jpeg",
-      "assets/experience_placeholder_image_3.jpeg",
-      "assets/experience_placeholder_image_4.jpeg",
-      "assets/experience_placeholder_image_5.jpeg",
-      "assets/experience_placeholder_image_6.jpeg",
-      "assets/experience_placeholder_image_7.jpeg",
     },
     coordinates: getValidCoordinates(),
     location: getValidLocation(),
-    creator: getValidUser(),
+    creator: getValidUser().simplified,
     difficulty: Difficulty(2),
     creationDate: PastDate(DateTime.now().subtract(const Duration(days: 100))),
     modificationDate: PastDate(DateTime.now()),
-    objectives: ObjectiveSet(
-      KtSet.of(
+    objectives: ObjectiveList(
+      KtList.of(
         getValidObjective(),
         getValidObjective().copyWith(
-          id: 2,
-          description: EntityDescription("Poaching Whistler cruiser white room, carbon chowder dirtbag death cookies steeps."),
+          id: UniqueId(),
+          description: EntityDescription(
+              "Poaching Whistler cruiser white room, carbon chowder dirtbag death cookies steeps."),
           coordinates: Coordinates(
             latitude: Latitude(40.428938),
             longitude: Longitude(-3.680765),
           ),
         ),
         getValidObjective().copyWith(
-          id: 3,
+          id: UniqueId(),
           description: EntityDescription("Vaporware post-ironic listicle."),
           coordinates: Coordinates(
             latitude: Latitude(40.425292),
@@ -61,7 +58,7 @@ Experience getValidExperience() {
           ),
         ),
         getValidObjective().copyWith(
-          id: 4,
+          id: UniqueId(),
           description: EntityDescription("Yard sale poaching cork afterbang giblets stomp saddle."),
           coordinates: Coordinates(
             latitude: Latitude(40.412429),
@@ -69,7 +66,7 @@ Experience getValidExperience() {
           ),
         ),
         getValidObjective().copyWith(
-          id: 5,
+          id: UniqueId(),
           description: EntityDescription("""
 Stoked wheelie cork jib roadie. Pow pow twin tip bomb hole north shore, spread eagle misty pow clipless wheelie.
 Chillax gapers Whistler skid."""),
@@ -79,8 +76,9 @@ Chillax gapers Whistler skid."""),
           ),
         ),
         getValidObjective().copyWith(
-          id: 6,
-          description: EntityDescription("Disrupt selvage blue bottle whatever, synth craft beer messenger bag."),
+          id: UniqueId(),
+          description: EntityDescription(
+              "Disrupt selvage blue bottle whatever, synth craft beer messenger bag."),
           coordinates: Coordinates(
             latitude: Latitude(40.435630),
             longitude: Longitude(-3.644995),
@@ -92,12 +90,12 @@ Chillax gapers Whistler skid."""),
       KtSet.of(
         getValidReward(),
         getValidReward().copyWith(
-          id: 2,
+          id: UniqueId(),
           name: Name("Park rat"),
           description: EntityDescription("Pow pow rip flow piste line."),
         ),
         getValidReward().copyWith(
-          id: 2,
+          id: UniqueId(),
           name: Name("Snackwave"),
           description: EntityDescription("Copper mug narwhal."),
         ),
@@ -107,15 +105,15 @@ Chillax gapers Whistler skid."""),
       KtSet.of(
         getValidTag(),
         getValidTag().copyWith(
-          id: 2,
+          id: UniqueId(),
           name: Name("Food"),
         ),
         getValidTag().copyWith(
-          id: 3,
+          id: UniqueId(),
           name: Name("Outdoors"),
         ),
         getValidTag().copyWith(
-          id: 4,
+          id: UniqueId(),
           name: Name("Fashion"),
         ),
       ),
@@ -123,19 +121,20 @@ Chillax gapers Whistler skid."""),
     comments: {
       getValidComment(),
       getValidComment().copyWith(
-        id: 2,
+        id: UniqueId(),
         content: CommentContent("Vinyl retro keytar biodiesel."),
       ),
       getValidComment().copyWith(
-        id: 3,
-        content: CommentContent("Af paleo tacos, pinterest bespoke yuccie VHS messenger bag small batch."),
+        id: UniqueId(),
+        content: CommentContent(
+            "Af paleo tacos, pinterest bespoke yuccie VHS messenger bag small batch."),
       ),
       getValidComment().copyWith(
-        id: 4,
+        id: UniqueId(),
         content: CommentContent("Typewriter plaid fam squid yuccie cloud bread street art."),
       ),
     },
-    likedBy: {getValidUser()},
-    doneBy: {getValidUser()},
+    likedBy: {UniqueId()},
+    doneBy: {UniqueId()},
   );
 }

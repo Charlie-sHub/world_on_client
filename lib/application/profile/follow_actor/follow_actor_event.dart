@@ -1,10 +1,19 @@
 part of 'follow_actor_bloc.dart';
 
 @freezed
-abstract class FollowActorEvent with _$FollowActorEvent {
-  const factory FollowActorEvent.initialized(User user) = _Initialized;
+class FollowActorEvent with _$FollowActorEvent {
+  const factory FollowActorEvent.initialized(
+    UniqueId userId,
+    Set<UniqueId> followedUsersIds,
+  ) = _Initialized;
 
-  const factory FollowActorEvent.followed(User user) = _Followed;
+  const factory FollowActorEvent.followed(
+    UniqueId userToFollowId,
+    SimpleUser currentUser,
+  ) = _Followed;
 
-  const factory FollowActorEvent.unFollowed(User user) = _UnFollowed;
+  const factory FollowActorEvent.unFollowed(
+    UniqueId userToUnFollowId,
+    SimpleUser currentUser,
+  ) = _UnFollowed;
 }

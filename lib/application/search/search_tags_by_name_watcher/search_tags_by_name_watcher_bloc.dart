@@ -19,7 +19,8 @@ part 'search_tags_by_name_watcher_state.dart';
 @injectable
 class SearchTagsByNameWatcherBloc extends Bloc<SearchTagsByNameWatcherEvent, SearchTagsByNameWatcherState> {
   SearchTagsByNameWatcherBloc() : super(const SearchTagsByNameWatcherState.initial());
-  StreamSubscription<Either<Failure, KtList<Tag>>> _tagsStreamSubscription;
+
+  StreamSubscription<Either<Failure, KtList<Tag>>>? _tagsStreamSubscription;
 
   @override
   Stream<SearchTagsByNameWatcherState> mapEventToState(SearchTagsByNameWatcherEvent event) async* {

@@ -8,6 +8,7 @@ import 'package:worldon/data/core/failures/core_data_failure.dart';
 import 'package:worldon/domain/comments/repository/comment_repository_interface.dart';
 import 'package:worldon/domain/comments/use_case/watch_experience_comments.dart';
 import 'package:worldon/domain/core/entities/comment/comment.dart';
+import 'package:worldon/domain/core/validation/objects/unique_id.dart';
 import 'package:worldon/injection.dart';
 
 import '../../../test_descriptions.dart';
@@ -23,7 +24,7 @@ void main() {
       useCase = WatchExperienceComments(mockCommentRepository);
     },
   );
-  final params = Params(experienceId: 1);
+  final params = Params(experienceId: UniqueId());
   final commentList = KtList.of(Comment.empty());
   test(
     "Should return a Set of Comments",

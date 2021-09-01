@@ -5,12 +5,13 @@ import 'package:bloc/bloc.dart';
 import 'package:dartz/dartz.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:injectable/injectable.dart';
+import 'package:kt_dart/collection.dart';
 import 'package:meta/meta.dart';
+import 'package:worldon/application/core/failures/core_application_failure.dart';
 import 'package:worldon/core/error/failure.dart';
-import 'package:worldon/domain/authentication/use_case/get_logged_in_user.dart';
 import 'package:worldon/domain/authentication/use_case/register.dart';
+import 'package:worldon/domain/core/entities/tag/tag.dart';
 import 'package:worldon/domain/core/entities/user/user.dart';
-import 'package:worldon/domain/core/use_case/use_case.dart';
 import 'package:worldon/domain/core/validation/objects/email_address.dart';
 import 'package:worldon/domain/core/validation/objects/entity_description.dart';
 import 'package:worldon/domain/core/validation/objects/name.dart';
@@ -53,18 +54,29 @@ class RegistrationFormBloc extends Bloc<RegistrationFormEvent, RegistrationFormS
   }
 
   Stream<RegistrationFormState> _onSubmitted(_) async* {
-    Either<Failure, Unit> _failureOrUnit;
+    Either<Failure, Unit>? _failureOrUnit;
     yield state.copyWith(
       isSubmitting: true,
       failureOrSuccessOption: none(),
     );
-    final _canRegister = state.user.isValid && state.passwordConfirmator.isValid() && state.acceptedEULA && state.user.imageFileOption.isSome();
+    final _hasImage = state.user.imageFileOption.isSome() || state.user.imageURL.isNotEmpty;
+    final _canRegister = state.user.isValid && state.passwordConfirmator.isValid() && state.acceptedEULA && _hasImage;
     if (_canRegister) {
-      // TODO: Create default Options for the user before registering
-      // For now with the languageCode of the phone
       _failureOrUnit = await getIt<Register>()(
         Params(
           user: state.user,
+        ),
+      );
+    } else {
+      yield state.copyWith(
+        isSubmitting: false,
+        showErrorMessages: true,
+        failureOrSuccessOption: some(
+          left(
+            const Failure.coreApplication(
+              CoreApplicationFailure.emptyFields(),
+            ),
+          ),
         ),
       );
     }
@@ -78,7 +90,7 @@ class RegistrationFormBloc extends Bloc<RegistrationFormEvent, RegistrationFormS
   Stream<RegistrationFormState> _onInterestsChanged(_InterestsChanged event) async* {
     yield state.copyWith(
       user: state.user.copyWith(
-        interestsIds: event.interests,
+        interestsIds: event.interests.map((_tag) => _tag.id).asList().toSet(),
       ),
       failureOrSuccessOption: none(),
     );
@@ -165,17 +177,17 @@ class RegistrationFormBloc extends Bloc<RegistrationFormEvent, RegistrationFormS
     );
   }
 
-  Stream<RegistrationFormState> _onInitialized(_) async* {
-    final _userOption = await getIt<GetLoggedInUser>()(getIt<NoParams>());
-    yield _userOption.fold(
-      () => state,
-      (user) => state.copyWith(
-        user: user,
-        passwordConfirmator: PasswordConfirmator(
-          password: user.password.getOrCrash(),
-          confirmation: user.password.getOrCrash(),
-        ),
+  Stream<RegistrationFormState> _onInitialized(_Initialized event) async* {
+    yield event.userOption.fold(
+      () => state.copyWith(
+        initialized: true,
       ),
+      (_user) {
+        return state.copyWith(
+          user: _user,
+          initialized: true,
+        );
+      },
     );
   }
 }

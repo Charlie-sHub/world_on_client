@@ -1,26 +1,26 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:worldon/domain/core/entities/options/options.dart';
+import 'package:worldon/domain/core/validation/objects/unique_id.dart';
 
 part 'options_dto.freezed.dart';
-
 part 'options_dto.g.dart';
 
 @freezed
-abstract class OptionsDto implements _$OptionsDto {
+class OptionsDto with _$OptionsDto {
   const OptionsDto._();
 
   const factory OptionsDto({
-    @required int id,
-    @required String languageCode,
+    required String id,
+    required String languageCode,
   }) = _OptionsDto;
 
   factory OptionsDto.fromDomain(Options options) => OptionsDto(
-        id: options.id,
+        id: options.id.getOrCrash(),
         languageCode: options.languageCode,
       );
 
   Options toDomain() => Options(
-        id: id,
+        id: UniqueId.fromUniqueString(id),
         languageCode: languageCode,
       );
 

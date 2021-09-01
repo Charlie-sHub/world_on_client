@@ -12,15 +12,12 @@ class RewardSet extends ValueObject<KtSet<Reward>> {
   // Just a value that made sense at the time
   static const maxLength = 5;
 
-  factory RewardSet(KtSet<Reward> input) {
-    assert(input != null);
-    return RewardSet._(
-      validateMaxSetLength(
-        input: input,
-        maxLength: maxLength,
-      ),
-    );
-  }
+  factory RewardSet(KtSet<Reward> input) => RewardSet._(
+        validateMaxSetLength(
+          input: input,
+          maxLength: maxLength,
+        ),
+      );
 
   const RewardSet._(this.value);
 
@@ -52,6 +49,14 @@ class RewardSet extends ValueObject<KtSet<Reward>> {
 
   bool get isFull {
     return length == maxLength;
+  }
+
+  bool get isEmpty {
+    return value.getOrElse(() => const KtSet<Reward>.empty()).isEmpty();
+  }
+
+  bool get isNotEmpty {
+    return value.getOrElse(() => const KtSet<Reward>.empty()).isNotEmpty();
   }
 
   @override

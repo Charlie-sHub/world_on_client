@@ -4,45 +4,40 @@ import 'package:kt_dart/kt.dart';
 import 'package:worldon/core/error/failure.dart';
 import 'package:worldon/domain/achievement_management/repository/achievement_repository_interface.dart';
 import 'package:worldon/domain/core/entities/achievement/achievement.dart';
+import 'package:worldon/domain/core/validation/objects/unique_id.dart';
 
 @LazySingleton(as: AchievementRepositoryInterface, env: [Environment.prod])
 class ProductionAchievementRepository implements AchievementRepositoryInterface {
   @override
   Future<Either<Failure, Unit>> awardAchievement({
-    int achievementId,
-    int userId,
+    required UniqueId achievementId,
+    required UniqueId userId,
   }) {
-    // TODO: implement awardAchievement
     throw UnimplementedError();
   }
 
   @override
   Future<Either<Failure, Unit>> createAchievement(Achievement achievement) {
-    // TODO: implement createAchievement
     throw UnimplementedError();
   }
 
   @override
   Future<Either<Failure, Unit>> editAchievement(Achievement achievement) {
-    // TODO: implement editAchievement
     throw UnimplementedError();
   }
 
   @override
-  Future<Either<Failure, Achievement>> getAchievement(int ac) {
-    // TODO: implement getAchievement
+  Future<Either<Failure, Achievement>> getAchievement(UniqueId ac) {
     throw UnimplementedError();
   }
 
   @override
   Stream<Either<Failure, KtList<Achievement>>> watchAllAchievements() {
-    // TODO: implement getAllAchievement
     throw UnimplementedError();
   }
 
   @override
-  Future<Either<Failure, Unit>> removeAchievement(int ac) {
-    // TODO: implement removeAchievement
+  Future<Either<Failure, Unit>> removeAchievement(UniqueId ac) {
     throw UnimplementedError();
   }
 }

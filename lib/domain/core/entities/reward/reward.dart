@@ -7,6 +7,7 @@ import 'package:worldon/domain/core/entities/user/user.dart';
 import 'package:worldon/domain/core/failures/value_failure.dart';
 import 'package:worldon/domain/core/validation/objects/entity_description.dart';
 import 'package:worldon/domain/core/validation/objects/name.dart';
+import 'package:worldon/domain/core/validation/objects/unique_id.dart';
 
 part 'reward.freezed.dart';
 
@@ -14,18 +15,19 @@ part 'reward.freezed.dart';
 ///
 /// [Reward]s are given to [User]s for doing [Experience]s, rewards will be set by the [User]s creating the Experience.
 @freezed
-abstract class Reward implements _$Reward {
+class Reward with _$Reward {
   const Reward._();
 
   const factory Reward({
-    int id,
-    @required Name name,
-    @required EntityDescription description,
-    @required String imageURL,
-    @required Option<File> imageFile,
+    required UniqueId id,
+    required Name name,
+    required EntityDescription description,
+    required String imageURL,
+    required Option<File> imageFile,
   }) = _Reward;
 
   factory Reward.empty() => Reward(
+        id: UniqueId(),
         name: Name(""),
         description: EntityDescription(""),
         imageURL: "",

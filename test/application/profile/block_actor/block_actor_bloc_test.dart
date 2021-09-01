@@ -9,6 +9,7 @@ import 'package:worldon/data/core/failures/core_data_failure.dart';
 import 'package:worldon/data/core/misc/common_methods_for_dev_repositories/get_valid_entities/get_valid_user.dart';
 import 'package:worldon/domain/authentication/use_case/get_logged_in_user.dart';
 import 'package:worldon/domain/core/failures/error.dart';
+import 'package:worldon/domain/core/validation/objects/unique_id.dart';
 import 'package:worldon/domain/profile/use_case/block_user.dart';
 import 'package:worldon/domain/profile/use_case/un_block_user.dart';
 import 'package:worldon/injection.dart';
@@ -28,9 +29,9 @@ void main() {
     },
   );
   final blockedUser = getValidUser();
-  final notBlockedUser = getValidUser().copyWith(id: 2);
+  final notBlockedUser = getValidUser().copyWith(id: UniqueId());
   final loggedInUser = getValidUser().copyWith(
-    id: 3,
+    id: UniqueId(),
     blockedUsersIds: {
       blockedUser.id,
     },

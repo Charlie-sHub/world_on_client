@@ -1,7 +1,7 @@
 part of 'achievement_management_form_bloc.dart';
 
 @freezed
-abstract class AchievementManagementFormEvent with _$AchievementManagementFormEvent {
+class AchievementManagementFormEvent with _$AchievementManagementFormEvent {
   const factory AchievementManagementFormEvent.initialized(Option<Achievement> achievementOption) = _Initialized;
 
   const factory AchievementManagementFormEvent.nameChanged(String name) = _NameChanged;

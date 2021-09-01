@@ -1,7 +1,7 @@
 part of 'notification_actor_bloc.dart';
 
 @freezed
-abstract class NotificationActorState with _$NotificationActorState {
+class NotificationActorState with _$NotificationActorState {
   const factory NotificationActorState.initial() = _Initial;
 
   const factory NotificationActorState.actionInProgress() = _ActionInProgress;

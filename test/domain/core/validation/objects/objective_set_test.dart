@@ -6,17 +6,17 @@ import 'package:worldon/domain/core/validation/objects/objective_set.dart';
 import '../../../../test_descriptions.dart';
 
 void main() {
-  final validSet = KtSet.of(Objective.empty());
-  const emptySet = KtSet<Objective>.empty();
-  final tooBigSet = _fillSet();
+  final _validList = KtList.of(Objective.empty());
+  const emptySet = KtList<Objective>.empty();
+  final tooBigSet = _fillList();
   test(
     TestDescription.valid,
     () async {
       // Act
-      final objectives = ObjectiveSet(validSet);
+      final objectives = ObjectiveList(_validList);
       // Assert
       expect(objectives.isValid(), true);
-      expect(objectives.getOrCrash(), validSet);
+      expect(objectives.getOrCrash(), _validList);
     },
   );
   group(
@@ -26,7 +26,7 @@ void main() {
         "${TestDescription.invalid} with emptySet",
         () async {
           // Act
-          final objectives = ObjectiveSet(emptySet);
+          final objectives = ObjectiveList(emptySet);
           // Assert
           expect(objectives.isValid(), false);
         },
@@ -35,7 +35,7 @@ void main() {
         "${TestDescription.invalid} with tooBigSet",
         () async {
           // Act
-          final objectives = ObjectiveSet(tooBigSet);
+          final objectives = ObjectiveList(tooBigSet);
           // Assert
           expect(objectives.isValid(), false);
         },
@@ -45,18 +45,16 @@ void main() {
 }
 
 // Maybe there's a better way to fill the Set
-KtSet<Objective> _fillSet() {
-  return {
-    Objective.empty().copyWith(id: 1),
-    Objective.empty().copyWith(id: 2),
-    Objective.empty().copyWith(id: 3),
-    Objective.empty().copyWith(id: 4),
-    Objective.empty().copyWith(id: 5),
-    Objective.empty().copyWith(id: 6),
-    Objective.empty().copyWith(id: 7),
-    Objective.empty().copyWith(id: 8),
-    Objective.empty().copyWith(id: 9),
-    Objective.empty().copyWith(id: 10),
-    Objective.empty().copyWith(id: 11),
-  }.toImmutableSet();
-}
+KtList<Objective> _fillList() => {
+      Objective.empty(),
+      Objective.empty(),
+      Objective.empty(),
+      Objective.empty(),
+      Objective.empty(),
+      Objective.empty(),
+      Objective.empty(),
+      Objective.empty(),
+      Objective.empty(),
+      Objective.empty(),
+      Objective.empty(),
+    }.toImmutableList();

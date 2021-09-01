@@ -13,7 +13,5 @@ class WatchAllAchievements implements StreamUseCase<KtList<Achievement>, NoParam
   WatchAllAchievements(this._repository);
 
   @override
-  Stream<Either<Failure, KtList<Achievement>>> call(NoParams params) {
-    return _repository.watchAllAchievements();
-  }
+  Stream<Either<Failure, KtList<Achievement>>> call(NoParams params) => _repository.watchAllAchievements();
 }

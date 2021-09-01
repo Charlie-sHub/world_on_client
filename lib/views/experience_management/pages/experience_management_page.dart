@@ -1,87 +1,161 @@
-import 'package:auto_route/auto_route.dart';
-import 'package:dartz/dartz.dart';
-import 'package:flushbar/flushbar_helper.dart';
+import 'package:dartz/dartz.dart' hide State;
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:multi_image_picker/multi_image_picker.dart';
+import 'package:showcaseview/showcaseview.dart';
 import 'package:worldon/application/experience_management/experience_management_form/experience_management_form_bloc.dart';
-import 'package:worldon/core/error/failure.dart';
+import 'package:worldon/application/experience_management/experience_management_show_case/experience_management_show_case_bloc.dart';
 import 'package:worldon/domain/core/entities/experience/experience.dart';
+import 'package:worldon/generated/l10n.dart';
 import 'package:worldon/injection.dart';
-import 'package:worldon/views/experience_management/widget/experience_management_form.dart';
+import 'package:worldon/views/experience_management/widgets/experience_creation/experience_creation_form.dart';
+import 'package:worldon/views/experience_management/widgets/experience_editing/experience_editing_form.dart';
 
 class ExperienceManagementPage extends StatelessWidget {
-  final Option<Experience> experienceOption;
-
   const ExperienceManagementPage({
-    Key key,
-    @required this.experienceOption,
+    Key? key,
+    required this.experienceOption,
   }) : super(key: key);
+
+  final Option<Experience> experienceOption;
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        centerTitle: true,
-        title: const Text(
-          "Create a new Experience!",
-          textAlign: TextAlign.center,
-          style: TextStyle(
-            fontWeight: FontWeight.bold,
-            fontSize: 25,
+    final _scrollController = ScrollController();
+    final _difficultyKey = GlobalKey();
+    final _mapKey = GlobalKey();
+    final _objectiveFormKey = GlobalKey();
+    final _tagCreationKey = GlobalKey();
+    final _keys = [
+      _difficultyKey,
+      _mapKey,
+      _objectiveFormKey,
+      _tagCreationKey,
+    ];
+    return SafeArea(
+      child: BlocProvider(
+        create: (context) => getIt<ExperienceManagementShowCaseBloc>(),
+        child: ShowCaseWidget(
+          onStart: (_, key) => _onShowCaseStart(
+            key,
+            _difficultyKey,
+            _scrollController,
+            _mapKey,
+            _objectiveFormKey,
+            _tagCreationKey,
           ),
-        ),
-      ),
-      body: BlocProvider(
-        create: (context) => getIt<ExperienceManagementFormBloc>()
-          ..add(
-            ExperienceManagementFormEvent.initialized(experienceOption),
-          ),
-        child: BlocConsumer<ExperienceManagementFormBloc, ExperienceManagementFormState>(
-          listenWhen: (previous, current) => previous.failureOrSuccessOption != current.failureOrSuccessOption,
-          listener: (context, state) => state.failureOrSuccessOption.fold(
-            () => null,
-            (either) => either.fold(
-              (failure) => _onFailure(failure, context),
-              (_) => context.navigator.pop(),
+          onFinish: () {
+            // For some reason the bloc can't be found when adding this event
+            // It's not really necessary though
+            /*
+            context.read<ExperienceManagementShowCaseBloc>().add(
+                  const ExperienceManagementShowCaseEvent.finished(),
+                );
+             */
+            _scrollController.jumpTo(0);
+          },
+          builder: Builder(
+            builder: (context) =>
+                BlocListener<ExperienceManagementShowCaseBloc, ExperienceManagementShowCaseState>(
+              listener: (context, state) => state.maybeMap(
+                show: (_) => ShowCaseWidget.of(context)!.startShowCase(_keys),
+                orElse: () {},
+              ),
+              child: Scaffold(
+                body: NestedScrollView(
+                  dragStartBehavior: DragStartBehavior.down,
+                  clipBehavior: Clip.antiAlias,
+                  floatHeaderSlivers: true,
+                  headerSliverBuilder: (context, innerBoxIsScrolled) => [
+                    SliverAppBar(
+                      expandedHeight: kToolbarHeight - 15,
+                      elevation: 10,
+                      centerTitle: true,
+                      backwardsCompatibility: false,
+                      actions: [
+                        IconButton(
+                          padding: EdgeInsets.zero,
+                          icon: const Icon(
+                            Icons.help,
+                            size: 25,
+                            // color: WorldOnColors.accent,
+                          ),
+                          onPressed: () => context.read<ExperienceManagementShowCaseBloc>().add(
+                                const ExperienceManagementShowCaseEvent.helpButtonPressed(),
+                              ),
+                        ),
+                      ],
+                      flexibleSpace: FlexibleSpaceBar(
+                        title: Text(
+                          experienceOption.fold(
+                            () => S.of(context).experienceCreationTitle,
+                            (a) => S.of(context).experienceEditingTitle,
+                          ),
+                          textAlign: TextAlign.center,
+                          style: const TextStyle(
+                            fontWeight: FontWeight.w800,
+                            fontSize: 18,
+                          ),
+                        ),
+                      ),
+                    ),
+                  ],
+                  body: BlocProvider(
+                    create: (context) => getIt<ExperienceManagementFormBloc>()
+                      ..add(
+                        ExperienceManagementFormEvent.initialized(experienceOption),
+                      ),
+                    child: experienceOption.fold(
+                      () => ExperienceCreationForm(
+                        difficultyShowKey: _difficultyKey,
+                        mapShowKey: _mapKey,
+                        objectivesShowKey: _objectiveFormKey,
+                        tagCreationShowKey: _tagCreationKey,
+                        scrollController: _scrollController,
+                      ),
+                      (_experience) => ExperienceEditingForm(
+                        experience: _experience,
+                        difficultyShowKey: _difficultyKey,
+                        mapShowKey: _mapKey,
+                        objectivesShowKey: _objectiveFormKey,
+                        tagCreationShowKey: _tagCreationKey,
+                        scrollController: _scrollController,
+                      ),
+                    ),
+                  ),
+                ),
+              ),
             ),
           ),
-          buildWhen: _buildWhen,
-          builder: (context, state) => ExperienceManagementForm(),
         ),
       ),
     );
   }
 
-  void _onFailure(Failure failure, BuildContext context) => failure.maybeMap(
-        coreData: (_coreDataFailure) => _coreDataFailure.coreDataFailure.maybeMap(
-          nameAlreadyInUse: (_) => FlushbarHelper.createError(
-            duration: const Duration(seconds: 2),
-            message: "The title is already in use",
-          ).show(context),
-          serverError: (failure) => FlushbarHelper.createError(
-            duration: const Duration(seconds: 2),
-            message: failure.errorString,
-          ).show(context),
-          orElse: () => FlushbarHelper.createError(
-            duration: const Duration(seconds: 2),
-            message: "Unknown core data error",
-          ).show(context),
-        ),
-        orElse: () => FlushbarHelper.createError(
-          duration: const Duration(seconds: 2),
-          message: "Unknown error",
-        ).show(context),
+  void _onShowCaseStart(
+    GlobalKey<State<StatefulWidget>> key,
+    GlobalKey<State<StatefulWidget>> _difficultyKey,
+    ScrollController _scrollController,
+    GlobalKey<State<StatefulWidget>> _mapKey,
+    GlobalKey<State<StatefulWidget>> _objectiveFormKey,
+    GlobalKey<State<StatefulWidget>> _tagCreationKey,
+  ) {
+    if (key == _difficultyKey) {
+      _scrollController.jumpTo(
+        _scrollController.position.maxScrollExtent * 0.1,
       );
-
-  // This should have a better name
-  bool _buildWhen(ExperienceManagementFormState previous, ExperienceManagementFormState current) {
-    final _previousImages = previous.experience.imageAssetsOption.fold(() => List<Asset>.empty(), id);
-    final _currentImages = current.experience.imageAssetsOption.fold(() => List<Asset>.empty(), id);
-    final _shouldRebuild = previous.showErrorMessages != current.showErrorMessages ||
-        previous.experience.difficulty != current.experience.difficulty ||
-        previous.experience.coordinates != current.experience.coordinates ||
-        _previousImages != _currentImages;
-    return _shouldRebuild;
+    } else if (key == _mapKey) {
+      _scrollController.jumpTo(
+        _scrollController.position.maxScrollExtent * 0.3,
+      );
+    } else if (key == _objectiveFormKey) {
+      _scrollController.jumpTo(
+        _scrollController.position.maxScrollExtent * 0.6,
+      );
+    } else if (key == _tagCreationKey) {
+      _scrollController.jumpTo(
+        _scrollController.position.maxScrollExtent,
+      );
+    }
   }
 }

@@ -45,18 +45,16 @@ void main() {
 }
 
 // Maybe there's a better way to fill the Set
-KtSet<Tag> _fillSet() {
-  return {
-    Tag.empty().copyWith(id: 1),
-    Tag.empty().copyWith(id: 2),
-    Tag.empty().copyWith(id: 3),
-    Tag.empty().copyWith(id: 4),
-    Tag.empty().copyWith(id: 5),
-    Tag.empty().copyWith(id: 6),
-    Tag.empty().copyWith(id: 7),
-    Tag.empty().copyWith(id: 8),
-    Tag.empty().copyWith(id: 9),
-    Tag.empty().copyWith(id: 10),
-    Tag.empty().copyWith(id: 11),
-  }.toImmutableSet();
-}
+KtSet<Tag> _fillSet() => {
+      Tag.empty(),
+      Tag.empty(),
+      Tag.empty(),
+      Tag.empty(),
+      Tag.empty(),
+      Tag.empty(),
+      Tag.empty(),
+      Tag.empty(),
+      Tag.empty(),
+      Tag.empty(),
+      Tag.empty(),
+    }.toImmutableSet();

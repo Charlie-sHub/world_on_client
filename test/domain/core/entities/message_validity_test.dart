@@ -4,6 +4,7 @@ import 'package:worldon/domain/core/entities/message/message.dart';
 import 'package:worldon/domain/core/entities/user/user.dart';
 import 'package:worldon/domain/core/validation/objects/message_content.dart';
 import 'package:worldon/domain/core/validation/objects/past_date.dart';
+import 'package:worldon/domain/core/validation/objects/unique_id.dart';
 
 import '../../../test_descriptions.dart';
 
@@ -13,6 +14,7 @@ void main() {
     receiver: getValidUser(),
     content: MessageContent("Test"),
     creationDate: PastDate(DateTime.now().subtract(const Duration(days: 10))),
+    id: UniqueId(),
   );
   final invalidSenderMessage = validMessage.copyWith(sender: User.empty());
   final invalidReceiverMessage = validMessage.copyWith(receiver: User.empty());

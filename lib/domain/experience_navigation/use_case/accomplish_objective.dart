@@ -1,33 +1,32 @@
 import 'package:dartz/dartz.dart';
-import 'package:flutter/foundation.dart';
+import 'package:injectable/injectable.dart';
 import 'package:worldon/core/error/failure.dart';
 import 'package:worldon/domain/core/entities/objective/objective.dart';
-import 'package:worldon/domain/core/failures/core_domain_failure.dart';
 import 'package:worldon/domain/core/use_case/use_case.dart';
+import 'package:worldon/domain/core/validation/objects/unique_id.dart';
+import 'package:worldon/domain/experience_navigation/repository/experience_navigation_repository_interface.dart';
 
-/// Updates the [Objective] tracker
-@Deprecated("Unnecessarily bulky, just use the ObjectivesTrackerBloc")
-class AccomplishObjective implements UseCase<bool, Params> {
-  final Map<int, bool> objectiveTracker;
+@LazySingleton(env: [Environment.dev, Environment.prod])
+class AccomplishObjective implements AsyncUseCase<Unit, Params> {
+  final ExperienceNavigationRepositoryInterface _repository;
 
-  AccomplishObjective(this.objectiveTracker);
+  AccomplishObjective(this._repository);
 
-  /// Takes an objective id and changes to true the corresponding value in the tracker, then checks if there are any false values left and returns that
   @override
-  Either<Failure, bool> call(Params params) {
-    bool trackerFilled;
-    if (params.objectiveId != null) {
-      objectiveTracker[params.objectiveId] = true;
-      trackerFilled = !objectiveTracker.containsValue(false);
-    } else {
-      return left(const Failure.coreDomain(CoreDomainFailure.domainLayerError(errorString: "Null id in the objective tracker")));
-    }
-    return right(trackerFilled);
+  Future<Either<Failure, Unit>> call(Params params) async {
+    return _repository.accomplishObjective(
+      params.objective,
+      params.experienceId,
+    );
   }
 }
 
 class Params {
-  final int objectiveId;
+  final UniqueId experienceId;
+  final Objective objective;
 
-  Params({@required this.objectiveId});
+  Params({
+    required this.experienceId,
+    required this.objective,
+  });
 }

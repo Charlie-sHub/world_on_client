@@ -1,5 +1,4 @@
 import 'package:dartz/dartz.dart';
-import 'package:flutter/foundation.dart';
 import 'package:injectable/injectable.dart';
 import 'package:worldon/core/error/failure.dart';
 import 'package:worldon/domain/achievement_management/repository/achievement_repository_interface.dart';
@@ -36,6 +35,6 @@ class Params {
   final Achievement achievement;
 
   Params({
-    @required this.achievement,
+    required this.achievement,
   });
 }

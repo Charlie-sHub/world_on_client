@@ -26,18 +26,19 @@ class AuthenticationBloc extends Bloc<AuthenticationEvent, AuthenticationState> 
   }
 
   Stream<AuthenticationState> _onLoggedOut(_) async* {
-    final _failureOrUnit = await getIt<LogOut>()(getIt<NoParams>());
-    yield _failureOrUnit.fold(
-      (failure) => const AuthenticationState.authenticationSuccess(),
-      (unit) => const AuthenticationState.authenticationFailure(),
+    await getIt<LogOut>()(
+      getIt<NoParams>(),
     );
+    yield const AuthenticationState.unAuthenticated();
   }
 
   Stream<AuthenticationState> _onAuthenticationCheckRequested(_) async* {
-    final _userOption = await getIt<GetLoggedInUser>()(getIt<NoParams>());
+    final _userOption = await getIt<GetLoggedInUser>()(
+      getIt<NoParams>(),
+    );
     yield _userOption.fold(
-      () => const AuthenticationState.authenticationFailure(),
-      (_) => const AuthenticationState.authenticationSuccess(),
+      () => const AuthenticationState.unAuthenticated(),
+      (_) => const AuthenticationState.authenticated(),
     );
   }
 }

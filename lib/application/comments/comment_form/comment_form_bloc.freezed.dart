@@ -1,5 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides
 
 part of 'comment_form_bloc.dart';
 
@@ -9,65 +9,76 @@ part of 'comment_form_bloc.dart';
 
 T _$identity<T>(T value) => value;
 
+final _privateConstructorUsedError = UnsupportedError(
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+
 /// @nodoc
 class _$CommentFormEventTearOff {
   const _$CommentFormEventTearOff();
 
-// ignore: unused_element
   _Initialized initialized(
-      {@required Option<Comment> commentOption, @required int experienceId}) {
+      {required SimpleUser user,
+      required Option<Comment> commentOption,
+      required UniqueId experienceId}) {
     return _Initialized(
+      user: user,
       commentOption: commentOption,
       experienceId: experienceId,
     );
   }
 
-// ignore: unused_element
   _ContentChanged contentChanged(String content) {
     return _ContentChanged(
       content,
     );
   }
 
-// ignore: unused_element
-  _Submitted submitted() {
-    return const _Submitted();
+  _Submitted submitted(User currentUser) {
+    return _Submitted(
+      currentUser,
+    );
   }
 }
 
 /// @nodoc
-// ignore: unused_element
 const $CommentFormEvent = _$CommentFormEventTearOff();
 
 /// @nodoc
 mixin _$CommentFormEvent {
   @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required
-        Result initialized(Option<Comment> commentOption, int experienceId),
-    @required Result contentChanged(String content),
-    @required Result submitted(),
-  });
+  TResult when<TResult extends Object?>({
+    required TResult Function(SimpleUser user, Option<Comment> commentOption,
+            UniqueId experienceId)
+        initialized,
+    required TResult Function(String content) contentChanged,
+    required TResult Function(User currentUser) submitted,
+  }) =>
+      throw _privateConstructorUsedError;
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result initialized(Option<Comment> commentOption, int experienceId),
-    Result contentChanged(String content),
-    Result submitted(),
-    @required Result orElse(),
-  });
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(SimpleUser user, Option<Comment> commentOption,
+            UniqueId experienceId)?
+        initialized,
+    TResult Function(String content)? contentChanged,
+    TResult Function(User currentUser)? submitted,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result initialized(_Initialized value),
-    @required Result contentChanged(_ContentChanged value),
-    @required Result submitted(_Submitted value),
-  });
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initialized value) initialized,
+    required TResult Function(_ContentChanged value) contentChanged,
+    required TResult Function(_Submitted value) submitted,
+  }) =>
+      throw _privateConstructorUsedError;
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result initialized(_Initialized value),
-    Result contentChanged(_ContentChanged value),
-    Result submitted(_Submitted value),
-    @required Result orElse(),
-  });
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initialized value)? initialized,
+    TResult Function(_ContentChanged value)? contentChanged,
+    TResult Function(_Submitted value)? submitted,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -92,7 +103,10 @@ abstract class _$InitializedCopyWith<$Res> {
   factory _$InitializedCopyWith(
           _Initialized value, $Res Function(_Initialized) then) =
       __$InitializedCopyWithImpl<$Res>;
-  $Res call({Option<Comment> commentOption, int experienceId});
+  $Res call(
+      {SimpleUser user, Option<Comment> commentOption, UniqueId experienceId});
+
+  $SimpleUserCopyWith<$Res> get user;
 }
 
 /// @nodoc
@@ -108,40 +122,60 @@ class __$InitializedCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object commentOption = freezed,
-    Object experienceId = freezed,
+    Object? user = freezed,
+    Object? commentOption = freezed,
+    Object? experienceId = freezed,
   }) {
     return _then(_Initialized(
+      user: user == freezed
+          ? _value.user
+          : user // ignore: cast_nullable_to_non_nullable
+              as SimpleUser,
       commentOption: commentOption == freezed
           ? _value.commentOption
-          : commentOption as Option<Comment>,
-      experienceId:
-          experienceId == freezed ? _value.experienceId : experienceId as int,
+          : commentOption // ignore: cast_nullable_to_non_nullable
+              as Option<Comment>,
+      experienceId: experienceId == freezed
+          ? _value.experienceId
+          : experienceId // ignore: cast_nullable_to_non_nullable
+              as UniqueId,
     ));
+  }
+
+  @override
+  $SimpleUserCopyWith<$Res> get user {
+    return $SimpleUserCopyWith<$Res>(_value.user, (value) {
+      return _then(_value.copyWith(user: value));
+    });
   }
 }
 
 /// @nodoc
+
 class _$_Initialized implements _Initialized {
   const _$_Initialized(
-      {@required this.commentOption, @required this.experienceId})
-      : assert(commentOption != null),
-        assert(experienceId != null);
+      {required this.user,
+      required this.commentOption,
+      required this.experienceId});
 
+  @override
+  final SimpleUser user;
   @override
   final Option<Comment> commentOption;
   @override
-  final int experienceId;
+  final UniqueId experienceId;
 
   @override
   String toString() {
-    return 'CommentFormEvent.initialized(commentOption: $commentOption, experienceId: $experienceId)';
+    return 'CommentFormEvent.initialized(user: $user, commentOption: $commentOption, experienceId: $experienceId)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other is _Initialized &&
+            (identical(other.user, user) ||
+                const DeepCollectionEquality().equals(other.user, user)) &&
             (identical(other.commentOption, commentOption) ||
                 const DeepCollectionEquality()
                     .equals(other.commentOption, commentOption)) &&
@@ -153,64 +187,61 @@ class _$_Initialized implements _Initialized {
   @override
   int get hashCode =>
       runtimeType.hashCode ^
+      const DeepCollectionEquality().hash(user) ^
       const DeepCollectionEquality().hash(commentOption) ^
       const DeepCollectionEquality().hash(experienceId);
 
+  @JsonKey(ignore: true)
   @override
   _$InitializedCopyWith<_Initialized> get copyWith =>
       __$InitializedCopyWithImpl<_Initialized>(this, _$identity);
 
   @override
   @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required
-        Result initialized(Option<Comment> commentOption, int experienceId),
-    @required Result contentChanged(String content),
-    @required Result submitted(),
+  TResult when<TResult extends Object?>({
+    required TResult Function(SimpleUser user, Option<Comment> commentOption,
+            UniqueId experienceId)
+        initialized,
+    required TResult Function(String content) contentChanged,
+    required TResult Function(User currentUser) submitted,
   }) {
-    assert(initialized != null);
-    assert(contentChanged != null);
-    assert(submitted != null);
-    return initialized(commentOption, experienceId);
+    return initialized(user, commentOption, experienceId);
   }
 
   @override
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result initialized(Option<Comment> commentOption, int experienceId),
-    Result contentChanged(String content),
-    Result submitted(),
-    @required Result orElse(),
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(SimpleUser user, Option<Comment> commentOption,
+            UniqueId experienceId)?
+        initialized,
+    TResult Function(String content)? contentChanged,
+    TResult Function(User currentUser)? submitted,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (initialized != null) {
-      return initialized(commentOption, experienceId);
+      return initialized(user, commentOption, experienceId);
     }
     return orElse();
   }
 
   @override
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result initialized(_Initialized value),
-    @required Result contentChanged(_ContentChanged value),
-    @required Result submitted(_Submitted value),
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initialized value) initialized,
+    required TResult Function(_ContentChanged value) contentChanged,
+    required TResult Function(_Submitted value) submitted,
   }) {
-    assert(initialized != null);
-    assert(contentChanged != null);
-    assert(submitted != null);
     return initialized(this);
   }
 
   @override
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result initialized(_Initialized value),
-    Result contentChanged(_ContentChanged value),
-    Result submitted(_Submitted value),
-    @required Result orElse(),
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initialized value)? initialized,
+    TResult Function(_ContentChanged value)? contentChanged,
+    TResult Function(_Submitted value)? submitted,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (initialized != null) {
       return initialized(this);
     }
@@ -220,12 +251,16 @@ class _$_Initialized implements _Initialized {
 
 abstract class _Initialized implements CommentFormEvent {
   const factory _Initialized(
-      {@required Option<Comment> commentOption,
-      @required int experienceId}) = _$_Initialized;
+      {required SimpleUser user,
+      required Option<Comment> commentOption,
+      required UniqueId experienceId}) = _$_Initialized;
 
-  Option<Comment> get commentOption;
-  int get experienceId;
-  _$InitializedCopyWith<_Initialized> get copyWith;
+  SimpleUser get user => throw _privateConstructorUsedError;
+  Option<Comment> get commentOption => throw _privateConstructorUsedError;
+  UniqueId get experienceId => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  _$InitializedCopyWith<_Initialized> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -249,17 +284,21 @@ class __$ContentChangedCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object content = freezed,
+    Object? content = freezed,
   }) {
     return _then(_ContentChanged(
-      content == freezed ? _value.content : content as String,
+      content == freezed
+          ? _value.content
+          : content // ignore: cast_nullable_to_non_nullable
+              as String,
     ));
   }
 }
 
 /// @nodoc
+
 class _$_ContentChanged implements _ContentChanged {
-  const _$_ContentChanged(this.content) : assert(content != null);
+  const _$_ContentChanged(this.content);
 
   @override
   final String content;
@@ -281,33 +320,33 @@ class _$_ContentChanged implements _ContentChanged {
   int get hashCode =>
       runtimeType.hashCode ^ const DeepCollectionEquality().hash(content);
 
+  @JsonKey(ignore: true)
   @override
   _$ContentChangedCopyWith<_ContentChanged> get copyWith =>
       __$ContentChangedCopyWithImpl<_ContentChanged>(this, _$identity);
 
   @override
   @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required
-        Result initialized(Option<Comment> commentOption, int experienceId),
-    @required Result contentChanged(String content),
-    @required Result submitted(),
+  TResult when<TResult extends Object?>({
+    required TResult Function(SimpleUser user, Option<Comment> commentOption,
+            UniqueId experienceId)
+        initialized,
+    required TResult Function(String content) contentChanged,
+    required TResult Function(User currentUser) submitted,
   }) {
-    assert(initialized != null);
-    assert(contentChanged != null);
-    assert(submitted != null);
     return contentChanged(content);
   }
 
   @override
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result initialized(Option<Comment> commentOption, int experienceId),
-    Result contentChanged(String content),
-    Result submitted(),
-    @required Result orElse(),
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(SimpleUser user, Option<Comment> commentOption,
+            UniqueId experienceId)?
+        initialized,
+    TResult Function(String content)? contentChanged,
+    TResult Function(User currentUser)? submitted,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (contentChanged != null) {
       return contentChanged(content);
     }
@@ -316,26 +355,22 @@ class _$_ContentChanged implements _ContentChanged {
 
   @override
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result initialized(_Initialized value),
-    @required Result contentChanged(_ContentChanged value),
-    @required Result submitted(_Submitted value),
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initialized value) initialized,
+    required TResult Function(_ContentChanged value) contentChanged,
+    required TResult Function(_Submitted value) submitted,
   }) {
-    assert(initialized != null);
-    assert(contentChanged != null);
-    assert(submitted != null);
     return contentChanged(this);
   }
 
   @override
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result initialized(_Initialized value),
-    Result contentChanged(_ContentChanged value),
-    Result submitted(_Submitted value),
-    @required Result orElse(),
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initialized value)? initialized,
+    TResult Function(_ContentChanged value)? contentChanged,
+    TResult Function(_Submitted value)? submitted,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (contentChanged != null) {
       return contentChanged(this);
     }
@@ -346,8 +381,10 @@ class _$_ContentChanged implements _ContentChanged {
 abstract class _ContentChanged implements CommentFormEvent {
   const factory _ContentChanged(String content) = _$_ContentChanged;
 
-  String get content;
-  _$ContentChangedCopyWith<_ContentChanged> get copyWith;
+  String get content => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  _$ContentChangedCopyWith<_ContentChanged> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -355,6 +392,9 @@ abstract class _$SubmittedCopyWith<$Res> {
   factory _$SubmittedCopyWith(
           _Submitted value, $Res Function(_Submitted) then) =
       __$SubmittedCopyWithImpl<$Res>;
+  $Res call({User currentUser});
+
+  $UserCopyWith<$Res> get currentUser;
 }
 
 /// @nodoc
@@ -366,76 +406,104 @@ class __$SubmittedCopyWithImpl<$Res>
 
   @override
   _Submitted get _value => super._value as _Submitted;
+
+  @override
+  $Res call({
+    Object? currentUser = freezed,
+  }) {
+    return _then(_Submitted(
+      currentUser == freezed
+          ? _value.currentUser
+          : currentUser // ignore: cast_nullable_to_non_nullable
+              as User,
+    ));
+  }
+
+  @override
+  $UserCopyWith<$Res> get currentUser {
+    return $UserCopyWith<$Res>(_value.currentUser, (value) {
+      return _then(_value.copyWith(currentUser: value));
+    });
+  }
 }
 
 /// @nodoc
+
 class _$_Submitted implements _Submitted {
-  const _$_Submitted();
+  const _$_Submitted(this.currentUser);
+
+  @override
+  final User currentUser;
 
   @override
   String toString() {
-    return 'CommentFormEvent.submitted()';
+    return 'CommentFormEvent.submitted(currentUser: $currentUser)';
   }
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _Submitted);
+    return identical(this, other) ||
+        (other is _Submitted &&
+            (identical(other.currentUser, currentUser) ||
+                const DeepCollectionEquality()
+                    .equals(other.currentUser, currentUser)));
   }
 
   @override
-  int get hashCode => runtimeType.hashCode;
+  int get hashCode =>
+      runtimeType.hashCode ^ const DeepCollectionEquality().hash(currentUser);
+
+  @JsonKey(ignore: true)
+  @override
+  _$SubmittedCopyWith<_Submitted> get copyWith =>
+      __$SubmittedCopyWithImpl<_Submitted>(this, _$identity);
 
   @override
   @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required
-        Result initialized(Option<Comment> commentOption, int experienceId),
-    @required Result contentChanged(String content),
-    @required Result submitted(),
+  TResult when<TResult extends Object?>({
+    required TResult Function(SimpleUser user, Option<Comment> commentOption,
+            UniqueId experienceId)
+        initialized,
+    required TResult Function(String content) contentChanged,
+    required TResult Function(User currentUser) submitted,
   }) {
-    assert(initialized != null);
-    assert(contentChanged != null);
-    assert(submitted != null);
-    return submitted();
+    return submitted(currentUser);
   }
 
   @override
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result initialized(Option<Comment> commentOption, int experienceId),
-    Result contentChanged(String content),
-    Result submitted(),
-    @required Result orElse(),
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(SimpleUser user, Option<Comment> commentOption,
+            UniqueId experienceId)?
+        initialized,
+    TResult Function(String content)? contentChanged,
+    TResult Function(User currentUser)? submitted,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (submitted != null) {
-      return submitted();
+      return submitted(currentUser);
     }
     return orElse();
   }
 
   @override
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result initialized(_Initialized value),
-    @required Result contentChanged(_ContentChanged value),
-    @required Result submitted(_Submitted value),
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initialized value) initialized,
+    required TResult Function(_ContentChanged value) contentChanged,
+    required TResult Function(_Submitted value) submitted,
   }) {
-    assert(initialized != null);
-    assert(contentChanged != null);
-    assert(submitted != null);
     return submitted(this);
   }
 
   @override
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result initialized(_Initialized value),
-    Result contentChanged(_ContentChanged value),
-    Result submitted(_Submitted value),
-    @required Result orElse(),
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initialized value)? initialized,
+    TResult Function(_ContentChanged value)? contentChanged,
+    TResult Function(_Submitted value)? submitted,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (submitted != null) {
       return submitted(this);
     }
@@ -444,20 +512,24 @@ class _$_Submitted implements _Submitted {
 }
 
 abstract class _Submitted implements CommentFormEvent {
-  const factory _Submitted() = _$_Submitted;
+  const factory _Submitted(User currentUser) = _$_Submitted;
+
+  User get currentUser => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  _$SubmittedCopyWith<_Submitted> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 class _$CommentFormStateTearOff {
   const _$CommentFormStateTearOff();
 
-// ignore: unused_element
   _CommentFormState call(
-      {@required Comment comment,
-      @required bool showErrorMessages,
-      @required bool isEditing,
-      @required bool isSubmitting,
-      @required Option<Either<Failure, Unit>> failureOrSuccessOption}) {
+      {required Comment comment,
+      required bool showErrorMessages,
+      required bool isEditing,
+      required bool isSubmitting,
+      required Option<Either<Failure, Unit>> failureOrSuccessOption}) {
     return _CommentFormState(
       comment: comment,
       showErrorMessages: showErrorMessages,
@@ -469,18 +541,20 @@ class _$CommentFormStateTearOff {
 }
 
 /// @nodoc
-// ignore: unused_element
 const $CommentFormState = _$CommentFormStateTearOff();
 
 /// @nodoc
 mixin _$CommentFormState {
-  Comment get comment;
-  bool get showErrorMessages;
-  bool get isEditing;
-  bool get isSubmitting;
-  Option<Either<Failure, Unit>> get failureOrSuccessOption;
+  Comment get comment => throw _privateConstructorUsedError;
+  bool get showErrorMessages => throw _privateConstructorUsedError;
+  bool get isEditing => throw _privateConstructorUsedError;
+  bool get isSubmitting => throw _privateConstructorUsedError;
+  Option<Either<Failure, Unit>> get failureOrSuccessOption =>
+      throw _privateConstructorUsedError;
 
-  $CommentFormStateCopyWith<CommentFormState> get copyWith;
+  @JsonKey(ignore: true)
+  $CommentFormStateCopyWith<CommentFormState> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -509,31 +583,38 @@ class _$CommentFormStateCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object comment = freezed,
-    Object showErrorMessages = freezed,
-    Object isEditing = freezed,
-    Object isSubmitting = freezed,
-    Object failureOrSuccessOption = freezed,
+    Object? comment = freezed,
+    Object? showErrorMessages = freezed,
+    Object? isEditing = freezed,
+    Object? isSubmitting = freezed,
+    Object? failureOrSuccessOption = freezed,
   }) {
     return _then(_value.copyWith(
-      comment: comment == freezed ? _value.comment : comment as Comment,
+      comment: comment == freezed
+          ? _value.comment
+          : comment // ignore: cast_nullable_to_non_nullable
+              as Comment,
       showErrorMessages: showErrorMessages == freezed
           ? _value.showErrorMessages
-          : showErrorMessages as bool,
-      isEditing: isEditing == freezed ? _value.isEditing : isEditing as bool,
-      isSubmitting:
-          isSubmitting == freezed ? _value.isSubmitting : isSubmitting as bool,
+          : showErrorMessages // ignore: cast_nullable_to_non_nullable
+              as bool,
+      isEditing: isEditing == freezed
+          ? _value.isEditing
+          : isEditing // ignore: cast_nullable_to_non_nullable
+              as bool,
+      isSubmitting: isSubmitting == freezed
+          ? _value.isSubmitting
+          : isSubmitting // ignore: cast_nullable_to_non_nullable
+              as bool,
       failureOrSuccessOption: failureOrSuccessOption == freezed
           ? _value.failureOrSuccessOption
-          : failureOrSuccessOption as Option<Either<Failure, Unit>>,
+          : failureOrSuccessOption // ignore: cast_nullable_to_non_nullable
+              as Option<Either<Failure, Unit>>,
     ));
   }
 
   @override
   $CommentCopyWith<$Res> get comment {
-    if (_value.comment == null) {
-      return null;
-    }
     return $CommentCopyWith<$Res>(_value.comment, (value) {
       return _then(_value.copyWith(comment: value));
     });
@@ -571,40 +652,46 @@ class __$CommentFormStateCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object comment = freezed,
-    Object showErrorMessages = freezed,
-    Object isEditing = freezed,
-    Object isSubmitting = freezed,
-    Object failureOrSuccessOption = freezed,
+    Object? comment = freezed,
+    Object? showErrorMessages = freezed,
+    Object? isEditing = freezed,
+    Object? isSubmitting = freezed,
+    Object? failureOrSuccessOption = freezed,
   }) {
     return _then(_CommentFormState(
-      comment: comment == freezed ? _value.comment : comment as Comment,
+      comment: comment == freezed
+          ? _value.comment
+          : comment // ignore: cast_nullable_to_non_nullable
+              as Comment,
       showErrorMessages: showErrorMessages == freezed
           ? _value.showErrorMessages
-          : showErrorMessages as bool,
-      isEditing: isEditing == freezed ? _value.isEditing : isEditing as bool,
-      isSubmitting:
-          isSubmitting == freezed ? _value.isSubmitting : isSubmitting as bool,
+          : showErrorMessages // ignore: cast_nullable_to_non_nullable
+              as bool,
+      isEditing: isEditing == freezed
+          ? _value.isEditing
+          : isEditing // ignore: cast_nullable_to_non_nullable
+              as bool,
+      isSubmitting: isSubmitting == freezed
+          ? _value.isSubmitting
+          : isSubmitting // ignore: cast_nullable_to_non_nullable
+              as bool,
       failureOrSuccessOption: failureOrSuccessOption == freezed
           ? _value.failureOrSuccessOption
-          : failureOrSuccessOption as Option<Either<Failure, Unit>>,
+          : failureOrSuccessOption // ignore: cast_nullable_to_non_nullable
+              as Option<Either<Failure, Unit>>,
     ));
   }
 }
 
 /// @nodoc
+
 class _$_CommentFormState implements _CommentFormState {
   const _$_CommentFormState(
-      {@required this.comment,
-      @required this.showErrorMessages,
-      @required this.isEditing,
-      @required this.isSubmitting,
-      @required this.failureOrSuccessOption})
-      : assert(comment != null),
-        assert(showErrorMessages != null),
-        assert(isEditing != null),
-        assert(isSubmitting != null),
-        assert(failureOrSuccessOption != null);
+      {required this.comment,
+      required this.showErrorMessages,
+      required this.isEditing,
+      required this.isSubmitting,
+      required this.failureOrSuccessOption});
 
   @override
   final Comment comment;
@@ -652,6 +739,7 @@ class _$_CommentFormState implements _CommentFormState {
       const DeepCollectionEquality().hash(isSubmitting) ^
       const DeepCollectionEquality().hash(failureOrSuccessOption);
 
+  @JsonKey(ignore: true)
   @override
   _$CommentFormStateCopyWith<_CommentFormState> get copyWith =>
       __$CommentFormStateCopyWithImpl<_CommentFormState>(this, _$identity);
@@ -659,23 +747,26 @@ class _$_CommentFormState implements _CommentFormState {
 
 abstract class _CommentFormState implements CommentFormState {
   const factory _CommentFormState(
-          {@required Comment comment,
-          @required bool showErrorMessages,
-          @required bool isEditing,
-          @required bool isSubmitting,
-          @required Option<Either<Failure, Unit>> failureOrSuccessOption}) =
+          {required Comment comment,
+          required bool showErrorMessages,
+          required bool isEditing,
+          required bool isSubmitting,
+          required Option<Either<Failure, Unit>> failureOrSuccessOption}) =
       _$_CommentFormState;
 
   @override
-  Comment get comment;
+  Comment get comment => throw _privateConstructorUsedError;
   @override
-  bool get showErrorMessages;
+  bool get showErrorMessages => throw _privateConstructorUsedError;
   @override
-  bool get isEditing;
+  bool get isEditing => throw _privateConstructorUsedError;
   @override
-  bool get isSubmitting;
+  bool get isSubmitting => throw _privateConstructorUsedError;
   @override
-  Option<Either<Failure, Unit>> get failureOrSuccessOption;
+  Option<Either<Failure, Unit>> get failureOrSuccessOption =>
+      throw _privateConstructorUsedError;
   @override
-  _$CommentFormStateCopyWith<_CommentFormState> get copyWith;
+  @JsonKey(ignore: true)
+  _$CommentFormStateCopyWith<_CommentFormState> get copyWith =>
+      throw _privateConstructorUsedError;
 }

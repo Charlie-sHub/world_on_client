@@ -8,12 +8,9 @@ class SearchTerm extends ValueObject<String> {
   @override
   final Either<ValueFailure<String>, String> value;
 
-  factory SearchTerm(String input) {
-    assert(input != null);
-    return SearchTerm._(
-      validateStringNotEmpty(input),
-    );
-  }
+  factory SearchTerm(String input) => SearchTerm._(
+        validateStringNotEmpty(input),
+      );
 
   const SearchTerm._(this.value);
 

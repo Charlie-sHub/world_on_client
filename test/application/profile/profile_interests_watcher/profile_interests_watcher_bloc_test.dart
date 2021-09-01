@@ -9,6 +9,7 @@ import 'package:worldon/core/error/failure.dart';
 import 'package:worldon/data/core/failures/core_data_failure.dart';
 import 'package:worldon/data/core/misc/common_methods_for_dev_repositories/get_valid_entities/get_valid_user.dart';
 import 'package:worldon/domain/core/entities/tag/tag.dart';
+import 'package:worldon/domain/core/validation/objects/unique_id.dart';
 import 'package:worldon/domain/profile/use_case/watch_user_interests.dart';
 import 'package:worldon/injection.dart';
 
@@ -23,7 +24,7 @@ void main() {
       loadUserInterests = getIt<WatchUserInterests>();
     },
   );
-  final interests = KtList.of(Tag.empty().copyWith(id: 1));
+  final interests = KtList.of(Tag.empty().copyWith(id: UniqueId()));
   final user = getValidUser().copyWith(interestsIds: interests.map((_tag) => _tag.id).toSet().dart);
   const failure = Failure.coreData(CoreDataFailure.serverError(errorString: TestDescription.errorString));
   blocTest(

@@ -29,14 +29,19 @@ class ExperienceFinishActorBloc extends Bloc<ExperienceFinishActorEvent, Experie
     final _finishFailureOrUnit = await getIt<finish_experience.FinishExperience>()(
       finish_experience.Params(experienceId: event.experience.id),
     );
-    final _rewardFailureOrUnit = await getIt<reward_user.RewardUser>()(
-      reward_user.Params(experienceId: event.experience.id),
+    final _rewardFailureOrAmountOfXP = await getIt<reward_user.RewardUser>()(
+      reward_user.Params(
+        difficulty: event.experience.difficulty,
+      ),
     );
     yield _finishFailureOrUnit.fold(
       (failure) => ExperienceFinishActorState.finishFailure(failure),
-      (_) => _rewardFailureOrUnit.fold(
+      (_) => _rewardFailureOrAmountOfXP.fold(
         (failure) => ExperienceFinishActorState.finishFailure(failure),
-        (_) => const ExperienceFinishActorState.finishSuccess(),
+        (map) => ExperienceFinishActorState.finishSuccess(
+          map["experiencePoints"] as int,
+          leveledUp: map["leveledUp"] as bool,
+        ),
       ),
     );
   }

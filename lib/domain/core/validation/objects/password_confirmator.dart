@@ -1,5 +1,4 @@
 import 'package:dartz/dartz.dart';
-import 'package:flutter/foundation.dart';
 import 'package:worldon/domain/core/failures/value_failure.dart';
 import 'package:worldon/domain/core/validation/objects/value_object.dart';
 import 'package:worldon/domain/core/validation/validators/validate_same_string.dart';
@@ -10,18 +9,15 @@ class PasswordConfirmator extends ValueObject<String> {
   final Either<ValueFailure<String>, String> value;
 
   factory PasswordConfirmator({
-    @required String password,
-    @required String confirmation,
-  }) {
-    assert(password != null);
-    assert(confirmation != null);
-    return PasswordConfirmator._(
-      validateSameString(
-        confirmation,
-        password,
-      ).flatMap(validateStringNotEmpty),
-    );
-  }
+    required String password,
+    required String confirmation,
+  }) =>
+      PasswordConfirmator._(
+        validateSameString(
+          confirmation,
+          password,
+        ).flatMap(validateStringNotEmpty),
+      );
 
   const PasswordConfirmator._(this.value);
 

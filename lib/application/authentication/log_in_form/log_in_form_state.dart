@@ -1,20 +1,22 @@
 part of 'log_in_form_bloc.dart';
 
 @freezed
-abstract class LogInFormState with _$LogInFormState {
+class LogInFormState with _$LogInFormState {
   const factory LogInFormState({
-    @required Name username,
-    @required Password password,
-    @required bool showErrorMessages,
-    @required bool isSubmitting,
-    @required Option<Either<Failure, Unit>> failureOrSuccessOption,
+    required EmailAddress email,
+    required Password password,
+    required bool showErrorMessages,
+    required bool isSubmitting,
+    required Option<User> thirdPartyUserOption,
+    required Option<Either<Failure, Unit>> failureOrSuccessOption,
   }) = _LogInFormState;
 
   factory LogInFormState.initial() => LogInFormState(
-        username: Name(""),
+        email: EmailAddress(""),
         password: Password(""),
         showErrorMessages: false,
         isSubmitting: false,
+        thirdPartyUserOption: none(),
         failureOrSuccessOption: none(),
       );
 }

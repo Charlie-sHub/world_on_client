@@ -4,12 +4,12 @@ import 'package:bloc/bloc.dart';
 import 'package:dartz/dartz.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:injectable/injectable.dart';
-import 'package:worldon/domain/authentication/use_case/get_logged_in_user.dart';
+import 'package:worldon/core/error/failure.dart';
 import 'package:worldon/domain/core/entities/user/user.dart';
-import 'package:worldon/domain/core/use_case/is_logged_in_user.dart';
-import 'package:worldon/domain/core/use_case/use_case.dart';
-import 'package:worldon/injection.dart';
-import 'package:worldon/views/profile/widget/profile_body.dart';
+import 'package:worldon/domain/core/validation/objects/unique_id.dart';
+import 'package:worldon/domain/profile/use_case/watch_profile.dart';
+
+import '../../../injection.dart';
 
 part 'profile_watcher_bloc.freezed.dart';
 part 'profile_watcher_event.dart';
@@ -19,34 +19,33 @@ part 'profile_watcher_state.dart';
 class ProfileWatcherBloc extends Bloc<ProfileWatcherEvent, ProfileWatcherState> {
   ProfileWatcherBloc() : super(const ProfileWatcherState.initial());
 
+  StreamSubscription<Either<Failure, User>>? _newProfileUpdateStreamSubscription;
+
   @override
   Stream<ProfileWatcherState> mapEventToState(ProfileWatcherEvent event) async* {
     yield* event.map(
-      initializedForeignOrOwn: _onInitializedForeignOrOwn,
+      watchProfileStarted: onWatchNewNotificationsStarted,
+      resultsReceived: _onResultsReceived,
     );
   }
 
-  Stream<ProfileWatcherState> _onInitializedForeignOrOwn(_InitializedForeignOrOwn event) async* {
-    yield const ProfileWatcherState.loadInProgress();
-    yield* event.userOption.fold(
-      () async* {
-        final _loggedInUserOption = await getIt<GetLoggedInUser>()(getIt<NoParams>());
-        yield _loggedInUserOption.fold(
-          // Maybe GetLoggedInUser should be reworked so it returns possible failures
-          () => const ProfileWatcherState.loadFailure(),
-          (user) => ProfileWatcherState.own(user),
-        );
-      },
-      (user) async* {
-        final _isOwn = await getIt<IsLoggedInUser>()(
-          Params(userToCompareWith: user),
-        );
-        if (_isOwn) {
-          yield ProfileWatcherState.own(user);
-        } else {
-          yield ProfileWatcherState.foreign(user);
-        }
-      },
+  Stream<ProfileWatcherState> _onResultsReceived(_ResultsReceived event) async* {
+    yield event.failureOrUser.fold(
+      (failure) => const ProfileWatcherState.failure(),
+      (_user) => ProfileWatcherState.newProfileUpdate(_user),
     );
+  }
+
+  Stream<ProfileWatcherState> onWatchNewNotificationsStarted(_WatchProfileStarted event) async* {
+    await _newProfileUpdateStreamSubscription?.cancel();
+    _newProfileUpdateStreamSubscription = getIt<WatchProfile>()(Params(userId: event.userId)).listen(
+      (_failureOrUser) => add(ProfileWatcherEvent.resultsReceived(_failureOrUser)),
+    );
+  }
+
+  @override
+  Future<void> close() async {
+    await _newProfileUpdateStreamSubscription?.cancel();
+    return super.close();
   }
 }

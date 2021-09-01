@@ -6,6 +6,7 @@ import 'package:worldon/core/error/failure.dart';
 import 'package:worldon/data/core/failures/core_data_failure.dart';
 import 'package:worldon/data/core/misc/common_methods_for_dev_repositories/get_valid_entities/get_valid_user.dart';
 import 'package:worldon/domain/authentication/use_case/get_logged_in_user.dart';
+import 'package:worldon/domain/core/validation/objects/unique_id.dart';
 import 'package:worldon/domain/profile/failures/profile_domain_failure.dart';
 import 'package:worldon/domain/profile/repository/profile_repository_interface.dart';
 import 'package:worldon/domain/profile/use_case/follow_user.dart';
@@ -26,7 +27,8 @@ void main() {
     },
   );
   final currentUser = getValidUser();
-  final params = Params(userToFollowId: 2);
+  final userToFollowId = UniqueId();
+  final params = Params(userToFollowId: userToFollowId);
   test(
     TestDescription.returnNothing,
     () async {
@@ -63,7 +65,7 @@ void main() {
           // Arrange
           const failure = Failure.profileDomain(ProfileDomainFailure.followItself());
           when(mockProfileRepository.followUser(any)).thenAnswer((_) async => left(failure));
-          when(getLoggedInUser.call(any)).thenAnswer((_) async => some(currentUser.copyWith(id: 2)));
+          when(getLoggedInUser.call(any)).thenAnswer((_) async => some(currentUser.copyWith(id: userToFollowId)));
           // Act
           final result = await useCase(params);
           // Assert

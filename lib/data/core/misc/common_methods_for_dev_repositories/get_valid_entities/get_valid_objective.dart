@@ -5,10 +5,11 @@ import 'package:worldon/domain/core/entities/objective/objective.dart';
 import 'package:worldon/domain/core/validation/objects/entity_description.dart';
 import 'package:worldon/domain/core/validation/objects/latitude.dart';
 import 'package:worldon/domain/core/validation/objects/longitude.dart';
+import 'package:worldon/domain/core/validation/objects/unique_id.dart';
 
 Objective getValidObjective() {
   return Objective(
-    id: 1,
+    id: UniqueId(),
     description: EntityDescription("Sed tristique est nibh, ut imperdiet ligula dapibus accumsan."),
     coordinates: Coordinates(
       latitude: Latitude(40.416501),

@@ -1,5 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides
 
 part of 'experience_management_actor_bloc.dart';
 
@@ -9,11 +9,19 @@ part of 'experience_management_actor_bloc.dart';
 
 T _$identity<T>(T value) => value;
 
+final _privateConstructorUsedError = UnsupportedError(
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+
 /// @nodoc
 class _$ExperienceManagementActorEventTearOff {
   const _$ExperienceManagementActorEventTearOff();
 
-// ignore: unused_element
+  _CheckCreator checkCreator(Experience experience) {
+    return _CheckCreator(
+      experience,
+    );
+  }
+
   _Deleted deleted(Experience experience) {
     return _Deleted(
       experience,
@@ -22,35 +30,43 @@ class _$ExperienceManagementActorEventTearOff {
 }
 
 /// @nodoc
-// ignore: unused_element
 const $ExperienceManagementActorEvent =
     _$ExperienceManagementActorEventTearOff();
 
 /// @nodoc
 mixin _$ExperienceManagementActorEvent {
-  Experience get experience;
+  Experience get experience => throw _privateConstructorUsedError;
 
   @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result deleted(Experience experience),
-  });
+  TResult when<TResult extends Object?>({
+    required TResult Function(Experience experience) checkCreator,
+    required TResult Function(Experience experience) deleted,
+  }) =>
+      throw _privateConstructorUsedError;
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result deleted(Experience experience),
-    @required Result orElse(),
-  });
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(Experience experience)? checkCreator,
+    TResult Function(Experience experience)? deleted,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result deleted(_Deleted value),
-  });
+  TResult map<TResult extends Object?>({
+    required TResult Function(_CheckCreator value) checkCreator,
+    required TResult Function(_Deleted value) deleted,
+  }) =>
+      throw _privateConstructorUsedError;
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result deleted(_Deleted value),
-    @required Result orElse(),
-  });
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_CheckCreator value)? checkCreator,
+    TResult Function(_Deleted value)? deleted,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
 
+  @JsonKey(ignore: true)
   $ExperienceManagementActorEventCopyWith<ExperienceManagementActorEvent>
-      get copyWith;
+      get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -75,23 +91,146 @@ class _$ExperienceManagementActorEventCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object experience = freezed,
+    Object? experience = freezed,
   }) {
     return _then(_value.copyWith(
-      experience:
-          experience == freezed ? _value.experience : experience as Experience,
+      experience: experience == freezed
+          ? _value.experience
+          : experience // ignore: cast_nullable_to_non_nullable
+              as Experience,
     ));
   }
 
   @override
   $ExperienceCopyWith<$Res> get experience {
-    if (_value.experience == null) {
-      return null;
-    }
     return $ExperienceCopyWith<$Res>(_value.experience, (value) {
       return _then(_value.copyWith(experience: value));
     });
   }
+}
+
+/// @nodoc
+abstract class _$CheckCreatorCopyWith<$Res>
+    implements $ExperienceManagementActorEventCopyWith<$Res> {
+  factory _$CheckCreatorCopyWith(
+          _CheckCreator value, $Res Function(_CheckCreator) then) =
+      __$CheckCreatorCopyWithImpl<$Res>;
+  @override
+  $Res call({Experience experience});
+
+  @override
+  $ExperienceCopyWith<$Res> get experience;
+}
+
+/// @nodoc
+class __$CheckCreatorCopyWithImpl<$Res>
+    extends _$ExperienceManagementActorEventCopyWithImpl<$Res>
+    implements _$CheckCreatorCopyWith<$Res> {
+  __$CheckCreatorCopyWithImpl(
+      _CheckCreator _value, $Res Function(_CheckCreator) _then)
+      : super(_value, (v) => _then(v as _CheckCreator));
+
+  @override
+  _CheckCreator get _value => super._value as _CheckCreator;
+
+  @override
+  $Res call({
+    Object? experience = freezed,
+  }) {
+    return _then(_CheckCreator(
+      experience == freezed
+          ? _value.experience
+          : experience // ignore: cast_nullable_to_non_nullable
+              as Experience,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$_CheckCreator implements _CheckCreator {
+  const _$_CheckCreator(this.experience);
+
+  @override
+  final Experience experience;
+
+  @override
+  String toString() {
+    return 'ExperienceManagementActorEvent.checkCreator(experience: $experience)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other is _CheckCreator &&
+            (identical(other.experience, experience) ||
+                const DeepCollectionEquality()
+                    .equals(other.experience, experience)));
+  }
+
+  @override
+  int get hashCode =>
+      runtimeType.hashCode ^ const DeepCollectionEquality().hash(experience);
+
+  @JsonKey(ignore: true)
+  @override
+  _$CheckCreatorCopyWith<_CheckCreator> get copyWith =>
+      __$CheckCreatorCopyWithImpl<_CheckCreator>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(Experience experience) checkCreator,
+    required TResult Function(Experience experience) deleted,
+  }) {
+    return checkCreator(experience);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(Experience experience)? checkCreator,
+    TResult Function(Experience experience)? deleted,
+    required TResult orElse(),
+  }) {
+    if (checkCreator != null) {
+      return checkCreator(experience);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_CheckCreator value) checkCreator,
+    required TResult Function(_Deleted value) deleted,
+  }) {
+    return checkCreator(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_CheckCreator value)? checkCreator,
+    TResult Function(_Deleted value)? deleted,
+    required TResult orElse(),
+  }) {
+    if (checkCreator != null) {
+      return checkCreator(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _CheckCreator implements ExperienceManagementActorEvent {
+  const factory _CheckCreator(Experience experience) = _$_CheckCreator;
+
+  @override
+  Experience get experience => throw _privateConstructorUsedError;
+  @override
+  @JsonKey(ignore: true)
+  _$CheckCreatorCopyWith<_CheckCreator> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -118,17 +257,21 @@ class __$DeletedCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object experience = freezed,
+    Object? experience = freezed,
   }) {
     return _then(_Deleted(
-      experience == freezed ? _value.experience : experience as Experience,
+      experience == freezed
+          ? _value.experience
+          : experience // ignore: cast_nullable_to_non_nullable
+              as Experience,
     ));
   }
 }
 
 /// @nodoc
+
 class _$_Deleted implements _Deleted {
-  const _$_Deleted(this.experience) : assert(experience != null);
+  const _$_Deleted(this.experience);
 
   @override
   final Experience experience;
@@ -151,26 +294,27 @@ class _$_Deleted implements _Deleted {
   int get hashCode =>
       runtimeType.hashCode ^ const DeepCollectionEquality().hash(experience);
 
+  @JsonKey(ignore: true)
   @override
   _$DeletedCopyWith<_Deleted> get copyWith =>
       __$DeletedCopyWithImpl<_Deleted>(this, _$identity);
 
   @override
   @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result deleted(Experience experience),
+  TResult when<TResult extends Object?>({
+    required TResult Function(Experience experience) checkCreator,
+    required TResult Function(Experience experience) deleted,
   }) {
-    assert(deleted != null);
     return deleted(experience);
   }
 
   @override
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result deleted(Experience experience),
-    @required Result orElse(),
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(Experience experience)? checkCreator,
+    TResult Function(Experience experience)? deleted,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (deleted != null) {
       return deleted(experience);
     }
@@ -179,20 +323,20 @@ class _$_Deleted implements _Deleted {
 
   @override
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result deleted(_Deleted value),
+  TResult map<TResult extends Object?>({
+    required TResult Function(_CheckCreator value) checkCreator,
+    required TResult Function(_Deleted value) deleted,
   }) {
-    assert(deleted != null);
     return deleted(this);
   }
 
   @override
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result deleted(_Deleted value),
-    @required Result orElse(),
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_CheckCreator value)? checkCreator,
+    TResult Function(_Deleted value)? deleted,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (deleted != null) {
       return deleted(this);
     }
@@ -204,31 +348,37 @@ abstract class _Deleted implements ExperienceManagementActorEvent {
   const factory _Deleted(Experience experience) = _$_Deleted;
 
   @override
-  Experience get experience;
+  Experience get experience => throw _privateConstructorUsedError;
   @override
-  _$DeletedCopyWith<_Deleted> get copyWith;
+  @JsonKey(ignore: true)
+  _$DeletedCopyWith<_Deleted> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 class _$ExperienceManagementActorStateTearOff {
   const _$ExperienceManagementActorStateTearOff();
 
-// ignore: unused_element
   _Initial initial() {
     return const _Initial();
   }
 
-// ignore: unused_element
+  _IsCreator isCreator() {
+    return const _IsCreator();
+  }
+
+  _IsNotCreator isNotCreator() {
+    return const _IsNotCreator();
+  }
+
   _ActionInProgress actionInProgress() {
     return const _ActionInProgress();
   }
 
-// ignore: unused_element
   _DeletionSuccess deletionSuccess() {
     return const _DeletionSuccess();
   }
 
-// ignore: unused_element
   _DeletionFailure deletionFailure(Failure<dynamic> failure) {
     return _DeletionFailure(
       failure,
@@ -237,42 +387,53 @@ class _$ExperienceManagementActorStateTearOff {
 }
 
 /// @nodoc
-// ignore: unused_element
 const $ExperienceManagementActorState =
     _$ExperienceManagementActorStateTearOff();
 
 /// @nodoc
 mixin _$ExperienceManagementActorState {
   @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result initial(),
-    @required Result actionInProgress(),
-    @required Result deletionSuccess(),
-    @required Result deletionFailure(Failure<dynamic> failure),
-  });
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() isCreator,
+    required TResult Function() isNotCreator,
+    required TResult Function() actionInProgress,
+    required TResult Function() deletionSuccess,
+    required TResult Function(Failure<dynamic> failure) deletionFailure,
+  }) =>
+      throw _privateConstructorUsedError;
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result initial(),
-    Result actionInProgress(),
-    Result deletionSuccess(),
-    Result deletionFailure(Failure<dynamic> failure),
-    @required Result orElse(),
-  });
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? isCreator,
+    TResult Function()? isNotCreator,
+    TResult Function()? actionInProgress,
+    TResult Function()? deletionSuccess,
+    TResult Function(Failure<dynamic> failure)? deletionFailure,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result initial(_Initial value),
-    @required Result actionInProgress(_ActionInProgress value),
-    @required Result deletionSuccess(_DeletionSuccess value),
-    @required Result deletionFailure(_DeletionFailure value),
-  });
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial value) initial,
+    required TResult Function(_IsCreator value) isCreator,
+    required TResult Function(_IsNotCreator value) isNotCreator,
+    required TResult Function(_ActionInProgress value) actionInProgress,
+    required TResult Function(_DeletionSuccess value) deletionSuccess,
+    required TResult Function(_DeletionFailure value) deletionFailure,
+  }) =>
+      throw _privateConstructorUsedError;
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result initial(_Initial value),
-    Result actionInProgress(_ActionInProgress value),
-    Result deletionSuccess(_DeletionSuccess value),
-    Result deletionFailure(_DeletionFailure value),
-    @required Result orElse(),
-  });
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_IsCreator value)? isCreator,
+    TResult Function(_IsNotCreator value)? isNotCreator,
+    TResult Function(_ActionInProgress value)? actionInProgress,
+    TResult Function(_DeletionSuccess value)? deletionSuccess,
+    TResult Function(_DeletionFailure value)? deletionFailure,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -311,6 +472,7 @@ class __$InitialCopyWithImpl<$Res>
 }
 
 /// @nodoc
+
 class _$_Initial implements _Initial {
   const _$_Initial();
 
@@ -329,29 +491,28 @@ class _$_Initial implements _Initial {
 
   @override
   @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result initial(),
-    @required Result actionInProgress(),
-    @required Result deletionSuccess(),
-    @required Result deletionFailure(Failure<dynamic> failure),
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() isCreator,
+    required TResult Function() isNotCreator,
+    required TResult Function() actionInProgress,
+    required TResult Function() deletionSuccess,
+    required TResult Function(Failure<dynamic> failure) deletionFailure,
   }) {
-    assert(initial != null);
-    assert(actionInProgress != null);
-    assert(deletionSuccess != null);
-    assert(deletionFailure != null);
     return initial();
   }
 
   @override
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result initial(),
-    Result actionInProgress(),
-    Result deletionSuccess(),
-    Result deletionFailure(Failure<dynamic> failure),
-    @required Result orElse(),
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? isCreator,
+    TResult Function()? isNotCreator,
+    TResult Function()? actionInProgress,
+    TResult Function()? deletionSuccess,
+    TResult Function(Failure<dynamic> failure)? deletionFailure,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (initial != null) {
       return initial();
     }
@@ -360,29 +521,28 @@ class _$_Initial implements _Initial {
 
   @override
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result initial(_Initial value),
-    @required Result actionInProgress(_ActionInProgress value),
-    @required Result deletionSuccess(_DeletionSuccess value),
-    @required Result deletionFailure(_DeletionFailure value),
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial value) initial,
+    required TResult Function(_IsCreator value) isCreator,
+    required TResult Function(_IsNotCreator value) isNotCreator,
+    required TResult Function(_ActionInProgress value) actionInProgress,
+    required TResult Function(_DeletionSuccess value) deletionSuccess,
+    required TResult Function(_DeletionFailure value) deletionFailure,
   }) {
-    assert(initial != null);
-    assert(actionInProgress != null);
-    assert(deletionSuccess != null);
-    assert(deletionFailure != null);
     return initial(this);
   }
 
   @override
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result initial(_Initial value),
-    Result actionInProgress(_ActionInProgress value),
-    Result deletionSuccess(_DeletionSuccess value),
-    Result deletionFailure(_DeletionFailure value),
-    @required Result orElse(),
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_IsCreator value)? isCreator,
+    TResult Function(_IsNotCreator value)? isNotCreator,
+    TResult Function(_ActionInProgress value)? actionInProgress,
+    TResult Function(_DeletionSuccess value)? deletionSuccess,
+    TResult Function(_DeletionFailure value)? deletionFailure,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (initial != null) {
       return initial(this);
     }
@@ -392,6 +552,209 @@ class _$_Initial implements _Initial {
 
 abstract class _Initial implements ExperienceManagementActorState {
   const factory _Initial() = _$_Initial;
+}
+
+/// @nodoc
+abstract class _$IsCreatorCopyWith<$Res> {
+  factory _$IsCreatorCopyWith(
+          _IsCreator value, $Res Function(_IsCreator) then) =
+      __$IsCreatorCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$IsCreatorCopyWithImpl<$Res>
+    extends _$ExperienceManagementActorStateCopyWithImpl<$Res>
+    implements _$IsCreatorCopyWith<$Res> {
+  __$IsCreatorCopyWithImpl(_IsCreator _value, $Res Function(_IsCreator) _then)
+      : super(_value, (v) => _then(v as _IsCreator));
+
+  @override
+  _IsCreator get _value => super._value as _IsCreator;
+}
+
+/// @nodoc
+
+class _$_IsCreator implements _IsCreator {
+  const _$_IsCreator();
+
+  @override
+  String toString() {
+    return 'ExperienceManagementActorState.isCreator()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) || (other is _IsCreator);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() isCreator,
+    required TResult Function() isNotCreator,
+    required TResult Function() actionInProgress,
+    required TResult Function() deletionSuccess,
+    required TResult Function(Failure<dynamic> failure) deletionFailure,
+  }) {
+    return isCreator();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? isCreator,
+    TResult Function()? isNotCreator,
+    TResult Function()? actionInProgress,
+    TResult Function()? deletionSuccess,
+    TResult Function(Failure<dynamic> failure)? deletionFailure,
+    required TResult orElse(),
+  }) {
+    if (isCreator != null) {
+      return isCreator();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial value) initial,
+    required TResult Function(_IsCreator value) isCreator,
+    required TResult Function(_IsNotCreator value) isNotCreator,
+    required TResult Function(_ActionInProgress value) actionInProgress,
+    required TResult Function(_DeletionSuccess value) deletionSuccess,
+    required TResult Function(_DeletionFailure value) deletionFailure,
+  }) {
+    return isCreator(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_IsCreator value)? isCreator,
+    TResult Function(_IsNotCreator value)? isNotCreator,
+    TResult Function(_ActionInProgress value)? actionInProgress,
+    TResult Function(_DeletionSuccess value)? deletionSuccess,
+    TResult Function(_DeletionFailure value)? deletionFailure,
+    required TResult orElse(),
+  }) {
+    if (isCreator != null) {
+      return isCreator(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _IsCreator implements ExperienceManagementActorState {
+  const factory _IsCreator() = _$_IsCreator;
+}
+
+/// @nodoc
+abstract class _$IsNotCreatorCopyWith<$Res> {
+  factory _$IsNotCreatorCopyWith(
+          _IsNotCreator value, $Res Function(_IsNotCreator) then) =
+      __$IsNotCreatorCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$IsNotCreatorCopyWithImpl<$Res>
+    extends _$ExperienceManagementActorStateCopyWithImpl<$Res>
+    implements _$IsNotCreatorCopyWith<$Res> {
+  __$IsNotCreatorCopyWithImpl(
+      _IsNotCreator _value, $Res Function(_IsNotCreator) _then)
+      : super(_value, (v) => _then(v as _IsNotCreator));
+
+  @override
+  _IsNotCreator get _value => super._value as _IsNotCreator;
+}
+
+/// @nodoc
+
+class _$_IsNotCreator implements _IsNotCreator {
+  const _$_IsNotCreator();
+
+  @override
+  String toString() {
+    return 'ExperienceManagementActorState.isNotCreator()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) || (other is _IsNotCreator);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() isCreator,
+    required TResult Function() isNotCreator,
+    required TResult Function() actionInProgress,
+    required TResult Function() deletionSuccess,
+    required TResult Function(Failure<dynamic> failure) deletionFailure,
+  }) {
+    return isNotCreator();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? isCreator,
+    TResult Function()? isNotCreator,
+    TResult Function()? actionInProgress,
+    TResult Function()? deletionSuccess,
+    TResult Function(Failure<dynamic> failure)? deletionFailure,
+    required TResult orElse(),
+  }) {
+    if (isNotCreator != null) {
+      return isNotCreator();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial value) initial,
+    required TResult Function(_IsCreator value) isCreator,
+    required TResult Function(_IsNotCreator value) isNotCreator,
+    required TResult Function(_ActionInProgress value) actionInProgress,
+    required TResult Function(_DeletionSuccess value) deletionSuccess,
+    required TResult Function(_DeletionFailure value) deletionFailure,
+  }) {
+    return isNotCreator(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_IsCreator value)? isCreator,
+    TResult Function(_IsNotCreator value)? isNotCreator,
+    TResult Function(_ActionInProgress value)? actionInProgress,
+    TResult Function(_DeletionSuccess value)? deletionSuccess,
+    TResult Function(_DeletionFailure value)? deletionFailure,
+    required TResult orElse(),
+  }) {
+    if (isNotCreator != null) {
+      return isNotCreator(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _IsNotCreator implements ExperienceManagementActorState {
+  const factory _IsNotCreator() = _$_IsNotCreator;
 }
 
 /// @nodoc
@@ -414,6 +777,7 @@ class __$ActionInProgressCopyWithImpl<$Res>
 }
 
 /// @nodoc
+
 class _$_ActionInProgress implements _ActionInProgress {
   const _$_ActionInProgress();
 
@@ -432,29 +796,28 @@ class _$_ActionInProgress implements _ActionInProgress {
 
   @override
   @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result initial(),
-    @required Result actionInProgress(),
-    @required Result deletionSuccess(),
-    @required Result deletionFailure(Failure<dynamic> failure),
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() isCreator,
+    required TResult Function() isNotCreator,
+    required TResult Function() actionInProgress,
+    required TResult Function() deletionSuccess,
+    required TResult Function(Failure<dynamic> failure) deletionFailure,
   }) {
-    assert(initial != null);
-    assert(actionInProgress != null);
-    assert(deletionSuccess != null);
-    assert(deletionFailure != null);
     return actionInProgress();
   }
 
   @override
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result initial(),
-    Result actionInProgress(),
-    Result deletionSuccess(),
-    Result deletionFailure(Failure<dynamic> failure),
-    @required Result orElse(),
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? isCreator,
+    TResult Function()? isNotCreator,
+    TResult Function()? actionInProgress,
+    TResult Function()? deletionSuccess,
+    TResult Function(Failure<dynamic> failure)? deletionFailure,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (actionInProgress != null) {
       return actionInProgress();
     }
@@ -463,29 +826,28 @@ class _$_ActionInProgress implements _ActionInProgress {
 
   @override
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result initial(_Initial value),
-    @required Result actionInProgress(_ActionInProgress value),
-    @required Result deletionSuccess(_DeletionSuccess value),
-    @required Result deletionFailure(_DeletionFailure value),
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial value) initial,
+    required TResult Function(_IsCreator value) isCreator,
+    required TResult Function(_IsNotCreator value) isNotCreator,
+    required TResult Function(_ActionInProgress value) actionInProgress,
+    required TResult Function(_DeletionSuccess value) deletionSuccess,
+    required TResult Function(_DeletionFailure value) deletionFailure,
   }) {
-    assert(initial != null);
-    assert(actionInProgress != null);
-    assert(deletionSuccess != null);
-    assert(deletionFailure != null);
     return actionInProgress(this);
   }
 
   @override
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result initial(_Initial value),
-    Result actionInProgress(_ActionInProgress value),
-    Result deletionSuccess(_DeletionSuccess value),
-    Result deletionFailure(_DeletionFailure value),
-    @required Result orElse(),
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_IsCreator value)? isCreator,
+    TResult Function(_IsNotCreator value)? isNotCreator,
+    TResult Function(_ActionInProgress value)? actionInProgress,
+    TResult Function(_DeletionSuccess value)? deletionSuccess,
+    TResult Function(_DeletionFailure value)? deletionFailure,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (actionInProgress != null) {
       return actionInProgress(this);
     }
@@ -517,6 +879,7 @@ class __$DeletionSuccessCopyWithImpl<$Res>
 }
 
 /// @nodoc
+
 class _$_DeletionSuccess implements _DeletionSuccess {
   const _$_DeletionSuccess();
 
@@ -535,29 +898,28 @@ class _$_DeletionSuccess implements _DeletionSuccess {
 
   @override
   @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result initial(),
-    @required Result actionInProgress(),
-    @required Result deletionSuccess(),
-    @required Result deletionFailure(Failure<dynamic> failure),
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() isCreator,
+    required TResult Function() isNotCreator,
+    required TResult Function() actionInProgress,
+    required TResult Function() deletionSuccess,
+    required TResult Function(Failure<dynamic> failure) deletionFailure,
   }) {
-    assert(initial != null);
-    assert(actionInProgress != null);
-    assert(deletionSuccess != null);
-    assert(deletionFailure != null);
     return deletionSuccess();
   }
 
   @override
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result initial(),
-    Result actionInProgress(),
-    Result deletionSuccess(),
-    Result deletionFailure(Failure<dynamic> failure),
-    @required Result orElse(),
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? isCreator,
+    TResult Function()? isNotCreator,
+    TResult Function()? actionInProgress,
+    TResult Function()? deletionSuccess,
+    TResult Function(Failure<dynamic> failure)? deletionFailure,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (deletionSuccess != null) {
       return deletionSuccess();
     }
@@ -566,29 +928,28 @@ class _$_DeletionSuccess implements _DeletionSuccess {
 
   @override
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result initial(_Initial value),
-    @required Result actionInProgress(_ActionInProgress value),
-    @required Result deletionSuccess(_DeletionSuccess value),
-    @required Result deletionFailure(_DeletionFailure value),
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial value) initial,
+    required TResult Function(_IsCreator value) isCreator,
+    required TResult Function(_IsNotCreator value) isNotCreator,
+    required TResult Function(_ActionInProgress value) actionInProgress,
+    required TResult Function(_DeletionSuccess value) deletionSuccess,
+    required TResult Function(_DeletionFailure value) deletionFailure,
   }) {
-    assert(initial != null);
-    assert(actionInProgress != null);
-    assert(deletionSuccess != null);
-    assert(deletionFailure != null);
     return deletionSuccess(this);
   }
 
   @override
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result initial(_Initial value),
-    Result actionInProgress(_ActionInProgress value),
-    Result deletionSuccess(_DeletionSuccess value),
-    Result deletionFailure(_DeletionFailure value),
-    @required Result orElse(),
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_IsCreator value)? isCreator,
+    TResult Function(_IsNotCreator value)? isNotCreator,
+    TResult Function(_ActionInProgress value)? actionInProgress,
+    TResult Function(_DeletionSuccess value)? deletionSuccess,
+    TResult Function(_DeletionFailure value)? deletionFailure,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (deletionSuccess != null) {
       return deletionSuccess(this);
     }
@@ -623,18 +984,18 @@ class __$DeletionFailureCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object failure = freezed,
+    Object? failure = freezed,
   }) {
     return _then(_DeletionFailure(
-      failure == freezed ? _value.failure : failure as Failure<dynamic>,
+      failure == freezed
+          ? _value.failure
+          : failure // ignore: cast_nullable_to_non_nullable
+              as Failure<dynamic>,
     ));
   }
 
   @override
   $FailureCopyWith<dynamic, $Res> get failure {
-    if (_value.failure == null) {
-      return null;
-    }
     return $FailureCopyWith<dynamic, $Res>(_value.failure, (value) {
       return _then(_value.copyWith(failure: value));
     });
@@ -642,8 +1003,9 @@ class __$DeletionFailureCopyWithImpl<$Res>
 }
 
 /// @nodoc
+
 class _$_DeletionFailure implements _DeletionFailure {
-  const _$_DeletionFailure(this.failure) : assert(failure != null);
+  const _$_DeletionFailure(this.failure);
 
   @override
   final Failure<dynamic> failure;
@@ -665,35 +1027,35 @@ class _$_DeletionFailure implements _DeletionFailure {
   int get hashCode =>
       runtimeType.hashCode ^ const DeepCollectionEquality().hash(failure);
 
+  @JsonKey(ignore: true)
   @override
   _$DeletionFailureCopyWith<_DeletionFailure> get copyWith =>
       __$DeletionFailureCopyWithImpl<_DeletionFailure>(this, _$identity);
 
   @override
   @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result initial(),
-    @required Result actionInProgress(),
-    @required Result deletionSuccess(),
-    @required Result deletionFailure(Failure<dynamic> failure),
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() isCreator,
+    required TResult Function() isNotCreator,
+    required TResult Function() actionInProgress,
+    required TResult Function() deletionSuccess,
+    required TResult Function(Failure<dynamic> failure) deletionFailure,
   }) {
-    assert(initial != null);
-    assert(actionInProgress != null);
-    assert(deletionSuccess != null);
-    assert(deletionFailure != null);
     return deletionFailure(failure);
   }
 
   @override
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result initial(),
-    Result actionInProgress(),
-    Result deletionSuccess(),
-    Result deletionFailure(Failure<dynamic> failure),
-    @required Result orElse(),
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? isCreator,
+    TResult Function()? isNotCreator,
+    TResult Function()? actionInProgress,
+    TResult Function()? deletionSuccess,
+    TResult Function(Failure<dynamic> failure)? deletionFailure,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (deletionFailure != null) {
       return deletionFailure(failure);
     }
@@ -702,29 +1064,28 @@ class _$_DeletionFailure implements _DeletionFailure {
 
   @override
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result initial(_Initial value),
-    @required Result actionInProgress(_ActionInProgress value),
-    @required Result deletionSuccess(_DeletionSuccess value),
-    @required Result deletionFailure(_DeletionFailure value),
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial value) initial,
+    required TResult Function(_IsCreator value) isCreator,
+    required TResult Function(_IsNotCreator value) isNotCreator,
+    required TResult Function(_ActionInProgress value) actionInProgress,
+    required TResult Function(_DeletionSuccess value) deletionSuccess,
+    required TResult Function(_DeletionFailure value) deletionFailure,
   }) {
-    assert(initial != null);
-    assert(actionInProgress != null);
-    assert(deletionSuccess != null);
-    assert(deletionFailure != null);
     return deletionFailure(this);
   }
 
   @override
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result initial(_Initial value),
-    Result actionInProgress(_ActionInProgress value),
-    Result deletionSuccess(_DeletionSuccess value),
-    Result deletionFailure(_DeletionFailure value),
-    @required Result orElse(),
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_IsCreator value)? isCreator,
+    TResult Function(_IsNotCreator value)? isNotCreator,
+    TResult Function(_ActionInProgress value)? actionInProgress,
+    TResult Function(_DeletionSuccess value)? deletionSuccess,
+    TResult Function(_DeletionFailure value)? deletionFailure,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (deletionFailure != null) {
       return deletionFailure(this);
     }
@@ -735,6 +1096,8 @@ class _$_DeletionFailure implements _DeletionFailure {
 abstract class _DeletionFailure implements ExperienceManagementActorState {
   const factory _DeletionFailure(Failure<dynamic> failure) = _$_DeletionFailure;
 
-  Failure<dynamic> get failure;
-  _$DeletionFailureCopyWith<_DeletionFailure> get copyWith;
+  Failure<dynamic> get failure => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  _$DeletionFailureCopyWith<_DeletionFailure> get copyWith =>
+      throw _privateConstructorUsedError;
 }

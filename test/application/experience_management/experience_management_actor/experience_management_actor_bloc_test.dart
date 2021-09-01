@@ -7,7 +7,7 @@ import 'package:worldon/application/experience_management/experience_management_
 import 'package:worldon/core/error/failure.dart';
 import 'package:worldon/data/core/failures/core_data_failure.dart';
 import 'package:worldon/domain/core/entities/experience/experience.dart';
-import 'package:worldon/domain/profile/use_case/delete_experience.dart';
+import 'package:worldon/domain/experience_management/use_case/delete_experience.dart';
 import 'package:worldon/injection.dart';
 
 import '../../../test_descriptions.dart';
@@ -20,7 +20,8 @@ void main() {
       deleteExperience = getIt<DeleteExperience>();
     },
   );
-  const failure = Failure.coreData(CoreDataFailure.serverError(errorString: TestDescription.errorString));
+  const failure =
+      Failure.coreData(CoreDataFailure.serverError(errorString: TestDescription.errorString));
   blocTest(
     TestDescription.shouldEmitInitial,
     build: () => getIt<ExperienceManagementActorBloc>(),

@@ -1,5 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides
 
 part of 'rate_experience_difficulty_actor_bloc.dart';
 
@@ -9,18 +9,19 @@ part of 'rate_experience_difficulty_actor_bloc.dart';
 
 T _$identity<T>(T value) => value;
 
+final _privateConstructorUsedError = UnsupportedError(
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+
 /// @nodoc
 class _$RateExperienceDifficultyActorEventTearOff {
   const _$RateExperienceDifficultyActorEventTearOff();
 
-// ignore: unused_element
   _DifficultyChanged difficultyChanged(int difficultyRating) {
     return _DifficultyChanged(
       difficultyRating,
     );
   }
 
-// ignore: unused_element
   _DifficultyRated difficultyRated(Experience experience) {
     return _DifficultyRated(
       experience,
@@ -29,34 +30,37 @@ class _$RateExperienceDifficultyActorEventTearOff {
 }
 
 /// @nodoc
-// ignore: unused_element
 const $RateExperienceDifficultyActorEvent =
     _$RateExperienceDifficultyActorEventTearOff();
 
 /// @nodoc
 mixin _$RateExperienceDifficultyActorEvent {
   @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result difficultyChanged(int difficultyRating),
-    @required Result difficultyRated(Experience experience),
-  });
+  TResult when<TResult extends Object?>({
+    required TResult Function(int difficultyRating) difficultyChanged,
+    required TResult Function(Experience experience) difficultyRated,
+  }) =>
+      throw _privateConstructorUsedError;
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result difficultyChanged(int difficultyRating),
-    Result difficultyRated(Experience experience),
-    @required Result orElse(),
-  });
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(int difficultyRating)? difficultyChanged,
+    TResult Function(Experience experience)? difficultyRated,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result difficultyChanged(_DifficultyChanged value),
-    @required Result difficultyRated(_DifficultyRated value),
-  });
+  TResult map<TResult extends Object?>({
+    required TResult Function(_DifficultyChanged value) difficultyChanged,
+    required TResult Function(_DifficultyRated value) difficultyRated,
+  }) =>
+      throw _privateConstructorUsedError;
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result difficultyChanged(_DifficultyChanged value),
-    Result difficultyRated(_DifficultyRated value),
-    @required Result orElse(),
-  });
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_DifficultyChanged value)? difficultyChanged,
+    TResult Function(_DifficultyRated value)? difficultyRated,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -98,20 +102,21 @@ class __$DifficultyChangedCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object difficultyRating = freezed,
+    Object? difficultyRating = freezed,
   }) {
     return _then(_DifficultyChanged(
       difficultyRating == freezed
           ? _value.difficultyRating
-          : difficultyRating as int,
+          : difficultyRating // ignore: cast_nullable_to_non_nullable
+              as int,
     ));
   }
 }
 
 /// @nodoc
+
 class _$_DifficultyChanged implements _DifficultyChanged {
-  const _$_DifficultyChanged(this.difficultyRating)
-      : assert(difficultyRating != null);
+  const _$_DifficultyChanged(this.difficultyRating);
 
   @override
   final int difficultyRating;
@@ -135,29 +140,27 @@ class _$_DifficultyChanged implements _DifficultyChanged {
       runtimeType.hashCode ^
       const DeepCollectionEquality().hash(difficultyRating);
 
+  @JsonKey(ignore: true)
   @override
   _$DifficultyChangedCopyWith<_DifficultyChanged> get copyWith =>
       __$DifficultyChangedCopyWithImpl<_DifficultyChanged>(this, _$identity);
 
   @override
   @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result difficultyChanged(int difficultyRating),
-    @required Result difficultyRated(Experience experience),
+  TResult when<TResult extends Object?>({
+    required TResult Function(int difficultyRating) difficultyChanged,
+    required TResult Function(Experience experience) difficultyRated,
   }) {
-    assert(difficultyChanged != null);
-    assert(difficultyRated != null);
     return difficultyChanged(difficultyRating);
   }
 
   @override
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result difficultyChanged(int difficultyRating),
-    Result difficultyRated(Experience experience),
-    @required Result orElse(),
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(int difficultyRating)? difficultyChanged,
+    TResult Function(Experience experience)? difficultyRated,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (difficultyChanged != null) {
       return difficultyChanged(difficultyRating);
     }
@@ -166,23 +169,20 @@ class _$_DifficultyChanged implements _DifficultyChanged {
 
   @override
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result difficultyChanged(_DifficultyChanged value),
-    @required Result difficultyRated(_DifficultyRated value),
+  TResult map<TResult extends Object?>({
+    required TResult Function(_DifficultyChanged value) difficultyChanged,
+    required TResult Function(_DifficultyRated value) difficultyRated,
   }) {
-    assert(difficultyChanged != null);
-    assert(difficultyRated != null);
     return difficultyChanged(this);
   }
 
   @override
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result difficultyChanged(_DifficultyChanged value),
-    Result difficultyRated(_DifficultyRated value),
-    @required Result orElse(),
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_DifficultyChanged value)? difficultyChanged,
+    TResult Function(_DifficultyRated value)? difficultyRated,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (difficultyChanged != null) {
       return difficultyChanged(this);
     }
@@ -194,8 +194,10 @@ abstract class _DifficultyChanged
     implements RateExperienceDifficultyActorEvent {
   const factory _DifficultyChanged(int difficultyRating) = _$_DifficultyChanged;
 
-  int get difficultyRating;
-  _$DifficultyChangedCopyWith<_DifficultyChanged> get copyWith;
+  int get difficultyRating => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  _$DifficultyChangedCopyWith<_DifficultyChanged> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -221,18 +223,18 @@ class __$DifficultyRatedCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object experience = freezed,
+    Object? experience = freezed,
   }) {
     return _then(_DifficultyRated(
-      experience == freezed ? _value.experience : experience as Experience,
+      experience == freezed
+          ? _value.experience
+          : experience // ignore: cast_nullable_to_non_nullable
+              as Experience,
     ));
   }
 
   @override
   $ExperienceCopyWith<$Res> get experience {
-    if (_value.experience == null) {
-      return null;
-    }
     return $ExperienceCopyWith<$Res>(_value.experience, (value) {
       return _then(_value.copyWith(experience: value));
     });
@@ -240,8 +242,9 @@ class __$DifficultyRatedCopyWithImpl<$Res>
 }
 
 /// @nodoc
+
 class _$_DifficultyRated implements _DifficultyRated {
-  const _$_DifficultyRated(this.experience) : assert(experience != null);
+  const _$_DifficultyRated(this.experience);
 
   @override
   final Experience experience;
@@ -264,29 +267,27 @@ class _$_DifficultyRated implements _DifficultyRated {
   int get hashCode =>
       runtimeType.hashCode ^ const DeepCollectionEquality().hash(experience);
 
+  @JsonKey(ignore: true)
   @override
   _$DifficultyRatedCopyWith<_DifficultyRated> get copyWith =>
       __$DifficultyRatedCopyWithImpl<_DifficultyRated>(this, _$identity);
 
   @override
   @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result difficultyChanged(int difficultyRating),
-    @required Result difficultyRated(Experience experience),
+  TResult when<TResult extends Object?>({
+    required TResult Function(int difficultyRating) difficultyChanged,
+    required TResult Function(Experience experience) difficultyRated,
   }) {
-    assert(difficultyChanged != null);
-    assert(difficultyRated != null);
     return difficultyRated(experience);
   }
 
   @override
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result difficultyChanged(int difficultyRating),
-    Result difficultyRated(Experience experience),
-    @required Result orElse(),
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(int difficultyRating)? difficultyChanged,
+    TResult Function(Experience experience)? difficultyRated,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (difficultyRated != null) {
       return difficultyRated(experience);
     }
@@ -295,23 +296,20 @@ class _$_DifficultyRated implements _DifficultyRated {
 
   @override
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result difficultyChanged(_DifficultyChanged value),
-    @required Result difficultyRated(_DifficultyRated value),
+  TResult map<TResult extends Object?>({
+    required TResult Function(_DifficultyChanged value) difficultyChanged,
+    required TResult Function(_DifficultyRated value) difficultyRated,
   }) {
-    assert(difficultyChanged != null);
-    assert(difficultyRated != null);
     return difficultyRated(this);
   }
 
   @override
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result difficultyChanged(_DifficultyChanged value),
-    Result difficultyRated(_DifficultyRated value),
-    @required Result orElse(),
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_DifficultyChanged value)? difficultyChanged,
+    TResult Function(_DifficultyRated value)? difficultyRated,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (difficultyRated != null) {
       return difficultyRated(this);
     }
@@ -322,19 +320,20 @@ class _$_DifficultyRated implements _DifficultyRated {
 abstract class _DifficultyRated implements RateExperienceDifficultyActorEvent {
   const factory _DifficultyRated(Experience experience) = _$_DifficultyRated;
 
-  Experience get experience;
-  _$DifficultyRatedCopyWith<_DifficultyRated> get copyWith;
+  Experience get experience => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  _$DifficultyRatedCopyWith<_DifficultyRated> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 class _$RateExperienceDifficultyActorStateTearOff {
   const _$RateExperienceDifficultyActorStateTearOff();
 
-// ignore: unused_element
   _RateExperienceDifficultyActorState call(
-      {@required int difficulty,
-      @required bool isSubmitting,
-      @required Option<Either<Failure, Unit>> failureOrSuccessOption}) {
+      {required int difficulty,
+      required bool isSubmitting,
+      required Option<Either<Failure, Unit>> failureOrSuccessOption}) {
     return _RateExperienceDifficultyActorState(
       difficulty: difficulty,
       isSubmitting: isSubmitting,
@@ -344,18 +343,20 @@ class _$RateExperienceDifficultyActorStateTearOff {
 }
 
 /// @nodoc
-// ignore: unused_element
 const $RateExperienceDifficultyActorState =
     _$RateExperienceDifficultyActorStateTearOff();
 
 /// @nodoc
 mixin _$RateExperienceDifficultyActorState {
-  int get difficulty;
-  bool get isSubmitting;
-  Option<Either<Failure, Unit>> get failureOrSuccessOption;
+  int get difficulty => throw _privateConstructorUsedError;
+  bool get isSubmitting => throw _privateConstructorUsedError;
+  Option<Either<Failure, Unit>> get failureOrSuccessOption =>
+      throw _privateConstructorUsedError;
 
+  @JsonKey(ignore: true)
   $RateExperienceDifficultyActorStateCopyWith<
-      RateExperienceDifficultyActorState> get copyWith;
+          RateExperienceDifficultyActorState>
+      get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -381,17 +382,23 @@ class _$RateExperienceDifficultyActorStateCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object difficulty = freezed,
-    Object isSubmitting = freezed,
-    Object failureOrSuccessOption = freezed,
+    Object? difficulty = freezed,
+    Object? isSubmitting = freezed,
+    Object? failureOrSuccessOption = freezed,
   }) {
     return _then(_value.copyWith(
-      difficulty: difficulty == freezed ? _value.difficulty : difficulty as int,
-      isSubmitting:
-          isSubmitting == freezed ? _value.isSubmitting : isSubmitting as bool,
+      difficulty: difficulty == freezed
+          ? _value.difficulty
+          : difficulty // ignore: cast_nullable_to_non_nullable
+              as int,
+      isSubmitting: isSubmitting == freezed
+          ? _value.isSubmitting
+          : isSubmitting // ignore: cast_nullable_to_non_nullable
+              as bool,
       failureOrSuccessOption: failureOrSuccessOption == freezed
           ? _value.failureOrSuccessOption
-          : failureOrSuccessOption as Option<Either<Failure, Unit>>,
+          : failureOrSuccessOption // ignore: cast_nullable_to_non_nullable
+              as Option<Either<Failure, Unit>>,
     ));
   }
 }
@@ -425,31 +432,35 @@ class __$RateExperienceDifficultyActorStateCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object difficulty = freezed,
-    Object isSubmitting = freezed,
-    Object failureOrSuccessOption = freezed,
+    Object? difficulty = freezed,
+    Object? isSubmitting = freezed,
+    Object? failureOrSuccessOption = freezed,
   }) {
     return _then(_RateExperienceDifficultyActorState(
-      difficulty: difficulty == freezed ? _value.difficulty : difficulty as int,
-      isSubmitting:
-          isSubmitting == freezed ? _value.isSubmitting : isSubmitting as bool,
+      difficulty: difficulty == freezed
+          ? _value.difficulty
+          : difficulty // ignore: cast_nullable_to_non_nullable
+              as int,
+      isSubmitting: isSubmitting == freezed
+          ? _value.isSubmitting
+          : isSubmitting // ignore: cast_nullable_to_non_nullable
+              as bool,
       failureOrSuccessOption: failureOrSuccessOption == freezed
           ? _value.failureOrSuccessOption
-          : failureOrSuccessOption as Option<Either<Failure, Unit>>,
+          : failureOrSuccessOption // ignore: cast_nullable_to_non_nullable
+              as Option<Either<Failure, Unit>>,
     ));
   }
 }
 
 /// @nodoc
+
 class _$_RateExperienceDifficultyActorState
     implements _RateExperienceDifficultyActorState {
   const _$_RateExperienceDifficultyActorState(
-      {@required this.difficulty,
-      @required this.isSubmitting,
-      @required this.failureOrSuccessOption})
-      : assert(difficulty != null),
-        assert(isSubmitting != null),
-        assert(failureOrSuccessOption != null);
+      {required this.difficulty,
+      required this.isSubmitting,
+      required this.failureOrSuccessOption});
 
   @override
   final int difficulty;
@@ -485,6 +496,7 @@ class _$_RateExperienceDifficultyActorState
       const DeepCollectionEquality().hash(isSubmitting) ^
       const DeepCollectionEquality().hash(failureOrSuccessOption);
 
+  @JsonKey(ignore: true)
   @override
   _$RateExperienceDifficultyActorStateCopyWith<
           _RateExperienceDifficultyActorState>
@@ -495,18 +507,21 @@ class _$_RateExperienceDifficultyActorState
 abstract class _RateExperienceDifficultyActorState
     implements RateExperienceDifficultyActorState {
   const factory _RateExperienceDifficultyActorState(
-          {@required int difficulty,
-          @required bool isSubmitting,
-          @required Option<Either<Failure, Unit>> failureOrSuccessOption}) =
+          {required int difficulty,
+          required bool isSubmitting,
+          required Option<Either<Failure, Unit>> failureOrSuccessOption}) =
       _$_RateExperienceDifficultyActorState;
 
   @override
-  int get difficulty;
+  int get difficulty => throw _privateConstructorUsedError;
   @override
-  bool get isSubmitting;
+  bool get isSubmitting => throw _privateConstructorUsedError;
   @override
-  Option<Either<Failure, Unit>> get failureOrSuccessOption;
+  Option<Either<Failure, Unit>> get failureOrSuccessOption =>
+      throw _privateConstructorUsedError;
   @override
+  @JsonKey(ignore: true)
   _$RateExperienceDifficultyActorStateCopyWith<
-      _RateExperienceDifficultyActorState> get copyWith;
+          _RateExperienceDifficultyActorState>
+      get copyWith => throw _privateConstructorUsedError;
 }

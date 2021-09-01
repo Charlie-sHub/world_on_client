@@ -19,7 +19,8 @@ part 'tag_management_watcher_state.dart';
 @injectable
 class TagManagementWatcherBloc extends Bloc<TagManagementWatcherEvent, TagManagementWatcherState> {
   TagManagementWatcherBloc() : super(const TagManagementWatcherState.initial());
-  StreamSubscription<Either<Failure, KtList<Tag>>> _tagsStreamSubscription;
+
+  StreamSubscription<Either<Failure, KtList<Tag>>>? _tagsStreamSubscription;
 
   @override
   Stream<TagManagementWatcherState> mapEventToState(TagManagementWatcherEvent event) async* {

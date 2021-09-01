@@ -21,7 +21,8 @@ part 'profile_experiences_watcher_state.dart';
 @injectable
 class ProfileExperiencesWatcherBloc extends Bloc<ProfileExperiencesWatcherEvent, ProfileExperiencesWatcherState> {
   ProfileExperiencesWatcherBloc() : super(const ProfileExperiencesWatcherState.initial());
-  StreamSubscription<Either<Failure, KtList<Experience>>> _experienceStreamSubscription;
+
+  StreamSubscription<Either<Failure, KtList<Experience>>>? _experienceStreamSubscription;
 
   @override
   Stream<ProfileExperiencesWatcherState> mapEventToState(ProfileExperiencesWatcherEvent event) async* {

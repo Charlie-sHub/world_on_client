@@ -24,6 +24,7 @@ void main() {
     },
   );
   final experience = getValidExperience();
+  const _experiencePointsToAward = 100;
   const failure = Failure.coreData(CoreDataFailure.serverError(errorString: TestDescription.errorString));
   blocTest(
     TestDescription.shouldEmitInitial,
@@ -34,8 +35,7 @@ void main() {
     "Should emit finishSuccess and rewardSuccess",
     build: () {
       when(finishExperience.call(any)).thenAnswer((_) async => right(unit));
-      when(rewardUser.call(any)).thenAnswer((_) async => right(unit));
-
+      // when(rewardUser.call(any)).thenAnswer((_) async => right(_experiencePointsToAward));
       return getIt<ExperienceFinishActorBloc>();
     },
     act: (bloc) async => bloc.add(ExperienceFinishActorEvent.finishedExperience(experience)),
@@ -45,15 +45,14 @@ void main() {
     },
     expect: [
       const ExperienceFinishActorState.actionInProgress(),
-      const ExperienceFinishActorState.finishSuccess(),
+      const ExperienceFinishActorState.finishSuccess(_experiencePointsToAward),
     ],
   );
   blocTest(
     "Should emit finishFailure and rewardSuccess",
     build: () {
       when(finishExperience.call(any)).thenAnswer((_) async => left(failure));
-      when(rewardUser.call(any)).thenAnswer((_) async => right(unit));
-
+      // when(rewardUser.call(any)).thenAnswer((_) async => right(_experiencePointsToAward));
       return getIt<ExperienceFinishActorBloc>();
     },
     act: (bloc) async => bloc.add(ExperienceFinishActorEvent.finishedExperience(experience)),

@@ -5,6 +5,7 @@ import 'package:mockito/mockito.dart';
 import 'package:worldon/core/error/failure.dart';
 import 'package:worldon/data/core/failures/core_data_failure.dart';
 import 'package:worldon/domain/core/entities/tag/tag.dart';
+import 'package:worldon/domain/core/validation/objects/unique_id.dart';
 import 'package:worldon/domain/tag_management/repository/tag_management_repository_interface.dart';
 import 'package:worldon/domain/tag_management/use_case/get_tag.dart';
 import 'package:worldon/injection.dart';
@@ -21,7 +22,7 @@ void main() {
       useCase = GetTag(mockTagManagementRepository);
     },
   );
-  const id = 1;
+  final id = UniqueId();
   final params = Params(id: id);
   final tag = Tag.empty().copyWith(id: id);
   test(

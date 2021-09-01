@@ -17,6 +17,7 @@ import 'package:worldon/domain/core/validation/objects/name.dart';
 import 'package:worldon/domain/core/validation/objects/password.dart';
 import 'package:worldon/domain/core/validation/objects/password_confirmator.dart';
 import 'package:worldon/domain/core/validation/objects/past_date.dart';
+import 'package:worldon/domain/core/validation/objects/unique_id.dart';
 import 'package:worldon/domain/profile/use_case/edit_user.dart';
 import 'package:worldon/injection.dart';
 
@@ -43,7 +44,7 @@ void main() {
   final validTag = getValidTag();
   final interests = {
     validTag,
-    validTag.copyWith(id: 2),
+    validTag.copyWith(id: UniqueId()),
   };
   final interestIds = interests.map((_tag) => _tag.id).toSet();
   final imageFile = File(Assets.userPlaceholder);

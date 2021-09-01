@@ -6,13 +6,14 @@ import 'package:worldon/domain/core/validation/objects/experience_points.dart';
 import 'package:worldon/domain/core/validation/objects/name.dart';
 import 'package:worldon/domain/core/validation/objects/past_date.dart';
 import 'package:worldon/domain/core/validation/objects/tag_set.dart';
+import 'package:worldon/domain/core/validation/objects/unique_id.dart';
 
 import 'get_valid_tag.dart';
 import 'get_valid_user.dart';
 
 Achievement getValidAchievement() {
   return Achievement(
-    id: 1,
+    id: UniqueId(),
     name: Name("The Hardest"),
     description: EntityDescription("You're the hardest"),
     imageURL: "testAchievement.jpg",

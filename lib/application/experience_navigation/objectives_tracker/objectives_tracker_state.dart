@@ -1,14 +1,18 @@
 part of 'objectives_tracker_bloc.dart';
 
 @freezed
-abstract class ObjectivesTrackerState implements _$ObjectivesTrackerState {
+class ObjectivesTrackerState with _$ObjectivesTrackerState {
   const factory ObjectivesTrackerState({
-    @required KtList<Objective> objectivesToDo,
-    @required bool isFinished,
+    required KtList<Objective> objectivesToDo,
+    required UniqueId experienceId,
+    required bool isFinished,
+    required bool showExplanation,
   }) = _ObjectivesTrackerState;
 
-  factory ObjectivesTrackerState.initial() => const ObjectivesTrackerState(
-        objectivesToDo: KtList.empty(),
+  factory ObjectivesTrackerState.initial() => ObjectivesTrackerState(
+        objectivesToDo: const KtList.empty(),
+        experienceId: UniqueId(),
         isFinished: false,
+        showExplanation: true,
       );
 }
