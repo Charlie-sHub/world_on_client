@@ -141,6 +141,7 @@ class __$PrimitiveRewardCopyWithImpl<$Res>
 
 /// @nodoc
 
+@Deprecated("This class is not necessary for the current way to create rewards")
 class _$_PrimitiveReward extends _PrimitiveReward {
   const _$_PrimitiveReward(
       {required this.id,
