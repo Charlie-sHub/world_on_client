@@ -4,8 +4,8 @@ Front end of the World On project.
 
 ## Work flow to collaborate on the project
 
-1. Fetch master
-2. Branch from master with name [Initials]/[PBI-number]-[PBI name], for example: "CM/WOP-1-some-feature"
+1. Fetch develop (should always be up to date with master)
+2. Branch from develop with a name following this pattern [Initials]/[PBI-number]-[PBI name], for example: "CM/WOP-1-some-feature"
 3. Work on that branch making commits and merges as necessary
 4. Create Pull Request to develop when done, merging with it right before
 5. From develop a dev build* will be created to test the added feature/fix
