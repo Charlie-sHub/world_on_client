@@ -164,6 +164,8 @@ class __$PrimitiveObjectiveCopyWithImpl<$Res>
 
 /// @nodoc
 
+@Deprecated(
+    "This class is not necessary for the current way to create objectives")
 class _$_PrimitiveObjective extends _PrimitiveObjective {
   const _$_PrimitiveObjective(
       {required this.id,
