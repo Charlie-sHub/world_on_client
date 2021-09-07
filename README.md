@@ -1,6 +1,6 @@
 # World On
 
-Front end of the World On project.
+Front end of the World On project, making a game out of life.
 
 ## Work flow to collaborate on the project
 
@@ -16,8 +16,8 @@ Front end of the World On project.
 
 Feel free to create issues as necessary to request fixes and suggest features.
 
-## Excellent Flutter tutorials that greatly influenced the work on this project
-It is expected you've done them all to begin collaborating on this project
+## Must do Flutter tutorials
+It is expected you've done them all to begin collaborating on this project, as they have greatly influenced it
 
 - [Flutter Tutorial for Beginners](https://www.youtube.com/playlist?list=PL4cUxeGkcC9jLYyp2Aoh6hcWuxFDX6PBJ)
 - [Learn Flutter Clean Architecture & TDD](https://www.youtube.com/watch?v=dc3B_mMrZ-Q)
