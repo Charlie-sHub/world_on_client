@@ -1,5 +1,6 @@
+// coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
 
 part of 'value_failure.dart';
 
@@ -137,6 +138,25 @@ mixin _$ValueFailure<T> {
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? nullInput,
+    TResult Function(DateTime failedValue)? invalidDate,
+    TResult Function(String failedValue)? invalidEmail,
+    TResult Function(String failedValue)? invalidPassword,
+    TResult Function(String failedValue)? stringMismatch,
+    TResult Function(String failedValue)? invalidName,
+    TResult Function(String failedValue)? emptyString,
+    TResult Function(String failedValue)? multiLineString,
+    TResult Function(String failedValue, int maxLength)? stringExceedsLength,
+    TResult Function(int failedValue)? integerOutOfBounds,
+    TResult Function(String failedValue)? stringWithInvalidCharacters,
+    TResult Function(double failedValue)? invalidCoordinate,
+    TResult Function(T failedValue)? emptySet,
+    TResult Function(T failedValue)? emptyList,
+    TResult Function(T failedValue, int maxLength)? collectionExceedsLength,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? nullInput,
     TResult Function(DateTime failedValue)? invalidDate,
@@ -175,6 +195,26 @@ mixin _$ValueFailure<T> {
     required TResult Function(EmptyList<T> value) emptyList,
     required TResult Function(CollectionExceedsLength<T> value)
         collectionExceedsLength,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(NullInput<T> value)? nullInput,
+    TResult Function(InvalidDate<T> value)? invalidDate,
+    TResult Function(InvalidEmail<T> value)? invalidEmail,
+    TResult Function(InvalidPassword<T> value)? invalidPassword,
+    TResult Function(StringMismatch<T> value)? stringMismatch,
+    TResult Function(InvalidName<T> value)? invalidName,
+    TResult Function(EmptyString<T> value)? emptyString,
+    TResult Function(MultiLineString<T> value)? multiLineString,
+    TResult Function(StringExceedsLength<T> value)? stringExceedsLength,
+    TResult Function(IntegerOutOfBounds<T> value)? integerOutOfBounds,
+    TResult Function(StringWithInvalidCharacters<T> value)?
+        stringWithInvalidCharacters,
+    TResult Function(InvalidCoordinates<T> value)? invalidCoordinate,
+    TResult Function(EmptySet<T> value)? emptySet,
+    TResult Function(EmptyList<T> value)? emptyList,
+    TResult Function(CollectionExceedsLength<T> value)? collectionExceedsLength,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -280,6 +320,28 @@ class _$NullInput<T> implements NullInput<T> {
 
   @override
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? nullInput,
+    TResult Function(DateTime failedValue)? invalidDate,
+    TResult Function(String failedValue)? invalidEmail,
+    TResult Function(String failedValue)? invalidPassword,
+    TResult Function(String failedValue)? stringMismatch,
+    TResult Function(String failedValue)? invalidName,
+    TResult Function(String failedValue)? emptyString,
+    TResult Function(String failedValue)? multiLineString,
+    TResult Function(String failedValue, int maxLength)? stringExceedsLength,
+    TResult Function(int failedValue)? integerOutOfBounds,
+    TResult Function(String failedValue)? stringWithInvalidCharacters,
+    TResult Function(double failedValue)? invalidCoordinate,
+    TResult Function(T failedValue)? emptySet,
+    TResult Function(T failedValue)? emptyList,
+    TResult Function(T failedValue, int maxLength)? collectionExceedsLength,
+  }) {
+    return nullInput?.call();
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? nullInput,
     TResult Function(DateTime failedValue)? invalidDate,
@@ -326,6 +388,29 @@ class _$NullInput<T> implements NullInput<T> {
         collectionExceedsLength,
   }) {
     return nullInput(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(NullInput<T> value)? nullInput,
+    TResult Function(InvalidDate<T> value)? invalidDate,
+    TResult Function(InvalidEmail<T> value)? invalidEmail,
+    TResult Function(InvalidPassword<T> value)? invalidPassword,
+    TResult Function(StringMismatch<T> value)? stringMismatch,
+    TResult Function(InvalidName<T> value)? invalidName,
+    TResult Function(EmptyString<T> value)? emptyString,
+    TResult Function(MultiLineString<T> value)? multiLineString,
+    TResult Function(StringExceedsLength<T> value)? stringExceedsLength,
+    TResult Function(IntegerOutOfBounds<T> value)? integerOutOfBounds,
+    TResult Function(StringWithInvalidCharacters<T> value)?
+        stringWithInvalidCharacters,
+    TResult Function(InvalidCoordinates<T> value)? invalidCoordinate,
+    TResult Function(EmptySet<T> value)? emptySet,
+    TResult Function(EmptyList<T> value)? emptyList,
+    TResult Function(CollectionExceedsLength<T> value)? collectionExceedsLength,
+  }) {
+    return nullInput?.call(this);
   }
 
   @override
@@ -449,6 +534,28 @@ class _$InvalidDate<T> implements InvalidDate<T> {
 
   @override
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? nullInput,
+    TResult Function(DateTime failedValue)? invalidDate,
+    TResult Function(String failedValue)? invalidEmail,
+    TResult Function(String failedValue)? invalidPassword,
+    TResult Function(String failedValue)? stringMismatch,
+    TResult Function(String failedValue)? invalidName,
+    TResult Function(String failedValue)? emptyString,
+    TResult Function(String failedValue)? multiLineString,
+    TResult Function(String failedValue, int maxLength)? stringExceedsLength,
+    TResult Function(int failedValue)? integerOutOfBounds,
+    TResult Function(String failedValue)? stringWithInvalidCharacters,
+    TResult Function(double failedValue)? invalidCoordinate,
+    TResult Function(T failedValue)? emptySet,
+    TResult Function(T failedValue)? emptyList,
+    TResult Function(T failedValue, int maxLength)? collectionExceedsLength,
+  }) {
+    return invalidDate?.call(failedValue);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? nullInput,
     TResult Function(DateTime failedValue)? invalidDate,
@@ -495,6 +602,29 @@ class _$InvalidDate<T> implements InvalidDate<T> {
         collectionExceedsLength,
   }) {
     return invalidDate(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(NullInput<T> value)? nullInput,
+    TResult Function(InvalidDate<T> value)? invalidDate,
+    TResult Function(InvalidEmail<T> value)? invalidEmail,
+    TResult Function(InvalidPassword<T> value)? invalidPassword,
+    TResult Function(StringMismatch<T> value)? stringMismatch,
+    TResult Function(InvalidName<T> value)? invalidName,
+    TResult Function(EmptyString<T> value)? emptyString,
+    TResult Function(MultiLineString<T> value)? multiLineString,
+    TResult Function(StringExceedsLength<T> value)? stringExceedsLength,
+    TResult Function(IntegerOutOfBounds<T> value)? integerOutOfBounds,
+    TResult Function(StringWithInvalidCharacters<T> value)?
+        stringWithInvalidCharacters,
+    TResult Function(InvalidCoordinates<T> value)? invalidCoordinate,
+    TResult Function(EmptySet<T> value)? emptySet,
+    TResult Function(EmptyList<T> value)? emptyList,
+    TResult Function(CollectionExceedsLength<T> value)? collectionExceedsLength,
+  }) {
+    return invalidDate?.call(this);
   }
 
   @override
@@ -623,6 +753,28 @@ class _$InvalidEmail<T> implements InvalidEmail<T> {
 
   @override
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? nullInput,
+    TResult Function(DateTime failedValue)? invalidDate,
+    TResult Function(String failedValue)? invalidEmail,
+    TResult Function(String failedValue)? invalidPassword,
+    TResult Function(String failedValue)? stringMismatch,
+    TResult Function(String failedValue)? invalidName,
+    TResult Function(String failedValue)? emptyString,
+    TResult Function(String failedValue)? multiLineString,
+    TResult Function(String failedValue, int maxLength)? stringExceedsLength,
+    TResult Function(int failedValue)? integerOutOfBounds,
+    TResult Function(String failedValue)? stringWithInvalidCharacters,
+    TResult Function(double failedValue)? invalidCoordinate,
+    TResult Function(T failedValue)? emptySet,
+    TResult Function(T failedValue)? emptyList,
+    TResult Function(T failedValue, int maxLength)? collectionExceedsLength,
+  }) {
+    return invalidEmail?.call(failedValue);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? nullInput,
     TResult Function(DateTime failedValue)? invalidDate,
@@ -669,6 +821,29 @@ class _$InvalidEmail<T> implements InvalidEmail<T> {
         collectionExceedsLength,
   }) {
     return invalidEmail(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(NullInput<T> value)? nullInput,
+    TResult Function(InvalidDate<T> value)? invalidDate,
+    TResult Function(InvalidEmail<T> value)? invalidEmail,
+    TResult Function(InvalidPassword<T> value)? invalidPassword,
+    TResult Function(StringMismatch<T> value)? stringMismatch,
+    TResult Function(InvalidName<T> value)? invalidName,
+    TResult Function(EmptyString<T> value)? emptyString,
+    TResult Function(MultiLineString<T> value)? multiLineString,
+    TResult Function(StringExceedsLength<T> value)? stringExceedsLength,
+    TResult Function(IntegerOutOfBounds<T> value)? integerOutOfBounds,
+    TResult Function(StringWithInvalidCharacters<T> value)?
+        stringWithInvalidCharacters,
+    TResult Function(InvalidCoordinates<T> value)? invalidCoordinate,
+    TResult Function(EmptySet<T> value)? emptySet,
+    TResult Function(EmptyList<T> value)? emptyList,
+    TResult Function(CollectionExceedsLength<T> value)? collectionExceedsLength,
+  }) {
+    return invalidEmail?.call(this);
   }
 
   @override
@@ -797,6 +972,28 @@ class _$InvalidPassword<T> implements InvalidPassword<T> {
 
   @override
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? nullInput,
+    TResult Function(DateTime failedValue)? invalidDate,
+    TResult Function(String failedValue)? invalidEmail,
+    TResult Function(String failedValue)? invalidPassword,
+    TResult Function(String failedValue)? stringMismatch,
+    TResult Function(String failedValue)? invalidName,
+    TResult Function(String failedValue)? emptyString,
+    TResult Function(String failedValue)? multiLineString,
+    TResult Function(String failedValue, int maxLength)? stringExceedsLength,
+    TResult Function(int failedValue)? integerOutOfBounds,
+    TResult Function(String failedValue)? stringWithInvalidCharacters,
+    TResult Function(double failedValue)? invalidCoordinate,
+    TResult Function(T failedValue)? emptySet,
+    TResult Function(T failedValue)? emptyList,
+    TResult Function(T failedValue, int maxLength)? collectionExceedsLength,
+  }) {
+    return invalidPassword?.call(failedValue);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? nullInput,
     TResult Function(DateTime failedValue)? invalidDate,
@@ -843,6 +1040,29 @@ class _$InvalidPassword<T> implements InvalidPassword<T> {
         collectionExceedsLength,
   }) {
     return invalidPassword(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(NullInput<T> value)? nullInput,
+    TResult Function(InvalidDate<T> value)? invalidDate,
+    TResult Function(InvalidEmail<T> value)? invalidEmail,
+    TResult Function(InvalidPassword<T> value)? invalidPassword,
+    TResult Function(StringMismatch<T> value)? stringMismatch,
+    TResult Function(InvalidName<T> value)? invalidName,
+    TResult Function(EmptyString<T> value)? emptyString,
+    TResult Function(MultiLineString<T> value)? multiLineString,
+    TResult Function(StringExceedsLength<T> value)? stringExceedsLength,
+    TResult Function(IntegerOutOfBounds<T> value)? integerOutOfBounds,
+    TResult Function(StringWithInvalidCharacters<T> value)?
+        stringWithInvalidCharacters,
+    TResult Function(InvalidCoordinates<T> value)? invalidCoordinate,
+    TResult Function(EmptySet<T> value)? emptySet,
+    TResult Function(EmptyList<T> value)? emptyList,
+    TResult Function(CollectionExceedsLength<T> value)? collectionExceedsLength,
+  }) {
+    return invalidPassword?.call(this);
   }
 
   @override
@@ -972,6 +1192,28 @@ class _$StringMismatch<T> implements StringMismatch<T> {
 
   @override
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? nullInput,
+    TResult Function(DateTime failedValue)? invalidDate,
+    TResult Function(String failedValue)? invalidEmail,
+    TResult Function(String failedValue)? invalidPassword,
+    TResult Function(String failedValue)? stringMismatch,
+    TResult Function(String failedValue)? invalidName,
+    TResult Function(String failedValue)? emptyString,
+    TResult Function(String failedValue)? multiLineString,
+    TResult Function(String failedValue, int maxLength)? stringExceedsLength,
+    TResult Function(int failedValue)? integerOutOfBounds,
+    TResult Function(String failedValue)? stringWithInvalidCharacters,
+    TResult Function(double failedValue)? invalidCoordinate,
+    TResult Function(T failedValue)? emptySet,
+    TResult Function(T failedValue)? emptyList,
+    TResult Function(T failedValue, int maxLength)? collectionExceedsLength,
+  }) {
+    return stringMismatch?.call(failedValue);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? nullInput,
     TResult Function(DateTime failedValue)? invalidDate,
@@ -1018,6 +1260,29 @@ class _$StringMismatch<T> implements StringMismatch<T> {
         collectionExceedsLength,
   }) {
     return stringMismatch(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(NullInput<T> value)? nullInput,
+    TResult Function(InvalidDate<T> value)? invalidDate,
+    TResult Function(InvalidEmail<T> value)? invalidEmail,
+    TResult Function(InvalidPassword<T> value)? invalidPassword,
+    TResult Function(StringMismatch<T> value)? stringMismatch,
+    TResult Function(InvalidName<T> value)? invalidName,
+    TResult Function(EmptyString<T> value)? emptyString,
+    TResult Function(MultiLineString<T> value)? multiLineString,
+    TResult Function(StringExceedsLength<T> value)? stringExceedsLength,
+    TResult Function(IntegerOutOfBounds<T> value)? integerOutOfBounds,
+    TResult Function(StringWithInvalidCharacters<T> value)?
+        stringWithInvalidCharacters,
+    TResult Function(InvalidCoordinates<T> value)? invalidCoordinate,
+    TResult Function(EmptySet<T> value)? emptySet,
+    TResult Function(EmptyList<T> value)? emptyList,
+    TResult Function(CollectionExceedsLength<T> value)? collectionExceedsLength,
+  }) {
+    return stringMismatch?.call(this);
   }
 
   @override
@@ -1147,6 +1412,28 @@ class _$InvalidName<T> implements InvalidName<T> {
 
   @override
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? nullInput,
+    TResult Function(DateTime failedValue)? invalidDate,
+    TResult Function(String failedValue)? invalidEmail,
+    TResult Function(String failedValue)? invalidPassword,
+    TResult Function(String failedValue)? stringMismatch,
+    TResult Function(String failedValue)? invalidName,
+    TResult Function(String failedValue)? emptyString,
+    TResult Function(String failedValue)? multiLineString,
+    TResult Function(String failedValue, int maxLength)? stringExceedsLength,
+    TResult Function(int failedValue)? integerOutOfBounds,
+    TResult Function(String failedValue)? stringWithInvalidCharacters,
+    TResult Function(double failedValue)? invalidCoordinate,
+    TResult Function(T failedValue)? emptySet,
+    TResult Function(T failedValue)? emptyList,
+    TResult Function(T failedValue, int maxLength)? collectionExceedsLength,
+  }) {
+    return invalidName?.call(failedValue);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? nullInput,
     TResult Function(DateTime failedValue)? invalidDate,
@@ -1193,6 +1480,29 @@ class _$InvalidName<T> implements InvalidName<T> {
         collectionExceedsLength,
   }) {
     return invalidName(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(NullInput<T> value)? nullInput,
+    TResult Function(InvalidDate<T> value)? invalidDate,
+    TResult Function(InvalidEmail<T> value)? invalidEmail,
+    TResult Function(InvalidPassword<T> value)? invalidPassword,
+    TResult Function(StringMismatch<T> value)? stringMismatch,
+    TResult Function(InvalidName<T> value)? invalidName,
+    TResult Function(EmptyString<T> value)? emptyString,
+    TResult Function(MultiLineString<T> value)? multiLineString,
+    TResult Function(StringExceedsLength<T> value)? stringExceedsLength,
+    TResult Function(IntegerOutOfBounds<T> value)? integerOutOfBounds,
+    TResult Function(StringWithInvalidCharacters<T> value)?
+        stringWithInvalidCharacters,
+    TResult Function(InvalidCoordinates<T> value)? invalidCoordinate,
+    TResult Function(EmptySet<T> value)? emptySet,
+    TResult Function(EmptyList<T> value)? emptyList,
+    TResult Function(CollectionExceedsLength<T> value)? collectionExceedsLength,
+  }) {
+    return invalidName?.call(this);
   }
 
   @override
@@ -1321,6 +1631,28 @@ class _$EmptyString<T> implements EmptyString<T> {
 
   @override
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? nullInput,
+    TResult Function(DateTime failedValue)? invalidDate,
+    TResult Function(String failedValue)? invalidEmail,
+    TResult Function(String failedValue)? invalidPassword,
+    TResult Function(String failedValue)? stringMismatch,
+    TResult Function(String failedValue)? invalidName,
+    TResult Function(String failedValue)? emptyString,
+    TResult Function(String failedValue)? multiLineString,
+    TResult Function(String failedValue, int maxLength)? stringExceedsLength,
+    TResult Function(int failedValue)? integerOutOfBounds,
+    TResult Function(String failedValue)? stringWithInvalidCharacters,
+    TResult Function(double failedValue)? invalidCoordinate,
+    TResult Function(T failedValue)? emptySet,
+    TResult Function(T failedValue)? emptyList,
+    TResult Function(T failedValue, int maxLength)? collectionExceedsLength,
+  }) {
+    return emptyString?.call(failedValue);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? nullInput,
     TResult Function(DateTime failedValue)? invalidDate,
@@ -1367,6 +1699,29 @@ class _$EmptyString<T> implements EmptyString<T> {
         collectionExceedsLength,
   }) {
     return emptyString(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(NullInput<T> value)? nullInput,
+    TResult Function(InvalidDate<T> value)? invalidDate,
+    TResult Function(InvalidEmail<T> value)? invalidEmail,
+    TResult Function(InvalidPassword<T> value)? invalidPassword,
+    TResult Function(StringMismatch<T> value)? stringMismatch,
+    TResult Function(InvalidName<T> value)? invalidName,
+    TResult Function(EmptyString<T> value)? emptyString,
+    TResult Function(MultiLineString<T> value)? multiLineString,
+    TResult Function(StringExceedsLength<T> value)? stringExceedsLength,
+    TResult Function(IntegerOutOfBounds<T> value)? integerOutOfBounds,
+    TResult Function(StringWithInvalidCharacters<T> value)?
+        stringWithInvalidCharacters,
+    TResult Function(InvalidCoordinates<T> value)? invalidCoordinate,
+    TResult Function(EmptySet<T> value)? emptySet,
+    TResult Function(EmptyList<T> value)? emptyList,
+    TResult Function(CollectionExceedsLength<T> value)? collectionExceedsLength,
+  }) {
+    return emptyString?.call(this);
   }
 
   @override
@@ -1495,6 +1850,28 @@ class _$MultiLineString<T> implements MultiLineString<T> {
 
   @override
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? nullInput,
+    TResult Function(DateTime failedValue)? invalidDate,
+    TResult Function(String failedValue)? invalidEmail,
+    TResult Function(String failedValue)? invalidPassword,
+    TResult Function(String failedValue)? stringMismatch,
+    TResult Function(String failedValue)? invalidName,
+    TResult Function(String failedValue)? emptyString,
+    TResult Function(String failedValue)? multiLineString,
+    TResult Function(String failedValue, int maxLength)? stringExceedsLength,
+    TResult Function(int failedValue)? integerOutOfBounds,
+    TResult Function(String failedValue)? stringWithInvalidCharacters,
+    TResult Function(double failedValue)? invalidCoordinate,
+    TResult Function(T failedValue)? emptySet,
+    TResult Function(T failedValue)? emptyList,
+    TResult Function(T failedValue, int maxLength)? collectionExceedsLength,
+  }) {
+    return multiLineString?.call(failedValue);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? nullInput,
     TResult Function(DateTime failedValue)? invalidDate,
@@ -1541,6 +1918,29 @@ class _$MultiLineString<T> implements MultiLineString<T> {
         collectionExceedsLength,
   }) {
     return multiLineString(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(NullInput<T> value)? nullInput,
+    TResult Function(InvalidDate<T> value)? invalidDate,
+    TResult Function(InvalidEmail<T> value)? invalidEmail,
+    TResult Function(InvalidPassword<T> value)? invalidPassword,
+    TResult Function(StringMismatch<T> value)? stringMismatch,
+    TResult Function(InvalidName<T> value)? invalidName,
+    TResult Function(EmptyString<T> value)? emptyString,
+    TResult Function(MultiLineString<T> value)? multiLineString,
+    TResult Function(StringExceedsLength<T> value)? stringExceedsLength,
+    TResult Function(IntegerOutOfBounds<T> value)? integerOutOfBounds,
+    TResult Function(StringWithInvalidCharacters<T> value)?
+        stringWithInvalidCharacters,
+    TResult Function(InvalidCoordinates<T> value)? invalidCoordinate,
+    TResult Function(EmptySet<T> value)? emptySet,
+    TResult Function(EmptyList<T> value)? emptyList,
+    TResult Function(CollectionExceedsLength<T> value)? collectionExceedsLength,
+  }) {
+    return multiLineString?.call(this);
   }
 
   @override
@@ -1684,6 +2084,28 @@ class _$StringExceedsLength<T> implements StringExceedsLength<T> {
 
   @override
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? nullInput,
+    TResult Function(DateTime failedValue)? invalidDate,
+    TResult Function(String failedValue)? invalidEmail,
+    TResult Function(String failedValue)? invalidPassword,
+    TResult Function(String failedValue)? stringMismatch,
+    TResult Function(String failedValue)? invalidName,
+    TResult Function(String failedValue)? emptyString,
+    TResult Function(String failedValue)? multiLineString,
+    TResult Function(String failedValue, int maxLength)? stringExceedsLength,
+    TResult Function(int failedValue)? integerOutOfBounds,
+    TResult Function(String failedValue)? stringWithInvalidCharacters,
+    TResult Function(double failedValue)? invalidCoordinate,
+    TResult Function(T failedValue)? emptySet,
+    TResult Function(T failedValue)? emptyList,
+    TResult Function(T failedValue, int maxLength)? collectionExceedsLength,
+  }) {
+    return stringExceedsLength?.call(failedValue, maxLength);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? nullInput,
     TResult Function(DateTime failedValue)? invalidDate,
@@ -1730,6 +2152,29 @@ class _$StringExceedsLength<T> implements StringExceedsLength<T> {
         collectionExceedsLength,
   }) {
     return stringExceedsLength(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(NullInput<T> value)? nullInput,
+    TResult Function(InvalidDate<T> value)? invalidDate,
+    TResult Function(InvalidEmail<T> value)? invalidEmail,
+    TResult Function(InvalidPassword<T> value)? invalidPassword,
+    TResult Function(StringMismatch<T> value)? stringMismatch,
+    TResult Function(InvalidName<T> value)? invalidName,
+    TResult Function(EmptyString<T> value)? emptyString,
+    TResult Function(MultiLineString<T> value)? multiLineString,
+    TResult Function(StringExceedsLength<T> value)? stringExceedsLength,
+    TResult Function(IntegerOutOfBounds<T> value)? integerOutOfBounds,
+    TResult Function(StringWithInvalidCharacters<T> value)?
+        stringWithInvalidCharacters,
+    TResult Function(InvalidCoordinates<T> value)? invalidCoordinate,
+    TResult Function(EmptySet<T> value)? emptySet,
+    TResult Function(EmptyList<T> value)? emptyList,
+    TResult Function(CollectionExceedsLength<T> value)? collectionExceedsLength,
+  }) {
+    return stringExceedsLength?.call(this);
   }
 
   @override
@@ -1862,6 +2307,28 @@ class _$IntegerOutOfBounds<T> implements IntegerOutOfBounds<T> {
 
   @override
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? nullInput,
+    TResult Function(DateTime failedValue)? invalidDate,
+    TResult Function(String failedValue)? invalidEmail,
+    TResult Function(String failedValue)? invalidPassword,
+    TResult Function(String failedValue)? stringMismatch,
+    TResult Function(String failedValue)? invalidName,
+    TResult Function(String failedValue)? emptyString,
+    TResult Function(String failedValue)? multiLineString,
+    TResult Function(String failedValue, int maxLength)? stringExceedsLength,
+    TResult Function(int failedValue)? integerOutOfBounds,
+    TResult Function(String failedValue)? stringWithInvalidCharacters,
+    TResult Function(double failedValue)? invalidCoordinate,
+    TResult Function(T failedValue)? emptySet,
+    TResult Function(T failedValue)? emptyList,
+    TResult Function(T failedValue, int maxLength)? collectionExceedsLength,
+  }) {
+    return integerOutOfBounds?.call(failedValue);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? nullInput,
     TResult Function(DateTime failedValue)? invalidDate,
@@ -1908,6 +2375,29 @@ class _$IntegerOutOfBounds<T> implements IntegerOutOfBounds<T> {
         collectionExceedsLength,
   }) {
     return integerOutOfBounds(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(NullInput<T> value)? nullInput,
+    TResult Function(InvalidDate<T> value)? invalidDate,
+    TResult Function(InvalidEmail<T> value)? invalidEmail,
+    TResult Function(InvalidPassword<T> value)? invalidPassword,
+    TResult Function(StringMismatch<T> value)? stringMismatch,
+    TResult Function(InvalidName<T> value)? invalidName,
+    TResult Function(EmptyString<T> value)? emptyString,
+    TResult Function(MultiLineString<T> value)? multiLineString,
+    TResult Function(StringExceedsLength<T> value)? stringExceedsLength,
+    TResult Function(IntegerOutOfBounds<T> value)? integerOutOfBounds,
+    TResult Function(StringWithInvalidCharacters<T> value)?
+        stringWithInvalidCharacters,
+    TResult Function(InvalidCoordinates<T> value)? invalidCoordinate,
+    TResult Function(EmptySet<T> value)? emptySet,
+    TResult Function(EmptyList<T> value)? emptyList,
+    TResult Function(CollectionExceedsLength<T> value)? collectionExceedsLength,
+  }) {
+    return integerOutOfBounds?.call(this);
   }
 
   @override
@@ -2042,6 +2532,28 @@ class _$StringWithInvalidCharacters<T>
 
   @override
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? nullInput,
+    TResult Function(DateTime failedValue)? invalidDate,
+    TResult Function(String failedValue)? invalidEmail,
+    TResult Function(String failedValue)? invalidPassword,
+    TResult Function(String failedValue)? stringMismatch,
+    TResult Function(String failedValue)? invalidName,
+    TResult Function(String failedValue)? emptyString,
+    TResult Function(String failedValue)? multiLineString,
+    TResult Function(String failedValue, int maxLength)? stringExceedsLength,
+    TResult Function(int failedValue)? integerOutOfBounds,
+    TResult Function(String failedValue)? stringWithInvalidCharacters,
+    TResult Function(double failedValue)? invalidCoordinate,
+    TResult Function(T failedValue)? emptySet,
+    TResult Function(T failedValue)? emptyList,
+    TResult Function(T failedValue, int maxLength)? collectionExceedsLength,
+  }) {
+    return stringWithInvalidCharacters?.call(failedValue);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? nullInput,
     TResult Function(DateTime failedValue)? invalidDate,
@@ -2088,6 +2600,29 @@ class _$StringWithInvalidCharacters<T>
         collectionExceedsLength,
   }) {
     return stringWithInvalidCharacters(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(NullInput<T> value)? nullInput,
+    TResult Function(InvalidDate<T> value)? invalidDate,
+    TResult Function(InvalidEmail<T> value)? invalidEmail,
+    TResult Function(InvalidPassword<T> value)? invalidPassword,
+    TResult Function(StringMismatch<T> value)? stringMismatch,
+    TResult Function(InvalidName<T> value)? invalidName,
+    TResult Function(EmptyString<T> value)? emptyString,
+    TResult Function(MultiLineString<T> value)? multiLineString,
+    TResult Function(StringExceedsLength<T> value)? stringExceedsLength,
+    TResult Function(IntegerOutOfBounds<T> value)? integerOutOfBounds,
+    TResult Function(StringWithInvalidCharacters<T> value)?
+        stringWithInvalidCharacters,
+    TResult Function(InvalidCoordinates<T> value)? invalidCoordinate,
+    TResult Function(EmptySet<T> value)? emptySet,
+    TResult Function(EmptyList<T> value)? emptyList,
+    TResult Function(CollectionExceedsLength<T> value)? collectionExceedsLength,
+  }) {
+    return stringWithInvalidCharacters?.call(this);
   }
 
   @override
@@ -2218,6 +2753,28 @@ class _$InvalidCoordinates<T> implements InvalidCoordinates<T> {
 
   @override
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? nullInput,
+    TResult Function(DateTime failedValue)? invalidDate,
+    TResult Function(String failedValue)? invalidEmail,
+    TResult Function(String failedValue)? invalidPassword,
+    TResult Function(String failedValue)? stringMismatch,
+    TResult Function(String failedValue)? invalidName,
+    TResult Function(String failedValue)? emptyString,
+    TResult Function(String failedValue)? multiLineString,
+    TResult Function(String failedValue, int maxLength)? stringExceedsLength,
+    TResult Function(int failedValue)? integerOutOfBounds,
+    TResult Function(String failedValue)? stringWithInvalidCharacters,
+    TResult Function(double failedValue)? invalidCoordinate,
+    TResult Function(T failedValue)? emptySet,
+    TResult Function(T failedValue)? emptyList,
+    TResult Function(T failedValue, int maxLength)? collectionExceedsLength,
+  }) {
+    return invalidCoordinate?.call(failedValue);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? nullInput,
     TResult Function(DateTime failedValue)? invalidDate,
@@ -2264,6 +2821,29 @@ class _$InvalidCoordinates<T> implements InvalidCoordinates<T> {
         collectionExceedsLength,
   }) {
     return invalidCoordinate(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(NullInput<T> value)? nullInput,
+    TResult Function(InvalidDate<T> value)? invalidDate,
+    TResult Function(InvalidEmail<T> value)? invalidEmail,
+    TResult Function(InvalidPassword<T> value)? invalidPassword,
+    TResult Function(StringMismatch<T> value)? stringMismatch,
+    TResult Function(InvalidName<T> value)? invalidName,
+    TResult Function(EmptyString<T> value)? emptyString,
+    TResult Function(MultiLineString<T> value)? multiLineString,
+    TResult Function(StringExceedsLength<T> value)? stringExceedsLength,
+    TResult Function(IntegerOutOfBounds<T> value)? integerOutOfBounds,
+    TResult Function(StringWithInvalidCharacters<T> value)?
+        stringWithInvalidCharacters,
+    TResult Function(InvalidCoordinates<T> value)? invalidCoordinate,
+    TResult Function(EmptySet<T> value)? emptySet,
+    TResult Function(EmptyList<T> value)? emptyList,
+    TResult Function(CollectionExceedsLength<T> value)? collectionExceedsLength,
+  }) {
+    return invalidCoordinate?.call(this);
   }
 
   @override
@@ -2392,6 +2972,28 @@ class _$EmptySet<T> implements EmptySet<T> {
 
   @override
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? nullInput,
+    TResult Function(DateTime failedValue)? invalidDate,
+    TResult Function(String failedValue)? invalidEmail,
+    TResult Function(String failedValue)? invalidPassword,
+    TResult Function(String failedValue)? stringMismatch,
+    TResult Function(String failedValue)? invalidName,
+    TResult Function(String failedValue)? emptyString,
+    TResult Function(String failedValue)? multiLineString,
+    TResult Function(String failedValue, int maxLength)? stringExceedsLength,
+    TResult Function(int failedValue)? integerOutOfBounds,
+    TResult Function(String failedValue)? stringWithInvalidCharacters,
+    TResult Function(double failedValue)? invalidCoordinate,
+    TResult Function(T failedValue)? emptySet,
+    TResult Function(T failedValue)? emptyList,
+    TResult Function(T failedValue, int maxLength)? collectionExceedsLength,
+  }) {
+    return emptySet?.call(failedValue);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? nullInput,
     TResult Function(DateTime failedValue)? invalidDate,
@@ -2438,6 +3040,29 @@ class _$EmptySet<T> implements EmptySet<T> {
         collectionExceedsLength,
   }) {
     return emptySet(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(NullInput<T> value)? nullInput,
+    TResult Function(InvalidDate<T> value)? invalidDate,
+    TResult Function(InvalidEmail<T> value)? invalidEmail,
+    TResult Function(InvalidPassword<T> value)? invalidPassword,
+    TResult Function(StringMismatch<T> value)? stringMismatch,
+    TResult Function(InvalidName<T> value)? invalidName,
+    TResult Function(EmptyString<T> value)? emptyString,
+    TResult Function(MultiLineString<T> value)? multiLineString,
+    TResult Function(StringExceedsLength<T> value)? stringExceedsLength,
+    TResult Function(IntegerOutOfBounds<T> value)? integerOutOfBounds,
+    TResult Function(StringWithInvalidCharacters<T> value)?
+        stringWithInvalidCharacters,
+    TResult Function(InvalidCoordinates<T> value)? invalidCoordinate,
+    TResult Function(EmptySet<T> value)? emptySet,
+    TResult Function(EmptyList<T> value)? emptyList,
+    TResult Function(CollectionExceedsLength<T> value)? collectionExceedsLength,
+  }) {
+    return emptySet?.call(this);
   }
 
   @override
@@ -2566,6 +3191,28 @@ class _$EmptyList<T> implements EmptyList<T> {
 
   @override
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? nullInput,
+    TResult Function(DateTime failedValue)? invalidDate,
+    TResult Function(String failedValue)? invalidEmail,
+    TResult Function(String failedValue)? invalidPassword,
+    TResult Function(String failedValue)? stringMismatch,
+    TResult Function(String failedValue)? invalidName,
+    TResult Function(String failedValue)? emptyString,
+    TResult Function(String failedValue)? multiLineString,
+    TResult Function(String failedValue, int maxLength)? stringExceedsLength,
+    TResult Function(int failedValue)? integerOutOfBounds,
+    TResult Function(String failedValue)? stringWithInvalidCharacters,
+    TResult Function(double failedValue)? invalidCoordinate,
+    TResult Function(T failedValue)? emptySet,
+    TResult Function(T failedValue)? emptyList,
+    TResult Function(T failedValue, int maxLength)? collectionExceedsLength,
+  }) {
+    return emptyList?.call(failedValue);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? nullInput,
     TResult Function(DateTime failedValue)? invalidDate,
@@ -2612,6 +3259,29 @@ class _$EmptyList<T> implements EmptyList<T> {
         collectionExceedsLength,
   }) {
     return emptyList(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(NullInput<T> value)? nullInput,
+    TResult Function(InvalidDate<T> value)? invalidDate,
+    TResult Function(InvalidEmail<T> value)? invalidEmail,
+    TResult Function(InvalidPassword<T> value)? invalidPassword,
+    TResult Function(StringMismatch<T> value)? stringMismatch,
+    TResult Function(InvalidName<T> value)? invalidName,
+    TResult Function(EmptyString<T> value)? emptyString,
+    TResult Function(MultiLineString<T> value)? multiLineString,
+    TResult Function(StringExceedsLength<T> value)? stringExceedsLength,
+    TResult Function(IntegerOutOfBounds<T> value)? integerOutOfBounds,
+    TResult Function(StringWithInvalidCharacters<T> value)?
+        stringWithInvalidCharacters,
+    TResult Function(InvalidCoordinates<T> value)? invalidCoordinate,
+    TResult Function(EmptySet<T> value)? emptySet,
+    TResult Function(EmptyList<T> value)? emptyList,
+    TResult Function(CollectionExceedsLength<T> value)? collectionExceedsLength,
+  }) {
+    return emptyList?.call(this);
   }
 
   @override
@@ -2756,6 +3426,28 @@ class _$CollectionExceedsLength<T> implements CollectionExceedsLength<T> {
 
   @override
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? nullInput,
+    TResult Function(DateTime failedValue)? invalidDate,
+    TResult Function(String failedValue)? invalidEmail,
+    TResult Function(String failedValue)? invalidPassword,
+    TResult Function(String failedValue)? stringMismatch,
+    TResult Function(String failedValue)? invalidName,
+    TResult Function(String failedValue)? emptyString,
+    TResult Function(String failedValue)? multiLineString,
+    TResult Function(String failedValue, int maxLength)? stringExceedsLength,
+    TResult Function(int failedValue)? integerOutOfBounds,
+    TResult Function(String failedValue)? stringWithInvalidCharacters,
+    TResult Function(double failedValue)? invalidCoordinate,
+    TResult Function(T failedValue)? emptySet,
+    TResult Function(T failedValue)? emptyList,
+    TResult Function(T failedValue, int maxLength)? collectionExceedsLength,
+  }) {
+    return collectionExceedsLength?.call(failedValue, maxLength);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? nullInput,
     TResult Function(DateTime failedValue)? invalidDate,
@@ -2802,6 +3494,29 @@ class _$CollectionExceedsLength<T> implements CollectionExceedsLength<T> {
         collectionExceedsLength,
   }) {
     return collectionExceedsLength(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(NullInput<T> value)? nullInput,
+    TResult Function(InvalidDate<T> value)? invalidDate,
+    TResult Function(InvalidEmail<T> value)? invalidEmail,
+    TResult Function(InvalidPassword<T> value)? invalidPassword,
+    TResult Function(StringMismatch<T> value)? stringMismatch,
+    TResult Function(InvalidName<T> value)? invalidName,
+    TResult Function(EmptyString<T> value)? emptyString,
+    TResult Function(MultiLineString<T> value)? multiLineString,
+    TResult Function(StringExceedsLength<T> value)? stringExceedsLength,
+    TResult Function(IntegerOutOfBounds<T> value)? integerOutOfBounds,
+    TResult Function(StringWithInvalidCharacters<T> value)?
+        stringWithInvalidCharacters,
+    TResult Function(InvalidCoordinates<T> value)? invalidCoordinate,
+    TResult Function(EmptySet<T> value)? emptySet,
+    TResult Function(EmptyList<T> value)? emptyList,
+    TResult Function(CollectionExceedsLength<T> value)? collectionExceedsLength,
+  }) {
+    return collectionExceedsLength?.call(this);
   }
 
   @override

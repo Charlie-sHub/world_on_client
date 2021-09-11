@@ -6,19 +6,17 @@ part of 'tag_dto.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$_TagDto _$_$_TagDtoFromJson(Map<String, dynamic> json) {
-  return _$_TagDto(
-    id: json['id'] as String,
-    name: json['name'] as String,
-    creatorId: json['creatorId'] as String,
-    creationDate: const ServerTimestampConverter()
-        .fromJson(json['creationDate'] as Timestamp),
-    modificationDate: const ServerTimestampConverter()
-        .fromJson(json['modificationDate'] as Timestamp),
-  );
-}
+_$_TagDto _$$_TagDtoFromJson(Map<String, dynamic> json) => _$_TagDto(
+      id: json['id'] as String,
+      name: json['name'] as String,
+      creatorId: json['creatorId'] as String,
+      creationDate: const ServerTimestampConverter()
+          .fromJson(json['creationDate'] as Timestamp),
+      modificationDate: const ServerTimestampConverter()
+          .fromJson(json['modificationDate'] as Timestamp),
+    );
 
-Map<String, dynamic> _$_$_TagDtoToJson(_$_TagDto instance) => <String, dynamic>{
+Map<String, dynamic> _$$_TagDtoToJson(_$_TagDto instance) => <String, dynamic>{
       'id': instance.id,
       'name': instance.name,
       'creatorId': instance.creatorId,

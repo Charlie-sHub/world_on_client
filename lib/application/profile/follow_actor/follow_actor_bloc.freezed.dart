@@ -1,5 +1,6 @@
+// coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
 
 part of 'follow_actor_bloc.dart';
 
@@ -54,6 +55,15 @@ mixin _$FollowActorEvent {
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(UniqueId userId, Set<UniqueId> followedUsersIds)?
+        initialized,
+    TResult Function(UniqueId userToFollowId, SimpleUser currentUser)? followed,
+    TResult Function(UniqueId userToUnFollowId, SimpleUser currentUser)?
+        unFollowed,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(UniqueId userId, Set<UniqueId> followedUsersIds)?
         initialized,
@@ -68,6 +78,13 @@ mixin _$FollowActorEvent {
     required TResult Function(_Initialized value) initialized,
     required TResult Function(_Followed value) followed,
     required TResult Function(_UnFollowed value) unFollowed,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_Initialized value)? initialized,
+    TResult Function(_Followed value)? followed,
+    TResult Function(_UnFollowed value)? unFollowed,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -186,6 +203,18 @@ class _$_Initialized implements _Initialized {
 
   @override
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(UniqueId userId, Set<UniqueId> followedUsersIds)?
+        initialized,
+    TResult Function(UniqueId userToFollowId, SimpleUser currentUser)? followed,
+    TResult Function(UniqueId userToUnFollowId, SimpleUser currentUser)?
+        unFollowed,
+  }) {
+    return initialized?.call(userId, followedUsersIds);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(UniqueId userId, Set<UniqueId> followedUsersIds)?
         initialized,
@@ -208,6 +237,16 @@ class _$_Initialized implements _Initialized {
     required TResult Function(_UnFollowed value) unFollowed,
   }) {
     return initialized(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_Initialized value)? initialized,
+    TResult Function(_Followed value)? followed,
+    TResult Function(_UnFollowed value)? unFollowed,
+  }) {
+    return initialized?.call(this);
   }
 
   @override
@@ -332,6 +371,18 @@ class _$_Followed implements _Followed {
 
   @override
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(UniqueId userId, Set<UniqueId> followedUsersIds)?
+        initialized,
+    TResult Function(UniqueId userToFollowId, SimpleUser currentUser)? followed,
+    TResult Function(UniqueId userToUnFollowId, SimpleUser currentUser)?
+        unFollowed,
+  }) {
+    return followed?.call(userToFollowId, currentUser);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(UniqueId userId, Set<UniqueId> followedUsersIds)?
         initialized,
@@ -354,6 +405,16 @@ class _$_Followed implements _Followed {
     required TResult Function(_UnFollowed value) unFollowed,
   }) {
     return followed(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_Initialized value)? initialized,
+    TResult Function(_Followed value)? followed,
+    TResult Function(_UnFollowed value)? unFollowed,
+  }) {
+    return followed?.call(this);
   }
 
   @override
@@ -481,6 +542,18 @@ class _$_UnFollowed implements _UnFollowed {
 
   @override
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(UniqueId userId, Set<UniqueId> followedUsersIds)?
+        initialized,
+    TResult Function(UniqueId userToFollowId, SimpleUser currentUser)? followed,
+    TResult Function(UniqueId userToUnFollowId, SimpleUser currentUser)?
+        unFollowed,
+  }) {
+    return unFollowed?.call(userToUnFollowId, currentUser);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(UniqueId userId, Set<UniqueId> followedUsersIds)?
         initialized,
@@ -503,6 +576,16 @@ class _$_UnFollowed implements _UnFollowed {
     required TResult Function(_UnFollowed value) unFollowed,
   }) {
     return unFollowed(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_Initialized value)? initialized,
+    TResult Function(_Followed value)? followed,
+    TResult Function(_UnFollowed value)? unFollowed,
+  }) {
+    return unFollowed?.call(this);
   }
 
   @override
@@ -590,6 +673,18 @@ mixin _$FollowActorState {
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? actionInProgress,
+    TResult Function()? follows,
+    TResult Function()? followsNot,
+    TResult Function()? followSuccess,
+    TResult Function(Failure<dynamic> failure)? followFailure,
+    TResult Function()? unFollowSuccess,
+    TResult Function(Failure<dynamic> failure)? unFollowFailure,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? actionInProgress,
@@ -612,6 +707,18 @@ mixin _$FollowActorState {
     required TResult Function(_FollowFailure value) followFailure,
     required TResult Function(_UnFollowSuccess value) unFollowSuccess,
     required TResult Function(_UnFollowFailure value) unFollowFailure,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_ActionInProgress value)? actionInProgress,
+    TResult Function(_Follows value)? follows,
+    TResult Function(_FollowsNot value)? followsNot,
+    TResult Function(_FollowSuccess value)? followSuccess,
+    TResult Function(_FollowFailure value)? followFailure,
+    TResult Function(_UnFollowSuccess value)? unFollowSuccess,
+    TResult Function(_UnFollowFailure value)? unFollowFailure,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -697,6 +804,21 @@ class _$_Initial implements _Initial {
 
   @override
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? actionInProgress,
+    TResult Function()? follows,
+    TResult Function()? followsNot,
+    TResult Function()? followSuccess,
+    TResult Function(Failure<dynamic> failure)? followFailure,
+    TResult Function()? unFollowSuccess,
+    TResult Function(Failure<dynamic> failure)? unFollowFailure,
+  }) {
+    return initial?.call();
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? actionInProgress,
@@ -727,6 +849,21 @@ class _$_Initial implements _Initial {
     required TResult Function(_UnFollowFailure value) unFollowFailure,
   }) {
     return initial(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_ActionInProgress value)? actionInProgress,
+    TResult Function(_Follows value)? follows,
+    TResult Function(_FollowsNot value)? followsNot,
+    TResult Function(_FollowSuccess value)? followSuccess,
+    TResult Function(_FollowFailure value)? followFailure,
+    TResult Function(_UnFollowSuccess value)? unFollowSuccess,
+    TResult Function(_UnFollowFailure value)? unFollowFailure,
+  }) {
+    return initial?.call(this);
   }
 
   @override
@@ -807,6 +944,21 @@ class _$_ActionInProgress implements _ActionInProgress {
 
   @override
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? actionInProgress,
+    TResult Function()? follows,
+    TResult Function()? followsNot,
+    TResult Function()? followSuccess,
+    TResult Function(Failure<dynamic> failure)? followFailure,
+    TResult Function()? unFollowSuccess,
+    TResult Function(Failure<dynamic> failure)? unFollowFailure,
+  }) {
+    return actionInProgress?.call();
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? actionInProgress,
@@ -837,6 +989,21 @@ class _$_ActionInProgress implements _ActionInProgress {
     required TResult Function(_UnFollowFailure value) unFollowFailure,
   }) {
     return actionInProgress(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_ActionInProgress value)? actionInProgress,
+    TResult Function(_Follows value)? follows,
+    TResult Function(_FollowsNot value)? followsNot,
+    TResult Function(_FollowSuccess value)? followSuccess,
+    TResult Function(_FollowFailure value)? followFailure,
+    TResult Function(_UnFollowSuccess value)? unFollowSuccess,
+    TResult Function(_UnFollowFailure value)? unFollowFailure,
+  }) {
+    return actionInProgress?.call(this);
   }
 
   @override
@@ -914,6 +1081,21 @@ class _$_Follows implements _Follows {
 
   @override
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? actionInProgress,
+    TResult Function()? follows,
+    TResult Function()? followsNot,
+    TResult Function()? followSuccess,
+    TResult Function(Failure<dynamic> failure)? followFailure,
+    TResult Function()? unFollowSuccess,
+    TResult Function(Failure<dynamic> failure)? unFollowFailure,
+  }) {
+    return follows?.call();
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? actionInProgress,
@@ -944,6 +1126,21 @@ class _$_Follows implements _Follows {
     required TResult Function(_UnFollowFailure value) unFollowFailure,
   }) {
     return follows(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_ActionInProgress value)? actionInProgress,
+    TResult Function(_Follows value)? follows,
+    TResult Function(_FollowsNot value)? followsNot,
+    TResult Function(_FollowSuccess value)? followSuccess,
+    TResult Function(_FollowFailure value)? followFailure,
+    TResult Function(_UnFollowSuccess value)? unFollowSuccess,
+    TResult Function(_UnFollowFailure value)? unFollowFailure,
+  }) {
+    return follows?.call(this);
   }
 
   @override
@@ -1024,6 +1221,21 @@ class _$_FollowsNot implements _FollowsNot {
 
   @override
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? actionInProgress,
+    TResult Function()? follows,
+    TResult Function()? followsNot,
+    TResult Function()? followSuccess,
+    TResult Function(Failure<dynamic> failure)? followFailure,
+    TResult Function()? unFollowSuccess,
+    TResult Function(Failure<dynamic> failure)? unFollowFailure,
+  }) {
+    return followsNot?.call();
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? actionInProgress,
@@ -1054,6 +1266,21 @@ class _$_FollowsNot implements _FollowsNot {
     required TResult Function(_UnFollowFailure value) unFollowFailure,
   }) {
     return followsNot(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_ActionInProgress value)? actionInProgress,
+    TResult Function(_Follows value)? follows,
+    TResult Function(_FollowsNot value)? followsNot,
+    TResult Function(_FollowSuccess value)? followSuccess,
+    TResult Function(_FollowFailure value)? followFailure,
+    TResult Function(_UnFollowSuccess value)? unFollowSuccess,
+    TResult Function(_UnFollowFailure value)? unFollowFailure,
+  }) {
+    return followsNot?.call(this);
   }
 
   @override
@@ -1134,6 +1361,21 @@ class _$_FollowSuccess implements _FollowSuccess {
 
   @override
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? actionInProgress,
+    TResult Function()? follows,
+    TResult Function()? followsNot,
+    TResult Function()? followSuccess,
+    TResult Function(Failure<dynamic> failure)? followFailure,
+    TResult Function()? unFollowSuccess,
+    TResult Function(Failure<dynamic> failure)? unFollowFailure,
+  }) {
+    return followSuccess?.call();
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? actionInProgress,
@@ -1164,6 +1406,21 @@ class _$_FollowSuccess implements _FollowSuccess {
     required TResult Function(_UnFollowFailure value) unFollowFailure,
   }) {
     return followSuccess(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_ActionInProgress value)? actionInProgress,
+    TResult Function(_Follows value)? follows,
+    TResult Function(_FollowsNot value)? followsNot,
+    TResult Function(_FollowSuccess value)? followSuccess,
+    TResult Function(_FollowFailure value)? followFailure,
+    TResult Function(_UnFollowSuccess value)? unFollowSuccess,
+    TResult Function(_UnFollowFailure value)? unFollowFailure,
+  }) {
+    return followSuccess?.call(this);
   }
 
   @override
@@ -1278,6 +1535,21 @@ class _$_FollowFailure implements _FollowFailure {
 
   @override
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? actionInProgress,
+    TResult Function()? follows,
+    TResult Function()? followsNot,
+    TResult Function()? followSuccess,
+    TResult Function(Failure<dynamic> failure)? followFailure,
+    TResult Function()? unFollowSuccess,
+    TResult Function(Failure<dynamic> failure)? unFollowFailure,
+  }) {
+    return followFailure?.call(failure);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? actionInProgress,
@@ -1308,6 +1580,21 @@ class _$_FollowFailure implements _FollowFailure {
     required TResult Function(_UnFollowFailure value) unFollowFailure,
   }) {
     return followFailure(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_ActionInProgress value)? actionInProgress,
+    TResult Function(_Follows value)? follows,
+    TResult Function(_FollowsNot value)? followsNot,
+    TResult Function(_FollowSuccess value)? followSuccess,
+    TResult Function(_FollowFailure value)? followFailure,
+    TResult Function(_UnFollowSuccess value)? unFollowSuccess,
+    TResult Function(_UnFollowFailure value)? unFollowFailure,
+  }) {
+    return followFailure?.call(this);
   }
 
   @override
@@ -1393,6 +1680,21 @@ class _$_UnFollowSuccess implements _UnFollowSuccess {
 
   @override
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? actionInProgress,
+    TResult Function()? follows,
+    TResult Function()? followsNot,
+    TResult Function()? followSuccess,
+    TResult Function(Failure<dynamic> failure)? followFailure,
+    TResult Function()? unFollowSuccess,
+    TResult Function(Failure<dynamic> failure)? unFollowFailure,
+  }) {
+    return unFollowSuccess?.call();
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? actionInProgress,
@@ -1423,6 +1725,21 @@ class _$_UnFollowSuccess implements _UnFollowSuccess {
     required TResult Function(_UnFollowFailure value) unFollowFailure,
   }) {
     return unFollowSuccess(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_ActionInProgress value)? actionInProgress,
+    TResult Function(_Follows value)? follows,
+    TResult Function(_FollowsNot value)? followsNot,
+    TResult Function(_FollowSuccess value)? followSuccess,
+    TResult Function(_FollowFailure value)? followFailure,
+    TResult Function(_UnFollowSuccess value)? unFollowSuccess,
+    TResult Function(_UnFollowFailure value)? unFollowFailure,
+  }) {
+    return unFollowSuccess?.call(this);
   }
 
   @override
@@ -1537,6 +1854,21 @@ class _$_UnFollowFailure implements _UnFollowFailure {
 
   @override
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? actionInProgress,
+    TResult Function()? follows,
+    TResult Function()? followsNot,
+    TResult Function()? followSuccess,
+    TResult Function(Failure<dynamic> failure)? followFailure,
+    TResult Function()? unFollowSuccess,
+    TResult Function(Failure<dynamic> failure)? unFollowFailure,
+  }) {
+    return unFollowFailure?.call(failure);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? actionInProgress,
@@ -1567,6 +1899,21 @@ class _$_UnFollowFailure implements _UnFollowFailure {
     required TResult Function(_UnFollowFailure value) unFollowFailure,
   }) {
     return unFollowFailure(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_ActionInProgress value)? actionInProgress,
+    TResult Function(_Follows value)? follows,
+    TResult Function(_FollowsNot value)? followsNot,
+    TResult Function(_FollowSuccess value)? followSuccess,
+    TResult Function(_FollowFailure value)? followFailure,
+    TResult Function(_UnFollowSuccess value)? unFollowSuccess,
+    TResult Function(_UnFollowFailure value)? unFollowFailure,
+  }) {
+    return unFollowFailure?.call(this);
   }
 
   @override

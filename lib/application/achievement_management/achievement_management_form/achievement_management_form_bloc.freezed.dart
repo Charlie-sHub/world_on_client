@@ -1,5 +1,6 @@
+// coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
 
 part of 'achievement_management_form_bloc.dart';
 
@@ -76,6 +77,17 @@ mixin _$AchievementManagementFormEvent {
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(Option<Achievement> achievementOption)? initialized,
+    TResult Function(String name)? nameChanged,
+    TResult Function(String description)? descriptionChanged,
+    TResult Function(int experiencePoints)? experiencePointsChanged,
+    TResult Function(KtSet<Tag> tags)? tagsChanged,
+    TResult Function(File image)? imageChanged,
+    TResult Function()? submitted,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(Option<Achievement> achievementOption)? initialized,
     TResult Function(String name)? nameChanged,
@@ -97,6 +109,17 @@ mixin _$AchievementManagementFormEvent {
     required TResult Function(_TagsChanged value) tagsChanged,
     required TResult Function(_ImageChanged value) imageChanged,
     required TResult Function(_Submitted value) submitted,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_Initialized value)? initialized,
+    TResult Function(_NameChanged value)? nameChanged,
+    TResult Function(_DescriptionChanged value)? descriptionChanged,
+    TResult Function(_ExperiencePointsChanged value)? experiencePointsChanged,
+    TResult Function(_TagsChanged value)? tagsChanged,
+    TResult Function(_ImageChanged value)? imageChanged,
+    TResult Function(_Submitted value)? submitted,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -212,6 +235,20 @@ class _$_Initialized implements _Initialized {
 
   @override
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(Option<Achievement> achievementOption)? initialized,
+    TResult Function(String name)? nameChanged,
+    TResult Function(String description)? descriptionChanged,
+    TResult Function(int experiencePoints)? experiencePointsChanged,
+    TResult Function(KtSet<Tag> tags)? tagsChanged,
+    TResult Function(File image)? imageChanged,
+    TResult Function()? submitted,
+  }) {
+    return initialized?.call(achievementOption);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(Option<Achievement> achievementOption)? initialized,
     TResult Function(String name)? nameChanged,
@@ -241,6 +278,20 @@ class _$_Initialized implements _Initialized {
     required TResult Function(_Submitted value) submitted,
   }) {
     return initialized(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_Initialized value)? initialized,
+    TResult Function(_NameChanged value)? nameChanged,
+    TResult Function(_DescriptionChanged value)? descriptionChanged,
+    TResult Function(_ExperiencePointsChanged value)? experiencePointsChanged,
+    TResult Function(_TagsChanged value)? tagsChanged,
+    TResult Function(_ImageChanged value)? imageChanged,
+    TResult Function(_Submitted value)? submitted,
+  }) {
+    return initialized?.call(this);
   }
 
   @override
@@ -352,6 +403,20 @@ class _$_NameChanged implements _NameChanged {
 
   @override
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(Option<Achievement> achievementOption)? initialized,
+    TResult Function(String name)? nameChanged,
+    TResult Function(String description)? descriptionChanged,
+    TResult Function(int experiencePoints)? experiencePointsChanged,
+    TResult Function(KtSet<Tag> tags)? tagsChanged,
+    TResult Function(File image)? imageChanged,
+    TResult Function()? submitted,
+  }) {
+    return nameChanged?.call(name);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(Option<Achievement> achievementOption)? initialized,
     TResult Function(String name)? nameChanged,
@@ -381,6 +446,20 @@ class _$_NameChanged implements _NameChanged {
     required TResult Function(_Submitted value) submitted,
   }) {
     return nameChanged(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_Initialized value)? initialized,
+    TResult Function(_NameChanged value)? nameChanged,
+    TResult Function(_DescriptionChanged value)? descriptionChanged,
+    TResult Function(_ExperiencePointsChanged value)? experiencePointsChanged,
+    TResult Function(_TagsChanged value)? tagsChanged,
+    TResult Function(_ImageChanged value)? imageChanged,
+    TResult Function(_Submitted value)? submitted,
+  }) {
+    return nameChanged?.call(this);
   }
 
   @override
@@ -491,6 +570,20 @@ class _$_DescriptionChanged implements _DescriptionChanged {
 
   @override
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(Option<Achievement> achievementOption)? initialized,
+    TResult Function(String name)? nameChanged,
+    TResult Function(String description)? descriptionChanged,
+    TResult Function(int experiencePoints)? experiencePointsChanged,
+    TResult Function(KtSet<Tag> tags)? tagsChanged,
+    TResult Function(File image)? imageChanged,
+    TResult Function()? submitted,
+  }) {
+    return descriptionChanged?.call(description);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(Option<Achievement> achievementOption)? initialized,
     TResult Function(String name)? nameChanged,
@@ -520,6 +613,20 @@ class _$_DescriptionChanged implements _DescriptionChanged {
     required TResult Function(_Submitted value) submitted,
   }) {
     return descriptionChanged(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_Initialized value)? initialized,
+    TResult Function(_NameChanged value)? nameChanged,
+    TResult Function(_DescriptionChanged value)? descriptionChanged,
+    TResult Function(_ExperiencePointsChanged value)? experiencePointsChanged,
+    TResult Function(_TagsChanged value)? tagsChanged,
+    TResult Function(_ImageChanged value)? imageChanged,
+    TResult Function(_Submitted value)? submitted,
+  }) {
+    return descriptionChanged?.call(this);
   }
 
   @override
@@ -633,6 +740,20 @@ class _$_ExperiencePointsChanged implements _ExperiencePointsChanged {
 
   @override
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(Option<Achievement> achievementOption)? initialized,
+    TResult Function(String name)? nameChanged,
+    TResult Function(String description)? descriptionChanged,
+    TResult Function(int experiencePoints)? experiencePointsChanged,
+    TResult Function(KtSet<Tag> tags)? tagsChanged,
+    TResult Function(File image)? imageChanged,
+    TResult Function()? submitted,
+  }) {
+    return experiencePointsChanged?.call(experiencePoints);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(Option<Achievement> achievementOption)? initialized,
     TResult Function(String name)? nameChanged,
@@ -662,6 +783,20 @@ class _$_ExperiencePointsChanged implements _ExperiencePointsChanged {
     required TResult Function(_Submitted value) submitted,
   }) {
     return experiencePointsChanged(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_Initialized value)? initialized,
+    TResult Function(_NameChanged value)? nameChanged,
+    TResult Function(_DescriptionChanged value)? descriptionChanged,
+    TResult Function(_ExperiencePointsChanged value)? experiencePointsChanged,
+    TResult Function(_TagsChanged value)? tagsChanged,
+    TResult Function(_ImageChanged value)? imageChanged,
+    TResult Function(_Submitted value)? submitted,
+  }) {
+    return experiencePointsChanged?.call(this);
   }
 
   @override
@@ -773,6 +908,20 @@ class _$_TagsChanged implements _TagsChanged {
 
   @override
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(Option<Achievement> achievementOption)? initialized,
+    TResult Function(String name)? nameChanged,
+    TResult Function(String description)? descriptionChanged,
+    TResult Function(int experiencePoints)? experiencePointsChanged,
+    TResult Function(KtSet<Tag> tags)? tagsChanged,
+    TResult Function(File image)? imageChanged,
+    TResult Function()? submitted,
+  }) {
+    return tagsChanged?.call(tags);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(Option<Achievement> achievementOption)? initialized,
     TResult Function(String name)? nameChanged,
@@ -802,6 +951,20 @@ class _$_TagsChanged implements _TagsChanged {
     required TResult Function(_Submitted value) submitted,
   }) {
     return tagsChanged(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_Initialized value)? initialized,
+    TResult Function(_NameChanged value)? nameChanged,
+    TResult Function(_DescriptionChanged value)? descriptionChanged,
+    TResult Function(_ExperiencePointsChanged value)? experiencePointsChanged,
+    TResult Function(_TagsChanged value)? tagsChanged,
+    TResult Function(_ImageChanged value)? imageChanged,
+    TResult Function(_Submitted value)? submitted,
+  }) {
+    return tagsChanged?.call(this);
   }
 
   @override
@@ -911,6 +1074,20 @@ class _$_ImageChanged implements _ImageChanged {
 
   @override
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(Option<Achievement> achievementOption)? initialized,
+    TResult Function(String name)? nameChanged,
+    TResult Function(String description)? descriptionChanged,
+    TResult Function(int experiencePoints)? experiencePointsChanged,
+    TResult Function(KtSet<Tag> tags)? tagsChanged,
+    TResult Function(File image)? imageChanged,
+    TResult Function()? submitted,
+  }) {
+    return imageChanged?.call(image);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(Option<Achievement> achievementOption)? initialized,
     TResult Function(String name)? nameChanged,
@@ -940,6 +1117,20 @@ class _$_ImageChanged implements _ImageChanged {
     required TResult Function(_Submitted value) submitted,
   }) {
     return imageChanged(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_Initialized value)? initialized,
+    TResult Function(_NameChanged value)? nameChanged,
+    TResult Function(_DescriptionChanged value)? descriptionChanged,
+    TResult Function(_ExperiencePointsChanged value)? experiencePointsChanged,
+    TResult Function(_TagsChanged value)? tagsChanged,
+    TResult Function(_ImageChanged value)? imageChanged,
+    TResult Function(_Submitted value)? submitted,
+  }) {
+    return imageChanged?.call(this);
   }
 
   @override
@@ -1023,6 +1214,20 @@ class _$_Submitted implements _Submitted {
 
   @override
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(Option<Achievement> achievementOption)? initialized,
+    TResult Function(String name)? nameChanged,
+    TResult Function(String description)? descriptionChanged,
+    TResult Function(int experiencePoints)? experiencePointsChanged,
+    TResult Function(KtSet<Tag> tags)? tagsChanged,
+    TResult Function(File image)? imageChanged,
+    TResult Function()? submitted,
+  }) {
+    return submitted?.call();
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(Option<Achievement> achievementOption)? initialized,
     TResult Function(String name)? nameChanged,
@@ -1052,6 +1257,20 @@ class _$_Submitted implements _Submitted {
     required TResult Function(_Submitted value) submitted,
   }) {
     return submitted(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_Initialized value)? initialized,
+    TResult Function(_NameChanged value)? nameChanged,
+    TResult Function(_DescriptionChanged value)? descriptionChanged,
+    TResult Function(_ExperiencePointsChanged value)? experiencePointsChanged,
+    TResult Function(_TagsChanged value)? tagsChanged,
+    TResult Function(_ImageChanged value)? imageChanged,
+    TResult Function(_Submitted value)? submitted,
+  }) {
+    return submitted?.call(this);
   }
 
   @override

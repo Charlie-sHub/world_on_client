@@ -6,21 +6,19 @@ part of 'item_dto.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$_Item _$_$_ItemFromJson(Map<String, dynamic> json) {
-  return _$_Item(
-    id: json['id'] as String,
-    name: json['name'] as String,
-    description: json['description'] as String,
-    code: _$enumDecode(_$ItemCodeEnumMap, json['code']),
-    value: json['value'] as int,
-    timeLimitInDays: json['timeLimitInDays'] as int,
-    imageURL: json['imageURL'] as String,
-    boughtDate: const ServerTimestampConverter()
-        .fromJson(json['boughtDate'] as Timestamp),
-  );
-}
+_$_Item _$$_ItemFromJson(Map<String, dynamic> json) => _$_Item(
+      id: json['id'] as String,
+      name: json['name'] as String,
+      description: json['description'] as String,
+      code: _$enumDecode(_$ItemCodeEnumMap, json['code']),
+      value: json['value'] as int,
+      timeLimitInDays: json['timeLimitInDays'] as int,
+      imageURL: json['imageURL'] as String,
+      boughtDate: const ServerTimestampConverter()
+          .fromJson(json['boughtDate'] as Timestamp),
+    );
 
-Map<String, dynamic> _$_$_ItemToJson(_$_Item instance) => <String, dynamic>{
+Map<String, dynamic> _$$_ItemToJson(_$_Item instance) => <String, dynamic>{
       'id': instance.id,
       'name': instance.name,
       'description': instance.description,

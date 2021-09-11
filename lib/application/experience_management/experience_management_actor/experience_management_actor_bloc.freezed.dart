@@ -1,5 +1,6 @@
+// coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
 
 part of 'experience_management_actor_bloc.dart';
 
@@ -44,6 +45,12 @@ mixin _$ExperienceManagementActorEvent {
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(Experience experience)? checkCreator,
+    TResult Function(Experience experience)? deleted,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(Experience experience)? checkCreator,
     TResult Function(Experience experience)? deleted,
@@ -54,6 +61,12 @@ mixin _$ExperienceManagementActorEvent {
   TResult map<TResult extends Object?>({
     required TResult Function(_CheckCreator value) checkCreator,
     required TResult Function(_Deleted value) deleted,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_CheckCreator value)? checkCreator,
+    TResult Function(_Deleted value)? deleted,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -188,6 +201,15 @@ class _$_CheckCreator implements _CheckCreator {
 
   @override
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(Experience experience)? checkCreator,
+    TResult Function(Experience experience)? deleted,
+  }) {
+    return checkCreator?.call(experience);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(Experience experience)? checkCreator,
     TResult Function(Experience experience)? deleted,
@@ -206,6 +228,15 @@ class _$_CheckCreator implements _CheckCreator {
     required TResult Function(_Deleted value) deleted,
   }) {
     return checkCreator(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_CheckCreator value)? checkCreator,
+    TResult Function(_Deleted value)? deleted,
+  }) {
+    return checkCreator?.call(this);
   }
 
   @override
@@ -310,6 +341,15 @@ class _$_Deleted implements _Deleted {
 
   @override
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(Experience experience)? checkCreator,
+    TResult Function(Experience experience)? deleted,
+  }) {
+    return deleted?.call(experience);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(Experience experience)? checkCreator,
     TResult Function(Experience experience)? deleted,
@@ -328,6 +368,15 @@ class _$_Deleted implements _Deleted {
     required TResult Function(_Deleted value) deleted,
   }) {
     return deleted(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_CheckCreator value)? checkCreator,
+    TResult Function(_Deleted value)? deleted,
+  }) {
+    return deleted?.call(this);
   }
 
   @override
@@ -403,6 +452,16 @@ mixin _$ExperienceManagementActorState {
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? isCreator,
+    TResult Function()? isNotCreator,
+    TResult Function()? actionInProgress,
+    TResult Function()? deletionSuccess,
+    TResult Function(Failure<dynamic> failure)? deletionFailure,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? isCreator,
@@ -421,6 +480,16 @@ mixin _$ExperienceManagementActorState {
     required TResult Function(_ActionInProgress value) actionInProgress,
     required TResult Function(_DeletionSuccess value) deletionSuccess,
     required TResult Function(_DeletionFailure value) deletionFailure,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_IsCreator value)? isCreator,
+    TResult Function(_IsNotCreator value)? isNotCreator,
+    TResult Function(_ActionInProgress value)? actionInProgress,
+    TResult Function(_DeletionSuccess value)? deletionSuccess,
+    TResult Function(_DeletionFailure value)? deletionFailure,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -504,6 +573,19 @@ class _$_Initial implements _Initial {
 
   @override
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? isCreator,
+    TResult Function()? isNotCreator,
+    TResult Function()? actionInProgress,
+    TResult Function()? deletionSuccess,
+    TResult Function(Failure<dynamic> failure)? deletionFailure,
+  }) {
+    return initial?.call();
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? isCreator,
@@ -530,6 +612,19 @@ class _$_Initial implements _Initial {
     required TResult Function(_DeletionFailure value) deletionFailure,
   }) {
     return initial(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_IsCreator value)? isCreator,
+    TResult Function(_IsNotCreator value)? isNotCreator,
+    TResult Function(_ActionInProgress value)? actionInProgress,
+    TResult Function(_DeletionSuccess value)? deletionSuccess,
+    TResult Function(_DeletionFailure value)? deletionFailure,
+  }) {
+    return initial?.call(this);
   }
 
   @override
@@ -605,6 +700,19 @@ class _$_IsCreator implements _IsCreator {
 
   @override
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? isCreator,
+    TResult Function()? isNotCreator,
+    TResult Function()? actionInProgress,
+    TResult Function()? deletionSuccess,
+    TResult Function(Failure<dynamic> failure)? deletionFailure,
+  }) {
+    return isCreator?.call();
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? isCreator,
@@ -631,6 +739,19 @@ class _$_IsCreator implements _IsCreator {
     required TResult Function(_DeletionFailure value) deletionFailure,
   }) {
     return isCreator(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_IsCreator value)? isCreator,
+    TResult Function(_IsNotCreator value)? isNotCreator,
+    TResult Function(_ActionInProgress value)? actionInProgress,
+    TResult Function(_DeletionSuccess value)? deletionSuccess,
+    TResult Function(_DeletionFailure value)? deletionFailure,
+  }) {
+    return isCreator?.call(this);
   }
 
   @override
@@ -707,6 +828,19 @@ class _$_IsNotCreator implements _IsNotCreator {
 
   @override
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? isCreator,
+    TResult Function()? isNotCreator,
+    TResult Function()? actionInProgress,
+    TResult Function()? deletionSuccess,
+    TResult Function(Failure<dynamic> failure)? deletionFailure,
+  }) {
+    return isNotCreator?.call();
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? isCreator,
@@ -733,6 +867,19 @@ class _$_IsNotCreator implements _IsNotCreator {
     required TResult Function(_DeletionFailure value) deletionFailure,
   }) {
     return isNotCreator(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_IsCreator value)? isCreator,
+    TResult Function(_IsNotCreator value)? isNotCreator,
+    TResult Function(_ActionInProgress value)? actionInProgress,
+    TResult Function(_DeletionSuccess value)? deletionSuccess,
+    TResult Function(_DeletionFailure value)? deletionFailure,
+  }) {
+    return isNotCreator?.call(this);
   }
 
   @override
@@ -809,6 +956,19 @@ class _$_ActionInProgress implements _ActionInProgress {
 
   @override
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? isCreator,
+    TResult Function()? isNotCreator,
+    TResult Function()? actionInProgress,
+    TResult Function()? deletionSuccess,
+    TResult Function(Failure<dynamic> failure)? deletionFailure,
+  }) {
+    return actionInProgress?.call();
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? isCreator,
@@ -835,6 +995,19 @@ class _$_ActionInProgress implements _ActionInProgress {
     required TResult Function(_DeletionFailure value) deletionFailure,
   }) {
     return actionInProgress(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_IsCreator value)? isCreator,
+    TResult Function(_IsNotCreator value)? isNotCreator,
+    TResult Function(_ActionInProgress value)? actionInProgress,
+    TResult Function(_DeletionSuccess value)? deletionSuccess,
+    TResult Function(_DeletionFailure value)? deletionFailure,
+  }) {
+    return actionInProgress?.call(this);
   }
 
   @override
@@ -911,6 +1084,19 @@ class _$_DeletionSuccess implements _DeletionSuccess {
 
   @override
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? isCreator,
+    TResult Function()? isNotCreator,
+    TResult Function()? actionInProgress,
+    TResult Function()? deletionSuccess,
+    TResult Function(Failure<dynamic> failure)? deletionFailure,
+  }) {
+    return deletionSuccess?.call();
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? isCreator,
@@ -937,6 +1123,19 @@ class _$_DeletionSuccess implements _DeletionSuccess {
     required TResult Function(_DeletionFailure value) deletionFailure,
   }) {
     return deletionSuccess(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_IsCreator value)? isCreator,
+    TResult Function(_IsNotCreator value)? isNotCreator,
+    TResult Function(_ActionInProgress value)? actionInProgress,
+    TResult Function(_DeletionSuccess value)? deletionSuccess,
+    TResult Function(_DeletionFailure value)? deletionFailure,
+  }) {
+    return deletionSuccess?.call(this);
   }
 
   @override
@@ -1047,6 +1246,19 @@ class _$_DeletionFailure implements _DeletionFailure {
 
   @override
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? isCreator,
+    TResult Function()? isNotCreator,
+    TResult Function()? actionInProgress,
+    TResult Function()? deletionSuccess,
+    TResult Function(Failure<dynamic> failure)? deletionFailure,
+  }) {
+    return deletionFailure?.call(failure);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? isCreator,
@@ -1073,6 +1285,19 @@ class _$_DeletionFailure implements _DeletionFailure {
     required TResult Function(_DeletionFailure value) deletionFailure,
   }) {
     return deletionFailure(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_IsCreator value)? isCreator,
+    TResult Function(_IsNotCreator value)? isNotCreator,
+    TResult Function(_ActionInProgress value)? actionInProgress,
+    TResult Function(_DeletionSuccess value)? deletionSuccess,
+    TResult Function(_DeletionFailure value)? deletionFailure,
+  }) {
+    return deletionFailure?.call(this);
   }
 
   @override

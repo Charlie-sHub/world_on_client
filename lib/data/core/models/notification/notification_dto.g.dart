@@ -6,23 +6,22 @@ part of 'notification_dto.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$_NotificationDto _$_$_NotificationDtoFromJson(Map<String, dynamic> json) {
-  return _$_NotificationDto(
-    id: json['id'] as String,
-    sender: SimpleUserDto.fromJson(json['sender'] as Map<String, dynamic>),
-    receiverId: json['receiverId'] as String,
-    description: json['description'] as String,
-    seen: json['seen'] as bool,
-    creationDate: const ServerTimestampConverter()
-        .fromJson(json['creationDate'] as Timestamp),
-    type: _$enumDecode(_$NotificationTypeEnumMap, json['type']),
-    experience: json['experience'] == null
-        ? null
-        : ExperienceDto.fromJson(json['experience'] as Map<String, dynamic>),
-  );
-}
+_$_NotificationDto _$$_NotificationDtoFromJson(Map<String, dynamic> json) =>
+    _$_NotificationDto(
+      id: json['id'] as String,
+      sender: SimpleUserDto.fromJson(json['sender'] as Map<String, dynamic>),
+      receiverId: json['receiverId'] as String,
+      description: json['description'] as String,
+      seen: json['seen'] as bool,
+      creationDate: const ServerTimestampConverter()
+          .fromJson(json['creationDate'] as Timestamp),
+      type: _$enumDecode(_$NotificationTypeEnumMap, json['type']),
+      experience: json['experience'] == null
+          ? null
+          : ExperienceDto.fromJson(json['experience'] as Map<String, dynamic>),
+    );
 
-Map<String, dynamic> _$_$_NotificationDtoToJson(_$_NotificationDto instance) =>
+Map<String, dynamic> _$$_NotificationDtoToJson(_$_NotificationDto instance) =>
     <String, dynamic>{
       'id': instance.id,
       'sender': instance.sender.toJson(),

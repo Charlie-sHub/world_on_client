@@ -6,13 +6,11 @@ part of 'coins_dto.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$_CoinsDto _$_$_CoinsDtoFromJson(Map<String, dynamic> json) {
-  return _$_CoinsDto(
-    tenCoinsProductId: json['tenCoinsProductId'] as String,
-  );
-}
+_$_CoinsDto _$$_CoinsDtoFromJson(Map<String, dynamic> json) => _$_CoinsDto(
+      tenCoinsProductId: json['tenCoinsProductId'] as String,
+    );
 
-Map<String, dynamic> _$_$_CoinsDtoToJson(_$_CoinsDto instance) =>
+Map<String, dynamic> _$$_CoinsDtoToJson(_$_CoinsDto instance) =>
     <String, dynamic>{
       'tenCoinsProductId': instance.tenCoinsProductId,
     };

@@ -1,5 +1,6 @@
+// coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
 
 part of 'store_app_bar_title_bloc.dart';
 
@@ -47,6 +48,14 @@ mixin _$StoreAppBarTitleEvent {
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? initialized,
+    TResult Function()? showedStore,
+    TResult Function()? showedPromotions,
+    TResult Function()? showedMyItems,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initialized,
     TResult Function()? showedStore,
@@ -61,6 +70,14 @@ mixin _$StoreAppBarTitleEvent {
     required TResult Function(_ShowedStore value) showedStore,
     required TResult Function(_ShowedPromotions value) showedPromotions,
     required TResult Function(_ShowedMyItems value) showedMyItems,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_Initialized value)? initialized,
+    TResult Function(_ShowedStore value)? showedStore,
+    TResult Function(_ShowedPromotions value)? showedPromotions,
+    TResult Function(_ShowedMyItems value)? showedMyItems,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -141,6 +158,17 @@ class _$_Initialized implements _Initialized {
 
   @override
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? initialized,
+    TResult Function()? showedStore,
+    TResult Function()? showedPromotions,
+    TResult Function()? showedMyItems,
+  }) {
+    return initialized?.call();
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initialized,
     TResult Function()? showedStore,
@@ -163,6 +191,17 @@ class _$_Initialized implements _Initialized {
     required TResult Function(_ShowedMyItems value) showedMyItems,
   }) {
     return initialized(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_Initialized value)? initialized,
+    TResult Function(_ShowedStore value)? showedStore,
+    TResult Function(_ShowedPromotions value)? showedPromotions,
+    TResult Function(_ShowedMyItems value)? showedMyItems,
+  }) {
+    return initialized?.call(this);
   }
 
   @override
@@ -235,6 +274,17 @@ class _$_ShowedStore implements _ShowedStore {
 
   @override
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? initialized,
+    TResult Function()? showedStore,
+    TResult Function()? showedPromotions,
+    TResult Function()? showedMyItems,
+  }) {
+    return showedStore?.call();
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initialized,
     TResult Function()? showedStore,
@@ -257,6 +307,17 @@ class _$_ShowedStore implements _ShowedStore {
     required TResult Function(_ShowedMyItems value) showedMyItems,
   }) {
     return showedStore(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_Initialized value)? initialized,
+    TResult Function(_ShowedStore value)? showedStore,
+    TResult Function(_ShowedPromotions value)? showedPromotions,
+    TResult Function(_ShowedMyItems value)? showedMyItems,
+  }) {
+    return showedStore?.call(this);
   }
 
   @override
@@ -329,6 +390,17 @@ class _$_ShowedPromotions implements _ShowedPromotions {
 
   @override
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? initialized,
+    TResult Function()? showedStore,
+    TResult Function()? showedPromotions,
+    TResult Function()? showedMyItems,
+  }) {
+    return showedPromotions?.call();
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initialized,
     TResult Function()? showedStore,
@@ -351,6 +423,17 @@ class _$_ShowedPromotions implements _ShowedPromotions {
     required TResult Function(_ShowedMyItems value) showedMyItems,
   }) {
     return showedPromotions(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_Initialized value)? initialized,
+    TResult Function(_ShowedStore value)? showedStore,
+    TResult Function(_ShowedPromotions value)? showedPromotions,
+    TResult Function(_ShowedMyItems value)? showedMyItems,
+  }) {
+    return showedPromotions?.call(this);
   }
 
   @override
@@ -423,6 +506,17 @@ class _$_ShowedMyItems implements _ShowedMyItems {
 
   @override
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? initialized,
+    TResult Function()? showedStore,
+    TResult Function()? showedPromotions,
+    TResult Function()? showedMyItems,
+  }) {
+    return showedMyItems?.call();
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initialized,
     TResult Function()? showedStore,
@@ -445,6 +539,17 @@ class _$_ShowedMyItems implements _ShowedMyItems {
     required TResult Function(_ShowedMyItems value) showedMyItems,
   }) {
     return showedMyItems(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_Initialized value)? initialized,
+    TResult Function(_ShowedStore value)? showedStore,
+    TResult Function(_ShowedPromotions value)? showedPromotions,
+    TResult Function(_ShowedMyItems value)? showedMyItems,
+  }) {
+    return showedMyItems?.call(this);
   }
 
   @override
@@ -502,6 +607,14 @@ mixin _$StoreAppBarTitleState {
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? store,
+    TResult Function()? promotions,
+    TResult Function()? myItems,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? store,
@@ -516,6 +629,14 @@ mixin _$StoreAppBarTitleState {
     required TResult Function(_Store value) store,
     required TResult Function(_Promotions value) promotions,
     required TResult Function(_MyItems value) myItems,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_Store value)? store,
+    TResult Function(_Promotions value)? promotions,
+    TResult Function(_MyItems value)? myItems,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -594,6 +715,17 @@ class _$_Initial implements _Initial {
 
   @override
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? store,
+    TResult Function()? promotions,
+    TResult Function()? myItems,
+  }) {
+    return initial?.call();
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? store,
@@ -616,6 +748,17 @@ class _$_Initial implements _Initial {
     required TResult Function(_MyItems value) myItems,
   }) {
     return initial(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_Store value)? store,
+    TResult Function(_Promotions value)? promotions,
+    TResult Function(_MyItems value)? myItems,
+  }) {
+    return initial?.call(this);
   }
 
   @override
@@ -686,6 +829,17 @@ class _$_Store implements _Store {
 
   @override
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? store,
+    TResult Function()? promotions,
+    TResult Function()? myItems,
+  }) {
+    return store?.call();
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? store,
@@ -708,6 +862,17 @@ class _$_Store implements _Store {
     required TResult Function(_MyItems value) myItems,
   }) {
     return store(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_Store value)? store,
+    TResult Function(_Promotions value)? promotions,
+    TResult Function(_MyItems value)? myItems,
+  }) {
+    return store?.call(this);
   }
 
   @override
@@ -780,6 +945,17 @@ class _$_Promotions implements _Promotions {
 
   @override
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? store,
+    TResult Function()? promotions,
+    TResult Function()? myItems,
+  }) {
+    return promotions?.call();
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? store,
@@ -802,6 +978,17 @@ class _$_Promotions implements _Promotions {
     required TResult Function(_MyItems value) myItems,
   }) {
     return promotions(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_Store value)? store,
+    TResult Function(_Promotions value)? promotions,
+    TResult Function(_MyItems value)? myItems,
+  }) {
+    return promotions?.call(this);
   }
 
   @override
@@ -872,6 +1059,17 @@ class _$_MyItems implements _MyItems {
 
   @override
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? store,
+    TResult Function()? promotions,
+    TResult Function()? myItems,
+  }) {
+    return myItems?.call();
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? store,
@@ -894,6 +1092,17 @@ class _$_MyItems implements _MyItems {
     required TResult Function(_MyItems value) myItems,
   }) {
     return myItems(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_Store value)? store,
+    TResult Function(_Promotions value)? promotions,
+    TResult Function(_MyItems value)? myItems,
+  }) {
+    return myItems?.call(this);
   }
 
   @override

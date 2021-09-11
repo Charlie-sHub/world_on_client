@@ -1,5 +1,6 @@
+// coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
 
 part of 'profile_editing_form_bloc.dart';
 
@@ -104,6 +105,21 @@ mixin _$ProfileEditingFormEvent {
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(User userToEdit)? initialized,
+    TResult Function(String name)? nameChanged,
+    TResult Function(File imageFile)? imageChanged,
+    TResult Function(String username)? usernameChanged,
+    TResult Function(String password)? passwordChanged,
+    TResult Function(String passwordConfirmation)? passwordConfirmationChanged,
+    TResult Function(String emailAddress)? emailAddressChanged,
+    TResult Function(DateTime birthday)? birthdayChanged,
+    TResult Function(String description)? descriptionChanged,
+    TResult Function(KtSet<Tag> interests)? interestsChanged,
+    TResult Function()? submitted,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(User userToEdit)? initialized,
     TResult Function(String name)? nameChanged,
@@ -133,6 +149,22 @@ mixin _$ProfileEditingFormEvent {
     required TResult Function(_DescriptionChanged value) descriptionChanged,
     required TResult Function(_InterestsChanged value) interestsChanged,
     required TResult Function(_Submitted value) submitted,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_Initialized value)? initialized,
+    TResult Function(_NameChanged value)? nameChanged,
+    TResult Function(_ImageChanged value)? imageChanged,
+    TResult Function(_UsernameChanged value)? usernameChanged,
+    TResult Function(_PasswordChanged value)? passwordChanged,
+    TResult Function(_PasswordConfirmationChanged value)?
+        passwordConfirmationChanged,
+    TResult Function(_EmailAddressChanged value)? emailAddressChanged,
+    TResult Function(_BirthdayChanged value)? birthdayChanged,
+    TResult Function(_DescriptionChanged value)? descriptionChanged,
+    TResult Function(_InterestsChanged value)? interestsChanged,
+    TResult Function(_Submitted value)? submitted,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -264,6 +296,24 @@ class _$_Initialized implements _Initialized {
 
   @override
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(User userToEdit)? initialized,
+    TResult Function(String name)? nameChanged,
+    TResult Function(File imageFile)? imageChanged,
+    TResult Function(String username)? usernameChanged,
+    TResult Function(String password)? passwordChanged,
+    TResult Function(String passwordConfirmation)? passwordConfirmationChanged,
+    TResult Function(String emailAddress)? emailAddressChanged,
+    TResult Function(DateTime birthday)? birthdayChanged,
+    TResult Function(String description)? descriptionChanged,
+    TResult Function(KtSet<Tag> interests)? interestsChanged,
+    TResult Function()? submitted,
+  }) {
+    return initialized?.call(userToEdit);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(User userToEdit)? initialized,
     TResult Function(String name)? nameChanged,
@@ -301,6 +351,25 @@ class _$_Initialized implements _Initialized {
     required TResult Function(_Submitted value) submitted,
   }) {
     return initialized(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_Initialized value)? initialized,
+    TResult Function(_NameChanged value)? nameChanged,
+    TResult Function(_ImageChanged value)? imageChanged,
+    TResult Function(_UsernameChanged value)? usernameChanged,
+    TResult Function(_PasswordChanged value)? passwordChanged,
+    TResult Function(_PasswordConfirmationChanged value)?
+        passwordConfirmationChanged,
+    TResult Function(_EmailAddressChanged value)? emailAddressChanged,
+    TResult Function(_BirthdayChanged value)? birthdayChanged,
+    TResult Function(_DescriptionChanged value)? descriptionChanged,
+    TResult Function(_InterestsChanged value)? interestsChanged,
+    TResult Function(_Submitted value)? submitted,
+  }) {
+    return initialized?.call(this);
   }
 
   @override
@@ -419,6 +488,24 @@ class _$_NameChanged implements _NameChanged {
 
   @override
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(User userToEdit)? initialized,
+    TResult Function(String name)? nameChanged,
+    TResult Function(File imageFile)? imageChanged,
+    TResult Function(String username)? usernameChanged,
+    TResult Function(String password)? passwordChanged,
+    TResult Function(String passwordConfirmation)? passwordConfirmationChanged,
+    TResult Function(String emailAddress)? emailAddressChanged,
+    TResult Function(DateTime birthday)? birthdayChanged,
+    TResult Function(String description)? descriptionChanged,
+    TResult Function(KtSet<Tag> interests)? interestsChanged,
+    TResult Function()? submitted,
+  }) {
+    return nameChanged?.call(name);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(User userToEdit)? initialized,
     TResult Function(String name)? nameChanged,
@@ -456,6 +543,25 @@ class _$_NameChanged implements _NameChanged {
     required TResult Function(_Submitted value) submitted,
   }) {
     return nameChanged(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_Initialized value)? initialized,
+    TResult Function(_NameChanged value)? nameChanged,
+    TResult Function(_ImageChanged value)? imageChanged,
+    TResult Function(_UsernameChanged value)? usernameChanged,
+    TResult Function(_PasswordChanged value)? passwordChanged,
+    TResult Function(_PasswordConfirmationChanged value)?
+        passwordConfirmationChanged,
+    TResult Function(_EmailAddressChanged value)? emailAddressChanged,
+    TResult Function(_BirthdayChanged value)? birthdayChanged,
+    TResult Function(_DescriptionChanged value)? descriptionChanged,
+    TResult Function(_InterestsChanged value)? interestsChanged,
+    TResult Function(_Submitted value)? submitted,
+  }) {
+    return nameChanged?.call(this);
   }
 
   @override
@@ -575,6 +681,24 @@ class _$_ImageChanged implements _ImageChanged {
 
   @override
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(User userToEdit)? initialized,
+    TResult Function(String name)? nameChanged,
+    TResult Function(File imageFile)? imageChanged,
+    TResult Function(String username)? usernameChanged,
+    TResult Function(String password)? passwordChanged,
+    TResult Function(String passwordConfirmation)? passwordConfirmationChanged,
+    TResult Function(String emailAddress)? emailAddressChanged,
+    TResult Function(DateTime birthday)? birthdayChanged,
+    TResult Function(String description)? descriptionChanged,
+    TResult Function(KtSet<Tag> interests)? interestsChanged,
+    TResult Function()? submitted,
+  }) {
+    return imageChanged?.call(imageFile);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(User userToEdit)? initialized,
     TResult Function(String name)? nameChanged,
@@ -612,6 +736,25 @@ class _$_ImageChanged implements _ImageChanged {
     required TResult Function(_Submitted value) submitted,
   }) {
     return imageChanged(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_Initialized value)? initialized,
+    TResult Function(_NameChanged value)? nameChanged,
+    TResult Function(_ImageChanged value)? imageChanged,
+    TResult Function(_UsernameChanged value)? usernameChanged,
+    TResult Function(_PasswordChanged value)? passwordChanged,
+    TResult Function(_PasswordConfirmationChanged value)?
+        passwordConfirmationChanged,
+    TResult Function(_EmailAddressChanged value)? emailAddressChanged,
+    TResult Function(_BirthdayChanged value)? birthdayChanged,
+    TResult Function(_DescriptionChanged value)? descriptionChanged,
+    TResult Function(_InterestsChanged value)? interestsChanged,
+    TResult Function(_Submitted value)? submitted,
+  }) {
+    return imageChanged?.call(this);
   }
 
   @override
@@ -731,6 +874,24 @@ class _$_UsernameChanged implements _UsernameChanged {
 
   @override
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(User userToEdit)? initialized,
+    TResult Function(String name)? nameChanged,
+    TResult Function(File imageFile)? imageChanged,
+    TResult Function(String username)? usernameChanged,
+    TResult Function(String password)? passwordChanged,
+    TResult Function(String passwordConfirmation)? passwordConfirmationChanged,
+    TResult Function(String emailAddress)? emailAddressChanged,
+    TResult Function(DateTime birthday)? birthdayChanged,
+    TResult Function(String description)? descriptionChanged,
+    TResult Function(KtSet<Tag> interests)? interestsChanged,
+    TResult Function()? submitted,
+  }) {
+    return usernameChanged?.call(username);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(User userToEdit)? initialized,
     TResult Function(String name)? nameChanged,
@@ -768,6 +929,25 @@ class _$_UsernameChanged implements _UsernameChanged {
     required TResult Function(_Submitted value) submitted,
   }) {
     return usernameChanged(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_Initialized value)? initialized,
+    TResult Function(_NameChanged value)? nameChanged,
+    TResult Function(_ImageChanged value)? imageChanged,
+    TResult Function(_UsernameChanged value)? usernameChanged,
+    TResult Function(_PasswordChanged value)? passwordChanged,
+    TResult Function(_PasswordConfirmationChanged value)?
+        passwordConfirmationChanged,
+    TResult Function(_EmailAddressChanged value)? emailAddressChanged,
+    TResult Function(_BirthdayChanged value)? birthdayChanged,
+    TResult Function(_DescriptionChanged value)? descriptionChanged,
+    TResult Function(_InterestsChanged value)? interestsChanged,
+    TResult Function(_Submitted value)? submitted,
+  }) {
+    return usernameChanged?.call(this);
   }
 
   @override
@@ -887,6 +1067,24 @@ class _$_PasswordChanged implements _PasswordChanged {
 
   @override
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(User userToEdit)? initialized,
+    TResult Function(String name)? nameChanged,
+    TResult Function(File imageFile)? imageChanged,
+    TResult Function(String username)? usernameChanged,
+    TResult Function(String password)? passwordChanged,
+    TResult Function(String passwordConfirmation)? passwordConfirmationChanged,
+    TResult Function(String emailAddress)? emailAddressChanged,
+    TResult Function(DateTime birthday)? birthdayChanged,
+    TResult Function(String description)? descriptionChanged,
+    TResult Function(KtSet<Tag> interests)? interestsChanged,
+    TResult Function()? submitted,
+  }) {
+    return passwordChanged?.call(password);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(User userToEdit)? initialized,
     TResult Function(String name)? nameChanged,
@@ -924,6 +1122,25 @@ class _$_PasswordChanged implements _PasswordChanged {
     required TResult Function(_Submitted value) submitted,
   }) {
     return passwordChanged(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_Initialized value)? initialized,
+    TResult Function(_NameChanged value)? nameChanged,
+    TResult Function(_ImageChanged value)? imageChanged,
+    TResult Function(_UsernameChanged value)? usernameChanged,
+    TResult Function(_PasswordChanged value)? passwordChanged,
+    TResult Function(_PasswordConfirmationChanged value)?
+        passwordConfirmationChanged,
+    TResult Function(_EmailAddressChanged value)? emailAddressChanged,
+    TResult Function(_BirthdayChanged value)? birthdayChanged,
+    TResult Function(_DescriptionChanged value)? descriptionChanged,
+    TResult Function(_InterestsChanged value)? interestsChanged,
+    TResult Function(_Submitted value)? submitted,
+  }) {
+    return passwordChanged?.call(this);
   }
 
   @override
@@ -1048,6 +1265,24 @@ class _$_PasswordConfirmationChanged implements _PasswordConfirmationChanged {
 
   @override
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(User userToEdit)? initialized,
+    TResult Function(String name)? nameChanged,
+    TResult Function(File imageFile)? imageChanged,
+    TResult Function(String username)? usernameChanged,
+    TResult Function(String password)? passwordChanged,
+    TResult Function(String passwordConfirmation)? passwordConfirmationChanged,
+    TResult Function(String emailAddress)? emailAddressChanged,
+    TResult Function(DateTime birthday)? birthdayChanged,
+    TResult Function(String description)? descriptionChanged,
+    TResult Function(KtSet<Tag> interests)? interestsChanged,
+    TResult Function()? submitted,
+  }) {
+    return passwordConfirmationChanged?.call(passwordConfirmation);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(User userToEdit)? initialized,
     TResult Function(String name)? nameChanged,
@@ -1085,6 +1320,25 @@ class _$_PasswordConfirmationChanged implements _PasswordConfirmationChanged {
     required TResult Function(_Submitted value) submitted,
   }) {
     return passwordConfirmationChanged(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_Initialized value)? initialized,
+    TResult Function(_NameChanged value)? nameChanged,
+    TResult Function(_ImageChanged value)? imageChanged,
+    TResult Function(_UsernameChanged value)? usernameChanged,
+    TResult Function(_PasswordChanged value)? passwordChanged,
+    TResult Function(_PasswordConfirmationChanged value)?
+        passwordConfirmationChanged,
+    TResult Function(_EmailAddressChanged value)? emailAddressChanged,
+    TResult Function(_BirthdayChanged value)? birthdayChanged,
+    TResult Function(_DescriptionChanged value)? descriptionChanged,
+    TResult Function(_InterestsChanged value)? interestsChanged,
+    TResult Function(_Submitted value)? submitted,
+  }) {
+    return passwordConfirmationChanged?.call(this);
   }
 
   @override
@@ -1206,6 +1460,24 @@ class _$_EmailAddressChanged implements _EmailAddressChanged {
 
   @override
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(User userToEdit)? initialized,
+    TResult Function(String name)? nameChanged,
+    TResult Function(File imageFile)? imageChanged,
+    TResult Function(String username)? usernameChanged,
+    TResult Function(String password)? passwordChanged,
+    TResult Function(String passwordConfirmation)? passwordConfirmationChanged,
+    TResult Function(String emailAddress)? emailAddressChanged,
+    TResult Function(DateTime birthday)? birthdayChanged,
+    TResult Function(String description)? descriptionChanged,
+    TResult Function(KtSet<Tag> interests)? interestsChanged,
+    TResult Function()? submitted,
+  }) {
+    return emailAddressChanged?.call(emailAddress);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(User userToEdit)? initialized,
     TResult Function(String name)? nameChanged,
@@ -1243,6 +1515,25 @@ class _$_EmailAddressChanged implements _EmailAddressChanged {
     required TResult Function(_Submitted value) submitted,
   }) {
     return emailAddressChanged(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_Initialized value)? initialized,
+    TResult Function(_NameChanged value)? nameChanged,
+    TResult Function(_ImageChanged value)? imageChanged,
+    TResult Function(_UsernameChanged value)? usernameChanged,
+    TResult Function(_PasswordChanged value)? passwordChanged,
+    TResult Function(_PasswordConfirmationChanged value)?
+        passwordConfirmationChanged,
+    TResult Function(_EmailAddressChanged value)? emailAddressChanged,
+    TResult Function(_BirthdayChanged value)? birthdayChanged,
+    TResult Function(_DescriptionChanged value)? descriptionChanged,
+    TResult Function(_InterestsChanged value)? interestsChanged,
+    TResult Function(_Submitted value)? submitted,
+  }) {
+    return emailAddressChanged?.call(this);
   }
 
   @override
@@ -1363,6 +1654,24 @@ class _$_BirthdayChanged implements _BirthdayChanged {
 
   @override
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(User userToEdit)? initialized,
+    TResult Function(String name)? nameChanged,
+    TResult Function(File imageFile)? imageChanged,
+    TResult Function(String username)? usernameChanged,
+    TResult Function(String password)? passwordChanged,
+    TResult Function(String passwordConfirmation)? passwordConfirmationChanged,
+    TResult Function(String emailAddress)? emailAddressChanged,
+    TResult Function(DateTime birthday)? birthdayChanged,
+    TResult Function(String description)? descriptionChanged,
+    TResult Function(KtSet<Tag> interests)? interestsChanged,
+    TResult Function()? submitted,
+  }) {
+    return birthdayChanged?.call(birthday);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(User userToEdit)? initialized,
     TResult Function(String name)? nameChanged,
@@ -1400,6 +1709,25 @@ class _$_BirthdayChanged implements _BirthdayChanged {
     required TResult Function(_Submitted value) submitted,
   }) {
     return birthdayChanged(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_Initialized value)? initialized,
+    TResult Function(_NameChanged value)? nameChanged,
+    TResult Function(_ImageChanged value)? imageChanged,
+    TResult Function(_UsernameChanged value)? usernameChanged,
+    TResult Function(_PasswordChanged value)? passwordChanged,
+    TResult Function(_PasswordConfirmationChanged value)?
+        passwordConfirmationChanged,
+    TResult Function(_EmailAddressChanged value)? emailAddressChanged,
+    TResult Function(_BirthdayChanged value)? birthdayChanged,
+    TResult Function(_DescriptionChanged value)? descriptionChanged,
+    TResult Function(_InterestsChanged value)? interestsChanged,
+    TResult Function(_Submitted value)? submitted,
+  }) {
+    return birthdayChanged?.call(this);
   }
 
   @override
@@ -1519,6 +1847,24 @@ class _$_DescriptionChanged implements _DescriptionChanged {
 
   @override
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(User userToEdit)? initialized,
+    TResult Function(String name)? nameChanged,
+    TResult Function(File imageFile)? imageChanged,
+    TResult Function(String username)? usernameChanged,
+    TResult Function(String password)? passwordChanged,
+    TResult Function(String passwordConfirmation)? passwordConfirmationChanged,
+    TResult Function(String emailAddress)? emailAddressChanged,
+    TResult Function(DateTime birthday)? birthdayChanged,
+    TResult Function(String description)? descriptionChanged,
+    TResult Function(KtSet<Tag> interests)? interestsChanged,
+    TResult Function()? submitted,
+  }) {
+    return descriptionChanged?.call(description);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(User userToEdit)? initialized,
     TResult Function(String name)? nameChanged,
@@ -1556,6 +1902,25 @@ class _$_DescriptionChanged implements _DescriptionChanged {
     required TResult Function(_Submitted value) submitted,
   }) {
     return descriptionChanged(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_Initialized value)? initialized,
+    TResult Function(_NameChanged value)? nameChanged,
+    TResult Function(_ImageChanged value)? imageChanged,
+    TResult Function(_UsernameChanged value)? usernameChanged,
+    TResult Function(_PasswordChanged value)? passwordChanged,
+    TResult Function(_PasswordConfirmationChanged value)?
+        passwordConfirmationChanged,
+    TResult Function(_EmailAddressChanged value)? emailAddressChanged,
+    TResult Function(_BirthdayChanged value)? birthdayChanged,
+    TResult Function(_DescriptionChanged value)? descriptionChanged,
+    TResult Function(_InterestsChanged value)? interestsChanged,
+    TResult Function(_Submitted value)? submitted,
+  }) {
+    return descriptionChanged?.call(this);
   }
 
   @override
@@ -1675,6 +2040,24 @@ class _$_InterestsChanged implements _InterestsChanged {
 
   @override
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(User userToEdit)? initialized,
+    TResult Function(String name)? nameChanged,
+    TResult Function(File imageFile)? imageChanged,
+    TResult Function(String username)? usernameChanged,
+    TResult Function(String password)? passwordChanged,
+    TResult Function(String passwordConfirmation)? passwordConfirmationChanged,
+    TResult Function(String emailAddress)? emailAddressChanged,
+    TResult Function(DateTime birthday)? birthdayChanged,
+    TResult Function(String description)? descriptionChanged,
+    TResult Function(KtSet<Tag> interests)? interestsChanged,
+    TResult Function()? submitted,
+  }) {
+    return interestsChanged?.call(interests);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(User userToEdit)? initialized,
     TResult Function(String name)? nameChanged,
@@ -1712,6 +2095,25 @@ class _$_InterestsChanged implements _InterestsChanged {
     required TResult Function(_Submitted value) submitted,
   }) {
     return interestsChanged(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_Initialized value)? initialized,
+    TResult Function(_NameChanged value)? nameChanged,
+    TResult Function(_ImageChanged value)? imageChanged,
+    TResult Function(_UsernameChanged value)? usernameChanged,
+    TResult Function(_PasswordChanged value)? passwordChanged,
+    TResult Function(_PasswordConfirmationChanged value)?
+        passwordConfirmationChanged,
+    TResult Function(_EmailAddressChanged value)? emailAddressChanged,
+    TResult Function(_BirthdayChanged value)? birthdayChanged,
+    TResult Function(_DescriptionChanged value)? descriptionChanged,
+    TResult Function(_InterestsChanged value)? interestsChanged,
+    TResult Function(_Submitted value)? submitted,
+  }) {
+    return interestsChanged?.call(this);
   }
 
   @override
@@ -1804,6 +2206,24 @@ class _$_Submitted implements _Submitted {
 
   @override
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(User userToEdit)? initialized,
+    TResult Function(String name)? nameChanged,
+    TResult Function(File imageFile)? imageChanged,
+    TResult Function(String username)? usernameChanged,
+    TResult Function(String password)? passwordChanged,
+    TResult Function(String passwordConfirmation)? passwordConfirmationChanged,
+    TResult Function(String emailAddress)? emailAddressChanged,
+    TResult Function(DateTime birthday)? birthdayChanged,
+    TResult Function(String description)? descriptionChanged,
+    TResult Function(KtSet<Tag> interests)? interestsChanged,
+    TResult Function()? submitted,
+  }) {
+    return submitted?.call();
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(User userToEdit)? initialized,
     TResult Function(String name)? nameChanged,
@@ -1841,6 +2261,25 @@ class _$_Submitted implements _Submitted {
     required TResult Function(_Submitted value) submitted,
   }) {
     return submitted(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_Initialized value)? initialized,
+    TResult Function(_NameChanged value)? nameChanged,
+    TResult Function(_ImageChanged value)? imageChanged,
+    TResult Function(_UsernameChanged value)? usernameChanged,
+    TResult Function(_PasswordChanged value)? passwordChanged,
+    TResult Function(_PasswordConfirmationChanged value)?
+        passwordConfirmationChanged,
+    TResult Function(_EmailAddressChanged value)? emailAddressChanged,
+    TResult Function(_BirthdayChanged value)? birthdayChanged,
+    TResult Function(_DescriptionChanged value)? descriptionChanged,
+    TResult Function(_InterestsChanged value)? interestsChanged,
+    TResult Function(_Submitted value)? submitted,
+  }) {
+    return submitted?.call(this);
   }
 
   @override

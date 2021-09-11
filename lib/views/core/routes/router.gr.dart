@@ -112,19 +112,19 @@ class AppRouter extends _i1.RootStackRouter {
       ];
 }
 
-class SplashPageRoute extends _i1.PageRouteInfo {
+class SplashPageRoute extends _i1.PageRouteInfo<void> {
   const SplashPageRoute() : super(name, path: '/');
 
   static const String name = 'SplashPageRoute';
 }
 
-class LogInPageRoute extends _i1.PageRouteInfo {
+class LogInPageRoute extends _i1.PageRouteInfo<void> {
   const LogInPageRoute() : super(name, path: '/log-in-page');
 
   static const String name = 'LogInPageRoute';
 }
 
-class ForgottenPasswordPageRoute extends _i1.PageRouteInfo {
+class ForgottenPasswordPageRoute extends _i1.PageRouteInfo<void> {
   const ForgottenPasswordPageRoute()
       : super(name, path: '/forgotten-password-page');
 
@@ -150,7 +150,7 @@ class RegistrationPageRouteArgs {
   final _i13.Option<_i14.User> userOption;
 }
 
-class WelcomePageRoute extends _i1.PageRouteInfo {
+class WelcomePageRoute extends _i1.PageRouteInfo<void> {
   const WelcomePageRoute() : super(name, path: '/welcome-page');
 
   static const String name = 'WelcomePageRoute';
@@ -231,7 +231,7 @@ class TagManagementPageRouteArgs {
   final _i13.Option<_i16.Tag> tagOption;
 }
 
-class StorePageRoute extends _i1.PageRouteInfo {
+class StorePageRoute extends _i1.PageRouteInfo<void> {
   const StorePageRoute() : super(name, path: '/store-page');
 
   static const String name = 'StorePageRoute';

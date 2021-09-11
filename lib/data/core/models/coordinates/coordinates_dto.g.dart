@@ -6,14 +6,13 @@ part of 'coordinates_dto.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$_CoordinatesDto _$_$_CoordinatesDtoFromJson(Map<String, dynamic> json) {
-  return _$_CoordinatesDto(
-    latitude: (json['latitude'] as num).toDouble(),
-    longitude: (json['longitude'] as num).toDouble(),
-  );
-}
+_$_CoordinatesDto _$$_CoordinatesDtoFromJson(Map<String, dynamic> json) =>
+    _$_CoordinatesDto(
+      latitude: (json['latitude'] as num).toDouble(),
+      longitude: (json['longitude'] as num).toDouble(),
+    );
 
-Map<String, dynamic> _$_$_CoordinatesDtoToJson(_$_CoordinatesDto instance) =>
+Map<String, dynamic> _$$_CoordinatesDtoToJson(_$_CoordinatesDto instance) =>
     <String, dynamic>{
       'latitude': instance.latitude,
       'longitude': instance.longitude,

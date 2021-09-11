@@ -1,5 +1,6 @@
+// coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
 
 part of 'experience_management_application_failure.dart';
 
@@ -37,6 +38,11 @@ mixin _$ExperienceManagementApplicationFailure<T> {
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(int limit)? surpassedImageLimit,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(int limit)? surpassedImageLimit,
     required TResult orElse(),
@@ -45,6 +51,11 @@ mixin _$ExperienceManagementApplicationFailure<T> {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(SurpassedImageLimit<T> value) surpassedImageLimit,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(SurpassedImageLimit<T> value)? surpassedImageLimit,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -166,6 +177,14 @@ class _$SurpassedImageLimit<T> implements SurpassedImageLimit<T> {
 
   @override
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(int limit)? surpassedImageLimit,
+  }) {
+    return surpassedImageLimit?.call(limit);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(int limit)? surpassedImageLimit,
     required TResult orElse(),
@@ -182,6 +201,14 @@ class _$SurpassedImageLimit<T> implements SurpassedImageLimit<T> {
     required TResult Function(SurpassedImageLimit<T> value) surpassedImageLimit,
   }) {
     return surpassedImageLimit(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(SurpassedImageLimit<T> value)? surpassedImageLimit,
+  }) {
+    return surpassedImageLimit?.call(this);
   }
 
   @override

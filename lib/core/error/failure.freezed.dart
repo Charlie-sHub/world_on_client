@@ -1,5 +1,6 @@
+// coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
 
 part of 'failure.dart';
 
@@ -106,6 +107,27 @@ mixin _$Failure<T> {
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(
+            AuthenticationDomainFailure<T> authenticationDomainFailure)?
+        authenticationDomain,
+    TResult Function(AuthenticationDataFailure<T> authenticationDataFailure)?
+        authenticationData,
+    TResult Function(CoreDomainFailure<T> coreDomainFailure)? coreDomain,
+    TResult Function(CoreApplicationFailure<T> coreApplicationFailure)?
+        coreApplication,
+    TResult Function(
+            ExperienceManagementApplicationFailure<T>
+                experienceManagementApplicationFailure)?
+        experienceManagementApplication,
+    TResult Function(CoreDataFailure<T> coreDataFailure)? coreData,
+    TResult Function(StoreDataFailure<T> storeDataFailure)? storeData,
+    TResult Function(ValueFailure<T> valueFailure)? value,
+    TResult Function(ProfileDomainFailure<T> profileDomainFailure)?
+        profileDomain,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(
             AuthenticationDomainFailure<T> authenticationDomainFailure)?
@@ -140,6 +162,20 @@ mixin _$Failure<T> {
     required TResult Function(_StoreData<T> value) storeData,
     required TResult Function(_Value<T> value) value,
     required TResult Function(_ProfileDomain<T> value) profileDomain,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_AuthenticationDomain<T> value)? authenticationDomain,
+    TResult Function(_AuthenticationData<T> value)? authenticationData,
+    TResult Function(_CoreDomain<T> value)? coreDomain,
+    TResult Function(_CoreAppllication<T> value)? coreApplication,
+    TResult Function(_ExperienceManagementApplicationFailure<T> value)?
+        experienceManagementApplication,
+    TResult Function(_CoreData<T> value)? coreData,
+    TResult Function(_StoreData<T> value)? storeData,
+    TResult Function(_Value<T> value)? value,
+    TResult Function(_ProfileDomain<T> value)? profileDomain,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -281,6 +317,30 @@ class _$_AuthenticationDomain<T> implements _AuthenticationDomain<T> {
 
   @override
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(
+            AuthenticationDomainFailure<T> authenticationDomainFailure)?
+        authenticationDomain,
+    TResult Function(AuthenticationDataFailure<T> authenticationDataFailure)?
+        authenticationData,
+    TResult Function(CoreDomainFailure<T> coreDomainFailure)? coreDomain,
+    TResult Function(CoreApplicationFailure<T> coreApplicationFailure)?
+        coreApplication,
+    TResult Function(
+            ExperienceManagementApplicationFailure<T>
+                experienceManagementApplicationFailure)?
+        experienceManagementApplication,
+    TResult Function(CoreDataFailure<T> coreDataFailure)? coreData,
+    TResult Function(StoreDataFailure<T> storeDataFailure)? storeData,
+    TResult Function(ValueFailure<T> valueFailure)? value,
+    TResult Function(ProfileDomainFailure<T> profileDomainFailure)?
+        profileDomain,
+  }) {
+    return authenticationDomain?.call(authenticationDomainFailure);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(
             AuthenticationDomainFailure<T> authenticationDomainFailure)?
@@ -323,6 +383,23 @@ class _$_AuthenticationDomain<T> implements _AuthenticationDomain<T> {
     required TResult Function(_ProfileDomain<T> value) profileDomain,
   }) {
     return authenticationDomain(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_AuthenticationDomain<T> value)? authenticationDomain,
+    TResult Function(_AuthenticationData<T> value)? authenticationData,
+    TResult Function(_CoreDomain<T> value)? coreDomain,
+    TResult Function(_CoreAppllication<T> value)? coreApplication,
+    TResult Function(_ExperienceManagementApplicationFailure<T> value)?
+        experienceManagementApplication,
+    TResult Function(_CoreData<T> value)? coreData,
+    TResult Function(_StoreData<T> value)? storeData,
+    TResult Function(_Value<T> value)? value,
+    TResult Function(_ProfileDomain<T> value)? profileDomain,
+  }) {
+    return authenticationDomain?.call(this);
   }
 
   @override
@@ -464,6 +541,30 @@ class _$_AuthenticationData<T> implements _AuthenticationData<T> {
 
   @override
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(
+            AuthenticationDomainFailure<T> authenticationDomainFailure)?
+        authenticationDomain,
+    TResult Function(AuthenticationDataFailure<T> authenticationDataFailure)?
+        authenticationData,
+    TResult Function(CoreDomainFailure<T> coreDomainFailure)? coreDomain,
+    TResult Function(CoreApplicationFailure<T> coreApplicationFailure)?
+        coreApplication,
+    TResult Function(
+            ExperienceManagementApplicationFailure<T>
+                experienceManagementApplicationFailure)?
+        experienceManagementApplication,
+    TResult Function(CoreDataFailure<T> coreDataFailure)? coreData,
+    TResult Function(StoreDataFailure<T> storeDataFailure)? storeData,
+    TResult Function(ValueFailure<T> valueFailure)? value,
+    TResult Function(ProfileDomainFailure<T> profileDomainFailure)?
+        profileDomain,
+  }) {
+    return authenticationData?.call(authenticationDataFailure);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(
             AuthenticationDomainFailure<T> authenticationDomainFailure)?
@@ -506,6 +607,23 @@ class _$_AuthenticationData<T> implements _AuthenticationData<T> {
     required TResult Function(_ProfileDomain<T> value) profileDomain,
   }) {
     return authenticationData(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_AuthenticationDomain<T> value)? authenticationDomain,
+    TResult Function(_AuthenticationData<T> value)? authenticationData,
+    TResult Function(_CoreDomain<T> value)? coreDomain,
+    TResult Function(_CoreAppllication<T> value)? coreApplication,
+    TResult Function(_ExperienceManagementApplicationFailure<T> value)?
+        experienceManagementApplication,
+    TResult Function(_CoreData<T> value)? coreData,
+    TResult Function(_StoreData<T> value)? storeData,
+    TResult Function(_Value<T> value)? value,
+    TResult Function(_ProfileDomain<T> value)? profileDomain,
+  }) {
+    return authenticationData?.call(this);
   }
 
   @override
@@ -643,6 +761,30 @@ class _$_CoreDomain<T> implements _CoreDomain<T> {
 
   @override
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(
+            AuthenticationDomainFailure<T> authenticationDomainFailure)?
+        authenticationDomain,
+    TResult Function(AuthenticationDataFailure<T> authenticationDataFailure)?
+        authenticationData,
+    TResult Function(CoreDomainFailure<T> coreDomainFailure)? coreDomain,
+    TResult Function(CoreApplicationFailure<T> coreApplicationFailure)?
+        coreApplication,
+    TResult Function(
+            ExperienceManagementApplicationFailure<T>
+                experienceManagementApplicationFailure)?
+        experienceManagementApplication,
+    TResult Function(CoreDataFailure<T> coreDataFailure)? coreData,
+    TResult Function(StoreDataFailure<T> storeDataFailure)? storeData,
+    TResult Function(ValueFailure<T> valueFailure)? value,
+    TResult Function(ProfileDomainFailure<T> profileDomainFailure)?
+        profileDomain,
+  }) {
+    return coreDomain?.call(coreDomainFailure);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(
             AuthenticationDomainFailure<T> authenticationDomainFailure)?
@@ -685,6 +827,23 @@ class _$_CoreDomain<T> implements _CoreDomain<T> {
     required TResult Function(_ProfileDomain<T> value) profileDomain,
   }) {
     return coreDomain(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_AuthenticationDomain<T> value)? authenticationDomain,
+    TResult Function(_AuthenticationData<T> value)? authenticationData,
+    TResult Function(_CoreDomain<T> value)? coreDomain,
+    TResult Function(_CoreAppllication<T> value)? coreApplication,
+    TResult Function(_ExperienceManagementApplicationFailure<T> value)?
+        experienceManagementApplication,
+    TResult Function(_CoreData<T> value)? coreData,
+    TResult Function(_StoreData<T> value)? storeData,
+    TResult Function(_Value<T> value)? value,
+    TResult Function(_ProfileDomain<T> value)? profileDomain,
+  }) {
+    return coreDomain?.call(this);
   }
 
   @override
@@ -823,6 +982,30 @@ class _$_CoreAppllication<T> implements _CoreAppllication<T> {
 
   @override
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(
+            AuthenticationDomainFailure<T> authenticationDomainFailure)?
+        authenticationDomain,
+    TResult Function(AuthenticationDataFailure<T> authenticationDataFailure)?
+        authenticationData,
+    TResult Function(CoreDomainFailure<T> coreDomainFailure)? coreDomain,
+    TResult Function(CoreApplicationFailure<T> coreApplicationFailure)?
+        coreApplication,
+    TResult Function(
+            ExperienceManagementApplicationFailure<T>
+                experienceManagementApplicationFailure)?
+        experienceManagementApplication,
+    TResult Function(CoreDataFailure<T> coreDataFailure)? coreData,
+    TResult Function(StoreDataFailure<T> storeDataFailure)? storeData,
+    TResult Function(ValueFailure<T> valueFailure)? value,
+    TResult Function(ProfileDomainFailure<T> profileDomainFailure)?
+        profileDomain,
+  }) {
+    return coreApplication?.call(coreApplicationFailure);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(
             AuthenticationDomainFailure<T> authenticationDomainFailure)?
@@ -865,6 +1048,23 @@ class _$_CoreAppllication<T> implements _CoreAppllication<T> {
     required TResult Function(_ProfileDomain<T> value) profileDomain,
   }) {
     return coreApplication(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_AuthenticationDomain<T> value)? authenticationDomain,
+    TResult Function(_AuthenticationData<T> value)? authenticationData,
+    TResult Function(_CoreDomain<T> value)? coreDomain,
+    TResult Function(_CoreAppllication<T> value)? coreApplication,
+    TResult Function(_ExperienceManagementApplicationFailure<T> value)?
+        experienceManagementApplication,
+    TResult Function(_CoreData<T> value)? coreData,
+    TResult Function(_StoreData<T> value)? storeData,
+    TResult Function(_Value<T> value)? value,
+    TResult Function(_ProfileDomain<T> value)? profileDomain,
+  }) {
+    return coreApplication?.call(this);
   }
 
   @override
@@ -1021,6 +1221,31 @@ class _$_ExperienceManagementApplicationFailure<T>
 
   @override
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(
+            AuthenticationDomainFailure<T> authenticationDomainFailure)?
+        authenticationDomain,
+    TResult Function(AuthenticationDataFailure<T> authenticationDataFailure)?
+        authenticationData,
+    TResult Function(CoreDomainFailure<T> coreDomainFailure)? coreDomain,
+    TResult Function(CoreApplicationFailure<T> coreApplicationFailure)?
+        coreApplication,
+    TResult Function(
+            ExperienceManagementApplicationFailure<T>
+                experienceManagementApplicationFailure)?
+        experienceManagementApplication,
+    TResult Function(CoreDataFailure<T> coreDataFailure)? coreData,
+    TResult Function(StoreDataFailure<T> storeDataFailure)? storeData,
+    TResult Function(ValueFailure<T> valueFailure)? value,
+    TResult Function(ProfileDomainFailure<T> profileDomainFailure)?
+        profileDomain,
+  }) {
+    return experienceManagementApplication
+        ?.call(experienceManagementApplicationFailure);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(
             AuthenticationDomainFailure<T> authenticationDomainFailure)?
@@ -1064,6 +1289,23 @@ class _$_ExperienceManagementApplicationFailure<T>
     required TResult Function(_ProfileDomain<T> value) profileDomain,
   }) {
     return experienceManagementApplication(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_AuthenticationDomain<T> value)? authenticationDomain,
+    TResult Function(_AuthenticationData<T> value)? authenticationData,
+    TResult Function(_CoreDomain<T> value)? coreDomain,
+    TResult Function(_CoreAppllication<T> value)? coreApplication,
+    TResult Function(_ExperienceManagementApplicationFailure<T> value)?
+        experienceManagementApplication,
+    TResult Function(_CoreData<T> value)? coreData,
+    TResult Function(_StoreData<T> value)? storeData,
+    TResult Function(_Value<T> value)? value,
+    TResult Function(_ProfileDomain<T> value)? profileDomain,
+  }) {
+    return experienceManagementApplication?.call(this);
   }
 
   @override
@@ -1204,6 +1446,30 @@ class _$_CoreData<T> implements _CoreData<T> {
 
   @override
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(
+            AuthenticationDomainFailure<T> authenticationDomainFailure)?
+        authenticationDomain,
+    TResult Function(AuthenticationDataFailure<T> authenticationDataFailure)?
+        authenticationData,
+    TResult Function(CoreDomainFailure<T> coreDomainFailure)? coreDomain,
+    TResult Function(CoreApplicationFailure<T> coreApplicationFailure)?
+        coreApplication,
+    TResult Function(
+            ExperienceManagementApplicationFailure<T>
+                experienceManagementApplicationFailure)?
+        experienceManagementApplication,
+    TResult Function(CoreDataFailure<T> coreDataFailure)? coreData,
+    TResult Function(StoreDataFailure<T> storeDataFailure)? storeData,
+    TResult Function(ValueFailure<T> valueFailure)? value,
+    TResult Function(ProfileDomainFailure<T> profileDomainFailure)?
+        profileDomain,
+  }) {
+    return coreData?.call(coreDataFailure);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(
             AuthenticationDomainFailure<T> authenticationDomainFailure)?
@@ -1246,6 +1512,23 @@ class _$_CoreData<T> implements _CoreData<T> {
     required TResult Function(_ProfileDomain<T> value) profileDomain,
   }) {
     return coreData(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_AuthenticationDomain<T> value)? authenticationDomain,
+    TResult Function(_AuthenticationData<T> value)? authenticationData,
+    TResult Function(_CoreDomain<T> value)? coreDomain,
+    TResult Function(_CoreAppllication<T> value)? coreApplication,
+    TResult Function(_ExperienceManagementApplicationFailure<T> value)?
+        experienceManagementApplication,
+    TResult Function(_CoreData<T> value)? coreData,
+    TResult Function(_StoreData<T> value)? storeData,
+    TResult Function(_Value<T> value)? value,
+    TResult Function(_ProfileDomain<T> value)? profileDomain,
+  }) {
+    return coreData?.call(this);
   }
 
   @override
@@ -1379,6 +1662,30 @@ class _$_StoreData<T> implements _StoreData<T> {
 
   @override
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(
+            AuthenticationDomainFailure<T> authenticationDomainFailure)?
+        authenticationDomain,
+    TResult Function(AuthenticationDataFailure<T> authenticationDataFailure)?
+        authenticationData,
+    TResult Function(CoreDomainFailure<T> coreDomainFailure)? coreDomain,
+    TResult Function(CoreApplicationFailure<T> coreApplicationFailure)?
+        coreApplication,
+    TResult Function(
+            ExperienceManagementApplicationFailure<T>
+                experienceManagementApplicationFailure)?
+        experienceManagementApplication,
+    TResult Function(CoreDataFailure<T> coreDataFailure)? coreData,
+    TResult Function(StoreDataFailure<T> storeDataFailure)? storeData,
+    TResult Function(ValueFailure<T> valueFailure)? value,
+    TResult Function(ProfileDomainFailure<T> profileDomainFailure)?
+        profileDomain,
+  }) {
+    return storeData?.call(storeDataFailure);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(
             AuthenticationDomainFailure<T> authenticationDomainFailure)?
@@ -1421,6 +1728,23 @@ class _$_StoreData<T> implements _StoreData<T> {
     required TResult Function(_ProfileDomain<T> value) profileDomain,
   }) {
     return storeData(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_AuthenticationDomain<T> value)? authenticationDomain,
+    TResult Function(_AuthenticationData<T> value)? authenticationData,
+    TResult Function(_CoreDomain<T> value)? coreDomain,
+    TResult Function(_CoreAppllication<T> value)? coreApplication,
+    TResult Function(_ExperienceManagementApplicationFailure<T> value)?
+        experienceManagementApplication,
+    TResult Function(_CoreData<T> value)? coreData,
+    TResult Function(_StoreData<T> value)? storeData,
+    TResult Function(_Value<T> value)? value,
+    TResult Function(_ProfileDomain<T> value)? profileDomain,
+  }) {
+    return storeData?.call(this);
   }
 
   @override
@@ -1553,6 +1877,30 @@ class _$_Value<T> implements _Value<T> {
 
   @override
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(
+            AuthenticationDomainFailure<T> authenticationDomainFailure)?
+        authenticationDomain,
+    TResult Function(AuthenticationDataFailure<T> authenticationDataFailure)?
+        authenticationData,
+    TResult Function(CoreDomainFailure<T> coreDomainFailure)? coreDomain,
+    TResult Function(CoreApplicationFailure<T> coreApplicationFailure)?
+        coreApplication,
+    TResult Function(
+            ExperienceManagementApplicationFailure<T>
+                experienceManagementApplicationFailure)?
+        experienceManagementApplication,
+    TResult Function(CoreDataFailure<T> coreDataFailure)? coreData,
+    TResult Function(StoreDataFailure<T> storeDataFailure)? storeData,
+    TResult Function(ValueFailure<T> valueFailure)? value,
+    TResult Function(ProfileDomainFailure<T> profileDomainFailure)?
+        profileDomain,
+  }) {
+    return value?.call(valueFailure);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(
             AuthenticationDomainFailure<T> authenticationDomainFailure)?
@@ -1595,6 +1943,23 @@ class _$_Value<T> implements _Value<T> {
     required TResult Function(_ProfileDomain<T> value) profileDomain,
   }) {
     return value(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_AuthenticationDomain<T> value)? authenticationDomain,
+    TResult Function(_AuthenticationData<T> value)? authenticationData,
+    TResult Function(_CoreDomain<T> value)? coreDomain,
+    TResult Function(_CoreAppllication<T> value)? coreApplication,
+    TResult Function(_ExperienceManagementApplicationFailure<T> value)?
+        experienceManagementApplication,
+    TResult Function(_CoreData<T> value)? coreData,
+    TResult Function(_StoreData<T> value)? storeData,
+    TResult Function(_Value<T> value)? value,
+    TResult Function(_ProfileDomain<T> value)? profileDomain,
+  }) {
+    return value?.call(this);
   }
 
   @override
@@ -1730,6 +2095,30 @@ class _$_ProfileDomain<T> implements _ProfileDomain<T> {
 
   @override
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(
+            AuthenticationDomainFailure<T> authenticationDomainFailure)?
+        authenticationDomain,
+    TResult Function(AuthenticationDataFailure<T> authenticationDataFailure)?
+        authenticationData,
+    TResult Function(CoreDomainFailure<T> coreDomainFailure)? coreDomain,
+    TResult Function(CoreApplicationFailure<T> coreApplicationFailure)?
+        coreApplication,
+    TResult Function(
+            ExperienceManagementApplicationFailure<T>
+                experienceManagementApplicationFailure)?
+        experienceManagementApplication,
+    TResult Function(CoreDataFailure<T> coreDataFailure)? coreData,
+    TResult Function(StoreDataFailure<T> storeDataFailure)? storeData,
+    TResult Function(ValueFailure<T> valueFailure)? value,
+    TResult Function(ProfileDomainFailure<T> profileDomainFailure)?
+        profileDomain,
+  }) {
+    return profileDomain?.call(profileDomainFailure);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(
             AuthenticationDomainFailure<T> authenticationDomainFailure)?
@@ -1772,6 +2161,23 @@ class _$_ProfileDomain<T> implements _ProfileDomain<T> {
     required TResult Function(_ProfileDomain<T> value) profileDomain,
   }) {
     return profileDomain(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_AuthenticationDomain<T> value)? authenticationDomain,
+    TResult Function(_AuthenticationData<T> value)? authenticationData,
+    TResult Function(_CoreDomain<T> value)? coreDomain,
+    TResult Function(_CoreAppllication<T> value)? coreApplication,
+    TResult Function(_ExperienceManagementApplicationFailure<T> value)?
+        experienceManagementApplication,
+    TResult Function(_CoreData<T> value)? coreData,
+    TResult Function(_StoreData<T> value)? storeData,
+    TResult Function(_Value<T> value)? value,
+    TResult Function(_ProfileDomain<T> value)? profileDomain,
+  }) {
+    return profileDomain?.call(this);
   }
 
   @override

@@ -1,5 +1,6 @@
+// coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
 
 part of 'profile_experiences_watcher_bloc.dart';
 
@@ -59,6 +60,15 @@ mixin _$ProfileExperiencesWatcherEvent {
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(User user)? watchExperiencesDoneStarted,
+    TResult Function(User user)? watchExperiencesLikedStarted,
+    TResult Function(User user)? watchExperiencesCreatedStarted,
+    TResult Function(Either<Failure, KtList<Experience>> failureOrExperiences)?
+        experiencesReceived,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(User user)? watchExperiencesDoneStarted,
     TResult Function(User user)? watchExperiencesLikedStarted,
@@ -77,6 +87,17 @@ mixin _$ProfileExperiencesWatcherEvent {
     required TResult Function(_WatchExperiencesCreatedStarted value)
         watchExperiencesCreatedStarted,
     required TResult Function(_ExperiencesReceived value) experiencesReceived,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_WatchExperiencesDoneStarted value)?
+        watchExperiencesDoneStarted,
+    TResult Function(_WatchExperiencesLikedStarted value)?
+        watchExperiencesLikedStarted,
+    TResult Function(_WatchExperiencesCreatedStarted value)?
+        watchExperiencesCreatedStarted,
+    TResult Function(_ExperiencesReceived value)? experiencesReceived,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -201,6 +222,18 @@ class _$_WatchExperiencesDoneStarted implements _WatchExperiencesDoneStarted {
 
   @override
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(User user)? watchExperiencesDoneStarted,
+    TResult Function(User user)? watchExperiencesLikedStarted,
+    TResult Function(User user)? watchExperiencesCreatedStarted,
+    TResult Function(Either<Failure, KtList<Experience>> failureOrExperiences)?
+        experiencesReceived,
+  }) {
+    return watchExperiencesDoneStarted?.call(user);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(User user)? watchExperiencesDoneStarted,
     TResult Function(User user)? watchExperiencesLikedStarted,
@@ -227,6 +260,20 @@ class _$_WatchExperiencesDoneStarted implements _WatchExperiencesDoneStarted {
     required TResult Function(_ExperiencesReceived value) experiencesReceived,
   }) {
     return watchExperiencesDoneStarted(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_WatchExperiencesDoneStarted value)?
+        watchExperiencesDoneStarted,
+    TResult Function(_WatchExperiencesLikedStarted value)?
+        watchExperiencesLikedStarted,
+    TResult Function(_WatchExperiencesCreatedStarted value)?
+        watchExperiencesCreatedStarted,
+    TResult Function(_ExperiencesReceived value)? experiencesReceived,
+  }) {
+    return watchExperiencesDoneStarted?.call(this);
   }
 
   @override
@@ -349,6 +396,18 @@ class _$_WatchExperiencesLikedStarted implements _WatchExperiencesLikedStarted {
 
   @override
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(User user)? watchExperiencesDoneStarted,
+    TResult Function(User user)? watchExperiencesLikedStarted,
+    TResult Function(User user)? watchExperiencesCreatedStarted,
+    TResult Function(Either<Failure, KtList<Experience>> failureOrExperiences)?
+        experiencesReceived,
+  }) {
+    return watchExperiencesLikedStarted?.call(user);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(User user)? watchExperiencesDoneStarted,
     TResult Function(User user)? watchExperiencesLikedStarted,
@@ -375,6 +434,20 @@ class _$_WatchExperiencesLikedStarted implements _WatchExperiencesLikedStarted {
     required TResult Function(_ExperiencesReceived value) experiencesReceived,
   }) {
     return watchExperiencesLikedStarted(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_WatchExperiencesDoneStarted value)?
+        watchExperiencesDoneStarted,
+    TResult Function(_WatchExperiencesLikedStarted value)?
+        watchExperiencesLikedStarted,
+    TResult Function(_WatchExperiencesCreatedStarted value)?
+        watchExperiencesCreatedStarted,
+    TResult Function(_ExperiencesReceived value)? experiencesReceived,
+  }) {
+    return watchExperiencesLikedStarted?.call(this);
   }
 
   @override
@@ -498,6 +571,18 @@ class _$_WatchExperiencesCreatedStarted
 
   @override
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(User user)? watchExperiencesDoneStarted,
+    TResult Function(User user)? watchExperiencesLikedStarted,
+    TResult Function(User user)? watchExperiencesCreatedStarted,
+    TResult Function(Either<Failure, KtList<Experience>> failureOrExperiences)?
+        experiencesReceived,
+  }) {
+    return watchExperiencesCreatedStarted?.call(user);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(User user)? watchExperiencesDoneStarted,
     TResult Function(User user)? watchExperiencesLikedStarted,
@@ -524,6 +609,20 @@ class _$_WatchExperiencesCreatedStarted
     required TResult Function(_ExperiencesReceived value) experiencesReceived,
   }) {
     return watchExperiencesCreatedStarted(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_WatchExperiencesDoneStarted value)?
+        watchExperiencesDoneStarted,
+    TResult Function(_WatchExperiencesLikedStarted value)?
+        watchExperiencesLikedStarted,
+    TResult Function(_WatchExperiencesCreatedStarted value)?
+        watchExperiencesCreatedStarted,
+    TResult Function(_ExperiencesReceived value)? experiencesReceived,
+  }) {
+    return watchExperiencesCreatedStarted?.call(this);
   }
 
   @override
@@ -636,6 +735,18 @@ class _$_ExperiencesReceived implements _ExperiencesReceived {
 
   @override
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(User user)? watchExperiencesDoneStarted,
+    TResult Function(User user)? watchExperiencesLikedStarted,
+    TResult Function(User user)? watchExperiencesCreatedStarted,
+    TResult Function(Either<Failure, KtList<Experience>> failureOrExperiences)?
+        experiencesReceived,
+  }) {
+    return experiencesReceived?.call(failureOrExperiences);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(User user)? watchExperiencesDoneStarted,
     TResult Function(User user)? watchExperiencesLikedStarted,
@@ -662,6 +773,20 @@ class _$_ExperiencesReceived implements _ExperiencesReceived {
     required TResult Function(_ExperiencesReceived value) experiencesReceived,
   }) {
     return experiencesReceived(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_WatchExperiencesDoneStarted value)?
+        watchExperiencesDoneStarted,
+    TResult Function(_WatchExperiencesLikedStarted value)?
+        watchExperiencesLikedStarted,
+    TResult Function(_WatchExperiencesCreatedStarted value)?
+        watchExperiencesCreatedStarted,
+    TResult Function(_ExperiencesReceived value)? experiencesReceived,
+  }) {
+    return experiencesReceived?.call(this);
   }
 
   @override
@@ -735,6 +860,14 @@ mixin _$ProfileExperiencesWatcherState {
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? loadInProgress,
+    TResult Function(KtList<Experience> experiences)? loadSuccess,
+    TResult Function(Failure<dynamic> failure)? loadFailure,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loadInProgress,
@@ -749,6 +882,14 @@ mixin _$ProfileExperiencesWatcherState {
     required TResult Function(_LoadInProgress value) loadInProgress,
     required TResult Function(_LoadSuccess value) loadSuccess,
     required TResult Function(_LoadFailure value) loadFailure,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_LoadInProgress value)? loadInProgress,
+    TResult Function(_LoadSuccess value)? loadSuccess,
+    TResult Function(_LoadFailure value)? loadFailure,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -828,6 +969,17 @@ class _$_Initial implements _Initial {
 
   @override
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? loadInProgress,
+    TResult Function(KtList<Experience> experiences)? loadSuccess,
+    TResult Function(Failure<dynamic> failure)? loadFailure,
+  }) {
+    return initial?.call();
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loadInProgress,
@@ -850,6 +1002,17 @@ class _$_Initial implements _Initial {
     required TResult Function(_LoadFailure value) loadFailure,
   }) {
     return initial(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_LoadInProgress value)? loadInProgress,
+    TResult Function(_LoadSuccess value)? loadSuccess,
+    TResult Function(_LoadFailure value)? loadFailure,
+  }) {
+    return initial?.call(this);
   }
 
   @override
@@ -922,6 +1085,17 @@ class _$_LoadInProgress implements _LoadInProgress {
 
   @override
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? loadInProgress,
+    TResult Function(KtList<Experience> experiences)? loadSuccess,
+    TResult Function(Failure<dynamic> failure)? loadFailure,
+  }) {
+    return loadInProgress?.call();
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loadInProgress,
@@ -944,6 +1118,17 @@ class _$_LoadInProgress implements _LoadInProgress {
     required TResult Function(_LoadFailure value) loadFailure,
   }) {
     return loadInProgress(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_LoadInProgress value)? loadInProgress,
+    TResult Function(_LoadSuccess value)? loadSuccess,
+    TResult Function(_LoadFailure value)? loadFailure,
+  }) {
+    return loadInProgress?.call(this);
   }
 
   @override
@@ -1042,6 +1227,17 @@ class _$_LoadSuccess implements _LoadSuccess {
 
   @override
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? loadInProgress,
+    TResult Function(KtList<Experience> experiences)? loadSuccess,
+    TResult Function(Failure<dynamic> failure)? loadFailure,
+  }) {
+    return loadSuccess?.call(experiences);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loadInProgress,
@@ -1064,6 +1260,17 @@ class _$_LoadSuccess implements _LoadSuccess {
     required TResult Function(_LoadFailure value) loadFailure,
   }) {
     return loadSuccess(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_LoadInProgress value)? loadInProgress,
+    TResult Function(_LoadSuccess value)? loadSuccess,
+    TResult Function(_LoadFailure value)? loadFailure,
+  }) {
+    return loadSuccess?.call(this);
   }
 
   @override
@@ -1175,6 +1382,17 @@ class _$_LoadFailure implements _LoadFailure {
 
   @override
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? loadInProgress,
+    TResult Function(KtList<Experience> experiences)? loadSuccess,
+    TResult Function(Failure<dynamic> failure)? loadFailure,
+  }) {
+    return loadFailure?.call(failure);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loadInProgress,
@@ -1197,6 +1415,17 @@ class _$_LoadFailure implements _LoadFailure {
     required TResult Function(_LoadFailure value) loadFailure,
   }) {
     return loadFailure(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_LoadInProgress value)? loadInProgress,
+    TResult Function(_LoadSuccess value)? loadSuccess,
+    TResult Function(_LoadFailure value)? loadFailure,
+  }) {
+    return loadFailure?.call(this);
   }
 
   @override

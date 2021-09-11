@@ -6,20 +6,19 @@ part of 'promotion_plan_dto.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$_PromotionPlan _$_$_PromotionPlanFromJson(Map<String, dynamic> json) {
-  return _$_PromotionPlan(
-    id: json['id'] as String,
-    name: json['name'] as String,
-    description: json['description'] as String,
-    code: _$enumDecode(_$PromotionPlanCodeEnumMap, json['code']),
-    valueInEuros: json['valueInEuros'] as int,
-    boughtDate: const ServerTimestampConverter()
-        .fromJson(json['boughtDate'] as Timestamp),
-    timesSeen: json['timesSeen'] as int,
-  );
-}
+_$_PromotionPlan _$$_PromotionPlanFromJson(Map<String, dynamic> json) =>
+    _$_PromotionPlan(
+      id: json['id'] as String,
+      name: json['name'] as String,
+      description: json['description'] as String,
+      code: _$enumDecode(_$PromotionPlanCodeEnumMap, json['code']),
+      valueInEuros: json['valueInEuros'] as int,
+      boughtDate: const ServerTimestampConverter()
+          .fromJson(json['boughtDate'] as Timestamp),
+      timesSeen: json['timesSeen'] as int,
+    );
 
-Map<String, dynamic> _$_$_PromotionPlanToJson(_$_PromotionPlan instance) =>
+Map<String, dynamic> _$$_PromotionPlanToJson(_$_PromotionPlan instance) =>
     <String, dynamic>{
       'id': instance.id,
       'name': instance.name,

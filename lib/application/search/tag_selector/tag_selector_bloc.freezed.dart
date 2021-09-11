@@ -1,5 +1,6 @@
+// coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
 
 part of 'tag_selector_bloc.dart';
 
@@ -51,6 +52,14 @@ mixin _$TagSelectorEvent {
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(Option<Either<TagSet, Set<UniqueId>>> tagsEitherOption)?
+        initialized,
+    TResult Function(Tag tag)? addedTag,
+    TResult Function(Tag tag)? removedTag,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(Option<Either<TagSet, Set<UniqueId>>> tagsEitherOption)?
         initialized,
@@ -64,6 +73,13 @@ mixin _$TagSelectorEvent {
     required TResult Function(_Initialized value) initialized,
     required TResult Function(_AddedTag value) addedTag,
     required TResult Function(_RemovedTag value) removedTag,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_Initialized value)? initialized,
+    TResult Function(_AddedTag value)? addedTag,
+    TResult Function(_RemovedTag value)? removedTag,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -171,6 +187,17 @@ class _$_Initialized implements _Initialized {
 
   @override
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(Option<Either<TagSet, Set<UniqueId>>> tagsEitherOption)?
+        initialized,
+    TResult Function(Tag tag)? addedTag,
+    TResult Function(Tag tag)? removedTag,
+  }) {
+    return initialized?.call(tagsEitherOption);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(Option<Either<TagSet, Set<UniqueId>>> tagsEitherOption)?
         initialized,
@@ -192,6 +219,16 @@ class _$_Initialized implements _Initialized {
     required TResult Function(_RemovedTag value) removedTag,
   }) {
     return initialized(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_Initialized value)? initialized,
+    TResult Function(_AddedTag value)? addedTag,
+    TResult Function(_RemovedTag value)? removedTag,
+  }) {
+    return initialized?.call(this);
   }
 
   @override
@@ -302,6 +339,17 @@ class _$_AddedTag implements _AddedTag {
 
   @override
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(Option<Either<TagSet, Set<UniqueId>>> tagsEitherOption)?
+        initialized,
+    TResult Function(Tag tag)? addedTag,
+    TResult Function(Tag tag)? removedTag,
+  }) {
+    return addedTag?.call(tag);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(Option<Either<TagSet, Set<UniqueId>>> tagsEitherOption)?
         initialized,
@@ -323,6 +371,16 @@ class _$_AddedTag implements _AddedTag {
     required TResult Function(_RemovedTag value) removedTag,
   }) {
     return addedTag(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_Initialized value)? initialized,
+    TResult Function(_AddedTag value)? addedTag,
+    TResult Function(_RemovedTag value)? removedTag,
+  }) {
+    return addedTag?.call(this);
   }
 
   @override
@@ -434,6 +492,17 @@ class _$_RemovedTag implements _RemovedTag {
 
   @override
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(Option<Either<TagSet, Set<UniqueId>>> tagsEitherOption)?
+        initialized,
+    TResult Function(Tag tag)? addedTag,
+    TResult Function(Tag tag)? removedTag,
+  }) {
+    return removedTag?.call(tag);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(Option<Either<TagSet, Set<UniqueId>>> tagsEitherOption)?
         initialized,
@@ -455,6 +524,16 @@ class _$_RemovedTag implements _RemovedTag {
     required TResult Function(_RemovedTag value) removedTag,
   }) {
     return removedTag(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_Initialized value)? initialized,
+    TResult Function(_AddedTag value)? addedTag,
+    TResult Function(_RemovedTag value)? removedTag,
+  }) {
+    return removedTag?.call(this);
   }
 
   @override

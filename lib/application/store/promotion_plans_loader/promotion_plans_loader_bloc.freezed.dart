@@ -1,5 +1,6 @@
+// coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
 
 part of 'promotion_plans_loader_bloc.dart';
 
@@ -32,6 +33,11 @@ mixin _$PromotionPlansLoaderEvent {
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? loadPromotionPlans,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? loadPromotionPlans,
     required TResult orElse(),
@@ -40,6 +46,11 @@ mixin _$PromotionPlansLoaderEvent {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_LoadPromotionPlans value) loadPromotionPlans,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_LoadPromotionPlans value)? loadPromotionPlans,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -114,6 +125,14 @@ class _$_LoadPromotionPlans implements _LoadPromotionPlans {
 
   @override
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? loadPromotionPlans,
+  }) {
+    return loadPromotionPlans?.call();
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? loadPromotionPlans,
     required TResult orElse(),
@@ -130,6 +149,14 @@ class _$_LoadPromotionPlans implements _LoadPromotionPlans {
     required TResult Function(_LoadPromotionPlans value) loadPromotionPlans,
   }) {
     return loadPromotionPlans(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_LoadPromotionPlans value)? loadPromotionPlans,
+  }) {
+    return loadPromotionPlans?.call(this);
   }
 
   @override
@@ -188,6 +215,14 @@ mixin _$PromotionPlansLoaderState {
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? loadInProgress,
+    TResult Function(KtList<PromotionPlan> plans)? loadedPromotionPlans,
+    TResult Function(Failure<dynamic> failure)? loadFailure,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loadInProgress,
@@ -202,6 +237,14 @@ mixin _$PromotionPlansLoaderState {
     required TResult Function(_LoadInProgress value) loadInProgress,
     required TResult Function(_LoadedPromotionPlans value) loadedPromotionPlans,
     required TResult Function(_LoadFailure value) loadFailure,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_LoadInProgress value)? loadInProgress,
+    TResult Function(_LoadedPromotionPlans value)? loadedPromotionPlans,
+    TResult Function(_LoadFailure value)? loadFailure,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -280,6 +323,17 @@ class _$_Initial implements _Initial {
 
   @override
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? loadInProgress,
+    TResult Function(KtList<PromotionPlan> plans)? loadedPromotionPlans,
+    TResult Function(Failure<dynamic> failure)? loadFailure,
+  }) {
+    return initial?.call();
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loadInProgress,
@@ -302,6 +356,17 @@ class _$_Initial implements _Initial {
     required TResult Function(_LoadFailure value) loadFailure,
   }) {
     return initial(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_LoadInProgress value)? loadInProgress,
+    TResult Function(_LoadedPromotionPlans value)? loadedPromotionPlans,
+    TResult Function(_LoadFailure value)? loadFailure,
+  }) {
+    return initial?.call(this);
   }
 
   @override
@@ -374,6 +439,17 @@ class _$_LoadInProgress implements _LoadInProgress {
 
   @override
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? loadInProgress,
+    TResult Function(KtList<PromotionPlan> plans)? loadedPromotionPlans,
+    TResult Function(Failure<dynamic> failure)? loadFailure,
+  }) {
+    return loadInProgress?.call();
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loadInProgress,
@@ -396,6 +472,17 @@ class _$_LoadInProgress implements _LoadInProgress {
     required TResult Function(_LoadFailure value) loadFailure,
   }) {
     return loadInProgress(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_LoadInProgress value)? loadInProgress,
+    TResult Function(_LoadedPromotionPlans value)? loadedPromotionPlans,
+    TResult Function(_LoadFailure value)? loadFailure,
+  }) {
+    return loadInProgress?.call(this);
   }
 
   @override
@@ -494,6 +581,17 @@ class _$_LoadedPromotionPlans implements _LoadedPromotionPlans {
 
   @override
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? loadInProgress,
+    TResult Function(KtList<PromotionPlan> plans)? loadedPromotionPlans,
+    TResult Function(Failure<dynamic> failure)? loadFailure,
+  }) {
+    return loadedPromotionPlans?.call(plans);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loadInProgress,
@@ -516,6 +614,17 @@ class _$_LoadedPromotionPlans implements _LoadedPromotionPlans {
     required TResult Function(_LoadFailure value) loadFailure,
   }) {
     return loadedPromotionPlans(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_LoadInProgress value)? loadInProgress,
+    TResult Function(_LoadedPromotionPlans value)? loadedPromotionPlans,
+    TResult Function(_LoadFailure value)? loadFailure,
+  }) {
+    return loadedPromotionPlans?.call(this);
   }
 
   @override
@@ -628,6 +737,17 @@ class _$_LoadFailure implements _LoadFailure {
 
   @override
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? loadInProgress,
+    TResult Function(KtList<PromotionPlan> plans)? loadedPromotionPlans,
+    TResult Function(Failure<dynamic> failure)? loadFailure,
+  }) {
+    return loadFailure?.call(failure);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loadInProgress,
@@ -650,6 +770,17 @@ class _$_LoadFailure implements _LoadFailure {
     required TResult Function(_LoadFailure value) loadFailure,
   }) {
     return loadFailure(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_LoadInProgress value)? loadInProgress,
+    TResult Function(_LoadedPromotionPlans value)? loadedPromotionPlans,
+    TResult Function(_LoadFailure value)? loadFailure,
+  }) {
+    return loadFailure?.call(this);
   }
 
   @override

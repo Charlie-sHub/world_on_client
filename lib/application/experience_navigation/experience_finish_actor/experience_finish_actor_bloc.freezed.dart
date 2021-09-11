@@ -1,5 +1,6 @@
+// coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
 
 part of 'experience_finish_actor_bloc.dart';
 
@@ -36,6 +37,11 @@ mixin _$ExperienceFinishActorEvent {
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(Experience experience)? finishedExperience,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(Experience experience)? finishedExperience,
     required TResult orElse(),
@@ -44,6 +50,11 @@ mixin _$ExperienceFinishActorEvent {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_FinishedExperience value) finishedExperience,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_FinishedExperience value)? finishedExperience,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -175,6 +186,14 @@ class _$_FinishedExperience implements _FinishedExperience {
 
   @override
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(Experience experience)? finishedExperience,
+  }) {
+    return finishedExperience?.call(experience);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(Experience experience)? finishedExperience,
     required TResult orElse(),
@@ -191,6 +210,14 @@ class _$_FinishedExperience implements _FinishedExperience {
     required TResult Function(_FinishedExperience value) finishedExperience,
   }) {
     return finishedExperience(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_FinishedExperience value)? finishedExperience,
+  }) {
+    return finishedExperience?.call(this);
   }
 
   @override
@@ -258,6 +285,14 @@ mixin _$ExperienceFinishActorState {
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? actionInProgress,
+    TResult Function(int amountXP, bool leveledUp)? finishSuccess,
+    TResult Function(Failure<dynamic> failure)? finishFailure,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? actionInProgress,
@@ -272,6 +307,14 @@ mixin _$ExperienceFinishActorState {
     required TResult Function(_ActionInProgress value) actionInProgress,
     required TResult Function(_FinishSuccess value) finishSuccess,
     required TResult Function(_FinishFailure value) finishFailure,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_ActionInProgress value)? actionInProgress,
+    TResult Function(_FinishSuccess value)? finishSuccess,
+    TResult Function(_FinishFailure value)? finishFailure,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -350,6 +393,17 @@ class _$_Initial implements _Initial {
 
   @override
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? actionInProgress,
+    TResult Function(int amountXP, bool leveledUp)? finishSuccess,
+    TResult Function(Failure<dynamic> failure)? finishFailure,
+  }) {
+    return initial?.call();
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? actionInProgress,
@@ -372,6 +426,17 @@ class _$_Initial implements _Initial {
     required TResult Function(_FinishFailure value) finishFailure,
   }) {
     return initial(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_ActionInProgress value)? actionInProgress,
+    TResult Function(_FinishSuccess value)? finishSuccess,
+    TResult Function(_FinishFailure value)? finishFailure,
+  }) {
+    return initial?.call(this);
   }
 
   @override
@@ -444,6 +509,17 @@ class _$_ActionInProgress implements _ActionInProgress {
 
   @override
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? actionInProgress,
+    TResult Function(int amountXP, bool leveledUp)? finishSuccess,
+    TResult Function(Failure<dynamic> failure)? finishFailure,
+  }) {
+    return actionInProgress?.call();
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? actionInProgress,
@@ -466,6 +542,17 @@ class _$_ActionInProgress implements _ActionInProgress {
     required TResult Function(_FinishFailure value) finishFailure,
   }) {
     return actionInProgress(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_ActionInProgress value)? actionInProgress,
+    TResult Function(_FinishSuccess value)? finishSuccess,
+    TResult Function(_FinishFailure value)? finishFailure,
+  }) {
+    return actionInProgress?.call(this);
   }
 
   @override
@@ -576,6 +663,17 @@ class _$_FinishSuccess implements _FinishSuccess {
 
   @override
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? actionInProgress,
+    TResult Function(int amountXP, bool leveledUp)? finishSuccess,
+    TResult Function(Failure<dynamic> failure)? finishFailure,
+  }) {
+    return finishSuccess?.call(amountXP, leveledUp);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? actionInProgress,
@@ -598,6 +696,17 @@ class _$_FinishSuccess implements _FinishSuccess {
     required TResult Function(_FinishFailure value) finishFailure,
   }) {
     return finishSuccess(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_ActionInProgress value)? actionInProgress,
+    TResult Function(_FinishSuccess value)? finishSuccess,
+    TResult Function(_FinishFailure value)? finishFailure,
+  }) {
+    return finishSuccess?.call(this);
   }
 
   @override
@@ -711,6 +820,17 @@ class _$_FinishFailure implements _FinishFailure {
 
   @override
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? actionInProgress,
+    TResult Function(int amountXP, bool leveledUp)? finishSuccess,
+    TResult Function(Failure<dynamic> failure)? finishFailure,
+  }) {
+    return finishFailure?.call(failure);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? actionInProgress,
@@ -733,6 +853,17 @@ class _$_FinishFailure implements _FinishFailure {
     required TResult Function(_FinishFailure value) finishFailure,
   }) {
     return finishFailure(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_ActionInProgress value)? actionInProgress,
+    TResult Function(_FinishSuccess value)? finishSuccess,
+    TResult Function(_FinishFailure value)? finishFailure,
+  }) {
+    return finishFailure?.call(this);
   }
 
   @override

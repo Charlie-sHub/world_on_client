@@ -1,5 +1,6 @@
+// coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
 
 part of 'profile_foreign_or_own_bloc.dart';
 
@@ -38,6 +39,11 @@ mixin _$ProfileForeignOrOwnEvent {
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(Option<UniqueId> userIdOption)? initializedForeignOrOwn,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(Option<UniqueId> userIdOption)? initializedForeignOrOwn,
     required TResult orElse(),
@@ -47,6 +53,11 @@ mixin _$ProfileForeignOrOwnEvent {
   TResult map<TResult extends Object?>({
     required TResult Function(_InitializedForeignOrOwn value)
         initializedForeignOrOwn,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_InitializedForeignOrOwn value)? initializedForeignOrOwn,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -169,6 +180,14 @@ class _$_InitializedForeignOrOwn implements _InitializedForeignOrOwn {
 
   @override
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(Option<UniqueId> userIdOption)? initializedForeignOrOwn,
+  }) {
+    return initializedForeignOrOwn?.call(userIdOption);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(Option<UniqueId> userIdOption)? initializedForeignOrOwn,
     required TResult orElse(),
@@ -186,6 +205,14 @@ class _$_InitializedForeignOrOwn implements _InitializedForeignOrOwn {
         initializedForeignOrOwn,
   }) {
     return initializedForeignOrOwn(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_InitializedForeignOrOwn value)? initializedForeignOrOwn,
+  }) {
+    return initializedForeignOrOwn?.call(this);
   }
 
   @override
@@ -257,6 +284,15 @@ mixin _$ProfileForeignOrOwnState {
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? loadInProgress,
+    TResult Function(User user)? own,
+    TResult Function(User user)? foreign,
+    TResult Function()? loadFailure,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loadInProgress,
@@ -273,6 +309,15 @@ mixin _$ProfileForeignOrOwnState {
     required TResult Function(_Own value) own,
     required TResult Function(_Foreign value) foreign,
     required TResult Function(_LoadFailure value) loadFailure,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_LoadInProgress value)? loadInProgress,
+    TResult Function(_Own value)? own,
+    TResult Function(_Foreign value)? foreign,
+    TResult Function(_LoadFailure value)? loadFailure,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -353,6 +398,18 @@ class _$_Initial implements _Initial {
 
   @override
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? loadInProgress,
+    TResult Function(User user)? own,
+    TResult Function(User user)? foreign,
+    TResult Function()? loadFailure,
+  }) {
+    return initial?.call();
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loadInProgress,
@@ -377,6 +434,18 @@ class _$_Initial implements _Initial {
     required TResult Function(_LoadFailure value) loadFailure,
   }) {
     return initial(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_LoadInProgress value)? loadInProgress,
+    TResult Function(_Own value)? own,
+    TResult Function(_Foreign value)? foreign,
+    TResult Function(_LoadFailure value)? loadFailure,
+  }) {
+    return initial?.call(this);
   }
 
   @override
@@ -451,6 +520,18 @@ class _$_LoadInProgress implements _LoadInProgress {
 
   @override
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? loadInProgress,
+    TResult Function(User user)? own,
+    TResult Function(User user)? foreign,
+    TResult Function()? loadFailure,
+  }) {
+    return loadInProgress?.call();
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loadInProgress,
@@ -475,6 +556,18 @@ class _$_LoadInProgress implements _LoadInProgress {
     required TResult Function(_LoadFailure value) loadFailure,
   }) {
     return loadInProgress(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_LoadInProgress value)? loadInProgress,
+    TResult Function(_Own value)? own,
+    TResult Function(_Foreign value)? foreign,
+    TResult Function(_LoadFailure value)? loadFailure,
+  }) {
+    return loadInProgress?.call(this);
   }
 
   @override
@@ -581,6 +674,18 @@ class _$_Own implements _Own {
 
   @override
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? loadInProgress,
+    TResult Function(User user)? own,
+    TResult Function(User user)? foreign,
+    TResult Function()? loadFailure,
+  }) {
+    return own?.call(user);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loadInProgress,
@@ -605,6 +710,18 @@ class _$_Own implements _Own {
     required TResult Function(_LoadFailure value) loadFailure,
   }) {
     return own(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_LoadInProgress value)? loadInProgress,
+    TResult Function(_Own value)? own,
+    TResult Function(_Foreign value)? foreign,
+    TResult Function(_LoadFailure value)? loadFailure,
+  }) {
+    return own?.call(this);
   }
 
   @override
@@ -715,6 +832,18 @@ class _$_Foreign implements _Foreign {
 
   @override
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? loadInProgress,
+    TResult Function(User user)? own,
+    TResult Function(User user)? foreign,
+    TResult Function()? loadFailure,
+  }) {
+    return foreign?.call(user);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loadInProgress,
@@ -739,6 +868,18 @@ class _$_Foreign implements _Foreign {
     required TResult Function(_LoadFailure value) loadFailure,
   }) {
     return foreign(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_LoadInProgress value)? loadInProgress,
+    TResult Function(_Own value)? own,
+    TResult Function(_Foreign value)? foreign,
+    TResult Function(_LoadFailure value)? loadFailure,
+  }) {
+    return foreign?.call(this);
   }
 
   @override
@@ -818,6 +959,18 @@ class _$_LoadFailure implements _LoadFailure {
 
   @override
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? loadInProgress,
+    TResult Function(User user)? own,
+    TResult Function(User user)? foreign,
+    TResult Function()? loadFailure,
+  }) {
+    return loadFailure?.call();
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loadInProgress,
@@ -842,6 +995,18 @@ class _$_LoadFailure implements _LoadFailure {
     required TResult Function(_LoadFailure value) loadFailure,
   }) {
     return loadFailure(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_LoadInProgress value)? loadInProgress,
+    TResult Function(_Own value)? own,
+    TResult Function(_Foreign value)? foreign,
+    TResult Function(_LoadFailure value)? loadFailure,
+  }) {
+    return loadFailure?.call(this);
   }
 
   @override

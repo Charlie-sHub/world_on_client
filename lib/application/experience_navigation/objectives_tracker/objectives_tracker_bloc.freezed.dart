@@ -1,5 +1,6 @@
+// coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
 
 part of 'objectives_tracker_bloc.dart';
 
@@ -51,6 +52,14 @@ mixin _$ObjectivesTrackerEvent {
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(ObjectiveList objectiveList, UniqueId experienceId)?
+        initialized,
+    TResult Function(Objective objective)? objectiveAccomplished,
+    TResult Function(Objective objective)? objectiveUnaccomplished,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(ObjectiveList objectiveList, UniqueId experienceId)?
         initialized,
@@ -66,6 +75,13 @@ mixin _$ObjectivesTrackerEvent {
         objectiveAccomplished,
     required TResult Function(_ObjectiveUnaccomplished value)
         objectiveUnaccomplished,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_Initialized value)? initialized,
+    TResult Function(_ObjectiveAccomplished value)? objectiveAccomplished,
+    TResult Function(_ObjectiveUnaccomplished value)? objectiveUnaccomplished,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -184,6 +200,17 @@ class _$_Initialized implements _Initialized {
 
   @override
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(ObjectiveList objectiveList, UniqueId experienceId)?
+        initialized,
+    TResult Function(Objective objective)? objectiveAccomplished,
+    TResult Function(Objective objective)? objectiveUnaccomplished,
+  }) {
+    return initialized?.call(objectiveList, experienceId);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(ObjectiveList objectiveList, UniqueId experienceId)?
         initialized,
@@ -207,6 +234,16 @@ class _$_Initialized implements _Initialized {
         objectiveUnaccomplished,
   }) {
     return initialized(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_Initialized value)? initialized,
+    TResult Function(_ObjectiveAccomplished value)? objectiveAccomplished,
+    TResult Function(_ObjectiveUnaccomplished value)? objectiveUnaccomplished,
+  }) {
+    return initialized?.call(this);
   }
 
   @override
@@ -322,6 +359,17 @@ class _$_ObjectiveAccomplished implements _ObjectiveAccomplished {
 
   @override
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(ObjectiveList objectiveList, UniqueId experienceId)?
+        initialized,
+    TResult Function(Objective objective)? objectiveAccomplished,
+    TResult Function(Objective objective)? objectiveUnaccomplished,
+  }) {
+    return objectiveAccomplished?.call(objective);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(ObjectiveList objectiveList, UniqueId experienceId)?
         initialized,
@@ -345,6 +393,16 @@ class _$_ObjectiveAccomplished implements _ObjectiveAccomplished {
         objectiveUnaccomplished,
   }) {
     return objectiveAccomplished(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_Initialized value)? initialized,
+    TResult Function(_ObjectiveAccomplished value)? objectiveAccomplished,
+    TResult Function(_ObjectiveUnaccomplished value)? objectiveUnaccomplished,
+  }) {
+    return objectiveAccomplished?.call(this);
   }
 
   @override
@@ -460,6 +518,17 @@ class _$_ObjectiveUnaccomplished implements _ObjectiveUnaccomplished {
 
   @override
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(ObjectiveList objectiveList, UniqueId experienceId)?
+        initialized,
+    TResult Function(Objective objective)? objectiveAccomplished,
+    TResult Function(Objective objective)? objectiveUnaccomplished,
+  }) {
+    return objectiveUnaccomplished?.call(objective);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(ObjectiveList objectiveList, UniqueId experienceId)?
         initialized,
@@ -483,6 +552,16 @@ class _$_ObjectiveUnaccomplished implements _ObjectiveUnaccomplished {
         objectiveUnaccomplished,
   }) {
     return objectiveUnaccomplished(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_Initialized value)? initialized,
+    TResult Function(_ObjectiveAccomplished value)? objectiveAccomplished,
+    TResult Function(_ObjectiveUnaccomplished value)? objectiveUnaccomplished,
+  }) {
+    return objectiveUnaccomplished?.call(this);
   }
 
   @override

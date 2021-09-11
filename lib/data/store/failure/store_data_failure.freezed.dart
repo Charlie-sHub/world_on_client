@@ -1,5 +1,6 @@
+// coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
 
 part of 'store_data_failure.dart';
 
@@ -42,6 +43,13 @@ mixin _$StoreDataFailure<T> {
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? notEnoughCoins,
+    TResult Function()? cancelled,
+    TResult Function()? unAvailableStore,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? notEnoughCoins,
     TResult Function()? cancelled,
@@ -54,6 +62,13 @@ mixin _$StoreDataFailure<T> {
     required TResult Function(NotEnoughCoins<T> value) notEnoughCoins,
     required TResult Function(Cancelled<T> value) cancelled,
     required TResult Function(UnAvailableStore<T> value) unAvailableStore,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(NotEnoughCoins<T> value)? notEnoughCoins,
+    TResult Function(Cancelled<T> value)? cancelled,
+    TResult Function(UnAvailableStore<T> value)? unAvailableStore,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -132,6 +147,16 @@ class _$NotEnoughCoins<T> implements NotEnoughCoins<T> {
 
   @override
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? notEnoughCoins,
+    TResult Function()? cancelled,
+    TResult Function()? unAvailableStore,
+  }) {
+    return notEnoughCoins?.call();
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? notEnoughCoins,
     TResult Function()? cancelled,
@@ -152,6 +177,16 @@ class _$NotEnoughCoins<T> implements NotEnoughCoins<T> {
     required TResult Function(UnAvailableStore<T> value) unAvailableStore,
   }) {
     return notEnoughCoins(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(NotEnoughCoins<T> value)? notEnoughCoins,
+    TResult Function(Cancelled<T> value)? cancelled,
+    TResult Function(UnAvailableStore<T> value)? unAvailableStore,
+  }) {
+    return notEnoughCoins?.call(this);
   }
 
   @override
@@ -222,6 +257,16 @@ class _$Cancelled<T> implements Cancelled<T> {
 
   @override
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? notEnoughCoins,
+    TResult Function()? cancelled,
+    TResult Function()? unAvailableStore,
+  }) {
+    return cancelled?.call();
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? notEnoughCoins,
     TResult Function()? cancelled,
@@ -242,6 +287,16 @@ class _$Cancelled<T> implements Cancelled<T> {
     required TResult Function(UnAvailableStore<T> value) unAvailableStore,
   }) {
     return cancelled(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(NotEnoughCoins<T> value)? notEnoughCoins,
+    TResult Function(Cancelled<T> value)? cancelled,
+    TResult Function(UnAvailableStore<T> value)? unAvailableStore,
+  }) {
+    return cancelled?.call(this);
   }
 
   @override
@@ -312,6 +367,16 @@ class _$UnAvailableStore<T> implements UnAvailableStore<T> {
 
   @override
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? notEnoughCoins,
+    TResult Function()? cancelled,
+    TResult Function()? unAvailableStore,
+  }) {
+    return unAvailableStore?.call();
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? notEnoughCoins,
     TResult Function()? cancelled,
@@ -332,6 +397,16 @@ class _$UnAvailableStore<T> implements UnAvailableStore<T> {
     required TResult Function(UnAvailableStore<T> value) unAvailableStore,
   }) {
     return unAvailableStore(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(NotEnoughCoins<T> value)? notEnoughCoins,
+    TResult Function(Cancelled<T> value)? cancelled,
+    TResult Function(UnAvailableStore<T> value)? unAvailableStore,
+  }) {
+    return unAvailableStore?.call(this);
   }
 
   @override

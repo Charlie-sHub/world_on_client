@@ -1,5 +1,6 @@
+// coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
 
 part of 'search_experiences_by_tags_bloc.dart';
 
@@ -44,6 +45,13 @@ mixin _$SearchExperiencesByTagsEvent {
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(Set<Tag> tags)? submitted,
+    TResult Function(Either<Failure, KtList<Experience>> failureOrExperiences)?
+        resultsReceived,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(Set<Tag> tags)? submitted,
     TResult Function(Either<Failure, KtList<Experience>> failureOrExperiences)?
@@ -55,6 +63,12 @@ mixin _$SearchExperiencesByTagsEvent {
   TResult map<TResult extends Object?>({
     required TResult Function(_Submitted value) submitted,
     required TResult Function(_ResultsReceived value) resultsReceived,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_Submitted value)? submitted,
+    TResult Function(_ResultsReceived value)? resultsReceived,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -158,6 +172,16 @@ class _$_Submitted implements _Submitted {
 
   @override
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(Set<Tag> tags)? submitted,
+    TResult Function(Either<Failure, KtList<Experience>> failureOrExperiences)?
+        resultsReceived,
+  }) {
+    return submitted?.call(tags);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(Set<Tag> tags)? submitted,
     TResult Function(Either<Failure, KtList<Experience>> failureOrExperiences)?
@@ -177,6 +201,15 @@ class _$_Submitted implements _Submitted {
     required TResult Function(_ResultsReceived value) resultsReceived,
   }) {
     return submitted(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_Submitted value)? submitted,
+    TResult Function(_ResultsReceived value)? resultsReceived,
+  }) {
+    return submitted?.call(this);
   }
 
   @override
@@ -279,6 +312,16 @@ class _$_ResultsReceived implements _ResultsReceived {
 
   @override
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(Set<Tag> tags)? submitted,
+    TResult Function(Either<Failure, KtList<Experience>> failureOrExperiences)?
+        resultsReceived,
+  }) {
+    return resultsReceived?.call(failureOrExperiences);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(Set<Tag> tags)? submitted,
     TResult Function(Either<Failure, KtList<Experience>> failureOrExperiences)?
@@ -298,6 +341,15 @@ class _$_ResultsReceived implements _ResultsReceived {
     required TResult Function(_ResultsReceived value) resultsReceived,
   }) {
     return resultsReceived(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_Submitted value)? submitted,
+    TResult Function(_ResultsReceived value)? resultsReceived,
+  }) {
+    return resultsReceived?.call(this);
   }
 
   @override
@@ -373,6 +425,15 @@ mixin _$SearchExperiencesByTagsState {
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? searchInProgress,
+    TResult Function(KtList<Experience> experiencesFound)? searchSuccess,
+    TResult Function(Failure<dynamic> failure)? searchFailure,
+    TResult Function(ValueFailure<KtSet<Tag>> failure)? valueFailure,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? searchInProgress,
@@ -389,6 +450,15 @@ mixin _$SearchExperiencesByTagsState {
     required TResult Function(_SearchSuccess value) searchSuccess,
     required TResult Function(_SearchFailure value) searchFailure,
     required TResult Function(_ValueFailure value) valueFailure,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_SearchInProgress value)? searchInProgress,
+    TResult Function(_SearchSuccess value)? searchSuccess,
+    TResult Function(_SearchFailure value)? searchFailure,
+    TResult Function(_ValueFailure value)? valueFailure,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -471,6 +541,18 @@ class _$_Initial implements _Initial {
 
   @override
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? searchInProgress,
+    TResult Function(KtList<Experience> experiencesFound)? searchSuccess,
+    TResult Function(Failure<dynamic> failure)? searchFailure,
+    TResult Function(ValueFailure<KtSet<Tag>> failure)? valueFailure,
+  }) {
+    return initial?.call();
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? searchInProgress,
@@ -495,6 +577,18 @@ class _$_Initial implements _Initial {
     required TResult Function(_ValueFailure value) valueFailure,
   }) {
     return initial(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_SearchInProgress value)? searchInProgress,
+    TResult Function(_SearchSuccess value)? searchSuccess,
+    TResult Function(_SearchFailure value)? searchFailure,
+    TResult Function(_ValueFailure value)? valueFailure,
+  }) {
+    return initial?.call(this);
   }
 
   @override
@@ -570,6 +664,18 @@ class _$_SearchInProgress implements _SearchInProgress {
 
   @override
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? searchInProgress,
+    TResult Function(KtList<Experience> experiencesFound)? searchSuccess,
+    TResult Function(Failure<dynamic> failure)? searchFailure,
+    TResult Function(ValueFailure<KtSet<Tag>> failure)? valueFailure,
+  }) {
+    return searchInProgress?.call();
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? searchInProgress,
@@ -594,6 +700,18 @@ class _$_SearchInProgress implements _SearchInProgress {
     required TResult Function(_ValueFailure value) valueFailure,
   }) {
     return searchInProgress(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_SearchInProgress value)? searchInProgress,
+    TResult Function(_SearchSuccess value)? searchSuccess,
+    TResult Function(_SearchFailure value)? searchFailure,
+    TResult Function(_ValueFailure value)? valueFailure,
+  }) {
+    return searchInProgress?.call(this);
   }
 
   @override
@@ -696,6 +814,18 @@ class _$_SearchSuccess implements _SearchSuccess {
 
   @override
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? searchInProgress,
+    TResult Function(KtList<Experience> experiencesFound)? searchSuccess,
+    TResult Function(Failure<dynamic> failure)? searchFailure,
+    TResult Function(ValueFailure<KtSet<Tag>> failure)? valueFailure,
+  }) {
+    return searchSuccess?.call(experiencesFound);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? searchInProgress,
@@ -720,6 +850,18 @@ class _$_SearchSuccess implements _SearchSuccess {
     required TResult Function(_ValueFailure value) valueFailure,
   }) {
     return searchSuccess(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_SearchInProgress value)? searchInProgress,
+    TResult Function(_SearchSuccess value)? searchSuccess,
+    TResult Function(_SearchFailure value)? searchFailure,
+    TResult Function(_ValueFailure value)? valueFailure,
+  }) {
+    return searchSuccess?.call(this);
   }
 
   @override
@@ -835,6 +977,18 @@ class _$_SearchFailure implements _SearchFailure {
 
   @override
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? searchInProgress,
+    TResult Function(KtList<Experience> experiencesFound)? searchSuccess,
+    TResult Function(Failure<dynamic> failure)? searchFailure,
+    TResult Function(ValueFailure<KtSet<Tag>> failure)? valueFailure,
+  }) {
+    return searchFailure?.call(failure);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? searchInProgress,
@@ -859,6 +1013,18 @@ class _$_SearchFailure implements _SearchFailure {
     required TResult Function(_ValueFailure value) valueFailure,
   }) {
     return searchFailure(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_SearchInProgress value)? searchInProgress,
+    TResult Function(_SearchSuccess value)? searchSuccess,
+    TResult Function(_SearchFailure value)? searchFailure,
+    TResult Function(_ValueFailure value)? valueFailure,
+  }) {
+    return searchFailure?.call(this);
   }
 
   @override
@@ -973,6 +1139,18 @@ class _$_ValueFailure implements _ValueFailure {
 
   @override
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? searchInProgress,
+    TResult Function(KtList<Experience> experiencesFound)? searchSuccess,
+    TResult Function(Failure<dynamic> failure)? searchFailure,
+    TResult Function(ValueFailure<KtSet<Tag>> failure)? valueFailure,
+  }) {
+    return valueFailure?.call(failure);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? searchInProgress,
@@ -997,6 +1175,18 @@ class _$_ValueFailure implements _ValueFailure {
     required TResult Function(_ValueFailure value) valueFailure,
   }) {
     return valueFailure(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_SearchInProgress value)? searchInProgress,
+    TResult Function(_SearchSuccess value)? searchSuccess,
+    TResult Function(_SearchFailure value)? searchFailure,
+    TResult Function(_ValueFailure value)? valueFailure,
+  }) {
+    return valueFailure?.call(this);
   }
 
   @override

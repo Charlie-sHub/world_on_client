@@ -1,5 +1,6 @@
+// coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
 
 part of 'navigation_actor_bloc.dart';
 
@@ -63,6 +64,17 @@ mixin _$NavigationActorEvent {
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? mainFeedTapped,
+    TResult Function()? searchTapped,
+    TResult Function(Option<Experience> experienceOption)?
+        experienceNavigationTapped,
+    TResult Function(Option<UniqueId> userIdOption, bool currentUserProfile)?
+        profileTapped,
+    TResult Function()? notificationsTapped,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? mainFeedTapped,
     TResult Function()? searchTapped,
@@ -82,6 +94,16 @@ mixin _$NavigationActorEvent {
         experienceNavigationTapped,
     required TResult Function(_ProfileTapped value) profileTapped,
     required TResult Function(_NotificationsTapped value) notificationsTapped,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_MainFeedTapped value)? mainFeedTapped,
+    TResult Function(_SearchTapped value)? searchTapped,
+    TResult Function(_ExperienceNavigationTapped value)?
+        experienceNavigationTapped,
+    TResult Function(_ProfileTapped value)? profileTapped,
+    TResult Function(_NotificationsTapped value)? notificationsTapped,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -168,6 +190,20 @@ class _$_MainFeedTapped implements _MainFeedTapped {
 
   @override
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? mainFeedTapped,
+    TResult Function()? searchTapped,
+    TResult Function(Option<Experience> experienceOption)?
+        experienceNavigationTapped,
+    TResult Function(Option<UniqueId> userIdOption, bool currentUserProfile)?
+        profileTapped,
+    TResult Function()? notificationsTapped,
+  }) {
+    return mainFeedTapped?.call();
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? mainFeedTapped,
     TResult Function()? searchTapped,
@@ -195,6 +231,19 @@ class _$_MainFeedTapped implements _MainFeedTapped {
     required TResult Function(_NotificationsTapped value) notificationsTapped,
   }) {
     return mainFeedTapped(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_MainFeedTapped value)? mainFeedTapped,
+    TResult Function(_SearchTapped value)? searchTapped,
+    TResult Function(_ExperienceNavigationTapped value)?
+        experienceNavigationTapped,
+    TResult Function(_ProfileTapped value)? profileTapped,
+    TResult Function(_NotificationsTapped value)? notificationsTapped,
+  }) {
+    return mainFeedTapped?.call(this);
   }
 
   @override
@@ -273,6 +322,20 @@ class _$_SearchTapped implements _SearchTapped {
 
   @override
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? mainFeedTapped,
+    TResult Function()? searchTapped,
+    TResult Function(Option<Experience> experienceOption)?
+        experienceNavigationTapped,
+    TResult Function(Option<UniqueId> userIdOption, bool currentUserProfile)?
+        profileTapped,
+    TResult Function()? notificationsTapped,
+  }) {
+    return searchTapped?.call();
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? mainFeedTapped,
     TResult Function()? searchTapped,
@@ -300,6 +363,19 @@ class _$_SearchTapped implements _SearchTapped {
     required TResult Function(_NotificationsTapped value) notificationsTapped,
   }) {
     return searchTapped(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_MainFeedTapped value)? mainFeedTapped,
+    TResult Function(_SearchTapped value)? searchTapped,
+    TResult Function(_ExperienceNavigationTapped value)?
+        experienceNavigationTapped,
+    TResult Function(_ProfileTapped value)? profileTapped,
+    TResult Function(_NotificationsTapped value)? notificationsTapped,
+  }) {
+    return searchTapped?.call(this);
   }
 
   @override
@@ -408,6 +484,20 @@ class _$_ExperienceNavigationTapped implements _ExperienceNavigationTapped {
 
   @override
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? mainFeedTapped,
+    TResult Function()? searchTapped,
+    TResult Function(Option<Experience> experienceOption)?
+        experienceNavigationTapped,
+    TResult Function(Option<UniqueId> userIdOption, bool currentUserProfile)?
+        profileTapped,
+    TResult Function()? notificationsTapped,
+  }) {
+    return experienceNavigationTapped?.call(experienceOption);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? mainFeedTapped,
     TResult Function()? searchTapped,
@@ -435,6 +525,19 @@ class _$_ExperienceNavigationTapped implements _ExperienceNavigationTapped {
     required TResult Function(_NotificationsTapped value) notificationsTapped,
   }) {
     return experienceNavigationTapped(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_MainFeedTapped value)? mainFeedTapped,
+    TResult Function(_SearchTapped value)? searchTapped,
+    TResult Function(_ExperienceNavigationTapped value)?
+        experienceNavigationTapped,
+    TResult Function(_ProfileTapped value)? profileTapped,
+    TResult Function(_NotificationsTapped value)? notificationsTapped,
+  }) {
+    return experienceNavigationTapped?.call(this);
   }
 
   @override
@@ -558,6 +661,20 @@ class _$_ProfileTapped implements _ProfileTapped {
 
   @override
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? mainFeedTapped,
+    TResult Function()? searchTapped,
+    TResult Function(Option<Experience> experienceOption)?
+        experienceNavigationTapped,
+    TResult Function(Option<UniqueId> userIdOption, bool currentUserProfile)?
+        profileTapped,
+    TResult Function()? notificationsTapped,
+  }) {
+    return profileTapped?.call(userIdOption, currentUserProfile);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? mainFeedTapped,
     TResult Function()? searchTapped,
@@ -585,6 +702,19 @@ class _$_ProfileTapped implements _ProfileTapped {
     required TResult Function(_NotificationsTapped value) notificationsTapped,
   }) {
     return profileTapped(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_MainFeedTapped value)? mainFeedTapped,
+    TResult Function(_SearchTapped value)? searchTapped,
+    TResult Function(_ExperienceNavigationTapped value)?
+        experienceNavigationTapped,
+    TResult Function(_ProfileTapped value)? profileTapped,
+    TResult Function(_NotificationsTapped value)? notificationsTapped,
+  }) {
+    return profileTapped?.call(this);
   }
 
   @override
@@ -671,6 +801,20 @@ class _$_NotificationsTapped implements _NotificationsTapped {
 
   @override
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? mainFeedTapped,
+    TResult Function()? searchTapped,
+    TResult Function(Option<Experience> experienceOption)?
+        experienceNavigationTapped,
+    TResult Function(Option<UniqueId> userIdOption, bool currentUserProfile)?
+        profileTapped,
+    TResult Function()? notificationsTapped,
+  }) {
+    return notificationsTapped?.call();
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? mainFeedTapped,
     TResult Function()? searchTapped,
@@ -698,6 +842,19 @@ class _$_NotificationsTapped implements _NotificationsTapped {
     required TResult Function(_NotificationsTapped value) notificationsTapped,
   }) {
     return notificationsTapped(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_MainFeedTapped value)? mainFeedTapped,
+    TResult Function(_SearchTapped value)? searchTapped,
+    TResult Function(_ExperienceNavigationTapped value)?
+        experienceNavigationTapped,
+    TResult Function(_ProfileTapped value)? profileTapped,
+    TResult Function(_NotificationsTapped value)? notificationsTapped,
+  }) {
+    return notificationsTapped?.call(this);
   }
 
   @override
@@ -778,6 +935,18 @@ mixin _$NavigationActorState {
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? mainFeedView,
+    TResult Function()? searchView,
+    TResult Function(Option<Experience> experienceOption)?
+        navigateExperienceView,
+    TResult Function(Option<UniqueId> userIdOption, bool currentUserProfile)?
+        profileView,
+    TResult Function()? errorView,
+    TResult Function()? notificationsView,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? mainFeedView,
     TResult Function()? searchView,
@@ -799,6 +968,16 @@ mixin _$NavigationActorState {
     required TResult Function(_ProfileView value) profileView,
     required TResult Function(_ErrorView value) errorView,
     required TResult Function(_NotificationsView value) notificationsView,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_MainFeedView value)? mainFeedView,
+    TResult Function(_SearchView value)? searchView,
+    TResult Function(_NavigateExperienceView value)? navigateExperienceView,
+    TResult Function(_ProfileView value)? profileView,
+    TResult Function(_ErrorView value)? errorView,
+    TResult Function(_NotificationsView value)? notificationsView,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -886,6 +1065,21 @@ class _$_MainFeedView implements _MainFeedView {
 
   @override
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? mainFeedView,
+    TResult Function()? searchView,
+    TResult Function(Option<Experience> experienceOption)?
+        navigateExperienceView,
+    TResult Function(Option<UniqueId> userIdOption, bool currentUserProfile)?
+        profileView,
+    TResult Function()? errorView,
+    TResult Function()? notificationsView,
+  }) {
+    return mainFeedView?.call();
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? mainFeedView,
     TResult Function()? searchView,
@@ -915,6 +1109,19 @@ class _$_MainFeedView implements _MainFeedView {
     required TResult Function(_NotificationsView value) notificationsView,
   }) {
     return mainFeedView(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_MainFeedView value)? mainFeedView,
+    TResult Function(_SearchView value)? searchView,
+    TResult Function(_NavigateExperienceView value)? navigateExperienceView,
+    TResult Function(_ProfileView value)? profileView,
+    TResult Function(_ErrorView value)? errorView,
+    TResult Function(_NotificationsView value)? notificationsView,
+  }) {
+    return mainFeedView?.call(this);
   }
 
   @override
@@ -994,6 +1201,21 @@ class _$_SearchView implements _SearchView {
 
   @override
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? mainFeedView,
+    TResult Function()? searchView,
+    TResult Function(Option<Experience> experienceOption)?
+        navigateExperienceView,
+    TResult Function(Option<UniqueId> userIdOption, bool currentUserProfile)?
+        profileView,
+    TResult Function()? errorView,
+    TResult Function()? notificationsView,
+  }) {
+    return searchView?.call();
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? mainFeedView,
     TResult Function()? searchView,
@@ -1023,6 +1245,19 @@ class _$_SearchView implements _SearchView {
     required TResult Function(_NotificationsView value) notificationsView,
   }) {
     return searchView(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_MainFeedView value)? mainFeedView,
+    TResult Function(_SearchView value)? searchView,
+    TResult Function(_NavigateExperienceView value)? navigateExperienceView,
+    TResult Function(_ProfileView value)? profileView,
+    TResult Function(_ErrorView value)? errorView,
+    TResult Function(_NotificationsView value)? notificationsView,
+  }) {
+    return searchView?.call(this);
   }
 
   @override
@@ -1130,6 +1365,21 @@ class _$_NavigateExperienceView implements _NavigateExperienceView {
 
   @override
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? mainFeedView,
+    TResult Function()? searchView,
+    TResult Function(Option<Experience> experienceOption)?
+        navigateExperienceView,
+    TResult Function(Option<UniqueId> userIdOption, bool currentUserProfile)?
+        profileView,
+    TResult Function()? errorView,
+    TResult Function()? notificationsView,
+  }) {
+    return navigateExperienceView?.call(experienceOption);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? mainFeedView,
     TResult Function()? searchView,
@@ -1159,6 +1409,19 @@ class _$_NavigateExperienceView implements _NavigateExperienceView {
     required TResult Function(_NotificationsView value) notificationsView,
   }) {
     return navigateExperienceView(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_MainFeedView value)? mainFeedView,
+    TResult Function(_SearchView value)? searchView,
+    TResult Function(_NavigateExperienceView value)? navigateExperienceView,
+    TResult Function(_ProfileView value)? profileView,
+    TResult Function(_ErrorView value)? errorView,
+    TResult Function(_NotificationsView value)? notificationsView,
+  }) {
+    return navigateExperienceView?.call(this);
   }
 
   @override
@@ -1283,6 +1546,21 @@ class _$_ProfileView implements _ProfileView {
 
   @override
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? mainFeedView,
+    TResult Function()? searchView,
+    TResult Function(Option<Experience> experienceOption)?
+        navigateExperienceView,
+    TResult Function(Option<UniqueId> userIdOption, bool currentUserProfile)?
+        profileView,
+    TResult Function()? errorView,
+    TResult Function()? notificationsView,
+  }) {
+    return profileView?.call(userIdOption, currentUserProfile);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? mainFeedView,
     TResult Function()? searchView,
@@ -1312,6 +1590,19 @@ class _$_ProfileView implements _ProfileView {
     required TResult Function(_NotificationsView value) notificationsView,
   }) {
     return profileView(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_MainFeedView value)? mainFeedView,
+    TResult Function(_SearchView value)? searchView,
+    TResult Function(_NavigateExperienceView value)? navigateExperienceView,
+    TResult Function(_ProfileView value)? profileView,
+    TResult Function(_ErrorView value)? errorView,
+    TResult Function(_NotificationsView value)? notificationsView,
+  }) {
+    return profileView?.call(this);
   }
 
   @override
@@ -1398,6 +1689,21 @@ class _$_ErrorView implements _ErrorView {
 
   @override
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? mainFeedView,
+    TResult Function()? searchView,
+    TResult Function(Option<Experience> experienceOption)?
+        navigateExperienceView,
+    TResult Function(Option<UniqueId> userIdOption, bool currentUserProfile)?
+        profileView,
+    TResult Function()? errorView,
+    TResult Function()? notificationsView,
+  }) {
+    return errorView?.call();
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? mainFeedView,
     TResult Function()? searchView,
@@ -1427,6 +1733,19 @@ class _$_ErrorView implements _ErrorView {
     required TResult Function(_NotificationsView value) notificationsView,
   }) {
     return errorView(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_MainFeedView value)? mainFeedView,
+    TResult Function(_SearchView value)? searchView,
+    TResult Function(_NavigateExperienceView value)? navigateExperienceView,
+    TResult Function(_ProfileView value)? profileView,
+    TResult Function(_ErrorView value)? errorView,
+    TResult Function(_NotificationsView value)? notificationsView,
+  }) {
+    return errorView?.call(this);
   }
 
   @override
@@ -1506,6 +1825,21 @@ class _$_NotificationsView implements _NotificationsView {
 
   @override
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? mainFeedView,
+    TResult Function()? searchView,
+    TResult Function(Option<Experience> experienceOption)?
+        navigateExperienceView,
+    TResult Function(Option<UniqueId> userIdOption, bool currentUserProfile)?
+        profileView,
+    TResult Function()? errorView,
+    TResult Function()? notificationsView,
+  }) {
+    return notificationsView?.call();
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? mainFeedView,
     TResult Function()? searchView,
@@ -1535,6 +1869,19 @@ class _$_NotificationsView implements _NotificationsView {
     required TResult Function(_NotificationsView value) notificationsView,
   }) {
     return notificationsView(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_MainFeedView value)? mainFeedView,
+    TResult Function(_SearchView value)? searchView,
+    TResult Function(_NavigateExperienceView value)? navigateExperienceView,
+    TResult Function(_ProfileView value)? profileView,
+    TResult Function(_ErrorView value)? errorView,
+    TResult Function(_NotificationsView value)? notificationsView,
+  }) {
+    return notificationsView?.call(this);
   }
 
   @override

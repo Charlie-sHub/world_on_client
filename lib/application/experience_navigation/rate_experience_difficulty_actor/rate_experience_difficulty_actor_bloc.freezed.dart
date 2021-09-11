@@ -1,5 +1,6 @@
+// coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
 
 part of 'rate_experience_difficulty_actor_bloc.dart';
 
@@ -42,6 +43,12 @@ mixin _$RateExperienceDifficultyActorEvent {
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(int difficultyRating)? difficultyChanged,
+    TResult Function(Experience experience)? difficultyRated,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(int difficultyRating)? difficultyChanged,
     TResult Function(Experience experience)? difficultyRated,
@@ -52,6 +59,12 @@ mixin _$RateExperienceDifficultyActorEvent {
   TResult map<TResult extends Object?>({
     required TResult Function(_DifficultyChanged value) difficultyChanged,
     required TResult Function(_DifficultyRated value) difficultyRated,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_DifficultyChanged value)? difficultyChanged,
+    TResult Function(_DifficultyRated value)? difficultyRated,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -156,6 +169,15 @@ class _$_DifficultyChanged implements _DifficultyChanged {
 
   @override
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(int difficultyRating)? difficultyChanged,
+    TResult Function(Experience experience)? difficultyRated,
+  }) {
+    return difficultyChanged?.call(difficultyRating);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(int difficultyRating)? difficultyChanged,
     TResult Function(Experience experience)? difficultyRated,
@@ -174,6 +196,15 @@ class _$_DifficultyChanged implements _DifficultyChanged {
     required TResult Function(_DifficultyRated value) difficultyRated,
   }) {
     return difficultyChanged(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_DifficultyChanged value)? difficultyChanged,
+    TResult Function(_DifficultyRated value)? difficultyRated,
+  }) {
+    return difficultyChanged?.call(this);
   }
 
   @override
@@ -283,6 +314,15 @@ class _$_DifficultyRated implements _DifficultyRated {
 
   @override
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(int difficultyRating)? difficultyChanged,
+    TResult Function(Experience experience)? difficultyRated,
+  }) {
+    return difficultyRated?.call(experience);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(int difficultyRating)? difficultyChanged,
     TResult Function(Experience experience)? difficultyRated,
@@ -301,6 +341,15 @@ class _$_DifficultyRated implements _DifficultyRated {
     required TResult Function(_DifficultyRated value) difficultyRated,
   }) {
     return difficultyRated(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_DifficultyChanged value)? difficultyChanged,
+    TResult Function(_DifficultyRated value)? difficultyRated,
+  }) {
+    return difficultyRated?.call(this);
   }
 
   @override
