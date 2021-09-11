@@ -201,7 +201,9 @@ class ProductionExperienceNavigationRepository implements ExperienceNavigationRe
       longitude: _position.longitude,
     );
     if (_userDto.interestsIds.isNotEmpty) {
-      const double _kmRadius = 30;
+      // TODO: Change the radius back to 30
+      // CHanged to 30000 just to always get some recommended experiences
+      const double _kmRadius = 30000;
       yield* _geo
           .collection(
             collectionRef: _firestore.collection("experiences"),
@@ -235,8 +237,7 @@ class ProductionExperienceNavigationRepository implements ExperienceNavigationRe
                   (_id) => _experienceTagIds.contains(_id),
                 );
                 final _isNotCreator = _experience.creator.id != _userDto.id;
-                return _containsInterest && _isNotCreator ||
-                    _experience.isPromoted && _isNotCreator;
+                return _containsInterest && _isNotCreator || _experience.isPromoted && _isNotCreator;
               },
             ).toList();
             _filteredExperienceDtoList.sort(
