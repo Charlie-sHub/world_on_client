@@ -1,5 +1,6 @@
+// coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
 
 part of 'comment_form_bloc.dart';
 
@@ -55,6 +56,15 @@ mixin _$CommentFormEvent {
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(SimpleUser user, Option<Comment> commentOption,
+            UniqueId experienceId)?
+        initialized,
+    TResult Function(String content)? contentChanged,
+    TResult Function(User currentUser)? submitted,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(SimpleUser user, Option<Comment> commentOption,
             UniqueId experienceId)?
@@ -69,6 +79,13 @@ mixin _$CommentFormEvent {
     required TResult Function(_Initialized value) initialized,
     required TResult Function(_ContentChanged value) contentChanged,
     required TResult Function(_Submitted value) submitted,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_Initialized value)? initialized,
+    TResult Function(_ContentChanged value)? contentChanged,
+    TResult Function(_Submitted value)? submitted,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -210,6 +227,18 @@ class _$_Initialized implements _Initialized {
 
   @override
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(SimpleUser user, Option<Comment> commentOption,
+            UniqueId experienceId)?
+        initialized,
+    TResult Function(String content)? contentChanged,
+    TResult Function(User currentUser)? submitted,
+  }) {
+    return initialized?.call(user, commentOption, experienceId);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(SimpleUser user, Option<Comment> commentOption,
             UniqueId experienceId)?
@@ -232,6 +261,16 @@ class _$_Initialized implements _Initialized {
     required TResult Function(_Submitted value) submitted,
   }) {
     return initialized(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_Initialized value)? initialized,
+    TResult Function(_ContentChanged value)? contentChanged,
+    TResult Function(_Submitted value)? submitted,
+  }) {
+    return initialized?.call(this);
   }
 
   @override
@@ -339,6 +378,18 @@ class _$_ContentChanged implements _ContentChanged {
 
   @override
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(SimpleUser user, Option<Comment> commentOption,
+            UniqueId experienceId)?
+        initialized,
+    TResult Function(String content)? contentChanged,
+    TResult Function(User currentUser)? submitted,
+  }) {
+    return contentChanged?.call(content);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(SimpleUser user, Option<Comment> commentOption,
             UniqueId experienceId)?
@@ -361,6 +412,16 @@ class _$_ContentChanged implements _ContentChanged {
     required TResult Function(_Submitted value) submitted,
   }) {
     return contentChanged(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_Initialized value)? initialized,
+    TResult Function(_ContentChanged value)? contentChanged,
+    TResult Function(_Submitted value)? submitted,
+  }) {
+    return contentChanged?.call(this);
   }
 
   @override
@@ -472,6 +533,18 @@ class _$_Submitted implements _Submitted {
 
   @override
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(SimpleUser user, Option<Comment> commentOption,
+            UniqueId experienceId)?
+        initialized,
+    TResult Function(String content)? contentChanged,
+    TResult Function(User currentUser)? submitted,
+  }) {
+    return submitted?.call(currentUser);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(SimpleUser user, Option<Comment> commentOption,
             UniqueId experienceId)?
@@ -494,6 +567,16 @@ class _$_Submitted implements _Submitted {
     required TResult Function(_Submitted value) submitted,
   }) {
     return submitted(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_Initialized value)? initialized,
+    TResult Function(_ContentChanged value)? contentChanged,
+    TResult Function(_Submitted value)? submitted,
+  }) {
+    return submitted?.call(this);
   }
 
   @override

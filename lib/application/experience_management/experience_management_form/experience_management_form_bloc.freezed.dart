@@ -1,5 +1,6 @@
+// coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
 
 part of 'experience_management_form_bloc.dart';
 
@@ -105,6 +106,21 @@ mixin _$ExperienceManagementFormEvent {
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(Option<Experience> experienceOption)? initialized,
+    TResult Function(String title)? titleChanged,
+    TResult Function(String description)? descriptionChanged,
+    TResult Function(String imageURL)? imageDeleted,
+    TResult Function(List<Asset> imageAssets)? imagesChanged,
+    TResult Function(double latitude, double longitude)? coordinatesChanged,
+    TResult Function(int difficulty)? difficultyChanged,
+    TResult Function(KtList<Objective> objectives)? objectivesChanged,
+    TResult Function(KtSet<Reward> rewards)? rewardsChanged,
+    TResult Function(KtSet<Tag> tags)? tagsChanged,
+    TResult Function()? submitted,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(Option<Experience> experienceOption)? initialized,
     TResult Function(String title)? titleChanged,
@@ -133,6 +149,21 @@ mixin _$ExperienceManagementFormEvent {
     required TResult Function(_RewardsChanged value) rewardsChanged,
     required TResult Function(_TagsChanged value) tagsChanged,
     required TResult Function(_Submitted value) submitted,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_Initialized value)? initialized,
+    TResult Function(_TitleChanged value)? titleChanged,
+    TResult Function(_DescriptionChanged value)? descriptionChanged,
+    TResult Function(_ImageDeleted value)? imageDeleted,
+    TResult Function(_ImagesChanged value)? imagesChanged,
+    TResult Function(_CoordinatesChanged value)? coordinatesChanged,
+    TResult Function(_DifficultyChanged value)? difficultyChanged,
+    TResult Function(_ObjectivesChanged value)? objectivesChanged,
+    TResult Function(_RewardsChanged value)? rewardsChanged,
+    TResult Function(_TagsChanged value)? tagsChanged,
+    TResult Function(_Submitted value)? submitted,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -256,6 +287,24 @@ class _$_Initialized implements _Initialized {
 
   @override
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(Option<Experience> experienceOption)? initialized,
+    TResult Function(String title)? titleChanged,
+    TResult Function(String description)? descriptionChanged,
+    TResult Function(String imageURL)? imageDeleted,
+    TResult Function(List<Asset> imageAssets)? imagesChanged,
+    TResult Function(double latitude, double longitude)? coordinatesChanged,
+    TResult Function(int difficulty)? difficultyChanged,
+    TResult Function(KtList<Objective> objectives)? objectivesChanged,
+    TResult Function(KtSet<Reward> rewards)? rewardsChanged,
+    TResult Function(KtSet<Tag> tags)? tagsChanged,
+    TResult Function()? submitted,
+  }) {
+    return initialized?.call(experienceOption);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(Option<Experience> experienceOption)? initialized,
     TResult Function(String title)? titleChanged,
@@ -292,6 +341,24 @@ class _$_Initialized implements _Initialized {
     required TResult Function(_Submitted value) submitted,
   }) {
     return initialized(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_Initialized value)? initialized,
+    TResult Function(_TitleChanged value)? titleChanged,
+    TResult Function(_DescriptionChanged value)? descriptionChanged,
+    TResult Function(_ImageDeleted value)? imageDeleted,
+    TResult Function(_ImagesChanged value)? imagesChanged,
+    TResult Function(_CoordinatesChanged value)? coordinatesChanged,
+    TResult Function(_DifficultyChanged value)? difficultyChanged,
+    TResult Function(_ObjectivesChanged value)? objectivesChanged,
+    TResult Function(_RewardsChanged value)? rewardsChanged,
+    TResult Function(_TagsChanged value)? tagsChanged,
+    TResult Function(_Submitted value)? submitted,
+  }) {
+    return initialized?.call(this);
   }
 
   @override
@@ -410,6 +477,24 @@ class _$_TitleChanged implements _TitleChanged {
 
   @override
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(Option<Experience> experienceOption)? initialized,
+    TResult Function(String title)? titleChanged,
+    TResult Function(String description)? descriptionChanged,
+    TResult Function(String imageURL)? imageDeleted,
+    TResult Function(List<Asset> imageAssets)? imagesChanged,
+    TResult Function(double latitude, double longitude)? coordinatesChanged,
+    TResult Function(int difficulty)? difficultyChanged,
+    TResult Function(KtList<Objective> objectives)? objectivesChanged,
+    TResult Function(KtSet<Reward> rewards)? rewardsChanged,
+    TResult Function(KtSet<Tag> tags)? tagsChanged,
+    TResult Function()? submitted,
+  }) {
+    return titleChanged?.call(title);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(Option<Experience> experienceOption)? initialized,
     TResult Function(String title)? titleChanged,
@@ -446,6 +531,24 @@ class _$_TitleChanged implements _TitleChanged {
     required TResult Function(_Submitted value) submitted,
   }) {
     return titleChanged(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_Initialized value)? initialized,
+    TResult Function(_TitleChanged value)? titleChanged,
+    TResult Function(_DescriptionChanged value)? descriptionChanged,
+    TResult Function(_ImageDeleted value)? imageDeleted,
+    TResult Function(_ImagesChanged value)? imagesChanged,
+    TResult Function(_CoordinatesChanged value)? coordinatesChanged,
+    TResult Function(_DifficultyChanged value)? difficultyChanged,
+    TResult Function(_ObjectivesChanged value)? objectivesChanged,
+    TResult Function(_RewardsChanged value)? rewardsChanged,
+    TResult Function(_TagsChanged value)? tagsChanged,
+    TResult Function(_Submitted value)? submitted,
+  }) {
+    return titleChanged?.call(this);
   }
 
   @override
@@ -564,6 +667,24 @@ class _$_DescriptionChanged implements _DescriptionChanged {
 
   @override
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(Option<Experience> experienceOption)? initialized,
+    TResult Function(String title)? titleChanged,
+    TResult Function(String description)? descriptionChanged,
+    TResult Function(String imageURL)? imageDeleted,
+    TResult Function(List<Asset> imageAssets)? imagesChanged,
+    TResult Function(double latitude, double longitude)? coordinatesChanged,
+    TResult Function(int difficulty)? difficultyChanged,
+    TResult Function(KtList<Objective> objectives)? objectivesChanged,
+    TResult Function(KtSet<Reward> rewards)? rewardsChanged,
+    TResult Function(KtSet<Tag> tags)? tagsChanged,
+    TResult Function()? submitted,
+  }) {
+    return descriptionChanged?.call(description);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(Option<Experience> experienceOption)? initialized,
     TResult Function(String title)? titleChanged,
@@ -600,6 +721,24 @@ class _$_DescriptionChanged implements _DescriptionChanged {
     required TResult Function(_Submitted value) submitted,
   }) {
     return descriptionChanged(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_Initialized value)? initialized,
+    TResult Function(_TitleChanged value)? titleChanged,
+    TResult Function(_DescriptionChanged value)? descriptionChanged,
+    TResult Function(_ImageDeleted value)? imageDeleted,
+    TResult Function(_ImagesChanged value)? imagesChanged,
+    TResult Function(_CoordinatesChanged value)? coordinatesChanged,
+    TResult Function(_DifficultyChanged value)? difficultyChanged,
+    TResult Function(_ObjectivesChanged value)? objectivesChanged,
+    TResult Function(_RewardsChanged value)? rewardsChanged,
+    TResult Function(_TagsChanged value)? tagsChanged,
+    TResult Function(_Submitted value)? submitted,
+  }) {
+    return descriptionChanged?.call(this);
   }
 
   @override
@@ -718,6 +857,24 @@ class _$_ImageDeleted implements _ImageDeleted {
 
   @override
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(Option<Experience> experienceOption)? initialized,
+    TResult Function(String title)? titleChanged,
+    TResult Function(String description)? descriptionChanged,
+    TResult Function(String imageURL)? imageDeleted,
+    TResult Function(List<Asset> imageAssets)? imagesChanged,
+    TResult Function(double latitude, double longitude)? coordinatesChanged,
+    TResult Function(int difficulty)? difficultyChanged,
+    TResult Function(KtList<Objective> objectives)? objectivesChanged,
+    TResult Function(KtSet<Reward> rewards)? rewardsChanged,
+    TResult Function(KtSet<Tag> tags)? tagsChanged,
+    TResult Function()? submitted,
+  }) {
+    return imageDeleted?.call(imageURL);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(Option<Experience> experienceOption)? initialized,
     TResult Function(String title)? titleChanged,
@@ -754,6 +911,24 @@ class _$_ImageDeleted implements _ImageDeleted {
     required TResult Function(_Submitted value) submitted,
   }) {
     return imageDeleted(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_Initialized value)? initialized,
+    TResult Function(_TitleChanged value)? titleChanged,
+    TResult Function(_DescriptionChanged value)? descriptionChanged,
+    TResult Function(_ImageDeleted value)? imageDeleted,
+    TResult Function(_ImagesChanged value)? imagesChanged,
+    TResult Function(_CoordinatesChanged value)? coordinatesChanged,
+    TResult Function(_DifficultyChanged value)? difficultyChanged,
+    TResult Function(_ObjectivesChanged value)? objectivesChanged,
+    TResult Function(_RewardsChanged value)? rewardsChanged,
+    TResult Function(_TagsChanged value)? tagsChanged,
+    TResult Function(_Submitted value)? submitted,
+  }) {
+    return imageDeleted?.call(this);
   }
 
   @override
@@ -872,6 +1047,24 @@ class _$_ImagesChanged implements _ImagesChanged {
 
   @override
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(Option<Experience> experienceOption)? initialized,
+    TResult Function(String title)? titleChanged,
+    TResult Function(String description)? descriptionChanged,
+    TResult Function(String imageURL)? imageDeleted,
+    TResult Function(List<Asset> imageAssets)? imagesChanged,
+    TResult Function(double latitude, double longitude)? coordinatesChanged,
+    TResult Function(int difficulty)? difficultyChanged,
+    TResult Function(KtList<Objective> objectives)? objectivesChanged,
+    TResult Function(KtSet<Reward> rewards)? rewardsChanged,
+    TResult Function(KtSet<Tag> tags)? tagsChanged,
+    TResult Function()? submitted,
+  }) {
+    return imagesChanged?.call(imageAssets);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(Option<Experience> experienceOption)? initialized,
     TResult Function(String title)? titleChanged,
@@ -908,6 +1101,24 @@ class _$_ImagesChanged implements _ImagesChanged {
     required TResult Function(_Submitted value) submitted,
   }) {
     return imagesChanged(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_Initialized value)? initialized,
+    TResult Function(_TitleChanged value)? titleChanged,
+    TResult Function(_DescriptionChanged value)? descriptionChanged,
+    TResult Function(_ImageDeleted value)? imageDeleted,
+    TResult Function(_ImagesChanged value)? imagesChanged,
+    TResult Function(_CoordinatesChanged value)? coordinatesChanged,
+    TResult Function(_DifficultyChanged value)? difficultyChanged,
+    TResult Function(_ObjectivesChanged value)? objectivesChanged,
+    TResult Function(_RewardsChanged value)? rewardsChanged,
+    TResult Function(_TagsChanged value)? tagsChanged,
+    TResult Function(_Submitted value)? submitted,
+  }) {
+    return imagesChanged?.call(this);
   }
 
   @override
@@ -1039,6 +1250,24 @@ class _$_CoordinatesChanged implements _CoordinatesChanged {
 
   @override
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(Option<Experience> experienceOption)? initialized,
+    TResult Function(String title)? titleChanged,
+    TResult Function(String description)? descriptionChanged,
+    TResult Function(String imageURL)? imageDeleted,
+    TResult Function(List<Asset> imageAssets)? imagesChanged,
+    TResult Function(double latitude, double longitude)? coordinatesChanged,
+    TResult Function(int difficulty)? difficultyChanged,
+    TResult Function(KtList<Objective> objectives)? objectivesChanged,
+    TResult Function(KtSet<Reward> rewards)? rewardsChanged,
+    TResult Function(KtSet<Tag> tags)? tagsChanged,
+    TResult Function()? submitted,
+  }) {
+    return coordinatesChanged?.call(latitude, longitude);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(Option<Experience> experienceOption)? initialized,
     TResult Function(String title)? titleChanged,
@@ -1075,6 +1304,24 @@ class _$_CoordinatesChanged implements _CoordinatesChanged {
     required TResult Function(_Submitted value) submitted,
   }) {
     return coordinatesChanged(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_Initialized value)? initialized,
+    TResult Function(_TitleChanged value)? titleChanged,
+    TResult Function(_DescriptionChanged value)? descriptionChanged,
+    TResult Function(_ImageDeleted value)? imageDeleted,
+    TResult Function(_ImagesChanged value)? imagesChanged,
+    TResult Function(_CoordinatesChanged value)? coordinatesChanged,
+    TResult Function(_DifficultyChanged value)? difficultyChanged,
+    TResult Function(_ObjectivesChanged value)? objectivesChanged,
+    TResult Function(_RewardsChanged value)? rewardsChanged,
+    TResult Function(_TagsChanged value)? tagsChanged,
+    TResult Function(_Submitted value)? submitted,
+  }) {
+    return coordinatesChanged?.call(this);
   }
 
   @override
@@ -1196,6 +1443,24 @@ class _$_DifficultyChanged implements _DifficultyChanged {
 
   @override
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(Option<Experience> experienceOption)? initialized,
+    TResult Function(String title)? titleChanged,
+    TResult Function(String description)? descriptionChanged,
+    TResult Function(String imageURL)? imageDeleted,
+    TResult Function(List<Asset> imageAssets)? imagesChanged,
+    TResult Function(double latitude, double longitude)? coordinatesChanged,
+    TResult Function(int difficulty)? difficultyChanged,
+    TResult Function(KtList<Objective> objectives)? objectivesChanged,
+    TResult Function(KtSet<Reward> rewards)? rewardsChanged,
+    TResult Function(KtSet<Tag> tags)? tagsChanged,
+    TResult Function()? submitted,
+  }) {
+    return difficultyChanged?.call(difficulty);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(Option<Experience> experienceOption)? initialized,
     TResult Function(String title)? titleChanged,
@@ -1232,6 +1497,24 @@ class _$_DifficultyChanged implements _DifficultyChanged {
     required TResult Function(_Submitted value) submitted,
   }) {
     return difficultyChanged(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_Initialized value)? initialized,
+    TResult Function(_TitleChanged value)? titleChanged,
+    TResult Function(_DescriptionChanged value)? descriptionChanged,
+    TResult Function(_ImageDeleted value)? imageDeleted,
+    TResult Function(_ImagesChanged value)? imagesChanged,
+    TResult Function(_CoordinatesChanged value)? coordinatesChanged,
+    TResult Function(_DifficultyChanged value)? difficultyChanged,
+    TResult Function(_ObjectivesChanged value)? objectivesChanged,
+    TResult Function(_RewardsChanged value)? rewardsChanged,
+    TResult Function(_TagsChanged value)? tagsChanged,
+    TResult Function(_Submitted value)? submitted,
+  }) {
+    return difficultyChanged?.call(this);
   }
 
   @override
@@ -1350,6 +1633,24 @@ class _$_ObjectivesChanged implements _ObjectivesChanged {
 
   @override
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(Option<Experience> experienceOption)? initialized,
+    TResult Function(String title)? titleChanged,
+    TResult Function(String description)? descriptionChanged,
+    TResult Function(String imageURL)? imageDeleted,
+    TResult Function(List<Asset> imageAssets)? imagesChanged,
+    TResult Function(double latitude, double longitude)? coordinatesChanged,
+    TResult Function(int difficulty)? difficultyChanged,
+    TResult Function(KtList<Objective> objectives)? objectivesChanged,
+    TResult Function(KtSet<Reward> rewards)? rewardsChanged,
+    TResult Function(KtSet<Tag> tags)? tagsChanged,
+    TResult Function()? submitted,
+  }) {
+    return objectivesChanged?.call(objectives);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(Option<Experience> experienceOption)? initialized,
     TResult Function(String title)? titleChanged,
@@ -1386,6 +1687,24 @@ class _$_ObjectivesChanged implements _ObjectivesChanged {
     required TResult Function(_Submitted value) submitted,
   }) {
     return objectivesChanged(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_Initialized value)? initialized,
+    TResult Function(_TitleChanged value)? titleChanged,
+    TResult Function(_DescriptionChanged value)? descriptionChanged,
+    TResult Function(_ImageDeleted value)? imageDeleted,
+    TResult Function(_ImagesChanged value)? imagesChanged,
+    TResult Function(_CoordinatesChanged value)? coordinatesChanged,
+    TResult Function(_DifficultyChanged value)? difficultyChanged,
+    TResult Function(_ObjectivesChanged value)? objectivesChanged,
+    TResult Function(_RewardsChanged value)? rewardsChanged,
+    TResult Function(_TagsChanged value)? tagsChanged,
+    TResult Function(_Submitted value)? submitted,
+  }) {
+    return objectivesChanged?.call(this);
   }
 
   @override
@@ -1504,6 +1823,24 @@ class _$_RewardsChanged implements _RewardsChanged {
 
   @override
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(Option<Experience> experienceOption)? initialized,
+    TResult Function(String title)? titleChanged,
+    TResult Function(String description)? descriptionChanged,
+    TResult Function(String imageURL)? imageDeleted,
+    TResult Function(List<Asset> imageAssets)? imagesChanged,
+    TResult Function(double latitude, double longitude)? coordinatesChanged,
+    TResult Function(int difficulty)? difficultyChanged,
+    TResult Function(KtList<Objective> objectives)? objectivesChanged,
+    TResult Function(KtSet<Reward> rewards)? rewardsChanged,
+    TResult Function(KtSet<Tag> tags)? tagsChanged,
+    TResult Function()? submitted,
+  }) {
+    return rewardsChanged?.call(rewards);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(Option<Experience> experienceOption)? initialized,
     TResult Function(String title)? titleChanged,
@@ -1540,6 +1877,24 @@ class _$_RewardsChanged implements _RewardsChanged {
     required TResult Function(_Submitted value) submitted,
   }) {
     return rewardsChanged(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_Initialized value)? initialized,
+    TResult Function(_TitleChanged value)? titleChanged,
+    TResult Function(_DescriptionChanged value)? descriptionChanged,
+    TResult Function(_ImageDeleted value)? imageDeleted,
+    TResult Function(_ImagesChanged value)? imagesChanged,
+    TResult Function(_CoordinatesChanged value)? coordinatesChanged,
+    TResult Function(_DifficultyChanged value)? difficultyChanged,
+    TResult Function(_ObjectivesChanged value)? objectivesChanged,
+    TResult Function(_RewardsChanged value)? rewardsChanged,
+    TResult Function(_TagsChanged value)? tagsChanged,
+    TResult Function(_Submitted value)? submitted,
+  }) {
+    return rewardsChanged?.call(this);
   }
 
   @override
@@ -1657,6 +2012,24 @@ class _$_TagsChanged implements _TagsChanged {
 
   @override
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(Option<Experience> experienceOption)? initialized,
+    TResult Function(String title)? titleChanged,
+    TResult Function(String description)? descriptionChanged,
+    TResult Function(String imageURL)? imageDeleted,
+    TResult Function(List<Asset> imageAssets)? imagesChanged,
+    TResult Function(double latitude, double longitude)? coordinatesChanged,
+    TResult Function(int difficulty)? difficultyChanged,
+    TResult Function(KtList<Objective> objectives)? objectivesChanged,
+    TResult Function(KtSet<Reward> rewards)? rewardsChanged,
+    TResult Function(KtSet<Tag> tags)? tagsChanged,
+    TResult Function()? submitted,
+  }) {
+    return tagsChanged?.call(tags);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(Option<Experience> experienceOption)? initialized,
     TResult Function(String title)? titleChanged,
@@ -1693,6 +2066,24 @@ class _$_TagsChanged implements _TagsChanged {
     required TResult Function(_Submitted value) submitted,
   }) {
     return tagsChanged(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_Initialized value)? initialized,
+    TResult Function(_TitleChanged value)? titleChanged,
+    TResult Function(_DescriptionChanged value)? descriptionChanged,
+    TResult Function(_ImageDeleted value)? imageDeleted,
+    TResult Function(_ImagesChanged value)? imagesChanged,
+    TResult Function(_CoordinatesChanged value)? coordinatesChanged,
+    TResult Function(_DifficultyChanged value)? difficultyChanged,
+    TResult Function(_ObjectivesChanged value)? objectivesChanged,
+    TResult Function(_RewardsChanged value)? rewardsChanged,
+    TResult Function(_TagsChanged value)? tagsChanged,
+    TResult Function(_Submitted value)? submitted,
+  }) {
+    return tagsChanged?.call(this);
   }
 
   @override
@@ -1784,6 +2175,24 @@ class _$_Submitted implements _Submitted {
 
   @override
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(Option<Experience> experienceOption)? initialized,
+    TResult Function(String title)? titleChanged,
+    TResult Function(String description)? descriptionChanged,
+    TResult Function(String imageURL)? imageDeleted,
+    TResult Function(List<Asset> imageAssets)? imagesChanged,
+    TResult Function(double latitude, double longitude)? coordinatesChanged,
+    TResult Function(int difficulty)? difficultyChanged,
+    TResult Function(KtList<Objective> objectives)? objectivesChanged,
+    TResult Function(KtSet<Reward> rewards)? rewardsChanged,
+    TResult Function(KtSet<Tag> tags)? tagsChanged,
+    TResult Function()? submitted,
+  }) {
+    return submitted?.call();
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(Option<Experience> experienceOption)? initialized,
     TResult Function(String title)? titleChanged,
@@ -1820,6 +2229,24 @@ class _$_Submitted implements _Submitted {
     required TResult Function(_Submitted value) submitted,
   }) {
     return submitted(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_Initialized value)? initialized,
+    TResult Function(_TitleChanged value)? titleChanged,
+    TResult Function(_DescriptionChanged value)? descriptionChanged,
+    TResult Function(_ImageDeleted value)? imageDeleted,
+    TResult Function(_ImagesChanged value)? imagesChanged,
+    TResult Function(_CoordinatesChanged value)? coordinatesChanged,
+    TResult Function(_DifficultyChanged value)? difficultyChanged,
+    TResult Function(_ObjectivesChanged value)? objectivesChanged,
+    TResult Function(_RewardsChanged value)? rewardsChanged,
+    TResult Function(_TagsChanged value)? tagsChanged,
+    TResult Function(_Submitted value)? submitted,
+  }) {
+    return submitted?.call(this);
   }
 
   @override

@@ -1,5 +1,6 @@
+// coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
 
 part of 'tag_management_form_bloc.dart';
 
@@ -46,6 +47,13 @@ mixin _$TagManagementFormEvent {
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(Option<Tag> tagOption)? initialized,
+    TResult Function(String name)? nameChanged,
+    TResult Function()? submitted,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(Option<Tag> tagOption)? initialized,
     TResult Function(String name)? nameChanged,
@@ -58,6 +66,13 @@ mixin _$TagManagementFormEvent {
     required TResult Function(_Initialized value) initialized,
     required TResult Function(_NameChanged value) nameChanged,
     required TResult Function(_Submitted value) submitted,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_Initialized value)? initialized,
+    TResult Function(_NameChanged value)? nameChanged,
+    TResult Function(_Submitted value)? submitted,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -162,6 +177,16 @@ class _$_Initialized implements _Initialized {
 
   @override
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(Option<Tag> tagOption)? initialized,
+    TResult Function(String name)? nameChanged,
+    TResult Function()? submitted,
+  }) {
+    return initialized?.call(tagOption);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(Option<Tag> tagOption)? initialized,
     TResult Function(String name)? nameChanged,
@@ -182,6 +207,16 @@ class _$_Initialized implements _Initialized {
     required TResult Function(_Submitted value) submitted,
   }) {
     return initialized(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_Initialized value)? initialized,
+    TResult Function(_NameChanged value)? nameChanged,
+    TResult Function(_Submitted value)? submitted,
+  }) {
+    return initialized?.call(this);
   }
 
   @override
@@ -282,6 +317,16 @@ class _$_NameChanged implements _NameChanged {
 
   @override
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(Option<Tag> tagOption)? initialized,
+    TResult Function(String name)? nameChanged,
+    TResult Function()? submitted,
+  }) {
+    return nameChanged?.call(name);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(Option<Tag> tagOption)? initialized,
     TResult Function(String name)? nameChanged,
@@ -302,6 +347,16 @@ class _$_NameChanged implements _NameChanged {
     required TResult Function(_Submitted value) submitted,
   }) {
     return nameChanged(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_Initialized value)? initialized,
+    TResult Function(_NameChanged value)? nameChanged,
+    TResult Function(_Submitted value)? submitted,
+  }) {
+    return nameChanged?.call(this);
   }
 
   @override
@@ -376,6 +431,16 @@ class _$_Submitted implements _Submitted {
 
   @override
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(Option<Tag> tagOption)? initialized,
+    TResult Function(String name)? nameChanged,
+    TResult Function()? submitted,
+  }) {
+    return submitted?.call();
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(Option<Tag> tagOption)? initialized,
     TResult Function(String name)? nameChanged,
@@ -396,6 +461,16 @@ class _$_Submitted implements _Submitted {
     required TResult Function(_Submitted value) submitted,
   }) {
     return submitted(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_Initialized value)? initialized,
+    TResult Function(_NameChanged value)? nameChanged,
+    TResult Function(_Submitted value)? submitted,
+  }) {
+    return submitted?.call(this);
   }
 
   @override

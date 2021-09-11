@@ -1,5 +1,6 @@
+// coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
 
 part of 'buy_promotion_plan_actor_bloc.dart';
 
@@ -39,6 +40,12 @@ mixin _$BuyPromotionPlanActorEvent {
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? initialized,
+    TResult Function(PromotionPlan promotionPlan)? boughtPromotionPlan,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initialized,
     TResult Function(PromotionPlan promotionPlan)? boughtPromotionPlan,
@@ -49,6 +56,12 @@ mixin _$BuyPromotionPlanActorEvent {
   TResult map<TResult extends Object?>({
     required TResult Function(_Initialized value) initialized,
     required TResult Function(_BoughtPromotionPlan value) boughtPromotionPlan,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_Initialized value)? initialized,
+    TResult Function(_BoughtPromotionPlan value)? boughtPromotionPlan,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -125,6 +138,15 @@ class _$_Initialized implements _Initialized {
 
   @override
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? initialized,
+    TResult Function(PromotionPlan promotionPlan)? boughtPromotionPlan,
+  }) {
+    return initialized?.call();
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initialized,
     TResult Function(PromotionPlan promotionPlan)? boughtPromotionPlan,
@@ -143,6 +165,15 @@ class _$_Initialized implements _Initialized {
     required TResult Function(_BoughtPromotionPlan value) boughtPromotionPlan,
   }) {
     return initialized(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_Initialized value)? initialized,
+    TResult Function(_BoughtPromotionPlan value)? boughtPromotionPlan,
+  }) {
+    return initialized?.call(this);
   }
 
   @override
@@ -247,6 +278,15 @@ class _$_BoughtPromotionPlan implements _BoughtPromotionPlan {
 
   @override
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? initialized,
+    TResult Function(PromotionPlan promotionPlan)? boughtPromotionPlan,
+  }) {
+    return boughtPromotionPlan?.call(promotionPlan);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initialized,
     TResult Function(PromotionPlan promotionPlan)? boughtPromotionPlan,
@@ -265,6 +305,15 @@ class _$_BoughtPromotionPlan implements _BoughtPromotionPlan {
     required TResult Function(_BoughtPromotionPlan value) boughtPromotionPlan,
   }) {
     return boughtPromotionPlan(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_Initialized value)? initialized,
+    TResult Function(_BoughtPromotionPlan value)? boughtPromotionPlan,
+  }) {
+    return boughtPromotionPlan?.call(this);
   }
 
   @override
@@ -340,6 +389,16 @@ mixin _$BuyPromotionPlanActorState {
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? actionInProgress,
+    TResult Function()? purchaseSuccess,
+    TResult Function()? noPromotionPlan,
+    TResult Function(PromotionPlan promotionPlan)? currentPlan,
+    TResult Function(Failure<dynamic> failure)? purchaseFailure,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? actionInProgress,
@@ -358,6 +417,16 @@ mixin _$BuyPromotionPlanActorState {
     required TResult Function(_NoPromotionPlan value) noPromotionPlan,
     required TResult Function(_CurrentPlan value) currentPlan,
     required TResult Function(_PurchaseFailure value) purchaseFailure,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_ActionInProgress value)? actionInProgress,
+    TResult Function(_PurchaseSuccess value)? purchaseSuccess,
+    TResult Function(_NoPromotionPlan value)? noPromotionPlan,
+    TResult Function(_CurrentPlan value)? currentPlan,
+    TResult Function(_PurchaseFailure value)? purchaseFailure,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -440,6 +509,19 @@ class _$_Initial implements _Initial {
 
   @override
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? actionInProgress,
+    TResult Function()? purchaseSuccess,
+    TResult Function()? noPromotionPlan,
+    TResult Function(PromotionPlan promotionPlan)? currentPlan,
+    TResult Function(Failure<dynamic> failure)? purchaseFailure,
+  }) {
+    return initial?.call();
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? actionInProgress,
@@ -466,6 +548,19 @@ class _$_Initial implements _Initial {
     required TResult Function(_PurchaseFailure value) purchaseFailure,
   }) {
     return initial(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_ActionInProgress value)? actionInProgress,
+    TResult Function(_PurchaseSuccess value)? purchaseSuccess,
+    TResult Function(_NoPromotionPlan value)? noPromotionPlan,
+    TResult Function(_CurrentPlan value)? currentPlan,
+    TResult Function(_PurchaseFailure value)? purchaseFailure,
+  }) {
+    return initial?.call(this);
   }
 
   @override
@@ -542,6 +637,19 @@ class _$_ActionInProgress implements _ActionInProgress {
 
   @override
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? actionInProgress,
+    TResult Function()? purchaseSuccess,
+    TResult Function()? noPromotionPlan,
+    TResult Function(PromotionPlan promotionPlan)? currentPlan,
+    TResult Function(Failure<dynamic> failure)? purchaseFailure,
+  }) {
+    return actionInProgress?.call();
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? actionInProgress,
@@ -568,6 +676,19 @@ class _$_ActionInProgress implements _ActionInProgress {
     required TResult Function(_PurchaseFailure value) purchaseFailure,
   }) {
     return actionInProgress(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_ActionInProgress value)? actionInProgress,
+    TResult Function(_PurchaseSuccess value)? purchaseSuccess,
+    TResult Function(_NoPromotionPlan value)? noPromotionPlan,
+    TResult Function(_CurrentPlan value)? currentPlan,
+    TResult Function(_PurchaseFailure value)? purchaseFailure,
+  }) {
+    return actionInProgress?.call(this);
   }
 
   @override
@@ -644,6 +765,19 @@ class _$_PurchaseSuccess implements _PurchaseSuccess {
 
   @override
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? actionInProgress,
+    TResult Function()? purchaseSuccess,
+    TResult Function()? noPromotionPlan,
+    TResult Function(PromotionPlan promotionPlan)? currentPlan,
+    TResult Function(Failure<dynamic> failure)? purchaseFailure,
+  }) {
+    return purchaseSuccess?.call();
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? actionInProgress,
@@ -670,6 +804,19 @@ class _$_PurchaseSuccess implements _PurchaseSuccess {
     required TResult Function(_PurchaseFailure value) purchaseFailure,
   }) {
     return purchaseSuccess(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_ActionInProgress value)? actionInProgress,
+    TResult Function(_PurchaseSuccess value)? purchaseSuccess,
+    TResult Function(_NoPromotionPlan value)? noPromotionPlan,
+    TResult Function(_CurrentPlan value)? currentPlan,
+    TResult Function(_PurchaseFailure value)? purchaseFailure,
+  }) {
+    return purchaseSuccess?.call(this);
   }
 
   @override
@@ -746,6 +893,19 @@ class _$_NoPromotionPlan implements _NoPromotionPlan {
 
   @override
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? actionInProgress,
+    TResult Function()? purchaseSuccess,
+    TResult Function()? noPromotionPlan,
+    TResult Function(PromotionPlan promotionPlan)? currentPlan,
+    TResult Function(Failure<dynamic> failure)? purchaseFailure,
+  }) {
+    return noPromotionPlan?.call();
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? actionInProgress,
@@ -772,6 +932,19 @@ class _$_NoPromotionPlan implements _NoPromotionPlan {
     required TResult Function(_PurchaseFailure value) purchaseFailure,
   }) {
     return noPromotionPlan(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_ActionInProgress value)? actionInProgress,
+    TResult Function(_PurchaseSuccess value)? purchaseSuccess,
+    TResult Function(_NoPromotionPlan value)? noPromotionPlan,
+    TResult Function(_CurrentPlan value)? currentPlan,
+    TResult Function(_PurchaseFailure value)? purchaseFailure,
+  }) {
+    return noPromotionPlan?.call(this);
   }
 
   @override
@@ -883,6 +1056,19 @@ class _$_CurrentPlan implements _CurrentPlan {
 
   @override
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? actionInProgress,
+    TResult Function()? purchaseSuccess,
+    TResult Function()? noPromotionPlan,
+    TResult Function(PromotionPlan promotionPlan)? currentPlan,
+    TResult Function(Failure<dynamic> failure)? purchaseFailure,
+  }) {
+    return currentPlan?.call(promotionPlan);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? actionInProgress,
@@ -909,6 +1095,19 @@ class _$_CurrentPlan implements _CurrentPlan {
     required TResult Function(_PurchaseFailure value) purchaseFailure,
   }) {
     return currentPlan(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_ActionInProgress value)? actionInProgress,
+    TResult Function(_PurchaseSuccess value)? purchaseSuccess,
+    TResult Function(_NoPromotionPlan value)? noPromotionPlan,
+    TResult Function(_CurrentPlan value)? currentPlan,
+    TResult Function(_PurchaseFailure value)? purchaseFailure,
+  }) {
+    return currentPlan?.call(this);
   }
 
   @override
@@ -1024,6 +1223,19 @@ class _$_PurchaseFailure implements _PurchaseFailure {
 
   @override
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? actionInProgress,
+    TResult Function()? purchaseSuccess,
+    TResult Function()? noPromotionPlan,
+    TResult Function(PromotionPlan promotionPlan)? currentPlan,
+    TResult Function(Failure<dynamic> failure)? purchaseFailure,
+  }) {
+    return purchaseFailure?.call(failure);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? actionInProgress,
@@ -1050,6 +1262,19 @@ class _$_PurchaseFailure implements _PurchaseFailure {
     required TResult Function(_PurchaseFailure value) purchaseFailure,
   }) {
     return purchaseFailure(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_ActionInProgress value)? actionInProgress,
+    TResult Function(_PurchaseSuccess value)? purchaseSuccess,
+    TResult Function(_NoPromotionPlan value)? noPromotionPlan,
+    TResult Function(_CurrentPlan value)? currentPlan,
+    TResult Function(_PurchaseFailure value)? purchaseFailure,
+  }) {
+    return purchaseFailure?.call(this);
   }
 
   @override

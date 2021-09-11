@@ -1,5 +1,6 @@
+// coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
 
 part of 'share_experience_internally_bloc.dart';
 
@@ -54,6 +55,14 @@ mixin _$ShareExperienceInternallyEvent {
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(Experience experience)? initialized,
+    TResult Function(User user)? removedUser,
+    TResult Function(User user)? addedUser,
+    TResult Function()? shared,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(Experience experience)? initialized,
     TResult Function(User user)? removedUser,
@@ -68,6 +77,14 @@ mixin _$ShareExperienceInternallyEvent {
     required TResult Function(_RemovedUser value) removedUser,
     required TResult Function(_AddedUser value) addedUser,
     required TResult Function(_Shared value) shared,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_Initialized value)? initialized,
+    TResult Function(_RemovedUser value)? removedUser,
+    TResult Function(_AddedUser value)? addedUser,
+    TResult Function(_Shared value)? shared,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -184,6 +201,17 @@ class _$_Initialized implements _Initialized {
 
   @override
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(Experience experience)? initialized,
+    TResult Function(User user)? removedUser,
+    TResult Function(User user)? addedUser,
+    TResult Function()? shared,
+  }) {
+    return initialized?.call(experience);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(Experience experience)? initialized,
     TResult Function(User user)? removedUser,
@@ -206,6 +234,17 @@ class _$_Initialized implements _Initialized {
     required TResult Function(_Shared value) shared,
   }) {
     return initialized(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_Initialized value)? initialized,
+    TResult Function(_RemovedUser value)? removedUser,
+    TResult Function(_AddedUser value)? addedUser,
+    TResult Function(_Shared value)? shared,
+  }) {
+    return initialized?.call(this);
   }
 
   @override
@@ -317,6 +356,17 @@ class _$_RemovedUser implements _RemovedUser {
 
   @override
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(Experience experience)? initialized,
+    TResult Function(User user)? removedUser,
+    TResult Function(User user)? addedUser,
+    TResult Function()? shared,
+  }) {
+    return removedUser?.call(user);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(Experience experience)? initialized,
     TResult Function(User user)? removedUser,
@@ -339,6 +389,17 @@ class _$_RemovedUser implements _RemovedUser {
     required TResult Function(_Shared value) shared,
   }) {
     return removedUser(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_Initialized value)? initialized,
+    TResult Function(_RemovedUser value)? removedUser,
+    TResult Function(_AddedUser value)? addedUser,
+    TResult Function(_Shared value)? shared,
+  }) {
+    return removedUser?.call(this);
   }
 
   @override
@@ -449,6 +510,17 @@ class _$_AddedUser implements _AddedUser {
 
   @override
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(Experience experience)? initialized,
+    TResult Function(User user)? removedUser,
+    TResult Function(User user)? addedUser,
+    TResult Function()? shared,
+  }) {
+    return addedUser?.call(user);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(Experience experience)? initialized,
     TResult Function(User user)? removedUser,
@@ -471,6 +543,17 @@ class _$_AddedUser implements _AddedUser {
     required TResult Function(_Shared value) shared,
   }) {
     return addedUser(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_Initialized value)? initialized,
+    TResult Function(_RemovedUser value)? removedUser,
+    TResult Function(_AddedUser value)? addedUser,
+    TResult Function(_Shared value)? shared,
+  }) {
+    return addedUser?.call(this);
   }
 
   @override
@@ -546,6 +629,17 @@ class _$_Shared implements _Shared {
 
   @override
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(Experience experience)? initialized,
+    TResult Function(User user)? removedUser,
+    TResult Function(User user)? addedUser,
+    TResult Function()? shared,
+  }) {
+    return shared?.call();
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(Experience experience)? initialized,
     TResult Function(User user)? removedUser,
@@ -568,6 +662,17 @@ class _$_Shared implements _Shared {
     required TResult Function(_Shared value) shared,
   }) {
     return shared(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_Initialized value)? initialized,
+    TResult Function(_RemovedUser value)? removedUser,
+    TResult Function(_AddedUser value)? addedUser,
+    TResult Function(_Shared value)? shared,
+  }) {
+    return shared?.call(this);
   }
 
   @override

@@ -1,5 +1,6 @@
+// coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
 
 part of 'objectives_creation_bloc.dart';
 
@@ -56,6 +57,14 @@ mixin _$ObjectivesCreationEvent {
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(Option<ObjectiveList> objectiveListOption)? initialized,
+    TResult Function(Objective objective)? addedObjective,
+    TResult Function(Objective objective)? removedObjective,
+    TResult Function(List<Objective> reorderedList)? reorderedList,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(Option<ObjectiveList> objectiveListOption)? initialized,
     TResult Function(Objective objective)? addedObjective,
@@ -70,6 +79,14 @@ mixin _$ObjectivesCreationEvent {
     required TResult Function(_AddedObjective value) addedObjective,
     required TResult Function(_RemovedObjective value) removedObjective,
     required TResult Function(_ReorderedList value) reorderedList,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_Initialized value)? initialized,
+    TResult Function(_AddedObjective value)? addedObjective,
+    TResult Function(_RemovedObjective value)? removedObjective,
+    TResult Function(_ReorderedList value)? reorderedList,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -178,6 +195,17 @@ class _$_Initialized implements _Initialized {
 
   @override
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(Option<ObjectiveList> objectiveListOption)? initialized,
+    TResult Function(Objective objective)? addedObjective,
+    TResult Function(Objective objective)? removedObjective,
+    TResult Function(List<Objective> reorderedList)? reorderedList,
+  }) {
+    return initialized?.call(objectiveListOption);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(Option<ObjectiveList> objectiveListOption)? initialized,
     TResult Function(Objective objective)? addedObjective,
@@ -200,6 +228,17 @@ class _$_Initialized implements _Initialized {
     required TResult Function(_ReorderedList value) reorderedList,
   }) {
     return initialized(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_Initialized value)? initialized,
+    TResult Function(_AddedObjective value)? addedObjective,
+    TResult Function(_RemovedObjective value)? removedObjective,
+    TResult Function(_ReorderedList value)? reorderedList,
+  }) {
+    return initialized?.call(this);
   }
 
   @override
@@ -315,6 +354,17 @@ class _$_AddedObjective implements _AddedObjective {
 
   @override
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(Option<ObjectiveList> objectiveListOption)? initialized,
+    TResult Function(Objective objective)? addedObjective,
+    TResult Function(Objective objective)? removedObjective,
+    TResult Function(List<Objective> reorderedList)? reorderedList,
+  }) {
+    return addedObjective?.call(objective);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(Option<ObjectiveList> objectiveListOption)? initialized,
     TResult Function(Objective objective)? addedObjective,
@@ -337,6 +387,17 @@ class _$_AddedObjective implements _AddedObjective {
     required TResult Function(_ReorderedList value) reorderedList,
   }) {
     return addedObjective(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_Initialized value)? initialized,
+    TResult Function(_AddedObjective value)? addedObjective,
+    TResult Function(_RemovedObjective value)? removedObjective,
+    TResult Function(_ReorderedList value)? reorderedList,
+  }) {
+    return addedObjective?.call(this);
   }
 
   @override
@@ -450,6 +511,17 @@ class _$_RemovedObjective implements _RemovedObjective {
 
   @override
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(Option<ObjectiveList> objectiveListOption)? initialized,
+    TResult Function(Objective objective)? addedObjective,
+    TResult Function(Objective objective)? removedObjective,
+    TResult Function(List<Objective> reorderedList)? reorderedList,
+  }) {
+    return removedObjective?.call(objective);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(Option<ObjectiveList> objectiveListOption)? initialized,
     TResult Function(Objective objective)? addedObjective,
@@ -472,6 +544,17 @@ class _$_RemovedObjective implements _RemovedObjective {
     required TResult Function(_ReorderedList value) reorderedList,
   }) {
     return removedObjective(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_Initialized value)? initialized,
+    TResult Function(_AddedObjective value)? addedObjective,
+    TResult Function(_RemovedObjective value)? removedObjective,
+    TResult Function(_ReorderedList value)? reorderedList,
+  }) {
+    return removedObjective?.call(this);
   }
 
   @override
@@ -576,6 +659,17 @@ class _$_ReorderedList implements _ReorderedList {
 
   @override
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(Option<ObjectiveList> objectiveListOption)? initialized,
+    TResult Function(Objective objective)? addedObjective,
+    TResult Function(Objective objective)? removedObjective,
+    TResult Function(List<Objective> reorderedList)? reorderedList,
+  }) {
+    return reorderedList?.call(this.reorderedList);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(Option<ObjectiveList> objectiveListOption)? initialized,
     TResult Function(Objective objective)? addedObjective,
@@ -598,6 +692,17 @@ class _$_ReorderedList implements _ReorderedList {
     required TResult Function(_ReorderedList value) reorderedList,
   }) {
     return reorderedList(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_Initialized value)? initialized,
+    TResult Function(_AddedObjective value)? addedObjective,
+    TResult Function(_RemovedObjective value)? removedObjective,
+    TResult Function(_ReorderedList value)? reorderedList,
+  }) {
+    return reorderedList?.call(this);
   }
 
   @override

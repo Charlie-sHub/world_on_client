@@ -1,5 +1,6 @@
+// coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
 
 part of 'core_domain_failure.dart';
 
@@ -47,6 +48,13 @@ mixin _$CoreDomainFailure<T> {
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(String errorString)? unknownDomainLayerError,
+    TResult Function(String errorString)? domainLayerError,
+    TResult Function()? unAuthorizedError,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(String errorString)? unknownDomainLayerError,
     TResult Function(String errorString)? domainLayerError,
@@ -60,6 +68,13 @@ mixin _$CoreDomainFailure<T> {
         unknownDomainLayerError,
     required TResult Function(DomainLayerError<T> value) domainLayerError,
     required TResult Function(UnAuthorizedError<T> value) unAuthorizedError,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(UnknownDomainLayerError<T> value)? unknownDomainLayerError,
+    TResult Function(DomainLayerError<T> value)? domainLayerError,
+    TResult Function(UnAuthorizedError<T> value)? unAuthorizedError,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -167,6 +182,16 @@ class _$UnknownDomainLayerError<T> implements UnknownDomainLayerError<T> {
 
   @override
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(String errorString)? unknownDomainLayerError,
+    TResult Function(String errorString)? domainLayerError,
+    TResult Function()? unAuthorizedError,
+  }) {
+    return unknownDomainLayerError?.call(errorString);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(String errorString)? unknownDomainLayerError,
     TResult Function(String errorString)? domainLayerError,
@@ -188,6 +213,16 @@ class _$UnknownDomainLayerError<T> implements UnknownDomainLayerError<T> {
     required TResult Function(UnAuthorizedError<T> value) unAuthorizedError,
   }) {
     return unknownDomainLayerError(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(UnknownDomainLayerError<T> value)? unknownDomainLayerError,
+    TResult Function(DomainLayerError<T> value)? domainLayerError,
+    TResult Function(UnAuthorizedError<T> value)? unAuthorizedError,
+  }) {
+    return unknownDomainLayerError?.call(this);
   }
 
   @override
@@ -290,6 +325,16 @@ class _$DomainLayerError<T> implements DomainLayerError<T> {
 
   @override
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(String errorString)? unknownDomainLayerError,
+    TResult Function(String errorString)? domainLayerError,
+    TResult Function()? unAuthorizedError,
+  }) {
+    return domainLayerError?.call(errorString);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(String errorString)? unknownDomainLayerError,
     TResult Function(String errorString)? domainLayerError,
@@ -311,6 +356,16 @@ class _$DomainLayerError<T> implements DomainLayerError<T> {
     required TResult Function(UnAuthorizedError<T> value) unAuthorizedError,
   }) {
     return domainLayerError(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(UnknownDomainLayerError<T> value)? unknownDomainLayerError,
+    TResult Function(DomainLayerError<T> value)? domainLayerError,
+    TResult Function(UnAuthorizedError<T> value)? unAuthorizedError,
+  }) {
+    return domainLayerError?.call(this);
   }
 
   @override
@@ -387,6 +442,16 @@ class _$UnAuthorizedError<T> implements UnAuthorizedError<T> {
 
   @override
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(String errorString)? unknownDomainLayerError,
+    TResult Function(String errorString)? domainLayerError,
+    TResult Function()? unAuthorizedError,
+  }) {
+    return unAuthorizedError?.call();
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(String errorString)? unknownDomainLayerError,
     TResult Function(String errorString)? domainLayerError,
@@ -408,6 +473,16 @@ class _$UnAuthorizedError<T> implements UnAuthorizedError<T> {
     required TResult Function(UnAuthorizedError<T> value) unAuthorizedError,
   }) {
     return unAuthorizedError(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(UnknownDomainLayerError<T> value)? unknownDomainLayerError,
+    TResult Function(DomainLayerError<T> value)? domainLayerError,
+    TResult Function(UnAuthorizedError<T> value)? unAuthorizedError,
+  }) {
+    return unAuthorizedError?.call(this);
   }
 
   @override

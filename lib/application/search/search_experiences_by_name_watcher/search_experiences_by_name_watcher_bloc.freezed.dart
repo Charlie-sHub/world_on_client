@@ -1,5 +1,6 @@
+// coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
 
 part of 'search_experiences_by_name_watcher_bloc.dart';
 
@@ -47,6 +48,13 @@ mixin _$SearchExperiencesByNameWatcherEvent {
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(SearchTerm searchTerm)? watchExperiencesFoundByNameStarted,
+    TResult Function(Either<Failure, KtList<Experience>> failureOrExperiences)?
+        searchResultsReceived,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(SearchTerm searchTerm)? watchExperiencesFoundByNameStarted,
     TResult Function(Either<Failure, KtList<Experience>> failureOrExperiences)?
@@ -60,6 +68,13 @@ mixin _$SearchExperiencesByNameWatcherEvent {
         watchExperiencesFoundByNameStarted,
     required TResult Function(_SearchResultsReceived value)
         searchResultsReceived,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_WatchExperiencesFoundByNameStarted value)?
+        watchExperiencesFoundByNameStarted,
+    TResult Function(_SearchResultsReceived value)? searchResultsReceived,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -173,6 +188,16 @@ class _$_WatchExperiencesFoundByNameStarted
 
   @override
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(SearchTerm searchTerm)? watchExperiencesFoundByNameStarted,
+    TResult Function(Either<Failure, KtList<Experience>> failureOrExperiences)?
+        searchResultsReceived,
+  }) {
+    return watchExperiencesFoundByNameStarted?.call(searchTerm);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(SearchTerm searchTerm)? watchExperiencesFoundByNameStarted,
     TResult Function(Either<Failure, KtList<Experience>> failureOrExperiences)?
@@ -194,6 +219,16 @@ class _$_WatchExperiencesFoundByNameStarted
         searchResultsReceived,
   }) {
     return watchExperiencesFoundByNameStarted(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_WatchExperiencesFoundByNameStarted value)?
+        watchExperiencesFoundByNameStarted,
+    TResult Function(_SearchResultsReceived value)? searchResultsReceived,
+  }) {
+    return watchExperiencesFoundByNameStarted?.call(this);
   }
 
   @override
@@ -302,6 +337,16 @@ class _$_SearchResultsReceived implements _SearchResultsReceived {
 
   @override
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(SearchTerm searchTerm)? watchExperiencesFoundByNameStarted,
+    TResult Function(Either<Failure, KtList<Experience>> failureOrExperiences)?
+        searchResultsReceived,
+  }) {
+    return searchResultsReceived?.call(failureOrExperiences);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(SearchTerm searchTerm)? watchExperiencesFoundByNameStarted,
     TResult Function(Either<Failure, KtList<Experience>> failureOrExperiences)?
@@ -323,6 +368,16 @@ class _$_SearchResultsReceived implements _SearchResultsReceived {
         searchResultsReceived,
   }) {
     return searchResultsReceived(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_WatchExperiencesFoundByNameStarted value)?
+        watchExperiencesFoundByNameStarted,
+    TResult Function(_SearchResultsReceived value)? searchResultsReceived,
+  }) {
+    return searchResultsReceived?.call(this);
   }
 
   @override
@@ -394,6 +449,14 @@ mixin _$SearchExperiencesByNameWatcherState {
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? searchInProgress,
+    TResult Function(KtList<Experience> experiencesFound)? searchSuccess,
+    TResult Function(Failure<dynamic> failure)? searchFailure,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? searchInProgress,
@@ -408,6 +471,14 @@ mixin _$SearchExperiencesByNameWatcherState {
     required TResult Function(_SearchInProgress value) searchInProgress,
     required TResult Function(_SearchSuccess value) searchSuccess,
     required TResult Function(_SearchFailure value) searchFailure,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_SearchInProgress value)? searchInProgress,
+    TResult Function(_SearchSuccess value)? searchSuccess,
+    TResult Function(_SearchFailure value)? searchFailure,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -488,6 +559,17 @@ class _$_Initial implements _Initial {
 
   @override
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? searchInProgress,
+    TResult Function(KtList<Experience> experiencesFound)? searchSuccess,
+    TResult Function(Failure<dynamic> failure)? searchFailure,
+  }) {
+    return initial?.call();
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? searchInProgress,
@@ -510,6 +592,17 @@ class _$_Initial implements _Initial {
     required TResult Function(_SearchFailure value) searchFailure,
   }) {
     return initial(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_SearchInProgress value)? searchInProgress,
+    TResult Function(_SearchSuccess value)? searchSuccess,
+    TResult Function(_SearchFailure value)? searchFailure,
+  }) {
+    return initial?.call(this);
   }
 
   @override
@@ -583,6 +676,17 @@ class _$_SearchInProgress implements _SearchInProgress {
 
   @override
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? searchInProgress,
+    TResult Function(KtList<Experience> experiencesFound)? searchSuccess,
+    TResult Function(Failure<dynamic> failure)? searchFailure,
+  }) {
+    return searchInProgress?.call();
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? searchInProgress,
@@ -605,6 +709,17 @@ class _$_SearchInProgress implements _SearchInProgress {
     required TResult Function(_SearchFailure value) searchFailure,
   }) {
     return searchInProgress(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_SearchInProgress value)? searchInProgress,
+    TResult Function(_SearchSuccess value)? searchSuccess,
+    TResult Function(_SearchFailure value)? searchFailure,
+  }) {
+    return searchInProgress?.call(this);
   }
 
   @override
@@ -706,6 +821,17 @@ class _$_SearchSuccess implements _SearchSuccess {
 
   @override
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? searchInProgress,
+    TResult Function(KtList<Experience> experiencesFound)? searchSuccess,
+    TResult Function(Failure<dynamic> failure)? searchFailure,
+  }) {
+    return searchSuccess?.call(experiencesFound);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? searchInProgress,
@@ -728,6 +854,17 @@ class _$_SearchSuccess implements _SearchSuccess {
     required TResult Function(_SearchFailure value) searchFailure,
   }) {
     return searchSuccess(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_SearchInProgress value)? searchInProgress,
+    TResult Function(_SearchSuccess value)? searchSuccess,
+    TResult Function(_SearchFailure value)? searchFailure,
+  }) {
+    return searchSuccess?.call(this);
   }
 
   @override
@@ -841,6 +978,17 @@ class _$_SearchFailure implements _SearchFailure {
 
   @override
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? searchInProgress,
+    TResult Function(KtList<Experience> experiencesFound)? searchSuccess,
+    TResult Function(Failure<dynamic> failure)? searchFailure,
+  }) {
+    return searchFailure?.call(failure);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? searchInProgress,
@@ -863,6 +1011,17 @@ class _$_SearchFailure implements _SearchFailure {
     required TResult Function(_SearchFailure value) searchFailure,
   }) {
     return searchFailure(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_SearchInProgress value)? searchInProgress,
+    TResult Function(_SearchSuccess value)? searchSuccess,
+    TResult Function(_SearchFailure value)? searchFailure,
+  }) {
+    return searchFailure?.call(this);
   }
 
   @override

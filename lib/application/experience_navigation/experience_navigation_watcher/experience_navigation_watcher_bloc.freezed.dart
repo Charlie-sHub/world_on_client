@@ -1,5 +1,6 @@
+// coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
 
 part of 'experience_navigation_watcher_bloc.dart';
 
@@ -42,6 +43,12 @@ mixin _$ExperienceNavigationWatcherEvent {
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(Option<Experience> experienceOption)? initialized,
+    TResult Function(Experience experience)? allObjectivesAccomplished,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(Option<Experience> experienceOption)? initialized,
     TResult Function(Experience experience)? allObjectivesAccomplished,
@@ -52,6 +59,13 @@ mixin _$ExperienceNavigationWatcherEvent {
   TResult map<TResult extends Object?>({
     required TResult Function(_Initialized value) initialized,
     required TResult Function(_AllObjectivesAccomplished value)
+        allObjectivesAccomplished,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_Initialized value)? initialized,
+    TResult Function(_AllObjectivesAccomplished value)?
         allObjectivesAccomplished,
   }) =>
       throw _privateConstructorUsedError;
@@ -158,6 +172,15 @@ class _$_Initialized implements _Initialized {
 
   @override
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(Option<Experience> experienceOption)? initialized,
+    TResult Function(Experience experience)? allObjectivesAccomplished,
+  }) {
+    return initialized?.call(experienceOption);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(Option<Experience> experienceOption)? initialized,
     TResult Function(Experience experience)? allObjectivesAccomplished,
@@ -177,6 +200,16 @@ class _$_Initialized implements _Initialized {
         allObjectivesAccomplished,
   }) {
     return initialized(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_Initialized value)? initialized,
+    TResult Function(_AllObjectivesAccomplished value)?
+        allObjectivesAccomplished,
+  }) {
+    return initialized?.call(this);
   }
 
   @override
@@ -290,6 +323,15 @@ class _$_AllObjectivesAccomplished implements _AllObjectivesAccomplished {
 
   @override
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(Option<Experience> experienceOption)? initialized,
+    TResult Function(Experience experience)? allObjectivesAccomplished,
+  }) {
+    return allObjectivesAccomplished?.call(experience);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(Option<Experience> experienceOption)? initialized,
     TResult Function(Experience experience)? allObjectivesAccomplished,
@@ -309,6 +351,16 @@ class _$_AllObjectivesAccomplished implements _AllObjectivesAccomplished {
         allObjectivesAccomplished,
   }) {
     return allObjectivesAccomplished(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_Initialized value)? initialized,
+    TResult Function(_AllObjectivesAccomplished value)?
+        allObjectivesAccomplished,
+  }) {
+    return allObjectivesAccomplished?.call(this);
   }
 
   @override
@@ -377,6 +429,14 @@ mixin _$ExperienceNavigationWatcherState {
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? noExperience,
+    TResult Function(Experience experience)? navigatingExperience,
+    TResult Function(Experience experience)? finishExperience,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? noExperience,
@@ -391,6 +451,14 @@ mixin _$ExperienceNavigationWatcherState {
     required TResult Function(_NoExperience value) noExperience,
     required TResult Function(_NavigatingExperience value) navigatingExperience,
     required TResult Function(_FinishExperience value) finishExperience,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_NoExperience value)? noExperience,
+    TResult Function(_NavigatingExperience value)? navigatingExperience,
+    TResult Function(_FinishExperience value)? finishExperience,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -470,6 +538,17 @@ class _$_Initial implements _Initial {
 
   @override
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? noExperience,
+    TResult Function(Experience experience)? navigatingExperience,
+    TResult Function(Experience experience)? finishExperience,
+  }) {
+    return initial?.call();
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? noExperience,
@@ -492,6 +571,17 @@ class _$_Initial implements _Initial {
     required TResult Function(_FinishExperience value) finishExperience,
   }) {
     return initial(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_NoExperience value)? noExperience,
+    TResult Function(_NavigatingExperience value)? navigatingExperience,
+    TResult Function(_FinishExperience value)? finishExperience,
+  }) {
+    return initial?.call(this);
   }
 
   @override
@@ -564,6 +654,17 @@ class _$_NoExperience implements _NoExperience {
 
   @override
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? noExperience,
+    TResult Function(Experience experience)? navigatingExperience,
+    TResult Function(Experience experience)? finishExperience,
+  }) {
+    return noExperience?.call();
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? noExperience,
@@ -586,6 +687,17 @@ class _$_NoExperience implements _NoExperience {
     required TResult Function(_FinishExperience value) finishExperience,
   }) {
     return noExperience(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_NoExperience value)? noExperience,
+    TResult Function(_NavigatingExperience value)? navigatingExperience,
+    TResult Function(_FinishExperience value)? finishExperience,
+  }) {
+    return noExperience?.call(this);
   }
 
   @override
@@ -694,6 +806,17 @@ class _$_NavigatingExperience implements _NavigatingExperience {
 
   @override
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? noExperience,
+    TResult Function(Experience experience)? navigatingExperience,
+    TResult Function(Experience experience)? finishExperience,
+  }) {
+    return navigatingExperience?.call(experience);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? noExperience,
@@ -716,6 +839,17 @@ class _$_NavigatingExperience implements _NavigatingExperience {
     required TResult Function(_FinishExperience value) finishExperience,
   }) {
     return navigatingExperience(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_NoExperience value)? noExperience,
+    TResult Function(_NavigatingExperience value)? navigatingExperience,
+    TResult Function(_FinishExperience value)? finishExperience,
+  }) {
+    return navigatingExperience?.call(this);
   }
 
   @override
@@ -830,6 +964,17 @@ class _$_FinishExperience implements _FinishExperience {
 
   @override
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? noExperience,
+    TResult Function(Experience experience)? navigatingExperience,
+    TResult Function(Experience experience)? finishExperience,
+  }) {
+    return finishExperience?.call(experience);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? noExperience,
@@ -852,6 +997,17 @@ class _$_FinishExperience implements _FinishExperience {
     required TResult Function(_FinishExperience value) finishExperience,
   }) {
     return finishExperience(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_NoExperience value)? noExperience,
+    TResult Function(_NavigatingExperience value)? navigatingExperience,
+    TResult Function(_FinishExperience value)? finishExperience,
+  }) {
+    return finishExperience?.call(this);
   }
 
   @override

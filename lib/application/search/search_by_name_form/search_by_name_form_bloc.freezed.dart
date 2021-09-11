@@ -1,5 +1,6 @@
+// coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
 
 part of 'search_by_name_form_bloc.dart';
 
@@ -39,6 +40,12 @@ mixin _$SearchByNameFormEvent {
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(String searchTermString)? searchTermChanged,
+    TResult Function()? submitted,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(String searchTermString)? searchTermChanged,
     TResult Function()? submitted,
@@ -49,6 +56,12 @@ mixin _$SearchByNameFormEvent {
   TResult map<TResult extends Object?>({
     required TResult Function(_SearchTermChanged value) searchTermChanged,
     required TResult Function(_Submitted value) submitted,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_SearchTermChanged value)? searchTermChanged,
+    TResult Function(_Submitted value)? submitted,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -152,6 +165,15 @@ class _$_SearchTermChanged implements _SearchTermChanged {
 
   @override
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(String searchTermString)? searchTermChanged,
+    TResult Function()? submitted,
+  }) {
+    return searchTermChanged?.call(searchTermString);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(String searchTermString)? searchTermChanged,
     TResult Function()? submitted,
@@ -170,6 +192,15 @@ class _$_SearchTermChanged implements _SearchTermChanged {
     required TResult Function(_Submitted value) submitted,
   }) {
     return searchTermChanged(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_SearchTermChanged value)? searchTermChanged,
+    TResult Function(_Submitted value)? submitted,
+  }) {
+    return searchTermChanged?.call(this);
   }
 
   @override
@@ -243,6 +274,15 @@ class _$_Submitted implements _Submitted {
 
   @override
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(String searchTermString)? searchTermChanged,
+    TResult Function()? submitted,
+  }) {
+    return submitted?.call();
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(String searchTermString)? searchTermChanged,
     TResult Function()? submitted,
@@ -261,6 +301,15 @@ class _$_Submitted implements _Submitted {
     required TResult Function(_Submitted value) submitted,
   }) {
     return submitted(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_SearchTermChanged value)? searchTermChanged,
+    TResult Function(_Submitted value)? submitted,
+  }) {
+    return submitted?.call(this);
   }
 
   @override

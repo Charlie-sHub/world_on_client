@@ -549,9 +549,6 @@ _i1.GetIt $initGetIt(_i1.GetIt get,
       registerFor: {_dev, _prod});
   gh.lazySingleton<_i90.GetCurrentLocation>(() => _i91.MockGetCurrentLocation(),
       registerFor: {_test});
-  gh.lazySingleton<_i90.GetCurrentLocation>(
-      () => _i90.GetCurrentLocation(get<_i87.GeoLocationRepositoryInterface>()),
-      registerFor: {_dev, _prod});
   gh.lazySingleton<_i92.GetExperience>(
       () => _i92.GetExperience(
           get<_i72.ExperienceManagementRepositoryInterface>()),
@@ -1093,6 +1090,9 @@ _i1.GetIt $initGetIt(_i1.GetIt get,
   gh.lazySingleton<_i87.GeoLocationRepositoryInterface>(
       () => _i245.DevelopmentGeoLocationRepository(get<_i112.Logger>()),
       registerFor: {_dev});
+  gh.lazySingleton<_i90.GetCurrentLocation>(
+      () => _i90.GetCurrentLocation(get<_i87.GeoLocationRepositoryInterface>()),
+      registerFor: {_dev, _prod});
   gh.lazySingleton<_i95.GetTag>(
       () => _i95.GetTag(get<_i192.TagManagementRepositoryInterface>()),
       registerFor: {_dev, _prod});

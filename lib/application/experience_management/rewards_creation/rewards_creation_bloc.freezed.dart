@@ -1,5 +1,6 @@
+// coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
 
 part of 'rewards_creation_bloc.dart';
 
@@ -48,6 +49,13 @@ mixin _$RewardsCreationEvent {
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(Option<RewardSet> rewardSetOption)? initialized,
+    TResult Function(Reward reward)? addedReward,
+    TResult Function(Reward reward)? removedReward,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(Option<RewardSet> rewardSetOption)? initialized,
     TResult Function(Reward reward)? addedReward,
@@ -60,6 +68,13 @@ mixin _$RewardsCreationEvent {
     required TResult Function(_Initialized value) initialized,
     required TResult Function(_AddedReward value) addedReward,
     required TResult Function(_RemovedReward value) removedReward,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_Initialized value)? initialized,
+    TResult Function(_AddedReward value)? addedReward,
+    TResult Function(_RemovedReward value)? removedReward,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -165,6 +180,16 @@ class _$_Initialized implements _Initialized {
 
   @override
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(Option<RewardSet> rewardSetOption)? initialized,
+    TResult Function(Reward reward)? addedReward,
+    TResult Function(Reward reward)? removedReward,
+  }) {
+    return initialized?.call(rewardSetOption);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(Option<RewardSet> rewardSetOption)? initialized,
     TResult Function(Reward reward)? addedReward,
@@ -185,6 +210,16 @@ class _$_Initialized implements _Initialized {
     required TResult Function(_RemovedReward value) removedReward,
   }) {
     return initialized(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_Initialized value)? initialized,
+    TResult Function(_AddedReward value)? addedReward,
+    TResult Function(_RemovedReward value)? removedReward,
+  }) {
+    return initialized?.call(this);
   }
 
   @override
@@ -295,6 +330,16 @@ class _$_AddedReward implements _AddedReward {
 
   @override
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(Option<RewardSet> rewardSetOption)? initialized,
+    TResult Function(Reward reward)? addedReward,
+    TResult Function(Reward reward)? removedReward,
+  }) {
+    return addedReward?.call(reward);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(Option<RewardSet> rewardSetOption)? initialized,
     TResult Function(Reward reward)? addedReward,
@@ -315,6 +360,16 @@ class _$_AddedReward implements _AddedReward {
     required TResult Function(_RemovedReward value) removedReward,
   }) {
     return addedReward(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_Initialized value)? initialized,
+    TResult Function(_AddedReward value)? addedReward,
+    TResult Function(_RemovedReward value)? removedReward,
+  }) {
+    return addedReward?.call(this);
   }
 
   @override
@@ -424,6 +479,16 @@ class _$_RemovedReward implements _RemovedReward {
 
   @override
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(Option<RewardSet> rewardSetOption)? initialized,
+    TResult Function(Reward reward)? addedReward,
+    TResult Function(Reward reward)? removedReward,
+  }) {
+    return removedReward?.call(reward);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(Option<RewardSet> rewardSetOption)? initialized,
     TResult Function(Reward reward)? addedReward,
@@ -444,6 +509,16 @@ class _$_RemovedReward implements _RemovedReward {
     required TResult Function(_RemovedReward value) removedReward,
   }) {
     return removedReward(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_Initialized value)? initialized,
+    TResult Function(_AddedReward value)? addedReward,
+    TResult Function(_RemovedReward value)? removedReward,
+  }) {
+    return removedReward?.call(this);
   }
 
   @override

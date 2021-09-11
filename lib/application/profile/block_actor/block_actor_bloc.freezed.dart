@@ -1,5 +1,6 @@
+// coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
 
 part of 'block_actor_bloc.dart';
 
@@ -56,6 +57,15 @@ mixin _$BlockActorEvent {
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(UniqueId userToCheckId, Set<UniqueId> blockedUsersIds)?
+        initialized,
+    TResult Function(UniqueId userToBlockId, SimpleUser currentUser)? blocked,
+    TResult Function(UniqueId userToUnBlockId, SimpleUser currentUser)?
+        unBlocked,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(UniqueId userToCheckId, Set<UniqueId> blockedUsersIds)?
         initialized,
@@ -70,6 +80,13 @@ mixin _$BlockActorEvent {
     required TResult Function(_Initialized value) initialized,
     required TResult Function(_Blocked value) blocked,
     required TResult Function(_UnBlocked value) unBlocked,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_Initialized value)? initialized,
+    TResult Function(_Blocked value)? blocked,
+    TResult Function(_UnBlocked value)? unBlocked,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -190,6 +207,18 @@ class _$_Initialized implements _Initialized {
 
   @override
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(UniqueId userToCheckId, Set<UniqueId> blockedUsersIds)?
+        initialized,
+    TResult Function(UniqueId userToBlockId, SimpleUser currentUser)? blocked,
+    TResult Function(UniqueId userToUnBlockId, SimpleUser currentUser)?
+        unBlocked,
+  }) {
+    return initialized?.call(userToCheckId, blockedUsersIds);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(UniqueId userToCheckId, Set<UniqueId> blockedUsersIds)?
         initialized,
@@ -212,6 +241,16 @@ class _$_Initialized implements _Initialized {
     required TResult Function(_UnBlocked value) unBlocked,
   }) {
     return initialized(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_Initialized value)? initialized,
+    TResult Function(_Blocked value)? blocked,
+    TResult Function(_UnBlocked value)? unBlocked,
+  }) {
+    return initialized?.call(this);
   }
 
   @override
@@ -337,6 +376,18 @@ class _$_Blocked implements _Blocked {
 
   @override
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(UniqueId userToCheckId, Set<UniqueId> blockedUsersIds)?
+        initialized,
+    TResult Function(UniqueId userToBlockId, SimpleUser currentUser)? blocked,
+    TResult Function(UniqueId userToUnBlockId, SimpleUser currentUser)?
+        unBlocked,
+  }) {
+    return blocked?.call(userToBlockId, currentUser);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(UniqueId userToCheckId, Set<UniqueId> blockedUsersIds)?
         initialized,
@@ -359,6 +410,16 @@ class _$_Blocked implements _Blocked {
     required TResult Function(_UnBlocked value) unBlocked,
   }) {
     return blocked(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_Initialized value)? initialized,
+    TResult Function(_Blocked value)? blocked,
+    TResult Function(_UnBlocked value)? unBlocked,
+  }) {
+    return blocked?.call(this);
   }
 
   @override
@@ -485,6 +546,18 @@ class _$_UnBlocked implements _UnBlocked {
 
   @override
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(UniqueId userToCheckId, Set<UniqueId> blockedUsersIds)?
+        initialized,
+    TResult Function(UniqueId userToBlockId, SimpleUser currentUser)? blocked,
+    TResult Function(UniqueId userToUnBlockId, SimpleUser currentUser)?
+        unBlocked,
+  }) {
+    return unBlocked?.call(userToUnBlockId, currentUser);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(UniqueId userToCheckId, Set<UniqueId> blockedUsersIds)?
         initialized,
@@ -507,6 +580,16 @@ class _$_UnBlocked implements _UnBlocked {
     required TResult Function(_UnBlocked value) unBlocked,
   }) {
     return unBlocked(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_Initialized value)? initialized,
+    TResult Function(_Blocked value)? blocked,
+    TResult Function(_UnBlocked value)? unBlocked,
+  }) {
+    return unBlocked?.call(this);
   }
 
   @override
@@ -594,6 +677,18 @@ mixin _$BlockActorState {
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? actionInProgress,
+    TResult Function()? blocks,
+    TResult Function()? blocksNot,
+    TResult Function()? blockSuccess,
+    TResult Function(Failure<dynamic> failure)? blockFailure,
+    TResult Function()? unBlockSuccess,
+    TResult Function(Failure<dynamic> failure)? unBlockFailure,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? actionInProgress,
@@ -616,6 +711,18 @@ mixin _$BlockActorState {
     required TResult Function(_BlockFailure value) blockFailure,
     required TResult Function(_UnBlockSuccess value) unBlockSuccess,
     required TResult Function(_UnBlockFailure value) unBlockFailure,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_ActionInProgress value)? actionInProgress,
+    TResult Function(_Blocks value)? blocks,
+    TResult Function(_BlocksNot value)? blocksNot,
+    TResult Function(_BlockSuccess value)? blockSuccess,
+    TResult Function(_BlockFailure value)? blockFailure,
+    TResult Function(_UnBlockSuccess value)? unBlockSuccess,
+    TResult Function(_UnBlockFailure value)? unBlockFailure,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -701,6 +808,21 @@ class _$_Initial implements _Initial {
 
   @override
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? actionInProgress,
+    TResult Function()? blocks,
+    TResult Function()? blocksNot,
+    TResult Function()? blockSuccess,
+    TResult Function(Failure<dynamic> failure)? blockFailure,
+    TResult Function()? unBlockSuccess,
+    TResult Function(Failure<dynamic> failure)? unBlockFailure,
+  }) {
+    return initial?.call();
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? actionInProgress,
@@ -731,6 +853,21 @@ class _$_Initial implements _Initial {
     required TResult Function(_UnBlockFailure value) unBlockFailure,
   }) {
     return initial(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_ActionInProgress value)? actionInProgress,
+    TResult Function(_Blocks value)? blocks,
+    TResult Function(_BlocksNot value)? blocksNot,
+    TResult Function(_BlockSuccess value)? blockSuccess,
+    TResult Function(_BlockFailure value)? blockFailure,
+    TResult Function(_UnBlockSuccess value)? unBlockSuccess,
+    TResult Function(_UnBlockFailure value)? unBlockFailure,
+  }) {
+    return initial?.call(this);
   }
 
   @override
@@ -811,6 +948,21 @@ class _$_ActionInProgress implements _ActionInProgress {
 
   @override
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? actionInProgress,
+    TResult Function()? blocks,
+    TResult Function()? blocksNot,
+    TResult Function()? blockSuccess,
+    TResult Function(Failure<dynamic> failure)? blockFailure,
+    TResult Function()? unBlockSuccess,
+    TResult Function(Failure<dynamic> failure)? unBlockFailure,
+  }) {
+    return actionInProgress?.call();
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? actionInProgress,
@@ -841,6 +993,21 @@ class _$_ActionInProgress implements _ActionInProgress {
     required TResult Function(_UnBlockFailure value) unBlockFailure,
   }) {
     return actionInProgress(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_ActionInProgress value)? actionInProgress,
+    TResult Function(_Blocks value)? blocks,
+    TResult Function(_BlocksNot value)? blocksNot,
+    TResult Function(_BlockSuccess value)? blockSuccess,
+    TResult Function(_BlockFailure value)? blockFailure,
+    TResult Function(_UnBlockSuccess value)? unBlockSuccess,
+    TResult Function(_UnBlockFailure value)? unBlockFailure,
+  }) {
+    return actionInProgress?.call(this);
   }
 
   @override
@@ -918,6 +1085,21 @@ class _$_Blocks implements _Blocks {
 
   @override
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? actionInProgress,
+    TResult Function()? blocks,
+    TResult Function()? blocksNot,
+    TResult Function()? blockSuccess,
+    TResult Function(Failure<dynamic> failure)? blockFailure,
+    TResult Function()? unBlockSuccess,
+    TResult Function(Failure<dynamic> failure)? unBlockFailure,
+  }) {
+    return blocks?.call();
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? actionInProgress,
@@ -948,6 +1130,21 @@ class _$_Blocks implements _Blocks {
     required TResult Function(_UnBlockFailure value) unBlockFailure,
   }) {
     return blocks(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_ActionInProgress value)? actionInProgress,
+    TResult Function(_Blocks value)? blocks,
+    TResult Function(_BlocksNot value)? blocksNot,
+    TResult Function(_BlockSuccess value)? blockSuccess,
+    TResult Function(_BlockFailure value)? blockFailure,
+    TResult Function(_UnBlockSuccess value)? unBlockSuccess,
+    TResult Function(_UnBlockFailure value)? unBlockFailure,
+  }) {
+    return blocks?.call(this);
   }
 
   @override
@@ -1026,6 +1223,21 @@ class _$_BlocksNot implements _BlocksNot {
 
   @override
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? actionInProgress,
+    TResult Function()? blocks,
+    TResult Function()? blocksNot,
+    TResult Function()? blockSuccess,
+    TResult Function(Failure<dynamic> failure)? blockFailure,
+    TResult Function()? unBlockSuccess,
+    TResult Function(Failure<dynamic> failure)? unBlockFailure,
+  }) {
+    return blocksNot?.call();
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? actionInProgress,
@@ -1056,6 +1268,21 @@ class _$_BlocksNot implements _BlocksNot {
     required TResult Function(_UnBlockFailure value) unBlockFailure,
   }) {
     return blocksNot(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_ActionInProgress value)? actionInProgress,
+    TResult Function(_Blocks value)? blocks,
+    TResult Function(_BlocksNot value)? blocksNot,
+    TResult Function(_BlockSuccess value)? blockSuccess,
+    TResult Function(_BlockFailure value)? blockFailure,
+    TResult Function(_UnBlockSuccess value)? unBlockSuccess,
+    TResult Function(_UnBlockFailure value)? unBlockFailure,
+  }) {
+    return blocksNot?.call(this);
   }
 
   @override
@@ -1136,6 +1363,21 @@ class _$_BlockSuccess implements _BlockSuccess {
 
   @override
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? actionInProgress,
+    TResult Function()? blocks,
+    TResult Function()? blocksNot,
+    TResult Function()? blockSuccess,
+    TResult Function(Failure<dynamic> failure)? blockFailure,
+    TResult Function()? unBlockSuccess,
+    TResult Function(Failure<dynamic> failure)? unBlockFailure,
+  }) {
+    return blockSuccess?.call();
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? actionInProgress,
@@ -1166,6 +1408,21 @@ class _$_BlockSuccess implements _BlockSuccess {
     required TResult Function(_UnBlockFailure value) unBlockFailure,
   }) {
     return blockSuccess(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_ActionInProgress value)? actionInProgress,
+    TResult Function(_Blocks value)? blocks,
+    TResult Function(_BlocksNot value)? blocksNot,
+    TResult Function(_BlockSuccess value)? blockSuccess,
+    TResult Function(_BlockFailure value)? blockFailure,
+    TResult Function(_UnBlockSuccess value)? unBlockSuccess,
+    TResult Function(_UnBlockFailure value)? unBlockFailure,
+  }) {
+    return blockSuccess?.call(this);
   }
 
   @override
@@ -1280,6 +1537,21 @@ class _$_BlockFailure implements _BlockFailure {
 
   @override
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? actionInProgress,
+    TResult Function()? blocks,
+    TResult Function()? blocksNot,
+    TResult Function()? blockSuccess,
+    TResult Function(Failure<dynamic> failure)? blockFailure,
+    TResult Function()? unBlockSuccess,
+    TResult Function(Failure<dynamic> failure)? unBlockFailure,
+  }) {
+    return blockFailure?.call(failure);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? actionInProgress,
@@ -1310,6 +1582,21 @@ class _$_BlockFailure implements _BlockFailure {
     required TResult Function(_UnBlockFailure value) unBlockFailure,
   }) {
     return blockFailure(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_ActionInProgress value)? actionInProgress,
+    TResult Function(_Blocks value)? blocks,
+    TResult Function(_BlocksNot value)? blocksNot,
+    TResult Function(_BlockSuccess value)? blockSuccess,
+    TResult Function(_BlockFailure value)? blockFailure,
+    TResult Function(_UnBlockSuccess value)? unBlockSuccess,
+    TResult Function(_UnBlockFailure value)? unBlockFailure,
+  }) {
+    return blockFailure?.call(this);
   }
 
   @override
@@ -1395,6 +1682,21 @@ class _$_UnBlockSuccess implements _UnBlockSuccess {
 
   @override
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? actionInProgress,
+    TResult Function()? blocks,
+    TResult Function()? blocksNot,
+    TResult Function()? blockSuccess,
+    TResult Function(Failure<dynamic> failure)? blockFailure,
+    TResult Function()? unBlockSuccess,
+    TResult Function(Failure<dynamic> failure)? unBlockFailure,
+  }) {
+    return unBlockSuccess?.call();
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? actionInProgress,
@@ -1425,6 +1727,21 @@ class _$_UnBlockSuccess implements _UnBlockSuccess {
     required TResult Function(_UnBlockFailure value) unBlockFailure,
   }) {
     return unBlockSuccess(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_ActionInProgress value)? actionInProgress,
+    TResult Function(_Blocks value)? blocks,
+    TResult Function(_BlocksNot value)? blocksNot,
+    TResult Function(_BlockSuccess value)? blockSuccess,
+    TResult Function(_BlockFailure value)? blockFailure,
+    TResult Function(_UnBlockSuccess value)? unBlockSuccess,
+    TResult Function(_UnBlockFailure value)? unBlockFailure,
+  }) {
+    return unBlockSuccess?.call(this);
   }
 
   @override
@@ -1539,6 +1856,21 @@ class _$_UnBlockFailure implements _UnBlockFailure {
 
   @override
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? actionInProgress,
+    TResult Function()? blocks,
+    TResult Function()? blocksNot,
+    TResult Function()? blockSuccess,
+    TResult Function(Failure<dynamic> failure)? blockFailure,
+    TResult Function()? unBlockSuccess,
+    TResult Function(Failure<dynamic> failure)? unBlockFailure,
+  }) {
+    return unBlockFailure?.call(failure);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? actionInProgress,
@@ -1569,6 +1901,21 @@ class _$_UnBlockFailure implements _UnBlockFailure {
     required TResult Function(_UnBlockFailure value) unBlockFailure,
   }) {
     return unBlockFailure(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_ActionInProgress value)? actionInProgress,
+    TResult Function(_Blocks value)? blocks,
+    TResult Function(_BlocksNot value)? blocksNot,
+    TResult Function(_BlockSuccess value)? blockSuccess,
+    TResult Function(_BlockFailure value)? blockFailure,
+    TResult Function(_UnBlockSuccess value)? unBlockSuccess,
+    TResult Function(_UnBlockFailure value)? unBlockFailure,
+  }) {
+    return unBlockFailure?.call(this);
   }
 
   @override

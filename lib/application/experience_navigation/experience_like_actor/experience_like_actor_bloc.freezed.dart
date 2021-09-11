@@ -1,5 +1,6 @@
+// coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
 
 part of 'experience_like_actor_bloc.dart';
 
@@ -55,6 +56,15 @@ mixin _$ExperienceLikeActorEvent {
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(UniqueId experienceId, Set<UniqueId> experiencesLikedIds,
+            int likesAmount)?
+        initialized,
+    TResult Function(UniqueId experienceId)? liked,
+    TResult Function(UniqueId experienceId)? disliked,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(UniqueId experienceId, Set<UniqueId> experiencesLikedIds,
             int likesAmount)?
@@ -69,6 +79,13 @@ mixin _$ExperienceLikeActorEvent {
     required TResult Function(_Initialized value) initialized,
     required TResult Function(_Liked value) liked,
     required TResult Function(_Disliked value) disliked,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_Initialized value)? initialized,
+    TResult Function(_Liked value)? liked,
+    TResult Function(_Disliked value)? disliked,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -221,6 +238,18 @@ class _$_Initialized implements _Initialized {
 
   @override
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(UniqueId experienceId, Set<UniqueId> experiencesLikedIds,
+            int likesAmount)?
+        initialized,
+    TResult Function(UniqueId experienceId)? liked,
+    TResult Function(UniqueId experienceId)? disliked,
+  }) {
+    return initialized?.call(experienceId, experiencesLikedIds, likesAmount);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(UniqueId experienceId, Set<UniqueId> experiencesLikedIds,
             int likesAmount)?
@@ -243,6 +272,16 @@ class _$_Initialized implements _Initialized {
     required TResult Function(_Disliked value) disliked,
   }) {
     return initialized(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_Initialized value)? initialized,
+    TResult Function(_Liked value)? liked,
+    TResult Function(_Disliked value)? disliked,
+  }) {
+    return initialized?.call(this);
   }
 
   @override
@@ -351,6 +390,18 @@ class _$_Liked implements _Liked {
 
   @override
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(UniqueId experienceId, Set<UniqueId> experiencesLikedIds,
+            int likesAmount)?
+        initialized,
+    TResult Function(UniqueId experienceId)? liked,
+    TResult Function(UniqueId experienceId)? disliked,
+  }) {
+    return liked?.call(experienceId);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(UniqueId experienceId, Set<UniqueId> experiencesLikedIds,
             int likesAmount)?
@@ -373,6 +424,16 @@ class _$_Liked implements _Liked {
     required TResult Function(_Disliked value) disliked,
   }) {
     return liked(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_Initialized value)? initialized,
+    TResult Function(_Liked value)? liked,
+    TResult Function(_Disliked value)? disliked,
+  }) {
+    return liked?.call(this);
   }
 
   @override
@@ -477,6 +538,18 @@ class _$_Disliked implements _Disliked {
 
   @override
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(UniqueId experienceId, Set<UniqueId> experiencesLikedIds,
+            int likesAmount)?
+        initialized,
+    TResult Function(UniqueId experienceId)? liked,
+    TResult Function(UniqueId experienceId)? disliked,
+  }) {
+    return disliked?.call(experienceId);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(UniqueId experienceId, Set<UniqueId> experiencesLikedIds,
             int likesAmount)?
@@ -499,6 +572,16 @@ class _$_Disliked implements _Disliked {
     required TResult Function(_Disliked value) disliked,
   }) {
     return disliked(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_Initialized value)? initialized,
+    TResult Function(_Liked value)? liked,
+    TResult Function(_Disliked value)? disliked,
+  }) {
+    return disliked?.call(this);
   }
 
   @override

@@ -1,5 +1,6 @@
+// coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
 
 part of 'profile_domain_failure.dart';
 
@@ -37,6 +38,12 @@ mixin _$ProfileDomainFailure<T> {
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? followItself,
+    TResult Function()? blockItself,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? followItself,
     TResult Function()? blockItself,
@@ -47,6 +54,12 @@ mixin _$ProfileDomainFailure<T> {
   TResult map<TResult extends Object?>({
     required TResult Function(FollowItself<T> value) followItself,
     required TResult Function(BlockItself<T> value) blockItself,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(FollowItself<T> value)? followItself,
+    TResult Function(BlockItself<T> value)? blockItself,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -123,6 +136,15 @@ class _$FollowItself<T> implements FollowItself<T> {
 
   @override
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? followItself,
+    TResult Function()? blockItself,
+  }) {
+    return followItself?.call();
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? followItself,
     TResult Function()? blockItself,
@@ -141,6 +163,15 @@ class _$FollowItself<T> implements FollowItself<T> {
     required TResult Function(BlockItself<T> value) blockItself,
   }) {
     return followItself(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(FollowItself<T> value)? followItself,
+    TResult Function(BlockItself<T> value)? blockItself,
+  }) {
+    return followItself?.call(this);
   }
 
   @override
@@ -209,6 +240,15 @@ class _$BlockItself<T> implements BlockItself<T> {
 
   @override
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? followItself,
+    TResult Function()? blockItself,
+  }) {
+    return blockItself?.call();
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? followItself,
     TResult Function()? blockItself,
@@ -227,6 +267,15 @@ class _$BlockItself<T> implements BlockItself<T> {
     required TResult Function(BlockItself<T> value) blockItself,
   }) {
     return blockItself(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(FollowItself<T> value)? followItself,
+    TResult Function(BlockItself<T> value)? blockItself,
+  }) {
+    return blockItself?.call(this);
   }
 
   @override

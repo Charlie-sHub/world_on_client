@@ -1,5 +1,6 @@
+// coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
 
 part of 'profile_achievements_watcher_bloc.dart';
 
@@ -45,6 +46,14 @@ mixin _$ProfileAchievementsWatcherEvent {
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(User user)? watchAchievementsStarted,
+    TResult Function(
+            Either<Failure, KtList<Achievement>> failureOrAchievements)?
+        resultsReceived,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(User user)? watchAchievementsStarted,
     TResult Function(
@@ -58,6 +67,12 @@ mixin _$ProfileAchievementsWatcherEvent {
     required TResult Function(_WatchAchievementsStarted value)
         watchAchievementsStarted,
     required TResult Function(_ResultsReceived value) resultsReceived,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_WatchAchievementsStarted value)? watchAchievementsStarted,
+    TResult Function(_ResultsReceived value)? resultsReceived,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -173,6 +188,17 @@ class _$_WatchAchievementsStarted implements _WatchAchievementsStarted {
 
   @override
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(User user)? watchAchievementsStarted,
+    TResult Function(
+            Either<Failure, KtList<Achievement>> failureOrAchievements)?
+        resultsReceived,
+  }) {
+    return watchAchievementsStarted?.call(user);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(User user)? watchAchievementsStarted,
     TResult Function(
@@ -194,6 +220,15 @@ class _$_WatchAchievementsStarted implements _WatchAchievementsStarted {
     required TResult Function(_ResultsReceived value) resultsReceived,
   }) {
     return watchAchievementsStarted(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_WatchAchievementsStarted value)? watchAchievementsStarted,
+    TResult Function(_ResultsReceived value)? resultsReceived,
+  }) {
+    return watchAchievementsStarted?.call(this);
   }
 
   @override
@@ -298,6 +333,17 @@ class _$_ResultsReceived implements _ResultsReceived {
 
   @override
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(User user)? watchAchievementsStarted,
+    TResult Function(
+            Either<Failure, KtList<Achievement>> failureOrAchievements)?
+        resultsReceived,
+  }) {
+    return resultsReceived?.call(failureOrAchievements);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(User user)? watchAchievementsStarted,
     TResult Function(
@@ -319,6 +365,15 @@ class _$_ResultsReceived implements _ResultsReceived {
     required TResult Function(_ResultsReceived value) resultsReceived,
   }) {
     return resultsReceived(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_WatchAchievementsStarted value)? watchAchievementsStarted,
+    TResult Function(_ResultsReceived value)? resultsReceived,
+  }) {
+    return resultsReceived?.call(this);
   }
 
   @override
@@ -387,6 +442,14 @@ mixin _$ProfileAchievementsWatcherState {
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? loadInProgress,
+    TResult Function(KtList<Achievement> achievements)? loadSuccess,
+    TResult Function(Failure<dynamic> failure)? loadFailure,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loadInProgress,
@@ -401,6 +464,14 @@ mixin _$ProfileAchievementsWatcherState {
     required TResult Function(_LoadInProgress value) loadInProgress,
     required TResult Function(_LoadSuccess value) loadSuccess,
     required TResult Function(_LoadFailure value) loadFailure,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_LoadInProgress value)? loadInProgress,
+    TResult Function(_LoadSuccess value)? loadSuccess,
+    TResult Function(_LoadFailure value)? loadFailure,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -480,6 +551,17 @@ class _$_Initial implements _Initial {
 
   @override
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? loadInProgress,
+    TResult Function(KtList<Achievement> achievements)? loadSuccess,
+    TResult Function(Failure<dynamic> failure)? loadFailure,
+  }) {
+    return initial?.call();
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loadInProgress,
@@ -502,6 +584,17 @@ class _$_Initial implements _Initial {
     required TResult Function(_LoadFailure value) loadFailure,
   }) {
     return initial(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_LoadInProgress value)? loadInProgress,
+    TResult Function(_LoadSuccess value)? loadSuccess,
+    TResult Function(_LoadFailure value)? loadFailure,
+  }) {
+    return initial?.call(this);
   }
 
   @override
@@ -574,6 +667,17 @@ class _$_LoadInProgress implements _LoadInProgress {
 
   @override
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? loadInProgress,
+    TResult Function(KtList<Achievement> achievements)? loadSuccess,
+    TResult Function(Failure<dynamic> failure)? loadFailure,
+  }) {
+    return loadInProgress?.call();
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loadInProgress,
@@ -596,6 +700,17 @@ class _$_LoadInProgress implements _LoadInProgress {
     required TResult Function(_LoadFailure value) loadFailure,
   }) {
     return loadInProgress(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_LoadInProgress value)? loadInProgress,
+    TResult Function(_LoadSuccess value)? loadSuccess,
+    TResult Function(_LoadFailure value)? loadFailure,
+  }) {
+    return loadInProgress?.call(this);
   }
 
   @override
@@ -694,6 +809,17 @@ class _$_LoadSuccess implements _LoadSuccess {
 
   @override
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? loadInProgress,
+    TResult Function(KtList<Achievement> achievements)? loadSuccess,
+    TResult Function(Failure<dynamic> failure)? loadFailure,
+  }) {
+    return loadSuccess?.call(achievements);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loadInProgress,
@@ -716,6 +842,17 @@ class _$_LoadSuccess implements _LoadSuccess {
     required TResult Function(_LoadFailure value) loadFailure,
   }) {
     return loadSuccess(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_LoadInProgress value)? loadInProgress,
+    TResult Function(_LoadSuccess value)? loadSuccess,
+    TResult Function(_LoadFailure value)? loadFailure,
+  }) {
+    return loadSuccess?.call(this);
   }
 
   @override
@@ -827,6 +964,17 @@ class _$_LoadFailure implements _LoadFailure {
 
   @override
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? loadInProgress,
+    TResult Function(KtList<Achievement> achievements)? loadSuccess,
+    TResult Function(Failure<dynamic> failure)? loadFailure,
+  }) {
+    return loadFailure?.call(failure);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loadInProgress,
@@ -849,6 +997,17 @@ class _$_LoadFailure implements _LoadFailure {
     required TResult Function(_LoadFailure value) loadFailure,
   }) {
     return loadFailure(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_LoadInProgress value)? loadInProgress,
+    TResult Function(_LoadSuccess value)? loadSuccess,
+    TResult Function(_LoadFailure value)? loadFailure,
+  }) {
+    return loadFailure?.call(this);
   }
 
   @override

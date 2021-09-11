@@ -1,5 +1,6 @@
+// coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
 
 part of 'experience_management_show_case_bloc.dart';
 
@@ -38,6 +39,12 @@ mixin _$ExperienceManagementShowCaseEvent {
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? helpButtonPressed,
+    TResult Function()? finished,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? helpButtonPressed,
     TResult Function()? finished,
@@ -48,6 +55,12 @@ mixin _$ExperienceManagementShowCaseEvent {
   TResult map<TResult extends Object?>({
     required TResult Function(_HelpButtonPressed value) helpButtonPressed,
     required TResult Function(_Finished value) finished,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_HelpButtonPressed value)? helpButtonPressed,
+    TResult Function(_Finished value)? finished,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -125,6 +138,15 @@ class _$_HelpButtonPressed implements _HelpButtonPressed {
 
   @override
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? helpButtonPressed,
+    TResult Function()? finished,
+  }) {
+    return helpButtonPressed?.call();
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? helpButtonPressed,
     TResult Function()? finished,
@@ -143,6 +165,15 @@ class _$_HelpButtonPressed implements _HelpButtonPressed {
     required TResult Function(_Finished value) finished,
   }) {
     return helpButtonPressed(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_HelpButtonPressed value)? helpButtonPressed,
+    TResult Function(_Finished value)? finished,
+  }) {
+    return helpButtonPressed?.call(this);
   }
 
   @override
@@ -209,6 +240,15 @@ class _$_Finished implements _Finished {
 
   @override
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? helpButtonPressed,
+    TResult Function()? finished,
+  }) {
+    return finished?.call();
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? helpButtonPressed,
     TResult Function()? finished,
@@ -227,6 +267,15 @@ class _$_Finished implements _Finished {
     required TResult Function(_Finished value) finished,
   }) {
     return finished(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_HelpButtonPressed value)? helpButtonPressed,
+    TResult Function(_Finished value)? finished,
+  }) {
+    return finished?.call(this);
   }
 
   @override
@@ -273,6 +322,12 @@ mixin _$ExperienceManagementShowCaseState {
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? showNot,
+    TResult Function()? show,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? showNot,
     TResult Function()? show,
@@ -283,6 +338,12 @@ mixin _$ExperienceManagementShowCaseState {
   TResult map<TResult extends Object?>({
     required TResult Function(_ShowNot value) showNot,
     required TResult Function(_Show value) show,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_ShowNot value)? showNot,
+    TResult Function(_Show value)? show,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -358,6 +419,15 @@ class _$_ShowNot implements _ShowNot {
 
   @override
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? showNot,
+    TResult Function()? show,
+  }) {
+    return showNot?.call();
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? showNot,
     TResult Function()? show,
@@ -376,6 +446,15 @@ class _$_ShowNot implements _ShowNot {
     required TResult Function(_Show value) show,
   }) {
     return showNot(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_ShowNot value)? showNot,
+    TResult Function(_Show value)? show,
+  }) {
+    return showNot?.call(this);
   }
 
   @override
@@ -442,6 +521,15 @@ class _$_Show implements _Show {
 
   @override
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? showNot,
+    TResult Function()? show,
+  }) {
+    return show?.call();
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? showNot,
     TResult Function()? show,
@@ -460,6 +548,15 @@ class _$_Show implements _Show {
     required TResult Function(_Show value) show,
   }) {
     return show(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_ShowNot value)? showNot,
+    TResult Function(_Show value)? show,
+  }) {
+    return show?.call(this);
   }
 
   @override

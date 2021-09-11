@@ -1,5 +1,6 @@
+// coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
 
 part of 'new_notifications_watcher_bloc.dart';
 
@@ -40,6 +41,12 @@ mixin _$NewNotificationsWatcherEvent {
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? watchNewNotificationsStarted,
+    TResult Function(Either<Failure, bool> failureOrBool)? resultsReceived,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? watchNewNotificationsStarted,
     TResult Function(Either<Failure, bool> failureOrBool)? resultsReceived,
@@ -51,6 +58,13 @@ mixin _$NewNotificationsWatcherEvent {
     required TResult Function(_WatchNewNotificationsStarted value)
         watchNewNotificationsStarted,
     required TResult Function(_ResultsReceived value) resultsReceived,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_WatchNewNotificationsStarted value)?
+        watchNewNotificationsStarted,
+    TResult Function(_ResultsReceived value)? resultsReceived,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -133,6 +147,15 @@ class _$_WatchNewNotificationsStarted implements _WatchNewNotificationsStarted {
 
   @override
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? watchNewNotificationsStarted,
+    TResult Function(Either<Failure, bool> failureOrBool)? resultsReceived,
+  }) {
+    return watchNewNotificationsStarted?.call();
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? watchNewNotificationsStarted,
     TResult Function(Either<Failure, bool> failureOrBool)? resultsReceived,
@@ -152,6 +175,16 @@ class _$_WatchNewNotificationsStarted implements _WatchNewNotificationsStarted {
     required TResult Function(_ResultsReceived value) resultsReceived,
   }) {
     return watchNewNotificationsStarted(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_WatchNewNotificationsStarted value)?
+        watchNewNotificationsStarted,
+    TResult Function(_ResultsReceived value)? resultsReceived,
+  }) {
+    return watchNewNotificationsStarted?.call(this);
   }
 
   @override
@@ -250,6 +283,15 @@ class _$_ResultsReceived implements _ResultsReceived {
 
   @override
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? watchNewNotificationsStarted,
+    TResult Function(Either<Failure, bool> failureOrBool)? resultsReceived,
+  }) {
+    return resultsReceived?.call(failureOrBool);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? watchNewNotificationsStarted,
     TResult Function(Either<Failure, bool> failureOrBool)? resultsReceived,
@@ -269,6 +311,16 @@ class _$_ResultsReceived implements _ResultsReceived {
     required TResult Function(_ResultsReceived value) resultsReceived,
   }) {
     return resultsReceived(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_WatchNewNotificationsStarted value)?
+        watchNewNotificationsStarted,
+    TResult Function(_ResultsReceived value)? resultsReceived,
+  }) {
+    return resultsReceived?.call(this);
   }
 
   @override
@@ -331,6 +383,14 @@ mixin _$NewNotificationsWatcherState {
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? newNotifications,
+    TResult Function()? noNewNotifications,
+    TResult Function()? failure,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? newNotifications,
@@ -345,6 +405,14 @@ mixin _$NewNotificationsWatcherState {
     required TResult Function(_NewNotifications value) newNotifications,
     required TResult Function(_NoNewNotifications value) noNewNotifications,
     required TResult Function(_Failure value) failure,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_NewNotifications value)? newNotifications,
+    TResult Function(_NoNewNotifications value)? noNewNotifications,
+    TResult Function(_Failure value)? failure,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -424,6 +492,17 @@ class _$_Initial implements _Initial {
 
   @override
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? newNotifications,
+    TResult Function()? noNewNotifications,
+    TResult Function()? failure,
+  }) {
+    return initial?.call();
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? newNotifications,
@@ -446,6 +525,17 @@ class _$_Initial implements _Initial {
     required TResult Function(_Failure value) failure,
   }) {
     return initial(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_NewNotifications value)? newNotifications,
+    TResult Function(_NoNewNotifications value)? noNewNotifications,
+    TResult Function(_Failure value)? failure,
+  }) {
+    return initial?.call(this);
   }
 
   @override
@@ -518,6 +608,17 @@ class _$_NewNotifications implements _NewNotifications {
 
   @override
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? newNotifications,
+    TResult Function()? noNewNotifications,
+    TResult Function()? failure,
+  }) {
+    return newNotifications?.call();
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? newNotifications,
@@ -540,6 +641,17 @@ class _$_NewNotifications implements _NewNotifications {
     required TResult Function(_Failure value) failure,
   }) {
     return newNotifications(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_NewNotifications value)? newNotifications,
+    TResult Function(_NoNewNotifications value)? noNewNotifications,
+    TResult Function(_Failure value)? failure,
+  }) {
+    return newNotifications?.call(this);
   }
 
   @override
@@ -612,6 +724,17 @@ class _$_NoNewNotifications implements _NoNewNotifications {
 
   @override
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? newNotifications,
+    TResult Function()? noNewNotifications,
+    TResult Function()? failure,
+  }) {
+    return noNewNotifications?.call();
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? newNotifications,
@@ -634,6 +757,17 @@ class _$_NoNewNotifications implements _NoNewNotifications {
     required TResult Function(_Failure value) failure,
   }) {
     return noNewNotifications(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_NewNotifications value)? newNotifications,
+    TResult Function(_NoNewNotifications value)? noNewNotifications,
+    TResult Function(_Failure value)? failure,
+  }) {
+    return noNewNotifications?.call(this);
   }
 
   @override
@@ -704,6 +838,17 @@ class _$_Failure implements _Failure {
 
   @override
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? newNotifications,
+    TResult Function()? noNewNotifications,
+    TResult Function()? failure,
+  }) {
+    return failure?.call();
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? newNotifications,
@@ -726,6 +871,17 @@ class _$_Failure implements _Failure {
     required TResult Function(_Failure value) failure,
   }) {
     return failure(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_NewNotifications value)? newNotifications,
+    TResult Function(_NoNewNotifications value)? noNewNotifications,
+    TResult Function(_Failure value)? failure,
+  }) {
+    return failure?.call(this);
   }
 
   @override

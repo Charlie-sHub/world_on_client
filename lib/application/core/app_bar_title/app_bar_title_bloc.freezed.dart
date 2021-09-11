@@ -1,5 +1,6 @@
+// coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
 
 part of 'app_bar_title_bloc.dart';
 
@@ -84,6 +85,21 @@ mixin _$AppBarTitleEvent {
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? initialized,
+    TResult Function()? showedMainFeed,
+    TResult Function()? showedSearch,
+    TResult Function()? showedRecommendations,
+    TResult Function()? showedExperienceNavigation,
+    TResult Function()? showedExperienceFinish,
+    TResult Function()? showedProfile,
+    TResult Function()? showedNotifications,
+    TResult Function()? showedFollowers,
+    TResult Function()? showedFollowing,
+    TResult Function(String username)? showedUsername,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initialized,
     TResult Function()? showedMainFeed,
@@ -115,6 +131,22 @@ mixin _$AppBarTitleEvent {
     required TResult Function(_ShowedFollowers value) showedFollowers,
     required TResult Function(_ShowedFollowing value) showedFollowing,
     required TResult Function(_ShowedUsername value) showedUsername,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_Initialized value)? initialized,
+    TResult Function(_ShowedMainFeed value)? showedMainFeed,
+    TResult Function(_ShowedSearch value)? showedSearch,
+    TResult Function(_ShowedRecommendations value)? showedRecommendations,
+    TResult Function(_ShowedExperienceNavigation value)?
+        showedExperienceNavigation,
+    TResult Function(_ShowedExperienceFinish value)? showedExperienceFinish,
+    TResult Function(_ShowedProfile value)? showedProfile,
+    TResult Function(_ShowedNotifications value)? showedNotifications,
+    TResult Function(_ShowedFollowers value)? showedFollowers,
+    TResult Function(_ShowedFollowing value)? showedFollowing,
+    TResult Function(_ShowedUsername value)? showedUsername,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -210,6 +242,24 @@ class _$_Initialized implements _Initialized {
 
   @override
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? initialized,
+    TResult Function()? showedMainFeed,
+    TResult Function()? showedSearch,
+    TResult Function()? showedRecommendations,
+    TResult Function()? showedExperienceNavigation,
+    TResult Function()? showedExperienceFinish,
+    TResult Function()? showedProfile,
+    TResult Function()? showedNotifications,
+    TResult Function()? showedFollowers,
+    TResult Function()? showedFollowing,
+    TResult Function(String username)? showedUsername,
+  }) {
+    return initialized?.call();
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initialized,
     TResult Function()? showedMainFeed,
@@ -249,6 +299,25 @@ class _$_Initialized implements _Initialized {
     required TResult Function(_ShowedUsername value) showedUsername,
   }) {
     return initialized(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_Initialized value)? initialized,
+    TResult Function(_ShowedMainFeed value)? showedMainFeed,
+    TResult Function(_ShowedSearch value)? showedSearch,
+    TResult Function(_ShowedRecommendations value)? showedRecommendations,
+    TResult Function(_ShowedExperienceNavigation value)?
+        showedExperienceNavigation,
+    TResult Function(_ShowedExperienceFinish value)? showedExperienceFinish,
+    TResult Function(_ShowedProfile value)? showedProfile,
+    TResult Function(_ShowedNotifications value)? showedNotifications,
+    TResult Function(_ShowedFollowers value)? showedFollowers,
+    TResult Function(_ShowedFollowing value)? showedFollowing,
+    TResult Function(_ShowedUsername value)? showedUsername,
+  }) {
+    return initialized?.call(this);
   }
 
   @override
@@ -336,6 +405,24 @@ class _$_ShowedMainFeed implements _ShowedMainFeed {
 
   @override
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? initialized,
+    TResult Function()? showedMainFeed,
+    TResult Function()? showedSearch,
+    TResult Function()? showedRecommendations,
+    TResult Function()? showedExperienceNavigation,
+    TResult Function()? showedExperienceFinish,
+    TResult Function()? showedProfile,
+    TResult Function()? showedNotifications,
+    TResult Function()? showedFollowers,
+    TResult Function()? showedFollowing,
+    TResult Function(String username)? showedUsername,
+  }) {
+    return showedMainFeed?.call();
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initialized,
     TResult Function()? showedMainFeed,
@@ -375,6 +462,25 @@ class _$_ShowedMainFeed implements _ShowedMainFeed {
     required TResult Function(_ShowedUsername value) showedUsername,
   }) {
     return showedMainFeed(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_Initialized value)? initialized,
+    TResult Function(_ShowedMainFeed value)? showedMainFeed,
+    TResult Function(_ShowedSearch value)? showedSearch,
+    TResult Function(_ShowedRecommendations value)? showedRecommendations,
+    TResult Function(_ShowedExperienceNavigation value)?
+        showedExperienceNavigation,
+    TResult Function(_ShowedExperienceFinish value)? showedExperienceFinish,
+    TResult Function(_ShowedProfile value)? showedProfile,
+    TResult Function(_ShowedNotifications value)? showedNotifications,
+    TResult Function(_ShowedFollowers value)? showedFollowers,
+    TResult Function(_ShowedFollowing value)? showedFollowing,
+    TResult Function(_ShowedUsername value)? showedUsername,
+  }) {
+    return showedMainFeed?.call(this);
   }
 
   @override
@@ -462,6 +568,24 @@ class _$_ShowedSearch implements _ShowedSearch {
 
   @override
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? initialized,
+    TResult Function()? showedMainFeed,
+    TResult Function()? showedSearch,
+    TResult Function()? showedRecommendations,
+    TResult Function()? showedExperienceNavigation,
+    TResult Function()? showedExperienceFinish,
+    TResult Function()? showedProfile,
+    TResult Function()? showedNotifications,
+    TResult Function()? showedFollowers,
+    TResult Function()? showedFollowing,
+    TResult Function(String username)? showedUsername,
+  }) {
+    return showedSearch?.call();
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initialized,
     TResult Function()? showedMainFeed,
@@ -501,6 +625,25 @@ class _$_ShowedSearch implements _ShowedSearch {
     required TResult Function(_ShowedUsername value) showedUsername,
   }) {
     return showedSearch(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_Initialized value)? initialized,
+    TResult Function(_ShowedMainFeed value)? showedMainFeed,
+    TResult Function(_ShowedSearch value)? showedSearch,
+    TResult Function(_ShowedRecommendations value)? showedRecommendations,
+    TResult Function(_ShowedExperienceNavigation value)?
+        showedExperienceNavigation,
+    TResult Function(_ShowedExperienceFinish value)? showedExperienceFinish,
+    TResult Function(_ShowedProfile value)? showedProfile,
+    TResult Function(_ShowedNotifications value)? showedNotifications,
+    TResult Function(_ShowedFollowers value)? showedFollowers,
+    TResult Function(_ShowedFollowing value)? showedFollowing,
+    TResult Function(_ShowedUsername value)? showedUsername,
+  }) {
+    return showedSearch?.call(this);
   }
 
   @override
@@ -588,6 +731,24 @@ class _$_ShowedRecommendations implements _ShowedRecommendations {
 
   @override
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? initialized,
+    TResult Function()? showedMainFeed,
+    TResult Function()? showedSearch,
+    TResult Function()? showedRecommendations,
+    TResult Function()? showedExperienceNavigation,
+    TResult Function()? showedExperienceFinish,
+    TResult Function()? showedProfile,
+    TResult Function()? showedNotifications,
+    TResult Function()? showedFollowers,
+    TResult Function()? showedFollowing,
+    TResult Function(String username)? showedUsername,
+  }) {
+    return showedRecommendations?.call();
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initialized,
     TResult Function()? showedMainFeed,
@@ -627,6 +788,25 @@ class _$_ShowedRecommendations implements _ShowedRecommendations {
     required TResult Function(_ShowedUsername value) showedUsername,
   }) {
     return showedRecommendations(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_Initialized value)? initialized,
+    TResult Function(_ShowedMainFeed value)? showedMainFeed,
+    TResult Function(_ShowedSearch value)? showedSearch,
+    TResult Function(_ShowedRecommendations value)? showedRecommendations,
+    TResult Function(_ShowedExperienceNavigation value)?
+        showedExperienceNavigation,
+    TResult Function(_ShowedExperienceFinish value)? showedExperienceFinish,
+    TResult Function(_ShowedProfile value)? showedProfile,
+    TResult Function(_ShowedNotifications value)? showedNotifications,
+    TResult Function(_ShowedFollowers value)? showedFollowers,
+    TResult Function(_ShowedFollowing value)? showedFollowing,
+    TResult Function(_ShowedUsername value)? showedUsername,
+  }) {
+    return showedRecommendations?.call(this);
   }
 
   @override
@@ -716,6 +896,24 @@ class _$_ShowedExperienceNavigation implements _ShowedExperienceNavigation {
 
   @override
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? initialized,
+    TResult Function()? showedMainFeed,
+    TResult Function()? showedSearch,
+    TResult Function()? showedRecommendations,
+    TResult Function()? showedExperienceNavigation,
+    TResult Function()? showedExperienceFinish,
+    TResult Function()? showedProfile,
+    TResult Function()? showedNotifications,
+    TResult Function()? showedFollowers,
+    TResult Function()? showedFollowing,
+    TResult Function(String username)? showedUsername,
+  }) {
+    return showedExperienceNavigation?.call();
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initialized,
     TResult Function()? showedMainFeed,
@@ -755,6 +953,25 @@ class _$_ShowedExperienceNavigation implements _ShowedExperienceNavigation {
     required TResult Function(_ShowedUsername value) showedUsername,
   }) {
     return showedExperienceNavigation(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_Initialized value)? initialized,
+    TResult Function(_ShowedMainFeed value)? showedMainFeed,
+    TResult Function(_ShowedSearch value)? showedSearch,
+    TResult Function(_ShowedRecommendations value)? showedRecommendations,
+    TResult Function(_ShowedExperienceNavigation value)?
+        showedExperienceNavigation,
+    TResult Function(_ShowedExperienceFinish value)? showedExperienceFinish,
+    TResult Function(_ShowedProfile value)? showedProfile,
+    TResult Function(_ShowedNotifications value)? showedNotifications,
+    TResult Function(_ShowedFollowers value)? showedFollowers,
+    TResult Function(_ShowedFollowing value)? showedFollowing,
+    TResult Function(_ShowedUsername value)? showedUsername,
+  }) {
+    return showedExperienceNavigation?.call(this);
   }
 
   @override
@@ -842,6 +1059,24 @@ class _$_ShowedExperienceFinish implements _ShowedExperienceFinish {
 
   @override
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? initialized,
+    TResult Function()? showedMainFeed,
+    TResult Function()? showedSearch,
+    TResult Function()? showedRecommendations,
+    TResult Function()? showedExperienceNavigation,
+    TResult Function()? showedExperienceFinish,
+    TResult Function()? showedProfile,
+    TResult Function()? showedNotifications,
+    TResult Function()? showedFollowers,
+    TResult Function()? showedFollowing,
+    TResult Function(String username)? showedUsername,
+  }) {
+    return showedExperienceFinish?.call();
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initialized,
     TResult Function()? showedMainFeed,
@@ -881,6 +1116,25 @@ class _$_ShowedExperienceFinish implements _ShowedExperienceFinish {
     required TResult Function(_ShowedUsername value) showedUsername,
   }) {
     return showedExperienceFinish(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_Initialized value)? initialized,
+    TResult Function(_ShowedMainFeed value)? showedMainFeed,
+    TResult Function(_ShowedSearch value)? showedSearch,
+    TResult Function(_ShowedRecommendations value)? showedRecommendations,
+    TResult Function(_ShowedExperienceNavigation value)?
+        showedExperienceNavigation,
+    TResult Function(_ShowedExperienceFinish value)? showedExperienceFinish,
+    TResult Function(_ShowedProfile value)? showedProfile,
+    TResult Function(_ShowedNotifications value)? showedNotifications,
+    TResult Function(_ShowedFollowers value)? showedFollowers,
+    TResult Function(_ShowedFollowing value)? showedFollowing,
+    TResult Function(_ShowedUsername value)? showedUsername,
+  }) {
+    return showedExperienceFinish?.call(this);
   }
 
   @override
@@ -968,6 +1222,24 @@ class _$_ShowedProfile implements _ShowedProfile {
 
   @override
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? initialized,
+    TResult Function()? showedMainFeed,
+    TResult Function()? showedSearch,
+    TResult Function()? showedRecommendations,
+    TResult Function()? showedExperienceNavigation,
+    TResult Function()? showedExperienceFinish,
+    TResult Function()? showedProfile,
+    TResult Function()? showedNotifications,
+    TResult Function()? showedFollowers,
+    TResult Function()? showedFollowing,
+    TResult Function(String username)? showedUsername,
+  }) {
+    return showedProfile?.call();
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initialized,
     TResult Function()? showedMainFeed,
@@ -1007,6 +1279,25 @@ class _$_ShowedProfile implements _ShowedProfile {
     required TResult Function(_ShowedUsername value) showedUsername,
   }) {
     return showedProfile(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_Initialized value)? initialized,
+    TResult Function(_ShowedMainFeed value)? showedMainFeed,
+    TResult Function(_ShowedSearch value)? showedSearch,
+    TResult Function(_ShowedRecommendations value)? showedRecommendations,
+    TResult Function(_ShowedExperienceNavigation value)?
+        showedExperienceNavigation,
+    TResult Function(_ShowedExperienceFinish value)? showedExperienceFinish,
+    TResult Function(_ShowedProfile value)? showedProfile,
+    TResult Function(_ShowedNotifications value)? showedNotifications,
+    TResult Function(_ShowedFollowers value)? showedFollowers,
+    TResult Function(_ShowedFollowing value)? showedFollowing,
+    TResult Function(_ShowedUsername value)? showedUsername,
+  }) {
+    return showedProfile?.call(this);
   }
 
   @override
@@ -1094,6 +1385,24 @@ class _$_ShowedNotifications implements _ShowedNotifications {
 
   @override
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? initialized,
+    TResult Function()? showedMainFeed,
+    TResult Function()? showedSearch,
+    TResult Function()? showedRecommendations,
+    TResult Function()? showedExperienceNavigation,
+    TResult Function()? showedExperienceFinish,
+    TResult Function()? showedProfile,
+    TResult Function()? showedNotifications,
+    TResult Function()? showedFollowers,
+    TResult Function()? showedFollowing,
+    TResult Function(String username)? showedUsername,
+  }) {
+    return showedNotifications?.call();
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initialized,
     TResult Function()? showedMainFeed,
@@ -1133,6 +1442,25 @@ class _$_ShowedNotifications implements _ShowedNotifications {
     required TResult Function(_ShowedUsername value) showedUsername,
   }) {
     return showedNotifications(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_Initialized value)? initialized,
+    TResult Function(_ShowedMainFeed value)? showedMainFeed,
+    TResult Function(_ShowedSearch value)? showedSearch,
+    TResult Function(_ShowedRecommendations value)? showedRecommendations,
+    TResult Function(_ShowedExperienceNavigation value)?
+        showedExperienceNavigation,
+    TResult Function(_ShowedExperienceFinish value)? showedExperienceFinish,
+    TResult Function(_ShowedProfile value)? showedProfile,
+    TResult Function(_ShowedNotifications value)? showedNotifications,
+    TResult Function(_ShowedFollowers value)? showedFollowers,
+    TResult Function(_ShowedFollowing value)? showedFollowing,
+    TResult Function(_ShowedUsername value)? showedUsername,
+  }) {
+    return showedNotifications?.call(this);
   }
 
   @override
@@ -1220,6 +1548,24 @@ class _$_ShowedFollowers implements _ShowedFollowers {
 
   @override
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? initialized,
+    TResult Function()? showedMainFeed,
+    TResult Function()? showedSearch,
+    TResult Function()? showedRecommendations,
+    TResult Function()? showedExperienceNavigation,
+    TResult Function()? showedExperienceFinish,
+    TResult Function()? showedProfile,
+    TResult Function()? showedNotifications,
+    TResult Function()? showedFollowers,
+    TResult Function()? showedFollowing,
+    TResult Function(String username)? showedUsername,
+  }) {
+    return showedFollowers?.call();
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initialized,
     TResult Function()? showedMainFeed,
@@ -1259,6 +1605,25 @@ class _$_ShowedFollowers implements _ShowedFollowers {
     required TResult Function(_ShowedUsername value) showedUsername,
   }) {
     return showedFollowers(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_Initialized value)? initialized,
+    TResult Function(_ShowedMainFeed value)? showedMainFeed,
+    TResult Function(_ShowedSearch value)? showedSearch,
+    TResult Function(_ShowedRecommendations value)? showedRecommendations,
+    TResult Function(_ShowedExperienceNavigation value)?
+        showedExperienceNavigation,
+    TResult Function(_ShowedExperienceFinish value)? showedExperienceFinish,
+    TResult Function(_ShowedProfile value)? showedProfile,
+    TResult Function(_ShowedNotifications value)? showedNotifications,
+    TResult Function(_ShowedFollowers value)? showedFollowers,
+    TResult Function(_ShowedFollowing value)? showedFollowing,
+    TResult Function(_ShowedUsername value)? showedUsername,
+  }) {
+    return showedFollowers?.call(this);
   }
 
   @override
@@ -1346,6 +1711,24 @@ class _$_ShowedFollowing implements _ShowedFollowing {
 
   @override
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? initialized,
+    TResult Function()? showedMainFeed,
+    TResult Function()? showedSearch,
+    TResult Function()? showedRecommendations,
+    TResult Function()? showedExperienceNavigation,
+    TResult Function()? showedExperienceFinish,
+    TResult Function()? showedProfile,
+    TResult Function()? showedNotifications,
+    TResult Function()? showedFollowers,
+    TResult Function()? showedFollowing,
+    TResult Function(String username)? showedUsername,
+  }) {
+    return showedFollowing?.call();
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initialized,
     TResult Function()? showedMainFeed,
@@ -1385,6 +1768,25 @@ class _$_ShowedFollowing implements _ShowedFollowing {
     required TResult Function(_ShowedUsername value) showedUsername,
   }) {
     return showedFollowing(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_Initialized value)? initialized,
+    TResult Function(_ShowedMainFeed value)? showedMainFeed,
+    TResult Function(_ShowedSearch value)? showedSearch,
+    TResult Function(_ShowedRecommendations value)? showedRecommendations,
+    TResult Function(_ShowedExperienceNavigation value)?
+        showedExperienceNavigation,
+    TResult Function(_ShowedExperienceFinish value)? showedExperienceFinish,
+    TResult Function(_ShowedProfile value)? showedProfile,
+    TResult Function(_ShowedNotifications value)? showedNotifications,
+    TResult Function(_ShowedFollowers value)? showedFollowers,
+    TResult Function(_ShowedFollowing value)? showedFollowing,
+    TResult Function(_ShowedUsername value)? showedUsername,
+  }) {
+    return showedFollowing?.call(this);
   }
 
   @override
@@ -1498,6 +1900,24 @@ class _$_ShowedUsername implements _ShowedUsername {
 
   @override
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? initialized,
+    TResult Function()? showedMainFeed,
+    TResult Function()? showedSearch,
+    TResult Function()? showedRecommendations,
+    TResult Function()? showedExperienceNavigation,
+    TResult Function()? showedExperienceFinish,
+    TResult Function()? showedProfile,
+    TResult Function()? showedNotifications,
+    TResult Function()? showedFollowers,
+    TResult Function()? showedFollowing,
+    TResult Function(String username)? showedUsername,
+  }) {
+    return showedUsername?.call(username);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initialized,
     TResult Function()? showedMainFeed,
@@ -1537,6 +1957,25 @@ class _$_ShowedUsername implements _ShowedUsername {
     required TResult Function(_ShowedUsername value) showedUsername,
   }) {
     return showedUsername(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_Initialized value)? initialized,
+    TResult Function(_ShowedMainFeed value)? showedMainFeed,
+    TResult Function(_ShowedSearch value)? showedSearch,
+    TResult Function(_ShowedRecommendations value)? showedRecommendations,
+    TResult Function(_ShowedExperienceNavigation value)?
+        showedExperienceNavigation,
+    TResult Function(_ShowedExperienceFinish value)? showedExperienceFinish,
+    TResult Function(_ShowedProfile value)? showedProfile,
+    TResult Function(_ShowedNotifications value)? showedNotifications,
+    TResult Function(_ShowedFollowers value)? showedFollowers,
+    TResult Function(_ShowedFollowing value)? showedFollowing,
+    TResult Function(_ShowedUsername value)? showedUsername,
+  }) {
+    return showedUsername?.call(this);
   }
 
   @override
@@ -1649,6 +2088,22 @@ mixin _$AppBarTitleState {
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? mainFeed,
+    TResult Function()? search,
+    TResult Function()? recommendations,
+    TResult Function()? experienceNavigation,
+    TResult Function()? experienceFinish,
+    TResult Function()? profile,
+    TResult Function()? notifications,
+    TResult Function()? followers,
+    TResult Function()? following,
+    TResult Function(String username)? username,
+    TResult Function()? error,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? mainFeed,
@@ -1679,6 +2134,22 @@ mixin _$AppBarTitleState {
     required TResult Function(_Following value) following,
     required TResult Function(_Username value) username,
     required TResult Function(_Error value) error,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_MainFeed value)? mainFeed,
+    TResult Function(_Search value)? search,
+    TResult Function(_Recommendations value)? recommendations,
+    TResult Function(_ExperienceNavigation value)? experienceNavigation,
+    TResult Function(_ExperienceFinish value)? experienceFinish,
+    TResult Function(_Profile value)? profile,
+    TResult Function(_Notifications value)? notifications,
+    TResult Function(_Followers value)? followers,
+    TResult Function(_Following value)? following,
+    TResult Function(_Username value)? username,
+    TResult Function(_Error value)? error,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -1772,6 +2243,25 @@ class _$_Initial implements _Initial {
 
   @override
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? mainFeed,
+    TResult Function()? search,
+    TResult Function()? recommendations,
+    TResult Function()? experienceNavigation,
+    TResult Function()? experienceFinish,
+    TResult Function()? profile,
+    TResult Function()? notifications,
+    TResult Function()? followers,
+    TResult Function()? following,
+    TResult Function(String username)? username,
+    TResult Function()? error,
+  }) {
+    return initial?.call();
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? mainFeed,
@@ -1810,6 +2300,25 @@ class _$_Initial implements _Initial {
     required TResult Function(_Error value) error,
   }) {
     return initial(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_MainFeed value)? mainFeed,
+    TResult Function(_Search value)? search,
+    TResult Function(_Recommendations value)? recommendations,
+    TResult Function(_ExperienceNavigation value)? experienceNavigation,
+    TResult Function(_ExperienceFinish value)? experienceFinish,
+    TResult Function(_Profile value)? profile,
+    TResult Function(_Notifications value)? notifications,
+    TResult Function(_Followers value)? followers,
+    TResult Function(_Following value)? following,
+    TResult Function(_Username value)? username,
+    TResult Function(_Error value)? error,
+  }) {
+    return initial?.call(this);
   }
 
   @override
@@ -1895,6 +2404,25 @@ class _$_MainFeed implements _MainFeed {
 
   @override
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? mainFeed,
+    TResult Function()? search,
+    TResult Function()? recommendations,
+    TResult Function()? experienceNavigation,
+    TResult Function()? experienceFinish,
+    TResult Function()? profile,
+    TResult Function()? notifications,
+    TResult Function()? followers,
+    TResult Function()? following,
+    TResult Function(String username)? username,
+    TResult Function()? error,
+  }) {
+    return mainFeed?.call();
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? mainFeed,
@@ -1933,6 +2461,25 @@ class _$_MainFeed implements _MainFeed {
     required TResult Function(_Error value) error,
   }) {
     return mainFeed(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_MainFeed value)? mainFeed,
+    TResult Function(_Search value)? search,
+    TResult Function(_Recommendations value)? recommendations,
+    TResult Function(_ExperienceNavigation value)? experienceNavigation,
+    TResult Function(_ExperienceFinish value)? experienceFinish,
+    TResult Function(_Profile value)? profile,
+    TResult Function(_Notifications value)? notifications,
+    TResult Function(_Followers value)? followers,
+    TResult Function(_Following value)? following,
+    TResult Function(_Username value)? username,
+    TResult Function(_Error value)? error,
+  }) {
+    return mainFeed?.call(this);
   }
 
   @override
@@ -2018,6 +2565,25 @@ class _$_Search implements _Search {
 
   @override
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? mainFeed,
+    TResult Function()? search,
+    TResult Function()? recommendations,
+    TResult Function()? experienceNavigation,
+    TResult Function()? experienceFinish,
+    TResult Function()? profile,
+    TResult Function()? notifications,
+    TResult Function()? followers,
+    TResult Function()? following,
+    TResult Function(String username)? username,
+    TResult Function()? error,
+  }) {
+    return search?.call();
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? mainFeed,
@@ -2056,6 +2622,25 @@ class _$_Search implements _Search {
     required TResult Function(_Error value) error,
   }) {
     return search(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_MainFeed value)? mainFeed,
+    TResult Function(_Search value)? search,
+    TResult Function(_Recommendations value)? recommendations,
+    TResult Function(_ExperienceNavigation value)? experienceNavigation,
+    TResult Function(_ExperienceFinish value)? experienceFinish,
+    TResult Function(_Profile value)? profile,
+    TResult Function(_Notifications value)? notifications,
+    TResult Function(_Followers value)? followers,
+    TResult Function(_Following value)? following,
+    TResult Function(_Username value)? username,
+    TResult Function(_Error value)? error,
+  }) {
+    return search?.call(this);
   }
 
   @override
@@ -2144,6 +2729,25 @@ class _$_Recommendations implements _Recommendations {
 
   @override
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? mainFeed,
+    TResult Function()? search,
+    TResult Function()? recommendations,
+    TResult Function()? experienceNavigation,
+    TResult Function()? experienceFinish,
+    TResult Function()? profile,
+    TResult Function()? notifications,
+    TResult Function()? followers,
+    TResult Function()? following,
+    TResult Function(String username)? username,
+    TResult Function()? error,
+  }) {
+    return recommendations?.call();
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? mainFeed,
@@ -2182,6 +2786,25 @@ class _$_Recommendations implements _Recommendations {
     required TResult Function(_Error value) error,
   }) {
     return recommendations(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_MainFeed value)? mainFeed,
+    TResult Function(_Search value)? search,
+    TResult Function(_Recommendations value)? recommendations,
+    TResult Function(_ExperienceNavigation value)? experienceNavigation,
+    TResult Function(_ExperienceFinish value)? experienceFinish,
+    TResult Function(_Profile value)? profile,
+    TResult Function(_Notifications value)? notifications,
+    TResult Function(_Followers value)? followers,
+    TResult Function(_Following value)? following,
+    TResult Function(_Username value)? username,
+    TResult Function(_Error value)? error,
+  }) {
+    return recommendations?.call(this);
   }
 
   @override
@@ -2270,6 +2893,25 @@ class _$_ExperienceNavigation implements _ExperienceNavigation {
 
   @override
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? mainFeed,
+    TResult Function()? search,
+    TResult Function()? recommendations,
+    TResult Function()? experienceNavigation,
+    TResult Function()? experienceFinish,
+    TResult Function()? profile,
+    TResult Function()? notifications,
+    TResult Function()? followers,
+    TResult Function()? following,
+    TResult Function(String username)? username,
+    TResult Function()? error,
+  }) {
+    return experienceNavigation?.call();
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? mainFeed,
@@ -2308,6 +2950,25 @@ class _$_ExperienceNavigation implements _ExperienceNavigation {
     required TResult Function(_Error value) error,
   }) {
     return experienceNavigation(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_MainFeed value)? mainFeed,
+    TResult Function(_Search value)? search,
+    TResult Function(_Recommendations value)? recommendations,
+    TResult Function(_ExperienceNavigation value)? experienceNavigation,
+    TResult Function(_ExperienceFinish value)? experienceFinish,
+    TResult Function(_Profile value)? profile,
+    TResult Function(_Notifications value)? notifications,
+    TResult Function(_Followers value)? followers,
+    TResult Function(_Following value)? following,
+    TResult Function(_Username value)? username,
+    TResult Function(_Error value)? error,
+  }) {
+    return experienceNavigation?.call(this);
   }
 
   @override
@@ -2396,6 +3057,25 @@ class _$_ExperienceFinish implements _ExperienceFinish {
 
   @override
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? mainFeed,
+    TResult Function()? search,
+    TResult Function()? recommendations,
+    TResult Function()? experienceNavigation,
+    TResult Function()? experienceFinish,
+    TResult Function()? profile,
+    TResult Function()? notifications,
+    TResult Function()? followers,
+    TResult Function()? following,
+    TResult Function(String username)? username,
+    TResult Function()? error,
+  }) {
+    return experienceFinish?.call();
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? mainFeed,
@@ -2434,6 +3114,25 @@ class _$_ExperienceFinish implements _ExperienceFinish {
     required TResult Function(_Error value) error,
   }) {
     return experienceFinish(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_MainFeed value)? mainFeed,
+    TResult Function(_Search value)? search,
+    TResult Function(_Recommendations value)? recommendations,
+    TResult Function(_ExperienceNavigation value)? experienceNavigation,
+    TResult Function(_ExperienceFinish value)? experienceFinish,
+    TResult Function(_Profile value)? profile,
+    TResult Function(_Notifications value)? notifications,
+    TResult Function(_Followers value)? followers,
+    TResult Function(_Following value)? following,
+    TResult Function(_Username value)? username,
+    TResult Function(_Error value)? error,
+  }) {
+    return experienceFinish?.call(this);
   }
 
   @override
@@ -2519,6 +3218,25 @@ class _$_Profile implements _Profile {
 
   @override
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? mainFeed,
+    TResult Function()? search,
+    TResult Function()? recommendations,
+    TResult Function()? experienceNavigation,
+    TResult Function()? experienceFinish,
+    TResult Function()? profile,
+    TResult Function()? notifications,
+    TResult Function()? followers,
+    TResult Function()? following,
+    TResult Function(String username)? username,
+    TResult Function()? error,
+  }) {
+    return profile?.call();
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? mainFeed,
@@ -2557,6 +3275,25 @@ class _$_Profile implements _Profile {
     required TResult Function(_Error value) error,
   }) {
     return profile(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_MainFeed value)? mainFeed,
+    TResult Function(_Search value)? search,
+    TResult Function(_Recommendations value)? recommendations,
+    TResult Function(_ExperienceNavigation value)? experienceNavigation,
+    TResult Function(_ExperienceFinish value)? experienceFinish,
+    TResult Function(_Profile value)? profile,
+    TResult Function(_Notifications value)? notifications,
+    TResult Function(_Followers value)? followers,
+    TResult Function(_Following value)? following,
+    TResult Function(_Username value)? username,
+    TResult Function(_Error value)? error,
+  }) {
+    return profile?.call(this);
   }
 
   @override
@@ -2645,6 +3382,25 @@ class _$_Notifications implements _Notifications {
 
   @override
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? mainFeed,
+    TResult Function()? search,
+    TResult Function()? recommendations,
+    TResult Function()? experienceNavigation,
+    TResult Function()? experienceFinish,
+    TResult Function()? profile,
+    TResult Function()? notifications,
+    TResult Function()? followers,
+    TResult Function()? following,
+    TResult Function(String username)? username,
+    TResult Function()? error,
+  }) {
+    return notifications?.call();
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? mainFeed,
@@ -2683,6 +3439,25 @@ class _$_Notifications implements _Notifications {
     required TResult Function(_Error value) error,
   }) {
     return notifications(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_MainFeed value)? mainFeed,
+    TResult Function(_Search value)? search,
+    TResult Function(_Recommendations value)? recommendations,
+    TResult Function(_ExperienceNavigation value)? experienceNavigation,
+    TResult Function(_ExperienceFinish value)? experienceFinish,
+    TResult Function(_Profile value)? profile,
+    TResult Function(_Notifications value)? notifications,
+    TResult Function(_Followers value)? followers,
+    TResult Function(_Following value)? following,
+    TResult Function(_Username value)? username,
+    TResult Function(_Error value)? error,
+  }) {
+    return notifications?.call(this);
   }
 
   @override
@@ -2770,6 +3545,25 @@ class _$_Followers implements _Followers {
 
   @override
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? mainFeed,
+    TResult Function()? search,
+    TResult Function()? recommendations,
+    TResult Function()? experienceNavigation,
+    TResult Function()? experienceFinish,
+    TResult Function()? profile,
+    TResult Function()? notifications,
+    TResult Function()? followers,
+    TResult Function()? following,
+    TResult Function(String username)? username,
+    TResult Function()? error,
+  }) {
+    return followers?.call();
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? mainFeed,
@@ -2808,6 +3602,25 @@ class _$_Followers implements _Followers {
     required TResult Function(_Error value) error,
   }) {
     return followers(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_MainFeed value)? mainFeed,
+    TResult Function(_Search value)? search,
+    TResult Function(_Recommendations value)? recommendations,
+    TResult Function(_ExperienceNavigation value)? experienceNavigation,
+    TResult Function(_ExperienceFinish value)? experienceFinish,
+    TResult Function(_Profile value)? profile,
+    TResult Function(_Notifications value)? notifications,
+    TResult Function(_Followers value)? followers,
+    TResult Function(_Following value)? following,
+    TResult Function(_Username value)? username,
+    TResult Function(_Error value)? error,
+  }) {
+    return followers?.call(this);
   }
 
   @override
@@ -2895,6 +3708,25 @@ class _$_Following implements _Following {
 
   @override
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? mainFeed,
+    TResult Function()? search,
+    TResult Function()? recommendations,
+    TResult Function()? experienceNavigation,
+    TResult Function()? experienceFinish,
+    TResult Function()? profile,
+    TResult Function()? notifications,
+    TResult Function()? followers,
+    TResult Function()? following,
+    TResult Function(String username)? username,
+    TResult Function()? error,
+  }) {
+    return following?.call();
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? mainFeed,
@@ -2933,6 +3765,25 @@ class _$_Following implements _Following {
     required TResult Function(_Error value) error,
   }) {
     return following(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_MainFeed value)? mainFeed,
+    TResult Function(_Search value)? search,
+    TResult Function(_Recommendations value)? recommendations,
+    TResult Function(_ExperienceNavigation value)? experienceNavigation,
+    TResult Function(_ExperienceFinish value)? experienceFinish,
+    TResult Function(_Profile value)? profile,
+    TResult Function(_Notifications value)? notifications,
+    TResult Function(_Followers value)? followers,
+    TResult Function(_Following value)? following,
+    TResult Function(_Username value)? username,
+    TResult Function(_Error value)? error,
+  }) {
+    return following?.call(this);
   }
 
   @override
@@ -3044,6 +3895,25 @@ class _$_Username implements _Username {
 
   @override
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? mainFeed,
+    TResult Function()? search,
+    TResult Function()? recommendations,
+    TResult Function()? experienceNavigation,
+    TResult Function()? experienceFinish,
+    TResult Function()? profile,
+    TResult Function()? notifications,
+    TResult Function()? followers,
+    TResult Function()? following,
+    TResult Function(String username)? username,
+    TResult Function()? error,
+  }) {
+    return username?.call(this.username);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? mainFeed,
@@ -3082,6 +3952,25 @@ class _$_Username implements _Username {
     required TResult Function(_Error value) error,
   }) {
     return username(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_MainFeed value)? mainFeed,
+    TResult Function(_Search value)? search,
+    TResult Function(_Recommendations value)? recommendations,
+    TResult Function(_ExperienceNavigation value)? experienceNavigation,
+    TResult Function(_ExperienceFinish value)? experienceFinish,
+    TResult Function(_Profile value)? profile,
+    TResult Function(_Notifications value)? notifications,
+    TResult Function(_Followers value)? followers,
+    TResult Function(_Following value)? following,
+    TResult Function(_Username value)? username,
+    TResult Function(_Error value)? error,
+  }) {
+    return username?.call(this);
   }
 
   @override
@@ -3172,6 +4061,25 @@ class _$_Error implements _Error {
 
   @override
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? mainFeed,
+    TResult Function()? search,
+    TResult Function()? recommendations,
+    TResult Function()? experienceNavigation,
+    TResult Function()? experienceFinish,
+    TResult Function()? profile,
+    TResult Function()? notifications,
+    TResult Function()? followers,
+    TResult Function()? following,
+    TResult Function(String username)? username,
+    TResult Function()? error,
+  }) {
+    return error?.call();
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? mainFeed,
@@ -3210,6 +4118,25 @@ class _$_Error implements _Error {
     required TResult Function(_Error value) error,
   }) {
     return error(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_MainFeed value)? mainFeed,
+    TResult Function(_Search value)? search,
+    TResult Function(_Recommendations value)? recommendations,
+    TResult Function(_ExperienceNavigation value)? experienceNavigation,
+    TResult Function(_ExperienceFinish value)? experienceFinish,
+    TResult Function(_Profile value)? profile,
+    TResult Function(_Notifications value)? notifications,
+    TResult Function(_Followers value)? followers,
+    TResult Function(_Following value)? following,
+    TResult Function(_Username value)? username,
+    TResult Function(_Error value)? error,
+  }) {
+    return error?.call(this);
   }
 
   @override

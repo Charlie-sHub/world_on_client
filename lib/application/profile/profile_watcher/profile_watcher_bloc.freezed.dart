@@ -1,5 +1,6 @@
+// coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
 
 part of 'profile_watcher_bloc.dart';
 
@@ -42,6 +43,12 @@ mixin _$ProfileWatcherEvent {
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(UniqueId userId)? watchProfileStarted,
+    TResult Function(Either<Failure, User> failureOrUser)? resultsReceived,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(UniqueId userId)? watchProfileStarted,
     TResult Function(Either<Failure, User> failureOrUser)? resultsReceived,
@@ -52,6 +59,12 @@ mixin _$ProfileWatcherEvent {
   TResult map<TResult extends Object?>({
     required TResult Function(_WatchProfileStarted value) watchProfileStarted,
     required TResult Function(_ResultsReceived value) resultsReceived,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_WatchProfileStarted value)? watchProfileStarted,
+    TResult Function(_ResultsReceived value)? resultsReceived,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -155,6 +168,15 @@ class _$_WatchProfileStarted implements _WatchProfileStarted {
 
   @override
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(UniqueId userId)? watchProfileStarted,
+    TResult Function(Either<Failure, User> failureOrUser)? resultsReceived,
+  }) {
+    return watchProfileStarted?.call(userId);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(UniqueId userId)? watchProfileStarted,
     TResult Function(Either<Failure, User> failureOrUser)? resultsReceived,
@@ -173,6 +195,15 @@ class _$_WatchProfileStarted implements _WatchProfileStarted {
     required TResult Function(_ResultsReceived value) resultsReceived,
   }) {
     return watchProfileStarted(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_WatchProfileStarted value)? watchProfileStarted,
+    TResult Function(_ResultsReceived value)? resultsReceived,
+  }) {
+    return watchProfileStarted?.call(this);
   }
 
   @override
@@ -273,6 +304,15 @@ class _$_ResultsReceived implements _ResultsReceived {
 
   @override
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(UniqueId userId)? watchProfileStarted,
+    TResult Function(Either<Failure, User> failureOrUser)? resultsReceived,
+  }) {
+    return resultsReceived?.call(failureOrUser);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(UniqueId userId)? watchProfileStarted,
     TResult Function(Either<Failure, User> failureOrUser)? resultsReceived,
@@ -291,6 +331,15 @@ class _$_ResultsReceived implements _ResultsReceived {
     required TResult Function(_ResultsReceived value) resultsReceived,
   }) {
     return resultsReceived(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_WatchProfileStarted value)? watchProfileStarted,
+    TResult Function(_ResultsReceived value)? resultsReceived,
+  }) {
+    return resultsReceived?.call(this);
   }
 
   @override
@@ -349,6 +398,13 @@ mixin _$ProfileWatcherState {
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function(User user)? newProfileUpdate,
+    TResult Function()? failure,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function(User user)? newProfileUpdate,
@@ -361,6 +417,13 @@ mixin _$ProfileWatcherState {
     required TResult Function(_Initial value) initial,
     required TResult Function(_NewProfileUpdate value) newProfileUpdate,
     required TResult Function(_Failure value) failure,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_NewProfileUpdate value)? newProfileUpdate,
+    TResult Function(_Failure value)? failure,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -437,6 +500,16 @@ class _$_Initial implements _Initial {
 
   @override
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function(User user)? newProfileUpdate,
+    TResult Function()? failure,
+  }) {
+    return initial?.call();
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function(User user)? newProfileUpdate,
@@ -457,6 +530,16 @@ class _$_Initial implements _Initial {
     required TResult Function(_Failure value) failure,
   }) {
     return initial(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_NewProfileUpdate value)? newProfileUpdate,
+    TResult Function(_Failure value)? failure,
+  }) {
+    return initial?.call(this);
   }
 
   @override
@@ -561,6 +644,16 @@ class _$_NewProfileUpdate implements _NewProfileUpdate {
 
   @override
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function(User user)? newProfileUpdate,
+    TResult Function()? failure,
+  }) {
+    return newProfileUpdate?.call(user);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function(User user)? newProfileUpdate,
@@ -581,6 +674,16 @@ class _$_NewProfileUpdate implements _NewProfileUpdate {
     required TResult Function(_Failure value) failure,
   }) {
     return newProfileUpdate(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_NewProfileUpdate value)? newProfileUpdate,
+    TResult Function(_Failure value)? failure,
+  }) {
+    return newProfileUpdate?.call(this);
   }
 
   @override
@@ -654,6 +757,16 @@ class _$_Failure implements _Failure {
 
   @override
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function(User user)? newProfileUpdate,
+    TResult Function()? failure,
+  }) {
+    return failure?.call();
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function(User user)? newProfileUpdate,
@@ -674,6 +787,16 @@ class _$_Failure implements _Failure {
     required TResult Function(_Failure value) failure,
   }) {
     return failure(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_NewProfileUpdate value)? newProfileUpdate,
+    TResult Function(_Failure value)? failure,
+  }) {
+    return failure?.call(this);
   }
 
   @override

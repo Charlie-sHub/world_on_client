@@ -1,5 +1,6 @@
+// coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
 
 part of 'core_data_failure.dart';
 
@@ -74,6 +75,17 @@ mixin _$CoreDataFailure<T> {
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(String errorString)? serverError,
+    TResult Function()? notFoundError,
+    TResult Function(String errorString)? cacheError,
+    TResult Function(String errorString)? geoLocationError,
+    TResult Function(Name username)? usernameAlreadyInUse,
+    TResult Function(EmailAddress email)? emailAlreadyInUse,
+    TResult Function(Name name)? nameAlreadyInUse,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(String errorString)? serverError,
     TResult Function()? notFoundError,
@@ -95,6 +107,17 @@ mixin _$CoreDataFailure<T> {
         usernameAlreadyInUse,
     required TResult Function(EmailAlreadyInUse<T> value) emailAlreadyInUse,
     required TResult Function(NameAlreadyInUse<T> value) nameAlreadyInUse,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(ServerError<T> value)? serverError,
+    TResult Function(NotFoundError<T> value)? notFoundError,
+    TResult Function(CacheError<T> value)? cacheError,
+    TResult Function(GeoLocationError<T> value)? geoLocationError,
+    TResult Function(UsernameAlreadyInUse<T> value)? usernameAlreadyInUse,
+    TResult Function(EmailAlreadyInUse<T> value)? emailAlreadyInUse,
+    TResult Function(NameAlreadyInUse<T> value)? nameAlreadyInUse,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -207,6 +230,20 @@ class _$ServerError<T> implements ServerError<T> {
 
   @override
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(String errorString)? serverError,
+    TResult Function()? notFoundError,
+    TResult Function(String errorString)? cacheError,
+    TResult Function(String errorString)? geoLocationError,
+    TResult Function(Name username)? usernameAlreadyInUse,
+    TResult Function(EmailAddress email)? emailAlreadyInUse,
+    TResult Function(Name name)? nameAlreadyInUse,
+  }) {
+    return serverError?.call(errorString);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(String errorString)? serverError,
     TResult Function()? notFoundError,
@@ -236,6 +273,20 @@ class _$ServerError<T> implements ServerError<T> {
     required TResult Function(NameAlreadyInUse<T> value) nameAlreadyInUse,
   }) {
     return serverError(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(ServerError<T> value)? serverError,
+    TResult Function(NotFoundError<T> value)? notFoundError,
+    TResult Function(CacheError<T> value)? cacheError,
+    TResult Function(GeoLocationError<T> value)? geoLocationError,
+    TResult Function(UsernameAlreadyInUse<T> value)? usernameAlreadyInUse,
+    TResult Function(EmailAlreadyInUse<T> value)? emailAlreadyInUse,
+    TResult Function(NameAlreadyInUse<T> value)? nameAlreadyInUse,
+  }) {
+    return serverError?.call(this);
   }
 
   @override
@@ -319,6 +370,20 @@ class _$NotFoundError<T> implements NotFoundError<T> {
 
   @override
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(String errorString)? serverError,
+    TResult Function()? notFoundError,
+    TResult Function(String errorString)? cacheError,
+    TResult Function(String errorString)? geoLocationError,
+    TResult Function(Name username)? usernameAlreadyInUse,
+    TResult Function(EmailAddress email)? emailAlreadyInUse,
+    TResult Function(Name name)? nameAlreadyInUse,
+  }) {
+    return notFoundError?.call();
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(String errorString)? serverError,
     TResult Function()? notFoundError,
@@ -348,6 +413,20 @@ class _$NotFoundError<T> implements NotFoundError<T> {
     required TResult Function(NameAlreadyInUse<T> value) nameAlreadyInUse,
   }) {
     return notFoundError(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(ServerError<T> value)? serverError,
+    TResult Function(NotFoundError<T> value)? notFoundError,
+    TResult Function(CacheError<T> value)? cacheError,
+    TResult Function(GeoLocationError<T> value)? geoLocationError,
+    TResult Function(UsernameAlreadyInUse<T> value)? usernameAlreadyInUse,
+    TResult Function(EmailAlreadyInUse<T> value)? emailAlreadyInUse,
+    TResult Function(NameAlreadyInUse<T> value)? nameAlreadyInUse,
+  }) {
+    return notFoundError?.call(this);
   }
 
   @override
@@ -452,6 +531,20 @@ class _$CacheError<T> implements CacheError<T> {
 
   @override
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(String errorString)? serverError,
+    TResult Function()? notFoundError,
+    TResult Function(String errorString)? cacheError,
+    TResult Function(String errorString)? geoLocationError,
+    TResult Function(Name username)? usernameAlreadyInUse,
+    TResult Function(EmailAddress email)? emailAlreadyInUse,
+    TResult Function(Name name)? nameAlreadyInUse,
+  }) {
+    return cacheError?.call(errorString);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(String errorString)? serverError,
     TResult Function()? notFoundError,
@@ -481,6 +574,20 @@ class _$CacheError<T> implements CacheError<T> {
     required TResult Function(NameAlreadyInUse<T> value) nameAlreadyInUse,
   }) {
     return cacheError(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(ServerError<T> value)? serverError,
+    TResult Function(NotFoundError<T> value)? notFoundError,
+    TResult Function(CacheError<T> value)? cacheError,
+    TResult Function(GeoLocationError<T> value)? geoLocationError,
+    TResult Function(UsernameAlreadyInUse<T> value)? usernameAlreadyInUse,
+    TResult Function(EmailAlreadyInUse<T> value)? emailAlreadyInUse,
+    TResult Function(NameAlreadyInUse<T> value)? nameAlreadyInUse,
+  }) {
+    return cacheError?.call(this);
   }
 
   @override
@@ -590,6 +697,20 @@ class _$GeoLocationError<T> implements GeoLocationError<T> {
 
   @override
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(String errorString)? serverError,
+    TResult Function()? notFoundError,
+    TResult Function(String errorString)? cacheError,
+    TResult Function(String errorString)? geoLocationError,
+    TResult Function(Name username)? usernameAlreadyInUse,
+    TResult Function(EmailAddress email)? emailAlreadyInUse,
+    TResult Function(Name name)? nameAlreadyInUse,
+  }) {
+    return geoLocationError?.call(errorString);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(String errorString)? serverError,
     TResult Function()? notFoundError,
@@ -619,6 +740,20 @@ class _$GeoLocationError<T> implements GeoLocationError<T> {
     required TResult Function(NameAlreadyInUse<T> value) nameAlreadyInUse,
   }) {
     return geoLocationError(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(ServerError<T> value)? serverError,
+    TResult Function(NotFoundError<T> value)? notFoundError,
+    TResult Function(CacheError<T> value)? cacheError,
+    TResult Function(GeoLocationError<T> value)? geoLocationError,
+    TResult Function(UsernameAlreadyInUse<T> value)? usernameAlreadyInUse,
+    TResult Function(EmailAlreadyInUse<T> value)? emailAlreadyInUse,
+    TResult Function(NameAlreadyInUse<T> value)? nameAlreadyInUse,
+  }) {
+    return geoLocationError?.call(this);
   }
 
   @override
@@ -730,6 +865,20 @@ class _$UsernameAlreadyInUse<T> implements UsernameAlreadyInUse<T> {
 
   @override
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(String errorString)? serverError,
+    TResult Function()? notFoundError,
+    TResult Function(String errorString)? cacheError,
+    TResult Function(String errorString)? geoLocationError,
+    TResult Function(Name username)? usernameAlreadyInUse,
+    TResult Function(EmailAddress email)? emailAlreadyInUse,
+    TResult Function(Name name)? nameAlreadyInUse,
+  }) {
+    return usernameAlreadyInUse?.call(username);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(String errorString)? serverError,
     TResult Function()? notFoundError,
@@ -759,6 +908,20 @@ class _$UsernameAlreadyInUse<T> implements UsernameAlreadyInUse<T> {
     required TResult Function(NameAlreadyInUse<T> value) nameAlreadyInUse,
   }) {
     return usernameAlreadyInUse(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(ServerError<T> value)? serverError,
+    TResult Function(NotFoundError<T> value)? notFoundError,
+    TResult Function(CacheError<T> value)? cacheError,
+    TResult Function(GeoLocationError<T> value)? geoLocationError,
+    TResult Function(UsernameAlreadyInUse<T> value)? usernameAlreadyInUse,
+    TResult Function(EmailAlreadyInUse<T> value)? emailAlreadyInUse,
+    TResult Function(NameAlreadyInUse<T> value)? nameAlreadyInUse,
+  }) {
+    return usernameAlreadyInUse?.call(this);
   }
 
   @override
@@ -869,6 +1032,20 @@ class _$EmailAlreadyInUse<T> implements EmailAlreadyInUse<T> {
 
   @override
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(String errorString)? serverError,
+    TResult Function()? notFoundError,
+    TResult Function(String errorString)? cacheError,
+    TResult Function(String errorString)? geoLocationError,
+    TResult Function(Name username)? usernameAlreadyInUse,
+    TResult Function(EmailAddress email)? emailAlreadyInUse,
+    TResult Function(Name name)? nameAlreadyInUse,
+  }) {
+    return emailAlreadyInUse?.call(email);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(String errorString)? serverError,
     TResult Function()? notFoundError,
@@ -898,6 +1075,20 @@ class _$EmailAlreadyInUse<T> implements EmailAlreadyInUse<T> {
     required TResult Function(NameAlreadyInUse<T> value) nameAlreadyInUse,
   }) {
     return emailAlreadyInUse(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(ServerError<T> value)? serverError,
+    TResult Function(NotFoundError<T> value)? notFoundError,
+    TResult Function(CacheError<T> value)? cacheError,
+    TResult Function(GeoLocationError<T> value)? geoLocationError,
+    TResult Function(UsernameAlreadyInUse<T> value)? usernameAlreadyInUse,
+    TResult Function(EmailAlreadyInUse<T> value)? emailAlreadyInUse,
+    TResult Function(NameAlreadyInUse<T> value)? nameAlreadyInUse,
+  }) {
+    return emailAlreadyInUse?.call(this);
   }
 
   @override
@@ -1007,6 +1198,20 @@ class _$NameAlreadyInUse<T> implements NameAlreadyInUse<T> {
 
   @override
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(String errorString)? serverError,
+    TResult Function()? notFoundError,
+    TResult Function(String errorString)? cacheError,
+    TResult Function(String errorString)? geoLocationError,
+    TResult Function(Name username)? usernameAlreadyInUse,
+    TResult Function(EmailAddress email)? emailAlreadyInUse,
+    TResult Function(Name name)? nameAlreadyInUse,
+  }) {
+    return nameAlreadyInUse?.call(name);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(String errorString)? serverError,
     TResult Function()? notFoundError,
@@ -1036,6 +1241,20 @@ class _$NameAlreadyInUse<T> implements NameAlreadyInUse<T> {
     required TResult Function(NameAlreadyInUse<T> value) nameAlreadyInUse,
   }) {
     return nameAlreadyInUse(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(ServerError<T> value)? serverError,
+    TResult Function(NotFoundError<T> value)? notFoundError,
+    TResult Function(CacheError<T> value)? cacheError,
+    TResult Function(GeoLocationError<T> value)? geoLocationError,
+    TResult Function(UsernameAlreadyInUse<T> value)? usernameAlreadyInUse,
+    TResult Function(EmailAlreadyInUse<T> value)? emailAlreadyInUse,
+    TResult Function(NameAlreadyInUse<T> value)? nameAlreadyInUse,
+  }) {
+    return nameAlreadyInUse?.call(this);
   }
 
   @override
