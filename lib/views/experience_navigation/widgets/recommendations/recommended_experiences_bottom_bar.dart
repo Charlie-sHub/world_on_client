@@ -14,62 +14,65 @@ class RecommendedExperiencesBottomBar extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SizedBox(
-      height: 150,
-      child: BlocProvider(
-        create: (context) => getIt<RecommendedExperiencesWatcherBloc>()
-          ..add(
-            const RecommendedExperiencesWatcherEvent.watchRecommendedExperiencesStarted(),
-          ),
-        child: BlocBuilder<RecommendedExperiencesWatcherBloc, RecommendedExperiencesWatcherState>(
-          builder: (context, state) => state.map(
-            initial: (_) => Container(),
-            loadInProgress: (_) => const WorldOnProgressIndicator(
-              size: 30,
+    return Padding(
+      padding: const EdgeInsets.fromLTRB(0, 5, 0, 10),
+      child: SizedBox(
+        height: 120,
+        child: BlocProvider(
+          create: (context) => getIt<RecommendedExperiencesWatcherBloc>()
+            ..add(
+              const RecommendedExperiencesWatcherEvent.watchRecommendedExperiencesStarted(),
             ),
-            loadSuccess: (state) => ListView.builder(
-              physics: const BouncingScrollPhysics(),
-              scrollDirection: Axis.horizontal,
-              itemCount: state.experiences.size,
-              itemBuilder: (context, index) {
-                final _experience = state.experiences[index];
-                if (_experience.isValid) {
-                  return ProfileExperienceCard(
-                    experience: _experience,
-                    key: Key(_experience.id.toString()),
-                    reloadFunction: () => context.read<RecommendedExperiencesWatcherBloc>().add(
-                          const RecommendedExperiencesWatcherEvent.watchRecommendedExperiencesStarted(),
-                        ),
-                  );
-                } else {
-                  return ErrorCard(
-                    entityType: S.of(context).experience,
-                    valueFailureString: _experience.failureOption.fold(
-                      () => S.of(context).noError,
-                      (failure) => failure.toString(),
-                    ),
-                  );
-                }
-              },
-            ),
-            loadFailure: (state) => InkWell(
-              onTap: () => context.read<RecommendedExperiencesWatcherBloc>().add(
-                    const RecommendedExperiencesWatcherEvent.watchRecommendedExperiencesStarted(),
-                  ),
-              child: Center(
-                child: state.failure.maybeMap(
-                  coreData: (failure) => failure.coreDataFailure.maybeMap(
-                    notFoundError: (_) => Text(
-                      S.of(context).notFoundError,
-                      style: const TextStyle(
-                        fontSize: 20,
-                        fontWeight: FontWeight.w800,
+          child: BlocBuilder<RecommendedExperiencesWatcherBloc, RecommendedExperiencesWatcherState>(
+            builder: (context, state) => state.map(
+              initial: (_) => Container(),
+              loadInProgress: (_) => const WorldOnProgressIndicator(
+                size: 30,
+              ),
+              loadSuccess: (state) => ListView.builder(
+                physics: const BouncingScrollPhysics(),
+                scrollDirection: Axis.horizontal,
+                itemCount: state.experiences.size,
+                itemBuilder: (context, index) {
+                  final _experience = state.experiences[index];
+                  if (_experience.isValid) {
+                    return ProfileExperienceCard(
+                      experience: _experience,
+                      key: Key(_experience.id.toString()),
+                      reloadFunction: () => context.read<RecommendedExperiencesWatcherBloc>().add(
+                            const RecommendedExperiencesWatcherEvent.watchRecommendedExperiencesStarted(),
+                          ),
+                    );
+                  } else {
+                    return ErrorCard(
+                      entityType: S.of(context).experience,
+                      valueFailureString: _experience.failureOption.fold(
+                        () => S.of(context).noError,
+                        (failure) => failure.toString(),
                       ),
-                      textAlign: TextAlign.center,
+                    );
+                  }
+                },
+              ),
+              loadFailure: (state) => InkWell(
+                onTap: () => context.read<RecommendedExperiencesWatcherBloc>().add(
+                      const RecommendedExperiencesWatcherEvent.watchRecommendedExperiencesStarted(),
                     ),
-                    orElse: () {},
+                child: Center(
+                  child: state.failure.maybeMap(
+                    coreData: (failure) => failure.coreDataFailure.maybeMap(
+                      notFoundError: (_) => Text(
+                        S.of(context).notFoundError,
+                        style: const TextStyle(
+                          fontSize: 20,
+                          fontWeight: FontWeight.w800,
+                        ),
+                        textAlign: TextAlign.center,
+                      ),
+                      orElse: () {},
+                    ),
+                    orElse: () => CriticalErrorDisplay(failure: state.failure),
                   ),
-                  orElse: () => CriticalErrorDisplay(failure: state.failure),
                 ),
               ),
             ),
