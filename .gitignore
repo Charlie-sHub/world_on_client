@@ -31,6 +31,12 @@
 .pub/
 /build/
 
+# Generated files
+lib/injection.config.dart
+*.freezed.dart
+*.g.dart
+*.mocks.dart
+
 # Web related
 lib/generated_plugin_registrant.dart
 
