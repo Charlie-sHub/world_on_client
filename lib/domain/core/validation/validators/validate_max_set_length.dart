@@ -9,9 +9,11 @@ Either<ValueFailure<KtSet<T>>, KtSet<T>> validateMaxSetLength<T>({
   if (input.size <= maxLength) {
     return right(input);
   } else {
-    return left(ValueFailure.collectionExceedsLength(
-      failedValue: input,
-      maxLength: maxLength,
-    ));
+    return left(
+      ValueFailure.collectionExceedsLength(
+        failedValue: input,
+        maxLength: maxLength,
+      ),
+    );
   }
 }

@@ -45,7 +45,7 @@ class RewardUser implements AsyncUseCase<Map, Params> {
           }
         }
         final _userXPPost = _xpAwarded + _userXPPre;
-        final _userLevelPost = Levels.levelAt(_userXPPost);
+        final _userLevelPost = levelAt(_userXPPost);
         _leveledUp = _userLevelPost > _userLevelPre;
         final _resultMap = {
           "leveledUp": _leveledUp,

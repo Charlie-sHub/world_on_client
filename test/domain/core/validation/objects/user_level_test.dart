@@ -31,8 +31,8 @@ void main() {
       // Arrange
       const _level = 99;
       // Act
-      final _xpRequired = Levels.experiencePointsRequired(_level);
-      final _levelAt = Levels.levelAt(_xpRequired);
+      final _xpRequired = experiencePointsRequired(_level);
+      final _levelAt = levelAt(_xpRequired);
       // Assert
       expect(_levelAt, _level);
     },

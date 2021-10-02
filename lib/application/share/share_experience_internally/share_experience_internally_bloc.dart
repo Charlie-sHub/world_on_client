@@ -28,7 +28,8 @@ class ShareExperienceInternallyBloc
 
   @override
   Stream<ShareExperienceInternallyState> mapEventToState(
-      ShareExperienceInternallyEvent event) async* {
+    ShareExperienceInternallyEvent event,
+  ) async* {
     yield* event.map(
       initialized: _onInitialized,
       removedUser: _onRemovedUser,

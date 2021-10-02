@@ -50,7 +50,11 @@ class SimpleUser with _$SimpleUser {
       );
 
   Option<ValueFailure<dynamic>> get failureOption {
-    return name.failureOrUnit.andThen(username.failureOrUnit).andThen(level.failureOrUnit).andThen(experiencePoints.failureOrUnit).fold(
+    return name.failureOrUnit
+        .andThen(username.failureOrUnit)
+        .andThen(level.failureOrUnit)
+        .andThen(experiencePoints.failureOrUnit)
+        .fold(
           (failure) => some(failure),
           (_) => none(),
         );
@@ -66,10 +70,10 @@ class SimpleUser with _$SimpleUser {
   bool get isValid => failureOption.isNone();
 
   double get percentageToNextLevel {
-    final _nextLevelRequirements = Levels.experiencePointsRequired(level.getOrCrash() + 1);
+    final _nextLevelRequirements = experiencePointsRequired(level.getOrCrash() + 1);
     int _totalToCurrentLevelRequirements = 0;
     for (int i = 0; i <= level.getOrCrash(); i++) {
-      _totalToCurrentLevelRequirements += Levels.experiencePointsRequired(i);
+      _totalToCurrentLevelRequirements += experiencePointsRequired(i);
     }
     final _hadToNextLevel = experiencePoints.getOrCrash() - _totalToCurrentLevelRequirements;
     final _result = _hadToNextLevel / _nextLevelRequirements;

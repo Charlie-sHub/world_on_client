@@ -9,9 +9,11 @@ Either<ValueFailure<KtList<T>>, KtList<T>> validateMaxListLength<T>({
   if (input.size <= maxLength) {
     return right(input);
   } else {
-    return left(ValueFailure.collectionExceedsLength(
-      failedValue: input,
-      maxLength: maxLength,
-    ));
+    return left(
+      ValueFailure.collectionExceedsLength(
+        failedValue: input,
+        maxLength: maxLength,
+      ),
+    );
   }
 }

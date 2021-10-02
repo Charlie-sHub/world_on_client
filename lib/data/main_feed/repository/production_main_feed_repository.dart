@@ -136,7 +136,8 @@ class ProductionMainFeedRepository implements MainFeedRepositoryInterface {
       _logger.e("FormatException: ${error.message}");
       return Failure.coreDomain(
         CoreDomainFailure.unknownDomainLayerError(
-            errorString: "Format exception: ${error.message}"),
+          errorString: "Format exception: ${error.message}",
+        ),
       );
     } else {
       _logger.e("Unknown error: ${error.runtimeType}");

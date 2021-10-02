@@ -5,9 +5,11 @@ Either<ValueFailure<String>, String> validateStringLength({required String input
   if (input.length <= length) {
     return right(input);
   } else {
-    return left(ValueFailure.stringExceedsLength(
-      failedValue: input,
-      maxLength: length,
-    ));
+    return left(
+      ValueFailure.stringExceedsLength(
+        failedValue: input,
+        maxLength: length,
+      ),
+    );
   }
 }
