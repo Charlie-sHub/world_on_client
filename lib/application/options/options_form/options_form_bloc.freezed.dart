@@ -150,15 +150,14 @@ class _$_Initialized implements _Initialized {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _Initialized &&
+        (other.runtimeType == runtimeType &&
+            other is _Initialized &&
             (identical(other.optionsOption, optionsOption) ||
-                const DeepCollectionEquality()
-                    .equals(other.optionsOption, optionsOption)));
+                other.optionsOption == optionsOption));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(optionsOption);
+  int get hashCode => Object.hash(runtimeType, optionsOption);
 
   @JsonKey(ignore: true)
   @override
@@ -237,7 +236,7 @@ class _$_Initialized implements _Initialized {
 abstract class _Initialized implements OptionsFormEvent {
   const factory _Initialized(Option<Options> optionsOption) = _$_Initialized;
 
-  Option<Options> get optionsOption => throw _privateConstructorUsedError;
+  Option<Options> get optionsOption;
   @JsonKey(ignore: true)
   _$InitializedCopyWith<_Initialized> get copyWith =>
       throw _privateConstructorUsedError;
@@ -291,15 +290,14 @@ class _$_LanguageCodeChanged implements _LanguageCodeChanged {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _LanguageCodeChanged &&
+        (other.runtimeType == runtimeType &&
+            other is _LanguageCodeChanged &&
             (identical(other.languageCode, languageCode) ||
-                const DeepCollectionEquality()
-                    .equals(other.languageCode, languageCode)));
+                other.languageCode == languageCode));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(languageCode);
+  int get hashCode => Object.hash(runtimeType, languageCode);
 
   @JsonKey(ignore: true)
   @override
@@ -380,7 +378,7 @@ abstract class _LanguageCodeChanged implements OptionsFormEvent {
   const factory _LanguageCodeChanged(String languageCode) =
       _$_LanguageCodeChanged;
 
-  String get languageCode => throw _privateConstructorUsedError;
+  String get languageCode;
   @JsonKey(ignore: true)
   _$LanguageCodeChangedCopyWith<_LanguageCodeChanged> get copyWith =>
       throw _privateConstructorUsedError;
@@ -416,7 +414,8 @@ class _$_Submitted implements _Submitted {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _Submitted);
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _Submitted);
   }
 
   @override
@@ -669,28 +668,20 @@ class _$_OptionsFormState implements _OptionsFormState {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _OptionsFormState &&
-            (identical(other.options, options) ||
-                const DeepCollectionEquality()
-                    .equals(other.options, options)) &&
+        (other.runtimeType == runtimeType &&
+            other is _OptionsFormState &&
+            (identical(other.options, options) || other.options == options) &&
             (identical(other.showErrorMessages, showErrorMessages) ||
-                const DeepCollectionEquality()
-                    .equals(other.showErrorMessages, showErrorMessages)) &&
+                other.showErrorMessages == showErrorMessages) &&
             (identical(other.isSubmitting, isSubmitting) ||
-                const DeepCollectionEquality()
-                    .equals(other.isSubmitting, isSubmitting)) &&
+                other.isSubmitting == isSubmitting) &&
             (identical(other.failureOrSuccessOption, failureOrSuccessOption) ||
-                const DeepCollectionEquality().equals(
-                    other.failureOrSuccessOption, failureOrSuccessOption)));
+                other.failureOrSuccessOption == failureOrSuccessOption));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(options) ^
-      const DeepCollectionEquality().hash(showErrorMessages) ^
-      const DeepCollectionEquality().hash(isSubmitting) ^
-      const DeepCollectionEquality().hash(failureOrSuccessOption);
+  int get hashCode => Object.hash(runtimeType, options, showErrorMessages,
+      isSubmitting, failureOrSuccessOption);
 
   @JsonKey(ignore: true)
   @override
@@ -707,14 +698,13 @@ abstract class _OptionsFormState implements OptionsFormState {
       _$_OptionsFormState;
 
   @override
-  Options get options => throw _privateConstructorUsedError;
+  Options get options;
   @override
-  bool get showErrorMessages => throw _privateConstructorUsedError;
+  bool get showErrorMessages;
   @override
-  bool get isSubmitting => throw _privateConstructorUsedError;
+  bool get isSubmitting;
   @override
-  Option<Either<Failure, Unit>> get failureOrSuccessOption =>
-      throw _privateConstructorUsedError;
+  Option<Either<Failure, Unit>> get failureOrSuccessOption;
   @override
   @JsonKey(ignore: true)
   _$OptionsFormStateCopyWith<_OptionsFormState> get copyWith =>

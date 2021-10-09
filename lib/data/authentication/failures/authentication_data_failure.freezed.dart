@@ -119,7 +119,8 @@ class _$InvalidCredentials<T> implements InvalidCredentials<T> {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is InvalidCredentials<T>);
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is InvalidCredentials<T>);
   }
 
   @override
@@ -223,7 +224,8 @@ class _$UnregisteredUser<T> implements UnregisteredUser<T> {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is UnregisteredUser<T>);
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is UnregisteredUser<T>);
   }
 
   @override

@@ -162,14 +162,13 @@ class _$_NameChanged implements _NameChanged {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _NameChanged &&
-            (identical(other.name, name) ||
-                const DeepCollectionEquality().equals(other.name, name)));
+        (other.runtimeType == runtimeType &&
+            other is _NameChanged &&
+            (identical(other.name, name) || other.name == name));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(name);
+  int get hashCode => Object.hash(runtimeType, name);
 
   @JsonKey(ignore: true)
   @override
@@ -254,7 +253,7 @@ class _$_NameChanged implements _NameChanged {
 abstract class _NameChanged implements RewardFormEvent {
   const factory _NameChanged(String name) = _$_NameChanged;
 
-  String get name => throw _privateConstructorUsedError;
+  String get name;
   @JsonKey(ignore: true)
   _$NameChangedCopyWith<_NameChanged> get copyWith =>
       throw _privateConstructorUsedError;
@@ -308,15 +307,14 @@ class _$_DescriptionChanged implements _DescriptionChanged {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _DescriptionChanged &&
+        (other.runtimeType == runtimeType &&
+            other is _DescriptionChanged &&
             (identical(other.description, description) ||
-                const DeepCollectionEquality()
-                    .equals(other.description, description)));
+                other.description == description));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(description);
+  int get hashCode => Object.hash(runtimeType, description);
 
   @JsonKey(ignore: true)
   @override
@@ -401,7 +399,7 @@ class _$_DescriptionChanged implements _DescriptionChanged {
 abstract class _DescriptionChanged implements RewardFormEvent {
   const factory _DescriptionChanged(String description) = _$_DescriptionChanged;
 
-  String get description => throw _privateConstructorUsedError;
+  String get description;
   @JsonKey(ignore: true)
   _$DescriptionChangedCopyWith<_DescriptionChanged> get copyWith =>
       throw _privateConstructorUsedError;
@@ -455,15 +453,14 @@ class _$_ImageChanged implements _ImageChanged {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _ImageChanged &&
+        (other.runtimeType == runtimeType &&
+            other is _ImageChanged &&
             (identical(other.imageFile, imageFile) ||
-                const DeepCollectionEquality()
-                    .equals(other.imageFile, imageFile)));
+                other.imageFile == imageFile));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(imageFile);
+  int get hashCode => Object.hash(runtimeType, imageFile);
 
   @JsonKey(ignore: true)
   @override
@@ -548,7 +545,7 @@ class _$_ImageChanged implements _ImageChanged {
 abstract class _ImageChanged implements RewardFormEvent {
   const factory _ImageChanged(File imageFile) = _$_ImageChanged;
 
-  File get imageFile => throw _privateConstructorUsedError;
+  File get imageFile;
   @JsonKey(ignore: true)
   _$ImageChangedCopyWith<_ImageChanged> get copyWith =>
       throw _privateConstructorUsedError;
@@ -583,7 +580,8 @@ class _$_Submitted implements _Submitted {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _Submitted);
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _Submitted);
   }
 
   @override
@@ -817,23 +815,18 @@ class _$_RewardFormState implements _RewardFormState {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _RewardFormState &&
-            (identical(other.reward, reward) ||
-                const DeepCollectionEquality().equals(other.reward, reward)) &&
+        (other.runtimeType == runtimeType &&
+            other is _RewardFormState &&
+            (identical(other.reward, reward) || other.reward == reward) &&
             (identical(other.showErrorMessages, showErrorMessages) ||
-                const DeepCollectionEquality()
-                    .equals(other.showErrorMessages, showErrorMessages)) &&
+                other.showErrorMessages == showErrorMessages) &&
             (identical(other.isSubmitting, isSubmitting) ||
-                const DeepCollectionEquality()
-                    .equals(other.isSubmitting, isSubmitting)));
+                other.isSubmitting == isSubmitting));
   }
 
   @override
   int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(reward) ^
-      const DeepCollectionEquality().hash(showErrorMessages) ^
-      const DeepCollectionEquality().hash(isSubmitting);
+      Object.hash(runtimeType, reward, showErrorMessages, isSubmitting);
 
   @JsonKey(ignore: true)
   @override
@@ -848,11 +841,11 @@ abstract class _RewardFormState implements RewardFormState {
       required bool isSubmitting}) = _$_RewardFormState;
 
   @override
-  Reward get reward => throw _privateConstructorUsedError;
+  Reward get reward;
   @override
-  bool get showErrorMessages => throw _privateConstructorUsedError;
+  bool get showErrorMessages;
   @override
-  bool get isSubmitting => throw _privateConstructorUsedError;
+  bool get isSubmitting;
   @override
   @JsonKey(ignore: true)
   _$RewardFormStateCopyWith<_RewardFormState> get copyWith =>

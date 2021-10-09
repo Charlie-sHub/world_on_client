@@ -194,19 +194,16 @@ class _$_Initialized implements _Initialized {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _Initialized &&
-            (identical(other.tag, tag) ||
-                const DeepCollectionEquality().equals(other.tag, tag)) &&
-            (identical(other.interestsIds, interestsIds) ||
-                const DeepCollectionEquality()
-                    .equals(other.interestsIds, interestsIds)));
+        (other.runtimeType == runtimeType &&
+            other is _Initialized &&
+            (identical(other.tag, tag) || other.tag == tag) &&
+            const DeepCollectionEquality()
+                .equals(other.interestsIds, interestsIds));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(tag) ^
-      const DeepCollectionEquality().hash(interestsIds);
+  int get hashCode => Object.hash(
+      runtimeType, tag, const DeepCollectionEquality().hash(interestsIds));
 
   @JsonKey(ignore: true)
   @override
@@ -288,8 +285,8 @@ abstract class _Initialized implements TagCardActorEvent {
       _$_Initialized;
 
   @override
-  Tag get tag => throw _privateConstructorUsedError;
-  Set<UniqueId> get interestsIds => throw _privateConstructorUsedError;
+  Tag get tag;
+  Set<UniqueId> get interestsIds;
   @override
   @JsonKey(ignore: true)
   _$InitializedCopyWith<_Initialized> get copyWith =>
@@ -349,14 +346,13 @@ class _$_DismissedFromInterests implements _DismissedFromInterests {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _DismissedFromInterests &&
-            (identical(other.tag, tag) ||
-                const DeepCollectionEquality().equals(other.tag, tag)));
+        (other.runtimeType == runtimeType &&
+            other is _DismissedFromInterests &&
+            (identical(other.tag, tag) || other.tag == tag));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(tag);
+  int get hashCode => Object.hash(runtimeType, tag);
 
   @JsonKey(ignore: true)
   @override
@@ -438,7 +434,7 @@ abstract class _DismissedFromInterests implements TagCardActorEvent {
   const factory _DismissedFromInterests(Tag tag) = _$_DismissedFromInterests;
 
   @override
-  Tag get tag => throw _privateConstructorUsedError;
+  Tag get tag;
   @override
   @JsonKey(ignore: true)
   _$DismissedFromInterestsCopyWith<_DismissedFromInterests> get copyWith =>
@@ -498,14 +494,13 @@ class _$_AddedToInterests implements _AddedToInterests {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _AddedToInterests &&
-            (identical(other.tag, tag) ||
-                const DeepCollectionEquality().equals(other.tag, tag)));
+        (other.runtimeType == runtimeType &&
+            other is _AddedToInterests &&
+            (identical(other.tag, tag) || other.tag == tag));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(tag);
+  int get hashCode => Object.hash(runtimeType, tag);
 
   @JsonKey(ignore: true)
   @override
@@ -586,7 +581,7 @@ abstract class _AddedToInterests implements TagCardActorEvent {
   const factory _AddedToInterests(Tag tag) = _$_AddedToInterests;
 
   @override
-  Tag get tag => throw _privateConstructorUsedError;
+  Tag get tag;
   @override
   @JsonKey(ignore: true)
   _$AddedToInterestsCopyWith<_AddedToInterests> get copyWith =>
@@ -760,7 +755,8 @@ class _$_Initial implements _Initial {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _Initial);
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _Initial);
   }
 
   @override
@@ -900,7 +896,8 @@ class _$_InInterests implements _InInterests {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _InInterests);
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _InInterests);
   }
 
   @override
@@ -1040,7 +1037,8 @@ class _$_NotInInterests implements _NotInInterests {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _NotInInterests);
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _NotInInterests);
   }
 
   @override
@@ -1180,7 +1178,8 @@ class _$_ActionInProgress implements _ActionInProgress {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _ActionInProgress);
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _ActionInProgress);
   }
 
   @override
@@ -1320,7 +1319,8 @@ class _$_AdditionSuccess implements _AdditionSuccess {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _AdditionSuccess);
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _AdditionSuccess);
   }
 
   @override
@@ -1486,14 +1486,13 @@ class _$_AdditionFailure implements _AdditionFailure {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _AdditionFailure &&
-            (identical(other.failure, failure) ||
-                const DeepCollectionEquality().equals(other.failure, failure)));
+        (other.runtimeType == runtimeType &&
+            other is _AdditionFailure &&
+            (identical(other.failure, failure) || other.failure == failure));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(failure);
+  int get hashCode => Object.hash(runtimeType, failure);
 
   @JsonKey(ignore: true)
   @override
@@ -1602,7 +1601,7 @@ class _$_AdditionFailure implements _AdditionFailure {
 abstract class _AdditionFailure implements TagCardActorState {
   const factory _AdditionFailure(Failure<dynamic> failure) = _$_AdditionFailure;
 
-  Failure<dynamic> get failure => throw _privateConstructorUsedError;
+  Failure<dynamic> get failure;
   @JsonKey(ignore: true)
   _$AdditionFailureCopyWith<_AdditionFailure> get copyWith =>
       throw _privateConstructorUsedError;
@@ -1639,7 +1638,8 @@ class _$_DismissalSuccess implements _DismissalSuccess {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _DismissalSuccess);
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _DismissalSuccess);
   }
 
   @override
@@ -1805,14 +1805,13 @@ class _$_DismissalFailure implements _DismissalFailure {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _DismissalFailure &&
-            (identical(other.failure, failure) ||
-                const DeepCollectionEquality().equals(other.failure, failure)));
+        (other.runtimeType == runtimeType &&
+            other is _DismissalFailure &&
+            (identical(other.failure, failure) || other.failure == failure));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(failure);
+  int get hashCode => Object.hash(runtimeType, failure);
 
   @JsonKey(ignore: true)
   @override
@@ -1922,7 +1921,7 @@ abstract class _DismissalFailure implements TagCardActorState {
   const factory _DismissalFailure(Failure<dynamic> failure) =
       _$_DismissalFailure;
 
-  Failure<dynamic> get failure => throw _privateConstructorUsedError;
+  Failure<dynamic> get failure;
   @JsonKey(ignore: true)
   _$DismissalFailureCopyWith<_DismissalFailure> get copyWith =>
       throw _privateConstructorUsedError;

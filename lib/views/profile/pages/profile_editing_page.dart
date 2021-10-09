@@ -27,7 +27,6 @@ class ProfileEditingPage extends StatelessWidget {
         preferredSize: const Size.fromHeight(kToolbarHeight - 15),
         child: AppBar(
           elevation: 0,
-          backwardsCompatibility: false,
           centerTitle: true,
           title: Text(
             S.of(context).editingProfileTitle,
@@ -47,7 +46,8 @@ class ProfileEditingPage extends StatelessWidget {
           ),
         child: user.failureOption.fold(
           () => BlocConsumer<ProfileEditingFormBloc, ProfileEditingFormState>(
-            listenWhen: (previous, current) => previous.failureOrSuccessOption != current.failureOrSuccessOption,
+            listenWhen: (previous, current) =>
+                previous.failureOrSuccessOption != current.failureOrSuccessOption,
             listener: (context, state) => state.failureOrSuccessOption.fold(
               () {},
               (either) => either.fold(

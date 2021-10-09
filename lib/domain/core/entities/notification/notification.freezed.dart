@@ -257,40 +257,25 @@ class _$_Notification extends _Notification {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _Notification &&
-            (identical(other.id, id) ||
-                const DeepCollectionEquality().equals(other.id, id)) &&
-            (identical(other.sender, sender) ||
-                const DeepCollectionEquality().equals(other.sender, sender)) &&
+        (other.runtimeType == runtimeType &&
+            other is _Notification &&
+            (identical(other.id, id) || other.id == id) &&
+            (identical(other.sender, sender) || other.sender == sender) &&
             (identical(other.receiverId, receiverId) ||
-                const DeepCollectionEquality()
-                    .equals(other.receiverId, receiverId)) &&
+                other.receiverId == receiverId) &&
             (identical(other.description, description) ||
-                const DeepCollectionEquality()
-                    .equals(other.description, description)) &&
-            (identical(other.seen, seen) ||
-                const DeepCollectionEquality().equals(other.seen, seen)) &&
+                other.description == description) &&
+            (identical(other.seen, seen) || other.seen == seen) &&
             (identical(other.creationDate, creationDate) ||
-                const DeepCollectionEquality()
-                    .equals(other.creationDate, creationDate)) &&
-            (identical(other.type, type) ||
-                const DeepCollectionEquality().equals(other.type, type)) &&
+                other.creationDate == creationDate) &&
+            (identical(other.type, type) || other.type == type) &&
             (identical(other.experienceOption, experienceOption) ||
-                const DeepCollectionEquality()
-                    .equals(other.experienceOption, experienceOption)));
+                other.experienceOption == experienceOption));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(id) ^
-      const DeepCollectionEquality().hash(sender) ^
-      const DeepCollectionEquality().hash(receiverId) ^
-      const DeepCollectionEquality().hash(description) ^
-      const DeepCollectionEquality().hash(seen) ^
-      const DeepCollectionEquality().hash(creationDate) ^
-      const DeepCollectionEquality().hash(type) ^
-      const DeepCollectionEquality().hash(experienceOption);
+  int get hashCode => Object.hash(runtimeType, id, sender, receiverId,
+      description, seen, creationDate, type, experienceOption);
 
   @JsonKey(ignore: true)
   @override
@@ -311,21 +296,21 @@ abstract class _Notification extends Notification {
   const _Notification._() : super._();
 
   @override
-  UniqueId get id => throw _privateConstructorUsedError;
+  UniqueId get id;
   @override
-  SimpleUser get sender => throw _privateConstructorUsedError;
+  SimpleUser get sender;
   @override
-  UniqueId get receiverId => throw _privateConstructorUsedError;
+  UniqueId get receiverId;
   @override
-  EntityDescription get description => throw _privateConstructorUsedError;
+  EntityDescription get description;
   @override
-  bool get seen => throw _privateConstructorUsedError;
+  bool get seen;
   @override
-  PastDate get creationDate => throw _privateConstructorUsedError;
+  PastDate get creationDate;
   @override
-  NotificationType get type => throw _privateConstructorUsedError;
+  NotificationType get type;
   @override
-  Option<Experience> get experienceOption => throw _privateConstructorUsedError;
+  Option<Experience> get experienceOption;
   @override
   @JsonKey(ignore: true)
   _$NotificationCopyWith<_Notification> get copyWith =>

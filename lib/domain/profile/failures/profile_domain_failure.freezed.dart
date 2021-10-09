@@ -119,7 +119,8 @@ class _$FollowItself<T> implements FollowItself<T> {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is FollowItself<T>);
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is FollowItself<T>);
   }
 
   @override
@@ -223,7 +224,8 @@ class _$BlockItself<T> implements BlockItself<T> {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is BlockItself<T>);
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is BlockItself<T>);
   }
 
   @override

@@ -131,7 +131,8 @@ class _$_Initialized implements _Initialized {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _Initialized);
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _Initialized);
   }
 
   @override
@@ -258,16 +259,14 @@ class _$_SearchTermChanged implements _SearchTermChanged {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _SearchTermChanged &&
+        (other.runtimeType == runtimeType &&
+            other is _SearchTermChanged &&
             (identical(other.searchTermString, searchTermString) ||
-                const DeepCollectionEquality()
-                    .equals(other.searchTermString, searchTermString)));
+                other.searchTermString == searchTermString));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(searchTermString);
+  int get hashCode => Object.hash(runtimeType, searchTermString);
 
   @JsonKey(ignore: true)
   @override
@@ -347,7 +346,7 @@ abstract class _SearchTermChanged implements SearchToShareEvent {
   const factory _SearchTermChanged(String searchTermString) =
       _$_SearchTermChanged;
 
-  String get searchTermString => throw _privateConstructorUsedError;
+  String get searchTermString;
   @JsonKey(ignore: true)
   _$SearchTermChangedCopyWith<_SearchTermChanged> get copyWith =>
       throw _privateConstructorUsedError;
@@ -383,7 +382,8 @@ class _$_Submitted implements _Submitted {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _Submitted);
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _Submitted);
   }
 
   @override
@@ -624,28 +624,21 @@ class _$_SearchToShareState implements _SearchToShareState {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _SearchToShareState &&
+        (other.runtimeType == runtimeType &&
+            other is _SearchToShareState &&
             (identical(other.searchTerm, searchTerm) ||
-                const DeepCollectionEquality()
-                    .equals(other.searchTerm, searchTerm)) &&
+                other.searchTerm == searchTerm) &&
             (identical(other.searchedUsers, searchedUsers) ||
-                const DeepCollectionEquality()
-                    .equals(other.searchedUsers, searchedUsers)) &&
+                other.searchedUsers == searchedUsers) &&
             (identical(other.allUsers, allUsers) ||
-                const DeepCollectionEquality()
-                    .equals(other.allUsers, allUsers)) &&
+                other.allUsers == allUsers) &&
             (identical(other.failureOrSuccessOption, failureOrSuccessOption) ||
-                const DeepCollectionEquality().equals(
-                    other.failureOrSuccessOption, failureOrSuccessOption)));
+                other.failureOrSuccessOption == failureOrSuccessOption));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(searchTerm) ^
-      const DeepCollectionEquality().hash(searchedUsers) ^
-      const DeepCollectionEquality().hash(allUsers) ^
-      const DeepCollectionEquality().hash(failureOrSuccessOption);
+  int get hashCode => Object.hash(
+      runtimeType, searchTerm, searchedUsers, allUsers, failureOrSuccessOption);
 
   @JsonKey(ignore: true)
   @override
@@ -661,14 +654,13 @@ abstract class _SearchToShareState implements SearchToShareState {
       required Option<Failure> failureOrSuccessOption}) = _$_SearchToShareState;
 
   @override
-  SearchTerm get searchTerm => throw _privateConstructorUsedError;
+  SearchTerm get searchTerm;
   @override
-  KtList<User> get searchedUsers => throw _privateConstructorUsedError;
+  KtList<User> get searchedUsers;
   @override
-  KtList<User> get allUsers => throw _privateConstructorUsedError;
+  KtList<User> get allUsers;
   @override
-  Option<Failure> get failureOrSuccessOption =>
-      throw _privateConstructorUsedError;
+  Option<Failure> get failureOrSuccessOption;
   @override
   @JsonKey(ignore: true)
   _$SearchToShareStateCopyWith<_SearchToShareState> get copyWith =>

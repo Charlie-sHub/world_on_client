@@ -138,15 +138,14 @@ class _$_Initialized implements _Initialized {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _Initialized &&
+        (other.runtimeType == runtimeType &&
+            other is _Initialized &&
             (identical(other.isNewUser, isNewUser) ||
-                const DeepCollectionEquality()
-                    .equals(other.isNewUser, isNewUser)));
+                other.isNewUser == isNewUser));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(isNewUser);
+  int get hashCode => Object.hash(runtimeType, isNewUser);
 
   @JsonKey(ignore: true)
   @override
@@ -219,7 +218,7 @@ class _$_Initialized implements _Initialized {
 abstract class _Initialized implements MainPageShowCaseEvent {
   const factory _Initialized({required bool isNewUser}) = _$_Initialized;
 
-  bool get isNewUser => throw _privateConstructorUsedError;
+  bool get isNewUser;
   @JsonKey(ignore: true)
   _$InitializedCopyWith<_Initialized> get copyWith =>
       throw _privateConstructorUsedError;
@@ -254,7 +253,8 @@ class _$_Finished implements _Finished {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _Finished);
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _Finished);
   }
 
   @override
@@ -441,7 +441,8 @@ class _$_Initial implements _Initial {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _Initial);
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _Initial);
   }
 
   @override
@@ -549,7 +550,8 @@ class _$_Show implements _Show {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _Show);
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _Show);
   }
 
   @override
@@ -657,7 +659,8 @@ class _$_ShowNot implements _ShowNot {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _ShowNot);
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _ShowNot);
   }
 
   @override

@@ -27,7 +27,7 @@ class _$CoinsDtoTearOff {
     );
   }
 
-  CoinsDto fromJson(Map<String, Object> json) {
+  CoinsDto fromJson(Map<String, Object?> json) {
     return CoinsDto.fromJson(json);
   }
 }
@@ -122,16 +122,14 @@ class _$_CoinsDto extends _CoinsDto {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _CoinsDto &&
+        (other.runtimeType == runtimeType &&
+            other is _CoinsDto &&
             (identical(other.tenCoinsProductId, tenCoinsProductId) ||
-                const DeepCollectionEquality()
-                    .equals(other.tenCoinsProductId, tenCoinsProductId)));
+                other.tenCoinsProductId == tenCoinsProductId));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(tenCoinsProductId);
+  int get hashCode => Object.hash(runtimeType, tenCoinsProductId);
 
   @JsonKey(ignore: true)
   @override
@@ -151,7 +149,7 @@ abstract class _CoinsDto extends CoinsDto {
   factory _CoinsDto.fromJson(Map<String, dynamic> json) = _$_CoinsDto.fromJson;
 
   @override
-  String get tenCoinsProductId => throw _privateConstructorUsedError;
+  String get tenCoinsProductId;
   @override
   @JsonKey(ignore: true)
   _$CoinsDtoCopyWith<_CoinsDto> get copyWith =>

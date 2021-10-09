@@ -139,7 +139,8 @@ class _$_Initialized implements _Initialized {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _Initialized);
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _Initialized);
   }
 
   @override
@@ -255,7 +256,8 @@ class _$_ShowedStore implements _ShowedStore {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _ShowedStore);
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _ShowedStore);
   }
 
   @override
@@ -371,7 +373,8 @@ class _$_ShowedPromotions implements _ShowedPromotions {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _ShowedPromotions);
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _ShowedPromotions);
   }
 
   @override
@@ -487,7 +490,8 @@ class _$_ShowedMyItems implements _ShowedMyItems {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _ShowedMyItems);
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _ShowedMyItems);
   }
 
   @override
@@ -696,7 +700,8 @@ class _$_Initial implements _Initial {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _Initial);
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _Initial);
   }
 
   @override
@@ -810,7 +815,8 @@ class _$_Store implements _Store {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _Store);
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _Store);
   }
 
   @override
@@ -926,7 +932,8 @@ class _$_Promotions implements _Promotions {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _Promotions);
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _Promotions);
   }
 
   @override
@@ -1040,7 +1047,8 @@ class _$_MyItems implements _MyItems {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _MyItems);
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _MyItems);
   }
 
   @override

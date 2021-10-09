@@ -171,15 +171,14 @@ class _$_Deleted implements _Deleted {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _Deleted &&
+        (other.runtimeType == runtimeType &&
+            other is _Deleted &&
             (identical(other.notification, notification) ||
-                const DeepCollectionEquality()
-                    .equals(other.notification, notification)));
+                other.notification == notification));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(notification);
+  int get hashCode => Object.hash(runtimeType, notification);
 
   @JsonKey(ignore: true)
   @override
@@ -253,7 +252,7 @@ abstract class _Deleted implements NotificationActorEvent {
   const factory _Deleted(Notification notification) = _$_Deleted;
 
   @override
-  Notification get notification => throw _privateConstructorUsedError;
+  Notification get notification;
   @override
   @JsonKey(ignore: true)
   _$DeletedCopyWith<_Deleted> get copyWith =>
@@ -311,15 +310,14 @@ class _$_Checked implements _Checked {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _Checked &&
+        (other.runtimeType == runtimeType &&
+            other is _Checked &&
             (identical(other.notification, notification) ||
-                const DeepCollectionEquality()
-                    .equals(other.notification, notification)));
+                other.notification == notification));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(notification);
+  int get hashCode => Object.hash(runtimeType, notification);
 
   @JsonKey(ignore: true)
   @override
@@ -393,7 +391,7 @@ abstract class _Checked implements NotificationActorEvent {
   const factory _Checked(Notification notification) = _$_Checked;
 
   @override
-  Notification get notification => throw _privateConstructorUsedError;
+  Notification get notification;
   @override
   @JsonKey(ignore: true)
   _$CheckedCopyWith<_Checked> get copyWith =>
@@ -536,7 +534,8 @@ class _$_Initial implements _Initial {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _Initial);
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _Initial);
   }
 
   @override
@@ -658,7 +657,8 @@ class _$_ActionInProgress implements _ActionInProgress {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _ActionInProgress);
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _ActionInProgress);
   }
 
   @override
@@ -780,7 +780,8 @@ class _$_DeletionSuccess implements _DeletionSuccess {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _DeletionSuccess);
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _DeletionSuccess);
   }
 
   @override
@@ -928,14 +929,13 @@ class _$_DeletionFailure implements _DeletionFailure {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _DeletionFailure &&
-            (identical(other.failure, failure) ||
-                const DeepCollectionEquality().equals(other.failure, failure)));
+        (other.runtimeType == runtimeType &&
+            other is _DeletionFailure &&
+            (identical(other.failure, failure) || other.failure == failure));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(failure);
+  int get hashCode => Object.hash(runtimeType, failure);
 
   @JsonKey(ignore: true)
   @override
@@ -1026,7 +1026,7 @@ class _$_DeletionFailure implements _DeletionFailure {
 abstract class _DeletionFailure implements NotificationActorState {
   const factory _DeletionFailure(Failure<dynamic> failure) = _$_DeletionFailure;
 
-  Failure<dynamic> get failure => throw _privateConstructorUsedError;
+  Failure<dynamic> get failure;
   @JsonKey(ignore: true)
   _$DeletionFailureCopyWith<_DeletionFailure> get copyWith =>
       throw _privateConstructorUsedError;
@@ -1063,7 +1063,8 @@ class _$_CheckSuccess implements _CheckSuccess {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _CheckSuccess);
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _CheckSuccess);
   }
 
   @override

@@ -240,40 +240,25 @@ class _$_Item extends _Item {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _Item &&
-            (identical(other.id, id) ||
-                const DeepCollectionEquality().equals(other.id, id)) &&
-            (identical(other.name, name) ||
-                const DeepCollectionEquality().equals(other.name, name)) &&
+        (other.runtimeType == runtimeType &&
+            other is _Item &&
+            (identical(other.id, id) || other.id == id) &&
+            (identical(other.name, name) || other.name == name) &&
             (identical(other.description, description) ||
-                const DeepCollectionEquality()
-                    .equals(other.description, description)) &&
-            (identical(other.code, code) ||
-                const DeepCollectionEquality().equals(other.code, code)) &&
-            (identical(other.value, value) ||
-                const DeepCollectionEquality().equals(other.value, value)) &&
+                other.description == description) &&
+            (identical(other.code, code) || other.code == code) &&
+            (identical(other.value, value) || other.value == value) &&
             (identical(other.imageURL, imageURL) ||
-                const DeepCollectionEquality()
-                    .equals(other.imageURL, imageURL)) &&
+                other.imageURL == imageURL) &&
             (identical(other.timeLimitInDays, timeLimitInDays) ||
-                const DeepCollectionEquality()
-                    .equals(other.timeLimitInDays, timeLimitInDays)) &&
+                other.timeLimitInDays == timeLimitInDays) &&
             (identical(other.boughtDate, boughtDate) ||
-                const DeepCollectionEquality()
-                    .equals(other.boughtDate, boughtDate)));
+                other.boughtDate == boughtDate));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(id) ^
-      const DeepCollectionEquality().hash(name) ^
-      const DeepCollectionEquality().hash(description) ^
-      const DeepCollectionEquality().hash(code) ^
-      const DeepCollectionEquality().hash(value) ^
-      const DeepCollectionEquality().hash(imageURL) ^
-      const DeepCollectionEquality().hash(timeLimitInDays) ^
-      const DeepCollectionEquality().hash(boughtDate);
+  int get hashCode => Object.hash(runtimeType, id, name, description, code,
+      value, imageURL, timeLimitInDays, boughtDate);
 
   @JsonKey(ignore: true)
   @override
@@ -294,21 +279,21 @@ abstract class _Item extends Item {
   const _Item._() : super._();
 
   @override
-  UniqueId get id => throw _privateConstructorUsedError;
+  UniqueId get id;
   @override
-  Name get name => throw _privateConstructorUsedError;
+  Name get name;
   @override
-  EntityDescription get description => throw _privateConstructorUsedError;
+  EntityDescription get description;
   @override
-  ItemCode get code => throw _privateConstructorUsedError;
+  ItemCode get code;
   @override
-  int get value => throw _privateConstructorUsedError;
+  int get value;
   @override
-  String get imageURL => throw _privateConstructorUsedError;
+  String get imageURL;
   @override
-  int get timeLimitInDays => throw _privateConstructorUsedError;
+  int get timeLimitInDays;
   @override
-  DateTime get boughtDate => throw _privateConstructorUsedError;
+  DateTime get boughtDate;
   @override
   @JsonKey(ignore: true)
   _$ItemCopyWith<_Item> get copyWith => throw _privateConstructorUsedError;

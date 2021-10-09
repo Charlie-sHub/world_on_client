@@ -42,7 +42,7 @@ class _$ItemDtoTearOff {
     );
   }
 
-  ItemDto fromJson(Map<String, Object> json) {
+  ItemDto fromJson(Map<String, Object?> json) {
     return ItemDto.fromJson(json);
   }
 }
@@ -253,40 +253,25 @@ class _$_Item extends _Item {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _Item &&
-            (identical(other.id, id) ||
-                const DeepCollectionEquality().equals(other.id, id)) &&
-            (identical(other.name, name) ||
-                const DeepCollectionEquality().equals(other.name, name)) &&
+        (other.runtimeType == runtimeType &&
+            other is _Item &&
+            (identical(other.id, id) || other.id == id) &&
+            (identical(other.name, name) || other.name == name) &&
             (identical(other.description, description) ||
-                const DeepCollectionEquality()
-                    .equals(other.description, description)) &&
-            (identical(other.code, code) ||
-                const DeepCollectionEquality().equals(other.code, code)) &&
-            (identical(other.value, value) ||
-                const DeepCollectionEquality().equals(other.value, value)) &&
+                other.description == description) &&
+            (identical(other.code, code) || other.code == code) &&
+            (identical(other.value, value) || other.value == value) &&
             (identical(other.timeLimitInDays, timeLimitInDays) ||
-                const DeepCollectionEquality()
-                    .equals(other.timeLimitInDays, timeLimitInDays)) &&
+                other.timeLimitInDays == timeLimitInDays) &&
             (identical(other.imageURL, imageURL) ||
-                const DeepCollectionEquality()
-                    .equals(other.imageURL, imageURL)) &&
+                other.imageURL == imageURL) &&
             (identical(other.boughtDate, boughtDate) ||
-                const DeepCollectionEquality()
-                    .equals(other.boughtDate, boughtDate)));
+                other.boughtDate == boughtDate));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(id) ^
-      const DeepCollectionEquality().hash(name) ^
-      const DeepCollectionEquality().hash(description) ^
-      const DeepCollectionEquality().hash(code) ^
-      const DeepCollectionEquality().hash(value) ^
-      const DeepCollectionEquality().hash(timeLimitInDays) ^
-      const DeepCollectionEquality().hash(imageURL) ^
-      const DeepCollectionEquality().hash(boughtDate);
+  int get hashCode => Object.hash(runtimeType, id, name, description, code,
+      value, timeLimitInDays, imageURL, boughtDate);
 
   @JsonKey(ignore: true)
   @override
@@ -314,22 +299,22 @@ abstract class _Item extends ItemDto {
   factory _Item.fromJson(Map<String, dynamic> json) = _$_Item.fromJson;
 
   @override
-  String get id => throw _privateConstructorUsedError;
+  String get id;
   @override
-  String get name => throw _privateConstructorUsedError;
+  String get name;
   @override
-  String get description => throw _privateConstructorUsedError;
+  String get description;
   @override
-  ItemCode get code => throw _privateConstructorUsedError;
+  ItemCode get code;
   @override
-  int get value => throw _privateConstructorUsedError;
+  int get value;
   @override
-  int get timeLimitInDays => throw _privateConstructorUsedError;
+  int get timeLimitInDays;
   @override
-  String get imageURL => throw _privateConstructorUsedError;
+  String get imageURL;
   @override
   @ServerTimestampConverter()
-  DateTime get boughtDate => throw _privateConstructorUsedError;
+  DateTime get boughtDate;
   @override
   @JsonKey(ignore: true)
   _$ItemCopyWith<_Item> get copyWith => throw _privateConstructorUsedError;

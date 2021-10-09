@@ -152,15 +152,14 @@ class _$_WatchTagsFoundByNameStarted implements _WatchTagsFoundByNameStarted {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _WatchTagsFoundByNameStarted &&
+        (other.runtimeType == runtimeType &&
+            other is _WatchTagsFoundByNameStarted &&
             (identical(other.searchTerm, searchTerm) ||
-                const DeepCollectionEquality()
-                    .equals(other.searchTerm, searchTerm)));
+                other.searchTerm == searchTerm));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(searchTerm);
+  int get hashCode => Object.hash(runtimeType, searchTerm);
 
   @JsonKey(ignore: true)
   @override
@@ -243,7 +242,7 @@ abstract class _WatchTagsFoundByNameStarted
   const factory _WatchTagsFoundByNameStarted(SearchTerm searchTerm) =
       _$_WatchTagsFoundByNameStarted;
 
-  SearchTerm get searchTerm => throw _privateConstructorUsedError;
+  SearchTerm get searchTerm;
   @JsonKey(ignore: true)
   _$WatchTagsFoundByNameStartedCopyWith<_WatchTagsFoundByNameStarted>
       get copyWith => throw _privateConstructorUsedError;
@@ -297,15 +296,14 @@ class _$_ResultsReceived implements _ResultsReceived {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _ResultsReceived &&
+        (other.runtimeType == runtimeType &&
+            other is _ResultsReceived &&
             (identical(other.failureOrTags, failureOrTags) ||
-                const DeepCollectionEquality()
-                    .equals(other.failureOrTags, failureOrTags)));
+                other.failureOrTags == failureOrTags));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(failureOrTags);
+  int get hashCode => Object.hash(runtimeType, failureOrTags);
 
   @JsonKey(ignore: true)
   @override
@@ -386,8 +384,7 @@ abstract class _ResultsReceived implements SearchTagsByNameWatcherEvent {
   const factory _ResultsReceived(Either<Failure, KtList<Tag>> failureOrTags) =
       _$_ResultsReceived;
 
-  Either<Failure, KtList<Tag>> get failureOrTags =>
-      throw _privateConstructorUsedError;
+  Either<Failure, KtList<Tag>> get failureOrTags;
   @JsonKey(ignore: true)
   _$ResultsReceivedCopyWith<_ResultsReceived> get copyWith =>
       throw _privateConstructorUsedError;
@@ -522,7 +519,8 @@ class _$_Initial implements _Initial {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _Initial);
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _Initial);
   }
 
   @override
@@ -638,7 +636,8 @@ class _$_SearchInProgress implements _SearchInProgress {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _SearchInProgress);
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _SearchInProgress);
   }
 
   @override
@@ -771,15 +770,14 @@ class _$_SearchSuccess implements _SearchSuccess {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _SearchSuccess &&
+        (other.runtimeType == runtimeType &&
+            other is _SearchSuccess &&
             (identical(other.tagsFound, tagsFound) ||
-                const DeepCollectionEquality()
-                    .equals(other.tagsFound, tagsFound)));
+                other.tagsFound == tagsFound));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(tagsFound);
+  int get hashCode => Object.hash(runtimeType, tagsFound);
 
   @JsonKey(ignore: true)
   @override
@@ -864,7 +862,7 @@ class _$_SearchSuccess implements _SearchSuccess {
 abstract class _SearchSuccess implements SearchTagsByNameWatcherState {
   const factory _SearchSuccess(KtList<Tag> tagsFound) = _$_SearchSuccess;
 
-  KtList<Tag> get tagsFound => throw _privateConstructorUsedError;
+  KtList<Tag> get tagsFound;
   @JsonKey(ignore: true)
   _$SearchSuccessCopyWith<_SearchSuccess> get copyWith =>
       throw _privateConstructorUsedError;
@@ -927,14 +925,13 @@ class _$_SearchFailure implements _SearchFailure {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _SearchFailure &&
-            (identical(other.failure, failure) ||
-                const DeepCollectionEquality().equals(other.failure, failure)));
+        (other.runtimeType == runtimeType &&
+            other is _SearchFailure &&
+            (identical(other.failure, failure) || other.failure == failure));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(failure);
+  int get hashCode => Object.hash(runtimeType, failure);
 
   @JsonKey(ignore: true)
   @override
@@ -1019,7 +1016,7 @@ class _$_SearchFailure implements _SearchFailure {
 abstract class _SearchFailure implements SearchTagsByNameWatcherState {
   const factory _SearchFailure(Failure<dynamic> failure) = _$_SearchFailure;
 
-  Failure<dynamic> get failure => throw _privateConstructorUsedError;
+  Failure<dynamic> get failure;
   @JsonKey(ignore: true)
   _$SearchFailureCopyWith<_SearchFailure> get copyWith =>
       throw _privateConstructorUsedError;

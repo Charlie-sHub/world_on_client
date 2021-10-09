@@ -169,19 +169,16 @@ class _$_Initialized implements _Initialized {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _Initialized &&
-            (identical(other.userId, userId) ||
-                const DeepCollectionEquality().equals(other.userId, userId)) &&
-            (identical(other.followedUsersIds, followedUsersIds) ||
-                const DeepCollectionEquality()
-                    .equals(other.followedUsersIds, followedUsersIds)));
+        (other.runtimeType == runtimeType &&
+            other is _Initialized &&
+            (identical(other.userId, userId) || other.userId == userId) &&
+            const DeepCollectionEquality()
+                .equals(other.followedUsersIds, followedUsersIds));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(userId) ^
-      const DeepCollectionEquality().hash(followedUsersIds);
+  int get hashCode => Object.hash(runtimeType, userId,
+      const DeepCollectionEquality().hash(followedUsersIds));
 
   @JsonKey(ignore: true)
   @override
@@ -268,8 +265,8 @@ abstract class _Initialized implements FollowActorEvent {
   const factory _Initialized(UniqueId userId, Set<UniqueId> followedUsersIds) =
       _$_Initialized;
 
-  UniqueId get userId => throw _privateConstructorUsedError;
-  Set<UniqueId> get followedUsersIds => throw _privateConstructorUsedError;
+  UniqueId get userId;
+  Set<UniqueId> get followedUsersIds;
   @JsonKey(ignore: true)
   _$InitializedCopyWith<_Initialized> get copyWith =>
       throw _privateConstructorUsedError;
@@ -336,20 +333,16 @@ class _$_Followed implements _Followed {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _Followed &&
+        (other.runtimeType == runtimeType &&
+            other is _Followed &&
             (identical(other.userToFollowId, userToFollowId) ||
-                const DeepCollectionEquality()
-                    .equals(other.userToFollowId, userToFollowId)) &&
+                other.userToFollowId == userToFollowId) &&
             (identical(other.currentUser, currentUser) ||
-                const DeepCollectionEquality()
-                    .equals(other.currentUser, currentUser)));
+                other.currentUser == currentUser));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(userToFollowId) ^
-      const DeepCollectionEquality().hash(currentUser);
+  int get hashCode => Object.hash(runtimeType, userToFollowId, currentUser);
 
   @JsonKey(ignore: true)
   @override
@@ -436,8 +429,8 @@ abstract class _Followed implements FollowActorEvent {
   const factory _Followed(UniqueId userToFollowId, SimpleUser currentUser) =
       _$_Followed;
 
-  UniqueId get userToFollowId => throw _privateConstructorUsedError;
-  SimpleUser get currentUser => throw _privateConstructorUsedError;
+  UniqueId get userToFollowId;
+  SimpleUser get currentUser;
   @JsonKey(ignore: true)
   _$FollowedCopyWith<_Followed> get copyWith =>
       throw _privateConstructorUsedError;
@@ -507,20 +500,16 @@ class _$_UnFollowed implements _UnFollowed {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _UnFollowed &&
+        (other.runtimeType == runtimeType &&
+            other is _UnFollowed &&
             (identical(other.userToUnFollowId, userToUnFollowId) ||
-                const DeepCollectionEquality()
-                    .equals(other.userToUnFollowId, userToUnFollowId)) &&
+                other.userToUnFollowId == userToUnFollowId) &&
             (identical(other.currentUser, currentUser) ||
-                const DeepCollectionEquality()
-                    .equals(other.currentUser, currentUser)));
+                other.currentUser == currentUser));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(userToUnFollowId) ^
-      const DeepCollectionEquality().hash(currentUser);
+  int get hashCode => Object.hash(runtimeType, userToUnFollowId, currentUser);
 
   @JsonKey(ignore: true)
   @override
@@ -607,8 +596,8 @@ abstract class _UnFollowed implements FollowActorEvent {
   const factory _UnFollowed(UniqueId userToUnFollowId, SimpleUser currentUser) =
       _$_UnFollowed;
 
-  UniqueId get userToUnFollowId => throw _privateConstructorUsedError;
-  SimpleUser get currentUser => throw _privateConstructorUsedError;
+  UniqueId get userToUnFollowId;
+  SimpleUser get currentUser;
   @JsonKey(ignore: true)
   _$UnFollowedCopyWith<_UnFollowed> get copyWith =>
       throw _privateConstructorUsedError;
@@ -781,7 +770,8 @@ class _$_Initial implements _Initial {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _Initial);
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _Initial);
   }
 
   @override
@@ -921,7 +911,8 @@ class _$_ActionInProgress implements _ActionInProgress {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _ActionInProgress);
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _ActionInProgress);
   }
 
   @override
@@ -1058,7 +1049,8 @@ class _$_Follows implements _Follows {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _Follows);
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _Follows);
   }
 
   @override
@@ -1198,7 +1190,8 @@ class _$_FollowsNot implements _FollowsNot {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _FollowsNot);
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _FollowsNot);
   }
 
   @override
@@ -1338,7 +1331,8 @@ class _$_FollowSuccess implements _FollowSuccess {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _FollowSuccess);
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _FollowSuccess);
   }
 
   @override
@@ -1504,14 +1498,13 @@ class _$_FollowFailure implements _FollowFailure {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _FollowFailure &&
-            (identical(other.failure, failure) ||
-                const DeepCollectionEquality().equals(other.failure, failure)));
+        (other.runtimeType == runtimeType &&
+            other is _FollowFailure &&
+            (identical(other.failure, failure) || other.failure == failure));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(failure);
+  int get hashCode => Object.hash(runtimeType, failure);
 
   @JsonKey(ignore: true)
   @override
@@ -1620,7 +1613,7 @@ class _$_FollowFailure implements _FollowFailure {
 abstract class _FollowFailure implements FollowActorState {
   const factory _FollowFailure(Failure<dynamic> failure) = _$_FollowFailure;
 
-  Failure<dynamic> get failure => throw _privateConstructorUsedError;
+  Failure<dynamic> get failure;
   @JsonKey(ignore: true)
   _$FollowFailureCopyWith<_FollowFailure> get copyWith =>
       throw _privateConstructorUsedError;
@@ -1657,7 +1650,8 @@ class _$_UnFollowSuccess implements _UnFollowSuccess {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _UnFollowSuccess);
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _UnFollowSuccess);
   }
 
   @override
@@ -1823,14 +1817,13 @@ class _$_UnFollowFailure implements _UnFollowFailure {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _UnFollowFailure &&
-            (identical(other.failure, failure) ||
-                const DeepCollectionEquality().equals(other.failure, failure)));
+        (other.runtimeType == runtimeType &&
+            other is _UnFollowFailure &&
+            (identical(other.failure, failure) || other.failure == failure));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(failure);
+  int get hashCode => Object.hash(runtimeType, failure);
 
   @JsonKey(ignore: true)
   @override
@@ -1939,7 +1932,7 @@ class _$_UnFollowFailure implements _UnFollowFailure {
 abstract class _UnFollowFailure implements FollowActorState {
   const factory _UnFollowFailure(Failure<dynamic> failure) = _$_UnFollowFailure;
 
-  Failure<dynamic> get failure => throw _privateConstructorUsedError;
+  Failure<dynamic> get failure;
   @JsonKey(ignore: true)
   _$UnFollowFailureCopyWith<_UnFollowFailure> get copyWith =>
       throw _privateConstructorUsedError;

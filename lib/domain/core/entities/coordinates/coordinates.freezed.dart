@@ -130,20 +130,16 @@ class _$_Coordinates extends _Coordinates {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _Coordinates &&
+        (other.runtimeType == runtimeType &&
+            other is _Coordinates &&
             (identical(other.latitude, latitude) ||
-                const DeepCollectionEquality()
-                    .equals(other.latitude, latitude)) &&
+                other.latitude == latitude) &&
             (identical(other.longitude, longitude) ||
-                const DeepCollectionEquality()
-                    .equals(other.longitude, longitude)));
+                other.longitude == longitude));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(latitude) ^
-      const DeepCollectionEquality().hash(longitude);
+  int get hashCode => Object.hash(runtimeType, latitude, longitude);
 
   @JsonKey(ignore: true)
   @override
@@ -158,9 +154,9 @@ abstract class _Coordinates extends Coordinates {
   const _Coordinates._() : super._();
 
   @override
-  Latitude get latitude => throw _privateConstructorUsedError;
+  Latitude get latitude;
   @override
-  Longitude get longitude => throw _privateConstructorUsedError;
+  Longitude get longitude;
   @override
   @JsonKey(ignore: true)
   _$CoordinatesCopyWith<_Coordinates> get copyWith =>

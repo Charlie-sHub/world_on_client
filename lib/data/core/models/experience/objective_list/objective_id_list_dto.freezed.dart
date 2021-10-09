@@ -27,7 +27,7 @@ class _$ObjectiveIdListDtoTearOff {
     );
   }
 
-  ObjectiveIdListDto fromJson(Map<String, Object> json) {
+  ObjectiveIdListDto fromJson(Map<String, Object?> json) {
     return ObjectiveIdListDto.fromJson(json);
   }
 }
@@ -128,15 +128,15 @@ class _$_ObjectiveIdListDto extends _ObjectiveIdListDto {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _ObjectiveIdListDto &&
-            (identical(other.objectivesIds, objectivesIds) ||
-                const DeepCollectionEquality()
-                    .equals(other.objectivesIds, objectivesIds)));
+        (other.runtimeType == runtimeType &&
+            other is _ObjectiveIdListDto &&
+            const DeepCollectionEquality()
+                .equals(other.objectivesIds, objectivesIds));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(objectivesIds);
+  int get hashCode => Object.hash(
+      runtimeType, const DeepCollectionEquality().hash(objectivesIds));
 
   @JsonKey(ignore: true)
   @override
@@ -158,7 +158,7 @@ abstract class _ObjectiveIdListDto extends ObjectiveIdListDto {
       _$_ObjectiveIdListDto.fromJson;
 
   @override
-  List<String> get objectivesIds => throw _privateConstructorUsedError;
+  List<String> get objectivesIds;
   @override
   @JsonKey(ignore: true)
   _$ObjectiveIdListDtoCopyWith<_ObjectiveIdListDto> get copyWith =>

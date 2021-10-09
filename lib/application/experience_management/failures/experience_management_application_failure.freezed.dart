@@ -152,14 +152,13 @@ class _$SurpassedImageLimit<T> implements SurpassedImageLimit<T> {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is SurpassedImageLimit<T> &&
-            (identical(other.limit, limit) ||
-                const DeepCollectionEquality().equals(other.limit, limit)));
+        (other.runtimeType == runtimeType &&
+            other is SurpassedImageLimit<T> &&
+            (identical(other.limit, limit) || other.limit == limit));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(limit);
+  int get hashCode => Object.hash(runtimeType, limit);
 
   @JsonKey(ignore: true)
   @override
@@ -230,7 +229,7 @@ abstract class SurpassedImageLimit<T>
       _$SurpassedImageLimit<T>;
 
   @override
-  int get limit => throw _privateConstructorUsedError;
+  int get limit;
   @override
   @JsonKey(ignore: true)
   $SurpassedImageLimitCopyWith<T, SurpassedImageLimit<T>> get copyWith =>

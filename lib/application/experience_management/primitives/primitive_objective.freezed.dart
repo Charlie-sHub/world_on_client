@@ -195,31 +195,22 @@ class _$_PrimitiveObjective extends _PrimitiveObjective {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _PrimitiveObjective &&
-            (identical(other.id, id) ||
-                const DeepCollectionEquality().equals(other.id, id)) &&
+        (other.runtimeType == runtimeType &&
+            other is _PrimitiveObjective &&
+            (identical(other.id, id) || other.id == id) &&
             (identical(other.description, description) ||
-                const DeepCollectionEquality()
-                    .equals(other.description, description)) &&
+                other.description == description) &&
             (identical(other.latitude, latitude) ||
-                const DeepCollectionEquality()
-                    .equals(other.latitude, latitude)) &&
+                other.latitude == latitude) &&
             (identical(other.longitude, longitude) ||
-                const DeepCollectionEquality()
-                    .equals(other.longitude, longitude)) &&
+                other.longitude == longitude) &&
             (identical(other.imageFile, imageFile) ||
-                const DeepCollectionEquality()
-                    .equals(other.imageFile, imageFile)));
+                other.imageFile == imageFile));
   }
 
   @override
   int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(id) ^
-      const DeepCollectionEquality().hash(description) ^
-      const DeepCollectionEquality().hash(latitude) ^
-      const DeepCollectionEquality().hash(longitude) ^
-      const DeepCollectionEquality().hash(imageFile);
+      Object.hash(runtimeType, id, description, latitude, longitude, imageFile);
 
   @JsonKey(ignore: true)
   @override
@@ -237,15 +228,15 @@ abstract class _PrimitiveObjective extends PrimitiveObjective {
   const _PrimitiveObjective._() : super._();
 
   @override
-  UniqueId get id => throw _privateConstructorUsedError;
+  UniqueId get id;
   @override
-  String get description => throw _privateConstructorUsedError;
+  String get description;
   @override
-  double get latitude => throw _privateConstructorUsedError;
+  double get latitude;
   @override
-  double get longitude => throw _privateConstructorUsedError;
+  double get longitude;
   @override
-  File? get imageFile => throw _privateConstructorUsedError;
+  File? get imageFile;
   @override
   @JsonKey(ignore: true)
   _$PrimitiveObjectiveCopyWith<_PrimitiveObjective> get copyWith =>

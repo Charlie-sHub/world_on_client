@@ -50,20 +50,19 @@ class DeleteButton extends StatelessWidget {
     );
   }
 
-  Future _onPressed(BuildContext context) async {
-    final _confirmed = await showDialog<bool>(
-      context: context,
-      builder: (context) => DeletionConfirmationDialog(),
-    );
-    if (_confirmed != null) {
-      if (_confirmed) {
-        context.read<ExperienceManagementActorBloc>().add(
-              ExperienceManagementActorEvent.deleted(
-                experience,
-              ),
-            );
-      }
-    }
-    Navigator.of(context).pop();
-  }
+  Future<void> _onPressed(BuildContext context) => showDialog<bool>(
+        context: context,
+        builder: (context) => DeletionConfirmationDialog(),
+      ).then(
+        (confirmed) {
+          if (confirmed != null && confirmed) {
+            context.read<ExperienceManagementActorBloc>().add(
+                  ExperienceManagementActorEvent.deleted(
+                    experience,
+                  ),
+                );
+          }
+          Navigator.of(context).pop();
+        },
+      );
 }

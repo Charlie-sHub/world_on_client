@@ -129,7 +129,8 @@ class _$NotEnoughCoins<T> implements NotEnoughCoins<T> {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is NotEnoughCoins<T>);
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is NotEnoughCoins<T>);
   }
 
   @override
@@ -239,7 +240,8 @@ class _$Cancelled<T> implements Cancelled<T> {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is Cancelled<T>);
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is Cancelled<T>);
   }
 
   @override
@@ -349,7 +351,8 @@ class _$UnAvailableStore<T> implements UnAvailableStore<T> {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is UnAvailableStore<T>);
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is UnAvailableStore<T>);
   }
 
   @override

@@ -157,16 +157,14 @@ class _$_Initialized implements _Initialized {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _Initialized &&
+        (other.runtimeType == runtimeType &&
+            other is _Initialized &&
             (identical(other.tagsEitherOption, tagsEitherOption) ||
-                const DeepCollectionEquality()
-                    .equals(other.tagsEitherOption, tagsEitherOption)));
+                other.tagsEitherOption == tagsEitherOption));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(tagsEitherOption);
+  int get hashCode => Object.hash(runtimeType, tagsEitherOption);
 
   @JsonKey(ignore: true)
   @override
@@ -250,8 +248,7 @@ abstract class _Initialized implements TagSelectorEvent {
   const factory _Initialized(
       Option<Either<TagSet, Set<UniqueId>>> tagsEitherOption) = _$_Initialized;
 
-  Option<Either<TagSet, Set<UniqueId>>> get tagsEitherOption =>
-      throw _privateConstructorUsedError;
+  Option<Either<TagSet, Set<UniqueId>>> get tagsEitherOption;
   @JsonKey(ignore: true)
   _$InitializedCopyWith<_Initialized> get copyWith =>
       throw _privateConstructorUsedError;
@@ -311,14 +308,13 @@ class _$_AddedTag implements _AddedTag {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _AddedTag &&
-            (identical(other.tag, tag) ||
-                const DeepCollectionEquality().equals(other.tag, tag)));
+        (other.runtimeType == runtimeType &&
+            other is _AddedTag &&
+            (identical(other.tag, tag) || other.tag == tag));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(tag);
+  int get hashCode => Object.hash(runtimeType, tag);
 
   @JsonKey(ignore: true)
   @override
@@ -401,7 +397,7 @@ class _$_AddedTag implements _AddedTag {
 abstract class _AddedTag implements TagSelectorEvent {
   const factory _AddedTag(Tag tag) = _$_AddedTag;
 
-  Tag get tag => throw _privateConstructorUsedError;
+  Tag get tag;
   @JsonKey(ignore: true)
   _$AddedTagCopyWith<_AddedTag> get copyWith =>
       throw _privateConstructorUsedError;
@@ -464,14 +460,13 @@ class _$_RemovedTag implements _RemovedTag {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _RemovedTag &&
-            (identical(other.tag, tag) ||
-                const DeepCollectionEquality().equals(other.tag, tag)));
+        (other.runtimeType == runtimeType &&
+            other is _RemovedTag &&
+            (identical(other.tag, tag) || other.tag == tag));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(tag);
+  int get hashCode => Object.hash(runtimeType, tag);
 
   @JsonKey(ignore: true)
   @override
@@ -554,7 +549,7 @@ class _$_RemovedTag implements _RemovedTag {
 abstract class _RemovedTag implements TagSelectorEvent {
   const factory _RemovedTag(Tag tag) = _$_RemovedTag;
 
-  Tag get tag => throw _privateConstructorUsedError;
+  Tag get tag;
   @JsonKey(ignore: true)
   _$RemovedTagCopyWith<_RemovedTag> get copyWith =>
       throw _privateConstructorUsedError;
@@ -663,15 +658,14 @@ class _$_TagSearchFormState implements _TagSearchFormState {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _TagSearchFormState &&
+        (other.runtimeType == runtimeType &&
+            other is _TagSearchFormState &&
             (identical(other.tagsSelected, tagsSelected) ||
-                const DeepCollectionEquality()
-                    .equals(other.tagsSelected, tagsSelected)));
+                other.tagsSelected == tagsSelected));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(tagsSelected);
+  int get hashCode => Object.hash(runtimeType, tagsSelected);
 
   @JsonKey(ignore: true)
   @override
@@ -684,7 +678,7 @@ abstract class _TagSearchFormState implements TagSelectorState {
       _$_TagSearchFormState;
 
   @override
-  KtSet<Tag> get tagsSelected => throw _privateConstructorUsedError;
+  KtSet<Tag> get tagsSelected;
   @override
   @JsonKey(ignore: true)
   _$TagSearchFormStateCopyWith<_TagSearchFormState> get copyWith =>

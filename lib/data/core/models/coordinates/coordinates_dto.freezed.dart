@@ -28,7 +28,7 @@ class _$CoordinatesDtoTearOff {
     );
   }
 
-  CoordinatesDto fromJson(Map<String, Object> json) {
+  CoordinatesDto fromJson(Map<String, Object?> json) {
     return CoordinatesDto.fromJson(json);
   }
 }
@@ -143,20 +143,16 @@ class _$_CoordinatesDto extends _CoordinatesDto {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _CoordinatesDto &&
+        (other.runtimeType == runtimeType &&
+            other is _CoordinatesDto &&
             (identical(other.latitude, latitude) ||
-                const DeepCollectionEquality()
-                    .equals(other.latitude, latitude)) &&
+                other.latitude == latitude) &&
             (identical(other.longitude, longitude) ||
-                const DeepCollectionEquality()
-                    .equals(other.longitude, longitude)));
+                other.longitude == longitude));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(latitude) ^
-      const DeepCollectionEquality().hash(longitude);
+  int get hashCode => Object.hash(runtimeType, latitude, longitude);
 
   @JsonKey(ignore: true)
   @override
@@ -179,9 +175,9 @@ abstract class _CoordinatesDto extends CoordinatesDto {
       _$_CoordinatesDto.fromJson;
 
   @override
-  double get latitude => throw _privateConstructorUsedError;
+  double get latitude;
   @override
-  double get longitude => throw _privateConstructorUsedError;
+  double get longitude;
   @override
   @JsonKey(ignore: true)
   _$CoordinatesDtoCopyWith<_CoordinatesDto> get copyWith =>

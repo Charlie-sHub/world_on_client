@@ -155,14 +155,13 @@ class _$_WatchBlockedUsersStarted implements _WatchBlockedUsersStarted {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _WatchBlockedUsersStarted &&
-            (identical(other.user, user) ||
-                const DeepCollectionEquality().equals(other.user, user)));
+        (other.runtimeType == runtimeType &&
+            other is _WatchBlockedUsersStarted &&
+            (identical(other.user, user) || other.user == user));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(user);
+  int get hashCode => Object.hash(runtimeType, user);
 
   @JsonKey(ignore: true)
   @override
@@ -241,7 +240,7 @@ abstract class _WatchBlockedUsersStarted implements BlockedWatcherEvent {
   const factory _WatchBlockedUsersStarted(User user) =
       _$_WatchBlockedUsersStarted;
 
-  User get user => throw _privateConstructorUsedError;
+  User get user;
   @JsonKey(ignore: true)
   _$WatchBlockedUsersStartedCopyWith<_WatchBlockedUsersStarted> get copyWith =>
       throw _privateConstructorUsedError;
@@ -295,16 +294,14 @@ class _$_ResultsReceived implements _ResultsReceived {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _ResultsReceived &&
+        (other.runtimeType == runtimeType &&
+            other is _ResultsReceived &&
             (identical(other.failureOrUsers, failureOrUsers) ||
-                const DeepCollectionEquality()
-                    .equals(other.failureOrUsers, failureOrUsers)));
+                other.failureOrUsers == failureOrUsers));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(failureOrUsers);
+  int get hashCode => Object.hash(runtimeType, failureOrUsers);
 
   @JsonKey(ignore: true)
   @override
@@ -382,8 +379,7 @@ abstract class _ResultsReceived implements BlockedWatcherEvent {
   const factory _ResultsReceived(Either<Failure, KtList<User>> failureOrUsers) =
       _$_ResultsReceived;
 
-  Either<Failure, KtList<User>> get failureOrUsers =>
-      throw _privateConstructorUsedError;
+  Either<Failure, KtList<User>> get failureOrUsers;
   @JsonKey(ignore: true)
   _$ResultsReceivedCopyWith<_ResultsReceived> get copyWith =>
       throw _privateConstructorUsedError;
@@ -517,7 +513,8 @@ class _$_Initial implements _Initial {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _Initial);
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _Initial);
   }
 
   @override
@@ -633,7 +630,8 @@ class _$_LoadInProgress implements _LoadInProgress {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _LoadInProgress);
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _LoadInProgress);
   }
 
   @override
@@ -766,15 +764,14 @@ class _$_LoadSuccess implements _LoadSuccess {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _LoadSuccess &&
+        (other.runtimeType == runtimeType &&
+            other is _LoadSuccess &&
             (identical(other.blockedUsers, blockedUsers) ||
-                const DeepCollectionEquality()
-                    .equals(other.blockedUsers, blockedUsers)));
+                other.blockedUsers == blockedUsers));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(blockedUsers);
+  int get hashCode => Object.hash(runtimeType, blockedUsers);
 
   @JsonKey(ignore: true)
   @override
@@ -859,7 +856,7 @@ class _$_LoadSuccess implements _LoadSuccess {
 abstract class _LoadSuccess implements BlockedWatcherState {
   const factory _LoadSuccess(KtList<User> blockedUsers) = _$_LoadSuccess;
 
-  KtList<User> get blockedUsers => throw _privateConstructorUsedError;
+  KtList<User> get blockedUsers;
   @JsonKey(ignore: true)
   _$LoadSuccessCopyWith<_LoadSuccess> get copyWith =>
       throw _privateConstructorUsedError;
@@ -922,14 +919,13 @@ class _$_LoadFailure implements _LoadFailure {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _LoadFailure &&
-            (identical(other.failure, failure) ||
-                const DeepCollectionEquality().equals(other.failure, failure)));
+        (other.runtimeType == runtimeType &&
+            other is _LoadFailure &&
+            (identical(other.failure, failure) || other.failure == failure));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(failure);
+  int get hashCode => Object.hash(runtimeType, failure);
 
   @JsonKey(ignore: true)
   @override
@@ -1014,7 +1010,7 @@ class _$_LoadFailure implements _LoadFailure {
 abstract class _LoadFailure implements BlockedWatcherState {
   const factory _LoadFailure(Failure<dynamic> failure) = _$_LoadFailure;
 
-  Failure<dynamic> get failure => throw _privateConstructorUsedError;
+  Failure<dynamic> get failure;
   @JsonKey(ignore: true)
   _$LoadFailureCopyWith<_LoadFailure> get copyWith =>
       throw _privateConstructorUsedError;

@@ -173,15 +173,14 @@ class _$_Initialized implements _Initialized {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _Initialized &&
+        (other.runtimeType == runtimeType &&
+            other is _Initialized &&
             (identical(other.experience, experience) ||
-                const DeepCollectionEquality()
-                    .equals(other.experience, experience)));
+                other.experience == experience));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(experience);
+  int get hashCode => Object.hash(runtimeType, experience);
 
   @JsonKey(ignore: true)
   @override
@@ -266,7 +265,7 @@ class _$_Initialized implements _Initialized {
 abstract class _Initialized implements ShareExperienceInternallyEvent {
   const factory _Initialized(Experience experience) = _$_Initialized;
 
-  Experience get experience => throw _privateConstructorUsedError;
+  Experience get experience;
   @JsonKey(ignore: true)
   _$InitializedCopyWith<_Initialized> get copyWith =>
       throw _privateConstructorUsedError;
@@ -329,14 +328,13 @@ class _$_RemovedUser implements _RemovedUser {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _RemovedUser &&
-            (identical(other.user, user) ||
-                const DeepCollectionEquality().equals(other.user, user)));
+        (other.runtimeType == runtimeType &&
+            other is _RemovedUser &&
+            (identical(other.user, user) || other.user == user));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(user);
+  int get hashCode => Object.hash(runtimeType, user);
 
   @JsonKey(ignore: true)
   @override
@@ -421,7 +419,7 @@ class _$_RemovedUser implements _RemovedUser {
 abstract class _RemovedUser implements ShareExperienceInternallyEvent {
   const factory _RemovedUser(User user) = _$_RemovedUser;
 
-  User get user => throw _privateConstructorUsedError;
+  User get user;
   @JsonKey(ignore: true)
   _$RemovedUserCopyWith<_RemovedUser> get copyWith =>
       throw _privateConstructorUsedError;
@@ -483,14 +481,13 @@ class _$_AddedUser implements _AddedUser {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _AddedUser &&
-            (identical(other.user, user) ||
-                const DeepCollectionEquality().equals(other.user, user)));
+        (other.runtimeType == runtimeType &&
+            other is _AddedUser &&
+            (identical(other.user, user) || other.user == user));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(user);
+  int get hashCode => Object.hash(runtimeType, user);
 
   @JsonKey(ignore: true)
   @override
@@ -575,7 +572,7 @@ class _$_AddedUser implements _AddedUser {
 abstract class _AddedUser implements ShareExperienceInternallyEvent {
   const factory _AddedUser(User user) = _$_AddedUser;
 
-  User get user => throw _privateConstructorUsedError;
+  User get user;
   @JsonKey(ignore: true)
   _$AddedUserCopyWith<_AddedUser> get copyWith =>
       throw _privateConstructorUsedError;
@@ -610,7 +607,8 @@ class _$_Shared implements _Shared {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _Shared);
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _Shared);
   }
 
   @override
@@ -848,23 +846,17 @@ class _$_ShareExperienceInternallyState
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _ShareExperienceInternallyState &&
+        (other.runtimeType == runtimeType &&
+            other is _ShareExperienceInternallyState &&
             (identical(other.experience, experience) ||
-                const DeepCollectionEquality()
-                    .equals(other.experience, experience)) &&
-            (identical(other.users, users) ||
-                const DeepCollectionEquality().equals(other.users, users)) &&
+                other.experience == experience) &&
+            (identical(other.users, users) || other.users == users) &&
             (identical(other.submitted, submitted) ||
-                const DeepCollectionEquality()
-                    .equals(other.submitted, submitted)));
+                other.submitted == submitted));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(experience) ^
-      const DeepCollectionEquality().hash(users) ^
-      const DeepCollectionEquality().hash(submitted);
+  int get hashCode => Object.hash(runtimeType, experience, users, submitted);
 
   @JsonKey(ignore: true)
   @override
@@ -881,11 +873,11 @@ abstract class _ShareExperienceInternallyState
       required bool submitted}) = _$_ShareExperienceInternallyState;
 
   @override
-  Experience get experience => throw _privateConstructorUsedError;
+  Experience get experience;
   @override
-  KtSet<User> get users => throw _privateConstructorUsedError;
+  KtSet<User> get users;
   @override
-  bool get submitted => throw _privateConstructorUsedError;
+  bool get submitted;
   @override
   @JsonKey(ignore: true)
   _$ShareExperienceInternallyStateCopyWith<_ShareExperienceInternallyState>

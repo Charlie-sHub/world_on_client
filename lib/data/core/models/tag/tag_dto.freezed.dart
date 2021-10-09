@@ -36,7 +36,7 @@ class _$TagDtoTearOff {
     );
   }
 
-  TagDto fromJson(Map<String, Object> json) {
+  TagDto fromJson(Map<String, Object?> json) {
     return TagDto.fromJson(json);
   }
 }
@@ -202,30 +202,21 @@ class _$_TagDto extends _TagDto {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _TagDto &&
-            (identical(other.id, id) ||
-                const DeepCollectionEquality().equals(other.id, id)) &&
-            (identical(other.name, name) ||
-                const DeepCollectionEquality().equals(other.name, name)) &&
+        (other.runtimeType == runtimeType &&
+            other is _TagDto &&
+            (identical(other.id, id) || other.id == id) &&
+            (identical(other.name, name) || other.name == name) &&
             (identical(other.creatorId, creatorId) ||
-                const DeepCollectionEquality()
-                    .equals(other.creatorId, creatorId)) &&
+                other.creatorId == creatorId) &&
             (identical(other.creationDate, creationDate) ||
-                const DeepCollectionEquality()
-                    .equals(other.creationDate, creationDate)) &&
+                other.creationDate == creationDate) &&
             (identical(other.modificationDate, modificationDate) ||
-                const DeepCollectionEquality()
-                    .equals(other.modificationDate, modificationDate)));
+                other.modificationDate == modificationDate));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(id) ^
-      const DeepCollectionEquality().hash(name) ^
-      const DeepCollectionEquality().hash(creatorId) ^
-      const DeepCollectionEquality().hash(creationDate) ^
-      const DeepCollectionEquality().hash(modificationDate);
+  int get hashCode => Object.hash(
+      runtimeType, id, name, creatorId, creationDate, modificationDate);
 
   @JsonKey(ignore: true)
   @override
@@ -251,17 +242,17 @@ abstract class _TagDto extends TagDto {
   factory _TagDto.fromJson(Map<String, dynamic> json) = _$_TagDto.fromJson;
 
   @override
-  String get id => throw _privateConstructorUsedError;
+  String get id;
   @override
-  String get name => throw _privateConstructorUsedError;
+  String get name;
   @override
-  String get creatorId => throw _privateConstructorUsedError;
-  @override
-  @ServerTimestampConverter()
-  DateTime get creationDate => throw _privateConstructorUsedError;
+  String get creatorId;
   @override
   @ServerTimestampConverter()
-  DateTime get modificationDate => throw _privateConstructorUsedError;
+  DateTime get creationDate;
+  @override
+  @ServerTimestampConverter()
+  DateTime get modificationDate;
   @override
   @JsonKey(ignore: true)
   _$TagDtoCopyWith<_TagDto> get copyWith => throw _privateConstructorUsedError;

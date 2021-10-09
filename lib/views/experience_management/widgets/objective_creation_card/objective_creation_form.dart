@@ -42,14 +42,7 @@ class ObjectiveCreationForm extends StatelessWidget {
                         icon: const Icon(
                           Icons.photo_camera,
                         ),
-                        onPressed: () async {
-                          final _imageFile = await openPictureSelectDialog(context);
-                          if (_imageFile != null) {
-                            context.read<ObjectiveFormBloc>().add(
-                                  ObjectiveFormEvent.imageChanged(_imageFile),
-                                );
-                          }
-                        },
+                        onPressed: () => _imageChanged(context),
                       ),
                       if (_objectiveFormState.showErrorMessages &&
                           _objectiveFormState.objective.imageFile.isNone())
@@ -65,14 +58,7 @@ class ObjectiveCreationForm extends StatelessWidget {
                   (imageFile) => Padding(
                     padding: const EdgeInsets.all(10),
                     child: TextButton(
-                      onPressed: () async {
-                        final _imageFile = await openPictureSelectDialog(context);
-                        if (_imageFile != null) {
-                          context.read<ObjectiveFormBloc>().add(
-                                ObjectiveFormEvent.imageChanged(_imageFile),
-                              );
-                        }
-                      },
+                      onPressed: () => _imageChanged(context),
                       child: Image(
                         fit: BoxFit.fitWidth,
                         image: FileImage(imageFile),
@@ -98,4 +84,16 @@ class ObjectiveCreationForm extends StatelessWidget {
       ),
     );
   }
+
+  Future<void> _imageChanged(BuildContext context) => openPictureSelectDialog(context).then(
+        (imageFile) {
+          if (imageFile != null) {
+            context.read<ObjectiveFormBloc>().add(
+                  ObjectiveFormEvent.imageChanged(
+                    imageFile,
+                  ),
+                );
+          }
+        },
+      );
 }

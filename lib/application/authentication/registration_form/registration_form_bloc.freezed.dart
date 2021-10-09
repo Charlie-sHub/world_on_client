@@ -261,15 +261,14 @@ class _$_Initialized implements _Initialized {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _Initialized &&
+        (other.runtimeType == runtimeType &&
+            other is _Initialized &&
             (identical(other.userOption, userOption) ||
-                const DeepCollectionEquality()
-                    .equals(other.userOption, userOption)));
+                other.userOption == userOption));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(userOption);
+  int get hashCode => Object.hash(runtimeType, userOption);
 
   @JsonKey(ignore: true)
   @override
@@ -406,7 +405,7 @@ class _$_Initialized implements _Initialized {
 abstract class _Initialized implements RegistrationFormEvent {
   const factory _Initialized(Option<User> userOption) = _$_Initialized;
 
-  Option<User> get userOption => throw _privateConstructorUsedError;
+  Option<User> get userOption;
   @JsonKey(ignore: true)
   _$InitializedCopyWith<_Initialized> get copyWith =>
       throw _privateConstructorUsedError;
@@ -460,15 +459,14 @@ class _$_ImageChanged implements _ImageChanged {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _ImageChanged &&
+        (other.runtimeType == runtimeType &&
+            other is _ImageChanged &&
             (identical(other.imageFile, imageFile) ||
-                const DeepCollectionEquality()
-                    .equals(other.imageFile, imageFile)));
+                other.imageFile == imageFile));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(imageFile);
+  int get hashCode => Object.hash(runtimeType, imageFile);
 
   @JsonKey(ignore: true)
   @override
@@ -605,7 +603,7 @@ class _$_ImageChanged implements _ImageChanged {
 abstract class _ImageChanged implements RegistrationFormEvent {
   const factory _ImageChanged(File imageFile) = _$_ImageChanged;
 
-  File get imageFile => throw _privateConstructorUsedError;
+  File get imageFile;
   @JsonKey(ignore: true)
   _$ImageChangedCopyWith<_ImageChanged> get copyWith =>
       throw _privateConstructorUsedError;
@@ -659,14 +657,13 @@ class _$_NameChanged implements _NameChanged {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _NameChanged &&
-            (identical(other.name, name) ||
-                const DeepCollectionEquality().equals(other.name, name)));
+        (other.runtimeType == runtimeType &&
+            other is _NameChanged &&
+            (identical(other.name, name) || other.name == name));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(name);
+  int get hashCode => Object.hash(runtimeType, name);
 
   @JsonKey(ignore: true)
   @override
@@ -803,7 +800,7 @@ class _$_NameChanged implements _NameChanged {
 abstract class _NameChanged implements RegistrationFormEvent {
   const factory _NameChanged(String name) = _$_NameChanged;
 
-  String get name => throw _privateConstructorUsedError;
+  String get name;
   @JsonKey(ignore: true)
   _$NameChangedCopyWith<_NameChanged> get copyWith =>
       throw _privateConstructorUsedError;
@@ -857,15 +854,14 @@ class _$_UsernameChanged implements _UsernameChanged {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _UsernameChanged &&
+        (other.runtimeType == runtimeType &&
+            other is _UsernameChanged &&
             (identical(other.username, username) ||
-                const DeepCollectionEquality()
-                    .equals(other.username, username)));
+                other.username == username));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(username);
+  int get hashCode => Object.hash(runtimeType, username);
 
   @JsonKey(ignore: true)
   @override
@@ -1002,7 +998,7 @@ class _$_UsernameChanged implements _UsernameChanged {
 abstract class _UsernameChanged implements RegistrationFormEvent {
   const factory _UsernameChanged(String username) = _$_UsernameChanged;
 
-  String get username => throw _privateConstructorUsedError;
+  String get username;
   @JsonKey(ignore: true)
   _$UsernameChangedCopyWith<_UsernameChanged> get copyWith =>
       throw _privateConstructorUsedError;
@@ -1056,15 +1052,14 @@ class _$_PasswordChanged implements _PasswordChanged {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _PasswordChanged &&
+        (other.runtimeType == runtimeType &&
+            other is _PasswordChanged &&
             (identical(other.password, password) ||
-                const DeepCollectionEquality()
-                    .equals(other.password, password)));
+                other.password == password));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(password);
+  int get hashCode => Object.hash(runtimeType, password);
 
   @JsonKey(ignore: true)
   @override
@@ -1201,7 +1196,7 @@ class _$_PasswordChanged implements _PasswordChanged {
 abstract class _PasswordChanged implements RegistrationFormEvent {
   const factory _PasswordChanged(String password) = _$_PasswordChanged;
 
-  String get password => throw _privateConstructorUsedError;
+  String get password;
   @JsonKey(ignore: true)
   _$PasswordChangedCopyWith<_PasswordChanged> get copyWith =>
       throw _privateConstructorUsedError;
@@ -1258,16 +1253,14 @@ class _$_PasswordConfirmationChanged implements _PasswordConfirmationChanged {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _PasswordConfirmationChanged &&
+        (other.runtimeType == runtimeType &&
+            other is _PasswordConfirmationChanged &&
             (identical(other.passwordConfirmation, passwordConfirmation) ||
-                const DeepCollectionEquality()
-                    .equals(other.passwordConfirmation, passwordConfirmation)));
+                other.passwordConfirmation == passwordConfirmation));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(passwordConfirmation);
+  int get hashCode => Object.hash(runtimeType, passwordConfirmation);
 
   @JsonKey(ignore: true)
   @override
@@ -1406,7 +1399,7 @@ abstract class _PasswordConfirmationChanged implements RegistrationFormEvent {
   const factory _PasswordConfirmationChanged(String passwordConfirmation) =
       _$_PasswordConfirmationChanged;
 
-  String get passwordConfirmation => throw _privateConstructorUsedError;
+  String get passwordConfirmation;
   @JsonKey(ignore: true)
   _$PasswordConfirmationChangedCopyWith<_PasswordConfirmationChanged>
       get copyWith => throw _privateConstructorUsedError;
@@ -1460,15 +1453,14 @@ class _$_EmailAddressChanged implements _EmailAddressChanged {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _EmailAddressChanged &&
+        (other.runtimeType == runtimeType &&
+            other is _EmailAddressChanged &&
             (identical(other.emailAddress, emailAddress) ||
-                const DeepCollectionEquality()
-                    .equals(other.emailAddress, emailAddress)));
+                other.emailAddress == emailAddress));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(emailAddress);
+  int get hashCode => Object.hash(runtimeType, emailAddress);
 
   @JsonKey(ignore: true)
   @override
@@ -1607,7 +1599,7 @@ abstract class _EmailAddressChanged implements RegistrationFormEvent {
   const factory _EmailAddressChanged(String emailAddress) =
       _$_EmailAddressChanged;
 
-  String get emailAddress => throw _privateConstructorUsedError;
+  String get emailAddress;
   @JsonKey(ignore: true)
   _$EmailAddressChangedCopyWith<_EmailAddressChanged> get copyWith =>
       throw _privateConstructorUsedError;
@@ -1661,15 +1653,14 @@ class _$_BirthdayChanged implements _BirthdayChanged {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _BirthdayChanged &&
+        (other.runtimeType == runtimeType &&
+            other is _BirthdayChanged &&
             (identical(other.birthday, birthday) ||
-                const DeepCollectionEquality()
-                    .equals(other.birthday, birthday)));
+                other.birthday == birthday));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(birthday);
+  int get hashCode => Object.hash(runtimeType, birthday);
 
   @JsonKey(ignore: true)
   @override
@@ -1806,7 +1797,7 @@ class _$_BirthdayChanged implements _BirthdayChanged {
 abstract class _BirthdayChanged implements RegistrationFormEvent {
   const factory _BirthdayChanged(DateTime birthday) = _$_BirthdayChanged;
 
-  DateTime get birthday => throw _privateConstructorUsedError;
+  DateTime get birthday;
   @JsonKey(ignore: true)
   _$BirthdayChangedCopyWith<_BirthdayChanged> get copyWith =>
       throw _privateConstructorUsedError;
@@ -1860,15 +1851,14 @@ class _$_DescriptionChanged implements _DescriptionChanged {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _DescriptionChanged &&
+        (other.runtimeType == runtimeType &&
+            other is _DescriptionChanged &&
             (identical(other.description, description) ||
-                const DeepCollectionEquality()
-                    .equals(other.description, description)));
+                other.description == description));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(description);
+  int get hashCode => Object.hash(runtimeType, description);
 
   @JsonKey(ignore: true)
   @override
@@ -2005,7 +1995,7 @@ class _$_DescriptionChanged implements _DescriptionChanged {
 abstract class _DescriptionChanged implements RegistrationFormEvent {
   const factory _DescriptionChanged(String description) = _$_DescriptionChanged;
 
-  String get description => throw _privateConstructorUsedError;
+  String get description;
   @JsonKey(ignore: true)
   _$DescriptionChangedCopyWith<_DescriptionChanged> get copyWith =>
       throw _privateConstructorUsedError;
@@ -2059,15 +2049,14 @@ class _$_InterestsChanged implements _InterestsChanged {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _InterestsChanged &&
+        (other.runtimeType == runtimeType &&
+            other is _InterestsChanged &&
             (identical(other.interests, interests) ||
-                const DeepCollectionEquality()
-                    .equals(other.interests, interests)));
+                other.interests == interests));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(interests);
+  int get hashCode => Object.hash(runtimeType, interests);
 
   @JsonKey(ignore: true)
   @override
@@ -2204,7 +2193,7 @@ class _$_InterestsChanged implements _InterestsChanged {
 abstract class _InterestsChanged implements RegistrationFormEvent {
   const factory _InterestsChanged(KtSet<Tag> interests) = _$_InterestsChanged;
 
-  KtSet<Tag> get interests => throw _privateConstructorUsedError;
+  KtSet<Tag> get interests;
   @JsonKey(ignore: true)
   _$InterestsChangedCopyWith<_InterestsChanged> get copyWith =>
       throw _privateConstructorUsedError;
@@ -2241,7 +2230,8 @@ class _$_TappedEULA implements _TappedEULA {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _TappedEULA);
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _TappedEULA);
   }
 
   @override
@@ -2408,7 +2398,8 @@ class _$_Submitted implements _Submitted {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _Submitted);
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _Submitted);
   }
 
   @override
@@ -2792,43 +2783,36 @@ class _$_RegistrationFormState implements _RegistrationFormState {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _RegistrationFormState &&
-            (identical(other.user, user) ||
-                const DeepCollectionEquality().equals(other.user, user)) &&
+        (other.runtimeType == runtimeType &&
+            other is _RegistrationFormState &&
+            (identical(other.user, user) || other.user == user) &&
             (identical(other.passwordConfirmator, passwordConfirmator) ||
-                const DeepCollectionEquality()
-                    .equals(other.passwordConfirmator, passwordConfirmator)) &&
+                other.passwordConfirmator == passwordConfirmator) &&
             (identical(other.passwordToCompare, passwordToCompare) ||
-                const DeepCollectionEquality()
-                    .equals(other.passwordToCompare, passwordToCompare)) &&
+                other.passwordToCompare == passwordToCompare) &&
             (identical(other.showErrorMessages, showErrorMessages) ||
-                const DeepCollectionEquality()
-                    .equals(other.showErrorMessages, showErrorMessages)) &&
+                other.showErrorMessages == showErrorMessages) &&
             (identical(other.isSubmitting, isSubmitting) ||
-                const DeepCollectionEquality()
-                    .equals(other.isSubmitting, isSubmitting)) &&
+                other.isSubmitting == isSubmitting) &&
             (identical(other.acceptedEULA, acceptedEULA) ||
-                const DeepCollectionEquality()
-                    .equals(other.acceptedEULA, acceptedEULA)) &&
+                other.acceptedEULA == acceptedEULA) &&
             (identical(other.initialized, initialized) ||
-                const DeepCollectionEquality()
-                    .equals(other.initialized, initialized)) &&
+                other.initialized == initialized) &&
             (identical(other.failureOrSuccessOption, failureOrSuccessOption) ||
-                const DeepCollectionEquality().equals(
-                    other.failureOrSuccessOption, failureOrSuccessOption)));
+                other.failureOrSuccessOption == failureOrSuccessOption));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(user) ^
-      const DeepCollectionEquality().hash(passwordConfirmator) ^
-      const DeepCollectionEquality().hash(passwordToCompare) ^
-      const DeepCollectionEquality().hash(showErrorMessages) ^
-      const DeepCollectionEquality().hash(isSubmitting) ^
-      const DeepCollectionEquality().hash(acceptedEULA) ^
-      const DeepCollectionEquality().hash(initialized) ^
-      const DeepCollectionEquality().hash(failureOrSuccessOption);
+  int get hashCode => Object.hash(
+      runtimeType,
+      user,
+      passwordConfirmator,
+      passwordToCompare,
+      showErrorMessages,
+      isSubmitting,
+      acceptedEULA,
+      initialized,
+      failureOrSuccessOption);
 
   @JsonKey(ignore: true)
   @override
@@ -2850,23 +2834,21 @@ abstract class _RegistrationFormState implements RegistrationFormState {
       _$_RegistrationFormState;
 
   @override
-  User get user => throw _privateConstructorUsedError;
+  User get user;
   @override
-  PasswordConfirmator get passwordConfirmator =>
-      throw _privateConstructorUsedError;
+  PasswordConfirmator get passwordConfirmator;
   @override
-  String get passwordToCompare => throw _privateConstructorUsedError;
+  String get passwordToCompare;
   @override
-  bool get showErrorMessages => throw _privateConstructorUsedError;
+  bool get showErrorMessages;
   @override
-  bool get isSubmitting => throw _privateConstructorUsedError;
+  bool get isSubmitting;
   @override
-  bool get acceptedEULA => throw _privateConstructorUsedError;
+  bool get acceptedEULA;
   @override
-  bool get initialized => throw _privateConstructorUsedError;
+  bool get initialized;
   @override
-  Option<Either<Failure, Unit>> get failureOrSuccessOption =>
-      throw _privateConstructorUsedError;
+  Option<Either<Failure, Unit>> get failureOrSuccessOption;
   @override
   @JsonKey(ignore: true)
   _$RegistrationFormStateCopyWith<_RegistrationFormState> get copyWith =>

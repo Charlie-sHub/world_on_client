@@ -166,20 +166,16 @@ class _$_Initialized implements _Initialized {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _Initialized &&
+        (other.runtimeType == runtimeType &&
+            other is _Initialized &&
             (identical(other.objectiveList, objectiveList) ||
-                const DeepCollectionEquality()
-                    .equals(other.objectiveList, objectiveList)) &&
+                other.objectiveList == objectiveList) &&
             (identical(other.experienceId, experienceId) ||
-                const DeepCollectionEquality()
-                    .equals(other.experienceId, experienceId)));
+                other.experienceId == experienceId));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(objectiveList) ^
-      const DeepCollectionEquality().hash(experienceId);
+  int get hashCode => Object.hash(runtimeType, objectiveList, experienceId);
 
   @JsonKey(ignore: true)
   @override
@@ -265,8 +261,8 @@ abstract class _Initialized implements ObjectivesTrackerEvent {
   const factory _Initialized(
       ObjectiveList objectiveList, UniqueId experienceId) = _$_Initialized;
 
-  ObjectiveList get objectiveList => throw _privateConstructorUsedError;
-  UniqueId get experienceId => throw _privateConstructorUsedError;
+  ObjectiveList get objectiveList;
+  UniqueId get experienceId;
   @JsonKey(ignore: true)
   _$InitializedCopyWith<_Initialized> get copyWith =>
       throw _privateConstructorUsedError;
@@ -329,15 +325,14 @@ class _$_ObjectiveAccomplished implements _ObjectiveAccomplished {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _ObjectiveAccomplished &&
+        (other.runtimeType == runtimeType &&
+            other is _ObjectiveAccomplished &&
             (identical(other.objective, objective) ||
-                const DeepCollectionEquality()
-                    .equals(other.objective, objective)));
+                other.objective == objective));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(objective);
+  int get hashCode => Object.hash(runtimeType, objective);
 
   @JsonKey(ignore: true)
   @override
@@ -424,7 +419,7 @@ abstract class _ObjectiveAccomplished implements ObjectivesTrackerEvent {
   const factory _ObjectiveAccomplished(Objective objective) =
       _$_ObjectiveAccomplished;
 
-  Objective get objective => throw _privateConstructorUsedError;
+  Objective get objective;
   @JsonKey(ignore: true)
   _$ObjectiveAccomplishedCopyWith<_ObjectiveAccomplished> get copyWith =>
       throw _privateConstructorUsedError;
@@ -488,15 +483,14 @@ class _$_ObjectiveUnaccomplished implements _ObjectiveUnaccomplished {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _ObjectiveUnaccomplished &&
+        (other.runtimeType == runtimeType &&
+            other is _ObjectiveUnaccomplished &&
             (identical(other.objective, objective) ||
-                const DeepCollectionEquality()
-                    .equals(other.objective, objective)));
+                other.objective == objective));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(objective);
+  int get hashCode => Object.hash(runtimeType, objective);
 
   @JsonKey(ignore: true)
   @override
@@ -583,7 +577,7 @@ abstract class _ObjectiveUnaccomplished implements ObjectivesTrackerEvent {
   const factory _ObjectiveUnaccomplished(Objective objective) =
       _$_ObjectiveUnaccomplished;
 
-  Objective get objective => throw _privateConstructorUsedError;
+  Objective get objective;
   @JsonKey(ignore: true)
   _$ObjectiveUnaccomplishedCopyWith<_ObjectiveUnaccomplished> get copyWith =>
       throw _privateConstructorUsedError;
@@ -750,28 +744,21 @@ class _$_ObjectivesTrackerState implements _ObjectivesTrackerState {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _ObjectivesTrackerState &&
+        (other.runtimeType == runtimeType &&
+            other is _ObjectivesTrackerState &&
             (identical(other.objectivesToDo, objectivesToDo) ||
-                const DeepCollectionEquality()
-                    .equals(other.objectivesToDo, objectivesToDo)) &&
+                other.objectivesToDo == objectivesToDo) &&
             (identical(other.experienceId, experienceId) ||
-                const DeepCollectionEquality()
-                    .equals(other.experienceId, experienceId)) &&
+                other.experienceId == experienceId) &&
             (identical(other.isFinished, isFinished) ||
-                const DeepCollectionEquality()
-                    .equals(other.isFinished, isFinished)) &&
+                other.isFinished == isFinished) &&
             (identical(other.showExplanation, showExplanation) ||
-                const DeepCollectionEquality()
-                    .equals(other.showExplanation, showExplanation)));
+                other.showExplanation == showExplanation));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(objectivesToDo) ^
-      const DeepCollectionEquality().hash(experienceId) ^
-      const DeepCollectionEquality().hash(isFinished) ^
-      const DeepCollectionEquality().hash(showExplanation);
+  int get hashCode => Object.hash(
+      runtimeType, objectivesToDo, experienceId, isFinished, showExplanation);
 
   @JsonKey(ignore: true)
   @override
@@ -788,13 +775,13 @@ abstract class _ObjectivesTrackerState implements ObjectivesTrackerState {
       required bool showExplanation}) = _$_ObjectivesTrackerState;
 
   @override
-  KtList<Objective> get objectivesToDo => throw _privateConstructorUsedError;
+  KtList<Objective> get objectivesToDo;
   @override
-  UniqueId get experienceId => throw _privateConstructorUsedError;
+  UniqueId get experienceId;
   @override
-  bool get isFinished => throw _privateConstructorUsedError;
+  bool get isFinished;
   @override
-  bool get showExplanation => throw _privateConstructorUsedError;
+  bool get showExplanation;
   @override
   @JsonKey(ignore: true)
   _$ObjectivesTrackerStateCopyWith<_ObjectivesTrackerState> get copyWith =>

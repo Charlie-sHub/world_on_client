@@ -186,30 +186,21 @@ class _$_Reward extends _Reward {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _Reward &&
-            (identical(other.id, id) ||
-                const DeepCollectionEquality().equals(other.id, id)) &&
-            (identical(other.name, name) ||
-                const DeepCollectionEquality().equals(other.name, name)) &&
+        (other.runtimeType == runtimeType &&
+            other is _Reward &&
+            (identical(other.id, id) || other.id == id) &&
+            (identical(other.name, name) || other.name == name) &&
             (identical(other.description, description) ||
-                const DeepCollectionEquality()
-                    .equals(other.description, description)) &&
+                other.description == description) &&
             (identical(other.imageURL, imageURL) ||
-                const DeepCollectionEquality()
-                    .equals(other.imageURL, imageURL)) &&
+                other.imageURL == imageURL) &&
             (identical(other.imageFile, imageFile) ||
-                const DeepCollectionEquality()
-                    .equals(other.imageFile, imageFile)));
+                other.imageFile == imageFile));
   }
 
   @override
   int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(id) ^
-      const DeepCollectionEquality().hash(name) ^
-      const DeepCollectionEquality().hash(description) ^
-      const DeepCollectionEquality().hash(imageURL) ^
-      const DeepCollectionEquality().hash(imageFile);
+      Object.hash(runtimeType, id, name, description, imageURL, imageFile);
 
   @JsonKey(ignore: true)
   @override
@@ -227,15 +218,15 @@ abstract class _Reward extends Reward {
   const _Reward._() : super._();
 
   @override
-  UniqueId get id => throw _privateConstructorUsedError;
+  UniqueId get id;
   @override
-  Name get name => throw _privateConstructorUsedError;
+  Name get name;
   @override
-  EntityDescription get description => throw _privateConstructorUsedError;
+  EntityDescription get description;
   @override
-  String get imageURL => throw _privateConstructorUsedError;
+  String get imageURL;
   @override
-  Option<File> get imageFile => throw _privateConstructorUsedError;
+  Option<File> get imageFile;
   @override
   @JsonKey(ignore: true)
   _$RewardCopyWith<_Reward> get copyWith => throw _privateConstructorUsedError;

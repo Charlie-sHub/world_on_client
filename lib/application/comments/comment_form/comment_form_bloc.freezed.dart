@@ -190,23 +190,18 @@ class _$_Initialized implements _Initialized {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _Initialized &&
-            (identical(other.user, user) ||
-                const DeepCollectionEquality().equals(other.user, user)) &&
+        (other.runtimeType == runtimeType &&
+            other is _Initialized &&
+            (identical(other.user, user) || other.user == user) &&
             (identical(other.commentOption, commentOption) ||
-                const DeepCollectionEquality()
-                    .equals(other.commentOption, commentOption)) &&
+                other.commentOption == commentOption) &&
             (identical(other.experienceId, experienceId) ||
-                const DeepCollectionEquality()
-                    .equals(other.experienceId, experienceId)));
+                other.experienceId == experienceId));
   }
 
   @override
   int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(user) ^
-      const DeepCollectionEquality().hash(commentOption) ^
-      const DeepCollectionEquality().hash(experienceId);
+      Object.hash(runtimeType, user, commentOption, experienceId);
 
   @JsonKey(ignore: true)
   @override
@@ -294,9 +289,9 @@ abstract class _Initialized implements CommentFormEvent {
       required Option<Comment> commentOption,
       required UniqueId experienceId}) = _$_Initialized;
 
-  SimpleUser get user => throw _privateConstructorUsedError;
-  Option<Comment> get commentOption => throw _privateConstructorUsedError;
-  UniqueId get experienceId => throw _privateConstructorUsedError;
+  SimpleUser get user;
+  Option<Comment> get commentOption;
+  UniqueId get experienceId;
   @JsonKey(ignore: true)
   _$InitializedCopyWith<_Initialized> get copyWith =>
       throw _privateConstructorUsedError;
@@ -350,14 +345,13 @@ class _$_ContentChanged implements _ContentChanged {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _ContentChanged &&
-            (identical(other.content, content) ||
-                const DeepCollectionEquality().equals(other.content, content)));
+        (other.runtimeType == runtimeType &&
+            other is _ContentChanged &&
+            (identical(other.content, content) || other.content == content));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(content);
+  int get hashCode => Object.hash(runtimeType, content);
 
   @JsonKey(ignore: true)
   @override
@@ -442,7 +436,7 @@ class _$_ContentChanged implements _ContentChanged {
 abstract class _ContentChanged implements CommentFormEvent {
   const factory _ContentChanged(String content) = _$_ContentChanged;
 
-  String get content => throw _privateConstructorUsedError;
+  String get content;
   @JsonKey(ignore: true)
   _$ContentChangedCopyWith<_ContentChanged> get copyWith =>
       throw _privateConstructorUsedError;
@@ -504,15 +498,14 @@ class _$_Submitted implements _Submitted {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _Submitted &&
+        (other.runtimeType == runtimeType &&
+            other is _Submitted &&
             (identical(other.currentUser, currentUser) ||
-                const DeepCollectionEquality()
-                    .equals(other.currentUser, currentUser)));
+                other.currentUser == currentUser));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(currentUser);
+  int get hashCode => Object.hash(runtimeType, currentUser);
 
   @JsonKey(ignore: true)
   @override
@@ -597,7 +590,7 @@ class _$_Submitted implements _Submitted {
 abstract class _Submitted implements CommentFormEvent {
   const factory _Submitted(User currentUser) = _$_Submitted;
 
-  User get currentUser => throw _privateConstructorUsedError;
+  User get currentUser;
   @JsonKey(ignore: true)
   _$SubmittedCopyWith<_Submitted> get copyWith =>
       throw _privateConstructorUsedError;
@@ -795,32 +788,22 @@ class _$_CommentFormState implements _CommentFormState {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _CommentFormState &&
-            (identical(other.comment, comment) ||
-                const DeepCollectionEquality()
-                    .equals(other.comment, comment)) &&
+        (other.runtimeType == runtimeType &&
+            other is _CommentFormState &&
+            (identical(other.comment, comment) || other.comment == comment) &&
             (identical(other.showErrorMessages, showErrorMessages) ||
-                const DeepCollectionEquality()
-                    .equals(other.showErrorMessages, showErrorMessages)) &&
+                other.showErrorMessages == showErrorMessages) &&
             (identical(other.isEditing, isEditing) ||
-                const DeepCollectionEquality()
-                    .equals(other.isEditing, isEditing)) &&
+                other.isEditing == isEditing) &&
             (identical(other.isSubmitting, isSubmitting) ||
-                const DeepCollectionEquality()
-                    .equals(other.isSubmitting, isSubmitting)) &&
+                other.isSubmitting == isSubmitting) &&
             (identical(other.failureOrSuccessOption, failureOrSuccessOption) ||
-                const DeepCollectionEquality().equals(
-                    other.failureOrSuccessOption, failureOrSuccessOption)));
+                other.failureOrSuccessOption == failureOrSuccessOption));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(comment) ^
-      const DeepCollectionEquality().hash(showErrorMessages) ^
-      const DeepCollectionEquality().hash(isEditing) ^
-      const DeepCollectionEquality().hash(isSubmitting) ^
-      const DeepCollectionEquality().hash(failureOrSuccessOption);
+  int get hashCode => Object.hash(runtimeType, comment, showErrorMessages,
+      isEditing, isSubmitting, failureOrSuccessOption);
 
   @JsonKey(ignore: true)
   @override
@@ -838,16 +821,15 @@ abstract class _CommentFormState implements CommentFormState {
       _$_CommentFormState;
 
   @override
-  Comment get comment => throw _privateConstructorUsedError;
+  Comment get comment;
   @override
-  bool get showErrorMessages => throw _privateConstructorUsedError;
+  bool get showErrorMessages;
   @override
-  bool get isEditing => throw _privateConstructorUsedError;
+  bool get isEditing;
   @override
-  bool get isSubmitting => throw _privateConstructorUsedError;
+  bool get isSubmitting;
   @override
-  Option<Either<Failure, Unit>> get failureOrSuccessOption =>
-      throw _privateConstructorUsedError;
+  Option<Either<Failure, Unit>> get failureOrSuccessOption;
   @override
   @JsonKey(ignore: true)
   _$CommentFormStateCopyWith<_CommentFormState> get copyWith =>

@@ -153,15 +153,14 @@ class _$_InitializedForeignOrOwn implements _InitializedForeignOrOwn {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _InitializedForeignOrOwn &&
+        (other.runtimeType == runtimeType &&
+            other is _InitializedForeignOrOwn &&
             (identical(other.userIdOption, userIdOption) ||
-                const DeepCollectionEquality()
-                    .equals(other.userIdOption, userIdOption)));
+                other.userIdOption == userIdOption));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(userIdOption);
+  int get hashCode => Object.hash(runtimeType, userIdOption);
 
   @JsonKey(ignore: true)
   @override
@@ -233,7 +232,7 @@ abstract class _InitializedForeignOrOwn implements ProfileForeignOrOwnEvent {
       _$_InitializedForeignOrOwn;
 
   @override
-  Option<UniqueId> get userIdOption => throw _privateConstructorUsedError;
+  Option<UniqueId> get userIdOption;
   @override
   @JsonKey(ignore: true)
   _$InitializedForeignOrOwnCopyWith<_InitializedForeignOrOwn> get copyWith =>
@@ -378,7 +377,8 @@ class _$_Initial implements _Initial {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _Initial);
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _Initial);
   }
 
   @override
@@ -500,7 +500,8 @@ class _$_LoadInProgress implements _LoadInProgress {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _LoadInProgress);
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _LoadInProgress);
   }
 
   @override
@@ -646,14 +647,13 @@ class _$_Own implements _Own {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _Own &&
-            (identical(other.user, user) ||
-                const DeepCollectionEquality().equals(other.user, user)));
+        (other.runtimeType == runtimeType &&
+            other is _Own &&
+            (identical(other.user, user) || other.user == user));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(user);
+  int get hashCode => Object.hash(runtimeType, user);
 
   @JsonKey(ignore: true)
   @override
@@ -744,7 +744,7 @@ class _$_Own implements _Own {
 abstract class _Own implements ProfileForeignOrOwnState {
   const factory _Own(User user) = _$_Own;
 
-  User get user => throw _privateConstructorUsedError;
+  User get user;
   @JsonKey(ignore: true)
   _$OwnCopyWith<_Own> get copyWith => throw _privateConstructorUsedError;
 }
@@ -804,14 +804,13 @@ class _$_Foreign implements _Foreign {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _Foreign &&
-            (identical(other.user, user) ||
-                const DeepCollectionEquality().equals(other.user, user)));
+        (other.runtimeType == runtimeType &&
+            other is _Foreign &&
+            (identical(other.user, user) || other.user == user));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(user);
+  int get hashCode => Object.hash(runtimeType, user);
 
   @JsonKey(ignore: true)
   @override
@@ -902,7 +901,7 @@ class _$_Foreign implements _Foreign {
 abstract class _Foreign implements ProfileForeignOrOwnState {
   const factory _Foreign(User user) = _$_Foreign;
 
-  User get user => throw _privateConstructorUsedError;
+  User get user;
   @JsonKey(ignore: true)
   _$ForeignCopyWith<_Foreign> get copyWith =>
       throw _privateConstructorUsedError;
@@ -939,7 +938,8 @@ class _$_LoadFailure implements _LoadFailure {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _LoadFailure);
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _LoadFailure);
   }
 
   @override

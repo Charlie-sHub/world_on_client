@@ -216,34 +216,22 @@ class _$_Comment extends _Comment {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _Comment &&
-            (identical(other.id, id) ||
-                const DeepCollectionEquality().equals(other.id, id)) &&
-            (identical(other.poster, poster) ||
-                const DeepCollectionEquality().equals(other.poster, poster)) &&
+        (other.runtimeType == runtimeType &&
+            other is _Comment &&
+            (identical(other.id, id) || other.id == id) &&
+            (identical(other.poster, poster) || other.poster == poster) &&
             (identical(other.experienceId, experienceId) ||
-                const DeepCollectionEquality()
-                    .equals(other.experienceId, experienceId)) &&
-            (identical(other.content, content) ||
-                const DeepCollectionEquality()
-                    .equals(other.content, content)) &&
+                other.experienceId == experienceId) &&
+            (identical(other.content, content) || other.content == content) &&
             (identical(other.creationDate, creationDate) ||
-                const DeepCollectionEquality()
-                    .equals(other.creationDate, creationDate)) &&
+                other.creationDate == creationDate) &&
             (identical(other.modificationDate, modificationDate) ||
-                const DeepCollectionEquality()
-                    .equals(other.modificationDate, modificationDate)));
+                other.modificationDate == modificationDate));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(id) ^
-      const DeepCollectionEquality().hash(poster) ^
-      const DeepCollectionEquality().hash(experienceId) ^
-      const DeepCollectionEquality().hash(content) ^
-      const DeepCollectionEquality().hash(creationDate) ^
-      const DeepCollectionEquality().hash(modificationDate);
+  int get hashCode => Object.hash(runtimeType, id, poster, experienceId,
+      content, creationDate, modificationDate);
 
   @JsonKey(ignore: true)
   @override
@@ -262,17 +250,17 @@ abstract class _Comment extends Comment {
   const _Comment._() : super._();
 
   @override
-  UniqueId get id => throw _privateConstructorUsedError;
+  UniqueId get id;
   @override
-  SimpleUser get poster => throw _privateConstructorUsedError;
+  SimpleUser get poster;
   @override
-  UniqueId get experienceId => throw _privateConstructorUsedError;
+  UniqueId get experienceId;
   @override
-  CommentContent get content => throw _privateConstructorUsedError;
+  CommentContent get content;
   @override
-  PastDate get creationDate => throw _privateConstructorUsedError;
+  PastDate get creationDate;
   @override
-  PastDate get modificationDate => throw _privateConstructorUsedError;
+  PastDate get modificationDate;
   @override
   @JsonKey(ignore: true)
   _$CommentCopyWith<_Comment> get copyWith =>

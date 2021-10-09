@@ -34,7 +34,7 @@ class _$RewardDtoTearOff {
     );
   }
 
-  RewardDto fromJson(Map<String, Object> json) {
+  RewardDto fromJson(Map<String, Object?> json) {
     return RewardDto.fromJson(json);
   }
 }
@@ -174,26 +174,18 @@ class _$_RewardDto extends _RewardDto {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _RewardDto &&
-            (identical(other.id, id) ||
-                const DeepCollectionEquality().equals(other.id, id)) &&
-            (identical(other.name, name) ||
-                const DeepCollectionEquality().equals(other.name, name)) &&
+        (other.runtimeType == runtimeType &&
+            other is _RewardDto &&
+            (identical(other.id, id) || other.id == id) &&
+            (identical(other.name, name) || other.name == name) &&
             (identical(other.description, description) ||
-                const DeepCollectionEquality()
-                    .equals(other.description, description)) &&
+                other.description == description) &&
             (identical(other.imageURL, imageURL) ||
-                const DeepCollectionEquality()
-                    .equals(other.imageURL, imageURL)));
+                other.imageURL == imageURL));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(id) ^
-      const DeepCollectionEquality().hash(name) ^
-      const DeepCollectionEquality().hash(description) ^
-      const DeepCollectionEquality().hash(imageURL);
+  int get hashCode => Object.hash(runtimeType, id, name, description, imageURL);
 
   @JsonKey(ignore: true)
   @override
@@ -218,13 +210,13 @@ abstract class _RewardDto extends RewardDto {
       _$_RewardDto.fromJson;
 
   @override
-  String get id => throw _privateConstructorUsedError;
+  String get id;
   @override
-  String get name => throw _privateConstructorUsedError;
+  String get name;
   @override
-  String get description => throw _privateConstructorUsedError;
+  String get description;
   @override
-  String get imageURL => throw _privateConstructorUsedError;
+  String get imageURL;
   @override
   @JsonKey(ignore: true)
   _$RewardDtoCopyWith<_RewardDto> get copyWith =>

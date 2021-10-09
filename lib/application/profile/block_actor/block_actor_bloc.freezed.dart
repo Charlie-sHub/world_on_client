@@ -171,20 +171,17 @@ class _$_Initialized implements _Initialized {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _Initialized &&
+        (other.runtimeType == runtimeType &&
+            other is _Initialized &&
             (identical(other.userToCheckId, userToCheckId) ||
-                const DeepCollectionEquality()
-                    .equals(other.userToCheckId, userToCheckId)) &&
-            (identical(other.blockedUsersIds, blockedUsersIds) ||
-                const DeepCollectionEquality()
-                    .equals(other.blockedUsersIds, blockedUsersIds)));
+                other.userToCheckId == userToCheckId) &&
+            const DeepCollectionEquality()
+                .equals(other.blockedUsersIds, blockedUsersIds));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(userToCheckId) ^
-      const DeepCollectionEquality().hash(blockedUsersIds);
+  int get hashCode => Object.hash(runtimeType, userToCheckId,
+      const DeepCollectionEquality().hash(blockedUsersIds));
 
   @JsonKey(ignore: true)
   @override
@@ -272,8 +269,8 @@ abstract class _Initialized implements BlockActorEvent {
   const factory _Initialized(
       UniqueId userToCheckId, Set<UniqueId> blockedUsersIds) = _$_Initialized;
 
-  UniqueId get userToCheckId => throw _privateConstructorUsedError;
-  Set<UniqueId> get blockedUsersIds => throw _privateConstructorUsedError;
+  UniqueId get userToCheckId;
+  Set<UniqueId> get blockedUsersIds;
   @JsonKey(ignore: true)
   _$InitializedCopyWith<_Initialized> get copyWith =>
       throw _privateConstructorUsedError;
@@ -340,20 +337,16 @@ class _$_Blocked implements _Blocked {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _Blocked &&
+        (other.runtimeType == runtimeType &&
+            other is _Blocked &&
             (identical(other.userToBlockId, userToBlockId) ||
-                const DeepCollectionEquality()
-                    .equals(other.userToBlockId, userToBlockId)) &&
+                other.userToBlockId == userToBlockId) &&
             (identical(other.currentUser, currentUser) ||
-                const DeepCollectionEquality()
-                    .equals(other.currentUser, currentUser)));
+                other.currentUser == currentUser));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(userToBlockId) ^
-      const DeepCollectionEquality().hash(currentUser);
+  int get hashCode => Object.hash(runtimeType, userToBlockId, currentUser);
 
   @JsonKey(ignore: true)
   @override
@@ -441,8 +434,8 @@ abstract class _Blocked implements BlockActorEvent {
   const factory _Blocked(UniqueId userToBlockId, SimpleUser currentUser) =
       _$_Blocked;
 
-  UniqueId get userToBlockId => throw _privateConstructorUsedError;
-  SimpleUser get currentUser => throw _privateConstructorUsedError;
+  UniqueId get userToBlockId;
+  SimpleUser get currentUser;
   @JsonKey(ignore: true)
   _$BlockedCopyWith<_Blocked> get copyWith =>
       throw _privateConstructorUsedError;
@@ -510,20 +503,16 @@ class _$_UnBlocked implements _UnBlocked {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _UnBlocked &&
+        (other.runtimeType == runtimeType &&
+            other is _UnBlocked &&
             (identical(other.userToUnBlockId, userToUnBlockId) ||
-                const DeepCollectionEquality()
-                    .equals(other.userToUnBlockId, userToUnBlockId)) &&
+                other.userToUnBlockId == userToUnBlockId) &&
             (identical(other.currentUser, currentUser) ||
-                const DeepCollectionEquality()
-                    .equals(other.currentUser, currentUser)));
+                other.currentUser == currentUser));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(userToUnBlockId) ^
-      const DeepCollectionEquality().hash(currentUser);
+  int get hashCode => Object.hash(runtimeType, userToUnBlockId, currentUser);
 
   @JsonKey(ignore: true)
   @override
@@ -611,8 +600,8 @@ abstract class _UnBlocked implements BlockActorEvent {
   const factory _UnBlocked(UniqueId userToUnBlockId, SimpleUser currentUser) =
       _$_UnBlocked;
 
-  UniqueId get userToUnBlockId => throw _privateConstructorUsedError;
-  SimpleUser get currentUser => throw _privateConstructorUsedError;
+  UniqueId get userToUnBlockId;
+  SimpleUser get currentUser;
   @JsonKey(ignore: true)
   _$UnBlockedCopyWith<_UnBlocked> get copyWith =>
       throw _privateConstructorUsedError;
@@ -785,7 +774,8 @@ class _$_Initial implements _Initial {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _Initial);
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _Initial);
   }
 
   @override
@@ -925,7 +915,8 @@ class _$_ActionInProgress implements _ActionInProgress {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _ActionInProgress);
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _ActionInProgress);
   }
 
   @override
@@ -1062,7 +1053,8 @@ class _$_Blocks implements _Blocks {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _Blocks);
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _Blocks);
   }
 
   @override
@@ -1200,7 +1192,8 @@ class _$_BlocksNot implements _BlocksNot {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _BlocksNot);
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _BlocksNot);
   }
 
   @override
@@ -1340,7 +1333,8 @@ class _$_BlockSuccess implements _BlockSuccess {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _BlockSuccess);
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _BlockSuccess);
   }
 
   @override
@@ -1506,14 +1500,13 @@ class _$_BlockFailure implements _BlockFailure {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _BlockFailure &&
-            (identical(other.failure, failure) ||
-                const DeepCollectionEquality().equals(other.failure, failure)));
+        (other.runtimeType == runtimeType &&
+            other is _BlockFailure &&
+            (identical(other.failure, failure) || other.failure == failure));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(failure);
+  int get hashCode => Object.hash(runtimeType, failure);
 
   @JsonKey(ignore: true)
   @override
@@ -1622,7 +1615,7 @@ class _$_BlockFailure implements _BlockFailure {
 abstract class _BlockFailure implements BlockActorState {
   const factory _BlockFailure(Failure<dynamic> failure) = _$_BlockFailure;
 
-  Failure<dynamic> get failure => throw _privateConstructorUsedError;
+  Failure<dynamic> get failure;
   @JsonKey(ignore: true)
   _$BlockFailureCopyWith<_BlockFailure> get copyWith =>
       throw _privateConstructorUsedError;
@@ -1659,7 +1652,8 @@ class _$_UnBlockSuccess implements _UnBlockSuccess {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _UnBlockSuccess);
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _UnBlockSuccess);
   }
 
   @override
@@ -1825,14 +1819,13 @@ class _$_UnBlockFailure implements _UnBlockFailure {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _UnBlockFailure &&
-            (identical(other.failure, failure) ||
-                const DeepCollectionEquality().equals(other.failure, failure)));
+        (other.runtimeType == runtimeType &&
+            other is _UnBlockFailure &&
+            (identical(other.failure, failure) || other.failure == failure));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(failure);
+  int get hashCode => Object.hash(runtimeType, failure);
 
   @JsonKey(ignore: true)
   @override
@@ -1941,7 +1934,7 @@ class _$_UnBlockFailure implements _UnBlockFailure {
 abstract class _UnBlockFailure implements BlockActorState {
   const factory _UnBlockFailure(Failure<dynamic> failure) = _$_UnBlockFailure;
 
-  Failure<dynamic> get failure => throw _privateConstructorUsedError;
+  Failure<dynamic> get failure;
   @JsonKey(ignore: true)
   _$UnBlockFailureCopyWith<_UnBlockFailure> get copyWith =>
       throw _privateConstructorUsedError;

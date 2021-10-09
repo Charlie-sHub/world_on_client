@@ -141,14 +141,13 @@ class _$_WatchProfileStarted implements _WatchProfileStarted {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _WatchProfileStarted &&
-            (identical(other.userId, userId) ||
-                const DeepCollectionEquality().equals(other.userId, userId)));
+        (other.runtimeType == runtimeType &&
+            other is _WatchProfileStarted &&
+            (identical(other.userId, userId) || other.userId == userId));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(userId);
+  int get hashCode => Object.hash(runtimeType, userId);
 
   @JsonKey(ignore: true)
   @override
@@ -223,7 +222,7 @@ class _$_WatchProfileStarted implements _WatchProfileStarted {
 abstract class _WatchProfileStarted implements ProfileWatcherEvent {
   const factory _WatchProfileStarted(UniqueId userId) = _$_WatchProfileStarted;
 
-  UniqueId get userId => throw _privateConstructorUsedError;
+  UniqueId get userId;
   @JsonKey(ignore: true)
   _$WatchProfileStartedCopyWith<_WatchProfileStarted> get copyWith =>
       throw _privateConstructorUsedError;
@@ -277,15 +276,14 @@ class _$_ResultsReceived implements _ResultsReceived {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _ResultsReceived &&
+        (other.runtimeType == runtimeType &&
+            other is _ResultsReceived &&
             (identical(other.failureOrUser, failureOrUser) ||
-                const DeepCollectionEquality()
-                    .equals(other.failureOrUser, failureOrUser)));
+                other.failureOrUser == failureOrUser));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(failureOrUser);
+  int get hashCode => Object.hash(runtimeType, failureOrUser);
 
   @JsonKey(ignore: true)
   @override
@@ -360,7 +358,7 @@ abstract class _ResultsReceived implements ProfileWatcherEvent {
   const factory _ResultsReceived(Either<Failure, User> failureOrUser) =
       _$_ResultsReceived;
 
-  Either<Failure, User> get failureOrUser => throw _privateConstructorUsedError;
+  Either<Failure, User> get failureOrUser;
   @JsonKey(ignore: true)
   _$ResultsReceivedCopyWith<_ResultsReceived> get copyWith =>
       throw _privateConstructorUsedError;
@@ -482,7 +480,8 @@ class _$_Initial implements _Initial {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _Initial);
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _Initial);
   }
 
   @override
@@ -618,14 +617,13 @@ class _$_NewProfileUpdate implements _NewProfileUpdate {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _NewProfileUpdate &&
-            (identical(other.user, user) ||
-                const DeepCollectionEquality().equals(other.user, user)));
+        (other.runtimeType == runtimeType &&
+            other is _NewProfileUpdate &&
+            (identical(other.user, user) || other.user == user));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(user);
+  int get hashCode => Object.hash(runtimeType, user);
 
   @JsonKey(ignore: true)
   @override
@@ -704,7 +702,7 @@ class _$_NewProfileUpdate implements _NewProfileUpdate {
 abstract class _NewProfileUpdate implements ProfileWatcherState {
   const factory _NewProfileUpdate(User user) = _$_NewProfileUpdate;
 
-  User get user => throw _privateConstructorUsedError;
+  User get user;
   @JsonKey(ignore: true)
   _$NewProfileUpdateCopyWith<_NewProfileUpdate> get copyWith =>
       throw _privateConstructorUsedError;
@@ -739,7 +737,8 @@ class _$_Failure implements _Failure {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _Failure);
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _Failure);
   }
 
   @override

@@ -38,7 +38,7 @@ class _$CommentDtoTearOff {
     );
   }
 
-  CommentDto fromJson(Map<String, Object> json) {
+  CommentDto fromJson(Map<String, Object?> json) {
     return CommentDto.fromJson(json);
   }
 }
@@ -236,34 +236,22 @@ class _$_CommentDto extends _CommentDto {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _CommentDto &&
-            (identical(other.id, id) ||
-                const DeepCollectionEquality().equals(other.id, id)) &&
-            (identical(other.poster, poster) ||
-                const DeepCollectionEquality().equals(other.poster, poster)) &&
+        (other.runtimeType == runtimeType &&
+            other is _CommentDto &&
+            (identical(other.id, id) || other.id == id) &&
+            (identical(other.poster, poster) || other.poster == poster) &&
             (identical(other.experienceId, experienceId) ||
-                const DeepCollectionEquality()
-                    .equals(other.experienceId, experienceId)) &&
-            (identical(other.content, content) ||
-                const DeepCollectionEquality()
-                    .equals(other.content, content)) &&
+                other.experienceId == experienceId) &&
+            (identical(other.content, content) || other.content == content) &&
             (identical(other.creationDate, creationDate) ||
-                const DeepCollectionEquality()
-                    .equals(other.creationDate, creationDate)) &&
+                other.creationDate == creationDate) &&
             (identical(other.modificationDate, modificationDate) ||
-                const DeepCollectionEquality()
-                    .equals(other.modificationDate, modificationDate)));
+                other.modificationDate == modificationDate));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(id) ^
-      const DeepCollectionEquality().hash(poster) ^
-      const DeepCollectionEquality().hash(experienceId) ^
-      const DeepCollectionEquality().hash(content) ^
-      const DeepCollectionEquality().hash(creationDate) ^
-      const DeepCollectionEquality().hash(modificationDate);
+  int get hashCode => Object.hash(runtimeType, id, poster, experienceId,
+      content, creationDate, modificationDate);
 
   @JsonKey(ignore: true)
   @override
@@ -291,19 +279,19 @@ abstract class _CommentDto extends CommentDto {
       _$_CommentDto.fromJson;
 
   @override
-  String get id => throw _privateConstructorUsedError;
+  String get id;
   @override
-  SimpleUserDto get poster => throw _privateConstructorUsedError;
+  SimpleUserDto get poster;
   @override
-  String get experienceId => throw _privateConstructorUsedError;
+  String get experienceId;
   @override
-  String get content => throw _privateConstructorUsedError;
-  @override
-  @ServerTimestampConverter()
-  DateTime get creationDate => throw _privateConstructorUsedError;
+  String get content;
   @override
   @ServerTimestampConverter()
-  DateTime get modificationDate => throw _privateConstructorUsedError;
+  DateTime get creationDate;
+  @override
+  @ServerTimestampConverter()
+  DateTime get modificationDate;
   @override
   @JsonKey(ignore: true)
   _$CommentDtoCopyWith<_CommentDto> get copyWith =>

@@ -165,16 +165,14 @@ class _$_Initialized implements _Initialized {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _Initialized &&
+        (other.runtimeType == runtimeType &&
+            other is _Initialized &&
             (identical(other.objectiveListOption, objectiveListOption) ||
-                const DeepCollectionEquality()
-                    .equals(other.objectiveListOption, objectiveListOption)));
+                other.objectiveListOption == objectiveListOption));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(objectiveListOption);
+  int get hashCode => Object.hash(runtimeType, objectiveListOption);
 
   @JsonKey(ignore: true)
   @override
@@ -261,8 +259,7 @@ abstract class _Initialized implements ObjectivesCreationEvent {
   const factory _Initialized(Option<ObjectiveList> objectiveListOption) =
       _$_Initialized;
 
-  Option<ObjectiveList> get objectiveListOption =>
-      throw _privateConstructorUsedError;
+  Option<ObjectiveList> get objectiveListOption;
   @JsonKey(ignore: true)
   _$InitializedCopyWith<_Initialized> get copyWith =>
       throw _privateConstructorUsedError;
@@ -325,15 +322,14 @@ class _$_AddedObjective implements _AddedObjective {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _AddedObjective &&
+        (other.runtimeType == runtimeType &&
+            other is _AddedObjective &&
             (identical(other.objective, objective) ||
-                const DeepCollectionEquality()
-                    .equals(other.objective, objective)));
+                other.objective == objective));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(objective);
+  int get hashCode => Object.hash(runtimeType, objective);
 
   @JsonKey(ignore: true)
   @override
@@ -419,7 +415,7 @@ class _$_AddedObjective implements _AddedObjective {
 abstract class _AddedObjective implements ObjectivesCreationEvent {
   const factory _AddedObjective(Objective objective) = _$_AddedObjective;
 
-  Objective get objective => throw _privateConstructorUsedError;
+  Objective get objective;
   @JsonKey(ignore: true)
   _$AddedObjectiveCopyWith<_AddedObjective> get copyWith =>
       throw _privateConstructorUsedError;
@@ -482,15 +478,14 @@ class _$_RemovedObjective implements _RemovedObjective {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _RemovedObjective &&
+        (other.runtimeType == runtimeType &&
+            other is _RemovedObjective &&
             (identical(other.objective, objective) ||
-                const DeepCollectionEquality()
-                    .equals(other.objective, objective)));
+                other.objective == objective));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(objective);
+  int get hashCode => Object.hash(runtimeType, objective);
 
   @JsonKey(ignore: true)
   @override
@@ -576,7 +571,7 @@ class _$_RemovedObjective implements _RemovedObjective {
 abstract class _RemovedObjective implements ObjectivesCreationEvent {
   const factory _RemovedObjective(Objective objective) = _$_RemovedObjective;
 
-  Objective get objective => throw _privateConstructorUsedError;
+  Objective get objective;
   @JsonKey(ignore: true)
   _$RemovedObjectiveCopyWith<_RemovedObjective> get copyWith =>
       throw _privateConstructorUsedError;
@@ -630,15 +625,15 @@ class _$_ReorderedList implements _ReorderedList {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _ReorderedList &&
-            (identical(other.reorderedList, reorderedList) ||
-                const DeepCollectionEquality()
-                    .equals(other.reorderedList, reorderedList)));
+        (other.runtimeType == runtimeType &&
+            other is _ReorderedList &&
+            const DeepCollectionEquality()
+                .equals(other.reorderedList, reorderedList));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(reorderedList);
+  int get hashCode => Object.hash(
+      runtimeType, const DeepCollectionEquality().hash(reorderedList));
 
   @JsonKey(ignore: true)
   @override
@@ -725,7 +720,7 @@ abstract class _ReorderedList implements ObjectivesCreationEvent {
   const factory _ReorderedList(List<Objective> reorderedList) =
       _$_ReorderedList;
 
-  List<Objective> get reorderedList => throw _privateConstructorUsedError;
+  List<Objective> get reorderedList;
   @JsonKey(ignore: true)
   _$ReorderedListCopyWith<_ReorderedList> get copyWith =>
       throw _privateConstructorUsedError;
@@ -836,16 +831,14 @@ class _$_ObjectivesCreationState implements _ObjectivesCreationState {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _ObjectivesCreationState &&
+        (other.runtimeType == runtimeType &&
+            other is _ObjectivesCreationState &&
             (identical(other.objectivesCreated, objectivesCreated) ||
-                const DeepCollectionEquality()
-                    .equals(other.objectivesCreated, objectivesCreated)));
+                other.objectivesCreated == objectivesCreated));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(objectivesCreated);
+  int get hashCode => Object.hash(runtimeType, objectivesCreated);
 
   @JsonKey(ignore: true)
   @override
@@ -860,7 +853,7 @@ abstract class _ObjectivesCreationState implements ObjectivesCreationState {
       _$_ObjectivesCreationState;
 
   @override
-  KtList<Objective> get objectivesCreated => throw _privateConstructorUsedError;
+  KtList<Objective> get objectivesCreated;
   @override
   @JsonKey(ignore: true)
   _$ObjectivesCreationStateCopyWith<_ObjectivesCreationState> get copyWith =>

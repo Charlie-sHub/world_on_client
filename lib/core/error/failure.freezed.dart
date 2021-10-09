@@ -270,18 +270,16 @@ class _$_AuthenticationDomain<T> implements _AuthenticationDomain<T> {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _AuthenticationDomain<T> &&
+        (other.runtimeType == runtimeType &&
+            other is _AuthenticationDomain<T> &&
             (identical(other.authenticationDomainFailure,
                     authenticationDomainFailure) ||
-                const DeepCollectionEquality().equals(
-                    other.authenticationDomainFailure,
-                    authenticationDomainFailure)));
+                other.authenticationDomainFailure ==
+                    authenticationDomainFailure));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(authenticationDomainFailure);
+  int get hashCode => Object.hash(runtimeType, authenticationDomainFailure);
 
   @JsonKey(ignore: true)
   @override
@@ -429,8 +427,7 @@ abstract class _AuthenticationDomain<T> implements Failure<T> {
           AuthenticationDomainFailure<T> authenticationDomainFailure) =
       _$_AuthenticationDomain<T>;
 
-  AuthenticationDomainFailure<T> get authenticationDomainFailure =>
-      throw _privateConstructorUsedError;
+  AuthenticationDomainFailure<T> get authenticationDomainFailure;
   @JsonKey(ignore: true)
   _$AuthenticationDomainCopyWith<T, _AuthenticationDomain<T>> get copyWith =>
       throw _privateConstructorUsedError;
@@ -494,18 +491,15 @@ class _$_AuthenticationData<T> implements _AuthenticationData<T> {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _AuthenticationData<T> &&
+        (other.runtimeType == runtimeType &&
+            other is _AuthenticationData<T> &&
             (identical(other.authenticationDataFailure,
                     authenticationDataFailure) ||
-                const DeepCollectionEquality().equals(
-                    other.authenticationDataFailure,
-                    authenticationDataFailure)));
+                other.authenticationDataFailure == authenticationDataFailure));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(authenticationDataFailure);
+  int get hashCode => Object.hash(runtimeType, authenticationDataFailure);
 
   @JsonKey(ignore: true)
   @override
@@ -653,8 +647,7 @@ abstract class _AuthenticationData<T> implements Failure<T> {
           AuthenticationDataFailure<T> authenticationDataFailure) =
       _$_AuthenticationData<T>;
 
-  AuthenticationDataFailure<T> get authenticationDataFailure =>
-      throw _privateConstructorUsedError;
+  AuthenticationDataFailure<T> get authenticationDataFailure;
   @JsonKey(ignore: true)
   _$AuthenticationDataCopyWith<T, _AuthenticationData<T>> get copyWith =>
       throw _privateConstructorUsedError;
@@ -717,16 +710,14 @@ class _$_CoreDomain<T> implements _CoreDomain<T> {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _CoreDomain<T> &&
+        (other.runtimeType == runtimeType &&
+            other is _CoreDomain<T> &&
             (identical(other.coreDomainFailure, coreDomainFailure) ||
-                const DeepCollectionEquality()
-                    .equals(other.coreDomainFailure, coreDomainFailure)));
+                other.coreDomainFailure == coreDomainFailure));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(coreDomainFailure);
+  int get hashCode => Object.hash(runtimeType, coreDomainFailure);
 
   @JsonKey(ignore: true)
   @override
@@ -872,8 +863,7 @@ abstract class _CoreDomain<T> implements Failure<T> {
   const factory _CoreDomain(CoreDomainFailure<T> coreDomainFailure) =
       _$_CoreDomain<T>;
 
-  CoreDomainFailure<T> get coreDomainFailure =>
-      throw _privateConstructorUsedError;
+  CoreDomainFailure<T> get coreDomainFailure;
   @JsonKey(ignore: true)
   _$CoreDomainCopyWith<T, _CoreDomain<T>> get copyWith =>
       throw _privateConstructorUsedError;
@@ -937,16 +927,14 @@ class _$_CoreAppllication<T> implements _CoreAppllication<T> {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _CoreAppllication<T> &&
+        (other.runtimeType == runtimeType &&
+            other is _CoreAppllication<T> &&
             (identical(other.coreApplicationFailure, coreApplicationFailure) ||
-                const DeepCollectionEquality().equals(
-                    other.coreApplicationFailure, coreApplicationFailure)));
+                other.coreApplicationFailure == coreApplicationFailure));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(coreApplicationFailure);
+  int get hashCode => Object.hash(runtimeType, coreApplicationFailure);
 
   @JsonKey(ignore: true)
   @override
@@ -1094,8 +1082,7 @@ abstract class _CoreAppllication<T> implements Failure<T> {
           CoreApplicationFailure<T> coreApplicationFailure) =
       _$_CoreAppllication<T>;
 
-  CoreApplicationFailure<T> get coreApplicationFailure =>
-      throw _privateConstructorUsedError;
+  CoreApplicationFailure<T> get coreApplicationFailure;
   @JsonKey(ignore: true)
   _$CoreAppllicationCopyWith<T, _CoreAppllication<T>> get copyWith =>
       throw _privateConstructorUsedError;
@@ -1171,19 +1158,17 @@ class _$_ExperienceManagementApplicationFailure<T>
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _ExperienceManagementApplicationFailure<T> &&
+        (other.runtimeType == runtimeType &&
+            other is _ExperienceManagementApplicationFailure<T> &&
             (identical(other.experienceManagementApplicationFailure,
                     experienceManagementApplicationFailure) ||
-                const DeepCollectionEquality().equals(
-                    other.experienceManagementApplicationFailure,
-                    experienceManagementApplicationFailure)));
+                other.experienceManagementApplicationFailure ==
+                    experienceManagementApplicationFailure));
   }
 
   @override
   int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality()
-          .hash(experienceManagementApplicationFailure);
+      Object.hash(runtimeType, experienceManagementApplicationFailure);
 
   @JsonKey(ignore: true)
   @override
@@ -1338,8 +1323,7 @@ abstract class _ExperienceManagementApplicationFailure<T>
       _$_ExperienceManagementApplicationFailure<T>;
 
   ExperienceManagementApplicationFailure<T>
-      get experienceManagementApplicationFailure =>
-          throw _privateConstructorUsedError;
+      get experienceManagementApplicationFailure;
   @JsonKey(ignore: true)
   _$ExperienceManagementApplicationFailureCopyWith<T,
           _ExperienceManagementApplicationFailure<T>>
@@ -1402,16 +1386,14 @@ class _$_CoreData<T> implements _CoreData<T> {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _CoreData<T> &&
+        (other.runtimeType == runtimeType &&
+            other is _CoreData<T> &&
             (identical(other.coreDataFailure, coreDataFailure) ||
-                const DeepCollectionEquality()
-                    .equals(other.coreDataFailure, coreDataFailure)));
+                other.coreDataFailure == coreDataFailure));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(coreDataFailure);
+  int get hashCode => Object.hash(runtimeType, coreDataFailure);
 
   @JsonKey(ignore: true)
   @override
@@ -1556,7 +1538,7 @@ class _$_CoreData<T> implements _CoreData<T> {
 abstract class _CoreData<T> implements Failure<T> {
   const factory _CoreData(CoreDataFailure<T> coreDataFailure) = _$_CoreData<T>;
 
-  CoreDataFailure<T> get coreDataFailure => throw _privateConstructorUsedError;
+  CoreDataFailure<T> get coreDataFailure;
   @JsonKey(ignore: true)
   _$CoreDataCopyWith<T, _CoreData<T>> get copyWith =>
       throw _privateConstructorUsedError;
@@ -1618,16 +1600,14 @@ class _$_StoreData<T> implements _StoreData<T> {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _StoreData<T> &&
+        (other.runtimeType == runtimeType &&
+            other is _StoreData<T> &&
             (identical(other.storeDataFailure, storeDataFailure) ||
-                const DeepCollectionEquality()
-                    .equals(other.storeDataFailure, storeDataFailure)));
+                other.storeDataFailure == storeDataFailure));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(storeDataFailure);
+  int get hashCode => Object.hash(runtimeType, storeDataFailure);
 
   @JsonKey(ignore: true)
   @override
@@ -1773,8 +1753,7 @@ abstract class _StoreData<T> implements Failure<T> {
   const factory _StoreData(StoreDataFailure<T> storeDataFailure) =
       _$_StoreData<T>;
 
-  StoreDataFailure<T> get storeDataFailure =>
-      throw _privateConstructorUsedError;
+  StoreDataFailure<T> get storeDataFailure;
   @JsonKey(ignore: true)
   _$StoreDataCopyWith<T, _StoreData<T>> get copyWith =>
       throw _privateConstructorUsedError;
@@ -1834,15 +1813,14 @@ class _$_Value<T> implements _Value<T> {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _Value<T> &&
+        (other.runtimeType == runtimeType &&
+            other is _Value<T> &&
             (identical(other.valueFailure, valueFailure) ||
-                const DeepCollectionEquality()
-                    .equals(other.valueFailure, valueFailure)));
+                other.valueFailure == valueFailure));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(valueFailure);
+  int get hashCode => Object.hash(runtimeType, valueFailure);
 
   @JsonKey(ignore: true)
   @override
@@ -1987,7 +1965,7 @@ class _$_Value<T> implements _Value<T> {
 abstract class _Value<T> implements Failure<T> {
   const factory _Value(ValueFailure<T> valueFailure) = _$_Value<T>;
 
-  ValueFailure<T> get valueFailure => throw _privateConstructorUsedError;
+  ValueFailure<T> get valueFailure;
   @JsonKey(ignore: true)
   _$ValueCopyWith<T, _Value<T>> get copyWith =>
       throw _privateConstructorUsedError;
@@ -2051,16 +2029,14 @@ class _$_ProfileDomain<T> implements _ProfileDomain<T> {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _ProfileDomain<T> &&
+        (other.runtimeType == runtimeType &&
+            other is _ProfileDomain<T> &&
             (identical(other.profileDomainFailure, profileDomainFailure) ||
-                const DeepCollectionEquality()
-                    .equals(other.profileDomainFailure, profileDomainFailure)));
+                other.profileDomainFailure == profileDomainFailure));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(profileDomainFailure);
+  int get hashCode => Object.hash(runtimeType, profileDomainFailure);
 
   @JsonKey(ignore: true)
   @override
@@ -2206,8 +2182,7 @@ abstract class _ProfileDomain<T> implements Failure<T> {
   const factory _ProfileDomain(ProfileDomainFailure<T> profileDomainFailure) =
       _$_ProfileDomain<T>;
 
-  ProfileDomainFailure<T> get profileDomainFailure =>
-      throw _privateConstructorUsedError;
+  ProfileDomainFailure<T> get profileDomainFailure;
   @JsonKey(ignore: true)
   _$ProfileDomainCopyWith<T, _ProfileDomain<T>> get copyWith =>
       throw _privateConstructorUsedError;

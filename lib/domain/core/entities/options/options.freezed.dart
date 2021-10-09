@@ -123,19 +123,15 @@ class _$_Options extends _Options {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _Options &&
-            (identical(other.id, id) ||
-                const DeepCollectionEquality().equals(other.id, id)) &&
+        (other.runtimeType == runtimeType &&
+            other is _Options &&
+            (identical(other.id, id) || other.id == id) &&
             (identical(other.languageCode, languageCode) ||
-                const DeepCollectionEquality()
-                    .equals(other.languageCode, languageCode)));
+                other.languageCode == languageCode));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(id) ^
-      const DeepCollectionEquality().hash(languageCode);
+  int get hashCode => Object.hash(runtimeType, id, languageCode);
 
   @JsonKey(ignore: true)
   @override
@@ -149,9 +145,9 @@ abstract class _Options extends Options {
   const _Options._() : super._();
 
   @override
-  UniqueId get id => throw _privateConstructorUsedError;
+  UniqueId get id;
   @override
-  String get languageCode => throw _privateConstructorUsedError;
+  String get languageCode;
   @override
   @JsonKey(ignore: true)
   _$OptionsCopyWith<_Options> get copyWith =>

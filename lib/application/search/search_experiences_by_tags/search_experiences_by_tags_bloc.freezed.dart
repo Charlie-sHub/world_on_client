@@ -145,14 +145,14 @@ class _$_Submitted implements _Submitted {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _Submitted &&
-            (identical(other.tags, tags) ||
-                const DeepCollectionEquality().equals(other.tags, tags)));
+        (other.runtimeType == runtimeType &&
+            other is _Submitted &&
+            const DeepCollectionEquality().equals(other.tags, tags));
   }
 
   @override
   int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(tags);
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(tags));
 
   @JsonKey(ignore: true)
   @override
@@ -229,7 +229,7 @@ class _$_Submitted implements _Submitted {
 abstract class _Submitted implements SearchExperiencesByTagsEvent {
   const factory _Submitted(Set<Tag> tags) = _$_Submitted;
 
-  Set<Tag> get tags => throw _privateConstructorUsedError;
+  Set<Tag> get tags;
   @JsonKey(ignore: true)
   _$SubmittedCopyWith<_Submitted> get copyWith =>
       throw _privateConstructorUsedError;
@@ -283,16 +283,14 @@ class _$_ResultsReceived implements _ResultsReceived {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _ResultsReceived &&
+        (other.runtimeType == runtimeType &&
+            other is _ResultsReceived &&
             (identical(other.failureOrExperiences, failureOrExperiences) ||
-                const DeepCollectionEquality()
-                    .equals(other.failureOrExperiences, failureOrExperiences)));
+                other.failureOrExperiences == failureOrExperiences));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(failureOrExperiences);
+  int get hashCode => Object.hash(runtimeType, failureOrExperiences);
 
   @JsonKey(ignore: true)
   @override
@@ -371,8 +369,7 @@ abstract class _ResultsReceived implements SearchExperiencesByTagsEvent {
           Either<Failure, KtList<Experience>> failureOrExperiences) =
       _$_ResultsReceived;
 
-  Either<Failure, KtList<Experience>> get failureOrExperiences =>
-      throw _privateConstructorUsedError;
+  Either<Failure, KtList<Experience>> get failureOrExperiences;
   @JsonKey(ignore: true)
   _$ResultsReceivedCopyWith<_ResultsReceived> get copyWith =>
       throw _privateConstructorUsedError;
@@ -520,7 +517,8 @@ class _$_Initial implements _Initial {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _Initial);
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _Initial);
   }
 
   @override
@@ -643,7 +641,8 @@ class _$_SearchInProgress implements _SearchInProgress {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _SearchInProgress);
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _SearchInProgress);
   }
 
   @override
@@ -783,16 +782,14 @@ class _$_SearchSuccess implements _SearchSuccess {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _SearchSuccess &&
+        (other.runtimeType == runtimeType &&
+            other is _SearchSuccess &&
             (identical(other.experiencesFound, experiencesFound) ||
-                const DeepCollectionEquality()
-                    .equals(other.experiencesFound, experiencesFound)));
+                other.experiencesFound == experiencesFound));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(experiencesFound);
+  int get hashCode => Object.hash(runtimeType, experiencesFound);
 
   @JsonKey(ignore: true)
   @override
@@ -885,7 +882,7 @@ abstract class _SearchSuccess implements SearchExperiencesByTagsState {
   const factory _SearchSuccess(KtList<Experience> experiencesFound) =
       _$_SearchSuccess;
 
-  KtList<Experience> get experiencesFound => throw _privateConstructorUsedError;
+  KtList<Experience> get experiencesFound;
   @JsonKey(ignore: true)
   _$SearchSuccessCopyWith<_SearchSuccess> get copyWith =>
       throw _privateConstructorUsedError;
@@ -948,14 +945,13 @@ class _$_SearchFailure implements _SearchFailure {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _SearchFailure &&
-            (identical(other.failure, failure) ||
-                const DeepCollectionEquality().equals(other.failure, failure)));
+        (other.runtimeType == runtimeType &&
+            other is _SearchFailure &&
+            (identical(other.failure, failure) || other.failure == failure));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(failure);
+  int get hashCode => Object.hash(runtimeType, failure);
 
   @JsonKey(ignore: true)
   @override
@@ -1047,7 +1043,7 @@ class _$_SearchFailure implements _SearchFailure {
 abstract class _SearchFailure implements SearchExperiencesByTagsState {
   const factory _SearchFailure(Failure<dynamic> failure) = _$_SearchFailure;
 
-  Failure<dynamic> get failure => throw _privateConstructorUsedError;
+  Failure<dynamic> get failure;
   @JsonKey(ignore: true)
   _$SearchFailureCopyWith<_SearchFailure> get copyWith =>
       throw _privateConstructorUsedError;
@@ -1110,14 +1106,13 @@ class _$_ValueFailure implements _ValueFailure {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _ValueFailure &&
-            (identical(other.failure, failure) ||
-                const DeepCollectionEquality().equals(other.failure, failure)));
+        (other.runtimeType == runtimeType &&
+            other is _ValueFailure &&
+            (identical(other.failure, failure) || other.failure == failure));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(failure);
+  int get hashCode => Object.hash(runtimeType, failure);
 
   @JsonKey(ignore: true)
   @override
@@ -1210,7 +1205,7 @@ abstract class _ValueFailure implements SearchExperiencesByTagsState {
   const factory _ValueFailure(ValueFailure<KtSet<Tag>> failure) =
       _$_ValueFailure;
 
-  ValueFailure<KtSet<Tag>> get failure => throw _privateConstructorUsedError;
+  ValueFailure<KtSet<Tag>> get failure;
   @JsonKey(ignore: true)
   _$ValueFailureCopyWith<_ValueFailure> get copyWith =>
       throw _privateConstructorUsedError;

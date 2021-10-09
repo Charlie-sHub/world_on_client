@@ -167,15 +167,14 @@ class _$_Initialized implements _Initialized {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _Initialized &&
+        (other.runtimeType == runtimeType &&
+            other is _Initialized &&
             (identical(other.experience, experience) ||
-                const DeepCollectionEquality()
-                    .equals(other.experience, experience)));
+                other.experience == experience));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(experience);
+  int get hashCode => Object.hash(runtimeType, experience);
 
   @JsonKey(ignore: true)
   @override
@@ -258,7 +257,7 @@ class _$_Initialized implements _Initialized {
 abstract class _Initialized implements MapControllerEvent {
   const factory _Initialized(Experience experience) = _$_Initialized;
 
-  Experience get experience => throw _privateConstructorUsedError;
+  Experience get experience;
   @JsonKey(ignore: true)
   _$InitializedCopyWith<_Initialized> get copyWith =>
       throw _privateConstructorUsedError;
@@ -329,19 +328,15 @@ class _$_CameraPositionChanged implements _CameraPositionChanged {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _CameraPositionChanged &&
+        (other.runtimeType == runtimeType &&
+            other is _CameraPositionChanged &&
             (identical(other.coordinates, coordinates) ||
-                const DeepCollectionEquality()
-                    .equals(other.coordinates, coordinates)) &&
-            (identical(other.zoom, zoom) ||
-                const DeepCollectionEquality().equals(other.zoom, zoom)));
+                other.coordinates == coordinates) &&
+            (identical(other.zoom, zoom) || other.zoom == zoom));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(coordinates) ^
-      const DeepCollectionEquality().hash(zoom);
+  int get hashCode => Object.hash(runtimeType, coordinates, zoom);
 
   @JsonKey(ignore: true)
   @override
@@ -427,8 +422,8 @@ abstract class _CameraPositionChanged implements MapControllerEvent {
       {required Coordinates coordinates,
       required double zoom}) = _$_CameraPositionChanged;
 
-  Coordinates get coordinates => throw _privateConstructorUsedError;
-  double get zoom => throw _privateConstructorUsedError;
+  Coordinates get coordinates;
+  double get zoom;
   @JsonKey(ignore: true)
   _$CameraPositionChangedCopyWith<_CameraPositionChanged> get copyWith =>
       throw _privateConstructorUsedError;
@@ -482,15 +477,14 @@ class _$_ObjectivesChanged implements _ObjectivesChanged {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _ObjectivesChanged &&
+        (other.runtimeType == runtimeType &&
+            other is _ObjectivesChanged &&
             (identical(other.objectives, objectives) ||
-                const DeepCollectionEquality()
-                    .equals(other.objectives, objectives)));
+                other.objectives == objectives));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(objectives);
+  int get hashCode => Object.hash(runtimeType, objectives);
 
   @JsonKey(ignore: true)
   @override
@@ -574,7 +568,7 @@ abstract class _ObjectivesChanged implements MapControllerEvent {
   const factory _ObjectivesChanged(KtList<Objective> objectives) =
       _$_ObjectivesChanged;
 
-  KtList<Objective> get objectives => throw _privateConstructorUsedError;
+  KtList<Objective> get objectives;
   @JsonKey(ignore: true)
   _$ObjectivesChangedCopyWith<_ObjectivesChanged> get copyWith =>
       throw _privateConstructorUsedError;
@@ -753,27 +747,20 @@ class _$_MapControllerState implements _MapControllerState {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _MapControllerState &&
+        (other.runtimeType == runtimeType &&
+            other is _MapControllerState &&
             (identical(other.coordinates, coordinates) ||
-                const DeepCollectionEquality()
-                    .equals(other.coordinates, coordinates)) &&
+                other.coordinates == coordinates) &&
             (identical(other.objectives, objectives) ||
-                const DeepCollectionEquality()
-                    .equals(other.objectives, objectives)) &&
-            (identical(other.zoom, zoom) ||
-                const DeepCollectionEquality().equals(other.zoom, zoom)) &&
+                other.objectives == objectives) &&
+            (identical(other.zoom, zoom) || other.zoom == zoom) &&
             (identical(other.loadedCoordinates, loadedCoordinates) ||
-                const DeepCollectionEquality()
-                    .equals(other.loadedCoordinates, loadedCoordinates)));
+                other.loadedCoordinates == loadedCoordinates));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(coordinates) ^
-      const DeepCollectionEquality().hash(objectives) ^
-      const DeepCollectionEquality().hash(zoom) ^
-      const DeepCollectionEquality().hash(loadedCoordinates);
+  int get hashCode => Object.hash(
+      runtimeType, coordinates, objectives, zoom, loadedCoordinates);
 
   @JsonKey(ignore: true)
   @override
@@ -789,13 +776,13 @@ abstract class _MapControllerState implements MapControllerState {
       required bool loadedCoordinates}) = _$_MapControllerState;
 
   @override
-  Coordinates get coordinates => throw _privateConstructorUsedError;
+  Coordinates get coordinates;
   @override
-  KtList<Objective> get objectives => throw _privateConstructorUsedError;
+  KtList<Objective> get objectives;
   @override
-  double get zoom => throw _privateConstructorUsedError;
+  double get zoom;
   @override
-  bool get loadedCoordinates => throw _privateConstructorUsedError;
+  bool get loadedCoordinates;
   @override
   @JsonKey(ignore: true)
   _$MapControllerStateCopyWith<_MapControllerState> get copyWith =>

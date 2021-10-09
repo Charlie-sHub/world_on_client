@@ -168,26 +168,19 @@ class _$_PrimitiveReward extends _PrimitiveReward {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _PrimitiveReward &&
-            (identical(other.id, id) ||
-                const DeepCollectionEquality().equals(other.id, id)) &&
-            (identical(other.name, name) ||
-                const DeepCollectionEquality().equals(other.name, name)) &&
+        (other.runtimeType == runtimeType &&
+            other is _PrimitiveReward &&
+            (identical(other.id, id) || other.id == id) &&
+            (identical(other.name, name) || other.name == name) &&
             (identical(other.description, description) ||
-                const DeepCollectionEquality()
-                    .equals(other.description, description)) &&
+                other.description == description) &&
             (identical(other.imageFile, imageFile) ||
-                const DeepCollectionEquality()
-                    .equals(other.imageFile, imageFile)));
+                other.imageFile == imageFile));
   }
 
   @override
   int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(id) ^
-      const DeepCollectionEquality().hash(name) ^
-      const DeepCollectionEquality().hash(description) ^
-      const DeepCollectionEquality().hash(imageFile);
+      Object.hash(runtimeType, id, name, description, imageFile);
 
   @JsonKey(ignore: true)
   @override
@@ -204,13 +197,13 @@ abstract class _PrimitiveReward extends PrimitiveReward {
   const _PrimitiveReward._() : super._();
 
   @override
-  UniqueId get id => throw _privateConstructorUsedError;
+  UniqueId get id;
   @override
-  String get name => throw _privateConstructorUsedError;
+  String get name;
   @override
-  String get description => throw _privateConstructorUsedError;
+  String get description;
   @override
-  File? get imageFile => throw _privateConstructorUsedError;
+  File? get imageFile;
   @override
   @JsonKey(ignore: true)
   _$PrimitiveRewardCopyWith<_PrimitiveReward> get copyWith =>

@@ -146,15 +146,14 @@ class _$UnknownApplicationLayerError<T>
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is UnknownApplicationLayerError<T> &&
+        (other.runtimeType == runtimeType &&
+            other is UnknownApplicationLayerError<T> &&
             (identical(other.errorString, errorString) ||
-                const DeepCollectionEquality()
-                    .equals(other.errorString, errorString)));
+                other.errorString == errorString));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(errorString);
+  int get hashCode => Object.hash(runtimeType, errorString);
 
   @JsonKey(ignore: true)
   @override
@@ -233,7 +232,7 @@ abstract class UnknownApplicationLayerError<T>
   const factory UnknownApplicationLayerError({required String errorString}) =
       _$UnknownApplicationLayerError<T>;
 
-  String get errorString => throw _privateConstructorUsedError;
+  String get errorString;
   @JsonKey(ignore: true)
   $UnknownApplicationLayerErrorCopyWith<T, UnknownApplicationLayerError<T>>
       get copyWith => throw _privateConstructorUsedError;
@@ -270,7 +269,8 @@ class _$EmptyFields<T> implements EmptyFields<T> {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is EmptyFields<T>);
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is EmptyFields<T>);
   }
 
   @override

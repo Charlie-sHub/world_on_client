@@ -205,24 +205,19 @@ class _$_Initialized implements _Initialized {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _Initialized &&
+        (other.runtimeType == runtimeType &&
+            other is _Initialized &&
             (identical(other.experienceId, experienceId) ||
-                const DeepCollectionEquality()
-                    .equals(other.experienceId, experienceId)) &&
-            (identical(other.experiencesToDoIds, experiencesToDoIds) ||
-                const DeepCollectionEquality()
-                    .equals(other.experiencesToDoIds, experiencesToDoIds)) &&
+                other.experienceId == experienceId) &&
+            const DeepCollectionEquality()
+                .equals(other.experiencesToDoIds, experiencesToDoIds) &&
             (identical(other.toDoAmount, toDoAmount) ||
-                const DeepCollectionEquality()
-                    .equals(other.toDoAmount, toDoAmount)));
+                other.toDoAmount == toDoAmount));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(experienceId) ^
-      const DeepCollectionEquality().hash(experiencesToDoIds) ^
-      const DeepCollectionEquality().hash(toDoAmount);
+  int get hashCode => Object.hash(runtimeType, experienceId,
+      const DeepCollectionEquality().hash(experiencesToDoIds), toDoAmount);
 
   @JsonKey(ignore: true)
   @override
@@ -312,9 +307,9 @@ abstract class _Initialized implements ExperienceAddToLogActorEvent {
       Set<UniqueId> experiencesToDoIds, int toDoAmount) = _$_Initialized;
 
   @override
-  UniqueId get experienceId => throw _privateConstructorUsedError;
-  Set<UniqueId> get experiencesToDoIds => throw _privateConstructorUsedError;
-  int get toDoAmount => throw _privateConstructorUsedError;
+  UniqueId get experienceId;
+  Set<UniqueId> get experiencesToDoIds;
+  int get toDoAmount;
   @override
   @JsonKey(ignore: true)
   _$InitializedCopyWith<_Initialized> get copyWith =>
@@ -371,15 +366,14 @@ class _$_AddedExperienceToLog implements _AddedExperienceToLog {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _AddedExperienceToLog &&
+        (other.runtimeType == runtimeType &&
+            other is _AddedExperienceToLog &&
             (identical(other.experienceId, experienceId) ||
-                const DeepCollectionEquality()
-                    .equals(other.experienceId, experienceId)));
+                other.experienceId == experienceId));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(experienceId);
+  int get hashCode => Object.hash(runtimeType, experienceId);
 
   @JsonKey(ignore: true)
   @override
@@ -470,7 +464,7 @@ abstract class _AddedExperienceToLog implements ExperienceAddToLogActorEvent {
       _$_AddedExperienceToLog;
 
   @override
-  UniqueId get experienceId => throw _privateConstructorUsedError;
+  UniqueId get experienceId;
   @override
   @JsonKey(ignore: true)
   _$AddedExperienceToLogCopyWith<_AddedExperienceToLog> get copyWith =>
@@ -529,15 +523,14 @@ class _$_DismissedExperienceFromLog implements _DismissedExperienceFromLog {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _DismissedExperienceFromLog &&
+        (other.runtimeType == runtimeType &&
+            other is _DismissedExperienceFromLog &&
             (identical(other.experienceId, experienceId) ||
-                const DeepCollectionEquality()
-                    .equals(other.experienceId, experienceId)));
+                other.experienceId == experienceId));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(experienceId);
+  int get hashCode => Object.hash(runtimeType, experienceId);
 
   @JsonKey(ignore: true)
   @override
@@ -629,7 +622,7 @@ abstract class _DismissedExperienceFromLog
       _$_DismissedExperienceFromLog;
 
   @override
-  UniqueId get experienceId => throw _privateConstructorUsedError;
+  UniqueId get experienceId;
   @override
   @JsonKey(ignore: true)
   _$DismissedExperienceFromLogCopyWith<_DismissedExperienceFromLog>
@@ -784,23 +777,18 @@ class _$_ExperienceAddToLogActorState implements _ExperienceAddToLogActorState {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _ExperienceAddToLogActorState &&
-            (identical(other.inLog, inLog) ||
-                const DeepCollectionEquality().equals(other.inLog, inLog)) &&
+        (other.runtimeType == runtimeType &&
+            other is _ExperienceAddToLogActorState &&
+            (identical(other.inLog, inLog) || other.inLog == inLog) &&
             (identical(other.toDoAmount, toDoAmount) ||
-                const DeepCollectionEquality()
-                    .equals(other.toDoAmount, toDoAmount)) &&
+                other.toDoAmount == toDoAmount) &&
             (identical(other.failureOrSuccessOption, failureOrSuccessOption) ||
-                const DeepCollectionEquality().equals(
-                    other.failureOrSuccessOption, failureOrSuccessOption)));
+                other.failureOrSuccessOption == failureOrSuccessOption));
   }
 
   @override
   int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(inLog) ^
-      const DeepCollectionEquality().hash(toDoAmount) ^
-      const DeepCollectionEquality().hash(failureOrSuccessOption);
+      Object.hash(runtimeType, inLog, toDoAmount, failureOrSuccessOption);
 
   @JsonKey(ignore: true)
   @override
@@ -818,12 +806,11 @@ abstract class _ExperienceAddToLogActorState
       _$_ExperienceAddToLogActorState;
 
   @override
-  bool get inLog => throw _privateConstructorUsedError;
+  bool get inLog;
   @override
-  int get toDoAmount => throw _privateConstructorUsedError;
+  int get toDoAmount;
   @override
-  Option<Either<Failure, Unit>> get failureOrSuccessOption =>
-      throw _privateConstructorUsedError;
+  Option<Either<Failure, Unit>> get failureOrSuccessOption;
   @override
   @JsonKey(ignore: true)
   _$ExperienceAddToLogActorStateCopyWith<_ExperienceAddToLogActorState>

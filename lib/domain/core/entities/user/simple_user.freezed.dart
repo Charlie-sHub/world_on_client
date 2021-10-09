@@ -244,41 +244,26 @@ class _$_SimpleUser extends _SimpleUser {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _SimpleUser &&
-            (identical(other.id, id) ||
-                const DeepCollectionEquality().equals(other.id, id)) &&
-            (identical(other.name, name) ||
-                const DeepCollectionEquality().equals(other.name, name)) &&
+        (other.runtimeType == runtimeType &&
+            other is _SimpleUser &&
+            (identical(other.id, id) || other.id == id) &&
+            (identical(other.name, name) || other.name == name) &&
             (identical(other.username, username) ||
-                const DeepCollectionEquality()
-                    .equals(other.username, username)) &&
+                other.username == username) &&
             (identical(other.imageURL, imageURL) ||
-                const DeepCollectionEquality()
-                    .equals(other.imageURL, imageURL)) &&
-            (identical(other.level, level) ||
-                const DeepCollectionEquality().equals(other.level, level)) &&
+                other.imageURL == imageURL) &&
+            (identical(other.level, level) || other.level == level) &&
             (identical(other.experiencePoints, experiencePoints) ||
-                const DeepCollectionEquality()
-                    .equals(other.experiencePoints, experiencePoints)) &&
+                other.experiencePoints == experiencePoints) &&
             (identical(other.adminPowers, adminPowers) ||
-                const DeepCollectionEquality()
-                    .equals(other.adminPowers, adminPowers)) &&
+                other.adminPowers == adminPowers) &&
             (identical(other.followersAmount, followersAmount) ||
-                const DeepCollectionEquality()
-                    .equals(other.followersAmount, followersAmount)));
+                other.followersAmount == followersAmount));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(id) ^
-      const DeepCollectionEquality().hash(name) ^
-      const DeepCollectionEquality().hash(username) ^
-      const DeepCollectionEquality().hash(imageURL) ^
-      const DeepCollectionEquality().hash(level) ^
-      const DeepCollectionEquality().hash(experiencePoints) ^
-      const DeepCollectionEquality().hash(adminPowers) ^
-      const DeepCollectionEquality().hash(followersAmount);
+  int get hashCode => Object.hash(runtimeType, id, name, username, imageURL,
+      level, experiencePoints, adminPowers, followersAmount);
 
   @JsonKey(ignore: true)
   @override
@@ -299,21 +284,21 @@ abstract class _SimpleUser extends SimpleUser {
   const _SimpleUser._() : super._();
 
   @override
-  UniqueId get id => throw _privateConstructorUsedError;
+  UniqueId get id;
   @override
-  Name get name => throw _privateConstructorUsedError;
+  Name get name;
   @override
-  Name get username => throw _privateConstructorUsedError;
+  Name get username;
   @override
-  String get imageURL => throw _privateConstructorUsedError;
+  String get imageURL;
   @override
-  UserLevel get level => throw _privateConstructorUsedError;
+  UserLevel get level;
   @override
-  ExperiencePoints get experiencePoints => throw _privateConstructorUsedError;
+  ExperiencePoints get experiencePoints;
   @override
-  bool get adminPowers => throw _privateConstructorUsedError;
+  bool get adminPowers;
   @override
-  int get followersAmount => throw _privateConstructorUsedError;
+  int get followersAmount;
   @override
   @JsonKey(ignore: true)
   _$SimpleUserCopyWith<_SimpleUser> get copyWith =>

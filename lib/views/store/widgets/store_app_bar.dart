@@ -8,7 +8,6 @@ class StoreAppBar extends StatelessWidget implements PreferredSizeWidget {
   @override
   Widget build(BuildContext context) {
     return AppBar(
-      backwardsCompatibility: false,
       title: BlocBuilder<StoreAppBarTitleBloc, StoreAppBarTitleState>(
         builder: (context, state) => Text(
           state

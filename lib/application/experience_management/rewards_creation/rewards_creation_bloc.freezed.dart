@@ -152,16 +152,14 @@ class _$_Initialized implements _Initialized {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _Initialized &&
+        (other.runtimeType == runtimeType &&
+            other is _Initialized &&
             (identical(other.rewardSetOption, rewardSetOption) ||
-                const DeepCollectionEquality()
-                    .equals(other.rewardSetOption, rewardSetOption)));
+                other.rewardSetOption == rewardSetOption));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(rewardSetOption);
+  int get hashCode => Object.hash(runtimeType, rewardSetOption);
 
   @JsonKey(ignore: true)
   @override
@@ -241,7 +239,7 @@ abstract class _Initialized implements RewardsCreationEvent {
   const factory _Initialized(Option<RewardSet> rewardSetOption) =
       _$_Initialized;
 
-  Option<RewardSet> get rewardSetOption => throw _privateConstructorUsedError;
+  Option<RewardSet> get rewardSetOption;
   @JsonKey(ignore: true)
   _$InitializedCopyWith<_Initialized> get copyWith =>
       throw _privateConstructorUsedError;
@@ -304,14 +302,13 @@ class _$_AddedReward implements _AddedReward {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _AddedReward &&
-            (identical(other.reward, reward) ||
-                const DeepCollectionEquality().equals(other.reward, reward)));
+        (other.runtimeType == runtimeType &&
+            other is _AddedReward &&
+            (identical(other.reward, reward) || other.reward == reward));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(reward);
+  int get hashCode => Object.hash(runtimeType, reward);
 
   @JsonKey(ignore: true)
   @override
@@ -390,7 +387,7 @@ class _$_AddedReward implements _AddedReward {
 abstract class _AddedReward implements RewardsCreationEvent {
   const factory _AddedReward(Reward reward) = _$_AddedReward;
 
-  Reward get reward => throw _privateConstructorUsedError;
+  Reward get reward;
   @JsonKey(ignore: true)
   _$AddedRewardCopyWith<_AddedReward> get copyWith =>
       throw _privateConstructorUsedError;
@@ -453,14 +450,13 @@ class _$_RemovedReward implements _RemovedReward {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _RemovedReward &&
-            (identical(other.reward, reward) ||
-                const DeepCollectionEquality().equals(other.reward, reward)));
+        (other.runtimeType == runtimeType &&
+            other is _RemovedReward &&
+            (identical(other.reward, reward) || other.reward == reward));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(reward);
+  int get hashCode => Object.hash(runtimeType, reward);
 
   @JsonKey(ignore: true)
   @override
@@ -539,7 +535,7 @@ class _$_RemovedReward implements _RemovedReward {
 abstract class _RemovedReward implements RewardsCreationEvent {
   const factory _RemovedReward(Reward reward) = _$_RemovedReward;
 
-  Reward get reward => throw _privateConstructorUsedError;
+  Reward get reward;
   @JsonKey(ignore: true)
   _$RemovedRewardCopyWith<_RemovedReward> get copyWith =>
       throw _privateConstructorUsedError;
@@ -648,16 +644,14 @@ class _$_RewardsCreationState implements _RewardsCreationState {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _RewardsCreationState &&
+        (other.runtimeType == runtimeType &&
+            other is _RewardsCreationState &&
             (identical(other.rewardsCreated, rewardsCreated) ||
-                const DeepCollectionEquality()
-                    .equals(other.rewardsCreated, rewardsCreated)));
+                other.rewardsCreated == rewardsCreated));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(rewardsCreated);
+  int get hashCode => Object.hash(runtimeType, rewardsCreated);
 
   @JsonKey(ignore: true)
   @override
@@ -671,7 +665,7 @@ abstract class _RewardsCreationState implements RewardsCreationState {
       _$_RewardsCreationState;
 
   @override
-  KtSet<Reward> get rewardsCreated => throw _privateConstructorUsedError;
+  KtSet<Reward> get rewardsCreated;
   @override
   @JsonKey(ignore: true)
   _$RewardsCreationStateCopyWith<_RewardsCreationState> get copyWith =>

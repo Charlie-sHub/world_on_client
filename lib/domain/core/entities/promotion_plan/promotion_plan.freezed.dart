@@ -229,37 +229,24 @@ class _$_PromotionPlan extends _PromotionPlan {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _PromotionPlan &&
-            (identical(other.id, id) ||
-                const DeepCollectionEquality().equals(other.id, id)) &&
-            (identical(other.name, name) ||
-                const DeepCollectionEquality().equals(other.name, name)) &&
+        (other.runtimeType == runtimeType &&
+            other is _PromotionPlan &&
+            (identical(other.id, id) || other.id == id) &&
+            (identical(other.name, name) || other.name == name) &&
             (identical(other.description, description) ||
-                const DeepCollectionEquality()
-                    .equals(other.description, description)) &&
-            (identical(other.code, code) ||
-                const DeepCollectionEquality().equals(other.code, code)) &&
+                other.description == description) &&
+            (identical(other.code, code) || other.code == code) &&
             (identical(other.valueInEuros, valueInEuros) ||
-                const DeepCollectionEquality()
-                    .equals(other.valueInEuros, valueInEuros)) &&
+                other.valueInEuros == valueInEuros) &&
             (identical(other.boughtDate, boughtDate) ||
-                const DeepCollectionEquality()
-                    .equals(other.boughtDate, boughtDate)) &&
+                other.boughtDate == boughtDate) &&
             (identical(other.timesSeen, timesSeen) ||
-                const DeepCollectionEquality()
-                    .equals(other.timesSeen, timesSeen)));
+                other.timesSeen == timesSeen));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(id) ^
-      const DeepCollectionEquality().hash(name) ^
-      const DeepCollectionEquality().hash(description) ^
-      const DeepCollectionEquality().hash(code) ^
-      const DeepCollectionEquality().hash(valueInEuros) ^
-      const DeepCollectionEquality().hash(boughtDate) ^
-      const DeepCollectionEquality().hash(timesSeen);
+  int get hashCode => Object.hash(runtimeType, id, name, description, code,
+      valueInEuros, boughtDate, timesSeen);
 
   @JsonKey(ignore: true)
   @override
@@ -279,19 +266,19 @@ abstract class _PromotionPlan extends PromotionPlan {
   const _PromotionPlan._() : super._();
 
   @override
-  UniqueId get id => throw _privateConstructorUsedError;
+  UniqueId get id;
   @override
-  Name get name => throw _privateConstructorUsedError;
+  Name get name;
   @override
-  EntityDescription get description => throw _privateConstructorUsedError;
+  EntityDescription get description;
   @override
-  PromotionPlanCode get code => throw _privateConstructorUsedError;
+  PromotionPlanCode get code;
   @override
-  int get valueInEuros => throw _privateConstructorUsedError;
+  int get valueInEuros;
   @override
-  DateTime get boughtDate => throw _privateConstructorUsedError;
+  DateTime get boughtDate;
   @override
-  int get timesSeen => throw _privateConstructorUsedError;
+  int get timesSeen;
   @override
   @JsonKey(ignore: true)
   _$PromotionPlanCopyWith<_PromotionPlan> get copyWith =>

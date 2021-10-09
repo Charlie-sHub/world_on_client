@@ -129,7 +129,9 @@ class _$_WatchNewNotificationsStarted implements _WatchNewNotificationsStarted {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _WatchNewNotificationsStarted);
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _WatchNewNotificationsStarted);
   }
 
   @override
@@ -256,15 +258,14 @@ class _$_ResultsReceived implements _ResultsReceived {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _ResultsReceived &&
+        (other.runtimeType == runtimeType &&
+            other is _ResultsReceived &&
             (identical(other.failureOrBool, failureOrBool) ||
-                const DeepCollectionEquality()
-                    .equals(other.failureOrBool, failureOrBool)));
+                other.failureOrBool == failureOrBool));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(failureOrBool);
+  int get hashCode => Object.hash(runtimeType, failureOrBool);
 
   @JsonKey(ignore: true)
   @override
@@ -342,7 +343,7 @@ abstract class _ResultsReceived implements NewNotificationsWatcherEvent {
   const factory _ResultsReceived(Either<Failure, bool> failureOrBool) =
       _$_ResultsReceived;
 
-  Either<Failure, bool> get failureOrBool => throw _privateConstructorUsedError;
+  Either<Failure, bool> get failureOrBool;
   @JsonKey(ignore: true)
   _$ResultsReceivedCopyWith<_ResultsReceived> get copyWith =>
       throw _privateConstructorUsedError;
@@ -473,7 +474,8 @@ class _$_Initial implements _Initial {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _Initial);
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _Initial);
   }
 
   @override
@@ -589,7 +591,8 @@ class _$_NewNotifications implements _NewNotifications {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _NewNotifications);
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _NewNotifications);
   }
 
   @override
@@ -705,7 +708,8 @@ class _$_NoNewNotifications implements _NoNewNotifications {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _NoNewNotifications);
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _NoNewNotifications);
   }
 
   @override
@@ -819,7 +823,8 @@ class _$_Failure implements _Failure {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _Failure);
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _Failure);
   }
 
   @override

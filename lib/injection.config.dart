@@ -691,7 +691,8 @@ _i1.GetIt $initGetIt(_i1.GetIt get,
       registerFor: {_dev, _prod});
   gh.lazySingleton<_i149.Register>(() => _i94.MockRegister(),
       registerFor: {_test});
-  gh.factory<_i150.RegistrationFormBloc>(() => _i150.RegistrationFormBloc());
+  gh.lazySingleton<_i150.RegistrationFormBloc>(
+      () => _i150.RegistrationFormBloc());
   gh.lazySingleton<_i151.RemoteOptionsRepositoryInterface>(
       () => _i152.DevelopmentRemoteOptionsRepository(),
       registerFor: {_dev});

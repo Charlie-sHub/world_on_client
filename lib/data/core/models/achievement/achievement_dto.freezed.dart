@@ -48,7 +48,7 @@ class _$AchievementDtoTearOff {
     );
   }
 
-  AchievementDto fromJson(Map<String, Object> json) {
+  AchievementDto fromJson(Map<String, Object?> json) {
     return AchievementDto.fromJson(json);
   }
 }
@@ -317,53 +317,42 @@ class _$_AchievementDto extends _AchievementDto {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _AchievementDto &&
-            (identical(other.id, id) ||
-                const DeepCollectionEquality().equals(other.id, id)) &&
-            (identical(other.name, name) ||
-                const DeepCollectionEquality().equals(other.name, name)) &&
+        (other.runtimeType == runtimeType &&
+            other is _AchievementDto &&
+            (identical(other.id, id) || other.id == id) &&
+            (identical(other.name, name) || other.name == name) &&
             (identical(other.description, description) ||
-                const DeepCollectionEquality()
-                    .equals(other.description, description)) &&
+                other.description == description) &&
             (identical(other.imageURL, imageURL) ||
-                const DeepCollectionEquality()
-                    .equals(other.imageURL, imageURL)) &&
-            (identical(other.type, type) ||
-                const DeepCollectionEquality().equals(other.type, type)) &&
+                other.imageURL == imageURL) &&
+            (identical(other.type, type) || other.type == type) &&
             (identical(other.requisite, requisite) ||
-                const DeepCollectionEquality()
-                    .equals(other.requisite, requisite)) &&
+                other.requisite == requisite) &&
             (identical(other.experiencePoints, experiencePoints) ||
-                const DeepCollectionEquality()
-                    .equals(other.experiencePoints, experiencePoints)) &&
+                other.experiencePoints == experiencePoints) &&
             (identical(other.creatorId, creatorId) ||
-                const DeepCollectionEquality()
-                    .equals(other.creatorId, creatorId)) &&
+                other.creatorId == creatorId) &&
             (identical(other.creationDate, creationDate) ||
-                const DeepCollectionEquality()
-                    .equals(other.creationDate, creationDate)) &&
+                other.creationDate == creationDate) &&
             (identical(other.modificationDate, modificationDate) ||
-                const DeepCollectionEquality()
-                    .equals(other.modificationDate, modificationDate)) &&
-            (identical(other.tagNames, tagNames) ||
-                const DeepCollectionEquality()
-                    .equals(other.tagNames, tagNames)));
+                other.modificationDate == modificationDate) &&
+            const DeepCollectionEquality().equals(other.tagNames, tagNames));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(id) ^
-      const DeepCollectionEquality().hash(name) ^
-      const DeepCollectionEquality().hash(description) ^
-      const DeepCollectionEquality().hash(imageURL) ^
-      const DeepCollectionEquality().hash(type) ^
-      const DeepCollectionEquality().hash(requisite) ^
-      const DeepCollectionEquality().hash(experiencePoints) ^
-      const DeepCollectionEquality().hash(creatorId) ^
-      const DeepCollectionEquality().hash(creationDate) ^
-      const DeepCollectionEquality().hash(modificationDate) ^
-      const DeepCollectionEquality().hash(tagNames);
+  int get hashCode => Object.hash(
+      runtimeType,
+      id,
+      name,
+      description,
+      imageURL,
+      type,
+      requisite,
+      experiencePoints,
+      creatorId,
+      creationDate,
+      modificationDate,
+      const DeepCollectionEquality().hash(tagNames));
 
   @JsonKey(ignore: true)
   @override
@@ -395,29 +384,29 @@ abstract class _AchievementDto extends AchievementDto {
       _$_AchievementDto.fromJson;
 
   @override
-  String get id => throw _privateConstructorUsedError;
+  String get id;
   @override
-  String get name => throw _privateConstructorUsedError;
+  String get name;
   @override
-  String get description => throw _privateConstructorUsedError;
+  String get description;
   @override
-  String get imageURL => throw _privateConstructorUsedError;
+  String get imageURL;
   @override
-  String get type => throw _privateConstructorUsedError;
+  String get type;
   @override
-  int get requisite => throw _privateConstructorUsedError;
+  int get requisite;
   @override
-  int get experiencePoints => throw _privateConstructorUsedError;
+  int get experiencePoints;
   @override
-  String get creatorId => throw _privateConstructorUsedError;
-  @override
-  @ServerTimestampConverter()
-  DateTime get creationDate => throw _privateConstructorUsedError;
+  String get creatorId;
   @override
   @ServerTimestampConverter()
-  DateTime get modificationDate => throw _privateConstructorUsedError;
+  DateTime get creationDate;
   @override
-  Set<String> get tagNames => throw _privateConstructorUsedError;
+  @ServerTimestampConverter()
+  DateTime get modificationDate;
+  @override
+  Set<String> get tagNames;
   @override
   @JsonKey(ignore: true)
   _$AchievementDtoCopyWith<_AchievementDto> get copyWith =>

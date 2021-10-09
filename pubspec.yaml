@@ -22,7 +22,7 @@ dependencies:
   auto_route: ^2.4.2
   auto_size_text: ^3.0.0-nullsafety.0
   bloc: ^7.2.1
-  bloc_test: ^8.2.0
+  bloc_test: ^8.3.0
   cached_network_image: ^3.1.0
   carousel_slider: ^4.0.0
   cloud_firestore: ^2.5.3
@@ -30,31 +30,33 @@ dependencies:
   dartz: ^0.10.0
   email_validator: ^2.0.1
   equatable: ^2.0.3
-  firebase_auth: ^3.1.2
+  firebase_auth: ^3.1.3
   firebase_core: ^1.7.0
   firebase_messaging: ^10.0.8
-  firebase_storage: ^10.0.4
+  firebase_storage: ^10.0.5
   flutter:
     sdk: flutter
   flutter_bloc: ^7.3.0
   flutter_carousel_slider: ^1.0.8
   flutter_hooks: ^0.18.0
-  flutter_local_notifications: ^8.2.0
+  flutter_local_notifications: ^9.0.0
   flutter_localizations:
     sdk: flutter
   flutter_slidable: ^0.6.0
-  flutter_speed_dial: ^4.4.0+1
+  flutter_speed_dial: ^4.4.0+2
   flutter_vector_icons: ^1.0.0
-  freezed: ^0.14.5
-  freezed_annotation: ^0.14.3
+  freezed: ^0.15.0+1
+  freezed_annotation: ^0.15.0
   geoflutterfire: ^3.0.1
-  geolocator: ^7.6.2
+  geolocator: ^7.7.0
   get_it: ^7.2.0
   google_maps_flutter:
   google_sign_in: ^5.1.1
+  http: ^0.13.4
   image_picker: ^0.8.4+2
   implicitly_animated_reorderable_list: ^0.4.1
   in_app_purchase: ^1.0.9
+  in_app_purchase_android: ^0.1.5+1
   injectable: ^1.5.0
   intl: ^0.17.0
   jiffy: ^4.1.0
@@ -66,16 +68,18 @@ dependencies:
   mockito: ^5.0.16
   multi_image_picker2: ^5.0.2
   number_display: ^3.0.0
+  path: ^1.8.0
   path_provider: ^2.0.5
-  percent_indicator: ^3.0.1
-  permission_handler: ^8.1.6
+  percent_indicator: ^3.4.0
+  permission_handler: ^8.2.2
   provider: ^6.0.1
   quiver: ^3.0.1
   rxdart: ^0.27.2
+  sa3_liquid: ^1.0.1
   showcaseview: ^1.1.1
-  simple_animations: ^4.0.0
+  simple_animations: ^4.0.1
   social_share: ^2.1.1
-  uuid: ^3.0.4
+  uuid: ^3.0.5
   visibility_detector: ^0.2.0
 
 dev_dependencies:

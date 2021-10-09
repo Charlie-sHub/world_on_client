@@ -11,17 +11,22 @@ class BirthdayPicker extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ElevatedButton(
-      onPressed: () async {
-        final _birthDate = await showDatePicker(
-          context: context,
-          initialDate: DateTime.now(),
-          firstDate: DateTime(1900),
-          lastDate: DateTime.now(),
-        );
-        context.read<ProfileEditingFormBloc>().add(
-              ProfileEditingFormEvent.birthdayChanged(_birthDate!),
-            );
-      },
+      onPressed: () => showDatePicker(
+        context: context,
+        initialDate: DateTime.now(),
+        firstDate: DateTime(1900),
+        lastDate: DateTime.now(),
+      ).then(
+        (birthDate) {
+          if (birthDate != null) {
+            context.read<ProfileEditingFormBloc>().add(
+                  ProfileEditingFormEvent.birthdayChanged(
+                    birthDate,
+                  ),
+                );
+          }
+        },
+      ),
       child: Text(S.of(context).selectBirthday),
     );
   }

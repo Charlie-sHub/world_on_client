@@ -160,14 +160,13 @@ class _$_EmailChanged implements _EmailChanged {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _EmailChanged &&
-            (identical(other.email, email) ||
-                const DeepCollectionEquality().equals(other.email, email)));
+        (other.runtimeType == runtimeType &&
+            other is _EmailChanged &&
+            (identical(other.email, email) || other.email == email));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(email);
+  int get hashCode => Object.hash(runtimeType, email);
 
   @JsonKey(ignore: true)
   @override
@@ -252,7 +251,7 @@ class _$_EmailChanged implements _EmailChanged {
 abstract class _EmailChanged implements LogInFormEvent {
   const factory _EmailChanged(String email) = _$_EmailChanged;
 
-  String get email => throw _privateConstructorUsedError;
+  String get email;
   @JsonKey(ignore: true)
   _$EmailChangedCopyWith<_EmailChanged> get copyWith =>
       throw _privateConstructorUsedError;
@@ -306,15 +305,14 @@ class _$_PasswordChanged implements _PasswordChanged {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _PasswordChanged &&
+        (other.runtimeType == runtimeType &&
+            other is _PasswordChanged &&
             (identical(other.password, password) ||
-                const DeepCollectionEquality()
-                    .equals(other.password, password)));
+                other.password == password));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(password);
+  int get hashCode => Object.hash(runtimeType, password);
 
   @JsonKey(ignore: true)
   @override
@@ -399,7 +397,7 @@ class _$_PasswordChanged implements _PasswordChanged {
 abstract class _PasswordChanged implements LogInFormEvent {
   const factory _PasswordChanged(String password) = _$_PasswordChanged;
 
-  String get password => throw _privateConstructorUsedError;
+  String get password;
   @JsonKey(ignore: true)
   _$PasswordChangedCopyWith<_PasswordChanged> get copyWith =>
       throw _privateConstructorUsedError;
@@ -433,7 +431,8 @@ class _$_LoggedIn implements _LoggedIn {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _LoggedIn);
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _LoggedIn);
   }
 
   @override
@@ -549,7 +548,8 @@ class _$_LoggedInGoogle implements _LoggedInGoogle {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _LoggedInGoogle);
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _LoggedInGoogle);
   }
 
   @override
@@ -832,35 +832,30 @@ class _$_LogInFormState implements _LogInFormState {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _LogInFormState &&
-            (identical(other.email, email) ||
-                const DeepCollectionEquality().equals(other.email, email)) &&
+        (other.runtimeType == runtimeType &&
+            other is _LogInFormState &&
+            (identical(other.email, email) || other.email == email) &&
             (identical(other.password, password) ||
-                const DeepCollectionEquality()
-                    .equals(other.password, password)) &&
+                other.password == password) &&
             (identical(other.showErrorMessages, showErrorMessages) ||
-                const DeepCollectionEquality()
-                    .equals(other.showErrorMessages, showErrorMessages)) &&
+                other.showErrorMessages == showErrorMessages) &&
             (identical(other.isSubmitting, isSubmitting) ||
-                const DeepCollectionEquality()
-                    .equals(other.isSubmitting, isSubmitting)) &&
+                other.isSubmitting == isSubmitting) &&
             (identical(other.thirdPartyUserOption, thirdPartyUserOption) ||
-                const DeepCollectionEquality().equals(
-                    other.thirdPartyUserOption, thirdPartyUserOption)) &&
+                other.thirdPartyUserOption == thirdPartyUserOption) &&
             (identical(other.failureOrSuccessOption, failureOrSuccessOption) ||
-                const DeepCollectionEquality().equals(
-                    other.failureOrSuccessOption, failureOrSuccessOption)));
+                other.failureOrSuccessOption == failureOrSuccessOption));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(email) ^
-      const DeepCollectionEquality().hash(password) ^
-      const DeepCollectionEquality().hash(showErrorMessages) ^
-      const DeepCollectionEquality().hash(isSubmitting) ^
-      const DeepCollectionEquality().hash(thirdPartyUserOption) ^
-      const DeepCollectionEquality().hash(failureOrSuccessOption);
+  int get hashCode => Object.hash(
+      runtimeType,
+      email,
+      password,
+      showErrorMessages,
+      isSubmitting,
+      thirdPartyUserOption,
+      failureOrSuccessOption);
 
   @JsonKey(ignore: true)
   @override
@@ -879,18 +874,17 @@ abstract class _LogInFormState implements LogInFormState {
       _$_LogInFormState;
 
   @override
-  EmailAddress get email => throw _privateConstructorUsedError;
+  EmailAddress get email;
   @override
-  Password get password => throw _privateConstructorUsedError;
+  Password get password;
   @override
-  bool get showErrorMessages => throw _privateConstructorUsedError;
+  bool get showErrorMessages;
   @override
-  bool get isSubmitting => throw _privateConstructorUsedError;
+  bool get isSubmitting;
   @override
-  Option<User> get thirdPartyUserOption => throw _privateConstructorUsedError;
+  Option<User> get thirdPartyUserOption;
   @override
-  Option<Either<Failure, Unit>> get failureOrSuccessOption =>
-      throw _privateConstructorUsedError;
+  Option<Either<Failure, Unit>> get failureOrSuccessOption;
   @override
   @JsonKey(ignore: true)
   _$LogInFormStateCopyWith<_LogInFormState> get copyWith =>

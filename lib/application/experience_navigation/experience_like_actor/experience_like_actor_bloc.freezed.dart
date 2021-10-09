@@ -200,24 +200,19 @@ class _$_Initialized implements _Initialized {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _Initialized &&
+        (other.runtimeType == runtimeType &&
+            other is _Initialized &&
             (identical(other.experienceId, experienceId) ||
-                const DeepCollectionEquality()
-                    .equals(other.experienceId, experienceId)) &&
-            (identical(other.experiencesLikedIds, experiencesLikedIds) ||
-                const DeepCollectionEquality()
-                    .equals(other.experiencesLikedIds, experiencesLikedIds)) &&
+                other.experienceId == experienceId) &&
+            const DeepCollectionEquality()
+                .equals(other.experiencesLikedIds, experiencesLikedIds) &&
             (identical(other.likesAmount, likesAmount) ||
-                const DeepCollectionEquality()
-                    .equals(other.likesAmount, likesAmount)));
+                other.likesAmount == likesAmount));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(experienceId) ^
-      const DeepCollectionEquality().hash(experiencesLikedIds) ^
-      const DeepCollectionEquality().hash(likesAmount);
+  int get hashCode => Object.hash(runtimeType, experienceId,
+      const DeepCollectionEquality().hash(experiencesLikedIds), likesAmount);
 
   @JsonKey(ignore: true)
   @override
@@ -304,9 +299,9 @@ abstract class _Initialized implements ExperienceLikeActorEvent {
       Set<UniqueId> experiencesLikedIds, int likesAmount) = _$_Initialized;
 
   @override
-  UniqueId get experienceId => throw _privateConstructorUsedError;
-  Set<UniqueId> get experiencesLikedIds => throw _privateConstructorUsedError;
-  int get likesAmount => throw _privateConstructorUsedError;
+  UniqueId get experienceId;
+  Set<UniqueId> get experiencesLikedIds;
+  int get likesAmount;
   @override
   @JsonKey(ignore: true)
   _$InitializedCopyWith<_Initialized> get copyWith =>
@@ -361,15 +356,14 @@ class _$_Liked implements _Liked {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _Liked &&
+        (other.runtimeType == runtimeType &&
+            other is _Liked &&
             (identical(other.experienceId, experienceId) ||
-                const DeepCollectionEquality()
-                    .equals(other.experienceId, experienceId)));
+                other.experienceId == experienceId));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(experienceId);
+  int get hashCode => Object.hash(runtimeType, experienceId);
 
   @JsonKey(ignore: true)
   @override
@@ -455,7 +449,7 @@ abstract class _Liked implements ExperienceLikeActorEvent {
   const factory _Liked(UniqueId experienceId) = _$_Liked;
 
   @override
-  UniqueId get experienceId => throw _privateConstructorUsedError;
+  UniqueId get experienceId;
   @override
   @JsonKey(ignore: true)
   _$LikedCopyWith<_Liked> get copyWith => throw _privateConstructorUsedError;
@@ -509,15 +503,14 @@ class _$_Disliked implements _Disliked {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _Disliked &&
+        (other.runtimeType == runtimeType &&
+            other is _Disliked &&
             (identical(other.experienceId, experienceId) ||
-                const DeepCollectionEquality()
-                    .equals(other.experienceId, experienceId)));
+                other.experienceId == experienceId));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(experienceId);
+  int get hashCode => Object.hash(runtimeType, experienceId);
 
   @JsonKey(ignore: true)
   @override
@@ -603,7 +596,7 @@ abstract class _Disliked implements ExperienceLikeActorEvent {
   const factory _Disliked(UniqueId experienceId) = _$_Disliked;
 
   @override
-  UniqueId get experienceId => throw _privateConstructorUsedError;
+  UniqueId get experienceId;
   @override
   @JsonKey(ignore: true)
   _$DislikedCopyWith<_Disliked> get copyWith =>
@@ -755,23 +748,18 @@ class _$_ExperienceLikeActorState implements _ExperienceLikeActorState {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _ExperienceLikeActorState &&
-            (identical(other.likes, likes) ||
-                const DeepCollectionEquality().equals(other.likes, likes)) &&
+        (other.runtimeType == runtimeType &&
+            other is _ExperienceLikeActorState &&
+            (identical(other.likes, likes) || other.likes == likes) &&
             (identical(other.likesAmount, likesAmount) ||
-                const DeepCollectionEquality()
-                    .equals(other.likesAmount, likesAmount)) &&
+                other.likesAmount == likesAmount) &&
             (identical(other.failureOrSuccessOption, failureOrSuccessOption) ||
-                const DeepCollectionEquality().equals(
-                    other.failureOrSuccessOption, failureOrSuccessOption)));
+                other.failureOrSuccessOption == failureOrSuccessOption));
   }
 
   @override
   int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(likes) ^
-      const DeepCollectionEquality().hash(likesAmount) ^
-      const DeepCollectionEquality().hash(failureOrSuccessOption);
+      Object.hash(runtimeType, likes, likesAmount, failureOrSuccessOption);
 
   @JsonKey(ignore: true)
   @override
@@ -788,12 +776,11 @@ abstract class _ExperienceLikeActorState implements ExperienceLikeActorState {
       _$_ExperienceLikeActorState;
 
   @override
-  bool get likes => throw _privateConstructorUsedError;
+  bool get likes;
   @override
-  int get likesAmount => throw _privateConstructorUsedError;
+  int get likesAmount;
   @override
-  Option<Either<Failure, Unit>> get failureOrSuccessOption =>
-      throw _privateConstructorUsedError;
+  Option<Either<Failure, Unit>> get failureOrSuccessOption;
   @override
   @JsonKey(ignore: true)
   _$ExperienceLikeActorStateCopyWith<_ExperienceLikeActorState> get copyWith =>

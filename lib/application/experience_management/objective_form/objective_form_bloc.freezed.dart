@@ -158,7 +158,8 @@ class _$_Initialized implements _Initialized {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _Initialized);
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _Initialized);
   }
 
   @override
@@ -298,15 +299,14 @@ class _$_DescriptionChanged implements _DescriptionChanged {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _DescriptionChanged &&
+        (other.runtimeType == runtimeType &&
+            other is _DescriptionChanged &&
             (identical(other.description, description) ||
-                const DeepCollectionEquality()
-                    .equals(other.description, description)));
+                other.description == description));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(description);
+  int get hashCode => Object.hash(runtimeType, description);
 
   @JsonKey(ignore: true)
   @override
@@ -398,7 +398,7 @@ class _$_DescriptionChanged implements _DescriptionChanged {
 abstract class _DescriptionChanged implements ObjectiveFormEvent {
   const factory _DescriptionChanged(String description) = _$_DescriptionChanged;
 
-  String get description => throw _privateConstructorUsedError;
+  String get description;
   @JsonKey(ignore: true)
   _$DescriptionChangedCopyWith<_DescriptionChanged> get copyWith =>
       throw _privateConstructorUsedError;
@@ -460,20 +460,16 @@ class _$_CoordinatesChanged implements _CoordinatesChanged {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _CoordinatesChanged &&
+        (other.runtimeType == runtimeType &&
+            other is _CoordinatesChanged &&
             (identical(other.latitude, latitude) ||
-                const DeepCollectionEquality()
-                    .equals(other.latitude, latitude)) &&
+                other.latitude == latitude) &&
             (identical(other.longitude, longitude) ||
-                const DeepCollectionEquality()
-                    .equals(other.longitude, longitude)));
+                other.longitude == longitude));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(latitude) ^
-      const DeepCollectionEquality().hash(longitude);
+  int get hashCode => Object.hash(runtimeType, latitude, longitude);
 
   @JsonKey(ignore: true)
   @override
@@ -567,8 +563,8 @@ abstract class _CoordinatesChanged implements ObjectiveFormEvent {
       {required double latitude,
       required double longitude}) = _$_CoordinatesChanged;
 
-  double get latitude => throw _privateConstructorUsedError;
-  double get longitude => throw _privateConstructorUsedError;
+  double get latitude;
+  double get longitude;
   @JsonKey(ignore: true)
   _$CoordinatesChangedCopyWith<_CoordinatesChanged> get copyWith =>
       throw _privateConstructorUsedError;
@@ -622,15 +618,14 @@ class _$_ImageChanged implements _ImageChanged {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _ImageChanged &&
+        (other.runtimeType == runtimeType &&
+            other is _ImageChanged &&
             (identical(other.imageFile, imageFile) ||
-                const DeepCollectionEquality()
-                    .equals(other.imageFile, imageFile)));
+                other.imageFile == imageFile));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(imageFile);
+  int get hashCode => Object.hash(runtimeType, imageFile);
 
   @JsonKey(ignore: true)
   @override
@@ -722,7 +717,7 @@ class _$_ImageChanged implements _ImageChanged {
 abstract class _ImageChanged implements ObjectiveFormEvent {
   const factory _ImageChanged(File imageFile) = _$_ImageChanged;
 
-  File get imageFile => throw _privateConstructorUsedError;
+  File get imageFile;
   @JsonKey(ignore: true)
   _$ImageChangedCopyWith<_ImageChanged> get copyWith =>
       throw _privateConstructorUsedError;
@@ -758,7 +753,8 @@ class _$_Submitted implements _Submitted {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _Submitted);
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _Submitted);
   }
 
   @override
@@ -1023,28 +1019,21 @@ class _$_ObjectiveFormState implements _ObjectiveFormState {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _ObjectiveFormState &&
+        (other.runtimeType == runtimeType &&
+            other is _ObjectiveFormState &&
             (identical(other.objective, objective) ||
-                const DeepCollectionEquality()
-                    .equals(other.objective, objective)) &&
+                other.objective == objective) &&
             (identical(other.showErrorMessages, showErrorMessages) ||
-                const DeepCollectionEquality()
-                    .equals(other.showErrorMessages, showErrorMessages)) &&
+                other.showErrorMessages == showErrorMessages) &&
             (identical(other.isSubmitting, isSubmitting) ||
-                const DeepCollectionEquality()
-                    .equals(other.isSubmitting, isSubmitting)) &&
+                other.isSubmitting == isSubmitting) &&
             (identical(other.loadedCoordinates, loadedCoordinates) ||
-                const DeepCollectionEquality()
-                    .equals(other.loadedCoordinates, loadedCoordinates)));
+                other.loadedCoordinates == loadedCoordinates));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(objective) ^
-      const DeepCollectionEquality().hash(showErrorMessages) ^
-      const DeepCollectionEquality().hash(isSubmitting) ^
-      const DeepCollectionEquality().hash(loadedCoordinates);
+  int get hashCode => Object.hash(runtimeType, objective, showErrorMessages,
+      isSubmitting, loadedCoordinates);
 
   @JsonKey(ignore: true)
   @override
@@ -1060,13 +1049,13 @@ abstract class _ObjectiveFormState implements ObjectiveFormState {
       required bool loadedCoordinates}) = _$_ObjectiveFormState;
 
   @override
-  Objective get objective => throw _privateConstructorUsedError;
+  Objective get objective;
   @override
-  bool get showErrorMessages => throw _privateConstructorUsedError;
+  bool get showErrorMessages;
   @override
-  bool get isSubmitting => throw _privateConstructorUsedError;
+  bool get isSubmitting;
   @override
-  bool get loadedCoordinates => throw _privateConstructorUsedError;
+  bool get loadedCoordinates;
   @override
   @JsonKey(ignore: true)
   _$ObjectiveFormStateCopyWith<_ObjectiveFormState> get copyWith =>

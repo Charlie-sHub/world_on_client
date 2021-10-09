@@ -200,31 +200,22 @@ class _$_Objective extends _Objective {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _Objective &&
-            (identical(other.id, id) ||
-                const DeepCollectionEquality().equals(other.id, id)) &&
+        (other.runtimeType == runtimeType &&
+            other is _Objective &&
+            (identical(other.id, id) || other.id == id) &&
             (identical(other.description, description) ||
-                const DeepCollectionEquality()
-                    .equals(other.description, description)) &&
+                other.description == description) &&
             (identical(other.coordinates, coordinates) ||
-                const DeepCollectionEquality()
-                    .equals(other.coordinates, coordinates)) &&
+                other.coordinates == coordinates) &&
             (identical(other.imageURL, imageURL) ||
-                const DeepCollectionEquality()
-                    .equals(other.imageURL, imageURL)) &&
+                other.imageURL == imageURL) &&
             (identical(other.imageFile, imageFile) ||
-                const DeepCollectionEquality()
-                    .equals(other.imageFile, imageFile)));
+                other.imageFile == imageFile));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(id) ^
-      const DeepCollectionEquality().hash(description) ^
-      const DeepCollectionEquality().hash(coordinates) ^
-      const DeepCollectionEquality().hash(imageURL) ^
-      const DeepCollectionEquality().hash(imageFile);
+  int get hashCode => Object.hash(
+      runtimeType, id, description, coordinates, imageURL, imageFile);
 
   @JsonKey(ignore: true)
   @override
@@ -242,15 +233,15 @@ abstract class _Objective extends Objective {
   const _Objective._() : super._();
 
   @override
-  UniqueId get id => throw _privateConstructorUsedError;
+  UniqueId get id;
   @override
-  EntityDescription get description => throw _privateConstructorUsedError;
+  EntityDescription get description;
   @override
-  Coordinates get coordinates => throw _privateConstructorUsedError;
+  Coordinates get coordinates;
   @override
-  String get imageURL => throw _privateConstructorUsedError;
+  String get imageURL;
   @override
-  Option<File> get imageFile => throw _privateConstructorUsedError;
+  Option<File> get imageFile;
   @override
   @JsonKey(ignore: true)
   _$ObjectiveCopyWith<_Objective> get copyWith =>

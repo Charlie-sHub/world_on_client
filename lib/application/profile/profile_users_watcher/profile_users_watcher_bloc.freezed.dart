@@ -171,14 +171,13 @@ class _$_WatchFollowedUsersStarted implements _WatchFollowedUsersStarted {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _WatchFollowedUsersStarted &&
-            (identical(other.user, user) ||
-                const DeepCollectionEquality().equals(other.user, user)));
+        (other.runtimeType == runtimeType &&
+            other is _WatchFollowedUsersStarted &&
+            (identical(other.user, user) || other.user == user));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(user);
+  int get hashCode => Object.hash(runtimeType, user);
 
   @JsonKey(ignore: true)
   @override
@@ -269,7 +268,7 @@ abstract class _WatchFollowedUsersStarted implements ProfileUsersWatcherEvent {
   const factory _WatchFollowedUsersStarted(User user) =
       _$_WatchFollowedUsersStarted;
 
-  User get user => throw _privateConstructorUsedError;
+  User get user;
   @JsonKey(ignore: true)
   _$WatchFollowedUsersStartedCopyWith<_WatchFollowedUsersStarted>
       get copyWith => throw _privateConstructorUsedError;
@@ -334,14 +333,13 @@ class _$_WatchFollowingUsersStarted implements _WatchFollowingUsersStarted {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _WatchFollowingUsersStarted &&
-            (identical(other.user, user) ||
-                const DeepCollectionEquality().equals(other.user, user)));
+        (other.runtimeType == runtimeType &&
+            other is _WatchFollowingUsersStarted &&
+            (identical(other.user, user) || other.user == user));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(user);
+  int get hashCode => Object.hash(runtimeType, user);
 
   @JsonKey(ignore: true)
   @override
@@ -431,7 +429,7 @@ abstract class _WatchFollowingUsersStarted implements ProfileUsersWatcherEvent {
   const factory _WatchFollowingUsersStarted(User user) =
       _$_WatchFollowingUsersStarted;
 
-  User get user => throw _privateConstructorUsedError;
+  User get user;
   @JsonKey(ignore: true)
   _$WatchFollowingUsersStartedCopyWith<_WatchFollowingUsersStarted>
       get copyWith => throw _privateConstructorUsedError;
@@ -485,16 +483,14 @@ class _$_UsersReceived implements _UsersReceived {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _UsersReceived &&
+        (other.runtimeType == runtimeType &&
+            other is _UsersReceived &&
             (identical(other.failureOrUsers, failureOrUsers) ||
-                const DeepCollectionEquality()
-                    .equals(other.failureOrUsers, failureOrUsers)));
+                other.failureOrUsers == failureOrUsers));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(failureOrUsers);
+  int get hashCode => Object.hash(runtimeType, failureOrUsers);
 
   @JsonKey(ignore: true)
   @override
@@ -583,8 +579,7 @@ abstract class _UsersReceived implements ProfileUsersWatcherEvent {
   const factory _UsersReceived(Either<Failure, KtList<User>> failureOrUsers) =
       _$_UsersReceived;
 
-  Either<Failure, KtList<User>> get failureOrUsers =>
-      throw _privateConstructorUsedError;
+  Either<Failure, KtList<User>> get failureOrUsers;
   @JsonKey(ignore: true)
   _$UsersReceivedCopyWith<_UsersReceived> get copyWith =>
       throw _privateConstructorUsedError;
@@ -718,7 +713,8 @@ class _$_Initial implements _Initial {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _Initial);
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _Initial);
   }
 
   @override
@@ -834,7 +830,8 @@ class _$_LoadInProgress implements _LoadInProgress {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _LoadInProgress);
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _LoadInProgress);
   }
 
   @override
@@ -967,14 +964,13 @@ class _$_LoadSuccess implements _LoadSuccess {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _LoadSuccess &&
-            (identical(other.users, users) ||
-                const DeepCollectionEquality().equals(other.users, users)));
+        (other.runtimeType == runtimeType &&
+            other is _LoadSuccess &&
+            (identical(other.users, users) || other.users == users));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(users);
+  int get hashCode => Object.hash(runtimeType, users);
 
   @JsonKey(ignore: true)
   @override
@@ -1059,7 +1055,7 @@ class _$_LoadSuccess implements _LoadSuccess {
 abstract class _LoadSuccess implements ProfileUsersWatcherState {
   const factory _LoadSuccess(KtList<User> users) = _$_LoadSuccess;
 
-  KtList<User> get users => throw _privateConstructorUsedError;
+  KtList<User> get users;
   @JsonKey(ignore: true)
   _$LoadSuccessCopyWith<_LoadSuccess> get copyWith =>
       throw _privateConstructorUsedError;
@@ -1122,14 +1118,13 @@ class _$_LoadFailure implements _LoadFailure {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _LoadFailure &&
-            (identical(other.failure, failure) ||
-                const DeepCollectionEquality().equals(other.failure, failure)));
+        (other.runtimeType == runtimeType &&
+            other is _LoadFailure &&
+            (identical(other.failure, failure) || other.failure == failure));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(failure);
+  int get hashCode => Object.hash(runtimeType, failure);
 
   @JsonKey(ignore: true)
   @override
@@ -1214,7 +1209,7 @@ class _$_LoadFailure implements _LoadFailure {
 abstract class _LoadFailure implements ProfileUsersWatcherState {
   const factory _LoadFailure(Failure<dynamic> failure) = _$_LoadFailure;
 
-  Failure<dynamic> get failure => throw _privateConstructorUsedError;
+  Failure<dynamic> get failure;
   @JsonKey(ignore: true)
   _$LoadFailureCopyWith<_LoadFailure> get copyWith =>
       throw _privateConstructorUsedError;

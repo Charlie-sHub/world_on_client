@@ -138,16 +138,14 @@ class _$_SearchTermChanged implements _SearchTermChanged {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _SearchTermChanged &&
+        (other.runtimeType == runtimeType &&
+            other is _SearchTermChanged &&
             (identical(other.searchTermString, searchTermString) ||
-                const DeepCollectionEquality()
-                    .equals(other.searchTermString, searchTermString)));
+                other.searchTermString == searchTermString));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(searchTermString);
+  int get hashCode => Object.hash(runtimeType, searchTermString);
 
   @JsonKey(ignore: true)
   @override
@@ -221,7 +219,7 @@ abstract class _SearchTermChanged implements SearchByNameFormEvent {
   const factory _SearchTermChanged(String searchTermString) =
       _$_SearchTermChanged;
 
-  String get searchTermString => throw _privateConstructorUsedError;
+  String get searchTermString;
   @JsonKey(ignore: true)
   _$SearchTermChangedCopyWith<_SearchTermChanged> get copyWith =>
       throw _privateConstructorUsedError;
@@ -257,7 +255,8 @@ class _$_Submitted implements _Submitted {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _Submitted);
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _Submitted);
   }
 
   @override
@@ -492,28 +491,21 @@ class _$_SearchByNameFormState implements _SearchByNameFormState {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _SearchByNameFormState &&
+        (other.runtimeType == runtimeType &&
+            other is _SearchByNameFormState &&
             (identical(other.searchTerm, searchTerm) ||
-                const DeepCollectionEquality()
-                    .equals(other.searchTerm, searchTerm)) &&
+                other.searchTerm == searchTerm) &&
             (identical(other.showErrorMessages, showErrorMessages) ||
-                const DeepCollectionEquality()
-                    .equals(other.showErrorMessages, showErrorMessages)) &&
+                other.showErrorMessages == showErrorMessages) &&
             (identical(other.isSubmitting, isSubmitting) ||
-                const DeepCollectionEquality()
-                    .equals(other.isSubmitting, isSubmitting)) &&
+                other.isSubmitting == isSubmitting) &&
             (identical(other.failureOrSuccessOption, failureOrSuccessOption) ||
-                const DeepCollectionEquality().equals(
-                    other.failureOrSuccessOption, failureOrSuccessOption)));
+                other.failureOrSuccessOption == failureOrSuccessOption));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(searchTerm) ^
-      const DeepCollectionEquality().hash(showErrorMessages) ^
-      const DeepCollectionEquality().hash(isSubmitting) ^
-      const DeepCollectionEquality().hash(failureOrSuccessOption);
+  int get hashCode => Object.hash(runtimeType, searchTerm, showErrorMessages,
+      isSubmitting, failureOrSuccessOption);
 
   @JsonKey(ignore: true)
   @override
@@ -531,14 +523,13 @@ abstract class _SearchByNameFormState implements SearchByNameFormState {
       _$_SearchByNameFormState;
 
   @override
-  SearchTerm get searchTerm => throw _privateConstructorUsedError;
+  SearchTerm get searchTerm;
   @override
-  bool get showErrorMessages => throw _privateConstructorUsedError;
+  bool get showErrorMessages;
   @override
-  bool get isSubmitting => throw _privateConstructorUsedError;
+  bool get isSubmitting;
   @override
-  Option<ValueFailure> get failureOrSuccessOption =>
-      throw _privateConstructorUsedError;
+  Option<ValueFailure> get failureOrSuccessOption;
   @override
   @JsonKey(ignore: true)
   _$SearchByNameFormStateCopyWith<_SearchByNameFormState> get copyWith =>

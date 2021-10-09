@@ -142,16 +142,14 @@ class _$_DifficultyChanged implements _DifficultyChanged {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _DifficultyChanged &&
+        (other.runtimeType == runtimeType &&
+            other is _DifficultyChanged &&
             (identical(other.difficultyRating, difficultyRating) ||
-                const DeepCollectionEquality()
-                    .equals(other.difficultyRating, difficultyRating)));
+                other.difficultyRating == difficultyRating));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(difficultyRating);
+  int get hashCode => Object.hash(runtimeType, difficultyRating);
 
   @JsonKey(ignore: true)
   @override
@@ -225,7 +223,7 @@ abstract class _DifficultyChanged
     implements RateExperienceDifficultyActorEvent {
   const factory _DifficultyChanged(int difficultyRating) = _$_DifficultyChanged;
 
-  int get difficultyRating => throw _privateConstructorUsedError;
+  int get difficultyRating;
   @JsonKey(ignore: true)
   _$DifficultyChangedCopyWith<_DifficultyChanged> get copyWith =>
       throw _privateConstructorUsedError;
@@ -288,15 +286,14 @@ class _$_DifficultyRated implements _DifficultyRated {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _DifficultyRated &&
+        (other.runtimeType == runtimeType &&
+            other is _DifficultyRated &&
             (identical(other.experience, experience) ||
-                const DeepCollectionEquality()
-                    .equals(other.experience, experience)));
+                other.experience == experience));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(experience);
+  int get hashCode => Object.hash(runtimeType, experience);
 
   @JsonKey(ignore: true)
   @override
@@ -369,7 +366,7 @@ class _$_DifficultyRated implements _DifficultyRated {
 abstract class _DifficultyRated implements RateExperienceDifficultyActorEvent {
   const factory _DifficultyRated(Experience experience) = _$_DifficultyRated;
 
-  Experience get experience => throw _privateConstructorUsedError;
+  Experience get experience;
   @JsonKey(ignore: true)
   _$DifficultyRatedCopyWith<_DifficultyRated> get copyWith =>
       throw _privateConstructorUsedError;
@@ -526,24 +523,19 @@ class _$_RateExperienceDifficultyActorState
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _RateExperienceDifficultyActorState &&
+        (other.runtimeType == runtimeType &&
+            other is _RateExperienceDifficultyActorState &&
             (identical(other.difficulty, difficulty) ||
-                const DeepCollectionEquality()
-                    .equals(other.difficulty, difficulty)) &&
+                other.difficulty == difficulty) &&
             (identical(other.isSubmitting, isSubmitting) ||
-                const DeepCollectionEquality()
-                    .equals(other.isSubmitting, isSubmitting)) &&
+                other.isSubmitting == isSubmitting) &&
             (identical(other.failureOrSuccessOption, failureOrSuccessOption) ||
-                const DeepCollectionEquality().equals(
-                    other.failureOrSuccessOption, failureOrSuccessOption)));
+                other.failureOrSuccessOption == failureOrSuccessOption));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(difficulty) ^
-      const DeepCollectionEquality().hash(isSubmitting) ^
-      const DeepCollectionEquality().hash(failureOrSuccessOption);
+  int get hashCode => Object.hash(
+      runtimeType, difficulty, isSubmitting, failureOrSuccessOption);
 
   @JsonKey(ignore: true)
   @override
@@ -562,12 +554,11 @@ abstract class _RateExperienceDifficultyActorState
       _$_RateExperienceDifficultyActorState;
 
   @override
-  int get difficulty => throw _privateConstructorUsedError;
+  int get difficulty;
   @override
-  bool get isSubmitting => throw _privateConstructorUsedError;
+  bool get isSubmitting;
   @override
-  Option<Either<Failure, Unit>> get failureOrSuccessOption =>
-      throw _privateConstructorUsedError;
+  Option<Either<Failure, Unit>> get failureOrSuccessOption;
   @override
   @JsonKey(ignore: true)
   _$RateExperienceDifficultyActorStateCopyWith<

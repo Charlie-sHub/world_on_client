@@ -28,7 +28,7 @@ class _$OptionsDtoTearOff {
     );
   }
 
-  OptionsDto fromJson(Map<String, Object> json) {
+  OptionsDto fromJson(Map<String, Object?> json) {
     return OptionsDto.fromJson(json);
   }
 }
@@ -140,19 +140,15 @@ class _$_OptionsDto extends _OptionsDto {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _OptionsDto &&
-            (identical(other.id, id) ||
-                const DeepCollectionEquality().equals(other.id, id)) &&
+        (other.runtimeType == runtimeType &&
+            other is _OptionsDto &&
+            (identical(other.id, id) || other.id == id) &&
             (identical(other.languageCode, languageCode) ||
-                const DeepCollectionEquality()
-                    .equals(other.languageCode, languageCode)));
+                other.languageCode == languageCode));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(id) ^
-      const DeepCollectionEquality().hash(languageCode);
+  int get hashCode => Object.hash(runtimeType, id, languageCode);
 
   @JsonKey(ignore: true)
   @override
@@ -174,9 +170,9 @@ abstract class _OptionsDto extends OptionsDto {
       _$_OptionsDto.fromJson;
 
   @override
-  String get id => throw _privateConstructorUsedError;
+  String get id;
   @override
-  String get languageCode => throw _privateConstructorUsedError;
+  String get languageCode;
   @override
   @JsonKey(ignore: true)
   _$OptionsDtoCopyWith<_OptionsDto> get copyWith =>

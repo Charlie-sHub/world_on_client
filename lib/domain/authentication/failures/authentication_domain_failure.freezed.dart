@@ -120,7 +120,8 @@ class _$CancelledByUser<T>
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is CancelledByUser<T>);
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is CancelledByUser<T>);
   }
 
   @override

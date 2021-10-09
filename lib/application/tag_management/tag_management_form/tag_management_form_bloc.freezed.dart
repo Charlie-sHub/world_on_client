@@ -150,15 +150,14 @@ class _$_Initialized implements _Initialized {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _Initialized &&
+        (other.runtimeType == runtimeType &&
+            other is _Initialized &&
             (identical(other.tagOption, tagOption) ||
-                const DeepCollectionEquality()
-                    .equals(other.tagOption, tagOption)));
+                other.tagOption == tagOption));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(tagOption);
+  int get hashCode => Object.hash(runtimeType, tagOption);
 
   @JsonKey(ignore: true)
   @override
@@ -237,7 +236,7 @@ class _$_Initialized implements _Initialized {
 abstract class _Initialized implements TagManagementFormEvent {
   const factory _Initialized(Option<Tag> tagOption) = _$_Initialized;
 
-  Option<Tag> get tagOption => throw _privateConstructorUsedError;
+  Option<Tag> get tagOption;
   @JsonKey(ignore: true)
   _$InitializedCopyWith<_Initialized> get copyWith =>
       throw _privateConstructorUsedError;
@@ -291,14 +290,13 @@ class _$_NameChanged implements _NameChanged {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _NameChanged &&
-            (identical(other.name, name) ||
-                const DeepCollectionEquality().equals(other.name, name)));
+        (other.runtimeType == runtimeType &&
+            other is _NameChanged &&
+            (identical(other.name, name) || other.name == name));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(name);
+  int get hashCode => Object.hash(runtimeType, name);
 
   @JsonKey(ignore: true)
   @override
@@ -377,7 +375,7 @@ class _$_NameChanged implements _NameChanged {
 abstract class _NameChanged implements TagManagementFormEvent {
   const factory _NameChanged(String name) = _$_NameChanged;
 
-  String get name => throw _privateConstructorUsedError;
+  String get name;
   @JsonKey(ignore: true)
   _$NameChangedCopyWith<_NameChanged> get copyWith =>
       throw _privateConstructorUsedError;
@@ -413,7 +411,8 @@ class _$_Submitted implements _Submitted {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _Submitted);
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _Submitted);
   }
 
   @override
@@ -684,31 +683,22 @@ class _$_TagManagementFormState implements _TagManagementFormState {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _TagManagementFormState &&
-            (identical(other.tag, tag) ||
-                const DeepCollectionEquality().equals(other.tag, tag)) &&
+        (other.runtimeType == runtimeType &&
+            other is _TagManagementFormState &&
+            (identical(other.tag, tag) || other.tag == tag) &&
             (identical(other.showErrorMessages, showErrorMessages) ||
-                const DeepCollectionEquality()
-                    .equals(other.showErrorMessages, showErrorMessages)) &&
+                other.showErrorMessages == showErrorMessages) &&
             (identical(other.isEditing, isEditing) ||
-                const DeepCollectionEquality()
-                    .equals(other.isEditing, isEditing)) &&
+                other.isEditing == isEditing) &&
             (identical(other.isSubmitting, isSubmitting) ||
-                const DeepCollectionEquality()
-                    .equals(other.isSubmitting, isSubmitting)) &&
+                other.isSubmitting == isSubmitting) &&
             (identical(other.failureOrSuccessOption, failureOrSuccessOption) ||
-                const DeepCollectionEquality().equals(
-                    other.failureOrSuccessOption, failureOrSuccessOption)));
+                other.failureOrSuccessOption == failureOrSuccessOption));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(tag) ^
-      const DeepCollectionEquality().hash(showErrorMessages) ^
-      const DeepCollectionEquality().hash(isEditing) ^
-      const DeepCollectionEquality().hash(isSubmitting) ^
-      const DeepCollectionEquality().hash(failureOrSuccessOption);
+  int get hashCode => Object.hash(runtimeType, tag, showErrorMessages,
+      isEditing, isSubmitting, failureOrSuccessOption);
 
   @JsonKey(ignore: true)
   @override
@@ -727,16 +717,15 @@ abstract class _TagManagementFormState implements TagManagementFormState {
       _$_TagManagementFormState;
 
   @override
-  Tag get tag => throw _privateConstructorUsedError;
+  Tag get tag;
   @override
-  bool get showErrorMessages => throw _privateConstructorUsedError;
+  bool get showErrorMessages;
   @override
-  bool get isEditing => throw _privateConstructorUsedError;
+  bool get isEditing;
   @override
-  bool get isSubmitting => throw _privateConstructorUsedError;
+  bool get isSubmitting;
   @override
-  Option<Either<Failure, Unit>> get failureOrSuccessOption =>
-      throw _privateConstructorUsedError;
+  Option<Either<Failure, Unit>> get failureOrSuccessOption;
   @override
   @JsonKey(ignore: true)
   _$TagManagementFormStateCopyWith<_TagManagementFormState> get copyWith =>

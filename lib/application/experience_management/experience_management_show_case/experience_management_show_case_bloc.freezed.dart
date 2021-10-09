@@ -121,7 +121,8 @@ class _$_HelpButtonPressed implements _HelpButtonPressed {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _HelpButtonPressed);
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _HelpButtonPressed);
   }
 
   @override
@@ -223,7 +224,8 @@ class _$_Finished implements _Finished {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _Finished);
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _Finished);
   }
 
   @override
@@ -402,7 +404,8 @@ class _$_ShowNot implements _ShowNot {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _ShowNot);
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _ShowNot);
   }
 
   @override
@@ -504,7 +507,8 @@ class _$_Show implements _Show {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _Show);
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _Show);
   }
 
   @override

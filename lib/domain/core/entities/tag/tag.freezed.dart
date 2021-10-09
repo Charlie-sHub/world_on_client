@@ -186,30 +186,21 @@ class _$_Tag extends _Tag {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _Tag &&
-            (identical(other.id, id) ||
-                const DeepCollectionEquality().equals(other.id, id)) &&
-            (identical(other.name, name) ||
-                const DeepCollectionEquality().equals(other.name, name)) &&
+        (other.runtimeType == runtimeType &&
+            other is _Tag &&
+            (identical(other.id, id) || other.id == id) &&
+            (identical(other.name, name) || other.name == name) &&
             (identical(other.creatorId, creatorId) ||
-                const DeepCollectionEquality()
-                    .equals(other.creatorId, creatorId)) &&
+                other.creatorId == creatorId) &&
             (identical(other.creationDate, creationDate) ||
-                const DeepCollectionEquality()
-                    .equals(other.creationDate, creationDate)) &&
+                other.creationDate == creationDate) &&
             (identical(other.modificationDate, modificationDate) ||
-                const DeepCollectionEquality()
-                    .equals(other.modificationDate, modificationDate)));
+                other.modificationDate == modificationDate));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(id) ^
-      const DeepCollectionEquality().hash(name) ^
-      const DeepCollectionEquality().hash(creatorId) ^
-      const DeepCollectionEquality().hash(creationDate) ^
-      const DeepCollectionEquality().hash(modificationDate);
+  int get hashCode => Object.hash(
+      runtimeType, id, name, creatorId, creationDate, modificationDate);
 
   @JsonKey(ignore: true)
   @override
@@ -227,15 +218,15 @@ abstract class _Tag extends Tag {
   const _Tag._() : super._();
 
   @override
-  UniqueId get id => throw _privateConstructorUsedError;
+  UniqueId get id;
   @override
-  Name get name => throw _privateConstructorUsedError;
+  Name get name;
   @override
-  UniqueId get creatorId => throw _privateConstructorUsedError;
+  UniqueId get creatorId;
   @override
-  PastDate get creationDate => throw _privateConstructorUsedError;
+  PastDate get creationDate;
   @override
-  PastDate get modificationDate => throw _privateConstructorUsedError;
+  PastDate get modificationDate;
   @override
   @JsonKey(ignore: true)
   _$TagCopyWith<_Tag> get copyWith => throw _privateConstructorUsedError;

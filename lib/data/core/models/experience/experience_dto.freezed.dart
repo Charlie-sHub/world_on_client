@@ -64,7 +64,7 @@ class _$ExperienceDtoTearOff {
     );
   }
 
-  ExperienceDto fromJson(Map<String, Object> json) {
+  ExperienceDto fromJson(Map<String, Object?> json) {
     return ExperienceDto.fromJson(json);
   }
 }
@@ -493,83 +493,61 @@ class _$_ExperienceDto extends _ExperienceDto {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _ExperienceDto &&
-            (identical(other.id, id) ||
-                const DeepCollectionEquality().equals(other.id, id)) &&
-            (identical(other.title, title) ||
-                const DeepCollectionEquality().equals(other.title, title)) &&
+        (other.runtimeType == runtimeType &&
+            other is _ExperienceDto &&
+            (identical(other.id, id) || other.id == id) &&
+            (identical(other.title, title) || other.title == title) &&
             (identical(other.description, description) ||
-                const DeepCollectionEquality()
-                    .equals(other.description, description)) &&
-            (identical(other.imageURLs, imageURLs) ||
-                const DeepCollectionEquality()
-                    .equals(other.imageURLs, imageURLs)) &&
+                other.description == description) &&
+            const DeepCollectionEquality().equals(other.imageURLs, imageURLs) &&
             (identical(other.coordinates, coordinates) ||
-                const DeepCollectionEquality()
-                    .equals(other.coordinates, coordinates)) &&
+                other.coordinates == coordinates) &&
             (identical(other.location, location) ||
-                const DeepCollectionEquality()
-                    .equals(other.location, location)) &&
+                other.location == location) &&
             (identical(other.creatorId, creatorId) ||
-                const DeepCollectionEquality()
-                    .equals(other.creatorId, creatorId)) &&
-            (identical(other.creator, creator) ||
-                const DeepCollectionEquality()
-                    .equals(other.creator, creator)) &&
+                other.creatorId == creatorId) &&
+            (identical(other.creator, creator) || other.creator == creator) &&
             (identical(other.difficulty, difficulty) ||
-                const DeepCollectionEquality()
-                    .equals(other.difficulty, difficulty)) &&
+                other.difficulty == difficulty) &&
             (identical(other.creationDate, creationDate) ||
-                const DeepCollectionEquality()
-                    .equals(other.creationDate, creationDate)) &&
+                other.creationDate == creationDate) &&
             (identical(other.modificationDate, modificationDate) ||
-                const DeepCollectionEquality()
-                    .equals(other.modificationDate, modificationDate)) &&
-            (identical(other.objectives, objectives) ||
-                const DeepCollectionEquality()
-                    .equals(other.objectives, objectives)) &&
-            (identical(other.rewards, rewards) ||
-                const DeepCollectionEquality()
-                    .equals(other.rewards, rewards)) &&
-            (identical(other.tags, tags) ||
-                const DeepCollectionEquality().equals(other.tags, tags)) &&
-            (identical(other.comments, comments) ||
-                const DeepCollectionEquality()
-                    .equals(other.comments, comments)) &&
-            (identical(other.likedBy, likedBy) ||
-                const DeepCollectionEquality()
-                    .equals(other.likedBy, likedBy)) &&
-            (identical(other.doneBy, doneBy) ||
-                const DeepCollectionEquality().equals(other.doneBy, doneBy)) &&
-            (identical(other.toDoBy, toDoBy) ||
-                const DeepCollectionEquality().equals(other.toDoBy, toDoBy)) &&
+                other.modificationDate == modificationDate) &&
+            const DeepCollectionEquality()
+                .equals(other.objectives, objectives) &&
+            const DeepCollectionEquality().equals(other.rewards, rewards) &&
+            const DeepCollectionEquality().equals(other.tags, tags) &&
+            const DeepCollectionEquality().equals(other.comments, comments) &&
+            const DeepCollectionEquality().equals(other.likedBy, likedBy) &&
+            const DeepCollectionEquality().equals(other.doneBy, doneBy) &&
+            const DeepCollectionEquality().equals(other.toDoBy, toDoBy) &&
             (identical(other.isPromoted, isPromoted) ||
-                const DeepCollectionEquality()
-                    .equals(other.isPromoted, isPromoted)));
+                other.isPromoted == isPromoted));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(id) ^
-      const DeepCollectionEquality().hash(title) ^
-      const DeepCollectionEquality().hash(description) ^
-      const DeepCollectionEquality().hash(imageURLs) ^
-      const DeepCollectionEquality().hash(coordinates) ^
-      const DeepCollectionEquality().hash(location) ^
-      const DeepCollectionEquality().hash(creatorId) ^
-      const DeepCollectionEquality().hash(creator) ^
-      const DeepCollectionEquality().hash(difficulty) ^
-      const DeepCollectionEquality().hash(creationDate) ^
-      const DeepCollectionEquality().hash(modificationDate) ^
-      const DeepCollectionEquality().hash(objectives) ^
-      const DeepCollectionEquality().hash(rewards) ^
-      const DeepCollectionEquality().hash(tags) ^
-      const DeepCollectionEquality().hash(comments) ^
-      const DeepCollectionEquality().hash(likedBy) ^
-      const DeepCollectionEquality().hash(doneBy) ^
-      const DeepCollectionEquality().hash(toDoBy) ^
-      const DeepCollectionEquality().hash(isPromoted);
+  int get hashCode => Object.hashAll([
+        runtimeType,
+        id,
+        title,
+        description,
+        const DeepCollectionEquality().hash(imageURLs),
+        coordinates,
+        location,
+        creatorId,
+        creator,
+        difficulty,
+        creationDate,
+        modificationDate,
+        const DeepCollectionEquality().hash(objectives),
+        const DeepCollectionEquality().hash(rewards),
+        const DeepCollectionEquality().hash(tags),
+        const DeepCollectionEquality().hash(comments),
+        const DeepCollectionEquality().hash(likedBy),
+        const DeepCollectionEquality().hash(doneBy),
+        const DeepCollectionEquality().hash(toDoBy),
+        isPromoted
+      ]);
 
   @JsonKey(ignore: true)
   @override
@@ -609,45 +587,45 @@ abstract class _ExperienceDto extends ExperienceDto {
       _$_ExperienceDto.fromJson;
 
   @override
-  String get id => throw _privateConstructorUsedError;
+  String get id;
   @override
-  String get title => throw _privateConstructorUsedError;
+  String get title;
   @override
-  String get description => throw _privateConstructorUsedError;
+  String get description;
   @override
-  Set<String> get imageURLs => throw _privateConstructorUsedError;
+  Set<String> get imageURLs;
   @override
-  CoordinatesDto get coordinates => throw _privateConstructorUsedError;
+  CoordinatesDto get coordinates;
   @override
-  LocationDto get location => throw _privateConstructorUsedError;
+  LocationDto get location;
   @override
-  String get creatorId => throw _privateConstructorUsedError;
+  String get creatorId;
   @override
-  SimpleUserDto get creator => throw _privateConstructorUsedError;
+  SimpleUserDto get creator;
   @override
-  int get difficulty => throw _privateConstructorUsedError;
-  @override
-  @ServerTimestampConverter()
-  DateTime get creationDate => throw _privateConstructorUsedError;
+  int get difficulty;
   @override
   @ServerTimestampConverter()
-  DateTime get modificationDate => throw _privateConstructorUsedError;
+  DateTime get creationDate;
   @override
-  List<ObjectiveDto> get objectives => throw _privateConstructorUsedError;
+  @ServerTimestampConverter()
+  DateTime get modificationDate;
   @override
-  Set<RewardDto> get rewards => throw _privateConstructorUsedError;
+  List<ObjectiveDto> get objectives;
   @override
-  Set<TagDto> get tags => throw _privateConstructorUsedError;
+  Set<RewardDto> get rewards;
   @override
-  Set<CommentDto> get comments => throw _privateConstructorUsedError;
+  Set<TagDto> get tags;
   @override
-  Set<String> get likedBy => throw _privateConstructorUsedError;
+  Set<CommentDto> get comments;
   @override
-  Set<String> get doneBy => throw _privateConstructorUsedError;
+  Set<String> get likedBy;
   @override
-  Set<String> get toDoBy => throw _privateConstructorUsedError;
+  Set<String> get doneBy;
   @override
-  bool get isPromoted => throw _privateConstructorUsedError;
+  Set<String> get toDoBy;
+  @override
+  bool get isPromoted;
   @override
   @JsonKey(ignore: true)
   _$ExperienceDtoCopyWith<_ExperienceDto> get copyWith =>

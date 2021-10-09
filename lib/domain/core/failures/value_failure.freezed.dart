@@ -288,7 +288,8 @@ class _$NullInput<T> implements NullInput<T> {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is NullInput<T>);
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is NullInput<T>);
   }
 
   @override
@@ -493,15 +494,14 @@ class _$InvalidDate<T> implements InvalidDate<T> {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is InvalidDate<T> &&
+        (other.runtimeType == runtimeType &&
+            other is InvalidDate<T> &&
             (identical(other.failedValue, failedValue) ||
-                const DeepCollectionEquality()
-                    .equals(other.failedValue, failedValue)));
+                other.failedValue == failedValue));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(failedValue);
+  int get hashCode => Object.hash(runtimeType, failedValue);
 
   @JsonKey(ignore: true)
   @override
@@ -658,7 +658,7 @@ class _$InvalidDate<T> implements InvalidDate<T> {
 abstract class InvalidDate<T> implements ValueFailure<T> {
   const factory InvalidDate({required DateTime failedValue}) = _$InvalidDate<T>;
 
-  DateTime get failedValue => throw _privateConstructorUsedError;
+  DateTime get failedValue;
   @JsonKey(ignore: true)
   $InvalidDateCopyWith<T, InvalidDate<T>> get copyWith =>
       throw _privateConstructorUsedError;
@@ -712,15 +712,14 @@ class _$InvalidEmail<T> implements InvalidEmail<T> {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is InvalidEmail<T> &&
+        (other.runtimeType == runtimeType &&
+            other is InvalidEmail<T> &&
             (identical(other.failedValue, failedValue) ||
-                const DeepCollectionEquality()
-                    .equals(other.failedValue, failedValue)));
+                other.failedValue == failedValue));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(failedValue);
+  int get hashCode => Object.hash(runtimeType, failedValue);
 
   @JsonKey(ignore: true)
   @override
@@ -877,7 +876,7 @@ class _$InvalidEmail<T> implements InvalidEmail<T> {
 abstract class InvalidEmail<T> implements ValueFailure<T> {
   const factory InvalidEmail({required String failedValue}) = _$InvalidEmail<T>;
 
-  String get failedValue => throw _privateConstructorUsedError;
+  String get failedValue;
   @JsonKey(ignore: true)
   $InvalidEmailCopyWith<T, InvalidEmail<T>> get copyWith =>
       throw _privateConstructorUsedError;
@@ -931,15 +930,14 @@ class _$InvalidPassword<T> implements InvalidPassword<T> {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is InvalidPassword<T> &&
+        (other.runtimeType == runtimeType &&
+            other is InvalidPassword<T> &&
             (identical(other.failedValue, failedValue) ||
-                const DeepCollectionEquality()
-                    .equals(other.failedValue, failedValue)));
+                other.failedValue == failedValue));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(failedValue);
+  int get hashCode => Object.hash(runtimeType, failedValue);
 
   @JsonKey(ignore: true)
   @override
@@ -1097,7 +1095,7 @@ abstract class InvalidPassword<T> implements ValueFailure<T> {
   const factory InvalidPassword({required String failedValue}) =
       _$InvalidPassword<T>;
 
-  String get failedValue => throw _privateConstructorUsedError;
+  String get failedValue;
   @JsonKey(ignore: true)
   $InvalidPasswordCopyWith<T, InvalidPassword<T>> get copyWith =>
       throw _privateConstructorUsedError;
@@ -1151,15 +1149,14 @@ class _$StringMismatch<T> implements StringMismatch<T> {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is StringMismatch<T> &&
+        (other.runtimeType == runtimeType &&
+            other is StringMismatch<T> &&
             (identical(other.failedValue, failedValue) ||
-                const DeepCollectionEquality()
-                    .equals(other.failedValue, failedValue)));
+                other.failedValue == failedValue));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(failedValue);
+  int get hashCode => Object.hash(runtimeType, failedValue);
 
   @JsonKey(ignore: true)
   @override
@@ -1317,7 +1314,7 @@ abstract class StringMismatch<T> implements ValueFailure<T> {
   const factory StringMismatch({required String failedValue}) =
       _$StringMismatch<T>;
 
-  String get failedValue => throw _privateConstructorUsedError;
+  String get failedValue;
   @JsonKey(ignore: true)
   $StringMismatchCopyWith<T, StringMismatch<T>> get copyWith =>
       throw _privateConstructorUsedError;
@@ -1371,15 +1368,14 @@ class _$InvalidName<T> implements InvalidName<T> {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is InvalidName<T> &&
+        (other.runtimeType == runtimeType &&
+            other is InvalidName<T> &&
             (identical(other.failedValue, failedValue) ||
-                const DeepCollectionEquality()
-                    .equals(other.failedValue, failedValue)));
+                other.failedValue == failedValue));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(failedValue);
+  int get hashCode => Object.hash(runtimeType, failedValue);
 
   @JsonKey(ignore: true)
   @override
@@ -1536,7 +1532,7 @@ class _$InvalidName<T> implements InvalidName<T> {
 abstract class InvalidName<T> implements ValueFailure<T> {
   const factory InvalidName({required String failedValue}) = _$InvalidName<T>;
 
-  String get failedValue => throw _privateConstructorUsedError;
+  String get failedValue;
   @JsonKey(ignore: true)
   $InvalidNameCopyWith<T, InvalidName<T>> get copyWith =>
       throw _privateConstructorUsedError;
@@ -1590,15 +1586,14 @@ class _$EmptyString<T> implements EmptyString<T> {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is EmptyString<T> &&
+        (other.runtimeType == runtimeType &&
+            other is EmptyString<T> &&
             (identical(other.failedValue, failedValue) ||
-                const DeepCollectionEquality()
-                    .equals(other.failedValue, failedValue)));
+                other.failedValue == failedValue));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(failedValue);
+  int get hashCode => Object.hash(runtimeType, failedValue);
 
   @JsonKey(ignore: true)
   @override
@@ -1755,7 +1750,7 @@ class _$EmptyString<T> implements EmptyString<T> {
 abstract class EmptyString<T> implements ValueFailure<T> {
   const factory EmptyString({required String failedValue}) = _$EmptyString<T>;
 
-  String get failedValue => throw _privateConstructorUsedError;
+  String get failedValue;
   @JsonKey(ignore: true)
   $EmptyStringCopyWith<T, EmptyString<T>> get copyWith =>
       throw _privateConstructorUsedError;
@@ -1809,15 +1804,14 @@ class _$MultiLineString<T> implements MultiLineString<T> {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is MultiLineString<T> &&
+        (other.runtimeType == runtimeType &&
+            other is MultiLineString<T> &&
             (identical(other.failedValue, failedValue) ||
-                const DeepCollectionEquality()
-                    .equals(other.failedValue, failedValue)));
+                other.failedValue == failedValue));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(failedValue);
+  int get hashCode => Object.hash(runtimeType, failedValue);
 
   @JsonKey(ignore: true)
   @override
@@ -1975,7 +1969,7 @@ abstract class MultiLineString<T> implements ValueFailure<T> {
   const factory MultiLineString({required String failedValue}) =
       _$MultiLineString<T>;
 
-  String get failedValue => throw _privateConstructorUsedError;
+  String get failedValue;
   @JsonKey(ignore: true)
   $MultiLineStringCopyWith<T, MultiLineString<T>> get copyWith =>
       throw _privateConstructorUsedError;
@@ -2037,20 +2031,16 @@ class _$StringExceedsLength<T> implements StringExceedsLength<T> {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is StringExceedsLength<T> &&
+        (other.runtimeType == runtimeType &&
+            other is StringExceedsLength<T> &&
             (identical(other.failedValue, failedValue) ||
-                const DeepCollectionEquality()
-                    .equals(other.failedValue, failedValue)) &&
+                other.failedValue == failedValue) &&
             (identical(other.maxLength, maxLength) ||
-                const DeepCollectionEquality()
-                    .equals(other.maxLength, maxLength)));
+                other.maxLength == maxLength));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(failedValue) ^
-      const DeepCollectionEquality().hash(maxLength);
+  int get hashCode => Object.hash(runtimeType, failedValue, maxLength);
 
   @JsonKey(ignore: true)
   @override
@@ -2210,8 +2200,8 @@ abstract class StringExceedsLength<T> implements ValueFailure<T> {
       {required String failedValue,
       required int maxLength}) = _$StringExceedsLength<T>;
 
-  String get failedValue => throw _privateConstructorUsedError;
-  int get maxLength => throw _privateConstructorUsedError;
+  String get failedValue;
+  int get maxLength;
   @JsonKey(ignore: true)
   $StringExceedsLengthCopyWith<T, StringExceedsLength<T>> get copyWith =>
       throw _privateConstructorUsedError;
@@ -2265,15 +2255,14 @@ class _$IntegerOutOfBounds<T> implements IntegerOutOfBounds<T> {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is IntegerOutOfBounds<T> &&
+        (other.runtimeType == runtimeType &&
+            other is IntegerOutOfBounds<T> &&
             (identical(other.failedValue, failedValue) ||
-                const DeepCollectionEquality()
-                    .equals(other.failedValue, failedValue)));
+                other.failedValue == failedValue));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(failedValue);
+  int get hashCode => Object.hash(runtimeType, failedValue);
 
   @JsonKey(ignore: true)
   @override
@@ -2432,7 +2421,7 @@ abstract class IntegerOutOfBounds<T> implements ValueFailure<T> {
   const factory IntegerOutOfBounds({required int failedValue}) =
       _$IntegerOutOfBounds<T>;
 
-  int get failedValue => throw _privateConstructorUsedError;
+  int get failedValue;
   @JsonKey(ignore: true)
   $IntegerOutOfBoundsCopyWith<T, IntegerOutOfBounds<T>> get copyWith =>
       throw _privateConstructorUsedError;
@@ -2490,15 +2479,14 @@ class _$StringWithInvalidCharacters<T>
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is StringWithInvalidCharacters<T> &&
+        (other.runtimeType == runtimeType &&
+            other is StringWithInvalidCharacters<T> &&
             (identical(other.failedValue, failedValue) ||
-                const DeepCollectionEquality()
-                    .equals(other.failedValue, failedValue)));
+                other.failedValue == failedValue));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(failedValue);
+  int get hashCode => Object.hash(runtimeType, failedValue);
 
   @JsonKey(ignore: true)
   @override
@@ -2657,7 +2645,7 @@ abstract class StringWithInvalidCharacters<T> implements ValueFailure<T> {
   const factory StringWithInvalidCharacters({required String failedValue}) =
       _$StringWithInvalidCharacters<T>;
 
-  String get failedValue => throw _privateConstructorUsedError;
+  String get failedValue;
   @JsonKey(ignore: true)
   $StringWithInvalidCharactersCopyWith<T, StringWithInvalidCharacters<T>>
       get copyWith => throw _privateConstructorUsedError;
@@ -2711,15 +2699,14 @@ class _$InvalidCoordinates<T> implements InvalidCoordinates<T> {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is InvalidCoordinates<T> &&
+        (other.runtimeType == runtimeType &&
+            other is InvalidCoordinates<T> &&
             (identical(other.failedValue, failedValue) ||
-                const DeepCollectionEquality()
-                    .equals(other.failedValue, failedValue)));
+                other.failedValue == failedValue));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(failedValue);
+  int get hashCode => Object.hash(runtimeType, failedValue);
 
   @JsonKey(ignore: true)
   @override
@@ -2878,7 +2865,7 @@ abstract class InvalidCoordinates<T> implements ValueFailure<T> {
   const factory InvalidCoordinates({required double failedValue}) =
       _$InvalidCoordinates<T>;
 
-  double get failedValue => throw _privateConstructorUsedError;
+  double get failedValue;
   @JsonKey(ignore: true)
   $InvalidCoordinatesCopyWith<T, InvalidCoordinates<T>> get copyWith =>
       throw _privateConstructorUsedError;
@@ -2931,15 +2918,15 @@ class _$EmptySet<T> implements EmptySet<T> {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is EmptySet<T> &&
-            (identical(other.failedValue, failedValue) ||
-                const DeepCollectionEquality()
-                    .equals(other.failedValue, failedValue)));
+        (other.runtimeType == runtimeType &&
+            other is EmptySet<T> &&
+            const DeepCollectionEquality()
+                .equals(other.failedValue, failedValue));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(failedValue);
+  int get hashCode => Object.hash(
+      runtimeType, const DeepCollectionEquality().hash(failedValue));
 
   @JsonKey(ignore: true)
   @override
@@ -3096,7 +3083,7 @@ class _$EmptySet<T> implements EmptySet<T> {
 abstract class EmptySet<T> implements ValueFailure<T> {
   const factory EmptySet({required T failedValue}) = _$EmptySet<T>;
 
-  T get failedValue => throw _privateConstructorUsedError;
+  T get failedValue;
   @JsonKey(ignore: true)
   $EmptySetCopyWith<T, EmptySet<T>> get copyWith =>
       throw _privateConstructorUsedError;
@@ -3150,15 +3137,15 @@ class _$EmptyList<T> implements EmptyList<T> {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is EmptyList<T> &&
-            (identical(other.failedValue, failedValue) ||
-                const DeepCollectionEquality()
-                    .equals(other.failedValue, failedValue)));
+        (other.runtimeType == runtimeType &&
+            other is EmptyList<T> &&
+            const DeepCollectionEquality()
+                .equals(other.failedValue, failedValue));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(failedValue);
+  int get hashCode => Object.hash(
+      runtimeType, const DeepCollectionEquality().hash(failedValue));
 
   @JsonKey(ignore: true)
   @override
@@ -3315,7 +3302,7 @@ class _$EmptyList<T> implements EmptyList<T> {
 abstract class EmptyList<T> implements ValueFailure<T> {
   const factory EmptyList({required T failedValue}) = _$EmptyList<T>;
 
-  T get failedValue => throw _privateConstructorUsedError;
+  T get failedValue;
   @JsonKey(ignore: true)
   $EmptyListCopyWith<T, EmptyList<T>> get copyWith =>
       throw _privateConstructorUsedError;
@@ -3378,20 +3365,17 @@ class _$CollectionExceedsLength<T> implements CollectionExceedsLength<T> {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is CollectionExceedsLength<T> &&
-            (identical(other.failedValue, failedValue) ||
-                const DeepCollectionEquality()
-                    .equals(other.failedValue, failedValue)) &&
+        (other.runtimeType == runtimeType &&
+            other is CollectionExceedsLength<T> &&
+            const DeepCollectionEquality()
+                .equals(other.failedValue, failedValue) &&
             (identical(other.maxLength, maxLength) ||
-                const DeepCollectionEquality()
-                    .equals(other.maxLength, maxLength)));
+                other.maxLength == maxLength));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(failedValue) ^
-      const DeepCollectionEquality().hash(maxLength);
+  int get hashCode => Object.hash(
+      runtimeType, const DeepCollectionEquality().hash(failedValue), maxLength);
 
   @JsonKey(ignore: true)
   @override
@@ -3552,8 +3536,8 @@ abstract class CollectionExceedsLength<T> implements ValueFailure<T> {
       {required T failedValue,
       required int maxLength}) = _$CollectionExceedsLength<T>;
 
-  T get failedValue => throw _privateConstructorUsedError;
-  int get maxLength => throw _privateConstructorUsedError;
+  T get failedValue;
+  int get maxLength;
   @JsonKey(ignore: true)
   $CollectionExceedsLengthCopyWith<T, CollectionExceedsLength<T>>
       get copyWith => throw _privateConstructorUsedError;

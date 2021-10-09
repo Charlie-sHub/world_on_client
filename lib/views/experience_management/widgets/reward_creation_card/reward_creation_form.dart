@@ -38,14 +38,7 @@ class RewardCreationForm extends StatelessWidget {
                       icon: const Icon(
                         Icons.photo_camera,
                       ),
-                      onPressed: () async {
-                        final _imageFile = await openPictureSelectDialog(context);
-                        if (_imageFile != null) {
-                          context.read<RewardFormBloc>().add(
-                                RewardFormEvent.imageChanged(_imageFile),
-                              );
-                        }
-                      },
+                      onPressed: () => _imageChanged(context),
                     ),
                     if (_rewardFormState.showErrorMessages && _rewardFormState.reward.imageFile.isNone())
                       Text(
@@ -60,14 +53,7 @@ class RewardCreationForm extends StatelessWidget {
                 (imageFile) => Padding(
                   padding: const EdgeInsets.all(10),
                   child: TextButton(
-                    onPressed: () async {
-                      final _imageFile = await openPictureSelectDialog(context);
-                      if (_imageFile != null) {
-                        context.read<RewardFormBloc>().add(
-                              RewardFormEvent.imageChanged(_imageFile),
-                            );
-                      }
-                    },
+                    onPressed: () => _imageChanged(context),
                     child: Image(
                       fit: BoxFit.fitWidth,
                       image: FileImage(imageFile),
@@ -82,4 +68,16 @@ class RewardCreationForm extends StatelessWidget {
       ),
     );
   }
+
+  Future<void> _imageChanged(BuildContext context) => openPictureSelectDialog(context).then(
+        (imageFile) {
+          if (imageFile != null) {
+            context.read<RewardFormBloc>().add(
+                  RewardFormEvent.imageChanged(
+                    imageFile,
+                  ),
+                );
+          }
+        },
+      );
 }

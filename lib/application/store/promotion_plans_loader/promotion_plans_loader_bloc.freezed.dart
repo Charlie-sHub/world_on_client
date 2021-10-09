@@ -109,7 +109,8 @@ class _$_LoadPromotionPlans implements _LoadPromotionPlans {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _LoadPromotionPlans);
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _LoadPromotionPlans);
   }
 
   @override
@@ -304,7 +305,8 @@ class _$_Initial implements _Initial {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _Initial);
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _Initial);
   }
 
   @override
@@ -420,7 +422,8 @@ class _$_LoadInProgress implements _LoadInProgress {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _LoadInProgress);
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _LoadInProgress);
   }
 
   @override
@@ -553,14 +556,13 @@ class _$_LoadedPromotionPlans implements _LoadedPromotionPlans {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _LoadedPromotionPlans &&
-            (identical(other.plans, plans) ||
-                const DeepCollectionEquality().equals(other.plans, plans)));
+        (other.runtimeType == runtimeType &&
+            other is _LoadedPromotionPlans &&
+            (identical(other.plans, plans) || other.plans == plans));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(plans);
+  int get hashCode => Object.hash(runtimeType, plans);
 
   @JsonKey(ignore: true)
   @override
@@ -647,7 +649,7 @@ abstract class _LoadedPromotionPlans implements PromotionPlansLoaderState {
   const factory _LoadedPromotionPlans(KtList<PromotionPlan> plans) =
       _$_LoadedPromotionPlans;
 
-  KtList<PromotionPlan> get plans => throw _privateConstructorUsedError;
+  KtList<PromotionPlan> get plans;
   @JsonKey(ignore: true)
   _$LoadedPromotionPlansCopyWith<_LoadedPromotionPlans> get copyWith =>
       throw _privateConstructorUsedError;
@@ -710,14 +712,13 @@ class _$_LoadFailure implements _LoadFailure {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _LoadFailure &&
-            (identical(other.failure, failure) ||
-                const DeepCollectionEquality().equals(other.failure, failure)));
+        (other.runtimeType == runtimeType &&
+            other is _LoadFailure &&
+            (identical(other.failure, failure) || other.failure == failure));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(failure);
+  int get hashCode => Object.hash(runtimeType, failure);
 
   @JsonKey(ignore: true)
   @override
@@ -802,7 +803,7 @@ class _$_LoadFailure implements _LoadFailure {
 abstract class _LoadFailure implements PromotionPlansLoaderState {
   const factory _LoadFailure(Failure<dynamic> failure) = _$_LoadFailure;
 
-  Failure<dynamic> get failure => throw _privateConstructorUsedError;
+  Failure<dynamic> get failure;
   @JsonKey(ignore: true)
   _$LoadFailureCopyWith<_LoadFailure> get copyWith =>
       throw _privateConstructorUsedError;

@@ -34,7 +34,7 @@ class _$SystemDtoTearOff {
     );
   }
 
-  SystemDto fromJson(Map<String, Object> json) {
+  SystemDto fromJson(Map<String, Object?> json) {
     return SystemDto.fromJson(json);
   }
 }
@@ -174,24 +174,16 @@ class _$_SystemDto extends _SystemDto {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _SystemDto &&
-            (identical(other.id, id) ||
-                const DeepCollectionEquality().equals(other.id, id)) &&
-            (identical(other.name, name) ||
-                const DeepCollectionEquality().equals(other.name, name)) &&
-            (identical(other.type, type) ||
-                const DeepCollectionEquality().equals(other.type, type)) &&
-            (identical(other.company, company) ||
-                const DeepCollectionEquality().equals(other.company, company)));
+        (other.runtimeType == runtimeType &&
+            other is _SystemDto &&
+            (identical(other.id, id) || other.id == id) &&
+            (identical(other.name, name) || other.name == name) &&
+            (identical(other.type, type) || other.type == type) &&
+            (identical(other.company, company) || other.company == company));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(id) ^
-      const DeepCollectionEquality().hash(name) ^
-      const DeepCollectionEquality().hash(type) ^
-      const DeepCollectionEquality().hash(company);
+  int get hashCode => Object.hash(runtimeType, id, name, type, company);
 
   @JsonKey(ignore: true)
   @override
@@ -216,13 +208,13 @@ abstract class _SystemDto extends SystemDto {
       _$_SystemDto.fromJson;
 
   @override
-  String get id => throw _privateConstructorUsedError;
+  String get id;
   @override
-  String get name => throw _privateConstructorUsedError;
+  String get name;
   @override
-  String get type => throw _privateConstructorUsedError;
+  String get type;
   @override
-  String get company => throw _privateConstructorUsedError;
+  String get company;
   @override
   @JsonKey(ignore: true)
   _$SystemDtoCopyWith<_SystemDto> get copyWith =>

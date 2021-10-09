@@ -19,6 +19,9 @@ class AppWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final _themeData = ThemeData(
+      fontFamily: "Geometria",
+    );
     return BlocProvider(
       create: (context) => getIt<AuthenticationBloc>()
         ..add(
@@ -27,9 +30,8 @@ class AppWidget extends StatelessWidget {
       child: MaterialApp.router(
         title: "World On",
         debugShowCheckedModeBanner: Provider.of<String>(context) != Environment.prod,
-        theme: ThemeData(
+        theme: _themeData.copyWith(
           indicatorColor: WorldOnColors.primary,
-          fontFamily: "Geometria",
           textTheme: Theme.of(context).textTheme.apply(
                 bodyColor: WorldOnColors.accent,
               ),
@@ -77,7 +79,9 @@ class AppWidget extends StatelessWidget {
             color: WorldOnColors.white,
           ),
           primaryColor: WorldOnColors.primary,
-          accentColor: WorldOnColors.accent,
+          colorScheme: _themeData.colorScheme.copyWith(
+            secondary: WorldOnColors.accent,
+          ),
           scaffoldBackgroundColor: WorldOnColors.background,
           appBarTheme: AppBarTheme.of(context).copyWith(
             color: WorldOnColors.background,

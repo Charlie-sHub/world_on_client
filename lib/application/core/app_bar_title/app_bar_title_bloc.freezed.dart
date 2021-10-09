@@ -216,7 +216,8 @@ class _$_Initialized implements _Initialized {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _Initialized);
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _Initialized);
   }
 
   @override
@@ -379,7 +380,8 @@ class _$_ShowedMainFeed implements _ShowedMainFeed {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _ShowedMainFeed);
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _ShowedMainFeed);
   }
 
   @override
@@ -542,7 +544,8 @@ class _$_ShowedSearch implements _ShowedSearch {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _ShowedSearch);
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _ShowedSearch);
   }
 
   @override
@@ -705,7 +708,8 @@ class _$_ShowedRecommendations implements _ShowedRecommendations {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _ShowedRecommendations);
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _ShowedRecommendations);
   }
 
   @override
@@ -870,7 +874,9 @@ class _$_ShowedExperienceNavigation implements _ShowedExperienceNavigation {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _ShowedExperienceNavigation);
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _ShowedExperienceNavigation);
   }
 
   @override
@@ -1033,7 +1039,8 @@ class _$_ShowedExperienceFinish implements _ShowedExperienceFinish {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _ShowedExperienceFinish);
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _ShowedExperienceFinish);
   }
 
   @override
@@ -1196,7 +1203,8 @@ class _$_ShowedProfile implements _ShowedProfile {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _ShowedProfile);
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _ShowedProfile);
   }
 
   @override
@@ -1359,7 +1367,8 @@ class _$_ShowedNotifications implements _ShowedNotifications {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _ShowedNotifications);
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _ShowedNotifications);
   }
 
   @override
@@ -1522,7 +1531,8 @@ class _$_ShowedFollowers implements _ShowedFollowers {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _ShowedFollowers);
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _ShowedFollowers);
   }
 
   @override
@@ -1685,7 +1695,8 @@ class _$_ShowedFollowing implements _ShowedFollowing {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _ShowedFollowing);
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _ShowedFollowing);
   }
 
   @override
@@ -1865,15 +1876,14 @@ class _$_ShowedUsername implements _ShowedUsername {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _ShowedUsername &&
+        (other.runtimeType == runtimeType &&
+            other is _ShowedUsername &&
             (identical(other.username, username) ||
-                const DeepCollectionEquality()
-                    .equals(other.username, username)));
+                other.username == username));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(username);
+  int get hashCode => Object.hash(runtimeType, username);
 
   @JsonKey(ignore: true)
   @override
@@ -2005,7 +2015,7 @@ class _$_ShowedUsername implements _ShowedUsername {
 abstract class _ShowedUsername implements AppBarTitleEvent {
   const factory _ShowedUsername(String username) = _$_ShowedUsername;
 
-  String get username => throw _privateConstructorUsedError;
+  String get username;
   @JsonKey(ignore: true)
   _$ShowedUsernameCopyWith<_ShowedUsername> get copyWith =>
       throw _privateConstructorUsedError;
@@ -2216,7 +2226,8 @@ class _$_Initial implements _Initial {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _Initial);
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _Initial);
   }
 
   @override
@@ -2377,7 +2388,8 @@ class _$_MainFeed implements _MainFeed {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _MainFeed);
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _MainFeed);
   }
 
   @override
@@ -2538,7 +2550,8 @@ class _$_Search implements _Search {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _Search);
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _Search);
   }
 
   @override
@@ -2702,7 +2715,8 @@ class _$_Recommendations implements _Recommendations {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _Recommendations);
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _Recommendations);
   }
 
   @override
@@ -2866,7 +2880,8 @@ class _$_ExperienceNavigation implements _ExperienceNavigation {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _ExperienceNavigation);
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _ExperienceNavigation);
   }
 
   @override
@@ -3030,7 +3045,8 @@ class _$_ExperienceFinish implements _ExperienceFinish {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _ExperienceFinish);
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _ExperienceFinish);
   }
 
   @override
@@ -3191,7 +3207,8 @@ class _$_Profile implements _Profile {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _Profile);
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _Profile);
   }
 
   @override
@@ -3355,7 +3372,8 @@ class _$_Notifications implements _Notifications {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _Notifications);
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _Notifications);
   }
 
   @override
@@ -3518,7 +3536,8 @@ class _$_Followers implements _Followers {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _Followers);
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _Followers);
   }
 
   @override
@@ -3681,7 +3700,8 @@ class _$_Following implements _Following {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _Following);
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _Following);
   }
 
   @override
@@ -3859,15 +3879,14 @@ class _$_Username implements _Username {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _Username &&
+        (other.runtimeType == runtimeType &&
+            other is _Username &&
             (identical(other.username, username) ||
-                const DeepCollectionEquality()
-                    .equals(other.username, username)));
+                other.username == username));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(username);
+  int get hashCode => Object.hash(runtimeType, username);
 
   @JsonKey(ignore: true)
   @override
@@ -4000,7 +4019,7 @@ class _$_Username implements _Username {
 abstract class _Username implements AppBarTitleState {
   const factory _Username(String username) = _$_Username;
 
-  String get username => throw _privateConstructorUsedError;
+  String get username;
   @JsonKey(ignore: true)
   _$UsernameCopyWith<_Username> get copyWith =>
       throw _privateConstructorUsedError;
@@ -4034,7 +4053,8 @@ class _$_Error implements _Error {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _Error);
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _Error);
   }
 
   @override

@@ -161,15 +161,14 @@ class _$_FinishedExperience implements _FinishedExperience {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _FinishedExperience &&
+        (other.runtimeType == runtimeType &&
+            other is _FinishedExperience &&
             (identical(other.experience, experience) ||
-                const DeepCollectionEquality()
-                    .equals(other.experience, experience)));
+                other.experience == experience));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(experience);
+  int get hashCode => Object.hash(runtimeType, experience);
 
   @JsonKey(ignore: true)
   @override
@@ -238,7 +237,7 @@ abstract class _FinishedExperience implements ExperienceFinishActorEvent {
       _$_FinishedExperience;
 
   @override
-  Experience get experience => throw _privateConstructorUsedError;
+  Experience get experience;
   @override
   @JsonKey(ignore: true)
   _$FinishedExperienceCopyWith<_FinishedExperience> get copyWith =>
@@ -374,7 +373,8 @@ class _$_Initial implements _Initial {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _Initial);
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _Initial);
   }
 
   @override
@@ -490,7 +490,8 @@ class _$_ActionInProgress implements _ActionInProgress {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _ActionInProgress);
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _ActionInProgress);
   }
 
   @override
@@ -630,20 +631,16 @@ class _$_FinishSuccess implements _FinishSuccess {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _FinishSuccess &&
+        (other.runtimeType == runtimeType &&
+            other is _FinishSuccess &&
             (identical(other.amountXP, amountXP) ||
-                const DeepCollectionEquality()
-                    .equals(other.amountXP, amountXP)) &&
+                other.amountXP == amountXP) &&
             (identical(other.leveledUp, leveledUp) ||
-                const DeepCollectionEquality()
-                    .equals(other.leveledUp, leveledUp)));
+                other.leveledUp == leveledUp));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(amountXP) ^
-      const DeepCollectionEquality().hash(leveledUp);
+  int get hashCode => Object.hash(runtimeType, amountXP, leveledUp);
 
   @JsonKey(ignore: true)
   @override
@@ -729,8 +726,8 @@ abstract class _FinishSuccess implements ExperienceFinishActorState {
   const factory _FinishSuccess(int amountXP, {required bool leveledUp}) =
       _$_FinishSuccess;
 
-  int get amountXP => throw _privateConstructorUsedError;
-  bool get leveledUp => throw _privateConstructorUsedError;
+  int get amountXP;
+  bool get leveledUp;
   @JsonKey(ignore: true)
   _$FinishSuccessCopyWith<_FinishSuccess> get copyWith =>
       throw _privateConstructorUsedError;
@@ -793,14 +790,13 @@ class _$_FinishFailure implements _FinishFailure {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _FinishFailure &&
-            (identical(other.failure, failure) ||
-                const DeepCollectionEquality().equals(other.failure, failure)));
+        (other.runtimeType == runtimeType &&
+            other is _FinishFailure &&
+            (identical(other.failure, failure) || other.failure == failure));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(failure);
+  int get hashCode => Object.hash(runtimeType, failure);
 
   @JsonKey(ignore: true)
   @override
@@ -885,7 +881,7 @@ class _$_FinishFailure implements _FinishFailure {
 abstract class _FinishFailure implements ExperienceFinishActorState {
   const factory _FinishFailure(Failure<dynamic> failure) = _$_FinishFailure;
 
-  Failure<dynamic> get failure => throw _privateConstructorUsedError;
+  Failure<dynamic> get failure;
   @JsonKey(ignore: true)
   _$FinishFailureCopyWith<_FinishFailure> get copyWith =>
       throw _privateConstructorUsedError;

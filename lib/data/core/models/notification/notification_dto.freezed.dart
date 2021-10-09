@@ -42,7 +42,7 @@ class _$NotificationDtoTearOff {
     );
   }
 
-  NotificationDto fromJson(Map<String, Object> json) {
+  NotificationDto fromJson(Map<String, Object?> json) {
     return NotificationDto.fromJson(json);
   }
 }
@@ -287,40 +287,25 @@ class _$_NotificationDto extends _NotificationDto {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _NotificationDto &&
-            (identical(other.id, id) ||
-                const DeepCollectionEquality().equals(other.id, id)) &&
-            (identical(other.sender, sender) ||
-                const DeepCollectionEquality().equals(other.sender, sender)) &&
+        (other.runtimeType == runtimeType &&
+            other is _NotificationDto &&
+            (identical(other.id, id) || other.id == id) &&
+            (identical(other.sender, sender) || other.sender == sender) &&
             (identical(other.receiverId, receiverId) ||
-                const DeepCollectionEquality()
-                    .equals(other.receiverId, receiverId)) &&
+                other.receiverId == receiverId) &&
             (identical(other.description, description) ||
-                const DeepCollectionEquality()
-                    .equals(other.description, description)) &&
-            (identical(other.seen, seen) ||
-                const DeepCollectionEquality().equals(other.seen, seen)) &&
+                other.description == description) &&
+            (identical(other.seen, seen) || other.seen == seen) &&
             (identical(other.creationDate, creationDate) ||
-                const DeepCollectionEquality()
-                    .equals(other.creationDate, creationDate)) &&
-            (identical(other.type, type) ||
-                const DeepCollectionEquality().equals(other.type, type)) &&
+                other.creationDate == creationDate) &&
+            (identical(other.type, type) || other.type == type) &&
             (identical(other.experience, experience) ||
-                const DeepCollectionEquality()
-                    .equals(other.experience, experience)));
+                other.experience == experience));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(id) ^
-      const DeepCollectionEquality().hash(sender) ^
-      const DeepCollectionEquality().hash(receiverId) ^
-      const DeepCollectionEquality().hash(description) ^
-      const DeepCollectionEquality().hash(seen) ^
-      const DeepCollectionEquality().hash(creationDate) ^
-      const DeepCollectionEquality().hash(type) ^
-      const DeepCollectionEquality().hash(experience);
+  int get hashCode => Object.hash(runtimeType, id, sender, receiverId,
+      description, seen, creationDate, type, experience);
 
   @JsonKey(ignore: true)
   @override
@@ -349,22 +334,22 @@ abstract class _NotificationDto extends NotificationDto {
       _$_NotificationDto.fromJson;
 
   @override
-  String get id => throw _privateConstructorUsedError;
+  String get id;
   @override
-  SimpleUserDto get sender => throw _privateConstructorUsedError;
+  SimpleUserDto get sender;
   @override
-  String get receiverId => throw _privateConstructorUsedError;
+  String get receiverId;
   @override
-  String get description => throw _privateConstructorUsedError;
+  String get description;
   @override
-  bool get seen => throw _privateConstructorUsedError;
+  bool get seen;
   @override
   @ServerTimestampConverter()
-  DateTime get creationDate => throw _privateConstructorUsedError;
+  DateTime get creationDate;
   @override
-  NotificationType get type => throw _privateConstructorUsedError;
+  NotificationType get type;
   @override
-  ExperienceDto? get experience => throw _privateConstructorUsedError;
+  ExperienceDto? get experience;
   @override
   @JsonKey(ignore: true)
   _$NotificationDtoCopyWith<_NotificationDto> get copyWith =>

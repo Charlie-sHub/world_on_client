@@ -676,117 +676,96 @@ class _$_User extends _User {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _User &&
-            (identical(other.id, id) ||
-                const DeepCollectionEquality().equals(other.id, id)) &&
-            (identical(other.name, name) ||
-                const DeepCollectionEquality().equals(other.name, name)) &&
+        (other.runtimeType == runtimeType &&
+            other is _User &&
+            (identical(other.id, id) || other.id == id) &&
+            (identical(other.name, name) || other.name == name) &&
             (identical(other.username, username) ||
-                const DeepCollectionEquality()
-                    .equals(other.username, username)) &&
+                other.username == username) &&
             (identical(other.password, password) ||
-                const DeepCollectionEquality()
-                    .equals(other.password, password)) &&
-            (identical(other.email, email) ||
-                const DeepCollectionEquality().equals(other.email, email)) &&
+                other.password == password) &&
+            (identical(other.email, email) || other.email == email) &&
             (identical(other.birthday, birthday) ||
-                const DeepCollectionEquality()
-                    .equals(other.birthday, birthday)) &&
+                other.birthday == birthday) &&
             (identical(other.description, description) ||
-                const DeepCollectionEquality()
-                    .equals(other.description, description)) &&
+                other.description == description) &&
             (identical(other.imageURL, imageURL) ||
-                const DeepCollectionEquality()
-                    .equals(other.imageURL, imageURL)) &&
+                other.imageURL == imageURL) &&
             (identical(other.imageFileOption, imageFileOption) ||
-                const DeepCollectionEquality()
-                    .equals(other.imageFileOption, imageFileOption)) &&
-            (identical(other.level, level) ||
-                const DeepCollectionEquality().equals(other.level, level)) &&
+                other.imageFileOption == imageFileOption) &&
+            (identical(other.level, level) || other.level == level) &&
             (identical(other.experiencePoints, experiencePoints) ||
-                const DeepCollectionEquality()
-                    .equals(other.experiencePoints, experiencePoints)) &&
-            (identical(other.privacy, privacy) ||
-                const DeepCollectionEquality()
-                    .equals(other.privacy, privacy)) &&
+                other.experiencePoints == experiencePoints) &&
+            (identical(other.privacy, privacy) || other.privacy == privacy) &&
             (identical(other.adminPowers, adminPowers) ||
-                const DeepCollectionEquality()
-                    .equals(other.adminPowers, adminPowers)) &&
-            (identical(other.enabled, enabled) ||
-                const DeepCollectionEquality()
-                    .equals(other.enabled, enabled)) &&
+                other.adminPowers == adminPowers) &&
+            (identical(other.enabled, enabled) || other.enabled == enabled) &&
             (identical(other.lastLogin, lastLogin) ||
-                const DeepCollectionEquality()
-                    .equals(other.lastLogin, lastLogin)) &&
+                other.lastLogin == lastLogin) &&
             (identical(other.creationDate, creationDate) ||
-                const DeepCollectionEquality()
-                    .equals(other.creationDate, creationDate)) &&
+                other.creationDate == creationDate) &&
             (identical(other.modificationDate, modificationDate) ||
-                const DeepCollectionEquality()
-                    .equals(other.modificationDate, modificationDate)) &&
-            (identical(other.options, options) ||
-                const DeepCollectionEquality()
-                    .equals(other.options, options)) &&
-            (identical(other.blockedUsersIds, blockedUsersIds) ||
-                const DeepCollectionEquality()
-                    .equals(other.blockedUsersIds, blockedUsersIds)) &&
-            (identical(other.followedUsersIds, followedUsersIds) ||
-                const DeepCollectionEquality()
-                    .equals(other.followedUsersIds, followedUsersIds)) &&
-            (identical(other.interestsIds, interestsIds) ||
-                const DeepCollectionEquality()
-                    .equals(other.interestsIds, interestsIds)) &&
-            (identical(other.achievementsIds, achievementsIds) ||
-                const DeepCollectionEquality()
-                    .equals(other.achievementsIds, achievementsIds)) &&
-            (identical(other.experiencesDoneIds, experiencesDoneIds) ||
-                const DeepCollectionEquality()
-                    .equals(other.experiencesDoneIds, experiencesDoneIds)) &&
-            (identical(other.experiencesLikedIds, experiencesLikedIds) ||
-                const DeepCollectionEquality().equals(other.experiencesLikedIds, experiencesLikedIds)) &&
-            (identical(other.experiencesToDoIds, experiencesToDoIds) || const DeepCollectionEquality().equals(other.experiencesToDoIds, experiencesToDoIds)) &&
-            (identical(other.devices, devices) || const DeepCollectionEquality().equals(other.devices, devices)) &&
-            (identical(other.systems, systems) || const DeepCollectionEquality().equals(other.systems, systems)) &&
-            (identical(other.items, items) || const DeepCollectionEquality().equals(other.items, items)) &&
-            (identical(other.coins, coins) || const DeepCollectionEquality().equals(other.coins, coins)) &&
-            (identical(other.followersAmount, followersAmount) || const DeepCollectionEquality().equals(other.followersAmount, followersAmount)) &&
-            (identical(other.promotionPlan, promotionPlan) || const DeepCollectionEquality().equals(other.promotionPlan, promotionPlan)));
+                other.modificationDate == modificationDate) &&
+            (identical(other.options, options) || other.options == options) &&
+            const DeepCollectionEquality()
+                .equals(other.blockedUsersIds, blockedUsersIds) &&
+            const DeepCollectionEquality()
+                .equals(other.followedUsersIds, followedUsersIds) &&
+            const DeepCollectionEquality()
+                .equals(other.interestsIds, interestsIds) &&
+            const DeepCollectionEquality()
+                .equals(other.achievementsIds, achievementsIds) &&
+            const DeepCollectionEquality()
+                .equals(other.experiencesDoneIds, experiencesDoneIds) &&
+            const DeepCollectionEquality()
+                .equals(other.experiencesLikedIds, experiencesLikedIds) &&
+            const DeepCollectionEquality()
+                .equals(other.experiencesToDoIds, experiencesToDoIds) &&
+            const DeepCollectionEquality().equals(other.devices, devices) &&
+            const DeepCollectionEquality().equals(other.systems, systems) &&
+            const DeepCollectionEquality().equals(other.items, items) &&
+            (identical(other.coins, coins) || other.coins == coins) &&
+            (identical(other.followersAmount, followersAmount) ||
+                other.followersAmount == followersAmount) &&
+            (identical(other.promotionPlan, promotionPlan) ||
+                other.promotionPlan == promotionPlan));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(id) ^
-      const DeepCollectionEquality().hash(name) ^
-      const DeepCollectionEquality().hash(username) ^
-      const DeepCollectionEquality().hash(password) ^
-      const DeepCollectionEquality().hash(email) ^
-      const DeepCollectionEquality().hash(birthday) ^
-      const DeepCollectionEquality().hash(description) ^
-      const DeepCollectionEquality().hash(imageURL) ^
-      const DeepCollectionEquality().hash(imageFileOption) ^
-      const DeepCollectionEquality().hash(level) ^
-      const DeepCollectionEquality().hash(experiencePoints) ^
-      const DeepCollectionEquality().hash(privacy) ^
-      const DeepCollectionEquality().hash(adminPowers) ^
-      const DeepCollectionEquality().hash(enabled) ^
-      const DeepCollectionEquality().hash(lastLogin) ^
-      const DeepCollectionEquality().hash(creationDate) ^
-      const DeepCollectionEquality().hash(modificationDate) ^
-      const DeepCollectionEquality().hash(options) ^
-      const DeepCollectionEquality().hash(blockedUsersIds) ^
-      const DeepCollectionEquality().hash(followedUsersIds) ^
-      const DeepCollectionEquality().hash(interestsIds) ^
-      const DeepCollectionEquality().hash(achievementsIds) ^
-      const DeepCollectionEquality().hash(experiencesDoneIds) ^
-      const DeepCollectionEquality().hash(experiencesLikedIds) ^
-      const DeepCollectionEquality().hash(experiencesToDoIds) ^
-      const DeepCollectionEquality().hash(devices) ^
-      const DeepCollectionEquality().hash(systems) ^
-      const DeepCollectionEquality().hash(items) ^
-      const DeepCollectionEquality().hash(coins) ^
-      const DeepCollectionEquality().hash(followersAmount) ^
-      const DeepCollectionEquality().hash(promotionPlan);
+  int get hashCode => Object.hashAll([
+        runtimeType,
+        id,
+        name,
+        username,
+        password,
+        email,
+        birthday,
+        description,
+        imageURL,
+        imageFileOption,
+        level,
+        experiencePoints,
+        privacy,
+        adminPowers,
+        enabled,
+        lastLogin,
+        creationDate,
+        modificationDate,
+        options,
+        const DeepCollectionEquality().hash(blockedUsersIds),
+        const DeepCollectionEquality().hash(followedUsersIds),
+        const DeepCollectionEquality().hash(interestsIds),
+        const DeepCollectionEquality().hash(achievementsIds),
+        const DeepCollectionEquality().hash(experiencesDoneIds),
+        const DeepCollectionEquality().hash(experiencesLikedIds),
+        const DeepCollectionEquality().hash(experiencesToDoIds),
+        const DeepCollectionEquality().hash(devices),
+        const DeepCollectionEquality().hash(systems),
+        const DeepCollectionEquality().hash(items),
+        coins,
+        followersAmount,
+        promotionPlan
+      ]);
 
   @JsonKey(ignore: true)
   @override
@@ -830,67 +809,67 @@ abstract class _User extends User {
   const _User._() : super._();
 
   @override
-  UniqueId get id => throw _privateConstructorUsedError;
+  UniqueId get id;
   @override
-  Name get name => throw _privateConstructorUsedError;
+  Name get name;
   @override
-  Name get username => throw _privateConstructorUsedError;
+  Name get username;
   @override
-  Password get password => throw _privateConstructorUsedError;
+  Password get password;
   @override
-  EmailAddress get email => throw _privateConstructorUsedError;
+  EmailAddress get email;
   @override
-  PastDate get birthday => throw _privateConstructorUsedError;
+  PastDate get birthday;
   @override
-  EntityDescription get description => throw _privateConstructorUsedError;
+  EntityDescription get description;
   @override
-  String get imageURL => throw _privateConstructorUsedError;
+  String get imageURL;
   @override
-  Option<File?> get imageFileOption => throw _privateConstructorUsedError;
+  Option<File?> get imageFileOption;
   @override
-  UserLevel get level => throw _privateConstructorUsedError;
+  UserLevel get level;
   @override
-  ExperiencePoints get experiencePoints => throw _privateConstructorUsedError;
+  ExperiencePoints get experiencePoints;
   @override
-  bool get privacy => throw _privateConstructorUsedError;
+  bool get privacy;
   @override
-  bool get adminPowers => throw _privateConstructorUsedError;
+  bool get adminPowers;
   @override
-  bool get enabled => throw _privateConstructorUsedError;
+  bool get enabled;
   @override
-  PastDate get lastLogin => throw _privateConstructorUsedError;
+  PastDate get lastLogin;
   @override
-  PastDate get creationDate => throw _privateConstructorUsedError;
+  PastDate get creationDate;
   @override
-  PastDate get modificationDate => throw _privateConstructorUsedError;
+  PastDate get modificationDate;
   @override
-  Options get options => throw _privateConstructorUsedError;
+  Options get options;
   @override
-  Set<UniqueId> get blockedUsersIds => throw _privateConstructorUsedError;
+  Set<UniqueId> get blockedUsersIds;
   @override
-  Set<UniqueId> get followedUsersIds => throw _privateConstructorUsedError;
+  Set<UniqueId> get followedUsersIds;
   @override
-  Set<UniqueId> get interestsIds => throw _privateConstructorUsedError;
+  Set<UniqueId> get interestsIds;
   @override
-  Set<UniqueId> get achievementsIds => throw _privateConstructorUsedError;
+  Set<UniqueId> get achievementsIds;
   @override
-  Set<UniqueId> get experiencesDoneIds => throw _privateConstructorUsedError;
+  Set<UniqueId> get experiencesDoneIds;
   @override
-  Set<UniqueId> get experiencesLikedIds => throw _privateConstructorUsedError;
+  Set<UniqueId> get experiencesLikedIds;
   @override
-  Set<UniqueId> get experiencesToDoIds => throw _privateConstructorUsedError;
+  Set<UniqueId> get experiencesToDoIds;
   @override
-  Set<Device> get devices => throw _privateConstructorUsedError;
+  Set<Device> get devices;
   @override
-  Set<System> get systems => throw _privateConstructorUsedError;
+  Set<System> get systems;
   @override
-  Set<Item> get items => throw _privateConstructorUsedError;
+  Set<Item> get items;
   @override
-  int get coins => throw _privateConstructorUsedError;
+  int get coins;
   @override
-  int get followersAmount => throw _privateConstructorUsedError;
+  int get followersAmount;
   @override
-  PromotionPlan get promotionPlan => throw _privateConstructorUsedError;
+  PromotionPlan get promotionPlan;
   @override
   @JsonKey(ignore: true)
   _$UserCopyWith<_User> get copyWith => throw _privateConstructorUsedError;

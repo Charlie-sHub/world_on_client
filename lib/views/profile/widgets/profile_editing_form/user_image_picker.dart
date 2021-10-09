@@ -17,14 +17,7 @@ class UserImagePicker extends StatelessWidget {
   Widget build(BuildContext context) {
     return context.read<ProfileEditingFormBloc>().state.user.imageFileOption.fold(
           () => TextButton(
-            onPressed: () async {
-              final _imageFile = await openPictureSelectDialog(context);
-              if (_imageFile != null) {
-                context.read<ProfileEditingFormBloc>().add(
-                      ProfileEditingFormEvent.imageChanged(_imageFile),
-                    );
-              }
-            },
+            onPressed: () => imageChanged(context),
             child: Hero(
               tag: "userImage",
               child: CircleAvatar(
@@ -34,14 +27,7 @@ class UserImagePicker extends StatelessWidget {
             ),
           ),
           (imageFile) => TextButton(
-            onPressed: () async {
-              final _imageFile = await openPictureSelectDialog(context);
-              if (_imageFile != null) {
-                context.read<ProfileEditingFormBloc>().add(
-                      ProfileEditingFormEvent.imageChanged(_imageFile),
-                    );
-              }
-            },
+            onPressed: () => imageChanged(context),
             child: CircleAvatar(
               radius: 80,
               backgroundImage: FileImage(imageFile!),
@@ -49,4 +35,16 @@ class UserImagePicker extends StatelessWidget {
           ),
         );
   }
+
+  Future<void> imageChanged(BuildContext context) => openPictureSelectDialog(context).then(
+        (imageFile) {
+          if (imageFile != null) {
+            context.read<ProfileEditingFormBloc>().add(
+                  ProfileEditingFormEvent.imageChanged(
+                    imageFile,
+                  ),
+                );
+          }
+        },
+      );
 }

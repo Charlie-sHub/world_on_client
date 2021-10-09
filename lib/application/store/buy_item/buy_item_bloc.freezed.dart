@@ -171,14 +171,13 @@ class _$_Initialized implements _Initialized {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _Initialized &&
-            (identical(other.item, item) ||
-                const DeepCollectionEquality().equals(other.item, item)));
+        (other.runtimeType == runtimeType &&
+            other is _Initialized &&
+            (identical(other.item, item) || other.item == item));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(item);
+  int get hashCode => Object.hash(runtimeType, item);
 
   @JsonKey(ignore: true)
   @override
@@ -252,7 +251,7 @@ abstract class _Initialized implements BuyItemEvent {
   const factory _Initialized(Item item) = _$_Initialized;
 
   @override
-  Item get item => throw _privateConstructorUsedError;
+  Item get item;
   @override
   @JsonKey(ignore: true)
   _$InitializedCopyWith<_Initialized> get copyWith =>
@@ -311,14 +310,13 @@ class _$_BoughtItem implements _BoughtItem {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _BoughtItem &&
-            (identical(other.item, item) ||
-                const DeepCollectionEquality().equals(other.item, item)));
+        (other.runtimeType == runtimeType &&
+            other is _BoughtItem &&
+            (identical(other.item, item) || other.item == item));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(item);
+  int get hashCode => Object.hash(runtimeType, item);
 
   @JsonKey(ignore: true)
   @override
@@ -392,7 +390,7 @@ abstract class _BoughtItem implements BuyItemEvent {
   const factory _BoughtItem(Item item) = _$_BoughtItem;
 
   @override
-  Item get item => throw _privateConstructorUsedError;
+  Item get item;
   @override
   @JsonKey(ignore: true)
   _$BoughtItemCopyWith<_BoughtItem> get copyWith =>
@@ -543,7 +541,8 @@ class _$_Initial implements _Initial {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _Initial);
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _Initial);
   }
 
   @override
@@ -671,7 +670,8 @@ class _$_ActionInProgress implements _ActionInProgress {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _ActionInProgress);
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _ActionInProgress);
   }
 
   @override
@@ -796,7 +796,8 @@ class _$_Owns implements _Owns {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _Owns);
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _Owns);
   }
 
   @override
@@ -923,7 +924,8 @@ class _$_DoesNotOwn implements _DoesNotOwn {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _DoesNotOwn);
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _DoesNotOwn);
   }
 
   @override
@@ -1051,7 +1053,8 @@ class _$_PurchaseSuccess implements _PurchaseSuccess {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _PurchaseSuccess);
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _PurchaseSuccess);
   }
 
   @override
@@ -1205,14 +1208,13 @@ class _$_PurchaseFailure implements _PurchaseFailure {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _PurchaseFailure &&
-            (identical(other.failure, failure) ||
-                const DeepCollectionEquality().equals(other.failure, failure)));
+        (other.runtimeType == runtimeType &&
+            other is _PurchaseFailure &&
+            (identical(other.failure, failure) || other.failure == failure));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(failure);
+  int get hashCode => Object.hash(runtimeType, failure);
 
   @JsonKey(ignore: true)
   @override
@@ -1309,7 +1311,7 @@ class _$_PurchaseFailure implements _PurchaseFailure {
 abstract class _PurchaseFailure implements BuyItemState {
   const factory _PurchaseFailure(Failure<dynamic> failure) = _$_PurchaseFailure;
 
-  Failure<dynamic> get failure => throw _privateConstructorUsedError;
+  Failure<dynamic> get failure;
   @JsonKey(ignore: true)
   _$PurchaseFailureCopyWith<_PurchaseFailure> get copyWith =>
       throw _privateConstructorUsedError;

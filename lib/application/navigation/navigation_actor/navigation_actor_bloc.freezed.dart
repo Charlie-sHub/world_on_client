@@ -167,7 +167,8 @@ class _$_MainFeedTapped implements _MainFeedTapped {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _MainFeedTapped);
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _MainFeedTapped);
   }
 
   @override
@@ -299,7 +300,8 @@ class _$_SearchTapped implements _SearchTapped {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _SearchTapped);
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _SearchTapped);
   }
 
   @override
@@ -450,16 +452,14 @@ class _$_ExperienceNavigationTapped implements _ExperienceNavigationTapped {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _ExperienceNavigationTapped &&
+        (other.runtimeType == runtimeType &&
+            other is _ExperienceNavigationTapped &&
             (identical(other.experienceOption, experienceOption) ||
-                const DeepCollectionEquality()
-                    .equals(other.experienceOption, experienceOption)));
+                other.experienceOption == experienceOption));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(experienceOption);
+  int get hashCode => Object.hash(runtimeType, experienceOption);
 
   @JsonKey(ignore: true)
   @override
@@ -562,7 +562,7 @@ abstract class _ExperienceNavigationTapped implements NavigationActorEvent {
   const factory _ExperienceNavigationTapped(
       Option<Experience> experienceOption) = _$_ExperienceNavigationTapped;
 
-  Option<Experience> get experienceOption => throw _privateConstructorUsedError;
+  Option<Experience> get experienceOption;
   @JsonKey(ignore: true)
   _$ExperienceNavigationTappedCopyWith<_ExperienceNavigationTapped>
       get copyWith => throw _privateConstructorUsedError;
@@ -624,20 +624,17 @@ class _$_ProfileTapped implements _ProfileTapped {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _ProfileTapped &&
+        (other.runtimeType == runtimeType &&
+            other is _ProfileTapped &&
             (identical(other.userIdOption, userIdOption) ||
-                const DeepCollectionEquality()
-                    .equals(other.userIdOption, userIdOption)) &&
+                other.userIdOption == userIdOption) &&
             (identical(other.currentUserProfile, currentUserProfile) ||
-                const DeepCollectionEquality()
-                    .equals(other.currentUserProfile, currentUserProfile)));
+                other.currentUserProfile == currentUserProfile));
   }
 
   @override
   int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(userIdOption) ^
-      const DeepCollectionEquality().hash(currentUserProfile);
+      Object.hash(runtimeType, userIdOption, currentUserProfile);
 
   @JsonKey(ignore: true)
   @override
@@ -740,8 +737,8 @@ abstract class _ProfileTapped implements NavigationActorEvent {
       {required Option<UniqueId> userIdOption,
       required bool currentUserProfile}) = _$_ProfileTapped;
 
-  Option<UniqueId> get userIdOption => throw _privateConstructorUsedError;
-  bool get currentUserProfile => throw _privateConstructorUsedError;
+  Option<UniqueId> get userIdOption;
+  bool get currentUserProfile;
   @JsonKey(ignore: true)
   _$ProfileTappedCopyWith<_ProfileTapped> get copyWith =>
       throw _privateConstructorUsedError;
@@ -778,7 +775,8 @@ class _$_NotificationsTapped implements _NotificationsTapped {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _NotificationsTapped);
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _NotificationsTapped);
   }
 
   @override
@@ -1041,7 +1039,8 @@ class _$_MainFeedView implements _MainFeedView {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _MainFeedView);
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _MainFeedView);
   }
 
   @override
@@ -1177,7 +1176,8 @@ class _$_SearchView implements _SearchView {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _SearchView);
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _SearchView);
   }
 
   @override
@@ -1330,16 +1330,14 @@ class _$_NavigateExperienceView implements _NavigateExperienceView {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _NavigateExperienceView &&
+        (other.runtimeType == runtimeType &&
+            other is _NavigateExperienceView &&
             (identical(other.experienceOption, experienceOption) ||
-                const DeepCollectionEquality()
-                    .equals(other.experienceOption, experienceOption)));
+                other.experienceOption == experienceOption));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(experienceOption);
+  int get hashCode => Object.hash(runtimeType, experienceOption);
 
   @JsonKey(ignore: true)
   @override
@@ -1446,7 +1444,7 @@ abstract class _NavigateExperienceView implements NavigationActorState {
   const factory _NavigateExperienceView(Option<Experience> experienceOption) =
       _$_NavigateExperienceView;
 
-  Option<Experience> get experienceOption => throw _privateConstructorUsedError;
+  Option<Experience> get experienceOption;
   @JsonKey(ignore: true)
   _$NavigateExperienceViewCopyWith<_NavigateExperienceView> get copyWith =>
       throw _privateConstructorUsedError;
@@ -1508,20 +1506,17 @@ class _$_ProfileView implements _ProfileView {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _ProfileView &&
+        (other.runtimeType == runtimeType &&
+            other is _ProfileView &&
             (identical(other.userIdOption, userIdOption) ||
-                const DeepCollectionEquality()
-                    .equals(other.userIdOption, userIdOption)) &&
+                other.userIdOption == userIdOption) &&
             (identical(other.currentUserProfile, currentUserProfile) ||
-                const DeepCollectionEquality()
-                    .equals(other.currentUserProfile, currentUserProfile)));
+                other.currentUserProfile == currentUserProfile));
   }
 
   @override
   int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(userIdOption) ^
-      const DeepCollectionEquality().hash(currentUserProfile);
+      Object.hash(runtimeType, userIdOption, currentUserProfile);
 
   @JsonKey(ignore: true)
   @override
@@ -1628,8 +1623,8 @@ abstract class _ProfileView implements NavigationActorState {
       {required Option<UniqueId> userIdOption,
       required bool currentUserProfile}) = _$_ProfileView;
 
-  Option<UniqueId> get userIdOption => throw _privateConstructorUsedError;
-  bool get currentUserProfile => throw _privateConstructorUsedError;
+  Option<UniqueId> get userIdOption;
+  bool get currentUserProfile;
   @JsonKey(ignore: true)
   _$ProfileViewCopyWith<_ProfileView> get copyWith =>
       throw _privateConstructorUsedError;
@@ -1665,7 +1660,8 @@ class _$_ErrorView implements _ErrorView {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _ErrorView);
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _ErrorView);
   }
 
   @override
@@ -1801,7 +1797,8 @@ class _$_NotificationsView implements _NotificationsView {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _NotificationsView);
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _NotificationsView);
   }
 
   @override

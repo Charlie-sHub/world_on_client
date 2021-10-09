@@ -160,14 +160,13 @@ class _$_WatchAchievementsStarted implements _WatchAchievementsStarted {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _WatchAchievementsStarted &&
-            (identical(other.user, user) ||
-                const DeepCollectionEquality().equals(other.user, user)));
+        (other.runtimeType == runtimeType &&
+            other is _WatchAchievementsStarted &&
+            (identical(other.user, user) || other.user == user));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(user);
+  int get hashCode => Object.hash(runtimeType, user);
 
   @JsonKey(ignore: true)
   @override
@@ -250,7 +249,7 @@ abstract class _WatchAchievementsStarted
   const factory _WatchAchievementsStarted(User user) =
       _$_WatchAchievementsStarted;
 
-  User get user => throw _privateConstructorUsedError;
+  User get user;
   @JsonKey(ignore: true)
   _$WatchAchievementsStartedCopyWith<_WatchAchievementsStarted> get copyWith =>
       throw _privateConstructorUsedError;
@@ -304,16 +303,14 @@ class _$_ResultsReceived implements _ResultsReceived {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _ResultsReceived &&
+        (other.runtimeType == runtimeType &&
+            other is _ResultsReceived &&
             (identical(other.failureOrAchievements, failureOrAchievements) ||
-                const DeepCollectionEquality().equals(
-                    other.failureOrAchievements, failureOrAchievements)));
+                other.failureOrAchievements == failureOrAchievements));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(failureOrAchievements);
+  int get hashCode => Object.hash(runtimeType, failureOrAchievements);
 
   @JsonKey(ignore: true)
   @override
@@ -395,8 +392,7 @@ abstract class _ResultsReceived implements ProfileAchievementsWatcherEvent {
           Either<Failure, KtList<Achievement>> failureOrAchievements) =
       _$_ResultsReceived;
 
-  Either<Failure, KtList<Achievement>> get failureOrAchievements =>
-      throw _privateConstructorUsedError;
+  Either<Failure, KtList<Achievement>> get failureOrAchievements;
   @JsonKey(ignore: true)
   _$ResultsReceivedCopyWith<_ResultsReceived> get copyWith =>
       throw _privateConstructorUsedError;
@@ -532,7 +528,8 @@ class _$_Initial implements _Initial {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _Initial);
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _Initial);
   }
 
   @override
@@ -648,7 +645,8 @@ class _$_LoadInProgress implements _LoadInProgress {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _LoadInProgress);
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _LoadInProgress);
   }
 
   @override
@@ -781,15 +779,14 @@ class _$_LoadSuccess implements _LoadSuccess {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _LoadSuccess &&
+        (other.runtimeType == runtimeType &&
+            other is _LoadSuccess &&
             (identical(other.achievements, achievements) ||
-                const DeepCollectionEquality()
-                    .equals(other.achievements, achievements)));
+                other.achievements == achievements));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(achievements);
+  int get hashCode => Object.hash(runtimeType, achievements);
 
   @JsonKey(ignore: true)
   @override
@@ -874,7 +871,7 @@ class _$_LoadSuccess implements _LoadSuccess {
 abstract class _LoadSuccess implements ProfileAchievementsWatcherState {
   const factory _LoadSuccess(KtList<Achievement> achievements) = _$_LoadSuccess;
 
-  KtList<Achievement> get achievements => throw _privateConstructorUsedError;
+  KtList<Achievement> get achievements;
   @JsonKey(ignore: true)
   _$LoadSuccessCopyWith<_LoadSuccess> get copyWith =>
       throw _privateConstructorUsedError;
@@ -937,14 +934,13 @@ class _$_LoadFailure implements _LoadFailure {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _LoadFailure &&
-            (identical(other.failure, failure) ||
-                const DeepCollectionEquality().equals(other.failure, failure)));
+        (other.runtimeType == runtimeType &&
+            other is _LoadFailure &&
+            (identical(other.failure, failure) || other.failure == failure));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(failure);
+  int get hashCode => Object.hash(runtimeType, failure);
 
   @JsonKey(ignore: true)
   @override
@@ -1029,7 +1025,7 @@ class _$_LoadFailure implements _LoadFailure {
 abstract class _LoadFailure implements ProfileAchievementsWatcherState {
   const factory _LoadFailure(Failure<dynamic> failure) = _$_LoadFailure;
 
-  Failure<dynamic> get failure => throw _privateConstructorUsedError;
+  Failure<dynamic> get failure;
   @JsonKey(ignore: true)
   _$LoadFailureCopyWith<_LoadFailure> get copyWith =>
       throw _privateConstructorUsedError;

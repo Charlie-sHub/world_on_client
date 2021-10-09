@@ -198,30 +198,20 @@ class _$_Message extends _Message {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _Message &&
-            (identical(other.id, id) ||
-                const DeepCollectionEquality().equals(other.id, id)) &&
-            (identical(other.sender, sender) ||
-                const DeepCollectionEquality().equals(other.sender, sender)) &&
+        (other.runtimeType == runtimeType &&
+            other is _Message &&
+            (identical(other.id, id) || other.id == id) &&
+            (identical(other.sender, sender) || other.sender == sender) &&
             (identical(other.receiverId, receiverId) ||
-                const DeepCollectionEquality()
-                    .equals(other.receiverId, receiverId)) &&
-            (identical(other.content, content) ||
-                const DeepCollectionEquality()
-                    .equals(other.content, content)) &&
+                other.receiverId == receiverId) &&
+            (identical(other.content, content) || other.content == content) &&
             (identical(other.creationDate, creationDate) ||
-                const DeepCollectionEquality()
-                    .equals(other.creationDate, creationDate)));
+                other.creationDate == creationDate));
   }
 
   @override
   int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(id) ^
-      const DeepCollectionEquality().hash(sender) ^
-      const DeepCollectionEquality().hash(receiverId) ^
-      const DeepCollectionEquality().hash(content) ^
-      const DeepCollectionEquality().hash(creationDate);
+      Object.hash(runtimeType, id, sender, receiverId, content, creationDate);
 
   @JsonKey(ignore: true)
   @override
@@ -239,15 +229,15 @@ abstract class _Message extends Message {
   const _Message._() : super._();
 
   @override
-  UniqueId get id => throw _privateConstructorUsedError;
+  UniqueId get id;
   @override
-  SimpleUser get sender => throw _privateConstructorUsedError;
+  SimpleUser get sender;
   @override
-  UniqueId get receiverId => throw _privateConstructorUsedError;
+  UniqueId get receiverId;
   @override
-  MessageContent get content => throw _privateConstructorUsedError;
+  MessageContent get content;
   @override
-  PastDate get creationDate => throw _privateConstructorUsedError;
+  PastDate get creationDate;
   @override
   @JsonKey(ignore: true)
   _$MessageCopyWith<_Message> get copyWith =>

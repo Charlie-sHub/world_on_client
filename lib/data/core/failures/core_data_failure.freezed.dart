@@ -199,15 +199,14 @@ class _$ServerError<T> implements ServerError<T> {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is ServerError<T> &&
+        (other.runtimeType == runtimeType &&
+            other is ServerError<T> &&
             (identical(other.errorString, errorString) ||
-                const DeepCollectionEquality()
-                    .equals(other.errorString, errorString)));
+                other.errorString == errorString));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(errorString);
+  int get hashCode => Object.hash(runtimeType, errorString);
 
   @JsonKey(ignore: true)
   @override
@@ -311,7 +310,7 @@ class _$ServerError<T> implements ServerError<T> {
 abstract class ServerError<T> implements CoreDataFailure<T> {
   const factory ServerError({required String errorString}) = _$ServerError<T>;
 
-  String get errorString => throw _privateConstructorUsedError;
+  String get errorString;
   @JsonKey(ignore: true)
   $ServerErrorCopyWith<T, ServerError<T>> get copyWith =>
       throw _privateConstructorUsedError;
@@ -348,7 +347,8 @@ class _$NotFoundError<T> implements NotFoundError<T> {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is NotFoundError<T>);
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is NotFoundError<T>);
   }
 
   @override
@@ -500,15 +500,14 @@ class _$CacheError<T> implements CacheError<T> {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is CacheError<T> &&
+        (other.runtimeType == runtimeType &&
+            other is CacheError<T> &&
             (identical(other.errorString, errorString) ||
-                const DeepCollectionEquality()
-                    .equals(other.errorString, errorString)));
+                other.errorString == errorString));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(errorString);
+  int get hashCode => Object.hash(runtimeType, errorString);
 
   @JsonKey(ignore: true)
   @override
@@ -612,7 +611,7 @@ class _$CacheError<T> implements CacheError<T> {
 abstract class CacheError<T> implements CoreDataFailure<T> {
   const factory CacheError({required String errorString}) = _$CacheError<T>;
 
-  String get errorString => throw _privateConstructorUsedError;
+  String get errorString;
   @JsonKey(ignore: true)
   $CacheErrorCopyWith<T, CacheError<T>> get copyWith =>
       throw _privateConstructorUsedError;
@@ -666,15 +665,14 @@ class _$GeoLocationError<T> implements GeoLocationError<T> {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is GeoLocationError<T> &&
+        (other.runtimeType == runtimeType &&
+            other is GeoLocationError<T> &&
             (identical(other.errorString, errorString) ||
-                const DeepCollectionEquality()
-                    .equals(other.errorString, errorString)));
+                other.errorString == errorString));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(errorString);
+  int get hashCode => Object.hash(runtimeType, errorString);
 
   @JsonKey(ignore: true)
   @override
@@ -779,7 +777,7 @@ abstract class GeoLocationError<T> implements CoreDataFailure<T> {
   const factory GeoLocationError({required String errorString}) =
       _$GeoLocationError<T>;
 
-  String get errorString => throw _privateConstructorUsedError;
+  String get errorString;
   @JsonKey(ignore: true)
   $GeoLocationErrorCopyWith<T, GeoLocationError<T>> get copyWith =>
       throw _privateConstructorUsedError;
@@ -833,15 +831,14 @@ class _$UsernameAlreadyInUse<T> implements UsernameAlreadyInUse<T> {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is UsernameAlreadyInUse<T> &&
+        (other.runtimeType == runtimeType &&
+            other is UsernameAlreadyInUse<T> &&
             (identical(other.username, username) ||
-                const DeepCollectionEquality()
-                    .equals(other.username, username)));
+                other.username == username));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(username);
+  int get hashCode => Object.hash(runtimeType, username);
 
   @JsonKey(ignore: true)
   @override
@@ -947,7 +944,7 @@ abstract class UsernameAlreadyInUse<T> implements CoreDataFailure<T> {
   const factory UsernameAlreadyInUse({required Name username}) =
       _$UsernameAlreadyInUse<T>;
 
-  Name get username => throw _privateConstructorUsedError;
+  Name get username;
   @JsonKey(ignore: true)
   $UsernameAlreadyInUseCopyWith<T, UsernameAlreadyInUse<T>> get copyWith =>
       throw _privateConstructorUsedError;
@@ -1001,14 +998,13 @@ class _$EmailAlreadyInUse<T> implements EmailAlreadyInUse<T> {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is EmailAlreadyInUse<T> &&
-            (identical(other.email, email) ||
-                const DeepCollectionEquality().equals(other.email, email)));
+        (other.runtimeType == runtimeType &&
+            other is EmailAlreadyInUse<T> &&
+            (identical(other.email, email) || other.email == email));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(email);
+  int get hashCode => Object.hash(runtimeType, email);
 
   @JsonKey(ignore: true)
   @override
@@ -1114,7 +1110,7 @@ abstract class EmailAlreadyInUse<T> implements CoreDataFailure<T> {
   const factory EmailAlreadyInUse({required EmailAddress email}) =
       _$EmailAlreadyInUse<T>;
 
-  EmailAddress get email => throw _privateConstructorUsedError;
+  EmailAddress get email;
   @JsonKey(ignore: true)
   $EmailAlreadyInUseCopyWith<T, EmailAlreadyInUse<T>> get copyWith =>
       throw _privateConstructorUsedError;
@@ -1168,14 +1164,13 @@ class _$NameAlreadyInUse<T> implements NameAlreadyInUse<T> {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is NameAlreadyInUse<T> &&
-            (identical(other.name, name) ||
-                const DeepCollectionEquality().equals(other.name, name)));
+        (other.runtimeType == runtimeType &&
+            other is NameAlreadyInUse<T> &&
+            (identical(other.name, name) || other.name == name));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(name);
+  int get hashCode => Object.hash(runtimeType, name);
 
   @JsonKey(ignore: true)
   @override
@@ -1279,7 +1274,7 @@ class _$NameAlreadyInUse<T> implements NameAlreadyInUse<T> {
 abstract class NameAlreadyInUse<T> implements CoreDataFailure<T> {
   const factory NameAlreadyInUse({required Name name}) = _$NameAlreadyInUse<T>;
 
-  Name get name => throw _privateConstructorUsedError;
+  Name get name;
   @JsonKey(ignore: true)
   $NameAlreadyInUseCopyWith<T, NameAlreadyInUse<T>> get copyWith =>
       throw _privateConstructorUsedError;

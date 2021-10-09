@@ -36,7 +36,7 @@ class _$LocationDtoTearOff {
     );
   }
 
-  LocationDto fromJson(Map<String, Object> json) {
+  LocationDto fromJson(Map<String, Object?> json) {
     return LocationDto.fromJson(json);
   }
 }
@@ -203,30 +203,20 @@ class _$_LocationDto extends _LocationDto {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _LocationDto &&
-            (identical(other.id, id) ||
-                const DeepCollectionEquality().equals(other.id, id)) &&
-            (identical(other.city, city) ||
-                const DeepCollectionEquality().equals(other.city, city)) &&
-            (identical(other.country, country) ||
-                const DeepCollectionEquality()
-                    .equals(other.country, country)) &&
+        (other.runtimeType == runtimeType &&
+            other is _LocationDto &&
+            (identical(other.id, id) || other.id == id) &&
+            (identical(other.city, city) || other.city == city) &&
+            (identical(other.country, country) || other.country == country) &&
             (identical(other.postalCode, postalCode) ||
-                const DeepCollectionEquality()
-                    .equals(other.postalCode, postalCode)) &&
-            (identical(other.experiences, experiences) ||
-                const DeepCollectionEquality()
-                    .equals(other.experiences, experiences)));
+                other.postalCode == postalCode) &&
+            const DeepCollectionEquality()
+                .equals(other.experiences, experiences));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(id) ^
-      const DeepCollectionEquality().hash(city) ^
-      const DeepCollectionEquality().hash(country) ^
-      const DeepCollectionEquality().hash(postalCode) ^
-      const DeepCollectionEquality().hash(experiences);
+  int get hashCode => Object.hash(runtimeType, id, city, country, postalCode,
+      const DeepCollectionEquality().hash(experiences));
 
   @JsonKey(ignore: true)
   @override
@@ -252,15 +242,15 @@ abstract class _LocationDto extends LocationDto {
       _$_LocationDto.fromJson;
 
   @override
-  String get id => throw _privateConstructorUsedError;
+  String get id;
   @override
-  String get city => throw _privateConstructorUsedError;
+  String get city;
   @override
-  String get country => throw _privateConstructorUsedError;
+  String get country;
   @override
-  String get postalCode => throw _privateConstructorUsedError;
+  String get postalCode;
   @override
-  Set<ExperienceDto> get experiences => throw _privateConstructorUsedError;
+  Set<ExperienceDto> get experiences;
   @override
   @JsonKey(ignore: true)
   _$LocationDtoCopyWith<_LocationDto> get copyWith =>

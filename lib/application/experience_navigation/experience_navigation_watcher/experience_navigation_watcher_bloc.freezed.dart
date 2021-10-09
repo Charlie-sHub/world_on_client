@@ -145,16 +145,14 @@ class _$_Initialized implements _Initialized {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _Initialized &&
+        (other.runtimeType == runtimeType &&
+            other is _Initialized &&
             (identical(other.experienceOption, experienceOption) ||
-                const DeepCollectionEquality()
-                    .equals(other.experienceOption, experienceOption)));
+                other.experienceOption == experienceOption));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(experienceOption);
+  int get hashCode => Object.hash(runtimeType, experienceOption);
 
   @JsonKey(ignore: true)
   @override
@@ -231,7 +229,7 @@ abstract class _Initialized implements ExperienceNavigationWatcherEvent {
   const factory _Initialized(Option<Experience> experienceOption) =
       _$_Initialized;
 
-  Option<Experience> get experienceOption => throw _privateConstructorUsedError;
+  Option<Experience> get experienceOption;
   @JsonKey(ignore: true)
   _$InitializedCopyWith<_Initialized> get copyWith =>
       throw _privateConstructorUsedError;
@@ -295,15 +293,14 @@ class _$_AllObjectivesAccomplished implements _AllObjectivesAccomplished {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _AllObjectivesAccomplished &&
+        (other.runtimeType == runtimeType &&
+            other is _AllObjectivesAccomplished &&
             (identical(other.experience, experience) ||
-                const DeepCollectionEquality()
-                    .equals(other.experience, experience)));
+                other.experience == experience));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(experience);
+  int get hashCode => Object.hash(runtimeType, experience);
 
   @JsonKey(ignore: true)
   @override
@@ -383,7 +380,7 @@ abstract class _AllObjectivesAccomplished
   const factory _AllObjectivesAccomplished(Experience experience) =
       _$_AllObjectivesAccomplished;
 
-  Experience get experience => throw _privateConstructorUsedError;
+  Experience get experience;
   @JsonKey(ignore: true)
   _$AllObjectivesAccomplishedCopyWith<_AllObjectivesAccomplished>
       get copyWith => throw _privateConstructorUsedError;
@@ -519,7 +516,8 @@ class _$_Initial implements _Initial {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _Initial);
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _Initial);
   }
 
   @override
@@ -635,7 +633,8 @@ class _$_NoExperience implements _NoExperience {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _NoExperience);
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _NoExperience);
   }
 
   @override
@@ -777,15 +776,14 @@ class _$_NavigatingExperience implements _NavigatingExperience {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _NavigatingExperience &&
+        (other.runtimeType == runtimeType &&
+            other is _NavigatingExperience &&
             (identical(other.experience, experience) ||
-                const DeepCollectionEquality()
-                    .equals(other.experience, experience)));
+                other.experience == experience));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(experience);
+  int get hashCode => Object.hash(runtimeType, experience);
 
   @JsonKey(ignore: true)
   @override
@@ -873,7 +871,7 @@ abstract class _NavigatingExperience
   const factory _NavigatingExperience(Experience experience) =
       _$_NavigatingExperience;
 
-  Experience get experience => throw _privateConstructorUsedError;
+  Experience get experience;
   @JsonKey(ignore: true)
   _$NavigatingExperienceCopyWith<_NavigatingExperience> get copyWith =>
       throw _privateConstructorUsedError;
@@ -936,15 +934,14 @@ class _$_FinishExperience implements _FinishExperience {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _FinishExperience &&
+        (other.runtimeType == runtimeType &&
+            other is _FinishExperience &&
             (identical(other.experience, experience) ||
-                const DeepCollectionEquality()
-                    .equals(other.experience, experience)));
+                other.experience == experience));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(experience);
+  int get hashCode => Object.hash(runtimeType, experience);
 
   @JsonKey(ignore: true)
   @override
@@ -1029,7 +1026,7 @@ class _$_FinishExperience implements _FinishExperience {
 abstract class _FinishExperience implements ExperienceNavigationWatcherState {
   const factory _FinishExperience(Experience experience) = _$_FinishExperience;
 
-  Experience get experience => throw _privateConstructorUsedError;
+  Experience get experience;
   @JsonKey(ignore: true)
   _$FinishExperienceCopyWith<_FinishExperience> get copyWith =>
       throw _privateConstructorUsedError;

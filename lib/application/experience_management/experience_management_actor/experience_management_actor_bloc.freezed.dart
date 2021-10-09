@@ -175,15 +175,14 @@ class _$_CheckCreator implements _CheckCreator {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _CheckCreator &&
+        (other.runtimeType == runtimeType &&
+            other is _CheckCreator &&
             (identical(other.experience, experience) ||
-                const DeepCollectionEquality()
-                    .equals(other.experience, experience)));
+                other.experience == experience));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(experience);
+  int get hashCode => Object.hash(runtimeType, experience);
 
   @JsonKey(ignore: true)
   @override
@@ -257,7 +256,7 @@ abstract class _CheckCreator implements ExperienceManagementActorEvent {
   const factory _CheckCreator(Experience experience) = _$_CheckCreator;
 
   @override
-  Experience get experience => throw _privateConstructorUsedError;
+  Experience get experience;
   @override
   @JsonKey(ignore: true)
   _$CheckCreatorCopyWith<_CheckCreator> get copyWith =>
@@ -315,15 +314,14 @@ class _$_Deleted implements _Deleted {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _Deleted &&
+        (other.runtimeType == runtimeType &&
+            other is _Deleted &&
             (identical(other.experience, experience) ||
-                const DeepCollectionEquality()
-                    .equals(other.experience, experience)));
+                other.experience == experience));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(experience);
+  int get hashCode => Object.hash(runtimeType, experience);
 
   @JsonKey(ignore: true)
   @override
@@ -397,7 +395,7 @@ abstract class _Deleted implements ExperienceManagementActorEvent {
   const factory _Deleted(Experience experience) = _$_Deleted;
 
   @override
-  Experience get experience => throw _privateConstructorUsedError;
+  Experience get experience;
   @override
   @JsonKey(ignore: true)
   _$DeletedCopyWith<_Deleted> get copyWith =>
@@ -552,7 +550,8 @@ class _$_Initial implements _Initial {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _Initial);
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _Initial);
   }
 
   @override
@@ -679,7 +678,8 @@ class _$_IsCreator implements _IsCreator {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _IsCreator);
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _IsCreator);
   }
 
   @override
@@ -807,7 +807,8 @@ class _$_IsNotCreator implements _IsNotCreator {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _IsNotCreator);
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _IsNotCreator);
   }
 
   @override
@@ -935,7 +936,8 @@ class _$_ActionInProgress implements _ActionInProgress {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _ActionInProgress);
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _ActionInProgress);
   }
 
   @override
@@ -1063,7 +1065,8 @@ class _$_DeletionSuccess implements _DeletionSuccess {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _DeletionSuccess);
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _DeletionSuccess);
   }
 
   @override
@@ -1217,14 +1220,13 @@ class _$_DeletionFailure implements _DeletionFailure {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _DeletionFailure &&
-            (identical(other.failure, failure) ||
-                const DeepCollectionEquality().equals(other.failure, failure)));
+        (other.runtimeType == runtimeType &&
+            other is _DeletionFailure &&
+            (identical(other.failure, failure) || other.failure == failure));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(failure);
+  int get hashCode => Object.hash(runtimeType, failure);
 
   @JsonKey(ignore: true)
   @override
@@ -1321,7 +1323,7 @@ class _$_DeletionFailure implements _DeletionFailure {
 abstract class _DeletionFailure implements ExperienceManagementActorState {
   const factory _DeletionFailure(Failure<dynamic> failure) = _$_DeletionFailure;
 
-  Failure<dynamic> get failure => throw _privateConstructorUsedError;
+  Failure<dynamic> get failure;
   @JsonKey(ignore: true)
   _$DeletionFailureCopyWith<_DeletionFailure> get copyWith =>
       throw _privateConstructorUsedError;

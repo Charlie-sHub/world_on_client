@@ -153,15 +153,14 @@ class _$UnknownDomainLayerError<T> implements UnknownDomainLayerError<T> {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is UnknownDomainLayerError<T> &&
+        (other.runtimeType == runtimeType &&
+            other is UnknownDomainLayerError<T> &&
             (identical(other.errorString, errorString) ||
-                const DeepCollectionEquality()
-                    .equals(other.errorString, errorString)));
+                other.errorString == errorString));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(errorString);
+  int get hashCode => Object.hash(runtimeType, errorString);
 
   @JsonKey(ignore: true)
   @override
@@ -244,7 +243,7 @@ abstract class UnknownDomainLayerError<T> implements CoreDomainFailure<T> {
   const factory UnknownDomainLayerError({required String errorString}) =
       _$UnknownDomainLayerError<T>;
 
-  String get errorString => throw _privateConstructorUsedError;
+  String get errorString;
   @JsonKey(ignore: true)
   $UnknownDomainLayerErrorCopyWith<T, UnknownDomainLayerError<T>>
       get copyWith => throw _privateConstructorUsedError;
@@ -298,15 +297,14 @@ class _$DomainLayerError<T> implements DomainLayerError<T> {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is DomainLayerError<T> &&
+        (other.runtimeType == runtimeType &&
+            other is DomainLayerError<T> &&
             (identical(other.errorString, errorString) ||
-                const DeepCollectionEquality()
-                    .equals(other.errorString, errorString)));
+                other.errorString == errorString));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(errorString);
+  int get hashCode => Object.hash(runtimeType, errorString);
 
   @JsonKey(ignore: true)
   @override
@@ -387,7 +385,7 @@ abstract class DomainLayerError<T> implements CoreDomainFailure<T> {
   const factory DomainLayerError({required String errorString}) =
       _$DomainLayerError<T>;
 
-  String get errorString => throw _privateConstructorUsedError;
+  String get errorString;
   @JsonKey(ignore: true)
   $DomainLayerErrorCopyWith<T, DomainLayerError<T>> get copyWith =>
       throw _privateConstructorUsedError;
@@ -424,7 +422,8 @@ class _$UnAuthorizedError<T> implements UnAuthorizedError<T> {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is UnAuthorizedError<T>);
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is UnAuthorizedError<T>);
   }
 
   @override

@@ -42,7 +42,7 @@ class _$SimpleUserDtoTearOff {
     );
   }
 
-  SimpleUserDto fromJson(Map<String, Object> json) {
+  SimpleUserDto fromJson(Map<String, Object?> json) {
     return SimpleUserDto.fromJson(json);
   }
 }
@@ -259,41 +259,26 @@ class _$_SimpleUserDto extends _SimpleUserDto {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _SimpleUserDto &&
-            (identical(other.id, id) ||
-                const DeepCollectionEquality().equals(other.id, id)) &&
-            (identical(other.name, name) ||
-                const DeepCollectionEquality().equals(other.name, name)) &&
+        (other.runtimeType == runtimeType &&
+            other is _SimpleUserDto &&
+            (identical(other.id, id) || other.id == id) &&
+            (identical(other.name, name) || other.name == name) &&
             (identical(other.username, username) ||
-                const DeepCollectionEquality()
-                    .equals(other.username, username)) &&
+                other.username == username) &&
             (identical(other.imageURL, imageURL) ||
-                const DeepCollectionEquality()
-                    .equals(other.imageURL, imageURL)) &&
-            (identical(other.level, level) ||
-                const DeepCollectionEquality().equals(other.level, level)) &&
+                other.imageURL == imageURL) &&
+            (identical(other.level, level) || other.level == level) &&
             (identical(other.experiencePoints, experiencePoints) ||
-                const DeepCollectionEquality()
-                    .equals(other.experiencePoints, experiencePoints)) &&
+                other.experiencePoints == experiencePoints) &&
             (identical(other.adminPowers, adminPowers) ||
-                const DeepCollectionEquality()
-                    .equals(other.adminPowers, adminPowers)) &&
+                other.adminPowers == adminPowers) &&
             (identical(other.followersAmount, followersAmount) ||
-                const DeepCollectionEquality()
-                    .equals(other.followersAmount, followersAmount)));
+                other.followersAmount == followersAmount));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(id) ^
-      const DeepCollectionEquality().hash(name) ^
-      const DeepCollectionEquality().hash(username) ^
-      const DeepCollectionEquality().hash(imageURL) ^
-      const DeepCollectionEquality().hash(level) ^
-      const DeepCollectionEquality().hash(experiencePoints) ^
-      const DeepCollectionEquality().hash(adminPowers) ^
-      const DeepCollectionEquality().hash(followersAmount);
+  int get hashCode => Object.hash(runtimeType, id, name, username, imageURL,
+      level, experiencePoints, adminPowers, followersAmount);
 
   @JsonKey(ignore: true)
   @override
@@ -322,21 +307,21 @@ abstract class _SimpleUserDto extends SimpleUserDto {
       _$_SimpleUserDto.fromJson;
 
   @override
-  String get id => throw _privateConstructorUsedError;
+  String get id;
   @override
-  String get name => throw _privateConstructorUsedError;
+  String get name;
   @override
-  String get username => throw _privateConstructorUsedError;
+  String get username;
   @override
-  String get imageURL => throw _privateConstructorUsedError;
+  String get imageURL;
   @override
-  int get level => throw _privateConstructorUsedError;
+  int get level;
   @override
-  int get experiencePoints => throw _privateConstructorUsedError;
+  int get experiencePoints;
   @override
-  bool get adminPowers => throw _privateConstructorUsedError;
+  bool get adminPowers;
   @override
-  int get followersAmount => throw _privateConstructorUsedError;
+  int get followersAmount;
   @override
   @JsonKey(ignore: true)
   _$SimpleUserDtoCopyWith<_SimpleUserDto> get copyWith =>

@@ -34,7 +34,7 @@ class _$ObjectiveDtoTearOff {
     );
   }
 
-  ObjectiveDto fromJson(Map<String, Object> json) {
+  ObjectiveDto fromJson(Map<String, Object?> json) {
     return ObjectiveDto.fromJson(json);
   }
 }
@@ -197,27 +197,20 @@ class _$_ObjectiveDto extends _ObjectiveDto {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _ObjectiveDto &&
-            (identical(other.id, id) ||
-                const DeepCollectionEquality().equals(other.id, id)) &&
+        (other.runtimeType == runtimeType &&
+            other is _ObjectiveDto &&
+            (identical(other.id, id) || other.id == id) &&
             (identical(other.description, description) ||
-                const DeepCollectionEquality()
-                    .equals(other.description, description)) &&
+                other.description == description) &&
             (identical(other.coordinates, coordinates) ||
-                const DeepCollectionEquality()
-                    .equals(other.coordinates, coordinates)) &&
+                other.coordinates == coordinates) &&
             (identical(other.imageURL, imageURL) ||
-                const DeepCollectionEquality()
-                    .equals(other.imageURL, imageURL)));
+                other.imageURL == imageURL));
   }
 
   @override
   int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(id) ^
-      const DeepCollectionEquality().hash(description) ^
-      const DeepCollectionEquality().hash(coordinates) ^
-      const DeepCollectionEquality().hash(imageURL);
+      Object.hash(runtimeType, id, description, coordinates, imageURL);
 
   @JsonKey(ignore: true)
   @override
@@ -242,13 +235,13 @@ abstract class _ObjectiveDto extends ObjectiveDto {
       _$_ObjectiveDto.fromJson;
 
   @override
-  String get id => throw _privateConstructorUsedError;
+  String get id;
   @override
-  String get description => throw _privateConstructorUsedError;
+  String get description;
   @override
-  CoordinatesDto get coordinates => throw _privateConstructorUsedError;
+  CoordinatesDto get coordinates;
   @override
-  String get imageURL => throw _privateConstructorUsedError;
+  String get imageURL;
   @override
   @JsonKey(ignore: true)
   _$ObjectiveDtoCopyWith<_ObjectiveDto> get copyWith =>

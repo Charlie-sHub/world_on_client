@@ -86,7 +86,7 @@ class _$UserDtoTearOff {
     );
   }
 
-  UserDto fromJson(Map<String, Object> json) {
+  UserDto fromJson(Map<String, Object?> json) {
     return UserDto.fromJson(json);
   }
 }
@@ -681,115 +681,93 @@ class _$_UserDto extends _UserDto {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _UserDto &&
-            (identical(other.id, id) ||
-                const DeepCollectionEquality().equals(other.id, id)) &&
-            (identical(other.name, name) ||
-                const DeepCollectionEquality().equals(other.name, name)) &&
+        (other.runtimeType == runtimeType &&
+            other is _UserDto &&
+            (identical(other.id, id) || other.id == id) &&
+            (identical(other.name, name) || other.name == name) &&
             (identical(other.username, username) ||
-                const DeepCollectionEquality()
-                    .equals(other.username, username)) &&
+                other.username == username) &&
             (identical(other.password, password) ||
-                const DeepCollectionEquality()
-                    .equals(other.password, password)) &&
-            (identical(other.email, email) ||
-                const DeepCollectionEquality().equals(other.email, email)) &&
+                other.password == password) &&
+            (identical(other.email, email) || other.email == email) &&
             (identical(other.birthday, birthday) ||
-                const DeepCollectionEquality()
-                    .equals(other.birthday, birthday)) &&
+                other.birthday == birthday) &&
             (identical(other.description, description) ||
-                const DeepCollectionEquality()
-                    .equals(other.description, description)) &&
+                other.description == description) &&
             (identical(other.imageURL, imageURL) ||
-                const DeepCollectionEquality()
-                    .equals(other.imageURL, imageURL)) &&
-            (identical(other.level, level) ||
-                const DeepCollectionEquality().equals(other.level, level)) &&
+                other.imageURL == imageURL) &&
+            (identical(other.level, level) || other.level == level) &&
             (identical(other.experiencePoints, experiencePoints) ||
-                const DeepCollectionEquality()
-                    .equals(other.experiencePoints, experiencePoints)) &&
-            (identical(other.privacy, privacy) ||
-                const DeepCollectionEquality()
-                    .equals(other.privacy, privacy)) &&
+                other.experiencePoints == experiencePoints) &&
+            (identical(other.privacy, privacy) || other.privacy == privacy) &&
             (identical(other.adminPowers, adminPowers) ||
-                const DeepCollectionEquality()
-                    .equals(other.adminPowers, adminPowers)) &&
-            (identical(other.enabled, enabled) ||
-                const DeepCollectionEquality()
-                    .equals(other.enabled, enabled)) &&
+                other.adminPowers == adminPowers) &&
+            (identical(other.enabled, enabled) || other.enabled == enabled) &&
             (identical(other.lastLogin, lastLogin) ||
-                const DeepCollectionEquality()
-                    .equals(other.lastLogin, lastLogin)) &&
+                other.lastLogin == lastLogin) &&
             (identical(other.creationDate, creationDate) ||
-                const DeepCollectionEquality()
-                    .equals(other.creationDate, creationDate)) &&
+                other.creationDate == creationDate) &&
             (identical(other.modificationDate, modificationDate) ||
-                const DeepCollectionEquality()
-                    .equals(other.modificationDate, modificationDate)) &&
-            (identical(other.options, options) ||
-                const DeepCollectionEquality()
-                    .equals(other.options, options)) &&
-            (identical(other.blockedUsersIds, blockedUsersIds) ||
-                const DeepCollectionEquality()
-                    .equals(other.blockedUsersIds, blockedUsersIds)) &&
-            (identical(other.followedUsersIds, followedUsersIds) ||
-                const DeepCollectionEquality()
-                    .equals(other.followedUsersIds, followedUsersIds)) &&
-            (identical(other.interestsIds, interestsIds) ||
-                const DeepCollectionEquality()
-                    .equals(other.interestsIds, interestsIds)) &&
-            (identical(other.achievementsIds, achievementsIds) ||
-                const DeepCollectionEquality()
-                    .equals(other.achievementsIds, achievementsIds)) &&
-            (identical(other.experiencesDoneIds, experiencesDoneIds) ||
-                const DeepCollectionEquality()
-                    .equals(other.experiencesDoneIds, experiencesDoneIds)) &&
-            (identical(other.experiencesLikedIds, experiencesLikedIds) ||
-                const DeepCollectionEquality()
-                    .equals(other.experiencesLikedIds, experiencesLikedIds)) &&
-            (identical(other.experiencesToDoIds, experiencesToDoIds) ||
-                const DeepCollectionEquality().equals(other.experiencesToDoIds, experiencesToDoIds)) &&
-            (identical(other.devices, devices) || const DeepCollectionEquality().equals(other.devices, devices)) &&
-            (identical(other.systems, systems) || const DeepCollectionEquality().equals(other.systems, systems)) &&
-            (identical(other.items, items) || const DeepCollectionEquality().equals(other.items, items)) &&
-            (identical(other.coins, coins) || const DeepCollectionEquality().equals(other.coins, coins)) &&
-            (identical(other.followersAmount, followersAmount) || const DeepCollectionEquality().equals(other.followersAmount, followersAmount)) &&
-            (identical(other.promotionPlan, promotionPlan) || const DeepCollectionEquality().equals(other.promotionPlan, promotionPlan)));
+                other.modificationDate == modificationDate) &&
+            (identical(other.options, options) || other.options == options) &&
+            const DeepCollectionEquality()
+                .equals(other.blockedUsersIds, blockedUsersIds) &&
+            const DeepCollectionEquality()
+                .equals(other.followedUsersIds, followedUsersIds) &&
+            const DeepCollectionEquality()
+                .equals(other.interestsIds, interestsIds) &&
+            const DeepCollectionEquality()
+                .equals(other.achievementsIds, achievementsIds) &&
+            const DeepCollectionEquality()
+                .equals(other.experiencesDoneIds, experiencesDoneIds) &&
+            const DeepCollectionEquality()
+                .equals(other.experiencesLikedIds, experiencesLikedIds) &&
+            const DeepCollectionEquality()
+                .equals(other.experiencesToDoIds, experiencesToDoIds) &&
+            const DeepCollectionEquality().equals(other.devices, devices) &&
+            const DeepCollectionEquality().equals(other.systems, systems) &&
+            const DeepCollectionEquality().equals(other.items, items) &&
+            (identical(other.coins, coins) || other.coins == coins) &&
+            (identical(other.followersAmount, followersAmount) ||
+                other.followersAmount == followersAmount) &&
+            (identical(other.promotionPlan, promotionPlan) ||
+                other.promotionPlan == promotionPlan));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(id) ^
-      const DeepCollectionEquality().hash(name) ^
-      const DeepCollectionEquality().hash(username) ^
-      const DeepCollectionEquality().hash(password) ^
-      const DeepCollectionEquality().hash(email) ^
-      const DeepCollectionEquality().hash(birthday) ^
-      const DeepCollectionEquality().hash(description) ^
-      const DeepCollectionEquality().hash(imageURL) ^
-      const DeepCollectionEquality().hash(level) ^
-      const DeepCollectionEquality().hash(experiencePoints) ^
-      const DeepCollectionEquality().hash(privacy) ^
-      const DeepCollectionEquality().hash(adminPowers) ^
-      const DeepCollectionEquality().hash(enabled) ^
-      const DeepCollectionEquality().hash(lastLogin) ^
-      const DeepCollectionEquality().hash(creationDate) ^
-      const DeepCollectionEquality().hash(modificationDate) ^
-      const DeepCollectionEquality().hash(options) ^
-      const DeepCollectionEquality().hash(blockedUsersIds) ^
-      const DeepCollectionEquality().hash(followedUsersIds) ^
-      const DeepCollectionEquality().hash(interestsIds) ^
-      const DeepCollectionEquality().hash(achievementsIds) ^
-      const DeepCollectionEquality().hash(experiencesDoneIds) ^
-      const DeepCollectionEquality().hash(experiencesLikedIds) ^
-      const DeepCollectionEquality().hash(experiencesToDoIds) ^
-      const DeepCollectionEquality().hash(devices) ^
-      const DeepCollectionEquality().hash(systems) ^
-      const DeepCollectionEquality().hash(items) ^
-      const DeepCollectionEquality().hash(coins) ^
-      const DeepCollectionEquality().hash(followersAmount) ^
-      const DeepCollectionEquality().hash(promotionPlan);
+  int get hashCode => Object.hashAll([
+        runtimeType,
+        id,
+        name,
+        username,
+        password,
+        email,
+        birthday,
+        description,
+        imageURL,
+        level,
+        experiencePoints,
+        privacy,
+        adminPowers,
+        enabled,
+        lastLogin,
+        creationDate,
+        modificationDate,
+        options,
+        const DeepCollectionEquality().hash(blockedUsersIds),
+        const DeepCollectionEquality().hash(followedUsersIds),
+        const DeepCollectionEquality().hash(interestsIds),
+        const DeepCollectionEquality().hash(achievementsIds),
+        const DeepCollectionEquality().hash(experiencesDoneIds),
+        const DeepCollectionEquality().hash(experiencesLikedIds),
+        const DeepCollectionEquality().hash(experiencesToDoIds),
+        const DeepCollectionEquality().hash(devices),
+        const DeepCollectionEquality().hash(systems),
+        const DeepCollectionEquality().hash(items),
+        coins,
+        followersAmount,
+        promotionPlan
+      ]);
 
   @JsonKey(ignore: true)
   @override
@@ -839,70 +817,70 @@ abstract class _UserDto extends UserDto {
   factory _UserDto.fromJson(Map<String, dynamic> json) = _$_UserDto.fromJson;
 
   @override
-  String get id => throw _privateConstructorUsedError;
+  String get id;
   @override
-  String get name => throw _privateConstructorUsedError;
+  String get name;
   @override
-  String get username => throw _privateConstructorUsedError;
+  String get username;
   @override // Shouldn't this be encrypted in some way?
 // Maybe it shouldn't even be part of the dto at all, as Firebase handles it at login time
-  String get password => throw _privateConstructorUsedError;
+  String get password;
   @override
-  String get email => throw _privateConstructorUsedError;
-  @override
-  @ServerTimestampConverter()
-  DateTime get birthday => throw _privateConstructorUsedError;
-  @override
-  String get description => throw _privateConstructorUsedError;
-  @override
-  String get imageURL => throw _privateConstructorUsedError;
-  @override
-  int get level => throw _privateConstructorUsedError;
-  @override
-  int get experiencePoints => throw _privateConstructorUsedError;
-  @override
-  bool get privacy => throw _privateConstructorUsedError;
-  @override
-  bool get adminPowers => throw _privateConstructorUsedError;
-  @override
-  bool get enabled => throw _privateConstructorUsedError;
+  String get email;
   @override
   @ServerTimestampConverter()
-  DateTime get lastLogin => throw _privateConstructorUsedError;
+  DateTime get birthday;
+  @override
+  String get description;
+  @override
+  String get imageURL;
+  @override
+  int get level;
+  @override
+  int get experiencePoints;
+  @override
+  bool get privacy;
+  @override
+  bool get adminPowers;
+  @override
+  bool get enabled;
   @override
   @ServerTimestampConverter()
-  DateTime get creationDate => throw _privateConstructorUsedError;
+  DateTime get lastLogin;
   @override
   @ServerTimestampConverter()
-  DateTime get modificationDate => throw _privateConstructorUsedError;
+  DateTime get creationDate;
   @override
-  OptionsDto get options => throw _privateConstructorUsedError;
+  @ServerTimestampConverter()
+  DateTime get modificationDate;
   @override
-  Set<String> get blockedUsersIds => throw _privateConstructorUsedError;
+  OptionsDto get options;
   @override
-  Set<String> get followedUsersIds => throw _privateConstructorUsedError;
+  Set<String> get blockedUsersIds;
   @override
-  Set<String> get interestsIds => throw _privateConstructorUsedError;
+  Set<String> get followedUsersIds;
   @override
-  Set<String> get achievementsIds => throw _privateConstructorUsedError;
+  Set<String> get interestsIds;
   @override
-  Set<String> get experiencesDoneIds => throw _privateConstructorUsedError;
+  Set<String> get achievementsIds;
   @override
-  Set<String> get experiencesLikedIds => throw _privateConstructorUsedError;
+  Set<String> get experiencesDoneIds;
   @override
-  Set<String> get experiencesToDoIds => throw _privateConstructorUsedError;
+  Set<String> get experiencesLikedIds;
   @override
-  Set<DeviceDto> get devices => throw _privateConstructorUsedError;
+  Set<String> get experiencesToDoIds;
   @override
-  Set<SystemDto> get systems => throw _privateConstructorUsedError;
+  Set<DeviceDto> get devices;
   @override
-  Set<ItemDto> get items => throw _privateConstructorUsedError;
+  Set<SystemDto> get systems;
   @override
-  int get coins => throw _privateConstructorUsedError;
+  Set<ItemDto> get items;
   @override
-  int get followersAmount => throw _privateConstructorUsedError;
+  int get coins;
   @override
-  PromotionPlanDto get promotionPlan => throw _privateConstructorUsedError;
+  int get followersAmount;
+  @override
+  PromotionPlanDto get promotionPlan;
   @override
   @JsonKey(ignore: true)
   _$UserDtoCopyWith<_UserDto> get copyWith =>

@@ -250,16 +250,14 @@ class _$_Initialized implements _Initialized {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _Initialized &&
+        (other.runtimeType == runtimeType &&
+            other is _Initialized &&
             (identical(other.experienceOption, experienceOption) ||
-                const DeepCollectionEquality()
-                    .equals(other.experienceOption, experienceOption)));
+                other.experienceOption == experienceOption));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(experienceOption);
+  int get hashCode => Object.hash(runtimeType, experienceOption);
 
   @JsonKey(ignore: true)
   @override
@@ -388,7 +386,7 @@ abstract class _Initialized implements ExperienceManagementFormEvent {
   const factory _Initialized(Option<Experience> experienceOption) =
       _$_Initialized;
 
-  Option<Experience> get experienceOption => throw _privateConstructorUsedError;
+  Option<Experience> get experienceOption;
   @JsonKey(ignore: true)
   _$InitializedCopyWith<_Initialized> get copyWith =>
       throw _privateConstructorUsedError;
@@ -442,14 +440,13 @@ class _$_TitleChanged implements _TitleChanged {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _TitleChanged &&
-            (identical(other.title, title) ||
-                const DeepCollectionEquality().equals(other.title, title)));
+        (other.runtimeType == runtimeType &&
+            other is _TitleChanged &&
+            (identical(other.title, title) || other.title == title));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(title);
+  int get hashCode => Object.hash(runtimeType, title);
 
   @JsonKey(ignore: true)
   @override
@@ -577,7 +574,7 @@ class _$_TitleChanged implements _TitleChanged {
 abstract class _TitleChanged implements ExperienceManagementFormEvent {
   const factory _TitleChanged(String title) = _$_TitleChanged;
 
-  String get title => throw _privateConstructorUsedError;
+  String get title;
   @JsonKey(ignore: true)
   _$TitleChangedCopyWith<_TitleChanged> get copyWith =>
       throw _privateConstructorUsedError;
@@ -631,15 +628,14 @@ class _$_DescriptionChanged implements _DescriptionChanged {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _DescriptionChanged &&
+        (other.runtimeType == runtimeType &&
+            other is _DescriptionChanged &&
             (identical(other.description, description) ||
-                const DeepCollectionEquality()
-                    .equals(other.description, description)));
+                other.description == description));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(description);
+  int get hashCode => Object.hash(runtimeType, description);
 
   @JsonKey(ignore: true)
   @override
@@ -767,7 +763,7 @@ class _$_DescriptionChanged implements _DescriptionChanged {
 abstract class _DescriptionChanged implements ExperienceManagementFormEvent {
   const factory _DescriptionChanged(String description) = _$_DescriptionChanged;
 
-  String get description => throw _privateConstructorUsedError;
+  String get description;
   @JsonKey(ignore: true)
   _$DescriptionChangedCopyWith<_DescriptionChanged> get copyWith =>
       throw _privateConstructorUsedError;
@@ -821,15 +817,14 @@ class _$_ImageDeleted implements _ImageDeleted {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _ImageDeleted &&
+        (other.runtimeType == runtimeType &&
+            other is _ImageDeleted &&
             (identical(other.imageURL, imageURL) ||
-                const DeepCollectionEquality()
-                    .equals(other.imageURL, imageURL)));
+                other.imageURL == imageURL));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(imageURL);
+  int get hashCode => Object.hash(runtimeType, imageURL);
 
   @JsonKey(ignore: true)
   @override
@@ -957,7 +952,7 @@ class _$_ImageDeleted implements _ImageDeleted {
 abstract class _ImageDeleted implements ExperienceManagementFormEvent {
   const factory _ImageDeleted(String imageURL) = _$_ImageDeleted;
 
-  String get imageURL => throw _privateConstructorUsedError;
+  String get imageURL;
   @JsonKey(ignore: true)
   _$ImageDeletedCopyWith<_ImageDeleted> get copyWith =>
       throw _privateConstructorUsedError;
@@ -1011,15 +1006,15 @@ class _$_ImagesChanged implements _ImagesChanged {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _ImagesChanged &&
-            (identical(other.imageAssets, imageAssets) ||
-                const DeepCollectionEquality()
-                    .equals(other.imageAssets, imageAssets)));
+        (other.runtimeType == runtimeType &&
+            other is _ImagesChanged &&
+            const DeepCollectionEquality()
+                .equals(other.imageAssets, imageAssets));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(imageAssets);
+  int get hashCode => Object.hash(
+      runtimeType, const DeepCollectionEquality().hash(imageAssets));
 
   @JsonKey(ignore: true)
   @override
@@ -1147,7 +1142,7 @@ class _$_ImagesChanged implements _ImagesChanged {
 abstract class _ImagesChanged implements ExperienceManagementFormEvent {
   const factory _ImagesChanged(List<Asset> imageAssets) = _$_ImagesChanged;
 
-  List<Asset> get imageAssets => throw _privateConstructorUsedError;
+  List<Asset> get imageAssets;
   @JsonKey(ignore: true)
   _$ImagesChangedCopyWith<_ImagesChanged> get copyWith =>
       throw _privateConstructorUsedError;
@@ -1209,20 +1204,16 @@ class _$_CoordinatesChanged implements _CoordinatesChanged {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _CoordinatesChanged &&
+        (other.runtimeType == runtimeType &&
+            other is _CoordinatesChanged &&
             (identical(other.latitude, latitude) ||
-                const DeepCollectionEquality()
-                    .equals(other.latitude, latitude)) &&
+                other.latitude == latitude) &&
             (identical(other.longitude, longitude) ||
-                const DeepCollectionEquality()
-                    .equals(other.longitude, longitude)));
+                other.longitude == longitude));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(latitude) ^
-      const DeepCollectionEquality().hash(longitude);
+  int get hashCode => Object.hash(runtimeType, latitude, longitude);
 
   @JsonKey(ignore: true)
   @override
@@ -1352,8 +1343,8 @@ abstract class _CoordinatesChanged implements ExperienceManagementFormEvent {
       {required double latitude,
       required double longitude}) = _$_CoordinatesChanged;
 
-  double get latitude => throw _privateConstructorUsedError;
-  double get longitude => throw _privateConstructorUsedError;
+  double get latitude;
+  double get longitude;
   @JsonKey(ignore: true)
   _$CoordinatesChangedCopyWith<_CoordinatesChanged> get copyWith =>
       throw _privateConstructorUsedError;
@@ -1407,15 +1398,14 @@ class _$_DifficultyChanged implements _DifficultyChanged {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _DifficultyChanged &&
+        (other.runtimeType == runtimeType &&
+            other is _DifficultyChanged &&
             (identical(other.difficulty, difficulty) ||
-                const DeepCollectionEquality()
-                    .equals(other.difficulty, difficulty)));
+                other.difficulty == difficulty));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(difficulty);
+  int get hashCode => Object.hash(runtimeType, difficulty);
 
   @JsonKey(ignore: true)
   @override
@@ -1543,7 +1533,7 @@ class _$_DifficultyChanged implements _DifficultyChanged {
 abstract class _DifficultyChanged implements ExperienceManagementFormEvent {
   const factory _DifficultyChanged(int difficulty) = _$_DifficultyChanged;
 
-  int get difficulty => throw _privateConstructorUsedError;
+  int get difficulty;
   @JsonKey(ignore: true)
   _$DifficultyChangedCopyWith<_DifficultyChanged> get copyWith =>
       throw _privateConstructorUsedError;
@@ -1597,15 +1587,14 @@ class _$_ObjectivesChanged implements _ObjectivesChanged {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _ObjectivesChanged &&
+        (other.runtimeType == runtimeType &&
+            other is _ObjectivesChanged &&
             (identical(other.objectives, objectives) ||
-                const DeepCollectionEquality()
-                    .equals(other.objectives, objectives)));
+                other.objectives == objectives));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(objectives);
+  int get hashCode => Object.hash(runtimeType, objectives);
 
   @JsonKey(ignore: true)
   @override
@@ -1734,7 +1723,7 @@ abstract class _ObjectivesChanged implements ExperienceManagementFormEvent {
   const factory _ObjectivesChanged(KtList<Objective> objectives) =
       _$_ObjectivesChanged;
 
-  KtList<Objective> get objectives => throw _privateConstructorUsedError;
+  KtList<Objective> get objectives;
   @JsonKey(ignore: true)
   _$ObjectivesChangedCopyWith<_ObjectivesChanged> get copyWith =>
       throw _privateConstructorUsedError;
@@ -1788,14 +1777,13 @@ class _$_RewardsChanged implements _RewardsChanged {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _RewardsChanged &&
-            (identical(other.rewards, rewards) ||
-                const DeepCollectionEquality().equals(other.rewards, rewards)));
+        (other.runtimeType == runtimeType &&
+            other is _RewardsChanged &&
+            (identical(other.rewards, rewards) || other.rewards == rewards));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(rewards);
+  int get hashCode => Object.hash(runtimeType, rewards);
 
   @JsonKey(ignore: true)
   @override
@@ -1923,7 +1911,7 @@ class _$_RewardsChanged implements _RewardsChanged {
 abstract class _RewardsChanged implements ExperienceManagementFormEvent {
   const factory _RewardsChanged(KtSet<Reward> rewards) = _$_RewardsChanged;
 
-  KtSet<Reward> get rewards => throw _privateConstructorUsedError;
+  KtSet<Reward> get rewards;
   @JsonKey(ignore: true)
   _$RewardsChangedCopyWith<_RewardsChanged> get copyWith =>
       throw _privateConstructorUsedError;
@@ -1977,14 +1965,13 @@ class _$_TagsChanged implements _TagsChanged {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _TagsChanged &&
-            (identical(other.tags, tags) ||
-                const DeepCollectionEquality().equals(other.tags, tags)));
+        (other.runtimeType == runtimeType &&
+            other is _TagsChanged &&
+            (identical(other.tags, tags) || other.tags == tags));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(tags);
+  int get hashCode => Object.hash(runtimeType, tags);
 
   @JsonKey(ignore: true)
   @override
@@ -2112,7 +2099,7 @@ class _$_TagsChanged implements _TagsChanged {
 abstract class _TagsChanged implements ExperienceManagementFormEvent {
   const factory _TagsChanged(KtSet<Tag> tags) = _$_TagsChanged;
 
-  KtSet<Tag> get tags => throw _privateConstructorUsedError;
+  KtSet<Tag> get tags;
   @JsonKey(ignore: true)
   _$TagsChangedCopyWith<_TagsChanged> get copyWith =>
       throw _privateConstructorUsedError;
@@ -2148,7 +2135,8 @@ class _$_Submitted implements _Submitted {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _Submitted);
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _Submitted);
   }
 
   @override
@@ -2509,40 +2497,34 @@ class _$_ExperienceManagementFormState
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _ExperienceManagementFormState &&
+        (other.runtimeType == runtimeType &&
+            other is _ExperienceManagementFormState &&
             (identical(other.experience, experience) ||
-                const DeepCollectionEquality()
-                    .equals(other.experience, experience)) &&
-            (identical(other.originalImageUrls, originalImageUrls) ||
-                const DeepCollectionEquality()
-                    .equals(other.originalImageUrls, originalImageUrls)) &&
+                other.experience == experience) &&
+            const DeepCollectionEquality()
+                .equals(other.originalImageUrls, originalImageUrls) &&
             (identical(other.showErrorMessages, showErrorMessages) ||
-                const DeepCollectionEquality()
-                    .equals(other.showErrorMessages, showErrorMessages)) &&
+                other.showErrorMessages == showErrorMessages) &&
             (identical(other.isEditing, isEditing) ||
-                const DeepCollectionEquality()
-                    .equals(other.isEditing, isEditing)) &&
+                other.isEditing == isEditing) &&
             (identical(other.isSubmitting, isSubmitting) ||
-                const DeepCollectionEquality()
-                    .equals(other.isSubmitting, isSubmitting)) &&
+                other.isSubmitting == isSubmitting) &&
             (identical(other.loadedCoordinates, loadedCoordinates) ||
-                const DeepCollectionEquality()
-                    .equals(other.loadedCoordinates, loadedCoordinates)) &&
+                other.loadedCoordinates == loadedCoordinates) &&
             (identical(other.failureOrSuccessOption, failureOrSuccessOption) ||
-                const DeepCollectionEquality().equals(
-                    other.failureOrSuccessOption, failureOrSuccessOption)));
+                other.failureOrSuccessOption == failureOrSuccessOption));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(experience) ^
-      const DeepCollectionEquality().hash(originalImageUrls) ^
-      const DeepCollectionEquality().hash(showErrorMessages) ^
-      const DeepCollectionEquality().hash(isEditing) ^
-      const DeepCollectionEquality().hash(isSubmitting) ^
-      const DeepCollectionEquality().hash(loadedCoordinates) ^
-      const DeepCollectionEquality().hash(failureOrSuccessOption);
+  int get hashCode => Object.hash(
+      runtimeType,
+      experience,
+      const DeepCollectionEquality().hash(originalImageUrls),
+      showErrorMessages,
+      isEditing,
+      isSubmitting,
+      loadedCoordinates,
+      failureOrSuccessOption);
 
   @JsonKey(ignore: true)
   @override
@@ -2564,20 +2546,19 @@ abstract class _ExperienceManagementFormState
       _$_ExperienceManagementFormState;
 
   @override
-  Experience get experience => throw _privateConstructorUsedError;
+  Experience get experience;
   @override
-  List<String> get originalImageUrls => throw _privateConstructorUsedError;
+  List<String> get originalImageUrls;
   @override
-  bool get showErrorMessages => throw _privateConstructorUsedError;
+  bool get showErrorMessages;
   @override
-  bool get isEditing => throw _privateConstructorUsedError;
+  bool get isEditing;
   @override
-  bool get isSubmitting => throw _privateConstructorUsedError;
+  bool get isSubmitting;
   @override
-  bool get loadedCoordinates => throw _privateConstructorUsedError;
+  bool get loadedCoordinates;
   @override
-  Option<Either<Failure, Unit>> get failureOrSuccessOption =>
-      throw _privateConstructorUsedError;
+  Option<Either<Failure, Unit>> get failureOrSuccessOption;
   @override
   @JsonKey(ignore: true)
   _$ExperienceManagementFormStateCopyWith<_ExperienceManagementFormState>
