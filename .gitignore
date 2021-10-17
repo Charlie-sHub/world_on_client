@@ -36,6 +36,7 @@ lib/injection.config.dart
 *.freezed.dart
 *.g.dart
 *.mocks.dart
+generated
 
 # Web related
 lib/generated_plugin_registrant.dart
