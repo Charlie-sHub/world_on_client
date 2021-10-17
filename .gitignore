@@ -30,6 +30,7 @@
 .pub-cache/
 .pub/
 /build/
+.fvm/flutter_sdk
 
 # Generated files
 lib/injection.config.dart
