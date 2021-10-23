@@ -5,6 +5,7 @@ import 'package:worldon/views/core/widgets/cards/experience_card/share_externall
 import 'package:worldon/views/core/widgets/cards/experience_card/share_internally_button.dart';
 import 'package:worldon/views/core/widgets/misc/carousel_builder.dart';
 import 'package:worldon/views/core/widgets/misc/world_on_cached_image.dart';
+import 'package:worldon/views/experience_navigation/widgets/experience_navigation/experience_information/exit_experience_button.dart';
 
 class ExperienceImageGallery extends StatelessWidget {
   const ExperienceImageGallery({
@@ -58,12 +59,19 @@ class ExperienceImageGallery extends StatelessWidget {
           ),
           Positioned(
             right: 0,
+            left: 0,
             top: 0,
             child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                ShareExternallyButton(experience: experience),
-                ShareInternallyButton(experience: experience),
-                LogButtonBuilder(experience: experience),
+                const ExitExperienceButton(),
+                Row(
+                  children: [
+                    ShareExternallyButton(experience: experience),
+                    ShareInternallyButton(experience: experience),
+                    LogButtonBuilder(experience: experience),
+                  ],
+                ),
               ],
             ),
           ),

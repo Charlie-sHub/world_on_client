@@ -7,21 +7,17 @@ import 'package:worldon/views/core/widgets/error/critical_error_display.dart';
 import 'package:worldon/views/core/widgets/misc/world_on_progress_indicator.dart';
 import 'package:worldon/views/profile/widgets/profile_experiences_tab_view/profile_experience_card.dart';
 
-import '../../../../injection.dart';
-
 class RecommendedExperiencesBottomBar extends StatelessWidget {
   const RecommendedExperiencesBottomBar({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return SizedBox(
-      height: 150,
-      child: BlocProvider(
-        create: (context) => getIt<RecommendedExperiencesWatcherBloc>()
-          ..add(
-            const RecommendedExperiencesWatcherEvent.watchRecommendedExperiencesStarted(),
-          ),
-        child: BlocBuilder<RecommendedExperiencesWatcherBloc, RecommendedExperiencesWatcherState>(
+    return Padding(
+      padding: const EdgeInsets.fromLTRB(0, 5, 0, 10),
+      child: SizedBox(
+        height: 120,
+        child: BlocBuilder<RecommendedExperiencesWatcherBloc,
+            RecommendedExperiencesWatcherState>(
           builder: (context, state) => state.map(
             initial: (_) => Container(),
             loadInProgress: (_) => const WorldOnProgressIndicator(
@@ -37,9 +33,11 @@ class RecommendedExperiencesBottomBar extends StatelessWidget {
                   return ProfileExperienceCard(
                     experience: _experience,
                     key: Key(_experience.id.toString()),
-                    reloadFunction: () => context.read<RecommendedExperiencesWatcherBloc>().add(
-                          const RecommendedExperiencesWatcherEvent.watchRecommendedExperiencesStarted(),
-                        ),
+                    reloadFunction: () =>
+                        context.read<RecommendedExperiencesWatcherBloc>().add(
+                              const RecommendedExperiencesWatcherEvent
+                                  .watchRecommendedExperiencesStarted(),
+                            ),
                   );
                 } else {
                   return ErrorCard(
@@ -53,9 +51,11 @@ class RecommendedExperiencesBottomBar extends StatelessWidget {
               },
             ),
             loadFailure: (state) => InkWell(
-              onTap: () => context.read<RecommendedExperiencesWatcherBloc>().add(
-                    const RecommendedExperiencesWatcherEvent.watchRecommendedExperiencesStarted(),
-                  ),
+              onTap: () =>
+                  context.read<RecommendedExperiencesWatcherBloc>().add(
+                        const RecommendedExperiencesWatcherEvent
+                            .watchRecommendedExperiencesStarted(),
+                      ),
               child: Center(
                 child: state.failure.maybeMap(
                   coreData: (failure) => failure.coreDataFailure.maybeMap(
