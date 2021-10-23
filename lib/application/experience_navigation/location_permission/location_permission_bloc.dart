@@ -15,7 +15,8 @@ class LocationPermissionBloc
 
   @override
   Stream<LocationPermissionState> mapEventToState(
-      LocationPermissionEvent event) async* {
+    LocationPermissionEvent event,
+  ) async* {
     yield* event.map(
       initialized: _onInitialized,
     );
