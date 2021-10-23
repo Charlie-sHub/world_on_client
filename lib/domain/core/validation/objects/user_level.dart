@@ -22,20 +22,18 @@ class UserLevel extends ValueObject<int> {
   List<Object> get props => [value];
 }
 
-class Levels {
-  static const _multiplier = 100;
+const _multiplier = 100;
 
-  /// Gives the experience points required to get to the given level
-  static int experiencePointsRequired(int level) => level * _multiplier;
+/// Gives the experience points required to get to the given level
+int experiencePointsRequired(int level) => level * _multiplier;
 
-  /// Gives the maximum level by the given experience points
-  static int levelAt(int experiencePoints) {
-    int _level = 0;
-    int _experiencePointsComparison = 0;
-    for (int i = 1; _experiencePointsComparison <= experiencePoints; i++) {
-      _level++;
-      _experiencePointsComparison += experiencePointsRequired(i);
-    }
-    return _level - 1;
+/// Gives the maximum level by the given experience points
+int levelAt(int experiencePoints) {
+  int _level = 0;
+  int _experiencePointsComparison = 0;
+  for (int i = 1; _experiencePointsComparison <= experiencePoints; i++) {
+    _level++;
+    _experiencePointsComparison += experiencePointsRequired(i);
   }
+  return _level - 1;
 }

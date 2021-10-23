@@ -124,7 +124,6 @@ class NotificationsBody extends StatelessWidget {
   void _showLocalNotification(int index, BuildContext context, String _message) {
     const androidPlatformChannelSpecifics = AndroidNotificationDetails(
       "notification_notification",
-      "notification_notification",
       "World On notifications channel",
       importance: Importance.high,
       playSound: false,

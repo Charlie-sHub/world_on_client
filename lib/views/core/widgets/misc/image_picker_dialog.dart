@@ -12,13 +12,10 @@ class ImagePickerDialog extends StatelessWidget {
       backgroundColor: WorldOnColors.background,
       actions: [
         ElevatedButton(
-          onPressed: () async {
-            final _imageFile = await _pickImage(
-              ImageSource.camera,
-              context,
-            );
-            Navigator.of(context).pop(_imageFile);
-          },
+          onPressed: () => _pickImage(
+            context,
+            ImageSource.camera,
+          ),
           child: Row(
             children: [
               const Icon(Icons.photo_camera),
@@ -33,13 +30,10 @@ class ImagePickerDialog extends StatelessWidget {
           ),
         ),
         ElevatedButton(
-          onPressed: () async {
-            final _imageFile = await _pickImage(
-              ImageSource.gallery,
-              context,
-            );
-            Navigator.of(context).pop(_imageFile);
-          },
+          onPressed: () => _pickImage(
+            context,
+            ImageSource.gallery,
+          ),
           child: Row(
             children: [
               const Icon(Icons.grid_view),
@@ -57,17 +51,13 @@ class ImagePickerDialog extends StatelessWidget {
     );
   }
 
-  Future<File?> _pickImage(ImageSource source, BuildContext context) async {
-    final _imagePicked = await ImagePicker().pickImage(
-      source: source,
-      imageQuality: 30,
-      maxHeight: 1440,
-      maxWidth: 2560,
-    );
-    if (_imagePicked != null) {
-      return File(_imagePicked.path);
-    } else {
-      return null;
-    }
-  }
+  Future<void> _pickImage(BuildContext context, ImageSource source) =>
+      ImagePicker().pickImage(source: source, imageQuality: 30, maxHeight: 1440, maxWidth: 2560).then(
+        (imagePicked) {
+          if (imagePicked != null) {
+            final _imageFile = File(imagePicked.path);
+            Navigator.of(context).pop(_imageFile);
+          }
+        },
+      );
 }

@@ -25,10 +25,12 @@ Location getValidLocation() {
       Experience.empty().copyWith(
         id: UniqueId(),
         title: Name("Joyce neocapitalist"),
-        description: EntityDescription("""
+        description: EntityDescription(
+          """
 If the patriarchialist paradigm of narrative holds,
 we have to choose between neocapitalist libertarianism and neodialectic capitalist theory.
-But the main theme of the works of Joyce is the collapse, and some would say the futility, of subdialectic truth."""),
+But the main theme of the works of Joyce is the collapse, and some would say the futility, of subdialectic truth.""",
+        ),
         creator: getValidUser().simplified,
         location: Location.empty().copyWith(
           id: UniqueId(),

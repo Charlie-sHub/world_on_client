@@ -70,7 +70,7 @@ class CurrentUserProfileButton extends StatelessWidget {
       );
 
   Future _onLongPress(BuildContext context) async {
-    final _confirmed = await showDialog<bool>(
+    showDialog<bool>(
       context: context,
       builder: (context) => AlertDialog(
         backgroundColor: WorldOnColors.background,
@@ -99,13 +99,14 @@ class CurrentUserProfileButton extends StatelessWidget {
           ],
         ),
       ),
+    ).then(
+      (confirmed) {
+        if (confirmed != null && confirmed) {
+          context.read<AuthenticationBloc>().add(
+                const AuthenticationEvent.loggedOut(),
+              );
+        }
+      },
     );
-    if (_confirmed != null) {
-      if (_confirmed) {
-        context.read<AuthenticationBloc>().add(
-              const AuthenticationEvent.loggedOut(),
-            );
-      }
-    }
   }
 }

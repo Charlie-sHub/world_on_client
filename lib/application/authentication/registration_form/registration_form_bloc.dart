@@ -24,7 +24,7 @@ part 'registration_form_bloc.freezed.dart';
 part 'registration_form_event.dart';
 part 'registration_form_state.dart';
 
-@injectable
+@lazySingleton
 class RegistrationFormBloc extends Bloc<RegistrationFormEvent, RegistrationFormState> {
   RegistrationFormBloc() : super(RegistrationFormState.initial());
 
@@ -60,7 +60,8 @@ class RegistrationFormBloc extends Bloc<RegistrationFormEvent, RegistrationFormS
       failureOrSuccessOption: none(),
     );
     final _hasImage = state.user.imageFileOption.isSome() || state.user.imageURL.isNotEmpty;
-    final _canRegister = state.user.isValid && state.passwordConfirmator.isValid() && state.acceptedEULA && _hasImage;
+    final _canRegister =
+        state.user.isValid && state.passwordConfirmator.isValid() && state.acceptedEULA && _hasImage;
     if (_canRegister) {
       _failureOrUnit = await getIt<Register>()(
         Params(

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:simple_animations/simple_animations.dart';
+import 'package:sa3_liquid/liquid/plasma/plasma.dart';
 import 'package:worldon/application/authentication/log_in_form/log_in_form_bloc.dart';
 import 'package:worldon/generated/l10n.dart';
 import 'package:worldon/views/authentication/widgets/log_in_form/log_in_button.dart';
@@ -54,7 +54,9 @@ class LogInForm extends StatelessWidget {
                     const WorldOnTitle(),
                     const SizedBox(height: 30),
                     Form(
-                      autovalidateMode: context.read<LogInFormBloc>().state.showErrorMessages ? AutovalidateMode.always : AutovalidateMode.disabled,
+                      autovalidateMode: context.read<LogInFormBloc>().state.showErrorMessages
+                          ? AutovalidateMode.always
+                          : AutovalidateMode.disabled,
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.stretch,
                         children: <Widget>[

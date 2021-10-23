@@ -252,7 +252,8 @@ class ProductionProfileRepository implements ProfileRepositoryInterface {
   }
 
   List<Stream<QuerySnapshot<UserDto>>> _getCombinedStreamList(
-      Iterable<List<String>> _iterableOfIdLists) {
+    Iterable<List<String>> _iterableOfIdLists,
+  ) {
     final _combinedStreamList = _iterableOfIdLists
         .map(
           (_idList) => _firestore.userCollection
@@ -661,7 +662,8 @@ class ProductionProfileRepository implements ProfileRepositoryInterface {
       _logger.e("FormatException: ${error.message}");
       return Failure.coreDomain(
         CoreDomainFailure.unknownDomainLayerError(
-            errorString: "Format exception: ${error.message}"),
+          errorString: "Format exception: ${error.message}",
+        ),
       );
     } else {
       _logger.e("Unknown server error:  ${error.runtimeType}");

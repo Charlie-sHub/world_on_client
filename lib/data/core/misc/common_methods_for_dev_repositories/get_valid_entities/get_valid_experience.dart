@@ -27,7 +27,8 @@ Experience getValidExperience() {
     id: UniqueId(),
     title: Name("Malesuada fames ac ante"),
     description: EntityDescription(
-        "Donec bibendum congue libero nec viverra. Cras eget placerat libero. Maecenas cursus turpis vitae ultricies tempus. In suscipit orci id dapibus molestie."),
+      "Donec bibendum congue libero nec viverra. Cras eget placerat libero. Maecenas cursus turpis vitae ultricies tempus. In suscipit orci id dapibus molestie.",
+    ),
     imageURLs: {
       Assets.experiencePlaceholder,
     },
@@ -43,7 +44,8 @@ Experience getValidExperience() {
         getValidObjective().copyWith(
           id: UniqueId(),
           description: EntityDescription(
-              "Poaching Whistler cruiser white room, carbon chowder dirtbag death cookies steeps."),
+            "Poaching Whistler cruiser white room, carbon chowder dirtbag death cookies steeps.",
+          ),
           coordinates: Coordinates(
             latitude: Latitude(40.428938),
             longitude: Longitude(-3.680765),
@@ -67,9 +69,11 @@ Experience getValidExperience() {
         ),
         getValidObjective().copyWith(
           id: UniqueId(),
-          description: EntityDescription("""
+          description: EntityDescription(
+            """
 Stoked wheelie cork jib roadie. Pow pow twin tip bomb hole north shore, spread eagle misty pow clipless wheelie.
-Chillax gapers Whistler skid."""),
+Chillax gapers Whistler skid.""",
+          ),
           coordinates: Coordinates(
             latitude: Latitude(40.386485),
             longitude: Longitude(-3.684008),
@@ -78,7 +82,8 @@ Chillax gapers Whistler skid."""),
         getValidObjective().copyWith(
           id: UniqueId(),
           description: EntityDescription(
-              "Disrupt selvage blue bottle whatever, synth craft beer messenger bag."),
+            "Disrupt selvage blue bottle whatever, synth craft beer messenger bag.",
+          ),
           coordinates: Coordinates(
             latitude: Latitude(40.435630),
             longitude: Longitude(-3.644995),
@@ -127,7 +132,8 @@ Chillax gapers Whistler skid."""),
       getValidComment().copyWith(
         id: UniqueId(),
         content: CommentContent(
-            "Af paleo tacos, pinterest bespoke yuccie VHS messenger bag small batch."),
+          "Af paleo tacos, pinterest bespoke yuccie VHS messenger bag small batch.",
+        ),
       ),
       getValidComment().copyWith(
         id: UniqueId(),

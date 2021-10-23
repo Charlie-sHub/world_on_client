@@ -14,14 +14,17 @@ class CameraButton extends StatelessWidget {
           icon: const Icon(
             Icons.photo_camera,
           ),
-          onPressed: () async {
-            final _imageFile = await openPictureSelectDialog(context);
-            if (_imageFile != null) {
-              context.read<RegistrationFormBloc>().add(
-                    RegistrationFormEvent.imageChanged(_imageFile),
-                  );
-            }
-          },
+          onPressed: () => openPictureSelectDialog(context).then(
+            (imageFile) {
+              if (imageFile != null) {
+                context.read<RegistrationFormBloc>().add(
+                      RegistrationFormEvent.imageChanged(
+                        imageFile,
+                      ),
+                    );
+              }
+            },
+          ),
         ),
         if (context.read<RegistrationFormBloc>().state.showErrorMessages)
           Text(

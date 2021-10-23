@@ -62,7 +62,6 @@ class LogButtonBuilder extends StatelessWidget {
         ),
       );
 
-
   void _experienceCardListener(BuildContext context, ExperienceAddToLogActorState state) =>
       state.failureOrSuccessOption.fold(
         () {},
@@ -70,11 +69,12 @@ class LogButtonBuilder extends StatelessWidget {
           (failure) => FlushbarHelper.createError(
             duration: const Duration(seconds: 2),
             message: failure.maybeMap(
-                coreData: (failure) => failure.coreDataFailure.maybeMap(
-                      serverError: (failure) => failure.errorString,
-                      orElse: () => S.of(context).unknownError,
-                    ),
-                orElse: () => S.of(context).unknownError),
+              coreData: (failure) => failure.coreDataFailure.maybeMap(
+                serverError: (failure) => failure.errorString,
+                orElse: () => S.of(context).unknownError,
+              ),
+              orElse: () => S.of(context).unknownError,
+            ),
           ).show(context),
           (_) {},
         ),

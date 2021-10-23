@@ -140,10 +140,10 @@ class User with _$User {
   SimpleUser get simplified => SimpleUser.fromUser(this);
 
   double get percentageToNextLevel {
-    final _nextLevelRequirements = Levels.experiencePointsRequired(level.getOrCrash() + 1);
+    final _nextLevelRequirements = experiencePointsRequired(level.getOrCrash() + 1);
     int _totalToCurrentLevelRequirements = 0;
     for (int i = 0; i <= level.getOrCrash(); i++) {
-      _totalToCurrentLevelRequirements += Levels.experiencePointsRequired(i);
+      _totalToCurrentLevelRequirements += experiencePointsRequired(i);
     }
     final _hadToNextLevel = experiencePoints.getOrCrash() - _totalToCurrentLevelRequirements;
     final _result = _hadToNextLevel / _nextLevelRequirements;

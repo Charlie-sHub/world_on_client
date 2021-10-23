@@ -54,7 +54,8 @@ class ExperienceAddToLogActorBloc extends Bloc<ExperienceAddToLogActorEvent, Exp
   }
 
   Stream<ExperienceAddToLogActorState> _onDismissedExperienceFromLog(
-      _DismissedExperienceFromLog event) async* {
+    _DismissedExperienceFromLog event,
+  ) async* {
     yield state.copyWith(
       failureOrSuccessOption: none(),
     );

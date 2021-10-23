@@ -95,8 +95,11 @@ class MainPage extends StatelessWidget {
     );
   }
 
-  void _onShowCaseComplete(GlobalKey<State<StatefulWidget>> key,
-      GlobalKey<State<StatefulWidget>> _experienceCreationButtonKey, BuildContext context) {
+  void _onShowCaseComplete(
+    GlobalKey<State<StatefulWidget>> key,
+    GlobalKey<State<StatefulWidget>> _experienceCreationButtonKey,
+    BuildContext context,
+  ) {
     if (key == _experienceCreationButtonKey) {
       context.read<NavigationActorBloc>().add(
             NavigationActorEvent.profileTapped(
@@ -122,11 +125,12 @@ class MainPage extends StatelessWidget {
         loadFailure: (_failureState) => FlushbarHelper.createError(
           duration: const Duration(seconds: 2),
           message: _failureState.failure.maybeMap(
-              coreData: (failure) => failure.coreDataFailure.maybeMap(
-                    serverError: (failure) => failure.errorString,
-                    orElse: () => S.of(context).unknownError,
-                  ),
-              orElse: () => S.of(context).unknownError),
+            coreData: (failure) => failure.coreDataFailure.maybeMap(
+              serverError: (failure) => failure.errorString,
+              orElse: () => S.of(context).unknownError,
+            ),
+            orElse: () => S.of(context).unknownError,
+          ),
         ).show(context),
         orElse: () {},
       );

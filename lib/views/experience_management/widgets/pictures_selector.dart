@@ -79,7 +79,7 @@ class PicturesSelector extends StatelessWidget {
     ExperienceManagementFormState state,
   ) async {
     try {
-      final _imagesPicked = await MultiImagePicker.pickImages(
+      MultiImagePicker.pickImages(
         maxImages: 15,
         enableCamera: true,
         selectedAssets: state.experience.imageAssetsOption.fold(
@@ -95,10 +95,13 @@ class PicturesSelector extends StatelessWidget {
           selectCircleStrokeColor: "#FCA311",
           statusBarColor: "#000000",
         ),
+      ).then(
+        (imagesPicked) => context.read<ExperienceManagementFormBloc>().add(
+              ExperienceManagementFormEvent.imagesChanged(
+                imagesPicked,
+              ),
+            ),
       );
-      context.read<ExperienceManagementFormBloc>().add(
-            ExperienceManagementFormEvent.imagesChanged(_imagesPicked),
-          );
     } on Exception catch (error) {
       // This try-catch only exists to control for when the user cancels the selection
       getIt<Logger>().e("Exception: $error");

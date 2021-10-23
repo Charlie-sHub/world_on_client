@@ -24,14 +24,17 @@ class UserImagePicker extends StatelessWidget {
               (_imageURL) {
                 if (_imageURL.isNotEmpty) {
                   return TextButton(
-                    onPressed: () async {
-                      final _imageFile = await openPictureSelectDialog(context);
-                      if (_imageFile != null) {
-                        context.read<RegistrationFormBloc>().add(
-                              RegistrationFormEvent.imageChanged(_imageFile),
-                            );
-                      }
-                    },
+                    onPressed: () => openPictureSelectDialog(context).then(
+                      (imageFile) {
+                        if (imageFile != null) {
+                          context.read<RegistrationFormBloc>().add(
+                                RegistrationFormEvent.imageChanged(
+                                  imageFile,
+                                ),
+                              );
+                        }
+                      },
+                    ),
                     child: CircleAvatar(
                       radius: _avatarRadius,
                       backgroundImage: CachedNetworkImageProvider(_imageURL),
@@ -43,14 +46,17 @@ class UserImagePicker extends StatelessWidget {
               },
             ),
             (imageFile) => TextButton(
-              onPressed: () async {
-                final _imageFile = await openPictureSelectDialog(context);
-                if (_imageFile != null) {
-                  context.read<RegistrationFormBloc>().add(
-                        RegistrationFormEvent.imageChanged(_imageFile),
-                      );
-                }
-              },
+              onPressed: () => openPictureSelectDialog(context).then(
+                (imageFile) {
+                  if (imageFile != null) {
+                    context.read<RegistrationFormBloc>().add(
+                          RegistrationFormEvent.imageChanged(
+                            imageFile,
+                          ),
+                        );
+                  }
+                },
+              ),
               child: CircleAvatar(
                 radius: _avatarRadius,
                 backgroundImage: FileImage(imageFile!),

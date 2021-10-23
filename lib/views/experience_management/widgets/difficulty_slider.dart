@@ -25,7 +25,8 @@ class DifficultySlider extends StatelessWidget {
         label:
             context.read<ExperienceManagementFormBloc>().state.experience.difficulty.getOrCrash().toString(),
         activeColor: getColorByDifficulty(
-            context.read<ExperienceManagementFormBloc>().state.experience.difficulty.getOrCrash()),
+          context.read<ExperienceManagementFormBloc>().state.experience.difficulty.getOrCrash(),
+        ),
         onChanged: (value) => context.read<ExperienceManagementFormBloc>().add(
               ExperienceManagementFormEvent.difficultyChanged(value.round()),
             ),

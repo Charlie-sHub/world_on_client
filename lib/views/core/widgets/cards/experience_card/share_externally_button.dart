@@ -27,33 +27,33 @@ class ShareExternallyButton extends StatelessWidget {
       ),
       padding: const EdgeInsets.all(5),
       constraints: const BoxConstraints(),
-      onPressed: () => _share(
-        context,
-        experience,
-      ),
+      onPressed: () => _onShare(context),
     );
   }
 
-  Future<void> _share(BuildContext context, Experience experience) async {
-    // I don't really like having to download the image only to be able to share it
-    // I'd like to rethink this
-    final _response = await get(
-      Uri.parse(
-        experience.imageURLs.first,
-      ),
-    );
-    final _documentDirectory = await getApplicationDocumentsDirectory();
-    final file = File(
-      join(
-        _documentDirectory.path,
-        "${experience.title.getOrCrash()}_share_image.png",
-      ),
-    );
-    file.writeAsBytesSync(_response.bodyBytes);
-    SocialShare.shareOptions(
-      "${experience.title.getOrCrash()} ${S.of(context).shareMessage} https://play.google.com/store/apps/details?id=com.worldon_app.worldon",
-      imagePath: file.path,
-    );
-    file.delete();
-  }
+  // I don't really like having to download the image only to be able to share it
+  // I'd like to rethink this
+  void _onShare(BuildContext context) => get(
+        Uri.parse(experience.imageURLs.first),
+      ).then(
+        (response) {
+          getApplicationDocumentsDirectory().then(
+            (documentDirectory) {
+              const _url = "https://play.google.com/store/apps/details?id=com.worldon_app.worldon";
+              final _file = File(
+                join(
+                  documentDirectory.path,
+                  "${experience.title.getOrCrash()}_share_image.png",
+                ),
+              );
+              _file.writeAsBytesSync(response.bodyBytes);
+              SocialShare.shareOptions(
+                "${experience.title.getOrCrash()} ${S.of(context).shareMessage} $_url",
+                imagePath: _file.path,
+              );
+              _file.delete();
+            },
+          );
+        },
+      );
 }

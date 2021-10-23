@@ -16,7 +16,8 @@ import 'package:worldon/data/core/models/experience/objective_list/objective_id_
 import 'package:worldon/data/core/models/experience/objective_list/objective_id_list_fields.dart';
 import 'package:worldon/data/core/models/user/user_dto.dart';
 import 'package:worldon/data/core/models/user/user_fields.dart';
-import 'package:worldon/domain/core/entities/coordinates/coordinates.dart' as world_on_coordinates;
+import 'package:worldon/domain/core/entities/coordinates/coordinates.dart'
+    as world_on_coordinates;
 import 'package:worldon/domain/core/entities/experience/experience.dart';
 import 'package:worldon/domain/core/entities/item/item.dart';
 import 'package:worldon/domain/core/entities/objective/objective.dart';
@@ -25,8 +26,12 @@ import 'package:worldon/domain/core/validation/objects/objective_list.dart';
 import 'package:worldon/domain/core/validation/objects/unique_id.dart';
 import 'package:worldon/domain/experience_navigation/repository/experience_navigation_repository_interface.dart';
 
-@LazySingleton(as: ExperienceNavigationRepositoryInterface, env: [Environment.prod])
-class ProductionExperienceNavigationRepository implements ExperienceNavigationRepositoryInterface {
+@LazySingleton(
+  as: ExperienceNavigationRepositoryInterface,
+  env: [Environment.prod],
+)
+class ProductionExperienceNavigationRepository
+    implements ExperienceNavigationRepositoryInterface {
   final Logger _logger;
   final _geo = Geoflutterfire();
   final FirebaseFirestore _firestore;
@@ -131,7 +136,8 @@ class ProductionExperienceNavigationRepository implements ExperienceNavigationRe
   }
 
   void _propagate(UniqueId experienceId) {
-    final _propagateUpdateCallable = _functions.httpsCallable("propagateExperienceUpdate");
+    final _propagateUpdateCallable =
+        _functions.httpsCallable("propagateExperienceUpdate");
     _propagateUpdateCallable.call(
       <String, dynamic>{"experienceId": experienceId.getOrCrash()},
     );
@@ -191,7 +197,8 @@ class ProductionExperienceNavigationRepository implements ExperienceNavigationRe
   }
 
   @override
-  Stream<Either<Failure, KtList<Experience>>> watchRecommendedExperiences() async* {
+  Stream<Either<Failure, KtList<Experience>>>
+      watchRecommendedExperiences() async* {
     final _userDto = await _firestore.currentUserDto();
     final _position = await Geolocator.getCurrentPosition(
       desiredAccuracy: LocationAccuracy.high,
@@ -248,7 +255,8 @@ class ProductionExperienceNavigationRepository implements ExperienceNavigationRe
               final _creator = _experience.creator;
               _firestore.userCollection.doc(_creator.id).update(
                 {
-                  "${UserFields.promotionPlan}.timesSeen": FieldValue.increment(1),
+                  "${UserFields.promotionPlan}.timesSeen":
+                      FieldValue.increment(1),
                 },
               );
             }
@@ -387,7 +395,11 @@ class ProductionExperienceNavigationRepository implements ExperienceNavigationRe
     String userId,
     String experienceId,
   ) async =>
-      _firestore.userCollection.doc(userId).saveCollection.doc(experienceId).get();
+      _firestore.userCollection
+          .doc(userId)
+          .saveCollection
+          .doc(experienceId)
+          .get();
 
   @override
   Future<Either<Failure, Unit>> removeExperienceBoostItem(Item item) async {
@@ -413,7 +425,9 @@ class ProductionExperienceNavigationRepository implements ExperienceNavigationRe
       _logger.e("FirebaseException: ${error.message}");
       return left(
         Failure.coreData(
-          CoreDataFailure.serverError(errorString: "Firebase error: ${error.message}"),
+          CoreDataFailure.serverError(
+            errorString: "Firebase error: ${error.message}",
+          ),
         ),
       );
     } else if (error is AssertionError) {

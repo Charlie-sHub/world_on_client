@@ -28,7 +28,8 @@ class ExperienceNavigationWatcherBloc
   }
 
   Stream<ExperienceNavigationWatcherState> _onAllObjectivesAccomplished(
-      _AllObjectivesAccomplished event) async* {
+    _AllObjectivesAccomplished event,
+  ) async* {
     yield ExperienceNavigationWatcherState.finishExperience(
       event.experience,
     );

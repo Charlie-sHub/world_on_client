@@ -22,8 +22,7 @@ import 'package:worldon/domain/core/validation/objects/name.dart';
 import 'package:worldon/domain/core/validation/objects/objective_list.dart';
 import 'package:worldon/domain/core/validation/objects/reward_set.dart';
 import 'package:worldon/domain/core/validation/objects/tag_set.dart';
-import 'package:worldon/domain/experience_management/use_case/edit_experience.dart'
-    as edit_experience;
+import 'package:worldon/domain/experience_management/use_case/edit_experience.dart' as edit_experience;
 
 import '../../../injection.dart';
 
@@ -32,8 +31,7 @@ part 'experience_editing_form_event.dart';
 part 'experience_editing_form_state.dart';
 
 @injectable
-class ExperienceEditingFormBloc
-    extends Bloc<ExperienceEditingFormEvent, ExperienceEditingFormState> {
+class ExperienceEditingFormBloc extends Bloc<ExperienceEditingFormEvent, ExperienceEditingFormState> {
   ExperienceEditingFormBloc() : super(ExperienceEditingFormState.initial());
 
   static const _imageNumberLimit = 15;
@@ -82,7 +80,8 @@ class ExperienceEditingFormBloc
               left(
                 const Failure.experienceManagementApplication(
                   ExperienceManagementApplicationFailure.surpassedImageLimit(
-                      limit: _imageNumberLimit),
+                    limit: _imageNumberLimit,
+                  ),
                 ),
               ),
             ),

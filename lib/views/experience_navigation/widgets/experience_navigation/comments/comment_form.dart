@@ -38,8 +38,7 @@ class CommentForm extends HookWidget {
           ),
         ),
       child: BlocConsumer<CommentFormBloc, CommentFormState>(
-        listenWhen: (previous, current) =>
-            previous.failureOrSuccessOption != current.failureOrSuccessOption,
+        listenWhen: (previous, current) => previous.failureOrSuccessOption != current.failureOrSuccessOption,
         listener: (context, state) => _commentFormListener(
           state,
           context,
@@ -63,8 +62,7 @@ class CommentForm extends HookWidget {
                     (failure) => failure.maybeMap(
                       emptyString: (_) => S.of(context).commentEmptyString,
                       stringExceedsLength: (_) => S.of(context).commentStringExceedsLength,
-                      stringWithInvalidCharacters: (_) =>
-                          S.of(context).commentStringWithInvalidCharacters,
+                      stringWithInvalidCharacters: (_) => S.of(context).commentStringWithInvalidCharacters,
                       orElse: () => S.of(context).unknownError,
                     ),
                     (_) => null,
@@ -99,8 +97,11 @@ class CommentForm extends HookWidget {
     );
   }
 
-  void _commentFormListener(CommentFormState state, BuildContext context,
-          TextEditingController _textEditingController) =>
+  void _commentFormListener(
+    CommentFormState state,
+    BuildContext context,
+    TextEditingController _textEditingController,
+  ) =>
       state.failureOrSuccessOption.fold(
         () {},
         (either) => either.fold(

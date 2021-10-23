@@ -55,21 +55,20 @@ class MapTabView extends StatelessWidget {
     );
   }
 
-  Marker _mapObjectiveToMarker(Objective _objective, BuildContext context) {
-    return Marker(
-      markerId: MarkerId(
-        _objective.id.toString(),
-      ),
-      position: LatLng(
-        _objective.coordinates.latitude.getOrCrash(),
-        _objective.coordinates.longitude.getOrCrash(),
-      ),
-      infoWindow: InfoWindow(
-        title: _objective.description.getOrCrash(),
-        snippet: S.of(context).mapMarkerSnippet,
-      ),
-    );
-  }
+  Marker _mapObjectiveToMarker(Objective objective, BuildContext context) =>
+      Marker(
+        markerId: MarkerId(
+          objective.id.toString(),
+        ),
+        position: LatLng(
+          objective.coordinates.latitude.getOrCrash(),
+          objective.coordinates.longitude.getOrCrash(),
+        ),
+        infoWindow: InfoWindow(
+          title: objective.description.getOrCrash(),
+          snippet: S.of(context).mapMarkerSnippet,
+        ),
+      );
 
   void _onCameraMoved(
     BuildContext context,
