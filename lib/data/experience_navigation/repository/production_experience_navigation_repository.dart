@@ -27,7 +27,9 @@ import 'package:worldon/domain/core/validation/objects/unique_id.dart';
 import 'package:worldon/domain/experience_navigation/repository/experience_navigation_repository_interface.dart';
 
 @LazySingleton(
-    as: ExperienceNavigationRepositoryInterface, env: [Environment.prod])
+  as: ExperienceNavigationRepositoryInterface,
+  env: [Environment.prod],
+)
 class ProductionExperienceNavigationRepository
     implements ExperienceNavigationRepositoryInterface {
   final Logger _logger;
@@ -206,9 +208,7 @@ class ProductionExperienceNavigationRepository
       longitude: _position.longitude,
     );
     if (_userDto.interestsIds.isNotEmpty) {
-      // TODO: Change the radius back to 30
-      // Changed to 30000 just to always get some recommended experiences
-      const double _kmRadius = 30000;
+      const double _kmRadius = 30;
       yield* _geo
           .collection(
             collectionRef: _firestore.collection("experiences"),
@@ -426,7 +426,8 @@ class ProductionExperienceNavigationRepository
       return left(
         Failure.coreData(
           CoreDataFailure.serverError(
-              errorString: "Firebase error: ${error.message}"),
+            errorString: "Firebase error: ${error.message}",
+          ),
         ),
       );
     } else if (error is AssertionError) {

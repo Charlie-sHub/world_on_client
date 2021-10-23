@@ -15,14 +15,15 @@ part 'adventure_map_controller_bloc.freezed.dart';
 part 'adventure_map_controller_event.dart';
 part 'adventure_map_controller_state.dart';
 
-@injectable
+@lazySingleton
 class AdventureMapControllerBloc
     extends Bloc<AdventureMapControllerEvent, AdventureMapControllerState> {
   AdventureMapControllerBloc() : super(AdventureMapControllerState.initial());
 
   @override
   Stream<AdventureMapControllerState> mapEventToState(
-      AdventureMapControllerEvent event) async* {
+    AdventureMapControllerEvent event,
+  ) async* {
     yield* event.map(
       initialized: _onInitialized,
       cameraPositionChanged: _onCameraPositionChanged,

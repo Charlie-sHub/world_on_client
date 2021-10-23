@@ -235,5 +235,6 @@
   "difficultyShowCase": "Que tan dificil sera completar la experiencia?",
   "mapShowCase": "Cual sera la ubicacion inicial de la experiencia?",
   "objectivesShowCase": "Crea los objetivos de la experiencia, o en otras palabras los pasos a seguir",
-  "tagCreationShowCase": "Crea o busca etiquetas que describan la experincia que has creado"
+  "tagCreationShowCase": "Crea o busca etiquetas que describan la experincia que has creado",
+  "locationPermission": "Por favor, otorgue permisos de ubicación para cargar el mapa, toque para volver a intentarlo"
 }

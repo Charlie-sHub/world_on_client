@@ -235,5 +235,6 @@
   "difficultyShowCase": "How difficult will the experience be?",
   "mapShowCase": "What is the initial location of the experience?",
   "objectivesShowCase": "Create the objectives of the experience or in other words the steps to follows",
-  "tagCreationShowCase": "Create or look for tags that describe the experience you have created"
+  "tagCreationShowCase": "Create or look for tags that describe the experience you have created",
+  "locationPermission": "Please grant location permissions to load the map, tap to retry"
 }
