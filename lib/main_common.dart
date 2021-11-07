@@ -31,12 +31,24 @@ Future<void> mainCommon(String environment) async {
 }
 
 Future<void> initializeLocalNotifications() async {
-  const initializationSettingsAndroid =
-      AndroidInitializationSettings("world_on_logo");
-  const initializationSettings = InitializationSettings(
-    android: initializationSettingsAndroid,
+  const _androidSettings = AndroidInitializationSettings("world_on_logo");
+  const _iOSSettings = IOSInitializationSettings(
+    onDidReceiveLocalNotification: _onDidReceiveLocalNotification,
+  );
+  const _initializationSettings = InitializationSettings(
+    android: _androidSettings,
+    iOS: _iOSSettings,
   );
   await getIt<FlutterLocalNotificationsPlugin>().initialize(
-    initializationSettings,
+    _initializationSettings,
   );
+}
+
+void _onDidReceiveLocalNotification(
+  int id,
+  String? title,
+  String? body,
+  String? payload,
+) {
+  // TODO: Properly handle the notifications
 }

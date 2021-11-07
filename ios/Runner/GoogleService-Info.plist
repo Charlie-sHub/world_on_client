@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>843356285440-te4s0a8r6kbienkrtvq3bg8u035sd4fg.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.843356285440-te4s0a8r6kbienkrtvq3bg8u035sd4fg</string>
+	<key>ANDROID_CLIENT_ID</key>
+	<string>843356285440-cn8qpc2a0lg4e059ibjdldvuuofddhlp.apps.googleusercontent.com</string>
+	<key>API_KEY</key>
+	<string>AIzaSyA_7o5gTjzc4ZKguYppn7DXTyntVi8aMcY</string>
+	<key>GCM_SENDER_ID</key>
+	<string>843356285440</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.worldonapp.worldon</string>
+	<key>PROJECT_ID</key>
+	<string>world-on-930f9</string>
+	<key>STORAGE_BUCKET</key>
+	<string>world-on-930f9.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:843356285440:ios:00c7bdf38702149fbc46e5</string>
+	<key>DATABASE_URL</key>
+	<string>https://world-on-930f9.firebaseio.com</string>
+</dict>
+</plist>
