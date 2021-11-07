@@ -15,35 +15,35 @@ environment:
   sdk: ">=2.12.0 <3.0.0"
 
 dependencies:
-  algolia: ^1.0.1
+  algolia: ^1.0.2
   animated_bottom_navigation_bar: ^0.3.2
-  another_flushbar: ^1.10.24
+  another_flushbar: ^1.10.25
   auth_buttons: ^1.0.1+4
-  auto_route: ^3.0.2
+  auto_route: ^3.0.4
   auto_size_text: ^3.0.0-nullsafety.0
   bloc: ^7.2.1
-  bloc_test: ^8.3.0
-  cached_network_image: ^3.1.0
+  bloc_test: ^8.5.0
+  cached_network_image: ^3.1.0+1
   carousel_slider: ^4.0.0
   cloud_firestore: ^2.5.4
-  cloud_functions: ^3.0.5
+  cloud_functions: ^3.1.0
   dartz: ^0.10.0
   email_validator: ^2.0.1
   equatable: ^2.0.3
-  firebase_auth: ^3.1.4
-  firebase_core: ^1.8.0
-  firebase_messaging: ^10.0.9
-  firebase_storage: ^10.0.6
+  firebase_auth: ^3.2.0
+  firebase_core: ^1.10.0
+  firebase_messaging: ^11.1.0
+  firebase_storage: ^10.1.0
   flutter:
     sdk: flutter
-  flutter_bloc: ^7.3.1
+  flutter_bloc: ^7.3.3
   flutter_carousel_slider: ^1.0.8
   flutter_hooks: ^0.18.0
-  flutter_local_notifications: ^9.0.0
+  flutter_local_notifications: ^9.0.2
   flutter_localizations:
     sdk: flutter
   flutter_slidable: ^0.6.0
-  flutter_speed_dial: ^4.5.0
+  flutter_speed_dial: ^4.6.6
   flutter_vector_icons: ^1.0.0
   freezed: ^0.15.0+1
   freezed_annotation: ^0.15.0
@@ -51,17 +51,17 @@ dependencies:
   geolocator: ^7.7.1
   get_it: ^7.2.0
   google_maps_flutter:
-  google_sign_in: ^5.2.0
+  google_sign_in: ^5.2.1
   http: ^0.13.4
-  image_picker: ^0.8.4+3
+  image_picker: ^0.8.4+4
   implicitly_animated_reorderable_list: ^0.4.2
   in_app_purchase: ^1.0.9
-  in_app_purchase_android: ^0.1.5+1
+  in_app_purchase_android: ^0.1.6
   injectable: ^1.5.0
   intl: ^0.17.0
   jiffy: ^4.1.0
   json_annotation: ^4.3.0
-  kt_dart: ^0.9.1
+  kt_dart: ^0.10.0
   logger: ^1.1.0
   material_design_icons_flutter: ^5.0.5955-rc.1
   meta: ^1.7.0
@@ -69,14 +69,14 @@ dependencies:
   multi_image_picker2: ^5.0.2
   number_display: ^3.0.0
   path: ^1.8.0
-  path_provider: ^2.0.5
+  path_provider: ^2.0.6
   percent_indicator: ^3.4.0
-  permission_handler: ^8.2.5
+  permission_handler: ^8.2.6
   provider: ^6.0.1
   quiver: ^3.0.1+1
   rxdart: ^0.27.2
   sa3_liquid: ^1.0.1
-  showcaseview: ^1.1.2
+  showcaseview: ^1.1.3
   simple_animations: ^4.0.1
   social_share: ^2.1.1
   uuid: ^3.0.5
