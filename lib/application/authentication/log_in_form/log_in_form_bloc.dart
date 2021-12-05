@@ -14,7 +14,9 @@ import 'package:worldon/domain/core/validation/objects/password.dart';
 import 'package:worldon/injection.dart';
 
 part 'log_in_form_bloc.freezed.dart';
+
 part 'log_in_form_event.dart';
+
 part 'log_in_form_state.dart';
 
 @injectable

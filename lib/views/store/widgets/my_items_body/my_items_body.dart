@@ -25,8 +25,7 @@ class MyItemsBody extends StatelessWidget {
               ),
               loadSuccess: (state) {
                 final itemList = state.user.items.toImmutableList();
-                return SizedBox(
-                  height: MediaQuery.of(context).size.height * 0.85,
+                return Expanded(
                   child: RefreshIndicator(
                     onRefresh: () async => context.read<LoadUserBloc>().add(
                           const LoadUserEvent.loadedUser(),

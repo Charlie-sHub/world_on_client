@@ -50,28 +50,28 @@ class LogInPage extends StatelessWidget {
 
   Future _onFailure(Failure failure, BuildContext context) =>
       FlushbarHelper.createError(
-        duration: const Duration(seconds: 2),
-        message: failure.maybeMap(
-          authenticationDomain: (failure) =>
-              failure.authenticationDomainFailure.map(
-            cancelledByUser: (_) => S.of(context).cancelledByUser,
-          ),
-          authenticationData: (failure) =>
-              failure.authenticationDataFailure.map(
-            invalidCredentials: (_) => S.of(context).invalidCredentials,
-            unregisteredUser: (_) => S.of(context).unregisteredUser,
-          ),
-          coreData: (failure) => failure.coreDataFailure.maybeMap(
-            serverError: (failure) => failure.errorString,
-            orElse: () => S.of(context).unknownError,
-          ),
-          coreApplication: (failure) => failure.coreApplicationFailure.maybeMap(
-            emptyFields: (_) => S.of(context).emptyFields,
-            orElse: () => S.of(context).unknownError,
-          ),
+      duration: const Duration(seconds: 2),
+      message: failure.maybeMap(
+        authenticationDomain: (failure) =>
+            failure.authenticationDomainFailure.map(
+          cancelledByUser: (_) => S.of(context).cancelledByUser,
+        ),
+        authenticationData: (failure) => failure.authenticationDataFailure.map(
+          invalidCredentials: (_) => S.of(context).invalidCredentials,
+          unregisteredUser: (_) => S.of(context).unregisteredUser,
+        ),
+        coreData: (failure) => failure.coreDataFailure.maybeMap(
+          serverError: (failure) => failure.errorString,
           orElse: () => S.of(context).unknownError,
         ),
-      ).show(context);
+        coreApplication: (failure) => failure.coreApplicationFailure.maybeMap(
+          emptyFields: (_) => S.of(context).emptyFields,
+          orElse: () => S.of(context).unknownError,
+        ),
+        orElse: () => S.of(context).unknownError,
+      ),
+    ).show(context);
+
 
   void _onSuccess(BuildContext context) {
     context.router.replace(MainPageRoute(isNewUser: false));

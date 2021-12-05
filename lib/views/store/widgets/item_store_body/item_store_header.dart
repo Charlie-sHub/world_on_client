@@ -44,7 +44,7 @@ class ItemStoreHeader extends StatelessWidget {
                   ),
                 ),
                 Positioned(
-                  top: 40,
+                  top: 50,
                   child: SizedBox(
                     height: 30,
                     width: MediaQuery.of(context).size.width * 0.9,
@@ -74,7 +74,7 @@ class ItemStoreHeader extends StatelessWidget {
                   ),
                 ),
                 Positioned(
-                  top: 70,
+                  top: 80,
                   child: Text(
                     S.of(context).itemStoreHeaderTitle,
                     style: const TextStyle(
@@ -95,7 +95,7 @@ class ItemStoreHeader extends StatelessWidget {
                   ),
                 ),
                 Positioned(
-                  top: 100,
+                  top: 110,
                   child: AutoSizeText(
                     S.of(context).itemStoreHeaderSubTitle,
                     minFontSize: 10,

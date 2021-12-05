@@ -18,11 +18,10 @@ class ItemStoreBody extends StatelessWidget {
               padding: const EdgeInsets.symmetric(horizontal: 10),
               child: Column(
                 children: const [
-                  SizedBox(height: 10),
-                  ItemListBuilder(),
-                  SizedBox(height: 10),
+                  Expanded(child: ItemListBuilder()),
                   Divider(color: WorldOnColors.accent),
                   CoinPurchaseView(),
+                  SizedBox(height: 15),
                 ],
               ),
             ),
