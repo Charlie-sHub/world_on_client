@@ -28,13 +28,14 @@ class ProfileExperiencesDialer extends StatelessWidget {
         animatedIconTheme: const IconThemeData(
           size: 30,
         ),
-        buttonSize: 48,
-        childrenButtonSize: 50,
+        buttonSize: const Size(48, 48),
+        childrenButtonSize: const Size(50, 50),
         childMargin: const EdgeInsets.symmetric(horizontal: 5),
         children: [
           SpeedDialChild(
             onTap: () => context.read<ProfileExperiencesWatcherBloc>().add(
-                  ProfileExperiencesWatcherEvent.watchExperiencesCreatedStarted(user),
+                  ProfileExperiencesWatcherEvent.watchExperiencesCreatedStarted(
+                      user),
                 ),
             label: S.of(context).created,
             labelStyle: const TextStyle(
@@ -48,7 +49,8 @@ class ProfileExperiencesDialer extends StatelessWidget {
           ),
           SpeedDialChild(
             onTap: () => context.read<ProfileExperiencesWatcherBloc>().add(
-                  ProfileExperiencesWatcherEvent.watchExperiencesDoneStarted(user),
+                  ProfileExperiencesWatcherEvent.watchExperiencesDoneStarted(
+                      user),
                 ),
             label: S.of(context).done,
             labelStyle: const TextStyle(
@@ -62,7 +64,8 @@ class ProfileExperiencesDialer extends StatelessWidget {
           ),
           SpeedDialChild(
             onTap: () => context.read<ProfileExperiencesWatcherBloc>().add(
-                  ProfileExperiencesWatcherEvent.watchExperiencesLikedStarted(user),
+                  ProfileExperiencesWatcherEvent.watchExperiencesLikedStarted(
+                      user),
                 ),
             label: isOwnProfile ? S.of(context).iLike : S.of(context).liked,
             labelStyle: const TextStyle(

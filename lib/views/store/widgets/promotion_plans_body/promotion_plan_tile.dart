@@ -20,20 +20,23 @@ class PromotionPlanTile extends StatelessWidget {
     final _expirationDate = DateTime.now().add(
       Duration(days: plan.amountOfDays),
     );
-    final _expirationDateString = "${S.of(context).validUntilIfBoughtToday}: ${_expirationDate.year}-${_expirationDate.month}-${_expirationDate.day}";
+    final _expirationDateString =
+        "${S.of(context).validUntilIfBoughtToday}: ${_expirationDate.year}-${_expirationDate.month}-${_expirationDate.day}";
     return Slidable(
-      actionPane: const SlidableScrollActionPane(),
-      secondaryActions: [
-        IconSlideAction(
-          onTap: () => context.read<BuyPromotionPlanActorBloc>().add(
-                BuyPromotionPlanActorEvent.boughtPromotionPlan(plan),
-              ),
-          color: WorldOnColors.primary,
-          foregroundColor: WorldOnColors.white,
-          caption: S.of(context).buyItem,
-          icon: Icons.payments_rounded,
-        ),
-      ],
+      endActionPane: ActionPane(
+        motion: const DrawerMotion(),
+        children: [
+          SlidableAction(
+            onPressed: (_) => context.read<BuyPromotionPlanActorBloc>().add(
+                  BuyPromotionPlanActorEvent.boughtPromotionPlan(plan),
+                ),
+            backgroundColor: WorldOnColors.primary,
+            foregroundColor: WorldOnColors.white,
+            label: S.of(context).buyItem,
+            icon: Icons.payments_rounded,
+          ),
+        ],
+      ),
       child: ListTile(
         isThreeLine: true,
         title: Column(

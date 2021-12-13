@@ -6,18 +6,12 @@ import 'package:worldon/generated/l10n.dart';
 class OwnedButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return SlideAction(
-      color: Colors.grey,
-      onTap: () => FlushbarHelper.createInformation(
+    return SlidableAction(
+      backgroundColor: Colors.grey,
+      onPressed: (context) => FlushbarHelper.createInformation(
         message: S.of(context).alreadyOwned,
       ).show(context),
-      child: Text(
-        S.of(context).owned,
-        style: const TextStyle(
-          fontWeight: FontWeight.bold,
-          fontSize: 20,
-        ),
-      ),
+      label: S.of(context).owned,
     );
   }
 }

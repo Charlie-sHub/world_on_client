@@ -14,24 +14,26 @@ part 'achievement_management_actor_event.dart';
 part 'achievement_management_actor_state.dart';
 
 @injectable
-class AchievementManagementActorBloc extends Bloc<AchievementManagementActorEvent, AchievementManagementActorState> {
-  AchievementManagementActorBloc() : super(const AchievementManagementActorState.initial());
-
-  @override
-  Stream<AchievementManagementActorState> mapEventToState(AchievementManagementActorEvent event) async* {
-    yield* event.map(
-      deleted: _onDeleted,
-    );
+class AchievementManagementActorBloc extends Bloc<
+    AchievementManagementActorEvent, AchievementManagementActorState> {
+  AchievementManagementActorBloc()
+      : super(const AchievementManagementActorState.initial()) {
+    on<_Deleted>(_onDeleted);
   }
 
-  Stream<AchievementManagementActorState> _onDeleted(_Deleted event) async* {
-    yield const AchievementManagementActorState.actionInProgress();
+  FutureOr<void> _onDeleted(
+    AchievementManagementActorEvent event,
+    Emitter emit,
+  ) async {
+    emit(const AchievementManagementActorState.actionInProgress());
     final _eitherFailureOrSuccess = await getIt<DeleteAchievement>()(
       Params(achievement: event.achievement),
     );
-    yield _eitherFailureOrSuccess.fold(
-      (failure) => AchievementManagementActorState.deletionFailure(failure),
-      (_) => const AchievementManagementActorState.deletionSuccess(),
+    emit(
+      _eitherFailureOrSuccess.fold(
+        (failure) => AchievementManagementActorState.deletionFailure(failure),
+        (_) => const AchievementManagementActorState.deletionSuccess(),
+      ),
     );
   }
 }

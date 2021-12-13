@@ -17,33 +17,39 @@ part 'tag_management_watcher_event.dart';
 part 'tag_management_watcher_state.dart';
 
 @injectable
-class TagManagementWatcherBloc extends Bloc<TagManagementWatcherEvent, TagManagementWatcherState> {
-  TagManagementWatcherBloc() : super(const TagManagementWatcherState.initial());
-
-  StreamSubscription<Either<Failure, KtList<Tag>>>? _tagsStreamSubscription;
-
-  @override
-  Stream<TagManagementWatcherState> mapEventToState(TagManagementWatcherEvent event) async* {
-    yield* event.map(
-      watchAllTagsStarted: _onWatchAllTagsStarted,
-      resultsReceived: _onResultsReceived,
-    );
+class TagManagementWatcherBloc
+    extends Bloc<TagManagementWatcherEvent, TagManagementWatcherState> {
+  TagManagementWatcherBloc()
+      : super(const TagManagementWatcherState.initial()) {
+    on<_WatchAllTagsStarted>(_onWatchAllTagsStarted);
+    on<_ResultsReceived>(_onResultsReceived);
   }
 
-  Stream<TagManagementWatcherState> _onResultsReceived(_ResultsReceived event) async* {
-    yield event.failureOrTags.fold(
-      (failure) => TagManagementWatcherState.loadFailure(failure),
-      (tags) => TagManagementWatcherState.loadSuccess(tags),
-    );
-  }
-
-  Stream<TagManagementWatcherState> _onWatchAllTagsStarted(_) async* {
-    yield const TagManagementWatcherState.loadInProgress();
+  FutureOr<void> _onWatchAllTagsStarted(
+    _WatchAllTagsStarted event,
+    Emitter emit,
+  ) async {
+    emit(const TagManagementWatcherState.loadInProgress());
     await _tagsStreamSubscription?.cancel();
     _tagsStreamSubscription = getIt<WatchAllTags>()(getIt<NoParams>()).listen(
-      (_failureOrTags) => add(TagManagementWatcherEvent.resultsReceived(_failureOrTags)),
+      (_failureOrTags) =>
+          add(TagManagementWatcherEvent.resultsReceived(_failureOrTags)),
     );
   }
+
+  void _onResultsReceived(
+    _ResultsReceived event,
+    Emitter emit,
+  ) {
+    emit(
+      event.failureOrTags.fold(
+        (failure) => TagManagementWatcherState.loadFailure(failure),
+        (tags) => TagManagementWatcherState.loadSuccess(tags),
+      ),
+    );
+  }
+
+  StreamSubscription<Either<Failure, KtList<Tag>>>? _tagsStreamSubscription;
 
   @override
   Future<void> close() async {

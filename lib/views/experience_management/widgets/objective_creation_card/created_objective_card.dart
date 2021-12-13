@@ -26,18 +26,20 @@ class CreatedObjectiveCard extends StatelessWidget {
       ).animate(animation),
       child: Slidable(
         key: Key(objective.id.getOrCrash()),
-        secondaryActions: [
-          IconButton(
-            icon: const Icon(
-              Icons.delete,
-              color: Colors.red,
+        endActionPane: ActionPane(
+          motion: const DrawerMotion(),
+          children: [
+            IconButton(
+              icon: const Icon(
+                Icons.delete,
+                color: Colors.red,
+              ),
+              onPressed: () => context.read<ObjectivesCreationBloc>().add(
+                    ObjectivesCreationEvent.removedObjective(objective),
+                  ),
             ),
-            onPressed: () => context.read<ObjectivesCreationBloc>().add(
-                  ObjectivesCreationEvent.removedObjective(objective),
-                ),
-          ),
-        ],
-        actionPane: const SlidableScrollActionPane(),
+          ],
+        ),
         child: Card(
           clipBehavior: Clip.antiAlias,
           elevation: animation.value * 10,

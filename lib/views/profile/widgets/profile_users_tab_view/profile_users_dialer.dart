@@ -26,8 +26,8 @@ class ProfileUsersDialer extends StatelessWidget {
         animatedIconTheme: const IconThemeData(
           size: 30,
         ),
-        buttonSize: 48,
-        childrenButtonSize: 50,
+        buttonSize: const Size(48, 48),
+        childrenButtonSize: const Size(50, 50),
         childMargin: const EdgeInsets.symmetric(horizontal: 5),
         children: [
           SpeedDialChild(

@@ -16,19 +16,12 @@ class BuyItemButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SlideAction(
-      color: WorldOnColors.primary,
-      onTap: () => context.read<BuyItemBloc>().add(
+    return SlidableAction(
+      backgroundColor: WorldOnColors.primary,
+      onPressed: (context) => context.read<BuyItemBloc>().add(
             BuyItemEvent.boughtItem(item),
           ),
-      child: Text(
-        S.of(context).buyItem,
-        style: const TextStyle(
-          fontWeight: FontWeight.bold,
-          color: WorldOnColors.white,
-          fontSize: 20,
-        ),
-      ),
+      label: S.of(context).buyItem,
     );
   }
 }

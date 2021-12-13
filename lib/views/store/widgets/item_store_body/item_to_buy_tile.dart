@@ -18,10 +18,12 @@ class ItemToBuyTile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Slidable(
-      secondaryActions: [
-        BuyButtonBuilder(item: item),
-      ],
-      actionPane: const SlidableScrollActionPane(),
+      endActionPane: ActionPane(
+        motion: const DrawerMotion(),
+        children: [
+          BuyButtonBuilder(item: item),
+        ],
+      ),
       child: ListTile(
         leading: Column(
           mainAxisAlignment: MainAxisAlignment.center,

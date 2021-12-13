@@ -20,18 +20,20 @@ class NotificationDismissibleTile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Slidable(
-      secondaryActions: [
-        IconButton(
-          onPressed: () => context.read<NotificationActorBloc>().add(
-                NotificationActorEvent.deleted(notification),
-              ),
-          icon: const Icon(
-            Icons.delete,
-            color: WorldOnColors.red,
+      endActionPane: ActionPane(
+        motion: const DrawerMotion(),
+        children: [
+          IconButton(
+            onPressed: () => context.read<NotificationActorBloc>().add(
+                  NotificationActorEvent.deleted(notification),
+                ),
+            icon: const Icon(
+              Icons.delete,
+              color: WorldOnColors.red,
+            ),
           ),
-        ),
-      ],
-      actionPane: const SlidableScrollActionPane(),
+        ],
+      ),
       child: ListTile(
         leading: UserAvatarFollowChecker(
           user: notification.sender,
