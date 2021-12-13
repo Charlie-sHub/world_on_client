@@ -49,7 +49,10 @@ class ImagePickerDialog extends StatelessWidget {
         ],
       );
 
-  Future<void> _pickImage(BuildContext context, ImageSource source) =>
+  Future<void> _pickImage(
+    BuildContext context,
+    ImageSource source,
+  ) =>
       ImagePicker()
           .pickImage(
         source: source,

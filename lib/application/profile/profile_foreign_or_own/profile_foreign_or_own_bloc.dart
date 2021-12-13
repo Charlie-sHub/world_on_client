@@ -17,7 +17,7 @@ part 'profile_foreign_or_own_bloc.freezed.dart';
 part 'profile_foreign_or_own_event.dart';
 part 'profile_foreign_or_own_state.dart';
 
-@injectable
+@lazySingleton
 class ProfileForeignOrOwnBloc
     extends Bloc<ProfileForeignOrOwnEvent, ProfileForeignOrOwnState> {
   ProfileForeignOrOwnBloc() : super(const ProfileForeignOrOwnState.initial()) {

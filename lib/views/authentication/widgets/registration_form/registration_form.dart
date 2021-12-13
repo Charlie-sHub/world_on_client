@@ -37,7 +37,7 @@ class RegistrationForm extends StatelessWidget {
             ? AutovalidateMode.always
             : AutovalidateMode.disabled,
         child: Padding(
-          padding: const EdgeInsets.all(25),
+          padding: const EdgeInsets.symmetric(horizontal: 25),
           child: Column(
             children: <Widget>[
               const WorldOnTitle(),
@@ -118,15 +118,22 @@ class RegistrationForm extends StatelessWidget {
               ),
               const SizedBox(height: 5),
               TagAdditionCreationCard(
-                tagChangeFunction: (KtSet<Tag> tags) => _onTagChanges(
+                tagChangeFunction: (KtSet<Tag> tags) =>
+                   _onTagChanges(
                   context,
-                  tags,
-                ),
+                          tags,
+                        ),
                 tagsEitherOption: none(),
                 showErrorMessage: false,
               ),
               const SizedBox(height: _sizedBoxHeight),
+              const Divider(
+                color: Colors.grey,
+                thickness: 2,
+              ),
+              const SizedBox(height: _sizedBoxHeight),
               const SubmitRegisterButton(),
+              const SizedBox(height: _sizedBoxHeight * 4),
             ],
           ),
         ),

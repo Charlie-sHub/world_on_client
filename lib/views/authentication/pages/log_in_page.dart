@@ -15,8 +15,7 @@ class LogInPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) => GestureDetector(
         onTap: () => FocusManager.instance.primaryFocus?.unfocus(),
-        child: SafeArea(
-          child: Scaffold(
+        child: Scaffold(
             body: BlocProvider.value(
               value: getIt<LogInFormBloc>(),
               child: BlocConsumer<LogInFormBloc, LogInFormState>(
@@ -45,7 +44,6 @@ class LogInPage extends StatelessWidget {
               ),
             ),
           ),
-        ),
       );
 
   Future _onFailure(Failure failure, BuildContext context) =>

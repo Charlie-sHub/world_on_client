@@ -23,8 +23,7 @@ class RegistrationPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) => GestureDetector(
         onTap: () => FocusManager.instance.primaryFocus?.unfocus(),
-        child: SafeArea(
-          child: Scaffold(
+        child:  Scaffold(
             body: BlocProvider.value(
               value: getIt<RegistrationFormBloc>()
                 ..add(
@@ -55,8 +54,7 @@ class RegistrationPage extends StatelessWidget {
                   userOption: userOption,
                 ),
               ),
-            ),
-          ),
+            )
         ),
       );
 

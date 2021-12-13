@@ -75,6 +75,7 @@ class ExperienceManagementPage extends StatelessWidget {
                         expandedHeight: kToolbarHeight - 15,
                         elevation: 10,
                         centerTitle: true,
+                        backwardsCompatibility: false,
                         actions: [
                           IconButton(
                             padding: EdgeInsets.zero,

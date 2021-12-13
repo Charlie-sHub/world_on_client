@@ -9,7 +9,7 @@ part 'navigation_actor_bloc.freezed.dart';
 part 'navigation_actor_event.dart';
 part 'navigation_actor_state.dart';
 
-@injectable
+@singleton
 class NavigationActorBloc
     extends Bloc<NavigationActorEvent, NavigationActorState> {
   NavigationActorBloc()

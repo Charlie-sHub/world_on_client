@@ -28,8 +28,7 @@ class StorePage extends StatelessWidget {
           ),
         ],
         child: BlocBuilder<StoreNavigationActorBloc, StoreNavigationActorState>(
-          builder: (context, state) => SafeArea(
-            child: Scaffold(
+          builder: (context, state) => Scaffold(
               appBar: StoreAppBar(),
               body: IndexedStack(
                 index: context.read<StoreNavigationActorBloc>().state.map(
@@ -47,7 +46,6 @@ class StorePage extends StatelessWidget {
               ),
               bottomNavigationBar: StoreBottomNavigationBar(),
             ),
-          ),
         ),
       );
 }

@@ -73,5 +73,9 @@
 	<false/>
 	<key>io.flutter.embedded_views_preview</key>
 	<string>YES</string>
+	<key>NSPhotoLibraryUsageDescription</key>
+    <string>To upload user and experience's pictures</string>
+    <key>NSCameraUsageDescription</key>
+    <string>To upload user and experience's pictures</string>
 </dict>
 </plist>
