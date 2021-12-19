@@ -9,22 +9,20 @@ class SubmitRewardButton extends StatelessWidget {
   }) : super(key: key);
 
   @override
-  Widget build(BuildContext context) {
-    return ElevatedButton(
-      onPressed: () {
-        FocusScope.of(context).unfocus();
-        context.read<RewardFormBloc>().add(
-              const RewardFormEvent.submitted(),
-            );
-      },
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: <Widget>[
-          const Icon(Icons.check),
-          const SizedBox(width: 5),
-          Text(S.of(context).submitButton),
-        ],
-      ),
-    );
-  }
+  Widget build(BuildContext context) => ElevatedButton(
+        onPressed: () {
+          FocusScope.of(context).unfocus();
+          context.read<RewardFormBloc>().add(
+                const RewardFormEvent.submitted(),
+              );
+        },
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: <Widget>[
+            const Icon(Icons.check),
+            const SizedBox(width: 5),
+            Text(S.of(context).submitButton),
+          ],
+        ),
+      );
 }

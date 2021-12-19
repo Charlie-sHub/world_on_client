@@ -12,9 +12,8 @@ class AddTagToInterests implements AsyncUseCase<Unit, Params> {
   AddTagToInterests(this._repository);
 
   @override
-  Future<Either<Failure, Unit>> call(Params params) async {
-    return _repository.addTagToInterests(params.tag);
-  }
+  Future<Either<Failure, Unit>> call(Params params) async =>
+      _repository.addTagToInterests(params.tag);
 }
 
 class Params {

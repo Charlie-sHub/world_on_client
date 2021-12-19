@@ -7,8 +7,6 @@ import 'package:worldon/generated/l10n.dart';
 import 'package:worldon/views/core/widgets/cards/error_card.dart';
 import 'package:worldon/views/experience_management/widgets/objective_creation_card/created_objective_card.dart';
 
-import 'created_objective_card.dart';
-
 class CreatedObjectivesList extends StatelessWidget {
   @override
   Widget build(BuildContext context) {

@@ -11,14 +11,12 @@ class ExperienceDescription extends StatelessWidget {
   }) : super(key: key);
 
   @override
-  Widget build(BuildContext context) {
-    return AutoSizeText(
-      experience.description.getOrCrash(),
-      textAlign: TextAlign.justify,
-      style: TextStyle(
-        fontSize: 15,
-        color: Colors.grey.shade600,
-      ),
-    );
-  }
+  Widget build(BuildContext context) => AutoSizeText(
+        experience.description.getOrCrash(),
+        textAlign: TextAlign.justify,
+        style: TextStyle(
+          fontSize: 15,
+          color: Colors.grey.shade600,
+        ),
+      );
 }

@@ -14,18 +14,16 @@ class CarouselBuilder extends StatelessWidget {
   }) : super(key: key);
 
   @override
-  Widget build(BuildContext context) {
-    return CarouselSlider.builder(
-      itemCount: itemCount,
-      unlimitedMode: true,
-      slideIndicator: CircularSlideIndicator(
-        padding: const EdgeInsets.only(bottom: 15),
-        currentIndicatorColor: WorldOnColors.white,
-        indicatorBackgroundColor: WorldOnColors.white.withOpacity(0.5),
-        indicatorRadius: 3,
-        itemSpacing: 15,
-      ),
-      slideBuilder: function,
-    );
-  }
+  Widget build(BuildContext context) => CarouselSlider.builder(
+        itemCount: itemCount,
+        unlimitedMode: true,
+        slideIndicator: CircularSlideIndicator(
+          padding: const EdgeInsets.only(bottom: 15),
+          currentIndicatorColor: WorldOnColors.white,
+          indicatorBackgroundColor: WorldOnColors.white.withOpacity(0.5),
+          indicatorRadius: 3,
+          itemSpacing: 15,
+        ),
+        slideBuilder: function,
+      );
 }

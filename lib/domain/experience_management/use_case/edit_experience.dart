@@ -8,8 +8,7 @@ import 'package:worldon/domain/core/failures/core_domain_failure.dart';
 import 'package:worldon/domain/core/failures/error.dart';
 import 'package:worldon/domain/core/use_case/use_case.dart';
 import 'package:worldon/domain/experience_management/repository/experience_management_repository_interface.dart';
-
-import '../../../injection.dart';
+import 'package:worldon/injection.dart';
 
 @LazySingleton(env: [Environment.dev, Environment.prod])
 class EditExperience implements AsyncUseCase<Unit, Params> {
@@ -37,9 +36,10 @@ class EditExperience implements AsyncUseCase<Unit, Params> {
 
   List<String> _getImageListToDelete(Params params) {
     final _imagesLeftList = params.experience.imageURLs.toList();
-    final _objectivesImageUrls = params.experience.objectives.getOrCrash().dart.map(
-          (_objective) => _objective.imageURL,
-        );
+    final _objectivesImageUrls =
+        params.experience.objectives.getOrCrash().dart.map(
+              (_objective) => _objective.imageURL,
+            );
     final _rewardsImageUrls = params.experience.rewards.getOrCrash().dart.map(
           (_reward) => _reward.imageURL,
         );
@@ -70,8 +70,8 @@ class EditExperience implements AsyncUseCase<Unit, Params> {
       () => throw UnAuthenticatedError(),
       id,
     );
-    final _isAuthorized =
-        _userRequesting.id == params.experience.creator.id || _userRequesting.adminPowers;
+    final _isAuthorized = _userRequesting.id == params.experience.creator.id ||
+        _userRequesting.adminPowers;
     return _isAuthorized;
   }
 }

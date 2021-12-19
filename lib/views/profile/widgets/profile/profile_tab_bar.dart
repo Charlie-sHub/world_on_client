@@ -22,8 +22,7 @@ class ProfileTabBar extends SliverPersistentHeaderDelegate {
     BuildContext context,
     double shrinkOffset,
     bool overlapsContent,
-  ) {
-    return SizedBox(
+  ) =>  SizedBox(
       height: kBottomNavigationBarHeight - 15,
       child: Material(
         color: WorldOnColors.background,
@@ -86,7 +85,7 @@ class ProfileTabBar extends SliverPersistentHeaderDelegate {
         ),
       ),
     );
-  }
+
 
   @override
   bool shouldRebuild(covariant SliverPersistentHeaderDelegate oldDelegate) => true;

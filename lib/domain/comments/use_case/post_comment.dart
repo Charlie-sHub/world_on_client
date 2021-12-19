@@ -12,9 +12,8 @@ class PostComment implements AsyncUseCase<Unit, Params> {
   PostComment(this._repository);
 
   @override
-  Future<Either<Failure, Unit>> call(Params params) async {
-    return _repository.postComment(params.comment);
-  }
+  Future<Either<Failure, Unit>> call(Params params) async =>
+      _repository.postComment(params.comment);
 }
 
 class Params {

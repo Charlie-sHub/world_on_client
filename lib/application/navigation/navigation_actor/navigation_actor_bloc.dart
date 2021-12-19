@@ -1,10 +1,7 @@
-import 'dart:async';
-
 import 'package:bloc/bloc.dart';
 import 'package:dartz/dartz.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:injectable/injectable.dart';
-import 'package:meta/meta.dart';
 import 'package:worldon/domain/core/entities/experience/experience.dart';
 import 'package:worldon/domain/core/validation/objects/unique_id.dart';
 
@@ -13,40 +10,43 @@ part 'navigation_actor_event.dart';
 part 'navigation_actor_state.dart';
 
 @injectable
-class NavigationActorBloc extends Bloc<NavigationActorEvent, NavigationActorState> {
-  NavigationActorBloc() : super(const NavigationActorState.mainFeedView());
+class NavigationActorBloc
+    extends Bloc<NavigationActorEvent, NavigationActorState> {
+  NavigationActorBloc() : super(const NavigationActorState.mainFeedView()) {
+    on<_MainFeedTapped>(_onMainFeedTapped);
+    on<_SearchTapped>(_onSearchTapped);
+    on<_ExperienceNavigationTapped>(_onExperienceNavigationTapped);
+    on<_ProfileTapped>(_onProfileTapped);
+    on<_NotificationsTapped>(_onNotificationsTapped);
+  }
 
-  @override
-  Stream<NavigationActorState> mapEventToState(NavigationActorEvent event) async* {
-    yield* event.map(
-      mainFeedTapped: _onMainFeedTapped,
-      searchTapped: _onSearchTapped,
-      experienceNavigationTapped: _onExperienceNavigationTapped,
-      profileTapped: _onProfileTapped,
-      notificationsTapped: _onNotificationsTapped,
+  void _onNotificationsTapped(_, Emitter emit) {
+    emit(const NavigationActorState.notificationsView());
+  }
+
+  void _onMainFeedTapped(_, Emitter emit) {
+    emit(const NavigationActorState.mainFeedView());
+  }
+
+  void _onSearchTapped(_, Emitter emit) {
+    emit(const NavigationActorState.searchView());
+  }
+
+  void _onExperienceNavigationTapped(
+    _ExperienceNavigationTapped event,
+    Emitter emit,
+  ) {
+    emit(
+      NavigationActorState.navigateExperienceView(event.experienceOption),
     );
   }
 
-  Stream<NavigationActorState> _onNotificationsTapped(_) async* {
-    yield const NavigationActorState.notificationsView();
-  }
-
-  Stream<NavigationActorState> _onMainFeedTapped(_) async* {
-    yield const NavigationActorState.mainFeedView();
-  }
-
-  Stream<NavigationActorState> _onSearchTapped(_) async* {
-    yield const NavigationActorState.searchView();
-  }
-
-  Stream<NavigationActorState> _onExperienceNavigationTapped(_ExperienceNavigationTapped event) async* {
-    yield NavigationActorState.navigateExperienceView(event.experienceOption);
-  }
-
-  Stream<NavigationActorState> _onProfileTapped(_ProfileTapped event) async* {
-    yield NavigationActorState.profileView(
-      userIdOption: event.userIdOption,
-      currentUserProfile: event.currentUserProfile,
+  void _onProfileTapped(_ProfileTapped event, Emitter emit) {
+    emit(
+      NavigationActorState.profileView(
+        userIdOption: event.userIdOption,
+        currentUserProfile: event.currentUserProfile,
+      ),
     );
   }
 }

@@ -12,34 +12,32 @@ class CommentCard extends StatelessWidget {
   final Comment comment;
 
   @override
-  Widget build(BuildContext context) {
-    return ListTile(
-      leading: UserAvatarFollowChecker(
-        user: comment.poster,
-        checkIconSize: 12,
-        avatarRadius: 16,
-      ),
-      title: AutoSizeText.rich(
-        TextSpan(
-          text: "@${comment.poster.username.getOrCrash()}",
-          style: const TextStyle(
-            fontSize: 14,
-            fontWeight: FontWeight.w800,
-          ),
-          children: [
-            TextSpan(
-              text: " ${comment.content.getOrCrash()}",
-              style: TextStyle(
-                color: Colors.grey.shade600,
-                fontWeight: FontWeight.normal,
-              ),
-            ),
-          ],
+  Widget build(BuildContext context) => ListTile(
+        leading: UserAvatarFollowChecker(
+          user: comment.poster,
+          checkIconSize: 12,
+          avatarRadius: 16,
         ),
-        minFontSize: 10,
-        maxFontSize: 14,
-        textAlign: TextAlign.justify,
-      ),
-    );
-  }
+        title: AutoSizeText.rich(
+          TextSpan(
+            text: "@${comment.poster.username.getOrCrash()}",
+            style: const TextStyle(
+              fontSize: 14,
+              fontWeight: FontWeight.w800,
+            ),
+            children: [
+              TextSpan(
+                text: " ${comment.content.getOrCrash()}",
+                style: TextStyle(
+                  color: Colors.grey.shade600,
+                  fontWeight: FontWeight.normal,
+                ),
+              ),
+            ],
+          ),
+          minFontSize: 10,
+          maxFontSize: 14,
+          textAlign: TextAlign.justify,
+        ),
+      );
 }

@@ -11,9 +11,8 @@ class BuyCoins implements AsyncUseCase<Unit, Params> {
   BuyCoins(this._repository);
 
   @override
-  Future<Either<Failure, Unit>> call(Params params) async {
-    return _repository.buyCoins(params.amount);
-  }
+  Future<Either<Failure, Unit>> call(Params params) async =>
+      _repository.buyCoins(params.amount);
 }
 
 class Params {

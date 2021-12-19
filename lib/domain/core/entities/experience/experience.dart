@@ -70,24 +70,23 @@ class Experience with _$Experience {
         isPromoted: false,
       );
 
-  Option<ValueFailure<dynamic>> get failureOption {
-    return title.failureOrUnit
-        .andThen(description.failureOrUnit)
-        .andThen(coordinates.failureOrUnit)
-        .andThen(creator.failureOrUnit)
-        .andThen(difficulty.failureOrUnit)
-        .andThen(creationDate.failureOrUnit)
-        .andThen(modificationDate.failureOrUnit)
-        .andThen(objectives.failureOrUnit)
-        .andThen(rewards.failureOrUnit)
-        .andThen(tags.failureOrUnit)
-        .fold(
-          (failure) => some(failure),
-          (_) => none(),
-        );
-  }
+  Option<ValueFailure<dynamic>> get failureOption => title.failureOrUnit
+      .andThen(description.failureOrUnit)
+      .andThen(coordinates.failureOrUnit)
+      .andThen(creator.failureOrUnit)
+      .andThen(difficulty.failureOrUnit)
+      .andThen(creationDate.failureOrUnit)
+      .andThen(modificationDate.failureOrUnit)
+      .andThen(objectives.failureOrUnit)
+      .andThen(rewards.failureOrUnit)
+      .andThen(tags.failureOrUnit)
+      .fold(
+        (failure) => some(failure),
+        (_) => none(),
+      );
 
   bool get isValid => failureOption.isNone();
 
-  String get getFormattedCreationDateString => "${creationDate.getOrCrash().day.toString()}/${creationDate.getOrCrash().month.toString()}/${creationDate.getOrCrash().year.toString()}";
+  String get getFormattedCreationDateString =>
+      "${creationDate.getOrCrash().day.toString()}/${creationDate.getOrCrash().month.toString()}/${creationDate.getOrCrash().year.toString()}";
 }

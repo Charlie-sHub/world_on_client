@@ -15,16 +15,14 @@ class DislikeTagButton extends StatelessWidget {
   final Tag tag;
 
   @override
-  Widget build(BuildContext context) {
-    return IconButton(
-      icon: const Icon(
-        Icons.favorite_rounded,
-        color: WorldOnColors.red,
-        size: 35,
-      ),
-      onPressed: () => context.read<TagCardActorBloc>().add(
-            TagCardActorEvent.dismissedFromInterests(tag),
-          ),
-    );
-  }
+  Widget build(BuildContext context) => IconButton(
+        icon: const Icon(
+          Icons.favorite_rounded,
+          color: WorldOnColors.red,
+          size: 35,
+        ),
+        onPressed: () => context.read<TagCardActorBloc>().add(
+              TagCardActorEvent.dismissedFromInterests(tag),
+            ),
+      );
 }

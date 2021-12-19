@@ -14,30 +14,37 @@ class TitleFormField extends StatelessWidget {
   final String title;
 
   @override
-  Widget build(BuildContext context) {
-    return TextFormField(
-      maxLength: Name.maxLength,
-      onChanged: (value) => context.read<ExperienceManagementFormBloc>().add(
-            ExperienceManagementFormEvent.titleChanged(value),
-          ),
-      validator: (_) => context.read<ExperienceManagementFormBloc>().state.experience.title.value.fold(
-            (failure) => failure.maybeMap(
-              emptyString: (_) => S.of(context).experienceTitleEmptyString,
-              multiLineString: (_) => S.of(context).experienceTitleMultiLineString,
-              stringExceedsLength: (_) => S.of(context).experienceTitleStringExceedsLength,
-              stringWithInvalidCharacters: (_) => S.of(context).experienceTitleStringWithInvalidCharacters,
-              orElse: () => S.of(context).unknownError,
+  Widget build(BuildContext context) => TextFormField(
+        maxLength: Name.maxLength,
+        onChanged: (value) => context.read<ExperienceManagementFormBloc>().add(
+              ExperienceManagementFormEvent.titleChanged(value),
             ),
-            (_) => null,
+        validator: (_) => context
+            .read<ExperienceManagementFormBloc>()
+            .state
+            .experience
+            .title
+            .value
+            .fold(
+              (failure) => failure.maybeMap(
+                emptyString: (_) => S.of(context).experienceTitleEmptyString,
+                multiLineString: (_) =>
+                    S.of(context).experienceTitleMultiLineString,
+                stringExceedsLength: (_) =>
+                    S.of(context).experienceTitleStringExceedsLength,
+                stringWithInvalidCharacters: (_) =>
+                    S.of(context).experienceTitleStringWithInvalidCharacters,
+                orElse: () => S.of(context).unknownError,
+              ),
+              (_) => null,
+            ),
+        initialValue: title,
+        decoration: InputDecoration(
+          labelText: S.of(context).title,
+          prefixIcon: const Icon(
+            Icons.title,
+            color: WorldOnColors.primary,
           ),
-      initialValue: title,
-      decoration: InputDecoration(
-        labelText: S.of(context).title,
-        prefixIcon: const Icon(
-          Icons.title,
-          color: WorldOnColors.primary,
         ),
-      ),
-    );
-  }
+      );
 }

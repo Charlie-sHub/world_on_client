@@ -35,21 +35,19 @@ class Comment with _$Comment {
         modificationDate: PastDate(DateTime.now()),
       );
 
-  Option<ValueFailure<dynamic>> get failureOption {
-    return content.failureOrUnit
-        .andThen(
-          poster.failureOption.fold(
-            () => right(unit),
-            (failure) => left(failure),
-          ),
-        )
-        .andThen(creationDate.failureOrUnit)
-        .andThen(modificationDate.failureOrUnit)
-        .fold(
-          (failure) => some(failure),
-          (_) => none(),
-        );
-  }
+  Option<ValueFailure<dynamic>> get failureOption => content.failureOrUnit
+      .andThen(
+        poster.failureOption.fold(
+          () => right(unit),
+          (failure) => left(failure),
+        ),
+      )
+      .andThen(creationDate.failureOrUnit)
+      .andThen(modificationDate.failureOrUnit)
+      .fold(
+        (failure) => some(failure),
+        (_) => none(),
+      );
 
   bool get isValid => failureOption.isNone();
 }

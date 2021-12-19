@@ -5,7 +5,6 @@ import 'package:dartz/dartz.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:injectable/injectable.dart';
 import 'package:kt_dart/collection.dart';
-import 'package:meta/meta.dart';
 import 'package:worldon/domain/authentication/use_case/get_logged_in_user.dart';
 import 'package:worldon/domain/core/entities/experience/experience.dart';
 import 'package:worldon/domain/core/entities/notification/notification.dart';
@@ -22,43 +21,43 @@ part 'share_experience_internally_event.dart';
 part 'share_experience_internally_state.dart';
 
 @injectable
-class ShareExperienceInternallyBloc
-    extends Bloc<ShareExperienceInternallyEvent, ShareExperienceInternallyState> {
-  ShareExperienceInternallyBloc() : super(ShareExperienceInternallyState.initial());
+class ShareExperienceInternallyBloc extends Bloc<ShareExperienceInternallyEvent,
+    ShareExperienceInternallyState> {
+  ShareExperienceInternallyBloc()
+      : super(ShareExperienceInternallyState.initial()) {
+    on<_Initialized>(_onInitialized);
+    on<_RemovedUser>(_onRemovedUser);
+    on<_AddedUser>(_onAddedUser);
+    on<_Shared>(_onShared);
+  }
 
-  @override
-  Stream<ShareExperienceInternallyState> mapEventToState(
-    ShareExperienceInternallyEvent event,
-  ) async* {
-    yield* event.map(
-      initialized: _onInitialized,
-      removedUser: _onRemovedUser,
-      addedUser: _onAddedUser,
-      shared: _onShared,
+  void _onInitialized(_Initialized event, Emitter emit) {
+    emit(
+      state.copyWith(
+        experience: event.experience,
+      ),
     );
   }
 
-  Stream<ShareExperienceInternallyState> _onInitialized(_Initialized event) async* {
-    yield state.copyWith(
-      experience: event.experience,
-    );
-  }
-
-  Stream<ShareExperienceInternallyState> _onRemovedUser(_RemovedUser event) async* {
+  void _onRemovedUser(_RemovedUser event, Emitter emit) {
     final _users = state.users.minusElement(event.user);
-    yield state.copyWith(
-      users: _users,
+    emit(
+      state.copyWith(
+        users: _users,
+      ),
     );
   }
 
-  Stream<ShareExperienceInternallyState> _onAddedUser(_AddedUser event) async* {
+  void _onAddedUser(_AddedUser event, Emitter emit) {
     final _users = state.users.plusElement(event.user);
-    yield state.copyWith(
-      users: _users,
+    emit(
+      state.copyWith(
+        users: _users,
+      ),
     );
   }
 
-  Stream<ShareExperienceInternallyState> _onShared(_Shared event) async* {
+  FutureOr<void> _onShared(_Shared event, Emitter emit) async {
     final _currentUserOption = await getIt<GetLoggedInUser>()(
       NoParams(),
     );
@@ -72,15 +71,19 @@ class ShareExperienceInternallyBloc
           notification: Notification.empty().copyWith(
             sender: _currentUser.simplified,
             receiverId: _userReceiver.id,
-            description: EntityDescription("${_currentUser.username.getOrCrash()} shared"),
+            description: EntityDescription(
+              "${_currentUser.username.getOrCrash()} shared",
+            ),
             type: NotificationType.share,
             experienceOption: some(state.experience),
           ),
         ),
       );
     }
-    yield state.copyWith(
-      submitted: false,
+    emit(
+      state.copyWith(
+        submitted: false,
+      ),
     );
   }
 }

@@ -16,31 +16,36 @@ part 'experience_log_watcher_event.dart';
 part 'experience_log_watcher_state.dart';
 
 @injectable
-class ExperienceLogWatcherBloc extends Bloc<ExperienceLogWatcherEvent, ExperienceLogWatcherState> {
-  ExperienceLogWatcherBloc() : super(const ExperienceLogWatcherState.initial());
+class ExperienceLogWatcherBloc
+    extends Bloc<ExperienceLogWatcherEvent, ExperienceLogWatcherState> {
+  ExperienceLogWatcherBloc()
+      : super(const ExperienceLogWatcherState.initial()) {
+    on<_WatchExperiencesLogStarted>(_onWatchExperiencesLogStarted);
+    on<_ResultsReceived>(_onResultsReceived);
+  }
 
-  StreamSubscription<Either<Failure, KtList<Experience>>>? _experienceLogStreamSubscription;
+  StreamSubscription<Either<Failure, KtList<Experience>>>?
+      _experienceLogStreamSubscription;
 
-  @override
-  Stream<ExperienceLogWatcherState> mapEventToState(ExperienceLogWatcherEvent event) async* {
-    yield* event.map(
-      watchExperiencesLogStarted: _onWatchExperiencesLogStarted,
-      resultsReceived: _onResultsReceived,
+  FutureOr<void> _onResultsReceived(
+    _ResultsReceived event,
+    Emitter emit,
+  ) async {
+    emit(
+      event.failureOrExperiences.fold(
+        (failure) => ExperienceLogWatcherState.loadFailure(failure),
+        (experiences) => ExperienceLogWatcherState.loadSuccess(experiences),
+      ),
     );
   }
 
-  Stream<ExperienceLogWatcherState> _onResultsReceived(_ResultsReceived event) async* {
-    yield event.failureOrExperiences.fold(
-      (failure) => ExperienceLogWatcherState.loadFailure(failure),
-      (experiences) => ExperienceLogWatcherState.loadSuccess(experiences),
-    );
-  }
-
-  Stream<ExperienceLogWatcherState> _onWatchExperiencesLogStarted(_) async* {
-    yield const ExperienceLogWatcherState.loadInProgress();
+  void _onWatchExperiencesLogStarted(_, Emitter emit) {
+    emit(const ExperienceLogWatcherState.loadInProgress());
     _experienceLogStreamSubscription?.cancel();
-    _experienceLogStreamSubscription = getIt<WatchUserLog>()(getIt<NoParams>()).listen(
-      (_failureOrExperiences) => add(ExperienceLogWatcherEvent.resultsReceived(_failureOrExperiences)),
+    _experienceLogStreamSubscription =
+        getIt<WatchUserLog>()(getIt<NoParams>()).listen(
+      (_failureOrExperiences) =>
+          add(ExperienceLogWatcherEvent.resultsReceived(_failureOrExperiences)),
     );
   }
 

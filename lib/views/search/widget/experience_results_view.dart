@@ -20,48 +20,52 @@ class ExperienceResultsView extends StatelessWidget {
   }) : super(key: key);
 
   @override
-  Widget build(BuildContext context) {
-    return BlocBuilder<SearchExperiencesByNameWatcherBloc, SearchExperiencesByNameWatcherState>(
-      builder: (context, state) => state.map(
-        initial: (_) => SearchSomething(),
-        searchInProgress: (_) => const WorldOnProgressIndicator(
-          size: 40,
-        ),
-        searchSuccess: (state) => ListView.builder(
-          scrollDirection: Axis.horizontal,
-          clipBehavior: Clip.none,
-          itemCount: state.experiencesFound.size,
-          itemBuilder: (context, index) {
-            final _experience = state.experiencesFound[index];
-            if (_experience.isValid) {
-              return SimpleExperienceCard(
-                experience: _experience,
-                key: Key(_experience.id.toString()),
-                reloadFunction: () => context.read<SearchExperiencesByNameWatcherBloc>().add(
-                      SearchExperiencesByNameWatcherEvent.watchExperiencesFoundByNameStarted(searchTerm),
+  Widget build(BuildContext context) => BlocBuilder<
+          SearchExperiencesByNameWatcherBloc,
+          SearchExperiencesByNameWatcherState>(
+        builder: (context, state) => state.map(
+          initial: (_) => SearchSomething(),
+          searchInProgress: (_) => const WorldOnProgressIndicator(
+            size: 40,
+          ),
+          searchSuccess: (state) => ListView.builder(
+            scrollDirection: Axis.horizontal,
+            clipBehavior: Clip.none,
+            itemCount: state.experiencesFound.size,
+            itemBuilder: (context, index) {
+              final _experience = state.experiencesFound[index];
+              if (_experience.isValid) {
+                return SimpleExperienceCard(
+                  experience: _experience,
+                  key: Key(_experience.id.toString()),
+                  reloadFunction: () =>
+                      context.read<SearchExperiencesByNameWatcherBloc>().add(
+                            SearchExperiencesByNameWatcherEvent
+                                .watchExperiencesFoundByNameStarted(searchTerm),
+                          ),
+                );
+              } else {
+                return ErrorCard(
+                  entityType: S.of(context).experience,
+                  valueFailureString: _experience.failureOption.fold(
+                    () => S.of(context).noError,
+                    (failure) => failure.toString(),
+                  ),
+                );
+              }
+            },
+          ),
+          searchFailure: (state) => SearchErrorDisplay(
+            retryFunction: () =>
+                context.read<SearchExperiencesByNameWatcherBloc>().add(
+                      SearchExperiencesByNameWatcherEvent
+                          .watchExperiencesFoundByNameStarted(
+                        context.read<SearchByNameFormBloc>().state.searchTerm,
+                      ),
                     ),
-              );
-            } else {
-              return ErrorCard(
-                entityType: S.of(context).experience,
-                valueFailureString: _experience.failureOption.fold(
-                  () => S.of(context).noError,
-                  (failure) => failure.toString(),
-                ),
-              );
-            }
-          },
+            failure: state.failure,
+            specificMessage: some(S.of(context).notFoundErrorSearch),
+          ),
         ),
-        searchFailure: (state) => SearchErrorDisplay(
-          retryFunction: () => context.read<SearchExperiencesByNameWatcherBloc>().add(
-                SearchExperiencesByNameWatcherEvent.watchExperiencesFoundByNameStarted(
-                  context.read<SearchByNameFormBloc>().state.searchTerm,
-                ),
-              ),
-          failure: state.failure,
-          specificMessage: some(S.of(context).notFoundErrorSearch),
-        ),
-      ),
-    );
-  }
+      );
 }

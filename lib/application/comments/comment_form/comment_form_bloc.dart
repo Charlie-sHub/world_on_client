@@ -4,10 +4,11 @@ import 'package:bloc/bloc.dart';
 import 'package:dartz/dartz.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:injectable/injectable.dart';
-import 'package:meta/meta.dart';
 import 'package:worldon/core/error/failure.dart';
-import 'package:worldon/domain/comments/use_case/edit_comment.dart' as edit_comment;
-import 'package:worldon/domain/comments/use_case/post_comment.dart' as post_comment;
+import 'package:worldon/domain/comments/use_case/edit_comment.dart'
+    as edit_comment;
+import 'package:worldon/domain/comments/use_case/post_comment.dart'
+    as post_comment;
 import 'package:worldon/domain/core/entities/comment/comment.dart';
 import 'package:worldon/domain/core/entities/user/simple_user.dart';
 import 'package:worldon/domain/core/entities/user/user.dart';
@@ -21,22 +22,19 @@ part 'comment_form_state.dart';
 
 @injectable
 class CommentFormBloc extends Bloc<CommentFormEvent, CommentFormState> {
-  CommentFormBloc() : super(CommentFormState.initial());
-
-  @override
-  Stream<CommentFormState> mapEventToState(CommentFormEvent event) async* {
-    yield* event.map(
-      initialized: _onInitialized,
-      contentChanged: _onContentChanged,
-      submitted: _onSubmitted,
-    );
+  CommentFormBloc() : super(CommentFormState.initial()) {
+    on<_Initialized>(_onInitialized);
+    on<_ContentChanged>(_onContentChanged);
+    on<_Submitted>(_onSubmitted);
   }
 
-  Stream<CommentFormState> _onSubmitted(_Submitted event) async* {
+  FutureOr<void> _onSubmitted(_Submitted event, Emitter emit) async {
     late Either<Failure, Unit> _failureOrUnit;
-    yield state.copyWith(
-      isSubmitting: true,
-      failureOrSuccessOption: none(),
+    emit(
+      state.copyWith(
+        isSubmitting: true,
+        failureOrSuccessOption: none(),
+      ),
     );
     if (state.comment.isValid) {
       if (state.isEditing) {
@@ -54,34 +52,36 @@ class CommentFormBloc extends Bloc<CommentFormEvent, CommentFormState> {
         );
       }
     }
-    yield state.copyWith(
-      isSubmitting: false,
-      showErrorMessages: true,
-      failureOrSuccessOption: optionOf(_failureOrUnit),
-    );
-  }
-
-  Stream<CommentFormState> _onContentChanged(_ContentChanged event) async* {
-    yield state.copyWith(
-      comment: state.comment.copyWith(
-        content: CommentContent(event.content),
+    emit(
+      state.copyWith(
+        isSubmitting: false,
+        showErrorMessages: true,
+        failureOrSuccessOption: optionOf(_failureOrUnit),
       ),
-      failureOrSuccessOption: none(),
     );
   }
 
-  Stream<CommentFormState> _onInitialized(_Initialized event) async* {
-    yield event.commentOption.fold(
-      () => state.copyWith(
-        comment: Comment.empty().copyWith(
-          poster: event.user,
-          experienceId: event.experienceId,
+  void _onContentChanged(_ContentChanged event, Emitter emit) => emit(
+        state.copyWith(
+          comment: state.comment.copyWith(
+            content: CommentContent(event.content),
+          ),
+          failureOrSuccessOption: none(),
         ),
-      ),
-      (comment) => state.copyWith(
-        comment: comment,
-        isEditing: true,
-      ),
-    );
-  }
+      );
+
+  void _onInitialized(_Initialized event, Emitter emit) => emit(
+        event.commentOption.fold(
+          () => state.copyWith(
+            comment: Comment.empty().copyWith(
+              poster: event.user,
+              experienceId: event.experienceId,
+            ),
+          ),
+          (comment) => state.copyWith(
+            comment: comment,
+            isEditing: true,
+          ),
+        ),
+      );
 }

@@ -10,26 +10,31 @@ class DescriptionTextField extends StatelessWidget {
   }) : super(key: key);
 
   @override
-  Widget build(BuildContext context) {
-    return TextFormField(
-      maxLength: EntityDescription.maxLength,
-      onChanged: (value) => context.read<RegistrationFormBloc>().add(
-            RegistrationFormEvent.descriptionChanged(value.trim()),
-          ),
-      validator: (_) => context.read<RegistrationFormBloc>().state.user.description.value.fold(
-            (failure) => failure.maybeMap(
-              emptyString: (_) => S.of(context).descriptionEmptyString,
-              stringExceedsLength: (_) => S.of(context).descriptionStringExceedsLength,
-              orElse: () => S.of(context).unknownError,
+  Widget build(BuildContext context) => TextFormField(
+        maxLength: EntityDescription.maxLength,
+        onChanged: (value) => context.read<RegistrationFormBloc>().add(
+              RegistrationFormEvent.descriptionChanged(value.trim()),
             ),
-            (_) => null,
-          ),
-      autocorrect: false,
-      maxLines: 5,
-      decoration: InputDecoration(
-        labelText: S.of(context).registerDescriptionLabelText,
-        prefixIcon: const Icon(Icons.description),
-      ),
-    );
-  }
+        validator: (_) => context
+            .read<RegistrationFormBloc>()
+            .state
+            .user
+            .description
+            .value
+            .fold(
+              (failure) => failure.maybeMap(
+                emptyString: (_) => S.of(context).descriptionEmptyString,
+                stringExceedsLength: (_) =>
+                    S.of(context).descriptionStringExceedsLength,
+                orElse: () => S.of(context).unknownError,
+              ),
+              (_) => null,
+            ),
+        autocorrect: false,
+        maxLines: 5,
+        decoration: InputDecoration(
+          labelText: S.of(context).registerDescriptionLabelText,
+          prefixIcon: const Icon(Icons.description),
+        ),
+      );
 }

@@ -7,24 +7,23 @@ import 'package:worldon/views/core/widgets/misc/world_on_plasma.dart';
 
 class SplashPage extends StatelessWidget {
   @override
-  Widget build(BuildContext context) {
-    return BlocListener<AuthenticationBloc, AuthenticationState>(
-      listener: (context, state) => state.map(
-        initial: (_) => null,
-        authenticated: (_) => context.router.replace(
-          MainPageRoute(
-            isNewUser: false,
+  Widget build(BuildContext context) =>
+      BlocListener<AuthenticationBloc, AuthenticationState>(
+        listener: (context, state) => state.map(
+          initial: (_) => null,
+          authenticated: (_) => context.router.replace(
+            MainPageRoute(
+              isNewUser: false,
+            ),
+          ),
+          unAuthenticated: (_) => context.router.replace(
+            const LogInPageRoute(),
           ),
         ),
-        unAuthenticated: (_) => context.router.replace(
-          const LogInPageRoute(),
+        child: Scaffold(
+          body: Center(
+            child: WorldOnPlasma(),
+          ),
         ),
-      ),
-      child: Scaffold(
-        body: Center(
-          child: WorldOnPlasma(),
-        ),
-      ),
-    );
-  }
+      );
 }

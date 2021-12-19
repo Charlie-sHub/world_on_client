@@ -15,57 +15,55 @@ class CreatedRewardCard extends StatelessWidget {
   final Reward reward;
 
   @override
-  Widget build(BuildContext context) {
-    return Card(
-      child: Padding(
-        padding: const EdgeInsets.all(5),
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: <Widget>[
-            IconButton(
-              iconSize: 40,
-              icon: const Icon(
-                Icons.delete_forever,
-                color: WorldOnColors.red,
-              ),
-              onPressed: () => context.read<RewardsCreationBloc>().add(
-                    RewardsCreationEvent.removedReward(reward),
-                  ),
-            ),
-            Image(
-              image: reward.imageFile.fold(
-                () => CachedNetworkImageProvider(reward.imageURL),
-                (_imageFile) => FileImage(_imageFile),
-              ),
-              height: 100,
-              width: 100,
-            ),
-            const SizedBox(width: 5),
-            Expanded(
-              child: Column(
-                children: [
-                  AutoSizeText(
-                    reward.name.getOrCrash(),
-                    style: const TextStyle(
-                      fontSize: 18,
-                      color: WorldOnColors.primary,
-                      fontWeight: FontWeight.bold,
+  Widget build(BuildContext context) => Card(
+        child: Padding(
+          padding: const EdgeInsets.all(5),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: <Widget>[
+              IconButton(
+                iconSize: 40,
+                icon: const Icon(
+                  Icons.delete_forever,
+                  color: WorldOnColors.red,
+                ),
+                onPressed: () => context.read<RewardsCreationBloc>().add(
+                      RewardsCreationEvent.removedReward(reward),
                     ),
-                  ),
-                  const SizedBox(height: 5),
-                  AutoSizeText(
-                    reward.description.getOrCrash(),
-                    style: const TextStyle(
-                      fontSize: 15,
-                      color: WorldOnColors.background,
-                    ),
-                  ),
-                ],
               ),
-            ),
-          ],
+              Image(
+                image: reward.imageFile.fold(
+                  () => CachedNetworkImageProvider(reward.imageURL),
+                  (_imageFile) => FileImage(_imageFile),
+                ),
+                height: 100,
+                width: 100,
+              ),
+              const SizedBox(width: 5),
+              Expanded(
+                child: Column(
+                  children: [
+                    AutoSizeText(
+                      reward.name.getOrCrash(),
+                      style: const TextStyle(
+                        fontSize: 18,
+                        color: WorldOnColors.primary,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                    const SizedBox(height: 5),
+                    AutoSizeText(
+                      reward.description.getOrCrash(),
+                      style: const TextStyle(
+                        fontSize: 15,
+                        color: WorldOnColors.background,
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+            ],
+          ),
         ),
-      ),
-    );
-  }
+      );
 }

@@ -3,10 +3,9 @@ import 'package:flutter/material.dart';
 import 'package:worldon/domain/core/entities/user/user.dart';
 import 'package:worldon/views/profile/widgets/profile/profile_header.dart';
 import 'package:worldon/views/profile/widgets/profile/profile_log_tab_view.dart';
+import 'package:worldon/views/profile/widgets/profile/profile_tab_bar.dart';
 import 'package:worldon/views/profile/widgets/profile_experiences_tab_view/profile_experiences_tab_view.dart';
 import 'package:worldon/views/profile/widgets/profile_users_tab_view/profile_users_tab_view.dart';
-
-import 'profile_tab_bar.dart';
 
 class Profile extends StatelessWidget {
   final GlobalKey<State<StatefulWidget>> userLevelShowKey;

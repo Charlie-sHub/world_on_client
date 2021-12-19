@@ -7,8 +7,7 @@ import 'package:worldon/domain/core/failures/core_domain_failure.dart';
 import 'package:worldon/domain/core/failures/error.dart';
 import 'package:worldon/domain/core/use_case/use_case.dart';
 import 'package:worldon/domain/experience_management/repository/experience_management_repository_interface.dart';
-
-import '../../../injection.dart';
+import 'package:worldon/injection.dart';
 
 // Maybe move this to Experience management
 @LazySingleton(env: [Environment.dev, Environment.prod])
@@ -26,8 +25,8 @@ class DeleteExperience implements AsyncUseCase<Unit, Params> {
       () => throw UnAuthenticatedError(),
       id,
     );
-    final _isAuthorized =
-        _userRequesting.id == params.experience.creator.id || _userRequesting.adminPowers;
+    final _isAuthorized = _userRequesting.id == params.experience.creator.id ||
+        _userRequesting.adminPowers;
     if (_isAuthorized) {
       return _repository.deleteExperience(params.experience.id);
     } else {

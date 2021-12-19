@@ -15,48 +15,51 @@ part 'options_form_state.dart';
 
 @injectable
 class OptionsFormBloc extends Bloc<OptionsFormEvent, OptionsFormState> {
-  OptionsFormBloc() : super(OptionsFormState.initial());
-
-  @override
-  Stream<OptionsFormState> mapEventToState(OptionsFormEvent event) async* {
-    yield* event.map(
-      initialized: _onInitialized,
-      languageCodeChanged: _onLanguageCodeChanged,
-      submitted: _onSubmitted,
-    );
+  OptionsFormBloc() : super(OptionsFormState.initial()) {
+    on<_Initialized>(_onInitialized);
+    on<_LanguageCodeChanged>(_onLanguageCodeChanged);
+    on<_Submitted>(_onSubmitted);
   }
 
-  Stream<OptionsFormState> _onSubmitted(_) async* {
+  FutureOr<void> _onSubmitted(_, Emitter emit) async {
     Either<Failure, Unit> _failureOrSuccess;
-    yield state.copyWith(
-      isSubmitting: true,
+    emit(
+      state.copyWith(
+        isSubmitting: true,
+      ),
     );
     // Add validity check to the options if needed
     // And check it here before submitting of course
     _failureOrSuccess = await getIt<SaveGlobalOptions>()(
       Params(options: state.options),
     );
-    yield state.copyWith(
-      isSubmitting: false,
-      showErrorMessages: true,
-      failureOrSuccessOption: optionOf(_failureOrSuccess),
-    );
-  }
-
-  Stream<OptionsFormState> _onLanguageCodeChanged(_LanguageCodeChanged event) async* {
-    yield state.copyWith(
-      options: state.options.copyWith(
-        languageCode: event.languageCode,
+    emit(
+      state.copyWith(
+        isSubmitting: false,
+        showErrorMessages: true,
+        failureOrSuccessOption: optionOf(_failureOrSuccess),
       ),
-      failureOrSuccessOption: none(),
     );
   }
 
-  Stream<OptionsFormState> _onInitialized(_Initialized event) async* {
-    yield event.optionsOption.fold(
-      () => state,
-      (options) => state.copyWith(
-        options: options,
+  void _onLanguageCodeChanged(_LanguageCodeChanged event, Emitter emit) {
+    emit(
+      state.copyWith(
+        options: state.options.copyWith(
+          languageCode: event.languageCode,
+        ),
+        failureOrSuccessOption: none(),
+      ),
+    );
+  }
+
+  void _onInitialized(_Initialized event, Emitter emit) {
+    emit(
+      event.optionsOption.fold(
+        () => state,
+        (options) => state.copyWith(
+          options: options,
+        ),
       ),
     );
   }

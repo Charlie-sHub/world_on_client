@@ -14,56 +14,61 @@ class ExperienceLikesCounter extends StatelessWidget {
   final Experience experience;
 
   @override
-  Widget build(BuildContext context) {
-    return Row(
-      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-      mainAxisSize: MainAxisSize.min,
-      children: <Widget>[
-        BlocBuilder<WatchCurrentUserBloc, WatchCurrentUserState>(
-          buildWhen: _buildWhen,
-          builder: (context, state) => state.map(
-            initial: (_) => const CircularProgressIndicator(),
-            loadSuccess: (state) => state.user.experiencesLikedIds.contains(
-              experience.id,
-            )
-                ? const Icon(
-                    Icons.favorite_rounded,
-                    color: WorldOnColors.red,
-                  )
-                : const Icon(
-                    Icons.favorite_border_rounded,
-                    color: WorldOnColors.red,
-                  ),
-            loadFailure: (_) => const Icon(
-              Icons.favorite_border_rounded,
-              color: WorldOnColors.accent,
+  Widget build(BuildContext context) => Row(
+        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+        mainAxisSize: MainAxisSize.min,
+        children: <Widget>[
+          BlocBuilder<WatchCurrentUserBloc, WatchCurrentUserState>(
+            buildWhen: _buildWhen,
+            builder: (context, state) => state.map(
+              initial: (_) => const CircularProgressIndicator(),
+              loadSuccess: (state) => state.user.experiencesLikedIds.contains(
+                experience.id,
+              )
+                  ? const Icon(
+                      Icons.favorite_rounded,
+                      color: WorldOnColors.red,
+                    )
+                  : const Icon(
+                      Icons.favorite_border_rounded,
+                      color: WorldOnColors.red,
+                    ),
+              loadFailure: (_) => const Icon(
+                Icons.favorite_border_rounded,
+                color: WorldOnColors.accent,
+              ),
             ),
           ),
-        ),
-        const SizedBox(width: 5),
-        Text(
-          createNumberDisplay(experience.likedBy.length),
-        ),
-      ],
-    );
-  }
+          const SizedBox(width: 5),
+          Text(
+            createNumberDisplay(experience.likedBy.length),
+          ),
+        ],
+      );
 
-  bool _buildWhen(WatchCurrentUserState previous, WatchCurrentUserState current) => current.map(
+  bool _buildWhen(
+    WatchCurrentUserState previous,
+    WatchCurrentUserState current,
+  ) =>
+      current.map(
         initial: (_) => true,
         loadSuccess: (_) {
           final _previousLikesContainsExperience = previous.maybeMap(
-            loadSuccess: (successState) => successState.user.experiencesLikedIds.contains(
+            loadSuccess: (successState) =>
+                successState.user.experiencesLikedIds.contains(
               experience.id,
             ),
             orElse: () => true,
           );
           final _currentLikesContainsExperience = current.maybeMap(
-            loadSuccess: (successState) => successState.user.experiencesLikedIds.contains(
+            loadSuccess: (successState) =>
+                successState.user.experiencesLikedIds.contains(
               experience.id,
             ),
             orElse: () => true,
           );
-          return _previousLikesContainsExperience != _currentLikesContainsExperience;
+          return _previousLikesContainsExperience !=
+              _currentLikesContainsExperience;
         },
         loadFailure: (_) => true,
       );

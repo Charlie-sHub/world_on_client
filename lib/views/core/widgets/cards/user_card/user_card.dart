@@ -16,42 +16,40 @@ class UserCard extends StatelessWidget {
   }) : super(key: key);
 
   @override
-  Widget build(BuildContext context) {
-    return Card(
-      margin: const EdgeInsets.all(5),
-      child: Column(
-        children: <Widget>[
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: <Widget>[
-              UserAvatarFollowChecker(
-                user: user.simplified,
-                checkIconSize: 20,
-                avatarRadius: 30,
-              ),
-              NameUsernameDisplay(
-                name: user.name,
-                username: user.username,
-              ),
-              FollowUnfollowButtonBuilder(userId: user.id),
-              // BlockUnblockButtonBuilder(user: user),
-              const SizedBox(width: 7),
-            ],
-          ),
-          Padding(
-            padding: const EdgeInsets.all(5),
-            child: UserBio(user: user),
-          ),
-          Padding(
-            padding: const EdgeInsets.all(5),
-            child: FollowersFollowingCounters(user: user),
-          ),
-          Padding(
-            padding: const EdgeInsets.all(5),
-            child: UserExperienceInfo(user: user),
-          ),
-        ],
-      ),
-    );
-  }
+  Widget build(BuildContext context) => Card(
+        margin: const EdgeInsets.all(5),
+        child: Column(
+          children: <Widget>[
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: <Widget>[
+                UserAvatarFollowChecker(
+                  user: user.simplified,
+                  checkIconSize: 20,
+                  avatarRadius: 30,
+                ),
+                NameUsernameDisplay(
+                  name: user.name,
+                  username: user.username,
+                ),
+                FollowUnfollowButtonBuilder(userId: user.id),
+                // BlockUnblockButtonBuilder(user: user),
+                const SizedBox(width: 7),
+              ],
+            ),
+            Padding(
+              padding: const EdgeInsets.all(5),
+              child: UserBio(user: user),
+            ),
+            Padding(
+              padding: const EdgeInsets.all(5),
+              child: FollowersFollowingCounters(user: user),
+            ),
+            Padding(
+              padding: const EdgeInsets.all(5),
+              child: UserExperienceInfo(user: user),
+            ),
+          ],
+        ),
+      );
 }

@@ -13,26 +13,24 @@ class UserInformation extends StatelessWidget {
   final SimpleUser creator;
 
   @override
-  Widget build(BuildContext context) {
-    return Row(
-      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-      children: <Widget>[
-        Row(
-          children: [
-            UserAvatarFollowChecker(
-              user: creator,
-              checkIconSize: 20,
-              avatarRadius: 30,
-            ),
-            const SizedBox(width: 5),
-            NameUsernameDisplay(
-              name: creator.name,
-              username: creator.username,
-            ),
-          ],
-        ),
-        FollowUnfollowButtonBuilder(userId: creator.id),
-      ],
-    );
-  }
+  Widget build(BuildContext context) => Row(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        children: <Widget>[
+          Row(
+            children: [
+              UserAvatarFollowChecker(
+                user: creator,
+                checkIconSize: 20,
+                avatarRadius: 30,
+              ),
+              const SizedBox(width: 5),
+              NameUsernameDisplay(
+                name: creator.name,
+                username: creator.username,
+              ),
+            ],
+          ),
+          FollowUnfollowButtonBuilder(userId: creator.id),
+        ],
+      );
 }

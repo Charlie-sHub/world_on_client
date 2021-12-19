@@ -14,30 +14,36 @@ class ObjectiveDescriptionTextField extends StatelessWidget {
   }) : super(key: key);
 
   @override
-  Widget build(BuildContext context) {
-    return TextFormField(
-      controller: textController,
-      maxLength: EntityDescription.maxLength,
-      onChanged: (value) => context.read<ObjectiveFormBloc>().add(
-            ObjectiveFormEvent.descriptionChanged(value),
-          ),
-      validator: (_) => context.read<ObjectiveFormBloc>().state.objective.description.value.fold(
-            (failure) => failure.maybeMap(
-              emptyString: (_) => S.of(context).descriptionEmptyString,
-              stringExceedsLength: (_) => S.of(context).descriptionStringExceedsLength,
-              stringWithInvalidCharacters: (_) => S.of(context).descriptionStringWithInvalidCharacters,
-              orElse: () => S.of(context).unknownError,
+  Widget build(BuildContext context) => TextFormField(
+        controller: textController,
+        maxLength: EntityDescription.maxLength,
+        onChanged: (value) => context.read<ObjectiveFormBloc>().add(
+              ObjectiveFormEvent.descriptionChanged(value),
             ),
-            (_) => null,
+        validator: (_) => context
+            .read<ObjectiveFormBloc>()
+            .state
+            .objective
+            .description
+            .value
+            .fold(
+              (failure) => failure.maybeMap(
+                emptyString: (_) => S.of(context).descriptionEmptyString,
+                stringExceedsLength: (_) =>
+                    S.of(context).descriptionStringExceedsLength,
+                stringWithInvalidCharacters: (_) =>
+                    S.of(context).descriptionStringWithInvalidCharacters,
+                orElse: () => S.of(context).unknownError,
+              ),
+              (_) => null,
+            ),
+        maxLines: 2,
+        decoration: InputDecoration(
+          labelText: S.of(context).description,
+          prefixIcon: const Icon(
+            Icons.description,
+            color: WorldOnColors.primary,
           ),
-      maxLines: 2,
-      decoration: InputDecoration(
-        labelText: S.of(context).description,
-        prefixIcon: const Icon(
-          Icons.description,
-          color: WorldOnColors.primary,
         ),
-      ),
-    );
-  }
+      );
 }

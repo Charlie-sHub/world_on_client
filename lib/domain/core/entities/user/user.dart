@@ -109,43 +109,40 @@ class User with _$User {
         followersAmount: simpleUser.followersAmount,
       );
 
-  Option<ValueFailure<dynamic>> get failureOption {
-    // Why is the id not checked?
-    return name.failureOrUnit
-        .andThen(username.failureOrUnit)
-        .andThen(password.failureOrUnit)
-        .andThen(email.failureOrUnit)
-        .andThen(birthday.failureOrUnit)
-        .andThen(description.failureOrUnit)
-        .andThen(level.failureOrUnit)
-        .andThen(experiencePoints.failureOrUnit)
-        .andThen(lastLogin.failureOrUnit)
-        .andThen(creationDate.failureOrUnit)
-        .andThen(modificationDate.failureOrUnit)
-        .fold(
-          (failure) => some(failure),
-          (_) => none(),
-        );
-  }
+  Option<ValueFailure<dynamic>> get failureOption => name.failureOrUnit
+      .andThen(username.failureOrUnit)
+      .andThen(password.failureOrUnit)
+      .andThen(email.failureOrUnit)
+      .andThen(birthday.failureOrUnit)
+      .andThen(description.failureOrUnit)
+      .andThen(level.failureOrUnit)
+      .andThen(experiencePoints.failureOrUnit)
+      .andThen(lastLogin.failureOrUnit)
+      .andThen(creationDate.failureOrUnit)
+      .andThen(modificationDate.failureOrUnit)
+      .fold(
+        (failure) => some(failure),
+        (_) => none(),
+      );
 
-  Either<ValueFailure<dynamic>, Unit> get failureOrUnit {
-    return failureOption.fold(
-      () => right(unit),
-      (failure) => left(failure),
-    );
-  }
+  Either<ValueFailure<dynamic>, Unit> get failureOrUnit => failureOption.fold(
+        () => right(unit),
+        (failure) => left(failure),
+      );
 
   bool get isValid => failureOption.isNone();
 
   SimpleUser get simplified => SimpleUser.fromUser(this);
 
   double get percentageToNextLevel {
-    final _nextLevelRequirements = experiencePointsRequired(level.getOrCrash() + 1);
+    final _nextLevelRequirements =
+        experiencePointsRequired(level.getOrCrash() + 1);
     int _totalToCurrentLevelRequirements = 0;
     for (int i = 0; i <= level.getOrCrash(); i++) {
       _totalToCurrentLevelRequirements += experiencePointsRequired(i);
     }
-    final _hadToNextLevel = experiencePoints.getOrCrash() - _totalToCurrentLevelRequirements;
+    final _hadToNextLevel =
+        experiencePoints.getOrCrash() - _totalToCurrentLevelRequirements;
     final _result = _hadToNextLevel / _nextLevelRequirements;
     if (_result < 1 && _result >= 0) {
       return _result;

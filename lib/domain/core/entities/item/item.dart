@@ -1,11 +1,10 @@
 import 'package:dartz/dartz.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:worldon/domain/core/entities/item/item_code.dart';
 import 'package:worldon/domain/core/failures/value_failure.dart';
 import 'package:worldon/domain/core/validation/objects/entity_description.dart';
 import 'package:worldon/domain/core/validation/objects/name.dart';
 import 'package:worldon/domain/core/validation/objects/unique_id.dart';
-
-import 'item_code.dart';
 
 part 'item.freezed.dart';
 
@@ -35,10 +34,11 @@ class Item with _$Item {
         boughtDate: DateTime.now(),
       );
 
-  Option<ValueFailure<dynamic>> get failureOption => name.failureOrUnit.andThen(description.failureOrUnit).fold(
-        (failure) => some(failure),
-        (_) => none(),
-      );
+  Option<ValueFailure<dynamic>> get failureOption =>
+      name.failureOrUnit.andThen(description.failureOrUnit).fold(
+            (failure) => some(failure),
+            (_) => none(),
+          );
 
   bool get isValid => failureOption.isNone();
 }

@@ -8,9 +8,8 @@ import 'package:worldon/application/experience_management/objectives_creation/ob
 import 'package:worldon/domain/core/validation/objects/objective_list.dart';
 import 'package:worldon/generated/l10n.dart';
 import 'package:worldon/injection.dart';
+import 'package:worldon/views/experience_management/widgets/objective_creation_card/created_objectives_list.dart';
 import 'package:worldon/views/experience_management/widgets/objective_creation_card/objective_creation_form.dart';
-
-import 'created_objectives_list.dart';
 
 class ObjectiveCreationCard extends HookWidget {
   final Option<ObjectiveList> objectiveListOption;
@@ -31,14 +30,17 @@ class ObjectiveCreationCard extends HookWidget {
           ObjectivesCreationEvent.initialized(objectiveListOption),
         ),
       child: BlocConsumer<ObjectivesCreationBloc, ObjectivesCreationState>(
-        listenWhen: (previous, current) => previous.objectivesCreated != current.objectivesCreated,
-        listener: (context, state) => context.read<ExperienceManagementFormBloc>().add(
-              ExperienceManagementFormEvent.objectivesChanged(
-                state.objectivesCreated,
-              ),
-            ),
+        listenWhen: (previous, current) =>
+            previous.objectivesCreated != current.objectivesCreated,
+        listener: (context, state) =>
+            context.read<ExperienceManagementFormBloc>().add(
+                  ExperienceManagementFormEvent.objectivesChanged(
+                    state.objectivesCreated,
+                  ),
+                ),
         builder: (context, state) {
-          final _experienceFormState = context.read<ExperienceManagementFormBloc>().state;
+          final _experienceFormState =
+              context.read<ExperienceManagementFormBloc>().state;
           return Column(
             mainAxisSize: MainAxisSize.min,
             children: <Widget>[

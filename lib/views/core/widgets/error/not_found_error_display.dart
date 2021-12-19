@@ -10,29 +10,27 @@ class NotFoundErrorDisplay extends StatelessWidget {
   }) : super(key: key);
 
   @override
-  Widget build(BuildContext context) {
-    return Column(
-      mainAxisAlignment: MainAxisAlignment.center,
-      children: <Widget>[
-        Text(
-          S.of(context).notFoundError,
-          style: const TextStyle(
-            fontSize: 30,
-            fontWeight: FontWeight.w800,
+  Widget build(BuildContext context) => Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: <Widget>[
+          Text(
+            S.of(context).notFoundError,
+            style: const TextStyle(
+              fontSize: 30,
+              fontWeight: FontWeight.w800,
+            ),
+            textAlign: TextAlign.center,
           ),
-          textAlign: TextAlign.center,
-        ),
-        const SizedBox(height: 10),
-        Text(
-          specificMessage,
-          style: const TextStyle(
-            fontSize: 20,
-            fontWeight: FontWeight.w300,
-            color: Colors.grey,
+          const SizedBox(height: 10),
+          Text(
+            specificMessage,
+            style: const TextStyle(
+              fontSize: 20,
+              fontWeight: FontWeight.w300,
+              color: Colors.grey,
+            ),
+            textAlign: TextAlign.center,
           ),
-          textAlign: TextAlign.center,
-        ),
-      ],
-    );
-  }
+        ],
+      );
 }

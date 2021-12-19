@@ -9,43 +9,42 @@ class SearchHeader extends StatelessWidget {
   }) : super(key: key);
 
   @override
-  Widget build(BuildContext context) {
-    return Form(
-      autovalidateMode: context.read<SearchByNameFormBloc>().state.showErrorMessages
-          ? AutovalidateMode.always
-          : AutovalidateMode.disabled,
-      child: Padding(
-        padding: const EdgeInsets.symmetric(
-          vertical: 5,
-        ),
-        child: Material(
-          elevation: 15,
-          borderRadius: const BorderRadius.all(
-            Radius.circular(30),
+  Widget build(BuildContext context) => Form(
+        autovalidateMode:
+            context.read<SearchByNameFormBloc>().state.showErrorMessages
+                ? AutovalidateMode.always
+                : AutovalidateMode.disabled,
+        child: Padding(
+          padding: const EdgeInsets.symmetric(
+            vertical: 5,
           ),
-          child: TextFormField(
-            onChanged: (value) => context.read<SearchByNameFormBloc>().add(
-                  SearchByNameFormEvent.searchTermChanged(value.trim()),
+          child: Material(
+            elevation: 15,
+            borderRadius: const BorderRadius.all(
+              Radius.circular(30),
+            ),
+            child: TextFormField(
+              onChanged: (value) => context.read<SearchByNameFormBloc>().add(
+                    SearchByNameFormEvent.searchTermChanged(value.trim()),
+                  ),
+              decoration: InputDecoration(
+                hintText: S.of(context).search,
+                contentPadding: const EdgeInsets.all(10),
+                suffixIcon: IconButton(
+                  icon: const Icon(
+                    Icons.search,
+                    size: 35,
+                  ),
+                  onPressed: () => _submit(context),
                 ),
-            decoration: InputDecoration(
-              hintText: S.of(context).search,
-              contentPadding: const EdgeInsets.all(10),
-              suffixIcon: IconButton(
-                icon: const Icon(
-                  Icons.search,
-                  size: 35,
-                ),
-                onPressed: () => _submit(context),
+                border: InputBorder.none,
+                focusedBorder: InputBorder.none,
+                enabledBorder: InputBorder.none,
               ),
-              border: InputBorder.none,
-              focusedBorder: InputBorder.none,
-              enabledBorder: InputBorder.none,
             ),
           ),
         ),
-      ),
-    );
-  }
+      );
 
   void _submit(BuildContext context) {
     FocusScope.of(context).unfocus();

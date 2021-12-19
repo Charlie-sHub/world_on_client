@@ -23,18 +23,16 @@ class SimpleUserDto with _$SimpleUserDto {
     required int followersAmount,
   }) = _SimpleUserDto;
 
-  factory SimpleUserDto.fromDomain(SimpleUser user) {
-    return SimpleUserDto(
-      id: user.id.getOrCrash(),
-      name: user.name.getOrCrash(),
-      username: user.username.getOrCrash(),
-      imageURL: user.imageURL,
-      level: user.level.getOrCrash(),
-      experiencePoints: user.experiencePoints.getOrCrash(),
-      adminPowers: user.adminPowers,
-      followersAmount: user.followersAmount,
-    );
-  }
+  factory SimpleUserDto.fromDomain(SimpleUser user) => SimpleUserDto(
+        id: user.id.getOrCrash(),
+        name: user.name.getOrCrash(),
+        username: user.username.getOrCrash(),
+        imageURL: user.imageURL,
+        level: user.level.getOrCrash(),
+        experiencePoints: user.experiencePoints.getOrCrash(),
+        adminPowers: user.adminPowers,
+        followersAmount: user.followersAmount,
+      );
 
   SimpleUser toDomain() => SimpleUser(
         id: UniqueId.fromUniqueString(id),
@@ -47,5 +45,6 @@ class SimpleUserDto with _$SimpleUserDto {
         followersAmount: followersAmount,
       );
 
-  factory SimpleUserDto.fromJson(Map<String, dynamic> json) => _$SimpleUserDtoFromJson(json);
+  factory SimpleUserDto.fromJson(Map<String, dynamic> json) =>
+      _$SimpleUserDtoFromJson(json);
 }

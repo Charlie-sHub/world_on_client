@@ -9,19 +9,17 @@ class LogoInkWell extends StatelessWidget {
   }) : super(key: key);
 
   @override
-  Widget build(BuildContext context) {
-    return InkWell(
-      onLongPress: () async {
-        context.read<AuthenticationBloc>().add(
-              const AuthenticationEvent.loggedOut(),
-            );
-      },
-      child: const Padding(
-        padding: EdgeInsets.all(5),
-        child: Image(
-          image: AssetImage(Assets.worldOnLogo),
+  Widget build(BuildContext context) => InkWell(
+        onLongPress: () async {
+          context.read<AuthenticationBloc>().add(
+                const AuthenticationEvent.loggedOut(),
+              );
+        },
+        child: const Padding(
+          padding: EdgeInsets.all(5),
+          child: Image(
+            image: AssetImage(Assets.worldOnLogo),
+          ),
         ),
-      ),
-    );
-  }
+      );
 }

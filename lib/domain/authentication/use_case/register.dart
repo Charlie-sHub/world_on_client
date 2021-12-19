@@ -13,9 +13,8 @@ class Register implements AsyncUseCase<Unit, Params> {
   Register(this._repository);
 
   @override
-  Future<Either<Failure, Unit>> call(Params params) async {
-    return _repository.register(params.user);
-  }
+  Future<Either<Failure, Unit>> call(Params params) async =>
+      _repository.register(params.user);
 }
 
 class Params {

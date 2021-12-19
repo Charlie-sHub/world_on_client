@@ -13,27 +13,28 @@ class RewardDescriptionTextField extends StatelessWidget {
   }) : super(key: key);
 
   @override
-  Widget build(BuildContext context) {
-    return TextFormField(
-      controller: textController,
-      maxLength: EntityDescription.maxLength,
-      onChanged: (value) => context.read<RewardFormBloc>().add(
-            RewardFormEvent.descriptionChanged(value),
-          ),
-      validator: (_) => context.read<RewardFormBloc>().state.reward.description.value.fold(
-            (failure) => failure.maybeMap(
-              emptyString: (_) => S.of(context).descriptionEmptyString,
-              stringExceedsLength: (_) => S.of(context).descriptionStringExceedsLength,
-              stringWithInvalidCharacters: (_) => S.of(context).descriptionStringWithInvalidCharacters,
-              orElse: () => S.of(context).unknownError,
+  Widget build(BuildContext context) => TextFormField(
+        controller: textController,
+        maxLength: EntityDescription.maxLength,
+        onChanged: (value) => context.read<RewardFormBloc>().add(
+              RewardFormEvent.descriptionChanged(value),
             ),
-            (_) => null,
-          ),
-      maxLines: 2,
-      decoration: InputDecoration(
-        labelText: S.of(context).description,
-        prefixIcon: const Icon(Icons.description),
-      ),
-    );
-  }
+        validator: (_) =>
+            context.read<RewardFormBloc>().state.reward.description.value.fold(
+                  (failure) => failure.maybeMap(
+                    emptyString: (_) => S.of(context).descriptionEmptyString,
+                    stringExceedsLength: (_) =>
+                        S.of(context).descriptionStringExceedsLength,
+                    stringWithInvalidCharacters: (_) =>
+                        S.of(context).descriptionStringWithInvalidCharacters,
+                    orElse: () => S.of(context).unknownError,
+                  ),
+                  (_) => null,
+                ),
+        maxLines: 2,
+        decoration: InputDecoration(
+          labelText: S.of(context).description,
+          prefixIcon: const Icon(Icons.description),
+        ),
+      );
 }

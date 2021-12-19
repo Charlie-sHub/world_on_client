@@ -13,104 +13,102 @@ class ItemTile extends StatelessWidget {
   }) : super(key: key);
 
   @override
-  Widget build(BuildContext context) {
-    return ListTile(
-      leading: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: const [
-          Icon(
-            Icons.trending_up_rounded,
-            color: WorldOnColors.primary,
-            size: 40,
-          ),
-        ],
-      ),
-      contentPadding: const EdgeInsets.symmetric(horizontal: 5),
-      title: Column(
-        children: [
-          Row(
-            children: [
-              Expanded(
-                child: Column(
-                  children: [
-                    Padding(
-                      padding: const EdgeInsets.all(5),
-                      child: AutoSizeText(
-                        item.name.getOrCrash(),
-                        style: const TextStyle(
-                          fontWeight: FontWeight.w900,
-                          fontSize: 18,
+  Widget build(BuildContext context) => ListTile(
+        leading: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: const [
+            Icon(
+              Icons.trending_up_rounded,
+              color: WorldOnColors.primary,
+              size: 40,
+            ),
+          ],
+        ),
+        contentPadding: const EdgeInsets.symmetric(horizontal: 5),
+        title: Column(
+          children: [
+            Row(
+              children: [
+                Expanded(
+                  child: Column(
+                    children: [
+                      Padding(
+                        padding: const EdgeInsets.all(5),
+                        child: AutoSizeText(
+                          item.name.getOrCrash(),
+                          style: const TextStyle(
+                            fontWeight: FontWeight.w900,
+                            fontSize: 18,
+                          ),
                         ),
                       ),
-                    ),
-                    Padding(
-                      padding: const EdgeInsets.all(5),
-                      child: AutoSizeText(
-                        item.description.getOrCrash(),
-                        textAlign: TextAlign.justify,
-                        style: TextStyle(
-                          color: Colors.grey.shade600,
-                          fontSize: 12,
+                      Padding(
+                        padding: const EdgeInsets.all(5),
+                        child: AutoSizeText(
+                          item.description.getOrCrash(),
+                          textAlign: TextAlign.justify,
+                          style: TextStyle(
+                            color: Colors.grey.shade600,
+                            fontSize: 12,
+                          ),
                         ),
                       ),
-                    ),
-                  ],
+                    ],
+                  ),
                 ),
-              ),
-            ],
-          ),
-          const Divider(
-            color: Colors.grey,
-          ),
-        ],
-      ),
-      subtitle: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-        children: [
-          Row(
-            children: [
-              AutoSizeText(
-                item.value.toString(),
-                style: const TextStyle(
-                  color: WorldOnColors.primary,
-                  fontWeight: FontWeight.bold,
-                  fontSize: 16,
+              ],
+            ),
+            const Divider(
+              color: Colors.grey,
+            ),
+          ],
+        ),
+        subtitle: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          children: [
+            Row(
+              children: [
+                AutoSizeText(
+                  item.value.toString(),
+                  style: const TextStyle(
+                    color: WorldOnColors.primary,
+                    fontWeight: FontWeight.bold,
+                    fontSize: 16,
+                  ),
                 ),
-              ),
-              const SizedBox(width: 5),
-              Image.asset(
-                "assets/world_on_coin.png",
-                scale: 10,
-              ),
-            ],
-          ),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              const Icon(
-                Icons.schedule_rounded,
-                size: 20,
-              ),
-              const SizedBox(width: 5),
-              AutoSizeText(
-                item.timeLimitInDays.toString(),
-                style: const TextStyle(
-                  fontWeight: FontWeight.bold,
-                  color: WorldOnColors.accent,
-                  fontSize: 17,
+                const SizedBox(width: 5),
+                Image.asset(
+                  "assets/world_on_coin.png",
+                  scale: 10,
                 ),
-              ),
-              const SizedBox(width: 5),
-              AutoSizeText(
-                ": ${S.of(context).days}",
-                style: const TextStyle(
-                  fontSize: 14,
+              ],
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                const Icon(
+                  Icons.schedule_rounded,
+                  size: 20,
                 ),
-              ),
-            ],
-          ),
-        ],
-      ),
-    );
-  }
+                const SizedBox(width: 5),
+                AutoSizeText(
+                  item.timeLimitInDays.toString(),
+                  style: const TextStyle(
+                    fontWeight: FontWeight.bold,
+                    color: WorldOnColors.accent,
+                    fontSize: 17,
+                  ),
+                ),
+                const SizedBox(width: 5),
+                AutoSizeText(
+                  ": ${S.of(context).days}",
+                  style: const TextStyle(
+                    fontSize: 14,
+                  ),
+                ),
+              ],
+            ),
+          ],
+        ),
+      );
 }

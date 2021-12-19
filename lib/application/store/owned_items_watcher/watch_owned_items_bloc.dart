@@ -14,31 +14,32 @@ part 'watch_owned_items_bloc.freezed.dart';
 part 'watch_owned_items_event.dart';
 part 'watch_owned_items_state.dart';
 
-class WatchOwnedItemsBloc extends Bloc<WatchOwnedItemsEvent, WatchOwnedItemsState> {
-  WatchOwnedItemsBloc() : super(const WatchOwnedItemsState.initial());
+class WatchOwnedItemsBloc
+    extends Bloc<WatchOwnedItemsEvent, WatchOwnedItemsState> {
+  WatchOwnedItemsBloc() : super(const WatchOwnedItemsState.initial()) {
+    on<_WatchOwnedItemsStarted>(_onWatchOwnedItemsStarted);
+    on<_ResultsReceived>(_onResultsReceived);
+  }
 
-  StreamSubscription<Either<Failure, KtList<Item>>>? _ownedItemsStreamSubscription;
+  StreamSubscription<Either<Failure, KtList<Item>>>?
+      _ownedItemsStreamSubscription;
 
-  @override
-  Stream<WatchOwnedItemsState> mapEventToState(WatchOwnedItemsEvent event) async* {
-    yield* event.map(
-      watchOwnedItemsStarted: _onWatchOwnedItemsStarted,
-      resultsReceived: _onResultsReceived,
+  void _onResultsReceived(_ResultsReceived event, Emitter emit) {
+    emit(
+      event.failureOrItems.fold(
+        (failure) => WatchOwnedItemsState.loadFailure(failure),
+        (items) => WatchOwnedItemsState.loadSuccess(items),
+      ),
     );
   }
 
-  Stream<WatchOwnedItemsState> _onResultsReceived(_ResultsReceived event) async* {
-    yield event.failureOrItems.fold(
-      (failure) => WatchOwnedItemsState.loadFailure(failure),
-      (items) => WatchOwnedItemsState.loadSuccess(items),
-    );
-  }
-
-  Stream<WatchOwnedItemsState> _onWatchOwnedItemsStarted(_) async* {
-    yield const WatchOwnedItemsState.loadInProgress();
+  FutureOr<void> _onWatchOwnedItemsStarted(_, Emitter emit) async {
+    emit(const WatchOwnedItemsState.loadInProgress());
     await _ownedItemsStreamSubscription?.cancel();
-    _ownedItemsStreamSubscription = getIt<WatchOwnedItems>()(getIt<NoParams>()).listen(
-      (_failureOrItems) => add(WatchOwnedItemsEvent.resultsReceived(_failureOrItems)),
+    _ownedItemsStreamSubscription =
+        getIt<WatchOwnedItems>()(getIt<NoParams>()).listen(
+      (_failureOrItems) =>
+          add(WatchOwnedItemsEvent.resultsReceived(_failureOrItems)),
     );
   }
 

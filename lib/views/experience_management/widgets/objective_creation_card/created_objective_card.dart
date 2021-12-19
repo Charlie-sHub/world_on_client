@@ -18,71 +18,69 @@ class CreatedObjectiveCard extends StatelessWidget {
   final Animation<double> animation;
 
   @override
-  Widget build(BuildContext context) {
-    return ScaleTransition(
-      scale: Tween<double>(
-        begin: 1,
-        end: 0.95,
-      ).animate(animation),
-      child: Slidable(
-        key: Key(objective.id.getOrCrash()),
-        endActionPane: ActionPane(
-          motion: const DrawerMotion(),
-          children: [
-            IconButton(
-              icon: const Icon(
-                Icons.delete,
-                color: Colors.red,
-              ),
-              onPressed: () => context.read<ObjectivesCreationBloc>().add(
-                    ObjectivesCreationEvent.removedObjective(objective),
-                  ),
-            ),
-          ],
-        ),
-        child: Card(
-          clipBehavior: Clip.antiAlias,
-          elevation: animation.value * 10,
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: <Widget>[
-              Image(
-                image: objective.imageFile.fold(
-                  () => CachedNetworkImageProvider(objective.imageURL),
-                  (_imageFile) => FileImage(_imageFile),
+  Widget build(BuildContext context) => ScaleTransition(
+        scale: Tween<double>(
+          begin: 1,
+          end: 0.95,
+        ).animate(animation),
+        child: Slidable(
+          key: Key(objective.id.getOrCrash()),
+          endActionPane: ActionPane(
+            motion: const DrawerMotion(),
+            children: [
+              IconButton(
+                icon: const Icon(
+                  Icons.delete,
+                  color: Colors.red,
                 ),
-                height: 100,
+                onPressed: () => context.read<ObjectivesCreationBloc>().add(
+                      ObjectivesCreationEvent.removedObjective(objective),
+                    ),
               ),
-              Expanded(
-                child: Padding(
-                  padding: const EdgeInsets.all(5),
-                  child: SizedBox(
-                    height: 90,
-                    width: 150,
-                    child: AutoSizeText(
-                      objective.description.getOrCrash(),
-                      overflow: TextOverflow.fade,
-                      minFontSize: 8,
-                      maxFontSize: 15,
-                      maxLines: 20,
-                      style: const TextStyle(
-                        fontSize: 15,
+            ],
+          ),
+          child: Card(
+            clipBehavior: Clip.antiAlias,
+            elevation: animation.value * 10,
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: <Widget>[
+                Image(
+                  image: objective.imageFile.fold(
+                    () => CachedNetworkImageProvider(objective.imageURL),
+                    (_imageFile) => FileImage(_imageFile),
+                  ),
+                  height: 100,
+                ),
+                Expanded(
+                  child: Padding(
+                    padding: const EdgeInsets.all(5),
+                    child: SizedBox(
+                      height: 90,
+                      width: 150,
+                      child: AutoSizeText(
+                        objective.description.getOrCrash(),
+                        overflow: TextOverflow.fade,
+                        minFontSize: 8,
+                        maxFontSize: 15,
+                        maxLines: 20,
+                        style: const TextStyle(
+                          fontSize: 15,
+                        ),
                       ),
                     ),
                   ),
                 ),
-              ),
-              const Handle(
-                child: Icon(
-                  Icons.drag_indicator_rounded,
-                  size: 35,
-                  color: Colors.grey,
+                const Handle(
+                  child: Icon(
+                    Icons.drag_indicator_rounded,
+                    size: 35,
+                    color: Colors.grey,
+                  ),
                 ),
-              ),
-            ],
+              ],
+            ),
           ),
         ),
-      ),
-    );
-  }
+      );
 }

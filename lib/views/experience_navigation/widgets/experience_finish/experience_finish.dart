@@ -13,42 +13,44 @@ import 'package:worldon/views/experience_navigation/widgets/experience_finish/fi
 class ExperienceFinish extends StatelessWidget {
   final Experience experience;
 
-  const ExperienceFinish({Key? key, required this.experience}) : super(key: key);
+  const ExperienceFinish({Key? key, required this.experience})
+      : super(key: key);
 
   @override
-  Widget build(BuildContext context) {
-    return BlocProvider(
-      create: (context) => getIt<ExperienceFinishActorBloc>()
-        ..add(
-          ExperienceFinishActorEvent.finishedExperience(experience),
-        ),
-      child: BlocConsumer<ExperienceFinishActorBloc, ExperienceFinishActorState>(
-        listenWhen: (previous, current) => current.maybeMap(
-          finishSuccess: (state) => state.leveledUp,
-          orElse: () => false,
-        ),
-        listener: (context, state) => state.maybeMap(
-          finishSuccess: (state) => FlushbarHelper.createSuccess(
-            duration: const Duration(seconds: 4),
-            message: S.of(context).levelUp,
-          ).show(context),
-          orElse: () {},
-        ),
-        builder: (context, state) => state.map(
-          initial: (_) => Container(),
-          actionInProgress: (_) => const WorldOnProgressIndicator(
-            size: 60,
+  Widget build(BuildContext context) => BlocProvider(
+        create: (context) => getIt<ExperienceFinishActorBloc>()
+          ..add(
+            ExperienceFinishActorEvent.finishedExperience(experience),
           ),
-          finishSuccess: (_) => FinishSuccessView(experience: experience),
-          finishFailure: (state) => ErrorDisplay(
-            retryFunction: () => context.read<ExperienceFinishActorBloc>().add(
-                  ExperienceFinishActorEvent.finishedExperience(experience),
-                ),
-            failure: state.failure,
-            specificMessage: none(),
+        child:
+            BlocConsumer<ExperienceFinishActorBloc, ExperienceFinishActorState>(
+          listenWhen: (previous, current) => current.maybeMap(
+            finishSuccess: (state) => state.leveledUp,
+            orElse: () => false,
+          ),
+          listener: (context, state) => state.maybeMap(
+            finishSuccess: (state) => FlushbarHelper.createSuccess(
+              duration: const Duration(seconds: 4),
+              message: S.of(context).levelUp,
+            ).show(context),
+            orElse: () {},
+          ),
+          builder: (context, state) => state.map(
+            initial: (_) => Container(),
+            actionInProgress: (_) => const WorldOnProgressIndicator(
+              size: 60,
+            ),
+            finishSuccess: (_) => FinishSuccessView(experience: experience),
+            finishFailure: (state) => ErrorDisplay(
+              retryFunction: () => context
+                  .read<ExperienceFinishActorBloc>()
+                  .add(
+                    ExperienceFinishActorEvent.finishedExperience(experience),
+                  ),
+              failure: state.failure,
+              specificMessage: none(),
+            ),
           ),
         ),
-      ),
-    );
-  }
+      );
 }

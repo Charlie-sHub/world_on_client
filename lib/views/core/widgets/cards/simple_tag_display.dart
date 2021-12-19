@@ -11,18 +11,16 @@ class SimpleTagDisplay extends StatelessWidget {
   }) : super(key: key);
 
   @override
-  Widget build(BuildContext context) {
-    return Chip(
-      elevation: 5,
-      materialTapTargetSize: MaterialTapTargetSize.shrinkWrap,
-      backgroundColor: Colors.blueGrey,
-      label: Text(
-        tag.name.getOrCrash(),
-        style: const TextStyle(
-          color: WorldOnColors.white,
-          fontWeight: FontWeight.bold,
+  Widget build(BuildContext context) => Chip(
+        elevation: 5,
+        materialTapTargetSize: MaterialTapTargetSize.shrinkWrap,
+        backgroundColor: Colors.blueGrey,
+        label: Text(
+          tag.name.getOrCrash(),
+          style: const TextStyle(
+            color: WorldOnColors.white,
+            fontWeight: FontWeight.bold,
+          ),
         ),
-      ),
-    );
-  }
+      );
 }

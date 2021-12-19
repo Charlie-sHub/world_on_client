@@ -40,12 +40,13 @@ class Notification with _$Notification {
         experienceOption: none(),
       );
 
-  Option<ValueFailure<dynamic>> get failureOption {
-    return description.failureOrUnit.andThen(sender.failureOrUnit).andThen(creationDate.failureOrUnit).fold(
-          (failure) => some(failure),
-          (_) => none(),
-        );
-  }
+  Option<ValueFailure<dynamic>> get failureOption => description.failureOrUnit
+      .andThen(sender.failureOrUnit)
+      .andThen(creationDate.failureOrUnit)
+      .fold(
+        (failure) => some(failure),
+        (_) => none(),
+      );
 
   bool get isValid => failureOption.isNone();
 }

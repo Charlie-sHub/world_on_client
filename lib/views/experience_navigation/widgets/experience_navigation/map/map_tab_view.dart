@@ -19,41 +19,40 @@ class MapTabView extends StatelessWidget {
   }) : super(key: key);
 
   @override
-  Widget build(BuildContext context) {
-    return BlocBuilder<MapControllerBloc, MapControllerState>(
-      builder: (context, state) => state.loadedCoordinates
-          ? GoogleMap(
-              mapType: MapType.hybrid,
-              myLocationEnabled: true,
-              mapToolbarEnabled: false,
-              zoomControlsEnabled: false,
-              markers: state.objectives
-                  .asList()
-                  .map(
-                    (_objective) => _mapObjectiveToMarker(
-                      _objective,
-                      context,
-                    ),
-                  )
-                  .toSet(),
-              onCameraMove: (position) => _onCameraMoved(
-                context,
-                position,
-              ),
-              initialCameraPosition: CameraPosition(
-                target: LatLng(
-                  state.coordinates.latitude.getOrCrash(),
-                  state.coordinates.longitude.getOrCrash(),
+  Widget build(BuildContext context) =>
+      BlocBuilder<MapControllerBloc, MapControllerState>(
+        builder: (context, state) => state.loadedCoordinates
+            ? GoogleMap(
+                mapType: MapType.hybrid,
+                myLocationEnabled: true,
+                mapToolbarEnabled: false,
+                zoomControlsEnabled: false,
+                markers: state.objectives
+                    .asList()
+                    .map(
+                      (_objective) => _mapObjectiveToMarker(
+                        _objective,
+                        context,
+                      ),
+                    )
+                    .toSet(),
+                onCameraMove: (position) => _onCameraMoved(
+                  context,
+                  position,
                 ),
-                zoom: state.zoom,
-                tilt: 45,
+                initialCameraPosition: CameraPosition(
+                  target: LatLng(
+                    state.coordinates.latitude.getOrCrash(),
+                    state.coordinates.longitude.getOrCrash(),
+                  ),
+                  zoom: state.zoom,
+                  tilt: 45,
+                ),
+              )
+            : const WorldOnProgressIndicator(
+                size: 60,
               ),
-            )
-          : const WorldOnProgressIndicator(
-              size: 60,
-            ),
-    );
-  }
+      );
 
   Marker _mapObjectiveToMarker(Objective objective, BuildContext context) =>
       Marker(

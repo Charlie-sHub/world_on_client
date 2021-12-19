@@ -14,16 +14,14 @@ class LikeTagButton extends StatelessWidget {
   final Tag tag;
 
   @override
-  Widget build(BuildContext context) {
-    return IconButton(
-      icon: const Icon(
-        Icons.favorite_border_rounded,
-        color: Colors.grey,
-        size: 35,
-      ),
-      onPressed: () => context.read<TagCardActorBloc>().add(
-            TagCardActorEvent.addedToInterests(tag),
-          ),
-    );
-  }
+  Widget build(BuildContext context) => IconButton(
+        icon: const Icon(
+          Icons.favorite_border_rounded,
+          color: Colors.grey,
+          size: 35,
+        ),
+        onPressed: () => context.read<TagCardActorBloc>().add(
+              TagCardActorEvent.addedToInterests(tag),
+            ),
+      );
 }

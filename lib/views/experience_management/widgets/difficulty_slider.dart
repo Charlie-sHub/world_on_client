@@ -14,30 +14,40 @@ class DifficultySlider extends StatelessWidget {
   }) : super(key: key);
 
   @override
-  Widget build(BuildContext context) {
-    return Showcase(
-      key: showKey,
-      description: S.of(context).difficultyShowCase,
-      child: Slider(
-        min: 1,
-        max: 10,
-        inactiveColor: Colors.grey,
-        label:
-            context.read<ExperienceManagementFormBloc>().state.experience.difficulty.getOrCrash().toString(),
-        activeColor: getColorByDifficulty(
-          context.read<ExperienceManagementFormBloc>().state.experience.difficulty.getOrCrash(),
+  Widget build(BuildContext context) => Showcase(
+        key: showKey,
+        description: S.of(context).difficultyShowCase,
+        child: Slider(
+          min: 1,
+          max: 10,
+          inactiveColor: Colors.grey,
+          label: context
+              .read<ExperienceManagementFormBloc>()
+              .state
+              .experience
+              .difficulty
+              .getOrCrash()
+              .toString(),
+          activeColor: getColorByDifficulty(
+            context
+                .read<ExperienceManagementFormBloc>()
+                .state
+                .experience
+                .difficulty
+                .getOrCrash(),
+          ),
+          onChanged: (value) => context
+              .read<ExperienceManagementFormBloc>()
+              .add(
+                ExperienceManagementFormEvent.difficultyChanged(value.round()),
+              ),
+          value: context
+              .read<ExperienceManagementFormBloc>()
+              .state
+              .experience
+              .difficulty
+              .getOrCrash()
+              .ceilToDouble(),
         ),
-        onChanged: (value) => context.read<ExperienceManagementFormBloc>().add(
-              ExperienceManagementFormEvent.difficultyChanged(value.round()),
-            ),
-        value: context
-            .read<ExperienceManagementFormBloc>()
-            .state
-            .experience
-            .difficulty
-            .getOrCrash()
-            .ceilToDouble(),
-      ),
-    );
-  }
+      );
 }

@@ -1,5 +1,3 @@
-import 'dart:async';
-
 import 'package:bloc/bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:injectable/injectable.dart';
@@ -9,26 +7,22 @@ part 'main_page_show_case_event.dart';
 part 'main_page_show_case_state.dart';
 
 @injectable
-class MainPageShowCaseBloc extends Bloc<MainPageShowCaseEvent, MainPageShowCaseState> {
-  MainPageShowCaseBloc() : super(const MainPageShowCaseState.initial());
-
-  @override
-  Stream<MainPageShowCaseState> mapEventToState(MainPageShowCaseEvent event) async* {
-    yield* event.map(
-      initialized: _onInitialized,
-      finished: _onFinished,
-    );
+class MainPageShowCaseBloc
+    extends Bloc<MainPageShowCaseEvent, MainPageShowCaseState> {
+  MainPageShowCaseBloc() : super(const MainPageShowCaseState.initial()) {
+    on<_Initialized>(_onInitialized);
+    on<_Finished>(_onFinished);
   }
 
-  Stream<MainPageShowCaseState> _onInitialized(_Initialized event) async* {
+  void _onInitialized(_Initialized event, Emitter emit) {
     if (event.isNewUser) {
-      yield const MainPageShowCaseState.show();
+      emit(const MainPageShowCaseState.show());
     } else {
-      yield const MainPageShowCaseState.showNot();
+      emit(const MainPageShowCaseState.showNot());
     }
   }
 
-  Stream<MainPageShowCaseState> _onFinished(_Finished event) async* {
-    yield const MainPageShowCaseState.showNot();
+  void _onFinished(_Finished event, Emitter emit) {
+    emit(const MainPageShowCaseState.showNot());
   }
 }

@@ -6,26 +6,24 @@ import 'package:worldon/views/core/misc/world_on_colors.dart';
 
 class BuyTenCoinsButton extends StatelessWidget {
   @override
-  Widget build(BuildContext context) {
-    return ElevatedButton(
-      style: ButtonStyle(
-        backgroundColor: MaterialStateProperty.all(
-          WorldOnColors.primary,
-        ),
-      ),
-      onPressed: () => context.read<BuyCoinsBloc>().add(
-            const BuyCoinsEvent.boughtCoins(10),
-          ),
-      child: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 30),
-        child: Text(
-          S.of(context).buy10Coins,
-          style: const TextStyle(
-            fontWeight: FontWeight.w900,
-            fontSize: 18,
+  Widget build(BuildContext context) => ElevatedButton(
+        style: ButtonStyle(
+          backgroundColor: MaterialStateProperty.all(
+            WorldOnColors.primary,
           ),
         ),
-      ),
-    );
-  }
+        onPressed: () => context.read<BuyCoinsBloc>().add(
+              const BuyCoinsEvent.boughtCoins(10),
+            ),
+        child: Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 30),
+          child: Text(
+            S.of(context).buy10Coins,
+            style: const TextStyle(
+              fontWeight: FontWeight.w900,
+              fontSize: 18,
+            ),
+          ),
+        ),
+      );
 }

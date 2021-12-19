@@ -18,88 +18,94 @@ class ObjectiveCard extends StatelessWidget {
   static const double _imageSize = 150;
 
   @override
-  Widget build(BuildContext context) {
-    return SizedBox(
-      height: _imageSize,
-      child: Card(
-        clipBehavior: Clip.antiAlias,
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: <Widget>[
-            InkWell(
-              onTap: () => showDialog(
-                context: context,
-                builder: (context) => Dialog(
-                  clipBehavior: Clip.antiAlias,
-                  child: InkWell(
-                    onTap: () => Navigator.of(context).pop(),
-                    child: WorldOnCachedImage(
-                      imageURL: objective.imageURL,
+  Widget build(BuildContext context) => SizedBox(
+        height: _imageSize,
+        child: Card(
+          clipBehavior: Clip.antiAlias,
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: <Widget>[
+              InkWell(
+                onTap: () => showDialog(
+                  context: context,
+                  builder: (context) => Dialog(
+                    clipBehavior: Clip.antiAlias,
+                    child: InkWell(
+                      onTap: () => Navigator.of(context).pop(),
+                      child: WorldOnCachedImage(
+                        imageURL: objective.imageURL,
+                      ),
+                    ),
+                  ),
+                ),
+                child: SizedBox(
+                  height: _imageSize,
+                  width: _imageSize,
+                  child: CachedNetworkImage(
+                    imageUrl: objective.imageURL,
+                    fit: BoxFit.fill,
+                    progressIndicatorBuilder: (
+                      context,
+                      url,
+                      progress,
+                    ) =>
+                        WorldOnPlasma(),
+                  ),
+                ),
+              ),
+              Padding(
+                padding: const EdgeInsets.all(5),
+                child: SizedBox(
+                  height: _imageSize,
+                  width: 110,
+                  child: AutoSizeText(
+                    objective.description.getOrCrash(),
+                    overflow: TextOverflow.fade,
+                    minFontSize: 8,
+                    maxFontSize: 15,
+                    maxLines: 20,
+                    style: const TextStyle(
+                      fontSize: 12,
                     ),
                   ),
                 ),
               ),
-              child: SizedBox(
-                height: _imageSize,
-                width: _imageSize,
-                child: CachedNetworkImage(
-                  imageUrl: objective.imageURL,
-                  fit: BoxFit.fill,
-                  progressIndicatorBuilder: (
-                    context,
-                    url,
-                    progress,
-                  ) =>
-                      WorldOnPlasma(),
-                ),
-              ),
-            ),
-            Padding(
-              padding: const EdgeInsets.all(5),
-              child: SizedBox(
-                height: _imageSize,
-                width: 110,
-                child: AutoSizeText(
-                  objective.description.getOrCrash(),
-                  overflow: TextOverflow.fade,
-                  minFontSize: 8,
-                  maxFontSize: 15,
-                  maxLines: 20,
-                  style: const TextStyle(
-                    fontSize: 12,
-                  ),
-                ),
-              ),
-            ),
-            BlocBuilder<ObjectivesTrackerBloc, ObjectivesTrackerState>(
-              builder: (context, state) => state.objectivesToDo.contains(objective)
-                  ? IconButton(
-                      padding: EdgeInsets.zero,
-                      icon: const Icon(
-                        Icons.done,
-                        color: Colors.grey,
-                        size: 40,
+              BlocBuilder<ObjectivesTrackerBloc, ObjectivesTrackerState>(
+                builder: (context, state) => state.objectivesToDo
+                        .contains(objective)
+                    ? IconButton(
+                        padding: EdgeInsets.zero,
+                        icon: const Icon(
+                          Icons.done,
+                          color: Colors.grey,
+                          size: 40,
+                        ),
+                        onPressed: () =>
+                            context.read<ObjectivesTrackerBloc>().add(
+                                  ObjectivesTrackerEvent.objectiveAccomplished(
+                                    objective,
+                                  ),
+                                ),
+                      )
+                    : IconButton(
+                        padding: EdgeInsets.zero,
+                        icon: const Icon(
+                          Icons.done_all,
+                          color: WorldOnColors.primary,
+                          size: 40,
+                        ),
+                        onPressed: () => context
+                            .read<ObjectivesTrackerBloc>()
+                            .add(
+                              ObjectivesTrackerEvent.objectiveUnaccomplished(
+                                objective,
+                              ),
+                            ),
                       ),
-                      onPressed: () => context.read<ObjectivesTrackerBloc>().add(
-                            ObjectivesTrackerEvent.objectiveAccomplished(objective),
-                          ),
-                    )
-                  : IconButton(
-                      padding: EdgeInsets.zero,
-                      icon: const Icon(
-                        Icons.done_all,
-                        color: WorldOnColors.primary,
-                        size: 40,
-                      ),
-                      onPressed: () => context.read<ObjectivesTrackerBloc>().add(
-                            ObjectivesTrackerEvent.objectiveUnaccomplished(objective),
-                          ),
-                    ),
-            ),
-            const SizedBox(width: 5),
-          ],
+              ),
+              const SizedBox(width: 5),
+            ],
+          ),
         ),
-      ),
-    );
-  }
+      );
 }

@@ -6,17 +6,15 @@ class WorldOnCachedImage extends StatelessWidget {
   const WorldOnCachedImage({
     Key? key,
     required String imageURL,
-  })   : _imageURL = imageURL,
+  })  : _imageURL = imageURL,
         super(key: key);
 
   final String _imageURL;
 
   @override
-  Widget build(BuildContext context) {
-    return CachedNetworkImage(
-      imageUrl: _imageURL,
-      fit: BoxFit.cover,
-      progressIndicatorBuilder: (context, url, progress) => WorldOnPlasma(),
-    );
-  }
+  Widget build(BuildContext context) => CachedNetworkImage(
+        imageUrl: _imageURL,
+        fit: BoxFit.cover,
+        progressIndicatorBuilder: (context, url, progress) => WorldOnPlasma(),
+      );
 }

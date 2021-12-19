@@ -41,5 +41,6 @@ class CommentDto with _$CommentDto {
         modificationDate: PastDate(modificationDate),
       );
 
-  factory CommentDto.fromJson(Map<String, dynamic> json) => _$CommentDtoFromJson(json);
+  factory CommentDto.fromJson(Map<String, dynamic> json) =>
+      _$CommentDtoFromJson(json);
 }

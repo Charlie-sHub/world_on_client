@@ -13,54 +13,52 @@ class FollowersFollowingCounters extends StatelessWidget {
   final User user;
 
   @override
-  Widget build(BuildContext context) {
-    return Row(
-      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-      children: [
-        Expanded(
-          child: Container(),
-        ),
-        Row(
-          children: [
-            AutoSizeText(
-              "${S.of(context).followersCaps} ",
-              style: const TextStyle(
-                fontSize: 8,
-                color: Colors.grey,
+  Widget build(BuildContext context) => Row(
+        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+        children: [
+          Expanded(
+            child: Container(),
+          ),
+          Row(
+            children: [
+              AutoSizeText(
+                "${S.of(context).followersCaps} ",
+                style: const TextStyle(
+                  fontSize: 8,
+                  color: Colors.grey,
+                ),
               ),
-            ),
-            AutoSizeText(
-              createNumberDisplay(user.followersAmount),
-              style: const TextStyle(
-                fontWeight: FontWeight.w800,
-                fontSize: 10,
+              AutoSizeText(
+                createNumberDisplay(user.followersAmount),
+                style: const TextStyle(
+                  fontWeight: FontWeight.w800,
+                  fontSize: 10,
+                ),
               ),
-            ),
-          ],
-        ),
-        const SizedBox(width: 40),
-        Row(
-          children: [
-            AutoSizeText(
-              "${S.of(context).following} ",
-              style: const TextStyle(
-                fontSize: 8,
-                color: Colors.grey,
+            ],
+          ),
+          const SizedBox(width: 40),
+          Row(
+            children: [
+              AutoSizeText(
+                "${S.of(context).following} ",
+                style: const TextStyle(
+                  fontSize: 8,
+                  color: Colors.grey,
+                ),
               ),
-            ),
-            AutoSizeText(
-              createNumberDisplay(user.followedUsersIds.length),
-              style: const TextStyle(
-                fontWeight: FontWeight.w800,
-                fontSize: 10,
+              AutoSizeText(
+                createNumberDisplay(user.followedUsersIds.length),
+                style: const TextStyle(
+                  fontWeight: FontWeight.w800,
+                  fontSize: 10,
+                ),
               ),
-            ),
-          ],
-        ),
-        Expanded(
-          child: Container(),
-        ),
-      ],
-    );
-  }
+            ],
+          ),
+          Expanded(
+            child: Container(),
+          ),
+        ],
+      );
 }

@@ -15,36 +15,36 @@ class TagResultsView extends StatelessWidget {
   }) : super(key: key);
 
   @override
-  Widget build(BuildContext context) {
-    return BlocBuilder<SearchTagsByNameWatcherBloc, SearchTagsByNameWatcherState>(
-      builder: (context, state) => state.map(
-        initial: (_) => Container(),
-        searchInProgress: (_) => const WorldOnProgressIndicator(
-          size: 20,
+  Widget build(BuildContext context) =>
+      BlocBuilder<SearchTagsByNameWatcherBloc, SearchTagsByNameWatcherState>(
+        builder: (context, state) => state.map(
+          initial: (_) => Container(),
+          searchInProgress: (_) => const WorldOnProgressIndicator(
+            size: 20,
+          ),
+          searchSuccess: (state) => ListView.builder(
+            scrollDirection: Axis.horizontal,
+            clipBehavior: Clip.none,
+            itemCount: state.tagsFound.size,
+            itemBuilder: (context, index) {
+              final _tag = state.tagsFound.get(index);
+              if (_tag.isValid) {
+                return SimpleTagCardBuilder(tag: _tag);
+              } else {
+                return SimpleTagErrorDisplay(tag: _tag);
+              }
+            },
+          ),
+          searchFailure: (state) => SearchErrorDisplay(
+            retryFunction: () =>
+                context.read<SearchTagsByNameWatcherBloc>().add(
+                      SearchTagsByNameWatcherEvent.watchTagsFoundByNameStarted(
+                        context.read<SearchByNameFormBloc>().state.searchTerm,
+                      ),
+                    ),
+            failure: state.failure,
+            specificMessage: some(S.of(context).notFoundErrorSearch),
+          ),
         ),
-        searchSuccess: (state) => ListView.builder(
-          scrollDirection: Axis.horizontal,
-          clipBehavior: Clip.none,
-          itemCount: state.tagsFound.size,
-          itemBuilder: (context, index) {
-            final _tag = state.tagsFound.get(index);
-            if (_tag.isValid) {
-              return SimpleTagCardBuilder(tag: _tag);
-            } else {
-              return SimpleTagErrorDisplay(tag: _tag);
-            }
-          },
-        ),
-        searchFailure: (state) => SearchErrorDisplay(
-          retryFunction: () => context.read<SearchTagsByNameWatcherBloc>().add(
-                SearchTagsByNameWatcherEvent.watchTagsFoundByNameStarted(
-                  context.read<SearchByNameFormBloc>().state.searchTerm,
-                ),
-              ),
-          failure: state.failure,
-          specificMessage: some(S.of(context).notFoundErrorSearch),
-        ),
-      ),
-    );
-  }
+      );
 }

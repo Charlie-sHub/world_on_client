@@ -12,27 +12,25 @@ class SimpleTagErrorDisplay extends StatelessWidget {
   }) : super(key: key);
 
   @override
-  Widget build(BuildContext context) {
-    return Container(
-      decoration: BoxDecoration(
-        border: Border.all(
-          color: WorldOnColors.red,
-          width: 2,
-        ),
-        borderRadius: BorderRadius.circular(12),
-      ),
-      child: Padding(
-        padding: const EdgeInsets.all(3),
-        child: Text(
-          tag.failureOption.fold(
-            () => S.of(context).noError,
-            (failure) => failure.toString(),
-          ),
-          style: const TextStyle(
+  Widget build(BuildContext context) => Container(
+        decoration: BoxDecoration(
+          border: Border.all(
             color: WorldOnColors.red,
+            width: 2,
+          ),
+          borderRadius: BorderRadius.circular(12),
+        ),
+        child: Padding(
+          padding: const EdgeInsets.all(3),
+          child: Text(
+            tag.failureOption.fold(
+              () => S.of(context).noError,
+              (failure) => failure.toString(),
+            ),
+            style: const TextStyle(
+              color: WorldOnColors.red,
+            ),
           ),
         ),
-      ),
-    );
-  }
+      );
 }

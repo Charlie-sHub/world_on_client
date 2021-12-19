@@ -12,9 +12,8 @@ class CheckNotification implements AsyncUseCase<Unit, Params> {
   CheckNotification(this._repository);
 
   @override
-  Future<Either<Failure, Unit>> call(Params params) async {
-    return _repository.checkNotification(params.id);
-  }
+  Future<Either<Failure, Unit>> call(Params params) async =>
+      _repository.checkNotification(params.id);
 }
 
 class Params {

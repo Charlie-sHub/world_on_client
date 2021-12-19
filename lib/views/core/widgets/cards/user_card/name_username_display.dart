@@ -13,31 +13,29 @@ class NameUsernameDisplay extends StatelessWidget {
   final Name username;
 
   @override
-  Widget build(BuildContext context) {
-    return SizedBox(
-      width: 160,
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: <Widget>[
-          AutoSizeText(
-            name.getOrCrash(),
-            overflow: TextOverflow.fade,
-            softWrap: true,
-            style: const TextStyle(
-              fontWeight: FontWeight.bold,
-              fontSize: 15,
+  Widget build(BuildContext context) => SizedBox(
+        width: 160,
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: <Widget>[
+            AutoSizeText(
+              name.getOrCrash(),
+              overflow: TextOverflow.fade,
+              softWrap: true,
+              style: const TextStyle(
+                fontWeight: FontWeight.bold,
+                fontSize: 15,
+              ),
             ),
-          ),
-          AutoSizeText(
-            "@${username.getOrCrash()}",
-            overflow: TextOverflow.fade,
-            style: const TextStyle(
-              fontSize: 12,
-              color: Colors.grey,
+            AutoSizeText(
+              "@${username.getOrCrash()}",
+              overflow: TextOverflow.fade,
+              style: const TextStyle(
+                fontSize: 12,
+                color: Colors.grey,
+              ),
             ),
-          ),
-        ],
-      ),
-    );
-  }
+          ],
+        ),
+      );
 }

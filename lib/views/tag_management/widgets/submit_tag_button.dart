@@ -8,15 +8,13 @@ class SubmitTagButton extends StatelessWidget {
   }) : super(key: key);
 
   @override
-  Widget build(BuildContext context) {
-    return IconButton(
-      icon: const Icon(
-        Icons.add,
-        size: 35,
-      ),
-      onPressed: () => context.read<TagManagementFormBloc>().add(
-            const TagManagementFormEvent.submitted(),
-          ),
-    );
-  }
+  Widget build(BuildContext context) => IconButton(
+        icon: const Icon(
+          Icons.add,
+          size: 35,
+        ),
+        onPressed: () => context.read<TagManagementFormBloc>().add(
+              const TagManagementFormEvent.submitted(),
+            ),
+      );
 }

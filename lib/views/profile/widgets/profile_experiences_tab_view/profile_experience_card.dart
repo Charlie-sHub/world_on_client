@@ -21,82 +21,82 @@ class ProfileExperienceCard extends StatelessWidget {
   static const double _heightMultiplier = 0.3;
 
   @override
-  Widget build(BuildContext context) {
-    return InkWell(
-      onTap: () => context.read<NavigationActorBloc>().add(
-            NavigationActorEvent.experienceNavigationTapped(some(experience)),
-          ),
-      child: Card(
-        clipBehavior: Clip.antiAlias,
-        elevation: 0,
-        child: Stack(
-          alignment: AlignmentDirectional.center,
-          children: [
-            ShaderMask(
-              blendMode: BlendMode.darken,
-              shaderCallback: (bounds) => LinearGradient(
-                begin: Alignment.center,
-                end: Alignment.bottomCenter,
-                colors: [
-                  Colors.transparent,
-                  Colors.black.withOpacity(0.75),
-                ],
-                stops: const [
-                  0,
-                  1,
-                ],
-              ).createShader(bounds),
-              child: CachedNetworkImage(
-                imageUrl: experience.imageURLs.first,
-                height: MediaQuery.of(context).size.height * _heightMultiplier,
-                width: 200,
-                fit: BoxFit.cover,
-                progressIndicatorBuilder: (context, url, progress) => WorldOnPlasma(),
-              ),
+  Widget build(BuildContext context) => InkWell(
+        onTap: () => context.read<NavigationActorBloc>().add(
+              NavigationActorEvent.experienceNavigationTapped(some(experience)),
             ),
-            Positioned(
-              left: 5,
-              bottom: 5,
-              child: SizedBox(
-                width: 160,
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    AutoSizeText(
-                      experience.title.getOrCrash(),
-                      maxLines: 2,
-                      minFontSize: 6,
-                      maxFontSize: 9,
-                      style: const TextStyle(
-                        fontSize: 9,
-                        fontWeight: FontWeight.w800,
-                        color: WorldOnColors.white,
-                      ),
-                    ),
-                    AutoSizeText(
-                      experience.getFormattedCreationDateString,
-                      minFontSize: 8,
-                      maxFontSize: 8,
-                      style: const TextStyle(
-                        fontSize: 8,
-                        color: WorldOnColors.white,
-                      ),
-                    ),
+        child: Card(
+          clipBehavior: Clip.antiAlias,
+          elevation: 0,
+          child: Stack(
+            alignment: AlignmentDirectional.center,
+            children: [
+              ShaderMask(
+                blendMode: BlendMode.darken,
+                shaderCallback: (bounds) => LinearGradient(
+                  begin: Alignment.center,
+                  end: Alignment.bottomCenter,
+                  colors: [
+                    Colors.transparent,
+                    Colors.black.withOpacity(0.75),
                   ],
+                  stops: const [
+                    0,
+                    1,
+                  ],
+                ).createShader(bounds),
+                child: CachedNetworkImage(
+                  imageUrl: experience.imageURLs.first,
+                  height:
+                      MediaQuery.of(context).size.height * _heightMultiplier,
+                  width: 200,
+                  fit: BoxFit.cover,
+                  progressIndicatorBuilder: (context, url, progress) =>
+                      WorldOnPlasma(),
                 ),
               ),
-            ),
-            Positioned(
-              right: 5,
-              top: 5,
-              child: ManageButtonBuilder(
-                experience: experience,
-                reloadFunction: reloadFunction,
+              Positioned(
+                left: 5,
+                bottom: 5,
+                child: SizedBox(
+                  width: 160,
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      AutoSizeText(
+                        experience.title.getOrCrash(),
+                        maxLines: 2,
+                        minFontSize: 6,
+                        maxFontSize: 9,
+                        style: const TextStyle(
+                          fontSize: 9,
+                          fontWeight: FontWeight.w800,
+                          color: WorldOnColors.white,
+                        ),
+                      ),
+                      AutoSizeText(
+                        experience.getFormattedCreationDateString,
+                        minFontSize: 8,
+                        maxFontSize: 8,
+                        style: const TextStyle(
+                          fontSize: 8,
+                          color: WorldOnColors.white,
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
               ),
-            ),
-          ],
+              Positioned(
+                right: 5,
+                top: 5,
+                child: ManageButtonBuilder(
+                  experience: experience,
+                  reloadFunction: reloadFunction,
+                ),
+              ),
+            ],
+          ),
         ),
-      ),
-    );
-  }
+      );
 }

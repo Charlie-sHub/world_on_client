@@ -10,16 +10,14 @@ class WorldOnProgressIndicator extends StatelessWidget {
   final double size;
 
   @override
-  Widget build(BuildContext context) {
-    return Center(
-      child: SizedBox(
-        width: size,
-        height: size,
-        child: const CircularProgressIndicator(
-          valueColor: AlwaysStoppedAnimation<Color>(WorldOnColors.primary),
-          strokeWidth: 6,
+  Widget build(BuildContext context) => Center(
+        child: SizedBox(
+          width: size,
+          height: size,
+          child: const CircularProgressIndicator(
+            valueColor: AlwaysStoppedAnimation<Color>(WorldOnColors.primary),
+            strokeWidth: 6,
+          ),
         ),
-      ),
-    );
-  }
+      );
 }

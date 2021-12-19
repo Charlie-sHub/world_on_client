@@ -12,9 +12,8 @@ class DismissExperienceFromLog implements AsyncUseCase<Unit, Params> {
   DismissExperienceFromLog(this._repository);
 
   @override
-  Future<Either<Failure, Unit>> call(Params params) async {
-    return _repository.dismissExperienceFromLog(params.experienceId);
-  }
+  Future<Either<Failure, Unit>> call(Params params) async =>
+      _repository.dismissExperienceFromLog(params.experienceId);
 }
 
 class Params {

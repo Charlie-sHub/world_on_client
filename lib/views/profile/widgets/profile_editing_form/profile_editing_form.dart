@@ -18,8 +18,6 @@ import 'package:worldon/views/profile/widgets/profile_editing_form/name_text_for
 import 'package:worldon/views/profile/widgets/profile_editing_form/user_image_picker.dart';
 import 'package:worldon/views/profile/widgets/profile_editing_form/username_text_form_field.dart';
 
-import '../../../../injection.dart';
-
 class ProfileEditingForm extends StatelessWidget {
   final User user;
 
@@ -29,139 +27,145 @@ class ProfileEditingForm extends StatelessWidget {
   }) : super(key: key);
 
   @override
-  Widget build(BuildContext context) {
-    return SingleChildScrollView(
-      child: Padding(
-        padding: const EdgeInsets.all(10),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.stretch,
-          children: [
-            Form(
-              autovalidateMode: context.read<ProfileEditingFormBloc>().state.showErrorMessages ? AutovalidateMode.always : AutovalidateMode.disabled,
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.stretch,
-                children: <Widget>[
-                  Row(
-                    children: <Widget>[
-                      Padding(
-                        padding: const EdgeInsets.all(5),
-                        child: UserImagePicker(user: user),
-                      ),
-                      Expanded(
-                        child: Padding(
+  Widget build(BuildContext context) => SingleChildScrollView(
+        child: Padding(
+          padding: const EdgeInsets.all(10),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.stretch,
+            children: [
+              Form(
+                autovalidateMode: context
+                        .read<ProfileEditingFormBloc>()
+                        .state
+                        .showErrorMessages
+                    ? AutovalidateMode.always
+                    : AutovalidateMode.disabled,
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.stretch,
+                  children: <Widget>[
+                    Row(
+                      children: <Widget>[
+                        Padding(
                           padding: const EdgeInsets.all(5),
-                          child: Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: <Widget>[
-                              NameTextFormField(
-                                initialValue: user.name.getOrCrash(),
-                              ),
-                              const SizedBox(height: 10),
-                              UsernameTextFormField(
-                                initialValue: user.username.getOrCrash(),
-                              ),
-                            ],
+                          child: UserImagePicker(user: user),
+                        ),
+                        Expanded(
+                          child: Padding(
+                            padding: const EdgeInsets.all(5),
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: <Widget>[
+                                NameTextFormField(
+                                  initialValue: user.name.getOrCrash(),
+                                ),
+                                const SizedBox(height: 10),
+                                UsernameTextFormField(
+                                  initialValue: user.username.getOrCrash(),
+                                ),
+                              ],
+                            ),
                           ),
                         ),
-                      ),
-                    ],
-                  ),
-                  const SizedBox(height: 10),
-                  DescriptionTextFormField(
-                    initialValue: user.description.getOrCrash(),
-                  ),
-                  // TODO: Re add editing email
-                  // At the time of writing changing the email here only changed it in the document
-                  // It might also be a security risk so it should be handled carefully
-                  /*
+                      ],
+                    ),
+                    const SizedBox(height: 10),
+                    DescriptionTextFormField(
+                      initialValue: user.description.getOrCrash(),
+                    ),
+                    // TODO: Re add editing email
+                    // At the time of writing changing the email here only changed it in the document
+                    // It might also be a security risk so it should be handled carefully
+                    /*
                   const SizedBox(height: 10),
                   EmailTextField(
                     initialValue: user.email.getOrCrash(),
                   ),
                    */
-                  const SizedBox(height: 10),
-                  TagAdditionCreationCard(
-                    tagChangeFunction: (KtSet<Tag> tags) => context.read<ProfileEditingFormBloc>().add(
-                          ProfileEditingFormEvent.interestsChanged(tags),
-                        ),
-                    tagsEitherOption: some(
-                      right(user.interestsIds),
-                    ),
-                    showErrorMessage: false,
-                  ),
-                  const SizedBox(height: 10),
-                  const EditingSubmitButton(),
-                ],
-              ),
-            ),
-            const Divider(
-              color: WorldOnColors.accent,
-            ),
-            const SizedBox(height: 10),
-            Text(
-              S.of(context).resetPasswordMessage,
-              style: const TextStyle(
-                fontWeight: FontWeight.w500,
-                color: Colors.grey,
-                fontSize: 15,
-              ),
-            ),
-            const SizedBox(height: 10),
-            BlocProvider(
-              create: (context) => getIt<ForgottenPasswordFormBloc>()
-                ..add(
-                  ForgottenPasswordFormEvent.emailChanged(
-                    user.email.getOrCrash(),
-                  ),
-                ),
-              child: BlocConsumer<ForgottenPasswordFormBloc, ForgottenPasswordFormState>(
-                listener: (context, state) => state.failureOrSuccessOption.fold(
-                  () {},
-                  (either) => either.fold(
-                    (failure) => _onFailure(failure, context),
-                    (_) => _onSuccess(context),
-                  ),
-                ),
-                builder: (context, state) => ElevatedButton(
-                  onPressed: () => context.read<ForgottenPasswordFormBloc>().add(
-                        const ForgottenPasswordFormEvent.sentRequest(),
+                    const SizedBox(height: 10),
+                    TagAdditionCreationCard(
+                      tagChangeFunction: (KtSet<Tag> tags) =>
+                          context.read<ProfileEditingFormBloc>().add(
+                                ProfileEditingFormEvent.interestsChanged(tags),
+                              ),
+                      tagsEitherOption: some(
+                        right(user.interestsIds),
                       ),
-                  style: ButtonStyle(
-                    backgroundColor: MaterialStateProperty.all(
-                      WorldOnColors.primary,
+                      showErrorMessage: false,
+                    ),
+                    const SizedBox(height: 10),
+                    const EditingSubmitButton(),
+                  ],
+                ),
+              ),
+              const Divider(
+                color: WorldOnColors.accent,
+              ),
+              const SizedBox(height: 10),
+              Text(
+                S.of(context).resetPasswordMessage,
+                style: const TextStyle(
+                  fontWeight: FontWeight.w500,
+                  color: Colors.grey,
+                  fontSize: 15,
+                ),
+              ),
+              const SizedBox(height: 10),
+              BlocProvider(
+                create: (context) => getIt<ForgottenPasswordFormBloc>()
+                  ..add(
+                    ForgottenPasswordFormEvent.emailChanged(
+                      user.email.getOrCrash(),
                     ),
                   ),
-                  child: Text(
-                    S.of(context).resetPassword,
-                    style: const TextStyle(
-                      fontSize: 20,
+                child: BlocConsumer<ForgottenPasswordFormBloc,
+                    ForgottenPasswordFormState>(
+                  listener: (context, state) =>
+                      state.failureOrSuccessOption.fold(
+                    () {},
+                    (either) => either.fold(
+                      (failure) => _onFailure(failure, context),
+                      (_) => _onSuccess(context),
+                    ),
+                  ),
+                  builder: (context, state) => ElevatedButton(
+                    onPressed: () =>
+                        context.read<ForgottenPasswordFormBloc>().add(
+                              const ForgottenPasswordFormEvent.sentRequest(),
+                            ),
+                    style: ButtonStyle(
+                      backgroundColor: MaterialStateProperty.all(
+                        WorldOnColors.primary,
+                      ),
+                    ),
+                    child: Text(
+                      S.of(context).resetPassword,
+                      style: const TextStyle(
+                        fontSize: 20,
+                      ),
                     ),
                   ),
                 ),
               ),
-            ),
-          ],
+            ],
+          ),
         ),
-      ),
-    );
-  }
+      );
 
-  Future _onFailure(Failure failure, BuildContext context) {
-    return FlushbarHelper.createError(
-      duration: const Duration(seconds: 2),
-      message: failure.maybeMap(
-        coreData: (failure) => failure.coreDataFailure.maybeMap(
-          serverError: (failure) => failure.errorString,
+  Future _onFailure(Failure failure, BuildContext context) =>
+      FlushbarHelper.createError(
+        duration: const Duration(seconds: 2),
+        message: failure.maybeMap(
+          coreData: (failure) => failure.coreDataFailure.maybeMap(
+            serverError: (failure) => failure.errorString,
+            orElse: () => S.of(context).unknownError,
+          ),
+          coreApplication: (failure) => failure.coreApplicationFailure.maybeMap(
+            emptyFields: (_) => S.of(context).emptyFields,
+            orElse: () => S.of(context).unknownError,
+          ),
           orElse: () => S.of(context).unknownError,
         ),
-        coreApplication: (failure) => failure.coreApplicationFailure.maybeMap(
-          emptyFields: (_) => S.of(context).emptyFields,
-          orElse: () => S.of(context).unknownError,
-        ),
-        orElse: () => S.of(context).unknownError,
-      ),
-    ).show(context);
-  }
+      ).show(context);
 
   void _onSuccess(BuildContext context) {
     FlushbarHelper.createSuccess(

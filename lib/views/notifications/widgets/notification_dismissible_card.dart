@@ -18,43 +18,41 @@ class NotificationDismissibleTile extends StatelessWidget {
   }) : super(key: key);
 
   @override
-  Widget build(BuildContext context) {
-    return Slidable(
-      endActionPane: ActionPane(
-        motion: const DrawerMotion(),
-        children: [
-          IconButton(
-            onPressed: () => context.read<NotificationActorBloc>().add(
-                  NotificationActorEvent.deleted(notification),
-                ),
-            icon: const Icon(
-              Icons.delete,
-              color: WorldOnColors.red,
+  Widget build(BuildContext context) => Slidable(
+        endActionPane: ActionPane(
+          motion: const DrawerMotion(),
+          children: [
+            IconButton(
+              onPressed: () => context.read<NotificationActorBloc>().add(
+                    NotificationActorEvent.deleted(notification),
+                  ),
+              icon: const Icon(
+                Icons.delete,
+                color: WorldOnColors.red,
+              ),
             ),
-          ),
-        ],
-      ),
-      child: ListTile(
-        leading: UserAvatarFollowChecker(
-          user: notification.sender,
-          checkIconSize: 17,
-          avatarRadius: 25,
+          ],
         ),
-        title: SizedBox(
-          height: 50,
-          width: 150,
-          child: Center(
-            child: AutoSizeText(
-              message,
-              minFontSize: 8,
-              maxFontSize: 15,
-              style: const TextStyle(
-                fontSize: 12,
+        child: ListTile(
+          leading: UserAvatarFollowChecker(
+            user: notification.sender,
+            checkIconSize: 17,
+            avatarRadius: 25,
+          ),
+          title: SizedBox(
+            height: 50,
+            width: 150,
+            child: Center(
+              child: AutoSizeText(
+                message,
+                minFontSize: 8,
+                maxFontSize: 15,
+                style: const TextStyle(
+                  fontSize: 12,
+                ),
               ),
             ),
           ),
         ),
-      ),
-    );
-  }
+      );
 }

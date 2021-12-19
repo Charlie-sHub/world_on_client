@@ -12,9 +12,8 @@ class CreateExperience implements AsyncUseCase<Unit, Params> {
   CreateExperience(this._repository);
 
   @override
-  Future<Either<Failure, Unit>> call(Params params) async {
-    return _repository.createExperience(params.experience);
-  }
+  Future<Either<Failure, Unit>> call(Params params) async =>
+      _repository.createExperience(params.experience);
 }
 
 class Params {

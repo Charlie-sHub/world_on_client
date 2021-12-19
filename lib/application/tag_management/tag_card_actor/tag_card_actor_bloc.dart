@@ -3,7 +3,6 @@ import 'dart:async';
 import 'package:bloc/bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:injectable/injectable.dart';
-import 'package:meta/meta.dart';
 import 'package:worldon/core/error/failure.dart';
 import 'package:worldon/domain/core/entities/tag/tag.dart';
 import 'package:worldon/domain/core/validation/objects/unique_id.dart';
@@ -19,44 +18,51 @@ part 'tag_card_actor_state.dart';
 
 @injectable
 class TagCardActorBloc extends Bloc<TagCardActorEvent, TagCardActorState> {
-  TagCardActorBloc() : super(const TagCardActorState.initial());
-
-  @override
-  Stream<TagCardActorState> mapEventToState(TagCardActorEvent event) async* {
-    yield* event.map(
-      initialized: _onInitialized,
-      dismissedFromInterests: _onDismissedFromInterests,
-      addedToInterests: _onAddedToInterests,
-    );
+  TagCardActorBloc() : super(const TagCardActorState.initial()) {
+    on<_Initialized>(_onInitialized);
+    on<_DismissedFromInterests>(_onDismissedFromInterests);
+    on<_AddedToInterests>(_onAddedToInterests);
   }
 
-  Stream<TagCardActorState> _onAddedToInterests(_AddedToInterests event) async* {
-    yield const TagCardActorState.actionInProgress();
-    final _failureOrUnit = await getIt<add_tag_to_interests.AddTagToInterests>()(
+  FutureOr<void> _onAddedToInterests(
+    _AddedToInterests event,
+    Emitter emit,
+  ) async {
+    emit(const TagCardActorState.actionInProgress());
+    final _failureOrUnit =
+        await getIt<add_tag_to_interests.AddTagToInterests>()(
       add_tag_to_interests.Params(tag: event.tag),
     );
-    yield _failureOrUnit.fold(
-      (failure) => TagCardActorState.additionFailure(failure),
-      (_) => const TagCardActorState.additionSuccess(),
+    emit(
+      _failureOrUnit.fold(
+        (failure) => TagCardActorState.additionFailure(failure),
+        (_) => const TagCardActorState.additionSuccess(),
+      ),
     );
   }
 
-  Stream<TagCardActorState> _onDismissedFromInterests(_DismissedFromInterests event) async* {
-    yield const TagCardActorState.actionInProgress();
-    final _failureOrUnit = await getIt<dismiss_tag_from_interests.DismissTagFromInterests>()(
+  FutureOr<void> _onDismissedFromInterests(
+    _DismissedFromInterests event,
+    Emitter emit,
+  ) async {
+    emit(const TagCardActorState.actionInProgress());
+    final _failureOrUnit =
+        await getIt<dismiss_tag_from_interests.DismissTagFromInterests>()(
       dismiss_tag_from_interests.Params(tag: event.tag),
     );
-    yield _failureOrUnit.fold(
-      (failure) => TagCardActorState.dismissalFailure(failure),
-      (_) => const TagCardActorState.dismissalSuccess(),
+    emit(
+      _failureOrUnit.fold(
+        (failure) => TagCardActorState.dismissalFailure(failure),
+        (_) => const TagCardActorState.dismissalSuccess(),
+      ),
     );
   }
 
-  Stream<TagCardActorState> _onInitialized(_Initialized event) async* {
+  void _onInitialized(_Initialized event, Emitter emit) {
     if (event.interestsIds.contains(event.tag.id)) {
-      yield const TagCardActorState.inInterests();
+      emit(const TagCardActorState.inInterests());
     } else {
-      yield const TagCardActorState.notInInterests();
+      emit(const TagCardActorState.notInInterests());
     }
   }
 }

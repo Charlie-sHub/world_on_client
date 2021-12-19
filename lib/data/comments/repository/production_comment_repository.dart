@@ -25,7 +25,9 @@ class ProductionCommentRepository implements CommentRepositoryInterface {
   );
 
   @override
-  Stream<Either<Failure, KtList<Comment>>> watchExperienceComments(UniqueId experienceId) async* {
+  Stream<Either<Failure, KtList<Comment>>> watchExperienceComments(
+    UniqueId experienceId,
+  ) async* {
     yield* _firestore.experienceCollection
         .doc(experienceId.getOrCrash())
         .commentCollection
@@ -54,11 +56,9 @@ class ProductionCommentRepository implements CommentRepositoryInterface {
         }
       },
     ).onErrorReturnWith(
-      (error, _) {
-        return left(
-          _onError(error),
-        );
-      },
+      (error, _) => left(
+        _onError(error),
+      ),
     );
   }
 
@@ -109,7 +109,10 @@ class ProductionCommentRepository implements CommentRepositoryInterface {
   }
 
   @override
-  Future<Either<Failure, Unit>> removeComment(UniqueId experienceId, UniqueId commentId) async {
+  Future<Either<Failure, Unit>> removeComment(
+    UniqueId experienceId,
+    UniqueId commentId,
+  ) async {
     try {
       await _firestore.experienceCollection
           .doc(
@@ -137,7 +140,9 @@ class ProductionCommentRepository implements CommentRepositoryInterface {
     if (error is FirebaseException) {
       _logger.e("FirebaseException: ${error.message}");
       return Failure.coreData(
-        CoreDataFailure.serverError(errorString: "Firebase error: ${error.message}"),
+        CoreDataFailure.serverError(
+          errorString: "Firebase error: ${error.message}",
+        ),
       );
     } else {
       _logger.e("Unknown server error:  ${error.runtimeType}");

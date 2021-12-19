@@ -6,35 +6,33 @@ import 'package:worldon/views/core/misc/functions/open_picture_select_dialog.dar
 
 class CameraButton extends StatelessWidget {
   @override
-  Widget build(BuildContext context) {
-    return Column(
-      children: <Widget>[
-        IconButton(
-          iconSize: 80,
-          icon: const Icon(
-            Icons.photo_camera,
+  Widget build(BuildContext context) => Column(
+        children: <Widget>[
+          IconButton(
+            iconSize: 80,
+            icon: const Icon(
+              Icons.photo_camera,
+            ),
+            onPressed: () => openPictureSelectDialog(context).then(
+              (imageFile) {
+                if (imageFile != null) {
+                  context.read<RegistrationFormBloc>().add(
+                        RegistrationFormEvent.imageChanged(
+                          imageFile,
+                        ),
+                      );
+                }
+              },
+            ),
           ),
-          onPressed: () => openPictureSelectDialog(context).then(
-            (imageFile) {
-              if (imageFile != null) {
-                context.read<RegistrationFormBloc>().add(
-                      RegistrationFormEvent.imageChanged(
-                        imageFile,
-                      ),
-                    );
-              }
-            },
-          ),
-        ),
-        if (context.read<RegistrationFormBloc>().state.showErrorMessages)
-          Text(
-            S.of(context).pictureSelectionMessage,
-            textAlign: TextAlign.center,
-            style: const TextStyle(color: Colors.red),
-          )
-        else
-          Container(),
-      ],
-    );
-  }
+          if (context.read<RegistrationFormBloc>().state.showErrorMessages)
+            Text(
+              S.of(context).pictureSelectionMessage,
+              textAlign: TextAlign.center,
+              style: const TextStyle(color: Colors.red),
+            )
+          else
+            Container(),
+        ],
+      );
 }

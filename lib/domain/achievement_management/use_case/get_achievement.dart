@@ -13,9 +13,8 @@ class GetAchievement implements AsyncUseCase<Achievement, Params> {
   GetAchievement(this._repository);
 
   @override
-  Future<Either<Failure, Achievement>> call(Params params) async {
-    return _repository.getAchievement(params.id);
-  }
+  Future<Either<Failure, Achievement>> call(Params params) async =>
+      _repository.getAchievement(params.id);
 }
 
 class Params {

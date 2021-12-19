@@ -1,16 +1,15 @@
 import 'package:injectable/injectable.dart';
 import 'package:mockito/mockito.dart';
+import 'package:worldon/domain/tag_management/use_case/add_tag_to_interests.dart';
 import 'package:worldon/domain/tag_management/use_case/create_tag.dart';
 import 'package:worldon/domain/tag_management/use_case/delete_tag.dart';
+import 'package:worldon/domain/tag_management/use_case/dismiss_tag_from_interests.dart';
 import 'package:worldon/domain/tag_management/use_case/edit_tag.dart';
 import 'package:worldon/domain/tag_management/use_case/get_tag.dart';
 import 'package:worldon/domain/tag_management/use_case/get_tag_creator.dart';
+import 'package:worldon/domain/tag_management/use_case/get_tags.dart';
 import 'package:worldon/domain/tag_management/use_case/watch_all_tags.dart';
 import 'package:worldon/domain/tag_management/use_case/watch_tags_by_creator.dart';
-
-import 'add_tag_to_interests.dart';
-import 'dismiss_tag_from_interests.dart';
-import 'get_tags.dart';
 
 @LazySingleton(as: CreateTag, env: [Environment.test])
 class MockCreateTag extends Mock implements CreateTag {}
@@ -40,4 +39,5 @@ class MockGetTagsByCreator extends Mock implements WatchTagsByCreator {}
 class MockAddTagToInterests extends Mock implements AddTagToInterests {}
 
 @LazySingleton(as: DismissTagFromInterests, env: [Environment.test])
-class MockDismissTagFromInterests extends Mock implements DismissTagFromInterests {}
+class MockDismissTagFromInterests extends Mock
+    implements DismissTagFromInterests {}

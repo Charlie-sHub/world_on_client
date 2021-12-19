@@ -7,61 +7,60 @@ import 'package:worldon/views/core/widgets/cards/simple_tag_display.dart';
 class AchievementCard extends StatelessWidget {
   final Achievement achievement;
 
-  const AchievementCard({Key? key, required this.achievement}) : super(key: key);
+  const AchievementCard({Key? key, required this.achievement})
+      : super(key: key);
 
   @override
-  Widget build(BuildContext context) {
-    return Card(
-      child: Padding(
-        padding: const EdgeInsets.all(5),
-        child: Column(
-          children: <Widget>[
-            Row(
-              children: <Widget>[
-                Expanded(
-                  child: Column(
-                    children: <Widget>[
-                      AutoSizeText(
-                        achievement.name.getOrCrash(),
-                        style: const TextStyle(
-                          fontWeight: FontWeight.bold,
-                          fontSize: 20,
-                          color: WorldOnColors.background,
+  Widget build(BuildContext context) => Card(
+        child: Padding(
+          padding: const EdgeInsets.all(5),
+          child: Column(
+            children: <Widget>[
+              Row(
+                children: <Widget>[
+                  Expanded(
+                    child: Column(
+                      children: <Widget>[
+                        AutoSizeText(
+                          achievement.name.getOrCrash(),
+                          style: const TextStyle(
+                            fontWeight: FontWeight.bold,
+                            fontSize: 20,
+                            color: WorldOnColors.background,
+                          ),
                         ),
-                      ),
-                      const SizedBox(height: 5),
-                      AutoSizeText(
-                        achievement.description.getOrCrash(),
-                        style: const TextStyle(
-                          color: WorldOnColors.background,
-                        ),
-                      )
-                    ],
-                  ),
-                ),
-                const Padding(
-                  padding: EdgeInsets.all(5),
-                  // Just a placeholder, the icon shown should be the image/icon representing the Achievement
-                  child: Icon(
-                    Icons.star_border,
-                    color: WorldOnColors.primary,
-                    size: 40,
-                  ),
-                ),
-              ],
-            ),
-            const SizedBox(height: 5),
-            Wrap(
-              spacing: 5,
-              children: <Widget>[
-                ...achievement.tags.getOrCrash().asSet().map(
-                      (tag) => SimpleTagDisplay(tag: tag),
+                        const SizedBox(height: 5),
+                        AutoSizeText(
+                          achievement.description.getOrCrash(),
+                          style: const TextStyle(
+                            color: WorldOnColors.background,
+                          ),
+                        )
+                      ],
                     ),
-              ],
-            ),
-          ],
+                  ),
+                  const Padding(
+                    padding: EdgeInsets.all(5),
+                    // Just a placeholder, the icon shown should be the image/icon representing the Achievement
+                    child: Icon(
+                      Icons.star_border,
+                      color: WorldOnColors.primary,
+                      size: 40,
+                    ),
+                  ),
+                ],
+              ),
+              const SizedBox(height: 5),
+              Wrap(
+                spacing: 5,
+                children: <Widget>[
+                  ...achievement.tags.getOrCrash().asSet().map(
+                        (tag) => SimpleTagDisplay(tag: tag),
+                      ),
+                ],
+              ),
+            ],
+          ),
         ),
-      ),
-    );
-  }
+      );
 }

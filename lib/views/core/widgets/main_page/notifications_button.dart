@@ -11,31 +11,30 @@ class NotificationsButton extends StatelessWidget {
   }) : super(key: key);
 
   @override
-  Widget build(BuildContext context) {
-    return BlocProvider(
-      create: (context) => getIt<NewNotificationsWatcherBloc>()
-        ..add(
-          const NewNotificationsWatcherEvent.watchNewNotificationsStarted(),
-        ),
-      child: BlocBuilder<NewNotificationsWatcherBloc, NewNotificationsWatcherState>(
-        builder: (context, state) => IconButton(
-          padding: EdgeInsets.zero,
-          icon: Icon(
-            state.maybeMap(
-              newNotifications: (_) => Icons.notifications_on_rounded,
-              orElse: () => Icons.notifications,
-            ),
-            size: 25,
-            color: state.maybeMap(
-              newNotifications: (_) => WorldOnColors.red,
-              orElse: () {},
-            ),
+  Widget build(BuildContext context) => BlocProvider(
+        create: (context) => getIt<NewNotificationsWatcherBloc>()
+          ..add(
+            const NewNotificationsWatcherEvent.watchNewNotificationsStarted(),
           ),
-          onPressed: () => context.read<NavigationActorBloc>().add(
-                const NavigationActorEvent.notificationsTapped(),
+        child: BlocBuilder<NewNotificationsWatcherBloc,
+            NewNotificationsWatcherState>(
+          builder: (context, state) => IconButton(
+            padding: EdgeInsets.zero,
+            icon: Icon(
+              state.maybeMap(
+                newNotifications: (_) => Icons.notifications_on_rounded,
+                orElse: () => Icons.notifications,
               ),
+              size: 25,
+              color: state.maybeMap(
+                newNotifications: (_) => WorldOnColors.red,
+                orElse: () {},
+              ),
+            ),
+            onPressed: () => context.read<NavigationActorBloc>().add(
+                  const NavigationActorEvent.notificationsTapped(),
+                ),
+          ),
         ),
-      ),
-    );
-  }
+      );
 }

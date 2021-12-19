@@ -12,12 +12,10 @@ class UserBio extends StatelessWidget {
   final User user;
 
   @override
-  Widget build(BuildContext context) {
-    return AutoSizeText(
-      user.description.getOrCrash(),
-      style: const TextStyle(
-        color: WorldOnColors.background,
-      ),
-    );
-  }
+  Widget build(BuildContext context) => AutoSizeText(
+        user.description.getOrCrash(),
+        style: const TextStyle(
+          color: WorldOnColors.background,
+        ),
+      );
 }

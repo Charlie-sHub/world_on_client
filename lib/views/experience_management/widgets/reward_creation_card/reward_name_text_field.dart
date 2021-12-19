@@ -13,27 +13,28 @@ class RewardNameTextField extends StatelessWidget {
   }) : super(key: key);
 
   @override
-  Widget build(BuildContext context) {
-    return TextFormField(
-      controller: textController,
-      maxLength: Name.maxLength,
-      onChanged: (value) => context.read<RewardFormBloc>().add(
-            RewardFormEvent.nameChanged(value),
-          ),
-      validator: (_) => context.read<RewardFormBloc>().state.reward.name.value.fold(
-            (failure) => failure.maybeMap(
-              emptyString: (_) => S.of(context).nameEmptyString,
-              multiLineString: (_) => S.of(context).nameMultiLineString,
-              stringExceedsLength: (_) => S.of(context).nameStringExceedsLength,
-              stringWithInvalidCharacters: (_) => S.of(context).nameStringWithInvalidCharacters,
-              orElse: () => S.of(context).unknownError,
+  Widget build(BuildContext context) => TextFormField(
+        controller: textController,
+        maxLength: Name.maxLength,
+        onChanged: (value) => context.read<RewardFormBloc>().add(
+              RewardFormEvent.nameChanged(value),
             ),
-            (_) => null,
-          ),
-      decoration: InputDecoration(
-        labelText: S.of(context).name,
-        prefixIcon: const Icon(Icons.priority_high),
-      ),
-    );
-  }
+        validator: (_) =>
+            context.read<RewardFormBloc>().state.reward.name.value.fold(
+                  (failure) => failure.maybeMap(
+                    emptyString: (_) => S.of(context).nameEmptyString,
+                    multiLineString: (_) => S.of(context).nameMultiLineString,
+                    stringExceedsLength: (_) =>
+                        S.of(context).nameStringExceedsLength,
+                    stringWithInvalidCharacters: (_) =>
+                        S.of(context).nameStringWithInvalidCharacters,
+                    orElse: () => S.of(context).unknownError,
+                  ),
+                  (_) => null,
+                ),
+        decoration: InputDecoration(
+          labelText: S.of(context).name,
+          prefixIcon: const Icon(Icons.priority_high),
+        ),
+      );
 }

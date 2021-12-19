@@ -5,10 +5,9 @@ import 'package:injectable/injectable.dart';
 import 'package:provider/provider.dart';
 import 'package:worldon/application/authentication/authentication/authentication_bloc.dart';
 import 'package:worldon/generated/l10n.dart';
+import 'package:worldon/injection.dart';
 import 'package:worldon/views/core/misc/world_on_colors.dart';
 import 'package:worldon/views/core/routes/router.gr.dart';
-
-import '../../../injection.dart';
 
 class AppWidget extends StatelessWidget {
   AppWidget({
@@ -29,7 +28,8 @@ class AppWidget extends StatelessWidget {
         ),
       child: MaterialApp.router(
         title: "World On",
-        debugShowCheckedModeBanner: Provider.of<String>(context) != Environment.prod,
+        debugShowCheckedModeBanner:
+            Provider.of<String>(context) != Environment.prod,
         theme: _themeData.copyWith(
           indicatorColor: WorldOnColors.primary,
           textTheme: Theme.of(context).textTheme.apply(
@@ -61,7 +61,8 @@ class AppWidget extends StatelessWidget {
             valueIndicatorShape: const PaddleSliderValueIndicatorShape(),
             showValueIndicator: ShowValueIndicator.always,
           ),
-          bottomNavigationBarTheme: BottomNavigationBarTheme.of(context).copyWith(
+          bottomNavigationBarTheme:
+              BottomNavigationBarTheme.of(context).copyWith(
             backgroundColor: Colors.white,
             selectedItemColor: WorldOnColors.primary,
             unselectedItemColor: WorldOnColors.accent,

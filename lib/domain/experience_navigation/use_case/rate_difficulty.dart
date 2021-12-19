@@ -13,12 +13,11 @@ class RateDifficulty implements AsyncUseCase<Unit, Params> {
   RateDifficulty(this._repository);
 
   @override
-  Future<Either<Failure, Unit>> call(Params params) async {
-    return _repository.rateDifficulty(
-      difficulty: params.difficulty,
-      experienceId: params.experienceId,
-    );
-  }
+  Future<Either<Failure, Unit>> call(Params params) async =>
+      _repository.rateDifficulty(
+        difficulty: params.difficulty,
+        experienceId: params.experienceId,
+      );
 }
 
 class Params {

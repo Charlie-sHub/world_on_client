@@ -16,23 +16,21 @@ class ParticipateButton extends StatelessWidget {
   final double size;
 
   @override
-  Widget build(BuildContext context) {
-    return SizedBox(
-      height: size,
-      width: size,
-      child: IconButton(
-        onPressed: () => context.read<NavigationActorBloc>().add(
-              NavigationActorEvent.experienceNavigationTapped(
-                some(experience),
+  Widget build(BuildContext context) => SizedBox(
+        height: size,
+        width: size,
+        child: IconButton(
+          onPressed: () => context.read<NavigationActorBloc>().add(
+                NavigationActorEvent.experienceNavigationTapped(
+                  some(experience),
+                ),
               ),
-            ),
-        padding: EdgeInsets.zero,
-        icon: Icon(
-          Icons.play_circle_fill_rounded,
-          color: WorldOnColors.primary,
-          size: size,
+          padding: EdgeInsets.zero,
+          icon: Icon(
+            Icons.play_circle_fill_rounded,
+            color: WorldOnColors.primary,
+            size: size,
+          ),
         ),
-      ),
-    );
-  }
+      );
 }

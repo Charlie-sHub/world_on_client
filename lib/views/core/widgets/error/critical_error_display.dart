@@ -12,52 +12,50 @@ class CriticalErrorDisplay extends StatelessWidget {
   }) : super(key: key);
 
   @override
-  Widget build(BuildContext context) {
-    return SingleChildScrollView(
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: <Widget>[
-          const Icon(
-            Icons.error_outline,
-            color: WorldOnColors.red,
-            size: 70,
-          ),
-          const SizedBox(height: 10),
-          Text(
-            S.of(context).criticalErrorDisplayTitle,
-            style: const TextStyle(
-              fontSize: 25,
+  Widget build(BuildContext context) => SingleChildScrollView(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: <Widget>[
+            const Icon(
+              Icons.error_outline,
               color: WorldOnColors.red,
-              fontWeight: FontWeight.bold,
+              size: 70,
             ),
-            textAlign: TextAlign.center,
-          ),
-          const SizedBox(height: 10),
-          Text(
-            "${S.of(context).details}: ",
-            style: const TextStyle(
-              fontSize: 20,
-              color: WorldOnColors.red,
+            const SizedBox(height: 10),
+            Text(
+              S.of(context).criticalErrorDisplayTitle,
+              style: const TextStyle(
+                fontSize: 25,
+                color: WorldOnColors.red,
+                fontWeight: FontWeight.bold,
+              ),
+              textAlign: TextAlign.center,
             ),
-            textAlign: TextAlign.center,
-          ),
-          const SizedBox(height: 5),
-          Text(
-            failure.toString(),
-            style: const TextStyle(
-              fontSize: 15,
-              color: WorldOnColors.red,
+            const SizedBox(height: 10),
+            Text(
+              "${S.of(context).details}: ",
+              style: const TextStyle(
+                fontSize: 20,
+                color: WorldOnColors.red,
+              ),
+              textAlign: TextAlign.center,
             ),
-            textAlign: TextAlign.justify,
-          ),
-          const SizedBox(height: 50),
-          Text(
-            S.of(context).criticalErrorDisplayRetry,
-            style: const TextStyle(fontSize: 16),
-            textAlign: TextAlign.center,
-          ),
-        ],
-      ),
-    );
-  }
+            const SizedBox(height: 5),
+            Text(
+              failure.toString(),
+              style: const TextStyle(
+                fontSize: 15,
+                color: WorldOnColors.red,
+              ),
+              textAlign: TextAlign.justify,
+            ),
+            const SizedBox(height: 50),
+            Text(
+              S.of(context).criticalErrorDisplayRetry,
+              style: const TextStyle(fontSize: 16),
+              textAlign: TextAlign.center,
+            ),
+          ],
+        ),
+      );
 }

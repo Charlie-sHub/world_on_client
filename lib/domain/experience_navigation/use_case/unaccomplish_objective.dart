@@ -13,12 +13,11 @@ class UnAccomplishObjective implements AsyncUseCase<Unit, Params> {
   UnAccomplishObjective(this._repository);
 
   @override
-  Future<Either<Failure, Unit>> call(Params params) async {
-    return _repository.unAccomplishObjective(
-      params.objective,
-      params.experienceId,
-    );
-  }
+  Future<Either<Failure, Unit>> call(Params params) async =>
+      _repository.unAccomplishObjective(
+        params.objective,
+        params.experienceId,
+      );
 }
 
 class Params {

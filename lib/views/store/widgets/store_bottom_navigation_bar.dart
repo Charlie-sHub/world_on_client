@@ -13,29 +13,27 @@ class StoreBottomNavigationBar extends StatelessWidget {
   static const _myItemsIndex = 1;
 
   @override
-  Widget build(BuildContext context) {
-    return AnimatedBottomNavigationBar(
-      height: kBottomNavigationBarHeight - 15,
-      gapLocation: GapLocation.none,
-      iconSize: 32,
-      backgroundColor: WorldOnColors.background,
-      onTap: (index) => _onTap(index, context),
-      activeIndex: context.read<StoreNavigationActorBloc>().state.map(
-            itemStoreView: (_) => _itemStoreIndex,
-            coinStoreView: (_) => _itemStoreIndex,
-            promotionPlansView: (_) => _itemStoreIndex,
-            myItemsView: (_) => _myItemsIndex,
-          ),
-      activeColor: WorldOnColors.primary,
-      inactiveColor: WorldOnColors.accent,
-      icons: const [
-        Icons.store,
-        // Icons.account_balance_wallet_rounded,
-        // Icons.date_range_rounded,
-        Icons.list_rounded,
-      ],
-    );
-  }
+  Widget build(BuildContext context) => AnimatedBottomNavigationBar(
+        height: kBottomNavigationBarHeight - 15,
+        gapLocation: GapLocation.none,
+        iconSize: 32,
+        backgroundColor: WorldOnColors.background,
+        onTap: (index) => _onTap(index, context),
+        activeIndex: context.read<StoreNavigationActorBloc>().state.map(
+              itemStoreView: (_) => _itemStoreIndex,
+              coinStoreView: (_) => _itemStoreIndex,
+              promotionPlansView: (_) => _itemStoreIndex,
+              myItemsView: (_) => _myItemsIndex,
+            ),
+        activeColor: WorldOnColors.primary,
+        inactiveColor: WorldOnColors.accent,
+        icons: const [
+          Icons.store,
+          // Icons.account_balance_wallet_rounded,
+          // Icons.date_range_rounded,
+          Icons.list_rounded,
+        ],
+      );
 
   void _onTap(int index, BuildContext context) {
     switch (index) {

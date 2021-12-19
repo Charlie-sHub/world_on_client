@@ -8,35 +8,32 @@ import 'package:worldon/core/error/failure.dart';
 import 'package:worldon/domain/core/entities/user/user.dart';
 import 'package:worldon/domain/core/use_case/use_case.dart';
 import 'package:worldon/domain/core/use_case/watch_current_user.dart';
-
-import '../../../injection.dart';
+import 'package:worldon/injection.dart';
 
 part 'watch_current_user_bloc.freezed.dart';
 part 'watch_current_user_event.dart';
 part 'watch_current_user_state.dart';
 
 @injectable
-class WatchCurrentUserBloc extends Bloc<WatchCurrentUserEvent, WatchCurrentUserState> {
-  WatchCurrentUserBloc() : super(const WatchCurrentUserState.initial());
+class WatchCurrentUserBloc
+    extends Bloc<WatchCurrentUserEvent, WatchCurrentUserState> {
+  WatchCurrentUserBloc() : super(const WatchCurrentUserState.initial()) {
+    on<_WatchCurrentUserStarted>(_onWatchCurrentUserStarted);
+    on<_ResultReceived>(_onResultReceived);
+  }
 
   StreamSubscription<Either<Failure, User>>? _userStreamSubscription;
 
-  @override
-  Stream<WatchCurrentUserState> mapEventToState(WatchCurrentUserEvent event) async* {
-    yield* event.map(
-      watchCurrentUserStarted: _onWatchCurrentUserStarted,
-      resultReceived: _onResultReceived,
+  void _onResultReceived(_ResultReceived event, Emitter emit) {
+    emit(
+      event.failureOrUser.fold(
+        (_failure) => WatchCurrentUserState.loadFailure(_failure),
+        (_user) => WatchCurrentUserState.loadSuccess(_user),
+      ),
     );
   }
 
-  Stream<WatchCurrentUserState> _onResultReceived(_ResultReceived event) async* {
-    yield event.failureOrUser.fold(
-      (_failure) => WatchCurrentUserState.loadFailure(_failure),
-      (_user) => WatchCurrentUserState.loadSuccess(_user),
-    );
-  }
-
-  Stream<WatchCurrentUserState> _onWatchCurrentUserStarted(_) async* {
+  FutureOr<void> _onWatchCurrentUserStarted(_, Emitter emit) async {
     await _userStreamSubscription?.cancel();
     _userStreamSubscription = getIt<WatchCurrentUser>()(
       getIt<NoParams>(),

@@ -1,10 +1,7 @@
-import 'dart:async';
-
 import 'package:bloc/bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:injectable/injectable.dart';
 import 'package:kt_dart/kt.dart';
-import 'package:meta/meta.dart';
 import 'package:worldon/domain/core/entities/coordinates/coordinates.dart';
 import 'package:worldon/domain/core/entities/experience/experience.dart';
 import 'package:worldon/domain/core/entities/objective/objective.dart';
@@ -15,35 +12,36 @@ part 'map_controller_state.dart';
 
 @injectable
 class MapControllerBloc extends Bloc<MapControllerEvent, MapControllerState> {
-  MapControllerBloc() : super(MapControllerState.initial());
+  MapControllerBloc() : super(MapControllerState.initial()) {
+    on<_Initialized>(_onInitialized);
+    on<_CameraPositionChanged>(_onCameraPositionChanged);
+    on<_ObjectivesChanged>(_onObjectivesChanged);
+  }
 
-  @override
-  Stream<MapControllerState> mapEventToState(MapControllerEvent event) async* {
-    yield* event.map(
-      initialized: _onInitialized,
-      cameraPositionChanged: _onCameraPositionChanged,
-      objectivesChanged: _onObjectivesChanged,
+  void _onObjectivesChanged(_ObjectivesChanged event, Emitter emit) {
+    emit(
+      state.copyWith(
+        objectives: event.objectives,
+      ),
     );
   }
 
-  Stream<MapControllerState> _onObjectivesChanged(_ObjectivesChanged event) async* {
-    yield state.copyWith(
-      objectives: event.objectives,
+  void _onCameraPositionChanged(_CameraPositionChanged event, Emitter emit) {
+    emit(
+      state.copyWith(
+        coordinates: event.coordinates,
+        zoom: event.zoom,
+      ),
     );
   }
 
-  Stream<MapControllerState> _onCameraPositionChanged(_CameraPositionChanged event) async* {
-    yield state.copyWith(
-      coordinates: event.coordinates,
-      zoom: event.zoom,
-    );
-  }
-
-  Stream<MapControllerState> _onInitialized(_Initialized event) async* {
-    yield state.copyWith(
-      coordinates: event.experience.coordinates,
-      objectives: event.experience.objectives.getOrCrash().toList(),
-      loadedCoordinates: true,
+  void _onInitialized(_Initialized event, Emitter emit) {
+    emit(
+      state.copyWith(
+        coordinates: event.experience.coordinates,
+        objectives: event.experience.objectives.getOrCrash().toList(),
+        loadedCoordinates: true,
+      ),
     );
   }
 }

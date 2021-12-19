@@ -10,22 +10,20 @@ class LogInButton extends StatelessWidget {
   }) : super(key: key);
 
   @override
-  Widget build(BuildContext context) {
-    return ElevatedButton(
-      onPressed: () => context.read<LogInFormBloc>().add(
-            const LogInFormEvent.loggedIn(),
+  Widget build(BuildContext context) => ElevatedButton(
+        onPressed: () => context.read<LogInFormBloc>().add(
+              const LogInFormEvent.loggedIn(),
+            ),
+        style: ButtonStyle(
+          backgroundColor: MaterialStateProperty.all(
+            WorldOnColors.primary,
           ),
-      style: ButtonStyle(
-        backgroundColor: MaterialStateProperty.all(
-          WorldOnColors.primary,
         ),
-      ),
-      child: Text(
-        S.of(context).logIn,
-        style: const TextStyle(
-          fontSize: 20,
+        child: Text(
+          S.of(context).logIn,
+          style: const TextStyle(
+            fontSize: 20,
+          ),
         ),
-      ),
-    );
-  }
+      );
 }

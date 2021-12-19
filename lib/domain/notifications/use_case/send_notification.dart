@@ -12,9 +12,8 @@ class SendNotification implements AsyncUseCase<Unit, Params> {
   SendNotification(this._repository);
 
   @override
-  Future<Either<Failure, Unit>> call(Params params) async {
-    return _repository.sendNotification(params.notification);
-  }
+  Future<Either<Failure, Unit>> call(Params params) async =>
+      _repository.sendNotification(params.notification);
 }
 
 class Params {

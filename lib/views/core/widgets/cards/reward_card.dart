@@ -15,62 +15,61 @@ class RewardCard extends StatelessWidget {
   }) : super(key: key);
 
   @override
-  Widget build(BuildContext context) {
-    return Card(
-      child: Row(
-        children: <Widget>[
-          Expanded(
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: <Widget>[
-                AutoSizeText(
-                  reward.name.getOrCrash(),
-                  style: const TextStyle(
-                    fontSize: 15,
-                    fontWeight: FontWeight.bold,
-                    color: WorldOnColors.background,
-                  ),
-                ),
-                Padding(
-                  padding: const EdgeInsets.all(5),
-                  child: AutoSizeText(
-                    reward.description.getOrCrash(),
+  Widget build(BuildContext context) => Card(
+        child: Row(
+          children: <Widget>[
+            Expanded(
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: <Widget>[
+                  AutoSizeText(
+                    reward.name.getOrCrash(),
                     style: const TextStyle(
-                      fontSize: 12,
+                      fontSize: 15,
+                      fontWeight: FontWeight.bold,
                       color: WorldOnColors.background,
                     ),
                   ),
-                ),
-              ],
+                  Padding(
+                    padding: const EdgeInsets.all(5),
+                    child: AutoSizeText(
+                      reward.description.getOrCrash(),
+                      style: const TextStyle(
+                        fontSize: 12,
+                        color: WorldOnColors.background,
+                      ),
+                    ),
+                  ),
+                ],
+              ),
             ),
-          ),
-          Expanded(
-            child: InkWell(
-              onTap: () => showDialog(
-                context: context,
-                builder: (context) => Dialog(
-                  backgroundColor: WorldOnColors.primary,
-                  child: InkWell(
-                    onTap: () => Navigator.of(context).pop(),
-                    child: Padding(
-                      padding: const EdgeInsets.all(5),
-                      child: WorldOnCachedImage(
-                        imageURL: reward.imageURL,
+            Expanded(
+              child: InkWell(
+                onTap: () => showDialog(
+                  context: context,
+                  builder: (context) => Dialog(
+                    backgroundColor: WorldOnColors.primary,
+                    child: InkWell(
+                      onTap: () => Navigator.of(context).pop(),
+                      child: Padding(
+                        padding: const EdgeInsets.all(5),
+                        child: WorldOnCachedImage(
+                          imageURL: reward.imageURL,
+                        ),
                       ),
                     ),
                   ),
                 ),
-              ),
-              child: CachedNetworkImage(
-                imageUrl: reward.imageURL,
-                progressIndicatorBuilder: (context, url, progress) => const WorldOnProgressIndicator(size: 40),
-                height: 100,
-                width: 100,
+                child: CachedNetworkImage(
+                  imageUrl: reward.imageURL,
+                  progressIndicatorBuilder: (context, url, progress) =>
+                      const WorldOnProgressIndicator(size: 40),
+                  height: 100,
+                  width: 100,
+                ),
               ),
             ),
-          ),
-        ],
-      ),
-    );
-  }
+          ],
+        ),
+      );
 }

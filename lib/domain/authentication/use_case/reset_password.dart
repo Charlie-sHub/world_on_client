@@ -12,9 +12,8 @@ class ResetPassword implements AsyncUseCase<Unit, Params> {
   ResetPassword(this._repository);
 
   @override
-  Future<Either<Failure, Unit>> call(Params params) async {
-    return _repository.resetPassword(params.email);
-  }
+  Future<Either<Failure, Unit>> call(Params params) async =>
+      _repository.resetPassword(params.email);
 }
 
 class Params {

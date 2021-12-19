@@ -12,9 +12,8 @@ class DismissTagFromInterests implements AsyncUseCase<Unit, Params> {
   DismissTagFromInterests(this._repository);
 
   @override
-  Future<Either<Failure, Unit>> call(Params params) async {
-    return _repository.dismissTagFromInterests(params.tag);
-  }
+  Future<Either<Failure, Unit>> call(Params params) async =>
+      _repository.dismissTagFromInterests(params.tag);
 }
 
 class Params {

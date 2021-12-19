@@ -9,27 +9,25 @@ class ExitExperienceButton extends StatelessWidget {
   const ExitExperienceButton({Key? key}) : super(key: key);
 
   @override
-  Widget build(BuildContext context) {
-    return IconButton(
-      icon: const Icon(
-        Icons.close_rounded,
-        color: WorldOnColors.red,
-        size: 25,
-      ),
-      padding: const EdgeInsets.all(5),
-      constraints: const BoxConstraints(),
-      onPressed: () {
-        context.read<ExperienceNavigationWatcherBloc>().add(
-              ExperienceNavigationWatcherEvent.initialized(
-                none(),
-              ),
-            );
-        context.read<NavigationActorBloc>().add(
-              NavigationActorEvent.experienceNavigationTapped(
-                none(),
-              ),
-            );
-      },
-    );
-  }
+  Widget build(BuildContext context) => IconButton(
+        icon: const Icon(
+          Icons.close_rounded,
+          color: WorldOnColors.red,
+          size: 25,
+        ),
+        padding: const EdgeInsets.all(5),
+        constraints: const BoxConstraints(),
+        onPressed: () {
+          context.read<ExperienceNavigationWatcherBloc>().add(
+                ExperienceNavigationWatcherEvent.initialized(
+                  none(),
+                ),
+              );
+          context.read<NavigationActorBloc>().add(
+                NavigationActorEvent.experienceNavigationTapped(
+                  none(),
+                ),
+              );
+        },
+      );
 }

@@ -12,9 +12,8 @@ class RemoveExperienceLiked implements AsyncUseCase<Unit, Params> {
   RemoveExperienceLiked(this._repository);
 
   @override
-  Future<Either<Failure, Unit>> call(Params params) async {
-    return _repository.removeExperienceLiked(params.experienceId);
-  }
+  Future<Either<Failure, Unit>> call(Params params) async =>
+      _repository.removeExperienceLiked(params.experienceId);
 }
 
 class Params {

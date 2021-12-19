@@ -14,29 +14,29 @@ class UserImagePicker extends StatelessWidget {
   }) : super(key: key);
 
   @override
-  Widget build(BuildContext context) {
-    return context.read<ProfileEditingFormBloc>().state.user.imageFileOption.fold(
-          () => TextButton(
-            onPressed: () => imageChanged(context),
-            child: Hero(
-              tag: "userImage",
-              child: CircleAvatar(
-                radius: 40,
-                backgroundImage: CachedNetworkImageProvider(user.imageURL),
+  Widget build(BuildContext context) =>
+      context.read<ProfileEditingFormBloc>().state.user.imageFileOption.fold(
+            () => TextButton(
+              onPressed: () => imageChanged(context),
+              child: Hero(
+                tag: "userImage",
+                child: CircleAvatar(
+                  radius: 40,
+                  backgroundImage: CachedNetworkImageProvider(user.imageURL),
+                ),
               ),
             ),
-          ),
-          (imageFile) => TextButton(
-            onPressed: () => imageChanged(context),
-            child: CircleAvatar(
-              radius: 80,
-              backgroundImage: FileImage(imageFile!),
+            (imageFile) => TextButton(
+              onPressed: () => imageChanged(context),
+              child: CircleAvatar(
+                radius: 80,
+                backgroundImage: FileImage(imageFile!),
+              ),
             ),
-          ),
-        );
-  }
+          );
 
-  Future<void> imageChanged(BuildContext context) => openPictureSelectDialog(context).then(
+  Future<void> imageChanged(BuildContext context) =>
+      openPictureSelectDialog(context).then(
         (imageFile) {
           if (imageFile != null) {
             context.read<ProfileEditingFormBloc>().add(

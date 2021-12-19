@@ -28,7 +28,8 @@ class Achievement with _$Achievement {
     required String imageURL,
     required Option<File> imageFile,
     required String type,
-    required int requisite, // This will probably be reworked in the future to accommodate different kinds of achievements
+    required int
+        requisite, // This will probably be reworked in the future to accommodate different kinds of achievements
     required ExperiencePoints experiencePoints,
     required UniqueId creatorId,
     required PastDate creationDate,
@@ -51,18 +52,16 @@ class Achievement with _$Achievement {
         tags: TagSet(const KtSet.empty()),
       );
 
-  Option<ValueFailure<dynamic>> get failureOption {
-    return name.failureOrUnit
-        .andThen(description.failureOrUnit)
-        .andThen(experiencePoints.failureOrUnit)
-        .andThen(creationDate.failureOrUnit)
-        .andThen(modificationDate.failureOrUnit)
-        .andThen(tags.failureOrUnit)
-        .fold(
-          (failure) => some(failure),
-          (_) => none(),
-        );
-  }
+  Option<ValueFailure<dynamic>> get failureOption => name.failureOrUnit
+      .andThen(description.failureOrUnit)
+      .andThen(experiencePoints.failureOrUnit)
+      .andThen(creationDate.failureOrUnit)
+      .andThen(modificationDate.failureOrUnit)
+      .andThen(tags.failureOrUnit)
+      .fold(
+        (failure) => some(failure),
+        (_) => none(),
+      );
 
   bool get isValid => failureOption.isNone();
 }

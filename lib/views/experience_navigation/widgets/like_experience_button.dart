@@ -12,17 +12,15 @@ class LikeExperienceButton extends StatelessWidget {
   final UniqueId experienceId;
 
   @override
-  Widget build(BuildContext context) {
-    return IconButton(
-      icon: Icon(
-        Icons.thumb_up,
-        color: Colors.grey.shade600,
-        size: 30,
-      ),
-      padding: EdgeInsets.zero,
-      onPressed: () => context.read<ExperienceLikeActorBloc>().add(
-            ExperienceLikeActorEvent.liked(experienceId),
-          ),
-    );
-  }
+  Widget build(BuildContext context) => IconButton(
+        icon: Icon(
+          Icons.thumb_up,
+          color: Colors.grey.shade600,
+          size: 30,
+        ),
+        padding: EdgeInsets.zero,
+        onPressed: () => context.read<ExperienceLikeActorBloc>().add(
+              ExperienceLikeActorEvent.liked(experienceId),
+            ),
+      );
 }

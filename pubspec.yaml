@@ -18,7 +18,7 @@ dependencies:
   algolia: ^1.0.4
   animated_bottom_navigation_bar: ^0.3.2
   another_flushbar: ^1.10.28
-  auth_buttons: ^2.0.2
+  auth_buttons: ^2.0.3
   auto_route: ^3.2.0
   auto_size_text: ^3.0.0-nullsafety.0
   bloc: ^8.0.1
@@ -26,14 +26,14 @@ dependencies:
   cached_network_image: ^3.2.0
   carousel_slider: ^4.0.0
   cloud_firestore: ^2.5.4
-  cloud_functions: ^3.2.3
+  cloud_functions: ^3.2.4
   dartz: ^0.10.1
   email_validator: ^2.0.1
   equatable: ^2.0.3
-  firebase_auth: ^3.3.3
-  firebase_core: ^1.10.5
-  firebase_messaging: ^11.2.3
-  firebase_storage: ^10.2.3
+  firebase_auth: ^3.3.4
+  firebase_core: ^1.10.6
+  firebase_messaging: ^11.2.4
+  firebase_storage: ^10.2.4
   flutter:
     sdk: flutter
   flutter_bloc: ^8.0.0
@@ -48,7 +48,7 @@ dependencies:
   freezed: ^1.1.0
   freezed_annotation: ^1.1.0
   geoflutterfire: ^3.0.1
-  geolocator: ^8.0.0
+  geolocator: ^8.0.1
   get_it: ^7.2.0
   google_maps_flutter:
   google_sign_in: ^5.2.1
@@ -59,7 +59,7 @@ dependencies:
   in_app_purchase_android: ^0.2.2
   injectable: ^1.5.0
   intl: ^0.17.0
-  jiffy: ^4.1.0
+  jiffy: ^5.0.0
   json_annotation: ^4.4.0
   kt_dart: ^0.10.0
   logger: ^1.1.0
@@ -78,7 +78,7 @@ dependencies:
   sa3_liquid: ^1.0.1
   showcaseview: ^1.1.4
   simple_animations: ^4.0.1
-  social_share: ^2.1.1
+  social_share: ^2.2.1
   uuid: ^3.0.5
   visibility_detector: ^0.2.2
 
@@ -89,8 +89,8 @@ dev_dependencies:
     sdk: flutter
   font_awesome_flutter: ^9.2.0
   injectable_generator: ^1.5.2
-  json_serializable: ^6.1.1
-  lint: ^1.7.2
+  json_serializable: ^6.1.3
+  lint: ^1.8.1
 
 flutter_icons:
   image_path: "assets/world_on_logo.jpg"

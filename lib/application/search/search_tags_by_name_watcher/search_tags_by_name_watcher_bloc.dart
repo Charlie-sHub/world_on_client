@@ -5,7 +5,6 @@ import 'package:dartz/dartz.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:injectable/injectable.dart';
 import 'package:kt_dart/kt.dart';
-import 'package:meta/meta.dart';
 import 'package:worldon/core/error/failure.dart';
 import 'package:worldon/domain/core/entities/tag/tag.dart';
 import 'package:worldon/domain/core/validation/objects/search_term.dart';
@@ -17,33 +16,37 @@ part 'search_tags_by_name_watcher_event.dart';
 part 'search_tags_by_name_watcher_state.dart';
 
 @injectable
-class SearchTagsByNameWatcherBloc extends Bloc<SearchTagsByNameWatcherEvent, SearchTagsByNameWatcherState> {
-  SearchTagsByNameWatcherBloc() : super(const SearchTagsByNameWatcherState.initial());
+class SearchTagsByNameWatcherBloc
+    extends Bloc<SearchTagsByNameWatcherEvent, SearchTagsByNameWatcherState> {
+  SearchTagsByNameWatcherBloc()
+      : super(const SearchTagsByNameWatcherState.initial()) {
+    on<_WatchTagsFoundByNameStarted>(_onWatchTagsFoundByNameStarted);
+    on<_ResultsReceived>(_onResultsReceived);
+  }
 
   StreamSubscription<Either<Failure, KtList<Tag>>>? _tagsStreamSubscription;
 
-  @override
-  Stream<SearchTagsByNameWatcherState> mapEventToState(SearchTagsByNameWatcherEvent event) async* {
-    yield* event.map(
-      watchTagsFoundByNameStarted: _onWatchTagsFoundByNameStarted,
-      resultsReceived: _onResultsReceived,
+  void _onResultsReceived(_ResultsReceived event, Emitter emit) {
+    emit(
+      event.failureOrTags.fold(
+        (failure) => SearchTagsByNameWatcherState.searchFailure(failure),
+        (tagsFound) => SearchTagsByNameWatcherState.searchSuccess(tagsFound),
+      ),
     );
   }
 
-  Stream<SearchTagsByNameWatcherState> _onResultsReceived(_ResultsReceived event) async* {
-    yield event.failureOrTags.fold(
-      (failure) => SearchTagsByNameWatcherState.searchFailure(failure),
-      (tagsFound) => SearchTagsByNameWatcherState.searchSuccess(tagsFound),
-    );
-  }
-
-  Stream<SearchTagsByNameWatcherState> _onWatchTagsFoundByNameStarted(_WatchTagsFoundByNameStarted event) async* {
-    yield const SearchTagsByNameWatcherState.searchInProgress();
+  FutureOr<void> _onWatchTagsFoundByNameStarted(
+    _WatchTagsFoundByNameStarted event,
+    Emitter emit,
+  ) async {
+    emit(const SearchTagsByNameWatcherState.searchInProgress());
     await _tagsStreamSubscription?.cancel();
     _tagsStreamSubscription = getIt<WatchSearchTagsByName>()(
       Params(name: event.searchTerm),
     ).listen(
-      (_failureOrTags) => add(SearchTagsByNameWatcherEvent.resultsReceived(_failureOrTags)),
+      (_failureOrTags) => add(
+        SearchTagsByNameWatcherEvent.resultsReceived(_failureOrTags),
+      ),
     );
   }
 

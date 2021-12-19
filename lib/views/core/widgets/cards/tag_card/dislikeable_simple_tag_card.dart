@@ -13,23 +13,21 @@ class DisLikeableSimpleTagCard extends StatelessWidget {
   final Tag tag;
 
   @override
-  Widget build(BuildContext context) {
-    return InkWell(
-      onTap: () => context.read<TagCardActorBloc>().add(
-            TagCardActorEvent.dismissedFromInterests(tag),
-          ),
-      child: Chip(
-        elevation: 5,
-        materialTapTargetSize: MaterialTapTargetSize.shrinkWrap,
-        backgroundColor: WorldOnColors.primary,
-        label: Text(
-          tag.name.getOrCrash(),
-          style: const TextStyle(
-            color: WorldOnColors.accent,
-            fontWeight: FontWeight.w500,
+  Widget build(BuildContext context) => InkWell(
+        onTap: () => context.read<TagCardActorBloc>().add(
+              TagCardActorEvent.dismissedFromInterests(tag),
+            ),
+        child: Chip(
+          elevation: 5,
+          materialTapTargetSize: MaterialTapTargetSize.shrinkWrap,
+          backgroundColor: WorldOnColors.primary,
+          label: Text(
+            tag.name.getOrCrash(),
+            style: const TextStyle(
+              color: WorldOnColors.accent,
+              fontWeight: FontWeight.w500,
+            ),
           ),
         ),
-      ),
-    );
-  }
+      );
 }

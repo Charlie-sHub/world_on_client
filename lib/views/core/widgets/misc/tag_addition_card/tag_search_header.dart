@@ -10,13 +10,15 @@ class TagSearchHeader extends StatelessWidget {
   }) : super(key: key);
 
   @override
-  Widget build(BuildContext context) {
-    return BlocConsumer<SearchByNameFormBloc, SearchByNameFormState>(
-      listenWhen: (_, current) => current.isSubmitting,
-      listener: (context, state) => context.read<SearchTagsByNameWatcherBloc>().add(
-            SearchTagsByNameWatcherEvent.watchTagsFoundByNameStarted(state.searchTerm),
-          ),
-      builder: (context, state) => const SearchHeader(),
-    );
-  }
+  Widget build(BuildContext context) =>
+      BlocConsumer<SearchByNameFormBloc, SearchByNameFormState>(
+        listenWhen: (_, current) => current.isSubmitting,
+        listener: (context, state) =>
+            context.read<SearchTagsByNameWatcherBloc>().add(
+                  SearchTagsByNameWatcherEvent.watchTagsFoundByNameStarted(
+                    state.searchTerm,
+                  ),
+                ),
+        builder: (context, state) => const SearchHeader(),
+      );
 }

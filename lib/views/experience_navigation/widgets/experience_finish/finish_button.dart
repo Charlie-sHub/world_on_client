@@ -10,23 +10,21 @@ class FinishButton extends StatelessWidget {
   }) : super(key: key);
 
   @override
-  Widget build(BuildContext context) {
-    return ElevatedButton(
-      onPressed: () => context.read<ExperienceNavigationWatcherBloc>().add(
-            ExperienceNavigationWatcherEvent.initialized(
-              none(),
+  Widget build(BuildContext context) => ElevatedButton(
+        onPressed: () => context.read<ExperienceNavigationWatcherBloc>().add(
+              ExperienceNavigationWatcherEvent.initialized(
+                none(),
+              ),
+            ),
+        child: Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 15),
+          child: Text(
+            S.of(context).experienceFinishButton,
+            style: const TextStyle(
+              fontSize: 15,
+              fontWeight: FontWeight.bold,
             ),
           ),
-      child: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 15),
-        child: Text(
-          S.of(context).experienceFinishButton,
-          style: const TextStyle(
-            fontSize: 15,
-            fontWeight: FontWeight.bold,
-          ),
         ),
-      ),
-    );
-  }
+      );
 }

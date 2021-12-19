@@ -14,27 +14,25 @@ class UserExperienceInfo extends StatelessWidget {
   final User user;
 
   @override
-  Widget build(BuildContext context) {
-    return Row(
-      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-      children: <Widget>[
-        AutoSizeText(
-          S.of(context).level + user.level.getOrCrash().toString(),
-          style: TextStyle(
-            fontWeight: FontWeight.bold,
-            color: _getColor(user.level.getOrCrash()),
+  Widget build(BuildContext context) => Row(
+        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+        children: <Widget>[
+          AutoSizeText(
+            S.of(context).level + user.level.getOrCrash().toString(),
+            style: TextStyle(
+              fontWeight: FontWeight.bold,
+              color: _getColor(user.level.getOrCrash()),
+            ),
           ),
-        ),
-        Expanded(
-          child: LinearPercentIndicator(
-            lineHeight: 10,
-            percent: user.percentageToNextLevel,
-            progressColor: WorldOnColors.primary,
+          Expanded(
+            child: LinearPercentIndicator(
+              lineHeight: 10,
+              percent: user.percentageToNextLevel,
+              progressColor: WorldOnColors.primary,
+            ),
           ),
-        ),
-      ],
-    );
-  }
+        ],
+      );
 
   Color _getColor(int level) {
     if (level < 30) {

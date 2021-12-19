@@ -11,91 +11,93 @@ import 'package:worldon/views/core/misc/world_on_colors.dart';
 
 class ForgottenPasswordPage extends StatelessWidget {
   @override
-  Widget build(BuildContext context) {
-    return SafeArea(
-      child: Scaffold(
-        resizeToAvoidBottomInset: false,
-        appBar: AppBar(
-          title: Text(
-            S.of(context).forgottenPassword,
-            style: const TextStyle(
-              fontSize: 20,
-              fontWeight: FontWeight.w800,
+  Widget build(BuildContext context) => SafeArea(
+        child: Scaffold(
+          resizeToAvoidBottomInset: false,
+          appBar: AppBar(
+            title: Text(
+              S.of(context).forgottenPassword,
+              style: const TextStyle(
+                fontSize: 20,
+                fontWeight: FontWeight.w800,
+              ),
             ),
           ),
-        ),
-        body: Center(
-          child: BlocProvider(
-            create: (context) => getIt<ForgottenPasswordFormBloc>(),
-            child: BlocConsumer<ForgottenPasswordFormBloc, ForgottenPasswordFormState>(
-              listenWhen: (previous, current) =>
-                  previous.failureOrSuccessOption != current.failureOrSuccessOption,
-              listener: (context, state) => state.failureOrSuccessOption.fold(
-                () {},
-                (either) => either.fold(
-                  (failure) => _onFailure(failure, context),
-                  (_) => _onSuccess(context),
+          body: Center(
+            child: BlocProvider(
+              create: (context) => getIt<ForgottenPasswordFormBloc>(),
+              child: BlocConsumer<ForgottenPasswordFormBloc,
+                  ForgottenPasswordFormState>(
+                listenWhen: (previous, current) =>
+                    previous.failureOrSuccessOption !=
+                    current.failureOrSuccessOption,
+                listener: (context, state) => state.failureOrSuccessOption.fold(
+                  () {},
+                  (either) => either.fold(
+                    (failure) => _onFailure(failure, context),
+                    (_) => _onSuccess(context),
+                  ),
                 ),
-              ),
-              builder: (context, state) => Form(
-                child: Padding(
-                  padding: const EdgeInsets.all(20),
-                  child: Column(
-                    children: [
-                      const SizedBox(height: 100),
-                      EmailTextField(
-                        validator: (_) => _emailValidator(context),
-                        eventToAdd: (String value) => context.read<ForgottenPasswordFormBloc>().add(
-                              ForgottenPasswordFormEvent.emailChanged(value),
+                builder: (context, state) => Form(
+                  child: Padding(
+                    padding: const EdgeInsets.all(20),
+                    child: Column(
+                      children: [
+                        const SizedBox(height: 100),
+                        EmailTextField(
+                          validator: (_) => _emailValidator(context),
+                          eventToAdd: (String value) => context
+                              .read<ForgottenPasswordFormBloc>()
+                              .add(
+                                ForgottenPasswordFormEvent.emailChanged(value),
+                              ),
+                        ),
+                        const SizedBox(height: 20),
+                        ElevatedButton(
+                          onPressed: () {
+                            FocusScope.of(context).unfocus();
+                            context.read<ForgottenPasswordFormBloc>().add(
+                                  const ForgottenPasswordFormEvent
+                                      .sentRequest(),
+                                );
+                          },
+                          style: ButtonStyle(
+                            backgroundColor: MaterialStateProperty.all(
+                              WorldOnColors.primary,
                             ),
-                      ),
-                      const SizedBox(height: 20),
-                      ElevatedButton(
-                        onPressed: () {
-                          FocusScope.of(context).unfocus();
-                          context.read<ForgottenPasswordFormBloc>().add(
-                                const ForgottenPasswordFormEvent.sentRequest(),
-                              );
-                        },
-                        style: ButtonStyle(
-                          backgroundColor: MaterialStateProperty.all(
-                            WorldOnColors.primary,
+                          ),
+                          child: Text(
+                            S.of(context).resetPassword,
+                            style: const TextStyle(
+                              fontSize: 20,
+                            ),
                           ),
                         ),
-                        child: Text(
-                          S.of(context).resetPassword,
-                          style: const TextStyle(
-                            fontSize: 20,
-                          ),
-                        ),
-                      ),
-                    ],
+                      ],
+                    ),
                   ),
                 ),
               ),
             ),
           ),
         ),
-      ),
-    );
-  }
+      );
 
-  Future _onFailure(Failure failure, BuildContext context) {
-    return FlushbarHelper.createError(
-      duration: const Duration(seconds: 2),
-      message: failure.maybeMap(
-        coreData: (failure) => failure.coreDataFailure.maybeMap(
-          serverError: (failure) => failure.errorString,
+  Future _onFailure(Failure failure, BuildContext context) =>
+      FlushbarHelper.createError(
+        duration: const Duration(seconds: 2),
+        message: failure.maybeMap(
+          coreData: (failure) => failure.coreDataFailure.maybeMap(
+            serverError: (failure) => failure.errorString,
+            orElse: () => S.of(context).unknownError,
+          ),
+          coreApplication: (failure) => failure.coreApplicationFailure.maybeMap(
+            emptyFields: (_) => S.of(context).emptyFields,
+            orElse: () => S.of(context).unknownError,
+          ),
           orElse: () => S.of(context).unknownError,
         ),
-        coreApplication: (failure) => failure.coreApplicationFailure.maybeMap(
-          emptyFields: (_) => S.of(context).emptyFields,
-          orElse: () => S.of(context).unknownError,
-        ),
-        orElse: () => S.of(context).unknownError,
-      ),
-    ).show(context);
-  }
+      ).show(context);
 
   void _onSuccess(BuildContext context) {
     FlushbarHelper.createSuccess(
@@ -106,13 +108,12 @@ class ForgottenPasswordPage extends StatelessWidget {
         );
   }
 
-  String _emailValidator(BuildContext context) {
-    return context.read<ForgottenPasswordFormBloc>().state.email.value.fold(
-          (failure) => failure.maybeMap(
-            invalidEmail: (_) => S.of(context).invalidEmail,
-            orElse: () => S.of(context).unknownError,
-          ),
-          (_) => "",
-        );
-  }
+  String _emailValidator(BuildContext context) =>
+      context.read<ForgottenPasswordFormBloc>().state.email.value.fold(
+            (failure) => failure.maybeMap(
+              invalidEmail: (_) => S.of(context).invalidEmail,
+              orElse: () => S.of(context).unknownError,
+            ),
+            (_) => "",
+          );
 }

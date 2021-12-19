@@ -4,7 +4,7 @@ import 'package:worldon/views/authentication/validator_typedef.dart';
 import 'package:worldon/views/core/misc/world_on_colors.dart';
 
 class EmailTextField extends StatelessWidget {
-  final Function eventToAdd;
+  final Function(String value) eventToAdd;
   final Validator<String?> validator;
   final String? initialValue;
 
@@ -16,21 +16,19 @@ class EmailTextField extends StatelessWidget {
   }) : super(key: key);
 
   @override
-  Widget build(BuildContext context) {
-    return TextFormField(
-      onChanged: (value) => eventToAdd(value.trim()),
-      initialValue: initialValue,
-      validator: (_) => validator(_),
-      autocorrect: false,
-      decoration: InputDecoration(
-        labelText: S.of(context).emailAddress,
-        prefixIcon: const Icon(
-          Icons.email,
-          color: WorldOnColors.primary,
+  Widget build(BuildContext context) => TextFormField(
+        onChanged: (value) => eventToAdd(value.trim()),
+        initialValue: initialValue,
+        validator: (_) => validator(_),
+        autocorrect: false,
+        decoration: InputDecoration(
+          labelText: S.of(context).emailAddress,
+          prefixIcon: const Icon(
+            Icons.email,
+            color: WorldOnColors.primary,
+          ),
+          filled: true,
+          fillColor: WorldOnColors.background,
         ),
-        filled: true,
-        fillColor: WorldOnColors.background,
-      ),
-    );
-  }
+      );
 }

@@ -16,45 +16,57 @@ class TabbedSearchBody extends StatelessWidget {
   const TabbedSearchBody({Key? key}) : super(key: key);
 
   @override
-  Widget build(BuildContext context) {
-    return MultiBlocProvider(
-      providers: [
-        BlocProvider(create: (context) => getIt<SearchByNameFormBloc>()),
-        BlocProvider(create: (context) => getIt<SearchUsersByNameWatcherBloc>()),
-        BlocProvider(create: (context) => getIt<SearchExperiencesByNameWatcherBloc>()),
-        BlocProvider(create: (context) => getIt<SearchTagsByNameWatcherBloc>()),
-        BlocProvider(create: (context) => getIt<SearchExperiencesByDifficultyBloc>()),
-        BlocProvider(create: (context) => getIt<SearchExperiencesByTagsBloc>()),
-      ],
-      child: BlocConsumer<SearchByNameFormBloc, SearchByNameFormState>(
-        listenWhen: (previous, current) => previous.isSubmitting != current.isSubmitting,
-        listener: _searchFormListener,
-        buildWhen: (previous, current) => previous.showErrorMessages != current.showErrorMessages,
-        builder: (context, state) => Padding(
-          padding: const EdgeInsets.all(5),
-          child: DefaultTabController(
-            length: 3,
-            child: Column(
-              children: <Widget>[
-                const SearchHeader(),
-                const SizedBox(height: 5),
-                const SearchTabBar(),
-                Expanded(
-                  child: TabBarView(
-                    children: [
-                      ExperienceResultsView(searchTerm: state.searchTerm),
-                      UserResultsView(searchTerm: state.searchTerm),
-                      // SearchTagsTabView(searchTerm: state.searchTerm),
-                    ],
+  Widget build(BuildContext context) => MultiBlocProvider(
+        providers: [
+          BlocProvider(
+            create: (context) => getIt<SearchByNameFormBloc>(),
+          ),
+          BlocProvider(
+            create: (context) => getIt<SearchUsersByNameWatcherBloc>(),
+          ),
+          BlocProvider(
+            create: (context) => getIt<SearchExperiencesByNameWatcherBloc>(),
+          ),
+          BlocProvider(
+            create: (context) => getIt<SearchTagsByNameWatcherBloc>(),
+          ),
+          BlocProvider(
+            create: (context) => getIt<SearchExperiencesByDifficultyBloc>(),
+          ),
+          BlocProvider(
+            create: (context) => getIt<SearchExperiencesByTagsBloc>(),
+          ),
+        ],
+        child: BlocConsumer<SearchByNameFormBloc, SearchByNameFormState>(
+          listenWhen: (previous, current) =>
+              previous.isSubmitting != current.isSubmitting,
+          listener: _searchFormListener,
+          buildWhen: (previous, current) =>
+              previous.showErrorMessages != current.showErrorMessages,
+          builder: (context, state) => Padding(
+            padding: const EdgeInsets.all(5),
+            child: DefaultTabController(
+              length: 3,
+              child: Column(
+                children: <Widget>[
+                  const SearchHeader(),
+                  const SizedBox(height: 5),
+                  const SearchTabBar(),
+                  Expanded(
+                    child: TabBarView(
+                      children: [
+                        ExperienceResultsView(searchTerm: state.searchTerm),
+                        UserResultsView(searchTerm: state.searchTerm),
+                        // SearchTagsTabView(searchTerm: state.searchTerm),
+                      ],
+                    ),
                   ),
-                ),
-              ],
+                ],
+              ),
             ),
           ),
         ),
-      ),
-    );
-  }
+      );
 
   void _searchFormListener(BuildContext context, SearchByNameFormState state) {
     if (state.searchTerm.value.isRight()) {
@@ -64,7 +76,8 @@ class TabbedSearchBody extends StatelessWidget {
             ),
           );
       context.read<SearchExperiencesByNameWatcherBloc>().add(
-            SearchExperiencesByNameWatcherEvent.watchExperiencesFoundByNameStarted(
+            SearchExperiencesByNameWatcherEvent
+                .watchExperiencesFoundByNameStarted(
               state.searchTerm,
             ),
           );

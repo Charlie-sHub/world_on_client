@@ -10,29 +10,34 @@ class PasswordTextField extends StatelessWidget {
   }) : super(key: key);
 
   @override
-  Widget build(BuildContext context) {
-    return TextFormField(
-      maxLength: Password.maxLength,
-      onChanged: (value) => context.read<ProfileEditingFormBloc>().add(
-            ProfileEditingFormEvent.passwordChanged(value.trim()),
-          ),
-      validator: (_) => context.read<ProfileEditingFormBloc>().state.user.password.value.fold(
-            (failure) => failure.maybeMap(
-              emptyString: (_) => S.of(context).passwordEmptyString,
-              multiLineString: (_) => S.of(context).passwordMultiLineString,
-              stringExceedsLength: (_) => S.of(context).passwordStringExceedsLength,
-              // Rather superfluous
-              invalidPassword: (_) => S.of(context).invalidPassword,
-              orElse: () => S.of(context).unknownError,
+  Widget build(BuildContext context) => TextFormField(
+        maxLength: Password.maxLength,
+        onChanged: (value) => context.read<ProfileEditingFormBloc>().add(
+              ProfileEditingFormEvent.passwordChanged(value.trim()),
             ),
-            (_) => null,
-          ),
-      autocorrect: false,
-      obscureText: true,
-      decoration: InputDecoration(
-        labelText: S.of(context).password,
-        prefixIcon: const Icon(Icons.lock),
-      ),
-    );
-  }
+        validator: (_) => context
+            .read<ProfileEditingFormBloc>()
+            .state
+            .user
+            .password
+            .value
+            .fold(
+              (failure) => failure.maybeMap(
+                emptyString: (_) => S.of(context).passwordEmptyString,
+                multiLineString: (_) => S.of(context).passwordMultiLineString,
+                stringExceedsLength: (_) =>
+                    S.of(context).passwordStringExceedsLength,
+                // Rather superfluous
+                invalidPassword: (_) => S.of(context).invalidPassword,
+                orElse: () => S.of(context).unknownError,
+              ),
+              (_) => null,
+            ),
+        autocorrect: false,
+        obscureText: true,
+        decoration: InputDecoration(
+          labelText: S.of(context).password,
+          prefixIcon: const Icon(Icons.lock),
+        ),
+      );
 }

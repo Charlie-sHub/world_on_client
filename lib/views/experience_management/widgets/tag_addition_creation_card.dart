@@ -3,6 +3,7 @@ import 'package:dartz/dartz.dart' hide State;
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
+import 'package:kt_dart/collection.dart';
 import 'package:worldon/application/search/search_by_name_form/search_by_name_form_bloc.dart';
 import 'package:worldon/application/search/search_tags_by_name_watcher/search_tags_by_name_watcher_bloc.dart';
 import 'package:worldon/application/search/tag_selector/tag_selector_bloc.dart';
@@ -26,7 +27,7 @@ class TagAdditionCreationCard extends HookWidget {
   ///
   /// Yes another solution should be found
   final Option<Either<TagSet, Set<UniqueId>>> tagsEitherOption;
-  final Function tagChangeFunction;
+  final Function(KtSet<Tag> tag) tagChangeFunction;
   final bool showErrorMessage;
 
   const TagAdditionCreationCard({
@@ -69,7 +70,8 @@ class TagAdditionCreationCard extends HookWidget {
             const SizedBox(height: 5),
             BlocListener<TagManagementFormBloc, TagManagementFormState>(
               listenWhen: (previous, current) =>
-                  previous.failureOrSuccessOption != current.failureOrSuccessOption,
+                  previous.failureOrSuccessOption !=
+                  current.failureOrSuccessOption,
               listener: (context, state) => _tagCreationListener(
                 context,
                 state,
@@ -117,7 +119,8 @@ class TagAdditionCreationCard extends HookWidget {
         () {},
         (either) => either.fold(
           (failure) => failure.maybeMap(
-            coreData: (_coreDataFailure) => _coreDataFailure.coreDataFailure.maybeMap(
+            coreData: (_coreDataFailure) =>
+                _coreDataFailure.coreDataFailure.maybeMap(
               nameAlreadyInUse: (_) => FlushbarHelper.createError(
                 duration: const Duration(seconds: 2),
                 message: S.of(context).tagCreationNameAlreadyInUse,

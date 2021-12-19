@@ -15,13 +15,11 @@ class BuyItemButton extends StatelessWidget {
   final Item item;
 
   @override
-  Widget build(BuildContext context) {
-    return SlidableAction(
-      backgroundColor: WorldOnColors.primary,
-      onPressed: (context) => context.read<BuyItemBloc>().add(
-            BuyItemEvent.boughtItem(item),
-          ),
-      label: S.of(context).buyItem,
-    );
-  }
+  Widget build(BuildContext context) => SlidableAction(
+        backgroundColor: WorldOnColors.primary,
+        onPressed: (context) => context.read<BuyItemBloc>().add(
+              BuyItemEvent.boughtItem(item),
+            ),
+        label: S.of(context).buyItem,
+      );
 }

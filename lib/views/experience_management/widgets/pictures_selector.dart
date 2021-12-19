@@ -5,8 +5,7 @@ import 'package:logger/logger.dart';
 import 'package:multi_image_picker2/multi_image_picker2.dart';
 import 'package:worldon/application/experience_management/experience_management_form/experience_management_form_bloc.dart';
 import 'package:worldon/generated/l10n.dart';
-
-import '../../../injection.dart';
+import 'package:worldon/injection.dart';
 
 class PicturesSelector extends StatelessWidget {
   @override

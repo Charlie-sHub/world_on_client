@@ -15,9 +15,8 @@ class FinishExperience implements AsyncUseCase<Unit, Params> {
   FinishExperience(this._repository);
 
   @override
-  Future<Either<Failure, Unit>> call(Params params) async {
-    return _repository.finishExperience(params.experienceId);
-  }
+  Future<Either<Failure, Unit>> call(Params params) async =>
+      _repository.finishExperience(params.experienceId);
 }
 
 class Params {

@@ -9,14 +9,12 @@ class LogInGoogleButton extends StatelessWidget {
   }) : super(key: key);
 
   @override
-  Widget build(BuildContext context) {
-    return GoogleAuthButton(
-      style: const AuthButtonStyle(
-        buttonType: AuthButtonType.icon,
-      ),
-      onPressed: () => context.read<LogInFormBloc>().add(
-            const LogInFormEvent.loggedInGoogle(),
-          ),
-    );
-  }
+  Widget build(BuildContext context) => GoogleAuthButton(
+        style: const AuthButtonStyle(
+          buttonType: AuthButtonType.icon,
+        ),
+        onPressed: () => context.read<LogInFormBloc>().add(
+              const LogInFormEvent.loggedInGoogle(),
+            ),
+      );
 }

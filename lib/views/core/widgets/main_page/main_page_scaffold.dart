@@ -23,53 +23,55 @@ class MainPageScaffold extends StatelessWidget {
   }) : super(key: key);
 
   @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: WorldOnAppBar(),
-      extendBody: true,
-      body: IndexedStack(
-        // Feels rather duct tape-ish to return the index this way
-        // but changing the state would mess with the rest of the navigation, such as when "participating" in a experience
-        index: context.read<NavigationActorBloc>().state.map(
-              mainFeedView: (_) => 0,
-              searchView: (_) => 1,
-              navigateExperienceView: (_) => 2,
-              profileView: (_) => 3,
-              errorView: (_) => 4,
-              notificationsView: (_) => 5,
+  Widget build(BuildContext context) => Scaffold(
+        appBar: WorldOnAppBar(),
+        extendBody: true,
+        body: IndexedStack(
+          // Feels rather duct tape-ish to return the index this way
+          // but changing the state would mess with the rest of the navigation, such as when "participating" in a experience
+          index: context.read<NavigationActorBloc>().state.map(
+                mainFeedView: (_) => 0,
+                searchView: (_) => 1,
+                navigateExperienceView: (_) => 2,
+                profileView: (_) => 3,
+                errorView: (_) => 4,
+                notificationsView: (_) => 5,
+              ),
+          children: <Widget>[
+            const MainFeedBody(),
+            const SearchBody(),
+            ExperienceNavigationBody(
+              experienceOption: context
+                  .read<NavigationActorBloc>()
+                  .state
+                  .maybeMap(
+                    navigateExperienceView: (state) => state.experienceOption,
+                    orElse: () => none(),
+                  ),
             ),
-        children: <Widget>[
-          const MainFeedBody(),
-          const SearchBody(),
-          ExperienceNavigationBody(
-            experienceOption: context.read<NavigationActorBloc>().state.maybeMap(
-                  navigateExperienceView: (state) => state.experienceOption,
-                  orElse: () => none(),
-                ),
-          ),
-          ProfileBody(
-            userIdOption: context.read<NavigationActorBloc>().state.maybeMap(
-                  profileView: (state) => state.userIdOption,
-                  orElse: () => none(),
-                ),
-            currentUserProfile: context.read<NavigationActorBloc>().state.maybeMap(
-                  profileView: (state) => state.currentUserProfile,
-                  orElse: () => true,
-                ),
-            userLevelShowKey: userLevelShowKey,
-          ),
-          Center(
-            child: Text(S.of(context).error),
-          ),
-          const NotificationsBody(),
-        ],
-      ),
-      resizeToAvoidBottomInset: false,
-      floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
-      floatingActionButton: CreateExperienceFloatingButton(
-        showKey: createExperienceShowKey,
-      ),
-      bottomNavigationBar: WorldOnBottomNavigationBar(),
-    );
-  }
+            ProfileBody(
+              userIdOption: context.read<NavigationActorBloc>().state.maybeMap(
+                    profileView: (state) => state.userIdOption,
+                    orElse: () => none(),
+                  ),
+              currentUserProfile:
+                  context.read<NavigationActorBloc>().state.maybeMap(
+                        profileView: (state) => state.currentUserProfile,
+                        orElse: () => true,
+                      ),
+              userLevelShowKey: userLevelShowKey,
+            ),
+            Center(
+              child: Text(S.of(context).error),
+            ),
+            const NotificationsBody(),
+          ],
+        ),
+        resizeToAvoidBottomInset: false,
+        floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
+        floatingActionButton: CreateExperienceFloatingButton(
+          showKey: createExperienceShowKey,
+        ),
+        bottomNavigationBar: WorldOnBottomNavigationBar(),
+      );
 }

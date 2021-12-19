@@ -15,22 +15,21 @@ class UnBlockButton extends StatelessWidget {
   final User user;
 
   @override
-  Widget build(BuildContext context) {
-    return IconButton(
-      icon: const Icon(
-        MdiIcons.account,
-        size: 40,
-      ),
-      padding: EdgeInsets.zero,
-      onPressed: () => context.read<BlockActorBloc>().add(
-            BlockActorEvent.unBlocked(
-              user.id,
-              context.read<WatchCurrentUserBloc>().state.maybeMap(
-                    loadSuccess: (successState) => successState.user.simplified,
-                    orElse: () => SimpleUser.empty(),
-                  ),
+  Widget build(BuildContext context) => IconButton(
+        icon: const Icon(
+          MdiIcons.account,
+          size: 40,
+        ),
+        padding: EdgeInsets.zero,
+        onPressed: () => context.read<BlockActorBloc>().add(
+              BlockActorEvent.unBlocked(
+                user.id,
+                context.read<WatchCurrentUserBloc>().state.maybeMap(
+                      loadSuccess: (successState) =>
+                          successState.user.simplified,
+                      orElse: () => SimpleUser.empty(),
+                    ),
+              ),
             ),
-          ),
-    );
-  }
+      );
 }

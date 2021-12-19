@@ -34,5 +34,6 @@ class ObjectiveDto with _$ObjectiveDto {
         imageFile: dartz.none(),
       );
 
-  factory ObjectiveDto.fromJson(Map<String, dynamic> json) => _$ObjectiveDtoFromJson(json);
+  factory ObjectiveDto.fromJson(Map<String, dynamic> json) =>
+      _$ObjectiveDtoFromJson(json);
 }

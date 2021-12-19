@@ -13,9 +13,8 @@ class LoadUser implements AsyncUseCase<User, Params> {
   LoadUser(this._repository);
 
   @override
-  Future<Either<Failure, User>> call(Params params) async {
-    return _repository.getUser(params.id);
-  }
+  Future<Either<Failure, User>> call(Params params) async =>
+      _repository.getUser(params.id);
 }
 
 class Params {

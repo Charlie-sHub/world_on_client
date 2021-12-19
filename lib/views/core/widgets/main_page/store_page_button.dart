@@ -8,17 +8,15 @@ class StorePageButton extends StatelessWidget {
   }) : super(key: key);
 
   @override
-  Widget build(BuildContext context) {
-    return IconButton(
-      padding: EdgeInsets.zero,
-      icon: const Icon(
-        Icons.local_grocery_store,
-        size: 25,
-        // color: WorldOnColors.accent,
-      ),
-      onPressed: () => context.router.push(
-        const StorePageRoute(),
-      ),
-    );
-  }
+  Widget build(BuildContext context) => IconButton(
+        padding: EdgeInsets.zero,
+        icon: const Icon(
+          Icons.local_grocery_store,
+          size: 25,
+          // color: WorldOnColors.accent,
+        ),
+        onPressed: () => context.router.push(
+          const StorePageRoute(),
+        ),
+      );
 }

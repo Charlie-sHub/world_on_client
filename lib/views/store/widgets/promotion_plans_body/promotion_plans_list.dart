@@ -13,54 +13,52 @@ import 'package:worldon/views/store/widgets/promotion_plans_body/promotion_plan_
 
 class PromotionPlansList extends StatelessWidget {
   @override
-  Widget build(BuildContext context) {
-    return BlocProvider(
-      create: (context) => getIt<PromotionPlansLoaderBloc>()
-        ..add(
-          const PromotionPlansLoaderEvent.loadPromotionPlans(),
-        ),
-      child: BlocBuilder<PromotionPlansLoaderBloc, PromotionPlansLoaderState>(
-        builder: (context, _loaderState) => _loaderState.map(
-          initial: (_) => Container(),
-          loadInProgress: (_) => const WorldOnProgressIndicator(
-            size: 60,
+  Widget build(BuildContext context) => BlocProvider(
+        create: (context) => getIt<PromotionPlansLoaderBloc>()
+          ..add(
+            const PromotionPlansLoaderEvent.loadPromotionPlans(),
           ),
-          loadedPromotionPlans: (state) => ListView.separated(
-            physics: const BouncingScrollPhysics(),
-            padding: const EdgeInsets.all(5),
-            itemCount: state.plans.size,
-            separatorBuilder: (context, index) => const Divider(
-              color: WorldOnColors.accent,
-              height: 5,
+        child: BlocBuilder<PromotionPlansLoaderBloc, PromotionPlansLoaderState>(
+          builder: (context, _loaderState) => _loaderState.map(
+            initial: (_) => Container(),
+            loadInProgress: (_) => const WorldOnProgressIndicator(
+              size: 60,
             ),
-            itemBuilder: (context, index) {
-              final _promo = state.plans.get(index);
-              if (_promo.code != PromotionPlanCode.none) {
-                if (_promo.isValid) {
-                  return PromotionPlanTile(plan: _promo);
+            loadedPromotionPlans: (state) => ListView.separated(
+              physics: const BouncingScrollPhysics(),
+              padding: const EdgeInsets.all(5),
+              itemCount: state.plans.size,
+              separatorBuilder: (context, index) => const Divider(
+                color: WorldOnColors.accent,
+                height: 5,
+              ),
+              itemBuilder: (context, index) {
+                final _promo = state.plans.get(index);
+                if (_promo.code != PromotionPlanCode.none) {
+                  if (_promo.isValid) {
+                    return PromotionPlanTile(plan: _promo);
+                  } else {
+                    return ErrorCard(
+                      entityType: S.of(context).promotionPlans,
+                      valueFailureString: _promo.failureOption.fold(
+                        () => S.of(context).noError,
+                        (failure) => failure.toString(),
+                      ),
+                    );
+                  }
                 } else {
-                  return ErrorCard(
-                    entityType: S.of(context).promotionPlans,
-                    valueFailureString: _promo.failureOption.fold(
-                      () => S.of(context).noError,
-                      (failure) => failure.toString(),
-                    ),
-                  );
+                  return Container();
                 }
-              } else {
-                return Container();
-              }
-            },
-          ),
-          loadFailure: (state) => ErrorDisplay(
-            retryFunction: () => context.read<PromotionPlansLoaderBloc>().add(
-                  const PromotionPlansLoaderEvent.loadPromotionPlans(),
-                ),
-            failure: state.failure,
-            specificMessage: some(S.of(context).notFoundErrorPromotionPlans),
+              },
+            ),
+            loadFailure: (state) => ErrorDisplay(
+              retryFunction: () => context.read<PromotionPlansLoaderBloc>().add(
+                    const PromotionPlansLoaderEvent.loadPromotionPlans(),
+                  ),
+              failure: state.failure,
+              specificMessage: some(S.of(context).notFoundErrorPromotionPlans),
+            ),
           ),
         ),
-      ),
-    );
-  }
+      );
 }

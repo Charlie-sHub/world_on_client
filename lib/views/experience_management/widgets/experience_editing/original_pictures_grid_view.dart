@@ -14,59 +14,61 @@ class OriginalPicturesGridView extends StatelessWidget {
   final Experience experience;
 
   @override
-  Widget build(BuildContext context) {
-    return BlocBuilder<ExperienceManagementFormBloc, ExperienceManagementFormState>(
-      buildWhen: (previous, current) => previous.experience.imageURLs != current.experience.imageURLs,
-      builder: (context, state) {
-        final _imageURLs = state.experience.imageURLs;
-        if (_imageURLs.isNotEmpty) {
-          return GridView.count(
-            padding: const EdgeInsets.all(8),
-            shrinkWrap: true,
-            physics: const ClampingScrollPhysics(),
-            crossAxisCount: 3,
-            children: List.generate(
-              _imageURLs.length,
-              (index) {
-                final _imageURL = _imageURLs.elementAt(index);
-                return Card(
-                  elevation: 5,
-                  color: WorldOnColors.background,
-                  child: Stack(
-                    children: [
-                      Center(
-                        child: WorldOnCachedImage(
-                          imageURL: _imageURL,
-                        ),
-                      ),
-                      Align(
-                        alignment: Alignment.bottomCenter,
-                        child: SizedBox(
-                          height: 35,
-                          child: IconButton(
-                            icon: const Icon(
-                              Icons.delete_forever_rounded,
-                              color: WorldOnColors.red,
-                              size: 35,
-                            ),
-                            onPressed: () {
-                              return context.read<ExperienceManagementFormBloc>().add(
-                                    ExperienceManagementFormEvent.imageDeleted(_imageURL),
-                                  );
-                            },
+  Widget build(BuildContext context) =>
+      BlocBuilder<ExperienceManagementFormBloc, ExperienceManagementFormState>(
+        buildWhen: (previous, current) =>
+            previous.experience.imageURLs != current.experience.imageURLs,
+        builder: (context, state) {
+          final _imageURLs = state.experience.imageURLs;
+          if (_imageURLs.isNotEmpty) {
+            return GridView.count(
+              padding: const EdgeInsets.all(8),
+              shrinkWrap: true,
+              physics: const ClampingScrollPhysics(),
+              crossAxisCount: 3,
+              children: List.generate(
+                _imageURLs.length,
+                (index) {
+                  final _imageURL = _imageURLs.elementAt(index);
+                  return Card(
+                    elevation: 5,
+                    color: WorldOnColors.background,
+                    child: Stack(
+                      children: [
+                        Center(
+                          child: WorldOnCachedImage(
+                            imageURL: _imageURL,
                           ),
                         ),
-                      ),
-                    ],
-                  ),
-                );
-              },
-            ),
-          );
-        } else {
-          return Container();
-        }
-      },
-    );
-  }
+                        Align(
+                          alignment: Alignment.bottomCenter,
+                          child: SizedBox(
+                            height: 35,
+                            child: IconButton(
+                              icon: const Icon(
+                                Icons.delete_forever_rounded,
+                                color: WorldOnColors.red,
+                                size: 35,
+                              ),
+                              onPressed: () => context
+                                  .read<ExperienceManagementFormBloc>()
+                                  .add(
+                                    ExperienceManagementFormEvent.imageDeleted(
+                                      _imageURL,
+                                    ),
+                                  ),
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
+                  );
+                },
+              ),
+            );
+          } else {
+            return Container();
+          }
+        },
+      );
 }

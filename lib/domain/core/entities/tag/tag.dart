@@ -34,12 +34,13 @@ class Tag with _$Tag {
         modificationDate: PastDate(DateTime.now()),
       );
 
-  Option<ValueFailure<dynamic>> get failureOption {
-    return name.failureOrUnit.andThen(creationDate.failureOrUnit).andThen(modificationDate.failureOrUnit).fold(
-          (failure) => some(failure),
-          (_) => none(),
-        );
-  }
+  Option<ValueFailure<dynamic>> get failureOption => name.failureOrUnit
+      .andThen(creationDate.failureOrUnit)
+      .andThen(modificationDate.failureOrUnit)
+      .fold(
+        (failure) => some(failure),
+        (_) => none(),
+      );
 
   bool get isValid => failureOption.isNone();
 }

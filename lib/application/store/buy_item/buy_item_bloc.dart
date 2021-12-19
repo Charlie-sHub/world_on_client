@@ -4,7 +4,6 @@ import 'package:bloc/bloc.dart';
 import 'package:dartz/dartz.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:injectable/injectable.dart';
-import 'package:meta/meta.dart';
 import 'package:worldon/core/error/failure.dart';
 import 'package:worldon/domain/authentication/use_case/get_logged_in_user.dart';
 import 'package:worldon/domain/core/entities/item/item.dart';
@@ -19,18 +18,13 @@ part 'buy_item_state.dart';
 
 @injectable
 class BuyItemBloc extends Bloc<BuyItemEvent, BuyItemState> {
-  BuyItemBloc() : super(const BuyItemState.initial());
-
-  @override
-  Stream<BuyItemState> mapEventToState(BuyItemEvent event) async* {
-    yield* event.map(
-      boughtItem: _onItemBought,
-      initialized: _onInitialized,
-    );
+  BuyItemBloc() : super(const BuyItemState.initial()) {
+    on<_BoughtItem>(_onItemBought);
+    on<_Initialized>(_onInitialized);
   }
 
-  Stream<BuyItemState> _onInitialized(_Initialized event) async* {
-    yield const BuyItemState.actionInProgress();
+  FutureOr<void> _onInitialized(_Initialized event, Emitter emit) async {
+    emit(const BuyItemState.actionInProgress());
     final _userOption = await getIt<GetLoggedInUser>()(
       getIt<NoParams>(),
     );
@@ -44,20 +38,22 @@ class BuyItemBloc extends Bloc<BuyItemEvent, BuyItemState> {
         )
         .toList();
     if (_itemIds.contains(event.item.id)) {
-      yield const BuyItemState.owns();
+      emit(const BuyItemState.owns());
     } else {
-      yield const BuyItemState.doesNotOwn();
+      emit(const BuyItemState.doesNotOwn());
     }
   }
 
-  Stream<BuyItemState> _onItemBought(_BoughtItem event) async* {
-    yield const BuyItemState.actionInProgress();
+  FutureOr<void> _onItemBought(_BoughtItem event, Emitter emit) async {
+    emit(const BuyItemState.actionInProgress());
     final _failureOrUnit = await getIt<BuyItem>()(
       Params(item: event.item),
     );
-    yield _failureOrUnit.fold(
-      (failure) => BuyItemState.purchaseFailure(failure),
-      (_) => const BuyItemState.purchaseSuccess(),
+    emit(
+      _failureOrUnit.fold(
+        (failure) => BuyItemState.purchaseFailure(failure),
+        (_) => const BuyItemState.purchaseSuccess(),
+      ),
     );
   }
 }

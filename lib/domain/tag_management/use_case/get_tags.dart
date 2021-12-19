@@ -14,9 +14,8 @@ class GetTags implements AsyncUseCase<KtSet<Tag>, Params> {
   GetTags(this._repository);
 
   @override
-  Future<Either<Failure, KtSet<Tag>>> call(Params params) async {
-    return _repository.getTags(params.tagIds);
-  }
+  Future<Either<Failure, KtSet<Tag>>> call(Params params) async =>
+      _repository.getTags(params.tagIds);
 }
 
 class Params {

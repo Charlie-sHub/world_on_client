@@ -12,9 +12,8 @@ class SaveGlobalOptions implements AsyncUseCase<Unit, Params> {
   SaveGlobalOptions(this._repository);
 
   @override
-  Future<Either<Failure, Unit>> call(Params params) async {
-    return _repository.saveGlobalOptions(params.options);
-  }
+  Future<Either<Failure, Unit>> call(Params params) async =>
+      _repository.saveGlobalOptions(params.options);
 }
 
 class Params {

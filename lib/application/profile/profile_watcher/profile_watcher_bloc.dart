@@ -8,38 +8,43 @@ import 'package:worldon/core/error/failure.dart';
 import 'package:worldon/domain/core/entities/user/user.dart';
 import 'package:worldon/domain/core/validation/objects/unique_id.dart';
 import 'package:worldon/domain/profile/use_case/watch_profile.dart';
-
-import '../../../injection.dart';
+import 'package:worldon/injection.dart';
 
 part 'profile_watcher_bloc.freezed.dart';
 part 'profile_watcher_event.dart';
 part 'profile_watcher_state.dart';
 
 @injectable
-class ProfileWatcherBloc extends Bloc<ProfileWatcherEvent, ProfileWatcherState> {
-  ProfileWatcherBloc() : super(const ProfileWatcherState.initial());
+class ProfileWatcherBloc
+    extends Bloc<ProfileWatcherEvent, ProfileWatcherState> {
+  ProfileWatcherBloc() : super(const ProfileWatcherState.initial()) {
+    on<_WatchProfileStarted>(onWatchProfileStarted);
+    on<_ResultsReceived>(_onResultsReceived);
+  }
 
-  StreamSubscription<Either<Failure, User>>? _newProfileUpdateStreamSubscription;
+  StreamSubscription<Either<Failure, User>>?
+      _newProfileUpdateStreamSubscription;
 
-  @override
-  Stream<ProfileWatcherState> mapEventToState(ProfileWatcherEvent event) async* {
-    yield* event.map(
-      watchProfileStarted: onWatchNewNotificationsStarted,
-      resultsReceived: _onResultsReceived,
+  void _onResultsReceived(_ResultsReceived event, Emitter emit) {
+    emit(
+      event.failureOrUser.fold(
+        (failure) => const ProfileWatcherState.failure(),
+        (_user) => ProfileWatcherState.newProfileUpdate(_user),
+      ),
     );
   }
 
-  Stream<ProfileWatcherState> _onResultsReceived(_ResultsReceived event) async* {
-    yield event.failureOrUser.fold(
-      (failure) => const ProfileWatcherState.failure(),
-      (_user) => ProfileWatcherState.newProfileUpdate(_user),
-    );
-  }
-
-  Stream<ProfileWatcherState> onWatchNewNotificationsStarted(_WatchProfileStarted event) async* {
+  FutureOr<void> onWatchProfileStarted(
+    _WatchProfileStarted event,
+    Emitter emit,
+  ) async {
     await _newProfileUpdateStreamSubscription?.cancel();
-    _newProfileUpdateStreamSubscription = getIt<WatchProfile>()(Params(userId: event.userId)).listen(
-      (_failureOrUser) => add(ProfileWatcherEvent.resultsReceived(_failureOrUser)),
+    _newProfileUpdateStreamSubscription = getIt<WatchProfile>()(
+      Params(userId: event.userId),
+    ).listen(
+      (_failureOrUser) => add(
+        ProfileWatcherEvent.resultsReceived(_failureOrUser),
+      ),
     );
   }
 

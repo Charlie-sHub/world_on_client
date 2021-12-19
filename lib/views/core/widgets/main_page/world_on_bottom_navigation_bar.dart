@@ -12,37 +12,34 @@ class WorldOnBottomNavigationBar extends StatelessWidget {
   static const _profileIndex = 3;
 
   @override
-  Widget build(BuildContext context) {
-    return AnimatedBottomNavigationBar(
-      notchSmoothness: NotchSmoothness.defaultEdge,
-      notchMargin: 3,
-      height: kBottomNavigationBarHeight - 15,
-      iconSize: 32,
-      backgroundColor: WorldOnColors.background,
-      onTap: (index) => _onTap(index, context),
-      gapLocation: GapLocation.center,
-      activeIndex: _getCurrentIndex(context),
-      activeColor: WorldOnColors.primary,
-      inactiveColor: WorldOnColors.accent,
-      icons: const [
-        Icons.home_rounded,
-        Icons.search_rounded,
-        Icons.explore_rounded,
-        Icons.person_rounded,
-      ],
-    );
-  }
+  Widget build(BuildContext context) => AnimatedBottomNavigationBar(
+        notchSmoothness: NotchSmoothness.defaultEdge,
+        notchMargin: 3,
+        height: kBottomNavigationBarHeight - 15,
+        iconSize: 32,
+        backgroundColor: WorldOnColors.background,
+        onTap: (index) => _onTap(index, context),
+        gapLocation: GapLocation.center,
+        activeIndex: _getCurrentIndex(context),
+        activeColor: WorldOnColors.primary,
+        inactiveColor: WorldOnColors.accent,
+        icons: const [
+          Icons.home_rounded,
+          Icons.search_rounded,
+          Icons.explore_rounded,
+          Icons.person_rounded,
+        ],
+      );
 
-  int _getCurrentIndex(BuildContext context) {
-    return context.read<NavigationActorBloc>().state.map(
-          mainFeedView: (context) => _mainFeedIndex,
-          searchView: (context) => _searchIndex,
-          navigateExperienceView: (context) => _navigationIndex,
-          profileView: (context) => _profileIndex,
-          errorView: (context) => _mainFeedIndex,
-          notificationsView: (context) => _profileIndex,
-        );
-  }
+  int _getCurrentIndex(BuildContext context) =>
+      context.read<NavigationActorBloc>().state.map(
+            mainFeedView: (context) => _mainFeedIndex,
+            searchView: (context) => _searchIndex,
+            navigateExperienceView: (context) => _navigationIndex,
+            profileView: (context) => _profileIndex,
+            errorView: (context) => _mainFeedIndex,
+            notificationsView: (context) => _profileIndex,
+          );
 
   void _onTap(int index, BuildContext context) {
     switch (index) {

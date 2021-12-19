@@ -12,9 +12,8 @@ class LikeExperience implements AsyncUseCase<Unit, Params> {
   LikeExperience(this._repository);
 
   @override
-  Future<Either<Failure, Unit>> call(Params params) async {
-    return _repository.likeExperience(params.experienceId);
-  }
+  Future<Either<Failure, Unit>> call(Params params) async =>
+      _repository.likeExperience(params.experienceId);
 }
 
 class Params {

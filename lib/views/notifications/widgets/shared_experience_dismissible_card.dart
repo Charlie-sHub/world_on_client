@@ -24,99 +24,96 @@ class SharedExperienceDismissibleCard extends StatelessWidget {
   }) : super(key: key);
 
   @override
-  Widget build(BuildContext context) {
-    return Slidable(
-      endActionPane: ActionPane(
-        motion: const DrawerMotion(),
-        children: [
-          IconButton(
-            onPressed: () => context.read<NotificationActorBloc>().add(
-                  NotificationActorEvent.deleted(notification),
-                ),
-            icon: const Icon(
-              Icons.delete,
-              color: WorldOnColors.red,
-            ),
-          ),
-        ],
-      ),
-      child: ListTile(
-        tileColor: WorldOnColors.background,
-        onTap: () => context.read<NavigationActorBloc>().add(
-              NavigationActorEvent.experienceNavigationTapped(
-                some(experience),
-              ),
-            ),
-        leading: UserAvatarFollowChecker(
-          user: notification.sender,
-          checkIconSize: 17,
-          avatarRadius: 25,
-        ),
-        title: Stack(
-          alignment: Alignment.center,
+  Widget build(BuildContext context) => Slidable(
+        endActionPane: ActionPane(
+          motion: const DrawerMotion(),
           children: [
-            SizedBox(
-              height: 75,
-              width: 400,
-              child: Card(
-                clipBehavior: Clip.antiAlias,
-                elevation: 0,
-                child: ShaderMask(
-                  blendMode: BlendMode.darken,
-                  shaderCallback: (bounds) => LinearGradient(
-                    begin: Alignment.center,
-                    end: Alignment.bottomCenter,
-                    colors: [
-                      Colors.transparent,
-                      Colors.black.withOpacity(0.6),
-                    ],
-                    stops: const [
-                      0,
-                      1,
-                    ],
-                  ).createShader(bounds),
-                  child: CachedNetworkImage(
-                    imageUrl: experience.imageURLs.first,
-                    fit: BoxFit.cover,
-                    progressIndicatorBuilder: (context, url, progress) =>
-                        WorldOnPlasma(),
+            IconButton(
+              onPressed: () => context.read<NotificationActorBloc>().add(
+                    NotificationActorEvent.deleted(notification),
                   ),
-                ),
-              ),
-            ),
-            Positioned(
-              bottom: 5,
-              child: Column(
-                children: [
-                  AutoSizeText(
-                    _getNotificationMessage(context),
-                    minFontSize: 8,
-                    maxFontSize: 15,
-                    style: const TextStyle(
-                      fontSize: 12,
-                      color: Colors.white,
-                    ),
-                  ),
-                  AutoSizeText(
-                    experience.title.getOrCrash(),
-                    minFontSize: 8,
-                    maxFontSize: 15,
-                    style: const TextStyle(
-                      fontSize: 12,
-                      fontWeight: FontWeight.bold,
-                      color: Colors.white,
-                    ),
-                  ),
-                ],
+              icon: const Icon(
+                Icons.delete,
+                color: WorldOnColors.red,
               ),
             ),
           ],
         ),
-      ),
-    );
-  }
+        child: ListTile(
+          tileColor: WorldOnColors.background,
+          onTap: () => context.read<NavigationActorBloc>().add(
+                NavigationActorEvent.experienceNavigationTapped(
+                  some(experience),
+                ),
+              ),
+          leading: UserAvatarFollowChecker(
+            user: notification.sender,
+            checkIconSize: 17,
+            avatarRadius: 25,
+          ),
+          title: Stack(
+            alignment: Alignment.center,
+            children: [
+              SizedBox(
+                height: 75,
+                width: 400,
+                child: Card(
+                  clipBehavior: Clip.antiAlias,
+                  elevation: 0,
+                  child: ShaderMask(
+                    blendMode: BlendMode.darken,
+                    shaderCallback: (bounds) => LinearGradient(
+                      begin: Alignment.center,
+                      end: Alignment.bottomCenter,
+                      colors: [
+                        Colors.transparent,
+                        Colors.black.withOpacity(0.6),
+                      ],
+                      stops: const [
+                        0,
+                        1,
+                      ],
+                    ).createShader(bounds),
+                    child: CachedNetworkImage(
+                      imageUrl: experience.imageURLs.first,
+                      fit: BoxFit.cover,
+                      progressIndicatorBuilder: (context, url, progress) =>
+                          WorldOnPlasma(),
+                    ),
+                  ),
+                ),
+              ),
+              Positioned(
+                bottom: 5,
+                child: Column(
+                  children: [
+                    AutoSizeText(
+                      _getNotificationMessage(context),
+                      minFontSize: 8,
+                      maxFontSize: 15,
+                      style: const TextStyle(
+                        fontSize: 12,
+                        color: Colors.white,
+                      ),
+                    ),
+                    AutoSizeText(
+                      experience.title.getOrCrash(),
+                      minFontSize: 8,
+                      maxFontSize: 15,
+                      style: const TextStyle(
+                        fontSize: 12,
+                        fontWeight: FontWeight.bold,
+                        color: Colors.white,
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+            ],
+          ),
+        ),
+      );
 
-  String _getNotificationMessage(BuildContext context) {
-    return "${notification.sender.username.getOrCrash()} ${S.of(context).shared}:";
-  }
+  String _getNotificationMessage(BuildContext context) =>
+      "${notification.sender.username.getOrCrash()} ${S.of(context).shared}:";
 }

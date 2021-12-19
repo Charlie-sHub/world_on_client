@@ -7,11 +7,9 @@ class WorldOnLogoMedium extends StatelessWidget {
   }) : super(key: key);
 
   @override
-  Widget build(BuildContext context) {
-    return const Image(
-      image: AssetImage(Assets.worldOnLogo),
-      height: 180,
-      width: 180,
-    );
-  }
+  Widget build(BuildContext context) => const Image(
+        image: AssetImage(Assets.worldOnLogo),
+        height: 180,
+        width: 180,
+      );
 }

@@ -26,42 +26,33 @@ class TagSet extends ValueObject<KtSet<Tag>> {
   const TagSet._(this.value);
 
   @override
-  Either<ValueFailure<dynamic>, Unit> get failureOrUnit {
-    return value.fold(
-      (failure) => left(failure),
-      (tagSet) => tagSet
-          .map(
-            (objective) => objective.failureOption,
-          )
-          .filter(
-            (option) => option.isSome(),
-          )
-          .getOrElse(
-            0,
-            (_) => none(),
-          )
-          .fold(
-            () => right(unit),
-            (failure) => left(failure),
-          ),
-    );
-  }
+  Either<ValueFailure<dynamic>, Unit> get failureOrUnit => value.fold(
+        (failure) => left(failure),
+        (tagSet) => tagSet
+            .map(
+              (objective) => objective.failureOption,
+            )
+            .filter(
+              (option) => option.isSome(),
+            )
+            .getOrElse(
+              0,
+              (_) => none(),
+            )
+            .fold(
+              () => right(unit),
+              (failure) => left(failure),
+            ),
+      );
 
-  int get length {
-    return value.getOrElse(() => const KtSet<Tag>.empty()).size;
-  }
+  int get length => value.getOrElse(() => const KtSet<Tag>.empty()).size;
 
-  bool get isFull {
-    return length == maxLength;
-  }
+  bool get isFull => length == maxLength;
 
-  bool get isEmpty {
-    return value.getOrElse(() => const KtSet<Tag>.empty()).isEmpty();
-  }
+  bool get isEmpty => value.getOrElse(() => const KtSet<Tag>.empty()).isEmpty();
 
-  bool get isNotEmpty {
-    return value.getOrElse(() => const KtSet<Tag>.empty()).isNotEmpty();
-  }
+  bool get isNotEmpty =>
+      value.getOrElse(() => const KtSet<Tag>.empty()).isNotEmpty();
 
   @override
   List<Object> get props => [value];

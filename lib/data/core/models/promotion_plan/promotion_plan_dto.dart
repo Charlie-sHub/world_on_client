@@ -44,5 +44,6 @@ class PromotionPlanDto with _$PromotionPlanDto {
         timesSeen: timesSeen,
       );
 
-  factory PromotionPlanDto.fromJson(Map<String, dynamic> json) => _$PromotionPlanDtoFromJson(json);
+  factory PromotionPlanDto.fromJson(Map<String, dynamic> json) =>
+      _$PromotionPlanDtoFromJson(json);
 }

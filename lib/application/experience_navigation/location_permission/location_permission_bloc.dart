@@ -1,7 +1,8 @@
+import 'dart:async';
+
 import 'package:bloc/bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:injectable/injectable.dart';
-import 'package:meta/meta.dart';
 import 'package:permission_handler/permission_handler.dart';
 
 part 'location_permission_bloc.freezed.dart';
@@ -11,21 +12,16 @@ part 'location_permission_state.dart';
 @lazySingleton
 class LocationPermissionBloc
     extends Bloc<LocationPermissionEvent, LocationPermissionState> {
-  LocationPermissionBloc() : super(const LocationPermissionState.initial());
-
-  @override
-  Stream<LocationPermissionState> mapEventToState(
-    LocationPermissionEvent event,
-  ) async* {
-    yield* event.map(
-      initialized: _onInitialized,
-    );
+  LocationPermissionBloc() : super(const LocationPermissionState.initial()) {
+    on<_Initialized>(_onInitialized);
   }
 
-  Stream<LocationPermissionState> _onInitialized(_) async* {
+  FutureOr<void> _onInitialized(_, Emitter emit) async {
     final _permission = await Permission.location.request();
-    yield _permission.isGranted
-        ? const LocationPermissionState.granted()
-        : const LocationPermissionState.denied();
+    emit(
+      _permission.isGranted
+          ? const LocationPermissionState.granted()
+          : const LocationPermissionState.denied(),
+    );
   }
 }

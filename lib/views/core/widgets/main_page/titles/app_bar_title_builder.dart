@@ -10,30 +10,31 @@ class AppBarTitleBuilder extends StatelessWidget {
   }) : super(key: key);
 
   @override
-  Widget build(BuildContext context) {
-    return BlocBuilder<AppBarTitleBloc, AppBarTitleState>(
-      builder: (context, state) => Text(
-        state
-            .map(
-              initial: (_) => "World On",
-              mainFeed: (_) => S.of(context).mainFeedTitle,
-              search: (_) => S.of(context).searchTitle,
-              recommendations: (_) => S.of(context).recommendations,
-              experienceNavigation: (_) => S.of(context).experienceNavigationTitle,
-              experienceFinish: (_) => S.of(context).experienceFinishSuccessTitle,
-              profile: (_) => S.of(context).profileTitle,
-              notifications: (_) => S.of(context).notifications,
-              followers: (_) => S.of(context).followers,
-              following: (_) => S.of(context).following,
-              username: (_state) => "@${_state.username}",
-              error: (_) => "Error",
-            )
-            .toUpperCase(),
-        style: const TextStyle(
-          fontWeight: FontWeight.w900,
-          color: WorldOnColors.primary,
+  Widget build(BuildContext context) =>
+      BlocBuilder<AppBarTitleBloc, AppBarTitleState>(
+        builder: (context, state) => Text(
+          state
+              .map(
+                initial: (_) => "World On",
+                mainFeed: (_) => S.of(context).mainFeedTitle,
+                search: (_) => S.of(context).searchTitle,
+                recommendations: (_) => S.of(context).recommendations,
+                experienceNavigation: (_) =>
+                    S.of(context).experienceNavigationTitle,
+                experienceFinish: (_) =>
+                    S.of(context).experienceFinishSuccessTitle,
+                profile: (_) => S.of(context).profileTitle,
+                notifications: (_) => S.of(context).notifications,
+                followers: (_) => S.of(context).followers,
+                following: (_) => S.of(context).following,
+                username: (_state) => "@${_state.username}",
+                error: (_) => "Error",
+              )
+              .toUpperCase(),
+          style: const TextStyle(
+            fontWeight: FontWeight.w900,
+            color: WorldOnColors.primary,
+          ),
         ),
-      ),
-    );
-  }
+      );
 }

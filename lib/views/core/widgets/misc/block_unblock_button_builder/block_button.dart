@@ -16,23 +16,22 @@ class BlockButton extends StatelessWidget {
   final User user;
 
   @override
-  Widget build(BuildContext context) {
-    return IconButton(
-      icon: const Icon(
-        MdiIcons.accountOff,
-        size: 40,
-        color: WorldOnColors.red,
-      ),
-      padding: EdgeInsets.zero,
-      onPressed: () => context.read<BlockActorBloc>().add(
-            BlockActorEvent.blocked(
-              user.id,
-              context.read<WatchCurrentUserBloc>().state.maybeMap(
-                    loadSuccess: (successState) => successState.user.simplified,
-                    orElse: () => SimpleUser.empty(),
-                  ),
+  Widget build(BuildContext context) => IconButton(
+        icon: const Icon(
+          MdiIcons.accountOff,
+          size: 40,
+          color: WorldOnColors.red,
+        ),
+        padding: EdgeInsets.zero,
+        onPressed: () => context.read<BlockActorBloc>().add(
+              BlockActorEvent.blocked(
+                user.id,
+                context.read<WatchCurrentUserBloc>().state.maybeMap(
+                      loadSuccess: (successState) =>
+                          successState.user.simplified,
+                      orElse: () => SimpleUser.empty(),
+                    ),
+              ),
             ),
-          ),
-    );
-  }
+      );
 }

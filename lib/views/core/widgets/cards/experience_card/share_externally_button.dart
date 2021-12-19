@@ -18,18 +18,16 @@ class ShareExternallyButton extends StatelessWidget {
   }) : super(key: key);
 
   @override
-  Widget build(BuildContext context) {
-    return IconButton(
-      icon: const Icon(
-        Icons.share_rounded,
-        color: WorldOnColors.white,
-        size: 25,
-      ),
-      padding: const EdgeInsets.all(5),
-      constraints: const BoxConstraints(),
-      onPressed: () => _onShare(context),
-    );
-  }
+  Widget build(BuildContext context) => IconButton(
+        icon: const Icon(
+          Icons.share_rounded,
+          color: WorldOnColors.white,
+          size: 25,
+        ),
+        padding: const EdgeInsets.all(5),
+        constraints: const BoxConstraints(),
+        onPressed: () => _onShare(context),
+      );
 
   // I don't really like having to download the image only to be able to share it
   // I'd like to rethink this
@@ -39,7 +37,8 @@ class ShareExternallyButton extends StatelessWidget {
         (response) {
           getApplicationDocumentsDirectory().then(
             (documentDirectory) {
-              const _url = "https://play.google.com/store/apps/details?id=com.worldon_app.worldon";
+              const _url =
+                  "https://play.google.com/store/apps/details?id=com.worldon_app.worldon";
               final _file = File(
                 join(
                   documentDirectory.path,

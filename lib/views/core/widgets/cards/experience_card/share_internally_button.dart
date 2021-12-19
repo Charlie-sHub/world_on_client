@@ -12,19 +12,17 @@ class ShareInternallyButton extends StatelessWidget {
   }) : super(key: key);
 
   @override
-  Widget build(BuildContext context) {
-    return IconButton(
-      icon: const Icon(
-        Icons.near_me_rounded,
-        color: WorldOnColors.white,
-        size: 25,
-      ),
-      padding: const EdgeInsets.all(5),
-      constraints: const BoxConstraints(),
-      // Select users by tapping (adding the user added/removed event)
-      // Show what users has been selected on the UI
-      // Add the shared event to the bloc one the shared button is pressed
-      onPressed: () => internalShareShowModalBottomSheet(context, experience),
-    );
-  }
+  Widget build(BuildContext context) => IconButton(
+        icon: const Icon(
+          Icons.near_me_rounded,
+          color: WorldOnColors.white,
+          size: 25,
+        ),
+        padding: const EdgeInsets.all(5),
+        constraints: const BoxConstraints(),
+        // Select users by tapping (adding the user added/removed event)
+        // Show what users has been selected on the UI
+        // Add the shared event to the bloc one the shared button is pressed
+        onPressed: () => internalShareShowModalBottomSheet(context, experience),
+      );
 }

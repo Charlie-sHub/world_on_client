@@ -1,5 +1,3 @@
-import 'dart:async';
-
 import 'package:bloc/bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:injectable/injectable.dart';
@@ -9,32 +7,28 @@ part 'store_app_bar_title_event.dart';
 part 'store_app_bar_title_state.dart';
 
 @injectable
-class StoreAppBarTitleBloc extends Bloc<StoreAppBarTitleEvent, StoreAppBarTitleState> {
-  StoreAppBarTitleBloc() : super(const StoreAppBarTitleState.initial());
-
-  @override
-  Stream<StoreAppBarTitleState> mapEventToState(StoreAppBarTitleEvent event) async* {
-    yield* event.map(
-      initialized: _onInitialized,
-      showedStore: _onShowedStore,
-      showedPromotions: _onShowedPromotions,
-      showedMyItems: _onShowedMyItems,
-    );
+class StoreAppBarTitleBloc
+    extends Bloc<StoreAppBarTitleEvent, StoreAppBarTitleState> {
+  StoreAppBarTitleBloc() : super(const StoreAppBarTitleState.initial()) {
+    on<_Initialized>(_onInitialized);
+    on<_ShowedStore>(_onShowedStore);
+    on<_ShowedPromotions>(_onShowedPromotions);
+    on<_ShowedMyItems>(_onShowedMyItems);
   }
 
-  Stream<StoreAppBarTitleState> _onShowedMyItems(_) async* {
-    yield const StoreAppBarTitleState.myItems();
+  void _onShowedMyItems(_, Emitter emit) {
+    emit(const StoreAppBarTitleState.myItems());
   }
 
-  Stream<StoreAppBarTitleState> _onShowedPromotions(_) async* {
-    yield const StoreAppBarTitleState.promotions();
+  void _onShowedPromotions(_, Emitter emit) {
+    emit(const StoreAppBarTitleState.promotions());
   }
 
-  Stream<StoreAppBarTitleState> _onShowedStore(_) async* {
-    yield const StoreAppBarTitleState.store();
+  void _onShowedStore(_, Emitter emit) {
+    emit(const StoreAppBarTitleState.store());
   }
 
-  Stream<StoreAppBarTitleState> _onInitialized(_) async* {
-    yield const StoreAppBarTitleState.initial();
+  void _onInitialized(_, Emitter emit) {
+    emit(const StoreAppBarTitleState.initial());
   }
 }

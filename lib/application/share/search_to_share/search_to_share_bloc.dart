@@ -18,18 +18,13 @@ part 'search_to_share_state.dart';
 
 @injectable
 class SearchToShareBloc extends Bloc<SearchToShareEvent, SearchToShareState> {
-  SearchToShareBloc() : super(SearchToShareState.initial());
-
-  @override
-  Stream<SearchToShareState> mapEventToState(SearchToShareEvent event) async* {
-    yield* event.map(
-      initialized: _onInitialized,
-      searchTermChanged: _onSearchTermChanged,
-      submitted: _onSubmitted,
-    );
+  SearchToShareBloc() : super(SearchToShareState.initial()) {
+    on<_Initialized>(_onInitialized);
+    on<_SearchTermChanged>(_onSearchTermChanged);
+    on<_Submitted>(_onSubmitted);
   }
 
-  Stream<SearchToShareState> _onSubmitted(_Submitted event) async* {
+  void _onSubmitted(_Submitted event, Emitter emit) {
     if (state.searchTerm.isValid()) {
       final _searchString = state.searchTerm.getOrCrash();
       final _filteredUserList = state.allUsers.iter
@@ -43,28 +38,34 @@ class SearchToShareBloc extends Bloc<SearchToShareEvent, SearchToShareState> {
                     ),
           )
           .toImmutableList();
-      yield state.copyWith(
-        searchedUsers: _filteredUserList,
-        failureOrSuccessOption: none(),
+      emit(
+        state.copyWith(
+          searchedUsers: _filteredUserList,
+          failureOrSuccessOption: none(),
+        ),
       );
     } else {
-      yield state.copyWith(
-        searchedUsers: state.allUsers,
-        failureOrSuccessOption: none(),
+      emit(
+        state.copyWith(
+          searchedUsers: state.allUsers,
+          failureOrSuccessOption: none(),
+        ),
       );
     }
   }
 
-  Stream<SearchToShareState> _onSearchTermChanged(_SearchTermChanged event) async* {
+  void _onSearchTermChanged(_SearchTermChanged event, Emitter emit) {
     final _oldTerm = state.searchTerm.value.fold(
       (_) => "",
       id,
     );
     final _newTerm = event.searchTermString;
     if (_newTerm != _oldTerm) {
-      yield state.copyWith(
-        searchTerm: SearchTerm(_newTerm),
-        failureOrSuccessOption: none(),
+      emit(
+        state.copyWith(
+          searchTerm: SearchTerm(_newTerm),
+          failureOrSuccessOption: none(),
+        ),
       );
     }
     add(
@@ -72,17 +73,19 @@ class SearchToShareBloc extends Bloc<SearchToShareEvent, SearchToShareState> {
     );
   }
 
-  Stream<SearchToShareState> _onInitialized(_Initialized event) async* {
+  FutureOr<void> _onInitialized(_Initialized event, Emitter emit) async {
     final _failureOrResults = await getIt<SearchToShare>()(
       getIt<NoParams>(),
     );
-    yield _failureOrResults.fold(
-      (_failure) => state.copyWith(
-        failureOrSuccessOption: some(_failure),
-      ),
-      (_users) => state.copyWith(
-        allUsers: _users,
-        searchedUsers: _users,
+    emit(
+      _failureOrResults.fold(
+        (_failure) => state.copyWith(
+          failureOrSuccessOption: some(_failure),
+        ),
+        (_users) => state.copyWith(
+          allUsers: _users,
+          searchedUsers: _users,
+        ),
       ),
     );
   }

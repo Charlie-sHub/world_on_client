@@ -9,15 +9,13 @@ class SubmitObjectiveButton extends StatelessWidget {
   }) : super(key: key);
 
   @override
-  Widget build(BuildContext context) {
-    return ElevatedButton(
-      onPressed: () {
-        FocusScope.of(context).unfocus();
-        context.read<ObjectiveFormBloc>().add(
-              const ObjectiveFormEvent.submitted(),
-            );
-      },
-      child: Text(S.of(context).createObjective),
-    );
-  }
+  Widget build(BuildContext context) => ElevatedButton(
+        onPressed: () {
+          FocusScope.of(context).unfocus();
+          context.read<ObjectiveFormBloc>().add(
+                const ObjectiveFormEvent.submitted(),
+              );
+        },
+        child: Text(S.of(context).createObjective),
+      );
 }

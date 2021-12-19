@@ -10,27 +10,23 @@ import 'package:worldon/domain/core/entities/promotion_plan/promotion_plan.dart'
 import 'package:worldon/domain/core/failures/error.dart';
 import 'package:worldon/domain/core/use_case/use_case.dart';
 import 'package:worldon/domain/store/use_case/buy_promotion_plan.dart';
-
-import '../../../injection.dart';
+import 'package:worldon/injection.dart';
 
 part 'buy_promotion_plan_actor_bloc.freezed.dart';
 part 'buy_promotion_plan_actor_event.dart';
 part 'buy_promotion_plan_actor_state.dart';
 
 @injectable
-class BuyPromotionPlanActorBloc extends Bloc<BuyPromotionPlanActorEvent, BuyPromotionPlanActorState> {
-  BuyPromotionPlanActorBloc() : super(const BuyPromotionPlanActorState.initial());
-
-  @override
-  Stream<BuyPromotionPlanActorState> mapEventToState(BuyPromotionPlanActorEvent event) async* {
-    yield* event.map(
-      initialized: _onInitialized,
-      boughtPromotionPlan: _onBoughtPromotionPlan,
-    );
+class BuyPromotionPlanActorBloc
+    extends Bloc<BuyPromotionPlanActorEvent, BuyPromotionPlanActorState> {
+  BuyPromotionPlanActorBloc()
+      : super(const BuyPromotionPlanActorState.initial()) {
+    on<_Initialized>(_onInitialized);
+    on<_BoughtPromotionPlan>(_onBoughtPromotionPlan);
   }
 
-  Stream<BuyPromotionPlanActorState> _onInitialized(_Initialized event) async* {
-    yield const BuyPromotionPlanActorState.actionInProgress();
+  FutureOr<void> _onInitialized(_Initialized event, Emitter emit) async {
+    emit(const BuyPromotionPlanActorState.actionInProgress());
     final _userOption = await getIt<GetLoggedInUser>()(
       getIt<NoParams>(),
     );
@@ -39,27 +35,32 @@ class BuyPromotionPlanActorBloc extends Bloc<BuyPromotionPlanActorEvent, BuyProm
       id,
     );
     if (_user.promotionPlan.isUsable) {
-      yield BuyPromotionPlanActorState.currentPlan(_user.promotionPlan);
+      emit(BuyPromotionPlanActorState.currentPlan(_user.promotionPlan));
     } else {
-      yield const BuyPromotionPlanActorState.noPromotionPlan();
+      emit(const BuyPromotionPlanActorState.noPromotionPlan());
     }
   }
 
-  Stream<BuyPromotionPlanActorState> _onBoughtPromotionPlan(_BoughtPromotionPlan event) async* {
-    yield const BuyPromotionPlanActorState.actionInProgress();
+  FutureOr<void> _onBoughtPromotionPlan(
+    _BoughtPromotionPlan event,
+    Emitter emit,
+  ) async {
+    emit(const BuyPromotionPlanActorState.actionInProgress());
     final _failureOrUnit = await getIt<BuyPromotionPlan>()(
       Params(plan: event.promotionPlan),
     );
-    yield _failureOrUnit.fold(
-      (failure) {
-        add(const BuyPromotionPlanActorEvent.initialized());
-        return BuyPromotionPlanActorState.purchaseFailure(failure);
-      },
-      (_) {
-        // Just to actually show the promotion plan stored in the server
-        add(const BuyPromotionPlanActorEvent.initialized());
-        return const BuyPromotionPlanActorState.purchaseSuccess();
-      },
+    emit(
+      _failureOrUnit.fold(
+        (failure) {
+          add(const BuyPromotionPlanActorEvent.initialized());
+          return BuyPromotionPlanActorState.purchaseFailure(failure);
+        },
+        (_) {
+          // Just to actually show the promotion plan stored in the server
+          add(const BuyPromotionPlanActorEvent.initialized());
+          return const BuyPromotionPlanActorState.purchaseSuccess();
+        },
+      ),
     );
   }
 }

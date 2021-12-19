@@ -12,9 +12,8 @@ class BuyPromotionPlan implements AsyncUseCase<Unit, Params> {
   BuyPromotionPlan(this._repository);
 
   @override
-  Future<Either<Failure, Unit>> call(Params params) async {
-    return _repository.buyPromotionPlan(params.plan);
-  }
+  Future<Either<Failure, Unit>> call(Params params) async =>
+      _repository.buyPromotionPlan(params.plan);
 }
 
 class Params {

@@ -22,42 +22,40 @@ class RewardSet extends ValueObject<KtSet<Reward>> {
   const RewardSet._(this.value);
 
   @override
-  Either<ValueFailure<dynamic>, Unit> get failureOrUnit {
-    return value.fold(
-      (failure) => left(failure),
-      (rewardSet) => rewardSet
-          .map(
-            (objective) => objective.failureOption,
-          )
-          .filter(
-            (option) => option.isSome(),
-          )
-          .getOrElse(
-            0,
-            (_) => none(),
-          )
-          .fold(
-            () => right(unit),
-            (failure) => left(failure),
-          ),
-    );
-  }
+  Either<ValueFailure<dynamic>, Unit> get failureOrUnit => value.fold(
+        (failure) => left(failure),
+        (rewardSet) => rewardSet
+            .map(
+              (objective) => objective.failureOption,
+            )
+            .filter(
+              (option) => option.isSome(),
+            )
+            .getOrElse(
+              0,
+              (_) => none(),
+            )
+            .fold(
+              () => right(unit),
+              (failure) => left(failure),
+            ),
+      );
 
-  int get length {
-    return value.getOrElse(() => const KtSet<Reward>.empty()).size;
-  }
+  int get length => value.getOrElse(() => const KtSet<Reward>.empty()).size;
 
-  bool get isFull {
-    return length == maxLength;
-  }
+  bool get isFull => length == maxLength;
 
-  bool get isEmpty {
-    return value.getOrElse(() => const KtSet<Reward>.empty()).isEmpty();
-  }
+  bool get isEmpty => value
+      .getOrElse(
+        () => const KtSet<Reward>.empty(),
+      )
+      .isEmpty();
 
-  bool get isNotEmpty {
-    return value.getOrElse(() => const KtSet<Reward>.empty()).isNotEmpty();
-  }
+  bool get isNotEmpty => value
+      .getOrElse(
+        () => const KtSet<Reward>.empty(),
+      )
+      .isNotEmpty();
 
   @override
   List<Object> get props => [value];

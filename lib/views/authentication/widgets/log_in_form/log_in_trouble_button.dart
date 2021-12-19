@@ -9,20 +9,18 @@ class LogInTroubleButton extends StatelessWidget {
   }) : super(key: key);
 
   @override
-  Widget build(BuildContext context) {
-    return TextButton(
-      onPressed: () => context.router.push(
-        const ForgottenPasswordPageRoute(),
-      ),
-      child: Text(
-        S.of(context).forgottenPassword,
-        textAlign: TextAlign.center,
-        style: const TextStyle(
-          color: Colors.white,
-          fontWeight: FontWeight.bold,
-          fontSize: 15,
+  Widget build(BuildContext context) => TextButton(
+        onPressed: () => context.router.push(
+          const ForgottenPasswordPageRoute(),
         ),
-      ),
-    );
-  }
+        child: Text(
+          S.of(context).forgottenPassword,
+          textAlign: TextAlign.center,
+          style: const TextStyle(
+            color: Colors.white,
+            fontWeight: FontWeight.bold,
+            fontSize: 15,
+          ),
+        ),
+      );
 }

@@ -7,11 +7,9 @@ class WorldOnStar extends StatelessWidget {
   }) : super(key: key);
 
   @override
-  Widget build(BuildContext context) {
-    return const Icon(
-      Icons.star,
-      size: 50,
-      color: WorldOnColors.primary,
-    );
-  }
+  Widget build(BuildContext context) => const Icon(
+        Icons.star,
+        size: 50,
+        color: WorldOnColors.primary,
+      );
 }

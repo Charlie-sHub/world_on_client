@@ -13,30 +13,28 @@ class DifficultyDisplay extends StatelessWidget {
   final int difficulty;
 
   @override
-  Widget build(BuildContext context) {
-    return Row(
-      children: <Widget>[
-        const Icon(
-          Icons.whatshot_rounded,
-          color: WorldOnColors.red,
-        ),
-        const SizedBox(width: 5),
-        AutoSizeText(
-          "${S.of(context).difficulty}: ",
-          style: const TextStyle(
-            fontSize: 12,
+  Widget build(BuildContext context) => Row(
+        children: <Widget>[
+          const Icon(
+            Icons.whatshot_rounded,
+            color: WorldOnColors.red,
           ),
-        ),
-        const SizedBox(width: 5),
-        AutoSizeText(
-          difficulty.toString(),
-          style: TextStyle(
-            color: getColorByDifficulty(difficulty),
-            fontSize: 15,
-            fontWeight: FontWeight.bold,
+          const SizedBox(width: 5),
+          AutoSizeText(
+            "${S.of(context).difficulty}: ",
+            style: const TextStyle(
+              fontSize: 12,
+            ),
           ),
-        ),
-      ],
-    );
-  }
+          const SizedBox(width: 5),
+          AutoSizeText(
+            difficulty.toString(),
+            style: TextStyle(
+              color: getColorByDifficulty(difficulty),
+              fontSize: 15,
+              fontWeight: FontWeight.bold,
+            ),
+          ),
+        ],
+      );
 }

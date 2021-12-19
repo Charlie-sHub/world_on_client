@@ -23,12 +23,11 @@ class Coordinates with _$Coordinates {
         longitude: Longitude(0.0),
       );
 
-  Either<ValueFailure<dynamic>, Unit> get failureOrUnit {
-    return latitude.failureOrUnit.andThen(longitude.failureOrUnit).fold(
-          (failure) => left(failure),
-          (_) => right(unit),
-        );
-  }
+  Either<ValueFailure<dynamic>, Unit> get failureOrUnit =>
+      latitude.failureOrUnit.andThen(longitude.failureOrUnit).fold(
+            (failure) => left(failure),
+            (_) => right(unit),
+          );
 
   bool get isValid => failureOrUnit.isRight();
 }

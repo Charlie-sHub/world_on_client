@@ -8,37 +8,29 @@ import 'package:worldon/domain/core/failures/value_failure.dart';
 abstract class ValueObject<T> extends Equatable {
   const ValueObject();
 
-  Either<ValueFailure<dynamic>, Unit> get failureOrUnit {
-    return value.fold(
-      (failure) => left(failure),
-      (_) => right(unit),
-    );
-  }
+  Either<ValueFailure<dynamic>, Unit> get failureOrUnit => value.fold(
+        (failure) => left(failure),
+        (_) => right(unit),
+      );
 
   Either<ValueFailure<T>, T> get value;
 
   bool isValid() => value.isRight();
 
   @override
-  String toString() {
-    return value.fold(
-      (failure) => failure.toString(),
-      (value) => "$value",
-    );
-  }
+  String toString() => value.fold(
+        (failure) => failure.toString(),
+        (value) => "$value",
+      );
 
   /// Throws [UnexpectedValueError] containing the [ValueFailure] if it can't get the proper value
-  T getOrCrash() {
-    return value.fold(
-      (valueFailure) => throw UnexpectedValueError(valueFailure),
-      id,
-    );
-  }
+  T getOrCrash() => value.fold(
+        (valueFailure) => throw UnexpectedValueError(valueFailure),
+        id,
+      );
 
-  ValueFailure<T> failureOrCrash() {
-    return value.fold(
-      id,
-      (value) => throw Error(),
-    );
-  }
+  ValueFailure<T> failureOrCrash() => value.fold(
+        id,
+        (value) => throw Error(),
+      );
 }

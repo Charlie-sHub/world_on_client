@@ -5,10 +5,9 @@ import 'package:worldon/application/core/watch_current_user/watch_current_user_b
 import 'package:worldon/application/profile/block_actor/block_actor_bloc.dart';
 import 'package:worldon/domain/core/entities/user/user.dart';
 import 'package:worldon/generated/l10n.dart';
+import 'package:worldon/injection.dart';
 import 'package:worldon/views/core/widgets/misc/block_unblock_button_builder/block_button.dart';
 import 'package:worldon/views/core/widgets/misc/block_unblock_button_builder/unblock_button.dart';
-
-import '../../../../../injection.dart';
 
 class BlockUnblockButtonBuilder extends StatelessWidget {
   const BlockUnblockButtonBuilder({
@@ -19,52 +18,52 @@ class BlockUnblockButtonBuilder extends StatelessWidget {
   final User user;
 
   @override
-  Widget build(BuildContext context) {
-    return SizedBox(
-      width: 40,
-      height: 40,
-      child: BlocBuilder<WatchCurrentUserBloc, WatchCurrentUserState>(
-        buildWhen: _buildWhen,
-        builder: (context, state) => state.map(
-          initial: (_) => Container(),
-          loadSuccess: (successState) => BlocProvider(
-            create: (context) => getIt<BlockActorBloc>()
-              ..add(
-                BlockActorEvent.initialized(
-                  user.id,
-                  successState.user.blockedUsersIds,
-                ),
-              ),
-            child: BlocListener<BlockActorBloc, BlockActorState>(
-              listener: _userBlockListener,
-              child: BlocBuilder<BlockActorBloc, BlockActorState>(
-                builder: (context, state) => AnimatedSwitcher(
-                  duration: const Duration(milliseconds: 250),
-                  transitionBuilder: (child, animation) => FadeTransition(
-                    opacity: animation,
-                    child: child,
+  Widget build(BuildContext context) => SizedBox(
+        width: 40,
+        height: 40,
+        child: BlocBuilder<WatchCurrentUserBloc, WatchCurrentUserState>(
+          buildWhen: _buildWhen,
+          builder: (context, state) => state.map(
+            initial: (_) => Container(),
+            loadSuccess: (successState) => BlocProvider(
+              create: (context) => getIt<BlockActorBloc>()
+                ..add(
+                  BlockActorEvent.initialized(
+                    user.id,
+                    successState.user.blockedUsersIds,
                   ),
-                  child: state.map(
-                    initial: (_) => Container(),
-                    actionInProgress: (_) => const CircularProgressIndicator(),
-                    blocks: (_) => UnBlockButton(user: user),
-                    blocksNot: (_) => BlockButton(user: user),
-                    blockSuccess: (_) => UnBlockButton(user: user),
-                    blockFailure: (_) => BlockButton(user: user),
-                    unBlockSuccess: (_) => BlockButton(user: user),
-                    unBlockFailure: (_) => UnBlockButton(user: user),
+                ),
+              child: BlocListener<BlockActorBloc, BlockActorState>(
+                listener: _userBlockListener,
+                child: BlocBuilder<BlockActorBloc, BlockActorState>(
+                  builder: (context, state) => AnimatedSwitcher(
+                    duration: const Duration(milliseconds: 250),
+                    transitionBuilder: (child, animation) => FadeTransition(
+                      opacity: animation,
+                      child: child,
+                    ),
+                    child: state.map(
+                      initial: (_) => Container(),
+                      actionInProgress: (_) =>
+                          const CircularProgressIndicator(),
+                      blocks: (_) => UnBlockButton(user: user),
+                      blocksNot: (_) => BlockButton(user: user),
+                      blockSuccess: (_) => UnBlockButton(user: user),
+                      blockFailure: (_) => BlockButton(user: user),
+                      unBlockSuccess: (_) => BlockButton(user: user),
+                      unBlockFailure: (_) => UnBlockButton(user: user),
+                    ),
                   ),
                 ),
               ),
             ),
+            loadFailure: (_) => BlockButton(user: user),
           ),
-          loadFailure: (_) => BlockButton(user: user),
         ),
-      ),
-    );
-  }
+      );
 
-  void _userBlockListener(BuildContext context, BlockActorState state) => state.maybeMap(
+  void _userBlockListener(BuildContext context, BlockActorState state) =>
+      state.maybeMap(
         blockFailure: (state) => FlushbarHelper.createError(
           duration: const Duration(seconds: 2),
           message: state.failure.maybeMap(
@@ -92,17 +91,23 @@ class BlockUnblockButtonBuilder extends StatelessWidget {
         orElse: () {},
       );
 
-  bool _buildWhen(WatchCurrentUserState previous, WatchCurrentUserState current) => current.map(
+  bool _buildWhen(
+    WatchCurrentUserState previous,
+    WatchCurrentUserState current,
+  ) =>
+      current.map(
         initial: (_) => true,
         loadSuccess: (_) {
           final _previousBlockedContainsUser = previous.maybeMap(
-            loadSuccess: (successState) => successState.user.blockedUsersIds.contains(
+            loadSuccess: (successState) =>
+                successState.user.blockedUsersIds.contains(
               user.id,
             ),
             orElse: () => true,
           );
           final _currentBlockedContainsUser = current.maybeMap(
-            loadSuccess: (successState) => successState.user.blockedUsersIds.contains(
+            loadSuccess: (successState) =>
+                successState.user.blockedUsersIds.contains(
               user.id,
             ),
             orElse: () => true,

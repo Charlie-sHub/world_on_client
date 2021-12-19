@@ -15,24 +15,27 @@ part 'promotion_plans_loader_event.dart';
 part 'promotion_plans_loader_state.dart';
 
 @injectable
-class PromotionPlansLoaderBloc extends Bloc<PromotionPlansLoaderEvent, PromotionPlansLoaderState> {
-  PromotionPlansLoaderBloc() : super(const PromotionPlansLoaderState.initial());
-
-  @override
-  Stream<PromotionPlansLoaderState> mapEventToState(PromotionPlansLoaderEvent event) async* {
-    yield* event.map(
-      loadPromotionPlans: _onLoadPromotionPlans,
-    );
+class PromotionPlansLoaderBloc
+    extends Bloc<PromotionPlansLoaderEvent, PromotionPlansLoaderState> {
+  PromotionPlansLoaderBloc()
+      : super(const PromotionPlansLoaderState.initial()) {
+    on<_LoadPromotionPlans>(_onLoadPromotionPlans);
   }
 
-  Stream<PromotionPlansLoaderState> _onLoadPromotionPlans(_LoadPromotionPlans event) async* {
-    yield const PromotionPlansLoaderState.loadInProgress();
+  FutureOr<void> _onLoadPromotionPlans(
+    _LoadPromotionPlans event,
+    Emitter emit,
+  ) async {
+    emit(const PromotionPlansLoaderState.loadInProgress());
     final _failureOrPromotionPlans = await getIt<LoadPromotionPlans>()(
       getIt<NoParams>(),
     );
-    yield _failureOrPromotionPlans.fold(
-      (_failure) => PromotionPlansLoaderState.loadFailure(_failure),
-      (_promotionPlans) => PromotionPlansLoaderState.loadedPromotionPlans(_promotionPlans),
+    emit(
+      _failureOrPromotionPlans.fold(
+        (_failure) => PromotionPlansLoaderState.loadFailure(_failure),
+        (_promotionPlans) =>
+            PromotionPlansLoaderState.loadedPromotionPlans(_promotionPlans),
+      ),
     );
   }
 }

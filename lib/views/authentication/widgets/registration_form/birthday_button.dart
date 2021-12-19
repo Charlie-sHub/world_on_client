@@ -9,25 +9,23 @@ class BirthdayButton extends StatelessWidget {
   }) : super(key: key);
 
   @override
-  Widget build(BuildContext context) {
-    return ElevatedButton(
-      onPressed: () => showDatePicker(
-        context: context,
-        initialDate: DateTime.now(),
-        firstDate: DateTime(1900),
-        lastDate: DateTime.now(),
-      ).then(
-        (birthDate) {
-          if (birthDate != null) {
-            context.read<RegistrationFormBloc>().add(
-                  RegistrationFormEvent.birthdayChanged(
-                    birthDate,
-                  ),
-                );
-          }
-        },
-      ),
-      child: Text(S.of(context).selectBirthday),
-    );
-  }
+  Widget build(BuildContext context) => ElevatedButton(
+        onPressed: () => showDatePicker(
+          context: context,
+          initialDate: DateTime.now(),
+          firstDate: DateTime(1900),
+          lastDate: DateTime.now(),
+        ).then(
+          (birthDate) {
+            if (birthDate != null) {
+              context.read<RegistrationFormBloc>().add(
+                    RegistrationFormEvent.birthdayChanged(
+                      birthDate,
+                    ),
+                  );
+            }
+          },
+        ),
+        child: Text(S.of(context).selectBirthday),
+      );
 }

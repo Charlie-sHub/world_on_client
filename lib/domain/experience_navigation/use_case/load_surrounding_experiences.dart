@@ -8,15 +8,15 @@ import 'package:worldon/domain/core/use_case/use_case.dart';
 import 'package:worldon/domain/experience_navigation/repository/experience_navigation_repository_interface.dart';
 
 @LazySingleton(env: [Environment.dev, Environment.prod])
-class LoadSurroundingExperiences implements AsyncUseCase<KtSet<Experience>, Params> {
+class LoadSurroundingExperiences
+    implements AsyncUseCase<KtSet<Experience>, Params> {
   final ExperienceNavigationRepositoryInterface _repository;
 
   LoadSurroundingExperiences(this._repository);
 
   @override
-  Future<Either<Failure, KtSet<Experience>>> call(Params params) async {
-    return _repository.loadSurroundingExperiences(params.coordinates);
-  }
+  Future<Either<Failure, KtSet<Experience>>> call(Params params) async =>
+      _repository.loadSurroundingExperiences(params.coordinates);
 }
 
 class Params {

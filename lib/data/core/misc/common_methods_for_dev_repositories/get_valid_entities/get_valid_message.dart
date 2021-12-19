@@ -4,12 +4,12 @@ import 'package:worldon/domain/core/validation/objects/message_content.dart';
 import 'package:worldon/domain/core/validation/objects/past_date.dart';
 import 'package:worldon/domain/core/validation/objects/unique_id.dart';
 
-Message getValidMessage() {
-  return Message(
-    id: UniqueId(),
-    sender: getValidUser().simplified,
-    receiverId: UniqueId(),
-    content: MessageContent("In sodales lacus elementum quam luctus molestie."),
-    creationDate: PastDate(DateTime.now().subtract(const Duration(days: 100))),
-  );
-}
+Message getValidMessage() => Message(
+      id: UniqueId(),
+      sender: getValidUser().simplified,
+      receiverId: UniqueId(),
+      content:
+          MessageContent("In sodales lacus elementum quam luctus molestie."),
+      creationDate:
+          PastDate(DateTime.now().subtract(const Duration(days: 100))),
+    );

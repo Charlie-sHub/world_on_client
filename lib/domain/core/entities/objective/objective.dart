@@ -34,12 +34,11 @@ class Objective with _$Objective {
         imageFile: none(),
       );
 
-  Option<ValueFailure<dynamic>> get failureOption {
-    return description.failureOrUnit.andThen(coordinates.failureOrUnit).fold(
-          (failure) => some(failure),
-          (_) => none(),
-        );
-  }
+  Option<ValueFailure<dynamic>> get failureOption =>
+      description.failureOrUnit.andThen(coordinates.failureOrUnit).fold(
+            (failure) => some(failure),
+            (_) => none(),
+          );
 
   bool get isValid => failureOption.isNone();
 }

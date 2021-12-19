@@ -13,17 +13,15 @@ class DislikeExperienceButton extends StatelessWidget {
   final UniqueId experienceId;
 
   @override
-  Widget build(BuildContext context) {
-    return IconButton(
-      icon: const Icon(
-        Icons.thumb_up,
-        color: WorldOnColors.primary,
-        size: 30,
-      ),
-      padding: EdgeInsets.zero,
-      onPressed: () => context.read<ExperienceLikeActorBloc>().add(
-            ExperienceLikeActorEvent.disliked(experienceId),
-          ),
-    );
-  }
+  Widget build(BuildContext context) => IconButton(
+        icon: const Icon(
+          Icons.thumb_up,
+          color: WorldOnColors.primary,
+          size: 30,
+        ),
+        padding: EdgeInsets.zero,
+        onPressed: () => context.read<ExperienceLikeActorBloc>().add(
+              ExperienceLikeActorEvent.disliked(experienceId),
+            ),
+      );
 }

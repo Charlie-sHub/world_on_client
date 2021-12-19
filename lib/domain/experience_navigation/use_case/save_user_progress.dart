@@ -13,12 +13,11 @@ class SaveUserProgress implements AsyncUseCase<ObjectiveList, Params> {
   SaveUserProgress(this._repository);
 
   @override
-  Future<Either<Failure, ObjectiveList>> call(Params params) async {
-    return _repository.saveUserProgress(
-      params.objectiveList,
-      params.experienceId,
-    );
-  }
+  Future<Either<Failure, ObjectiveList>> call(Params params) async =>
+      _repository.saveUserProgress(
+        params.objectiveList,
+        params.experienceId,
+      );
 }
 
 class Params {

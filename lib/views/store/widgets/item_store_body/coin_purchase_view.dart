@@ -1,5 +1,4 @@
 import 'package:another_flushbar/flushbar_helper.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:worldon/application/store/buy_coins/buy_coins_bloc.dart';
@@ -14,19 +13,18 @@ class CoinPurchaseView extends StatelessWidget {
   }) : super(key: key);
 
   @override
-  Widget build(BuildContext context) {
-    return Center(
-      child: BlocProvider(
-        create: (context) => getIt<BuyCoinsBloc>(),
-        child: BlocListener<BuyCoinsBloc, BuyCoinsState>(
-          listener: _buyCoinsListener,
-          child: BuyTenCoinsButton(),
+  Widget build(BuildContext context) => Center(
+        child: BlocProvider(
+          create: (context) => getIt<BuyCoinsBloc>(),
+          child: BlocListener<BuyCoinsBloc, BuyCoinsState>(
+            listener: _buyCoinsListener,
+            child: BuyTenCoinsButton(),
+          ),
         ),
-      ),
-    );
-  }
+      );
 
-  void _buyCoinsListener(BuildContext context, BuyCoinsState state) => state.maybeMap(
+  void _buyCoinsListener(BuildContext context, BuyCoinsState state) =>
+      state.maybeMap(
         purchaseSuccess: (_) => context.read<LoadUserBloc>().add(
               const LoadUserEvent.loadedUser(),
             ),

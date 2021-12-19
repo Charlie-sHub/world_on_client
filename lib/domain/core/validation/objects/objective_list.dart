@@ -25,42 +25,40 @@ class ObjectiveList extends ValueObject<KtList<Objective>> {
   const ObjectiveList._(this.value);
 
   @override
-  Either<ValueFailure<dynamic>, Unit> get failureOrUnit {
-    return value.fold(
-      (failure) => left(failure),
-      (objectiveSet) => objectiveSet
-          .map(
-            (objective) => objective.failureOption,
-          )
-          .filter(
-            (option) => option.isSome(),
-          )
-          .getOrElse(
-            0,
-            (_) => none(),
-          )
-          .fold(
-            () => right(unit),
-            (failure) => left(failure),
-          ),
-    );
-  }
+  Either<ValueFailure<dynamic>, Unit> get failureOrUnit => value.fold(
+        (failure) => left(failure),
+        (objectiveSet) => objectiveSet
+            .map(
+              (objective) => objective.failureOption,
+            )
+            .filter(
+              (option) => option.isSome(),
+            )
+            .getOrElse(
+              0,
+              (_) => none(),
+            )
+            .fold(
+              () => right(unit),
+              (failure) => left(failure),
+            ),
+      );
 
-  int get length {
-    return value.getOrElse(() => const KtList<Objective>.empty()).size;
-  }
+  int get length => value.getOrElse(() => const KtList<Objective>.empty()).size;
 
-  bool get isFull {
-    return length == maxLength;
-  }
+  bool get isFull => length == maxLength;
 
-  bool get isEmpty {
-    return value.getOrElse(() => const KtList<Objective>.empty()).isEmpty();
-  }
+  bool get isEmpty => value
+      .getOrElse(
+        () => const KtList<Objective>.empty(),
+      )
+      .isEmpty();
 
-  bool get isNotEmpty {
-    return value.getOrElse(() => const KtList<Objective>.empty()).isNotEmpty();
-  }
+  bool get isNotEmpty => value
+      .getOrElse(
+        () => const KtList<Objective>.empty(),
+      )
+      .isNotEmpty();
 
   @override
   List<Object> get props => [value];

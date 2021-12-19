@@ -5,8 +5,7 @@ import 'package:worldon/application/experience_management/experience_management_
 import 'package:worldon/domain/core/entities/experience/experience.dart';
 import 'package:worldon/generated/l10n.dart';
 import 'package:worldon/injection.dart';
-
-import 'manage_menu_button.dart';
+import 'package:worldon/views/core/widgets/cards/experience_card/manage_menu_button.dart';
 
 class ManageButtonBuilder extends StatelessWidget {
   const ManageButtonBuilder({
@@ -19,35 +18,38 @@ class ManageButtonBuilder extends StatelessWidget {
   final Function() reloadFunction;
 
   @override
-  Widget build(BuildContext context) {
-    return BlocProvider(
-      create: (context) => getIt<ExperienceManagementActorBloc>()
-        ..add(
-          ExperienceManagementActorEvent.checkCreator(experience),
-        ),
-      child: BlocConsumer<ExperienceManagementActorBloc, ExperienceManagementActorState>(
-        listenWhen: (previous, current) => current.maybeMap(
-          deletionFailure: (_) => true,
-          orElse: () => false,
-        ),
-        listener: _experienceDeletionListener,
-        builder: (context, state) => state.maybeMap(
-          actionInProgress: (_) => const CircularProgressIndicator(),
-          isCreator: (_) => ManageMenuButton(
-            experience: experience,
-            reloadFunction: reloadFunction,
+  Widget build(BuildContext context) => BlocProvider(
+        create: (context) => getIt<ExperienceManagementActorBloc>()
+          ..add(
+            ExperienceManagementActorEvent.checkCreator(experience),
           ),
-          deletionFailure: (_) => ManageMenuButton(
-            experience: experience,
-            reloadFunction: reloadFunction,
+        child: BlocConsumer<ExperienceManagementActorBloc,
+            ExperienceManagementActorState>(
+          listenWhen: (previous, current) => current.maybeMap(
+            deletionFailure: (_) => true,
+            orElse: () => false,
           ),
-          orElse: () => Container(),
+          listener: _experienceDeletionListener,
+          builder: (context, state) => state.maybeMap(
+            actionInProgress: (_) => const CircularProgressIndicator(),
+            isCreator: (_) => ManageMenuButton(
+              experience: experience,
+              reloadFunction: reloadFunction,
+            ),
+            deletionFailure: (_) => ManageMenuButton(
+              experience: experience,
+              reloadFunction: reloadFunction,
+            ),
+            orElse: () => Container(),
+          ),
         ),
-      ),
-    );
-  }
+      );
 
-  void _experienceDeletionListener(BuildContext context, ExperienceManagementActorState state) => state.maybeMap(
+  void _experienceDeletionListener(
+    BuildContext context,
+    ExperienceManagementActorState state,
+  ) =>
+      state.maybeMap(
         deletionFailure: (state) => FlushbarHelper.createError(
           duration: const Duration(seconds: 2),
           message: state.failure.maybeMap(

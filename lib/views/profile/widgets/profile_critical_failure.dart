@@ -11,36 +11,34 @@ class ProfileCriticalFailure extends StatelessWidget {
   }) : super(key: key);
 
   @override
-  Widget build(BuildContext context) {
-    return Center(
-      child: Padding(
-        padding: const EdgeInsets.all(10),
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            const Icon(
-              Icons.error_outline,
-              color: WorldOnColors.red,
-              size: 70,
-            ),
-            const SizedBox(height: 10),
-            Text(
-              S.of(context).criticalErrorDisplayTitle,
-              style: const TextStyle(
-                fontSize: 25,
-                fontWeight: FontWeight.bold,
+  Widget build(BuildContext context) => Center(
+        child: Padding(
+          padding: const EdgeInsets.all(10),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: <Widget>[
+              const Icon(
+                Icons.error_outline,
+                color: WorldOnColors.red,
+                size: 70,
               ),
-              textAlign: TextAlign.center,
-            ),
-            const SizedBox(height: 50),
-            Text(
-              S.of(context).criticalErrorDisplayRetry,
-              style: const TextStyle(fontSize: 16),
-              textAlign: TextAlign.justify,
-            ),
-          ],
+              const SizedBox(height: 10),
+              Text(
+                S.of(context).criticalErrorDisplayTitle,
+                style: const TextStyle(
+                  fontSize: 25,
+                  fontWeight: FontWeight.bold,
+                ),
+                textAlign: TextAlign.center,
+              ),
+              const SizedBox(height: 50),
+              Text(
+                S.of(context).criticalErrorDisplayRetry,
+                style: const TextStyle(fontSize: 16),
+                textAlign: TextAlign.justify,
+              ),
+            ],
+          ),
         ),
-      ),
-    );
-  }
+      );
 }

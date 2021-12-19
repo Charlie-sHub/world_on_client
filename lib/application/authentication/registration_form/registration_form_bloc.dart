@@ -6,7 +6,6 @@ import 'package:dartz/dartz.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:injectable/injectable.dart';
 import 'package:kt_dart/collection.dart';
-import 'package:meta/meta.dart';
 import 'package:worldon/application/core/failures/core_application_failure.dart';
 import 'package:worldon/core/error/failure.dart';
 import 'package:worldon/domain/authentication/use_case/register.dart';
@@ -25,43 +24,44 @@ part 'registration_form_event.dart';
 part 'registration_form_state.dart';
 
 @lazySingleton
-class RegistrationFormBloc extends Bloc<RegistrationFormEvent, RegistrationFormState> {
-  RegistrationFormBloc() : super(RegistrationFormState.initial());
-
-  @override
-  Stream<RegistrationFormState> mapEventToState(RegistrationFormEvent event) async* {
-    yield* event.map(
-      initialized: _onInitialized,
-      imageChanged: _onImageChanged,
-      nameChanged: _onNameChanged,
-      usernameChanged: _onUsernameChanged,
-      passwordChanged: _onPasswordChanged,
-      passwordConfirmationChanged: _onPasswordConfirmationChanged,
-      emailAddressChanged: _onEmailAddressChanged,
-      birthdayChanged: _onBirthdayChanged,
-      descriptionChanged: _onDescriptionChanged,
-      interestsChanged: _onInterestsChanged,
-      tappedEULA: _onTappedEULA,
-      submitted: _onSubmitted,
-    );
+class RegistrationFormBloc
+    extends Bloc<RegistrationFormEvent, RegistrationFormState> {
+  RegistrationFormBloc() : super(RegistrationFormState.initial()) {
+    on<_Initialized>(_onInitialized);
+    on<_ImageChanged>(_onImageChanged);
+    on<_NameChanged>(_onNameChanged);
+    on<_UsernameChanged>(_onUsernameChanged);
+    on<_PasswordChanged>(_onPasswordChanged);
+    on<_PasswordConfirmationChanged>(_onPasswordConfirmationChanged);
+    on<_EmailAddressChanged>(_onEmailAddressChanged);
+    on<_BirthdayChanged>(_onBirthdayChanged);
+    on<_DescriptionChanged>(_onDescriptionChanged);
+    on<_InterestsChanged>(_onInterestsChanged);
+    on<_TappedEULA>(_onTappedEULA);
+    on<_Submitted>(_onSubmitted);
   }
 
-  Stream<RegistrationFormState> _onTappedEULA(_) async* {
-    yield state.copyWith(
-      acceptedEULA: !state.acceptedEULA,
-      failureOrSuccessOption: none(),
-    );
-  }
+  void _onTappedEULA(_, Emitter emit) => emit(
+        state.copyWith(
+          acceptedEULA: !state.acceptedEULA,
+          failureOrSuccessOption: none(),
+        ),
+      );
 
-  Stream<RegistrationFormState> _onSubmitted(_) async* {
+  FutureOr<void> _onSubmitted(_, Emitter emit) async {
     Either<Failure, Unit>? _failureOrUnit;
-    yield state.copyWith(
-      isSubmitting: true,
-      failureOrSuccessOption: none(),
+    emit(
+      state.copyWith(
+        isSubmitting: true,
+        failureOrSuccessOption: none(),
+      ),
     );
-    final _hasImage = state.user.imageFileOption.isSome() || state.user.imageURL.isNotEmpty;
-    final _canRegister =
-        state.user.isValid && state.passwordConfirmator.isValid() && state.acceptedEULA && _hasImage;
+    final _hasImage =
+        state.user.imageFileOption.isSome() || state.user.imageURL.isNotEmpty;
+    final _canRegister = state.user.isValid &&
+        state.passwordConfirmator.isValid() &&
+        state.acceptedEULA &&
+        _hasImage;
     if (_canRegister) {
       _failureOrUnit = await getIt<Register>()(
         Params(
@@ -69,126 +69,133 @@ class RegistrationFormBloc extends Bloc<RegistrationFormEvent, RegistrationFormS
         ),
       );
     } else {
-      yield state.copyWith(
-        isSubmitting: false,
-        showErrorMessages: true,
-        failureOrSuccessOption: some(
-          left(
-            const Failure.coreApplication(
-              CoreApplicationFailure.emptyFields(),
+      emit(
+        state.copyWith(
+          isSubmitting: false,
+          showErrorMessages: true,
+          failureOrSuccessOption: some(
+            left(
+              const Failure.coreApplication(
+                CoreApplicationFailure.emptyFields(),
+              ),
             ),
           ),
         ),
       );
     }
-    yield state.copyWith(
-      isSubmitting: false,
-      showErrorMessages: true,
-      failureOrSuccessOption: optionOf(_failureOrUnit),
-    );
-  }
-
-  Stream<RegistrationFormState> _onInterestsChanged(_InterestsChanged event) async* {
-    yield state.copyWith(
-      user: state.user.copyWith(
-        interestsIds: event.interests.map((_tag) => _tag.id).asList().toSet(),
+    emit(
+      state.copyWith(
+        isSubmitting: false,
+        showErrorMessages: true,
+        failureOrSuccessOption: optionOf(_failureOrUnit),
       ),
-      failureOrSuccessOption: none(),
     );
   }
 
-  Stream<RegistrationFormState> _onDescriptionChanged(_DescriptionChanged event) async* {
-    yield state.copyWith(
-      user: state.user.copyWith(
-        description: EntityDescription(event.description),
-      ),
-      failureOrSuccessOption: none(),
-    );
-  }
-
-  Stream<RegistrationFormState> _onBirthdayChanged(_BirthdayChanged event) async* {
-    yield state.copyWith(
-      user: state.user.copyWith(
-        birthday: PastDate(event.birthday),
-      ),
-      failureOrSuccessOption: none(),
-    );
-  }
-
-  Stream<RegistrationFormState> _onEmailAddressChanged(_EmailAddressChanged event) async* {
-    yield state.copyWith(
-      user: state.user.copyWith(
-        email: EmailAddress(event.emailAddress),
-      ),
-      failureOrSuccessOption: none(),
-    );
-  }
-
-  Stream<RegistrationFormState> _onPasswordConfirmationChanged(_PasswordConfirmationChanged event) async* {
-    yield state.copyWith(
-      passwordConfirmator: PasswordConfirmator(
-        password: state.user.password.value.fold(
-          (failure) => "",
-          id,
+  void _onInterestsChanged(_InterestsChanged event, Emitter emit) => emit(
+        state.copyWith(
+          user: state.user.copyWith(
+            interestsIds:
+                event.interests.map((_tag) => _tag.id).asList().toSet(),
+          ),
+          failureOrSuccessOption: none(),
         ),
-        confirmation: event.passwordConfirmation,
-      ),
-      passwordToCompare: event.passwordConfirmation,
-      failureOrSuccessOption: none(),
-    );
-  }
+      );
 
-  Stream<RegistrationFormState> _onPasswordChanged(_PasswordChanged event) async* {
-    yield state.copyWith(
-      user: state.user.copyWith(
-        password: Password(event.password),
-      ),
-      passwordConfirmator: PasswordConfirmator(
-        password: event.password,
-        confirmation: state.passwordToCompare,
-      ),
-      failureOrSuccessOption: none(),
-    );
-  }
+  void _onDescriptionChanged(_DescriptionChanged event, Emitter emit) => emit(
+        state.copyWith(
+          user: state.user.copyWith(
+            description: EntityDescription(event.description),
+          ),
+          failureOrSuccessOption: none(),
+        ),
+      );
 
-  Stream<RegistrationFormState> _onUsernameChanged(_UsernameChanged event) async* {
-    yield state.copyWith(
-      user: state.user.copyWith(
-        username: Name(event.username),
-      ),
-      failureOrSuccessOption: none(),
-    );
-  }
+  void _onBirthdayChanged(_BirthdayChanged event, Emitter emit) => emit(
+        state.copyWith(
+          user: state.user.copyWith(
+            birthday: PastDate(event.birthday),
+          ),
+          failureOrSuccessOption: none(),
+        ),
+      );
 
-  Stream<RegistrationFormState> _onNameChanged(_NameChanged event) async* {
-    yield state.copyWith(
-      user: state.user.copyWith(
-        name: Name(event.name),
-      ),
-      failureOrSuccessOption: none(),
-    );
-  }
+  void _onEmailAddressChanged(_EmailAddressChanged event, Emitter emit) => emit(
+        state.copyWith(
+          user: state.user.copyWith(
+            email: EmailAddress(event.emailAddress),
+          ),
+          failureOrSuccessOption: none(),
+        ),
+      );
 
-  Stream<RegistrationFormState> _onImageChanged(_ImageChanged event) async* {
-    yield state.copyWith(
-      user: state.user.copyWith(
-        imageFileOption: some(event.imageFile),
-      ),
-      failureOrSuccessOption: none(),
-    );
-  }
+  void _onPasswordConfirmationChanged(
+    _PasswordConfirmationChanged event,
+    Emitter emit,
+  ) =>
+      emit(
+        state.copyWith(
+          passwordConfirmator: PasswordConfirmator(
+            password: state.user.password.value.fold(
+              (failure) => "",
+              id,
+            ),
+            confirmation: event.passwordConfirmation,
+          ),
+          passwordToCompare: event.passwordConfirmation,
+          failureOrSuccessOption: none(),
+        ),
+      );
 
-  Stream<RegistrationFormState> _onInitialized(_Initialized event) async* {
-    yield event.userOption.fold(
-      () => state.copyWith(
-        initialized: true,
-      ),
-      (_user) {
-        return state.copyWith(
-          user: _user,
-          initialized: true,
-        );
-      },
-    );
-  }
+  void _onPasswordChanged(_PasswordChanged event, Emitter emit) => emit(
+        state.copyWith(
+          user: state.user.copyWith(
+            password: Password(event.password),
+          ),
+          passwordConfirmator: PasswordConfirmator(
+            password: event.password,
+            confirmation: state.passwordToCompare,
+          ),
+          failureOrSuccessOption: none(),
+        ),
+      );
+
+  void _onUsernameChanged(_UsernameChanged event, Emitter emit) => emit(
+        state.copyWith(
+          user: state.user.copyWith(
+            username: Name(event.username),
+          ),
+          failureOrSuccessOption: none(),
+        ),
+      );
+
+  void _onNameChanged(_NameChanged event, Emitter emit) => emit(
+        state.copyWith(
+          user: state.user.copyWith(
+            name: Name(event.name),
+          ),
+          failureOrSuccessOption: none(),
+        ),
+      );
+
+  void _onImageChanged(_ImageChanged event, Emitter emit) => emit(
+        state.copyWith(
+          user: state.user.copyWith(
+            imageFileOption: some(event.imageFile),
+          ),
+          failureOrSuccessOption: none(),
+        ),
+      );
+
+  void _onInitialized(_Initialized event, Emitter emit) => emit(
+        event.userOption.fold(
+          () => state.copyWith(
+            initialized: true,
+          ),
+          (_user) => state.copyWith(
+            user: _user,
+            initialized: true,
+          ),
+        ),
+      );
 }

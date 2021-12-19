@@ -5,11 +5,13 @@ import 'package:dartz/dartz.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:injectable/injectable.dart';
 import 'package:kt_dart/kt.dart';
-import 'package:meta/meta.dart';
 import 'package:worldon/core/error/failure.dart';
 import 'package:worldon/domain/core/entities/user/user.dart';
-import 'package:worldon/domain/profile/use_case/watch_followed_users.dart' as load_followed_users;
-import 'package:worldon/domain/profile/use_case/watch_following_users.dart' as load_following_users;
+import 'package:worldon/domain/core/validation/objects/unique_id.dart';
+import 'package:worldon/domain/profile/use_case/watch_followed_users.dart'
+    as load_followed_users;
+import 'package:worldon/domain/profile/use_case/watch_following_users.dart'
+    as load_following_users;
 import 'package:worldon/injection.dart';
 
 part 'profile_users_watcher_bloc.freezed.dart';
@@ -18,44 +20,50 @@ part 'profile_users_watcher_state.dart';
 
 /// Loads the [User]s followed by the given [User]
 @injectable
-class ProfileUsersWatcherBloc extends Bloc<ProfileUsersWatcherEvent, ProfileUsersWatcherState> {
-  ProfileUsersWatcherBloc() : super(const ProfileUsersWatcherState.initial());
+class ProfileUsersWatcherBloc
+    extends Bloc<ProfileUsersWatcherEvent, ProfileUsersWatcherState> {
+  ProfileUsersWatcherBloc() : super(const ProfileUsersWatcherState.initial()) {
+    on<_WatchFollowingUsersStarted>(_onWatchFollowingUsersStarted);
+    on<_WatchFollowedUsersStarted>(_onWatchFollowedUsersStarted);
+    on<_UsersReceived>(_onUsersReceived);
+  }
 
   StreamSubscription<Either<Failure, KtList<User>>>? _userStreamSubscription;
 
-  @override
-  Stream<ProfileUsersWatcherState> mapEventToState(ProfileUsersWatcherEvent event) async* {
-    yield* event.map(
-      watchFollowingUsersStarted: _onWatchFollowingUsersStarted,
-      watchFollowedUsersStarted: _onWatchFollowedUsersStarted,
-      usersReceived: _onUsersReceived,
-    );
-  }
-
-  Stream<ProfileUsersWatcherState> _onWatchFollowingUsersStarted(_WatchFollowingUsersStarted event) async* {
-    yield const ProfileUsersWatcherState.loadInProgress();
+  FutureOr<void> _onWatchFollowingUsersStarted(
+    _WatchFollowingUsersStarted event,
+    Emitter emit,
+  ) async {
+    emit(const ProfileUsersWatcherState.loadInProgress());
     await _userStreamSubscription?.cancel();
     _userStreamSubscription = getIt<load_following_users.WatchFollowingUsers>()(
-      load_following_users.Params(id: event.user.id),
+      load_following_users.Params(id: event.id),
     ).listen(
-      (failureOrUsers) => add(ProfileUsersWatcherEvent.usersReceived(failureOrUsers)),
+      (failureOrUsers) =>
+          add(ProfileUsersWatcherEvent.usersReceived(failureOrUsers)),
     );
   }
 
-  Stream<ProfileUsersWatcherState> _onWatchFollowedUsersStarted(_WatchFollowedUsersStarted event) async* {
-    yield const ProfileUsersWatcherState.loadInProgress();
+  FutureOr<void> _onWatchFollowedUsersStarted(
+    _WatchFollowedUsersStarted event,
+    Emitter emit,
+  ) async {
+    emit(const ProfileUsersWatcherState.loadInProgress());
     await _userStreamSubscription?.cancel();
     _userStreamSubscription = getIt<load_followed_users.WatchFollowedUsers>()(
-      load_followed_users.Params(id: event.user.id),
+      load_followed_users.Params(id: event.id),
     ).listen(
-      (failureOrUsers) => add(ProfileUsersWatcherEvent.usersReceived(failureOrUsers)),
+      (failureOrUsers) =>
+          add(ProfileUsersWatcherEvent.usersReceived(failureOrUsers)),
     );
   }
 
-  Stream<ProfileUsersWatcherState> _onUsersReceived(_UsersReceived event) async* {
-    yield event.failureOrUsers.fold(
-      (failure) => ProfileUsersWatcherState.loadFailure(failure),
-      (users) => ProfileUsersWatcherState.loadSuccess(users),
+  void _onUsersReceived(_UsersReceived event, Emitter emit) {
+    emit(
+      event.failureOrUsers.fold(
+        (failure) => ProfileUsersWatcherState.loadFailure(failure),
+        (users) => ProfileUsersWatcherState.loadSuccess(users),
+      ),
     );
   }
 

@@ -5,13 +5,15 @@ import 'package:dartz/dartz.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:injectable/injectable.dart';
 import 'package:kt_dart/kt.dart';
-import 'package:meta/meta.dart';
 import 'package:worldon/core/error/failure.dart';
 import 'package:worldon/domain/core/entities/experience/experience.dart';
-import 'package:worldon/domain/core/entities/user/user.dart';
-import 'package:worldon/domain/profile/use_case/watch_experiences_created.dart' as load_experiences_created;
-import 'package:worldon/domain/profile/use_case/watch_experiences_done.dart' as load_experiences_done;
-import 'package:worldon/domain/profile/use_case/watch_experiences_liked.dart' as load_experiences_liked;
+import 'package:worldon/domain/core/validation/objects/unique_id.dart';
+import 'package:worldon/domain/profile/use_case/watch_experiences_created.dart'
+    as load_experiences_created;
+import 'package:worldon/domain/profile/use_case/watch_experiences_done.dart'
+    as load_experiences_done;
+import 'package:worldon/domain/profile/use_case/watch_experiences_liked.dart'
+    as load_experiences_liked;
 import 'package:worldon/injection.dart';
 
 part 'profile_experiences_watcher_bloc.freezed.dart';
@@ -19,61 +21,83 @@ part 'profile_experiences_watcher_event.dart';
 part 'profile_experiences_watcher_state.dart';
 
 @injectable
-class ProfileExperiencesWatcherBloc extends Bloc<ProfileExperiencesWatcherEvent, ProfileExperiencesWatcherState> {
-  ProfileExperiencesWatcherBloc() : super(const ProfileExperiencesWatcherState.initial());
-
-  StreamSubscription<Either<Failure, KtList<Experience>>>? _experienceStreamSubscription;
-
-  @override
-  Stream<ProfileExperiencesWatcherState> mapEventToState(ProfileExperiencesWatcherEvent event) async* {
-    yield* event.map(
-      watchExperiencesDoneStarted: _onWatchExperiencesDoneStarted,
-      watchExperiencesLikedStarted: _onWatchExperiencesLikedStarted,
-      watchExperiencesCreatedStarted: _onWatchExperiencesCreatedStarted,
-      experiencesReceived: _onExperiencesReceived,
-    );
+class ProfileExperiencesWatcherBloc extends Bloc<ProfileExperiencesWatcherEvent,
+    ProfileExperiencesWatcherState> {
+  ProfileExperiencesWatcherBloc()
+      : super(const ProfileExperiencesWatcherState.initial()) {
+    on<_WatchExperiencesDoneStarted>(_onWatchExperiencesDoneStarted);
+    on<_WatchExperiencesLikedStarted>(_onWatchExperiencesLikedStarted);
+    on<_WatchExperiencesCreatedStarted>(_onWatchExperiencesCreatedStarted);
+    on<_ExperiencesReceived>(_onExperiencesReceived);
   }
 
-  Stream<ProfileExperiencesWatcherState> _onWatchExperiencesDoneStarted(_WatchExperiencesDoneStarted event) async* {
-    yield const ProfileExperiencesWatcherState.loadInProgress();
+  StreamSubscription<Either<Failure, KtList<Experience>>>?
+      _experienceStreamSubscription;
+
+  FutureOr<void> _onWatchExperiencesDoneStarted(
+    _WatchExperiencesDoneStarted event,
+    Emitter emit,
+  ) async {
+    emit(const ProfileExperiencesWatcherState.loadInProgress());
     await _experienceStreamSubscription?.cancel();
-    _experienceStreamSubscription = getIt<load_experiences_done.WatchExperiencesDone>()(
-      load_experiences_done.Params(userId: event.user.id),
+    _experienceStreamSubscription =
+        getIt<load_experiences_done.WatchExperiencesDone>()(
+      load_experiences_done.Params(userId: event.id),
     ).listen(
       (failureOrExperiences) => add(
-        ProfileExperiencesWatcherEvent.experiencesReceived(failureOrExperiences),
+        ProfileExperiencesWatcherEvent.experiencesReceived(
+          failureOrExperiences,
+        ),
       ),
     );
   }
 
-  Stream<ProfileExperiencesWatcherState> _onWatchExperiencesLikedStarted(_WatchExperiencesLikedStarted event) async* {
-    yield const ProfileExperiencesWatcherState.loadInProgress();
+  FutureOr<void> _onWatchExperiencesLikedStarted(
+    _WatchExperiencesLikedStarted event,
+    Emitter emit,
+  ) async {
+    emit(const ProfileExperiencesWatcherState.loadInProgress());
     await _experienceStreamSubscription?.cancel();
-    _experienceStreamSubscription = getIt<load_experiences_liked.WatchExperiencesLiked>()(
-      load_experiences_liked.Params(userId: event.user.id),
+    _experienceStreamSubscription =
+        getIt<load_experiences_liked.WatchExperiencesLiked>()(
+      load_experiences_liked.Params(userId: event.id),
     ).listen(
       (failureOrExperiences) => add(
-        ProfileExperiencesWatcherEvent.experiencesReceived(failureOrExperiences),
+        ProfileExperiencesWatcherEvent.experiencesReceived(
+          failureOrExperiences,
+        ),
       ),
     );
   }
 
-  Stream<ProfileExperiencesWatcherState> _onWatchExperiencesCreatedStarted(_WatchExperiencesCreatedStarted event) async* {
-    yield const ProfileExperiencesWatcherState.loadInProgress();
+  FutureOr<void> _onWatchExperiencesCreatedStarted(
+    _WatchExperiencesCreatedStarted event,
+    Emitter emit,
+  ) async {
+    emit(const ProfileExperiencesWatcherState.loadInProgress());
     await _experienceStreamSubscription?.cancel();
-    _experienceStreamSubscription = getIt<load_experiences_created.WatchExperiencesCreated>()(
-      load_experiences_created.Params(userId: event.user.id),
+    _experienceStreamSubscription =
+        getIt<load_experiences_created.WatchExperiencesCreated>()(
+      load_experiences_created.Params(userId: event.id),
     ).listen(
       (failureOrExperiences) => add(
-        ProfileExperiencesWatcherEvent.experiencesReceived(failureOrExperiences),
+        ProfileExperiencesWatcherEvent.experiencesReceived(
+          failureOrExperiences,
+        ),
       ),
     );
   }
 
-  Stream<ProfileExperiencesWatcherState> _onExperiencesReceived(_ExperiencesReceived event) async* {
-    yield event.failureOrExperiences.fold(
-      (failure) => ProfileExperiencesWatcherState.loadFailure(failure),
-      (experiences) => ProfileExperiencesWatcherState.loadSuccess(experiences),
+  FutureOr<void> _onExperiencesReceived(
+    _ExperiencesReceived event,
+    Emitter emit,
+  ) {
+    emit(
+      event.failureOrExperiences.fold(
+        (failure) => ProfileExperiencesWatcherState.loadFailure(failure),
+        (experiences) =>
+            ProfileExperiencesWatcherState.loadSuccess(experiences),
+      ),
     );
   }
 

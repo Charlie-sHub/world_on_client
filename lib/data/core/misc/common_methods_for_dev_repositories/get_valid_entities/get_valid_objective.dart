@@ -7,15 +7,15 @@ import 'package:worldon/domain/core/validation/objects/latitude.dart';
 import 'package:worldon/domain/core/validation/objects/longitude.dart';
 import 'package:worldon/domain/core/validation/objects/unique_id.dart';
 
-Objective getValidObjective() {
-  return Objective(
-    id: UniqueId(),
-    description: EntityDescription("Sed tristique est nibh, ut imperdiet ligula dapibus accumsan."),
-    coordinates: Coordinates(
-      latitude: Latitude(40.416501),
-      longitude: Longitude(-3.705086),
-    ),
-    imageURL: Assets.objectivePlaceholder,
-    imageFile: none(),
-  );
-}
+Objective getValidObjective() => Objective(
+      id: UniqueId(),
+      description: EntityDescription(
+        "Sed tristique est nibh, ut imperdiet ligula dapibus accumsan.",
+      ),
+      coordinates: Coordinates(
+        latitude: Latitude(40.416501),
+        longitude: Longitude(-3.705086),
+      ),
+      imageURL: Assets.objectivePlaceholder,
+      imageFile: none(),
+    );

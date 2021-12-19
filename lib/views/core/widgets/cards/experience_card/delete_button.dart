@@ -16,39 +16,38 @@ class DeleteButton extends StatelessWidget {
   final Experience experience;
 
   @override
-  Widget build(BuildContext context) {
-    return BlocProvider(
-      create: (context) => getIt<ExperienceManagementActorBloc>(),
-      child: BlocBuilder<ExperienceManagementActorBloc, ExperienceManagementActorState>(
-        builder: (context, state) => TextButton(
-          style: ButtonStyle(
-            padding: MaterialStateProperty.all(
-              const EdgeInsets.all(2),
-            ),
-            foregroundColor: MaterialStateProperty.all(
-              WorldOnColors.accent,
-            ),
-          ),
-          onPressed: () => _onPressed(context),
-          child: Row(
-            children: [
-              const Icon(
-                Icons.delete_forever,
-                color: WorldOnColors.red,
+  Widget build(BuildContext context) => BlocProvider(
+        create: (context) => getIt<ExperienceManagementActorBloc>(),
+        child: BlocBuilder<ExperienceManagementActorBloc,
+            ExperienceManagementActorState>(
+          builder: (context, state) => TextButton(
+            style: ButtonStyle(
+              padding: MaterialStateProperty.all(
+                const EdgeInsets.all(2),
               ),
-              const SizedBox(width: 5),
-              Text(
-                S.of(context).delete,
-                style: const TextStyle(
-                  fontWeight: FontWeight.bold,
+              foregroundColor: MaterialStateProperty.all(
+                WorldOnColors.accent,
+              ),
+            ),
+            onPressed: () => _onPressed(context),
+            child: Row(
+              children: [
+                const Icon(
+                  Icons.delete_forever,
+                  color: WorldOnColors.red,
                 ),
-              ),
-            ],
+                const SizedBox(width: 5),
+                Text(
+                  S.of(context).delete,
+                  style: const TextStyle(
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+              ],
+            ),
           ),
         ),
-      ),
-    );
-  }
+      );
 
   Future<void> _onPressed(BuildContext context) => showDialog<bool>(
         context: context,

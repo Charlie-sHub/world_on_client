@@ -55,8 +55,8 @@ class ExperienceManagementPage extends StatelessWidget {
             _scrollController.jumpTo(0);
           },
           builder: Builder(
-            builder: (context) =>
-                BlocListener<ExperienceManagementShowCaseBloc, ExperienceManagementShowCaseState>(
+            builder: (context) => BlocListener<ExperienceManagementShowCaseBloc,
+                ExperienceManagementShowCaseState>(
               listener: (context, state) => state.maybeMap(
                 show: (_) => ShowCaseWidget.of(context)!.startShowCase(_keys),
                 orElse: () {},
@@ -71,7 +71,6 @@ class ExperienceManagementPage extends StatelessWidget {
                       expandedHeight: kToolbarHeight - 15,
                       elevation: 10,
                       centerTitle: true,
-                      backwardsCompatibility: false,
                       actions: [
                         IconButton(
                           padding: EdgeInsets.zero,
@@ -80,8 +79,11 @@ class ExperienceManagementPage extends StatelessWidget {
                             size: 25,
                             // color: WorldOnColors.accent,
                           ),
-                          onPressed: () => context.read<ExperienceManagementShowCaseBloc>().add(
-                                const ExperienceManagementShowCaseEvent.helpButtonPressed(),
+                          onPressed: () => context
+                              .read<ExperienceManagementShowCaseBloc>()
+                              .add(
+                                const ExperienceManagementShowCaseEvent
+                                    .helpButtonPressed(),
                               ),
                         ),
                       ],
@@ -103,7 +105,9 @@ class ExperienceManagementPage extends StatelessWidget {
                   body: BlocProvider(
                     create: (context) => getIt<ExperienceManagementFormBloc>()
                       ..add(
-                        ExperienceManagementFormEvent.initialized(experienceOption),
+                        ExperienceManagementFormEvent.initialized(
+                          experienceOption,
+                        ),
                       ),
                     child: experienceOption.fold(
                       () => ExperienceCreationForm(

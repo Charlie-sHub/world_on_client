@@ -11,63 +11,61 @@ class PromotionPlansHeader extends StatelessWidget {
   }) : super(key: key);
 
   @override
-  Widget build(BuildContext context) {
-    return SizedBox(
-      height: MediaQuery.of(context).size.height * 0.2,
-      width: MediaQuery.of(context).size.width,
-      child: Stack(
-        alignment: Alignment.center,
-        children: [
-          Image(
-            image: const AssetImage("assets/city_aerial_view_road.jpg"),
-            height: MediaQuery.of(context).size.height * 0.2,
-            width: MediaQuery.of(context).size.width,
-            fit: BoxFit.cover,
-          ),
-          Positioned.fill(
-            child: BackdropFilter(
-              filter: ImageFilter.blur(
-                sigmaX: 0.75,
-                sigmaY: 0.75,
-              ),
-              child: Container(
-                color: Colors.transparent,
+  Widget build(BuildContext context) => SizedBox(
+        height: MediaQuery.of(context).size.height * 0.2,
+        width: MediaQuery.of(context).size.width,
+        child: Stack(
+          alignment: Alignment.center,
+          children: [
+            Image(
+              image: const AssetImage("assets/city_aerial_view_road.jpg"),
+              height: MediaQuery.of(context).size.height * 0.2,
+              width: MediaQuery.of(context).size.width,
+              fit: BoxFit.cover,
+            ),
+            Positioned.fill(
+              child: BackdropFilter(
+                filter: ImageFilter.blur(
+                  sigmaX: 0.75,
+                  sigmaY: 0.75,
+                ),
+                child: Container(
+                  color: Colors.transparent,
+                ),
               ),
             ),
-          ),
-          Padding(
-            padding: const EdgeInsets.all(10),
-            child: Column(
-              children: [
-                const Icon(
-                  MdiIcons.accountGroup,
-                  size: 50,
-                  color: WorldOnColors.white,
-                ),
-                Text(
-                  S.of(context).promotionsHeaderTitle,
-                  textAlign: TextAlign.center,
-                  style: const TextStyle(
-                    fontSize: 18,
-                    fontWeight: FontWeight.w900,
+            Padding(
+              padding: const EdgeInsets.all(10),
+              child: Column(
+                children: [
+                  const Icon(
+                    MdiIcons.accountGroup,
+                    size: 50,
                     color: WorldOnColors.white,
-                    shadows: [
-                      Shadow(
-                        offset: Offset(
-                          2,
-                          2,
-                        ),
-                        blurRadius: 10,
-                        color: WorldOnColors.accent,
-                      ),
-                    ],
                   ),
-                ),
-              ],
+                  Text(
+                    S.of(context).promotionsHeaderTitle,
+                    textAlign: TextAlign.center,
+                    style: const TextStyle(
+                      fontSize: 18,
+                      fontWeight: FontWeight.w900,
+                      color: WorldOnColors.white,
+                      shadows: [
+                        Shadow(
+                          offset: Offset(
+                            2,
+                            2,
+                          ),
+                          blurRadius: 10,
+                          color: WorldOnColors.accent,
+                        ),
+                      ],
+                    ),
+                  ),
+                ],
+              ),
             ),
-          ),
-        ],
-      ),
-    );
-  }
+          ],
+        ),
+      );
 }

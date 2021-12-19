@@ -15,30 +15,28 @@ class CreateExperienceFloatingButton extends StatelessWidget {
   }) : super(key: key);
 
   @override
-  Widget build(BuildContext context) {
-    return SizedBox(
-      height: 46,
-      width: 46,
-      child: Showcase(
-        key: showKey,
-        description: S.of(context).createExperienceButtonShowCase,
-        overlayPadding: const EdgeInsets.all(7),
-        shapeBorder: const CircleBorder(),
-        child: FloatingActionButton(
-          backgroundColor: WorldOnColors.accent,
-          onPressed: () => context.router.push(
-            ExperienceManagementPageRoute(
-              experienceOption: none(),
+  Widget build(BuildContext context) => SizedBox(
+        height: 46,
+        width: 46,
+        child: Showcase(
+          key: showKey,
+          description: S.of(context).createExperienceButtonShowCase,
+          overlayPadding: const EdgeInsets.all(7),
+          shapeBorder: const CircleBorder(),
+          child: FloatingActionButton(
+            backgroundColor: WorldOnColors.accent,
+            onPressed: () => context.router.push(
+              ExperienceManagementPageRoute(
+                experienceOption: none(),
+              ),
+            ),
+            elevation: 0,
+            child: const Icon(
+              Icons.add,
+              color: WorldOnColors.white,
+              size: 35,
             ),
           ),
-          elevation: 0,
-          child: const Icon(
-            Icons.add,
-            color: WorldOnColors.white,
-            size: 35,
-          ),
         ),
-      ),
-    );
-  }
+      );
 }

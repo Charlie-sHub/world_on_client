@@ -14,45 +14,43 @@ class ExperiencedGainedText extends StatelessWidget {
   final Experience experience;
 
   @override
-  Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.all(10),
-      child: Center(
-        child: AutoSizeText.rich(
-          TextSpan(
-            text: "${S.of(context).experiencePointsGainedPre}: ",
-            children: <TextSpan>[
-              TextSpan(
-                text: context
-                    .read<ExperienceFinishActorBloc>()
-                    .state
-                    .maybeMap(
-                      finishSuccess: (value) => value.amountXP,
-                      orElse: () => 0,
-                    )
-                    .toString(),
-                style: const TextStyle(
-                  fontWeight: FontWeight.w800,
+  Widget build(BuildContext context) => Padding(
+        padding: const EdgeInsets.all(10),
+        child: Center(
+          child: AutoSizeText.rich(
+            TextSpan(
+              text: "${S.of(context).experiencePointsGainedPre}: ",
+              children: <TextSpan>[
+                TextSpan(
+                  text: context
+                      .read<ExperienceFinishActorBloc>()
+                      .state
+                      .maybeMap(
+                        finishSuccess: (value) => value.amountXP,
+                        orElse: () => 0,
+                      )
+                      .toString(),
+                  style: const TextStyle(
+                    fontWeight: FontWeight.w800,
+                  ),
                 ),
-              ),
-              TextSpan(text: " ${S.of(context).experiencePointsGainedMid}"),
-              TextSpan(
-                text: " ${S.of(context).experiencePointsGainedPost}",
-                style: const TextStyle(
-                  fontWeight: FontWeight.w800,
+                TextSpan(text: " ${S.of(context).experiencePointsGainedMid}"),
+                TextSpan(
+                  text: " ${S.of(context).experiencePointsGainedPost}",
+                  style: const TextStyle(
+                    fontWeight: FontWeight.w800,
+                  ),
                 ),
-              ),
-            ],
-          ),
-          minFontSize: 15,
-          maxFontSize: 18,
-          textAlign: TextAlign.center,
-          style: const TextStyle(
-            fontSize: 18,
-            fontWeight: FontWeight.w300,
+              ],
+            ),
+            minFontSize: 15,
+            maxFontSize: 18,
+            textAlign: TextAlign.center,
+            style: const TextStyle(
+              fontSize: 18,
+              fontWeight: FontWeight.w300,
+            ),
           ),
         ),
-      ),
-    );
-  }
+      );
 }

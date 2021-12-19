@@ -17,53 +17,53 @@ class TagsFoundView extends StatelessWidget {
   }) : super(key: key);
 
   @override
-  Widget build(BuildContext context) {
-    return BlocBuilder<SearchTagsByNameWatcherBloc, SearchTagsByNameWatcherState>(
-      builder: (context, state) => state.map(
-        initial: (_) => SearchSomething(),
-        searchInProgress: (_) => const WorldOnProgressIndicator(
-          size: 40,
-        ),
-        searchSuccess: (state) => Container(
-          constraints: BoxConstraints(
-            minHeight: MediaQuery.of(context).size.height * 0.1,
-            maxHeight: MediaQuery.of(context).size.height * 0.3,
+  Widget build(BuildContext context) =>
+      BlocBuilder<SearchTagsByNameWatcherBloc, SearchTagsByNameWatcherState>(
+        builder: (context, state) => state.map(
+          initial: (_) => SearchSomething(),
+          searchInProgress: (_) => const WorldOnProgressIndicator(
+            size: 40,
           ),
-          child: SingleChildScrollView(
-            child: Wrap(
-              spacing: 5,
-              runSpacing: 5,
-              children: <Widget>[
-                ...state.tagsFound.asList().map(
-                  (tag) {
-                    if (tag.isValid) {
-                      return InkWell(
-                        onTap: () => context.read<TagSelectorBloc>().add(
-                              TagSelectorEvent.addedTag(tag),
-                            ),
-                        child: SimpleTagDisplay(tag: tag),
-                      );
-                    } else {
-                      return SimpleTagErrorDisplay(tag: tag);
-                    }
-                  },
-                ),
-              ],
+          searchSuccess: (state) => Container(
+            constraints: BoxConstraints(
+              minHeight: MediaQuery.of(context).size.height * 0.1,
+              maxHeight: MediaQuery.of(context).size.height * 0.3,
+            ),
+            child: SingleChildScrollView(
+              child: Wrap(
+                spacing: 5,
+                runSpacing: 5,
+                children: <Widget>[
+                  ...state.tagsFound.asList().map(
+                    (tag) {
+                      if (tag.isValid) {
+                        return InkWell(
+                          onTap: () => context.read<TagSelectorBloc>().add(
+                                TagSelectorEvent.addedTag(tag),
+                              ),
+                          child: SimpleTagDisplay(tag: tag),
+                        );
+                      } else {
+                        return SimpleTagErrorDisplay(tag: tag);
+                      }
+                    },
+                  ),
+                ],
+              ),
             ),
           ),
+          searchFailure: (state) => ErrorDisplay(
+            retryFunction: () =>
+                context.read<SearchTagsByNameWatcherBloc>().add(
+                      SearchTagsByNameWatcherEvent.watchTagsFoundByNameStarted(
+                        // Don't really like getting the search term that way
+                        // but it seems better than having this widget as a child of the SearchByNameFormBloc BlocConsumer
+                        context.read<SearchByNameFormBloc>().state.searchTerm,
+                      ),
+                    ),
+            failure: state.failure,
+            specificMessage: some(S.of(context).notFoundErrorSearch),
+          ),
         ),
-        searchFailure: (state) => ErrorDisplay(
-          retryFunction: () => context.read<SearchTagsByNameWatcherBloc>().add(
-                SearchTagsByNameWatcherEvent.watchTagsFoundByNameStarted(
-                  // Don't really like getting the search term that way
-                  // but it seems better than having this widget as a child of the SearchByNameFormBloc BlocConsumer
-                  context.read<SearchByNameFormBloc>().state.searchTerm,
-                ),
-              ),
-          failure: state.failure,
-          specificMessage: some(S.of(context).notFoundErrorSearch),
-        ),
-      ),
-    );
-  }
+      );
 }

@@ -10,35 +10,36 @@ class SubmitRegisterButton extends StatelessWidget {
   }) : super(key: key);
 
   @override
-  Widget build(BuildContext context) {
-    return BlocBuilder<RegistrationFormBloc, RegistrationFormState>(
-      buildWhen: (previous, current) => previous.isSubmitting != current.isSubmitting,
-      builder: (context, state) => state.isSubmitting
-          ? const Center(
-              child: SizedBox(
-                width: 40,
-                height: 40,
-                child: CircularProgressIndicator(
-                  valueColor: AlwaysStoppedAnimation<Color>(WorldOnColors.primary),
-                ),
-              ),
-            )
-          : ElevatedButton(
-              onPressed: () => context.read<RegistrationFormBloc>().add(
-                    const RegistrationFormEvent.submitted(),
+  Widget build(BuildContext context) =>
+      BlocBuilder<RegistrationFormBloc, RegistrationFormState>(
+        buildWhen: (previous, current) =>
+            previous.isSubmitting != current.isSubmitting,
+        builder: (context, state) => state.isSubmitting
+            ? const Center(
+                child: SizedBox(
+                  width: 40,
+                  height: 40,
+                  child: CircularProgressIndicator(
+                    valueColor:
+                        AlwaysStoppedAnimation<Color>(WorldOnColors.primary),
                   ),
-              style: ButtonStyle(
-                backgroundColor: MaterialStateProperty.all(
-                  WorldOnColors.primary,
+                ),
+              )
+            : ElevatedButton(
+                onPressed: () => context.read<RegistrationFormBloc>().add(
+                      const RegistrationFormEvent.submitted(),
+                    ),
+                style: ButtonStyle(
+                  backgroundColor: MaterialStateProperty.all(
+                    WorldOnColors.primary,
+                  ),
+                ),
+                child: Text(
+                  S.of(context).submitRegister,
+                  style: const TextStyle(
+                    fontSize: 20,
+                  ),
                 ),
               ),
-              child: Text(
-                S.of(context).submitRegister,
-                style: const TextStyle(
-                  fontSize: 20,
-                ),
-              ),
-            ),
-    );
-  }
+      );
 }

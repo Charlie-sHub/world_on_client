@@ -13,29 +13,27 @@ class ExperienceDoneCounter extends StatelessWidget {
   final int amount;
 
   @override
-  Widget build(BuildContext context) {
-    return Row(
-      children: [
-        const Icon(
-          Icons.people_alt_rounded,
-          color: WorldOnColors.blue,
-        ),
-        const SizedBox(width: 5),
-        AutoSizeText(
-          S.of(context).doneBy,
-          style: const TextStyle(
-            fontSize: 12,
+  Widget build(BuildContext context) => Row(
+        children: [
+          const Icon(
+            Icons.people_alt_rounded,
+            color: WorldOnColors.blue,
           ),
-        ),
-        const SizedBox(width: 5),
-        AutoSizeText(
-          createNumberDisplay(amount),
-          style: const TextStyle(
-            fontSize: 15,
-            fontWeight: FontWeight.bold,
+          const SizedBox(width: 5),
+          AutoSizeText(
+            S.of(context).doneBy,
+            style: const TextStyle(
+              fontSize: 12,
+            ),
           ),
-        ),
-      ],
-    );
-  }
+          const SizedBox(width: 5),
+          AutoSizeText(
+            createNumberDisplay(amount),
+            style: const TextStyle(
+              fontSize: 15,
+              fontWeight: FontWeight.bold,
+            ),
+          ),
+        ],
+      );
 }

@@ -4,7 +4,6 @@ import 'package:bloc/bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:injectable/injectable.dart';
 import 'package:kt_dart/kt.dart';
-import 'package:meta/meta.dart';
 import 'package:worldon/domain/core/entities/objective/objective.dart';
 import 'package:worldon/domain/core/validation/objects/objective_list.dart';
 import 'package:worldon/domain/core/validation/objects/unique_id.dart';
@@ -21,19 +20,18 @@ part 'objectives_tracker_event.dart';
 part 'objectives_tracker_state.dart';
 
 @injectable
-class ObjectivesTrackerBloc extends Bloc<ObjectivesTrackerEvent, ObjectivesTrackerState> {
-  ObjectivesTrackerBloc() : super(ObjectivesTrackerState.initial());
-
-  @override
-  Stream<ObjectivesTrackerState> mapEventToState(ObjectivesTrackerEvent event) async* {
-    yield* event.map(
-      initialized: _onInitialized,
-      objectiveAccomplished: _onObjectiveAccomplished,
-      objectiveUnaccomplished: _onObjectiveUnaccomplished,
-    );
+class ObjectivesTrackerBloc
+    extends Bloc<ObjectivesTrackerEvent, ObjectivesTrackerState> {
+  ObjectivesTrackerBloc() : super(ObjectivesTrackerState.initial()) {
+    on<_Initialized>(_onInitialized);
+    on<_ObjectiveAccomplished>(_onObjectiveAccomplished);
+    on<_ObjectiveUnaccomplished>(_onObjectiveUnaccomplished);
   }
 
-  Stream<ObjectivesTrackerState> _onObjectiveUnaccomplished(_ObjectiveUnaccomplished event) async* {
+  void _onObjectiveUnaccomplished(
+    _ObjectiveUnaccomplished event,
+    Emitter emit,
+  ) {
     final _objectivesLeft = state.objectivesToDo.plusElement(event.objective);
     getIt<unaccomplish_objective.UnAccomplishObjective>()(
       unaccomplish_objective.Params(
@@ -41,12 +39,14 @@ class ObjectivesTrackerBloc extends Bloc<ObjectivesTrackerEvent, ObjectivesTrack
         experienceId: state.experienceId,
       ),
     );
-    yield state.copyWith(
-      objectivesToDo: _objectivesLeft,
+    emit(
+      state.copyWith(
+        objectivesToDo: _objectivesLeft,
+      ),
     );
   }
 
-  Stream<ObjectivesTrackerState> _onObjectiveAccomplished(_ObjectiveAccomplished event) async* {
+  void _onObjectiveAccomplished(_ObjectiveAccomplished event, Emitter emit) {
     final _objectivesLeft = state.objectivesToDo.minusElement(event.objective);
     final _finished = _objectivesLeft.isEmpty();
     if (!_finished) {
@@ -57,29 +57,34 @@ class ObjectivesTrackerBloc extends Bloc<ObjectivesTrackerEvent, ObjectivesTrack
         ),
       );
     }
-    yield state.copyWith(
-      objectivesToDo: _objectivesLeft,
-      isFinished: _finished,
-      showExplanation: false,
+    emit(
+      state.copyWith(
+        objectivesToDo: _objectivesLeft,
+        isFinished: _finished,
+        showExplanation: false,
+      ),
     );
   }
 
-  Stream<ObjectivesTrackerState> _onInitialized(_Initialized event) async* {
-    final _failureOrObjectiveSet = await getIt<save_user_progress.SaveUserProgress>()(
+  FutureOr<void> _onInitialized(_Initialized event, Emitter emit) async {
+    final _failureOrObjectiveSet =
+        await getIt<save_user_progress.SaveUserProgress>()(
       save_user_progress.Params(
         objectiveList: event.objectiveList,
         experienceId: event.experienceId,
       ),
     );
     // Even if there's an error at least the user can continue with the experience
-    yield _failureOrObjectiveSet.fold(
-      (_) => ObjectivesTrackerState.initial().copyWith(
-        objectivesToDo: event.objectiveList.getOrCrash().toList(),
-        experienceId: event.experienceId,
-      ),
-      (_objectiveSet) => ObjectivesTrackerState.initial().copyWith(
-        objectivesToDo: _objectiveSet.getOrCrash().toList(),
-        experienceId: event.experienceId,
+    emit(
+      _failureOrObjectiveSet.fold(
+        (_) => ObjectivesTrackerState.initial().copyWith(
+          objectivesToDo: event.objectiveList.getOrCrash().toList(),
+          experienceId: event.experienceId,
+        ),
+        (_objectiveSet) => ObjectivesTrackerState.initial().copyWith(
+          objectivesToDo: _objectiveSet.getOrCrash().toList(),
+          experienceId: event.experienceId,
+        ),
       ),
     );
   }

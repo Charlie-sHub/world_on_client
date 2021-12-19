@@ -16,65 +16,65 @@ class TagSelection extends StatelessWidget {
   final bool showErrorMessage;
 
   @override
-  Widget build(BuildContext context) {
-    return BlocBuilder<TagSelectorBloc, TagSelectorState>(
-      builder: (context, state) => Container(
-        constraints: BoxConstraints(
-          maxHeight: MediaQuery.of(context).size.height * 0.3,
-        ),
-        child: SingleChildScrollView(
-          physics: const BouncingScrollPhysics(),
-          child: Column(
-            children: [
-              Wrap(
-                spacing: 5,
-                runSpacing: 2,
-                children: <Widget>[
-                  ...state.tagsSelected.asSet().map(
-                    (tag) {
-                      if (tag.isValid) {
-                        return InkWell(
-                          onTap: () => context.read<TagSelectorBloc>().add(
-                                TagSelectorEvent.removedTag(tag),
-                              ),
-                          child: SimpleTagDisplay(tag: tag),
-                        );
-                      } else {
-                        return SimpleTagErrorDisplay(tag: tag);
-                      }
-                    },
-                  ),
-                ],
-              ),
-              if (state.tagsSelected.size >= TagSet.maxLength && showErrorMessage)
-                Padding(
-                  padding: const EdgeInsets.all(5),
-                  child: Text(
-                    "${S.of(context).tagSelectionLimit} ${TagSet.maxLength}",
-                    textAlign: TextAlign.center,
-                    style: const TextStyle(
-                      color: Colors.deepOrange,
-                      fontWeight: FontWeight.bold,
+  Widget build(BuildContext context) =>
+      BlocBuilder<TagSelectorBloc, TagSelectorState>(
+        builder: (context, state) => Container(
+          constraints: BoxConstraints(
+            maxHeight: MediaQuery.of(context).size.height * 0.3,
+          ),
+          child: SingleChildScrollView(
+            physics: const BouncingScrollPhysics(),
+            child: Column(
+              children: [
+                Wrap(
+                  spacing: 5,
+                  runSpacing: 2,
+                  children: <Widget>[
+                    ...state.tagsSelected.asSet().map(
+                      (tag) {
+                        if (tag.isValid) {
+                          return InkWell(
+                            onTap: () => context.read<TagSelectorBloc>().add(
+                                  TagSelectorEvent.removedTag(tag),
+                                ),
+                            child: SimpleTagDisplay(tag: tag),
+                          );
+                        } else {
+                          return SimpleTagErrorDisplay(tag: tag);
+                        }
+                      },
                     ),
-                  ),
-                )
-              else if (state.tagsSelected.size <= 0)
-                Padding(
-                  padding: const EdgeInsets.all(5),
-                  child: Text(
-                    S.of(context).tagSelectionNone,
-                    textAlign: TextAlign.center,
-                    style: const TextStyle(
-                      color: WorldOnColors.red,
+                  ],
+                ),
+                if (state.tagsSelected.size >= TagSet.maxLength &&
+                    showErrorMessage)
+                  Padding(
+                    padding: const EdgeInsets.all(5),
+                    child: Text(
+                      "${S.of(context).tagSelectionLimit} ${TagSet.maxLength}",
+                      textAlign: TextAlign.center,
+                      style: const TextStyle(
+                        color: Colors.deepOrange,
+                        fontWeight: FontWeight.bold,
+                      ),
                     ),
-                  ),
-                )
-              else
-                Container(),
-            ],
+                  )
+                else if (state.tagsSelected.size <= 0)
+                  Padding(
+                    padding: const EdgeInsets.all(5),
+                    child: Text(
+                      S.of(context).tagSelectionNone,
+                      textAlign: TextAlign.center,
+                      style: const TextStyle(
+                        color: WorldOnColors.red,
+                      ),
+                    ),
+                  )
+                else
+                  Container(),
+              ],
+            ),
           ),
         ),
-      ),
-    );
-  }
+      );
 }

@@ -13,9 +13,8 @@ class GetTag implements AsyncUseCase<Tag, Params> {
   GetTag(this._repository);
 
   @override
-  Future<Either<Failure, Tag>> call(Params params) async {
-    return _repository.getTag(params.id);
-  }
+  Future<Either<Failure, Tag>> call(Params params) async =>
+      _repository.getTag(params.id);
 }
 
 class Params {

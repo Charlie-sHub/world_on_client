@@ -32,12 +32,13 @@ class Message with _$Message {
         creationDate: PastDate(DateTime.now()),
       );
 
-  Option<ValueFailure<dynamic>> get failureOption {
-    return content.failureOrUnit.andThen(sender.failureOrUnit).andThen(creationDate.failureOrUnit).fold(
-          (failure) => some(failure),
-          (_) => none(),
-        );
-  }
+  Option<ValueFailure<dynamic>> get failureOption => content.failureOrUnit
+      .andThen(sender.failureOrUnit)
+      .andThen(creationDate.failureOrUnit)
+      .fold(
+        (failure) => some(failure),
+        (_) => none(),
+      );
 
   bool get isValid => failureOption.isNone();
 }

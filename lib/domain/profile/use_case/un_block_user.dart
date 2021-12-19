@@ -12,9 +12,8 @@ class UnBlockUser implements AsyncUseCase<Unit, Params> {
   UnBlockUser(this._repository);
 
   @override
-  Future<Either<Failure, Unit>> call(Params params) async {
-    return _repository.unBlockUser(params.blockedId);
-  }
+  Future<Either<Failure, Unit>> call(Params params) async =>
+      _repository.unBlockUser(params.blockedId);
 }
 
 class Params {

@@ -4,6 +4,8 @@ include:
 linter:
   rules:
     - parameter_assignments
+    - prefer_expression_function_bodies
+    - require_trailing_commas
 
 analyzer:
   exclude:

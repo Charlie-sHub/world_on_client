@@ -19,39 +19,37 @@ class SearchErrorDisplay extends StatelessWidget {
   }) : super(key: key);
 
   @override
-  Widget build(BuildContext context) {
-    return InkWell(
-      onTap: retryFunction,
-      child: Center(
-        child: failure.maybeMap(
-          coreData: (failure) => failure.coreDataFailure.maybeMap(
-            notFoundError: (_) => Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                AutoSizeText(
-                  S.of(context).notFoundError,
-                  style: const TextStyle(
-                    fontSize: 20,
-                    fontWeight: FontWeight.bold,
+  Widget build(BuildContext context) => InkWell(
+        onTap: retryFunction,
+        child: Center(
+          child: failure.maybeMap(
+            coreData: (failure) => failure.coreDataFailure.maybeMap(
+              notFoundError: (_) => Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  AutoSizeText(
+                    S.of(context).notFoundError,
+                    style: const TextStyle(
+                      fontSize: 20,
+                      fontWeight: FontWeight.bold,
+                    ),
+                    textAlign: TextAlign.center,
                   ),
-                  textAlign: TextAlign.center,
-                ),
-                AutoSizeText(
-                  S.of(context).tapToReload,
-                  style: const TextStyle(
-                    fontSize: 14,
-                    color: Colors.grey,
-                    fontWeight: FontWeight.w300,
+                  AutoSizeText(
+                    S.of(context).tapToReload,
+                    style: const TextStyle(
+                      fontSize: 14,
+                      color: Colors.grey,
+                      fontWeight: FontWeight.w300,
+                    ),
+                    textAlign: TextAlign.center,
                   ),
-                  textAlign: TextAlign.center,
-                ),
-              ],
+                ],
+              ),
+              orElse: () {},
             ),
-            orElse: () {},
+            orElse: () => CriticalErrorDisplay(failure: failure),
           ),
-          orElse: () => CriticalErrorDisplay(failure: failure),
         ),
-      ),
-    );
-  }
+      );
 }

@@ -7,62 +7,61 @@ import 'package:worldon/views/core/routes/router.gr.dart';
 
 class SelectCreationView extends StatelessWidget {
   @override
-  Widget build(BuildContext context) {
-    return Column(
-      mainAxisAlignment: MainAxisAlignment.center,
-      children: [
-        Padding(
-          padding: const EdgeInsets.symmetric(
-            horizontal: 10,
-          ),
-          child: OutlinedButton(
-            style: OutlinedButton.styleFrom(
-              backgroundColor: WorldOnColors.white,
-              primary: WorldOnColors.background,
-              elevation: 5,
+  Widget build(BuildContext context) => Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          Padding(
+            padding: const EdgeInsets.symmetric(
+              horizontal: 10,
             ),
-            onPressed: () => context.router.push(
-              ExperienceManagementPageRoute(
-                experienceOption: none(),
+            child: OutlinedButton(
+              style: OutlinedButton.styleFrom(
+                backgroundColor: WorldOnColors.white,
+                primary: WorldOnColors.background,
+                elevation: 5,
               ),
-            ),
-            child: Padding(
-              padding: const EdgeInsets.all(15),
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                children: [
-                  Row(
-                    children: [
-                      const Icon(
-                        Icons.explore_rounded,
-                        color: WorldOnColors.primary,
-                        size: 50,
-                      ),
-                      const SizedBox(width: 20),
-                      Text(
-                        S.of(context).experience,
-                        style: const TextStyle(
-                          fontSize: 40,
+              onPressed: () => context.router.push(
+                ExperienceManagementPageRoute(
+                  experienceOption: none(),
+                ),
+              ),
+              child: Padding(
+                padding: const EdgeInsets.all(15),
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  children: [
+                    Row(
+                      children: [
+                        const Icon(
+                          Icons.explore_rounded,
+                          color: WorldOnColors.primary,
+                          size: 50,
                         ),
-                      ),
-                    ],
-                  ),
-                  const SizedBox(height: 15),
-                  Text(
-                    S.of(context).experienceButtonExplanation,
-                    textAlign: TextAlign.center,
-                    style: const TextStyle(
-                      fontSize: 20,
-                      fontWeight: FontWeight.normal,
+                        const SizedBox(width: 20),
+                        Text(
+                          S.of(context).experience,
+                          style: const TextStyle(
+                            fontSize: 40,
+                          ),
+                        ),
+                      ],
                     ),
-                  ),
-                ],
+                    const SizedBox(height: 15),
+                    Text(
+                      S.of(context).experienceButtonExplanation,
+                      textAlign: TextAlign.center,
+                      style: const TextStyle(
+                        fontSize: 20,
+                        fontWeight: FontWeight.normal,
+                      ),
+                    ),
+                  ],
+                ),
               ),
             ),
           ),
-        ),
-        // Button to go to the tag creation page, now that the tag creation is part of the experience creation it is rather superfluous
-        /*
+          // Button to go to the tag creation page, now that the tag creation is part of the experience creation it is rather superfluous
+          /*
         TextButton(
           onPressed: () => context.router.push(
             Routes.tagManagementPage,
@@ -90,7 +89,6 @@ class SelectCreationView extends StatelessWidget {
             ),
           ),
         ),*/
-      ],
-    );
-  }
+        ],
+      );
 }

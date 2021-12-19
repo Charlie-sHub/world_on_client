@@ -14,42 +14,40 @@ class ErrorCard extends StatelessWidget {
   }) : super(key: key);
 
   @override
-  Widget build(BuildContext context) {
-    return Card(
-      color: WorldOnColors.red,
-      child: Padding(
-        padding: const EdgeInsets.all(5),
-        child: Column(
-          children: <Widget>[
-            Text(
-              "${S.of(context).invalid} $entityType",
-              textAlign: TextAlign.center,
-              style: const TextStyle(
-                fontSize: 15,
-                color: WorldOnColors.white,
+  Widget build(BuildContext context) => Card(
+        color: WorldOnColors.red,
+        child: Padding(
+          padding: const EdgeInsets.all(5),
+          child: Column(
+            children: <Widget>[
+              Text(
+                "${S.of(context).invalid} $entityType",
+                textAlign: TextAlign.center,
+                style: const TextStyle(
+                  fontSize: 15,
+                  color: WorldOnColors.white,
+                ),
               ),
-            ),
-            const SizedBox(height: 5),
-            Text(
-              "${S.of(context).details}: ",
-              textAlign: TextAlign.center,
-              style: const TextStyle(
-                fontSize: 12,
-                color: WorldOnColors.white,
+              const SizedBox(height: 5),
+              Text(
+                "${S.of(context).details}: ",
+                textAlign: TextAlign.center,
+                style: const TextStyle(
+                  fontSize: 12,
+                  color: WorldOnColors.white,
+                ),
               ),
-            ),
-            const SizedBox(height: 5),
-            AutoSizeText(
-              valueFailureString,
-              textAlign: TextAlign.justify,
-              style: const TextStyle(
-                fontSize: 12,
-                color: WorldOnColors.white,
+              const SizedBox(height: 5),
+              AutoSizeText(
+                valueFailureString,
+                textAlign: TextAlign.justify,
+                style: const TextStyle(
+                  fontSize: 12,
+                  color: WorldOnColors.white,
+                ),
               ),
-            ),
-          ],
+            ],
+          ),
         ),
-      ),
-    );
-  }
+      );
 }

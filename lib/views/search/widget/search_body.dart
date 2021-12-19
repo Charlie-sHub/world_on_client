@@ -19,22 +19,33 @@ class SearchBody extends StatelessWidget {
   static const double _separation = 5;
 
   @override
-  Widget build(BuildContext context) {
-    return MultiBlocProvider(
-      providers: [
-        BlocProvider(create: (context) => getIt<SearchByNameFormBloc>()),
-        BlocProvider(create: (context) => getIt<SearchUsersByNameWatcherBloc>()),
-        BlocProvider(create: (context) => getIt<SearchExperiencesByNameWatcherBloc>()),
-        BlocProvider(create: (context) => getIt<SearchTagsByNameWatcherBloc>()),
-        BlocProvider(create: (context) => getIt<SearchExperiencesByDifficultyBloc>()),
-        BlocProvider(create: (context) => getIt<SearchExperiencesByTagsBloc>()),
-      ],
-      child: BlocConsumer<SearchByNameFormBloc, SearchByNameFormState>(
-        listenWhen: (previous, current) => current.isSubmitting,
-        listener: _searchFormListener,
-        buildWhen: (previous, current) => previous.showErrorMessages != current.showErrorMessages,
-        builder: (context, state) {
-          return SingleChildScrollView(
+  Widget build(BuildContext context) => MultiBlocProvider(
+        providers: [
+          BlocProvider(
+            create: (context) => getIt<SearchByNameFormBloc>(),
+          ),
+          BlocProvider(
+            create: (context) => getIt<SearchUsersByNameWatcherBloc>(),
+          ),
+          BlocProvider(
+            create: (context) => getIt<SearchExperiencesByNameWatcherBloc>(),
+          ),
+          BlocProvider(
+            create: (context) => getIt<SearchTagsByNameWatcherBloc>(),
+          ),
+          BlocProvider(
+            create: (context) => getIt<SearchExperiencesByDifficultyBloc>(),
+          ),
+          BlocProvider(
+            create: (context) => getIt<SearchExperiencesByTagsBloc>(),
+          ),
+        ],
+        child: BlocConsumer<SearchByNameFormBloc, SearchByNameFormState>(
+          listenWhen: (previous, current) => current.isSubmitting,
+          listener: _searchFormListener,
+          buildWhen: (previous, current) =>
+              previous.showErrorMessages != current.showErrorMessages,
+          builder: (context, state) => SingleChildScrollView(
             child: Padding(
               padding: const EdgeInsets.symmetric(horizontal: 10),
               child: Column(
@@ -74,11 +85,9 @@ class SearchBody extends StatelessWidget {
                 ],
               ),
             ),
-          );
-        },
-      ),
-    );
-  }
+          ),
+        ),
+      );
 
   void _searchFormListener(BuildContext context, SearchByNameFormState state) {
     if (state.searchTerm.value.isRight()) {
@@ -88,7 +97,8 @@ class SearchBody extends StatelessWidget {
             ),
           );
       context.read<SearchExperiencesByNameWatcherBloc>().add(
-            SearchExperiencesByNameWatcherEvent.watchExperiencesFoundByNameStarted(
+            SearchExperiencesByNameWatcherEvent
+                .watchExperiencesFoundByNameStarted(
               state.searchTerm,
             ),
           );

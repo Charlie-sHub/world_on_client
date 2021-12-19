@@ -1,10 +1,7 @@
-import 'dart:async';
-
 import 'package:bloc/bloc.dart';
 import 'package:dartz/dartz.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:injectable/injectable.dart';
-import 'package:meta/meta.dart';
 import 'package:worldon/domain/core/failures/value_failure.dart';
 import 'package:worldon/domain/core/validation/objects/search_term.dart';
 
@@ -16,37 +13,37 @@ part 'search_by_name_form_state.dart';
 /// When the state submits the subordinate [Bloc]s will search
 /// The other [Bloc]s will "control" different tabs
 @injectable
-class SearchByNameFormBloc extends Bloc<SearchByNameFormEvent, SearchByNameFormState> {
-  SearchByNameFormBloc() : super(SearchByNameFormState.initial());
-
-  @override
-  Stream<SearchByNameFormState> mapEventToState(SearchByNameFormEvent event) async* {
-    yield* event.map(
-      searchTermChanged: _onSearchTermChanged,
-      submitted: _onSubmitted,
-    );
+class SearchByNameFormBloc
+    extends Bloc<SearchByNameFormEvent, SearchByNameFormState> {
+  SearchByNameFormBloc() : super(SearchByNameFormState.initial()) {
+    on<_SearchTermChanged>(_onSearchTermChanged);
+    on<_Submitted>(_onSubmitted);
   }
 
-  Stream<SearchByNameFormState> _onSubmitted(_) async* {
-    yield state.searchTerm.value.fold(
-      (failure) => state.copyWith(
-        showErrorMessages: true,
-        failureOrSuccessOption: some(failure),
-      ),
-      (_) => state.copyWith(
-        isSubmitting: true,
-        showErrorMessages: true,
+  void _onSubmitted(_, Emitter emit) {
+    emit(
+      state.searchTerm.value.fold(
+        (failure) => state.copyWith(
+          showErrorMessages: true,
+          failureOrSuccessOption: some(failure),
+        ),
+        (_) => state.copyWith(
+          isSubmitting: true,
+          showErrorMessages: true,
+        ),
       ),
     );
   }
 
-  Stream<SearchByNameFormState> _onSearchTermChanged(_SearchTermChanged event) async* {
+  void _onSearchTermChanged(_SearchTermChanged event, Emitter emit) {
     final _oldSearchTerm = state.searchTerm.toString();
     if (event.searchTermString != _oldSearchTerm) {
-      yield state.copyWith(
-        searchTerm: SearchTerm(event.searchTermString),
-        isSubmitting: false,
-        failureOrSuccessOption: none(),
+      emit(
+        state.copyWith(
+          searchTerm: SearchTerm(event.searchTermString),
+          isSubmitting: false,
+          failureOrSuccessOption: none(),
+        ),
       );
       // Searching for every change of the term is simply too costly with Algolia
       // Maybe it can be reimplemented in the future

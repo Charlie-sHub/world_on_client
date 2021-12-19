@@ -3,10 +3,8 @@ import 'dart:io';
 
 import 'package:bloc/bloc.dart';
 import 'package:dartz/dartz.dart';
-import 'package:flutter/material.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:injectable/injectable.dart';
-import 'package:meta/meta.dart';
 import 'package:worldon/domain/core/entities/coordinates/coordinates.dart';
 import 'package:worldon/domain/core/entities/objective/objective.dart';
 import 'package:worldon/domain/core/use_case/get_current_location.dart';
@@ -22,69 +20,76 @@ part 'objective_form_state.dart';
 
 @injectable
 class ObjectiveFormBloc extends Bloc<ObjectiveFormEvent, ObjectiveFormState> {
-  ObjectiveFormBloc() : super(ObjectiveFormState.initial());
-
-  @override
-  Stream<ObjectiveFormState> mapEventToState(ObjectiveFormEvent event) async* {
-    yield* event.map(
-      initialized: _onInitialized,
-      descriptionChanged: _onDescriptionChanged,
-      coordinatesChanged: _onCoordinatesChanged,
-      imageChanged: _onImageChanged,
-      submitted: _onSubmitted,
-    );
+  ObjectiveFormBloc() : super(ObjectiveFormState.initial()) {
+    on<_Initialized>(_onInitialized);
+    on<_DescriptionChanged>(_onDescriptionChanged);
+    on<_CoordinatesChanged>(_onCoordinatesChanged);
+    on<_ImageChanged>(_onImageChanged);
+    on<_Submitted>(_onSubmitted);
   }
 
-  Stream<ObjectiveFormState> _onInitialized(_) async* {
+  FutureOr<void> _onInitialized(_, Emitter emit) async {
     final _currentPosition = await getIt<GetCurrentLocation>()(NoParams());
-    yield state.copyWith(
-      objective: state.objective.copyWith(
-        coordinates: _currentPosition.fold(
-          (_) => Coordinates.empty(),
-          id,
+    emit(
+      state.copyWith(
+        objective: state.objective.copyWith(
+          coordinates: _currentPosition.fold(
+            (_) => Coordinates.empty(),
+            id,
+          ),
         ),
+        loadedCoordinates: true,
       ),
-      loadedCoordinates: true,
     );
   }
 
-  Stream<ObjectiveFormState> _onSubmitted(_) async* {
+  void _onSubmitted(_, Emitter emit) {
     if (state.objective.isValid && state.objective.imageFile.isSome()) {
-      yield state.copyWith(
-        isSubmitting: true,
+      emit(
+        state.copyWith(
+          isSubmitting: true,
+        ),
       );
-      yield ObjectiveFormState.initial();
+      emit(ObjectiveFormState.initial());
       add(const ObjectiveFormEvent.initialized());
     } else {
-      yield state.copyWith(
-        showErrorMessages: true,
+      emit(
+        state.copyWith(
+          showErrorMessages: true,
+        ),
       );
     }
   }
 
-  Stream<ObjectiveFormState> _onImageChanged(_ImageChanged event) async* {
-    yield state.copyWith(
-      objective: state.objective.copyWith(
-        imageFile: some(event.imageFile),
-      ),
-    );
-  }
-
-  Stream<ObjectiveFormState> _onCoordinatesChanged(_CoordinatesChanged event) async* {
-    yield state.copyWith(
-      objective: state.objective.copyWith(
-        coordinates: Coordinates(
-          latitude: Latitude(event.latitude),
-          longitude: Longitude(event.longitude),
+  void _onImageChanged(_ImageChanged event, Emitter emit) {
+    emit(
+      state.copyWith(
+        objective: state.objective.copyWith(
+          imageFile: some(event.imageFile),
         ),
       ),
     );
   }
 
-  Stream<ObjectiveFormState> _onDescriptionChanged(_DescriptionChanged event) async* {
-    yield state.copyWith(
-      objective: state.objective.copyWith(
-        description: EntityDescription(event.description),
+  void _onCoordinatesChanged(_CoordinatesChanged event, Emitter emit) {
+    emit(
+      state.copyWith(
+        objective: state.objective.copyWith(
+          coordinates: Coordinates(
+            latitude: Latitude(event.latitude),
+            longitude: Longitude(event.longitude),
+          ),
+        ),
+      ),
+    );
+  }
+
+  void _onDescriptionChanged(_DescriptionChanged event, Emitter emit) {
+    emit(
+      state.copyWith(
+        objective: state.objective.copyWith(
+          description: EntityDescription(event.description),
+        ),
       ),
     );
   }

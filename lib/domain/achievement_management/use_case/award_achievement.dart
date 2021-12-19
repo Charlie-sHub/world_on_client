@@ -12,12 +12,11 @@ class AwardAchievement implements AsyncUseCase<Unit, Params> {
   AwardAchievement(this._repository);
 
   @override
-  Future<Either<Failure, Unit>> call(Params params) {
-    return _repository.awardAchievement(
-      achievementId: params.achievementId,
-      userId: params.userId,
-    );
-  }
+  Future<Either<Failure, Unit>> call(Params params) =>
+      _repository.awardAchievement(
+        achievementId: params.achievementId,
+        userId: params.userId,
+      );
 }
 
 class Params {

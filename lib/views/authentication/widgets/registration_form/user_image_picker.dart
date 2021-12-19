@@ -16,53 +16,56 @@ class UserImagePicker extends StatelessWidget {
   static const double _avatarRadius = 80;
 
   @override
-  Widget build(BuildContext context) {
-    return Container(
-      child: context.read<RegistrationFormBloc>().state.user.imageFileOption.fold(
-            () => imageURLOption.fold(
-              () => CameraButton(),
-              (_imageURL) {
-                if (_imageURL.isNotEmpty) {
-                  return TextButton(
-                    onPressed: () => openPictureSelectDialog(context).then(
-                      (imageFile) {
-                        if (imageFile != null) {
-                          context.read<RegistrationFormBloc>().add(
-                                RegistrationFormEvent.imageChanged(
-                                  imageFile,
-                                ),
-                              );
-                        }
-                      },
-                    ),
-                    child: CircleAvatar(
-                      radius: _avatarRadius,
-                      backgroundImage: CachedNetworkImageProvider(_imageURL),
-                    ),
-                  );
-                } else {
-                  return CameraButton();
-                }
-              },
-            ),
-            (imageFile) => TextButton(
-              onPressed: () => openPictureSelectDialog(context).then(
-                (imageFile) {
-                  if (imageFile != null) {
-                    context.read<RegistrationFormBloc>().add(
-                          RegistrationFormEvent.imageChanged(
-                            imageFile,
-                          ),
-                        );
+  Widget build(BuildContext context) => Container(
+        child: context
+            .read<RegistrationFormBloc>()
+            .state
+            .user
+            .imageFileOption
+            .fold(
+              () => imageURLOption.fold(
+                () => CameraButton(),
+                (_imageURL) {
+                  if (_imageURL.isNotEmpty) {
+                    return TextButton(
+                      onPressed: () => openPictureSelectDialog(context).then(
+                        (imageFile) {
+                          if (imageFile != null) {
+                            context.read<RegistrationFormBloc>().add(
+                                  RegistrationFormEvent.imageChanged(
+                                    imageFile,
+                                  ),
+                                );
+                          }
+                        },
+                      ),
+                      child: CircleAvatar(
+                        radius: _avatarRadius,
+                        backgroundImage: CachedNetworkImageProvider(_imageURL),
+                      ),
+                    );
+                  } else {
+                    return CameraButton();
                   }
                 },
               ),
-              child: CircleAvatar(
-                radius: _avatarRadius,
-                backgroundImage: FileImage(imageFile!),
+              (imageFile) => TextButton(
+                onPressed: () => openPictureSelectDialog(context).then(
+                  (imageFile) {
+                    if (imageFile != null) {
+                      context.read<RegistrationFormBloc>().add(
+                            RegistrationFormEvent.imageChanged(
+                              imageFile,
+                            ),
+                          );
+                    }
+                  },
+                ),
+                child: CircleAvatar(
+                  radius: _avatarRadius,
+                  backgroundImage: FileImage(imageFile!),
+                ),
               ),
             ),
-          ),
-    );
-  }
+      );
 }

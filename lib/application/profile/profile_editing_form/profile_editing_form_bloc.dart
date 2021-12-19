@@ -6,7 +6,6 @@ import 'package:dartz/dartz.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:injectable/injectable.dart';
 import 'package:kt_dart/collection.dart';
-import 'package:meta/meta.dart';
 import 'package:worldon/core/error/failure.dart';
 import 'package:worldon/domain/core/entities/tag/tag.dart';
 import 'package:worldon/domain/core/entities/user/user.dart';
@@ -24,31 +23,29 @@ part 'profile_editing_form_event.dart';
 part 'profile_editing_form_state.dart';
 
 @injectable
-class ProfileEditingFormBloc extends Bloc<ProfileEditingFormEvent, ProfileEditingFormState> {
-  ProfileEditingFormBloc() : super(ProfileEditingFormState.initial());
-
-  @override
-  Stream<ProfileEditingFormState> mapEventToState(ProfileEditingFormEvent event) async* {
-    yield* event.map(
-      initialized: _onInitialized,
-      imageChanged: _onImageChanged,
-      nameChanged: _onNameChanged,
-      usernameChanged: _onUsernameChanged,
-      passwordChanged: _onPasswordChanged,
-      passwordConfirmationChanged: _onPasswordConfirmationChanged,
-      emailAddressChanged: _onEmailAddressChanged,
-      birthdayChanged: _onBirthdayChanged,
-      descriptionChanged: _onDescriptionChanged,
-      interestsChanged: _onInterestsChanged,
-      submitted: _onSubmitted,
-    );
+class ProfileEditingFormBloc
+    extends Bloc<ProfileEditingFormEvent, ProfileEditingFormState> {
+  ProfileEditingFormBloc() : super(ProfileEditingFormState.initial()) {
+    on<_Initialized>(_onInitialized);
+    on<_NameChanged>(_onNameChanged);
+    on<_ImageChanged>(_onImageChanged);
+    on<_UsernameChanged>(_onUsernameChanged);
+    on<_PasswordChanged>(_onPasswordChanged);
+    on<_PasswordConfirmationChanged>(_onPasswordConfirmationChanged);
+    on<_EmailAddressChanged>(_onEmailAddressChanged);
+    on<_BirthdayChanged>(_onBirthdayChanged);
+    on<_DescriptionChanged>(_onDescriptionChanged);
+    on<_InterestsChanged>(_onInterestsChanged);
+    on<_Submitted>(_onSubmitted);
   }
 
-  Stream<ProfileEditingFormState> _onSubmitted(_) async* {
+  FutureOr<void> _onSubmitted(_, Emitter emit) async {
     late Either<Failure, Unit> _failureOrUnit;
-    yield state.copyWith(
-      isSubmitting: true,
-      failureOrSuccessOption: none(),
+    emit(
+      state.copyWith(
+        isSubmitting: true,
+        failureOrSuccessOption: none(),
+      ),
     );
     if (state.user.isValid && state.passwordConfirmator.isValid()) {
       final _userToEdit = state.user.copyWith(
@@ -58,116 +55,162 @@ class ProfileEditingFormBloc extends Bloc<ProfileEditingFormEvent, ProfileEditin
         Params(userToEdit: _userToEdit),
       );
     }
-    yield state.copyWith(
-      isSubmitting: false,
-      showErrorMessages: true,
-      failureOrSuccessOption: optionOf(_failureOrUnit),
-    );
-  }
-
-  Stream<ProfileEditingFormState> _onInterestsChanged(_InterestsChanged event) async* {
-    yield state.copyWith(
-      user: state.user.copyWith(
-        interestsIds: event.interests.dart
-            .map(
-              (_tag) => _tag.id,
-            )
-            .toSet(),
+    emit(
+      state.copyWith(
+        isSubmitting: false,
+        showErrorMessages: true,
+        failureOrSuccessOption: optionOf(_failureOrUnit),
       ),
-      failureOrSuccessOption: none(),
     );
   }
 
-  Stream<ProfileEditingFormState> _onDescriptionChanged(_DescriptionChanged event) async* {
-    yield state.copyWith(
-      user: state.user.copyWith(
-        description: EntityDescription(event.description),
-      ),
-      failureOrSuccessOption: none(),
-    );
-  }
-
-  Stream<ProfileEditingFormState> _onBirthdayChanged(_BirthdayChanged event) async* {
-    yield state.copyWith(
-      user: state.user.copyWith(
-        birthday: PastDate(event.birthday),
-      ),
-      failureOrSuccessOption: none(),
-    );
-  }
-
-  Stream<ProfileEditingFormState> _onEmailAddressChanged(_EmailAddressChanged event) async* {
-    yield state.copyWith(
-      user: state.user.copyWith(
-        email: EmailAddress(event.emailAddress),
-      ),
-      failureOrSuccessOption: none(),
-    );
-  }
-
-  Stream<ProfileEditingFormState> _onPasswordConfirmationChanged(_PasswordConfirmationChanged event) async* {
-    yield state.copyWith(
-      passwordConfirmator: PasswordConfirmator(
-        password: state.user.password.value.fold(
-          (failure) => "",
-          id,
+  void _onInterestsChanged(
+    _InterestsChanged event,
+    Emitter emit,
+  ) {
+    emit(
+      state.copyWith(
+        user: state.user.copyWith(
+          interestsIds: event.interests.dart
+              .map(
+                (_tag) => _tag.id,
+              )
+              .toSet(),
         ),
-        confirmation: event.passwordConfirmation,
+        failureOrSuccessOption: none(),
       ),
-      passwordToCompare: event.passwordConfirmation,
-      failureOrSuccessOption: none(),
     );
   }
 
-  Stream<ProfileEditingFormState> _onPasswordChanged(_PasswordChanged event) async* {
-    yield state.copyWith(
-      user: state.user.copyWith(
-        password: Password(event.password),
+  void _onDescriptionChanged(_DescriptionChanged event, Emitter emit) {
+    emit(
+      state.copyWith(
+        user: state.user.copyWith(
+          description: EntityDescription(event.description),
+        ),
+        failureOrSuccessOption: none(),
       ),
-      passwordConfirmator: PasswordConfirmator(
-        password: event.password,
-        confirmation: state.passwordToCompare,
-      ),
-      failureOrSuccessOption: none(),
     );
   }
 
-  Stream<ProfileEditingFormState> _onUsernameChanged(_UsernameChanged event) async* {
-    yield state.copyWith(
-      user: state.user.copyWith(
-        username: Name(event.username),
+  void _onBirthdayChanged(
+    _BirthdayChanged event,
+    Emitter emit,
+  ) {
+    emit(
+      state.copyWith(
+        user: state.user.copyWith(
+          birthday: PastDate(event.birthday),
+        ),
+        failureOrSuccessOption: none(),
       ),
-      failureOrSuccessOption: none(),
     );
   }
 
-  Stream<ProfileEditingFormState> _onNameChanged(_NameChanged event) async* {
-    yield state.copyWith(
-      user: state.user.copyWith(
-        name: Name(event.name),
+  void _onEmailAddressChanged(_EmailAddressChanged event, Emitter emit) {
+    emit(
+      state.copyWith(
+        user: state.user.copyWith(
+          email: EmailAddress(event.emailAddress),
+        ),
+        failureOrSuccessOption: none(),
       ),
-      failureOrSuccessOption: none(),
     );
   }
 
-  Stream<ProfileEditingFormState> _onImageChanged(_ImageChanged event) async* {
-    yield state.copyWith(
-      user: state.user.copyWith(
-        imageFileOption: some(event.imageFile),
+  void _onPasswordConfirmationChanged(
+    _PasswordConfirmationChanged event,
+    Emitter emit,
+  ) {
+    emit(
+      state.copyWith(
+        passwordConfirmator: PasswordConfirmator(
+          password: state.user.password.value.fold(
+            (failure) => "",
+            id,
+          ),
+          confirmation: event.passwordConfirmation,
+        ),
+        passwordToCompare: event.passwordConfirmation,
+        failureOrSuccessOption: none(),
       ),
-      failureOrSuccessOption: none(),
     );
   }
 
-  Stream<ProfileEditingFormState> _onInitialized(_Initialized event) async* {
+  void _onPasswordChanged(
+    _PasswordChanged event,
+    Emitter emit,
+  ) {
+    emit(
+      state.copyWith(
+        user: state.user.copyWith(
+          password: Password(event.password),
+        ),
+        passwordConfirmator: PasswordConfirmator(
+          password: event.password,
+          confirmation: state.passwordToCompare,
+        ),
+        failureOrSuccessOption: none(),
+      ),
+    );
+  }
+
+  void _onUsernameChanged(
+    _UsernameChanged event,
+    Emitter emit,
+  ) {
+    emit(
+      state.copyWith(
+        user: state.user.copyWith(
+          username: Name(event.username),
+        ),
+        failureOrSuccessOption: none(),
+      ),
+    );
+  }
+
+  void _onNameChanged(
+    _NameChanged event,
+    Emitter emit,
+  ) {
+    emit(
+      state.copyWith(
+        user: state.user.copyWith(
+          name: Name(event.name),
+        ),
+        failureOrSuccessOption: none(),
+      ),
+    );
+  }
+
+  void _onImageChanged(
+    _ImageChanged event,
+    Emitter emit,
+  ) {
+    emit(
+      state.copyWith(
+        user: state.user.copyWith(
+          imageFileOption: some(event.imageFile),
+        ),
+        failureOrSuccessOption: none(),
+      ),
+    );
+  }
+
+  void _onInitialized(
+    _Initialized event,
+    Emitter emit,
+  ) {
     final _user = event.userToEdit;
-    yield state.copyWith(
-      user: _user,
-      passwordConfirmator: PasswordConfirmator(
-        password: _user.password.getOrCrash(),
-        confirmation: _user.password.getOrCrash(),
+    emit(
+      state.copyWith(
+        user: _user,
+        passwordConfirmator: PasswordConfirmator(
+          password: _user.password.getOrCrash(),
+          confirmation: _user.password.getOrCrash(),
+        ),
+        passwordToCompare: _user.password.getOrCrash(),
       ),
-      passwordToCompare: _user.password.getOrCrash(),
     );
   }
 }

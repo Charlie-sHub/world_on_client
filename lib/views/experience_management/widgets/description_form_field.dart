@@ -14,30 +14,35 @@ class DescriptionFormField extends StatelessWidget {
   final String description;
 
   @override
-  Widget build(BuildContext context) {
-    return TextFormField(
-      maxLength: EntityDescription.maxLength,
-      onChanged: (value) => context.read<ExperienceManagementFormBloc>().add(
-            ExperienceManagementFormEvent.descriptionChanged(value),
-          ),
-      validator: (_) => context.read<ExperienceManagementFormBloc>().state.experience.description.value.fold(
-            (failure) => failure.maybeMap(
-              emptyString: (_) => S.of(context).descriptionEmptyString,
-              stringExceedsLength: (_) => S.of(context).descriptionStringExceedsLength,
-              stringWithInvalidCharacters: (_) => S.of(context).description,
-              orElse: () => S.of(context).unknownError,
+  Widget build(BuildContext context) => TextFormField(
+        maxLength: EntityDescription.maxLength,
+        onChanged: (value) => context.read<ExperienceManagementFormBloc>().add(
+              ExperienceManagementFormEvent.descriptionChanged(value),
             ),
-            (_) => null,
+        validator: (_) => context
+            .read<ExperienceManagementFormBloc>()
+            .state
+            .experience
+            .description
+            .value
+            .fold(
+              (failure) => failure.maybeMap(
+                emptyString: (_) => S.of(context).descriptionEmptyString,
+                stringExceedsLength: (_) =>
+                    S.of(context).descriptionStringExceedsLength,
+                stringWithInvalidCharacters: (_) => S.of(context).description,
+                orElse: () => S.of(context).unknownError,
+              ),
+              (_) => null,
+            ),
+        maxLines: 5,
+        initialValue: description,
+        decoration: InputDecoration(
+          labelText: S.of(context).description,
+          prefixIcon: const Icon(
+            Icons.description,
+            color: WorldOnColors.primary,
           ),
-      maxLines: 5,
-      initialValue: description,
-      decoration: InputDecoration(
-        labelText: S.of(context).description,
-        prefixIcon: const Icon(
-          Icons.description,
-          color: WorldOnColors.primary,
         ),
-      ),
-    );
-  }
+      );
 }

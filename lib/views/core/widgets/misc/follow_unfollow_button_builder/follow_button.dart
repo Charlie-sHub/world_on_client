@@ -16,33 +16,32 @@ class FollowButton extends StatelessWidget {
   final UniqueId userId;
 
   @override
-  Widget build(BuildContext context) {
-    return ElevatedButton(
-      onPressed: () => context.read<FollowActorBloc>().add(
-            FollowActorEvent.followed(
-              userId,
-              context.read<WatchCurrentUserBloc>().state.maybeMap(
-                    loadSuccess: (successState) => successState.user.simplified,
-                    orElse: () => SimpleUser.empty(),
-                  ),
+  Widget build(BuildContext context) => ElevatedButton(
+        onPressed: () => context.read<FollowActorBloc>().add(
+              FollowActorEvent.followed(
+                userId,
+                context.read<WatchCurrentUserBloc>().state.maybeMap(
+                      loadSuccess: (successState) =>
+                          successState.user.simplified,
+                      orElse: () => SimpleUser.empty(),
+                    ),
+              ),
+            ),
+        style: ButtonStyle(
+          shape: MaterialStateProperty.all(
+            RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(5),
             ),
           ),
-      style: ButtonStyle(
-        shape: MaterialStateProperty.all(
-          RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(5),
+          backgroundColor: MaterialStateProperty.all(
+            WorldOnColors.red,
           ),
         ),
-        backgroundColor: MaterialStateProperty.all(
-          WorldOnColors.red,
+        child: Text(
+          S.of(context).follow,
+          style: const TextStyle(
+            fontWeight: FontWeight.bold,
+          ),
         ),
-      ),
-      child: Text(
-        S.of(context).follow,
-        style: const TextStyle(
-          fontWeight: FontWeight.bold,
-        ),
-      ),
-    );
-  }
+      );
 }

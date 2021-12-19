@@ -11,22 +11,20 @@ class RegisterButton extends StatelessWidget {
   }) : super(key: key);
 
   @override
-  Widget build(BuildContext context) {
-    return ElevatedButton(
-      onPressed: () => context.router.push(
-        RegistrationPageRoute(userOption: none()),
-      ),
-      style: ButtonStyle(
-        backgroundColor: MaterialStateProperty.all(
-          WorldOnColors.primary,
+  Widget build(BuildContext context) => ElevatedButton(
+        onPressed: () => context.router.push(
+          RegistrationPageRoute(userOption: none()),
         ),
-      ),
-      child: Text(
-        S.of(context).register,
-        style: const TextStyle(
-          fontSize: 20,
+        style: ButtonStyle(
+          backgroundColor: MaterialStateProperty.all(
+            WorldOnColors.primary,
+          ),
         ),
-      ),
-    );
-  }
+        child: Text(
+          S.of(context).register,
+          style: const TextStyle(
+            fontSize: 20,
+          ),
+        ),
+      );
 }

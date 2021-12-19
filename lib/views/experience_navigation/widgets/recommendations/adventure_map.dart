@@ -16,53 +16,52 @@ class AdventureMap extends StatelessWidget {
   const AdventureMap({Key? key}) : super(key: key);
 
   @override
-  Widget build(BuildContext context) {
-    return BlocListener<RecommendedExperiencesWatcherBloc,
-        RecommendedExperiencesWatcherState>(
-      listener: (context, state) => state.maybeMap(
-        loadSuccess: (successState) =>
-            context.read<AdventureMapControllerBloc>().add(
-                  AdventureMapControllerEvent.experiencesChanged(
-                    successState.experiences,
+  Widget build(BuildContext context) => BlocListener<
+          RecommendedExperiencesWatcherBloc,
+          RecommendedExperiencesWatcherState>(
+        listener: (context, state) => state.maybeMap(
+          loadSuccess: (successState) =>
+              context.read<AdventureMapControllerBloc>().add(
+                    AdventureMapControllerEvent.experiencesChanged(
+                      successState.experiences,
+                    ),
                   ),
-                ),
-        orElse: () => null,
-      ),
-      child:
-          BlocBuilder<AdventureMapControllerBloc, AdventureMapControllerState>(
-        builder: (context, state) => state.loadedCoordinates
-            ? GoogleMap(
-                mapType: MapType.satellite,
-                myLocationEnabled: true,
-                mapToolbarEnabled: false,
-                onCameraMove: (position) => _onCameraMoved(
-                  context,
-                  position,
-                ),
-                markers: state.experiences
-                    .asList()
-                    .map(
-                      (experience) => _mapExperienceToMarker(
-                        experience,
-                        context,
-                      ),
-                    )
-                    .toSet(),
-                initialCameraPosition: CameraPosition(
-                  target: LatLng(
-                    state.coordinates.latitude.getOrCrash(),
-                    state.coordinates.longitude.getOrCrash(),
+          orElse: () => null,
+        ),
+        child: BlocBuilder<AdventureMapControllerBloc,
+            AdventureMapControllerState>(
+          builder: (context, state) => state.loadedCoordinates
+              ? GoogleMap(
+                  mapType: MapType.satellite,
+                  myLocationEnabled: true,
+                  mapToolbarEnabled: false,
+                  onCameraMove: (position) => _onCameraMoved(
+                    context,
+                    position,
                   ),
-                  zoom: state.zoom,
-                  tilt: 45,
+                  markers: state.experiences
+                      .asList()
+                      .map(
+                        (experience) => _mapExperienceToMarker(
+                          experience,
+                          context,
+                        ),
+                      )
+                      .toSet(),
+                  initialCameraPosition: CameraPosition(
+                    target: LatLng(
+                      state.coordinates.latitude.getOrCrash(),
+                      state.coordinates.longitude.getOrCrash(),
+                    ),
+                    zoom: state.zoom,
+                    tilt: 45,
+                  ),
+                )
+              : const WorldOnProgressIndicator(
+                  size: 50,
                 ),
-              )
-            : const WorldOnProgressIndicator(
-                size: 50,
-              ),
-      ),
-    );
-  }
+        ),
+      );
 
   Marker _mapExperienceToMarker(
     Experience experience,

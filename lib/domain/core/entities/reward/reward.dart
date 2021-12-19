@@ -34,12 +34,11 @@ class Reward with _$Reward {
         imageFile: none(),
       );
 
-  Option<ValueFailure<dynamic>> get failureOption {
-    return name.failureOrUnit.andThen(description.failureOrUnit).fold(
-          (failure) => some(failure),
-          (_) => none(),
-        );
-  }
+  Option<ValueFailure<dynamic>> get failureOption =>
+      name.failureOrUnit.andThen(description.failureOrUnit).fold(
+            (failure) => some(failure),
+            (_) => none(),
+          );
 
   bool get isValid => failureOption.isNone();
 }

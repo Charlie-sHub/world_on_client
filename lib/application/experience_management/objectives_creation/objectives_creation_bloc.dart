@@ -1,11 +1,8 @@
-import 'dart:async';
-
 import 'package:bloc/bloc.dart';
 import 'package:dartz/dartz.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:injectable/injectable.dart';
 import 'package:kt_dart/kt.dart';
-import 'package:meta/meta.dart';
 import 'package:worldon/domain/core/entities/objective/objective.dart';
 import 'package:worldon/domain/core/validation/objects/objective_list.dart';
 
@@ -14,44 +11,52 @@ part 'objectives_creation_event.dart';
 part 'objectives_creation_state.dart';
 
 @injectable
-class ObjectivesCreationBloc extends Bloc<ObjectivesCreationEvent, ObjectivesCreationState> {
-  ObjectivesCreationBloc() : super(ObjectivesCreationState.initial());
-
-  @override
-  Stream<ObjectivesCreationState> mapEventToState(ObjectivesCreationEvent event) async* {
-    yield* event.map(
-      addedObjective: _onAddedObjective,
-      removedObjective: _onRemovedObjective,
-      reorderedList: _onReorderedList,
-      initialized: _onInitialized,
-    );
+class ObjectivesCreationBloc
+    extends Bloc<ObjectivesCreationEvent, ObjectivesCreationState> {
+  ObjectivesCreationBloc() : super(ObjectivesCreationState.initial()) {
+    on<_Initialized>(_onInitialized);
+    on<_AddedObjective>(_onAddedObjective);
+    on<_RemovedObjective>(_onRemovedObjective);
+    on<_ReorderedList>(_onReorderedList);
   }
 
-  Stream<ObjectivesCreationState> _onInitialized(_Initialized event) async* {
-    yield event.objectiveListOption.fold(
-      () => state,
-      (objectiveList) => state.copyWith(
-        objectivesCreated: objectiveList.getOrCrash(),
+  void _onInitialized(_Initialized event, Emitter emit) {
+    emit(
+      event.objectiveListOption.fold(
+        () => state,
+        (objectiveList) => state.copyWith(
+          objectivesCreated: objectiveList.getOrCrash(),
+        ),
       ),
     );
   }
 
-  Stream<ObjectivesCreationState> _onReorderedList(_ReorderedList event) async* {
-    yield state.copyWith(
-      objectivesCreated: event.reorderedList.toImmutableList(),
+  void _onReorderedList(_ReorderedList event, Emitter emit) {
+    emit(
+      state.copyWith(
+        objectivesCreated: event.reorderedList.toImmutableList(),
+      ),
     );
   }
 
-  Stream<ObjectivesCreationState> _onRemovedObjective(_RemovedObjective event) async* {
-    yield state.copyWith(
-      objectivesCreated: state.objectivesCreated.minusElement(event.objective),
+  void _onRemovedObjective(_RemovedObjective event, Emitter emit) {
+    emit(
+      state.copyWith(
+        objectivesCreated: state.objectivesCreated.minusElement(
+          event.objective,
+        ),
+      ),
     );
   }
 
-  Stream<ObjectivesCreationState> _onAddedObjective(_AddedObjective event) async* {
+  void _onAddedObjective(_AddedObjective event, Emitter emit) {
     if (state.objectivesCreated.size < ObjectiveList.maxLength) {
-      yield state.copyWith(
-        objectivesCreated: state.objectivesCreated.plusElement(event.objective),
+      emit(
+        state.copyWith(
+          objectivesCreated: state.objectivesCreated.plusElement(
+            event.objective,
+          ),
+        ),
       );
     }
   }

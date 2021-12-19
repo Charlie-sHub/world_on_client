@@ -17,38 +17,36 @@ class EditButton extends StatelessWidget {
   final Function() reloadFunction;
 
   @override
-  Widget build(BuildContext context) {
-    return TextButton(
-      style: ButtonStyle(
-        padding: MaterialStateProperty.all(
-          const EdgeInsets.all(2),
-        ),
-        foregroundColor: MaterialStateProperty.all(
-          WorldOnColors.accent,
-        ),
-      ),
-      onPressed: () async {
-        Navigator.of(context).pop();
-        await context.router.push(
-          ExperienceManagementPageRoute(
-            experienceOption: some(experience),
+  Widget build(BuildContext context) => TextButton(
+        style: ButtonStyle(
+          padding: MaterialStateProperty.all(
+            const EdgeInsets.all(2),
           ),
-        );
-      },
-      child: Row(
-        children: [
-          const Icon(
-            Icons.edit,
+          foregroundColor: MaterialStateProperty.all(
+            WorldOnColors.accent,
           ),
-          const SizedBox(width: 5),
-          Text(
-            S.of(context).editButton,
-            style: const TextStyle(
-              fontWeight: FontWeight.bold,
+        ),
+        onPressed: () async {
+          Navigator.of(context).pop();
+          await context.router.push(
+            ExperienceManagementPageRoute(
+              experienceOption: some(experience),
             ),
-          ),
-        ],
-      ),
-    );
-  }
+          );
+        },
+        child: Row(
+          children: [
+            const Icon(
+              Icons.edit,
+            ),
+            const SizedBox(width: 5),
+            Text(
+              S.of(context).editButton,
+              style: const TextStyle(
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+          ],
+        ),
+      );
 }

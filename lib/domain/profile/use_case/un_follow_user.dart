@@ -12,11 +12,10 @@ class UnFollowUser implements AsyncUseCase<Unit, Params> {
   UnFollowUser(this._repository);
 
   @override
-  Future<Either<Failure, Unit>> call(Params params) async {
-    return _repository.unFollowUser(
-      params.userToUnFollowId,
-    );
-  }
+  Future<Either<Failure, Unit>> call(Params params) async =>
+      _repository.unFollowUser(
+        params.userToUnFollowId,
+      );
 }
 
 class Params {

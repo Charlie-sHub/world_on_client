@@ -14,18 +14,18 @@ class DismissFromLogButton extends StatelessWidget {
   final UniqueId experienceId;
 
   @override
-  Widget build(BuildContext context) {
-    return IconButton(
-      onPressed: () => context.read<ExperienceAddToLogActorBloc>().add(
-            ExperienceAddToLogActorEvent.dismissedExperienceFromLog(experienceId),
-          ),
-      padding: const EdgeInsets.all(5),
-      constraints: const BoxConstraints(),
-      icon: const Icon(
-        MdiIcons.bookmarkMinus,
-        color: WorldOnColors.white,
-        size: 25,
-      ),
-    );
-  }
+  Widget build(BuildContext context) => IconButton(
+        onPressed: () => context.read<ExperienceAddToLogActorBloc>().add(
+              ExperienceAddToLogActorEvent.dismissedExperienceFromLog(
+                experienceId,
+              ),
+            ),
+        padding: const EdgeInsets.all(5),
+        constraints: const BoxConstraints(),
+        icon: const Icon(
+          MdiIcons.bookmarkMinus,
+          color: WorldOnColors.white,
+          size: 25,
+        ),
+      );
 }

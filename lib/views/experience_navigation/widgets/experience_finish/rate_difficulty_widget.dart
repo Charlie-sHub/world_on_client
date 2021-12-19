@@ -16,59 +16,70 @@ class RateDifficultyWidget extends StatelessWidget {
   final Experience experience;
 
   @override
-  Widget build(BuildContext context) {
-    return BlocProvider(
-      create: (context) => getIt<RateExperienceDifficultyActorBloc>()
-        ..add(
-          RateExperienceDifficultyActorEvent.difficultyChanged(experience.difficulty.getOrCrash()),
-        ),
-      child: BlocListener<RateExperienceDifficultyActorBloc, RateExperienceDifficultyActorState>(
-        listener: _submittingRatingListener,
-        child: BlocBuilder<RateExperienceDifficultyActorBloc, RateExperienceDifficultyActorState>(
-          builder: (context, state) => Card(
-            elevation: 0,
-            child: Padding(
-              padding: const EdgeInsets.all(5),
-              child: Column(
-                children: <Widget>[
-                  Text(
-                    S.of(context).difficultyQuestion,
-                    style: const TextStyle(
-                      fontWeight: FontWeight.bold,
-                    ),
-                  ),
-                  Slider(
-                    min: 1,
-                    max: 10,
-                    label: state.difficulty.toString(),
-                    activeColor: getColorByDifficulty(state.difficulty),
-                    onChanged: (value) => context.read<RateExperienceDifficultyActorBloc>().add(
-                          RateExperienceDifficultyActorEvent.difficultyChanged(value.round()),
-                        ),
-                    value: state.difficulty.ceilToDouble(),
-                  ),
-                  ElevatedButton(
-                    onPressed: () => context.read<RateExperienceDifficultyActorBloc>().add(
-                          RateExperienceDifficultyActorEvent.difficultyRated(experience),
-                        ),
-                    child: Text(
-                      S.of(context).submitDifficultyRating,
+  Widget build(BuildContext context) => BlocProvider(
+        create: (context) => getIt<RateExperienceDifficultyActorBloc>()
+          ..add(
+            RateExperienceDifficultyActorEvent.difficultyChanged(
+              experience.difficulty.getOrCrash(),
+            ),
+          ),
+        child: BlocListener<RateExperienceDifficultyActorBloc,
+            RateExperienceDifficultyActorState>(
+          listener: _submittingRatingListener,
+          child: BlocBuilder<RateExperienceDifficultyActorBloc,
+              RateExperienceDifficultyActorState>(
+            builder: (context, state) => Card(
+              elevation: 0,
+              child: Padding(
+                padding: const EdgeInsets.all(5),
+                child: Column(
+                  children: <Widget>[
+                    Text(
+                      S.of(context).difficultyQuestion,
                       style: const TextStyle(
-                        fontSize: 15,
                         fontWeight: FontWeight.bold,
                       ),
                     ),
-                  ),
-                ],
+                    Slider(
+                      min: 1,
+                      max: 10,
+                      label: state.difficulty.toString(),
+                      activeColor: getColorByDifficulty(state.difficulty),
+                      onChanged: (value) =>
+                          context.read<RateExperienceDifficultyActorBloc>().add(
+                                RateExperienceDifficultyActorEvent
+                                    .difficultyChanged(value.round()),
+                              ),
+                      value: state.difficulty.ceilToDouble(),
+                    ),
+                    ElevatedButton(
+                      onPressed: () => context
+                          .read<RateExperienceDifficultyActorBloc>()
+                          .add(
+                            RateExperienceDifficultyActorEvent.difficultyRated(
+                              experience,
+                            ),
+                          ),
+                      child: Text(
+                        S.of(context).submitDifficultyRating,
+                        style: const TextStyle(
+                          fontSize: 15,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
               ),
             ),
           ),
         ),
-      ),
-    );
-  }
+      );
 
-  void _submittingRatingListener(BuildContext context, RateExperienceDifficultyActorState state) {
+  void _submittingRatingListener(
+    BuildContext context,
+    RateExperienceDifficultyActorState state,
+  ) {
     if (state.isSubmitting) {
       FlushbarHelper.createLoading(
         duration: const Duration(seconds: 2),

@@ -12,9 +12,8 @@ class DislikeExperience implements AsyncUseCase<Unit, Params> {
   DislikeExperience(this._repository);
 
   @override
-  Future<Either<Failure, Unit>> call(Params params) async {
-    return _repository.dislikeExperience(params.experienceId);
-  }
+  Future<Either<Failure, Unit>> call(Params params) async =>
+      _repository.dislikeExperience(params.experienceId);
 }
 
 class Params {

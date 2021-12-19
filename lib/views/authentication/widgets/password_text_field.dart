@@ -5,7 +5,7 @@ import 'package:worldon/views/authentication/validator_typedef.dart';
 import 'package:worldon/views/core/misc/world_on_colors.dart';
 
 class PasswordTextField extends StatelessWidget {
-  final Function eventToAdd;
+  final Function(String value) eventToAdd;
   final Validator<String?> validator;
 
   const PasswordTextField({
@@ -15,23 +15,21 @@ class PasswordTextField extends StatelessWidget {
   }) : super(key: key);
 
   @override
-  Widget build(BuildContext context) {
-    return TextFormField(
-      maxLength: Password.maxLength,
-      autocorrect: false,
-      obscureText: true,
-      onChanged: (value) => eventToAdd(value.trim()),
-      validator: (_) => validator(_),
-      decoration: InputDecoration(
-        labelText: S.of(context).password,
-        counterText: "",
-        prefixIcon: const Icon(
-          Icons.lock,
-          color: WorldOnColors.primary,
+  Widget build(BuildContext context) => TextFormField(
+        maxLength: Password.maxLength,
+        autocorrect: false,
+        obscureText: true,
+        onChanged: (value) => eventToAdd(value.trim()),
+        validator: (_) => validator(_),
+        decoration: InputDecoration(
+          labelText: S.of(context).password,
+          counterText: "",
+          prefixIcon: const Icon(
+            Icons.lock,
+            color: WorldOnColors.primary,
+          ),
+          filled: true,
+          fillColor: WorldOnColors.background,
         ),
-        filled: true,
-        fillColor: WorldOnColors.background,
-      ),
-    );
-  }
+      );
 }

@@ -12,9 +12,8 @@ class CreateTag implements AsyncUseCase<Unit, Params> {
   CreateTag(this._repository);
 
   @override
-  Future<Either<Failure, Unit>> call(Params params) async {
-    return _repository.createTag(params.tag);
-  }
+  Future<Either<Failure, Unit>> call(Params params) async =>
+      _repository.createTag(params.tag);
 }
 
 class Params {

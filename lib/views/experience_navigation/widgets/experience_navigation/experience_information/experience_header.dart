@@ -16,40 +16,39 @@ class ExperienceHeader extends StatelessWidget {
   final Experience experience;
 
   @override
-  Widget build(BuildContext context) {
-    return Row(
-      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-      children: [
-        Flexible(
-          flex: 5,
-          child: AutoSizeText(
-            experience.title.getOrCrash(),
-            style: const TextStyle(
-              color: WorldOnColors.accent,
-              fontWeight: FontWeight.bold,
-              fontSize: 20,
-            ),
-          ),
-        ),
-        Row(
-          children: [
-            LikeDislikeButtonBuilder(
-              experienceId: experience.id,
-            ),
-            const SizedBox(width: 5),
-            BlocBuilder<ExperienceLikeActorBloc, ExperienceLikeActorState>(
-              buildWhen: (previous, current) => previous.likesAmount != current.likesAmount,
-              builder: (context, state) => Text(
-                createNumberDisplay(state.likesAmount),
-                style: const TextStyle(
-                  fontWeight: FontWeight.w800,
-                ),
+  Widget build(BuildContext context) => Row(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        children: [
+          Flexible(
+            flex: 5,
+            child: AutoSizeText(
+              experience.title.getOrCrash(),
+              style: const TextStyle(
+                color: WorldOnColors.accent,
+                fontWeight: FontWeight.bold,
+                fontSize: 20,
               ),
             ),
-            const SizedBox(width: 10),
-          ],
-        ),
-      ],
-    );
-  }
+          ),
+          Row(
+            children: [
+              LikeDislikeButtonBuilder(
+                experienceId: experience.id,
+              ),
+              const SizedBox(width: 5),
+              BlocBuilder<ExperienceLikeActorBloc, ExperienceLikeActorState>(
+                buildWhen: (previous, current) =>
+                    previous.likesAmount != current.likesAmount,
+                builder: (context, state) => Text(
+                  createNumberDisplay(state.likesAmount),
+                  style: const TextStyle(
+                    fontWeight: FontWeight.w800,
+                  ),
+                ),
+              ),
+              const SizedBox(width: 10),
+            ],
+          ),
+        ],
+      );
 }

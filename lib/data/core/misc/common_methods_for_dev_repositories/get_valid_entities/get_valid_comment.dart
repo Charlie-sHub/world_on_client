@@ -4,15 +4,14 @@ import 'package:worldon/domain/core/validation/objects/comment_content.dart';
 import 'package:worldon/domain/core/validation/objects/past_date.dart';
 import 'package:worldon/domain/core/validation/objects/unique_id.dart';
 
-Comment getValidComment() {
-  return Comment(
-    id: UniqueId(),
-    poster: getValidUser().simplified,
-    experienceId: UniqueId(),
-    content: CommentContent(
-      "Mauris a ornare nisl. Nunc tincidunt consequat massa a fermentum. Praesent eu mi aliquet, tincidunt magna sit amet, venenatis est.",
-    ),
-    creationDate: PastDate(DateTime.now().subtract(const Duration(days: 100))),
-    modificationDate: PastDate(DateTime.now()),
-  );
-}
+Comment getValidComment() => Comment(
+      id: UniqueId(),
+      poster: getValidUser().simplified,
+      experienceId: UniqueId(),
+      content: CommentContent(
+        "Mauris a ornare nisl. Nunc tincidunt consequat massa a fermentum. Praesent eu mi aliquet, tincidunt magna sit amet, venenatis est.",
+      ),
+      creationDate:
+          PastDate(DateTime.now().subtract(const Duration(days: 100))),
+      modificationDate: PastDate(DateTime.now()),
+    );
