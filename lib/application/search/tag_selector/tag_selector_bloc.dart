@@ -25,9 +25,9 @@ class TagSelectorBloc extends Bloc<TagSelectorEvent, TagSelectorState> {
 
   FutureOr<void> _onInitialized(_Initialized event, Emitter emit) async {
     emit(
-      event.tagsEitherOption.fold(
-        () => state,
-        (_eitherTags) => _eitherTags.fold(
+      await event.tagsEitherOption.fold(
+        () async => state,
+        (_eitherTags) async => _eitherTags.fold(
           (_tagSet) => state.copyWith(
             tagsSelected: _tagSet.getOrCrash(),
           ),

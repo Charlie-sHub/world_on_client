@@ -241,7 +241,7 @@ class ExperienceManagementFormBloc
 
   FutureOr<void> _onInitialized(_Initialized event, Emitter emit) async {
     emit(
-      event.experienceOption.fold(
+      await event.experienceOption.fold(
         () async {
           final _currentUserOption = await getIt<GetLoggedInUser>()(
             getIt<NoParams>(),
@@ -274,7 +274,7 @@ class ExperienceManagementFormBloc
             loadedCoordinates: true,
           );
         },
-        (experience) {
+        (experience) async {
           final _imageList = experience.imageURLs.toList();
           final _objectivesImageUrls =
               experience.objectives.getOrCrash().dart.map(

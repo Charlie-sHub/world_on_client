@@ -81,7 +81,7 @@ class Experience with _$Experience {
       .andThen(rewards.failureOrUnit)
       .andThen(tags.failureOrUnit)
       .fold(
-        (failure) => some(failure),
+        some,
         (_) => none(),
       );
 

@@ -54,13 +54,13 @@ class SimpleUser with _$SimpleUser {
       .andThen(level.failureOrUnit)
       .andThen(experiencePoints.failureOrUnit)
       .fold(
-        (failure) => some(failure),
+        some,
         (_) => none(),
       );
 
   Either<ValueFailure<dynamic>, Unit> get failureOrUnit => failureOption.fold(
         () => right(unit),
-        (failure) => left(failure),
+        left,
       );
 
   bool get isValid => failureOption.isNone();

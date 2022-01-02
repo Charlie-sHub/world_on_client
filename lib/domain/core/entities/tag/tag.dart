@@ -38,7 +38,7 @@ class Tag with _$Tag {
       .andThen(creationDate.failureOrUnit)
       .andThen(modificationDate.failureOrUnit)
       .fold(
-        (failure) => some(failure),
+        some,
         (_) => none(),
       );
 

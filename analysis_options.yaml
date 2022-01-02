@@ -6,6 +6,7 @@ linter:
     - parameter_assignments
     - prefer_expression_function_bodies
     - require_trailing_commas
+    - unnecessary_lambdas
 
 analyzer:
   exclude:

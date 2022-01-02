@@ -32,10 +32,11 @@ class PromotionPlan with _$PromotionPlan {
         timesSeen: 0,
       );
 
-  Option<ValueFailure<dynamic>> get failureOption => name.failureOrUnit.andThen(description.failureOrUnit).fold(
-        (failure) => some(failure),
-        (_) => none(),
-      );
+  Option<ValueFailure<dynamic>> get failureOption =>
+      name.failureOrUnit.andThen(description.failureOrUnit).fold(
+            some,
+            (_) => none(),
+          );
 
   bool get isValid => failureOption.isNone();
 

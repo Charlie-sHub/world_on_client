@@ -25,7 +25,7 @@ class Coordinates with _$Coordinates {
 
   Either<ValueFailure<dynamic>, Unit> get failureOrUnit =>
       latitude.failureOrUnit.andThen(longitude.failureOrUnit).fold(
-            (failure) => left(failure),
+            left,
             (_) => right(unit),
           );
 

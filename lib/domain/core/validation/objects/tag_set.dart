@@ -27,7 +27,7 @@ class TagSet extends ValueObject<KtSet<Tag>> {
 
   @override
   Either<ValueFailure<dynamic>, Unit> get failureOrUnit => value.fold(
-        (failure) => left(failure),
+        left,
         (tagSet) => tagSet
             .map(
               (objective) => objective.failureOption,
@@ -41,7 +41,7 @@ class TagSet extends ValueObject<KtSet<Tag>> {
             )
             .fold(
               () => right(unit),
-              (failure) => left(failure),
+              left,
             ),
       );
 

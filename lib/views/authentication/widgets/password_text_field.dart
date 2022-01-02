@@ -20,7 +20,7 @@ class PasswordTextField extends StatelessWidget {
         autocorrect: false,
         obscureText: true,
         onChanged: (value) => eventToAdd(value.trim()),
-        validator: (_) => validator(_),
+        validator: validator,
         decoration: InputDecoration(
           labelText: S.of(context).password,
           counterText: "",

@@ -25,11 +25,13 @@ class RewardUser implements AsyncUseCase<Map, Params> {
       () => throw UnAuthenticatedError(),
       (_user) async {
         bool _leveledUp = false;
-        int _xpAwarded = params.difficulty.getOrCrash() * ExperiencePoints.multiplier;
+        int _xpAwarded =
+            params.difficulty.getOrCrash() * ExperiencePoints.multiplier;
         final _userXPPre = _user.experiencePoints.getOrCrash();
         final _userLevelPre = _user.level.getOrCrash();
         final _itemList = _user.items.where(
-          (item) => item.id.getOrCrash() == "81539390-6807-11eb-a79a-01068a2daab7",
+          (item) =>
+              item.id.getOrCrash() == "81539390-6807-11eb-a79a-01068a2daab7",
         );
         final _item = _itemList.isNotEmpty ? _itemList.first : null;
         if (_item != null) {
@@ -56,7 +58,7 @@ class RewardUser implements AsyncUseCase<Map, Params> {
           _userLevelPost,
         );
         return _failureOrUnit.fold(
-          (_failure) => left(_failure),
+          left,
           (_) => right(_resultMap),
         );
       },

@@ -44,7 +44,7 @@ class Notification with _$Notification {
       .andThen(sender.failureOrUnit)
       .andThen(creationDate.failureOrUnit)
       .fold(
-        (failure) => some(failure),
+        some,
         (_) => none(),
       );
 

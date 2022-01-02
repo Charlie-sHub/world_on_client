@@ -29,10 +29,11 @@ class ProfileForeignOrOwnBloc
     Emitter emit,
   ) async {
     emit(const ProfileForeignOrOwnState.loadInProgress());
-    event.userIdOption.fold(
+    await event.userIdOption.fold(
       () async {
-        final _loggedInUserOption =
-            await getIt<GetLoggedInUser>()(getIt<NoParams>());
+        final _loggedInUserOption = await getIt<GetLoggedInUser>()(
+          getIt<NoParams>(),
+        );
         emit(
           _loggedInUserOption.fold(
             // Maybe GetLoggedInUser should be reworked so it returns possible failures

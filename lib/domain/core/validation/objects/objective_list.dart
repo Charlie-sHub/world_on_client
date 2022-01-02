@@ -26,7 +26,7 @@ class ObjectiveList extends ValueObject<KtList<Objective>> {
 
   @override
   Either<ValueFailure<dynamic>, Unit> get failureOrUnit => value.fold(
-        (failure) => left(failure),
+        left,
         (objectiveSet) => objectiveSet
             .map(
               (objective) => objective.failureOption,
@@ -40,7 +40,7 @@ class ObjectiveList extends ValueObject<KtList<Objective>> {
             )
             .fold(
               () => right(unit),
-              (failure) => left(failure),
+              left,
             ),
       );
 

@@ -36,7 +36,7 @@ class Item with _$Item {
 
   Option<ValueFailure<dynamic>> get failureOption =>
       name.failureOrUnit.andThen(description.failureOrUnit).fold(
-            (failure) => some(failure),
+            some,
             (_) => none(),
           );
 

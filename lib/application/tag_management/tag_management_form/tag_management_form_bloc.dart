@@ -72,8 +72,8 @@ class TagManagementFormBloc
     );
   }
 
-  FutureOr<void> _onInitialized(_Initialized event, Emitter emit) {
-    event.tagOption.fold(
+  FutureOr<void> _onInitialized(_Initialized event, Emitter emit) async {
+    await event.tagOption.fold(
       () async {
         final _currentUserOption = await getIt<GetLoggedInUser>()(
           getIt<NoParams>(),
@@ -89,7 +89,7 @@ class TagManagementFormBloc
           showErrorMessages: false,
         );
       },
-      (tag) => state.copyWith(
+      (tag) async => state.copyWith(
         tag: tag,
         showErrorMessages: false,
         isEditing: true,

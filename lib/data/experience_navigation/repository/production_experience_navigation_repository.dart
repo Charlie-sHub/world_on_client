@@ -239,7 +239,7 @@ class ProductionExperienceNavigationRepository
                     )
                     .toList();
                 final _containsInterest = _userDto.interestsIds.any(
-                  (_id) => _experienceTagIds.contains(_id),
+                  _experienceTagIds.contains,
                 );
                 final _isNotCreator = _experience.creator.id != _userDto.id;
                 return _containsInterest && _isNotCreator ||

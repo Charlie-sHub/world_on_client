@@ -36,7 +36,7 @@ class Reward with _$Reward {
 
   Option<ValueFailure<dynamic>> get failureOption =>
       name.failureOrUnit.andThen(description.failureOrUnit).fold(
-            (failure) => some(failure),
+            some,
             (_) => none(),
           );
 

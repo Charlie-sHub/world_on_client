@@ -59,7 +59,7 @@ class Achievement with _$Achievement {
       .andThen(modificationDate.failureOrUnit)
       .andThen(tags.failureOrUnit)
       .fold(
-        (failure) => some(failure),
+        some,
         (_) => none(),
       );
 

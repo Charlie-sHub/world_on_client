@@ -19,7 +19,7 @@ class EmailTextField extends StatelessWidget {
   Widget build(BuildContext context) => TextFormField(
         onChanged: (value) => eventToAdd(value.trim()),
         initialValue: initialValue,
-        validator: (_) => validator(_),
+        validator: validator,
         autocorrect: false,
         decoration: InputDecoration(
           labelText: S.of(context).emailAddress,

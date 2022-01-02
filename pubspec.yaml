@@ -19,10 +19,10 @@ dependencies:
   animated_bottom_navigation_bar: ^0.3.2
   another_flushbar: ^1.10.28
   auth_buttons: ^2.0.3
-  auto_route: ^3.2.0
+  auto_route: ^3.2.1
   auto_size_text: ^3.0.0-nullsafety.0
-  bloc: ^8.0.1
-  bloc_test: ^9.0.1
+  bloc: ^8.0.2
+  bloc_test: ^9.0.2
   cached_network_image: ^3.2.0
   carousel_slider: ^4.0.0
   cloud_firestore: ^2.5.4
@@ -36,13 +36,13 @@ dependencies:
   firebase_storage: ^10.2.4
   flutter:
     sdk: flutter
-  flutter_bloc: ^8.0.0
+  flutter_bloc: ^8.0.1
   flutter_carousel_slider: ^1.0.8
-  flutter_hooks: ^0.18.1
-  flutter_local_notifications: ^9.1.5
+  flutter_hooks: ^0.18.2
+  flutter_local_notifications: ^9.2.0
   flutter_localizations:
     sdk: flutter
-  flutter_slidable: ^1.1.0
+  flutter_slidable: ^1.2.0
   flutter_speed_dial: ^5.0.0+1
   flutter_vector_icons: ^1.0.0
   freezed: ^1.1.0
@@ -65,14 +65,14 @@ dependencies:
   logger: ^1.1.0
   material_design_icons_flutter: ^5.0.6595
   meta: ^1.7.0
-  mockito: ^5.0.16
+  mockito: ^5.0.17
   multi_image_picker2: ^5.0.2
   number_display: ^3.0.0
   path: ^1.8.0
   path_provider: ^2.0.8
   percent_indicator: ^3.4.0
   permission_handler: ^8.3.0
-  provider: ^6.0.1
+  provider: ^6.0.2
   quiver: ^3.0.1+1
   rxdart: ^0.27.3
   sa3_liquid: ^1.0.1

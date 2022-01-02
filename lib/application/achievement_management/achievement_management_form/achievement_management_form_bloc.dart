@@ -131,7 +131,7 @@ class AchievementManagementFormBloc extends Bloc<AchievementManagementFormEvent,
   }
 
   FutureOr<void> _onInitialized(_Initialized event, Emitter emit) async {
-    event.achievementOption.fold(
+    await event.achievementOption.fold(
       () async {
         final _currentUserOption = await getIt<GetLoggedInUser>()(
           getIt<NoParams>(),
@@ -148,7 +148,7 @@ class AchievementManagementFormBloc extends Bloc<AchievementManagementFormEvent,
           ),
         );
       },
-      (achievement) => emit(
+      (achievement) async => emit(
         state.copyWith(
           achievement: achievement,
           isEditing: true,

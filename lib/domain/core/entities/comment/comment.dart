@@ -39,13 +39,13 @@ class Comment with _$Comment {
       .andThen(
         poster.failureOption.fold(
           () => right(unit),
-          (failure) => left(failure),
+          left,
         ),
       )
       .andThen(creationDate.failureOrUnit)
       .andThen(modificationDate.failureOrUnit)
       .fold(
-        (failure) => some(failure),
+        some,
         (_) => none(),
       );
 

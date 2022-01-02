@@ -32,8 +32,8 @@ class ExperienceNavigationWatcherBloc extends Bloc<
       );
 
   FutureOr<void> _onInitialized(_Initialized event, Emitter emit) async =>
-      event.experienceOption.fold(
-        () {
+      await event.experienceOption.fold(
+        () async {
           emit(const ExperienceNavigationWatcherState.noExperience());
         },
         (experience) async {

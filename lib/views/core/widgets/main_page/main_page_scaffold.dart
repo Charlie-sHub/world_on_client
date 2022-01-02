@@ -46,13 +46,13 @@ class MainPageScaffold extends StatelessWidget {
                   .state
                   .maybeMap(
                     navigateExperienceView: (state) => state.experienceOption,
-                    orElse: () => none(),
+                    orElse: none,
                   ),
             ),
             ProfileBody(
               userIdOption: context.read<NavigationActorBloc>().state.maybeMap(
                     profileView: (state) => state.userIdOption,
-                    orElse: () => none(),
+                    orElse: none,
                   ),
               currentUserProfile:
                   context.read<NavigationActorBloc>().state.maybeMap(

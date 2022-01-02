@@ -36,7 +36,7 @@ class Objective with _$Objective {
 
   Option<ValueFailure<dynamic>> get failureOption =>
       description.failureOrUnit.andThen(coordinates.failureOrUnit).fold(
-            (failure) => some(failure),
+            some,
             (_) => none(),
           );
 

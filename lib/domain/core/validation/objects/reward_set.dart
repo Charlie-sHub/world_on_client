@@ -23,7 +23,7 @@ class RewardSet extends ValueObject<KtSet<Reward>> {
 
   @override
   Either<ValueFailure<dynamic>, Unit> get failureOrUnit => value.fold(
-        (failure) => left(failure),
+        left,
         (rewardSet) => rewardSet
             .map(
               (objective) => objective.failureOption,
@@ -37,7 +37,7 @@ class RewardSet extends ValueObject<KtSet<Reward>> {
             )
             .fold(
               () => right(unit),
-              (failure) => left(failure),
+              left,
             ),
       );
 

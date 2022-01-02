@@ -9,7 +9,7 @@ abstract class ValueObject<T> extends Equatable {
   const ValueObject();
 
   Either<ValueFailure<dynamic>, Unit> get failureOrUnit => value.fold(
-        (failure) => left(failure),
+        left,
         (_) => right(unit),
       );
 

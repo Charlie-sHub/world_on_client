@@ -121,13 +121,13 @@ class User with _$User {
       .andThen(creationDate.failureOrUnit)
       .andThen(modificationDate.failureOrUnit)
       .fold(
-        (failure) => some(failure),
+        some,
         (_) => none(),
       );
 
   Either<ValueFailure<dynamic>, Unit> get failureOrUnit => failureOption.fold(
         () => right(unit),
-        (failure) => left(failure),
+        left,
       );
 
   bool get isValid => failureOption.isNone();

@@ -36,7 +36,7 @@ class Message with _$Message {
       .andThen(sender.failureOrUnit)
       .andThen(creationDate.failureOrUnit)
       .fold(
-        (failure) => some(failure),
+        some,
         (_) => none(),
       );
 
