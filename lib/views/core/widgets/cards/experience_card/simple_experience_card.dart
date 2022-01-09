@@ -27,7 +27,9 @@ class SimpleExperienceCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) => InkWell(
         onTap: () => context.read<NavigationActorBloc>().add(
-              NavigationActorEvent.experienceNavigationTapped(some(experience)),
+              NavigationActorEvent.experienceNavigationTapped(
+                some(experience),
+              ),
             ),
         child: Card(
           clipBehavior: Clip.antiAlias,
@@ -54,7 +56,11 @@ class SimpleExperienceCard extends StatelessWidget {
                       MediaQuery.of(context).size.height * _heightMultiplier,
                   width: 320,
                   fit: BoxFit.cover,
-                  progressIndicatorBuilder: (context, url, progress) =>
+                  progressIndicatorBuilder: (
+                    context,
+                    url,
+                    progress,
+                  ) =>
                       WorldOnPlasma(),
                 ),
               ),

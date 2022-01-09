@@ -33,7 +33,7 @@ if (keystorePropertiesFile.exists()) {
 }
 
 android {
-    compileSdkVersion 30
+    compileSdkVersion 31
 
     sourceSets {
         main.java.srcDirs += 'src/main/kotlin'
@@ -45,8 +45,8 @@ android {
 
     defaultConfig {
         applicationId "com.worldon_app.worldon"
-        minSdkVersion 23
-        targetSdkVersion 30
+        minSdkVersion 24
+        targetSdkVersion 31
         versionCode flutterVersionCode.toInteger()
         versionName flutterVersionName
     }

@@ -25,15 +25,26 @@ class ProfileBuilder extends StatelessWidget {
             ProfileWatcherEvent.watchProfileStarted(user.id),
           ),
         child: BlocBuilder<ProfileWatcherBloc, ProfileWatcherState>(
+          buildWhen: (previous, current) {
+            final _previousUser = previous.maybeMap(
+              newProfileUpdate: (state) => state.user,
+              orElse: () => user,
+            );
+            final _currentUser = current.maybeMap(
+              newProfileUpdate: (state) => state.user,
+              orElse: () => user,
+            );
+            return _previousUser != _currentUser;
+          },
           builder: (context, state) => state.map(
-            initial: (value) => Profile(
+            initial: (_) => Profile(
               isOwn: isOwn,
               user: user,
               userLevelShowKey: userLevelShowKey,
             ),
-            newProfileUpdate: (_newProfileUpdate) => Profile(
+            newProfileUpdate: (updateState) => Profile(
               isOwn: isOwn,
-              user: _newProfileUpdate.user,
+              user: updateState.user,
               userLevelShowKey: userLevelShowKey,
             ),
             failure: (value) => InkWell(

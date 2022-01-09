@@ -76,9 +76,11 @@ class MainPage extends StatelessWidget {
                       const MainPageShowCaseEvent.finished(),
                     ),
                 builder: Builder(
-                  builder: (context) => BlocListener<MainPageShowCaseBloc, MainPageShowCaseState>(
+                  builder: (context) =>
+                      BlocListener<MainPageShowCaseBloc, MainPageShowCaseState>(
                     listener: (context, state) => state.maybeMap(
-                      show: (_) => ShowCaseWidget.of(context)!.startShowCase(_keys),
+                      show: (_) =>
+                          ShowCaseWidget.of(context)!.startShowCase(_keys),
                       orElse: () {},
                     ),
                     child: MainPageScaffold(
@@ -121,7 +123,8 @@ class MainPage extends StatelessWidget {
         orElse: () {},
       );
 
-  void _watchUserListener(BuildContext context, WatchCurrentUserState state) => state.maybeMap(
+  void _watchUserListener(BuildContext context, WatchCurrentUserState state) =>
+      state.maybeMap(
         loadFailure: (_failureState) => FlushbarHelper.createError(
           duration: const Duration(seconds: 2),
           message: _failureState.failure.maybeMap(
@@ -135,7 +138,8 @@ class MainPage extends StatelessWidget {
         orElse: () {},
       );
 
-  void _navigationListener(BuildContext context, NavigationActorState state) => state.map(
+  void _navigationListener(BuildContext context, NavigationActorState state) =>
+      state.map(
         mainFeedView: (_) => context.read<AppBarTitleBloc>().add(
               const AppBarTitleEvent.showedMainFeed(),
             ),

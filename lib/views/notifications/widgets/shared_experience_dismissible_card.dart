@@ -77,7 +77,11 @@ class SharedExperienceDismissibleCard extends StatelessWidget {
                     child: CachedNetworkImage(
                       imageUrl: experience.imageURLs.first,
                       fit: BoxFit.cover,
-                      progressIndicatorBuilder: (context, url, progress) =>
+                      progressIndicatorBuilder: (
+                        context,
+                        url,
+                        progress,
+                      ) =>
                           WorldOnPlasma(),
                     ),
                   ),
