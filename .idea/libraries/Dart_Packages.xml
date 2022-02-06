@@ -508,6 +508,13 @@
             </list>
           </value>
         </entry>
+        <entry key="flutter">
+          <value>
+            <list>
+              <option value="$USER_HOME$/fvm/versions/2.10.0/packages/flutter/lib" />
+            </list>
+          </value>
+        </entry>
         <entry key="flutter_bloc">
           <value>
             <list>
@@ -578,6 +585,13 @@
             </list>
           </value>
         </entry>
+        <entry key="flutter_localizations">
+          <value>
+            <list>
+              <option value="$USER_HOME$/fvm/versions/2.10.0/packages/flutter_localizations/lib" />
+            </list>
+          </value>
+        </entry>
         <entry key="flutter_plugin_android_lifecycle">
           <value>
             <list>
@@ -613,10 +627,24 @@
             </list>
           </value>
         </entry>
+        <entry key="flutter_test">
+          <value>
+            <list>
+              <option value="$USER_HOME$/fvm/versions/2.10.0/packages/flutter_test/lib" />
+            </list>
+          </value>
+        </entry>
         <entry key="flutter_vector_icons">
           <value>
             <list>
               <option value="$USER_HOME$/AppData/Local/Pub/Cache/hosted/pub.dartlang.org/flutter_vector_icons-1.0.0/lib" />
+            </list>
+          </value>
+        </entry>
+        <entry key="flutter_web_plugins">
+          <value>
+            <list>
+              <option value="$USER_HOME$/fvm/versions/2.10.0/packages/flutter_web_plugins/lib" />
             </list>
           </value>
         </entry>
@@ -1286,6 +1314,13 @@
             </list>
           </value>
         </entry>
+        <entry key="sky_engine">
+          <value>
+            <list>
+              <option value="$USER_HOME$/fvm/versions/2.10.0/bin/cache/pkg/sky_engine/lib" />
+            </list>
+          </value>
+        </entry>
         <entry key="social_share">
           <value>
             <list>
@@ -1795,6 +1830,11 @@
       <root url="file://$USER_HOME$/AppData/Local/Pub/Cache/hosted/pub.dartlang.org/xdg_directories-0.2.0+1/lib" />
       <root url="file://$USER_HOME$/AppData/Local/Pub/Cache/hosted/pub.dartlang.org/xml-5.3.1/lib" />
       <root url="file://$USER_HOME$/AppData/Local/Pub/Cache/hosted/pub.dartlang.org/yaml-3.1.0/lib" />
+      <root url="file://$USER_HOME$/fvm/versions/2.10.0/bin/cache/pkg/sky_engine/lib" />
+      <root url="file://$USER_HOME$/fvm/versions/2.10.0/packages/flutter/lib" />
+      <root url="file://$USER_HOME$/fvm/versions/2.10.0/packages/flutter_localizations/lib" />
+      <root url="file://$USER_HOME$/fvm/versions/2.10.0/packages/flutter_test/lib" />
+      <root url="file://$USER_HOME$/fvm/versions/2.10.0/packages/flutter_web_plugins/lib" />
     </CLASSES>
     <JAVADOC />
     <SOURCES />
