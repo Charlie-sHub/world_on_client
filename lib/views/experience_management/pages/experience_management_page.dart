@@ -59,7 +59,7 @@ class ExperienceManagementPage extends StatelessWidget {
                 ExperienceManagementShowCaseState>(
               listener: (context, state) => state.maybeMap(
                 show: (_) => ShowCaseWidget.of(context)!.startShowCase(_keys),
-                orElse: () {},
+                orElse: () => null,
               ),
               child: Scaffold(
                 body: NestedScrollView(

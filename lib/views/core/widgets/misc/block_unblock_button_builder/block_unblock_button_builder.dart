@@ -88,7 +88,7 @@ class BlockUnblockButtonBuilder extends StatelessWidget {
             orElse: () => S.of(context).unknownError,
           ),
         ).show(context),
-        orElse: () {},
+        orElse: () => null,
       );
 
   bool _buildWhen(

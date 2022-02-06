@@ -66,7 +66,7 @@ class RecommendedExperiencesBottomBar extends StatelessWidget {
                         ),
                         textAlign: TextAlign.center,
                       ),
-                      orElse: () {},
+                      orElse: () => null,
                     ),
                     orElse: () => CriticalErrorDisplay(failure: state.failure),
                   ),

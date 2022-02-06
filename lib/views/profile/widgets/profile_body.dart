@@ -49,7 +49,7 @@ class ProfileBody extends StatelessWidget {
                     ),
                   ),
             ),
-            orElse: () {},
+            orElse: () => null,
           ),
           child: BlocBuilder<ProfileForeignOrOwnBloc, ProfileForeignOrOwnState>(
             builder: (context, state) => state.map(

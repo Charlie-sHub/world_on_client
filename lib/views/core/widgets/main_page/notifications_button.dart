@@ -28,7 +28,7 @@ class NotificationsButton extends StatelessWidget {
               size: 25,
               color: state.maybeMap(
                 newNotifications: (_) => WorldOnColors.red,
-                orElse: () {},
+                orElse: () => null,
               ),
             ),
             onPressed: () => context.read<NavigationActorBloc>().add(

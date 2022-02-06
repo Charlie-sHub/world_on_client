@@ -21,8 +21,12 @@ import 'package:worldon/domain/core/validation/objects/unique_id.dart';
 import 'package:worldon/domain/experience_management/repository/experience_management_repository_interface.dart';
 import 'package:worldon/injection.dart';
 
-@LazySingleton(as: ExperienceManagementRepositoryInterface, env: [Environment.prod])
-class ProductionExperienceManagementRepository implements ExperienceManagementRepositoryInterface {
+@LazySingleton(
+  as: ExperienceManagementRepositoryInterface,
+  env: [Environment.prod],
+)
+class ProductionExperienceManagementRepository
+    implements ExperienceManagementRepositoryInterface {
   final Logger _logger;
   final _geo = Geoflutterfire();
   final _functions = FirebaseFunctions.instanceFor(region: "europe-west1");
@@ -108,11 +112,13 @@ class ProductionExperienceManagementRepository implements ExperienceManagementRe
           .update(
             _experienceJson,
           );
-      final _propagateUpdateCallable = _functions.httpsCallable("propagateExperienceUpdate");
+      final _propagateUpdateCallable =
+          _functions.httpsCallable("propagateExperienceUpdate");
       _propagateUpdateCallable.call(
         <String, dynamic>{"experienceId": _experienceId},
       );
-      final _updateIndexCallable = _functions.httpsCallable("updateExperienceIndex");
+      final _updateIndexCallable =
+          _functions.httpsCallable("updateExperienceIndex");
       await _updateIndexCallable.call(
         <String, dynamic>{"experienceId": _experienceId},
       );
@@ -182,7 +188,7 @@ class ProductionExperienceManagementRepository implements ExperienceManagementRe
     }
     for (final _reward in experience.rewards.getOrCrash().dart) {
       await _reward.imageFile.fold(
-        () {},
+        () => null,
         (_imageFile) async {
           final _imageURL = await _cloudStorageService.uploadFileImage(
             imageToUpload: _imageFile,
@@ -196,7 +202,7 @@ class ProductionExperienceManagementRepository implements ExperienceManagementRe
     }
     for (final _objective in experience.objectives.getOrCrash().dart) {
       await _objective.imageFile.fold(
-        () {},
+        () => null,
         (_imageFile) async {
           final _imageURL = await _cloudStorageService.uploadFileImage(
             imageToUpload: _imageFile,
@@ -215,7 +221,9 @@ class ProductionExperienceManagementRepository implements ExperienceManagementRe
       _logger.e("FirebaseException: ${error.message}");
       return left(
         Failure.coreData(
-          CoreDataFailure.serverError(errorString: "Firebase error: ${error.message}"),
+          CoreDataFailure.serverError(
+            errorString: "Firebase error: ${error.message}",
+          ),
         ),
       );
     } else {

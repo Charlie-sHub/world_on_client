@@ -11,13 +11,19 @@ import 'package:worldon/domain/core/validation/objects/unique_id.dart';
 
 part 'primitive_objective.freezed.dart';
 
-@Deprecated("This class is not necessary for the current way to create objectives")
+@Deprecated(
+  "This class is not necessary for the current way to create objectives",
+)
 @freezed
 class PrimitiveObjective with _$PrimitiveObjective {
-  @Deprecated("This class is not necessary for the current way to create objectives")
+  @Deprecated(
+    "This class is not necessary for the current way to create objectives",
+  )
   const PrimitiveObjective._();
 
-  @Deprecated("This class is not necessary for the current way to create objectives")
+  @Deprecated(
+    "This class is not necessary for the current way to create objectives",
+  )
   const factory PrimitiveObjective({
     required UniqueId id,
     required String description,
@@ -26,7 +32,9 @@ class PrimitiveObjective with _$PrimitiveObjective {
     required File? imageFile,
   }) = _PrimitiveObjective;
 
-  @Deprecated("This class is not necessary for the current way to create objectives")
+  @Deprecated(
+    "This class is not necessary for the current way to create objectives",
+  )
   factory PrimitiveObjective.empty() => PrimitiveObjective(
         id: UniqueId(),
         description: "",
@@ -35,14 +43,17 @@ class PrimitiveObjective with _$PrimitiveObjective {
         imageFile: null,
       );
 
-  @Deprecated("This class is not necessary for the current way to create objectives")
-  factory PrimitiveObjective.fromDomain(Objective objective) => PrimitiveObjective(
+  @Deprecated(
+    "This class is not necessary for the current way to create objectives",
+  )
+  factory PrimitiveObjective.fromDomain(Objective objective) =>
+      PrimitiveObjective(
         id: objective.id,
         description: objective.description.getOrCrash(),
         latitude: objective.coordinates.latitude.getOrCrash(),
         longitude: objective.coordinates.longitude.getOrCrash(),
         imageFile: objective.imageFile.fold(
-          () {},
+          () => null,
           dartz.id,
         ),
       );

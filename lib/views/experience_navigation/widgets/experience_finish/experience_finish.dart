@@ -33,7 +33,7 @@ class ExperienceFinish extends StatelessWidget {
               duration: const Duration(seconds: 4),
               message: S.of(context).levelUp,
             ).show(context),
-            orElse: () {},
+            orElse: () => null,
           ),
           builder: (context, state) => state.map(
             initial: (_) => Container(),

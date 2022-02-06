@@ -46,7 +46,7 @@ class SearchErrorDisplay extends StatelessWidget {
                   ),
                 ],
               ),
-              orElse: () {},
+              orElse: () => null,
             ),
             orElse: () => CriticalErrorDisplay(failure: failure),
           ),

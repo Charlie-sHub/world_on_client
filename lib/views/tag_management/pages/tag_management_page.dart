@@ -38,7 +38,8 @@ class TagManagementPage extends HookWidget {
             TagManagementFormEvent.initialized(tagOption),
           ),
         child: BlocConsumer<TagManagementFormBloc, TagManagementFormState>(
-          listenWhen: (previous, current) => previous.failureOrSuccessOption != current.failureOrSuccessOption,
+          listenWhen: (previous, current) =>
+              previous.failureOrSuccessOption != current.failureOrSuccessOption,
           listener: (context, state) => _tagManagementListener(
             context,
             state,
@@ -62,8 +63,10 @@ class TagManagementPage extends HookWidget {
         (either) => either.fold(
           (failure) => FlushbarHelper.createError(
             message: failure.maybeMap(
-              coreData: (_coreDataFailure) => _coreDataFailure.coreDataFailure.maybeMap(
-                nameAlreadyInUse: (_) => S.of(context).tagCreationNameAlreadyInUse,
+              coreData: (_coreDataFailure) =>
+                  _coreDataFailure.coreDataFailure.maybeMap(
+                nameAlreadyInUse: (_) =>
+                    S.of(context).tagCreationNameAlreadyInUse,
                 serverError: (failure) => failure.errorString,
                 orElse: () => S.of(context).unknownCoreDataError,
               ),

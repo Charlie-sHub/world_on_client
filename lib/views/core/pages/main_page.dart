@@ -81,7 +81,7 @@ class MainPage extends StatelessWidget {
                     listener: (context, state) => state.maybeMap(
                       show: (_) =>
                           ShowCaseWidget.of(context)!.startShowCase(_keys),
-                      orElse: () {},
+                      orElse: () => null,
                     ),
                     child: MainPageScaffold(
                       createExperienceShowKey: _experienceCreationButtonKey,
@@ -120,7 +120,7 @@ class MainPage extends StatelessWidget {
         unAuthenticated: (_) => context.router.replace(
           const LogInPageRoute(),
         ),
-        orElse: () {},
+        orElse: () => null,
       );
 
   void _watchUserListener(BuildContext context, WatchCurrentUserState state) =>
@@ -135,7 +135,7 @@ class MainPage extends StatelessWidget {
             orElse: () => S.of(context).unknownError,
           ),
         ).show(context),
-        orElse: () {},
+        orElse: () => null,
       );
 
   void _navigationListener(BuildContext context, NavigationActorState state) =>

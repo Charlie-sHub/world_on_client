@@ -35,7 +35,7 @@ class ExperienceNavigationBody extends StatelessWidget {
           listener: (context, state) => state.maybeMap(
             navigateExperienceView: (navigateExperienceState) =>
                 navigateExperienceState.experienceOption.fold(
-              () {},
+              () => null,
               (experience) {
                 context.read<ExperienceNavigationWatcherBloc>().add(
                       ExperienceNavigationWatcherEvent.initialized(
@@ -47,9 +47,10 @@ class ExperienceNavigationBody extends StatelessWidget {
                         experience.id,
                       ),
                     );
+                return;
               },
             ),
-            orElse: () {},
+            orElse: () => null,
           ),
           child: BlocBuilder<ExperienceNavigationWatcherBloc,
               ExperienceNavigationWatcherState>(

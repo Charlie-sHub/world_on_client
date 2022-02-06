@@ -19,26 +19,26 @@ dependencies:
   animated_bottom_navigation_bar: ^0.3.2
   another_flushbar: ^1.10.28
   auth_buttons: ^2.0.4
-  auto_route: ^3.2.1
+  auto_route: ^3.2.2
   auto_size_text: ^3.0.0
   bloc: ^8.0.2
   bloc_test: ^9.0.2
   cached_network_image: ^3.2.0
   carousel_slider: ^4.0.0
-  cloud_firestore: ^2.5.4
-  cloud_functions: ^3.2.5
+  cloud_firestore: ^3.1.7
+  cloud_functions: ^3.2.6
   dartz: ^0.10.1
   email_validator: ^2.0.1
   equatable: ^2.0.3
-  firebase_auth: ^3.3.5
-  firebase_core: ^1.11.0
-  firebase_messaging: ^11.2.5
-  firebase_storage: ^10.2.5
+  firebase_auth: ^3.3.6
+  firebase_core: ^1.12.0
+  firebase_messaging: ^11.2.6
+  firebase_storage: ^10.2.6
   flutter:
     sdk: flutter
   flutter_bloc: ^8.0.1
   flutter_carousel_slider: ^1.0.8
-  flutter_hooks: ^0.18.2
+  flutter_hooks: ^0.18.2+1
   flutter_local_notifications: ^9.2.0
   flutter_localizations:
     sdk: flutter
@@ -47,16 +47,16 @@ dependencies:
   flutter_vector_icons: ^1.0.0
   freezed: ^1.1.0
   freezed_annotation: ^1.1.0
-  geoflutterfire: ^3.0.1
-  geolocator: ^8.0.1
+  geoflutterfire: ^3.0.2
+  geolocator: ^8.1.1
   get_it: ^7.2.0
   google_maps_flutter:
-  google_sign_in: ^5.2.1
+  google_sign_in: ^5.2.3
   http: ^0.13.4
-  image_picker: ^0.8.4+4
+  image_picker: ^0.8.4+6
   implicitly_animated_reorderable_list: ^0.4.2
   in_app_purchase: ^2.0.1
-  in_app_purchase_android: ^0.2.2
+  in_app_purchase_android: ^0.2.2+1
   injectable: ^1.5.3
   intl: ^0.17.0
   jiffy: ^5.0.0
@@ -70,7 +70,7 @@ dependencies:
   number_display: ^3.0.0
   path: ^1.8.0
   path_provider: ^2.0.8
-  percent_indicator: ^3.4.0
+  percent_indicator: ^4.0.0
   permission_handler: ^8.3.0
   provider: ^6.0.2
   quiver: ^3.0.1+1
@@ -89,11 +89,11 @@ dev_dependencies:
     sdk: flutter
   font_awesome_flutter: ^9.2.0
   injectable_generator: ^1.5.2
-  json_serializable: ^6.1.3
-  lint: ^1.8.1
+  json_serializable: ^6.1.4
+  lint: ^1.8.2
 
 flutter_icons:
-  image_path: "assets/world_on_logo.jpg"
+  image_path: "assets/logo/world_on_logo.png"
   android: true
   ios: true
 

@@ -52,8 +52,9 @@ class NoExperienceView extends StatelessWidget {
                 context.read<AdventureMapControllerBloc>().add(
                       const AdventureMapControllerEvent.initialized(),
                     );
+                return;
               },
-              orElse: () {},
+              orElse: () => null,
             ),
             builder: (context, state) => state.map(
               initial: (value) => const WorldOnProgressIndicator(

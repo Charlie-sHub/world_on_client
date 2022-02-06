@@ -38,16 +38,18 @@ class CommentForm extends HookWidget {
           ),
         ),
       child: BlocConsumer<CommentFormBloc, CommentFormState>(
-        listenWhen: (previous, current) => previous.failureOrSuccessOption != current.failureOrSuccessOption,
+        listenWhen: (previous, current) =>
+            previous.failureOrSuccessOption != current.failureOrSuccessOption,
         listener: (context, state) => _commentFormListener(
           state,
           context,
           _textEditingController,
         ),
         builder: (context, state) => Form(
-          autovalidateMode: context.read<CommentFormBloc>().state.showErrorMessages
-              ? AutovalidateMode.always
-              : AutovalidateMode.disabled,
+          autovalidateMode:
+              context.read<CommentFormBloc>().state.showErrorMessages
+                  ? AutovalidateMode.always
+                  : AutovalidateMode.disabled,
           child: Padding(
             padding: const EdgeInsets.all(5),
             child: TextFormField(
@@ -58,11 +60,19 @@ class CommentForm extends HookWidget {
               onChanged: (value) => context.read<CommentFormBloc>().add(
                     CommentFormEvent.contentChanged(value.trim()),
                   ),
-              validator: (_) => context.read<CommentFormBloc>().state.comment.content.value.fold(
+              validator: (_) => context
+                  .read<CommentFormBloc>()
+                  .state
+                  .comment
+                  .content
+                  .value
+                  .fold(
                     (failure) => failure.maybeMap(
                       emptyString: (_) => S.of(context).commentEmptyString,
-                      stringExceedsLength: (_) => S.of(context).commentStringExceedsLength,
-                      stringWithInvalidCharacters: (_) => S.of(context).commentStringWithInvalidCharacters,
+                      stringExceedsLength: (_) =>
+                          S.of(context).commentStringExceedsLength,
+                      stringWithInvalidCharacters: (_) =>
+                          S.of(context).commentStringWithInvalidCharacters,
                       orElse: () => S.of(context).unknownError,
                     ),
                     (_) => null,
@@ -80,7 +90,8 @@ class CommentForm extends HookWidget {
                     context.read<CommentFormBloc>().add(
                           CommentFormEvent.submitted(
                             context.read<WatchCurrentUserBloc>().state.maybeMap(
-                                  loadSuccess: (successState) => successState.user,
+                                  loadSuccess: (successState) =>
+                                      successState.user,
                                   orElse: () => User.empty(),
                                 ),
                           ),
@@ -107,7 +118,8 @@ class CommentForm extends HookWidget {
         (either) => either.fold(
           (failure) => FlushbarHelper.createError(
             message: failure.maybeMap(
-              coreData: (_coreDataFailure) => _coreDataFailure.coreDataFailure.maybeMap(
+              coreData: (_coreDataFailure) =>
+                  _coreDataFailure.coreDataFailure.maybeMap(
                 serverError: (failure) => failure.errorString,
                 orElse: () => S.of(context).unknownCoreDataError,
               ),
@@ -119,7 +131,8 @@ class CommentForm extends HookWidget {
             context.read<CommentFormBloc>().add(
                   CommentFormEvent.initialized(
                     user: context.read<WatchCurrentUserBloc>().state.maybeMap(
-                          loadSuccess: (successState) => successState.user.simplified,
+                          loadSuccess: (successState) =>
+                              successState.user.simplified,
                           orElse: () => SimpleUser.empty(),
                         ),
                     commentOption: none(),
@@ -127,7 +140,9 @@ class CommentForm extends HookWidget {
                   ),
                 );
             context.read<CommentWatcherBloc>().add(
-                  CommentWatcherEvent.watchExperienceCommentsStarted(experienceId),
+                  CommentWatcherEvent.watchExperienceCommentsStarted(
+                    experienceId,
+                  ),
                 );
           },
         ),

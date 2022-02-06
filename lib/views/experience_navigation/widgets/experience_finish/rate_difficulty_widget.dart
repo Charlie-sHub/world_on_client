@@ -88,7 +88,7 @@ class RateDifficultyWidget extends StatelessWidget {
       ).show(context);
     }
     state.failureOrSuccessOption.fold(
-      () {},
+      () => null,
       (either) => either.fold(
         (failure) => FlushbarHelper.createError(
           duration: const Duration(seconds: 2),

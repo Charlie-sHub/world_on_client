@@ -82,7 +82,7 @@ class ExperienceNavigation extends StatelessWidget {
                       ),
                     );
               },
-              orElse: () {},
+              orElse: () => null,
             );
           },
           child: DefaultTabController(

@@ -39,7 +39,7 @@ class NotificationsBody extends StatelessWidget {
               duration: const Duration(seconds: 2),
               message: state.failure.toString(),
             ).show(context),
-            orElse: () {},
+            orElse: () => null,
           ),
           child:
               BlocBuilder<NotificationsWatcherBloc, NotificationsWatcherState>(
