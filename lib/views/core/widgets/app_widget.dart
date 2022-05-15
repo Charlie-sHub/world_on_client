@@ -42,7 +42,7 @@ class AppWidget extends StatelessWidget {
             style: ButtonStyle(
               shape: MaterialStateProperty.all(
                 RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(5),
+                  borderRadius: BorderRadius.circular(10),
                 ),
               ),
               backgroundColor: MaterialStateProperty.all(WorldOnColors.accent),
@@ -74,7 +74,7 @@ class AppWidget extends StatelessWidget {
           ),
           cardTheme: CardTheme(
             shape: RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(8),
+              borderRadius: BorderRadius.circular(12),
             ),
             elevation: 10,
             color: WorldOnColors.white,
@@ -91,9 +91,10 @@ class AppWidget extends StatelessWidget {
             ),
             foregroundColor: WorldOnColors.accent,
           ),
-          inputDecorationTheme: const InputDecorationTheme(
+          inputDecorationTheme: InputDecorationTheme(
             border: OutlineInputBorder(
-              borderSide: BorderSide(
+              borderRadius: BorderRadius.circular(10),
+              borderSide: const BorderSide(
                 color: WorldOnColors.accent,
               ),
             ),
