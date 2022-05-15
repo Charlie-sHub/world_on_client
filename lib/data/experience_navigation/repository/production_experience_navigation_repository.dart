@@ -221,9 +221,7 @@ class ProductionExperienceNavigationRepository
           .map(
             (_documentList) => _documentList
                 .map(
-                  (_document) => ExperienceDto.fromJson(
-                    _document.data()! as Map<String, dynamic>,
-                  ),
+                  (_document) => ExperienceDto.fromJson(_document.data()!),
                 )
                 .toList(),
           )
