@@ -19,7 +19,7 @@ class WorldOnBottomNavigationBar extends StatelessWidget {
         iconSize: 32,
         backgroundColor: WorldOnColors.background,
         onTap: (index) => _onTap(index, context),
-        gapLocation: GapLocation.center,
+        gapLocation: GapLocation.end,
         activeIndex: _getCurrentIndex(context),
         activeColor: WorldOnColors.primary,
         inactiveColor: WorldOnColors.accent,

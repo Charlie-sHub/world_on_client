@@ -68,7 +68,7 @@ class MainPageScaffold extends StatelessWidget {
           ],
         ),
         resizeToAvoidBottomInset: false,
-        floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
+        floatingActionButtonLocation: FloatingActionButtonLocation.endDocked,
         floatingActionButton: CreateExperienceFloatingButton(
           showKey: createExperienceShowKey,
         ),

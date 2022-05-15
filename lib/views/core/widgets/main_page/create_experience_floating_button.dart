@@ -16,8 +16,8 @@ class CreateExperienceFloatingButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) => SizedBox(
-        height: 46,
-        width: 46,
+        height: 40,
+        width: 40,
         child: Showcase(
           key: showKey,
           description: S.of(context).createExperienceButtonShowCase,

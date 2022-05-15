@@ -26,11 +26,14 @@ class ObjectiveCreationForm extends StatelessWidget {
       description: S.of(context).objectivesShowCase,
       overlayPadding: const EdgeInsets.all(5),
       child: Form(
-        autovalidateMode:
-            _objectiveFormState.showErrorMessages ? AutovalidateMode.always : AutovalidateMode.disabled,
+        autovalidateMode: _objectiveFormState.showErrorMessages
+            ? AutovalidateMode.always
+            : AutovalidateMode.disabled,
         child: Column(
           children: <Widget>[
-            ObjectiveDescriptionTextField(textController: textEditingController),
+            ObjectiveDescriptionTextField(
+              textController: textEditingController,
+            ),
             Column(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: <Widget>[
@@ -85,7 +88,8 @@ class ObjectiveCreationForm extends StatelessWidget {
     );
   }
 
-  Future<void> _imageChanged(BuildContext context) => openPictureSelectDialog(context).then(
+  Future<void> _imageChanged(BuildContext context) =>
+      openPictureSelectDialog(context).then(
         (imageFile) {
           if (imageFile != null) {
             context.read<ObjectiveFormBloc>().add(
