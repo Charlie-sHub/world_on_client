@@ -63,7 +63,9 @@ class ProfileExperiencesTabView extends StatelessWidget {
                         reloadFunction: () =>
                             context.read<ProfileExperiencesWatcherBloc>().add(
                                   ProfileExperiencesWatcherEvent
-                                      .watchExperiencesCreatedStarted(user.id),
+                                      .watchExperiencesCreatedStarted(
+                                    user.id,
+                                  ),
                                 ),
                       );
                     } else {

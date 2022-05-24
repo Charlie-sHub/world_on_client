@@ -44,7 +44,7 @@ class ObjectiveFormBloc extends Bloc<ObjectiveFormEvent, ObjectiveFormState> {
   }
 
   void _onSubmitted(_, Emitter emit) {
-    if (state.objective.isValid && state.objective.imageFile.isSome()) {
+    if (state.objective.isValid) {
       emit(
         state.copyWith(
           isSubmitting: true,

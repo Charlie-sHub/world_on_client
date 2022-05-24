@@ -36,39 +36,27 @@ class ObjectiveCreationForm extends StatelessWidget {
             ),
             Column(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              children: <Widget>[
-                _objectiveFormState.objective.imageFile.fold(
-                  () => Column(
-                    children: <Widget>[
-                      IconButton(
-                        iconSize: 80,
-                        icon: const Icon(
-                          Icons.photo_camera,
-                        ),
-                        onPressed: () => _imageChanged(context),
+              children: [
+                if (_objectiveFormState.objective.imageFile != null)
+                  _objectiveFormState.objective.imageFile!.fold(
+                    () => IconButton(
+                      iconSize: 80,
+                      icon: const Icon(
+                        Icons.photo_camera,
                       ),
-                      if (_objectiveFormState.showErrorMessages &&
-                          _objectiveFormState.objective.imageFile.isNone())
-                        Text(
-                          S.of(context).pictureSelectionMessage,
-                          textAlign: TextAlign.center,
-                          style: const TextStyle(color: Colors.red),
-                        )
-                      else
-                        Container(),
-                    ],
-                  ),
-                  (imageFile) => Padding(
-                    padding: const EdgeInsets.all(10),
-                    child: TextButton(
                       onPressed: () => _imageChanged(context),
-                      child: Image(
-                        fit: BoxFit.fitWidth,
-                        image: FileImage(imageFile),
+                    ),
+                    (imageFile) => Padding(
+                      padding: const EdgeInsets.all(10),
+                      child: TextButton(
+                        onPressed: () => _imageChanged(context),
+                        child: Image(
+                          fit: BoxFit.fitWidth,
+                          image: FileImage(imageFile),
+                        ),
                       ),
                     ),
                   ),
-                ),
                 Text(
                   S.of(context).objectiveLocalization,
                   textAlign: TextAlign.center,

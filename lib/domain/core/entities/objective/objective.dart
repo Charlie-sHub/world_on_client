@@ -22,8 +22,8 @@ class Objective with _$Objective {
     required UniqueId id,
     required EntityDescription description,
     required Coordinates coordinates,
-    required String imageURL,
-    required Option<File> imageFile,
+    @Default("") String imageURL,
+    Option<File>? imageFile,
   }) = _Objective;
 
   factory Objective.empty() => Objective(

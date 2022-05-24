@@ -61,8 +61,9 @@ class ObjectivesTabView extends StatelessWidget {
                 ),
                 itemCount: experience.objectives.getOrCrash().size,
                 itemBuilder: (context, index) {
-                  final _objective =
-                      experience.objectives.getOrCrash().get(index);
+                  final _objective = experience.objectives.getOrCrash().get(
+                        index,
+                      );
                   if (_objective.isValid) {
                     return ObjectiveCard(
                       objective: _objective,

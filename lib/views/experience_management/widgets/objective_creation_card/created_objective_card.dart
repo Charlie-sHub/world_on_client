@@ -45,16 +45,19 @@ class CreatedObjectiveCard extends StatelessWidget {
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: <Widget>[
-                Image(
-                  image: objective.imageFile.fold(
-                    () => CachedNetworkImageProvider(objective.imageURL),
-                    (_imageFile) => FileImage(_imageFile),
+                if (objective.imageFile != null &&
+                        objective.imageFile!.isSome() ||
+                    objective.imageURL.isNotEmpty)
+                  Image(
+                    image: objective.imageFile!.fold(
+                      () => CachedNetworkImageProvider(objective.imageURL),
+                      (_imageFile) => FileImage(_imageFile),
+                    ),
+                    height: 100,
                   ),
-                  height: 100,
-                ),
                 Expanded(
                   child: Padding(
-                    padding: const EdgeInsets.all(5),
+                    padding: const EdgeInsets.all(8),
                     child: SizedBox(
                       height: 90,
                       width: 150,

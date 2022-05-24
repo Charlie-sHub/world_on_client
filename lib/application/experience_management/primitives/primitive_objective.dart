@@ -29,7 +29,7 @@ class PrimitiveObjective with _$PrimitiveObjective {
     required String description,
     required double latitude,
     required double longitude,
-    required File? imageFile,
+    File? imageFile,
   }) = _PrimitiveObjective;
 
   @Deprecated(
@@ -40,7 +40,6 @@ class PrimitiveObjective with _$PrimitiveObjective {
         description: "",
         latitude: 0,
         longitude: 0,
-        imageFile: null,
       );
 
   @Deprecated(
@@ -52,7 +51,7 @@ class PrimitiveObjective with _$PrimitiveObjective {
         description: objective.description.getOrCrash(),
         latitude: objective.coordinates.latitude.getOrCrash(),
         longitude: objective.coordinates.longitude.getOrCrash(),
-        imageFile: objective.imageFile.fold(
+        imageFile: objective.imageFile?.fold(
           () => null,
           dartz.id,
         ),

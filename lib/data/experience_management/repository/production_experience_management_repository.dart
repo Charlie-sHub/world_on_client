@@ -43,16 +43,19 @@ class ProductionExperienceManagementRepository
   Future<Either<Failure, Unit>> createExperience(Experience experience) async {
     try {
       final _rewardSet = <Reward>{};
+      final _urlsSet = <String>{};
       final _objectiveList = <Objective>[];
       await _uploadImages(
         experience,
         _rewardSet,
         _objectiveList,
+        _urlsSet,
       );
       final _experienceDto = ExperienceDto.fromDomain(
         experience.copyWith(
           rewards: RewardSet(_rewardSet.toImmutableSet()),
           objectives: ObjectiveList(_objectiveList.toImmutableList()),
+          imageURLs: _urlsSet,
         ),
       );
       final _flutterFireGeoPosition = _geo.point(
@@ -83,12 +86,14 @@ class ProductionExperienceManagementRepository
   ) async {
     try {
       final _rewardSet = <Reward>{};
+      final _urlsSet = experience.imageURLs;
       final _objectiveList = <Objective>[];
       final _experienceId = experience.id.getOrCrash();
       await _uploadImages(
         experience,
         _rewardSet,
         _objectiveList,
+        _urlsSet,
       );
       // Adding the original rewards and objectives
       _rewardSet.addAll(experience.rewards.getOrCrash().dart);
@@ -97,6 +102,7 @@ class ProductionExperienceManagementRepository
         experience.copyWith(
           rewards: RewardSet(_rewardSet.toImmutableSet()),
           objectives: ObjectiveList(_objectiveList.toImmutableList()),
+          imageURLs: _urlsSet,
         ),
       );
       final _flutterFireGeoPosition = _geo.point(
@@ -175,6 +181,7 @@ class ProductionExperienceManagementRepository
     Experience experience,
     Set<Reward> rewardSet,
     List<Objective> objectiveList,
+    Set<String> urlsSet,
   ) async {
     final _imageAssets = experience.imageAssetsOption.getOrElse(() => []);
     for (final _imageAsset in _imageAssets) {
@@ -184,7 +191,7 @@ class ProductionExperienceManagementRepository
         folder: StorageFolder.experiences,
         name: _imageName,
       );
-      experience.imageURLs.add(_imageURL);
+      urlsSet.add(_imageURL);
     }
     for (final _reward in experience.rewards.getOrCrash().dart) {
       await _reward.imageFile.fold(
@@ -201,18 +208,22 @@ class ProductionExperienceManagementRepository
       );
     }
     for (final _objective in experience.objectives.getOrCrash().dart) {
-      await _objective.imageFile.fold(
-        () => null,
-        (_imageFile) async {
-          final _imageURL = await _cloudStorageService.uploadFileImage(
-            imageToUpload: _imageFile,
-            folder: StorageFolder.experiences,
-            name: _objective.id.getOrCrash(),
-          );
-          final _objectiveWithImage = _objective.copyWith(imageURL: _imageURL);
-          objectiveList.add(_objectiveWithImage);
-        },
-      );
+      if (_objective.imageFile != null) {
+        await _objective.imageFile!.fold(
+          () => null,
+          (_imageFile) async {
+            final _imageURL = await _cloudStorageService.uploadFileImage(
+              imageToUpload: _imageFile,
+              folder: StorageFolder.experiences,
+              name: _objective.id.getOrCrash(),
+            );
+            final _objectiveWithImage = _objective.copyWith(
+              imageURL: _imageURL,
+            );
+            objectiveList.add(_objectiveWithImage);
+          },
+        );
+      }
     }
   }
 

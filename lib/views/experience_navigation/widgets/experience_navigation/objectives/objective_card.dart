@@ -25,36 +25,37 @@ class ObjectiveCard extends StatelessWidget {
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: <Widget>[
-              InkWell(
-                onTap: () => showDialog(
-                  context: context,
-                  builder: (context) => Dialog(
-                    clipBehavior: Clip.antiAlias,
-                    child: InkWell(
-                      onTap: () => Navigator.of(context).pop(),
-                      child: WorldOnCachedImage(
-                        imageURL: objective.imageURL,
+              if (objective.imageURL.isNotEmpty)
+                InkWell(
+                  onTap: () => showDialog(
+                    context: context,
+                    builder: (context) => Dialog(
+                      clipBehavior: Clip.antiAlias,
+                      child: InkWell(
+                        onTap: () => Navigator.of(context).pop(),
+                        child: WorldOnCachedImage(
+                          imageURL: objective.imageURL,
+                        ),
                       ),
                     ),
                   ),
-                ),
-                child: SizedBox(
-                  height: _imageSize,
-                  width: _imageSize,
-                  child: CachedNetworkImage(
-                    imageUrl: objective.imageURL,
-                    fit: BoxFit.fill,
-                    progressIndicatorBuilder: (
-                      context,
-                      url,
-                      progress,
-                    ) =>
-                        WorldOnPlasma(),
+                  child: SizedBox(
+                    height: _imageSize,
+                    width: _imageSize,
+                    child: CachedNetworkImage(
+                      imageUrl: objective.imageURL,
+                      fit: BoxFit.fill,
+                      progressIndicatorBuilder: (
+                        context,
+                        url,
+                        progress,
+                      ) =>
+                          WorldOnPlasma(),
+                    ),
                   ),
                 ),
-              ),
               Padding(
-                padding: const EdgeInsets.all(5),
+                padding: const EdgeInsets.all(8),
                 child: SizedBox(
                   height: _imageSize,
                   width: 110,
@@ -70,40 +71,44 @@ class ObjectiveCard extends StatelessWidget {
                   ),
                 ),
               ),
-              BlocBuilder<ObjectivesTrackerBloc, ObjectivesTrackerState>(
-                builder: (context, state) => state.objectivesToDo
-                        .contains(objective)
-                    ? IconButton(
-                        padding: EdgeInsets.zero,
-                        icon: const Icon(
-                          Icons.done,
-                          color: Colors.grey,
-                          size: 40,
-                        ),
-                        onPressed: () =>
-                            context.read<ObjectivesTrackerBloc>().add(
-                                  ObjectivesTrackerEvent.objectiveAccomplished(
-                                    objective,
-                                  ),
+              Padding(
+                padding: const EdgeInsets.only(right: 6),
+                child:
+                    BlocBuilder<ObjectivesTrackerBloc, ObjectivesTrackerState>(
+                  builder: (context, state) => state.objectivesToDo
+                          .contains(objective)
+                      ? IconButton(
+                          padding: EdgeInsets.zero,
+                          icon: const Icon(
+                            Icons.done,
+                            color: Colors.grey,
+                            size: 40,
+                          ),
+                          onPressed: () => context
+                              .read<ObjectivesTrackerBloc>()
+                              .add(
+                                ObjectivesTrackerEvent.objectiveAccomplished(
+                                  objective,
                                 ),
-                      )
-                    : IconButton(
-                        padding: EdgeInsets.zero,
-                        icon: const Icon(
-                          Icons.done_all,
-                          color: WorldOnColors.primary,
-                          size: 40,
-                        ),
-                        onPressed: () => context
-                            .read<ObjectivesTrackerBloc>()
-                            .add(
-                              ObjectivesTrackerEvent.objectiveUnaccomplished(
-                                objective,
                               ),
-                            ),
-                      ),
+                        )
+                      : IconButton(
+                          padding: EdgeInsets.zero,
+                          icon: const Icon(
+                            Icons.done_all,
+                            color: WorldOnColors.primary,
+                            size: 40,
+                          ),
+                          onPressed: () => context
+                              .read<ObjectivesTrackerBloc>()
+                              .add(
+                                ObjectivesTrackerEvent.objectiveUnaccomplished(
+                                  objective,
+                                ),
+                              ),
+                        ),
+                ),
               ),
-              const SizedBox(width: 5),
             ],
           ),
         ),
