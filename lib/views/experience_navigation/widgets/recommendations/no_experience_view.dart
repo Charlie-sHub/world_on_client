@@ -19,28 +19,13 @@ class NoExperienceView extends StatelessWidget {
   }) : super(key: key);
 
   @override
-  Widget build(BuildContext context) => MultiBlocProvider(
-        providers: [
-          BlocProvider<RecommendedExperiencesWatcherBloc>(
-            create: (context) => getIt<RecommendedExperiencesWatcherBloc>()
-              ..add(
-                const RecommendedExperiencesWatcherEvent
-                    .watchRecommendedExperiencesStarted(),
-              ),
+  Widget build(BuildContext context) =>
+      BlocProvider<RecommendedExperiencesWatcherBloc>(
+        create: (context) => getIt<RecommendedExperiencesWatcherBloc>()
+          ..add(
+            const RecommendedExperiencesWatcherEvent
+                .watchRecommendedExperiencesStarted(),
           ),
-          BlocProvider<AdventureMapControllerBloc>(
-            create: (context) => getIt<AdventureMapControllerBloc>()
-              ..add(
-                const AdventureMapControllerEvent.initialized(),
-              ),
-          ),
-          BlocProvider<LocationPermissionBloc>(
-            create: (context) => getIt<LocationPermissionBloc>()
-              ..add(
-                const LocationPermissionEvent.initialized(),
-              ),
-          ),
-        ],
         child: Center(
           child: BlocConsumer<LocationPermissionBloc, LocationPermissionState>(
             listener: (context, state) => state.maybeMap(

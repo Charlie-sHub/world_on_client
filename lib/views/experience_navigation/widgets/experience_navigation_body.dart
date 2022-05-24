@@ -2,7 +2,9 @@ import 'package:dartz/dartz.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:worldon/application/comments/comment_watcher/comment_watcher_bloc.dart';
+import 'package:worldon/application/experience_navigation/adventure_map_controller/adventure_map_controller_bloc.dart';
 import 'package:worldon/application/experience_navigation/experience_navigation_watcher/experience_navigation_watcher_bloc.dart';
+import 'package:worldon/application/experience_navigation/location_permission/location_permission_bloc.dart';
 import 'package:worldon/application/navigation/navigation_actor/navigation_actor_bloc.dart';
 import 'package:worldon/domain/core/entities/experience/experience.dart';
 import 'package:worldon/injection.dart';
@@ -29,6 +31,18 @@ class ExperienceNavigationBody extends StatelessWidget {
           ),
           BlocProvider(
             create: (context) => getIt<CommentWatcherBloc>(),
+          ),
+          BlocProvider<LocationPermissionBloc>(
+            create: (context) => getIt<LocationPermissionBloc>()
+              ..add(
+                const LocationPermissionEvent.initialized(),
+              ),
+          ),
+          BlocProvider<AdventureMapControllerBloc>(
+            create: (context) => getIt<AdventureMapControllerBloc>()
+              ..add(
+                const AdventureMapControllerEvent.initialized(),
+              ),
           ),
         ],
         child: BlocListener<NavigationActorBloc, NavigationActorState>(
