@@ -32,6 +32,7 @@ class ExperienceResultsView extends StatelessWidget {
             scrollDirection: Axis.horizontal,
             clipBehavior: Clip.none,
             itemCount: state.experiencesFound.size,
+            physics: const BouncingScrollPhysics(),
             itemBuilder: (context, index) {
               final _experience = state.experiencesFound[index];
               if (_experience.isValid) {

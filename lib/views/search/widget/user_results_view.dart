@@ -30,6 +30,7 @@ class UserResultsView extends StatelessWidget {
             scrollDirection: Axis.horizontal,
             clipBehavior: Clip.none,
             itemCount: state.usersFound.size,
+            physics: const BouncingScrollPhysics(),
             itemBuilder: (context, index) {
               final _user = state.usersFound[index];
               if (_user.isValid) {

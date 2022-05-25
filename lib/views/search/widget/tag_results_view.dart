@@ -26,6 +26,7 @@ class TagResultsView extends StatelessWidget {
             scrollDirection: Axis.horizontal,
             clipBehavior: Clip.none,
             itemCount: state.tagsFound.size,
+            physics: const BouncingScrollPhysics(),
             itemBuilder: (context, index) {
               final _tag = state.tagsFound.get(index);
               if (_tag.isValid) {

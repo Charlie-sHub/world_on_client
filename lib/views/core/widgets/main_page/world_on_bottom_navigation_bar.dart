@@ -6,9 +6,9 @@ import 'package:worldon/application/navigation/navigation_actor/navigation_actor
 import 'package:worldon/views/core/misc/world_on_colors.dart';
 
 class WorldOnBottomNavigationBar extends StatelessWidget {
-  static const _mainFeedIndex = 0;
+  static const _navigationIndex = 0;
   static const _searchIndex = 1;
-  static const _navigationIndex = 2;
+  static const _mainFeedIndex = 2;
   static const _profileIndex = 3;
 
   @override
@@ -24,9 +24,9 @@ class WorldOnBottomNavigationBar extends StatelessWidget {
         activeColor: WorldOnColors.primary,
         inactiveColor: WorldOnColors.accent,
         icons: const [
-          Icons.home_rounded,
-          Icons.search_rounded,
           Icons.explore_rounded,
+          Icons.search_rounded,
+          Icons.home_rounded,
           Icons.person_rounded,
         ],
       );
