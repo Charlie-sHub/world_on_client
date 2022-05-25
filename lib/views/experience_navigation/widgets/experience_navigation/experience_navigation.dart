@@ -14,12 +14,12 @@ import 'package:worldon/views/experience_navigation/widgets/experience_navigatio
 import 'package:worldon/views/experience_navigation/widgets/experience_navigation/objectives/objectives_tab_view.dart';
 
 class ExperienceNavigation extends StatelessWidget {
-  final Experience experience;
-
   const ExperienceNavigation({
-    Key? key,
     required this.experience,
+    Key? key,
   }) : super(key: key);
+
+  final Experience experience;
 
   @override
   Widget build(BuildContext context) => MultiBlocProvider(

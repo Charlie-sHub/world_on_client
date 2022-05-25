@@ -18,7 +18,8 @@ class Map extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final _editingFormState = context.read<ExperienceManagementFormBloc>().state;
+    final _editingFormState =
+        context.read<ExperienceManagementFormBloc>().state;
     final _position = LatLng(
       _editingFormState.experience.coordinates.latitude.getOrCrash(),
       _editingFormState.experience.coordinates.longitude.getOrCrash(),
@@ -50,11 +51,14 @@ class Map extends StatelessWidget {
                         mapType: MapType.hybrid,
                         markers: {
                           Marker(
+                            icon: context.read<BitmapDescriptor>(),
                             markerId: const MarkerId("new_experience"),
                             position: _position,
                           ),
                         },
-                        onLongPress: (argument) => context.read<ExperienceManagementFormBloc>().add(
+                        onLongPress: (argument) => context
+                            .read<ExperienceManagementFormBloc>()
+                            .add(
                               ExperienceManagementFormEvent.coordinatesChanged(
                                 latitude: argument.latitude,
                                 longitude: argument.longitude,

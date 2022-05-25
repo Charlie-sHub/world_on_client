@@ -10,8 +10,20 @@ class ObjectiveCoordinatePicker extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final _position = LatLng(
-      context.read<ObjectiveFormBloc>().state.objective.coordinates.latitude.getOrCrash(),
-      context.read<ObjectiveFormBloc>().state.objective.coordinates.longitude.getOrCrash(),
+      context
+          .read<ObjectiveFormBloc>()
+          .state
+          .objective
+          .coordinates
+          .latitude
+          .getOrCrash(),
+      context
+          .read<ObjectiveFormBloc>()
+          .state
+          .objective
+          .coordinates
+          .longitude
+          .getOrCrash(),
     );
     return SizedBox(
       height: MediaQuery.of(context).size.height * 0.4,
@@ -22,16 +34,18 @@ class ObjectiveCoordinatePicker extends StatelessWidget {
                 mapType: MapType.hybrid,
                 markers: {
                   Marker(
+                    icon: context.read<BitmapDescriptor>(),
                     markerId: const MarkerId("new_objective"),
                     position: _position,
                   ),
                 },
-                onLongPress: (argument) => context.read<ObjectiveFormBloc>().add(
-                      ObjectiveFormEvent.coordinatesChanged(
-                        latitude: argument.latitude,
-                        longitude: argument.longitude,
-                      ),
-                    ),
+                onLongPress: (argument) =>
+                    context.read<ObjectiveFormBloc>().add(
+                          ObjectiveFormEvent.coordinatesChanged(
+                            latitude: argument.latitude,
+                            longitude: argument.longitude,
+                          ),
+                        ),
                 gestureRecognizers: {
                   Factory<OneSequenceGestureRecognizer>(
                     () => EagerGestureRecognizer(),

@@ -68,6 +68,7 @@ class AdventureMap extends StatelessWidget {
     BuildContext context,
   ) =>
       Marker(
+        icon: context.read<BitmapDescriptor>(),
         markerId: MarkerId(
           experience.id.toString(),
         ),
