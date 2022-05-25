@@ -12,7 +12,10 @@ part 'navigation_actor_state.dart';
 @injectable
 class NavigationActorBloc
     extends Bloc<NavigationActorEvent, NavigationActorState> {
-  NavigationActorBloc() : super(const NavigationActorState.mainFeedView()) {
+  NavigationActorBloc()
+      : super(
+          NavigationActorState.navigateExperienceView(none()),
+        ) {
     on<_MainFeedTapped>(_onMainFeedTapped);
     on<_SearchTapped>(_onSearchTapped);
     on<_ExperienceNavigationTapped>(_onExperienceNavigationTapped);

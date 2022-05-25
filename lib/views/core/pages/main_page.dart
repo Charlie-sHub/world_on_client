@@ -79,8 +79,9 @@ class MainPage extends StatelessWidget {
                   builder: (context) =>
                       BlocListener<MainPageShowCaseBloc, MainPageShowCaseState>(
                     listener: (context, state) => state.maybeMap(
-                      show: (_) =>
-                          ShowCaseWidget.of(context)!.startShowCase(_keys),
+                      show: (_) => ShowCaseWidget.of(context)!.startShowCase(
+                        _keys,
+                      ),
                       orElse: () => null,
                     ),
                     child: MainPageScaffold(
