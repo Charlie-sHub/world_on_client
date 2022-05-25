@@ -75,7 +75,7 @@ class ProfileExperienceCard extends StatelessWidget {
                         ),
                       ),
                       AutoSizeText(
-                        experience.getFormattedCreationDateString,
+                        experience.creator.username.getOrCrash(),
                         minFontSize: 8,
                         maxFontSize: 8,
                         style: const TextStyle(
