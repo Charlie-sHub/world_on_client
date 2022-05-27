@@ -19,16 +19,14 @@ class CreatedObjectiveCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) => ScaleTransition(
-        scale: Tween<double>(
-          begin: 1,
-          end: 0.95,
-        ).animate(animation),
+        scale: Tween<double>(begin: 1, end: 0.95).animate(animation),
         child: Slidable(
           key: Key(objective.id.getOrCrash()),
           endActionPane: ActionPane(
-            motion: const DrawerMotion(),
+            motion: const ScrollMotion(),
             children: [
               IconButton(
+                color: Colors.red,
                 icon: const Icon(
                   Icons.delete,
                   color: Colors.red,
@@ -61,15 +59,33 @@ class CreatedObjectiveCard extends StatelessWidget {
                     child: SizedBox(
                       height: 90,
                       width: 150,
-                      child: AutoSizeText(
-                        objective.description.getOrCrash(),
-                        overflow: TextOverflow.fade,
-                        minFontSize: 8,
-                        maxFontSize: 15,
-                        maxLines: 20,
-                        style: const TextStyle(
-                          fontSize: 15,
-                        ),
+                      child: Column(
+                        children: [
+                          if (objective.title != null) ...[
+                            AutoSizeText(
+                              objective.title!.getOrCrash(),
+                              overflow: TextOverflow.fade,
+                              minFontSize: 10,
+                              maxFontSize: 18,
+                              maxLines: 2,
+                              style: const TextStyle(
+                                fontSize: 18,
+                                fontWeight: FontWeight.bold,
+                              ),
+                            ),
+                            const SizedBox(height: 5),
+                          ],
+                          AutoSizeText(
+                            objective.description.getOrCrash(),
+                            overflow: TextOverflow.fade,
+                            minFontSize: 8,
+                            maxFontSize: 15,
+                            maxLines: 20,
+                            style: const TextStyle(
+                              fontSize: 15,
+                            ),
+                          ),
+                        ],
                       ),
                     ),
                   ),

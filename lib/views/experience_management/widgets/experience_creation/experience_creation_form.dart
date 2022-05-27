@@ -57,13 +57,9 @@ class ExperienceCreationForm extends StatelessWidget {
               padding: const EdgeInsets.all(10),
               child: Column(
                 children: [
-                  const TitleFormField(
-                    title: "",
-                  ),
+                  const TitleFormField(title: ""),
                   const SizedBox(height: 10),
-                  const DescriptionFormField(
-                    description: "",
-                  ),
+                  const DescriptionFormField(description: ""),
                   const SizedBox(height: 5),
                   const Divider(thickness: 2),
                   const SizedBox(height: 5),

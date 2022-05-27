@@ -8,6 +8,10 @@ class ObjectiveFormEvent with _$ObjectiveFormEvent {
     String description,
   ) = _DescriptionChanged;
 
+  const factory ObjectiveFormEvent.titleChanged(
+    String title,
+  ) = _TitleChanged;
+
   const factory ObjectiveFormEvent.coordinatesChanged({
     required double latitude,
     required double longitude,

@@ -65,9 +65,7 @@ class ExperienceEditingForm extends StatelessWidget {
               padding: const EdgeInsets.all(10),
               child: Column(
                 children: [
-                  TitleFormField(
-                    title: experience.title.getOrCrash(),
-                  ),
+                  TitleFormField(title: experience.title.getOrCrash()),
                   const SizedBox(height: 5),
                   const Divider(thickness: 2),
                   const SizedBox(height: 5),

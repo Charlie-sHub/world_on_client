@@ -7,6 +7,7 @@ import 'package:worldon/domain/core/entities/experience/experience.dart';
 import 'package:worldon/domain/core/entities/user/user.dart';
 import 'package:worldon/domain/core/failures/value_failure.dart';
 import 'package:worldon/domain/core/validation/objects/entity_description.dart';
+import 'package:worldon/domain/core/validation/objects/name.dart';
 import 'package:worldon/domain/core/validation/objects/unique_id.dart';
 
 part 'objective.freezed.dart';
@@ -24,6 +25,7 @@ class Objective with _$Objective {
     required Coordinates coordinates,
     @Default("") String imageURL,
     Option<File>? imageFile,
+    Name? title,
   }) = _Objective;
 
   factory Objective.empty() => Objective(

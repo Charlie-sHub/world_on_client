@@ -52,9 +52,7 @@ class MapTabView extends StatelessWidget {
   Marker _mapObjectiveToMarker(Objective objective, BuildContext context) =>
       Marker(
         icon: context.read<BitmapDescriptor>(),
-        markerId: MarkerId(
-          objective.id.toString(),
-        ),
+        markerId: MarkerId(objective.id.toString()),
         position: LatLng(
           objective.coordinates.latitude.getOrCrash(),
           objective.coordinates.longitude.getOrCrash(),

@@ -6,17 +6,20 @@ import 'package:worldon/generated/l10n.dart';
 import 'package:worldon/views/core/misc/functions/open_picture_select_dialog.dart';
 import 'package:worldon/views/experience_management/widgets/objective_creation_card/objective_coordinates_picker.dart';
 import 'package:worldon/views/experience_management/widgets/objective_creation_card/objective_description_text_field.dart';
+import 'package:worldon/views/experience_management/widgets/objective_creation_card/objective_title_form_field.dart';
 import 'package:worldon/views/experience_management/widgets/objective_creation_card/submit_objective_button.dart';
 
 class ObjectiveCreationForm extends StatelessWidget {
-  final TextEditingController textEditingController;
-  final GlobalKey<State<StatefulWidget>> showKey;
-
   const ObjectiveCreationForm({
-    Key? key,
-    required this.textEditingController,
+    required this.descriptionTextController,
+    required this.titleTextController,
     required this.showKey,
+    Key? key,
   }) : super(key: key);
+
+  final TextEditingController descriptionTextController;
+  final TextEditingController titleTextController;
+  final GlobalKey<State<StatefulWidget>> showKey;
 
   @override
   Widget build(BuildContext context) {
@@ -31,8 +34,12 @@ class ObjectiveCreationForm extends StatelessWidget {
             : AutovalidateMode.disabled,
         child: Column(
           children: <Widget>[
+            ObjectiveTitleFormField(
+              textController: titleTextController,
+            ),
+            const SizedBox(height: 5),
             ObjectiveDescriptionTextField(
-              textController: textEditingController,
+              textController: descriptionTextController,
             ),
             Column(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,

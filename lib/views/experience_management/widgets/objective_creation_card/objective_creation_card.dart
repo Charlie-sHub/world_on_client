@@ -23,7 +23,8 @@ class ObjectiveCreationCard extends HookWidget {
 
   @override
   Widget build(BuildContext context) {
-    final _textEditingController = useTextEditingController();
+    final _descriptionTextController = useTextEditingController();
+    final _titleTextController = useTextEditingController();
     return BlocProvider(
       create: (context) => getIt<ObjectivesCreationBloc>()
         ..add(
@@ -39,13 +40,12 @@ class ObjectiveCreationCard extends HookWidget {
                   ),
                 ),
         builder: (context, state) {
-          final _experienceFormState =
-              context.read<ExperienceManagementFormBloc>().state;
+          final _formState = context.read<ExperienceManagementFormBloc>().state;
           return Column(
             mainAxisSize: MainAxisSize.min,
             children: <Widget>[
               Text(
-                _experienceFormState.isEditing
+                _formState.isEditing
                     ? S.of(context).editObjectives
                     : S.of(context).objectiveCreationCardTitle,
                 textAlign: TextAlign.center,
@@ -67,17 +67,19 @@ class ObjectiveCreationCard extends HookWidget {
                     listener: (context, state) => _objectiveFormListener(
                       context,
                       state,
-                      _textEditingController,
+                      _descriptionTextController,
+                      _titleTextController,
                     ),
                     builder: (context, state) => ObjectiveCreationForm(
-                      textEditingController: _textEditingController,
+                      descriptionTextController: _descriptionTextController,
+                      titleTextController: _titleTextController,
                       showKey: objectivesShowKey,
                     ),
                   ),
                 ),
               ),
-              if (_experienceFormState.showErrorMessages &&
-                  !_experienceFormState.experience.objectives.isValid())
+              if (_formState.showErrorMessages &&
+                  !_formState.experience.objectives.isValid())
                 Text(
                   S.of(context).noObjectivesErrorMessage,
                   textAlign: TextAlign.center,
@@ -99,10 +101,12 @@ class ObjectiveCreationCard extends HookWidget {
   void _objectiveFormListener(
     BuildContext context,
     ObjectiveFormState state,
-    TextEditingController _textEditingController,
+    TextEditingController _descriptionTextController,
+    TextEditingController _titleTextController,
   ) {
     if (state.isSubmitting) {
-      _textEditingController.clear();
+      _descriptionTextController.clear();
+      _titleTextController.clear();
       context.read<ObjectivesCreationBloc>().add(
             ObjectivesCreationEvent.addedObjective(state.objective),
           );

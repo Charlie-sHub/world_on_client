@@ -12,6 +12,7 @@ import 'package:worldon/domain/core/use_case/use_case.dart';
 import 'package:worldon/domain/core/validation/objects/entity_description.dart';
 import 'package:worldon/domain/core/validation/objects/latitude.dart';
 import 'package:worldon/domain/core/validation/objects/longitude.dart';
+import 'package:worldon/domain/core/validation/objects/name.dart';
 import 'package:worldon/injection.dart';
 
 part 'objective_form_bloc.freezed.dart';
@@ -23,6 +24,7 @@ class ObjectiveFormBloc extends Bloc<ObjectiveFormEvent, ObjectiveFormState> {
   ObjectiveFormBloc() : super(ObjectiveFormState.initial()) {
     on<_Initialized>(_onInitialized);
     on<_DescriptionChanged>(_onDescriptionChanged);
+    on<_TitleChanged>(_onTitleChanged);
     on<_CoordinatesChanged>(_onCoordinatesChanged);
     on<_ImageChanged>(_onImageChanged);
     on<_Submitted>(_onSubmitted);
@@ -89,6 +91,16 @@ class ObjectiveFormBloc extends Bloc<ObjectiveFormEvent, ObjectiveFormState> {
       state.copyWith(
         objective: state.objective.copyWith(
           description: EntityDescription(event.description),
+        ),
+      ),
+    );
+  }
+
+  void _onTitleChanged(_TitleChanged event, Emitter emit) {
+    emit(
+      state.copyWith(
+        objective: state.objective.copyWith(
+          title: Name(event.title),
         ),
       ),
     );
