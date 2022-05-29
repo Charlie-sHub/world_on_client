@@ -81,8 +81,10 @@ class ObjectivesTrackerBloc
           objectivesToDo: event.objectiveList.getOrCrash().toList(),
           experienceId: event.experienceId,
         ),
-        (_objectiveSet) => ObjectivesTrackerState.initial().copyWith(
-          objectivesToDo: _objectiveSet.getOrCrash().toList(),
+        (_objectiveList) => ObjectivesTrackerState.initial().copyWith(
+          objectivesToDo: _objectiveList.isNotEmpty
+              ? _objectiveList.getOrCrash().toList()
+              : event.objectiveList.getOrCrash().toList(),
           experienceId: event.experienceId,
         ),
       ),

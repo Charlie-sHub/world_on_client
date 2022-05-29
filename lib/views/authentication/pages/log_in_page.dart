@@ -13,30 +13,33 @@ import 'package:worldon/views/core/routes/router.gr.dart';
 
 class LogInPage extends StatelessWidget {
   @override
-  Widget build(BuildContext context) => SafeArea(
-        child: Scaffold(
-          body: BlocProvider(
-            create: (context) => getIt<LogInFormBloc>(),
-            child: BlocConsumer<LogInFormBloc, LogInFormState>(
-              listenWhen: (previous, current) =>
-                  previous.failureOrSuccessOption !=
-                      current.failureOrSuccessOption ||
-                  current.thirdPartyUserOption.isSome(),
-              listener: (context, state) => state.thirdPartyUserOption.fold(
-                () => state.failureOrSuccessOption.fold(
-                  () {},
-                  (either) => either.fold(
-                    (failure) => _onFailure(failure, context),
-                    (_) => _onSuccess(context),
+  Widget build(BuildContext context) => GestureDetector(
+        onTap: () => FocusManager.instance.primaryFocus?.unfocus(),
+        child: SafeArea(
+          child: Scaffold(
+            body: BlocProvider(
+              create: (context) => getIt<LogInFormBloc>(),
+              child: BlocConsumer<LogInFormBloc, LogInFormState>(
+                listenWhen: (previous, current) =>
+                    previous.failureOrSuccessOption !=
+                        current.failureOrSuccessOption ||
+                    current.thirdPartyUserOption.isSome(),
+                listener: (context, state) => state.thirdPartyUserOption.fold(
+                  () => state.failureOrSuccessOption.fold(
+                    () {},
+                    (either) => either.fold(
+                      (failure) => _onFailure(failure, context),
+                      (_) => _onSuccess(context),
+                    ),
+                  ),
+                  (_thirdPartyUser) => context.router.push(
+                    RegistrationPageRoute(userOption: some(_thirdPartyUser)),
                   ),
                 ),
-                (_thirdPartyUser) => context.router.push(
-                  RegistrationPageRoute(userOption: some(_thirdPartyUser)),
-                ),
+                buildWhen: (previous, current) =>
+                    previous.showErrorMessages != current.showErrorMessages,
+                builder: (context, state) => LogInForm(),
               ),
-              buildWhen: (previous, current) =>
-                  previous.showErrorMessages != current.showErrorMessages,
-              builder: (context, state) => LogInForm(),
             ),
           ),
         ),

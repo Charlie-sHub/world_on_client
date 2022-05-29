@@ -79,14 +79,17 @@ class MainPage extends StatelessWidget {
                   builder: (context) =>
                       BlocListener<MainPageShowCaseBloc, MainPageShowCaseState>(
                     listener: (context, state) => state.maybeMap(
-                      show: (_) => ShowCaseWidget.of(context)!.startShowCase(
-                        _keys,
-                      ),
+                      show: (_) =>
+                          ShowCaseWidget.of(context)!.startShowCase(_keys),
                       orElse: () => null,
                     ),
-                    child: MainPageScaffold(
-                      createExperienceShowKey: _experienceCreationButtonKey,
-                      userLevelShowKey: _userLevelKey,
+                    child: GestureDetector(
+                      onTap: () =>
+                          FocusManager.instance.primaryFocus?.unfocus(),
+                      child: MainPageScaffold(
+                        createExperienceShowKey: _experienceCreationButtonKey,
+                        userLevelShowKey: _userLevelKey,
+                      ),
                     ),
                   ),
                 ),

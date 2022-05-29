@@ -33,99 +33,103 @@ class ExperienceManagementPage extends StatelessWidget {
       _objectiveFormKey,
       _tagCreationKey,
     ];
-    return SafeArea(
-      child: BlocProvider(
-        create: (context) => getIt<ExperienceManagementShowCaseBloc>(),
-        child: ShowCaseWidget(
-          onStart: (_, key) => _onShowCaseStart(
-            key,
-            _difficultyKey,
-            _scrollController,
-            _mapKey,
-            _objectiveFormKey,
-            _tagCreationKey,
-          ),
-          onFinish: () {
-            // For some reason the bloc can't be found when adding this event
-            // It's not really necessary though
-            /*
-            context.read<ExperienceManagementShowCaseBloc>().add(
-                  const ExperienceManagementShowCaseEvent.finished(),
-                );
-             */
-            _scrollController.jumpTo(0);
-          },
-          builder: Builder(
-            builder: (context) => BlocListener<ExperienceManagementShowCaseBloc,
-                ExperienceManagementShowCaseState>(
-              listener: (context, state) => state.maybeMap(
-                show: (_) => ShowCaseWidget.of(context)!.startShowCase(_keys),
-                orElse: () => null,
-              ),
-              child: Scaffold(
-                body: NestedScrollView(
-                  dragStartBehavior: DragStartBehavior.down,
-                  clipBehavior: Clip.antiAlias,
-                  floatHeaderSlivers: true,
-                  headerSliverBuilder: (context, innerBoxIsScrolled) => [
-                    SliverAppBar(
-                      expandedHeight: kToolbarHeight - 15,
-                      elevation: 10,
-                      centerTitle: true,
-                      actions: [
-                        IconButton(
-                          padding: EdgeInsets.zero,
-                          icon: const Icon(
-                            Icons.help,
-                            size: 25,
-                            // color: WorldOnColors.accent,
+    return GestureDetector(
+      onTap: () => FocusManager.instance.primaryFocus?.unfocus(),
+      child: SafeArea(
+        child: BlocProvider(
+          create: (context) => getIt<ExperienceManagementShowCaseBloc>(),
+          child: ShowCaseWidget(
+            onStart: (_, key) => _onShowCaseStart(
+              key,
+              _difficultyKey,
+              _scrollController,
+              _mapKey,
+              _objectiveFormKey,
+              _tagCreationKey,
+            ),
+            onFinish: () {
+              // For some reason the bloc can't be found when adding this event
+              // It's not really necessary though
+              /*
+              context.read<ExperienceManagementShowCaseBloc>().add(
+                    const ExperienceManagementShowCaseEvent.finished(),
+                  );
+               */
+              _scrollController.jumpTo(0);
+            },
+            builder: Builder(
+              builder: (context) => BlocListener<
+                  ExperienceManagementShowCaseBloc,
+                  ExperienceManagementShowCaseState>(
+                listener: (context, state) => state.maybeMap(
+                  show: (_) => ShowCaseWidget.of(context)!.startShowCase(_keys),
+                  orElse: () => null,
+                ),
+                child: Scaffold(
+                  body: NestedScrollView(
+                    dragStartBehavior: DragStartBehavior.down,
+                    clipBehavior: Clip.antiAlias,
+                    floatHeaderSlivers: true,
+                    headerSliverBuilder: (context, innerBoxIsScrolled) => [
+                      SliverAppBar(
+                        expandedHeight: kToolbarHeight - 15,
+                        elevation: 10,
+                        centerTitle: true,
+                        actions: [
+                          IconButton(
+                            padding: EdgeInsets.zero,
+                            icon: const Icon(
+                              Icons.help,
+                              size: 25,
+                              // color: WorldOnColors.accent,
+                            ),
+                            onPressed: () => context
+                                .read<ExperienceManagementShowCaseBloc>()
+                                .add(
+                                  const ExperienceManagementShowCaseEvent
+                                      .helpButtonPressed(),
+                                ),
                           ),
-                          onPressed: () => context
-                              .read<ExperienceManagementShowCaseBloc>()
-                              .add(
-                                const ExperienceManagementShowCaseEvent
-                                    .helpButtonPressed(),
-                              ),
-                        ),
-                      ],
-                      flexibleSpace: FlexibleSpaceBar(
-                        title: Text(
-                          experienceOption.fold(
-                            () => S.of(context).experienceCreationTitle,
-                            (a) => S.of(context).experienceEditingTitle,
+                        ],
+                        flexibleSpace: FlexibleSpaceBar(
+                          title: Text(
+                            experienceOption.fold(
+                              () => S.of(context).experienceCreationTitle,
+                              (a) => S.of(context).experienceEditingTitle,
+                            ),
+                            textAlign: TextAlign.center,
+                            style: const TextStyle(
+                              fontWeight: FontWeight.w800,
+                              color: WorldOnColors.primary,
+                              fontSize: 18,
+                            ),
                           ),
-                          textAlign: TextAlign.center,
-                          style: const TextStyle(
-                            fontWeight: FontWeight.w800,
-                            color: WorldOnColors.primary,
-                            fontSize: 18,
-                          ),
-                        ),
-                      ),
-                    ),
-                  ],
-                  body: BlocProvider(
-                    create: (context) => getIt<ExperienceManagementFormBloc>()
-                      ..add(
-                        ExperienceManagementFormEvent.initialized(
-                          experienceOption,
                         ),
                       ),
-                    child: experienceOption.fold(
-                      () => ExperienceCreationForm(
-                        difficultyShowKey: _difficultyKey,
-                        mapShowKey: _mapKey,
-                        objectivesShowKey: _objectiveFormKey,
-                        tagCreationShowKey: _tagCreationKey,
-                        scrollController: _scrollController,
-                      ),
-                      (_experience) => ExperienceEditingForm(
-                        experience: _experience,
-                        difficultyShowKey: _difficultyKey,
-                        mapShowKey: _mapKey,
-                        objectivesShowKey: _objectiveFormKey,
-                        tagCreationShowKey: _tagCreationKey,
-                        scrollController: _scrollController,
+                    ],
+                    body: BlocProvider(
+                      create: (context) => getIt<ExperienceManagementFormBloc>()
+                        ..add(
+                          ExperienceManagementFormEvent.initialized(
+                            experienceOption,
+                          ),
+                        ),
+                      child: experienceOption.fold(
+                        () => ExperienceCreationForm(
+                          difficultyShowKey: _difficultyKey,
+                          mapShowKey: _mapKey,
+                          objectivesShowKey: _objectiveFormKey,
+                          tagCreationShowKey: _tagCreationKey,
+                          scrollController: _scrollController,
+                        ),
+                        (_experience) => ExperienceEditingForm(
+                          experience: _experience,
+                          difficultyShowKey: _difficultyKey,
+                          mapShowKey: _mapKey,
+                          objectivesShowKey: _objectiveFormKey,
+                          tagCreationShowKey: _tagCreationKey,
+                          scrollController: _scrollController,
+                        ),
                       ),
                     ),
                   ),

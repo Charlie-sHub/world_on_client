@@ -22,22 +22,22 @@ import 'package:worldon/views/experience_management/widgets/tag_addition_creatio
 import 'package:worldon/views/experience_management/widgets/title_form_field.dart';
 
 class ExperienceEditingForm extends StatelessWidget {
-  final Experience experience;
-  final GlobalKey<State<StatefulWidget>> difficultyShowKey;
-  final GlobalKey<State<StatefulWidget>> mapShowKey;
-  final GlobalKey<State<StatefulWidget>> objectivesShowKey;
-  final GlobalKey<State<StatefulWidget>> tagCreationShowKey;
-  final ScrollController scrollController;
-
   const ExperienceEditingForm({
-    Key? key,
     required this.experience,
     required this.difficultyShowKey,
     required this.mapShowKey,
     required this.objectivesShowKey,
     required this.tagCreationShowKey,
     required this.scrollController,
+    Key? key,
   }) : super(key: key);
+
+  final Experience experience;
+  final GlobalKey<State<StatefulWidget>> difficultyShowKey;
+  final GlobalKey<State<StatefulWidget>> mapShowKey;
+  final GlobalKey<State<StatefulWidget>> objectivesShowKey;
+  final GlobalKey<State<StatefulWidget>> tagCreationShowKey;
+  final ScrollController scrollController;
 
   @override
   Widget build(BuildContext context) =>

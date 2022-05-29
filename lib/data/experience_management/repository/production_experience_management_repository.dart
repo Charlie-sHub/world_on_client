@@ -96,8 +96,8 @@ class ProductionExperienceManagementRepository
         _urlsSet,
       );
       // Adding the original rewards and objectives
-      _rewardSet.addAll(experience.rewards.getOrCrash().dart);
-      _objectiveList.addAll(experience.objectives.getOrCrash().dart);
+      // _rewardSet.addAll(experience.rewards.getOrCrash().dart);
+      // _objectiveList.addAll(experience.objectives.getOrCrash().dart);
       final _experienceDto = ExperienceDto.fromDomain(
         experience.copyWith(
           rewards: RewardSet(_rewardSet.toImmutableSet()),
@@ -208,6 +208,7 @@ class ProductionExperienceManagementRepository
       );
     }
     for (final _objective in experience.objectives.getOrCrash().dart) {
+      Objective _objectiveToAdd = _objective;
       if (_objective.imageFile != null) {
         await _objective.imageFile!.fold(
           () => null,
@@ -217,13 +218,13 @@ class ProductionExperienceManagementRepository
               folder: StorageFolder.experiences,
               name: _objective.id.getOrCrash(),
             );
-            final _objectiveWithImage = _objective.copyWith(
+            _objectiveToAdd = _objective.copyWith(
               imageURL: _imageURL,
             );
-            objectiveList.add(_objectiveWithImage);
           },
         );
       }
+      objectiveList.add(_objectiveToAdd);
     }
   }
 

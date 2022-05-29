@@ -15,7 +15,7 @@ class ObjectiveCard extends StatelessWidget {
   }) : super(key: key);
 
   final Objective objective;
-  static const double _imageSize = 150;
+  static const double _imageSize = 130;
 
   @override
   Widget build(BuildContext context) => SizedBox(
@@ -58,16 +58,33 @@ class ObjectiveCard extends StatelessWidget {
                 padding: const EdgeInsets.all(8),
                 child: SizedBox(
                   height: _imageSize,
-                  width: 110,
-                  child: AutoSizeText(
-                    objective.description.getOrCrash(),
-                    overflow: TextOverflow.fade,
-                    minFontSize: 8,
-                    maxFontSize: 15,
-                    maxLines: 20,
-                    style: const TextStyle(
-                      fontSize: 12,
-                    ),
+                  child: Column(
+                    children: [
+                      if (objective.title != null) ...[
+                        AutoSizeText(
+                          objective.title!.getOrCrash(),
+                          overflow: TextOverflow.fade,
+                          minFontSize: 10,
+                          maxFontSize: 16,
+                          maxLines: 2,
+                          style: const TextStyle(
+                            fontSize: 14,
+                            fontWeight: FontWeight.w600,
+                          ),
+                        ),
+                        const SizedBox(height: 5),
+                      ],
+                      AutoSizeText(
+                        objective.description.getOrCrash(),
+                        overflow: TextOverflow.fade,
+                        minFontSize: 8,
+                        maxFontSize: 14,
+                        maxLines: 20,
+                        style: const TextStyle(
+                          fontSize: 11,
+                        ),
+                      ),
+                    ],
                   ),
                 ),
               ),

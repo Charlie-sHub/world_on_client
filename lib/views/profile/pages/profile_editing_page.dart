@@ -21,53 +21,57 @@ class ProfileEditingPage extends StatelessWidget {
   }) : super(key: key);
 
   @override
-  Widget build(BuildContext context) => Scaffold(
-        appBar: PreferredSize(
-          preferredSize: const Size.fromHeight(kToolbarHeight - 15),
-          child: AppBar(
-            elevation: 0,
-            centerTitle: true,
-            title: Text(
-              S.of(context).editingProfileTitle,
-              style: const TextStyle(
-                fontWeight: FontWeight.bold,
-                fontSize: 25,
-                color: WorldOnColors.accent,
+  Widget build(BuildContext context) => GestureDetector(
+        onTap: () => FocusManager.instance.primaryFocus?.unfocus(),
+        child: Scaffold(
+          appBar: PreferredSize(
+            preferredSize: const Size.fromHeight(kToolbarHeight - 15),
+            child: AppBar(
+              elevation: 0,
+              centerTitle: true,
+              title: Text(
+                S.of(context).editingProfileTitle,
+                style: const TextStyle(
+                  fontWeight: FontWeight.bold,
+                  fontSize: 25,
+                  color: WorldOnColors.accent,
+                ),
+                textAlign: TextAlign.center,
               ),
-              textAlign: TextAlign.center,
             ),
           ),
-        ),
-        body: BlocProvider(
-          create: (context) => getIt<ProfileEditingFormBloc>()
-            ..add(
-              ProfileEditingFormEvent.initialized(user),
-            ),
-          child: user.failureOption.fold(
-            () => BlocConsumer<ProfileEditingFormBloc, ProfileEditingFormState>(
-              listenWhen: (previous, current) =>
-                  previous.failureOrSuccessOption !=
-                  current.failureOrSuccessOption,
-              listener: (context, state) => state.failureOrSuccessOption.fold(
-                () {},
-                (either) => either.fold(
-                  (failure) => _onFailure(failure, context),
-                  (_) => _onSuccess(context),
-                ),
+          body: BlocProvider(
+            create: (context) => getIt<ProfileEditingFormBloc>()
+              ..add(
+                ProfileEditingFormEvent.initialized(user),
               ),
-              // For some reason the form doesn't properly initialize when going to the form directly
-              // instead of folding the failure option of the state's user
-              // So the initial values of the form are all value failures due to the empty user of the first state
-              // Sending the user and using its values solves the problems
-              // but it has the potential of leading to more errors in the future
-              // as the user here is not technically the one in the state
-              // It shouldn't be a problem for now, but still.
-              builder: (context, state) => ProfileEditingForm(user: user),
-            ),
-            (valueFailure) => InkWell(
-              onTap: () async => context.router.pop(),
-              child: CriticalErrorDisplay(
-                failure: Failure.value(valueFailure),
+            child: user.failureOption.fold(
+              () =>
+                  BlocConsumer<ProfileEditingFormBloc, ProfileEditingFormState>(
+                listenWhen: (previous, current) =>
+                    previous.failureOrSuccessOption !=
+                    current.failureOrSuccessOption,
+                listener: (context, state) => state.failureOrSuccessOption.fold(
+                  () {},
+                  (either) => either.fold(
+                    (failure) => _onFailure(failure, context),
+                    (_) => _onSuccess(context),
+                  ),
+                ),
+                // For some reason the form doesn't properly initialize when going to the form directly
+                // instead of folding the failure option of the state's user
+                // So the initial values of the form are all value failures due to the empty user of the first state
+                // Sending the user and using its values solves the problems
+                // but it has the potential of leading to more errors in the future
+                // as the user here is not technically the one in the state
+                // It shouldn't be a problem for now, but still.
+                builder: (context, state) => ProfileEditingForm(user: user),
+              ),
+              (valueFailure) => InkWell(
+                onTap: () async => context.router.pop(),
+                child: CriticalErrorDisplay(
+                  failure: Failure.value(valueFailure),
+                ),
               ),
             ),
           ),

@@ -7,7 +7,6 @@ import 'package:worldon/application/experience_navigation/recommended_experience
 import 'package:worldon/core/error/failure.dart';
 import 'package:worldon/data/core/failures/core_data_failure.dart';
 import 'package:worldon/generated/l10n.dart';
-import 'package:worldon/injection.dart';
 import 'package:worldon/views/core/widgets/error/error_display.dart';
 import 'package:worldon/views/core/widgets/misc/world_on_progress_indicator.dart';
 import 'package:worldon/views/experience_navigation/widgets/recommendations/adventure_map.dart';
@@ -19,62 +18,54 @@ class NoExperienceView extends StatelessWidget {
   }) : super(key: key);
 
   @override
-  Widget build(BuildContext context) =>
-      BlocProvider<RecommendedExperiencesWatcherBloc>(
-        create: (context) => getIt<RecommendedExperiencesWatcherBloc>()
-          ..add(
-            const RecommendedExperiencesWatcherEvent
-                .watchRecommendedExperiencesStarted(),
+  Widget build(BuildContext context) => Center(
+        child: BlocConsumer<LocationPermissionBloc, LocationPermissionState>(
+          listener: (context, state) => state.maybeMap(
+            granted: (value) {
+              context.read<RecommendedExperiencesWatcherBloc>().add(
+                    const RecommendedExperiencesWatcherEvent
+                        .watchRecommendedExperiencesStarted(),
+                  );
+              context.read<AdventureMapControllerBloc>().add(
+                    const AdventureMapControllerEvent.initialized(),
+                  );
+              return;
+            },
+            orElse: () => null,
           ),
-        child: Center(
-          child: BlocConsumer<LocationPermissionBloc, LocationPermissionState>(
-            listener: (context, state) => state.maybeMap(
-              granted: (value) {
-                context.read<RecommendedExperiencesWatcherBloc>().add(
-                      const RecommendedExperiencesWatcherEvent
-                          .watchRecommendedExperiencesStarted(),
-                    );
-                context.read<AdventureMapControllerBloc>().add(
-                      const AdventureMapControllerEvent.initialized(),
-                    );
-                return;
-              },
-              orElse: () => null,
+          builder: (context, state) => state.map(
+            initial: (value) => const WorldOnProgressIndicator(
+              size: 50,
             ),
-            builder: (context, state) => state.map(
-              initial: (value) => const WorldOnProgressIndicator(
-                size: 50,
-              ),
-              granted: (_) => Column(
-                children: [
-                  const Expanded(
-                    child: AdventureMap(),
-                  ),
-                  const SizedBox(height: 10),
-                  Text(
-                    S.of(context).experienceNavigationNoneChosenDescription,
-                    style: const TextStyle(
-                      fontSize: 11,
-                      fontWeight: FontWeight.w400,
-                      color: Colors.grey,
-                    ),
-                    textAlign: TextAlign.center,
-                  ),
-                  const RecommendedExperiencesBottomBar(),
-                  const SizedBox(height: kBottomNavigationBarHeight - 15),
-                ],
-              ),
-              denied: (_) => ErrorDisplay(
-                // TODO: Refactor this part so the UI is not creating an error just to display the error display
-                failure: const Failure.coreData(
-                  CoreDataFailure.geoLocationError(errorString: ""),
+            granted: (_) => Column(
+              children: [
+                const Expanded(
+                  child: AdventureMap(),
                 ),
-                retryFunction: () => context.read<LocationPermissionBloc>().add(
-                      const LocationPermissionEvent.initialized(),
-                    ),
-                specificMessage: some(
-                  S.of(context).locationPermission,
+                const SizedBox(height: 10),
+                Text(
+                  S.of(context).experienceNavigationNoneChosenDescription,
+                  style: const TextStyle(
+                    fontSize: 11,
+                    fontWeight: FontWeight.w400,
+                    color: Colors.grey,
+                  ),
+                  textAlign: TextAlign.center,
                 ),
+                const RecommendedExperiencesBottomBar(),
+                const SizedBox(height: kBottomNavigationBarHeight - 15),
+              ],
+            ),
+            denied: (_) => ErrorDisplay(
+              // TODO: Refactor this part so the UI is not creating an error just to display the error display
+              failure: const Failure.coreData(
+                CoreDataFailure.geoLocationError(errorString: ""),
+              ),
+              retryFunction: () => context.read<LocationPermissionBloc>().add(
+                    const LocationPermissionEvent.initialized(),
+                  ),
+              specificMessage: some(
+                S.of(context).locationPermission,
               ),
             ),
           ),

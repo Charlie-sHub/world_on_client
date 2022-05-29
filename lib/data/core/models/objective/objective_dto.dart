@@ -3,6 +3,7 @@ import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:worldon/data/core/models/coordinates/coordinates_dto.dart';
 import 'package:worldon/domain/core/entities/objective/objective.dart';
 import 'package:worldon/domain/core/validation/objects/entity_description.dart';
+import 'package:worldon/domain/core/validation/objects/name.dart';
 import 'package:worldon/domain/core/validation/objects/unique_id.dart';
 
 part 'objective_dto.freezed.dart';
@@ -17,6 +18,7 @@ class ObjectiveDto with _$ObjectiveDto {
     required String description,
     required CoordinatesDto coordinates,
     required String imageURL,
+    String? title,
   }) = _ObjectiveDto;
 
   factory ObjectiveDto.fromDomain(Objective objective) => ObjectiveDto(
@@ -24,11 +26,13 @@ class ObjectiveDto with _$ObjectiveDto {
         description: objective.description.getOrCrash(),
         coordinates: CoordinatesDto.fromDomain(objective.coordinates),
         imageURL: objective.imageURL,
+        title: objective.title?.getOrCrash(),
       );
 
   Objective toDomain() => Objective(
         id: UniqueId.fromUniqueString(id),
         description: EntityDescription(description),
+        title: title != null ? Name(title!) : null,
         coordinates: coordinates.toDomain(),
         imageURL: imageURL,
         imageFile: dartz.none(),

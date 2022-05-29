@@ -5,6 +5,7 @@ import 'package:worldon/application/comments/comment_watcher/comment_watcher_blo
 import 'package:worldon/application/experience_navigation/adventure_map_controller/adventure_map_controller_bloc.dart';
 import 'package:worldon/application/experience_navigation/experience_navigation_watcher/experience_navigation_watcher_bloc.dart';
 import 'package:worldon/application/experience_navigation/location_permission/location_permission_bloc.dart';
+import 'package:worldon/application/experience_navigation/recommended_experiences_watcher/recommended_experiences_watcher_bloc.dart';
 import 'package:worldon/application/navigation/navigation_actor/navigation_actor_bloc.dart';
 import 'package:worldon/domain/core/entities/experience/experience.dart';
 import 'package:worldon/injection.dart';
@@ -42,6 +43,13 @@ class ExperienceNavigationBody extends StatelessWidget {
             create: (context) => getIt<AdventureMapControllerBloc>()
               ..add(
                 const AdventureMapControllerEvent.initialized(),
+              ),
+          ),
+          BlocProvider<RecommendedExperiencesWatcherBloc>(
+            create: (context) => getIt<RecommendedExperiencesWatcherBloc>()
+              ..add(
+                const RecommendedExperiencesWatcherEvent
+                    .watchRecommendedExperiencesStarted(),
               ),
           ),
         ],
