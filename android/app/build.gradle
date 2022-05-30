@@ -33,7 +33,7 @@ if (keystorePropertiesFile.exists()) {
 }
 
 android {
-    compileSdkVersion 31
+    compileSdkVersion 32
 
     sourceSets {
         main.java.srcDirs += 'src/main/kotlin'
@@ -46,7 +46,7 @@ android {
     defaultConfig {
         applicationId "com.worldon_app.worldon"
         minSdkVersion 24
-        targetSdkVersion 31
+        targetSdkVersion 32
         versionCode flutterVersionCode.toInteger()
         versionName flutterVersionName
     }
@@ -73,5 +73,5 @@ flutter {
 
 dependencies {
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
-    implementation 'com.google.firebase:firebase-analytics'
+    implementation 'com.google.firebase:firebase-analytics:21.0.0'
 }

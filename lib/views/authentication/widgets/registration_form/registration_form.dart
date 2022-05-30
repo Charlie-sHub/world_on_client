@@ -118,10 +118,10 @@ class RegistrationForm extends StatelessWidget {
               ),
               const SizedBox(height: 5),
               TagAdditionCreationCard(
-                tagChangeFunction: (KtSet<Tag> tags) =>
-                    context.read<RegistrationFormBloc>().add(
-                          RegistrationFormEvent.interestsChanged(tags),
-                        ),
+                tagChangeFunction: (KtSet<Tag> tags) => _onTagChanges(
+                  context,
+                  tags,
+                ),
                 tagsEitherOption: none(),
                 showErrorMessage: false,
               ),
@@ -133,6 +133,11 @@ class RegistrationForm extends StatelessWidget {
       ),
     );
   }
+
+  void _onTagChanges(BuildContext context, KtSet<Tag> tags) =>
+      context.read<RegistrationFormBloc>().add(
+            RegistrationFormEvent.interestsChanged(tags),
+          );
 
   String? _passwordValidator(BuildContext context) =>
       context.read<RegistrationFormBloc>().state.user.password.value.fold(

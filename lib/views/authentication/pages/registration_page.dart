@@ -14,8 +14,8 @@ import 'package:worldon/views/core/routes/router.gr.dart';
 
 class RegistrationPage extends StatelessWidget {
   const RegistrationPage({
-    Key? key,
     required this.userOption,
+    Key? key,
   }) : super(key: key);
 
   final Option<User> userOption;
@@ -25,10 +25,12 @@ class RegistrationPage extends StatelessWidget {
         onTap: () => FocusManager.instance.primaryFocus?.unfocus(),
         child: SafeArea(
           child: Scaffold(
-            body: BlocProvider(
-              create: (context) => getIt<RegistrationFormBloc>()
+            body: BlocProvider.value(
+              value: getIt<RegistrationFormBloc>()
                 ..add(
-                  RegistrationFormEvent.initialized(userOption),
+                  RegistrationFormEvent.initialized(
+                    userOption,
+                  ),
                 ),
               child: BlocConsumer<RegistrationFormBloc, RegistrationFormState>(
                 listenWhen: (previous, current) =>

@@ -23,7 +23,7 @@ part 'registration_form_bloc.freezed.dart';
 part 'registration_form_event.dart';
 part 'registration_form_state.dart';
 
-@lazySingleton
+@injectable
 class RegistrationFormBloc
     extends Bloc<RegistrationFormEvent, RegistrationFormState> {
   RegistrationFormBloc() : super(RegistrationFormState.initial()) {
@@ -49,31 +49,56 @@ class RegistrationFormBloc
       );
 
   FutureOr<void> _onSubmitted(_, Emitter emit) async {
-    Either<Failure, Unit>? _failureOrUnit;
-    emit(
-      state.copyWith(
-        isSubmitting: true,
-        failureOrSuccessOption: none(),
-      ),
-    );
-    final _hasImage =
-        state.user.imageFileOption.isSome() || state.user.imageURL.isNotEmpty;
-    final _canRegister = state.user.isValid &&
-        state.passwordConfirmator.isValid() &&
-        state.acceptedEULA &&
-        _hasImage;
-    if (_canRegister) {
-      _failureOrUnit = await getIt<Register>()(
-        Params(
-          user: state.user,
+    try {
+      Either<Failure, Unit>? _failureOrUnit;
+      emit(
+        state.copyWith(
+          isSubmitting: true,
+          failureOrSuccessOption: none(),
         ),
       );
-    } else {
+      final _hasImage =
+          state.user.imageFileOption.isSome() || state.user.imageURL.isNotEmpty;
+      final _canRegister = state.user.isValid &&
+          state.passwordConfirmator.isValid() &&
+          state.acceptedEULA &&
+          _hasImage;
+      if (_canRegister) {
+        _failureOrUnit = await getIt<Register>()(
+          Params(
+            user: state.user,
+          ),
+        );
+      } else {
+        emit(
+          state.copyWith(
+            isSubmitting: false,
+            showErrorMessages: true,
+            failureOrSuccessOption: some(
+              left(
+                const Failure.coreApplication(
+                  CoreApplicationFailure.emptyFields(),
+                ),
+              ),
+            ),
+          ),
+        );
+      }
       emit(
         state.copyWith(
           isSubmitting: false,
           showErrorMessages: true,
-          failureOrSuccessOption: some(
+          failureOrSuccessOption: optionOf(_failureOrUnit),
+        ),
+      );
+    } catch (error) {
+      // TODO: Figure out the error when trying to submit after only entering some tags
+      // For some reason checking the validity of the user throws a type exception
+      emit(
+        state.copyWith(
+          isSubmitting: false,
+          showErrorMessages: true,
+          failureOrSuccessOption: optionOf(
             left(
               const Failure.coreApplication(
                 CoreApplicationFailure.emptyFields(),
@@ -83,20 +108,17 @@ class RegistrationFormBloc
         ),
       );
     }
-    emit(
-      state.copyWith(
-        isSubmitting: false,
-        showErrorMessages: true,
-        failureOrSuccessOption: optionOf(_failureOrUnit),
-      ),
-    );
   }
 
   void _onInterestsChanged(_InterestsChanged event, Emitter emit) => emit(
         state.copyWith(
           user: state.user.copyWith(
-            interestsIds:
-                event.interests.map((_tag) => _tag.id).asList().toSet(),
+            interestsIds: event.interests
+                .map(
+                  (_tag) => _tag.id,
+                )
+                .asList()
+                .toSet(),
           ),
           failureOrSuccessOption: none(),
         ),

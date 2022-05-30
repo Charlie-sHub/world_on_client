@@ -113,36 +113,32 @@ class User with _$User {
       .andThen(username.failureOrUnit)
       .andThen(password.failureOrUnit)
       .andThen(email.failureOrUnit)
-      .andThen(birthday.failureOrUnit)
+      //.andThen(birthday.failureOrUnit)
       .andThen(description.failureOrUnit)
       .andThen(level.failureOrUnit)
       .andThen(experiencePoints.failureOrUnit)
       .andThen(lastLogin.failureOrUnit)
       .andThen(creationDate.failureOrUnit)
       .andThen(modificationDate.failureOrUnit)
-      .fold(
-        some,
-        (_) => none(),
-      );
+      .fold(some, (_) => none());
 
-  Either<ValueFailure<dynamic>, Unit> get failureOrUnit => failureOption.fold(
-        () => right(unit),
-        left,
-      );
+  Either<ValueFailure<dynamic>, Unit> get failureOrUnit =>
+      failureOption.fold(() => right(unit), left);
 
   bool get isValid => failureOption.isNone();
 
   SimpleUser get simplified => SimpleUser.fromUser(this);
 
   double get percentageToNextLevel {
-    final _nextLevelRequirements =
-        experiencePointsRequired(level.getOrCrash() + 1);
-    int _totalToCurrentLevelRequirements = 0;
+    final _nextLevelRequirements = experiencePointsRequired(
+      level.getOrCrash() + 1,
+    );
+    int _totalToCurrentLevel = 0;
     for (int i = 0; i <= level.getOrCrash(); i++) {
-      _totalToCurrentLevelRequirements += experiencePointsRequired(i);
+      _totalToCurrentLevel += experiencePointsRequired(i);
     }
     final _hadToNextLevel =
-        experiencePoints.getOrCrash() - _totalToCurrentLevelRequirements;
+        experiencePoints.getOrCrash() - _totalToCurrentLevel;
     final _result = _hadToNextLevel / _nextLevelRequirements;
     if (_result < 1 && _result >= 0) {
       return _result;

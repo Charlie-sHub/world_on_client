@@ -21,6 +21,13 @@ import 'package:worldon/views/core/widgets/misc/tag_addition_card/tags_found_vie
 import 'package:worldon/views/tag_management/widgets/tag_management_form.dart';
 
 class TagAdditionCreationCard extends HookWidget {
+  const TagAdditionCreationCard({
+    required this.tagsEitherOption,
+    required this.tagChangeFunction,
+    required this.showErrorMessage,
+    Key? key,
+  }) : super(key: key);
+
   /// Option because when creating an [Experience]/[User] no [Tag] set will be sent
   /// Either because there are two ways to initialize the set of [Tag]s
   /// Left for the [Experience]'s [TagSet] and right for the [User]'s set of [UniqueId]s
@@ -29,13 +36,6 @@ class TagAdditionCreationCard extends HookWidget {
   final Option<Either<TagSet, Set<UniqueId>>> tagsEitherOption;
   final Function(KtSet<Tag> tag) tagChangeFunction;
   final bool showErrorMessage;
-
-  const TagAdditionCreationCard({
-    Key? key,
-    required this.tagsEitherOption,
-    required this.tagChangeFunction,
-    required this.showErrorMessage,
-  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
