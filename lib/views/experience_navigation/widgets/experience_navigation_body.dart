@@ -24,29 +24,29 @@ class ExperienceNavigationBody extends StatelessWidget {
   @override
   Widget build(BuildContext context) => MultiBlocProvider(
         providers: [
-          BlocProvider(
-            create: (context) => getIt<ExperienceNavigationWatcherBloc>()
+          BlocProvider.value(
+            value: getIt<ExperienceNavigationWatcherBloc>()
               ..add(
                 ExperienceNavigationWatcherEvent.initialized(none()),
               ),
           ),
-          BlocProvider(
-            create: (context) => getIt<CommentWatcherBloc>(),
+          BlocProvider.value(
+            value: getIt<CommentWatcherBloc>(),
           ),
-          BlocProvider<LocationPermissionBloc>(
-            create: (context) => getIt<LocationPermissionBloc>()
+          BlocProvider.value(
+            value: getIt<LocationPermissionBloc>()
               ..add(
                 const LocationPermissionEvent.initialized(),
               ),
           ),
-          BlocProvider<AdventureMapControllerBloc>(
-            create: (context) => getIt<AdventureMapControllerBloc>()
+          BlocProvider.value(
+            value: getIt<AdventureMapControllerBloc>()
               ..add(
                 const AdventureMapControllerEvent.initialized(),
               ),
           ),
-          BlocProvider<RecommendedExperiencesWatcherBloc>(
-            create: (context) => getIt<RecommendedExperiencesWatcherBloc>()
+          BlocProvider.value(
+            value: getIt<RecommendedExperiencesWatcherBloc>()
               ..add(
                 const RecommendedExperiencesWatcherEvent
                     .watchRecommendedExperiencesStarted(),

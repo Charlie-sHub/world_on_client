@@ -40,14 +40,12 @@ class LogInFormBloc extends Bloc<LogInFormEvent, LogInFormState> {
       _failureOrSuccess.fold(
         (_failure) => state.copyWith(
           isSubmitting: false,
-          failureOrSuccessOption: some(
-            left(_failure),
-          ),
+          failureOrSuccessOption: some(left(_failure)),
         ),
         (_userOption) => state.copyWith(
           isSubmitting: false,
           thirdPartyUserOption: _userOption,
-          failureOrSuccessOption: none(),
+          failureOrSuccessOption: some(right(unit)),
         ),
       ),
     );

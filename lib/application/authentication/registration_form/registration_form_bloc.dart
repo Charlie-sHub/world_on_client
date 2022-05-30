@@ -49,56 +49,29 @@ class RegistrationFormBloc
       );
 
   FutureOr<void> _onSubmitted(_, Emitter emit) async {
-    try {
-      Either<Failure, Unit>? _failureOrUnit;
-      emit(
-        state.copyWith(
-          isSubmitting: true,
-          failureOrSuccessOption: none(),
-        ),
+    Either<Failure, Unit>? _failureOrUnit;
+    emit(
+      state.copyWith(
+        isSubmitting: true,
+        failureOrSuccessOption: none(),
+      ),
+    );
+    final _hasImage =
+        state.user.imageFileOption.isSome() || state.user.imageURL.isNotEmpty;
+    final _canRegister = state.user.isValid &&
+        state.passwordConfirmator.isValid() &&
+        state.acceptedEULA &&
+        _hasImage;
+    if (_canRegister) {
+      _failureOrUnit = await getIt<Register>()(
+        Params(user: state.user),
       );
-      final _hasImage =
-          state.user.imageFileOption.isSome() || state.user.imageURL.isNotEmpty;
-      final _canRegister = state.user.isValid &&
-          state.passwordConfirmator.isValid() &&
-          state.acceptedEULA &&
-          _hasImage;
-      if (_canRegister) {
-        _failureOrUnit = await getIt<Register>()(
-          Params(
-            user: state.user,
-          ),
-        );
-      } else {
-        emit(
-          state.copyWith(
-            isSubmitting: false,
-            showErrorMessages: true,
-            failureOrSuccessOption: some(
-              left(
-                const Failure.coreApplication(
-                  CoreApplicationFailure.emptyFields(),
-                ),
-              ),
-            ),
-          ),
-        );
-      }
+    } else {
       emit(
         state.copyWith(
           isSubmitting: false,
           showErrorMessages: true,
-          failureOrSuccessOption: optionOf(_failureOrUnit),
-        ),
-      );
-    } catch (error) {
-      // TODO: Figure out the error when trying to submit after only entering some tags
-      // For some reason checking the validity of the user throws a type exception
-      emit(
-        state.copyWith(
-          isSubmitting: false,
-          showErrorMessages: true,
-          failureOrSuccessOption: optionOf(
+          failureOrSuccessOption: some(
             left(
               const Failure.coreApplication(
                 CoreApplicationFailure.emptyFields(),
@@ -108,6 +81,13 @@ class RegistrationFormBloc
         ),
       );
     }
+    emit(
+      state.copyWith(
+        isSubmitting: false,
+        showErrorMessages: true,
+        failureOrSuccessOption: optionOf(_failureOrUnit),
+      ),
+    );
   }
 
   void _onInterestsChanged(_InterestsChanged event, Emitter emit) => emit(

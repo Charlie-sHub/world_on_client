@@ -22,7 +22,8 @@ import 'package:worldon/domain/core/validation/objects/unique_id.dart';
 import 'package:worldon/injection.dart';
 
 @LazySingleton(as: AuthenticationRepositoryInterface, env: [Environment.prod])
-class ProductionAuthenticationRepository implements AuthenticationRepositoryInterface {
+class ProductionAuthenticationRepository
+    implements AuthenticationRepositoryInterface {
   final Logger _logger;
   final FirebaseAuth _firebaseAuth;
   final GoogleSignIn _googleSignIn;
@@ -44,11 +45,13 @@ class ProductionAuthenticationRepository implements AuthenticationRepositoryInte
       );
       final _firebaseUser = _firebaseAuth.currentUser;
       if (_firebaseUser != null) {
-        final _imageURL = await getIt<CloudStorageService>().uploadFileImage(
-          imageToUpload: user.imageFileOption.getOrElse(() => null)!,
-          folder: StorageFolder.users,
-          name: _firebaseUser.uid,
-        );
+        final _imageURL = user.imageURL.isNotEmpty
+            ? user.imageURL
+            : await getIt<CloudStorageService>().uploadFileImage(
+                imageToUpload: user.imageFileOption.getOrElse(() => null)!,
+                folder: StorageFolder.users,
+                name: _firebaseUser.uid,
+              );
         final _userDto = UserDto.fromDomain(
           user.copyWith(
             id: UniqueId.fromUniqueString(
@@ -95,7 +98,8 @@ class ProductionAuthenticationRepository implements AuthenticationRepositoryInte
       );
       return right(unit);
     } on FirebaseAuthException catch (exception) {
-      if (exception.code == "ERROR_WRONG_PASSWORD" || exception.code == "ERROR_USER_NOT_FOUND") {
+      if (exception.code == "ERROR_WRONG_PASSWORD" ||
+          exception.code == "ERROR_USER_NOT_FOUND") {
         return left(
           const Failure.authenticationData(
             AuthenticationDataFailure.invalidCredentials(),
@@ -164,12 +168,17 @@ class ProductionAuthenticationRepository implements AuthenticationRepositoryInte
 
   @override
   Future<Option<entity.User>> getLoggedInUser() async {
-    final _firebaseCurrentUser = _firebaseAuth.currentUser;
-    if (_firebaseCurrentUser == null) {
+    try {
+      final _firebaseCurrentUser = _firebaseAuth.currentUser;
+      if (_firebaseCurrentUser == null) {
+        return none();
+      } else {
+        final _user = await _firestore.currentUser();
+        return some(_user);
+      }
+    } catch (error) {
+      _logger.e("Error retrieving the logged in user: $error");
       return none();
-    } else {
-      final _user = await _firestore.currentUser();
-      return some(_user);
     }
   }
 

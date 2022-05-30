@@ -21,8 +21,8 @@ import 'package:worldon/views/experience_management/widgets/tag_addition_creatio
 
 class RegistrationForm extends StatelessWidget {
   const RegistrationForm({
-    Key? key,
     required this.userOption,
+    Key? key,
   }) : super(key: key);
 
   final Option<User> userOption;

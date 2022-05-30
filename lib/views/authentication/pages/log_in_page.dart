@@ -17,12 +17,13 @@ class LogInPage extends StatelessWidget {
         onTap: () => FocusManager.instance.primaryFocus?.unfocus(),
         child: SafeArea(
           child: Scaffold(
-            body: BlocProvider(
-              create: (context) => getIt<LogInFormBloc>(),
+            body: BlocProvider.value(
+              value: getIt<LogInFormBloc>(),
               child: BlocConsumer<LogInFormBloc, LogInFormState>(
                 listenWhen: (previous, current) =>
                     previous.failureOrSuccessOption !=
                         current.failureOrSuccessOption ||
+                    previous.isSubmitting != current.isSubmitting ||
                     current.thirdPartyUserOption.isSome(),
                 listener: (context, state) => state.thirdPartyUserOption.fold(
                   () => state.failureOrSuccessOption.fold(
@@ -33,7 +34,9 @@ class LogInPage extends StatelessWidget {
                     ),
                   ),
                   (_thirdPartyUser) => context.router.push(
-                    RegistrationPageRoute(userOption: some(_thirdPartyUser)),
+                    RegistrationPageRoute(
+                      userOption: some(_thirdPartyUser),
+                    ),
                   ),
                 ),
                 buildWhen: (previous, current) =>
@@ -71,11 +74,7 @@ class LogInPage extends StatelessWidget {
       ).show(context);
 
   void _onSuccess(BuildContext context) {
-    context.router.replace(
-      MainPageRoute(
-        isNewUser: false,
-      ),
-    );
+    context.router.replace(MainPageRoute(isNewUser: false));
     context.read<AuthenticationBloc>().add(
           const AuthenticationEvent.authenticationCheckRequested(),
         );

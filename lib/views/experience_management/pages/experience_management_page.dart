@@ -36,8 +36,8 @@ class ExperienceManagementPage extends StatelessWidget {
     return GestureDetector(
       onTap: () => FocusManager.instance.primaryFocus?.unfocus(),
       child: SafeArea(
-        child: BlocProvider(
-          create: (context) => getIt<ExperienceManagementShowCaseBloc>(),
+        child: BlocProvider.value(
+          value: getIt<ExperienceManagementShowCaseBloc>(),
           child: ShowCaseWidget(
             onStart: (_, key) => _onShowCaseStart(
               key,
@@ -107,8 +107,8 @@ class ExperienceManagementPage extends StatelessWidget {
                         ),
                       ),
                     ],
-                    body: BlocProvider(
-                      create: (context) => getIt<ExperienceManagementFormBloc>()
+                    body: BlocProvider.value(
+                      value: getIt<ExperienceManagementFormBloc>()
                         ..add(
                           ExperienceManagementFormEvent.initialized(
                             experienceOption,

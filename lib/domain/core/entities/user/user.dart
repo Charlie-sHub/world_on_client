@@ -113,13 +113,13 @@ class User with _$User {
       .andThen(username.failureOrUnit)
       .andThen(password.failureOrUnit)
       .andThen(email.failureOrUnit)
-      //.andThen(birthday.failureOrUnit)
-      .andThen(description.failureOrUnit)
-      .andThen(level.failureOrUnit)
-      .andThen(experiencePoints.failureOrUnit)
+      .andThen(birthday.failureOrUnit)
       .andThen(lastLogin.failureOrUnit)
       .andThen(creationDate.failureOrUnit)
       .andThen(modificationDate.failureOrUnit)
+      .andThen(level.failureOrUnit)
+      .andThen(experiencePoints.failureOrUnit)
+      .andThen(description.failureOrUnit)
       .fold(some, (_) => none());
 
   Either<ValueFailure<dynamic>, Unit> get failureOrUnit =>
