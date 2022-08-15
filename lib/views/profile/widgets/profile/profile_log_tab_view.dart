@@ -38,11 +38,11 @@ class ProfileLogTabView extends StatelessWidget {
               ),
               itemCount: state.experiences.size,
               itemBuilder: (context, index) {
-                final _experience = state.experiences[index];
-                if (_experience.isValid) {
+                final experience = state.experiences[index];
+                if (experience.isValid) {
                   return ProfileExperienceCard(
-                    experience: _experience,
-                    key: Key(_experience.id.toString()),
+                    experience: experience,
+                    key: Key(experience.id.toString()),
                     reloadFunction: () =>
                         context.read<ExperienceLogWatcherBloc>().add(
                               const ExperienceLogWatcherEvent
@@ -52,7 +52,7 @@ class ProfileLogTabView extends StatelessWidget {
                 } else {
                   return ErrorCard(
                     entityType: S.of(context).experience,
-                    valueFailureString: _experience.failureOption.fold(
+                    valueFailureString: experience.failureOption.fold(
                       () => S.of(context).noError,
                       (failure) => failure.toString(),
                     ),

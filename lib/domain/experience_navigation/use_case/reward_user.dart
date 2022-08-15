@@ -18,48 +18,48 @@ class RewardUser implements AsyncUseCase<Map, Params> {
 
   @override
   Future<Either<Failure, Map>> call(Params params) async {
-    final _currentUserOption = await getIt<GetLoggedInUser>()(
+    final currentUserOption = await getIt<GetLoggedInUser>()(
       getIt<NoParams>(),
     );
-    return _currentUserOption.fold(
+    return currentUserOption.fold(
       () => throw UnAuthenticatedError(),
-      (_user) async {
-        bool _leveledUp = false;
-        int _xpAwarded =
+      (user) async {
+        bool leveledUp = false;
+        int xpAwarded =
             params.difficulty.getOrCrash() * ExperiencePoints.multiplier;
-        final _userXPPre = _user.experiencePoints.getOrCrash();
-        final _userLevelPre = _user.level.getOrCrash();
-        final _itemList = _user.items.where(
+        final userXPPre = user.experiencePoints.getOrCrash();
+        final userLevelPre = user.level.getOrCrash();
+        final itemList = user.items.where(
           (item) =>
               item.id.getOrCrash() == "81539390-6807-11eb-a79a-01068a2daab7",
         );
-        final _item = _itemList.isNotEmpty ? _itemList.first : null;
-        if (_item != null) {
-          final _isValid = DateTime.now().isBefore(
-            _item.boughtDate.add(
-              Duration(days: _item.timeLimitInDays),
+        final item = itemList.isNotEmpty ? itemList.first : null;
+        if (item != null) {
+          final isValid = DateTime.now().isBefore(
+            item.boughtDate.add(
+              Duration(days: item.timeLimitInDays),
             ),
           );
-          if (_isValid) {
-            _xpAwarded = _xpAwarded * 2;
+          if (isValid) {
+            xpAwarded = xpAwarded * 2;
           } else {
-            _repository.removeExperienceBoostItem(_item);
+            _repository.removeExperienceBoostItem(item);
           }
         }
-        final _userXPPost = _xpAwarded + _userXPPre;
-        final _userLevelPost = levelAt(_userXPPost);
-        _leveledUp = _userLevelPost > _userLevelPre;
-        final _resultMap = {
-          "leveledUp": _leveledUp,
-          "experiencePoints": _xpAwarded,
+        final userXPPost = xpAwarded + userXPPre;
+        final userLevelPost = levelAt(userXPPost);
+        leveledUp = userLevelPost > userLevelPre;
+        final resultMap = {
+          "leveledUp": leveledUp,
+          "experiencePoints": xpAwarded,
         };
-        final _failureOrUnit = await _repository.rewardUser(
-          _xpAwarded,
-          _userLevelPost,
+        final failureOrUnit = await _repository.rewardUser(
+          xpAwarded,
+          userLevelPost,
         );
-        return _failureOrUnit.fold(
+        return failureOrUnit.fold(
           left,
-          (_) => right(_resultMap),
+          (_) => right(resultMap),
         );
       },
     );

@@ -31,11 +31,11 @@ class ExperienceLikeActorBloc
         failureOrSuccessOption: none(),
       ),
     );
-    final _failureOrUnit = await getIt<dislike_experience.DislikeExperience>()(
+    final failureOrUnit = await getIt<dislike_experience.DislikeExperience>()(
       dislike_experience.Params(experienceId: event.experienceId),
     );
     emit(
-      _failureOrUnit.fold(
+      failureOrUnit.fold(
         (failure) => state.copyWith(
           failureOrSuccessOption: some(
             left(failure),
@@ -59,11 +59,11 @@ class ExperienceLikeActorBloc
         failureOrSuccessOption: none(),
       ),
     );
-    final _failureOrUnit = await getIt<like_experience.LikeExperience>()(
+    final failureOrUnit = await getIt<like_experience.LikeExperience>()(
       like_experience.Params(experienceId: event.experienceId),
     );
     emit(
-      _failureOrUnit.fold(
+      failureOrUnit.fold(
         (failure) => state.copyWith(
           failureOrSuccessOption: some(
             left(failure),

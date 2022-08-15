@@ -45,8 +45,8 @@ class ProfileInterestsWatcherBloc
     _userInterestsStreamSubscription = getIt<WatchUserInterests>()(
       Params(userId: event.id),
     ).listen(
-      (_failureOrTags) =>
-          add(ProfileInterestsWatcherEvent.resultsReceived(_failureOrTags)),
+      (failureOrTags) =>
+          add(ProfileInterestsWatcherEvent.resultsReceived(failureOrTags)),
     );
   }
 

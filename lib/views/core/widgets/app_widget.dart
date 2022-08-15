@@ -18,7 +18,7 @@ class AppWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final _themeData = ThemeData(
+    final themeData = ThemeData(
       fontFamily: "Geometria",
     );
     return BlocProvider(
@@ -30,7 +30,7 @@ class AppWidget extends StatelessWidget {
         title: "World On",
         debugShowCheckedModeBanner:
             Provider.of<String>(context) != Environment.prod,
-        theme: _themeData.copyWith(
+        theme: themeData.copyWith(
           indicatorColor: WorldOnColors.primary,
           textTheme: Theme.of(context).textTheme.apply(
                 bodyColor: WorldOnColors.accent,
@@ -80,7 +80,7 @@ class AppWidget extends StatelessWidget {
             color: WorldOnColors.white,
           ),
           primaryColor: WorldOnColors.primary,
-          colorScheme: _themeData.colorScheme.copyWith(
+          colorScheme: themeData.colorScheme.copyWith(
             secondary: WorldOnColors.accent,
           ),
           scaffoldBackgroundColor: WorldOnColors.background,

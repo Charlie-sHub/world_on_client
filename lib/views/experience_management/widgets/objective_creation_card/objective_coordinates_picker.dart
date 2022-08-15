@@ -9,7 +9,7 @@ import 'package:worldon/views/core/widgets/misc/world_on_progress_indicator.dart
 class ObjectiveCoordinatePicker extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    final _position = LatLng(
+    final position = LatLng(
       context
           .read<ObjectiveFormBloc>()
           .state
@@ -36,7 +36,7 @@ class ObjectiveCoordinatePicker extends StatelessWidget {
                   Marker(
                     icon: context.read<BitmapDescriptor>(),
                     markerId: const MarkerId("new_objective"),
-                    position: _position,
+                    position: position,
                   ),
                 },
                 onLongPress: (argument) =>
@@ -55,7 +55,7 @@ class ObjectiveCoordinatePicker extends StatelessWidget {
                 initialCameraPosition: CameraPosition(
                   zoom: 15,
                   tilt: 45,
-                  target: _position,
+                  target: position,
                 ),
               ),
             )

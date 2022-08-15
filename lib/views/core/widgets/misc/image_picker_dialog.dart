@@ -60,8 +60,8 @@ class ImagePickerDialog extends StatelessWidget {
           .then(
         (imagePicked) {
           if (imagePicked != null) {
-            final _imageFile = File(imagePicked.path);
-            Navigator.of(context).pop(_imageFile);
+            final imageFile = File(imagePicked.path);
+            Navigator.of(context).pop(imageFile);
           }
         },
       );

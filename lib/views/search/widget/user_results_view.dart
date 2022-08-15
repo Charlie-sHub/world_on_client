@@ -32,16 +32,16 @@ class UserResultsView extends StatelessWidget {
             itemCount: state.usersFound.size,
             physics: const BouncingScrollPhysics(),
             itemBuilder: (context, index) {
-              final _user = state.usersFound[index];
-              if (_user.isValid) {
+              final user = state.usersFound[index];
+              if (user.isValid) {
                 return SimpleSquareUserCard(
-                  user: _user,
-                  key: Key(_user.id.toString()),
+                  user: user,
+                  key: Key(user.id.toString()),
                 );
               } else {
                 return ErrorCard(
                   entityType: S.of(context).user,
-                  valueFailureString: _user.failureOption.fold(
+                  valueFailureString: user.failureOption.fold(
                     () => S.of(context).noError,
                     (failure) => failure.toString(),
                   ),

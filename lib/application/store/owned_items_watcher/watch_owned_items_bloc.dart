@@ -38,8 +38,8 @@ class WatchOwnedItemsBloc
     await _ownedItemsStreamSubscription?.cancel();
     _ownedItemsStreamSubscription =
         getIt<WatchOwnedItems>()(getIt<NoParams>()).listen(
-      (_failureOrItems) =>
-          add(WatchOwnedItemsEvent.resultsReceived(_failureOrItems)),
+      (failureOrItems) =>
+          add(WatchOwnedItemsEvent.resultsReceived(failureOrItems)),
     );
   }
 

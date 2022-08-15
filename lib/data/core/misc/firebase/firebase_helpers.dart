@@ -23,27 +23,27 @@ extension FirestoreX on FirebaseFirestore {
       );
 
   Future<DocumentReference<UserDto>> currentUserReference() async {
-    final _firebaseAuthInstance = getIt<FirebaseAuth>();
-    final _firebaseUser = _firebaseAuthInstance.currentUser;
-    if (_firebaseUser != null) {
-      final _documentReference = userCollection.doc(_firebaseUser.uid);
-      return _documentReference;
+    final firebaseAuthInstance = getIt<FirebaseAuth>();
+    final firebaseUser = firebaseAuthInstance.currentUser;
+    if (firebaseUser != null) {
+      final documentReference = userCollection.doc(firebaseUser.uid);
+      return documentReference;
     } else {
       throw UnAuthenticatedError();
     }
   }
 
   Future<UserDto> currentUserDto() async {
-    final _documentReference = await currentUserReference();
-    final _userDocument = await _documentReference.get();
-    final _userDto = _userDocument.data()!;
-    return _userDto;
+    final documentReference = await currentUserReference();
+    final userDocument = await documentReference.get();
+    final userDto = userDocument.data()!;
+    return userDto;
   }
 
   Future<entity.User> currentUser() async {
-    final _userDto = await currentUserDto();
-    final _user = _userDto.toDomain();
-    return _user;
+    final userDto = await currentUserDto();
+    final user = userDto.toDomain();
+    return user;
   }
 
   CollectionReference<CoinsDto> get coinCollection => collection("coins").withConverter<CoinsDto>(

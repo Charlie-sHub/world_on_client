@@ -43,9 +43,11 @@ class WorldOnBottomNavigationBar extends StatelessWidget {
 
   void _onTap(int index, BuildContext context) {
     switch (index) {
-      case _mainFeedIndex:
+      case _navigationIndex:
         context.read<NavigationActorBloc>().add(
-              const NavigationActorEvent.mainFeedTapped(),
+              NavigationActorEvent.experienceNavigationTapped(
+                none(),
+              ),
             );
         break;
       case _searchIndex:
@@ -53,11 +55,9 @@ class WorldOnBottomNavigationBar extends StatelessWidget {
               const NavigationActorEvent.searchTapped(),
             );
         break;
-      case _navigationIndex:
+      case _mainFeedIndex:
         context.read<NavigationActorBloc>().add(
-              NavigationActorEvent.experienceNavigationTapped(
-                none(),
-              ),
+              const NavigationActorEvent.mainFeedTapped(),
             );
         break;
       case _profileIndex:
@@ -70,7 +70,9 @@ class WorldOnBottomNavigationBar extends StatelessWidget {
         break;
       default:
         context.read<NavigationActorBloc>().add(
-              const NavigationActorEvent.mainFeedTapped(),
+              NavigationActorEvent.experienceNavigationTapped(
+                none(),
+              ),
             );
         break;
     }

@@ -13,9 +13,14 @@ class ObjectiveIdListDto with _$ObjectiveIdListDto {
     required List<String> objectivesIds,
   }) = _ObjectiveIdListDto;
 
-  factory ObjectiveIdListDto.fromDomain(ObjectiveList objectives) => ObjectiveIdListDto(
-        objectivesIds: objectives.getOrCrash().map((objective) => objective.id.getOrCrash()).dart,
+  factory ObjectiveIdListDto.fromDomain(ObjectiveList objectives) =>
+      ObjectiveIdListDto(
+        objectivesIds: objectives
+            .getOrCrash()
+            .map((objective) => objective.id.getOrCrash())
+            .dart,
       );
 
-  factory ObjectiveIdListDto.fromJson(Map<String, dynamic> json) => _$ObjectiveIdListDtoFromJson(json);
+  factory ObjectiveIdListDto.fromJson(Map<String, dynamic> json) =>
+      _$ObjectiveIdListDtoFromJson(json);
 }

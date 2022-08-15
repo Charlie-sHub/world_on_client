@@ -24,7 +24,7 @@ class CommentForm extends HookWidget {
 
   @override
   Widget build(BuildContext context) {
-    final _textEditingController = useTextEditingController();
+    final textEditingController = useTextEditingController();
     return BlocProvider(
       create: (context) => getIt<CommentFormBloc>()
         ..add(
@@ -43,7 +43,7 @@ class CommentForm extends HookWidget {
         listener: (context, state) => _commentFormListener(
           state,
           context,
-          _textEditingController,
+          textEditingController,
         ),
         builder: (context, state) => Form(
           autovalidateMode:
@@ -55,7 +55,7 @@ class CommentForm extends HookWidget {
             child: TextFormField(
               minLines: 2,
               maxLines: 6,
-              controller: _textEditingController,
+              controller: textEditingController,
               maxLength: CommentContent.maxLength,
               onChanged: (value) => context.read<CommentFormBloc>().add(
                     CommentFormEvent.contentChanged(value.trim()),
@@ -96,7 +96,7 @@ class CommentForm extends HookWidget {
                                 ),
                           ),
                         );
-                    _textEditingController.clear();
+                    textEditingController.clear();
                   },
                   color: WorldOnColors.primary,
                 ),
@@ -111,15 +111,15 @@ class CommentForm extends HookWidget {
   void _commentFormListener(
     CommentFormState state,
     BuildContext context,
-    TextEditingController _textEditingController,
+    TextEditingController textEditingController,
   ) =>
       state.failureOrSuccessOption.fold(
         () {},
         (either) => either.fold(
           (failure) => FlushbarHelper.createError(
             message: failure.maybeMap(
-              coreData: (_coreDataFailure) =>
-                  _coreDataFailure.coreDataFailure.maybeMap(
+              coreData: (coreDataFailure) =>
+                  coreDataFailure.coreDataFailure.maybeMap(
                 serverError: (failure) => failure.errorString,
                 orElse: () => S.of(context).unknownCoreDataError,
               ),
@@ -127,7 +127,7 @@ class CommentForm extends HookWidget {
             ),
           ),
           (_) {
-            _textEditingController.clear();
+            textEditingController.clear();
             context.read<CommentFormBloc>().add(
                   CommentFormEvent.initialized(
                     user: context.read<WatchCurrentUserBloc>().state.maybeMap(

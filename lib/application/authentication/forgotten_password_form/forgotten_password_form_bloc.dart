@@ -22,7 +22,7 @@ class ForgottenPasswordFormBloc
   }
 
   FutureOr<void> _onSentRequest(_, Emitter emit) async {
-    Either<Failure, Unit>? _failureOrSuccess;
+    Either<Failure, Unit>? failureOrSuccess;
     if (state.email.isValid()) {
       emit(
         state.copyWith(
@@ -30,7 +30,7 @@ class ForgottenPasswordFormBloc
           failureOrSuccessOption: none(),
         ),
       );
-      _failureOrSuccess = await getIt<ResetPassword>()(
+      failureOrSuccess = await getIt<ResetPassword>()(
         Params(
           email: state.email,
         ),
@@ -38,14 +38,14 @@ class ForgottenPasswordFormBloc
       emit(
         state.copyWith(
           isSubmitting: false,
-          failureOrSuccessOption: some(_failureOrSuccess),
+          failureOrSuccessOption: some(failureOrSuccess),
         ),
       );
     } else {
       emit(
         state.copyWith(
           showErrorMessages: true,
-          failureOrSuccessOption: optionOf(_failureOrSuccess),
+          failureOrSuccessOption: optionOf(failureOrSuccess),
         ),
       );
     }

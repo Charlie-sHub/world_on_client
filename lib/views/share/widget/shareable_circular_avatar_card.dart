@@ -34,7 +34,7 @@ class ShareableCircularAvatarCard extends StatelessWidget {
                 Stack(
                   children: [
                     ClipOval(
-                      child: Container(
+                      child: ColoredBox(
                         color: Colors.white,
                         child: Padding(
                           padding: const EdgeInsets.all(2),
@@ -47,10 +47,10 @@ class ShareableCircularAvatarCard extends StatelessWidget {
                       ),
                     ),
                     if (user.adminPowers)
-                      ClipOval(
-                        child: Container(
+                      const ClipOval(
+                        child: ColoredBox(
                           color: Colors.white,
-                          child: const Icon(
+                          child: Icon(
                             Icons.check_circle_rounded,
                             size: 20,
                             color: WorldOnColors.blue,
@@ -76,13 +76,13 @@ class ShareableCircularAvatarCard extends StatelessWidget {
                     ),
                   ),
                 if (user.adminPowers)
-                  Positioned(
+                  const Positioned(
                     top: 0,
                     left: 0,
                     child: ClipOval(
-                      child: Container(
+                      child: ColoredBox(
                         color: Colors.white,
-                        child: const Icon(
+                        child: Icon(
                           Icons.check_circle_rounded,
                           size: 20,
                           color: WorldOnColors.blue,

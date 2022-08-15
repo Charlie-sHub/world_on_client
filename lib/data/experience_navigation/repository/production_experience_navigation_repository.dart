@@ -45,27 +45,27 @@ class ProductionExperienceNavigationRepository
   @override
   Future<Either<Failure, Unit>> finishExperience(UniqueId experienceId) async {
     try {
-      final _userDocument = await _firestore.currentUserReference();
-      _userDocument.update(
+      final userDocument = await _firestore.currentUserReference();
+      userDocument.update(
         {
           UserFields.experiencesDoneIds: FieldValue.arrayUnion(
             [experienceId.getOrCrash()],
           ),
         },
       );
-      final _experienceDocument = await _firestore.experienceDocumentReference(
+      final experienceDocument = await _firestore.experienceDocumentReference(
         experienceId.getOrCrash(),
       );
-      _experienceDocument.update(
+      experienceDocument.update(
         {
           ExperienceFields.doneBy: FieldValue.arrayUnion(
-            [_userDocument.id],
+            [userDocument.id],
           ),
         },
       );
       _firestore.userCollection
           .doc(
-            _userDocument.id,
+            userDocument.id,
           )
           .saveCollection
           .doc(
@@ -82,21 +82,21 @@ class ProductionExperienceNavigationRepository
   @override
   Future<Either<Failure, Unit>> likeExperience(UniqueId experienceId) async {
     try {
-      final _userDocument = await _firestore.currentUserReference();
-      _userDocument.update(
+      final userDocument = await _firestore.currentUserReference();
+      userDocument.update(
         {
           UserFields.experiencesLikedIds: FieldValue.arrayUnion(
             [experienceId.getOrCrash()],
           ),
         },
       );
-      final _experienceDocument = await _firestore.experienceDocumentReference(
+      final experienceDocument = await _firestore.experienceDocumentReference(
         experienceId.getOrCrash(),
       );
-      _experienceDocument.update(
+      experienceDocument.update(
         {
           ExperienceFields.likedBy: FieldValue.arrayUnion(
-            [_userDocument.id],
+            [userDocument.id],
           ),
         },
       );
@@ -110,21 +110,21 @@ class ProductionExperienceNavigationRepository
   @override
   Future<Either<Failure, Unit>> dislikeExperience(UniqueId experienceId) async {
     try {
-      final _userDocument = await _firestore.currentUserReference();
-      _userDocument.update(
+      final userDocument = await _firestore.currentUserReference();
+      userDocument.update(
         {
           UserFields.experiencesLikedIds: FieldValue.arrayRemove(
             [experienceId.getOrCrash()],
           ),
         },
       );
-      final _experienceDocument = await _firestore.experienceDocumentReference(
+      final experienceDocument = await _firestore.experienceDocumentReference(
         experienceId.getOrCrash(),
       );
-      _experienceDocument.update(
+      experienceDocument.update(
         {
           ExperienceFields.likedBy: FieldValue.arrayRemove(
-            [_userDocument.id],
+            [userDocument.id],
           ),
         },
       );
@@ -136,9 +136,9 @@ class ProductionExperienceNavigationRepository
   }
 
   void _propagate(UniqueId experienceId) {
-    final _propagateUpdateCallable =
+    final propagateUpdateCallable =
         _functions.httpsCallable("propagateExperienceUpdate");
-    _propagateUpdateCallable.call(
+    propagateUpdateCallable.call(
       <String, dynamic>{"experienceId": experienceId.getOrCrash()},
     );
   }
@@ -175,8 +175,8 @@ class ProductionExperienceNavigationRepository
     int userLevel,
   ) async {
     try {
-      final _userDocument = await _firestore.currentUserReference();
-      _userDocument.update(
+      final userDocument = await _firestore.currentUserReference();
+      userDocument.update(
         {
           UserFields.experiencePoints: FieldValue.increment(experiencePoints),
           UserFields.level: userLevel,
@@ -199,29 +199,29 @@ class ProductionExperienceNavigationRepository
   @override
   Stream<Either<Failure, KtList<Experience>>>
       watchRecommendedExperiences() async* {
-    final _userDto = await _firestore.currentUserDto();
-    final _position = await Geolocator.getCurrentPosition(
+    final userDto = await _firestore.currentUserDto();
+    final position = await Geolocator.getCurrentPosition(
       desiredAccuracy: LocationAccuracy.high,
     );
-    final _flutterFireGeoposition = _geo.point(
-      latitude: _position.latitude,
-      longitude: _position.longitude,
+    final flutterFireGeoposition = _geo.point(
+      latitude: position.latitude,
+      longitude: position.longitude,
     );
-    if (_userDto.interestsIds.isNotEmpty) {
-      const double _kmRadius = 30;
+    if (userDto.interestsIds.isNotEmpty) {
+      const double kmRadius = 30;
       yield* _geo
           .collection(
             collectionRef: _firestore.collection("experiences"),
           )
           .within(
-            center: _flutterFireGeoposition,
-            radius: _kmRadius,
+            center: flutterFireGeoposition,
+            radius: kmRadius,
             field: ExperienceFields.position,
           )
           .map(
-            (_documentList) => _documentList
+            (documentList) => documentList
                 .map(
-                  (_document) => ExperienceDto.fromJson(_document.data()!),
+                  (document) => ExperienceDto.fromJson(document.data()!),
                 )
                 .toList(),
           )
@@ -231,41 +231,41 @@ class ProductionExperienceNavigationRepository
           // In any case, it's better to filter by location first and then by tags
           // the first filter should take out most of the experiences that don't fit
           if (experienceDTOs.isNotEmpty) {
-            final _filteredExperienceDtoList = experienceDTOs.where(
-              (_experience) {
-                final _experienceTagIds = _experience.tags
+            final filteredExperienceDtoList = experienceDTOs.where(
+              (experience) {
+                final experienceTagIds = experience.tags
                     .map(
-                      (_tag) => _tag.id,
+                      (tag) => tag.id,
                     )
                     .toList();
-                final _containsInterest = _userDto.interestsIds.any(
-                  _experienceTagIds.contains,
+                final containsInterest = userDto.interestsIds.any(
+                  experienceTagIds.contains,
                 );
-                final _isNotCreator = _experience.creator.id != _userDto.id;
-                return _containsInterest && _isNotCreator ||
-                    _experience.isPromoted && _isNotCreator;
+                final isNotCreator = experience.creator.id != userDto.id;
+                return containsInterest && isNotCreator ||
+                    experience.isPromoted && isNotCreator;
               },
             ).toList();
-            _filteredExperienceDtoList.sort(
-              (_a, _b) => _b.creationDate.compareTo(
-                _a.creationDate,
+            filteredExperienceDtoList.sort(
+              (a, b) => b.creationDate.compareTo(
+                a.creationDate,
               ),
             );
-            for (final _experience in _filteredExperienceDtoList) {
-              final _creator = _experience.creator;
-              _firestore.userCollection.doc(_creator.id).update(
+            for (final experience in filteredExperienceDtoList) {
+              final creator = experience.creator;
+              _firestore.userCollection.doc(creator.id).update(
                 {
                   "${UserFields.promotionPlan}.timesSeen":
                       FieldValue.increment(1),
                 },
               );
             }
-            if (_filteredExperienceDtoList.isNotEmpty) {
-              final _experienceList = _filteredExperienceDtoList.map(
-                (_experienceDto) => _experienceDto.toDomain(),
+            if (filteredExperienceDtoList.isNotEmpty) {
+              final experienceList = filteredExperienceDtoList.map(
+                (experienceDto) => experienceDto.toDomain(),
               );
               return right<Failure, KtList<Experience>>(
-                _experienceList.toImmutableList(),
+                experienceList.toImmutableList(),
               );
             } else {
               return left<Failure, KtList<Experience>>(
@@ -298,37 +298,37 @@ class ProductionExperienceNavigationRepository
 
   @override
   Future<Either<Failure, ObjectiveList>> saveUserProgress(
-    ObjectiveList objectiveList,
+    ObjectiveList objectives,
     UniqueId experienceId,
   ) async {
     try {
-      final _objectiveList = objectiveList.getOrCrash().dart;
-      final _currentUserDoc = await _firestore.currentUserReference();
-      final _saveDocument = await _getSaveDocument(
-        _currentUserDoc.id,
+      final objectiveList = objectives.getOrCrash().dart;
+      final currentUserDoc = await _firestore.currentUserReference();
+      final saveDocument = await _getSaveDocument(
+        currentUserDoc.id,
         experienceId.getOrCrash(),
       );
-      if (_saveDocument.exists) {
-        final _objectiveIdList = _saveDocument.data();
-        final _filteredObjectives = _objectiveList
+      if (saveDocument.exists) {
+        final objectiveIdList = saveDocument.data();
+        final filteredObjectives = objectiveList
             .where(
-              (objective) => _objectiveIdList!.objectivesIds.contains(
+              (objective) => objectiveIdList!.objectivesIds.contains(
                 objective.id.getOrCrash(),
               ),
             )
             .toList();
-        final _objectiveListFiltered = ObjectiveList(
-          _filteredObjectives.toImmutableList(),
+        final objectiveListFiltered = ObjectiveList(
+          filteredObjectives.toImmutableList(),
         );
-        return right(_objectiveListFiltered);
+        return right(objectiveListFiltered);
       } else {
-        final _objectivesToSave = ObjectiveIdListDto.fromDomain(
-          objectiveList,
+        final objectivesToSave = ObjectiveIdListDto.fromDomain(
+          objectives,
         );
-        await _saveDocument.reference.set(
-          _objectivesToSave,
+        await saveDocument.reference.set(
+          objectivesToSave,
         );
-        return right(objectiveList);
+        return right(objectives);
       }
     } on FirebaseException catch (exception) {
       return _onError(exception);
@@ -341,13 +341,13 @@ class ProductionExperienceNavigationRepository
     UniqueId experienceId,
   ) async {
     try {
-      final _currentUserDoc = await _firestore.currentUserReference();
-      final _saveDocument = await _getSaveDocument(
-        _currentUserDoc.id,
+      final currentUserDoc = await _firestore.currentUserReference();
+      final saveDocument = await _getSaveDocument(
+        currentUserDoc.id,
         experienceId.getOrCrash(),
       );
-      if (_saveDocument.exists) {
-        await _saveDocument.reference.update(
+      if (saveDocument.exists) {
+        await saveDocument.reference.update(
           {
             ObjectiveIdListFields.objectivesIds: FieldValue.arrayRemove(
               [
@@ -369,13 +369,13 @@ class ProductionExperienceNavigationRepository
     UniqueId experienceId,
   ) async {
     try {
-      final _currentUserDoc = await _firestore.currentUserReference();
-      final _saveDocument = await _getSaveDocument(
-        _currentUserDoc.id,
+      final currentUserDoc = await _firestore.currentUserReference();
+      final saveDocument = await _getSaveDocument(
+        currentUserDoc.id,
         experienceId.getOrCrash(),
       );
-      if (_saveDocument.exists) {
-        await _saveDocument.reference.update(
+      if (saveDocument.exists) {
+        await saveDocument.reference.update(
           {
             ObjectiveIdListFields.objectivesIds: FieldValue.arrayUnion(
               [
@@ -404,16 +404,16 @@ class ProductionExperienceNavigationRepository
   @override
   Future<Either<Failure, Unit>> removeExperienceBoostItem(Item item) async {
     try {
-      final _currentUser = await _firestore.currentUser();
-      final _updatedUser = _currentUser.copyWith(
-        items: _currentUser.items.toImmutableSet().minusElement(item).dart,
+      final currentUser = await _firestore.currentUser();
+      final updatedUser = currentUser.copyWith(
+        items: currentUser.items.toImmutableSet().minusElement(item).dart,
       );
-      final _jsonUser = UserDto.fromDomain(_updatedUser).toJson();
+      final jsonUser = UserDto.fromDomain(updatedUser).toJson();
       _firestore.userCollection
           .doc(
-            _currentUser.id.getOrCrash(),
+            currentUser.id.getOrCrash(),
           )
-          .update(_jsonUser);
+          .update(jsonUser);
       return right(unit);
     } on FirebaseException catch (exception) {
       return _onError(exception);

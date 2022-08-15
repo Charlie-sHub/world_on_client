@@ -25,5 +25,6 @@ class CoordinatesDto with _$CoordinatesDto {
         longitude: Longitude(longitude),
       );
 
-  factory CoordinatesDto.fromJson(Map<String, dynamic> json) => _$CoordinatesDtoFromJson(json);
+  factory CoordinatesDto.fromJson(Map<String, dynamic> json) =>
+      _$CoordinatesDtoFromJson(json);
 }

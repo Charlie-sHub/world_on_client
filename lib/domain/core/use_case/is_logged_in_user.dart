@@ -11,13 +11,13 @@ class IsLoggedInUser {
   // Should this implement AsyncUseCase? it did, but the Failure was lost on GetLoggedInUser anyway
   // so i changed it to this
   Future<bool> call(Params params) async {
-    final _getLoggedInUser = getIt<GetLoggedInUser>();
-    final _loggedInUserOption = await _getLoggedInUser(getIt<NoParams>());
-    final _loggedInUser = _loggedInUserOption.fold(
+    final getLoggedInUser = getIt<GetLoggedInUser>();
+    final loggedInUserOption = await getLoggedInUser(getIt<NoParams>());
+    final loggedInUser = loggedInUserOption.fold(
       () => throw UnAuthenticatedError(),
       id,
     );
-    return _loggedInUser.id == params.userToCompareWithId;
+    return loggedInUser.id == params.userToCompareWithId;
   }
 }
 

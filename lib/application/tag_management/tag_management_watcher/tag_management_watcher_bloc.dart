@@ -31,8 +31,8 @@ class TagManagementWatcherBloc
     emit(const TagManagementWatcherState.loadInProgress());
     await _tagsStreamSubscription?.cancel();
     _tagsStreamSubscription = getIt<WatchAllTags>()(getIt<NoParams>()).listen(
-      (_failureOrTags) =>
-          add(TagManagementWatcherEvent.resultsReceived(_failureOrTags)),
+      (failureOrTags) =>
+          add(TagManagementWatcherEvent.resultsReceived(failureOrTags)),
     );
   }
 

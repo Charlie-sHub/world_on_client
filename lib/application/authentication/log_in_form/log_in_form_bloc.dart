@@ -33,18 +33,18 @@ class LogInFormBloc extends Bloc<LogInFormEvent, LogInFormState> {
         failureOrSuccessOption: none(),
       ),
     );
-    final _failureOrSuccess = await getIt<LogInGoogle>()(
+    final failureOrSuccess = await getIt<LogInGoogle>()(
       getIt<NoParams>(),
     );
     emit(
-      _failureOrSuccess.fold(
-        (_failure) => state.copyWith(
+      failureOrSuccess.fold(
+        (failure) => state.copyWith(
           isSubmitting: false,
-          failureOrSuccessOption: some(left(_failure)),
+          failureOrSuccessOption: some(left(failure)),
         ),
-        (_userOption) => state.copyWith(
+        (userOption) => state.copyWith(
           isSubmitting: false,
-          thirdPartyUserOption: _userOption,
+          thirdPartyUserOption: userOption,
           failureOrSuccessOption: some(right(unit)),
         ),
       ),
@@ -52,7 +52,7 @@ class LogInFormBloc extends Bloc<LogInFormEvent, LogInFormState> {
   }
 
   FutureOr<void> _onLoggedIn(_, Emitter emit) async {
-    Either<Failure, Unit>? _failureOrSuccess;
+    Either<Failure, Unit>? failureOrSuccess;
     if (state.email.isValid() && state.password.isValid()) {
       emit(
         state.copyWith(
@@ -60,7 +60,7 @@ class LogInFormBloc extends Bloc<LogInFormEvent, LogInFormState> {
           failureOrSuccessOption: none(),
         ),
       );
-      _failureOrSuccess = await getIt<LogIn>()(
+      failureOrSuccess = await getIt<LogIn>()(
         Params(
           email: state.email,
           password: state.password,
@@ -69,14 +69,14 @@ class LogInFormBloc extends Bloc<LogInFormEvent, LogInFormState> {
       emit(
         state.copyWith(
           isSubmitting: false,
-          failureOrSuccessOption: some(_failureOrSuccess),
+          failureOrSuccessOption: some(failureOrSuccess),
         ),
       );
     } else {
       emit(
         state.copyWith(
           showErrorMessages: true,
-          failureOrSuccessOption: optionOf(_failureOrSuccess),
+          failureOrSuccessOption: optionOf(failureOrSuccess),
         ),
       );
     }

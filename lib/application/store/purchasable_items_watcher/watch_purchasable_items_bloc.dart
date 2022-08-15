@@ -41,8 +41,8 @@ class WatchPurchasableItemsBloc
     await _purchasableItemsStreamSubscription?.cancel();
     _purchasableItemsStreamSubscription =
         getIt<WatchPurchasableItems>()(getIt<NoParams>()).listen(
-      (_failureOrItems) => add(
-        WatchPurchasableItemsEvent.resultsReceived(_failureOrItems),
+      (failureOrItems) => add(
+        WatchPurchasableItemsEvent.resultsReceived(failureOrItems),
       ),
     );
   }

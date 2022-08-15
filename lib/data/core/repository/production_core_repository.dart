@@ -21,12 +21,12 @@ class ProductionCoreRepository implements CoreRepositoryInterface {
 
   @override
   Stream<Either<Failure, User>> watchCurrentUser() async* {
-    final _userDocumentReference = await _firestore.currentUserReference();
-    yield* _userDocumentReference
+    final userDocumentReference = await _firestore.currentUserReference();
+    yield* userDocumentReference
         .snapshots()
         .map(
-          (_document) => right<Failure, User>(
-            _document.data()!.toDomain(),
+          (document) => right<Failure, User>(
+            document.data()!.toDomain(),
           ),
         )
         .onErrorReturnWith(

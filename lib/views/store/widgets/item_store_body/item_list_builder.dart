@@ -49,16 +49,16 @@ class ItemListBuilder extends StatelessWidget {
                     color: WorldOnColors.accent,
                   ),
                   itemBuilder: (context, index) {
-                    final _item = state.items[index];
-                    if (_item.isValid) {
+                    final item = state.items[index];
+                    if (item.isValid) {
                       return ItemToBuyTile(
-                        item: _item,
-                        key: Key(_item.id.toString()),
+                        item: item,
+                        key: Key(item.id.toString()),
                       );
                     } else {
                       return ErrorCard(
                         entityType: S.of(context).item,
-                        valueFailureString: _item.failureOption.fold(
+                        valueFailureString: item.failureOption.fold(
                           () => S.of(context).noError,
                           (failure) => failure.toString(),
                         ),

@@ -19,17 +19,17 @@ class OriginalPicturesGridView extends StatelessWidget {
         buildWhen: (previous, current) =>
             previous.experience.imageURLs != current.experience.imageURLs,
         builder: (context, state) {
-          final _imageURLs = state.experience.imageURLs;
-          if (_imageURLs.isNotEmpty) {
+          final imageURLs = state.experience.imageURLs;
+          if (imageURLs.isNotEmpty) {
             return GridView.count(
               padding: const EdgeInsets.all(8),
               shrinkWrap: true,
               physics: const ClampingScrollPhysics(),
               crossAxisCount: 3,
               children: List.generate(
-                _imageURLs.length,
+                imageURLs.length,
                 (index) {
-                  final _imageURL = _imageURLs.elementAt(index);
+                  final imageURL = imageURLs.elementAt(index);
                   return Card(
                     elevation: 5,
                     color: WorldOnColors.background,
@@ -37,7 +37,7 @@ class OriginalPicturesGridView extends StatelessWidget {
                       children: [
                         Center(
                           child: WorldOnCachedImage(
-                            imageURL: _imageURL,
+                            imageURL: imageURL,
                           ),
                         ),
                         Align(
@@ -54,7 +54,7 @@ class OriginalPicturesGridView extends StatelessWidget {
                                   .read<ExperienceManagementFormBloc>()
                                   .add(
                                     ExperienceManagementFormEvent.imageDeleted(
-                                      _imageURL,
+                                      imageURL,
                                     ),
                                   ),
                             ),

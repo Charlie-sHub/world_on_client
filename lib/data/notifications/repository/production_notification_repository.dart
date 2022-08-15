@@ -14,7 +14,8 @@ import 'package:worldon/domain/core/validation/objects/unique_id.dart';
 import 'package:worldon/domain/notifications/repository/notification_repository_interface.dart';
 
 @LazySingleton(as: NotificationRepositoryInterface, env: [Environment.prod])
-class ProductionNotificationRepository implements NotificationRepositoryInterface {
+class ProductionNotificationRepository
+    implements NotificationRepositoryInterface {
   final Logger _logger;
   final FirebaseFirestore _firestore;
 
@@ -36,20 +37,18 @@ class ProductionNotificationRepository implements NotificationRepositoryInterfac
         },
       );
       return right(unit);
-    } catch (error, _) {
-      return left(
-        _onError(error),
-      );
+    } catch (error) {
+      return left(_onError(error));
     }
   }
 
   @override
   Stream<Either<Failure, KtList<Notification>>> watchNotifications() async* {
-    final _userDocumentReference = await _firestore.currentUserReference();
+    final userDocumentReference = await _firestore.currentUserReference();
     yield* _firestore.notificationCollection
         .where(
           NotificationFields.receiverId,
-          isEqualTo: _userDocumentReference.id,
+          isEqualTo: userDocumentReference.id,
         )
         .orderBy(
           NotificationFields.creationDate,
@@ -62,10 +61,10 @@ class ProductionNotificationRepository implements NotificationRepositoryInterfac
           ),
         )
         .map(
-      (_notifications) {
-        if (_notifications.isNotEmpty) {
+      (notifications) {
+        if (notifications.isNotEmpty) {
           return right<Failure, KtList<Notification>>(
-            _notifications.toImmutableList(),
+            notifications.toImmutableList(),
           );
         } else {
           return left<Failure, KtList<Notification>>(
@@ -84,11 +83,11 @@ class ProductionNotificationRepository implements NotificationRepositoryInterfac
 
   @override
   Stream<Either<Failure, bool>> watchIfNewNotifications() async* {
-    final _userDocumentReference = await _firestore.currentUserReference();
+    final userDocumentReference = await _firestore.currentUserReference();
     yield* _firestore.notificationCollection
         .where(
           NotificationFields.receiverId,
-          isEqualTo: _userDocumentReference.id,
+          isEqualTo: userDocumentReference.id,
         )
         .where(
           NotificationFields.seen,
@@ -100,7 +99,7 @@ class ProductionNotificationRepository implements NotificationRepositoryInterfac
           (snapshot) => snapshot.docs.isNotEmpty,
         )
         .map(
-          (_newNotifications) => right<Failure, bool>(_newNotifications),
+          (newNotifications) => right<Failure, bool>(newNotifications),
         )
         .onErrorReturnWith(
           (error, _) => left(
@@ -110,21 +109,21 @@ class ProductionNotificationRepository implements NotificationRepositoryInterfac
   }
 
   @override
-  Future<Either<Failure, Unit>> sendNotification(Notification notification) async {
+  Future<Either<Failure, Unit>> sendNotification(
+    Notification notification,
+  ) async {
     try {
-      final _notificationDto = NotificationDto.fromDomain(notification);
+      final notificationDto = NotificationDto.fromDomain(notification);
       _firestore.notificationCollection
           .doc(
             notification.id.getOrCrash(),
           )
           .set(
-            _notificationDto,
+            notificationDto,
           );
       return right(unit);
-    } catch (error, _) {
-      return left(
-        _onError(error),
-      );
+    } catch (error) {
+      return left(_onError(error));
     }
   }
 
@@ -133,10 +132,8 @@ class ProductionNotificationRepository implements NotificationRepositoryInterfac
     try {
       _firestore.notificationCollection.doc(id.getOrCrash()).delete();
       return right(unit);
-    } catch (error, _) {
-      return left(
-        _onError(error),
-      );
+    } catch (error) {
+      return left(_onError(error));
     }
   }
 
@@ -150,7 +147,9 @@ class ProductionNotificationRepository implements NotificationRepositoryInterfac
     if (error is FirebaseException) {
       _logger.e("FirebaseException: ${error.message}");
       return Failure.coreData(
-        CoreDataFailure.serverError(errorString: "Firebase error: ${error.message}"),
+        CoreDataFailure.serverError(
+          errorString: "Firebase error: ${error.message}",
+        ),
       );
     } else {
       _logger.e("Unknown server error:  ${error.runtimeType}");

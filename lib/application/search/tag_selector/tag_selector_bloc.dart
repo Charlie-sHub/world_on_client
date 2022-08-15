@@ -27,18 +27,18 @@ class TagSelectorBloc extends Bloc<TagSelectorEvent, TagSelectorState> {
     emit(
       await event.tagsEitherOption.fold(
         () async => state,
-        (_eitherTags) async => _eitherTags.fold(
-          (_tagSet) => state.copyWith(
-            tagsSelected: _tagSet.getOrCrash(),
+        (eitherTags) async => eitherTags.fold(
+          (tagSet) => state.copyWith(
+            tagsSelected: tagSet.getOrCrash(),
           ),
-          (_idSet) async {
-            final _failureOrTags = await getIt<GetTags>()(
-              Params(tagIds: _idSet),
+          (idSet) async {
+            final failureOrTags = await getIt<GetTags>()(
+              Params(tagIds: idSet),
             );
-            return _failureOrTags.fold(
+            return failureOrTags.fold(
               (_) => state,
-              (_tagSet) => state.copyWith(
-                tagsSelected: _tagSet,
+              (tagSet) => state.copyWith(
+                tagsSelected: tagSet,
               ),
             );
           },

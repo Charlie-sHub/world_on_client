@@ -28,21 +28,21 @@ class ExperienceFinishActorBloc
     Emitter emit,
   ) async {
     emit(const ExperienceFinishActorState.actionInProgress());
-    final _finishFailureOrUnit =
+    final finishFailureOrUnit =
         await getIt<finish_experience.FinishExperience>()(
       finish_experience.Params(
         experienceId: event.experience.id,
       ),
     );
-    final _rewardFailureOrAmountOfXP = await getIt<reward_user.RewardUser>()(
+    final rewardFailureOrAmountOfXP = await getIt<reward_user.RewardUser>()(
       reward_user.Params(
         difficulty: event.experience.difficulty,
       ),
     );
     emit(
-      _finishFailureOrUnit.fold(
+      finishFailureOrUnit.fold(
         (failure) => ExperienceFinishActorState.finishFailure(failure),
-        (_) => _rewardFailureOrAmountOfXP.fold(
+        (_) => rewardFailureOrAmountOfXP.fold(
           (failure) => ExperienceFinishActorState.finishFailure(failure),
           (map) => ExperienceFinishActorState.finishSuccess(
             map["experiencePoints"] as int,

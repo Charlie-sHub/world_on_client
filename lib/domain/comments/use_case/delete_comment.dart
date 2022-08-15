@@ -15,9 +15,9 @@ class DeleteComment implements AsyncUseCase<Unit, Params> {
 
   @override
   Future<Either<Failure, Unit>> call(Params params) async {
-    final _isAuthorized =
+    final isAuthorized =
         params.userRequesting.id == params.comment.poster.id || params.userRequesting.adminPowers;
-    if (_isAuthorized) {
+    if (isAuthorized) {
       return _repository.removeComment(
         params.comment.experienceId,
         params.comment.id,

@@ -64,15 +64,15 @@ class RegistrationPage extends StatelessWidget {
       FlushbarHelper.createError(
         duration: const Duration(seconds: 2),
         message: failure.maybeMap(
-          coreData: (_coreDataFailure) =>
-              _coreDataFailure.coreDataFailure.maybeMap(
+          coreData: (coreDataFailure) =>
+              coreDataFailure.coreDataFailure.maybeMap(
             serverError: (failure) => failure.errorString,
             emailAlreadyInUse: (_) => S.of(context).emailAlreadyInUse,
             usernameAlreadyInUse: (_) => S.of(context).usernameAlreadyInUse,
             orElse: () => S.of(context).unknownError,
           ),
-          coreApplication: (_coreApplicationFailure) =>
-              _coreApplicationFailure.coreApplicationFailure.maybeMap(
+          coreApplication: (coreApplicationFailure) =>
+              coreApplicationFailure.coreApplicationFailure.maybeMap(
             emptyFields: (_) => S.of(context).emptyFields,
             orElse: () => S.of(context).unknownError,
           ),

@@ -21,14 +21,14 @@ class CommentActorBloc extends Bloc<CommentActorEvent, CommentActorState> {
 
   FutureOr<void> _onDeleted(_Deleted event, Emitter emit) async {
     emit(const CommentActorState.actionInProgress());
-    final _failureOrUnit = await getIt<DeleteComment>()(
+    final failureOrUnit = await getIt<DeleteComment>()(
       Params(
         comment: event.comment,
         userRequesting: event.currentUser,
       ),
     );
     emit(
-      _failureOrUnit.fold(
+      failureOrUnit.fold(
         (failure) => CommentActorState.deletionFailure(failure),
         (_) => const CommentActorState.deletionSuccess(),
       ),

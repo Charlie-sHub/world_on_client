@@ -56,7 +56,7 @@ class LogButtonBuilder extends StatelessWidget {
   bool _listenWhen(_, ExperienceAddToLogActorState current) =>
       current.failureOrSuccessOption.fold(
         () => false,
-        (_failureOrUnit) => _failureOrUnit.fold(
+        (failureOrUnit) => failureOrUnit.fold(
           (_) => true,
           (_) => false,
         ),

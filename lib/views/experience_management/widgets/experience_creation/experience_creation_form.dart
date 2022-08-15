@@ -127,19 +127,19 @@ class ExperienceCreationForm extends StatelessWidget {
     ExperienceManagementFormState previous,
     ExperienceManagementFormState current,
   ) {
-    final _previousImages = previous.experience.imageAssetsOption.fold(
+    final previousImages = previous.experience.imageAssetsOption.fold(
       () => List<Asset>.empty(),
       id,
     );
-    final _currentImages = current.experience.imageAssetsOption.fold(
+    final currentImages = current.experience.imageAssetsOption.fold(
       () => List<Asset>.empty(),
       id,
     );
-    final _shouldRebuild =
+    final shouldRebuild =
         previous.showErrorMessages != current.showErrorMessages ||
             previous.experience.difficulty != current.experience.difficulty ||
             previous.experience.coordinates != current.experience.coordinates ||
-            _previousImages != _currentImages;
-    return _shouldRebuild;
+            previousImages != currentImages;
+    return shouldRebuild;
   }
 }

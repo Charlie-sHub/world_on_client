@@ -24,29 +24,29 @@ class MyItemsBody extends StatelessWidget {
                 size: 60,
               ),
               loadSuccess: (state) {
-                final _itemList = state.user.items.toImmutableList();
+                final itemList = state.user.items.toImmutableList();
                 return SizedBox(
                   height: MediaQuery.of(context).size.height * 0.85,
                   child: RefreshIndicator(
                     onRefresh: () async => context.read<LoadUserBloc>().add(
                           const LoadUserEvent.loadedUser(),
                         ),
-                    child: _itemList.isNotEmpty()
+                    child: itemList.isNotEmpty()
                         ? ListView.builder(
                             physics: const BouncingScrollPhysics(),
                             padding: const EdgeInsets.all(5),
-                            itemCount: _itemList.size,
+                            itemCount: itemList.size,
                             itemBuilder: (context, index) {
-                              final _item = _itemList[index];
-                              if (_item.isValid) {
+                              final item = itemList[index];
+                              if (item.isValid) {
                                 return ItemTile(
-                                  item: _item,
-                                  key: Key(_item.id.toString()),
+                                  item: item,
+                                  key: Key(item.id.toString()),
                                 );
                               } else {
                                 return ErrorCard(
                                   entityType: S.of(context).item,
-                                  valueFailureString: _item.failureOption.fold(
+                                  valueFailureString: item.failureOption.fold(
                                     () => S.of(context).noError,
                                     (failure) => failure.toString(),
                                   ),

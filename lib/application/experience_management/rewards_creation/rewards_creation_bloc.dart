@@ -22,8 +22,8 @@ class RewardsCreationBloc
   void _onInitialized(_Initialized event, Emitter emit) => emit(
         event.rewardSetOption.fold(
           () => state,
-          (_rewardSet) => state.copyWith(
-            rewardsCreated: _rewardSet.getOrCrash(),
+          (rewardSet) => state.copyWith(
+            rewardsCreated: rewardSet.getOrCrash(),
           ),
         ),
       );

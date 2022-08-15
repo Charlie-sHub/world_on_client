@@ -36,7 +36,7 @@ class PromotionPlansBody extends StatelessWidget {
                   noPromotionPlan: (_) => true,
                   orElse: () => false,
                 ),
-                builder: (context, _actorState) => Column(
+                builder: (context, actorState) => Column(
                   children: [
                     SizedBox(
                       height: MediaQuery.of(context).size.height * 0.47,
@@ -48,7 +48,7 @@ class PromotionPlansBody extends StatelessWidget {
                         fontSize: 12,
                       ),
                     ),
-                    _actorState.maybeMap(
+                    actorState.maybeMap(
                       currentPlan: (state) => CurrentPromotionPlanView(
                         plan: state.promotionPlan,
                       ),

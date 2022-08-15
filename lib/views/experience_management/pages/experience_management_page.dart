@@ -22,16 +22,16 @@ class ExperienceManagementPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final _scrollController = ScrollController();
-    final _difficultyKey = GlobalKey();
-    final _mapKey = GlobalKey();
-    final _objectiveFormKey = GlobalKey();
-    final _tagCreationKey = GlobalKey();
-    final _keys = [
-      _difficultyKey,
-      _mapKey,
-      _objectiveFormKey,
-      _tagCreationKey,
+    final scrollController = ScrollController();
+    final difficultyKey = GlobalKey();
+    final mapKey = GlobalKey();
+    final objectiveFormKey = GlobalKey();
+    final tagCreationKey = GlobalKey();
+    final keys = [
+      difficultyKey,
+      mapKey,
+      objectiveFormKey,
+      tagCreationKey,
     ];
     return GestureDetector(
       onTap: () => FocusManager.instance.primaryFocus?.unfocus(),
@@ -41,11 +41,11 @@ class ExperienceManagementPage extends StatelessWidget {
           child: ShowCaseWidget(
             onStart: (_, key) => _onShowCaseStart(
               key,
-              _difficultyKey,
-              _scrollController,
-              _mapKey,
-              _objectiveFormKey,
-              _tagCreationKey,
+              difficultyKey,
+              scrollController,
+              mapKey,
+              objectiveFormKey,
+              tagCreationKey,
             ),
             onFinish: () {
               // For some reason the bloc can't be found when adding this event
@@ -55,14 +55,14 @@ class ExperienceManagementPage extends StatelessWidget {
                     const ExperienceManagementShowCaseEvent.finished(),
                   );
                */
-              _scrollController.jumpTo(0);
+              scrollController.jumpTo(0);
             },
             builder: Builder(
               builder: (context) => BlocListener<
                   ExperienceManagementShowCaseBloc,
                   ExperienceManagementShowCaseState>(
                 listener: (context, state) => state.maybeMap(
-                  show: (_) => ShowCaseWidget.of(context)!.startShowCase(_keys),
+                  show: (_) => ShowCaseWidget.of(context).startShowCase(keys),
                   orElse: () => null,
                 ),
                 child: Scaffold(
@@ -116,19 +116,19 @@ class ExperienceManagementPage extends StatelessWidget {
                         ),
                       child: experienceOption.fold(
                         () => ExperienceCreationForm(
-                          difficultyShowKey: _difficultyKey,
-                          mapShowKey: _mapKey,
-                          objectivesShowKey: _objectiveFormKey,
-                          tagCreationShowKey: _tagCreationKey,
-                          scrollController: _scrollController,
+                          difficultyShowKey: difficultyKey,
+                          mapShowKey: mapKey,
+                          objectivesShowKey: objectiveFormKey,
+                          tagCreationShowKey: tagCreationKey,
+                          scrollController: scrollController,
                         ),
-                        (_experience) => ExperienceEditingForm(
-                          experience: _experience,
-                          difficultyShowKey: _difficultyKey,
-                          mapShowKey: _mapKey,
-                          objectivesShowKey: _objectiveFormKey,
-                          tagCreationShowKey: _tagCreationKey,
-                          scrollController: _scrollController,
+                        (experience) => ExperienceEditingForm(
+                          experience: experience,
+                          difficultyShowKey: difficultyKey,
+                          mapShowKey: mapKey,
+                          objectivesShowKey: objectiveFormKey,
+                          tagCreationShowKey: tagCreationKey,
+                          scrollController: scrollController,
                         ),
                       ),
                     ),
@@ -144,27 +144,27 @@ class ExperienceManagementPage extends StatelessWidget {
 
   void _onShowCaseStart(
     GlobalKey<State<StatefulWidget>> key,
-    GlobalKey<State<StatefulWidget>> _difficultyKey,
-    ScrollController _scrollController,
-    GlobalKey<State<StatefulWidget>> _mapKey,
-    GlobalKey<State<StatefulWidget>> _objectiveFormKey,
-    GlobalKey<State<StatefulWidget>> _tagCreationKey,
+    GlobalKey<State<StatefulWidget>> difficultyKey,
+    ScrollController scrollController,
+    GlobalKey<State<StatefulWidget>> mapKey,
+    GlobalKey<State<StatefulWidget>> objectiveFormKey,
+    GlobalKey<State<StatefulWidget>> tagCreationKey,
   ) {
-    if (key == _difficultyKey) {
-      _scrollController.jumpTo(
-        _scrollController.position.maxScrollExtent * 0.1,
+    if (key == difficultyKey) {
+      scrollController.jumpTo(
+        scrollController.position.maxScrollExtent * 0.1,
       );
-    } else if (key == _mapKey) {
-      _scrollController.jumpTo(
-        _scrollController.position.maxScrollExtent * 0.3,
+    } else if (key == mapKey) {
+      scrollController.jumpTo(
+        scrollController.position.maxScrollExtent * 0.3,
       );
-    } else if (key == _objectiveFormKey) {
-      _scrollController.jumpTo(
-        _scrollController.position.maxScrollExtent * 0.6,
+    } else if (key == objectiveFormKey) {
+      scrollController.jumpTo(
+        scrollController.position.maxScrollExtent * 0.6,
       );
-    } else if (key == _tagCreationKey) {
-      _scrollController.jumpTo(
-        _scrollController.position.maxScrollExtent,
+    } else if (key == tagCreationKey) {
+      scrollController.jumpTo(
+        scrollController.position.maxScrollExtent,
       );
     }
   }

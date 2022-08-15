@@ -94,21 +94,21 @@ class FollowUnfollowButtonBuilder extends StatelessWidget {
       current.map(
         initial: (_) => true,
         loadSuccess: (_) {
-          final _previousFollowsContainsUser = previous.maybeMap(
+          final previousFollowsContainsUser = previous.maybeMap(
             loadSuccess: (successState) =>
                 successState.user.followedUsersIds.contains(
               userId,
             ),
             orElse: () => true,
           );
-          final _currentFollowsContainsUser = current.maybeMap(
+          final currentFollowsContainsUser = current.maybeMap(
             loadSuccess: (successState) =>
                 successState.user.followedUsersIds.contains(
               userId,
             ),
             orElse: () => true,
           );
-          return _previousFollowsContainsUser != _currentFollowsContainsUser;
+          return previousFollowsContainsUser != currentFollowsContainsUser;
         },
         loadFailure: (_) => true,
       );

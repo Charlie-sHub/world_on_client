@@ -44,7 +44,11 @@ class AchievementDto with _$AchievementDto {
         creatorId: achievement.creatorId.getOrCrash(),
         creationDate: achievement.creationDate.getOrCrash(),
         modificationDate: achievement.modificationDate.getOrCrash(),
-        tagNames: achievement.tags.getOrCrash().dart.map((tag) => tag.name.getOrCrash()).toSet(),
+        tagNames: achievement.tags
+            .getOrCrash()
+            .dart
+            .map((tag) => tag.name.getOrCrash())
+            .toSet(),
       );
 
   Achievement toDomain() => Achievement(
@@ -59,8 +63,13 @@ class AchievementDto with _$AchievementDto {
         creatorId: UniqueId.fromUniqueString(creatorId),
         creationDate: PastDate(creationDate),
         modificationDate: PastDate(modificationDate),
-        tags: TagSet(tagNames.map((name) => Tag.empty().copyWith(name: Name(name))).toImmutableSet()),
+        tags: TagSet(
+          tagNames
+              .map((name) => Tag.empty().copyWith(name: Name(name)))
+              .toImmutableSet(),
+        ),
       );
 
-  factory AchievementDto.fromJson(Map<String, dynamic> json) => _$AchievementDtoFromJson(json);
+  factory AchievementDto.fromJson(Map<String, dynamic> json) =>
+      _$AchievementDtoFromJson(json);
 }

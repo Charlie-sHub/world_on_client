@@ -37,11 +37,11 @@ class ExperienceNavigationWatcherBloc extends Bloc<
           emit(const ExperienceNavigationWatcherState.noExperience());
         },
         (experience) async {
-          final _failureOrUnit = await getIt<GetExperience>()(
+          final failureOrUnit = await getIt<GetExperience>()(
             Params(id: experience.id),
           );
           emit(
-            _failureOrUnit.fold(
+            failureOrUnit.fold(
               (_) => const ExperienceNavigationWatcherState.noExperience(),
               (experience) =>
                   ExperienceNavigationWatcherState.navigatingExperience(

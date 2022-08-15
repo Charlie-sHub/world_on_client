@@ -29,7 +29,7 @@ class PromotionPlansHeader extends StatelessWidget {
                   sigmaX: 0.75,
                   sigmaY: 0.75,
                 ),
-                child: Container(
+                child: const ColoredBox(
                   color: Colors.transparent,
                 ),
               ),

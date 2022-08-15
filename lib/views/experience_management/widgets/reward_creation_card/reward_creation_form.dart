@@ -19,10 +19,10 @@ class RewardCreationForm extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final _rewardFormState = context.read<RewardFormBloc>().state;
+    final rewardFormState = context.read<RewardFormBloc>().state;
     return Form(
       autovalidateMode:
-          _rewardFormState.showErrorMessages ? AutovalidateMode.always : AutovalidateMode.disabled,
+          rewardFormState.showErrorMessages ? AutovalidateMode.always : AutovalidateMode.disabled,
       child: Column(
         children: <Widget>[
           RewardNameTextField(textController: nameTextEditingController),
@@ -30,7 +30,7 @@ class RewardCreationForm extends StatelessWidget {
           Column(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: <Widget>[
-              _rewardFormState.reward.imageFile.fold(
+              rewardFormState.reward.imageFile.fold(
                 () => Column(
                   children: <Widget>[
                     IconButton(
@@ -40,7 +40,7 @@ class RewardCreationForm extends StatelessWidget {
                       ),
                       onPressed: () => _imageChanged(context),
                     ),
-                    if (_rewardFormState.showErrorMessages && _rewardFormState.reward.imageFile.isNone())
+                    if (rewardFormState.showErrorMessages && rewardFormState.reward.imageFile.isNone())
                       Text(
                         S.of(context).pictureSelectionMessage,
                         textAlign: TextAlign.center,

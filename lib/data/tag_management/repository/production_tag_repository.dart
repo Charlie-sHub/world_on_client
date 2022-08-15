@@ -26,8 +26,8 @@ class ProductionTagRepository implements TagCoreRepositoryInterface {
   @override
   Future<Either<Failure, Unit>> addTagToInterests(Tag tag) async {
     try {
-      final _userDocument = await _firestore.currentUserReference();
-      _userDocument.update(
+      final userDocument = await _firestore.currentUserReference();
+      userDocument.update(
         {
           UserFields.interestsIds: FieldValue.arrayUnion(
             [tag.id.getOrCrash()],
@@ -35,18 +35,16 @@ class ProductionTagRepository implements TagCoreRepositoryInterface {
         },
       );
       return right(unit);
-    } catch (error, _) {
-      return left(
-        _onError(error),
-      );
+    } catch (error) {
+      return left(_onError(error));
     }
   }
 
   @override
   Future<Either<Failure, Unit>> dismissTagFromInterests(Tag tag) async {
     try {
-      final _userDocument = await _firestore.currentUserReference();
-      _userDocument.update(
+      final userDocument = await _firestore.currentUserReference();
+      userDocument.update(
         {
           UserFields.interestsIds: FieldValue.arrayRemove(
             [tag.id.getOrCrash()],
@@ -54,10 +52,8 @@ class ProductionTagRepository implements TagCoreRepositoryInterface {
         },
       );
       return right(unit);
-    } catch (error, _) {
-      return left(
-        _onError(error),
-      );
+    } catch (error) {
+      return left(_onError(error));
     }
   }
 
@@ -83,7 +79,9 @@ class ProductionTagRepository implements TagCoreRepositoryInterface {
     if (error is FirebaseException) {
       _logger.e("FirebaseException: ${error.message}");
       return Failure.coreData(
-        CoreDataFailure.serverError(errorString: "Firebase error: ${error.message}"),
+        CoreDataFailure.serverError(
+          errorString: "Firebase error: ${error.message}",
+        ),
       );
     } else {
       _logger.e("Unknown server error:  ${error.runtimeType}");

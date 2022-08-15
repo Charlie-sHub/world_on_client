@@ -30,7 +30,7 @@ class TagManagementFormBloc
   }
 
   FutureOr<void> _onSubmitted(_, Emitter emit) async {
-    late Either<Failure, Unit> _failureOrUnit;
+    late Either<Failure, Unit> failureOrUnit;
     emit(
       state.copyWith(
         isSubmitting: true,
@@ -39,13 +39,13 @@ class TagManagementFormBloc
     );
     if (state.tag.isValid) {
       if (state.isEditing) {
-        _failureOrUnit = await getIt<edit_tag.EditTag>()(
+        failureOrUnit = await getIt<edit_tag.EditTag>()(
           edit_tag.Params(
             tag: state.tag,
           ),
         );
       } else {
-        _failureOrUnit = await getIt<create_tag.CreateTag>()(
+        failureOrUnit = await getIt<create_tag.CreateTag>()(
           create_tag.Params(
             tag: state.tag,
           ),
@@ -56,7 +56,7 @@ class TagManagementFormBloc
       state.copyWith(
         isSubmitting: false,
         showErrorMessages: true,
-        failureOrSuccessOption: optionOf(_failureOrUnit),
+        failureOrSuccessOption: optionOf(failureOrUnit),
       ),
     );
   }
@@ -75,16 +75,16 @@ class TagManagementFormBloc
   FutureOr<void> _onInitialized(_Initialized event, Emitter emit) async {
     await event.tagOption.fold(
       () async {
-        final _currentUserOption = await getIt<GetLoggedInUser>()(
+        final currentUserOption = await getIt<GetLoggedInUser>()(
           getIt<NoParams>(),
         );
-        final _currentUser = _currentUserOption.fold(
+        final currentUser = currentUserOption.fold(
           () => throw UnAuthenticatedError(),
           id,
         );
         return state.copyWith(
           tag: Tag.empty().copyWith(
-            creatorId: _currentUser.id,
+            creatorId: currentUser.id,
           ),
           showErrorMessages: false,
         );

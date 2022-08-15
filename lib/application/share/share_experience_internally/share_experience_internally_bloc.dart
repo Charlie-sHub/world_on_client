@@ -40,39 +40,39 @@ class ShareExperienceInternallyBloc extends Bloc<ShareExperienceInternallyEvent,
   }
 
   void _onRemovedUser(_RemovedUser event, Emitter emit) {
-    final _users = state.users.minusElement(event.user);
+    final users = state.users.minusElement(event.user);
     emit(
       state.copyWith(
-        users: _users,
+        users: users,
       ),
     );
   }
 
   void _onAddedUser(_AddedUser event, Emitter emit) {
-    final _users = state.users.plusElement(event.user);
+    final users = state.users.plusElement(event.user);
     emit(
       state.copyWith(
-        users: _users,
+        users: users,
       ),
     );
   }
 
   FutureOr<void> _onShared(_Shared event, Emitter emit) async {
-    final _currentUserOption = await getIt<GetLoggedInUser>()(
+    final currentUserOption = await getIt<GetLoggedInUser>()(
       NoParams(),
     );
-    final _currentUser = _currentUserOption.fold(
+    final currentUser = currentUserOption.fold(
       () => throw UnAuthenticatedError,
       id,
     );
-    for (final _userReceiver in state.users.dart) {
+    for (final userReceiver in state.users.dart) {
       getIt<SendNotification>()(
         Params(
           notification: Notification.empty().copyWith(
-            sender: _currentUser.simplified,
-            receiverId: _userReceiver.id,
+            sender: currentUser.simplified,
+            receiverId: userReceiver.id,
             description: EntityDescription(
-              "${_currentUser.username.getOrCrash()} shared",
+              "${currentUser.username.getOrCrash()} shared",
             ),
             type: NotificationType.share,
             experienceOption: some(state.experience),

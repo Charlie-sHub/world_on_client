@@ -4,12 +4,12 @@ import 'package:worldon/views/core/widgets/misc/world_on_progress_indicator.dart
 
 class WorldOnPlasma extends StatelessWidget {
   @override
-  Widget build(BuildContext context) => Container(
-        decoration: const BoxDecoration(
+  Widget build(BuildContext context) => const DecoratedBox(
+        decoration: BoxDecoration(
           color: Colors.black,
           backgroundBlendMode: BlendMode.darken,
         ),
-        child: const PlasmaRenderer(
+        child: PlasmaRenderer(
           type: PlasmaType.bubbles,
           particles: 28,
           color: Color(0x81172F77),

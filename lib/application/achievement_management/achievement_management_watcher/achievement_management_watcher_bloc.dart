@@ -46,9 +46,9 @@ class AchievementManagementWatcherBloc extends Bloc<
     _achievementsStreamSubscription = getIt<WatchAllAchievements>()(
       getIt<NoParams>(),
     ).listen(
-      (_failureOrAchievements) => add(
+      (failureOrAchievements) => add(
         AchievementManagementWatcherEvent.resultsReceived(
-          _failureOrAchievements,
+          failureOrAchievements,
         ),
       ),
     );

@@ -44,8 +44,8 @@ class SearchTagsByNameWatcherBloc
     _tagsStreamSubscription = getIt<WatchSearchTagsByName>()(
       Params(name: event.searchTerm),
     ).listen(
-      (_failureOrTags) => add(
-        SearchTagsByNameWatcherEvent.resultsReceived(_failureOrTags),
+      (failureOrTags) => add(
+        SearchTagsByNameWatcherEvent.resultsReceived(failureOrTags),
       ),
     );
   }

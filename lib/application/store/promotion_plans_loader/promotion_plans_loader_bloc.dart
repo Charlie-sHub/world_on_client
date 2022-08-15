@@ -27,14 +27,14 @@ class PromotionPlansLoaderBloc
     Emitter emit,
   ) async {
     emit(const PromotionPlansLoaderState.loadInProgress());
-    final _failureOrPromotionPlans = await getIt<LoadPromotionPlans>()(
+    final failureOrPromotionPlans = await getIt<LoadPromotionPlans>()(
       getIt<NoParams>(),
     );
     emit(
-      _failureOrPromotionPlans.fold(
-        (_failure) => PromotionPlansLoaderState.loadFailure(_failure),
-        (_promotionPlans) =>
-            PromotionPlansLoaderState.loadedPromotionPlans(_promotionPlans),
+      failureOrPromotionPlans.fold(
+        (failure) => PromotionPlansLoaderState.loadFailure(failure),
+        (promotionPlans) =>
+            PromotionPlansLoaderState.loadedPromotionPlans(promotionPlans),
       ),
     );
   }

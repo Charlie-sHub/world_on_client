@@ -29,11 +29,11 @@ int experiencePointsRequired(int level) => level * _multiplier;
 
 /// Gives the maximum level by the given experience points
 int levelAt(int experiencePoints) {
-  int _level = 0;
-  int _experiencePointsComparison = 0;
-  for (int i = 1; _experiencePointsComparison <= experiencePoints; i++) {
-    _level++;
-    _experiencePointsComparison += experiencePointsRequired(i);
+  int level = 0;
+  int experiencePointsComparison = 0;
+  for (int i = 1; experiencePointsComparison <= experiencePoints; i++) {
+    level++;
+    experiencePointsComparison += experiencePointsRequired(i);
   }
-  return _level - 1;
+  return level - 1;
 }

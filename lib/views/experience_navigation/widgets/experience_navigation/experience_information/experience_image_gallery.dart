@@ -17,7 +17,7 @@ class ExperienceImageGallery extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final _imageURLs = experience.imageURLs;
+    final imageURLs = experience.imageURLs;
     return SizedBox(
       height: MediaQuery.of(context).size.height * 0.4,
       child: Stack(
@@ -45,16 +45,16 @@ class ExperienceImageGallery extends StatelessWidget {
                     child: InkWell(
                       onTap: () => Navigator.of(context).pop(),
                       child: WorldOnCachedImage(
-                        imageURL: _imageURLs.elementAt(index),
+                        imageURL: imageURLs.elementAt(index),
                       ),
                     ),
                   ),
                 ),
                 child: WorldOnCachedImage(
-                  imageURL: _imageURLs.elementAt(index),
+                  imageURL: imageURLs.elementAt(index),
                 ),
               ),
-              itemCount: _imageURLs.length,
+              itemCount: imageURLs.length,
             ),
           ),
           Positioned(

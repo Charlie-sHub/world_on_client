@@ -30,10 +30,10 @@ class RegistrationForm extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final _formState = context.read<RegistrationFormBloc>().state;
+    final formState = context.read<RegistrationFormBloc>().state;
     return SingleChildScrollView(
       child: Form(
-        autovalidateMode: _formState.showErrorMessages
+        autovalidateMode: formState.showErrorMessages
             ? AutovalidateMode.always
             : AutovalidateMode.disabled,
         child: Padding(
@@ -48,16 +48,16 @@ class RegistrationForm extends StatelessWidget {
               ),
               const SizedBox(height: _sizedBoxHeight),
               UserImagePicker(
-                imageURLOption: _formState.user.imageURL.isEmpty
+                imageURLOption: formState.user.imageURL.isEmpty
                     ? none()
-                    : some(_formState.user.imageURL),
+                    : some(formState.user.imageURL),
               ),
               const SizedBox(height: _sizedBoxHeight),
               UsernameTextField(
                 initialValue: userOption.fold(
                   () => null,
-                  (_user) => _user.username.isValid()
-                      ? _user.username.getOrCrash()
+                  (user) => user.username.isValid()
+                      ? user.username.getOrCrash()
                       : null,
                 ),
               ),
@@ -65,8 +65,8 @@ class RegistrationForm extends StatelessWidget {
               NameTextField(
                 initialValue: userOption.fold(
                   () => null,
-                  (_user) =>
-                      _user.name.isValid() ? _user.name.getOrCrash() : null,
+                  (user) =>
+                      user.name.isValid() ? user.name.getOrCrash() : null,
                 ),
               ),
               const SizedBox(height: _sizedBoxHeight),
@@ -74,8 +74,8 @@ class RegistrationForm extends StatelessWidget {
                 validator: (_) => _emailValidator(context),
                 initialValue: userOption.fold(
                   () => null,
-                  (_user) =>
-                      _user.email.isValid() ? _user.email.getOrCrash() : null,
+                  (user) =>
+                      user.email.isValid() ? user.email.getOrCrash() : null,
                 ),
                 eventToAdd: (String value) =>
                     context.read<RegistrationFormBloc>().add(

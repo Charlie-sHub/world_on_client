@@ -47,5 +47,7 @@ class ItemDto with _$ItemDto {
         boughtDate: boughtDate,
       );
 
-  factory ItemDto.fromJson(Map<String, dynamic> json) => _$ItemDtoFromJson(json);
+  factory ItemDto.fromJson(Map<String, dynamic> json) => _$ItemDtoFromJson(
+        json,
+      );
 }

@@ -28,11 +28,11 @@ class TagResultsView extends StatelessWidget {
             itemCount: state.tagsFound.size,
             physics: const BouncingScrollPhysics(),
             itemBuilder: (context, index) {
-              final _tag = state.tagsFound.get(index);
-              if (_tag.isValid) {
-                return SimpleTagCardBuilder(tag: _tag);
+              final tag = state.tagsFound.get(index);
+              if (tag.isValid) {
+                return SimpleTagCardBuilder(tag: tag);
               } else {
-                return SimpleTagErrorDisplay(tag: _tag);
+                return SimpleTagErrorDisplay(tag: tag);
               }
             },
           ),

@@ -10,8 +10,8 @@ import 'package:worldon/injection.dart';
 class PicturesSelector extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    final _state = context.read<ExperienceManagementFormBloc>().state;
-    return _state.experience.imageAssetsOption.fold(
+    final state = context.read<ExperienceManagementFormBloc>().state;
+    return state.experience.imageAssetsOption.fold(
       () => Column(
         children: [
           IconButton(
@@ -21,10 +21,10 @@ class PicturesSelector extends StatelessWidget {
             ),
             onPressed: () async => _pickImages(
               context,
-              _state,
+              state,
             ),
           ),
-          if (_state.showErrorMessages && _state.experience.imageURLs.isEmpty)
+          if (state.showErrorMessages && state.experience.imageURLs.isEmpty)
             Text(
               S.of(context).experiencePictureSelection,
               textAlign: TextAlign.center,
@@ -64,7 +64,7 @@ class PicturesSelector extends StatelessWidget {
               ),
               onPressed: () async => _pickImages(
                 context,
-                _state,
+                state,
               ),
             ),
           ],

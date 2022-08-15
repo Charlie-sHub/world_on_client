@@ -44,8 +44,8 @@ class ExperienceLogWatcherBloc
     _experienceLogStreamSubscription?.cancel();
     _experienceLogStreamSubscription =
         getIt<WatchUserLog>()(getIt<NoParams>()).listen(
-      (_failureOrExperiences) =>
-          add(ExperienceLogWatcherEvent.resultsReceived(_failureOrExperiences)),
+      (failureOrExperiences) =>
+          add(ExperienceLogWatcherEvent.resultsReceived(failureOrExperiences)),
     );
   }
 

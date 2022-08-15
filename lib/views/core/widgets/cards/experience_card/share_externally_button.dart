@@ -37,20 +37,20 @@ class ShareExternallyButton extends StatelessWidget {
         (response) {
           getApplicationDocumentsDirectory().then(
             (documentDirectory) {
-              const _url =
+              const url =
                   "https://play.google.com/store/apps/details?id=com.worldon_app.worldon";
-              final _file = File(
+              final file = File(
                 join(
                   documentDirectory.path,
                   "${experience.title.getOrCrash()}_share_image.png",
                 ),
               );
-              _file.writeAsBytesSync(response.bodyBytes);
+              file.writeAsBytesSync(response.bodyBytes);
               SocialShare.shareOptions(
-                "${experience.title.getOrCrash()} ${S.of(context).shareMessage} $_url",
-                imagePath: _file.path,
+                "${experience.title.getOrCrash()} ${S.of(context).shareMessage} $url",
+                imagePath: file.path,
               );
-              _file.delete();
+              file.delete();
             },
           );
         },

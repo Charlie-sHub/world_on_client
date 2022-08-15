@@ -29,8 +29,8 @@ class NewNotificationsWatcherBloc
     emit(
       event.failureOrBool.fold(
         (failure) => const NewNotificationsWatcherState.failure(),
-        (_newNotifications) {
-          if (_newNotifications) {
+        (newNotifications) {
+          if (newNotifications) {
             return const NewNotificationsWatcherState.newNotifications();
           } else {
             return const NewNotificationsWatcherState.noNewNotifications();
@@ -45,8 +45,8 @@ class NewNotificationsWatcherBloc
     _newNotificationsStreamSubscription = getIt<WatchIfNewNotifications>()(
       getIt<NoParams>(),
     ).listen(
-      (_failureOrBool) => add(
-        NewNotificationsWatcherEvent.resultsReceived(_failureOrBool),
+      (failureOrBool) => add(
+        NewNotificationsWatcherEvent.resultsReceived(failureOrBool),
       ),
     );
   }

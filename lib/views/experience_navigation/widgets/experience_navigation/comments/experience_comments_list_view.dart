@@ -60,16 +60,16 @@ class ExperienceCommentsListView extends StatelessWidget {
                             color: WorldOnColors.accent,
                           ),
                           itemBuilder: (context, index) {
-                            final _comment = state.comments[index];
-                            if (_comment.isValid) {
+                            final comment = state.comments[index];
+                            if (comment.isValid) {
                               return CommentCard(
-                                comment: _comment,
-                                key: Key(_comment.id.toString()),
+                                comment: comment,
+                                key: Key(comment.id.toString()),
                               );
                             } else {
                               return ErrorCard(
                                 entityType: S.of(context).comment,
-                                valueFailureString: _comment.failureOption.fold(
+                                valueFailureString: comment.failureOption.fold(
                                   () => S.of(context).noError,
                                   (failure) => failure.toString(),
                                 ),

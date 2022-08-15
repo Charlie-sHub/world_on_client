@@ -178,21 +178,21 @@ class SimpleSquareUserCard extends StatelessWidget {
       current.map(
         initial: (_) => true,
         loadSuccess: (_) {
-          final _previousFollowsContainsUser = previous.maybeMap(
+          final previousFollowsContainsUser = previous.maybeMap(
             loadSuccess: (successState) =>
                 successState.user.followedUsersIds.contains(
               user.id,
             ),
             orElse: () => true,
           );
-          final _currentFollowsContainsUser = current.maybeMap(
+          final currentFollowsContainsUser = current.maybeMap(
             loadSuccess: (successState) =>
                 successState.user.followedUsersIds.contains(
               user.id,
             ),
             orElse: () => true,
           );
-          return _previousFollowsContainsUser != _currentFollowsContainsUser;
+          return previousFollowsContainsUser != currentFollowsContainsUser;
         },
         loadFailure: (_) => true,
       );

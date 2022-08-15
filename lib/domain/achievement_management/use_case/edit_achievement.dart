@@ -17,13 +17,13 @@ class EditAchievement implements AsyncUseCase<Unit, Params> {
 
   @override
   Future<Either<Failure, Unit>> call(Params params) async {
-    final _userRequestingOption = await getIt<GetLoggedInUser>().call(getIt<NoParams>());
-    final _userRequesting = _userRequestingOption.fold(
+    final userRequestingOption = await getIt<GetLoggedInUser>().call(getIt<NoParams>());
+    final userRequesting = userRequestingOption.fold(
       () => throw UnAuthenticatedError(),
       id,
     );
-    final _isAuthorized = _userRequesting.id == params.achievement.creatorId || _userRequesting.adminPowers;
-    if (_isAuthorized) {
+    final isAuthorized = userRequesting.id == params.achievement.creatorId || userRequesting.adminPowers;
+    if (isAuthorized) {
       return _repository.editAchievement(params.achievement);
     } else {
       return left(const Failure.coreDomain(CoreDomainFailure.unAuthorizedError()));

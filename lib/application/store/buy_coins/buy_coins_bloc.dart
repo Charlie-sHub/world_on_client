@@ -19,11 +19,11 @@ class BuyCoinsBloc extends Bloc<BuyCoinsEvent, BuyCoinsState> {
 
   FutureOr<void> _onCoinBought(_BoughtCoins event, Emitter emit) async {
     emit(const BuyCoinsState.actionInProgress());
-    final _failureOrUnit = await getIt<BuyCoins>()(
+    final failureOrUnit = await getIt<BuyCoins>()(
       Params(amount: event.amount),
     );
     emit(
-      _failureOrUnit.fold(
+      failureOrUnit.fold(
         (failure) => BuyCoinsState.purchaseFailure(failure),
         (_) => const BuyCoinsState.purchaseSuccess(),
       ),

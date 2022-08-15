@@ -28,17 +28,17 @@ class ShareableResultsView extends StatelessWidget {
                 ),
                 itemCount: searchState.searchedUsers.size,
                 itemBuilder: (context, index) {
-                  final _user = searchState.searchedUsers[index];
-                  if (_user.isValid) {
+                  final user = searchState.searchedUsers[index];
+                  if (user.isValid) {
                     return ShareableCircularAvatarCard(
-                      user: _user,
-                      isSelected: shareInternallyState.users.contains(_user),
-                      key: Key(_user.id.toString()),
+                      user: user,
+                      isSelected: shareInternallyState.users.contains(user),
+                      key: Key(user.id.toString()),
                     );
                   } else {
                     return ErrorCard(
                       entityType: S.of(context).user,
-                      valueFailureString: _user.failureOption.fold(
+                      valueFailureString: user.failureOption.fold(
                         () => S.of(context).noError,
                         (failure) => failure.toString(),
                       ),
@@ -46,14 +46,14 @@ class ShareableResultsView extends StatelessWidget {
                   }
                 },
               ),
-              (_failure) => _failure.maybeMap(
-                coreData: (_coreDataFailure) =>
-                    _coreDataFailure.coreDataFailure.maybeMap(
-                  notFoundError: (_notFoundError) => SearchErrorDisplay(
+              (failure) => failure.maybeMap(
+                coreData: (coreDataFailure) =>
+                    coreDataFailure.coreDataFailure.maybeMap(
+                  notFoundError: (notFoundError) => SearchErrorDisplay(
                     retryFunction: () => context.read<SearchToShareBloc>().add(
                           const SearchToShareEvent.submitted(),
                         ),
-                    failure: _failure,
+                    failure: failure,
                     specificMessage: some(S.of(context).notFoundErrorSearch),
                   ),
                   orElse: () => null,

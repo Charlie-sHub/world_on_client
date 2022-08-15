@@ -43,8 +43,8 @@ class BlockedWatcherBloc
     _blockedUsersStreamSubscription = getIt<WatchBlockedUsers>()(
       Params(id: event.user.id),
     ).listen(
-      (_failureOrUsers) =>
-          add(BlockedWatcherEvent.resultsReceived(_failureOrUsers)),
+      (failureOrUsers) =>
+          add(BlockedWatcherEvent.resultsReceived(failureOrUsers)),
     );
   }
 

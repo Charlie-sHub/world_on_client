@@ -17,15 +17,15 @@ class EditUser implements AsyncUseCase<Unit, Params> {
 
   @override
   Future<Either<Failure, Unit>> call(Params params) async {
-    final _userRequestingOption =
+    final userRequestingOption =
         await getIt<GetLoggedInUser>().call(getIt<NoParams>());
-    final _userRequesting = _userRequestingOption.fold(
+    final userRequesting = userRequestingOption.fold(
       () => throw UnAuthenticatedError(),
       id,
     );
-    final _isAuthorized = _userRequesting.id == params.userToEdit.id ||
-        _userRequesting.adminPowers;
-    if (_isAuthorized) {
+    final isAuthorized = userRequesting.id == params.userToEdit.id ||
+        userRequesting.adminPowers;
+    if (isAuthorized) {
       return repository.editUser(params.userToEdit);
     } else {
       return left(

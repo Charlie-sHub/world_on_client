@@ -24,14 +24,14 @@ class MainPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final _experienceCreationButtonKey = GlobalKey();
+    final experienceCreationButtonKey = GlobalKey();
     // What card will be shown if the user has nothing in its feed?
     // final _experienceCardKey = GlobalKey();
-    final _userLevelKey = GlobalKey();
-    final _keys = [
-      _experienceCreationButtonKey,
+    final userLevelKey = GlobalKey();
+    final keys = [
+      experienceCreationButtonKey,
       // _experienceCardKey,
-      _userLevelKey,
+      userLevelKey,
     ];
     return BlocListener<AuthenticationBloc, AuthenticationState>(
       listener: _authenticationListener,
@@ -69,7 +69,7 @@ class MainPage extends StatelessWidget {
               child: ShowCaseWidget(
                 onComplete: (_, key) => _onShowCaseComplete(
                   key,
-                  _experienceCreationButtonKey,
+                  experienceCreationButtonKey,
                   context,
                 ),
                 onFinish: () => context.read<MainPageShowCaseBloc>().add(
@@ -80,15 +80,15 @@ class MainPage extends StatelessWidget {
                       BlocListener<MainPageShowCaseBloc, MainPageShowCaseState>(
                     listener: (context, state) => state.maybeMap(
                       show: (_) =>
-                          ShowCaseWidget.of(context)!.startShowCase(_keys),
+                          ShowCaseWidget.of(context).startShowCase(keys),
                       orElse: () => null,
                     ),
                     child: GestureDetector(
                       onTap: () =>
                           FocusManager.instance.primaryFocus?.unfocus(),
                       child: MainPageScaffold(
-                        createExperienceShowKey: _experienceCreationButtonKey,
-                        userLevelShowKey: _userLevelKey,
+                        createExperienceShowKey: experienceCreationButtonKey,
+                        userLevelShowKey: userLevelKey,
                       ),
                     ),
                   ),
@@ -103,10 +103,10 @@ class MainPage extends StatelessWidget {
 
   void _onShowCaseComplete(
     GlobalKey<State<StatefulWidget>> key,
-    GlobalKey<State<StatefulWidget>> _experienceCreationButtonKey,
+    GlobalKey<State<StatefulWidget>> experienceCreationButtonKey,
     BuildContext context,
   ) {
-    if (key == _experienceCreationButtonKey) {
+    if (key == experienceCreationButtonKey) {
       context.read<NavigationActorBloc>().add(
             NavigationActorEvent.profileTapped(
               currentUserProfile: false,
@@ -129,9 +129,9 @@ class MainPage extends StatelessWidget {
 
   void _watchUserListener(BuildContext context, WatchCurrentUserState state) =>
       state.maybeMap(
-        loadFailure: (_failureState) => FlushbarHelper.createError(
+        loadFailure: (failureState) => FlushbarHelper.createError(
           duration: const Duration(seconds: 2),
-          message: _failureState.failure.maybeMap(
+          message: failureState.failure.maybeMap(
             coreData: (failure) => failure.coreDataFailure.maybeMap(
               serverError: (failure) => failure.errorString,
               orElse: () => S.of(context).unknownError,

@@ -33,30 +33,31 @@ class ProductionStoreRepository implements StoreRepositoryInterface {
 
   @override
   Future<Either<Failure, Unit>> buyCoins(int amount) async {
-    final _ableToBuy = await _inAppPurchaseInstance.isAvailable();
-    if (_ableToBuy) {
+    final ableToBuy = await _inAppPurchaseInstance.isAvailable();
+    if (ableToBuy) {
       try {
-        final _snapshot = await _firestore.coinCollection.doc("coins").get();
-        final _coins = _snapshot.data();
+        final snapshot = await _firestore.coinCollection.doc("coins").get();
+        final coins = snapshot.data();
         if (amount == 10) {
-          final _productDetailsResponse = await _inAppPurchaseInstance.queryProductDetails(
-            {_coins!.tenCoinsProductId},
+          final productDetailsResponse =
+              await _inAppPurchaseInstance.queryProductDetails(
+            {coins!.tenCoinsProductId},
           );
-          final _purchaseParam = PurchaseParam(
-            productDetails: _productDetailsResponse.productDetails.first,
+          final purchaseParam = PurchaseParam(
+            productDetails: productDetailsResponse.productDetails.first,
           );
           await _inAppPurchaseInstance.buyConsumable(
-            purchaseParam: _purchaseParam,
+            purchaseParam: purchaseParam,
           );
-          final _userDocument = await _firestore.currentUserReference();
-          await _userDocument.update(
+          final userDocument = await _firestore.currentUserReference();
+          await userDocument.update(
             {
               UserFields.coins: FieldValue.increment(1),
             },
           );
         }
         return right(unit);
-      } catch (error, _) {
+      } catch (error) {
         return left(_onError(error));
       }
     } else {
@@ -72,17 +73,17 @@ class ProductionStoreRepository implements StoreRepositoryInterface {
   @override
   Future<Either<Failure, Unit>> buyItem(Item item) async {
     try {
-      final _boughtItem = item.copyWith(boughtDate: DateTime.now());
-      final _user = await _firestore.currentUser();
-      if (_user.coins >= _boughtItem.value) {
-        _user.items.add(_boughtItem);
-        final _jsonUser = UserDto.fromDomain(
-          _user.copyWith(
-            coins: _user.coins - _boughtItem.value,
+      final boughtItem = item.copyWith(boughtDate: DateTime.now());
+      final user = await _firestore.currentUser();
+      if (user.coins >= boughtItem.value) {
+        user.items.add(boughtItem);
+        final jsonUser = UserDto.fromDomain(
+          user.copyWith(
+            coins: user.coins - boughtItem.value,
           ),
         ).toJson();
-        final _userDocument = await _firestore.currentUserReference();
-        _userDocument.update(_jsonUser);
+        final userDocument = await _firestore.currentUserReference();
+        userDocument.update(jsonUser);
         return right(unit);
       } else {
         return left(
@@ -91,36 +92,39 @@ class ProductionStoreRepository implements StoreRepositoryInterface {
           ),
         );
       }
-    } catch (error, _) {
+    } catch (error) {
       return left(_onError(error));
     }
   }
 
   @override
   Future<Either<Failure, Unit>> buyPromotionPlan(PromotionPlan plan) async {
-    final _ableToBuy = await _inAppPurchaseInstance.isAvailable();
-    if (_ableToBuy) {
+    final ableToBuy = await _inAppPurchaseInstance.isAvailable();
+    if (ableToBuy) {
       try {
-        final _productDetailsResponse = await _inAppPurchaseInstance.queryProductDetails(
+        final productDetailsResponse =
+            await _inAppPurchaseInstance.queryProductDetails(
           {
             // The case of buying a "none" should be impossible
             // Even if it happens it should just throw an exception anyway
             plan.productId,
           },
         );
-        final _purchaseParam = PurchaseParam(
-          productDetails: _productDetailsResponse.productDetails.first,
+        final purchaseParam = PurchaseParam(
+          productDetails: productDetailsResponse.productDetails.first,
         );
-        await _inAppPurchaseInstance.buyConsumable(purchaseParam: _purchaseParam);
-        final _currentUser = await _firestore.currentUser();
-        final _updatedUser = _currentUser.copyWith(
+        await _inAppPurchaseInstance.buyConsumable(
+          purchaseParam: purchaseParam,
+        );
+        final currentUser = await _firestore.currentUser();
+        final updatedUser = currentUser.copyWith(
           promotionPlan: plan,
         );
-        final _jsonUser = UserDto.fromDomain(_updatedUser).toJson();
-        final _userDocument = await _firestore.currentUserReference();
-        _userDocument.update(_jsonUser);
+        final jsonUser = UserDto.fromDomain(updatedUser).toJson();
+        final userDocument = await _firestore.currentUserReference();
+        userDocument.update(jsonUser);
         return right(unit);
-      } catch (error, _) {
+      } catch (error) {
         return left(_onError(error));
       }
     } else {
@@ -132,33 +136,33 @@ class ProductionStoreRepository implements StoreRepositoryInterface {
   @override
   Stream<Either<Failure, KtList<Item>>> streamOwnedItems() async* {
     // Not sure this makes sense as a stream
-    final _userDto = await _firestore.currentUserDto();
-    if (_userDto.items.isNotEmpty) {
-      final _iterableOfIdLists = partition(
-        _userDto.followedUsersIds,
+    final userDto = await _firestore.currentUserDto();
+    if (userDto.items.isNotEmpty) {
+      final iterableOfIdLists = partition(
+        userDto.followedUsersIds,
         10,
       );
-      final _combinedStreamList = _iterableOfIdLists
+      final combinedStreamList = iterableOfIdLists
           .map(
-            (_idList) => _firestore.itemCollection
+            (idList) => _firestore.itemCollection
                 .where(
                   ItemFields.id,
-                  whereIn: _idList,
+                  whereIn: idList,
                 )
                 .snapshots(),
           )
           .toList();
       yield* CombineLatestStream(
-        _combinedStreamList,
+        combinedStreamList,
         (List<QuerySnapshot<ItemDto>> values) {
-          final _itemList = <Item>[];
-          for (final _snapshot in values) {
-            for (final _document in _snapshot.docs) {
-              final _item = _document.data().toDomain();
-              _itemList.add(_item);
+          final itemList = <Item>[];
+          for (final snapshot in values) {
+            for (final document in snapshot.docs) {
+              final item = document.data().toDomain();
+              itemList.add(item);
             }
           }
-          return _itemList;
+          return itemList;
         },
       ).map(
         (items) {
@@ -221,14 +225,14 @@ class ProductionStoreRepository implements StoreRepositoryInterface {
   @override
   Future<Either<Failure, KtList<PromotionPlan>>> loadPromotionPlans() async {
     try {
-      final _querySnapshot = await _firestore.promotionPlanCollection.get();
-      final _promotionPlans = _querySnapshot.docs
+      final querySnapshot = await _firestore.promotionPlanCollection.get();
+      final promotionPlans = querySnapshot.docs
           .map(
-            (_document) => _document.data().toDomain(),
+            (document) => document.data().toDomain(),
           )
           .toImmutableList();
-      return right(_promotionPlans);
-    } catch (error, _) {
+      return right(promotionPlans);
+    } catch (error) {
       return left(_onError(error));
     }
   }
@@ -237,12 +241,16 @@ class ProductionStoreRepository implements StoreRepositoryInterface {
     if (error is FirebaseException) {
       _logger.e("FirebaseException: ${error.message}");
       return Failure.coreData(
-        CoreDataFailure.serverError(errorString: "Firebase error: ${error.message}"),
+        CoreDataFailure.serverError(
+          errorString: "Firebase error: ${error.message}",
+        ),
       );
     } else if (error is StateError) {
       _logger.e("StateError: ${error.message}");
       return Failure.coreData(
-        CoreDataFailure.serverError(errorString: "State error: ${error.message}"),
+        CoreDataFailure.serverError(
+          errorString: "State error: ${error.message}",
+        ),
       );
     } else {
       _logger.e("Unknown server error:  ${error.runtimeType}");

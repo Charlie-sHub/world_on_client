@@ -31,10 +31,10 @@ class FollowActorBloc extends Bloc<FollowActorEvent, FollowActorState> {
 
   FutureOr<void> _onUnFollowed(_UnFollowed event, Emitter emit) async {
     emit(const FollowActorState.actionInProgress());
-    final _failureOrUnit = await getIt<un_follow_user.UnFollowUser>()(
+    final failureOrUnit = await getIt<un_follow_user.UnFollowUser>()(
       un_follow_user.Params(userToUnFollowId: event.userToUnFollowId),
     );
-    _failureOrUnit.fold(
+    failureOrUnit.fold(
       (failure) {
         emit(FollowActorState.unFollowFailure(failure));
       },
@@ -59,13 +59,13 @@ class FollowActorBloc extends Bloc<FollowActorEvent, FollowActorState> {
 
   FutureOr<void> _onFollowed(_Followed event, Emitter emit) async {
     emit(const FollowActorState.actionInProgress());
-    final _failureOrUnit = await getIt<follow_user.FollowUser>()(
+    final failureOrUnit = await getIt<follow_user.FollowUser>()(
       follow_user.Params(
         followedId: event.userToFollowId,
         currentUserId: event.currentUser.id,
       ),
     );
-    _failureOrUnit.fold(
+    failureOrUnit.fold(
       (failure) {
         emit(FollowActorState.followFailure(failure));
       },

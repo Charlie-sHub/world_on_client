@@ -23,7 +23,9 @@ class LocationDto with _$LocationDto {
         city: location.city,
         country: location.country,
         postalCode: location.postalCode,
-        experiences: location.experiences.map((experience) => ExperienceDto.fromDomain(experience)).toSet(),
+        experiences: location.experiences
+            .map((experience) => ExperienceDto.fromDomain(experience))
+            .toSet(),
       );
 
   Location toDomain() => Location(
@@ -31,8 +33,11 @@ class LocationDto with _$LocationDto {
         city: city,
         country: country,
         postalCode: postalCode,
-        experiences: experiences.map((experienceDto) => experienceDto.toDomain()).toSet(),
+        experiences: experiences
+            .map((experienceDto) => experienceDto.toDomain())
+            .toSet(),
       );
 
-  factory LocationDto.fromJson(Map<String, dynamic> json) => _$LocationDtoFromJson(json);
+  factory LocationDto.fromJson(Map<String, dynamic> json) =>
+      _$LocationDtoFromJson(json);
 }

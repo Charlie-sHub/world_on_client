@@ -23,11 +23,11 @@ class LoadUserBloc extends Bloc<LoadUserEvent, LoadUserState> {
 
   FutureOr<void> _onLoadedUser(_LoadedUser event, Emitter emit) async {
     emit(const LoadUserState.actionInProgress());
-    final _userOption = await getIt<GetLoggedInUser>()(getIt<NoParams>());
-    final _user = _userOption.fold(
+    final userOption = await getIt<GetLoggedInUser>()(getIt<NoParams>());
+    final user = userOption.fold(
       () => throw UnAuthenticatedError(),
       id,
     );
-    emit(LoadUserState.loadSuccess(_user));
+    emit(LoadUserState.loadSuccess(user));
   }
 }

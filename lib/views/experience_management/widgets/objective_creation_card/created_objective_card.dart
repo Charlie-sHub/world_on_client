@@ -49,7 +49,7 @@ class CreatedObjectiveCard extends StatelessWidget {
                   Image(
                     image: objective.imageFile!.fold(
                       () => CachedNetworkImageProvider(objective.imageURL),
-                      (_imageFile) => FileImage(_imageFile),
+                      (imageFile) => FileImage(imageFile),
                     ),
                     height: 100,
                   ),

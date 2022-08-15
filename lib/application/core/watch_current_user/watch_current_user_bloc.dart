@@ -27,8 +27,8 @@ class WatchCurrentUserBloc
   void _onResultReceived(_ResultReceived event, Emitter emit) {
     emit(
       event.failureOrUser.fold(
-        (_failure) => WatchCurrentUserState.loadFailure(_failure),
-        (_user) => WatchCurrentUserState.loadSuccess(_user),
+        (failure) => WatchCurrentUserState.loadFailure(failure),
+        (user) => WatchCurrentUserState.loadSuccess(user),
       ),
     );
   }
@@ -38,8 +38,8 @@ class WatchCurrentUserBloc
     _userStreamSubscription = getIt<WatchCurrentUser>()(
       getIt<NoParams>(),
     ).listen(
-      (_failureOrUser) => add(
-        WatchCurrentUserEvent.resultReceived(_failureOrUser),
+      (failureOrUser) => add(
+        WatchCurrentUserEvent.resultReceived(failureOrUser),
       ),
     );
   }

@@ -32,7 +32,7 @@ class ObjectivesTrackerBloc
     _ObjectiveUnaccomplished event,
     Emitter emit,
   ) {
-    final _objectivesLeft = state.objectivesToDo.plusElement(event.objective);
+    final objectivesLeft = state.objectivesToDo.plusElement(event.objective);
     getIt<unaccomplish_objective.UnAccomplishObjective>()(
       unaccomplish_objective.Params(
         objective: event.objective,
@@ -41,15 +41,15 @@ class ObjectivesTrackerBloc
     );
     emit(
       state.copyWith(
-        objectivesToDo: _objectivesLeft,
+        objectivesToDo: objectivesLeft,
       ),
     );
   }
 
   void _onObjectiveAccomplished(_ObjectiveAccomplished event, Emitter emit) {
-    final _objectivesLeft = state.objectivesToDo.minusElement(event.objective);
-    final _finished = _objectivesLeft.isEmpty();
-    if (!_finished) {
+    final objectivesLeft = state.objectivesToDo.minusElement(event.objective);
+    final finished = objectivesLeft.isEmpty();
+    if (!finished) {
       getIt<accomplish_objective.AccomplishObjective>()(
         accomplish_objective.Params(
           objective: event.objective,
@@ -59,15 +59,15 @@ class ObjectivesTrackerBloc
     }
     emit(
       state.copyWith(
-        objectivesToDo: _objectivesLeft,
-        isFinished: _finished,
+        objectivesToDo: objectivesLeft,
+        isFinished: finished,
         showExplanation: false,
       ),
     );
   }
 
   FutureOr<void> _onInitialized(_Initialized event, Emitter emit) async {
-    final _failureOrObjectiveSet =
+    final failureOrObjectiveSet =
         await getIt<save_user_progress.SaveUserProgress>()(
       save_user_progress.Params(
         objectiveList: event.objectiveList,
@@ -76,14 +76,14 @@ class ObjectivesTrackerBloc
     );
     // Even if there's an error at least the user can continue with the experience
     emit(
-      _failureOrObjectiveSet.fold(
+      failureOrObjectiveSet.fold(
         (_) => ObjectivesTrackerState.initial().copyWith(
           objectivesToDo: event.objectiveList.getOrCrash().toList(),
           experienceId: event.experienceId,
         ),
-        (_objectiveList) => ObjectivesTrackerState.initial().copyWith(
-          objectivesToDo: _objectiveList.isNotEmpty
-              ? _objectiveList.getOrCrash().toList()
+        (objectiveList) => ObjectivesTrackerState.initial().copyWith(
+          objectivesToDo: objectiveList.isNotEmpty
+              ? objectiveList.getOrCrash().toList()
               : event.objectiveList.getOrCrash().toList(),
           experienceId: event.experienceId,
         ),

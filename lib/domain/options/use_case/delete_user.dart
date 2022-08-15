@@ -17,14 +17,14 @@ class DeleteUser implements AsyncUseCase<Unit, Params> {
 
   @override
   Future<Either<Failure, Unit>> call(Params params) async {
-    final _userRequestingOption =
+    final userRequestingOption =
         await getIt<GetLoggedInUser>().call(getIt<NoParams>());
-    final _userRequesting = _userRequestingOption.fold(
+    final userRequesting = userRequestingOption.fold(
       () => throw UnAuthenticatedError(),
       id,
     );
     final isAuthorized =
-        _userRequesting.adminPowers || _userRequesting == params.userToDelete;
+        userRequesting.adminPowers || userRequesting == params.userToDelete;
     if (isAuthorized) {
       return _repository.deleteUser(params.userToDelete.id);
     } else {

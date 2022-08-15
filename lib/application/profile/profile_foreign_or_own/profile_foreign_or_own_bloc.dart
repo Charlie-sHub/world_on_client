@@ -31,11 +31,11 @@ class ProfileForeignOrOwnBloc
     emit(const ProfileForeignOrOwnState.loadInProgress());
     await event.userIdOption.fold(
       () async {
-        final _loggedInUserOption = await getIt<GetLoggedInUser>()(
+        final loggedInUserOption = await getIt<GetLoggedInUser>()(
           getIt<NoParams>(),
         );
         emit(
-          _loggedInUserOption.fold(
+          loggedInUserOption.fold(
             // Maybe GetLoggedInUser should be reworked so it returns possible failures
             () => const ProfileForeignOrOwnState.loadFailure(),
             (user) => ProfileForeignOrOwnState.own(user),
@@ -43,27 +43,27 @@ class ProfileForeignOrOwnBloc
         );
       },
       (userId) async {
-        final _isOwn = await getIt<is_logged_in_user.IsLoggedInUser>()(
+        final isOwn = await getIt<is_logged_in_user.IsLoggedInUser>()(
           is_logged_in_user.Params(userToCompareWithId: userId),
         );
-        if (_isOwn) {
-          final _own = await getIt<load_user.LoadUser>()(
+        if (isOwn) {
+          final own = await getIt<load_user.LoadUser>()(
             load_user.Params(id: userId),
           );
           emit(
-            _own.fold(
+            own.fold(
               (_) => const ProfileForeignOrOwnState.loadFailure(),
-              (_ownUser) => ProfileForeignOrOwnState.own(_ownUser),
+              (ownUser) => ProfileForeignOrOwnState.own(ownUser),
             ),
           );
         } else {
-          final _foreignUser = await getIt<load_user.LoadUser>()(
+          final foreignUser = await getIt<load_user.LoadUser>()(
             load_user.Params(id: userId),
           );
           emit(
-            _foreignUser.fold(
+            foreignUser.fold(
               (_) => const ProfileForeignOrOwnState.loadFailure(),
-              (_foreignUser) => ProfileForeignOrOwnState.foreign(_foreignUser),
+              (foreignUser) => ProfileForeignOrOwnState.foreign(foreignUser),
             ),
           );
         }

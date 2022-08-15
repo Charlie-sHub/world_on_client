@@ -45,8 +45,8 @@ class ProfileAchievementsWatcherBloc extends Bloc<
     _userAchievementsStreamSubscription = getIt<WatchUserAchievements>()(
       Params(userId: event.user.id),
     ).listen(
-      (_failureOrAchievements) => add(
-        ProfileAchievementsWatcherEvent.resultsReceived(_failureOrAchievements),
+      (failureOrAchievements) => add(
+        ProfileAchievementsWatcherEvent.resultsReceived(failureOrAchievements),
       ),
     );
   }

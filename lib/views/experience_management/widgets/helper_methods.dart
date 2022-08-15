@@ -10,19 +10,19 @@ void onExperienceManagementFailure(
     FlushbarHelper.createError(
       duration: const Duration(seconds: 2),
       message: failure.maybeMap(
-        coreData: (_coreDataFailure) => _coreDataFailure.coreDataFailure.maybeMap(
+        coreData: (coreDataFailure) => coreDataFailure.coreDataFailure.maybeMap(
           nameAlreadyInUse: (_) => S.of(context).experienceTitleAlreadyInUse,
           serverError: (failure) => failure.errorString,
           orElse: () => S.of(context).unknownCoreDataError,
         ),
-        coreApplication: (_coreApplicationFailure) => _coreApplicationFailure.coreApplicationFailure.maybeMap(
+        coreApplication: (coreApplicationFailure) => coreApplicationFailure.coreApplicationFailure.maybeMap(
           emptyFields: (_) => S.of(context).emptyFields,
           orElse: () => S.of(context).unknownError,
         ),
-        experienceManagementApplication: (_experienceManagementApplication) => _experienceManagementApplication.experienceManagementApplicationFailure.map(
-          surpassedImageLimit: (_failure) => S.of(context).surpassedImageLimit + _failure.limit.toString(),
+        experienceManagementApplication: (experienceManagementApplication) => experienceManagementApplication.experienceManagementApplicationFailure.map(
+          surpassedImageLimit: (failure) => S.of(context).surpassedImageLimit + failure.limit.toString(),
         ),
-        coreDomain: (_coreDomainFailure) => _coreDomainFailure.coreDomainFailure.maybeMap(
+        coreDomain: (coreDomainFailure) => coreDomainFailure.coreDomainFailure.maybeMap(
           unAuthorizedError: (_) => S.of(context).unauthorizedError,
           orElse: () => S.of(context).unknownError,
         ),

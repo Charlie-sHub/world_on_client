@@ -28,7 +28,8 @@ class NotificationDto with _$NotificationDto {
     ExperienceDto? experience,
   }) = _NotificationDto;
 
-  factory NotificationDto.fromDomain(Notification notification) => NotificationDto(
+  factory NotificationDto.fromDomain(Notification notification) =>
+      NotificationDto(
         id: notification.id.getOrCrash(),
         sender: SimpleUserDto.fromDomain(notification.sender),
         receiverId: notification.receiverId.getOrCrash(),
@@ -38,7 +39,7 @@ class NotificationDto with _$NotificationDto {
         type: notification.type,
         experience: notification.experienceOption.fold(
           () => null,
-          (_experience) => ExperienceDto.fromDomain(_experience),
+          (experience) => ExperienceDto.fromDomain(experience),
         ),
       );
 
@@ -50,8 +51,11 @@ class NotificationDto with _$NotificationDto {
         seen: seen,
         creationDate: PastDate(creationDate),
         type: type,
-        experienceOption: experience != null ? dartz.some(experience!.toDomain()) : dartz.none(),
+        experienceOption: experience != null
+            ? dartz.some(experience!.toDomain())
+            : dartz.none(),
       );
 
-  factory NotificationDto.fromJson(Map<String, dynamic> json) => _$NotificationDtoFromJson(json);
+  factory NotificationDto.fromJson(Map<String, dynamic> json) =>
+      _$NotificationDtoFromJson(json);
 }

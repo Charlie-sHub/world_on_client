@@ -18,21 +18,21 @@ class ProductionGeoLocationRepository implements GeoLocationRepositoryInterface 
   @override
   Future<Either<Failure, Coordinates>> getCurrentLocation() async {
     try {
-      final _position = await Geolocator.getCurrentPosition(
+      final position = await Geolocator.getCurrentPosition(
         desiredAccuracy: LocationAccuracy.high,
       );
-      final _coordinates = Coordinates(
-        latitude: Latitude(_position.latitude),
-        longitude: Longitude(_position.longitude),
+      final coordinates = Coordinates(
+        latitude: Latitude(position.latitude),
+        longitude: Longitude(position.longitude),
       );
-      return right(_coordinates);
+      return right(coordinates);
     } catch (exception) {
-      final _errorMessage = "Geolocation error: $exception";
-      _logger.e(_errorMessage);
+      final errorMessage = "Geolocation error: $exception";
+      _logger.e(errorMessage);
       return left(
         Failure.coreData(
           CoreDataFailure.geoLocationError(
-            errorString: _errorMessage,
+            errorString: errorMessage,
           ),
         ),
       );

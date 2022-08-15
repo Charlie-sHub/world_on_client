@@ -25,11 +25,11 @@ class AchievementManagementActorBloc extends Bloc<
     Emitter emit,
   ) async {
     emit(const AchievementManagementActorState.actionInProgress());
-    final _eitherFailureOrSuccess = await getIt<DeleteAchievement>()(
+    final eitherFailureOrSuccess = await getIt<DeleteAchievement>()(
       Params(achievement: event.achievement),
     );
     emit(
-      _eitherFailureOrSuccess.fold(
+      eitherFailureOrSuccess.fold(
         (failure) => AchievementManagementActorState.deletionFailure(failure),
         (_) => const AchievementManagementActorState.deletionSuccess(),
       ),

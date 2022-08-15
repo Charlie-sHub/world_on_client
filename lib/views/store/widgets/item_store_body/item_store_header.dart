@@ -23,7 +23,7 @@ class ItemStoreHeader extends StatelessWidget {
           builder: (context, state) => state.map(
             initial: (_) => Container(),
             actionInProgress: (_) => WorldOnPlasma(),
-            loadSuccess: (_loadSuccess) => Stack(
+            loadSuccess: (loadSuccess) => Stack(
               alignment: Alignment.center,
               children: [
                 Image.asset(
@@ -38,7 +38,7 @@ class ItemStoreHeader extends StatelessWidget {
                       sigmaX: 0.75,
                       sigmaY: 0.75,
                     ),
-                    child: Container(
+                    child: const ColoredBox(
                       color: Colors.transparent,
                     ),
                   ),
@@ -50,7 +50,7 @@ class ItemStoreHeader extends StatelessWidget {
                     width: MediaQuery.of(context).size.width * 0.9,
                     child: Center(
                       child: AutoSizeText(
-                        _loadSuccess.user.name.getOrCrash(),
+                        loadSuccess.user.name.getOrCrash(),
                         minFontSize: 10,
                         maxFontSize: 20,
                         maxLines: 2,
@@ -124,7 +124,7 @@ class ItemStoreHeader extends StatelessWidget {
                   child: Row(
                     children: [
                       Text(
-                        _loadSuccess.user.coins.toString(),
+                        loadSuccess.user.coins.toString(),
                         style: const TextStyle(
                           fontSize: 30,
                           fontWeight: FontWeight.bold,
@@ -141,8 +141,8 @@ class ItemStoreHeader extends StatelessWidget {
                 ),
               ],
             ),
-            loadFailure: (_loadFailure) => ErrorDisplay(
-              failure: _loadFailure.failure,
+            loadFailure: (loadFailure) => ErrorDisplay(
+              failure: loadFailure.failure,
               retryFunction: () => context.read<LoadUserBloc>().add(
                     const LoadUserEvent.loadedUser(),
                   ),

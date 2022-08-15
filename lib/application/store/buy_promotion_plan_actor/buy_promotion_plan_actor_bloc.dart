@@ -27,15 +27,15 @@ class BuyPromotionPlanActorBloc
 
   FutureOr<void> _onInitialized(_Initialized event, Emitter emit) async {
     emit(const BuyPromotionPlanActorState.actionInProgress());
-    final _userOption = await getIt<GetLoggedInUser>()(
+    final userOption = await getIt<GetLoggedInUser>()(
       getIt<NoParams>(),
     );
-    final _user = _userOption.fold(
+    final user = userOption.fold(
       () => throw UnAuthenticatedError(),
       id,
     );
-    if (_user.promotionPlan.isUsable) {
-      emit(BuyPromotionPlanActorState.currentPlan(_user.promotionPlan));
+    if (user.promotionPlan.isUsable) {
+      emit(BuyPromotionPlanActorState.currentPlan(user.promotionPlan));
     } else {
       emit(const BuyPromotionPlanActorState.noPromotionPlan());
     }
@@ -46,11 +46,11 @@ class BuyPromotionPlanActorBloc
     Emitter emit,
   ) async {
     emit(const BuyPromotionPlanActorState.actionInProgress());
-    final _failureOrUnit = await getIt<BuyPromotionPlan>()(
+    final failureOrUnit = await getIt<BuyPromotionPlan>()(
       Params(plan: event.promotionPlan),
     );
     emit(
-      _failureOrUnit.fold(
+      failureOrUnit.fold(
         (failure) {
           add(const BuyPromotionPlanActorEvent.initialized());
           return BuyPromotionPlanActorState.purchaseFailure(failure);

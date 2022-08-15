@@ -33,9 +33,9 @@ class LogInPage extends StatelessWidget {
                       (_) => _onSuccess(context),
                     ),
                   ),
-                  (_thirdPartyUser) => context.router.push(
+                  (thirdPartyUser) => context.router.push(
                     RegistrationPageRoute(
-                      userOption: some(_thirdPartyUser),
+                      userOption: some(thirdPartyUser),
                     ),
                   ),
                 ),

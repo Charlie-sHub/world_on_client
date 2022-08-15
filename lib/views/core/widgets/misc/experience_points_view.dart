@@ -13,7 +13,7 @@ class ExperiencePointsView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final _experienceToGain = difficulty * ExperiencePoints.multiplier;
+    final experienceToGain = difficulty * ExperiencePoints.multiplier;
     return Row(
       children: <Widget>[
         const Icon(
@@ -22,7 +22,7 @@ class ExperiencePointsView extends StatelessWidget {
         ),
         const SizedBox(width: 5),
         AutoSizeText(
-          _experienceToGain.toString(),
+          experienceToGain.toString(),
           style: const TextStyle(
             fontSize: 15,
             fontWeight: FontWeight.bold,

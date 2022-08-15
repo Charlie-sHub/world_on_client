@@ -43,24 +43,24 @@ class ProductionAuthenticationRepository
         email: user.email.getOrCrash(),
         password: user.password.getOrCrash(),
       );
-      final _firebaseUser = _firebaseAuth.currentUser;
-      if (_firebaseUser != null) {
-        final _imageURL = user.imageURL.isNotEmpty
+      final firebaseUser = _firebaseAuth.currentUser;
+      if (firebaseUser != null) {
+        final imageURL = user.imageURL.isNotEmpty
             ? user.imageURL
             : await getIt<CloudStorageService>().uploadFileImage(
                 imageToUpload: user.imageFileOption.getOrElse(() => null)!,
                 folder: StorageFolder.users,
-                name: _firebaseUser.uid,
+                name: firebaseUser.uid,
               );
-        final _userDto = UserDto.fromDomain(
+        final userDto = UserDto.fromDomain(
           user.copyWith(
             id: UniqueId.fromUniqueString(
-              _firebaseUser.uid,
+              firebaseUser.uid,
             ),
-            imageURL: _imageURL,
+            imageURL: imageURL,
           ),
         );
-        await _firestore.userCollection.doc(_firebaseUser.uid).set(_userDto);
+        await _firestore.userCollection.doc(firebaseUser.uid).set(userDto);
         return right(unit);
       } else {
         return left(
@@ -119,36 +119,36 @@ class ProductionAuthenticationRepository
   @override
   Future<Either<Failure, Option<entity.User>>> logInGoogle() async {
     try {
-      final _googleUser = await _googleSignIn.signIn();
-      if (_googleUser == null) {
+      final googleUser = await _googleSignIn.signIn();
+      if (googleUser == null) {
         return left(
           const Failure.authenticationDomain(
             AuthenticationDomainFailure.cancelledByUser(),
           ),
         );
       }
-      final _userByEmailQuery = await _firestore.userCollection
+      final userByEmailQuery = await _firestore.userCollection
           .where(
             UserFields.email,
-            isEqualTo: _googleUser.email,
+            isEqualTo: googleUser.email,
           )
           .get();
-      if (_userByEmailQuery.docs.isNotEmpty) {
-        final _googleAuthentication = await _googleUser.authentication;
-        final _authenticationCredential = GoogleAuthProvider.credential(
-          idToken: _googleAuthentication.idToken,
-          accessToken: _googleAuthentication.accessToken,
+      if (userByEmailQuery.docs.isNotEmpty) {
+        final googleAuthentication = await googleUser.authentication;
+        final authenticationCredential = GoogleAuthProvider.credential(
+          idToken: googleAuthentication.idToken,
+          accessToken: googleAuthentication.accessToken,
         );
-        await _firebaseAuth.signInWithCredential(_authenticationCredential);
+        await _firebaseAuth.signInWithCredential(authenticationCredential);
         return right(none());
       } else {
-        final _user = entity.User.empty().copyWith(
-          name: Name(_googleUser.displayName ?? ""),
-          username: Name(_googleUser.displayName ?? ""),
-          email: EmailAddress(_googleUser.email),
-          imageURL: _googleUser.photoUrl ?? "",
+        final user = entity.User.empty().copyWith(
+          name: Name(googleUser.displayName ?? ""),
+          username: Name(googleUser.displayName ?? ""),
+          email: EmailAddress(googleUser.email),
+          imageURL: googleUser.photoUrl ?? "",
         );
-        return right(some(_user));
+        return right(some(user));
       }
     } on FirebaseAuthException catch (_) {
       return left(
@@ -169,12 +169,12 @@ class ProductionAuthenticationRepository
   @override
   Future<Option<entity.User>> getLoggedInUser() async {
     try {
-      final _firebaseCurrentUser = _firebaseAuth.currentUser;
-      if (_firebaseCurrentUser == null) {
+      final firebaseCurrentUser = _firebaseAuth.currentUser;
+      if (firebaseCurrentUser == null) {
         return none();
       } else {
-        final _user = await _firestore.currentUser();
-        return some(_user);
+        final user = await _firestore.currentUser();
+        return some(user);
       }
     } catch (error) {
       _logger.e("Error retrieving the logged in user: $error");

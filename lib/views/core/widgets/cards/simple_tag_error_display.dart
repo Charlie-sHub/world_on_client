@@ -12,7 +12,7 @@ class SimpleTagErrorDisplay extends StatelessWidget {
   }) : super(key: key);
 
   @override
-  Widget build(BuildContext context) => Container(
+  Widget build(BuildContext context) => DecoratedBox(
         decoration: BoxDecoration(
           border: Border.all(
             color: WorldOnColors.red,

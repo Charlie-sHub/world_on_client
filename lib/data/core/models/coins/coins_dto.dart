@@ -11,5 +11,7 @@ class CoinsDto with _$CoinsDto {
     required String tenCoinsProductId,
   }) = _CoinsDto;
 
-  factory CoinsDto.fromJson(Map<String, dynamic> json) => _$CoinsDtoFromJson(json);
+  factory CoinsDto.fromJson(Map<String, dynamic> json) => _$CoinsDtoFromJson(
+        json,
+      );
 }

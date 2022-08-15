@@ -40,7 +40,7 @@ class ProfileEditingFormBloc
   }
 
   FutureOr<void> _onSubmitted(_, Emitter emit) async {
-    late Either<Failure, Unit> _failureOrUnit;
+    late Either<Failure, Unit> failureOrUnit;
     emit(
       state.copyWith(
         isSubmitting: true,
@@ -48,18 +48,18 @@ class ProfileEditingFormBloc
       ),
     );
     if (state.user.isValid && state.passwordConfirmator.isValid()) {
-      final _userToEdit = state.user.copyWith(
+      final userToEdit = state.user.copyWith(
         modificationDate: PastDate(DateTime.now()),
       );
-      _failureOrUnit = await getIt<EditUser>()(
-        Params(userToEdit: _userToEdit),
+      failureOrUnit = await getIt<EditUser>()(
+        Params(userToEdit: userToEdit),
       );
     }
     emit(
       state.copyWith(
         isSubmitting: false,
         showErrorMessages: true,
-        failureOrSuccessOption: optionOf(_failureOrUnit),
+        failureOrSuccessOption: optionOf(failureOrUnit),
       ),
     );
   }
@@ -73,7 +73,7 @@ class ProfileEditingFormBloc
         user: state.user.copyWith(
           interestsIds: event.interests.dart
               .map(
-                (_tag) => _tag.id,
+                (tag) => tag.id,
               )
               .toSet(),
         ),
@@ -201,15 +201,15 @@ class ProfileEditingFormBloc
     _Initialized event,
     Emitter emit,
   ) {
-    final _user = event.userToEdit;
+    final user = event.userToEdit;
     emit(
       state.copyWith(
-        user: _user,
+        user: user,
         passwordConfirmator: PasswordConfirmator(
-          password: _user.password.getOrCrash(),
-          confirmation: _user.password.getOrCrash(),
+          password: user.password.getOrCrash(),
+          confirmation: user.password.getOrCrash(),
         ),
-        passwordToCompare: _user.password.getOrCrash(),
+        passwordToCompare: user.password.getOrCrash(),
       ),
     );
   }

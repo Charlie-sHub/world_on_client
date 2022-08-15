@@ -29,12 +29,12 @@ class TagCardActorBloc extends Bloc<TagCardActorEvent, TagCardActorState> {
     Emitter emit,
   ) async {
     emit(const TagCardActorState.actionInProgress());
-    final _failureOrUnit =
+    final failureOrUnit =
         await getIt<add_tag_to_interests.AddTagToInterests>()(
       add_tag_to_interests.Params(tag: event.tag),
     );
     emit(
-      _failureOrUnit.fold(
+      failureOrUnit.fold(
         (failure) => TagCardActorState.additionFailure(failure),
         (_) => const TagCardActorState.additionSuccess(),
       ),
@@ -46,12 +46,12 @@ class TagCardActorBloc extends Bloc<TagCardActorEvent, TagCardActorState> {
     Emitter emit,
   ) async {
     emit(const TagCardActorState.actionInProgress());
-    final _failureOrUnit =
+    final failureOrUnit =
         await getIt<dismiss_tag_from_interests.DismissTagFromInterests>()(
       dismiss_tag_from_interests.Params(tag: event.tag),
     );
     emit(
-      _failureOrUnit.fold(
+      failureOrUnit.fold(
         (failure) => TagCardActorState.dismissalFailure(failure),
         (_) => const TagCardActorState.dismissalSuccess(),
       ),

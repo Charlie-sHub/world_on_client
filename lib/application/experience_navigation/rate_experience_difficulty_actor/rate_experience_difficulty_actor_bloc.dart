@@ -42,7 +42,7 @@ class RateExperienceDifficultyActorBloc extends Bloc<
         failureOrSuccessOption: none(),
       ),
     );
-    final _failureOrUnit = await getIt<RateDifficulty>()(
+    final failureOrUnit = await getIt<RateDifficulty>()(
       Params(
         difficulty: Difficulty(state.difficulty),
         experienceId: event.experience.id,
@@ -51,7 +51,7 @@ class RateExperienceDifficultyActorBloc extends Bloc<
     emit(
       state.copyWith(
         isSubmitting: false,
-        failureOrSuccessOption: optionOf(_failureOrUnit),
+        failureOrSuccessOption: optionOf(failureOrUnit),
       ),
     );
   }

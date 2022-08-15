@@ -15,7 +15,7 @@ class CurrentPromotionPlanView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final _expirationDate = plan.boughtDate.add(
+    final expirationDate = plan.boughtDate.add(
       Duration(days: plan.amountOfDays),
     );
     return Padding(
@@ -69,7 +69,7 @@ class CurrentPromotionPlanView extends StatelessWidget {
                     children: [
                       TextSpan(
                         text:
-                            "${_expirationDate.year}-${_expirationDate.month}-${_expirationDate.day}",
+                            "${expirationDate.year}-${expirationDate.month}-${expirationDate.day}",
                         style: const TextStyle(
                           fontSize: 14,
                           color: WorldOnColors.red,

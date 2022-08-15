@@ -32,7 +32,7 @@ class UserImage extends StatelessWidget {
           alignment: Alignment.center,
           children: [
             ClipOval(
-              child: Container(
+              child: ColoredBox(
                 color: Colors.white,
                 child: Padding(
                   padding: const EdgeInsets.all(2),
@@ -62,7 +62,7 @@ class UserImage extends StatelessWidget {
                 top: 0,
                 left: 0,
                 child: ClipOval(
-                  child: Container(
+                  child: ColoredBox(
                     color: Colors.white,
                     child: Icon(
                       Icons.check_circle_rounded,

@@ -65,46 +65,42 @@ class ProductionCommentRepository implements CommentRepositoryInterface {
   @override
   Future<Either<Failure, Unit>> postComment(Comment comment) async {
     try {
-      final _commentDto = CommentDto.fromDomain(comment);
+      final commentDto = CommentDto.fromDomain(comment);
       await _firestore.experienceCollection
           .doc(
-            _commentDto.experienceId,
+            commentDto.experienceId,
           )
           .commentCollection
           .doc(
             comment.id.getOrCrash(),
           )
           .set(
-            _commentDto,
+            commentDto,
           );
       return right(unit);
-    } catch (error, _) {
-      return left(
-        _onError(error),
-      );
+    } catch (error) {
+      return left(_onError(error));
     }
   }
 
   @override
   Future<Either<Failure, Unit>> editComment(Comment comment) async {
     try {
-      final _commentDto = CommentDto.fromDomain(comment);
+      final commentDto = CommentDto.fromDomain(comment);
       await _firestore.experienceCollection
           .doc(
-            _commentDto.experienceId,
+            commentDto.experienceId,
           )
           .commentCollection
           .doc(
             comment.id.getOrCrash(),
           )
           .update(
-            _commentDto.toJson(),
+            commentDto.toJson(),
           );
       return right(unit);
-    } catch (error, _) {
-      return left(
-        _onError(error),
-      );
+    } catch (error) {
+      return left(_onError(error));
     }
   }
 
@@ -124,10 +120,8 @@ class ProductionCommentRepository implements CommentRepositoryInterface {
           )
           .delete();
       return right(unit);
-    } catch (error, _) {
-      return left(
-        _onError(error),
-      );
+    } catch (error) {
+      return left(_onError(error));
     }
   }
 

@@ -21,7 +21,7 @@ class Profile extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final _tabs = [
+    final tabs = [
       ProfileExperiencesTabView(
         user: user,
         isOwnProfile: isOwn,
@@ -30,7 +30,7 @@ class Profile extends StatelessWidget {
       if (isOwn) ProfileLogTabView(),
     ];
     return DefaultTabController(
-      length: _tabs.length,
+      length: tabs.length,
       child: NestedScrollView(
         key: UniqueKey(),
         dragStartBehavior: DragStartBehavior.down,
@@ -54,7 +54,7 @@ class Profile extends StatelessWidget {
           ),
         ],
         body: TabBarView(
-          children: _tabs,
+          children: tabs,
         ),
       ),
     );

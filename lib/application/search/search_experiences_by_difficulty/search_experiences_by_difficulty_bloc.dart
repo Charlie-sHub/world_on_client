@@ -41,21 +41,21 @@ class SearchExperiencesByDifficultyBloc extends Bloc<
   FutureOr<void> _onSubmitted(_Submitted event, Emitter emit) async {
     emit(const SearchExperiencesByDifficultyState.searchInProgress());
     await _experiencesStreamSubscription?.cancel();
-    final _difficulty = Difficulty(event.difficulty);
-    if (_difficulty.isValid()) {
+    final difficulty = Difficulty(event.difficulty);
+    if (difficulty.isValid()) {
       _experiencesStreamSubscription =
           getIt<WatchSearchExperiencesByDifficulty>()(
-        Params(difficulty: _difficulty),
+        Params(difficulty: difficulty),
       ).listen(
-        (_failureOrExperiences) => add(
+        (failureOrExperiences) => add(
           SearchExperiencesByDifficultyEvent.resultsReceived(
-            _failureOrExperiences,
+            failureOrExperiences,
           ),
         ),
       );
     } else {
-      final _failure = _difficulty.failureOrCrash();
-      emit(SearchExperiencesByDifficultyState.valueFailure(_failure));
+      final failure = difficulty.failureOrCrash();
+      emit(SearchExperiencesByDifficultyState.valueFailure(failure));
     }
   }
 
