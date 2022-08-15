@@ -19,7 +19,7 @@ class PromotionPlansList extends StatelessWidget {
             const PromotionPlansLoaderEvent.loadPromotionPlans(),
           ),
         child: BlocBuilder<PromotionPlansLoaderBloc, PromotionPlansLoaderState>(
-          builder: (context, _loaderState) => _loaderState.map(
+          builder: (context, loaderState) => loaderState.map(
             initial: (_) => Container(),
             loadInProgress: (_) => const WorldOnProgressIndicator(
               size: 60,
@@ -33,14 +33,14 @@ class PromotionPlansList extends StatelessWidget {
                 height: 5,
               ),
               itemBuilder: (context, index) {
-                final _promo = state.plans.get(index);
-                if (_promo.code != PromotionPlanCode.none) {
-                  if (_promo.isValid) {
-                    return PromotionPlanTile(plan: _promo);
+                final promo = state.plans.get(index);
+                if (promo.code != PromotionPlanCode.none) {
+                  if (promo.isValid) {
+                    return PromotionPlanTile(plan: promo);
                   } else {
                     return ErrorCard(
                       entityType: S.of(context).promotionPlans,
-                      valueFailureString: _promo.failureOption.fold(
+                      valueFailureString: promo.failureOption.fold(
                         () => S.of(context).noError,
                         (failure) => failure.toString(),
                       ),

@@ -61,48 +61,48 @@ class NotificationsBody extends StatelessWidget {
                   color: WorldOnColors.accent,
                 ),
                 itemBuilder: (context, index) {
-                  final _notification = state.notifications[index];
-                  if (_notification.isValid) {
+                  final notification = state.notifications[index];
+                  if (notification.isValid) {
                     // Throws Looking up a deactivated widget's ancestor is unsafe. otherwise when deleting
                     // Figured it must be using the context directly in a deleted widget
-                    final _auxContext = context.read<NotificationActorBloc>();
-                    final _message =
-                        _getNotificationMessage(context, _notification);
-                    if (!_notification.seen && index < 5) {
+                    final auxContext = context.read<NotificationActorBloc>();
+                    final message =
+                        _getNotificationMessage(context, notification);
+                    if (!notification.seen && index < 5) {
                       _showLocalNotification(
                         index,
                         context,
-                        _message,
+                        message,
                       );
                     }
                     return VisibilityDetector(
-                      key: Key(_notification.id.getOrCrash()),
+                      key: Key(notification.id.getOrCrash()),
                       onVisibilityChanged: (info) {
                         if (info.visibleFraction > 0.75) {
-                          _auxContext.add(
-                            NotificationActorEvent.checked(_notification),
+                          auxContext.add(
+                            NotificationActorEvent.checked(notification),
                           );
                           getIt<FlutterLocalNotificationsPlugin>()
                               .cancel(index);
                         }
                       },
-                      child: _notification.experienceOption.fold(
+                      child: notification.experienceOption.fold(
                         () => NotificationDismissibleTile(
-                          notification: _notification,
-                          message: _message,
-                          key: Key(_notification.id.toString()),
+                          notification: notification,
+                          message: message,
+                          key: Key(notification.id.toString()),
                         ),
-                        (_experience) => SharedExperienceDismissibleCard(
-                          notification: _notification,
-                          experience: _experience,
-                          key: Key(_notification.id.toString()),
+                        (experience) => SharedExperienceDismissibleCard(
+                          notification: notification,
+                          experience: experience,
+                          key: Key(notification.id.toString()),
                         ),
                       ),
                     );
                   } else {
                     return ErrorCard(
                       entityType: S.of(context).notification,
-                      valueFailureString: _notification.failureOption.fold(
+                      valueFailureString: notification.failureOption.fold(
                         () => S.of(context).noError,
                         (failure) => failure.toString(),
                       ),
@@ -127,7 +127,7 @@ class NotificationsBody extends StatelessWidget {
   void _showLocalNotification(
     int index,
     BuildContext context,
-    String _message,
+    String message,
   ) {
     const androidPlatformChannelSpecifics = AndroidNotificationDetails(
       "notification_notification",
@@ -141,7 +141,7 @@ class NotificationsBody extends StatelessWidget {
     getIt<FlutterLocalNotificationsPlugin>().show(
       index,
       S.of(context).newNotification,
-      _message,
+      message,
       platformChannelSpecifics,
     );
   }
@@ -150,25 +150,25 @@ class NotificationsBody extends StatelessWidget {
     BuildContext context,
     Notification notification,
   ) {
-    String _notificationDescription;
+    String notificationDescription;
     switch (notification.type) {
       case NotificationType.block:
-        _notificationDescription = S.of(context).blockedYou;
+        notificationDescription = S.of(context).blockedYou;
         break;
       case NotificationType.unblock:
-        _notificationDescription = S.of(context).unblockedYou;
+        notificationDescription = S.of(context).unblockedYou;
         break;
       case NotificationType.unfollow:
-        _notificationDescription = S.of(context).unfollowedYou;
+        notificationDescription = S.of(context).unfollowedYou;
         break;
       case NotificationType.follow:
-        _notificationDescription = S.of(context).followedYou;
+        notificationDescription = S.of(context).followedYou;
         break;
       case NotificationType.share:
         // Should never enter here though
-        _notificationDescription = S.of(context).shared;
+        notificationDescription = S.of(context).shared;
         break;
     }
-    return "${notification.sender.username.getOrCrash()} $_notificationDescription";
+    return "${notification.sender.username.getOrCrash()} $notificationDescription";
   }
 }

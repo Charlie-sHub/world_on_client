@@ -25,19 +25,19 @@ class BuyItemBloc extends Bloc<BuyItemEvent, BuyItemState> {
 
   FutureOr<void> _onInitialized(_Initialized event, Emitter emit) async {
     emit(const BuyItemState.actionInProgress());
-    final _userOption = await getIt<GetLoggedInUser>()(
+    final userOption = await getIt<GetLoggedInUser>()(
       getIt<NoParams>(),
     );
-    final _user = _userOption.fold(
+    final user = userOption.fold(
       () => throw UnAuthenticatedError(),
       id,
     );
-    final _itemIds = _user.items
+    final itemIds = user.items
         .map(
-          (_item) => _item.id,
+          (item) => item.id,
         )
         .toList();
-    if (_itemIds.contains(event.item.id)) {
+    if (itemIds.contains(event.item.id)) {
       emit(const BuyItemState.owns());
     } else {
       emit(const BuyItemState.doesNotOwn());
@@ -46,11 +46,11 @@ class BuyItemBloc extends Bloc<BuyItemEvent, BuyItemState> {
 
   FutureOr<void> _onItemBought(_BoughtItem event, Emitter emit) async {
     emit(const BuyItemState.actionInProgress());
-    final _failureOrUnit = await getIt<BuyItem>()(
+    final failureOrUnit = await getIt<BuyItem>()(
       Params(item: event.item),
     );
     emit(
-      _failureOrUnit.fold(
+      failureOrUnit.fold(
         (failure) => BuyItemState.purchaseFailure(failure),
         (_) => const BuyItemState.purchaseSuccess(),
       ),

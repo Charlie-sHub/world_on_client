@@ -34,11 +34,11 @@ class ExperienceResultsView extends StatelessWidget {
             itemCount: state.experiencesFound.size,
             physics: const BouncingScrollPhysics(),
             itemBuilder: (context, index) {
-              final _experience = state.experiencesFound[index];
-              if (_experience.isValid) {
+              final experience = state.experiencesFound[index];
+              if (experience.isValid) {
                 return SimpleExperienceCard(
-                  experience: _experience,
-                  key: Key(_experience.id.toString()),
+                  experience: experience,
+                  key: Key(experience.id.toString()),
                   reloadFunction: () =>
                       context.read<SearchExperiencesByNameWatcherBloc>().add(
                             SearchExperiencesByNameWatcherEvent
@@ -48,7 +48,7 @@ class ExperienceResultsView extends StatelessWidget {
               } else {
                 return ErrorCard(
                   entityType: S.of(context).experience,
-                  valueFailureString: _experience.failureOption.fold(
+                  valueFailureString: experience.failureOption.fold(
                     () => S.of(context).noError,
                     (failure) => failure.toString(),
                   ),

@@ -25,8 +25,8 @@ class UserImagePicker extends StatelessWidget {
             .fold(
               () => imageURLOption.fold(
                 () => CameraButton(),
-                (_imageURL) {
-                  if (_imageURL.isNotEmpty) {
+                (imageURL) {
+                  if (imageURL.isNotEmpty) {
                     return TextButton(
                       onPressed: () => openPictureSelectDialog(context).then(
                         (imageFile) {
@@ -41,7 +41,7 @@ class UserImagePicker extends StatelessWidget {
                       ),
                       child: CircleAvatar(
                         radius: _avatarRadius,
-                        backgroundImage: CachedNetworkImageProvider(_imageURL),
+                        backgroundImage: CachedNetworkImageProvider(imageURL),
                       ),
                     );
                   } else {

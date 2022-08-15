@@ -18,12 +18,12 @@ class EditExperience implements AsyncUseCase<Unit, Params> {
 
   @override
   Future<Either<Failure, Unit>> call(Params params) async {
-    final _isAuthorized = await _checkAuthorization(params);
-    if (_isAuthorized) {
-      final _imagesToDelete = _getImageListToDelete(params);
+    final isAuthorized = await _checkAuthorization(params);
+    if (isAuthorized) {
+      final imagesToDelete = _getImageListToDelete(params);
       return _repository.editExperience(
         params.experience,
-        _imagesToDelete,
+        imagesToDelete,
       );
     } else {
       return left(
@@ -35,44 +35,44 @@ class EditExperience implements AsyncUseCase<Unit, Params> {
   }
 
   List<String> _getImageListToDelete(Params params) {
-    final _imagesLeftList = params.experience.imageURLs.toList();
-    final _objectivesImageUrls =
+    final imagesLeftList = params.experience.imageURLs.toList();
+    final objectivesImageUrls =
         params.experience.objectives.getOrCrash().dart.map(
-              (_objective) => _objective.imageURL,
+              (objective) => objective.imageURL,
             );
-    final _rewardsImageUrls = params.experience.rewards.getOrCrash().dart.map(
-          (_reward) => _reward.imageURL,
+    final rewardsImageUrls = params.experience.rewards.getOrCrash().dart.map(
+          (reward) => reward.imageURL,
         );
-    _imagesLeftList.addAll(
-      _objectivesImageUrls,
+    imagesLeftList.addAll(
+      objectivesImageUrls,
     );
-    _imagesLeftList.addAll(
-      _rewardsImageUrls,
+    imagesLeftList.addAll(
+      rewardsImageUrls,
     );
-    final _imagesToDelete = params.originalImageUrls
+    final imagesToDelete = params.originalImageUrls
         .where(
-          (_imageUrl) => !_imagesLeftList.contains(_imageUrl),
+          (imageUrl) => !imagesLeftList.contains(imageUrl),
         )
         .toList();
-    final _filteredImagesToDelete = _imagesToDelete
+    final filteredImagesToDelete = imagesToDelete
         .where(
-          (_imageUrl) => _imageUrl != "",
+          (imageUrl) => imageUrl != "",
         )
         .toList();
-    return _filteredImagesToDelete;
+    return filteredImagesToDelete;
   }
 
   Future<bool> _checkAuthorization(Params params) async {
-    final _userRequestingOption = await getIt<GetLoggedInUser>().call(
+    final userRequestingOption = await getIt<GetLoggedInUser>().call(
       getIt<NoParams>(),
     );
-    final _userRequesting = _userRequestingOption.fold(
+    final userRequesting = userRequestingOption.fold(
       () => throw UnAuthenticatedError(),
       id,
     );
-    final _isAuthorized = _userRequesting.id == params.experience.creator.id ||
-        _userRequesting.adminPowers;
-    return _isAuthorized;
+    final isAuthorized = userRequesting.id == params.experience.creator.id ||
+        userRequesting.adminPowers;
+    return isAuthorized;
   }
 }
 

@@ -20,11 +20,11 @@ class UserActorBloc extends Bloc<UserActorEvent, UserActorState> {
 
   FutureOr<void> _onDeleted(_Deleted event, Emitter emit) async {
     emit(const UserActorState.actionInProgress());
-    final _eitherFailureOrSuccess = await getIt<DeleteUser>()(
+    final eitherFailureOrSuccess = await getIt<DeleteUser>()(
       Params(userToDelete: event.user),
     );
     emit(
-      _eitherFailureOrSuccess.fold(
+      eitherFailureOrSuccess.fold(
         (failure) => UserActorState.deletionFailure(failure),
         (_) => const UserActorState.deletionSuccess(),
       ),

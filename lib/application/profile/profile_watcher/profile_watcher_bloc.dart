@@ -29,7 +29,7 @@ class ProfileWatcherBloc
     emit(
       event.failureOrUser.fold(
         (failure) => const ProfileWatcherState.failure(),
-        (_user) => ProfileWatcherState.newProfileUpdate(_user),
+        (user) => ProfileWatcherState.newProfileUpdate(user),
       ),
     );
   }
@@ -42,8 +42,8 @@ class ProfileWatcherBloc
     _newProfileUpdateStreamSubscription = getIt<WatchProfile>()(
       Params(userId: event.userId),
     ).listen(
-      (_failureOrUser) => add(
-        ProfileWatcherEvent.resultsReceived(_failureOrUser),
+      (failureOrUser) => add(
+        ProfileWatcherEvent.resultsReceived(failureOrUser),
       ),
     );
   }

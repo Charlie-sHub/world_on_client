@@ -10,16 +10,16 @@ import 'package:worldon/views/profile/widgets/profile/profile_builder.dart';
 import 'package:worldon/views/profile/widgets/profile_critical_failure.dart';
 
 class ProfileBody extends StatelessWidget {
-  final GlobalKey<State<StatefulWidget>> userLevelShowKey;
-  final Option<UniqueId> userIdOption;
-  final bool currentUserProfile;
-
   const ProfileBody({
-    Key? key,
     required this.userIdOption,
     required this.userLevelShowKey,
     required this.currentUserProfile,
+    Key? key,
   }) : super(key: key);
+
+  final GlobalKey<State<StatefulWidget>> userLevelShowKey;
+  final Option<UniqueId> userIdOption;
+  final bool currentUserProfile;
 
   @override
   Widget build(BuildContext context) => BlocProvider(

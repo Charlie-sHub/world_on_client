@@ -29,12 +29,12 @@ class UserProfileButtonWatcherBloc
 
   FutureOr<void> _onInitialized(_Initialized event, Emitter emit) async {
     emit(const UserProfileButtonWatcherState.actionInProgress());
-    final _loggedInUserOption =
+    final loggedInUserOption =
         await getIt<GetLoggedInUser>()(getIt<NoParams>());
     emit(
-      _loggedInUserOption.fold(
+      loggedInUserOption.fold(
         () => const UserProfileButtonWatcherState.loadFailure(),
-        (_user) => UserProfileButtonWatcherState.loadSuccess(_user.imageURL),
+        (user) => UserProfileButtonWatcherState.loadSuccess(user.imageURL),
       ),
     );
   }

@@ -48,16 +48,16 @@ class ProfileUsersTabView extends StatelessWidget {
                   ),
                   itemCount: state.users.size,
                   itemBuilder: (context, index) {
-                    final _user = state.users[index];
-                    if (_user.isValid) {
+                    final user = state.users[index];
+                    if (user.isValid) {
                       return CircularAvatarUserCard(
-                        user: _user,
-                        key: Key(_user.id.toString()),
+                        user: user,
+                        key: Key(user.id.toString()),
                       );
                     } else {
                       return ErrorCard(
                         entityType: S.of(context).user,
-                        valueFailureString: _user.failureOption.fold(
+                        valueFailureString: user.failureOption.fold(
                           () => S.of(context).noError,
                           (failure) => failure.toString(),
                         ),

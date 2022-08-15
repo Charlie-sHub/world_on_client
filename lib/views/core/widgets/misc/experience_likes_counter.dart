@@ -53,22 +53,22 @@ class ExperienceLikesCounter extends StatelessWidget {
       current.map(
         initial: (_) => true,
         loadSuccess: (_) {
-          final _previousLikesContainsExperience = previous.maybeMap(
+          final previousLikesContainsExperience = previous.maybeMap(
             loadSuccess: (successState) =>
                 successState.user.experiencesLikedIds.contains(
               experience.id,
             ),
             orElse: () => true,
           );
-          final _currentLikesContainsExperience = current.maybeMap(
+          final currentLikesContainsExperience = current.maybeMap(
             loadSuccess: (successState) =>
                 successState.user.experiencesLikedIds.contains(
               experience.id,
             ),
             orElse: () => true,
           );
-          return _previousLikesContainsExperience !=
-              _currentLikesContainsExperience;
+          return previousLikesContainsExperience !=
+              currentLikesContainsExperience;
         },
         loadFailure: (_) => true,
       );

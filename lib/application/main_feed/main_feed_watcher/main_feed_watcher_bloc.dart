@@ -45,8 +45,8 @@ class MainFeedWatcherBloc
     _mainFeedStreamSubscription = getIt<WatchFeed>()(
       getIt<NoParams>(),
     ).listen(
-      (_failureOrExperiences) => add(
-        MainFeedWatcherEvent.resultsReceived(_failureOrExperiences),
+      (failureOrExperiences) => add(
+        MainFeedWatcherEvent.resultsReceived(failureOrExperiences),
       ),
     );
   }

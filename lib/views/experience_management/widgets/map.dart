@@ -18,11 +18,11 @@ class Map extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final _editingFormState =
+    final editingFormState =
         context.read<ExperienceManagementFormBloc>().state;
-    final _position = LatLng(
-      _editingFormState.experience.coordinates.latitude.getOrCrash(),
-      _editingFormState.experience.coordinates.longitude.getOrCrash(),
+    final position = LatLng(
+      editingFormState.experience.coordinates.latitude.getOrCrash(),
+      editingFormState.experience.coordinates.longitude.getOrCrash(),
     );
     return Column(
       children: [
@@ -40,7 +40,7 @@ class Map extends StatelessWidget {
             height: MediaQuery.of(context).size.height * 0.4,
             // Not happy about this at all, there has to be a better way to build the map once coordinates have been gotten
             // Works for now though and that's what matters.
-            child: _editingFormState.loadedCoordinates
+            child: editingFormState.loadedCoordinates
                 ? Showcase(
                     key: showKey,
                     description: S.of(context).mapShowCase,
@@ -53,7 +53,7 @@ class Map extends StatelessWidget {
                           Marker(
                             icon: context.read<BitmapDescriptor>(),
                             markerId: const MarkerId("new_experience"),
-                            position: _position,
+                            position: position,
                           ),
                         },
                         onLongPress: (argument) => context
@@ -73,7 +73,7 @@ class Map extends StatelessWidget {
                         initialCameraPosition: CameraPosition(
                           zoom: 15,
                           tilt: 45,
-                          target: _position,
+                          target: position,
                         ),
                       ),
                     ),

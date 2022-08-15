@@ -41,12 +41,12 @@ class AdventureMapControllerBloc
   }
 
   FutureOr<void> _onInitialized(_Initialized event, Emitter emit) async {
-    final _getLocation = getIt<GetCurrentLocation>();
-    final _coordinatesOrFailure = await _getLocation.call(
+    final getLocation = getIt<GetCurrentLocation>();
+    final coordinatesOrFailure = await getLocation.call(
       getIt<NoParams>(),
     );
     emit(
-      _coordinatesOrFailure.fold(
+      coordinatesOrFailure.fold(
         (failure) => state.copyWith(
           loadedCoordinates: false,
         ),

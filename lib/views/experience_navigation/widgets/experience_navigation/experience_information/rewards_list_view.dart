@@ -25,17 +25,17 @@ class RewardsListView extends StatelessWidget {
             shrinkWrap: true,
             physics: const ClampingScrollPhysics(),
             itemBuilder: (context, index) {
-              final _reward =
+              final reward =
                   experience.rewards.getOrCrash().asSet().elementAt(index);
-              if (_reward.isValid) {
+              if (reward.isValid) {
                 return RewardCard(
-                  reward: _reward,
-                  key: Key(_reward.id.toString()),
+                  reward: reward,
+                  key: Key(reward.id.toString()),
                 );
               } else {
                 return ErrorCard(
                   entityType: S.of(context).reward,
-                  valueFailureString: _reward.failureOption.fold(
+                  valueFailureString: reward.failureOption.fold(
                     () => S.of(context).noError,
                     (failure) => failure.toString(),
                   ),

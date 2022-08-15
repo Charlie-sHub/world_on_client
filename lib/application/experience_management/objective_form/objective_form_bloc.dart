@@ -31,11 +31,11 @@ class ObjectiveFormBloc extends Bloc<ObjectiveFormEvent, ObjectiveFormState> {
   }
 
   FutureOr<void> _onInitialized(_, Emitter emit) async {
-    final _currentPosition = await getIt<GetCurrentLocation>()(NoParams());
+    final currentPosition = await getIt<GetCurrentLocation>()(NoParams());
     emit(
       state.copyWith(
         objective: state.objective.copyWith(
-          coordinates: _currentPosition.fold(
+          coordinates: currentPosition.fold(
             (_) => Coordinates.empty(),
             id,
           ),

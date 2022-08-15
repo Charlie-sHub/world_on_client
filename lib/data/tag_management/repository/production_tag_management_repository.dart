@@ -14,7 +14,8 @@ import 'package:worldon/domain/core/validation/objects/unique_id.dart';
 import 'package:worldon/domain/tag_management/repository/tag_management_repository_interface.dart';
 
 @LazySingleton(as: TagManagementRepositoryInterface, env: [Environment.prod])
-class ProductionTagManagementRepository implements TagManagementRepositoryInterface {
+class ProductionTagManagementRepository
+    implements TagManagementRepositoryInterface {
   final Logger _logger;
 
   final FirebaseFirestore _firestore;
@@ -27,20 +28,20 @@ class ProductionTagManagementRepository implements TagManagementRepositoryInterf
   @override
   Future<Either<Failure, Unit>> createTag(Tag tag) async {
     try {
-      final _oldTag = await _firestore.tagCollection
+      final oldTag = await _firestore.tagCollection
           .where(
             TagFields.name,
             isEqualTo: tag.name.getOrCrash(),
           )
           .get();
-      if (_oldTag.docs.isEmpty) {
-        final _tagDto = TagDto.fromDomain(tag);
+      if (oldTag.docs.isEmpty) {
+        final tagDto = TagDto.fromDomain(tag);
         _firestore.tagCollection
             .doc(
               tag.id.getOrCrash(),
             )
             .set(
-              _tagDto,
+              tagDto,
             );
         return right(unit);
       } else {
@@ -52,79 +53,76 @@ class ProductionTagManagementRepository implements TagManagementRepositoryInterf
           ),
         );
       }
-    } catch (error, _) {
-      return left(
-        _onError(error),
-      );
+    } catch (error) {
+      return left(_onError(error));
     }
   }
 
   @override
   Future<Either<Failure, Unit>> editTag(Tag tag) async {
     try {
-      final _tagDto = TagDto.fromDomain(tag);
+      final tagDto = TagDto.fromDomain(tag);
       _firestore.tagCollection
           .doc(
-            _tagDto.id,
+            tagDto.id,
           )
           .update(
-            _tagDto.toJson(),
+            tagDto.toJson(),
           );
       return right(unit);
-    } catch (error, _) {
-      return left(
-        _onError(error),
-      );
+    } catch (error) {
+      return left(_onError(error));
     }
   }
 
   @override
   Future<Either<Failure, Tag>> getTag(UniqueId id) async {
     try {
-      final _tagDocument = await _firestore.tagCollection.doc(id.getOrCrash()).get();
-      final _tag = _tagDocument.data()!.toDomain();
-      return right(_tag);
-    } catch (error, _) {
-      return left(
-        _onError(error),
-      );
+      final tagDocument =
+          await _firestore.tagCollection.doc(id.getOrCrash()).get();
+      final tag = tagDocument.data()!.toDomain();
+      return right(tag);
+    } catch (error) {
+      return left(_onError(error));
     }
   }
 
   // Why is this method even a thing?
   @override
-  Future<Either<Failure, KtSet<Tag>>> getTags(Set<UniqueId> tagsUniqueIds) async {
-    final _tagSet = <Tag>{};
-    final _tagIds = tagsUniqueIds
+  Future<Either<Failure, KtSet<Tag>>> getTags(
+    Set<UniqueId> tagsUniqueIds,
+  ) async {
+    final tagSet = <Tag>{};
+    final tagIds = tagsUniqueIds
         .map(
           (id) => id.getOrCrash(),
         )
         .toSet();
-    if (_tagIds.isNotEmpty) {
+    if (tagIds.isNotEmpty) {
       try {
-        final _iterableOfIdLists = partition(
-          _tagIds,
+        final iterableOfIdLists = partition(
+          tagIds,
           10,
         );
-        for (final _idList in _iterableOfIdLists) {
-          final _querySnapshot = await _firestore.tagCollection
+        for (final idList in iterableOfIdLists) {
+          final querySnapshot = await _firestore.tagCollection
               .where(
                 TagFields.id,
-                whereIn: _idList,
+                whereIn: idList,
               )
               .orderBy(
                 TagFields.name,
               )
               .get();
-          final _tagsFromQuery = _querySnapshot.docs.map(
-            (_documentSnapshot) => _documentSnapshot.data().toDomain(),
+          final tagsFromQuery = querySnapshot.docs.map(
+            (documentSnapshot) => documentSnapshot.data().toDomain(),
           );
-          _tagSet.addAll(_tagsFromQuery);
+          tagSet.addAll(tagsFromQuery);
         }
         return right(
-          _tagSet.toImmutableSet(),
+          tagSet.toImmutableSet(),
         );
-      } catch (error, _) {
+      } catch (error) {
         return left(
           _onError(error),
         );
@@ -141,10 +139,8 @@ class ProductionTagManagementRepository implements TagManagementRepositoryInterf
     try {
       _firestore.tagCollection.doc(id.getOrCrash()).delete();
       return right(unit);
-    } catch (error, _) {
-      return left(
-        _onError(error),
-      );
+    } catch (error) {
+      return left(_onError(error));
     }
   }
 
@@ -152,7 +148,9 @@ class ProductionTagManagementRepository implements TagManagementRepositoryInterf
     if (error is FirebaseException) {
       _logger.e("FirebaseException: ${error.message}");
       return Failure.coreData(
-        CoreDataFailure.serverError(errorString: "Firebase error: ${error.message}"),
+        CoreDataFailure.serverError(
+          errorString: "Firebase error: ${error.message}",
+        ),
       );
     } else {
       _logger.e("Unknown server error:  ${error.runtimeType}");

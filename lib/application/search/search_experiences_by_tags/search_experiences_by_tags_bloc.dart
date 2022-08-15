@@ -42,18 +42,18 @@ class SearchExperiencesByTagsBloc
   FutureOr<void> _onSubmitted(_Submitted event, Emitter emit) async {
     emit(const SearchExperiencesByTagsState.searchInProgress());
     await _experiencesStreamSubscription?.cancel();
-    final _tagSet = TagSet(KtSet.from(event.tags));
-    if (_tagSet.isValid()) {
+    final tagSet = TagSet(KtSet.from(event.tags));
+    if (tagSet.isValid()) {
       _experiencesStreamSubscription = getIt<WatchSearchExperiencesByTags>()(
-        Params(tags: _tagSet),
+        Params(tags: tagSet),
       ).listen(
-        (_failureOrExperiences) => add(
-          SearchExperiencesByTagsEvent.resultsReceived(_failureOrExperiences),
+        (failureOrExperiences) => add(
+          SearchExperiencesByTagsEvent.resultsReceived(failureOrExperiences),
         ),
       );
     } else {
-      final _valueFailure = _tagSet.failureOrCrash();
-      emit(SearchExperiencesByTagsState.valueFailure(_valueFailure));
+      final valueFailure = tagSet.failureOrCrash();
+      emit(SearchExperiencesByTagsState.valueFailure(valueFailure));
     }
   }
 

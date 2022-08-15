@@ -23,13 +23,13 @@ class ObjectiveCreationForm extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final _objectiveFormState = context.read<ObjectiveFormBloc>().state;
+    final objectiveFormState = context.read<ObjectiveFormBloc>().state;
     return Showcase(
       key: showKey,
       description: S.of(context).objectivesShowCase,
       overlayPadding: const EdgeInsets.all(5),
       child: Form(
-        autovalidateMode: _objectiveFormState.showErrorMessages
+        autovalidateMode: objectiveFormState.showErrorMessages
             ? AutovalidateMode.always
             : AutovalidateMode.disabled,
         child: Column(
@@ -44,8 +44,8 @@ class ObjectiveCreationForm extends StatelessWidget {
             Column(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
-                if (_objectiveFormState.objective.imageFile != null)
-                  _objectiveFormState.objective.imageFile!.fold(
+                if (objectiveFormState.objective.imageFile != null)
+                  objectiveFormState.objective.imageFile!.fold(
                     () => IconButton(
                       iconSize: 80,
                       icon: const Icon(

@@ -29,7 +29,7 @@ class CommentFormBloc extends Bloc<CommentFormEvent, CommentFormState> {
   }
 
   FutureOr<void> _onSubmitted(_Submitted event, Emitter emit) async {
-    late Either<Failure, Unit> _failureOrUnit;
+    late Either<Failure, Unit> failureOrUnit;
     emit(
       state.copyWith(
         isSubmitting: true,
@@ -38,14 +38,14 @@ class CommentFormBloc extends Bloc<CommentFormEvent, CommentFormState> {
     );
     if (state.comment.isValid) {
       if (state.isEditing) {
-        _failureOrUnit = await getIt<edit_comment.EditComment>()(
+        failureOrUnit = await getIt<edit_comment.EditComment>()(
           edit_comment.Params(
             comment: state.comment,
             userRequesting: event.currentUser,
           ),
         );
       } else {
-        _failureOrUnit = await getIt<post_comment.PostComment>()(
+        failureOrUnit = await getIt<post_comment.PostComment>()(
           post_comment.Params(
             comment: state.comment,
           ),
@@ -56,7 +56,7 @@ class CommentFormBloc extends Bloc<CommentFormEvent, CommentFormState> {
       state.copyWith(
         isSubmitting: false,
         showErrorMessages: true,
-        failureOrSuccessOption: optionOf(_failureOrUnit),
+        failureOrSuccessOption: optionOf(failureOrUnit),
       ),
     );
   }

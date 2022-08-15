@@ -26,12 +26,12 @@ class ExperienceManagementActorBloc extends Bloc<ExperienceManagementActorEvent,
 
   FutureOr<void> _onCheckCreator(_CheckCreator event, Emitter emit) async {
     emit(const ExperienceManagementActorState.actionInProgress());
-    final _isCreator = await getIt<is_logged_in_user.IsLoggedInUser>().call(
+    final isCreator = await getIt<is_logged_in_user.IsLoggedInUser>().call(
       is_logged_in_user.Params(
         userToCompareWithId: event.experience.creator.id,
       ),
     );
-    if (_isCreator) {
+    if (isCreator) {
       emit(const ExperienceManagementActorState.isCreator());
     } else {
       emit(const ExperienceManagementActorState.isNotCreator());
@@ -40,11 +40,11 @@ class ExperienceManagementActorBloc extends Bloc<ExperienceManagementActorEvent,
 
   FutureOr<void> _onDeleted(_Deleted event, Emitter emit) async {
     emit(const ExperienceManagementActorState.actionInProgress());
-    final _failureOrUnit = await getIt<delete_experience.DeleteExperience>()(
+    final failureOrUnit = await getIt<delete_experience.DeleteExperience>()(
       delete_experience.Params(experience: event.experience),
     );
     emit(
-      _failureOrUnit.fold(
+      failureOrUnit.fold(
         (failure) => ExperienceManagementActorState.deletionFailure(failure),
         (_) => const ExperienceManagementActorState.deletionSuccess(),
       ),

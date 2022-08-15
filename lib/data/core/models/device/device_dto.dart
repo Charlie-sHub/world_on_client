@@ -31,5 +31,7 @@ class DeviceDto with _$DeviceDto {
         company: company,
       );
 
-  factory DeviceDto.fromJson(Map<String, dynamic> json) => _$DeviceDtoFromJson(json);
+  factory DeviceDto.fromJson(Map<String, dynamic> json) => _$DeviceDtoFromJson(
+        json,
+      );
 }

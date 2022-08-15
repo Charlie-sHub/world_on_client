@@ -37,16 +37,16 @@ class ProfileAchievementsTabView extends StatelessWidget {
               padding: const EdgeInsets.all(10),
               itemCount: state.achievements.size,
               itemBuilder: (context, index) {
-                final _achievement = state.achievements[index];
-                if (_achievement.isValid) {
+                final achievement = state.achievements[index];
+                if (achievement.isValid) {
                   return AchievementCard(
-                    achievement: _achievement,
-                    key: Key(_achievement.id.toString()),
+                    achievement: achievement,
+                    key: Key(achievement.id.toString()),
                   );
                 } else {
                   return ErrorCard(
                     entityType: S.of(context).achievement,
-                    valueFailureString: _achievement.failureOption.fold(
+                    valueFailureString: achievement.failureOption.fold(
                       () => S.of(context).noError,
                       (failure) => failure.toString(),
                     ),

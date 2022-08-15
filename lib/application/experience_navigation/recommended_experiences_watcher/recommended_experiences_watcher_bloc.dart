@@ -47,9 +47,9 @@ class RecommendedExperiencesWatcherBloc extends Bloc<
     await _recommendedExperiencesStreamSubscription?.cancel();
     _recommendedExperiencesStreamSubscription =
         getIt<WatchRecommendedExperiences>()(getIt<NoParams>()).listen(
-      (_failureOrExperiences) => add(
+      (failureOrExperiences) => add(
         RecommendedExperiencesWatcherEvent.resultsReceived(
-          _failureOrExperiences,
+          failureOrExperiences,
         ),
       ),
     );

@@ -27,7 +27,7 @@ class AppBarTitleBuilder extends StatelessWidget {
                 notifications: (_) => S.of(context).notifications,
                 followers: (_) => S.of(context).followers,
                 following: (_) => S.of(context).following,
-                username: (_state) => "@${_state.username}",
+                username: (state) => "@${state.username}",
                 error: (_) => "Error",
               )
               .toUpperCase(),

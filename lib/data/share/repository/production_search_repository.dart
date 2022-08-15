@@ -25,19 +25,19 @@ class ProductionShareRepository implements ShareRepositoryInterface {
   @override
   Future<Either<Failure, KtList<User>>> getShareableUsers() async {
     try {
-      final _userDocumentReference = await _firestore.currentUserReference();
-      final _querySnapshot = await _firestore.userCollection
+      final userDocumentReference = await _firestore.currentUserReference();
+      final querySnapshot = await _firestore.userCollection
           .where(
             UserFields.followedUsersIds,
-            arrayContains: _userDocumentReference.id,
+            arrayContains: userDocumentReference.id,
           )
           .limit(100)
           .get();
-      final _userList = _querySnapshot.docs.map(
-        (_queryDocumentSnapshot) => _queryDocumentSnapshot.data().toDomain(),
+      final userList = querySnapshot.docs.map(
+        (queryDocumentSnapshot) => queryDocumentSnapshot.data().toDomain(),
       );
-      if (_userList.isNotEmpty) {
-        return right(_userList.toImmutableList());
+      if (userList.isNotEmpty) {
+        return right(userList.toImmutableList());
       } else {
         return left<Failure, KtList<User>>(
           const Failure.coreData(
@@ -45,43 +45,43 @@ class ProductionShareRepository implements ShareRepositoryInterface {
           ),
         );
       }
-    } catch (error, _) {
-      return left(
-        _onError(error),
-      );
+    } catch (error) {
+      return left(_onError(error));
     }
   }
 
   @override
-  Future<Either<Failure, KtList<User>>> searchShareableUsers(SearchTerm term) async {
+  Future<Either<Failure, KtList<User>>> searchShareableUsers(
+    SearchTerm term,
+  ) async {
     try {
-      final _searchString = term.getOrCrash().toLowerCase();
-      final _userDocumentReference = await _firestore.currentUserReference();
-      final _querySnapshot = await _firestore.userCollection
+      final searchString = term.getOrCrash().toLowerCase();
+      final userDocumentReference = await _firestore.currentUserReference();
+      final querySnapshot = await _firestore.userCollection
           .where(
             UserFields.followedUsersIds,
-            arrayContains: _userDocumentReference.id,
+            arrayContains: userDocumentReference.id,
           )
           .get();
-      final _userDtoList = _querySnapshot.docs.map(
-        (_queryDocumentSnapshot) => _queryDocumentSnapshot.data(),
+      final userDtoList = querySnapshot.docs.map(
+        (queryDocumentSnapshot) => queryDocumentSnapshot.data(),
       );
-      final _filteredList = _userDtoList.where(
-        (_userDto) =>
-            _userDto.name.toLowerCase().contains(
-                  _searchString,
+      final filteredList = userDtoList.where(
+        (userDto) =>
+            userDto.name.toLowerCase().contains(
+                  searchString,
                 ) ||
-            _userDto.username.toLowerCase().contains(
-                  _searchString,
+            userDto.username.toLowerCase().contains(
+                  searchString,
                 ),
       );
-      final _userList = _filteredList
+      final userList = filteredList
           .map(
-            (_userDto) => _userDto.toDomain(),
+            (userDto) => userDto.toDomain(),
           )
           .toList();
-      if (_userList.isNotEmpty) {
-        return right(_userList.toImmutableList());
+      if (userList.isNotEmpty) {
+        return right(userList.toImmutableList());
       } else {
         return left<Failure, KtList<User>>(
           const Failure.coreData(
@@ -89,10 +89,8 @@ class ProductionShareRepository implements ShareRepositoryInterface {
           ),
         );
       }
-    } catch (error, _) {
-      return left(
-        _onError(error),
-      );
+    } catch (error) {
+      return left(_onError(error));
     }
   }
 
@@ -100,7 +98,9 @@ class ProductionShareRepository implements ShareRepositoryInterface {
     if (error is FirebaseException) {
       _logger.e("FirebaseException: ${error.message}");
       return Failure.coreData(
-        CoreDataFailure.serverError(errorString: "Firebase error: ${error.message}"),
+        CoreDataFailure.serverError(
+          errorString: "Firebase error: ${error.message}",
+        ),
       );
     } else if (error is AlgoliaError) {
       _logger.e("Algolia error: ${error.error}");

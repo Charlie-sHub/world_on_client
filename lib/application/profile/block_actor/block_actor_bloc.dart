@@ -30,10 +30,10 @@ class BlockActorBloc extends Bloc<BlockActorEvent, BlockActorState> {
 
   FutureOr<void> _onUnBlocked(_UnBlocked event, Emitter emit) async {
     emit(const BlockActorState.actionInProgress());
-    final _failureOrUnit = await getIt<un_block_user.UnBlockUser>()(
+    final failureOrUnit = await getIt<un_block_user.UnBlockUser>()(
       un_block_user.Params(blockedId: event.userToUnBlockId),
     );
-    _failureOrUnit.fold(
+    failureOrUnit.fold(
       (failure) {
         emit(BlockActorState.unBlockFailure(failure));
       },
@@ -58,13 +58,13 @@ class BlockActorBloc extends Bloc<BlockActorEvent, BlockActorState> {
 
   FutureOr<void> _onBlocked(_Blocked event, Emitter emit) async {
     emit(const BlockActorState.actionInProgress());
-    final _failureOrUnit = await getIt<block_user.BlockUser>()(
+    final failureOrUnit = await getIt<block_user.BlockUser>()(
       block_user.Params(
         blockedId: event.userToBlockId,
         currentUserId: event.currentUser.id,
       ),
     );
-    _failureOrUnit.fold(
+    failureOrUnit.fold(
       (failure) {
         emit(BlockActorState.blockFailure(failure));
       },

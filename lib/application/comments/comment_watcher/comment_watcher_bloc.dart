@@ -29,8 +29,8 @@ class CommentWatcherBloc
   void _onResultsReceived(_ResultsReceived event, Emitter emit) {
     emit(
       event.failureOrComments.fold(
-        (_failure) => CommentWatcherState.loadFailure(_failure),
-        (_comments) => CommentWatcherState.loadSuccess(_comments),
+        (failure) => CommentWatcherState.loadFailure(failure),
+        (comments) => CommentWatcherState.loadSuccess(comments),
       ),
     );
   }
@@ -44,8 +44,8 @@ class CommentWatcherBloc
     _experienceCommentsStreamSubscription = getIt<WatchExperienceComments>()(
       Params(experienceId: event.experienceId),
     ).listen(
-      (_failureOrComments) =>
-          add(CommentWatcherEvent.resultsReceived(_failureOrComments)),
+      (failureOrComments) =>
+          add(CommentWatcherEvent.resultsReceived(failureOrComments)),
     );
   }
 

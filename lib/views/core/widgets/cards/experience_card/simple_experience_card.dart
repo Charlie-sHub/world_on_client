@@ -26,7 +26,7 @@ class SimpleExperienceCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final _imageHeight = MediaQuery.of(context).size.height * _heightMultiplier;
+    final imageHeight = MediaQuery.of(context).size.height * _heightMultiplier;
     return InkWell(
       onTap: () => context.read<NavigationActorBloc>().add(
             NavigationActorEvent.experienceNavigationTapped(
@@ -54,7 +54,7 @@ class SimpleExperienceCard extends StatelessWidget {
               ).createShader(bounds),
               child: CachedNetworkImage(
                 imageUrl: experience.imageURLs.first,
-                height: _imageHeight,
+                height: imageHeight,
                 width: 320,
                 fit: BoxFit.cover,
                 progressIndicatorBuilder: (_, __, ___) => WorldOnPlasma(),

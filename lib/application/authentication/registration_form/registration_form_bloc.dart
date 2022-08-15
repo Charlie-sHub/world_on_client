@@ -49,21 +49,21 @@ class RegistrationFormBloc
       );
 
   FutureOr<void> _onSubmitted(_, Emitter emit) async {
-    Either<Failure, Unit>? _failureOrUnit;
+    Either<Failure, Unit>? failureOrUnit;
     emit(
       state.copyWith(
         isSubmitting: true,
         failureOrSuccessOption: none(),
       ),
     );
-    final _hasImage =
+    final hasImage =
         state.user.imageFileOption.isSome() || state.user.imageURL.isNotEmpty;
-    final _canRegister = state.user.isValid &&
+    final canRegister = state.user.isValid &&
         state.passwordConfirmator.isValid() &&
         state.acceptedEULA &&
-        _hasImage;
-    if (_canRegister) {
-      _failureOrUnit = await getIt<Register>()(
+        hasImage;
+    if (canRegister) {
+      failureOrUnit = await getIt<Register>()(
         Params(user: state.user),
       );
     } else {
@@ -85,7 +85,7 @@ class RegistrationFormBloc
       state.copyWith(
         isSubmitting: false,
         showErrorMessages: true,
-        failureOrSuccessOption: optionOf(_failureOrUnit),
+        failureOrSuccessOption: optionOf(failureOrUnit),
       ),
     );
   }
@@ -95,7 +95,7 @@ class RegistrationFormBloc
           user: state.user.copyWith(
             interestsIds: event.interests
                 .map(
-                  (_tag) => _tag.id,
+                  (tag) => tag.id,
                 )
                 .asList()
                 .toSet(),
@@ -194,8 +194,8 @@ class RegistrationFormBloc
           () => state.copyWith(
             initialized: true,
           ),
-          (_user) => state.copyWith(
-            user: _user,
+          (user) => state.copyWith(
+            user: user,
             initialized: true,
           ),
         ),

@@ -22,11 +22,11 @@ class TagManagementActorBloc
 
   FutureOr<void> _onDeleted(_Deleted event, Emitter emit) async {
     emit(const TagManagementActorState.actionInProgress());
-    final _eitherFailureOrSuccess = await getIt<DeleteTag>()(
+    final eitherFailureOrSuccess = await getIt<DeleteTag>()(
       Params(tag: event.tag),
     );
     emit(
-      _eitherFailureOrSuccess.fold(
+      eitherFailureOrSuccess.fold(
         (failure) => TagManagementActorState.deletionFailure(failure),
         (_) => const TagManagementActorState.deletionSuccess(),
       ),

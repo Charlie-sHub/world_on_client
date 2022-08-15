@@ -28,78 +28,78 @@ class ProductionMainFeedRepository implements MainFeedRepositoryInterface {
   @override
   Stream<Either<Failure, KtList<Experience>>> watchFeed() async* {
     // The limit is just a number that made sense at the time
-    const _promotedExperiencesLimit = 5;
-    final _userDto = await _firestore.currentUserDto();
-    if (_userDto.followedUsersIds.isNotEmpty) {
-      final _iterableOfIdLists = partition(
-        _userDto.followedUsersIds,
+    const promotedExperiencesLimit = 5;
+    final userDto = await _firestore.currentUserDto();
+    if (userDto.followedUsersIds.isNotEmpty) {
+      final iterableOfIdLists = partition(
+        userDto.followedUsersIds,
         10,
       );
-      final _combinedStreamList = _iterableOfIdLists
+      final combinedStreamList = iterableOfIdLists
           .map(
-            (_idList) => _firestore.experienceCollection
+            (idList) => _firestore.experienceCollection
                 .where(
                   ExperienceFields.creatorId,
-                  whereIn: _idList,
+                  whereIn: idList,
                 )
                 .snapshots(),
           )
           .toList();
-      final _promotedStream = _firestore.experienceCollection
+      final promotedStream = _firestore.experienceCollection
           .where(
             ExperienceFields.isPromoted,
             isEqualTo: true,
           )
-          .limit(_promotedExperiencesLimit)
+          .limit(promotedExperiencesLimit)
           .snapshots();
-      final _promotedStreamQuery = await _promotedStream.first;
-      for (final _experienceDoc in _promotedStreamQuery.docs) {
-        final _experience = _experienceDoc.data().toDomain();
-        final _creator = _experience.creator;
-        _firestore.userCollection.doc(_creator.id.getOrCrash()).update(
+      final promotedStreamQuery = await promotedStream.first;
+      for (final experienceDoc in promotedStreamQuery.docs) {
+        final experience = experienceDoc.data().toDomain();
+        final creator = experience.creator;
+        _firestore.userCollection.doc(creator.id.getOrCrash()).update(
           {
             "${UserFields.promotionPlan}.timesSeen": FieldValue.increment(1),
           },
         );
       }
-      _combinedStreamList.add(_promotedStream);
+      combinedStreamList.add(promotedStream);
       // TODO: Rework these streams so they are updated properly
       // Right now everything works except that the streams can't be properly updated by firestore
       // Probably due to all the streams having to be updated for CombineLatestStream to combine them
       // There has to be a proper solution to this,
       // This can't be the only app that needs to filter by more than 10 items (fucking absurd limitation imo)
       yield* CombineLatestStream(
-        _combinedStreamList,
+        combinedStreamList,
         (List<QuerySnapshot<ExperienceDto>> values) {
-          final _documentList = <QueryDocumentSnapshot<ExperienceDto>>[];
-          for (final _snapshot in values) {
-            _documentList.addAll(_snapshot.docs);
+          final documentList = <QueryDocumentSnapshot<ExperienceDto>>[];
+          for (final snapshot in values) {
+            documentList.addAll(snapshot.docs);
           }
-          final _experienceDtoList = _documentList
+          final experienceDtoList = documentList
               .map(
-                (_document) => _document.data(),
+                (document) => document.data(),
               )
               .toList();
-          _experienceDtoList.sort(
-            (_a, _b) => _b.creationDate.compareTo(
-              _a.creationDate,
+          experienceDtoList.sort(
+            (a, b) => b.creationDate.compareTo(
+              a.creationDate,
             ),
           );
           // .toSet().toList() is there to eliminate duplicates
-          final _experienceList = _experienceDtoList
+          final experienceList = experienceDtoList
               .toSet()
               .toList()
               .map(
-                (_experienceDto) => _experienceDto.toDomain(),
+                (experienceDto) => experienceDto.toDomain(),
               )
               .toList();
-          return _experienceList;
+          return experienceList;
         },
       ).map(
-        (_experiences) {
-          if (_experiences.isNotEmpty) {
+        (experiences) {
+          if (experiences.isNotEmpty) {
             return right<Failure, KtList<Experience>>(
-              _experiences.toImmutableList(),
+              experiences.toImmutableList(),
             );
           } else {
             return left<Failure, KtList<Experience>>(

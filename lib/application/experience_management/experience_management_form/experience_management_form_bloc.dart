@@ -59,7 +59,7 @@ class ExperienceManagementFormBloc
   static const _imageNumberLimit = 15;
 
   FutureOr<void> _onSubmitted(_, Emitter emit) async {
-    Either<Failure, Unit>? _failureOrUnit;
+    Either<Failure, Unit>? failureOrUnit;
     emit(
       state.copyWith(
         isSubmitting: true,
@@ -67,23 +67,23 @@ class ExperienceManagementFormBloc
       ),
     );
     if (state.experience.isValid) {
-      final _filesCount = state.experience.imageAssetsOption.fold(
+      final filesCount = state.experience.imageAssetsOption.fold(
         () => 0,
-        (_imageList) => _imageList.length,
+        (imageList) => imageList.length,
       );
-      if (state.experience.imageURLs.length + _filesCount <=
+      if (state.experience.imageURLs.length + filesCount <=
           _imageNumberLimit) {
         if (state.isEditing &&
-            state.experience.imageURLs.length + _filesCount >= 1) {
-          _failureOrUnit = await getIt<edit_experience.EditExperience>()(
+            state.experience.imageURLs.length + filesCount >= 1) {
+          failureOrUnit = await getIt<edit_experience.EditExperience>()(
             edit_experience.Params(
               experience: state.experience,
               originalImageUrls: state.originalImageUrls,
             ),
           );
         } else {
-          if (_filesCount >= 1) {
-            _failureOrUnit = await getIt<create_experience.CreateExperience>()(
+          if (filesCount >= 1) {
+            failureOrUnit = await getIt<create_experience.CreateExperience>()(
               create_experience.Params(experience: state.experience),
             );
             // Rewarding users for creating experiences too
@@ -130,7 +130,7 @@ class ExperienceManagementFormBloc
       state.copyWith(
         isSubmitting: false,
         showErrorMessages: true,
-        failureOrSuccessOption: optionOf(_failureOrUnit),
+        failureOrSuccessOption: optionOf(failureOrUnit),
       ),
     );
   }
@@ -194,12 +194,12 @@ class ExperienceManagementFormBloc
   }
 
   void _onImageDeleted(_ImageDeleted event, Emitter emit) {
-    final _newURLList = Set<String>.from(state.experience.imageURLs);
-    _newURLList.remove(event.imageURL);
+    final newURLList = Set<String>.from(state.experience.imageURLs);
+    newURLList.remove(event.imageURL);
     emit(
       state.copyWith(
         experience: state.experience.copyWith(
-          imageURLs: _newURLList,
+          imageURLs: newURLList,
         ),
         failureOrSuccessOption: none(),
       ),
@@ -243,17 +243,17 @@ class ExperienceManagementFormBloc
     emit(
       await event.experienceOption.fold(
         () async {
-          final _currentUserOption = await getIt<GetLoggedInUser>()(
+          final currentUserOption = await getIt<GetLoggedInUser>()(
             getIt<NoParams>(),
           );
-          final _currentUser = _currentUserOption.fold(
+          final currentUser = currentUserOption.fold(
             () => throw UnAuthenticatedError(),
             id,
           );
-          final _currentLocationOrFailure = await getIt<GetCurrentLocation>()(
+          final currentLocationOrFailure = await getIt<GetCurrentLocation>()(
             NoParams(),
           );
-          final _coordinates = _currentLocationOrFailure.fold(
+          final coordinates = currentLocationOrFailure.fold(
             (_) => Coordinates.empty(),
             id,
           );
@@ -261,37 +261,37 @@ class ExperienceManagementFormBloc
           // I don't want my experiences to be promoted as most if not all of them will be tests
           // Maybe other developers will need to be excluded too in the future
           // Don't like hard coding this though
-          final _isNotCarlos =
-              _currentUser.id.getOrCrash() != "RmdTGeylpDVVcyTVNbe6Ngj3DRV2";
-          final _isPromoted = _currentUser.adminPowers && _isNotCarlos ||
-              _currentUser.promotionPlan.isUsable;
+          final isNotCarlos =
+              currentUser.id.getOrCrash() != "RmdTGeylpDVVcyTVNbe6Ngj3DRV2";
+          final isPromoted = currentUser.adminPowers && isNotCarlos ||
+              currentUser.promotionPlan.isUsable;
           return state.copyWith(
             experience: Experience.empty().copyWith(
-              creator: _currentUser.simplified,
-              coordinates: _coordinates,
-              isPromoted: _isPromoted,
+              creator: currentUser.simplified,
+              coordinates: coordinates,
+              isPromoted: isPromoted,
             ),
             loadedCoordinates: true,
           );
         },
         (experience) async {
-          final _imageList = experience.imageURLs.toList();
-          final _objectivesImageUrls =
+          final imageList = experience.imageURLs.toList();
+          final objectivesImageUrls =
               experience.objectives.getOrCrash().dart.map(
-                    (_objective) => _objective.imageURL,
+                    (objective) => objective.imageURL,
                   );
-          final _rewardsImageUrls = experience.rewards.getOrCrash().dart.map(
-                (_reward) => _reward.imageURL,
+          final rewardsImageUrls = experience.rewards.getOrCrash().dart.map(
+                (reward) => reward.imageURL,
               );
-          _imageList.addAll(
-            _objectivesImageUrls,
+          imageList.addAll(
+            objectivesImageUrls,
           );
-          _imageList.addAll(
-            _rewardsImageUrls,
+          imageList.addAll(
+            rewardsImageUrls,
           );
           return state.copyWith(
             experience: experience,
-            originalImageUrls: _imageList,
+            originalImageUrls: imageList,
             isEditing: true,
             loadedCoordinates: true,
           );

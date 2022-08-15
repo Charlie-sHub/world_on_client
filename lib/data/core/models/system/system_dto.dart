@@ -30,5 +30,7 @@ class SystemDto with _$SystemDto {
         company: company,
       );
 
-  factory SystemDto.fromJson(Map<String, dynamic> json) => _$SystemDtoFromJson(json);
+  factory SystemDto.fromJson(Map<String, dynamic> json) => _$SystemDtoFromJson(
+        json,
+      );
 }

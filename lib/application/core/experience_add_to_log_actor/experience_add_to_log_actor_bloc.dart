@@ -35,12 +35,12 @@ class ExperienceAddToLogActorBloc
         failureOrSuccessOption: none(),
       ),
     );
-    final _failureOrUnit =
+    final failureOrUnit =
         await getIt<add_experience_to_log.AddExperienceToLog>()(
       add_experience_to_log.Params(experienceId: event.experienceId),
     );
     emit(
-      _failureOrUnit.fold(
+      failureOrUnit.fold(
         (failure) => state.copyWith(
           failureOrSuccessOption: some(
             left(failure),
@@ -67,12 +67,12 @@ class ExperienceAddToLogActorBloc
         failureOrSuccessOption: none(),
       ),
     );
-    final _failureOrUnit =
+    final failureOrUnit =
         await getIt<dismiss_experience_from_log.DismissExperienceFromLog>()(
       dismiss_experience_from_log.Params(experienceId: event.experienceId),
     );
     emit(
-      _failureOrUnit.fold(
+      failureOrUnit.fold(
         (failure) => state.copyWith(
           failureOrSuccessOption: some(
             left(failure),

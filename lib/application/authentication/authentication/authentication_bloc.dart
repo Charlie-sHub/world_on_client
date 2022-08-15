@@ -26,9 +26,9 @@ class AuthenticationBloc
   }
 
   FutureOr<void> _onAuthenticationCheckRequested(_, Emitter emit) async {
-    final _userOption = await getIt<GetLoggedInUser>()(getIt<NoParams>());
+    final userOption = await getIt<GetLoggedInUser>()(getIt<NoParams>());
     emit(
-      _userOption.fold(
+      userOption.fold(
         () => const AuthenticationState.unAuthenticated(),
         (_) => const AuthenticationState.authenticated(),
       ),

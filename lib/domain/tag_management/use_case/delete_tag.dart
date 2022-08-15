@@ -17,15 +17,15 @@ class DeleteTag implements AsyncUseCase<Unit, Params> {
 
   @override
   Future<Either<Failure, Unit>> call(Params params) async {
-    final _userRequestingOption =
+    final userRequestingOption =
         await getIt<GetLoggedInUser>().call(getIt<NoParams>());
-    final _userRequesting = _userRequestingOption.fold(
+    final userRequesting = userRequestingOption.fold(
       () => throw UnAuthenticatedError(),
       id,
     );
-    final _isAuthorized = _userRequesting.id == params.tag.creatorId ||
-        _userRequesting.adminPowers;
-    if (_isAuthorized) {
+    final isAuthorized = userRequesting.id == params.tag.creatorId ||
+        userRequesting.adminPowers;
+    if (isAuthorized) {
       return _repository.removeTag(params.tag.id);
     } else {
       return left(

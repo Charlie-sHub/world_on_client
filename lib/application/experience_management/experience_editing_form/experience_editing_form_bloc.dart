@@ -49,7 +49,7 @@ class ExperienceEditingFormBloc
   static const _imageNumberLimit = 15;
 
   FutureOr<void> _onSubmitted(_, Emitter emit) async {
-    late Either<Failure, Unit> _failureOrUnit;
+    late Either<Failure, Unit> failureOrUnit;
     emit(
       state.copyWith(
         isSubmitting: true,
@@ -59,13 +59,13 @@ class ExperienceEditingFormBloc
     if (state.experience.isValid) {
       if (state.experience.imageURLs.isNotEmpty ||
           state.experience.imageAssetsOption.isSome()) {
-        final _filesCount = state.experience.imageAssetsOption.fold(
+        final filesCount = state.experience.imageAssetsOption.fold(
           () => 0,
-          (_imageList) => _imageList.length,
+          (imageList) => imageList.length,
         );
-        if (state.experience.imageURLs.length + _filesCount <=
+        if (state.experience.imageURLs.length + filesCount <=
             _imageNumberLimit) {
-          _failureOrUnit = await getIt<edit_experience.EditExperience>()(
+          failureOrUnit = await getIt<edit_experience.EditExperience>()(
             edit_experience.Params(
               experience: state.experience,
               originalImageUrls: state.imageUrlsToDelete,
@@ -94,7 +94,7 @@ class ExperienceEditingFormBloc
       state.copyWith(
         isSubmitting: false,
         showErrorMessages: true,
-        failureOrSuccessOption: optionOf(_failureOrUnit),
+        failureOrSuccessOption: optionOf(failureOrUnit),
       ),
     );
   }

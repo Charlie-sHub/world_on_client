@@ -56,21 +56,21 @@ class SimpleTagCardBuilder extends StatelessWidget {
       current.map(
         initial: (_) => true,
         loadSuccess: (_) {
-          final _previousInterestContainsTag = previous.maybeMap(
+          final previousInterestContainsTag = previous.maybeMap(
             loadSuccess: (successState) =>
                 successState.user.interestsIds.contains(
               tag.id,
             ),
             orElse: () => true,
           );
-          final _currentInterestContainsTag = current.maybeMap(
+          final currentInterestContainsTag = current.maybeMap(
             loadSuccess: (successState) =>
                 successState.user.interestsIds.contains(
               tag.id,
             ),
             orElse: () => true,
           );
-          return _previousInterestContainsTag != _currentInterestContainsTag;
+          return previousInterestContainsTag != currentInterestContainsTag;
         },
         loadFailure: (_) => true,
       );

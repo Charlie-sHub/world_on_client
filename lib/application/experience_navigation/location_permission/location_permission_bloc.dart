@@ -17,9 +17,9 @@ class LocationPermissionBloc
   }
 
   FutureOr<void> _onInitialized(_, Emitter emit) async {
-    final _permission = await Permission.location.request();
+    final permission = await Permission.location.request();
     emit(
-      _permission.isGranted
+      permission.isGranted
           ? const LocationPermissionState.granted()
           : const LocationPermissionState.denied(),
     );

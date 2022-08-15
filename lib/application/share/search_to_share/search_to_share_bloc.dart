@@ -26,21 +26,21 @@ class SearchToShareBloc extends Bloc<SearchToShareEvent, SearchToShareState> {
 
   void _onSubmitted(_Submitted event, Emitter emit) {
     if (state.searchTerm.isValid()) {
-      final _searchString = state.searchTerm.getOrCrash();
-      final _filteredUserList = state.allUsers.iter
+      final searchString = state.searchTerm.getOrCrash();
+      final filteredUserList = state.allUsers.iter
           .where(
-            (_user) =>
-                _user.name.getOrCrash().toLowerCase().contains(
-                      _searchString,
+            (user) =>
+                user.name.getOrCrash().toLowerCase().contains(
+                      searchString,
                     ) ||
-                _user.username.getOrCrash().toLowerCase().contains(
-                      _searchString,
+                user.username.getOrCrash().toLowerCase().contains(
+                      searchString,
                     ),
           )
           .toImmutableList();
       emit(
         state.copyWith(
-          searchedUsers: _filteredUserList,
+          searchedUsers: filteredUserList,
           failureOrSuccessOption: none(),
         ),
       );
@@ -55,15 +55,15 @@ class SearchToShareBloc extends Bloc<SearchToShareEvent, SearchToShareState> {
   }
 
   void _onSearchTermChanged(_SearchTermChanged event, Emitter emit) {
-    final _oldTerm = state.searchTerm.value.fold(
+    final oldTerm = state.searchTerm.value.fold(
       (_) => "",
       id,
     );
-    final _newTerm = event.searchTermString;
-    if (_newTerm != _oldTerm) {
+    final newTerm = event.searchTermString;
+    if (newTerm != oldTerm) {
       emit(
         state.copyWith(
-          searchTerm: SearchTerm(_newTerm),
+          searchTerm: SearchTerm(newTerm),
           failureOrSuccessOption: none(),
         ),
       );
@@ -74,17 +74,17 @@ class SearchToShareBloc extends Bloc<SearchToShareEvent, SearchToShareState> {
   }
 
   FutureOr<void> _onInitialized(_Initialized event, Emitter emit) async {
-    final _failureOrResults = await getIt<SearchToShare>()(
+    final failureOrResults = await getIt<SearchToShare>()(
       getIt<NoParams>(),
     );
     emit(
-      _failureOrResults.fold(
-        (_failure) => state.copyWith(
-          failureOrSuccessOption: some(_failure),
+      failureOrResults.fold(
+        (failure) => state.copyWith(
+          failureOrSuccessOption: some(failure),
         ),
-        (_users) => state.copyWith(
-          allUsers: _users,
-          searchedUsers: _users,
+        (users) => state.copyWith(
+          allUsers: users,
+          searchedUsers: users,
         ),
       ),
     );

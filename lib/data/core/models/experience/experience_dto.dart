@@ -61,13 +61,27 @@ class ExperienceDto with _$ExperienceDto {
         difficulty: experience.difficulty.getOrCrash(),
         creationDate: experience.creationDate.getOrCrash(),
         modificationDate: experience.modificationDate.getOrCrash(),
-        objectives: experience.objectives.getOrCrash().map((objective) => ObjectiveDto.fromDomain(objective)).dart,
-        rewards: experience.rewards.getOrCrash().dart.map((reward) => RewardDto.fromDomain(reward)).toSet(),
-        tags: experience.tags.getOrCrash().dart.map((tag) => TagDto.fromDomain(tag)).toSet(),
+        objectives: experience.objectives
+            .getOrCrash()
+            .map((objective) => ObjectiveDto.fromDomain(objective))
+            .dart,
+        rewards: experience.rewards
+            .getOrCrash()
+            .dart
+            .map((reward) => RewardDto.fromDomain(reward))
+            .toSet(),
+        tags: experience.tags
+            .getOrCrash()
+            .dart
+            .map((tag) => TagDto.fromDomain(tag))
+            .toSet(),
         comments: {},
-        likedBy: experience.likedBy.map((_uniqueId) => _uniqueId.getOrCrash()).toSet(),
-        doneBy: experience.doneBy.map((_uniqueId) => _uniqueId.getOrCrash()).toSet(),
-        toDoBy: experience.toDoBy.map((_uniqueId) => _uniqueId.getOrCrash()).toSet(),
+        likedBy:
+            experience.likedBy.map((uniqueId) => uniqueId.getOrCrash()).toSet(),
+        doneBy:
+            experience.doneBy.map((uniqueId) => uniqueId.getOrCrash()).toSet(),
+        toDoBy:
+            experience.toDoBy.map((uniqueId) => uniqueId.getOrCrash()).toSet(),
         isPromoted: experience.isPromoted,
       );
 
@@ -83,15 +97,22 @@ class ExperienceDto with _$ExperienceDto {
         difficulty: Difficulty(difficulty),
         creationDate: PastDate(creationDate),
         modificationDate: PastDate(modificationDate),
-        objectives: ObjectiveList(objectives.map((objectiveDto) => objectiveDto.toDomain()).toImmutableList()),
-        rewards: RewardSet(rewards.map((rewardDto) => rewardDto.toDomain()).toImmutableSet()),
+        objectives: ObjectiveList(
+          objectives
+              .map((objectiveDto) => objectiveDto.toDomain())
+              .toImmutableList(),
+        ),
+        rewards: RewardSet(
+          rewards.map((rewardDto) => rewardDto.toDomain()).toImmutableSet(),
+        ),
         tags: TagSet(tags.map((tagDto) => tagDto.toDomain()).toImmutableSet()),
         comments: {},
-        likedBy: likedBy.map((_id) => UniqueId.fromUniqueString(_id)).toSet(),
-        doneBy: doneBy.map((_id) => UniqueId.fromUniqueString(_id)).toSet(),
-        toDoBy: toDoBy.map((_id) => UniqueId.fromUniqueString(_id)).toSet(),
+        likedBy: likedBy.map((id) => UniqueId.fromUniqueString(id)).toSet(),
+        doneBy: doneBy.map((id) => UniqueId.fromUniqueString(id)).toSet(),
+        toDoBy: toDoBy.map((id) => UniqueId.fromUniqueString(id)).toSet(),
         isPromoted: isPromoted,
       );
 
-  factory ExperienceDto.fromJson(Map<String, dynamic> json) => _$ExperienceDtoFromJson(json);
+  factory ExperienceDto.fromJson(Map<String, dynamic> json) =>
+      _$ExperienceDtoFromJson(json);
 }

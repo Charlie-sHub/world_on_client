@@ -15,7 +15,7 @@ class CurrentUserProfileButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    const double _size = 25;
+    const double size = 25;
     return MaterialButton(
       minWidth: 40,
       elevation: 0,
@@ -29,8 +29,8 @@ class CurrentUserProfileButton extends StatelessWidget {
           ),
       onLongPress: () => _onLongPress(context),
       child: SizedBox(
-        width: _size,
-        height: _size,
+        width: size,
+        height: size,
         child: BlocBuilder<WatchCurrentUserBloc, WatchCurrentUserState>(
           buildWhen: _buildWhen,
           builder: (context, state) => state.map(
@@ -56,15 +56,15 @@ class CurrentUserProfileButton extends StatelessWidget {
   bool _buildWhen(WatchCurrentUserState previous, WatchCurrentUserState current) => current.map(
         initial: (_) => true,
         loadSuccess: (_) {
-          final _previousImageUrl = previous.maybeMap(
+          final previousImageUrl = previous.maybeMap(
             loadSuccess: (successState) => successState.user.imageURL,
             orElse: () => "",
           );
-          final _currentImageUrl = current.maybeMap(
+          final currentImageUrl = current.maybeMap(
             loadSuccess: (successState) => successState.user.imageURL,
             orElse: () => "",
           );
-          return _previousImageUrl != _currentImageUrl;
+          return previousImageUrl != currentImageUrl;
         },
         loadFailure: (_) => true,
       );

@@ -34,7 +34,7 @@ class CreatedRewardCard extends StatelessWidget {
               Image(
                 image: reward.imageFile.fold(
                   () => CachedNetworkImageProvider(reward.imageURL),
-                  (_imageFile) => FileImage(_imageFile),
+                  (imageFile) => FileImage(imageFile),
                 ),
                 height: 100,
                 width: 100,

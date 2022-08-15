@@ -63,7 +63,7 @@ class AchievementManagementFormBloc extends Bloc<AchievementManagementFormEvent,
   }
 
   FutureOr<void> _onSubmitted(_, Emitter emit) async {
-    late Either<Failure, Unit> _failureOrUnit;
+    late Either<Failure, Unit> failureOrUnit;
     emit(
       state.copyWith(
         isSubmitting: true,
@@ -72,13 +72,13 @@ class AchievementManagementFormBloc extends Bloc<AchievementManagementFormEvent,
     );
     if (state.achievement.isValid) {
       if (state.isEditing) {
-        _failureOrUnit = await getIt<edit_achievement.EditAchievement>()(
+        failureOrUnit = await getIt<edit_achievement.EditAchievement>()(
           edit_achievement.Params(
             achievement: state.achievement,
           ),
         );
       } else if (state.achievement.imageFile.isSome()) {
-        _failureOrUnit = await getIt<create_achievement.CreateAchievement>()(
+        failureOrUnit = await getIt<create_achievement.CreateAchievement>()(
           create_achievement.Params(
             achievement: state.achievement,
           ),
@@ -89,7 +89,7 @@ class AchievementManagementFormBloc extends Bloc<AchievementManagementFormEvent,
       state.copyWith(
         isSubmitting: false,
         showErrorMessages: true,
-        failureOrSuccessOption: optionOf(_failureOrUnit),
+        failureOrSuccessOption: optionOf(failureOrUnit),
       ),
     );
   }
@@ -133,17 +133,17 @@ class AchievementManagementFormBloc extends Bloc<AchievementManagementFormEvent,
   FutureOr<void> _onInitialized(_Initialized event, Emitter emit) async {
     await event.achievementOption.fold(
       () async {
-        final _currentUserOption = await getIt<GetLoggedInUser>()(
+        final currentUserOption = await getIt<GetLoggedInUser>()(
           getIt<NoParams>(),
         );
-        final _currentUser = _currentUserOption.fold(
+        final currentUser = currentUserOption.fold(
           () => throw UnAuthenticatedError(),
           id,
         );
         emit(
           state.copyWith(
             achievement: Achievement.empty().copyWith(
-              creatorId: _currentUser.id,
+              creatorId: currentUser.id,
             ),
           ),
         );

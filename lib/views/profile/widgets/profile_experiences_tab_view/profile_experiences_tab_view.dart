@@ -55,11 +55,11 @@ class ProfileExperiencesTabView extends StatelessWidget {
                   physics: const ClampingScrollPhysics(),
                   itemCount: state.experiences.size,
                   itemBuilder: (context, index) {
-                    final _experience = state.experiences[index];
-                    if (_experience.isValid) {
+                    final experience = state.experiences[index];
+                    if (experience.isValid) {
                       return ProfileExperienceCard(
-                        experience: _experience,
-                        key: Key(_experience.id.toString()),
+                        experience: experience,
+                        key: Key(experience.id.toString()),
                         reloadFunction: () =>
                             context.read<ProfileExperiencesWatcherBloc>().add(
                                   ProfileExperiencesWatcherEvent
@@ -71,7 +71,7 @@ class ProfileExperiencesTabView extends StatelessWidget {
                     } else {
                       return ErrorCard(
                         entityType: S.of(context).experience,
-                        valueFailureString: _experience.failureOption.fold(
+                        valueFailureString: experience.failureOption.fold(
                           () => S.of(context).noError,
                           (failure) => failure.toString(),
                         ),

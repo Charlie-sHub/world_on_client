@@ -49,9 +49,9 @@ class SearchExperiencesByNameWatcherBloc extends Bloc<
         getIt<WatchSearchExperiencesByName>()(
       Params(name: event.searchTerm),
     ).listen(
-      (_failureOrExperience) => add(
+      (failureOrExperience) => add(
         SearchExperiencesByNameWatcherEvent.searchResultsReceived(
-          _failureOrExperience,
+          failureOrExperience,
         ),
       ),
     );

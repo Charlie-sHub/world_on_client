@@ -14,39 +14,39 @@ import 'package:worldon/views/experience_navigation/widgets/experience_navigatio
 import 'package:worldon/views/experience_navigation/widgets/recommendations/no_experience_view.dart';
 
 class ExperienceNavigationBody extends StatelessWidget {
-  final Option<Experience> experienceOption;
-
   const ExperienceNavigationBody({
-    Key? key,
     required this.experienceOption,
+    Key? key,
   }) : super(key: key);
+
+  final Option<Experience> experienceOption;
 
   @override
   Widget build(BuildContext context) => MultiBlocProvider(
         providers: [
-          BlocProvider.value(
-            value: getIt<ExperienceNavigationWatcherBloc>()
+          BlocProvider(
+            create: (_) => getIt<ExperienceNavigationWatcherBloc>()
               ..add(
                 ExperienceNavigationWatcherEvent.initialized(none()),
               ),
           ),
-          BlocProvider.value(
-            value: getIt<CommentWatcherBloc>(),
+          BlocProvider(
+            create: (_) => getIt<CommentWatcherBloc>(),
           ),
-          BlocProvider.value(
-            value: getIt<LocationPermissionBloc>()
+          BlocProvider(
+            create: (_) => getIt<LocationPermissionBloc>()
               ..add(
                 const LocationPermissionEvent.initialized(),
               ),
           ),
-          BlocProvider.value(
-            value: getIt<AdventureMapControllerBloc>()
+          BlocProvider(
+            create: (_) => getIt<AdventureMapControllerBloc>()
               ..add(
                 const AdventureMapControllerEvent.initialized(),
               ),
           ),
-          BlocProvider.value(
-            value: getIt<RecommendedExperiencesWatcherBloc>()
+          BlocProvider(
+            create: (_) => getIt<RecommendedExperiencesWatcherBloc>()
               ..add(
                 const RecommendedExperiencesWatcherEvent
                     .watchRecommendedExperiencesStarted(),

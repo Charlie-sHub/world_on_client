@@ -39,7 +39,7 @@ class TagAdditionCreationCard extends HookWidget {
 
   @override
   Widget build(BuildContext context) {
-    final _textEditingController = useTextEditingController();
+    final textEditingController = useTextEditingController();
     return MultiBlocProvider(
       providers: [
         //This is a bit of a frankenstein monster of a widget, should probably be reviewed, there must be a better way to do this
@@ -75,9 +75,9 @@ class TagAdditionCreationCard extends HookWidget {
               listener: (context, state) => _tagCreationListener(
                 context,
                 state,
-                _textEditingController,
+                textEditingController,
               ),
-              child: TagManagementForm(textController: _textEditingController),
+              child: TagManagementForm(textController: textEditingController),
             ),
             const TagSearchHeader(),
             const SizedBox(height: 5),
@@ -113,14 +113,14 @@ class TagAdditionCreationCard extends HookWidget {
   void _tagCreationListener(
     BuildContext context,
     TagManagementFormState state,
-    TextEditingController _textEditingController,
+    TextEditingController textEditingController,
   ) =>
       state.failureOrSuccessOption.fold(
         () {},
         (either) => either.fold(
           (failure) => failure.maybeMap(
-            coreData: (_coreDataFailure) =>
-                _coreDataFailure.coreDataFailure.maybeMap(
+            coreData: (coreDataFailure) =>
+                coreDataFailure.coreDataFailure.maybeMap(
               nameAlreadyInUse: (_) => FlushbarHelper.createError(
                 duration: const Duration(seconds: 2),
                 message: S.of(context).tagCreationNameAlreadyInUse,
@@ -143,7 +143,7 @@ class TagAdditionCreationCard extends HookWidget {
             context.read<TagSelectorBloc>().add(
                   TagSelectorEvent.addedTag(state.tag),
                 );
-            _textEditingController.clear();
+            textEditingController.clear();
             context.read<TagManagementFormBloc>().add(
                   TagManagementFormEvent.initialized(none()),
                 );

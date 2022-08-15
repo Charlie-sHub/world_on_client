@@ -19,7 +19,7 @@ class TagManagementPage extends HookWidget {
 
   @override
   Widget build(BuildContext context) {
-    final _textEditingController = useTextEditingController();
+    final textEditingController = useTextEditingController();
     return Scaffold(
       appBar: AppBar(
         centerTitle: true,
@@ -43,10 +43,10 @@ class TagManagementPage extends HookWidget {
           listener: (context, state) => _tagManagementListener(
             context,
             state,
-            _textEditingController,
+            textEditingController,
           ),
           builder: (context, state) => TagManagementForm(
-            textController: _textEditingController,
+            textController: textEditingController,
           ),
         ),
       ),
@@ -56,15 +56,15 @@ class TagManagementPage extends HookWidget {
   void _tagManagementListener(
     BuildContext context,
     TagManagementFormState state,
-    TextEditingController _textEditingController,
+    TextEditingController textEditingController,
   ) =>
       state.failureOrSuccessOption.fold(
         () {},
         (either) => either.fold(
           (failure) => FlushbarHelper.createError(
             message: failure.maybeMap(
-              coreData: (_coreDataFailure) =>
-                  _coreDataFailure.coreDataFailure.maybeMap(
+              coreData: (coreDataFailure) =>
+                  coreDataFailure.coreDataFailure.maybeMap(
                 nameAlreadyInUse: (_) =>
                     S.of(context).tagCreationNameAlreadyInUse,
                 serverError: (failure) => failure.errorString,
@@ -74,7 +74,7 @@ class TagManagementPage extends HookWidget {
             ),
           ),
           (_) {
-            _textEditingController.clear();
+            textEditingController.clear();
             context.read<TagManagementFormBloc>().add(
                   TagManagementFormEvent.initialized(none()),
                 );

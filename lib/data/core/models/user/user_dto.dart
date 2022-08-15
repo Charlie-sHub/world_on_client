@@ -155,6 +155,7 @@ class UserDto with _$UserDto {
         promotionPlan: promotionPlan.toDomain(),
       );
 
-  factory UserDto.fromJson(Map<String, dynamic> json) =>
-      _$UserDtoFromJson(json);
+  factory UserDto.fromJson(Map<String, dynamic> json) => _$UserDtoFromJson(
+        json,
+      );
 }

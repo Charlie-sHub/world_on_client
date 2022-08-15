@@ -36,8 +36,8 @@ class SearchByNameFormBloc
   }
 
   void _onSearchTermChanged(_SearchTermChanged event, Emitter emit) {
-    final _oldSearchTerm = state.searchTerm.toString();
-    if (event.searchTermString != _oldSearchTerm) {
+    final oldSearchTerm = state.searchTerm.toString();
+    if (event.searchTermString != oldSearchTerm) {
       emit(
         state.copyWith(
           searchTerm: SearchTerm(event.searchTermString),

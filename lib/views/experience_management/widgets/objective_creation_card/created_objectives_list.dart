@@ -10,37 +10,37 @@ import 'package:worldon/views/experience_management/widgets/objective_creation_c
 class CreatedObjectivesList extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    final _objectives = context.read<ObjectivesCreationBloc>().state.objectivesCreated.asList();
-    return _objectives.isNotEmpty
+    final objectives = context.read<ObjectivesCreationBloc>().state.objectivesCreated.asList();
+    return objectives.isNotEmpty
         ? ImplicitlyAnimatedReorderableList<Objective>(
             physics: const ClampingScrollPhysics(),
             shrinkWrap: true,
             padding: const EdgeInsets.all(10),
             areItemsTheSame: (oldItem, newItem) => oldItem.id == newItem.id,
-            onReorderFinished: (item, from, to, _newItems) {
+            onReorderFinished: (item, from, to, newItems) {
               context.read<ObjectivesCreationBloc>().add(
                     ObjectivesCreationEvent.reorderedList(
-                      _newItems,
+                      newItems,
                     ),
                   );
             },
-            items: _objectives,
-            itemBuilder: (context, animation, _objective, i) {
-              if (_objective.isValid) {
+            items: objectives,
+            itemBuilder: (context, animation, objective, i) {
+              if (objective.isValid) {
                 return Reorderable(
-                  key: Key("orderable_${_objective.id.getOrCrash()}"),
+                  key: Key("orderable_${objective.id.getOrCrash()}"),
                   builder: (context, animation, inDrag) => CreatedObjectiveCard(
                     animation: animation,
-                    objective: _objective,
-                    key: Key(_objective.id.toString()),
+                    objective: objective,
+                    key: Key(objective.id.toString()),
                   ),
                 );
               } else {
                 return Reorderable(
-                  key: Key("orderable_${_objective.id.getOrCrash()}"),
+                  key: Key("orderable_${objective.id.getOrCrash()}"),
                   builder: (context, animation, inDrag) => ErrorCard(
                     entityType: S.of(context).objective,
-                    valueFailureString: _objective.failureOption.fold(
+                    valueFailureString: objective.failureOption.fold(
                       () => S.of(context).noError,
                       (failure) => failure.toString(),
                     ),

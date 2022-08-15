@@ -16,7 +16,8 @@ import 'package:worldon/domain/core/validation/objects/unique_id.dart';
 import 'package:worldon/domain/experience_log/repository/experience_log_repository_interface.dart';
 
 @LazySingleton(as: ExperienceLogRepositoryInterface, env: [Environment.prod])
-class ProductionExperienceLogRepository implements ExperienceLogRepositoryInterface {
+class ProductionExperienceLogRepository
+    implements ExperienceLogRepositoryInterface {
   final Logger _logger;
 
   final FirebaseFirestore _firestore;
@@ -27,68 +28,70 @@ class ProductionExperienceLogRepository implements ExperienceLogRepositoryInterf
   );
 
   @override
-  Future<Either<Failure, Unit>> addExperienceToLog(UniqueId experienceId) async {
+  Future<Either<Failure, Unit>> addExperienceToLog(
+    UniqueId experienceId,
+  ) async {
     try {
-      final _userDocument = await _firestore.currentUserReference();
-      _userDocument.update(
+      final userDocument = await _firestore.currentUserReference();
+      userDocument.update(
         {
-          UserFields.experiencesToDoIds: FieldValue.arrayUnion([experienceId.getOrCrash()]),
+          UserFields.experiencesToDoIds:
+              FieldValue.arrayUnion([experienceId.getOrCrash()]),
         },
       );
       return right(unit);
-    } on FirebaseException catch (error, _) {
-      return left(
-        _onError(error),
-      );
+    } on FirebaseException catch (error) {
+      return left(_onError(error));
     }
   }
 
   @override
-  Future<Either<Failure, Unit>> dismissExperienceFromLog(UniqueId experienceId) async {
+  Future<Either<Failure, Unit>> dismissExperienceFromLog(
+    UniqueId experienceId,
+  ) async {
     try {
-      final _userDocument = await _firestore.currentUserReference();
-      _userDocument.update(
+      final userDocument = await _firestore.currentUserReference();
+      userDocument.update(
         {
-          UserFields.experiencesToDoIds: FieldValue.arrayRemove([experienceId.getOrCrash()]),
+          UserFields.experiencesToDoIds:
+              FieldValue.arrayRemove([experienceId.getOrCrash()]),
         },
       );
       return right(unit);
-    } catch (error, _) {
-      return left(
-        _onError(error),
-      );
+    } catch (error) {
+      return left(_onError(error));
     }
   }
 
   @override
   Stream<Either<Failure, KtList<Experience>>> watchUserLog() async* {
-    final _userDto = await _firestore.currentUserDto();
-    if (_userDto.experiencesToDoIds.isNotEmpty) {
-      final _iterableOfIdLists = partition(
-        _userDto.experiencesToDoIds,
+    final userDto = await _firestore.currentUserDto();
+    if (userDto.experiencesToDoIds.isNotEmpty) {
+      final iterableOfIdLists = partition(
+        userDto.experiencesToDoIds,
         10,
       );
-      final _combinedStreamList = _iterableOfIdLists
+      final combinedStreamList = iterableOfIdLists
           .map(
-            (_idList) => _firestore.experienceCollection
+            (idList) => _firestore.experienceCollection
                 .where(
                   ExperienceFields.id,
-                  whereIn: _idList,
+                  whereIn: idList,
                 )
                 .snapshots(),
           )
           .toList();
       yield* CombineLatestStream(
-        _combinedStreamList,
+        combinedStreamList,
         (List<QuerySnapshot<ExperienceDto>> values) {
-          final _experienceList = <Experience>[];
-          for (final _snapshot in values) {
-            for (final _document in _snapshot.docs) {
-              final _experience = _document.data().toDomain();
-              _experienceList.add(_experience);
+          final experienceList = <Experience>[];
+          for (final snapshot in values) {
+            for (final document in snapshot.docs) {
+              final experience = document.data().toDomain();
+              experienceList.add(experience);
             }
           }
-          return _experienceList;
+          return experienceList;
         },
       ).map(
         (experiences) {
@@ -124,7 +127,9 @@ class ProductionExperienceLogRepository implements ExperienceLogRepositoryInterf
     if (error is FirebaseException) {
       _logger.e("FirebaseException: ${error.message}");
       return Failure.coreData(
-        CoreDataFailure.serverError(errorString: "Firebase error: ${error.message}"),
+        CoreDataFailure.serverError(
+          errorString: "Firebase error: ${error.message}",
+        ),
       );
     } else {
       _logger.e("Unknown server error:  ${error.runtimeType}");

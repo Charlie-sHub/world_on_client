@@ -18,16 +18,16 @@ class DeleteExperience implements AsyncUseCase<Unit, Params> {
 
   @override
   Future<Either<Failure, Unit>> call(Params params) async {
-    final _userRequestingOption = await getIt<GetLoggedInUser>().call(
+    final userRequestingOption = await getIt<GetLoggedInUser>().call(
       getIt<NoParams>(),
     );
-    final _userRequesting = _userRequestingOption.fold(
+    final userRequesting = userRequestingOption.fold(
       () => throw UnAuthenticatedError(),
       id,
     );
-    final _isAuthorized = _userRequesting.id == params.experience.creator.id ||
-        _userRequesting.adminPowers;
-    if (_isAuthorized) {
+    final isAuthorized = userRequesting.id == params.experience.creator.id ||
+        userRequesting.adminPowers;
+    if (isAuthorized) {
       return _repository.deleteExperience(params.experience.id);
     } else {
       return left(

@@ -23,8 +23,8 @@ class RewardCreationCard extends HookWidget {
 
   @override
   Widget build(BuildContext context) {
-    final _descriptionTextEditingController = useTextEditingController();
-    final _nameTextEditingController = useTextEditingController();
+    final descriptionTextEditingController = useTextEditingController();
+    final nameTextEditingController = useTextEditingController();
     return BlocProvider(
       create: (context) => getIt<RewardsCreationBloc>()
         ..add(
@@ -65,16 +65,16 @@ class RewardCreationCard extends HookWidget {
                   shrinkWrap: true,
                   physics: const ClampingScrollPhysics(),
                   itemBuilder: (context, index) {
-                    final _reward = state.rewardsCreated.asSet().elementAt(index);
-                    if (_reward.isValid) {
+                    final reward = state.rewardsCreated.asSet().elementAt(index);
+                    if (reward.isValid) {
                       return CreatedRewardCard(
-                        reward: _reward,
-                        key: Key(_reward.id.toString()),
+                        reward: reward,
+                        key: Key(reward.id.toString()),
                       );
                     } else {
                       return ErrorCard(
                         entityType: S.of(context).reward,
-                        valueFailureString: _reward.failureOption.fold(
+                        valueFailureString: reward.failureOption.fold(
                           () => S.of(context).noError,
                           (failure) => failure.toString(),
                         ),
@@ -91,12 +91,12 @@ class RewardCreationCard extends HookWidget {
                     listener: (context, state) => _rewardFormListener(
                       context,
                       state,
-                      _descriptionTextEditingController,
-                      _nameTextEditingController,
+                      descriptionTextEditingController,
+                      nameTextEditingController,
                     ),
                     builder: (context, state) => RewardCreationForm(
-                      nameTextEditingController: _nameTextEditingController,
-                      descriptionTextEditingController: _descriptionTextEditingController,
+                      nameTextEditingController: nameTextEditingController,
+                      descriptionTextEditingController: descriptionTextEditingController,
                     ),
                   ),
                 ),

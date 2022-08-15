@@ -98,21 +98,21 @@ class BlockUnblockButtonBuilder extends StatelessWidget {
       current.map(
         initial: (_) => true,
         loadSuccess: (_) {
-          final _previousBlockedContainsUser = previous.maybeMap(
+          final previousBlockedContainsUser = previous.maybeMap(
             loadSuccess: (successState) =>
                 successState.user.blockedUsersIds.contains(
               user.id,
             ),
             orElse: () => true,
           );
-          final _currentBlockedContainsUser = current.maybeMap(
+          final currentBlockedContainsUser = current.maybeMap(
             loadSuccess: (successState) =>
                 successState.user.blockedUsersIds.contains(
               user.id,
             ),
             orElse: () => true,
           );
-          return _previousBlockedContainsUser != _currentBlockedContainsUser;
+          return previousBlockedContainsUser != currentBlockedContainsUser;
         },
         loadFailure: (_) => true,
       );

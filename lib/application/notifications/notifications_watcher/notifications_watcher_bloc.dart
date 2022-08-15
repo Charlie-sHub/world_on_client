@@ -41,8 +41,8 @@ class NotificationsWatcherBloc
     await _notificationsStreamSubscription?.cancel();
     _notificationsStreamSubscription =
         getIt<WatchNotifications>()(getIt<NoParams>()).listen(
-      (_failureOrNotifications) => add(
-        NotificationsWatcherEvent.resultsReceived(_failureOrNotifications),
+      (failureOrNotifications) => add(
+        NotificationsWatcherEvent.resultsReceived(failureOrNotifications),
       ),
     );
   }

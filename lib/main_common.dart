@@ -11,7 +11,7 @@ Future<void> mainCommon(String environment) async {
   configureDependencies(environment);
   await initializeLocalNotifications();
   await Firebase.initializeApp();
-  final _markerIcon = await BitmapDescriptor.fromAssetImage(
+  final markerIcon = await BitmapDescriptor.fromAssetImage(
     const ImageConfiguration(size: Size(12, 12)),
     "assets/logo/world_on_logo_marker.png",
   );
@@ -22,7 +22,7 @@ Future<void> mainCommon(String environment) async {
           create: (context) => environment,
         ),
         Provider<BitmapDescriptor>(
-          create: (context) => _markerIcon,
+          create: (context) => markerIcon,
         ),
       ],
       child: AppWidget(),

@@ -19,12 +19,12 @@ class ProfileAvatarStack extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    const double _radius = 40;
+    const double radius = 40;
     return Stack(
       alignment: Alignment.center,
       children: [
         CircularPercentIndicator(
-          radius: _radius + 4,
+          radius: radius + 4,
           circularStrokeCap: CircularStrokeCap.round,
           percent: user.percentageToNextLevel,
           progressColor: WorldOnColors.primary,
@@ -33,7 +33,7 @@ class ProfileAvatarStack extends StatelessWidget {
           center: Hero(
             tag: "userImage",
             child: CircleAvatar(
-              radius: _radius,
+              radius: radius,
               backgroundImage: CachedNetworkImageProvider(user.imageURL),
             ),
           ),

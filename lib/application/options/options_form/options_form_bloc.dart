@@ -22,7 +22,7 @@ class OptionsFormBloc extends Bloc<OptionsFormEvent, OptionsFormState> {
   }
 
   FutureOr<void> _onSubmitted(_, Emitter emit) async {
-    Either<Failure, Unit> _failureOrSuccess;
+    Either<Failure, Unit> failureOrSuccess;
     emit(
       state.copyWith(
         isSubmitting: true,
@@ -30,14 +30,14 @@ class OptionsFormBloc extends Bloc<OptionsFormEvent, OptionsFormState> {
     );
     // Add validity check to the options if needed
     // And check it here before submitting of course
-    _failureOrSuccess = await getIt<SaveGlobalOptions>()(
+    failureOrSuccess = await getIt<SaveGlobalOptions>()(
       Params(options: state.options),
     );
     emit(
       state.copyWith(
         isSubmitting: false,
         showErrorMessages: true,
-        failureOrSuccessOption: optionOf(_failureOrSuccess),
+        failureOrSuccessOption: optionOf(failureOrSuccess),
       ),
     );
   }

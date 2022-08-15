@@ -22,9 +22,9 @@ class MapTabView extends StatelessWidget {
   Widget build(BuildContext context) =>
       BlocBuilder<MapControllerBloc, MapControllerState>(
         builder: (context, state) {
-          final _markers = state.objectives
+          final markers = state.objectives
               .asList()
-              .map((_objective) => _mapObjectiveToMarker(_objective, context))
+              .map((objective) => _mapObjectiveToMarker(objective, context))
               .toSet();
           return state.loadedCoordinates
               ? GoogleMap(
@@ -32,7 +32,7 @@ class MapTabView extends StatelessWidget {
                   myLocationEnabled: true,
                   mapToolbarEnabled: false,
                   zoomControlsEnabled: false,
-                  markers: _markers,
+                  markers: markers,
                   onCameraMove: (position) => _onCameraMoved(context, position),
                   initialCameraPosition: CameraPosition(
                     target: LatLng(

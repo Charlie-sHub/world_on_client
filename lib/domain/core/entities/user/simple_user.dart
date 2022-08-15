@@ -66,17 +66,17 @@ class SimpleUser with _$SimpleUser {
   bool get isValid => failureOption.isNone();
 
   double get percentageToNextLevel {
-    final _nextLevelRequirements =
+    final nextLevelRequirements =
         experiencePointsRequired(level.getOrCrash() + 1);
-    int _totalToCurrentLevelRequirements = 0;
+    int totalToCurrentLevelRequirements = 0;
     for (int i = 0; i <= level.getOrCrash(); i++) {
-      _totalToCurrentLevelRequirements += experiencePointsRequired(i);
+      totalToCurrentLevelRequirements += experiencePointsRequired(i);
     }
-    final _hadToNextLevel =
-        experiencePoints.getOrCrash() - _totalToCurrentLevelRequirements;
-    final _result = _hadToNextLevel / _nextLevelRequirements;
-    if (_result < 1 && _result >= 0) {
-      return _result;
+    final hadToNextLevel =
+        experiencePoints.getOrCrash() - totalToCurrentLevelRequirements;
+    final result = hadToNextLevel / nextLevelRequirements;
+    if (result < 1 && result >= 0) {
+      return result;
     } else {
       return 0;
     }

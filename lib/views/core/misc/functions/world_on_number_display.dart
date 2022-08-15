@@ -1,7 +1,7 @@
 import 'package:number_display/number_display.dart';
 
 String createNumberDisplay(int number) {
-  final _display = createDisplay(
+  final display = createDisplay(
     length: 4,
     units: [
       "K",
@@ -9,5 +9,5 @@ String createNumberDisplay(int number) {
       "B",
     ],
   );
-  return _display(number);
+  return display(number);
 }

@@ -37,21 +37,25 @@ class ProductionSearchRepository implements SearchRepositoryInterface {
   );
 
   @override
-  Stream<Either<Failure, KtList<Experience>>> watchExperiencesByTitle(SearchTerm term) async* {
-    final _results = <Experience>[];
+  Stream<Either<Failure, KtList<Experience>>> watchExperiencesByTitle(
+    SearchTerm term,
+  ) async* {
+    final results = <Experience>[];
     try {
-      final _algoliaQuery = algolia.queryExperienceIndex().query(term.getOrCrash()).setLength(40);
-      final _querySnapshot = await _algoliaQuery.getObjects();
-      for (final _queryResult in _querySnapshot.hits) {
-        final _id = _queryResult.objectID;
-        final _documentReference = await _firestore.experienceDocumentReference(_id);
-        final _experienceDocument = await _documentReference.get();
-        final _experience = _experienceDocument.data()!.toDomain();
-        _results.add(_experience);
+      final algoliaQuery =
+          algolia.queryExperienceIndex().query(term.getOrCrash()).setLength(40);
+      final querySnapshot = await algoliaQuery.getObjects();
+      for (final queryResult in querySnapshot.hits) {
+        final id = queryResult.objectID;
+        final documentReference =
+            await _firestore.experienceDocumentReference(id);
+        final experienceDocument = await documentReference.get();
+        final experience = experienceDocument.data()!.toDomain();
+        results.add(experience);
       }
-      if (_results.isNotEmpty) {
+      if (results.isNotEmpty) {
         yield right<Failure, KtList<Experience>>(
-          _results.toImmutableList(),
+          results.toImmutableList(),
         );
       } else {
         yield left<Failure, KtList<Experience>>(
@@ -60,7 +64,7 @@ class ProductionSearchRepository implements SearchRepositoryInterface {
           ),
         );
       }
-    } catch (error, _) {
+    } catch (error) {
       yield left<Failure, KtList<Experience>>(
         _onError(error),
       );
@@ -69,19 +73,20 @@ class ProductionSearchRepository implements SearchRepositoryInterface {
 
   @override
   Stream<Either<Failure, KtList<Tag>>> watchTagsByName(SearchTerm term) async* {
-    final _results = <Tag>[];
+    final results = <Tag>[];
     try {
-      final _algoliaQuery = algolia.queryTagIndex().query(term.getOrCrash()).setLength(50);
-      final _querySnapshot = await _algoliaQuery.getObjects();
-      for (final _queryResult in _querySnapshot.hits) {
-        final _id = _queryResult.objectID;
-        final _tagDocument = await _firestore.tagCollection.doc(_id).get();
-        final _tag = _tagDocument.data()!.toDomain();
-        _results.add(_tag);
+      final algoliaQuery =
+          algolia.queryTagIndex().query(term.getOrCrash()).setLength(50);
+      final querySnapshot = await algoliaQuery.getObjects();
+      for (final queryResult in querySnapshot.hits) {
+        final id = queryResult.objectID;
+        final tagDocument = await _firestore.tagCollection.doc(id).get();
+        final tag = tagDocument.data()!.toDomain();
+        results.add(tag);
       }
-      if (_results.isNotEmpty) {
+      if (results.isNotEmpty) {
         yield right<Failure, KtList<Tag>>(
-          _results.toImmutableList(),
+          results.toImmutableList(),
         );
       } else {
         yield left<Failure, KtList<Tag>>(
@@ -90,7 +95,7 @@ class ProductionSearchRepository implements SearchRepositoryInterface {
           ),
         );
       }
-    } catch (error, _) {
+    } catch (error) {
       yield left<Failure, KtList<Tag>>(
         _onError(error),
       );
@@ -98,20 +103,23 @@ class ProductionSearchRepository implements SearchRepositoryInterface {
   }
 
   @override
-  Stream<Either<Failure, KtList<User>>> watchUsersByName(SearchTerm term) async* {
-    final _results = <User>[];
+  Stream<Either<Failure, KtList<User>>> watchUsersByName(
+    SearchTerm term,
+  ) async* {
+    final results = <User>[];
     try {
-      final _algoliaQuery = algolia.queryUserIndex().query(term.getOrCrash()).setLength(50);
-      final _querySnapshot = await _algoliaQuery.getObjects();
-      for (final _queryResult in _querySnapshot.hits) {
-        final _id = _queryResult.objectID;
-        final _userDocument = await _firestore.userCollection.doc(_id).get();
-        final _user = _userDocument.data()!.toDomain();
-        _results.add(_user);
+      final algoliaQuery =
+          algolia.queryUserIndex().query(term.getOrCrash()).setLength(50);
+      final querySnapshot = await algoliaQuery.getObjects();
+      for (final queryResult in querySnapshot.hits) {
+        final id = queryResult.objectID;
+        final userDocument = await _firestore.userCollection.doc(id).get();
+        final user = userDocument.data()!.toDomain();
+        results.add(user);
       }
-      if (_results.isNotEmpty) {
+      if (results.isNotEmpty) {
         yield right<Failure, KtList<User>>(
-          _results.toImmutableList(),
+          results.toImmutableList(),
         );
       } else {
         yield left<Failure, KtList<User>>(
@@ -120,7 +128,7 @@ class ProductionSearchRepository implements SearchRepositoryInterface {
           ),
         );
       }
-    } catch (error, _) {
+    } catch (error) {
       yield left<Failure, KtList<User>>(
         _onError(error),
       );
@@ -128,20 +136,19 @@ class ProductionSearchRepository implements SearchRepositoryInterface {
   }
 
   @override
-  Stream<Either<Failure, KtList<Experience>>> watchExperiencesByTags(TagSet tags) async* {
-    final _tags = tags.getOrCrash();
-    if (_tags.isNotEmpty()) {
-      final _auxTagList = _tags.toList().asList();
-      final _iterableOfIdLists = partition(
-        _auxTagList,
-        10,
-      );
-      final _combinedStreamList = _iterableOfIdLists
+  Stream<Either<Failure, KtList<Experience>>> watchExperiencesByTags(
+    TagSet tags,
+  ) async* {
+    final tagSet = tags.getOrCrash();
+    if (tagSet.isNotEmpty()) {
+      final auxTagList = tagSet.toList().asList();
+      final iterableOfIdLists = partition(auxTagList, 10);
+      final combinedStreamList = iterableOfIdLists
           .map(
-            (_idList) => _firestore.experienceCollection
+            (idList) => _firestore.experienceCollection
                 .where(
                   ExperienceFields.tagsIds,
-                  arrayContainsAny: _idList,
+                  arrayContainsAny: idList,
                 )
                 .orderBy(
                   ExperienceFields.creationDate,
@@ -151,19 +158,19 @@ class ProductionSearchRepository implements SearchRepositoryInterface {
           )
           .toList();
       yield* CombineLatestStream(
-        _combinedStreamList,
+        combinedStreamList,
         (List<QuerySnapshot<ExperienceDto>> values) {
-          final _documentList = <QueryDocumentSnapshot<ExperienceDto>>[];
-          for (final _snapshot in values) {
-            for (final _document in _snapshot.docs) {
-              _documentList.add(_document);
+          final documentList = <QueryDocumentSnapshot<ExperienceDto>>[];
+          for (final snapshot in values) {
+            for (final document in snapshot.docs) {
+              documentList.add(document);
             }
           }
-          final _filteredList = _documentList.take(50);
-          final _experienceList = _filteredList.map(
-            (_document) => _document.data().toDomain(),
+          final filteredList = documentList.take(50);
+          final experienceList = filteredList.map(
+            (document) => document.data().toDomain(),
           );
-          return _experienceList;
+          return experienceList;
         },
       ).map(
         (experiences) {
@@ -194,7 +201,9 @@ class ProductionSearchRepository implements SearchRepositoryInterface {
   }
 
   @override
-  Stream<Either<Failure, KtList<Experience>>> watchExperiencesByDifficulty(Difficulty difficulty) async* {
+  Stream<Either<Failure, KtList<Experience>>> watchExperiencesByDifficulty(
+    Difficulty difficulty,
+  ) async* {
     yield* _firestore.experienceCollection
         .where(
           ExperienceFields.difficulty,
@@ -231,7 +240,9 @@ class ProductionSearchRepository implements SearchRepositoryInterface {
     if (error is FirebaseException) {
       _logger.e("FirebaseException: ${error.message}");
       return Failure.coreData(
-        CoreDataFailure.serverError(errorString: "Firebase error: ${error.message}"),
+        CoreDataFailure.serverError(
+          errorString: "Firebase error: ${error.message}",
+        ),
       );
     } else if (error is AlgoliaError) {
       _logger.e("Algolia error: ${error.error}");

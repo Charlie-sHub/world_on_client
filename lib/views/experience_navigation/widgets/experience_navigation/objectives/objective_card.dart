@@ -54,37 +54,39 @@ class ObjectiveCard extends StatelessWidget {
                     ),
                   ),
                 ),
-              Padding(
-                padding: const EdgeInsets.all(8),
-                child: SizedBox(
-                  height: _imageSize,
-                  child: Column(
-                    children: [
-                      if (objective.title != null) ...[
+              Expanded(
+                child: Padding(
+                  padding: const EdgeInsets.all(8),
+                  child: SizedBox(
+                    height: _imageSize,
+                    child: Column(
+                      children: [
+                        if (objective.title != null) ...[
+                          AutoSizeText(
+                            objective.title!.getOrCrash(),
+                            overflow: TextOverflow.fade,
+                            minFontSize: 10,
+                            maxFontSize: 16,
+                            maxLines: 2,
+                            style: const TextStyle(
+                              fontSize: 14,
+                              fontWeight: FontWeight.w600,
+                            ),
+                          ),
+                          const SizedBox(height: 5),
+                        ],
                         AutoSizeText(
-                          objective.title!.getOrCrash(),
+                          objective.description.getOrCrash(),
                           overflow: TextOverflow.fade,
-                          minFontSize: 10,
-                          maxFontSize: 16,
-                          maxLines: 2,
+                          minFontSize: 8,
+                          maxFontSize: 14,
+                          maxLines: 20,
                           style: const TextStyle(
-                            fontSize: 14,
-                            fontWeight: FontWeight.w600,
+                            fontSize: 11,
                           ),
                         ),
-                        const SizedBox(height: 5),
                       ],
-                      AutoSizeText(
-                        objective.description.getOrCrash(),
-                        overflow: TextOverflow.fade,
-                        minFontSize: 8,
-                        maxFontSize: 14,
-                        maxLines: 20,
-                        style: const TextStyle(
-                          fontSize: 11,
-                        ),
-                      ),
-                    ],
+                    ),
                   ),
                 ),
               ),

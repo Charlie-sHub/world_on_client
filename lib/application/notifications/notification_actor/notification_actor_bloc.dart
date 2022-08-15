@@ -24,11 +24,11 @@ class NotificationActorBloc
   }
 
   FutureOr<void> _onChecked(_Checked event, Emitter emit) async {
-    final _failureOrUnit = await getIt<check_notification.CheckNotification>()(
+    final failureOrUnit = await getIt<check_notification.CheckNotification>()(
       check_notification.Params(id: event.notification.id),
     );
     emit(
-      _failureOrUnit.fold(
+      failureOrUnit.fold(
         (failure) => state,
         (_) => const NotificationActorState.checkSuccess(),
       ),
@@ -37,12 +37,12 @@ class NotificationActorBloc
 
   FutureOr<void> _onDeleted(_Deleted event, Emitter emit) async {
     emit(const NotificationActorState.actionInProgress());
-    final _failureOrUnit =
+    final failureOrUnit =
         await getIt<delete_notification.DeleteNotification>()(
       delete_notification.Params(id: event.notification.id),
     );
     emit(
-      _failureOrUnit.fold(
+      failureOrUnit.fold(
         (failure) => NotificationActorState.deletionFailure(failure),
         (_) => const NotificationActorState.deletionSuccess(),
       ),

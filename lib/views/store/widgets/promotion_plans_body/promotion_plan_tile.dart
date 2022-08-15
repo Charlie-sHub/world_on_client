@@ -17,11 +17,11 @@ class PromotionPlanTile extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final _expirationDate = DateTime.now().add(
+    final expirationDate = DateTime.now().add(
       Duration(days: plan.amountOfDays),
     );
-    final _expirationDateString =
-        "${S.of(context).validUntilIfBoughtToday}: ${_expirationDate.year}-${_expirationDate.month}-${_expirationDate.day}";
+    final expirationDateString =
+        "${S.of(context).validUntilIfBoughtToday}: ${expirationDate.year}-${expirationDate.month}-${expirationDate.day}";
     return Slidable(
       endActionPane: ActionPane(
         motion: const DrawerMotion(),
@@ -83,7 +83,7 @@ class PromotionPlanTile extends StatelessWidget {
               ),
             ),
             Text(
-              _expirationDateString,
+              expirationDateString,
               style: const TextStyle(
                 fontSize: 10,
                 fontWeight: FontWeight.bold,

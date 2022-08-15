@@ -34,5 +34,7 @@ class RewardDto with _$RewardDto {
         imageFile: dartz.none(),
       );
 
-  factory RewardDto.fromJson(Map<String, dynamic> json) => _$RewardDtoFromJson(json);
+  factory RewardDto.fromJson(Map<String, dynamic> json) => _$RewardDtoFromJson(
+        json,
+      );
 }

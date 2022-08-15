@@ -16,17 +16,17 @@ class CloudStorageService {
     required String name,
     required StorageFolder folder,
   }) async {
-    final _firebaseStorageReference = _storageInstance
+    final firebaseStorageReference = _storageInstance
         .ref()
         .child(
           folder.value(),
         )
         .child(name);
-    final _uploadTask = _firebaseStorageReference.putFile(
+    final uploadTask = firebaseStorageReference.putFile(
       imageToUpload,
     );
-    final _storageSnapshot = await _uploadTask;
-    return _storageSnapshot.ref.getDownloadURL();
+    final storageSnapshot = await uploadTask;
+    return storageSnapshot.ref.getDownloadURL();
   }
 
   Future<String> uploadAssetImage({
@@ -34,17 +34,17 @@ class CloudStorageService {
     required String name,
     required StorageFolder folder,
   }) async {
-    final _firebaseStorageReference = _storageInstance
+    final firebaseStorageReference = _storageInstance
         .ref()
         .child(
           folder.value(),
         )
         .child(name);
-    final _imageByteData = await imageToUpload.getByteData(quality: 40);
-    final _uploadTask = _firebaseStorageReference.putData(
-      _imageByteData.buffer.asUint8List(),
+    final imageByteData = await imageToUpload.getByteData(quality: 40);
+    final uploadTask = firebaseStorageReference.putData(
+      imageByteData.buffer.asUint8List(),
     );
-    final _storageSnapshot = await _uploadTask;
-    return _storageSnapshot.ref.getDownloadURL();
+    final storageSnapshot = await uploadTask;
+    return storageSnapshot.ref.getDownloadURL();
   }
 }

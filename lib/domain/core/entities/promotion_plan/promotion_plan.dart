@@ -41,33 +41,33 @@ class PromotionPlan with _$PromotionPlan {
   bool get isValid => failureOption.isNone();
 
   bool get isUsable {
-    final _currentDate = DateTime.now();
-    DateTime _lastValidDate;
+    final currentDate = DateTime.now();
+    DateTime lastValidDate;
     switch (code) {
       case PromotionPlanCode.none:
         return false;
       case PromotionPlanCode.weekLongPromotion:
-        _lastValidDate = boughtDate.add(
+        lastValidDate = boughtDate.add(
           const Duration(days: 7),
         );
         break;
       case PromotionPlanCode.monthLongPromotion:
-        _lastValidDate = boughtDate.add(
+        lastValidDate = boughtDate.add(
           const Duration(days: 30),
         );
         break;
       case PromotionPlanCode.seasonLongPromotion:
-        _lastValidDate = boughtDate.add(
+        lastValidDate = boughtDate.add(
           const Duration(days: 90),
         );
         break;
       case PromotionPlanCode.yearLongPromotion:
-        _lastValidDate = boughtDate.add(
+        lastValidDate = boughtDate.add(
           const Duration(days: 365),
         );
         break;
     }
-    return _lastValidDate.isAfter(_currentDate);
+    return lastValidDate.isAfter(currentDate);
   }
 
   String get productId {

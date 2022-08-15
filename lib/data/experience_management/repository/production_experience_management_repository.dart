@@ -42,36 +42,36 @@ class ProductionExperienceManagementRepository
   @override
   Future<Either<Failure, Unit>> createExperience(Experience experience) async {
     try {
-      final _rewardSet = <Reward>{};
-      final _urlsSet = <String>{};
-      final _objectiveList = <Objective>[];
+      final rewardSet = <Reward>{};
+      final urlsSet = <String>{};
+      final objectiveList = <Objective>[];
       await _uploadImages(
         experience,
-        _rewardSet,
-        _objectiveList,
-        _urlsSet,
+        rewardSet,
+        objectiveList,
+        urlsSet,
       );
-      final _experienceDto = ExperienceDto.fromDomain(
+      final experienceDto = ExperienceDto.fromDomain(
         experience.copyWith(
-          rewards: RewardSet(_rewardSet.toImmutableSet()),
-          objectives: ObjectiveList(_objectiveList.toImmutableList()),
-          imageURLs: _urlsSet,
+          rewards: RewardSet(rewardSet.toImmutableSet()),
+          objectives: ObjectiveList(objectiveList.toImmutableList()),
+          imageURLs: urlsSet,
         ),
       );
-      final _flutterFireGeoPosition = _geo.point(
-        latitude: _experienceDto.coordinates.latitude,
-        longitude: _experienceDto.coordinates.longitude,
+      final flutterFireGeoPosition = _geo.point(
+        latitude: experienceDto.coordinates.latitude,
+        longitude: experienceDto.coordinates.longitude,
       );
-      final _experienceJson = _experienceDto.toJson();
-      _experienceJson[ExperienceFields.position] = _flutterFireGeoPosition.data;
+      final experienceJson = experienceDto.toJson();
+      experienceJson[ExperienceFields.position] = flutterFireGeoPosition.data;
       // Don't like that at all but it's the best for now
-      final _experienceDtoWithGeoData = ExperienceDto.fromJson(_experienceJson);
+      final experienceDtoWithGeoData = ExperienceDto.fromJson(experienceJson);
       _firestore.experienceCollection
           .doc(
             experience.id.getOrCrash(),
           )
           .set(
-            _experienceDtoWithGeoData,
+            experienceDtoWithGeoData,
           );
       return right(unit);
     } catch (e) {
@@ -85,51 +85,51 @@ class ProductionExperienceManagementRepository
     List<String> imageUrlListToDelete,
   ) async {
     try {
-      final _rewardSet = <Reward>{};
-      final _urlsSet = experience.imageURLs;
-      final _objectiveList = <Objective>[];
-      final _experienceId = experience.id.getOrCrash();
+      final rewardSet = <Reward>{};
+      final urlsSet = experience.imageURLs;
+      final objectiveList = <Objective>[];
+      final experienceId = experience.id.getOrCrash();
       await _uploadImages(
         experience,
-        _rewardSet,
-        _objectiveList,
-        _urlsSet,
+        rewardSet,
+        objectiveList,
+        urlsSet,
       );
       // Adding the original rewards and objectives
       // _rewardSet.addAll(experience.rewards.getOrCrash().dart);
       // _objectiveList.addAll(experience.objectives.getOrCrash().dart);
-      final _experienceDto = ExperienceDto.fromDomain(
+      final experienceDto = ExperienceDto.fromDomain(
         experience.copyWith(
-          rewards: RewardSet(_rewardSet.toImmutableSet()),
-          objectives: ObjectiveList(_objectiveList.toImmutableList()),
-          imageURLs: _urlsSet,
+          rewards: RewardSet(rewardSet.toImmutableSet()),
+          objectives: ObjectiveList(objectiveList.toImmutableList()),
+          imageURLs: urlsSet,
         ),
       );
-      final _flutterFireGeoPosition = _geo.point(
-        latitude: _experienceDto.coordinates.latitude,
-        longitude: _experienceDto.coordinates.longitude,
+      final flutterFireGeoPosition = _geo.point(
+        latitude: experienceDto.coordinates.latitude,
+        longitude: experienceDto.coordinates.longitude,
       );
-      final _experienceJson = _experienceDto.toJson();
-      _experienceJson[ExperienceFields.position] = _flutterFireGeoPosition.data;
+      final experienceJson = experienceDto.toJson();
+      experienceJson[ExperienceFields.position] = flutterFireGeoPosition.data;
       _firestore.experienceCollection
           .doc(
-            _experienceId,
+            experienceId,
           )
           .update(
-            _experienceJson,
+            experienceJson,
           );
-      final _propagateUpdateCallable =
+      final propagateUpdateCallable =
           _functions.httpsCallable("propagateExperienceUpdate");
-      _propagateUpdateCallable.call(
-        <String, dynamic>{"experienceId": _experienceId},
+      propagateUpdateCallable.call(
+        <String, dynamic>{"experienceId": experienceId},
       );
-      final _updateIndexCallable =
+      final updateIndexCallable =
           _functions.httpsCallable("updateExperienceIndex");
-      await _updateIndexCallable.call(
-        <String, dynamic>{"experienceId": _experienceId},
+      await updateIndexCallable.call(
+        <String, dynamic>{"experienceId": experienceId},
       );
-      for (final _imageUrl in imageUrlListToDelete) {
-        _cloudStorageService.deleteImage(_imageUrl);
+      for (final imageUrl in imageUrlListToDelete) {
+        _cloudStorageService.deleteImage(imageUrl);
       }
       return right(unit);
     } catch (e) {
@@ -140,13 +140,13 @@ class ProductionExperienceManagementRepository
   @override
   Future<Either<Failure, Experience>> getExperience(UniqueId id) async {
     try {
-      final _experienceSnapshot = await _firestore.experienceCollection
+      final experienceSnapshot = await _firestore.experienceCollection
           .doc(
             id.getOrCrash(),
           )
           .get();
-      final _experience = _experienceSnapshot.data()!.toDomain();
-      return right(_experience);
+      final experience = experienceSnapshot.data()!.toDomain();
+      return right(experience);
     } catch (e) {
       return _onError(e);
     }
@@ -155,24 +155,24 @@ class ProductionExperienceManagementRepository
   @override
   Future<Either<Failure, Unit>> deleteExperience(UniqueId experienceId) async {
     try {
-      final _cloudStorageService = getIt<CloudStorageService>();
-      final _documentReference = await _firestore.experienceDocumentReference(
+      final cloudStorageService = getIt<CloudStorageService>();
+      final documentReference = await _firestore.experienceDocumentReference(
         experienceId.getOrCrash(),
       );
-      final _documentSnapshot = await _documentReference.get();
-      final _experienceDto = _documentSnapshot.data();
-      for (final _imageUrl in _experienceDto!.imageURLs) {
-        _cloudStorageService.deleteImage(_imageUrl);
+      final documentSnapshot = await documentReference.get();
+      final experienceDto = documentSnapshot.data();
+      for (final imageUrl in experienceDto!.imageURLs) {
+        cloudStorageService.deleteImage(imageUrl);
       }
-      for (final _objective in _experienceDto.objectives) {
-        _cloudStorageService.deleteImage(_objective.imageURL);
+      for (final objective in experienceDto.objectives) {
+        cloudStorageService.deleteImage(objective.imageURL);
       }
-      for (final _reward in _experienceDto.rewards) {
-        _cloudStorageService.deleteImage(_reward.imageURL);
+      for (final reward in experienceDto.rewards) {
+        cloudStorageService.deleteImage(reward.imageURL);
       }
-      _documentReference.delete();
+      documentReference.delete();
       return right(unit);
-    } catch (error, _) {
+    } catch (error) {
       return _onError(error);
     }
   }
@@ -183,48 +183,48 @@ class ProductionExperienceManagementRepository
     List<Objective> objectiveList,
     Set<String> urlsSet,
   ) async {
-    final _imageAssets = experience.imageAssetsOption.getOrElse(() => []);
-    for (final _imageAsset in _imageAssets) {
-      final _imageName = _imageAsset.name! + experience.id.getOrCrash();
-      final _imageURL = await _cloudStorageService.uploadAssetImage(
-        imageToUpload: _imageAsset,
+    final imageAssets = experience.imageAssetsOption.getOrElse(() => []);
+    for (final imageAsset in imageAssets) {
+      final imageName = imageAsset.name! + experience.id.getOrCrash();
+      final imageURL = await _cloudStorageService.uploadAssetImage(
+        imageToUpload: imageAsset,
         folder: StorageFolder.experiences,
-        name: _imageName,
+        name: imageName,
       );
-      urlsSet.add(_imageURL);
+      urlsSet.add(imageURL);
     }
-    for (final _reward in experience.rewards.getOrCrash().dart) {
-      await _reward.imageFile.fold(
+    for (final reward in experience.rewards.getOrCrash().dart) {
+      await reward.imageFile.fold(
         () => null,
-        (_imageFile) async {
-          final _imageURL = await _cloudStorageService.uploadFileImage(
-            imageToUpload: _imageFile,
+        (imageFile) async {
+          final imageURL = await _cloudStorageService.uploadFileImage(
+            imageToUpload: imageFile,
             folder: StorageFolder.experiences,
-            name: _reward.id.getOrCrash(),
+            name: reward.id.getOrCrash(),
           );
-          final _rewardWithImage = _reward.copyWith(imageURL: _imageURL);
-          rewardSet.add(_rewardWithImage);
+          final rewardWithImage = reward.copyWith(imageURL: imageURL);
+          rewardSet.add(rewardWithImage);
         },
       );
     }
-    for (final _objective in experience.objectives.getOrCrash().dart) {
-      Objective _objectiveToAdd = _objective;
-      if (_objective.imageFile != null) {
-        await _objective.imageFile!.fold(
+    for (final objective in experience.objectives.getOrCrash().dart) {
+      Objective objectiveToAdd = objective;
+      if (objective.imageFile != null) {
+        await objective.imageFile!.fold(
           () => null,
-          (_imageFile) async {
-            final _imageURL = await _cloudStorageService.uploadFileImage(
-              imageToUpload: _imageFile,
+          (imageFile) async {
+            final imageURL = await _cloudStorageService.uploadFileImage(
+              imageToUpload: imageFile,
               folder: StorageFolder.experiences,
-              name: _objective.id.getOrCrash(),
+              name: objective.id.getOrCrash(),
             );
-            _objectiveToAdd = _objective.copyWith(
-              imageURL: _imageURL,
+            objectiveToAdd = objective.copyWith(
+              imageURL: imageURL,
             );
           },
         );
       }
-      objectiveList.add(_objectiveToAdd);
+      objectiveList.add(objectiveToAdd);
     }
   }
 
