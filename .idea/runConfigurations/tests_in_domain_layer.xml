@@ -1,6 +1,0 @@
-<component name="ProjectRunConfigurationManager">
-  <configuration default="false" name="tests in domain layer" type="FlutterTestConfigType" factoryName="Flutter Test" singleton="false">
-    <option name="testDir" value="C:\Users\Lucholito\Documents\WorldOn\Client\world_on_project\world_on\test\domain" />
-    <method v="2" />
-  </configuration>
-</component>

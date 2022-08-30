@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/worldon.iml" filepath="$PROJECT_DIR$/worldon.iml" />
-      <module fileurl="file://$PROJECT_DIR$/android/worldon_android.iml" filepath="$PROJECT_DIR$/android/worldon_android.iml" />
+      <module fileurl="file://$PROJECT_DIR$/world_on_client.iml" filepath="$PROJECT_DIR$/world_on_client.iml" />
+      <module fileurl="file://$PROJECT_DIR$/android/world_on_client_android.iml" filepath="$PROJECT_DIR$/android/world_on_client_android.iml" />
     </modules>
   </component>
 </project>

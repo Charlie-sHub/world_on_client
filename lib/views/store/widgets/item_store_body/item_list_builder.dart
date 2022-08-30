@@ -44,6 +44,7 @@ class ItemListBuilder extends StatelessWidget {
                     right: 10,
                     top: 10,
                   ),
+                  shrinkWrap: true,
                   itemCount: state.items.size,
                   separatorBuilder: (context, index) => const Divider(
                     color: WorldOnColors.accent,

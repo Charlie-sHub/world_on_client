@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:algolia/algolia.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:dartz/dartz.dart';
@@ -42,8 +44,12 @@ class ProductionSearchRepository implements SearchRepositoryInterface {
   ) async* {
     final results = <Experience>[];
     try {
-      final algoliaQuery =
-          algolia.queryExperienceIndex().query(term.getOrCrash()).setLength(40);
+      final algoliaQuery = algolia
+          .queryExperienceIndex()
+          .query(
+            term.getOrCrash(),
+          )
+          .setLength(40);
       final querySnapshot = await algoliaQuery.getObjects();
       for (final queryResult in querySnapshot.hits) {
         final id = queryResult.objectID;
@@ -76,7 +82,12 @@ class ProductionSearchRepository implements SearchRepositoryInterface {
     final results = <Tag>[];
     try {
       final algoliaQuery =
-          algolia.queryTagIndex().query(term.getOrCrash()).setLength(50);
+          algolia
+          .queryTagIndex()
+          .query(
+            term.getOrCrash(),
+          )
+          .setLength(50);
       final querySnapshot = await algoliaQuery.getObjects();
       for (final queryResult in querySnapshot.hits) {
         final id = queryResult.objectID;
@@ -254,8 +265,15 @@ class ProductionSearchRepository implements SearchRepositoryInterface {
       return const Failure.coreData(
         CoreDataFailure.serverError(errorString: "Failed assertion error"),
       );
+    } else if (error is HandshakeException) {
+      _logger.e("Handshake exception error: ${error.message}");
+      return Failure.coreData(
+        CoreDataFailure.serverError(
+          errorString: "Handshake exception error: ${error.message}",
+        ),
+      );
     } else {
-      _logger.e("Unknown server error, type: ${error.runtimeType}");
+      _logger.e("Unknown server error, toString: ${error.toString()}");
       return const Failure.coreData(
         CoreDataFailure.serverError(errorString: "Unknown data layer error"),
       );

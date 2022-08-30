@@ -26,7 +26,6 @@ class ProfileTabBar extends SliverPersistentHeaderDelegate {
       height: kBottomNavigationBarHeight - 15,
       child: Material(
         color: WorldOnColors.background,
-        elevation: 5,
         child: TabBar(
           labelColor: WorldOnColors.accent,
           unselectedLabelColor: _grey75,

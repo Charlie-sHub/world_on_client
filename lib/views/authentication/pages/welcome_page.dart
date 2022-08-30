@@ -7,10 +7,10 @@ import 'package:worldon/views/core/routes/router.gr.dart';
 
 class WelcomePage extends StatelessWidget {
   @override
-  Widget build(BuildContext context) => SafeArea(
-        child: Scaffold(
+  Widget build(BuildContext context) => Scaffold(
           appBar: AppBar(
             centerTitle: true,
+            elevation: 0,
             automaticallyImplyLeading: false,
             title: Text(
               S.of(context).welcomeTitle,
@@ -52,6 +52,5 @@ class WelcomePage extends StatelessWidget {
               ],
             ),
           ),
-        ),
-      );
+        );
 }

@@ -22,6 +22,9 @@ class AuthenticationBloc
 
   FutureOr<void> _onLoggedOut(_, Emitter emit) async {
     await getIt<LogOut>()(getIt<NoParams>());
+    await getIt<MainFeedWatcherBloc>().close();
+    await getIt<NewNotificationsWatcherBloc>().close();
+    await getIt<ProfileWatcherBloc>().close();
     emit(const AuthenticationState.unAuthenticated());
   }
 

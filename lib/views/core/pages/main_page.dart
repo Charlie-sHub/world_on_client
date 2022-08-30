@@ -65,32 +65,28 @@ class MainPage extends StatelessWidget {
           listener: _watchUserListener,
           child: BlocConsumer<NavigationActorBloc, NavigationActorState>(
             listener: _navigationListener,
-            builder: (context, state) => SafeArea(
-              child: ShowCaseWidget(
-                onComplete: (_, key) => _onShowCaseComplete(
-                  key,
-                  experienceCreationButtonKey,
-                  context,
-                ),
-                onFinish: () => context.read<MainPageShowCaseBloc>().add(
-                      const MainPageShowCaseEvent.finished(),
-                    ),
-                builder: Builder(
-                  builder: (context) =>
-                      BlocListener<MainPageShowCaseBloc, MainPageShowCaseState>(
-                    listener: (context, state) => state.maybeMap(
-                      show: (_) =>
-                          ShowCaseWidget.of(context).startShowCase(keys),
-                      orElse: () => null,
-                    ),
-                    child: GestureDetector(
+            builder: (context, state) => ShowCaseWidget(
+              onComplete: (_, key) => _onShowCaseComplete(
+                key,
+                experienceCreationButtonKey,
+                context,
+              ),
+              onFinish: () => context.read<MainPageShowCaseBloc>().add(
+                    const MainPageShowCaseEvent.finished(),
+                  ),
+              builder: Builder(
+                builder: (context) => BlocListener<MainPageShowCaseBloc, MainPageShowCaseState>(
+                  listener: (context, state) => state.maybeMap(
+                    show: (_) => ShowCaseWidget.of(context).startShowCase(keys),
+                    orElse: () => null,
+                  ),
+                  child: GestureDetector(
                       onTap: () =>
                           FocusManager.instance.primaryFocus?.unfocus(),
-                      child: MainPageScaffold(
-                        createExperienceShowKey: experienceCreationButtonKey,
-                        userLevelShowKey: userLevelKey,
+                      child:MainPageScaffold(
+                    createExperienceShowKey: experienceCreationButtonKey,
+                    userLevelShowKey: userLevelKey,
                       ),
-                    ),
                   ),
                 ),
               ),
