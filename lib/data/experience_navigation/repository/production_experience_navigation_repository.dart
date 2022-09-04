@@ -208,7 +208,7 @@ class ProductionExperienceNavigationRepository
       longitude: position.longitude,
     );
     if (userDto.interestsIds.isNotEmpty) {
-      const double kmRadius = 30;
+      const double kmRadius = 20;
       yield* _geo
           .collection(
             collectionRef: _firestore.collection("experiences"),
@@ -231,8 +231,9 @@ class ProductionExperienceNavigationRepository
           // In any case, it's better to filter by location first and then by tags
           // the first filter should take out most of the experiences that don't fit
           if (experienceDTOs.isNotEmpty) {
-            final filteredExperienceDtoList = experienceDTOs.where(
-              (experience) {
+            // TODO: Re-enable some form of filtering at some point
+            // The following code belonged inside experienceDTOs.where(...)
+            /*
                 final experienceTagIds = experience.tags
                     .map(
                       (tag) => tag.id,
@@ -244,8 +245,12 @@ class ProductionExperienceNavigationRepository
                 final isNotCreator = experience.creator.id != userDto.id;
                 return containsInterest && isNotCreator ||
                     experience.isPromoted && isNotCreator;
-              },
-            ).toList();
+                 */
+            final filteredExperienceDtoList = experienceDTOs
+                .where(
+                  (experience) => experience.creator.id != userDto.id,
+                )
+                .toList();
             filteredExperienceDtoList.sort(
               (a, b) => b.creationDate.compareTo(
                 a.creationDate,
