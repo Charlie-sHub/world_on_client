@@ -17,7 +17,7 @@ class SelectCreationView extends StatelessWidget {
             child: OutlinedButton(
               style: OutlinedButton.styleFrom(
                 backgroundColor: WorldOnColors.white,
-                primary: WorldOnColors.background,
+                foregroundColor: WorldOnColors.background,
                 elevation: 5,
               ),
               onPressed: () => context.router.push(

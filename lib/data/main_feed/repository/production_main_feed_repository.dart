@@ -130,7 +130,9 @@ class ProductionMainFeedRepository implements MainFeedRepositoryInterface {
     if (error is FirebaseException) {
       _logger.e("FirebaseException: ${error.message}");
       return Failure.coreData(
-        CoreDataFailure.serverError(errorString: "Firebase error: ${error.message}"),
+        CoreDataFailure.serverError(
+          errorString: "Firebase error: ${error.message}",
+        ),
       );
     } else if (error is FormatException) {
       _logger.e("FormatException: ${error.message}");
