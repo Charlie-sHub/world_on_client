@@ -1,7 +1,7 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:cloud_functions/cloud_functions.dart';
 import 'package:dartz/dartz.dart';
-import 'package:geoflutterfire/geoflutterfire.dart';
+import 'package:geoflutterfire2/geoflutterfire2.dart';
 import 'package:injectable/injectable.dart';
 import 'package:kt_dart/kt.dart';
 import 'package:logger/logger.dart';
@@ -28,7 +28,7 @@ import 'package:worldon/injection.dart';
 class ProductionExperienceManagementRepository
     implements ExperienceManagementRepositoryInterface {
   final Logger _logger;
-  final _geo = Geoflutterfire();
+  final _geo = GeoFlutterFire();
   final _functions = FirebaseFunctions.instanceFor(region: "europe-west1");
   final CloudStorageService _cloudStorageService;
   final FirebaseFirestore _firestore;

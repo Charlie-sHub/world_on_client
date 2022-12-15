@@ -21,8 +21,8 @@ class CreateExperienceFloatingButton extends StatelessWidget {
         child: Showcase(
           key: showKey,
           description: S.of(context).createExperienceButtonShowCase,
-          overlayPadding: const EdgeInsets.all(7),
-          shapeBorder: const CircleBorder(),
+          targetPadding: const EdgeInsets.all(7),
+          targetShapeBorder: const CircleBorder(),
           child: FloatingActionButton(
             backgroundColor: WorldOnColors.accent,
             onPressed: () => context.router.push(

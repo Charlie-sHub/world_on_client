@@ -79,7 +79,10 @@ class ProfileUsersTabView extends StatelessWidget {
               Align(
                 alignment: Alignment.bottomRight,
                 child: Padding(
-                  padding: const EdgeInsets.only(bottom: MediaQuery.of(context).size.height * 0.1, right: 12),
+                  padding: EdgeInsets.only(
+                    bottom: MediaQuery.of(context).size.height * 0.1,
+                    right: 12,
+                  ),
                   child: ProfileUsersDialer(user: user),
                 ),
               )

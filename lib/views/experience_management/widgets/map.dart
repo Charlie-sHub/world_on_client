@@ -18,8 +18,7 @@ class Map extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final editingFormState =
-        context.read<ExperienceManagementFormBloc>().state;
+    final editingFormState = context.read<ExperienceManagementFormBloc>().state;
     final position = LatLng(
       editingFormState.experience.coordinates.latitude.getOrCrash(),
       editingFormState.experience.coordinates.longitude.getOrCrash(),
@@ -44,7 +43,7 @@ class Map extends StatelessWidget {
                 ? Showcase(
                     key: showKey,
                     description: S.of(context).mapShowCase,
-                    overlayPadding: const EdgeInsets.all(5),
+                    targetPadding: const EdgeInsets.all(5),
                     child: Card(
                       clipBehavior: Clip.antiAlias,
                       child: GoogleMap(

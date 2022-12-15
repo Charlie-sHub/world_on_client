@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_carousel_slider/carousel_slider.dart';
-import 'package:flutter_carousel_slider/carousel_slider_indicators.dart';
 import 'package:worldon/views/core/misc/world_on_colors.dart';
 
 class CarouselBuilder extends StatelessWidget {

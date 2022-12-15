@@ -31,16 +31,16 @@ Future<void> mainCommon(String environment) async {
 }
 
 Future<void> initializeLocalNotifications() async {
-  const _androidSettings = AndroidInitializationSettings("world_on_logo");
-  const _iOSSettings = IOSInitializationSettings(
+  const androidSettings = AndroidInitializationSettings("world_on_logo");
+  const iOSSettings = DarwinInitializationSettings(
     onDidReceiveLocalNotification: _onDidReceiveLocalNotification,
   );
-  const _initializationSettings = InitializationSettings(
-    android: _androidSettings,
-    iOS: _iOSSettings,
+  const initializationSettings = InitializationSettings(
+    android: androidSettings,
+    iOS: iOSSettings,
   );
   await getIt<FlutterLocalNotificationsPlugin>().initialize(
-    _initializationSettings,
+    initializationSettings,
   );
 }
 

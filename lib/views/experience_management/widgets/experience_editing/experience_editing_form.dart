@@ -119,7 +119,7 @@ class ExperienceEditingForm extends StatelessWidget {
                   Showcase(
                     key: tagCreationShowKey,
                     description: S.of(context).tagCreationShowCase,
-                    overlayPadding: const EdgeInsets.all(5),
+                    targetPadding: const EdgeInsets.all(5),
                     child: TagAdditionCreationCard(
                       tagChangeFunction: (KtSet<Tag> tags) =>
                           context.read<ExperienceManagementFormBloc>().add(

@@ -1,7 +1,7 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:cloud_functions/cloud_functions.dart';
 import 'package:dartz/dartz.dart';
-import 'package:geoflutterfire/geoflutterfire.dart';
+import 'package:geoflutterfire2/geoflutterfire2.dart';
 import 'package:geolocator/geolocator.dart';
 import 'package:injectable/injectable.dart';
 import 'package:kt_dart/kt.dart';
@@ -33,7 +33,7 @@ import 'package:worldon/domain/experience_navigation/repository/experience_navig
 class ProductionExperienceNavigationRepository
     implements ExperienceNavigationRepositoryInterface {
   final Logger _logger;
-  final _geo = Geoflutterfire();
+  final _geo = GeoFlutterFire();
   final FirebaseFirestore _firestore;
   final _functions = FirebaseFunctions.instanceFor(region: "europe-west1");
 
@@ -221,7 +221,9 @@ class ProductionExperienceNavigationRepository
           .map(
             (documentList) => documentList
                 .map(
-                  (document) => ExperienceDto.fromJson(document.data()!),
+                  (document) => ExperienceDto.fromJson(
+                    document.data()! as Map<String, dynamic>,
+                  ),
                 )
                 .toList(),
           )

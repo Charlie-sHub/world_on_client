@@ -23,38 +23,38 @@ class RegistrationPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) => GestureDetector(
         onTap: () => FocusManager.instance.primaryFocus?.unfocus(),
-        child:  Scaffold(
-            body: BlocProvider.value(
-              value: getIt<RegistrationFormBloc>()
-                ..add(
-                  RegistrationFormEvent.initialized(
-                    userOption,
-                  ),
-                ),
-              child: BlocConsumer<RegistrationFormBloc, RegistrationFormState>(
-                listenWhen: (previous, current) =>
-                    previous.failureOrSuccessOption !=
-                    current.failureOrSuccessOption,
-                listener: (context, state) => state.failureOrSuccessOption.fold(
-                  () {},
-                  (either) => either.fold(
-                    (failure) => _onFailure(failure, context),
-                    (_) => _onSuccess(context),
-                  ),
-                ),
-                buildWhen: (previous, current) =>
-                    current.initialized ||
-                    previous.showErrorMessages != current.showErrorMessages ||
-                    previous.acceptedEULA != current.acceptedEULA ||
-                    current.user.imageFileOption.fold(
-                      () => false,
-                      (_) => true,
-                    ),
-                builder: (context, state) => RegistrationForm(
-                  userOption: userOption,
+        child: Scaffold(
+          body: BlocProvider.value(
+            value: getIt<RegistrationFormBloc>()
+              ..add(
+                RegistrationFormEvent.initialized(
+                  userOption,
                 ),
               ),
-            )
+            child: BlocConsumer<RegistrationFormBloc, RegistrationFormState>(
+              listenWhen: (previous, current) =>
+                  previous.failureOrSuccessOption !=
+                  current.failureOrSuccessOption,
+              listener: (context, state) => state.failureOrSuccessOption.fold(
+                () {},
+                (either) => either.fold(
+                  (failure) => _onFailure(failure, context),
+                  (_) => _onSuccess(context),
+                ),
+              ),
+              buildWhen: (previous, current) =>
+                  current.initialized ||
+                  previous.showErrorMessages != current.showErrorMessages ||
+                  previous.acceptedEULA != current.acceptedEULA ||
+                  current.user.imageFileOption.fold(
+                    () => false,
+                    (_) => true,
+                  ),
+              builder: (context, state) => RegistrationForm(
+                userOption: userOption,
+              ),
+            ),
+          ),
         ),
       );
 

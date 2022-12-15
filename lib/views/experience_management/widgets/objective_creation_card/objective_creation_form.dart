@@ -27,7 +27,7 @@ class ObjectiveCreationForm extends StatelessWidget {
     return Showcase(
       key: showKey,
       description: S.of(context).objectivesShowCase,
-      overlayPadding: const EdgeInsets.all(5),
+      targetPadding: const EdgeInsets.all(5),
       child: Form(
         autovalidateMode: objectiveFormState.showErrorMessages
             ? AutovalidateMode.always

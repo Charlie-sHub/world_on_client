@@ -44,8 +44,8 @@ class ProfileAvatarStack extends StatelessWidget {
           child: Showcase(
             key: showKey,
             description: S.of(context).userLeverShowCase,
-            overlayPadding: const EdgeInsets.all(5),
-            shapeBorder: const CircleBorder(),
+            targetPadding: const EdgeInsets.all(5),
+            targetShapeBorder: const CircleBorder(),
             child: Container(
               decoration: const BoxDecoration(
                 color: WorldOnColors.primary,

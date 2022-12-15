@@ -77,5 +77,7 @@
     <string>To upload user and experience's pictures</string>
     <key>NSCameraUsageDescription</key>
     <string>To upload user and experience's pictures</string>
+	<key>CADisableMinimumFrameDurationOnPhone</key>
+	<true/>
 </dict>
 </plist>
